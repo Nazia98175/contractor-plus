@@ -1,34 +1,63 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import AnimateHeight from "react-animate-height";
 
 const Footer = () => {
+  const currentYear: number = new Date().getFullYear();
+  const [openFaq, setOpenFaq] = useState<string | null>(null);
+
+  const handleToggleFaq = (section: string) => {
+    setOpenFaq(section === openFaq ? null : section);
+  };
   const footerlink = [
-    { text: "Home", href: "#" },
-    { text: "Features", href: "#" },
-    { text: "How it works", href: "#" },
+    { text: "CRM", href: "#" },
+    { text: "Field Service Management", href: "#" },
+    { text: "Project Management", href: "#" },
+    { text: "Lead Generation", href: "/" },
+    { text: "Bookkeeping", href: "/" },
+    { text: "PRO Websites", href: "#about-us" },
+    { text: "Estimates & Quotes", href: "/" },
+    { text: "Deal Flow Tracking", href: "/" },
+    { text: "All Features", href: "/" },
+    { text: "Project Management ", href: "/" },
+    { text: "Field Service Management", href: "/" },
+    { text: "Contractor+ Pay", href: "/" },
+    { text: "Contractor+ Local ", href: "/" },
+    { text: "Bookkeeping", href: "/" },
+    { text: "Big Chief AI", href: "/" },
+    { text: "Estimatic AI", href: "/" },
+    { text: "Estimatic AI", href: "/" },
+    { text: "All Solutions", href: "/" },
+    { text: "General Contractor", href: "/" },
+    { text: "Plumbing", href: "/" },
+    { text: "Construction", href: "/" },
+    { text: "HVAC", href: "/" },
+    { text: "Remodeling", href: "/" },
+    { text: "Painting", href: "/" },
+    { text: "Roofing", href: "/" },
+    { text: "Junk Removal", href: "/" },
+    { text: "Locksmith", href: "/" },
+    { text: "Drywall", href: "/" },
+    { text: "All Industries", href: "/" },
+    { text: "Blog", href: "/" },
+    { text: "Podcasts", href: "/" },
+    { text: "USA Labor Rates", href: "/" },
+    { text: "USA Material Trends", href: "/" },
+    { text: "Material Price Comparison", href: "/" },
+    { text: "Idea Board", href: "/" },
+    { text: "Brand Ambassadors", href: "/" },
+    { text: "Supply Partners", href: "/" },
+    { text: "API Docs", href: "/" },
+    { text: "Get Started FREE", href: "/" },
     { text: "Pricing", href: "/" },
-    { text: "About us", href: "/" },
-    { text: "Contact us", href: "#about-us" },
-    { text: "Get started", href: "/" },
-    { text: "Terms of Service", href: "/" },
-    { text: "Privacy Policy", href: "/" },
-    { text: "AML/KYC Policy", href: "/" },
-    { text: "Help Center/FAQ", href: "/" },
-    { text: "Customer Support", href: "/" },
-    { text: "Live Chat", href: "/" },
-    { text: "Knowledge Base", href: "/" },
-    { text: "API Documentation", href: "/" },
-    { text: "Press & Media", href: "/" },
-    { text: "Careers", href: "/" },
-    { text: "Press Releases", href: "/" },
-    { text: "Partnerships", href: "/" },
+    { text: "Schedule A Demo", href: "/" },
   ];
   const footermobilelink = [
-    { title: "Quick links", range: [0, 7] },
-    { title: "Legal", range: [7, 10] },
-    { title: "Support", range: [10, 13] },
-    { title: "Resources", range: [13, 16] },
-    { title: "Company", range: [16, 19] },
+    { title: "Features", range: [0, 9] },
+    { title: "Industries", range: [9, 18] },
+    { title: "Solutions", range: [18, 29] },
+    { title: "Explore", range: [29, 38] },
   ];
   return (
     <footer className="bg-black py-10 w-full">
@@ -141,51 +170,183 @@ const Footer = () => {
             Helping Contractors Win 2x More Jobs In 1/3rd The Time
           </h3>
         </div>
-        <div className="flex justify-center items-start gap-6 w-full">
-          <div className="hidden md:block max-w-[150px] w-full">
-            <h3 className="paragraph-text">Quick links</h3>
-            <div className="flex flex-col gap-3 pt-6">
-              {footerlink.slice(0, 7).map((list, index) => (
+        <div className="flex flex-wrap justify-center items-start gap-6 w-full pt-7">
+          <div className="hidden md:block max-w-[200px] w-full">
+            <h3 className="text-base font-bold text-white font-jakarta pb-2">
+              Features
+            </h3>
+            <div className="flex flex-col gap-2">
+              {footerlink.slice(0, 9).map((list, index) => (
                 <FooterLinkItem key={index} list={list} />
               ))}
             </div>
           </div>
-
-          <div className="space-y-8 hidden md:block max-w-[150px] w-full">
-            <div>
-              <h3 className="paragraph-text">Legal</h3>
-              <div className="flex flex-col gap-3 pt-6">
-                {footerlink.slice(7, 10).map((list, index) => (
-                  <FooterLinkItem key={index} list={list} />
-                ))}
-              </div>
+          <div className="hidden md:block max-w-[200px] w-full">
+            <h3 className="text-base font-bold text-white font-jakarta pb-2">
+              Solutions
+            </h3>
+            <div className="flex flex-col gap-2">
+              {footerlink.slice(9, 18).map((list, index) => (
+                <FooterLinkItem key={index} list={list} />
+              ))}
             </div>
+          </div>
+          <div className="hidden md:block max-w-[150px] w-full">
             <div>
-              <h3 className="paragraph-text">Support</h3>
-              <div className="flex flex-col gap-3 pt-6">
-                {footerlink.slice(10, 13).map((list, index) => (
+              <h3 className="text-base font-bold text-white font-jakarta pb-2">
+                Industries
+              </h3>
+              <div className="flex flex-col gap-2">
+                {footerlink.slice(18, 29).map((list, index) => (
                   <FooterLinkItem key={index} list={list} />
                 ))}
               </div>
             </div>
           </div>
-
-          <div className="space-y-8 hidden md:block max-w-[150px] w-full">
+          <div className="hidden md:block max-w-[150px] w-full">
+            <h3 className="text-base font-bold text-white font-jakarta pb-2">
+              Resources
+            </h3>
+            <div className="flex flex-col gap-2">
+              {footerlink.slice(29, 38).map((list, index) => (
+                <FooterLinkItem key={index} list={list} />
+              ))}
+            </div>
+          </div>
+          <div className="hidden md:block max-w-[150px] w-full">
             <div>
-              <h3 className="paragraph-text">Resources</h3>
-              <div className="flex flex-col gap-3 pt-6">
-                {footerlink.slice(13, 16).map((list, index) => (
+              <h3 className="text-base font-bold text-white font-jakarta pb-2">
+                Why Contractor+?
+              </h3>
+              <div className="flex flex-col gap-2">
+                {footerlink.slice(38).map((list, index) => (
                   <FooterLinkItem key={index} list={list} />
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="paragraph-text">Company</h3>
-              <div className="flex flex-col gap-3 pt-6">
-                {footerlink.slice(16).map((list, index) => (
-                  <FooterLinkItem key={index} list={list} />
-                ))}
-              </div>
+          </div>
+        </div>
+        {/* Accordions for mobile view */}
+        <div className="pt-5 pb-6 md:hidden grid grid-cols-2 max-w-[350px]">
+          {footermobilelink.map((section, idx) => (
+            <div key={idx} className="max-w-[150px] w-full">
+              <button
+                onClick={() => handleToggleFaq(section.title)}
+                className="flex flex-col justify-between px-4 w-full py-4 text-start"
+              >
+                <div className="flex justify-between items-center w-full">
+                  <h3 className="text-base font-bold text-white font-jakarta">
+                    {section.title}
+                  </h3>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      openFaq === section.title ? "rotate-180" : ""
+                    }`}
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.58782 7.74554C5.91221 7.42114 6.43807 7.42085 6.76282 7.74489L9.29366 10.2702C9.68401 10.6597 10.316 10.6597 10.7063 10.2702L13.2372 7.7449C13.5619 7.42086 14.0878 7.42114 14.4122 7.74554C14.7368 8.07018 14.7368 8.59653 14.4122 8.92118L10.7071 12.6262C10.3166 13.0168 9.68342 13.0168 9.29289 12.6262L5.58782 8.92118C5.26318 8.59653 5.26318 8.07018 5.58782 7.74554Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <AnimateHeight
+                  duration={500}
+                  height={openFaq === section.title ? "auto" : 0}
+                >
+                  <div className="flex flex-col gap-3 pt-4 sm:pt-6">
+                    {footerlink.slice(...section.range).map((list, index) => (
+                      <FooterLinkItem key={index} list={list} />
+                    ))}
+                  </div>
+                </AnimateHeight>
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between items-center gap-3 pt-4">
+          <div className="flex gap-2">
+            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+              Powered By
+            </p>
+          </div>
+          <div className="flex justify-between gap-3 ">
+            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+              Copyright © 2025 Contractor+ All rights reserved.
+            </p>
+            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+              Terms of Service
+            </p>
+            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+              Privacy Policy
+            </p>
+            <div className="flex gap-3">
+              <Link href={"#"}>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    viewBox="0 0 18 18"
+                  >
+                    <g clipPath="url(#clip0_0_30085)">
+                      <path
+                        fill="#656C73"
+                        d="M14.169.75h2.747l-6 6.904L18 17.015h-5.566L8.096 11.34l-4.988 5.675H.361l6.434-7.373L0 .75h5.71l3.94 5.205zm-.976 14.602h1.518L4.88 2.304H3.217z"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_0_30085">
+                        <path fill="#fff" d="M0 0h18v18H0z"></path>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </Link>
+              <Link href={"#"}>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    viewBox="0 0 18 18"
+                  >
+                    <g clipPath="url(#clip0_0_30087)">
+                      <mask
+                        id="mask0_0_30087"
+                        width="18"
+                        height="18"
+                        x="0"
+                        y="0"
+                        maskUnits="userSpaceOnUse"
+                        style={{ maskType: "luminance" }}
+                      >
+                        <path fill="#fff" d="M18 0H0v18h18z"></path>
+                      </mask>
+                      <g mask="url(#mask0_0_30087)">
+                        <path
+                          fill="#656C73"
+                          d="M15.317 15.166h-2.664v-4.13c0-.985-.017-2.253-1.385-2.253-1.387 0-1.6 1.073-1.6 2.181v4.202H7.006V6.672h2.557v1.161h.036a2.8 2.8 0 0 1 1.07-1.031c.444-.242.946-.36 1.453-.34 2.7 0 3.197 1.757 3.197 4.045zM4 5.511c-.306 0-.605-.09-.86-.257a1.53 1.53 0 0 1-.569-.687 1.52 1.52 0 0 1 .335-1.668 1.55 1.55 0 0 1 1.685-.332c.282.116.523.312.693.563a1.52 1.52 0 0 1-.192 1.933A1.55 1.55 0 0 1 4 5.51m1.331 9.655H2.665V6.672h2.666zM16.645.001H1.327a1.32 1.32 0 0 0-.932.37C.146.61.005.94 0 1.284v15.23c.004.345.146.674.395.915.249.24.584.374.932.37h15.318c.348.004.684-.129.934-.37.25-.24.393-.57.398-.914V1.283a1.3 1.3 0 0 0-.398-.914A1.32 1.32 0 0 0 16.645 0"
+                        ></path>
+                      </g>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_0_30087">
+                        <path fill="#fff" d="M0 0h18v18H0z"></path>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -197,9 +358,8 @@ const Footer = () => {
 export default Footer;
 export const FooterLinkItem = ({ list }: { list: any }) => (
   <div className="group relative w-full md:w-fit">
-    <Link className=" text-base font-segoeui !text-[#A5A6A7]" href={list.href}>
+    <Link className="text-base !text-[#D2D4D6] font-jakarta" href={list.href}>
       {list.text}
     </Link>
-    <span className="footer-link-hover"></span>
   </div>
 );

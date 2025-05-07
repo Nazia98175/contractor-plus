@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import Hero from "@/components/homepage/Hero";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useTranslations } from "next-intl";
 
@@ -8,8 +9,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-4  min-h-screen">
-      <Header />
-      <h1 className="text-2xl font-bold">{t("heading")}</h1>
+      <div className="bg-ruinedSmores">
+        <Header />
+        <Hero />
+      </div>
+      {/* <h1 className="text-2xl font-bold">{t("heading")}</h1> */}
 
       <LanguageSelector />
       <Footer />

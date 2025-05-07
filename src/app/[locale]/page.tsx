@@ -2,6 +2,7 @@ import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import Hero from "@/components/homepage/Hero";
 import MakeOperation from "@/components/homepage/MakeOperation";
+import TrustBar from "@/components/homepage/TrustBar";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useTranslations } from "next-intl";
 
@@ -13,6 +14,7 @@ export default function Home() {
       <div className="bg-ruinedSmores">
         <Header />
         <Hero />
+        <TrustBar />
       </div>
       {/* <h1 className="text-2xl font-bold">{t("heading")}</h1> */}
       <MakeOperation />

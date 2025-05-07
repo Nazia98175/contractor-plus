@@ -1,6 +1,7 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import Hero from "@/components/homepage/Hero";
+import MakeOperation from "@/components/homepage/MakeOperation";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useTranslations } from "next-intl";
 
@@ -14,7 +15,7 @@ export default function Home() {
         <Hero />
       </div>
       {/* <h1 className="text-2xl font-bold">{t("heading")}</h1> */}
-
+      <MakeOperation />
       <Footer />
     </div>
   );

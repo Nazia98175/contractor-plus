@@ -63,6 +63,8 @@ const IndustriesDropdown = () => {
         src={"/images/webp/group-eng.webp"}
         alt="group-eng"
         unoptimized
+        width={420}
+        height={290}
       />
     </article>
   );

@@ -2,6 +2,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import AnimateHeight from "react-animate-height";
+import {
+  DownArrowIcon,
+  FooterLogoIcon,
+  LinkdinIcon,
+  TwitterIcon,
+} from "./Icons";
 
 const Footer = () => {
   const currentYear: number = new Date().getFullYear();
@@ -62,7 +68,7 @@ const Footer = () => {
   return (
     <footer className="bg-black py-10 w-full">
       <div className="main-container">
-        <div className="space-y-5 max-w-[414px] w-full mx-auto flex flex-col justify-center items-center">
+        <div className="space-y-5 md:max-w-[414px] w-full mx-auto flex flex-col justify-center items-start md:items-center">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +172,7 @@ const Footer = () => {
           <div className="border-[#1C2731] border flex items-center rounded-[500px] text-white text-sm  font-medium px-3 py-3">
             All Services Operational & Working
           </div>
-          <h3 className="text-base font-medium text-[#D2D4D6] font-jakarta">
+          <h3 className="text-sm sm:text-base font-medium text-[#D2D4D6] font-jakarta">
             Helping Contractors Win 2x More Jobs In 1/3rd The Time
           </h3>
         </div>
@@ -226,6 +232,16 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="md:hidden flex gap-3">
+          <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+            Powered By
+          </p>
+          <img
+            className="max-w-[72px] w-full"
+            src="/images/webp/footer-logo.png"
+            alt=""
+          />
+        </div>
         {/* Accordions for mobile view */}
         <div className="pt-5 pb-6 md:hidden grid grid-cols-2 max-w-[350px]">
           {footermobilelink.map((section, idx) => (
@@ -243,18 +259,7 @@ const Footer = () => {
                       openFaq === section.title ? "rotate-180" : ""
                     }`}
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5.58782 7.74554C5.91221 7.42114 6.43807 7.42085 6.76282 7.74489L9.29366 10.2702C9.68401 10.6597 10.316 10.6597 10.7063 10.2702L13.2372 7.7449C13.5619 7.42086 14.0878 7.42114 14.4122 7.74554C14.7368 8.07018 14.7368 8.59653 14.4122 8.92118L10.7071 12.6262C10.3166 13.0168 9.68342 13.0168 9.29289 12.6262L5.58782 8.92118C5.26318 8.59653 5.26318 8.07018 5.58782 7.74554Z"
-                        fill="white"
-                      />
-                    </svg>
+                    <DownArrowIcon />
                   </span>
                 </div>
                 <AnimateHeight
@@ -272,80 +277,36 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex justify-between items-center gap-3 pt-4">
-          <div className="flex gap-2">
+          <div className="hidden  md:flex gap-3">
             <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
               Powered By
             </p>
+            <img
+              className="max-w-[72px] w-full"
+              src="/images/webp/footer-logo.png"
+              alt=""
+            />
           </div>
-          <div className="flex justify-between gap-3 ">
-            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
-              Copyright © 2025 Contractor+ All rights reserved.
-            </p>
-            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
-              Terms of Service
-            </p>
-            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
-              Privacy Policy
-            </p>
+          <div className="flex justify-between gap-3 flex-col sm:flex-row w-full md:w-fit items-center">
+            <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-3">
+              <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                Copyright © 2025 Contractor+ All rights reserved.
+              </p>
+              <div className="flex gap-3">
+                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                  Terms of Service
+                </p>
+                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                  Privacy Policy
+                </p>
+              </div>
+            </div>
             <div className="flex gap-3">
               <Link href={"#"}>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="none"
-                    viewBox="0 0 18 18"
-                  >
-                    <g clipPath="url(#clip0_0_30085)">
-                      <path
-                        fill="#656C73"
-                        d="M14.169.75h2.747l-6 6.904L18 17.015h-5.566L8.096 11.34l-4.988 5.675H.361l6.434-7.373L0 .75h5.71l3.94 5.205zm-.976 14.602h1.518L4.88 2.304H3.217z"
-                      ></path>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_0_30085">
-                        <path fill="#fff" d="M0 0h18v18H0z"></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
+                <TwitterIcon />
               </Link>
               <Link href={"#"}>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="none"
-                    viewBox="0 0 18 18"
-                  >
-                    <g clipPath="url(#clip0_0_30087)">
-                      <mask
-                        id="mask0_0_30087"
-                        width="18"
-                        height="18"
-                        x="0"
-                        y="0"
-                        maskUnits="userSpaceOnUse"
-                        style={{ maskType: "luminance" }}
-                      >
-                        <path fill="#fff" d="M18 0H0v18h18z"></path>
-                      </mask>
-                      <g mask="url(#mask0_0_30087)">
-                        <path
-                          fill="#656C73"
-                          d="M15.317 15.166h-2.664v-4.13c0-.985-.017-2.253-1.385-2.253-1.387 0-1.6 1.073-1.6 2.181v4.202H7.006V6.672h2.557v1.161h.036a2.8 2.8 0 0 1 1.07-1.031c.444-.242.946-.36 1.453-.34 2.7 0 3.197 1.757 3.197 4.045zM4 5.511c-.306 0-.605-.09-.86-.257a1.53 1.53 0 0 1-.569-.687 1.52 1.52 0 0 1 .335-1.668 1.55 1.55 0 0 1 1.685-.332c.282.116.523.312.693.563a1.52 1.52 0 0 1-.192 1.933A1.55 1.55 0 0 1 4 5.51m1.331 9.655H2.665V6.672h2.666zM16.645.001H1.327a1.32 1.32 0 0 0-.932.37C.146.61.005.94 0 1.284v15.23c.004.345.146.674.395.915.249.24.584.374.932.37h15.318c.348.004.684-.129.934-.37.25-.24.393-.57.398-.914V1.283a1.3 1.3 0 0 0-.398-.914A1.32 1.32 0 0 0 16.645 0"
-                        ></path>
-                      </g>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_0_30087">
-                        <path fill="#fff" d="M0 0h18v18H0z"></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
+                <LinkdinIcon />
               </Link>
             </div>
           </div>

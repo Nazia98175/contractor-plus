@@ -6,7 +6,7 @@ import {
   ResourcesDropdownlinks,
 } from "./Helper";
 import Link from "next/link";
-import { CrossIcon } from "./Icons";
+import { CrossIcon, LogoIcon } from "./Icons";
 
 interface DropdownItemProps {
   title: string;
@@ -58,7 +58,7 @@ const DropdownItem = ({
       >
         <div className="px-2 py-2">
           <ul className="space-y-2">
-            {items.slice(0, 10).map((item, index) => (
+            {items.map((item, index) => (
               <li key={index}>
                 <Link
                   href={item.href || "#"}
@@ -132,23 +132,22 @@ const SideBar = ({
     <>
       {isshow && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
+          className="fixed inset-0 bg-[#000000ab] bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden "
           onClick={() => setIsShow(false)}
         />
       )}
 
       <div
-        className={`fixed top-0 right-0 h-dvh overflow-hidden flex flex-col w-[280px] bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out overflow-y-auto lg:hidden ${
+        className={`fixed top-0 right-0 h-dvh overflow-hidden flex flex-col w-[320px] bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out  lg:hidden ${
           isshow ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-5 flex flex-col grow overflow-hidden">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold">Menu</h2>
-            <button
-              onClick={() => setIsShow(false)}
-              className="text-gray-500 hover:text-gray-700"
-            >
+        <div className="p-2 flex flex-col grow overflow-hidden">
+          <div className="flex justify-between items-center mb-6 bg-lightBlack px-3 py-1.5 shadow-c1 rounded">
+            <Link className="w-24 h-[18px]" href={""}>
+              <LogoIcon />
+            </Link>
+            <button onClick={() => setIsShow(false)}>
               <CrossIcon />
             </button>
           </div>

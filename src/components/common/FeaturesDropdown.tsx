@@ -5,9 +5,9 @@ import { featureLinkslinks } from "./Helper";
 const FeaturesDropdown = () => {
   return (
     <article className="flex flex-col justify-between p-2 gap-6 grow ">
-      <div className="grid grid-cols-3 gap-6  text-sm italic font-semibold  text-lightBlack font-inter">
+      <div className="grid grid-cols-3 gap-6 text-sm italic font-semibold text-lightBlack font-inter">
         <h3 className="px-5">Solutions</h3>
-        <h3 className="px-5 ">Features</h3>
+        <h4 className="px-5 ">Features</h4>
       </div>
       <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full overflow-auto">
         {featureLinkslinks.map((link, index) => (

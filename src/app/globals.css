@@ -26,6 +26,8 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
   --font-inter: "inter", sans-serif;
+  --shadow-c1: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 @font-face {

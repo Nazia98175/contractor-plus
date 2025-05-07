@@ -4,6 +4,7 @@ import { HamburgerIcon, LogoIcon } from "./Icons";
 import HeaderLiItems from "./HeaderLiItems";
 import LanguageSelector from "../LanguageSelector";
 import SideBar from "./SideBar";
+import Link from "next/link";
 
 const Header = () => {
   const [isshow, setIsShow] = useState(false);
@@ -11,7 +12,9 @@ const Header = () => {
   return (
     <header className="bg-ruinedSmores w-full">
       <div className="main-container py-5 flex items-center justify-between xl:gap-[54px] lg:gap-3">
-        <LogoIcon />
+        <Link className="max-w-[137px] w-full" href={"/"}>
+          <LogoIcon />
+        </Link>
         <div className="lg:flex hidden gap-[22px]">
           <HeaderLiItems />
         </div>

@@ -12,14 +12,14 @@ const TheEngineContractor = () => {
           six—to manage jobs, crews, customers, and growth.
         </p>
       </div>
-      <div className="px-6 flex flex-col -space-y-2 rounded-[14px]">
+      <div className="px-6 flex flex-col -space-y-2  items-center">
         <img
           src="/images/webp/engine.webp"
           className="max-w-[322px] object-contain"
           alt="The engine 57,163 contractors run on"
         />
-        <div className="py-6 bg-black-red-linear backdrop-blur-sm">
-          <h3 className="text-2xl font-medium font-grotesk ">
+        <div className="p-6 bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden">
+          <h3 className="text-2xl font-medium font-grotesk text-doctor">
             Super Easy Estimates
           </h3>
           <p>+11 Hours Average Time Saved Per Week</p>

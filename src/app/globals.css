@@ -7,20 +7,48 @@
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
   --color-kuroiBlack: #0c0d11;
+  --color-romanRed: #f21314;
   --color-decemberSky: #d2d4d6;
 
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
-  --font-jakarta: "Montserrat", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-myriad: " Myriad Pro", sans-serif;
+}
+
+@font-face {
+  font-family: Myriad Pro;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/MYRIADPRO-BOLD.OTF") format("opentype");
+}
+@font-face {
+  font-family: Myriad Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/public/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
+}
+@font-face {
+  font-family: Myriad Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/public/fonts/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
 }
 
 .main-container {
   @apply max-w-[1308px] w-full mx-auto px-4;
 }
-
 .main-heading {
   @apply text-[26px] xl:text-[52px] capitalize font-black font-jakarta;
 }
-
 .section-heading {
   @apply text-[42px] font-semibold tracking-[-0.84px];
+}
+.primary-btn {
+  @apply h-8 flex justify-center items-center bg-romanRed;
+}
+.header-li {
+  @apply text-base font-montserrat font-semibold text-superSilver;
 }

@@ -1,28 +1,5 @@
-import React from "react";
-import {
-  AdminWorkIcon,
-  EstimateIcon2,
-  EstimatesIcon,
-  TurnaroundIcon,
-} from "../common/Icons";
-
-const MakeOperationlist = [
-  {
-    title: "3-4x faster",
-    description: "Estimate process",
-    icon: <EstimateIcon2 />,
-  },
-  {
-    title: "24% faster",
-    description: "Job turnaround time",
-    icon: <TurnaroundIcon />,
-  },
-  {
-    title: "38% less",
-    description: "Time spent on admin work",
-    icon: <AdminWorkIcon />,
-  },
-];
+import { MakeOperationlist } from "../common/Helper";
+import { AdminWorkIcon, EstimateIcon2, TurnaroundIcon } from "../common/Icons";
 
 const MakeOperation = () => {
   return (

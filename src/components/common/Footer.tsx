@@ -68,7 +68,7 @@ const Footer = () => {
   return (
     <footer className="bg-black py-10 w-full">
       <div className="main-container">
-        <div className="space-y-5 md:max-w-[414px] w-full mx-auto flex flex-col justify-center items-start md:items-center">
+        <div className="space-y-5 max-w-[414px] w-full mx-auto flex flex-col justify-center items-center">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,11 +172,11 @@ const Footer = () => {
           <div className="border-[#1C2731] border flex items-center rounded-[500px] text-white text-sm  font-medium px-3 py-3">
             All Services Operational & Working
           </div>
-          <h3 className="text-sm sm:text-base font-medium text-[#D2D4D6] font-jakarta">
+          <h3 className="text-sm sm:text-base font-medium text-[#D2D4D6] font-jakarta text-center">
             Helping Contractors Win 2x More Jobs In 1/3rd The Time
           </h3>
         </div>
-        <div className="flex flex-wrap justify-center items-start gap-6 w-full pt-7">
+        <div className="hidden md:flex flex-wrap justify-center items-start gap-6 w-full pt-7">
           <div className="hidden md:block max-w-[200px] w-full">
             <h3 className="text-base font-bold text-white font-jakarta pb-2">
               Features
@@ -232,18 +232,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="md:hidden flex gap-3">
-          <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
-            Powered By
-          </p>
-          <img
-            className="max-w-[72px] w-full"
-            src="/images/webp/footer-logo.png"
-            alt=""
-          />
-        </div>
+
         {/* Accordions for mobile view */}
-        <div className="pt-5 pb-6 md:hidden grid grid-cols-2 max-w-[350px]">
+        <div className="pt-5 pb-6 md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
           {footermobilelink.map((section, idx) => (
             <div key={idx} className="max-w-[150px] w-full">
               <button
@@ -277,7 +268,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex justify-between items-center gap-3 pt-4">
-          <div className="hidden  md:flex gap-3">
+          <div className="hidden md:flex gap-3">
             <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
               Powered By
             </p>
@@ -292,14 +283,33 @@ const Footer = () => {
               <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
                 Copyright © 2025 Contractor+ All rights reserved.
               </p>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
                   Terms of Service
                 </p>
                 <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
                   Privacy Policy
                 </p>
+                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                  Cookie Policy
+                </p>
+                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                  GDPR
+                </p>
+                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                  Accessibility
+                </p>
               </div>
+            </div>
+            <div className="md:hidden flex gap-3">
+              <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                Powered By
+              </p>
+              <img
+                className="max-w-[72px] w-full"
+                src="/images/webp/footer-logo.png"
+                alt=""
+              />
             </div>
             <div className="flex gap-3">
               <Link href={"#"}>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -57,6 +58,12 @@ const IndustriesDropdown = () => {
           </li>
         ))}
       </ul>
+      <Image
+        className="object-cover"
+        src={"/images/webp/group-eng.webp"}
+        alt="group-eng"
+        unoptimized
+      />
     </article>
   );
 };

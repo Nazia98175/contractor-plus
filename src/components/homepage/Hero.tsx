@@ -1,4 +1,5 @@
 import React from "react";
+import { CheckIcon, HeroBg } from "../common/Icons";
 
 const Hero = () => {
   return (
@@ -6,50 +7,21 @@ const Hero = () => {
       <img
         src="/images/webp/hero.webp"
         alt="Hero"
-        className="absolute right-0 max-w-[945px] top-0"
+        className="absolute object-center hidden md:block right-0 w-full lg:max-w-[945px] top-0"
+      />
+      <img
+        src="/images/webp/hero-mobile.webp"
+        alt="Hero"
+        className="absolute object-center right-0 w-full block md:hidden top-0"
       />
 
-      <div className="absolute left-0 top-0 z-0 w-full h-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          viewBox="0 0 1440 669"
-          fill="none"
-        >
-          <g filter="url(#filter0_f_22_9143)">
-            <path
-              d="M968.5 -66L-133 -58.826V766.929H2030L694.5 414.5L968.5 -66Z"
-              fill="#0C0D11"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_f_22_9143"
-              x="-234.9"
-              y="-167.9"
-              width="2366.8"
-              height="1036.73"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feGaussianBlur
-                stdDeviation="50.95"
-                result="effect1_foregroundBlur_22_9143"
-              />
-            </filter>
-          </defs>
-        </svg>
+      <div className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full">
+        <HeroBg />
       </div>
-      <section className="flex justify-between main-container z-10 relative min-h-[700px] max-h-[892px] h-full">
-        <div className="max-w-[616px] w-full pt-20">
+      <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-10"></div>
+
+      <section className="flex items-end lg:items-start main-container z-20 relative min-h-[700px] max-h-[892px] h-full">
+        <div className="max-w-[616px] w-full pt-20 pb-10 space-y-6">
           <h1 className="main-heading text-white">
             The only operating system for build & service contractors
           </h1>
@@ -57,6 +29,15 @@ const Hero = () => {
             All the power of big software, none of the pain. One platform—not
             six—to manage jobs, crews, customers, and growth.
           </p>
+          <div className="flex gap-2.5 items-center">
+            <button className="bg-red-linear h-10 primary-btn">
+              Create free account
+            </button>
+            <button className="flex gap-1.5 items-center font-myriad text-sm text-white cursor-pointer">
+              <CheckIcon />
+              No Credit Card Required
+            </button>
+          </div>
         </div>
       </section>
     </section>

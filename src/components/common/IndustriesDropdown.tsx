@@ -45,7 +45,7 @@ const IndustriesDropdown = () => {
     { label: "Small Engine Repair", href: "/" },
   ];
   return (
-    <article className="flex items-center justify-between p-2">
+    <article className="flex items-start justify-between p-2">
       <ul className="grid grid-cols-4 gap-[34px]">
         {links.map((link, index) => (
           <li key={index}>
@@ -59,7 +59,7 @@ const IndustriesDropdown = () => {
         ))}
       </ul>
       <Image
-        className="object-cover"
+        className="object-contain max-w-[420px] w-full"
         src={"/images/webp/group-eng.webp"}
         alt="group-eng"
         unoptimized

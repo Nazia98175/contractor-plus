@@ -5,7 +5,7 @@ import { featureLinkslinks } from "./Helper";
 const FeaturesDropdown = () => {
   return (
     <article className="flex flex-col justify-between p-2 gap-6 grow ">
-      <div className="grid grid-cols-3 gap-6 text-sm italic font-semibold text-lightBlack font-inter">
+      <div className="grid grid-cols-3 gap-6 lg:text-sm text-xs italic font-semibold text-lightBlack font-inter">
         <h3 className="px-5">Solutions</h3>
         <h4 className="px-5 ">Features</h4>
       </div>
@@ -32,7 +32,7 @@ const FeaturesDropdown = () => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center justify-between gap-6 p-[6px]">
+      <div className="flex items-center justify-between gap-6 p-[6px] font-inter">
         <Link
           className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
           href={"/"}

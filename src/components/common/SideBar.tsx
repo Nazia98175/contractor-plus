@@ -4,9 +4,10 @@ import {
   featureLinkslinks,
   IndustriesDropdownLinks,
   ResourcesDropdownlinks,
+  PricingDropdownLinks,
 } from "./Helper";
 import Link from "next/link";
-import { CrossIcon, LogoIcon } from "./Icons";
+import { CrossIcon, LogoIcon, SidebarArrowIcon, ArrowIcon } from "./Icons";
 
 interface DropdownItemProps {
   title: string;
@@ -18,6 +19,7 @@ interface DropdownItemProps {
   }>;
   isOpen: boolean;
   onToggle: () => void;
+  id: string; // Added id prop to identify which dropdown is open
 }
 
 const DropdownItem = ({
@@ -25,59 +27,71 @@ const DropdownItem = ({
   items,
   isOpen,
   onToggle,
+  id,
 }: DropdownItemProps) => {
   return (
-    <div className="border-b border-gray-200">
+    <div className="">
       <button
         onClick={onToggle}
-        className="flex items-center justify-between w-full px-2 py-3 text-left font-medium text-gray-800"
+        className={`flex items-center justify-between w-full header-li p-1 ${
+          isOpen ? "bg-white" : ""
+        }`}
       >
         <span>{title}</span>
-        <svg
-          className={`w-5 h-5 transition-transform duration-300 ease-in-out ${
-            isOpen ? "transform rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          ></path>
-        </svg>
+        <SidebarArrowIcon isOpen={isOpen} />
       </button>
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? " opacity-100" : "max-h-0 opacity-0"
+          isOpen
+            ? "max-h-[500px] opacity-100 overflow-y-auto"
+            : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-2 py-2">
-          <ul className="space-y-2">
-            {items.map((item, index) => (
-              <li key={index}>
+        <ul className="space-y-2.5 bg-white p-2 mt-1">
+          {items.map((item, index) => (
+            <li key={index}>
+              <Link href={item.href || "#"} className="block p-1 header-li">
+                <div className="flex items-center gap-2">
+                  {item.icon && <span>{item.icon}</span>}
+                  <span>{item.label}</span>
+                </div>
+                {item.description && (
+                  <p className="hidden">{item.description}</p>
+                )}
+              </Link>
+            </li>
+          ))}
+          {id === "features" && isOpen && (
+            <div className="p-1.5 bg-superSilver mt-4">
+              <div className="flex flex-col gap-1 p-[6px]">
                 <Link
-                  href={item.href || "#"}
-                  className="block px-2 py-1 text-gray-700 hover:text-gray-900"
+                  className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                  href={"/"}
                 >
-                  <div className="flex items-center gap-2">
-                    {item.icon && <span>{item.icon}</span>}
-                    <span>{item.label}</span>
-                  </div>
-                  {item.description && (
-                    <p className="text-xs text-gray-500 mt-1">
-                      {item.description}
-                    </p>
-                  )}
+                  See All Features
+                  <ArrowIcon />
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+                <Link
+                  className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                  href={"/"}
+                >
+                  Integrations
+                  <ArrowIcon />
+                </Link>
+                <Link
+                  className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                  href={"/"}
+                >
+                  Product Updates
+                  <ArrowIcon />
+                </Link>
+              </div>
+            </div>
+          )}
+        </ul>
+
+        {/* Feature specific buttons that only show for features dropdown */}
       </div>
     </div>
   );
@@ -119,7 +133,7 @@ const SideBar = ({
     {
       id: "pricing",
       label: "Pricing",
-      items: IndustriesDropdownLinks,
+      items: PricingDropdownLinks,
     },
     {
       id: "resources",
@@ -132,18 +146,18 @@ const SideBar = ({
     <>
       {isshow && (
         <div
-          className="fixed inset-0 bg-[#000000ab] bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden "
+          className="fixed inset-0 bg-[#000000ab] bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
           onClick={() => setIsShow(false)}
         />
       )}
 
       <div
-        className={`fixed top-0 right-0 h-dvh overflow-hidden flex flex-col w-[320px] bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out  lg:hidden ${
+        className={`fixed top-0 right-0 h-dvh overflow-hidden flex flex-col w-[320px] bg-brownish z-50 shadow-lg transform transition-transform duration-300 ease-in-out lg:hidden ${
           isshow ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-2 flex flex-col grow overflow-hidden">
-          <div className="flex justify-between items-center mb-6 bg-lightBlack px-3 py-1.5 shadow-c1 rounded">
+          <div className="flex justify-between items-center mb-2 bg-lightBlack px-3 py-1.5 shadow-c1 rounded">
             <Link className="w-24 h-[18px]" href={""}>
               <LogoIcon />
             </Link>
@@ -152,10 +166,11 @@ const SideBar = ({
             </button>
           </div>
 
-          <div className="space-y-1 grow overflow-auto">
+          <div className="space-y-1 grow overflow-auto my-5 no-scrollbar">
             {menuItems.map((item) => (
               <DropdownItem
                 key={item.id}
+                id={item.id}
                 title={item.label}
                 items={item.items}
                 isOpen={openDropdown === item.id}
@@ -164,13 +179,21 @@ const SideBar = ({
             ))}
           </div>
 
-          <div className="mt-6 space-y-3">
-            <button className="w-full py-2 px-4 border border-gray-300 rounded text-center text-gray-800 font-medium transition-colors duration-200 hover:bg-gray-50">
-              Login
-            </button>
-            <button className="w-full py-2 px-4 bg-red-600 text-white rounded text-center font-medium transition-colors duration-200 hover:bg-red-700">
-              Sign Up
-            </button>
+          <div className="flex items-center justify-between gap-3">
+            <Link
+              className="text-xs font-bold tracking-[0.1px] text-lightBlack font-inter"
+              href={"tel:855 392 8803"}
+            >
+              855 392 8803
+            </Link>
+            <div className="flex items-center gap-2">
+              <button className="text-xs font-bold tracking-[0.1px] text-lightBlack font-myriad px-2 py-1">
+                Login
+              </button>
+              <button className="text-white font-semibold leading-[142.857%] tracking-[0.1px] font-myriad rounded bg-romanRed px-[14px] py-1">
+                Sign Up
+              </button>
+            </div>
           </div>
         </div>
       </div>

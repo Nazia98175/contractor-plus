@@ -12,7 +12,10 @@
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
+  --color-redPigment: #ee1e25;
   --color-decemberSky: #d2d4d6;
+  --color-monstrousGreen: #21c912;
+  --color-darkGrey: #999;
   --color-lightBlack: #1c2731;
   --background-image-red-linear: linear-gradient(
     262deg,
@@ -61,7 +64,7 @@
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%];
+  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%];
 }
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit;

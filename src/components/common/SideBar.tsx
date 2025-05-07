@@ -90,6 +90,19 @@ const DropdownItem = ({
                 </div>
               </div>
             )}
+            {id === "whycontractor" && isOpen && (
+              <div className="p-1.5 bg-superSilver mt-4">
+                <div className="flex flex-col gap-1 p-[6px]">
+                  <Link
+                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    href={"/"}
+                  >
+                    See All Features
+                    <ArrowIcon />
+                  </Link>
+                </div>
+              </div>
+            )}
           </ul>
         </div>
       </div>
@@ -146,7 +159,7 @@ const SideBar = ({
     <>
       {isshow && (
         <div
-          className="fixed inset-0 bg-[#000000ab] bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
+          className="fixed inset-0 bg-[#000000ab] pointer-events-none bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
           onClick={() => setIsShow(false)}
         />
       )}

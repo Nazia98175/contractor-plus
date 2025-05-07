@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -6,13 +7,19 @@
   --color-superSilver: #f0f0f0;
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
+  --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
   --color-decemberSky: #d2d4d6;
+  --background-image-red-linear: linear-gradient(
+    262deg,
+    #dc1112 -10.83%,
+    #76090a 83.23%
+  );
 
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
-  --font-myriad: " Myriad Pro", sans-serif;
+  --font-myriad: "Myriad Pro", sans-serif;
 }
 
 @font-face {
@@ -20,28 +27,16 @@
   font-style: normal;
   font-weight: 200 700;
   font-display: swap;
-  src: url("/fonts/MYRIADPRO-BOLD.OTF") format("opentype");
-}
-@font-face {
-  font-family: Myriad Pro;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/public/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
-}
-@font-face {
-  font-family: Myriad Pro;
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/public/fonts/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
+  src: url("/fonts/MYRIADPRO-BOLD.OTF") format("opentype"),
+    url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype"),
+    url("/fonts/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
 }
 
 .main-container {
   @apply max-w-[1308px] w-full mx-auto px-4;
 }
 .main-heading {
-  @apply text-[26px] xl:text-[52px] capitalize font-black font-jakarta;
+  @apply text-[26px] xl:text-[52px] capitalize font-bold font-jakarta leading-[150%];
 }
 .section-heading {
   @apply text-[42px] font-semibold tracking-[-0.84px];

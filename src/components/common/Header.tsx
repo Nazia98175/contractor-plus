@@ -1,16 +1,15 @@
 import React from "react";
 import { LogoIcon } from "./Icons";
 import Link from "next/link";
+import HeaderLiItems from "./HeaderLiItems";
 
 const Header = () => {
   return (
     <header className="bg-ruinedSmores w-full">
-      <div className="main-container py-5 flex  items-center ">
+      <div className="main-container py-5 flex items-center gap-[54px]">
         <LogoIcon />
         <div className="flex gap-[22px]">
-          <Link href="/" className="header-li">
-            Why Contractor+?
-          </Link>
+          <HeaderLiItems />
         </div>
       </div>
     </header>

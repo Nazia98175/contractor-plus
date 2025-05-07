@@ -4,14 +4,13 @@ import Hero from "@/components/homepage/Hero";
 import MakeOperation from "@/components/homepage/MakeOperation";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
-import LanguageSelector from "@/components/LanguageSelector";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
   const t = useTranslations();
 
   return (
-    <div className="flex flex-col gap-4  min-h-screen">
+    <div className="flex flex-col gap-4 relative">
       <div className="bg-ruinedSmores">
         <Header />
         <Hero />

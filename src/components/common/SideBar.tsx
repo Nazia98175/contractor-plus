@@ -42,54 +42,56 @@ const DropdownItem = ({
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`overflow-hidden transition-all duration-300 ease-in-out no-scrollbar  ${
           isOpen
             ? "max-h-[500px] opacity-100 overflow-y-auto"
             : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="space-y-2.5 bg-white p-2 mt-1">
-          {items.map((item, index) => (
-            <li key={index}>
-              <Link href={item.href || "#"} className="block p-1 header-li">
-                <div className="flex items-center gap-2">
-                  {item.icon && <span>{item.icon}</span>}
-                  <span>{item.label}</span>
+        <div className="py-1">
+          <ul className="space-y-2.5 bg-white p-2">
+            {items.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href || "#"} className="block p-1 header-li">
+                  <div className="flex items-center gap-2">
+                    {item.icon && <span>{item.icon}</span>}
+                    <span>{item.label}</span>
+                  </div>
+                  {item.description && (
+                    <p className="hidden">{item.description}</p>
+                  )}
+                </Link>
+              </li>
+            ))}
+            {id === "features" && isOpen && (
+              <div className="p-1.5 bg-superSilver mt-4">
+                <div className="flex flex-col gap-1 p-[6px]">
+                  <Link
+                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    href={"/"}
+                  >
+                    See All Features
+                    <ArrowIcon />
+                  </Link>
+                  <Link
+                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    href={"/"}
+                  >
+                    Integrations
+                    <ArrowIcon />
+                  </Link>
+                  <Link
+                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    href={"/"}
+                  >
+                    Product Updates
+                    <ArrowIcon />
+                  </Link>
                 </div>
-                {item.description && (
-                  <p className="hidden">{item.description}</p>
-                )}
-              </Link>
-            </li>
-          ))}
-          {id === "features" && isOpen && (
-            <div className="p-1.5 bg-superSilver mt-4">
-              <div className="flex flex-col gap-1 p-[6px]">
-                <Link
-                  className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
-                  href={"/"}
-                >
-                  See All Features
-                  <ArrowIcon />
-                </Link>
-                <Link
-                  className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
-                  href={"/"}
-                >
-                  Integrations
-                  <ArrowIcon />
-                </Link>
-                <Link
-                  className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
-                  href={"/"}
-                >
-                  Product Updates
-                  <ArrowIcon />
-                </Link>
               </div>
-            </div>
-          )}
-        </ul>
+            )}
+          </ul>
+        </div>
 
         {/* Feature specific buttons that only show for features dropdown */}
       </div>

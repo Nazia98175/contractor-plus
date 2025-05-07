@@ -192,8 +192,8 @@ const Footer = () => {
                     y2="8"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#10834B" />
-                    <stop offset="1" stop-color="#09F785" />
+                    <stop stopColor="#10834B" />
+                    <stop offset="1" stopColor="#09F785" />
                   </linearGradient>
                   <radialGradient
                     id="paint1_radial_41_19341"
@@ -203,8 +203,8 @@ const Footer = () => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(4.1603) rotate(87.5684) scale(8.00721 8.77333)"
                   >
-                    <stop stop-color="white" stop-opacity="0.48" />
-                    <stop offset="1" stop-color="white" stop-opacity="0.04" />
+                    <stop stopColor="white" stopOpacity="0.48" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.04" />
                   </radialGradient>
                 </defs>
               </svg>

@@ -44,7 +44,7 @@ const HeaderLiItems = () => {
 
   return (
     <>
-      <div className="flex items-center gap-5">
+      <div className="flex items-center xl:gap-5 gap-2">
         {menuItems.map((item, index) => (
           <div
             key={index}
@@ -52,7 +52,7 @@ const HeaderLiItems = () => {
             onMouseEnter={() => handleMouseEnter(item.id)}
           >
             <button
-              className={`header-li py-[2px] px-[6px] transition-colors duration-300 cursor-pointer ${
+              className={`header-li py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver bg-transparent"

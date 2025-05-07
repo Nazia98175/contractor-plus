@@ -49,7 +49,7 @@ const Hero = () => {
         </svg>
       </div>
       <section className="flex justify-between main-container z-10 relative min-h-[700px] max-h-[892px] h-full">
-        <div className="max-w-[616px] w-full pt-20">
+        <div className="max-w-[616px] w-full pt-20 space-y-6">
           <h1 className="main-heading text-white">
             The only operating system for build & service contractors
           </h1>
@@ -57,6 +57,11 @@ const Hero = () => {
             All the power of big software, none of the pain. One platform—not
             six—to manage jobs, crews, customers, and growth.
           </p>
+          <div className="flex">
+            <button className="bg-red-linear py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic">
+              Create free account
+            </button>
+          </div>
         </div>
       </section>
     </section>

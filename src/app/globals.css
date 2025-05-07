@@ -81,3 +81,17 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+}
+.scroll-to-top-btn {
+  transition: all 0.5s ease;
+  cursor: pointer;
+  animation: bounce 1.2s ease-in-out infinite;
+}

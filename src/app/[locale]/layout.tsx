@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import "../globals.css";
+import BackToTop from "@/components/common/BackToTop";
 
 export const metadata: Metadata = {
   title:
@@ -21,6 +22,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <BackToTop />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

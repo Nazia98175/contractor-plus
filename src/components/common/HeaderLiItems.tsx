@@ -44,7 +44,7 @@ const HeaderLiItems = () => {
 
   return (
     <>
-      <div className="flex items-center gap-5">
+      <div className="flex items-center xl:gap-5 gap-2">
         {menuItems.map((item, index) => (
           <div
             key={index}
@@ -52,7 +52,7 @@ const HeaderLiItems = () => {
             onMouseEnter={() => handleMouseEnter(item.id)}
           >
             <button
-              className={`header-li py-[2px] px-[6px] transition-colors duration-300 cursor-pointer ${
+              className={`header-li py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver bg-transparent"
@@ -67,7 +67,7 @@ const HeaderLiItems = () => {
       {/* Full width dropdown outside the loop */}
       <div
         className={`absolute left-0 right-0 top-0 mt-20 bg-[#F8F8F8] mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[700px]
-          transform transition-all duration-300 ease-in-out origin-top overflow-auto
+          transform transition-all duration-300 ease-in-out origin-top flex flex-col overflow-auto h-fit
           ${
             activeMenu
               ? "opacity-100 translate-y-0"

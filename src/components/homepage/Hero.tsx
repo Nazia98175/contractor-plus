@@ -4,7 +4,7 @@ import { CheckIcon, HeroBg } from "../common/Icons";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden max-w-[1920px] mx-auto">
-      <div className="flex items-end lg:items-center main-container z-20 relative min-h-[700px] max-h-[892px] h-full">
+      <div className="flex items-end lg:items-center main-container z-20 relative min-h-[88vh] md:min-h-[700px] max-h-[892px] h-full">
         <div className="max-w-[616px] w-full pt-20 pb-10 sm:space-y-6">
           <h1 className="main-heading text-white mb-1.5">
             The only operating system for build & service contractors

@@ -1,8 +1,21 @@
 import React, { useState } from "react";
+import {
+  WhyContractorDropdownlinks,
+  links,
+  IndustriesDropdownLinks,
+  ResourcesDropdownlinks,
+  PricingDropdownLinks,
+} from "./Helper";
+import Link from "next/link";
 
 interface DropdownItemProps {
   title: string;
-  items: Array<{ label: string; href: string }>;
+  items: Array<{
+    label: string;
+    description?: string;
+    href: string;
+    icon?: React.ReactNode;
+  }>;
   isOpen: boolean;
   onToggle: () => void;
 }
@@ -40,19 +53,27 @@ const DropdownItem = ({
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? " opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-2 py-2">
           <ul className="space-y-2">
-            {items.map((item, index) => (
+            {items.slice(0, 10).map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href={item.href || "#"}
                   className="block px-2 py-1 text-gray-700 hover:text-gray-900"
                 >
-                  {item.label}
-                </a>
+                  <div className="flex items-center gap-2">
+                    {item.icon && <span>{item.icon}</span>}
+                    <span>{item.label}</span>
+                  </div>
+                  {item.description && (
+                    <p className="text-xs text-gray-500 mt-1">
+                      {item.description}
+                    </p>
+                  )}
+                </Link>
               </li>
             ))}
           </ul>
@@ -70,6 +91,7 @@ const SideBar = ({
   isshow: boolean;
 }) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
   const toggleDropdown = (dropdownName: string) => {
     if (openDropdown === dropdownName) {
       setOpenDropdown(null);
@@ -78,30 +100,32 @@ const SideBar = ({
     }
   };
 
-  const solutionsItems = [
-    { label: "CRM", href: "#" },
-    { label: "Field Service Management", href: "#" },
-    { label: "Project Management", href: "#" },
-    { label: "Estimate AI", href: "#" },
-    { label: "Bid Cloud AI", href: "#" },
-    { label: "Lead Generation", href: "#" },
-    { label: "Bookkeeping", href: "#" },
-  ];
-
-  const contractorAppItems = [
-    { label: "Features", href: "#" },
-    { label: "Pricing", href: "#" },
-    { label: "Resources", href: "#" },
-    { label: "Support", href: "#" },
-  ];
-
-  const industriesItems = [
-    { label: "General Contractor", href: "#" },
-    { label: "Plumbing", href: "#" },
-    { label: "Construction", href: "#" },
-    { label: "HVAC", href: "#" },
-    { label: "Landscaping", href: "#" },
-    { label: "Electrical", href: "#" },
+  const menuItems = [
+    {
+      id: "whycontractor",
+      label: "Why Contractor+?",
+      items: WhyContractorDropdownlinks,
+    },
+    {
+      id: "features",
+      label: "Features",
+      items: links,
+    },
+    {
+      id: "industries",
+      label: "Industries",
+      items: IndustriesDropdownLinks,
+    },
+    {
+      id: "pricing",
+      label: "Pricing",
+      items: PricingDropdownLinks,
+    },
+    {
+      id: "resources",
+      label: "Resources",
+      items: ResourcesDropdownlinks,
+    },
   ];
 
   return (
@@ -143,24 +167,15 @@ const SideBar = ({
           </div>
 
           <div className="space-y-1 grow overflow-auto">
-            <DropdownItem
-              title="Solutions"
-              items={solutionsItems}
-              isOpen={openDropdown === "solutions"}
-              onToggle={() => toggleDropdown("solutions")}
-            />
-            <DropdownItem
-              title="Contractor+ App"
-              items={contractorAppItems}
-              isOpen={openDropdown === "contractor"}
-              onToggle={() => toggleDropdown("contractor")}
-            />
-            <DropdownItem
-              title="Industries"
-              items={industriesItems}
-              isOpen={openDropdown === "industries"}
-              onToggle={() => toggleDropdown("industries")}
-            />
+            {menuItems.map((item) => (
+              <DropdownItem
+                key={item.id}
+                title={item.label}
+                items={item.items}
+                isOpen={openDropdown === item.id}
+                onToggle={() => toggleDropdown(item.id)}
+              />
+            ))}
           </div>
 
           <div className="mt-6 space-y-3">

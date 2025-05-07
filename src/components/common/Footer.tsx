@@ -169,10 +169,49 @@ const Footer = () => {
               </defs>
             </svg>
           </span>
-          <div className="border-[#1C2731] border flex items-center rounded-[500px] text-white text-sm  font-medium px-3 py-3">
-            All Services Operational & Working
+          <div className="border-lightBlack border flex items-center footer-gradient-bg rounded-[500px] text-white text-sm font-medium px-3 py-2 gap-3">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="8"
+                viewBox="0 0 9 8"
+                fill="none"
+              >
+                <path
+                  d="M8 4C8 2.067 6.433 0.5 4.5 0.5C2.567 0.5 1 2.067 1 4C1 5.933 2.567 7.5 4.5 7.5C6.433 7.5 8 5.933 8 4Z"
+                  fill="url(#paint0_linear_41_19341)"
+                  stroke="url(#paint1_radial_41_19341)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_41_19341"
+                    x1="4.5"
+                    y1="0"
+                    x2="4.5"
+                    y2="8"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#10834B" />
+                    <stop offset="1" stop-color="#09F785" />
+                  </linearGradient>
+                  <radialGradient
+                    id="paint1_radial_41_19341"
+                    cx="0"
+                    cy="0"
+                    r="1"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(4.1603) rotate(87.5684) scale(8.00721 8.77333)"
+                  >
+                    <stop stop-color="white" stop-opacity="0.48" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.04" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </span>
+            <p className="">All Services Operational & Working</p>
           </div>
-          <h3 className="text-sm sm:text-base font-medium text-[#D2D4D6] font-jakarta text-center">
+          <h3 className="text-sm sm:text-base font-medium text-decemberSky font-jakarta text-center pb-7 sm:pb-0">
             Helping Contractors Win 2x More Jobs In 1/3rd The Time
           </h3>
         </div>
@@ -234,12 +273,12 @@ const Footer = () => {
         </div>
 
         {/* Accordions for mobile view */}
-        <div className="pt-5 pb-6 md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
+        <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
           {footermobilelink.map((section, idx) => (
             <div key={idx} className="max-w-[150px] w-full">
               <button
                 onClick={() => handleToggleFaq(section.title)}
-                className="flex flex-col justify-between px-4 w-full py-4 text-start"
+                className="flex flex-col justify-between px-4 w-full py-2 text-start"
               >
                 <div className="flex justify-between items-center w-full">
                   <h3 className="text-base font-bold text-white font-jakarta">
@@ -257,7 +296,7 @@ const Footer = () => {
                   duration={500}
                   height={openFaq === section.title ? "auto" : 0}
                 >
-                  <div className="flex flex-col gap-3 pt-4 sm:pt-6">
+                  <div className="flex flex-col gap-2 pt-4 sm:pt-6">
                     {footerlink.slice(...section.range).map((list, index) => (
                       <FooterLinkItem key={index} list={list} />
                     ))}
@@ -269,46 +308,61 @@ const Footer = () => {
         </div>
         <div className="flex justify-between items-center gap-3 pt-4">
           <div className="hidden md:flex gap-3">
-            <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+            <p className="text-xs text-secondary font-medium font-montserrat">
               Powered By
             </p>
             <img
               className="max-w-[72px] w-full"
-              src="/images/webp/footer-logo.png"
-              alt=""
+              src="/images/webp/footer-logo.webp"
+              alt="images"
             />
           </div>
           <div className="flex justify-between gap-3 flex-col sm:flex-row w-full md:w-fit items-center">
             <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-3">
-              <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
-                Copyright © 2025 Contractor+ All rights reserved.
+              <p className="text-xs text-secondary font-medium font-montserrat">
+                Copyright © {currentYear} Contractor+ All rights reserved.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">
-                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                <Link
+                  href={"#"}
+                  className="text-xs text-secondary font-medium font-montserrat"
+                >
                   Terms of Service
-                </p>
-                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                </Link>
+                <Link
+                  href={"#"}
+                  className="text-xs text-secondary font-medium font-montserrat"
+                >
                   Privacy Policy
-                </p>
-                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                </Link>
+                <Link
+                  href={"#"}
+                  className="text-xs text-secondary font-medium font-montserrat"
+                >
                   Cookie Policy
-                </p>
-                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                </Link>
+                <Link
+                  href={"#"}
+                  className="text-xs text-secondary font-medium font-montserrat"
+                >
                   GDPR
-                </p>
-                <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+                </Link>
+                <Link
+                  href={"#"}
+                  className="text-xs text-secondary font-medium font-montserrat"
+                >
                   Accessibility
-                </p>
+                </Link>
               </div>
             </div>
             <div className="md:hidden flex gap-3">
-              <p className="text-xs text-[#ADB1B5] font-medium font-montserrat">
+              <p className="text-xs text-secondary font-medium font-montserrat">
                 Powered By
               </p>
               <img
                 className="max-w-[72px] w-full"
-                src="/images/webp/footer-logo.png"
-                alt=""
+                src="/images/webp/footer-logo.webp"
+                alt="images"
               />
             </div>
             <div className="flex gap-3">
@@ -329,7 +383,10 @@ const Footer = () => {
 export default Footer;
 export const FooterLinkItem = ({ list }: { list: any }) => (
   <div className="group relative w-full md:w-fit">
-    <Link className="text-base !text-[#D2D4D6] font-jakarta" href={list.href}>
+    <Link
+      className="text-base text-decemberSky font-jakarta hover:text-white transition-all duration-200 ease-in-out"
+      href={list.href}
+    >
       {list.text}
     </Link>
   </div>

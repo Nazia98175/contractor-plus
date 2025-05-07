@@ -199,104 +199,23 @@ export const IndustriesDropdownLinks = [
 ];
 export const WhyContractorDropdownlinks = [
   {
-    label: "CRM",
-    description: "Manage Leads & Clients Effortlessly",
+    label: "Your Day With Contractor+",
+    description: "A Free Demo Also If You Wish",
     href: "/",
   },
   {
-    label: "Field Service Management",
-    description: "Organize Jobs, Teams & Real-Time Updates",
+    label: "Pricing",
+    description: "Dollars & Bills Here",
     href: "/",
   },
   {
-    label: "Project Management",
-    description: "Simplify Projects, Timelines & Tasks Easily",
+    label: "Schedule A Demo",
+    description: "A Free Demo Also If You Wish",
     href: "/",
   },
   {
-    label: "Estimate AI",
-    description: "Smart & Accurate, Winning Project Estimations",
-    href: "/",
-  },
-  {
-    label: "Bid Cloud AI",
-    description: "Real-Time Insights for Smarter Decisions",
-    href: "/",
-  },
-  {
-    label: "Lead Generation",
-    description: "Find More Customers To Grow Your Business",
-    href: "/",
-  },
-  {
-    label: "Bookkeeping",
-    description: "Organize Finances, Simplify Your Accounting",
-    href: "/",
-  },
-  { label: "Features", description: "", href: "/" },
-  {
-    label: "Estimates & Quotes",
-    description: "Fast, Accurate, Winning Bids Made Easy",
-    href: "/",
-  },
-  {
-    label: "Deal Flow Tracking",
-    description: "Visualize Your Sales Sales Pipeline",
-    href: "/",
-  },
-  {
-    label: "Scheduling",
-    description: "Optimize Team Efficiency & Job Assignments",
-    href: "/",
-  },
-  {
-    label: "Client Portal",
-    description: "Simple, Secure Project Access for Clients",
-    href: "/",
-  },
-  {
-    label: "Invoicing & Collections",
-    description: "Automate Invoicing & Get Paid Faster",
-    href: "/",
-  },
-  {
-    label: "Two-Way Communications",
-    description: "Centralized Team & Client Conversations",
-    href: "/",
-  },
-  {
-    label: "Time Clock",
-    description: "GPS Verified Time Tracking For The Whole Team",
-    href: "/",
-  },
-  {
-    label: "Mileage Tracking",
-    description: "Automatically Track & Maximize Mileage Deductions",
-    href: "/",
-  },
-  {
-    label: "Asset Tracking",
-    description: "Monitor Equipment, Prevent Costly Losses",
-    href: "/",
-  },
-  {
-    label: "Reporting",
-    description: "Insights to Boost Efficiency & Profits",
-    href: "/",
-  },
-  {
-    label: "PRO Website",
-    description: "Showcase Your Business & Attract Customers",
-    href: "/",
-  },
-  {
-    label: "Payments",
-    description: "Online, In-person, QR & ACH + Instant payouts!",
-    href: "/",
-  },
-  {
-    label: "Property Profiles",
-    description: "Remember Your Property Maintenance",
+    label: "Support",
+    description: "Need Content",
     href: "/",
   },
 ];

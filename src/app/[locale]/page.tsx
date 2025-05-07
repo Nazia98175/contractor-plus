@@ -18,8 +18,6 @@ export default function Home() {
         <TrustBar />
         <TheEngineContractor />
       </div>
-      {/* <h1 className="text-2xl font-bold">{t("heading")}</h1> */}
-      <Whatever />
       <MakeOperation />
       <Footer />
     </div>

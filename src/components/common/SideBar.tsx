@@ -92,8 +92,6 @@ const DropdownItem = ({
             )}
           </ul>
         </div>
-
-        {/* Feature specific buttons that only show for features dropdown */}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { featureLinkslinks } from "./Helper";
 
 const FeaturesDropdown = () => {
   return (
-    <article className="flex flex-col justify-between p-2 gap-6 grow ">
+    <article className="flex flex-col justify-between p-2 gap-6 grow overflow-hidden">
       <div className="grid grid-cols-3 gap-6 lg:text-sm text-xs italic font-semibold text-lightBlack font-inter">
         <h3 className="px-5">Solutions</h3>
         <h4 className="px-5 ">Features</h4>

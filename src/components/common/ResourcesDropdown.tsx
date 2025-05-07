@@ -32,7 +32,7 @@ const ResourcesDropdown = () => {
       </ul>
       <Image
         className="object-cover"
-        src={"/images/webp/group-eng.webp"}
+        src={"/images/webp/resources-dropdown-img.webp"}
         alt="group-eng"
         unoptimized
         width={420}

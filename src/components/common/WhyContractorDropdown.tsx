@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import { ArrowIcon } from "./Icons";
-import { WhyContractorDropdownlinks } from "./Helper";
+import { featureLinkslinks } from "./Helper";
 
 const WhyContractorDropdown = () => {
   return (
     <article className="flex flex-col justify-between p-2 gap-6 grow ">
       <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full overflow-auto">
-        {WhyContractorDropdownlinks.map((link, index) => (
+        {featureLinkslinks.map((link, index) => (
           <li
             className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
             key={index}

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import {
   WhyContractorDropdownlinks,
-  links,
+  featureLinkslinks,
   IndustriesDropdownLinks,
   ResourcesDropdownlinks,
-  PricingDropdownLinks,
 } from "./Helper";
 import Link from "next/link";
 
@@ -109,7 +108,7 @@ const SideBar = ({
     {
       id: "features",
       label: "Features",
-      items: links,
+      items: featureLinkslinks,
     },
     {
       id: "industries",
@@ -119,7 +118,7 @@ const SideBar = ({
     {
       id: "pricing",
       label: "Pricing",
-      items: PricingDropdownLinks,
+      items: IndustriesDropdownLinks,
     },
     {
       id: "resources",

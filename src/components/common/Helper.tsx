@@ -1,8 +1,10 @@
 import {
+  AdminWorkIcon,
   AssetIcon,
   BigChiefAIIcon,
   BookkeepingIcon,
   ClientIcon,
+  EstimateIcon2,
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
@@ -19,6 +21,7 @@ import {
   TimeIcon,
   TrackingIcon,
   TrophyIcon,
+  TurnaroundIcon,
 } from "./Icons";
 
 export const menuItems = [
@@ -322,4 +325,22 @@ export const PricingDropdownLinks = [
   { label: "Support Center", href: "/" },
   { label: "Regional Labor Pricing", href: "/" },
   { label: "Regional Material Pricing", href: "/" },
+];
+
+export const MakeOperationlist = [
+  {
+    title: "3-4x faster",
+    description: "Estimate process",
+    icon: <EstimateIcon2 />,
+  },
+  {
+    title: "24% faster",
+    description: "Job turnaround time",
+    icon: <TurnaroundIcon />,
+  },
+  {
+    title: "38% less",
+    description: "Time spent on admin work",
+    icon: <AdminWorkIcon />,
+  },
 ];

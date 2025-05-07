@@ -50,11 +50,11 @@ const LanguageSelector = () => {
     <select
       value={currentLanguage}
       onChange={handleLanguageChange}
-      className="bg-transparent border rounded px-1 xl:px-2 py-1 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] border-none outline-none"
+      className="bg-transparent border rounded px-1 xl:px-2 py-1 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] cursor-pointer lg:text-xs text-sm border-none outline-none"
     >
       {languages.map((language) => (
         <option
-          className="text-superSilver font-medium tracking-[0.1px] leading-[142.857%] "
+          className="text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs text-sm bg-kuroiBlack cursor-pointer"
           key={language.code}
           value={language.code}
         >

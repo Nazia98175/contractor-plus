@@ -42,7 +42,7 @@
 }
 
 .main-container {
-  @apply max-w-[1308px] w-full mx-auto px-4;
+  @apply max-w-[1308px] w-full mx-auto px-2;
 }
 .main-heading {
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];

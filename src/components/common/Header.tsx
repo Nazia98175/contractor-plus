@@ -10,8 +10,8 @@ const Header = () => {
   const [isshow, setIsShow] = useState(false);
 
   return (
-    <header className="bg-ruinedSmores w-full">
-      <div className="main-container py-5 flex items-center justify-between xl:gap-[54px] lg:gap-3">
+    <header className="bg-ruinedSmores w-full sticky top-0 z-50 py-3">
+      <div className="main-container py-1.5 flex items-center justify-between xl:gap-[54px] lg:gap-3 ">
         <Link className="max-w-[137px] w-full" href={"/"}>
           <LogoIcon />
         </Link>

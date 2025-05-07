@@ -14,6 +14,11 @@
     #dc1112 -10.83%,
     #76090a 83.23%
   );
+  --background-image-black-linear: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 18.46%,
+    #0c0d11 69.34%
+  );
 
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
@@ -34,7 +39,7 @@
   @apply max-w-[1308px] w-full mx-auto px-4;
 }
 .main-heading {
-  @apply text-[26px] xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
+  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
   @apply text-[42px] font-semibold tracking-[-0.84px];

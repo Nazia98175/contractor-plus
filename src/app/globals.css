@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -7,6 +8,7 @@
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
   --color-brownish: #e8e9ea;
+  --color-doctor: #fafafa;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
@@ -22,11 +24,22 @@
     rgba(12, 13, 17, 0) 18.46%,
     #0c0d11 69.34%
   );
+  --background-image-black-red-linear: linear-gradient(
+      0deg,
+      rgba(28, 39, 49, 0.2) 0%,
+      rgba(28, 39, 49, 0.2) 100%
+    ),
+    radial-gradient(
+      116.03% 94.9% at 117.83% 100%,
+      #ee1e25 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
 
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
   --font-inter: "inter", sans-serif;
+  --font-grotesk: "Space Grotesk", sans-serif;
   --shadow-c1: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
@@ -48,7 +61,7 @@
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[42px] font-semibold tracking-[-0.84px];
+  @apply text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%];
 }
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit;

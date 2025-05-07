@@ -54,5 +54,5 @@
   @apply text-base font-montserrat font-semibold text-superSilver;
 }
 .header-li-dropdown {
-  @apply text-base font-extrabold font-inter text-lightBlack p-1 duration-300 ease-linear;
+  @apply xl:text-base text-sm font-extrabold font-inter text-lightBlack p-1 duration-300 ease-linear;
 }

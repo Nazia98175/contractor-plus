@@ -15,7 +15,6 @@ export default function Home() {
       </div>
       {/* <h1 className="text-2xl font-bold">{t("heading")}</h1> */}
 
-      <LanguageSelector />
       <Footer />
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { LogoIcon } from "./Icons";
+import { HamburgerIcon, LogoIcon } from "./Icons";
 import HeaderLiItems from "./HeaderLiItems";
 import LanguageSelector from "../LanguageSelector";
 import SideBar from "./SideBar";
@@ -17,14 +17,14 @@ const Header = () => {
         </div>
         <div className="flex items-center xl:gap-3 gap-2">
           <LanguageSelector />
-          <button className="text-sm text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
+          <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
             Login
           </button>
-          <button className="text-sm text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
+          <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
             Sign Up
           </button>
           <button className="lg:hidden" onClick={() => setIsShow(true)}>
-            hamburger
+            <HamburgerIcon />
           </button>
           <SideBar isshow={isshow} setIsShow={setIsShow} />
         </div>

@@ -1,7 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { ArrowIcon, ServiceIcon } from "./Icons";
+import {
+  ArrowIcon,
+  AssetIcon,
+  EstimatesIcon,
+  EstimaticIcon,
+  FieldServiceIcon,
+  ProjectIcon,
+  ReportingIcon,
+  SchedulingIcon,
+  ServiceIcon,
+  TrackingIcon,
+  TrophyIcon,
+} from "./Icons";
 
 const FeaturesDropdown = () => {
   const links = [
@@ -15,57 +27,67 @@ const FeaturesDropdown = () => {
       label: "Estimates & Quotes",
       description: "Organize Jobs, Teams & Real-Time Updates",
       href: "/",
+      icon: <EstimatesIcon />,
     },
     {
       label: "Mileage Tracking",
       description: "Simplify Projects, Timelines & Tasks Easily",
       href: "/",
+      icon: <TrackingIcon />,
     },
     {
       label: "Field Service Management",
       description: "Smart & Accurate, Winning Project Estimations",
       href: "/",
+      icon: <FieldServiceIcon />,
     },
     {
       label: "Deal Flow Tracking",
       description: "Real-Time Insights for Smarter Decisions",
       href: "/",
+      icon: <TrophyIcon />,
     },
     {
       label: "Asset Tracking",
       description: "Find More Customers To Grow Your Business",
       href: "/",
+      icon: <AssetIcon />,
     },
     {
       label: "Project Management",
       description: "Organize Finances, Simplify Your Accounting",
       href: "/",
+      icon: <ProjectIcon />,
     },
     {
       label: "Scheduling",
       description: "Organize Finances, Simplify Your Accounting",
-
+      icon: <SchedulingIcon />,
       href: "/",
     },
     {
       label: "Reporting",
       description: "Fast, Accurate, Winning Bids Made Easy",
       href: "/",
+      icon: <SchedulingIcon />,
     },
     {
       label: "Estimatic AI",
       description: "Visualize Your Sales Sales Pipeline",
       href: "/",
+      icon: <ReportingIcon />,
     },
     {
       label: "Client Portal",
       description: "Optimize Team Efficiency & Job Assignments",
       href: "/",
+      icon: <EstimaticIcon />,
     },
     {
       label: "PRO Website",
       description: "Simple, Secure Project Access for Clients",
       href: "/",
+      // icon: <ClientIcon />,
     },
     {
       label: "Big Chief AI",

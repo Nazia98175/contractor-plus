@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -9,6 +10,7 @@
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
   --color-decemberSky: #d2d4d6;
+  --color-lightBlack: #1c2731;
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,
@@ -23,6 +25,7 @@
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
+  --font-inter: "inter", sans-serif;
 }
 
 @font-face {
@@ -49,4 +52,7 @@
 }
 .header-li {
   @apply text-base font-montserrat font-semibold text-superSilver;
+}
+.header-li-dropdown {
+  @apply text-base font-extrabold font-inter text-lightBlack p-1 duration-300 ease-linear;
 }

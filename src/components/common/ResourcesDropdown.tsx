@@ -17,13 +17,16 @@ const ResourcesDropdown = () => {
     { label: "Regional Material Pricing", href: "/" },
   ];
   return (
-    <article className="flex  justify-between p-2">
-      <ul className="grid grid-cols-2 gap-[34px]">
+    <article className="flex  justify-between p-2 gap-6">
+      <ul className="grid grid-cols-2 gap-x-6 gap-y-3 w-full">
         {links.map((link, index) => (
-          <li key={index}>
+          <li
+            className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
+            key={index}
+          >
             <Link
               href={link.href}
-              className="text-[#1C2731] text-base font-extrabold font-inter"
+              className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white"
             >
               {link.label}
             </Link>
@@ -31,8 +34,8 @@ const ResourcesDropdown = () => {
         ))}
       </ul>
       <Image
-        className="object-cover"
-        src={"/images/webp/group-eng.webp"}
+        className="object-contain max-w-[420px] w-full"
+        src={"/images/webp/resources-dropdown-img.webp"}
         alt="group-eng"
         unoptimized
         width={420}

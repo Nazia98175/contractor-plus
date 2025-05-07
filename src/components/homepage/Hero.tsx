@@ -11,7 +11,7 @@ const Hero = () => {
       />
       <img
         src="/images/webp/hero-mobile.webp"
-        alt="Hero"
+        alt="Hero Mobile"
         className="absolute object-center right-0 w-full block md:hidden top-0"
       />
 

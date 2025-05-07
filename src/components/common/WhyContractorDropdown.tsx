@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { ArrowIcon } from "./Icons";
 
 const WhyContractorDropdown = () => {
   const links = [
@@ -108,8 +109,8 @@ const WhyContractorDropdown = () => {
   ];
 
   return (
-    <article className="flex justify-between p-2 gap-6">
-      <ul className="grid grid-cols-2 gap-x-6 gap-y-3 w-full">
+    <article className="flex flex-col justify-between p-2 gap-6 grow ">
+      <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full overflow-auto">
         {links.map((link, index) => (
           <li
             className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
@@ -129,14 +130,31 @@ const WhyContractorDropdown = () => {
           </li>
         ))}
       </ul>
-      <Image
-        className="object-contain max-w-[420px] w-full"
-        src={"/images/webp/resources-dropdown-img.webp"}
-        alt="group-eng"
-        unoptimized
-        width={420}
-        height={290}
-      />
+      <div className="flex items-center justify-between gap-6 p-[6px]">
+        <Link
+          className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
+          href={"/"}
+        >
+          See All Features
+          <ArrowIcon />
+        </Link>
+        <div className="flex items-center gap-10">
+          <Link
+            className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
+            href={"/"}
+          >
+            Integrations
+            <ArrowIcon />
+          </Link>
+          <Link
+            className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
+            href={"/"}
+          >
+            Product Updates
+            <ArrowIcon />
+          </Link>
+        </div>
+      </div>
     </article>
   );
 };

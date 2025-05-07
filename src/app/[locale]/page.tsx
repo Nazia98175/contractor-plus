@@ -4,6 +4,7 @@ import Hero from "@/components/homepage/Hero";
 import MakeOperation from "@/components/homepage/MakeOperation";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
+import Whatever from "@/components/homepage/Whatever";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <TheEngineContractor />
       </div>
       {/* <h1 className="text-2xl font-bold">{t("heading")}</h1> */}
+      <Whatever />
       <MakeOperation />
       <Footer />
     </div>

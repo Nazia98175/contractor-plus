@@ -15,7 +15,6 @@ const Header = () => {
         <div className="lg:flex hidden gap-[22px]">
           <HeaderLiItems />
         </div>
-
         <div className="flex items-center xl:gap-3 gap-2">
           <LanguageSelector />
           <button className="text-sm text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">

@@ -263,3 +263,45 @@ export const MakeOperationlist = [
     icon: <AdminWorkIcon />,
   },
 ];
+
+export interface Review {
+  profileUrl: string;
+  userName: string;
+  companyIcon: string;
+  rating: number;
+  reviewText: string;
+}
+export const OurReviewList: Review[] = [
+  {
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Jessica J.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 5,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Michael T.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 5,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Sarah K.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 4,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "David M.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 5,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+];

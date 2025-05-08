@@ -27,8 +27,8 @@ export default function Home() {
         <Finally />
         <CoreFeatures />
         <ContractorIndustry />
-        <OurReviews />
       </div>
+      <OurReviews />
       <Whatever />
       <MakeOperation />
       <EntireBusiness />

@@ -143,7 +143,7 @@ const LanguageSelector = () => {
     <div className="relative " ref={dropdownRef}>
       {/* Dropdown toggle button with hover effect */}
       <div
-        className="flex items-center font-montserrat w-fit lg:gap-4 gap-2 cursor-pointer bg-transparent px-1 xl:px-2 py-1 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
+        className="flex items-center font-montserrat font-600 w-fit lg:gap-4 gap-2 cursor-pointer bg-transparent px-1 xl:px-2 py-1 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
         onClick={toggleDropdown}
       >
         <div className="flex lg:gap-2 gap-1 items-center">

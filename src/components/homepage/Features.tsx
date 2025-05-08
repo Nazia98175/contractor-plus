@@ -1,4 +1,9 @@
+"use client";
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const featureData = [
   {
@@ -14,8 +19,58 @@ const featureData = [
     desc: "Toggle between workspaces for different locations, teams, or businesses.",
   },
 ];
+
 const Features = () => {
-  return <section className="pt-12 pb-10">Features</section>;
+  return (
+    <section className="pt-12 pb-10 main-container">
+      {/* Slider for mobile (hidden on lg and above) */}
+      <div className="lg:hidden">
+        <Swiper
+          modules={[Pagination]}
+          slidesPerView={1}
+          spaceBetween={48}
+          pagination={{ clickable: true }}
+          className="mySwiper"
+        >
+          {featureData.map((obj, index) => (
+            <SwiperSlide key={index}>
+              <article className="font-jakarta p-3 flex flex-col justify-between">
+                <div>
+                  <h4 className="text-2xl font-bold text-winterWay text-center capitalize">
+                    {obj.title}
+                  </h4>
+                  <p className="mt-4 paragraph-text text-wallStreet text-center mb-5">
+                    {obj.desc}
+                  </p>
+                </div>
+                <div className="h-[187px] rounded-[6px] bg-secondary"></div>
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Grid for larger screens (hidden on mobile) */}
+      <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {featureData.map((obj, index) => (
+          <article
+            key={index}
+            className="font-jakarta p-3 flex flex-col justify-between"
+          >
+            <div>
+              <h4 className="text-2xl font-bold text-winterWay text-center capitalize">
+                {obj.title}
+              </h4>
+              <p className="mt-4 paragraph-text text-wallStreet text-center mb-5">
+                {obj.desc}
+              </p>
+            </div>
+            <div className="h-[187px] rounded-[6px] bg-secondary"></div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Features;

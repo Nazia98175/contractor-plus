@@ -44,7 +44,7 @@ const CoreFeatures = () => {
             The first CRM that thinks like a contractor
           </h4>
           <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full"></div>
-          <p className="text-sm sm:text-base md:text-lg font-medium text-wallStreet max-w-[620px] font-jakarta">
+          <p className="paragraph-text font-medium text-wallStreet max-w-[620px] font-jakarta">
             Most “contractor CRMs” are just contact pages with a few job links.{" "}
             <span className="text-secondary">
               Contractor+ brings the full picture: timelines, call transcripts,

@@ -2,9 +2,8 @@ import React from "react";
 
 const EntireBusiness = () => {
   return (
-    <div>
-      {" "}
-      <div className="pt-[75px]">
+    <div className="bg-[#0C0D11]">
+      <div className="py-[75px]">
         <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">
           Everything to run your entire business in one place
         </h3>

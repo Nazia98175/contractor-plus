@@ -66,7 +66,7 @@ const Footer = () => {
     { title: "Explore", range: [29, 38] },
   ];
   return (
-    <footer className="bg-black py-10 w-full">
+    <footer className="bg-[#0C0D11] py-10 w-full">
       <div className="main-container">
         <div className="space-y-5 max-w-[414px] w-full mx-auto flex flex-col justify-center items-center">
           <span>

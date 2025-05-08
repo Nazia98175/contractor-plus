@@ -28,7 +28,7 @@ const OurReviews: React.FC = () => {
       companyIcon: "/images/svg/randsIcon.svg",
       rating: 5,
       reviewText:
-        "This platform has completely transformed how I manage my contracting business. Highly recommended!",
+        "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
     },
     {
       profileUrl: "/images/webp/review-profile.webp",
@@ -36,7 +36,7 @@ const OurReviews: React.FC = () => {
       companyIcon: "/images/svg/randsIcon.svg",
       rating: 4,
       reviewText:
-        "The estimating features alone have saved me countless hours. Great customer service too.",
+        "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
     },
     {
       profileUrl: "/images/webp/review-profile.webp",
@@ -44,23 +44,7 @@ const OurReviews: React.FC = () => {
       companyIcon: "/images/svg/randsIcon.svg",
       rating: 5,
       reviewText:
-        "After trying several other solutions, Contractor+ is by far the most intuitive and comprehensive tool.",
-    },
-    {
-      profileUrl: "/images/webp/review-profile.webp",
-      userName: "Emily R.",
-      companyIcon: "/images/svg/randsIcon.svg",
-      rating: 5,
-      reviewText:
-        "My clients are impressed with the professional estimates I can now create in minutes.",
-    },
-    {
-      profileUrl: "/images/webp/review-profile.webp",
-      userName: "Robert L.",
-      companyIcon: "/images/svg/randsIcon.svg",
-      rating: 4,
-      reviewText:
-        "The mobile app makes it easy to manage projects on the go. Perfect for busy contractors.",
+        "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
     },
   ];
 
@@ -151,33 +135,36 @@ const OurReviews: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="relative">
+        <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40  hidden lg:block blur-2xl"></div>
+        <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40  hidden lg:block blur-2xl"></div>
+        {/* First Marquee going left */}
+        <div className="pt-[77px] flex">
+          <Marquee
+            direction="left"
+            speed={40}
+            autoFill={true}
+            pauseOnHover={true}
+          >
+            {OurReviewList.slice(0, 3).map((review, index) => (
+              <ReviewCard key={`left-${index}`} review={review} />
+            ))}
+          </Marquee>
+        </div>
 
-      {/* First Marquee going left */}
-      <div className="pt-[77px] flex">
-        <Marquee
-          direction="left"
-          speed={40}
-          autoFill={true}
-          pauseOnHover={true}
-        >
-          {OurReviewList.slice(0, 3).map((review, index) => (
-            <ReviewCard key={`left-${index}`} review={review} />
-          ))}
-        </Marquee>
-      </div>
-
-      {/* Second Marquee going right */}
-      <div className="pt-[27px] flex">
-        <Marquee
-          direction="right"
-          speed={40}
-          autoFill={true}
-          pauseOnHover={true}
-        >
-          {OurReviewList.slice(3).map((review, index) => (
-            <ReviewCard key={`right-${index}`} review={review} />
-          ))}
-        </Marquee>
+        {/* Second Marquee going right */}
+        <div className="pt-[27px] hidden md:flex">
+          <Marquee
+            direction="right"
+            speed={40}
+            autoFill={true}
+            pauseOnHover={true}
+          >
+            {OurReviewList.slice(3).map((review, index) => (
+              <ReviewCard key={`right-${index}`} review={review} />
+            ))}
+          </Marquee>
+        </div>
       </div>
     </section>
   );

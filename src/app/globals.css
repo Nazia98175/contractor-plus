@@ -143,14 +143,13 @@ html {
 }
 .first-border {
   border-radius: 38px;
-  border: 1px solid rgba(242, 19, 20, 0.04);
+  border: 1px solid rgba(242, 19, 20, 0.12);
 }
-.first-second {
+.second-border {
   border-radius: 28px;
-  /* border: 1px solid rgba(242, 19, 20, 0.12); */
-  border: 2px solid red;
-}
-.first-third {
-  border-radius: 20px;
   border: 1px solid rgba(242, 19, 20, 0.2);
+}
+.third-border {
+  border-radius: 20px;
+  border: 1px solid rgba(242, 19, 20, 0.4);
 }

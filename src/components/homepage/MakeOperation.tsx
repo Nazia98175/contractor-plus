@@ -3,7 +3,7 @@ import { RedClipIcon } from "../common/Icons";
 
 const MakeOperation = () => {
   return (
-    <section className="bg-[#0D0F13] relative">
+    <section className="relative">
       <img
         className="top-0 left-0 absolute h-[600px] w-full pointer-events-none"
         src="/images/png/stars.png"

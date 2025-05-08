@@ -29,8 +29,10 @@ export default function Home() {
       </div>
       <ContractorIndustry />
       <OurReviews />
-      <Whatever />
-      <MakeOperation />
+      <div className="bg-[url('/images/png/stars.png')] bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">
+        <Whatever />
+        <MakeOperation />
+      </div>
       <EntireBusiness />
       <Footer />
     </div>

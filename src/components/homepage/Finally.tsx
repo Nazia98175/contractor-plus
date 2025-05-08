@@ -12,7 +12,7 @@ const features = [
 
 const Finally = () => {
   return (
-    <section className="main-container">
+    <section className="relative">
       <div className="space-y-4">
         <h2 className="section-heading text-center text-white">
           Finally, one platform to replace them all
@@ -33,7 +33,12 @@ const Finally = () => {
           ))}
         </div>
 
-        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16">
+        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative">
+          <img
+            src="/images/webp/claud.webp"
+            alt="Claud background"
+            className="absolute w-full bottom-0 z-20 left-0 h-[140px]"
+          />
           <div className="flex flex-row lg:flex-col gap-4">
             <img
               src="/images/webp/software-advice.webp"
@@ -51,7 +56,7 @@ const Finally = () => {
               className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full"
             />
           </div>
-          <div className="relative md:pr-20 lg:pr-32 xl:pr-40">
+          <div className="relative md:pr-20 lg:pr-32 xl:pr-40 lg:overflow-hidden">
             <img
               src="/images/webp/ipad.webp"
               alt="Ipad Design"

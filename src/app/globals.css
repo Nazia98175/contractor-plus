@@ -109,6 +109,9 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-button {
-  cursor: pointer;
+.bg-testimonial-left {
+  background: linear-gradient(270deg, #fdfdfd00, #ffffff);
+}
+.bg-testimonial-right {
+  background: linear-gradient(91deg, #fdfdfd00, #ffffff);
 }

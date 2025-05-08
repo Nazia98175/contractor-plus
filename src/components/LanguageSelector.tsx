@@ -165,7 +165,7 @@ const LanguageSelector = () => {
 
       {/* Dropdown menu with CSS transitions */}
       <div
-        className={`absolute z-50 mt-1 right-0 lg:w-[201px] w-[205px]  bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right ${
+        className={`absolute z-50 mt-1 right-0 lg:w-[201px] w-[205px]  bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right no-scrollbar ${
           isOpen
             ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
             : "opacity-0 scale-95 -translate-y-2 pointer-events-none"

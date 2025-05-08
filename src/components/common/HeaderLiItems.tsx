@@ -65,7 +65,7 @@ const HeaderLiItems = () => {
       </div>
 
       <div
-        className={`absolute left-0 right-0 top-0 mt-[67.88px] bg-[#F8F8F8] mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[700px]
+        className={`absolute left-0 right-0 top-0 mt-[67.88px] bg-[#F8F8F8] mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[400px]
           transform transition-all duration-300 ease-in-out origin-top flex flex-col overflow-auto 
           ${
             activeMenu

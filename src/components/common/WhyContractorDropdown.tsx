@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const WhyContractorDropdown = () => {
   return (
-    <article className="flex flex-col justify-between p-2 gap-6 grow ">
+    <article className="flex flex-col justify-between p-2 gap-6">
       <div className="flex items-start">
         <ul className="grid  gap-x-6 gap-y-3 w-full overflow-auto">
           {WhyContractorDropdownlinks.map((link, index) => (

@@ -4,12 +4,12 @@ import { featureLinkslinks } from "./Helper";
 
 const FeaturesDropdown = () => {
   return (
-    <article className="flex flex-col justify-between p-2 gap-6 grow overflow-hidden">
+    <article className="flex flex-col justify-between p-2 gap-6">
       <div className="grid grid-cols-3 gap-6 lg:text-sm text-xs italic font-semibold text-lightBlack font-inter">
         <h3 className="px-5">Solutions</h3>
         <h4 className="px-5 ">Features</h4>
       </div>
-      <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full overflow-auto">
+      <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full">
         {featureLinkslinks.map((link, index) => (
           <li
             className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"

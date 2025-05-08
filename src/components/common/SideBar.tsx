@@ -159,7 +159,7 @@ const SideBar = ({
     <>
       {isshow && (
         <div
-          className="fixed inset-0 bg-[#000000ab] pointer-events-none bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
+          className="fixed inset-0 bg-[#000000ab] bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
           onClick={() => setIsShow(false)}
         />
       )}

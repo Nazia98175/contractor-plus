@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 z-50 py-3 transition-all duration-300 ${
+      className={`w-full fixed top-0 z-[999] py-3 transition-all duration-300 ${
         scrolled ? "bg-ruinedSmores" : "bg-none"
       }`}
     >

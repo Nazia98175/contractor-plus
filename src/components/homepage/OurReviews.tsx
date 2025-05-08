@@ -22,7 +22,7 @@ const OurReviews: React.FC = () => {
               <h3 className="text-winterWay text-sm font-bold font-jakarta">
                 Excellent
               </h3>
-              <p className="text-base font-extrabold text-[#439777] font-jakarta">
+              <p className="text-base font-extrabold text-dancingJewel font-jakarta">
                 4.9
               </p>
               <span>

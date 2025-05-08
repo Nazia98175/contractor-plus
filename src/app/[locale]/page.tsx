@@ -25,8 +25,8 @@ export default function Home() {
         <TheEngineContractor />
         <ContractorPlatforms />
         <Finally />
-        <CoreFeatures />
       </div>
+      <CoreFeatures />
       <ContractorIndustry />
       <OurReviews />
       <div className="bg-[url('/images/png/stars.png')] bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">

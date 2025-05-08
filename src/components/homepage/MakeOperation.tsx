@@ -3,13 +3,13 @@ import { RedClipIcon } from "../common/Icons";
 
 const MakeOperation = () => {
   return (
-    <section className="relative">
+    <section className="bg-kuroilight relative">
       <img
         className="top-0 left-0 absolute h-[600px] w-full pointer-events-none"
         src="/images/png/stars.png"
         alt="stars image"
       />
-      <div className="hidden lg:block absolute bottom-0 left-[70px] max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-[#6DDCFF] blur-[34px] opacity-20 pointer-events-none"></div>
+      <div className="hidden lg:block absolute bottom-0 left-[70px] max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
       {/* <img
         className="top-0 right-0 absolute h-[600px] w-[300px]"
         src="/images/png/large-comet.png"

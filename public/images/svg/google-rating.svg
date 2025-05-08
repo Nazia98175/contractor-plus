@@ -16,8 +16,8 @@
 <path d="M87.0919 9.95159C86.4291 10.6204 85.6056 10.9547 84.6204 10.9547C83.6351 10.9547 82.8116 10.6204 82.1499 9.95159C81.4871 9.28282 81.1568 8.46397 81.1568 7.49614C81.1568 6.5283 81.4871 5.70945 82.1499 5.04069C82.8116 4.37192 83.6351 4.03644 84.6204 4.03644C85.6 4.03644 86.4224 4.37303 87.0875 5.0451C87.7525 5.71718 88.0851 6.53382 88.0851 7.49614C88.0851 8.46397 87.7537 9.28282 87.0919 9.95159ZM82.7891 9.39649C83.2879 9.8931 83.898 10.1403 84.6204 10.1403C85.3427 10.1403 85.9539 9.89199 86.4516 9.39649C86.9504 8.89988 87.2009 8.26643 87.2009 7.49614C87.2009 6.72584 86.9504 6.09239 86.4516 5.59579C85.9539 5.09918 85.3427 4.85198 84.6204 4.85198C83.898 4.85198 83.2879 5.10028 82.7891 5.59579C82.2915 6.09239 82.0409 6.72584 82.0409 7.49614C82.0409 8.26643 82.2915 8.89988 82.7891 9.39649Z" fill="white"/>
 <path d="M89.3007 10.8069V4.18543H90.3545L93.6304 9.3358H93.6675L93.6304 8.06007V4.18543H94.4966V10.8069H93.5922L90.1646 5.40598H90.1275L90.1646 6.68171V10.8069H89.3007Z" fill="white"/>
 <defs>
-<filter id="filter0_ii_22_10174" x="15.3801" y="4" width="27.489" height="30.744" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_ii_22_10174" x="15.3801" y="4" width="27.489" height="30.744" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="-0.795"/>
@@ -30,8 +30,8 @@
 <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
 <feBlend mode="normal" in2="effect1_innerShadow_22_10174" result="effect2_innerShadow_22_10174"/>
 </filter>
-<filter id="filter1_i_22_10174" x="15.9319" y="19.3719" width="19.866" height="15.372" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter1_i_22_10174" x="15.9319" y="19.3719" width="19.866" height="15.372" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="-0.795"/>
@@ -40,29 +40,29 @@
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_22_10174"/>
 </filter>
 <linearGradient id="paint0_linear_22_10174" x1="29.462" y1="5.87437" x2="9.40308" y2="25.8544" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00A0FF"/>
-<stop offset="0.0066" stop-color="#00A1FF"/>
-<stop offset="0.2601" stop-color="#00BEFF"/>
-<stop offset="0.5122" stop-color="#00D2FF"/>
-<stop offset="0.7604" stop-color="#00DFFF"/>
-<stop offset="1" stop-color="#00E3FF"/>
+<stop stopColor="#00A0FF"/>
+<stop offset="0.0066" stopColor="#00A1FF"/>
+<stop offset="0.2601" stopColor="#00BEFF"/>
+<stop offset="0.5122" stopColor="#00D2FF"/>
+<stop offset="0.7604" stopColor="#00DFFF"/>
+<stop offset="1" stopColor="#00E3FF"/>
 </linearGradient>
 <linearGradient id="paint1_linear_22_10174" x1="43.7868" y1="19.372" x2="14.9799" y2="19.372" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FFE000"/>
-<stop offset="0.4087" stop-color="#FFBD00"/>
-<stop offset="0.7754" stop-color="#FFA500"/>
-<stop offset="1" stop-color="#FF9C00"/>
+<stop stopColor="#FFE000"/>
+<stop offset="0.4087" stopColor="#FFBD00"/>
+<stop offset="0.7754" stopColor="#FFA500"/>
+<stop offset="1" stopColor="#FF9C00"/>
 </linearGradient>
 <linearGradient id="paint2_linear_22_10174" x1="33.0667" y1="22.1138" x2="5.86435" y2="49.2092" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FF3A44"/>
-<stop offset="1" stop-color="#C31162"/>
+<stop stopColor="#FF3A44"/>
+<stop offset="1" stopColor="#C31162"/>
 </linearGradient>
 <linearGradient id="paint3_linear_22_10174" x1="12.1952" y1="-4.32401" x2="24.3418" y2="7.77483" gradientUnits="userSpaceOnUse">
-<stop stop-color="#32A071"/>
-<stop offset="0.0685" stop-color="#2DA771"/>
-<stop offset="0.4762" stop-color="#15CF74"/>
-<stop offset="0.8009" stop-color="#06E775"/>
-<stop offset="1" stop-color="#00F076"/>
+<stop stopColor="#32A071"/>
+<stop offset="0.0685" stopColor="#2DA771"/>
+<stop offset="0.4762" stopColor="#15CF74"/>
+<stop offset="0.8009" stopColor="#06E775"/>
+<stop offset="1" stopColor="#00F076"/>
 </linearGradient>
 </defs>
 </svg>

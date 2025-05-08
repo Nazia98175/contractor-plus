@@ -607,8 +607,8 @@ export const Pathbg = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(-1.28048e-05 20.4235) rotate(90) scale(354.479 37.0727)"
       >
-        <stop stop-color="#1C2731" />
-        <stop offset="1" stop-color="#EE1E25" stop-opacity="0" />
+        <stop stopColor="#1C2731" />
+        <stop offset="1" stopColor="#EE1E25" stopOpacity="0" />
       </radialGradient>
     </defs>
   </svg>
@@ -1024,7 +1024,7 @@ export const OnIcon: React.FC<OnIconProps> = ({ className = "" }) => (
       data-figma-bg-blur-radius="4.4"
       d="M62.433 0.892578H16.2762C7.779 0.892578 0.890625 7.78087 0.890625 16.278V62.4343C0.890625 70.9315 7.779 77.8198 16.2762 77.8198H62.433C70.9303 77.8198 77.8187 70.9315 77.8187 62.4343V16.278C77.8187 7.78087 70.9303 0.892578 62.433 0.892578Z"
       fill="url(#paint0_radial_84_12022)"
-      fill-opacity="0.05"
+      fillOpacity="0.05"
     />
     <defs>
       <clipPath
@@ -1041,8 +1041,8 @@ export const OnIcon: React.FC<OnIconProps> = ({ className = "" }) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(41.5889 40.8942) scale(66.8852 81.1886)"
       >
-        <stop stop-color="#FF5201" />
-        <stop offset="1" stop-color="#FF5201" stop-opacity="0" />
+        <stop stopColor="#FF5201" />
+        <stop offset="1" stopColor="#FF5201" stopOpacity="0" />
       </radialGradient>
     </defs>
   </svg>
@@ -1065,7 +1065,7 @@ export const OnIconw: React.FC<OnIconProps> = ({ className = "" }) => (
         fill="#1C2731"
       />
       <g
-        clip-path="url(#paint0_angular_84_12020_clip_path)"
+        clipPath="url(#paint0_angular_84_12020_clip_path)"
         data-figma-skip-parse="true"
         mask="url(#path-1-inside-1_84_12020)"
       >
@@ -1102,9 +1102,9 @@ export const OnIconw: React.FC<OnIconProps> = ({ className = "" }) => (
         width="91.4"
         height="91.4"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"

@@ -42,7 +42,7 @@ const Header = () => {
         <Link className="max-w-[137px] w-full" href={"/"}>
           <LogoIcon />
         </Link>
-        <div className="lg:flex hidden gap-[22px]">
+        <div className="lg:flex hidden gap-[22px] ">
           <HeaderLiItems />
         </div>
         <div className="flex items-center xl:gap-3 gap-2">

@@ -20,7 +20,7 @@ const contractPlatforms = [
 const ContractorPlatforms = () => {
   return (
     <section className="main-container flex flex-col gap-11">
-      <h2 className="text-[32px] font-jakarta font-semibold text-secondary text-center max-w-[652px] mx-auto">
+      <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
         There are dozens of contractor platforms, but each one has a catch
       </h2>
       <div className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gapy-x-3 gap-y-8 xl:gap-11">

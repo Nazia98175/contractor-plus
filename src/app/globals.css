@@ -47,6 +47,15 @@
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c2: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+
+  --shadow-c3: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04),
+    -81.095px 72.985px 96.385px 0px rgba(0, 0, 0, 0.07),
+    -56.444px 50.8px 62.339px 0px rgba(0, 0, 0, 0.09),
+    -37.02px 33.318px 38.683px 0px rgba(0, 0, 0, 0.1),
+    -22.299px 20.069px 23.237px 0px rgba(0, 0, 0, 0.12),
+    -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
+    -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
+    -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
 }
 
 @font-face {
@@ -67,6 +76,9 @@
 }
 .section-heading {
   @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%];
+}
+.sub-heading {
+  @apply text-[26px] !leading-[128%] sm:text-[28px] md:text-[32px] font-jakarta;
 }
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit;

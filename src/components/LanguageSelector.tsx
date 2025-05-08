@@ -148,7 +148,7 @@ const LanguageSelector = () => {
       >
         <div className="flex lg:gap-2 gap-1 items-center">
           <Image
-            className="object-cover"
+            className="object-cover sm:w-5 w-3"
             src={currentLanguage.imgPath}
             width={20}
             height={20}

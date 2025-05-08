@@ -17,6 +17,10 @@
   --color-monstrousGreen: #21c912;
   --color-darkGrey: #999;
   --color-lightBlack: #1c2731;
+  --color-dancingJewel: #439777;
+  --color-doctor: #fafafa;
+  --color-kuroilight: #0d0f13;
+  --color-athenaBlue: #6ddcff;
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,
@@ -126,4 +130,31 @@ html {
 }
 .bg-testimonial-right {
   background: linear-gradient(91deg, #fdfdfd00, #ffffff);
+}
+.one {
+  background: radial-gradient(
+    105.54% 86.95% at 52.9% 52%,
+    rgba(255, 82, 1, 0.05) 0%,
+    rgba(255, 82, 1, 0) 100%
+  );
+  /* backdrop-filter: blur(2.200000047683716px); */
+}
+.two {
+  background: var(--Gray-Gray-900, #1c2731);
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0);
+  /* filter: blur(1.600000023841858px); */
+}
+.first-border {
+  border-radius: 38px;
+  border: 1px solid rgba(242, 19, 20, 0.04);
+}
+.first-second {
+  border-radius: 28px;
+  /* border: 1px solid rgba(242, 19, 20, 0.12); */
+  border: 2px solid red;
+}
+.first-third {
+  border-radius: 20px;
+  border: 1px solid rgba(242, 19, 20, 0.2);
 }

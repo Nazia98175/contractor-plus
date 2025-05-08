@@ -971,3 +971,130 @@ export const RedClipIcon = () => (
     </defs>
   </svg>
 );
+interface OnIconProps {
+  className?: string;
+}
+export const OnIcon: React.FC<OnIconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="78"
+    height="78"
+    viewBox="0 0 78 78"
+    fill="none"
+    className={className}
+  >
+    <foreignObject x="-3.50938" y="-3.50742" width="85.728" height="85.7268">
+      <div
+        style={{
+          backdropFilter: "blur(2.2px)",
+          clipPath: "url(#bgblur_0_84_12022_clip_path)",
+          height: "100%",
+          width: "100%",
+        }}
+      ></div>
+    </foreignObject>
+    <path
+      data-figma-bg-blur-radius="4.4"
+      d="M62.433 0.892578H16.2762C7.779 0.892578 0.890625 7.78087 0.890625 16.278V62.4343C0.890625 70.9315 7.779 77.8198 16.2762 77.8198H62.433C70.9303 77.8198 77.8187 70.9315 77.8187 62.4343V16.278C77.8187 7.78087 70.9303 0.892578 62.433 0.892578Z"
+      fill="url(#paint0_radial_84_12022)"
+      fill-opacity="0.05"
+    />
+    <defs>
+      <clipPath
+        id="bgblur_0_84_12022_clip_path"
+        transform="translate(3.50938 3.50742)"
+      >
+        <path d="M62.433 0.892578H16.2762C7.779 0.892578 0.890625 7.78087 0.890625 16.278V62.4343C0.890625 70.9315 7.779 77.8198 16.2762 77.8198H62.433C70.9303 77.8198 77.8187 70.9315 77.8187 62.4343V16.278C77.8187 7.78087 70.9303 0.892578 62.433 0.892578Z" />
+      </clipPath>
+      <radialGradient
+        id="paint0_radial_84_12022"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(41.5889 40.8942) scale(66.8852 81.1886)"
+      >
+        <stop stop-color="#FF5201" />
+        <stop offset="1" stop-color="#FF5201" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+export const OnIconw: React.FC<OnIconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="93"
+    height="93"
+    viewBox="0 0 93 93"
+    fill="none"
+    className={className}
+  >
+    <g filter="url(#filter0_f_84_12020)">
+      <mask id="path-1-inside-1_84_12020" fill="white">
+        <path d="M72 4H21C11.6112 4 4 11.6112 4 21V72C4 81.3888 11.6112 89 21 89H72C81.3888 89 89 81.3888 89 72V21C89 11.6112 81.3888 4 72 4Z" />
+      </mask>
+      <path
+        d="M72 4H21C11.6112 4 4 11.6112 4 21V72C4 81.3888 11.6112 89 21 89H72C81.3888 89 89 81.3888 89 72V21C89 11.6112 81.3888 4 72 4Z"
+        fill="#1C2731"
+      />
+      <g
+        clip-path="url(#paint0_angular_84_12020_clip_path)"
+        data-figma-skip-parse="true"
+        mask="url(#path-1-inside-1_84_12020)"
+      >
+        <g transform="matrix(0.0683761 0.0189538 -0.0212186 0.0765464 43.0164 47.1967)">
+          <foreignObject
+            x="-799.248"
+            y="-799.248"
+            width="1598.5"
+            height="1598.5"
+          >
+            <div
+              style={{
+                background:
+                  "conic-gradient(from 90deg, rgba(0, 0, 0, 0) 0deg, rgba(255, 82, 1, 0.2723) 294.896deg, rgba(255, 82, 1, 1) 360deg)",
+                height: "100%",
+                width: "100%",
+                opacity: 1,
+              }}
+            ></div>
+          </foreignObject>
+        </g>
+      </g>
+      <path
+        d="M21 4V5H72V4V3H21V4ZM72 4V5C80.8366 5 88 12.1634 88 21H89H90C90 11.0589 81.9411 3 72 3V4ZM89 21H88V72H89H90V21H89ZM89 72H88C88 80.8366 80.8366 88 72 88V89V90C81.9411 90 90 81.9411 90 72H89ZM72 89V88H21V89V90H72V89ZM21 89V88C12.1634 88 5 80.8366 5 72H4H3C3 81.9411 11.0589 90 21 90V89ZM4 72H5V21H4H3V72H4ZM4 21H5C5 12.1634 12.1634 5 21 5V4V3C11.0589 3 3 11.0589 3 21H4Z"
+        data-figma-gradient-fill='{"type":"GRADIENT_ANGULAR","stops":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"position":0.0},{"color":{"r":1.0,"g":0.32156863808631897,"b":0.0039215688593685627,"a":0.27230533957481384},"position":0.81915432214736938},{"color":{"r":1.0,"g":0.32156863808631897,"b":0.0039215688593685627,"a":1.0},"position":1.0}],"stopsVar":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"position":0.0},{"color":{"r":1.0,"g":0.32156863808631897,"b":0.0039215688593685627,"a":0.27230533957481384},"position":0.81915432214736938},{"color":{"r":1.0,"g":0.32156863808631897,"b":0.0039215688593685627,"a":1.0},"position":1.0}],"transform":{"m00":136.75216674804688,"m01":-42.437271118164062,"m02":-4.1410531997680664,"m10":37.907630920410156,"m11":153.09288024902344,"m12":-48.303531646728516},"opacity":1.0,"blendMode":"NORMAL","visible":true}'
+        mask="url(#path-1-inside-1_84_12020)"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_84_12020"
+        x="0.8"
+        y="0.8"
+        width="91.4"
+        height="91.4"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="1.6"
+          result="effect1_foregroundBlur_84_12020"
+        />
+      </filter>
+      <clipPath id="paint0_angular_84_12020_clip_path">
+        <path
+          d="M21 4V5H72V4V3H21V4ZM72 4V5C80.8366 5 88 12.1634 88 21H89H90C90 11.0589 81.9411 3 72 3V4ZM89 21H88V72H89H90V21H89ZM89 72H88C88 80.8366 80.8366 88 72 88V89V90C81.9411 90 90 81.9411 90 72H89ZM72 89V88H21V89V90H72V89ZM21 89V88C12.1634 88 5 80.8366 5 72H4H3C3 81.9411 11.0589 90 21 90V89ZM4 72H5V21H4H3V72H4ZM4 21H5C5 12.1634 12.1634 5 21 5V4V3C11.0589 3 3 11.0589 3 21H4Z"
+          mask="url(#path-1-inside-1_84_12020)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);

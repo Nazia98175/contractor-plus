@@ -3,7 +3,7 @@ import { CheckIcon } from "../common/Icons";
 
 const EntireBusiness = () => {
   return (
-    <div className="bg-[#0C0D11]">
+    <div className="bg-kuroiBlack">
       <div className="py-[75px]">
         <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">
           Everything to run your entire business in one place
@@ -17,7 +17,7 @@ const EntireBusiness = () => {
               type="email"
               placeholder="Your Email"
               required
-              className="bg-[#1C2731] border-white border-b rounded-[6px] text-white outline-none px-2 w-full h-[40px]"
+              className="bg-lightBlack border-white border-b rounded-[6px] text-white outline-none px-2 w-full h-[40px]"
             />
             <p className="hidden md:flex items-center gap-2 pt-3">
               <span>
@@ -32,7 +32,7 @@ const EntireBusiness = () => {
             Create Free Account
           </button>
           <div className="md:hidden flex justify-center items-center w-full">
-            <p className="flex items-center  gap-2 pt-1">
+            <p className="flex items-center gap-2 pt-1">
               <span>
                 <CheckIcon />
               </span>

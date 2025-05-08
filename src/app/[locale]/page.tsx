@@ -11,7 +11,7 @@ export default function Home() {
   const t = useTranslations();
 
   return (
-    <div className="flex flex-col gap-4 relative">
+    <div className="relative">
       <div className="bg-ruinedSmores">
         <Header />
         <Hero />

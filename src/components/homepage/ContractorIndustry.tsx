@@ -2,7 +2,7 @@ import React from "react";
 
 const ContractorIndustry = () => {
   return (
-    <section className="relative py-10">
+    <section className="relative pt-10">
       <img
         className="absolute top-0 w-full h-full z-[-1]"
         src="/images/webp/contractor-industry-bg.webp"
@@ -22,6 +22,11 @@ const ContractorIndustry = () => {
           </button>
         </div>
       </div>
+      <img
+        className="max-w-[1227px] w-full mx-auto h-full"
+        src="/images/webp/contractor.webp"
+        alt=""
+      />
     </section>
   );
 };

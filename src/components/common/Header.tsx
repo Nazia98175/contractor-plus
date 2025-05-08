@@ -33,30 +33,32 @@ const Header = () => {
   }, [scrolled]);
 
   return (
-    <header
-      className={`w-full fixed top-0 z-[999] py-3 transition-all duration-300 ${
-        scrolled ? "bg-ruinedSmores" : "bg-none"
-      }`}
-    >
-      <div className="main-container py-1.5 flex items-center justify-between xl:gap-[54px] lg:gap-3">
-        <Link className="max-w-[137px] w-full" href={"/"}>
-          <LogoIcon />
-        </Link>
-        <div className="lg:flex hidden gap-[22px]">
-          <HeaderLiItems />
-        </div>
-        <div className="flex items-center xl:gap-3 gap-2">
-          <LanguageSelector />
-          <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
-            Login
-          </button>
-          <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
-            Sign Up
-          </button>
-          <button className="lg:hidden" onClick={() => setIsShow(true)}>
-            <HamburgerIcon />
-          </button>
-          <SideBar isshow={isshow} setIsShow={setIsShow} />
+    <header className="lg:px-0 px-2 fixed lg:top-0 top-2 rounded z-[999] w-full">
+      <div
+        className={`w-full lg:py-3 rounded transition-all duration-300 ${
+          scrolled ? "bg-lightBlack shadow-c2" : "bg-none"
+        }`}
+      >
+        <div className="main-container py-1.5 flex items-center justify-between xl:gap-[54px] lg:gap-3">
+          <Link className="lg:max-w-[137px] max-w-[100px] w-full" href={"/"}>
+            <LogoIcon />
+          </Link>
+          <div className="lg:flex hidden gap-[22px] ">
+            <HeaderLiItems />
+          </div>
+          <div className="flex items-center xl:gap-3 gap-2">
+            <LanguageSelector />
+            <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
+              Login
+            </button>
+            <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
+              Sign Up
+            </button>
+            <button className="lg:hidden" onClick={() => setIsShow(true)}>
+              <HamburgerIcon />
+            </button>
+            <SideBar isshow={isshow} setIsShow={setIsShow} />
+          </div>
         </div>
       </div>
     </header>

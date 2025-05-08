@@ -45,6 +45,8 @@
   --font-grotesk: "Space Grotesk", sans-serif;
   --shadow-c1: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-c2: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 @font-face {
@@ -97,4 +99,13 @@
   transition: all 0.5s ease;
   cursor: pointer;
   animation: bounce 1.2s ease-in-out infinite;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

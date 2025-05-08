@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import Hero from "@/components/homepage/Hero";
 import MakeOperation from "@/components/homepage/MakeOperation";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <TheEngineContractor />
+        <ContractorPlatforms />
       </div>
       <MakeOperation />
       <Footer />

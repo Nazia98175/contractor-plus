@@ -66,11 +66,11 @@ const OurReviews: React.FC = () => {
 
   return (
     <section className="py-20">
-      <div className="flex justify-between items-center gap-3 main-container">
-        <h3 className="section-heading text-black">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-3 main-container">
+        <h3 className="section-heading text-black text-center md:text-start">
           Here you can find our reviews
         </h3>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
           <img
             className="max-w-[135px] w-full"
             src="/images/svg/capterra-icon.svg"
@@ -145,7 +145,7 @@ const OurReviews: React.FC = () => {
                 </svg>
               </span>
             </div>
-            <p className="text-winterWay text-xs font-medium pt-1 not-visited:font-jakarta">
+            <p className="text-winterWay text-xs font-medium pt-1 font-jakarta text-center md:text-start">
               Based On 1,320 reviews
             </p>
           </div>

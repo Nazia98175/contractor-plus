@@ -30,7 +30,7 @@ const DropdownItem = ({
   id,
 }: DropdownItemProps) => {
   return (
-    <div className="">
+    <div>
       <button
         onClick={onToggle}
         className={`flex items-center justify-between w-full header-li p-1 ${

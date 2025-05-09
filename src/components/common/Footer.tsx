@@ -5,7 +5,9 @@ import AnimateHeight from "react-animate-height";
 import {
   DownArrowIcon,
   FooterLogoIcon,
+  FooterRedLineIcon,
   LinkdinIcon,
+  RedClipIcon,
   TwitterIcon,
 } from "./Icons";
 
@@ -66,7 +68,10 @@ const Footer = () => {
     { title: "Explore", range: [29, 38] },
   ];
   return (
-    <footer className="bg-kuroiBlack py-10 w-full">
+    <footer className="bg-kuroiBlack py-10 w-full relative">
+      <span className="top-[-314px] left-0 hidden md:block absolute pointer-events-none">
+        <FooterRedLineIcon />
+      </span>
       <div className="main-container">
         <div className="space-y-5 max-w-[414px] w-full mx-auto flex flex-col justify-center items-center">
           <span>
@@ -325,31 +330,31 @@ const Footer = () => {
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <Link
                   href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat"
+                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat"
+                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat"
+                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
                 >
                   Cookie Policy
                 </Link>
                 <Link
                   href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat"
+                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
                 >
                   GDPR
                 </Link>
                 <Link
                   href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat"
+                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
                 >
                   Accessibility
                 </Link>

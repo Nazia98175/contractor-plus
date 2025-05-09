@@ -1,11 +1,13 @@
 "use client";
-import React, { ReactElement } from "react";
+
+import React, { ReactElement, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { GroupStartIcon } from "../common/Icons";
 import { OurReviewList } from "../common/Helper";
 import ScrollVelocity from "../common/ScrollVelocity";
+import ReviewModal from "../common/ReviewModal";
 
-interface ReviewItem {
+export interface ReviewItem {
   id: string | number;
   userName: string;
   role?: string;
@@ -15,12 +17,41 @@ interface ReviewItem {
   companyIcon: string;
 }
 
+interface ScrollVelocityProps {
+  texts: ReactElement[];
+  velocity: number;
+  numCopies: number;
+  className?: string;
+  parallaxClassName?: string;
+  scrollerClassName?: string;
+}
+
+interface ReviewModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+interface ReviewCardProps {
+  review: ReviewItem;
+  openModal: () => void;
+}
+
 const OurReviews: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const openModal = (): void => {
+    setIsModalOpen(true);
+  };
+
   // Create review row components that match the expected type
   const FirstRowCards = (): ReactElement => (
     <div className="flex gap-5">
       {OurReviewList.slice(0, 3).map((review, index) => (
-        <ReviewCard key={`first-row-${index}`} review={review as ReviewItem} />
+        <ReviewCard
+          key={`first-row-${index}`}
+          review={review as ReviewItem}
+          openModal={openModal}
+        />
       ))}
     </div>
   );
@@ -28,7 +59,11 @@ const OurReviews: React.FC = () => {
   const SecondRowCards = (): ReactElement => (
     <div className="flex gap-5">
       {OurReviewList.slice(3).map((review, index) => (
-        <ReviewCard key={`second-row-${index}`} review={review as ReviewItem} />
+        <ReviewCard
+          key={`second-row-${index}`}
+          review={review as ReviewItem}
+          openModal={openModal}
+        />
       ))}
     </div>
   );
@@ -64,8 +99,8 @@ const OurReviews: React.FC = () => {
         </div>
       </div>
       <div className="relative">
-        <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40 hidden lg:block blur-2xl"></div>
-        <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl"></div>
+        <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling left */}
         <div className="pt-[35px] md:pt-[77px]">
@@ -73,7 +108,7 @@ const OurReviews: React.FC = () => {
             texts={[<FirstRowCards />]}
             velocity={40}
             numCopies={3}
-            className="mx-5"
+            className="mr-5"
             parallaxClassName="overflow-hidden"
             scrollerClassName="flex items-center"
           />
@@ -85,12 +120,13 @@ const OurReviews: React.FC = () => {
             texts={[<SecondRowCards />]}
             velocity={-40} // Negative velocity for right-to-left scrolling
             numCopies={3}
-            className="mx-5"
+            className="mr-5"
             parallaxClassName="overflow-hidden"
             scrollerClassName="flex items-center"
           />
         </div>
       </div>
+      <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

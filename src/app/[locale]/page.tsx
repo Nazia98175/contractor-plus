@@ -37,8 +37,10 @@ export default function Home() {
         <MakeOperation />
       </div>
       <OurBlogs />
-      <EntireBusiness />
-      <Footer />
+      <div className="overflow-hidden bg-[url('/images/webp/footer-bg.webp')] bg-no-repeat bg-center bg-cover">
+        <EntireBusiness />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -45,7 +45,7 @@ const Hero = () => {
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
       <img
         src="/images/webp/red-circle.webp"
-        className="absolute top-0 left-0 w-full  hidden lg:block h-full z-10"
+        className="absolute top-0 left-0 w-full hidden lg:block h-full z-10"
         alt="Red Circle For designing"
       />
 

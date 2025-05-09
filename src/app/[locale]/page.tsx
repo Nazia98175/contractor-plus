@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="bg-kuroiBlack">
+      <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover">
         <Header />
         <Hero />
         <TrustBar />

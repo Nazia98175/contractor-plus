@@ -24,7 +24,7 @@ const CoreFeaturesCard = () => {
         <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta overflow-auto no-scrollbar whitespace-nowrap">
           {features.map((feature, index) => (
             <button
-              onClick={() => setIsShow(true)}
+              // onClick={() => setIsShow(true)}
               key={feature}
               className={`text-base md:text-xl py-1 px-0.5 leading-[100%] ${
                 index === 0 ? "font-bold text-winterWay" : "text-secondary"

@@ -1,3 +1,7 @@
 {
-  "heading": "Bem-vindo ao Next.js!"
+  "heading": "Bem-vindo ao Next.js!",
+  "hero": {
+    "heading": "O único sistema operacional para empreiteiros de construção e serviços",
+    "desc": "Todo o poder de um grande software, sem as complicações. Uma única plataforma — e não seis — para gerenciar trabalhos, equipes, clientes e crescimento."
+  }
 }

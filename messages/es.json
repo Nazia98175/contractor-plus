@@ -1,3 +1,7 @@
 {
-  "heading": "¡Bienvenido a Next.js!"
+  "heading": "¡Bienvenido a Next.js!",
+  "hero": {
+    "heading": "El único sistema operativo para contratistas de construcción y servicios",
+    "desc": "Todo el poder del software empresarial, sin las complicaciones. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento."
+  }
 }

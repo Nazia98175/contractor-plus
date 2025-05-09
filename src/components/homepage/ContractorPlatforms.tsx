@@ -20,7 +20,7 @@ const contractPlatforms = [
 ];
 const ContractorPlatforms = () => {
   return (
-    <section className="lg:bg-kuroiBlack">
+    <section className="lg:bg-kuroiBlack relative">
       <section className="main-container flex flex-col gap-11 pt-12 ">
         <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
           There are dozens of contractor platforms, <br /> but each one has a

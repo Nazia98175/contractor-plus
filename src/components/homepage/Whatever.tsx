@@ -244,7 +244,7 @@ const Whatever = () => {
   }, [isMobile]);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       <Image
         className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
         src={"/images/svg/large-comet.svg"}
@@ -359,10 +359,10 @@ const Whatever = () => {
             </div>
           </div>
         </div>
+        <p className="text-lg capitalize text-[#ADB1B5] opacity-90 text-center">
+          5000+ Potential Integrations
+        </p>
       </div>
-      <p className="text-lg capitalize text-[#ADB1B5] opacity-90 text-center">
-        5000+ Potential Integrations
-      </p>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowIcon } from "./Icons";
-import { featureLinkslinks } from "./Helper";
+import { featurelinks } from "./Helper";
 
 const FeaturesDropdown = () => {
   return (
@@ -10,7 +10,7 @@ const FeaturesDropdown = () => {
         <h4 className="px-5 ">Features</h4>
       </div>
       <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full">
-        {featureLinkslinks.map((link, index) => (
+        {featurelinks.map((link, index) => (
           <li
             className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
             key={index}

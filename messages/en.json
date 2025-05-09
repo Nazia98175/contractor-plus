@@ -1,3 +1,7 @@
 {
-    "heading": "Welcome to Next.js!"
+  "heading": "Welcome to Next.js!",
+  "hero": {
+    "heading": "The only operating system for build & service contractors",
+    "desc": "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth."
+  }
 }

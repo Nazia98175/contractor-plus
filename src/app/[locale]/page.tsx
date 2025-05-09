@@ -1,6 +1,6 @@
+"use client";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import Slider from "@/components/common/CustomSlider";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -24,6 +24,7 @@ export default function Home() {
     <div className="relative overflow-x-hidden">
       <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover">
         <Header />
+
         <Hero />
         <TrustBar />
         <TheEngineContractor />

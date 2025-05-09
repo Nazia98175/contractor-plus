@@ -1,17 +1,17 @@
-import React from "react";
-import { CheckIcon, HeroBg } from "../common/Icons";
+import { useTranslations } from "next-intl";
+import { CheckIcon } from "../common/Icons";
 
 const Hero = () => {
+  const t = useTranslations("hero");
   return (
     <section className="relative overflow-hidden max-w-[1920px] mx-auto">
       <div className="flex items-end h-screen max-h-[900px] main-container z-20 relative pb-20 lg:pt-[138px] lg:pb-[202px] lg:h-full">
         <div className="max-w-[616px] w-full sm:space-y-6">
-          <h1 className="main-heading text-white mb-1.5">
-            The only operating system for build & service contractors
-          </h1>
+          <h1 className="main-heading text-white mb-1.5">{t("heading")}</h1>
           <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">
             All the power of big software, none of the pain. One platform—not
             six—to manage jobs, crews, customers, and growth.
+            {t("desc")}
           </p>
           <div className="flex gap-2.5 sm:flex-row flex-col items-center">
             <button className="bg-red-linear h-10 primary-btn">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CrossIcon } from "./Icons";
+import { CrossIcon, ModalCrossIcon } from "./Icons";
 
 interface ReviewModalProps {
   isOpen: boolean;
@@ -65,9 +65,9 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
       >
         <button
           onClick={onClose}
-          className="absolute top-1 right-1 bg-black rounded-full cursor-pointer"
+          className="absolute top-[-38px] right-0 bg-white rounded-full cursor-pointer"
         >
-          <CrossIcon />
+          <ModalCrossIcon />
         </button>
         <div className="aspect-video w-full">
           <iframe

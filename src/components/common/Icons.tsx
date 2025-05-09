@@ -265,46 +265,6 @@ export const DownArrowIcon = () => (
   </svg>
 );
 
-export const HeroBg = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
-    className="object-cover"
-    viewBox="0 0 1440 669"
-    fill="none"
-  >
-    <g filter="url(#filter0_f_22_9143)">
-      <path
-        d="M968.5 -66L-133 -58.826V766.929H2030L694.5 414.5L968.5 -66Z"
-        fill="#0C0D11"
-      />
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_22_9143"
-        x="-234.9"
-        y="-167.9"
-        width="2366.8"
-        height="1036.73"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="50.95"
-          result="effect1_foregroundBlur_22_9143"
-        />
-      </filter>
-    </defs>
-  </svg>
-);
 export const ServiceIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -1199,5 +1159,20 @@ export const FooterRedLineIcon = () => (
         ></feGaussianBlur>
       </filter>
     </defs>
+  </svg>
+);
+
+export const ModalCrossIcon = () => (
+  <svg
+    className="hover:rotate-45 transition-all duration-200 ease-in-out"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill="black"
+      d="M18.36 19.78L12 13.41l-6.36 6.37l-1.42-1.42L10.59 12L4.22 5.64l1.42-1.42L12 10.59l6.36-6.36l1.41 1.41L13.41 12l6.36 6.36z"
+    />
   </svg>
 );

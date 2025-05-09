@@ -36,7 +36,7 @@ const Header = () => {
     <header className=" px-2 fixed top-2 rounded z-[999] w-full">
       <div
         className={`w-full lg:py-3 rounded transition-all duration-300 ${
-          scrolled ? "bg-lightBlack shadow-c2" : "bg-none"
+          scrolled ? "bg-black shadow-c2" : "bg-none"
         }`}
       >
         <div className="main-container py-1.5 flex items-center justify-between xl:gap-[54px] lg:gap-3">

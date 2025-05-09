@@ -306,31 +306,27 @@ const CoreFeaturesCard = () => {
 
   return (
     <div
-      className="p-6 flex lg:flex-row flex-col gap-9 relative overflow-visible "
+      className="lg:p-6 px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7 lg:mt-11"
       ref={containerRef}
     >
       {/* Navigation Column */}
       <div
-        className="flex gap-1.5 lg:self-start z-20 w-[187px] "
+        className="flex gap-1.5 lg:self-start z-20 lg:w-[187px] "
         ref={featuresRef}
         style={{ overflow: "visible" }}
       >
-        <div className="px-1 hidden lg:flex relative w-fit justify-center items-center">
+        <div className="px-1 hidden lg:flex relative w-fit justify-center items-center mt-1">
           {/* Button that moves with scroll */}
           <button
             ref={indicatorRef}
-            className="w-3 h-3 rounded-full absolute top-1.5 bg-black left-1/2 -translate-x-1/2 z-10"
+            className="w-3 h-3 rounded-full absolute top-2.5 bg-black left-1/2 -translate-x-1/2 z-10"
           ></button>
           {/* Using original Pathbg component as requested */}
           <Pathbg />
         </div>
-        <div className="flex flex-row lg:flex-col gap-[22px] font-sans overflow-visible whitespace-nowrap relative">
+        <div className="flex flex-row lg:flex-col gap-[22px] font-sans lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative">
           {/* Mobile indicator (visible on small screens) */}
-          <button
-            ref={mobileIndicatorRef}
-            className="w-3 h-3 rounded-full absolute -bottom-3 lg:hidden bg-black left-0 z-10"
-            aria-hidden="true"
-          ></button>
+
           {features.map((feature, index) => (
             <button
               onClick={() => {
@@ -342,7 +338,7 @@ const CoreFeaturesCard = () => {
                 });
               }}
               key={feature}
-              className={`feature-btn text-base  md:text-xl py-1 px-0.5 leading-[100%] transition-colors duration-300 min-w-[165px] ${
+              className={`feature-btn text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px] ${
                 index === activeFeature
                   ? " text-winterWay font-bold"
                   : "text-secondary font-normal"
@@ -356,7 +352,7 @@ const CoreFeaturesCard = () => {
 
       {/* Feature Content Sections */}
       <div
-        className="space-y-32 overflow-visible max-w-[639px] w-full"
+        className="space-y-32 overflow-visible lg:max-w-[639px] w-full"
         ref={contentContainerRef}
       >
         {featureContents.map((content, index) => (
@@ -371,7 +367,6 @@ const CoreFeaturesCard = () => {
               {content.title}
             </h4>
             <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm">
-              {/* Content placeholder - replace with actual content/images */}
               <div className="absolute inset-0 flex items-center justify-center text-lg text-gray-400">
                 {features[index]} visualization
               </div>

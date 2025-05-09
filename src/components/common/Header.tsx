@@ -33,7 +33,7 @@ const Header = () => {
   }, [scrolled]);
 
   return (
-    <header className="lg:px-0 px-2 fixed lg:top-0 top-2 rounded z-[999] w-full">
+    <header className=" px-2 fixed top-2 rounded z-[999] w-full">
       <div
         className={`w-full lg:py-3 rounded transition-all duration-300 ${
           scrolled ? "bg-lightBlack shadow-c2" : "bg-none"

@@ -242,12 +242,19 @@ const Whatever = () => {
   }, [isMobile]);
 
   return (
-    <section>
+    <section className="relative">
       <Image
-        className="object-cover right-0 absolute -z-0 pointer-events-none"
+        className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
         src={"/images/svg/large-comet.svg"}
-        width={600}
-        height={200}
+        width={700}
+        height={300}
+        alt="large-comet"
+      />
+      <Image
+        className="object-cover top-0 right-0 absolute -z-0 pointer-events-none flex lg:hidden"
+        src={"/images/svg/large-comet-mobile.svg"}
+        width={700}
+        height={300}
         alt="large-comet"
       />
 
@@ -259,7 +266,7 @@ const Whatever = () => {
           Whatever you use, Contractor+ connects
         </h3>
         <div className="container mx-auto px-4">
-          <div className="flex md:flex-row flex-col justify-center md:justify-between gap-5 pt-5 items-center md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
+          <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 pt-5 items-center md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
             {/* Left Grid */}
             <div className="max-w-[409px] lg:py-[59px] py-8  w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center">
               <div className="grid grid-cols-3 grid-rows-3 h-full w-full relative">
@@ -300,7 +307,7 @@ const Whatever = () => {
               className="max-w-[270px] w-fit first-border xl:p-5 p-3 m-auto relative z-30 will-change-transform"
             >
               <div className="second-border xl:p-5 p-3 relative z-30 w-fit">
-                <div className="relative xl:w-[110px] lg:w-20 w-[67px] xl:h-[110px] lg:h-20 h-[67px] flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden third-border">
+                <div className="relative xl:w-[110px] lg:w-20 w-[55px] xl:h-[110px] lg:h-20 h-[55px] flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden third-border">
                   <OnIcon className="absolute w-full h-full pointer-events-none -z-1 one" />
                   <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
                   <Image

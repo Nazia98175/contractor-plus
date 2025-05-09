@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import Slider from "@/components/common/CustomSlider";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -26,7 +27,7 @@ export default function Home() {
         <TrustBar />
         <TheEngineContractor />
       </div>
-      <div className="bg-[url('/images/webp/platform-bg.webp')] bg-contain bg-no-repeat bg-center">
+      <div className="bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain bg-no-repeat sm:bg-center">
         <ContractorPlatforms />
         <Finally />
       </div>

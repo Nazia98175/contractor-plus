@@ -12,8 +12,8 @@ const features = [
 
 const Finally = () => {
   return (
-    <section className="relative mt-[222px]">
-      <div className="space-y-4">
+    <section className="relative pt-16 md:pt-20 xl:pt-[222px] overflow-hidden">
+      <div className="space-y-4 z-10 relative">
         <h2 className="section-heading text-center text-white">
           Finally, one platform to replace them all
         </h2>

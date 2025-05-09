@@ -72,12 +72,17 @@ const OurReviews: React.FC = () => {
     <section className="pt-[15px] pb-[35px] md:py-20">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
         <h3 className="section-heading text-black text-center md:text-start">
-          Here you can find our reviews
+          Let our customers do the talking...
         </h3>
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <img
-            className="max-w-[135px] w-full"
+            className="max-w-[135px] w-full block md:hidden"
             src="/images/svg/capterra-icon.svg"
+            alt="capterra icon"
+          />
+          <img
+            className="max-w-[135px] w-full hidden md:block"
+            src="/images/svg/capterra-icon2.svg"
             alt="capterra icon"
           />
           <div>

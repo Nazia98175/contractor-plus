@@ -22,7 +22,7 @@ const MakeOperation = () => {
       <span className="top-[-202px] right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
-      <div className="main-container py-10">
+      <div className="main-container pb-10">
         <h3 className=" text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center">
           Make operations your competitive edge
         </h3>

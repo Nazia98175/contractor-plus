@@ -8,7 +8,7 @@ const EntireBusiness = () => {
         <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">
           Everything to run your entire business in one place
         </h3>
-        <p className="text-sm sm:text-lg md:text-xl font-medium text-decemberSky font-jakarta text-center py-4">
+        <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
           Start using Contractor+ free (for real)!
         </p>
         <form className="flex flex-col md:flex-row justify-center items-start gap-3">

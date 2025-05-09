@@ -34,7 +34,7 @@ const ContractorPlatforms = () => {
             <h3 className="mb-3 lg:mb-4 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold text-white px-1.5 py-1 w-fit">
               {obj.title}
             </h3>
-            <p className="lg:text-lg text-sm sm:text-base text-decemberSky max-w-[380px]">
+            <p className="paragraph-text text-decemberSky max-w-[380px]">
               {obj.desc}
             </p>
           </article>

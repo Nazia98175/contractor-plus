@@ -4,6 +4,7 @@ import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
 import EntireBusiness from "@/components/homepage/EntireBusiness";
+import Features from "@/components/homepage/Features";
 import Finally from "@/components/homepage/Finally";
 import Hero from "@/components/homepage/Hero";
 import MakeOperation from "@/components/homepage/MakeOperation";
@@ -19,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="bg-ruinedSmores">
+      <div className="bg-kuroiBlack">
         <Header />
         <Hero />
         <TrustBar />
@@ -28,6 +29,8 @@ export default function Home() {
         <Finally />
       </div>
       <CoreFeatures />
+      <Features />
+
       <ContractorIndustry />
       <OurReviews />
       <div className="bg-[url('/images/png/stars.png')] bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">

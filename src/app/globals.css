@@ -9,6 +9,7 @@
   --color-winterWay: #3f464b;
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
+  --color-doctor2: #f8f8f8;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
@@ -155,4 +156,31 @@ html {
 .third-border {
   border-radius: 20px;
   border: 1px solid rgba(242, 19, 20, 0.4);
+}
+
+.gradient-border {
+  position: relative;
+  background: radial-gradient(
+      38.35% 84.5% at 98.28% 95.91%,
+      rgba(238, 30, 37, 0.2) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    #f8f8f8;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: 12px; /* match container */
+  background: radial-gradient(
+    38.35% 84.5% at 98.28% 95.91%,
+    rgba(238, 30, 37, 0.678) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }

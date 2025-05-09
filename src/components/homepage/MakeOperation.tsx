@@ -1,10 +1,14 @@
+import Image from "next/image";
 import { MakeOperationlist } from "../common/Helper";
 import { RedClipIcon } from "../common/Icons";
 
 const MakeOperation = () => {
   return (
     <section className="bg-kuroilight relative">
-      <img
+      <Image
+        height={600}
+        width={600}
+        unoptimized
         className="top-0 left-0 absolute h-[600px] w-full pointer-events-none"
         src="/images/png/stars.png"
         alt="stars image"

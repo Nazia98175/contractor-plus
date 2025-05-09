@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { describe } from "node:test";
 import React from "react";
 import { BlogBtnIcon } from "../common/Icons";
 import { blogList } from "../common/Helper";
@@ -26,14 +24,6 @@ const OurBlogs = () => {
           <div className="max-w-[600px] mx-auto xl:mx-0  xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogList.map((blog) => (
               <article key={blog.id} className="relative w-full">
-                {/* {blog.id === 2 && (
-                  <img
-                    className="h-full w-full absolute top-0 lelf-0"
-                    src="/images/webp/blog-bg.webp"
-                    alt="blog bg"
-                  />
-                )} */}
-
                 <div
                   className={`${
                     blog.id === 2
@@ -66,7 +56,10 @@ const OurBlogs = () => {
 
           {/* Right column (Featured Blog) */}
           <div className="w-full xl:max-w-[700px] relative flex flex-col justify-end pb-6">
-            <img
+            <Image
+              height={700}
+              width={700}
+              unoptimized
               src="/images/webp/blog-right-side.webp"
               alt="Featured Blog"
               className="rounded-xl object-cover w-full absolute top-0 h-full"

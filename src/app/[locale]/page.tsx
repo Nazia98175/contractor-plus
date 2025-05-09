@@ -15,6 +15,7 @@ import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Home() {
   const t = useTranslations();
@@ -40,8 +41,18 @@ export default function Home() {
         <MakeOperation />
       </div>
       <OurBlogs />
-      <EntireBusiness />
-      <Footer />
+      <div className="overflow-hidden relative">
+        <Image
+          width={600}
+          height={1000}
+          unoptimized
+          className="absolute top-0 w-full h-full left-0 z-[-1]"
+          src="/images/webp/footer-bg.webp"
+          alt="footer bg"
+        />
+        <EntireBusiness />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -360,16 +360,9 @@ const Whatever = () => {
           </div>
         </div>
       </div>
-
-      {/* Additional text section */}
-      <div className="text-center pt-8 pb-16">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          Make operations your competitive edge
-        </h2>
-        <p className="text-xl md:text-2xl text-white opacity-90">
-          The ROI from Contractor+ makes the choice easy
-        </p>
-      </div>
+      <p className="text-lg capitalize text-[#ADB1B5] opacity-90 text-center">
+        5000+ Potential Integrations
+      </p>
     </section>
   );
 };

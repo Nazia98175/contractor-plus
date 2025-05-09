@@ -56,7 +56,10 @@ const OurBlogs = () => {
 
           {/* Right column (Featured Blog) */}
           <div className="w-full xl:max-w-[700px] relative flex flex-col justify-end pb-6">
-            <img
+            <Image
+              height={700}
+              width={700}
+              unoptimized
               src="/images/webp/blog-right-side.webp"
               alt="Featured Blog"
               className="rounded-xl object-cover w-full absolute top-0 h-full"

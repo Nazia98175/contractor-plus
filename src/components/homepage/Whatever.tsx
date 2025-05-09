@@ -53,7 +53,7 @@ const Whatever = () => {
       width: 38,
       height: 38,
       size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
-      imgSize: "lg:max-w-[38px] max-w-7",
+      imgSize: "lg:max-w-[38px] max-w-[29px]", // Fixed incorrect value
       initialX: 150,
       initialY: -80,
     },
@@ -62,7 +62,7 @@ const Whatever = () => {
       width: 38,
       height: 38,
       size: "lg:w-[85px] w-[46px] lg:h-[85px] h-[46px]",
-      imgSize: "lg:max-w-[38px] max-w-5",
+      imgSize: "lg:max-w-[38px] max-w-[25px]", // Fixed incorrect value
       initialX: 150,
       initialY: 80,
     },
@@ -87,10 +87,11 @@ const Whatever = () => {
   useEffect(() => {
     if (!sectionRef.current) return;
 
+    // Clean up previous animations to prevent conflicts
     ScrollTrigger.getAll().forEach((t) => t.kill());
     gsap.killTweensOf([
-      leftIconsRef.current,
-      rightIconsRef.current,
+      ...leftIconsRef.current,
+      ...rightIconsRef.current,
       centerRef.current,
     ]);
 
@@ -98,7 +99,7 @@ const Whatever = () => {
       const scrollTrigger = {
         trigger: sectionRef.current,
         start: "top 85%",
-        end: "center -20%",
+        end: "center 10%", // Adjusted for better visibility
         scrub: 0.6,
         invalidateOnRefresh: true,
       };
@@ -184,9 +185,10 @@ const Whatever = () => {
         }
       );
 
+      // Hover animation
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "center 40%",
+        start: "center 50%", // Adjusted to start animations sooner
         onEnter: () => {
           if (!isMobile) {
             [...leftIconsRef.current].forEach((el, i) => {
@@ -242,7 +244,7 @@ const Whatever = () => {
   }, [isMobile]);
 
   return (
-    <section className="relative">
+    <section className="relative w-full min-h-screen overflow-hidden">
       <Image
         className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
         src={"/images/svg/large-comet.svg"}
@@ -260,15 +262,15 @@ const Whatever = () => {
 
       <div
         ref={sectionRef}
-        className="pt-12 pb-[53px] overflow-hidden will-change-transform"
+        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full"
       >
-        <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center">
+        <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center mb-8">
           Whatever you use, Contractor+ connects
         </h3>
         <div className="container mx-auto px-4">
           <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 pt-5 items-center md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
             {/* Left Grid */}
-            <div className="max-w-[409px] lg:py-[59px] py-8  w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center">
+            <div className="max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center">
               <div className="grid grid-cols-3 grid-rows-3 h-full w-full relative">
                 {leftIcons.map((icon, i) => (
                   <div
@@ -323,7 +325,7 @@ const Whatever = () => {
             </div>
 
             {/* Right Grid */}
-            <div className="max-w-[409px] lg:py-[59px] py-8  w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center">
+            <div className="max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center">
               <div className="grid grid-cols-3 grid-rows-3 h-full w-full relative">
                 {rightIcons.map((icon, i) => (
                   <div
@@ -357,6 +359,16 @@ const Whatever = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Additional text section */}
+      <div className="text-center pt-8 pb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Make operations your competitive edge
+        </h2>
+        <p className="text-xl md:text-2xl text-white opacity-90">
+          The ROI from Contractor+ makes the choice easy
+        </p>
       </div>
     </section>
   );

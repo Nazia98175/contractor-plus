@@ -1,7 +1,6 @@
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 
-// Component props interface
 export interface Review {
   id: string | number;
   profileUrl: string;

@@ -1,12 +1,10 @@
 "use client";
-
 import React, { ReactElement, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { GroupStartIcon } from "../common/Icons";
 import { OurReviewList } from "../common/Helper";
 import ScrollVelocity from "../common/ScrollVelocity";
 import ReviewModal from "../common/ReviewModal";
-
 export interface ReviewItem {
   id: string | number;
   userName: string;
@@ -16,7 +14,6 @@ export interface ReviewItem {
   profileUrl: string;
   companyIcon: string;
 }
-
 interface ScrollVelocityProps {
   texts: ReactElement[];
   velocity: number;
@@ -25,24 +22,19 @@ interface ScrollVelocityProps {
   parallaxClassName?: string;
   scrollerClassName?: string;
 }
-
 interface ReviewModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
 interface ReviewCardProps {
   review: ReviewItem;
   openModal: () => void;
 }
-
 const OurReviews: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
   const openModal = (): void => {
     setIsModalOpen(true);
   };
-
   // Create review row components that match the expected type
   const FirstRowCards = (): ReactElement => (
     <div className="flex gap-5">
@@ -55,7 +47,6 @@ const OurReviews: React.FC = () => {
       ))}
     </div>
   );
-
   const SecondRowCards = (): ReactElement => (
     <div className="flex gap-5">
       {OurReviewList.slice(3).map((review, index) => (
@@ -67,7 +58,6 @@ const OurReviews: React.FC = () => {
       ))}
     </div>
   );
-
   return (
     <section className="pt-[15px] pb-[35px] md:py-20">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
@@ -106,7 +96,6 @@ const OurReviews: React.FC = () => {
       <div className="relative">
         <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40 hidden lg:block blur-2xl pointer-events-none"></div>
         <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-
         {/* First row of reviews - scrolling left */}
         <div className="pt-[35px] md:pt-[77px]">
           <ScrollVelocity
@@ -118,7 +107,6 @@ const OurReviews: React.FC = () => {
             scrollerClassName="flex items-center"
           />
         </div>
-
         {/* Second row of reviews - scrolling right */}
         <div className="pt-[27px] hidden md:block">
           <ScrollVelocity
@@ -135,5 +123,4 @@ const OurReviews: React.FC = () => {
     </section>
   );
 };
-
 export default OurReviews;

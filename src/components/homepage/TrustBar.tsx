@@ -30,7 +30,7 @@ const platforms = [
 
 const TrustBar = () => {
   return (
-    <section className="flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center py-6 relative bg-blend-saturation">
+    <section className="flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center relative bg-blend-saturation">
       <img
         src="/images/png/stars.png"
         className="absolute inset-0 w-full h-full z-10 object-cover"

@@ -9,6 +9,7 @@
   --color-winterWay: #3f464b;
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
+  --color-whiteSmoke: #f3f3f3;
   --color-doctor2: #f8f8f8;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
@@ -76,10 +77,10 @@
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%];
+  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
-  @apply text-[26px] !leading-[128%] sm:text-[28px] md:text-[32px] font-jakarta;
+  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
 }
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit;

@@ -12,7 +12,7 @@ const features = [
 
 const Finally = () => {
   return (
-    <section className="relative">
+    <section className="relative mt-[222px]">
       <div className="space-y-4">
         <h2 className="section-heading text-center text-white">
           Finally, one platform to replace them all

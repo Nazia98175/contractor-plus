@@ -1,6 +1,26 @@
 import React from "react";
+import CircularSlider from "./CircularSlider";
+import CircularSliderCardItems from "./CircularSliderCardItems";
 
 const ContractorIndustry = () => {
+  const industryItems = [
+    {
+      image: "https://picsum.photos/seed/construction/800/600?grayscale",
+    },
+    {
+      image: "https://picsum.photos/seed/remodeling/800/600?grayscale",
+    },
+    {
+      image: "https://picsum.photos/seed/contractor/800/600?grayscale",
+    },
+    {
+      image: "https://picsum.photos/seed/hvac/800/600?grayscale",
+    },
+    {
+      image: "https://picsum.photos/seed/plumbing/800/600?grayscale",
+    },
+  ];
+
   return (
     <section className="relative pt-10">
       <img
@@ -27,6 +47,17 @@ const ContractorIndustry = () => {
         src="/images/webp/contractor.webp"
         alt=""
       />
+      {/* <div style={{ height: "400px", position: "relative", margin: "0 auto" }}>
+        <CircularSlider
+          items={industryItems}
+          bend={5}
+          borderRadius={0.1}
+          className="mx-auto max-w-6xl"
+        />
+        <div className="hidden">
+          <CircularSliderCardItems items={industryItems} />
+        </div>
+      </div> */}
     </section>
   );
 };

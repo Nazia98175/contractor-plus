@@ -16,19 +16,24 @@ interface ReviewItem {
 }
 
 const OurReviews: React.FC = () => {
-  // Create review row components that match the expected type
   const FirstRowCards = (): ReactElement => (
-    <div className="flex gap-5">
+    <div className="flex">
       {OurReviewList.slice(0, 3).map((review, index) => (
-        <ReviewCard key={`first-row-${index}`} review={review as ReviewItem} />
+        <ReviewCard
+          key={`first-row-${index}`}
+          review={review as unknown as ReviewItem}
+        />
       ))}
     </div>
   );
 
   const SecondRowCards = (): ReactElement => (
-    <div className="flex gap-5">
+    <div className="flex">
       {OurReviewList.slice(3).map((review, index) => (
-        <ReviewCard key={`second-row-${index}`} review={review as ReviewItem} />
+        <ReviewCard
+          key={`second-row-${index}`}
+          review={review as unknown as ReviewItem}
+        />
       ))}
     </div>
   );
@@ -73,8 +78,6 @@ const OurReviews: React.FC = () => {
             texts={[<FirstRowCards />]}
             velocity={40}
             numCopies={3}
-            className="mx-5"
-            parallaxClassName="overflow-hidden"
             scrollerClassName="flex items-center"
           />
         </div>
@@ -85,8 +88,6 @@ const OurReviews: React.FC = () => {
             texts={[<SecondRowCards />]}
             velocity={-40} // Negative velocity for right-to-left scrolling
             numCopies={3}
-            className="mx-5"
-            parallaxClassName="overflow-hidden"
             scrollerClassName="flex items-center"
           />
         </div>

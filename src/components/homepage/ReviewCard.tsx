@@ -1,7 +1,6 @@
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 
-// Component props interface
 export interface Review {
   profileUrl: string;
   userName: string;
@@ -24,7 +23,7 @@ const renderStars = (rating: number) => {
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   return (
-    <article className="bg-doctor rounded-[10px] p-2 max-w-[350px] md:max-w-[419px] border  w-full ">
+    <article className="bg-doctor rounded-[10px] p-2 max-w-[350px] md:max-w-[419px] border  w-full mr-5">
       <div className="flex justify-between items-start gap-5">
         <div className="flex items-center gap-2">
           <img className="max-w-[42px]" src={review.profileUrl} alt="avatar" />

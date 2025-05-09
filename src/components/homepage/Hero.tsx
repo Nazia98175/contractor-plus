@@ -4,19 +4,8 @@ import { CheckIcon, HeroBg } from "../common/Icons";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden max-w-[1920px] mx-auto">
-      <img
-        src="/images/webp/red-circle.webp"
-        className="absolute top-0 left-0 w-full hidden lg:block h-full z-10"
-        alt="Red Circle For designing"
-      />
-
-      <img
-        src="/images/png/stars.png"
-        className="absolute inset-0 w-full h-full z-10 object-cover"
-        alt="Stars"
-      />
-      <div className="flex items-end lg:items-center main-container z-20 relative min-h-[95vh] md:min-h-[700px] max-h-[892px] h-full">
-        <div className="max-w-[616px] w-full pt-20 pb-10 sm:space-y-6">
+      <div className="flex items-end h-screen max-h-[900px] main-container z-20 relative pb-20 lg:pt-[138px] lg:pb-[202px] lg:h-full">
+        <div className="max-w-[616px] w-full sm:space-y-6">
           <h1 className="main-heading text-white mb-1.5">
             The only operating system for build & service contractors
           </h1>
@@ -48,10 +37,23 @@ const Hero = () => {
         className="absolute object-center right-0 w-full block md:hidden z-0 top-0"
       />
 
-      <div className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full">
-        <HeroBg />
-      </div>
+      <img
+        src="/images/webp/hero-bg.webp"
+        alt="Hero Background"
+        className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full"
+      />
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
+      <img
+        src="/images/webp/red-circle.webp"
+        className="absolute top-0 left-0 w-full  hidden lg:block h-full z-10"
+        alt="Red Circle For designing"
+      />
+
+      <img
+        src="/images/png/stars.png"
+        className="absolute inset-0 w-full h-full z-10 object-cover"
+        alt="Stars"
+      />
     </section>
   );
 };

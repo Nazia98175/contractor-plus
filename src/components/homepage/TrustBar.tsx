@@ -30,17 +30,17 @@ const platforms = [
 
 const TrustBar = () => {
   return (
-    <section className="flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center py-6 relative">
+    <section className="flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center py-6 relative bg-blend-saturation">
       <img
         src="/images/png/stars.png"
         className="absolute inset-0 w-full h-full z-10 object-cover"
         alt="Stars"
       />
-      <div className="bg-black-red-linear blur-2xl  -right-[20%] lg:hidden -rotate-90 -top-[80%] rounded-full absolute md:w-[300px] md:h-[400px] max-w-[500px] sm:min-w-[300px] w-full z-0 h-full sm:min-h-[400px]"></div>
+      <div className="bg-black-red-linear blur-2xl md:h-[600px] md:w-[600px] md:-top-[140%] -right-[20%] lg:hidden -rotate-90 -top-[80%] rounded-full absolute  max-w-[500px] sm:min-w-[300px] w-full z-0 h-full sm:min-h-[400px]"></div>
       {platforms.map((platform, index) => (
         <div
           key={index}
-          className="flex flex-col-reverse w-[45%] sm:w-fit gap-3.5 sm:flex-col items-center relative z-20"
+          className="flex flex-col-reverse justify-between w-[45%] sm:w-fit gap-3.5 sm:flex-col items-center relative z-20"
         >
           <img
             src={platform.logo}

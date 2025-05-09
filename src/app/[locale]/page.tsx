@@ -25,6 +25,8 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <TheEngineContractor />
+      </div>
+      <div className="bg-[url('/images/webp/platform-bg.webp')] bg-contain bg-no-repeat bg-center">
         <ContractorPlatforms />
         <Finally />
       </div>

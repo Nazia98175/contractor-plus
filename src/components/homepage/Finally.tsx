@@ -40,13 +40,12 @@ const Finally = () => {
             className="absolute w-full bottom-0 z-20 left-0 h-[140px]"
           />
           <div className="flex flex-row lg:flex-col gap-4">
-            <div className="shadow-c3">
-              <img
-                src="/images/webp/software-advice.webp"
-                alt="Software Advice"
-                className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full"
-              />
-            </div>
+            <img
+              src="/images/webp/software-advice.webp"
+              alt="Software Advice"
+              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full"
+            />
+
             <img
               src="/images/webp/leader.webp"
               alt="Leader"

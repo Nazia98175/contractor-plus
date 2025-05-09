@@ -1,9 +1,31 @@
 "use client";
-import React, { useState } from "react";
-import { Pathbg } from "../common/Icons";
+import type React from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Pathbg } from "../common/Icons"; // Import original Pathbg component
+
+// Register ScrollTrigger plugin with GSAP
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const CoreFeaturesCard = () => {
-  const [isShow, setIsShow] = useState("");
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [progressValue, setProgressValue] = useState(0);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const indicatorRef = useRef<HTMLButtonElement | null>(null);
+  const mobileIndicatorRef = useRef<HTMLButtonElement | null>(null);
+  const contentContainerRef = useRef<HTMLDivElement | null>(null);
+
+  // Store position calculations for buttons
+  const buttonPositionsRef = useRef<number[]>([]);
+
+  // Store ScrollTrigger instances for cleanup
+  const scrollTriggersRef = useRef<any[]>([]);
+
   const features = [
     "CRM",
     "Live Scheduling",
@@ -12,22 +34,318 @@ const CoreFeaturesCard = () => {
     "Property Profiles",
     "Big Chief AI",
   ];
-  console.log(setIsShow);
+
+  // Content for each feature
+  const featureContents = [
+    {
+      title: "The first CRM that thinks like a contractor",
+      description:
+        'Most "contractor CRMs" are just contact pages with a few job links. Contractor+ brings the full picture: timelines, call transcripts, AI sentiment tracking, and role-specific contacts.',
+    },
+    {
+      title: "Real-time scheduling that works for contractors",
+      description:
+        "Manage crew schedules, equipment allocation, and job timelines in one place with automatic conflict detection and resolution suggestions.",
+    },
+    {
+      title: "Job-specific chat keeps everyone in the loop",
+      description:
+        "Dedicated channels for each project with file sharing, tagging, and searchable history to keep your team and clients connected.",
+    },
+    {
+      title: "Build accurate estimates in minutes",
+      description:
+        "Customizable templates, material calculators, and profit margin visualization help you create professional estimates that win jobs.",
+    },
+    {
+      title: "Complete property profiles at your fingertips",
+      description:
+        "Store property details, photos, measurements, and service history for quick reference and better customer service.",
+    },
+    {
+      title: "AI that understands construction",
+      description:
+        "From analyzing job profitability to suggesting optimal crew assignments, Big Chief AI helps you work smarter, not harder.",
+    },
+  ];
+
+  // Calculate button positions for each feature - memoized with useCallback
+  const calculateButtonPositions = useCallback(() => {
+    if (!featuresRef.current) return [0, 0, 0, 0, 0, 0];
+
+    // Try to select buttons with feature-btn class, fall back to all buttons if none found
+    let featureButtons =
+      featuresRef.current.querySelectorAll("button.feature-btn");
+
+    // If no buttons with feature-btn class, select all buttons
+    if (featureButtons.length === 0) {
+      featureButtons = featuresRef.current.querySelectorAll("button");
+    }
+
+    const positions: number[] = [];
+
+    featureButtons.forEach((button, index) => {
+      if (index === 0) {
+        positions.push(0); // First button starts at 0
+      } else {
+        // For vertical layout (desktop)
+        if (window.innerWidth >= 1024) {
+          positions.push(
+            (button as HTMLElement).offsetTop -
+              (featureButtons[0] as HTMLElement).offsetTop
+          );
+        }
+        // For horizontal layout (mobile)
+        else {
+          positions.push(
+            (button as HTMLElement).offsetLeft -
+              (featureButtons[0] as HTMLElement).offsetLeft
+          );
+        }
+      }
+    });
+
+    buttonPositionsRef.current = positions;
+    return positions;
+  }, []);
+
+  // Move indicator to active feature position
+  const moveIndicator = useCallback(
+    (index: number) => {
+      if (!indicatorRef.current || !featuresRef.current) return;
+
+      // Recalculate positions to ensure accuracy
+      const positions = calculateButtonPositions();
+      const position = positions[index];
+
+      // For desktop (vertical layout)
+      if (window.innerWidth >= 1024) {
+        gsap.to(indicatorRef.current, {
+          top: `${position + 6}px`, // 6px offset to align with text
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
+      // For mobile (horizontal layout) - move the dedicated mobile indicator
+      else if (mobileIndicatorRef.current) {
+        gsap.to(mobileIndicatorRef.current, {
+          left: position,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
+    },
+    [calculateButtonPositions]
+  );
+
+  // Update indicator position when active feature changes
+  useEffect(() => {
+    moveIndicator(activeFeature);
+    setProgressValue(activeFeature / (features.length - 1));
+  }, [activeFeature, moveIndicator, features.length]);
+
+  // Set up ScrollTrigger - using a layout effect to ensure DOM is ready
+  useEffect(() => {
+    // Return early if not in browser environment
+    if (typeof window === "undefined") return;
+
+    // Define handleResize first
+    const handleResize = () => {
+      calculateButtonPositions();
+      moveIndicator(activeFeature);
+
+      // Important: Refresh ScrollTrigger on resize
+      ScrollTrigger.refresh();
+    };
+
+    // Ensure proper cleanup
+    const cleanup = () => {
+      // Remove all event listeners
+      window.removeEventListener("resize", handleResize);
+
+      // Kill all ScrollTrigger instances
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+      // Also kill any stored triggers
+      scrollTriggersRef.current.forEach((trigger) => {
+        if (trigger && typeof trigger.kill === "function") {
+          trigger.kill();
+        }
+      });
+    };
+
+    // Clean up any existing instances first
+    cleanup();
+
+    // Wait for next frame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      // Add resize event listener
+      window.addEventListener("resize", handleResize);
+
+      // Get container reference
+      const container = containerRef.current;
+      const featuresElement = featuresRef.current;
+      const contentContainer = contentContainerRef.current;
+
+      if (!container || !featuresElement) {
+        cleanup();
+        return;
+      }
+
+      // Force any parent with overflow hidden to be visible
+      let parent = container.parentElement;
+      while (parent) {
+        const style = window.getComputedStyle(parent);
+        if (style.overflow === "hidden") {
+          parent.style.overflow = "visible";
+        }
+        parent = parent.parentElement;
+      }
+
+      // Initialize positions
+      calculateButtonPositions();
+
+      // Set initial position of indicator
+      if (indicatorRef.current) {
+        gsap.set(indicatorRef.current, {
+          top: buttonPositionsRef.current[0] + 6,
+        });
+      }
+
+      // Store all triggers for proper cleanup
+      const allTriggers: any[] = [];
+
+      // Fix for pin-spacer styling
+      const fixPinSpacer = () => {
+        // Find pin-spacer elements (created by GSAP)
+        const pinSpacers = document.querySelectorAll(".pin-spacer");
+        pinSpacers.forEach((spacer: Element) => {
+          // Fix common pin-spacer styling issues
+          const spacerEl = spacer as HTMLElement;
+          spacerEl.style.overflow = "visible";
+          spacerEl.style.height = "auto";
+          spacerEl.style.zIndex = "10";
+          spacerEl.style.position = "relative";
+        });
+      };
+
+      // Desktop setup
+      if (window.innerWidth >= 1024) {
+        // Main scroll trigger for pinning and progress
+        const pinTrigger = ScrollTrigger.create({
+          trigger: container,
+          start: "top 20%",
+          end: "bottom bottom",
+          pin: featuresElement,
+          pinSpacing: true,
+          onUpdate: (self) => {
+            // Update overall scroll progress for SVG fill
+            setProgressValue(self.progress);
+
+            // Fix any pin-spacer styling issues
+            if (self.progress > 0 && self.progress < 1) {
+              fixPinSpacer();
+            }
+          },
+        });
+
+        allTriggers.push(pinTrigger);
+
+        // Create scroll triggers for each section
+        features.forEach((_, index) => {
+          const contentElement = contentRefs.current[index];
+          if (!contentElement) return;
+
+          const sectionTrigger = ScrollTrigger.create({
+            trigger: contentElement,
+            start: "top 40%",
+            end: "bottom 40%",
+            onEnter: () => setActiveFeature(index),
+            onEnterBack: () => setActiveFeature(index),
+          });
+
+          allTriggers.push(sectionTrigger);
+        });
+      }
+      // Mobile setup
+      else {
+        // For mobile we don't pin, but still track active section
+        features.forEach((_, index) => {
+          const contentElement = contentRefs.current[index];
+          if (!contentElement) return;
+
+          const sectionTrigger = ScrollTrigger.create({
+            trigger: contentElement,
+            start: "top 60%",
+            end: "bottom 60%",
+            onEnter: () => setActiveFeature(index),
+            onEnterBack: () => setActiveFeature(index),
+          });
+
+          allTriggers.push(sectionTrigger);
+        });
+      }
+
+      // Store for cleanup
+      scrollTriggersRef.current = allTriggers;
+
+      // Finally, refresh ScrollTrigger to ensure everything is calculated correctly
+      ScrollTrigger.refresh();
+
+      // Position indicator manually after a short delay
+      const timeoutId = setTimeout(() => {
+        moveIndicator(activeFeature);
+      }, 100);
+
+      return () => {
+        clearTimeout(timeoutId);
+        cleanup();
+      };
+    });
+  }, []); // Empty dependency array - only run once
 
   return (
-    <div className="p-6 flex lg:flex-row flex-col gap-9">
-      <div className="flex gap-1.5">
+    <div
+      className="p-6 flex lg:flex-row flex-col gap-9 relative overflow-visible "
+      ref={containerRef}
+    >
+      {/* Navigation Column */}
+      <div
+        className="flex gap-1.5 lg:self-start z-20 w-[187px] "
+        ref={featuresRef}
+        style={{ overflow: "visible" }}
+      >
         <div className="px-1 hidden lg:flex relative w-fit justify-center items-center">
-          <button className="w-3 h-3 rounded-full absolute top-1.5 bg-lightBlack left-1/2 -translate-x-1/2"></button>
+          {/* Button that moves with scroll */}
+          <button
+            ref={indicatorRef}
+            className="w-3 h-3 rounded-full absolute top-1.5 bg-black left-1/2 -translate-x-1/2 z-10"
+          ></button>
+          {/* Using original Pathbg component as requested */}
           <Pathbg />
         </div>
-        <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta overflow-auto no-scrollbar whitespace-nowrap">
+        <div className="flex flex-row lg:flex-col gap-[22px] font-sans overflow-visible whitespace-nowrap relative">
+          {/* Mobile indicator (visible on small screens) */}
+          <button
+            ref={mobileIndicatorRef}
+            className="w-3 h-3 rounded-full absolute -bottom-3 lg:hidden bg-black left-0 z-10"
+            aria-hidden="true"
+          ></button>
           {features.map((feature, index) => (
             <button
-              onClick={() => setIsShow(true)}
+              onClick={() => {
+                setActiveFeature(index);
+                // Smooth scroll to the content
+                contentRefs.current[index]?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }}
               key={feature}
-              className={`text-base md:text-xl py-1 px-0.5 leading-[100%] ${
-                index === 0 ? "font-bold text-winterWay" : "text-secondary"
+              className={`feature-btn text-base  md:text-xl py-1 px-0.5 leading-[100%] transition-colors duration-300 min-w-[165px] ${
+                index === activeFeature
+                  ? " text-winterWay font-bold"
+                  : "text-secondary font-normal"
               }`}
             >
               {feature}
@@ -35,33 +353,34 @@ const CoreFeaturesCard = () => {
           ))}
         </div>
       </div>
-      {/* CRM-CONTENT */}
-      <div className="p-3.5 bg-doctor rounded-2xl w-full space-y-[18px]">
-        <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet font-jakarta leading-[100%]">
-          The first CRM that thinks like a contractor
-        </h4>
-        <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full"></div>
-        <p className="paragraph-text font-medium text-wallStreet max-w-[620px] font-jakarta">
-          Most “contractor CRMs” are just contact pages with a few job links.{" "}
-          <span className="text-secondary">
-            Contractor+ brings the full picture: timelines, call transcripts, AI
-            sentiment tracking, and role-specific contacts.
-          </span>
-        </p>
-      </div>
-      {/* OTHER-CONTENT */}
-      <div className="p-3.5 bg-doctor rounded-2xl w-full space-y-[18px]">
-        <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet font-jakarta leading-[100%]">
-          The first CRM that thinks like a contractor
-        </h4>
-        <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full"></div>
-        <p className="paragraph-text font-medium text-wallStreet max-w-[620px] font-jakarta">
-          Most “contractor CRMs” are just contact pages with a few job links.{" "}
-          <span className="text-secondary">
-            Contractor+ brings the full picture: timelines, call transcripts, AI
-            sentiment tracking, and role-specific contacts.
-          </span>
-        </p>
+
+      {/* Feature Content Sections */}
+      <div
+        className="space-y-32 overflow-visible max-w-[639px] w-full"
+        ref={contentContainerRef}
+      >
+        {featureContents.map((content, index) => (
+          <div
+            key={index}
+            ref={(el) => {
+              contentRefs.current[index] = el;
+            }}
+            className="p-3.5 bg-gray-100 rounded-2xl w-full space-y-[18px] scroll-mt-24 "
+          >
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 font-sans leading-[100%]">
+              {content.title}
+            </h4>
+            <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm">
+              {/* Content placeholder - replace with actual content/images */}
+              <div className="absolute inset-0 flex items-center justify-center text-lg text-gray-400">
+                {features[index]} visualization
+              </div>
+            </div>
+            <p className="text-base font-medium text-gray-800 max-w-[620px] font-sans">
+              {content.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

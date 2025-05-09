@@ -595,7 +595,7 @@ export const Pathbg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1"
-    height="100%"
+    height="96%"
     viewBox="0 0 1 382"
     fill="none"
   >

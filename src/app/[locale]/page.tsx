@@ -37,7 +37,7 @@ export default function Home() {
         <Whatever />
         <MakeOperation />
       </div>
-      {/* <OurBlogs/> */}
+      <OurBlogs />
       <EntireBusiness />
       <Footer />
     </div>

@@ -59,7 +59,7 @@ const OurBlogs = () => {
           </button>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-stretch gap-6">
+        <div className="flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
           {/* Left column */}
           <div className="lg:max-w-[450px] w-full flex flex-col gap-4">
             {blogData.map((blog) => (
@@ -101,17 +101,17 @@ const OurBlogs = () => {
           </div>
 
           {/* Right column (Featured Blog) */}
-          <div className="w-full relative">
+          <div className="w-full relative flex flex-col justify-end pb-6">
             <img
               src="/images/webp/blog-right-side.webp"
               alt="Featured Blog"
-              className="rounded-xl object-cover w-full"
+              className="rounded-xl object-cover w-full absolute top-0 h-full"
             />
-            <div className="absolute bottom-0 left-0 right-0  p-6">
+            <div className="px-6 pt-20 relative z-10">
               <p className="text-base font-medium text-[#D2D4D6] font-jakarta">
                 Contractor | 5 minutes ago
               </p>
-              <h3 className=" text-2xl sm:text-[30px] md:text-[36px] font-extrabold font-jakarta capitalize text-white">
+              <h3 className="text-2xl sm:text-[30px] md:text-[36px] font-extrabold font-jakarta capitalize text-white truncate overflow-hidden w-[400px]">
                 Discover The Member Benefits Of USA Contracting!
               </h3>
               <p className="text-[#F0F0F0] text-base font-jakarta mt-2">

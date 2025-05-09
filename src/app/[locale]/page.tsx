@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import Slider from "@/components/common/CustomSlider";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -20,11 +21,13 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="bg-kuroiBlack">
+      <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover">
         <Header />
         <Hero />
         <TrustBar />
         <TheEngineContractor />
+      </div>
+      <div className="bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain bg-no-repeat sm:bg-center">
         <ContractorPlatforms />
         <Finally />
       </div>
@@ -36,7 +39,7 @@ export default function Home() {
         <Whatever />
         <MakeOperation />
       </div>
-      {/* <OurBlogs/> */}
+      <OurBlogs />
       <EntireBusiness />
       <Footer />
     </div>

@@ -337,3 +337,33 @@ export const OurReviewList: Review[] = [
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
 ];
+
+export const blogList = [
+  {
+    id: 1,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-1.webp",
+  },
+  {
+    id: 2,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-2.webp",
+  },
+  {
+    id: 3,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-3.webp",
+  },
+];

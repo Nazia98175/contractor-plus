@@ -9,6 +9,8 @@
   --color-winterWay: #3f464b;
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
+  --color-whiteSmoke: #f3f3f3;
+  --color-doctor2: #f8f8f8;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
@@ -75,10 +77,10 @@
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%];
+  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
-  @apply text-[26px] !leading-[128%] sm:text-[28px] md:text-[32px] font-jakarta;
+  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
 }
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit;
@@ -155,4 +157,57 @@ html {
 .third-border {
   border-radius: 20px;
   border: 1px solid rgba(242, 19, 20, 0.4);
+}
+
+.gradient-border {
+  position: relative;
+  background: radial-gradient(
+      38.35% 84.5% at 98.28% 95.91%,
+      rgba(238, 30, 37, 0.2) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    #f8f8f8;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: 12px; /* match container */
+  background: radial-gradient(
+    38.35% 84.5% at 98.28% 95.91%,
+    rgba(238, 30, 37, 0.678) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 16px;
+  display: block !important;
+  z-index: 777 !important;
+}
+.swiper-pagination-bullet-active {
+  border-radius: 24px !important;
+  background: #3b82f6 !important;
+  width: 24px !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  background: #e3e6f0;
 }

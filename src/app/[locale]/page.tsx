@@ -19,7 +19,7 @@ export default function Home() {
   const t = useTranslations();
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <div className="bg-kuroiBlack">
         <Header />
         <Hero />

@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="bg-ruinedSmores">
+      <div className="bg-kuroiBlack">
         <Header />
         <Hero />
         <TrustBar />
@@ -37,7 +37,7 @@ export default function Home() {
         <Whatever />
         <MakeOperation />
       </div>
-      <OurBlogs/>
+      {/* <OurBlogs/> */}
       <EntireBusiness />
       <Footer />
     </div>

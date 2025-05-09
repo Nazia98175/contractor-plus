@@ -8,6 +8,7 @@ import Features from "@/components/homepage/Features";
 import Finally from "@/components/homepage/Finally";
 import Hero from "@/components/homepage/Hero";
 import MakeOperation from "@/components/homepage/MakeOperation";
+import OurBlogs from "@/components/homepage/OurBlogs";
 import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
@@ -36,6 +37,7 @@ export default function Home() {
         <Whatever />
         <MakeOperation />
       </div>
+      <OurBlogs/>
       <EntireBusiness />
       <Footer />
     </div>

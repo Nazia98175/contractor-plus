@@ -2,6 +2,17 @@
   "heading": "¡Bienvenido a Next.js!",
   "hero": {
     "heading": "El único sistema operativo para contratistas de construcción y servicios",
-    "desc": "Todo el poder del software empresarial, sin las complicaciones. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento."
+    "desc": "Todo el poder del software empresarial, sin las complicaciones. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento.",
+    "credit": "No se requiere tarjeta de crédito",
+    "cta": "Crear cuenta gratuita"
+  },
+  "menu": {
+    "why": "¿Por qué Contractor+?",
+    "features": "Funciones",
+    "industries": "Industrias",
+    "pricing": "Precios",
+    "resources": "Recursos",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse"
   }
 }

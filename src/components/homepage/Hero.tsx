@@ -15,11 +15,11 @@ const Hero = () => {
           </p>
           <div className="flex gap-2.5 sm:flex-row flex-col items-center">
             <button className="bg-red-linear h-10 primary-btn">
-              Create free account
+              {t("cta")}
             </button>
             <button className="flex gap-1.5 items-center font-myriad text-sm text-white cursor-pointer">
               <CheckIcon />
-              No Credit Card Required
+              {t("credit")}
             </button>
           </div>
         </div>

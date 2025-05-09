@@ -2,6 +2,17 @@
   "heading": "Bienvenue dans Next.js !",
   "hero": {
     "heading": "Le seul système d'exploitation pour les entrepreneurs en construction et services",
-    "desc": "Toute la puissance des grands logiciels, sans les inconvénients. Une seule plateforme — et non six — pour gérer les chantiers, les équipes, les clients et la croissance."
+    "desc": "Toute la puissance des grands logiciels, sans les inconvénients. Une seule plateforme — et non six — pour gérer les chantiers, les équipes, les clients et la croissance.",
+    "credit": "Aucune carte de crédit requise",
+    "cta": "Créer un compte gratuit"
+  },
+  "menu": {
+    "why": "Pourquoi Contractor+ ?",
+    "features": "Fonctionnalités",
+    "industries": "Secteurs",
+    "pricing": "Tarifs",
+    "resources": "Ressources",
+    "login": "Se connecter",
+    "signup": "S'inscrire"
   }
 }

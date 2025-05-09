@@ -6,6 +6,7 @@ import FeaturesDropdown from "./FeaturesDropdown";
 import IndustriesDropdown from "./IndustriesDropdown";
 import PricingDropdown from "./PricingDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
+import { useTranslations } from "next-intl";
 
 const HeaderLiItems = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -19,17 +20,19 @@ const HeaderLiItems = () => {
   const Pricing = () => <PricingDropdown />;
   const Resources = () => <ResourcesDropdown />;
 
+  const t = useTranslations("menu");
+
   // Button data array
   const menuItems = [
     {
       id: "whycontractor",
-      label: "Why Contractor+?",
+      label: t("why"),
       component: WhyContractor,
     },
-    { id: "features", label: "Features", component: Features },
-    { id: "industries", label: "Industries", component: Industries },
-    { id: "pricing", label: "Pricing", component: Pricing },
-    { id: "resources", label: "Resources", component: Resources },
+    { id: "features", label: t("features"), component: Features },
+    { id: "industries", label: t("industries"), component: Industries },
+    { id: "pricing", label: t("pricing"), component: Pricing },
+    { id: "resources", label: t("resources"), component: Resources },
   ];
 
   // Find active component

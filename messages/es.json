@@ -16,7 +16,8 @@
     "signup": "Registrarse"
   },
   "engine": {
-    "heading": "El motor que usan 57,163 contratistas",
+    "heading": "El motor que usan",
+    "countup": "contratistas",
     "desc": "Todo el poder del software empresarial, sin el dolor. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento.",
     "super": "Estimaciones Súper Fáciles",
     "hourSave": "Horas Ahorradas en Promedio por Semana"
@@ -35,5 +36,113 @@
       "heading": "Inadecuado",
       "desc": "No existe una verdadera solución 'todo en uno', así que terminas usando 6 plataformas diferentes para gestionar tu empresa."
     }
+  },
+  "finally": {
+    "heading": "Finalmente, una plataforma para reemplazarlas todas",
+    "desc": "Contractor+ es el primer sistema operativo creado para gestionar cada parte de tu negocio, desde la oficina hasta el campo—sin complejidad.",
+    "features": [
+      "CRM",
+      "Servicio de campo",
+      "Ventas",
+      "Ofertas",
+      "Facturación",
+      "Gestión de proyectos"
+    ]
+  },
+  "corefeature": {
+    "heading": "Características Principales",
+    "desc": "Descubre las potentes herramientas que hacen de Contractor+ la solución definitiva para tu negocio de contratista",
+    "features": [
+      "CRM",
+      "Programación en Vivo",
+      "Chat Interno de Trabajo",
+      "Creador de Presupuestos",
+      "Perfiles de Propiedades",
+      "Big Chief AI"
+    ]
+  },
+  "feature": {
+    "card1": {
+      "heading": "Aplicación móvil fácil de usar",
+      "desc": "Contractor+ es fácil de usar tanto en computadora como en móvil, así que tu equipo realmente lo usará."
+    },
+    "card2": {
+      "heading": "Bandeja de comunicación",
+      "desc": "Llama, envía mensajes, correos electrónicos y escucha mensajes de voz para cada cliente potencial, cliente, inquilino, proveedor y subcontratista — todo en un solo lugar."
+    },
+    "card3": {
+      "heading": "Espacios de trabajo múltiples",
+      "desc": "Cambia entre espacios de trabajo para diferentes ubicaciones, equipos o empresas."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ atiende a más de 30 industrias",
+    "desc": "La única plataforma diseñada para servicios de campo, oficios y contratistas generales",
+    "cta": "Ver todas las industrias"
+  },
+  "whatever": "No importa lo que uses, Contractor+ se conecta",
+  "makeoperation": {
+    "heading": "Haz de tus operaciones una ventaja competitiva",
+    "desc": "El retorno de inversión con Contractor+ hace que la decisión sea fácil",
+    "makeOperationlist": [
+      {
+        "title": "3-4x  más rápido",
+        "description": "Proceso de estimación"
+      },
+      {
+        "title": "24% más rápido",
+        "description": "Tiempo de entrega del trabajo"
+      },
+      {
+        "title": "38% menos",
+        "description": "Tiempo dedicado a tareas administrativas"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      "CRM",
+      "Gestión de servicios de campo",
+      "Gestión de proyectos",
+      "Generación de clientes potenciales",
+      "Contabilidad",
+      "Sitios web PRO",
+      "Presupuestos y cotizaciones",
+      "Seguimiento de flujo de negocios",
+      "Todas las funciones",
+      "Gestión de proyectos",
+      "Gestión de servicios de campo",
+      "Contractor+ Pay",
+      "Contractor+ Local",
+      "Contabilidad",
+      "Big Chief AI",
+      "Estimatic AI",
+      "Estimatic AI",
+      "Todas las soluciones",
+      "Contratista general",
+      "Fontanería",
+      "Construcción",
+      "HVAC",
+      "Remodelación",
+      "Pintura",
+      "Techos",
+      "Eliminación de basura",
+      "Cerrajería",
+      "Paneles de yeso",
+      "Todas las industrias",
+      "Blog",
+      "Podcasts",
+      "Tarifas laborales en EE.UU.",
+      "Tendencias de materiales en EE.UU.",
+      "Comparación de precios de materiales",
+      "Panel de ideas",
+      "Embajadores de marca",
+      "Socios de suministro",
+      "Documentos API",
+      "Comienza GRATIS",
+      "Precios",
+      "Agenda una demo"
+    ],
+    "sections": ["Funciones", "Industrias", "Soluciones", "Explorar"]
   }
 }

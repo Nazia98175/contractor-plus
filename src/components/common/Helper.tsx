@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import {
   AdminWorkIcon,
   AssetIcon,
@@ -156,23 +157,7 @@ export const featurelinks = [
     icon: <TimeIcon />,
   },
 ];
-export const featureData = [
-  {
-    title: "User-friendly mobile app",
-    desc: "Contractor+ is user-friendly on desktop and mobile, so your team will actually use it.",
-    img: "/images/webp/user-friendly.webp",
-  },
-  {
-    title: "Communication inbox",
-    desc: "Call, text, email, and listen to voicemail for every lead, client, tenant, vendor, and sub—all in one spot.",
-    img: "/images/webp/communication-box.webp",
-  },
-  {
-    title: "Multiple-workspaces",
-    desc: "Toggle between workspaces for different locations, teams, or businesses.",
-    img: "/images/webp/workspace.webp",
-  },
-];
+
 export const contractPlatforms = [
   {
     img: "/images/webp/expensive.webp",
@@ -275,24 +260,6 @@ export const PricingDropdownLinks = [
   { label: "Support Center", href: "/" },
   { label: "Regional Labor Pricing", href: "/" },
   { label: "Regional Material Pricing", href: "/" },
-];
-
-export const MakeOperationlist = [
-  {
-    title: "3-4x faster",
-    description: "Estimate process",
-    icon: <EstimateIcon2 />,
-  },
-  {
-    title: "24% faster",
-    description: "Job turnaround time",
-    icon: <TurnaroundIcon />,
-  },
-  {
-    title: "38% less",
-    description: "Time spent on admin work",
-    icon: <AdminWorkIcon />,
-  },
 ];
 
 export interface Review {

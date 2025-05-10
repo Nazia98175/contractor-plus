@@ -16,12 +16,14 @@
     "signup": "S'inscrire"
   },
   "engine": {
-    "heading": "Le moteur utilisé par 57 163 entrepreneurs",
+    "heading": "Le moteur utilisé par ",
+    "countup": "entrepreneurs",
+
     "desc": "Toute la puissance d’un grand logiciel, sans les tracas. Une seule plateforme — pas six — pour gérer les chantiers, les équipes, les clients et la croissance.",
     "super": "Estimations Super Simples",
     "hourSave": "Heures Moyennes Économisées par Semaine"
   },
-  "platoform": {
+  "platformcatch": {
     "platformcatch": "Il existe des dizaines de plateformes pour entrepreneurs, mais chacune a un piège.",
     "card1": {
       "heading": "Coûteux",
@@ -35,5 +37,114 @@
       "heading": "Inadéquat",
       "desc": "Il n'existe pas de véritable 'tout-en-un', donc vous vous retrouvez avec 6 plateformes différentes pour gérer votre entreprise."
     }
+  },
+
+  "finally": {
+    "heading": "Enfin, une plateforme pour les remplacer toutes",
+    "desc": "Contractor+ est le premier système d’exploitation conçu pour gérer chaque partie de votre entreprise, du bureau au terrain—sans complexité.",
+    "features": [
+      "CRM",
+      "Service sur le terrain",
+      "Ventes",
+      "Offres",
+      "Facturation",
+      "Gestion de projet"
+    ]
+  },
+  "corefeature": {
+    "heading": "Fonctionnalités Clés",
+    "desc": "Découvrez les outils puissants qui font de Contractor+ la solution ultime pour votre entreprise de sous-traitance",
+    "features": [
+      "CRM",
+      "Planification en Direct",
+      "Chat Interne de Projet",
+      "Générateur de Devis",
+      "Profils de Propriété",
+      "Big Chief AI"
+    ]
+  },
+  "feature": {
+    "card1": {
+      "heading": "Application mobile conviviale",
+      "desc": "Contractor+ est facile à utiliser sur ordinateur et mobile, votre équipe l’utilisera vraiment."
+    },
+    "card2": {
+      "heading": "Boîte de communication",
+      "desc": "Appelez, envoyez des SMS, des e-mails, et écoutez les messages vocaux pour chaque prospect, client, locataire, fournisseur et sous-traitant — tout en un seul endroit."
+    },
+    "card3": {
+      "heading": "Espaces de travail multiples",
+      "desc": "Basculez entre les espaces de travail pour différents sites, équipes ou entreprises."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ dessert plus de 30 secteurs",
+    "desc": "La seule plateforme conçue pour les services sur le terrain, les métiers et les entrepreneurs généraux",
+    "cta": "Voir tous les secteurs"
+  },
+  "whatever": "Quel que soit ce que vous utilisez, Contractor+ se connecte",
+  "makeoperation": {
+    "heading": "Faites de vos opérations un avantage concurrentiel",
+    "desc": "Le retour sur investissement avec Contractor+ rend le choix évident",
+    "makeOperationlist": [
+      {
+        "title": "3-4x plus rapide",
+        "description": "Processus d’estimation"
+      },
+      {
+        "title": "24% plus rapide",
+        "description": "Temps d’exécution des projets"
+      },
+      {
+        "title": "38% moins",
+        "description": "Temps passé sur les tâches administratives"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      "CRM",
+      "Gestão de Serviços de Campo",
+      "Gestão de Projetos",
+      "Geração de Leads",
+      "Contabilidade",
+      "Sites PRO",
+      "Orçamentos e Cotações",
+      "Rastreamento de Negócios",
+      "Todos os Recursos",
+      "Gestão de Projetos",
+      "Gestão de Serviços de Campo",
+      "Contractor+ Pay",
+      "Contractor+ Local",
+      "Contabilidade",
+      "Big Chief AI",
+      "Estimatic AI",
+      "Estimatic AI",
+      "Todas as Soluções",
+      "Empreiteiro Geral",
+      "Encanamento",
+      "Construção",
+      "HVAC",
+      "Reformas",
+      "Pintura",
+      "Telhados",
+      "Remoção de Entulho",
+      "Chaveiro",
+      "Drywall",
+      "Todas as Indústrias",
+      "Blog",
+      "Podcasts",
+      "Taxas de Mão de Obra EUA",
+      "Tendências de Materiais EUA",
+      "Comparação de Preços de Materiais",
+      "Quadro de Ideias",
+      "Embaixadores da Marca",
+      "Parceiros de Fornecimento",
+      "Documentação da API",
+      "Comece GRÁTIS",
+      "Preços",
+      "Agendar uma Demonstração"
+    ],
+    "sections": ["Recursos", "Indústrias", "Soluções", "Explorar"]
   }
 }

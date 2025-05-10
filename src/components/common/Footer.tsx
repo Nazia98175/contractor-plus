@@ -1,199 +1,89 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import AnimateHeight from "react-animate-height";
 import {
   DownArrowIcon,
   FooterLogoIcon,
   FooterRedLineIcon,
+  GreenDotIcon,
   LinkdinIcon,
-  RedClipIcon,
   TwitterIcon,
 } from "./Icons";
-import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
-  const currentYear: number = new Date().getFullYear();
-  const [openFaq, setOpenFaq] = useState<string | null>(null);
+  const currentYear = new Date().getFullYear();
+  const [openSection, setOpenSection] = useState<string | null>(null);
+  const t = useTranslations("footer");
 
-  const handleToggleFaq = (section: string) => {
-    setOpenFaq(section === openFaq ? null : section);
+  const links: { text: string; href: string }[] = t
+    .raw("links")
+    .map((text: string) => ({
+      text,
+      href: "#", // TODO: Replace with actual URLs
+    }));
+
+  const sections: string[] = t.raw("sections");
+  const ranges = [
+    [0, 9],
+    [9, 18],
+    [18, 29],
+    [29, 38],
+  ];
+
+  const toggleSection = (title: string) => {
+    setOpenSection(openSection === title ? null : title);
   };
-  const footerlink = [
-    { text: "CRM", href: "#" },
-    { text: "Field Service Management", href: "#" },
-    { text: "Project Management", href: "#" },
-    { text: "Lead Generation", href: "/" },
-    { text: "Bookkeeping", href: "/" },
-    { text: "PRO Websites", href: "#about-us" },
-    { text: "Estimates & Quotes", href: "/" },
-    { text: "Deal Flow Tracking", href: "/" },
-    { text: "All Features", href: "/" },
-    { text: "Project Management ", href: "/" },
-    { text: "Field Service Management", href: "/" },
-    { text: "Contractor+ Pay", href: "/" },
-    { text: "Contractor+ Local ", href: "/" },
-    { text: "Bookkeeping", href: "/" },
-    { text: "Big Chief AI", href: "/" },
-    { text: "Estimatic AI", href: "/" },
-    { text: "Estimatic AI", href: "/" },
-    { text: "All Solutions", href: "/" },
-    { text: "General Contractor", href: "/" },
-    { text: "Plumbing", href: "/" },
-    { text: "Construction", href: "/" },
-    { text: "HVAC", href: "/" },
-    { text: "Remodeling", href: "/" },
-    { text: "Painting", href: "/" },
-    { text: "Roofing", href: "/" },
-    { text: "Junk Removal", href: "/" },
-    { text: "Locksmith", href: "/" },
-    { text: "Drywall", href: "/" },
-    { text: "All Industries", href: "/" },
-    { text: "Blog", href: "/" },
-    { text: "Podcasts", href: "/" },
-    { text: "USA Labor Rates", href: "/" },
-    { text: "USA Material Trends", href: "/" },
-    { text: "Material Price Comparison", href: "/" },
-    { text: "Idea Board", href: "/" },
-    { text: "Brand Ambassadors", href: "/" },
-    { text: "Supply Partners", href: "/" },
-    { text: "API Docs", href: "/" },
-    { text: "Get Started FREE", href: "/" },
-    { text: "Pricing", href: "/" },
-    { text: "Schedule A Demo", href: "/" },
-  ];
-  const footermobilelink = [
-    { title: "Features", range: [0, 9] },
-    { title: "Industries", range: [9, 18] },
-    { title: "Solutions", range: [18, 29] },
-    { title: "Explore", range: [29, 38] },
-  ];
+
   return (
     <footer className="bg-kuroiBlack py-10 w-full relative">
+      {/* Background Line Decoration */}
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>
+
       <div className="main-container">
-        <div className="space-y-5 max-w-[414px] w-full mx-auto flex flex-col justify-center items-center">
+        {/* Header */}
+        <div className="space-y-5 max-w-[414px] mx-auto text-center">
           <FooterLogoIcon />
-          <div className="border-lightBlack border flex items-center footer-gradient-bg rounded-[500px] text-white text-sm font-medium px-3 py-2 gap-3">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="9"
-                height="8"
-                viewBox="0 0 9 8"
-                fill="none"
-              >
-                <path
-                  d="M8 4C8 2.067 6.433 0.5 4.5 0.5C2.567 0.5 1 2.067 1 4C1 5.933 2.567 7.5 4.5 7.5C6.433 7.5 8 5.933 8 4Z"
-                  fill="url(#paint0_linear_41_19341)"
-                  stroke="url(#paint1_radial_41_19341)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_41_19341"
-                    x1="4.5"
-                    y1="0"
-                    x2="4.5"
-                    y2="8"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#10834B" />
-                    <stop offset="1" stopColor="#09F785" />
-                  </linearGradient>
-                  <radialGradient
-                    id="paint1_radial_41_19341"
-                    cx="0"
-                    cy="0"
-                    r="1"
-                    gradientUnits="userSpaceOnUse"
-                    gradientTransform="translate(4.1603) rotate(87.5684) scale(8.00721 8.77333)"
-                  >
-                    <stop stopColor="white" stopOpacity="0.48" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.04" />
-                  </radialGradient>
-                </defs>
-              </svg>
-            </span>
-            <p className="">All Services Operational & Working</p>
+          <div className="border-lightBlack border footer-gradient-bg rounded-[500px] text-white text-sm font-medium px-3 py-2 gap-3 inline-flex items-center">
+            <GreenDotIcon />
+            <p>All Services Operational & Working</p>
           </div>
-          <h3 className="text-sm sm:text-base font-medium text-decemberSky font-jakarta text-center pb-7 sm:pb-0">
+          <h3 className="text-sm sm:text-base font-medium text-decemberSky font-jakarta">
             Helping Contractors Win 2x More Jobs In 1/3rd The Time
           </h3>
         </div>
-        <div className="hidden md:flex flex-wrap justify-center items-start gap-6 w-full pt-7">
-          <div className="hidden md:block max-w-[200px] w-full">
-            <h3 className="text-base font-bold text-white font-jakarta pb-2">
-              Features
-            </h3>
-            <div className="flex flex-col gap-2">
-              {footerlink.slice(0, 9).map((list, index) => (
-                <FooterLinkItem key={index} list={list} />
-              ))}
-            </div>
-          </div>
-          <div className="hidden md:block max-w-[200px] w-full">
-            <h3 className="text-base font-bold text-white font-jakarta pb-2">
-              Solutions
-            </h3>
-            <div className="flex flex-col gap-2">
-              {footerlink.slice(9, 18).map((list, index) => (
-                <FooterLinkItem key={index} list={list} />
-              ))}
-            </div>
-          </div>
-          <div className="hidden md:block max-w-[150px] w-full">
-            <div>
-              <h3 className="text-base font-bold text-white font-jakarta pb-2">
-                Industries
-              </h3>
-              <div className="flex flex-col gap-2">
-                {footerlink.slice(18, 29).map((list, index) => (
-                  <FooterLinkItem key={index} list={list} />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="hidden md:block max-w-[150px] w-full">
-            <h3 className="text-base font-bold text-white font-jakarta pb-2">
-              Resources
-            </h3>
-            <div className="flex flex-col gap-2">
-              {footerlink.slice(29, 38).map((list, index) => (
-                <FooterLinkItem key={index} list={list} />
-              ))}
-            </div>
-          </div>
-          <div className="hidden md:block max-w-[150px] w-full">
-            <div>
-              <h3 className="text-base font-bold text-white font-jakarta pb-2">
-                Why Contractor+?
-              </h3>
-              <div className="flex flex-col gap-2">
-                {footerlink.slice(38).map((list, index) => (
-                  <FooterLinkItem key={index} list={list} />
-                ))}
-              </div>
-            </div>
-          </div>
+
+        {/* Desktop Footer Links */}
+        <div className="hidden md:flex flex-wrap justify-center gap-6 w-full pt-7">
+          {sections.map((title, idx) => (
+            <FooterSection
+              key={idx}
+              title={title}
+              links={links.slice(...ranges[idx])}
+            />
+          ))}
+          <FooterSection title="Why Contractor+?" links={links.slice(38)} />
         </div>
 
-        {/* Accordions for mobile view */}
+        {/* Mobile Accordion */}
         <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
-          {footermobilelink.map((section, idx) => (
+          {sections.map((title, idx) => (
             <div key={idx} className="max-w-[150px] w-full">
               <button
-                onClick={() => handleToggleFaq(section.title)}
+                onClick={() => toggleSection(title)}
                 className="flex flex-col justify-between px-4 w-full py-2 text-start"
               >
                 <div className="flex justify-between items-center w-full">
                   <h3 className="text-base font-bold text-white font-jakarta">
-                    {section.title}
+                    {title}
                   </h3>
                   <span
-                    className={`transform transition-transform duration-300 ${
-                      openFaq === section.title ? "rotate-180" : ""
+                    className={`transition-transform duration-300 ${
+                      openSection === title ? "rotate-180" : ""
                     }`}
                   >
                     <DownArrowIcon />
@@ -201,11 +91,11 @@ const Footer = () => {
                 </div>
                 <AnimateHeight
                   duration={500}
-                  height={openFaq === section.title ? "auto" : 0}
+                  height={openSection === title ? "auto" : 0}
                 >
                   <div className="flex flex-col gap-2 pt-4 sm:pt-6">
-                    {footerlink.slice(...section.range).map((list, index) => (
-                      <FooterLinkItem key={index} list={list} />
+                    {links.slice(...ranges[idx]).map((link, i) => (
+                      <FooterLinkItem key={i} list={link} />
                     ))}
                   </div>
                 </AnimateHeight>
@@ -213,8 +103,10 @@ const Footer = () => {
             </div>
           ))}
         </div>
+
+        {/* Footer Bottom */}
         <div className="flex justify-between items-center gap-3 pt-4">
-          <div className="hidden md:flex gap-3">
+          <div className="hidden md:flex gap-3 items-center">
             <p className="text-xs text-secondary font-medium font-montserrat">
               Powered By
             </p>
@@ -224,48 +116,31 @@ const Footer = () => {
               unoptimized
               className="max-w-[72px] w-full"
               src="/images/webp/footer-logo.webp"
-              alt="images"
+              alt="Powered by Logo"
             />
           </div>
-          <div className="flex justify-between gap-3 flex-col sm:flex-row w-full md:w-fit items-center">
-            <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-3">
-              <p className="text-xs text-secondary font-medium font-montserrat">
-                Copyright © {currentYear} Contractor+ All rights reserved.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                <Link
-                  href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
-                >
-                  Terms of Service
-                </Link>
-                <Link
-                  href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
-                >
-                  Cookie Policy
-                </Link>
-                <Link
-                  href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
-                >
-                  GDPR
-                </Link>
-                <Link
-                  href={"#"}
-                  className="text-xs text-secondary font-medium font-montserrat hover:text-white transition-all duration-300 ease-in-out"
-                >
-                  Accessibility
-                </Link>
+          <div className="flex flex-col sm:flex-row justify-between items-center w-full md:w-fit gap-3">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-3 text-xs text-secondary font-medium font-montserrat">
+              <p>© {currentYear} Contractor+ All rights reserved.</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  "Terms of Service",
+                  "Privacy Policy",
+                  "Cookie Policy",
+                  "GDPR",
+                  "Accessibility",
+                ].map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href="#"
+                    className="hover:text-white transition-all duration-300"
+                  >
+                    {item}
+                  </Link>
+                ))}
               </div>
             </div>
-            <div className="md:hidden flex gap-3">
+            <div className="md:hidden flex gap-3 items-center">
               <p className="text-xs text-secondary font-medium font-montserrat">
                 Powered By
               </p>
@@ -275,14 +150,14 @@ const Footer = () => {
                 unoptimized
                 className="max-w-[72px] w-full"
                 src="/images/webp/footer-logo.webp"
-                alt="images"
+                alt="Powered by Logo"
               />
             </div>
             <div className="flex gap-3">
-              <Link href={"#"}>
+              <Link href="#">
                 <TwitterIcon />
               </Link>
-              <Link href={"#"}>
+              <Link href="#">
                 <LinkdinIcon />
               </Link>
             </div>
@@ -294,7 +169,31 @@ const Footer = () => {
 };
 
 export default Footer;
-export const FooterLinkItem = ({ list }: { list: any }) => (
+
+const FooterSection = ({
+  title,
+  links,
+}: {
+  title: string;
+  links: { text: string; href: string }[];
+}) => (
+  <div className="max-w-[200px] w-full">
+    <h3 className="text-base font-bold text-white font-jakarta pb-2">
+      {title}
+    </h3>
+    <div className="flex flex-col gap-2">
+      {links.map((list, index) => (
+        <FooterLinkItem key={index} list={list} />
+      ))}
+    </div>
+  </div>
+);
+
+export const FooterLinkItem = ({
+  list,
+}: {
+  list: { text: string; href: string };
+}) => (
   <div className="group relative w-full md:w-fit">
     <Link
       className="text-base text-decemberSky font-jakarta hover:text-white transition-all duration-200 ease-in-out"

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { OnIcon, OnIconw } from "../common/Icons";
-// Instead of importing from Helper, we define the icons directly here
+import { useTranslations } from "next-intl";
 const leftIcons = [
   {
     src: "/images/png/contractor-2.png",
@@ -61,7 +61,7 @@ const Whatever = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  const t = useTranslations();
   return (
     <section className="relative w-full overflow-hidden">
       <Image
@@ -81,7 +81,7 @@ const Whatever = () => {
 
       <div className="pt-12 pb-[53px] overflow-visible w-full">
         <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center md:mb-8 mb-[21px]">
-          Whatever you use, Contractor+ connects
+          {t("whatever")}
         </h3>
 
         <div className="max-w-[1002px] mx-auto px-2 lg:px-0">

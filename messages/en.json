@@ -16,7 +16,8 @@
     "signup": "Sign Up"
   },
   "engine": {
-    "heading": "The engine 57,163 contractors run on",
+    "heading": "The engine",
+    "countup": "contractors run on",
     "desc": "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth.",
     "super": "Super Easy Estimates",
     "hourSave": "Hours Average Time Saved Per Week"
@@ -35,5 +36,113 @@
       "heading": "Inadequate",
       "desc": "There’s no true “all in one”, so you end up with 6 different platforms to run your company."
     }
+  },
+  "finally": {
+    "heading": "Finally, one platform to replace them all",
+    "desc": "Contractor+ is the first operating system built to run every part of your business, from the back office to the field—without complexity.",
+    "features": [
+      "CRM",
+      "Field Service",
+      "Sales",
+      "Bids",
+      "Billing",
+      "Project management"
+    ]
+  },
+  "corefeature": {
+    "heading": "Core Features",
+    "desc": "Discover the powerful tools that make Contractor+ the ultimate solution for your contracting business",
+    "features": [
+      "CRM",
+      "Live Scheduling",
+      "Internal Job Chat",
+      "Estimate Builder",
+      "Property Profiles",
+      "Big Chief AI"
+    ]
+  },
+  "feature": {
+    "card1": {
+      "heading": "User-friendly mobile app",
+      "desc": "Contractor+ is user-friendly on desktop and mobile, so your team will actually use it."
+    },
+    "card2": {
+      "heading": "Communication inbox",
+      "desc": "Call, text, email, and listen to voicemail for every lead, client, tenant, vendor, and sub—all in one spot."
+    },
+    "card3": {
+      "heading": "Multiple-workspaces",
+      "desc": "Toggle between workspaces for different locations, teams, or businesses."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ serves 30+ industries",
+    "desc": "The only platform made for field service, trades, and general contractors",
+    "cta": "View All Industries"
+  },
+  "whatever": "Whatever you use, Contractor+ connects",
+  "makeoperation": {
+    "heading": "Make operations your competitive edge",
+    "desc": "The ROI from Contractor+ makes the choice easy",
+    "makeOperationlist": [
+      {
+        "title": "3-4x faster",
+        "description": "Estimate process"
+      },
+      {
+        "title": "24% faster",
+        "description": "Job turnaround time"
+      },
+      {
+        "title": "38% less",
+        "description": "Time spent on admin work"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      "CRM",
+      "Field Service Management",
+      "Project Management",
+      "Lead Generation",
+      "Bookkeeping",
+      "PRO Websites",
+      "Estimates & Quotes",
+      "Deal Flow Tracking",
+      "All Features",
+      "Project Management",
+      "Field Service Management",
+      "Contractor+ Pay",
+      "Contractor+ Local",
+      "Bookkeeping",
+      "Big Chief AI",
+      "Estimatic AI",
+      "Estimatic AI",
+      "All Solutions",
+      "General Contractor",
+      "Plumbing",
+      "Construction",
+      "HVAC",
+      "Remodeling",
+      "Painting",
+      "Roofing",
+      "Junk Removal",
+      "Locksmith",
+      "Drywall",
+      "All Industries",
+      "Blog",
+      "Podcasts",
+      "USA Labor Rates",
+      "USA Material Trends",
+      "Material Price Comparison",
+      "Idea Board",
+      "Brand Ambassadors",
+      "Supply Partners",
+      "API Docs",
+      "Get Started FREE",
+      "Pricing",
+      "Schedule A Demo"
+    ],
+    "sections": ["Features", "Industries", "Solutions", "Explore"]
   }
 }

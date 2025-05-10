@@ -97,5 +97,51 @@
         "description": "Tiempo dedicado a tareas administrativas"
       }
     ]
+  },
+  "footer": {
+    "links": [
+      "CRM",
+      "Gestión de servicios de campo",
+      "Gestión de proyectos",
+      "Generación de clientes potenciales",
+      "Contabilidad",
+      "Sitios web PRO",
+      "Presupuestos y cotizaciones",
+      "Seguimiento de flujo de negocios",
+      "Todas las funciones",
+      "Gestión de proyectos",
+      "Gestión de servicios de campo",
+      "Contractor+ Pay",
+      "Contractor+ Local",
+      "Contabilidad",
+      "Big Chief AI",
+      "Estimatic AI",
+      "Estimatic AI",
+      "Todas las soluciones",
+      "Contratista general",
+      "Fontanería",
+      "Construcción",
+      "HVAC",
+      "Remodelación",
+      "Pintura",
+      "Techos",
+      "Eliminación de basura",
+      "Cerrajería",
+      "Paneles de yeso",
+      "Todas las industrias",
+      "Blog",
+      "Podcasts",
+      "Tarifas laborales en EE.UU.",
+      "Tendencias de materiales en EE.UU.",
+      "Comparación de precios de materiales",
+      "Panel de ideas",
+      "Embajadores de marca",
+      "Socios de suministro",
+      "Documentos API",
+      "Comienza GRATIS",
+      "Precios",
+      "Agenda una demo"
+    ],
+    "sections": ["Funciones", "Industrias", "Soluciones", "Explorar"]
   }
 }

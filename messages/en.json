@@ -97,5 +97,51 @@
         "description": "Time spent on admin work"
       }
     ]
+  },
+  "footer": {
+    "links": [
+      "CRM",
+      "Field Service Management",
+      "Project Management",
+      "Lead Generation",
+      "Bookkeeping",
+      "PRO Websites",
+      "Estimates & Quotes",
+      "Deal Flow Tracking",
+      "All Features",
+      "Project Management",
+      "Field Service Management",
+      "Contractor+ Pay",
+      "Contractor+ Local",
+      "Bookkeeping",
+      "Big Chief AI",
+      "Estimatic AI",
+      "Estimatic AI",
+      "All Solutions",
+      "General Contractor",
+      "Plumbing",
+      "Construction",
+      "HVAC",
+      "Remodeling",
+      "Painting",
+      "Roofing",
+      "Junk Removal",
+      "Locksmith",
+      "Drywall",
+      "All Industries",
+      "Blog",
+      "Podcasts",
+      "USA Labor Rates",
+      "USA Material Trends",
+      "Material Price Comparison",
+      "Idea Board",
+      "Brand Ambassadors",
+      "Supply Partners",
+      "API Docs",
+      "Get Started FREE",
+      "Pricing",
+      "Schedule A Demo"
+    ],
+    "sections": ["Features", "Industries", "Solutions", "Explore"]
   }
 }

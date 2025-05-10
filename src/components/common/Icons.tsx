@@ -264,7 +264,45 @@ export const DownArrowIcon = () => (
     />
   </svg>
 );
-
+export const GreenDotIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="9"
+    height="8"
+    viewBox="0 0 9 8"
+    fill="none"
+  >
+    <path
+      d="M8 4C8 2.067 6.433 0.5 4.5 0.5C2.567 0.5 1 2.067 1 4C1 5.933 2.567 7.5 4.5 7.5C6.433 7.5 8 5.933 8 4Z"
+      fill="url(#paint0_linear_41_19341)"
+      stroke="url(#paint1_radial_41_19341)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_41_19341"
+        x1="4.5"
+        y1="0"
+        x2="4.5"
+        y2="8"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#10834B" />
+        <stop offset="1" stopColor="#09F785" />
+      </linearGradient>
+      <radialGradient
+        id="paint1_radial_41_19341"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(4.1603) rotate(87.5684) scale(8.00721 8.77333)"
+      >
+        <stop stopColor="white" stopOpacity="0.48" />
+        <stop offset="1" stopColor="white" stopOpacity="0.04" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
 export const ServiceIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

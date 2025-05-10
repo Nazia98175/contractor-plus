@@ -114,7 +114,7 @@ const Footer = () => {
               height={72}
               width={72}
               unoptimized
-              className="max-w-[72px] w-full"
+              className="max-w-[72px] w-full mx-auto"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
             />

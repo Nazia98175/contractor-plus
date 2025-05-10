@@ -1,6 +1,7 @@
 import React from "react";
 import CircularSlider from "./CircularSlider";
 import CircularSliderCardItems from "./CircularSliderCardItems";
+import { useTranslations } from "next-intl";
 
 const ContractorIndustry = () => {
   const industryItems = [
@@ -21,6 +22,8 @@ const ContractorIndustry = () => {
     },
   ];
 
+  const t = useTranslations("industry");
+
   return (
     <section className="relative pt-10">
       <img
@@ -30,16 +33,13 @@ const ContractorIndustry = () => {
       />
       <div>
         <h3 className="section-heading text-center text-white">
-          Contractor+ serves 30+ industries
+          {t("heading")}
         </h3>
         <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
-          The only platform made for field service, trades, and general
-          contractors
+          {t("desc")}
         </p>
         <div className="flex justify-center items-center">
-          <button className="bg-red-linear h-10 primary-btn">
-            Browse All Service Category
-          </button>
+          <button className="bg-red-linear h-10 primary-btn">{t("cta")}</button>
         </div>
       </div>
       <img

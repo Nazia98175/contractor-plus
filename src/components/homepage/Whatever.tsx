@@ -5,6 +5,7 @@ import { IntegrationsIcon, OnIcon, OnIconw } from "../common/Icons";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { leftIcons, rightIcons } from "../common/Helper";
+import { useTranslations } from "next-intl";
 
 // Register plugin
 if (typeof window !== "undefined") {
@@ -253,6 +254,7 @@ const Whatever = () => {
     return () => ctx.revert();
   }, [isMobile]);
 
+  const t = useTranslations();
   return (
     <section className="relative w-full overflow-hidden">
       <Image
@@ -275,7 +277,7 @@ const Whatever = () => {
         className="pt-12 pb-[53px] overflow-visible will-change-transform w-full"
       >
         <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center md:mb-8">
-          Whatever you use, Contractor+ connects
+          {t("whatever")}
         </h3>
 
         <div ref={containerRef} className="max-w-[1002px] mx-auto px-2 lg:px-0">

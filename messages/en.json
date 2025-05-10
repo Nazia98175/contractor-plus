@@ -20,5 +20,20 @@
     "desc": "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth.",
     "super": "Super Easy Estimates",
     "hourSave": "Hours Average Time Saved Per Week"
+  },
+  "platformcatch": {
+    "platformcatch": "There are dozens of contractor platforms, but each one has a catch.",
+    "card1": {
+      "heading": "Expensive",
+      "desc": "The “big guys” charge a small fortune, and their software is a nightmare to learn."
+    },
+    "card2": {
+      "heading": "Complicated",
+      "desc": "Popular solutions are either outdated or difficult to use as a mobile app."
+    },
+    "card3": {
+      "heading": "Inadequate",
+      "desc": "There’s no true “all in one”, so you end up with 6 different platforms to run your company."
+    }
   }
 }

@@ -20,5 +20,20 @@
     "desc": "Toute la puissance d’un grand logiciel, sans les tracas. Une seule plateforme — pas six — pour gérer les chantiers, les équipes, les clients et la croissance.",
     "super": "Estimations Super Simples",
     "hourSave": "Heures Moyennes Économisées par Semaine"
+  },
+  "platoform": {
+    "platformcatch": "Il existe des dizaines de plateformes pour entrepreneurs, mais chacune a un piège.",
+    "card1": {
+      "heading": "Coûteux",
+      "desc": "Les “gros” facturent une petite fortune et leur logiciel est un cauchemar à apprendre."
+    },
+    "card2": {
+      "heading": "Compliqué",
+      "desc": "Les solutions populaires sont soit obsolètes, soit difficiles à utiliser sur mobile."
+    },
+    "card3": {
+      "heading": "Inadéquat",
+      "desc": "Il n'existe pas de véritable 'tout-en-un', donc vous vous retrouvez avec 6 plateformes différentes pour gérer votre entreprise."
+    }
   }
 }

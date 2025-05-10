@@ -83,7 +83,6 @@
     "cta": "Voir tous les secteurs"
   },
   "whatever": "Quel que soit ce que vous utilisez, Contractor+ se connecte",
-  "potentialIntegrations": "Intégrations potentielles",
   "makeoperation": {
     "heading": "Faites de vos opérations un avantage concurrentiel",
     "desc": "Le retour sur investissement avec Contractor+ rend le choix évident",
@@ -111,29 +110,6 @@
         "suffix": "%"
       }
     ]
-  },
-  "reviews": {
-    "heading": "Laissez nos clients parler pour nous...",
-    "excellent": "Excellent",
-    "basedOn": "Basé sur {count} avis",
-    "ourReviews": {
-      "review1": "J'adore absolument le service fourni. Hautement recommandé !",
-      "review2": "Pas satisfait de la qualité. Nécessite des améliorations.",
-      "review3": "Super support et interface facile à utiliser.",
-      "review4": "Le service était lent mais dans l'ensemble correct.",
-      "review5": "Expérience parfaite ! Je reviendrai.",
-      "review6": "Expérience terrible. Je ne le recommande pas.",
-      "review7": "Équipe de service client très utile.",
-      "review8": "A dépassé mes attentes de toutes les manières.",
-      "review9": "Pourrait être mieux. Il y a de la place pour des améliorations.",
-      "review10": "J'ai eu des problèmes de livraison et de support.",
-      "review11": "Processus fluide et bonne communication.",
-      "review12": "Trop cher pour les fonctionnalités proposées.",
-      "review13": "Service absolument irréprochable !",
-      "review14": "Pire expérience jamais.",
-      "review15": "Bon rapport qualité/prix.",
-      "review16": "Incroyable ! Je le dirai à mes amis."
-    }
   },
   "footer": {
     "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",
@@ -385,5 +361,43 @@
       { "label": "Prix Régionaux de Main-d'œuvre", "href": "/" },
       { "label": "Prix Régionaux des Matériaux", "href": "/" }
     ]
+  },
+  "blogs": {
+    "heading": "Nos Blogs",
+    "viewAllBlogs": "Voir Tous les Blogs",
+    "featuredBlogAlt": "Blog en Vedette",
+    "blogList": [
+      {
+        "id": 1,
+        "title": "Ryan Garcia se bat à nouveau, cette fois sur les réseaux sociaux",
+        "date": "03 Jan 2025",
+        "category": "Entrepreneur",
+        "description": "La star de la boxe Ryan Garcia et son promoteur, le combattant du Temple de la Renommée Oscar De La Hoya, ont ravivé leur guerre de mots via Twitter le",
+        "image": "/images/webp/blog-1.webp"
+      },
+      {
+        "id": 2,
+        "title": "Ryan Garcia se bat à nouveau, cette fois sur les réseaux sociaux",
+        "date": "03 Jan 2025",
+        "category": "Entrepreneur",
+        "description": "La star de la boxe Ryan Garcia et son promoteur, le combattant du Temple de la Renommée Oscar De La Hoya, ont ravivé leur guerre de mots via Twitter le",
+        "image": "/images/webp/blog-2.webp"
+      },
+      {
+        "id": 3,
+        "title": "Ryan Garcia se bat à nouveau, cette fois sur les réseaux sociaux",
+        "date": "03 Jan 2025",
+        "category": "Entrepreneur",
+        "description": "La star de la boxe Ryan Garcia et son promoteur, le combattant du Temple de la Renommée Oscar De La Hoya, ont ravivé leur guerre de mots via Twitter le",
+        "image": "/images/webp/blog-3.webp"
+      }
+    ],
+    "featuredBlog": {
+      "category": "Entrepreneur",
+      "timeAgo": "il y a 5 minutes",
+      "title": "Découvrez les Avantages des Membres de USA Contracting!",
+      "description": "Comment créer des présentations convaincantes qui impressionnent vos collègues et vos responsables?",
+      "image": "/images/webp/blog-right-side.webp"
+    }
   }
 }

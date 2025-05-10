@@ -1,19 +1,41 @@
 import Image from "next/image";
 import React from "react";
 import { BlogBtnIcon } from "../common/Icons";
-import { blogList } from "../common/Helper";
+import { useTranslations } from "next-intl";
 
 const OurBlogs = () => {
+  // Get translations from the "blogs" namespace
+  const t = useTranslations("blogs");
+
+  // Get the blog list from translations
+  const blogList = t.raw("blogList") as {
+    id: number;
+    title: string;
+    date: string;
+    category: string;
+    description: string;
+    image: string;
+  }[];
+
+  // Get featured blog data
+  const featuredBlog = t.raw("featuredBlog") as {
+    category: string;
+    timeAgo: string;
+    title: string;
+    description: string;
+    image: string;
+  };
+
   return (
     <section className="bg-white py-12 px-4">
       <div className="max-w-[1180px] w-full mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
-            Our Blogs
+            {t("heading")}
           </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
-              View All Blogs
+              {t("viewAllBlogs")}
               <BlogBtnIcon />
             </button>
           </div>
@@ -21,7 +43,7 @@ const OurBlogs = () => {
 
         <div className="flex flex-col-reverse xl:flex-row justify-between items-stretch gap-4">
           {/* Left column */}
-          <div className="max-w-[600px] mx-auto xl:mx-0  xl:max-w-[450px] w-full flex flex-col gap-4">
+          <div className="max-w-[600px] mx-auto xl:mx-0 xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogList.map((blog) => (
               <article key={blog.id} className="relative w-full">
                 <div
@@ -46,7 +68,7 @@ const OurBlogs = () => {
                       {blog.title}
                     </h3>
                     <p className="truncate text-xs text-wallStreet max-w-[240px] pt-2">
-                      {blog.descrition}
+                      {blog.description}
                     </p>
                   </div>
                 </div>
@@ -60,34 +82,32 @@ const OurBlogs = () => {
               height={700}
               width={700}
               unoptimized
-              src="/images/webp/blog-right-side.webp"
-              alt="Featured Blog"
+              src={featuredBlog.image}
+              alt={t("featuredBlogAlt")}
               className="rounded-xl object-cover w-full absolute top-0 h-full"
             />
             <div className="px-6 pt-20 relative z-10">
               <p className="text-base font-medium text-decemberSky font-jakarta">
-                Contractor | 5 minutes ago
+                {featuredBlog.category} | {featuredBlog.timeAgo}
               </p>
               <h3 className="hidden sm:block text-2xl sm:text-[30px] md:text-[36px] font-extrabold font-jakarta capitalize text-white">
-                Discover The Member Benefits Of USA Contracting!
+                {featuredBlog.title}
               </h3>
               <h3 className="block sm:hidden text-2xl sm:text-[30px] md:text-[36px] font-extrabold font-jakarta capitalize text-white">
-                Discover The Member Benefits O...
+                {featuredBlog.title.substring(0, 30)}...
               </h3>
               <p className="text-superSilver text-base font-jakarta mt-2 w-[250px] sm:w-full truncate block md:hidden">
-                How do you create compelling presentations that wow your
-                colleagues and impress your managers?
+                {featuredBlog.description}
               </p>
               <p className="text-superSilver text-base font-jakarta mt-2 hidden md:block">
-                How do you create compelling presentations that wow your
-                colleagues and impress your managers?
+                {featuredBlog.description}
               </p>
             </div>
           </div>
         </div>
         <div className="block md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
-            View All Blogs
+            {t("viewAllBlogs")}
             <BlogBtnIcon />
           </button>
         </div>

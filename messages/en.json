@@ -383,5 +383,43 @@
       { "label": "Regional Labor Pricing", "href": "/" },
       { "label": "Regional Material Pricing", "href": "/" }
     ]
+  },
+  "blogs": {
+    "heading": "Our Blogs",
+    "viewAllBlogs": "View All Blogs",
+    "featuredBlogAlt": "Featured Blog",
+    "blogList": [
+      {
+        "id": 1,
+        "title": "Ryan Garcia is fighting again, this time on social media",
+        "date": "03 Jan 2025",
+        "category": "Contractor",
+        "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "image": "/images/webp/blog-1.webp"
+      },
+      {
+        "id": 2,
+        "title": "Ryan Garcia is fighting again, this time on social media",
+        "date": "03 Jan 2025",
+        "category": "Contractor",
+        "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "image": "/images/webp/blog-2.webp"
+      },
+      {
+        "id": 3,
+        "title": "Ryan Garcia is fighting again, this time on social media",
+        "date": "03 Jan 2025",
+        "category": "Contractor",
+        "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "image": "/images/webp/blog-3.webp"
+      }
+    ],
+    "featuredBlog": {
+      "category": "Contractor",
+      "timeAgo": "5 minutes ago",
+      "title": "Discover The Member Benefits Of USA Contracting!",
+      "description": "How do you create compelling presentations that wow your colleagues and impress your managers?",
+      "image": "/images/webp/blog-right-side.webp"
+    }
   }
 }

@@ -386,5 +386,43 @@
       { "label": "Precios Regionales de Mano de Obra", "href": "/" },
       { "label": "Precios Regionales de Materiales", "href": "/" }
     ]
+  },
+  "blogs": {
+    "heading": "Nuestros Blogs",
+    "viewAllBlogs": "Ver Todos los Blogs",
+    "featuredBlogAlt": "Blog Destacado",
+    "blogList": [
+      {
+        "id": 1,
+        "title": "Ryan Garcia pelea nuevamente, esta vez en redes sociales",
+        "date": "03 Ene 2025",
+        "category": "Contratista",
+        "description": "La estrella del boxeo Ryan Garcia y su promotor, el luchador del Salón de la Fama Oscar De La Hoya, reavivaron su guerra de palabras a través de Twitter el",
+        "image": "/images/webp/blog-1.webp"
+      },
+      {
+        "id": 2,
+        "title": "Ryan Garcia pelea nuevamente, esta vez en redes sociales",
+        "date": "03 Ene 2025",
+        "category": "Contratista",
+        "description": "La estrella del boxeo Ryan Garcia y su promotor, el luchador del Salón de la Fama Oscar De La Hoya, reavivaron su guerra de palabras a través de Twitter el",
+        "image": "/images/webp/blog-2.webp"
+      },
+      {
+        "id": 3,
+        "title": "Ryan Garcia pelea nuevamente, esta vez en redes sociales",
+        "date": "03 Ene 2025",
+        "category": "Contratista",
+        "description": "La estrella del boxeo Ryan Garcia y su promotor, el luchador del Salón de la Fama Oscar De La Hoya, reavivaron su guerra de palabras a través de Twitter el",
+        "image": "/images/webp/blog-3.webp"
+      }
+    ],
+    "featuredBlog": {
+      "category": "Contratista",
+      "timeAgo": "hace 5 minutos",
+      "title": "¡Descubre los Beneficios para Miembros de USA Contracting!",
+      "description": "¿Cómo creas presentaciones convincentes que impresionen a tus colegas y gerentes?",
+      "image": "/images/webp/blog-right-side.webp"
+    }
   }
 }

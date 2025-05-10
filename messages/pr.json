@@ -385,5 +385,43 @@
       { "label": "Preços Regionais de Mão de Obra", "href": "/" },
       { "label": "Preços Regionais de Materiais", "href": "/" }
     ]
+  },
+  "blogs": {
+    "heading": "Nossos Blogs",
+    "viewAllBlogs": "Ver Todos os Blogs",
+    "featuredBlogAlt": "Blog em Destaque",
+    "blogList": [
+      {
+        "id": 1,
+        "title": "Ryan Garcia está lutando novamente, desta vez nas redes sociais",
+        "date": "03 Jan 2025",
+        "category": "Empreiteiro",
+        "description": "A estrela do boxe Ryan Garcia e seu promotor, o lutador do Hall da Fama Oscar De La Hoya, reacenderam sua guerra de palavras via Twitter em",
+        "image": "/images/webp/blog-1.webp"
+      },
+      {
+        "id": 2,
+        "title": "Ryan Garcia está lutando novamente, desta vez nas redes sociais",
+        "date": "03 Jan 2025",
+        "category": "Empreiteiro",
+        "description": "A estrela do boxe Ryan Garcia e seu promotor, o lutador do Hall da Fama Oscar De La Hoya, reacenderam sua guerra de palavras via Twitter em",
+        "image": "/images/webp/blog-2.webp"
+      },
+      {
+        "id": 3,
+        "title": "Ryan Garcia está lutando novamente, desta vez nas redes sociais",
+        "date": "03 Jan 2025",
+        "category": "Empreiteiro",
+        "description": "A estrela do boxe Ryan Garcia e seu promotor, o lutador do Hall da Fama Oscar De La Hoya, reacenderam sua guerra de palavras via Twitter em",
+        "image": "/images/webp/blog-3.webp"
+      }
+    ],
+    "featuredBlog": {
+      "category": "Empreiteiro",
+      "timeAgo": "5 minutos atrás",
+      "title": "Descubra os Benefícios para Membros da USA Contracting!",
+      "description": "Como você cria apresentações convincentes que impressionam seus colegas e gerentes?",
+      "image": "/images/webp/blog-right-side.webp"
+    }
   }
 }

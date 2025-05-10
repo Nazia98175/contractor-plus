@@ -11,7 +11,7 @@ const WhyContractorDropdown = () => {
         <ul className="grid  gap-x-6 gap-y-3 w-full overflow-auto">
           {WhyContractorDropdownlinks.map((link, index) => (
             <li
-              className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
+              className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
               key={index}
             >
               <Link
@@ -38,10 +38,7 @@ const WhyContractorDropdown = () => {
         />
       </div>
       <div className="flex items-center justify-between gap-6 p-[6px]">
-        <Link
-          className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
-          href={"/"}
-        >
+        <Link className="all-features-button group" href={"/"}>
           See All Features
           <ArrowIcon />
         </Link>

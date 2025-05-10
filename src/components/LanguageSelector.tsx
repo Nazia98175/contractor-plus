@@ -2,15 +2,22 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import { DropdownIcon, UpArrowIcon } from "./common/Icons";
+import { DropdownIcon } from "./common/Icons";
 import Image from "next/image";
 
 interface LanguageOption {
   code: string;
-  label: string;
   value: string;
   imgPath: string;
 }
+
+const languages: LanguageOption[] = [
+  { code: "en", value: "en", imgPath: "/images/png/united_states.png" },
+  { code: "es", value: "es", imgPath: "/images/png/spain.png" },
+  { code: "fr", value: "fr", imgPath: "/images/png/france.png" },
+  { code: "pr", value: "pr", imgPath: "/images/png/portugal.png" },
+  { code: "hin", value: "hin", imgPath: "/images/png/india.png" },
+];
 
 const LanguageSelector = () => {
   const router = useRouter();
@@ -20,74 +27,27 @@ const LanguageSelector = () => {
   );
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const isNavigatingRef = useRef(false);
 
-  const languages: LanguageOption[] = [
-    {
-      code: "en",
-      imgPath: "/images/png/united_states.png",
-      label: "English (United States)",
-      value: "en",
-    },
-    {
-      code: "es",
-      imgPath: "/images/png/spain.png",
-      label: "Español (España)",
-      value: "es",
-    },
-    {
-      code: "fr",
-      imgPath: "/images/png/france.png",
-      label: "Français (France)",
-      value: "fr",
-    },
-    {
-      code: "pr",
-      imgPath: "/images/png/portugal.png",
-      label: "Português (Portugal)",
-      value: "pr",
-    },
-    {
-      code: "hin",
-      imgPath: "/images/png/india.png",
-      label: "हिन्दी (भारत)",
-      value: "hin",
-    },
-  ];
-
-  // Detect language from URL
+  // Set current language from URL path
   useEffect(() => {
-    if (isNavigatingRef.current) {
-      isNavigatingRef.current = false;
-      return;
-    }
-
     const langCode = pathname.split("/")[1];
-    const matchedLanguage = languages.find((lang) => lang.code === langCode);
-
-    if (matchedLanguage) {
-      setCurrentLanguage(matchedLanguage);
-    } else {
-      // Default to English if no language found in path
-      setCurrentLanguage(languages[0]);
-    }
+    const matched = languages.find((lang) => lang.code === langCode);
+    setCurrentLanguage(matched || languages[0]); // Default to English
   }, [pathname]);
 
-  // Handle outside clicks and escape key
+  // Handle outside click and ESC key
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (e: MouseEvent) => {
       if (
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current.contains(e.target as Node)
       ) {
         setIsOpen(false);
       }
     };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -99,73 +59,56 @@ const LanguageSelector = () => {
     };
   }, []);
 
-  // Handle language change with proper client-side routing
+  // Handle language change
   const handleLanguageChange = useCallback(
     (lang: LanguageOption) => {
-      // First, update our state
-      setCurrentLanguage(lang);
+      if (!lang) return;
       setIsOpen(false);
+      setCurrentLanguage(lang);
 
-      // Mark that we're about to navigate
-      isNavigatingRef.current = true;
+      const cleanedPath = pathname.replace(/^\/(en|es|fr|pr|hin)/, "") || "";
+      const newPath = `/${lang.code}${
+        cleanedPath.startsWith("/") ? "" : "/"
+      }${cleanedPath}`;
 
-      // Compute the new path
-      let pathWithoutLang = pathname;
-      const currentLangCode = pathname.split("/")[1];
-      const isCurrentPathLang = languages.some(
-        (lang) => lang.code === currentLangCode
-      );
-
-      if (isCurrentPathLang) {
-        pathWithoutLang = pathname.substring(currentLangCode.length + 1) || "/";
+      if (newPath !== pathname) {
+        router.replace(newPath, { scroll: false });
       }
-
-      const newPath =
-        lang.code === "en"
-          ? "/en"
-          : `/${lang.code}${pathWithoutLang === "/en" ? "" : pathWithoutLang}`;
-
-      // Use the router's replace method instead of push to avoid adding to history stack
-      router.replace(newPath, { scroll: false });
     },
-    [pathname, router, languages]
+    [pathname, router]
   );
 
-  // Toggle dropdown
   const toggleDropdown = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
 
-  // If currentLanguage is not set yet (initial load), show loading state or nothing
   if (!currentLanguage) return null;
 
   return (
-    <div className="relative " ref={dropdownRef}>
-      {/* Dropdown toggle button with hover effect */}
-      <div
-        className="flex items-center font-montserrat font-600 w-fit lg:gap-4 gap-2 cursor-pointer bg-transparent px-1 xl:px-2 py-1 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
+    <div className="relative" ref={dropdownRef}>
+      <button
+        className="flex items-center gap-2 cursor-pointer bg-transparent py-1 px-[14px] text-superSilver lg:text-xs sm:text-sm rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
         onClick={toggleDropdown}
       >
-        <div className="flex lg:gap-2 gap-1 items-center">
-          <Image
-            className="object-cover sm:w-5 w-3"
-            src={currentLanguage.imgPath}
-            width={20}
-            height={20}
-            unoptimized
-            alt={`${currentLanguage.code} flag`}
-            priority
-          />
-          <div className="lg:block hidden">
-            <DropdownIcon isOpen={isOpen} />
-          </div>
+        <Image
+          className="object-cover sm:w-5 w-3"
+          src={currentLanguage.imgPath}
+          width={20}
+          height={20}
+          unoptimized
+          alt={`${currentLanguage.code} flag`}
+        />
+        <div
+          className={`transform transition-transform duration-300 ease-in-out lg:block hidden ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+        >
+          <DropdownIcon />
         </div>
-        <span>{currentLanguage.label}</span>
-      </div>
+      </button>
 
-      {/* Dropdown menu with CSS transitions */}
       <div
-        className={`absolute z-50 mt-1 right-0 lg:w-[201px] w-[205px]  bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right no-scrollbar ${
+        className={`absolute z-50 mt-1 right-0 w-14 bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right no-scrollbar ${
           isOpen
             ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
             : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -174,7 +117,7 @@ const LanguageSelector = () => {
         {languages.map((language, index) => (
           <div
             key={language.code}
-            className={`flex items-center gap-2 px-4 py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
+            className={`flex items-center justify-center gap-2 px-4 py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
               currentLanguage.code === language.code
                 ? "bg-gray-700/60"
                 : "hover:bg-gray-800/60"
@@ -196,7 +139,6 @@ const LanguageSelector = () => {
               alt={`${language.code} flag`}
               priority
             />
-            <span>{language.label}</span>
           </div>
         ))}
       </div>

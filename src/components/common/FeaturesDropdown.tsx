@@ -12,7 +12,7 @@ const FeaturesDropdown = () => {
       <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full">
         {featurelinks.map((link, index) => (
           <li
-            className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
+            className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
             key={index}
           >
             <Link
@@ -33,25 +33,16 @@ const FeaturesDropdown = () => {
         ))}
       </ul>
       <div className="flex items-center justify-between gap-6 p-[6px] font-inter">
-        <Link
-          className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
-          href={"/"}
-        >
+        <Link className="all-features-button group" href={"/"}>
           See All Features
           <ArrowIcon />
         </Link>
         <div className="flex items-center gap-10">
-          <Link
-            className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
-            href={"/"}
-          >
+          <Link className="all-features-button group" href={"/"}>
             Integrations
             <ArrowIcon />
           </Link>
-          <Link
-            className="flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1"
-            href={"/"}
-          >
+          <Link className="all-features-button group" href={"/"}>
             Product Updates
             <ArrowIcon />
           </Link>

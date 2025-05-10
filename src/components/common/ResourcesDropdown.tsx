@@ -9,7 +9,7 @@ const ResourcesDropdown = () => {
       <ul className="grid grid-cols-2 gap-x-6 gap-y-3 w-full">
         {ResourcesDropdownlinks.map((link, index) => (
           <li
-            className="group hover:bg-superSilver duration-300 ease-linear p-[6px]"
+            className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
             key={index}
           >
             <Link

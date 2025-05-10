@@ -5,6 +5,7 @@ import {
   IndustriesDropdownLinks,
   ResourcesDropdownlinks,
   PricingDropdownLinks,
+  featurelinks,
 } from "./Helper";
 import Link from "next/link";
 import { CrossIcon, LogoIcon, SidebarArrowIcon, ArrowIcon } from "./Icons";
@@ -136,7 +137,7 @@ const SideBar = ({
     {
       id: "features",
       label: "Features",
-      items: featureLinkslinks,
+      items: featurelinks,
     },
     {
       id: "industries",

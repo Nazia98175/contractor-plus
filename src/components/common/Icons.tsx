@@ -337,6 +337,7 @@ export const ArrowIcon = () => (
     height="20"
     viewBox="0 0 20 20"
     fill="none"
+    className="group-hover:translate-x-1 duration-200 ease-in-out mt-0.5"
   >
     <path
       fillRule="evenodd"
@@ -809,20 +810,14 @@ export const UpArrowIcon = () => (
     />
   </svg>
 );
-interface DropdownIconProps {
-  isOpen: boolean;
-}
 
-export const DropdownIcon: React.FC<DropdownIconProps> = ({ isOpen }) => (
+export const DropdownIcon = () => (
   <svg
     width="16"
     height="16"
     viewBox="0 0 16 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={`transform transition-transform duration-300 ease-in-out ${
-      isOpen ? "rotate-180" : "rotate-0"
-    }`}
   >
     <path
       d="M4 6L8 10L12 6"

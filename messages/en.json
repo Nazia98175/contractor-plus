@@ -14,5 +14,9 @@
     "resources": "Resources",
     "login": "Login",
     "signup": "Sign Up"
+  },
+  "engine": {
+    "heading": "The engine 57,163 contractors run on",
+    "desc": "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth."
   }
 }

@@ -119,15 +119,15 @@ const HeaderLiItems = () => {
   }, []);
 
   return (
-    <div onMouseLeave={handleContainerLeave}>
+    <div className="w-full" onMouseLeave={handleContainerLeave}>
       {/* Menu Items */}
-      <div className="flex items-center xl:gap-5 gap-2 ">
+      <div className="flex items-center xl:gap-5 gap-2  w-full">
         {menuItems.map((item, index) => (
           <button
             key={index}
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleMenuItemLeave}
-            className={`header-li py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer  ${
+            className={`header-li py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer max-w-[152px] truncate ${
               activeMenu === item.id
                 ? "!text-kuroiBlack bg-white"
                 : "text-superSilver bg-transparent"
@@ -148,8 +148,8 @@ const HeaderLiItems = () => {
 
       {/* Dropdown Panel */}
       <div
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-[#F8F8F8] mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[500px]
-          transform transition-all duration-300 ease-in-out origin-top flex flex-col overflow-auto shadow-lg
+        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[500px]
+          transform transition-all duration-200 ease-in-out origin-top flex flex-col  shadow-c3
           ${
             activeMenu || isTransitioning
               ? "opacity-100 translate-y-0"
@@ -157,7 +157,9 @@ const HeaderLiItems = () => {
           }`}
         onMouseEnter={handleDropdownEnter}
       >
-        {ActiveComponent && <ActiveComponent />}
+        <div className="overflow-auto h-full">
+          {ActiveComponent && <ActiveComponent />}
+        </div>
       </div>
     </div>
   );

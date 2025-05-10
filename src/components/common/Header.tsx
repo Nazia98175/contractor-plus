@@ -46,15 +46,23 @@ const Header = () => {
           <Link className="lg:max-w-[137px] max-w-[100px] w-full" href={"/"}>
             <LogoIcon />
           </Link>
-          <div className="lg:flex hidden gap-[22px] ">
+          <div className="lg:flex hidden grow">
             <HeaderLiItems />
           </div>
-          <div className="flex items-center xl:gap-3 gap-2">
-            <LanguageSelector />
-            <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
+          <div className="flex items-center xl:gap-3 gap-2 ">
+            <div className="px-2 flex items-center xl:gap-3 gap-2">
+              <LanguageSelector />
+              <Link
+                className="text-sm font-semibold leading-[142.857%] tracking-[0.1px] text-doctor2"
+                href={"tel:(855) 392-8803"}
+              >
+                (855) 392-8803
+              </Link>
+            </div>
+            <button className="whitespace-nowrap font-myriad cursor-pointer text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
               {t("login")}
             </button>
-            <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
+            <button className="whitespace-nowrap font-myriad cursor-pointer text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
               {t("signup")}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>

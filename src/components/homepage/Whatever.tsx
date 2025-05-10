@@ -156,7 +156,7 @@ const Whatever = () => {
         <div className="flex items-center gap-2 justify-center mt-6">
           <p className="text-lg capitalize text-granite opacity-90 text-center">
             <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
-            Potential Integrations
+            {t("potentialIntegrations")}
           </p>
           <span className="hidden md:block">
             <IntegrationsIcon />

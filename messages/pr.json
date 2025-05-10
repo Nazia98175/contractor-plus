@@ -49,18 +49,7 @@
       "Gestão de projetos"
     ]
   },
-  "corefeature": {
-    "heading": "Recursos Principais",
-    "desc": "Descubra as ferramentas poderosas que fazem do Contractor+ a solução definitiva para o seu negócio de contratação",
-    "features": [
-      "CRM",
-      "Agendamento ao Vivo",
-      "Chat Interno de Trabalho",
-      "Criador de Orçamentos",
-      "Perfis de Propriedades",
-      "Big Chief AI"
-    ]
-  },
+
   "feature": {
     "card1": {
       "heading": "Aplicativo móvel fácil de usar",

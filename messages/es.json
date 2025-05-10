@@ -49,18 +49,7 @@
       "Gestión de proyectos"
     ]
   },
-  "corefeature": {
-    "heading": "Características Principales",
-    "desc": "Descubre las potentes herramientas que hacen de Contractor+ la solución definitiva para tu negocio de contratista",
-    "features": [
-      "CRM",
-      "Programación en Vivo",
-      "Chat Interno de Trabajo",
-      "Creador de Presupuestos",
-      "Perfiles de Propiedades",
-      "Big Chief AI"
-    ]
-  },
+
   "feature": {
     "card1": {
       "heading": "Aplicación móvil fácil de usar",

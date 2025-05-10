@@ -49,18 +49,7 @@
       "Project management"
     ]
   },
-  "corefeature": {
-    "heading": "Core Features",
-    "desc": "Discover the powerful tools that make Contractor+ the ultimate solution for your contracting business",
-    "features": [
-      "CRM",
-      "Live Scheduling",
-      "Internal Job Chat",
-      "Estimate Builder",
-      "Property Profiles",
-      "Big Chief AI"
-    ]
-  },
+
   "feature": {
     "card1": {
       "heading": "User-friendly mobile app",

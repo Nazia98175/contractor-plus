@@ -51,18 +51,7 @@
       "Gestion de projet"
     ]
   },
-  "corefeature": {
-    "heading": "Fonctionnalités Clés",
-    "desc": "Découvrez les outils puissants qui font de Contractor+ la solution ultime pour votre entreprise de sous-traitance",
-    "features": [
-      "CRM",
-      "Planification en Direct",
-      "Chat Interne de Projet",
-      "Générateur de Devis",
-      "Profils de Propriété",
-      "Big Chief AI"
-    ]
-  },
+
   "feature": {
     "card1": {
       "heading": "Application mobile conviviale",

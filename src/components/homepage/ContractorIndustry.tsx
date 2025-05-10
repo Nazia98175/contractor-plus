@@ -31,7 +31,7 @@ const ContractorIndustry = () => {
         src="/images/webp/contractor-industry-bg.webp"
         alt="webp bg"
       />
-      <div>
+      <div className="px-2">
         <h3 className="section-heading text-center text-white">
           {t("heading")}
         </h3>

@@ -39,8 +39,10 @@ const CoreFeaturesCard = () => {
   const featureContents = [
     {
       title: "The first CRM that thinks like a contractor",
+      mainDesc:
+        'Most "contractor CRMs" are just contact pages with a few job links.',
       description:
-        'Most "contractor CRMs" are just contact pages with a few job links. Contractor+ brings the full picture: timelines, call transcripts, AI sentiment tracking, and role-specific contacts.',
+        "Contractor+ brings the full picture: timelines, call transcripts, AI sentiment tracking, and role-specific contacts.",
     },
     {
       title: "Real-time scheduling that works for contractors",
@@ -363,7 +365,7 @@ const CoreFeaturesCard = () => {
             }}
             className="p-3.5 bg-gray-100 rounded-2xl w-full space-y-[18px] scroll-mt-24 "
           >
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 font-sans leading-[100%]">
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet leading-[100%] font-jakarta">
               {content.title}
             </h4>
             <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm">
@@ -371,7 +373,10 @@ const CoreFeaturesCard = () => {
                 {features[index]} visualization
               </div>
             </div>
-            <p className="text-base font-medium text-gray-800 max-w-[620px] font-sans">
+            <p className="text-base md:text-lg font-medium text-secondary max-w-[615px] font-jakarta">
+              <span className="text-wallStreet inline-block">
+                {content.mainDesc}
+              </span>
               {content.description}
             </p>
           </div>

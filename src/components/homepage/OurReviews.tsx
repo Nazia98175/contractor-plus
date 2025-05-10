@@ -3,8 +3,8 @@ import React, { ReactElement, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { GroupStartIcon } from "../common/Icons";
 import { OurReviewList } from "../common/Helper";
-import ScrollVelocity from "../common/ScrollVelocity";
 import ReviewModal from "../common/ReviewModal";
+import Marquee from "react-fast-marquee";
 
 export interface ReviewItem {
   id: string | number;
@@ -16,20 +16,6 @@ export interface ReviewItem {
   companyIcon: string;
 }
 
-interface ScrollVelocityProps {
-  texts: ReactElement[];
-  velocity: number;
-  numCopies: number;
-  className?: string;
-  parallaxClassName?: string;
-  scrollerClassName?: string;
-}
-
-interface ReviewCardProps {
-  review: ReviewItem;
-  openModal: () => void;
-}
-
 const OurReviews: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -37,30 +23,8 @@ const OurReviews: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  // Create review row components that match the expected type
-  const FirstRowCards = (): ReactElement => (
-    <div className="flex gap-5">
-      {OurReviewList.slice(0, 3).map((review, index) => (
-        <ReviewCard
-          key={`first-row-${index}`}
-          review={review as ReviewItem}
-          openModal={openModal}
-        />
-      ))}
-    </div>
-  );
-
-  const SecondRowCards = (): ReactElement => (
-    <div className="flex gap-5">
-      {OurReviewList.slice(3).map((review, index) => (
-        <ReviewCard
-          key={`second-row-${index}`}
-          review={review as ReviewItem}
-          openModal={openModal}
-        />
-      ))}
-    </div>
-  );
+  // When modal is open, marquee should be paused
+  const isMarqueePaused = isModalOpen;
 
   return (
     <section className="pt-[15px] pb-[35px] md:py-20">
@@ -100,29 +64,34 @@ const OurReviews: React.FC = () => {
       <div className="relative">
         <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40 hidden lg:block blur-2xl pointer-events-none"></div>
         <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        {/* First row of reviews - scrolling left */}
+
+        {/* First row of reviews - scrolling right */}
         <div className="pt-[35px] md:pt-[77px]">
-          <ScrollVelocity
-            texts={[<FirstRowCards />]}
-            velocity={40}
-            numCopies={3}
-            className="mr-5"
-            parallaxClassName="overflow-hidden"
-            scrollerClassName="flex items-center"
-          />
+          <Marquee direction="right" pauseOnHover play={!isMarqueePaused}>
+            {OurReviewList.map((review) => (
+              <ReviewCard
+                key={review.id}
+                review={review as ReviewItem}
+                openModal={openModal}
+              />
+            ))}
+          </Marquee>
         </div>
-        {/* Second row of reviews - scrolling right */}
+
+        {/* Second row of reviews - scrolling left */}
         <div className="pt-[27px] hidden md:block">
-          <ScrollVelocity
-            texts={[<SecondRowCards />]}
-            velocity={-40} // Negative velocity for right-to-left scrolling
-            numCopies={3}
-            className="mr-5"
-            parallaxClassName="overflow-hidden"
-            scrollerClassName="flex items-center"
-          />
+          <Marquee direction="left" pauseOnHover play={!isMarqueePaused}>
+            {OurReviewList.map((review) => (
+              <ReviewCard
+                key={review.id}
+                review={review as ReviewItem}
+                openModal={openModal}
+              />
+            ))}
+          </Marquee>
         </div>
       </div>
+
       <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );

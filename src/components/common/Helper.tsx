@@ -299,6 +299,7 @@ export const MakeOperationlist = [
 ];
 
 export interface Review {
+  id: number;
   profileUrl: string;
   userName: string;
   companyIcon: string;
@@ -307,22 +308,25 @@ export interface Review {
 }
 export const OurReviewList: Review[] = [
   {
+    id: 1,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
-    rating: 5,
+    rating: 2,
     reviewText:
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 2,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
-    rating: 5,
+    rating: 1,
     reviewText:
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 3,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
@@ -331,6 +335,43 @@ export const OurReviewList: Review[] = [
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 4,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "David M.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 2,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 5,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Jessica J.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 5,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 6,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Michael T.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 1,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 7,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Sarah K.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 4,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 8,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
@@ -339,22 +380,25 @@ export const OurReviewList: Review[] = [
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 9,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
-    rating: 5,
+    rating: 2,
     reviewText:
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 10,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
-    rating: 5,
+    rating: 1,
     reviewText:
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 11,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
@@ -363,6 +407,43 @@ export const OurReviewList: Review[] = [
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
   {
+    id: 12,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "David M.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 2,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 13,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Jessica J.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 5,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 14,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Michael T.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 1,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 15,
+    profileUrl: "/images/webp/review-profile.webp",
+    userName: "Sarah K.",
+    companyIcon: "/images/svg/randsIcon.svg",
+    rating: 4,
+    reviewText:
+      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+  },
+  {
+    id: 16,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
@@ -371,7 +452,6 @@ export const OurReviewList: Review[] = [
       "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
   },
 ];
-
 export const blogList = [
   {
     id: 1,

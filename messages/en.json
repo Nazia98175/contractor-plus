@@ -59,5 +59,43 @@
       "Property Profiles",
       "Big Chief AI"
     ]
+  },
+  "feature": {
+    "card1": {
+      "heading": "User-friendly mobile app",
+      "desc": "Contractor+ is user-friendly on desktop and mobile, so your team will actually use it."
+    },
+    "card2": {
+      "heading": "Communication inbox",
+      "desc": "Call, text, email, and listen to voicemail for every lead, client, tenant, vendor, and sub—all in one spot."
+    },
+    "card3": {
+      "heading": "Multiple-workspaces",
+      "desc": "Toggle between workspaces for different locations, teams, or businesses."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ serves 30+ industries",
+    "desc": "The only platform made for field service, trades, and general contractors",
+    "cta": "View All Industries"
+  },
+  "whatever": "Whatever you use, Contractor+ connects",
+  "makeoperation": {
+    "heading": "Make operations your competitive edge",
+    "desc": "The ROI from Contractor+ makes the choice easy",
+    "makeOperationlist": [
+      {
+        "title": "3-4x faster",
+        "description": "Estimate process"
+      },
+      {
+        "title": "24% faster",
+        "description": "Job turnaround time"
+      },
+      {
+        "title": "38% less",
+        "description": "Time spent on admin work"
+      }
+    ]
   }
 }

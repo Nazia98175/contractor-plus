@@ -34,19 +34,19 @@
     "card3": {
       "heading": "Inadequado",
       "desc": "Não existe um verdadeiro 'tudo em um', então você acaba usando 6 plataformas diferentes para administrar sua empresa."
-    },
-    "finally": {
-      "heading": "Finalmente, uma plataforma para substituir todas",
-      "desc": "Contractor+ é o primeiro sistema operacional criado para gerenciar todas as partes do seu negócio, do escritório ao campo—sem complexidade.",
-      "features": [
-        "CRM",
-        "Serviço de campo",
-        "Vendas",
-        "Propostas",
-        "Faturamento",
-        "Gestão de projetos"
-      ]
     }
+  },
+  "finally": {
+    "heading": "Finalmente, uma plataforma para substituir todas",
+    "desc": "Contractor+ é o primeiro sistema operacional criado para gerenciar todas as partes do seu negócio, do escritório ao campo—sem complexidade.",
+    "features": [
+      "CRM",
+      "Serviço de campo",
+      "Vendas",
+      "Propostas",
+      "Faturamento",
+      "Gestão de projetos"
+    ]
   },
   "corefeature": {
     "heading": "Recursos Principais",
@@ -58,6 +58,44 @@
       "Criador de Orçamentos",
       "Perfis de Propriedades",
       "Big Chief AI"
+    ]
+  },
+  "feature": {
+    "card1": {
+      "heading": "Aplicativo móvel fácil de usar",
+      "desc": "O Contractor+ é fácil de usar no desktop e no celular, então sua equipe realmente vai utilizá-lo."
+    },
+    "card2": {
+      "heading": "Caixa de comunicação",
+      "desc": "Ligue, envie mensagens, e-mails e ouça correios de voz para cada lead, cliente, inquilino, fornecedor e subcontratado — tudo em um só lugar."
+    },
+    "card3": {
+      "heading": "Múltiplos espaços de trabalho",
+      "desc": "Alternar entre espaços de trabalho para diferentes locais, equipes ou negócios."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ atende a mais de 30 setores",
+    "desc": "A única plataforma feita para serviços de campo, profissionais técnicos e empreiteiros gerais",
+    "cta": "Ver todos os setores"
+  },
+  "whatever": "Não importa o que você usa, o Contractor+ se conecta",
+  "makeoperation": {
+    "heading": "Transforme as operações em sua vantagem competitiva",
+    "desc": "O retorno sobre o investimento com o Contractor+ torna a escolha fácil",
+    "makeOperationlist": [
+      {
+        "title": "3-4x mais rápido",
+        "description": "Processo de estimativa"
+      },
+      {
+        "title": "24% mais rápido",
+        "description": "Tempo de conclusão do trabalho"
+      },
+      {
+        "title": "38% menos",
+        "description": "Tempo gasto em tarefas administrativas"
+      }
     ]
   }
 }

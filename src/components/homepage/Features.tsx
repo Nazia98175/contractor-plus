@@ -1,10 +1,28 @@
 "use client";
 import React from "react";
-import { featureData } from "../common/Helper";
 import FeatureCard from "./FeatureCard";
 import CustomSlider from "../common/CustomSlider";
+import { useTranslations } from "next-intl";
 
 const Features = () => {
+  const t = useTranslations("feature");
+  const featureData = [
+    {
+      title: t("card1.heading"),
+      desc: t("card1.desc"),
+      img: "/images/webp/user-friendly.webp",
+    },
+    {
+      title: t("card2.heading"),
+      desc: t("card2.desc"),
+      img: "/images/webp/communication-box.webp",
+    },
+    {
+      title: t("card3.heading"),
+      desc: t("card3.desc"),
+      img: "/images/webp/workspace.webp",
+    },
+  ];
   return (
     <section className="pt-12 pb-10 main-container">
       <div className="hidden lg:grid lg:grid-cols-3 gap-12">

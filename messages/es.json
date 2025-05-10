@@ -59,5 +59,43 @@
       "Perfiles de Propiedades",
       "Big Chief AI"
     ]
+  },
+  "feature": {
+    "card1": {
+      "heading": "Aplicación móvil fácil de usar",
+      "desc": "Contractor+ es fácil de usar tanto en computadora como en móvil, así que tu equipo realmente lo usará."
+    },
+    "card2": {
+      "heading": "Bandeja de comunicación",
+      "desc": "Llama, envía mensajes, correos electrónicos y escucha mensajes de voz para cada cliente potencial, cliente, inquilino, proveedor y subcontratista — todo en un solo lugar."
+    },
+    "card3": {
+      "heading": "Espacios de trabajo múltiples",
+      "desc": "Cambia entre espacios de trabajo para diferentes ubicaciones, equipos o empresas."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ atiende a más de 30 industrias",
+    "desc": "La única plataforma diseñada para servicios de campo, oficios y contratistas generales",
+    "cta": "Ver todas las industrias"
+  },
+  "whatever": "No importa lo que uses, Contractor+ se conecta",
+  "makeoperation": {
+    "heading": "Haz de tus operaciones una ventaja competitiva",
+    "desc": "El retorno de inversión con Contractor+ hace que la decisión sea fácil",
+    "makeOperationlist": [
+      {
+        "title": "3-4x  más rápido",
+        "description": "Proceso de estimación"
+      },
+      {
+        "title": "24% más rápido",
+        "description": "Tiempo de entrega del trabajo"
+      },
+      {
+        "title": "38% menos",
+        "description": "Tiempo dedicado a tareas administrativas"
+      }
+    ]
   }
 }

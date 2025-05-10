@@ -1,32 +1,32 @@
 "use client";
 import React from "react";
 import { featureData } from "../common/Helper";
+import FeatureCard from "./FeatureCard";
+import CustomSlider from "../common/CustomSlider";
 
 const Features = () => {
   return (
     <section className="pt-12 pb-10 main-container">
-      <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="hidden lg:grid lg:grid-cols-3 gap-12">
         {featureData.map((obj, index) => (
-          <article
-            key={index}
-            className="font-jakarta p-3 flex flex-col justify-between"
-          >
-            <div>
-              <h4 className="text-2xl font-bold text-winterWay text-center capitalize">
-                {obj.title}
-              </h4>
-              <p className="mt-4 paragraph-text text-wallStreet text-center mb-5">
-                {obj.desc}
-              </p>
-            </div>
-
-            <img
-              src={obj.img}
-              alt={obj.title}
-              className="object-cover h-[187px]"
-            />
-          </article>
+          <FeatureCard obj={obj} key={index} />
         ))}
+      </div>
+      <div className="lg:hidden">
+        <CustomSlider
+          autoplay
+          pagination
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 12 },
+            520: { slidesPerView: 1.5, spaceBetween: 12 },
+            640: { slidesPerView: 2, spaceBetween: 14 },
+            768: { slidesPerView: 2.6, spaceBetween: 16 },
+          }}
+        >
+          {featureData.map((obj, index) => (
+            <FeatureCard obj={obj} key={index} />
+          ))}
+        </CustomSlider>
       </div>
     </section>
   );

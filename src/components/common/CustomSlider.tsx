@@ -9,36 +9,45 @@ interface CustomSliderProps {
   children: React.ReactNode[];
   pagination?: boolean;
   autoplay?: boolean;
+  breakpoints?: {
+    [width: number]: {
+      slidesPerView?: number;
+      spaceBetween?: number;
+    };
+  };
 }
 
 const CustomSlider: React.FC<CustomSliderProps> = ({
   children,
-  pagination,
-  autoplay,
+  pagination = false,
+  autoplay = false,
+  breakpoints,
 }) => {
   return (
     <div className="relative w-full">
       <Swiper
-        pagination={pagination ? { clickable: true } : false}
-        autoplay={
-          autoplay ? { delay: 3000, disableOnInteraction: false } : false
-        }
         modules={[Pagination, Autoplay]}
+        pagination={pagination ? { clickable: true } : undefined}
+        autoplay={
+          autoplay ? { delay: 3000, disableOnInteraction: false } : undefined
+        }
         slidesPerView={2}
         spaceBetween={8}
-        breakpoints={{
-          640: {
-            slidesPerView: 3.5,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-        }}
+        loop={true}
+        breakpoints={
+          breakpoints || {
+            640: {
+              slidesPerView: 3.5,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4.5,
+              spaceBetween: 30,
+            },
+          }
+        }
         className="mySwiper"
       >
-        {/* Map each child to its own SwiperSlide */}
         {React.Children.map(children, (child, index) => (
           <SwiperSlide key={index}>{child}</SwiperSlide>
         ))}

@@ -297,8 +297,7 @@ export const OurReviewList: Review[] = [
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 2,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review1",
   },
   {
     id: 2,
@@ -306,8 +305,7 @@ export const OurReviewList: Review[] = [
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review2",
   },
   {
     id: 3,
@@ -315,8 +313,7 @@ export const OurReviewList: Review[] = [
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 4,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review3",
   },
   {
     id: 4,
@@ -324,8 +321,7 @@ export const OurReviewList: Review[] = [
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 2,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review4",
   },
   {
     id: 5,
@@ -333,8 +329,7 @@ export const OurReviewList: Review[] = [
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 5,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review5",
   },
   {
     id: 6,
@@ -342,8 +337,7 @@ export const OurReviewList: Review[] = [
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review6",
   },
   {
     id: 7,
@@ -351,8 +345,7 @@ export const OurReviewList: Review[] = [
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 4,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review7",
   },
   {
     id: 8,
@@ -360,8 +353,7 @@ export const OurReviewList: Review[] = [
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 5,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review8",
   },
   {
     id: 9,
@@ -369,8 +361,7 @@ export const OurReviewList: Review[] = [
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 2,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review9",
   },
   {
     id: 10,
@@ -378,8 +369,7 @@ export const OurReviewList: Review[] = [
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review10",
   },
   {
     id: 11,
@@ -387,8 +377,7 @@ export const OurReviewList: Review[] = [
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 4,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review11",
   },
   {
     id: 12,
@@ -396,8 +385,7 @@ export const OurReviewList: Review[] = [
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 2,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review12",
   },
   {
     id: 13,
@@ -405,8 +393,7 @@ export const OurReviewList: Review[] = [
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 5,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review13",
   },
   {
     id: 14,
@@ -414,8 +401,7 @@ export const OurReviewList: Review[] = [
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review14",
   },
   {
     id: 15,
@@ -423,8 +409,7 @@ export const OurReviewList: Review[] = [
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 4,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review15",
   },
   {
     id: 16,
@@ -432,10 +417,10 @@ export const OurReviewList: Review[] = [
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 5,
-    reviewText:
-      "Since I started sending all my estimates using Contractor+, I have stopped losing bids.",
+    reviewText: "ourReviews.review16",
   },
 ];
+
 export const blogList = [
   {
     id: 1,

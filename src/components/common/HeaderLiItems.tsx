@@ -119,14 +119,14 @@ const HeaderLiItems = () => {
   }, []);
 
   return (
-    <div className="w-full" onMouseLeave={handleContainerLeave}>
+    <div onMouseLeave={handleContainerLeave}>
       {/* Menu Items */}
       <div className="flex items-center xl:gap-5 gap-2  w-full">
         {menuItems.map((item, index) => (
           <button
             key={index}
             onMouseEnter={() => handleMouseEnter(item.id)}
-            onMouseLeave={handleMenuItemLeave}
+            onMouseLeave={handleContainerLeave}
             className={`header-li py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer max-w-[152px] truncate ${
               activeMenu === item.id
                 ? "!text-kuroiBlack bg-white"

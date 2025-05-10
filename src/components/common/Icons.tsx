@@ -1159,10 +1159,10 @@ export const FooterRedLineIcon = () => (
 
 export const ModalCrossIcon = () => (
   <svg
-    className="hover:rotate-45 transition-all duration-200 ease-in-out"
+    className="hover:rotate-180 transition-all duration-200 ease-in-out"
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
   >
     <path

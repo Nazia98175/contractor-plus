@@ -44,7 +44,6 @@ const TrustBar: React.FC = () => {
         className="absolute inset-0 w-full h-full z-10 object-cover"
         alt="Stars"
       />
-      <div className="bg-black-red-linear blur-2xl md:h-[600px] md:w-[600px] md:-top-[140%] -right-[20%] lg:hidden -rotate-90 -top-[80%] rounded-full absolute max-w-[500px] sm:min-w-[300px] w-full z-0 min-h-full sm:min-h-[400px] pointer-events-none"></div>
 
       {/* Desktop view */}
       <div className="hidden lg:flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center">

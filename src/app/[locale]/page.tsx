@@ -24,8 +24,15 @@ export default function Home() {
     <div className="relative overflow-x-hidden">
       <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover">
         <Header />
-        <Hero />
-        <TrustBar />
+        <div className="relative">
+          <img
+            src="/images/webp/hero-mobile-bg.webp"
+            alt="Mobile Hero"
+            className="right-0 lg:hidden z-10 pointer-events-none -bottom-[30%] absolute w-full h-full"
+          />
+          <Hero />
+          <TrustBar />
+        </div>
         <TheEngineContractor />
       </div>
       <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">

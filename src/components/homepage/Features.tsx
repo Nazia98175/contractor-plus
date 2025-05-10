@@ -5,14 +5,17 @@ const featureData = [
   {
     title: "User-friendly mobile app",
     desc: "Contractor+ is user-friendly on desktop and mobile, so your team will actually use it.",
+    img: "/images/webp/user-friendly.webp",
   },
   {
     title: "Communication inbox",
     desc: "Call, text, email, and listen to voicemail for every lead, client, tenant, vendor, and sub—all in one spot.",
+    img: "/images/webp/communication-box.webp",
   },
   {
     title: "Multiple-workspaces",
     desc: "Toggle between workspaces for different locations, teams, or businesses.",
+    img: "/images/webp/workspace.webp",
   },
 ];
 
@@ -34,7 +37,12 @@ const Features = () => {
                 {obj.desc}
               </p>
             </div>
-            <div className="h-[187px] rounded-[6px] bg-secondary"></div>
+
+            <img
+              src={obj.img}
+              alt={obj.title}
+              className="object-cover h-[187px]"
+            />
           </article>
         ))}
       </div>

@@ -1,14 +1,35 @@
 import { useTranslations } from "next-intl";
 import React from "react";
-
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 const TheEngineContractor = () => {
   const t = useTranslations("engine");
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
   return (
-    <section className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover xl:bg-contain bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] mt-12 relative">
+    <section
+      ref={ref}
+      className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover xl:bg-contain bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] mt-12 relative"
+    >
       <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center gap-8 md:py-8 md:!px-12">
         <div className="flex flex-col gap-1.5 md:max-w-[515px] w-full">
           <h2 className="section-heading text-white text-center md:text-left">
-            {t("heading")}
+            <div className="pr-2">
+              {t("heading")}&nbsp;
+              {inView ? (
+                <CountUp
+                  start={0}
+                  end={57163}
+                  duration={3} // Slow animation
+                  separator=","
+                />
+              ) : (
+                "0"
+              )}
+            </div>
+            {t("countup")}
           </h2>
           <p className="text-base font-medium text-decemberSky text-center md:text-left">
             {t("desc")}
@@ -20,9 +41,8 @@ const TheEngineContractor = () => {
             className="sm:max-w-[322px] w-full max-w-[90%] object-contain"
             alt="The engine 57,163 contractors run on"
           />
-
           <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-darkGrey space-y-1">
-            <h3 className="text-2xl font-medium  text-doctor">{t("super")}</h3>
+            <h3 className="text-2xl font-medium text-doctor">{t("super")}</h3>
             <p className="text-xs sm:text-sm font-jakarta">
               <span className="text-monstrousGreen">+11</span> {t("hourSave")}
             </p>
@@ -32,5 +52,4 @@ const TheEngineContractor = () => {
     </section>
   );
 };
-
 export default TheEngineContractor;

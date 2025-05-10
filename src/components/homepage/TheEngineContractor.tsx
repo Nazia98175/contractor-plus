@@ -22,12 +22,9 @@ const TheEngineContractor = () => {
           />
 
           <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-darkGrey space-y-1">
-            <h3 className="text-2xl font-medium  text-doctor">
-              Super Easy Estimates
-            </h3>
+            <h3 className="text-2xl font-medium  text-doctor">{t("super")}</h3>
             <p className="text-xs sm:text-sm font-jakarta">
-              <span className="text-monstrousGreen">+11</span> Hours Average
-              Time Saved Per Week
+              <span className="text-monstrousGreen">+11</span> {t("hourSave")}
             </p>
           </div>
         </div>

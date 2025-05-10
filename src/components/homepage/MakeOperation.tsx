@@ -4,7 +4,7 @@ import { RedClipIcon } from "../common/Icons";
 
 const MakeOperation = () => {
   return (
-    <section className="bg-kuroilight relative">
+    <section className="bg-kuroilight relative pt-16">
       <Image
         height={600}
         width={600}

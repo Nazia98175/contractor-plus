@@ -1,7 +1,7 @@
+"use client";
 import React, { useState } from "react";
 import {
   WhyContractorDropdownlinks,
-  featureLinkslinks,
   IndustriesDropdownLinks,
   ResourcesDropdownlinks,
   PricingDropdownLinks,

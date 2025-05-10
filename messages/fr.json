@@ -112,6 +112,17 @@
     ]
   },
   "footer": {
+    "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",
+    "cta": "Tous les services sont opérationnels et fonctionnent",
+    "poweredBy": "Propulsé par",
+    "copyright": "Contractor+ Tous droits réservés.",
+    "legalLinks": [
+      "Conditions d'utilisation",
+      "Politique de confidentialité",
+      "Politique relative aux cookies",
+      "RGPD",
+      "Accessibilité"
+    ],
     "links": [
       "CRM",
       "Gestão de Serviços de Campo",

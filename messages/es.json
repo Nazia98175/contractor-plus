@@ -109,6 +109,17 @@
     ]
   },
   "footer": {
+    "heading": "Ayudando a los contratistas a ganar 2 veces más trabajos en 1/3 del tiempo",
+    "cta": "Todos los servicios operativos y funcionando",
+    "poweredBy": "Desarrollado por",
+    "copyright": "Contractor+ Todos los derechos reservados.",
+    "legalLinks": [
+      "Términos de servicio",
+      "Política de privacidad",
+      "Política de cookies",
+      "GDPR",
+      "Accesibilidad"
+    ],
     "links": [
       "CRM",
       "Gestión de servicios de campo",

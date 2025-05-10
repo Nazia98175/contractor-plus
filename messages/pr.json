@@ -109,6 +109,17 @@
     ]
   },
   "footer": {
+    "poweredBy": "Desenvolvido por",
+    "heading": "Ajudando empreiteiros a ganhar 2x mais trabalhos em 1/3 do tempo",
+    "cta": "Todos os serviços operacionais e funcionando",
+    "copyright": "Contractor+ Todos os direitos reservados.",
+    "legalLinks": [
+      "Termos de serviço",
+      "Política de privacidade",
+      "Política de cookies",
+      "GDPR",
+      "Acessibilidade"
+    ],
     "links": [
       "CRM",
       "Gestão de Serviços de Campo",

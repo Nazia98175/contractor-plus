@@ -320,7 +320,7 @@ const CoreFeaturesCard = () => {
           {/* Using original Pathbg component as requested */}
           <Pathbg />
         </div>
-        <div className="flex flex-row lg:flex-col gap-[22px] font-sans lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative">
+        <div className="flex flex-row lg:flex-col gap-[22px] font-sans lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
           {/* Mobile indicator (visible on small screens) */}
 
           {features.map((feature, index) => (
@@ -334,7 +334,7 @@ const CoreFeaturesCard = () => {
                 });
               }}
               key={feature}
-              className={`feature-btn text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px] ${
+              className={`feature-btn lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px] lg:max-w-[165px] w-fit font-jakarta ${
                 index === activeFeature
                   ? " text-winterWay font-bold"
                   : "text-secondary font-normal"

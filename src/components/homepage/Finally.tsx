@@ -33,12 +33,13 @@ const Finally = () => {
           ))}
         </div>
 
-        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative">
+        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative px-3 sm:px-0">
           <img
             src="/images/webp/claud.webp"
             alt="Claud background"
-            className="absolute w-full bottom-0 z-20 left-0 h-[140px]"
+            className="hidden sm:block absolute w-full bottom-0 z-20 left-0 h-[140px]"
           />
+
           <div className="flex flex-row lg:flex-col gap-4">
             <img
               src="/images/webp/software-advice.webp"

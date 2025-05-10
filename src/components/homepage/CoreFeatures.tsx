@@ -1,16 +1,15 @@
-import React from "react";
-import { Pathbg } from "../common/Icons";
+import { useTranslations } from "next-intl";
 import CoreFeaturesCard from "./CoreFeaturesCard";
 
 const CoreFeatures = () => {
+  const t = useTranslations("corefeature");
   return (
-    <section className="max-w-[991px] mx-auto px-2 pt-12 lg:pt-0">
+    <section className="max-w-[991px] mx-auto px-2 pt-12 lg:pt-2">
       <h3 className="sub-heading text-lightBlack font-semibold text-center md:text-start">
-        Core Features
+        {t("heading")}
       </h3>
       <p className="mt-4 text-base font-jakarta font-medium text-wallStreet">
-        Discover the powerful tools that make Contractor+ the ultimate solution
-        for your contracting business
+        {t("desc")}
       </p>
       <CoreFeaturesCard />
     </section>

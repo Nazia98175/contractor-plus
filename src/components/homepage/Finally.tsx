@@ -1,28 +1,21 @@
 import React from "react";
 import { CheckIcon } from "../common/Icons";
-
-const features = [
-  "CRM",
-  "Field Service",
-  "Sales",
-  "Bids",
-  "Billing",
-  "Project management",
-];
+import { useTranslations } from "next-intl";
 
 const Finally = () => {
+  const t = useTranslations("finally");
+  const features: string[] = t.raw("features") || [];
   return (
     <section className="relative pt-16 md:pt-20 xl:pt-[222px] overflow-hidden">
       <div className="space-y-4 z-10 relative">
         <h2 className="section-heading text-center text-white">
-          Finally, one platform to replace them all
+          {t("heading")}
         </h2>
         <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
-          Contractor+ is the first operating system built to run every part of
-          your business, from the back office to the field—without complexity.
+          {t("desc")}
         </p>
         <div className="flex gap-[22px] items-center justify-center py-2 flex-wrap">
-          {features.map((feature, index) => (
+          {features?.map((feature, index) => (
             <div
               key={index}
               className="flex font-semibold font-myriad gap-2 items-center text-superSilver"

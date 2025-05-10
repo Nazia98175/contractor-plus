@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Pathbg } from "../common/Icons"; // Import original Pathbg component
+import { useTranslations } from "next-intl";
 
 // Register ScrollTrigger plugin with GSAP
 if (typeof window !== "undefined") {
@@ -26,16 +27,6 @@ const CoreFeaturesCard = () => {
   // Store ScrollTrigger instances for cleanup
   const scrollTriggersRef = useRef<any[]>([]);
 
-  const features = [
-    "CRM",
-    "Live Scheduling",
-    "Internal Job Chat",
-    "Estimate Builder",
-    "Property Profiles",
-    "Big Chief AI",
-  ];
-
-  // Content for each feature
   const featureContents = [
     {
       title: "The first CRM that thinks like a contractor",
@@ -110,6 +101,9 @@ const CoreFeaturesCard = () => {
     buttonPositionsRef.current = positions;
     return positions;
   }, []);
+
+  const t = useTranslations("corefeature");
+  const features: string[] = t.raw("features") || [];
 
   // Move indicator to active feature position
   const moveIndicator = useCallback(

@@ -21,7 +21,7 @@
     "super": "Estimations Super Simples",
     "hourSave": "Heures Moyennes Économisées par Semaine"
   },
-  "platoform": {
+  "platformcatch": {
     "platformcatch": "Il existe des dizaines de plateformes pour entrepreneurs, mais chacune a un piège.",
     "card1": {
       "heading": "Coûteux",
@@ -35,5 +35,30 @@
       "heading": "Inadéquat",
       "desc": "Il n'existe pas de véritable 'tout-en-un', donc vous vous retrouvez avec 6 plateformes différentes pour gérer votre entreprise."
     }
+  },
+
+  "finally": {
+    "heading": "Enfin, une plateforme pour les remplacer toutes",
+    "desc": "Contractor+ est le premier système d’exploitation conçu pour gérer chaque partie de votre entreprise, du bureau au terrain—sans complexité.",
+    "features": [
+      "CRM",
+      "Service sur le terrain",
+      "Ventes",
+      "Offres",
+      "Facturation",
+      "Gestion de projet"
+    ]
+  },
+  "corefeature": {
+    "heading": "Fonctionnalités Clés",
+    "desc": "Découvrez les outils puissants qui font de Contractor+ la solution ultime pour votre entreprise de sous-traitance",
+    "features": [
+      "CRM",
+      "Planification en Direct",
+      "Chat Interne de Projet",
+      "Générateur de Devis",
+      "Profils de Propriété",
+      "Big Chief AI"
+    ]
   }
 }

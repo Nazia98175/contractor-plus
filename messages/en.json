@@ -111,7 +111,15 @@
   "footer": {
     "heading": "Helping Contractors Win 2x More Jobs In 1/3rd The Time",
     "cta": "All Services Operational & Working",
-    "powerBy": "Powered By",
+    "poweredBy": "Powered By",
+    "copyright": "Contractor+ All rights reserved.",
+    "legalLinks": [
+      "Terms of Service",
+      "Privacy Policy",
+      "Cookie Policy",
+      "GDPR",
+      "Accessibility"
+    ],
     "links": [
       "CRM",
       "Field Service Management",

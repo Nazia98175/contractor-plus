@@ -13,6 +13,7 @@ if (typeof window !== "undefined") {
 const Whatever = () => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
+  const containerRef = useRef(null);
   const leftIconsRef = useRef<(HTMLDivElement | null)[]>([]);
   const rightIconsRef = useRef<(HTMLDivElement | null)[]>([]);
   const centerRef = useRef(null);
@@ -26,6 +27,8 @@ const Whatever = () => {
       imgSize: "lg:max-w-[38px] max-w-[29px]",
       initialX: -150,
       initialY: -80,
+      finalX: "47%",
+      finalY: "25%",
     },
     {
       src: "/images/png/contractor-1.png",
@@ -35,6 +38,8 @@ const Whatever = () => {
       imgSize: "lg:max-w-[38px] max-w-[26px]",
       initialX: -150,
       initialY: 80,
+      finalX: "18%",
+      finalY: "70%",
     },
     {
       src: "/images/png/contractor-3.png",
@@ -44,6 +49,8 @@ const Whatever = () => {
       imgSize: "lg:max-w-[66px] max-w-[45px]",
       initialX: -150,
       initialY: 80,
+      finalX: "81%",
+      finalY: "75%",
     },
   ];
 
@@ -53,18 +60,22 @@ const Whatever = () => {
       width: 38,
       height: 38,
       size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
-      imgSize: "lg:max-w-[38px] max-w-[29px]", // Fixed incorrect value
+      imgSize: "lg:max-w-[38px] max-w-[29px]",
       initialX: 150,
       initialY: -80,
+      finalX: "26%",
+      finalY: "30%",
     },
     {
       src: "/images/png/contractor-5.png",
       width: 38,
       height: 38,
       size: "lg:w-[85px] w-[46px] lg:h-[85px] h-[46px]",
-      imgSize: "lg:max-w-[38px] max-w-[25px]", // Fixed incorrect value
+      imgSize: "lg:max-w-[38px] max-w-[25px]",
       initialX: 150,
       initialY: 80,
+      finalX: "79%",
+      finalY: "70%",
     },
     {
       src: "/images/png/contractor-6.png",
@@ -74,6 +85,8 @@ const Whatever = () => {
       imgSize: "lg:max-w-[33px] max-w-[21px]",
       initialX: 150,
       initialY: 80,
+      finalX: "28%",
+      finalY: "75%",
     },
   ];
 
@@ -85,7 +98,7 @@ const Whatever = () => {
   }, []);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+    if (!sectionRef.current || !containerRef.current) return;
 
     // Clean up previous animations to prevent conflicts
     ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -96,10 +109,49 @@ const Whatever = () => {
     ]);
 
     const ctx = gsap.context(() => {
+      // Set initial positions using GSAP
+      const leftSection = document.querySelector(".left-section");
+      const rightSection = document.querySelector(".right-section");
+
+      if (leftSection && rightSection) {
+        // Position the icons absolutely within their containers
+        leftIconsRef.current.forEach((el, i) => {
+          if (!el) return;
+
+          // Set initial absolute position
+          gsap.set(el, {
+            position: "absolute",
+            left: leftIcons[i].finalX,
+            top: leftIcons[i].finalY,
+            xPercent: -50,
+            yPercent: -50,
+            opacity: 0,
+            scale: 0.2,
+            filter: "blur(8px)",
+          });
+        });
+
+        rightIconsRef.current.forEach((el, i) => {
+          if (!el) return;
+
+          // Set initial absolute position
+          gsap.set(el, {
+            position: "absolute",
+            left: rightIcons[i].finalX,
+            top: rightIcons[i].finalY,
+            xPercent: -50,
+            yPercent: -50,
+            opacity: 0,
+            scale: 0.2,
+            filter: "blur(8px)",
+          });
+        });
+      }
+
       const scrollTrigger = {
         trigger: sectionRef.current,
         start: "top 85%",
-        end: "center 10%", // Adjusted for better visibility
+        end: "center 10%",
         scrub: 0.6,
         invalidateOnRefresh: true,
       };
@@ -110,71 +162,11 @@ const Whatever = () => {
         return val;
       };
 
+      // Animate left icons
       [...leftIconsRef.current].forEach((el, i) => {
         if (!el) return;
-        const { initialX, initialY } = leftIcons[i];
-        gsap.set(el, { clearProps: "all" });
-        gsap.fromTo(
-          el,
-          {
-            x: getInitial(initialX),
-            y: getInitial(initialY),
-            scale: 0.2,
-            opacity: 0,
-            filter: "blur(8px)",
-            force3D: true,
-          },
-          {
-            x: 0,
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-            ease: "power2.out",
-            scrollTrigger,
-            force3D: true,
-          }
-        );
-      });
-
-      [...rightIconsRef.current].forEach((el, i) => {
-        if (!el) return;
-        const { initialX, initialY } = rightIcons[i];
-        gsap.set(el, { clearProps: "all" });
-        gsap.fromTo(
-          el,
-          {
-            x: getInitial(initialX),
-            y: getInitial(initialY),
-            scale: 0.2,
-            opacity: 0,
-            filter: "blur(8px)",
-            force3D: true,
-          },
-          {
-            x: 0,
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-            ease: "power2.out",
-            scrollTrigger,
-            force3D: true,
-          }
-        );
-      });
-
-      gsap.set(centerRef.current, { clearProps: "all" });
-      gsap.fromTo(
-        centerRef.current,
-        {
-          y: getInitial(-100),
-          scale: 0.3,
-          opacity: 0,
-          filter: "blur(8px)",
-          force3D: true,
-        },
-        {
+        gsap.to(el, {
+          x: 0,
           y: 0,
           scale: 1,
           opacity: 1,
@@ -182,13 +174,46 @@ const Whatever = () => {
           ease: "power2.out",
           scrollTrigger,
           force3D: true,
-        }
-      );
+        });
+      });
+
+      // Animate right icons
+      [...rightIconsRef.current].forEach((el, i) => {
+        if (!el) return;
+        gsap.to(el, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          filter: "blur(0px)",
+          ease: "power2.out",
+          scrollTrigger,
+          force3D: true,
+        });
+      });
+
+      // Center element animation
+      gsap.set(centerRef.current, {
+        y: getInitial(-100),
+        scale: 0.3,
+        opacity: 0,
+        filter: "blur(8px)",
+      });
+
+      gsap.to(centerRef.current, {
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        filter: "blur(0px)",
+        ease: "power2.out",
+        scrollTrigger,
+        force3D: true,
+      });
 
       // Hover animation
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "center 50%", // Adjusted to start animations sooner
+        start: "center 50%",
         onEnter: () => {
           if (!isMobile) {
             [...leftIconsRef.current].forEach((el, i) => {
@@ -267,40 +292,31 @@ const Whatever = () => {
         <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center mb-8">
           Whatever you use, Contractor+ connects
         </h3>
-        <div className="container mx-auto px-4">
+
+        <div ref={containerRef} className="max-w-[1022px] mx-auto px-4">
           <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 pt-5 items-center md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
-            {/* Left Grid */}
-            <div className="max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center">
-              <div className="grid grid-cols-3 grid-rows-3 h-full w-full relative">
-                {leftIcons.map((icon, i) => (
-                  <div
-                    key={i}
-                    ref={(el) => {
-                      leftIconsRef.current[i] = el;
-                    }}
-                    className={`${
-                      icon.size
-                    } flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2 ${
-                      i === 0
-                        ? "col-start-2 row-start-1 self-start justify-self-center"
-                        : i === 1
-                        ? "col-start-1 row-start-3 self-end justify-self-start"
-                        : "col-start-3 row-start-3 self-end justify-self-end"
-                    } will-change-transform`}
-                  >
-                    <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
-                    <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
-                    <Image
-                      className={`object-cover relative z-10 ${icon.imgSize}`}
-                      src={icon.src}
-                      width={icon.width}
-                      height={icon.height}
-                      alt="contractor"
-                      unoptimized
-                    />
-                  </div>
-                ))}
-              </div>
+            {/* Left Side */}
+            <div className="left-section max-w-[409px] lg:py-[59px] px-10 py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center relative h-[300px]">
+              {leftIcons.map((icon, i) => (
+                <div
+                  key={i}
+                  ref={(el) => {
+                    leftIconsRef.current[i] = el;
+                  }}
+                  className={`${icon.size} absolute flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2 will-change-transform`}
+                >
+                  <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
+                  <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
+                  <Image
+                    className={`object-cover relative z-10 ${icon.imgSize}`}
+                    src={icon.src}
+                    width={icon.width}
+                    height={icon.height}
+                    alt="contractor"
+                    unoptimized
+                  />
+                </div>
+              ))}
             </div>
 
             {/* Center */}
@@ -324,42 +340,33 @@ const Whatever = () => {
               </div>
             </div>
 
-            {/* Right Grid */}
-            <div className="max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center">
-              <div className="grid grid-cols-3 grid-rows-3 h-full w-full relative">
-                {rightIcons.map((icon, i) => (
-                  <div
-                    key={i}
-                    ref={(el) => {
-                      rightIconsRef.current[i] = el;
-                    }}
-                    className={`${
-                      icon.size
-                    } flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2 ${
-                      i === 0
-                        ? "col-start-1 row-start-1 self-start justify-self-start"
-                        : i === 1
-                        ? "col-start-3 row-start-3 self-end justify-self-end"
-                        : "col-start-2 row-start-3 self-end justify-self-start"
-                    } will-change-transform`}
-                  >
-                    <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
-                    <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
-                    <Image
-                      className={`object-cover relative z-10 ${icon.imgSize}`}
-                      src={icon.src}
-                      width={icon.width}
-                      height={icon.height}
-                      alt="contractor"
-                      unoptimized
-                    />
-                  </div>
-                ))}
-              </div>
+            {/* Right Side */}
+            <div className="right-section max-w-[409px] lg:py-[59px] px-10 py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative h-[300px]">
+              {rightIcons.map((icon, i) => (
+                <div
+                  key={i}
+                  ref={(el) => {
+                    rightIconsRef.current[i] = el;
+                  }}
+                  className={`${icon.size} absolute flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2 will-change-transform`}
+                >
+                  <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
+                  <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
+                  <Image
+                    className={`object-cover relative z-10 ${icon.imgSize}`}
+                    src={icon.src}
+                    width={icon.width}
+                    height={icon.height}
+                    alt="contractor"
+                    unoptimized
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <p className="text-lg capitalize text-[#ADB1B5] opacity-90 text-center">
+
+        <p className="text-lg capitalize text-[#ADB1B5] opacity-90 text-center mt-6">
           5000+ Potential Integrations
         </p>
       </div>

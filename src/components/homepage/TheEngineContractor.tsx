@@ -20,9 +20,10 @@ const TheEngineContractor = () => {
               {t("heading")}&nbsp;
               {inView ? (
                 <CountUp
+                  className="xl:min-w-[123px] lg:min-w-[141px] sm:min-w-[105px] min-w-[74px] xl:max-w-[123px] lg:max-w-[141px] sm:max-w-[105px] max-w-[74px] w-full"
                   start={0}
                   end={57163}
-                  duration={3} // Slow animation
+                  duration={3}
                   separator=","
                 />
               ) : (

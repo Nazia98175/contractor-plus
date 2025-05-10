@@ -53,7 +53,7 @@ const Header = () => {
             <div className="px-2 flex items-center xl:gap-3 gap-2">
               <LanguageSelector />
               <Link
-                className="text-sm font-semibold leading-[142.857%] tracking-[0.1px] text-doctor2"
+                className="text-sm font-semibold leading-[142.857%] tracking-[0.1px] text-doctor2 whitespace-nowrap"
                 href={"tel:(855) 392-8803"}
               >
                 (855) 392-8803

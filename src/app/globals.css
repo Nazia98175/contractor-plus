@@ -205,11 +205,6 @@ html {
   display: block !important;
   z-index: 777 !important;
 }
-.swiper-pagination-bullet-active {
-  border-radius: 24px !important;
-  background: #3b82f6 !important;
-  width: 24px !important;
-}
 
 .swiper {
   width: 100%;
@@ -224,3 +219,11 @@ html {
 /* .swiper-pagination-clickable .swiper-pagination-bullet {
   background: #e3e6f0;
 } */
+.swiper-pagination-bullet {
+  background: #e3e6f0;
+}
+.swiper-pagination-bullet-active {
+  border-radius: 24px !important;
+  background: #3b82f6 !important;
+  width: 24px !important;
+}

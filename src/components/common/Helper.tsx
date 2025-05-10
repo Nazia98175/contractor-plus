@@ -176,18 +176,15 @@ export const featureData = [
 export const contractPlatforms = [
   {
     img: "/images/webp/expensive.webp",
-    title: "Expensive",
-    desc: "The “big guys” charge a small fortune, and their software is a nightmare to learn.",
+    key: "card1",
   },
   {
     img: "/images/webp/complicated.webp",
-    title: "Complicated",
-    desc: "Popular solutions are either outdated or difficult to use as a mobile app.",
+    key: "card2",
   },
   {
     img: "/images/webp/inadequate.webp",
-    title: "Inadequate",
-    desc: "There’s no true “all in one”, so you end up with 6 different platforms to run your company.",
+    key: "card3",
   },
 ];
 export const IndustriesDropdownLinks = [
@@ -479,5 +476,76 @@ export const blogList = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-3.webp",
+  },
+];
+export const leftIcons = [
+  {
+    src: "/images/png/contractor-2.png",
+    width: 38,
+    height: 38,
+    size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
+    imgSize: "lg:max-w-[38px] max-w-[29px]",
+    initialX: -150,
+    initialY: -80,
+    finalX: "47%",
+    finalY: "25%",
+  },
+  {
+    src: "/images/png/contractor-1.png",
+    width: 38,
+    height: 38,
+    size: "lg:w-[85px] w-[58px] lg:h-[85px] h-[58px]",
+    imgSize: "lg:max-w-[38px] max-w-[26px]",
+    initialX: -150,
+    initialY: 80,
+    finalX: "18%",
+    finalY: "70%",
+  },
+  {
+    src: "/images/png/contractor-3.png",
+    width: 66,
+    height: 17,
+    size: "lg:w-[85px] w-[62px] lg:h-[85px] h-[62px]",
+    imgSize: "lg:max-w-[66px] max-w-[45px]",
+    initialX: -150,
+    initialY: 80,
+    finalX: "81%",
+    finalY: "75%",
+  },
+];
+
+export const rightIcons = [
+  {
+    src: "/images/png/contractor-4.png",
+    width: 38,
+    height: 38,
+    size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
+    imgSize: "lg:max-w-[38px] max-w-[29px]",
+    initialX: 150,
+    initialY: -80,
+    finalX: "26%",
+    finalY: "30%",
+  },
+  {
+    src: "/images/png/contractor-5.png",
+    width: 38,
+    height: 38,
+    size: "lg:w-[85px] w-[46px] lg:h-[85px] h-[46px]",
+    imgSize: "lg:max-w-[38px] max-w-[25px]",
+    initialX: 150,
+    initialY: 80,
+    finalX: "79%",
+    finalY: "70%",
+  },
+  {
+    src: "/images/png/contractor-6.png",
+    width: 33,
+    height: 33,
+    size: "lg:w-[61px] w-10 lg:h-[61px] h-10",
+    imgSize: "lg:max-w-[33px] max-w-[21px]",
+    initialX: 150,
+    initialY: 80,
+    finalX: "28%",
+    finalY: "75%",
   },
 ];

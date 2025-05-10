@@ -57,7 +57,7 @@ const EntireBusiness: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] !w-auto"
+            className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] w-full mx-auto md:mx-0 sm:!w-auto"
             disabled={loading}
           >
             {loading ? (

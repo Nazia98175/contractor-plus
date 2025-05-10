@@ -17,7 +17,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
   autoplay,
 }) => {
   return (
-    <div className="relative w-full my-6">
+    <div className="relative w-full">
       <Swiper
         pagination={pagination ? { clickable: true } : false}
         autoplay={

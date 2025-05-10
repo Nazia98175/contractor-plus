@@ -164,5 +164,199 @@
       "Schedule A Demo"
     ],
     "sections": ["Features", "Industries", "Solutions", "Explore"]
+  },
+  "features": {
+    "solutionsHeading": "Solutions",
+    "featuresHeading": "Features",
+    "newBadge": "NEW",
+    "seeAllFeatures": "See All Features",
+    "integrations": "Integrations",
+    "productUpdates": "Product Updates",
+    "crm": {
+      "label": "CRM",
+      "description": "Manage Leads & Clients Effortlessly"
+    },
+    "estimates": {
+      "label": "Estimates & Quotes",
+      "description": "Organize Jobs, Teams & Real-Time Updates"
+    },
+    "mileage": {
+      "label": "Mileage Tracking",
+      "description": "Simplify Projects, Timelines & Tasks Easily"
+    },
+    "fieldService": {
+      "label": "Field Service Management",
+      "description": "Smart & Accurate, Winning Project Estimations"
+    },
+    "dealFlow": {
+      "label": "Deal Flow Tracking",
+      "description": "Real-Time Insights for Smarter Decisions"
+    },
+    "assetTracking": {
+      "label": "Asset Tracking",
+      "description": "Find More Customers To Grow Your Business"
+    },
+    "projectManagement": {
+      "label": "Project Management",
+      "description": "Organize Finances, Simplify Your Accounting"
+    },
+    "scheduling": {
+      "label": "Scheduling",
+      "description": "Organize Finances, Simplify Your Accounting"
+    },
+    "reporting": {
+      "label": "Reporting",
+      "description": "Fast, Accurate, Winning Bids Made Easy"
+    },
+    "estimaticAI": {
+      "label": "Estimatic AI",
+      "description": "Visualize Your Sales Pipeline"
+    },
+    "clientPortal": {
+      "label": "Client Portal",
+      "description": "Optimize Team Efficiency & Job Assignments"
+    },
+    "proWebsite": {
+      "label": "PRO Website",
+      "description": "Simple, Secure Project Access for Clients"
+    },
+    "bigChiefAI": {
+      "label": "Big Chief AI",
+      "description": "Automate Invoicing & Get Paid Faster"
+    },
+    "invoicing": {
+      "label": "Invoicing & Collections",
+      "description": "Centralized Team & Client Conversations"
+    },
+    "payments": {
+      "label": "Payments",
+      "description": "GPS Verified Time Tracking For The Whole Team"
+    },
+    "leadGeneration": {
+      "label": "Lead Generation",
+      "description": "Automatically Track & Maximize Mileage Deductions"
+    },
+    "communication": {
+      "label": "Two-Way Communication",
+      "description": "Monitor Equipment, Prevent Costly Losses"
+    },
+    "propertyProfiles": {
+      "label": "Property Profiles",
+      "description": "Insights to Boost Efficiency & Profits"
+    },
+    "bookkeeping": {
+      "label": "Bookkeeping",
+      "description": "Showcase Your Business & Attract Customers"
+    },
+    "timeClock": {
+      "label": "Time Clock",
+      "description": "Online, In-person, QR & ACH + Instant payouts!"
+    }
+  },
+  "whyContractor": {
+    "links": [
+      {
+        "label": "Why Choose Contractor+",
+        "description": "Learn about our platform's unique advantages",
+        "href": "/why-contractor-plus"
+      },
+      {
+        "label": "Success Stories",
+        "description": "See how contractors are growing with our platform",
+        "href": "/success-stories"
+      },
+      {
+        "label": "Features Overview",
+        "description": "Discover all the powerful tools at your fingertips",
+        "href": "/features-overview"
+      },
+      {
+        "label": "Pricing Plans",
+        "description": "Find the right pricing plan for your business",
+        "href": "/pricing"
+      },
+      {
+        "label": "Integration Partners",
+        "description": "All the services and software that integrate with us",
+        "href": "/integration-partners"
+      }
+    ],
+    "imageAlt": "Contractor team working together on a construction site",
+    "seeAllFeatures": "See All Features"
+  },
+  "industries": {
+    "imageAlt": "Group of contractors working on a project",
+    "links": [
+      { "label": "General Contractor", "href": "/" },
+      { "label": "Plumbing", "href": "/" },
+      { "label": "Construction", "href": "/" },
+      { "label": "HVAC", "href": "/" },
+      { "label": "Remodeling", "href": "/" },
+      { "label": "Painting", "href": "/" },
+      { "label": "Roofing", "href": "/" },
+      { "label": "Junk Removal", "href": "/" },
+      { "label": "Locksmith", "href": "/" },
+      { "label": "Tiling", "href": "/" },
+      { "label": "Drywall", "href": "/" },
+      { "label": "Mechanical", "href": "/" },
+      { "label": "Cleaning", "href": "/" },
+      { "label": "Restoration", "href": "/" },
+      { "label": "Electrician", "href": "/" },
+      { "label": "Fence", "href": "/" },
+      { "label": "Flooring", "href": "/" },
+      { "label": "Pest Control", "href": "/" },
+      { "label": "Pool & Spa", "href": "/" },
+      { "label": "Tree Care", "href": "/" },
+      { "label": "Landscaping", "href": "/" },
+      { "label": "Snow Removal", "href": "/" },
+      { "label": "Lawn Care", "href": "/" },
+      { "label": "Paving", "href": "/" },
+      { "label": "Solar", "href": "/" },
+      { "label": "Janitorial", "href": "/" },
+      { "label": "Irrigation", "href": "/" },
+      { "label": "Pressure Washing", "href": "/" },
+      { "label": "Property Maintenance", "href": "/" },
+      { "label": "Window Cleaning", "href": "/" },
+      { "label": "Carpentry", "href": "/" },
+      { "label": "Carpet Cleaning", "href": "/" },
+      { "label": "Chimney Sweeping", "href": "/" },
+      { "label": "Elevator", "href": "/" },
+      { "label": "Excavation", "href": "/" },
+      { "label": "Garage Door", "href": "/" },
+      { "label": "Handyman", "href": "/" },
+      { "label": "Septic & Pump", "href": "/" },
+      { "label": "Small Engine Repair", "href": "/" }
+    ]
+  },
+  "pricing": {
+    "links": [
+      { "label": "Contractor+ Blog", "href": "/" },
+      { "label": "Industry Events", "href": "/" },
+      { "label": "Hard Hat Chat", "href": "/" },
+      { "label": "Mindset Monday", "href": "/" },
+      { "label": "Supply Partner Program", "href": "/" },
+      { "label": "The Owners Perspective", "href": "/" },
+      { "label": "Features Roadmap", "href": "/" },
+      { "label": "Free Tools & Templates", "href": "/" },
+      { "label": "Support Center", "href": "/" },
+      { "label": "Regional Labor Pricing", "href": "/" },
+      { "label": "Regional Material Pricing", "href": "/" }
+    ]
+  },
+  "resources": {
+    "imageAlt": "Resources and learning materials for contractors",
+    "links": [
+      { "label": "Contractor+ Blog", "href": "/" },
+      { "label": "Industry Events", "href": "/" },
+      { "label": "Hard Hat Chat", "href": "/" },
+      { "label": "Mindset Monday", "href": "/" },
+      { "label": "Supply Partner Program", "href": "/" },
+      { "label": "The Owners Perspective", "href": "/" },
+      { "label": "Features Roadmap", "href": "/" },
+      { "label": "Free Tools & Templates", "href": "/" },
+      { "label": "Support Center", "href": "/" },
+      { "label": "Regional Labor Pricing", "href": "/" },
+      { "label": "Regional Material Pricing", "href": "/" }
+    ]
   }
 }

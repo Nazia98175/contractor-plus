@@ -164,5 +164,202 @@
       "Agendar uma Demonstração"
     ],
     "sections": ["Recursos", "Indústrias", "Soluções", "Explorar"]
+  },
+  "features": {
+    "solutionsHeading": "Soluções",
+    "featuresHeading": "Recursos",
+    "newBadge": "NOVO",
+    "seeAllFeatures": "Ver todos os recursos",
+    "integrations": "Integrações",
+    "productUpdates": "Atualizações de produtos",
+    "crm": {
+      "label": "CRM",
+      "description": "Gerencie leads e clientes sem esforço"
+    },
+    "estimates": {
+      "label": "Estimativas e orçamentos",
+      "description": "Organize trabalhos, equipes e atualizações em tempo real"
+    },
+    "mileage": {
+      "label": "Rastreamento de quilometragem",
+      "description": "Simplifique projetos, cronogramas e tarefas facilmente"
+    },
+    "fieldService": {
+      "label": "Gerenciamento de serviço de campo",
+      "description": "Estimativas de projetos inteligentes e precisas para ganhar"
+    },
+    "dealFlow": {
+      "label": "Rastreamento de fluxo de negócios",
+      "description": "Insights em tempo real para decisões mais inteligentes"
+    },
+    "assetTracking": {
+      "label": "Rastreamento de ativos",
+      "description": "Encontre mais clientes para expandir seu negócio"
+    },
+    "projectManagement": {
+      "label": "Gerenciamento de projetos",
+      "description": "Organize finanças, simplifique sua contabilidade"
+    },
+    "scheduling": {
+      "label": "Agendamento",
+      "description": "Organize finanças, simplifique sua contabilidade"
+    },
+    "reporting": {
+      "label": "Relatórios",
+      "description": "Ofertas rápidas, precisas e vencedoras feitas facilmente"
+    },
+    "estimaticAI": {
+      "label": "Estimatic IA",
+      "description": "Visualize seu funil de vendas"
+    },
+    "clientPortal": {
+      "label": "Portal do cliente",
+      "description": "Otimize a eficiência da equipe e atribuição de trabalhos"
+    },
+    "proWebsite": {
+      "label": "Site PRO",
+      "description": "Acesso a projetos simples e seguro para clientes"
+    },
+    "bigChiefAI": {
+      "label": "Big Chief IA",
+      "description": "Automatize o faturamento e receba pagamentos mais rápido"
+    },
+    "invoicing": {
+      "label": "Faturamento e cobranças",
+      "description": "Conversas centralizadas da equipe e do cliente"
+    },
+    "payments": {
+      "label": "Pagamentos",
+      "description": "Rastreamento de tempo verificado por GPS para toda a equipe"
+    },
+    "leadGeneration": {
+      "label": "Geração de leads",
+      "description": "Rastreie e maximize automaticamente as deduções de quilometragem"
+    },
+    "communication": {
+      "label": "Comunicação bidirecional",
+      "description": "Monitore equipamentos, evite perdas dispendiosas"
+    },
+    "propertyProfiles": {
+      "label": "Perfis de propriedade",
+      "description": "Insights para aumentar a eficiência e os lucros"
+    },
+    "bookkeeping": {
+      "label": "Contabilidade",
+      "description": "Exiba seu negócio e atraia clientes"
+    },
+    "timeClock": {
+      "label": "Relógio de ponto",
+      "description": "Online, presencial, QR e ACH + pagamentos instantâneos!"
+    }
+  },
+  "whyContractor": {
+    "links": [
+      {
+        "label": "Por que escolher o Contractor+?",
+        "description": "Conheça as vantagens exclusivas da nossa plataforma",
+        "href": "/why-contractor-plus"
+      },
+      {
+        "label": "Histórias de sucesso",
+        "description": "Veja como os empreiteiros estão crescendo com nossa plataforma",
+        "href": "/success-stories"
+      },
+      {
+        "label": "Visão geral dos recursos",
+        "description": "Descubra todas as ferramentas poderosas ao seu alcance",
+        "href": "/features-overview"
+      },
+      {
+        "label": "Planos de preços",
+        "description": "Encontre o plano de preços certo para o seu negócio",
+        "href": "/pricing"
+      },
+      {
+        "label": "Parceiros de integração",
+        "description": "Todos os serviços e softwares que se integram conosco",
+        "href": "/integration-partners"
+      }
+    ],
+    "imageAlt": "Equipe de empreiteiros trabalhando juntos em um canteiro de obras",
+    "seeAllFeatures": "Ver todos os recursos"
+  },
+  "industries": {
+    "imageAlt": "Grupo de empreiteiros trabalhando em um projeto",
+    "links": [
+      { "label": "Empreiteiro Geral", "href": "/" },
+      { "label": "Encanamento", "href": "/" },
+      { "label": "Construção", "href": "/" },
+      {
+        "label": "HVAC (Aquecimento, Ventilação e Ar Condicionado)",
+        "href": "/"
+      },
+      { "label": "Remodelação", "href": "/" },
+      { "label": "Pintura", "href": "/" },
+      { "label": "Telhados", "href": "/" },
+      { "label": "Remoção de Entulho", "href": "/" },
+      { "label": "Chaveiro", "href": "/" },
+      { "label": "Azulejos", "href": "/" },
+      { "label": "Drywall", "href": "/" },
+      { "label": "Mecânica", "href": "/" },
+      { "label": "Limpeza", "href": "/" },
+      { "label": "Restauração", "href": "/" },
+      { "label": "Eletricista", "href": "/" },
+      { "label": "Cercas", "href": "/" },
+      { "label": "Pisos", "href": "/" },
+      { "label": "Controle de Pragas", "href": "/" },
+      { "label": "Piscina & Spa", "href": "/" },
+      { "label": "Cuidado com Árvores", "href": "/" },
+      { "label": "Paisagismo", "href": "/" },
+      { "label": "Remoção de Neve", "href": "/" },
+      { "label": "Cuidado com Gramados", "href": "/" },
+      { "label": "Pavimentação", "href": "/" },
+      { "label": "Energia Solar", "href": "/" },
+      { "label": "Serviços de Zelador", "href": "/" },
+      { "label": "Irrigação", "href": "/" },
+      { "label": "Lavagem à Pressão", "href": "/" },
+      { "label": "Manutenção de Propriedades", "href": "/" },
+      { "label": "Limpeza de Janelas", "href": "/" },
+      { "label": "Carpintaria", "href": "/" },
+      { "label": "Limpeza de Carpetes", "href": "/" },
+      { "label": "Limpeza de Chaminés", "href": "/" },
+      { "label": "Elevador", "href": "/" },
+      { "label": "Escavação", "href": "/" },
+      { "label": "Porta de Garagem", "href": "/" },
+      { "label": "Faz-Tudo", "href": "/" },
+      { "label": "Fossa Séptica & Bomba", "href": "/" },
+      { "label": "Conserto de Motores Pequenos", "href": "/" }
+    ]
+  },
+  "pricing": {
+    "links": [
+      { "label": "Blog Contractor+", "href": "/" },
+      { "label": "Eventos da Indústria", "href": "/" },
+      { "label": "Bate-papo de Capacete", "href": "/" },
+      { "label": "Segunda-feira de Mentalidade", "href": "/" },
+      { "label": "Programa de Parceiros Fornecedores", "href": "/" },
+      { "label": "A Perspectiva dos Proprietários", "href": "/" },
+      { "label": "Roteiro de Recursos", "href": "/" },
+      { "label": "Ferramentas e Modelos Gratuitos", "href": "/" },
+      { "label": "Central de Suporte", "href": "/" },
+      { "label": "Preços Regionais de Mão de Obra", "href": "/" },
+      { "label": "Preços Regionais de Materiais", "href": "/" }
+    ]
+  },
+  "resources": {
+    "imageAlt": "Recursos e materiais de aprendizado para empreiteiros",
+    "links": [
+      { "label": "Blog Contractor+", "href": "/" },
+      { "label": "Eventos da Indústria", "href": "/" },
+      { "label": "Bate-papo de Capacete", "href": "/" },
+      { "label": "Segunda-feira de Mentalidade", "href": "/" },
+      { "label": "Programa de Parceiros Fornecedores", "href": "/" },
+      { "label": "A Perspectiva dos Proprietários", "href": "/" },
+      { "label": "Roteiro de Recursos", "href": "/" },
+      { "label": "Ferramentas e Modelos Gratuitos", "href": "/" },
+      { "label": "Central de Suporte", "href": "/" },
+      { "label": "Preços Regionais de Mão de Obra", "href": "/" },
+      { "label": "Preços Regionais de Materiais", "href": "/" }
+    ]
   }
 }

@@ -1,54 +1,160 @@
+// FeaturesDropdown.tsx
+"use client";
 import Link from "next/link";
-import { ArrowIcon } from "./Icons";
-import { featurelinks } from "./Helper";
+import {
+  ArrowIcon,
+  ServiceIcon,
+  EstimatesIcon,
+  TrackingIcon,
+  FieldServiceIcon,
+  TrophyIcon,
+  AssetIcon,
+  ProjectIcon,
+  SchedulingIcon,
+  ReportingIcon,
+  EstimaticIcon,
+  ClientIcon,
+  PROIcon,
+  BigChiefAIIcon,
+  InvoicingIcon,
+  PaymentsIcon,
+  LeadGenerationIcon,
+  TelephoneIcon,
+  PropertyIcon,
+  BookkeepingIcon,
+  TimeIcon,
+} from "./Icons";
+import { useTranslations } from "next-intl";
 
-const FeaturesDropdown = () => {
+const FeaturesDropdown = ({ isVisible = true }) => {
+  // Get translations
+  const t = useTranslations("features");
+
+  // Define feature IDs - each corresponding to a translation key in the language files
+  const featureIds: (keyof typeof featureIcons)[] = [
+    "crm",
+    "estimates",
+    "mileage",
+    "fieldService",
+    "dealFlow",
+    "assetTracking",
+    "projectManagement",
+    "scheduling",
+    "reporting",
+    "estimaticAI",
+    "clientPortal",
+    "proWebsite",
+    "bigChiefAI",
+    "invoicing",
+    "payments",
+    "leadGeneration",
+    "communication",
+    "propertyProfiles",
+    "bookkeeping",
+    "timeClock",
+  ];
+
+  // Map of feature IDs to their corresponding icons
+  const featureIcons = {
+    crm: <ServiceIcon />,
+    estimates: <EstimatesIcon />,
+    mileage: <TrackingIcon />,
+    fieldService: <FieldServiceIcon />,
+    dealFlow: <TrophyIcon />,
+    assetTracking: <AssetIcon />,
+    projectManagement: <ProjectIcon />,
+    scheduling: <SchedulingIcon />,
+    reporting: <ReportingIcon />,
+    estimaticAI: <EstimaticIcon />,
+    clientPortal: <ClientIcon />,
+    proWebsite: <PROIcon />,
+    bigChiefAI: <BigChiefAIIcon />,
+    invoicing: <InvoicingIcon />,
+    payments: <PaymentsIcon />,
+    leadGeneration: <LeadGenerationIcon />,
+    communication: <TelephoneIcon />,
+    propertyProfiles: <PropertyIcon />,
+    bookkeeping: <BookkeepingIcon />,
+    timeClock: <TimeIcon />,
+  };
+
+  // Map of feature IDs to whether they are new
+  const newFeatures = {
+    crm: true,
+    estimates: false,
+    mileage: true,
+    fieldService: true,
+    dealFlow: false,
+    assetTracking: false,
+    projectManagement: false,
+    scheduling: true,
+    reporting: true,
+    estimaticAI: false,
+    clientPortal: false,
+    proWebsite: false,
+    bigChiefAI: false,
+    invoicing: true,
+    payments: false,
+    leadGeneration: true,
+    communication: true,
+    propertyProfiles: true,
+    bookkeeping: true,
+    timeClock: true,
+  };
+
+  // If not visible, don't render anything
+  if (!isVisible) {
+    return null;
+  }
+
   return (
     <article className="flex flex-col justify-between p-2 gap-6">
       <div className="grid grid-cols-3 gap-6 lg:text-sm text-xs italic font-semibold text-lightBlack font-inter">
-        <h3 className="px-5">Solutions</h3>
-        <h4 className="px-5 ">Features</h4>
+        <h3 className="px-5">{t("solutionsHeading")}</h3>
+        <h4 className="px-5 ">{t("featuresHeading")}</h4>
       </div>
       <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full pb-10">
-        {featurelinks.map((link, index) => (
+        {featureIds.map((featureId) => (
           <li
             className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
-            key={index}
+            key={featureId}
           >
             <Link
-              href={link.href}
+              href="/"
               className="group group-hover:bg-lightBlack group-hover:!text-white"
             >
               <div className="flex gap-2.5 items-center">
-                <span>{link.icon}</span>
+                <span>{featureIcons[featureId]}</span>
                 <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">
-                  {link.label}
-                  {link.isNew && (
+                  {/* Use translation for label based on feature ID */}
+                  {t(`${featureId}.label`)}
+                  {newFeatures[featureId] && (
                     <div className="px-2.5 h-[21px] flex items-center justify-center border border-[#439777] bg-[#EFFBF6] rounded-full text-sm font-semibold font-myriad tracking-[0.4px] text-[#439777]">
-                      NEW
+                      {t("newBadge")}
                     </div>
                   )}
                 </div>
               </div>
               <p className="text-sm font-inter text-lightBlack mt-2.5">
-                {link.description}
+                {/* Use translation for description based on feature ID */}
+                {t(`${featureId}.description`)}
               </p>
             </Link>
           </li>
         ))}
       </ul>
       <div className="flex items-center justify-between gap-6 p-[6px] font-inter absolute bottom-0 w-full bg-white">
-        <Link className="all-features-button group" href={"/"}>
-          See All Features
+        <Link className="all-features-button group" href="/">
+          {t("seeAllFeatures")}
           <ArrowIcon />
         </Link>
         <div className="flex items-center gap-10">
-          <Link className="all-features-button group" href={"/"}>
-            Integrations
+          <Link className="all-features-button group" href="/">
+            {t("integrations")}
             <ArrowIcon />
           </Link>
-          <Link className="all-features-button group" href={"/"}>
-            Product Updates
+          <Link className="all-features-button group" href="/">
+            {t("productUpdates")}
             <ArrowIcon />
           </Link>
         </div>

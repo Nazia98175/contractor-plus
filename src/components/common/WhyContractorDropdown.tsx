@@ -1,15 +1,26 @@
 import Link from "next/link";
 import React from "react";
 import { ArrowIcon } from "./Icons";
-import { WhyContractorDropdownlinks } from "./Helper";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const WhyContractorDropdown = () => {
+  // Get translations from the "whyContractor" namespace
+  const t = useTranslations("whyContractor");
+
+  // Get the links list from translations
+  // This assumes your JSON structure has a "links" array with label, description, and href properties
+  const whyContractorLinks = t.raw("links") as {
+    label: string;
+    description: string;
+    href: string;
+  }[];
+
   return (
     <article className="flex flex-col justify-between p-2 gap-6">
       <div className="flex items-start">
-        <ul className="grid  gap-x-6 gap-y-3 w-full overflow-auto">
-          {WhyContractorDropdownlinks.map((link, index) => (
+        <ul className="grid gap-x-6 gap-y-3 w-full overflow-auto">
+          {whyContractorLinks.map((link, index) => (
             <li
               className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
               key={index}
@@ -31,7 +42,7 @@ const WhyContractorDropdown = () => {
         <Image
           className="object-contain max-w-[420px] w-full"
           src={"/images/webp/resources-dropdown-img.webp"}
-          alt="group-eng"
+          alt={t("imageAlt") || "group-eng"}
           unoptimized
           width={420}
           height={290}
@@ -39,7 +50,7 @@ const WhyContractorDropdown = () => {
       </div>
       <div className="flex items-center justify-between gap-6 p-[6px]">
         <Link className="all-features-button group" href={"/"}>
-          See All Features
+          {t("seeAllFeatures")}
           <ArrowIcon />
         </Link>
       </div>

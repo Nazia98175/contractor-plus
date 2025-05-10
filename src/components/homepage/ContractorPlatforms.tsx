@@ -1,23 +1,5 @@
-import { section } from "framer-motion/client";
-import React from "react";
+import { contractPlatforms } from "../common/Helper";
 
-const contractPlatforms = [
-  {
-    img: "/images/webp/expensive.webp",
-    title: "Expensive",
-    desc: "The “big guys” charge a small fortune, and their software is a nightmare to learn.",
-  },
-  {
-    img: "/images/webp/complicated.webp",
-    title: "Complicated",
-    desc: "Popular solutions are either outdated or difficult to use as a mobile app.",
-  },
-  {
-    img: "/images/webp/inadequate.webp",
-    title: "Inadequate",
-    desc: "There’s no true “all in one”, so you end up with 6 different platforms to run your company.",
-  },
-];
 const ContractorPlatforms = () => {
   return (
     <section className="bg-kuroiBlack relative">
@@ -35,14 +17,14 @@ const ContractorPlatforms = () => {
           {contractPlatforms.map((obj, index) => (
             <article
               key={index}
-              className="p-2 w-full sm:w-[48%] max-w-[400px]"
+              className="p-2 w-full sm:w-[48%] max-w-[400px] group cursor-pointer"
             >
               <img
                 src={obj.img}
                 alt={obj.title}
                 className="rounded-md overflow-hidden"
               />
-              <h3 className="mb-3 lg:mb-4 bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold text-lightBlack px-1.5 py-1 w-fit">
+              <h3 className="mb-3 lg:mb-4 text-white duration-300 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
                 {obj.title}
               </h3>
               <p className="paragraph-text text-decemberSky max-w-[380px]">

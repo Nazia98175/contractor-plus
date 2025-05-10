@@ -156,6 +156,23 @@ export const featurelinks = [
     icon: <TimeIcon />,
   },
 ];
+export const contractPlatforms = [
+  {
+    img: "/images/webp/expensive.webp",
+    title: "Expensive",
+    desc: "The “big guys” charge a small fortune, and their software is a nightmare to learn.",
+  },
+  {
+    img: "/images/webp/complicated.webp",
+    title: "Complicated",
+    desc: "Popular solutions are either outdated or difficult to use as a mobile app.",
+  },
+  {
+    img: "/images/webp/inadequate.webp",
+    title: "Inadequate",
+    desc: "There’s no true “all in one”, so you end up with 6 different platforms to run your company.",
+  },
+];
 export const IndustriesDropdownLinks = [
   { label: "General Contractor", href: "/" },
   { label: "Plumbing", href: "/" },

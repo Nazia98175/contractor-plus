@@ -8,7 +8,7 @@ const ContractorPlatforms = () => {
         src="/images/png/contractor-bg.png"
         alt="images"
       />
-      <section className="main-container flex flex-col gap-11 pt-12 ">
+      <section className="main-container flex flex-col gap-11 pt-12 relative z-20">
         <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
           There are dozens of contractor platforms, <br /> but each one has a
           catch

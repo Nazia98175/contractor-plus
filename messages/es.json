@@ -17,6 +17,8 @@
   },
   "engine": {
     "heading": "El motor que usan 57,163 contratistas",
-    "desc": "Todo el poder del software empresarial, sin el dolor. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento."
+    "desc": "Todo el poder del software empresarial, sin el dolor. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento.",
+    "super": "Estimaciones Súper Fáciles",
+    "hourSave": "Horas Ahorradas en Promedio por Semana"
   }
 }

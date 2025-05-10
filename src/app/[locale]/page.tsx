@@ -40,12 +40,12 @@ export default function Home() {
         <img
           className="absolute top-0 z-50 left-0 w-full h-[500px]"
           src="/images/png/stars.png"
-          alt=""
+          alt="Star Background"
         />
         <img
           className="absolute top-0 z-50 left-0 w-full h-[500px]"
           src="/images/png/stars.png"
-          alt=""
+          alt="Star Background"
         />
         <ContractorPlatforms />
         <Finally />

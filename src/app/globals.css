@@ -19,6 +19,7 @@
   --color-monstrousGreen: #21c912;
   --color-darkGrey: #999;
   --color-lightBlack: #1c2731;
+  --color-athenaBlue: #6ddcff;
   --breakpoint-xs: 560px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -218,6 +219,6 @@ html {
   justify-content: center;
   align-items: center;
 }
-.swiper-pagination-clickable .swiper-pagination-bullet {
+/* .swiper-pagination-clickable .swiper-pagination-bullet {
   background: #e3e6f0;
-}
+} */

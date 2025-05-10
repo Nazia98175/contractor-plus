@@ -17,6 +17,23 @@
   },
   "engine": {
     "heading": "O motor usado por 57.163 empreiteiros",
-    "desc": "Todo o poder de um grande software, sem a dor. Uma única plataforma — não seis — para gerenciar trabalhos, equipes, clientes e crescimento."
+    "desc": "Todo o poder de um grande software, sem a dor. Uma única plataforma — não seis — para gerenciar trabalhos, equipes, clientes e crescimento.",
+    "super": "Orçamentos Super Fáceis",
+    "hourSave": "Horas Economizadas em Média por Semana"
+  },
+  "platformcatch": {
+    "platformcatch": "Existem dezenas de plataformas para empreiteiros, mas cada uma tem uma armadilha.",
+    "card1": {
+      "heading": "Caro",
+      "desc": "Os 'grandes' cobram uma pequena fortuna, e seu software é um pesadelo para aprender."
+    },
+    "card2": {
+      "heading": "Complicado",
+      "desc": "As soluções populares estão desatualizadas ou são difíceis de usar em dispositivos móveis."
+    },
+    "card3": {
+      "heading": "Inadequado",
+      "desc": "Não existe um verdadeiro 'tudo em um', então você acaba usando 6 plataformas diferentes para administrar sua empresa."
+    }
   }
 }

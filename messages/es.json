@@ -17,6 +17,23 @@
   },
   "engine": {
     "heading": "El motor que usan 57,163 contratistas",
-    "desc": "Todo el poder del software empresarial, sin el dolor. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento."
+    "desc": "Todo el poder del software empresarial, sin el dolor. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento.",
+    "super": "Estimaciones Súper Fáciles",
+    "hourSave": "Horas Ahorradas en Promedio por Semana"
+  },
+  "platformcatch": {
+    "platformcatch": "Hay docenas de plataformas para contratistas, pero cada una tiene una trampa.",
+    "card1": {
+      "heading": "Costoso",
+      "desc": "Los “grandes” cobran una pequeña fortuna, y su software es una pesadilla de aprender."
+    },
+    "card2": {
+      "heading": "Complicado",
+      "desc": "Las soluciones populares están desactualizadas o son difíciles de usar como aplicación móvil."
+    },
+    "card3": {
+      "heading": "Inadecuado",
+      "desc": "No existe una verdadera solución 'todo en uno', así que terminas usando 6 plataformas diferentes para gestionar tu empresa."
+    }
   }
 }

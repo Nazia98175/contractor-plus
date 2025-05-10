@@ -34,6 +34,30 @@
     "card3": {
       "heading": "Inadequado",
       "desc": "Não existe um verdadeiro 'tudo em um', então você acaba usando 6 plataformas diferentes para administrar sua empresa."
+    },
+    "finally": {
+      "heading": "Finalmente, uma plataforma para substituir todas",
+      "desc": "Contractor+ é o primeiro sistema operacional criado para gerenciar todas as partes do seu negócio, do escritório ao campo—sem complexidade.",
+      "features": [
+        "CRM",
+        "Serviço de campo",
+        "Vendas",
+        "Propostas",
+        "Faturamento",
+        "Gestão de projetos"
+      ]
     }
+  },
+  "corefeature": {
+    "heading": "Recursos Principais",
+    "desc": "Descubra as ferramentas poderosas que fazem do Contractor+ a solução definitiva para o seu negócio de contratação",
+    "features": [
+      "CRM",
+      "Agendamento ao Vivo",
+      "Chat Interno de Trabalho",
+      "Criador de Orçamentos",
+      "Perfis de Propriedades",
+      "Big Chief AI"
+    ]
   }
 }

@@ -35,5 +35,29 @@
       "heading": "Inadequate",
       "desc": "There’s no true “all in one”, so you end up with 6 different platforms to run your company."
     }
+  },
+  "finally": {
+    "heading": "Finally, one platform to replace them all",
+    "desc": "Contractor+ is the first operating system built to run every part of your business, from the back office to the field—without complexity.",
+    "features": [
+      "CRM",
+      "Field Service",
+      "Sales",
+      "Bids",
+      "Billing",
+      "Project management"
+    ]
+  },
+  "corefeature": {
+    "heading": "Core Features",
+    "desc": "Discover the powerful tools that make Contractor+ the ultimate solution for your contracting business",
+    "features": [
+      "CRM",
+      "Live Scheduling",
+      "Internal Job Chat",
+      "Estimate Builder",
+      "Property Profiles",
+      "Big Chief AI"
+    ]
   }
 }

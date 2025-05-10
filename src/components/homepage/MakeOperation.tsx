@@ -6,16 +6,29 @@ import {
   RedClipIcon,
   TurnaroundIcon,
 } from "../common/Icons";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 const MakeOperation = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   const t = useTranslations("makeoperation");
+
   const makeOperationlist = t.raw("makeOperationlist") as {
     title: string;
     description: string;
+    start: number;
+    end: number;
+    suffix: string;
   }[];
+
   const icons = [<EstimateIcon2 />, <TurnaroundIcon />, <AdminWorkIcon />];
+
   return (
-    <section className="bg-kuroilight relative pt-16 overflow-hidden">
+    <section ref={ref} className="bg-kuroilight relative pt-16 overflow-hidden">
       <Image
         height={600}
         width={600}
@@ -29,13 +42,15 @@ const MakeOperation = () => {
       <span className="top-[-202px] right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
+
       <div className="main-container pb-10">
-        <h3 className=" text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center">
+        <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center">
           {t("heading")}
         </h3>
         <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
           {t("desc")}
         </p>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8">
           {makeOperationlist.map((item, index) => (
             <article
@@ -44,6 +59,16 @@ const MakeOperation = () => {
             >
               <span>{icons[index]}</span>
               <h3 className="text-2xl font-bold text-white font-jakarta">
+                {inView ? (
+                  <CountUp
+                    start={item.start}
+                    end={item.end}
+                    duration={5}
+                    suffix={item.suffix}
+                  />
+                ) : (
+                  `${item.start}${item.suffix}`
+                )}{" "}
                 {item.title}
               </h3>
               <p className="text-lg font-medium text-secondary font-montserrat">

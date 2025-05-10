@@ -86,16 +86,25 @@
     "desc": "O retorno sobre o investimento com o Contractor+ torna a escolha fácil",
     "makeOperationlist": [
       {
-        "title": "3-4x mais rápido",
-        "description": "Processo de estimativa"
+        "title": "mais rápido",
+        "description": "Processo de estimativa",
+        "start": 0,
+        "end": 4,
+        "suffix": "x"
       },
       {
-        "title": "24% mais rápido",
-        "description": "Tempo de conclusão do trabalho"
+        "title": "mais rápido",
+        "description": "Tempo de conclusão do trabalho",
+        "start": 0,
+        "end": 28,
+        "suffix": "%"
       },
       {
-        "title": "38% menos",
-        "description": "Tempo gasto em tarefas administrativas"
+        "title": "menos",
+        "description": "Tempo gasto em tarefas administrativas",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
       }
     ]
   },

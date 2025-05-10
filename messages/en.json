@@ -86,16 +86,25 @@
     "desc": "The ROI from Contractor+ makes the choice easy",
     "makeOperationlist": [
       {
-        "title": "3-4x faster",
-        "description": "Estimate process"
+        "title": "faster",
+        "description": "Estimate process",
+        "start": 0,
+        "end": 4,
+        "suffix": "x"
       },
       {
-        "title": "24% faster",
-        "description": "Job turnaround time"
+        "title": "faster",
+        "description": "Job turnaround time",
+        "start": 0,
+        "end": 28,
+        "suffix": "%"
       },
       {
-        "title": "38% less",
-        "description": "Time spent on admin work"
+        "title": "less",
+        "description": "Time spent on admin work",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
       }
     ]
   },

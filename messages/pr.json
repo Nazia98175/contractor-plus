@@ -111,7 +111,25 @@
   "reviews": {
     "heading": "Deixe nossos clientes falarem por nós...",
     "excellent": "Excelente",
-    "basedOn": "Com base em {count} avaliações"
+    "basedOn": "Com base em {count} avaliações",
+    "ourReviews": {
+      "review1": "Adoro absolutamente o serviço fornecido. Altamente recomendado!",
+      "review2": "Não estou satisfeito com a qualidade. Precisa melhorar.",
+      "review3": "Ótimo suporte e interface fácil de usar.",
+      "review4": "O serviço foi lento, mas no geral foi bom.",
+      "review5": "Experiência perfeita! Voltarei a usar.",
+      "review6": "Experiência terrível. Não recomendaria.",
+      "review7": "Equipe de atendimento ao cliente muito útil.",
+      "review8": "Superou minhas expectativas de todas as maneiras.",
+      "review9": "Poderia ser melhor. Há espaço para melhorias.",
+      "review10": "Tive problemas com entrega e suporte.",
+      "review11": "Processo tranquilo e boa comunicação.",
+      "review12": "Muito caro para os recursos oferecidos.",
+      "review13": "Serviço absolutamente impecável!",
+      "review14": "A pior experiência de todas.",
+      "review15": "Bom custo-benefício.",
+      "review16": "Incrível! Vou contar aos meus amigos."
+    }
   },
   "footer": {
     "poweredBy": "Desenvolvido por",

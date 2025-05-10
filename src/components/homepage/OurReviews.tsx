@@ -27,6 +27,10 @@ const OurReviews: React.FC = () => {
   // When modal is open, marquee should be paused
   const isMarqueePaused = isModalOpen;
   const t = useTranslations("reviews");
+  const translatedReviews = OurReviewList.map((review) => ({
+    ...review,
+    reviewText: t(review.reviewText),
+  }));
 
   return (
     <section className="pt-[15px] pb-[35px] md:py-20">
@@ -70,7 +74,7 @@ const OurReviews: React.FC = () => {
         {/* First row of reviews - scrolling right */}
         <div className="pt-[35px] md:pt-[77px]">
           <Marquee direction="right" pauseOnHover play={!isMarqueePaused}>
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
@@ -83,7 +87,7 @@ const OurReviews: React.FC = () => {
         {/* Second row of reviews - scrolling left */}
         <div className="pt-[27px] hidden md:block">
           <Marquee direction="left" pauseOnHover play={!isMarqueePaused}>
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}

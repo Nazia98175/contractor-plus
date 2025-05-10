@@ -112,7 +112,25 @@
   "reviews": {
     "heading": "Deja que nuestros clientes hablen por nosotros...",
     "excellent": "Excelente",
-    "basedOn": "Basado en {count} reseñas"
+    "basedOn": "Basado en {count} reseñas",
+    "ourReviews": {
+      "review1": "¡Absolutamente me encanta el servicio proporcionado. ¡Altamente recomendado!",
+      "review2": "No estoy satisfecho con la calidad. Necesita mejorar.",
+      "review3": "Gran soporte y una interfaz fácil de usar.",
+      "review4": "El servicio fue lento, pero en general estuvo bien.",
+      "review5": "¡Experiencia perfecta! Volveré a usarlo.",
+      "review6": "Terrible experiencia. No lo recomendaría.",
+      "review7": "Equipo de servicio al cliente muy útil.",
+      "review8": "Superó mis expectativas en todos los aspectos.",
+      "review9": "Podría ser mejor. Hay margen de mejora.",
+      "review10": "Tuve problemas con la entrega y el soporte.",
+      "review11": "Proceso suave y buena comunicación.",
+      "review12": "Demasiado caro para las características que ofrece.",
+      "review13": "¡Servicio absolutamente impecable!",
+      "review14": "La peor experiencia de todas.",
+      "review15": "Buena relación calidad-precio.",
+      "review16": "¡Increíble! Se lo contaré a mis amigos."
+    }
   },
   "footer": {
     "heading": "Ayudando a los contratistas a ganar 2 veces más trabajos en 1/3 del tiempo",

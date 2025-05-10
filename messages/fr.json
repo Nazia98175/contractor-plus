@@ -111,6 +111,11 @@
       }
     ]
   },
+  "reviews": {
+    "heading": "Laissez nos clients parler pour nous...",
+    "excellent": "Excellent",
+    "basedOn": "Basé sur {count} avis"
+  },
   "footer": {
     "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",
     "cta": "Tous les services sont opérationnels et fonctionnent",

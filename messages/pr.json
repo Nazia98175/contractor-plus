@@ -108,6 +108,11 @@
       }
     ]
   },
+  "reviews": {
+    "heading": "Deixe nossos clientes falarem por nós...",
+    "excellent": "Excelente",
+    "basedOn": "Com base em {count} avaliações"
+  },
   "footer": {
     "poweredBy": "Desenvolvido por",
     "heading": "Ajudando empreiteiros a ganhar 2x mais trabalhos em 1/3 do tempo",

@@ -129,7 +129,7 @@ const Footer = () => {
                   <Link
                     key={idx}
                     href="#"
-                    className="hover:text-white transition-all duration-300"
+                    className="hover:text-romanRed transition-all duration-300"
                   >
                     {item}
                   </Link>
@@ -150,10 +150,10 @@ const Footer = () => {
               />
             </div>
             <div className="flex gap-3">
-              <Link href="#">
+              <Link href="https://x.com/">
                 <TwitterIcon />
               </Link>
-              <Link href="#">
+              <Link href="https://www.linkedin.com/">
                 <LinkdinIcon />
               </Link>
             </div>

@@ -108,6 +108,12 @@
       }
     ]
   },
+  "reviews": {
+    "heading": "Let our customers do the talking...",
+    "excellent": "Excellent",
+    "basedOn": "Based On {count} reviews"
+  },
+
   "footer": {
     "heading": "Helping Contractors Win 2x More Jobs In 1/3rd The Time",
     "cta": "All Services Operational & Working",

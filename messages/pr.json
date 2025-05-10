@@ -14,5 +14,9 @@
     "resources": "Recursos",
     "login": "Entrar",
     "signup": "Cadastrar-se"
+  },
+  "engine": {
+    "heading": "O motor usado por 57.163 empreiteiros",
+    "desc": "Todo o poder de um grande software, sem a dor. Uma única plataforma — não seis — para gerenciar trabalhos, equipes, clientes e crescimento."
   }
 }

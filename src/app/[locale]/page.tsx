@@ -28,7 +28,7 @@ export default function Home() {
           <img
             src="/images/webp/hero-mobile-bg.webp"
             alt="Mobile Hero"
-            className="right-0 lg:hidden z-10 pointer-events-none -bottom-[30%] absolute w-full h-full"
+            className="right-0 lg:hidden z-10 pointer-events-none -bottom-[24%] absolute w-full h-full"
           />
           <Hero />
           <TrustBar />

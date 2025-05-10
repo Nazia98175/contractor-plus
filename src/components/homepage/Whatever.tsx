@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { OnIcon, OnIconw } from "../common/Icons";
+import { IntegrationsIcon, OnIcon, OnIconw } from "../common/Icons";
 import { useTranslations } from "next-intl";
 const leftIcons = [
   {
@@ -153,9 +153,15 @@ const Whatever = () => {
           </div>
         </div>
 
-        <p className="text-lg capitalize text-[#ADB1B5] opacity-90 text-center md:mt-6">
-          5000+ Potential Integrations
-        </p>
+        <div className="flex items-center gap-2 justify-center mt-6">
+          <p className="text-lg capitalize text-granite opacity-90 text-center">
+            <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
+            Potential Integrations
+          </p>
+          <span className="hidden md:block">
+            <IntegrationsIcon />
+          </span>
+        </div>
       </div>
     </section>
   );

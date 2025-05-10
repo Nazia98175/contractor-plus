@@ -148,7 +148,7 @@ const HeaderLiItems = () => {
 
       {/* Dropdown Panel */}
       <div
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[500px]
+        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[500px] 3xl:max-h-[800px]
           transform transition-all duration-200 ease-in-out origin-top flex flex-col  shadow-c3
           ${
             activeMenu || isTransitioning

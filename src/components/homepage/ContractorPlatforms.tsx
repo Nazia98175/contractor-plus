@@ -6,7 +6,7 @@ const ContractorPlatforms = () => {
       <img
         className="absolute bottom-[-439px] lefl-0 w-full z-[-1]"
         src="/images/png/contractor-bg.png"
-        alt=""
+        alt="images"
       />
       <section className="main-container flex flex-col gap-11 pt-12 ">
         <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">

@@ -354,7 +354,7 @@ const CoreFeaturesCard = () => {
 
       {/* Feature Content Sections */}
       <div
-        className="space-y-32 overflow-visible lg:max-w-[639px] w-full"
+        className=" space-y-12 md:space-y-32 overflow-visible lg:max-w-[639px] w-full"
         ref={contentContainerRef}
       >
         {featureContents.map((content, index) => (

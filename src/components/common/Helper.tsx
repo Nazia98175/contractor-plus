@@ -156,6 +156,40 @@ export const featurelinks = [
     icon: <TimeIcon />,
   },
 ];
+export const featureData = [
+  {
+    title: "User-friendly mobile app",
+    desc: "Contractor+ is user-friendly on desktop and mobile, so your team will actually use it.",
+    img: "/images/webp/user-friendly.webp",
+  },
+  {
+    title: "Communication inbox",
+    desc: "Call, text, email, and listen to voicemail for every lead, client, tenant, vendor, and sub—all in one spot.",
+    img: "/images/webp/communication-box.webp",
+  },
+  {
+    title: "Multiple-workspaces",
+    desc: "Toggle between workspaces for different locations, teams, or businesses.",
+    img: "/images/webp/workspace.webp",
+  },
+];
+export const contractPlatforms = [
+  {
+    img: "/images/webp/expensive.webp",
+    title: "Expensive",
+    desc: "The “big guys” charge a small fortune, and their software is a nightmare to learn.",
+  },
+  {
+    img: "/images/webp/complicated.webp",
+    title: "Complicated",
+    desc: "Popular solutions are either outdated or difficult to use as a mobile app.",
+  },
+  {
+    img: "/images/webp/inadequate.webp",
+    title: "Inadequate",
+    desc: "There’s no true “all in one”, so you end up with 6 different platforms to run your company.",
+  },
+];
 export const IndustriesDropdownLinks = [
   { label: "General Contractor", href: "/" },
   { label: "Plumbing", href: "/" },

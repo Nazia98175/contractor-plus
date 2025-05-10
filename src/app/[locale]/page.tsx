@@ -29,7 +29,7 @@ export default function Home() {
         <TrustBar />
         <TheEngineContractor />
       </div>
-      <div className="bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain bg-no-repeat sm:bg-center">
+      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain bg-no-repeat sm:bg-center relative">
         <ContractorPlatforms />
         <Finally />
       </div>

@@ -16,11 +16,11 @@ interface ReviewCardProps {
   openModal: () => void;
 }
 
-// Helper function to render stars based on rating
+// Fixed helper function to render stars based on rating
 const renderStars = (rating: number) => {
   return Array.from({ length: 5 }).map((_, index) => (
     <span key={index}>
-      <StartIcon />
+      <StartIcon filled={index < rating} />
     </span>
   ));
 };
@@ -29,7 +29,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   return (
     <article
       onClick={openModal}
-      className="bg-doctor rounded-[10px] p-2 max-w-[350px] md:max-w-[419px] w-full"
+      className="bg-doctor rounded-[10px] p-2 max-w-[350px] md:max-w-[419px] w-full mx-5 cursor-pointer"
     >
       <div className="flex justify-between items-start gap-5">
         <div className="flex items-center gap-2">

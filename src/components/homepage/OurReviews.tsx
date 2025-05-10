@@ -73,7 +73,12 @@ const OurReviews: React.FC = () => {
 
         {/* First row of reviews - scrolling right */}
         <div className="pt-[35px] md:pt-[77px]">
-          <Marquee direction="right" pauseOnHover play={!isMarqueePaused}>
+          <Marquee
+            speed={130}
+            direction="right"
+            pauseOnHover
+            play={!isMarqueePaused}
+          >
             {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
@@ -86,7 +91,12 @@ const OurReviews: React.FC = () => {
 
         {/* Second row of reviews - scrolling left */}
         <div className="pt-[27px] hidden md:block">
-          <Marquee direction="left" pauseOnHover play={!isMarqueePaused}>
+          <Marquee
+            speed={130}
+            direction="left"
+            pauseOnHover
+            play={!isMarqueePaused}
+          >
             {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}

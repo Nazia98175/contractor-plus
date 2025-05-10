@@ -3,7 +3,7 @@ import type React from "react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Pathbg } from "../common/Icons"; // Import original Pathbg component
+import { Pathbg } from "../common/Icons";
 import { useTranslations } from "next-intl";
 
 // Register ScrollTrigger plugin with GSAP
@@ -27,40 +27,16 @@ const CoreFeaturesCard = () => {
   // Store ScrollTrigger instances for cleanup
   const scrollTriggersRef = useRef<any[]>([]);
 
-  const featureContents = [
-    {
-      title: "The first CRM that thinks like a contractor",
-      mainDesc:
-        'Most "contractor CRMs" are just contact pages with a few job links.',
-      description:
-        "Contractor+ brings the full picture: timelines, call transcripts, AI sentiment tracking, and role-specific contacts.",
-    },
-    {
-      title: "Real-time scheduling that works for contractors",
-      description:
-        "Manage crew schedules, equipment allocation, and job timelines in one place with automatic conflict detection and resolution suggestions.",
-    },
-    {
-      title: "Job-specific chat keeps everyone in the loop",
-      description:
-        "Dedicated channels for each project with file sharing, tagging, and searchable history to keep your team and clients connected.",
-    },
-    {
-      title: "Build accurate estimates in minutes",
-      description:
-        "Customizable templates, material calculators, and profit margin visualization help you create professional estimates that win jobs.",
-    },
-    {
-      title: "Complete property profiles at your fingertips",
-      description:
-        "Store property details, photos, measurements, and service history for quick reference and better customer service.",
-    },
-    {
-      title: "AI that understands construction",
-      description:
-        "From analyzing job profitability to suggesting optimal crew assignments, Big Chief AI helps you work smarter, not harder.",
-    },
-  ];
+  // Get translations
+  const t = useTranslations("corefeature");
+
+  // Get feature names and content from translations
+  const features: string[] = t.raw("features") || [];
+  const featureContents = t.raw("featureContents") as {
+    title: string;
+    mainDesc?: string;
+    description: string;
+  }[];
 
   // Calculate button positions for each feature - memoized with useCallback
   const calculateButtonPositions = useCallback(() => {
@@ -101,9 +77,6 @@ const CoreFeaturesCard = () => {
     buttonPositionsRef.current = positions;
     return positions;
   }, []);
-
-  const t = useTranslations("corefeature");
-  const features: string[] = t.raw("features") || [];
 
   // Move indicator to active feature position
   const moveIndicator = useCallback(
@@ -317,7 +290,7 @@ const CoreFeaturesCard = () => {
             ref={indicatorRef}
             className="w-3 h-3 rounded-full absolute top-2.5 bg-black left-1/2 -translate-x-1/2 z-10"
           ></button>
-          {/* Using original Pathbg component as requested */}
+          {/* Using Pathbg component */}
           <Pathbg />
         </div>
         <div className="flex flex-row lg:flex-col gap-[22px] font-sans lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
@@ -364,13 +337,15 @@ const CoreFeaturesCard = () => {
             </h4>
             <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm">
               <div className="absolute inset-0 flex items-center justify-center text-lg text-gray-400">
-                {features[index]} visualization
+                {features[index]} {t("visualization")}
               </div>
             </div>
             <p className="text-base md:text-lg font-medium text-secondary max-w-[615px] font-jakarta">
-              <span className="text-wallStreet inline-block">
-                {content.mainDesc}
-              </span>
+              {content.mainDesc && (
+                <span className="text-wallStreet inline-block">
+                  {content.mainDesc}
+                </span>
+              )}
               {content.description}
             </p>
           </div>

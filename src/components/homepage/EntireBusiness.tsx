@@ -1,9 +1,13 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { CheckIcon } from "../common/Icons";
+import { useTranslations } from "next-intl";
 
 const EntireBusiness: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
+
+  // Get translations
+  const t = useTranslations("entireBusiness");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -28,10 +32,10 @@ const EntireBusiness: React.FC = () => {
     <div className="bg-transparent md:bg-kuroiBlack px-2">
       <div className="py-[75px]">
         <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">
-          Everything to run your entire business in one place
+          {t("heading")}
         </h3>
         <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
-          Start using Contractor+ free (for real)!
+          {t("subheading")}
         </p>
         <form
           className="flex flex-col md:flex-row justify-center items-start gap-3"
@@ -40,7 +44,7 @@ const EntireBusiness: React.FC = () => {
           <div className="md:max-w-[414px] w-full">
             <input
               type="email"
-              placeholder="Your Email"
+              placeholder={t("emailPlaceholder")}
               required
               value={email}
               onChange={handleEmailChange}
@@ -51,7 +55,7 @@ const EntireBusiness: React.FC = () => {
                 <CheckIcon />
               </span>
               <span className="text-sm font-semibold font-myriad text-white">
-                No Credit Card Required
+                {t("noCreditCard")}
               </span>
             </p>
           </div>
@@ -63,7 +67,7 @@ const EntireBusiness: React.FC = () => {
             {loading ? (
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             ) : (
-              "Create Free Account"
+              t("createAccount")
             )}
           </button>
           <div className="md:hidden flex justify-center items-center w-full">
@@ -72,7 +76,7 @@ const EntireBusiness: React.FC = () => {
                 <CheckIcon />
               </span>
               <span className="text-sm font-semibold font-myriad text-white">
-                No Credit Card Required
+                {t("noCreditCard")}
               </span>
             </p>
           </div>

@@ -423,5 +423,52 @@
       "description": "Como você cria apresentações convincentes que impressionam seus colegas e gerentes?",
       "image": "/images/webp/blog-right-side.webp"
     }
+  },
+  "corefeature": {
+    "heading": "Recursos Principais",
+    "desc": "Descubra as ferramentas poderosas que fazem do Contractor+ a solução definitiva para o seu negócio de empreitada",
+    "visualization": "visualização",
+    "features": [
+      "CRM",
+      "Agendamento em Tempo Real",
+      "Chat de Projeto",
+      "Construtor de Orçamentos",
+      "Perfis de Propriedades",
+      "IA Big Chief"
+    ],
+    "featureContents": [
+      {
+        "title": "O primeiro CRM que pensa como um empreiteiro",
+        "mainDesc": "A maioria dos \"CRMs para empreiteiros\" são apenas páginas de contato com alguns links de trabalho. ",
+        "description": "O Contractor+ traz o panorama completo: cronogramas, transcrições de chamadas, rastreamento de sentimento por IA e contatos específicos por função."
+      },
+      {
+        "title": "Agendamento em tempo real que funciona para empreiteiros",
+        "description": "Gerencie horários de equipe, alocação de equipamentos e cronogramas de trabalho em um só lugar com detecção automática de conflitos e sugestões de resolução."
+      },
+      {
+        "title": "Chat específico para trabalhos mantém todos informados",
+        "description": "Canais dedicados para cada projeto com compartilhamento de arquivos, marcação e histórico pesquisável para manter sua equipe e clientes conectados."
+      },
+      {
+        "title": "Crie orçamentos precisos em minutos",
+        "description": "Modelos personalizáveis, calculadoras de materiais e visualização de margem de lucro ajudam você a criar orçamentos profissionais que ganham trabalhos."
+      },
+      {
+        "title": "Perfis completos de propriedades ao seu alcance",
+        "description": "Armazene detalhes da propriedade, fotos, medidas e histórico de serviços para referência rápida e melhor atendimento ao cliente."
+      },
+      {
+        "title": "IA que entende de construção",
+        "description": "Da análise de rentabilidade do trabalho à sugestão de atribuições ideais de equipe, a IA Big Chief ajuda você a trabalhar de forma mais inteligente, não mais difícil."
+      }
+    ]
+  },
+  "entireBusiness": {
+    "heading": "Tudo para administrar todo o seu negócio em um só lugar",
+    "subheading": "Comece a usar o Contractor+ gratuitamente (de verdade)!",
+    "emailPlaceholder": "Seu Email",
+    "noCreditCard": "Sem Necessidade de Cartão de Crédito",
+    "createAccount": "Criar Conta Gratuita"
   }
 }

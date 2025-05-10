@@ -399,5 +399,52 @@
       "description": "Comment créer des présentations convaincantes qui impressionnent vos collègues et vos responsables?",
       "image": "/images/webp/blog-right-side.webp"
     }
+  },
+  "corefeature": {
+    "heading": "Fonctionnalités Principales",
+    "desc": "Découvrez les outils puissants qui font de Contractor+ la solution ultime pour votre entreprise de contractation",
+    "visualization": "visualisation",
+    "features": [
+      "CRM",
+      "Planification en Direct",
+      "Chat de Chantier",
+      "Générateur de Devis",
+      "Profils Immobiliers",
+      "IA Big Chief"
+    ],
+    "featureContents": [
+      {
+        "title": "Le premier CRM qui pense comme un entrepreneur",
+        "mainDesc": "La plupart des \"CRM pour entrepreneurs\" ne sont que des pages de contacts avec quelques liens de travaux. ",
+        "description": "Contractor+ offre une vision complète : chronologies, transcriptions d'appels, suivi des sentiments par IA et contacts spécifiques selon les rôles."
+      },
+      {
+        "title": "Planification en temps réel adaptée aux entrepreneurs",
+        "description": "Gérez les horaires des équipes, l'allocation d'équipement et les délais des travaux en un seul endroit avec détection automatique des conflits et suggestions de résolution."
+      },
+      {
+        "title": "Chat spécifique aux travaux pour tenir tout le monde informé",
+        "description": "Canaux dédiés pour chaque projet avec partage de fichiers, étiquetage et historique consultable pour maintenir vos équipes et clients connectés."
+      },
+      {
+        "title": "Créez des devis précis en quelques minutes",
+        "description": "Des modèles personnalisables, des calculateurs de matériaux et une visualisation de la marge bénéficiaire vous aident à créer des devis professionnels qui remportent des contrats."
+      },
+      {
+        "title": "Profils immobiliers complets à portée de main",
+        "description": "Stockez les détails des propriétés, photos, mesures et historique de service pour une référence rapide et un meilleur service client."
+      },
+      {
+        "title": "Une IA qui comprend la construction",
+        "description": "De l'analyse de la rentabilité des travaux à la suggestion d'affectations optimales d'équipes, Big Chief IA vous aide à travailler plus intelligemment, pas plus dur."
+      }
+    ]
+  },
+  "entireBusiness": {
+    "heading": "Tout pour gérer l'ensemble de votre entreprise en un seul endroit",
+    "subheading": "Commencez à utiliser Contractor+ gratuitement (vraiment) !",
+    "emailPlaceholder": "Votre Email",
+    "noCreditCard": "Aucune Carte de Crédit Requise",
+    "createAccount": "Créer un Compte Gratuit"
   }
 }

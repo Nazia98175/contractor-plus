@@ -421,5 +421,52 @@
       "description": "How do you create compelling presentations that wow your colleagues and impress your managers?",
       "image": "/images/webp/blog-right-side.webp"
     }
+  },
+  "corefeature": {
+    "heading": "Core Features",
+    "desc": "Discover the powerful tools that make Contractor+ the ultimate solution for your contracting business",
+    "visualization": "visualization",
+    "features": [
+      "CRM",
+      "Live Scheduling",
+      "In-Job Chat",
+      "Estimate Builder",
+      "Property Profiles",
+      "Big Chief AI"
+    ],
+    "featureContents": [
+      {
+        "title": "The first CRM that thinks like a contractor",
+        "mainDesc": "Most \"contractor CRMs\" are just contact pages with a few job links. ",
+        "description": "Contractor+ brings the full picture: timelines, call transcripts, AI sentiment tracking, and role-specific contacts."
+      },
+      {
+        "title": "Real-time scheduling that works for contractors",
+        "description": "Manage crew schedules, equipment allocation, and job timelines in one place with automatic conflict detection and resolution suggestions."
+      },
+      {
+        "title": "Job-specific chat keeps everyone in the loop",
+        "description": "Dedicated channels for each project with file sharing, tagging, and searchable history to keep your team and clients connected."
+      },
+      {
+        "title": "Build accurate estimates in minutes",
+        "description": "Customizable templates, material calculators, and profit margin visualization help you create professional estimates that win jobs."
+      },
+      {
+        "title": "Complete property profiles at your fingertips",
+        "description": "Store property details, photos, measurements, and service history for quick reference and better customer service."
+      },
+      {
+        "title": "AI that understands construction",
+        "description": "From analyzing job profitability to suggesting optimal crew assignments, Big Chief AI helps you work smarter, not harder."
+      }
+    ]
+  },
+  "entireBusiness": {
+    "heading": "Everything to run your entire business in one place",
+    "subheading": "Start using Contractor+ free (for real)!",
+    "emailPlaceholder": "Your Email",
+    "noCreditCard": "No Credit Card Required",
+    "createAccount": "Create Free Account"
   }
 }

@@ -5,6 +5,7 @@ import HeaderLiItems from "./HeaderLiItems";
 import LanguageSelector from "../LanguageSelector";
 import SideBar from "./SideBar";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
   const [isshow, setIsShow] = useState(false);
@@ -32,6 +33,8 @@ const Header = () => {
     };
   }, [scrolled]);
 
+  const t = useTranslations("menu");
+
   return (
     <header className=" px-2 fixed top-2 rounded z-[999] w-full">
       <div
@@ -49,10 +52,10 @@ const Header = () => {
           <div className="flex items-center xl:gap-3 gap-2">
             <LanguageSelector />
             <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
-              Login
+              {t("login")}
             </button>
             <button className="text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
-              Sign Up
+              {t("signup")}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>
               <HamburgerIcon />

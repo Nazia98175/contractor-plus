@@ -2,6 +2,21 @@
   "heading": "Bem-vindo ao Next.js!",
   "hero": {
     "heading": "O único sistema operacional para empreiteiros de construção e serviços",
-    "desc": "Todo o poder de um grande software, sem as complicações. Uma única plataforma — e não seis — para gerenciar trabalhos, equipes, clientes e crescimento."
+    "desc": "Todo o poder de um grande software, sem as complicações. Uma única plataforma — e não seis — para gerenciar trabalhos, equipes, clientes e crescimento.",
+    "credit": "Nenhum cartão de crédito necessário",
+    "cta": "Criar conta gratuita"
+  },
+  "menu": {
+    "why": "Por que o Contractor+?",
+    "features": "Recursos",
+    "industries": "Indústrias",
+    "pricing": "Preços",
+    "resources": "Recursos",
+    "login": "Entrar",
+    "signup": "Cadastrar-se"
+  },
+  "engine": {
+    "heading": "O motor usado por 57.163 empreiteiros",
+    "desc": "Todo o poder de um grande software, sem a dor. Uma única plataforma — não seis — para gerenciar trabalhos, equipes, clientes e crescimento."
   }
 }

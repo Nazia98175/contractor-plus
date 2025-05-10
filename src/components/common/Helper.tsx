@@ -34,7 +34,7 @@ export const menuItems = [
   { id: "pricing", label: "Pricing" },
   { id: "resources", label: "Resources" },
 ];
-export const featureLinkslinks = [
+export const featurelinks = [
   {
     label: "CRM",
     description: "Manage Leads & Clients Effortlessly",

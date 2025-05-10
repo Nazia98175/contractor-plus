@@ -24,12 +24,11 @@ export default function Home() {
     <div className="relative overflow-x-hidden">
       <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover">
         <Header />
-
         <Hero />
         <TrustBar />
         <TheEngineContractor />
       </div>
-      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain bg-no-repeat sm:bg-center relative">
+      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
         <ContractorPlatforms />
         <Finally />
       </div>

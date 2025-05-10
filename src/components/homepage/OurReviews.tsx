@@ -5,6 +5,7 @@ import { GroupStartIcon } from "../common/Icons";
 import { OurReviewList } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
 import Marquee from "react-fast-marquee";
+import { useTranslations } from "next-intl";
 
 export interface ReviewItem {
   id: string | number;
@@ -25,12 +26,17 @@ const OurReviews: React.FC = () => {
 
   // When modal is open, marquee should be paused
   const isMarqueePaused = isModalOpen;
+  const t = useTranslations("reviews");
+  const translatedReviews = OurReviewList.map((review) => ({
+    ...review,
+    reviewText: t(review.reviewText),
+  }));
 
   return (
     <section className="pt-[15px] pb-[35px] md:py-20">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
         <h3 className="section-heading text-black text-center md:text-start">
-          Let our customers do the talking...
+          {t("heading")}
         </h3>
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <img
@@ -46,7 +52,7 @@ const OurReviews: React.FC = () => {
           <div>
             <div className="flex items-center gap-3">
               <h3 className="text-winterWay text-sm font-bold font-jakarta">
-                Excellent
+                {t("excellent")}
               </h3>
               <p className="text-base font-extrabold text-dancingJewel font-jakarta">
                 4.9
@@ -56,7 +62,7 @@ const OurReviews: React.FC = () => {
               </span>
             </div>
             <p className="text-winterWay text-xs font-medium pt-1 font-jakarta text-center md:text-start">
-              Based On 1,320 reviews
+              {t("basedOn", { count: 1320 })}
             </p>
           </div>
         </div>
@@ -68,7 +74,7 @@ const OurReviews: React.FC = () => {
         {/* First row of reviews - scrolling right */}
         <div className="pt-[35px] md:pt-[77px]">
           <Marquee direction="right" pauseOnHover play={!isMarqueePaused}>
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
@@ -81,7 +87,7 @@ const OurReviews: React.FC = () => {
         {/* Second row of reviews - scrolling left */}
         <div className="pt-[27px] hidden md:block">
           <Marquee direction="left" pauseOnHover play={!isMarqueePaused}>
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}

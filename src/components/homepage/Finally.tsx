@@ -7,7 +7,7 @@ const Finally = () => {
   const features: string[] = t.raw("features") || [];
   return (
     <section className="relative pt-16 md:pt-20 xl:pt-[222px] overflow-hidden">
-      <div className="space-y-4 z-10 relative">
+      <div className="space-y-4 z-10 relative px-2">
         <h2 className="section-heading text-center text-white">
           {t("heading")}
         </h2>

@@ -81,6 +81,7 @@
     "cta": "View All Industries"
   },
   "whatever": "Whatever you use, Contractor+ connects",
+  "potentialIntegrations": "Potential Integrations",
   "makeoperation": {
     "heading": "Make operations your competitive edge",
     "desc": "The ROI from Contractor+ makes the choice easy",
@@ -108,6 +109,30 @@
       }
     ]
   },
+  "reviews": {
+    "heading": "Let our customers do the talking...",
+    "excellent": "Excellent",
+    "basedOn": "Based On {count} reviews",
+    "ourReviews": {
+      "review1": "Absolutely love the service provided. Highly recommended!",
+      "review2": "Not satisfied with the quality. Needs improvement.",
+      "review3": "Great support and easy to use interface.",
+      "review4": "Service was slow but overall okay.",
+      "review5": "Perfect experience! Will use again.",
+      "review6": "Terrible experience. Would not recommend.",
+      "review7": "Very helpful customer service team.",
+      "review8": "Exceeded my expectations in every way.",
+      "review9": "Could be better. There is room for improvement.",
+      "review10": "I faced issues with delivery and support.",
+      "review11": "Smooth process and good communication.",
+      "review12": "Too expensive for the features offered.",
+      "review13": "Absolutely flawless service!",
+      "review14": "Worst experience ever.",
+      "review15": "Good value for money.",
+      "review16": "Amazing! I will tell my friends."
+    }
+  },
+
   "footer": {
     "heading": "Helping Contractors Win 2x More Jobs In 1/3rd The Time",
     "cta": "All Services Operational & Working",

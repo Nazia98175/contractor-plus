@@ -83,6 +83,7 @@
     "cta": "Voir tous les secteurs"
   },
   "whatever": "Quel que soit ce que vous utilisez, Contractor+ se connecte",
+  "potentialIntegrations": "Intégrations potentielles",
   "makeoperation": {
     "heading": "Faites de vos opérations un avantage concurrentiel",
     "desc": "Le retour sur investissement avec Contractor+ rend le choix évident",
@@ -110,6 +111,29 @@
         "suffix": "%"
       }
     ]
+  },
+  "reviews": {
+    "heading": "Laissez nos clients parler pour nous...",
+    "excellent": "Excellent",
+    "basedOn": "Basé sur {count} avis",
+    "ourReviews": {
+      "review1": "J'adore absolument le service fourni. Hautement recommandé !",
+      "review2": "Pas satisfait de la qualité. Nécessite des améliorations.",
+      "review3": "Super support et interface facile à utiliser.",
+      "review4": "Le service était lent mais dans l'ensemble correct.",
+      "review5": "Expérience parfaite ! Je reviendrai.",
+      "review6": "Expérience terrible. Je ne le recommande pas.",
+      "review7": "Équipe de service client très utile.",
+      "review8": "A dépassé mes attentes de toutes les manières.",
+      "review9": "Pourrait être mieux. Il y a de la place pour des améliorations.",
+      "review10": "J'ai eu des problèmes de livraison et de support.",
+      "review11": "Processus fluide et bonne communication.",
+      "review12": "Trop cher pour les fonctionnalités proposées.",
+      "review13": "Service absolument irréprochable !",
+      "review14": "Pire expérience jamais.",
+      "review15": "Bon rapport qualité/prix.",
+      "review16": "Incroyable ! Je le dirai à mes amis."
+    }
   },
   "footer": {
     "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",

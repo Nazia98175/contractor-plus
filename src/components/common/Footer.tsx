@@ -192,7 +192,7 @@ export const FooterLinkItem = ({
 }) => (
   <div className="group relative w-full md:w-fit">
     <Link
-      className="text-base text-decemberSky font-jakarta hover:text-white transition-all duration-200 ease-in-out"
+      className="text-base text-decemberSky font-jakarta hover:text-romanRed transition-all duration-200 ease-in-out"
       href={list.href}
     >
       {list.text}

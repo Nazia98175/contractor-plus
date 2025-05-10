@@ -103,7 +103,7 @@ export const TwitterIcon = () => (
     <g clipPath="url(#clip0_0_30085)">
       <path
         fill="#656C73"
-        className=" group-hover:fill-white transition-all duration-200 ease-in-out"
+        className=" group-hover:fill-romanRed transition-all duration-200 ease-in-out"
         d="M14.169.75h2.747l-6 6.904L18 17.015h-5.566L8.096 11.34l-4.988 5.675H.361l6.434-7.373L0 .75h5.71l3.94 5.205zm-.976 14.602h1.518L4.88 2.304H3.217z"
       ></path>
     </g>
@@ -139,7 +139,7 @@ export const LinkdinIcon = () => (
       <g mask="url(#mask0_0_30087)">
         <path
           fill="#656C73"
-          className="group-hover:fill-white transition-all duration-200 ease-in-out"
+          className="group-hover:fill-romanRed transition-all duration-200 ease-in-out"
           d="M15.317 15.166h-2.664v-4.13c0-.985-.017-2.253-1.385-2.253-1.387 0-1.6 1.073-1.6 2.181v4.202H7.006V6.672h2.557v1.161h.036a2.8 2.8 0 0 1 1.07-1.031c.444-.242.946-.36 1.453-.34 2.7 0 3.197 1.757 3.197 4.045zM4 5.511c-.306 0-.605-.09-.86-.257a1.53 1.53 0 0 1-.569-.687 1.52 1.52 0 0 1 .335-1.668 1.55 1.55 0 0 1 1.685-.332c.282.116.523.312.693.563a1.52 1.52 0 0 1-.192 1.933A1.55 1.55 0 0 1 4 5.51m1.331 9.655H2.665V6.672h2.666zM16.645.001H1.327a1.32 1.32 0 0 0-.932.37C.146.61.005.94 0 1.284v15.23c.004.345.146.674.395.915.249.24.584.374.932.37h15.318c.348.004.684-.129.934-.37.25-.24.393-.57.398-.914V1.283a1.3 1.3 0 0 0-.398-.914A1.32 1.32 0 0 0 16.645 0"
         ></path>
       </g>

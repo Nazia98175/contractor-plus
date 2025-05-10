@@ -86,22 +86,43 @@
   "makeoperation": {
     "heading": "Faites de vos opérations un avantage concurrentiel",
     "desc": "Le retour sur investissement avec Contractor+ rend le choix évident",
+
     "makeOperationlist": [
       {
-        "title": "3-4x plus rapide",
-        "description": "Processus d’estimation"
+        "title": "plus rapide",
+        "description": "Processus d’estimation",
+        "start": 0,
+        "end": 4,
+        "suffix": "x"
       },
       {
-        "title": "24% plus rapide",
-        "description": "Temps d’exécution des projets"
+        "title": "plus rapide",
+        "description": "Temps d’exécution des projets",
+        "start": 0,
+        "end": 28,
+        "suffix": "%"
       },
       {
-        "title": "38% moins",
-        "description": "Temps passé sur les tâches administratives"
+        "title": "moins",
+        "description": "Temps passé sur les tâches administratives",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
       }
     ]
   },
   "footer": {
+    "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",
+    "cta": "Tous les services sont opérationnels et fonctionnent",
+    "poweredBy": "Propulsé par",
+    "copyright": "Contractor+ Tous droits réservés.",
+    "legalLinks": [
+      "Conditions d'utilisation",
+      "Politique de confidentialité",
+      "Politique relative aux cookies",
+      "RGPD",
+      "Accessibilité"
+    ],
     "links": [
       "CRM",
       "Gestão de Serviços de Campo",

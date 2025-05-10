@@ -36,7 +36,7 @@ const Footer = () => {
   const toggleSection = (title: string) => {
     setOpenSection(openSection === title ? null : title);
   };
-
+  const legalLinks = t.raw("legalLinks");
   return (
     <footer className="bg-kuroiBlack py-10 w-full relative">
       {/* Background Line Decoration */}
@@ -46,14 +46,14 @@ const Footer = () => {
 
       <div className="main-container">
         {/* Header */}
-        <div className="space-y-5 max-w-[414px] mx-auto text-center">
+        <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center">
           <FooterLogoIcon />
           <div className="border-lightBlack border footer-gradient-bg rounded-[500px] text-white text-sm font-medium px-3 py-2 gap-3 inline-flex items-center">
             <GreenDotIcon />
-            <p>All Services Operational & Working</p>
+            <p>{t("cta")}</p>
           </div>
           <h3 className="text-sm sm:text-base font-medium text-decemberSky font-jakarta">
-            Helping Contractors Win 2x More Jobs In 1/3rd The Time
+            {t("heading")}
           </h3>
         </div>
 
@@ -108,28 +108,24 @@ const Footer = () => {
         <div className="flex justify-between items-center gap-3 pt-4">
           <div className="hidden md:flex gap-3 items-center">
             <p className="text-xs text-secondary font-medium font-montserrat">
-              Powered By
+              {t("poweredBy")}
             </p>
             <Image
               height={72}
               width={72}
               unoptimized
-              className="max-w-[72px] w-full"
+              className="max-w-[72px] w-full mx-auto"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
             />
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-center w-full md:w-fit gap-3">
             <div className="flex flex-col-reverse md:flex-row items-center gap-3 text-xs text-secondary font-medium font-montserrat">
-              <p>© {currentYear} Contractor+ All rights reserved.</p>
+              <p>
+                © {currentYear} {t("copyright")}
+              </p>
               <div className="flex flex-wrap justify-center gap-3">
-                {[
-                  "Terms of Service",
-                  "Privacy Policy",
-                  "Cookie Policy",
-                  "GDPR",
-                  "Accessibility",
-                ].map((item, idx) => (
+                {legalLinks.map((item: string, idx: number) => (
                   <Link
                     key={idx}
                     href="#"
@@ -142,7 +138,7 @@ const Footer = () => {
             </div>
             <div className="md:hidden flex gap-3 items-center">
               <p className="text-xs text-secondary font-medium font-montserrat">
-                Powered By
+                {t("poweredBy")}
               </p>
               <Image
                 height={72}
@@ -196,7 +192,7 @@ export const FooterLinkItem = ({
 }) => (
   <div className="group relative w-full md:w-fit">
     <Link
-      className="text-base text-decemberSky font-jakarta hover:text-white transition-all duration-200 ease-in-out"
+      className="text-base text-decemberSky font-jakarta hover:text-romanRed transition-all duration-200 ease-in-out"
       href={list.href}
     >
       {list.text}

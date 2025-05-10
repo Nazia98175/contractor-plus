@@ -86,20 +86,40 @@
     "desc": "The ROI from Contractor+ makes the choice easy",
     "makeOperationlist": [
       {
-        "title": "3-4x faster",
-        "description": "Estimate process"
+        "title": "faster",
+        "description": "Estimate process",
+        "start": 0,
+        "end": 4,
+        "suffix": "x"
       },
       {
-        "title": "24% faster",
-        "description": "Job turnaround time"
+        "title": "faster",
+        "description": "Job turnaround time",
+        "start": 0,
+        "end": 28,
+        "suffix": "%"
       },
       {
-        "title": "38% less",
-        "description": "Time spent on admin work"
+        "title": "less",
+        "description": "Time spent on admin work",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
       }
     ]
   },
   "footer": {
+    "heading": "Helping Contractors Win 2x More Jobs In 1/3rd The Time",
+    "cta": "All Services Operational & Working",
+    "poweredBy": "Powered By",
+    "copyright": "Contractor+ All rights reserved.",
+    "legalLinks": [
+      "Terms of Service",
+      "Privacy Policy",
+      "Cookie Policy",
+      "GDPR",
+      "Accessibility"
+    ],
     "links": [
       "CRM",
       "Field Service Management",

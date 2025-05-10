@@ -166,7 +166,7 @@ const SideBar = ({
       )}
 
       <div
-        className={`fixed top-0 right-0 min-h-dvh overflow-hidden flex flex-col w-[320px] bg-brownish z-50 shadow-lg transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-0 right-0 min-h-dvh overflow-hidden flex flex-col w-full bg-brownish z-50 shadow-lg transform transition-transform duration-300 ease-in-out lg:hidden ${
           isshow ? "translate-x-0" : "translate-x-full"
         }`}
       >

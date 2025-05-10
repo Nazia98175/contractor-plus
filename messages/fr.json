@@ -16,7 +16,9 @@
     "signup": "S'inscrire"
   },
   "engine": {
-    "heading": "Le moteur utilisé par 57 163 entrepreneurs",
+    "heading": "Le moteur utilisé par ",
+    "countup": "entrepreneurs",
+
     "desc": "Toute la puissance d’un grand logiciel, sans les tracas. Une seule plateforme — pas six — pour gérer les chantiers, les équipes, les clients et la croissance.",
     "super": "Estimations Super Simples",
     "hourSave": "Heures Moyennes Économisées par Semaine"

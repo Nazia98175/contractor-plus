@@ -11,7 +11,7 @@ interface PlatformCardProps {
 
 const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
   return (
-    <div className="flex flex-col-reverse justify-between w-full sm:w-fit gap-3.5 sm:flex-col items-center relative z-20">
+    <div className="flex flex-col-reverse justify-between w-full sm:w-fit gap-3.5 sm:flex-col items-center relative z-20 py-2.5">
       <img
         src={platform.logo}
         alt={`${platform.name} rating`}
@@ -22,8 +22,9 @@ const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
           <svg
             key={i}
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="100%"
+            height="100%"
+            className="max-w-7 md:max-w-5"
             viewBox="0 0 23 23"
             fill={i < platform.rating ? "#FFA928" : "#E0E0E0"}
           >

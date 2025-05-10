@@ -5,7 +5,7 @@ const Hero = () => {
   const t = useTranslations("hero");
   return (
     <section className="relative overflow-hidden max-w-[1920px] mx-auto">
-      <div className="flex items-end h-screen max-h-[900px] main-container z-20 relative pb-20 lg:pt-[138px] lg:pb-[202px] lg:h-full">
+      <div className="flex items-end h-screen max-h-[900px] main-container z-20 relative pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px] lg:h-full">
         <div className="max-w-[616px] w-full sm:space-y-6">
           <h1 className="main-heading text-white mb-1.5">{t("heading")}</h1>
           <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">

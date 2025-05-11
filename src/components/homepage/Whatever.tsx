@@ -80,7 +80,7 @@ const Whatever = () => {
       />
 
       <div className="pt-12 pb-[53px] overflow-visible w-full">
-        <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center md:mb-8 mb-[21px]">
+        <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">
           {t("whatever")}
         </h3>
 

@@ -335,6 +335,8 @@
       { "label": "Prix Régionaux des Matériaux", "href": "/" }
     ]
   },
+  "potentialIntegrations": "Intégrations potentielles",
+
   "resources": {
     "imageAlt": "Ressources et matériels d'apprentissage pour entrepreneurs",
     "links": [
@@ -387,6 +389,29 @@
       "title": "Découvrez les Avantages des Membres de USA Contracting!",
       "description": "Comment créer des présentations convaincantes qui impressionnent vos collègues et vos responsables?",
       "image": "/images/webp/blog-right-side.webp"
+    }
+  },
+  "reviews": {
+    "heading": "Laissez nos clients parler pour nous...",
+    "excellent": "Excellent",
+    "basedOn": "Basé sur {count} avis",
+    "ourReviews": {
+      "review1": "J'adore absolument le service fourni. Hautement recommandé !",
+      "review2": "Pas satisfait de la qualité. Des améliorations sont nécessaires.",
+      "review3": "Excellent support et interface facile à utiliser.",
+      "review4": "Le service était lent mais globalement correct.",
+      "review5": "Expérience parfaite ! Je l'utiliserai à nouveau.",
+      "review6": "Expérience terrible. Je ne recommande pas.",
+      "review7": "Équipe de service client très utile.",
+      "review8": "A dépassé toutes mes attentes.",
+      "review9": "Peut être meilleur. Il y a place à l'amélioration.",
+      "review10": "J'ai rencontré des problèmes de livraison et d'assistance.",
+      "review11": "Processus fluide et bonne communication.",
+      "review12": "Trop cher pour les fonctionnalités offertes.",
+      "review13": "Service absolument impeccable !",
+      "review14": "Pire expérience de ma vie.",
+      "review15": "Bon rapport qualité-prix.",
+      "review16": "Incroyable ! Je vais en parler à mes amis."
     }
   },
   "corefeature": {

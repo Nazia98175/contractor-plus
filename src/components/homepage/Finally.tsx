@@ -37,18 +37,18 @@ const Finally = () => {
             <img
               src="/images/webp/software-advice.webp"
               alt="Software Advice"
-              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full"
+              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
 
             <img
               src="/images/webp/leader.webp"
               alt="Leader"
-              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full"
+              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
             <img
               src="/images/webp/get-app.webp"
               alt="Get App"
-              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full"
+              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
           </div>
           <div className="relative md:pr-20 lg:pr-32 xl:pr-40 lg:overflow-hidden">

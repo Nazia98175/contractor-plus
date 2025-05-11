@@ -127,7 +127,7 @@ const HeaderLiItems = () => {
             key={index}
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleContainerLeave}
-            className={`header-li py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer max-w-[152px] truncate ${
+            className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer  ${
               activeMenu === item.id
                 ? "!text-kuroiBlack bg-white"
                 : "text-superSilver bg-transparent"

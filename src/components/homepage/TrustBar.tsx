@@ -12,7 +12,7 @@ const platforms: Platform[] = [
   {
     name: "App Store",
     logo: "/images/svg/apple-rating.svg",
-    rating: 2,
+    rating: 5,
   },
   {
     name: "Google Play",

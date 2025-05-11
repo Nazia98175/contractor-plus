@@ -93,7 +93,7 @@
   @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
 }
 .primary-btn {
-  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit;
+  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95;
 }
 .header-li {
   @apply xl:text-base lg:text-sm text-xs font-montserrat font-semibold lg:text-superSilver text-lightBlack;

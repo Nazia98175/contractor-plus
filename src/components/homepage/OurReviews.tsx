@@ -72,9 +72,9 @@ const OurReviews: React.FC = () => {
         <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
-        <div className="pt-[35px] md:pt-[77px]">
+        <div className="pt-[35px] md:pt-[77px] w-full">
           <Marquee
-            speed={130}
+            speed={80}
             direction="right"
             pauseOnHover
             play={!isMarqueePaused}
@@ -90,9 +90,9 @@ const OurReviews: React.FC = () => {
         </div>
 
         {/* Second row of reviews - scrolling left */}
-        <div className="pt-[27px] hidden md:block">
+        <div className="pt-[27px] hidden md:block w-full">
           <Marquee
-            speed={130}
+            speed={80}
             direction="left"
             pauseOnHover
             play={!isMarqueePaused}

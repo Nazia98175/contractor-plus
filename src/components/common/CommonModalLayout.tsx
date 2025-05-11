@@ -61,7 +61,7 @@ const CommonModalLayout: React.FC<CommonModalLayoutProps> = ({
         onClick={handleOverlayClick}
       >
         <DialogPanel
-          className={`space-y-4 relative p-12 max-h-full flex transition-all duration-300 ease-in-out ${
+          className={`space-y-4 relative p-7 md:p-12 max-h-full flex transition-all duration-300 ease-in-out ${
             animationState ? "scale-100 opacity-100" : "scale-95 opacity-0"
           } ${className}`}
         >

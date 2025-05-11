@@ -44,7 +44,7 @@ const MakeOperation = () => {
       </span>
 
       <div className="main-container pb-10">
-        <h3 className="text-[26px] md:text-4xl lg:text-[42px] font-semibold font-jakarta text-white text-center">
+        <h3 className="section-heading font-semibold  text-white text-center">
           {t("heading")}
         </h3>
         <p className="text-[22px] text-secondary text-center font-jakarta pt-2">

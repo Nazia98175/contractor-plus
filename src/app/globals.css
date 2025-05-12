@@ -104,10 +104,13 @@
   @apply xl:text-base lg:text-sm text-xs font-semibold font-inter text-lightBlack p-1 duration-300 ease-linear;
 }
 .all-features-button {
-  @apply flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1 font-inter;
+  @apply flex items-center gap-2.5 text-lg font-medium text-lightBlack p-1 font-inter;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+.dropdown-heading {
+  @apply lg:text-xl text-lg italic font-semibold text-lightBlack font-inter;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */

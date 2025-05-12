@@ -188,83 +188,75 @@
     "productUpdates": "Product Updates",
     "crm": {
       "label": "CRM",
-      "description": "Manage Leads & Clients Effortlessly"
+      "description": "Master all your relationships"
     },
     "estimates": {
       "label": "Estimates & Quotes",
-      "description": "Organize Jobs, Teams & Real-Time Updates"
+      "description": "Save Time & Win More Bids"
     },
     "mileage": {
       "label": "Automated Client Agreements",
-      "description": "Collect Signature Automatically"
-    },
-    "fieldService": {
-      "label": "Field Service Management",
-      "description": "Smart & Accurate, Winning Project Estimations"
-    },
-    "dealFlow": {
-      "label": "Deal Flow Tracking",
-      "description": "Real-Time Insights for Smarter Decisions"
-    },
-    "assetTracking": {
-      "label": "Asset Tracking",
-      "description": "Find More Customers To Grow Your Business"
+      "description": "Collect eSignatures Automatically"
     },
     "projectManagement": {
       "label": "Project Management",
-      "description": "Organize Finances, Simplify Your Accounting"
+      "description": "Complete visibility into your projects and work"
+    },
+    "dealFlow": {
+      "label": "Deal Flow Tracking",
+      "description": "Visualize Your Entire Sales Pipeline"
+    },
+    "timeClock": {
+      "label": "Time Tracking",
+      "description": "GPS Verified Tracking For The Whole Team"
+    },
+    "fieldService": {
+      "label": "Field Service Management",
+      "description": "Empower your team to deliver service excellence"
     },
     "scheduling": {
       "label": "Scheduling",
-      "description": "Organize Finances, Simplify Your Accounting"
+      "description": "Optimize Team Efficiency & Job Assignments"
     },
-    "reporting": {
-      "label": "Reporting",
-      "description": "Fast, Accurate, Winning Bids Made Easy"
+    "leadGeneration": {
+      "label": "Mileage Tracking",
+      "description": "Automatically Track & Maximize Mileage Deductions"
     },
-    "estimaticAI": {
-      "label": "Estimatic AI",
-      "description": "Visualize Your Sales Pipeline"
+    "payments": {
+      "label": "Contractor+ Pay",
+      "description": "Online, in-person, CC & ACH + Instant Payouts"
     },
     "clientPortal": {
       "label": "Client Portal",
-      "description": "Optimize Team Efficiency & Job Assignments"
-    },
-    "proWebsite": {
-      "label": "PRO Website",
       "description": "Simple, Secure Project Access for Clients"
     },
-    "bigChiefAI": {
-      "label": "Big Chief AI",
-      "description": "Automate Invoicing & Get Paid Faster"
+    "proWebsite": {
+      "label": "PRO Website Included",
+      "description": "Showcase Your Business & Attract Customers"
+    },
+    "estimaticAI": {
+      "label": "Estimatic AI",
+      "description": "Fast, Accurate, Winning Project Estimates & Quotes"
     },
     "invoicing": {
-      "label": "Invoicing & Collections",
-      "description": "Centralized Team & Client Conversations"
-    },
-    "payments": {
-      "label": "Payments",
-      "description": "GPS Verified Time Tracking For The Whole Team"
-    },
-    "leadGeneration": {
-      "label": "Lead Generation",
-      "description": "Automatically Track & Maximize Mileage Deductions"
-    },
-    "communication": {
-      "label": "Two-Way Communication",
-      "description": "Monitor Equipment, Prevent Costly Losses"
+      "label": "Invoicing & Billing",
+      "description": "Automate Invoicing & Get Paid Faster"
     },
     "propertyProfiles": {
       "label": "Property Profiles",
-      "description": "Insights to Boost Efficiency & Profits"
+      "description": "streamline your property maintenance"
+    },
+    "bigChiefAI": {
+      "label": "Big Chief AI",
+      "description": "Answer every call, Qualify leads, Automate busy work."
+    },
+    "communication": {
+      "label": "Business Phone & SMS",
+      "description": "Centralized Team & Client Conversations"
     },
     "bookkeeping": {
-      "label": "Bookkeeping",
-      "description": "Showcase Your Business & Attract Customers"
-    },
-    "timeClock": {
-      "label": "Time Clock",
-      "description": "Online, In-person, QR & ACH + Instant payouts!"
+      "label": "Service Requests",
+      "description": "Direct Requests From Clients & Tenants"
     }
   },
   "whyContractor": {
@@ -299,6 +291,7 @@
     "seeAllFeatures": "See All Features"
   },
   "industries": {
+    "heading": "Industries",
     "imageAlt": "Group of contractors working on a project",
     "links": [
       { "label": "General Contractor", "href": "/" },

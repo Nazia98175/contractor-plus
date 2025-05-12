@@ -164,86 +164,78 @@
     "newBadge": "NOUVEAU",
     "seeAllFeatures": "Voir toutes les fonctionnalités",
     "integrations": "Intégrations",
-    "productUpdates": "Mises à jour de produits",
+    "productUpdates": "Mises à jour produit",
     "crm": {
       "label": "CRM",
-      "description": "Gérez les prospects et les clients sans effort"
+      "description": "Maîtrisez toutes vos relations"
     },
     "estimates": {
-      "label": "Devis et estimations",
-      "description": "Organisez les emplois, les équipes et les mises à jour en temps réel"
+      "label": "Devis & Offres",
+      "description": "Gagnez du temps et remportez plus d'appels d'offres"
     },
     "mileage": {
-      "label": "Suivi du kilométrage",
-      "description": "Simplifiez les projets, les délais et les tâches facilement"
-    },
-    "fieldService": {
-      "label": "Gestion des services sur le terrain",
-      "description": "Estimations de projets intelligentes et précises pour gagner"
-    },
-    "dealFlow": {
-      "label": "Suivi du flux d'affaires",
-      "description": "Informations en temps réel pour des décisions plus intelligentes"
-    },
-    "assetTracking": {
-      "label": "Suivi des actifs",
-      "description": "Trouvez plus de clients pour développer votre entreprise"
+      "label": "Accords Client Automatisés",
+      "description": "Recueillez des signatures électroniques automatiquement"
     },
     "projectManagement": {
-      "label": "Gestion de projet",
-      "description": "Organisez les finances, simplifiez votre comptabilité"
+      "label": "Gestion de Projet",
+      "description": "Visibilité complète de vos projets et travaux"
+    },
+    "dealFlow": {
+      "label": "Suivi du Flux de Ventes",
+      "description": "Visualisez tout votre pipeline de ventes"
+    },
+    "timeClock": {
+      "label": "Suivi du Temps",
+      "description": "Suivi vérifié par GPS pour toute l'équipe"
+    },
+    "fieldService": {
+      "label": "Gestion des Services sur le Terrain",
+      "description": "Permettez à votre équipe d’offrir un excellent service"
     },
     "scheduling": {
       "label": "Planification",
-      "description": "Organisez les finances, simplifiez votre comptabilité"
-    },
-    "reporting": {
-      "label": "Rapports",
-      "description": "Offres rapides, précises et gagnantes facilement réalisées"
-    },
-    "estimaticAI": {
-      "label": "Estimatic IA",
-      "description": "Visualisez votre pipeline de ventes"
-    },
-    "clientPortal": {
-      "label": "Portail client",
-      "description": "Optimisez l'efficacité de l'équipe et l'attribution des tâches"
-    },
-    "proWebsite": {
-      "label": "Site Web PRO",
-      "description": "Accès simple et sécurisé au projet pour les clients"
-    },
-    "bigChiefAI": {
-      "label": "Big Chief IA",
-      "description": "Automatisez la facturation et soyez payé plus rapidement"
-    },
-    "invoicing": {
-      "label": "Facturation et recouvrements",
-      "description": "Conversations centralisées d'équipe et de client"
-    },
-    "payments": {
-      "label": "Paiements",
-      "description": "Suivi du temps vérifié par GPS pour toute l'équipe"
+      "description": "Optimisez l'efficacité et les affectations"
     },
     "leadGeneration": {
-      "label": "Génération de prospects",
-      "description": "Suivez et maximisez automatiquement les déductions kilométriques"
+      "label": "Suivi du Kilométrage",
+      "description": "Suivi automatique et maximisation des déductions"
     },
-    "communication": {
-      "label": "Communication bidirectionnelle",
-      "description": "Surveillez l'équipement, évitez les pertes coûteuses"
+    "payments": {
+      "label": "Contractor+ Pay",
+      "description": "Paiements en ligne, en personne, CB, virement + instantanés"
     },
-    "propertyProfiles": {
-      "label": "Profils de propriété",
-      "description": "Aperçus pour améliorer l'efficacité et les profits"
+    "clientPortal": {
+      "label": "Portail Client",
+      "description": "Accès simple et sécurisé pour les clients"
     },
-    "bookkeeping": {
-      "label": "Comptabilité",
+    "proWebsite": {
+      "label": "Site PRO Inclus",
       "description": "Présentez votre entreprise et attirez des clients"
     },
-    "timeClock": {
-      "label": "Horloge de pointage",
-      "description": "En ligne, en personne, QR et ACH + paiements instantanés!"
+    "estimaticAI": {
+      "label": "Estimatic AI",
+      "description": "Estimations rapides, précises et gagnantes"
+    },
+    "invoicing": {
+      "label": "Facturation",
+      "description": "Automatisez la facturation et soyez payé plus rapidement"
+    },
+    "propertyProfiles": {
+      "label": "Profils de Propriété",
+      "description": "Simplifiez l’entretien de vos biens"
+    },
+    "bigChiefAI": {
+      "label": "Big Chief AI",
+      "description": "Répondez à chaque appel, qualifiez les leads, automatisez"
+    },
+    "communication": {
+      "label": "Téléphone & SMS Pro",
+      "description": "Conversations centralisées avec l'équipe et les clients"
+    },
+    "bookkeeping": {
+      "label": "Demandes de Service",
+      "description": "Demandes directes de clients et locataires"
     }
   },
   "whyContractor": {
@@ -278,6 +270,7 @@
     "seeAllFeatures": "Voir toutes les fonctionnalités"
   },
   "industries": {
+    "heading": "Secteurs",
     "imageAlt": "Groupe d'entrepreneurs travaillant sur un projet",
     "links": [
       { "label": "Entrepreneur Général", "href": "/" },

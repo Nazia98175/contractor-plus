@@ -159,90 +159,82 @@
   },
   "features": {
     "solutionsHeading": "Soluciones",
-    "featuresHeading": "Características",
+    "featuresHeading": "Funciones",
     "newBadge": "NUEVO",
-    "seeAllFeatures": "Ver todas las características",
+    "seeAllFeatures": "Ver todas las funciones",
     "integrations": "Integraciones",
-    "productUpdates": "Actualizaciones de productos",
+    "productUpdates": "Actualizaciones del producto",
     "crm": {
       "label": "CRM",
-      "description": "Gestione clientes potenciales y clientes sin esfuerzo"
+      "description": "Domina todas tus relaciones"
     },
     "estimates": {
-      "label": "Presupuestos y cotizaciones",
-      "description": "Organice trabajos, equipos y actualizaciones en tiempo real"
+      "label": "Presupuestos y Cotizaciones",
+      "description": "Ahorra tiempo y gana más ofertas"
     },
     "mileage": {
-      "label": "Seguimiento de kilometraje",
-      "description": "Simplifique proyectos, cronogramas y tareas fácilmente"
-    },
-    "fieldService": {
-      "label": "Gestión de servicio de campo",
-      "description": "Estimaciones de proyectos inteligentes y precisas para ganar"
-    },
-    "dealFlow": {
-      "label": "Seguimiento del flujo de acuerdos",
-      "description": "Información en tiempo real para decisiones más inteligentes"
-    },
-    "assetTracking": {
-      "label": "Seguimiento de activos",
-      "description": "Encuentre más clientes para hacer crecer su negocio"
+      "label": "Acuerdos Automáticos con Clientes",
+      "description": "Recoge firmas electrónicas automáticamente"
     },
     "projectManagement": {
-      "label": "Gestión de proyectos",
-      "description": "Organice las finanzas, simplifique su contabilidad"
+      "label": "Gestión de Proyectos",
+      "description": "Visibilidad total de tus proyectos y tareas"
+    },
+    "dealFlow": {
+      "label": "Seguimiento del Flujo de Ventas",
+      "description": "Visualiza toda tu canalización de ventas"
+    },
+    "timeClock": {
+      "label": "Seguimiento de Tiempo",
+      "description": "Seguimiento GPS verificado para todo el equipo"
+    },
+    "fieldService": {
+      "label": "Gestión de Servicios en Campo",
+      "description": "Empodera a tu equipo para brindar un excelente servicio"
     },
     "scheduling": {
       "label": "Programación",
-      "description": "Organice las finanzas, simplifique su contabilidad"
+      "description": "Optimiza la eficiencia del equipo y la asignación de trabajos"
     },
-    "reporting": {
-      "label": "Informes",
-      "description": "Ofertas rápidas, precisas y ganadoras hechas fácilmente"
+    "leadGeneration": {
+      "label": "Seguimiento de Kilometraje",
+      "description": "Rastrea automáticamente y maximiza las deducciones por kilometraje"
+    },
+    "payments": {
+      "label": "Contractor+ Pay",
+      "description": "En línea, en persona, CC y ACH + pagos instantáneos"
+    },
+    "clientPortal": {
+      "label": "Portal del Cliente",
+      "description": "Acceso simple y seguro al proyecto para los clientes"
+    },
+    "proWebsite": {
+      "label": "Sitio PRO incluido",
+      "description": "Muestra tu negocio y atrae clientes"
     },
     "estimaticAI": {
       "label": "Estimatic AI",
-      "description": "Visualice su canal de ventas"
+      "description": "Estimaciones y cotizaciones rápidas, precisas y ganadoras"
     },
-    "clientPortal": {
-      "label": "Portal de clientes",
-      "description": "Optimice la eficiencia del equipo y la asignación de trabajos"
+    "invoicing": {
+      "label": "Facturación",
+      "description": "Automatiza la facturación y cobra más rápido"
     },
-    "proWebsite": {
-      "label": "Sitio web PRO",
-      "description": "Acceso simple y seguro al proyecto para los clientes"
+    "propertyProfiles": {
+      "label": "Perfiles de Propiedad",
+      "description": "Optimiza el mantenimiento de propiedades"
     },
     "bigChiefAI": {
       "label": "Big Chief AI",
-      "description": "Automatice la facturación y reciba pagos más rápido"
-    },
-    "invoicing": {
-      "label": "Facturación y cobros",
-      "description": "Conversaciones centralizadas del equipo y el cliente"
-    },
-    "payments": {
-      "label": "Pagos",
-      "description": "Seguimiento de tiempo verificado por GPS para todo el equipo"
-    },
-    "leadGeneration": {
-      "label": "Generación de prospectos",
-      "description": "Rastree y maximice automáticamente las deducciones de kilometraje"
+      "description": "Responde cada llamada, califica clientes, automatiza el trabajo"
     },
     "communication": {
-      "label": "Comunicación bidireccional",
-      "description": "Monitoree equipos, evite pérdidas costosas"
-    },
-    "propertyProfiles": {
-      "label": "Perfiles de propiedades",
-      "description": "Información para mejorar la eficiencia y las ganancias"
+      "label": "Teléfono y SMS empresarial",
+      "description": "Conversaciones centralizadas con el equipo y clientes"
     },
     "bookkeeping": {
-      "label": "Contabilidad",
-      "description": "Muestre su negocio y atraiga clientes"
-    },
-    "timeClock": {
-      "label": "Reloj de tiempo",
-      "description": "¡En línea, en persona, QR y ACH + pagos instantáneos!"
+      "label": "Solicitudes de Servicio",
+      "description": "Solicitudes directas de clientes e inquilinos"
     }
   },
   "whyContractor": {
@@ -276,7 +268,31 @@
     "imageAlt": "Equipo de contratistas trabajando juntos en una obra de construcción",
     "seeAllFeatures": "Ver todas las características"
   },
+  "reviews": {
+    "heading": "Deja que nuestros clientes hablen por nosotros...",
+    "excellent": "Excelente",
+    "basedOn": "Basado en {count} reseñas",
+    "ourReviews": {
+      "review1": "Me encanta absolutamente el servicio proporcionado. ¡Muy recomendable!",
+      "review2": "No estoy satisfecho con la calidad. Necesita mejorar.",
+      "review3": "Excelente soporte y una interfaz fácil de usar.",
+      "review4": "El servicio fue lento, pero en general estuvo bien.",
+      "review5": "¡Experiencia perfecta! Lo usaré de nuevo.",
+      "review6": "Terrible experiencia. No lo recomendaría.",
+      "review7": "Equipo de atención al cliente muy servicial.",
+      "review8": "Superó mis expectativas en todos los sentidos.",
+      "review9": "Podría ser mejor. Hay margen de mejora.",
+      "review10": "Tuve problemas con la entrega y el soporte.",
+      "review11": "Proceso fluido y buena comunicación.",
+      "review12": "Demasiado caro para las funciones que ofrece.",
+      "review13": "¡Servicio absolutamente impecable!",
+      "review14": "La peor experiencia de mi vida.",
+      "review15": "Buena relación calidad-precio.",
+      "review16": "¡Increíble! Se lo contaré a mis amigos."
+    }
+  },
   "industries": {
+    "heading": "Industrias",
     "imageAlt": "Grupo de contratistas trabajando en un proyecto",
     "links": [
       { "label": "Contratista General", "href": "/" },

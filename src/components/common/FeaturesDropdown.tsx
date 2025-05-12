@@ -8,17 +8,14 @@ import {
   TrackingIcon,
   FieldServiceIcon,
   TrophyIcon,
-  AssetIcon,
   ProjectIcon,
   SchedulingIcon,
-  ReportingIcon,
   EstimaticIcon,
   ClientIcon,
   PROIcon,
   BigChiefAIIcon,
   InvoicingIcon,
   PaymentsIcon,
-  LeadGenerationIcon,
   TelephoneIcon,
   PropertyIcon,
   BookkeepingIcon,
@@ -37,21 +34,19 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     "mileage",
     "fieldService",
     "dealFlow",
-    "assetTracking",
+    "timeClock",
     "projectManagement",
     "scheduling",
-    "reporting",
-    "estimaticAI",
+    "leadGeneration", // Repurposed for Mileage Tracking in translations
+    "payments",
     "clientPortal",
     "proWebsite",
-    "bigChiefAI",
+    "estimaticAI",
     "invoicing",
-    "payments",
-    "leadGeneration",
-    "communication",
     "propertyProfiles",
-    "bookkeeping",
-    "timeClock",
+    "bigChiefAI",
+    "communication",
+    "bookkeeping", // Repurposed for Service Requests in translations
   ];
 
   // Map of feature IDs to their corresponding icons
@@ -61,45 +56,41 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     mileage: <TrackingIcon />,
     fieldService: <FieldServiceIcon />,
     dealFlow: <TrophyIcon />,
-    assetTracking: <AssetIcon />,
+    timeClock: <TimeIcon />,
     projectManagement: <ProjectIcon />,
     scheduling: <SchedulingIcon />,
-    reporting: <ReportingIcon />,
-    estimaticAI: <EstimaticIcon />,
+    leadGeneration: <TrackingIcon />, // Reused for Mileage Tracking
+    payments: <PaymentsIcon />,
     clientPortal: <ClientIcon />,
     proWebsite: <PROIcon />,
-    bigChiefAI: <BigChiefAIIcon />,
+    estimaticAI: <EstimaticIcon />,
     invoicing: <InvoicingIcon />,
-    payments: <PaymentsIcon />,
-    leadGeneration: <LeadGenerationIcon />,
-    communication: <TelephoneIcon />,
     propertyProfiles: <PropertyIcon />,
-    bookkeeping: <BookkeepingIcon />,
-    timeClock: <TimeIcon />,
+    bigChiefAI: <BigChiefAIIcon />,
+    communication: <TelephoneIcon />,
+    bookkeeping: <BookkeepingIcon />, // Reused for Service Requests
   };
 
   // Map of feature IDs to whether they are new
   const newFeatures = {
-    crm: true,
+    crm: false,
     estimates: false,
-    mileage: true,
-    fieldService: true,
-    dealFlow: false,
-    assetTracking: false,
+    mileage: false,
+    fieldService: false,
+    dealFlow: true, // NEW in image
+    timeClock: false,
     projectManagement: false,
-    scheduling: true,
-    reporting: true,
-    estimaticAI: false,
+    scheduling: false,
+    leadGeneration: false, // Mileage Tracking, not NEW
+    payments: false,
     clientPortal: false,
     proWebsite: false,
-    bigChiefAI: false,
-    invoicing: true,
-    payments: false,
-    leadGeneration: true,
-    communication: true,
-    propertyProfiles: true,
-    bookkeeping: true,
-    timeClock: true,
+    estimaticAI: true, // NEW in image
+    invoicing: false,
+    propertyProfiles: true, // NEW in image
+    bigChiefAI: true, // NEW in image
+    communication: true, // NEW in image (Business Phone & SMS)
+    bookkeeping: false, // Service Requests, not NEW
   };
 
   // If not visible, don't render anything
@@ -108,10 +99,10 @@ const FeaturesDropdown = ({ isVisible = true }) => {
   }
 
   return (
-    <article className="flex flex-col justify-between p-2 gap-6">
-      <div className="grid grid-cols-3 gap-6 lg:text-sm text-xs italic font-semibold text-lightBlack font-inter">
-        <h3 className="px-5">{t("solutionsHeading")}</h3>
-        <h4 className="px-5 ">{t("featuresHeading")}</h4>
+    <article className="flex flex-col justify-between p-2 gap-3">
+      <div className="grid grid-cols-3 gap-3 dropdown-heading">
+        <h3 className="px-4">{t("solutionsHeading")}</h3>
+        <h4 className="px-4">{t("featuresHeading")}</h4>
       </div>
       <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full pb-10">
         {featureIds.map((featureId) => (
@@ -135,7 +126,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
                   )}
                 </div>
               </div>
-              <p className="text-sm  font-inter text-lightBlack mt-2.5">
+              <p className="text-sm font-inter text-lightBlack mt-2.5">
                 {/* Use translation for description based on feature ID */}
                 {t(`${featureId}.description`)}
               </p>

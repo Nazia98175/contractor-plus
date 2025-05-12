@@ -58,11 +58,11 @@ const OurBlogs = () => {
       <div className="max-w-[1180px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
           <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
-            Some Free Resources For You
+            {t("heading")}
           </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
-              View All Resources
+              {t("viewAllBlogs")}
               <BlogBtnIcon />
             </button>
           </div>

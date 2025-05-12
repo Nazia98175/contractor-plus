@@ -421,33 +421,34 @@
     ]
   },
   "blogs": {
-    "heading": "Our Blogs",
-    "viewAllBlogs": "View All Blogs",
+    "heading": "Some Free Resources For You",
+    "viewAllBlogs": "View All Resources",
     "featuredBlogAlt": "Featured Blog",
     "blogList": [
       {
         "id": 1,
-        "title": "Ryan Garcia is fighting again, this time on social media",
+        "title": "Contractor+ Blog",
         "date": "03 Jan 2025",
         "category": "Contractor",
         "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-        "image": "/images/webp/blog-1.webp"
+        "image": "/images/webp/blog-image-1.webp"
       },
       {
         "id": 2,
-        "title": "Ryan Garcia is fighting again, this time on social media",
+        "title": "Podcasts",
         "date": "03 Jan 2025",
         "category": "Contractor",
         "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-        "image": "/images/webp/blog-2.webp"
+        "image": "/images/webp/blog-image-2.webp"
       },
       {
         "id": 3,
-        "title": "Ryan Garcia is fighting again, this time on social media",
+        "title": "FREE Tools & Templates",
         "date": "03 Jan 2025",
         "category": "Contractor",
         "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-        "image": "/images/webp/blog-3.webp"
+        "image": "/images/webp/blog-image-3.webp",
+        "hasBlurEffect": true
       }
     ],
     "featuredBlog": {

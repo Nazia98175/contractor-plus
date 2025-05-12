@@ -22,7 +22,12 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover">
+      <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover relative">
+        <img
+          src="/images/webp/red-circle.webp"
+          className="absolute top-0 left-0 w-full hidden lg:block h-full z-10 pointer-events-none"
+          alt="Red Circle For designing"
+        />
         <Header />
         <div className="relative">
           <img

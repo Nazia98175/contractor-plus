@@ -24,11 +24,25 @@ const Hero = () => {
       </div>
 
       {/* BACKGROUND  */}
-      <img
+      {/* <img
         src="/images/webp/hero.webp"
         alt="Hero"
         className="absolute object-center hidden md:block right-0 w-full lg:max-w-[945px] top-0"
-      />
+      /> */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute object-bottom border-white border-2 hidden md:block -right-[5%] w-full lg:max-h-[750px] top-0"
+      >
+        <source
+          src="https://videos.pexels.com/video-files/4489878/4489878-uhd_2732_1440_25fps.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
       <img
         src="/images/webp/hero-mobile.webp"
         alt="Hero Mobile"
@@ -41,11 +55,6 @@ const Hero = () => {
         className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full"
       />
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
-      <img
-        src="/images/webp/red-circle.webp"
-        className="absolute top-0 left-0 w-full hidden lg:block h-full z-10"
-        alt="Red Circle For designing"
-      />
 
       <img
         src="/images/png/stars.png"

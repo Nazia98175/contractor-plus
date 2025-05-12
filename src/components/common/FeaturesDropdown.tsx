@@ -24,10 +24,8 @@ import {
 import { useTranslations } from "next-intl";
 
 const FeaturesDropdown = ({ isVisible = true }) => {
-  // Get translations
   const t = useTranslations("features");
 
-  // Define feature IDs - each corresponding to a translation key in the language files
   const featureIds: (keyof typeof featureIcons)[] = [
     "crm",
     "estimates",
@@ -49,7 +47,6 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     "bookkeeping", // Repurposed for Service Requests in translations
   ];
 
-  // Map of feature IDs to their corresponding icons
   const featureIcons = {
     crm: <ServiceIcon />,
     estimates: <EstimatesIcon />,
@@ -59,7 +56,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     timeClock: <TimeIcon />,
     projectManagement: <ProjectIcon />,
     scheduling: <SchedulingIcon />,
-    leadGeneration: <TrackingIcon />, // Reused for Mileage Tracking
+    leadGeneration: <TrackingIcon />,
     payments: <PaymentsIcon />,
     clientPortal: <ClientIcon />,
     proWebsite: <PROIcon />,
@@ -68,32 +65,30 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     propertyProfiles: <PropertyIcon />,
     bigChiefAI: <BigChiefAIIcon />,
     communication: <TelephoneIcon />,
-    bookkeeping: <BookkeepingIcon />, // Reused for Service Requests
+    bookkeeping: <BookkeepingIcon />,
   };
 
-  // Map of feature IDs to whether they are new
   const newFeatures = {
     crm: false,
     estimates: false,
     mileage: false,
     fieldService: false,
-    dealFlow: true, // NEW in image
+    dealFlow: true,
     timeClock: false,
     projectManagement: false,
     scheduling: false,
-    leadGeneration: false, // Mileage Tracking, not NEW
+    leadGeneration: false,
     payments: false,
     clientPortal: false,
     proWebsite: false,
-    estimaticAI: true, // NEW in image
+    estimaticAI: true,
     invoicing: false,
-    propertyProfiles: true, // NEW in image
-    bigChiefAI: true, // NEW in image
-    communication: true, // NEW in image (Business Phone & SMS)
-    bookkeeping: false, // Service Requests, not NEW
+    propertyProfiles: true,
+    bigChiefAI: true,
+    communication: true,
+    bookkeeping: false,
   };
 
-  // If not visible, don't render anything
   if (!isVisible) {
     return null;
   }
@@ -120,14 +115,13 @@ const FeaturesDropdown = ({ isVisible = true }) => {
                   {/* Use translation for label based on feature ID */}
                   {t(`${featureId}.label`)}
                   {newFeatures[featureId] && (
-                    <div className="px-2.5 h-[21px] flex items-center justify-center border border-[#439777] bg-[#EFFBF6] rounded-full text-sm font-semibold font-myriad tracking-[0.4px] text-[#439777]">
+                    <div className="px-2.5 h-[21px] flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-sm font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
                       {t("newBadge")}
                     </div>
                   )}
                 </div>
               </div>
               <p className="text-sm font-inter text-lightBlack mt-2.5">
-                {/* Use translation for description based on feature ID */}
                 {t(`${featureId}.description`)}
               </p>
             </Link>

@@ -2,7 +2,7 @@ import React from "react";
 
 const OurReviewCard = () => {
   return (
-    <article className="bg-[#FAFAFA] rounded-[10px] p-2 max-w-[419px] w-full mx-3">
+    <article className="bg-doctor3 rounded-[10px] p-2 max-w-[419px] w-full mx-3">
       <div className="flex justify-between items-start gap-5">
         <div className="flex items-center gap-2">
           <img

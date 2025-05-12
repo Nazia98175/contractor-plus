@@ -1,7 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const IndustriesDropdown = () => {
   // Get translations from the "industries" namespace

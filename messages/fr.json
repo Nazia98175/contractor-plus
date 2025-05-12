@@ -339,19 +339,73 @@
   "potentialIntegrations": "Intégrations potentielles",
 
   "resources": {
-    "imageAlt": "Ressources et matériels d'apprentissage pour entrepreneurs",
+    "imageAlt": "Ressources et supports d'apprentissage pour les entrepreneurs",
     "links": [
-      { "label": "Blog Contractor+", "href": "/" },
-      { "label": "Événements du Secteur", "href": "/" },
-      { "label": "Discussions Casque de Chantier", "href": "/" },
-      { "label": "Lundi État d'Esprit", "href": "/" },
-      { "label": "Programme de Partenaires Fournisseurs", "href": "/" },
-      { "label": "Perspective des Propriétaires", "href": "/" },
-      { "label": "Feuille de Route des Fonctionnalités", "href": "/" },
-      { "label": "Outils et Modèles Gratuits", "href": "/" },
-      { "label": "Centre d'Assistance", "href": "/" },
-      { "label": "Prix Régionaux de Main-d'œuvre", "href": "/" },
-      { "label": "Prix Régionaux des Matériaux", "href": "/" }
+      {
+        "label": "Blog de Contractor+",
+        "description": "Conseils et idées du secteur",
+        "href": "/"
+      },
+      {
+        "label": "Événements de l'industrie",
+        "description": "Conférences, ateliers et webinaires",
+        "href": "/"
+      },
+      {
+        "label": "Podcasts",
+        "description": "Écoutez les idées des entrepreneurs",
+        "href": "/"
+      },
+      {
+        "label": "Affiliés",
+        "description": "Opportunités de partenariat",
+        "href": "/"
+      },
+      {
+        "label": "Calculatrices",
+        "description": "Estimez les coûts de projet",
+        "href": "/"
+      },
+      {
+        "label": "Programme de Partenaires Fournisseurs",
+        "description": "Connectez-vous avec des fournisseurs",
+        "href": "/"
+      },
+      {
+        "label": "Créateur d'Estimations Gratuit",
+        "description": "Créez des estimations professionnelles",
+        "href": "/"
+      },
+      {
+        "label": "Feuille de Route des Fonctionnalités",
+        "description": "Futures versions de fonctionnalités",
+        "href": "/"
+      },
+      {
+        "label": "Recherche de Comparaison de Matériaux",
+        "description": "Comparez les matériaux de construction",
+        "href": "/"
+      },
+      {
+        "label": "Centre de Support",
+        "description": "Accédez à la documentation d'aide",
+        "href": "/"
+      },
+      {
+        "label": "Tarification Régionale des Matériaux",
+        "description": "Données sur les coûts de main-d'œuvre régionaux",
+        "href": "/"
+      },
+      {
+        "label": "Tarification de la Main-d'œuvre Locale aux États-Unis",
+        "description": "Intégrer avec notre plateforme",
+        "href": "/"
+      },
+      {
+        "label": "Documentation API",
+        "description": "Données sur les coûts régionaux des matériaux",
+        "href": "/"
+      }
     ]
   },
   "blogs": {

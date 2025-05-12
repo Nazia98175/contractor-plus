@@ -360,17 +360,71 @@
   "resources": {
     "imageAlt": "Resources and learning materials for contractors",
     "links": [
-      { "label": "Contractor+ Blog", "href": "/" },
-      { "label": "Industry Events", "href": "/" },
-      { "label": "Hard Hat Chat", "href": "/" },
-      { "label": "Mindset Monday", "href": "/" },
-      { "label": "Supply Partner Program", "href": "/" },
-      { "label": "The Owners Perspective", "href": "/" },
-      { "label": "Features Roadmap", "href": "/" },
-      { "label": "Free Tools & Templates", "href": "/" },
-      { "label": "Support Center", "href": "/" },
-      { "label": "Regional Labor Pricing", "href": "/" },
-      { "label": "Regional Material Pricing", "href": "/" }
+      {
+        "label": "Contractor+ Blog",
+        "description": "Industry insights and tips",
+        "href": "/"
+      },
+      {
+        "label": "Industry Events",
+        "description": "Conferences, workshops and webinars",
+        "href": "/"
+      },
+      {
+        "label": "Podcasts",
+        "description": "Listen to contractor insights",
+        "href": "/"
+      },
+      {
+        "label": "Affiliates",
+        "description": "Partnership opportunities",
+        "href": "/"
+      },
+      {
+        "label": "Calculators",
+        "description": "Estimate project costs",
+        "href": "/"
+      },
+      {
+        "label": "Supply Partner Program",
+        "description": "Connect with suppliers",
+        "href": "/"
+      },
+      {
+        "label": "Free Estimate Maker",
+        "description": "Create professional estimates",
+        "href": "/"
+      },
+      {
+        "label": "Features Roadmap",
+        "description": "Upcoming feature releases",
+        "href": "/"
+      },
+      {
+        "label": "Material Comparison Search",
+        "description": "Compare building materials",
+        "href": "/"
+      },
+      {
+        "label": "Support Center",
+        "description": "Get help documentation",
+        "href": "/"
+      },
+      {
+        "label": "Regional Material Pricing",
+        "description": "Regional labor cost data",
+        "href": "/"
+      },
+      {
+        "label": "USA Local Labor Pricing",
+        "description": "Integrate with our platform",
+        "href": "/"
+      },
+      {
+        "label": "API Documentation",
+        "description": "Regional material cost data",
+        "href": "/"
+      }
     ]
   },
   "blogs": {

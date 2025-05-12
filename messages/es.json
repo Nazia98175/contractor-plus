@@ -100,29 +100,6 @@
     ]
   },
 
-  "reviews": {
-    "heading": "Deja que nuestros clientes hablen por nosotros...",
-    "excellent": "Excelente",
-    "basedOn": "Basado en {count} reseñas",
-    "ourReviews": {
-      "review1": "¡Absolutamente me encanta el servicio proporcionado. ¡Altamente recomendado!",
-      "review2": "No estoy satisfecho con la calidad. Necesita mejorar.",
-      "review3": "Gran soporte y una interfaz fácil de usar.",
-      "review4": "El servicio fue lento, pero en general estuvo bien.",
-      "review5": "¡Experiencia perfecta! Volveré a usarlo.",
-      "review6": "Terrible experiencia. No lo recomendaría.",
-      "review7": "Equipo de servicio al cliente muy útil.",
-      "review8": "Superó mis expectativas en todos los aspectos.",
-      "review9": "Podría ser mejor. Hay margen de mejora.",
-      "review10": "Tuve problemas con la entrega y el soporte.",
-      "review11": "Proceso suave y buena comunicación.",
-      "review12": "Demasiado caro para las características que ofrece.",
-      "review13": "¡Servicio absolutamente impecable!",
-      "review14": "La peor experiencia de todas.",
-      "review15": "Buena relación calidad-precio.",
-      "review16": "¡Increíble! Se lo contaré a mis amigos."
-    }
-  },
   "footer": {
     "heading": "Ayudando a los contratistas a ganar 2 veces más trabajos en 1/3 del tiempo",
     "cta": "Todos los servicios operativos",
@@ -362,19 +339,73 @@
     ]
   },
   "resources": {
-    "imageAlt": "Recursos y materiales de aprendizaje para contratistas",
+    "imageAlt": "Recursos y materiales educativos para contratistas",
     "links": [
-      { "label": "Blog de Contractor+", "href": "/" },
-      { "label": "Eventos de la Industria", "href": "/" },
-      { "label": "Charla de Casco", "href": "/" },
-      { "label": "Lunes de Mentalidad", "href": "/" },
-      { "label": "Programa de Socios Proveedores", "href": "/" },
-      { "label": "La Perspectiva del Propietario", "href": "/" },
-      { "label": "Hoja de Ruta de Funciones", "href": "/" },
-      { "label": "Herramientas y Plantillas Gratuitas", "href": "/" },
-      { "label": "Centro de Soporte", "href": "/" },
-      { "label": "Precios Regionales de Mano de Obra", "href": "/" },
-      { "label": "Precios Regionales de Materiales", "href": "/" }
+      {
+        "label": "Blog de Contractor+",
+        "description": "Ideas y consejos de la industria",
+        "href": "/"
+      },
+      {
+        "label": "Eventos de la Industria",
+        "description": "Conferencias, talleres y seminarios web",
+        "href": "/"
+      },
+      {
+        "label": "Podcasts",
+        "description": "Escucha ideas de contratistas",
+        "href": "/"
+      },
+      {
+        "label": "Afiliados",
+        "description": "Oportunidades de asociación",
+        "href": "/"
+      },
+      {
+        "label": "Calculadoras",
+        "description": "Estima los costos del proyecto",
+        "href": "/"
+      },
+      {
+        "label": "Programa de Proveedores",
+        "description": "Conéctate con proveedores",
+        "href": "/"
+      },
+      {
+        "label": "Creador de Estimaciones Gratis",
+        "description": "Crea estimaciones profesionales",
+        "href": "/"
+      },
+      {
+        "label": "Hoja de Ruta de Funciones",
+        "description": "Próximos lanzamientos de funciones",
+        "href": "/"
+      },
+      {
+        "label": "Búsqueda de Comparación de Materiales",
+        "description": "Compara materiales de construcción",
+        "href": "/"
+      },
+      {
+        "label": "Centro de Soporte",
+        "description": "Obtén documentación de ayuda",
+        "href": "/"
+      },
+      {
+        "label": "Precios Regionales de Materiales",
+        "description": "Datos de costos laborales regionales",
+        "href": "/"
+      },
+      {
+        "label": "Precios de Mano de Obra Local en EE. UU.",
+        "description": "Integra con nuestra plataforma",
+        "href": "/"
+      },
+      {
+        "label": "Documentación API",
+        "description": "Datos de costos de materiales regionales",
+        "href": "/"
+      }
     ]
   },
   "blogs": {

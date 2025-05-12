@@ -135,7 +135,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
                   )}
                 </div>
               </div>
-              <p className="text-sm font-inter text-lightBlack mt-2.5">
+              <p className="text-sm  font-inter text-lightBlack mt-2.5">
                 {/* Use translation for description based on feature ID */}
                 {t(`${featureId}.description`)}
               </p>
@@ -143,7 +143,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center justify-between gap-6 p-[6px] font-inter absolute bottom-0 w-full bg-white">
+      <div className="flex items-center justify-between gap-6 p-[6px] px-8 left-0 font-inter absolute bottom-0 w-full bg-white">
         <Link className="all-features-button group" href="/">
           {t("seeAllFeatures")}
           <ArrowIcon />

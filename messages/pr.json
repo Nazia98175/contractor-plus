@@ -361,19 +361,73 @@
     ]
   },
   "resources": {
-    "imageAlt": "Recursos e materiais de aprendizado para empreiteiros",
+    "imageAlt": "Recursos e materiais de aprendizagem para empreiteiros",
     "links": [
-      { "label": "Blog Contractor+", "href": "/" },
-      { "label": "Eventos da Indústria", "href": "/" },
-      { "label": "Bate-papo de Capacete", "href": "/" },
-      { "label": "Segunda-feira de Mentalidade", "href": "/" },
-      { "label": "Programa de Parceiros Fornecedores", "href": "/" },
-      { "label": "A Perspectiva dos Proprietários", "href": "/" },
-      { "label": "Roteiro de Recursos", "href": "/" },
-      { "label": "Ferramentas e Modelos Gratuitos", "href": "/" },
-      { "label": "Central de Suporte", "href": "/" },
-      { "label": "Preços Regionais de Mão de Obra", "href": "/" },
-      { "label": "Preços Regionais de Materiais", "href": "/" }
+      {
+        "label": "Blog da Contractor+",
+        "description": "Dicas e insights do setor",
+        "href": "/"
+      },
+      {
+        "label": "Eventos do Setor",
+        "description": "Conferências, workshops e webinars",
+        "href": "/"
+      },
+      {
+        "label": "Podcasts",
+        "description": "Ouça insights de empreiteiros",
+        "href": "/"
+      },
+      {
+        "label": "Afiliados",
+        "description": "Oportunidades de parceria",
+        "href": "/"
+      },
+      {
+        "label": "Calculadoras",
+        "description": "Estime os custos do projeto",
+        "href": "/"
+      },
+      {
+        "label": "Programa de Parceiros Fornecedores",
+        "description": "Conecte-se com fornecedores",
+        "href": "/"
+      },
+      {
+        "label": "Criador de Orçamentos Gratuito",
+        "description": "Crie orçamentos profissionais",
+        "href": "/"
+      },
+      {
+        "label": "Roteiro de Funcionalidades",
+        "description": "Lançamentos de funcionalidades futuros",
+        "href": "/"
+      },
+      {
+        "label": "Pesquisa de Comparação de Materiais",
+        "description": "Compare materiais de construção",
+        "href": "/"
+      },
+      {
+        "label": "Central de Suporte",
+        "description": "Acesse a documentação de ajuda",
+        "href": "/"
+      },
+      {
+        "label": "Preços Regionais de Materiais",
+        "description": "Dados de custos regionais de mão de obra",
+        "href": "/"
+      },
+      {
+        "label": "Preços Locais de Mão de Obra nos EUA",
+        "description": "Integre com nossa plataforma",
+        "href": "/"
+      },
+      {
+        "label": "Documentação da API",
+        "description": "Dados regionais de custos de materiais",
+        "href": "/"
+      }
     ]
   },
   "blogs": {

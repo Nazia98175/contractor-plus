@@ -102,7 +102,7 @@
   @apply lg:text-lg text-sm sm:text-base;
 }
 .header-li-dropdown {
-  @apply xl:text-base lg:text-sm text-xs font-extrabold font-inter text-lightBlack p-1 duration-300 ease-linear;
+  @apply xl:text-base lg:text-sm text-xs font-normal font-inter text-lightBlack p-1 duration-300 ease-linear;
 }
 .all-features-button {
   @apply flex items-center gap-2.5 text-xl font-medium text-lightBlack p-1 font-inter;

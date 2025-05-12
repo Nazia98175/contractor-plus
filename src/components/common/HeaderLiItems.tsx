@@ -7,6 +7,7 @@ import IndustriesDropdown from "./IndustriesDropdown";
 import PricingDropdown from "./PricingDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const HeaderLiItems = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -14,10 +15,10 @@ const HeaderLiItems = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // These would be your actual component implementations
-  const WhyContractor = () => <WhyContractorDropdown />;
+  // const WhyContractor = () => <WhyContractorDropdown />;
   const Features = () => <FeaturesDropdown />;
   const Industries = () => <IndustriesDropdown />;
-  const Pricing = () => <PricingDropdown />;
+  // const Pricing = () => <PricingDropdown />;
   const Resources = () => <ResourcesDropdown />;
 
   const t = useTranslations("menu");
@@ -27,11 +28,11 @@ const HeaderLiItems = () => {
     {
       id: "whycontractor",
       label: t("why"),
-      component: WhyContractor,
+      link: "/",
     },
     { id: "features", label: t("features"), component: Features },
     { id: "industries", label: t("industries"), component: Industries },
-    { id: "pricing", label: t("pricing"), component: Pricing },
+    { id: "pricing", label: t("pricing"), link: "/" },
     { id: "resources", label: t("resources"), component: Resources },
   ];
 
@@ -121,21 +122,35 @@ const HeaderLiItems = () => {
   return (
     <div onMouseLeave={handleContainerLeave}>
       {/* Menu Items */}
-      <div className="flex items-center xl:gap-5 gap-2  w-full">
-        {menuItems.map((item, index) => (
-          <button
-            key={index}
-            onMouseEnter={() => handleMouseEnter(item.id)}
-            onMouseLeave={handleContainerLeave}
-            className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer  ${
-              activeMenu === item.id
-                ? "!text-kuroiBlack bg-white"
-                : "text-superSilver bg-transparent"
-            }`}
-          >
-            {item.label}
-          </button>
-        ))}
+      <div className="flex items-center xl:gap-5 gap-2 w-full">
+        {menuItems.map((item, index) =>
+          item.link ? (
+            <Link
+              key={index}
+              href={item.link}
+              className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+                activeMenu === item.id
+                  ? "!text-kuroiBlack bg-white"
+                  : "text-superSilver bg-transparent"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <button
+              key={index}
+              onMouseEnter={() => handleMouseEnter(item.id)}
+              onMouseLeave={handleContainerLeave}
+              className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+                activeMenu === item.id
+                  ? "!text-kuroiBlack bg-white"
+                  : "text-superSilver bg-transparent"
+              }`}
+            >
+              {item.label}
+            </button>
+          )
+        )}
       </div>
 
       {/* Invisible gap-covering element to prevent dropdown from closing */}
@@ -148,7 +163,7 @@ const HeaderLiItems = () => {
 
       {/* Dropdown Panel */}
       <div
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[500px] 3xl:max-h-[800px]
+        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[80vh] 3xl:max-h-[800px]
           transform transition-all duration-200 ease-in-out origin-top flex flex-col  shadow-c3
           ${
             activeMenu || isTransitioning

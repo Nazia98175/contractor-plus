@@ -44,7 +44,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     "propertyProfiles",
     "bigChiefAI",
     "communication",
-    "bookkeeping", // Repurposed for Service Requests in translations
+    "bookkeeping",
   ];
 
   const featureIcons = {
@@ -115,7 +115,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
                   {/* Use translation for label based on feature ID */}
                   {t(`${featureId}.label`)}
                   {newFeatures[featureId] && (
-                    <div className="px-2.5 h-[21px] flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
+                    <div className="px-2 h-5 flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
                       {t("newBadge")}
                     </div>
                   )}

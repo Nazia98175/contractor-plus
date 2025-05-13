@@ -52,9 +52,6 @@ const Footer = () => {
             <GreenDotIcon />
             <p>{t("cta")}</p>
           </div>
-          {/* <h3 className="text-sm sm:text-base font-medium text-decemberSky font-jakarta">
-            {t("heading")}jhhj
-          </h3> */}
         </div>
 
         {/* Desktop Footer Links */}

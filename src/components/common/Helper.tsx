@@ -1,11 +1,9 @@
-import { useTranslations } from "next-intl";
+import { JSX } from "react";
 import {
-  AdminWorkIcon,
   AssetIcon,
   BigChiefAIIcon,
   BookkeepingIcon,
   ClientIcon,
-  EstimateIcon2,
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
@@ -22,9 +20,7 @@ import {
   TimeIcon,
   TrackingIcon,
   TrophyIcon,
-  TurnaroundIcon,
 } from "./Icons";
-import { JSX } from "react";
 
 export const menuItems = [
   {
@@ -311,11 +307,11 @@ export const blogList = [
 ];
 export const leftIcons = [
   {
-    src: "/images/png/contractor-2.png",
-    width: 38,
-    height: 38,
+    src: "/images/webp/outlook.webp",
+    width: 40,
+    height: 40,
     size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
-    imgSize: "lg:max-w-[38px] max-w-[29px]",
+    imgSize: "lg:max-w-[40px] max-w-[30px]",
     initialX: -150,
     initialY: -80,
     finalX: "47%",

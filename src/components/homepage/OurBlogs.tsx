@@ -54,8 +54,8 @@ const OurBlogs = () => {
   ];
 
   return (
-    <section className="py-12 px-4">
-      <div className="max-w-[1180px] w-full mx-auto">
+    <section className="py-12 px-4 bg-white">
+      <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
           <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
             {t("heading")}
@@ -85,21 +85,21 @@ const OurBlogs = () => {
                 <div className="absolute top-[40%] left-[40%] max-w-[100px] w-full h-[150px] rounded-[10px] bg-gray-400 blur-[45px] opacity-75 z-[-1] pointer-events-none"></div>
               )}
               <img
-                className="absolute top-[91px] right-0 w-full max-w-[266px] z-[-2]"
+                className="absolute top-[91px] right-0 w-full max-w-[266px] "
                 style={{ maxWidth: article.imageWidth }}
                 src={article.imageSrc}
                 alt="blog images"
               />
               <div className="py-6 relative flex flex-col justify-between w-[207px] h-[207px]">
                 <img
-                  className="absolute top-0 lef-0 w-full h-full z-[-1]"
+                  className="absolute top-0 lef-0 w-full h-full z-0 pointer-events-none"
                   src="images/webp/blog-angle.webp"
                   alt="blog angle"
                 />
-                <h4 className="text-wallStreet text-xs font-bold px-4 pt-5 font-jakarta">
+                <h4 className="text-wallStreet text-xs font-bold px-4 pt-5 font-jakarta relative z-10">
                   +{article.id}
                 </h4>
-                <div className="px-4">
+                <div className="px-4 relative z-10">
                   <p className="text-wallStreet text-[10px] font-bold pb-1 font-jakarta">
                     Free resources by
                   </p>

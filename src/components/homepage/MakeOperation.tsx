@@ -8,6 +8,7 @@ import {
 } from "../common/Icons";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
+import TextAnimation from "../common/TextAnimation";
 
 const MakeOperation = () => {
   const { ref, inView } = useInView({
@@ -44,13 +45,16 @@ const MakeOperation = () => {
       </span>
 
       <div className="main-container pb-10">
-        <h3 className="section-heading font-semibold  text-white text-center">
-          {t("heading")}
-        </h3>
-        <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
-          {t("desc")}
-        </p>
-
+        <TextAnimation delay={0.4}>
+          <h3 className="section-heading font-semibold  text-white text-center">
+            {t("heading")}
+          </h3>{" "}
+        </TextAnimation>{" "}
+        <TextAnimation delay={0.4}>
+          <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
+            {t("desc")}
+          </p>
+        </TextAnimation>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8">
           {makeOperationlist.map((item, index) => (
             <article
@@ -68,12 +72,14 @@ const MakeOperation = () => {
                   />
                 ) : (
                   `${item.start}${item.suffix}`
-                )}{" "}
+                )}
                 {item.title}
               </h3>
-              <p className="text-lg font-medium text-secondary font-montserrat">
-                {item.description}
-              </p>
+              <TextAnimation delay={0.4}>
+                <p className="text-lg font-medium text-secondary font-montserrat">
+                  {item.description}
+                </p>
+              </TextAnimation>
             </article>
           ))}
         </div>

@@ -172,7 +172,7 @@ const HeaderLiItems = () => {
           }`}
         onMouseEnter={handleDropdownEnter}
       >
-        <div className="overflow-auto h-full">
+        <div className="overflow-auto h-full" data-lenis-prevent>
           {ActiveComponent && <ActiveComponent />}
         </div>
       </div>

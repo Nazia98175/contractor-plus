@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useRef, ReactElement, ReactNode } from "react";
+import React, { useRef, ReactElement, ReactNode, useState } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// Use the useLayoutEffect hook as a replacement for useGSAP
 import { useLayoutEffect, useEffect } from "react";
 
-// Register GSAP plugins
-gsap.registerPlugin(SplitText, ScrollTrigger);
+// Register GSAP plugins - safely handle SSR
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+}
 
 // Define the props interface
 interface TextAnimationProps {
@@ -22,98 +23,128 @@ export default function TextAnimation({
   animateOnScroll = true,
   delay = 0,
 }: TextAnimationProps): ReactElement {
-  const containerRef = useRef<HTMLElement | HTMLDivElement | null>(null);
-  const elementRefs = useRef<HTMLElement[]>([]);
-  const splitRefs = useRef<SplitText[]>([]);
-  const lines = useRef<HTMLElement[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Use useLayoutEffect instead of useGSAP
-  useLayoutEffect(() => {
-    if (!containerRef.current) return;
+  // Safe cleanup function for SplitText
+  const safeSplitRevert = (split: SplitText | null) => {
+    if (!split) return;
 
-    // Reset refs
-    splitRefs.current = [];
-    lines.current = [];
-    elementRefs.current = [];
+    try {
+      // Try the normal revert
+      split.revert();
+    } catch (err) {
+      console.warn("Error during SplitText revert, using manual cleanup", err);
 
-    // Determine elements to animate
-    let elements: HTMLElement[] = [];
-    if (containerRef.current.hasAttribute("data-copy-wrapper")) {
-      elements = Array.from(containerRef.current.children) as HTMLElement[];
-    } else {
-      elements = [containerRef.current as HTMLElement];
-    }
-
-    // Process each element
-    elements.forEach((element) => {
-      elementRefs.current.push(element);
-
-      // Create SplitText instance
-      const split = new SplitText(element, {
-        type: "lines",
-        mask: "lines",
-        linesClass: "line++",
-        lineThreshold: 0.1,
-      });
-      splitRefs.current.push(split);
-
-      // Handle text indentation
-      const computedStyle = window.getComputedStyle(element);
-      const textIndent = computedStyle.textIndent;
-      if (textIndent && textIndent !== "0px") {
-        if (split.lines && split.lines.length > 0) {
-          (split.lines[0] as HTMLElement).style.paddingLeft = textIndent;
-        }
-        element.style.textIndent = "0";
+      // Manual cleanup as a fallback
+      if (split.chars) {
+        split.chars.forEach((char) => {
+          try {
+            if (char && char.parentNode) {
+              char.parentNode.removeChild(char);
+            }
+          } catch (e) {
+            /* Ignore errors during manual cleanup */
+          }
+        });
       }
 
-      // Add lines to our lines ref
       if (split.lines) {
-        lines.current.push(...(split.lines as HTMLElement[]));
+        split.lines.forEach((line) => {
+          try {
+            if (line && line.parentNode) {
+              line.parentNode.removeChild(line);
+            }
+          } catch (e) {
+            /* Ignore errors during manual cleanup */
+          }
+        });
       }
-    });
-
-    // Set initial state
-    gsap.set(lines.current, { y: "100%" });
-
-    // Animation properties
-    const animationProps = {
-      y: "0%",
-      duration: 1,
-      stagger: 0.1,
-      ease: "power4.out",
-      delay: delay,
-    };
-
-    // Create animation with or without scroll trigger
-    if (animateOnScroll) {
-      gsap.to(lines.current, {
-        ...animationProps,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 75%",
-          once: false,
-        },
-      });
-    } else {
-      gsap.to(lines.current, animationProps);
     }
+  };
+
+  // Component mount tracking
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
+  // Animation effect
+  useLayoutEffect(() => {
+    // Skip if not mounted or no container
+    if (!isMounted || !containerRef.current || typeof window === "undefined")
+      return;
+
+    let ctx = gsap.context(() => {
+      // Store refs
+      const splitInstances: SplitText[] = [];
+      const elements: HTMLElement[] = [];
+
+      // Determine elements to animate
+      if (containerRef.current?.hasAttribute("data-copy-wrapper")) {
+        elements.push(
+          ...(Array.from(containerRef.current.children) as HTMLElement[])
+        );
+      } else {
+        elements.push(containerRef.current as HTMLElement);
+      }
+
+      // Process each element safely
+      elements.forEach((element) => {
+        try {
+          // Create SplitText instance with safer options
+          const split = new SplitText(element, {
+            type: "lines",
+            linesClass: "split-line",
+          });
+          splitInstances.push(split);
+
+          // Setup initial state
+          gsap.set(split.lines, { opacity: 0, y: 50 });
+
+          // Create animation
+          const tl = gsap.timeline({
+            paused: !animateOnScroll,
+            scrollTrigger: animateOnScroll
+              ? {
+                  trigger: element,
+                  start: "top 75%",
+                  toggleActions: "play none none reset",
+                }
+              : null,
+          });
+
+          // Add animation to timeline
+          tl.to(split.lines, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power3.out",
+            delay: delay,
+          });
+        } catch (err) {
+          console.warn("Error setting up text animation:", err);
+        }
+      });
+
+      // Return cleanup function for this context
+      return () => {
+        splitInstances.forEach((split) => safeSplitRevert(split));
+      };
+    }, containerRef); // Scope GSAP context to container
 
     // Cleanup function
     return () => {
-      splitRefs.current.forEach((split) => {
-        if (split) {
-          split.revert();
-        }
-      });
+      ctx.revert(); // This handles all animations, ScrollTriggers, etc.
     };
-  }, [animateOnScroll, delay]);
+  }, [animateOnScroll, delay, children, isMounted]); // Include all dependencies
 
   // Render component
-  if (React.Children.count(children) === 1) {
-    return React.cloneElement(children as ReactElement, {
+  if (React.Children.count(children) === 1 && React.isValidElement(children)) {
+    return React.cloneElement(children, {
       ref: containerRef,
-    });
+    } as React.RefAttributes<HTMLElement>);
   }
 
   return (

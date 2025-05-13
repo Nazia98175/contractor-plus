@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { contractPlatforms } from "../common/Helper";
+import TextAnimation from "../common/TextAnimation";
 
 const ContractorPlatforms = () => {
   const t = useTranslations("platformcatch");
@@ -10,10 +11,13 @@ const ContractorPlatforms = () => {
         src="/images/png/contractor-bg.png"
         alt="images"
       />
-      <section className="main-container flex flex-col gap-11 pt-12 relative z-20">
-        <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
-          {t("platformcatch")}
-        </h2>
+      <div className="main-container flex flex-col gap-11 pt-12 relative z-20">
+        <TextAnimation delay={0.4}>
+          <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
+            {t("platformcatch")}
+          </h2>
+        </TextAnimation>
+
         <div className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gapy-x-3 gap-y-8 xl:gap-11">
           {contractPlatforms.map((obj, index) => (
             <article
@@ -25,16 +29,20 @@ const ContractorPlatforms = () => {
                 alt={t(`${obj.key}.heading`)}
                 className="rounded-md overflow-hidden"
               />
-              <h3 className="mb-3 lg:mb-4 text-white duration-300 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
-                {t(`${obj.key}.heading`)}
-              </h3>
-              <p className="paragraph-text text-decemberSky max-w-[380px]">
-                {t(`${obj.key}.desc`)}
-              </p>
+              <TextAnimation delay={0.4}>
+                <h3 className="mb-3 lg:mb-4 text-white duration-200 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
+                  {t(`${obj.key}.heading`)}
+                </h3>
+              </TextAnimation>
+              <TextAnimation delay={0.4}>
+                <p className="paragraph-text text-decemberSky max-w-[380px]">
+                  {t(`${obj.key}.desc`)}
+                </p>
+              </TextAnimation>
             </article>
           ))}
         </div>
-      </section>
+      </div>
     </section>
   );
 };

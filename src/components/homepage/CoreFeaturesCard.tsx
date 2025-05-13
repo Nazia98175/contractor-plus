@@ -290,12 +290,11 @@ const CoreFeaturesCard = () => {
             ref={indicatorRef}
             className="w-3 h-3 rounded-full absolute top-2.5 bg-black left-1/2 -translate-x-1/2 z-10"
           ></button>
-          {/* Using Pathbg component */}
+
           <Pathbg />
         </div>
         <div className="flex flex-row lg:flex-col gap-[22px] font-sans lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
           {/* Mobile indicator (visible on small screens) */}
-
           {features.map((feature, index) => (
             <button
               onClick={() => {

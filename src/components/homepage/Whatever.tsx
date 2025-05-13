@@ -1,67 +1,258 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { IntegrationsIcon, OnIcon, OnIconw } from "../common/Icons";
+import React, { useEffect, useRef, useState } from "react";
+import { OnIcon, OnIconw } from "../common/Icons";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { leftIcons, rightIcons } from "../common/Helper";
 import { useTranslations } from "next-intl";
-const leftIcons = [
-  {
-    src: "/images/png/contractor-2.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px] md:ml-[124px] ml-[158px] md:mt-[21px] mt-2",
-    imgSize: "lg:max-w-[38px] max-w-[29px]",
-  },
-  {
-    src: "/images/png/contractor-1.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[58px] lg:h-[85px] h-[58px] md:ml-3 ml-10 md:mt-[60px] mt-10",
-    imgSize: "lg:max-w-[38px] max-w-[26px]",
-  },
-  {
-    src: "/images/png/contractor-3.png",
-    width: 66,
-    height: 17,
-    size: "lg:w-[85px] w-[62px] lg:h-[85px] h-[62px] md:ml-[223px] ml-[169px] md:-mt-[60px] -mt-10 mb-[42px] md:mb-[54px]",
-    imgSize: "lg:max-w-[66px] max-w-[45px]",
-  },
-];
-
-// Define right icons with similar structure
-const rightIcons = [
-  {
-    src: "/images/png/contractor-4.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[62px] lg:h-[85px] h-[62px] md:ml-[74px] md:ml-9 ml-6 md:mt-[58px] mt-10",
-    imgSize: "lg:max-w-[38px] max-w-[29px]",
-  },
-  {
-    src: "/images/png/contractor-6.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[61px] w-[58px] lg:h-[61px] h-[58px] md:ml-[101px] ml-[69px] lg:mt-[102px] md:mt-[56px] mt-12 md:mb-[19px]",
-    imgSize: "lg:max-w-[38px] max-w-[26px]",
-  },
-  {
-    src: "/images/png/contractor-5.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[45px] lg:h-[85px] h-[45px] md:ml-[274px] ml-[202px] md:-mt-[110px] md:translate-y-[0px] -translate-y-[82px]",
-    imgSize: "lg:max-w-[66px]  max-w-[18px]",
-  },
-];
+// Register plugin
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Whatever = () => {
   const [isMobile, setIsMobile] = useState(false);
-
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+  const leftIconsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const rightIconsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const centerRef = useRef(null);
+  const t = useTranslations();
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const t = useTranslations();
+
+  useEffect(() => {
+    if (!sectionRef.current || !containerRef.current) return;
+
+    // Clean up previous animations to prevent conflicts
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+    gsap.killTweensOf([
+      ...leftIconsRef.current,
+      ...rightIconsRef.current,
+      centerRef.current,
+    ]);
+
+    const ctx = gsap.context(() => {
+      // Set initial positions using GSAP
+      const leftSection = document.querySelector(".left-section");
+      const rightSection = document.querySelector(".right-section");
+
+      if (leftSection && rightSection) {
+        // Position the icons absolutely within their containers
+        leftIconsRef.current.forEach((el, i) => {
+          if (!el) return;
+
+          // Set initial absolute position - using finalX/Y for positioning
+          gsap.set(el, {
+            position: "absolute",
+            left: leftIcons[i].finalX,
+            top: leftIcons[i].finalY,
+            xPercent: -50,
+            yPercent: -50,
+            opacity: 0,
+            scale: 0.2,
+            filter: "blur(8px)",
+          });
+        });
+
+        rightIconsRef.current.forEach((el, i) => {
+          if (!el) return;
+
+          // Set initial absolute position - using finalX/Y for positioning
+          gsap.set(el, {
+            position: "absolute",
+            left: rightIcons[i].finalX,
+            top: rightIcons[i].finalY,
+            xPercent: -50,
+            yPercent: -50,
+            opacity: 0,
+            scale: 0.2,
+            filter: "blur(8px)",
+          });
+        });
+      }
+
+      // ScrollTrigger configuration - with more responsive breakpoints
+      const scrollTrigger = {
+        trigger: sectionRef.current,
+        start: "top 85%",
+        end: "center 10%",
+        scrub: 0.6,
+        invalidateOnRefresh: true,
+        // Add markers for debugging (remove in production)
+        // markers: true,
+
+        // Add breakpoints for more control
+        id: "icons-animation",
+
+        // Dynamically update animation properties on refresh
+        onRefresh: (self: { refresh: () => void }) => {
+          // This will re-run calculations when screen size changes
+          self.refresh();
+        },
+      };
+
+      const getInitial = (val: number) => {
+        if (window.innerWidth < 768) return val * 0.6;
+        if (window.innerWidth < 1024) return val * 0.8;
+        return val;
+      };
+
+      // Animate left icons - translating from initialX/Y to finalX/Y
+      leftIconsRef.current.forEach((el, i) => {
+        if (!el) return;
+
+        // Create a variable to store the starting position (responsive)
+        const getStartX = () => {
+          if (window.innerWidth < 768) return leftIcons[i].initialX * 0.6;
+          if (window.innerWidth < 1024) return leftIcons[i].initialX * 0.8;
+          return leftIcons[i].initialX;
+        };
+
+        const getStartY = () => {
+          if (window.innerWidth < 768) return leftIcons[i].initialY * 0.6;
+          if (window.innerWidth < 1024) return leftIcons[i].initialY * 0.8;
+          return leftIcons[i].initialY;
+        };
+
+        // Apply initial transform offset - This is what will animate
+        gsap.set(el, {
+          x: getStartX(),
+          y: getStartY(),
+        });
+
+        // Animate to final position (x:0, y:0) on scroll
+        gsap.to(el, {
+          x: 0, // Final position (no offset)
+          y: 0, // Final position (no offset)
+          scale: 1,
+          opacity: 1,
+          filter: "blur(0px)",
+          ease: "power2.out",
+          scrollTrigger,
+          force3D: true,
+        });
+      });
+
+      // Animate right icons - translating from initialX/Y to finalX/Y
+      rightIconsRef.current.forEach((el, i) => {
+        if (!el) return;
+
+        // Create a variable to store the starting position (responsive)
+        const getStartX = () => {
+          if (window.innerWidth < 768) return rightIcons[i].initialX * 0.6;
+          if (window.innerWidth < 1024) return rightIcons[i].initialX * 0.8;
+          return rightIcons[i].initialX;
+        };
+
+        const getStartY = () => {
+          if (window.innerWidth < 768) return rightIcons[i].initialY * 0.6;
+          if (window.innerWidth < 1024) return rightIcons[i].initialY * 0.8;
+          return rightIcons[i].initialY;
+        };
+
+        // Apply initial transform offset - This is what will animate
+        gsap.set(el, {
+          x: getStartX(),
+          y: getStartY(),
+        });
+
+        // Animate to final position (x:0, y:0) on scroll
+        gsap.to(el, {
+          x: 0, // Final position (no offset)
+          y: 0, // Final position (no offset)
+          scale: 1,
+          opacity: 1,
+          filter: "blur(0px)",
+          ease: "power2.out",
+          scrollTrigger,
+          force3D: true,
+        });
+      });
+
+      // Center element animation - only triggered on scroll, not automatic
+      gsap.set(centerRef.current, {
+        y: getInitial(80), // Increased offset to make translation more visible
+        x: 0, // No horizontal movement for center element
+        opacity: 0,
+        scale: 0.3,
+        filter: "blur(8px)",
+      });
+
+      gsap.to(centerRef.current, {
+        y: 0, // Final position
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px)",
+        ease: "power2.out",
+        scrollTrigger,
+        force3D: true,
+      });
+
+      // Hover animation - Only start after elements have entered view
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "center 50%",
+        onEnter: () => {
+          if (!isMobile) {
+            [...leftIconsRef.current].forEach((el, i) => {
+              if (!el) return;
+              const y = i % 2 === 0 ? 4 : -4;
+              gsap.to(el, {
+                y: `+=${y}`, // Use relative animation to preserve scroll position
+                duration: 5 + i * 0.5,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                force3D: true,
+              });
+            });
+
+            [...rightIconsRef.current].forEach((el, i) => {
+              if (!el) return;
+              const y = i % 2 === 0 ? -4 : 4;
+              gsap.to(el, {
+                y: `+=${y}`, // Use relative animation to preserve scroll position
+                duration: 5 + i * 0.5,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                force3D: true,
+              });
+            });
+
+            gsap.to(centerRef.current, {
+              scale: 1.03,
+              duration: 4,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+              force3D: true,
+            });
+          }
+        },
+        onLeaveBack: () => {
+          leftIconsRef.current.forEach(
+            (el) => el && gsap.killTweensOf(el, { y: true })
+          );
+          rightIconsRef.current.forEach(
+            (el) => el && gsap.killTweensOf(el, { y: true })
+          );
+          if (centerRef.current)
+            gsap.killTweensOf(centerRef.current, { scale: true });
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [isMobile]);
+
   return (
     <section className="relative w-full overflow-hidden">
       <Image
@@ -79,22 +270,29 @@ const Whatever = () => {
         alt="large-comet"
       />
 
-      <div className="pt-12 pb-[53px] overflow-visible w-full">
+      <div
+        ref={sectionRef}
+        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full"
+      >
         <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">
           {t("whatever")}
         </h3>
 
-        <div className="max-w-[1002px] mx-auto px-2 lg:px-0">
-          <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 md:pt-5 md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
+        <div ref={containerRef} className="max-w-[1002px] mx-auto px-2 lg:px-0">
+          <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 md:pt-5 items-center md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
             {/* Left Side */}
             <div
               id="scene"
-              className="left-section mx-auto md:mx-0 max-w-[280px] md:max-w-[409px] justify-center h-auto md:items-stretch items-center w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center relative "
+              className="left-section max-w-[409px] lg:py-[59px] md:py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[249px]"
             >
               {leftIcons.map((icon, i) => (
                 <div
+                  data-depth="0.2"
                   key={i}
-                  className={`${icon.size} relative flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2`}
+                  ref={(el) => {
+                    leftIconsRef.current[i] = el;
+                  }}
+                  className={`${icon.size} absolute flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2 will-change-transform`}
                 >
                   <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
                   <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
@@ -111,31 +309,35 @@ const Whatever = () => {
             </div>
 
             {/* Center */}
-            <div className="max-w-[270px] w-fit first-border xl:p-5 p-3 m-auto relative z-30">
+            <div
+              ref={centerRef}
+              className="max-w-[270px] w-fit first-border xl:p-5 p-3 m-auto relative z-30 will-change-transform"
+            >
               <div className="second-border xl:p-5 p-3 relative z-30 w-fit">
                 <div className="relative xl:w-[110px] lg:w-20 w-[55px] xl:h-[110px] lg:h-20 h-[55px] flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden third-border">
                   <OnIcon className="absolute w-full h-full pointer-events-none -z-1 one" />
                   <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
-                  <div className="lg:max-w-[51px] max-w-[30px]  relative z-10 xl:p-0 p-0.5">
-                    <Image
-                      className="object-cover relative z-10 "
-                      src="/images/png/center-icon.png"
-                      width={51}
-                      height={68}
-                      alt="center-icon"
-                      unoptimized
-                    />
-                  </div>
+                  <Image
+                    className="object-cover relative z-10 lg:max-w-[51px] max-w-[31px]"
+                    src="/images/png/center-icon.png"
+                    width={51}
+                    height={68}
+                    alt="center-icon"
+                    unoptimized
+                  />
                 </div>
               </div>
             </div>
 
             {/* Right Side */}
-            <div className="right-section mx-auto md:mx-0 max-w-[280px] md:max-w-[409px] h-auto  w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative">
+            <div className="right-section max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[249px]">
               {rightIcons.map((icon, i) => (
                 <div
                   key={i}
-                  className={`${icon.size} relative  flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2`}
+                  ref={(el) => {
+                    rightIconsRef.current[i] = el;
+                  }}
+                  className={`${icon.size} absolute flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden p-2 will-change-transform`}
                 >
                   <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
                   <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
@@ -153,15 +355,10 @@ const Whatever = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 justify-center mt-6">
-          <p className="text-lg capitalize text-granite opacity-90 text-center">
-            <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
-            {t("potentialIntegrations")}
-          </p>
-          <span className="hidden md:block">
-            <IntegrationsIcon />
-          </span>
-        </div>
+        <p className="text-lg capitalize text-granite opacity-90 text-center">
+          <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
+          {t("potentialIntegrations")}
+        </p>
       </div>
     </section>
   );

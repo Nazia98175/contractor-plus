@@ -6,6 +6,7 @@ import { OurReviewList } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
 import Marquee from "react-fast-marquee";
 import { useTranslations } from "next-intl";
+import TextAnimation from "../common/TextAnimation";
 
 export interface ReviewItem {
   id: string | number;
@@ -33,11 +34,13 @@ const OurReviews: React.FC = () => {
   }));
 
   return (
-    <section className="pt-[15px] pb-[35px] md:py-20">
+    <section className="pt-[15px] pb-[35px] md:py-20 bg-white">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
-        <h3 className="section-heading text-black text-center md:text-start">
-          {t("heading")}
-        </h3>
+        <TextAnimation delay={0.4}>
+          <h3 className="section-heading text-black text-center md:text-start">
+            {t("heading")}
+          </h3>
+        </TextAnimation>
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <img
             className="max-w-[135px] w-full block md:hidden"
@@ -51,19 +54,25 @@ const OurReviews: React.FC = () => {
           />
           <div>
             <div className="flex items-center gap-3">
-              <h3 className="text-winterWay text-sm font-bold font-jakarta">
-                {t("excellent")}
-              </h3>
-              <p className="text-base font-extrabold text-dancingJewel font-jakarta">
-                4.9
-              </p>
+              <TextAnimation delay={0.4}>
+                <h3 className="text-winterWay text-sm font-bold font-jakarta">
+                  {t("excellent")}
+                </h3>
+              </TextAnimation>
+              <TextAnimation delay={0.4}>
+                <p className="text-base font-extrabold text-dancingJewel font-jakarta">
+                  4.9
+                </p>
+              </TextAnimation>
               <span>
                 <GroupStartIcon />
               </span>
             </div>
-            <p className="text-winterWay text-xs font-medium pt-1 font-jakarta text-center md:text-start">
-              {t("basedOn", { count: 1320 })}
-            </p>
+            <TextAnimation delay={0.4}>
+              <p className="text-winterWay text-xs font-medium pt-1 font-jakarta text-center md:text-start">
+                {t("basedOn", { count: 1320 })}
+              </p>
+            </TextAnimation>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import { div } from "framer-motion/client";
+import TextAnimation from "../common/TextAnimation";
 
 export interface Review {
   id: string | number;

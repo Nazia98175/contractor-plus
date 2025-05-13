@@ -2,6 +2,7 @@ import React from "react";
 import CircularSlider from "./CircularSlider";
 import CircularSliderCardItems from "./CircularSliderCardItems";
 import { useTranslations } from "next-intl";
+import TextAnimation from "../common/TextAnimation";
 
 const ContractorIndustry = () => {
   const industryItems = [
@@ -32,15 +33,19 @@ const ContractorIndustry = () => {
         alt="webp bg"
       />
       <div className="px-2">
-        <h3 className="section-heading text-center text-white">
-          {t("heading")}
-        </h3>
-        <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
-          {t("desc")}
-        </p>
-        <div className="flex justify-center items-center">
-          <button className="bg-red-linear h-10 primary-btn">{t("cta")}</button>
-        </div>
+        <TextAnimation delay={0.4}>
+          <h3 className="section-heading text-center text-white">
+            {t("heading")}
+          </h3>
+        </TextAnimation>
+        <TextAnimation delay={0.4}>
+          <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
+            {t("desc")}
+          </p>
+        </TextAnimation>
+        <button className="bg-red-linear h-10 primary-btn w-fit mx-auto">
+          {t("cta")}
+        </button>
       </div>
       <img
         className="max-w-[1227px] w-full mx-auto h-full"

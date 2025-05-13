@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
+import TextAnimation from "../common/TextAnimation";
 
 const EntireBusiness: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -31,12 +32,16 @@ const EntireBusiness: React.FC = () => {
   return (
     <div className="bg-transparent md:bg-kuroiBlack px-2">
       <div className="py-[75px]">
-        <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">
-          {t("heading")}
-        </h3>
-        <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
-          {t("subheading")}
-        </p>
+        <TextAnimation delay={0.4}>
+          <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">
+            {t("heading")}
+          </h3>
+        </TextAnimation>
+        <TextAnimation delay={0.4}>
+          <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
+            {t("subheading")}
+          </p>
+        </TextAnimation>
         <form
           className="flex flex-col md:flex-row justify-center items-start gap-3"
           onSubmit={handleSubmit}
@@ -50,14 +55,16 @@ const EntireBusiness: React.FC = () => {
               onChange={handleEmailChange}
               className="bg-lightBlack border-white border-b rounded-[6px] text-white outline-none px-2 w-full h-[40px]"
             />
-            <p className="hidden md:flex items-center gap-2 pt-3">
-              <span>
-                <CheckIcon />
-              </span>
-              <span className="text-sm font-semibold font-myriad text-white">
-                {t("noCreditCard")}
-              </span>
-            </p>
+            <TextAnimation delay={0.4}>
+              <p className="hidden md:flex items-center gap-2 pt-3">
+                <span>
+                  <CheckIcon />
+                </span>
+                <span className="text-sm font-semibold font-myriad text-white">
+                  {t("noCreditCard")}
+                </span>
+              </p>
+            </TextAnimation>
           </div>
           <button
             type="submit"

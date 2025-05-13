@@ -148,7 +148,11 @@ export default function TextAnimation({
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div
+      className="overflow-hidden"
+      ref={containerRef}
+      data-copy-wrapper="true"
+    >
       {children}
     </div>
   );

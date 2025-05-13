@@ -6,6 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { leftIcons, rightIcons } from "../common/Helper";
 import { useTranslations } from "next-intl";
+import TextAnimation from "../common/TextAnimation";
 // Register plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -274,10 +275,11 @@ const Whatever = () => {
         ref={sectionRef}
         className="pt-12 pb-[53px] overflow-visible will-change-transform w-full"
       >
-        <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">
-          {t("whatever")}
-        </h3>
-
+        <TextAnimation delay={0.4}>
+          <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">
+            {t("whatever")}
+          </h3>
+        </TextAnimation>
         <div ref={containerRef} className="max-w-[1002px] mx-auto px-2 lg:px-0">
           <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 md:pt-5 items-center md:bg-none bg-[url('/images/svg/mobile-lines_animated.svg')] bg-no-repeat bg-contain bg-center">
             {/* Left Side */}
@@ -354,11 +356,12 @@ const Whatever = () => {
             </div>
           </div>
         </div>
-
-        <p className="text-lg capitalize text-granite opacity-90 text-center">
-          <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
-          {t("potentialIntegrations")}
-        </p>
+        <TextAnimation delay={0.4}>
+          <p className="text-lg capitalize text-granite opacity-90 text-center">
+            <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
+            {t("potentialIntegrations")}
+          </p>
+        </TextAnimation>
       </div>
     </section>
   );

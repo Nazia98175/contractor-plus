@@ -141,7 +141,7 @@ const HeaderLiItems = () => {
               key={index}
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={handleContainerLeave}
-              className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+              className={`header-li whitespace-nowrap py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver bg-transparent"
@@ -163,7 +163,7 @@ const HeaderLiItems = () => {
 
       {/* Dropdown Panel */}
       <div
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px]
+        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto py-5 z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px]
           transform transition-all duration-200 ease-in-out origin-top flex flex-col  shadow-c3
           ${
             activeMenu || isTransitioning

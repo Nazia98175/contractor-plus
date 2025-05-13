@@ -16,8 +16,6 @@ const languages: LanguageOption[] = [
   { code: "en", value: "en", imgPath: "/images/png/united_states.png" },
   { code: "es", value: "es", imgPath: "/images/png/spain.png" },
   { code: "fr", value: "fr", imgPath: "/images/png/france.png" },
-  { code: "pr", value: "pr", imgPath: "/images/png/portugal.png" },
-  { code: "hin", value: "hin", imgPath: "/images/png/india.png" },
 ];
 
 // Create a memoized language item component

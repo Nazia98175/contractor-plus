@@ -2,6 +2,7 @@ import React from "react";
 import CircularSlider from "./CircularSlider";
 import CircularSliderCardItems from "./CircularSliderCardItems";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const ContractorIndustry = () => {
   const industryItems = [
@@ -26,10 +27,11 @@ const ContractorIndustry = () => {
 
   return (
     <section className="relative pt-10">
-      <img
+      <Image
         className="absolute top-0 w-full h-full z-[-1]"
         src="/images/webp/contractor-industry-bg.webp"
         alt="webp bg"
+        fill
       />
       <div className="px-2">
         <h3 className="section-heading text-center text-white">
@@ -45,7 +47,7 @@ const ContractorIndustry = () => {
       <img
         className="max-w-[1227px] w-full mx-auto h-full"
         src="/images/webp/contractor.webp"
-        alt=""
+        alt="Contractor"
       />
       {/* <div style={{ height: "400px", position: "relative", margin: "0 auto" }}>
         <CircularSlider

@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
+import TextAnimation from "../common/TextAnimation";
 
 const Finally = () => {
   const t = useTranslations("finally");
@@ -8,12 +9,16 @@ const Finally = () => {
   return (
     <section className="relative pt-16 md:pt-20 xl:pt-[222px] overflow-hidden">
       <div className="space-y-4 z-10 relative px-2">
-        <h2 className="section-heading text-center text-white">
-          {t("heading")}
-        </h2>
-        <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
-          {t("desc")}
-        </p>
+        <TextAnimation delay={0.4}>
+          <h2 className="section-heading text-center text-white">
+            {t("heading")}
+          </h2>
+        </TextAnimation>
+        <TextAnimation delay={0.4}>
+          <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
+            {t("desc")}
+          </p>
+        </TextAnimation>
         <div className="flex gap-[22px] items-center justify-center py-2 flex-wrap">
           {features?.map((feature, index) => (
             <div
@@ -25,7 +30,6 @@ const Finally = () => {
             </div>
           ))}
         </div>
-
         <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative px-3 lg:px-0">
           <img
             src="/images/webp/claud.webp"

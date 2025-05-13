@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import TextAnimation from "../common/TextAnimation";
 const TheEngineContractor = () => {
   const t = useTranslations("engine");
   const { ref, inView } = useInView({
@@ -32,9 +33,11 @@ const TheEngineContractor = () => {
             </div>
             {t("countup")}
           </h2>
-          <p className="text-base font-medium text-decemberSky text-center md:text-left">
-            {t("desc")}
-          </p>
+          <TextAnimation delay={0.6}>
+            <p className="text-base font-medium text-decemberSky text-center md:text-left">
+              {t("desc")}
+            </p>
+          </TextAnimation>
         </div>
         <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
           <img

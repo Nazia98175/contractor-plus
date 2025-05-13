@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { CheckIcon } from "../common/Icons";
+import TextAnimation from "../common/TextAnimation";
 
 const Hero = () => {
   const t = useTranslations("hero");
@@ -7,10 +8,14 @@ const Hero = () => {
     <section className="relative overflow-hidden max-w-[1920px] mx-auto">
       <div className="flex items-end h-screen max-h-[900px] main-container z-20 relative pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px] lg:h-full">
         <div className="max-w-[616px] w-full sm:space-y-6">
-          <h1 className="main-heading text-white mb-1.5">{t("heading")}</h1>
-          <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">
-            {t("desc")}
-          </p>
+          <TextAnimation delay={0.6}>
+            <h1 className="main-heading text-white mb-1.5">{t("heading")}</h1>
+          </TextAnimation>
+          <TextAnimation delay={0.6}>
+            <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">
+              {t("desc")}
+            </p>
+          </TextAnimation>
           <div className="flex gap-2.5 sm:flex-row flex-col items-center">
             <button className="bg-red-linear h-10 primary-btn">
               {t("cta")}

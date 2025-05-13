@@ -2,7 +2,6 @@ import React from "react";
 import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
 
 const Finally = () => {
   const t = useTranslations("finally");
@@ -32,10 +31,9 @@ const Finally = () => {
           ))}
         </div>
         <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative px-3 lg:px-0">
-          <Image
+          <img
             src="/images/webp/claud.webp"
             alt="Claud background"
-            fill
             className="hidden lg:block absolute w-full bottom-0 z-20 left-0 h-[140px]"
           />
 

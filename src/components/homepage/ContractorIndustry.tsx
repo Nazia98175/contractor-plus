@@ -44,6 +44,8 @@ const ContractorIndustry = () => {
           <button className="bg-red-linear h-10 primary-btn">{t("cta")}</button>
         </div>
       </div>
+
+      {/* here is slider so img tag not changed */}
       <img
         className="max-w-[1227px] w-full mx-auto h-full"
         src="/images/webp/contractor.webp"

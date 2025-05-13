@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import TextAnimation from "../common/TextAnimation";
 
@@ -11,7 +12,7 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
   return (
-    <article className="font-jakarta p-3 flex flex-col justify-between">
+    <article className="font-jakarta p-3 flex flex-col items-center justify-between">
       <div>
         <TextAnimation delay={0.4}>
           <h4 className="text-2xl font-bold text-winterWay text-center capitalize">
@@ -24,7 +25,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
           </p>
         </TextAnimation>
       </div>
-      <img src={obj.img} alt={obj.title} className="object-contain h-[187px]" />
+      <div className="relative w-full h-[187px]">
+        <Image src={obj.img} alt={obj.title} fill className="object-contain" />
+      </div>
     </article>
   );
 };

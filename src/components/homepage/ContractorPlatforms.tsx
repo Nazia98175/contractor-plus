@@ -1,15 +1,18 @@
 import { useTranslations } from "next-intl";
 import { contractPlatforms } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
+import Image from "next/image";
 
 const ContractorPlatforms = () => {
   const t = useTranslations("platformcatch");
   return (
     <section className="bg-kuroiBlack relative">
-      <img
-        className="absolute bottom-[-439px] lefl-0 w-full z-[-1]"
+      <Image
+        className="absolute bottom-[-439px]  left-0 w-full z-[-1]"
         src="/images/png/contractor-bg.png"
         alt="images"
+        width={1920}
+        height={1080}
       />
       <div className="main-container flex flex-col gap-11 pt-12 relative z-20">
         <TextAnimation delay={0.4}>

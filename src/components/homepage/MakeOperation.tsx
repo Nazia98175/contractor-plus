@@ -45,12 +45,12 @@ const MakeOperation = () => {
       </span>
 
       <div className="main-container pb-10">
-        <TextAnimation delay={0.4}>
+        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading font-semibold  text-white text-center">
             {t("heading")}
           </h3>{" "}
         </TextAnimation>{" "}
-        <TextAnimation delay={0.4}>
+        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
           <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
             {t("desc")}
           </p>
@@ -75,11 +75,10 @@ const MakeOperation = () => {
                 )}
                 {item.title}
               </h3>
-              <TextAnimation delay={0.4}>
-                <p className="text-lg font-medium text-secondary font-montserrat">
-                  {item.description}
-                </p>
-              </TextAnimation>
+
+              <p className="text-lg font-medium text-secondary font-montserrat">
+                {item.description}
+              </p>
             </article>
           ))}
         </div>

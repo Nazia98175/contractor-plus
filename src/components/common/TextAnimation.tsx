@@ -85,15 +85,13 @@ export default function TextAnimation({
         styleEl.innerHTML = `
           .line-wrapper {
             overflow: hidden;
-            display: block;
             position: relative;
           }
           .line-container {
             position: relative;
-            display: block;
           }
           .split-line {
-            display: block;
+            display: flex;
           }
         `;
         document.head.appendChild(styleEl);

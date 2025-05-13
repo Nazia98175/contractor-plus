@@ -275,7 +275,7 @@ const Whatever = () => {
         ref={sectionRef}
         className="pt-12 pb-[53px] overflow-visible will-change-transform w-full"
       >
-        <TextAnimation delay={0.4}>
+        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">
             {t("whatever")}
           </h3>
@@ -356,7 +356,7 @@ const Whatever = () => {
             </div>
           </div>
         </div>
-        <TextAnimation delay={0.4}>
+        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
           <p className="text-lg capitalize text-granite opacity-90 text-center">
             <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
             {t("potentialIntegrations")}

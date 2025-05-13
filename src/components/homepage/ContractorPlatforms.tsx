@@ -15,7 +15,7 @@ const ContractorPlatforms = () => {
         height={1080}
       />
       <div className="main-container flex flex-col gap-11 pt-12 relative z-20">
-        <TextAnimation delay={0.4}>
+        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
           <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
             {t("platformcatch")}
           </h2>

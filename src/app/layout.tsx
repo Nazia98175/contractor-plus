@@ -6,9 +6,9 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <div className="bg-black">
+    <>
       <SmoothScroll />
       {children}
-    </div>
+    </>
   );
 }

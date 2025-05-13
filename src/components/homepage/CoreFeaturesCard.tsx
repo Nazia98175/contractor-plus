@@ -274,8 +274,8 @@ const CoreFeaturesCard = () => {
   }, []); // Empty dependency array - only run once
 
   return (
-    <div
-      className="lg:p-6 px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7 lg:mt-11"
+    <section
+      className="lg:p-6 md:px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7 lg:mt-11"
       ref={containerRef}
     >
       {/* Navigation Column */}
@@ -329,7 +329,7 @@ const CoreFeaturesCard = () => {
             ref={(el) => {
               contentRefs.current[index] = el;
             }}
-            className="p-3.5 bg-gray-100 rounded-2xl w-full space-y-[18px] scroll-mt-24 "
+            className="p-3.5 bg-gray-100 rounded-2xl w-full space-y-[18px] xl:scroll-mt-24 lg:scroll-mt-16 md:scroll-mt-12 scroll-mt-8"
           >
             <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet leading-[100%] font-jakarta">
               {content.title}
@@ -350,7 +350,7 @@ const CoreFeaturesCard = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

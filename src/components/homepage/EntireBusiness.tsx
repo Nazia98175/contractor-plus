@@ -55,16 +55,14 @@ const EntireBusiness: React.FC = () => {
               onChange={handleEmailChange}
               className="bg-lightBlack border-white border-b rounded-[6px] text-white outline-none px-2 w-full h-[40px]"
             />
-            <TextAnimation delay={0.4}>
-              <p className="hidden md:flex items-center gap-2 pt-3">
-                <span>
-                  <CheckIcon />
-                </span>
-                <span className="text-sm font-semibold font-myriad text-white">
-                  {t("noCreditCard")}
-                </span>
-              </p>
-            </TextAnimation>
+            <p className="hidden md:flex items-center gap-2 pt-3">
+              <span>
+                <CheckIcon />
+              </span>
+              <span className="text-sm font-semibold font-myriad text-white">
+                {t("noCreditCard")}
+              </span>
+            </p>
           </div>
           <button
             type="submit"

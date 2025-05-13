@@ -32,16 +32,12 @@ const ContractorPlatforms = () => {
                 alt={t(`${obj.key}.heading`)}
                 className="rounded-md overflow-hidden"
               />
-              <TextAnimation delay={0.4}>
-                <h3 className="mb-3 lg:mb-4 text-white duration-200 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
-                  {t(`${obj.key}.heading`)}
-                </h3>
-              </TextAnimation>
-              <TextAnimation delay={0.4}>
-                <p className="paragraph-text text-decemberSky max-w-[380px]">
-                  {t(`${obj.key}.desc`)}
-                </p>
-              </TextAnimation>
+              <h3 className="mb-3 lg:mb-4 text-white duration-200 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
+                {t(`${obj.key}.heading`)}
+              </h3>
+              <p className="paragraph-text text-decemberSky max-w-[380px]">
+                {t(`${obj.key}.desc`)}
+              </p>
             </article>
           ))}
         </div>

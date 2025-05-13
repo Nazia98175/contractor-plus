@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
+import TextAnimation from "../common/TextAnimation";
 
 const OurBlogs = () => {
   // Get translations from the "blogs" namespace
@@ -57,9 +58,11 @@ const OurBlogs = () => {
     <section className="py-12 px-4 bg-white">
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
-          <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
-            {t("heading")}
-          </h2>
+          <TextAnimation delay={0.6}>
+            <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
+              {t("heading")}
+            </h2>
+          </TextAnimation>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
               {t("viewAllBlogs")}

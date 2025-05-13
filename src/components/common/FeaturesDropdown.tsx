@@ -94,7 +94,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
   }
 
   return (
-    <article className="flex flex-col justify-between p-2 gap-3">
+    <article className="flex flex-col justify-between p-2 gap-3 main-container">
       <div className="grid grid-cols-3 gap-3 dropdown-heading">
         <h3 className="px-4">{t("solutionsHeading")}</h3>
         <h4 className="px-4">{t("featuresHeading")}</h4>
@@ -109,13 +109,13 @@ const FeaturesDropdown = ({ isVisible = true }) => {
               href="/"
               className="group group-hover:bg-lightBlack group-hover:!text-white"
             >
-              <div className="flex gap-2.5 items-center">
+              <div className="flex gap-2.5 items-start">
                 <span>{featureIcons[featureId]}</span>
                 <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">
                   {/* Use translation for label based on feature ID */}
                   {t(`${featureId}.label`)}
                   {newFeatures[featureId] && (
-                    <div className="px-2.5 h-[21px] flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-sm font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
+                    <div className="px-2.5 h-[21px] flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
                       {t("newBadge")}
                     </div>
                   )}

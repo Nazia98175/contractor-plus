@@ -160,7 +160,7 @@ html {
 }
 .two {
   background: var(--Gray-Gray-900, #1c2731);
-  stroke-width: 1px;
+  strokewidth: 1px;
   stroke: rgba(0, 0, 0, 0);
   /* filter: blur(1.600000023841858px); */
 }

@@ -354,11 +354,11 @@ export const TrackingIcon = () => (
     height="24"
     viewBox="0 0 48 48"
   >
-    <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4">
-      <rect width="32" height="40" x="8" y="4" stroke-linejoin="round" rx="2" />
+    <g fill="none" stroke="#000" strokeLinecap="round" strokeWidth="4">
+      <rect width="32" height="40" x="8" y="4" strokeLinejoin="round" rx="2" />
       <path
         fill="#2f88ff"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
         d="M16 4H25V20L20.5 16L16 20V4Z"
       />
       <path d="M16 28H26" />
@@ -704,7 +704,7 @@ export const BookkeepingIcon = () => (
   >
     <path
       fill="currentColor"
-      fill-opacity="0.15"
+      fillOpacity="0.15"
       d="M696 632h128v192H696zm-496 0h128v192H200z"
     />
     <path

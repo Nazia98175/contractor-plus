@@ -28,12 +28,9 @@ const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute object-bottom hidden lg:block -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0"
+        className="absolute object-bottom hidden lg:block -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video"
       >
-        <source
-          src="https://videos.pexels.com/video-files/4489878/4489878-uhd_2732_1440_25fps.mp4"
-          type="video/mp4"
-        />
+        <source src="/images/video/hero-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -42,12 +39,9 @@ const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute object-cover right-0 w-full block lg:hidden z-0 top-0 h-full"
+        className="absolute object-cover right-0 w-full block lg:hidden z-0 top-0 h-full aspect-video"
       >
-        <source
-          src="https://videos.pexels.com/video-files/4489881/4489881-uhd_1440_2732_25fps.mp4"
-          type="video/mp4"
-        />
+        <source src="/images/video/hero-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <img

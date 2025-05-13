@@ -96,13 +96,14 @@ const ResourcesDropdown = () => {
     description: string;
   }[];
 
-  const fallbackImage = "/images/webp/resources-dropdown-img.webp";
+  const fallbackImage =
+    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
 
   const previewImage =
     hoveredIndex !== null ? resourceItems[hoveredIndex]?.image : fallbackImage;
 
   return (
-    <article className="flex justify-between p-2 gap-6">
+    <article className="flex justify-between p-2 gap-6 main-container">
       <ul className="grid grid-cols-2 gap-x-6 gap-y-3 w-full">
         {resourcesLinks.map((link, index) => {
           const Icon = resourceItems[index]?.icon;
@@ -131,7 +132,7 @@ const ResourcesDropdown = () => {
           );
         })}
       </ul>
-      <div className="relative w-full max-w-[520px] h-auto rounded-md overflow-hidden">
+      <div className="relative w-full max-w-[480px] h-auto  rounded-md overflow-hidden">
         {resourceItems.map((item, index) => (
           <Image
             key={index}

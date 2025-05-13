@@ -12,7 +12,7 @@ const IndustriesDropdown = () => {
   }[];
 
   return (
-    <article className="flex flex-col items-start justify-between p-2 gap-3">
+    <article className="flex flex-col items-start justify-between p-2 gap-3 main-container">
       <h3 className="px-3 dropdown-heading">{t("heading")}</h3>
 
       <ul className="grid grid-cols-4 gap-1 w-full">
@@ -23,7 +23,7 @@ const IndustriesDropdown = () => {
           >
             <Link
               href={link.href}
-              className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white"
+              className="header-li-dropdown !font-medium group-hover:bg-lightBlack group-hover:!text-white"
             >
               {link.label}
             </Link>

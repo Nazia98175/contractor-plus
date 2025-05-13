@@ -1,44 +1,78 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import WhyContractorDropdown from "./WhyContractorDropdown";
-import FeaturesDropdown from "./FeaturesDropdown";
-import IndustriesDropdown from "./IndustriesDropdown";
-import PricingDropdown from "./PricingDropdown";
-import ResourcesDropdown from "./ResourcesDropdown";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useEffect, useRef, useState, useMemo } from "react";
+import FeaturesDropdown from "./FeaturesDropdown";
+import IndustriesDropdown from "./IndustriesDropdown";
+import ResourcesDropdown from "./ResourcesDropdown";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const HeaderLiItems = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const gapRef = useRef<HTMLDivElement>(null);
 
-  // These would be your actual component implementations
-  // const WhyContractor = () => <WhyContractorDropdown />;
-  const Features = () => <FeaturesDropdown />;
-  const Industries = () => <IndustriesDropdown />;
-  // const Pricing = () => <PricingDropdown />;
-  const Resources = () => <ResourcesDropdown />;
+  // Register GSAP plugins
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+  }, []);
 
   const t = useTranslations("menu");
 
-  // Button data array
-  const menuItems = [
-    {
-      id: "whycontractor",
-      label: t("why"),
-      link: "/",
-    },
-    { id: "features", label: t("features"), component: Features },
-    { id: "industries", label: t("industries"), component: Industries },
-    { id: "pricing", label: t("pricing"), link: "/" },
-    { id: "resources", label: t("resources"), component: Resources },
-  ];
+  // Use useMemo to create a stable reference to the dropdown component mapping
+  const componentMap = useMemo(
+    () => ({
+      features: FeaturesDropdown,
+      industries: IndustriesDropdown,
+      resources: ResourcesDropdown,
+    }),
+    []
+  );
 
-  // Find active component
+  // Button data array - use useMemo to prevent unnecessary recreations
+  const menuItems = useMemo(
+    () => [
+      {
+        id: "whycontractor",
+        label: t("why"),
+        link: "/",
+      },
+      {
+        id: "features",
+        label: t("features"),
+        componentKey: "features",
+      },
+      {
+        id: "industries",
+        label: t("industries"),
+        componentKey: "industries",
+      },
+      {
+        id: "pricing",
+        label: t("pricing"),
+        link: "/",
+      },
+      {
+        id: "resources",
+        label: t("resources"),
+        componentKey: "resources",
+      },
+    ],
+    [t]
+  );
+
+  // Find active component - this now uses the stable componentMap
   const ActiveComponent = activeMenu
-    ? menuItems.find((item) => item.id === activeMenu)?.component
+    ? componentMap[
+        menuItems.find((item) => item.id === activeMenu)
+          ?.componentKey as keyof typeof componentMap
+      ]
     : null;
 
   // Clear any existing timeouts to prevent unwanted state changes
@@ -49,11 +83,74 @@ const HeaderLiItems = () => {
     }
   };
 
-  // Handle mouse enter on menu items
+  // Handle mouse enter on menu items with GSAP animation
   const handleMouseEnter = (menuName: string) => {
+    // Check if this menu item has a dropdown component
+    const menuItem = menuItems.find((item) => item.id === menuName);
+
+    // Only proceed if the menu item has a componentKey (indicates it has a dropdown)
+    if (!menuItem || !menuItem.componentKey) {
+      return;
+    }
+
     clearTimeouts();
     setIsTransitioning(true);
     setActiveMenu(menuName);
+
+    // Animate dropdown with GSAP
+    if (dropdownRef.current) {
+      gsap.fromTo(
+        dropdownRef.current,
+        {
+          autoAlpha: 0,
+          x: "100%",
+          y: 0,
+        },
+        {
+          duration: 0.4,
+          autoAlpha: 1,
+          x: 0,
+          y: 0,
+          ease: "power2.out",
+        }
+      );
+    }
+
+    // Animate gap element with GSAP
+    if (gapRef.current) {
+      gsap.fromTo(
+        gapRef.current,
+        {
+          autoAlpha: 0,
+          x: "100%",
+          y: 0,
+        },
+        {
+          duration: 0.4,
+          autoAlpha: 1,
+          x: 0,
+          y: 0,
+          ease: "power2.out",
+        }
+      );
+    }
+  };
+
+  // Handle mouse enter on link items - immediately hide dropdown
+  const handleLinkEnter = () => {
+    // Hide dropdown immediately when hovering over a link
+    if (activeMenu && dropdownRef.current) {
+      gsap.to(dropdownRef.current, {
+        duration: 0.2, // Faster hide animation
+        autoAlpha: 0,
+        x: "100%",
+        ease: "power1.in",
+        onComplete: () => {
+          setActiveMenu(null);
+          setIsTransitioning(false);
+        },
+      });
+    }
   };
 
   // Handle mouse leave on menu items
@@ -79,13 +176,51 @@ const HeaderLiItems = () => {
   const handleContainerLeave = () => {
     clearTimeouts();
 
-    // Set a short delay before closing to avoid accidentally closing
-    // when moving between menu items and dropdown
-    timeoutRef.current = setTimeout(() => {
-      setActiveMenu(null);
-      setIsTransitioning(false);
-    }, 100);
+    // Animate with GSAP when closing dropdown
+    if (dropdownRef.current) {
+      gsap.to(dropdownRef.current, {
+        duration: 0.3,
+        autoAlpha: 0,
+        x: "100%",
+        ease: "power2.in",
+        onComplete: () => {
+          setActiveMenu(null);
+          setIsTransitioning(false);
+        },
+      });
+    } else {
+      // Fallback if ref not available
+      timeoutRef.current = setTimeout(() => {
+        setActiveMenu(null);
+        setIsTransitioning(false);
+      }, 100);
+    }
   };
+
+  // Setup smooth scrolling for dropdown content
+  useEffect(() => {
+    if (activeMenu && dropdownRef.current) {
+      // Get the scrollable content inside the dropdown
+      const scrollContent = dropdownRef.current.querySelector(
+        "[data-lenis-prevent]"
+      );
+
+      if (scrollContent) {
+        // Setup smooth scrolling with GSAP
+        const scrollTrigger = ScrollTrigger.create({
+          trigger: scrollContent,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.5, // Adjust for smoother or faster scrolling
+        });
+
+        // Return cleanup function
+        return () => {
+          scrollTrigger.kill();
+        };
+      }
+    }
+  }, [activeMenu]);
 
   // Effect to disable body scrolling when dropdown is open
   useEffect(() => {
@@ -116,7 +251,15 @@ const HeaderLiItems = () => {
 
   // Clean up any timeouts when component unmounts
   useEffect(() => {
-    return () => clearTimeouts();
+    return () => {
+      clearTimeouts();
+      // Kill any remaining GSAP animations
+      gsap.killTweensOf(dropdownRef.current);
+      gsap.killTweensOf(gapRef.current);
+
+      // Clean up any remaining ScrollTriggers
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -128,6 +271,8 @@ const HeaderLiItems = () => {
             <Link
               key={index}
               href={item.link}
+              onMouseEnter={handleLinkEnter}
+              onMouseLeave={handleMenuItemLeave}
               className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
@@ -140,8 +285,8 @@ const HeaderLiItems = () => {
             <button
               key={index}
               onMouseEnter={() => handleMouseEnter(item.id)}
-              onMouseLeave={handleContainerLeave}
-              className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+              onMouseLeave={handleMenuItemLeave}
+              className={`header-li whitespace-nowrap py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver bg-transparent"
@@ -156,24 +301,39 @@ const HeaderLiItems = () => {
       {/* Invisible gap-covering element to prevent dropdown from closing */}
       {(activeMenu || isTransitioning) && (
         <div
-          className="absolute left-0 w-full h-[67.88px] z-[999] top-[72%] bg-transparent"
+          ref={gapRef}
+          className="absolute left-0 w-full h-[67.88px] z-[999] top-[72%] !bg-none"
           onMouseEnter={handleDropdownEnter}
+          style={{
+            visibility: activeMenu || isTransitioning ? "visible" : "hidden",
+            opacity: activeMenu || isTransitioning ? 1 : 0,
+          }}
         />
       )}
 
       {/* Dropdown Panel */}
       <div
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] bg-doctor2 mx-auto p-5 z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px]
-          transform transition-all duration-200 ease-in-out origin-top flex flex-col  shadow-c3
-          ${
-            activeMenu || isTransitioning
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-2 pointer-events-none"
-          }`}
+        ref={dropdownRef}
+        className="absolute left-0 right-0 top-[calc(100%+0px)]  mx-auto  z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px] flex flex-col shadow-c3"
         onMouseEnter={handleDropdownEnter}
+        style={{
+          visibility: activeMenu || isTransitioning ? "visible" : "hidden",
+          opacity: activeMenu || isTransitioning ? 1 : 0,
+          transform:
+            activeMenu || isTransitioning
+              ? "translateX(0)"
+              : "translateX(100%)",
+        }}
       >
-        <div className="overflow-auto h-full" data-lenis-prevent>
-          {ActiveComponent && <ActiveComponent />}
+        <div
+          className="overflow-auto h-full custom-scrollbar"
+          data-lenis-prevent
+        >
+          {ActiveComponent && (
+            <div className="py-5 bg-doctor2">
+              <ActiveComponent />
+            </div>
+          )}
         </div>
       </div>
     </div>

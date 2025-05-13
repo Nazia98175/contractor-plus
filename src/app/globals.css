@@ -104,7 +104,7 @@
   @apply lg:text-lg text-sm sm:text-base;
 }
 .header-li-dropdown {
-  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter text-lightBlack p-1 duration-300 ease-linear;
+  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter text-lightBlack duration-300 ease-linear;
 }
 .all-features-button {
   @apply flex items-center gap-2.5 text-lg font-medium text-lightBlack p-1 font-inter;
@@ -160,7 +160,7 @@ html {
 }
 .two {
   background: var(--Gray-Gray-900, #1c2731);
-  stroke-width: 1px;
+  strokewidth: 1px;
   stroke: rgba(0, 0, 0, 0);
   /* filter: blur(1.600000023841858px); */
 }

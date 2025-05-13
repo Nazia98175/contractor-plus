@@ -8,16 +8,30 @@ import Image from "next/image";
 interface LanguageOption {
   code: string;
   value: string;
+  name: string;
   imgPath: string;
 }
 
 // Move this outside the component to prevent recreation on each render
 const languages: LanguageOption[] = [
-  { code: "en", value: "en", imgPath: "/images/png/united_states.png" },
-  { code: "es", value: "es", imgPath: "/images/png/spain.png" },
-  { code: "fr", value: "fr", imgPath: "/images/png/france.png" },
-  { code: "pr", value: "pr", imgPath: "/images/png/portugal.png" },
-  { code: "hin", value: "hin", imgPath: "/images/png/india.png" },
+  {
+    code: "en",
+    value: "en",
+    imgPath: "/images/png/united_states.png",
+    name: "English",
+  },
+  {
+    code: "es",
+    value: "es",
+    imgPath: "/images/webp/mexican.webp",
+    name: "Spanish ",
+  },
+  {
+    code: "fr",
+    value: "fr",
+    imgPath: "/images/webp/canadian.webp",
+    name: "French",
+  },
 ];
 
 // Create a memoized language item component
@@ -36,7 +50,7 @@ const LanguageItem = memo(
     onClick: () => void;
   }) => (
     <div
-      className={`flex items-center justify-center gap-2 px-4 py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
+      className={`flex items-center justify-center gap-2 px-2 py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
         isActive ? "bg-gray-700/60" : "hover:bg-gray-800/60"
       }`}
       style={{
@@ -47,15 +61,18 @@ const LanguageItem = memo(
       }}
       onClick={onClick}
     >
-      <Image
-        className="object-cover"
-        src={language.imgPath}
-        width={16}
-        height={16}
-        unoptimized
-        alt={`${language.code} flag`}
-        loading="lazy" // Add lazy loading
-      />
+      <div className="flex gap-2 w-full items-start justify-center">
+        <Image
+          className="object-cover min-w-4 w-4"
+          src={language.imgPath}
+          width={16}
+          height={16}
+          unoptimized
+          alt={`${language.code} flag`}
+          loading="lazy" // Add lazy loading
+        />
+        <h4 className="font-inter text-sm font-semibold">{language.name}</h4>
+      </div>
     </div>
   )
 );
@@ -161,7 +178,7 @@ const LanguageSelector = () => {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center gap-2 cursor-pointer bg-transparent py-1 px-[14px] text-superSilver lg:text-xs sm:text-sm rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
+        className="flex items-center gap-2 cursor-pointer bg-transparent py-1 px-3 text-superSilver lg:text-xs sm:text-sm rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
         onClick={toggleDropdown}
       >
         <Image
@@ -173,6 +190,9 @@ const LanguageSelector = () => {
           alt={`${currentLanguage.code} flag`}
           priority={true} // Prioritize loading this image
         />
+        <h4 className="font-inter text-sm font-semibold">
+          {currentLanguage.name}
+        </h4>
         <div
           className={`transform transition-transform duration-300 ease-in-out lg:block hidden ${
             isOpen ? "rotate-180" : "rotate-0"
@@ -185,7 +205,7 @@ const LanguageSelector = () => {
       {/* Use conditional rendering to improve initial load time */}
       {isOpen && (
         <div
-          className={`absolute z-50 mt-1 right-0 w-14 bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right no-scrollbar ${
+          className={`absolute z-50 mt-1 right-0 w-full bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right no-scrollbar ${
             isOpen
               ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
               : "opacity-0 scale-95 -translate-y-2 pointer-events-none"

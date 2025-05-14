@@ -9,6 +9,7 @@ import {
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import TextAnimation from "../common/TextAnimation";
+import CardReveal from "../common/CardReveal";
 
 const MakeOperation = () => {
   const { ref, inView } = useInView({
@@ -55,7 +56,12 @@ const MakeOperation = () => {
             {t("desc")}
           </p>
         </TextAnimation>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8">
+        <CardReveal
+          staggerDelay={0.15}
+          animationDuration={0.8}
+          distance={50}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8"
+        >
           {makeOperationlist.map((item, index) => (
             <article
               key={index}
@@ -81,7 +87,7 @@ const MakeOperation = () => {
               </p>
             </article>
           ))}
-        </div>
+        </CardReveal>
       </div>
     </section>
   );

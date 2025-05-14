@@ -21,6 +21,20 @@ import {
   TrackingIcon,
   TrophyIcon,
 } from "./Icons";
+import {
+  Book,
+  FileText,
+  Headphones,
+  Calculator,
+  Clipboard,
+  Search,
+  DollarSign,
+  Building,
+  Calendar,
+  Users,
+  LayoutList,
+  FileCode,
+} from "lucide-react";
 
 export const menuItems = [
   {
@@ -291,6 +305,73 @@ export const featureKeys = [
     titleKey: "card3.heading",
     descKey: "card3.desc",
     img: "/images/webp/workspace.webp",
+  },
+];
+export const resourceItems = [
+  {
+    icon: FileText,
+    href: "/blog",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+  },
+  {
+    icon: Headphones,
+    href: "/podcasts",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+  },
+  {
+    icon: Calculator,
+    href: "/calculators",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  },
+  {
+    icon: Clipboard,
+    href: "/estimate-maker",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+  },
+  {
+    icon: Search,
+    href: "/material-comparison",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  },
+  {
+    icon: DollarSign,
+    href: "/labor-pricing",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+  },
+  {
+    icon: DollarSign,
+    href: "/material-pricing",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+  },
+  {
+    icon: Calendar,
+    href: "/events",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+  },
+  {
+    icon: Users,
+    href: "/affiliates",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  },
+  {
+    icon: Building,
+    href: "/supply-partners",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+  },
+  {
+    icon: LayoutList,
+    href: "/roadmap",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+  },
+  {
+    icon: Book,
+    href: "/support",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  },
+  {
+    icon: FileCode,
+    href: "/developers",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
   },
 ];
 

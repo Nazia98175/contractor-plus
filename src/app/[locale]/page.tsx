@@ -45,6 +45,8 @@ export default function Home() {
           <TheEngineContractor />
         </div>
       </div>
+
+      {/* Here have to add star background  */}
       <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
         <div className="absolute bottom-0  max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[30px] opacity-35 block md:hidden"></div>
         {/* particle js  */}

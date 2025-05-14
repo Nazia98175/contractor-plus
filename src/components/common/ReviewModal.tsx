@@ -12,7 +12,6 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
   onClose,
   videoUrl,
 }) => {
-  // Default dummy video if none provided
   const defaultVideo = "https://www.youtube.com/embed/dQw4w9WgXcQ";
   const videoSrc = videoUrl || defaultVideo;
 

@@ -24,7 +24,6 @@ const Header = () => {
     // Add event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Initial check in case page is loaded scrolled
     handleScroll();
 
     // Clean up

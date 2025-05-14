@@ -3,6 +3,7 @@ import React from "react";
 import FeatureCard from "./FeatureCard";
 import CustomSlider from "../common/CustomSlider";
 import { useTranslations } from "next-intl";
+import CardReveal from "../common/CardReveal";
 
 const Features = () => {
   const t = useTranslations("feature");
@@ -27,11 +28,16 @@ const Features = () => {
     <section className="bg-white sm:px-2 xl:pt-[78px] pt-11 lg:pb-[37px] pb-6">
       <div className="main-container sm:!px-2 !px-0">
         <div className=" bg-doctor lg:rounded-[32px] sm:rounded-4xl lg:px-8 md:px-6 px-4 xl:py-12 lg:py-10 md:py-8 sm:py-6 pt-6 pb-3">
-          <div className="hidden lg:grid lg:grid-cols-3 gap-12">
+          <CardReveal
+            staggerDelay={0.15}
+            animationDuration={0.8}
+            distance={50}
+            className="hidden lg:grid lg:grid-cols-3 gap-12"
+          >
             {featureData.map((obj, index) => (
               <FeatureCard obj={obj} key={index} />
             ))}
-          </div>
+          </CardReveal>
           <div className="lg:hidden">
             <CustomSlider
               autoplay

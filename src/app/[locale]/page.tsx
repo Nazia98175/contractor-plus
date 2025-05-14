@@ -52,13 +52,13 @@ export default function Home() {
           alt="Star Background"
           width={1920}
           height={500}
-          className="absolute top-0 z-50 left-0 w-full h-[500px] block md:hidden pointer-events-none object-cover"
+          className="absolute top-0 -z-50 left-0 w-full h-[500px] block md:hidden pointer-events-none object-cover"
         />
         <Image
           src="/images/png/stars.png"
           alt="Star Background"
           fill
-          className="absolute top-[50%] z-50 left-0 object-cover"
+          className="absolute top-[50%] -z-50 left-0 object-cover"
         />
         <ContractorPlatforms />
         <Finally />

@@ -35,7 +35,7 @@ const Hero = () => {
         playsInline
         className="absolute object-bottom hidden lg:block -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video"
       >
-        <source src="/images/video/hero-video.mp4" type="video/mp4" />
+        <source src="/video/hero-video.mp4" type="video/mp4" />
         {t("video")}
       </video>
       <video
@@ -45,7 +45,7 @@ const Hero = () => {
         playsInline
         className="absolute object-cover right-0 w-full block lg:hidden z-0 top-0 h-full aspect-video"
       >
-        <source src="/images/video/hero-video.mp4" type="video/mp4" />
+        <source src="/video/hero-video.mp4" type="video/mp4" />
         {t("video")}
       </video>
 

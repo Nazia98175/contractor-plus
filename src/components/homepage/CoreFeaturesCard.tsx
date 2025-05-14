@@ -3,7 +3,7 @@ import type React from "react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Pathbg } from "../common/Icons";
+import { ExternalLink, Pathbg } from "../common/Icons";
 import { useTranslations } from "next-intl";
 
 // Register ScrollTrigger plugin with GSAP
@@ -280,7 +280,7 @@ const CoreFeaturesCard = () => {
     >
       {/* Navigation Column */}
       <div
-        className="flex gap-1.5 lg:self-start z-20 lg:w-[187px] "
+        className="flex gap-1.5 lg:self-start z-20 lg:w-[187px]"
         ref={featuresRef}
         style={{ overflow: "visible" }}
       >
@@ -293,7 +293,7 @@ const CoreFeaturesCard = () => {
 
           <Pathbg />
         </div>
-        <div className="flex flex-row lg:flex-col gap-[22px] font-sans lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
+        <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative">
           {/* Mobile indicator (visible on small screens) */}
           {features.map((feature, index) => (
             <button
@@ -306,7 +306,7 @@ const CoreFeaturesCard = () => {
                 });
               }}
               key={feature}
-              className={`feature-btn lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px] lg:max-w-[165px] w-fit font-jakarta ${
+              className={`feature-btn ${
                 index === activeFeature
                   ? " text-winterWay font-bold"
                   : "text-secondary font-normal"
@@ -315,12 +315,18 @@ const CoreFeaturesCard = () => {
               {feature}
             </button>
           ))}
+          <button className="flex group justify-between feature-btn w-full text-lightishBlue gap-1 items-center">
+            See All Features
+            <span className="w-5 flex justify-center items-center group-hover:-translate-y-1 duration-300">
+              <ExternalLink />
+            </span>
+          </button>
         </div>
       </div>
 
       {/* Feature Content Sections */}
       <div
-        className=" space-y-12 md:space-y-32 overflow-visible lg:max-w-[639px] w-full"
+        className="space-y-12 xl:space-y-16 overflow-visible lg:max-w-[639px] w-full"
         ref={contentContainerRef}
       >
         {featureContents.map((content, index) => (

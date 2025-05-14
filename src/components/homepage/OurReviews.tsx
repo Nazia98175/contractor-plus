@@ -8,6 +8,7 @@ import { GroupStartIcon } from "../common/Icons";
 import ReviewModal from "../common/ReviewModal";
 import TextAnimation from "../common/TextAnimation";
 import ReviewCard from "./ReviewCard";
+import Image from "next/image";
 
 export interface ReviewItem {
   id: string | number;
@@ -48,16 +49,24 @@ const OurReviews: React.FC = () => {
           distance={50}
           className="flex flex-col sm:flex-row gap-4 items-center"
         >
-          <img
+          <Image
             className="max-w-[135px] w-full block md:hidden"
             src="/images/svg/capterra-icon.svg"
             alt="capterra icon"
+            width={135}
+            height={40}
+            priority
           />
-          <img
+
+          <Image
             className="max-w-[135px] w-full hidden md:block"
             src="/images/svg/capterra-icon2.svg"
             alt="capterra icon"
+            width={135}
+            height={40}
+            priority
           />
+
           <div>
             <div className="flex items-center gap-3">
               <h3 className="text-winterWay text-sm font-bold font-jakarta">

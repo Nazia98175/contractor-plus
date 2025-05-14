@@ -60,11 +60,11 @@ const Hero = () => {
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
 
       {/* Here is have to add particle js  */}
-      <img
+      {/* <img
         src="/images/png/stars.png"
         className="absolute inset-0 w-full h-full z-10 object-cover"
         alt="Stars"
-      />
+      /> */}
     </section>
   );
 };

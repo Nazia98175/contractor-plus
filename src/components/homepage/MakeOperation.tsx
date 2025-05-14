@@ -31,14 +31,15 @@ const MakeOperation = () => {
 
   return (
     <section ref={ref} className="bg-kuroilight relative pt-16 overflow-hidden">
-      <Image
+      {/* particle js  */}
+      {/* <Image
         height={600}
         width={600}
         unoptimized
         className="top-0 left-0 absolute h-[600px] w-full pointer-events-none"
         src="/images/png/stars.png"
         alt="stars image"
-      />
+      /> */}
       <div className="hidden lg:block absolute bottom-0 left-[70px] max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
 
       <span className="top-[-202px] right-0 absolute pointer-events-none">

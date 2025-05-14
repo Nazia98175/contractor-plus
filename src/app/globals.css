@@ -244,3 +244,50 @@ html {
   display: block !important;
   z-index: 777 !important;
 }
+
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 180%; /* Wide for smooth sweep */
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent 20%,
+    rgba(200, 200, 200, 0.2) 35%,
+    /* Subtle gray for metallic base */ rgba(240, 240, 240, 0.8) 50%,
+    /* Bright silver peak */ rgba(200, 200, 200, 0.2) 65%,
+    transparent 80%
+  );
+  filter: blur(2px); /* Minimal blur for sharp metallic sheen */
+  left: -180%;
+  transition: left 1.2s cubic-bezier(0.4, 0.8, 0.6, 1), opacity 0.3s ease;
+  z-index: 10;
+  opacity: 0.65; /* Subtle default for elegance */
+}
+
+.btn-hover:hover::before {
+  left: 180%;
+  opacity: 0.9; /* Brighter on hover for reflective pop */
+}
+
+.btn-hover:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 5px rgba(255, 255, 255, 0.15); /* Metallic depth */
+}
+.rfm-child {
+  height: auto !important;
+  display: flex;
+}
+.rfm-initial-child-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal !important;
+}

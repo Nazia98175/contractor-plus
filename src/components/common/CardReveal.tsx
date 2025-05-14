@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef, useEffect, ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React, { ReactNode, useLayoutEffect, useRef } from "react";
 
 // Make sure to register ScrollTrigger once at the app level if possible
 if (typeof window !== "undefined") {
@@ -66,14 +66,11 @@ const CardReveal: React.FC<CardRevealProps> = ({
       // Create a new ScrollTrigger for the container
       scrollTriggerRef.current = ScrollTrigger.create({
         trigger: container,
-        start: "top 70%", // When container starts entering viewport
-        end: "bottom 25%", // When container is leaving viewport
+        start: "top 70%",
+        end: "bottom 25%",
         markers: debug,
-        // Using "play none none none" for one-time animation
-        // This means: play on enter, then do nothing for all other actions
         toggleActions: "play none none none",
         onEnter: () => {
-          // Animate cards into view with stagger - this happens only once
           gsap.to(cards, {
             y: 0,
             opacity: 1,
@@ -98,7 +95,6 @@ const CardReveal: React.FC<CardRevealProps> = ({
       }
     };
 
-    // Force refresh on certain events
     window.addEventListener("resize", handleResize);
 
     // Cleanup function
@@ -111,61 +107,6 @@ const CardReveal: React.FC<CardRevealProps> = ({
       gsap.killTweensOf(cards);
     };
   }, [children, distance, staggerDelay, animationDuration, easing, debug]);
-
-  // Add route change handler for SPA navigation
-  useEffect(() => {
-    const handleRouteChange = () => {
-      // Force refresh ScrollTrigger on route change
-      ScrollTrigger.refresh();
-
-      // If animation was already set up, refresh it
-      if (animationSetupRef.current && containerRef.current) {
-        const cards = Array.from(
-          containerRef.current.children
-        ) as HTMLElement[];
-        if (cards.length) {
-          // We don't reset the state here since we want the cards to stay visible after first animation
-          // Only refresh the trigger
-          if (scrollTriggerRef.current) {
-            scrollTriggerRef.current.refresh();
-          }
-        }
-      }
-    };
-
-    // For SPA navigation - can be adapted to your router (Next.js example below)
-    // If using Next.js:
-    // Router.events.on('routeChangeComplete', handleRouteChange);
-
-    // For demonstration, we'll use scroll events to periodically check
-    const scrollHandler = () => {
-      // Check if we need to refresh (for example, after page transitions or DOM changes)
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh();
-      });
-    };
-
-    // Add scroll listener with throttle
-    let scrollTimeout: NodeJS.Timeout;
-    const throttledScrollHandler = () => {
-      if (!scrollTimeout) {
-        scrollTimeout = setTimeout(() => {
-          scrollHandler();
-          scrollTimeout = undefined as unknown as NodeJS.Timeout;
-        }, 200); // Throttle to 200ms
-      }
-    };
-
-    window.addEventListener("scroll", throttledScrollHandler, {
-      passive: true,
-    });
-
-    return () => {
-      window.removeEventListener("scroll", throttledScrollHandler);
-      // If using Next.js:
-      // Router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [distance]);
 
   return (
     <div ref={containerRef} className={className}>

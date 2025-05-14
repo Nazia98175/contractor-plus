@@ -1,6 +1,7 @@
 import React from "react";
 import PlatformCard from "./PlatformCard";
 import CustomSlider from "../common/CustomSlider";
+import CardReveal from "../common/CardReveal";
 
 interface Platform {
   name: string;
@@ -45,12 +46,16 @@ const TrustBar: React.FC = () => {
         alt="Stars"
       />
 
-      {/* Desktop view */}
-      <div className="hidden lg:flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center">
+      <CardReveal
+        staggerDelay={0.4}
+        animationDuration={0.8}
+        distance={50}
+        className="hidden lg:flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center"
+      >
         {platforms.map((platform, index) => (
           <PlatformCard platform={platform} key={index} />
         ))}
-      </div>
+      </CardReveal>
 
       <div className="relative z-50 lg:hidden">
         <CustomSlider autoplay={true}>

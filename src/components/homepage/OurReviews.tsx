@@ -1,12 +1,13 @@
 "use client";
-import React, { ReactElement, useState } from "react";
-import ReviewCard from "./ReviewCard";
-import { GroupStartIcon } from "../common/Icons";
-import { OurReviewList } from "../common/Helper";
-import ReviewModal from "../common/ReviewModal";
-import Marquee from "react-fast-marquee";
 import { useTranslations } from "next-intl";
+import React, { useState } from "react";
+import Marquee from "react-fast-marquee";
+import CardReveal from "../common/CardReveal";
+import { OurReviewList } from "../common/Helper";
+import { GroupStartIcon } from "../common/Icons";
+import ReviewModal from "../common/ReviewModal";
 import TextAnimation from "../common/TextAnimation";
+import ReviewCard from "./ReviewCard";
 
 export interface ReviewItem {
   id: string | number;
@@ -41,7 +42,12 @@ const OurReviews: React.FC = () => {
             {t("heading")}
           </h3>
         </TextAnimation>
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
+        <CardReveal
+          staggerDelay={0.4}
+          animationDuration={0.8}
+          distance={50}
+          className="flex flex-col sm:flex-row gap-4 items-center"
+        >
           <img
             className="max-w-[135px] w-full block md:hidden"
             src="/images/svg/capterra-icon.svg"
@@ -69,7 +75,7 @@ const OurReviews: React.FC = () => {
               {t("basedOn", { count: 1320 })}
             </p>
           </div>
-        </div>
+        </CardReveal>
       </div>
       <div className="relative">
         <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40 hidden lg:block blur-2xl pointer-events-none"></div>

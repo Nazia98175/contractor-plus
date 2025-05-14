@@ -77,7 +77,6 @@ export default function TextAnimation({
             trigger: containerRef.current,
             start: "top 75%",
             once: false,
-            markers: true,
           },
         });
       } else {

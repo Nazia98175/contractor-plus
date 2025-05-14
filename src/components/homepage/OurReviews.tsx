@@ -36,7 +36,7 @@ const OurReviews: React.FC = () => {
   return (
     <section className="pt-[15px] pb-[35px] md:py-20 bg-white">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
-        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-black text-center md:text-start">
             {t("heading")}
           </h3>

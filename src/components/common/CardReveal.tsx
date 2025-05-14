@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, ReactNode } from "react";
+import React, { useLayoutEffect, useRef, useEffect, ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -27,8 +27,10 @@ const CardReveal: React.FC<CardRevealProps> = ({
   debug = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const animationSetupRef = useRef<boolean>(false);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-  // Use useLayoutEffect for DOM manipulations to avoid flicker
+  // Setup and refresh animation whenever children change
   useLayoutEffect(() => {
     // Safety check for window/document
     if (typeof window === "undefined") return;
@@ -44,67 +46,126 @@ const CardReveal: React.FC<CardRevealProps> = ({
     const cards = Array.from(container.children) as HTMLElement[];
     if (!cards.length) return;
 
-    // Clear any existing ScrollTriggers for these elements
-    ScrollTrigger.getAll().forEach((st) => {
-      if (cards.includes(st.vars.trigger as HTMLElement)) {
-        st.kill();
+    // Function to set up the animation
+    const setupAnimation = () => {
+      // Clear existing ScrollTrigger if any
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+        scrollTriggerRef.current = null;
       }
-    });
 
-    // Set initial state for all cards - hidden and translated down
-    cards.forEach((card) => {
-      gsap.set(card, {
+      // Kill any existing tweens
+      gsap.killTweensOf(cards);
+
+      // Set initial state for all cards - hidden and translated down
+      gsap.set(cards, {
         y: distance,
         opacity: 0,
       });
-    });
 
-    // Create a single ScrollTrigger for the container
-    const containerTrigger = ScrollTrigger.create({
-      trigger: container,
-      start: "top 85%", // When container starts entering viewport
-      end: "bottom 25%", // When container is leaving viewport
-      markers: debug,
-      // Using toggleActions to make animation behavior more predictable
-      // play when entering, keep state when leaving,
-      // resume when entering back, reset when leaving back
-      toggleActions: "play none resume reset",
-      onEnter: () => {
-        // Animate cards into view with stagger
-        gsap.to(cards, {
-          y: 0,
-          opacity: 1,
-          duration: animationDuration,
-          stagger: staggerDelay,
-          ease: easing,
-          overwrite: true,
-        });
-      },
-      onLeaveBack: () => {
-        // When scrolling back above container, animate cards out
-        // Use reverse stagger so first cards hide first
-        gsap.to(cards, {
-          y: distance,
-          opacity: 0,
-          duration: animationDuration,
-          stagger: {
-            each: staggerDelay,
-            from: "start", // Start from the first element (top)
-          },
-          ease: easing,
-          overwrite: true,
-        });
-      },
-    });
+      // Create a new ScrollTrigger for the container
+      scrollTriggerRef.current = ScrollTrigger.create({
+        trigger: container,
+        start: "top 70%", // When container starts entering viewport
+        end: "bottom 25%", // When container is leaving viewport
+        markers: debug,
+        // Using "play none none none" for one-time animation
+        // This means: play on enter, then do nothing for all other actions
+        toggleActions: "play none none none",
+        onEnter: () => {
+          // Animate cards into view with stagger - this happens only once
+          gsap.to(cards, {
+            y: 0,
+            opacity: 1,
+            duration: animationDuration,
+            stagger: staggerDelay,
+            ease: easing,
+            overwrite: true,
+          });
+        },
+      });
+
+      animationSetupRef.current = true;
+    };
+
+    // Set up animation
+    setupAnimation();
+
+    // Add event listeners for scroll position changes
+    const handleResize = () => {
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.refresh();
+      }
+    };
+
+    // Force refresh on certain events
+    window.addEventListener("resize", handleResize);
 
     // Cleanup function
     return () => {
-      if (containerTrigger) {
-        containerTrigger.kill();
+      window.removeEventListener("resize", handleResize);
+
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
       }
       gsap.killTweensOf(cards);
     };
   }, [children, distance, staggerDelay, animationDuration, easing, debug]);
+
+  // Add route change handler for SPA navigation
+  useEffect(() => {
+    const handleRouteChange = () => {
+      // Force refresh ScrollTrigger on route change
+      ScrollTrigger.refresh();
+
+      // If animation was already set up, refresh it
+      if (animationSetupRef.current && containerRef.current) {
+        const cards = Array.from(
+          containerRef.current.children
+        ) as HTMLElement[];
+        if (cards.length) {
+          // We don't reset the state here since we want the cards to stay visible after first animation
+          // Only refresh the trigger
+          if (scrollTriggerRef.current) {
+            scrollTriggerRef.current.refresh();
+          }
+        }
+      }
+    };
+
+    // For SPA navigation - can be adapted to your router (Next.js example below)
+    // If using Next.js:
+    // Router.events.on('routeChangeComplete', handleRouteChange);
+
+    // For demonstration, we'll use scroll events to periodically check
+    const scrollHandler = () => {
+      // Check if we need to refresh (for example, after page transitions or DOM changes)
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    };
+
+    // Add scroll listener with throttle
+    let scrollTimeout: NodeJS.Timeout;
+    const throttledScrollHandler = () => {
+      if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+          scrollHandler();
+          scrollTimeout = undefined as unknown as NodeJS.Timeout;
+        }, 200); // Throttle to 200ms
+      }
+    };
+
+    window.addEventListener("scroll", throttledScrollHandler, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", throttledScrollHandler);
+      // If using Next.js:
+      // Router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [distance]);
 
   return (
     <div ref={containerRef} className={className}>

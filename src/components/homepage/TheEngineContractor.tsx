@@ -33,11 +33,13 @@ const TheEngineContractor = () => {
             </div>
             {t("countup")}
           </h2>
-          <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
-            <p className="text-base font-medium text-decemberSky text-center md:text-left">
+          <TextAnimation delay={0.2}>
+            <p className="text-base flex font-medium text-decemberSky text-center md:text-left">
               {t("desc")}
             </p>
           </TextAnimation>
+
+          {/* </TextAnimation> */}
         </div>
         <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
           <img

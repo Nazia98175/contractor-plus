@@ -9,12 +9,12 @@ const Finally = () => {
   return (
     <section className="relative pt-16 md:pt-20 xl:pt-[186px] overflow-hidden">
       <div className="space-y-4 z-10 relative px-2">
-        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center text-white">
             {t("heading")}
           </h2>
         </TextAnimation>
-        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
             {t("desc")}
           </p>

@@ -35,12 +35,12 @@ const ContractorIndustry = () => {
         fill
       />
       <div className="px-2 relative z-20">
-        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-center text-white">
             {t("heading")}
           </h3>
         </TextAnimation>
-        <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
             {t("desc")}
           </p>

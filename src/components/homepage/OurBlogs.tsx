@@ -3,6 +3,7 @@ import React from "react";
 import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
+import CardReveal from "../common/CardReveal";
 
 const OurBlogs = () => {
   // Get translations from the "blogs" namespace
@@ -58,7 +59,7 @@ const OurBlogs = () => {
     <section className="py-12 px-4 bg-white">
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
-          <TextAnimation clipEffect={true} animateOnScroll={true} delay={0.3}>
+          <TextAnimation animateOnScroll={true} delay={0.3}>
             <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
               {t("heading")}
             </h2>
@@ -81,7 +82,12 @@ const OurBlogs = () => {
             </button>
           </div>
         </div>
-        <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-7">
+        <CardReveal
+          staggerDelay={0.15}
+          animationDuration={0.8}
+          distance={50}
+          className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-7"
+        >
           {blogListMobile.map((article) => (
             <article key={article.id} className="py-10 h-[400px] relative">
               {article.hasBlurEffect && (
@@ -124,7 +130,7 @@ const OurBlogs = () => {
               </div>
             </article>
           ))}
-        </div>
+        </CardReveal>
         <div className="lg:hidden flex flex-col-reverse xl:flex-row justify-between items-stretch gap-4">
           {/* Left column */}
           <div className="max-w-[600px] mx-auto xl:mx-0 xl:max-w-[450px] w-full flex flex-col gap-4">

@@ -4,26 +4,15 @@ import FeatureCard from "./FeatureCard";
 import CustomSlider from "../common/CustomSlider";
 import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
+import { featureKeys } from "../common/Helper";
 
 const Features = () => {
   const t = useTranslations("feature");
-  const featureData = [
-    {
-      title: t("card1.heading"),
-      desc: t("card1.desc"),
-      img: "/images/webp/user-friendly.webp",
-    },
-    {
-      title: t("card2.heading"),
-      desc: t("card2.desc"),
-      img: "/images/webp/communication-box.webp",
-    },
-    {
-      title: t("card3.heading"),
-      desc: t("card3.desc"),
-      img: "/images/webp/workspace.webp",
-    },
-  ];
+  const featureData = featureKeys.map((item) => ({
+    title: t(item.titleKey),
+    desc: t(item.descKey),
+    img: item.img,
+  }));
   return (
     <section className="bg-white sm:px-2 xl:pt-[78px] pt-11 lg:pb-[37px] pb-6">
       <div className="main-container sm:!px-2 !px-0">

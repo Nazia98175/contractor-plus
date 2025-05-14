@@ -276,6 +276,24 @@ export const OurReviewList: Review[] = [
   },
 ];
 
+export const featureKeys = [
+  {
+    titleKey: "card1.heading",
+    descKey: "card1.desc",
+    img: "/images/webp/user-friendly.webp",
+  },
+  {
+    titleKey: "card2.heading",
+    descKey: "card2.desc",
+    img: "/images/webp/communication-box.webp",
+  },
+  {
+    titleKey: "card3.heading",
+    descKey: "card3.desc",
+    img: "/images/webp/workspace.webp",
+  },
+];
+
 export const blogList = [
   {
     id: 1,

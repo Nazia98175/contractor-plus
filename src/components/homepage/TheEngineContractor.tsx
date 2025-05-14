@@ -38,8 +38,6 @@ const TheEngineContractor = () => {
               {t("desc")}
             </p>
           </TextAnimation>
-
-          {/* </TextAnimation> */}
         </div>
         <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
           <img

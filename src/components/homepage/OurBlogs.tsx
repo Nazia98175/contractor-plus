@@ -1,9 +1,7 @@
-import Image from "next/image";
-import React from "react";
-import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
-import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
+import TextAnimation from "../common/TextAnimation";
 
 const OurBlogs = () => {
   // Get translations from the "blogs" namespace
@@ -86,10 +84,13 @@ const OurBlogs = () => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-7"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  lg:gap-7 place-items-center"
         >
           {blogListMobile.map((article) => (
-            <article key={article.id} className="py-10 h-[400px] relative">
+            <article
+              key={article.id}
+              className="xl:py-10 h-[400px] w-full max-w-[400px] relative"
+            >
               {article.hasBlurEffect && (
                 <div className="absolute top-[40%] left-[40%] max-w-[100px] w-full h-[150px] rounded-[10px] bg-gray-400 blur-[45px] opacity-75 z-[-1] pointer-events-none"></div>
               )}
@@ -101,7 +102,7 @@ const OurBlogs = () => {
               />
               <div className="py-6 relative flex flex-col justify-between w-[207px] h-[207px]">
                 <img
-                  className="absolute top-0 lef-0 w-full h-full z-0 pointer-events-none"
+                  className="absolute top-0 lef-0 w-full h-full z-10 pointer-events-none object-contain"
                   src="images/webp/blog-angle.webp"
                   alt="blog angle"
                 />
@@ -117,22 +118,21 @@ const OurBlogs = () => {
               </div>
               <div className="relative py-6 px-4 w-[346px] mt-2">
                 <img
-                  className="absolute top-0 left-0 h-full w-full z-[-1]"
+                  className="absolute top-0 left-0 h-full w-full z-0"
                   src="/images/webp/blog-angle2.webp"
                   alt="blog angle"
                 />
-                <h3 className="text-base md:text-lg text-winterWay font-extrabold pb-1 font-jakarta">
+                <h3 className="text-base relative z-10 md:text-lg text-winterWay font-extrabold pb-1 font-jakarta">
                   {article.title}
                 </h3>
-                <p className="text-secondary font-medium text-xs max-w-[255px] font-jakarta">
+                <p className="text-secondary relative z-10 font-medium text-xs max-w-[255px] font-jakarta">
                   {article.description}
                 </p>
               </div>
             </article>
           ))}
         </CardReveal>
-        <div className="lg:hidden flex flex-col-reverse xl:flex-row justify-between items-stretch gap-4">
-          {/* Left column */}
+        {/* <div className="lg:hidden flex flex-col-reverse xl:flex-row justify-between items-stretch gap-4">
           <div className="max-w-[600px] mx-auto xl:mx-0 xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogList.map((blog) => (
               <article key={blog.id} className="relative w-full">
@@ -166,7 +166,6 @@ const OurBlogs = () => {
             ))}
           </div>
 
-          {/* Right column (Featured Blog) */}
           <div className="w-full xl:max-w-[700px] relative flex flex-col justify-end pb-6">
             <Image
               height={700}
@@ -194,8 +193,8 @@ const OurBlogs = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="block md:hidden pt-4">
+        </div> */}
+        <div className="flex justify-center md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
             {t("viewAllBlogs")}
             <BlogBtnIcon />

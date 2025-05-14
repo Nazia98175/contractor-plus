@@ -40,11 +40,12 @@ const platforms: Platform[] = [
 const TrustBar: React.FC = () => {
   return (
     <section className="relative">
-      <img
+      {/* particle js  */}
+      {/* <img
         src="/images/png/stars.png"
         className="absolute inset-0 w-full h-full z-10 object-cover"
         alt="Stars"
-      />
+      /> */}
 
       <CardReveal
         staggerDelay={0.4}

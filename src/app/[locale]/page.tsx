@@ -47,7 +47,8 @@ export default function Home() {
       </div>
       <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
         <div className="absolute bottom-0  max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[30px] opacity-35 block md:hidden"></div>
-        <Image
+        {/* particle js  */}
+        {/* <Image
           src="/images/png/stars.png"
           alt="Star Background"
           width={1920}
@@ -59,7 +60,7 @@ export default function Home() {
           alt="Star Background"
           fill
           className="absolute top-[50%] -z-50 left-0 object-cover"
-        />
+        /> */}
         <ContractorPlatforms />
         <Finally />
       </div>
@@ -67,7 +68,9 @@ export default function Home() {
       <Features />
       <ContractorIndustry />
       <OurReviews />
-      <div className="bg-[url('/images/png/stars.png')] bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">
+
+      {/* particle js  */}
+      <div className="bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">
         <Whatever />
         <MakeOperation />
       </div>

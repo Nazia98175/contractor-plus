@@ -8,20 +8,15 @@ const EntireBusiness: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
-  // Get translations
   const t = useTranslations("entireBusiness");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-
-    // Start loading
     setLoading(true);
 
-    // Simulate API call - stops loading after 2 seconds
     setTimeout(() => {
       setLoading(false);
       setEmail("");
-      // Here you would typically handle the form submission success
       console.log("Form submitted with email:", email);
     }, 2000);
   };

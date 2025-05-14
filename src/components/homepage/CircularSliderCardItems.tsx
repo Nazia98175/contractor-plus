@@ -17,7 +17,10 @@ const CircularSliderCardItems = ({ items }: CircularSliderCardItemsProps) => {
   return (
     <>
       {items.map((item, index) => (
-        <div key={index} className="w-full h-full relative">
+        <div
+          key={index}
+          className="w-full h-full relative hover:bg-red-900 p-10"
+        >
           <img
             src={item.image}
             alt={item.text || "Slider image"}

@@ -413,7 +413,7 @@ class Media {
 }
 
 interface AppConfig {
-  items?: { image: string; text?: string }[] | ReactNode;
+  items?: { image: string; text?: string }[];
   className?: string;
   bend?: number;
   textColor?: string;
@@ -471,13 +471,7 @@ class App {
     this.createScene();
     this.onResize();
     this.createGeometry();
-
-    // Handle the case where items is a React component or an array
-    const itemsArray = !React.isValidElement(items)
-      ? (items as { image: string; text?: string }[])
-      : [];
-
-    this.createMedias(itemsArray, bend, textColor, borderRadius, font);
+    this.createMedias(items, bend, textColor, borderRadius, font);
     this.update();
     this.addEventListeners();
   }
@@ -653,8 +647,20 @@ class App {
   }
 }
 
+// Type for items that can be passed to CircularSlider
+interface Item {
+  image: string;
+  text?: string;
+}
+
+// Props for CircularSliderCardItems component
+interface CircularSliderCardItemsProps {
+  items: Item[];
+}
+
+// Interface for CircularSlider props
 interface CircularSliderProps {
-  items?: { image: string; text?: string }[] | ReactNode;
+  items?: Item[] | React.ReactElement<CircularSliderCardItemsProps>;
   bend?: number;
   textColor?: string;
   borderRadius?: number;
@@ -662,6 +668,10 @@ interface CircularSliderProps {
   className?: string;
 }
 
+/**
+ * CircularSlider component
+ * Accepts either an array of items or a CircularSliderCardItems component
+ */
 const CircularSlider = ({
   items = [],
   bend = 3,
@@ -671,27 +681,30 @@ const CircularSlider = ({
   className = "",
 }: CircularSliderProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const itemsDataRef = useRef<Item[]>([]);
 
-  // Extract array data if a React component is passed as items
-  let itemsArray: { image: string; text?: string }[] = [];
-
-  // If items is a React element, we need to extract data differently
-  if (React.isValidElement(items)) {
-    // We can't directly access the props data here in the normal React flow
-    // This would require a different architecture (e.g., render props pattern)
-    console.warn(
-      "Passing React components as items is not fully supported. Please pass an array of items directly."
-    );
-  } else {
-    // Use the array directly if it's already an array
-    itemsArray = items as { image: string; text?: string }[];
-  }
-
+  // Extract items array from props
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Check if items is a React element (CircularSliderCardItems)
+    if (React.isValidElement(items)) {
+      // Extract the items prop from the CircularSliderCardItems component
+      const itemsComponent =
+        items as React.ReactElement<CircularSliderCardItemsProps>;
+      if (itemsComponent.props && itemsComponent.props.items) {
+        itemsDataRef.current = itemsComponent.props.items;
+      }
+    } else {
+      // Use items directly if it's an array
+      itemsDataRef.current = items as Item[];
+    }
+  }, [items]);
+
+  // Initialize WebGL app
+  useEffect(() => {
+    if (!containerRef.current || itemsDataRef.current.length === 0) return;
 
     const app = new App(containerRef.current, {
-      items: itemsArray,
+      items: itemsDataRef.current,
       bend,
       textColor,
       borderRadius,
@@ -701,16 +714,17 @@ const CircularSlider = ({
     return () => {
       app.destroy();
     };
-  }, [itemsArray, bend, textColor, borderRadius, font]);
+  }, [bend, textColor, borderRadius, font, itemsDataRef.current]);
 
-  // If items is a React component, we render the WebGL canvas AND the React component
-  // The React component will be visible to users but not used by the WebGL rendering
   return (
     <div
       className={`${className} w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative`}
       ref={containerRef}
     >
-      {React.isValidElement(items) && <div className="sr-only">{items}</div>}
+      {/* Hidden version of the items for accessibility and SEO */}
+      <div className="sr-only">
+        {React.isValidElement(items) ? items : null}
+      </div>
     </div>
   );
 };

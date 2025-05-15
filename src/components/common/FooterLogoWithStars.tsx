@@ -1,0 +1,137 @@
+import React, { useEffect } from "react";
+import { FooterLogoIcon } from "./Icons";
+
+const FooterLogoWithStars: React.FC = () => {
+  useEffect(() => {
+    // Load particles.js from CDN
+    const script = document.createElement("script");
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
+    script.async = true;
+
+    script.onload = () => {
+      if (!(window as any).particlesJS) return;
+
+      // Initialize particles with MORE particles and FASTER speed
+      (window as any).particlesJS("footer-logo-particles", {
+        particles: {
+          number: {
+            value: 200,
+            density: {
+              enable: true,
+              value_area: 300,
+            },
+          },
+          color: {
+            value: ["#ffffff"],
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          opacity: {
+            value: 0.7,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2, // animation-speed
+              opacity_min: 0.2,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 3, // animation-speed
+              size_min: 0.3,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: false,
+          },
+          move: {
+            enable: true,
+            speed: 3, // animation-speed
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "bubble",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            bubble: {
+              distance: 100,
+              size: 5,
+              duration: 2,
+              opacity: 0.8,
+              speed: 3,
+            },
+            push: {
+              particles_nb: 10, // particle-number
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    };
+
+    document.body.appendChild(script);
+
+    // Clean up
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6 relative">
+      {/* Particles container - positioned absolutely */}
+      <div
+        id="footer-logo-particles"
+        className="absolute"
+        style={{
+          width: "250px", // बढ़ाया गया width (पहले 200px था)
+          height: "150px", // बढ़ाया गया height (पहले 100px था)
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          zIndex: 0,
+        }}
+      ></div>
+
+      {/* Logo with higher z-index to appear on top of particles */}
+      <div className="relative z-10">
+        <FooterLogoIcon />
+      </div>
+    </div>
+  );
+};
+
+export default FooterLogoWithStars;

@@ -110,7 +110,7 @@ body {
   @apply cursor-pointer lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px]  w-fit font-jakarta;
 }
 .header-li-dropdown {
-  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter text-lightBlack duration-300 ease-linear;
+  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
 }
 .all-features-button {
   @apply flex items-center gap-2.5 text-lg font-medium text-lightBlack p-1 font-inter;

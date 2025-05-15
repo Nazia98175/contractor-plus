@@ -2,10 +2,8 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 const IndustriesDropdown = () => {
-  // Get translations from the "industries" namespace
   const t = useTranslations("industries");
 
-  // Get the industry links list from translations
   const industriesLinks = t.raw("links") as {
     label: string;
     href: string;
@@ -30,14 +28,6 @@ const IndustriesDropdown = () => {
           </li>
         ))}
       </ul>
-      {/* <Image
-        className="object-contain max-w-[420px] w-full"
-        src={"/images/webp/group-eng.webp"}
-        alt={t("imageAlt") || "group-eng"}
-        unoptimized
-        width={420}
-        height={290}
-      /> */}
     </article>
   );
 };

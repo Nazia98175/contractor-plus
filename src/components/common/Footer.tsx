@@ -39,13 +39,11 @@ const Footer = () => {
   const legalLinks = t.raw("legalLinks");
   return (
     <footer className="bg-kuroiBlack py-10 w-full relative">
-      {/* Background Line Decoration */}
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>
 
       <div className="main-container">
-        {/* Header */}
         <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center">
           <FooterLogoIcon />
           <div className="border-lightBlack border footer-gradient-bg rounded-[500px] text-white text-sm font-medium px-3 py-2 gap-3 inline-flex items-center">
@@ -54,7 +52,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Desktop Footer Links */}
         <div className="hidden md:flex flex-wrap justify-center gap-6 w-full pt-7">
           {sections.map((title, idx) => (
             <FooterSection
@@ -101,7 +98,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Footer Bottom */}
         <div className="flex justify-between items-center gap-3 pt-4">
           <div className="hidden md:flex gap-3 items-center">
             <p className="text-xs text-secondary font-medium font-montserrat">

@@ -20,7 +20,7 @@ interface DropdownItemProps {
   }>;
   isOpen: boolean;
   onToggle: () => void;
-  id: string; // Added id prop to identify which dropdown is open
+  id: string;
 }
 
 const DropdownItem = ({

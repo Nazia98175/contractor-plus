@@ -1,13 +1,14 @@
 "use client";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import FeaturesDropdown from "./FeaturesDropdown";
 import IndustriesDropdown from "./IndustriesDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const HeaderLiItems = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -275,7 +276,7 @@ const HeaderLiItems = () => {
               onMouseLeave={handleMenuItemLeave}
               className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
-                  ? "!text-kuroiBlack bg-white"
+                  ? "!text-kuroiBlack"
                   : "text-superSilver bg-transparent"
               }`}
             >
@@ -286,13 +287,22 @@ const HeaderLiItems = () => {
               key={index}
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={handleMenuItemLeave}
-              className={`header-li whitespace-nowrap py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+              className={`header-li whitespace-nowrap flex items-center gap-1 py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver bg-transparent"
               }`}
             >
               {item.label}
+
+              <ChevronDown
+                size={16}
+                className={` ${
+                  activeMenu === item.id
+                    ? "!text-kuroiBlack rotate-180"
+                    : "text-superSilver"
+                } transition-transform duration-300 `}
+              />
             </button>
           )
         )}
@@ -314,7 +324,7 @@ const HeaderLiItems = () => {
       {/* Dropdown Panel */}
       <div
         ref={dropdownRef}
-        className="absolute left-0 right-0 top-[calc(100%+0px)]  mx-auto  z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px] flex flex-col shadow-c3"
+        className="absolute left-0 right-0 top-[calc(100%+0px)] mx-auto z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px] flex flex-col shadow-c3"
         onMouseEnter={handleDropdownEnter}
         style={{
           visibility: activeMenu || isTransitioning ? "visible" : "hidden",

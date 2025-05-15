@@ -3,10 +3,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 
 const PricingDropdown = () => {
-  // Get translations from the "pricing" namespace
   const t = useTranslations("pricing");
-
-  // Get the pricing links list from translations
   const pricingLinks = t.raw("links") as {
     label: string;
     href: string;

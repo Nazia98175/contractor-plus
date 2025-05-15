@@ -20,8 +20,10 @@ import {
   PropertyIcon,
   BookkeepingIcon,
   TimeIcon,
+  BellIcon,
 } from "./Icons";
 import { useTranslations } from "next-intl";
+import { BellDotIcon, BellPlusIcon, Play } from "lucide-react";
 
 const FeaturesDropdown = ({ isVisible = true }) => {
   const t = useTranslations("features");
@@ -35,7 +37,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     "timeClock",
     "projectManagement",
     "scheduling",
-    "leadGeneration", // Repurposed for Mileage Tracking in translations
+    "leadGeneration",
     "payments",
     "clientPortal",
     "proWebsite",
@@ -44,7 +46,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     "propertyProfiles",
     "bigChiefAI",
     "communication",
-    "bookkeeping",
+    "service",
   ];
 
   const featureIcons = {
@@ -65,7 +67,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     propertyProfiles: <PropertyIcon />,
     bigChiefAI: <BigChiefAIIcon />,
     communication: <TelephoneIcon />,
-    bookkeeping: <BookkeepingIcon />,
+    service: <BellIcon />,
   };
 
   const newFeatures = {
@@ -86,7 +88,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     propertyProfiles: true,
     bigChiefAI: true,
     communication: true,
-    bookkeeping: false,
+    service: false,
   };
 
   if (!isVisible) {
@@ -112,7 +114,6 @@ const FeaturesDropdown = ({ isVisible = true }) => {
               <div className="flex gap-2.5 items-start">
                 <span>{featureIcons[featureId]}</span>
                 <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">
-                  {/* Use translation for label based on feature ID */}
                   {t(`${featureId}.label`)}
                   {newFeatures[featureId] && (
                     <div className="px-2 h-5 flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">

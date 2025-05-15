@@ -8,8 +8,6 @@ const WhyContractorDropdown = () => {
   // Get translations from the "whyContractor" namespace
   const t = useTranslations("whyContractor");
 
-  // Get the links list from translations
-  // This assumes your JSON structure has a "links" array with label, description, and href properties
   const whyContractorLinks = t.raw("links") as {
     label: string;
     description: string;

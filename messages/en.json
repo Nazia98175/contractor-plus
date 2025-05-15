@@ -254,7 +254,7 @@
       "label": "Business Phone & SMS",
       "description": "Centralized Team & Client Conversations"
     },
-    "bookkeeping": {
+    "service": {
       "label": "Service Requests",
       "description": "Direct Requests From Clients & Tenants"
     }

@@ -14,7 +14,7 @@ interface CardRevealProps {
   className?: string;
   distance?: number;
   easing?: string;
-  debug?: boolean; // Add markers for debugging
+  debug?: boolean;
 }
 
 const CardReveal: React.FC<CardRevealProps> = ({
@@ -22,15 +22,14 @@ const CardReveal: React.FC<CardRevealProps> = ({
   staggerDelay = 0.15,
   animationDuration = 0.8,
   className = "",
-  distance = 50, // AOS-like distance
-  easing = "power2.out", // AOS-like easing
+  distance = 50,
+  easing = "power2.out",
   debug = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationSetupRef = useRef<boolean>(false);
   const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-  // Setup and refresh animation whenever children change
   useLayoutEffect(() => {
     // Safety check for window/document
     if (typeof window === "undefined") return;

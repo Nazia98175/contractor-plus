@@ -1,7 +1,6 @@
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
-import { div } from "framer-motion/client";
-import TextAnimation from "../common/TextAnimation";
+import Image from "next/image";
 
 export interface Review {
   id: string | number;
@@ -29,17 +28,19 @@ const renderStars = (rating: number) => {
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   return (
-    <div className="mr-5 h-auto">
+    <div className="mr-5 min-h-full h-full ">
       <article
         onClick={openModal}
-        className="bg-doctor rounded-[10px] p-2 max-w-[350px] md:max-w-[419px] w-full cursor-pointer h-full"
+        className="bg-[#fafafa] btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer min-h-full h-full flex flex-col justify-between relative"
       >
         <div className="flex justify-between items-start gap-5">
           <div className="flex items-center gap-2">
-            <img
-              className="max-w-[42px]"
+            <Image
               src={review.profileUrl}
               alt="avatar"
+              width={42}
+              height={42}
+              className="max-w-[42px] object-contain"
             />
             <div>
               <div className="flex items-center gap-3">

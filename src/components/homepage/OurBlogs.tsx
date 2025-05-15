@@ -86,19 +86,19 @@ const OurBlogs = () => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  lg:gap-7 place-items-center"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
         >
           {blogListMobile.map((article) => (
             <article
               key={article.id}
-              className="xl:pt-10 h-[400px] overflow-hidden w-full max-w-[400px] relative"
+              className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
             >
               {/* {article.hasBlurEffect && (
                 <div className="absolute top-[40%] left-[40%] max-w-[100px] w-full h-[150px] rounded-[10px] bg-gray-400 blur-[45px] opacity-75 z-[-1] pointer-events-none"></div>
               )} */}
               <img
-                className="absolute top-16 right-0 w-full max-w-[250px] object-contain"
-                style={{ maxWidth: article.imageWidth }}
+                className="absolute top-16 right-0 w-full"
+                style={{ maxWidth: article.imageWidth, objectFit: "contain" }}
                 src={article.imageSrc}
                 alt="blog images"
               />

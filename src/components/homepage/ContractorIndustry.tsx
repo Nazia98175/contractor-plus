@@ -1,6 +1,4 @@
 import React from "react";
-import CircularSlider from "./CircularSlider";
-import CircularSliderCardItems from "./CircularSliderCardItems";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
@@ -8,19 +6,19 @@ import TextAnimation from "../common/TextAnimation";
 const ContractorIndustry = () => {
   const industryItems = [
     {
-      image: "https://picsum.photos/seed/construction/800/600?grayscale",
+      image: "/images/png/circular-slide-1.png",
     },
     {
-      image: "https://picsum.photos/seed/remodeling/800/600?grayscale",
+      image: "/images/png/circular-slide-1.png",
     },
     {
-      image: "https://picsum.photos/seed/contractor/800/600?grayscale",
+      image: "/images/png/circular-slide-1.png",
     },
     {
-      image: "https://picsum.photos/seed/hvac/800/600?grayscale",
+      image: "/images/png/circular-slide-1.png",
     },
     {
-      image: "https://picsum.photos/seed/plumbing/800/600?grayscale",
+      image: "/images/png/circular-slide-1.png",
     },
   ];
 
@@ -56,17 +54,6 @@ const ContractorIndustry = () => {
         src="/images/webp/contractor.webp"
         alt="Contractor"
       />
-      {/* <div style={{ height: "400px", position: "relative", margin: "0 auto" }}>
-        <CircularSlider
-          items={industryItems}
-          bend={5}
-          borderRadius={0.1}
-          className="mx-auto max-w-6xl"
-        />
-        <div className="hidden">
-          <CircularSliderCardItems items={industryItems} />
-        </div>
-      </div> */}
     </section>
   );
 };

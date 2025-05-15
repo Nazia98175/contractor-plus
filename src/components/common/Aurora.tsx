@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
+import { Renderer, Program, Mesh, Triangle } from "ogl";
 
 const VERT = `#version 300 es
 in vec2 position;
@@ -16,6 +16,7 @@ uniform float uAmplitude;
 uniform vec3 uColorStops[3];
 uniform vec2 uResolution;
 uniform float uBlend;
+uniform float uDirection;
 
 out vec4 fragColor;
 
@@ -85,6 +86,23 @@ struct ColorStop {
 void main() {
   vec2 uv = gl_FragCoord.xy / uResolution;
   
+  // Create diagonal motion by rotating the coordinate space
+  // For -45 degree angle movement (top-left to bottom-right)
+  float angle = radians(-45.0) * uDirection;
+  mat2 rotationMatrix = mat2(
+    cos(angle), -sin(angle),
+    sin(angle), cos(angle)
+  );
+  
+  // Center the coordinates, rotate, then move back
+  vec2 centeredUV = uv - 0.5;
+  vec2 rotatedUV = rotationMatrix * centeredUV;
+  vec2 finalUV = rotatedUV + 0.5;
+  
+  // Apply time-based scrolling along the rotated direction
+  finalUV.x += uTime * 0.05;
+  finalUV.y += uTime * 0.05;
+  
   ColorStop colors[3];
   colors[0] = ColorStop(uColorStops[0], 0.0);
   colors[1] = ColorStop(uColorStops[1], 0.5);
@@ -93,7 +111,8 @@ void main() {
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
   
-  float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
+  // Use the rotated coordinates for the noise
+  float height = snoise(vec2(finalUV.x * 2.0, finalUV.y * 2.0 + uTime * 0.1)) * 0.5 * uAmplitude;
   height = exp(height);
   height = (uv.y * 2.0 - height + 0.2);
   float intensity = 0.6 * height;
@@ -113,6 +132,7 @@ interface AuroraProps {
   blend?: number;
   time?: number;
   speed?: number;
+  direction?: number; // 1.0 for default, -1.0 for opposite
 }
 
 // Helper function to handle hex colors with alpha
@@ -149,6 +169,8 @@ export default function Aurora(props: AuroraProps) {
     colorStops = ["#00d8ff", "#7cff67", "#00d8ff"],
     amplitude = 1.0,
     blend = 0.5,
+    direction = 1.0,
+    speed = 0.5,
   } = props;
   const propsRef = useRef<AuroraProps>(props);
   propsRef.current = props;
@@ -201,6 +223,7 @@ export default function Aurora(props: AuroraProps) {
         uColorStops: { value: colorStopsArray },
         uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
         uBlend: { value: blend },
+        uDirection: { value: direction },
       },
     });
 
@@ -210,11 +233,16 @@ export default function Aurora(props: AuroraProps) {
     let animateId = 0;
     const update = (t: number) => {
       animateId = requestAnimationFrame(update);
-      const { time = t * 0.01, speed = 1.0 } = propsRef.current;
+      const currentSpeed = propsRef.current.speed ?? speed;
+      const currentTime = propsRef.current.time ?? t * 0.01;
       if (program) {
-        program.uniforms.uTime.value = time * speed * 0.1;
-        program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
+        // Use a very slow animation speed for subtle movement
+        program.uniforms.uTime.value = currentTime * currentSpeed * 0.05;
+        program.uniforms.uAmplitude.value =
+          propsRef.current.amplitude ?? amplitude;
         program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+        program.uniforms.uDirection.value =
+          propsRef.current.direction ?? direction;
 
         // Use our custom hexToRgb function for updated color stops as well
         const stops = propsRef.current.colorStops ?? colorStops;
@@ -235,7 +263,7 @@ export default function Aurora(props: AuroraProps) {
       }
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [amplitude]);
+  }, [amplitude, direction]);
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }

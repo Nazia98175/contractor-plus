@@ -181,7 +181,7 @@ const CoreFeaturesCard = () => {
 
   return (
     <section
-      className="lg:p-6 md:px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7 lg:mt-11"
+      className="lg:p-6 md:px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7"
       ref={containerRef}
     >
       <FeatureNavigation

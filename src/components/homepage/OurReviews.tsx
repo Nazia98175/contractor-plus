@@ -36,7 +36,7 @@ const OurReviews: React.FC = () => {
   }));
 
   return (
-    <section className="pt-[15px] pb-[35px] md:py-20 bg-white">
+    <section className="pt-[15px] pb-[35px] md:pt-12 md:pb-16 bg-white">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-black text-center md:text-start">
@@ -91,8 +91,8 @@ const OurReviews: React.FC = () => {
         <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
-        <div className="md:pt-[77px] w-full ">
-          <Marquee speed={30} direction="right" className="py-8" pauseOnHover>
+        <div className="md:pt-14 w-full ">
+          <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}

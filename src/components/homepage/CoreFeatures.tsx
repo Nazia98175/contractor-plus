@@ -6,14 +6,14 @@ const CoreFeatures = () => {
   const t = useTranslations("corefeature");
   return (
     <section className="bg-white ">
-      <div className="max-w-[991px] mx-auto px-2 pt-12 lg:pt-8">
+      <div className="max-w-[991px] mx-auto px-2 pt-12">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="sub-heading text-lightBlack font-semibold text-center md:text-start">
             {t("heading")}
           </h3>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <p className="mt-4 text-base font-jakarta font-medium text-wallStreet">
+          <p className="mt-3 leading-[130%] text-base font-jakarta font-medium text-wallStreet">
             {t("desc")}
           </p>
         </TextAnimation>

@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import ParticlesComponent from "@/components/common/ParticlesComponent";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -61,6 +62,7 @@ export default function Home() {
           fill
           className="absolute top-[50%] -z-50 left-0 object-cover"
         /> */}
+
         <ContractorPlatforms />
         <Finally />
       </div>

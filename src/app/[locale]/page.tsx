@@ -22,75 +22,25 @@ export default function Home() {
   const t = useTranslations();
 
   return (
-    <div className="relative overflow-x-hidden">
-      <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover relative">
-        <Image
-          src="/images/webp/red-circle.webp"
-          alt="Red Circle For designing"
-          fill
-          className="absolute top-0 left-0 w-full hidden lg:block h-full z-10 pointer-events-none object-cover"
-        />
-        <Header />
-        <div className="relative">
-          <Image
-            src="/images/webp/hero-mobile-bg.webp"
-            alt="Mobile Hero"
-            fill
-            className="right-0 lg:hidden z-10 object-bottom-right pointer-events-none -bottom-[40%] md:-bottom-[45%] absolute w-full h-full"
-          />
-          <Hero />
-          <TrustBar />
-        </div>
-        <div className="relative">
-          <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>
-          <TheEngineContractor />
-        </div>
+    <div className="relative overflow-x-hidden w-full">
+      <div className="-z-10 overflow-hidden">
+        <ParticlesComponent id="particle" />
       </div>
-
-      {/* Here have to add star background  */}
-      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
-        <div className="absolute bottom-0  max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[30px] opacity-35 block md:hidden"></div>
-        {/* particle js  */}
-        {/* <Image
-          src="/images/png/stars.png"
-          alt="Star Background"
-          width={1920}
-          height={500}
-          className="absolute top-0 -z-50 left-0 w-full h-[500px] block md:hidden pointer-events-none object-cover"
-        />
-        <Image
-          src="/images/png/stars.png"
-          alt="Star Background"
-          fill
-          className="absolute top-[50%] -z-50 left-0 object-cover"
-        /> */}
-
-        <ContractorPlatforms />
-        <Finally />
-      </div>
+      <Header />
+      <Hero />
+      <TrustBar />
+      <TheEngineContractor />
+      <ContractorPlatforms />
+      <Finally />
       <CoreFeatures />
       <Features />
       <ContractorIndustry />
       <OurReviews />
-
-      {/* particle js  */}
-      <div className="bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">
-        <Whatever />
-        <MakeOperation />
-      </div>
+      <Whatever />
+      <MakeOperation />
       <OurBlogs />
-      <div className="overflow-hidden relative">
-        <Image
-          width={600}
-          height={1000}
-          unoptimized
-          className="absolute top-0 w-full h-full left-0 z-[-1]"
-          src="/images/webp/footer-bg.webp"
-          alt="footer bg"
-        />
-        <EntireBusiness />
-        <Footer />
-      </div>
+      <EntireBusiness />
+      <Footer />
     </div>
   );
 }

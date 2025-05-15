@@ -257,9 +257,6 @@ const Whatever = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="-z-10 overflow-hidden">
-        <ParticlesComponent id="particle" />
-      </div>
       <Image
         className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
         src={"/images/svg/large-comet.svg"}

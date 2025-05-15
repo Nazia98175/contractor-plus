@@ -167,8 +167,8 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
   return (
     <Particles
       id={props.id}
-      particlesLoaded={particlesLoaded}
-      options={options}
+      // particlesLoaded={particlesLoaded}
+      // options={options}
       className="absolute inset-0 w-full h-full"
     />
   );

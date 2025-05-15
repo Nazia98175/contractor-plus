@@ -129,7 +129,6 @@
       "Contabilidad",
       "Big Chief AI",
       "Estimatic AI",
-      "Estimatic AI",
       "Todas las soluciones",
       "Contratista general",
       "Fontanería",
@@ -232,7 +231,7 @@
       "label": "Teléfono y SMS empresarial",
       "description": "Conversaciones centralizadas con el equipo y clientes"
     },
-    "bookkeeping": {
+    "service": {
       "label": "Solicitudes de Servicio",
       "description": "Solicitudes directas de clientes e inquilinos"
     }

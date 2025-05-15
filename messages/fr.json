@@ -130,7 +130,6 @@
       "Contabilidade",
       "Big Chief AI",
       "Estimatic AI",
-      "Estimatic AI",
       "Todas as Soluções",
       "Empreiteiro Geral",
       "Encanamento",
@@ -233,7 +232,7 @@
       "label": "Téléphone & SMS Pro",
       "description": "Conversations centralisées avec l'équipe et les clients"
     },
-    "bookkeeping": {
+    "service": {
       "label": "Demandes de Service",
       "description": "Demandes directes de clients et locataires"
     }

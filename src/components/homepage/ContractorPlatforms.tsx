@@ -33,13 +33,15 @@ const ContractorPlatforms: React.FC = () => {
           {contractPlatforms.map((obj, index) => (
             <article
               key={index}
-              className="p-2 w-full sm:w-[48%] max-w-[400px] group cursor-pointer"
+              className="p-2 w-full sm:w-[48%]  max-w-[400px] group cursor-pointer"
             >
-              <img
-                src={obj.img}
-                alt={t(`${obj.key}.heading`)}
-                className="rounded-md overflow-hidden"
-              />
+              <div className="relative animate-border rounded-xl">
+                <img
+                  src={obj.img}
+                  alt={t(`${obj.key}.heading`)}
+                  className="rounded-md overflow-hidden relative z-[10px] m-[2px]"
+                />
+              </div>
               <h3 className="mb-3 lg:mb-4 text-white duration-200 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
                 {t(`${obj.key}.heading`)}
               </h3>

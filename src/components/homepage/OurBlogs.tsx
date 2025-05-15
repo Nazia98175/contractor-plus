@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+import { useState } from "react";
 
 const OurBlogs = () => {
   const t = useTranslations("blogs");
@@ -27,31 +28,34 @@ const OurBlogs = () => {
       id: "01",
       title: "Contractor+ Blog",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-1.webp",
       imageWidth: "266px",
+      backgroundImage: "/images/svg/blog-1.svg",
     },
     {
       id: "02",
       title: "Podcasts",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-2.webp",
-      imageWidth: "226px",
+      imageWidth: "315px",
+      backgroundImage: "/images/svg/blog-2.svg",
     },
     {
       id: "03",
       title: "FREE Tools & Templates",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-3.webp",
-      imageWidth: "200px",
-      hasBlurEffect: true,
+      imageWidth: "305px",
+      // hasBlurEffect: true,
+      backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
 
   return (
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-white relative z-10">
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
           <TextAnimation animateOnScroll={true} delay={0.3}>
@@ -77,41 +81,38 @@ const OurBlogs = () => {
             </button>
           </div>
         </div>
+
         <CardReveal
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  lg:gap-7 place-items-center"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
         >
           {blogListMobile.map((article) => (
             <article
               key={article.id}
-              className="xl:py-10 h-[400px] w-full max-w-[400px] relative"
+              className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
             >
-              {article.hasBlurEffect && (
+              {/* {article.hasBlurEffect && (
                 <div className="absolute top-[40%] left-[40%] max-w-[100px] w-full h-[150px] rounded-[10px] bg-gray-400 blur-[45px] opacity-75 z-[-1] pointer-events-none"></div>
-              )}
+              )} */}
               <img
-                className="absolute top-[91px] right-0 w-full max-w-[266px] "
-                style={{ maxWidth: article.imageWidth }}
+                className="absolute top-16 right-0 w-full"
+                style={{ maxWidth: article.imageWidth, objectFit: "contain" }}
                 src={article.imageSrc}
                 alt="blog images"
               />
-              <div className="py-6 relative flex flex-col justify-between w-[207px] h-[207px]">
+              <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
                 <img
-                  className="absolute top-0 lef-0 w-full h-full z-10 pointer-events-none object-contain"
+                  className="absolute top-0 -left-1 w-full h-full z-10 pointer-events-none object-contain"
                   src="images/webp/blog-angle.webp"
                   alt="blog angle"
                 />
-                <h4 className="text-wallStreet text-xs font-bold px-4 pt-5 font-jakarta relative z-10">
-                  +{article.id}
-                </h4>
-                <div className="px-4 relative z-10">
-                  <p className="text-wallStreet text-[10px] font-bold pb-1 font-jakarta">
-                    Free resources by
-                  </p>
-                  <ContractorPlusIcon />
-                </div>
+                <img
+                  src={article.backgroundImage}
+                  alt={article.title}
+                  className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
+                />
               </div>
               <div className="relative py-6 px-4 w-[346px] mt-2">
                 <img

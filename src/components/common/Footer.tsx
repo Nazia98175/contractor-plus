@@ -12,7 +12,6 @@ import {
   TwitterIcon,
 } from "./Icons";
 import { useTranslations } from "next-intl";
-import FooterLogoWithStars from "./FooterLogoWithStars";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -57,7 +56,10 @@ const Footer = () => {
         <FooterRedLineIcon />
       </span>
       <div className="main-container">
-        <FooterLogoWithStars />
+        <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6">
+          <FooterLogoIcon />
+        </div>
+
         <div className="hidden md:flex flex-wrap justify-center gap-6 w-full pt-7">
           {sections.map((title, idx) => (
             <FooterSection

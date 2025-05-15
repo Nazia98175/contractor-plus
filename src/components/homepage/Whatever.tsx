@@ -8,6 +8,7 @@ import { leftIcons, rightIcons } from "../common/Helper";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import ParticlesComponent from "../common/ParticlesComponent";
+import FooterLogoWithStars from "../common/FooterLogoWithStars";
 // Register plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -316,20 +317,7 @@ const Whatever = () => {
               ref={centerRef}
               className="max-w-[270px] w-fit first-border xl:p-5 p-3 m-auto relative z-30 will-change-transform"
             >
-              <div className="second-border xl:p-5 p-3 relative z-30 w-fit">
-                <div className="relative xl:w-[110px] lg:w-20 w-[55px] xl:h-[110px] lg:h-20 h-[55px] flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden third-border">
-                  <OnIcon className="absolute w-full h-full pointer-events-none -z-1 one" />
-                  <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
-                  <Image
-                    className="object-cover relative z-10 lg:max-w-[51px] max-w-[31px]"
-                    src="/images/png/center-icon.png"
-                    width={51}
-                    height={68}
-                    alt="center-icon"
-                    unoptimized
-                  />
-                </div>
-              </div>
+              <FooterLogoWithStars />
             </div>
 
             {/* Right Side */}

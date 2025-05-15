@@ -37,12 +37,25 @@ const Footer = () => {
     setOpenSection(openSection === title ? null : title);
   };
   const legalLinks = t.raw("legalLinks");
+  const [isHovered, setIsHovered] = useState(false);
+
+  // const handleMouseEnter = () => setIsHovered(true);
+  // const handleMouseLeave = () => setIsHovered(false);
+  const handleMouseEnter = () => {
+    console.log("Mouse entered"); // Debugging
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    console.log("Mouse left"); // Debugging
+    setIsHovered(false);
+  };
+
   return (
     <footer className="bg-kuroiBlack py-10 w-full relative">
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>
-
+      =
       <div className="main-container">
         <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center">
           <FooterLogoIcon />

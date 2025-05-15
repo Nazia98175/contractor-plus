@@ -7,6 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { leftIcons, rightIcons } from "../common/Helper";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
+import ParticlesComponent from "../common/ParticlesComponent";
 // Register plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -256,6 +257,9 @@ const Whatever = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
+      <div className="-z-10 overflow-hidden">
+        <ParticlesComponent id="particle" />
+      </div>
       <Image
         className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
         src={"/images/svg/large-comet.svg"}

@@ -9,7 +9,7 @@ const Finally = () => {
   const features: string[] = t.raw("features") || [];
   return (
     <section className="relative pt-16 md:pt-20 xl:pt-[186px] overflow-hidden">
-      <div className="space-y-4 z-10 relative px-2">
+      <div className="space-y-4 z-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center text-white">
             {t("heading")}
@@ -37,7 +37,7 @@ const Finally = () => {
             </div>
           ))}
         </CardReveal>
-        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative px-3 lg:px-0">
+        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative px-3 lg:px-0 pb-8 lg:pb-0">
           <img
             src="/images/webp/claud.webp"
             alt="Claud background"
@@ -53,18 +53,18 @@ const Finally = () => {
             <img
               src="/images/webp/software-advice.webp"
               alt="Software Advice"
-              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
 
             <img
               src="/images/webp/leader.webp"
               alt="Leader"
-              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
             <img
               src="/images/webp/get-app.webp"
               alt="Get App"
-              className="max-w-9 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
           </CardReveal>
           <CardReveal staggerDelay={0.4} animationDuration={0.8} distance={50}>

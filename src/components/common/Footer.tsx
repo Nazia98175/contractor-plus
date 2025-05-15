@@ -28,9 +28,9 @@ const Footer = () => {
   const sections: string[] = t.raw("sections");
   const ranges = [
     [0, 9],
-    [9, 18],
-    [18, 29],
-    [29, 38],
+    [9, 17],
+    [17, 28],
+    [28, 37],
   ];
 
   const toggleSection = (title: string) => {
@@ -55,14 +55,9 @@ const Footer = () => {
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>
-      =
       <div className="main-container">
-        <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center">
+        <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6">
           <FooterLogoIcon />
-          <div className="border-lightBlack border footer-gradient-bg rounded-[500px] text-white text-sm font-medium px-3 py-2 gap-3 inline-flex items-center">
-            <GreenDotIcon />
-            <p>{t("cta")}</p>
-          </div>
         </div>
 
         <div className="hidden md:flex flex-wrap justify-center gap-6 w-full pt-7">
@@ -73,7 +68,7 @@ const Footer = () => {
               links={links.slice(...ranges[idx])}
             />
           ))}
-          <FooterSection title="Why Contractor+?" links={links.slice(38)} />
+          <FooterSection title="Why Contractor+?" links={links.slice(37)} />
         </div>
 
         {/* Mobile Accordion */}

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import TextAnimation from "../common/TextAnimation";
 
 interface FeatureCardProps {
   obj: {

@@ -12,7 +12,7 @@ const Hero = () => {
         <h2 className="text-[#B3B3B3] main-heading text-center">
           A field service CRM that runs your business, not just stores contacts
         </h2>
-        <p className="paragraph-text text-[#D2D4D6] pt-5 text-center max-w-[826px] mx-auto">
+        <p className="paragraph-text text-decemberSky pt-5 text-center max-w-[826px] mx-auto">
           Built-in phone and SMS. AI receptionist. Property profiles. Full
           communication history. You no longer need 6 separate tools to do what
           Contractor+ CRM does in one.
@@ -59,7 +59,7 @@ const Hero = () => {
               Create Free Account
               <BlogBtnIcon />
             </button>
-            <p className="text-[#ADB1B5] text-xs font-myriad text-center  pt-2">
+            <p className="text-secondary text-xs font-myriad text-center pt-2">
               No Credit Card Required
             </p>
           </div>

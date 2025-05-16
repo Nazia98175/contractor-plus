@@ -70,6 +70,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           <video
             autoPlay
             muted
+            loop
             playsInline
             poster={poster}
             className="w-full h-full object-cover lg:object-center 3xl:object-cover min-h-[500px]"

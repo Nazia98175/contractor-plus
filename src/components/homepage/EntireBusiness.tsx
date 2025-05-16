@@ -26,7 +26,7 @@ const EntireBusiness: React.FC = () => {
   };
 
   return (
-    <div className="bg-transparent md:bg-kuroiBlack px-2">
+    <div className=" px-2">
       <div className="py-[75px]">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-white font-jakarta">

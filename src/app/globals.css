@@ -322,3 +322,16 @@ html {
   top: 50%;
   transform-origin: top center;
 }
+
+@keyframes cloud-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-cloud-marquee {
+  animation: cloud-marquee 60s linear infinite;
+}

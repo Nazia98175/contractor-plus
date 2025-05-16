@@ -257,20 +257,38 @@ const Whatever = () => {
 
   return (
     <section className="relative w-full overflow-hidden bg-kuroiBlack z-30">
-      {/* <Image
-        className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
-        src={"/images/svg/large-comet.svg"}
-        width={700}
-        height={300}
-        alt="large-comet"
-      />
-      <Image
-        className="object-cover top-0 right-0 absolute -z-0 pointer-events-none flex lg:hidden"
-        src={"/images/svg/large-comet-mobile.svg"}
-        width={700}
-        height={300}
-        alt="large-comet"
-      /> */}
+      <div className="hidden lg:flex pointer-events-none absolute right-0 top-[-42%] z-20 max-w-[700px]">
+        <Image
+          src="/images/webp/Whatever-right-bg.webp"
+          width={700}
+          height={300}
+          alt="large-comet"
+          className="object-cover"
+          unoptimized
+        />
+      </div>
+
+      {/* Mobile Images */}
+      <div className="block lg:hidden pointer-events-none absolute top-0 right-0 z-20 w-full h-full">
+        <Image
+          src="/images/webp/whatever-gredient-bg-mobile-left.webp"
+          width={500}
+          height={1000}
+          alt="mobile-left-bg"
+          className="object-cover w-full h-full"
+          unoptimized
+          loading="lazy"
+        />
+        <Image
+          src="/images/webp/whatever-gredient-bg-mobile-right.webp"
+          width={500}
+          height={1000}
+          alt="mobile-right-bg"
+          className="object-center w-full h-full absolute top-0 right-0"
+          unoptimized
+          loading="lazy"
+        />
+      </div>
 
       <div
         ref={sectionRef}

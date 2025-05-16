@@ -27,10 +27,25 @@ const ContractorIndustry = () => {
   return (
     <section className="relative pt-10">
       <Image
-        className="absolute top-0 w-full h-full z-0"
-        src="/images/webp/contractor-industry-bg.webp"
+        className="absolute top-0 w-full left-0 h-full z-0 max-w-[500px] object-center lg:block hidden"
+        src="/images/webp/contractor-left-bg.webp"
         alt="webp bg"
-        fill
+        width={500}
+        height={700}
+      />
+      <Image
+        className="absolute top-0 w-full h-full z-0 right-0 object-center max-w-[700px] lg:block hidden"
+        src="/images/webp/contractor-right-bg.webp"
+        alt="webp bg"
+        width={300}
+        height={300}
+      />
+      <Image
+        className="absolute top-0 w-full h-full z-0 left-0 object-center max-w-[320px] block lg:hidden"
+        src="/images/webp/contractor-bg-mobile.webp"
+        alt="webp bg"
+        width={300}
+        height={300}
       />
       <div className="px-2 relative z-20">
         <TextAnimation animateOnScroll={true} delay={0.3}>

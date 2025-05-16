@@ -53,7 +53,7 @@ const Faq = () => {
     },
   ];
   return (
-    <section>
+    <section className="bg-kuroiBlack py-10">
       <h3 className="section-heading text-white text-center">
         What contractors want to know
       </h3>

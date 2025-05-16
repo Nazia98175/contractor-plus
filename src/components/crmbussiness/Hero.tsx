@@ -1,0 +1,79 @@
+import React from "react";
+import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
+
+const Hero = () => {
+  return (
+    <section className="relative">
+      <span className="top-[-202px] right-0 absolute pointer-events-none">
+        <RedClipIcon />
+      </span>
+      <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
+      <div className="max-w-[1050px] w-full mx-auto pb-10 pt-[139px] md:pt-[178px] px-2">
+        <h2 className="text-[#B3B3B3] main-heading text-center">
+          A field service CRM that runs your business, not just stores contacts
+        </h2>
+        <p className="paragraph-text text-[#D2D4D6] pt-5 text-center max-w-[826px] mx-auto">
+          Built-in phone and SMS. AI receptionist. Property profiles. Full
+          communication history. You no longer need 6 separate tools to do what
+          Contractor+ CRM does in one.
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-5 pt-5">
+          <div>
+            <img src="/images/svg/GooglePlay-Icon.svg" alt="google icon" />
+            <div className="flex justify-center items-center pt-2">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  className="max-w-7 md:max-w-5"
+                  viewBox="0 0 23 23"
+                  fill="#FFA928"
+                >
+                  <path d="M9.99448 4.50789C10.3708 3.34967 12.0094 3.34967 12.3857 4.50788L13.3775 7.56031C13.5458 8.07828 14.0285 8.42898 14.5731 8.42898H17.7826C19.0005 8.42898 19.5068 9.98735 18.5216 10.7032L15.925 12.5897C15.4844 12.9098 15.3 13.4772 15.4683 13.9952L16.4601 17.0476C16.8364 18.2058 15.5108 19.169 14.5256 18.4532L11.929 16.5667C11.4884 16.2465 10.8918 16.2465 10.4512 16.5667L7.85462 18.4532C6.86938 19.169 5.54375 18.2058 5.92007 17.0476L6.91187 13.9952C7.08017 13.4772 6.8958 12.9098 6.45518 12.5897L3.85864 10.7032C2.8734 9.98735 3.37974 8.42898 4.59757 8.42898H7.80708C8.3517 8.42898 8.83439 8.07828 9.00269 7.56031L9.99448 4.50789Z" />
+                </svg>
+              ))}
+            </div>
+          </div>
+          <div>
+            <img src="/images/svg/Apple-Icon.svg" alt="google icon" />
+            <div className="flex justify-center items-center pt-2">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  className="max-w-7 md:max-w-5"
+                  viewBox="0 0 23 23"
+                  fill="#FFA928"
+                >
+                  <path d="M9.99448 4.50789C10.3708 3.34967 12.0094 3.34967 12.3857 4.50788L13.3775 7.56031C13.5458 8.07828 14.0285 8.42898 14.5731 8.42898H17.7826C19.0005 8.42898 19.5068 9.98735 18.5216 10.7032L15.925 12.5897C15.4844 12.9098 15.3 13.4772 15.4683 13.9952L16.4601 17.0476C16.8364 18.2058 15.5108 19.169 14.5256 18.4532L11.929 16.5667C11.4884 16.2465 10.8918 16.2465 10.4512 16.5667L7.85462 18.4532C6.86938 19.169 5.54375 18.2058 5.92007 17.0476L6.91187 13.9952C7.08017 13.4772 6.8958 12.9098 6.45518 12.5897L3.85864 10.7032C2.8734 9.98735 3.37974 8.42898 4.59757 8.42898H7.80708C8.3517 8.42898 8.83439 8.07828 9.00269 7.56031L9.99448 4.50789Z" />
+                </svg>
+              ))}
+            </div>
+          </div>
+          <div>
+            <button className="bg-red-linear h-10 primary-btn gap-2">
+              Create Free Account
+              <BlogBtnIcon />
+            </button>
+            <p className="text-[#ADB1B5] text-xs font-myriad text-center  pt-2">
+              No Credit Card Required
+            </p>
+          </div>
+        </div>
+        <div className="pt-12 max-w-[900px] mx-auto">
+          <img
+            className="w-full h-full"
+            src="/images/webp/crm-hero.webp"
+            alt="crm hero"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

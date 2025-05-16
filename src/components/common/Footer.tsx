@@ -40,7 +40,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-kuroiBlack py-10 w-full relative overflow-hidden">
-      <ParticlesComponent id="star-particles" />
+      {/* <ParticlesComponent id="star-particles" /> */}
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>

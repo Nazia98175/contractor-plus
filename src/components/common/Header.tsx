@@ -51,8 +51,8 @@ const Header = () => {
           <div className="lg:flex hidden grow">
             <HeaderLiItems />
           </div>
-          <div className="flex items-center xl:gap-3 gap-1 w-fit">
-            <div className="flex items-center xl:gap-3 gap-2">
+          <div className="flex items-center 3xl:gap-3 gap-1 w-fit">
+            <div className="flex items-center xl:gap-3 gap-1">
               <LanguageSelector />
               <Link
                 className="text-xs xl:text-sm font-semibold font-inter leading-[142.857%] tracking-[0.1px] text-doctor2 hover:text-romanRed duration-300 whitespace-nowrap"

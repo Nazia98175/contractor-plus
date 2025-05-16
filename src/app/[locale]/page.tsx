@@ -71,8 +71,10 @@ export default function Home() {
       <Features />
       <ContractorIndustry />
       <OurReviews />
-      <Whatever />
-      <MakeOperation />
+      <div className="bg-kuroiBlack relative overflow-hidden ">
+        <Whatever />
+        <MakeOperation />
+      </div>
       <OurBlogs />
       <div className="overflow-hidden relative">
         {/* <Image

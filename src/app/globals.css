@@ -322,49 +322,16 @@ html {
   top: 50%;
   transform-origin: top center;
 }
-.mixed-gradient {
-  background: linear-gradient(
-    to right,
-    #000000 0%,
-    #6ddcff 25%,
-    #6ddcef 50%,
-    #ee1e25 75%,
-    #ffffff 100%
-  );
+
+@keyframes cloud-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-/* Alternative with more complex stops to better match the design tool */
-.mixed-gradient-complex {
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.6) 0%,
-    #6ddcff 15%,
-    #6ddcef 50%,
-    #ee1e25 85%,
-    rgba(255, 255, 255, 0.6) 100%
-  );
-}
-
-/* Diagonal version */
-.mixed-gradient-diagonal {
-  background: linear-gradient(
-    135deg,
-    #000000 0%,
-    #6ddcff 20%,
-    #6ddcef 50%,
-    #ee1e25 80%,
-    #ffffff 100%
-  );
-}
-
-/* Using the exact hex codes from the images */
-.exact-colors-gradient {
-  background: linear-gradient(
-    to right,
-    #000000 0%,
-    /* From Image 1 - black */ #6ddcff 25%,
-    /* From Image 2 - light blue */ #6ddcef 50%,
-    /* From Image 2 - medium blue */ #ee1e25 75%,
-    /* From Image 1 - red */ #ffffff 100% /* From Image 1 - white */
-  );
+.animate-cloud-marquee {
+  animation: cloud-marquee 60s linear infinite;
 }

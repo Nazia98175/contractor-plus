@@ -1,15 +1,15 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import CardReveal from "../common/CardReveal";
 import {
   AdminWorkIcon,
   EstimateIcon2,
   RedClipIcon,
   TurnaroundIcon,
 } from "../common/Icons";
-import { useInView } from "react-intersection-observer";
-import CountUp from "react-countup";
 import TextAnimation from "../common/TextAnimation";
-import CardReveal from "../common/CardReveal";
+import Image from "next/image";
 
 const MakeOperation = () => {
   const { ref, inView } = useInView({
@@ -30,28 +30,30 @@ const MakeOperation = () => {
   const icons = [<EstimateIcon2 />, <TurnaroundIcon />, <AdminWorkIcon />];
 
   return (
-    <section ref={ref} className="bg-kuroilight relative pt-16 overflow-hidden">
-      {/* particle js  */}
-      {/* <Image
-        height={600}
-        width={600}
-        unoptimized
-        className="top-0 left-0 absolute h-[600px] w-full pointer-events-none"
-        src="/images/png/stars.png"
-        alt="stars image"
-      /> */}
-      <div className="hidden lg:block absolute bottom-0 left-[70px] max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
+    <section ref={ref} className="relative pt-16 z-10">
+      <div className="hidden lg:block absolute bottom-0 left-0 max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
+      <Image
+        className="object-cover -top-[10%] right-0 absolute z-0 pointer-events-none max-w-[700px] lg:block hidden"
+        src="/images/webp/make-opration.webp"
+        width={700}
+        height={300}
+        alt="gradient background"
+        priority
+      />
+      <Image
+        className="object-cover -top-0 left-0 absolute z-0 pointer-events-none max-w-[700px] block lg:hidden"
+        src="/images/webp/make-opration-mobile.webp"
+        fill
+        alt="gradient background"
+        priority
+      />
 
-      <span className="top-[-202px] right-0 absolute pointer-events-none">
-        <RedClipIcon />
-      </span>
-
-      <div className="main-container pb-10">
+      <div className="main-container pb-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading font-semibold  text-white text-center">
             {t("heading")}
-          </h3>{" "}
-        </TextAnimation>{" "}
+          </h3>
+        </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
             {t("desc")}

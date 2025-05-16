@@ -256,43 +256,63 @@ const Whatever = () => {
   }, [isMobile]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-kuroiBlack z-30">
-      <div className="hidden lg:flex pointer-events-none absolute right-0 top-[-42%] z-20 max-w-[700px]">
+    <section className="relative w-full z-10">
+      <picture className="hidden lg:block">
+        <source
+          media="(min-width: 1024px)"
+          srcSet="/images/webp/Whatever-right-bg.webp"
+          type="image/webp"
+        />
         <Image
+          className="object-cover -top-[42%] right-0 absolute z-10 pointer-events-none max-w-[700px]"
           src="/images/webp/Whatever-right-bg.webp"
           width={700}
           height={300}
-          alt="large-comet"
-          className="object-cover"
-          unoptimized
+          alt="gradient background"
+          priority
         />
-      </div>
+      </picture>
 
-      {/* Mobile Images */}
-      <div className="block lg:hidden pointer-events-none absolute top-0 right-0 z-20 w-full h-full">
-        <Image
-          src="/images/webp/whatever-gredient-bg-mobile-left.webp"
-          width={500}
-          height={1000}
-          alt="mobile-left-bg"
-          className="object-cover w-full h-full"
-          unoptimized
-          loading="lazy"
-        />
-        <Image
-          src="/images/webp/whatever-gredient-bg-mobile-right.webp"
-          width={500}
-          height={1000}
-          alt="mobile-right-bg"
-          className="object-center w-full h-full absolute top-0 right-0"
-          unoptimized
-          loading="lazy"
-        />
+      {/* Mobile backgrounds - separate picture elements for each image */}
+      <div className="block lg:hidden">
+        {/* Left mobile gradient */}
+        <picture>
+          <source
+            media="(max-width: 1023px)"
+            srcSet="/images/webp/whatever-gredient-bg-mobile-left.webp"
+            type="image/webp"
+          />
+          <Image
+            className="object-cover top-0 right-0 w-full absolute z-10 pointer-events-none h-full hidden lg:flex"
+            src="/images/webp/whatever-gredient-bg-mobile-left.webp"
+            width={500}
+            height={1000}
+            alt="gradient background left"
+            priority
+          />
+        </picture>
+
+        {/* Right mobile gradient */}
+        <picture>
+          <source
+            media="(max-width: 1023px)"
+            srcSet="/images/webp/whatever-gredient-bg-mobile-right.webp"
+            type="image/webp"
+          />
+          <Image
+            className="object-center right-0 top-0 w-full absolute z-10 pointer-events-none h-full"
+            src="/images/webp/whatever-gredient-bg-mobile-right.webp"
+            width={500}
+            height={1000}
+            alt="gradient background right"
+            priority
+          />
+        </picture>
       </div>
 
       <div
         ref={sectionRef}
-        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative bg-kuroiBlack"
+        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20"
       >
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">

@@ -72,7 +72,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             muted
             playsInline
             poster={poster}
-            className="w-full h-full object-cover min-h-[500px] aspect-video"
+            className="w-full h-full object-cover lg:object-center 3xl:object-cover min-h-[500px]"
           >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.

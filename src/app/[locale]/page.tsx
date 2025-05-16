@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import ParticlesComponent from "@/components/common/ParticlesComponent";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -22,7 +23,7 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="bg-kuroiBlack bg-[url('/images/png/stars.png')] bg-no-repeat bg-cover relative">
+      <div className="bg-kuroiBlack bg-no-repeat bg-cover relative">
         <Image
           src="/images/webp/red-circle.webp"
           alt="Red Circle For designing"
@@ -46,24 +47,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Here have to add star background  */}
-      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
+      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-white bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
         <div className="absolute bottom-0  max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[30px] opacity-35 block md:hidden"></div>
-        {/* particle js  */}
-        {/* <Image
-          src="/images/png/stars.png"
-          alt="Star Background"
-          width={1920}
-          height={500}
-          className="absolute top-0 -z-50 left-0 w-full h-[500px] block md:hidden pointer-events-none object-cover"
-        />
-        <Image
-          src="/images/png/stars.png"
-          alt="Star Background"
-          fill
-          className="absolute top-[50%] -z-50 left-0 object-cover"
-        /> */}
-
         <ContractorPlatforms />
         <Finally />
       </div>
@@ -76,18 +61,11 @@ export default function Home() {
         <MakeOperation />
       </div>
       <OurBlogs />
-      <div className="overflow-hidden relative">
-        {/* <Image
-          width={600}
-          height={1000}
-          unoptimized
-          className="absolute top-0 w-full h-full left-0 z-[-1]"
-          src="/images/webp/footer-bg.webp"
-          alt="footer bg"
-        /> */}
+      <div className="overflow-hidden relative z-10">
         <EntireBusiness />
         <Footer />
       </div>
+      <ParticlesComponent id="star-particles" />
     </div>
   );
 }

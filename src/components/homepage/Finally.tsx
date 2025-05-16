@@ -3,7 +3,6 @@ import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
-import FogGenerator from "../common/FogGenerator";
 
 const Finally = () => {
   const t = useTranslations("finally");
@@ -26,19 +25,19 @@ const Finally = () => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="flex gap-[22px] items-center justify-center py-2 flex-wrap"
+          className="flex gap-3 md:gap-[22px] relative z-10 items-center justify-center pt-2 flex-wrap"
         >
           {features?.map((feature, index) => (
             <div
               key={index}
-              className="flex font-semibold font-myriad gap-2 items-center text-superSilver"
+              className="flex font-medium text-sm sm:text-base sm:font-semibold font-myriad gap-1.5 sm:gap-2 items-center text-superSilver"
             >
               <CheckIcon />
               {feature}
             </div>
           ))}
         </CardReveal>
-        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-16 relative px-3 lg:px-0 pb-8 lg:pb-0">
+        <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-14 sm:mt-16 relative px-3 lg:px-0 pb-8 lg:pb-0">
           <div className="w-[120%] h-[70px] bg-white blur-[8px] absolute -left-[2%] md:block hidden -bottom-[6%] z-10"></div>
           {/* <img
             src="/images/webp/claud.webp"

@@ -23,7 +23,7 @@ const CrmBussinessPage = () => {
       <OnScroll />
       <FieldService />
       <TrackProperties />
-      <KindAdorable />
+      {/* <KindAdorable /> */}
       <TeamsUsingContractor />
       <ThousandsReviews />
       <Faq />

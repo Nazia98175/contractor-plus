@@ -1371,3 +1371,35 @@ export const JobFormIcon = () => (
     />
   </svg>
 );
+export const FaqIcon = ({ isOpen }: { isOpen: boolean }) => (
+  <svg
+    className="w-full h-full"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Horizontal Line (always visible) */}
+    <line
+      x1="5"
+      y1="12"
+      x2="19"
+      y2="12"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    {/* Vertical Line (animated) */}
+    <line
+      x1="12"
+      y1="5"
+      x2="12"
+      y2="19"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      className={`transition-transform origin-center duration-300 ${
+        isOpen ? "rotate-90 scale-y-0" : "rotate-0 scale-y-100"
+      }`}
+    />
+  </svg>
+);

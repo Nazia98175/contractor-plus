@@ -1,15 +1,10 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import CardReveal from "../common/CardReveal";
-import {
-  AdminWorkIcon,
-  EstimateIcon2,
-  RedClipIcon,
-  TurnaroundIcon,
-} from "../common/Icons";
+import { AdminWorkIcon, EstimateIcon2, TurnaroundIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
 
 const MakeOperation = () => {
   const { ref, inView } = useInView({

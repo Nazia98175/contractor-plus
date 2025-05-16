@@ -61,7 +61,7 @@ export default function Home() {
         <MakeOperation />
       </div>
       <OurBlogs />
-      <div className="overflow-hidden relative z-10">
+      <div className="overflow-hidden relative ">
         <EntireBusiness />
         <Footer />
       </div>

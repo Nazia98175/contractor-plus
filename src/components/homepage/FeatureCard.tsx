@@ -14,7 +14,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
   return (
     <article className="font-jakarta p-3 flex flex-col items-center justify-between bg-white rounded-lg">
       <div>
-        <h4 className="text-2xl font-bold text-winterWay text-center capitalize">
+        <h4 className="text-xl sm:text-2xl font-bold text-winterWay text-center capitalize ">
           {obj.title}
         </h4>
         <p className="mt-4 paragraph-text text-wallStreet text-center mb-5">
@@ -22,7 +22,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
         </p>
       </div>
       <div className="relative w-full h-[187px]">
-        <Image src={obj.img} alt={obj.title} fill className="object-contain" />
+        <Image src={obj.img} alt={obj.title} fill className="object-center" />
       </div>
     </article>
   );

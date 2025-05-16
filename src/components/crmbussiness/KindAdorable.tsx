@@ -31,13 +31,13 @@ const KindAdorable = () => {
         <table className="min-w-full text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-gray-50 text-xl border-b border-decemberSky">
-              <th className="p-4  font-bold text-center text-wallStreet font-myriad">
+              <th className="p-4 w-1/3 font-bold text-center text-wallStreet font-myriad">
                 Feature
               </th>
-              <th className="p-4 text-center font-semibold text-wallStreet">
+              <th className="p-4 w-1/3 text-center font-semibold text-wallStreet">
                 eContractor
               </th>
-              <th className="p-4 text-center font-semibold text-wallStreet">
+              <th className="p-4 w-1/3 text-center font-semibold text-wallStreet">
                 Others
               </th>
             </tr>
@@ -46,16 +46,16 @@ const KindAdorable = () => {
             {features.map((feature, index) => (
               <tr key={index} className="border-b border-decemberSky">
                 <td className="p-4 text-wallStreet">{feature.name}</td>
-                <td className="p-4 text-center">
+                <td className="p-4 text-center flex w-full justify-center">
                   {feature.eContractorHas ? (
-                    <CheckIcon className="text-green-600 w-5 h-5 mx-auto" />
+                    <CheckIcon className="w-5 h-5" />
                   ) : (
                     <CloseIcon />
                   )}
                 </td>
-                <td className="p-4 text-center">
+                <td className="p-4 text-center w-full">
                   {feature.othersHave ? (
-                    <CheckIcon className="text-green-600 w-5 h-5 mx-auto" />
+                    <CheckIcon className="w-5 h-5" />
                   ) : (
                     <CloseIcon />
                   )}

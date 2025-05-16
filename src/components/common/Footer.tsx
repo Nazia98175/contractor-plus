@@ -39,7 +39,7 @@ const Footer = () => {
   const legalLinks = t.raw("legalLinks");
 
   return (
-    <footer className="bg-kuroiBlack py-10 w-full relative overflow-hidden z-10">
+    <footer className="bg-kuroiBlack py-10 w-full relative overflow-hidden z-20">
       {/* <ParticlesComponent id="star-particles" /> */}
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />

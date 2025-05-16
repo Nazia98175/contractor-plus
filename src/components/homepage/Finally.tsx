@@ -9,7 +9,7 @@ const Finally = () => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
   return (
-    <section className="relative overflow-x-hidden pt-16 md:pt-20 xl:pt-[186px]">
+    <section className="relative no-scrollbar overflow-x-hidden pt-16 md:pt-20 xl:pt-[186px]">
       <div className="space-y-4 z-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center text-white">

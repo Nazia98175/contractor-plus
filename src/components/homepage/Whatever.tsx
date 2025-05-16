@@ -7,8 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { leftIcons, rightIcons } from "../common/Helper";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
-import ParticlesComponent from "../common/ParticlesComponent";
-import FooterLogoWithStars from "../common/FooterLogoWithStars";
+import LogoWithStars from "../common/LogoWithStars";
 // Register plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -317,7 +316,7 @@ const Whatever = () => {
               ref={centerRef}
               className="max-w-[270px] w-fit first-border xl:p-5 p-3 m-auto relative z-30 will-change-transform"
             >
-              <FooterLogoWithStars />
+              <LogoWithStars />
             </div>
 
             {/* Right Side */}

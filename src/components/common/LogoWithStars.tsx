@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { OnIcon, OnIconw } from "./Icons";
 
-const FooterLogoWithStars: React.FC = () => {
+const LogoWithStars: React.FC = () => {
   useEffect(() => {
     // Load particles.js from CDN
     const script = document.createElement("script");
@@ -75,7 +75,7 @@ const FooterLogoWithStars: React.FC = () => {
           detect_on: "canvas",
           events: {
             onhover: {
-              enable: true,
+              enable: false,
               mode: "bubble",
             },
             onclick: {
@@ -146,4 +146,4 @@ const FooterLogoWithStars: React.FC = () => {
   );
 };
 
-export default FooterLogoWithStars;
+export default LogoWithStars;

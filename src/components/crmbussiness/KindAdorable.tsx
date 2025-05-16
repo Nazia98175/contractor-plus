@@ -1,72 +1,64 @@
-import React from "react";
+import { CheckIcon, CloseIcon } from "../common/Icons";
 
 const features = [
-  "Built-In Phone & IVR",
-  "Property Profiles",
-  "Mobile–First",
-  "AI Summaries & Sentiment Analysis",
-  "Workspace Toggle",
-  "Live Camera Feeds",
-  "Communication Timeline",
-  "Activity–Based Automation",
-  "Built–In Contracts & eSig",
+  { name: "Built-In Phone & IVR", eContractorHas: true, othersHave: false },
+  { name: "Property Profiles", eContractorHas: true, othersHave: false },
+  { name: "Mobile-First", eContractorHas: true, othersHave: false },
+  {
+    name: "AI Summaries & Sentiment Analysis",
+    eContractorHas: true,
+    othersHave: false,
+  },
+  { name: "Workspace Toggle", eContractorHas: true, othersHave: false },
+  { name: "Live Camera Feeds", eContractorHas: true, othersHave: false },
+  { name: "Communication Timeline", eContractorHas: true, othersHave: false },
+  {
+    name: "Activity-Based Automation",
+    eContractorHas: true,
+    othersHave: false,
+  },
+  {
+    name: "Built-In Contracts & eSig",
+    eContractorHas: true,
+    othersHave: false,
+  },
 ];
 
-const contractorPlusFeatures = [
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-];
-const othersFeatures = [
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-];
 const KindAdorable = () => {
   return (
-    <section className="bg-white text-center px-4 py-12 sm:px-6 lg:px-16">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
-        <span className="text-red-600 font-bold">What the others</span> call a
-        CRM is kind of adorable
-      </h2>
-      <p className="mt-2 text-gray-500 text-sm md:text-base">
-        Not all platforms are built to run a real business
-      </p>
-
-      <div className="mt-10 overflow-x-auto">
-        <table className="w-full border-collapse shadow-sm text-sm md:text-base">
+    <section className="bg-white p-10 min-w-[550px] overflow-auto">
+      <div className="w-full border border-decemberSky max-w-[1092px] px-4 xl:px-0 mx-auto rounded-lg shadow-sm mb-8 overflow-auto">
+        <table className="min-w-full text-left border-collapse whitespace-nowrap">
           <thead>
-            <tr className="bg-gray-100">
-              <th className="text-left p-3 font-semibold text-gray-700">
-                Compare
+            <tr className="bg-gray-50 text-xl border-b border-decemberSky">
+              <th className="p-4  font-bold text-center text-wallStreet font-myriad">
+                Feature
               </th>
-              <th className="p-3 font-semibold text-gray-700">
-                Contractor Plus
+              <th className="p-4 text-center font-semibold text-wallStreet">
+                eContractor
               </th>
-              <th className="p-3 font-semibold text-gray-700">Others</th>
+              <th className="p-4 text-center font-semibold text-wallStreet">
+                Others
+              </th>
             </tr>
           </thead>
           <tbody>
             {features.map((feature, index) => (
-              <tr key={index} className="border-t">
-                <td className="text-left px-3 py-3 text-gray-700">{feature}</td>
-                <td className="text-green-600 text-center">
-                  {contractorPlusFeatures[index] ? "✔️" : "❌"}
+              <tr key={index} className="border-b border-decemberSky">
+                <td className="p-4 text-wallStreet">{feature.name}</td>
+                <td className="p-4 text-center">
+                  {feature.eContractorHas ? (
+                    <CheckIcon className="text-green-600 w-5 h-5 mx-auto" />
+                  ) : (
+                    <CloseIcon />
+                  )}
                 </td>
-                <td className="text-red-600 text-center">
-                  {othersFeatures[index] ? "✔️" : "❌"}
+                <td className="p-4 text-center">
+                  {feature.othersHave ? (
+                    <CheckIcon className="text-green-600 w-5 h-5 mx-auto" />
+                  ) : (
+                    <CloseIcon />
+                  )}
                 </td>
               </tr>
             ))}

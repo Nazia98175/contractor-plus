@@ -62,26 +62,24 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
     });
   };
   return (
-    <div>
+    <>
       {isLoading ? (
         <div>Loading video...</div>
       ) : (
         <>
-          <video controls autoPlay muted playsInline poster={poster}>
+          <video
+            autoPlay
+            muted
+            playsInline
+            poster={poster}
+            className="w-full h-full object-cover lg:object-center 3xl:object-cover min-h-[500px]"
+          >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.
           </video>
-          <div className="text-sm text-gray-600 mt-2">
-            {connectionQuality && (
-              <span>
-                Connection: {connectionQuality} – Quality:{" "}
-                {videoUrl.includes("720") ? "720p" : "360p"}
-              </span>
-            )}
-          </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 export default VideoOptimizer;

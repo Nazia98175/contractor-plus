@@ -28,29 +28,10 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute object-bottom lg:-right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video">
+      <div className="absolute object-center lg:-right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video">
         <VideoViewer />
       </div>
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute object-bottom hidden lg:block -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video"
-      >
-        <source src="/video/hero-video.mp4" type="video/mp4" />
-        {t("video")}
-      </video>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute object-cover right-0 w-full block lg:hidden z-0 top-0 h-full aspect-video"
-      >
-        <source src="/video/hero-video.mp4" type="video/mp4" />
-        {t("video")}
-      </video> */}
+
       <div className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full">
         <Image
           src="/images/webp/hero-bg.webp"
@@ -60,12 +41,6 @@ const Hero = () => {
         />
       </div>
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
-      {/* Here is have to add particle js  */}
-      {/* <img
-        src="/images/png/stars.png"
-        className="absolute inset-0 w-full h-full z-10 object-cover"
-        alt="Stars"
-      /> */}
     </section>
   );
 };

@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { OnIcon, OnIconw } from "./Icons";
 
-const LogoWithStars: React.FC = () => {
+const FooterLogoWithStars: React.FC = () => {
   useEffect(() => {
     // Load particles.js from CDN
     const script = document.createElement("script");
@@ -75,7 +75,7 @@ const LogoWithStars: React.FC = () => {
           detect_on: "canvas",
           events: {
             onhover: {
-              enable: false,
+              enable: true,
               mode: "bubble",
             },
             onclick: {
@@ -118,8 +118,8 @@ const LogoWithStars: React.FC = () => {
         id="footer-logo-particles"
         className="absolute"
         style={{
-          width: "250px", // बढ़ाया गया width (पहले 200px था)
-          height: "150px", // बढ़ाया गया height (पहले 100px था)
+          width: "250px",
+          height: "150px",
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
@@ -146,4 +146,4 @@ const LogoWithStars: React.FC = () => {
   );
 };
 
-export default LogoWithStars;
+export default FooterLogoWithStars;

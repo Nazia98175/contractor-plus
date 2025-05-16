@@ -5,6 +5,7 @@ import { loadSlim } from "@tsparticles/slim";
 
 interface ParticlesComponentProps {
   id: string;
+  className?: string; // Added optional className prop
 }
 
 const ParticlesComponent = (props: ParticlesComponentProps) => {
@@ -26,7 +27,7 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
   }, []);
 
   // Particle load callback (optional, for debugging or logging)
-  const particlesLoaded = (container: Container | undefined): void => {
+  const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log("Particles container loaded", container);
   };
 
@@ -46,7 +47,7 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
           onHover: { enable: false },
           onClick: { enable: false },
           onDiv: { enable: false },
-          resize: true,
+          resize: { enable: true },
         },
       },
       particles: {
@@ -164,12 +165,14 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
     return null; // Don't render until particles are initialized
   }
 
+  const className = props.className || "!absolute inset-0 w-full h-full";
+
   return (
     <Particles
       id={props.id}
-      // particlesLoaded={particlesLoaded}
-      // options={options}
-      className="absolute inset-0 w-full h-full"
+      particlesLoaded={particlesLoaded}
+      options={options}
+      className={className}
     />
   );
 };

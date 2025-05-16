@@ -256,8 +256,8 @@ const Whatever = () => {
   }, [isMobile]);
 
   return (
-    <section className="relative w-full overflow-hidden">
-      <Image
+    <section className="relative w-full overflow-hidden bg-kuroiBlack z-30">
+      {/* <Image
         className="object-cover top-0 right-0 absolute -z-0 pointer-events-none lg:flex hidden"
         src={"/images/svg/large-comet.svg"}
         width={700}
@@ -270,11 +270,11 @@ const Whatever = () => {
         width={700}
         height={300}
         alt="large-comet"
-      />
+      /> */}
 
       <div
         ref={sectionRef}
-        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full"
+        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative bg-kuroiBlack"
       >
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">

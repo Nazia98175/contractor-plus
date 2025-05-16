@@ -71,12 +71,8 @@ export default function Home() {
       <Features />
       <ContractorIndustry />
       <OurReviews />
-
-      {/* particle js  */}
-      <div className="bg-no-repeat bg-center bg-contain relative bg-kuroiBlack">
-        <Whatever />
-        <MakeOperation />
-      </div>
+      <Whatever />
+      <MakeOperation />
       <OurBlogs />
       <div className="overflow-hidden relative">
         {/* <Image

@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -7,11 +8,10 @@ import {
   DownArrowIcon,
   FooterLogoIcon,
   FooterRedLineIcon,
-  GreenDotIcon,
   LinkdinIcon,
   TwitterIcon,
 } from "./Icons";
-import { useTranslations } from "next-intl";
+import ParticlesComponent from "./ParticlesComponent";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,21 +37,10 @@ const Footer = () => {
     setOpenSection(openSection === title ? null : title);
   };
   const legalLinks = t.raw("legalLinks");
-  const [isHovered, setIsHovered] = useState(false);
-
-  // const handleMouseEnter = () => setIsHovered(true);
-  // const handleMouseLeave = () => setIsHovered(false);
-  const handleMouseEnter = () => {
-    console.log("Mouse entered"); // Debugging
-    setIsHovered(true);
-  };
-  const handleMouseLeave = () => {
-    console.log("Mouse left"); // Debugging
-    setIsHovered(false);
-  };
 
   return (
-    <footer className="bg-kuroiBlack py-10 w-full relative">
+    <footer className="bg-kuroiBlack py-10 w-full relative overflow-hidden">
+      <ParticlesComponent id="star-particles" />
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>

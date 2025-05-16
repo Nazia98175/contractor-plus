@@ -10,27 +10,26 @@ const TheEngineContractor = () => {
   return (
     <section
       ref={ref}
-      className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] mt-12 relative"
+      className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] mt-12 relative z-10"
     >
       <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!px-12">
         <div className="flex flex-col gap-1.5 w-full">
           <h2 className="section-heading text-white text-center md:text-left">
-            <div className="pr-2">
-              {t("heading")}&nbsp;
-              {inView ? (
-                <CountUp
-                  className="xl:min-w-[123px] lg:min-w-[141px] sm:min-w-[105px] min-w-[74px] xl:max-w-[123px] lg:max-w-[141px] sm:max-w-[105px] max-w-[74px] w-full"
-                  start={0}
-                  end={57163}
-                  duration={3}
-                  separator=","
-                />
-              ) : (
-                "0"
-              )}
-            </div>
+            {t("heading")}&nbsp;
+            {inView ? (
+              <CountUp
+                className="xl:min-w-[123px] lg:min-w-[141px] sm:min-w-[105px] min-w-[74px] xl:max-w-[123px] lg:max-w-[141px] sm:max-w-[105px] max-w-[74px] w-full"
+                start={0}
+                end={57163}
+                duration={3}
+                separator=","
+              />
+            ) : (
+              "0"
+            )}{" "}
+            <br />
             {t("countup")}
-          </h2>{" "}
+          </h2>
         </div>
         <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
           <img

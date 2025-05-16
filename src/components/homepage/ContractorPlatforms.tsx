@@ -28,7 +28,7 @@ const ContractorPlatforms: React.FC = () => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-8 xl:gap-11"
+          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-[30px] sm:gap-y-8 xl:gap-11"
         >
           {contractPlatforms.map((obj, index) => (
             <article

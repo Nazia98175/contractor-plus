@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React, { useEffect } from "react";
-import { FooterLogoIcon } from "./Icons";
+import { OnIcon, OnIconw } from "./Icons";
 
 const FooterLogoWithStars: React.FC = () => {
   useEffect(() => {
@@ -111,7 +112,7 @@ const FooterLogoWithStars: React.FC = () => {
   }, []);
 
   return (
-    <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6 relative">
+    <>
       {/* Particles container - positioned absolutely */}
       <div
         id="footer-logo-particles"
@@ -127,10 +128,21 @@ const FooterLogoWithStars: React.FC = () => {
       ></div>
 
       {/* Logo with higher z-index to appear on top of particles */}
-      <div className="relative z-10">
-        <FooterLogoIcon />
+      <div className="second-border xl:p-5 p-3 relative z-30 w-fit">
+        <div className="relative xl:w-[110px] lg:w-20 w-[55px] xl:h-[110px] lg:h-20 h-[55px] flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden third-border">
+          <OnIcon className="absolute w-full h-full pointer-events-none -z-1 one" />
+          <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
+          <Image
+            className="object-cover relative z-10 lg:max-w-[51px] max-w-[31px]"
+            src="/images/png/center-icon.png"
+            width={51}
+            height={68}
+            alt="center-icon"
+            unoptimized
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

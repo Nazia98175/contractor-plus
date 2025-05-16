@@ -38,7 +38,7 @@ const Finally = () => {
           ))}
         </CardReveal>
         <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-14 sm:mt-16 relative px-3 lg:px-0 pb-8 lg:pb-0">
-          <div className="w-[120%] h-[70px] bg-white blur-[8px] absolute -left-[2%] md:block hidden -bottom-[6%] z-10"></div>
+          {/* <div className="w-[120%] h-[70px] bg-white blur-[8px] absolute -left-[2%] md:block hidden -bottom-[6%] z-10"></div> */}
 
           {/* Cloud Layer 1 */}
           <div className="absolute bottom-0 left-0 hidden lg:flex w-full h-[160px] z-20 pointer-events-none">

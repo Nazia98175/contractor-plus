@@ -39,28 +39,25 @@ const Finally = () => {
         </CardReveal>
         <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-14 sm:mt-16 relative px-3 lg:px-0 pb-8 lg:pb-0">
           <div className="w-[120%] h-[70px] bg-white blur-[8px] absolute -left-[2%] md:block hidden -bottom-[6%] z-10"></div>
-          {/* <img
-            src="/images/webp/claud.webp"
-            alt="Claud background"
-            className="hidden lg:block absolute w-full bottom-0 z-20 left-0 h-[140px]"
-          /> */}
 
-          <div className="absolute bottom-0 left-0 hidden lg:flex w-full animate-cloud-marquee h-[140px] z-20">
-            <img
-              src="/images/webp/claud.webp"
-              alt="Cloud"
-              className="h-full object-cover -mx-24"
-            />
-            <img
-              src="/images/webp/claud.webp"
-              alt="Cloud"
-              className="h-full object-cover -mx-24"
-            />
-            <img
-              src="/images/webp/claud.webp"
-              alt="Cloud"
-              className="h-full object-cover -mx-24"
-            />
+          {/* Cloud Layer 1 */}
+          <div className="absolute bottom-0 left-0 hidden lg:flex w-full h-[160px] z-20 pointer-events-none">
+            <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
+              <img
+                src="/images/webp/claud.webp"
+                alt="Cloud Layer 1"
+                className="h-full object-cover w-full"
+              />
+            </div>
+
+            {/* Cloud Layer 2 */}
+            <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
+              <img
+                src="/images/webp/claud.webp"
+                alt="Cloud Layer 2"
+                className="h-full object-cover w-full"
+              />
+            </div>
           </div>
 
           {/* <FogGenerator /> */}

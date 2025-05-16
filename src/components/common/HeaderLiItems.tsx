@@ -266,7 +266,7 @@ const HeaderLiItems = () => {
   return (
     <div onMouseLeave={handleContainerLeave}>
       {/* Menu Items */}
-      <div className="flex items-center 2xl:gap-5 gap-1 xl:gap-2 w-full">
+      <div className="flex items-center 3xl:gap-5 gap-1 xl:gap-2 w-full">
         {menuItems.map((item, index) =>
           item.link ? (
             <Link

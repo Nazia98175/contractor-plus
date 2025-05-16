@@ -61,9 +61,9 @@ const LanguageItem = memo(
       }}
       onClick={onClick}
     >
-      <div className="flex gap-2 w-full items-center justify-start">
+      <div className="flex gap-1 sm:gap-2 w-full items-center justify-start">
         <Image
-          className="object-cover min-w-5 w-5 rounded-full"
+          className="object-cover w-3 sm:min-w-5 sm:w-5 rounded-full"
           src={language.imgPath}
           width={16}
           height={16}
@@ -71,7 +71,7 @@ const LanguageItem = memo(
           alt={`${language.code} flag`}
           loading="lazy" // Add lazy loading
         />
-        <h4 className="font-inter text-xs xl:text-sm font-semibold">
+        <h4 className="font-inter text-[10px] sm:text-xs xl:text-sm font-semibold">
           {language.name}
         </h4>
       </div>
@@ -180,7 +180,7 @@ const LanguageSelector = () => {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center gap-1 cursor-pointer bg-transparent py-1 px-1.5 min-w-[110px] w-fit text-superSilver lg:text-xs sm:text-sm rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
+        className="flex items-center gap-1 cursor-pointer bg-transparent py-1 px-1.5 sm:min-w-[110px] w-fit text-superSilver lg:text-xs sm:text-sm rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
         onClick={toggleDropdown}
       >
         <Image

@@ -17,7 +17,7 @@ const languages: LanguageOption[] = [
   {
     code: "en",
     value: "en",
-    imgPath: "/images/png/united_states.png",
+    imgPath: "/images/webp/usa.webp",
     name: "English",
   },
   {

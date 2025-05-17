@@ -237,6 +237,34 @@
       "description": "Demandes directes de clients et locataires"
     }
   },
+
+  "crm": {
+    "heading": "Les équipes utilisant Contractor+ CRM ne reviennent jamais en arrière",
+    "desc": "Nous vous aidons à aller de l'avant, pas seulement à survivre",
+    "crmList": [
+      {
+        "title": "plus rapide",
+        "description": "Suivi client",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "heures",
+        "description": "Heures économisées par semaine",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "de plus",
+        "description": "Travaux créés",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
   "whyContractor": {
     "links": [
       {

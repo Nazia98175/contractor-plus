@@ -470,3 +470,15 @@ html {
   -webkit-text-fill-color: transparent;
   display: inline;
 }
+
+.shadow {
+  aspect-ratio: 1 / 1;
+  filter: drop-shadow(-111.494px 100.345px 143px rgba(0, 0, 0, 0.04))
+    drop-shadow(-81.095px 72.985px 96.385px rgba(0, 0, 0, 0.07))
+    drop-shadow(-56.444px 50.8px 62.339px rgba(0, 0, 0, 0.09))
+    drop-shadow(-37.02px 33.318px 38.683px rgba(0, 0, 0, 0.1))
+    drop-shadow(-22.299px 20.069px 23.237px rgba(0, 0, 0, 0.12))
+    drop-shadow(-11.759px 10.583px 13.825px rgba(0, 0, 0, 0.14))
+    drop-shadow(-4.878px 4.39px 8.267px rgba(0, 0, 0, 0.17))
+    drop-shadow(-1.132px 1.019px 4.385px rgba(0, 0, 0, 0.21));
+}

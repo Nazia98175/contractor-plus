@@ -236,6 +236,34 @@
       "description": "Solicitudes directas de clientes e inquilinos"
     }
   },
+
+  "crm": {
+    "heading": "Los equipos que usan Contractor+ CRM nunca miran atrás",
+    "desc": "Te ayudamos a avanzar, no solo a sobrevivir",
+    "crmList": [
+      {
+        "title": "más rápido",
+        "description": "Seguimiento al cliente",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "horas",
+        "description": "Horas ahorradas semanalmente",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "más",
+        "description": "Trabajos creados",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
   "whyContractor": {
     "links": [
       {

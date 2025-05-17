@@ -68,20 +68,25 @@ const Finally = () => {
             className="flex flex-row lg:flex-col gap-4"
           >
             <img
+              style={{
+                filter: `
+                drop-shadow(-111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04))
+                `,
+              }}
               src="/images/webp/software-advice.webp"
               alt="Software Advice"
-              className="max-w-12 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
 
             <img
               src="/images/webp/leader.webp"
               alt="Leader"
-              className="max-w-12 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
             <img
               src="/images/webp/get-app.webp"
               alt="Get App"
-              className="max-w-12 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
             />
           </CardReveal>
           <CardReveal staggerDelay={0.4} animationDuration={0.8} distance={50}>

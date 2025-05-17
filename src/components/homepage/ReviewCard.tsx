@@ -31,7 +31,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
     <div className="mr-5 min-h-full h-full ">
       <article
         onClick={openModal}
-        className="bg-[#fafafa] btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer min-h-full h-full flex flex-col justify-between relative"
+        className="bg-doctor btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer min-h-full h-full flex flex-col justify-between relative"
       >
         <div className="flex justify-between items-start gap-5">
           <div className="flex items-center gap-2">

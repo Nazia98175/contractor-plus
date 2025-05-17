@@ -274,7 +274,7 @@ const HeaderLiItems = () => {
               href={item.link}
               onMouseEnter={handleLinkEnter}
               onMouseLeave={handleMenuItemLeave}
-              className={`header-li whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+              className={`header-li hover:!text-redPigment whitespace-nowrap py-[2px] xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack"
                   : "text-superSilver bg-transparent"

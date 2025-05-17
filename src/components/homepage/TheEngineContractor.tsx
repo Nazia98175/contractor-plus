@@ -14,7 +14,7 @@ const TheEngineContractor = () => {
     >
       <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!px-12">
         <div className="flex flex-col gap-1.5 w-full">
-          <h2 className="section-heading text-white text-center md:text-left">
+          <h2 className="section-heading gradient-text text-center md:text-left">
             {t("heading")}&nbsp;
             {inView ? (
               <CountUp

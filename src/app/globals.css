@@ -364,58 +364,7 @@ html {
   animation: cloud-layer-2 20s ease-in-out infinite;
 }
 /* circular-gallery.css */
-.circular-gallery-container {
-  perspective: 1000px;
-  overflow: hidden;
-  position: relative;
-}
 
-.gallery-track {
-  z-index: 999;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.gallery-item {
-  position: absolute;
-  transform-origin: center center;
-  transition: transform 0.05s ease-out;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  will-change: transform;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-item .text-overlay {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  padding: 8px 0;
-  z-index: 2;
-  font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.gallery-item .text-top {
-  top: -36px;
-  left: 0;
-}
-
-.gallery-item .text-bottom {
-  bottom: -36px;
-  left: 0;
-}
-
-/* Animated wave effect for text */
 @keyframes wave {
   0%,
   100% {
@@ -426,37 +375,6 @@ html {
   }
 }
 
-.gallery-item.active .text-overlay {
-  animation: wave 2s ease-in-out infinite;
-  color: #ffffff;
-}
-
-/* Add hover effect to items */
-.gallery-item:hover {
-  cursor: grab;
-}
-
-.gallery-item:active {
-  cursor: grabbing;
-}
-
-/* Custom scrollbar for the page */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
 .linear-text {
   background: linear-gradient(
     to right,
@@ -510,4 +428,28 @@ html {
 }
 .bg-testimonial-right-2 {
   background: linear-gradient(270deg, #060606, #000000);
+}
+.gradient-text {
+  background: linear-gradient(
+      275.84deg,
+      rgba(0, 0, 0, 0) 7.61%,
+      rgba(238, 30, 37, 0.4) 99.65%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.gradient-text-2 {
+  background: linear-gradient(
+      275.84deg,
+      rgba(0, 0, 0, 0) 7.61%,
+      rgba(238, 30, 37, 0.4) 99.65%
+    ),
+    #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

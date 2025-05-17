@@ -11,7 +11,7 @@ const Finally = () => {
     <section className="relative no-scrollbar overflow-x-hidden pt-16 md:pt-20 xl:pt-[186px]">
       <div className="space-y-4 z-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h2 className="section-heading text-center text-white">
+          <h2 className="section-heading text-center gradient-text">
             {t("heading")}
           </h2>
         </TextAnimation>

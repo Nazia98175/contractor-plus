@@ -24,19 +24,17 @@ export default function Home() {
   return (
     <div className="relative overflow-x-hidden">
       <div className="bg-kuroiBlack bg-no-repeat bg-cover relative">
-        <Image
-          src="/images/webp/red-circle.webp"
-          alt="Red Circle For designing"
-          fill
-          className="absolute top-0 left-0 w-full hidden lg:block h-full z-10 pointer-events-none object-cover"
-        />
         <Header />
         <div className="relative">
-          <Image
+          <img
+            src="/images/webp/red.webp"
+            alt="Red Circle For designing"
+            className="absolute top-0 left-0 w-3/5 3xl:w-full hidden lg:block h-full z-10 pointer-events-none object-cover"
+          />
+          <img
             src="/images/webp/hero-mobile-bg.webp"
             alt="Mobile Hero"
-            fill
-            className="right-0 lg:hidden z-10 object-bottom-right pointer-events-none -bottom-[40%] md:-bottom-[45%] absolute w-full h-full"
+            className="right-0 lg:hidden z-10 object-center h-full pointer-events-none -bottom-[20%] sm:-bottom-[30%] md:-bottom-[35%] sm:blur-lg absolute w-full sm:w-5/6"
           />
           <Hero />
           <TrustBar />
@@ -47,8 +45,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
-        <div className="absolute bottom-14 max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[30px] opacity-35 block md:hidden z-10"></div>
+      <div className="bg-[url('/images/webp/platform-bg.webp')] sm:bg-cover bg-bottom  lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative bg-white">
         <img
           className="absolute top-[-120px] left-0 w-full h-full z-10 hidden sm:block"
           src="/images/webp/platform-bg.webp"

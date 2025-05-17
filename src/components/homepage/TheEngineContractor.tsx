@@ -10,7 +10,7 @@ const TheEngineContractor = () => {
   return (
     <section
       ref={ref}
-      className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] mt-12 relative z-10"
+      className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] mt-12 relative z-30"
     >
       <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!px-12">
         <div className="flex flex-col gap-1.5 w-full">

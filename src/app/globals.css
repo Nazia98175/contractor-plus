@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -56,7 +57,7 @@
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
-  --font-inter: "inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
   --shadow-c1: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
@@ -82,6 +83,9 @@
     -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21); */
 }
 
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
 @font-face {
   font-family: Myriad Pro;
   font-style: normal;
@@ -98,7 +102,7 @@ body {
   @apply max-w-[1308px] w-full mx-auto px-2;
 }
 .main-heading {
-  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
+  @apply text-[26px] sm:text-4xl lg:text-5xl capitalize xl:text-[52px] font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
   @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
@@ -440,6 +444,21 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .gradient-text {
+    background: linear-gradient(
+        275.84deg,
+        rgba(238, 30, 37, 0.4) 7.61%,
+        rgba(0, 0, 0, 0) 99.65%
+      ),
+      linear-gradient(0deg, #ffffff, #ffffff), #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
 }
 .gradient-text-2 {
   background: linear-gradient(

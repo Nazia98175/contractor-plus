@@ -87,14 +87,29 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
 }
 @font-face {
-  font-family: Myriad Pro;
+  font-family: "Myriad Pro";
+  src: url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
+  font-weight: 400;
   font-style: normal;
-  font-weight: 200 700;
   font-display: swap;
-  src: url("/fonts/MYRIADPRO-BOLD.OTF") format("opentype"),
-    url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype"),
-    url("/fonts/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
 }
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("/fonts/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("/fonts/MYRIADPRO-BOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   @apply bg-black;
 }
@@ -102,7 +117,7 @@ body {
   @apply max-w-[1308px] w-full mx-auto px-2;
 }
 .main-heading {
-  @apply text-[26px] sm:text-4xl lg:text-5xl capitalize xl:text-[52px] font-[800] font-jakarta leading-[130%];
+  @apply text-[26px] sm:text-4xl lg:text-5xl capitalize xl:text-[52px] font-extrabold font-jakarta leading-[130%];
 }
 .section-heading {
   @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;

@@ -4,8 +4,8 @@ import { HamburgerIcon, LogoIcon } from "./Icons";
 import HeaderLiItems from "./HeaderLiItems";
 import LanguageSelector from "../LanguageSelector";
 import SideBar from "./SideBar";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const Header = () => {
   const [isshow, setIsShow] = useState(false);

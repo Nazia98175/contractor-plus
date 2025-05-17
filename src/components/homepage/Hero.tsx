@@ -7,7 +7,7 @@ const Hero = () => {
   const t = useTranslations("hero");
   return (
     <section className="relative overflow-hidden">
-      <div className="flex items-end main-container z-20 relative pt-[292px] pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px] 3xl:min-h-[1000px] max-h-[1000px]">
+      <div className="flex items-end main-container  z-10 relative pt-[292px] pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px] 3xl:min-h-[1000px] max-h-[1000px]">
         <div className="max-w-[616px] w-full sm:space-y-6">
           <TextAnimation animateOnScroll={false} delay={0.3}>
             <h1 className="main-heading text-white mb-1.5">{t("heading")}</h1>

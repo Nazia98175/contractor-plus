@@ -10,7 +10,6 @@
   --color-doctor: #fafafa;
   --color-whiteSmoke: #f3f3f3;
   --color-doctor2: #f8f8f8;
-  --color-doctor3: #fafafa;
   --color-lightishBlue: #3b82f6;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
@@ -72,6 +71,15 @@
     -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
     -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
     -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
+
+  --drop-shadow-3xl: 111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
+  /* -81.095px 72.985px 96.385px 0px rgba(0, 0, 0, 0.07),
+    -56.444px 50.8px 62.339px 0px rgba(0, 0, 0, 0.09),
+    -37.02px 33.318px 38.683px 0px rgba(0, 0, 0, 0.1),
+    -22.299px 20.069px 23.237px 0px rgba(0, 0, 0, 0.12),
+    -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
+    -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
+    -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21); */
 }
 
 @font-face {
@@ -93,7 +101,7 @@ body {
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta capitalize;
+  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
   @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta capitalize;
@@ -354,4 +362,111 @@ html {
 
 .animate-cloud-layer-2 {
   animation: cloud-layer-2 20s ease-in-out infinite;
+}
+/* circular-gallery.css */
+.circular-gallery-container {
+  perspective: 1000px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-track {
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.gallery-item {
+  position: absolute;
+  transform-origin: center center;
+  transition: transform 0.05s ease-out;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  will-change: transform;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item .text-overlay {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 8px 0;
+  z-index: 2;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item .text-top {
+  top: -36px;
+  left: 0;
+}
+
+.gallery-item .text-bottom {
+  bottom: -36px;
+  left: 0;
+}
+
+/* Animated wave effect for text */
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.gallery-item.active .text-overlay {
+  animation: wave 2s ease-in-out infinite;
+  color: #ffffff;
+}
+
+/* Add hover effect to items */
+.gallery-item:hover {
+  cursor: grab;
+}
+
+.gallery-item:active {
+  cursor: grabbing;
+}
+
+/* Custom scrollbar for the page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.linear-text {
+  background: linear-gradient(
+    to right,
+    #000000,
+    #180606,
+    #46090b,
+    #5f0c0f,
+    #7a0f13
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
 }

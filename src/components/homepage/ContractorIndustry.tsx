@@ -1,8 +1,9 @@
+import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
-import { getGalleryItems } from "./CircuartItem";
 import CircularGallery from "./CircularGallery";
+import CircuartItem, { getGalleryItems } from "./CircuartItem";
 
 const ContractorIndustry = () => {
   const galleryItems = getGalleryItems();
@@ -34,7 +35,7 @@ const ContractorIndustry = () => {
       />
       <div className="px-2 relative z-20">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading text-center gradient-text">
+          <h3 className="section-heading text-center text-white">
             {t("heading")}
           </h3>
         </TextAnimation>
@@ -49,12 +50,12 @@ const ContractorIndustry = () => {
       </div>
 
       {/* here is slider so img tag not changed */}
-      {/* <img
+      <img
         className="max-w-[1227px] w-full mx-auto relative z-10"
         src="/images/webp/contractor.webp"
         alt="Contractor"
-      /> */}
-      <div style={{ height: "600px", position: "relative" }} className="mt-10">
+      />
+      {/* <div style={{ height: "600px", position: "relative" }} className="mt-10">
         <CircularGallery
           items={galleryItems}
           bend={3}
@@ -62,7 +63,7 @@ const ContractorIndustry = () => {
           borderRadius={0.05}
           textPosition="top"
         />
-      </div>
+      </div> */}
     </section>
   );
 };

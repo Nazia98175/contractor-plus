@@ -22,19 +22,19 @@ export const getGalleryItems = () => {
       text: "Slide 1",
     },
     {
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/png/circular-slide-2.png", // Changed to use unique images
       text: "Slide 2",
     },
     {
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/png/circular-slide-3.png", // Changed to use unique images
       text: "Slide 3",
     },
     {
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/png/circular-slide-4.png", // Changed to use unique images
       text: "Slide 4",
     },
     {
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/png/circular-slide-5.png", // Changed to use unique images
       text: "Slide 5",
     },
   ];

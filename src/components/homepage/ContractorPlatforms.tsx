@@ -10,7 +10,7 @@ const ContractorPlatforms: React.FC = () => {
   return (
     <section className="bg-kuroiBlack relative">
       <Image
-        className="absolute bottom-[-439px] left-0 w-full z-[-1]"
+        className="absolute bottom-[-439px] left-0 w-full z-10 block sm:hidden"
         src="/images/png/contractor-bg.png"
         alt="images"
         width={1920}

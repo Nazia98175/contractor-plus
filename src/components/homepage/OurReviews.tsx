@@ -17,6 +17,7 @@ export interface ReviewItem {
   reviewText: string;
   rating: number;
   profileUrl: string;
+  isModal: boolean;
   companyIcon: string;
 }
 
@@ -97,7 +98,7 @@ const OurReviews: React.FC = () => {
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
-                openModal={openModal}
+                openModal={review.isModal ? openModal : () => {}}
               />
             ))}
           </Marquee>
@@ -110,7 +111,7 @@ const OurReviews: React.FC = () => {
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
-                openModal={openModal}
+                openModal={review.isModal ? openModal : () => {}}
               />
             ))}
           </Marquee>

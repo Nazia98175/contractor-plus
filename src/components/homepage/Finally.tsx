@@ -8,7 +8,9 @@ const Finally = () => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
   return (
-    <section className="relative no-scrollbar overflow-x-hidden pt-16 md:pt-20 xl:pt-[186px]">
+    <section className="relative no-scrollbar overflow-x-hidden pt-16 md:pt-20 xl:pt-[186px] bg-white">
+      <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
+      <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
       <div className="space-y-4 z-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center text-white">
@@ -75,18 +77,18 @@ const Finally = () => {
               }}
               src="/images/webp/software-advice.webp"
               alt="Software Advice"
-              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
             />
 
             <img
               src="/images/webp/leader.webp"
               alt="Leader"
-              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
             />
             <img
               src="/images/webp/get-app.webp"
               alt="Get App"
-              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:rotate-6 duration-300 cursor-pointer hover:scale-105"
+              className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
             />
           </CardReveal>
           <CardReveal staggerDelay={0.4} animationDuration={0.8} distance={50}>

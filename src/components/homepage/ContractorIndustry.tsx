@@ -1,9 +1,8 @@
-import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
+import { getGalleryItems } from "./CircuartItem";
 import CircularGallery from "./CircularGallery";
-import CircuartItem, { getGalleryItems } from "./CircuartItem";
 
 const ContractorIndustry = () => {
   const galleryItems = getGalleryItems();
@@ -35,7 +34,7 @@ const ContractorIndustry = () => {
       />
       <div className="px-2 relative z-20">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading text-center text-white">
+          <h3 className="section-heading text-center gradient-text">
             {t("heading")}
           </h3>
         </TextAnimation>

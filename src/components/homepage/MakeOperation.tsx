@@ -45,7 +45,7 @@ const MakeOperation = () => {
 
       <div className="main-container pb-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading font-semibold  text-white text-center">
+          <h3 className="section-heading font-semibold  gradient-text text-center">
             {t("heading")}
           </h3>
         </TextAnimation>

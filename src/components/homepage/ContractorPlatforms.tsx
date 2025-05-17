@@ -16,7 +16,7 @@ const ContractorPlatforms: React.FC = () => {
         width={1920}
         height={1080}
       />
-      <div className="main-container flex flex-col gap-11 lg:pt-11 pt-[37px] sm:pb-0 pb-9 relative z-20">
+      <div className="main-container flex flex-col gap-9 md:gap-11 lg:pt-11 pt-[37px] sm:pb-0 pb-9 relative z-20">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
             {t("platformcatch")}

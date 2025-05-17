@@ -40,7 +40,7 @@ const OurReviews: React.FC = () => {
     <section className="pt-[15px] pb-[35px] md:pt-12 md:pb-16 bg-white relative z-20">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading text-black text-center md:text-start">
+          <h3 className="section-heading text-black text-center md:text-start gradient-text-2">
             {t("heading")}
           </h3>
         </TextAnimation>

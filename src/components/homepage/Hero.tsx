@@ -33,7 +33,6 @@ const Hero = () => {
       <div className="absolute object-bottom lg:-right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] 3xl:max-h-[1024px] top-0 aspect-video">
         <VideoViewer />
       </div>
-
       <div className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full">
         <Image
           src="/images/webp/hero-bg.webp"

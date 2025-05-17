@@ -105,7 +105,7 @@ const OurBlogs = () => {
               <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
                 <img
                   className="absolute top-0 -left-1 w-full h-full z-10 pointer-events-none object-contain"
-                  src="images/webp/blog-angle.webp"
+                  src="images/svg/blog-bg.svg"
                   alt="blog angle"
                 />
                 <img

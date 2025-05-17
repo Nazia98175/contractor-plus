@@ -10,7 +10,6 @@
   --color-doctor: #fafafa;
   --color-whiteSmoke: #f3f3f3;
   --color-doctor2: #f8f8f8;
-  --color-doctor3: #fafafa;
   --color-lightishBlue: #3b82f6;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
@@ -102,7 +101,7 @@ body {
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] capitalize font-[800] font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta capitalize;
+  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
   @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta capitalize;
@@ -366,8 +365,6 @@ html {
 }
 
 .linear-text {
-  font-weight: bold;
-  font-size: 24px; /* Adjust as needed */
   background: linear-gradient(
     to right,
     #000000,
@@ -376,6 +373,15 @@ html {
     #5f0c0f,
     #7a0f13
   );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.linear-gradient-text {
+  font-weight: bold;
+  font-size: 24px; /* You can adjust this */
+  background: linear-gradient(to right, #000000, #ee1e25);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;

@@ -99,6 +99,34 @@
       }
     ]
   },
+
+  "crm": {
+    "heading": "Teams using Contractor+ CRM never look back",
+    "desc": "We help you get ahead, not just get by",
+    "crmList": [
+      {
+        "title": "faster",
+        "description": "Customer follow-up",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "hours",
+        "description": "Job turnaround time",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "more",
+        "description": "Jobs created",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
   "reviews": {
     "heading": "Let our customers do the talking...",
     "excellent": "Excellent",

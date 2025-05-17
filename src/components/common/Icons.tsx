@@ -907,7 +907,11 @@ export const CrossIcon = () => (
   </svg>
 );
 
-export const EstimateIcon2 = () => (
+type EstimateIcon2Props = {
+  fill?: string;
+};
+
+export const EstimateIcon2 = ({ fill = "#ffffff" }: EstimateIcon2Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="32"
@@ -917,7 +921,7 @@ export const EstimateIcon2 = () => (
   >
     <path
       d="M2.04443 29.7339L3.99949 29.7339L24.5188 8.07064L6.97325 29.7339L10.542 29.7339L25.6923 8.18271L24.6311 13.4436L26.5048 11.8141L26.6869 16.0828L30.5985 1.2105L15.519 5.17644L21.1111 6.10595L19.2063 7.75888L22.8672 6.74878L2.04443 21.2361V22.5906L14.6948 13.9762L3.38664 24.3703L11.7752 18.3777L2.04443 28.2636V29.7339ZM12.5005 3.5L9.95597 5.46876L22.5624 2.12718L9.37569 1.20166L12.5005 3.5ZM27.4787 17.5567L28.8998 16.5L30.5721 17.7566L29.7983 8.72146L27.4787 17.5567Z"
-      fill="white"
+      fill={fill}
     />
   </svg>
 );

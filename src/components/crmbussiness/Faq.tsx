@@ -53,7 +53,8 @@ const Faq = () => {
     },
   ];
   return (
-    <section className="bg-kuroiBlack py-10">
+    <section className=" py-10 relative overflow-hidden">
+      <div className="hidden lg:block absolute top-0 right-0 max-w-[70px] rotate-[35deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-15 pointer-events-none"></div>
       <h3 className="section-heading text-white text-center">
         What contractors want to know
       </h3>

@@ -27,7 +27,6 @@ const features = [
 const KindAdorable = () => {
   return (
     <div className="bg-white p-4">
-      {" "}
       <section className="bg-white overflow-auto max-w-[1092px] mx-auto">
         <div className="w-full border border-decemberSky rounded-lg overflow-auto no-scrollbar">
           <table className="min-w-full text-left border-collapse whitespace-nowrap">

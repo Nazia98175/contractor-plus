@@ -45,15 +45,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[url('/images/webp/platform-bg.webp')] sm:bg-cover bg-bottom  lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative bg-white">
-        <img
-          className="absolute top-[-120px] left-0 w-full h-full z-10 hidden sm:block"
-          src="/images/webp/platform-bg.webp"
-          alt="platform bg"
-        />
-        <ContractorPlatforms />
-        <Finally />
-      </div>
+      <ContractorPlatforms />
+      <Finally />
+
       <CoreFeatures />
       <Features />
       <ContractorIndustry />

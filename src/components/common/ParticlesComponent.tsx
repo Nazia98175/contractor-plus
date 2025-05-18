@@ -27,9 +27,7 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
   }, []);
 
   // Particle load callback (optional, for debugging or logging)
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log("Particles container loaded", container);
-  };
+  const particlesLoaded = async (container?: Container): Promise<void> => {};
 
   // Define the particles options for infinite stars moving bottom to top
   const options = useMemo(

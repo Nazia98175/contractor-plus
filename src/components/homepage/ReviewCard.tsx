@@ -10,6 +10,7 @@ export interface Review {
   companyIcon: string;
   rating: number;
   reviewText: string;
+  isModal: boolean;
 }
 
 interface ReviewCardProps {
@@ -28,13 +29,15 @@ const renderStars = (rating: number) => {
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   return (
-    <div className="mr-5 min-h-full h-full ">
+    <div className="mr-5 min-h-full h-full">
       <article
-        onClick={openModal}
-        className="bg-[#fafafa] btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer min-h-full h-full flex flex-col justify-between relative"
+        onClick={review.isModal ? openModal : undefined}
+        className={` ${
+          review.isModal ? "cursor-pointer" : ""
+        } bg-doctor group btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full  min-h-full h-full flex flex-col justify-between relative`}
       >
-        <div className="flex justify-between items-start gap-5">
-          <div className="flex items-center gap-2">
+        <div className="flex justify-between items-start gap-5 lg:p-2">
+          <div className="flex items-center gap-2 ">
             <Image
               src={review.profileUrl}
               alt="avatar"
@@ -47,10 +50,16 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                 <p className="text-base font-medium text-lightBlack font-jakarta">
                   {review.userName}
                 </p>
-                <span onClick={openModal}>
-                  <PlayIcon />
-                </span>
+                {review.isModal && (
+                  <span
+                    onClick={openModal}
+                    className="group-hover:text-romanRed text-[#1C2731]"
+                  >
+                    <PlayIcon />
+                  </span>
+                )}
               </div>
+
               <img
                 className="max-w-[52px]"
                 src={review.companyIcon}
@@ -62,7 +71,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay text-sm font-semibold p-2 mt-3">
+        <p className="text-winterWay text-sm tracking-[0.1px] font-jakarta font-semibold p-2 mt-3 line-clamp-2">
           "{review.reviewText}"
         </p>
       </article>

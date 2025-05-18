@@ -2,7 +2,7 @@
   "heading": "Bienvenue dans Next.js !",
   "hero": {
     "heading": "Le seul système d'exploitation pour les entrepreneurs en construction et services",
-    "desc": "Toute la puissance des grands logiciels, sans les inconvénients. Une seule plateforme — et non six — pour gérer les chantiers, les équipes, les clients et la croissance.",
+    "desc": "Toute la puissance des grands logiciels, sans les tracas. Une seule plateforme —pas six— pour gérer les projets, les équipes, les clients et la croissance.",
     "credit": "Aucune carte de crédit requise",
     "cta": "Créer un compte gratuit",
     "video": "Votre navigateur ne prend pas en charge la balise vidéo."
@@ -237,6 +237,34 @@
       "description": "Demandes directes de clients et locataires"
     }
   },
+
+  "crm": {
+    "heading": "Les équipes utilisant Contractor+ CRM ne reviennent jamais en arrière",
+    "desc": "Nous vous aidons à aller de l'avant, pas seulement à survivre",
+    "crmList": [
+      {
+        "title": "plus rapide",
+        "description": "Suivi client",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "heures",
+        "description": "Heures économisées par semaine",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "de plus",
+        "description": "Travaux créés",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
   "whyContractor": {
     "links": [
       {
@@ -443,22 +471,22 @@
     "excellent": "Excellent",
     "basedOn": "Basé sur {count} avis",
     "ourReviews": {
-      "review1": "J'adore absolument le service fourni. Hautement recommandé !",
-      "review2": "Pas satisfait de la qualité. Des améliorations sont nécessaires.",
-      "review3": "Excellent support et interface facile à utiliser.",
-      "review4": "Le service était lent mais globalement correct.",
-      "review5": "Expérience parfaite ! Je l'utiliserai à nouveau.",
-      "review6": "Expérience terrible. Je ne recommande pas.",
-      "review7": "Équipe de service client très utile.",
-      "review8": "A dépassé toutes mes attentes.",
-      "review9": "Peut être meilleur. Il y a place à l'amélioration.",
-      "review10": "J'ai rencontré des problèmes de livraison et d'assistance.",
-      "review11": "Processus fluide et bonne communication.",
-      "review12": "Trop cher pour les fonctionnalités offertes.",
-      "review13": "Service absolument impeccable !",
-      "review14": "Pire expérience de ma vie.",
-      "review15": "Bon rapport qualité-prix.",
-      "review16": "Incroyable ! Je vais en parler à mes amis."
+      "review1": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review2": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review3": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review4": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review5": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review6": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review7": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review8": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review9": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review10": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review11": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review12": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review13": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review14": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review15": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
+      "review16": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats."
     }
   },
   "corefeature": {

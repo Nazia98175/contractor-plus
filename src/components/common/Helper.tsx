@@ -158,6 +158,7 @@ export interface Review {
   companyIcon: string;
   rating: number;
   reviewText: string;
+  isModal?: boolean;
 }
 export const OurReviewList: Review[] = [
   {
@@ -167,6 +168,7 @@ export const OurReviewList: Review[] = [
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 2,
     reviewText: "ourReviews.review1",
+    isModal: true,
   },
   {
     id: 2,
@@ -175,6 +177,7 @@ export const OurReviewList: Review[] = [
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
     reviewText: "ourReviews.review2",
+    isModal: true,
   },
   {
     id: 3,
@@ -183,6 +186,7 @@ export const OurReviewList: Review[] = [
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 4,
     reviewText: "ourReviews.review3",
+    isModal: true,
   },
   {
     id: 4,
@@ -191,6 +195,7 @@ export const OurReviewList: Review[] = [
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 2,
     reviewText: "ourReviews.review4",
+    isModal: true,
   },
   {
     id: 5,
@@ -198,6 +203,7 @@ export const OurReviewList: Review[] = [
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 5,
+    isModal: true,
     reviewText: "ourReviews.review5",
   },
   {
@@ -207,12 +213,14 @@ export const OurReviewList: Review[] = [
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
     reviewText: "ourReviews.review6",
+    isModal: true,
   },
   {
     id: 7,
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Sarah K.",
     companyIcon: "/images/svg/randsIcon.svg",
+    isModal: true,
     rating: 4,
     reviewText: "ourReviews.review7",
   },
@@ -221,6 +229,7 @@ export const OurReviewList: Review[] = [
     profileUrl: "/images/webp/review-profile.webp",
     userName: "David M.",
     companyIcon: "/images/svg/randsIcon.svg",
+    isModal: true,
     rating: 5,
     reviewText: "ourReviews.review8",
   },
@@ -229,6 +238,7 @@ export const OurReviewList: Review[] = [
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Jessica J.",
     companyIcon: "/images/svg/randsIcon.svg",
+    isModal: true,
     rating: 2,
     reviewText: "ourReviews.review9",
   },
@@ -237,6 +247,7 @@ export const OurReviewList: Review[] = [
     profileUrl: "/images/webp/review-profile.webp",
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
+    isModal: true,
     rating: 1,
     reviewText: "ourReviews.review10",
   },
@@ -270,6 +281,7 @@ export const OurReviewList: Review[] = [
     userName: "Michael T.",
     companyIcon: "/images/svg/randsIcon.svg",
     rating: 1,
+    isModal: true,
     reviewText: "ourReviews.review14",
   },
   {

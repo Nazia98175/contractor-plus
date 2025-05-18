@@ -11,12 +11,14 @@ interface TextRevealAnimationsProps {
   children: ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
+  preserveClasses?: boolean;
 }
 
 export default function TextAnimation({
   children,
   animateOnScroll = true,
   delay = 0,
+  preserveClasses = true, // New option to preserve all classes
 }: TextRevealAnimationsProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const elementRefs = useRef<HTMLElement[]>([]);
@@ -37,8 +39,12 @@ export default function TextAnimation({
       } else {
         elements = [containerRef.current as HTMLElement];
       }
+
       elements.forEach((element) => {
         elementRefs.current.push(element);
+
+        // Store the original classnames before splitting
+        const originalClasses = element.className;
 
         const split = SplitText.create(element, {
           type: "lines",
@@ -47,6 +53,43 @@ export default function TextAnimation({
           lineThreshold: 0.1,
         });
         splitRefs.current.push(split);
+
+        // Apply original classes to inner elements
+        if (preserveClasses && originalClasses) {
+          const classesToPreserve = originalClasses.split(" ").filter(
+            (cls) =>
+              // Preserve gradient classes and other special styling classes
+              cls.includes("gradient") ||
+              cls.includes("text-") ||
+              cls.includes("font-") ||
+              cls.includes("bg-")
+          );
+
+          split.lines.forEach((line) => {
+            // For each line find both the line element and its inner div
+            // Add classes to both to ensure styles are properly applied
+
+            // Add classes to line element
+            classesToPreserve.forEach((cls) => {
+              line.classList.add(cls);
+            });
+
+            // Find and add classes to inner div element (which contains the text)
+            const innerDiv = line.querySelector("div");
+            if (innerDiv) {
+              classesToPreserve.forEach((cls) => {
+                innerDiv.classList.add(cls);
+              });
+
+              // Special handling for gradients - need to set the background-clip
+              if (classesToPreserve.some((cls) => cls.includes("gradient"))) {
+                innerDiv.style.webkitBackgroundClip = "text";
+                innerDiv.style.backgroundClip = "text";
+                innerDiv.style.webkitTextFillColor = "transparent";
+              }
+            }
+          });
+        }
 
         const computedStyle = window.getComputedStyle(element);
         const textIndent = computedStyle.textIndent;
@@ -91,14 +134,19 @@ export default function TextAnimation({
         });
       };
     },
-    { scope: containerRef, dependencies: [animateOnScroll, delay] }
+    {
+      scope: containerRef,
+      dependencies: [animateOnScroll, delay, preserveClasses],
+    }
   );
+
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
     return React.cloneElement(
       children as ReactElement,
       { ref: containerRef } as { ref: React.RefObject<HTMLDivElement> }
     );
   }
+
   return (
     <div ref={containerRef} data-copy-wrapper="true">
       {children}

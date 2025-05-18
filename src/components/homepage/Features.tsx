@@ -5,16 +5,19 @@ import CustomSlider from "../common/CustomSlider";
 import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { featureKeys } from "../common/Helper";
-
-const Features = () => {
+type HeroProps = {
+  features: any; // Replace `any` with the actual type if available
+};
+const Features = ({ features }: { features: any }) => {
   const t = useTranslations("feature");
-  const featureData = featureKeys.map((item) => ({
-    title: t(item.titleKey),
-    desc: t(item.descKey),
+  const featureData = featureKeys.map((item , index) => ({
+    title: features?.[index]?.title,
+    desc: features?.[index]?.description,
     img: item.img,
   }));
+  console.log(featureData , "featuresData")
   return (
-    <section className="bg-white sm:px-2 xl:pt-[78px] pt-11 lg:pb-[37px] pb-6">
+    <section className="bg-white sm:px-2 xl:pt-[78px] pt-11 lg:pb-[37px] pb-6 relative z-20">
       <div className="main-container sm:!px-2 !px-0">
         <div className=" bg-doctor lg:rounded-[32px] sm:rounded-4xl lg:px-8 md:px-6 px-4 xl:py-12 lg:py-10 md:py-8 sm:py-6 pt-6 pb-3">
           <CardReveal

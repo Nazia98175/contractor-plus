@@ -1,10 +1,11 @@
+"use client";
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 
-const EntireBusiness: React.FC = () => {
+const CrmSercive: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -26,16 +27,16 @@ const EntireBusiness: React.FC = () => {
   };
 
   return (
-    <div className=" px-2 relative z-20">
+    <div className=" px-2">
       <div className="py-[75px]">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-decemberSky font-jakarta">
-            {t("heading")}
+          <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold gradient-text font-jakarta">
+            This is what a field service CRM should have been all along
           </h3>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
-            {t("subheading")}
+            Start using Contractor+ free. You won’t look back.
           </p>
         </TextAnimation>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
@@ -57,7 +58,7 @@ const EntireBusiness: React.FC = () => {
                   <CheckIcon />
                 </span>
                 <span className="text-sm font-semibold font-myriad text-white">
-                  {t("noCreditCard")}
+                  No Credit Card Required
                 </span>
               </p>
             </div>
@@ -69,7 +70,7 @@ const EntireBusiness: React.FC = () => {
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : (
-                t("createAccount")
+                "Create Free Account"
               )}
             </button>
             <div className="md:hidden flex justify-center items-center w-full">
@@ -78,7 +79,7 @@ const EntireBusiness: React.FC = () => {
                   <CheckIcon />
                 </span>
                 <span className="text-sm font-semibold font-myriad text-white">
-                  {t("noCreditCard")}
+                  No Credit Card Required
                 </span>
               </p>
             </div>
@@ -89,4 +90,4 @@ const EntireBusiness: React.FC = () => {
   );
 };
 
-export default EntireBusiness;
+export default CrmSercive;

@@ -2,7 +2,7 @@
   "heading": "Welcome to Next.js!",
   "hero": {
     "heading": "The only operating system for build & service contractors",
-    "desc": "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth.",
+    "desc": "All the power of big software, none of the pain. One platform—not six— to manage jobs, crews, customers, and growth.",
     "credit": "No Credit Card Required",
     "cta": "Create free account",
     "video": "Your browser does not support the video tag."
@@ -99,27 +99,55 @@
       }
     ]
   },
+
+  "crm": {
+    "heading": "Teams using Contractor+ CRM never look back",
+    "desc": "We help you get ahead, not just get by",
+    "crmList": [
+      {
+        "title": "faster",
+        "description": "Customer follow-up",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "hours",
+        "description": "Hours saved weekly",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "more",
+        "description": "Jobs created",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
   "reviews": {
     "heading": "Let our customers do the talking...",
     "excellent": "Excellent",
     "basedOn": "Based on {count} reviews",
     "ourReviews": {
-      "review1": "I absolutely love the service provided. Highly recommended!",
-      "review2": "I am not satisfied with the quality. It needs improvement.",
-      "review3": "Great support and an easy-to-use interface.",
-      "review4": "The service was slow, but overall it was fine.",
-      "review5": "Perfect experience! I will use it again.",
-      "review6": "Terrible experience. I would not recommend it.",
-      "review7": "Very helpful customer service team.",
-      "review8": "Exceeded my expectations in every way.",
-      "review9": "Could be better. There’s room for improvement.",
-      "review10": "I had issues with delivery and support.",
-      "review11": "Smooth process and good communication.",
-      "review12": "Too expensive for the features it offers.",
-      "review13": "Absolutely impeccable service!",
-      "review14": "The worst experience ever.",
-      "review15": "Good value for money.",
-      "review16": "Amazing! I will tell my friends about it."
+      "review1": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review2": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review3": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review4": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review5": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review6": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review7": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review8": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review9": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review10": "Since I started sending all my estimates using Contractor+, / have stopped losing bids..",
+      "review11": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review12": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review13": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review14": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review15": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
+      "review16": "Since I started sending all my estimates using Contractor+, / have stopped losing bids."
     }
   },
   "footer": {

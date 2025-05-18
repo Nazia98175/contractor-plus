@@ -2,7 +2,7 @@
   "heading": "¡Bienvenido a Next.js!",
   "hero": {
     "heading": "El único sistema operativo para contratistas de construcción y servicios",
-    "desc": "Todo el poder del software empresarial, sin las complicaciones. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento.",
+    "desc": "Todo el poder del software grande, sin las complicaciones. Una sola plataforma —no seis— para gestionar trabajos, equipos, clientes y crecimiento.",
     "credit": "No se requiere tarjeta de crédito",
     "cta": "Crear cuenta gratuita",
     "video": "Tu navegador no admite la etiqueta de video."
@@ -236,6 +236,34 @@
       "description": "Solicitudes directas de clientes e inquilinos"
     }
   },
+
+  "crm": {
+    "heading": "Los equipos que usan Contractor+ CRM nunca miran atrás",
+    "desc": "Te ayudamos a avanzar, no solo a sobrevivir",
+    "crmList": [
+      {
+        "title": "más rápido",
+        "description": "Seguimiento al cliente",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "horas",
+        "description": "Horas ahorradas semanalmente",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "más",
+        "description": "Trabajos creados",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
   "whyContractor": {
     "links": [
       {
@@ -272,24 +300,25 @@
     "excellent": "Excelente",
     "basedOn": "Basado en {count} reseñas",
     "ourReviews": {
-      "review1": "Me encanta absolutamente el servicio proporcionado. ¡Muy recomendable!",
-      "review2": "No estoy satisfecho con la calidad. Necesita mejorar.",
-      "review3": "Excelente soporte y una interfaz fácil de usar.",
-      "review4": "El servicio fue lento, pero en general estuvo bien.",
-      "review5": "¡Experiencia perfecta! Lo usaré de nuevo.",
-      "review6": "Terrible experiencia. No lo recomendaría.",
-      "review7": "Equipo de atención al cliente muy servicial.",
-      "review8": "Superó mis expectativas en todos los sentidos.",
-      "review9": "Podría ser mejor. Hay margen de mejora.",
-      "review10": "Tuve problemas con la entrega y el soporte.",
-      "review11": "Proceso fluido y buena comunicación.",
-      "review12": "Demasiado caro para las funciones que ofrece.",
-      "review13": "¡Servicio absolutamente impecable!",
-      "review14": "La peor experiencia de mi vida.",
-      "review15": "Buena relación calidad-precio.",
-      "review16": "¡Increíble! Se lo contaré a mis amigos."
+      "review1": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review2": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review3": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review4": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review5": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review6": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review7": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review8": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review9": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review10": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review11": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review12": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review13": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review14": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review15": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones.",
+      "review16": "Desde que empecé a enviar todos mis presupuestos con Contractor+, he dejado de perder licitaciones."
     }
   },
+
   "industries": {
     "heading": "Industrias",
     "imageAlt": "Grupo de contratistas trabajando en un proyecto",

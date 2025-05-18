@@ -315,7 +315,7 @@ const Whatever = () => {
         className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20"
       >
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading text-white text-center md:mb-8 mb-[21px]">
+          <h3 className="section-heading gradient-text text-center md:mb-8 mb-[21px]">
             {t("whatever")}
           </h3>
         </TextAnimation>

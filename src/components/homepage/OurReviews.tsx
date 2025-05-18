@@ -1,5 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 import CardReveal from "../common/CardReveal";
@@ -8,7 +9,6 @@ import { GroupStartIcon } from "../common/Icons";
 import ReviewModal from "../common/ReviewModal";
 import TextAnimation from "../common/TextAnimation";
 import ReviewCard from "./ReviewCard";
-import Image from "next/image";
 
 export interface ReviewItem {
   id: string | number;
@@ -17,6 +17,7 @@ export interface ReviewItem {
   reviewText: string;
   rating: number;
   profileUrl: string;
+  isModal: boolean;
   companyIcon: string;
 }
 
@@ -36,10 +37,10 @@ const OurReviews: React.FC = () => {
   }));
 
   return (
-    <section className="pt-[15px] pb-[35px] md:pt-12 md:pb-16 bg-white">
+    <section className="pt-[15px] pb-[35px] md:pt-12 md:pb-16 bg-white relative z-20">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading text-black text-center md:text-start">
+          <h3 className="section-heading text-black text-center md:text-start gradient-text-2">
             {t("heading")}
           </h3>
         </TextAnimation>
@@ -97,7 +98,7 @@ const OurReviews: React.FC = () => {
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
-                openModal={openModal}
+                openModal={review.isModal ? openModal : () => {}}
               />
             ))}
           </Marquee>
@@ -110,7 +111,7 @@ const OurReviews: React.FC = () => {
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
-                openModal={openModal}
+                openModal={review.isModal ? openModal : () => {}}
               />
             ))}
           </Marquee>

@@ -1,6 +1,8 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import { FooterRedLineIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import Hero from "@/components/crmbussiness/Hero";
@@ -11,6 +13,8 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import TrustBar from "@/components/homepage/TrustBar";
+import { Image } from "lucide-react";
 import React from "react";
 
 const CrmBussinessPage = () => {
@@ -26,6 +30,13 @@ const CrmBussinessPage = () => {
       <KindAdorable />
       <TeamsUsingContractor />
       <ThousandsReviews />
+      <div className="relative">
+        <span className="top-[-236px] left-[209px] hidden rotate-[90deg] lg:block absolute pointer-events-none">
+          <FooterRedLineIcon />
+        </span>
+        <CrmSercive />
+        <TrustBar />
+      </div>
       <Faq />
       <BlogPosts />
       <Footer />

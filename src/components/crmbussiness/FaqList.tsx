@@ -13,8 +13,8 @@ type FaqListProps = {
 const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
   return (
     <>
-      <div onClick={onToggle} className="mb-8 cursor-pointer">
-        <button className="flex justify-between items-center gap-5 cursor-pointer w-full">
+      <div onClick={onToggle} className="mb-6 cursor-pointer">
+        <button className="flex justify-between items-center gap-5 cursor-pointer w-full py-3">
           <h3 className="paragraph-text text-white font-extrabold text-start">
             {data.question}
           </h3>

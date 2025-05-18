@@ -15,30 +15,51 @@ import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
+import { getHomePage } from "@/services/homepage";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useParams, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const t = useTranslations();
+  const [homePageContent , setHomePageContent] = useState<any>(null);
+ 
+ const params = useParams() as { locale?: string };
+  console.log(params, 'params');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (params?.locale) {
+        const res = await getHomePage(params.locale);
+        console.log(res);
+        setHomePageContent(res)
+      }
+    };
+
+    fetchData();
+  }, [params]);
+
+  
+  console.log(homePageContent , "homeee")
 
   return (
-    <div className="relative overflow-x-hidden">
+    <>
+   {!homePageContent ?  <div>Loading</div> : <div className="relative overflow-x-hidden">
       <div className="bg-kuroiBlack bg-no-repeat bg-cover relative">
-        <Image
-          src="/images/webp/red-circle.webp"
-          alt="Red Circle For designing"
-          fill
-          className="absolute top-0 left-0 w-full hidden lg:block h-full z-10 pointer-events-none object-cover"
-        />
         <Header />
         <div className="relative">
-          <Image
+          <img
+            src="/images/webp/red.webp"
+            alt="Red Circle For designing"
+            className="absolute top-0 left-0 w-3/5 3xl:w-full hidden lg:block h-full z-10 pointer-events-none object-cover"
+          />
+          <img
             src="/images/webp/hero-mobile-bg.webp"
             alt="Mobile Hero"
-            fill
-            className="right-0 lg:hidden z-10 object-bottom-right pointer-events-none -bottom-[40%] md:-bottom-[45%] absolute w-full h-full"
+            className="right-0 lg:hidden z-10 object-center h-full pointer-events-none -bottom-[20%] sm:-bottom-[30%] md:-bottom-[35%] sm:blur-lg absolute w-full sm:w-5/6"
           />
-          <Hero />
+          <Hero homePageContent={homePageContent?.data}/>
           <TrustBar />
         </div>
         <div className="relative">
@@ -47,13 +68,17 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="sm:bg-[url('/images/webp/platform-bg.webp')] bg-[#F9E4E5] bg-cover bg-[100%_100%] lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative">
-        <div className="absolute bottom-0  max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[30px] opacity-35 block md:hidden"></div>
+      <div className="bg-[url('/images/webp/platform-bg.webp')] sm:bg-cover bg-bottom  lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative bg-white">
+        <img
+          className="absolute top-[-120px] left-0 w-full h-full z-10 hidden sm:block"
+          src="/images/webp/platform-bg.webp"
+          alt="platform bg"
+        />
         <ContractorPlatforms />
         <Finally />
       </div>
       <CoreFeatures />
-      <Features />
+      <Features features={homePageContent?.data?.features} />
       <ContractorIndustry />
       <OurReviews />
       <div className="bg-kuroiBlack relative overflow-hidden ">
@@ -61,11 +86,12 @@ export default function Home() {
         <MakeOperation />
       </div>
       <OurBlogs />
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden relative ">
         <EntireBusiness />
         <Footer />
       </div>
       <ParticlesComponent id="star-particles" />
-    </div>
+    </div>}
+    </>
   );
 }

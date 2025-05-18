@@ -2,25 +2,11 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
+import CircularGallery from "./CircularGallery";
+import CircuartItem, { getGalleryItems } from "./CircuartItem";
 
 const ContractorIndustry = () => {
-  const industryItems = [
-    {
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      image: "/images/png/circular-slide-1.png",
-    },
-  ];
+  const galleryItems = getGalleryItems();
 
   const t = useTranslations("industry");
 
@@ -69,6 +55,15 @@ const ContractorIndustry = () => {
         src="/images/webp/contractor.webp"
         alt="Contractor"
       />
+      {/* <div style={{ height: "600px", position: "relative" }} className="mt-10">
+        <CircularGallery
+          items={galleryItems}
+          bend={3}
+          textColor="#ffffff"
+          borderRadius={0.05}
+          textPosition="top"
+        />
+      </div> */}
     </section>
   );
 };

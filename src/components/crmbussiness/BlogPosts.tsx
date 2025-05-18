@@ -47,7 +47,6 @@ const BlogPosts = () => {
         </div>
 
         <div className="flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
-          {/* Left column */}
           <div className="max-w-[600px] mx-auto xl:mx-0  xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogData.map((blog) => (
               <article
@@ -90,13 +89,6 @@ const BlogPosts = () => {
               <h3 className="text-2xl sm:text-[30px] md:text-[36px] font-extrabold font-jakarta capitalize text-white">
                 Discover The Member Benefits Of USA Contracting!
               </h3>
-              {/* <h3 className="block sm:hidden text-2xl sm:text-[30px] md:text-[36px] font-extrabold font-jakarta capitalize text-white">
-                Discover The Member Benefits O...
-              </h3>
-              <p className="text-superSilver text-base font-jakarta mt-2 w-[250px] sm:w-full truncate block md:hidden">
-                How do you create compelling presentations that wow your
-                colleagues and impress your managers?
-              </p> */}
               <p className="text-superSilver text-base font-jakarta mt-2">
                 How do you create compelling presentations that wow your
                 colleagues and impress your managers?

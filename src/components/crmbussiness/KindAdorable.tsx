@@ -27,20 +27,22 @@ const features = [
 const KindAdorable = () => {
   return (
     <div className="bg-white p-4">
-      <section className="bg-white overflow-auto max-w-[1092px] mx-auto">
-        <div className="w-full border border-decemberSky rounded-lg overflow-auto no-scrollbar">
-          <table className="min-w-full text-left border-collapse whitespace-nowrap">
+      <section className="overflow-x-auto max-w-[1092px] mx-auto">
+        <div className="rounded-lg overflow-auto border border-decemberSky">
+          <table className="min-w-full text-left  whitespace-nowrap">
             <thead>
-              <tr className="bg-gray-50 text-xl border-b border-decemberSky  font-myriad">
-                <th className="p-5 w-1/3 font-bold text-center border-r border-decemberSky text-wallStreet">
-                  Feature
+              <tr className="md:text-lg text-base lg:text-xl font-myriad divide-x divide-decemberSky">
+                <th className="p-3 lg:p-5 w-1/3 font-bold text-center text-wallStreet">
+                  Compare
                 </th>
-                <th className="p-5 w-1/3 text-center font-semibold border-r border-decemberSky text-wallStreet">
+                <th className="p-1 sm:p-3 lg:p-5 w-1/3 text-center font-semibold  text-wallStreet">
                   <div className="flex justify-center items-center">
-                    <BlackLogo />
+                    <span className="max-w-24 min-w-20 lg:max-w-[148px]">
+                      <BlackLogo />
+                    </span>
                   </div>
                 </th>
-                <th className="p-5 w-1/3 text-center font-semibold text-secondary">
+                <th className="p-3 lg:p-5 w-1/3 text-center font-semibold text-secondary">
                   Others
                 </th>
               </tr>
@@ -49,26 +51,36 @@ const KindAdorable = () => {
               {features.map((feature, index) => (
                 <tr
                   key={index}
-                  className={`${
-                    index === features.length - 1 ? "" : "border-b"
-                  } border-decemberSky text-winterWay font-jakarta`}
+                  className={` border-decemberSky divide-x divide-decemberSky text-winterWay border-t font-jakarta font-semibold text-xs sm:text-sm lg:text-base`}
                 >
-                  <td className="px-5 py-3 text-sm lg:text-base border-r border-decemberSky">
-                    {feature.name}
-                  </td>
-                  <td className="px-5 py-3 flex w-full justify-center border-r border-decemberSky">
-                    {feature.eContractorHas ? (
-                      <CheckIcon width={25} height={25} />
-                    ) : (
-                      <CloseIcon />
-                    )}
+                  <td className="lg:px-5 p-2.5 lg:py-3">{feature.name}</td>
+                  <td className="lg:px-5 p-2.5 lg:py-3 ">
+                    <div className="flex justify-center items-center">
+                      {feature.eContractorHas ? (
+                        <CheckIcon
+                          width={24}
+                          height={24}
+                          className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
+                        />
+                      ) : (
+                        <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
+                          <CloseIcon />
+                        </span>
+                      )}
+                    </div>
                   </td>
                   <td className="px-5 py-3 w-full">
-                    <div className="flex justify-center items-center">
+                    <div className="flex items-center justify-center">
                       {feature.othersHave ? (
-                        <CheckIcon width={25} height={25} />
+                        <CheckIcon
+                          width={24}
+                          height={24}
+                          className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
+                        />
                       ) : (
-                        <CloseIcon />
+                        <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
+                          <CloseIcon />
+                        </span>
                       )}
                     </div>
                   </td>

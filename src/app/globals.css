@@ -500,3 +500,20 @@ html {
     filter: blur(90px);
   }
 }
+.cc {
+  position: relative;
+}
+
+.cc::before {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-position: center;
+  background-image: url("/images/webp/hero-bg-video.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 99;
+}

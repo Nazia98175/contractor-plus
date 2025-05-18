@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { CheckIcon } from "../common/Icons";
+import { CheckIcon, HeroVideoLayerIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
 import VideoViewer from "./VideoViewer";
@@ -30,16 +30,10 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute object-bottom lg:-right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] 3xl:max-h-[1024px] top-0 aspect-video">
-        <VideoViewer />
-      </div>
-      <div className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full">
-        <Image
-          src="/images/webp/hero-bg.webp"
-          alt="Hero Background"
-          fill
-          className="object-bottom-right"
-        />
+      <div className="absolute object-bottom right-0 w-full h-full max-h-[1200px] lg:max-h-[750px] 3xl:max-h-[1024px] top-0 aspect-video z-10 ">
+        <div className="max-w-[945px] w-full ml-auto h-full object-cover cc">
+          <VideoViewer />
+        </div>
       </div>
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
     </section>

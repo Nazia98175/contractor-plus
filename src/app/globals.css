@@ -117,16 +117,16 @@ body {
   @apply max-w-[1308px] w-full mx-auto px-2;
 }
 .main-heading {
-  @apply text-[26px] sm:text-4xl lg:text-5xl capitalize xl:text-[52px] font-extrabold font-jakarta leading-[130%];
+  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold font-jakarta leading-[130%];
 }
 .section-heading {
   @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
-  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta capitalize;
+  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
 }
 .primary-btn {
-  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95 capitalize;
+  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95;
 }
 .header-li {
   @apply 2xl:text-base xl:text-sm text-xs font-montserrat font-semibold lg:text-superSilver text-lightBlack;
@@ -487,4 +487,16 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-/* Ellipse 2168 */
+
+@keyframes aurora-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    filter: blur(120px);
+  }
+  100% {
+    transform: scale(1.05);
+    filter: blur(90px);
+  }
+}

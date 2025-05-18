@@ -10,10 +10,17 @@ const Finally = () => {
   return (
     <section className="relative no-scrollbar overflow-hidden pt-16 md:pt-20 xl:pt-[186px] px-2 bg-white z-20">
       <div className="flex items-center justify-center">
-        <div className="bg-redPigment blur-[100px] absolute w-[200%] h-[125%] -top-[76%] z-20 rounded-full pointer-events-none"></div>
+        <div
+          className="absolute w-[200%] h-[140%] -top-[95%] z-20 rounded-full pointer-events-none animate-aurora-pulse"
+          style={{
+            backgroundColor: "#ee1e25",
+            filter: "blur(100px)",
+            animation:
+              "aurora-pulse 15s infinite alternate ease-in-out, aurora-move 30s infinite alternate ease-in-out",
+          }}
+        />
         <div className="bg-black blur-[62.5px] absolute w-[130%] h-full -top-[75%] z-20 rounded-full pointer-events-none"></div>
       </div>
-
       <div className="space-y-4 z-30 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center gradient-text  z-40 relative">

@@ -23,19 +23,19 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="bg-kuroiBlack bg-no-repeat bg-cover relative">
+      <div className=" bg-no-repeat bg-cover relative">
         <Header />
         <div className="relative">
-          <img
+          {/* <img
             src="/images/webp/red.webp"
             alt="Red Circle For designing"
             className="absolute top-0 left-0 w-3/5 3xl:w-full hidden lg:block h-full z-10 pointer-events-none object-cover"
-          />
-          <img
+          /> */}
+          {/* <img
             src="/images/webp/hero-mobile-bg.webp"
             alt="Mobile Hero"
             className="right-0 lg:hidden z-10 object-center h-full pointer-events-none -bottom-[20%] sm:-bottom-[30%] md:-bottom-[35%] sm:blur-lg absolute w-full sm:w-5/6"
-          />
+          /> */}
           <Hero />
           <TrustBar />
         </div>

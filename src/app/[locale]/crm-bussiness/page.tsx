@@ -22,13 +22,13 @@ const CrmBussinessPage = () => {
     <>
       <Header />
       <Hero />
-      <TrustedService />
+      {/* <TrustedService /> */}
       <SwitchingTool />
-      <OnScroll />
-      <FieldService />
+      {/* <OnScroll /> */}
+      {/* <FieldService /> */}
       <TrackProperties />
-      <KindAdorable />
-      {/* <TeamsUsingContractor /> */}
+      {/* <KindAdorable /> */}
+      <TeamsUsingContractor />
       <ThousandsReviews />
       <div className="relative">
         <span className="top-[-236px] left-[209px] hidden rotate-[90deg] lg:block absolute pointer-events-none">

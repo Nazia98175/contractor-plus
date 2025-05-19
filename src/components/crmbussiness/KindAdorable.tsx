@@ -29,7 +29,7 @@ const KindAdorable = () => {
     <div className="bg-white p-4">
       <section className="overflow-x-auto max-w-[1092px] mx-auto">
         <div className="rounded-lg overflow-auto border border-decemberSky">
-          <table className="min-w-full text-left  whitespace-nowrap">
+          <table className="min-w-full text-left whitespace-nowrap">
             <thead>
               <tr className="md:text-lg text-base lg:text-xl font-myriad divide-x divide-decemberSky">
                 <th className="p-3 lg:p-5 w-1/3 font-bold text-center text-wallStreet">

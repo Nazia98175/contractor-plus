@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -25,6 +25,8 @@ interface SliderLayoutProps extends SwiperOptions {
       spaceBetween?: number;
     };
   };
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 const SliderLayout: React.FC<SliderLayoutProps> = ({
@@ -59,9 +61,19 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
     },
   },
   onSlideChange,
+  onMouseEnter,
+  onMouseLeave,
   ...rest
 }) => {
   const swiperRef = useRef<SwiperClass | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Determine if we're using autoplay
+  const hasAutoplay = autoplay !== false && autoplay !== undefined;
+
+  // Determine if we're using coverflow effect
+  const hasCoverflowEffect = effect === "coverflow";
 
   // Ensure all modules are properly loaded
   useEffect(() => {
@@ -79,8 +91,8 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
         setTimeout(() => {
           swiperRef.current?.update();
 
-          // If autoplay is enabled, restart it
-          if (autoplay && swiperRef.current?.autoplay) {
+          // If autoplay is enabled and not hovering, restart it
+          if (hasAutoplay && !isHovered && swiperRef.current?.autoplay) {
             swiperRef.current.autoplay.start();
           }
         }, 50);
@@ -94,7 +106,36 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [autoplay]);
+  }, [hasAutoplay, isHovered]);
+
+  // Handle mouse events
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+
+    // Call external handler if provided
+    if (onMouseEnter) {
+      onMouseEnter();
+    }
+
+    // If autoplay is enabled, pause it
+    if (hasAutoplay && swiperRef.current?.autoplay) {
+      swiperRef.current.autoplay.stop();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+
+    // Call external handler if provided
+    if (onMouseLeave) {
+      onMouseLeave();
+    }
+
+    // If autoplay is enabled, resume it
+    if (hasAutoplay && swiperRef.current?.autoplay) {
+      swiperRef.current.autoplay.start();
+    }
+  };
 
   // Filter out empty children to prevent slider issues
   const validChildren = React.Children.toArray(children).filter(
@@ -106,27 +147,51 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
     return <div className={wrapperClassName}></div>;
   }
 
+  // Prepare the autoplay configuration
+  const autoplayConfig = hasAutoplay
+    ? {
+        delay:
+          typeof autoplay === "object" && autoplay.delay
+            ? autoplay.delay
+            : 3000,
+        disableOnInteraction:
+          typeof autoplay === "object" && "disableOnInteraction" in autoplay
+            ? autoplay.disableOnInteraction
+            : true,
+        pauseOnMouseEnter:
+          typeof autoplay === "object" && "pauseOnMouseEnter" in autoplay
+            ? autoplay.pauseOnMouseEnter
+            : true,
+      }
+    : false;
+
+  // Prepare the effective modules
+  const effectiveModules = [...modules];
+  if (!modules.includes(Autoplay) && hasAutoplay) {
+    effectiveModules.push(Autoplay);
+  }
+  if (!modules.includes(EffectCoverflow) && hasCoverflowEffect) {
+    effectiveModules.push(EffectCoverflow);
+  }
+
   return (
-    <div className={wrapperClassName}>
+    <div
+      className={wrapperClassName}
+      ref={wrapperRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Swiper
-        modules={modules}
-        effect={effect}
+        modules={effectiveModules}
+        effect={hasCoverflowEffect ? "coverflow" : undefined}
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
         loop={loop && validChildren.length > 1}
         grabCursor={grabCursor}
         centeredSlides={centeredSlides}
-        autoplay={
-          autoplay
-            ? {
-                delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }
-            : false
-        }
+        autoplay={autoplayConfig}
         pagination={pagination ? { clickable: true } : false}
-        coverflowEffect={effect === "coverflow" ? coverflowEffect : undefined}
+        coverflowEffect={hasCoverflowEffect ? coverflowEffect : undefined}
         breakpoints={breakpoints}
         onSlideChange={onSlideChange}
         speed={speed}
@@ -140,7 +205,9 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
         {...rest}
       >
         {validChildren.map((child, index) => (
-          <SwiperSlide key={index}>{child}</SwiperSlide>
+          <SwiperSlide key={index}>
+            <div className="swiper-slide-inner">{child}</div>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

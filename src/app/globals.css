@@ -463,7 +463,6 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-<<<<<<< HEAD
 .img-shadow {
   filter: drop-shadow(-111.494px 100.345px 143px rgba(0, 0, 0, 0.0400313))
     drop-shadow(-81.0946px 72.9851px 96.3854px rgba(0, 0, 0, 0.06825))
@@ -491,18 +490,4 @@ html {
 .green-text {
   background: none !important;
   color: #0070f3 !important;
-=======
-
-@keyframes aurora-pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    filter: blur(120px);
-  }
-  100% {
-    transform: scale(1.05);
-    filter: blur(90px);
-  }
->>>>>>> 34afb50ff2414594cf4cd9dd5cb0c15d5e5f8820
 }

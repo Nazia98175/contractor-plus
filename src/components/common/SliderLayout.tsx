@@ -12,13 +12,13 @@ interface SliderLayoutProps extends SwiperOptions {
   className?: string;
   onSlideChange?: (swiper: SwiperClass) => void;
   wrapperClassName?: string;
-  coverflowEffect?: {
-    rotate?: number;
-    stretch?: number;
-    depth?: number;
-    modifier?: number;
-    slideShadows?: boolean;
-  };
+  // coverflowEffect?: {
+  //   rotate?: number;
+  //   stretch?: number;
+  //   depth?: number;
+  //   modifier?: number;
+  //   slideShadows?: boolean;
+  // };
   breakpoints?: {
     [width: number]: {
       slidesPerView?: any;
@@ -31,8 +31,8 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   children,
   className = "mySwiper",
   wrapperClassName = "relative w-full",
-  modules = [Pagination, Autoplay, EffectCoverflow],
-  effect = "coverflow",
+  modules = [Pagination, Autoplay],
+  // effect = "coverflow",
   autoplay = false,
   pagination = false,
   slidesPerView = 2,
@@ -41,13 +41,13 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   grabCursor = true,
   centeredSlides = true,
   speed = 100,
-  coverflowEffect = {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 2.5,
-    slideShadows: false,
-  },
+  // coverflowEffect = {
+  //   rotate: 0,
+  //   stretch: 0,
+  //   depth: 100,
+  //   modifier: 2.5,
+  //   slideShadows: false,
+  // },
   breakpoints = {
     640: {
       slidesPerView: 3.5,
@@ -110,7 +110,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
     <div className={wrapperClassName}>
       <Swiper
         modules={modules}
-        effect={effect}
+        // effect={effect}
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
         loop={loop && validChildren.length > 1}
@@ -126,7 +126,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
             : false
         }
         pagination={pagination ? { clickable: true } : false}
-        coverflowEffect={effect === "coverflow" ? coverflowEffect : undefined}
+        // coverflowEffect={effect === "coverflow" ? coverflowEffect : undefined}
         breakpoints={breakpoints}
         onSlideChange={onSlideChange}
         speed={speed}

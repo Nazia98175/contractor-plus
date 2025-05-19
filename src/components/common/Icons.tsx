@@ -1854,7 +1854,7 @@ export const BlurIcon = ({ className = "" }) => (
         width="866"
         height="609"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend

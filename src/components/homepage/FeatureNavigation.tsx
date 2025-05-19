@@ -48,7 +48,7 @@ const FeatureNavigation = ({
             {feature}
           </button>
         ))}
-        <button className="flex group justify-between feature-btn w-full text-lightishBlue gap-1 items-center">
+        <button className="flex group justify-between feature-btn w-full text-lightishBlue gap-1 items-center cursor-pointer">
           {featureBtn}
           <span className="w-5 flex justify-center items-center group-hover:-translate-y-1 duration-300">
             <ExternalLink />

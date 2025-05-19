@@ -8,8 +8,8 @@ const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
 const VideoViewer: React.FC = () => {
   return (
     <VideoOptimizer
-      lowResUrl="/video/hero-video.mp4"
-      highResUrl="/video/hero-video.mp4"
+      lowResUrl="/video/hero-video-2.mp4"
+      highResUrl="/video/hero-video-2.mp4"
       poster="/images/webp/hero.webp"
     />
   );

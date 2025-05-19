@@ -1535,23 +1535,27 @@ export const HeroVideoLayerIcon = ({ className = "" }) => (
   <svg
     width="100%"
     height="100%"
-    viewBox="0 0 1440 669"
+    viewBox="0 0 1673 1037"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={className}
+    className="absolute top-0 left-0 z-40 w-[200%]"
   >
-    <g filter="url(#filter0_f_540_30620)">
+    <g filter="url(#filter0_f_540_18392)">
       <path
-        d="M968.5 -66L-133 -58.826V766.929H2030L694.5 414.5L968.5 -66Z"
+        d="M235 582.5L509 102H102V934.929H1570.5L235 582.5Z"
         fill="#0C0D11"
+      />
+      <path
+        d="M508.139 102.5L234.565 582.252L234.243 582.817L234.872 582.983L1566.65 934.429H102.5V102.5H508.139Z"
+        stroke="black"
       />
     </g>
     <defs>
       <filter
-        id="filter0_f_540_30620"
-        x="-234.9"
-        y="-167.9"
-        width="2366.8"
+        id="filter0_f_540_18392"
+        x="0.0999985"
+        y="0.0999985"
+        width="1672.3"
         height="1036.73"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
@@ -1565,7 +1569,7 @@ export const HeroVideoLayerIcon = ({ className = "" }) => (
         />
         <feGaussianBlur
           stdDeviation="50.95"
-          result="effect1_foregroundBlur_540_30620"
+          result="effect1_foregroundBlur_540_18392"
         />
       </filter>
     </defs>

@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
-import { CheckIcon } from "../common/Icons";
+import { CheckIcon, HeroVideoLayerIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import VideoViewer from "./VideoViewer";
+import Image from "next/image";
 const Hero = () => {
   const t = useTranslations("hero");
   return (
@@ -30,47 +31,10 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute object-bottom right-0 w-full h-full max-h-[1200px] lg:max-h-[750px] 3xl:max-h-[1024px] top-0 aspect-video z-10 ">
-        <div className="max-w-[945px] w-full ml-auto h-full object-cover ">
+        <div className="max-w-[945px] w-full ml-auto h-full object-cover relative">
           <VideoViewer />
+          <div className="absolute h-full w-[20px] z-40 top-0 left-0 bg-black blur-[50px]"></div>
         </div>
-        <svg
-          className="absolute w-[115%] h-[119%] left-0 top-[-10%] bg-[100%_160%]"
-          width="100%"
-          height="100%"
-          viewBox="0 0 1440 669"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_f_540_30620)">
-            <path
-              d="M968.5 -66L-133 -58.826V766.929H2030L694.5 414.5L968.5 -66Z"
-              fill="#000"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_f_540_30620"
-              x="-234.9"
-              y="-167.9"
-              width="2366.8"
-              height="1036.73"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feGaussianBlur
-                stdDeviation="50.95"
-                result="effect1_foregroundBlur_540_30620"
-              />
-            </filter>
-          </defs>
-        </svg>
       </div>
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
     </section>

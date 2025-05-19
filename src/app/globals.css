@@ -33,6 +33,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
+  --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
   --background-image-red-linear: linear-gradient(
@@ -137,7 +138,7 @@ body {
   @apply lg:text-lg text-sm sm:text-base font-jakarta;
 }
 .feature-btn {
-  @apply cursor-pointer lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px]  w-fit font-jakarta;
+  @apply lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px]  w-fit font-jakarta;
 }
 .header-li-dropdown {
   @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
@@ -508,4 +509,10 @@ html {
 .green-text {
   background: none !important;
   color: #0070f3 !important;
+}
+.check {
+  fill: #0c0d11;
+  stroke-width: 1px;
+  stroke: #000;
+  filter: blur(50.95000076293945px);
 }

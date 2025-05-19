@@ -32,12 +32,12 @@ const FeatureNavigation = ({
         ></button>
         <Pathbg />
       </div>
-      <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative">
+      <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
         {features.map((feature, index) => (
           <button
-            onClick={() => onFeatureClick(index)}
+            // onClick={() => onFeatureClick(index)}
             key={feature}
-            className={`feature-btn ${
+            className={`feature-btn cursor-default ${
               index === activeFeature
                 ? " text-winterWay font-bold"
                 : "text-secondary font-normal"

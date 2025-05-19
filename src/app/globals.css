@@ -33,6 +33,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
+  --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
   --background-image-red-linear: linear-gradient(
@@ -123,7 +124,7 @@ body {
   @apply lg:text-lg text-sm sm:text-base font-jakarta;
 }
 .feature-btn {
-  @apply cursor-pointer lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px]  w-fit font-jakarta;
+  @apply lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px]  w-fit font-jakarta;
 }
 .header-li-dropdown {
   @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
@@ -449,7 +450,7 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-.img-shadow {
+/* .img-shadow {
   filter: drop-shadow(-111.494px 100.345px 143px rgba(0, 0, 0, 0.0400313))
     drop-shadow(-81.0946px 72.9851px 96.3854px rgba(0, 0, 0, 0.06825))
     drop-shadow(-56.4439px 50.7995px 62.3391px rgba(0, 0, 0, 0.0885938))
@@ -458,7 +459,7 @@ html {
     drop-shadow(-11.7591px 10.5832px 13.8252px rgba(0, 0, 0, 0.14175))
     drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
     drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
-}
+} */
 
 .crm-gradient {
   background: linear-gradient(
@@ -558,4 +559,12 @@ html {
 
 .side-img {
   background: radial-gradient(50% 50% at 50% 50%, #1e2028 0%, #0d0e12 100%);
+}
+.test {
+  background: radial-gradient(
+    ellipse at center,
+    #ee1e25 0%,
+    #c01a06 40%,
+    #0c0d11 100%
+  );
 }

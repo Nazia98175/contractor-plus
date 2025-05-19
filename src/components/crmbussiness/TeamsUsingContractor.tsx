@@ -38,7 +38,7 @@ const TeamsUsingContractor = () => {
         <p className="paragraph">{t("desc")}</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full">
-          {/* {crmList.map((item, index) => (
+          {crmList.map((item, index) => (
             <article
               key={index}
               className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-c2 cursor-pointer"
@@ -67,7 +67,7 @@ const TeamsUsingContractor = () => {
                 {item.description}
               </p>
             </article>
-          ))} */}
+          ))}
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">

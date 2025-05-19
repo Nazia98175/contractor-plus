@@ -97,7 +97,7 @@ body {
 }
 
 body {
-  @apply bg-black;
+  @apply bg-kuroiBlack;
 }
 .main-container {
   @apply max-w-[1308px] w-full mx-auto px-2;

@@ -1557,7 +1557,7 @@ export const FinallyDesktopBg = ({ className = "" }) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <g clip-path="url(#clip0_769_2103)">
+    <g clipPath="url(#clip0_769_2103)">
       <g filter="url(#filter0_f_769_2103)">
         <ellipse
           cx="697.472"
@@ -1685,6 +1685,139 @@ export const FinallyDesktopBg = ({ className = "" }) => (
           transform="translate(-279)"
         />
       </clipPath>
+    </defs>
+  </svg>
+);
+export const FinallyMobileBg = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 320 1246"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g filter="url(#filter0_f_540_21817)">
+      <ellipse
+        cx="159.999"
+        cy="623.015"
+        rx="792.999"
+        ry="557.49"
+        fill="#EE1E25"
+      />
+    </g>
+    <g filter="url(#filter1_f_540_21817)">
+      <ellipse
+        cx="141.668"
+        cy="621.59"
+        rx="701.64"
+        ry="491.591"
+        fill="#C01A06"
+      />
+    </g>
+    <g filter="url(#filter2_f_540_21817)">
+      <ellipse
+        cx="141.663"
+        cy="668.051"
+        rx="728.759"
+        ry="366.237"
+        fill="#0C0D11"
+      />
+    </g>
+    <g filter="url(#filter3_f_540_21817)">
+      <ellipse
+        cx="141.666"
+        cy="666.872"
+        rx="774.666"
+        ry="249.23"
+        fill="#0C0D11"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_540_21817"
+        x="-697.6"
+        y="0.924416"
+        width="1715.2"
+        height="1244.18"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="32.3"
+          result="effect1_foregroundBlur_540_21817"
+        />
+      </filter>
+      <filter
+        id="filter1_f_540_21817"
+        x="-619.173"
+        y="70.799"
+        width="1521.68"
+        height="1101.58"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="29.6"
+          result="effect1_foregroundBlur_540_21817"
+        />
+      </filter>
+      <filter
+        id="filter2_f_540_21817"
+        x="-749.396"
+        y="139.513"
+        width="1782.12"
+        height="1057.07"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="81.15"
+          result="effect1_foregroundBlur_540_21817"
+        />
+      </filter>
+      <filter
+        id="filter3_f_540_21817"
+        x="-663"
+        y="387.642"
+        width="1609.33"
+        height="558.461"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="15"
+          result="effect1_foregroundBlur_540_21817"
+        />
+      </filter>
     </defs>
   </svg>
 );

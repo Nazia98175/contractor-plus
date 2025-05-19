@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { CheckIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
+import Marquee from "react-fast-marquee";
 
 const features = [
   "Timeline of every job, message, and update",
@@ -11,7 +11,7 @@ const features = [
 ];
 
 const FeatureItem = ({ text }: { text: string }) => (
-  <article className="p-3 rounded bg-doctor2 flex text-nowrap font-semibold items-center gap-2.5 text-lg text-lightblack">
+  <article className="p-3 rounded bg-doctor2 flex text-nowrap font-semibold items-center gap-2.5 text-lg text-lightblack ma-w-[500px] w-full mx-2">
     <CheckIcon width={25} height={25} className="min-w-5" />
     {text}
   </article>
@@ -50,20 +50,12 @@ const TrackProperties = () => {
           see what’s been done, what’s next, and who did it.
         </p>
 
-        <div className=" mt-8 px-4">
-          <SliderLayout
-            breakpoints={{
-              100: { slidesPerView: 1 },
-              320: { slidesPerView: 1.5 },
-              500: { slidesPerView: 2 },
-              640: { slidesPerView: 3 },
-              1024: { slidesPerView: 3.2 },
-            }}
-          >
+        <div className="w-full mt-8">
+          <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {features.map((text, index) => (
               <FeatureItem key={index} text={text} />
             ))}
-          </SliderLayout>
+          </Marquee>
         </div>
       </div>
     </section>

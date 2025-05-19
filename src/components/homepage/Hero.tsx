@@ -1,14 +1,13 @@
 import { useTranslations } from "next-intl";
-import { CheckIcon, HeroVideoLayerIcon } from "../common/Icons";
+import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import VideoViewer from "./VideoViewer";
 import Image from "next/image";
 const Hero = () => {
   const t = useTranslations("hero");
   return (
-    <section className="relative overflow-hidden max-w-[1920px] w-full mx-auto">
-      <div className="flex items-end main-container relative pt-[292px] pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px]">
-        <div className="max-w-[616px] w-full sm:space-y-6 relative z-30">
+    <section className="relative overflow-hidden max-w-[1920px] mx-auto">
+      <div className="flex items-end main-container z-20 relative pt-[292px]  pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px] ">
+        <div className="max-w-[616px] w-full sm:space-y-6">
           <TextAnimation animateOnScroll={false} delay={0.3}>
             <h1 className="main-heading gradient-text mb-1.5">
               {t("heading")}
@@ -30,11 +29,40 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute object-bottom right-0 w-full h-full max-h-[1200px] lg:max-h-[750px] 3xl:max-h-[1024px] top-0 aspect-video z-10 ">
-        <div className="max-w-[945px] w-full ml-auto h-full object-cover relative">
-          <VideoViewer />
-          <div className="absolute h-full w-[20px] z-40 top-0 left-0 bg-black blur-[50px]"></div>
-        </div>
+      <div className="absolute object-bottom -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video ">
+        {/* <VideoViewer /> */}
+        <video
+          className="w-full h-full object-cover lg:object-center 3xl:object-cover min-h-[500px]"
+          src="/video/hero-video.mp4"
+        ></video>
+      </div>
+      {/* <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute object-bottom hidden lg:block -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video"
+      >
+        <source src="/video/hero-video.mp4" type="video/mp4" />
+        {t("video")}
+      </video>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute object-cover right-0 w-full block lg:hidden z-0 top-0 h-full aspect-video"
+      >
+        <source src="/video/hero-video.mp4" type="video/mp4" />
+        {t("video")}
+      </video> */}
+      <div className="lg:block hidden absolute left-0 top-0 z-0 w-full h-full">
+        <Image
+          src="/images/webp/hero-bg.webp"
+          alt="Hero Background"
+          fill
+          className="object-bottom-right"
+        />
       </div>
       <div className="lg:hidden block bg-black-linear absolute inset-0 w-full h-full z-0"></div>
     </section>

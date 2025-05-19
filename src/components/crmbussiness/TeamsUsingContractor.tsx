@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
+import Image from "next/image";
 
 const TeamsUsingContractor = () => {
   // Improved intersection observer with higher threshold and rootMargin
@@ -10,6 +11,7 @@ const TeamsUsingContractor = () => {
     triggerOnce: true,
     threshold: 0.3,
     rootMargin: "50px 0px",
+    fallbackInView: true,
   });
 
   const t = useTranslations("crm");
@@ -45,9 +47,8 @@ const TeamsUsingContractor = () => {
             >
               <span className="mb-1">{icons[index % icons.length]}</span>
               <h3 className="text-2xl font-bold text-winterWay font-jakarta">
-                {inView ? (
+                {inView && (
                   <CountUp
-                    key={`counter-${index}`}
                     start={item.start}
                     end={item.end}
                     duration={2.5}
@@ -57,9 +58,9 @@ const TeamsUsingContractor = () => {
                     suffix={item.suffix}
                     preserveValue={true}
                   />
-                ) : (
-                  `${item.end}${item.suffix}`
                 )}
+                {!inView && `${item.end}${item.suffix}`}
+
                 <span className="inline-block px-2">{item.title}</span>
               </h3>
 
@@ -71,29 +72,34 @@ const TeamsUsingContractor = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">
-          <img
+          <Image
+            width={121}
+            height={80}
             src="/images/webp/software-advice.webp"
             className="img-shadow max-w-[121px]"
             alt="Software Advice"
-            loading="lazy"
           />
-          <img
+
+          <Image
+            width={121}
+            height={80}
             src="/images/webp/leader.webp"
             className="img-shadow max-w-[103px]"
             alt="Leader"
-            loading="lazy"
           />
-          <img
+          <Image
+            width={121}
+            height={80}
             src="/images/svg/capterra.svg"
             className="img"
             alt="Capterra"
-            loading="lazy"
           />
-          <img
+          <Image
+            width={121}
+            height={80}
             src="/images/webp/get-app.webp"
             className="img-shadow max-w-[137px]"
             alt="Get App"
-            loading="lazy"
           />
         </div>
       </div>

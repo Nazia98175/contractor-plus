@@ -449,7 +449,7 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-.img-shadow {
+/* .img-shadow {
   filter: drop-shadow(-111.494px 100.345px 143px rgba(0, 0, 0, 0.0400313))
     drop-shadow(-81.0946px 72.9851px 96.3854px rgba(0, 0, 0, 0.06825))
     drop-shadow(-56.4439px 50.7995px 62.3391px rgba(0, 0, 0, 0.0885938))
@@ -458,7 +458,7 @@ html {
     drop-shadow(-11.7591px 10.5832px 13.8252px rgba(0, 0, 0, 0.14175))
     drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
     drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
-}
+} */
 
 .crm-gradient {
   background: linear-gradient(

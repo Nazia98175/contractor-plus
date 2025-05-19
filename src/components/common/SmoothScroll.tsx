@@ -42,7 +42,7 @@ export default function SmoothScroll() {
     ScrollTrigger.refresh();
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
   return null;

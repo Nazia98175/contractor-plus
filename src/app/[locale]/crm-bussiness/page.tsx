@@ -24,10 +24,10 @@ const CrmBussinessPage = () => {
       <Hero />
       <TrustedService />
       <SwitchingTool />
-      {/* <OnScroll /> */}
-      {/* <FieldService /> */}
+      <OnScroll />
+      <FieldService />
       <TrackProperties />
-      {/* <KindAdorable /> */}
+      <KindAdorable />
       <TeamsUsingContractor />
       <ThousandsReviews />
       <div className="relative">

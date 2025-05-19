@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="relative overflow-hidden max-w-[1920px] mx-auto">
       <div className="flex items-end main-container z-20 relative pt-[292px]  pb-11 md:pb-20 lg:pt-[138px] lg:pb-36 xl:pb-[202px] ">
-        <div className="max-w-[616px] w-full sm:space-y-6">
+        <div className="lg:max-w-[616px] w-full sm:space-y-6">
           <TextAnimation animateOnScroll={false} delay={0.3}>
             <h1 className="main-heading gradient-text mb-1.5">
               {t("heading")}
@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute object-bottom -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video ">
+      <div className="absolute object-bottom lg:-right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video ">
         {/* <VideoViewer /> */}
         <video
           autoPlay

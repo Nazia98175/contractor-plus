@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckIcon } from "../common/Icons";
+import { CheckIcon, FinallyDesktopBg } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
@@ -8,12 +8,14 @@ const Finally = () => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
   return (
-    <section className="relative no-scrollbar overflow-hidden pt-16 md:pt-20 xl:pt-[186px] px-2 bg-white z-20">
-      <div className="flex items-center justify-center">
-        <div className="absolute w-[200%] h-[100%] -top-[50%] z-20 rounded-full blur-[120.30000305175781px] pointer-events-none bg-[#C01A06]" />
-        <div className="bg-black blur-[62.5px] absolute w-[120%] h-[107%] -top-[75%] z-20 rounded-full pointer-events-none" /> */}
-      </div>
+    <section className="relative no-scrollbar  pt-16 md:pt-20 xl:pt-[186px] px-2 bg-white z-20 overflow-hidden">
+      {/* <div className="flex items-center justify-center">
+        <div className="absolute w-[200%] h-[100%] md:-top-[50%] -top-[70%] z-20 rounded-full blur-[32.29999923706055px] md:blur-[120.30000305175781px] pointer-events-none bg-[#C01A06]" />
+        <div className="bg-black blur-[81.1500015258789px] md:blur-[62.5px] absolute xl:w-[130%] w-[160%] h-[107%] md:-top-[75%] -top-[90%] z-20 rounded-full pointer-events-none" />
+      </div> */}
+      <FinallyDesktopBg className="absolute  w-full h-full left-0 -top-[25%] " />
       <div className="space-y-4 z-30 relative">
+        <div className=""></div>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center gradient-text  z-40 relative">
             {t("heading")}

@@ -1531,32 +1531,57 @@ export const MoreIcon = () => (
     />
   </svg>
 );
-export const HeroVideoLayerIcon = ({ className = "" }) => (
+export const FinallyDesktopBg = ({ className = "" }) => (
   <svg
     width="100%"
     height="100%"
-    viewBox="0 0 1673 1037"
+    viewBox="0 0 1440 1022"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="absolute top-0 left-0 z-40 w-[200%]"
+    className={className}
   >
-    <g filter="url(#filter0_f_540_18392)">
-      <path
-        d="M235 582.5L509 102H102V934.929H1570.5L235 582.5Z"
-        fill="#0C0D11"
-      />
-      <path
-        d="M508.139 102.5L234.565 582.252L234.243 582.817L234.872 582.983L1566.65 934.429H102.5V102.5H508.139Z"
-        stroke="black"
-      />
+    <g clip-path="url(#clip0_769_2103)">
+      <g filter="url(#filter0_f_769_2103)">
+        <ellipse
+          cx="697.472"
+          cy="185.47"
+          rx="778.798"
+          ry="568.866"
+          fill="#0C0D11"
+        />
+      </g>
+      <g filter="url(#filter1_f_769_2103)">
+        <path
+          d="M1719.74 160.431C1719.74 548.372 1272.4 862.861 720.571 862.861C168.746 862.861 -278.598 548.372 -278.598 160.431C-278.598 -227.511 168.746 -542 720.571 -542C1272.4 -542 1719.74 -227.511 1719.74 160.431Z"
+          fill="#EE1E25"
+        />
+      </g>
+      <g filter="url(#filter2_f_769_2103)">
+        <ellipse
+          cx="697.474"
+          cy="158.634"
+          rx="884.058"
+          ry="619.398"
+          fill="#C01A06"
+        />
+      </g>
+      <g filter="url(#filter3_f_769_2103)">
+        <ellipse
+          cx="697.473"
+          cy="217.176"
+          rx="918.227"
+          ry="461.454"
+          fill="#0C0D11"
+        />
+      </g>
     </g>
     <defs>
       <filter
-        id="filter0_f_540_18392"
-        x="0.0999985"
-        y="0.0999985"
-        width="1672.3"
-        height="1036.73"
+        id="filter0_f_769_2103"
+        x="-281.326"
+        y="-583.396"
+        width="1957.6"
+        height="1537.73"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -1568,10 +1593,81 @@ export const HeroVideoLayerIcon = ({ className = "" }) => (
           result="shape"
         />
         <feGaussianBlur
-          stdDeviation="50.95"
-          result="effect1_foregroundBlur_540_18392"
+          stdDeviation="100"
+          result="effect1_foregroundBlur_769_2103"
         />
       </filter>
+      <filter
+        id="filter1_f_769_2103"
+        x="-519.198"
+        y="-782.6"
+        width="2479.54"
+        height="1886.06"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="120.3"
+          result="effect1_foregroundBlur_769_2103"
+        />
+      </filter>
+      <filter
+        id="filter2_f_769_2103"
+        x="-386.584"
+        y="-660.764"
+        width="2168.12"
+        height="1638.8"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="100"
+          result="effect1_foregroundBlur_769_2103"
+        />
+      </filter>
+      <filter
+        id="filter3_f_769_2103"
+        x="-395.754"
+        y="-419.278"
+        width="2186.45"
+        height="1272.91"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="87.5"
+          result="effect1_foregroundBlur_769_2103"
+        />
+      </filter>
+      <clipPath id="clip0_769_2103">
+        <rect
+          width="1999"
+          height="1022"
+          fill="white"
+          transform="translate(-279)"
+        />
+      </clipPath>
     </defs>
   </svg>
 );

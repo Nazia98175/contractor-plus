@@ -20,8 +20,8 @@ const TrustedService = () => {
     setIsModalOpen(true);
   };
   return (
-    <section className="py-10 overflow-hidden">
-      <h3 className="section-heading text-white text-center">
+    <section className="py-10 overflow-hidden z-20 relative">
+      <h3 className="section-heading gradient-2 text-center w-fit mx-auto">
         Trusted by over 50,000 build and service contractors
       </h3>
       <div className="relative">

@@ -2,15 +2,15 @@
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import CardReveal from "../common/CardReveal";
 import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
 
 const TeamsUsingContractor = () => {
+  // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.3,
+    rootMargin: "50px 0px",
   });
-  console.log(inView);
 
   const t = useTranslations("crm");
 
@@ -22,19 +22,22 @@ const TeamsUsingContractor = () => {
     suffix: string;
   }[];
 
-  const icons = [<EstimateIcon2 fill="#3F464B" />, <ClockIcon />, <MoreIcon />];
+  const icons = [
+    <EstimateIcon2 key="estimate" fill="#3F464B" />,
+    <ClockIcon key="clock" />,
+    <MoreIcon key="more" />,
+  ];
+
   return (
-    <section ref={ref} className="bg-white py-10">
-      <div className="flex flex-col items-center justify-center main-container">
+    <section className="bg-white py-10">
+      <div
+        ref={ref}
+        className="flex flex-col items-center justify-center main-container"
+      >
         <h2 className="crm-gradient section-heading">{t("heading")}</h2>
         <p className="paragraph">{t("desc")}</p>
 
-        <CardReveal
-          staggerDelay={0.15}
-          animationDuration={0.8}
-          distance={50}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full">
           {crmList.map((item, index) => (
             <article
               key={index}
@@ -47,11 +50,15 @@ const TeamsUsingContractor = () => {
                     key={`counter-${index}`}
                     start={item.start}
                     end={item.end}
-                    duration={5}
+                    duration={2.5}
+                    delay={0.2}
+                    useEasing={true}
+                    separator=","
                     suffix={item.suffix}
+                    preserveValue={true}
                   />
                 ) : (
-                  `${item.start}${item.suffix}`
+                  `${item.end}${item.suffix}`
                 )}
                 <span className="inline-block px-2">{item.title}</span>
               </h3>
@@ -61,24 +68,32 @@ const TeamsUsingContractor = () => {
               </p>
             </article>
           ))}
-        </CardReveal>
+        </div>
 
-        <div className="flex gap-[53px] items-center">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">
           <img
             src="/images/webp/software-advice.webp"
             className="img-shadow max-w-[121px]"
-            alt="Leader"
+            alt="Software Advice"
+            loading="lazy"
           />
           <img
             src="/images/webp/leader.webp"
             className="img-shadow max-w-[103px]"
             alt="Leader"
+            loading="lazy"
           />
-          <img src="/images/svg/capterra.svg" className="img" alt="Leader" />
+          <img
+            src="/images/svg/capterra.svg"
+            className="img"
+            alt="Capterra"
+            loading="lazy"
+          />
           <img
             src="/images/webp/get-app.webp"
             className="img-shadow max-w-[137px]"
-            alt="Leader"
+            alt="Get App"
+            loading="lazy"
           />
         </div>
       </div>

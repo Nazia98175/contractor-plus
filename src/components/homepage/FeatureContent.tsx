@@ -1,25 +1,21 @@
 "use client";
+import Image from "next/image";
 import React from "react";
+import { BlurIcon } from "../common/Icons";
 
-type Content = {
+type FeatureContent = {
   title: string;
   mainDesc?: string;
   description: string;
+  titleImg: string;
 };
 
 type Props = {
-  features: string[];
-  featureContents: Content[];
+  featureContents: FeatureContent[];
   contentRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
-  t: (key: string) => string;
 };
 
-const FeatureContent = ({
-  features,
-  featureContents,
-  contentRefs,
-  t,
-}: Props) => {
+const FeatureContent = ({ featureContents, contentRefs }: Props) => {
   return (
     <>
       {featureContents.map((content, index) => (
@@ -33,19 +29,21 @@ const FeatureContent = ({
           <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet leading-[100%] font-jakarta">
             {content.title}
           </h4>
-          <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center text-lg text-gray-400">
-              {features[index]} {t("visualization")}
-            </div>
+          <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm overflow-hidden">
+            <Image
+              src={content.titleImg}
+              alt="Feature"
+              fill
+              className="object-cover rounded-md"
+            />
+            <BlurIcon className="absolute inset-0 w-full h-full mix-blend-color-dodge" />
           </div>
-          <p className="text-base md:text-lg font-medium text-secondary max-w-[615px] font-jakarta">
+          <div className="text-base md:text-lg font-medium text-secondary max-w-[615px] font-jakarta space-y-2">
             {content.mainDesc && (
-              <span className="text-wallStreet inline-block">
-                {content.mainDesc}
-              </span>
+              <p className="text-wallStreet">{content.mainDesc}</p>
             )}
-            {content.description}
-          </p>
+            <p>{content.description}</p>
+          </div>
         </div>
       ))}
     </>

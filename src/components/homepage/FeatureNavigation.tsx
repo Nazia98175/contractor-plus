@@ -4,6 +4,7 @@ import { ExternalLink, Pathbg } from "../common/Icons";
 
 type Props = {
   features: string[];
+  featureBtn: string[];
   activeFeature: number;
   onFeatureClick: (index: number) => void;
   featuresRef: React.RefObject<HTMLDivElement | null>;
@@ -13,6 +14,7 @@ type Props = {
 
 const FeatureNavigation = ({
   features,
+  featureBtn,
   activeFeature,
   onFeatureClick,
   indicatorRef,
@@ -47,7 +49,7 @@ const FeatureNavigation = ({
           </button>
         ))}
         <button className="flex group justify-between feature-btn w-full text-lightishBlue gap-1 items-center">
-          See All Features
+          {featureBtn}
           <span className="w-5 flex justify-center items-center group-hover:-translate-y-1 duration-300">
             <ExternalLink />
           </span>

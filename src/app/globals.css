@@ -46,7 +46,7 @@
     rgba(12, 13, 17, 0) 18.46%,
     #0c0d11 69.34%
   );
-  --background-image-side:
+  /* --background-image-side:
   --background-image-black-red-linear: linear-gradient(
       0deg,
       rgba(28, 39, 49, 0.2) 0%,
@@ -56,7 +56,7 @@
       116.03% 94.9% at 117.83% 100%,
       #ee1e25 0%,
       rgba(0, 0, 0, 0) 100%
-    );
+    ); */
 
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
@@ -536,7 +536,6 @@ html {
   line-height: normal;
 }
 
-
 .field-service-card {
   background: radial-gradient(
       146.13% 118.42% at 50% -15.5%,
@@ -551,8 +550,16 @@ html {
     drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.1));
 
   border: 1px solid #ffffff21;
-  background: radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0.00) 0%, rgba(28, 27, 51, 0.10) 100%);
-  box-shadow: 0px -33px 40px 0px rgba(0, 0, 0, 0.20), 0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset, 0px 5px 10px 0px rgba(0, 0, 0, 0.05), 0px 15px 30px 0px rgba(0, 0, 0, 0.05), 0px 30px 60px 0px rgba(0, 0, 0, 0.10);
+  background: radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+  box-shadow: 0px -33px 40px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
+    0px 5px 10px 0px rgba(0, 0, 0, 0.05), 0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
 }
 
@@ -573,8 +580,3 @@ html {
 .custom-shadow-img {
   filter: drop-shadow(-24px 18px 22px #00000078);
 }
-
-
-
-
-

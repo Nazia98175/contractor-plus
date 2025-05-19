@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
+import { log } from "console";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -25,12 +26,13 @@ const CoreFeaturesCard = () => {
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
+  const featureBtn: string[] = [t.raw("featureBtn") || "Learn More"];
   const featureContents = t.raw("featureContents") as {
     title: string;
     mainDesc?: string;
     description: string;
+    titleImg: string;
   }[];
-
   const calculateButtonPositions = useCallback(() => {
     if (!featuresRef.current) return [0, 0, 0, 0, 0, 0];
     let featureButtons =
@@ -184,29 +186,30 @@ const CoreFeaturesCard = () => {
       className="lg:p-6 md:px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7"
       ref={containerRef}
     >
-      <FeatureNavigation
-        features={features}
-        activeFeature={activeFeature}
-        onFeatureClick={(index) => {
-          setActiveFeature(index);
-          contentRefs.current[index]?.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-        }}
-        indicatorRef={indicatorRef}
-        featuresRef={featuresRef}
-        mobileIndicatorRef={mobileIndicatorRef}
-      />
+      <div className="">
+        <FeatureNavigation
+          features={features}
+          featureBtn={featureBtn}
+          activeFeature={activeFeature}
+          onFeatureClick={(index) => {
+            setActiveFeature(index);
+            contentRefs.current[index]?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }}
+          indicatorRef={indicatorRef}
+          featuresRef={featuresRef}
+          mobileIndicatorRef={mobileIndicatorRef}
+        />
+      </div>
       <div
         className="space-y-12 xl:space-y-16 overflow-visible lg:max-w-[639px] w-full"
         ref={contentContainerRef}
       >
         <FeatureContent
-          features={features}
           featureContents={featureContents}
           contentRefs={contentRefs}
-          t={t}
         />
       </div>
     </section>

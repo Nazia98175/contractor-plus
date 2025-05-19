@@ -184,7 +184,7 @@ const LanguageSelector = () => {
         onClick={toggleDropdown}
       >
         <Image
-          className="object-cover sm:w-5 w-3"
+          className="object-cover sm:w-5 w-3 rounded-full"
           src={currentLanguage.imgPath}
           width={20}
           height={20}

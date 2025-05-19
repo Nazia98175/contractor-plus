@@ -32,6 +32,10 @@ const Hero = () => {
       <div className="absolute object-bottom -right-[15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video ">
         {/* <VideoViewer /> */}
         <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover lg:object-center 3xl:object-cover min-h-[500px]"
           src="/video/hero-video.mp4"
         ></video>

@@ -538,3 +538,11 @@ html {
 .switch-tool-bg {
   background: linear-gradient(180deg, #000000 5%, rgba(12, 13, 17, 0) 100%);
 }
+.test {
+  background: radial-gradient(
+    ellipse at center,
+    #ee1e25 0%,
+    #c01a06 40%,
+    #0c0d11 100%
+  );
+}

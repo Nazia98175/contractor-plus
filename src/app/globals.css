@@ -568,7 +568,9 @@ html {
     #0c0d11 100%
   );
 }
-
+.switch-tool-bg {
+  background: linear-gradient(180deg, #000000 5%, rgba(12, 13, 17, 0) 100%);
+}
 .custom-shadow-img {
   filter: drop-shadow(-24px 18px 22px #00000078);
 }

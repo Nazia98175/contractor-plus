@@ -15,10 +15,12 @@
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
   --color-romanRed: #f21314;
+  --color-pleasure: #dc1112;
   --color-redPigment: #ee1e25;
   --color-decemberSky: #d2d4d6;
   --color-monstrousGreen: #21c912;
   --color-darkGrey: #999;
+  --color-expressionismGreen: #56c299;
   --color-lightBlack: #1c2731;
   --color-softMint: #effbf6;
   --color-athenaBlue: #6ddcff;
@@ -120,7 +122,7 @@ body {
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] xl:text-[42px] sm:text-4xl lg:text-5xl font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
+  @apply text-[26px] lg:text-[42px] sm:text-4xl  font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
   @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
@@ -478,7 +480,7 @@ html {
       rgba(238, 30, 37, 0.4) 35.56%,
       rgba(0, 0, 0, 0) 99.98%
     ),
-    #000000;
+    #000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -500,4 +502,10 @@ html {
   background-size: 100% 160%;
   background-repeat: no-repeat;
   z-index: 10;
+  color: transparent;
+}
+
+.green-text {
+  background: none !important;
+  color: #0070f3 !important;
 }

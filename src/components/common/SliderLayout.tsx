@@ -33,8 +33,8 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   children,
   className = "mySwiper",
   wrapperClassName = "relative w-full",
-  modules = [Pagination, Autoplay, EffectCoverflow],
-  effect = "coverflow",
+  modules = [Pagination],
+  effect = undefined, // <- disabled by default
   autoplay = false,
   pagination = false,
   slidesPerView = 2,
@@ -66,32 +66,22 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   ...rest
 }) => {
   const swiperRef = useRef<SwiperClass | null>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Determine if we're using autoplay
   const hasAutoplay = autoplay !== false && autoplay !== undefined;
-
-  // Determine if we're using coverflow effect
   const hasCoverflowEffect = effect === "coverflow";
 
-  // Ensure all modules are properly loaded
   useEffect(() => {
-    // Force update the swiper instance when dimensions might change
     const handleResize = () => {
       if (swiperRef.current) {
         swiperRef.current.update();
       }
     };
 
-    // Handle visibility changes (e.g., tab switching)
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible" && swiperRef.current) {
-        // Small timeout to ensure DOM is fully ready
         setTimeout(() => {
           swiperRef.current?.update();
-
-          // If autoplay is enabled and not hovering, restart it
           if (hasAutoplay && !isHovered && swiperRef.current?.autoplay) {
             swiperRef.current.autoplay.start();
           }
@@ -101,23 +91,15 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
 
     window.addEventListener("resize", handleResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
-
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [hasAutoplay, isHovered]);
 
-  // Handle mouse events
   const handleMouseEnter = () => {
     setIsHovered(true);
-
-    // Call external handler if provided
-    if (onMouseEnter) {
-      onMouseEnter();
-    }
-
-    // If autoplay is enabled, pause it
+    onMouseEnter?.();
     if (hasAutoplay && swiperRef.current?.autoplay) {
       swiperRef.current.autoplay.stop();
     }
@@ -125,29 +107,20 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-
-    // Call external handler if provided
-    if (onMouseLeave) {
-      onMouseLeave();
-    }
-
-    // If autoplay is enabled, resume it
+    onMouseLeave?.();
     if (hasAutoplay && swiperRef.current?.autoplay) {
       swiperRef.current.autoplay.start();
     }
   };
 
-  // Filter out empty children to prevent slider issues
   const validChildren = React.Children.toArray(children).filter(
     (child) => child !== null && child !== undefined
   );
 
-  // Only render swiper if we have valid children
   if (validChildren.length === 0) {
     return <div className={wrapperClassName}></div>;
   }
 
-  // Prepare the autoplay configuration
   const autoplayConfig = hasAutoplay
     ? {
         delay:
@@ -165,7 +138,6 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
       }
     : false;
 
-  // Prepare the effective modules
   const effectiveModules = [...modules];
   if (!modules.includes(Autoplay) && hasAutoplay) {
     effectiveModules.push(Autoplay);
@@ -177,13 +149,13 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   return (
     <div
       className={wrapperClassName}
-      ref={wrapperRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <Swiper
         modules={effectiveModules}
         effect={hasCoverflowEffect ? "coverflow" : undefined}
+        coverflowEffect={hasCoverflowEffect ? coverflowEffect : undefined}
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
         loop={loop && validChildren.length > 1}
@@ -191,7 +163,6 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
         centeredSlides={centeredSlides}
         autoplay={autoplayConfig}
         pagination={pagination ? { clickable: true } : false}
-        coverflowEffect={hasCoverflowEffect ? coverflowEffect : undefined}
         breakpoints={breakpoints}
         onSlideChange={onSlideChange}
         speed={speed}

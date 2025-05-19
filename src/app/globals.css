@@ -119,16 +119,16 @@ body {
   @apply max-w-[1308px] w-full mx-auto px-2;
 }
 .main-heading {
-  @apply text-[26px] sm:text-4xl lg:text-5xl capitalize xl:text-[52px] font-extrabold font-jakarta leading-[130%];
+  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold font-jakarta leading-[130%];
 }
 .section-heading {
   @apply text-[26px] lg:text-[42px] sm:text-4xl  font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .sub-heading {
-  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta capitalize;
+  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
 }
 .primary-btn {
-  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95 capitalize;
+  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95;
 }
 .header-li {
   @apply 2xl:text-base xl:text-sm text-xs font-montserrat font-semibold lg:text-superSilver text-lightBlack;
@@ -463,6 +463,7 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
+<<<<<<< HEAD
 .img-shadow {
   filter: drop-shadow(-111.494px 100.345px 143px rgba(0, 0, 0, 0.0400313))
     drop-shadow(-81.0946px 72.9851px 96.3854px rgba(0, 0, 0, 0.06825))
@@ -490,4 +491,18 @@ html {
 .green-text {
   background: none !important;
   color: #0070f3 !important;
+=======
+
+@keyframes aurora-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    filter: blur(120px);
+  }
+  100% {
+    transform: scale(1.05);
+    filter: blur(90px);
+  }
+>>>>>>> 34afb50ff2414594cf4cd9dd5cb0c15d5e5f8820
 }

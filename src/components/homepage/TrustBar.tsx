@@ -37,6 +37,38 @@ const platforms: Platform[] = [
     rating: 5,
   },
 ];
+const sliderPlatforms: Platform[] = [
+  {
+    name: "App Store",
+    logo: "/images/svg/apple-rating.svg",
+    rating: 5,
+  },
+  {
+    name: "Google Play",
+    logo: "/images/svg/google-rating.svg",
+    rating: 5,
+  },
+  {
+    name: "G2 Crowd",
+    logo: "/images/webp/g2Rating.webp",
+    rating: 5,
+  },
+  {
+    name: "Capterra",
+    logo: "/images/webp/capterraRating.webp",
+    rating: 5,
+  },
+  {
+    name: "Software Advice",
+    logo: "images/svg/software-advice-rating.svg",
+    rating: 5,
+  },
+  {
+    name: "Google Play",
+    logo: "/images/svg/google-rating.svg",
+    rating: 5,
+  },
+];
 
 const TrustBar: React.FC = () => {
   return (
@@ -54,7 +86,7 @@ const TrustBar: React.FC = () => {
 
       <div className="relative z-50 lg:hidden">
         <SliderLayout autoplay={true}>
-          {platforms.map((platform, index) => (
+          {sliderPlatforms.map((platform, index) => (
             <PlatformCard platform={platform} key={index} />
           ))}
         </SliderLayout>

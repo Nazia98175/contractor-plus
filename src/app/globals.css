@@ -65,24 +65,6 @@
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c2: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
-
-  --shadow-c3: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04),
-    -81.095px 72.985px 96.385px 0px rgba(0, 0, 0, 0.07),
-    -56.444px 50.8px 62.339px 0px rgba(0, 0, 0, 0.09),
-    -37.02px 33.318px 38.683px 0px rgba(0, 0, 0, 0.1),
-    -22.299px 20.069px 23.237px 0px rgba(0, 0, 0, 0.12),
-    -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
-    -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
-    -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
-
-  --drop-shadow-3xl: 111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
-  /* -81.095px 72.985px 96.385px 0px rgba(0, 0, 0, 0.07),
-    -56.444px 50.8px 62.339px 0px rgba(0, 0, 0, 0.09),
-    -37.02px 33.318px 38.683px 0px rgba(0, 0, 0, 0.1),
-    -22.299px 20.069px 23.237px 0px rgba(0, 0, 0, 0.12),
-    -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
-    -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
-    -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21); */
 }
 
 body {
@@ -123,6 +105,9 @@ body {
 }
 .section-heading {
   @apply text-[26px] lg:text-[42px] sm:text-4xl  font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
+}
+.paragraph {
+  @apply text-wallStreet font-medium font-jakarta mt-4;
 }
 .sub-heading {
   @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
@@ -508,4 +493,14 @@ html {
 .green-text {
   background: none !important;
   color: #0070f3 !important;
+}
+
+/* iPhone 12 Pro Max Device */
+.linear-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 60.94%
+  );
+  backdrop-filter: blur(1.65px);
 }

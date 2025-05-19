@@ -18,7 +18,7 @@ const reviews = [
   {
     id: 2,
     name: "Jessica J.",
-    image: "/images/webp/user-2.webp",
+    image: "/images/webp/user-3.webp",
     rating: 4.5,
     companyLogo: "/images/svg/randsIcon.svg",
     text: `Since I started sending all my estimates using Contractor+, I have
@@ -28,7 +28,17 @@ const reviews = [
   {
     id: 3,
     name: "Clark J.",
-    image: "/images/webp/user-3.webp",
+    image: "/images/webp/user-2.webp",
+    rating: 4.5,
+    companyLogo: "/images/svg/randsIcon.svg",
+    text: `Since I started sending all my estimates using Contractor+, I have
+    stopped losing bids. The professional image I gain by using this app
+    is helping me win more business. Contractor+ is a game changer!`,
+  },
+  {
+    id: 4,
+    name: "Clark J.",
+    image: "/images/webp/user-2.webp",
     rating: 4.5,
     companyLogo: "/images/svg/randsIcon.svg",
     text: `Since I started sending all my estimates using Contractor+, I have
@@ -49,19 +59,21 @@ const CrmReviewCard = () => {
   return (
     <>
       <SliderLayout
-        wrapperClassName="relative w-full"
+        wrapperClassName="relative w-full py-8"
         slidesPerView={1}
-        spaceBetween={12}
+        spaceBetween={9}
         breakpoints={{
-          640: { slidesPerView: 2, spaceBetween: 16 },
-          1024: { slidesPerView: 3, spaceBetween: 35 },
+          640: { slidesPerView: 1.5, spaceBetween: 12 },
+          768: { slidesPerView: 2, spaceBetween: 16 },
+          1024: { slidesPerView: 2.5, spaceBetween: 20 },
+          1280: { slidesPerView: 3, spaceBetween: 35 },
         }}
         autoplay
       >
         {reviews.map((review) => (
           <article
             key={review.id}
-            className="bg-white  w-full p-4 rounded-xl shadow-md"
+            className="bg-white w-full p-2 hover:-translate-y-1 duration-300 cursor-pointer"
           >
             <div className="flex gap-5 items-center">
               <div className="relative">
@@ -77,8 +89,8 @@ const CrmReviewCard = () => {
                 </div>
               </div>
               <div className="w-full flex flex-col gap-1.5">
-                <div className="flex justify-between w-full items-center flex-wrap gap-2.5">
-                  <h5 className="text-xl lg:text-2xl font-inter font-medium tracking-[0.1px] text-lightBlack">
+                <div className="flex justify-between w-full items-center flex-wrap sm:flex-nowrap gap-2.5">
+                  <h5 className="text-xl lg:text-2xl font-inter font-medium tracking-[0.1px] text-lightBlack text-nowrap">
                     {review.name}
                   </h5>
                   <div className="flex items-center gap-1 h-fit">
@@ -92,7 +104,7 @@ const CrmReviewCard = () => {
                 />
               </div>
             </div>
-            <p className="text-lg tracking-[0.1px] font-medium font-jakarta text-winterWay mt-3">
+            <p className="text-sm md:text-base text-left xl:text-lg tracking-[0.1px] font-medium font-jakarta text-winterWay mt-3">
               "{review.text}"
             </p>
           </article>

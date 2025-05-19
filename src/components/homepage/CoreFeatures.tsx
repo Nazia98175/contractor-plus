@@ -13,9 +13,7 @@ const CoreFeatures = () => {
           </h3>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <p className="mt-3 leading-[130%] text-base font-jakarta font-medium text-wallStreet">
-            {t("desc")}
-          </p>
+          <p className="mt-3 leading-[130%]">{t("desc")}</p>
         </TextAnimation>
         <CoreFeaturesCard />
       </div>

@@ -3,20 +3,30 @@ import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
 
 const Hero = () => {
   return (
-    <section className="relative">
-      <span className="top-[-202px] right-0 absolute pointer-events-none">
+    <section className="relative overflow-hidden md:overflow-visible">
+      <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute">
         <RedClipIcon />
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
-      <div className="max-w-[1050px] w-full mx-auto pb-10 pt-[139px] md:pt-[178px] px-2">
-        <h2 className="text-[#B3B3B3] main-heading text-center">
-          A field service CRM that runs your business, not just stores contacts
-        </h2>
-        <p className="paragraph-text text-decemberSky pt-5 text-center max-w-[826px] mx-auto">
-          Built-in phone and SMS. AI receptionist. Property profiles. Full
-          communication history. You no longer need 6 separate tools to do what
-          Contractor+ CRM does in one.
-        </p>
+      <div className="max-w-[1050px] w-full mx-auto pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px] px-2">
+        <div className="pt-12 max-w-[900px] mx-auto block md:hidden">
+          <img
+            className="w-full h-full"
+            src="/images/webp/crm-hero.webp"
+            alt="crm hero"
+          />
+        </div>
+        <div>
+          <h2 className="text-[#B3B3B3] main-heading  text-start sm:text-center">
+            A field service CRM that runs your business, not just stores
+            contacts
+          </h2>
+          <p className="paragraph-text text-decemberSky pt-2 sm:pt-5 text-start sm:text-center max-w-[826px] mx-auto">
+            Built-in phone and SMS. AI receptionist. Property profiles. Full
+            communication history. You no longer need 6 separate tools to do
+            what Contractor+ CRM does in one.
+          </p>
+        </div>
         <div className="flex flex-wrap justify-center items-center gap-5 pt-5">
           <div>
             <img src="/images/svg/GooglePlay-Icon.svg" alt="google icon" />
@@ -64,7 +74,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="pt-12 max-w-[900px] mx-auto">
+        <div className="pt-12 max-w-[900px] mx-auto hidden md:block">
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"

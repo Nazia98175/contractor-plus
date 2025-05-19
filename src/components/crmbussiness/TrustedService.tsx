@@ -27,26 +27,6 @@ const TrustedService = () => {
       <div className="relative">
         <div className="absolute h-[380px] left-[-6%] w-[200px] md:w-[370px] bg-testimonial-left-2 z-40 hidden lg:block blur-2xl pointer-events-none"></div>
         <div className="absolute h-[380px] right-[-6%] w-[200px] md:w-[370px] bg-testimonial-right-2 z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        {/* <img
-          className="hidden md:block absolute top-[10px] left-0 z-10 max-w-[300px] 3xl:max-w-[510px] w-full h-full"
-          src="/images/webp/trusted-marque-bg-left.png"
-          alt="marquee background"
-        />
-        <img
-          className="hidden md:block absolute top-[10px] right-0 z-10 max-w-[300px] 3xl:max-w-[510px] w-full h-full"
-          src="/images/webp/trusted-marque-bg-right.png"
-          alt="marquee background"
-        />
-        <img
-          className="block md:hidden absolute top-[10px] left-0 z-10 h-full"
-          src="/images/webp/trusted-marque-bg-left-mobile.png"
-          alt="marquee background"
-        />
-        <img
-          className="block md:hidden absolute top-[10px] right-0 z-10 h-full"
-          src="/images/webp/trusted-marque-bg-right-mobile.png"
-          alt="marquee background"
-        /> */}
 
         {/* First row of reviews - scrolling right */}
         <div className="md:pt-14 w-full ">

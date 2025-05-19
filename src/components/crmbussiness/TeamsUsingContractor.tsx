@@ -27,9 +27,7 @@ const TeamsUsingContractor = () => {
     <section ref={ref} className="bg-white py-10">
       <div className="flex flex-col items-center justify-center main-container">
         <h2 className="crm-gradient section-heading">{t("heading")}</h2>
-        <p className="text-wallStreet font-medium font-jakarta mt-4">
-          {t("desc")}
-        </p>
+        <p className="paragraph">{t("desc")}</p>
 
         <CardReveal
           staggerDelay={0.15}

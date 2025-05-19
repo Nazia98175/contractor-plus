@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import FeatureCard from "./FeatureCard";
-import CustomSlider from "../common/CustomSlider";
+import SliderLayout from "../common/SliderLayout";
 import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { featureKeys } from "../common/Helper";
@@ -31,7 +31,7 @@ const Features = ({ features }: { features: any }) => {
             ))}
           </CardReveal>
           <div className="lg:hidden">
-            <CustomSlider
+            <SliderLayout
               autoplay
               pagination
               breakpoints={{
@@ -44,7 +44,7 @@ const Features = ({ features }: { features: any }) => {
               {featureData.map((obj, index) => (
                 <FeatureCard obj={obj} key={index} />
               ))}
-            </CustomSlider>
+            </SliderLayout>
           </div>
         </div>
       </div>

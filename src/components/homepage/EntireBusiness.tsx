@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";

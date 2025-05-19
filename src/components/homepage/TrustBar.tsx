@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import PlatformCard from "./PlatformCard";
-import CustomSlider from "../common/CustomSlider";
+import SliderLayout from "../common/SliderLayout";
 import CardReveal from "../common/CardReveal";
 
 interface Platform {
@@ -41,13 +41,6 @@ const platforms: Platform[] = [
 const TrustBar: React.FC = () => {
   return (
     <section className="relative">
-      {/* particle js  */}
-      {/* <img
-        src="/images/png/stars.png"
-        className="absolute inset-0 w-full h-full z-10 object-cover"
-        alt="Stars"
-      /> */}
-
       <CardReveal
         staggerDelay={0.4}
         animationDuration={0.8}
@@ -60,11 +53,11 @@ const TrustBar: React.FC = () => {
       </CardReveal>
 
       <div className="relative z-50 lg:hidden">
-        <CustomSlider autoplay={true}>
+        <SliderLayout autoplay={true}>
           {platforms.map((platform, index) => (
             <PlatformCard platform={platform} key={index} />
           ))}
-        </CustomSlider>
+        </SliderLayout>
       </div>
     </section>
   );

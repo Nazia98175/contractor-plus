@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import AnimateHeight from "react-animate-height";
 import FaqList from "./FaqList";
 
 type FaqItemType = {
@@ -12,7 +11,6 @@ const Faq = () => {
   const handleToggle = (index: number) => {
     setOpen(FaqOpen === index ? null : index);
   };
-  console.log(FaqOpen);
 
   const faqitems = [
     {

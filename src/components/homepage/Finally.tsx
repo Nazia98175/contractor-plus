@@ -8,11 +8,13 @@ const Finally = () => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
   return (
-    <section className="relative no-scrollbar overflow-x-hidden pt-16 md:pt-20 xl:pt-[186px]  px-2">
-      {/* <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
-      <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div> */}
+    <section className="relative no-scrollbar overflow-hidden pt-16 md:pt-20 xl:pt-[186px] px-2 bg-white z-20">
+      <div className="flex items-center justify-center">
+        <div className="bg-redPigment blur-[100px] absolute w-[200%] h-full -top-[56%] z-20 rounded-full pointer-events-none"></div>
+        <div className="bg-black blur-[62.5px] absolute w-[130%] h-full -top-[75%] z-20 rounded-full pointer-events-none"></div>
+      </div>
 
-      <div className="space-y-4 z-20 relative">
+      <div className="space-y-4 z-30 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center gradient-text  z-40 relative">
             {t("heading")}

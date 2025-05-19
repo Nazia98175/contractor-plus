@@ -273,9 +273,7 @@ const Whatever = () => {
         />
       </picture>
 
-      {/* Mobile backgrounds - separate picture elements for each image */}
       <div className="block lg:hidden">
-        {/* Left mobile gradient */}
         <picture>
           <source
             media="(max-width: 1023px)"

@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import ParticlesComponent from "@/components/common/ParticlesComponent";
@@ -18,29 +18,29 @@ import Whatever from "@/components/homepage/Whatever";
 import { getHomePage } from "@/services/homepage";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useParams, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+// import { useParams, usePathname } from "next/navigation";
+// import { useEffect, useState } from "react";
 
-export default function Home() {
-  const t = useTranslations();
-  const [homePageContent , setHomePageContent] = useState<any>(null);
+export default async function Home({ params }: { params: { locale: string } }) {
+//   const t = useTranslations();
+//   const [homePageContent , setHomePageContent] = useState<any>(null);
  
- const params = useParams() as { locale?: string };
-  console.log(params, 'params');
+//  const params = useParams() as { locale?: string };
+//   console.log(params, 'params');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (params?.locale) {
-        const res = await getHomePage(params.locale);
-        console.log(res);
-        setHomePageContent(res)
-      }
-    };
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       if (params?.locale) {
+//         const res = await getHomePage(params.locale);
+//         console.log(res);
+//         setHomePageContent(res)
+//       }
+//     };
 
-    fetchData();
-  }, [params]);
+//     fetchData();
+//   }, [params]);
 
-  
+  const homePageContent = await getHomePage(params.locale);
   console.log(homePageContent , "homeee")
 
   return (
@@ -68,15 +68,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[url('/images/webp/platform-bg.webp')] sm:bg-cover bg-bottom  lg:bg-contain 3xl:bg-cover bg-no-repeat sm:bg-center relative bg-white">
-        <img
-          className="absolute top-[-120px] left-0 w-full h-full z-10 hidden sm:block"
-          src="/images/webp/platform-bg.webp"
-          alt="platform bg"
-        />
-        <ContractorPlatforms />
-        <Finally />
-      </div>
+      <ContractorPlatforms />
+      <Finally />
+
       <CoreFeatures />
       <Features features={homePageContent?.data?.features} />
       <ContractorIndustry />

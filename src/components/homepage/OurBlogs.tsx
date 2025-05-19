@@ -1,3 +1,4 @@
+"use client"
 import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";

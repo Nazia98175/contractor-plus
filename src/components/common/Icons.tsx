@@ -416,6 +416,23 @@ export const BlackLogo = () => (
     </defs>
   </svg>
 );
+export const TickIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 20 20"
+    fill="none"
+  >
+    <rect width="20" height="20" rx="10" fill="#D1FADF" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M14.2464 6.15838L8.27969 11.9167L6.69635 10.2251C6.40469 9.95005 5.94635 9.93338 5.61302 10.1667C5.28802 10.4084 5.19635 10.8334 5.39635 11.1751L7.27135 14.2251C7.45469 14.5084 7.77135 14.6834 8.12969 14.6834C8.47135 14.6834 8.79635 14.5084 8.97969 14.2251C9.27969 13.8334 15.0047 7.00838 15.0047 7.00838C15.7547 6.24172 14.8464 5.56672 14.2464 6.15005V6.15838Z"
+      fill="#5ED5A8"
+    />
+  </svg>
+);
 export const CheckIcon = ({ width, height, className }: CheckIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

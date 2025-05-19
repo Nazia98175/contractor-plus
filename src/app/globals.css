@@ -533,3 +533,7 @@ html {
   font-weight: 500;
   line-height: normal;
 }
+
+.switch-tool-bg {
+  background: linear-gradient(180deg, #000000 5%, rgba(12, 13, 17, 0) 100%);
+}

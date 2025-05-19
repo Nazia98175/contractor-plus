@@ -2,10 +2,16 @@ import React from "react";
 
 const SwitchingTool = () => {
   return (
-    <section className="px-2 relative">
+    <section className="px-2 relative pt-[30px] md:pt-0">
+      <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
       <img
-        className="absolute top-0 left-0 w-full h-full z-[-10]"
+        className="absolute top-0 left-0 w-full h-full z-[-10] hidden md:block"
         src="/images/webp/switch-tool-bg.webp"
+        alt=""
+      />
+      <img
+        className="top-0 left-0 w-full h-full z-[-10] block md:hidden absolute"
+        src="/images/png/switch-tool-mobile-bg.png"
         alt=""
       />
       <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary pb-14">

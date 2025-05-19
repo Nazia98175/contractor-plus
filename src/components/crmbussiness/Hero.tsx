@@ -9,7 +9,8 @@ const Hero = () => {
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
       <div className="max-w-[1050px] w-full mx-auto pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px] px-2">
-        <div className="pt-12 max-w-[900px] mx-auto block md:hidden">
+        <div className="pt-12 max-w-[900px] mx-auto block md:hidden relative">
+          <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"
@@ -74,7 +75,8 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="pt-12 max-w-[900px] mx-auto hidden md:block">
+        <div className="pt-12 max-w-[900px] mx-auto hidden md:block relative">
+          <div className="switch-tool-bg h-[100px] w-full hidden md:block bottom-0 left-0 absolute"></div>
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"

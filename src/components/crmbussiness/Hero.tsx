@@ -4,7 +4,8 @@ import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden md:overflow-visible">
-      <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute">
+      <div className="bg-black h-[100px] w-full hidden md:block bottom-[0px] left-0 absolute z-30 blur-[30px] pointer-events-none"></div>
+      <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
@@ -76,7 +77,6 @@ const Hero = () => {
           </div>
         </div>
         <div className="pt-12 max-w-[900px] mx-auto hidden md:block relative">
-          <div className="switch-tool-bg h-[100px] w-full hidden md:block bottom-0 left-0 absolute"></div>
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"

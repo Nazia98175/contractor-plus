@@ -4,12 +4,14 @@ import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden md:overflow-visible">
-      <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute">
+      <div className="bg-black h-[100px] w-full hidden md:block bottom-[0px] left-0 absolute z-30 blur-[30px] pointer-events-none"></div>
+      <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
       <div className="max-w-[1050px] w-full mx-auto pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px] px-2">
-        <div className="pt-12 max-w-[900px] mx-auto block md:hidden">
+        <div className="pt-12 max-w-[900px] mx-auto block md:hidden relative">
+          <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"
@@ -17,9 +19,12 @@ const Hero = () => {
           />
         </div>
         <div>
-          <h2 className="text-[#B3B3B3] main-heading  text-start sm:text-center">
-            A field service CRM that runs your business, not just stores
-            contacts
+          <h2 className="gradient-2 capitalize w-fit main-heading text-start sm:text-center">
+            A{" "}
+            <span className="bg-white text-transparent bg-clip-text">
+              field service CRM
+            </span>{" "}
+            that runs your business, not just stores contacts
           </h2>
           <p className="paragraph-text text-decemberSky pt-2 sm:pt-5 text-start sm:text-center max-w-[826px] mx-auto">
             Built-in phone and SMS. AI receptionist. Property profiles. Full
@@ -74,7 +79,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="pt-12 max-w-[900px] mx-auto hidden md:block">
+        <div className="pt-12 max-w-[900px] mx-auto hidden md:block relative">
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"

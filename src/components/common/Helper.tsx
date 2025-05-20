@@ -49,15 +49,15 @@ export const menuItems = [
 
 export const contractPlatforms = [
   {
-    img: "/images/webp/expensive.webp",
+    img: "/images/webp/big-guys.webp",
     key: "card1",
   },
   {
-    img: "/images/webp/complicated.webp",
+    img: "/images/webp/poppular-solution.webp",
     key: "card2",
   },
   {
-    img: "/images/webp/inadequate.webp",
+    img: "/images/webp/all-in-one.webp",
     key: "card3",
   },
 ];

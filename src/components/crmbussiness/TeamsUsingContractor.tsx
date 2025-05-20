@@ -76,7 +76,7 @@ const TeamsUsingContractor = () => {
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="img-shadow max-w-[121px]"
+            className="custom-shadow-img max-w-[121px]"
             alt="Software Advice"
           />
 
@@ -84,21 +84,21 @@ const TeamsUsingContractor = () => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="img-shadow max-w-[103px]"
+            className="custom-shadow-img max-w-[103px]"
             alt="Leader"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="img"
+            className="custom-shadow-img"
             alt="Capterra"
           />
           <Image
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="img-shadow max-w-[137px]"
+            className="custom-shadow-img max-w-[137px]"
             alt="Get App"
           />
         </div>

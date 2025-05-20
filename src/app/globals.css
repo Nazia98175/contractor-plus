@@ -46,11 +46,13 @@
     rgba(12, 13, 17, 0) 18.46%,
     #0c0d11 69.34%
   );
+
   --background-image-bottom: linear-gradient(
     0deg,
     rgba(12, 13, 17, 0) 0%,
     #0c0d11 100%
   );
+
   --background-image-black-red-linear: linear-gradient(
       0deg,
       rgba(28, 39, 49, 0.2) 0%,
@@ -559,7 +561,6 @@ html {
     0px 30px 60px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
 }
-
 .side-img {
   background: radial-gradient(50% 50% at 50% 50%, #1e2028 0%, #0d0e12 100%);
 }

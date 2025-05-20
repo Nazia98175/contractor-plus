@@ -87,13 +87,13 @@ const ContractorIndustrySlider: React.FC = () => {
 
   return (
     <div className="relative">
-      <div className="bg-[#0C0D11] h-[310px] w-[120px] blur-[20px] absolute left-[-53px] top-[50px] z-10 pointer-events-none"></div>
-      <div className="bg-[#0C0D11] h-[310px] w-[120px] blur-[20px] absolute right-[-53px] top-[50px] z-10 pointer-events-none"></div>
+      {/* <div className="bg-[#0C0D11] h-[310px] w-[120px] blur-[20px] absolute left-[-53px] top-[50px] z-10 pointer-events-none"></div>
+      <div className="bg-[#0C0D11] h-[310px] w-[120px] blur-[20px] absolute right-[-53px] top-[50px] z-10 pointer-events-none"></div> */}
       <SliderLayout
         effect="coverflow"
-        autoplay={{
-          delay: 3000,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        // }}
         speed={500}
         grabCursor={true}
         centeredSlides={true}
@@ -111,7 +111,7 @@ const ContractorIndustrySlider: React.FC = () => {
           320: { slidesPerView: 1.5 },
           500: { slidesPerView: 2 },
           640: { slidesPerView: 3 },
-          1024: { slidesPerView: 3.5 },
+          1024: { slidesPerView: 3.335 },
         }}
         modules={[Autoplay, EffectCoverflow]}
         onSlideChange={(swiper: { realIndex: React.SetStateAction<number> }) =>

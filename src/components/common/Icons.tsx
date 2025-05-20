@@ -1911,3 +1911,59 @@ export const HeroBgIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+
+export const SliderRedLineIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    fill="none"
+    viewBox="0 0 320 495"
+  >
+    <g
+      filter="url(#filter0_f_783_9975)"
+      style={{ mixBlendMode: "plus-lighter" }}
+    >
+      <path
+        stroke="url(#paint0_linear_783_9975)"
+        strokeLinecap="round"
+        strokeWidth="432"
+        d="M417 564 62 209l-355-355"
+      ></path>
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_783_9975"
+        x1="129.417"
+        x2="-227.385"
+        y1="-102.601"
+        y2="29.678"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.062" stopOpacity="0"></stop>
+        <stop offset="0.997" stopColor="#EE1E25"></stop>
+        <stop offset="1" stopColor="#fff"></stop>
+      </linearGradient>
+      <filter
+        id="filter0_f_783_9975"
+        width="1318"
+        height="1318"
+        x="-597"
+        y="-450"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        ></feBlend>
+        <feGaussianBlur
+          result="effect1_foregroundBlur_783_9975"
+          stdDeviation="44"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+);

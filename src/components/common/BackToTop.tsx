@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 import { UpArrowIcon } from "./Icons";
 
 const BackToTop = () => {
-  const [scrollValue, setScrollValue] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    // Handle scroll and update scroll value
+    // Handle scroll and update visibility directly
     const handleScroll = () => {
-      setScrollValue(window.scrollY);
+      if (window.scrollY > 200) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
     };
 
     // Add scroll event listener
@@ -22,16 +25,7 @@ const BackToTop = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    // Show/hide button based on scroll position
-    if (scrollValue > 200) {
-      setShowScrollTop(true);
-    } else {
-      setShowScrollTop(false);
-    }
-  }, [scrollValue]);
+  }, []); // Empty dependency array means this only runs on mount and unmount
 
   // Scroll to top function
   const scrollTopHandler = () => {

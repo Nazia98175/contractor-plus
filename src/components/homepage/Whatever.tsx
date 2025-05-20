@@ -309,7 +309,7 @@ const Whatever = () => {
                     width={icon.width}
                     height={icon.height}
                     alt="contractor"
-                    unoptimized
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -339,7 +339,7 @@ const Whatever = () => {
                     width={icon.width}
                     height={icon.height}
                     alt="contractor"
-                    unoptimized
+                    loading="lazy"
                   />
                 </div>
               ))}

@@ -49,7 +49,8 @@ const Hero = () => {
           </TextAnimation>
           <div className="flex gap-2.5 sm:flex-row flex-col items-center">
             <button className="bg-red-linear h-10 primary-btn">
-              {t("cta")}
+              <span className="md:flex hidden"> {t("cta")}</span>
+              <span className="flex md:hidden"> {t("cta2")}</span>
             </button>
             <button className="flex gap-1.5 items-center font-myriad text-sm text-white cursor-pointer">
               <CheckIcon />

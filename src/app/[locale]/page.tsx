@@ -40,6 +40,8 @@ export default async function Home({
           engineContractor={homePageContent?.data?.engineContractor}
         />
       </div>
+      <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
+      <Finally />
       <CoreFeatures />
       <Features features={homePageContent?.data?.features} />
       <ContractorIndustry />

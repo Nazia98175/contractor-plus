@@ -26,10 +26,10 @@ const Footer = () => {
 
   const sections: string[] = t.raw("sections");
   const ranges = [
-    [0, 9],
-    [9, 17],
-    [17, 28],
-    [28, 37],
+    [0, 10],
+    [10, 21],
+    [21, 33],
+    [33, 36],
   ];
 
   const toggleSection = (title: string) => {
@@ -48,7 +48,7 @@ const Footer = () => {
           <FooterLogoIcon />
         </div>
 
-        <div className="hidden md:flex flex-wrap justify-center gap-6 w-full pt-7">
+        <div className="hidden md:flex flex-wrap justify-center gap-3 w-full pt-7">
           {sections.map((title, idx) => (
             <FooterSection
               key={idx}
@@ -56,7 +56,6 @@ const Footer = () => {
               links={links.slice(...ranges[idx])}
             />
           ))}
-          <FooterSection title="Why Contractor+?" links={links.slice(37)} />
         </div>
 
         {/* Mobile Accordion */}
@@ -162,7 +161,7 @@ const FooterSection = ({
   title: string;
   links: { text: string; href: string }[];
 }) => (
-  <div className="max-w-[200px] w-full">
+  <div className="max-w-[270px] w-full">
     <h3 className="text-base font-bold text-white font-jakarta pb-2">
       {title}
     </h3>
@@ -179,9 +178,9 @@ export const FooterLinkItem = ({
 }: {
   list: { text: string; href: string };
 }) => (
-  <div className="group relative w-full md:w-fit">
+  <div className="group relative w-full h-fit md:w-fit">
     <Link
-      className="text-base text-decemberSky font-jakarta hover:text-romanRed transition-all duration-200 ease-in-out"
+      className="text-xs leading-[140%] md:text-sm lg:text-base text-decemberSky font-jakarta hover:text-romanRed transition-all duration-200 ease-in-out"
       href={list.href}
     >
       {list.text}

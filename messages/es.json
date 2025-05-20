@@ -292,30 +292,94 @@
     "imageAlt": "Equipo de contratistas trabajando juntos en una obra de construcción",
     "seeAllFeatures": "Ver todas las características"
   },
+
   "reviews": {
     "heading": "Deja que nuestros clientes hablen por nosotros...",
     "excellent": "Excelente",
     "basedOn": "Basado en {count} reseñas",
     "ourReviews": {
-      "review1": "Depuis que j’envoie tous mes devis avec Contractor+, je ne perds plus de contrats. L'image professionnelle que cette application me donne m’aide à décrocher plus de clients. Contractor+ change la donne !",
-      "review2": "J’adore pouvoir suivre toute mon entreprise dans une seule application. Et les prospects que nous recevons de Contractor+ sont bien meilleurs que ceux d’ailleurs. L'application est facile à utiliser et me simplifie la vie.",
-      "review3": "Nous avons maintenant deux équipes qui travaillent 5 à 6 jours par semaine. Il y a un an, j’étais seul. Nous n’aurions jamais pu grandir autant sans Contractor+. La planification et les accords clients me facilitent la vie. Contractor+ DÉCHIRE !",
-      "review4": "Je suis passé de Jobber à Contractor+ car il correspond mieux à ma façon de gérer mon entreprise. Communication claire, devis faciles, et planification des tâches me permettent de tout gérer efficacement. Contractor+ a rendu mon entreprise plus rentable et plus simple à gérer.",
-      "review5": "J’ai commencé avec seulement quelques dollars en poche et j’ai tenté ma chance avec Contractor+. Cette décision a tout changé. Je suis passé de presque aucun travail à plus de prospects que je ne peux gérer. Contractor+ m’a aidé à grandir bien plus vite que prévu.",
-      "review6": "Contractor+ couvre presque tous les aspects de notre entreprise. Maintenant, nous ne faisons pas que travailler - nous gérons de nouveaux prospects chaque jour.",
-      "review7": "Nous avons maintenant deux équipes qui travaillent 5 à 6 jours par semaine. Il y a un an, j’étais seul. Nous n’aurions jamais pu grandir autant sans Contractor+. La planification et les accords clients me facilitent la vie. Contractor+ DÉCHIRE !",
-      "review8": "Contractor+ couvre presque tous les aspects de notre entreprise. Maintenant, nous ne faisons pas que travailler - nous gérons de nouveaux prospects chaque jour.",
-      "review9": "Depuis que j’envoie tous mes devis avec Contractor+, je ne perds plus de contrats. L'image professionnelle que cette application me donne m’aide à décrocher plus de clients. Contractor+ change la donne !",
-      "review10": "Nous avons maintenant deux équipes qui travaillent 5 à 6 jours par semaine. Il y a un an, j’étais seul. Nous n’aurions jamais pu grandir autant sans Contractor+. La planification et les accords clients me facilitent la vie. Contractor+ DÉCHIRE !",
-      "review11": "J’ai commencé avec seulement quelques dollars en poche et j’ai tenté ma chance avec Contractor+. Cette décision a tout changé. Je suis passé de presque aucun travail à plus de prospects que je ne peux gérer. Contractor+ m’a aidé à grandir bien plus vite que prévu.",
-      "review12": "Nous avons maintenant deux équipes qui travaillent 5 à 6 jours par semaine. Il y a un an, j’étais seul. Nous n’aurions jamais pu grandir autant sans Contractor+. La planification et les accords clients me facilitent la vie. Contractor+ DÉCHIRE !",
-      "review13": "Je suis passé de Jobber à Contractor+ car il correspond mieux à ma façon de gérer mon entreprise. Communication claire, devis faciles, et planification des tâches me permettent de tout gérer efficacement. Contractor+ a rendu mon entreprise plus rentable et plus simple à gérer.",
-      "review14": "J’adore pouvoir suivre toute mon entreprise dans une seule application. Et les prospects que nous recevons de Contractor+ sont bien meilleurs que ceux d’ailleurs. L'application est facile à utiliser et me simplifie la vie.",
-      "review15": "Je suis passé de Jobber à Contractor+ car il correspond mieux à ma façon de gérer mon entreprise. Communication claire, devis faciles, et planification des tâches me permettent de tout gérer efficacement. Contractor+ a rendu mon entreprise plus rentable et plus simple à gérer.",
-      "review16": "Depuis que j’envoie tous mes devis avec Contractor+, je ne perds plus de contrats. L'image professionnelle que cette application me donne m’aide à décrocher plus de clients. Contractor+ change la donne !"
+      "1": {
+        "username": "Brandon Geiger",
+        "userRole": "Propietario, iCare Lawn Care & Landscaping",
+        "review": "Desde que comencé a enviar todos mis presupuestos usando Contractor+, dejé de perder licitaciones. La imagen profesional que gano con esta app me está ayudando a conseguir más negocios. ¡Contractor+ es un cambio de juego!"
+      },
+      "2": {
+        "username": "Josh Leeson",
+        "userRole": "Copropietario, Rushville Restorations",
+        "review": "Me encanta poder llevar el control de todo mi negocio en una sola app. Y los clientes potenciales que obtenemos de Contractor+ son mucho mejores que los de otros lugares. La app es fácil de usar y me está facilitando mucho la vida."
+      },
+      "3": {
+        "username": "Justin Mcnichols",
+        "userRole": "Presidente, TPB Construction",
+        "review": "Ahora tenemos dos equipos trabajando de 5 a 6 días a la semana. Hace un año, solo era yo. Nunca hubiéramos podido crecer así si no fuera por Contractor+. La programación y los acuerdos con clientes me facilitan la vida. ¡Contractor+ ES INCREÍBLE!"
+      },
+      "4": {
+        "username": "John Croy",
+        "userRole": "Copropietario, Ross Co. Home Pro's",
+        "review": "Cambié de Jobber a Contractor+ porque se adapta a cómo manejo mi negocio. Comunicación clara, presupuestos fáciles y programación de trabajos me ayudan a mantenerme al tanto de todo. Contractor+ hizo mi negocio más rentable y fácil de administrar."
+      },
+      "5": {
+        "username": "Juan",
+        "userRole": "Propietario, Cranfield Construction",
+        "review": "Empecé con Contractor+ hace unos 6 meses y ha transformado completamente cómo gestiono mis trabajos y me comunico con los clientes. Ahora todo está optimizado. Es la mejor inversión que he hecho para mi negocio."
+      },
+      "6": {
+        "username": "Daniel Harris",
+        "userRole": "Fundador, Harris Custom Remodeling",
+        "review": "Contractor+ me dio la estructura que necesitaba. Desde presupuestos hasta facturas, todo se siente profesional y a los clientes les encanta la claridad. Ahora es la columna vertebral de mi negocio."
+      },
+      "7": {
+        "username": "Ashley Monroe",
+        "userRole": "Cofundadora, Greenway Outdoor Designs",
+        "review": "Nunca me di cuenta de cuánto tiempo estaba perdiendo hasta que empecé a usar Contractor+. Ha simplificado nuestras operaciones y hecho que la comunicación con los clientes sea fluida."
+      },
+      "8": {
+        "username": "Ethan Reynolds",
+        "userRole": "Gerente de Operaciones, Apex Roofing Solutions",
+        "review": "Gestionar múltiples sitios de trabajo solía ser un caos. Ahora me mantengo organizado con horarios, notas de clientes y tareas en un solo lugar. ¡Contractor+ es un salvavidas!"
+      },
+      "9": {
+        "username": "Samantha Blake",
+        "userRole": "Propietaria, Blake Interiors & Renovations",
+        "review": "Finalmente estoy dirigiendo mi negocio en lugar de que me dirija a mí. Contractor+ me ayuda a mantenerme al tanto de los proyectos, y mis clientes aprecian los presupuestos detallados y las actualizaciones."
+      },
+      "10": {
+        "username": "Marcus Bennett",
+        "userRole": "Contratista Principal, Bennett Home Repair",
+        "review": "Antes de Contractor+, todo estaba en papel. Ahora, todo está en mi teléfono o tableta. Ahorro horas cada semana solo por tener todo organizado digitalmente."
+      },
+      "11": {
+        "username": "Rachel Adams",
+        "userRole": "Socia, Adams & Sons Renovation",
+        "review": "Desde la incorporación de clientes hasta el envío de facturas finales, Contractor+ lo cubre todo. Es fácil de usar, potente y ha aumentado la productividad de nuestro equipo enormemente."
+      },
+      "12": {
+        "username": "Steve Martin",
+        "userRole": "Propietario, Martin's Painting Services",
+        "review": "Hemos duplicado nuestra base de clientes en menos de un año con Contractor+. Los presupuestos son más rápidos, la programación es más sencilla y estamos recibiendo más reseñas de 5 estrellas que nunca."
+      },
+      "13": {
+        "username": "Tina Alvarez",
+        "userRole": "Gerente de Oficina, Alvarez Home Builders",
+        "review": "Las funciones de comunicación y las plantillas de documentos de la app son increíbles. Nuestro equipo trabaja con mayor eficiencia y los clientes se mantienen informados durante cada fase."
+      },
+      "14": {
+        "username": "Greg Thompson",
+        "userRole": "Propietario, Thompson Tile & Remodeling",
+        "review": "He probado otras apps, pero ninguna se compara con Contractor+. Es intuitiva, asequible y realmente diseñada para contratistas. La recomiendo totalmente."
+      },
+      "15": {
+        "username": "Meghan Foster",
+        "userRole": "Administradora, Foster Property Services",
+        "review": "Contractor+ eliminó la doble entrada y redujo el tiempo administrativo a la mitad. Integra todo lo que necesitamos en un solo sistema confiable."
+      },
+      "16": {
+        "username": "Kevin Rhodes",
+        "userRole": "Fundador, Rhodes HVAC Solutions",
+        "review": "La programación de trabajos, recordatorios y pagos ahora es fluida y puntual. Finalmente puedo enfocarme en la calidad del servicio en lugar de pelear con hojas de cálculo y llamadas perdidas."
+      }
     }
   },
-
   "industries": {
     "heading": "Industrias",
     "imageAlt": "Grupo de contratistas trabajando en un proyecto",

@@ -27,7 +27,7 @@ const OurReviews: React.FC = () => {
     ...review,
     userName: t(`ourReviews.${review.id}.username`),
     userRole: t(`ourReviews.${review.id}.userRole`),
-    reviewText: t(`ourReviews.${review.id}.review`),
+    review: t(`ourReviews.${review.id}.review`),
   }));
 
   return (

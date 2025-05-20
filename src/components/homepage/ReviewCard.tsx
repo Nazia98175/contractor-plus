@@ -18,6 +18,8 @@ const renderStars = (rating: number) => {
 };
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
+  console.log(review, "inside");
+
   return (
     <div className="mr-5 min-h-full h-full">
       <article

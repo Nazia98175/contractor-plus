@@ -9,8 +9,10 @@ import { Review } from "@/types";
 
 const TrustedService = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
-  const openModal = (): void => {
+  const openModal = (videoUrl: string) => {
+    setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
 
@@ -37,7 +39,11 @@ const TrustedService = () => {
               <TrustedServiceCard
                 key={review.id}
                 review={review as Review}
-                openModal={openModal}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videolink || "")
+                    : () => {}
+                }
               />
             ))}
           </Marquee>
@@ -50,14 +56,22 @@ const TrustedService = () => {
               <TrustedServiceCard
                 key={review.id}
                 review={review as Review}
-                openModal={openModal}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videolink || "")
+                    : () => {}
+                }
               />
             ))}
           </Marquee>
         </div>
       </div>
 
-      <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ReviewModal
+        videoUrl={selectedVideoUrl || ""}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };

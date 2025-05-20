@@ -225,7 +225,7 @@ const Whatever = () => {
       });
     }, sectionRef);
     return () => ctx.revert();
-  }, [isMobile]);
+  });
   return (
     <section className="relative w-full z-10">
       <picture className="hidden lg:block">
@@ -304,7 +304,7 @@ const Whatever = () => {
                   <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
                   <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
                   <Image
-                    className={`object-cover relative z-10 ${icon.imgSize}`}
+                    className={`object-cover relative z-20 ${icon.imgSize}`}
                     src={icon.src}
                     width={icon.width}
                     height={icon.height}
@@ -334,7 +334,7 @@ const Whatever = () => {
                   <OnIcon className="absolute w-full h-full -z-1 pointer-events-none one" />
                   <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />
                   <Image
-                    className={`object-cover relative z-10 ${icon.imgSize}`}
+                    className={`object-cover relative z-20 ${icon.imgSize}`}
                     src={icon.src}
                     width={icon.width}
                     height={icon.height}

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { CheckIcon } from "../common/Icons";
+import { CheckIcon, FinallyDesktopBg } from "../common/Icons";
 import Marquee from "react-fast-marquee";
 
 const features = [
@@ -20,12 +20,14 @@ const FeatureItem = ({ text }: { text: string }) => (
 const TrackProperties = () => {
   return (
     <section className="py-20 bg-white relative">
-      {/* <FinallyDesktopBg className="absolute w-[100%] h-full left-0 md:-top-[25%] md:block hidden" /> */}
+      <FinallyDesktopBg className="absolute w-[100%] h-full z-0 left-0 md:-top-[25%] md:block hidden" />
       {/* Device Images */}
+
       <div className="flex relative pb-24 xl:pb-0  justify-center items-center">
+        <div className="bg-white-linear absolute left-0 z-20 -bottom-20 h-[267px] w-full blur-[6px]"></div>
         <img
           src="/images/webp/mobile.webp"
-          className="-mr-[17%] max-w-[28%] xl:-mr-16 z-0 xl:max-w-[262px] -mt-[20%] xl:-mt-20"
+          className="-mr-[17%] max-w-[28%] xl:-mr-16 z-0 xl:max-w-[262px] -mt-[20%] xl:-mt-0"
           alt=""
         />
         <img
@@ -35,14 +37,13 @@ const TrackProperties = () => {
         />
         <img
           src="/images/webp/mobile-2.webp"
-          className="max-w-[26%] xl:max-w-[250px] -mb-[20%] z-20 xl:z-0 -ml-[14%] xl:-ml-12"
+          className="max-w-[26%] xl:max-w-[250px] -mb-[20%] xl:mb-0 z-20 xl:z-0 -ml-[14%] xl:-ml-12"
           alt=""
         />
-        <div className="linear-bg hidden xl:block w-full left-0 -bottom-24 absolute h-[250px] z-20"></div>
       </div>
 
       {/* Heading + Paragraph */}
-      <div className="bg-white relative z-30 -mt-3 px-2">
+      <div className=" relative z-30 -mt-3 px-2">
         <h2 className="section-heading gradient-text-2 w-fit mx-auto">
           Track properties like you do your clients
         </h2>

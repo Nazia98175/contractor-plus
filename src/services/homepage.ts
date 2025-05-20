@@ -6,9 +6,9 @@ interface HomePageResponse {
   meta?: any;
 }
 
-export const getHomePage = async (locale: string): Promise<HomePageResponse | null> => {
+export const getHomePage = async (locale: string , query: string): Promise<HomePageResponse | null> => {
   try {
-    const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(`homepage?locale=${locale}&populate=*`);
+    const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(`homepage?locale=${locale}${query}`);
     console.log(res, "api res")
     return res.data;
   } catch (error) {

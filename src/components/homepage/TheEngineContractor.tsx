@@ -2,12 +2,22 @@
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-const TheEngineContractor = () => {
+interface EngineContractor {
+  title: string;
+  sub_title: string;
+}
+
+interface TheEngineContractorProps {
+  engineContractor: EngineContractor[];
+}
+
+const TheEngineContractor: React.FC<TheEngineContractorProps> = ({ engineContractor }) => {
   const t = useTranslations("engine");
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   });
+  console.log(engineContractor ,"engine")
   return (
     <section
       ref={ref}
@@ -16,7 +26,7 @@ const TheEngineContractor = () => {
       <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!px-12">
         <div className="flex flex-col gap-1.5 w-full">
           <h2 className="section-heading gradient-text text-center md:text-left">
-            {t("heading")}&nbsp;
+            {engineContractor?.[0]?.title}&nbsp;
             {inView ? (
               <CountUp
                 className="xl:min-w-[123px] lg:min-w-[141px] sm:min-w-[105px] min-w-[74px] xl:max-w-[123px] lg:max-w-[141px] sm:max-w-[105px] max-w-[74px] w-full"
@@ -29,7 +39,7 @@ const TheEngineContractor = () => {
               "0"
             )}{" "}
             <br />
-            {t("countup")}
+            {/* {t("countup")} */}
           </h2>
         </div>
         <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
@@ -39,9 +49,9 @@ const TheEngineContractor = () => {
             alt="The engine 57,163 contractors run on"
           />
           <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-darkGrey space-y-1">
-            <h3 className="text-2xl font-medium text-doctor">{t("super")}</h3>
+            <h3 className="text-2xl font-medium text-doctor">{engineContractor?.[0]?.sub_title?.split("+11")?.[0]}</h3>
             <p className="text-xs sm:text-sm font-jakarta">
-              <span className="text-monstrousGreen">+11</span> {t("hourSave")}
+              <span className="text-monstrousGreen">+11</span> {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
             </p>
           </div>
         </div>

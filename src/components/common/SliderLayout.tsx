@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -25,21 +25,23 @@ interface SliderLayoutProps extends SwiperOptions {
       spaceBetween?: number;
     };
   };
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 const SliderLayout: React.FC<SliderLayoutProps> = ({
   children,
   className = "mySwiper",
   wrapperClassName = "relative w-full",
-  modules = [Pagination, Autoplay, EffectCoverflow],
-  effect = "coverflow",
+  modules = [Pagination],
+  effect = undefined, // <- disabled by default
   autoplay = false,
   pagination = false,
   slidesPerView = 2,
   spaceBetween = 8,
   loop = true,
   grabCursor = true,
-  centeredSlides = true,
+  centeredSlides,
   speed = 100,
   coverflowEffect = {
     rotate: 0,
@@ -59,28 +61,28 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
     },
   },
   onSlideChange,
+  onMouseEnter,
+  onMouseLeave,
   ...rest
 }) => {
   const swiperRef = useRef<SwiperClass | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Ensure all modules are properly loaded
+  const hasAutoplay = autoplay !== false && autoplay !== undefined;
+  const hasCoverflowEffect = effect === "coverflow";
+
   useEffect(() => {
-    // Force update the swiper instance when dimensions might change
     const handleResize = () => {
       if (swiperRef.current) {
         swiperRef.current.update();
       }
     };
 
-    // Handle visibility changes (e.g., tab switching)
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible" && swiperRef.current) {
-        // Small timeout to ensure DOM is fully ready
         setTimeout(() => {
           swiperRef.current?.update();
-
-          // If autoplay is enabled, restart it
-          if (autoplay && swiperRef.current?.autoplay) {
+          if (hasAutoplay && !isHovered && swiperRef.current?.autoplay) {
             swiperRef.current.autoplay.start();
           }
         }, 50);
@@ -89,44 +91,78 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
 
     window.addEventListener("resize", handleResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
-
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [autoplay]);
+  }, [hasAutoplay, isHovered]);
 
-  // Filter out empty children to prevent slider issues
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    onMouseEnter?.();
+    if (hasAutoplay && swiperRef.current?.autoplay) {
+      swiperRef.current.autoplay.stop();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    onMouseLeave?.();
+    if (hasAutoplay && swiperRef.current?.autoplay) {
+      swiperRef.current.autoplay.start();
+    }
+  };
+
   const validChildren = React.Children.toArray(children).filter(
     (child) => child !== null && child !== undefined
   );
 
-  // Only render swiper if we have valid children
   if (validChildren.length === 0) {
     return <div className={wrapperClassName}></div>;
   }
 
+  const autoplayConfig = hasAutoplay
+    ? {
+        delay:
+          typeof autoplay === "object" && autoplay.delay
+            ? autoplay.delay
+            : 3000,
+        disableOnInteraction:
+          typeof autoplay === "object" && "disableOnInteraction" in autoplay
+            ? autoplay.disableOnInteraction
+            : true,
+        pauseOnMouseEnter:
+          typeof autoplay === "object" && "pauseOnMouseEnter" in autoplay
+            ? autoplay.pauseOnMouseEnter
+            : true,
+      }
+    : false;
+
+  const effectiveModules = [...modules];
+  if (!modules.includes(Autoplay) && hasAutoplay) {
+    effectiveModules.push(Autoplay);
+  }
+  if (!modules.includes(EffectCoverflow) && hasCoverflowEffect) {
+    effectiveModules.push(EffectCoverflow);
+  }
+
   return (
-    <div className={wrapperClassName}>
+    <div
+      className={wrapperClassName}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Swiper
-        modules={modules}
-        effect={effect}
+        modules={effectiveModules}
+        effect={hasCoverflowEffect ? "coverflow" : undefined}
+        coverflowEffect={hasCoverflowEffect ? coverflowEffect : undefined}
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
         loop={loop && validChildren.length > 1}
         grabCursor={grabCursor}
         centeredSlides={centeredSlides}
-        autoplay={
-          autoplay
-            ? {
-                delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }
-            : false
-        }
+        autoplay={autoplayConfig}
         pagination={pagination ? { clickable: true } : false}
-        coverflowEffect={effect === "coverflow" ? coverflowEffect : undefined}
         breakpoints={breakpoints}
         onSlideChange={onSlideChange}
         speed={speed}
@@ -140,7 +176,9 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
         {...rest}
       >
         {validChildren.map((child, index) => (
-          <SwiperSlide key={index}>{child}</SwiperSlide>
+          <SwiperSlide key={index}>
+            <div className="swiper-slide-inner">{child}</div>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

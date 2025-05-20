@@ -1,15 +1,17 @@
 "use client";
-
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import CardReveal from "../common/CardReveal";
 import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
+import Image from "next/image";
 
 const TeamsUsingContractor = () => {
+  // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
+    rootMargin: "50px 0px",
+    fallbackInView: true,
   });
 
   const t = useTranslations("crm");
@@ -22,38 +24,43 @@ const TeamsUsingContractor = () => {
     suffix: string;
   }[];
 
-  const icons = [<EstimateIcon2 fill="#3F464B" />, <ClockIcon />, <MoreIcon />];
-  return (
-    <section ref={ref} className="bg-white py-10">
-      <div className="flex flex-col items-center justify-center main-container">
-        <h2 className="linear-text section-heading">{t("heading")}</h2>
-        <p className="text-wallStreet font-medium font-jakarta mt-4">
-          {t("desc")}
-        </p>
+  const icons = [
+    <EstimateIcon2 key="estimate" fill="#3F464B" />,
+    <ClockIcon key="clock" />,
+    <MoreIcon key="more" />,
+  ];
 
-        <CardReveal
-          staggerDelay={0.15}
-          animationDuration={0.8}
-          distance={50}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full"
-        >
+  return (
+    <section className="bg-white py-10">
+      <div
+        ref={ref}
+        className="flex flex-col items-center justify-center main-container"
+      >
+        <h2 className="crm-gradient section-heading">{t("heading")}</h2>
+        <p className="paragraph">{t("desc")}</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full">
           {crmList.map((item, index) => (
             <article
               key={index}
-              className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-c2 cursor-pointer ease-in-out"
+              className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-c2 cursor-pointer"
             >
-              <span>{icons[index]}</span>
+              <span className="mb-1">{icons[index % icons.length]}</span>
               <h3 className="text-2xl font-bold text-winterWay font-jakarta">
-                {inView ? (
+                {inView && (
                   <CountUp
                     start={item.start}
                     end={item.end}
-                    duration={5}
+                    duration={2.5}
+                    delay={0.2}
+                    useEasing={true}
+                    separator=","
                     suffix={item.suffix}
+                    preserveValue={true}
                   />
-                ) : (
-                  `${item.start}${item.suffix}`
                 )}
+                {!inView && `${item.end}${item.suffix}`}
+
                 <span className="inline-block px-2">{item.title}</span>
               </h3>
 
@@ -62,9 +69,39 @@ const TeamsUsingContractor = () => {
               </p>
             </article>
           ))}
-        </CardReveal>
+        </div>
 
-        <img src="/images/webp/leader.webp" className="shadow" alt="Leader" />
+        <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">
+          <Image
+            width={121}
+            height={80}
+            src="/images/webp/software-advice.webp"
+            className="img-shadow max-w-[121px]"
+            alt="Software Advice"
+          />
+
+          <Image
+            width={121}
+            height={80}
+            src="/images/webp/leader.webp"
+            className="img-shadow max-w-[103px]"
+            alt="Leader"
+          />
+          <Image
+            width={121}
+            height={80}
+            src="/images/svg/capterra.svg"
+            className="img"
+            alt="Capterra"
+          />
+          <Image
+            width={121}
+            height={80}
+            src="/images/webp/get-app.webp"
+            className="img-shadow max-w-[137px]"
+            alt="Get App"
+          />
+        </div>
       </div>
     </section>
   );

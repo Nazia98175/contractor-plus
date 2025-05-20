@@ -40,7 +40,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 //     fetchData();
 //   }, [params]);
 
-  const homePageContent = await getHomePage(params.locale);
+  const homePageContent = await getHomePage(params.locale , "&populate=*");
   console.log(homePageContent , "homeee")
 
   return (
@@ -64,11 +64,11 @@ export default async function Home({ params }: { params: { locale: string } }) {
         </div>
         <div className="relative">
           <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>
-          <TheEngineContractor />
+          <TheEngineContractor engineContractor={homePageContent?.data?.engineContractor} />
         </div>
       </div>
 
-      <ContractorPlatforms />
+      <ContractorPlatforms params={params} />
       <Finally />
 
       <CoreFeatures />

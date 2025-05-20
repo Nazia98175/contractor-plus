@@ -327,8 +327,8 @@ interface CheckIconProps {
 export const BlackLogo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="148"
-    height="28"
+    width="100%"
+    height="100%"
     viewBox="0 0 148 28"
     fill="none"
   >
@@ -688,8 +688,8 @@ export const ClientIcon = () => (
 export const CloseIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="25"
-    height="24"
+    width="100%"
+    height="100%"
     viewBox="0 0 25 24"
     fill="none"
   >
@@ -1529,5 +1529,49 @@ export const MoreIcon = () => (
       d="M27.999 9.23877V14.2564C27.999 14.5038 27.9256 14.7457 27.7881 14.9514C27.6507 15.1572 27.4554 15.3175 27.2269 15.4122C26.9984 15.5069 26.7469 15.5317 26.5043 15.4834C26.2617 15.4351 26.0389 15.316 25.864 15.1411L24.2467 13.5232L17.6264 20.1462C17.3918 20.3808 17.0738 20.5125 16.7421 20.5125C16.4104 20.5125 16.0924 20.3808 15.8578 20.1462L11.739 16.0257L5.11872 22.6487C4.88282 22.8767 4.56687 23.0028 4.23892 23C3.91098 22.9971 3.59727 22.8655 3.36537 22.6335C3.13346 22.4015 3.00192 22.0877 2.99907 21.7596C2.99622 21.4315 3.12229 21.1154 3.35013 20.8794L10.8547 13.3718C11.0893 13.1372 11.4074 13.0054 11.739 13.0054C12.0707 13.0054 12.3888 13.1372 12.6233 13.3718L16.7421 17.4922L22.4781 11.7538L20.8609 10.1359C20.686 9.96094 20.5669 9.73801 20.5187 9.49532C20.4705 9.25263 20.4952 9.00108 20.5899 8.77247C20.6845 8.54386 20.8448 8.34846 21.0504 8.21096C21.2561 8.07347 21.4978 8.00005 21.7452 8H26.7483L26.8083 8.00125C27.1277 8.01568 27.4293 8.15227 27.6509 8.3828C27.8725 8.61333 27.9971 8.91895 27.999 9.23877Z"
       fill="#3F464B"
     />
+  </svg>
+);
+export const HeroVideoLayerIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 1673 1037"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="absolute top-0 left-0 z-40 w-[200%]"
+  >
+    <g filter="url(#filter0_f_540_18392)">
+      <path
+        d="M235 582.5L509 102H102V934.929H1570.5L235 582.5Z"
+        fill="#0C0D11"
+      />
+      <path
+        d="M508.139 102.5L234.565 582.252L234.243 582.817L234.872 582.983L1566.65 934.429H102.5V102.5H508.139Z"
+        stroke="black"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_540_18392"
+        x="0.0999985"
+        y="0.0999985"
+        width="1672.3"
+        height="1036.73"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="50.95"
+          result="effect1_foregroundBlur_540_18392"
+        />
+      </filter>
+    </defs>
   </svg>
 );

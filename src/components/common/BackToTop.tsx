@@ -1,20 +1,31 @@
 "use client";
 import { useEffect, useState } from "react";
 import { UpArrowIcon } from "./Icons";
+
 const BackToTop = () => {
   const [scrollValue, setScrollValue] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    // Handle scroll and update scroll value
     const handleScroll = () => {
       setScrollValue(window.scrollY);
     };
+
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
+
+    // Initial check on mount
+    handleScroll();
+
+    // Clean up event listener on unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   useEffect(() => {
+    // Show/hide button based on scroll position
     if (scrollValue > 200) {
       setShowScrollTop(true);
     } else {
@@ -22,17 +33,25 @@ const BackToTop = () => {
     }
   }, [scrollValue]);
 
+  // Scroll to top function
   const scrollTopHandler = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    // Force scroll to top with smooth behavior
+    try {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } catch (error) {
+      // Fallback for older browsers that don't support smooth scrolling
+      window.scrollTo(0, 0);
+    }
   };
 
   return (
     <button
       onClick={scrollTopHandler}
-      className={`fixed bottom-[2%] right-[2%] z-[20000] flex h-9 sm:h-10 w-9 sm:w-10 items-center justify-center overflow-hidden rounded-full shadow-2xl bg-romanRed transition-all duration-500 cursor-pointer scroll-to-top-btn  ${
+      aria-label="Scroll to top"
+      className={`fixed bottom-[2%] right-[2%] z-[20000] flex h-9 sm:h-10 w-9 sm:w-10 items-center justify-center overflow-hidden rounded-full shadow-2xl bg-romanRed transition-all duration-500 cursor-pointer hover:scale-110 active:scale-95 scroll-to-top-btn ${
         showScrollTop ? "scale-100" : "scale-0"
       }`}
     >

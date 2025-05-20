@@ -574,3 +574,6 @@ html {
     #ffffff 60.94%
   );
 }
+.scroll-offset {
+  @apply translate-y-100 transition-transform duration-300 ease-out;
+}

@@ -20,13 +20,13 @@ const TrustedService = () => {
     setIsModalOpen(true);
   };
   return (
-    <section className="py-10 overflow-hidden z-20 relative">
+    <section className="pt-10 pb-16 overflow-hidden relative">
       <h3 className="section-heading gradient-2 text-center w-fit mx-auto">
         Trusted by over 50,000 build and service contractors
       </h3>
       <div className="relative">
-        <div className="absolute h-[380px] left-[-6%] w-[200px] md:w-[370px] bg-testimonial-left-2 z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        <div className="absolute h-[380px] right-[-6%] w-[200px] md:w-[370px] bg-testimonial-right-2 z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="absolute h-[380px] left-[-6%] w-[200px] md:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="absolute h-[380px] right-[-6%] w-[200px] md:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
         <div className="md:pt-14 w-full ">
@@ -42,7 +42,7 @@ const TrustedService = () => {
         </div>
 
         {/* Second row of reviews - scrolling left */}
-        <div className="hidden md:block w-full">
+        <div className="hidden md:block w-full relative">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
             {OurReviewList.map((review) => (
               <TrustedServiceCard

@@ -23,8 +23,10 @@ export interface ReviewItem {
 
 const OurReviews: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
-  const openModal = (): void => {
+  const openModal = (videoUrl: string) => {
+    setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
 
@@ -98,7 +100,11 @@ const OurReviews: React.FC = () => {
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
-                openModal={review.isModal ? openModal : () => {}}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videolink || "")
+                    : () => {}
+                }
               />
             ))}
           </Marquee>
@@ -111,14 +117,22 @@ const OurReviews: React.FC = () => {
               <ReviewCard
                 key={review.id}
                 review={review as ReviewItem}
-                openModal={review.isModal ? openModal : () => {}}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videolink || "")
+                    : () => {}
+                }
               />
             ))}
           </Marquee>
         </div>
       </div>
 
-      <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ReviewModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoUrl={selectedVideoUrl || ""}
+      />
     </section>
   );
 };

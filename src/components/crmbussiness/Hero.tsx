@@ -4,7 +4,6 @@ import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden md:overflow-visible">
-      <div className="bg-black h-[100px] w-full hidden md:block bottom-[0px] left-0 absolute z-30 blur-[30px] pointer-events-none"></div>
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
@@ -72,14 +71,14 @@ const Hero = () => {
           <div>
             <button className="bg-red-linear h-10 primary-btn gap-2">
               Create Free Account
-              <BlogBtnIcon />
+              {/* <BlogBtnIcon /> */}
             </button>
             <p className="text-secondary text-xs font-myriad text-center pt-2">
               No Credit Card Required
             </p>
           </div>
         </div>
-        <div className="pt-12 max-w-[900px] mx-auto hidden md:block relative">
+        <div className="pt-12 max-w-[900px] mx-auto hidden md:block relative z-30">
           <img
             className="w-full h-full"
             src="/images/webp/crm-hero.webp"

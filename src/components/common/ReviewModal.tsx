@@ -12,8 +12,9 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
   onClose,
   videoUrl,
 }) => {
-  const defaultVideo = "https://www.youtube.com/embed/dQw4w9WgXcQ";
-  const videoSrc = videoUrl || defaultVideo;
+  const embedUrl = videoUrl?.includes("youtube.com/watch")
+    ? videoUrl.replace("watch?v=", "embed/")
+    : videoUrl;
 
   return (
     <CommonModalLayout
@@ -22,12 +23,14 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
       className="max-w-[768px] w-full p-3 sm:p-4 rounded-lg"
     >
       <div className="aspect-video w-full">
-        <iframe
-          src={videoSrc}
-          className="w-full h-full rounded-lg"
-          allowFullScreen
-          title="Video player"
-        ></iframe>
+        {embedUrl && (
+          <iframe
+            src={embedUrl}
+            className="w-full h-full rounded-lg"
+            allowFullScreen
+            title="Video player"
+          ></iframe>
+        )}
       </div>
     </CommonModalLayout>
   );

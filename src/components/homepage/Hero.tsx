@@ -71,7 +71,7 @@ const Hero = () => {
           loading="lazy"
           fill
           unoptimized
-          className="absolute -top-[6%] w-full h-[110%] object-cover lg:block hidden"
+          className="absolute -top-[6%] w-full h-[110%] object-cover lg:block hidden "
           src={"/images/webp/hero-video-ovelay.webp"}
           alt="hero-video-ovelay"
         />

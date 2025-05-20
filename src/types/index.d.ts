@@ -18,9 +18,9 @@ export interface ServiceData {
 export interface Review {
   id: string | number;
   profileUrl: string;
-  userName: string;
+  userName?: string;
   role?: string;
-  userRole: string;
+  userRole?: string;
   rating: number;
   review: string;
   isModal?: boolean;

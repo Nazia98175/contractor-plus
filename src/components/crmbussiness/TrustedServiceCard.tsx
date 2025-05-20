@@ -34,7 +34,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
     <div className="mr-5 min-h-full h-full ">
       <article
         onClick={openModal}
-        className="trusted-service -z-[10] rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer min-h-full h-full flex flex-col justify-between relative"
+        className="trusted-service bg-shutter md:bg-transparent -z-[10] rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer min-h-full h-full flex flex-col justify-between relative"
       >
         <div className="flex justify-between items-start gap-5">
           <div className="flex items-center gap-2">
@@ -73,11 +73,13 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                   </svg>
                 </span>
               </div>
-              <img
-                className="max-w-[52px]"
-                src={review.companyIcon}
-                alt="company logo"
-              />
+              <div className="rounded-[2px] bg-white py-0.5 px-1 mt-1.5 w-fit">
+                <img
+                  className="max-w-[52px]"
+                  src="/images/svg/randsIcon.svg"
+                  alt="company logo"
+                />
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-1">

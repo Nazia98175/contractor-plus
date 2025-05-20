@@ -128,7 +128,7 @@ const FooterLogoWithStars: React.FC = () => {
       ></div>
 
       {/* Logo with higher z-index to appear on top of particles */}
-      <div className="second-border xl:p-5 p-3 relative z-30 w-fit">
+      <div className="second-border xl:p-5 p-2 relative z-30 w-fit">
         <div className="relative xl:w-[110px] lg:w-20 w-[55px] xl:h-[110px] lg:h-20 h-[55px] flex items-center justify-center lg:rounded-3xl rounded-xl overflow-hidden third-border">
           <OnIcon className="absolute w-full h-full pointer-events-none -z-1 one" />
           <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none two" />

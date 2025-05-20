@@ -73,7 +73,7 @@ const Whatever = () => {
       // ScrollTrigger configuration - with more responsive breakpoints
       const scrollTrigger = {
         trigger: sectionRef.current,
-        start: "top 85%",
+        start: "top 90%",
         end: "center 10%",
         scrub: 0.6,
         invalidateOnRefresh: true,
@@ -290,7 +290,7 @@ const Whatever = () => {
             {/* Left Side */}
             <div
               id="scene"
-              className="left-section max-w-[409px] lg:py-[59px] md:py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[249px]"
+              className="left-section max-w-[409px] lg:py-[59px] md:py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[190px]"
             >
               {leftIcons.map((icon, i) => (
                 <div
@@ -322,7 +322,7 @@ const Whatever = () => {
               <LogoWithStars />
             </div>
             {/* Right Side */}
-            <div className="right-section max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[249px]">
+            <div className="right-section max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[190px]">
               {rightIcons.map((icon, i) => (
                 <div
                   key={i}

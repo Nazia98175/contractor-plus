@@ -72,7 +72,7 @@ const sliderPlatforms: Platform[] = [
 
 const TrustBar: React.FC = () => {
   return (
-    <section className="relative">
+    <section className="relative ">
       <CardReveal
         staggerDelay={0.4}
         animationDuration={0.8}

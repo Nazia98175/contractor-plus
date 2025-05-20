@@ -73,7 +73,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay text-sm tracking-[0.1px] font-jakarta font-semibold p-2 mt-3 line-clamp-2">
+        <p className="text-winterWay text-sm tracking-[0.1px] font-jakarta font-semibold px-2 mt-3 line-clamp-3 ">
           "{review.reviewText}"
         </p>
       </article>

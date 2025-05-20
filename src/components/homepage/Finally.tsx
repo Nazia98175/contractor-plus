@@ -3,16 +3,24 @@ import { CheckIcon, FinallyDesktopBg, FinallyMobileBg } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import Image from "next/image";
 
 const Finally = () => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
   return (
-    <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white z-20 overflow-hidden">
+    <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white  overflow-hidden">
       <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
       <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
-      <FinallyDesktopBg className="absolute w-[100%] h-full left-0 md:-top-[25%] md:block hidden" />
-      <FinallyMobileBg className="absolute w-[100%] h-full left-0 -top-[40%] block md:hidden" />
+      {/* <FinallyDesktopBg className="absolute w-[100%] h-full left-0 md:-top-[25%] md:block hidden" /> */}
+      <Image
+        className="absolute w-[100%] h-full left-0 -top-[35%] md:-top-[20%]  object-cover"
+        src={"/images/webp/finally-desktop-bg.webp"}
+        alt="finally-desktop-bg"
+        width={1920}
+        height={1920}
+      />
+      {/* <FinallyMobileBg className="absolute w-[100%] h-full left-0 -top-[40%] block md:hidden" /> */}
       <div className="space-y-4 z-30 relative ">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center gradient-text z-40 relative">

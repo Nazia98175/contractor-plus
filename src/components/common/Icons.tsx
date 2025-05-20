@@ -1871,6 +1871,46 @@ export const BlurIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+export const HeroBgIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="102 101.93 2161 825"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g filter="url(#filter0_f_797_6314)">
+      <path
+        d="M1202.48 101.929L102 109.034V926.929H2263L928.735 577.855L1202.48 101.929Z"
+        fill="#0C0D11"
+      ></path>
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_797_6314"
+        x="0.0999985"
+        y="0.0287094"
+        width="2364.8"
+        height="1028.8"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        ></feBlend>
+        <feGaussianBlur
+          stdDeviation="50.95"
+          result="effect1_foregroundBlur_797_6314"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+);
 
 export const SliderRedLineIcon = () => (
   <svg

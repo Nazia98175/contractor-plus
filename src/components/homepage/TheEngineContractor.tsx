@@ -1,12 +1,25 @@
+"use client";
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-const TheEngineContractor = () => {
+interface EngineContractor {
+  title: string;
+  sub_title: string;
+}
+
+interface TheEngineContractorProps {
+  engineContractor: EngineContractor[];
+}
+
+const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
+  engineContractor,
+}) => {
   const t = useTranslations("engine");
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   });
+  console.log(engineContractor, "engine");
   return (
     <section className="relative">
       <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>

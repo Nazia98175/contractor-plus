@@ -1,4 +1,3 @@
-"use client";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import ParticlesComponent from "@/components/common/ParticlesComponent";
@@ -15,26 +14,36 @@ import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { getHomePage } from "@/services/homepage";
 
-export default function Home() {
-  const t = useTranslations();
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const useParams = await params;
+  const [homePageContent, contractPlatformsData] = await Promise.all([
+    getHomePage(useParams.locale, "&populate=*"),
+    getHomePage(
+      useParams.locale,
+      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
+    ),
+  ]);
 
   return (
     <div className="relative overflow-x-hidden">
       <div className="relative">
         <Header />
-        <Hero />
+        <Hero homePageContent={homePageContent?.data} />
         <TrustBar />
-        <TheEngineContractor />
+        <TheEngineContractor
+          engineContractor={homePageContent?.data?.engineContractor}
+        />
       </div>
-
-      <ContractorPlatforms />
+      <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
       <Finally />
-
       <CoreFeatures />
-      <Features />
+      <Features features={homePageContent?.data?.features} />
       <ContractorIndustry />
       <OurReviews />
       <div className="bg-kuroiBlack relative overflow-hidden ">

@@ -1,10 +1,22 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+import Image from "next/image";
+import VideoViewer from "./VideoViewer";
 import Aurora from "../common/Aurora";
-const Hero = () => {
+
+type HeroProps = {
+  homePageContent: any; // Replace `any` with the actual type if available
+};
+const Hero = ({ homePageContent }: { homePageContent: any }) => {
   const t = useTranslations("hero");
+  const {
+    hero_title,
+    hero_description,
+    cta_button_text,
+    cta_button_link,
+    ncc_text,
+  } = homePageContent && homePageContent;
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
       {/* <div className="absolute inset-0 w-full z-20 opacity-[0.3]">
@@ -38,23 +50,21 @@ const Hero = () => {
       <div className="flex items-end main-container z-20 relative lg:pt-[140px] pt-[269px] xl:pb-[196px] lg:pb-[150px] md:pb-[100px] pb-9">
         <div className="lg:max-w-[616px] w-full sm:space-y-6 relative z-30">
           <TextAnimation animateOnScroll={false} delay={0.3}>
-            <h1 className="main-heading gradient-text mb-1.5">
-              {t("heading")}
-            </h1>
+            <h1 className="main-heading gradient-text mb-1.5">{hero_title}</h1>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.3}>
             <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">
-              {t("desc")}
+              {hero_description}
             </p>
           </TextAnimation>
           <div className="flex gap-2.5 sm:flex-row flex-col items-center">
             <button className="bg-red-linear h-10 primary-btn">
-              <span className="md:flex hidden"> {t("cta")}</span>
-              <span className="flex md:hidden"> {t("cta2")}</span>
+              <span className="md:flex hidden">{cta_button_text}</span>
+              <span className="flex md:hidden">{cta_button_text}</span>
             </button>
             <button className="flex gap-1.5 items-center font-myriad text-sm text-white cursor-pointer">
               <CheckIcon />
-              {t("credit")}
+              {ncc_text}
             </button>
           </div>
         </div>

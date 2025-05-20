@@ -77,7 +77,7 @@ const TrustBar: React.FC = () => {
         staggerDelay={0.4}
         animationDuration={0.8}
         distance={50}
-        className="grid  grid-cols-2 sm:grid-col-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-9 justify-center lg:flex-nowrap items-center"
+        className="flex flex-wrap gap-7 sm:gap-9 justify-center lg:flex-nowrap items-center"
       >
         {platforms.map((platform, index) => (
           <PlatformCard platform={platform} key={index} />

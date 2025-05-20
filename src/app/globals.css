@@ -49,6 +49,12 @@
     rgba(12, 13, 17, 0) 0%,
     #0c0d11 100%
   );
+
+  --background-image-reverse-black: linear-gradient(
+    180deg,
+    #0c0d11 0%,
+    rgba(12, 13, 17, 0) 100%
+  );
   --background-image-black-red-linear: linear-gradient(
       0deg,
       rgba(28, 39, 49, 0.2) 0%,
@@ -69,9 +75,7 @@
   --shadow-c2: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
-body {
-  font-family: "Plus Jakarta Sans", sans-serif !important;
-}
+
 @font-face {
   font-family: "Myriad Pro";
   src: url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
@@ -94,7 +98,7 @@ body {
   font-display: swap;
 }
 body {
-  @apply bg-kuroiBlack;
+  @apply bg-kuroiBlack font-jakarta;
 }
 .main-container {
   @apply max-w-[1308px] w-full mx-auto px-2;
@@ -229,9 +233,7 @@ html {
   justify-content: center;
   align-items: center;
 }
-/* .swiper-pagination-clickable .swiper-pagination-bullet {
-  background: #e3e6f0;
-} */
+
 .swiper-pagination-bullet {
   background: #e3e6f0;
 }
@@ -262,7 +264,7 @@ html {
   content: "";
   position: absolute;
   top: 0;
-  width: 180%; /* Wide for smooth sweep */
+  width: 180%;
   height: 100%;
   background: linear-gradient(
     135deg,
@@ -280,11 +282,11 @@ html {
 }
 .btn-hover:hover::before {
   left: 180%;
-  opacity: 0.9; /* Brighter on hover for reflective pop */
+  opacity: 0.9;
 }
 .btn-hover:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
-    inset 0 0 5px rgba(255, 255, 255, 0.15); /* Metallic depth */
+    inset 0 0 5px rgba(255, 255, 255, 0.15);
 }
 .rfm-child {
   height: auto !important;
@@ -386,12 +388,7 @@ html {
 .trusted-service:hover::before {
   opacity: 1;
 }
-.bg-testimonial-left-2 {
-  background: linear-gradient(270deg, #060606, #000000);
-}
-.bg-testimonial-right-2 {
-  background: linear-gradient(270deg, #060606, #000000);
-}
+
 .gradient-text {
   background: linear-gradient(
       275.84deg,
@@ -430,16 +427,7 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-/* .img-shadow {
-  filter: drop-shadow(-111.494px 100.345px 143px rgba(0, 0, 0, 0.0400313))
-    drop-shadow(-81.0946px 72.9851px 96.3854px rgba(0, 0, 0, 0.06825))
-    drop-shadow(-56.4439px 50.7995px 62.3391px rgba(0, 0, 0, 0.0885938))
-    drop-shadow(-37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105))
-    drop-shadow(-22.2988px 20.0689px 23.2375px rgba(0, 0, 0, 0.121406))
-    drop-shadow(-11.7591px 10.5832px 13.8252px rgba(0, 0, 0, 0.14175))
-    drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
-    drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
-} */
+
 .crm-gradient {
   background: linear-gradient(
       270.38deg,
@@ -469,19 +457,7 @@ html {
   z-index: 10;
   color: transparent;
 }
-.green-text {
-  background: none !important;
-  color: #0070f3 !important;
-}
-/* iPhone 12 Pro Max Device */
-.linear-bg {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    #ffffff 60.94%
-  );
-  backdrop-filter: blur(1.65px);
-}
+
 .switch-tool-card {
   border: 0.5px solid rgba(255, 255, 255, 0.15);
   background: radial-gradient(
@@ -539,25 +515,11 @@ html {
     #0c0d11 100%
   );
 }
-.switch-tool-bg {
-  background: linear-gradient(180deg, #000000 5%, rgba(12, 13, 17, 0) 100%);
-}
+
 .custom-shadow-img {
   filter: drop-shadow(-24px 18px 22px #00000078);
 }
-/* position: absolute;
-width: 1466px;
-height: 267px;
-left: -25px;
-top: 361px;
-background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 60.94%);
-backdrop-filter: blur(6.65px); */
-/* A field service CRM that runs your business, not just stores contacts */
-/* background: linear-gradient(276.25deg, rgba(238, 30, 37, 0.4) -11.28%, rgba(0, 0, 0, 0) 99.63%), #B3B3B3;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent; */
+
 .gradient-2 {
   background: linear-gradient(
       276.25deg,
@@ -569,4 +531,32 @@ text-fill-color: transparent; */
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.black-bg {
+  position: relative;
+  overflow: hidden;
+}
+.black-bg::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  left: 50%;
+  width: 1056px;
+  height: 1805px;
+  border-radius: 1805px;
+  /* border: 350px solid red; */
+  border: 350px solid #0c0d11;
+  filter: blur(40.04999923706055px);
+  backdrop-filter: blur(25.399999618530273px);
+  z-index: -8;
+}
+
+.bg-white-linear {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 60.94%
+  );
 }

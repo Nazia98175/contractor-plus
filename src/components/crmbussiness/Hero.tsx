@@ -19,9 +19,12 @@ const Hero = () => {
           />
         </div>
         <div>
-          <h2 className="text-[#B3B3B3] main-heading  text-start sm:text-center">
-            A field service CRM that runs your business, not just stores
-            contacts
+          <h2 className="gradient-2 capitalize w-fit main-heading text-start sm:text-center">
+            A{" "}
+            <span className="bg-white text-transparent bg-clip-text">
+              field service CRM
+            </span>{" "}
+            that runs your business, not just stores contacts
           </h2>
           <p className="paragraph-text text-decemberSky pt-2 sm:pt-5 text-start sm:text-center max-w-[826px] mx-auto">
             Built-in phone and SMS. AI receptionist. Property profiles. Full

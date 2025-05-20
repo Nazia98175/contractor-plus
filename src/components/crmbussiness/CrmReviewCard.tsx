@@ -73,7 +73,7 @@ const CrmReviewCard = () => {
         {reviews.map((review) => (
           <article
             key={review.id}
-            className="bg-white w-full p-2 hover:-translate-y-1 duration-300 cursor-pointer"
+            className="bg-white w-full p-2 hover:-translate-y-1 duration-300 cursor-pointer relative z-20"
           >
             <div className="flex gap-5 items-center">
               <div className="relative">

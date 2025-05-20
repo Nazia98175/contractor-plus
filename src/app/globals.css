@@ -12,6 +12,7 @@
   --color-lightishBlue: #3b82f6;
   --color-ruinedSmores: #111216;
   --color-kuroiBlack: #0c0d11;
+  --color-shutter: #1f1f27;
   --color-romanRed: #f21314;
   --color-pleasure: #dc1112;
   --color-redPigment: #ee1e25;
@@ -532,7 +533,20 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-
+@media screen and (max-width: 640px) {
+  .gradient-2 {
+    background: linear-gradient(
+        275.84deg,
+        rgba(238, 30, 37, 0.4) 7.61%,
+        rgba(0, 0, 0, 0) 99.65%
+      ),
+      linear-gradient(0deg, #ffffff, #ffffff), #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
 .black-bg {
   position: relative;
   overflow: hidden;

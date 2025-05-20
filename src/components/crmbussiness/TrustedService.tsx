@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import TrustedServiceCard from "./TrustedServiceCard";
 import { OurReviewList } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
+import TrustedServiceCard from "./TrustedServiceCard";
 export interface ReviewItem {
   id: string | number;
   userName: string;
@@ -19,9 +20,15 @@ const TrustedService = () => {
   const openModal = (): void => {
     setIsModalOpen(true);
   };
+
+  const t = useTranslations("reviews");
+  const translatedReviews = OurReviewList.map((review) => ({
+    ...review,
+    reviewText: t(review.reviewText),
+  }));
   return (
     <section className="pt-10 pb-16 overflow-hidden relative">
-      <h3 className="section-heading gradient-2 text-center w-fit mx-auto">
+      <h3 className="section-heading gradient-2 text-center max-w-[80%] w-fit mx-auto px-3">
         Trusted by over 50,000 build and service contractors
       </h3>
       <div className="relative">
@@ -31,7 +38,7 @@ const TrustedService = () => {
         {/* First row of reviews - scrolling right */}
         <div className="md:pt-14 w-full ">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <TrustedServiceCard
                 key={review.id}
                 review={review as ReviewItem}
@@ -44,7 +51,7 @@ const TrustedService = () => {
         {/* Second row of reviews - scrolling left */}
         <div className="hidden md:block w-full relative">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <TrustedServiceCard
                 key={review.id}
                 review={review as ReviewItem}
@@ -53,7 +60,8 @@ const TrustedService = () => {
             ))}
           </Marquee>
         </div>
-      </div>{" "}
+      </div>
+
       <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );

@@ -14,15 +14,13 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import TrustBar from "@/components/homepage/TrustBar";
-import { Image } from "lucide-react";
-import React from "react";
 
 const CrmBussinessPage = () => {
   return (
-    <>
+    <main>
       <Header />
-      <Hero />
-      <div className="black-bg w-full h-full">
+      <div className="black-bg">
+        <Hero />
         <TrustedService />
         <SwitchingTool />
       </div>
@@ -33,6 +31,25 @@ const CrmBussinessPage = () => {
       <TeamsUsingContractor />
       <ThousandsReviews />
       <div className="relative">
+        {/* Cloud Layer 1 */}
+        <div className="absolute -top-[30%] left-0 hidden lg:flex w-full h-[267px]  z-20 pointer-events-none">
+          <div className="absolute w-full h-full animate-cloud-layer-1 z-10 opacity-100">
+            <img
+              src="/images/webp/claud-2.webp"
+              alt="Cloud Layer 1"
+              className="h-full object-contain w-full"
+            />
+          </div>
+          <div className="top-0 bg-white rounded-2xl h-2/4 blur-md w-28"></div>
+          {/* Cloud Layer 2 */}
+          <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
+            <img
+              src="/images/webp/claud-2.webp"
+              alt="Cloud Layer 2"
+              className="h-full object-contain w-full"
+            />
+          </div>
+        </div>
         <span className="top-[-236px] left-[209px] hidden rotate-[90deg] lg:block absolute pointer-events-none">
           <FooterRedLineIcon />
         </span>
@@ -42,7 +59,7 @@ const CrmBussinessPage = () => {
       <Faq />
       <BlogPosts />
       <Footer />
-    </>
+    </main>
   );
 };
 

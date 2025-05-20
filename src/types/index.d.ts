@@ -32,3 +32,14 @@ export interface HomePageResponse {
   data: any; // Replace `any` with your actual API response type if known
   meta?: any;
 }
+export interface Review {
+  id: string | number;
+  profileUrl: string;
+  userName?: string;
+  role?: string;
+  userRole?: string;
+  rating: number;
+  review: string;
+  isModal?: boolean;
+  videolink?: string;
+}

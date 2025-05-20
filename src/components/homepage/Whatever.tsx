@@ -12,7 +12,6 @@ import LogoWithStars from "../common/LogoWithStars";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
-
 const Whatever = () => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
@@ -27,10 +26,8 @@ const Whatever = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   useEffect(() => {
     if (!sectionRef.current || !containerRef.current) return;
-
     // Clean up previous animations to prevent conflicts
     ScrollTrigger.getAll().forEach((t) => t.kill());
     gsap.killTweensOf([
@@ -38,17 +35,14 @@ const Whatever = () => {
       ...rightIconsRef.current,
       centerRef.current,
     ]);
-
     const ctx = gsap.context(() => {
       // Set initial positions using GSAP
       const leftSection = document.querySelector(".left-section");
       const rightSection = document.querySelector(".right-section");
-
       if (leftSection && rightSection) {
         // Position the icons absolutely within their containers
         leftIconsRef.current.forEach((el, i) => {
           if (!el) return;
-
           // Set initial absolute position - using finalX/Y for positioning
           gsap.set(el, {
             position: "absolute",
@@ -61,10 +55,8 @@ const Whatever = () => {
             filter: "blur(8px)",
           });
         });
-
         rightIconsRef.current.forEach((el, i) => {
           if (!el) return;
-
           // Set initial absolute position - using finalX/Y for positioning
           gsap.set(el, {
             position: "absolute",
@@ -78,7 +70,6 @@ const Whatever = () => {
           });
         });
       }
-
       // ScrollTrigger configuration - with more responsive breakpoints
       const scrollTrigger = {
         trigger: sectionRef.current,
@@ -88,46 +79,38 @@ const Whatever = () => {
         invalidateOnRefresh: true,
         // Add markers for debugging (remove in production)
         // markers: true,
-
         // Add breakpoints for more control
         id: "icons-animation",
-
         // Dynamically update animation properties on refresh
         onRefresh: (self: { refresh: () => void }) => {
           // This will re-run calculations when screen size changes
           self.refresh();
         },
       };
-
       const getInitial = (val: number) => {
         if (window.innerWidth < 768) return val * 0.6;
         if (window.innerWidth < 1024) return val * 0.8;
         return val;
       };
-
       // Animate left icons - translating from initialX/Y to finalX/Y
       leftIconsRef.current.forEach((el, i) => {
         if (!el) return;
-
         // Create a variable to store the starting position (responsive)
         const getStartX = () => {
           if (window.innerWidth < 768) return leftIcons[i].initialX * 0.6;
           if (window.innerWidth < 1024) return leftIcons[i].initialX * 0.8;
           return leftIcons[i].initialX;
         };
-
         const getStartY = () => {
           if (window.innerWidth < 768) return leftIcons[i].initialY * 0.6;
           if (window.innerWidth < 1024) return leftIcons[i].initialY * 0.8;
           return leftIcons[i].initialY;
         };
-
         // Apply initial transform offset - This is what will animate
         gsap.set(el, {
           x: getStartX(),
           y: getStartY(),
         });
-
         // Animate to final position (x:0, y:0) on scroll
         gsap.to(el, {
           x: 0, // Final position (no offset)
@@ -140,30 +123,25 @@ const Whatever = () => {
           force3D: true,
         });
       });
-
       // Animate right icons - translating from initialX/Y to finalX/Y
       rightIconsRef.current.forEach((el, i) => {
         if (!el) return;
-
         // Create a variable to store the starting position (responsive)
         const getStartX = () => {
           if (window.innerWidth < 768) return rightIcons[i].initialX * 0.6;
           if (window.innerWidth < 1024) return rightIcons[i].initialX * 0.8;
           return rightIcons[i].initialX;
         };
-
         const getStartY = () => {
           if (window.innerWidth < 768) return rightIcons[i].initialY * 0.6;
           if (window.innerWidth < 1024) return rightIcons[i].initialY * 0.8;
           return rightIcons[i].initialY;
         };
-
         // Apply initial transform offset - This is what will animate
         gsap.set(el, {
           x: getStartX(),
           y: getStartY(),
         });
-
         // Animate to final position (x:0, y:0) on scroll
         gsap.to(el, {
           x: 0, // Final position (no offset)
@@ -176,7 +154,6 @@ const Whatever = () => {
           force3D: true,
         });
       });
-
       // Center element animation - only triggered on scroll, not automatic
       gsap.set(centerRef.current, {
         y: getInitial(80), // Increased offset to make translation more visible
@@ -185,7 +162,6 @@ const Whatever = () => {
         scale: 0.3,
         filter: "blur(8px)",
       });
-
       gsap.to(centerRef.current, {
         y: 0, // Final position
         x: 0,
@@ -196,7 +172,6 @@ const Whatever = () => {
         scrollTrigger,
         force3D: true,
       });
-
       // Hover animation - Only start after elements have entered view
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -215,7 +190,6 @@ const Whatever = () => {
                 force3D: true,
               });
             });
-
             [...rightIconsRef.current].forEach((el, i) => {
               if (!el) return;
               const y = i % 2 === 0 ? -4 : 4;
@@ -228,7 +202,6 @@ const Whatever = () => {
                 force3D: true,
               });
             });
-
             gsap.to(centerRef.current, {
               scale: 1.03,
               duration: 4,
@@ -251,10 +224,8 @@ const Whatever = () => {
         },
       });
     }, sectionRef);
-
     return () => ctx.revert();
   }, [isMobile]);
-
   return (
     <section className="relative w-full z-10">
       <picture className="hidden lg:block">
@@ -272,7 +243,6 @@ const Whatever = () => {
           priority
         />
       </picture>
-
       <div className="block lg:hidden">
         <picture>
           <source
@@ -289,7 +259,6 @@ const Whatever = () => {
             priority
           />
         </picture>
-
         {/* Right mobile gradient */}
         <picture>
           <source
@@ -307,7 +276,6 @@ const Whatever = () => {
           />
         </picture>
       </div>
-
       <div
         ref={sectionRef}
         className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20"
@@ -346,7 +314,6 @@ const Whatever = () => {
                 </div>
               ))}
             </div>
-
             {/* Center */}
             <div
               ref={centerRef}
@@ -354,7 +321,6 @@ const Whatever = () => {
             >
               <LogoWithStars />
             </div>
-
             {/* Right Side */}
             <div className="right-section max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[249px]">
               {rightIcons.map((icon, i) => (
@@ -390,5 +356,4 @@ const Whatever = () => {
     </section>
   );
 };
-
 export default Whatever;

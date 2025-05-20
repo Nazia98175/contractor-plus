@@ -9,22 +9,14 @@ import { GroupStartIcon } from "../common/Icons";
 import ReviewModal from "../common/ReviewModal";
 import TextAnimation from "../common/TextAnimation";
 import ReviewCard from "./ReviewCard";
-
-export interface ReviewItem {
-  id: string | number;
-  userName: string;
-  role?: string;
-  reviewText: string;
-  rating: number;
-  profileUrl: string;
-  isModal: boolean;
-  companyIcon: string;
-}
+import { Review } from "@/types";
 
 const OurReviews: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
-  const openModal = (): void => {
+  const openModal = (videoUrl: string) => {
+    setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
 
@@ -33,7 +25,9 @@ const OurReviews: React.FC = () => {
   const t = useTranslations("reviews");
   const translatedReviews = OurReviewList.map((review) => ({
     ...review,
-    reviewText: t(review.reviewText),
+    userName: t(`ourReviews.${review.id}.username`),
+    userRole: t(`ourReviews.${review.id}.userRole`),
+    reviewText: t(`ourReviews.${review.id}.review`),
   }));
 
   return (
@@ -97,8 +91,12 @@ const OurReviews: React.FC = () => {
             {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
-                review={review as ReviewItem}
-                openModal={review.isModal ? openModal : () => {}}
+                review={review as Review}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videolink || "")
+                    : () => {}
+                }
               />
             ))}
           </Marquee>
@@ -110,15 +108,23 @@ const OurReviews: React.FC = () => {
             {translatedReviews.map((review) => (
               <ReviewCard
                 key={review.id}
-                review={review as ReviewItem}
-                openModal={review.isModal ? openModal : () => {}}
+                review={review as Review}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videolink || "")
+                    : () => {}
+                }
               />
             ))}
           </Marquee>
         </div>
       </div>
 
-      <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ReviewModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoUrl={selectedVideoUrl || ""}
+      />
     </section>
   );
 };

@@ -1,17 +1,7 @@
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import Image from "next/image";
-
-export interface Review {
-  id: string | number;
-  profileUrl: string;
-  userName: string;
-  role?: string;
-  companyIcon: string;
-  rating: number;
-  reviewText: string;
-  isModal: boolean;
-}
+import { Review } from "@/types";
 
 interface ReviewCardProps {
   review: Review;
@@ -59,20 +49,22 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                   </span>
                 )}
               </div>
-
-              <img
+              <p className="text-xs font-medium text-[#ADB1B5]">
+                {review.userRole}
+              </p>
+              {/* <img
                 className="max-w-[52px]"
                 src={review.companyIcon}
                 alt="company logo"
-              />
+              /> */}
             </div>
           </div>
           <div className="flex items-center gap-1">
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay text-sm tracking-[0.1px] font-jakarta font-semibold p-2 mt-3 line-clamp-2">
-          "{review.reviewText}"
+        <p className="text-winterWay text-sm tracking-[0.1px] font-jakarta font-semibold px-2 mt-3 line-clamp-3 ">
+          "{review.review}"
         </p>
       </article>
     </div>

@@ -17,77 +17,77 @@ const ContractorIndustrySlider: React.FC = () => {
 
   const showInfo: Show[] = [
     {
-      title: "Joker: Folie à Deux",
+      title: "General Contractor",
       image: "/images/png/circular-slide-1.png",
     },
     {
-      title: "Joker: Folie à Deux",
-      image: "/images/png/circular-slide-1.png",
+      title: "Plumbing",
+      image: "/images/webp/circular-slide-1.webp",
     },
     {
-      title: "Joker: Folie à Deux",
-      image: "/images/png/circular-slide-1.png",
+      title: "General Contractor",
+      image: "/images/webp/circular-slide-2.webp",
     },
     {
-      title: "Joker: Folie à Deux",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "The Penguin",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "Strange Darling",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "Re:ZERO",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "Rebel Ridge",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "Outlaw",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "Pleasure",
-      image: "/images/png/circular-slide-1.png",
-    },
-    {
-      title: "Joker: Folie à Deux",
-      image: "/images/png/circular-slide-1.png",
+      title: "Plumbing",
+      image: "/images/webp/circular-slide-3.webp",
     },
     {
       title: "The Penguin",
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/webp/circular-slide-4.webp",
     },
     {
       title: "Strange Darling",
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/webp/circular-slide-5.webp",
     },
     {
       title: "Re:ZERO",
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/webp/circular-slide-6.webp",
     },
     {
       title: "Rebel Ridge",
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/webp/circular-slide-7.webp",
     },
     {
       title: "Outlaw",
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/webp/circular-slide-8.webp",
     },
     {
       title: "Pleasure",
-      image: "/images/png/circular-slide-1.png",
+      image: "/images/webp/circular-slide-9.webp",
+    },
+    {
+      title: "Joker: Folie à Deux",
+      image: "/images/webp/circular-slide-10.webp",
+    },
+    {
+      title: "The Penguin",
+      image: "/images/webp/circular-slide-1.webp",
+    },
+    {
+      title: "Strange Darling",
+      image: "/images/webp/circular-slide-4.webp",
+    },
+    {
+      title: "Re:ZERO",
+      image: "/images/webp/circular-slide-6.webp",
+    },
+    {
+      title: "Rebel Ridge",
+      image: "/images/webp/circular-slide-3.webp",
+    },
+    {
+      title: "Outlaw",
+      image: "/images/webp/circular-slide-8.webp",
+    },
+    {
+      title: "Pleasure",
+      image: "/images/webp/circular-slide-10.webp",
     },
   ];
 
   return (
-    <>
+    <div className="relative">
       <SliderLayout
         effect="coverflow"
         autoplay={{
@@ -110,7 +110,7 @@ const ContractorIndustrySlider: React.FC = () => {
           320: { slidesPerView: 1.5 },
           500: { slidesPerView: 2 },
           640: { slidesPerView: 3 },
-          1024: { slidesPerView: 3.5 },
+          1024: { slidesPerView: 3.335 },
         }}
         modules={[Autoplay, EffectCoverflow]}
         onSlideChange={(swiper: { realIndex: React.SetStateAction<number> }) =>
@@ -142,7 +142,7 @@ const ContractorIndustrySlider: React.FC = () => {
           </TiltedCardEffect>
         ))}
       </SliderLayout>
-    </>
+    </div>
   );
 };
 

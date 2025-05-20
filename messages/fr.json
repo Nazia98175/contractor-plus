@@ -115,45 +115,42 @@
     ],
     "links": [
       "CRM",
-      "Gestão de Serviços de Campo",
-      "Gestão de Projetos",
-      "Geração de Leads",
-      "Contabilidade",
-      "Sites PRO",
-      "Orçamentos e Cotações",
-      "Rastreamento de Negócios",
-      "Todos os Recursos",
-      "Gestão de Projetos",
-      "Gestão de Serviços de Campo",
-      "Contractor+ Pay",
-      "Contractor+ Local",
-      "Contabilidade",
+      "Gestion de Projet",
+      "Gestion des Services sur le Terrain",
+      "Planification",
+      "Devis",
+      "Paiements",
+      "Téléphone et SMS",
+      "Suivi des Offres",
       "Big Chief AI",
-      "Estimatic AI",
-      "Todas as Soluções",
-      "Empreiteiro Geral",
-      "Encanamento",
-      "Construção",
+      "Toutes les Fonctionnalités",
+      "Entrepreneur Général",
+      "Charpenterie",
+      "Béton",
+      "Bricoleur",
       "HVAC",
-      "Reformas",
-      "Pintura",
-      "Telhados",
-      "Remoção de Entulho",
-      "Chaveiro",
-      "Drywall",
-      "Todas as Indústrias",
+      "Plomberie",
+      "Cloison Sèche",
+      "Peinture",
+      "Rénovation",
+      "Toiture",
+      "Toutes les Industries",
+
       "Blog",
       "Podcasts",
-      "Taxas de Mão de Obra EUA",
-      "Tendências de Materiais EUA",
-      "Comparação de Preços de Materiais",
-      "Quadro de Ideias",
-      "Embaixadores da Marca",
-      "Parceiros de Fornecimento",
-      "Documentação da API",
-      "Comece GRÁTIS",
-      "Preços",
-      "Agendar uma Demonstração"
+      "Taux de Main-d’œuvre aux États-Unis",
+      "Tendances des Matériaux aux États-Unis",
+      "Tarification des Matériaux aux États-Unis",
+      "Tableau d'Idées",
+      "Affiliés",
+      "Fournisseurs",
+      "Centre d'Aide",
+      "Documentation API",
+      "Tarifs",
+      "Planifier une Démo",
+      "Commencer GRATUITEMENT",
+      "Tarifs",
+      "Planifier une Démo"
     ],
     "sections": ["Recursos", "Indústrias", "Soluções", "Explorar"]
   },
@@ -466,27 +463,92 @@
       "image": "/images/webp/blog-right-side.webp"
     }
   },
+
   "reviews": {
     "heading": "Laissez nos clients parler pour nous...",
     "excellent": "Excellent",
     "basedOn": "Basé sur {count} avis",
     "ourReviews": {
-      "review1": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review2": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review3": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review4": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review5": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review6": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review7": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review8": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review9": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review10": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review11": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review12": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review13": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review14": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review15": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats.",
-      "review16": "Depuis que j’ai commencé à envoyer tous mes devis avec Contractor+, je ne perds plus de contrats."
+      "1": {
+        "username": "Brandon Geiger",
+        "userRole": "Propriétaire, iCare Lawn Care & Landscaping",
+        "review": "Depuis que j'envoie tous mes devis avec Contractor+, je ne perds plus de contrats. L'image professionnelle que cette application me donne m'aide à décrocher plus de clients. Contractor+ change la donne !"
+      },
+      "2": {
+        "username": "Josh Leeson",
+        "userRole": "Copropriétaire, Rushville Restorations",
+        "review": "J'adore pouvoir gérer toute mon entreprise dans une seule application. Et les prospects que nous recevons grâce à Contractor+ sont bien meilleurs que ceux d'autres sources. L'application est facile à utiliser et me simplifie énormément la vie."
+      },
+      "3": {
+        "username": "Justin Mcnichols",
+        "userRole": "Président, TPB Construction",
+        "review": "Nous avons maintenant deux équipes qui travaillent 5 à 6 jours par semaine. Il y a un an, j'étais seul. On n'aurait jamais pu croître ainsi sans Contractor+. La planification et les accords clients me facilitent grandement la vie. Contractor+ DÉCHIRE !"
+      },
+      "4": {
+        "username": "John Croy",
+        "userRole": "Copropriétaire, Ross Co. Home Pro's",
+        "review": "Je suis passé de Jobber à Contractor+ car cela correspond mieux à ma façon de gérer mon entreprise. Communication claire, devis simples et planification de chantier m'aident à tout gérer. Contractor+ a rendu mon entreprise plus rentable et plus facile à gérer."
+      },
+      "5": {
+        "username": "Juan",
+        "userRole": "Propriétaire, Cranfield Construction",
+        "review": "J'ai commencé à utiliser Contractor+ il y a environ 6 mois, et cela a complètement transformé ma gestion de projet et ma communication avec les clients. Tout est désormais rationalisé. C'est le meilleur investissement que j'ai fait pour mon entreprise."
+      },
+      "6": {
+        "username": "Daniel Harris",
+        "userRole": "Fondateur, Harris Custom Remodeling",
+        "review": "Contractor+ m'a apporté la structure dont j'avais besoin. Des devis aux factures, tout est professionnel, et les clients adorent cette clarté. C'est devenu la base de mon entreprise."
+      },
+      "7": {
+        "username": "Ashley Monroe",
+        "userRole": "Cofondatrice, Greenway Outdoor Designs",
+        "review": "Je ne réalisais pas combien de temps je perdais jusqu'à ce que je commence à utiliser Contractor+. Cela a simplifié nos opérations et rendu la communication client fluide."
+      },
+      "8": {
+        "username": "Ethan Reynolds",
+        "userRole": "Responsable des opérations, Apex Roofing Solutions",
+        "review": "Gérer plusieurs chantiers était un vrai chaos. Maintenant, je suis organisé avec les plannings, les notes clients et les tâches, tout au même endroit. Contractor+ est un vrai sauveur !"
+      },
+      "9": {
+        "username": "Samantha Blake",
+        "userRole": "Propriétaire, Blake Interiors & Renovations",
+        "review": "Je dirige enfin mon entreprise au lieu de courir après elle. Contractor+ m'aide à suivre tous les projets, et mes clients apprécient les devis détaillés et les mises à jour régulières."
+      },
+      "10": {
+        "username": "Marcus Bennett",
+        "userRole": "Entrepreneur principal, Bennett Home Repair",
+        "review": "Avant Contractor+, tout était sur papier. Maintenant, tout est sur mon téléphone ou ma tablette. Je gagne des heures chaque semaine grâce à une meilleure organisation numérique."
+      },
+      "11": {
+        "username": "Rachel Adams",
+        "userRole": "Associée, Adams & Sons Renovation",
+        "review": "De l'intégration du client à l'envoi des factures finales, Contractor+ gère tout. Il est facile à utiliser, puissant, et a énormément boosté la productivité de notre équipe."
+      },
+      "12": {
+        "username": "Steve Martin",
+        "userRole": "Propriétaire, Martin's Painting Services",
+        "review": "Nous avons doublé notre base client en moins d'un an grâce à Contractor+. Les devis sont plus rapides, la planification est plus simple, et nous recevons plus d'avis 5 étoiles que jamais."
+      },
+      "13": {
+        "username": "Tina Alvarez",
+        "userRole": "Responsable de bureau, Alvarez Home Builders",
+        "review": "Les fonctionnalités de communication et les modèles de documents de l'application sont incroyables. Notre équipe fonctionne plus efficacement et les clients restent informés à chaque étape."
+      },
+      "14": {
+        "username": "Greg Thompson",
+        "userRole": "Propriétaire, Thompson Tile & Remodeling",
+        "review": "J'ai essayé d'autres applications, mais rien ne vaut Contractor+. Elle est intuitive, abordable, et vraiment conçue pour les entrepreneurs. Je la recommande vivement."
+      },
+      "15": {
+        "username": "Meghan Foster",
+        "userRole": "Administratrice, Foster Property Services",
+        "review": "Contractor+ a éliminé la double saisie et réduit de moitié le temps administratif. Il intègre tout ce dont nous avons besoin dans un système fiable."
+      },
+      "16": {
+        "username": "Kevin Rhodes",
+        "userRole": "Fondateur, Rhodes HVAC Solutions",
+        "review": "La planification, les rappels et les paiements sont désormais fluides et à l'heure. Je peux enfin me concentrer sur la qualité du service plutôt que sur les feuilles Excel et les appels manqués."
+      }
     }
   },
   "corefeature": {

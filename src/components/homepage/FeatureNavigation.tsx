@@ -9,7 +9,8 @@ type Props = {
   onFeatureClick: (index: number) => void;
   featuresRef: React.RefObject<HTMLDivElement | null>;
   indicatorRef: React.RefObject<HTMLButtonElement | null>;
-  mobileIndicatorRef: React.RefObject<HTMLButtonElement | null>;
+  mobileIndicatorRef?: React.RefObject<HTMLButtonElement | null>;
+  isMobile?: boolean;
 };
 
 const FeatureNavigation = ({
@@ -17,40 +18,49 @@ const FeatureNavigation = ({
   featureBtn,
   activeFeature,
   onFeatureClick,
-  indicatorRef,
   featuresRef,
+  indicatorRef,
   mobileIndicatorRef,
+  isMobile = false,
 }: Props) => {
   return (
     <div
-      className="flex gap-1.5 lg:self-start z-20 lg:w-fit"
+      className={`flex gap-1.5 ${
+        isMobile ? "w-full" : "lg:self-start"
+      } z-20 lg:w-fit`}
       ref={featuresRef}
-      style={{ overflow: "visible" }}
     >
       <div className="px-1 hidden lg:flex relative w-fit justify-center items-center mt-1">
         <button
           ref={indicatorRef}
           className="w-3 h-3 rounded-full absolute top-2.5 bg-black left-1/2 -translate-x-1/2 z-10"
-        ></button>
+        />
         <Pathbg />
       </div>
-      <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
+
+      <div
+        className={`flex flex-row lg:flex-col gap-[22px] font-jakarta no-scrollbar ${
+          isMobile
+            ? "w-full justify-between overflow-x-auto py-2"
+            : "lg:overflow-visible"
+        } whitespace-nowrap relative`}
+      >
         {features.map((feature, index) => (
           <button
             // onClick={() => onFeatureClick(index)}
             key={feature}
-            className={`feature-btn cursor-default ${
+            className={`feature-btn ${isMobile ? "text-sm" : ""} ${
               index === activeFeature
-                ? " text-winterWay font-bold"
-                : "text-secondary font-normal"
+                ? "text-winterWay font-bold"
+                : "text-secondary"
             }`}
           >
             {feature}
           </button>
         ))}
-        <button className="flex group justify-between feature-btn w-full text-lightishBlue gap-1 items-center cursor-pointer">
+        <button className="flex group feature-btn whitespace-nowrap w-full text-lightishBlue gap-1 items-center cursor-pointer">
           {featureBtn}
-          <span className="w-5 flex justify-center items-center group-hover:-translate-y-1 duration-300">
+          <span className="w-5 flex group-hover:-translate-y-1 duration-300">
             <ExternalLink />
           </span>
         </button>

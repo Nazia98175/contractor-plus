@@ -1871,3 +1871,99 @@ export const BlurIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+export const HeroBgIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="102 101.93 2161 825"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g filter="url(#filter0_f_797_6314)">
+      <path
+        d="M1202.48 101.929L102 109.034V926.929H2263L928.735 577.855L1202.48 101.929Z"
+        fill="#0C0D11"
+      ></path>
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_797_6314"
+        x="0.0999985"
+        y="0.0287094"
+        width="2364.8"
+        height="1028.8"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        ></feBlend>
+        <feGaussianBlur
+          stdDeviation="50.95"
+          result="effect1_foregroundBlur_797_6314"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const SliderRedLineIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    fill="none"
+    viewBox="0 0 320 495"
+  >
+    <g
+      filter="url(#filter0_f_783_9975)"
+      style={{ mixBlendMode: "plus-lighter" }}
+    >
+      <path
+        stroke="url(#paint0_linear_783_9975)"
+        strokeLinecap="round"
+        strokeWidth="432"
+        d="M417 564 62 209l-355-355"
+      ></path>
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_783_9975"
+        x1="129.417"
+        x2="-227.385"
+        y1="-102.601"
+        y2="29.678"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.062" stopOpacity="0"></stop>
+        <stop offset="0.997" stopColor="#EE1E25"></stop>
+        <stop offset="1" stopColor="#fff"></stop>
+      </linearGradient>
+      <filter
+        id="filter0_f_783_9975"
+        width="1318"
+        height="1318"
+        x="-597"
+        y="-450"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        ></feBlend>
+        <feGaussianBlur
+          result="effect1_foregroundBlur_783_9975"
+          stdDeviation="44"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+);

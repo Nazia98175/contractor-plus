@@ -1,40 +1,42 @@
 "use client";
-import React, { useState } from "react";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import TrustedServiceCard from "./TrustedServiceCard";
 import { OurReviewList } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
-export interface ReviewItem {
-  id: string | number;
-  userName: string;
-  role?: string;
-  reviewText: string;
-  rating: number;
-  profileUrl: string;
-  companyIcon: string;
-}
+import TrustedServiceCard from "./TrustedServiceCard";
+import { Review } from "@/types";
+
 const TrustedService = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const openModal = (): void => {
     setIsModalOpen(true);
   };
+
+  const t = useTranslations("reviews");
+  const translatedReviews = OurReviewList.map((review) => ({
+    ...review,
+    userName: t(`ourReviews.${review.id}.username`),
+    review: t(`ourReviews.${review.id}.review`),
+  }));
+
   return (
-    <section className="py-10 overflow-hidden z-20 relative">
-      <h3 className="section-heading gradient-2 text-center w-fit mx-auto">
+    <section className="pt-10 pb-16 overflow-hidden relative">
+      <h3 className="section-heading gradient-2 text-center max-w-[80%] w-fit mx-auto px-3">
         Trusted by over 50,000 build and service contractors
       </h3>
-      <div className="relative">
-        <div className="absolute h-[380px] left-[-6%] w-[200px] md:w-[370px] bg-testimonial-left-2 z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        <div className="absolute h-[380px] right-[-6%] w-[200px] md:w-[370px] bg-testimonial-right-2 z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+      <div className="relative h-fit ">
+        <div className="absolute h-full rounded bottom-0 border left-[-6%] w-[200px] md:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="absolute h-full right-[-6%] w-[200px] md:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
         <div className="md:pt-14 w-full ">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <TrustedServiceCard
                 key={review.id}
-                review={review as ReviewItem}
+                review={review as Review}
                 openModal={openModal}
               />
             ))}
@@ -42,18 +44,19 @@ const TrustedService = () => {
         </div>
 
         {/* Second row of reviews - scrolling left */}
-        <div className="hidden md:block w-full">
+        <div className="hidden md:block w-full relative">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
-            {OurReviewList.map((review) => (
+            {translatedReviews.map((review) => (
               <TrustedServiceCard
                 key={review.id}
-                review={review as ReviewItem}
+                review={review as Review}
                 openModal={openModal}
               />
             ))}
           </Marquee>
         </div>
-      </div>{" "}
+      </div>
+
       <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );

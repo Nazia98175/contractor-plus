@@ -72,25 +72,25 @@ const sliderPlatforms: Platform[] = [
 
 const TrustBar: React.FC = () => {
   return (
-    <section className="relative">
+    <section className="relative px-2">
       <CardReveal
         staggerDelay={0.4}
         animationDuration={0.8}
         distance={50}
-        className="hidden lg:flex flex-wrap gap-9 justify-center lg:flex-nowrap items-center"
+        className="flex flex-wrap gap-7 sm:gap-9 justify-center lg:flex-nowrap items-center"
       >
         {platforms.map((platform, index) => (
           <PlatformCard platform={platform} key={index} />
         ))}
       </CardReveal>
 
-      <div className="relative z-50 lg:hidden">
+      {/* <div className="relative z-50 lg:hidden">
         <SliderLayout autoplay={true}>
           {sliderPlatforms.map((platform, index) => (
             <PlatformCard platform={platform} key={index} />
           ))}
         </SliderLayout>
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -24,7 +24,7 @@
     "hourSave": "Hours Average Time Saved Per Week"
   },
   "platformcatch": {
-    "platformcatch": "There are dozens of contractor platforms, but each one has a catch.",
+    "platformcatch": "There are dozens of contractor platforms , but each one has a catch.",
     "card1": {
       "heading": "Expensive",
       "desc": "The “big guys” charge a small fortune, and their software is a nightmare to learn."
@@ -127,27 +127,92 @@
       }
     ]
   },
+
   "reviews": {
     "heading": "Let our customers do the talking...",
     "excellent": "Excellent",
     "basedOn": "Based on {count} reviews",
     "ourReviews": {
-      "review1": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review2": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review3": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review4": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review5": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review6": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review7": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review8": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review9": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review10": "Since I started sending all my estimates using Contractor+, / have stopped losing bids..",
-      "review11": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review12": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review13": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review14": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review15": "Since I started sending all my estimates using Contractor+, / have stopped losing bids.",
-      "review16": "Since I started sending all my estimates using Contractor+, / have stopped losing bids."
+      "1": {
+        "username": "Brandon Geiger",
+        "userRole": "Owner, iCare Lawn Care & Landscaping",
+        "review": "Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"
+      },
+      "2": {
+        "username": "Josh Leeson",
+        "userRole": "Co-Owner, Rushville Restorations",
+        "review": "I love being able to keep track of my entire business in one app. And the leads we've been getting from Contractor+ are so much better than the leads we've got from other places. The app is easy to use and is making my life a lot easier."
+      },
+      "3": {
+        "username": "Justin Mcnichols",
+        "userRole": "President, TPB Construction",
+        "review": "We've got two crews working 5 to 6 days a week now. A year ago, it was just me. We would have never been able to grow like we have if it wasn't for Contractor+. The scheduling and client agreements makes my life a lot easier. Contractor+ ROCKS!"
+      },
+      "4": {
+        "username": "John Croy",
+        "userRole": "Co-Owner, Ross Co. Home Pro's",
+        "review": "I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."
+      },
+      "5": {
+        "username": "Juan",
+        "userRole": "Owner, Cranfield Construction",
+        "review": "I started with Contractor+ about 6 months ago and it's completely transformed how I manage my jobs and communicate with clients. Everything is streamlined now. It's the best investment I've made for my business."
+      },
+      "6": {
+        "username": "Daniel Harris",
+        "userRole": "Founder, Harris Custom Remodeling",
+        "review": "Contractor+ gave me the structure I needed. From estimates to invoices, everything feels professional and clients love the clarity. It's the backbone of my business now."
+      },
+      "7": {
+        "username": "Ashley Monroe",
+        "userRole": "Co-Founder, Greenway Outdoor Designs",
+        "review": "I never realized how much time I was wasting until I started using Contractor+. It's simplified our operations and made client communication seamless."
+      },
+      "8": {
+        "username": "Ethan Reynolds",
+        "userRole": "Operations Manager, Apex Roofing Solutions",
+        "review": "Managing multiple job sites used to be chaos. Now I stay organized with schedules, client notes, and tasks all in one place. Contractor+ is a lifesaver!"
+      },
+      "9": {
+        "username": "Samantha Blake",
+        "userRole": "Owner, Blake Interiors & Renovations",
+        "review": "I’m finally running my business instead of it running me. Contractor+ helps me stay on top of projects, and my clients appreciate the detailed estimates and updates."
+      },
+      "10": {
+        "username": "Marcus Bennett",
+        "userRole": "Lead Contractor, Bennett Home Repair",
+        "review": "Before Contractor+, everything was on paper. Now, everything's on my phone or tablet. I save hours each week just by having everything organized digitally."
+      },
+      "11": {
+        "username": "Rachel Adams",
+        "userRole": "Partner, Adams & Sons Renovation",
+        "review": "From onboarding clients to sending final invoices, Contractor+ covers it all. It’s user-friendly, powerful, and has boosted our team's productivity big time."
+      },
+      "12": {
+        "username": "Steve Martin",
+        "userRole": "Owner, Martin's Painting Services",
+        "review": "We’ve doubled our client base in less than a year with Contractor+. Estimates are faster, scheduling is easier, and we’re getting more 5-star reviews than ever."
+      },
+      "13": {
+        "username": "Tina Alvarez",
+        "userRole": "Office Manager, Alvarez Home Builders",
+        "review": "The app’s communication features and document templates are incredible. Our team runs more efficiently and clients stay updated throughout every phase."
+      },
+      "14": {
+        "username": "Greg Thompson",
+        "userRole": "Owner, Thompson Tile & Remodeling",
+        "review": "I've tried other apps, but nothing compares to Contractor+. It's intuitive, affordable, and actually made for contractors. Highly recommend it."
+      },
+      "15": {
+        "username": "Meghan Foster",
+        "userRole": "Administrator, Foster Property Services",
+        "review": "Contractor+ eliminated double entry and reduced admin time by half. It integrates everything we need into one reliable system."
+      },
+      "16": {
+        "username": "Kevin Rhodes",
+        "userRole": "Founder, Rhodes HVAC Solutions",
+        "review": "Job scheduling, reminders, and payments are now smooth and on time. I can finally focus on service quality instead of juggling spreadsheets and missed calls."
+      }
     }
   },
   "footer": {
@@ -164,47 +229,44 @@
     ],
     "links": [
       "CRM",
-      "Field Service Management",
-      "Project Management",
-      "Lead Generation",
-      "Bookkeeping",
-      "PRO Websites",
-      "Estimates & Quotes",
-      "Deal Flow Tracking",
-      "All Features",
       "Project Management",
       "Field Service Management",
-      "Contractor+ Pay",
-      "Contractor+ Local",
-      "Bookkeeping",
+      "Scheduling",
+      "Estimates",
+      "Payments",
+      "Phone & SMS",
+      "Deal Flow Tracker",
       "Big Chief AI",
-      "Estimatic AI",
-      "All Solutions",
+      "All Features",
       "General Contractor",
-      "Plumbing",
-      "Construction",
+      "Carpentry",
+      "Concrete",
+      "Handyman",
       "HVAC",
-      "Remodeling",
-      "Painting",
-      "Roofing",
-      "Junk Removal",
-      "Locksmith",
+      "Plumbing",
       "Drywall",
+      "Painting",
+      "Remodeling",
+      "Roofing",
       "All Industries",
+
       "Blog",
       "Podcasts",
       "USA Labor Rates",
       "USA Material Trends",
-      "Material Price Comparison",
+      "USA Material Pricing",
       "Idea Board",
-      "Brand Ambassadors",
-      "Supply Partners",
+      "Affiliates",
+      "Suppliers",
+      "Support Center",
       "API Docs",
+      "Pricing",
+      "Schedule A Demo",
       "Get Started FREE",
       "Pricing",
       "Schedule A Demo"
     ],
-    "sections": ["Features", "Industries", "Solutions", "Explore"]
+    "sections": ["Features", "Industries", "Solutions", "It’s Go Time"]
   },
   "features": {
     "solutionsHeading": "Solutions",

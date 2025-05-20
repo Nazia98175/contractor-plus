@@ -7,14 +7,13 @@ import { contractPlatforms } from "../common/Helper";
 const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
   return (
     <section className="relative z-20">
-      <div className="main-container flex flex-col gap-9 md:gap-11 lg:pt-11 pt-[37px] relative">
+      <div className="main-container flex flex-col gap-9 md:gap-11 lg:pt-[42px] pt-[37px] relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
             {contractPlatformsData?.data?.platforms?.title?.title}
           </h2>
         </TextAnimation>
 
-        {/* Using the fixed CardReveal component */}
         <CardReveal
           staggerDelay={0.15}
           animationDuration={0.8}

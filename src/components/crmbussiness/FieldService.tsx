@@ -117,7 +117,9 @@ const servicedata: ServiceData[] = [
 
 const FieldService: React.FC = () => {
   return (
-    <div className="py-10 px-2 relative">
+    <div className="py-10 px-2 relative bg-kuroiBlack z-20">
+      <div className="blur-xl bg-kuroiBlack -bottom-10 h-32 right-0 absolute w-[102%]"></div>
+      <div className="absolute bg-bottom w-full h-[134px] left-0 bottom-0 rotate-180"></div>
       {servicedata.map((service, index) => (
         <FieldServiceCard service={service} key={index} />
       ))}

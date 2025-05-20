@@ -490,10 +490,11 @@
     "heading": "Core Features",
     "desc": "Discover the powerful tools that make Contractor+ the ultimate solution for your contracting business",
     "visualization": "visualization",
+    "featureBtn": "See All Features",
     "features": [
       "CRM",
       "Live Scheduling",
-      "In-Job Chat",
+      "Internal job chat",
       "Estimate Builder",
       "Property Profiles",
       "Big Chief AI"
@@ -501,28 +502,38 @@
     "featureContents": [
       {
         "title": "The first CRM that thinks like a contractor",
-        "mainDesc": "Most \"contractor CRMs\" are just contact pages with a few job links. ",
-        "description": "Contractor+ brings the full picture: timelines, call transcripts, AI sentiment tracking, and role-specific contacts."
+        "titleImg": "/images/webp/core-1.webp",
+        "mainDesc": "Most “contractor CRMs” are just contact pages with a few job links. Contractor+ brings the full picture: ",
+        "description": "timelines, call transcripts, AI sentiment tracking, and role-specific contacts.."
       },
       {
-        "title": "Real-time scheduling that works for contractors",
-        "description": "Manage crew schedules, equipment allocation, and job timelines in one place with automatic conflict detection and resolution suggestions."
+        "title": "Send the right tech to the right job based on proximity",
+        "titleImg": "/images/webp/core-2.webp",
+        "mainDesc": "See team availability and location in real-time to assign jobs faster and smarter. Drag, drop, and delegate",
+        "description": "based on who’s closest and free. No more calling around. "
       },
       {
-        "title": "Job-specific chat keeps everyone in the loop",
-        "description": "Dedicated channels for each project with file sharing, tagging, and searchable history to keep your team and clients connected."
+        "title": "Collaborate with your team on any job",
+        "titleImg": "/images/webp/core-3.webp",
+        "mainDesc": "Each job has its own built-in group chat, keeping the whole crew on the same page",
+        "description": "and minimizing texts, missed updates, or miscommunication."
       },
       {
-        "title": "Build accurate estimates in minutes",
-        "description": "Customizable templates, material calculators, and profit margin visualization help you create professional estimates that win jobs."
+        "title": "Quotes that practically write themselves",
+        "titleImg": "/images/webp/core-4.webp",
+        "mainDesc": "Build accurate, professional estimates fast with live local pricing from Lowe’s, Home Depot",
+        "description": "and more. Contractor+ pulls your line items, adds markup, and generates client-ready contracts in minutes."
       },
       {
-        "title": "Complete property profiles at your fingertips",
-        "description": "Store property details, photos, measurements, and service history for quick reference and better customer service."
+        "title": "The only CRM with property-specific profiles",
+        "titleImg": "/images/webp/core-5.webp",
+        "mainDesc": "Contractor+ is the only platform that lets you track the full history of every property you’ve ever serviced:",
+        "description": "communications,  photos & documents, invoices, even live cams."
       },
       {
-        "title": "AI that understands construction",
-        "description": "From analyzing job profitability to suggesting optimal crew assignments, Big Chief AI helps you work smarter, not harder."
+        "title": "The ultimate AI assistant for contractors",
+        "titleImg": "/images/webp/core-6.webp",
+        "description": "Every call and text gets answered. Every Lead is qualified and entered into your CRM, every Service Request is captured, every Estimate/Quote appointment is scheduled. Big Chief never sleeps.."
       }
     ]
   },

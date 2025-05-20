@@ -494,6 +494,7 @@
     "heading": "Características Principales",
     "desc": "Descubra las potentes herramientas que hacen de Contractor+ la solución definitiva para su negocio de contratación",
     "visualization": "visualización",
+    "featureBtn": "Ver Todas las Características",
     "features": [
       "CRM",
       "Programación en Vivo",
@@ -505,28 +506,39 @@
     "featureContents": [
       {
         "title": "El primer CRM que piensa como un contratista",
-        "mainDesc": "La mayoría de los \"CRM para contratistas\" son solo páginas de contacto con algunos enlaces de trabajo. ",
-        "description": "Contractor+ ofrece la imagen completa: cronogramas, transcripciones de llamadas, seguimiento de sentimientos por IA y contactos específicos según el rol."
+        "titleImg": "/images/webp/core-1.webp",
+        "mainDesc": "La mayoría de los \"CRM para contratistas\" son solo páginas de contacto con algunos enlaces de trabajo. Contractor+ ofrece la imagen completa:",
+        "description": "cronogramas, transcripciones de llamadas, seguimiento de sentimientos por IA y contactos específicos según el rol."
       },
       {
-        "title": "Programación en tiempo real que funciona para contratistas",
-        "description": "Gestione horarios de equipo, asignación de equipos y cronogramas de trabajos en un solo lugar con detección automática de conflictos y sugerencias de resolución."
+        "title": "Envíe al técnico adecuado al trabajo adecuado según la proximidad",
+        "titleImg": "/images/webp/core-2.webp",
+        "mainDesc": "Vea la disponibilidad y ubicación del equipo en tiempo real para asignar trabajos más rápido e inteligentemente. Arrastre, suelte y delegue",
+        "description": "basado en quién está más cerca y disponible. No más llamadas innecesarias."
       },
       {
-        "title": "Chat específico para trabajos mantiene a todos informados",
-        "description": "Canales dedicados para cada proyecto con compartición de archivos, etiquetado e historial consultable para mantener a su equipo y clientes conectados."
+        "title": "Colabore con su equipo en cualquier trabajo",
+        "titleImg": "/images/webp/core-3.webp",
+        "mainDesc": "Cada trabajo tiene su propio chat grupal incorporado, manteniendo a todo el equipo en la misma página",
+        "description": "y minimizando textos, actualizaciones perdidas o malentendidos."
       },
       {
-        "title": "Cree presupuestos precisos en minutos",
-        "description": "Plantillas personalizables, calculadoras de materiales y visualización de margen de beneficio le ayudan a crear presupuestos profesionales que ganan trabajos."
+        "title": "Presupuestos que prácticamente se escriben solos",
+        "titleImg": "/images/webp/core-4.webp",
+        "mainDesc": "Cree estimaciones precisas y profesionales rápidamente con precios locales en vivo de Lowe's, Home Depot",
+        "description": "y más. Contractor+ extrae sus artículos, agrega margen y genera contratos listos para clientes en minutos."
       },
       {
-        "title": "Perfiles completos de propiedades al alcance de su mano",
-        "description": "Almacene detalles de la propiedad, fotos, medidas e historial de servicio para referencia rápida y mejor servicio al cliente."
+        "title": "El único CRM con perfiles específicos de propiedades",
+        "titleImg": "/images/webp/core-5.webp",
+        "mainDesc": "Contractor+ es la única plataforma que le permite rastrear el historial completo de cada propiedad que ha atendido:",
+        "description": "comunicaciones, fotos y documentos, facturas, incluso cámaras en vivo."
       },
       {
-        "title": "IA que entiende la construcción",
-        "description": "Desde el análisis de rentabilidad del trabajo hasta la sugerencia de asignaciones óptimas de equipo, la IA Big Chief le ayuda a trabajar de forma más inteligente, no más dura."
+        "title": "El asistente de IA definitivo para contratistas",
+        "titleImg": "/images/webp/core-6.webp",
+        "mainDesc": "Big Chief IA nunca duerme, siempre trabajando para mejorar su negocio",
+        "description": "Cada llamada y texto recibe respuesta. Cada prospecto es calificado e ingresado en su CRM, cada solicitud de servicio es capturada, cada cita de presupuesto es programada."
       }
     ]
   },

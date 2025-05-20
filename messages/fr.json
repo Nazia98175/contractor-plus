@@ -493,6 +493,7 @@
     "heading": "Fonctionnalités Principales",
     "desc": "Découvrez les outils puissants qui font de Contractor+ la solution ultime pour votre entreprise de contractation",
     "visualization": "visualisation",
+    "featureBtn": "Voir Toutes les Fonctionnalités",
     "features": [
       "CRM",
       "Planification en Direct",
@@ -504,28 +505,39 @@
     "featureContents": [
       {
         "title": "Le premier CRM qui pense comme un entrepreneur",
-        "mainDesc": "La plupart des \"CRM pour entrepreneurs\" ne sont que des pages de contacts avec quelques liens de travaux. ",
-        "description": "Contractor+ offre une vision complète : chronologies, transcriptions d'appels, suivi des sentiments par IA et contacts spécifiques selon les rôles."
+        "titleImg": "/images/webp/core-1.webp",
+        "mainDesc": "La plupart des \"CRM pour entrepreneurs\" ne sont que des pages de contacts avec quelques liens de travaux. Contractor+ offre une vision complète:",
+        "description": "chronologies, transcriptions d'appels, suivi des sentiments par IA et contacts spécifiques selon les rôles."
       },
       {
-        "title": "Planification en temps réel adaptée aux entrepreneurs",
-        "description": "Gérez les horaires des équipes, l'allocation d'équipement et les délais des travaux en un seul endroit avec détection automatique des conflits et suggestions de résolution."
+        "title": "Envoyez le bon technicien au bon chantier selon la proximité",
+        "titleImg": "/images/webp/core-2.webp",
+        "mainDesc": "Visualisez la disponibilité et l'emplacement de l'équipe en temps réel pour attribuer les travaux plus rapidement et intelligemment. Glissez, déposez et déléguez",
+        "description": "en fonction de qui est le plus proche et disponible. Plus besoin d'appeler à droite et à gauche."
       },
       {
-        "title": "Chat spécifique aux travaux pour tenir tout le monde informé",
-        "description": "Canaux dédiés pour chaque projet avec partage de fichiers, étiquetage et historique consultable pour maintenir vos équipes et clients connectés."
+        "title": "Collaborez avec votre équipe sur n'importe quel chantier",
+        "titleImg": "/images/webp/core-3.webp",
+        "mainDesc": "Chaque travail dispose de son propre chat de groupe intégré, gardant toute l'équipe sur la même page",
+        "description": "et minimisant les textos, les mises à jour manquées ou les malentendus."
       },
       {
-        "title": "Créez des devis précis en quelques minutes",
-        "description": "Des modèles personnalisables, des calculateurs de matériaux et une visualisation de la marge bénéficiaire vous aident à créer des devis professionnels qui remportent des contrats."
+        "title": "Des devis qui s'écrivent pratiquement tout seuls",
+        "titleImg": "/images/webp/core-4.webp",
+        "mainDesc": "Créez rapidement des estimations précises et professionnelles avec les prix locaux en direct de Lowe's, Home Depot",
+        "description": "et plus encore. Contractor+ extrait vos articles, ajoute une marge et génère des contrats prêts pour les clients en quelques minutes."
       },
       {
-        "title": "Profils immobiliers complets à portée de main",
-        "description": "Stockez les détails des propriétés, photos, mesures et historique de service pour une référence rapide et un meilleur service client."
+        "title": "Le seul CRM avec des profils spécifiques aux propriétés",
+        "titleImg": "/images/webp/core-5.webp",
+        "mainDesc": "Contractor+ est la seule plateforme qui vous permet de suivre l'historique complet de chaque propriété que vous avez déjà entretenue:",
+        "description": "communications, photos et documents, factures, et même caméras en direct."
       },
       {
-        "title": "Une IA qui comprend la construction",
-        "description": "De l'analyse de la rentabilité des travaux à la suggestion d'affectations optimales d'équipes, Big Chief IA vous aide à travailler plus intelligemment, pas plus dur."
+        "title": "L'assistant IA ultime pour les entrepreneurs",
+        "titleImg": "/images/webp/core-6.webp",
+        "mainDesc": "Big Chief IA ne dort jamais, travaillant constamment pour améliorer votre entreprise",
+        "description": "Chaque appel et message reçoit une réponse. Chaque prospect est qualifié et entré dans votre CRM, chaque demande de service est capturée, chaque rendez-vous d'estimation est programmé."
       }
     ]
   },

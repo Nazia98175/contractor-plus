@@ -1821,3 +1821,53 @@ export const FinallyMobileBg = ({ className = "" }) => (
     </defs>
   </svg>
 );
+export const BlurIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 611 245"
+    fill="none"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <foreignObject x="-127" y="-182" width="866" height="609">
+      <div
+        style={{
+          backdropFilter: "blur(4.05px)",
+          height: "100%",
+          width: "100%",
+        }}
+      ></div>
+    </foreignObject>
+    <g filter="url(#filter0_f_783_13277)" data-figma-bg-blur-radius="8.1">
+      <path
+        d="M631.5 122.5C631.5 167.483 604.054 215.326 544.999 254.567C486.364 293.53 402.032 319.5 306 319.5C209.968 319.5 125.636 293.53 67.001 254.567C7.94641 215.326 -19.5 167.483 -19.5 122.5C-19.5 77.517 7.94641 29.6739 67.001 -9.56741C125.636 -48.5302 209.968 -74.5 306 -74.5C402.032 -74.5 486.364 -48.5301 544.999 -9.56739C604.054 29.6739 631.5 77.517 631.5 122.5Z"
+        stroke="#FAFAFA"
+        strokeWidth="115"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_783_13277"
+        x="-127"
+        y="-182"
+        width="866"
+        height="609"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="25"
+          result="effect1_foregroundBlur_783_13277"
+        />
+      </filter>
+    </defs>
+  </svg>
+);

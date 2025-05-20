@@ -6,7 +6,7 @@ const CoreFeatures = () => {
   const t = useTranslations("corefeature");
   return (
     <section className="bg-white relative z-20">
-      <div className="max-w-[991px] mx-auto px-2 pt-12">
+      <div className="max-w-[1000px] mx-auto px-2 pt-12">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="sub-heading text-lightBlack font-semibold text-center md:text-start w-fit">
             {t("heading")}

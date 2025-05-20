@@ -9,7 +9,8 @@ type Props = {
   onFeatureClick: (index: number) => void;
   featuresRef: React.RefObject<HTMLDivElement | null>;
   indicatorRef: React.RefObject<HTMLButtonElement | null>;
-  mobileIndicatorRef: React.RefObject<HTMLButtonElement | null>;
+
+  isMobile?: boolean;
 };
 
 const FeatureNavigation = ({
@@ -19,11 +20,14 @@ const FeatureNavigation = ({
   onFeatureClick,
   indicatorRef,
   featuresRef,
-  mobileIndicatorRef,
+
+  isMobile = false,
 }: Props) => {
   return (
     <div
-      className="flex gap-1.5 lg:self-start z-20 lg:w-fit"
+      className={`flex gap-1.5 ${
+        isMobile ? "w-full" : "lg:self-start"
+      } z-20 lg:w-fit`}
       ref={featuresRef}
       style={{ overflow: "visible" }}
     >
@@ -34,21 +38,33 @@ const FeatureNavigation = ({
         ></button>
         <Pathbg />
       </div>
-      <div className="flex flex-row lg:flex-col gap-[22px] font-jakarta lg:overflow-visible no-scrollbar overflow-auto whitespace-nowrap relative ">
+      <div
+        className={`
+        flex flex-row lg:flex-col gap-[22px] font-jakarta no-scrollbar
+        ${
+          isMobile
+            ? "w-full justify-between overflow-x-auto py-2"
+            : "lg:overflow-visible no-scrollbar overflow-auto"
+        } 
+        whitespace-nowrap relative`}
+      >
+        {/* Feature buttons */}
         {features.map((feature, index) => (
           <button
-            // onClick={() => onFeatureClick(index)}
+            onClick={() => onFeatureClick(index)}
             key={feature}
-            className={`feature-btn cursor-default ${
+            className={`feature-btn ${isMobile ? "text-sm" : ""} ${
               index === activeFeature
-                ? " text-winterWay font-bold"
+                ? "text-winterWay font-bold"
                 : "text-secondary font-normal"
             }`}
           >
             {feature}
           </button>
         ))}
-        <button className="flex group justify-between feature-btn w-full text-lightishBlue gap-1 items-center cursor-pointer">
+
+        {/* External link button */}
+        <button className="flex group justify-between feature-btn whitespace-nowrap w-full text-lightishBlue gap-1 items-center cursor-pointer">
           {featureBtn}
           <span className="w-5 flex justify-center items-center group-hover:-translate-y-1 duration-300">
             <ExternalLink />

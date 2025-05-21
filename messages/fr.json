@@ -464,7 +464,191 @@
       "image": "/images/webp/blog-right-side.webp"
     }
   },
+  "fieldService": {
+    "service": {
+      "customerManagement": {
+        "heading": "Gestion des Clients",
+        "features": [
+          {
+            "title": "Profils de contact + historique des communications",
+            "description": "Voir chaque appel, SMS et email lié à chaque contact, tout au même endroit."
+          },
+          {
+            "title": "Profils de propriétés",
+            "description": "Comme pour les clients, chaque propriété dispose de son propre profil avec l’historique complet des travaux, fichiers et chronologie des communications."
+          },
+          {
+            "title": "Étiquetage des contacts basé sur le rôle",
+            "description": "Que ce soit propriétaire, locataire ou gestionnaire immobilier, étiquetez les contacts selon leur rôle dans un profil."
+          },
+          {
+            "title": "Accès au portail client",
+            "description": "Offrez à vos clients un portail propre et professionnel pour voir devis, factures et mises à jour de projet."
+          },
+          {
+            "title": "Vue chronologique pour chaque client et propriété",
+            "description": "Faites défiler l’historique complet de chaque interaction, fichier et mise à jour liée à chaque personne ou lieu."
+          },
+          {
+            "title": "Contrats, signature électronique et paiements",
+            "description": "Les devis deviennent contrats, les contrats sont signés, et les factures payées—tout dans un même flux."
+          },
+          {
+            "title": "Suivis programmés",
+            "description": "Les affaires vous occupent. Les suivis programmés garantissent que rien ne passe entre les mailles du filet."
+          }
+        ],
+        "testimonial": {
+          "user": "Suivi terrain excellent !",
+          "username": "John Doe"
+        }
+      },
 
+      "jobManagement": {
+        "heading": "Gestion des Travaux",
+        "features": [
+          {
+            "title": "Suivi des travaux basé sur la propriété",
+            "description": "Notre logiciel CRM pour services sur le terrain a des profils spécifiques par propriété pour gérer le travail par adresse, pas seulement par client."
+          },
+          {
+            "title": "Attribution des tâches et suivi du statut",
+            "description": "Faites avancer les travaux en attribuant des tâches et en voyant instantanément ce qui est fait ou non."
+          },
+          {
+            "title": "Notes et photos du travail",
+            "description": "Capturez les conditions du site, besoins en matériaux et progrès quotidien avec des notes et images dans votre CRM de services."
+          },
+          {
+            "title": "Créateur de devis avec tarification en direct",
+            "description": "Créez rapidement des devis précis en intégrant les prix en direct de Lowe’s et Home Depot."
+          },
+          {
+            "title": "Génération de contrats basée sur les détails du travail",
+            "description": "Une fois le devis verrouillé, le contrat s’écrit automatiquement avec les données du travail déjà saisies."
+          },
+          {
+            "title": "Horloge et journaux de kilométrage",
+            "description": "Les journaux intégrés gardent votre paie et remboursements propres et précis."
+          },
+          {
+            "title": "Chat interne pour les travaux",
+            "description": "Regroupez tous les intervenants dans un espace dédié à la communication."
+          },
+          {
+            "title": "Vue diagramme de Gantt",
+            "description": "Planifiez la chronologie complète des travaux et ajustez les calendriers pour que rien ne déraille."
+          }
+        ]
+      },
+
+      "teamManagement": {
+        "heading": "Gestion d’Équipe",
+        "features": [
+          {
+            "title": "Bascule d’espace de travail (pour multi-sites)",
+            "description": "Gérez plusieurs sites sous un même toit en gardant tout séparé mais connecté."
+          },
+          {
+            "title": "Vue en direct de l’équipe avec suivi GPS",
+            "description": "Voyez où se trouve votre équipe en temps réel pour prendre des décisions plus rapides."
+          },
+          {
+            "title": "Planification des travaux par glisser-déposer",
+            "description": "Déplacez les tâches selon les besoins sans refaire toute la journée."
+          },
+          {
+            "title": "Attribution des travaux selon disponibilité",
+            "description": "Envoyez le bon technicien selon qui est proche et disponible."
+          },
+          {
+            "title": "Propriété des tâches et responsabilité",
+            "description": "Rendez clair qui fait quoi et quand c’est dû, pour que tout le monde soit responsable."
+          },
+          {
+            "title": "Communication par chat pour les travaux",
+            "description": "Chaque travail a son propre chat pour que votre équipe n’ait pas à chercher dans les SMS."
+          },
+          {
+            "title": "Support de pointage entrée/sortie sur mobile",
+            "description": "Enfin, un CRM pour les services sur le terrain qui fonctionne bien sur mobile. Permettez à votre équipe de pointer facilement depuis l’app."
+          },
+          {
+            "title": "Journalisation du kilométrage et suivi du temps",
+            "description": "Enregistrez automatiquement les kilomètres et les heures et associez-les au bon travail."
+          }
+        ]
+      },
+
+      "communication": {
+        "heading": "Communication",
+        "features": [
+          {
+            "title": "Système téléphonique intégré avec IVR et routage",
+            "description": "Contractor+ inclut appels et IVR intégrés. Plus besoin de solutions téléphoniques séparées."
+          },
+          {
+            "title": "Appel/SMS/email en 1 clic depuis le CRM",
+            "description": "Appelez, envoyez des SMS ou emails directement depuis le profil de n’importe qui dans votre système."
+          },
+          {
+            "title": "Transcription et enregistrement d’appels par IA",
+            "description": "Chaque appel est enregistré et transcrit pour ne rien manquer ou mal entendre."
+          },
+          {
+            "title": "Analyse de sentiment sur les appels",
+            "description": "L’IA détecte le ton pour savoir comment s’est réellement passée la conversation."
+          },
+          {
+            "title": "Messages programmés et suivis",
+            "description": "N’oubliez jamais de faire un suivi. Programmez-le et continuez."
+          },
+          {
+            "title": "Chats spécifiques aux travaux (usage interne équipe)",
+            "description": "Discutez avec votre équipe à propos d’un travail sans perdre le contexte ni changer d’app."
+          },
+          {
+            "title": "Enregistrement et lecture de boîte vocale",
+            "description": "Écoutez n’importe quel message vocal sans quitter le CRM."
+          },
+          {
+            "title": "Chronologie des communications",
+            "description": "Voyez tous les appels, SMS et emails d’un client ou d’une propriété dans un fil défilable."
+          }
+        ]
+      },
+
+      "leadManagement": {
+        "heading": "Gestion des Leads",
+        "features": [
+          {
+            "title": "Tableau Kanban des opportunités (suivi des affaires)",
+            "description": "Suivez visuellement la progression des affaires avec un tableau simple qui montre où en est chaque lead."
+          },
+          {
+            "title": "Étapes personnalisées du pipeline",
+            "description": "Définissez vos propres étapes pour correspondre à votre processus de vente."
+          },
+          {
+            "title": "Profils de leads avec filtre de statut",
+            "description": "Restez concentré en filtrant les leads par statut, urgence ou moment du suivi."
+          },
+          {
+            "title": "Planification des suivis",
+            "description": "Programmez des rappels pour ne jamais oublier ni perdre un lead."
+          },
+          {
+            "title": "Leads basés sur la propriété",
+            "description": "Suivez les nouvelles opportunités par adresse pour deviser avec tout le contexte."
+          },
+          {
+            "title": "À venir : Automatisation des workflows",
+            "description": "L’automatisation arrive pour vous aider à réengager les leads froids sans travail manuel."
+          }
+        ]
+      }
+    }
+  },
   "reviews": {
     "heading": "Laissez nos clients parler pour nous...",
     "excellent": "Excellent",

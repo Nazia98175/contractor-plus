@@ -33,9 +33,10 @@ const FieldServiceCard: React.FC<Props> = ({ service }) => {
             ))}
           </div>
         </div>
-        {(service.user || service.username) && (
+        {service.testimonial && (
           <p className="p-3 text-secondary text-[10px] sm:text-xs lg:text-sm font-montserrat font-medium">
-            “{service.user}” <br /> <br /> – {service.username}
+            “{service.testimonial.user}” <br /> <br /> –{" "}
+            {service.testimonial.username}
           </p>
         )}
       </div>

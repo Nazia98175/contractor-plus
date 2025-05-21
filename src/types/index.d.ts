@@ -8,11 +8,15 @@ export interface Feature {
   description: string;
 }
 
+export interface Testimonial {
+  user: string;
+  username: string;
+}
+
 export interface ServiceData {
   heading: string;
   features: Feature[];
-  user?: string;
-  username?: string;
+  testimonial?: Testimonial;
 }
 
 export type ContractorPlatformsProps = {

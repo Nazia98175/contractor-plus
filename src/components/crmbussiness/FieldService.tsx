@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import FieldServiceCard from "./FieldServiceCard";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { servicedata } from "../common/Helper";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +12,24 @@ const FieldService: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  console.log("FieldService");
+  // Get translated data as array
+  const t = useTranslations();
+
+  const fieldServiceRaw = t.raw("fieldService") as {
+    service: Record<
+      string,
+      {
+        heading: string;
+        features: { title: string; description: string }[];
+        testimonial?: { user: string; username: string };
+      }
+    >;
+  };
+
+  // Convert object to array of services
+  const fieldServiceData = Object.values(fieldServiceRaw.service);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -19,7 +37,7 @@ const FieldService: React.FC = () => {
     const stackOffset = -8;
     // Improved height calculation - only multiply by 1 instead of 3
     const totalHeight = `${
-      100 + (servicedata.length - 1) * Math.abs(stackOffset)
+      100 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
     }vh`;
 
     if (sectionRef.current) {
@@ -93,12 +111,12 @@ const FieldService: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, servicedata.length);
+    cardRefs.current = cardRefs.current.slice(0, fieldServiceData.length);
   }, []);
 
   return (
     <section
-      className="relative bg-kuroiBlack z-20 py-10 px-2 border border-white"
+      className="relative bg-kuroiBlack z-20 py-10 px-2"
       ref={containerRef}
     >
       {/* Reduced height for blur element */}
@@ -107,11 +125,11 @@ const FieldService: React.FC = () => {
       <div className="absolute bg-bottom w-full h-[80px] left-0 bottom-0 rotate-180" />
 
       <div ref={sectionRef} className="relative">
-        {servicedata.map((service, index) => (
+        {fieldServiceData.map((service, index) => (
           <div
             key={index}
             className={`absolute top-0 max-w-[1272px]  mx-auto left-1/2 -translate-x-1/2  w-full h-full field-service-card  ${
-              index === servicedata.length - 1 ? "pb-0" : ""
+              index === fieldServiceData.length - 1 ? "pb-0" : ""
             }`}
             ref={(el) => {
               cardRefs.current[index] = el;

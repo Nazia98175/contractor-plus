@@ -19,7 +19,7 @@ const FieldService: React.FC = () => {
     const stackOffset = -8;
     // Improved height calculation - only multiply by 1 instead of 3
     const totalHeight = `${
-      85 + (servicedata.length - 1) * Math.abs(stackOffset)
+      100 + (servicedata.length - 1) * Math.abs(stackOffset)
     }vh`;
 
     if (sectionRef.current) {
@@ -30,13 +30,12 @@ const FieldService: React.FC = () => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 20%",
+          start: "top 25%",
           // Changed end position to better match content
           end: "bottom center",
           scrub: 1,
           pin: true,
           anticipatePin: 1,
-          markers: true,
         },
       });
 

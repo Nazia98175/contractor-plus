@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import "swiper/css/effect-coverflow";
@@ -83,6 +83,98 @@ const ContractorIndustrySlider: React.FC = () => {
     {
       title: "Pleasure",
       image: "/images/webp/circular-slide-10.webp",
+    },
+    {
+      title: "General Contractor",
+      image: "/images/webp/circular-slide-11.webp",
+    },
+    {
+      title: "Plumbing",
+      image: "/images/webp/circular-slide-12.webp",
+    },
+    {
+      title: "General Contractor",
+      image: "/images/webp/circular-slide-13.webp",
+    },
+    {
+      title: "Plumbing",
+      image: "/images/webp/circular-slide-14.webp",
+    },
+    {
+      title: "The Penguin",
+      image: "/images/webp/circular-slide-15.webp",
+    },
+    {
+      title: "Strange Darling",
+      image: "/images/webp/circular-slide-16.webp",
+    },
+    {
+      title: "Re:ZERO",
+      image: "/images/webp/circular-slide-17.webp",
+    },
+    {
+      title: "Rebel Ridge",
+      image: "/images/webp/circular-slide-18.webp",
+    },
+    {
+      title: "Outlaw",
+      image: "/images/webp/circular-slide-19.webp",
+    },
+    {
+      title: "Pleasure",
+      image: "/images/webp/circular-slide-20.webp",
+    },
+    {
+      title: "Joker: Folie à Deux",
+      image: "/images/webp/circular-slide-21.webp",
+    },
+    {
+      title: "The Penguin",
+      image: "/images/webp/circular-slide-22.webp",
+    },
+    {
+      title: "Strange Darling",
+      image: "/images/webp/circular-slide-23.webp",
+    },
+    {
+      title: "Re:ZERO",
+      image: "/images/webp/circular-slide-24.webp",
+    },
+    {
+      title: "Rebel Ridge",
+      image: "/images/webp/circular-slide-25.webp",
+    },
+    {
+      title: "Pleasure",
+      image: "/images/webp/circular-slide-27.webp",
+    },
+    {
+      title: "Pleasure",
+      image: "/images/webp/circular-slide-28.webp",
+    },
+    {
+      title: "Joker: Folie à Deux",
+      image: "/images/webp/circular-slide-29.webp",
+    },
+    {
+      title: "The Penguin",
+      image: "/images/webp/circular-slide-30.webp",
+    },
+    {
+      title: "Strange Darling",
+      image: "/images/webp/circular-slide-31.webp",
+    },
+    {
+      title: "Re:ZERO",
+      image: "/images/webp/circular-slide-32.webp",
+    },
+    {
+      title: "Rebel Ridge",
+      image: "/images/webp/circular-slide-33.webp",
+    },
+    {
+      title: "Pleasure",
+      image: "/images/webp/circular-slide-34.webp",
     },
   ];
 

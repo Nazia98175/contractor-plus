@@ -8,7 +8,7 @@ interface Props {
 
 const FieldServiceCard: React.FC<Props> = ({ service }) => {
   return (
-    <article className="field-service-card max-h-[491px] h-full overflow-auto flex lg:flex-row flex-col justify-between text-white p-2.5 lg:p-8 max-w-[1272px] mx-auto rounded-[14px] xl:rouded-[40px] no-scrollbar relative">
+    <article className=" h-full  flex lg:flex-row flex-col justify-between text-white p-2.5 lg:p-8 max-w-[1272px] mx-auto rounded-[14px] xl:rouded-[40px] no-scrollbar relative">
       <div className="xl:max-w-[650px] w-full">
         <div className="flex flex-col gap-4 sm:gap-5 lg:p-[26px]">
           <h4 className="text-base md:text-2xl xl:text-[26px] font-semibold font-montserrat lg:font-jakarta py-0.5 px-2.5">

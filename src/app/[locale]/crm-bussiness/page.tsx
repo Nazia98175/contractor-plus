@@ -2,10 +2,10 @@ import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import { FooterRedLineIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
-import Hero from "@/components/crmbussiness/Hero";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import OnScroll from "@/components/crmbussiness/OnScroll";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
@@ -20,7 +20,7 @@ const CrmBussinessPage = () => {
     <main>
       <Header />
       <div className="black-bg">
-        <Hero />
+        <CrmHero />
         <TrustedService />
         <SwitchingTool />
       </div>

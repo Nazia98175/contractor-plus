@@ -122,7 +122,7 @@ const SwitchingTool = () => {
           ref={(el) => {
             cardRefs.current[0] = el;
           }}
-          className="border-[#45454A] rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
+          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
         >
           <div className="flex justify-center w-full">
             <Image
@@ -145,7 +145,7 @@ const SwitchingTool = () => {
           ref={(el) => {
             cardRefs.current[1] = el;
           }}
-          className="border-[#45454A] rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
+          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
         >
           <div className="flex justify-center w-full">
             <Image
@@ -166,7 +166,7 @@ const SwitchingTool = () => {
           ref={(el) => {
             cardRefs.current[2] = el;
           }}
-          className="border-[#45454A] rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
+          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
         >
           <div className="flex justify-center w-full">
             <Image

@@ -36,7 +36,9 @@ const TeamsUsingContractor = () => {
         ref={ref}
         className="flex flex-col items-center justify-center main-container"
       >
-        <h2 className="crm-gradient section-heading">{t("heading")}</h2>
+        <h2 className="crm-gradient section-heading !font-black lg:!font-semibold">
+          {t("heading")}
+        </h2>
         <p className="paragraph">{t("desc")}</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full">
@@ -46,7 +48,7 @@ const TeamsUsingContractor = () => {
               className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-c2 cursor-pointer"
             >
               <span className="mb-1">{icons[index % icons.length]}</span>
-              <h3 className="text-2xl font-bold text-winterWay font-jakarta">
+              <h3 className="text-[30px] leading-[38px] font-bold text-winterWay font-jakarta">
                 {inView && (
                   <CountUp
                     start={item.start}
@@ -64,7 +66,7 @@ const TeamsUsingContractor = () => {
                 <span className="inline-block px-2">{item.title}</span>
               </h3>
 
-              <p className="text-lg font-medium tracking-wide text-secondary font-montserrat">
+              <p className="text-lg leading-[22px] font-medium tracking-wide text-secondary font-montserrat">
                 {item.description}
               </p>
             </article>

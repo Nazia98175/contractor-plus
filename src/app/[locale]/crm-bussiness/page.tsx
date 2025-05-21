@@ -32,7 +32,7 @@ const CrmBussinessPage = () => {
       <ThousandsReviews />
       <div className="relative">
         {/* Cloud Layer 1 */}
-        <div className="absolute -top-[30%] left-0 hidden lg:flex w-full h-[267px]  z-20 pointer-events-none">
+        <div className="absolute -top-[30%] left-0 hidden lg:flex w-full h-[267px] z-10 pointer-events-none">
           <div className="absolute w-full h-full animate-cloud-layer-1 z-10 opacity-100">
             <img
               src="/images/webp/claud-2.webp"

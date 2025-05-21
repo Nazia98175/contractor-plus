@@ -24,13 +24,13 @@ const TrustedService = () => {
   }));
 
   return (
-    <section className="pt-10 pb-16 overflow-hidden relative">
-      <h3 className="section-heading gradient-2 text-center max-w-[80%] w-fit mx-auto px-3">
+    <section className="pt-10 pb-16 overflow-hidden relative ">
+      <h3 className="section-heading gradient-2 text-center max-w-[90%] w-fit mx-auto px-3">
         Trusted by over 50,000 build and service contractors
       </h3>
       <div className="relative h-fit ">
-        <div className="absolute h-full rounded bottom-0 border left-[-6%] w-[200px] md:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        <div className="absolute h-full right-[-6%] w-[200px] md:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="absolute h-full rounded bottom-0 border left-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="absolute h-full right-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
         <div className="md:pt-14 w-full ">

@@ -45,7 +45,6 @@ const SwitchingTool = () => {
         start: "top 20%", // means 15% from top of screen
         end: "bottom 85%",
         scrub: 1,
-        markers: true, // for debugging
       },
     });
 

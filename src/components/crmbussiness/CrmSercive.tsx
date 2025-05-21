@@ -1,6 +1,10 @@
 "use client";
 import React, { useState, FormEvent, ChangeEvent } from "react";
-import { CheckIcon } from "../common/Icons";
+import {
+  CheckIcon,
+  FooterRedLineIcon,
+  SliderRedLineIcon,
+} from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
@@ -27,7 +31,10 @@ const CrmSercive: React.FC = () => {
   };
 
   return (
-    <div className=" px-2">
+    <div className="px-2 relative">
+      <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
+        <FooterRedLineIcon />
+      </span>
       <div className="py-[75px]">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold gradient-text font-jakarta">

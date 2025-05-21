@@ -9,7 +9,7 @@ const Hero = () => {
         <RedClipIcon />
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
-      <div className="max-w-[1050px] w-full mx-auto md:pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px] px-2">
+      <div className="max-w-[1050px] w-full mx-auto md:pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px]">
         <div className="pt-10 max-w-[900px] mx-auto block px-3 md:hidden relative">
           <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
           <img
@@ -18,7 +18,7 @@ const Hero = () => {
             alt="crm hero"
           />
         </div>
-        <div>
+        <div className="px-2">
           <h2 className="gradient-2 capitalize w-fit main-heading text-start sm:text-center">
             A{" "}
             <span className="bg-white text-transparent bg-clip-text">
@@ -33,7 +33,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex flex-wrap-reverse justify-center items-center gap-5 pt-5">
-          <div className="flex gap-4 pb-5 md:pb-0 bg-black w-full sm:w-fit justify-center">
+          <div className="flex gap-4 pb-5 md:pb-0 bg-black md:bg-transparent w-full sm:w-fit justify-center">
             <div className="flex flex-col-reverse sm:flex-col gap-1">
               <img src="/images/svg/GooglePlay-Icon.svg" alt="google icon" />
               <div className="flex justify-center items-center">
@@ -71,7 +71,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="w-full sm:w-fit">
+          <div className="w-full sm:w-fit px-2 md:px-0">
             <button className="bg-red-linear h-10 primary-btn gap-2">
               <span className="lg:block hidden">Create Free Account</span>
               <span className="lg:hidden block">Download App</span>

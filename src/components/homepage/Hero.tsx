@@ -20,14 +20,6 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
 
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
-      {/* <div className="absolute inset-0 w-full z-20 opacity-[0.3]">
-        <Aurora
-          colorStops={["#000000", "#EE1E25", "#FFFFFF"]}
-          blend={0.2}
-          amplitude={0.8}
-          speed={0.3}
-        />
-      </div> */}
       <Image
         width={769}
         height={800}
@@ -47,7 +39,6 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         alt="Red Circle For designing"
         className="absolute top-0 left-0 lg:hidden block h-full z-20 pointer-events-none object-cover w-full"
       />
-
       <div className="flex items-end main-container z-20 relative lg:pt-[140px] pt-[269px] xl:pb-[196px] lg:pb-[150px] md:pb-[100px] pb-9">
         <div className="lg:max-w-[616px] w-full sm:space-y-6 relative z-30">
           <TextAnimation animateOnScroll={false} delay={0.3}>

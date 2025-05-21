@@ -4,11 +4,12 @@ import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden md:overflow-visible">
+      <div className="bg-[#0C0D11] blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
-      <div className="max-w-[1050px] w-full mx-auto md:pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px]">
+      <div className="max-w-[1050px] w-full mx-auto md:pb-10 pt-[46px] sm:pt-[139px] md:pt-[178px] px-2">
         <div className="pt-10 max-w-[900px] mx-auto block px-3 md:hidden relative">
           <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
           <img

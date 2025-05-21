@@ -190,7 +190,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 2,
     review: "ourReviews.review",
-    videolink: "https://app.slack.com/client/T08F4GG863G/C08RH3X22G1",
+    videolink: "https://www.youtube.com/watch?v=8ts4jsNZtgM",
     isModal: true,
   },
   {

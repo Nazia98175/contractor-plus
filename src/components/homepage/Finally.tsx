@@ -12,7 +12,6 @@ const Finally = () => {
     <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white  overflow-hidden">
       <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
       <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
-      {/* <FinallyDesktopBg className="absolute w-[100%] h-full left-0 md:-top-[25%] md:block hidden" /> */}
       <Image
         className="absolute w-[100%] h-full left-0 -top-[35%] md:-top-[20%]  object-cover"
         src={"/images/webp/finally-desktop-bg.webp"}
@@ -20,7 +19,6 @@ const Finally = () => {
         width={1920}
         height={1920}
       />
-      {/* <FinallyMobileBg className="absolute w-[100%] h-full left-0 -top-[40%] block md:hidden" /> */}
       <div className="space-y-4 z-30 relative ">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center gradient-text z-40 relative">
@@ -50,8 +48,6 @@ const Finally = () => {
           ))}
         </CardReveal>
         <div className="flex w-full lg:flex-row flex-col-reverse justify-center gap-3 lg:gap-8 mt-14 sm:mt-16 relative px-3 lg:px-0 pb-8 lg:pb-0">
-          {/* <div className="w-[120%] h-[70px] bg-white blur-[8px] absolute -left-[2%] md:block hidden -bottom-[6%] z-10"></div> */}
-
           {/* Cloud Layer 1 */}
           <div className="absolute bottom-0 left-0 hidden lg:flex w-full h-[160px] z-20 pointer-events-none">
             <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">

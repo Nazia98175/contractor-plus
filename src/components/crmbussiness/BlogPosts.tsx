@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BlogBtnIcon } from "../common/Icons";
+import SliderLayout from "../common/SliderLayout";
 
 const BlogPosts = () => {
   const blogData = [
@@ -102,6 +103,44 @@ const BlogPosts = () => {
             <BlogBtnIcon />
           </button>
         </div>
+      </div>
+      <div className="lg:hidden">
+        <SliderLayout
+          autoplay
+          pagination
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 12 },
+            520: { slidesPerView: 1.5, spaceBetween: 12 },
+            640: { slidesPerView: 2, spaceBetween: 14 },
+            768: { slidesPerView: 2.6, spaceBetween: 16 },
+          }}
+        >
+          {blogData.map((blog) => (
+            <article
+              key={blog.id}
+              className="flex flex-col sm:flex-row items-start gap-4 rounded-xl p-2 z-20 relative w-full bg-blackRussian"
+            >
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                width={170}
+                height={170}
+                className="rounded-md sm:max-w-[170px] w-full"
+              />
+              <div className="flex-1 text-sm">
+                <p className="text-[10px] font-medium font-jakarta text-secondary">
+                  {blog.category} | {blog.date}
+                </p>
+                <h3 className="text-base font-jakarta font-medium text-white">
+                  {blog.title}
+                </h3>
+                <p className="truncate text-xs text-wallStreet max-w-[240px] pt-1">
+                  {blog.descrition}
+                </p>
+              </div>
+            </article>
+          ))}
+        </SliderLayout>
       </div>
     </section>
   );

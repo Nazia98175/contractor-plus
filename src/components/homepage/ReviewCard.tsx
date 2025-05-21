@@ -54,11 +54,6 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
               <p className="text-xs font-medium text-[#ADB1B5]">
                 {review.userRole}
               </p>
-              {/* <img
-                className="max-w-[52px]"
-                src={review.companyIcon}
-                alt="company logo"
-              /> */}
             </div>
           </div>
           <div className="flex items-center gap-1">

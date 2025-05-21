@@ -36,7 +36,7 @@ const TeamsUsingContractor = () => {
         ref={ref}
         className="flex flex-col items-center justify-center main-container"
       >
-        <h2 className="crm-gradient section-heading !font-black lg:!font-semibold">
+        <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold">
           {t("heading")}
         </h2>
         <p className="paragraph">{t("desc")}</p>

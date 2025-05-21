@@ -24,7 +24,7 @@ const TrustedService = () => {
   }));
 
   return (
-    <section className="pt-10 pb-16 overflow-hidden relative ">
+    <section className="pt-10 pb-11 overflow-hidden relative ">
       <h3 className="section-heading gradient-2 text-center max-w-[90%] w-fit mx-auto px-3">
         Trusted by over 50,000 build and service contractors
       </h3>
@@ -33,7 +33,7 @@ const TrustedService = () => {
         <div className="absolute h-full right-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
-        <div className="md:pt-14 w-full ">
+        <div className="md:pt-2 w-full">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {translatedReviews.map((review) => (
               <TrustedServiceCard

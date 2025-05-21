@@ -95,7 +95,7 @@ const SwitchingTool = () => {
   }, []);
 
   return (
-    <section className="px-2 relative py-20" ref={sectionRef}>
+    <section className="px-2 relative pt-11" ref={sectionRef}>
       {/* Backgrounds */}
       <div className="bg-reverse-black h-[296px] w-full hidden md:block top-0 left-0 absolute z-[-5]" />
       <img
@@ -110,7 +110,7 @@ const SwitchingTool = () => {
       />
 
       {/* Heading */}
-      <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary pb-14">
+      <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
         If you're switching between tools outside of your field service CRM,
         it's not good enough
       </h3>

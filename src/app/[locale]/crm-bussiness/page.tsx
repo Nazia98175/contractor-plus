@@ -7,7 +7,6 @@ import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
-import OnScroll from "@/components/crmbussiness/OnScroll";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
@@ -24,7 +23,6 @@ const CrmBussinessPage = () => {
         <TrustedService />
         <SwitchingTool />
       </div>
-      <OnScroll />
       <FieldService />
       <TrackProperties />
       <KindAdorable />

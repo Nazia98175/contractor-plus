@@ -116,7 +116,7 @@ const FieldService: React.FC = () => {
 
   return (
     <section
-      className="relative bg-kuroiBlack z-20 py-10 px-2 border border-white"
+      className="relative bg-kuroiBlack z-20 py-10 px-2"
       ref={containerRef}
     >
       {/* Reduced height for blur element */}

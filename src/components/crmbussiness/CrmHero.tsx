@@ -1,7 +1,6 @@
-import React from "react";
-import { BlogBtnIcon, RedClipIcon } from "../common/Icons";
+import { RedClipIcon } from "../common/Icons";
 
-const Hero = () => {
+const CrmHero = () => {
   return (
     <section className="relative overflow-hidden md:overflow-visible">
       <div className="bg-[#0C0D11] blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
@@ -18,10 +17,10 @@ const Hero = () => {
             alt="crm hero"
           />
         </div>
-        <div className="px-2">
-          <h2 className="gradient-2 capitalize w-fit main-heading text-start sm:text-center">
+        <div>
+          <h2 className="gradient-2 w-fit main-heading text-start sm:text-center">
             A{" "}
-            <span className="bg-white text-transparent bg-clip-text">
+            <span className="bg-petal text-transparent bg-clip-text">
               field service CRM
             </span>{" "}
             that runs your business, not just stores contacts
@@ -93,4 +92,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default CrmHero;

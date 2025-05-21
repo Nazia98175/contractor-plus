@@ -11,6 +11,7 @@
   --color-doctor2: #f8f8f8;
   --color-lightishBlue: #3b82f6;
   --color-ruinedSmores: #111216;
+  --color-asphalt: #030101;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
   --color-romanRed: #f21314;
@@ -108,7 +109,7 @@ body {
   @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold font-jakarta leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] lg:text-[42px] sm:text-4xl  font-semibold tracking-[-0.84px] leading-[130%] font-jakarta;
+  @apply text-[26px] lg:text-[42px] sm:text-4xl font-semibold lg:tracking-[-0.84px] leading-[130%] font-jakarta;
 }
 .paragraph {
   @apply text-wallStreet font-medium font-jakarta mt-4;
@@ -488,23 +489,22 @@ html {
   line-height: normal;
 }
 .field-service-card {
-  background: radial-gradient(
+  border-radius: 40px;
+  border: 1px solid #fff;
+  background: lightgray 0% 0% / 100px 100px repeat,
+    radial-gradient(
       146.13% 118.42% at 50% -15.5%,
       rgba(255, 255, 255, 0.08) 0%,
       rgba(255, 255, 255, 0) 99.59%
     ),
     linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
-  filter: drop-shadow(0px -33px 40px rgba(0, 0, 0, 0.2))
-    drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.1));
-  border: 1px solid #ffffff21;
-  box-shadow: 0px -33px 40px 0px rgba(0, 0, 0, 0.2),
+  /* box-shadow: 0px -33px 40px 0px rgba(0, 0, 0, 0.2),
     0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
     0px 5px 10px 0px rgba(0, 0, 0, 0.05), 0px 15px 30px 0px rgba(0, 0, 0, 0.05),
-    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+    0px 30px 60px 0px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(20px);
 }
+
 .side-img {
   background: radial-gradient(50% 50% at 50% 50%, #1e2028 0%, #0d0e12 100%);
 }
@@ -541,6 +541,18 @@ html {
         rgba(0, 0, 0, 0) 99.65%
       ),
       linear-gradient(0deg, #ffffff, #ffffff), #ffffff;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

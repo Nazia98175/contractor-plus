@@ -23,7 +23,7 @@ const TrackProperties = () => {
       {/* Device Images */}
 
       <div className="flex relative pb-24 xl:pb-0  justify-center items-center">
-        <div className="bg-white-linear absolute left-0 z-20 -bottom-[90px] h-[267px] w-full blur-[6px]"></div>
+        <div className="bg-white-linear hidden lg:block absolute left-0 z-20 -bottom-[90px] h-[267px] w-full blur-[6px]"></div>
         <img
           src="/images/webp/mobile.webp"
           className="-mr-[17%] max-w-[28%] xl:-mr-16 z-0 xl:max-w-[262px] -mt-[20%] xl:-mt-0"

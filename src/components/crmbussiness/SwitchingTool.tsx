@@ -95,7 +95,7 @@ const SwitchingTool = () => {
   }, []);
 
   return (
-    <section className="px-2 relative pt-11" ref={sectionRef}>
+    <section className="px-2 relative pt-9 md:pt-11" ref={sectionRef}>
       {/* Backgrounds */}
       <div className="bg-reverse-black h-[296px] w-full hidden md:block top-0 left-0 absolute z-[-5]" />
       <img

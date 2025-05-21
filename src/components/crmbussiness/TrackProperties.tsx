@@ -19,9 +19,9 @@ const FeatureItem = ({ text }: { text: string }) => (
 
 const TrackProperties = () => {
   return (
-    <section className="pt-[140px] bg-white relative">
+    <section className="pt-28 lg:pt-[140px] bg-white relative">
       <Image
-        className="absolute w-[100%] h-full left-0 -top-[35%] md:-top-[20%]  object-cover"
+        className="absolute w-[100%] h-full left-0 z-0 -top-[35%] xl:-top-[20%] object-contain xl:object-cover"
         src={"/images/webp/finally-desktop-bg.webp"}
         alt="finally-desktop-bg"
         width={1920}
@@ -29,7 +29,7 @@ const TrackProperties = () => {
       />
       {/* Device Images */}
 
-      <div className="flex relative pb-24 xl:pb-0  justify-center items-center">
+      <div className="flex relative pb-20 md:pb-24 xl:pb-0  justify-center items-center">
         <div className="bg-white-linear hidden lg:block absolute left-0 z-20 -bottom-[84px] h-[267px] w-full"></div>
         <img
           src="/images/webp/mobile.webp"
@@ -50,15 +50,15 @@ const TrackProperties = () => {
 
       {/* Heading + Paragraph */}
       <div className="relative z-30 -mt-3 px-2 bg-white">
-        <h2 className="section-heading gradient-text-2 w-fit mx-auto">
+        <h2 className="section-heading gradient-text-2 text-center !font-black lg:!font-semibold w-fit mx-auto">
           View every property like you do your customers
         </h2>
-        <p className="max-w-[885px] mx-auto paragraph">
-          Contractor+ is the first CRM to offer property profiles — so you can
-          see what’s been done, what’s next, and who did it.
+        <p className="max-w-[885px] mx-auto paragraph text-center">
+          The only platform made for field service, trades, and general
+          contractors
         </p>
 
-        <div className="w-full mt-9">
+        <div className="w-full mt-3.5 sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
             {features.map((text, index) => (
               <FeatureItem key={index} text={text} />
@@ -66,7 +66,7 @@ const TrackProperties = () => {
           </Marquee>
         </div>
 
-        <div className="flex gap-2.5 sm:flex-row flex-col items-center justify-center mt-7">
+        <div className="flex gap-2.5 sm:flex-row flex-col items-center justify-center mt-3.5 md:mt-7">
           <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
             <CheckIcon />
             No Credit Card Required

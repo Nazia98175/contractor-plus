@@ -59,7 +59,7 @@ const CrmReviewCard = () => {
   return (
     <>
       <SliderLayout
-        wrapperClassName="relative w-full py-8"
+        wrapperClassName="relative w-full"
         slidesPerView={1}
         spaceBetween={9}
         breakpoints={{

@@ -2,13 +2,13 @@ import { RedClipIcon, StartIcon } from "../common/Icons";
 
 const CrmHero = () => {
   return (
-    <section className="relative overflow-hidden md:overflow-visible">
+    <section className="relative overflow-visible">
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>
       <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
       <div className="max-w-[1050px] w-full mx-auto pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
-        <div className="pt-10 max-w-[900px] mx-auto block px-3 md:hidden relative">
+        <div className="pt-10 max-w-[900px] mx-auto block px-5 md:hidden relative">
           <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
           <img
             className="w-full h-full"
@@ -16,7 +16,7 @@ const CrmHero = () => {
             alt="crm hero"
           />
         </div>
-        <div>
+        <div className="px-2">
           <h2 className="gradient-2 w-fit main-heading text-start sm:text-center">
             A{" "}
             <span className="bg-petal text-transparent bg-clip-text">
@@ -49,7 +49,7 @@ const CrmHero = () => {
               </div>
             </div>
           </div>
-          <div className="w-full sm:w-fit">
+          <div className="w-full sm:w-fit px-2">
             <button className="bg-red-linear h-10 primary-btn gap-2">
               <span className="lg:block hidden">Create Free Account</span>
               <span className="lg:hidden block">Download App</span>

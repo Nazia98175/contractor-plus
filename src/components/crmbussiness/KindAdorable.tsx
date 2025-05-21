@@ -26,15 +26,15 @@ const features = [
 
 const KindAdorable = () => {
   return (
-    <div className="bg-white px-4 pt-[91px]">
+    <div className="bg-white px-2 pt-8 md:pt-16 lg:pt-[91px]">
       <section className="overflow-x-auto max-w-[1092px] mx-auto">
-        <h2 className="section-heading gradient-text-2 w-fit mx-auto">
+        <h2 className="section-heading gradient-text-2 !font-black text-center lg:!font-semibold w-fit mx-auto">
           What the others call a CRM is kind of adorable
         </h2>
         <p className="max-w-[885px] mx-auto paragraph text-center">
           Not all platforms are built to run a real business
         </p>
-        <div className="rounded-lg overflow-auto border border-decemberSky mt-12">
+        <div className="rounded-lg overflow-auto border border-decemberSky mt-8 xl:mt-12">
           <table className="min-w-full text-left whitespace-nowrap">
             <thead>
               <tr className="md:text-lg text-base lg:text-xl font-myriad divide-x divide-decemberSky">

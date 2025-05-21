@@ -31,17 +31,17 @@ const TeamsUsingContractor = () => {
   ];
 
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white pt-11 md:pt-16 xl:pt-[94px]">
       <div
         ref={ref}
-        className="flex flex-col items-center justify-center main-container"
+        className="flex flex-col items-center justify-center main-container px-"
       >
-        <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold">
+        <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold  max-w-[951px] mx-auto">
           {t("heading")}
         </h2>
-        <p className="paragraph">{t("desc")}</p>
+        <p className="paragraph text-center">{t("desc")}</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-[52px] mb-[70px] w-full">
+        <div className="grid px-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-6 md:mt-10 xl:mt-[52px] mb-8 sm:mb-12 md:mb-16 xl:mb-[70px] w-full">
           {crmList.map((item, index) => (
             <article
               key={index}

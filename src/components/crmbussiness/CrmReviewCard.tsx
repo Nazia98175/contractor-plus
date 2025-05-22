@@ -22,7 +22,7 @@ const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
       <article
         onClick={review.isModal ? openModal : undefined}
         key={review.id}
-        className="bg-white w-full p-2 hover:-translate-y-1 duration-300 cursor-pointer relative z-20"
+        className="bg-white w-full p-2 hover:-translate-y-1 duration-300 cursor-pointer relative z-20 group"
       >
         <div className="flex gap-4 md:gap-5 items-center">
           <div className="relative">
@@ -33,7 +33,7 @@ const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
               alt="User"
               className="rounded min-w-[90px] max-w-[90px]"
             />
-            <div className="p-[5px] absolute -bottom-2 -right-2 rounded-full bg-white text-pleasure">
+            <div className="p-[5px] absolute -bottom-2 -right-2 rounded-full bg-white text-pleasure group-hover:text-blackRussian duration-300">
               <PlayIcon />
             </div>
           </div>

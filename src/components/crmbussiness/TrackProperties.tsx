@@ -8,6 +8,14 @@ const features = [
   "All docs, permits, and photos in one place",
   "Log emails using property-specific CC addresses",
   "Add live camera feeds to any property",
+  "Timeline of every job, message, and update",
+  "All docs, permits, and photos in one place",
+  "Log emails using property-specific CC addresses",
+  "Add live camera feeds to any property",
+  "Timeline of every job, message, and update",
+  "All docs, permits, and photos in one place",
+  "Log emails using property-specific CC addresses",
+  "Add live camera feeds to any property",
 ];
 
 const FeatureItem = ({ text }: { text: string }) => (

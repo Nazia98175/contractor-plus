@@ -1,13 +1,9 @@
 "use client";
-import React, { useState, FormEvent, ChangeEvent } from "react";
-import {
-  CheckIcon,
-  FooterRedLineIcon,
-  SliderRedLineIcon,
-} from "../common/Icons";
 import { useTranslations } from "next-intl";
-import TextAnimation from "../common/TextAnimation";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../common/CardReveal";
+import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
+import TextAnimation from "../common/TextAnimation";
 
 const CrmSercive: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);

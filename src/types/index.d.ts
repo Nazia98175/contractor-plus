@@ -48,3 +48,9 @@ export interface Review {
   isModal?: boolean;
   videolink?: string;
 }
+
+export type CompareFeature = {
+  name: string;
+  eContractorHas: boolean;
+  othersHave: boolean;
+};

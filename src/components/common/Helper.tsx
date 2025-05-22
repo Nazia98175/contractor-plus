@@ -155,7 +155,7 @@ export const PricingDropdownLinks = [
 export const OurReviewList: Review[] = [
   {
     id: 1,
-    profileUrl: "/images/webp/review-profile-1.webp",
+    profileUrl: "/images/webp/rushville.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -205,7 +205,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 6,
-    profileUrl: "/images/webp/review-profile-6.webp",
+    profileUrl: "/images/webp/juan-gracia.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -301,7 +301,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 16,
-    profileUrl: "/images/webp/review-profile-6.webp",
+    profileUrl: "/images/webp/juan-gracia.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 5,
@@ -876,5 +876,54 @@ export const servicedata = [
           "Automation is on the way to help you re-engage cold leads without any manual work.",
       },
     ],
+  },
+];
+
+export const reviews = [
+  {
+    id: 1,
+    userName: "James Bond",
+    profileUrl: "/images/webp/rushville.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `Since I started sending all my estimates using Contractor+, I have
+    stopped losing bids. The professional image I gain by using this app
+    is helping me win more business. Contractor+ is a game changer!`,
+    userRole: "Co-Owner, Rushville Restorations",
+  },
+  {
+    id: 2,
+    userName: "Brandon Geiger",
+    profileUrl: "/images/webp/rands.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
+    userRole: "CEO at Rands Mechanical",
+  },
+  {
+    id: 3,
+    userName: "Juan Garcia",
+    profileUrl: "/images/webp/juan-gracia.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."`,
+    userRole: "Owner, Nailed It Miami",
+  },
+  {
+    id: 4,
+    userName: "Brandon Geiger",
+    profileUrl: "/images/webp/rands.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
+    userRole: "CEO at Rands Mechanical",
   },
 ];

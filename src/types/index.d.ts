@@ -40,6 +40,7 @@ export interface Review {
   id: string | number;
   profileUrl: string;
   userName?: string;
+  companyLogo?: string;
   role?: string;
   userRole?: string;
   rating: number;

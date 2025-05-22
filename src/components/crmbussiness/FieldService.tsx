@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import FieldServiceCard from "./FieldServiceCard";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { servicedata } from "../common/Helper";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +12,24 @@ const FieldService: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  console.log("FieldService");
+  // Get translated data as array
+  const t = useTranslations();
+
+  const fieldServiceRaw = t.raw("fieldService") as {
+    service: Record<
+      string,
+      {
+        heading: string;
+        features: { title: string; description: string }[];
+        testimonial?: { user: string; username: string };
+      }
+    >;
+  };
+
+  // Convert object to array of services
+  const fieldServiceData = Object.values(fieldServiceRaw.service);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -19,7 +37,7 @@ const FieldService: React.FC = () => {
     const stackOffset = -8;
     // Improved height calculation - only multiply by 1 instead of 3
     const totalHeight = `${
-      100 + (servicedata.length - 1) * Math.abs(stackOffset)
+      100 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
     }vh`;
 
     if (sectionRef.current) {
@@ -93,25 +111,29 @@ const FieldService: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, servicedata.length);
+    cardRefs.current = cardRefs.current.slice(0, fieldServiceData.length);
   }, []);
 
   return (
     <section
-      className="relative bg-kuroiBlack z-20 py-10 px-2 border border-white"
+      className="relative bg-kuroiBlack z-20 pt-20 lg:pt-2 px-2"
       ref={containerRef}
     >
+      <h2 className="section-heading text-center max-w-[813px] mx-auto gradient-text pb-6">
+        There’s finally a CRM for field service that does more than just store
+        your contacts
+      </h2>
       {/* Reduced height for blur element */}
-      <div className="blur-xl bg-kuroiBlack -bottom-5 h-16 right-0 absolute w-[102%]" />
+
       {/* Reduced height for bottom background */}
       <div className="absolute bg-bottom w-full h-[80px] left-0 bottom-0 rotate-180" />
 
-      <div ref={sectionRef} className="relative">
-        {servicedata.map((service, index) => (
+      <div ref={sectionRef} className="relative px-2">
+        {fieldServiceData.map((service, index) => (
           <div
             key={index}
-            className={`absolute top-0 left-0 right-0 w-full h-full field-service-card  ${
-              index === servicedata.length - 1 ? "pb-0" : ""
+            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full h-full p-2.5 lg:p-8 no-scrollbar overflow-hidden field-service-card rounded-[14px] xl:rounded-[40px]  ${
+              index === fieldServiceData.length - 1 ? "pb-0" : ""
             }`}
             ref={(el) => {
               cardRefs.current[index] = el;

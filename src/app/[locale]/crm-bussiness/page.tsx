@@ -2,12 +2,11 @@ import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import { FooterRedLineIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
-import Hero from "@/components/crmbussiness/Hero";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
-import OnScroll from "@/components/crmbussiness/OnScroll";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
@@ -20,11 +19,10 @@ const CrmBussinessPage = () => {
     <main>
       <Header />
       <div className="black-bg">
-        <Hero />
+        <CrmHero />
         <TrustedService />
         <SwitchingTool />
       </div>
-      <OnScroll />
       <FieldService />
       <TrackProperties />
       <KindAdorable />
@@ -32,7 +30,7 @@ const CrmBussinessPage = () => {
       <ThousandsReviews />
       <div className="relative">
         {/* Cloud Layer 1 */}
-        <div className="absolute -top-[30%] left-0 hidden lg:flex w-full h-[267px] z-10 pointer-events-none">
+        <div className="absolute -top-[30%] left-0 flex w-full h-28 xl:h-[267px] z-10 pointer-events-none">
           <div className="absolute w-full h-full animate-cloud-layer-1 z-10 opacity-100">
             <img
               src="/images/webp/claud-2.webp"

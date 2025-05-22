@@ -83,14 +83,6 @@ const TrustBar: React.FC = () => {
           <PlatformCard platform={platform} key={index} />
         ))}
       </CardReveal>
-
-      {/* <div className="relative z-50 lg:hidden">
-        <SliderLayout autoplay={true}>
-          {sliderPlatforms.map((platform, index) => (
-            <PlatformCard platform={platform} key={index} />
-          ))}
-        </SliderLayout>
-      </div> */}
     </section>
   );
 };

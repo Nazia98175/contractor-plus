@@ -8,7 +8,7 @@ interface Props {
 
 const FieldServiceCard: React.FC<Props> = ({ service }) => {
   return (
-    <article className=" h-full  flex lg:flex-row flex-col justify-between text-white p-2.5 lg:p-8 max-w-[1272px] mx-auto rounded-[14px] xl:rouded-[40px] no-scrollbar relative">
+    <article className="flex lg:flex-row flex-col justify-between text-white ">
       <div className="xl:max-w-[650px] w-full">
         <div className="flex flex-col gap-4 sm:gap-5 lg:p-[26px]">
           <h4 className="text-base md:text-2xl xl:text-[26px] font-semibold font-montserrat lg:font-jakarta py-0.5 px-2.5">
@@ -33,9 +33,10 @@ const FieldServiceCard: React.FC<Props> = ({ service }) => {
             ))}
           </div>
         </div>
-        {(service.user || service.username) && (
+        {service.testimonial && (
           <p className="p-3 text-secondary text-[10px] sm:text-xs lg:text-sm font-montserrat font-medium">
-            “{service.user}” <br /> <br /> – {service.username}
+            “{service.testimonial.user}” <br /> <br /> –{" "}
+            {service.testimonial.username}
           </p>
         )}
       </div>

@@ -4,6 +4,7 @@ import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import { useState } from "react";
+import SliderLayout from "../common/SliderLayout";
 
 const OurBlogs = () => {
   const t = useTranslations("blogs");
@@ -87,7 +88,7 @@ const OurBlogs = () => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
+          className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
         >
           {blogListMobile.map((article) => (
             <article
@@ -129,6 +130,57 @@ const OurBlogs = () => {
           ))}
         </CardReveal>
 
+        <div className="sm:hidden block">
+          <SliderLayout
+            autoplay
+            pagination
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 12 },
+              520: { slidesPerView: 1.5, spaceBetween: 14 },
+              640: { slidesPerView: 2, spaceBetween: 14 },
+              768: { slidesPerView: 2.6, spaceBetween: 16 },
+            }}
+          >
+            {blogListMobile.map((article) => (
+              <article
+                key={article.id}
+                className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
+              >
+                <img
+                  className="absolute top-16 right-0 w-full"
+                  style={{ maxWidth: article.imageWidth, objectFit: "contain" }}
+                  src={article.imageSrc}
+                  alt="blog images"
+                />
+                <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
+                  <img
+                    className="absolute top-0 -left-1 w-full h-full z-10 pointer-events-none object-contain"
+                    src="images/svg/blog-bg.svg"
+                    alt="blog angle"
+                  />
+                  <img
+                    src={article.backgroundImage}
+                    alt={article.title}
+                    className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
+                  />
+                </div>
+                <div className="relative py-6 px-4 w-[346px] mt-2">
+                  <img
+                    className="absolute top-0 left-0 h-full w-full z-0"
+                    src="/images/webp/blog-angle2.webp"
+                    alt="blog angle"
+                  />
+                  <h3 className="text-base relative z-10 md:text-lg text-winterWay font-extrabold pb-1 font-jakarta">
+                    {article.title}
+                  </h3>
+                  <p className="text-secondary relative z-10 font-medium text-xs max-w-[255px] font-jakarta">
+                    {article.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </SliderLayout>
+        </div>
         <div className="flex justify-center md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
             {t("viewAllBlogs")}

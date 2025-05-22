@@ -15,6 +15,7 @@ import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
 import { getHomePage } from "@/services/homepage";
+import { Suspense } from "react";
 
 export default async function Home({
   params,
@@ -29,8 +30,9 @@ export default async function Home({
       "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
     ),
   ]);
-
+ console.log(homePageContent , "homeeee")
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="relative overflow-x-hidden">
       <div className="relative">
         <Header />
@@ -41,14 +43,14 @@ export default async function Home({
         />
       </div>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
-      <Finally />
+      <Finally finallyC={homePageContent?.data?.finally} />
       <CoreFeatures />
       <Features features={homePageContent?.data?.features} />
-      <ContractorIndustry />
-      <OurReviews />
+      <ContractorIndustry contractorIndustry={homePageContent?.data?.contractorIndustry} />
+      <OurReviews reviews={homePageContent?.data?.reviews} />
       <div className="bg-kuroiBlack relative overflow-hidden ">
-        <Whatever />
-        <MakeOperation />
+        <Whatever whateverOperation={homePageContent?.data?.whateverOperation} />
+        <MakeOperation whateverOperation={homePageContent?.data?.whateverOperation} />
       </div>
       <OurBlogs />
       <div className="overflow-hidden relative ">
@@ -57,5 +59,6 @@ export default async function Home({
       </div>
       <ParticlesComponent id="star-particles" />
     </div>
+    </Suspense>
   );
 }

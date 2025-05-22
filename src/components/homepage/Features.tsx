@@ -15,7 +15,7 @@ const Features = ({ features }: { features: any }) => {
     desc: features?.[index]?.description,
     img: item.img,
   }));
-  console.log(featureData , "featuresData")
+  
   return (
     <section className="bg-white sm:px-2 xl:pt-[78px] pt-11 lg:pb-[37px] pb-6 relative z-20">
       <div className="main-container sm:!px-2 !px-0">

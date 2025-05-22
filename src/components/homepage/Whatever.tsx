@@ -5,7 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { leftIcons, rightIcons } from "../common/Helper";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
@@ -14,8 +14,14 @@ import TextAnimation from "../common/TextAnimation";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
-
-const Whatever = () => {
+interface Whatever {
+  title: string;
+  sub_title: string;
+}
+interface TheWhateverProps {
+  whateverOperation: Whatever[];
+}
+const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const t = useTranslations();
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -41,7 +47,7 @@ const Whatever = () => {
       };
       const scrollTrigger = {
         trigger: sectionRef.current,
-        start: "top 80%",
+        start: "top 70%",
         end: "bottom bottom",
         scrub: 1,
       };
@@ -176,7 +182,7 @@ const Whatever = () => {
       >
         <TextAnimation animateOnScroll delay={0.3}>
           <h3 className="section-heading gradient-text text-center md:mb-8 mb-[21px]">
-            {t("whatever")}
+            {whateverOperation?.[0]?.title}
           </h3>
         </TextAnimation>
 
@@ -243,7 +249,7 @@ const Whatever = () => {
         <TextAnimation animateOnScroll delay={0.3}>
           <p className="text-lg capitalize text-granite opacity-90 text-center">
             <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
-            {t("potentialIntegrations")}
+            {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
           </p>
         </TextAnimation>
       </div>

@@ -6,8 +6,18 @@ import { useInView } from "react-intersection-observer";
 import CardReveal from "../common/CardReveal";
 import { AdminWorkIcon, EstimateIcon2, TurnaroundIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+interface Whatever {
+  title: string;
+  sub_title: string;
+  
+}
 
-const MakeOperation = () => {
+interface TheWhateverProps {
+  whateverOperation: Whatever[];
+}
+const MakeOperation: React.FC<TheWhateverProps> = ({
+  whateverOperation
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -47,12 +57,12 @@ const MakeOperation = () => {
       <div className="main-container pb-10 relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading font-semibold  gradient-text text-center">
-            {t("heading")}
+            {whateverOperation?.[1]?.title}
           </h3>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
-            {t("desc")}
+            {whateverOperation?.[1]?.sub_title}
           </p>
         </TextAnimation>
         <CardReveal

@@ -12,7 +12,19 @@ import LogoWithStars from "../common/LogoWithStars";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
-const Whatever = () => {
+
+interface Whatever {
+  title: string;
+  sub_title: string;
+  
+}
+
+interface TheWhateverProps {
+  whateverOperation: Whatever[];
+}
+const Whatever: React.FC<TheWhateverProps> = ({
+  whateverOperation
+}) => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
@@ -282,7 +294,7 @@ const Whatever = () => {
       >
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading gradient-text text-center md:mb-8 mb-[21px]">
-            {t("whatever")}
+            {whateverOperation?.[0]?.title}
           </h3>
         </TextAnimation>
         <div ref={containerRef} className="max-w-[1002px] mx-auto px-2 lg:px-0">
@@ -349,7 +361,7 @@ const Whatever = () => {
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="text-lg capitalize text-granite opacity-90 text-center">
             <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
-            {t("potentialIntegrations")}
+           { whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
           </p>
         </TextAnimation>
       </div>

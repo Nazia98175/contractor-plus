@@ -794,5 +794,15 @@
     "emailPlaceholder": "Votre Email",
     "noCreditCard": "Aucune Carte de Crédit Requise",
     "createAccount": "Créer un Compte Gratuit"
+  },
+  "crmHero": {
+    "heading": "Un <highlight>CRM pour les services sur le terrain</highlight> qui gère votre entreprise, pas seulement vos contacts",
+    "description": "Téléphone et SMS intégrés. Réceptionniste IA. Profils de propriété. Historique complet des communications. Plus besoin de 6 outils séparés pour faire ce que Contractor+ CRM fait seul.",
+    "buttonDesktop": "Créer un compte gratuit",
+    "buttonMobile": "Télécharger l'application",
+    "note": "Aucune carte de crédit requise",
+    "altImage": "image crm",
+    "altGoogle": "icône google",
+    "altApple": "icône apple"
   }
 }

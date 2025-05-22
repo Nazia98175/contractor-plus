@@ -738,6 +738,18 @@
       }
     }
   },
+
+  "crmHero": {
+    "heading": "Un <highlight>CRM de servicios de campo</highlight> que gestiona tu negocio, no solo almacena contactos",
+    "description": "Teléfono y SMS integrados. Recepcionista con IA. Perfiles de propiedades. Historial completo de comunicación. Ya no necesitas 6 herramientas diferentes para hacer lo que Contractor+ CRM hace en una sola.",
+    "buttonDesktop": "Crear cuenta gratuita",
+    "buttonMobile": "Descargar aplicación",
+    "note": "No se requiere tarjeta de crédito",
+    "altImage": "imagen de crm",
+    "altGoogle": "icono de google",
+    "altApple": "icono de apple"
+  },
+
   "corefeature": {
     "heading": "Características Principales",
     "desc": "Descubra las potentes herramientas que hacen de Contractor+ la solución definitiva para su negocio de contratación",

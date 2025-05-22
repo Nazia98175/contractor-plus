@@ -45,13 +45,13 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                 {review.isModal && (
                   <span
                     onClick={openModal}
-                    className="group-hover:text-romanRed text-[#1C2731]"
+                    className="group-hover:text-romanRed text-dark"
                   >
                     <PlayIcon />
                   </span>
                 )}
               </div>
-              <p className="text-xs font-medium text-[#ADB1B5]">
+              <p className="text-xs font-medium text-highRise">
                 {review.userRole}
               </p>
             </div>

@@ -4,8 +4,8 @@ import CrmReviewCard from "./CrmReviewCard";
 const ThousandsReviews = () => {
   return (
     <section className="py-7 bg-white ">
-      <div className="main-container space-y-10 relative z-20">
-        <h2 className="section-heading crm-gradient text-center max-w-[951px] mx-auto ">
+      <div className="main-container space-y-9 xl:space-y-16 relative z-20">
+        <h2 className="section-heading !font-black lg:!font-semibold crm-gradient text-center max-w-[951px] mx-auto">
           There’s a reason we have a {}
           <svg
             width="100%"

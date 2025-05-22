@@ -9,6 +9,7 @@ import { leftIcons, rightIcons } from "../common/Helper";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import LogoWithStars from "../common/LogoWithStars";
+import { useGSAP } from "@gsap/react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -26,12 +27,101 @@ const Whatever = () => {
   const rightIconsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   // Track screen size
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  useGSAP(
+    () => {
+      if (!sectionRef.current || !containerRef.current) return;
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      gsap.killTweensOf([
+        ...leftIconsRef.current,
+        ...rightIconsRef.current,
+        centerRef.current,
+      ]);
+      const getInitial = (val: number) => {
+        if (window.innerWidth < 768) return val * 0.6;
+        if (window.innerWidth < 1024) return val * 0.8;
+        return val;
+      };
+      const scrollTrigger = {
+        trigger: sectionRef.current,
+        start: "bottom bottom",
+        end: "bottom 70%",
+        scrub: 2,
+        markers: true,
+      };
+      [...leftIconsRef.current].forEach((el, i) => {
+        if (!el) return;
+        gsap.set(el, {
+          position: "absolute",
+          left: leftIcons[i].finalX,
+          top: leftIcons[i].finalY,
+          xPercent: -50,
+          yPercent: -50,
+          opacity: 0,
+          scale: 0.2,
+          filter: "blur(8px)",
+          x: getInitial(leftIcons[i].initialX),
+          y: getInitial(leftIcons[i].initialY),
+        });
+        setTimeout(() => {
+          gsap.to(el, {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
+            ease: "power2.out",
+            scrollTrigger,
+          });
+        }, 1000);
+      });
+      [...rightIconsRef.current].forEach((el, i) => {
+        if (!el) return;
+        gsap.set(el, {
+          position: "absolute",
+          left: rightIcons[i].finalX,
+          top: rightIcons[i].finalY,
+          xPercent: -50,
+          yPercent: -50,
+          opacity: 0,
+          scale: 0.2,
+          filter: "blur(8px)",
+          x: getInitial(rightIcons[i].initialX),
+          y: getInitial(rightIcons[i].initialY),
+        });
+        setTimeout(() => {
+          gsap.to(el, {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
+            ease: "power2.out",
+            scrollTrigger,
+            force3D: true,
+          });
+        }, 1000);
+      });
+      if (centerRef.current) {
+        gsap.set(centerRef.current, {
+          y: 80,
+          scale: 0.3,
+          opacity: 0,
+          filter: "blur(8px)",
+        });
+        setTimeout(() => {
+          gsap.to(centerRef.current, {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+            ease: "power2.out",
+            scrollTrigger,
+          });
+        }, 1000);
+      }
+    },
+    { scope: sectionRef }
+  );
 
   useLayoutEffect(() => {
     if (!sectionRef.current || !containerRef.current) return;

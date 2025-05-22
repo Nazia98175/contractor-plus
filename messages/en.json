@@ -792,5 +792,16 @@
     "emailPlaceholder": "Your Email",
     "noCreditCard": "No Credit Card Required",
     "createAccount": "Create Free Account"
+  },
+
+  "crmHero": {
+    "heading": "A <highlight>field service CRM</highlight> that runs your business, not just stores contacts",
+    "description": "Built-in phone and SMS. AI receptionist. Property profiles. Full communication history. You no longer need 6 separate tools to do what Contractor+ CRM does in one.",
+    "buttonDesktop": "Create Free Account",
+    "buttonMobile": "Download App",
+    "note": "No Credit Card Required",
+    "altImage": "crm hero",
+    "altGoogle": "google icon",
+    "altApple": "apple icon"
   }
 }

@@ -31,7 +31,7 @@ const CrmSercive: React.FC = () => {
   };
 
   return (
-    <div className="px-2 relative overflow-hidden md:overflow-visible">
+    <div className="px-2 relative overflow-hidden xl:overflow-visible">
       <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
         <FooterRedLineIcon />
       </span>
@@ -48,7 +48,7 @@ const CrmSercive: React.FC = () => {
         </TextAnimation>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
           <form
-            className="flex flex-col md:flex-row justify-center items-start gap-3"
+            className="flex flex-col md:flex-row justify-center max-w-[550px] mx-auto md:max-w-[657px] w-full items-start gap-3"
             onSubmit={handleSubmit}
           >
             <div className="md:max-w-[414px] w-full">
@@ -71,7 +71,7 @@ const CrmSercive: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] w-full mx-auto md:mx-0 sm:!w-auto"
+              className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] !w-full md:mx-0 md:!w-auto"
               disabled={loading}
             >
               {loading ? (

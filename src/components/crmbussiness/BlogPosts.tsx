@@ -50,7 +50,7 @@ const BlogPosts = () => {
         </div>
 
         <div className=" hidden sm:flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
-          <div className="max-w-[600px] mx-auto xl:mx-0  xl:max-w-[450px] w-full flex flex-col gap-4">
+          <div className="max-w-[600px] xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogData.map((blog) => (
               <article
                 key={blog.id}

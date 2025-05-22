@@ -1,29 +1,27 @@
 // FeaturesDropdown.tsx
 "use client";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
   ArrowIcon,
-  ServiceIcon,
-  EstimatesIcon,
-  TrackingIcon,
-  FieldServiceIcon,
-  TrophyIcon,
-  ProjectIcon,
-  SchedulingIcon,
-  EstimaticIcon,
-  ClientIcon,
-  PROIcon,
+  BellIcon,
   BigChiefAIIcon,
+  ClientIcon,
+  EstimatesIcon,
+  EstimaticIcon,
+  FieldServiceIcon,
   InvoicingIcon,
   PaymentsIcon,
-  TelephoneIcon,
+  PROIcon,
+  ProjectIcon,
   PropertyIcon,
-  BookkeepingIcon,
+  SchedulingIcon,
+  ServiceIcon,
+  TelephoneIcon,
   TimeIcon,
-  BellIcon,
+  TrackingIcon,
+  TrophyIcon,
 } from "./Icons";
-import { useTranslations } from "next-intl";
-import { BellDotIcon, BellPlusIcon, Play } from "lucide-react";
 
 const FeaturesDropdown = ({ isVisible = true }) => {
   const t = useTranslations("features");
@@ -36,17 +34,18 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     "dealFlow",
     "timeClock",
     "projectManagement",
-    "scheduling",
+
     "leadGeneration",
     "payments",
     "clientPortal",
     "proWebsite",
-    "estimaticAI",
+    "service",
     "invoicing",
     "propertyProfiles",
-    "bigChiefAI",
+    "estimaticAI",
+    "scheduling",
     "communication",
-    "service",
+    "bigChiefAI",
   ];
 
   const featureIcons = {
@@ -108,10 +107,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
             className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
             key={featureId}
           >
-            <Link
-              href="/"
-              className="group group-hover:bg-lightBlack group-hover:!text-white"
-            >
+            <Link href="/" className="group">
               <div className="flex gap-2.5 items-start">
                 <span>{featureIcons[featureId]}</span>
                 <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">

@@ -53,7 +53,7 @@ const TrackProperties = () => {
         <h2 className="section-heading gradient-text-2 text-center !font-black lg:!font-semibold w-fit mx-auto">
           View every property like you do your customers
         </h2>
-        <p className="max-w-[885px] mx-auto paragraph text-center">
+        <p className="max-w-[885px] mx-auto paragraph-style text-center">
           The only platform made for field service, trades, and general
           contractors
         </p>
@@ -67,12 +67,12 @@ const TrackProperties = () => {
         </div>
 
         <div className="flex gap-2.5 sm:flex-row flex-col items-center justify-center mt-3.5 md:mt-7">
+          <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
+            Get started free <SideIcon />
+          </button>
           <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
             <CheckIcon />
             No Credit Card Required
-          </button>
-          <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
-            Get started free <SideIcon />
           </button>
         </div>
       </div>

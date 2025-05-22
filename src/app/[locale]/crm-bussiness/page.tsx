@@ -27,7 +27,7 @@ const CrmBussinessPage = () => {
       <KindAdorable />
       <TeamsUsingContractor />
       <ThousandsReviews />
-      <div className="relative">
+      <div className="relative w-full">
         {/* Cloud Layer 1 */}
         <div className="absolute -top-[30%] left-0 flex w-full h-28 xl:h-[267px] z-10 pointer-events-none">
           <div className="absolute w-full h-full animate-cloud-layer-1 z-10 opacity-100">

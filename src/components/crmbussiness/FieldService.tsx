@@ -118,7 +118,7 @@ const FieldService: React.FC = () => {
       className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2"
       ref={containerRef}
     >
-      <h2 className="text-xl font-semibold text-secondary !md:hidden text-center max-w-[813px] mx-auto pb-6">
+      <h2 className="text-xl font-semibold text-secondary md:hidden text-center max-w-[813px] mx-auto pb-6">
         There’s finally a CRM for field service that does more than just store
         your contacts
       </h2>

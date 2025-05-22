@@ -210,8 +210,12 @@
       "description": "Muestra tu negocio y atrae clientes"
     },
     "estimaticAI": {
-      "label": "Estimatic AI",
-      "description": "Estimaciones y cotizaciones rápidas, precisas y ganadoras"
+      "label": "Generación de leads",
+      "description": "Estimaciones y presupuestos de proyectos rápidos, precisos y ganadores"
+    },
+    "bigChiefAI": {
+      "label": "Contabilidad",
+      "description": "Responde cada llamada, califica leads, automatiza el trabajo repetitivo."
     },
     "invoicing": {
       "label": "Facturación",
@@ -221,10 +225,7 @@
       "label": "Perfiles de Propiedad",
       "description": "Optimiza el mantenimiento de propiedades"
     },
-    "bigChiefAI": {
-      "label": "Big Chief AI",
-      "description": "Responde cada llamada, califica clientes, automatiza el trabajo"
-    },
+
     "communication": {
       "label": "Teléfono y SMS empresarial",
       "description": "Conversaciones centralizadas con el equipo y clientes"

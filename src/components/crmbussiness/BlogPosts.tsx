@@ -8,7 +8,7 @@ const BlogPosts = () => {
     <section className="pt-4 pb-12 px-2 sm:px-4 lg:px-20">
       <div className="max-w-[1158px] w-full mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="section-heading text-white gradient-text">
+          <h2 className="section-heading text-center text-white gradient-text">
             Blog Posts Related To CRM
           </h2>
           <div className="hidden md:block">

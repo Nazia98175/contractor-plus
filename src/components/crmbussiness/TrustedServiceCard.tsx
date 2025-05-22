@@ -26,19 +26,19 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
     <div className="mr-5 min-h-full h-full ">
       <article
         onClick={openModal}
-        className="trusted-service bg-shutter md:bg-transparent -z-[10] rounded-[10px] p-4 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer  h-full flex flex-col justify-between relative group"
+        className="trusted-service bg-shutter md:bg-transparent -z-[10] rounded-[10px] p-3 sm:p-4 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer  h-full flex flex-col justify-between relative group"
       >
-        <div className="flex justify-between items-start gap-5">
-          <div className="flex items-center gap-2">
+        <div className="flex justify-between items-start gap-3 md:gap-5">
+          <div className="flex  gap-2">
             <Image
               src={review.profileUrl}
               alt="avatar"
               width={42}
               height={42}
-              className="max-w-[42px] object-contain"
+              className="max-w-[42px] h-fit object-contain rounded-full"
             />
             <div>
-              <div className="flex items-center gap-3">
+              <div className="flex gap-2">
                 <p className="text-base font-medium text-white font-jakarta">
                   {review.userName}
                 </p>
@@ -58,7 +58,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-highRise text-sm font-semibold px-2 pt-2 mt-3 line-clamp-3">
+        <p className="text-highRise text-xs sm:text-sm font-semibold  mt-5 line-clamp-3">
           "{review.review}"
         </p>
       </article>

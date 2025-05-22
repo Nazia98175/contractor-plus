@@ -116,17 +116,21 @@ const FieldService: React.FC = () => {
 
   return (
     <section
-      className="relative bg-kuroiBlack z-20 pt-20 lg:pt-2 px-2"
+      className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2"
       ref={containerRef}
     >
-      <h2 className="section-heading text-center max-w-[813px] mx-auto gradient-text pb-6">
+      <h2 className="text-xl font-semibold text-secondary !md:hidden text-center max-w-[813px] mx-auto pb-6">
+        There’s finally a CRM for field service that does more than just store
+        your contacts
+      </h2>
+      <h2 className="section-heading hidden md:block text-center max-w-[813px] mx-auto gradient-text pb-6">
         There’s finally a CRM for field service that does more than just store
         your contacts
       </h2>
       {/* Reduced height for blur element */}
 
       {/* Reduced height for bottom background */}
-      <div className="absolute bg-bottom w-full h-[80px] left-0 bottom-0 rotate-180" />
+      <div className="absolute bg-bottom w-full h-24  z-10 left-0 -bottom-1 rotate-180" />
 
       <div ref={sectionRef} className="relative px-2">
         {fieldServiceData.map((service, index) => (

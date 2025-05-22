@@ -1,12 +1,11 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-import VideoViewer from "./VideoViewer";
-import Aurora from "../common/Aurora";
+import AnimatedLineAura from "../common/SvgAuroraEffect";
 
 type HeroProps = {
-  homePageContent: any; // Replace `any` with the actual type if available
+  homePageContent: any;
 };
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
   const t = useTranslations("hero");
@@ -20,13 +19,14 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
 
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
-      <Image
+      {/* <Image
         width={769}
         height={800}
         src="/images/webp/red.webp"
         alt="Red Circle For designing"
         className="absolute top-0 left-0 hidden lg:block h-full z-10 pointer-events-none object-cover"
-      />
+      /> */}
+      <AnimatedLineAura />
       <img
         src="/images/webp/hero-mobile-bg.webp"
         alt="Mobile Hero"

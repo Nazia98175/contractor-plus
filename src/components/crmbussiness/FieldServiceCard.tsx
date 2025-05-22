@@ -8,13 +8,13 @@ interface Props {
 
 const FieldServiceCard: React.FC<Props> = ({ service }) => {
   return (
-    <article className="flex lg:flex-row flex-col justify-between text-white ">
+    <article className="flex lg:flex-row flex-col gap-7 justify-between text-white ">
       <div className="xl:max-w-[650px] w-full">
         <div className="flex flex-col gap-4 sm:gap-5 lg:p-[26px]">
           <h4 className="text-base md:text-2xl xl:text-[26px] font-semibold font-montserrat lg:font-jakarta py-0.5 px-2.5">
             {service.heading}
           </h4>
-          <div className="side-img rounded-lg block xl:hidden h-full min-h-[245px] md:h-auto w-full"></div>
+          {/* <div className="side-img rounded-lg block xl:hidden h-full min-h-[245px] md:h-auto w-full"></div> */}
           <div className="flex flex-col gap-4 md:gap-6">
             {service.features.map((feature, index) => (
               <div key={index} className="flex gap-3">
@@ -40,7 +40,7 @@ const FieldServiceCard: React.FC<Props> = ({ service }) => {
           </p>
         )}
       </div>
-      <div className="side-img rounded-lg max-w-[518px] xl:block hidden max-h-[302px] w-full"></div>
+      <div className="side-img rounded-lg max-w-[518px] block min-h-[245px] max-h-[302px] w-full"></div>
     </article>
   );
 };

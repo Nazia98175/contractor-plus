@@ -326,8 +326,12 @@
       "description": "Showcase Your Business & Attract Customers"
     },
     "estimaticAI": {
-      "label": "Estimatic AI",
+      "label": "Lead generation",
       "description": "Fast, Accurate, Winning Project Estimates & Quotes"
+    },
+    "bigChiefAI": {
+      "label": "Bookkeeping ",
+      "description": "Answer every call, Qualify leads, Automate busy work."
     },
     "invoicing": {
       "label": "Invoicing & Billing",
@@ -337,10 +341,7 @@
       "label": "Property Profiles",
       "description": "streamline your property maintenance"
     },
-    "bigChiefAI": {
-      "label": "Big Chief AI",
-      "description": "Answer every call, Qualify leads, Automate busy work."
-    },
+
     "communication": {
       "label": "Business Phone & SMS",
       "description": "Centralized Team & Client Conversations"

@@ -69,13 +69,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                   </svg>
                 </span>
               </div>
-              <div className="rounded-[2px] bg-white py-0.5 px-1 mt-1.5 w-fit">
-                <img
-                  className="max-w-[52px]"
-                  src="/images/svg/randsIcon.svg"
-                  alt="company logo"
-                />
-              </div>
+              <h6 className="text-xs font-medium tracking-[0.1px] text-secondary">
+                {review.userRole}
+              </h6>
             </div>
           </div>
           <div className="flex items-center gap-1">

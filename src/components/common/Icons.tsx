@@ -1912,6 +1912,22 @@ export const HeroBgIcon = ({ className = "" }) => (
   </svg>
 );
 
+export const SideIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6.83052 3.51946C7.04904 3.27151 7.40333 3.27151 7.62185 3.51946L13.3333 10.0002L7.62185 16.4809C7.40333 16.7288 7.04904 16.7288 6.83052 16.4809C6.612 16.2329 6.612 15.8309 6.83052 15.583L11.7506 10.0002L6.83052 4.41737C6.612 4.16942 6.612 3.76741 6.83052 3.51946Z"
+      fill="white"
+    />
+  </svg>
+);
 export const SliderRedLineIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

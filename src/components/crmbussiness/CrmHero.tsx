@@ -2,7 +2,7 @@ import { RedClipIcon, StartIcon } from "../common/Icons";
 const CrmHero = () => {
   return (
     <section className="relative overflow-visible">
-      <div className="bg-[#0C0D11] blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
+      <div className="bg-kuroiBlack blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none">
         <RedClipIcon />
       </span>

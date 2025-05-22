@@ -55,7 +55,6 @@
     rgba(12, 13, 17, 0) 0%,
     #0c0d11 100%
   );
-
   --background-image-reverse-black: linear-gradient(
     180deg,
     #0c0d11 0%,
@@ -81,7 +80,6 @@
   --shadow-c2: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
-
 @font-face {
   font-family: "Myriad Pro";
   src: url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
@@ -239,7 +237,6 @@ html {
   justify-content: center;
   align-items: center;
 }
-
 .blog-post .swiper-pagination-bullet {
   background: white !important;
   opacity: 1 !important;
@@ -416,7 +413,6 @@ html {
 .trusted-service:hover::before {
   opacity: 1;
 }
-
 .gradient-text {
   background: linear-gradient(
       275.84deg,
@@ -455,7 +451,6 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-
 .crm-gradient {
   background: linear-gradient(
       270.38deg,
@@ -485,7 +480,6 @@ html {
   z-index: 10;
   color: transparent;
 }
-
 .switch-tool-card {
   border: 0.5px solid rgba(255, 255, 255, 0.15);
   background: radial-gradient(
@@ -532,7 +526,6 @@ html {
     0px 30px 60px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
 }
-
 .side-img {
   background: radial-gradient(50% 50% at 50% 50%, #1e2028 0%, #0d0e12 100%);
 }
@@ -544,11 +537,9 @@ html {
     #0c0d11 100%
   );
 }
-
 .custom-shadow-img {
   filter: drop-shadow(-24px 18px 22px #00000078);
 }
-
 .gradient-2 {
   background: linear-gradient(
       276.25deg,
@@ -569,18 +560,15 @@ html {
         rgba(0, 0, 0, 0) 99.65%
       ),
       linear-gradient(0deg, #ffffff, #ffffff), #ffffff;
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
     /* Inside auto layout */
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -606,7 +594,6 @@ html {
   backdrop-filter: blur(25.399999618530273px);
   z-index: -8;
 }
-
 .bg-white-linear {
   background: linear-gradient(
     180deg,

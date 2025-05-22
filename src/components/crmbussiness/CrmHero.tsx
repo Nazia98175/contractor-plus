@@ -1,5 +1,4 @@
 import { RedClipIcon, StartIcon } from "../common/Icons";
-
 const CrmHero = () => {
   return (
     <section className="relative overflow-visible">
@@ -70,5 +69,4 @@ const CrmHero = () => {
     </section>
   );
 };
-
 export default CrmHero;

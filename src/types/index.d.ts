@@ -40,6 +40,7 @@ export interface Review {
   id: string | number;
   profileUrl: string;
   userName?: string;
+  companyLogo?: string;
   role?: string;
   userRole?: string;
   rating: number;
@@ -47,3 +48,9 @@ export interface Review {
   isModal?: boolean;
   videolink?: string;
 }
+
+export type CompareFeature = {
+  name: string;
+  eContractorHas: boolean;
+  othersHave: boolean;
+};

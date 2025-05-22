@@ -1,44 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
+import { blogData } from "../common/Helper";
 
 const BlogPosts = () => {
-  const blogData = [
-    {
-      id: 1,
-      title: "Ryan Garcia is fighting again, this time on social media",
-      date: "03 Jan 2025",
-      category: "Contractor",
-      descrition:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-      image: "/images/webp/blog-post-1.webp",
-    },
-    {
-      id: 2,
-      title: "Ryan Garcia is fighting again, this time on social media",
-      date: "03 Jan 2025",
-      category: "Contractor",
-      descrition:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-      image: "/images/webp/blog-post-2.webp",
-    },
-    {
-      id: 3,
-      title: "Ryan Garcia is fighting again, this time on social media",
-      date: "03 Jan 2025",
-      category: "Contractor",
-      descrition:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-      image: "/images/webp/blog-post-3.webp",
-    },
-  ];
   return (
-    <section className="py-12 px-2 sm:px-4 lg:px-20">
+    <section className="pt-4 pb-12 px-2 sm:px-4 lg:px-20">
       <div className="max-w-[1158px] w-full mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="section-heading text-white">Our Blogs</h2>
+          <h2 className="section-heading text-white gradient-text">
+            Blog Posts Related To CRM
+          </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
               View All Blogs
@@ -47,8 +19,8 @@ const BlogPosts = () => {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
-          <div className="max-w-[600px] mx-auto xl:mx-0  xl:max-w-[450px] w-full flex flex-col gap-4">
+        <div className=" hidden sm:flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
+          <div className="max-w-[600px] xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogData.map((blog) => (
               <article
                 key={blog.id}
@@ -97,50 +69,50 @@ const BlogPosts = () => {
             </div>
           </div>
         </div>
+        <div className="sm:hidden block blog-post">
+          <SliderLayout
+            autoplay
+            pagination
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 12 },
+              520: { slidesPerView: 1.5, spaceBetween: 12 },
+              640: { slidesPerView: 2, spaceBetween: 14 },
+              768: { slidesPerView: 2.6, spaceBetween: 16 },
+            }}
+          >
+            {blogData.map((blog) => (
+              <article
+                key={blog.id}
+                className="flex flex-col sm:flex-row items-start gap-4 rounded-xl p-2 z-20 relative w-full bg-blackRussian"
+              >
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  width={170}
+                  height={170}
+                  className="rounded-md sm:max-w-[170px] w-full"
+                />
+                <div className="flex-1 text-sm">
+                  <p className="text-[10px] font-medium font-jakarta text-secondary">
+                    {blog.category} | {blog.date}
+                  </p>
+                  <h3 className="text-base font-jakarta font-medium text-white">
+                    {blog.title}
+                  </h3>
+                  <p className="truncate text-xs text-wallStreet max-w-[240px] pt-1">
+                    {blog.descrition}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </SliderLayout>
+        </div>
         <div className="block md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
             View All Blogs
             <BlogBtnIcon />
           </button>
         </div>
-      </div>
-      <div className="lg:hidden">
-        <SliderLayout
-          autoplay
-          pagination
-          breakpoints={{
-            320: { slidesPerView: 1, spaceBetween: 12 },
-            520: { slidesPerView: 1.5, spaceBetween: 12 },
-            640: { slidesPerView: 2, spaceBetween: 14 },
-            768: { slidesPerView: 2.6, spaceBetween: 16 },
-          }}
-        >
-          {blogData.map((blog) => (
-            <article
-              key={blog.id}
-              className="flex flex-col sm:flex-row items-start gap-4 rounded-xl p-2 z-20 relative w-full bg-blackRussian"
-            >
-              <Image
-                src={blog.image}
-                alt={blog.title}
-                width={170}
-                height={170}
-                className="rounded-md sm:max-w-[170px] w-full"
-              />
-              <div className="flex-1 text-sm">
-                <p className="text-[10px] font-medium font-jakarta text-secondary">
-                  {blog.category} | {blog.date}
-                </p>
-                <h3 className="text-base font-jakarta font-medium text-white">
-                  {blog.title}
-                </h3>
-                <p className="truncate text-xs text-wallStreet max-w-[240px] pt-1">
-                  {blog.descrition}
-                </p>
-              </div>
-            </article>
-          ))}
-        </SliderLayout>
       </div>
     </section>
   );

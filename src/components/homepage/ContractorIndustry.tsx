@@ -39,7 +39,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       <span className="absolute top-0 w-full h-full left-0  block md:hidden">
         <SliderRedLineIcon />
       </span>
-      <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-10">
+      <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-12">
         <div className="px-2">
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <h3 className="section-heading text-center text-white">

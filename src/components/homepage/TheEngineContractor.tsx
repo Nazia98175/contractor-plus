@@ -20,15 +20,15 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
     triggerOnce: true,
     threshold: 0.3,
   });
-  
+
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>
       <div
         ref={ref}
-        className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] sm:mt-[53px] mt-10 relative z-30"
+        className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] sm:mt-[40px] mt-10 relative z-30"
       >
-        <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!px-12">
+        <div className="flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!pl-[54px] md:!pr-[30px]">
           <div className="flex flex-col gap-1.5 w-full">
             <h2 className="section-heading gradient-text text-center md:text-left">
               {engineContractor?.[0]?.title}&nbsp;
@@ -44,7 +44,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
                 "0"
               )}{" "}
               <br />
-             {engineContractor?.[1]?.txt}
+              {engineContractor?.[1]?.txt}
             </h2>
           </div>
           <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
@@ -54,9 +54,12 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
               alt="The engine 57,163 contractors run on"
             />
             <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-darkGrey space-y-1">
-              <h3 className="text-2xl font-medium text-doctor">{engineContractor?.[0]?.sub_title?.split("+11")?.[0]}</h3>
+              <h3 className="text-2xl font-medium text-doctor">
+                {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}
+              </h3>
               <p className="text-xs sm:text-sm font-jakarta">
-                <span className="text-monstrousGreen">+11</span> {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
+                <span className="text-monstrousGreen">+11</span>{" "}
+                {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
               </p>
             </div>
           </div>

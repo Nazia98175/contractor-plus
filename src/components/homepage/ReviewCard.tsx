@@ -18,8 +18,6 @@ const renderStars = (rating: number) => {
 };
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
-  console.log(review, "inside");
-
   return (
     <div className="mr-5 min-h-full h-full">
       <article
@@ -29,13 +27,13 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
         } bg-doctor group btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full  min-h-full h-full flex flex-col justify-between relative`}
       >
         <div className="flex justify-between items-start gap-5 lg:p-2">
-          <div className="flex items-center gap-2 ">
+          <div className="flex items-center gap-2">
             <Image
               src={review.profileUrl}
               alt="avatar"
               width={42}
               height={42}
-              className="max-w-[42px] object-contain"
+              className="max-w-[42px] object-contain rounded-full"
             />
             <div>
               <div className="flex items-center gap-3">
@@ -51,7 +49,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                   </span>
                 )}
               </div>
-              <p className="text-xs font-medium text-highRise">
+              <p className="text-xs font-medium text-highRise pt-1">
                 {review.userRole}
               </p>
             </div>

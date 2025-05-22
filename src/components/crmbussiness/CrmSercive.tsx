@@ -1,6 +1,10 @@
 "use client";
 import React, { useState, FormEvent, ChangeEvent } from "react";
-import { CheckIcon } from "../common/Icons";
+import {
+  CheckIcon,
+  FooterRedLineIcon,
+  SliderRedLineIcon,
+} from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
@@ -27,7 +31,10 @@ const CrmSercive: React.FC = () => {
   };
 
   return (
-    <div className=" px-2">
+    <div className="px-2 relative overflow-hidden xl:overflow-visible">
+      <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
+        <FooterRedLineIcon />
+      </span>
       <div className="py-[75px]">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold gradient-text font-jakarta">
@@ -41,7 +48,7 @@ const CrmSercive: React.FC = () => {
         </TextAnimation>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
           <form
-            className="flex flex-col md:flex-row justify-center items-start gap-3"
+            className="flex flex-col md:flex-row justify-center max-w-[550px] mx-auto md:max-w-[657px] w-full items-start gap-3"
             onSubmit={handleSubmit}
           >
             <div className="md:max-w-[414px] w-full">
@@ -64,7 +71,7 @@ const CrmSercive: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] w-full mx-auto md:mx-0 sm:!w-auto"
+              className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] !w-full md:mx-0 md:!w-auto"
               disabled={loading}
             >
               {loading ? (

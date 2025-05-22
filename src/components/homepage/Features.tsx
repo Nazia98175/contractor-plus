@@ -10,16 +10,16 @@ type HeroProps = {
 };
 const Features = ({ features }: { features: any }) => {
   const t = useTranslations("feature");
-  const featureData = featureKeys.map((item , index) => ({
+  const featureData = featureKeys.map((item, index) => ({
     title: features?.[index]?.title,
     desc: features?.[index]?.description,
     img: item.img,
   }));
-  
+
   return (
-    <section className="bg-white sm:px-2 xl:pt-[78px] pt-11 lg:pb-[37px] pb-6 relative z-20">
+    <section className="bg-white sm:px-2 xl:pt-[86px] pt-11 lg:pb-[78px] pb-6 relative z-20">
       <div className="main-container sm:!px-2 !px-0">
-        <div className=" bg-doctor lg:rounded-[32px] sm:rounded-4xl lg:px-8 md:px-6 px-4 xl:py-12 lg:py-10 md:py-8 sm:py-6 pt-6 pb-3">
+        <div className=" bg-doctor lg:rounded-[32px] sm:rounded-4xl lg:px-8 md:px-6 px-4">
           <CardReveal
             staggerDelay={0.15}
             animationDuration={0.8}

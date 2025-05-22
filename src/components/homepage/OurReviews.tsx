@@ -43,8 +43,8 @@ const OurReviews: React.FC<TheReviewsProps> = ({
   }));
 
   return (
-    <section className="pt-[15px] pb-[35px] md:pt-12 md:pb-16 bg-white relative z-20">
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container">
+    <section className="pt-[25px] pb-[35px] md:pt-10 md:pb-16 bg-white relative z-20">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container text-center md:text-start">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-black text-center md:text-start gradient-text-2">
             {reviews?.[0]?.title ?? ""}
@@ -54,7 +54,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({
           staggerDelay={0.4}
           animationDuration={0.8}
           distance={50}
-          className="flex flex-col sm:flex-row gap-4 items-center"
+          className="flex flex-col sm:flex-row gap-4 md:gap-6 items-center"
         >
           <Image
             className="max-w-[135px] w-full block md:hidden"
@@ -99,7 +99,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({
         <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
 
         {/* First row of reviews - scrolling right */}
-        <div className="md:pt-14 w-full ">
+        <div className="pt-[43px] md:pt-[60px] lg:pt-[80px] w-full">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {translatedReviews.map((review) => (
               <ReviewCard

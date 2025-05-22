@@ -65,9 +65,10 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     estimaticAI: <EstimaticIcon />,
     invoicing: <InvoicingIcon />,
     propertyProfiles: <PropertyIcon />,
-    bigChiefAI: <BigChiefAIIcon />,
+
     communication: <TelephoneIcon />,
     service: <BellIcon />,
+    bigChiefAI: <BigChiefAIIcon />,
   };
 
   const newFeatures = {

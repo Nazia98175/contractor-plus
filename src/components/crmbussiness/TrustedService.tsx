@@ -20,6 +20,7 @@ const TrustedService = () => {
   const translatedReviews = OurReviewList.map((review) => ({
     ...review,
     userName: t(`ourReviews.${review.id}.username`),
+    userRole: t(`ourReviews.${review.id}.userRole`),
     review: t(`ourReviews.${review.id}.review`),
   }));
 

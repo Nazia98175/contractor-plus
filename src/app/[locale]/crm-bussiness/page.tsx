@@ -1,6 +1,5 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import { FooterRedLineIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -48,9 +47,6 @@ const CrmBussinessPage = () => {
             />
           </div>
         </div>
-        <span className="top-[-236px] left-[209px] hidden rotate-[90deg] lg:block absolute pointer-events-none">
-          <FooterRedLineIcon />
-        </span>
         <CrmSercive />
         <TrustBar />
       </div>

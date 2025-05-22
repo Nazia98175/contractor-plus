@@ -38,7 +38,7 @@ const Footer = () => {
   const legalLinks = t.raw("legalLinks");
 
   return (
-    <footer className=" py-10 w-full relative overflow-hidden z-20">
+    <footer className=" py-10 md:py-[62px] w-full relative overflow-hidden z-20">
       {/* <ParticlesComponent id="star-particles" /> */}
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
         <FooterRedLineIcon />
@@ -107,12 +107,12 @@ const Footer = () => {
               alt="Powered by Logo"
             />
           </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center w-full md:w-fit gap-3">
-            <div className="flex flex-col-reverse md:flex-row items-center gap-3 text-xs text-secondary font-medium font-montserrat">
+          <div className="flex flex-col sm:flex-row justify-between items-center w-full md:w-fit gap-4">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-4 text-xs text-secondary font-medium font-montserrat">
               <p>
                 © {currentYear} {t("copyright")}
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-4">
                 {legalLinks.map((item: string, idx: number) => (
                   <Link
                     key={idx}
@@ -123,6 +123,14 @@ const Footer = () => {
                   </Link>
                 ))}
               </div>
+            </div>
+            <div className="flex gap-3">
+              <Link href="https://x.com/">
+                <TwitterIcon />
+              </Link>
+              <Link href="https://www.linkedin.com/">
+                <LinkdinIcon />
+              </Link>
             </div>
             <div className="md:hidden flex gap-3 items-center">
               <p className="text-xs text-secondary font-medium font-montserrat">
@@ -136,14 +144,6 @@ const Footer = () => {
                 src="/images/webp/footer-logo.webp"
                 alt="Powered by Logo"
               />
-            </div>
-            <div className="flex gap-3">
-              <Link href="https://x.com/">
-                <TwitterIcon />
-              </Link>
-              <Link href="https://www.linkedin.com/">
-                <LinkdinIcon />
-              </Link>
             </div>
           </div>
         </div>

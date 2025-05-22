@@ -152,10 +152,63 @@ export const PricingDropdownLinks = [
   { label: "Regional Material Pricing", href: "/" },
 ];
 
+export const blogData = [
+  {
+    id: 1,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-post-1.webp",
+  },
+  {
+    id: 2,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-post-2.webp",
+  },
+  {
+    id: 3,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-post-3.webp",
+  },
+];
+export const compareFeatures = [
+  { name: "Built-In Phone & IVR", eContractorHas: true, othersHave: false },
+  { name: "Property Profiles", eContractorHas: true, othersHave: false },
+  { name: "Mobile-First", eContractorHas: true, othersHave: false },
+  {
+    name: "AI Summaries & Sentiment Analysis",
+    eContractorHas: true,
+    othersHave: false,
+  },
+  { name: "Workspace Toggle", eContractorHas: true, othersHave: false },
+  { name: "Live Camera Feeds", eContractorHas: true, othersHave: false },
+  { name: "Communication Timeline", eContractorHas: true, othersHave: false },
+  {
+    name: "Activity-Based Automation",
+    eContractorHas: true,
+    othersHave: false,
+  },
+  {
+    name: "Built-In Contracts & eSig",
+    eContractorHas: true,
+    othersHave: false,
+  },
+];
+
 export const OurReviewList: Review[] = [
   {
     id: 1,
-    profileUrl: "/images/webp/review-profile-1.webp",
+    profileUrl: "/images/webp/rushville.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -190,7 +243,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 2,
     review: "ourReviews.review",
-    videolink: "https://app.slack.com/client/T08F4GG863G/C08RH3X22G1",
+    videolink: "https://www.youtube.com/watch?v=8ts4jsNZtgM",
     isModal: true,
   },
   {
@@ -205,7 +258,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 6,
-    profileUrl: "/images/webp/review-profile-6.webp",
+    profileUrl: "/images/webp/juan-gracia.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -301,7 +354,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 16,
-    profileUrl: "/images/webp/review-profile-6.webp",
+    profileUrl: "/images/webp/juan-gracia.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 5,
@@ -876,5 +929,54 @@ export const servicedata = [
           "Automation is on the way to help you re-engage cold leads without any manual work.",
       },
     ],
+  },
+];
+
+export const reviews = [
+  {
+    id: 1,
+    userName: "James Bond",
+    profileUrl: "/images/webp/rushville.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `Since I started sending all my estimates using Contractor+, I have
+    stopped losing bids. The professional image I gain by using this app
+    is helping me win more business. Contractor+ is a game changer!`,
+    userRole: "Co-Owner, Rushville Restorations",
+  },
+  {
+    id: 2,
+    userName: "Brandon Geiger",
+    profileUrl: "/images/webp/rands.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
+    userRole: "CEO at Rands Mechanical",
+  },
+  {
+    id: 3,
+    userName: "Juan Garcia",
+    profileUrl: "/images/webp/juan-gracia.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."`,
+    userRole: "Owner, Nailed It Miami",
+  },
+  {
+    id: 4,
+    userName: "Brandon Geiger",
+    profileUrl: "/images/webp/rands.webp",
+    rating: 4.5,
+    videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
+    userRole: "CEO at Rands Mechanical",
   },
 ];

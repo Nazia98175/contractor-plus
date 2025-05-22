@@ -48,9 +48,6 @@ const CrmBussinessPage = () => {
             />
           </div>
         </div>
-        <span className="top-[-236px] left-[209px] hidden rotate-[90deg] lg:block absolute pointer-events-none">
-          <FooterRedLineIcon />
-        </span>
         <CrmSercive />
         <TrustBar />
       </div>

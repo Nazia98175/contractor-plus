@@ -12,8 +12,7 @@ export const getHomePage = async (
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log(error , "")
     console.log("Failed to fetch homepage:", error?.response?.data);
-     return notFound();;
+    return notFound();
   }
 };

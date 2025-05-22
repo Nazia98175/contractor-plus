@@ -12,7 +12,6 @@ const FieldService: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  console.log("FieldService");
   // Get translated data as array
   const t = useTranslations();
 

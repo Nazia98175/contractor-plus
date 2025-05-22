@@ -1,12 +1,11 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-import VideoViewer from "./VideoViewer";
-import Aurora from "../common/Aurora";
+import AnimatedLineAura from "../common/SvgAuroraEffect";
 
 type HeroProps = {
-  homePageContent: any; // Replace `any` with the actual type if available
+  homePageContent: any;
 };
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
   const t = useTranslations("hero");
@@ -20,13 +19,14 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
 
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
-      <Image
+      {/* <Image
         width={769}
         height={800}
         src="/images/webp/red.webp"
         alt="Red Circle For designing"
         className="absolute top-0 left-0 hidden lg:block h-full z-10 pointer-events-none object-cover"
-      />
+      /> */}
+      <AnimatedLineAura />
       <img
         src="/images/webp/hero-mobile-bg.webp"
         alt="Mobile Hero"
@@ -38,6 +38,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         src="/images/webp/hero-video-ovelay.webp"
         alt="Red Circle For designing"
         className="absolute top-0 left-0 lg:hidden block h-full z-20 pointer-events-none object-cover w-full"
+        layout="lazy"
       />
       <div className="flex items-end main-container z-20 relative lg:pt-[140px] pt-[269px] xl:pb-[196px] lg:pb-[150px] md:pb-[100px] pb-9">
         <div className="lg:max-w-[616px] w-full sm:space-y-6 relative z-30">

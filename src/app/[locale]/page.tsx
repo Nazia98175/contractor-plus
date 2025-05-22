@@ -65,7 +65,7 @@ export default async function Home({
         </div>
         <OurBlogs blogs={blogs?.data}  blogHeading={homePageContent?.data?.blogs} />
         <div className="overflow-hidden relative ">
-          <EntireBusiness />
+          <EntireBusiness entireBusiness={homePageContent?.data?.entireBusiness}  ncc_text={homePageContent?.data?.ncc_text}/>
           <Footer />
         </div>
         <ParticlesComponent id="star-particles" />

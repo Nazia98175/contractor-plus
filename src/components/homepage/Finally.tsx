@@ -21,20 +21,22 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   return (
     <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white  overflow-hidden">
       <>
-        <div className="w-[140%] h-full absolute -top-[44%] -left-[23%] z-20 md:block hidden blur-[100px]">
+        <div className="w-[140%] h-[150%] absolute -top-[75%] -left-[23%] z-20 md:block hidden blur-[100px]">
           <div className="glow-ellipse bg-dark-desktop"></div>
           <div className="glow-ellipse bg-red-desktop"></div>
           <div className="glow-ellipse bg-red-desktop"></div>
           <div className="glow-ellipse bg-dark-desktop"></div>
           <div className="glow-ellipse bg-dark-desktop"></div>
         </div>
+
         <div className="w-[250%] h-full absolute -top-[145%] -left-[75%] z-20 block md:hidden blur-[23px]">
           <div className="absolute top-[623px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1115px] bg-[#EE1E25] rounded-full blur-[32px] opacity-90"></div>
           <div className="absolute top-[621px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[983px] bg-[#C01A06] rounded-full blur-[29.6px] opacity-90"></div>
           <div className="absolute top-[668px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[732px] bg-[#0C0D11] rounded-full blur-[81px] opacity-90"></div>
           <div className="absolute top-[667px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[499px] bg-[#0C0D11] rounded-full blur-[15px] opacity-90"></div>
         </div>
-
+        <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
+        <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
         <div className="space-y-4 z-30 relative ">
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <h2 className="section-heading text-center gradient-text z-40 relative">

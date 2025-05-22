@@ -9,7 +9,6 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   const [Loading, setLoading] = useState(true);
-  console.log(Loading, "loading");
 
   useEffect(() => {
     const timer = setTimeout(() => {

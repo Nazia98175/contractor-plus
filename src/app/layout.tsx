@@ -1,6 +1,8 @@
 "use client";
-import { ReactNode, useEffect, useState } from "react";
+import MainLoader from "@/components/common/MainLoader";
 import SmoothScroll from "@/components/common/SmoothScroll";
+import { ReactNode, useEffect, useState } from "react";
+
 type Props = {
   children: ReactNode;
 };
@@ -19,11 +21,7 @@ export default function RootLayout({ children }: Props) {
   }, []);
   return (
     <>
-      {Loading && (
-        <div className="h-screen w-full bg-red-400 text-green-400 z-[10000]">
-          <h2>loading...</h2>
-        </div>
-      )}
+      {Loading && <MainLoader />}
       <SmoothScroll />
       {children}
     </>

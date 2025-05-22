@@ -20,8 +20,6 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   review,
   openModal,
 }) => {
-  console.log(review, "seconde");
-
   return (
     <div className="mr-5 min-h-full h-full ">
       <article

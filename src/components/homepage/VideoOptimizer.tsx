@@ -34,7 +34,6 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
         }
         setVideoUrl(isHighSpeed ? highResUrl : lowResUrl);
       } catch (error) {
-        console.error("Error checking connection:", error);
         setVideoUrl(lowResUrl);
         setConnectionQuality("error - using low quality");
       } finally {

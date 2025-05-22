@@ -30,35 +30,40 @@ export default async function Home({
       "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
     ),
   ]);
- console.log(homePageContent , "homeeee")
   return (
     <Suspense fallback={<div>Loading...</div>}>
-    <div className="relative overflow-x-hidden">
-      <div className="relative">
-        <Header />
-        <Hero homePageContent={homePageContent?.data} />
-        <TrustBar />
-        <TheEngineContractor
-          engineContractor={homePageContent?.data?.engineContractor}
+      <div className="relative overflow-x-hidden">
+        <div className="relative">
+          <Header />
+          <Hero homePageContent={homePageContent?.data} />
+          <TrustBar />
+          <TheEngineContractor
+            engineContractor={homePageContent?.data?.engineContractor}
+          />
+        </div>
+        <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
+        <Finally finallyC={homePageContent?.data?.finally} />
+        <CoreFeatures />
+        <Features features={homePageContent?.data?.features} />
+        <ContractorIndustry
+          contractorIndustry={homePageContent?.data?.contractorIndustry}
         />
+        <OurReviews reviews={homePageContent?.data?.reviews} />
+        <div className="bg-kuroiBlack relative overflow-hidden ">
+          <Whatever
+            whateverOperation={homePageContent?.data?.whateverOperation}
+          />
+          <MakeOperation
+            whateverOperation={homePageContent?.data?.whateverOperation}
+          />
+        </div>
+        <OurBlogs />
+        <div className="overflow-hidden relative ">
+          <EntireBusiness />
+          <Footer />
+        </div>
+        <ParticlesComponent id="star-particles" />
       </div>
-      <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
-      <Finally finallyC={homePageContent?.data?.finally} />
-      <CoreFeatures />
-      <Features features={homePageContent?.data?.features} />
-      <ContractorIndustry contractorIndustry={homePageContent?.data?.contractorIndustry} />
-      <OurReviews reviews={homePageContent?.data?.reviews} />
-      <div className="bg-kuroiBlack relative overflow-hidden ">
-        <Whatever whateverOperation={homePageContent?.data?.whateverOperation} />
-        <MakeOperation whateverOperation={homePageContent?.data?.whateverOperation} />
-      </div>
-      <OurBlogs />
-      <div className="overflow-hidden relative ">
-        <EntireBusiness />
-        <Footer />
-      </div>
-      <ParticlesComponent id="star-particles" />
-    </div>
     </Suspense>
   );
 }

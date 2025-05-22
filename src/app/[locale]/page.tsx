@@ -14,6 +14,7 @@ import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
+import { getBlogs } from "@/services/blogs";
 import { getHomePage } from "@/services/homepage";
 import { Suspense } from "react";
 
@@ -23,13 +24,18 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const useParams = await params;
-  const [homePageContent, contractPlatformsData] = await Promise.all([
+  const [homePageContent, contractPlatformsData , blogs] = await Promise.all([
     getHomePage(useParams.locale, "&populate=*"),
     getHomePage(
       useParams.locale,
       "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
     ),
+    getBlogs(useParams?.locale , "&sort=publishedAt:desc&pagination[limit]=3")
+
   ]);
+
+  console.log(homePageContent , "homeee")
+  console.log(blogs , "blogs")
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="relative overflow-x-hidden">
@@ -57,7 +63,7 @@ export default async function Home({
             whateverOperation={homePageContent?.data?.whateverOperation}
           />
         </div>
-        <OurBlogs />
+        <OurBlogs blogs={blogs?.data}  blogHeading={homePageContent?.data?.blogs} />
         <div className="overflow-hidden relative ">
           <EntireBusiness />
           <Footer />

@@ -20,9 +20,9 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
     triggerOnce: true,
     threshold: 0.3,
   });
-  
+
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>
       <div
         ref={ref}
@@ -44,7 +44,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
                 "0"
               )}{" "}
               <br />
-             {engineContractor?.[1]?.txt}
+              {engineContractor?.[1]?.txt}
             </h2>
           </div>
           <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
@@ -54,9 +54,12 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
               alt="The engine 57,163 contractors run on"
             />
             <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-darkGrey space-y-1">
-              <h3 className="text-2xl font-medium text-doctor">{engineContractor?.[0]?.sub_title?.split("+11")?.[0]}</h3>
+              <h3 className="text-2xl font-medium text-doctor">
+                {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}
+              </h3>
               <p className="text-xs sm:text-sm font-jakarta">
-                <span className="text-monstrousGreen">+11</span> {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
+                <span className="text-monstrousGreen">+11</span>{" "}
+                {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
               </p>
             </div>
           </div>

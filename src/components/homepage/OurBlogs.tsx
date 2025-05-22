@@ -60,7 +60,7 @@ const OurBlogs = () => {
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
           <TextAnimation animateOnScroll={true} delay={0.3}>
-            <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
+            <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2">
               {t("heading")}
             </h2>
           </TextAnimation>
@@ -72,7 +72,7 @@ const OurBlogs = () => {
           </div>
         </div>
         <div className="lg:hidden flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8">
-          <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
+          <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2 text-center md:text-start">
             {t("heading")}
           </h2>
           <div className="hidden md:block">

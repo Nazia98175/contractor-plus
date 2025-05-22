@@ -211,8 +211,12 @@
       "description": "Présentez votre entreprise et attirez des clients"
     },
     "estimaticAI": {
-      "label": "Estimatic AI",
-      "description": "Estimations rapides, précises et gagnantes"
+      "label": "Génération de leads",
+      "description": "Devis et estimations de projet rapides, précis et performants"
+    },
+    "bigChiefAI": {
+      "label": "Comptabilité",
+      "description": "Répondez à chaque appel, qualifiez les prospects, automatisez les tâches répétitives."
     },
     "invoicing": {
       "label": "Facturation",
@@ -222,10 +226,7 @@
       "label": "Profils de Propriété",
       "description": "Simplifiez l’entretien de vos biens"
     },
-    "bigChiefAI": {
-      "label": "Big Chief AI",
-      "description": "Répondez à chaque appel, qualifiez les leads, automatisez"
-    },
+
     "communication": {
       "label": "Téléphone & SMS Pro",
       "description": "Conversations centralisées avec l'équipe et les clients"

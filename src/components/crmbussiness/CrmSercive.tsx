@@ -1,13 +1,10 @@
 "use client";
-import React, { useState, FormEvent, ChangeEvent } from "react";
-import {
-  CheckIcon,
-  FooterRedLineIcon,
-  SliderRedLineIcon,
-} from "../common/Icons";
 import { useTranslations } from "next-intl";
-import TextAnimation from "../common/TextAnimation";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../common/CardReveal";
+// import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
+import { CheckIcon } from "../common/Icons";
+import TextAnimation from "../common/TextAnimation";
 
 const CrmSercive: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -33,7 +30,7 @@ const CrmSercive: React.FC = () => {
   return (
     <div className="px-2 relative overflow-hidden xl:overflow-visible">
       <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
-        <FooterRedLineIcon />
+        {/* <FooterRedLineIcon /> */}
       </span>
       <div className="py-[75px]">
         <TextAnimation animateOnScroll={true} delay={0.3}>

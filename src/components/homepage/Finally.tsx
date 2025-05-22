@@ -21,15 +21,14 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   return (
     <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white  overflow-hidden">
       <>
-        <div className="w-[150%] h-full absolute -top-[60%] -left-[25%] z-20 md:block hidden">
+        <div className="w-[140%] h-full absolute -top-[44%] -left-[23%] z-20 md:block hidden blur-[100px]">
           <div className="glow-ellipse bg-dark-desktop"></div>
           <div className="glow-ellipse bg-red-desktop"></div>
           <div className="glow-ellipse bg-red-desktop"></div>
           <div className="glow-ellipse bg-dark-desktop"></div>
           <div className="glow-ellipse bg-dark-desktop"></div>
         </div>
-
-        <div className="w-[250%] h-full absolute -top-[145%] -left-[75%] z-20 block md:hidden">
+        <div className="w-[250%] h-full absolute -top-[145%] -left-[75%] z-20 block md:hidden blur-[23px]">
           <div className="absolute top-[623px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1115px] bg-[#EE1E25] rounded-full blur-[32px] opacity-90"></div>
           <div className="absolute top-[621px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[983px] bg-[#C01A06] rounded-full blur-[29.6px] opacity-90"></div>
           <div className="absolute top-[668px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[732px] bg-[#0C0D11] rounded-full blur-[81px] opacity-90"></div>

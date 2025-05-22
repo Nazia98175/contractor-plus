@@ -1302,62 +1302,6 @@ export const BlogBtnIcon = () => (
   </svg>
 );
 
-export const FooterRedLineIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="515"
-    height="992"
-    fill="none"
-    viewBox="0 0 515 992"
-  >
-    <g
-      filter="url(#filter0_f_115_2066)"
-      style={{ mixBlendMode: "plus-lighter" }}
-    >
-      <path
-        stroke="url(#paint0_linear_115_2066)"
-        strokeLinecap="round"
-        strokeWidth="432"
-        d="M210.045 305-40.978 739.784l-251.023 434.786"
-      ></path>
-    </g>
-    <defs>
-      <linearGradient
-        id="paint0_linear_115_2066"
-        x1="-359.41"
-        x2="-139.291"
-        y1="755.313"
-        y2="1065.72"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.062" stopOpacity="0"></stop>
-        <stop offset="0.997" stopColor="#EE1E25"></stop>
-        <stop offset="1" stopColor="#fff"></stop>
-      </linearGradient>
-      <filter
-        id="filter0_f_115_2066"
-        width="1110.12"
-        height="1477.64"
-        x="-596.037"
-        y="0.964"
-        colorInterpolationFilters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
-        <feBlend
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        ></feBlend>
-        <feGaussianBlur
-          result="effect1_foregroundBlur_115_2066"
-          stdDeviation="44"
-        ></feGaussianBlur>
-      </filter>
-    </defs>
-  </svg>
-);
-
 export const ModalCrossIcon = () => (
   <svg
     className="hover:rotate-180 transition-all duration-200 ease-in-out"

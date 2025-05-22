@@ -5,7 +5,19 @@ import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Image from "next/image";
 
-const Finally = () => {
+interface Finally {
+  title: string;
+  sub_title: string;
+  txt: string;
+}
+
+interface TheFinallyProps {
+  finallyC: Finally[];
+}
+
+const Finally: React.FC<TheFinallyProps> = ({
+  finallyC
+}) => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
   return (
@@ -22,12 +34,12 @@ const Finally = () => {
       <div className="space-y-4 z-30 relative ">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading text-center gradient-text z-40 relative">
-            {t("heading")}
+            {finallyC?.[0]?.title ?? ""}
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
-            {t("desc")}
+            {finallyC?.[0]?.sub_title ?? ""}
           </p>
         </TextAnimation>
 
@@ -37,7 +49,7 @@ const Finally = () => {
           distance={50}
           className="flex gap-3 md:gap-[22px] relative z-10 items-center justify-center pt-2 flex-wrap"
         >
-          {features?.map((feature, index) => (
+          {finallyC?.[1]?.txt?.split(",")?.map((feature, index) => (
             <div
               key={index}
               className="flex font-medium text-sm sm:text-base sm:font-semibold font-myriad gap-1.5 sm:gap-2 items-center text-superSilver"

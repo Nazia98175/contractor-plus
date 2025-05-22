@@ -10,7 +10,7 @@ const KindAdorable = () => {
         <h2 className="section-heading gradient-text-2 !font-black text-center lg:!font-semibold w-fit mx-auto">
           What the others call a CRM is kind of adorable
         </h2>
-        <p className="max-w-[885px] mx-auto paragraph-syle text-center">
+        <p className="max-w-[885px] mx-auto paragraph-style text-center">
           Not all platforms are built to run a real business
         </p>
         <div className="flex w-full mt-8">

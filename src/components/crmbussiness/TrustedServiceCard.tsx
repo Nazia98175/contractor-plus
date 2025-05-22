@@ -58,7 +58,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-highRise text-sm font-semibold  mt-5 line-clamp-3">
+        <p className="text-highRise text-xs sm:text-sm font-semibold  mt-5 line-clamp-3">
           "{review.review}"
         </p>
       </article>

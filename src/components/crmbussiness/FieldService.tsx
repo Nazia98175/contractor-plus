@@ -116,7 +116,7 @@ const FieldService: React.FC = () => {
 
   return (
     <section
-      className="relative bg-kuroiBlack z-20 pt-20 lg:pt-2 px-2"
+      className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2"
       ref={containerRef}
     >
       <h2 className="text-xl font-semibold text-secondary !md:hidden text-center max-w-[813px] mx-auto pb-6">
@@ -130,7 +130,7 @@ const FieldService: React.FC = () => {
       {/* Reduced height for blur element */}
 
       {/* Reduced height for bottom background */}
-      <div className="absolute bg-bottom w-full h-24 left-0 -bottom-1 rotate-180" />
+      <div className="absolute bg-bottom w-full h-24  z-10 left-0 -bottom-1 rotate-180" />
 
       <div ref={sectionRef} className="relative px-2">
         {fieldServiceData.map((service, index) => (

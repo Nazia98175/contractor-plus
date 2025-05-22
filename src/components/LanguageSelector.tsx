@@ -1,5 +1,4 @@
 "use client";
-
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState, useRef, useCallback, memo } from "react";
 import { DropdownIcon } from "./common/Icons";
@@ -50,7 +49,7 @@ const LanguageItem = memo(
     onClick: () => void;
   }) => (
     <div
-      className={`flex items-center justify-center gap-2 px-2 py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
+      className={`flex items-center justify-center gap-2 px-2 py-1 sm:py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
         isActive ? "bg-gray-700/60" : "hover:bg-gray-800/60"
       }`}
       style={{
@@ -72,7 +71,8 @@ const LanguageItem = memo(
           loading="lazy" // Add lazy loading
         />
         <h4 className="font-inter text-[10px] sm:text-xs xl:text-sm font-semibold">
-          {language.name}
+          <span className="block sm:hidden ">{language.code}</span>
+          <span className="hidden sm:block">{language.name}</span>
         </h4>
       </div>
     </div>
@@ -193,7 +193,8 @@ const LanguageSelector = () => {
           priority={true} // Prioritize loading this image
         />
         <h4 className="font-inter text-xs xl:text-sm font-semibold">
-          {currentLanguage.name}
+          <span className="block sm:hidden">{currentLanguage.code}</span>
+          <span className="hidden sm:block">{currentLanguage.name}</span>
         </h4>
         <div
           className={`transform transition-transform duration-300 ease-in-out lg:block hidden ${

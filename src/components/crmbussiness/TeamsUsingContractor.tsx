@@ -39,7 +39,7 @@ const TeamsUsingContractor = () => {
         <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold  max-w-[951px] mx-auto">
           {t("heading")}
         </h2>
-        <p className="paragraph text-center">{t("desc")}</p>
+        <p className="paragraph-style text-center">{t("desc")}</p>
 
         <div className="grid px-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-6 md:mt-10 xl:mt-[52px] mb-8 sm:mb-12 md:mb-16 xl:mb-[70px] w-full">
           {crmList.map((item, index) => (

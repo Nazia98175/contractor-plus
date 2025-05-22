@@ -11,7 +11,19 @@ import TextAnimation from "../common/TextAnimation";
 import ReviewCard from "./ReviewCard";
 import { Review } from "@/types";
 
-const OurReviews: React.FC = () => {
+interface Reviews {
+  title: string;
+  sub_title: string;
+  
+}
+
+interface TheReviewsProps {
+  reviews: Reviews[];
+}
+
+const OurReviews: React.FC<TheReviewsProps> = ({
+  reviews
+}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -35,7 +47,7 @@ const OurReviews: React.FC = () => {
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container text-center md:text-start">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="section-heading text-black text-center md:text-start gradient-text-2">
-            {t("heading")}
+            {reviews?.[0]?.title ?? ""}
           </h3>
         </TextAnimation>
         <CardReveal
@@ -65,7 +77,7 @@ const OurReviews: React.FC = () => {
           <div>
             <div className="flex items-center gap-3">
               <h3 className="text-winterWay text-sm font-bold font-jakarta">
-                {t("excellent")}
+                {reviews?.[0]?.sub_title?.split("4.9")?.[0] ?? ""}
               </h3>
 
               <p className="text-base font-extrabold text-dancingJewel font-jakarta">
@@ -76,7 +88,8 @@ const OurReviews: React.FC = () => {
               </span>
             </div>
             <p className="text-winterWay text-xs font-medium pt-1 font-jakarta text-center md:text-start">
-              {t("basedOn", { count: 1320 })}
+              {/* {t("basedOn", { count: 1320 })} */}
+              {reviews?.[0]?.sub_title?.split("4.9")?.[1] ?? ""}
             </p>
           </div>
         </CardReveal>

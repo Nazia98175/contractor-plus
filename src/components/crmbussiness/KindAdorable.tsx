@@ -1,28 +1,7 @@
-import { BlackLogo, CheckIcon, CloseIcon } from "../common/Icons";
-
-const features = [
-  { name: "Built-In Phone & IVR", eContractorHas: true, othersHave: false },
-  { name: "Property Profiles", eContractorHas: true, othersHave: false },
-  { name: "Mobile-First", eContractorHas: true, othersHave: false },
-  {
-    name: "AI Summaries & Sentiment Analysis",
-    eContractorHas: true,
-    othersHave: false,
-  },
-  { name: "Workspace Toggle", eContractorHas: true, othersHave: false },
-  { name: "Live Camera Feeds", eContractorHas: true, othersHave: false },
-  { name: "Communication Timeline", eContractorHas: true, othersHave: false },
-  {
-    name: "Activity-Based Automation",
-    eContractorHas: true,
-    othersHave: false,
-  },
-  {
-    name: "Built-In Contracts & eSig",
-    eContractorHas: true,
-    othersHave: false,
-  },
-];
+import { compareFeatures } from "../common/Helper";
+import { BlackLogo } from "../common/Icons";
+import CompareCard from "./CompareCard";
+import CompareTable from "./CompareTable";
 
 const KindAdorable = () => {
   return (
@@ -34,66 +13,24 @@ const KindAdorable = () => {
         <p className="max-w-[885px] mx-auto paragraph text-center">
           Not all platforms are built to run a real business
         </p>
-        <div className="rounded-lg overflow-auto border border-decemberSky mt-8 xl:mt-12">
-          <table className="min-w-full text-left whitespace-nowrap">
-            <thead>
-              <tr className="md:text-lg text-base lg:text-xl font-myriad divide-x divide-decemberSky">
-                <th className="p-3 lg:p-5 w-1/3 font-bold text-center text-wallStreet">
-                  Compare
-                </th>
-                <th className="p-1 sm:p-3 lg:p-5 w-1/3 text-center font-semibold  text-wallStreet">
-                  <div className="flex justify-center items-center">
-                    <span className="max-w-24 min-w-20 lg:max-w-[148px]">
-                      <BlackLogo />
-                    </span>
-                  </div>
-                </th>
-                <th className="p-3 lg:p-5 w-1/3 text-center font-semibold text-secondary">
-                  Others
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {features.map((feature, index) => (
-                <tr
-                  key={index}
-                  className={` border-decemberSky divide-x divide-decemberSky text-winterWay border-t font-jakarta font-semibold text-xs sm:text-sm lg:text-base`}
-                >
-                  <td className="lg:px-5 p-2.5 lg:py-3">{feature.name}</td>
-                  <td className="lg:px-5 p-2.5 lg:py-3 ">
-                    <div className="flex justify-center items-center">
-                      {feature.eContractorHas ? (
-                        <CheckIcon
-                          width={24}
-                          height={24}
-                          className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
-                        />
-                      ) : (
-                        <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
-                          <CloseIcon />
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                  <td className="px-5 py-3 w-full">
-                    <div className="flex items-center justify-center">
-                      {feature.othersHave ? (
-                        <CheckIcon
-                          width={24}
-                          height={24}
-                          className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
-                        />
-                      ) : (
-                        <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
-                          <CloseIcon />
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="flex w-full mt-8">
+          <button className="bg-doctor p-3 rounded-l-sm w-1/2 border-r border-decemberSky flex justify-center items-center">
+            <span className="max-w-[122px]">
+              <BlackLogo />
+            </span>
+          </button>
+          <button className="p-3 w-1/2 text-center font-myriad font-semibold text-secondary bg-doctor tracking-[0.5px]">
+            Others
+          </button>
+        </div>
+
+        <div className="border block md:hidden border-superSilver rounded-[6px] overflow-hidden mt-2 drop-shadow-2xl">
+          {compareFeatures.map((feature, index) => (
+            <CompareCard feature={feature} key={index} />
+          ))}
+        </div>
+        <div className="rounded-lg md:block hidden overflow-auto border-[0.5px] border-decemberSky mt-12">
+          <CompareTable compareFeatures={compareFeatures} />
         </div>
       </section>
     </div>

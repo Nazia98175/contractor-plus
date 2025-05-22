@@ -16,7 +16,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     cta_button_text,
     cta_button_link,
     ncc_text,
-  } = homePageContent && homePageContent;
+  } = homePageContent ?? {};
 
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">

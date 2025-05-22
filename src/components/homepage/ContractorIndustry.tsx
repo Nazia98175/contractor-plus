@@ -3,8 +3,20 @@ import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import ContractorIndustrySlider from "./ContractorIndustrySlider";
 import { SliderRedLineIcon } from "../common/Icons";
+interface Industry {
+  title: string;
+  sub_title: string;
+  url: string;
+  btnTxt: string;
+}
 
-const ContractorIndustry = () => {
+interface TheIndustryProps {
+  contractorIndustry: Industry[];
+}
+
+const ContractorIndustry: React.FC<TheIndustryProps> = ({
+  contractorIndustry
+}) => {
   const t = useTranslations("industry");
 
   return (
@@ -31,17 +43,17 @@ const ContractorIndustry = () => {
         <div className="px-2">
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <h3 className="section-heading text-center text-white">
-              {t("heading")}
+              {contractorIndustry?.[0]?.title ?? ''}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
-              {t("desc")}
+              {contractorIndustry?.[0]?.sub_title ?? ''}
             </p>
           </TextAnimation>
           <div className="hidden md:flex justify-center items-center">
             <button className="bg-red-linear h-10 primary-btn">
-              {t("cta")}
+              {contractorIndustry?.[1]?.btnTxt ?? ""}
             </button>
           </div>
         </div>

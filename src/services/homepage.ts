@@ -1,6 +1,7 @@
 import axiosInstance from "@/lib/axios";
 import { HomePageResponse } from "@/types";
 import { AxiosResponse } from "axios";
+import { notFound } from "next/navigation";
 
 export const getHomePage = async (
   locale: string,
@@ -13,6 +14,6 @@ export const getHomePage = async (
   } catch (error: any) {
     console.log(error , "")
     console.log("Failed to fetch homepage:", error?.response?.data);
-    return null;
+     return notFound();;
   }
 };

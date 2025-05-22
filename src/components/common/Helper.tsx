@@ -152,6 +152,30 @@ export const PricingDropdownLinks = [
   { label: "Regional Material Pricing", href: "/" },
 ];
 
+export const compareFeatures = [
+  { name: "Built-In Phone & IVR", eContractorHas: true, othersHave: false },
+  { name: "Property Profiles", eContractorHas: true, othersHave: false },
+  { name: "Mobile-First", eContractorHas: true, othersHave: false },
+  {
+    name: "AI Summaries & Sentiment Analysis",
+    eContractorHas: true,
+    othersHave: false,
+  },
+  { name: "Workspace Toggle", eContractorHas: true, othersHave: false },
+  { name: "Live Camera Feeds", eContractorHas: true, othersHave: false },
+  { name: "Communication Timeline", eContractorHas: true, othersHave: false },
+  {
+    name: "Activity-Based Automation",
+    eContractorHas: true,
+    othersHave: false,
+  },
+  {
+    name: "Built-In Contracts & eSig",
+    eContractorHas: true,
+    othersHave: false,
+  },
+];
+
 export const OurReviewList: Review[] = [
   {
     id: 1,

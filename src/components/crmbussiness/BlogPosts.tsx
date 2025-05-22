@@ -1,39 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
+import { blogData } from "../common/Helper";
 
 const BlogPosts = () => {
-  const blogData = [
-    {
-      id: 1,
-      title: "Ryan Garcia is fighting again, this time on social media",
-      date: "03 Jan 2025",
-      category: "Contractor",
-      descrition:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-      image: "/images/webp/blog-post-1.webp",
-    },
-    {
-      id: 2,
-      title: "Ryan Garcia is fighting again, this time on social media",
-      date: "03 Jan 2025",
-      category: "Contractor",
-      descrition:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-      image: "/images/webp/blog-post-2.webp",
-    },
-    {
-      id: 3,
-      title: "Ryan Garcia is fighting again, this time on social media",
-      date: "03 Jan 2025",
-      category: "Contractor",
-      descrition:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
-      image: "/images/webp/blog-post-3.webp",
-    },
-  ];
   return (
     <section className="pt-4 pb-12 px-2 sm:px-4 lg:px-20">
       <div className="max-w-[1158px] w-full mx-auto">

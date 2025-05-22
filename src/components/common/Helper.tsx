@@ -152,6 +152,35 @@ export const PricingDropdownLinks = [
   { label: "Regional Material Pricing", href: "/" },
 ];
 
+export const blogData = [
+  {
+    id: 1,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-post-1.webp",
+  },
+  {
+    id: 2,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-post-2.webp",
+  },
+  {
+    id: 3,
+    title: "Ryan Garcia is fighting again, this time on social media",
+    date: "03 Jan 2025",
+    category: "Contractor",
+    descrition:
+      "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+    image: "/images/webp/blog-post-3.webp",
+  },
+];
 export const compareFeatures = [
   { name: "Built-In Phone & IVR", eContractorHas: true, othersHave: false },
   { name: "Property Profiles", eContractorHas: true, othersHave: false },

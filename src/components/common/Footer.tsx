@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
+import FooterAnimation from "./FooterAnimation";
 import {
   DownArrowIcon,
   FooterLogoIcon,
-  FooterRedLineIcon,
   LinkdinIcon,
   TwitterIcon,
 } from "./Icons";
@@ -41,7 +41,7 @@ const Footer = () => {
     <footer className=" py-10 md:py-[62px] w-full relative overflow-hidden z-20">
       {/* <ParticlesComponent id="star-particles" /> */}
       <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
-        <FooterRedLineIcon />
+        <FooterAnimation />
       </span>
       <div className="main-container">
         <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6">

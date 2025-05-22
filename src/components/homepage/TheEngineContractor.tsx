@@ -25,9 +25,9 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
       <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>
       <div
         ref={ref}
-        className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] sm:mt-[53px] mt-10 relative z-30"
+        className="lg:bg-[url('/images/webp/engine-bg.webp')] w-full bg-[100%_100%] overflow-hidden sm:border-l sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] sm:mt-[40px] mt-10 relative z-30"
       >
-        <div className="main-container flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!px-12">
+        <div className="flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!pl-[54px] md:!pr-[30px]">
           <div className="flex flex-col gap-1.5 w-full">
             <h2 className="section-heading gradient-text text-center md:text-left">
               {t("heading")}&nbsp;

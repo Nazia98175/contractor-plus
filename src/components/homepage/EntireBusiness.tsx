@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
@@ -28,7 +28,7 @@ const EntireBusiness: React.FC = () => {
 
   return (
     <div className=" px-2 relative z-20">
-      <div className="py-[75px]">
+      <div className="pt-[38px] md:pt-[44px] pb-7">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-decemberSky font-jakarta">
             {t("heading")}

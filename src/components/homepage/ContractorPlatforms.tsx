@@ -7,7 +7,7 @@ import { contractPlatforms } from "../common/Helper";
 const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
   return (
     <section className="relative z-20">
-      <div className="main-container flex flex-col gap-9 md:gap-11 lg:pt-[42px] pt-[37px] relative">
+      <div className="main-container flex flex-col gap-9 md:gap-10 lg:pt-[42px] pt-[37px] relative">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
             {contractPlatformsData?.data?.platforms?.title?.title}
@@ -18,13 +18,13 @@ const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-[30px] sm:gap-y-8 xl:gap-9"
+          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-[30px] sm:gap-y-8 xl:gap-8"
         >
           {contractPlatformsData?.data?.platforms?.platforms.map(
             (obj: PlatformItem, index: number) => (
               <article
                 key={index}
-                className="p-2 w-full sm:w-[48%] max-w-[400px] group cursor-pointer"
+                className="p-2 w-full sm:w-[48%] max-w-[430px] group cursor-pointer"
               >
                 <h3 className="mb-3 lg:mb-4 text-white duration-200 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
                   {obj.title}

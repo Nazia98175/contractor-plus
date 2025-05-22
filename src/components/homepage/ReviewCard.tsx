@@ -51,7 +51,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                   </span>
                 )}
               </div>
-              <p className="text-xs font-medium text-highRise">
+              <p className="text-xs font-medium text-highRise pt-1">
                 {review.userRole}
               </p>
             </div>

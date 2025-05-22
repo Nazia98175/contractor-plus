@@ -56,7 +56,7 @@ const OurBlogs = () => {
   ];
 
   return (
-    <section className="py-12 px-4 bg-white relative z-10">
+    <section className=" pt-[18px] pb-[38px] md:pt-12 md:pb-[82px] px-4 bg-white relative z-10">
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
           <TextAnimation animateOnScroll={true} delay={0.3}>
@@ -71,7 +71,7 @@ const OurBlogs = () => {
             </button>
           </div>
         </div>
-        <div className="lg:hidden flex flex-col md:flex-row justify-between items-center mb-6">
+        <div className="lg:hidden flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8">
           <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta">
             {t("heading")}
           </h2>

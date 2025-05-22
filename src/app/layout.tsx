@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
 import SmoothScroll from "@/components/common/SmoothScroll";
+import { ReactNode } from "react";
+
 type Props = {
   children: ReactNode;
 };

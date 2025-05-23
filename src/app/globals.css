@@ -884,3 +884,22 @@ html {
 .aura-path {
   animation: pulse-aura 5s ease-in-out infinite;
 }
+
+.color-animation-2 {
+  animation: breathe2 3s ease-in-out infinite;
+}
+
+@keyframes breathe2 {
+  0% {
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-3px) scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+}

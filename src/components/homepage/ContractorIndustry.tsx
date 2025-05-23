@@ -36,7 +36,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
         height={300}
       />
 
-      <span className="absolute top-0 w-full h-full left-0  block md:hidden">
+      <span className="absolute top-0 w-full h-full left-0  block  md:hidden">
         <SliderRedLineIcon />
       </span>
       <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-12">

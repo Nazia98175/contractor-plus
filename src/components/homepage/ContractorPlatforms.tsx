@@ -26,9 +26,9 @@ const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
                 key={index}
                 className="p-2 w-full sm:w-[48%] max-w-[430px] group cursor-pointer"
               >
-                <h3 className="mb-3 lg:mb-4 text-white duration-200 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold px-1.5 py-1 w-fit">
+                {/* <h3 className="mb-3 lg:mb-4 text-white duration-200 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold px-1.5 py-1 w-fit">
                   {obj.title}
-                </h3>
+                </h3> */}
 
                 <div className="relative animate-border rounded-xl">
                   <Image

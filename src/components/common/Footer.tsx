@@ -84,41 +84,41 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
 
         {/* Mobile Accordion */}
         <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
-  {footer.sections.map((section, idx) => (
-    <div key={idx} className="max-w-[150px] w-full">
-      <button
-        onClick={() => toggleSection(section.title)}
-        className="flex flex-col justify-between px-4 w-full py-2 text-start"
-      >
-        <div className="flex justify-between items-center w-full">
-          <h3 className="text-base font-bold text-white font-jakarta">
-            {section.title}
-          </h3>
-          <span
-            className={`transition-transform duration-300 ${
-              openSection === section.title ? "rotate-180" : ""
-            }`}
-          >
-            <DownArrowIcon />
-          </span>
+          {footer.sections.map((section, idx) => (
+            <div key={idx} className="max-w-[150px] w-full">
+              <button
+                onClick={() => toggleSection(section.title)}
+                className="flex flex-col justify-between px-4 w-full py-2 text-start"
+              >
+                <div className="flex justify-between items-center w-full">
+                  <h3 className="text-base font-bold text-white font-jakarta">
+                    {section.title}
+                  </h3>
+                  <span
+                    className={`transition-transform duration-300 ${
+                      openSection === section.title ? "rotate-180" : ""
+                    }`}
+                  >
+                    <DownArrowIcon />
+                  </span>
+                </div>
+                <AnimateHeight
+                  duration={500}
+                  height={openSection === section.title ? "auto" : 0}
+                >
+                  <div className="flex flex-col gap-2 pt-4 sm:pt-6">
+                    {section.footerLink.map((link, i) => (
+                      <FooterLinkItem
+                        key={i}
+                        list={{ text: link.urlText, href: link.url ?? "#" }}
+                      />
+                    ))}
+                  </div>
+                </AnimateHeight>
+              </button>
+            </div>
+          ))}
         </div>
-        <AnimateHeight
-          duration={500}
-          height={openSection === section.title ? "auto" : 0}
-        >
-          <div className="flex flex-col gap-2 pt-4 sm:pt-6">
-            {section.footerLink.map((link, i) => (
-              <FooterLinkItem
-                key={i}
-                list={{ text: link.urlText, href: link.url ?? "#" }}
-              />
-            ))}
-          </div>
-        </AnimateHeight>
-      </button>
-    </div>
-  ))}
-</div>
 
         {/* <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
           {sections.map((title, idx) => (

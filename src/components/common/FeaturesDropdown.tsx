@@ -3,50 +3,37 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
+  AgreementIcon,
   ArrowIcon,
   BellIcon,
   BigChiefAIIcon,
+  BigChiefIcon,
   ClientIcon,
+  EstimatesAiIcon,
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
+  FinancingIcon,
   InvoicingIcon,
+  LeadGenerationIcon,
+  MileageIcon,
   PaymentsIcon,
   PROIcon,
   ProjectIcon,
   PropertyIcon,
+  PropertyProfilesIcon,
   SchedulingIcon,
   ServiceIcon,
+  ServiceRequestsIcon,
   TelephoneIcon,
   TimeIcon,
   TrackingIcon,
   TrophyIcon,
+  WebsiteIncludedIcon,
 } from "./Icons";
 
 const FeaturesDropdown = ({ isVisible = true }) => {
   const t = useTranslations("features");
-
-  const featureIds: (keyof typeof featureIcons)[] = [
-    "crm",
-    "estimates",
-    "mileage",
-    "fieldService",
-    "dealFlow",
-    "timeClock",
-    "projectManagement",
-
-    "leadGeneration",
-    "payments",
-    "clientPortal",
-    "proWebsite",
-    "service",
-    "invoicing",
-    "propertyProfiles",
-    "estimaticAI",
-    "scheduling",
-    "communication",
-    "bigChiefAI",
-  ];
 
   const featureIcons = {
     crm: <ServiceIcon />,
@@ -57,17 +44,25 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     timeClock: <TimeIcon />,
     projectManagement: <ProjectIcon />,
     scheduling: <SchedulingIcon />,
-    leadGeneration: <TrackingIcon />,
+    LeadGeneration: <LeadGenerationIcon />,
     payments: <PaymentsIcon />,
     clientPortal: <ClientIcon />,
     proWebsite: <PROIcon />,
     estimaticAI: <EstimaticIcon />,
     invoicing: <InvoicingIcon />,
     propertyProfiles: <PropertyIcon />,
-
     communication: <TelephoneIcon />,
     service: <BellIcon />,
     bigChiefAI: <BigChiefAIIcon />,
+    OfferClientFinancing: <FinancingIcon />,
+    Agreements: <AgreementIcon />,
+    Tracking: <TrackingIcon />,
+    EstimaticAI: <EstimatesAiIcon />,
+    MileageTracking: <MileageIcon />,
+    ProWebsite: <WebsiteIncludedIcon />,
+    PropertyProfiles: <PropertyProfilesIcon />,
+    ServiceRequests: <ServiceRequestsIcon />,
+    BigChief: <BigChiefIcon />,
   };
 
   const newFeatures = {
@@ -79,53 +74,113 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     timeClock: false,
     projectManagement: false,
     scheduling: false,
-    leadGeneration: false,
+    LeadGeneration: false,
     payments: false,
     clientPortal: false,
     proWebsite: false,
     estimaticAI: true,
     invoicing: false,
+    Tracking: false,
+    Agreements: false,
     propertyProfiles: true,
-    bigChiefAI: true,
-    communication: true,
+    bigChiefAI: false,
+    OfferClientFinancing: false,
+    EstimaticAI2: false,
+    communication: false,
     service: false,
+    MileageTracking: false,
+    ProWebsite: false,
+    PropertyProfiles: false,
+    ServiceRequests: false,
+    BigChief: true,
   };
+
+  const sections = [
+    {
+      key: "solutions",
+      headingKey: "solutionsHeading",
+      items: [
+        "crm",
+        "projectManagement",
+        "fieldService",
+        "payments",
+        "LeadGeneration",
+        "bigChiefAI",
+        "OfferClientFinancing",
+      ],
+    },
+    {
+      key: "Features",
+      headingKey: "featuresHeading",
+      items: [
+        "estimates",
+        "dealFlow",
+        "scheduling",
+        "clientPortal",
+        "invoicing",
+        "communication",
+        "EstimaticAI2",
+      ],
+    },
+    {
+      key: "Features2",
+      headingKey: "featuresHeading2",
+      items: [
+        "Agreements",
+        "Tracking",
+        "MileageTracking",
+        "ProWebsite",
+        "PropertyProfiles",
+        "ServiceRequests",
+        "BigChief",
+      ],
+    },
+  ];
 
   if (!isVisible) {
     return null;
   }
 
   return (
-    <article className="flex flex-col justify-between p-2 gap-3 main-container">
-      <div className="grid grid-cols-3 gap-3 dropdown-heading">
-        <h3 className="px-4">{t("solutionsHeading")}</h3>
-        <h4 className="px-4">{t("featuresHeading")}</h4>
-      </div>
-      <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full pb-10">
-        {featureIds.map((featureId) => (
-          <li
-            className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
-            key={featureId}
-          >
-            <Link href="/" className="group">
-              <div className="flex gap-2.5 items-start">
-                <span>{featureIcons[featureId]}</span>
-                <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">
-                  {t(`${featureId}.label`)}
-                  {newFeatures[featureId] && (
-                    <div className="px-2 h-5 flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
-                      {t("newBadge")}
+    <>
+      <div className="grid grid-cols-3">
+        {sections.map((section) => (
+          <div className="" key={section.key}>
+            <i className="text-sm font-semibold text-dark h-5 mb-2.5">
+              {t(section.headingKey)}
+            </i>
+            <ul className="space-x-6 space-y-3 w-full pb-10">
+              {section.items.map((featureId) => (
+                <li
+                  className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
+                  key={featureId}
+                >
+                  <Link href="/" className="group">
+                    <div className="flex gap-2.5 items-start">
+                      <span>
+                        {featureIcons[featureId as keyof typeof featureIcons]}
+                      </span>
+                      <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">
+                        {t(`${section.key}.${featureId}.label`)}
+                        {newFeatures[featureId as keyof typeof newFeatures] && (
+                          <div className="px-2 h-5 flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
+                            {t("newBadge")}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                </div>
-              </div>
-              <p className="text-sm font-inter text-lightBlack mt-2.5">
-                {t(`${featureId}.description`)}
-              </p>
-            </Link>
-          </li>
+                    <p className="text-sm font-inter text-lightBlack mt-2.5">
+                      {t(`${section.key}.${featureId}.description`)}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
+
+      {/* Additional links section if needed */}
       <div className="flex items-center justify-between gap-6 p-[6px] px-8 left-0 font-inter absolute bottom-0 w-full bg-white">
         <Link className="all-features-button group" href="/">
           {t("seeAllFeatures")}
@@ -142,7 +197,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </Link>
         </div>
       </div>
-    </article>
+    </>
   );
 };
 

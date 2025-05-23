@@ -27,15 +27,6 @@ const HeaderLiItems = () => {
   const gapRef = useRef<HTMLDivElement>(null);
   const containerScope = useRef(null);
 
-  const componentMap = useMemo(
-    () => ({
-      features: FeaturesDropdown,
-      industries: IndustriesDropdown,
-      resources: ResourcesDropdown,
-    }),
-    []
-  );
-
   const menuItems = useMemo(
     () => [
       { id: "whycontractor", label: t("why"), link: "/" },
@@ -46,13 +37,6 @@ const HeaderLiItems = () => {
     ],
     [t]
   );
-
-  const ActiveComponent = activeMenu
-    ? componentMap[
-        menuItems.find((item) => item.id === activeMenu)
-          ?.componentKey as keyof typeof componentMap
-      ]
-    : null;
 
   const clearTimeouts = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -275,7 +259,7 @@ const HeaderLiItems = () => {
       {/* Dropdown Panel */}
       <div
         ref={dropdownRef}
-        className="absolute left-0 right-0 top-[calc(100%+0px)] mx-auto z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px] flex flex-col shadow-c3"
+        className="absolute left-0 right-0 top-[calc(100%+0px)] mx-auto z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px] flex flex-col shadow-c3 p-7 bg-doctor2"
         onMouseEnter={handleDropdownEnter}
         style={{
           visibility: "hidden",
@@ -283,15 +267,10 @@ const HeaderLiItems = () => {
           transform: "translateX(100%)",
         }}
       >
-        <div
-          className="overflow-auto h-full custom-scrollbar"
-          data-lenis-prevent
-        >
-          {ActiveComponent && (
-            <div className="py-5 bg-doctor2">
-              <ActiveComponent />
-            </div>
-          )}
+        <div className="overflow-auto  custom-scrollbar" data-lenis-prevent>
+          {activeMenu === "features" && <FeaturesDropdown />}
+          {activeMenu === "industries" && <IndustriesDropdown />}
+          {activeMenu === "resources" && <ResourcesDropdown />}
         </div>
       </div>
     </div>

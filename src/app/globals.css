@@ -107,17 +107,24 @@ body {
 .main-container {
   @apply max-w-[1308px] w-full mx-auto px-2;
 }
+
 .main-heading {
-  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold font-jakarta leading-[130%];
+  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold leading-[130%];
 }
 .section-heading {
-  @apply text-[26px] lg:text-[42px] sm:text-4xl font-semibold lg:tracking-[-0.84px] leading-[130%] font-jakarta;
+  @apply text-2xl sm:text-[26px] lg:text-[42px] sm:text-4xl font-semibold lg:tracking-[-0.84px] leading-[130%];
+}
+.paragraph-text {
+  @apply lg:text-lg text-sm sm:text-base;
 }
 .paragraph {
-  @apply text-wallStreet font-medium font-jakarta mt-4;
+  @apply text-wallStreet font-medium mt-4;
+}
+.paragraph-style {
+  @apply text-wallStreet text-sm md:font-medium md:text-base mt-1.5 md:mt-4;
 }
 .sub-heading {
-  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px] font-jakarta;
+  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px];
 }
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95;
@@ -125,12 +132,11 @@ body {
 .header-li {
   @apply 2xl:text-base xl:text-sm text-xs font-montserrat font-semibold lg:text-superSilver text-lightBlack;
 }
-.paragraph-text {
-  @apply lg:text-lg text-sm sm:text-base font-jakarta;
-}
+
 .feature-btn {
-  @apply lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px]  w-fit font-jakarta;
+  @apply lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px] w-fit;
 }
+
 .header-li-dropdown {
   @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
 }

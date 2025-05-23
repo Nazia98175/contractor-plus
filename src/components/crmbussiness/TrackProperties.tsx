@@ -1,14 +1,8 @@
 "use client";
-import Marquee from "react-fast-marquee";
-import { CheckIcon, FinallyDesktopBg, SideIcon } from "../common/Icons";
 import Image from "next/image";
-
-const features = [
-  "Timeline of every job, message, and update",
-  "All docs, permits, and photos in one place",
-  "Log emails using property-specific CC addresses",
-  "Add live camera feeds to any property",
-];
+import Marquee from "react-fast-marquee";
+import { CheckIcon, SideIcon } from "../common/Icons";
+import { trackFeatures } from "../common/Helper";
 
 const FeatureItem = ({ text }: { text: string }) => (
   <article className="p-3 rounded bg-doctor2 flex text-nowrap font-semibold items-center gap-2.5 text-sm md:text-base lg:text-lg text-lightblack ma-w-[500px] w-full mx-2">
@@ -60,7 +54,7 @@ const TrackProperties = () => {
 
         <div className="w-full mt-3.5 sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
-            {features.map((text, index) => (
+            {trackFeatures.map((text, index) => (
               <FeatureItem key={index} text={text} />
             ))}
           </Marquee>

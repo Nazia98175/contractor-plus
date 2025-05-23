@@ -89,19 +89,20 @@ const TeamsUsingContractor = () => {
             className="custom-shadow-img max-w-[103px] hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
             alt="Leader"
           />
-          <Image
-            width={121}
-            height={80}
-            src="/images/svg/capterra.svg"
-            className="custom-shadow-img hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
-            alt="Capterra"
-          />
+
           <Image
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
             className="custom-shadow-img max-w-[137px] hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
             alt="Get App"
+          />
+          <Image
+            width={121}
+            height={80}
+            src="/images/svg/capterra.svg"
+            className="custom-shadow-img hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
+            alt="Capterra"
           />
         </div>
       </div>

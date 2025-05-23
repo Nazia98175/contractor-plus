@@ -45,7 +45,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       /> */}
 
       <Image
-        className="object-cover -top-0 left-0 absolute z-0 pointer-events-none max-w-[700px] block lg:hidden "
+        className="object-cover -top-0 left-0 absolute z-0 pointer-events-none max-w-[700px] block lg:hidden"
         src="/images/webp/make-opration-mobile.webp"
         fill
         alt="gradient background"

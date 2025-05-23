@@ -181,7 +181,7 @@ const ContractorIndustrySlider: React.FC = () => {
   return (
     <div className="relative">
       {/* Left gradient blur */}
-      <div className="absolute h-[350px] bottom-0 top-[39px] left-[-34px] w-24 xl:w-[100px] 2xl:w-[120px] z-40 hidden lg:block pointer-events-none blur-[15px] bg-[#0c0d11] rounded" />
+
       {/* <Image
         className="absolute top-0 w-full left-[-30px] h-full z-50 max-w-[500px] object-center md:block hidden"
         src="/images/webp/contractor-left-bg.webp"
@@ -191,7 +191,6 @@ const ContractorIndustrySlider: React.FC = () => {
       /> */}
 
       {/* Right gradient blur */}
-      <div className="absolute h-[350px] top-[39px] right-[-34px] w-24 xl:w-[100px] 2xl:w-[120px] z-40 hidden lg:block pointer-events-none blur-[15px] bg-[#0c0d11] rounded" />
 
       <SliderLayout
         effect="coverflow"

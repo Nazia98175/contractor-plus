@@ -798,7 +798,7 @@ html {
 }
 .bubbling-animation {
   display: inline-block; /* Ensure the icon remains inline */
-  animation: bubbling 2s infinite ease-in-out;
+  animation: bubbling 10s infinite ease-in-out;
 }
 .color-animation {
   animation: spreadColor 3s ease-in-out infinite;

@@ -9,15 +9,12 @@ import TextAnimation from "../common/TextAnimation";
 interface Whatever {
   title: string;
   sub_title: string;
-  
 }
 
 interface TheWhateverProps {
   whateverOperation: Whatever[];
 }
-const MakeOperation: React.FC<TheWhateverProps> = ({
-  whateverOperation
-}) => {
+const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -37,17 +34,18 @@ const MakeOperation: React.FC<TheWhateverProps> = ({
 
   return (
     <section ref={ref} className="relative pt-16 z-10">
-      <div className="hidden lg:block absolute bottom-0 left-0 max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
+      <div className="hidden color-animation-1 lg:block absolute bottom-0 left-0 max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
       <Image
-        className="object-cover -top-[10%] right-0 absolute z-0 pointer-events-none max-w-[700px] lg:block hidden"
+        className="object-cover -top-[10%] right-0 absolute z-0 pointer-events-none max-w-[700px] lg:block hidden color-animation"
         src="/images/webp/make-opration.webp"
         width={700}
         height={300}
         alt="gradient background"
         priority
       />
+
       <Image
-        className="object-cover -top-0 left-0 absolute z-0 pointer-events-none max-w-[700px] block lg:hidden"
+        className="object-cover -top-0 left-0 absolute z-0 pointer-events-none max-w-[700px] block lg:hidden color-animation-1"
         src="/images/webp/make-opration-mobile.webp"
         fill
         alt="gradient background"

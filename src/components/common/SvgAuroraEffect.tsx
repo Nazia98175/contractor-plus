@@ -16,7 +16,6 @@ const KeyframeAnimatedLineAura: React.FC<AnimatedLineProps> = ({
 }) => {
   return (
     <>
-      {/* CSS Keyframes - इन्लाइन CSS में keyframes परिभाषित किए गए हैं */}
       <style jsx>{`
         @keyframes breathe {
           0% {

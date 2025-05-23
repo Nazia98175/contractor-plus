@@ -3,6 +3,7 @@ import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import ContractorIndustrySlider from "./ContractorIndustrySlider";
 import { SliderRedLineIcon } from "../common/Icons";
+import KeyframeAnimatedLineAura from "../common/SvgAuroraEffect";
 interface Industry {
   title: string;
   sub_title: string;
@@ -15,19 +16,25 @@ interface TheIndustryProps {
 }
 
 const ContractorIndustry: React.FC<TheIndustryProps> = ({
-  contractorIndustry
+  contractorIndustry,
 }) => {
   const t = useTranslations("industry");
 
   return (
     <section className="relative">
-      <Image
+      <KeyframeAnimatedLineAura
+        width={768}
+        height={562}
+        strokeColor="#EE1E25"
+        auraIntensity={60}
+      />
+      {/* <Image
         className="absolute top-0 w-full left-0 h-full z-0 max-w-[500px] object-center md:block hidden"
         src="/images/webp/contractor-left-bg.webp"
         alt="webp bg"
         width={500}
         height={700}
-      />
+      /> */}
       <Image
         className="absolute top-0 w-full h-full z-0 right-0 object-center max-w-[700px] lg:block hidden"
         src="/images/webp/contractor-right-bg.webp"
@@ -43,12 +50,12 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
         <div className="px-2">
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <h3 className="section-heading text-center text-white">
-              {contractorIndustry?.[0]?.title ?? ''}
+              {contractorIndustry?.[0]?.title ?? ""}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
-              {contractorIndustry?.[0]?.sub_title ?? ''}
+              {contractorIndustry?.[0]?.sub_title ?? ""}
             </p>
           </TextAnimation>
           <div className="hidden md:flex justify-center items-center">

@@ -22,14 +22,14 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   return (
     <section className="relative">
       <Image
-        className="absolute top-0 w-full left-0 h-full z-0 max-w-[500px] object-center md:block animated-image hidden"
+        className="absolute top-0 w-full left-0  h-full z-0 max-w-[900px] object-center md:block animated-image hidden"
         src="/images/webp/contractor-left-bg.webp"
         alt="webp bg"
-        width={500}
+        width={900}
         height={700}
       />
       <Image
-        className="absolute top-0 w-full h-full z-0 right-0 object-center max-w-[700px] lg:block hidden svgTwinkle"
+        className="absolute top-0 w-full h-full bubbling-animation z-0 right-0 object-center max-w-[700px] lg:block hidden svgTwinkle"
         src="/images/webp/contractor-right-bg.webp"
         alt="webp bg"
         width={300}

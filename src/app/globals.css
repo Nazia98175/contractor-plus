@@ -692,7 +692,7 @@ html {
 }
 
 .animated-image {
-  animation: floatPulsePing 20s ease-in-out infinite;
+  animation: floatPulsePing 10s ease-in-out infinite;
   transform-origin: center;
 }
 /* 
@@ -793,7 +793,7 @@ html {
 }
 .bubbling-animation {
   display: inline-block; /* Ensure the icon remains inline */
-  animation: bubbling 2s infinite ease-in-out;
+  animation: bubbling 4s infinite ease-in-out;
 }
 .color-animation {
   animation: spreadColor 3s ease-in-out infinite;

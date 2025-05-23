@@ -916,7 +916,7 @@ export const reviews = [
     videolink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
-    review: `"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."`,
+    review: `I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.`,
     userRole: "Owner, Nailed It Miami",
   },
   {

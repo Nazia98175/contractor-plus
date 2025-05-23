@@ -264,37 +264,7 @@
       }
     ]
   },
-  "whyContractor": {
-    "links": [
-      {
-        "label": "Pourquoi choisir Contractor+ ?",
-        "description": "Découvrez les avantages uniques de notre plateforme",
-        "href": "/why-contractor-plus"
-      },
-      {
-        "label": "Histoires de réussite",
-        "description": "Voyez comment les entrepreneurs se développent avec notre plateforme",
-        "href": "/success-stories"
-      },
-      {
-        "label": "Aperçu des fonctionnalités",
-        "description": "Découvrez tous les outils puissants à votre disposition",
-        "href": "/features-overview"
-      },
-      {
-        "label": "Plans tarifaires",
-        "description": "Trouvez le forfait adapté à votre entreprise",
-        "href": "/pricing"
-      },
-      {
-        "label": "Partenaires d'intégration",
-        "description": "Tous les services et logiciels qui s'intègrent à nous",
-        "href": "/integration-partners"
-      }
-    ],
-    "imageAlt": "Équipe d'entrepreneurs travaillant ensemble sur un chantier de construction",
-    "seeAllFeatures": "Voir toutes les fonctionnalités"
-  },
+
   "industries": {
     "heading": "Secteurs",
     "imageAlt": "Groupe d'entrepreneurs travaillant sur un projet",
@@ -770,5 +740,26 @@
     "altImage": "image crm",
     "altGoogle": "icône google",
     "altApple": "icône apple"
+  },
+  "whyContractorDesktop": {
+    "imageAlt": "Resources and learning materials for contractors",
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content"
+      }
+    ]
   }
 }

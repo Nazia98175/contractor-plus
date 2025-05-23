@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import FeaturesDropdown from "./FeaturesDropdown";
 import IndustriesDropdown from "./IndustriesDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
+import WhyContractorDropdown from "./WhyContractorDropdown";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,11 @@ const HeaderLiItems = () => {
 
   const menuItems = useMemo(
     () => [
-      { id: "whycontractor", label: t("why"), link: "/" },
+      {
+        id: "whycontractordesktop",
+        label: t("whycontractordesktop"),
+        componentKey: "whycontractordesktop",
+      },
       { id: "features", label: t("features"), componentKey: "features" },
       { id: "industries", label: t("industries"), componentKey: "industries" },
       { id: "pricing", label: t("pricing"), link: "/" },
@@ -248,7 +253,7 @@ const HeaderLiItems = () => {
       {/* Invisible gap-covering element */}
       <div
         ref={gapRef}
-        className="absolute left-0 w-full h-[67.88px] z-[999] top-[72%] !bg-none"
+        className="absolute left-0 w-full h-[34.88px] z-[999] top-[72%] !bg-none"
         onMouseEnter={handleDropdownEnter}
         style={{
           visibility: activeMenu || isTransitioning ? "visible" : "hidden",
@@ -267,7 +272,8 @@ const HeaderLiItems = () => {
           transform: "translateX(100%)",
         }}
       >
-        <div className="overflow-auto  custom-scrollbar" data-lenis-prevent>
+        <div className="overflow-auto custom-scrollbar" data-lenis-prevent>
+          {activeMenu === "whycontractordesktop" && <WhyContractorDropdown />}
           {activeMenu === "features" && <FeaturesDropdown />}
           {activeMenu === "industries" && <IndustriesDropdown />}
           {activeMenu === "resources" && <ResourcesDropdown />}

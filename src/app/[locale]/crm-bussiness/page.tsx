@@ -19,7 +19,7 @@ const CrmBussinessPage = () => {
       <Header />
       <div className="black-bg">
         <CrmHero />
-        <TrustedService />
+        {/* <TrustedService /> */}
         <SwitchingTool />
       </div>
       <FieldService />
@@ -27,8 +27,7 @@ const CrmBussinessPage = () => {
       <KindAdorable />
       <TeamsUsingContractor />
       <ThousandsReviews />
-      <div className="relative w-full">
-        {/* Cloud Layer 1 */}
+      <div className="relative w-full overflow-hidden">
         <div className="absolute -top-[30%] left-0 flex w-full h-28 xl:h-[267px] z-10 pointer-events-none">
           <div className="absolute w-full h-full animate-cloud-layer-1 z-10 opacity-100">
             <img
@@ -38,7 +37,6 @@ const CrmBussinessPage = () => {
             />
           </div>
           <div className="top-0 bg-white rounded-2xl h-2/4 blur-md w-28"></div>
-          {/* Cloud Layer 2 */}
           <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
             <img
               src="/images/webp/claud-2.webp"
@@ -52,7 +50,7 @@ const CrmBussinessPage = () => {
       </div>
       <Faq />
       <BlogPosts />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };

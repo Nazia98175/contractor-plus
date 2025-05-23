@@ -5,7 +5,21 @@ import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 
-const EntireBusiness: React.FC = () => {
+interface EntireBusiness {
+  title: string,
+  sub_title: string,
+  txt: string,
+  btnTxt: string,
+  url: string
+}
+interface TheEntireBusinessProps {
+  entireBusiness: EntireBusiness[],
+  ncc_text: string
+}
+
+const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
+  entireBusiness , ncc_text
+})=> {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -31,12 +45,12 @@ const EntireBusiness: React.FC = () => {
       <div className="pt-[38px] md:pt-[44px] pb-7">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-decemberSky font-jakarta">
-            {t("heading")}
+            {entireBusiness?.[0]?.title}
           </h3>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
-            {t("subheading")}
+            {entireBusiness?.[0]?.sub_title}
           </p>
         </TextAnimation>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
@@ -47,7 +61,7 @@ const EntireBusiness: React.FC = () => {
             <div className="md:max-w-[414px] w-full">
               <input
                 type="email"
-                placeholder={t("emailPlaceholder")}
+                placeholder={entireBusiness?.[1]?.txt}
                 required
                 value={email}
                 onChange={handleEmailChange}
@@ -58,7 +72,7 @@ const EntireBusiness: React.FC = () => {
                   <CheckIcon />
                 </span>
                 <span className="text-sm font-semibold font-myriad text-white">
-                  {t("noCreditCard")}
+                  {ncc_text}
                 </span>
               </p>
             </div>
@@ -70,7 +84,7 @@ const EntireBusiness: React.FC = () => {
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : (
-                t("createAccount")
+               entireBusiness?.[2]?.btnTxt
               )}
             </button>
             <div className="md:hidden flex justify-center items-center w-full">
@@ -79,7 +93,7 @@ const EntireBusiness: React.FC = () => {
                   <CheckIcon />
                 </span>
                 <span className="text-sm font-semibold font-myriad text-white">
-                  {t("noCreditCard")}
+                  {ncc_text}
                 </span>
               </p>
             </div>

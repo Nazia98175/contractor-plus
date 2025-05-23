@@ -1,102 +1,153 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+
 gsap.registerPlugin(ScrollTrigger);
+
 const SwitchingTool = () => {
   const sectionRef = useRef(null);
-  const cardRefs = useRef<(HTMLElement | null)[]>([]);
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    cardRefs.current = cardRefs.current.slice(0, 3);
-    // Default layout before scroll (initial stacked layout)
-    const initCards = () => {
-      gsap.set(cardRefs.current[0], {
-        x: "110%",
-        y: "12%",
-        rotation: 0,
-        scale: 1,
-        opacity: 1,
+  const cardRef1 = useRef<HTMLDivElement>(null);
+  const cardRef2 = useRef<HTMLDivElement>(null);
+  const cardRef3 = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const isMobile = window.innerWidth < 1024;
+
+      if (isMobile) {
+        if (cardRef1.current) {
+          gsap.set(cardRef1.current, {
+            x: "0%",
+            y: "-10%",
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            filter: "blur(2.5px)",
+          });
+        }
+        if (cardRef2.current) {
+          gsap.set(cardRef2.current, {
+            x: "0%",
+            y: "-100%",
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            filter: "blur(2.5px)",
+          });
+        }
+        if (cardRef3.current) {
+          gsap.set(cardRef3.current, {
+            x: "0%",
+            y: "-167%",
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            filter: "blur(2.5px)",
+          });
+        }
+      } else {
+        gsap.set(cardRef1.current, {
+          x: "110%",
+          y: "12%",
+          rotation: 0,
+          scale: 1,
+          opacity: 1,
+          filter: "blur(2.5px)",
+        });
+        gsap.set(cardRef2.current, {
+          x: "3%",
+          y: "3%",
+          rotation: 0,
+          scale: 0.97,
+          opacity: 0.95,
+          filter: "blur(2.5px)",
+        });
+        gsap.set(cardRef3.current, {
+          x: "-104%",
+          y: "-6%",
+          rotation: 0,
+          scale: 0.94,
+          opacity: 0.9,
+          filter: "blur(2.5px)",
+        });
+      }
+
+      // Scroll animation
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: isMobile ? "top 60%" : "top 65%",
+          end: isMobile ? "bottom bottom" : "bottom 70%",
+          scrub: 1,
+        },
       });
 
-      gsap.set(cardRefs.current[1], {
-        x: "3%",
-        y: "3%",
-        rotation: 0,
-        scale: 0.97,
-        opacity: 0.95,
-      });
-
-      gsap.set(cardRefs.current[2], {
-        x: "-104%",
-        y: "-6%",
-        rotation: 0,
-        scale: 0.94,
-        opacity: 0.9,
-      });
-    };
-
-    initCards();
-
-    const scrollTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 20%", // means 15% from top of screen
-        end: "bottom 85%",
-        scrub: 1,
-      },
-    });
-
-    // Animation to final spread layout
-    scrollTl.to(
-      cardRefs.current[0],
-      {
-        x: "0%",
-        y: "15%",
-        rotation: -15,
-        scale: 0.9,
-        duration: 1,
-        immediateRender: false,
-      },
-      0
-    );
-
-    scrollTl.to(
-      cardRefs.current[1],
-      {
-        x: "0%",
-        y: "-5%",
-        scale: 1,
-        opacity: 1,
-        zIndex: 3,
-        duration: 1,
-        immediateRender: false,
-      },
-      0
-    );
-
-    scrollTl.to(
-      cardRefs.current[2],
-      {
-        x: "0%",
-        y: "15%",
-        rotation: 15,
-        scale: 0.9,
-        duration: 1,
-        immediateRender: false,
-      },
-      0
-    );
-
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, []);
+      if (isMobile) {
+        if (cardRef1.current) {
+          scrollTl.to(cardRef1.current, {
+            y: "-20%",
+            scale: 0.96,
+            filter: "blur(0px)",
+          });
+        }
+        if (cardRef2.current) {
+          scrollTl.to(cardRef2.current, {
+            y: "-10%",
+            scale: 1,
+            filter: "blur(0px)",
+          });
+        }
+        if (cardRef3.current) {
+          scrollTl.to(cardRef3.current, {
+            y: "0%",
+            scale: 0.96,
+            filter: "blur(0px)",
+          });
+        }
+      } else {
+        scrollTl.to(
+          cardRef1.current,
+          {
+            x: "0%",
+            y: "15%",
+            rotation: -15,
+            scale: 0.9,
+            filter: "blur(0px)",
+          },
+          0
+        );
+        scrollTl.to(
+          cardRef2.current,
+          {
+            x: "0%",
+            y: "-5%",
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+          },
+          0
+        );
+        scrollTl.to(
+          cardRef3.current,
+          {
+            x: "0%",
+            y: "15%",
+            rotation: 15,
+            scale: 0.9,
+            filter: "blur(0px)",
+          },
+          0
+        );
+      }
+    },
+    { scope: sectionRef }
+  );
 
   return (
     <section className="px-2 relative pt-9 md:pt-11" ref={sectionRef}>
-      {/* Backgrounds */}
       <div className="bg-reverse-black h-[296px] w-full hidden md:block top-0 left-0 absolute z-[-5]" />
       <img
         className="absolute top-0 left-0 w-full h-full z-[-7] object-contain hidden md:block"
@@ -109,75 +160,63 @@ const SwitchingTool = () => {
         alt=""
       />
 
-      {/* Heading */}
       <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
         If you're switching between tools outside of your field service CRM,
         it's not good enough
       </h3>
 
-      {/* Card Container */}
-      <div className="relative flex justify-center items-center h-[400px] max-w-[1180px] mx-auto">
-        {/* Left Card */}
+      <div className="relative flex lg:flex-row flex-col justify-center items-center pb-16 max-w-[1180px] mx-auto mt-10">
         <article
-          ref={(el) => {
-            cardRefs.current[0] = el;
-          }}
-          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
+          ref={cardRef1}
+          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] w-full"
         >
           <div className="flex justify-center w-full">
             <Image
+              src="/images/webp/switch-card-1.webp"
               width={370}
               height={99}
-              src="/images/webp/switch-card-1.webp"
-              alt="switch card"
-              className="w--full"
+              alt="card 1"
+              className="w-full h-full object-cover"
             />
           </div>
-
-          <h4 className="switch-tool-text pt-6">
+          <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
             It takes forever to look up pricing, and it’s easy for errors to
             slip through
           </h4>
         </article>
 
-        {/* Center Card */}
         <article
-          ref={(el) => {
-            cardRefs.current[1] = el;
-          }}
-          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
+          ref={cardRef2}
+          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] w-full"
         >
           <div className="flex justify-center w-full">
             <Image
+              src="/images/webp/switch-card-2.webp"
               width={370}
               height={99}
-              src="/images/webp/switch-card-2.webp"
-              alt="switch card"
-              className="w-full"
+              alt="card 2"
+              className="w-full h-full object-cover"
             />
           </div>
-          <p className="switch-tool-text pt-6">
+          <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
             There’s no easy way to upsell or present multiple package options
-          </p>
+          </h4>
         </article>
 
-        {/* Right Card */}
         <article
-          ref={(el) => {
-            cardRefs.current[2] = el;
-          }}
-          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] h-[265px] w-full "
+          ref={cardRef3}
+          className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] w-full"
         >
           <div className="flex justify-center w-full">
             <Image
+              src="/images/webp/switch-card-1.webp"
               width={370}
               height={99}
-              src="/images/webp/switch-card-1.webp"
-              alt="switch card"
-              className="w-full"
+              alt="card 3"
+              className="w-full h-full object-cover"
             />
           </div>
-          <h4 className="switch-tool-text pt-6">
+          <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
             You lose jobs because your quote didn’t stand out, or someone else
             convinced them first
           </h4>

@@ -6,7 +6,26 @@ import TextAnimation from "../common/TextAnimation";
 import { useState } from "react";
 import SliderLayout from "../common/SliderLayout";
 
-const OurBlogs = () => {
+interface Blogs {
+  blogTitle: string;
+  blogDescription: string;
+  blogUrl: string;
+  
+}
+interface BlogHeading{
+title: string,
+btnTxt: string;
+url: string;
+}
+
+interface TheBlogProps {
+  blogs: Blogs[];
+  blogHeading: BlogHeading[]
+}
+
+const OurBlogs: React.FC<TheBlogProps> = ({
+  blogs , blogHeading
+})=> {
   const t = useTranslations("blogs");
   const blogList = t.raw("blogList") as {
     id: number;
@@ -55,30 +74,30 @@ const OurBlogs = () => {
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
-
+ console.log(blogHeading , "jnfksdn")
   return (
     <section className=" pt-[18px] pb-[38px] md:pt-12 md:pb-[82px] px-4 bg-white relative z-10">
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2">
-              {t("heading")}
+              {blogHeading?.[0]?.title}
             </h2>
           </TextAnimation>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
-              {t("viewAllBlogs")}
+             {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
             </button>
           </div>
         </div>
         <div className="lg:hidden flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8">
           <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2 text-center md:text-start">
-            {t("heading")}
+            {blogHeading?.[0]?.title}
           </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
-              {t("viewAllBlogs")}
+              {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
             </button>
           </div>
@@ -90,15 +109,15 @@ const OurBlogs = () => {
           distance={50}
           className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
         >
-          {blogListMobile.map((article) => (
+          {blogs.map((article , index) => (
             <article
-              key={article.id}
+              key={blogListMobile?.[index]?.id}
               className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
             >
               <img
                 className="absolute top-16 right-0 w-full"
-                style={{ maxWidth: article.imageWidth, objectFit: "contain" }}
-                src={article.imageSrc}
+                style={{ maxWidth: blogListMobile?.[index]?.imageWidth, objectFit: "contain" }}
+                src={blogListMobile?.[index]?.imageSrc}
                 alt="blog images"
               />
               <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
@@ -108,8 +127,8 @@ const OurBlogs = () => {
                   alt="blog angle"
                 />
                 <img
-                  src={article.backgroundImage}
-                  alt={article.title}
+                  src={blogListMobile?.[index]?.backgroundImage}
+                  alt={article.blogTitle}
                   className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
                 />
               </div>
@@ -120,10 +139,10 @@ const OurBlogs = () => {
                   alt="blog angle"
                 />
                 <h3 className="text-base relative z-10 md:text-lg text-winterWay font-extrabold pb-1 font-jakarta">
-                  {article.title}
+                  {article.blogTitle}
                 </h3>
                 <p className="text-secondary relative z-10 font-medium text-xs max-w-[255px] font-jakarta">
-                  {article.description}
+                  {article.blogDescription}
                 </p>
               </div>
             </article>
@@ -141,15 +160,15 @@ const OurBlogs = () => {
               768: { slidesPerView: 2.6, spaceBetween: 16 },
             }}
           >
-            {blogListMobile.map((article) => (
+            {blogs.map((article , index) => (
               <article
-                key={article.id}
+                key={blogListMobile?.[index]?.id}
                 className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
               >
                 <img
                   className="absolute top-16 right-0 w-full"
-                  style={{ maxWidth: article.imageWidth, objectFit: "contain" }}
-                  src={article.imageSrc}
+                  style={{ maxWidth: blogListMobile?.[index]?.imageWidth, objectFit: "contain" }}
+                  src={blogListMobile?.[index]?.imageSrc}
                   alt="blog images"
                 />
                 <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
@@ -159,8 +178,8 @@ const OurBlogs = () => {
                     alt="blog angle"
                   />
                   <img
-                    src={article.backgroundImage}
-                    alt={article.title}
+                    src={blogListMobile?.[index]?.backgroundImage}
+                    alt={blogListMobile?.[index]?.title}
                     className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
                   />
                 </div>
@@ -171,10 +190,10 @@ const OurBlogs = () => {
                     alt="blog angle"
                   />
                   <h3 className="text-base relative z-10 md:text-lg text-winterWay font-extrabold pb-1 font-jakarta">
-                    {article.title}
+                    {article?.blogTitle}
                   </h3>
                   <p className="text-secondary relative z-10 font-medium text-xs max-w-[255px] font-jakarta">
-                    {article.description}
+                    {article.blogDescription}
                   </p>
                 </div>
               </article>
@@ -183,7 +202,7 @@ const OurBlogs = () => {
         </div>
         <div className="flex justify-center md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
-            {t("viewAllBlogs")}
+            {blogHeading?.[1]?.btnTxt}
             <BlogBtnIcon />
           </button>
         </div>

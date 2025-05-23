@@ -26,7 +26,7 @@ const IndusryPage = () => {
       <Trusted />
       <Faq />
       <IntegratesSeamlessly />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

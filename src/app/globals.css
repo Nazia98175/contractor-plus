@@ -837,3 +837,55 @@ html {
     opacity: 0.1;
   }
 }
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-stroke {
+  0% {
+    stroke-width: 432px;
+  }
+  50% {
+    stroke-width: 350px;
+  }
+  100% {
+    stroke-width: 432px;
+  }
+}
+
+@keyframes pulse-aura {
+  0% {
+    stroke-width: 500px;
+    filter: blur(55px);
+  }
+  50% {
+    stroke-width: 600px;
+    filter: blur(70px);
+  }
+  100% {
+    stroke-width: 500px;
+    filter: blur(55px);
+  }
+}
+
+.svg-container {
+  animation: breathe 6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.main-path {
+  animation: pulse-stroke 3s ease-in-out infinite;
+}
+
+.aura-path {
+  animation: pulse-aura 5s ease-in-out infinite;
+}

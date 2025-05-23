@@ -12,7 +12,7 @@ export const getBlogs = async (
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log("Failed to fetch homepage:", error?.response?.data);
+    console.log("Failed to fetch blogs:", error?.response?.data);
     return notFound();
   }
 };

@@ -12,7 +12,7 @@ export const getFooter = async (
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log("Failed to fetch homepage:", error?.response?.data);
+    console.log("Failed to fetch footer:", error?.response?.data);
     return notFound();
   }
 };

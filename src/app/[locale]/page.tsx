@@ -25,20 +25,21 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const useParams = await params;
-  const [homePageContent, contractPlatformsData , blogs , footer] = await Promise.all([
-    getHomePage(useParams.locale, "&populate=*"),
-    getHomePage(
-      useParams.locale,
-      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
-    ),
-    getBlogs(useParams?.locale , "&sort=publishedAt:desc&pagination[limit]=3"),
-    getFooter(useParams?.locale , "&populate[sections][populate]=*&populate[bottomLinks]=*")
+  // const [homePageContent, contractPlatformsData, blogs, footer] =
+  const [homePageContent, contractPlatformsData] =
+    await Promise.all([
+      getHomePage(useParams.locale, "&populate=*"),
+      getHomePage(
+        useParams.locale,
+        "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
+      ),
+      // getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
+      // getFooter(
+      //   useParams?.locale,
+      //   "&populate[sections][populate]=*&populate[bottomLinks]=*"
+      // ),
+    ]);
 
-  ]);
-
-  console.log(homePageContent , "homeee")
-  console.log(blogs , "blogs")
-  console.log(footer , "footer")
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="relative overflow-x-hidden">
@@ -66,11 +67,17 @@ export default async function Home({
             whateverOperation={homePageContent?.data?.whateverOperation}
           />
         </div>
-        <OurBlogs blogs={blogs?.data}  blogHeading={homePageContent?.data?.blogs} />
+        {/* <OurBlogs
+          blogs={blogs?.data}
+          blogHeading={homePageContent?.data?.blogs}
+        />
         <div className="overflow-hidden relative ">
-          <EntireBusiness entireBusiness={homePageContent?.data?.entireBusiness}  ncc_text={homePageContent?.data?.ncc_text}/>
-          <Footer footer={footer?.data}/>
-        </div>
+          <EntireBusiness
+            entireBusiness={homePageContent?.data?.entireBusiness}
+            ncc_text={homePageContent?.data?.ncc_text}
+          />
+          <Footer footer={footer?.data} />
+        </div> */}
         <ParticlesComponent id="star-particles" />
       </div>
     </Suspense>

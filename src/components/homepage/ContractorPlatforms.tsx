@@ -18,7 +18,7 @@ const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-[30px] sm:gap-y-8 xl:gap-8"
+          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-[30px] sm:gap-y-8 gap-4 3xl:gap-8"
         >
           {contractPlatformsData?.data?.platforms?.platforms.map(
             (obj: PlatformItem, index: number) => (
@@ -26,7 +26,7 @@ const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
                 key={index}
                 className="p-2 w-full sm:w-[48%] max-w-[430px] group cursor-pointer"
               >
-                <h3 className="mb-3 lg:mb-4 text-white duration-200 group-hover:bg-whiteSmoke mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold group-hover:text-lightBlack px-1.5 py-1 w-fit">
+                <h3 className="mb-3 lg:mb-4 text-white duration-200 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold px-1.5 py-1 w-fit">
                   {obj.title}
                 </h3>
 
@@ -39,7 +39,7 @@ const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
                     className="rounded-md overflow-hidden relative z-[10px]"
                   />
                 </div>
-                <p className="paragraph-text text-decemberSky max-w-[380px] group-hover:text-lightBlack text-center mt-5 group-hover:bg-whiteSmoke white duration-200">
+                <p className="paragraph-text px-2 text-decemberSky group-hover:text-lightBlack text-center mt-5 group-hover:bg-whiteSmoke white duration-200">
                   {`${obj.description}`}
                 </p>
               </article>

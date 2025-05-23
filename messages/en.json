@@ -239,82 +239,101 @@
   "features": {
     "solutionsHeading": "Solutions",
     "featuresHeading": "Features",
+    "featuresHeading2": "",
     "newBadge": "NEW",
     "seeAllFeatures": "See All Features",
     "integrations": "Integrations",
     "productUpdates": "Product Updates",
-    "crm": {
-      "label": "CRM",
-      "description": "Master all your relationships"
-    },
-    "estimates": {
-      "label": "Estimates & Quotes",
-      "description": "Save Time & Win More Bids"
-    },
-    "mileage": {
-      "label": "Automated Client Agreements",
-      "description": "Collect eSignatures Automatically"
-    },
-    "projectManagement": {
-      "label": "Project Management",
-      "description": "Complete visibility into your projects and work"
-    },
-    "dealFlow": {
-      "label": "Deal Flow Tracking",
-      "description": "Visualize Your Entire Sales Pipeline"
-    },
-    "timeClock": {
-      "label": "Time Tracking",
-      "description": "GPS Verified Tracking For The Whole Team"
-    },
-    "fieldService": {
-      "label": "Field Service Management",
-      "description": "Empower your team to deliver service excellence"
-    },
-    "scheduling": {
-      "label": "Scheduling",
-      "description": "Optimize Team Efficiency & Job Assignments"
-    },
-    "leadGeneration": {
-      "label": "Mileage Tracking",
-      "description": "Automatically Track & Maximize Mileage Deductions"
-    },
-    "payments": {
-      "label": "Contractor+ Pay",
-      "description": "Online, in-person, CC & ACH + Instant Payouts"
-    },
-    "clientPortal": {
-      "label": "Client Portal",
-      "description": "Simple, Secure Project Access for Clients"
-    },
-    "proWebsite": {
-      "label": "PRO Website Included",
-      "description": "Showcase Your Business & Attract Customers"
-    },
-    "estimaticAI": {
-      "label": "Lead generation",
-      "description": "Fast, Accurate, Winning Project Estimates & Quotes"
-    },
-    "bigChiefAI": {
-      "label": "Bookkeeping ",
-      "description": "Answer every call, Qualify leads, Automate busy work."
-    },
-    "invoicing": {
-      "label": "Invoicing & Billing",
-      "description": "Automate Invoicing & Get Paid Faster"
-    },
-    "propertyProfiles": {
-      "label": "Property Profiles",
-      "description": "streamline your property maintenance"
-    },
 
-    "communication": {
-      "label": "Business Phone & SMS",
-      "description": "Centralized Team & Client Conversations"
+    "solutions": {
+      "crm": {
+        "label": "CRM",
+        "description": "Master all your relationshipswqedsaz"
+      },
+      "projectManagement": {
+        "label": "Project Management",
+        "description": "Complete visibility into your projects and work"
+      },
+      "fieldService": {
+        "label": "Field Service Management",
+        "description": "Empower your team to deliver service excellence"
+      },
+      "payments": {
+        "label": "Contractor+ Pay",
+        "description": "Online, in-person, CC & ACH + Instant Payouts"
+      },
+      "LeadGeneration": {
+        "label": "Lead generation",
+        "description": "Fast, Accurate, Winning Project Estimates & Quotes"
+      },
+      "bigChiefAI": {
+        "label": "Bookkeeping ",
+        "description": "Answer every call, Qualify leads, Automate busy work."
+      },
+      "OfferClientFinancing": {
+        "label": "Offer Client Financing ",
+        "description": "Fast, accurate, winning project estimates & quotes"
+      }
     },
-    "service": {
-      "label": "Service Requests",
-      "description": "Direct Requests From Clients & Tenants"
+    "Features": {
+      "estimates": {
+        "label": "Estimates & Quotes",
+        "description": "Save Time & Win More Bids"
+      },
+      "dealFlow": {
+        "label": "Deal Flow Tracking",
+        "description": "Visualize Your Entire Sales Pipeline"
+      },
+      "scheduling": {
+        "label": "Scheduling",
+        "description": "Optimize Team Efficiency & Job Assignments"
+      },
+      "clientPortal": {
+        "label": "Client Portal",
+        "description": "Simple, Secure Project Access for Clients"
+      },
+      "invoicing": {
+        "label": "Invoicing & Billing",
+        "description": "Automate Invoicing & Get Paid Faster"
+      },
+      "communication": {
+        "label": "Business Phone & SMS",
+        "description": "Centralized Team & Client Conversations"
+      },
+      "EstimaticAI2": {
+        "label": "EstimaticAI",
+        "description": "Centralized Team & Client Conversations"
+      }
+    },
+    "Features2": {
+      "Agreements": {
+        "label": "Automated Client Agreements",
+        "description": "Collect eSignatures automatically"
+      },
+      "Tracking": {
+        "label": "Time Tracking",
+        "description": "GPS verified time tracking for the whole team"
+      },
+      "MileageTracking": {
+        "label": "Mileage Tracking",
+        "description": "Track & maximize mileage deductions"
+      },
+      "ProWebsite": {
+        "label": "PRO Website Included",
+        "description": "Showcase your business & attract customers"
+      },
+      "PropertyProfiles": {
+        "label": "Property Profiles",
+        "description": "Streamline your property maintenance"
+      },
+      "ServiceRequests": {
+        "label": "Service Requests",
+        "description": "Direct requests from clients & tenants"
+      },
+      "BigChief": {
+        "label": "Big Chief AI",
+        "description": "Answer every call. Qualify leads. Automate busy work."
+      }
     }
   },
   "whyContractor": {

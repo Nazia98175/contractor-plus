@@ -12,7 +12,28 @@ import {
   TwitterIcon,
 } from "./Icons";
 
-const Footer = () => {
+interface FooterLink {
+  url: string;
+  urlText: string;
+}
+
+interface FooterSection {
+  __component: string;
+  title: string;
+  footerLink: FooterLink[];
+}
+
+interface Footer {
+  copyrightTxt: string;
+  sections: FooterSection[];
+  bottomLinks: FooterLink[];
+}
+
+interface TheFooterProps {
+  footer: Footer;
+}
+
+const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const t = useTranslations("footer");
@@ -49,17 +70,57 @@ const Footer = () => {
         </div>
 
         <div className="hidden md:flex flex-wrap justify-center gap-3 w-full pt-7">
-          {sections.map((title, idx) => (
+          {footer.sections.map((section, idx) => (
             <FooterSection
               key={idx}
-              title={title}
-              links={links.slice(...ranges[idx])}
+              title={section.title}
+              links={section.footerLink.map((link) => ({
+                text: link.urlText,
+                href: link.url ?? "#",
+              }))}
             />
           ))}
         </div>
 
         {/* Mobile Accordion */}
         <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
+  {footer.sections.map((section, idx) => (
+    <div key={idx} className="max-w-[150px] w-full">
+      <button
+        onClick={() => toggleSection(section.title)}
+        className="flex flex-col justify-between px-4 w-full py-2 text-start"
+      >
+        <div className="flex justify-between items-center w-full">
+          <h3 className="text-base font-bold text-white font-jakarta">
+            {section.title}
+          </h3>
+          <span
+            className={`transition-transform duration-300 ${
+              openSection === section.title ? "rotate-180" : ""
+            }`}
+          >
+            <DownArrowIcon />
+          </span>
+        </div>
+        <AnimateHeight
+          duration={500}
+          height={openSection === section.title ? "auto" : 0}
+        >
+          <div className="flex flex-col gap-2 pt-4 sm:pt-6">
+            {section.footerLink.map((link, i) => (
+              <FooterLinkItem
+                key={i}
+                list={{ text: link.urlText, href: link.url ?? "#" }}
+              />
+            ))}
+          </div>
+        </AnimateHeight>
+      </button>
+    </div>
+  ))}
+</div>
+
+        {/* <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
           {sections.map((title, idx) => (
             <div key={idx} className="max-w-[150px] w-full">
               <button
@@ -91,7 +152,7 @@ const Footer = () => {
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="flex justify-between items-center gap-3 pt-4">
           <div className="hidden md:flex gap-3 items-center">
@@ -110,16 +171,16 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center w-full md:w-fit gap-4">
             <div className="flex flex-col-reverse md:flex-row items-center gap-4 text-xs text-secondary font-medium font-montserrat">
               <p>
-                © {currentYear} {t("copyright")}
+                © {currentYear} {footer?.copyrightTxt}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                {legalLinks.map((item: string, idx: number) => (
+                {footer?.bottomLinks?.map((item, idx) => (
                   <Link
                     key={idx}
-                    href="#"
+                    href={item?.url}
                     className="hover:text-romanRed transition-all duration-300"
                   >
-                    {item}
+                    {item?.urlText}
                   </Link>
                 ))}
               </div>

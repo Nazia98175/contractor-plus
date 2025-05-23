@@ -511,11 +511,6 @@ html {
   text-align: center;
   text-overflow: ellipsis;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-  font-family: "Plus Jakarta Sans";
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
 }
 .field-service-card {
   border: 1px solid #ffffff4e;
@@ -697,7 +692,7 @@ html {
 }
 
 .animated-image {
-  animation: floatPulsePing 20s ease-in-out infinite;
+  animation: floatPulsePing 10s ease-in-out infinite;
   transform-origin: center;
 }
 /* 
@@ -798,7 +793,7 @@ html {
 }
 .bubbling-animation {
   display: inline-block; /* Ensure the icon remains inline */
-  animation: bubbling 2s infinite ease-in-out;
+  animation: bubbling 4s infinite ease-in-out;
 }
 .color-animation {
   animation: spreadColor 3s ease-in-out infinite;

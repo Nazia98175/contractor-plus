@@ -79,7 +79,6 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
         viewBox="0 0 515 992"
         style={{ overflow: "visible" }}
       >
-        {/* अतिरिक्त आउटर ऑरा लेयर */}
         <g style={{ mixBlendMode: "plus-lighter" }}>
           <path
             className="diagonal-path"
@@ -92,7 +91,6 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
           ></path>
         </g>
 
-        {/* मूल SVG कंटेंट */}
         <g
           filter="url(#filter0_f_115_2066)"
           style={{ mixBlendMode: "plus-lighter" }}
@@ -107,7 +105,6 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
         </g>
 
         <defs>
-          {/* मूल फिल्टर */}
           <filter
             id="filter0_f_115_2066"
             width="1110.12"
@@ -129,7 +126,6 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
             ></feGaussianBlur>
           </filter>
 
-          {/* मूल ग्रेडिएंट */}
           <linearGradient
             id="paint0_linear_115_2066"
             x1="-359.41"
@@ -142,8 +138,6 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
             <stop offset="0.997" stopColor={strokeColor}></stop>
             <stop offset="1" stopColor="#fff"></stop>
           </linearGradient>
-
-          {/* अतिरिक्त ऑरा ग्रेडिएंट */}
           <linearGradient
             id="diagonal-aura-gradient"
             x1="-359.41"

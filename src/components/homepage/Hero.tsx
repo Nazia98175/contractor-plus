@@ -19,6 +19,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
 
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
+      <div className="bg-athenaBlue rotate-45  w-full max-w-[800px] h-6 blur-[40px] absolute right-0 top-56"></div>
       {/* <Image
         width={769}
         height={800}
@@ -30,7 +31,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <img
         src="/images/webp/hero-mobile-bg.webp"
         alt="Mobile Hero"
-        className="sm:hidden z-10 object-cover h-full pointer-events-none right-[-25%] rotate-12 -bottom-[10%] md:bottom-[-35%] absolute w-[200%]"
+        className="sm:hidden z-10 object-cover h-full pointer-events-none right-0 -bottom-[30%] absolute w-full"
       />
       <Image
         width={769}
@@ -41,7 +42,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         layout="lazy"
       />
       <div className="flex items-end main-container z-20 relative lg:pt-[140px] pt-[269px] xl:pb-[196px] lg:pb-[150px] md:pb-[100px] pb-9">
-        <div className="lg:max-w-[616px] w-full sm:space-y-6 relative z-30">
+        <div className="lg:max-w-[628px] w-full sm:space-y-6 relative z-30">
           <TextAnimation animateOnScroll={false} delay={3}>
             <h1 className="main-heading gradient-text mb-1.5">{hero_title}</h1>
           </TextAnimation>

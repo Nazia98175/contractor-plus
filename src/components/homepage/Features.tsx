@@ -24,7 +24,7 @@ const Features = ({ features }: { features: any }) => {
             staggerDelay={0.15}
             animationDuration={0.8}
             distance={50}
-            className="hidden lg:grid lg:grid-cols-3 gap-7"
+            className="hidden lg:grid lg:grid-cols-3 gap-6"
           >
             {featureData.map((obj, index) => (
               <FeatureCard obj={obj} key={index} />

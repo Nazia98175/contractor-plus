@@ -37,7 +37,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
             />
             <div>
               <div className="flex items-center gap-3">
-                <p className="text-base font-medium text-lightBlack font-jakarta">
+                <p className="text-base font-medium text-lightBlack max-w-[190px] truncate text-nowrap">
                   {review.userName}
                 </p>
                 {review.isModal && (
@@ -49,7 +49,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                   </span>
                 )}
               </div>
-              <p className="text-xs font-medium text-highRise pt-1">
+              <p className="text-xs font-medium text-highRise pt-1 truncate">
                 {review.userRole}
               </p>
             </div>

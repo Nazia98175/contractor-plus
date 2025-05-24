@@ -50,7 +50,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               {hero_description}
             </p>
           </TextAnimation>
-          <div className="flex gap-2.5 sm:flex-row flex-col items-center">
+          <div className="flex gap-2.5  flex-col items-center w-fit">
             <button className="bg-red-linear h-10 primary-btn">
               <span className="md:flex hidden">{cta_button_text}</span>
               <span className="flex md:hidden">{cta_button_text}</span>

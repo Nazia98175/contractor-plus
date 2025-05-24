@@ -126,10 +126,8 @@ const FieldService: React.FC = () => {
         There’s finally a CRM for field service that does more than just store
         your contacts
       </h2>
-      {/* Reduced height for blur element */}
 
-      {/* Reduced height for bottom background */}
-      <div className="absolute bg-bottom w-full h-24  z-10 left-0 -bottom-1 rotate-180" />
+      <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" />
 
       <div ref={sectionRef} className="relative px-2 h-fit">
         {fieldServiceData.map((service, index) => (

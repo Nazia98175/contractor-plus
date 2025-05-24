@@ -26,7 +26,7 @@ const TrustedService = () => {
 
   return (
     <section className="pt-6 md:pt-0  overflow-hidden relative ">
-      <h3 className="section-heading gradient-2 text-center max-w-[90%] w-fit mx-auto px-3">
+      <h3 className="section-heading service-text text-center max-w-[90%]  mx-auto px-3">
         Trusted by over 50,000 build and service contractors
       </h3>
       <div className="relative h-fit ">

@@ -33,7 +33,7 @@ const CrmHero = () => {
         <div className="flex flex-wrap-reverse justify-center items-center gap-5 pt-4">
           <div className="flex gap-4 pb-5 md:pb-0 bg-black lg:bg-transparent w-full sm:w-fit justify-center">
             <div className="flex flex-col-reverse sm:flex-col gap-1">
-              <img src="/images/svg/GooglePlay-Icon.svg" alt="google icon" />
+              <img src="/images/svg/play-google.svg" alt="google icon" />
               <div className="flex justify-center items-center">
                 {[...Array(5)].map((_, i) => (
                   <StartIcon key={i} />

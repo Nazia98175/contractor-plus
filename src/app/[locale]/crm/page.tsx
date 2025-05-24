@@ -19,7 +19,7 @@ const CrmBussinessPage = () => {
       <Header />
       <div className="black-bg">
         <CrmHero />
-        {/* <TrustedService /> */}
+        <TrustedService />
         <SwitchingTool />
       </div>
       <FieldService />

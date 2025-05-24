@@ -13,7 +13,7 @@ const KindAdorable = () => {
         <p className="max-w-[885px] mx-auto paragraph-style text-center">
           Not all platforms are built to run a real business
         </p>
-        <div className="flex w-full mt-8">
+        <div className="flex md:hidden w-full mt-8">
           <button className="bg-doctor p-3 rounded-l-sm w-1/2 border-r border-decemberSky flex justify-center items-center">
             <span className="max-w-[122px]">
               <BlackLogo />

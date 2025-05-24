@@ -24,9 +24,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
     <div className="mr-5 min-h-full h-full ">
       <article
         onClick={openModal}
-        className="trusted-service bg-shutter md:bg-transparent -z-[10] rounded-[10px] p-3 sm:p-4 overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer  h-full flex flex-col justify-between relative group"
+        className="trusted-service bg-shutter md:bg-transparent -z-[10] rounded-[10px] p-3  overflow-hidden max-w-[350px] md:max-w-[419px] w-full cursor-pointer  h-full flex flex-col relative group"
       >
-        <div className="flex justify-between items-start gap-3 md:gap-5">
+        <div className="flex justify-between items-start gap-3">
           <div className="flex  gap-2">
             <Image
               src={review.profileUrl}
@@ -37,9 +37,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             />
             <div>
               <div className="flex gap-2">
-                <p className="text-base font-medium text-white font-jakarta">
+                <h5 className="text-base font-medium text-white truncate max-w-[190px]">
                   {review.userName}
-                </p>
+                </h5>
                 <span
                   onClick={openModal}
                   className="text-white group-hover:text-pleasure h-5 w-5 flex justify-center items-center rounded-full bg-[#2A2A2E]"
@@ -47,7 +47,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                   <PlayIcon />
                 </span>
               </div>
-              <h6 className="text-xs font-medium tracking-[0.1px] text-secondary">
+              <h6 className="text-xs font-medium tracking-[0.1px] text-nowrap truncate text-secondary">
                 {review.userRole}
               </h6>
             </div>
@@ -56,7 +56,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-highRise text-xs sm:text-sm font-semibold  mt-5 line-clamp-3">
+        <p className="text-highRise text-xs sm:text-sm font-semibold mt-5">
           "{review.review}"
         </p>
       </article>

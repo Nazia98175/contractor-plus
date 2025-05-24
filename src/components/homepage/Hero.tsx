@@ -69,7 +69,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover lg:object-center 3xl:object-cover relative -z-20"
+          className="w-full h-full object-cover lg:object-right 3xl:object-cover relative -z-20"
           src="/video/hero-video.mp4"
         ></video>
         <Image

@@ -65,7 +65,7 @@ const WhyContractorDropdown = () => {
             key={index}
             className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
           >
-            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
+            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-fit">
               {link.label}
             </span>
             <p className="text-sm font-inter text-lightBlack mt-2.5">

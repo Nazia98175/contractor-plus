@@ -44,14 +44,14 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <div className="flex items-end main-container z-20 relative lg:pt-[140px] pt-[269px] xl:pb-[196px] lg:pb-[150px] md:pb-[100px] pb-9">
         <div className="lg:max-w-[628px] w-full sm:space-y-6 relative z-30">
           <TextAnimation animateOnScroll={false} delay={3}>
-            <h1 className="main-heading gradient-text mb-1.5">{hero_title}</h1>
+            <h1 className="main-heading gradient-text mb-4">{hero_title}</h1>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={3}>
             <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">
               {hero_description}
             </p>
           </TextAnimation>
-          <div className="flex gap-2.5  flex-col items-center w-fit">
+          <div className="flex gap-2.5  flex-col items-center w-full sm:w-fit">
             <button className="bg-red-linear h-10 primary-btn">
               <span className="md:flex hidden">{cta_button_text}</span>
               <span className="flex md:hidden">{cta_button_text}</span>

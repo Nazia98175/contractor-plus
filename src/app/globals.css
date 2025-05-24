@@ -138,7 +138,7 @@ body {
 }
 
 .header-li-dropdown {
-  @apply xl:text-base lg:text-sm text-xs font-extrabold font-inter  text-lightBlack duration-300 ease-linear p-1;
+  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
 }
 .all-features-button {
   @apply flex items-center gap-2.5 text-lg font-medium text-lightBlack p-1 font-inter;
@@ -418,6 +418,11 @@ html {
 }
 .trusted-service:hover::before {
   opacity: 1;
+}
+.gradient-engine-text {
+  background: linear-gradient(to right, white, rgba(238, 30, 37, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .gradient-text {
   background: linear-gradient(

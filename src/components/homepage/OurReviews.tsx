@@ -14,16 +14,13 @@ import { Review } from "@/types";
 interface Reviews {
   title: string;
   sub_title: string;
-  
 }
 
 interface TheReviewsProps {
   reviews: Reviews[];
 }
 
-const OurReviews: React.FC<TheReviewsProps> = ({
-  reviews
-}) => {
+const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -65,15 +62,24 @@ const OurReviews: React.FC<TheReviewsProps> = ({
             priority
           />
 
-          <Image
-            className="max-w-[135px] w-full hidden md:block"
-            src="/images/svg/capterra-icon2.svg"
-            alt="capterra icon"
-            width={135}
-            height={40}
-            priority
-          />
-
+          <div className="flex items-center gap-2">
+            <Image
+              className="max-w-[135px] w-full hidden md:block"
+              src="/images/webp/g2Rating.webp"
+              alt="capterra icon"
+              width={135}
+              height={40}
+              priority
+            />
+            <Image
+              className="max-w-[80px] w-full hidden md:block"
+              src="/images/svg/capterra-icon2.svg"
+              alt="capterra icon"
+              width={80}
+              height={40}
+              priority
+            />
+          </div>
           <div>
             <div className="flex items-center gap-3">
               <h3 className="text-winterWay text-sm font-bold font-jakarta">

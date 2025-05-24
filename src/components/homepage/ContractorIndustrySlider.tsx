@@ -179,19 +179,7 @@ const ContractorIndustrySlider: React.FC = () => {
   ];
 
   return (
-    <div className="relative">
-      {/* Left gradient blur */}
-
-      {/* <Image
-        className="absolute top-0 w-full left-[-30px] h-full z-50 max-w-[500px] object-center md:block hidden"
-        src="/images/webp/contractor-left-bg.webp"
-        alt="webp bg"
-        width={500}
-        height={700}
-      /> */}
-
-      {/* Right gradient blur */}
-
+    <div className="relative ">
       <SliderLayout
         effect="coverflow"
         autoplay={{

@@ -9,7 +9,7 @@
     "video": "Your browser does not support the video tag."
   },
   "menu": {
-    "why": "Why Contractor+?",
+    "whycontractordesktop": "Why Contractor+?",
     "features": "Features",
     "industries": "Industries",
     "pricing": "Pricing",
@@ -336,40 +336,9 @@
       }
     }
   },
-  "whyContractor": {
-    "links": [
-      {
-        "label": "Why Choose Contractor+",
-        "description": "Learn about our platform's unique advantages",
-        "href": "/why-contractor-plus"
-      },
-      {
-        "label": "Success Stories",
-        "description": "See how contractors are growing with our platform",
-        "href": "/success-stories"
-      },
-      {
-        "label": "Features Overview",
-        "description": "Discover all the powerful tools at your fingertips",
-        "href": "/features-overview"
-      },
-      {
-        "label": "Pricing Plans",
-        "description": "Find the right pricing plan for your business",
-        "href": "/pricing"
-      },
-      {
-        "label": "Integration Partners",
-        "description": "All the services and software that integrate with us",
-        "href": "/integration-partners"
-      }
-    ],
-    "imageAlt": "Contractor team working together on a construction site",
-    "seeAllFeatures": "See All Features"
-  },
+
   "industries": {
-    "heading": "Industries",
-    "imageAlt": "Group of contractors working on a project",
+    "imageAlt": "Resources and learning materials for contractors",
     "links": [
       { "label": "General Contractor", "href": "/" },
       { "label": "Plumbing", "href": "/" },
@@ -431,72 +400,65 @@
     "imageAlt": "Resources and learning materials for contractors",
     "links": [
       {
-        "label": "Contractor+ Blog",
-        "description": "Industry insights and tips",
-        "href": "/"
+        "label": "Contractor+ Blog"
       },
       {
-        "label": "Industry Events",
-        "description": "Conferences, workshops and webinars",
-        "href": "/"
+        "label": "Industry Events"
       },
       {
-        "label": "Podcasts",
-        "description": "Listen to contractor insights",
-        "href": "/"
+        "label": "Podcasts"
       },
       {
-        "label": "Affiliates",
-        "description": "Partnership opportunities",
-        "href": "/"
+        "label": "Affiliates"
       },
       {
-        "label": "Calculators",
-        "description": "Estimate project costs",
-        "href": "/"
+        "label": "Calculators"
       },
       {
-        "label": "Supply Partner Program",
-        "description": "Connect with suppliers",
-        "href": "/"
+        "label": "Supply Partner Program"
       },
       {
-        "label": "Free Estimate Maker",
-        "description": "Create professional estimates",
-        "href": "/"
+        "label": "Free Estimate Maker"
       },
       {
-        "label": "Features Roadmap",
-        "description": "Upcoming feature releases",
-        "href": "/"
+        "label": "Features Roadmap"
       },
       {
-        "label": "Material Comparison Search",
-        "description": "Compare building materials",
-        "href": "/"
+        "label": "Material Comparison Search"
       },
       {
-        "label": "Support Center",
-        "description": "Get help documentation",
-        "href": "/"
+        "label": "Support Center"
       },
       {
-        "label": "Regional Material Pricing",
-        "description": "Regional labor cost data",
-        "href": "/"
-      },
-      {
-        "label": "USA Local Labor Pricing",
-        "description": "Integrate with our platform",
-        "href": "/"
-      },
-      {
-        "label": "API Documentation",
-        "description": "Regional material cost data",
-        "href": "/"
+        "label": "Regional Material Pricing"
       }
     ]
   },
+  "whycontractordesktop": {
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content",
+        "imageAlt": "Resources and learning materials for contractors"
+      }
+    ]
+  },
+
   "blogs": {
     "heading": "Some Free Resources For You",
     "viewAllBlogs": "View All Resources",

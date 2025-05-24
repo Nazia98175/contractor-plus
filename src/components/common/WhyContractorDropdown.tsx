@@ -1,58 +1,106 @@
-import Link from "next/link";
-import React from "react";
-import { ArrowIcon } from "./Icons";
-import Image from "next/image";
+"use client";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useState } from "react";
 
 const WhyContractorDropdown = () => {
-  // Get translations from the "whyContractor" namespace
-  const t = useTranslations("whyContractor");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
+  const t = useTranslations("whycontractordesktop");
 
-  const whyContractorLinks = t.raw("links") as {
+  const industriesLinks = t.raw("links") as {
     label: string;
     description: string;
-    href: string;
   }[];
 
+  const resourceItems = [
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-2.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+  ];
+  const fallbackImage = "/images/webp/circular-slide-1.webp";
+
   return (
-    <article className="flex flex-col justify-between p-2 gap-6">
-      <div className="flex items-start">
-        <ul className="grid gap-x-6 gap-y-3 w-full overflow-auto">
-          {whyContractorLinks.map((link, index) => (
-            <li
-              className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
-              key={index}
-            >
-              <Link
-                href={link.href}
-                className="group group-hover:bg-lightBlack group-hover:!text-white"
-              >
-                <span className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white">
-                  {link.label}
-                </span>
-                <p className="text-sm font-inter text-lightBlack mt-2.5">
-                  {link.description}
-                </p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <div className="flex gap-8 relative z-[9999] ">
+      <div className="grid grid-cols-1 gap-3 w-full ">
+        {industriesLinks.map((link, index) => (
+          <button
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            key={index}
+            className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
+          >
+            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
+              {link.label}
+            </span>
+            <p className="text-sm font-inter text-lightBlack mt-2.5">
+              {link.description}
+            </p>
+          </button>
+        ))}
+      </div>
+
+      <div className="relative w-full max-w-[480px] rounded-md overflow-hidden ">
+        {resourceItems.map((item, index) => (
+          <Image
+            key={index}
+            src={item.image}
+            alt={industriesLinks[index]?.label || "Industry preview"}
+            unoptimized
+            width={480}
+            height={320}
+            className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
+              hoveredIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          />
+        ))}
         <Image
-          className="object-contain max-w-[420px] w-full"
-          src={"/images/webp/resources-dropdown-img.webp"}
-          alt={t("imageAlt") || "group-eng"}
+          src={fallbackImage}
+          alt="Select an industry"
           unoptimized
-          width={420}
-          height={290}
+          width={480}
+          height={320}
+          className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
+            hoveredIndex === null ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
         />
       </div>
-      <div className="flex items-center justify-between gap-6 p-[6px]">
-        <Link className="all-features-button group" href={"/"}>
-          {t("seeAllFeatures")}
-          <ArrowIcon />
-        </Link>
-      </div>
-    </article>
+    </div>
   );
 };
 

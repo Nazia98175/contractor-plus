@@ -138,7 +138,7 @@ body {
 }
 
 .header-li-dropdown {
-  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
+  @apply xl:text-base lg:text-sm text-xs font-extrabold font-inter  text-lightBlack duration-300 ease-linear p-1;
 }
 .all-features-button {
   @apply flex items-center gap-2.5 text-lg font-medium text-lightBlack p-1 font-inter;

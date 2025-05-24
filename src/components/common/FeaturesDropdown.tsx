@@ -169,7 +169,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
                         )}
                       </div>
                     </div>
-                    <p className="text-sm font-inter text-lightBlack mt-2.5">
+                    <p className="text-sm font-inter text-lightBlack">
                       {t(`${section.key}.${featureId}.description`)}
                     </p>
                   </Link>

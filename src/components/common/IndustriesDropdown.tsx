@@ -1,7 +1,10 @@
+"use client";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 const IndustriesDropdown = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
   const t = useTranslations("industries");
 
   const industriesLinks = t.raw("links") as {
@@ -9,26 +12,92 @@ const IndustriesDropdown = () => {
     href: string;
   }[];
 
-  return (
-    <article className="flex flex-col items-start justify-between p-2 gap-3 main-container">
-      <h3 className="px-3 dropdown-heading">{t("heading")}</h3>
+  const resourceItems = [
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-2.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+  ];
+  const fallbackImage = "/images/webp/circular-slide-1.webp";
 
-      <ul className="grid grid-cols-4 gap-1 w-full">
+  return (
+    <div className="flex gap-8 relative z-[9999] ">
+      <div className="grid grid-cols-4 gap-3 w-full ">
         {industriesLinks.map((link, index) => (
-          <li
-            className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
+          <button
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
             key={index}
+            className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
           >
-            <Link
-              href={link.href}
-              className="header-li-dropdown !font-medium group-hover:bg-lightBlack group-hover:!text-white"
-            >
+            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
               {link.label}
-            </Link>
-          </li>
+            </span>
+          </button>
         ))}
-      </ul>
-    </article>
+      </div>
+
+      <div className="relative w-full max-w-[480px] rounded-md overflow-hidden ">
+        {resourceItems.map((item, index) => (
+          <Image
+            key={index}
+            src={item.image}
+            alt={industriesLinks[index]?.label || "Industry preview"}
+            unoptimized
+            width={480}
+            height={320}
+            className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
+              hoveredIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          />
+        ))}
+        <Image
+          src={fallbackImage}
+          alt="Select an industry"
+          unoptimized
+          width={480}
+          height={320}
+          className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
+            hoveredIndex === null ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        />
+      </div>
+    </div>
   );
 };
 

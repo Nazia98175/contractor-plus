@@ -262,37 +262,6 @@
       }
     ]
   },
-  "whyContractor": {
-    "links": [
-      {
-        "label": "¿Por qué elegir Contractor+?",
-        "description": "Conozca las ventajas únicas de nuestra plataforma",
-        "href": "/why-contractor-plus"
-      },
-      {
-        "label": "Historias de éxito",
-        "description": "Vea cómo los contratistas están creciendo con nuestra plataforma",
-        "href": "/success-stories"
-      },
-      {
-        "label": "Descripción general de funciones",
-        "description": "Descubra todas las potentes herramientas a su alcance",
-        "href": "/features-overview"
-      },
-      {
-        "label": "Planes de precios",
-        "description": "Encuentre el plan de precios adecuado para su negocio",
-        "href": "/pricing"
-      },
-      {
-        "label": "Socios de integración",
-        "description": "Todos los servicios y software que se integran con nosotros",
-        "href": "/integration-partners"
-      }
-    ],
-    "imageAlt": "Equipo de contratistas trabajando juntos en una obra de construcción",
-    "seeAllFeatures": "Ver todas las características"
-  },
 
   "reviews": {
     "heading": "Deja que nuestros clientes hablen por nosotros...",
@@ -773,5 +742,26 @@
     "emailPlaceholder": "Su Correo Electrónico",
     "noCreditCard": "No Se Requiere Tarjeta de Crédito",
     "createAccount": "Crear Cuenta Gratuita"
+  },
+  "whyContractorDesktop": {
+    "imageAlt": "Resources and learning materials for contractors",
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content"
+      }
+    ]
   }
 }

@@ -9,7 +9,9 @@ import TextAnimation from "../common/TextAnimation";
 interface Whatever {
   title: string;
   sub_title: string;
-  
+  start: number;
+  end: number;
+  suffix: string;
 }
 
 interface TheWhateverProps {
@@ -71,7 +73,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({
           distance={50}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8"
         >
-          {makeOperationlist.map((item, index) => (
+          {whateverOperation?.slice(2, 5).map((item, index) => (
             <article
               key={index}
               className="flex flex-col gap-2 items-center text-center"
@@ -92,7 +94,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({
               </h3>
 
               <p className="text-lg font-medium text-secondary font-montserrat">
-                {item.description}
+                {item.sub_title}
               </p>
             </article>
           ))}

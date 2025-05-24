@@ -52,7 +52,7 @@ const CrmBussinessPage = () => {
       </div>
       <Faq />
       <BlogPosts />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };

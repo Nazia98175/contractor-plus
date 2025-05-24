@@ -26,17 +26,13 @@ export default async function Home({
 }) {
   const useParams = await params;
   // const [homePageContent, contractPlatformsData, blogs, footer] =
-  const [homePageContent, contractPlatformsData] = await Promise.all([
+  const [homePageContent, contractPlatformsData, blogs] = await Promise.all([
     getHomePage(useParams.locale, "&populate=*"),
     getHomePage(
       useParams.locale,
       "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
     ),
-    // getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-    // getFooter(
-    //   useParams?.locale,
-    //   "&populate[sections][populate]=*&populate[bottomLinks]=*"
-    // ),
+    getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
 
   return (
@@ -66,7 +62,7 @@ export default async function Home({
             whateverOperation={homePageContent?.data?.whateverOperation}
           />
         </div>
-        {/* <OurBlogs
+        <OurBlogs
           blogs={blogs?.data}
           blogHeading={homePageContent?.data?.blogs}
         />
@@ -75,8 +71,8 @@ export default async function Home({
             entireBusiness={homePageContent?.data?.entireBusiness}
             ncc_text={homePageContent?.data?.ncc_text}
           />
-          <Footer footer={footer?.data} />
-        </div> */}
+          {/* <Footer footer={footer?.data} /> */}
+        </div>
         <ParticlesComponent id="star-particles" />
       </div>
     </Suspense>

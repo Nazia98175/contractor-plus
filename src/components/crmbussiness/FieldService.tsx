@@ -131,11 +131,11 @@ const FieldService: React.FC = () => {
       {/* Reduced height for bottom background */}
       <div className="absolute bg-bottom w-full h-24  z-10 left-0 -bottom-1 rotate-180" />
 
-      <div ref={sectionRef} className="relative px-2">
+      <div ref={sectionRef} className="relative px-2 h-fit">
         {fieldServiceData.map((service, index) => (
           <div
             key={index}
-            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full h-full p-2.5 lg:p-8 no-scrollbar overflow-hidden field-service-card rounded-[14px] xl:rounded-[40px]  ${
+            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-full overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
               index === fieldServiceData.length - 1 ? "pb-0" : ""
             }`}
             ref={(el) => {

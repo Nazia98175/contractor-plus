@@ -19,6 +19,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
 
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
+      <div className="bg-athenaBlue rotate-45  w-full max-w-[800px] h-6 blur-[40px] absolute right-0 top-56"></div>
       {/* <Image
         width={769}
         height={800}
@@ -30,7 +31,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <img
         src="/images/webp/hero-mobile-bg.webp"
         alt="Mobile Hero"
-        className="sm:hidden z-10 object-cover h-full pointer-events-none right-[-25%] rotate-12 -bottom-[10%] sm:bottom-[-35%] absolute w-full"
+        className="sm:hidden z-10 object-cover h-full pointer-events-none right-0 -bottom-[30%] absolute w-full"
       />
       <Image
         width={769}

@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import FieldServiceCard from "./FieldServiceCard";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,7 @@ const FieldService: React.FC = () => {
   // Convert object to array of services
   const fieldServiceData = Object.values(fieldServiceRaw.service);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (typeof window === "undefined") return;
 
     // Reduced multiplier for better spacing
@@ -107,11 +108,7 @@ const FieldService: React.FC = () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
-  }, []);
-
-  useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, fieldServiceData.length);
-  }, []);
+  }, [fieldServiceData]);
 
   return (
     <section

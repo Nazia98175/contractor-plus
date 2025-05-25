@@ -1068,7 +1068,7 @@ export const fieldServiceData = [
           "Map out the full job timeline and adjust schedules so nothing goes sideways.",
       },
     ],
-    img: "/images/webp/field-service-1.webp",
+    img: "/images/webp/field-service-2.webp",
   },
   {
     heading: "Team Management",
@@ -1113,7 +1113,7 @@ export const fieldServiceData = [
           "Log miles and hours automatically and tag them to the right job.",
       },
     ],
-    img: "/images/webp/field-service-1.webp",
+    img: "/images/webp/field-service-3.webp",
   },
   {
     heading: "Communication",

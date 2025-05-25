@@ -5,7 +5,7 @@ import { BlurIcon } from "../common/Icons";
 
 type FeatureContent = {
   title: string;
-  mainDesc?: string;
+  highlight?: string;
   description: string;
   titleImg: string;
 };
@@ -24,26 +24,26 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           ref={(el) => {
             contentRefs.current[index] = el;
           }}
-          className="p-3.5 bg-gray-100 rounded-2xl w-full space-y-[18px] xl:scroll-mt-24 lg:scroll-mt-16 md:scroll-mt-12 scroll-mt-8"
+          className="p-3.5 bg-doctor rounded-2xl w-full space-y-2.5 md:space-y-3 lg:space-y-[18px] xl:scroll-mt-24 lg:scroll-mt-16 md:scroll-mt-12 scroll-mt-8"
         >
-          <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet leading-[100%] font-jakarta">
+          <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet leading-[100%]">
             {content.title}
           </h4>
-          <div className="bg-white py-4 px-5 h-[276px] lg:h-[245px] w-full relative rounded-lg shadow-sm overflow-hidden">
+          <div className="bg-white p-3 h-[230px] lg:h-[245px] w-full relative rounded-lg overflow-hidden">
             <Image
               src={content.titleImg}
               alt="Feature"
               fill
               className="object-cover rounded-md"
             />
-            <BlurIcon className="absolute inset-0 w-full h-full mix-blend-color-dodge" />
+            <BlurIcon className="absolute inset-0 w-full h-full mix-blend-luminosity" />
           </div>
-          <div className="text-base md:text-lg font-medium text-secondary max-w-[615px] font-jakarta space-y-2">
-            {content.mainDesc && (
-              <p className="text-wallStreet">{content.mainDesc}</p>
+          <p className="text-base md:text-lg font-medium text-wallStreet  max-w-[615px] space-y-2">
+            {content.description}
+            {content.highlight && (
+              <span className="text-secondary"> {content.description}</span>
             )}
-            <p>{content.description}</p>
-          </div>
+          </p>
         </div>
       ))}
     </>

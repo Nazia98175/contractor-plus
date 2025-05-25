@@ -21,10 +21,10 @@ const CoreFeaturesCard = () => {
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const indicatorRef = useRef<HTMLButtonElement | null>(null);
-  const mobileIndicatorRef = useRef<HTMLButtonElement | null>(null);
+  const featureButtonsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const scrollTriggersRef = useRef<any[]>([]);
   const navHeightRef = useRef<number>(0);
-  const isScrollingProgrammatically = useRef(false); // ✅ Flag
+  const isScrollingProgrammatically = useRef(false);
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
@@ -61,10 +61,7 @@ const CoreFeaturesCard = () => {
     (index: number) => {
       const positions = calculateButtonPositions();
       const position = positions[index] || 0;
-      const target =
-        window.innerWidth >= 1024
-          ? indicatorRef.current
-          : mobileIndicatorRef.current;
+      const target = indicatorRef.current;
 
       if (target) {
         gsap.to(target, {
@@ -80,7 +77,16 @@ const CoreFeaturesCard = () => {
   useEffect(() => {
     moveIndicator(activeFeature);
     setProgressValue(activeFeature / (features.length - 1));
-  }, [activeFeature, moveIndicator, features.length]);
+
+    // Scroll the active feature button into view (mobile only)
+    if (isMobile && featureButtonsRef.current[activeFeature]) {
+      featureButtonsRef.current[activeFeature]?.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeFeature, moveIndicator, features.length, isMobile]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -96,7 +102,6 @@ const CoreFeaturesCard = () => {
       const container = containerRef.current;
       navHeightRef.current = navEl?.offsetHeight || 0;
 
-      // ✅ Desktop Pin
       if (window.innerWidth >= 1024 && navEl && container) {
         triggers.push(
           ScrollTrigger.create({
@@ -124,7 +129,6 @@ const CoreFeaturesCard = () => {
         );
       }
 
-      // ✅ Mobile Pin
       if (window.innerWidth < 1024 && navEl && container) {
         triggers.push(
           ScrollTrigger.create({
@@ -138,7 +142,6 @@ const CoreFeaturesCard = () => {
         );
       }
 
-      // 🎯 Feature scroll detection (with flag check)
       features.forEach((_, index) => {
         const el = contentRefs.current[index];
         if (!el) return;
@@ -197,7 +200,7 @@ const CoreFeaturesCard = () => {
     >
       <div
         ref={navContainerRef}
-        className={`${
+        className={`$${
           isMobile
             ? "w-full bg-white z-30 px-2 shadow-c2 transition-all duration-200"
             : ""
@@ -218,19 +221,24 @@ const CoreFeaturesCard = () => {
                 window.pageYOffset +
                 yOffset;
 
-              // ✅ Disable ScrollTrigger reactions temporarily
               isScrollingProgrammatically.current = true;
-
               window.scrollTo({ top: y, behavior: "smooth" });
-
-              // ✅ Re-enable after delay
               setTimeout(() => {
                 isScrollingProgrammatically.current = false;
-              }, 600); // adjust if needed
+              }, 600);
+            }
+
+            if (isMobile && featureButtonsRef.current[index]) {
+              featureButtonsRef.current[index]?.scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+                block: "nearest",
+              });
             }
           }}
           indicatorRef={indicatorRef}
           featuresRef={featuresRef}
+          featureButtonsRef={featureButtonsRef}
           isMobile={isMobile}
         />
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { RefObject, useEffect, useRef } from "react";
 import { ExternalLink, Pathbg } from "../common/Icons";
 
 type Props = {
@@ -9,8 +9,8 @@ type Props = {
   onFeatureClick: (index: number) => void;
   featuresRef: React.RefObject<HTMLDivElement | null>;
   indicatorRef: React.RefObject<HTMLButtonElement | null>;
-  mobileIndicatorRef?: React.RefObject<HTMLButtonElement | null>;
   isMobile?: boolean;
+  featureButtonsRef: RefObject<(HTMLButtonElement | null)[]>;
 };
 
 const FeatureNavigation = ({
@@ -20,9 +20,21 @@ const FeatureNavigation = ({
   onFeatureClick,
   featuresRef,
   indicatorRef,
-  mobileIndicatorRef,
   isMobile = false,
 }: Props) => {
+  // Store button refs to scroll active into view
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  useEffect(() => {
+    if (isMobile && buttonRefs.current[activeFeature]) {
+      buttonRefs.current[activeFeature]?.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeFeature, isMobile]);
+
   return (
     <div
       className={`flex gap-1.5 ${
@@ -39,14 +51,17 @@ const FeatureNavigation = ({
       </div>
 
       <div
-        className={`flex flex-row lg:flex-col gap-[22px] font-jakarta no-scrollbar ${
+        className={`flex flex-row lg:flex-col gap-[22px] font-jakarta no-scrollbar lg:py-0 py-2 ${
           isMobile
-            ? "w-full justify-between overflow-x-auto py-2"
+            ? "w-full justify-between overflow-x-auto "
             : "lg:overflow-visible"
         } whitespace-nowrap relative`}
       >
         {features.map((feature, index) => (
           <button
+            ref={(el) => {
+              buttonRefs.current[index] = el;
+            }}
             onClick={() => onFeatureClick(index)}
             key={feature}
             className={`feature-btn ${

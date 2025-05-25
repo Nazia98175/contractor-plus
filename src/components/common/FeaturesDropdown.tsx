@@ -142,8 +142,8 @@ const FeaturesDropdown = ({ isVisible = true }) => {
   }
 
   return (
-    <>
-      <div className="grid grid-cols-3">
+    <div className="overflow-hidden grow flex flex-col">
+      <div className="grid grid-cols-3  overflow-auto no-scrollbar">
         {sections.map((section) => (
           <div key={section.key}>
             <i className="text-sm font-semibold text-dark h-5 mb-2.5">
@@ -196,7 +196,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

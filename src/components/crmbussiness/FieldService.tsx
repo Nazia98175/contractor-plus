@@ -19,8 +19,6 @@ const FieldService: React.FC = () => {
 
   useGSAP(() => {
     if (typeof window === "undefined") return;
-
-    // Reduced multiplier for better spacing
     const stackOffset = -8;
     // Improved height calculation - only multiply by 1 instead of 3
     const totalHeight = `${

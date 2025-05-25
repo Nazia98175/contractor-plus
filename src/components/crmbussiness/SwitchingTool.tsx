@@ -174,7 +174,7 @@ const SwitchingTool = () => {
         >
           <div className="flex justify-center w-full">
             <Image
-              src="/images/webp/switch-card-1.webp"
+              src="/images/webp/switch-card-4.webp"
               width={370}
               height={99}
               alt="card 1"
@@ -193,7 +193,7 @@ const SwitchingTool = () => {
         >
           <div className="flex justify-center w-full">
             <Image
-              src="/images/webp/switch-card-2.webp"
+              src="/images/webp/switch-card-5.webp"
               width={370}
               height={99}
               alt="card 2"
@@ -211,7 +211,7 @@ const SwitchingTool = () => {
         >
           <div className="flex justify-center w-full">
             <Image
-              src="/images/webp/switch-card-1.webp"
+              src="/images/webp/switch-card-6.webp"
               width={370}
               height={99}
               alt="card 3"

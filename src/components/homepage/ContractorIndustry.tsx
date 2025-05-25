@@ -20,7 +20,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   const t = useTranslations("industry");
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <Image
         className="absolute top-0 w-full left-0  h-full z-20 max-w-[900px] object-center md:block animated-image hidden pointer-events-none"
         src="/images/webp/contractor-left-bg.webp"

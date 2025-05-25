@@ -45,10 +45,10 @@ const TeamsUsingContractor = () => {
           {crmList.map((item, index) => (
             <article
               key={index}
-              className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-c2 cursor-pointer"
+              className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-lg cursor-pointer"
             >
               <span className="mb-1">{icons[index % icons.length]}</span>
-              <h3 className="text-[30px] leading-[38px] font-bold text-winterWay font-jakarta">
+              <h3 className="text-[30px] leading-[38px] font-bold text-winterWay">
                 {inView && (
                   <CountUp
                     start={item.start}
@@ -78,7 +78,7 @@ const TeamsUsingContractor = () => {
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="custom-shadow-img max-w-[121px] hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img max-w-[121px] hover:-rotate-3 duration-300 cursor-pointer hover:!scale-105"
             alt="Software Advice"
           />
 
@@ -86,7 +86,7 @@ const TeamsUsingContractor = () => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="custom-shadow-img max-w-[103px] hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img max-w-[103px] hover:-rotate-3 duration-300 cursor-pointer hover:!scale-105"
             alt="Leader"
           />
 
@@ -94,14 +94,14 @@ const TeamsUsingContractor = () => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="custom-shadow-img max-w-[137px] hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img max-w-[137px] hover:-rotate-3 duration-300 cursor-pointer hover:!scale-105"
             alt="Get App"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="custom-shadow-img hover:-translate-y-1 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img hover:-rotate-3 duration-300 cursor-pointer hover:!scale-105"
             alt="Capterra"
           />
         </div>

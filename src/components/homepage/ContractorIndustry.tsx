@@ -36,13 +36,13 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
         height={300}
       />
 
-      <span className="absolute top-0 w-full h-full left-0  block  md:hidden">
+      <span className="absolute top-0 w-full h-full left-0 block md:hidden">
         <SliderRedLineIcon />
       </span>
-      <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-12">
+      <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-8">
         <div className="px-2">
           <TextAnimation animateOnScroll={true} delay={0.3}>
-            <h3 className="section-heading text-center text-white">
+            <h3 className="section-heading gradient-text text-center">
               {contractorIndustry?.[0]?.title ?? ""}
             </h3>
           </TextAnimation>

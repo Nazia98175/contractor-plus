@@ -298,7 +298,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     isModal: true,
     rating: 5,
-    videolink: "https://youtu.be/eANJwuWMDpM",
+    videolink: "https://www.youtube.com/watch?v=eANJwuWMDpM",
     review: "ourReviews.review",
   },
 
@@ -309,7 +309,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     isModal: true,
     rating: 1,
-    videolink: "https://youtu.be/Y4dbkmz995c",
+    videolink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
     review: "ourReviews.review",
   },
 ];

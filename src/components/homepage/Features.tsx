@@ -17,7 +17,7 @@ const Features = ({ features }: { features: any }) => {
   }));
 
   return (
-    <section className="bg-white sm:px-2 xl:pt-[86px] pt-11 lg:pb-[78px] pb-6 relative z-20">
+    <section className="bg-white sm:px-2 xl:pt-[45px] pt-11 lg:pb-[46px] pb-6 relative z-20">
       <div className="main-container sm:!px-2 !px-0">
         <div className=" bg-doctor lg:rounded-[32px] sm:rounded-4xl xl:p-9 lg:py-8 md:py-6 py-4">
           <CardReveal

@@ -21,9 +21,10 @@ const CoreFeaturesCard = () => {
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const indicatorRef = useRef<HTMLButtonElement | null>(null);
-  const mobileIndicatorRef = useRef<HTMLButtonElement | null>(null);
+  const featureButtonsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const scrollTriggersRef = useRef<any[]>([]);
   const navHeightRef = useRef<number>(0);
+  const isScrollingProgrammatically = useRef(false);
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
@@ -60,10 +61,7 @@ const CoreFeaturesCard = () => {
     (index: number) => {
       const positions = calculateButtonPositions();
       const position = positions[index] || 0;
-      const target =
-        window.innerWidth >= 1024
-          ? indicatorRef.current
-          : mobileIndicatorRef.current;
+      const target = indicatorRef.current;
 
       if (target) {
         gsap.to(target, {
@@ -79,7 +77,16 @@ const CoreFeaturesCard = () => {
   useEffect(() => {
     moveIndicator(activeFeature);
     setProgressValue(activeFeature / (features.length - 1));
-  }, [activeFeature, moveIndicator, features.length]);
+
+    // Scroll the active feature button into view (mobile only)
+    if (isMobile && featureButtonsRef.current[activeFeature]) {
+      featureButtonsRef.current[activeFeature]?.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeFeature, moveIndicator, features.length, isMobile]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -95,7 +102,6 @@ const CoreFeaturesCard = () => {
       const container = containerRef.current;
       navHeightRef.current = navEl?.offsetHeight || 0;
 
-      // ✅ Desktop Pin from top 20%
       if (window.innerWidth >= 1024 && navEl && container) {
         triggers.push(
           ScrollTrigger.create({
@@ -123,7 +129,6 @@ const CoreFeaturesCard = () => {
         );
       }
 
-      // ✅ Simplified Mobile Pin (no pinReparent, better stability)
       if (window.innerWidth < 1024 && navEl && container) {
         triggers.push(
           ScrollTrigger.create({
@@ -137,7 +142,6 @@ const CoreFeaturesCard = () => {
         );
       }
 
-      // 🎯 Feature scroll detection
       features.forEach((_, index) => {
         const el = contentRefs.current[index];
         if (!el) return;
@@ -153,8 +157,16 @@ const CoreFeaturesCard = () => {
               window.innerWidth >= 1024
                 ? "bottom center"
                 : `bottom+=${navHeightRef.current}px center`,
-            onEnter: () => setActiveFeature(index),
-            onEnterBack: () => setActiveFeature(index),
+            onEnter: () => {
+              if (!isScrollingProgrammatically.current) {
+                setActiveFeature(index);
+              }
+            },
+            onEnterBack: () => {
+              if (!isScrollingProgrammatically.current) {
+                setActiveFeature(index);
+              }
+            },
           })
         );
       });
@@ -171,7 +183,7 @@ const CoreFeaturesCard = () => {
     requestAnimationFrame(() => {
       cleanup();
       setupScrollTriggers();
-      setTimeout(() => ScrollTrigger.refresh(), 200); // Ensure proper recalculation
+      setTimeout(() => ScrollTrigger.refresh(), 200);
     });
 
     window.addEventListener("resize", handleResize);
@@ -188,7 +200,7 @@ const CoreFeaturesCard = () => {
     >
       <div
         ref={navContainerRef}
-        className={`${
+        className={`$${
           isMobile
             ? "w-full bg-white z-30 px-2 shadow-c2 transition-all duration-200"
             : ""
@@ -201,20 +213,36 @@ const CoreFeaturesCard = () => {
           activeFeature={activeFeature}
           onFeatureClick={(index) => {
             setActiveFeature(index);
+
             if (contentRefs.current[index]) {
               const yOffset = isMobile ? -navHeightRef.current - 20 : 0;
               const y =
                 contentRefs.current[index]?.getBoundingClientRect().top +
                 window.pageYOffset +
                 yOffset;
+
+              isScrollingProgrammatically.current = true;
               window.scrollTo({ top: y, behavior: "smooth" });
+              setTimeout(() => {
+                isScrollingProgrammatically.current = false;
+              }, 600);
+            }
+
+            if (isMobile && featureButtonsRef.current[index]) {
+              featureButtonsRef.current[index]?.scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+                block: "nearest",
+              });
             }
           }}
           indicatorRef={indicatorRef}
           featuresRef={featuresRef}
+          featureButtonsRef={featureButtonsRef}
           isMobile={isMobile}
         />
       </div>
+
       <div className="space-y-4 lg:space-y-8 overflow-visible lg:max-w-[639px] w-full">
         <FeatureContent
           featureContents={featureContents}

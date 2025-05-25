@@ -59,7 +59,7 @@ const WhyContractorDropdown = () => {
 
   return (
     <>
-      <div className="flex gap-8 relative z-[9999] pb-5">
+      <div className="flex gap-8 relative z-[9999] pb-8">
         <div className="grid grid-cols-1 gap-3 w-full ">
           {industriesLinks.map((link, index) => (
             <button

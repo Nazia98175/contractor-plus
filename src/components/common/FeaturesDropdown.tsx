@@ -143,13 +143,13 @@ const FeaturesDropdown = ({ isVisible = true }) => {
 
   return (
     <div className="overflow-hidden grow flex flex-col">
-      <div className="grid grid-cols-3  overflow-auto no-scrollbar">
+      <div className="grid grid-cols-3 overflow-auto no-scrollbar">
         {sections.map((section) => (
           <div key={section.key}>
             <i className="text-sm font-semibold text-dark h-5 mb-2.5">
               {t(section.headingKey)}
             </i>
-            <ul className="space-x-6 space-y-3 w-full pb-5">
+            <ul className="space-x-6 space-y-3 w-full pb-8">
               {section.items.map((featureId) => (
                 <li
                   className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
@@ -179,7 +179,6 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </div>
         ))}
       </div>
-
       <div className="flex items-center justify-between gap-6 left-0 font-inter sticky bottom-0 w-full bg-doctor2">
         <Link className="all-features-button group" href="/">
           {t("seeAllFeatures")}

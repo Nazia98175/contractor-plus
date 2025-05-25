@@ -127,6 +127,7 @@ const HeaderLiItems = () => {
             <Link
               key={index}
               href={item.link}
+              onMouseEnter={handleMouseLeave}
               className="header-li whitespace-nowrap flex items-center gap-1 py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer hover:text-superSilver text-kuroiBlack "
             >
               {item.label}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { ReactNode, useLayoutEffect, useRef } from "react";
@@ -16,6 +16,7 @@ interface CardRevealProps {
   distance?: number;
   easing?: string;
   debug?: boolean;
+  once?: boolean; // ✅ Default to true
 }
 
 const CardReveal: React.FC<CardRevealProps> = ({
@@ -26,6 +27,7 @@ const CardReveal: React.FC<CardRevealProps> = ({
   distance = 50,
   easing = "power2.out",
   debug = false,
+  once = false, // ✅ Default to true
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationSetupRef = useRef<boolean>(false);
@@ -70,6 +72,7 @@ const CardReveal: React.FC<CardRevealProps> = ({
         end: "bottom 25%",
         markers: debug,
         toggleActions: "play none none none",
+        once,
         onEnter: () => {
           gsap.to(cards, {
             y: 0,
@@ -106,7 +109,7 @@ const CardReveal: React.FC<CardRevealProps> = ({
       }
       gsap.killTweensOf(cards);
     };
-  }, [children, distance, staggerDelay, animationDuration, easing, debug]);
+  }, [distance, staggerDelay, animationDuration, easing, debug]);
 
   return (
     <div ref={containerRef} className={className}>

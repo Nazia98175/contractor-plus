@@ -33,7 +33,7 @@ const CrmSercive: React.FC = () => {
       </span>
       <div className="py-[75px]">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="section-heading gradient-text text-center">
+          <h3 className="section-heading text-white text-center">
             This is what a field service CRM should have been all along
           </h3>
         </TextAnimation>

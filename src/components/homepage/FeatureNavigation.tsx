@@ -47,9 +47,11 @@ const FeatureNavigation = ({
       >
         {features.map((feature, index) => (
           <button
-            // onClick={() => onFeatureClick(index)}
+            onClick={() => onFeatureClick(index)}
             key={feature}
-            className={`feature-btn ${isMobile ? "text-sm" : ""} ${
+            className={`feature-btn ${
+              isMobile ? "text-sm" : ""
+            } cursor-pointer ${
               index === activeFeature
                 ? "text-winterWay font-bold"
                 : "text-secondary"

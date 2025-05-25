@@ -17,7 +17,7 @@ const CrmHero = () => {
             alt="crm hero"
           />
         </div>
-        <div className="px-2">
+        <div className="px-2 pt-8 md:pt-0">
           <TextAnimation animateOnScroll={false} delay={3}>
             <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
               A{" "}
@@ -37,7 +37,7 @@ const CrmHero = () => {
           </TextAnimation>
         </div>
         <div className="flex flex-wrap-reverse justify-center items-center gap-5 pt-4">
-          <div className="flex gap-4 pb-5 md:pb-0 bg-black lg:bg-transparent w-full sm:w-fit justify-center">
+          <div className="flex gap-4 py-4 md:pb-0 bg-black lg:bg-transparent w-full sm:w-fit justify-center">
             <div className="flex flex-col-reverse sm:flex-col gap-1">
               <img src="/images/svg/play-google.svg" alt="google icon" />
               <div className="flex justify-center items-center">
@@ -56,11 +56,11 @@ const CrmHero = () => {
             </div>
           </div>
           <div className="w-full sm:w-fit px-2">
-            <button className="bg-red-linear h-10 primary-btn gap-2">
+            <button className="bg-red-linear !h-[40px] primary-btn gap-2">
               <span className="lg:block hidden">Create Free Account</span>
               <span className="lg:hidden block">Download App</span>
             </button>
-            <p className="text-wallStreet font-semibold sm:text-secondary text-xs font-myriad text-center pt-2">
+            <p className="text-wallStreet !font-semibold sm:text-secondary !text-xs font-myriad text-center pt-3">
               No Credit Card Required
             </p>
           </div>

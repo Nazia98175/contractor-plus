@@ -25,7 +25,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         height={800}
         src="/images/webp/red.webp"
         alt="Red Circle For designing"
-        className="absolute top-0 left-0 hidden lg:block h-full z-10 pointer-events-none object-cover"
+        className="absolute top-0 left-0 block lg:hidden h-full z-10 pointer-events-none object-cover"
       /> */}
       <AnimatedLineAura />
       <img
@@ -33,6 +33,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         alt="Mobile Hero"
         className="sm:hidden z-10 object-cover h-full pointer-events-none right-0 -bottom-[30%] absolute w-full"
       />
+
       <Image
         width={769}
         height={800}

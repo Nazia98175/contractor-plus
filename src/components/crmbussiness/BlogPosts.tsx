@@ -8,8 +8,8 @@ const BlogPosts = () => {
     <section className="pt-4 pb-12 px-2 sm:px-4 lg:px-20">
       <div className="max-w-[1158px] w-full mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="section-heading text-center text-white gradient-text">
-            Blog Posts Related To CRM
+          <h2 className="section-heading text-center text-white gradient-text w-full sm:w-fit">
+            Blog Posts Related To <br className="block sm:hidden" /> CRM
           </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
@@ -99,7 +99,7 @@ const BlogPosts = () => {
                   <h3 className="text-base font-jakarta font-medium text-white">
                     {blog.title}
                   </h3>
-                  <p className="truncate text-xs text-wallStreet max-w-[240px] pt-1">
+                  <p className="truncate text-xs text-wallStreet max-w-[300px] sm:max-w-[240px] pt-1">
                     {blog.descrition}
                   </p>
                 </div>

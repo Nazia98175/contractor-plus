@@ -920,3 +920,11 @@ html {
     opacity: 1;
   }
 }
+/* iPhone 12 Pro Max Device */
+
+.img-shadow {
+  filter: drop-shadow(-37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105))
+    drop-shadow(-11.7591px 10.5832px 13.8252px rgba(0, 0, 0, 0.14175))
+    drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
+    drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
+}

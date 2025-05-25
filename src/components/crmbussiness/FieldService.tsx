@@ -24,7 +24,7 @@ const FieldService: React.FC = () => {
     const stackOffset = -8;
     // Improved height calculation - only multiply by 1 instead of 3
     const totalHeight = `${
-      100 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
+      50 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
     }vh`;
 
     if (sectionRef.current) {
@@ -119,7 +119,7 @@ const FieldService: React.FC = () => {
         {fieldServiceData.map((service, index) => (
           <div
             key={index}
-            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-full overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
+            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
               index === fieldServiceData.length - 1 ? "pb-0" : ""
             }`}
             ref={(el) => {

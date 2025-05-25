@@ -32,32 +32,33 @@ const TrackProperties = () => {
       >
         <div className="flex relative pb-20 md:pb-24 xl:pb-0  justify-center items-center">
           <div className="bg-white-linear hidden lg:block absolute left-0 z-20 -bottom-[84px] h-[267px] w-full"></div>
-          <img
-            src="/images/webp/mobile.webp"
-            className="-mr-[17%] max-w-[28%] xl:-mr-16 z-0 xl:max-w-[262px] -mt-[20%] xl:-mt-0"
+          <Image
+            src="/images/webp/mix-screens.webp"
+            className="max-w-[1098px] w-full object-cover img-shadow md:block hidden"
             alt="Mobile"
+            width={1098}
+            height={578}
+            unoptimized
           />
-          <img
-            src="/images/webp/crm-ipad.webp"
-            className="max-w-[76%] xl:max-w-[660px] w-full z-10 xl:drop-shadow-[-21px_-16px_85.2px_rgba(0,0,0,0.85)]"
-            alt="Ipad"
-          />
-          <img
-            src="/images/webp/mobile-2.webp"
-            className="max-w-[26%] xl:max-w-[250px] -mb-[20%] xl:mb-0 z-20 xl:z-0 -ml-[14%] xl:-ml-12"
-            alt="Mobile 2"
+          <Image
+            src="/images/webp/mix-screens-mobile.webp"
+            className="max-w-[1098px] w-full object-cover img-shadow block md:hidden"
+            alt="Mobile"
+            width={1098}
+            height={578}
+            unoptimized
           />
         </div>
       </CardReveal>
 
       {/* Heading + Paragraph */}
       <div className="relative z-30 -mt-3 px-2 bg-white">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading gradient-text-2 text-center !font-black lg:!font-semibold w-fit mx-auto">
             View every property like you do your customers
           </h2>
         </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="max-w-[885px] mx-auto paragraph-style text-center">
             The only platform made for field service, trades, and general
             contractors

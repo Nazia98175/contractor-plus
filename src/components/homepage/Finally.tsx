@@ -85,7 +85,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 />
               </div>
             </div>
-
             {/* <FogGenerator /> */}
             <CardReveal
               staggerDelay={0.4}
@@ -93,7 +92,9 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               distance={50}
               className="flex flex-row lg:flex-col gap-4"
             >
-              <img
+              <Image
+                width={96}
+                height={104}
                 style={{
                   filter: `
                 drop-shadow(-111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04))
@@ -104,12 +105,16 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
               />
 
-              <img
+              <Image
+                width={96}
+                height={104}
                 src="/images/webp/leader.webp"
                 alt="Leader"
                 className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
               />
-              <img
+              <Image
+                width={96}
+                height={91}
                 src="/images/webp/get-app.webp"
                 alt="Get App"
                 className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"

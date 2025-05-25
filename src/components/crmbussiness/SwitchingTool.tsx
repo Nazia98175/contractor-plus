@@ -153,12 +153,12 @@ const SwitchingTool = () => {
       <img
         className="absolute top-0 left-0 w-full h-full z-[-7] object-contain hidden md:block"
         src="/images/webp/switch-tool-bg.webp"
-        alt=""
+        alt="switch-tool-bg"
       />
       <img
         className="top-0 left-0 w-full h-full z-[-10] object-center block md:hidden absolute"
         src="/images/png/switch-tool-mobile-bg.png"
-        alt=""
+        alt="switch-tool-bg"
       />
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
@@ -180,11 +180,11 @@ const SwitchingTool = () => {
               alt="card 1"
               className="w-full h-full object-cover"
             />
-          </div>{" "}
+          </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
             It takes forever to look up pricing, and it’s easy for errors to
             slip through
-          </h4>{" "}
+          </h4>
         </article>
 
         <article

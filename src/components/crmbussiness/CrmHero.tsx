@@ -4,7 +4,7 @@ import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 const CrmHero = () => {
   return (
-    <section className="relative overflow-visible">
+    <section className="relative">
       <div className="bg-kuroiBlack blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none bubbling-animation">
         <RedClipIcon />
@@ -13,8 +13,10 @@ const CrmHero = () => {
       <div className="max-w-[1050px] w-full mx-auto pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
         <div className="pt-10 max-w-[900px] mx-auto block px-5 md:hidden relative">
           <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
-          <img
-            className="w-full h-full"
+          <Image
+            width={900}
+            height={616}
+            className="w-full h-full object-cover"
             src="/images/webp/crm-hero.webp"
             alt="crm hero"
           />
@@ -46,9 +48,14 @@ const CrmHero = () => {
           animateOnScroll={false}
         >
           <div className="flex flex-wrap-reverse justify-center items-center gap-5 w-full ">
-            <div className="flex gap-4 md:pb-0 bg-black lg:bg-transparent w-full sm:w-fit justify-center">
+            <div className="flex gap-4 md:pb-0 bg-black sm:bg-transparent w-full sm:w-fit justify-center py-6 sm:py-0">
               <div className="flex flex-col-reverse sm:flex-col gap-1">
-                <img src="/images/svg/play-google.svg" alt="google icon" />
+                <Image
+                  src="/images/svg/play-google.svg"
+                  alt="google icon"
+                  width={144}
+                  height={36}
+                />
                 <div className="flex justify-center items-center">
                   {[...Array(5)].map((_, i) => (
                     <StartIcon key={i} />
@@ -57,7 +64,12 @@ const CrmHero = () => {
               </div>
 
               <div className="flex flex-col-reverse sm:flex-col gap-1">
-                <img src="/images/svg/Apple-Icon.svg" alt="google icon" />
+                <Image
+                  src="/images/svg/Apple-Icon.svg"
+                  alt="google icon"
+                  width={144}
+                  height={36}
+                />
                 <div className="flex justify-center items-center ">
                   {[...Array(5)].map((_, i) => (
                     <StartIcon key={i} />

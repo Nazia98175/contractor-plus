@@ -41,12 +41,13 @@ const FieldServiceCard: React.FC<Props> = ({ service }) => {
           </p>
         )}
       </div>
-      <div className="relative rounded-lg xl:block hidden max-w-[518px] min-h-[380px] h-full w-full">
+      <div className="rounded-lg xl:block hidden w-full max-w-[518px]">
         <Image
           src={service.img || "/placeholder.png"}
           alt={service.heading}
-          fill
-          className="object-cover rounded-lg h-auto w-full"
+          width={518}
+          height={302}
+          className="object-cover rounded-lg w-full h-auto"
         />
       </div>
     </article>

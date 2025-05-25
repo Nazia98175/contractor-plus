@@ -102,13 +102,13 @@ const FieldService: React.FC = () => {
       className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2"
       ref={containerRef}
     >
-      <TextAnimation animateOnScroll={true} delay={0.2}>
+      <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="text-xl font-semibold text-secondary md:hidden text-center max-w-[813px] mx-auto pb-6">
           There’s finally a CRM for field service that does more than just store
           your contacts
         </h2>
       </TextAnimation>{" "}
-      <TextAnimation animateOnScroll={true} delay={0.2}>
+      <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="section-heading hidden md:block text-center max-w-[813px] mx-auto gradient-text pb-6">
           There’s finally a CRM for field service that does more than just store
           your contacts

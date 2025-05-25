@@ -73,7 +73,6 @@ export default async function Home({
           />
           {/* <Footer footer={footer?.data} /> */}
         </div>
-        <ParticlesComponent id="star-particles" />
       </div>
     </Suspense>
   );

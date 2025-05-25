@@ -1002,21 +1002,21 @@ export const fieldServiceData = [
         description:
           "Give your clients a clean, professional portal to view estimates, invoices, and project updates.",
       },
-      {
-        title: "Timeline view for every client and property",
-        description:
-          "Scroll through a full history of every interaction, file, and update tied to each person or place.",
-      },
-      {
-        title: "Contracts, eSign, and payments",
-        description:
-          "Quotes become contracts, contracts get signed, and invoices get paid—all in one flow.",
-      },
-      {
-        title: "Scheduled follow-ups",
-        description:
-          "Business keeps you busy. Scheduled follow-ups make sure nothing slips through the cracks.",
-      },
+      // {
+      //   title: "Timeline view for every client and property",
+      //   description:
+      //     "Scroll through a full history of every interaction, file, and update tied to each person or place.",
+      // },
+      // {
+      //   title: "Contracts, eSign, and payments",
+      //   description:
+      //     "Quotes become contracts, contracts get signed, and invoices get paid—all in one flow.",
+      // },
+      // {
+      //   title: "Scheduled follow-ups",
+      //   description:
+      //     "Business keeps you busy. Scheduled follow-ups make sure nothing slips through the cracks.",
+      // },
     ],
     testimonial: {
       user: "Excellent field tracking!",
@@ -1047,28 +1047,28 @@ export const fieldServiceData = [
         description:
           "Create fast, accurate estimates that pull in live pricing from Lowe’s and Home Depot.",
       },
-      {
-        title: "Contract generation based on job details",
-        description:
-          "Once your estimate’s locked, the contract writes itself using job data you already entered.",
-      },
-      {
-        title: "Time clock & mileage logs",
-        description:
-          "Built-in logs keep your payroll and reimbursements clean and accurate.",
-      },
-      {
-        title: "Internal job chat",
-        description:
-          "Bring everyone involved with a job into a dedicated space to communicate.",
-      },
-      {
-        title: "Gantt chart views",
-        description:
-          "Map out the full job timeline and adjust schedules so nothing goes sideways.",
-      },
+      // {
+      //   title: "Contract generation based on job details",
+      //   description:
+      //     "Once your estimate’s locked, the contract writes itself using job data you already entered.",
+      // },
+      // {
+      //   title: "Time clock & mileage logs",
+      //   description:
+      //     "Built-in logs keep your payroll and reimbursements clean and accurate.",
+      // },
+      // {
+      //   title: "Internal job chat",
+      //   description:
+      //     "Bring everyone involved with a job into a dedicated space to communicate.",
+      // },
+      // {
+      //   title: "Gantt chart views",
+      //   description:
+      //     "Map out the full job timeline and adjust schedules so nothing goes sideways.",
+      // },
     ],
-    img: "/images/webp/field-service-1.webp",
+    img: "/images/webp/field-service-2.webp",
   },
   {
     heading: "Team Management",
@@ -1092,28 +1092,28 @@ export const fieldServiceData = [
         title: "Availability-based job assignment",
         description: "Send the right tech based on who’s nearby and available.",
       },
-      {
-        title: "Task ownership and accountability",
-        description:
-          "Make it obvious who’s doing what and when it’s due, so everyone is held accountable.",
-      },
-      {
-        title: "Chat-based job communication",
-        description:
-          "Every job has its own chat so your crew doesn’t have to dig through texts.",
-      },
-      {
-        title: "Clock in/out support on mobile",
-        description:
-          "Finally, there’s a CRM for field services that works well on mobile. Let your team easily clock in and out from our mobile app.",
-      },
-      {
-        title: "Mileage logging & time tracking",
-        description:
-          "Log miles and hours automatically and tag them to the right job.",
-      },
+      // {
+      //   title: "Task ownership and accountability",
+      //   description:
+      //     "Make it obvious who’s doing what and when it’s due, so everyone is held accountable.",
+      // },
+      // {
+      //   title: "Chat-based job communication",
+      //   description:
+      //     "Every job has its own chat so your crew doesn’t have to dig through texts.",
+      // },
+      // {
+      //   title: "Clock in/out support on mobile",
+      //   description:
+      //     "Finally, there’s a CRM for field services that works well on mobile. Let your team easily clock in and out from our mobile app.",
+      // },
+      // {
+      //   title: "Mileage logging & time tracking",
+      //   description:
+      //     "Log miles and hours automatically and tag them to the right job.",
+      // },
     ],
-    img: "/images/webp/field-service-1.webp",
+    img: "/images/webp/field-service-3.webp",
   },
   {
     heading: "Communication",
@@ -1138,24 +1138,24 @@ export const fieldServiceData = [
         description:
           "AI picks up the tone so you know how conversations really went.",
       },
-      {
-        title: "Scheduled messages & follow-ups",
-        description: "Never forget to follow up. Just schedule it and move on.",
-      },
-      {
-        title: "Job-specific chats (internal team use)",
-        description:
-          "Chat with your crew about a job without losing context or switching apps.",
-      },
-      {
-        title: "Voicemail logging and playback",
-        description: "Listen to any voicemail without ever leaving the CRM.",
-      },
-      {
-        title: "Communication timeline",
-        description:
-          "See every call, text, and email for a customer or property in one scrollable thread.",
-      },
+      // {
+      //   title: "Scheduled messages & follow-ups",
+      //   description: "Never forget to follow up. Just schedule it and move on.",
+      // },
+      // {
+      //   title: "Job-specific chats (internal team use)",
+      //   description:
+      //     "Chat with your crew about a job without losing context or switching apps.",
+      // },
+      // {
+      //   title: "Voicemail logging and playback",
+      //   description: "Listen to any voicemail without ever leaving the CRM.",
+      // },
+      // {
+      //   title: "Communication timeline",
+      //   description:
+      //     "See every call, text, and email for a customer or property in one scrollable thread.",
+      // },
     ],
     img: "/images/webp/field-service-1.webp",
   },
@@ -1182,16 +1182,16 @@ export const fieldServiceData = [
         description:
           "Set reminders to follow up so no lead gets forgotten or buried.",
       },
-      {
-        title: "Property-based leads",
-        description:
-          "Track new opportunities by address so you can quote with full context.",
-      },
-      {
-        title: "Upcoming: Workflow automation",
-        description:
-          "Automation is on the way to help you re-engage cold leads without any manual work.",
-      },
+      // {
+      //   title: "Property-based leads",
+      //   description:
+      //     "Track new opportunities by address so you can quote with full context.",
+      // },
+      // {
+      //   title: "Upcoming: Workflow automation",
+      //   description:
+      //     "Automation is on the way to help you re-engage cold leads without any manual work.",
+      // },
     ],
     img: "/images/webp/field-service-1.webp",
   },

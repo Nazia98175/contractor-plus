@@ -1,4 +1,3 @@
-import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
@@ -15,7 +14,7 @@ import TrustBar from "@/components/homepage/TrustBar";
 
 const CrmBussinessPage = () => {
   return (
-    <main>
+    <main className="relative z-20">
       <Header />
       <div className="black-bg">
         <CrmHero />
@@ -48,11 +47,9 @@ const CrmBussinessPage = () => {
           </div>
         </div>
       </div>
-
       <TrustBar />
       <Faq />
       <BlogPosts />
-      {/* <Footer /> */}
     </main>
   );
 };

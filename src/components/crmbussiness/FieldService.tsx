@@ -8,100 +8,76 @@ import { useGSAP } from "@gsap/react";
 import { fieldServiceData } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
 
+gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const FieldService: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   const t = useTranslations();
 
   useGSAP(() => {
     if (typeof window === "undefined") return;
 
-    // Reduced multiplier for better spacing
-    const stackOffset = -8;
-    // Improved height calculation - only multiply by 1 instead of 3
-    const totalHeight = `${
-      50 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
-    }vh`;
+    setTimeout(() => {
+      const cards = document.querySelectorAll(".crm-cards");
+      const totalCards = cards.length;
 
-    if (sectionRef.current) {
-      sectionRef.current.style.height = totalHeight;
-    }
+      gsap.set(cards[0], { y: "0%", scale: 1, rotate: 0 });
 
-    const ctx = gsap.context(() => {
-      const timeline = gsap.timeline({
+      for (let i = 1; i < totalCards; i++) {
+        gsap.set(cards[i], {
+          y: "100%",
+          scale: 1,
+          rotation: 0,
+        });
+      }
+
+      const scrollTimeline = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 25%",
-          // Changed end position to better match content
-          end: "bottom center",
-          scrub: 1,
+          trigger: "#crm-cards-wrapper",
+          start: "top 10%",
+          end: `+=${(window.innerHeight / 100) * 90 * (totalCards - 1)}`,
           pin: true,
-          anticipatePin: 1,
+          scrub: 1,
+          markers: false,
         },
       });
 
-      cardRefs.current.forEach((card, index) => {
-        if (!card) return;
-        gsap.set(card, {
-          y: index === 0 ? 0 : window.innerHeight,
-          zIndex: 10 + index,
-        });
-      });
+      for (let i = 0; i < totalCards; i++) {
+        const currentCard = cards[i];
+        const nextCard = cards[i + 1];
+        const position = i;
+        const rotation = i % 2 ? -5 : 5;
 
-      const positions = Array(cardRefs.current.length).fill(0);
-
-      for (let i = 1; i < cardRefs.current.length; i++) {
-        const currentCard = cardRefs.current[i];
-        if (!currentCard) continue;
-
-        timeline.addLabel(`card${i}`, (i - 1) * 0.5);
-
-        for (let j = 0; j < i; j++) {
-          const prevCard = cardRefs.current[j];
-          if (!prevCard) continue;
-
-          positions[j] += stackOffset;
-
-          timeline.to(
-            prevCard,
-            {
-              y: `${positions[j]}vh`,
-              opacity: 0.9 - j * 0.05,
-              ease: "power1.inOut",
-              duration: 0.3,
-            },
-            `card${i}`
-          );
-        }
-
-        timeline.to(
+        scrollTimeline.to(
           currentCard,
           {
-            y: 0,
-            opacity: 1,
-            ease: "power2.out",
-            duration: 0.5,
+            scale: 0.8,
+            rotation: rotation,
+            duration: 1,
+            ease: "none",
           },
-          `card${i}`
+          position
+        );
+
+        scrollTimeline.to(
+          nextCard,
+          {
+            y: "0%",
+            duration: 1,
+            ease: "none",
+          },
+          position
         );
       }
-    }, sectionRef);
+    }, 1000);
 
     return () => {
-      ctx.revert();
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, [fieldServiceData]);
 
   return (
-    <section
-      className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2"
-      ref={containerRef}
-    >
+    <section className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2">
       <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="text-xl font-semibold text-secondary md:hidden text-center max-w-[813px] mx-auto pb-6">
           There’s finally a CRM for field service that does more than just store
@@ -115,20 +91,28 @@ const FieldService: React.FC = () => {
         </h2>{" "}
       </TextAnimation>
       <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" />
-      <div ref={sectionRef} className="relative px-2 h-fit">
-        {fieldServiceData.map((service, index) => (
-          <div
-            key={index}
-            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
-              index === fieldServiceData.length - 1 ? "pb-0" : ""
-            }`}
-            ref={(el) => {
-              cardRefs.current[index] = el;
-            }}
-          >
-            <FieldServiceCard service={service} />
-          </div>
-        ))}
+      <div>
+        <div
+          id="crm-cards-wrapper"
+          className="relative overflow-hidden px-2 h-[90vh]"
+        >
+          {fieldServiceData.map((service, index) => (
+            <div
+              key={index}
+              className={`z-${
+                index + 1
+              } h-[90vh] crm-cards absolute left-[50%] top-0  translate-x-[-50%] w-full flex justify-center items-center`}
+            >
+              <div
+                className={`w-full max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
+                  index === fieldServiceData.length - 1 ? "pb-0" : ""
+                }`}
+              >
+                <FieldServiceCard service={service} />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

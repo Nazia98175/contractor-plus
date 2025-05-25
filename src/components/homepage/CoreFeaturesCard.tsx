@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
+import { featureContents } from "../common/Helper";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -27,12 +28,6 @@ const CoreFeaturesCard = () => {
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
   const featureBtn: string[] = [t.raw("featureBtn") || "Learn More"];
-  const featureContents = t.raw("featureContents") as {
-    title: string;
-    mainDesc?: string;
-    description: string;
-    titleImg: string;
-  }[];
 
   useEffect(() => {
     const checkMobile = () => {
@@ -220,7 +215,7 @@ const CoreFeaturesCard = () => {
           isMobile={isMobile}
         />
       </div>
-      <div className="space-y-8 overflow-visible lg:max-w-[639px] w-full">
+      <div className="space-y-4 lg:space-y-8 overflow-visible lg:max-w-[639px] w-full">
         <FeatureContent
           featureContents={featureContents}
           contentRefs={contentRefs}

@@ -696,44 +696,6 @@
       "Creador de Presupuestos",
       "Perfiles de Propiedades",
       "IA Big Chief"
-    ],
-    "featureContents": [
-      {
-        "title": "El primer CRM que piensa como un contratista",
-        "titleImg": "/images/webp/core-1.webp",
-        "mainDesc": "La mayoría de los \"CRM para contratistas\" son solo páginas de contacto con algunos enlaces de trabajo. Contractor+ ofrece la imagen completa:",
-        "description": "cronogramas, transcripciones de llamadas, seguimiento de sentimientos por IA y contactos específicos según el rol."
-      },
-      {
-        "title": "Envíe al técnico adecuado al trabajo adecuado según la proximidad",
-        "titleImg": "/images/webp/core-2.webp",
-        "mainDesc": "Vea la disponibilidad y ubicación del equipo en tiempo real para asignar trabajos más rápido e inteligentemente. Arrastre, suelte y delegue",
-        "description": "basado en quién está más cerca y disponible. No más llamadas innecesarias."
-      },
-      {
-        "title": "Colabore con su equipo en cualquier trabajo",
-        "titleImg": "/images/webp/core-3.webp",
-        "mainDesc": "Cada trabajo tiene su propio chat grupal incorporado, manteniendo a todo el equipo en la misma página",
-        "description": "y minimizando textos, actualizaciones perdidas o malentendidos."
-      },
-      {
-        "title": "Presupuestos que prácticamente se escriben solos",
-        "titleImg": "/images/webp/core-4.webp",
-        "mainDesc": "Cree estimaciones precisas y profesionales rápidamente con precios locales en vivo de Lowe's, Home Depot",
-        "description": "y más. Contractor+ extrae sus artículos, agrega margen y genera contratos listos para clientes en minutos."
-      },
-      {
-        "title": "El único CRM con perfiles específicos de propiedades",
-        "titleImg": "/images/webp/core-5.webp",
-        "mainDesc": "Contractor+ es la única plataforma que le permite rastrear el historial completo de cada propiedad que ha atendido:",
-        "description": "comunicaciones, fotos y documentos, facturas, incluso cámaras en vivo."
-      },
-      {
-        "title": "El asistente de IA definitivo para contratistas",
-        "titleImg": "/images/webp/core-6.webp",
-        "mainDesc": "Big Chief IA nunca duerme, siempre trabajando para mejorar su negocio",
-        "description": "Cada llamada y texto recibe respuesta. Cada prospecto es calificado e ingresado en su CRM, cada solicitud de servicio es capturada, cada cita de presupuesto es programada."
-      }
     ]
   },
   "entireBusiness": {

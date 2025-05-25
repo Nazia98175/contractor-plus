@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
+import { fieldServiceData } from "../common/Helper";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,22 +14,7 @@ const FieldService: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Get translated data as array
   const t = useTranslations();
-
-  const fieldServiceRaw = t.raw("fieldService") as {
-    service: Record<
-      string,
-      {
-        heading: string;
-        features: { title: string; description: string }[];
-        testimonial?: { user: string; username: string };
-      }
-    >;
-  };
-
-  // Convert object to array of services
-  const fieldServiceData = Object.values(fieldServiceRaw.service);
 
   useGSAP(() => {
     if (typeof window === "undefined") return;

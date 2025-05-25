@@ -28,7 +28,7 @@ const CrmSercive: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full">
       <div className="px-2 relative overflow-hidden xl:overflow-visible">
         <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
           <FooterRedLineIcon />

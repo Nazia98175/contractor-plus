@@ -9,7 +9,7 @@ const CrmHero = () => {
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none bubbling-animation">
         <RedClipIcon />
       </span>
-      <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px]  rounded-[10px] bg-gradient-to-r from-transparent via-[#6DDCFF] to-transparent opacity-15 blur-[48px] pointer-events-none mix-blend-plus-lighter"></div>
+      <div className="hidden lg:block absolute top-0 left-[70px] max-w-[90px] rotate-[-45deg] w-full h-[500px]  rounded-[10px] bg-gradient-to-r from-transparent via-athenaBlue to-transparent opacity-15 blur-[48px] pointer-events-none mix-blend-plus-lighter"></div>
       <div className="max-w-[1050px] w-full mx-auto pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
         <div className="pt-10 max-w-[900px] mx-auto block px-5 md:hidden relative">
           <div className="switch-tool-bg h-[100px] w-full hidden md:block top-[-10px] left-0 absolute z-[-5]"></div>
@@ -22,7 +22,7 @@ const CrmHero = () => {
           />
         </div>
         <div className="px-2 pt-8 md:pt-0">
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          <TextAnimation animateOnScroll={false} delay={3}>
             <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
               A{" "}
               <span className="bg-petal text-transparent bg-clip-text">
@@ -32,7 +32,7 @@ const CrmHero = () => {
             </h2>
           </TextAnimation>
 
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          <TextAnimation animateOnScroll={false} delay={3}>
             <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium max-w-[826px] mx-auto mb-[26px] text-center">
               Built-in phone and SMS. AI receptionist. Property profiles. Full
               communication history. You no longer need 6 separate tools to do

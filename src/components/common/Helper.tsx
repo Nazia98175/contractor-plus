@@ -1157,7 +1157,7 @@ export const fieldServiceData = [
       //     "See every call, text, and email for a customer or property in one scrollable thread.",
       // },
     ],
-    img: "/images/webp/field-service-1.webp",
+    img: "/images/webp/field-service-4.webp",
   },
   {
     heading: "Lead Management",
@@ -1193,6 +1193,6 @@ export const fieldServiceData = [
       //     "Automation is on the way to help you re-engage cold leads without any manual work.",
       // },
     ],
-    img: "/images/webp/field-service-1.webp",
+    img: "/images/webp/field-service-5.webp",
   },
 ];

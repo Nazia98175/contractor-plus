@@ -15,7 +15,16 @@ const FieldServiceCard: React.FC<Props> = ({ service }) => {
           <h4 className="text-base md:text-2xl xl:text-[26px] font-semibold font-montserrat lg:font-jakarta py-0.5 px-2.5">
             {service.heading}
           </h4>
-          <div className="rounded-lg block xl:hidden h-full min-h-[245px] md:h-auto w-full side-img"></div>
+          <div className="rounded-lg block xl:hidden h-full min-h-[245px] md:h-auto w-full">
+            {" "}
+            <Image
+              src={service.img || "/placeholder.png"}
+              alt={service.heading}
+              width={518}
+              height={302}
+              className="object-cover rounded-lg w-full h-auto"
+            />
+          </div>
           <div className="flex flex-col gap-4 md:gap-6">
             {service.features.map((feature, index) => (
               <div key={index} className="flex gap-3">

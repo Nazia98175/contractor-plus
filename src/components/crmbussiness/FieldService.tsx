@@ -119,7 +119,7 @@ const FieldService: React.FC = () => {
         {fieldServiceData.map((service, index) => (
           <div
             key={index}
-            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
+            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-fit overflow-auto no-scrollbar p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
               index === fieldServiceData.length - 1 ? "pb-0" : ""
             }`}
             ref={(el) => {

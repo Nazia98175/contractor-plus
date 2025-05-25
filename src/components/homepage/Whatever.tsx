@@ -176,7 +176,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         ref={sectionRef}
         className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20"
       >
-        <TextAnimation animateOnScroll delay={0.3}>
+        <TextAnimation animateOnScroll delay={0.2}>
           <h3 className="section-heading gradient-text text-center md:mb-8 mb-[21px]">
             {whateverOperation?.[0]?.title}
           </h3>
@@ -292,7 +292,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           </div>
         </div>
 
-        <TextAnimation animateOnScroll delay={0.3}>
+        <TextAnimation animateOnScroll delay={0.2}>
           <p className="text-lg capitalize text-granite opacity-90 text-center">
             <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
             {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}

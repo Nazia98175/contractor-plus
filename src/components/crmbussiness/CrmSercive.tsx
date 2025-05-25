@@ -32,12 +32,12 @@ const CrmSercive: React.FC = () => {
         <FooterRedLineIcon />
       </span>
       <div className="py-[75px]">
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
           <h3 className="section-heading text-white text-center">
             This is what a field service CRM should have been all along
           </h3>
         </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
           <p className="paragraph-style text-center mb-7 md:mb-10 lg:mb-14">
             Start using Contractor+ free. You won’t look back.
           </p>

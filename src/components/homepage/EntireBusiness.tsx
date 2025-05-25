@@ -6,20 +6,21 @@ import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 
 interface EntireBusiness {
-  title: string,
-  sub_title: string,
-  txt: string,
-  btnTxt: string,
-  url: string
+  title: string;
+  sub_title: string;
+  txt: string;
+  btnTxt: string;
+  url: string;
 }
 interface TheEntireBusinessProps {
-  entireBusiness: EntireBusiness[],
-  ncc_text: string
+  entireBusiness: EntireBusiness[];
+  ncc_text: string;
 }
 
 const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
-  entireBusiness , ncc_text
-})=> {
+  entireBusiness,
+  ncc_text,
+}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -43,12 +44,12 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   return (
     <div className=" px-2 relative z-20">
       <div className="pt-[38px] md:pt-[44px] pb-7">
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-decemberSky font-jakarta">
             {entireBusiness?.[0]?.title}
           </h3>
         </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
           <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
             {entireBusiness?.[0]?.sub_title}
           </p>
@@ -84,7 +85,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : (
-               entireBusiness?.[2]?.btnTxt
+                entireBusiness?.[2]?.btnTxt
               )}
             </button>
             <div className="md:hidden flex justify-center items-center w-full">

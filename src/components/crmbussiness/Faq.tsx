@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FaqList from "./FaqList";
+import TextAnimation from "../common/TextAnimation";
 
 type FaqItemType = {
   question: string;
@@ -53,12 +54,16 @@ const Faq = () => {
   return (
     <section className="py-10 relative overflow-hidden">
       <div className="hidden lg:block absolute top-0 right-0 max-w-[70px] rotate-[35deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-15 pointer-events-none"></div>
-      <h3 className="section-heading text-white text-center">
-        What contractors want to know
-      </h3>
-      <p className="paragraph-text text-secondary text-center pt-4">
-        Frequently asked questions
-      </p>
+      <TextAnimation animateOnScroll={true} delay={0.2}>
+        <h3 className="section-heading text-white text-center">
+          What contractors want to know
+        </h3>
+      </TextAnimation>
+      <TextAnimation animateOnScroll={true} delay={0.2}>
+        <p className="paragraph-text text-secondary text-center pt-4">
+          Frequently asked questions
+        </p>
+      </TextAnimation>
       <div className="max-w-[1190px] mx-auto px-4 pt-[27px]">
         {faqitems.map((item: FaqItemType, index: number) => (
           <FaqList

@@ -38,12 +38,12 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
         <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
         <div className="space-y-4 z-30 relative ">
-          <TextAnimation animateOnScroll={true} delay={0.3}>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
             <h2 className="section-heading text-center gradient-text z-40 relative">
               {finallyC?.[0]?.title ?? ""}
             </h2>
           </TextAnimation>
-          <TextAnimation animateOnScroll={true} delay={0.3}>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
             <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
               {finallyC?.[0]?.sub_title ?? ""}
             </p>

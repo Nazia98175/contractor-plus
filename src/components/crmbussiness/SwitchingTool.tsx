@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import TextAnimation from "../common/TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -159,11 +160,12 @@ const SwitchingTool = () => {
         src="/images/png/switch-tool-mobile-bg.png"
         alt=""
       />
-
-      <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
-        If you're switching between tools outside of your field service CRM,
-        it's not good enough
-      </h3>
+      <TextAnimation animateOnScroll={true} delay={0.2}>
+        <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
+          If you're switching between tools outside of your field service CRM,
+          it's not good enough
+        </h3>
+      </TextAnimation>
 
       <div className="relative flex lg:flex-row flex-col justify-center items-center pb-16 max-w-[1180px] mx-auto mt-10">
         <article
@@ -178,11 +180,11 @@ const SwitchingTool = () => {
               alt="card 1"
               className="w-full h-full object-cover"
             />
-          </div>
+          </div>{" "}
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
             It takes forever to look up pricing, and it’s easy for errors to
             slip through
-          </h4>
+          </h4>{" "}
         </article>
 
         <article

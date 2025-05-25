@@ -4,6 +4,8 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
 import Image from "next/image";
+import TextAnimation from "../common/TextAnimation";
+import CardReveal from "../common/CardReveal";
 
 const TeamsUsingContractor = () => {
   // Improved intersection observer with higher threshold and rootMargin
@@ -36,11 +38,14 @@ const TeamsUsingContractor = () => {
         ref={ref}
         className="flex flex-col items-center justify-center main-container px-"
       >
-        <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold  max-w-[951px] mx-auto">
-          {t("heading")}
-        </h2>
-        <p className="paragraph-style text-center">{t("desc")}</p>
-
+        <TextAnimation animateOnScroll={true} delay={0.2}>
+          <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold  max-w-[951px] mx-auto">
+            {t("heading")}
+          </h2>
+        </TextAnimation>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
+          <p className="paragraph-style text-center">{t("desc")}</p>
+        </TextAnimation>
         <div className="grid px-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-6 md:mt-10 xl:mt-[52px] mb-8 sm:mb-12 md:mb-16 xl:mb-[70px] w-full">
           {crmList.map((item, index) => (
             <article
@@ -74,38 +79,45 @@ const TeamsUsingContractor = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">
-          <Image
-            width={121}
-            height={80}
-            src="/images/webp/software-advice.webp"
-            className="custom-shadow-img max-w-[121px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
-            alt="Software Advice"
-          />
+        <CardReveal
+          staggerDelay={0.15}
+          animationDuration={0.8}
+          distance={50}
+          animateOnScroll={true}
+        >
+          <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">
+            <Image
+              width={121}
+              height={80}
+              src="/images/webp/software-advice.webp"
+              className="custom-shadow-img max-w-[121px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+              alt="Software Advice"
+            />
 
-          <Image
-            width={121}
-            height={80}
-            src="/images/webp/leader.webp"
-            className="custom-shadow-img max-w-[103px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
-            alt="Leader"
-          />
+            <Image
+              width={121}
+              height={80}
+              src="/images/webp/leader.webp"
+              className="custom-shadow-img max-w-[103px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+              alt="Leader"
+            />
 
-          <Image
-            width={121}
-            height={80}
-            src="/images/webp/get-app.webp"
-            className="custom-shadow-img max-w-[137px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
-            alt="Get App"
-          />
-          <Image
-            width={121}
-            height={80}
-            src="/images/svg/capterra.svg"
-            className="custom-shadow-img hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
-            alt="Capterra"
-          />
-        </div>
+            <Image
+              width={121}
+              height={80}
+              src="/images/webp/get-app.webp"
+              className="custom-shadow-img max-w-[137px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+              alt="Get App"
+            />
+            <Image
+              width={121}
+              height={80}
+              src="/images/svg/capterra.svg"
+              className="custom-shadow-img hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+              alt="Capterra"
+            />
+          </div>
+        </CardReveal>
       </div>
     </section>
   );

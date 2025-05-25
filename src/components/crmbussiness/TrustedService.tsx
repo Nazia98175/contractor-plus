@@ -6,6 +6,8 @@ import { OurReviewList } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
 import TrustedServiceCard from "./TrustedServiceCard";
 import { Review } from "@/types";
+import TextAnimation from "../common/TextAnimation";
+import CardReveal from "../common/CardReveal";
 
 const TrustedService = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -25,10 +27,12 @@ const TrustedService = () => {
   }));
 
   return (
-    <section className="pt-6 md:pt-0  overflow-hidden relative ">
-      <h3 className="section-heading service-text text-center max-w-[90%]  mx-auto px-3">
-        Trusted by over 50,000 build and service contractors
-      </h3>
+    <section className="pt-6 md:pt-0 overflow-hidden relative ">
+      <CardReveal animateOnScroll={true}>
+        <h3 className="section-heading service-text text-center max-w-[90%] text-white mx-auto px-3 relative z-50">
+          Trusted by over 50,000 build and service contractors
+        </h3>
+      </CardReveal>
       <div className="relative h-fit ">
         <div className="absolute h-full rounded bottom-0 border left-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
         <div className="absolute h-full right-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
@@ -65,7 +69,6 @@ const TrustedService = () => {
           </Marquee>
         </div>
       </div>
-
       <ReviewModal
         videoUrl={selectedVideoUrl || ""}
         isOpen={isModalOpen}

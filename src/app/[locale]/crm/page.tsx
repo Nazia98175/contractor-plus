@@ -29,7 +29,6 @@ const CrmBussinessPage = () => {
       <ThousandsReviews />
       <div className="relative w-full">
         <CrmSercive />
-        {/* Cloud Layer 1 */}
         <div className="absolute -top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
           <div className="bg-white h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
           <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
@@ -40,7 +39,6 @@ const CrmBussinessPage = () => {
             />
           </div>
 
-          {/* Cloud Layer 2 */}
           <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
             <img
               src="/images/webp/claud-2.webp"

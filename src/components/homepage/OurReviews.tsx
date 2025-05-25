@@ -42,7 +42,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
   return (
     <section className="pt-[25px] pb-[35px] md:pt-10 md:pb-16 bg-white relative z-20">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container text-center md:text-start">
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
           <h3 className="section-heading text-black text-center md:text-start gradient-text-2">
             {reviews?.[0]?.title ?? ""}
           </h3>

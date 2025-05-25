@@ -220,7 +220,7 @@ const CoreFeaturesCard = () => {
           isMobile={isMobile}
         />
       </div>
-      <div className="space-y-12 xl:space-y-16 overflow-visible lg:max-w-[639px] w-full">
+      <div className="space-y-8 overflow-visible lg:max-w-[639px] w-full">
         <FeatureContent
           featureContents={featureContents}
           contentRefs={contentRefs}

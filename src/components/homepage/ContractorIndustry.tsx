@@ -22,7 +22,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   return (
     <section className="relative">
       <Image
-        className="absolute top-0 w-full left-0  h-full z-0 max-w-[900px] object-center md:block animated-image hidden"
+        className="absolute top-0 w-full left-0  h-full z-20 max-w-[900px] object-center md:block animated-image hidden pointer-events-none"
         src="/images/webp/contractor-left-bg.webp"
         alt="webp bg"
         width={900}

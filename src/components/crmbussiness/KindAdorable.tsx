@@ -8,7 +8,8 @@ const KindAdorable = () => {
     <div className="bg-white px-2 pt-8 md:pt-16 lg:pt-[91px]">
       <section className="overflow-x-auto max-w-[1092px] mx-auto">
         <h2 className="section-heading gradient-text-2 !font-black text-center lg:!font-semibold w-fit mx-auto">
-          What the others call a CRM is kind of adorable
+          What the others call a <br className="block sm:hidden" /> CRM is kind
+          of adorable
         </h2>
         <p className="max-w-[885px] mx-auto paragraph-style text-center">
           Not all platforms are built to run a real business

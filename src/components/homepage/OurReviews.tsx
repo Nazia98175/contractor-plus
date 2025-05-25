@@ -51,6 +51,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
           staggerDelay={0.4}
           animationDuration={0.8}
           distance={50}
+          once={true}
           className="flex flex-col sm:flex-row gap-4 md:gap-6 items-center"
         >
           <Image

@@ -65,14 +65,14 @@ const IndustriesDropdown = () => {
             key={index}
             className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
           >
-            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
+            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-fit px-1">
               {link.label}
             </span>
           </button>
         ))}
       </div>
 
-      <div className="relative w-full max-w-[480px] rounded-md overflow-hidden ">
+      <div className="relative w-full max-w-[420px] rounded-md overflow-hidden ">
         {resourceItems.map((item, index) => (
           <Image
             key={index}

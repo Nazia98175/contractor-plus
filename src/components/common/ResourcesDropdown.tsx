@@ -65,7 +65,7 @@ const ResourcesDropdown = () => {
             key={index}
             className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
           >
-            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
+            <span className="header-li-dropdown px-1 w-fit group-hover:!bg-lightBlack group-hover:!text-white text-start flex ">
               {link.label}
             </span>
           </button>

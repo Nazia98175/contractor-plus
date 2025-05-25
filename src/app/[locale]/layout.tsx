@@ -5,8 +5,9 @@ import "../globals.css";
 import BackToTop from "@/components/common/BackToTop";
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import Footer from "@/components/common/Footer";
-import { getHomePage } from "@/services/homepage";
-import { getFooter } from "@/services/layout";
+
+import { getFooter, getHeader } from "@/services/layout";
+import Header from "@/components/common/Header";
 export const metadata: Metadata = {
   title:
     "Contractor - The only operating system for build & service contractors",
@@ -16,29 +17,22 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-   params,
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
   const locale = await getLocale();
   const messages = await getMessages({ locale });
- const useParams = await params;
-  // const [homePageContent, contractPlatformsData, blogs, footer] =
-  const [homePageContent, contractPlatformsData , footer] =
-    await Promise.all([
-      getHomePage(useParams.locale, "&populate=*"),
-      getHomePage(
-        useParams.locale,
-        "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"),
-        getFooter(
-        useParams?.locale,
-        "&populate[sections][populate]=*&populate[bottomLinks]=*"
-      ),
-      // getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-      
-      // ),
-    ]);
+  const useParams = await params;
+  // const [header, footer] = await Promise.all([
+  //   getHeader(useParams.locale, "&populate=*"),
+  //   getFooter(
+  //     useParams?.locale,
+  //     "&populate[sections][populate]=*&populate[bottomLinks]=*"
+  //   ),
+    
+  // ]);
   return (
     <html
       lang="en"
@@ -47,10 +41,10 @@ export default async function RootLayout({
       <body>
         <BackToTop />
         <NextIntlClientProvider messages={messages}>
+          {/* <Header header={header?.data?.navbar} /> */}
           {children}
-          <Footer footer={footer?.data}/>
+          {/* <Footer footer={footer?.data} /> */}
         </NextIntlClientProvider>
-        
       </body>
     </html>
   );

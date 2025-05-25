@@ -15,7 +15,7 @@ import React from "react";
 const IndusryPage = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <TrustBar />
       <SoftwareSolutions />
       <ServiceSoftware />

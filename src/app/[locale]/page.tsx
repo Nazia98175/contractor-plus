@@ -39,7 +39,7 @@ export default async function Home({
     <Suspense fallback={<div>Loading...</div>}>
       <div className="relative overflow-x-hidden">
         <div className="relative">
-          <Header />
+          {/* <Header /> */}
           <Hero homePageContent={homePageContent?.data} />
           <TrustBar />
           <TheEngineContractor

@@ -24,12 +24,12 @@ const BlogPosts = () => {
           </TextAnimation>
         </div>
 
-        <div className=" hidden sm:flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
+        <div className="hidden sm:flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
           <div className="max-w-[600px] xl:max-w-[450px] w-full flex flex-col gap-4">
             {blogData.map((blog) => (
               <article
                 key={blog.id}
-                className="flex flex-col sm:flex-row items-start gap-4 rounded-xl p-2 z-20 relative w-full bg-blackRussian"
+                className="flex card-shine cursor-pointer flex-col sm:flex-row items-start gap-4 rounded-xl p-2 z-20 relative w-full bg-blackRussian"
               >
                 <Image
                   src={blog.image}
@@ -54,7 +54,7 @@ const BlogPosts = () => {
           </div>
 
           {/* Right column (Featured Blog) */}
-          <div className="w-full xl:max-w-[700px] relative flex flex-col justify-end pb-3 sm:pb-6">
+          <div className="w-full card-shine cursor-pointer xl:max-w-[700px] relative flex flex-col justify-end pb-3 sm:pb-6">
             <Image
               width={684}
               height={361}

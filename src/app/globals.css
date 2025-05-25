@@ -923,3 +923,47 @@ html {
     drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
     drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
 }
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 10;
+  transform: translateX(-100%);
+}
+
+.card-shine:hover::before {
+  animation: shine 2s ease-in-out forwards;
+}

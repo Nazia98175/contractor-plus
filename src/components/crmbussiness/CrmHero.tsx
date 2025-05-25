@@ -51,7 +51,7 @@ const CrmHero = () => {
             <div className="flex gap-4 md:pb-0 bg-black sm:bg-transparent w-full sm:w-fit justify-center py-6 sm:py-0">
               <div className="flex flex-col-reverse sm:flex-col gap-1">
                 <Image
-                  src="/images/svg/play-google.svg"
+                  src="/images/webp/play-google.webp"
                   alt="google icon"
                   width={144}
                   height={36}

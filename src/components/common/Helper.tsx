@@ -887,7 +887,7 @@ export const reviews = [
   {
     id: 1,
     userName: "James Bond",
-    profileUrl: "/images/webp/rushville.webp",
+    profileUrl: "/images/webp/rands.webp",
     rating: 4.5,
     videolink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     isModal: true,
@@ -900,7 +900,7 @@ export const reviews = [
   {
     id: 2,
     userName: "Brandon Geiger",
-    profileUrl: "/images/webp/rands.webp",
+    profileUrl: "/images/webp/rushville.webp",
     rating: 4.5,
     videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,
@@ -922,7 +922,7 @@ export const reviews = [
   {
     id: 4,
     userName: "Brandon Geiger",
-    profileUrl: "/images/webp/rands.webp",
+    profileUrl: "/images/webp/rushville.webp",
     rating: 4.5,
     videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,

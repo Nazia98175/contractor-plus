@@ -35,10 +35,10 @@ const Header = () => {
   const t = useTranslations("menu");
 
   return (
-    <header className="px-2 fixed top-2 rounded z-[99] w-full">
+    <header className="px-2 fixed top-4  rounded z-[99] w-full">
       <div
-        className={`w-full lg:py-3 rounded transition-all duration-300 ${
-          scrolled ? "bg-black shadow-c2" : "bg-none"
+        className={`w-full min-h-9 h-fit lg:py-3  flex items-center rounded transition-all duration-300 ${
+          scrolled ? "bg-kuroiBlack shadow-c2" : "bg-kuroiBlack sm:bg-none"
         }`}
       >
         <div className="main-container py-1.5 flex items-center justify-between xl:gap-[54px] lg:gap-3">
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="lg:flex hidden grow">
             <HeaderLiItems />
           </div>
-          <div className="flex items-center 3xl:gap-3 gap-1 w-fit">
+          <div className="flex items-center 3xl:gap-3 gap-4 w-fit">
             <div className="flex items-center xl:gap-3 gap-1">
               <LanguageSelector />
               <Link

@@ -71,7 +71,7 @@ const LanguageItem = memo(
           loading="lazy" // Add lazy loading
         />
         <h4 className="font-inter text-[10px] sm:text-xs xl:text-sm font-semibold">
-          <span className="block sm:hidden ">{language.code}</span>
+          {/* <span className="block sm:hidden ">{language.code}</span> */}
           <span className="hidden sm:block">{language.name}</span>
         </h4>
       </div>
@@ -193,7 +193,7 @@ const LanguageSelector = () => {
           priority={true} // Prioritize loading this image
         />
         <h4 className="font-inter text-xs xl:text-sm font-semibold">
-          <span className="block sm:hidden">{currentLanguage.code}</span>
+          {/* <span className="block sm:hidden">{currentLanguage.code}</span> */}
           <span className="hidden sm:block">{currentLanguage.name}</span>
         </h4>
         <div

@@ -109,7 +109,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           {blogs.map((article, index) => (
             <article
               key={blogListMobile?.[index]?.id}
-              className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
+              className="xl:pt-10  h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
             >
               <img
                 className="absolute top-16 right-0 w-full"

@@ -38,7 +38,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             />
             <BlurIcon className="absolute inset-0 w-full h-full mix-blend-luminosity" />
           </div>
-          <p className="text-base md:text-lg font-medium text-wallStreet  max-w-[615px] space-y-2">
+          <p className="text-sm sm:text-base lg:text-lg font-medium text-wallStreet max-w-[615px] space-y-2">
             {content.description}
             {content.highlight && (
               <span className="text-secondary"> {content.description}</span>

@@ -15,7 +15,7 @@ const FeatureItem = ({ text }: { text: string }) => (
 
 const TrackProperties = () => {
   return (
-    <section className="bg-white relative">
+    <section className="bg-white relative pt-28">
       <Image
         className="absolute w-[100%] h-full left-0 z-0 -top-[35%] xl:-top-[20%] object-contain xl:object-cover"
         src={"/images/webp/finally-desktop-bg.webp"}

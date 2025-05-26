@@ -28,7 +28,7 @@ const CrmSercive: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full">
       <div className="px-2 relative overflow-hidden xl:overflow-visible">
         <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
           <FooterRedLineIcon />
@@ -93,8 +93,8 @@ const CrmSercive: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute -top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
-        <div className="bg-white h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
+      <div className="absolute -top-[28%] sm:-top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
+        <div className="bg-white h-[60%] sm:h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
         <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
           <Image
             height={250}

@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import PlatformCard from "./PlatformCard";
-import SliderLayout from "../common/SliderLayout";
 import CardReveal from "../common/CardReveal";
+import PlatformCard from "./PlatformCard";
 
 interface Platform {
   name: string;
@@ -18,7 +17,7 @@ const platforms: Platform[] = [
   },
   {
     name: "Google Play",
-    logo: "/images/svg/google-rating.svg",
+    logo: "/images/webp/play-google.webp",
     rating: 5,
   },
   {
@@ -34,38 +33,6 @@ const platforms: Platform[] = [
   {
     name: "Software Advice",
     logo: "images/svg/software-advice-rating.svg",
-    rating: 5,
-  },
-];
-const sliderPlatforms: Platform[] = [
-  {
-    name: "App Store",
-    logo: "/images/svg/apple-rating.svg",
-    rating: 5,
-  },
-  {
-    name: "Google Play",
-    logo: "/images/svg/google-rating.svg",
-    rating: 5,
-  },
-  {
-    name: "G2 Crowd",
-    logo: "/images/webp/g2Rating.webp",
-    rating: 5,
-  },
-  {
-    name: "Capterra",
-    logo: "/images/webp/capterraRating.webp",
-    rating: 5,
-  },
-  {
-    name: "Software Advice",
-    logo: "images/svg/software-advice-rating.svg",
-    rating: 5,
-  },
-  {
-    name: "Google Play",
-    logo: "/images/svg/google-rating.svg",
     rating: 5,
   },
 ];

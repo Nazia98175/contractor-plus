@@ -24,6 +24,7 @@ const SwitchingTool = () => {
         src="/images/png/switch-tool-mobile-bg.png"
         alt="switch-tool-bg"
       />
+
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
           If you're switching between tools outside of your field service CRM,

@@ -33,7 +33,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
             />
           </div>
           <div className="flex flex-col gap-4 md:gap-6">
-            {(isEstimate ? features.slice(0, -1) : features.slice(0, 4)).map(
+            {(isEstimate ? features.slice(0, -1) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
                   <span className="md:min-w-5 sm:max-w-5 max-w-[14px] h-fit">

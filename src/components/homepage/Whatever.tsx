@@ -129,7 +129,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   );
 
   return (
-    <section className="relative w-full z-10">
+    <section ref={sectionRef} className="relative w-full z-10">
       {/* Desktop Background */}
       <Image
         className="object-cover -top-[42%] right-0 absolute z-10 pointer-events-none max-w-[700px] hidden lg:block"
@@ -173,10 +173,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         </picture>
       </div>
 
-      <div
-        ref={sectionRef}
-        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20"
-      >
+      <div className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20">
         <CardReveal
           staggerDelay={3}
           animationDuration={0.8}

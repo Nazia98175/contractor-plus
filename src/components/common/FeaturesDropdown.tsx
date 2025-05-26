@@ -146,7 +146,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
       <div className="grid grid-cols-3 overflow-auto no-scrollbar">
         {sections.map((section) => (
           <div key={section.key}>
-            <i className="text-sm font-semibold text-dark h-5 mb-2.5">
+            <i className="text-sm font-semibold text-lightBlack h-5 mb-2.5">
               {t(section.headingKey)}
             </i>
             <ul className="space-x-6 space-y-3 w-full pb-8">

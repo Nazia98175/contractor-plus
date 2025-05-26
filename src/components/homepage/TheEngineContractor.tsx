@@ -55,7 +55,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
               className="sm:max-w-[322px] w-full max-w-[90%] object-contain"
               alt="The engine 57,163 contractors run on"
             />
-            <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-darkGrey space-y-1">
+            <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-lightBlackGrey space-y-1">
               <h3 className="text-2xl font-medium text-doctor">
                 {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}
               </h3>

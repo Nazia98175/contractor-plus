@@ -15,9 +15,9 @@ const FeatureItem = ({ text }: { text: string }) => (
 
 const TrackProperties = () => {
   return (
-    <section className="bg-white relative pt-28">
+    <section className="bg-white relative pt-28 lg:pt-5">
       <Image
-        className="absolute w-[100%] h-[83%] lg:h-[100%] left-0 z-0 -top-[35%] xl:-top-[20%] object-cover"
+        className="absolute w-[100%] h-[83%] lg:h-[100%] left-0 z-20 -top-[35%] object-cover"
         src={"/images/webp/finally-desktop-bg.webp"}
         alt="finally-desktop-bg"
         width={1920}
@@ -30,8 +30,8 @@ const TrackProperties = () => {
         distance={50}
         animateOnScroll={true}
       >
-        <div className="flex relative  justify-center items-center px-2">
-          <div className="bg-white-linear hidden md:block absolute left-0 z-20 -bottom-[84px] h-[267px] w-full"></div>
+        <div className="flex relative z-40 justify-center items-center px-2">
+          {/* <div className="bg-white-linear hidden md:block absolute left-0 z-20 -bottom-[84px] h-[267px] w-full"></div> */}
           <Image
             src="/images/webp/mix-screens.webp"
             className="max-w-[1098px] w-full object-cover img-shadow md:block hidden"

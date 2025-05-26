@@ -16,18 +16,10 @@ const FieldService: React.FC = () => {
 
   useGSAP(() => {
     if (typeof window === "undefined") return;
-<<<<<<< HEAD
 
     setTimeout(() => {
       const cards = document.querySelectorAll(".crm-cards");
       const totalCards = cards.length;
-=======
-    const stackOffset = -8;
-    // Improved height calculation - only multiply by 1 instead of 3
-    const totalHeight = `${
-      50 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
-    }vh`;
->>>>>>> 9c360b5c059112a245e3e8bab5e2f3be22ab2111
 
       gsap.set(cards[0], { y: "0%", scale: 1, rotate: 0 });
 
@@ -99,7 +91,6 @@ const FieldService: React.FC = () => {
         </h2>{" "}
       </TextAnimation>
       <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" />
-<<<<<<< HEAD
       <div>
         <div
           id="crm-cards-wrapper"
@@ -122,22 +113,6 @@ const FieldService: React.FC = () => {
             </div>
           ))}
         </div>
-=======
-      <div ref={sectionRef} className="relative px-2 h-fit">
-        {fieldServiceData.map((service, index) => (
-          <div
-            key={index}
-            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-fit overflow-auto no-scrollbar p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
-              index === fieldServiceData.length - 1 ? "pb-0" : ""
-            }`}
-            ref={(el) => {
-              cardRefs.current[index] = el;
-            }}
-          >
-            <FieldServiceCard service={service} />
-          </div>
-        ))}
->>>>>>> 9c360b5c059112a245e3e8bab5e2f3be22ab2111
       </div>
     </section>
   );

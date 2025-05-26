@@ -1,7 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import TrustBar from "@/components/homepage/TrustBar";
-import Faq from "@/components/industry/Faq";
 import IntegratesSeamlessly from "@/components/industry/IntegratesSeamlessly";
 import KeyTools from "@/components/industry/KeyTools";
 import ProvenSystems from "@/components/industry/ProvenSystems";
@@ -24,7 +23,7 @@ const IndusryPage = () => {
       <ProvenSystems />
       <KeyTools />
       <Trusted />
-      <Faq />
+      {/* <Faq /> */}
       <IntegratesSeamlessly />
       {/* <Footer /> */}
     </div>

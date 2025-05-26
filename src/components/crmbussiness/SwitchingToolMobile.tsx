@@ -10,9 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface SwitchingToolMobileProps {
   sectionRef: MutableRefObject<HTMLDivElement | null>;
+  switchingTool: any;
 }
 
-const SwitchingToolMobile = ({ sectionRef }: SwitchingToolMobileProps) => {
+const SwitchingToolMobile = ({
+  sectionRef,
+  switchingTool,
+}: SwitchingToolMobileProps) => {
   const cardRef1 = useRef<HTMLDivElement>(null);
   const cardRef2 = useRef<HTMLDivElement>(null);
   const cardRef3 = useRef<HTMLDivElement>(null);
@@ -109,8 +113,7 @@ const SwitchingToolMobile = ({ sectionRef }: SwitchingToolMobileProps) => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            It takes forever to look up pricing, and it’s easy for errors to
-            slip through
+            {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
 
@@ -128,7 +131,7 @@ const SwitchingToolMobile = ({ sectionRef }: SwitchingToolMobileProps) => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            There’s no easy way to upsell or present multiple package options
+            {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
 
@@ -146,8 +149,7 @@ const SwitchingToolMobile = ({ sectionRef }: SwitchingToolMobileProps) => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            You lose jobs because your quote didn’t stand out, or someone else
-            convinced them first
+            {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>
       </div>

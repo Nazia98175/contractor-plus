@@ -6,8 +6,10 @@ import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
-
-const TeamsUsingContractor = () => {
+interface Props {
+  data: any;
+}
+const TeamsUsingContractor:React.FC<Props> = ({data}) => {
   // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -40,14 +42,14 @@ const TeamsUsingContractor = () => {
       >
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold  max-w-[951px] mx-auto">
-            {t("heading")}
+            {data?.title}
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.2}>
-          <p className="paragraph-style text-center">{t("desc")}</p>
+          <p className="paragraph-style text-center">{data?.sub_title}</p>
         </TextAnimation>
         <div className="grid px-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-6 md:mt-10 xl:mt-[52px] mb-8 sm:mb-12 md:mb-16 xl:mb-[70px] w-full">
-          {crmList.map((item, index) => (
+          {data?.cards?.map((item:any, index:any) => (
             <article
               key={index}
               className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-sm cursor-pointer"
@@ -63,17 +65,18 @@ const TeamsUsingContractor = () => {
                       delay={0.2}
                       useEasing={true}
                       separator=","
-                      suffix={item.suffix}
+                      suffix={ item.suffix ?? ""}
                       preserveValue={true}
+                      prefix={item.title === "~" ? item.title : ""}
                     />
                   )}
-                  {!inView && `${item.end}${item.suffix}`}
+                  {!inView && `${item.title === "~" && item.title}${item.end}${ item.suffix ?? ""}`}
                 </span>
-                <span className="inline-block px-2">{item.title}</span>
+                <span className="inline-block px-2">{item.title !== "0" && item.title !== "~" && item.title}</span>
               </h3>
 
               <p className="text-lg leading-[22px] font-medium tracking-wide text-secondary font-montserrat">
-                {item.description}
+                {item.sub_title}
               </p>
             </article>
           ))}

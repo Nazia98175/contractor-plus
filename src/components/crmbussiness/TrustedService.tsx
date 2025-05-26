@@ -8,7 +8,11 @@ import { OurReviewList } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
 import TrustedServiceCard from "./TrustedServiceCard";
 
-const TrustedService = () => {
+interface TheReviewProps{
+  reviews: any
+}
+
+const TrustedService: React.FC< TheReviewProps> = ({reviews}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -29,7 +33,8 @@ const TrustedService = () => {
     <section className="pt-6 md:pt-0 overflow-hidden relative ">
       <CardReveal animateOnScroll={true}>
         <h3 className="section-heading service-text text-center max-w-[90%] text-white mx-auto px-3 relative z-50">
-          Trusted by over 50,000 build and service contractors
+          {/* Trusted by over 50,000 build and service contractors */}
+          {reviews?.data?.[0]?.reviews?.title}
         </h3>
       </CardReveal>
       <div className="relative h-fit ">
@@ -38,7 +43,7 @@ const TrustedService = () => {
 
         <div className="pt-7 w-full">
           <Marquee speed={30} direction="right" pauseOnHover>
-            {translatedReviews.map((review) => (
+            {reviews?.data?.[0]?.reviews?.reviews?.map((review:any) => (
               <TrustedServiceCard
                 key={review.id}
                 review={review as Review}
@@ -54,7 +59,7 @@ const TrustedService = () => {
 
         <div className="hidden md:block w-full relative">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
-            {translatedReviews.map((review) => (
+            {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
                 key={review.id}
                 review={review as Review}

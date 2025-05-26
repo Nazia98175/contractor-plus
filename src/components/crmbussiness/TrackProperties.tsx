@@ -12,8 +12,12 @@ const FeatureItem = ({ text }: { text: string }) => (
     {text}
   </article>
 );
+interface Props {
+  ncc: string;
+  trackProperties: any;
+}
 
-const TrackProperties = () => {
+const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
     <section className="bg-white relative pt-28 lg:pt-5">
       <Image
@@ -55,20 +59,19 @@ const TrackProperties = () => {
       <div className="relative z-30 md:-mt-3 px-2">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading gradient-text-2 text-center !font-black lg:!font-semibold w-fit mx-auto">
-            View every property like you do your customers
+            {trackProperties?.title}
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="max-w-[885px] mx-auto paragraph-style text-center">
-            Contractor+ is the first CRM to offer property profiles — so you can
-            see what’s been done, what’s next, and who did it.
+            {trackProperties?.sub_title}
           </p>
         </TextAnimation>
 
         <div className="w-full mt-3.5 sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
-            {trackFeatures.map((text, index) => (
-              <FeatureItem key={index} text={text} />
+            {trackProperties?.cards.map((text: any, index: any) => (
+              <FeatureItem key={index} text={text?.text} />
             ))}
           </Marquee>
         </div>
@@ -80,11 +83,11 @@ const TrackProperties = () => {
         >
           <div className="flex gap-2.5 sm:flex-row flex-col items-center justify-center mt-3.5 md:mt-7">
             <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
-              Get started free <SideIcon />
+              {trackProperties?.btnText} <SideIcon />
             </button>
             <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
               <CheckIcon />
-              No Credit Card Required
+              {ncc}
             </button>
           </div>
         </CardReveal>

@@ -15,7 +15,7 @@ import TrustBar from "@/components/homepage/TrustBar";
 const CrmBussinessPage = () => {
   return (
     <main className="relative z-20">
-      <Header />
+      {/* <Header />
       <div className="black-bg">
         <CrmHero />
         <TrustedService />
@@ -29,7 +29,7 @@ const CrmBussinessPage = () => {
       <CrmSercive />
       <TrustBar />
       <Faq />
-      <BlogPosts />
+      <BlogPosts /> */}
     </main>
   );
 };

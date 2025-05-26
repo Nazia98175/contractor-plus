@@ -94,7 +94,7 @@ const SwitchingToolMobile = ({ sectionRef }: SwitchingToolMobileProps) => {
 
   return (
     <div className="px-2 relative pt-9 md:pt-11" ref={sectionRef}>
-      <div className="relative flex lg:flex-row flex-col justify-center items-center pb-16 max-w-[1180px] mx-auto mt-10">
+      <div className="relative flex lg:flex-row flex-col justify-center items-center pb-16 max-w-[1180px] mx-auto">
         <article
           ref={cardRef1}
           className="border-iron rounded-[40px] switch-tool-card p-5 max-w-[410px] w-full"

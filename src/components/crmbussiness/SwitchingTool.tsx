@@ -37,14 +37,14 @@ const SwitchingTool = () => {
         <SwitchingToolDesktop sectionRef={sectionRef} />
       </div>
 
-      <div className="max-w-[1180px] mx-auto mt-10">
+      {/* <div className="max-w-[1180px] mx-auto mt-10">
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <p className="text-center text-lg md:text-xl font-jakarta text-secondary">
             Switch to a field service CRM that has everything you need in one
             place.
           </p>
         </TextAnimation>
-      </div>
+      </div> */}
     </section>
   );
 };

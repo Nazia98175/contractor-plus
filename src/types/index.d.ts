@@ -55,3 +55,29 @@ export type CompareFeature = {
   eContractorHas: boolean;
   othersHave: boolean;
 };
+
+
+// types/navigation.ts
+
+export interface NavSection {
+  heading: string;
+  list?: NavListItem[] | (NavSubSection | NavListItem)[];
+  bottomLinks?: SimpleLink[];
+}
+
+export interface NavListItem {
+  link: string;
+  title: string;
+  sub_title?: string;
+  tag?: string;
+}
+
+export interface NavSubSection {
+  section: string;
+  items: NavListItem[];
+}
+
+export interface SimpleLink {
+  link: string;
+  title: string;
+}

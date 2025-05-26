@@ -24,7 +24,14 @@ const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
         </button>
         <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
           <p className="text-decemberSky text-sm sm:text-base font-jakarta max-w-[1113px] pt-4">
-            {data.answer}
+            {data.answer?.split("<br/>").map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+                <br/>
+                
+              </span>
+            ))}
           </p>
         </AnimateHeight>
       </div>

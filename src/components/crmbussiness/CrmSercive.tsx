@@ -5,8 +5,13 @@ import CardReveal from "../common/CardReveal";
 import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
+interface Props {
+  data: any;
+  ncc: string;
+  createBtn: string;
+}
 
-const CrmSercive: React.FC = () => {
+const CrmSercive: React.FC<Props> = ({data , ncc , createBtn}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -36,12 +41,12 @@ const CrmSercive: React.FC = () => {
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <h3 className="section-heading text-white text-center">
-              This is what a field service CRM should have been all along
+             {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <p className="paragraph-style text-center mb-7 md:mb-10 lg:mb-14">
-              Start using Contractor+ free. You won’t look back.
+              {data?.sub_title}
             </p>
           </TextAnimation>
           <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
@@ -52,7 +57,7 @@ const CrmSercive: React.FC = () => {
               <div className="md:max-w-[414px] w-full">
                 <input
                   type="email"
-                  placeholder={t("emailPlaceholder")}
+                  placeholder={data?.placeholder}
                   required
                   value={email}
                   onChange={handleEmailChange}
@@ -63,7 +68,7 @@ const CrmSercive: React.FC = () => {
                     <CheckIcon />
                   </span>
                   <span className="text-sm font-semibold font-myriad text-white">
-                    No Credit Card Required
+                   {ncc}
                   </span>
                 </p>
               </div>
@@ -75,7 +80,7 @@ const CrmSercive: React.FC = () => {
                 {loading ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 ) : (
-                  "Create Free Account"
+                  `${createBtn}`
                 )}
               </button>
               <div className="md:hidden flex justify-center items-center w-full">
@@ -84,7 +89,7 @@ const CrmSercive: React.FC = () => {
                     <CheckIcon />
                   </span>
                   <span className="text-sm font-semibold font-myriad text-white">
-                    No Credit Card Required
+                    {ncc}
                   </span>
                 </p>
               </div>

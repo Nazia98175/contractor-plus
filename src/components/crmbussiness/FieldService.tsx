@@ -103,7 +103,7 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
           >
             <div
               className={`w-full  max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]
-  ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
+              ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
             >
               <FieldServiceCard slug={slug} idx={index} service={service} />
             </div>
@@ -115,21 +115,3 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
 };
 
 export default FieldService;
-// {
-//   fieldServiceData.map((service, index) => (
-//     <div
-//       key={index}
-//       className={`z-${
-//         index + 1
-//       } h-screen sm:h-[90vh] crm-cards absolute left-[50%] top-10 md:top-0 translate-x-[-50%] w-full flex justify-center items-center`}
-//     >
-//       <div
-//         className={`w-full  max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
-//           index === fieldServiceData.length - 1 ? "pb-0" : ""
-//         }`}
-//       >
-//         <FieldServiceCard service={service} />
-//       </div>
-//     </div>
-//   ));
-// }

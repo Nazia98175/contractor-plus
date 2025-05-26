@@ -23,8 +23,15 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
           </h4>
 
           {/* Image for mobile */}
-          <div className="rounded-lg block xl:hidden h-full min-h-[245px] md:h-auto w-full side-img"></div>
-
+          <div className="rounded-lg xl:hidden max-w-[518px] mx-auto  h-full min-h-[245px] md:h-auto w-full">
+            <Image
+              src={fieldServiceData?.[idx]?.img || "/placeholder.png"}
+              alt={service?.title || "service image"}
+              width={518}
+              height={302}
+              className="object-cover rounded-lg w-full h-auto"
+            />
+          </div>
           <div className="flex flex-col gap-4 md:gap-6">
             {(isEstimate ? features.slice(0, -1) : features.slice(0, 4)).map(
               (feature: any, index: number) => (

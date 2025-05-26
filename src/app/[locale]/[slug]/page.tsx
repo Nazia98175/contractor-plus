@@ -14,13 +14,27 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import TrustBar from "@/components/homepage/TrustBar";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
+import { notFound } from "next/navigation";
 
 type CrmBussinessPageProps = {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 };
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;
-  const [crmPageContent, reviews, section3, section4 , section5 , section6, section7 , faq, blogs] = await Promise.all([
+  if (!useParams?.slug) {
+    return notFound();
+  }
+  const [
+    crmPageContent,
+    reviews,
+    section3,
+    section4,
+    section5,
+    section6,
+    section7,
+    faq,
+    blogs,
+  ] = await Promise.all([
     getCrmPage(useParams?.slug, useParams.locale, "&populate=*"),
     getCrmPage(
       useParams?.slug,
@@ -52,21 +66,14 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
       useParams.locale,
       "&populate[section7][populate][cards]=*"
     ),
-   getCrmPage(
+    getCrmPage(
       useParams?.slug,
       useParams.locale,
       "&populate[faqs][populate]=faq"
     ),
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
-  
-  console.log(section6 , "section66666")
-   console.log(section7 , "section777777")
-   
-   console.log(crmPageContent , "page content")
-   console.log(reviews , "revie")
-   console.log(faq , "faq")
-  
+
   return (
     <main>
       <Header />
@@ -77,13 +84,31 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <TrustedService reviews={reviews} />
             <SwitchingTool switchingTool={section3?.data?.[0]?.section3} />
           </div>
-          <FieldService slug={params?.slug} fieldService={section4?.data?.[0]?.section4} />
-          {params?.slug === "crm" && <TrackProperties ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt} trackProperties={section5?.data?.[0]?.section5}  />}
-          <KindAdorable slug={params?.slug} kindAdorable={section6?.data?.[0]?.section6} />
-          <TeamsUsingContractor data = {section7?.data?.[0]?.section7} />
-          <ThousandsReviews data={crmPageContent?.data?.[0]?.section8} reviews={reviews?.data?.[0]?.reviews?.reviews} />
+          <FieldService
+            slug={useParams?.slug}
+            fieldService={section4?.data?.[0]?.section4}
+          />
+          {useParams?.slug === "crm" && (
+            <TrackProperties
+              ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+              trackProperties={section5?.data?.[0]?.section5}
+            />
+          )}
+          <KindAdorable
+            slug={useParams?.slug}
+            kindAdorable={section6?.data?.[0]?.section6}
+          />
+          <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
+          <ThousandsReviews
+            data={crmPageContent?.data?.[0]?.section8}
+            reviews={reviews?.data?.[0]?.reviews?.reviews}
+          />
           <div className="relative w-full">
-            <CrmSercive createBtn={crmPageContent?.data?.[0]?.hero?.createBtn} ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt} data={crmPageContent?.data?.[0]?.section9} />
+            <CrmSercive
+              createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
+              ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+              data={crmPageContent?.data?.[0]?.section9}
+            />
             {/* Cloud Layer 1 */}
             <div className="absolute -top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
               <div className="bg-white h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
@@ -107,8 +132,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           </div>
 
           <TrustBar />
-          <Faq faq={faq?.data?.[0]?.faqs}/>
-          <BlogPosts data={crmPageContent?.data?.[0]?.section11} blogs={blogs} />
+          <Faq faq={faq?.data?.[0]?.faqs} />
+          <BlogPosts
+            data={crmPageContent?.data?.[0]?.section11}
+            blogs={blogs}
+          />
         </>
       )}
 

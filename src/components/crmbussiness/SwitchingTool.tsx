@@ -76,75 +76,79 @@ const SwitchingTool = () => {
         });
       }
 
-      // Scroll animation
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: isMobile ? "top 60%" : "top 65%",
-          end: isMobile ? "bottom bottom" : "bottom 70%",
-          scrub: 1,
-        },
-      });
+      setTimeout(() => {
+        // Scroll animation
+        const scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "bottom 100%",
+            end: "bottom 70%",
+            scrub: 1,
+            markers: false,
+          },
+        });
 
-      if (isMobile) {
-        if (cardRef1.current) {
-          scrollTl.to(cardRef1.current, {
-            y: "-20%",
-            scale: 0.96,
-            filter: "blur(0px)",
-          });
+        if (isMobile) {
+          if (cardRef1.current) {
+            scrollTl.to(cardRef1.current, {
+              y: "-20%",
+              scale: 0.96,
+              filter: "blur(0px)",
+            });
+          }
+          if (cardRef2.current) {
+            scrollTl.to(cardRef2.current, {
+              y: "-10%",
+              scale: 1,
+              filter: "blur(0px)",
+            });
+          }
+          if (cardRef3.current) {
+            scrollTl.to(cardRef3.current, {
+              y: "0%",
+              scale: 0.96,
+              filter: "blur(0px)",
+            });
+          }
+        } else {
+          scrollTl.to(
+            cardRef1.current,
+            {
+              x: "0%",
+              y: "15%",
+              rotation: -15,
+              scale: 0.9,
+              filter: "blur(0px)",
+            },
+            0
+          );
+          scrollTl.to(
+            cardRef2.current,
+            {
+              x: "0%",
+              y: "-5%",
+              scale: 1,
+              opacity: 1,
+              filter: "blur(0px)",
+            },
+            0
+          );
+          scrollTl.to(
+            cardRef3.current,
+            {
+              x: "0%",
+              y: "15%",
+              rotation: 15,
+              scale: 0.9,
+              filter: "blur(0px)",
+            },
+            0
+          );
         }
-        if (cardRef2.current) {
-          scrollTl.to(cardRef2.current, {
-            y: "-10%",
-            scale: 1,
-            filter: "blur(0px)",
-          });
-        }
-        if (cardRef3.current) {
-          scrollTl.to(cardRef3.current, {
-            y: "0%",
-            scale: 0.96,
-            filter: "blur(0px)",
-          });
-        }
-      } else {
-        scrollTl.to(
-          cardRef1.current,
-          {
-            x: "0%",
-            y: "15%",
-            rotation: -15,
-            scale: 0.9,
-            filter: "blur(0px)",
-          },
-          0
-        );
-        scrollTl.to(
-          cardRef2.current,
-          {
-            x: "0%",
-            y: "-5%",
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-          },
-          0
-        );
-        scrollTl.to(
-          cardRef3.current,
-          {
-            x: "0%",
-            y: "15%",
-            rotation: 15,
-            scale: 0.9,
-            filter: "blur(0px)",
-          },
-          0
-        );
-      }
+      }, 1000);
     },
-    { scope: sectionRef }
+
+    { dependencies: [sectionRef], scope: sectionRef }
   );
 
   return (

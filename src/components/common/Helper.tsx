@@ -1047,11 +1047,11 @@ export const fieldServiceData = [
         description:
           "Create fast, accurate estimates that pull in live pricing from Lowe’s and Home Depot.",
       },
-      // {
-      //   title: "Contract generation based on job details",
-      //   description:
-      //     "Once your estimate’s locked, the contract writes itself using job data you already entered.",
-      // },
+      {
+        title: "Contract generation based on job details",
+        description:
+          "Once your estimate’s locked, the contract writes itself using job data you already entered.",
+      },
       // {
       //   title: "Time clock & mileage logs",
       //   description:
@@ -1092,16 +1092,16 @@ export const fieldServiceData = [
         title: "Availability-based job assignment",
         description: "Send the right tech based on who’s nearby and available.",
       },
-      // {
-      //   title: "Task ownership and accountability",
-      //   description:
-      //     "Make it obvious who’s doing what and when it’s due, so everyone is held accountable.",
-      // },
-      // {
-      //   title: "Chat-based job communication",
-      //   description:
-      //     "Every job has its own chat so your crew doesn’t have to dig through texts.",
-      // },
+      {
+        title: "Task ownership and accountability",
+        description:
+          "Make it obvious who’s doing what and when it’s due, so everyone is held accountable.",
+      },
+      {
+        title: "Chat-based job communication",
+        description:
+          "Every job has its own chat so your crew doesn’t have to dig through texts.",
+      },
       // {
       //   title: "Clock in/out support on mobile",
       //   description:
@@ -1138,15 +1138,15 @@ export const fieldServiceData = [
         description:
           "AI picks up the tone so you know how conversations really went.",
       },
-      // {
-      //   title: "Scheduled messages & follow-ups",
-      //   description: "Never forget to follow up. Just schedule it and move on.",
-      // },
-      // {
-      //   title: "Job-specific chats (internal team use)",
-      //   description:
-      //     "Chat with your crew about a job without losing context or switching apps.",
-      // },
+      {
+        title: "Scheduled messages & follow-ups",
+        description: "Never forget to follow up. Just schedule it and move on.",
+      },
+      {
+        title: "Job-specific chats (internal team use)",
+        description:
+          "Chat with your crew about a job without losing context or switching apps.",
+      },
       // {
       //   title: "Voicemail logging and playback",
       //   description: "Listen to any voicemail without ever leaving the CRM.",
@@ -1182,16 +1182,16 @@ export const fieldServiceData = [
         description:
           "Set reminders to follow up so no lead gets forgotten or buried.",
       },
-      // {
-      //   title: "Property-based leads",
-      //   description:
-      //     "Track new opportunities by address so you can quote with full context.",
-      // },
-      // {
-      //   title: "Upcoming: Workflow automation",
-      //   description:
-      //     "Automation is on the way to help you re-engage cold leads without any manual work.",
-      // },
+      {
+        title: "Property-based leads",
+        description:
+          "Track new opportunities by address so you can quote with full context.",
+      },
+      {
+        title: "Upcoming: Workflow automation",
+        description:
+          "Automation is on the way to help you re-engage cold leads without any manual work.",
+      },
     ],
     img: "/images/webp/field-service-5.webp",
   },

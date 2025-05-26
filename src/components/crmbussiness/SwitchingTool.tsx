@@ -15,8 +15,8 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
   const sectionRef = useRef(null);
 
   return (
-    <section className="px-2 relative pt-9 md:pt-11" ref={sectionRef}>
-      <div className="bg-reverse-black h-[296px] w-full hidden md:block top-0 left-0 absolute z-[-5]" />
+    <section className="px-2 relative pt-9 md:pt-11 z-10" ref={sectionRef}>
+      <div className="bg-reverse-black h-[160px] md:h-[296px] w-full block top-0 left-0 absolute z-[-5]" />
       <img
         className="absolute top-0 left-0 w-full h-full z-[-7] object-contain hidden md:block"
         src="/images/webp/switch-tool-bg.webp"

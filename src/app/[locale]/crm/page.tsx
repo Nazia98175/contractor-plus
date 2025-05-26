@@ -15,7 +15,7 @@ import TrustBar from "@/components/homepage/TrustBar";
 const CrmBussinessPage = () => {
   return (
     <main className="relative z-20">
-      <Header />
+      <Header btnText="Get Demo" />
       <div className="black-bg">
         <CrmHero />
         <TrustedService />

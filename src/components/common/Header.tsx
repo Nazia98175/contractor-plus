@@ -7,7 +7,10 @@ import SideBar from "./SideBar";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const Header = () => {
+interface HeaderProps {
+  btnText?: string;
+}
+const Header: React.FC<HeaderProps> = ({ btnText }) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -65,7 +68,7 @@ const Header = () => {
               {t("login")}
             </button>
             <button className="whitespace-nowrap hover:scale-95 duration-300 font-myriad cursor-pointer text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
-              {t("signup")}
+              {btnText || t("signup")}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>
               <HamburgerIcon />

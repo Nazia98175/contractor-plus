@@ -17,7 +17,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
   return (
     <article className="flex lg:flex-row z-30 items-start flex-col gap-7 justify-between text-white relative">
       <div className="xl:max-w-[650px] w-full">
-        <div className="flex flex-col gap-3 md:gap-4 xl:gap-5">
+        <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
           <h4 className="text-base md:text-2xl xl:text-[26px] font-semibold font-montserrat lg:font-jakarta py-0.5 px-2.5">
             {service?.title}
           </h4>
@@ -32,7 +32,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
               className="object-cover rounded-lg w-full h-auto"
             />
           </div>
-          <div className="flex flex-col gap-4 md:gap-6">
+          <div className="flex flex-col gap-4 2xl:gap-6">
             {(isEstimate ? features.slice(0, -1) : features.slice(0, 4)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">

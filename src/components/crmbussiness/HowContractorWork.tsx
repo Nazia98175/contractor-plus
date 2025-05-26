@@ -9,7 +9,7 @@ const HowContractorWork = () => {
     "Manage leads, clients, vendors, subs, and properties easier than ever",
   ];
   return (
-    <section className="bg-white py-10 sm:py-14 lg:py-16 px-2">
+    <section className="py-10 sm:py-14 lg:py-16 px-2">
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-[1284px] w-full mx-auto gap-5 md:gap-10">
         {/* Left: Image */}
         <div className="w-full max-w-[480px] flex justify-center items-center">

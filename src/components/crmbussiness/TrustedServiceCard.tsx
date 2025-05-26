@@ -35,9 +35,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
               height={42}
               className="max-w-[42px] h-fit object-contain rounded-full"
             />
-            <div>
+            <div className="truncate max-w-[150px] sm:max-w-[190px]">
               <div className="flex gap-2">
-                <h5 className="text-base font-medium text-white truncate max-w-[190px]">
+                <h5 className="text-base font-medium text-white">
                   {review.userName}
                 </h5>
                 <span

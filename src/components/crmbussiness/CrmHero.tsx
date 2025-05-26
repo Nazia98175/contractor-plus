@@ -53,7 +53,7 @@ const CrmHero = () => {
             animationDuration={0.8}
             distance={50}
             animateOnScroll={false}
-            className="flex gap-4 md:pb-0 bg-black sm:bg-transparent w-full sm:w-fit justify-center py-6 sm:py-0"
+            className="flex gap-4 md:pb-0 bg-black/40 sm:bg-transparent w-full sm:w-fit justify-center py-6 sm:py-0"
           >
             <div className="flex flex-col-reverse sm:flex-col gap-1">
               <Image

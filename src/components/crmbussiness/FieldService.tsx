@@ -91,28 +91,26 @@ const FieldService: React.FC = () => {
         </h2>{" "}
       </TextAnimation>
       <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" />
-      <div>
-        <div
-          id="crm-cards-wrapper"
-          className="relative overflow-hidden px-2 h-[90vh]"
-        >
-          {fieldServiceData.map((service, index) => (
+      <div
+        id="crm-cards-wrapper"
+        className="relative overflow-hidden px-2 h-screen sm:h-[90vh]"
+      >
+        {fieldServiceData.map((service, index) => (
+          <div
+            key={index}
+            className={`z-${
+              index + 1
+            } h-screen sm:h-[90vh] crm-cards absolute left-[50%] top-10 md:top-0 translate-x-[-50%] w-full flex justify-center items-center`}
+          >
             <div
-              key={index}
-              className={`z-${
-                index + 1
-              } h-[90vh] crm-cards absolute left-[50%] top-0  translate-x-[-50%] w-full flex justify-center items-center`}
+              className={`w-full  max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
+                index === fieldServiceData.length - 1 ? "pb-0" : ""
+              }`}
             >
-              <div
-                className={`w-full max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
-                  index === fieldServiceData.length - 1 ? "pb-0" : ""
-                }`}
-              >
-                <FieldServiceCard service={service} />
-              </div>
+              <FieldServiceCard service={service} />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

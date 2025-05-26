@@ -1,10 +1,10 @@
 "use client";
 import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
-import { BlogBtnIcon, ContractorPlusIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
-import { useState } from "react";
+import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
+import TextAnimation from "../common/TextAnimation";
+import Image from "next/image";
 
 interface Blogs {
   blogTitle: string;
@@ -71,7 +71,6 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
-  console.log(blogHeading, "jnfksdn");
   return (
     <section className=" pt-[18px] pb-[38px] md:pt-12 md:pb-[82px] px-4 bg-white relative z-10">
       <div className="max-w-[1294px] w-full mx-auto">
@@ -121,19 +120,23 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
                 alt="blog images"
               />
               <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
-                <img
+                <Image
+                  fill={true}
                   className="absolute top-0 -left-1 w-full h-full z-10 pointer-events-none object-contain"
                   src="images/svg/blog-bg.svg"
                   alt="blog angle"
                 />
-                <img
+                <Image
+                  width={160}
+                  height={200}
                   src={blogListMobile?.[index]?.backgroundImage}
                   alt={article.blogTitle}
                   className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
                 />
               </div>
               <div className="relative py-6 px-4 w-[346px] mt-2">
-                <img
+                <Image
+                  fill={true}
                   className="absolute top-0 left-0 h-full w-full z-0"
                   src="/images/webp/blog-angle2.webp"
                   alt="blog angle"
@@ -175,19 +178,23 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
                   alt="blog images"
                 />
                 <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
-                  <img
+                  <Image
+                    fill={true}
                     className="absolute top-0 -left-1 w-full h-full z-10 pointer-events-none object-contain"
                     src="images/svg/blog-bg.svg"
                     alt="blog angle"
                   />
-                  <img
+                  <Image
+                    width={160}
+                    height={200}
                     src={blogListMobile?.[index]?.backgroundImage}
                     alt={blogListMobile?.[index]?.title}
                     className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
                   />
                 </div>
                 <div className="relative py-6 px-4 w-[346px] mt-2">
-                  <img
+                  <Image
+                    fill={true}
                     className="absolute top-0 left-0 h-full w-full z-0"
                     src="/images/webp/blog-angle2.webp"
                     alt="blog angle"

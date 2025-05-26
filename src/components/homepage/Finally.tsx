@@ -69,7 +69,8 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             {/* Cloud Layer 1 */}
             <div className="absolute bottom-0 left-0 hidden lg:flex w-full h-[160px] z-20 pointer-events-none">
               <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
-                <img
+                <Image
+                  fill={true}
                   src="/images/webp/claud.webp"
                   alt="Cloud Layer 1"
                   className="h-full object-cover w-full"
@@ -78,7 +79,8 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
 
               {/* Cloud Layer 2 */}
               <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
-                <img
+                <Image
+                  fill={true}
                   src="/images/webp/claud.webp"
                   alt="Cloud Layer 2"
                   className="h-full object-cover w-full"
@@ -126,12 +128,16 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               distance={50}
             >
               <div className="relative md:pr-20 lg:pr-32 xl:pr-40 lg:overflow-hidden">
-                <img
+                <Image
+                  height={600}
+                  width={715}
                   src="/images/webp/ipad.webp"
                   alt="Ipad Design"
                   className="lg:max-w-[715px] w-full object-center"
                 />
-                <img
+                <Image
+                  height={300}
+                  width={300}
                   src="/images/webp/mobile.webp"
                   alt="Mobile Design"
                   className="max-w-[35%] lg:max-w-[280px] xl:max-w-[300px] object-contain absolute right-0 top-[20%] md:top-[8%]"

@@ -5,6 +5,7 @@ import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
@@ -94,6 +95,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               trackProperties={section5?.data?.[0]?.section5}
             />
           )}
+          <HowContractorWork />
           <KindAdorable
             slug={useParams?.slug}
             kindAdorable={section6?.data?.[0]?.section6}

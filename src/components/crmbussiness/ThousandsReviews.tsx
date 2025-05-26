@@ -35,7 +35,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
         </TextAnimation>
 
         <SliderLayout
-          wrapperClassName="relative w-full"
+          wrapperClassName="relative w-full !h-auto"
           slidesPerView={1}
           spaceBetween={9}
           breakpoints={{

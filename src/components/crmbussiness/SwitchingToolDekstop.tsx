@@ -52,7 +52,6 @@ const SwitchingToolDesktop = ({ sectionRef }: SwitchingToolDesktopProps) => {
           start: "top 70%",
           end: "bottom 80%",
           scrub: 1,
-          markers: true,
         },
       });
 

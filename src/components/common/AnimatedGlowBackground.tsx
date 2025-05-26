@@ -18,7 +18,7 @@ const AnimatedGlowBackground: React.FC = () => {
 
     // Create timeline for each ellipse with different animations
     if (ellipseRefs.current.length > 0) {
-      // First dark ellipse
+      // First lightBlack ellipse
       tl.to(ellipseRefs.current[0], {
         scale: 1.2,
         opacity: 0.7,
@@ -52,7 +52,7 @@ const AnimatedGlowBackground: React.FC = () => {
         "<"
       );
 
-      // Second dark ellipse
+      // Second lightBlack ellipse
       tl.to(
         ellipseRefs.current[3],
         {
@@ -65,7 +65,7 @@ const AnimatedGlowBackground: React.FC = () => {
         "<"
       );
 
-      // Third dark ellipse
+      // Third lightBlack ellipse
       tl.to(
         ellipseRefs.current[4],
         {
@@ -176,7 +176,7 @@ const AnimatedGlowBackground: React.FC = () => {
         ref={(el) => {
           ellipseRefs.current[0] = el;
         }}
-        className="glow-ellipse bg-dark-desktop"
+        className="glow-ellipse bg-lightBlack-desktop"
       ></div>
       <div
         ref={(el) => {
@@ -194,13 +194,13 @@ const AnimatedGlowBackground: React.FC = () => {
         ref={(el) => {
           ellipseRefs.current[3] = el;
         }}
-        className="glow-ellipse bg-dark-desktop"
+        className="glow-ellipse bg-lightBlack-desktop"
       ></div>
       <div
         ref={(el) => {
           ellipseRefs.current[4] = el;
         }}
-        className="glow-ellipse bg-dark-desktop"
+        className="glow-ellipse bg-lightBlack-desktop"
       ></div>
     </div>
   );

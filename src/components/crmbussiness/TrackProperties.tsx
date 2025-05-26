@@ -7,7 +7,7 @@ import CardReveal from "../common/CardReveal";
 import TextAnimation from "../common/TextAnimation";
 
 const FeatureItem = ({ text }: { text: string }) => (
-  <article className="p-3 rounded bg-doctor2 flex text-nowrap font-semibold items-center gap-2.5 text-sm md:text-base lg:text-lg text-lightblack ma-w-[500px] w-full mx-2">
+  <article className="p-3 rounded bg-doctor2 flex text-nowrap font-semibold text-lightBlack items-center gap-2.5 text-sm md:text-base lg:text-lg text-lightblack ma-w-[500px] w-full mx-2">
     <CheckIcon width={25} height={25} className="min-w-5" />
     {text}
   </article>
@@ -60,8 +60,8 @@ const TrackProperties = () => {
         </TextAnimation>
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <p className="max-w-[885px] mx-auto paragraph-style text-center">
-            The only platform made for field service, trades, and general
-            contractors
+            Contractor+ is the first CRM to offer property profiles — so you can
+            see what’s been done, what’s next, and who did it.
           </p>
         </TextAnimation>
 

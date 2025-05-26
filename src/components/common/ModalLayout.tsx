@@ -256,14 +256,14 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
         <div
           ref={modalContentRef}
           style={contentInitialStyle}
-          className={`relative bg-white dark:bg-gray-800 rounded-lg shadow-xl ${sizeClasses[size]} w-full my-auto ${className}`}
+          className={`relative bg-white lightBlack:bg-gray-800 rounded-lg shadow-xl ${sizeClasses[size]} w-full my-auto ${className}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           {(title || showCloseButton) && (
-            <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between p-4 border-b border-gray-200 lightBlack:border-gray-700">
               {title && (
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                <h3 className="text-lg font-medium text-gray-900 lightBlack:text-white">
                   {title}
                 </h3>
               )}

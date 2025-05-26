@@ -19,11 +19,10 @@
   --color-shutter: #1f1f27;
   --color-romanRed: #f21314;
   --color-pleasure: #dc1112;
-  --color-dark: #1c2731;
   --color-redPigment: #ee1e25;
   --color-decemberSky: #d2d4d6;
   --color-monstrousGreen: #21c912;
-  --color-darkGrey: #999;
+  --color-lightBlackGrey: #999;
   --color-expressionismGreen: #56c299;
   --color-lightBlack: #1c2731;
   --color-softMint: #effbf6;
@@ -618,7 +617,7 @@ html {
   opacity: 0.9;
 }
 
-.bg-dark-desktop {
+.bg-lightBlack-desktop {
   width: 100%;
   height: 1138px;
   background-color: #0c0d11;
@@ -642,7 +641,7 @@ html {
   z-index: 3;
 }
 
-.bg-dark-desktop2 {
+.bg-lightBlack-desktop2 {
   width: 100%;
   height: 922px;
   background-color: #0c0d11;
@@ -650,7 +649,7 @@ html {
   z-index: 4;
 }
 
-.bg-dark-desktop {
+.bg-lightBlack-desktop {
   width: 100%;
   height: 628px;
   background-color: #0c0d11;
@@ -718,7 +717,7 @@ html {
   transition: all 0.5s ease;
 }
 
-.bg-dark-desktop {
+.bg-lightBlack-desktop {
   width: 100%;
   height: 1138px;
   background-color: #0c0d11;
@@ -742,7 +741,7 @@ html {
   z-index: 3;
 }
 
-.bg-dark-desktop:nth-of-type(4) {
+.bg-lightBlack-desktop:nth-of-type(4) {
   width: 100%;
   height: 922px;
   background-color: #0c0d11;
@@ -750,7 +749,7 @@ html {
   z-index: 4;
 }
 
-.bg-dark-desktop:nth-of-type(5) {
+.bg-lightBlack-desktop:nth-of-type(5) {
   width: 100%;
   height: 628px;
   background-color: #0c0d11;

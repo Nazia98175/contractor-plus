@@ -22,11 +22,11 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
     <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white  overflow-hidden">
       <>
         <div className="w-[140%] h-[150%] absolute -top-[75%] -left-[23%] z-20 md:block hidden blur-[100px]">
-          <div className="glow-ellipse bg-dark-desktop"></div>
+          <div className="glow-ellipse bg-lightBlack-desktop"></div>
           <div className="glow-ellipse bg-red-desktop"></div>
           <div className="glow-ellipse bg-red-desktop"></div>
-          <div className="glow-ellipse bg-dark-desktop"></div>
-          <div className="glow-ellipse bg-dark-desktop"></div>
+          <div className="glow-ellipse bg-lightBlack-desktop"></div>
+          <div className="glow-ellipse bg-lightBlack-desktop"></div>
         </div>
 
         <div className="w-[250%] h-full absolute -top-[145%] -left-[75%] z-20 block md:hidden blur-[23px]">

@@ -39,7 +39,7 @@ const ProvenSystems = () => {
 
   return (
     <section className="text-center py-16 px-4 bg-white">
-      <h2 className=" text-xl md:text-2xl lg:text-[32px] font-extrabold text-dark mb-2">
+      <h2 className=" text-xl md:text-2xl lg:text-[32px] font-extrabold text-lightBlack mb-2">
         Proven Systems For HVAC Businesses
       </h2>
       <p className=" text-base sm:text-xl text-winterWay max-w-[864px] mx-auto mb-10">
@@ -50,14 +50,14 @@ const ProvenSystems = () => {
         {features.concat(features).map((feature, idx) => (
           <div
             key={idx}
-            className={`p-3 text-left hover:bg-dark transition-all duration-300 ease-in-out group
+            className={`p-3 text-left hover:bg-lightBlack transition-all duration-300 ease-in-out group
             
             `}
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-4 text-primary">
               <div className="">{feature.icon}</div>
               <div>
-                <h3 className="text-dark group-hover:text-white transition-all duration-300 ease-in-out font-montserrat font-medium text-2xl">
+                <h3 className="text-lightBlack group-hover:text-white transition-all duration-300 ease-in-out font-montserrat font-medium text-2xl">
                   {feature.title}
                 </h3>
                 <button className="flex items-center justify-center gap-2  text-pleasure text-base font-myriad font-semibold">

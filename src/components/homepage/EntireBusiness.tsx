@@ -44,16 +44,26 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   return (
     <div className=" px-2 relative z-20">
       <div className="pt-[38px] md:pt-[44px] pb-7">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        <CardReveal
+          staggerDelay={3}
+          animationDuration={0.8}
+          distance={50}
+          animateOnScroll={true}
+        >
           <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-decemberSky font-jakarta">
             {entireBusiness?.[0]?.title}
           </h3>
-        </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        </CardReveal>
+        <CardReveal
+          staggerDelay={3}
+          animationDuration={0.8}
+          distance={50}
+          animateOnScroll={true}
+        >
           <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
             {entireBusiness?.[0]?.sub_title}
           </p>
-        </TextAnimation>
+        </CardReveal>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
           <form
             className="flex flex-col md:flex-row justify-center items-start gap-3"

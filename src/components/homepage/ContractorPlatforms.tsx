@@ -1,14 +1,13 @@
 "use client";
 import { PlatformItem } from "@/types";
-import Image from "next/image";
-import CardReveal from "../common/CardReveal";
-import TextAnimation from "../common/TextAnimation";
-import { contractPlatforms } from "../common/Helper";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import CardReveal from "../common/CardReveal";
+import { contractPlatforms } from "../common/Helper";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -18,8 +17,6 @@ if (typeof window !== "undefined") {
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   const textRef = useRef<HTMLHeadingElement | null>(null);
   const containerRef = useRef<HTMLHeadingElement | null>(null);
-  // console.log(contractPlatformsData?.data?.platforms?.title?.title , "kfmwkjfnkwenfkw")
-
   useEffect(() => {
     setTimeout(() => {
       const split = new SplitText("#text-animation", {

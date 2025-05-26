@@ -3,6 +3,7 @@ import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import ContractorIndustrySlider from "./ContractorIndustrySlider";
 import { SliderRedLineIcon } from "../common/Icons";
+import CardReveal from "../common/CardReveal";
 interface Industry {
   title: string;
   sub_title: string;
@@ -41,16 +42,27 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       </span>
       <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-8">
         <div className="px-2">
-          <TextAnimation animateOnScroll={true} delay={0.2}>
+          <CardReveal
+            staggerDelay={3}
+            animationDuration={0.8}
+            distance={50}
+            animateOnScroll={true}
+          >
             <h3 className="section-heading gradient-text text-center">
               {contractorIndustry?.[0]?.title ?? ""}
             </h3>
-          </TextAnimation>
-          <TextAnimation animateOnScroll={true} delay={0.2}>
+          </CardReveal>
+
+          <CardReveal
+            staggerDelay={3}
+            animationDuration={0.8}
+            distance={50}
+            animateOnScroll={true}
+          >
             <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
               {contractorIndustry?.[0]?.sub_title ?? ""}
             </p>
-          </TextAnimation>
+          </CardReveal>
           <div className="hidden md:flex justify-center items-center">
             <button className="bg-red-linear h-10 primary-btn">
               {contractorIndustry?.[1]?.btnTxt ?? ""}

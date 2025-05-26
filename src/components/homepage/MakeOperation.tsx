@@ -54,16 +54,26 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         <MakeOperationRedLineIcon />
       </span>
       <div className="main-container pb-10 relative">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        <CardReveal
+          staggerDelay={3}
+          animationDuration={0.8}
+          distance={50}
+          animateOnScroll={true}
+        >
           <h3 className="section-heading font-semibold  gradient-text text-center">
             {whateverOperation?.[1]?.title}
           </h3>
-        </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        </CardReveal>
+        <CardReveal
+          staggerDelay={3}
+          animationDuration={0.8}
+          distance={50}
+          animateOnScroll={true}
+        >
           <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
             {whateverOperation?.[1]?.sub_title}
           </p>
-        </TextAnimation>
+        </CardReveal>
         <CardReveal
           staggerDelay={0.15}
           animationDuration={0.8}

@@ -539,5 +539,30 @@
         "description": "Need Content"
       }
     ]
+  },
+  "whycontractordesktop": {
+    "seeAllResourse": "See All Resources",
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content",
+        "imageAlt": "Resources and learning materials for contractors"
+      }
+    ]
   }
 }

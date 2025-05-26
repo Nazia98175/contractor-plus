@@ -7,10 +7,13 @@ type FaqItemType = {
   question: string;
   answer: string;
 };
-const Faq = () => {
+interface Props{
+  faq: any
+}
+const Faq : React.FC<Props> = ({faq}) => {
   const [FaqOpen, setOpen] = useState<number | null>(0);
   const handleToggle = (index: number) => {
-    setOpen(FaqOpen === index ? null : index);
+   setOpen((prev) => (prev === index ? null : index));
   };
 
   const faqitems = [
@@ -56,16 +59,16 @@ const Faq = () => {
       <div className="hidden lg:block absolute top-0 right-0 max-w-[70px] rotate-[35deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-15 pointer-events-none"></div>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="section-heading text-white text-center">
-          What contractors want to know
+         {faq?.title}
         </h3>
       </TextAnimation>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-text text-secondary text-center pt-4">
-          Frequently asked questions
+          {faq?.sub_title}
         </p>
       </TextAnimation>
       <div className="max-w-[1190px] mx-auto px-4 pt-[27px]">
-        {faqitems.map((item: FaqItemType, index: number) => (
+        {faq?.faq?.map((item: FaqItemType, index: number) => (
           <FaqList
             key={index}
             data={item}

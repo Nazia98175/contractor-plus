@@ -4,20 +4,25 @@ import SliderLayout from "../common/SliderLayout";
 import { blogData } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
 
-const BlogPosts = () => {
+interface Props{
+  data: any;
+  blogs: any;
+}
+
+const BlogPosts:React.FC<Props> = ({data , blogs}) => {
   return (
     <section className="pt-4 pb-12 px-2 sm:px-4 lg:px-20">
       <div className="max-w-[1158px] w-full mx-auto">
         <div className="flex justify-between items-center mb-6">
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <h2 className="section-heading text-center text-white gradient-text w-full sm:w-fit">
-              Blog Posts Related To CRM
+             {data?.title}
             </h2>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <div className="hidden md:block">
               <button className="bg-red-linear h-10 primary-btn gap-2">
-                View All Blogs
+              { data?.btnTxt}
                 <BlogBtnIcon />
               </button>
             </div>
@@ -116,7 +121,7 @@ const BlogPosts = () => {
         </div>
         <div className="block md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
-            View All Blogs
+            {data?.btnTxt}
             <BlogBtnIcon />
           </button>
         </div>

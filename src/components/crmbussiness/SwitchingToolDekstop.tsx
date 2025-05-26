@@ -10,9 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface SwitchingToolDesktopProps {
   sectionRef: MutableRefObject<HTMLDivElement | null>;
+  switchingTool: any;
 }
-
-const SwitchingToolDesktop = ({ sectionRef }: SwitchingToolDesktopProps) => {
+const SwitchingToolDesktop = ({
+  sectionRef,
+  switchingTool,
+}: SwitchingToolDesktopProps) => {
   const cardRef1 = useRef<HTMLDivElement>(null);
   const cardRef2 = useRef<HTMLDivElement>(null);
   const cardRef3 = useRef<HTMLDivElement>(null);
@@ -109,8 +112,7 @@ const SwitchingToolDesktop = ({ sectionRef }: SwitchingToolDesktopProps) => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            You’re using one app to call, another to quote, and a third  for
-            eSign. 
+            {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
 
@@ -128,8 +130,7 @@ const SwitchingToolDesktop = ({ sectionRef }: SwitchingToolDesktopProps) => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            Conversations & details get lost between software,  inboxes,  and
-            devices.
+            {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
 
@@ -147,7 +148,7 @@ const SwitchingToolDesktop = ({ sectionRef }: SwitchingToolDesktopProps) => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px] max-w-[90%]">
-            You miss leads because your  CRM doesn’t handle  calls or texts
+            {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>
       </div>

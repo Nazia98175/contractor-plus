@@ -5,6 +5,7 @@ import TextAnimation from "../common/TextAnimation";
 import { contractPlatforms } from "../common/Helper";
 
 const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
+  // console.log(contractPlatformsData?.data?.platforms?.title?.title , "kfmwkjfnkwenfkw")
   return (
     <section className="relative z-20">
       <div className="main-container flex flex-col gap-9 md:gap-10 lg:pt-[42px] pt-[37px] relative">

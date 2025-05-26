@@ -71,7 +71,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
-  console.log(blogHeading, "jnfksdn");
+
   return (
     <section className=" pt-[18px] pb-[38px] md:pt-12 md:pb-[82px] px-4 bg-white relative z-10">
       <div className="max-w-[1294px] w-full mx-auto">

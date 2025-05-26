@@ -16,3 +16,17 @@ export const getFooter = async (
     return notFound();
   }
 };
+
+export const getHeader = async (
+  locale: string,
+  query: string
+): Promise<HomePageResponse | null> => {
+  const url = `navbar?locale=${locale}${query}`;
+  try {
+    const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
+    return res.data;
+  } catch (error: any) {
+    console.log("Failed to fetch footer:", error?.response?.data);
+    return notFound();
+  }
+};

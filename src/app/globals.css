@@ -517,6 +517,7 @@ html {
 }
 .field-service-card {
   border: 1px solid #ffffff4e;
+  z-index: 9999;
   background: lightgray 0% 0% / 100px 100px repeat,
     radial-gradient(
       146.13% 118.42% at 50% -15.5%,

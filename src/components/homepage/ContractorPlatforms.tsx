@@ -1,19 +1,63 @@
+"use client";
 import { PlatformItem } from "@/types";
 import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import TextAnimation from "../common/TextAnimation";
 import { contractPlatforms } from "../common/Helper";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
-const ContractorPlatforms = async ({ contractPlatformsData }: any) => {
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(useGSAP);
+  // @ts-ignore
+}
+const ContractorPlatforms = ({ contractPlatformsData }: any) => {
+  const textRef = useRef<HTMLHeadingElement | null>(null);
+  const containerRef = useRef<HTMLHeadingElement | null>(null);
   // console.log(contractPlatformsData?.data?.platforms?.title?.title , "kfmwkjfnkwenfkw")
+
+  useEffect(() => {
+    setTimeout(() => {
+      const split = new SplitText("#text-animation", {
+        type: "lines",
+        mask: "lines",
+        linesClass: "split-line",
+      });
+      gsap.set(split.lines, { y: "100%" });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#text-animation",
+          start: "top 75%",
+          once: false,
+        },
+      });
+
+      tl.to(split.lines, {
+        y: "0%",
+        duration: 1,
+        stagger: 0.1,
+        ease: "power4.out",
+      });
+
+      return () => {
+        split.revert();
+      };
+    }, 3000);
+  }, [textRef.current]);
   return (
-    <section className="relative z-20">
+    <section ref={containerRef} className="relative z-20">
       <div className="main-container flex flex-col gap-9 md:gap-10 lg:pt-[42px] pt-[37px] relative">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
-          <h2 className="sub-heading text-secondary text-center max-w-[652px] mx-auto">
-            {contractPlatformsData?.data?.platforms?.title?.title}
-          </h2>
-        </TextAnimation>
+        <h2
+          ref={textRef}
+          id="text-animation"
+          className="sub-heading text-secondary text-center"
+        >
+          {contractPlatformsData?.data?.platforms?.title?.title}
+        </h2>
 
         <CardReveal
           staggerDelay={0.15}

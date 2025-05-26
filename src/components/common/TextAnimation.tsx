@@ -136,7 +136,12 @@ export default function TextAnimation({
     },
     {
       scope: containerRef,
-      dependencies: [animateOnScroll, delay, preserveClasses],
+      dependencies: [
+        containerRef.current?.children,
+        animateOnScroll,
+        delay,
+        preserveClasses,
+      ],
     }
   );
 

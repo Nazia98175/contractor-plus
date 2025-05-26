@@ -85,12 +85,12 @@ const FeaturesDropdown = ({ isVisible = true }) => {
     propertyProfiles: true,
     bigChiefAI: false,
     OfferClientFinancing: false,
-    EstimaticAI2: false,
-    communication: false,
+    EstimaticAI2: true,
+    communication: true,
     service: false,
     MileageTracking: false,
     ProWebsite: false,
-    PropertyProfiles: false,
+    PropertyProfiles: true,
     ServiceRequests: false,
     BigChief: true,
   };
@@ -142,14 +142,14 @@ const FeaturesDropdown = ({ isVisible = true }) => {
   }
 
   return (
-    <>
-      <div className="grid grid-cols-3">
+    <div className="overflow-hidden grow flex flex-col">
+      <div className="grid grid-cols-3 overflow-auto no-scrollbar">
         {sections.map((section) => (
-          <div className="" key={section.key}>
+          <div key={section.key}>
             <i className="text-sm font-semibold text-dark h-5 mb-2.5">
               {t(section.headingKey)}
             </i>
-            <ul className="space-x-6 space-y-3 w-full pb-10">
+            <ul className="space-x-6 space-y-3 w-full pb-8">
               {section.items.map((featureId) => (
                 <li
                   className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
@@ -179,9 +179,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </div>
         ))}
       </div>
-
-      {/* Additional links section if needed */}
-      <div className="flex items-center justify-between gap-6 p-[6px] px-8 left-0 font-inter absolute bottom-0 w-full bg-white">
+      <div className="flex items-center justify-between gap-6 left-0 font-inter sticky bottom-0 w-full bg-doctor2">
         <Link className="all-features-button group" href="/">
           {t("seeAllFeatures")}
           <ArrowIcon />
@@ -197,7 +195,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

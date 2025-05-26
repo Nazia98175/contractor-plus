@@ -1,6 +1,4 @@
-import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import ParticlesComponent from "@/components/common/ParticlesComponent";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -16,7 +14,6 @@ import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
 import { getBlogs } from "@/services/blogs";
 import { getHomePage } from "@/services/homepage";
-import { getFooter } from "@/services/layout";
 import { Suspense } from "react";
 
 export default async function Home({
@@ -39,7 +36,7 @@ export default async function Home({
     <Suspense fallback={<div>Loading...</div>}>
       <div className="relative overflow-x-hidden">
         <div className="relative">
-          {/* <Header /> */}
+          <Header />
           <Hero homePageContent={homePageContent?.data} />
           <TrustBar />
           <TheEngineContractor
@@ -71,9 +68,7 @@ export default async function Home({
             entireBusiness={homePageContent?.data?.entireBusiness}
             ncc_text={homePageContent?.data?.ncc_text}
           />
-          {/* <Footer footer={footer?.data} /> */}
         </div>
-        <ParticlesComponent id="star-particles" />
       </div>
     </Suspense>
   );

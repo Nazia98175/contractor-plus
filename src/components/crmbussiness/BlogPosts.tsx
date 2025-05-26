@@ -2,21 +2,31 @@ import Image from "next/image";
 import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import { blogData } from "../common/Helper";
+import TextAnimation from "../common/TextAnimation";
 
-const BlogPosts = () => {
+interface Props{
+  data: any;
+  blogs: any;
+}
+
+const BlogPosts:React.FC<Props> = ({data , blogs}) => {
   return (
     <section className="pt-4 pb-12 px-2 sm:px-4 lg:px-20">
       <div className="max-w-[1158px] w-full mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="section-heading text-center text-white gradient-text">
-            Blog Posts Related To CRM
-          </h2>
-          <div className="hidden md:block">
-            <button className="bg-red-linear h-10 primary-btn gap-2">
-              View All Blogs
-              <BlogBtnIcon />
-            </button>
-          </div>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
+            <h2 className="section-heading text-center text-white gradient-text w-full sm:w-fit">
+             {data?.title}
+            </h2>
+          </TextAnimation>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
+            <div className="hidden md:block">
+              <button className="bg-red-linear h-10 primary-btn gap-2">
+              { data?.btnTxt}
+                <BlogBtnIcon />
+              </button>
+            </div>
+          </TextAnimation>
         </div>
 
         <div className=" hidden sm:flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
@@ -50,7 +60,9 @@ const BlogPosts = () => {
 
           {/* Right column (Featured Blog) */}
           <div className="w-full xl:max-w-[700px] relative flex flex-col justify-end pb-3 sm:pb-6">
-            <img
+            <Image
+              width={684}
+              height={361}
               src="/images/webp/blog-right-side.webp"
               alt="Featured Blog"
               className="rounded-xl object-cover w-full absolute top-0 h-full"
@@ -99,7 +111,7 @@ const BlogPosts = () => {
                   <h3 className="text-base font-jakarta font-medium text-white">
                     {blog.title}
                   </h3>
-                  <p className="truncate text-xs text-wallStreet max-w-[240px] pt-1">
+                  <p className="truncate text-xs text-wallStreet max-w-[300px] sm:max-w-[240px] pt-1">
                     {blog.descrition}
                   </p>
                 </div>
@@ -109,7 +121,7 @@ const BlogPosts = () => {
         </div>
         <div className="block md:hidden pt-4">
           <button className="bg-red-linear h-10 primary-btn gap-2">
-            View All Blogs
+            {data?.btnTxt}
             <BlogBtnIcon />
           </button>
         </div>

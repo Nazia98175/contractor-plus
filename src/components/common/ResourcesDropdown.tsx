@@ -56,8 +56,8 @@ const ResourcesDropdown = () => {
   const fallbackImage = "/images/webp/circular-slide-1.webp";
 
   return (
-    <div className="flex gap-8 relative z-[9999] ">
-      <div className="grid grid-cols-2 gap-3 w-full ">
+    <div className="flex gap-8 relative z-[9999] grow overflow-hidden">
+      <div className="grid grid-cols-2 gap-3 w-full overflow-auto no-scrollbar">
         {industriesLinks.map((link, index) => (
           <button
             onMouseEnter={() => setHoveredIndex(index)}
@@ -65,7 +65,7 @@ const ResourcesDropdown = () => {
             key={index}
             className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
           >
-            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
+            <span className="header-li-dropdown w-fit group-hover:!bg-lightBlack group-hover:!text-white text-start flex ">
               {link.label}
             </span>
           </button>

@@ -52,12 +52,22 @@ const IndustriesDropdown = () => {
     { image: "/images/webp/circular-slide-1.webp" },
     { image: "/images/webp/circular-slide-1.webp" },
     { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/circular-slide-1.webp" },
   ];
   const fallbackImage = "/images/webp/circular-slide-1.webp";
 
   return (
-    <div className="flex gap-8 relative z-[9999] ">
-      <div className="grid grid-cols-4 gap-3 w-full ">
+    <div className="flex gap-6 relative z-[9999] overflow-hidden grow">
+      <div className="grid grid-cols-4 gap-3 w-full overflow-auto no-scrollbar">
         {industriesLinks.map((link, index) => (
           <button
             onMouseEnter={() => setHoveredIndex(index)}
@@ -65,14 +75,14 @@ const IndustriesDropdown = () => {
             key={index}
             className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
           >
-            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-full">
+            <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-fit px-1">
               {link.label}
             </span>
           </button>
         ))}
       </div>
 
-      <div className="relative w-full max-w-[480px] rounded-md overflow-hidden ">
+      <div className="relative w-full max-w-[420px] overflow-hidden ">
         {resourceItems.map((item, index) => (
           <Image
             key={index}
@@ -80,8 +90,8 @@ const IndustriesDropdown = () => {
             alt={industriesLinks[index]?.label || "Industry preview"}
             unoptimized
             width={480}
-            height={320}
-            className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
+            height={290}
+            className={`absolute inset-0 w-full max-h-[290px] h-full object-cover rounded-md transition-opacity duration-300 ${
               hoveredIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           />
@@ -91,8 +101,8 @@ const IndustriesDropdown = () => {
           alt="Select an industry"
           unoptimized
           width={480}
-          height={320}
-          className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
+          height={290}
+          className={`absolute inset-0 w-full max-h-[290px] h-full object-cover rounded-md transition-opacity duration-300 ${
             hoveredIndex === null ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         />

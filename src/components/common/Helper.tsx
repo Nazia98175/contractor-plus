@@ -887,7 +887,7 @@ export const reviews = [
   {
     id: 1,
     userName: "James Bond",
-    profileUrl: "/images/webp/rushville.webp",
+    profileUrl: "/images/webp/rands.webp",
     rating: 4.5,
     videolink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     isModal: true,
@@ -900,7 +900,7 @@ export const reviews = [
   {
     id: 2,
     userName: "Brandon Geiger",
-    profileUrl: "/images/webp/rands.webp",
+    profileUrl: "/images/webp/rushville.webp",
     rating: 4.5,
     videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,
@@ -922,12 +922,277 @@ export const reviews = [
   {
     id: 4,
     userName: "Brandon Geiger",
-    profileUrl: "/images/webp/rands.webp",
+    profileUrl: "/images/webp/rushville.webp",
     rating: 4.5,
     videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
     review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
     userRole: "CEO at Rands Mechanical",
+  },
+];
+
+export const featureContents = [
+  {
+    title: "The first CRM that thinks like a contractor",
+    titleImg: "/images/webp/core-1.webp",
+    description:
+      "Most “contractor CRMs” are just contact pages with a few job links. Contractor+ brings the full picture: ",
+    highlight:
+      "timelines, call transcripts, AI sentiment tracking, and role-specific contacts..",
+  },
+  {
+    title: "Send the right tech to the right job based on proximity",
+    titleImg: "/images/webp/core-2.webp",
+    description:
+      "See team availability and location in real-time to assign jobs faster and smarter. Drag, drop, and delegate",
+    highlight: "based on who’s closest and free. No more calling around. ",
+  },
+  {
+    title: "Collaborate with your team on any job",
+    titleImg: "/images/webp/core-3.webp",
+    description:
+      "Each job has its own built-in group chat, keeping the whole crew on the same page",
+    highlight: "and minimizing texts, missed updates, or miscommunication.",
+  },
+  {
+    title: "Quotes that practically write themselves",
+    titleImg: "/images/webp/core-4.webp",
+    description:
+      "Build accurate, professional estimates fast with live local pricing from Lowe’s, Home Depot",
+    highlight:
+      "and more. Contractor+ pulls your line items, adds markup, and generates client-ready contracts in minutes.",
+  },
+  {
+    title: "The only CRM with property-specific profiles",
+    titleImg: "/images/webp/core-5.webp",
+    description:
+      "Contractor+ is the only platform that lets you track the full history of every property you’ve ever serviced:",
+    highlight: "communications,  photos & documents, invoices, even live cams.",
+  },
+  {
+    title: "The ultimate AI assistant for contractors",
+    titleImg: "/images/webp/core-6.webp",
+    description:
+      "Every call and text gets answered. Every Lead is qualified and entered into your CRM, every Service Request is captured, every Estimate/Quote appointment is scheduled. Big Chief never sleeps..",
+  },
+];
+
+export const fieldServiceData = [
+  {
+    heading: "Customer Management",
+    features: [
+      {
+        title: "Contact profiles + communication history",
+        description:
+          "See every call, text, and email tied to each contact, all in one place.",
+      },
+      {
+        title: "Property profiles",
+        description:
+          "Just like customers, each property gets its own profile with full job history, files, and communication timeline.",
+      },
+      {
+        title: "Role-based contact labeling",
+        description:
+          "Whether owner, tenant, or property manager, label contacts by role within a profile.",
+      },
+      {
+        title: "Client portal access",
+        description:
+          "Give your clients a clean, professional portal to view estimates, invoices, and project updates.",
+      },
+      // {
+      //   title: "Timeline view for every client and property",
+      //   description:
+      //     "Scroll through a full history of every interaction, file, and update tied to each person or place.",
+      // },
+      // {
+      //   title: "Contracts, eSign, and payments",
+      //   description:
+      //     "Quotes become contracts, contracts get signed, and invoices get paid—all in one flow.",
+      // },
+      // {
+      //   title: "Scheduled follow-ups",
+      //   description:
+      //     "Business keeps you busy. Scheduled follow-ups make sure nothing slips through the cracks.",
+      // },
+    ],
+    testimonial: {
+      user: "Excellent field tracking!",
+      username: "John Doe",
+    },
+    img: "/images/webp/field-service-1.webp",
+  },
+  {
+    heading: "Job Management",
+    features: [
+      {
+        title: "Property-based job tracking",
+        description:
+          "Our field service CRM software has property-specific profiles to easily manage work by address, not just customer.",
+      },
+      {
+        title: "Task assignments & status tracking",
+        description:
+          "Keep jobs moving by assigning tasks and instantly seeing what’s done and what’s not.",
+      },
+      {
+        title: "Job notes and photos",
+        description:
+          "Capture site conditions, material needs, and daily progress with notes and images that live in your home service CRM.",
+      },
+      {
+        title: "Estimate builder with live pricing",
+        description:
+          "Create fast, accurate estimates that pull in live pricing from Lowe’s and Home Depot.",
+      },
+      // {
+      //   title: "Contract generation based on job details",
+      //   description:
+      //     "Once your estimate’s locked, the contract writes itself using job data you already entered.",
+      // },
+      // {
+      //   title: "Time clock & mileage logs",
+      //   description:
+      //     "Built-in logs keep your payroll and reimbursements clean and accurate.",
+      // },
+      // {
+      //   title: "Internal job chat",
+      //   description:
+      //     "Bring everyone involved with a job into a dedicated space to communicate.",
+      // },
+      // {
+      //   title: "Gantt chart views",
+      //   description:
+      //     "Map out the full job timeline and adjust schedules so nothing goes sideways.",
+      // },
+    ],
+    img: "/images/webp/field-service-2.webp",
+  },
+  {
+    heading: "Team Management",
+    features: [
+      {
+        title: "Workspace toggle (for multi-location)",
+        description:
+          "Manage multiple locations under one roof and keep everything separate but connected.",
+      },
+      {
+        title: "Live team map view with GPS tracking",
+        description:
+          "See where your team is right now so you can make faster decisions.",
+      },
+      {
+        title: "Drag-and-drop job scheduling",
+        description:
+          "Move things around as needed without redoing the whole day.",
+      },
+      {
+        title: "Availability-based job assignment",
+        description: "Send the right tech based on who’s nearby and available.",
+      },
+      // {
+      //   title: "Task ownership and accountability",
+      //   description:
+      //     "Make it obvious who’s doing what and when it’s due, so everyone is held accountable.",
+      // },
+      // {
+      //   title: "Chat-based job communication",
+      //   description:
+      //     "Every job has its own chat so your crew doesn’t have to dig through texts.",
+      // },
+      // {
+      //   title: "Clock in/out support on mobile",
+      //   description:
+      //     "Finally, there’s a CRM for field services that works well on mobile. Let your team easily clock in and out from our mobile app.",
+      // },
+      // {
+      //   title: "Mileage logging & time tracking",
+      //   description:
+      //     "Log miles and hours automatically and tag them to the right job.",
+      // },
+    ],
+    img: "/images/webp/field-service-3.webp",
+  },
+  {
+    heading: "Communication",
+    features: [
+      {
+        title: "Built-in phone system with IVR and routing",
+        description:
+          "Contractor+ comes with calling and IVR baked in. No more separate telephony solutions.",
+      },
+      {
+        title: "1-click call/text/email directly from CRM",
+        description:
+          "Call, text, or email anyone in your system right from their profile.",
+      },
+      {
+        title: "AI call transcription & recording",
+        description:
+          "Every call is recorded and transcribed so nothing gets missed or misheard.",
+      },
+      {
+        title: "Sentiment analysis on calls",
+        description:
+          "AI picks up the tone so you know how conversations really went.",
+      },
+      // {
+      //   title: "Scheduled messages & follow-ups",
+      //   description: "Never forget to follow up. Just schedule it and move on.",
+      // },
+      // {
+      //   title: "Job-specific chats (internal team use)",
+      //   description:
+      //     "Chat with your crew about a job without losing context or switching apps.",
+      // },
+      // {
+      //   title: "Voicemail logging and playback",
+      //   description: "Listen to any voicemail without ever leaving the CRM.",
+      // },
+      // {
+      //   title: "Communication timeline",
+      //   description:
+      //     "See every call, text, and email for a customer or property in one scrollable thread.",
+      // },
+    ],
+    img: "/images/webp/field-service-1.webp",
+  },
+  {
+    heading: "Lead Management",
+    features: [
+      {
+        title: "Opportunity Kanban board (deal tracker)",
+        description:
+          "Track deal progress visually with a simple board that shows where every lead stands.",
+      },
+      {
+        title: "Custom pipeline stages",
+        description:
+          "Set your own pipeline stages to match how your sales process works.",
+      },
+      {
+        title: "Lead profiles with status filter",
+        description:
+          "Stay focused by filtering leads by status, urgency, or follow-up timing.",
+      },
+      {
+        title: "Follow-up scheduling",
+        description:
+          "Set reminders to follow up so no lead gets forgotten or buried.",
+      },
+      // {
+      //   title: "Property-based leads",
+      //   description:
+      //     "Track new opportunities by address so you can quote with full context.",
+      // },
+      // {
+      //   title: "Upcoming: Workflow automation",
+      //   description:
+      //     "Automation is on the way to help you re-engage cold leads without any manual work.",
+      // },
+    ],
+    img: "/images/webp/field-service-1.webp",
   },
 ];

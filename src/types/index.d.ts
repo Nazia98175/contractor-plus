@@ -17,6 +17,9 @@ export interface ServiceData {
   heading: string;
   features: Feature[];
   testimonial?: Testimonial;
+  img?: string;
+  title: string;
+  content: any;
 }
 
 export type ContractorPlatformsProps = {

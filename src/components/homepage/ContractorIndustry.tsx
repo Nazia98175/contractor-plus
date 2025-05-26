@@ -22,7 +22,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   return (
     <section className="relative">
       <Image
-        className="absolute top-0 w-full left-0  h-full z-0 max-w-[900px] object-center md:block animated-image hidden"
+        className="absolute top-0 w-full left-0  h-full z-20 max-w-[900px] object-center md:block animated-image hidden pointer-events-none"
         src="/images/webp/contractor-left-bg.webp"
         alt="webp bg"
         width={900}
@@ -41,12 +41,12 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       </span>
       <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-8">
         <div className="px-2">
-          <TextAnimation animateOnScroll={true} delay={0.3}>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
             <h3 className="section-heading gradient-text text-center">
               {contractorIndustry?.[0]?.title ?? ""}
             </h3>
           </TextAnimation>
-          <TextAnimation animateOnScroll={true} delay={0.3}>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
             <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
               {contractorIndustry?.[0]?.sub_title ?? ""}
             </p>

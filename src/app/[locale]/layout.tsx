@@ -5,9 +5,9 @@ import "../globals.css";
 import BackToTop from "@/components/common/BackToTop";
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import Footer from "@/components/common/Footer";
-
-import { getFooter, getHeader } from "@/services/layout";
-import Header from "@/components/common/Header";
+import { getHomePage } from "@/services/homepage";
+import { getFooter } from "@/services/layout";
+import ParticlesComponent from "@/components/common/ParticlesComponent";
 export const metadata: Metadata = {
   title:
     "Contractor - The only operating system for build & service contractors",
@@ -25,14 +25,19 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages({ locale });
   const useParams = await params;
-  // const [header, footer] = await Promise.all([
-  //   getHeader(useParams.locale, "&populate=*"),
-  //   getFooter(
-  //     useParams?.locale,
-  //     "&populate[sections][populate]=*&populate[bottomLinks]=*"
-  //   ),
-    
-  // ]);
+  
+  const [homePageContent, contractPlatformsData, footer] = await Promise.all([
+    getHomePage(useParams.locale, "&populate=*"),
+    getHomePage(
+      useParams.locale,
+      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
+    ),
+    getFooter(
+      useParams?.locale,
+      "&populate[sections][populate]=*&populate[bottomLinks]=*"
+    ),
+   
+  ]);
   return (
     <html
       lang="en"
@@ -43,7 +48,8 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           {/* <Header header={header?.data?.navbar} /> */}
           {children}
-          {/* <Footer footer={footer?.data} /> */}
+          <Footer footer={footer?.data} />
+          <ParticlesComponent id="star-particles" />
         </NextIntlClientProvider>
       </body>
     </html>

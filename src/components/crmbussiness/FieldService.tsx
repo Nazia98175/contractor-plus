@@ -1,42 +1,35 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import FieldServiceCard from "./FieldServiceCard";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
+import { useGSAP } from "@gsap/react";
+import { fieldServiceData } from "../common/Helper";
+import TextAnimation from "../common/TextAnimation";
+
+interface TheServiceProps{
+  fieldService: any,
+  slug: string
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FieldService: React.FC = () => {
+const FieldService: React.FC<TheServiceProps> = ({fieldService , slug}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Get translated data as array
   const t = useTranslations();
 
-  const fieldServiceRaw = t.raw("fieldService") as {
-    service: Record<
-      string,
-      {
-        heading: string;
-        features: { title: string; description: string }[];
-        testimonial?: { user: string; username: string };
-      }
-    >;
-  };
-
-  // Convert object to array of services
-  const fieldServiceData = Object.values(fieldServiceRaw.service);
-
-  useEffect(() => {
+  useGSAP(() => {
     if (typeof window === "undefined") return;
 
     // Reduced multiplier for better spacing
     const stackOffset = -8;
     // Improved height calculation - only multiply by 1 instead of 3
     const totalHeight = `${
-      100 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
+      50 + (fieldServiceData.length - 1) * Math.abs(stackOffset)
     }vh`;
 
     if (sectionRef.current) {
@@ -107,40 +100,38 @@ const FieldService: React.FC = () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
-  }, []);
-
-  useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, fieldServiceData.length);
-  }, []);
+  }, [fieldServiceData]);
 
   return (
     <section
       className="relative bg-kuroiBlack z-20 pt-14 sm:pt-20 lg:pt-2 px-2"
       ref={containerRef}
     >
-      <h2 className="text-xl font-semibold text-secondary md:hidden text-center max-w-[813px] mx-auto pb-6">
-        There’s finally a CRM for field service that does more than just store
-        your contacts
-      </h2>
-      <h2 className="section-heading hidden md:block text-center max-w-[813px] mx-auto gradient-text pb-6">
-        There’s finally a CRM for field service that does more than just store
-        your contacts
-      </h2>
-
+      <TextAnimation animateOnScroll={true} delay={0.3}>
+        <h2 className="text-xl font-semibold text-secondary md:hidden text-center max-w-[813px] mx-auto pb-6">
+          {/* There’s finally a CRM for field service that does more than just store
+          your contacts */}
+          {fieldService?.title}
+        </h2>
+      </TextAnimation>{" "}
+      <TextAnimation animateOnScroll={true} delay={0.3}>
+        <h2 className="section-heading hidden md:block text-center max-w-[813px] mx-auto gradient-text pb-6">
+          {fieldService?.title}
+        </h2>{" "}
+      </TextAnimation>
       <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" />
-
       <div ref={sectionRef} className="relative px-2 h-fit">
-        {fieldServiceData.map((service, index) => (
+        {fieldService?.cardsDetail.map((service:any, index:any) => (
           <div
             key={index}
-            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-full overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
+            className={`absolute top-0 max-w-[1272px]  mx-auto z-20 left-1/2 -translate-x-1/2  w-full max-h-[882px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]  ${
               index === fieldServiceData.length - 1 ? "pb-0" : ""
             }`}
             ref={(el) => {
               cardRefs.current[index] = el;
             }}
           >
-            <FieldServiceCard service={service} />
+            <FieldServiceCard slug={slug} idx={index} service={service} />
           </div>
         ))}
       </div>

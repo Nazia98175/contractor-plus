@@ -10,22 +10,19 @@ interface Blogs {
   blogTitle: string;
   blogDescription: string;
   blogUrl: string;
-  
 }
-interface BlogHeading{
-title: string,
-btnTxt: string;
-url: string;
+interface BlogHeading {
+  title: string;
+  btnTxt: string;
+  url: string;
 }
 
 interface TheBlogProps {
   blogs: Blogs[];
-  blogHeading: BlogHeading[]
+  blogHeading: BlogHeading[];
 }
 
-const OurBlogs: React.FC<TheBlogProps> = ({
-  blogs , blogHeading
-})=> {
+const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
   const t = useTranslations("blogs");
   const blogList = t.raw("blogList") as {
     id: number;
@@ -74,19 +71,19 @@ const OurBlogs: React.FC<TheBlogProps> = ({
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
- console.log(blogHeading , "jnfksdn")
+
   return (
     <section className=" pt-[18px] pb-[38px] md:pt-12 md:pb-[82px] px-4 bg-white relative z-10">
       <div className="max-w-[1294px] w-full mx-auto">
         <div className="hidden  lg:flex flex-col md:flex-row justify-between items-center mb-6">
-          <TextAnimation animateOnScroll={true} delay={0.3}>
+          <TextAnimation animateOnScroll={true} delay={0.2}>
             <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2">
               {blogHeading?.[0]?.title}
             </h2>
           </TextAnimation>
           <div className="hidden md:block">
             <button className="bg-red-linear h-10 primary-btn gap-2">
-             {blogHeading?.[1]?.btnTxt}
+              {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
             </button>
           </div>
@@ -109,14 +106,17 @@ const OurBlogs: React.FC<TheBlogProps> = ({
           distance={50}
           className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
         >
-          {blogs.map((article , index) => (
+          {blogs.map((article, index) => (
             <article
               key={blogListMobile?.[index]?.id}
               className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
             >
               <img
                 className="absolute top-16 right-0 w-full"
-                style={{ maxWidth: blogListMobile?.[index]?.imageWidth, objectFit: "contain" }}
+                style={{
+                  maxWidth: blogListMobile?.[index]?.imageWidth,
+                  objectFit: "contain",
+                }}
                 src={blogListMobile?.[index]?.imageSrc}
                 alt="blog images"
               />
@@ -160,14 +160,17 @@ const OurBlogs: React.FC<TheBlogProps> = ({
               768: { slidesPerView: 2.6, spaceBetween: 16 },
             }}
           >
-            {blogs.map((article , index) => (
+            {blogs.map((article, index) => (
               <article
                 key={blogListMobile?.[index]?.id}
                 className="xl:pt-10 h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
               >
                 <img
                   className="absolute top-16 right-0 w-full"
-                  style={{ maxWidth: blogListMobile?.[index]?.imageWidth, objectFit: "contain" }}
+                  style={{
+                    maxWidth: blogListMobile?.[index]?.imageWidth,
+                    objectFit: "contain",
+                  }}
                   src={blogListMobile?.[index]?.imageSrc}
                   alt="blog images"
                 />

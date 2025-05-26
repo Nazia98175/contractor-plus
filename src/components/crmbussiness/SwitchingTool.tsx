@@ -4,10 +4,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import TextAnimation from "../common/TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
+interface TheSwitchingToolProps{
+switchingTool: any
+}
 
-const SwitchingTool = () => {
+const SwitchingTool: React.FC<TheSwitchingToolProps> = ({switchingTool}) => {
   const sectionRef = useRef(null);
   const cardRef1 = useRef<HTMLDivElement>(null);
   const cardRef2 = useRef<HTMLDivElement>(null);
@@ -152,18 +156,20 @@ const SwitchingTool = () => {
       <img
         className="absolute top-0 left-0 w-full h-full z-[-7] object-contain hidden md:block"
         src="/images/webp/switch-tool-bg.webp"
-        alt=""
+        alt="switch-tool-bg"
       />
       <img
         className="top-0 left-0 w-full h-full z-[-10] object-center block md:hidden absolute"
         src="/images/png/switch-tool-mobile-bg.png"
-        alt=""
+        alt="switch-tool-bg"
       />
-
-      <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
-        If you're switching between tools outside of your field service CRM,
-        it's not good enough
-      </h3>
+      <TextAnimation animateOnScroll={true} delay={0.2}>
+        <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
+          {/* If you're switching between tools outside of your field service CRM,
+          it's not good enough */}
+          {switchingTool?.title}
+        </h3>
+      </TextAnimation>
 
       <div className="relative flex lg:flex-row flex-col justify-center items-center pb-16 max-w-[1180px] mx-auto mt-10">
         <article
@@ -180,8 +186,7 @@ const SwitchingTool = () => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            It takes forever to look up pricing, and it’s easy for errors to
-            slip through
+            {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
 
@@ -199,7 +204,8 @@ const SwitchingTool = () => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            There’s no easy way to upsell or present multiple package options
+            {/* There’s no easy way to upsell or present multiple package options */}
+            {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
 
@@ -217,8 +223,9 @@ const SwitchingTool = () => {
             />
           </div>
           <h4 className="switch-tool-text font-medium 1xl:text-[22px] xl:text-xl text-lg font-jakarta xl:pt-6 pt-[18px]">
-            You lose jobs because your quote didn’t stand out, or someone else
-            convinced them first
+            {/* You lose jobs because your quote didn’t stand out, or someone else
+            convinced them first */}
+            {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>
       </div>

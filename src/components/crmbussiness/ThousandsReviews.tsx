@@ -5,8 +5,14 @@ import { ReviewIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import { reviews } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
+import TextAnimation from "../common/TextAnimation";
 
-const ThousandsReviews = () => {
+interface Props{
+  data: any,
+  reviews:any;
+}
+
+const ThousandsReviews:React.FC<Props> = ({data , reviews}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -14,18 +20,20 @@ const ThousandsReviews = () => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-
-  // When modal is open, marquee should be paused
-  const isMarqueePaused = isModalOpen;
+  console.log(data?.title?.split("4.7 ★")?.[0] , "splitt")
   return (
     <section className="py-7 bg-white xl:pt-[72px]">
       <div className="main-container space-y-9 xl:space-y-16 relative z-20">
-        <h2 className="section-heading !font-black lg:!font-semibold crm-gradient text-center max-w-[951px] mx-auto">
-          There’s a reason we have a {}
-          <ReviewIcon />
-          {}
-          average across thousands of reviews
-        </h2>
+        <TextAnimation animateOnScroll={true} delay={0.2}>
+          <h2 className="section-heading !font-black lg:!font-semibold crm-gradient text-center max-w-[951px] mx-auto">
+            {/* There’s a reason we have a {} */}
+            {data?.title?.split("4.7 ★")?.[0]} { " "}
+            <ReviewIcon />
+            {}
+            {data?.title?.split("4.7 ★")?.[1]}
+            {/* average across thousands of reviews */}
+          </h2>
+        </TextAnimation>
 
         <SliderLayout
           wrapperClassName="relative w-full"
@@ -39,7 +47,7 @@ const ThousandsReviews = () => {
           }}
           autoplay
         >
-          {reviews.map((review, index) => (
+          {reviews.map((review:any, index:any) => (
             <CrmReviewCard
               review={review}
               key={index}

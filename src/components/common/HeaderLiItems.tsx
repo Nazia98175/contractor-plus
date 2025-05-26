@@ -127,6 +127,7 @@ const HeaderLiItems = () => {
             <Link
               key={index}
               href={item.link}
+              onMouseEnter={handleMouseLeave}
               className="header-li whitespace-nowrap flex items-center gap-1 py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer hover:text-superSilver text-kuroiBlack "
             >
               {item.label}
@@ -165,14 +166,15 @@ const HeaderLiItems = () => {
       {/* Dropdown Panel */}
       <div
         ref={dropdownRef}
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] mx-auto z-50 max-w-[1920px] w-full max-h-[83vh] 3xl:max-h-[800px] flex flex-col shadow-c3 bg-doctor2 overflow-hidden ${
+        className={`absolute left-0 right-0 top-[calc(100%+0px)] mx-auto z-50 max-w-[1920px] w-full  max-h-[80vh]  flex flex-col shadow-c3 bg-doctor2 overflow-hidden ${
           activeMenu ? "p-7" : ""
         }`}
         style={{
           visibility: "hidden",
         }}
+        onWheel={(e) => e.stopPropagation()}
       >
-        <div ref={contentRef} className="overflow-auto">
+        <div ref={contentRef} className="overflow-hidden grow flex flex-col ">
           {activeMenu === "whycontractordesktop" && <WhyContractorDropdown />}
           {activeMenu === "features" && <FeaturesDropdown />}
           {activeMenu === "industries" && <IndustriesDropdown />}

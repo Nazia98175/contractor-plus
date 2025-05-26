@@ -20,13 +20,6 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   return (
     <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
       <div className="bg-athenaBlue rotate-45  w-full max-w-[800px] h-6 blur-[40px] absolute right-0 top-56"></div>
-      {/* <Image
-        width={769}
-        height={800}
-        src="/images/webp/red.webp"
-        alt="Red Circle For designing"
-        className="absolute top-0 left-0 hidden lg:block h-full z-10 pointer-events-none object-cover"
-      /> */}
       <AnimatedLineAura />
       <img
         src="/images/webp/hero-mobile-bg.webp"

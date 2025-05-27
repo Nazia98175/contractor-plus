@@ -11,7 +11,7 @@ interface Props {
   createBtn: string;
 }
 
-const CrmSercive: React.FC<Props> = ({data , ncc , createBtn}) => {
+const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -41,7 +41,7 @@ const CrmSercive: React.FC<Props> = ({data , ncc , createBtn}) => {
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <h3 className="section-heading text-white text-center">
-             {data?.title}
+              {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
@@ -68,7 +68,7 @@ const CrmSercive: React.FC<Props> = ({data , ncc , createBtn}) => {
                     <CheckIcon />
                   </span>
                   <span className="text-sm font-semibold font-myriad text-white">
-                   {ncc}
+                    {ncc}
                   </span>
                 </p>
               </div>

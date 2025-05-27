@@ -40,7 +40,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           staggerDelay={0.3}
           animationDuration={0.8}
           distance={50}
-          delay={3.5}
+          delay={3.1}
           animateOnScroll={false}
           className="flex flex-wrap-reverse justify-center items-center gap-4 sm:gap-5 w-full"
         >

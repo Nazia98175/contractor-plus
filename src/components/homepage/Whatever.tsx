@@ -6,10 +6,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useRef } from "react";
+import CardReveal from "../common/CardReveal";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
-import TextAnimation from "../common/TextAnimation";
-import CardReveal from "../common/CardReveal";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -95,7 +94,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             ease: "power2.out",
             scrollTrigger,
           });
-        }, 1000);
+        }, 3000);
       };
 
       animate(left1Ref.current, "47%", "25%", -150, -80);
@@ -122,7 +121,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             ease: "power2.out",
             scrollTrigger,
           });
-        }, 1000);
+        }, 3000);
       }
     },
     { scope: sectionRef }

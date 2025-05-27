@@ -35,7 +35,78 @@ import {
   LayoutList,
   FileCode,
 } from "lucide-react";
-import { Review } from "@/types";
+import { Platform, Review } from "@/types";
+
+
+export const platforms: Platform[] = [
+  {
+    name: "App Store",
+    logo: "/images/svg/apple-rating.svg",
+    rating: 5,
+  },
+  {
+    name: "Google Play",
+    logo: "/images/webp/play-google.webp",
+    rating: 5,
+  },
+  {
+    name: "G2 Crowd",
+    logo: "/images/webp/g2Rating.webp",
+    rating: 5,
+  },
+  {
+    name: "Capterra",
+    logo: "/images/webp/capterraRating.webp",
+    rating: 5,
+  },
+  {
+    name: "Software Advice",
+    logo: "images/svg/software-advice-rating.svg",
+    rating: 5,
+  },
+];
+
+
+export const softwareCardData = [
+    {
+      text: "There’s no easy way to upsell or present multiple package options",
+    },
+    {
+      text: "Field techs hate using them because they don’t make things easier",
+    },
+    {
+    text: "You still have to build workarounds where features fall short",
+    },
+
+
+];
+export const blackPlatforms: Platform[] = [
+  {
+    name: "App Store",
+    logo: "/images/webp/black-app-store.webp",
+    rating: 5,
+  },
+  {
+    name: "Google Play",
+    logo: "/images/webp/black-google-play.webp",
+    rating: 5,
+  },
+  {
+    name: "G2 Crowd",
+    logo: "/images/webp/g2Rating.webp",
+    rating: 5,
+  },
+  {
+    name: "Capterra",
+    logo: "/images/webp/capterraRating.webp",
+    rating: 5,
+  },
+  {
+    name: "Software Advice",
+    logo: "images/webp/black-software.webp",
+    rating: 5,
+  },
+];
 
 export const menuItems = [
   {

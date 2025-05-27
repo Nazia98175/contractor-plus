@@ -1,4 +1,5 @@
 import Header from "@/components/common/Header";
+import { platforms } from "@/components/common/Helper";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import ContractorPlatforms from "@/components/homepage/ContractorPlatforms";
 import CoreFeatures from "@/components/homepage/CoreFeatures";
@@ -38,7 +39,7 @@ export default async function Home({
         <div className="relative">
           <Header />
           <Hero homePageContent={homePageContent?.data} />
-          <TrustBar />
+          <TrustBar platforms={platforms}  />
           <TheEngineContractor
             engineContractor={homePageContent?.data?.engineContractor}
           />

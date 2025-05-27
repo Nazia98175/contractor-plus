@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -118,7 +119,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             data={crmPageContent?.data?.[0]?.section9}
           />
 
-          <TrustBar />
+          <TrustBar platforms={platforms} />
           <Faq faq={faq?.data?.[0]?.faqs} />
           <BlogPosts
             data={crmPageContent?.data?.[0]?.section11}

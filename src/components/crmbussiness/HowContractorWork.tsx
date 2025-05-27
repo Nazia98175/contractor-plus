@@ -26,7 +26,7 @@ const HowContractorWork = () => {
       {/* Right: Content */}
       <div className="w-full max-w-[742px] space-y-4 lg:space-y-5">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="gradient-text-2 text-2xl md:text-3xl xl:text-4xl font-semibold tracking-[-0.72px] leading-[140%]">
+          <h3 className="gradient-text-2 heading">
             Made for how contractors, property managers, and REIs really work
           </h3>
         </TextAnimation>

@@ -103,7 +103,7 @@ export const TwitterIcon = () => (
     <g clipPath="url(#clip0_0_30085)">
       <path
         fill="#656C73"
-        className=" group-hover:fill-romanRed transition-all duration-200 ease-in-out"
+        className="group-hover:fill-romanRed transition-all duration-200 ease-in-out"
         d="M14.169.75h2.747l-6 6.904L18 17.015h-5.566L8.096 11.34l-4.988 5.675H.361l6.434-7.373L0 .75h5.71l3.94 5.205zm-.976 14.602h1.518L4.88 2.304H3.217z"
       ></path>
     </g>
@@ -563,7 +563,7 @@ export const ArrowIcon = () => (
     height="20"
     viewBox="0 0 20 20"
     fill="none"
-    className="group-hover:translate-x-1 duration-200 ease-in-out mt-0.5"
+    className="mt-0.5 duration-200 ease-in-out group-hover:translate-x-1"
   >
     <path
       fillRule="evenodd"
@@ -1072,8 +1072,8 @@ export const AdminWorkIcon = () => (
 );
 export const SidebarArrowIcon = ({ isOpen }: { isOpen: boolean }) => (
   <svg
-    className={`w-5 h-5 transition-transform duration-300 ease-in-out ${
-      isOpen ? "transform rotate-180" : ""
+    className={`h-5 w-5 transition-transform duration-300 ease-in-out ${
+      isOpen ? "rotate-180 transform" : ""
     }`}
     fill="none"
     stroke="currentColor"
@@ -1455,7 +1455,7 @@ export const BlogBtnIcon = () => (
 
 export const ModalCrossIcon = () => (
   <svg
-    className="hover:rotate-180 transition-all duration-200 ease-in-out"
+    className="transition-all duration-200 ease-in-out hover:rotate-180"
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="20"
@@ -1534,7 +1534,7 @@ export const QuickEstimateIcon = () => (
     <path
       d="M49.0833 8.25H12.9167C10.075 8.25 7.75 10.575 7.75 13.4167V49.5833C7.75 52.425 10.075 54.75 12.9167 54.75H49.0833C51.925 54.75 54.25 52.425 54.25 49.5833V13.4167C54.25 10.575 51.925 8.25 49.0833 8.25ZM49.0833 49.5833H12.9167V13.4167H49.0833V49.5833ZM16.0167 20.3917H28.9333V24.2667H16.0167V20.3917ZM33.5833 41.3167H46.5V45.1917H33.5833V41.3167ZM33.5833 34.6H46.5V38.475H33.5833V34.6ZM20.6667 47H24.5417V41.8333H29.7083V37.9583H24.5417V32.7917H20.6667V37.9583H15.5V41.8333H20.6667V47ZM36.425 28.6583L40.0417 25.0417L43.6583 28.6583L46.5 26.075L42.8833 22.4583L46.5 18.8417L43.6583 16L40.0417 19.6167L36.425 16L33.5833 18.8417L37.2 22.4583L33.5833 26.075L36.425 28.6583Z"
       fill="#1C2731"
-      className="group-hover:fill-white transition-all duration-300 ease-in-out"
+      className="transition-all duration-300 ease-in-out group-hover:fill-white"
     />
   </svg>
 );
@@ -1552,14 +1552,14 @@ export const ManagementIcon = () => (
       clipRule="evenodd"
       d="M15.4617 41.3392C24.3032 40.0476 30.3908 40.1587 39.2439 41.3845C39.885 41.4774 40.4709 41.7992 40.8932 42.2904C41.3156 42.7816 41.546 43.4091 41.5417 44.0569C41.5417 44.6769 41.3286 45.2788 40.9437 45.749C40.2728 46.5687 39.5855 47.3749 38.8822 48.167H42.2935C42.5079 47.9112 42.7236 47.6503 42.9419 47.3855C43.7081 46.446 44.126 45.2705 44.1251 44.0582C44.1251 41.4426 41.8621 38.4151 39.2439 38.0534C30.1815 36.7992 24.8211 36.5019 15.7084 37.8337C13.0631 38.2199 10.5417 41.4594 10.5417 44.0931C10.5417 45.262 10.9228 46.4181 11.6448 47.3545C11.858 47.6309 12.0685 47.9022 12.2777 48.1683H15.6064C14.952 47.3849 15.0385 47.6848 14.4167 46.8753C14.0473 46.3907 13.6904 44.7025 13.6921 44.0931C13.6921 42.702 14.1248 41.5343 15.4617 41.3392ZM27.3334 28.792C28.3512 28.792 29.3589 28.5915 30.2992 28.2021C31.2395 27.8126 32.0938 27.2417 32.8135 26.5221C33.5331 25.8024 34.104 24.9481 34.4935 24.0078C34.883 23.0675 35.0834 22.0597 35.0834 21.042C35.0834 20.0242 34.883 19.0165 34.4935 18.0762C34.104 17.1359 33.5331 16.2816 32.8135 15.5619C32.0938 14.8423 31.2395 14.2714 30.2992 13.8819C29.3589 13.4925 28.3512 13.292 27.3334 13.292C25.278 13.292 23.3067 14.1085 21.8533 15.5619C20.3999 17.0153 19.5834 18.9866 19.5834 21.042C19.5834 23.0974 20.3999 25.0687 21.8533 26.5221C23.3067 27.9755 25.278 28.792 27.3334 28.792ZM27.3334 32.667C30.7171 32.6453 33.2472 30.6058 35.6289 28.2021C38.0012 25.8077 38.8822 23.7826 38.8822 21.042C38.8822 18.3014 37.4558 15.6863 35.0834 13.292C32.7018 10.8883 30.074 9.41699 27.3334 9.41699C24.5928 9.41699 21.9907 10.9139 19.5834 13.292C17.1633 15.6827 15.6064 18.3014 15.6064 21.042C15.6064 23.7826 17.1046 26.2642 19.0424 28.2021C20.9803 30.1399 23.656 32.6906 27.3334 32.667Z"
       fill="#1C2731"
-      className="group-hover:fill-white transition-all duration-300 ease-in-out"
+      className="transition-all duration-300 ease-in-out group-hover:fill-white"
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M27.3334 50.75C40.1738 50.75 50.5834 40.3405 50.5834 27.5C50.5834 14.6595 40.1738 4.25 27.3334 4.25C14.4929 4.25 4.08337 14.6595 4.08337 27.5C4.08337 40.3405 14.4929 50.75 27.3334 50.75ZM27.3334 54.625C41.6011 54.625 54.4584 41.7677 54.4584 27.5C54.4584 13.2323 41.6011 0.375 27.3334 0.375C13.0656 0.375 0.208374 13.2323 0.208374 27.5C0.208374 41.7677 13.0656 54.625 27.3334 54.625Z"
       fill="#1C2731"
-      className="group-hover:fill-white transition-all duration-300 ease-in-out"
+      className="transition-all duration-300 ease-in-out group-hover:fill-white"
     />
   </svg>
 );
@@ -1575,13 +1575,13 @@ export const JobFormIcon = () => (
     <path
       d="M20.9359 29.7781H19.1474V33.2225H20.9359V29.7781ZM42.3974 33.2225H44.1859V29.7781H42.3974V33.2225ZM35.2435 40.1114H33.4551V43.5559H35.2435V40.1114ZM42.3974 43.5559H44.1859V40.1114H42.3974V43.5559ZM20.9359 19.4448H19.1474V22.8892H20.9359V19.4448ZM28.0897 22.8892H29.8782V19.4448H28.0897V22.8892ZM42.3974 7.38921L43.6636 6.16988L43.1378 5.66699H42.3974V7.38921ZM53.1282 17.7225H54.9166V17.0095L54.3944 16.5032L53.1282 17.7225ZM20.9359 33.2225H42.3974V29.7781H20.9359V33.2225ZM35.2435 43.5559H42.3974V40.1114H35.2435V43.5559ZM20.9359 22.8892H28.0897V19.4448H20.9359V22.8892ZM49.5512 53.8892H13.782V57.3337H49.5512V53.8892ZM11.9935 52.167V10.8337H8.41663V52.167H11.9935ZM13.782 9.11144H42.3974V5.66699H13.782V9.11144ZM51.3397 17.7225V52.167H54.9166V17.7225H51.3397ZM41.1312 8.60855L51.8619 18.9419L54.3944 16.5032L43.6636 6.16988L41.1312 8.60855ZM13.782 53.8892C13.3077 53.8892 12.8528 53.7078 12.5174 53.3848C12.182 53.0618 11.9935 52.6238 11.9935 52.167H8.41663C8.41663 53.5373 8.98191 54.8514 9.98811 55.8204C10.9943 56.7893 12.359 57.3337 13.782 57.3337V53.8892ZM49.5512 57.3337C50.9742 57.3337 52.3389 56.7893 53.3451 55.8204C54.3513 54.8514 54.9166 53.5373 54.9166 52.167H51.3397C51.3397 52.6238 51.1513 53.0618 50.8159 53.3848C50.4805 53.7078 50.0256 53.8892 49.5512 53.8892V57.3337ZM11.9935 10.8337C11.9935 10.3769 12.182 9.93884 12.5174 9.61586C12.8528 9.29288 13.3077 9.11144 13.782 9.11144V5.66699C12.359 5.66699 10.9943 6.21134 9.98811 7.18027C8.98191 8.14921 8.41663 9.46337 8.41663 10.8337H11.9935Z"
       fill="#1C2731"
-      className="group-hover:fill-white transition-all duration-300 ease-in-out"
+      className="transition-all duration-300 ease-in-out group-hover:fill-white"
     />
   </svg>
 );
 export const FaqIcon = ({ isOpen }: { isOpen: boolean }) => (
   <svg
-    className="w-full h-full"
+    className="h-full w-full"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -1605,8 +1605,8 @@ export const FaqIcon = ({ isOpen }: { isOpen: boolean }) => (
       stroke="white"
       strokeWidth="2"
       strokeLinecap="round"
-      className={`transition-transform origin-center duration-300 ${
-        isOpen ? "rotate-90 scale-y-0" : "rotate-0 scale-y-100"
+      className={`origin-center transition-transform duration-300 ${
+        isOpen ? "scale-y-0 rotate-90" : "scale-y-100 rotate-0"
       }`}
     />
   </svg>
@@ -1966,46 +1966,6 @@ export const BlurIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
-export const HeroBgIcon = ({ className = "" }) => (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="102 101.93 2161 825"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <g filter="url(#filter0_f_797_6314)">
-      <path
-        d="M1202.48 101.929L102 109.034V926.929H2263L928.735 577.855L1202.48 101.929Z"
-        fill="#0C0D11"
-      ></path>
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_797_6314"
-        x="0.0999985"
-        y="0.0287094"
-        width="2364.8"
-        height="1028.8"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        ></feBlend>
-        <feGaussianBlur
-          stdDeviation="50.95"
-          result="effect1_foregroundBlur_797_6314"
-        ></feGaussianBlur>
-      </filter>
-    </defs>
-  </svg>
-);
 
 export const SideIcon = () => (
   <svg
@@ -2082,7 +2042,7 @@ export const SliderRedLineIcon = () => (
 export const ReviewIcon = () => (
   <svg
     width="100%"
-    className="max-w-16 sm:max-w-24 lg:max-w-[109px] inline"
+    className="inline max-w-16 sm:max-w-24 lg:max-w-[109px]"
     height="100%"
     viewBox="0 0 109 33"
     fill="none"

@@ -95,41 +95,44 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               trackProperties={section5?.data?.[0]?.section5}
             />
           )}
-          <HowContractorWork />
-          <KindAdorable
-            slug={useParams?.slug}
-            kindAdorable={section6?.data?.[0]?.section6}
-          />
-          <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
-          <ThousandsReviews
-            data={crmPageContent?.data?.[0]?.section8}
-            reviews={reviews?.data?.[0]?.reviews?.reviews}
-          />
+          <div className="bg-white">
+            <HowContractorWork />
+            <KindAdorable
+              slug={params?.slug}
+              kindAdorable={section6?.data?.[0]?.section6}
+            />
+            <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
+            <ThousandsReviews
+              data={crmPageContent?.data?.[0]?.section8}
+              reviews={reviews?.data?.[0]?.reviews?.reviews}
+            />
+          </div>
           <div className="relative w-full">
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.section9}
             />
-            {/* Cloud Layer 1 */}
-            <div className="absolute -top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
-              <div className="bg-white h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
-              <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
-                <img
-                  src="/images/webp/claud-2.webp"
-                  alt="Cloud Layer 1"
-                  className="h-full object-cover w-full"
-                />
-              </div>
+          </div>
+          {/* Cloud Layer 1 */}
 
-              {/* Cloud Layer 2 */}
-              <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
-                <img
-                  src="/images/webp/claud-2.webp"
-                  alt="Cloud Layer 2"
-                  className="h-full object-cover w-full"
-                />
-              </div>
+          <div className="absolute -top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
+            <div className="bg-white h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
+            <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
+              <img
+                src="/images/webp/claud-2.webp"
+                alt="Cloud Layer 1"
+                className="h-full object-cover w-full"
+              />
+            </div>
+
+            {/* Cloud Layer 2 */}
+            <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
+              <img
+                src="/images/webp/claud-2.webp"
+                alt="Cloud Layer 2"
+                className="h-full object-cover w-full"
+              />
             </div>
           </div>
 

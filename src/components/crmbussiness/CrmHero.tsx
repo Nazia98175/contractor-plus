@@ -26,16 +26,16 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
         </div>
         <div className="px-2 pt-8 md:pt-0">
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            {/* <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
+            <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
               A{" "}
               <span className="bg-petal text-transparent bg-clip-text w-fit inline">
                 field service CRM
               </span>{" "}
               that runs your business, not just stores contacts
-            </h2> */}
-            <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
-              {hero?.heroTitle}
             </h2>
+            {/* <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
+              {hero?.heroTitle}
+            </h2> */}
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.2}>
             <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium max-w-[826px] mx-auto mb-[26px] text-center">

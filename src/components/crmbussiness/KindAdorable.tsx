@@ -3,13 +3,13 @@ import { BlackLogo } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CompareCard from "./CompareCard";
 import CompareTable from "./CompareTable";
-interface TheServiceProps{
-  kindAdorable: any,
-  slug: string
+interface TheServiceProps {
+  kindAdorable: any;
+  slug: string;
 }
-const KindAdorable: React.FC<TheServiceProps> = ({slug , kindAdorable}) => {
+const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   return (
-    <div className="bg-white px-2 pt-8 md:pt-16 lg:pt-[91px]">
+    <div className="px-2 pt-8 md:pt-16 lg:pt-[91px]">
       <section className="overflow-x-auto max-w-[1092px] mx-auto">
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2 className="section-heading gradient-text-2 !font-black text-center lg:!font-semibold w-fit mx-auto">

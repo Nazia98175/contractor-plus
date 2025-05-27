@@ -7,13 +7,13 @@ type FaqItemType = {
   question: string;
   answer: string;
 };
-interface Props{
-  faq: any
+interface Props {
+  faq: any;
 }
-const Faq : React.FC<Props> = ({faq}) => {
+const Faq: React.FC<Props> = ({ faq }) => {
   const [FaqOpen, setOpen] = useState<number | null>(0);
   const handleToggle = (index: number) => {
-   setOpen((prev) => (prev === index ? null : index));
+    setOpen((prev) => (prev === index ? null : index));
   };
 
   const faqitems = [
@@ -58,9 +58,7 @@ const Faq : React.FC<Props> = ({faq}) => {
     <section className="py-10 relative overflow-hidden  z-20">
       <div className="hidden lg:block absolute top-0 right-0 max-w-[70px] rotate-[35deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-15 pointer-events-none"></div>
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h3 className="section-heading text-white text-center">
-         {faq?.title}
-        </h3>
+        <h3 className="section-heading text-white text-center">{faq?.title}</h3>
       </TextAnimation>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-text text-secondary text-center pt-4">

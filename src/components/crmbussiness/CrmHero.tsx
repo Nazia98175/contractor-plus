@@ -7,7 +7,7 @@ interface TheHeroProps {
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
   return (
-    <section className="relative">
+    <section className="relative z-20">
       <div className="bg-kuroiBlack blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none bubbling-animation">
         <RedClipIcon />
@@ -25,28 +25,22 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           />
         </div>
         <div className="px-2 pt-8 md:pt-0">
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          <TextAnimation animateOnScroll={false} delay={3}>
             <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
-              A{" "}
-              <span className="bg-petal text-transparent bg-clip-text w-fit inline">
-                field service CRM
-              </span>{" "}
-              that runs your business, not just stores contacts
-            </h2>
-            {/* <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
               {hero?.heroTitle}
-            </h2> */}
+            </h2>
           </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          <TextAnimation animateOnScroll={false} delay={3}>
             <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium max-w-[826px] mx-auto mb-[26px] text-center">
               {hero?.heroDescription}
             </p>
           </TextAnimation>
         </div>
         <CardReveal
-          staggerDelay={3}
+          staggerDelay={0.3}
           animationDuration={0.8}
           distance={50}
+          delay={3.5}
           animateOnScroll={false}
           className="flex flex-wrap-reverse justify-center items-center gap-4 sm:gap-5 w-full"
         >
@@ -86,21 +80,16 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             </p>
           </div>
         </CardReveal>
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
-          className="pt-9 max-w-[900px] mx-auto hidden md:block relative z-30"
-        >
+        <div className="pt-9 max-w-[900px] mx-auto hidden md:block relative z-30">
           <Image
             className="w-full h-full object-cover"
             src="/images/webp/crm-hero.webp"
             width={900}
             height={616}
             alt="crm-hero"
+            priority
           />
-        </CardReveal>
+        </div>
       </div>
     </section>
   );

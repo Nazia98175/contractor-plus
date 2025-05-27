@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import CrmReviewCard from "./CrmReviewCard";
 import { ReviewIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
-import { reviews } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
+import SliderLayout from "../common/SliderLayout";
 import TextAnimation from "../common/TextAnimation";
+import CrmReviewCard from "./CrmReviewCard";
 
 interface Props {
   data: any;
@@ -22,8 +21,8 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
   };
   console.log(data?.title?.split("4.7 ★")?.[0], "splitt");
   return (
-    <section className="py-7 bg-white xl:pt-[72px]">
-      <div className="main-container space-y-9 xl:space-y-16 relative z-20">
+    <section>
+      <div className="main-container space-y-9 xl:space-y-16 relative z-20 py-7 xl:pt-[72px]">
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2 className="section-heading !font-black lg:!font-semibold crm-gradient text-center max-w-[951px] mx-auto">
             {/* There's a reason we have a {} */}

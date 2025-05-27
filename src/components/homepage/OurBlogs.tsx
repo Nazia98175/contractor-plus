@@ -120,7 +120,6 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             />
           ))}
         </CardReveal>
-
         <div className="sm:hidden block">
           <SliderLayout
             autoplay

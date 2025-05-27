@@ -27,32 +27,32 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         height={1920}
       />
       {/* Device Images */}
-      <CardReveal
+      {/* <CardReveal
         staggerDelay={0.15}
         animationDuration={0.8}
         distance={50}
         animateOnScroll={true}
-      >
-        <div className="flex relative z-30 justify-center items-center px-2">
-          <div className="bg-white-linear hidden md:block absolute left-0 z-10 -bottom-[84px] h-[267px] w-full"></div>
-          <Image
-            src="/images/webp/mix-screens.webp"
-            className="max-w-[1098px] w-full object-cover img-shadow md:block hidden"
-            alt="Mobile"
-            width={1098}
-            height={578}
-            unoptimized
-          />
-          <Image
-            src="/images/webp/mix-screens-mobile.webp"
-            className="max-w-[1098px] w-full object-cover img-shadow block md:hidden mb-10 md:mb-0 "
-            alt="Mobile"
-            width={1098}
-            height={578}
-            unoptimized
-          />
-        </div>
-      </CardReveal>
+      > */}
+      <div className="flex relative z-30 justify-center items-center px-2">
+        <div className="bg-white-linear hidden md:block absolute left-0 z-10 -bottom-[84px] h-[267px] w-full"></div>
+        <Image
+          src="/images/webp/mix-screens.webp"
+          className="max-w-[1098px] w-full object-cover img-shadow md:block hidden"
+          alt="Mobile"
+          width={1098}
+          height={578}
+          unoptimized
+        />
+        <Image
+          src="/images/webp/mix-screens-mobile.webp"
+          className="max-w-[1098px] w-full object-cover img-shadow block md:hidden mb-10 md:mb-0 "
+          alt="Mobile"
+          width={1098}
+          height={578}
+          unoptimized
+        />
+      </div>
+      {/* </CardReveal> */}
 
       {/* Heading + Paragraph */}
       <div className="relative z-30 md:-mt-3 px-2">
@@ -61,8 +61,9 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
             {trackProperties?.title}
           </h2>
         </TextAnimation>
+
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <p className="max-w-[885px] mx-auto paragraph-style text-center">
+          <p className="max-w-[950px] mx-auto paragraph-style text-center">
             {trackProperties?.sub_title}
           </p>
         </TextAnimation>
@@ -78,17 +79,17 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
+          delay={0.3}
           animateOnScroll={true}
+          className="flex gap-2.5 flex-col items-center justify-center mt-3.5 md:mt-7"
         >
-          <div className="flex gap-2.5 flex-col items-center justify-center mt-3.5 md:mt-7">
-            <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
-              {trackProperties?.btnText} <SideIcon />
-            </button>
-            <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
-              {/* <CheckIcon /> */}
-              {ncc}
-            </button>
-          </div>
+          <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
+            {trackProperties?.btnText} <SideIcon />
+          </button>
+          <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
+            {/* <CheckIcon /> */}
+            {ncc}
+          </button>
         </CardReveal>
       </div>
     </section>

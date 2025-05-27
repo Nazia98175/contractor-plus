@@ -31,7 +31,7 @@ const HowContractorWork = () => {
           </h3>
         </TextAnimation>
 
-        <ul className="space-y-3 lg:space-y-5">
+        <ul className="space-y-2 sm:space-y-3 lg:space-y-5">
           {features.map((feature, index) => (
             <li
               key={index}

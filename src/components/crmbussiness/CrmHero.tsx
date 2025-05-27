@@ -7,7 +7,7 @@ interface TheHeroProps {
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
   return (
-    <section className="relative z-20">
+    <section className="relative z-10">
       <div className="bg-kuroiBlack blur-[30px]  h-[100px] w-full hidden md:block bottom-[-10px] left-0 absolute z-40"></div>
       <span className="top-[112px] md:top-[-202px] right-[-194px] md:right-0 absolute pointer-events-none bubbling-animation">
         <RedClipIcon />
@@ -26,18 +26,18 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
         </div>
         <div className="px-2 pt-8 md:pt-0">
           <TextAnimation animateOnScroll={false} delay={3}>
-            <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-[26px]">
+            <h2 className="gradient-2 w-fit main-heading text-start sm:text-center mx-auto mb-2 md:mb-4 lg:mb-[26px]">
               {hero?.heroTitle}
             </h2>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={3}>
-            <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium max-w-[826px] mx-auto mb-[26px] text-center">
+            <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium max-w-[826px] mx-auto mb-4 lg:mb-[26px] text-center">
               {hero?.heroDescription}
             </p>
           </TextAnimation>
         </div>
         <CardReveal
-          staggerDelay={0.3}
+          staggerDelay={0.2}
           animationDuration={0.8}
           distance={50}
           delay={3.1}

@@ -92,13 +92,14 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             slug={params?.slug}
             fieldService={section4?.data?.[0]?.section4}
           />
-          {params?.slug === "crm" && (
-            <TrackProperties
-              ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-              trackProperties={section5?.data?.[0]?.section5}
-            />
-          )}
+
           <div className="bg-white">
+            {params?.slug === "crm" && (
+              <TrackProperties
+                ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+                trackProperties={section5?.data?.[0]?.section5}
+              />
+            )}
             <HowContractorWork />
             <KindAdorable
               slug={params?.slug}

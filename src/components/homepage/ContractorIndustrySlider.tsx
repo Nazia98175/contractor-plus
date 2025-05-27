@@ -5,6 +5,7 @@ import "swiper/css/effect-coverflow";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
 import TiltedCardEffect from "../common/TiltedCardEffect";
+import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
 
 // Define types for the show information
 interface Show {
@@ -211,27 +212,7 @@ const ContractorIndustrySlider: React.FC = () => {
         className="h-full w-full !py-10 relative "
       >
         {showInfo.map((show, index) => (
-          <TiltedCardEffect
-            key={index}
-            maxTilt={10}
-            speed={0.4}
-            easeType="expo.out"
-            throttleSpeed={15}
-            className="w-full h-full"
-          >
-            <div className="relative ease-in-out w-full bg-lightBlack border border-winterWay shadow-c3 p-2.5 rounded-xl">
-              <h2 className="text-white text-sm sm:text-xl font-bold text-center mb-2.5">
-                {show.title}
-              </h2>
-              <Image
-                width={205}
-                height={205}
-                src={show.image}
-                alt={show.title}
-                className="object-cover w-full relative"
-              />
-            </div>
-          </TiltedCardEffect>
+          <ContractorIndustrySliderCard show={show} key={index} />
         ))}
       </SliderLayout>
     </div>

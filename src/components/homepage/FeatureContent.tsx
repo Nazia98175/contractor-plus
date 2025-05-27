@@ -24,21 +24,21 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           ref={(el) => {
             contentRefs.current[index] = el;
           }}
-          className="p-3.5 bg-doctor rounded-2xl w-full space-y-2.5 md:space-y-3 lg:space-y-[18px] xl:scroll-mt-24 lg:scroll-mt-16 md:scroll-mt-12 scroll-mt-8"
+          className="bg-doctor w-full scroll-mt-8 space-y-2.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
         >
-          <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-wallStreet leading-[100%]">
+          <h4 className="text-wallStreet text-lg leading-[100%] font-bold sm:text-xl md:text-2xl">
             {content.title}
           </h4>
-          <div className="bg-white p-3 h-[230px] lg:h-[245px] w-full relative rounded-lg overflow-hidden">
+          <div className="relative h-[230px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
             <Image
               src={content.titleImg}
               alt="Feature"
               fill
-              className="object-cover rounded-md"
+              className="rounded-md object-cover"
             />
-            <BlurIcon className="absolute inset-0 w-full h-full mix-blend-luminosity" />
+            <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" />
           </div>
-          <p className="text-sm sm:text-base lg:text-lg font-medium text-wallStreet max-w-[615px] space-y-2">
+          <p className="text-wallStreet max-w-[615px] space-y-2 text-sm font-medium sm:text-base lg:text-lg">
             {content.description}
             {content.highlight && (
               <span className="text-secondary"> {content.description}</span>

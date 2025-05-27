@@ -64,7 +64,8 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
         }
 
         .diagonal-path {
-          animation: diagonal-pulse 8s ease-in-out infinite,
+          animation:
+            diagonal-pulse 8s ease-in-out infinite,
             diagonal-shift 10s ease-in-out infinite;
           transform-origin: center center;
         }

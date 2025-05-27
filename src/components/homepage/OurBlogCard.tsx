@@ -13,7 +13,7 @@ const OurBlogCard = ({
   return (
     <article
       key={blogListMobile?.[index]?.id}
-      className="xl:pt-10  h-fit md:h-[400px] overflow-hidden w-full max-w-[406px] relative"
+      className="relative h-fit w-full max-w-[406px] overflow-hidden md:h-[400px] xl:pt-10"
     >
       <img
         className="absolute top-16 right-0 w-full"
@@ -24,10 +24,10 @@ const OurBlogCard = ({
         src={blogListMobile?.[index]?.imageSrc}
         alt="blog images"
       />
-      <div className="py-6 relative overflow-hidden flex flex-col justify-between w-[207px] h-[207px]">
+      <div className="relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden py-6">
         <Image
           fill={true}
-          className="absolute top-0 -left-1 w-full h-full z-10 pointer-events-none object-contain"
+          className="pointer-events-none absolute top-0 -left-1 z-10 h-full w-full object-contain"
           src="images/svg/blog-bg.svg"
           alt="blog angle"
         />
@@ -36,20 +36,20 @@ const OurBlogCard = ({
           height={200}
           src={blogListMobile?.[index]?.backgroundImage}
           alt={article.blogTitle}
-          className="absolute h-full max-h-[160px] w-fit object-cover left-0 bottom-0 z-10"
+          className="absolute bottom-0 left-0 z-10 h-full max-h-[160px] w-fit object-cover"
         />
       </div>
-      <div className="relative py-6 px-4 w-[346px] mt-2">
+      <div className="relative mt-2 w-[346px] px-4 py-6">
         <Image
           fill={true}
-          className="absolute top-0 left-0 h-full w-full z-0"
+          className="absolute top-0 left-0 z-0 h-full w-full"
           src="/images/webp/blog-angle2.webp"
           alt="blog angle"
         />
-        <h3 className="text-base relative z-10 md:text-lg text-winterWay font-extrabold pb-1 font-jakarta">
+        <h3 className="text-winterWay font-jakarta relative z-10 pb-1 text-base font-extrabold md:text-lg">
           {article.blogTitle}
         </h3>
-        <p className="text-secondary relative z-10 font-medium text-xs max-w-[255px] font-jakarta">
+        <p className="text-secondary font-jakarta relative z-10 max-w-[255px] text-xs font-medium">
           {article.blogDescription}
         </p>
       </div>

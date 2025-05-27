@@ -114,7 +114,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   };
 
   const validChildren = React.Children.toArray(children).filter(
-    (child) => child !== null && child !== undefined
+    (child) => child !== null && child !== undefined,
   );
 
   if (validChildren.length === 0) {

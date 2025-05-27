@@ -25,10 +25,10 @@ export function RadialBlur({
 
   return (
     <div
-      className={"absolute w-full h-full pointer-events-none overflow-hidden"}
+      className={"pointer-events-none absolute h-full w-full overflow-hidden"}
     >
       <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
           width: size,
           height: size,

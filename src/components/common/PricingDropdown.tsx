@@ -10,11 +10,11 @@ const PricingDropdown = () => {
   }[];
 
   return (
-    <article className="flex flex-col justify-between p-2 gap-6 grow">
-      <ul className="grid grid-cols-3 gap-x-6 gap-y-3 w-full overflow-auto">
+    <article className="flex grow flex-col justify-between gap-6 p-2">
+      <ul className="grid w-full grid-cols-3 gap-x-6 gap-y-3 overflow-auto">
         {pricingLinks.map((link, index) => (
           <li
-            className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
+            className="group hover:bg-superSilver p-[6px] duration-200 ease-linear"
             key={index}
           >
             <Link

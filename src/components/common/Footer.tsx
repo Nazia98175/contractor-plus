@@ -59,17 +59,17 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const legalLinks = t.raw("legalLinks");
 
   return (
-    <footer className=" py-10 md:py-[62px] w-full relative overflow-hidden z-20">
+    <footer className="relative z-20 w-full overflow-hidden py-10 md:py-[62px]">
       {/* <ParticlesComponent id="star-particles" /> */}
-      <span className="top-[-314px] left-0 hidden lg:block absolute pointer-events-none">
+      <span className="pointer-events-none absolute top-[-314px] left-0 hidden lg:block">
         <FooterAnimation />
       </span>
       <div className="main-container">
-        <div className="space-y-5 max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6">
+        <div className="mx-auto flex max-w-[414px] flex-col items-center justify-center space-y-5 pb-6 text-center">
           <FooterLogoIcon />
         </div>
 
-        <div className="hidden md:flex flex-wrap justify-center gap-3 w-full pt-7">
+        <div className="hidden w-full flex-wrap justify-center gap-3 pt-7 md:flex">
           {footer.sections.map((section, idx) => (
             <FooterSection
               key={idx}
@@ -83,15 +83,15 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </div>
 
         {/* Mobile Accordion */}
-        <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
+        <div className="mx-auto grid max-w-[350px] grid-cols-2 md:hidden">
           {footer.sections.map((section, idx) => (
-            <div key={idx} className="max-w-[150px] w-full">
+            <div key={idx} className="w-full max-w-[150px]">
               <button
                 onClick={() => toggleSection(section.title)}
-                className="flex flex-col justify-between px-4 w-full py-2 text-start"
+                className="flex w-full flex-col justify-between px-4 py-2 text-start"
               >
-                <div className="flex justify-between items-center w-full">
-                  <h3 className="text-base font-bold text-white font-jakarta">
+                <div className="flex w-full items-center justify-between">
+                  <h3 className="font-jakarta text-base font-bold text-white">
                     {section.title}
                   </h3>
                   <span
@@ -154,22 +154,22 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           ))}
         </div> */}
 
-        <div className="flex justify-between items-center gap-3 pt-4">
-          <div className="hidden md:flex gap-3 items-center">
-            <p className="text-xs text-secondary font-medium font-montserrat">
+        <div className="flex items-center justify-between gap-3 pt-4">
+          <div className="hidden items-center gap-3 md:flex">
+            <p className="text-secondary font-montserrat text-xs font-medium">
               {t("poweredBy")}
             </p>
             <Image
               height={72}
               width={72}
               unoptimized
-              className="max-w-[72px] w-full mx-auto"
+              className="mx-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
             />
           </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center w-full md:w-fit gap-4">
-            <div className="flex flex-col-reverse md:flex-row items-center gap-4 text-xs text-secondary font-medium font-montserrat">
+          <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row md:w-fit">
+            <div className="text-secondary font-montserrat flex flex-col-reverse items-center gap-4 text-xs font-medium md:flex-row">
               <p>
                 © {currentYear} {footer?.copyrightTxt}
               </p>
@@ -193,15 +193,15 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 <LinkdinIcon />
               </Link>
             </div>
-            <div className="md:hidden flex gap-3 items-center">
-              <p className="text-xs text-secondary font-medium font-montserrat">
+            <div className="flex items-center gap-3 md:hidden">
+              <p className="text-secondary font-montserrat text-xs font-medium">
                 {t("poweredBy")}
               </p>
               <Image
                 height={72}
                 width={72}
                 unoptimized
-                className="max-w-[72px] w-full"
+                className="w-full max-w-[72px]"
                 src="/images/webp/footer-logo.webp"
                 alt="Powered by Logo"
               />
@@ -222,8 +222,8 @@ const FooterSection = ({
   title: string;
   links: { text: string; href: string }[];
 }) => (
-  <div className="max-w-[270px] w-full">
-    <h3 className="text-base font-bold text-white font-jakarta pb-2">
+  <div className="w-full max-w-[270px]">
+    <h3 className="font-jakarta pb-2 text-base font-bold text-white">
       {title}
     </h3>
     <div className="flex flex-col gap-2">
@@ -239,9 +239,9 @@ export const FooterLinkItem = ({
 }: {
   list: { text: string; href: string };
 }) => (
-  <div className="group relative w-full h-fit md:w-fit">
+  <div className="group relative h-fit w-full md:w-fit">
     <Link
-      className="text-xs leading-[140%] md:text-sm lg:text-base text-decemberSky font-jakarta hover:text-romanRed transition-all duration-200 ease-in-out"
+      className="text-decemberSky font-jakarta hover:text-romanRed text-xs leading-[140%] transition-all duration-200 ease-in-out md:text-sm lg:text-base"
       href={list.href}
     >
       {list.text}

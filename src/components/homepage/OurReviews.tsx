@@ -39,15 +39,15 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
   }));
 
   return (
-    <section className="pt-[25px] pb-[35px] md:pt-10 md:pb-16 bg-white relative z-20">
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-3 main-container text-center md:text-start">
+    <section className="relative z-20 bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
+      <div className="main-container flex flex-col items-center justify-between gap-3 text-center md:text-start lg:flex-row">
         <CardReveal
           staggerDelay={3}
           animationDuration={0.8}
           distance={50}
           animateOnScroll={true}
         >
-          <h3 className="section-heading text-black text-center md:text-start gradient-text-2">
+          <h3 className="section-heading gradient-text-2 text-center text-black md:text-start">
             {reviews?.[0]?.title ?? ""}
           </h3>
         </CardReveal>
@@ -56,10 +56,10 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
           animationDuration={0.8}
           distance={50}
           once={true}
-          className="flex flex-col sm:flex-row gap-4 md:gap-6 items-center"
+          className="flex flex-col items-center gap-4 sm:flex-row md:gap-6"
         >
           <Image
-            className="max-w-[135px] w-full block md:hidden"
+            className="block w-full max-w-[135px] md:hidden"
             src="/images/svg/capterra-icon.svg"
             alt="capterra icon"
             width={135}
@@ -69,7 +69,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
 
           <div className="flex items-center gap-2">
             <Image
-              className="max-w-[135px] w-full hidden md:block"
+              className="hidden w-full max-w-[135px] md:block"
               src="/images/webp/g2Rating.webp"
               alt="capterra icon"
               width={135}
@@ -77,7 +77,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
               priority
             />
             <Image
-              className="max-w-[80px] w-full hidden md:block"
+              className="hidden w-full max-w-[80px] md:block"
               src="/images/svg/capterra-icon2.svg"
               alt="capterra icon"
               width={80}
@@ -87,18 +87,18 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
           </div>
           <div>
             <div className="flex items-center gap-3">
-              <h3 className="text-winterWay text-sm font-bold font-jakarta">
+              <h3 className="text-winterWay font-jakarta text-sm font-bold">
                 {reviews?.[0]?.sub_title?.split("4.9")?.[0] ?? ""}
               </h3>
 
-              <p className="text-base font-extrabold text-dancingJewel font-jakarta">
+              <p className="text-dancingJewel font-jakarta text-base font-extrabold">
                 4.9
               </p>
               <span>
                 <GroupStartIcon />
               </span>
             </div>
-            <p className="text-winterWay text-xs font-medium pt-1 font-jakarta text-center md:text-start">
+            <p className="text-winterWay font-jakarta pt-1 text-center text-xs font-medium md:text-start">
               {/* {t("basedOn", { count: 1320 })} */}
               {reviews?.[0]?.sub_title?.split("4.9")?.[1] ?? ""}
             </p>
@@ -106,11 +106,11 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
         </CardReveal>
       </div>
       <div className="relative">
-        <div className="absolute h-[380px] left-0 w-[200px] md:w-[370px] bg-testimonial-left z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        <div className="absolute h-[380px] right-0 w-[200px] md:w-[370px] bg-testimonial-right z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+        <div className="bg-testimonial-left pointer-events-none absolute left-0 z-40 hidden h-[380px] w-[200px] blur-2xl md:w-[370px] lg:block"></div>
+        <div className="bg-testimonial-right pointer-events-none absolute right-0 z-40 hidden h-[380px] w-[200px] blur-2xl md:w-[370px] lg:block"></div>
 
         {/* First row of reviews - scrolling right */}
-        <div className="pt-[43px] md:pt-[60px] lg:pt-[80px] w-full">
+        <div className="w-full pt-[43px] md:pt-[60px] lg:pt-[80px]">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {translatedReviews.map((review) => (
               <ReviewCard
@@ -127,7 +127,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
         </div>
 
         {/* Second row of reviews - scrolling left */}
-        <div className="hidden md:block w-full">
+        <div className="hidden w-full md:block">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
             {translatedReviews.map((review) => (
               <ReviewCard

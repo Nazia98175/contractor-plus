@@ -142,34 +142,34 @@ const FeaturesDropdown = ({ isVisible = true }) => {
   }
 
   return (
-    <div className="overflow-hidden grow flex flex-col">
-      <div className="grid grid-cols-3 overflow-auto no-scrollbar">
+    <div className="flex grow flex-col overflow-hidden">
+      <div className="no-scrollbar grid grid-cols-3 overflow-auto">
         {sections.map((section) => (
           <div key={section.key}>
-            <i className="text-sm font-semibold text-lightBlack h-[15px] mb-2.5 flex">
+            <i className="text-lightBlack mb-2.5 flex h-[15px] text-sm font-semibold">
               {t(section.headingKey)}
             </i>
-            <ul className="space-x-6 space-y-3 w-full pb-8">
+            <ul className="w-full space-y-3 space-x-6 pb-8">
               {section.items.map((featureId) => (
                 <li
-                  className="group hover:bg-superSilver duration-200 ease-linear p-[6px]"
+                  className="group hover:bg-superSilver p-[6px] duration-200 ease-linear"
                   key={featureId}
                 >
                   <Link href="/" className="group">
-                    <div className="flex gap-2.5 items-start">
+                    <div className="flex items-start gap-2.5">
                       <span>
                         {featureIcons[featureId as keyof typeof featureIcons]}
                       </span>
-                      <div className="header-li-dropdown group-hover:bg-lightBlack group-hover:!text-white flex items-center gap-2.5">
+                      <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">
                         {t(`${section.key}.${featureId}.label`)}
                         {newFeatures[featureId as keyof typeof newFeatures] && (
-                          <div className="px-2 h-5 flex items-center justify-center border border-dancingJewel bg-softMint rounded-full text-xs font-semibold font-myriad tracking-[0.4px] text-dancingJewel">
+                          <div className="border-dancingJewel bg-softMint font-myriad text-dancingJewel flex h-5 items-center justify-center rounded-full border px-2 text-xs font-semibold tracking-[0.4px]">
                             {t("newBadge")}
                           </div>
                         )}
                       </div>
                     </div>
-                    <p className="text-sm font-inter text-lightBlack">
+                    <p className="font-inter text-lightBlack text-sm">
                       {t(`${section.key}.${featureId}.description`)}
                     </p>
                   </Link>
@@ -179,7 +179,7 @@ const FeaturesDropdown = ({ isVisible = true }) => {
           </div>
         ))}
       </div>
-      <div className="flex items-center justify-between gap-6 left-0 font-inter sticky bottom-0 w-full bg-doctor2">
+      <div className="font-inter bg-doctor2 sticky bottom-0 left-0 flex w-full items-center justify-between gap-6">
         <Link className="all-features-button group" href="/">
           {t("seeAllFeatures")}
           <ArrowIcon />

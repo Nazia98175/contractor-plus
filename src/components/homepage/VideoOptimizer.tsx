@@ -72,7 +72,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             loop
             playsInline
             poster={poster}
-            className="w-full h-full object-cover lg:object-center 3xl:object-cover min-h-[500px]"
+            className="3xl:object-cover h-full min-h-[500px] w-full object-cover lg:object-center"
           >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.

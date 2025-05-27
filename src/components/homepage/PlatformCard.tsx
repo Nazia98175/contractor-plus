@@ -13,11 +13,11 @@ interface PlatformCardProps {
 
 const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
   return (
-    <div className="flex flex-col-reverse justify-between w-fit gap-3.5 sm:flex-col items-center relative z-20">
+    <div className="relative z-20 flex w-fit flex-col-reverse items-center justify-between gap-3.5 sm:flex-col">
       <img
         src={platform.logo}
         alt={`${platform.name} rating`}
-        className="h-8 md:h-10 object-contain max-w-[155px]"
+        className="h-8 max-w-[155px] object-contain md:h-10"
       />
       <div className="flex">
         {[...Array(5)].map((_, i) => (

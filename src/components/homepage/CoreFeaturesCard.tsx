@@ -50,7 +50,7 @@ const CoreFeaturesCard = () => {
       const rect = (button as HTMLElement).getBoundingClientRect();
       const base = (featureButtons[0] as HTMLElement).getBoundingClientRect();
       positions.push(
-        window.innerWidth >= 1024 ? rect.top - base.top : rect.left - base.left
+        window.innerWidth >= 1024 ? rect.top - base.top : rect.left - base.left,
       );
     });
 
@@ -71,7 +71,7 @@ const CoreFeaturesCard = () => {
         });
       }
     },
-    [calculateButtonPositions]
+    [calculateButtonPositions],
   );
 
   useEffect(() => {
@@ -125,7 +125,7 @@ const CoreFeaturesCard = () => {
                 ease: "power2.out",
               });
             },
-          })
+          }),
         );
       }
 
@@ -138,7 +138,7 @@ const CoreFeaturesCard = () => {
             pin: navEl,
             id: "mobile-pin",
             onUpdate: (self) => setProgressValue(self.progress),
-          })
+          }),
         );
       }
 
@@ -167,7 +167,7 @@ const CoreFeaturesCard = () => {
                 setActiveFeature(index);
               }
             },
-          })
+          }),
         );
       });
 
@@ -196,13 +196,13 @@ const CoreFeaturesCard = () => {
   return (
     <section
       ref={containerRef}
-      className="lg:p-6 md:px-3 flex lg:flex-row flex-col gap-9 relative overflow-visible mt-7"
+      className="relative mt-7 flex flex-col gap-9 overflow-visible md:px-3 lg:flex-row lg:p-6"
     >
       <div
         ref={navContainerRef}
         className={`$${
           isMobile
-            ? "w-full bg-white z-30 px-2 shadow-c2 transition-all duration-200"
+            ? "shadow-c2 z-30 w-full bg-white px-2 transition-all duration-200"
             : ""
         }`}
         style={{ willChange: isMobile ? "transform" : "auto" }}
@@ -243,7 +243,7 @@ const CoreFeaturesCard = () => {
         />
       </div>
 
-      <div className="space-y-4 lg:space-y-8 overflow-visible lg:max-w-[639px] w-full">
+      <div className="w-full space-y-4 overflow-visible lg:max-w-[639px] lg:space-y-8">
         <FeatureContent
           featureContents={featureContents}
           contentRefs={contentRefs}

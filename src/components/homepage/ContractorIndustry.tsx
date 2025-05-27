@@ -23,24 +23,24 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   return (
     <section className="relative overflow-hidden">
       <Image
-        className="absolute top-0 w-full left-0  h-full z-20 max-w-[900px] object-center md:block animated-image hidden pointer-events-none"
+        className="animated-image pointer-events-none absolute top-0 left-0 z-20 hidden h-full w-full max-w-[900px] object-center md:block"
         src="/images/webp/contractor-left-bg.webp"
         alt="webp bg"
         width={900}
         height={700}
       />
       <Image
-        className="absolute top-0 w-full h-full bubbling-animation z-0 right-0 object-center max-w-[700px] lg:block hidden svgTwinkle"
+        className="bubbling-animation svgTwinkle absolute top-0 right-0 z-0 hidden h-full w-full max-w-[700px] object-center lg:block"
         src="/images/webp/contractor-right-bg.webp"
         alt="webp bg"
         width={300}
         height={300}
       />
 
-      <span className="absolute top-0 w-full h-full left-0 block md:hidden">
+      <span className="absolute top-0 left-0 block h-full w-full md:hidden">
         <SliderRedLineIcon />
       </span>
-      <div className="max-w-[1010px] w-full mx-auto relative z-20 pt-7 md:pt-8">
+      <div className="relative z-20 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
         <div className="px-2">
           <CardReveal
             staggerDelay={3}
@@ -59,12 +59,12 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
             distance={50}
             animateOnScroll={true}
           >
-            <p className="text-base font-medium sm:font-normal text-center text-superSilver font-jakarta py-4">
+            <p className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
               {contractorIndustry?.[0]?.sub_title ?? ""}
             </p>
           </CardReveal>
-          <div className="hidden md:flex justify-center items-center">
-            <button className="bg-red-linear h-10 primary-btn">
+          <div className="hidden items-center justify-center md:flex">
+            <button className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.[1]?.btnTxt ?? ""}
             </button>
           </div>

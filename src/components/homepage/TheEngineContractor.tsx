@@ -23,20 +23,20 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
 
   return (
     <section className="relative overflow-hidden">
-      <div className="block sm:hidden absolute bottom-0 left-[-10px] max-w-[150px] w-full h-[150px] rounded-[10px] bg-athenaBlue blur-[45px] opacity-10 pointer-events-none"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute bottom-0 left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
       <div
         ref={ref}
-        className="lg:bg-[url('/images/webp/engine-bg.web')] w-full bg-[100%_100%] overflow-hidden sm:border sm:border-secondary/10 lg:bg-cover bg-no-repeat max-w-[98%] min-[1440px]:max-w-[1364px] mx-auto  bg-none rounded-[22px] sm:mt-[40px] mt-10 relative z-30"
+        className="sm:border-secondary/10 relative z-30 mx-auto mt-10 w-full max-w-[98%] overflow-hidden rounded-[22px] bg-none bg-[100%_100%] bg-no-repeat min-[1440px]:max-w-[1364px] sm:mt-[40px] sm:border lg:bg-[url('/images/webp/engine-bg.web')] lg:bg-cover"
       >
-        <div className="absolute color-animation-1 bottom-[-40px] left-[50%] max-w-[60px] -rotate-45 w-full h-[200px] rounded-[10px] bg-athenaBlue blur-[30px] opacity-10 pointer-events-none hidden lg:block"></div>
-        <div className="absolute color-animation bottom-[-40px] right-[0px] max-w-[300px] w-full h-[200px] rounded-[10px] bg-[#EE1E25] blur-[30px] opacity-75 pointer-events-none hidden md:block"></div>
-        <div className="flex md:justify-between flex-col items-center md:flex-row justify-center pb-8 gap-8 md:py-8 md:!pl-[54px] md:!pr-[30px]">
-          <div className="flex flex-col gap-1.5 w-full">
+        <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-[-40px] left-[50%] hidden h-[200px] w-full max-w-[60px] -rotate-45 rounded-[10px] opacity-10 blur-[30px] lg:block"></div>
+        <div className="color-animation pointer-events-none absolute right-[0px] bottom-[-40px] hidden h-[200px] w-full max-w-[300px] rounded-[10px] bg-[#EE1E25] opacity-75 blur-[30px] md:block"></div>
+        <div className="flex flex-col items-center justify-center gap-8 pb-8 md:flex-row md:justify-between md:py-8 md:!pr-[30px] md:!pl-[54px]">
+          <div className="flex w-full flex-col gap-1.5">
             <h2 className="section-heading gradient-engine-text text-center md:text-left">
               {engineContractor?.[0]?.title}&nbsp;
               {inView ? (
                 <CountUp
-                  className="xl:min-w-[123px] lg:min-w-[141px] sm:min-w-[105px]  xl:max-w-[123px] lg:max-w-[141px] sm:max-w-[105px] max-w-[73px] min-w-[73px]  w-fit inline-flex"
+                  className="inline-flex w-fit max-w-[73px] min-w-[73px] sm:max-w-[105px] sm:min-w-[105px] lg:max-w-[141px] lg:min-w-[141px] xl:max-w-[123px] xl:min-w-[123px]"
                   start={0}
                   end={57163}
                   duration={3}
@@ -49,17 +49,17 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
               {engineContractor?.[1]?.txt}
             </h2>
           </div>
-          <div className="flex flex-col max-w-[356px] w-full -space-y-2  items-center">
+          <div className="flex w-full max-w-[356px] flex-col items-center -space-y-2">
             <img
               src="/images/webp/engine.webp"
-              className="sm:max-w-[322px] w-full max-w-[90%] object-contain"
+              className="w-full max-w-[90%] object-contain sm:max-w-[322px]"
               alt="The engine 57,163 contractors run on"
             />
-            <div className="p-6 w-full bg-black-red-linear backdrop-blur-sm rounded-[14px] overflow-hidden font-grotesk text-sm font-bold text-lightBlackGrey space-y-1">
-              <h3 className="text-2xl font-medium text-doctor">
+            <div className="bg-black-red-linear font-grotesk text-lightBlackGrey w-full space-y-1 overflow-hidden rounded-[14px] p-6 text-sm font-bold backdrop-blur-sm">
+              <h3 className="text-doctor text-2xl font-medium">
                 {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}
               </h3>
-              <p className="text-xs sm:text-sm font-jakarta">
+              <p className="font-jakarta text-xs sm:text-sm">
                 <span className="text-monstrousGreen">+11</span>{" "}
                 {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
               </p>

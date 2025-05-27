@@ -7,15 +7,15 @@ const CoreFeatures = () => {
   const t = useTranslations("corefeature");
 
   return (
-    <section className="bg-white relative z-20">
-      <div className="max-w-[950px] mx-auto px-2 pt-12 text-center md:text-start">
+    <section className="relative z-20 bg-white">
+      <div className="mx-auto max-w-[950px] px-2 pt-12 text-center md:text-start">
         <CardReveal
           staggerDelay={3}
           animationDuration={0.8}
           distance={50}
           animateOnScroll={true}
         >
-          <h3 className="sub-heading text-lightBlack font-semibold  w-full md:w-fit">
+          <h3 className="sub-heading text-lightBlack w-full font-semibold md:w-fit">
             Contractor+ operates like your business really runs
           </h3>
         </CardReveal>

@@ -47,7 +47,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   }, [textRef.current]);
   return (
     <section ref={containerRef} className="relative z-20">
-      <div className="main-container flex flex-col gap-9 md:gap-10 lg:pt-[42px] pt-[37px] relative">
+      <div className="main-container relative flex flex-col gap-9 pt-[37px] md:gap-10 lg:pt-[42px]">
         <h2
           ref={textRef}
           id="text-animation"
@@ -60,36 +60,36 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-y-[30px] sm:gap-y-8 gap-4 3xl:gap-8"
+          className="3xl:gap-8 flex flex-wrap justify-center gap-4 gap-y-[30px] sm:gap-y-8 lg:flex-nowrap lg:justify-between"
         >
           {contractPlatformsData?.data?.platforms?.platforms.map(
             (obj: PlatformItem, index: number) => (
               <article
                 key={index}
-                className="p-2 w-full sm:w-[48%] max-w-[430px] group cursor-pointer"
+                className="group w-full max-w-[430px] cursor-pointer p-2 sm:w-[48%]"
               >
                 {/* <h3 className="mb-3 lg:mb-4 text-white duration-200 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold px-1.5 py-1 w-fit">
                   {obj.title}
                 </h3> */}
 
-                <div className="relative animate-border rounded-xl">
+                <div className="animate-border relative rounded-xl">
                   <Image
                     width={405}
                     height={187}
                     src={contractPlatforms?.[index]?.img}
                     alt={`${obj.title}`}
-                    className="rounded-md overflow-hidden relative z-[10px]"
+                    className="relative z-[10px] overflow-hidden rounded-md"
                   />
                 </div>
-                <p className="paragraph-text px-2 text-decemberSky group-hover:text-lightBlack text-center mt-5 group-hover:bg-whiteSmoke white duration-200">
+                <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-2 text-center duration-200">
                   {`${obj.description}`}
                 </p>
               </article>
-            )
+            ),
           )}
         </CardReveal>
       </div>
-      <div className="bg-kuroiBlack w-full h-[3px] absolute bottom-[-1px] z-30"></div>
+      <div className="bg-kuroiBlack absolute bottom-[-1px] z-30 h-[3px] w-full"></div>
     </section>
   );
 };

@@ -17,14 +17,14 @@ const Features = ({ features }: { features: any }) => {
   }));
 
   return (
-    <section className="bg-white sm:px-2 xl:pt-[45px] pt-11 lg:pb-[46px] pb-6 relative z-20">
-      <div className="main-container sm:!px-2 !px-0">
-        <div className=" bg-doctor lg:rounded-[32px] sm:rounded-4xl xl:p-9 lg:py-8 md:py-6 py-4">
+    <section className="relative z-20 bg-white pt-11 pb-6 sm:px-2 lg:pb-[46px] xl:pt-[45px]">
+      <div className="main-container !px-0 sm:!px-2">
+        <div className="bg-doctor py-4 sm:rounded-4xl md:py-6 lg:rounded-[32px] lg:py-8 xl:p-9">
           <CardReveal
             staggerDelay={0.15}
             animationDuration={0.8}
             distance={50}
-            className="hidden lg:grid lg:grid-cols-3 gap-6"
+            className="hidden gap-6 lg:grid lg:grid-cols-3"
           >
             {featureData.map((obj, index) => (
               <FeatureCard obj={obj} key={index} />

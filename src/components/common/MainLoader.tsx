@@ -3,8 +3,8 @@ import { FooterLogoIcon } from "./Icons";
 
 const MainLoader = () => {
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-kuroiBlack">
-      <div className="max-w-[414px] mx-auto text-center flex flex-col justify-center items-center pb-6 bubbling-animation">
+    <div className="bg-kuroiBlack fixed inset-0 z-[999] flex items-center justify-center">
+      <div className="bubbling-animation mx-auto flex max-w-[414px] flex-col items-center justify-center pb-6 text-center">
         <FooterLogoIcon />
       </div>
     </div>

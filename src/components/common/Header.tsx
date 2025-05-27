@@ -38,36 +38,36 @@ const Header: React.FC<HeaderProps> = ({ btnText }) => {
   const t = useTranslations("menu");
 
   return (
-    <header className="px-2 fixed top-4  rounded z-[99] w-full">
+    <header className="fixed top-4 z-[99] w-full rounded px-2">
       <div
-        className={`w-full min-h-9 h-fit lg:py-3  flex items-center rounded transition-all duration-300 ${
+        className={`flex h-fit min-h-9 w-full items-center rounded transition-all duration-300 lg:py-3 ${
           scrolled ? "bg-kuroiBlack shadow-c2" : "bg-kuroiBlack sm:bg-none"
         }`}
       >
-        <div className="main-container py-1.5 flex items-center justify-between xl:gap-[54px] lg:gap-3">
+        <div className="main-container flex items-center justify-between py-1.5 lg:gap-3 xl:gap-[54px]">
           <Link
-            className="lg:max-w-[137px] min-w-24 max-w-[100px] w-full"
+            className="w-full max-w-[100px] min-w-24 lg:max-w-[137px]"
             href={"/"}
           >
             <LogoIcon />
           </Link>
-          <div className="lg:flex hidden grow">
+          <div className="hidden grow lg:flex">
             <HeaderLiItems />
           </div>
-          <div className="flex items-center 3xl:gap-3 gap-4 w-fit">
-            <div className="flex items-center xl:gap-3 gap-1">
+          <div className="3xl:gap-3 flex w-fit items-center gap-4">
+            <div className="flex items-center gap-1 xl:gap-3">
               <LanguageSelector />
               <Link
-                className="text-xs xl:text-sm font-semibold font-inter leading-[142.857%] tracking-[0.1px] text-doctor2 hover:text-romanRed duration-300 whitespace-nowrap"
+                className="font-inter text-doctor2 hover:text-romanRed text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300 xl:text-sm"
                 href={"tel:(855) 392-8803"}
               >
                 (855) 392-8803
               </Link>
             </div>
-            <button className="whitespace-nowrap font-myriad hover:text-romanRed duration-300 cursor-pointer text-xs xl:text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-2 py-[6px]">
+            <button className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm">
               {t("login")}
             </button>
-            <button className="whitespace-nowrap hover:scale-95 duration-300 font-myriad cursor-pointer text-sm lg:flex hidden text-white font-semibold leading-[142.857%] tracking-[0.1px] px-3 py-[6px] bg-romanRed rounded">
+            <button className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex">
               {btnText || t("signup")}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>

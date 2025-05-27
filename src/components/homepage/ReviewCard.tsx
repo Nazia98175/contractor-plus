@@ -19,25 +19,25 @@ const renderStars = (rating: number) => {
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   return (
-    <div className="mr-5 min-h-full h-full">
+    <div className="mr-5 h-full min-h-full">
       <article
         onClick={review.isModal ? openModal : undefined}
         className={` ${
           review.isModal ? "cursor-pointer" : ""
-        } bg-doctor group btn-hover rounded-[10px] p-2 overflow-hidden max-w-[350px] md:max-w-[419px] w-full  min-h-full h-full flex flex-col justify-between relative`}
+        } bg-doctor group btn-hover relative flex h-full min-h-full w-full max-w-[350px] flex-col justify-between overflow-hidden rounded-[10px] p-2 md:max-w-[419px]`}
       >
-        <div className="flex justify-between items-start gap-5 lg:p-2">
+        <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
             <Image
               src={review.profileUrl}
               alt="avatar"
               width={42}
               height={42}
-              className="max-w-[42px] object-contain rounded-full"
+              className="max-w-[42px] rounded-full object-contain"
             />
             <div>
               <div className="flex items-center gap-3">
-                <p className="text-base font-medium text-lightBlack max-w-[190px] truncate text-nowrap">
+                <p className="text-lightBlack max-w-[190px] truncate text-base font-medium text-nowrap">
                   {review.userName}
                 </p>
                 {review.isModal && (
@@ -49,7 +49,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
                   </span>
                 )}
               </div>
-              <p className="text-xs font-medium text-highRise pt-1 truncate">
+              <p className="text-highRise truncate pt-1 text-xs font-medium">
                 {review.userRole}
               </p>
             </div>
@@ -58,7 +58,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay text-sm tracking-[0.1px] font-jakarta font-semibold px-2 mt-3 line-clamp-3 ">
+        <p className="text-winterWay font-jakarta mt-3 line-clamp-3 px-2 text-sm font-semibold tracking-[0.1px]">
           "{review.review}"
         </p>
       </article>

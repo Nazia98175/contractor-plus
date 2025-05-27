@@ -42,26 +42,26 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const icons = [<EstimateIcon2 />, <TurnaroundIcon />, <AdminWorkIcon />];
 
   return (
-    <section ref={ref} className="relative pt-16 z-10">
-      <div className="hidden color-animation-1 lg:block absolute bottom-0 left-0 max-w-[40px] rotate-[-45deg] w-full h-[500px] rounded-[10px] bg-athenaBlue blur-[34px] opacity-20 pointer-events-none"></div>
+    <section ref={ref} className="relative z-10 pt-16">
+      <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-0 left-0 hidden h-[500px] w-full max-w-[40px] rotate-[-45deg] rounded-[10px] opacity-20 blur-[34px] lg:block"></div>
       <Image
-        className="object-cover -top-0  absolute z-0 pointer-events-none max-w-[700px] block lg:hidden color-animation-2"
+        className="color-animation-2 pointer-events-none absolute -top-0 z-0 block max-w-[700px] object-cover lg:hidden"
         src="/images/webp/make-opration-mobile.webp"
         fill
         alt="gradient background"
         priority
       />
-      <span className="top-[0px] right-[-100px] absolute z-0 pointer-events-none max-w-[800px] w-full lg:block hidden">
+      <span className="pointer-events-none absolute top-[0px] right-[-100px] z-0 hidden w-full max-w-[800px] lg:block">
         <MakeOperationRedLineIcon />
       </span>
-      <div className="main-container pb-10 relative">
+      <div className="main-container relative pb-10">
         <CardReveal
           staggerDelay={3}
           animationDuration={0.8}
           distance={50}
           animateOnScroll={true}
         >
-          <h3 className="section-heading font-semibold  gradient-text text-center">
+          <h3 className="section-heading gradient-text text-center font-semibold">
             {whateverOperation?.[1]?.title}
           </h3>
         </CardReveal>
@@ -71,7 +71,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           distance={50}
           animateOnScroll={true}
         >
-          <p className="text-[22px] text-secondary text-center font-jakarta pt-2">
+          <p className="text-secondary font-jakarta pt-2 text-center text-[22px]">
             {whateverOperation?.[1]?.sub_title}
           </p>
         </CardReveal>
@@ -79,17 +79,19 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8"
+          className="grid grid-cols-1 gap-5 pt-8 sm:grid-cols-2 md:grid-cols-3"
         >
-          {whateverOperation?.slice(2, 5).map((item, index) => (
-            <MakeOperationCard
-              item={item}
-              index={index}
-              key={index}
-              inView={inView}
-              icons={icons}
-            />
-          ))}
+          {whateverOperation
+            ?.slice(2, 5)
+            .map((item, index) => (
+              <MakeOperationCard
+                item={item}
+                index={index}
+                key={index}
+                inView={inView}
+                icons={icons}
+              />
+            ))}
         </CardReveal>
       </div>
     </section>

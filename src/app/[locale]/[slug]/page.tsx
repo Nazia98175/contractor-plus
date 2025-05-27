@@ -15,16 +15,12 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import TrustBar from "@/components/homepage/TrustBar";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
-import { notFound } from "next/navigation";
 
 type CrmBussinessPageProps = {
-  params: Promise<{ locale: string; slug: string }>;
+  params: { locale: string; slug: string };
 };
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;
-  if (!useParams?.slug) {
-    return notFound();
-  }
   const [
     crmPageContent,
     reviews,
@@ -75,6 +71,13 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
 
+  console.log(section6, "section66666");
+  console.log(section7, "section777777");
+
+  console.log(crmPageContent, "page content");
+  console.log(reviews, "revie");
+  console.log(faq, "faq");
+
   return (
     <main>
       <Header />
@@ -86,10 +89,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <SwitchingTool switchingTool={section3?.data?.[0]?.section3} />
           </div>
           <FieldService
-            slug={useParams?.slug}
+            slug={params?.slug}
             fieldService={section4?.data?.[0]?.section4}
           />
-          {useParams?.slug === "crm" && (
+          {params?.slug === "crm" && (
             <TrackProperties
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               trackProperties={section5?.data?.[0]?.section5}

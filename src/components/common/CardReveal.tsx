@@ -15,6 +15,7 @@ interface CardRevealProps {
   debug?: boolean;
   once?: boolean;
   animateOnScroll?: boolean;
+  delay?: number;
 }
 
 const CardReveal: React.FC<CardRevealProps> = ({
@@ -22,6 +23,7 @@ const CardReveal: React.FC<CardRevealProps> = ({
   staggerDelay = 0.15,
   animationDuration = 0.8,
   className = "",
+  delay = 0,
   distance = 50,
   easing = "power2.out",
   debug = false,
@@ -75,6 +77,7 @@ const CardReveal: React.FC<CardRevealProps> = ({
         stagger: staggerDelay,
         ease: easing,
         overwrite: true,
+        delay,
       });
     }
 

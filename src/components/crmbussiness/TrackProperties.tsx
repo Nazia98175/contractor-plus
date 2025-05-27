@@ -18,9 +18,9 @@ interface Props {
 
 const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
-    <section className="bg-white relative pt-28 lg:pt-5">
+    <section className="relative pt-28 lg:pt-5">
       <Image
-        className="absolute w-[100%] h-[83%] lg:h-[100%] left-0 z-10 -top-[35%] object-cover"
+        className="absolute w-[100%] h-[83%] lg:h-[100%] left-0 z-0 -top-[35%] object-cover"
         src={"/images/webp/finally-desktop-bg.webp"}
         alt="finally-desktop-bg"
         width={1920}
@@ -33,7 +33,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         distance={50}
         animateOnScroll={true}
       > */}
-      <div className="flex relative z-30 justify-center items-center px-2">
+      <div className="flex relative z-10 justify-center items-center px-2">
         <div className="bg-white-linear hidden md:block absolute left-0 z-10 -bottom-[84px] h-[267px] w-full"></div>
         <Image
           src="/images/webp/mix-screens.webp"
@@ -55,7 +55,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
       {/* </CardReveal> */}
 
       {/* Heading + Paragraph */}
-      <div className="relative z-30 md:-mt-3 px-2">
+      <div className="relative z-10 md:-mt-3 px-2">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h2 className="section-heading gradient-text-2 text-center z-30 !font-black lg:!font-semibold w-fit mx-auto">
             {trackProperties?.title}

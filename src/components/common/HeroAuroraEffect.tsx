@@ -8,7 +8,7 @@ interface AnimatedLineProps {
   auraIntensity?: number;
 }
 
-const KeyframeAnimatedLineAura: React.FC<AnimatedLineProps> = ({
+const HeroAuroraEffect: React.FC<AnimatedLineProps> = ({
   width = 768,
   height = 562,
   strokeColor = "#EE1E25",
@@ -160,4 +160,4 @@ const KeyframeAnimatedLineAura: React.FC<AnimatedLineProps> = ({
   );
 };
 
-export default KeyframeAnimatedLineAura;
+export default HeroAuroraEffect;

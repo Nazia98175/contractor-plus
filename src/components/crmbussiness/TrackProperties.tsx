@@ -80,12 +80,12 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
           distance={50}
           animateOnScroll={true}
         >
-          <div className="flex gap-2.5 sm:flex-row flex-col items-center justify-center mt-3.5 md:mt-7">
+          <div className="flex gap-2.5 flex-col items-center justify-center mt-3.5 md:mt-7">
             <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
               {trackProperties?.btnText} <SideIcon />
             </button>
             <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
-              <CheckIcon />
+              {/* <CheckIcon /> */}
               {ncc}
             </button>
           </div>

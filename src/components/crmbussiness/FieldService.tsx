@@ -92,14 +92,14 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
       {/* <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" /> */}
       <div
         id="crm-cards-wrapper"
-        className="relative overflow-hidden px-2 h-screen sm:h-[90vh] z-10"
+        className="relative overflow-hidden px-2 min-h-screen xl:h-[90vh] z-10"
       >
         {fieldService?.cardsDetail.map((service: any, index: any) => (
           <div
             key={index}
             className={`z-${
               index + 1
-            } h-screen sm:h-[90vh] crm-cards absolute left-[50%] top-10 md:top-0 translate-x-[-50%] w-full flex justify-center items-center`}
+            } h-screen sm:h-[90vh] crm-cards absolute left-[50%] top-10 sm:top-20 xl:top-0 translate-x-[-50%] w-full flex justify-center items-center`}
           >
             <div
               className={`w-full max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]

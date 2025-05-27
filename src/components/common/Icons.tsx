@@ -2217,3 +2217,178 @@ export const MakeOperationRedLineIcon = () => (
     </defs>
   </svg>
 );
+
+
+export const FooterAnimatedIcon = () => (
+  <svg
+  className={`svg-diagonal-container`}
+  xmlns="http://www.w3.org/2000/svg"
+  width={515}
+  height={992}
+  fill="none"
+  viewBox="0 0 515 992"
+  style={{ overflow: "visible" }}
+>
+  <g style={{ mixBlendMode: "plus-lighter" }}>
+    <path
+      className="diagonal-path"
+      stroke={`url(#diagonal-aura-gradient)`}
+      strokeLinecap="round"
+      strokeWidth="480"
+      d="M210.045 305-40.978 739.784l-251.023 434.786"
+      style={{ filter: "blur(70px)" }}
+      opacity={0.7}
+    ></path>
+  </g>
+
+  <g
+    filter="url(#filter0_f_115_2066)"
+    style={{ mixBlendMode: "plus-lighter" }}
+  >
+    <path
+      className="diagonal-path"
+      stroke="url(#paint0_linear_115_2066)"
+      strokeLinecap="round"
+      strokeWidth="432"
+      d="M210.045 305-40.978 739.784l-251.023 434.786"
+    ></path>
+  </g>
+
+  <defs>
+    <filter
+      id="filter0_f_115_2066"
+      width="1110.12"
+      height="1477.64"
+      x="-596.037"
+      y="0.964"
+      colorInterpolationFilters="sRGB"
+      filterUnits="userSpaceOnUse"
+    >
+      <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+      <feBlend
+        in="SourceGraphic"
+        in2="BackgroundImageFix"
+        result="shape"
+      ></feBlend>
+      <feGaussianBlur
+        result="effect1_foregroundBlur_115_2066"
+        stdDeviation={60}
+      ></feGaussianBlur>
+    </filter>
+
+    <linearGradient
+      id="paint0_linear_115_2066"
+      x1="-359.41"
+      x2="-139.291"
+      y1="755.313"
+      y2="1065.72"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0.062" stopOpacity="0"></stop>
+      <stop offset="0.997" stopColor="#EE1E25"></stop>
+      <stop offset="1" stopColor="#fff"></stop>
+    </linearGradient>
+    <linearGradient
+      id="diagonal-aura-gradient"
+      x1="-359.41"
+      x2="-139.291"
+      y1="755.313"
+      y2="1065.72"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stopOpacity="0"></stop>
+      <stop offset="0.5" stopColor="#EE1E25" stopOpacity="0.3"></stop>
+      <stop offset="1" stopColor="#EE1E25" stopOpacity="0.7"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+)
+
+export const HeroAnimatedIcon = () => (
+  <svg
+  className="svg-container pointer-events-none absolute top-0 left-0 z-10 hidden sm:block"
+  width={768}
+  height={562}
+  viewBox="0 0 768 562"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  style={{ overflow: "visible" }}
+>
+  <g style={{ mixBlendMode: "plus-lighter" }}>
+    <path
+      className="aura-path"
+      d="M464 258L192 -14L-80 -286"
+      stroke={`url(#auraGradient)`}
+      strokeWidth="500"
+      strokeLinecap="round"
+      style={{ filter: "blur(55px)" }}
+    />
+  </g>
+  <g
+    style={{ mixBlendMode: "plus-lighter" }}
+    filter="url(#filter0_f_637_33052)"
+  >
+    <path
+      className="main-path"
+      d="M464 258L192 -14L-80 -286"
+      stroke="url(#paint0_linear_637_33052)"
+      strokeWidth="432"
+      strokeLinecap="round"
+    />
+  </g>
+
+  {/* Definitions */}
+  <defs>
+    {/* Original filter */}
+    <filter
+      id="filter0_f_637_33052"
+      x="-384"
+      y="-590"
+      width="1152"
+      height="1152"
+      filterUnits="userSpaceOnUse"
+      colorInterpolationFilters="sRGB"
+    >
+      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+      <feBlend
+        mode="normal"
+        in="SourceGraphic"
+        in2="BackgroundImageFix"
+        result="shape"
+      />
+      <feGaussianBlur
+        stdDeviation={55}
+        result="effect1_foregroundBlur_637_33052"
+      />
+    </filter>
+
+    {/* Original gradient */}
+    <linearGradient
+      id="paint0_linear_637_33052"
+      x1="287.962"
+      y1="-297.055"
+      x2="-60.4386"
+      y2="-209.725"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0.0622667" stopOpacity="0" />
+      <stop offset="0.996954" stopColor="#EE1E25" />
+      <stop offset="1" stopColor="white" />
+    </linearGradient>
+
+    {/* Additional gradient for aura */}
+    <linearGradient
+      id="auraGradient"
+      x1="287.962"
+      y1="-297.055"
+      x2="-60.4386"
+      y2="-209.725"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stopOpacity="0" />
+      <stop offset="0.5" stopColor="#EE1E25" stopOpacity="0.3" />
+      <stop offset="1" stopColor='#EE1E25' stopOpacity="0.7" />
+    </linearGradient>
+  </defs>
+</svg>
+)

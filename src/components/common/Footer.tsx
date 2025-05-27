@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
-// import FooterAnimation from "./FooterAnimation";
 import {
   DownArrowIcon,
+  FooterAnimatedIcon,
   FooterLogoIcon,
   LinkdinIcon,
   TwitterIcon,
@@ -62,91 +62,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     <footer className="relative z-20 w-full overflow-hidden py-10 md:py-[62px]">
       {/* <ParticlesComponent id="star-particles" /> */}
       <span className="pointer-events-none absolute top-[-314px] left-0 hidden lg:block">
-        {/* <FooterAnimation /> */}
-        <span>
-        <svg
-        className={`svg-diagonal-container`}
-        xmlns="http://www.w3.org/2000/svg"
-        width={515}
-        height={992}
-        fill="none"
-        viewBox="0 0 515 992"
-        style={{ overflow: "visible" }}
-      >
-        <g style={{ mixBlendMode: "plus-lighter" }}>
-          <path
-            className="diagonal-path"
-            stroke={`url(#diagonal-aura-gradient)`}
-            strokeLinecap="round"
-            strokeWidth="480"
-            d="M210.045 305-40.978 739.784l-251.023 434.786"
-            style={{ filter: "blur(70px)" }}
-            opacity={0.7}
-          ></path>
-        </g>
-
-        <g
-          filter="url(#filter0_f_115_2066)"
-          style={{ mixBlendMode: "plus-lighter" }}
-        >
-          <path
-            className="diagonal-path"
-            stroke="url(#paint0_linear_115_2066)"
-            strokeLinecap="round"
-            strokeWidth="432"
-            d="M210.045 305-40.978 739.784l-251.023 434.786"
-          ></path>
-        </g>
-
-        <defs>
-          <filter
-            id="filter0_f_115_2066"
-            width="1110.12"
-            height="1477.64"
-            x="-596.037"
-            y="0.964"
-            colorInterpolationFilters="sRGB"
-            filterUnits="userSpaceOnUse"
-          >
-            <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
-            <feBlend
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            ></feBlend>
-            <feGaussianBlur
-              result="effect1_foregroundBlur_115_2066"
-              stdDeviation={60}
-            ></feGaussianBlur>
-          </filter>
-
-          <linearGradient
-            id="paint0_linear_115_2066"
-            x1="-359.41"
-            x2="-139.291"
-            y1="755.313"
-            y2="1065.72"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0.062" stopOpacity="0"></stop>
-            <stop offset="0.997" stopColor="#EE1E25"></stop>
-            <stop offset="1" stopColor="#fff"></stop>
-          </linearGradient>
-          <linearGradient
-            id="diagonal-aura-gradient"
-            x1="-359.41"
-            x2="-139.291"
-            y1="755.313"
-            y2="1065.72"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0" stopOpacity="0"></stop>
-            <stop offset="0.5" stopColor="#EE1E25" stopOpacity="0.3"></stop>
-            <stop offset="1" stopColor="#EE1E25" stopOpacity="0.7"></stop>
-          </linearGradient>
-        </defs>
-      </svg>
-        </span>
+      <FooterAnimatedIcon/>
       </span>
       <div className="main-container">
         <div className="mx-auto flex max-w-[414px] flex-col items-center justify-center space-y-5 pb-6 text-center">

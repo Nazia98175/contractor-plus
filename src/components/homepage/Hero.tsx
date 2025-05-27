@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { CheckIcon } from "../common/Icons";
-import HeroAuroraEffect from "../common/HeroAuroraEffect";
+import { CheckIcon, HeroAnimatedIcon } from "../common/Icons";
+// import HeroAuroraEffect from "../common/HeroAuroraEffect";
 import TextAnimation from "../common/TextAnimation";
 
 type HeroProps = {
@@ -20,7 +20,8 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
-      <HeroAuroraEffect />
+     <HeroAnimatedIcon/>
+      {/* <HeroAuroraEffect /> */}
       <img
         src="/images/webp/hero-mobile-bg.webp"
         alt="Mobile Hero"

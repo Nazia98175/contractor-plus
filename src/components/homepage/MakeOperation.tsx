@@ -11,6 +11,7 @@ import {
   TurnaroundIcon,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+import MakeOperationCard from "./MakeOperationCard";
 interface Whatever {
   title: string;
   sub_title: string;
@@ -81,29 +82,13 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-8"
         >
           {whateverOperation?.slice(2, 5).map((item, index) => (
-            <article
+            <MakeOperationCard
+              item={item}
+              index={index}
               key={index}
-              className="flex flex-col gap-2 items-center text-center"
-            >
-              <span>{icons[index]}</span>
-              <h3 className="text-2xl font-bold  text-white font-jakarta">
-                {inView ? (
-                  <CountUp
-                    start={item.start}
-                    end={item.end}
-                    duration={5}
-                    suffix={item.suffix}
-                  />
-                ) : (
-                  `${item.start}${item.suffix}`
-                )}
-                <span className="inline-block px-2">{item.title}</span>
-              </h3>
-
-              <p className="text-lg font-medium text-secondary font-montserrat">
-                {item.sub_title}
-              </p>
-            </article>
+              inView={inView}
+              icons={icons}
+            />
           ))}
         </CardReveal>
       </div>

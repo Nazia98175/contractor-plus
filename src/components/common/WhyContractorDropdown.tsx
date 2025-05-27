@@ -59,25 +59,25 @@ const WhyContractorDropdown = () => {
 
   return (
     <>
-      <div className="flex gap-8 relative z-[9999] pb-8">
-        <div className="grid grid-cols-1 gap-3 w-full ">
+      <div className="relative z-[9999] flex gap-8 pb-8">
+        <div className="grid w-full grid-cols-1 gap-3">
           {industriesLinks.map((link, index) => (
             <button
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               key={index}
-              className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
+              className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
             >
-              <span className="header-li-dropdown group-hover:!bg-lightBlack group-hover:!text-white text-start flex w-fit">
+              <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit text-start group-hover:!text-white">
                 {link.label}
               </span>
-              <p className="text-sm font-inter text-lightBlack mt-2.5">
+              <p className="font-inter text-lightBlack mt-2.5 text-sm">
                 {link.description}
               </p>
             </button>
           ))}
         </div>
-        <div className="relative w-full max-w-[480px] rounded-md overflow-hidden ">
+        <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
           {resourceItems.map((item, index) => (
             <Image
               key={index}
@@ -86,8 +86,8 @@ const WhyContractorDropdown = () => {
               unoptimized
               width={480}
               height={320}
-              className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
-                hoveredIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+              className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+                hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
               }`}
             />
           ))}
@@ -97,13 +97,13 @@ const WhyContractorDropdown = () => {
             unoptimized
             width={480}
             height={320}
-            className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
-              hoveredIndex === null ? "opacity-100 z-10" : "opacity-0 z-0"
+            className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+              hoveredIndex === null ? "z-10 opacity-100" : "z-0 opacity-0"
             }`}
           />
         </div>
       </div>
-      <div className="left-0 font-inter sticky bottom-0 w-full bg-doctor2">
+      <div className="font-inter bg-doctor2 sticky bottom-0 left-0 w-full">
         <Link className="all-features-button group" href="/">
           {t("seeAllResourse")}
           <ArrowIcon />

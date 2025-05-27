@@ -80,7 +80,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0 },
             { duration: 0.3, opacity: 1, ease: "power2.out" },
-            "<0.1"
+            "<0.1",
           );
           break;
         case "scale":
@@ -88,7 +88,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0, scale: 0.9 },
             { duration: 0.4, opacity: 1, scale: 1, ease: "back.out(1.7)" },
-            "<0.1"
+            "<0.1",
           );
           break;
         case "slideUp":
@@ -96,7 +96,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0, y: 50 },
             { duration: 0.4, opacity: 1, y: 0, ease: "power2.out" },
-            "<0.1"
+            "<0.1",
           );
           break;
         case "slideDown":
@@ -104,7 +104,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0, y: -50 },
             { duration: 0.4, opacity: 1, y: 0, ease: "power2.out" },
-            "<0.1"
+            "<0.1",
           );
           break;
         case "slideLeft":
@@ -112,7 +112,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0, x: 50 },
             { duration: 0.4, opacity: 1, x: 0, ease: "power2.out" },
-            "<0.1"
+            "<0.1",
           );
           break;
         case "slideRight":
@@ -120,7 +120,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0, x: -50 },
             { duration: 0.4, opacity: 1, x: 0, ease: "power2.out" },
-            "<0.1"
+            "<0.1",
           );
           break;
         default:
@@ -128,7 +128,7 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
             modalContent,
             { opacity: 0, scale: 0.9 },
             { duration: 0.4, opacity: 1, scale: 1, ease: "back.out(1.7)" },
-            "<0.1"
+            "<0.1",
           );
       }
 
@@ -245,25 +245,25 @@ const ModalLayout: React.FC<ModalLayoutProps> = ({
       {/* Backdrop */}
       <div
         ref={backdropRef}
-        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+        className="bg-opacity-50 fixed inset-0 z-40 bg-black"
         style={backdropInitialStyle}
         onClick={onClose}
       />
 
       <div
-        className={`fixed inset-0 flex justify-center z-50 ${positionClasses[position]} overflow-y-auto px-4`}
+        className={`fixed inset-0 z-50 flex justify-center ${positionClasses[position]} overflow-y-auto px-4`}
       >
         <div
           ref={modalContentRef}
           style={contentInitialStyle}
-          className={`relative bg-white lightBlack:bg-gray-800 rounded-lg shadow-xl ${sizeClasses[size]} w-full my-auto ${className}`}
+          className={`lightBlack:bg-gray-800 relative rounded-lg bg-white shadow-xl ${sizeClasses[size]} my-auto w-full ${className}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           {(title || showCloseButton) && (
-            <div className="flex items-center justify-between p-4 border-b border-gray-200 lightBlack:border-gray-700">
+            <div className="lightBlack:border-gray-700 flex items-center justify-between border-b border-gray-200 p-4">
               {title && (
-                <h3 className="text-lg font-medium text-gray-900 lightBlack:text-white">
+                <h3 className="lightBlack:text-white text-lg font-medium text-gray-900">
                   {title}
                 </h3>
               )}

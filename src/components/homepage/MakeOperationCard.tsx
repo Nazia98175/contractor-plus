@@ -14,9 +14,9 @@ const MakeOperationCard = ({
 }) => {
   return (
     <>
-      <article className="flex flex-col gap-2 items-center text-center">
+      <article className="flex flex-col items-center gap-2 text-center">
         <span>{icons[index]}</span>
-        <h3 className="text-2xl font-bold  text-white font-jakarta">
+        <h3 className="font-jakarta text-2xl font-bold text-white">
           {inView ? (
             <CountUp
               start={item.start}
@@ -30,7 +30,7 @@ const MakeOperationCard = ({
           <span className="inline-block px-2">{item.title}</span>
         </h3>
 
-        <p className="text-lg font-medium text-secondary font-montserrat">
+        <p className="text-secondary font-montserrat text-lg font-medium">
           {item.sub_title}
         </p>
       </article>

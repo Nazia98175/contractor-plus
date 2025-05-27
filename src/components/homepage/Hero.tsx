@@ -18,62 +18,62 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   } = homePageContent ?? {};
 
   return (
-    <section className="relative overflow-hidden z-20 lg:bg-kuroiBlack hero-mobile-bg">
-      <div className="bg-athenaBlue rotate-45  w-full max-w-[800px] h-6 blur-[40px] absolute right-0 top-56"></div>
+    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
+      <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
       <AnimatedLineAura />
       <img
         src="/images/webp/hero-mobile-bg.webp"
         alt="Mobile Hero"
-        className="sm:hidden z-10 object-cover h-full pointer-events-none right-0 -bottom-[30%] absolute w-full"
+        className="pointer-events-none absolute right-0 -bottom-[30%] z-10 h-full w-full object-cover sm:hidden"
       />
       <Image
         width={769}
         height={800}
         src="/images/webp/hero-video-ovelay.webp"
         alt="Red Circle For designing"
-        className="absolute top-0 left-0 lg:hidden block h-full z-20 pointer-events-none object-cover w-full"
+        className="pointer-events-none absolute top-0 left-0 z-20 block h-full w-full object-cover lg:hidden"
         layout="lazy"
       />
-      <div className="flex items-end main-container z-20 relative lg:pt-[140px] pt-[269px] xl:pb-[196px] lg:pb-[150px] md:pb-[100px] pb-9">
-        <div className="lg:max-w-[628px] w-full sm:space-y-6 relative z-30">
+      <div className="main-container relative z-20 flex items-end pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
+        <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[628px]">
           <TextAnimation animateOnScroll={false} delay={3}>
             <h1 className="main-heading gradient-text mb-4">{hero_title}</h1>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={3}>
-            <p className="text-decemberSky text-xs sm:text-sm md:text-base lg:text-lg font-semibold md:font-medium font-jakarta mb-4">
+            <p className="text-decemberSky font-jakarta mb-4 text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
               {hero_description}
             </p>
           </TextAnimation>
-          <div className="flex gap-2.5  flex-col items-center w-full sm:w-fit">
-            <button className="bg-red-linear h-10 primary-btn">
-              <span className="md:flex hidden">{cta_button_text}</span>
+          <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
+            <button className="bg-red-linear primary-btn h-10">
+              <span className="hidden md:flex">{cta_button_text}</span>
               <span className="flex md:hidden">{cta_button_text}</span>
             </button>
-            <button className="flex gap-1.5 items-center font-myriad text-sm text-white cursor-pointer">
+            <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
               <CheckIcon />
               {ncc_text}
             </button>
           </div>
         </div>
       </div>
-      <div className="absolute object-bottom lg:right-[-15%] w-full h-full max-h-[1200px] lg:max-h-[750px] top-0 aspect-video">
+      <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover lg:object-right 3xl:object-cover relative -z-20"
+          className="3xl:object-cover relative -z-20 h-full w-full object-cover lg:object-right"
           src="/video/hero-video.mp4"
         ></video>
         <Image
           loading="lazy"
           fill
           unoptimized
-          className="absolute -top-[6%] w-full h-[110%] object-cover lg:block hidden "
+          className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"
           src={"/images/webp/hero-video-ovelay.webp"}
           alt="hero-video-ovelay"
         />
-        <div className="bg-kuroiBlack z-[9999] absolute h-[10px] w-full bottom-[-3px] lg:block hidden"></div>
+        <div className="bg-kuroiBlack absolute bottom-[-3px] z-[9999] hidden h-[10px] w-full lg:block"></div>
       </div>
     </section>
   );

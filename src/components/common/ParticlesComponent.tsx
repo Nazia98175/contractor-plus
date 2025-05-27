@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { Container, Engine } from "@tsparticles/engine";
 import { useEffect, useMemo, useState } from "react";
@@ -157,7 +157,7 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
         },
       ],
     }),
-    []
+    [],
   );
 
   if (!init) {

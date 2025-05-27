@@ -62,7 +62,7 @@ export default function TextAnimation({
               cls.includes("gradient") ||
               cls.includes("text-") ||
               cls.includes("font-") ||
-              cls.includes("bg-")
+              cls.includes("bg-"),
           );
 
           split.lines.forEach((line) => {
@@ -142,13 +142,13 @@ export default function TextAnimation({
         delay,
         preserveClasses,
       ],
-    }
+    },
   );
 
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
     return React.cloneElement(
       children as ReactElement,
-      { ref: containerRef } as { ref: React.RefObject<HTMLDivElement> }
+      { ref: containerRef } as { ref: React.RefObject<HTMLDivElement> },
     );
   }
 

@@ -42,15 +42,15 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   };
 
   return (
-    <div className=" px-2 relative z-20">
-      <div className="pt-[38px] md:pt-[44px] pb-7">
+    <div className="relative z-20 px-2">
+      <div className="pt-[38px] pb-7 md:pt-[44px]">
         <CardReveal
           staggerDelay={3}
           animationDuration={0.8}
           distance={50}
           animateOnScroll={true}
         >
-          <h3 className="text-[26px] text-center sm:text-[28px] md:text-[32px] font-extrabold text-decemberSky font-jakarta">
+          <h3 className="text-decemberSky font-jakarta text-center text-[26px] font-extrabold sm:text-[28px] md:text-[32px]">
             {entireBusiness?.[0]?.title}
           </h3>
         </CardReveal>
@@ -60,50 +60,50 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
           distance={50}
           animateOnScroll={true}
         >
-          <p className="paragraph-text font-medium text-decemberSky font-jakarta text-center py-4">
+          <p className="paragraph-text text-decemberSky font-jakarta py-4 text-center font-medium">
             {entireBusiness?.[0]?.sub_title}
           </p>
         </CardReveal>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
           <form
-            className="flex flex-col md:flex-row justify-center items-start gap-3"
+            className="flex flex-col items-start justify-center gap-3 md:flex-row"
             onSubmit={handleSubmit}
           >
-            <div className="md:max-w-[414px] w-full">
+            <div className="w-full md:max-w-[414px]">
               <input
                 type="email"
                 placeholder={entireBusiness?.[1]?.txt}
                 required
                 value={email}
                 onChange={handleEmailChange}
-                className="bg-lightBlack border-white border-b rounded-[6px] text-white outline-none px-2 w-full h-[40px]"
+                className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
               />
-              <p className="hidden md:flex items-center gap-2 pt-3">
+              <p className="hidden items-center gap-2 pt-3 md:flex">
                 <span>
                   <CheckIcon />
                 </span>
-                <span className="text-sm font-semibold font-myriad text-white">
+                <span className="font-myriad text-sm font-semibold text-white">
                   {ncc_text}
                 </span>
               </p>
             </div>
             <button
               type="submit"
-              className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] w-full mx-auto md:mx-0 sm:!w-auto"
+              className="bg-red-linear primary-btn mx-auto flex h-10 w-full !min-w-[230px] items-center justify-center sm:!w-auto md:mx-0"
               disabled={loading}
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
               ) : (
                 entireBusiness?.[2]?.btnTxt
               )}
             </button>
-            <div className="md:hidden flex justify-center items-center w-full">
+            <div className="flex w-full items-center justify-center md:hidden">
               <p className="flex items-center gap-2 pt-1">
                 <span>
                   <CheckIcon />
                 </span>
-                <span className="text-sm font-semibold font-myriad text-white">
+                <span className="font-myriad text-sm font-semibold text-white">
                   {ncc_text}
                 </span>
               </p>

@@ -73,32 +73,32 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     },
   ];
   return (
-    <section className=" pt-[18px] pb-[38px] md:pt-12 md:pb-[82px] px-4 bg-white relative z-10">
-      <div className="max-w-[1294px] w-full mx-auto">
-        <div className="hidden lg:flex flex-col md:flex-row justify-between items-center mb-6">
+    <section className="relative z-10 bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
+      <div className="mx-auto w-full max-w-[1294px]">
+        <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
           <CardReveal
             staggerDelay={3}
             animationDuration={0.8}
             distance={50}
             animateOnScroll={true}
           >
-            <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2">
+            <h2 className="font-jakarta gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
               {blogHeading?.[0]?.title}
             </h2>
           </CardReveal>
           <div className="hidden md:block">
-            <button className="bg-red-linear h-10 primary-btn gap-2">
+            <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
             </button>
           </div>
         </div>
-        <div className="lg:hidden flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8">
-          <h2 className="text-[26px] md:text-[35px] lg:text-[42px] font-semibold text-black font-jakarta gradient-text-2 text-center md:text-start">
+        <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
+          <h2 className="font-jakarta gradient-text-2 text-center text-[26px] font-semibold text-black md:text-start md:text-[35px] lg:text-[42px]">
             {blogHeading?.[0]?.title}
           </h2>
           <div className="hidden md:block">
-            <button className="bg-red-linear h-10 primary-btn gap-2">
+            <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
             </button>
@@ -109,7 +109,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4  gap-x-2 xl:gap-7 place-items-center"
+          className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:gap-7"
         >
           {blogs.map((article, index) => (
             <OurBlogCard
@@ -120,7 +120,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             />
           ))}
         </CardReveal>
-        <div className="sm:hidden block">
+        <div className="block sm:hidden">
           <SliderLayout
             autoplay
             pagination
@@ -141,8 +141,8 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             ))}
           </SliderLayout>
         </div>
-        <div className="flex justify-center md:hidden pt-4">
-          <button className="bg-red-linear h-10 primary-btn gap-2">
+        <div className="flex justify-center pt-4 md:hidden">
+          <button className="bg-red-linear primary-btn h-10 gap-2">
             {blogHeading?.[1]?.btnTxt}
             <BlogBtnIcon />
           </button>

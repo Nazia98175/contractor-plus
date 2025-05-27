@@ -42,20 +42,20 @@ const FeatureNavigation = ({
       } z-20 lg:w-fit`}
       ref={featuresRef}
     >
-      <div className="px-1 hidden lg:flex relative w-fit justify-center items-center mt-1">
+      <div className="relative mt-1 hidden w-fit items-center justify-center px-1 lg:flex">
         <button
           ref={indicatorRef}
-          className="w-3 h-3 rounded-full absolute top-2.5 bg-black left-1/2 -translate-x-1/2 z-10"
+          className="absolute top-2.5 left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-black"
         />
         <Pathbg />
       </div>
 
       <div
-        className={`flex flex-row lg:flex-col gap-[22px] font-jakarta no-scrollbar lg:py-0 py-2 ${
+        className={`font-jakarta no-scrollbar flex flex-row gap-[22px] py-2 lg:flex-col lg:py-0 ${
           isMobile
-            ? "w-full justify-between overflow-x-auto "
+            ? "w-full justify-between overflow-x-auto"
             : "lg:overflow-visible"
-        } whitespace-nowrap relative`}
+        } relative whitespace-nowrap`}
       >
         {features.map((feature, index) => (
           <button
@@ -75,9 +75,9 @@ const FeatureNavigation = ({
             {feature}
           </button>
         ))}
-        <button className="flex group feature-btn whitespace-nowrap w-full text-lightishBlue gap-1 items-center cursor-pointer">
+        <button className="group feature-btn text-lightishBlue flex w-full cursor-pointer items-center gap-1 whitespace-nowrap">
           {featureBtn}
-          <span className="w-5 flex group-hover:-translate-y-1 duration-300">
+          <span className="flex w-5 duration-300 group-hover:-translate-y-1">
             <ExternalLink />
           </span>
         </button>

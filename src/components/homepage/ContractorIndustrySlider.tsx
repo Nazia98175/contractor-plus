@@ -180,7 +180,7 @@ const ContractorIndustrySlider: React.FC = () => {
   ];
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <SliderLayout
         effect="coverflow"
         autoplay={{
@@ -209,7 +209,7 @@ const ContractorIndustrySlider: React.FC = () => {
         onSlideChange={(swiper: { realIndex: React.SetStateAction<number> }) =>
           setActiveIndex(swiper.realIndex)
         }
-        className="h-full w-full !py-10 relative "
+        className="relative h-full w-full !py-10"
       >
         {showInfo.map((show, index) => (
           <ContractorIndustrySliderCard show={show} key={index} />

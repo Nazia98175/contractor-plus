@@ -26,7 +26,7 @@ const HeaderLiItems = () => {
       { id: "pricing", label: t("pricing"), link: "/" },
       { id: "resources", label: t("resources") },
     ],
-    [t]
+    [t],
   );
 
   // Get menu index for animation direction
@@ -121,14 +121,14 @@ const HeaderLiItems = () => {
 
   return (
     <div onMouseLeave={handleMouseLeave}>
-      <div className="flex items-center gap-2 w-full">
+      <div className="flex w-full items-center gap-2">
         {menuItems.map((item, index) =>
           item.link ? (
             <Link
               key={index}
               href={item.link}
               onMouseEnter={handleMouseLeave}
-              className="header-li whitespace-nowrap flex items-center gap-1 py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer hover:text-superSilver text-kuroiBlack "
+              className="header-li hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
             >
               {item.label}
             </Link>
@@ -136,7 +136,7 @@ const HeaderLiItems = () => {
             <button
               key={index}
               onMouseEnter={() => handleMouseEnter(item.id)}
-              className={`header-li whitespace-nowrap flex items-center gap-1 py-0.5 xl:px-[6px] px-1 transition-colors duration-300 cursor-pointer ${
+              className={`header-li flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px] ${
                 activeMenu === item.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver"
@@ -150,13 +150,13 @@ const HeaderLiItems = () => {
                 }`}
               />
             </button>
-          )
+          ),
         )}
       </div>
 
       {/* Invisible gap-covering element */}
       <div
-        className="absolute left-0 w-full h-[34.88px] z-[999] top-[72%] !bg-none"
+        className="absolute top-[72%] left-0 z-[999] h-[34.88px] w-full !bg-none"
         style={{
           visibility: activeMenu ? "visible" : "hidden",
           opacity: activeMenu ? 1 : 0,
@@ -166,7 +166,7 @@ const HeaderLiItems = () => {
       {/* Dropdown Panel */}
       <div
         ref={dropdownRef}
-        className={`absolute left-0 right-0 top-[calc(100%+0px)] mx-auto z-50 max-w-[1920px] w-full  max-h-[80vh]  flex flex-col shadow-c3 bg-doctor2 overflow-hidden ${
+        className={`shadow-c3 bg-doctor2 absolute top-[calc(100%+0px)] right-0 left-0 z-50 mx-auto flex max-h-[80vh] w-full max-w-[1920px] flex-col overflow-hidden ${
           activeMenu ? "p-7" : ""
         }`}
         style={{
@@ -174,7 +174,7 @@ const HeaderLiItems = () => {
         }}
         onWheel={(e) => e.stopPropagation()}
       >
-        <div ref={contentRef} className="overflow-hidden grow flex flex-col ">
+        <div ref={contentRef} className="flex grow flex-col overflow-hidden">
           {activeMenu === "whycontractordesktop" && <WhyContractorDropdown />}
           {activeMenu === "features" && <FeaturesDropdown />}
           {activeMenu === "industries" && <IndustriesDropdown />}

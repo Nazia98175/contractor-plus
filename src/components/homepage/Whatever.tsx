@@ -69,7 +69,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         finalX: string,
         finalY: string,
         initialX: number,
-        initialY: number
+        initialY: number,
       ) => {
         if (!el) return;
         gsap.set(el, {
@@ -124,14 +124,14 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         }, 5000);
       }
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   return (
-    <section className="relative w-full z-10">
+    <section className="relative z-10 w-full">
       {/* Desktop Background */}
       <Image
-        className="object-cover -top-[42%] right-0 absolute z-10 pointer-events-none max-w-[700px] hidden lg:block"
+        className="pointer-events-none absolute -top-[42%] right-0 z-10 hidden max-w-[700px] object-cover lg:block"
         src="/images/webp/Whatever-right-bg.webp"
         width={700}
         height={300}
@@ -147,7 +147,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             type="image/webp"
           />
           <Image
-            className="object-cover top-0 right-0 w-full absolute z-10 pointer-events-none h-full hidden lg:flex"
+            className="pointer-events-none absolute top-0 right-0 z-10 hidden h-full w-full object-cover lg:flex"
             src="/images/webp/whatever-gredient-bg-mobile-left.webp"
             width={500}
             height={1000}
@@ -162,7 +162,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             type="image/webp"
           />
           <Image
-            className="object-center right-0 top-0 w-full absolute z-10 pointer-events-none h-full"
+            className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-center"
             src="/images/webp/whatever-gredient-bg-mobile-right.webp"
             width={500}
             height={1000}
@@ -174,7 +174,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
 
       <div
         ref={sectionRef}
-        className="pt-12 pb-[53px] overflow-visible will-change-transform w-full relative z-20"
+        className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform"
       >
         <CardReveal
           staggerDelay={3}
@@ -182,23 +182,23 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           distance={50}
           animateOnScroll={true}
         >
-          <h3 className="section-heading gradient-text text-center md:mb-8 mb-[21px]">
+          <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
             {whateverOperation?.[0]?.title}
           </h3>
         </CardReveal>
 
-        <div ref={containerRef} className="max-w-[1002px] mx-auto px-2 lg:px-0">
-          <div className="flex md:flex-row flex-col justify-center md:justify-between lg:gap-5 md:pt-5 items-center bg-center">
+        <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
+          <div className="flex flex-col items-center justify-center bg-center md:flex-row md:justify-between md:pt-5 lg:gap-5">
             {/* Left Section */}
-            <div className="left-section max-w-[409px] lg:py-[59px] md:py-8 w-full md:bg-[url('/images/svg/left-red-lines_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[190px]">
+            <div className="left-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat md:h-[300px] md:bg-[url('/images/svg/left-red-lines_animated.svg')] md:py-8 lg:py-[59px]">
               <div
                 ref={left1Ref}
-                className="lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]  flex items-center justify-center p-2 will-change-transform"
+                className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
               >
-                <OnIcon className="absolute w-full h-full -z-1 pointer-events-none" />
-                <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none" />
+                <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
+                <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="object-cover relative z-20 lg:max-w-[40px] max-w-[30px]"
+                  className="relative z-20 max-w-[30px] object-cover lg:max-w-[40px]"
                   src="/images/webp/outlook.webp"
                   width={40}
                   height={40}
@@ -208,12 +208,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               </div>
               <div
                 ref={left2Ref}
-                className="lg:w-[85px] w-[58px] lg:h-[85px] h-[58px]  flex items-center justify-center p-2 will-change-transform"
+                className="flex h-[58px] w-[58px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
               >
-                <OnIcon className="absolute w-full h-full -z-1 pointer-events-none" />
-                <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none" />
+                <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
+                <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="object-cover relative z-20 lg:max-w-[38px] max-w-[26px]"
+                  className="relative z-20 max-w-[26px] object-cover lg:max-w-[38px]"
                   src="/images/png/contractor-1.png"
                   width={38}
                   height={38}
@@ -223,12 +223,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               </div>
               <div
                 ref={left3Ref}
-                className="lg:w-[85px] w-[62px] lg:h-[85px] h-[62px]  flex items-center justify-center p-2 will-change-transform"
+                className="flex h-[62px] w-[62px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
               >
-                <OnIcon className="absolute w-full h-full -z-1 pointer-events-none" />
-                <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none" />
+                <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
+                <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="object-cover relative z-20 lg:max-w-[66px] max-w-[45px]"
+                  className="relative z-20 max-w-[45px] object-cover lg:max-w-[66px]"
                   src="/images/png/contractor-3.png"
                   width={66}
                   height={17}
@@ -241,21 +241,21 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             {/* Center Logo */}
             <div
               ref={centerRef}
-              className="max-w-[270px] w-fit xl:p-5 p-3 m-auto relative z-30 will-change-transform"
+              className="relative z-30 m-auto w-fit max-w-[270px] p-3 will-change-transform xl:p-5"
             >
               <LogoWithStars />
             </div>
 
             {/* Right Section */}
-            <div className="right-section max-w-[409px] lg:py-[59px] py-8 w-full md:bg-[url('/images/svg/right-red-line_animated.svg')] bg-no-repeat bg-cover bg-center relative md:h-[300px] h-[190px]">
+            <div className="right-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat py-8 md:h-[300px] md:bg-[url('/images/svg/right-red-line_animated.svg')] lg:py-[59px]">
               <div
                 ref={right1Ref}
-                className="lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]  flex items-center justify-center p-2 will-change-transform"
+                className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
               >
-                <OnIcon className="absolute w-full h-full -z-1 pointer-events-none" />
-                <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none" />
+                <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
+                <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="object-cover relative z-20 lg:max-w-[38px] max-w-[29px]"
+                  className="relative z-20 max-w-[29px] object-cover lg:max-w-[38px]"
                   src="/images/png/contractor-4.png"
                   width={38}
                   height={38}
@@ -265,12 +265,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               </div>
               <div
                 ref={right2Ref}
-                className="lg:w-[85px] w-[46px] lg:h-[85px] h-[46px]  flex items-center justify-center p-2 will-change-transform"
+                className="flex h-[46px] w-[46px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
               >
-                <OnIcon className="absolute w-full h-full -z-1 pointer-events-none" />
-                <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none" />
+                <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
+                <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="object-cover relative z-20 lg:max-w-[38px] max-w-[25px]"
+                  className="relative z-20 max-w-[25px] object-cover lg:max-w-[38px]"
                   src="/images/png/contractor-5.png"
                   width={38}
                   height={38}
@@ -280,12 +280,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               </div>
               <div
                 ref={right3Ref}
-                className="lg:w-[61px] w-10 lg:h-[61px] h-10  flex items-center justify-center p-2 will-change-transform"
+                className="flex h-10 w-10 items-center justify-center p-2 will-change-transform lg:h-[61px] lg:w-[61px]"
               >
-                <OnIcon className="absolute w-full h-full -z-1 pointer-events-none" />
-                <OnIconw className="absolute w-[99%] h-[99%] pointer-events-none" />
+                <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
+                <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="object-cover relative z-20 lg:max-w-[33px] max-w-[21px]"
+                  className="relative z-20 max-w-[21px] object-cover lg:max-w-[33px]"
                   src="/images/png/contractor-6.png"
                   width={33}
                   height={33}
@@ -303,8 +303,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           distance={50}
           animateOnScroll={true}
         >
-          <p className="text-lg capitalize text-granite opacity-90 text-center">
-            <span className="!text-white sm:!text-heatherGrey pr-2">5000+</span>
+          <p className="text-granite text-center text-lg capitalize opacity-90">
+            <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
             {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
           </p>
         </CardReveal>

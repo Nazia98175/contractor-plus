@@ -56,23 +56,23 @@ const ResourcesDropdown = () => {
   const fallbackImage = "/images/webp/circular-slide-1.webp";
 
   return (
-    <div className="flex gap-8 relative z-[9999] grow overflow-hidden">
-      <div className="grid grid-cols-2 gap-3 w-full overflow-auto no-scrollbar">
+    <div className="relative z-[9999] flex grow gap-8 overflow-hidden">
+      <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
         {industriesLinks.map((link, index) => (
           <button
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}
-            className="group w-full hover:bg-superSilver text-start cursor-pointer list-none p-[6px]"
+            className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
           >
-            <span className="header-li-dropdown w-fit group-hover:!bg-lightBlack group-hover:!text-white text-start flex ">
+            <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit text-start group-hover:!text-white">
               {link.label}
             </span>
           </button>
         ))}
       </div>
 
-      <div className="relative w-full max-w-[480px] rounded-md overflow-hidden ">
+      <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
         {resourceItems.map((item, index) => (
           <Image
             key={index}
@@ -81,8 +81,8 @@ const ResourcesDropdown = () => {
             unoptimized
             width={480}
             height={320}
-            className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
-              hoveredIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+            className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+              hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
             }`}
           />
         ))}
@@ -92,8 +92,8 @@ const ResourcesDropdown = () => {
           unoptimized
           width={480}
           height={320}
-          className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
-            hoveredIndex === null ? "opacity-100 z-10" : "opacity-0 z-0"
+          className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+            hoveredIndex === null ? "z-10 opacity-100" : "z-0 opacity-0"
           }`}
         />
       </div>

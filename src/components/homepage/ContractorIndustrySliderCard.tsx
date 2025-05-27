@@ -9,10 +9,10 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
       speed={0.4}
       easeType="expo.out"
       throttleSpeed={15}
-      className="w-full h-full"
+      className="h-full w-full"
     >
-      <div className="relative ease-in-out w-full bg-lightBlack border border-winterWay shadow-c3 p-2.5 rounded-xl">
-        <h2 className="text-white text-sm sm:text-xl font-bold text-center mb-2.5">
+      <div className="bg-lightBlack border-winterWay shadow-c3 relative w-full rounded-xl border p-2.5 ease-in-out">
+        <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-xl">
           {show.title}
         </h2>
         <Image
@@ -20,7 +20,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
           height={205}
           src={show.image}
           alt={show.title}
-          className="object-cover w-full relative"
+          className="relative w-full object-cover"
         />
       </div>
     </TiltedCardEffect>

@@ -71,7 +71,7 @@ const KeyframeAnimatedLineAura: React.FC<AnimatedLineProps> = ({
       `}</style>
 
       <svg
-        className="svg-container absolute top-0 left-0 z-10 pointer-events-none sm:block hidden"
+        className="svg-container pointer-events-none absolute top-0 left-0 z-10 hidden sm:block"
         width={width}
         height={height}
         viewBox="0 0 768 562"

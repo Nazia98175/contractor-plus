@@ -11,16 +11,16 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
   return (
-    <article className="font-jakarta p-3 flex flex-col items-center justify-between bg-white rounded-lg">
+    <article className="font-jakarta flex flex-col items-center justify-between rounded-lg bg-white p-3">
       <div>
-        <h4 className="text-xl sm:text-2xl font-bold text-winterWay text-center capitalize ">
+        <h4 className="text-winterWay text-center text-xl font-bold capitalize sm:text-2xl">
           {obj.title}
         </h4>
-        <p className="mt-4 paragraph-text text-wallStreet text-center mb-5">
+        <p className="paragraph-text text-wallStreet mt-4 mb-5 text-center">
           {obj.desc}
         </p>
       </div>
-      <div className="relative w-full h-[187px]">
+      <div className="relative h-[187px] w-full">
         <Image src={obj.img} alt={obj.title} fill className="object-center" />
       </div>
     </article>

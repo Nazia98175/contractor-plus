@@ -1,23 +1,22 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import { CheckIcon, FinallyDesktopBg, FinallyMobileBg } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Image from "next/image";
-
 interface Finally {
   title: string;
   sub_title: string;
   txt: string;
 }
-
 interface TheFinallyProps {
   finallyC: Finally[];
 }
-
 const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   const t = useTranslations("finally");
   const features: string[] = t.raw("features") || [];
+
   return (
     <section className="relative no-scrollbar pt-9 sm:pt-16 md:pt-20 xl:pt-[186px] 1xl:pt-[238px] px-2 bg-white  overflow-hidden">
       <>
@@ -28,27 +27,30 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           <div className="glow-ellipse bg-lightBlack-desktop"></div>
           <div className="glow-ellipse bg-lightBlack-desktop"></div>
         </div>
-
         <div className="w-[250%] h-full absolute -top-[145%] -left-[75%] z-20 block md:hidden blur-[23px]">
           <div className="absolute top-[623px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1115px] bg-[#EE1E25] rounded-full blur-[32px] opacity-90"></div>
           <div className="absolute top-[621px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[983px] bg-[#C01A06] rounded-full blur-[29.6px] opacity-90"></div>
-          <div className="absolute top-[719px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[732px] bg-[#0C0D11] rounded-full blur-[81px] opacity-90"></div>
-          <div className="absolute top-[728px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[499px] bg-[#0C0D11] rounded-full blur-[15px] opacity-90"></div>
+          <div className="absolute top-[668px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[732px] bg-[#0C0D11] rounded-full blur-[81px] opacity-90"></div>
+          <div className="absolute top-[667px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[499px] bg-[#0C0D11] rounded-full blur-[15px] opacity-90"></div>
         </div>
         <div className="absolute bottom-14 left-[5%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
         <div className="absolute bottom-14 right-[10%] max-w-[400px] w-full h-[300px] rounded-full bg-gray-600 blur-[150px] opacity-50 z-10 hidden md:block"></div>
         <div className="space-y-4 z-30 relative ">
-          <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
+          <CardReveal
+            staggerDelay={3}
+            animationDuration={0.8}
+            distance={50}
+            animateOnScroll={true}
+          >
             <h2 className="section-heading text-center gradient-text z-40 relative">
               {finallyC?.[0]?.title ?? ""}
             </h2>
           </CardReveal>
-          <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
+          <CardReveal animateOnScroll={true}>
             <p className="text-base font-medium text-superSilver text-center font-jakarta max-w-[700px] mx-auto">
               {finallyC?.[0]?.sub_title ?? ""}
             </p>
           </CardReveal>
-
           <CardReveal
             staggerDelay={0.15}
             animationDuration={0.8}
@@ -76,7 +78,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   className="h-full object-cover w-full"
                 />
               </div>
-
               {/* Cloud Layer 2 */}
               <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
                 <Image
@@ -106,7 +107,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 alt="Software Advice"
                 className="max-w-12 drop-shadow-xl/25 sm:max-w-16 md:max-w-20 object-cover w-full lg:max-w-24 hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
               />
-
               <Image
                 width={96}
                 height={104}
@@ -150,5 +150,4 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
     </section>
   );
 };
-
 export default Finally;

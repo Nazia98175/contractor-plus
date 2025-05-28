@@ -10,15 +10,15 @@ const HowContractorWork = () => {
     "Manage leads, clients, vendors, subs, and properties easier than ever",
   ];
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between max-w-[1284px] w-full mx-auto gap-5 md:gap-10 py-10 sm:py-14 lg:py-16 px-2 relative z-10">
+    <section className="relative z-10 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 py-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
       {/* Left: Image */}
-      <div className="w-full max-w-[480px] flex justify-center items-center">
+      <div className="flex w-full max-w-[480px] items-center justify-center">
         <Image
           src="/images/webp/how-to-works.webp"
           alt="Illustration showing contractor workflow"
           width={480}
           height={600}
-          className="w-full h-auto object-contain"
+          className="h-auto w-full object-contain"
           priority
         />
       </div>
@@ -26,7 +26,7 @@ const HowContractorWork = () => {
       {/* Right: Content */}
       <div className="w-full max-w-[742px] space-y-4 lg:space-y-5">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="gradient-text-2 heading">
+          <h3 className="text-winterWay heading">
             Made for how contractors, property managers, and REIs really work
           </h3>
         </TextAnimation>
@@ -35,9 +35,9 @@ const HowContractorWork = () => {
           {features.map((feature, index) => (
             <li
               key={index}
-              className="flex sm:items-center gap-2.5 px-2 md:px-3 py-2.5 text-lightBlack font-medium sm:font-semibold text-base xl:text-lg"
+              className="text-lightBlack flex gap-2.5 px-2 py-2.5 text-base font-medium sm:items-center sm:font-semibold md:px-3 xl:text-lg"
             >
-              <span className="min-w-5 max-w-5 md:max-w-6">
+              <span className="max-w-5 min-w-5 md:max-w-6">
                 <CheckIcon width={25} height={25} />
               </span>
               <span>{feature}</span>

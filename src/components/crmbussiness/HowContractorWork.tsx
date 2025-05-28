@@ -35,7 +35,7 @@ const HowContractorWork = () => {
           {features.map((feature, index) => (
             <li
               key={index}
-              className="text-lightBlack flex gap-2.5 px-2 py-2.5 text-base font-medium sm:items-center sm:font-semibold md:px-3 xl:text-lg"
+              className="text-lightBlack flex gap-2.5 px-2 py-2.5 text-base font-medium sm:font-semibold md:px-3 xl:text-lg"
             >
               <span className="max-w-5 min-w-5 md:max-w-6">
                 <CheckIcon width={25} height={25} />

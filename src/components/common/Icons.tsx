@@ -2461,3 +2461,17 @@ export const HeroAnimatedMobileIcon = () => (
     </defs>
   </svg>
 );
+export const RedCurveLine = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 1438 214"
+    fill="none"
+  >
+    <path
+      d="M-68 213.5C-68 213.5 144 0.999883 662 0.999928C1260 0.99998 1487 213.5 1487 213.5"
+      stroke="#F21314"
+    />
+  </svg>
+);

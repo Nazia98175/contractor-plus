@@ -1106,6 +1106,23 @@ html {
   transform-style: preserve-3d;
   will-change: transform, opacity;
 }
+.wanting-more-bg {
+  border-radius: 40px;
+  border: 1px solid #fff;
+  background:
+    radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(115deg, rgba(255, 202, 203, 0) -11.35%, #fff 93.46%);
+  box-shadow:
+    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
+    0px 5px 10px 0px rgba(0, 0, 0, 0.05),
+    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+}
 
 .svg-mobile-container {
   animation: breathe-mobile 8s ease-in-out infinite;

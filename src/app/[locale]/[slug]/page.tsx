@@ -6,7 +6,9 @@ import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
+import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
@@ -96,10 +98,14 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 trackProperties={section5?.data?.[0]?.section5}
               />
             )}
+
+            <LikeYouDoContacts />
+            <HowContractorWork />
             <KindAdorable
               slug={useParams?.slug}
               kindAdorable={section6?.data?.[0]?.section6}
             />
+
             <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
             <ThousandsReviews
               data={crmPageContent?.data?.[0]?.section8}

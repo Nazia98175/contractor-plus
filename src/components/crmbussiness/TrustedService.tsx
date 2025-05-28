@@ -30,17 +30,17 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
   }));
 
   return (
-    <section className="pt-6 md:pt-0 overflow-hidden relative ">
+    <section className="relative overflow-hidden pt-7 md:pt-0">
       <CardReveal animateOnScroll={true}>
-        <h3 className="section-heading service-text text-center max-w-[90%] text-white mx-auto px-3 relative z-50">
+        <h3 className="section-heading service-text relative z-50 mx-auto max-w-[90%] px-3 text-center text-white">
           {reviews?.data?.[0]?.reviews?.title}
         </h3>
       </CardReveal>
-      <div className="relative h-fit ">
-        <div className="absolute h-full rounded bottom-0 border left-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
-        <div className="absolute h-full right-[-6%] w-24 xl:w-[200px] 2xl:w-[370px] bg-kuroiBlack z-40 hidden lg:block blur-2xl pointer-events-none"></div>
+      <div className="relative h-fit pt-7">
+        <div className="bg-kuroiBlack pointer-events-none absolute bottom-0 left-[-6%] z-40 hidden h-full w-24 rounded border blur-2xl lg:block xl:w-[200px] 2xl:w-[370px]"></div>
+        <div className="bg-kuroiBlack pointer-events-none absolute right-[-6%] z-40 hidden h-full w-24 blur-2xl lg:block xl:w-[200px] 2xl:w-[370px]"></div>
 
-        <div className="pt-7 w-full">
+        <div className="w-full">
           <Marquee speed={30} direction="right" pauseOnHover>
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
@@ -56,7 +56,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
           </Marquee>
         </div>
 
-        <div className="hidden md:block w-full relative">
+        <div className="relative hidden w-full md:block">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard

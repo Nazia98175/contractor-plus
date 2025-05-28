@@ -1,3 +1,4 @@
+"use client"
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import {
@@ -6,7 +7,8 @@ import {
   HeroAnimatedMobileIcon,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-
+import dynamic from "next/dynamic";
+const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), { ssr: false })
 type HeroProps = {
   homePageContent: any;
 };
@@ -24,7 +26,6 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
       <HeroAnimatedIcon />
-
       <HeroAnimatedMobileIcon />
       <Image
         width={769}
@@ -57,16 +58,17 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-        <video
+        <VideoOptimizer highResUrl="/video/hero-video.mp4" lowResUrl="/video/hero-video.mp4" />
+        {/* <video
           autoPlay
           muted
           loop
           playsInline
           className="3xl:object-cover relative -z-20 h-full w-full object-cover lg:object-right"
           src="/video/hero-video.mp4"
-        ></video>
+        ></video> */}
         <Image
-          loading="lazy"
+          priority
           fill
           unoptimized
           className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"

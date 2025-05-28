@@ -1,6 +1,7 @@
 import React from "react";
 import TextAnimation from "../common/TextAnimation";
-import { RedCurveLine } from "../common/Icons";
+import { RedCurveLine, TickIcon } from "../common/Icons";
+import Image from "next/image";
 
 const curvePositions = [0, 50, 100];
 
@@ -25,7 +26,62 @@ const WantingMore = () => {
           </span>
         ))}
 
-        <div className="wanting-more-bg h-96 w-full max-w-[1232px]"></div>
+        <article className="wanting-more-bg relative z-30 flex w-full max-w-[1232px] flex-col items-start justify-between gap-7 p-5 text-black lg:flex-row">
+          <div className="w-full xl:max-w-[650px]">
+            <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
+              <h4 className="font-montserrat lg:font-jakarta px-2.5 py-0.5 text-base font-semibold md:text-2xl xl:text-[26px]">
+                Project Management
+              </h4>
+
+              {/* Image for mobile */}
+              <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
+                <Image
+                  src=""
+                  alt="service image"
+                  width={518}
+                  height={302}
+                  className="h-auto w-full rounded-lg object-cover"
+                />
+              </div>
+              <div className="flex flex-col gap-4 2xl:gap-6">
+                <div className="flex gap-3">
+                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                    <TickIcon />
+                  </span>
+                  <div className="flex flex-col gap-2 xl:gap-3">
+                    <h5 className="font-montserrat lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
+                      Phases, Tasks, and Subtasks
+                    </h5>
+                    <p className="text-secondary lg:text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
+                      Structure jobs by phase with nested task assignments for
+                      better delegation and progress tracking.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Estimate testimonial */}
+            {/* {isEstimate && ( */}
+            <p className="text-secondary font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm">
+              “I used to spend hours piecing together quotes. Now I can hammer
+              one out in minutes, and my clients love the professional look.” –
+              <br /> <br /> – Satisfied Contractor+ User
+            </p>
+            {/* )} */}
+          </div>
+
+          {/* Desktop image */}
+          <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
+            <Image
+              src="/placeholder.png"
+              alt="service image"
+              width={518}
+              height={302}
+              className="h-auto w-full rounded-lg object-cover"
+            />
+          </div>
+        </article>
       </div>
     </section>
   );

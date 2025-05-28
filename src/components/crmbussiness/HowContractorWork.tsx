@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { CheckIcon } from "../common/Icons";
+import { CheckIcon, SideIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 
@@ -58,11 +58,11 @@ const HowContractorWork = () => {
         className="mt-3.5 flex flex-col items-center justify-center gap-2.5 md:mt-7"
       >
         <button className="bg-red-linear primary-btn flex h-10 items-center gap-1.5">
-          {/* {trackProperties?.btnText} <SideIcon /> */}
+          Get started FREE
+          <SideIcon />
         </button>
         <button className="font-myriad text-wallStreet flex cursor-pointer items-center gap-1.5 text-sm font-semibold">
-          {/* <CheckIcon /> */}
-          {/* {ncc} */}
+          No Credit Card Required
         </button>
       </CardReveal>
     </>

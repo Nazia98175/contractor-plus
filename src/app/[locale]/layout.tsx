@@ -30,11 +30,11 @@ export default async function RootLayout({
     getHomePage(useParams.locale, "&populate=*"),
     getHomePage(
       useParams.locale,
-      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
+      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*",
     ),
     getFooter(
       useParams?.locale,
-      "&populate[sections][populate]=*&populate[bottomLinks]=*"
+      "&populate[sections][populate]=*&populate[bottomLinks]=*",
     ),
   ]);
   return (

@@ -37,7 +37,7 @@ const FeatureNavigation = ({
 
   return (
     <div
-      className={`flex gap-1.5 ${
+      className={`sticky top-0 flex gap-1.5 ${
         isMobile ? "w-full" : "lg:self-start"
       } z-20 lg:w-fit`}
       ref={featuresRef}

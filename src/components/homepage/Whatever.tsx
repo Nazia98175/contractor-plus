@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useRef } from "react";
-import CardReveal from "../common/CardReveal";
+import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
@@ -26,6 +26,11 @@ interface TheWhateverProps {
 const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const t = useTranslations();
 
+  // Media queries for responsive behavior
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
+
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const centerRef = useRef<HTMLDivElement | null>(null);
@@ -37,146 +42,161 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const right1Ref = useRef<HTMLDivElement | null>(null);
   const right2Ref = useRef<HTMLDivElement | null>(null);
   const right3Ref = useRef<HTMLDivElement | null>(null);
-
+  const waitUntilFullyLoaded = (): Promise<void> => {
+    return new Promise((resolve) => {
+      if (document.readyState === "complete") {
+        requestAnimationFrame(() => resolve());
+      } else {
+        window.addEventListener("load", () => {
+          requestAnimationFrame(() => resolve());
+        });
+      }
+    });
+  };
   useGSAP(
     () => {
-      if (!sectionRef.current || !containerRef.current) return;
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-      gsap.killTweensOf([
-        left1Ref.current,
-        left2Ref.current,
-        left3Ref.current,
-        right1Ref.current,
-        right2Ref.current,
-        right3Ref.current,
-        centerRef.current,
-      ]);
+      waitUntilFullyLoaded().then(() => {
+        if (!sectionRef.current || !containerRef.current) return;
 
-      const getInitial = (val: number) => {
-        if (window.innerWidth < 768) return val * 0.6;
-        if (window.innerWidth < 1024) return val * 0.8;
-        return val;
-      };
+        // Clear previous triggers and tweens
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+        gsap.killTweensOf([
+          left1Ref.current,
+          left2Ref.current,
+          left3Ref.current,
+          right1Ref.current,
+          right2Ref.current,
+          right3Ref.current,
+          centerRef.current,
+        ]);
 
-      const scrollTrigger = {
-        trigger: sectionRef.current,
-        start: "top 70%",
-        end: "bottom bottom",
-        scrub: 1,
-      };
+        const getInitial = (val: number) => {
+          if (isMobile) return val * 0.6;
+          if (isTablet) return val * 0.8;
+          return val;
+        };
 
-      const animate = (
-        el: HTMLDivElement | null,
-        finalX: string,
-        finalY: string,
-        initialX: number,
-        initialY: number,
-      ) => {
-        if (!el) return;
-        gsap.set(el, {
-          position: "absolute",
-          left: finalX,
-          top: finalY,
-          xPercent: -50,
-          yPercent: -50,
-          opacity: 0,
-          scale: 0.2,
-          filter: "blur(8px)",
-          x: getInitial(initialX),
-          y: getInitial(initialY),
-        });
-        setTimeout(() => {
-          gsap.to(el, {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            filter: "blur(0px)",
-            ease: "power2.out",
-            scrollTrigger,
+        const scrollTrigger = {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          end: "bottom bottom",
+          scrub: 1,
+        };
+
+        const animate = (
+          el: HTMLDivElement | null,
+          finalX: string,
+          finalY: string,
+          initialX: number,
+          initialY: number,
+        ) => {
+          if (!el) return;
+          gsap.set(el, {
+            position: "absolute",
+            left: finalX,
+            top: finalY,
+            xPercent: -50,
+            yPercent: -50,
+            opacity: 0,
+            scale: 0.2,
+            filter: "blur(8px)",
+            x: getInitial(initialX),
+            y: getInitial(initialY),
           });
-        }, 3000);
-      };
+          setTimeout(() => {
+            gsap.to(el, {
+              x: 0,
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+              ease: "power2.out",
+              scrollTrigger,
+            });
+          }, 3000);
+        };
 
-      animate(left1Ref.current, "47%", "25%", -150, -80);
-      animate(left2Ref.current, "18%", "70%", -150, 80);
-      animate(left3Ref.current, "81%", "75%", -150, 80);
+        animate(left1Ref.current, "47%", "25%", -150, -80);
+        animate(left2Ref.current, "18%", "70%", -150, 80);
+        animate(left3Ref.current, "81%", "75%", -150, 80);
 
-      animate(right1Ref.current, "26%", "30%", 150, -80);
-      animate(right2Ref.current, "79%", "70%", 150, 80);
-      animate(right3Ref.current, "28%", "75%", 150, 80);
+        animate(right1Ref.current, "26%", "30%", 150, -80);
+        animate(right2Ref.current, "79%", "70%", 150, 80);
+        animate(right3Ref.current, "28%", "75%", 150, 80);
 
-      if (centerRef.current) {
-        gsap.set(centerRef.current, {
-          y: 80,
-          scale: 0.3,
-          opacity: 0,
-          filter: "blur(8px)",
-        });
-        setTimeout(() => {
-          gsap.to(centerRef.current, {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-            ease: "power2.out",
-            scrollTrigger,
+        if (centerRef.current) {
+          gsap.set(centerRef.current, {
+            y: 80,
+            scale: 0.3,
+            opacity: 0,
+            filter: "blur(8px)",
           });
-        }, 3000);
-      }
+          setTimeout(() => {
+            gsap.to(centerRef.current, {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              filter: "blur(0px)",
+              ease: "power2.out",
+              scrollTrigger,
+            });
+          }, 3000);
+        }
+      });
     },
-    { scope: sectionRef },
+    { scope: sectionRef, dependencies: [isMobile, isTablet, isDesktop] },
   );
 
   return (
-    <section className="relative z-10 w-full">
+    <section ref={sectionRef} className="relative z-10 w-full">
       {/* Desktop Background */}
-      <Image
-        className="pointer-events-none absolute -top-[42%] right-0 z-10 hidden max-w-[700px] object-cover lg:block"
-        src="/images/webp/Whatever-right-bg.webp"
-        width={700}
-        height={300}
-        alt="gradient background"
-      />
+      {isDesktop && (
+        <Image
+          className="pointer-events-none absolute -top-[42%] right-0 z-10 max-w-[700px] object-cover"
+          src="/images/webp/Whatever-right-bg.webp"
+          width={700}
+          height={300}
+          alt="gradient background"
+        />
+      )}
 
       {/* Mobile Backgrounds */}
-      <div className="block lg:hidden">
-        <picture>
-          <source
-            media="(max-width: 1023px)"
-            srcSet="/images/webp/whatever-gredient-bg-mobile-left.webp"
-            type="image/webp"
-          />
-          <Image
-            className="pointer-events-none absolute top-0 right-0 z-10 hidden h-full w-full object-cover lg:flex"
-            src="/images/webp/whatever-gredient-bg-mobile-left.webp"
-            width={500}
-            height={1000}
-            alt="gradient background left"
-            priority
-          />
-        </picture>
-        <picture>
-          <source
-            media="(max-width: 1023px)"
-            srcSet="/images/webp/whatever-gredient-bg-mobile-right.webp"
-            type="image/webp"
-          />
-          <Image
-            className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-center"
-            src="/images/webp/whatever-gredient-bg-mobile-right.webp"
-            width={500}
-            height={1000}
-            alt="gradient background right"
-            priority
-          />
-        </picture>
-      </div>
+      {!isDesktop && (
+        <div>
+          <picture>
+            <source
+              media="(max-width: 1023px)"
+              srcSet="/images/webp/whatever-gredient-bg-mobile-left.webp"
+              type="image/webp"
+            />
+            <Image
+              className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-cover"
+              src="/images/webp/whatever-gredient-bg-mobile-left.webp"
+              width={500}
+              height={1000}
+              alt="gradient background left"
+              priority
+            />
+          </picture>
+          <picture>
+            <source
+              media="(max-width: 1023px)"
+              srcSet="/images/webp/whatever-gredient-bg-mobile-right.webp"
+              type="image/webp"
+            />
+            <Image
+              className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-center"
+              src="/images/webp/whatever-gredient-bg-mobile-right.webp"
+              width={500}
+              height={1000}
+              alt="gradient background right"
+              priority
+            />
+          </picture>
+        </div>
+      )}
 
-      <div
-        ref={sectionRef}
-        className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform"
-      >
+      <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <PrimaryAnimatedText delay={3000}>
           <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
             {whateverOperation?.[0]?.title}

@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useMediaQuery } from "usehooks-ts";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
 import { featureContents } from "../common/Helper";
+import { useGSAP } from "@gsap/react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +16,9 @@ if (typeof window !== "undefined") {
 const CoreFeaturesCard = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [progressValue, setProgressValue] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+
+  // Replace manual mobile detection with useMediaQuery
+  const isMobile = useMediaQuery("(max-width: 1023px)");
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const featuresRef = useRef<HTMLDivElement | null>(null);
@@ -30,16 +34,6 @@ const CoreFeaturesCard = () => {
   const features: string[] = t.raw("features") || [];
   const featureBtn: string[] = [t.raw("featureBtn") || "Learn More"];
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const calculateButtonPositions = useCallback(() => {
     if (!featuresRef.current) return [];
     const featureButtons =
@@ -49,13 +43,11 @@ const CoreFeaturesCard = () => {
     featureButtons.forEach((button, index) => {
       const rect = (button as HTMLElement).getBoundingClientRect();
       const base = (featureButtons[0] as HTMLElement).getBoundingClientRect();
-      positions.push(
-        window.innerWidth >= 1024 ? rect.top - base.top : rect.left - base.left,
-      );
+      positions.push(!isMobile ? rect.top - base.top : rect.left - base.left);
     });
 
     return positions;
-  }, []);
+  }, [isMobile]);
 
   const moveIndicator = useCallback(
     (index: number) => {
@@ -65,13 +57,13 @@ const CoreFeaturesCard = () => {
 
       if (target) {
         gsap.to(target, {
-          [window.innerWidth >= 1024 ? "top" : "left"]: `${position + 6}px`,
+          [!isMobile ? "top" : "left"]: `${position + 6}px`,
           duration: 0.3,
           ease: "power2.out",
         });
       }
     },
-    [calculateButtonPositions],
+    [calculateButtonPositions, isMobile],
   );
 
   useEffect(() => {
@@ -88,7 +80,7 @@ const CoreFeaturesCard = () => {
     }
   }, [activeFeature, moveIndicator, features.length, isMobile]);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (typeof window === "undefined") return;
 
     const cleanup = () => {
@@ -96,13 +88,14 @@ const CoreFeaturesCard = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
 
-    const setupScrollTriggers = () => {
-      const triggers: any[] = [];
+    const initialize = () => {
       const navEl = navContainerRef.current;
       const container = containerRef.current;
       navHeightRef.current = navEl?.offsetHeight || 0;
 
-      if (window.innerWidth >= 1024 && navEl && container) {
+      const triggers: any[] = [];
+
+      if (!isMobile && navEl && container) {
         triggers.push(
           ScrollTrigger.create({
             trigger: container,
@@ -129,7 +122,7 @@ const CoreFeaturesCard = () => {
         );
       }
 
-      if (window.innerWidth < 1024 && navEl && container) {
+      if (isMobile && navEl && container) {
         triggers.push(
           ScrollTrigger.create({
             trigger: container,
@@ -149,14 +142,12 @@ const CoreFeaturesCard = () => {
         triggers.push(
           ScrollTrigger.create({
             trigger: el,
-            start:
-              window.innerWidth >= 1024
-                ? "top center"
-                : `top+=${navHeightRef.current}px center`,
-            end:
-              window.innerWidth >= 1024
-                ? "bottom center"
-                : `bottom+=${navHeightRef.current}px center`,
+            start: !isMobile
+              ? "top center"
+              : `top+=${navHeightRef.current}px center`,
+            end: !isMobile
+              ? "bottom center"
+              : `bottom+=${navHeightRef.current}px center`,
             onEnter: () => {
               if (!isScrollingProgrammatically.current) {
                 setActiveFeature(index);
@@ -175,23 +166,38 @@ const CoreFeaturesCard = () => {
       ScrollTrigger.refresh();
     };
 
-    const handleResize = () => {
+    const safeInitialize = () => {
       cleanup();
-      setupScrollTriggers();
+      setTimeout(() => {
+        initialize();
+      }, 2000);
     };
 
-    requestAnimationFrame(() => {
+    // Wait for full window load (all images/resources loaded)
+    if (document.readyState === "complete") {
+      requestAnimationFrame(() => {
+        safeInitialize();
+      });
+    } else {
+      window.addEventListener("load", () => {
+        requestAnimationFrame(() => {
+          safeInitialize();
+        });
+      });
+    }
+
+    const handleResize = () => {
       cleanup();
-      setupScrollTriggers();
-      setTimeout(() => ScrollTrigger.refresh(), 200);
-    });
+      initialize();
+    };
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
       cleanup();
     };
-  }, [features.length, calculateButtonPositions]);
+  }, [features.length, calculateButtonPositions, isMobile]);
 
   return (
     <section
@@ -200,7 +206,7 @@ const CoreFeaturesCard = () => {
     >
       <div
         ref={navContainerRef}
-        className={`$${
+        className={`${
           isMobile
             ? "shadow-c2 z-30 w-full bg-white px-2 transition-all duration-200"
             : ""

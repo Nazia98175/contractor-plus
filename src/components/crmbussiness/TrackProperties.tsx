@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import CardReveal from "../common/CardReveal";
-import { CheckIcon, SideIcon } from "../common/Icons";
+import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 
 const FeatureItem = ({ text }: { text: string }) => (
-  <article className="p-3 rounded bg-doctor2 flex text-nowrap font-semibold text-lightBlack items-center gap-2.5 text-sm md:text-base lg:text-lg text-lightblack ma-w-[500px] w-full mx-2">
+  <article className="bg-doctor2 text-lightBlack text-lightblack ma-w-[500px] mx-2 flex w-full items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">
     <CheckIcon width={25} height={25} className="min-w-5" />
     {text}
   </article>
@@ -20,7 +19,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
     <section className="relative pt-28 lg:pt-5">
       <Image
-        className="absolute w-[100%] h-[83%] lg:h-[100%] left-0 z-0 -top-[35%] object-cover"
+        className="absolute -top-[35%] left-0 z-0 h-[83%] w-[100%] object-cover lg:h-[100%]"
         src={"/images/webp/finally-desktop-bg.webp"}
         alt="finally-desktop-bg"
         width={1920}
@@ -33,11 +32,11 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         distance={50}
         animateOnScroll={true}
       > */}
-      <div className="flex relative z-10 justify-center items-center px-2">
-        <div className="bg-white-linear hidden md:block absolute left-0 z-10 -bottom-[84px] h-[267px] w-full"></div>
+      <div className="relative z-10 flex items-center justify-center px-2">
+        <div className="bg-white-linear absolute -bottom-[84px] left-0 z-10 hidden h-[267px] w-full md:block"></div>
         <Image
           src="/images/webp/mix-screens.webp"
-          className="max-w-[1098px] w-full object-cover img-shadow md:block hidden"
+          className="img-shadow hidden w-full max-w-[1098px] object-cover md:block"
           alt="Mobile"
           width={1098}
           height={578}
@@ -45,7 +44,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         />
         <Image
           src="/images/webp/mix-screens-mobile.webp"
-          className="max-w-[1098px] w-full object-cover img-shadow block md:hidden mb-10 md:mb-0 "
+          className="img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
           alt="Mobile"
           width={1098}
           height={578}
@@ -55,42 +54,26 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
       {/* </CardReveal> */}
 
       {/* Heading + Paragraph */}
-      <div className="relative z-10 md:-mt-3 px-2">
+      <div className="relative z-10 px-2 md:-mt-3">
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h2 className="section-heading gradient-text-2 text-center z-30 !font-black lg:!font-semibold w-fit mx-auto">
+          <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit text-center !font-black lg:!font-semibold">
             {trackProperties?.title}
           </h2>
         </TextAnimation>
 
         <TextAnimation animateOnScroll={true} delay={0.3}>
-          <p className="max-w-[950px] mx-auto paragraph-style text-center">
+          <p className="paragraph-style mx-auto max-w-[950px] text-center">
             {trackProperties?.sub_title}
           </p>
         </TextAnimation>
 
-        <div className="w-full mt-3.5 sm:mt-9">
+        <div className="mt-3.5 w-full sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
             {trackProperties?.cards.map((text: any, index: any) => (
               <FeatureItem key={index} text={text?.text} />
             ))}
           </Marquee>
         </div>
-        <CardReveal
-          staggerDelay={0.15}
-          animationDuration={0.8}
-          distance={50}
-          delay={0.3}
-          animateOnScroll={true}
-          className="flex gap-2.5 flex-col items-center justify-center mt-3.5 md:mt-7"
-        >
-          <button className="bg-red-linear h-10 flex gap-1.5 items-center primary-btn">
-            {trackProperties?.btnText} <SideIcon />
-          </button>
-          <button className="flex gap-1.5 items-center font-myriad text-sm text-wallStreet font-semibold cursor-pointer">
-            {/* <CheckIcon /> */}
-            {ncc}
-          </button>
-        </CardReveal>
       </div>
     </section>
   );

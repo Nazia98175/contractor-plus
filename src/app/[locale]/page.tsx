@@ -7,15 +7,13 @@ import EntireBusiness from "@/components/homepage/EntireBusiness";
 import Features from "@/components/homepage/Features";
 import Finally from "@/components/homepage/Finally";
 import Hero from "@/components/homepage/Hero";
-import MakeOperation from "@/components/homepage/MakeOperation";
 import OurBlogs from "@/components/homepage/OurBlogs";
 import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
-import Whatever from "@/components/homepage/Whatever";
+import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getBlogs } from "@/services/blogs";
 import { getHomePage } from "@/services/homepage";
-import { Suspense } from "react";
 
 export default async function Home({
   params,
@@ -32,9 +30,7 @@ export default async function Home({
     ),
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
-
   return (
-    <Suspense fallback={<div>Loading...</div>}>
       <div className="relative overflow-x-hidden">
         <div className="relative">
           <Header />
@@ -52,14 +48,7 @@ export default async function Home({
           contractorIndustry={homePageContent?.data?.contractorIndustry}
         />
         <OurReviews reviews={homePageContent?.data?.reviews} />
-        <div className="bg-kuroiBlack relative overflow-hidden ">
-          <Whatever
-            whateverOperation={homePageContent?.data?.whateverOperation}
-          />
-          <MakeOperation
-            whateverOperation={homePageContent?.data?.whateverOperation}
-          />
-        </div>
+      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
         <OurBlogs
           blogs={blogs?.data}
           blogHeading={homePageContent?.data?.blogs}
@@ -71,6 +60,5 @@ export default async function Home({
           />
         </div>
       </div>
-    </Suspense>
   );
 }

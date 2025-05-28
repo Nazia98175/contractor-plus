@@ -1,7 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import CardReveal from "../common/CardReveal";
 import {
@@ -10,7 +9,6 @@ import {
   MakeOperationRedLineIcon,
   TurnaroundIcon,
 } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
 import MakeOperationCard from "./MakeOperationCard";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 interface Whatever {

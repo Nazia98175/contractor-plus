@@ -22,8 +22,10 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
   });
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="bg-athenaBlue pointer-events-none absolute bottom-0 left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
+    <section className="relative overflow-hidden md:overflow-visible">
+      <div className="bg-athenaBlue pointer-events-none absolute bottom-0  left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-[-20px] left-[-10px] h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] hidden lg:block"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-[50px] right-[-10px] h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] hidden lg:block"></div>
       <div
         ref={ref}
         className="sm:border-secondary/10 relative z-30 mx-auto mt-10 w-full max-w-[98%] overflow-hidden rounded-[22px] bg-none bg-[100%_100%] bg-no-repeat min-[1440px]:max-w-[1364px] sm:mt-[40px] sm:border lg:bg-[url('/images/webp/engine-bg.web')] lg:bg-cover"

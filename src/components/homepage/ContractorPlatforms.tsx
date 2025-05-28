@@ -8,9 +8,9 @@ import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   return (
     <section className="relative z-20">
-      <div className="main-container relative flex flex-col gap-9 pt-[37px] md:gap-10 lg:pt-[42px]">
+      <div className="main-container relative flex flex-col gap-9 pb-[30px] md:pb-0 pt-[37px] md:gap-10 lg:pt-[42px]">
         <PrimaryAnimatedText
-          className="sub-heading text-secondary text-center"
+          className="sub-heading text-secondary text-center max-w-[678px] w-full mx-auto"
           delay={3000}
         >
           {contractPlatformsData?.data?.platforms?.title?.title}

@@ -155,7 +155,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </div> */}
 
         <div className="flex items-center justify-between gap-3 pt-4">
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-3 md:flex relative z-10">
             <p className="text-secondary font-montserrat text-xs font-medium">
               {t("poweredBy")}
             </p>

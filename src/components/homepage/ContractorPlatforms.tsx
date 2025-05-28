@@ -10,7 +10,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
     <section className="relative z-20">
       <div className="main-container relative flex flex-col gap-9 pt-[37px] md:gap-10 lg:pt-[42px]">
         <PrimaryAnimatedText
-          className="sub-heading text-secondary text-center"
+          className="sub-heading text-secondary text-center max-w-[678px] w-full mx-auto"
           delay={3000}
         >
           {contractPlatformsData?.data?.platforms?.title?.title}

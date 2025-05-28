@@ -1,61 +1,20 @@
 "use client";
 import { PlatformItem } from "@/types";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 import CardReveal from "../common/CardReveal";
 import { contractPlatforms } from "../common/Helper";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(useGSAP);
-  // @ts-ignore
-}
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
-  const textRef = useRef<HTMLHeadingElement | null>(null);
-  const containerRef = useRef<HTMLHeadingElement | null>(null);
-  useEffect(() => {
-    setTimeout(() => {
-      const split = new SplitText("#text-animation", {
-        type: "lines",
-        mask: "lines",
-        linesClass: "split-line",
-      });
-      gsap.set(split.lines, { y: "100%" });
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#text-animation",
-          start: "top 75%",
-          once: false,
-        },
-      });
-
-      tl.to(split.lines, {
-        y: "0%",
-        duration: 1,
-        stagger: 0.1,
-        ease: "power4.out",
-      });
-
-      return () => {
-        split.revert();
-      };
-    }, 3000);
-  }, [textRef.current]);
   return (
-    <section ref={containerRef} className="relative z-20">
+    <section className="relative z-20">
       <div className="main-container relative flex flex-col gap-9 pt-[37px] md:gap-10 lg:pt-[42px]">
-        <h2
-          ref={textRef}
-          id="text-animation"
+        <PrimaryAnimatedText
           className="sub-heading text-secondary text-center"
+          delay={3000}
         >
           {contractPlatformsData?.data?.platforms?.title?.title}
-        </h2>
-
+        </PrimaryAnimatedText>
         <CardReveal
           staggerDelay={0.15}
           animationDuration={0.8}

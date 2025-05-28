@@ -59,11 +59,8 @@
     #0c0d11 0%,
     rgba(12, 13, 17, 0) 100%
   );
-  --background-image-black-red-linear: linear-gradient(
-      0deg,
-      rgba(28, 39, 49, 0.2) 0%,
-      rgba(28, 39, 49, 0.2) 100%
-    ),
+  --background-image-black-red-linear:
+    linear-gradient(0deg, rgba(28, 39, 49, 0.2) 0%, rgba(28, 39, 49, 0.2) 100%),
     radial-gradient(
       116.03% 94.9% at 117.83% 100%,
       #ee1e25 0%,
@@ -74,10 +71,10 @@
   --font-myriad: "Myriad Pro", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
-  --shadow-c1: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
-    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
-  --shadow-c2: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
-    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-c1:
+    0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-c2:
+    0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 @font-face {
   font-family: "Myriad Pro";
@@ -104,52 +101,52 @@ body {
   @apply bg-kuroiBlack font-jakarta;
 }
 .main-container {
-  @apply max-w-[1308px] w-full mx-auto px-2;
+  @apply mx-auto w-full max-w-[1308px] px-2;
 }
 
 .main-heading {
-  @apply text-[26px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold leading-[130%];
+  @apply text-[26px] leading-[130%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .section-heading {
-  @apply text-2xl sm:text-[26px] lg:text-[42px] sm:text-4xl font-semibold lg:tracking-[-0.84px] leading-[130%];
+  @apply text-2xl leading-[130%] font-semibold sm:text-4xl sm:text-[26px] lg:text-[42px] lg:tracking-[-0.84px];
 }
 .paragraph-text {
-  @apply lg:text-lg text-sm sm:text-base;
+  @apply text-sm sm:text-base lg:text-lg;
 }
 .paragraph {
-  @apply text-wallStreet font-medium mt-4;
+  @apply text-wallStreet mt-4 font-medium;
 }
 .paragraph-style {
-  @apply text-wallStreet text-sm md:font-medium md:text-base mt-1.5 md:mt-4;
+  @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
 }
 .sub-heading {
-  @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px];
+  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
 }
-.heading{
-  @apply text-xl sm:text-2xl md:text-3xl xl:text-4xl font-semibold tracking-[-0.72px] leading-[140%]
+.heading {
+  @apply text-xl leading-[140%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
 }
 .primary-btn {
-  @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95;
+  @apply font-montserrat flex w-full cursor-pointer items-center justify-center rounded-lg px-6 py-2.5 font-black tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit;
 }
 .header-li {
-  @apply 2xl:text-base xl:text-sm text-xs font-montserrat font-semibold lg:text-superSilver text-lightBlack;
+  @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
 
 .feature-btn {
-  @apply lg:truncate text-base md:text-xl py-1 px-0.5 leading-[100%] text-start transition-colors duration-300 lg:min-w-[165px] w-fit;
+  @apply w-fit px-0.5 py-1 text-start text-base leading-[100%] transition-colors duration-300 md:text-xl lg:min-w-[165px] lg:truncate;
 }
 
 .header-li-dropdown {
-  @apply xl:text-base lg:text-sm text-xs font-semibold font-inter px-1 text-lightBlack duration-300 ease-linear;
+  @apply font-inter text-lightBlack px-1 text-xs font-semibold duration-300 ease-linear lg:text-sm xl:text-base;
 }
 .all-features-button {
-  @apply flex items-center gap-2.5 text-lg font-medium text-lightBlack p-1 font-inter;
+  @apply text-lightBlack font-inter flex items-center gap-2.5 p-1 text-lg font-medium;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .dropdown-heading {
-  @apply lg:text-xl text-lg italic font-semibold text-lightBlack font-inter;
+  @apply text-lightBlack font-inter text-lg font-semibold italic lg:text-xl;
 }
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
@@ -212,7 +209,8 @@ html {
 }
 .gradient-border {
   position: relative;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       38.35% 84.5% at 98.28% 95.91%,
       rgba(238, 30, 37, 0.2) 0%,
       rgba(0, 0, 0, 0) 100%
@@ -230,7 +228,9 @@ html {
     rgba(238, 30, 37, 0.678) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -309,7 +309,9 @@ html {
   );
   filter: blur(2px); /* Minimal blur for sharp metallic sheen */
   left: -180%;
-  transition: left 1.2s cubic-bezier(0.4, 0.8, 0.6, 1), opacity 0.3s ease;
+  transition:
+    left 1.2s cubic-bezier(0.4, 0.8, 0.6, 1),
+    opacity 0.3s ease;
   z-index: 10;
   opacity: 0.65; /* Subtle default for elegance */
 }
@@ -318,7 +320,8 @@ html {
   opacity: 0.9;
 }
 .btn-hover:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.2),
     inset 0 0 5px rgba(255, 255, 255, 0.15);
 }
 .rfm-child {
@@ -410,7 +413,9 @@ html {
   border-radius: 12px; /* slightly larger than content border radius */
   padding: 1.5px;
   background: linear-gradient(90deg, #000, #000, #615d52);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -427,7 +432,8 @@ html {
   -webkit-text-fill-color: transparent;
 }
 .gradient-text {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       275.84deg,
       rgba(0, 0, 0, 0) 7.61%,
       rgba(238, 30, 37, 0.4) 99.65%
@@ -440,7 +446,8 @@ html {
 }
 @media (max-width: 640px) {
   .gradient-text {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         275.84deg,
         rgba(238, 30, 37, 0.4) 7.61%,
         rgba(0, 0, 0, 0) 99.65%
@@ -453,7 +460,8 @@ html {
   }
 }
 .gradient-text-2 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       275.84deg,
       rgba(0, 0, 0, 0) 7.61%,
       rgba(238, 30, 37, 0.4) 99.65%
@@ -465,7 +473,8 @@ html {
   text-fill-color: transparent;
 }
 .crm-gradient {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       270.38deg,
       rgba(238, 30, 37, 0.4) 35.56%,
       rgba(0, 0, 0, 0) 99.98%
@@ -495,14 +504,17 @@ html {
 }
 .switch-tool-card {
   border: 0.5px solid rgba(255, 255, 255, 0.15);
-  background: radial-gradient(
+  background:
+    radial-gradient(
       146.13% 118.42% at 50% -15.5%,
       rgba(12, 13, 17, 0.1) 0%,
       rgba(12, 13, 17, 0) 99.59%
     ),
     linear-gradient(180deg, rgba(12, 13, 17, 0) 0%, #0c0d11 91.84%);
-  box-shadow: inset 0px 0px 100px rgba(204, 215, 255, 0.15),
-    0px 5px 10px rgba(12, 13, 17, 0.05), 0px 15px 30px rgba(12, 13, 17, 0.05),
+  box-shadow:
+    inset 0px 0px 100px rgba(204, 215, 255, 0.15),
+    0px 5px 10px rgba(12, 13, 17, 0.05),
+    0px 15px 30px rgba(12, 13, 17, 0.05),
     0px 30px 60px rgba(12, 13, 17, 0.1);
   backdrop-filter: blur(10px);
   transform-style: preserve-3d;
@@ -521,7 +533,8 @@ html {
 .field-service-card {
   border: 1px solid #ffffff4e;
   z-index: 9999;
-  background: lightgray 0% 0% / 100px 100px repeat,
+  background:
+    lightgray 0% 0% / 100px 100px repeat,
     radial-gradient(
       146.13% 118.42% at 50% -15.5%,
       rgba(255, 255, 255, 0.08) 0%,
@@ -549,7 +562,8 @@ html {
   filter: drop-shadow(-24px 18px 22px #00000078);
 }
 .gradient-2 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       276.25deg,
       rgba(238, 30, 37, 0.4) -11.28%,
       rgba(0, 0, 0, 0) 99.63%
@@ -562,7 +576,8 @@ html {
 }
 @media screen and (max-width: 640px) {
   .gradient-2 {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         275.84deg,
         rgba(238, 30, 37, 0.4) 7.61%,
         rgba(0, 0, 0, 0) 99.65%
@@ -694,7 +709,8 @@ html {
   }
 }
 .service-text {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       93.06deg,
       rgba(0, 0, 0, 0) -6.06%,
       rgba(238, 30, 37, 0.4) 81.92%
@@ -1073,13 +1089,56 @@ html {
     diagonal-shift 10s ease-in-out infinite;
   transform-origin: center center;
 }
-.software-bg{
-  background:  lightgray 0% 0% / 100px 100px repeat, radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(178, 0, 3, 0.00) 0%, rgba(255, 168, 169, 0.20) 100%);
+.software-bg {
+  background:
+    lightgray 0% 0% / 100px 100px repeat,
+    radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(178, 0, 3, 0) 0%,
+      rgba(255, 168, 169, 0.2) 100%
+    );
   backdrop-filter: blur(10px);
   transform-style: preserve-3d;
   will-change: transform, opacity;
 }
 
+.svg-mobile-container {
+  animation: breathe-mobile 8s ease-in-out infinite;
+  transform-origin: center center;
+}
 
+.mobile-path {
+  animation: pulse-mobile-stroke 5s ease-in-out infinite;
+  transform-origin: center center;
+}
 
+@keyframes breathe-mobile {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
 
+@keyframes pulse-mobile-stroke {
+  0%,
+  100% {
+    stroke-width: 432px;
+    filter: blur(34px);
+  }
+  50% {
+    stroke-width: 500px;
+    filter: blur(50px);
+  }
+}
+.primary-split-line {
+  display: block;
+  overflow: hidden;
+}

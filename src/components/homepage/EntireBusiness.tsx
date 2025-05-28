@@ -4,6 +4,7 @@ import { CheckIcon } from "../common/Icons";
 import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 interface EntireBusiness {
   title: string;
@@ -44,26 +45,18 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   return (
     <div className="relative z-20 px-2">
       <div className="pt-[38px] pb-7 md:pt-[44px]">
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
+        <PrimaryAnimatedText
+          className="text-decemberSky font-jakarta text-center text-[26px] font-extrabold sm:text-[28px] md:text-[32px]"
+          delay={3000}
         >
-          <h3 className="text-decemberSky font-jakarta text-center text-[26px] font-extrabold sm:text-[28px] md:text-[32px]">
-            {entireBusiness?.[0]?.title}
-          </h3>
-        </CardReveal>
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
+          {entireBusiness?.[0]?.title}
+        </PrimaryAnimatedText>
+        <PrimaryAnimatedText
+          className="paragraph-text text-decemberSky font-jakarta py-4 text-center font-medium"
+          delay={3000}
         >
-          <p className="paragraph-text text-decemberSky font-jakarta py-4 text-center font-medium">
-            {entireBusiness?.[0]?.sub_title}
-          </p>
-        </CardReveal>
+          {entireBusiness?.[0]?.sub_title}
+        </PrimaryAnimatedText>
         <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
           <form
             className="flex flex-col items-start justify-center gap-3 md:flex-row"

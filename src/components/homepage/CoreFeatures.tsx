@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import CardReveal from "../common/CardReveal";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import CoreFeaturesCard from "./CoreFeaturesCard";
 
 const CoreFeatures = () => {
@@ -9,27 +9,16 @@ const CoreFeatures = () => {
   return (
     <section className="relative z-20 bg-white">
       <div className="mx-auto max-w-[950px] px-2 pt-12 text-center md:text-start">
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
+        <PrimaryAnimatedText
+          className="sub-heading text-lightBlack w-full font-semibold md:w-fit"
+          delay={3000}
         >
-          <h3 className="sub-heading text-lightBlack w-full font-semibold md:w-fit">
-            Contractor+ operates like your business really runs
-          </h3>
-        </CardReveal>
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
-        >
-          <p className="mt-3 leading-[130%]">
-            When the tools actually work together, you move like a company twice
-            your size.
-          </p>
-        </CardReveal>
+          Contractor+ operates like your business really runs
+        </PrimaryAnimatedText>
+        <PrimaryAnimatedText className="mt-3 leading-[130%]" delay={4000}>
+          When the tools actually work together, you move like a company twice
+          your size.
+        </PrimaryAnimatedText>
         <CoreFeaturesCard />
       </div>
     </section>

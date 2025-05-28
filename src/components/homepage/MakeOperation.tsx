@@ -12,6 +12,7 @@ import {
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import MakeOperationCard from "./MakeOperationCard";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 interface Whatever {
   title: string;
   sub_title: string;
@@ -55,26 +56,17 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         <MakeOperationRedLineIcon />
       </span>
       <div className="main-container relative pb-10">
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
-        >
+        <PrimaryAnimatedText delay={3000}>
           <h3 className="section-heading gradient-text text-center font-semibold">
             {whateverOperation?.[1]?.title}
           </h3>
-        </CardReveal>
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
+        </PrimaryAnimatedText>
+        <PrimaryAnimatedText
+          className="text-secondary font-jakarta pt-2 text-center text-[22px]"
+          delay={3000}
         >
-          <p className="text-secondary font-jakarta pt-2 text-center text-[22px]">
-            {whateverOperation?.[1]?.sub_title}
-          </p>
-        </CardReveal>
+          {whateverOperation?.[1]?.sub_title}
+        </PrimaryAnimatedText>
         <CardReveal
           staggerDelay={0.15}
           animationDuration={0.8}

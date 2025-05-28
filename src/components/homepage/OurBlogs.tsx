@@ -6,6 +6,7 @@ import SliderLayout from "../common/SliderLayout";
 import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
 import OurBlogCard from "./OurBlogCard";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 interface Blogs {
   blogTitle: string;
@@ -76,16 +77,11 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     <section className="relative z-10 bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
-          <CardReveal
-            staggerDelay={3}
-            animationDuration={0.8}
-            distance={50}
-            animateOnScroll={true}
-          >
+          <PrimaryAnimatedText delay={3000}>
             <h2 className="font-jakarta gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
               {blogHeading?.[0]?.title}
             </h2>
-          </CardReveal>
+          </PrimaryAnimatedText>
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}

@@ -10,6 +10,7 @@ import ReviewModal from "../common/ReviewModal";
 import TextAnimation from "../common/TextAnimation";
 import ReviewCard from "./ReviewCard";
 import { Review } from "@/types";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 interface Reviews {
   title: string;
@@ -41,16 +42,11 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
   return (
     <section className="relative z-20 bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
       <div className="main-container flex flex-col items-center justify-between gap-3 text-center md:text-start lg:flex-row">
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
-        >
+        <PrimaryAnimatedText delay={3000}>
           <h3 className="section-heading gradient-text-2 text-center text-black md:text-start">
             {reviews?.[0]?.title ?? ""}
           </h3>
-        </CardReveal>
+        </PrimaryAnimatedText>
         <CardReveal
           staggerDelay={0.4}
           animationDuration={0.8}

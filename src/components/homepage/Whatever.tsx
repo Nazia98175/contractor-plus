@@ -9,6 +9,7 @@ import React, { useRef } from "react";
 import CardReveal from "../common/CardReveal";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -176,16 +177,11 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         ref={sectionRef}
         className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform"
       >
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
-        >
+        <PrimaryAnimatedText delay={3000}>
           <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
             {whateverOperation?.[0]?.title}
           </h3>
-        </CardReveal>
+        </PrimaryAnimatedText>
 
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
           <div className="flex flex-col items-center justify-center bg-center md:flex-row md:justify-between md:pt-5 lg:gap-5">
@@ -297,17 +293,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           </div>
         </div>
 
-        <CardReveal
-          staggerDelay={3}
-          animationDuration={0.8}
-          distance={50}
-          animateOnScroll={true}
-        >
+        <PrimaryAnimatedText delay={3000}>
           <p className="text-granite text-center text-lg capitalize opacity-90">
             <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
             {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
           </p>
-        </CardReveal>
+        </PrimaryAnimatedText>
       </div>
     </section>
   );

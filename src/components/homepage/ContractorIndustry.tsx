@@ -1,9 +1,8 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import TextAnimation from "../common/TextAnimation";
-import ContractorIndustrySlider from "./ContractorIndustrySlider";
 import { SliderRedLineIcon } from "../common/Icons";
-import CardReveal from "../common/CardReveal";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import ContractorIndustrySlider from "./ContractorIndustrySlider";
 interface Industry {
   title: string;
   sub_title: string;
@@ -42,27 +41,18 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       </span>
       <div className="relative z-20 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
         <div className="px-2">
-          <CardReveal
-            staggerDelay={3}
-            animationDuration={0.8}
-            distance={50}
-            animateOnScroll={true}
-          >
+          <PrimaryAnimatedText delay={3000}>
             <h3 className="section-heading gradient-text text-center">
               {contractorIndustry?.[0]?.title ?? ""}
             </h3>
-          </CardReveal>
+          </PrimaryAnimatedText>
 
-          <CardReveal
-            staggerDelay={3}
-            animationDuration={0.8}
-            distance={50}
-            animateOnScroll={true}
+          <PrimaryAnimatedText
+            className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal"
+            delay={3000}
           >
-            <p className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
-              {contractorIndustry?.[0]?.sub_title ?? ""}
-            </p>
-          </CardReveal>
+            {contractorIndustry?.[0]?.sub_title ?? ""}
+          </PrimaryAnimatedText>
           <div className="hidden items-center justify-center md:flex">
             <button className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.[1]?.btnTxt ?? ""}

@@ -2405,12 +2405,12 @@ export const HeroAnimatedIcon = () => (
 );
 export const HeroAnimatedMobileIcon = () => (
   <svg
-    width={320}
+    width={400}
     height={1044}
     viewBox="0 0 320 1044"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="svg-mobile-container pointer-events-none absolute top-[10%] left-0 z-10 block sm:hidden"
+    className="svg-mobile-container pointer-events-none absolute top-[10%] right-0 z-10 block sm:hidden"
   >
     <g
       style={{ mixBlendMode: "plus-lighter" }}

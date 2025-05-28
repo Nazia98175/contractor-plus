@@ -20,7 +20,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
-     <HeroAnimatedIcon/>
+      <HeroAnimatedIcon />
       {/* <HeroAuroraEffect /> */}
       <img
         src="/images/webp/hero-mobile-bg.webp"

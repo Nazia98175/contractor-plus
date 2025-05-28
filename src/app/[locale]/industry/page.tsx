@@ -15,7 +15,7 @@ const IndusryPage = () => {
   return (
     <div>
       {/* <Header /> */}
-      <TrustBar />
+      {/* <TrustBar /> */}
       <SoftwareSolutions />
       <ServiceSoftware />
       <WhyChooseUs />

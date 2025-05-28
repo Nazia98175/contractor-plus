@@ -125,6 +125,9 @@ body {
 .sub-heading {
   @apply text-xl sm:text-[26px] !leading-[128%] md:text-[28px] lg:text-[32px];
 }
+.heading{
+  @apply text-xl sm:text-2xl md:text-3xl xl:text-4xl font-semibold tracking-[-0.72px] leading-[140%]
+}
 .primary-btn {
   @apply py-2.5 px-6 tracking-[0.1px] rounded-lg text-white font-montserrat font-black italic flex justify-center items-center cursor-pointer w-full sm:w-fit transition duration-300 ease-in-out hover:scale-95;
 }
@@ -1070,3 +1073,13 @@ html {
     diagonal-shift 10s ease-in-out infinite;
   transform-origin: center center;
 }
+.software-bg{
+  background:  lightgray 0% 0% / 100px 100px repeat, radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(178, 0, 3, 0.00) 0%, rgba(255, 168, 169, 0.20) 100%);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+
+
+

@@ -27,6 +27,11 @@ export type ContractorPlatformsProps = {
     locale: string;
   }>;
 };
+export interface Platform {
+  name: string;
+  logo: string;
+  rating: number;
+}
 
 export interface PlatformItem {
   title: string;

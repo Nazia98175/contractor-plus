@@ -37,7 +37,6 @@ import {
 } from "lucide-react";
 import { Platform, Review } from "@/types";
 
-
 export const platforms: Platform[] = [
   {
     name: "App Store",
@@ -66,19 +65,107 @@ export const platforms: Platform[] = [
   },
 ];
 
+export const wantingMoreData = [
+  {
+    title: "Project Management",
+    features: [
+      {
+        name: "Phases, Tasks, and Subtasks",
+        description:
+          "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        name: "Job Timeline View",
+        description:
+          "See the full history of communication, assignments, time logs, and photos for each job.",
+      },
+      {
+        name: "Gantt Chart View",
+        description:
+          "View project timelines, task dependencies, and upcoming work in a format that’s easy to visualize.",
+      },
+      {
+        name: "Internal Job Chat",
+        description:
+          "Every job has its own chat so field teams keep all the context in one place.",
+      },
+      {
+        name: "Photo Logging",
+        description:
+          "Attach photos, notes, and task completion records for final quality checks and documentation.",
+      },
+      {
+        name: "Tool & Equipment Assignment",
+        description:
+          "Assign tools to jobs and know who has what at any given moment.",
+      },
+      {
+        name: "Time Clock & Mileage Logs",
+        description:
+          "Track labor and mileage against specific jobs to stay profitable and organized.",
+      },
+    ],
+    review:
+      "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
+    user: "Satisfied Contractor+ User",
+    imageSrc: "/images/webp/circular-slide-1.webp",
+  },
+  {
+    title: "Project Management",
+    features: [
+      {
+        name: "Phases, Tasks, and Subtasks",
+        description:
+          "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        name: "Job Timeline View",
+        description:
+          "See the full history of communication, assignments, time logs, and photos for each job.",
+      },
+      {
+        name: "Gantt Chart View",
+        description:
+          "View project timelines, task dependencies, and upcoming work in a format that’s easy to visualize.",
+      },
+      {
+        name: "Internal Job Chat",
+        description:
+          "Every job has its own chat so field teams keep all the context in one place.",
+      },
+      {
+        name: "Photo Logging",
+        description:
+          "Attach photos, notes, and task completion records for final quality checks and documentation.",
+      },
+      {
+        name: "Tool & Equipment Assignment",
+        description:
+          "Assign tools to jobs and know who has what at any given moment.",
+      },
+      {
+        name: "Time Clock & Mileage Logs",
+        description:
+          "Track labor and mileage against specific jobs to stay profitable and organized.",
+      },
+    ],
+    review:
+      "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
+    user: "Satisfied Contractor+ User",
+    imageSrc: "/images/webp/circular-slide-1.webp",
+  },
+];
 
 export const softwareCardData = [
-    {
-      text: "There’s no easy way to upsell or present multiple package options",
-    },
-    {
-      text: "Field techs hate using them because they don’t make things easier",
-    },
-    {
+  {
+    text: "There’s no easy way to upsell or present multiple package options",
+  },
+  {
+    text: "Field techs hate using them because they don’t make things easier",
+  },
+  {
     text: "You still have to build workarounds where features fall short",
-    },
-
-
+  },
 ];
 export const blackPlatforms: Platform[] = [
   {

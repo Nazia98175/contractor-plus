@@ -8,7 +8,7 @@ const curvePositions = [0, 50, 100];
 
 const WantingMore = () => {
   return (
-    <section className="relative z-30 px-2">
+    <section className="relative z-30 overflow-hidden px-2 pb-16">
       <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit max-w-[1004px] text-center !font-bold lg:!font-semibold">
           Contractor+ is the only HVAC software that doesn’t leave you still
@@ -16,7 +16,7 @@ const WantingMore = () => {
         </h2>
       </TextAnimation>
 
-      <div className="relative mt-9 flex min-h-screen flex-col items-center justify-center">
+      <div className="relative mt-9 flex min-h-screen w-full flex-col items-center justify-center">
         {curvePositions.map((topOffset, index) => (
           <span
             key={index}
@@ -26,7 +26,8 @@ const WantingMore = () => {
             <RedCurveLine />
           </span>
         ))}
-        <div className="absolute top-[140px] left-0 h-full w-full bg-[url('/images/webp/blur-bg.webp')] bg-cover bg-no-repeat"></div>
+
+        <div className="border-romanRed absolute bottom-[20%] mx-auto h-full max-h-[613px] w-full max-w-[1312px] rounded-[40%] border bg-[rgba(242,19,20,0.27)] blur-[100px]"></div>
 
         {wantingMoreData.map((obj, idx) => (
           <article

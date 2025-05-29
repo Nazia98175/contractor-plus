@@ -52,8 +52,8 @@ export default function AwardBadges() {
         <Image
           src="/images/webp/get-app.webp"
           alt="Software Advice Front Runners 2024"
-          width={121}
-          height={123}
+          width={137}
+          height={131}
           className="mt-20 h-fit object-contain"
         />
         <Image
@@ -64,7 +64,7 @@ export default function AwardBadges() {
           className="mt-16 h-fit object-contain"
         />
         <Image
-          src="/images/svg/capterra.svg"
+          src="/images/webp/best-value.webp"
           alt="Software Advice Front Runners 2024"
           width={122}
           height={111}

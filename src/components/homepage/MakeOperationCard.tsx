@@ -16,7 +16,7 @@ const MakeOperationCard = ({
     <>
       <article className="flex flex-col items-center gap-2 text-center">
         <span>{icons[index]}</span>
-        <h3 className="font-jakarta text-2xl font-bold text-white">
+        <h3 className="text-[30px] font-bold text-white">
           {inView ? (
             <CountUp
               start={item.start}

@@ -38,7 +38,7 @@ const WantingMore = () => {
               <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
                 <h4 className="card-title text-lightBlack">{obj.title}</h4>
 
-                <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
+                <div className="h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
                   <Image
                     src={obj.imageSrc}
                     alt="service image"

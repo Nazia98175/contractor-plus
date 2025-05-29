@@ -1,27 +1,42 @@
 import Image from "next/image";
 
-// const awards = [
-//   {
-//     src: "/images/webp/software-advice.webp",
-//     alt: "Software Advice Front Runners 2024",
-//   },
-//   {
-//     src: "/images/webp/leader.webp",
-//     alt: "G2 Leader Winter 2025",
-//   },
-//   {
-//     src: "/images/webp/get-app.webp",
-//     alt: "GetApp Best Functionality 2025",
-//   },
-//   {
-//     src: "/images/webp/capterraRating.webp",
-//     alt: "Capterra Shortlist 2025",
-//   },
-//   {
-//     src: "/images/svg/capterra.svg",
-//     alt: "Capterra Best Value 2025",
-//   },
-// ];
+const awards = [
+  {
+    src: "/images/webp/software-advice.webp",
+    alt: "Software Advice Front Runners 2024",
+    width: 121,
+    height: 123,
+    className: "h-fit object-contain",
+  },
+  {
+    src: "/images/webp/leader.webp",
+    alt: "G2 Leader Winter 2025",
+    width: 121,
+    height: 123,
+    className: "md:mt-16 h-fit object-contain",
+  },
+  {
+    src: "/images/webp/get-app.webp",
+    alt: "GetApp Best Functionality 2025",
+    width: 137,
+    height: 131,
+    className: "md:mt-20 h-fit object-contain",
+  },
+  {
+    src: "/images/svg/capterra.svg",
+    alt: "Capterra Best Value 2025",
+    width: 137,
+    height: 104,
+    className: "md:mt-16 h-fit object-contain",
+  },
+  {
+    src: "/images/webp/best-value.webp",
+    alt: "Capterra Shortlist 2025",
+    width: 122,
+    height: 111,
+    className: "h-fit object-contain",
+  },
+];
 
 export default function AwardBadges() {
   return (
@@ -32,46 +47,18 @@ export default function AwardBadges() {
         </button>
         <p className="mt-2 text-sm text-white">No Credit Card Required</p>
       </div>
-      <div className="mt-8 flex flex-wrap justify-center gap-14 px-4">
-        {/* {awards.map((award, index) => ( */}
-
-        <Image
-          src="/images/webp/software-advice.webp"
-          alt="Software Advice Front Runners 2024"
-          width={121}
-          height={123}
-          className="h-fit object-contain"
-        />
-        <Image
-          src="/images/webp/leader.webp"
-          alt="Software Advice Front Runners 2024"
-          width={121}
-          height={123}
-          className="mt-16 h-fit object-contain"
-        />
-        <Image
-          src="/images/webp/get-app.webp"
-          alt="Software Advice Front Runners 2024"
-          width={137}
-          height={131}
-          className="mt-20 h-fit object-contain"
-        />
-        <Image
-          src="/images/svg/capterra.svg"
-          alt="Software Advice Front Runners 2024"
-          width={137}
-          height={104}
-          className="mt-16 h-fit object-contain"
-        />
-        <Image
-          src="/images/webp/best-value.webp"
-          alt="Software Advice Front Runners 2024"
-          width={122}
-          height={111}
-          className="h-fit object-contain"
-        />
+      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 md:items-start lg:gap-14">
+        {awards.map((award, index) => (
+          <Image
+            key={index}
+            src={award.src}
+            alt={award.alt}
+            width={award.width}
+            height={award.height}
+            className={award.className}
+          />
+        ))}
       </div>
-      {/* ))} */}
     </section>
   );
 }

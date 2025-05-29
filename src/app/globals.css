@@ -108,7 +108,7 @@ body {
   @apply text-[26px] leading-[130%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .section-heading {
-  @apply text-2xl leading-[130%] font-semibold sm:text-4xl sm:text-[26px] lg:text-[42px] lg:tracking-[-0.84px];
+  @apply text-2xl leading-[130%] font-semibold sm:text-4xl lg:text-[42px] lg:tracking-[-0.84px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;

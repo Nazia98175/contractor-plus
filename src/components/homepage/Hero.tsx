@@ -9,6 +9,7 @@ import {
 import TextAnimation from "../common/TextAnimation";
 import dynamic from "next/dynamic";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), { ssr: false })
+import {getMediaUrl} from '@/utils/getMediaUrl'
 type HeroProps = {
   homePageContent: any;
 };
@@ -20,8 +21,9 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     cta_button_text,
     cta_button_link,
     ncc_text,
+    hero_image
   } = homePageContent ?? {};
-
+console.log(hero_image?.url ,"urlll")
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
@@ -58,7 +60,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-        <VideoOptimizer highResUrl="/video/hero-video.mp4" lowResUrl="/video/hero-video.mp4" />
+        <VideoOptimizer highResUrl={getMediaUrl(hero_image)} lowResUrl="/video/hero-video.mp4" />
         {/* <video
           autoPlay
           muted

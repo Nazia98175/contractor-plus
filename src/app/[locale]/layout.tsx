@@ -26,12 +26,8 @@ export default async function RootLayout({
   const messages = await getMessages({ locale });
   const useParams = await params;
 
-  const [homePageContent, contractPlatformsData, footer] = await Promise.all([
-    getHomePage(useParams.locale, "&populate=*"),
-    getHomePage(
-      useParams.locale,
-      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*",
-    ),
+  const [ footer] = await Promise.all([
+   
     getFooter(
       useParams?.locale,
       "&populate[sections][populate]=*&populate[bottomLinks]=*",

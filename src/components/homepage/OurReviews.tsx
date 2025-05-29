@@ -15,13 +15,15 @@ import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 interface Reviews {
   title: string;
   sub_title: string;
+
 }
 
 interface TheReviewsProps {
   reviews: Reviews[];
+  reviewsList: any;
 }
 
-const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
+const OurReviews: React.FC<TheReviewsProps> = ({ reviews , reviewsList }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -108,8 +110,9 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
         {/* First row of reviews - scrolling right */}
         <div className="w-full pt-[43px] md:pt-[60px] lg:pt-[80px]">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
-            {translatedReviews.map((review) => (
+            {reviewsList?.map((review: any , index:any) => (
               <ReviewCard
+                index={index}
                 key={review.id}
                 review={review as Review}
                 openModal={
@@ -125,9 +128,10 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews }) => {
         {/* Second row of reviews - scrolling left */}
         <div className="hidden w-full md:block">
           <Marquee speed={30} direction="left" pauseOnHover className="py-5">
-            {translatedReviews.map((review) => (
+            {reviewsList?.map((review: any , index:any) => (
               <ReviewCard
                 key={review.id}
+                index={index}
                 review={review as Review}
                 openModal={
                   review.isModal

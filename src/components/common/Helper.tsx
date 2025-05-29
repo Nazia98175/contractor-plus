@@ -1003,7 +1003,7 @@ export const reviews = [
   },
 ];
 
-export const featureContents = [
+export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",
     titleImg: "/images/webp/core-1.webp",

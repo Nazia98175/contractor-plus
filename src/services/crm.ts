@@ -14,8 +14,12 @@ export const getCrmPage = async (
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log("Failed to fetch crmpage:", error?.response?.data);
-    return notFound();
+    console.log("Failed to fetch crmpage:", error);
+   
+    if (error.response?.status === 404) {
+      return notFound(); // will render 404.tsx
+    }
+    throw new Error(error);
   }
 };
 

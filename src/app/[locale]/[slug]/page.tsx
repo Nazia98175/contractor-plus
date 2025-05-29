@@ -30,11 +30,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const [
     crmPageContent,
     reviews,
-    section3,
-    section4,
-    section5,
-    section6,
-    section7,
+    // section3,
+    // section4,
+    // section5,
+    // section6,
+    // section7,
     faq,
     blogs,
   ] = await Promise.all([
@@ -44,31 +44,31 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
       useParams.locale,
       "&populate[reviews][populate]=reviews",
     ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[section3][populate]=cardsDetail",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[section4][populate][cardsDetail][populate]=content",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[section5][populate][cards]=*",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[section6][populate][tablerow]=true&populate[section6][populate][tableList]=true",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[section7][populate][cards]=*",
-    ),
+    // getCrmPage(
+    //   useParams?.slug,
+    //   useParams.locale,
+    //   "&populate[section3][populate]=cardsDetail",
+    // ),
+    // getCrmPage(
+    //   useParams?.slug,
+    //   useParams.locale,
+    //   "&populate[section4][populate][cardsDetail][populate]=content",
+    // ),
+    // getCrmPage(
+    //   useParams?.slug,
+    //   useParams.locale,
+    //   "&populate[section5][populate][cards]=*",
+    // ),
+    // getCrmPage(
+    //   useParams?.slug,
+    //   useParams.locale,
+    //   "&populate[section6][populate][tablerow]=true&populate[section6][populate][tableList]=true",
+    // ),
+    // getCrmPage(
+    //   useParams?.slug,
+    //   useParams.locale,
+    //   "&populate[section7][populate][cards]=*",
+    // ),
     getCrmPage(
       useParams?.slug,
       useParams.locale,
@@ -85,13 +85,13 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <div className="black-bg">
             <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
             <TrustedService reviews={reviews} />
-            <SwitchingTool switchingTool={section3?.data?.[0]?.section3} />
+            {/* <SwitchingTool switchingTool={section3?.data?.[0]?.section3} /> */}
           </div>
-          <FieldService
+          {/* <FieldService
             slug={useParams?.slug}
             fieldService={section4?.data?.[0]?.section4}
-          />
-          <div className="bg-white">
+          /> */}
+          {/* <div className="bg-white">
             {useParams?.slug === "crm" && (
               <TrackProperties
                 ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
@@ -111,17 +111,17 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               data={crmPageContent?.data?.[0]?.section8}
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
-          </div>
+          </div> */}
           <div className="relative w-full">
-            <CrmSercive
+            {/* <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.section9}
-            />
+            /> */}
             {/* Cloud Layer 1 */}
           </div>
 
-          <TrustBar platforms={platforms} />
+          {/* <TrustBar platforms={platforms} /> */}
           <Faq faq={faq?.data?.[0]?.faqs} />
           <BlogPosts
             data={crmPageContent?.data?.[0]?.section11}

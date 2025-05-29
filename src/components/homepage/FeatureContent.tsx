@@ -2,12 +2,23 @@
 import Image from "next/image";
 import React from "react";
 import { BlurIcon } from "../common/Icons";
+import { featureContentss } from "../common/Helper";
 
 type FeatureContent = {
+  id: number;
   title: string;
-  highlight?: string;
-  description: string;
-  titleImg: string;
+  cardQuote: string | null;
+  userName: string | null;
+  cardImg: any | null;
+  content: {
+    id: number;
+    title: string;
+    desc: string;
+  }[];
+  // title: string;
+  // highlight?: string;
+  // description: string;
+  // titleImg: string;
 };
 
 type Props = {
@@ -16,9 +27,11 @@ type Props = {
 };
 
 const FeatureContent = ({ featureContents, contentRefs }: Props) => {
+  const firstContents = featureContents?.map(feature => feature?.content[0]).filter(Boolean);
+
   return (
     <>
-      {featureContents.map((content, index) => (
+      {firstContents?.map((content:any, index:any) => (
         <div
           key={index}
           ref={(el) => {
@@ -27,11 +40,11 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           className="bg-doctor w-full scroll-mt-8 space-y-2.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
         >
           <h4 className="text-wallStreet text-lg leading-[100%] font-bold sm:text-xl md:text-2xl">
-            {content.title}
+            {content?.title}
           </h4>
           <div className="relative h-[230px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
             <Image
-              src={content.titleImg}
+              src={featureContentss?.[index]?.titleImg}
               alt="Feature"
               fill
               className="rounded-md object-cover"
@@ -39,9 +52,9 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" />
           </div>
           <p className="text-wallStreet max-w-[615px] space-y-2 text-sm font-medium sm:text-base lg:text-lg">
-            {content.description}
-            {content.highlight && (
-              <span className="text-secondary"> {content.description}</span>
+            {content.desc}
+            {featureContents?.[index]?.cardQuote && (
+              <span className="text-secondary"> {featureContents?.[index]?.cardQuote}</span>
             )}
           </p>
         </div>

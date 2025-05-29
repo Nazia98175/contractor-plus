@@ -70,7 +70,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </div>
 
         <div className="hidden w-full flex-wrap justify-center gap-3 pt-7 md:flex">
-          {footer.sections.map((section, idx) => (
+          {footer?.sections?.map((section, idx) => (
             <FooterSection
               key={idx}
               title={section.title}

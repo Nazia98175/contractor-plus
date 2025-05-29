@@ -58,7 +58,7 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
             duration: 1,
             ease: "none",
           },
-          position
+          position,
         );
         scrollTimeline.to(
           nextCard,
@@ -67,7 +67,7 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
             duration: 1,
             ease: "none",
           },
-          position
+          position,
         );
       }
     }, 1000);
@@ -76,34 +76,31 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
     };
   }, [fieldServiceData]);
   return (
-    <section className="relative z-30 bg-transparent pt-14 sm:pt-20 lg:pt-2 px-2">
+    <section className="relative z-30 bg-transparent px-2 pt-14 sm:pt-20 lg:pt-2">
       <TextAnimation animateOnScroll={true} delay={0.3}>
-        <h2 className="text-xl font-semibold text-secondary md:hidden text-center max-w-[813px] mx-auto pb-6">
-          {/* There's finally a CRM for field service that does more than just store
-          your contacts */}
+        <h2 className="text-secondary mx-auto max-w-[813px] pb-6 text-center text-xl font-semibold md:hidden">
           {fieldService?.title}
         </h2>
       </TextAnimation>{" "}
       <TextAnimation animateOnScroll={true} delay={0.3}>
-        <h2 className="section-heading hidden md:block text-center max-w-[813px] mx-auto gradient-text pb-6">
+        <h2 className="section-heading gradient-text mx-auto hidden max-w-[813px] pb-6 text-center md:block">
           {fieldService?.title}
         </h2>{" "}
       </TextAnimation>
       {/* <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" /> */}
       <div
         id="crm-cards-wrapper"
-        className="relative overflow-hidden px-2 min-h-screen xl:h-[90vh] z-10"
+        className="relative z-10 min-h-screen overflow-hidden px-2 xl:h-[90vh]"
       >
         {fieldService?.cardsDetail.map((service: any, index: any) => (
           <div
             key={index}
             className={`z-${
               index + 1
-            } h-screen sm:h-[90vh] crm-cards absolute left-[50%] top-10 sm:top-20 xl:top-0 translate-x-[-50%] w-full flex justify-center items-center`}
+            } crm-cards absolute top-10 left-[50%] flex h-screen w-full translate-x-[-50%] items-center justify-center sm:top-20 sm:h-[90vh] xl:top-0`}
           >
             <div
-              className={`w-full max-w-[1272px] h-fit overflow-auto no-scrollbar  p-2.5 lg:p-8 no-scrollbar field-service-card rounded-[14px] xl:rounded-[40px]
-              ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
+              className={`no-scrollbar no-scrollbar field-service-card h-fit w-full max-w-[1272px] overflow-auto rounded-[14px] p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
             >
               <FieldServiceCard slug={slug} idx={index} service={service} />
             </div>

@@ -2,20 +2,21 @@ import React from "react";
 import TextAnimation from "../common/TextAnimation";
 import { RedCurveLine, TickIcon } from "../common/Icons";
 import Image from "next/image";
+import { wantingMoreData } from "../common/Helper";
 
 const curvePositions = [0, 50, 100];
 
 const WantingMore = () => {
   return (
-    <section>
+    <section className="relative z-30 px-2">
       <TextAnimation animateOnScroll={true} delay={0.3}>
-        <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit max-w-[1004px] text-center !font-black lg:!font-semibold">
+        <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit max-w-[1004px] text-center !font-bold lg:!font-semibold">
           Contractor+ is the only HVAC software that doesn’t leave you still
           wanting more
         </h2>
       </TextAnimation>
 
-      <div className="relative mt-24 flex h-screen flex-col items-center justify-center bg-[url('/images/webp/blur-bg.webp')] bg-cover bg-no-repeat">
+      <div className="relative mt-9 flex min-h-screen flex-col items-center justify-center">
         {curvePositions.map((topOffset, index) => (
           <span
             key={index}
@@ -25,147 +26,62 @@ const WantingMore = () => {
             <RedCurveLine />
           </span>
         ))}
+        <div className="absolute top-[140px] left-0 h-full w-full bg-[url('/images/webp/blur-bg.webp')] bg-cover bg-no-repeat"></div>
 
-        <article className="wanting-more-bg relative z-30 flex w-full max-w-[1232px] flex-col items-start justify-between gap-7 p-5 text-black lg:flex-row">
-          <div className="w-full p-3 xl:max-w-[626px]">
-            <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
-              <h4 className="font-montserrat lg:font-jakarta text-lightBlack px-2.5 py-0.5 text-base font-semibold md:text-2xl xl:text-[26px]">
-                Project Management
-              </h4>
+        {wantingMoreData.map((obj, idx) => (
+          <article
+            key={idx}
+            className="wanting-more-bg relative z-30 flex w-full max-w-[1232px] flex-col items-start justify-between gap-7 rounded-[14px] p-3 backdrop-blur-[20px] lg:flex-row lg:p-5 xl:rounded-[40px]"
+          >
+            <div className="w-full xl:max-w-[626px] xl:p-3">
+              <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
+                <h4 className="card-title text-lightBlack">{obj.title}</h4>
 
-              {/* Image for mobile */}
-              <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
-                <Image
-                  src="/images/webp/circular-slide-1.webp"
-                  alt="service image"
-                  width={518}
-                  height={302}
-                  className="h-auto w-full rounded-lg object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-4 2xl:gap-6">
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Phases, Tasks, and Subtasks
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      Structure jobs by phase with nested task assignments for
-                      better delegation and progress tracking.
-                    </p>
-                  </div>
+                <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
+                  <Image
+                    src={obj.imageSrc}
+                    alt="service image"
+                    width={518}
+                    height={302}
+                    className="h-auto w-full rounded-lg object-cover"
+                  />
                 </div>
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Job Timeline View
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      See the full history of communication, assignments, time
-                      logs, and photos for each job.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Gantt Chart View
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      View project timelines, task dependencies, and upcoming
-                      work in a format that’s easy to visualize.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Internal Job Chat
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      Every job has its own chat so field teams keep all the
-                      context in one place.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Photo Logging
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      Attach photos, notes, and task completion records for
-                      final quality checks and documentation.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Tool & Equipment Assignment
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      Assign tools to jobs and know who has what at any given
-                      moment.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="font-montserrat text-lightBlack lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%]">
-                      Time Clock & Mileage Logs
-                    </h5>
-                    <p className="text-wallStreet text-xs font-medium sm:text-sm lg:text-base">
-                      Track labor and mileage against specific jobs to stay
-                      profitable and organized.
-                    </p>
-                  </div>
+                <div className="flex flex-col gap-4 2xl:gap-6">
+                  {obj.features.slice(0, 4).map((feature, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      <span className="h-fit max-w-[14px] min-w-3 sm:max-w-5 md:min-w-5">
+                        <TickIcon />
+                      </span>
+                      <div className="flex flex-col gap-2 xl:gap-3">
+                        <h5 className="text-lightBlack card-heading">
+                          {feature.name}
+                        </h5>
+                        <p className="text-wallStreet card-desc">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              <p className="text-winterWay card-review">
+                {obj.review} –
+                <br /> <br /> – <strong>{obj.user}</strong>
+              </p>
             </div>
 
-            {/* Estimate testimonial */}
-            {/* {isEstimate && ( */}
-            <p className="text-winterWay font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm">
-              “I used to spend hours piecing together quotes. Now I can hammer
-              one out in minutes, and my clients love the professional look.” –
-              <br /> <br /> – <strong>Satisfied Contractor+ User</strong>
-            </p>
-            {/* )} */}
-          </div>
-
-          {/* Desktop image */}
-          <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
-            <Image
-              src="/images/webp/circular-slide-1.webp"
-              alt="service image"
-              width={518}
-              height={302}
-              className="h-auto w-full rounded-lg object-cover"
-            />
-          </div>
-        </article>
+            <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
+              <Image
+                src="/images/webp/circular-slide-1.webp"
+                alt={obj.title}
+                width={518}
+                height={302}
+                className="h-auto w-full rounded-lg object-cover"
+              />
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

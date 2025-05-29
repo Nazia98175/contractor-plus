@@ -104,8 +104,22 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews , reviewsList }) => {
         </CardReveal>
       </div>
       <div className="relative">
-        <div className="bg-testimonial-left pointer-events-none absolute left-0 z-40 hidden h-[380px] w-[200px] blur-2xl md:w-[370px] lg:block"></div>
-        <div className="bg-testimonial-right pointer-events-none absolute right-0 z-40 hidden h-[380px] w-[200px] blur-2xl md:w-[370px] lg:block"></div>
+        <Image
+          className="max=h-[350px] absolute top-0 left-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
+          src={"/images/webp/marquee-layers.webp"}
+          alt="layers"
+          width={370}
+          height={300}
+          unoptimized
+        />
+        <Image
+          className="max=h-[350px] absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
+          src={"/images/webp/marquee-layers-right.webp"}
+          alt="layers"
+          width={370}
+          height={300}
+          unoptimized
+        />
 
         {/* First row of reviews - scrolling right */}
         <div className="w-full pt-[43px] md:pt-[60px] lg:pt-[80px]">

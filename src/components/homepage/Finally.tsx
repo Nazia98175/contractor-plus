@@ -29,10 +29,10 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           <div className="glow-ellipse bg-lightBlack-desktop"></div>
         </div>
         <div className="absolute -top-[145%] -left-[75%] z-20 block h-full w-[250%] blur-[23px] md:hidden">
-          <div className="absolute top-[623px] left-1/2 h-[1115px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EE1E25] opacity-90 blur-[32px]"></div>
-          <div className="absolute top-[621px] left-1/2 h-[983px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C01A06] opacity-90 blur-[29.6px]"></div>
-          <div className="absolute top-[668px] left-1/2 h-[732px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0C0D11] opacity-90 blur-[81px]"></div>
-          <div className="absolute top-[667px] left-1/2 h-[499px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0C0D11] opacity-90 blur-[15px]"></div>
+          <div className="absolute top-[779px] left-1/2 h-[1115px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EE1E25] opacity-90 blur-[32px] sm:top-[623px]"></div>
+          <div className="absolute top-[808px] left-1/2 h-[983px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C01A06] opacity-90 blur-[29.6px] sm:top-[621px]"></div>
+          <div className="absolute top-[668px] left-1/2 h-[905px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0C0D11] opacity-90 blur-[81px] sm:h-[732px]"></div>
+          <div className="absolute top-[667px] left-1/2 h-[771px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0C0D11] opacity-90 blur-[15px] sm:h-[499px]"></div>
         </div>
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
@@ -132,7 +132,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   width={715}
                   src="/images/webp/ipad.webp"
                   alt="Ipad Design"
-                  className="w-full object-center lg:max-w-[715px]"
+                  className="max-h-[213px] w-full object-center sm:max-h-full lg:max-w-[715px]"
                 />
                 <Image
                   height={300}

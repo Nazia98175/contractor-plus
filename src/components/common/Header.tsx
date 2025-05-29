@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ btnText }) => {
     <header className="fixed top-4 z-[99] w-full rounded px-2">
       <div
         className={`flex h-fit min-h-9 w-full items-center rounded transition-all duration-300 lg:py-3 ${
-          scrolled ? "bg-kuroiBlack shadow-c2" : "bg-kuroiBlack sm:bg-none"
+          scrolled ? "bg-kuroiBlack shadow-c2" : "bg-none"
         }`}
       >
         <div className="main-container flex items-center justify-between py-1.5 lg:gap-3 xl:gap-[54px]">

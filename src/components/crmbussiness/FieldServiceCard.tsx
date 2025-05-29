@@ -15,47 +15,43 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
   const features = service?.content || [];
 
   return (
-    <article className="flex lg:flex-row z-30 items-start flex-col gap-7 justify-between text-white relative">
-      <div className="xl:max-w-[650px] w-full">
+    <article className="relative z-30 flex flex-col items-start justify-between gap-7 text-white lg:flex-row">
+      <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
-          <h4 className="text-base md:text-2xl xl:text-[26px] font-semibold font-montserrat lg:font-jakarta py-0.5 px-2.5">
-            {service?.title}
-          </h4>
+          <h4 className="card-title">{service?.title}</h4>
 
           {/* Image for mobile */}
-          <div className="rounded-lg xl:hidden max-w-[518px] mx-auto  h-full min-h-[245px] md:h-auto w-full">
+          <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
             <Image
               src={fieldServiceData?.[idx]?.img || "/placeholder.png"}
               alt={service?.title || "service image"}
               width={518}
               height={302}
-              className="object-cover rounded-lg w-full h-auto"
+              className="h-auto w-full rounded-lg object-cover"
             />
           </div>
           <div className="flex flex-col gap-4 2xl:gap-6">
             {(isEstimate ? features.slice(0, -1) : features.slice(0, 4)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  <span className="md:min-w-5 sm:max-w-5 max-w-[14px] h-fit">
+                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
                     <TickIcon />
                   </span>
                   <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="text-sm sm:text-base lg:text-lg font-semibold lg:font-bold leading-none xl:leading-[79%] font-montserrat lg:font-jakarta">
-                      {feature?.title}
-                    </h5>
-                    <p className="text-xs sm:text-sm lg:text-base font-medium text-secondary lg:text-superSilver">
+                    <h5 className="card-heading">{feature?.title}</h5>
+                    <p className="text-secondary lg:text-superSilver card-desc">
                       {feature?.desc}
                     </p>
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
         </div>
 
         {/* Estimate testimonial */}
         {isEstimate && (
-          <p className="p-3 text-secondary text-[10px] sm:text-xs lg:text-sm font-montserrat font-medium">
+          <p className="text-secondary card-review">
             {features[features.length - 1]?.title} <br /> <br /> –{" "}
             {features[features.length - 1]?.desc}
           </p>
@@ -63,13 +59,13 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
       </div>
 
       {/* Desktop image */}
-      <div className="rounded-lg xl:block hidden w-full max-w-[518px]">
+      <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
         <Image
           src={fieldServiceData?.[idx]?.img || "/placeholder.png"}
           alt={service?.title || "service image"}
           width={518}
           height={302}
-          className="object-cover rounded-lg w-full h-auto"
+          className="h-auto w-full rounded-lg object-cover"
         />
       </div>
     </article>

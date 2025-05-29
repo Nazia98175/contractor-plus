@@ -9,9 +9,9 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   console.log(contractPlatformsData , "contractor")
   return (
     <section className="relative z-20">
-      <div className="main-container relative flex flex-col gap-9 pb-[30px] md:pb-0 pt-[37px] md:gap-10 lg:pt-[42px]">
+      <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
         <PrimaryAnimatedText
-          className="sub-heading text-secondary text-center max-w-[678px] w-full mx-auto"
+          className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center"
           delay={3000}
         >
           {contractPlatformsData?.data?.platforms?.title?.title}
@@ -38,7 +38,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                     height={187}
                     src={contractPlatforms?.[index]?.img}
                     alt={`${obj.title}`}
-                    className="relative z-[10px] overflow-hidden rounded-md"
+                    className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>
                 <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-2 text-center duration-200">

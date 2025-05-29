@@ -175,12 +175,7 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-.bg-testimonial-left {
-  background: linear-gradient(270deg, #fdfdfd00, #ffffff);
-}
-.bg-testimonial-right {
-  background: linear-gradient(91deg, #fdfdfd00, #ffffff);
-}
+
 .one {
   background: radial-gradient(
     105.54% 86.95% at 52.9% 52%,

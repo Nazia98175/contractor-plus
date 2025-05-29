@@ -39,14 +39,14 @@ const OurBlogCard = ({
           className="absolute bottom-0 left-0 z-10 h-full max-h-[160px] w-fit object-cover"
         />
       </div>
-      <div className="relative mt-2 w-[346px] px-4 py-6">
+      <div className="relative mt-2 w-[346px] px-2.5 py-6">
         <Image
           fill={true}
           className="absolute top-0 left-0 z-0 h-full w-full"
           src="/images/webp/blog-angle2.webp"
           alt="blog angle"
         />
-        <h3 className="text-winterWay font-jakarta relative z-10 pb-1 text-base font-extrabold md:text-lg">
+        <h3 className="text-winterWay font-jakarta relative z-10 pb-2 text-base leading-none font-extrabold md:text-lg">
           {article.blogTitle}
         </h3>
         <p className="text-secondary font-jakarta relative z-10 max-w-[255px] text-xs font-medium">

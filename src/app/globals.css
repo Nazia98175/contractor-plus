@@ -132,7 +132,7 @@ body {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
 .feature-btn {
-  @apply w-fit px-0.5 py-1 text-start text-base leading-[100%] transition-colors duration-300 md:text-xl lg:min-w-[165px] lg:truncate;
+  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[100%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
 .header-li-dropdown {
   @apply font-inter text-lightBlack px-1 text-xs font-semibold duration-300 ease-linear lg:text-sm xl:text-base;

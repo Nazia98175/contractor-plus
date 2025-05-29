@@ -26,39 +26,39 @@ export default async function Home({
     getHomePage(useParams.locale, "&populate=*"),
     getHomePage(
       useParams.locale,
-      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*"
+      "&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*",
     ),
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
   return (
-      <div className="relative overflow-x-hidden">
-        <div className="relative">
-          <Header />
-          <Hero homePageContent={homePageContent?.data} />
-          <TrustBar platforms={platforms}  />
-          <TheEngineContractor
-            engineContractor={homePageContent?.data?.engineContractor}
-          />
-        </div>
-        <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
-        <Finally finallyC={homePageContent?.data?.finally} />
-        <CoreFeatures />
-        <Features features={homePageContent?.data?.features} />
-        <ContractorIndustry
-          contractorIndustry={homePageContent?.data?.contractorIndustry}
+    <div className="relative overflow-x-hidden">
+      <div className="relative">
+        <Header />
+        <Hero homePageContent={homePageContent?.data} />
+        <TrustBar platforms={platforms} />
+        <TheEngineContractor
+          engineContractor={homePageContent?.data?.engineContractor}
         />
-        <OurReviews reviews={homePageContent?.data?.reviews} />
-      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
-        <OurBlogs
-          blogs={blogs?.data}
-          blogHeading={homePageContent?.data?.blogs}
-        />
-        <div className="overflow-hidden relative ">
-          <EntireBusiness
-            entireBusiness={homePageContent?.data?.entireBusiness}
-            ncc_text={homePageContent?.data?.ncc_text}
-          />
-        </div>
       </div>
+      <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
+      <Finally finallyC={homePageContent?.data?.finally} />
+      <CoreFeatures />
+      <Features features={homePageContent?.data?.features} />
+      <ContractorIndustry
+        contractorIndustry={homePageContent?.data?.contractorIndustry}
+      />
+      <OurReviews reviews={homePageContent?.data?.reviews} />
+      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
+      <OurBlogs
+        blogs={blogs?.data}
+        blogHeading={homePageContent?.data?.blogs}
+      />
+      <div className="relative overflow-hidden">
+        <EntireBusiness
+          entireBusiness={homePageContent?.data?.entireBusiness}
+          ncc_text={homePageContent?.data?.ncc_text}
+        />
+      </div>
+    </div>
   );
 }

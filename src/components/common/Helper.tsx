@@ -1,8 +1,10 @@
 import { JSX } from "react";
 import {
+  AdminWorkIcon,
   AssetIcon,
   BigChiefAIIcon,
   BookkeepingIcon,
+  CalculatorIcon,
   ClientIcon,
   EstimatesIcon,
   EstimaticIcon,
@@ -37,6 +39,71 @@ import {
 } from "lucide-react";
 import { Platform, Review } from "@/types";
 
+export const awards = [
+  {
+    src: "/images/webp/software-advice.webp",
+    alt: "Software Advice Front Runners 2024",
+    width: 121,
+    height: 123,
+    className: "h-fit object-contain",
+  },
+  {
+    src: "/images/webp/leader.webp",
+    alt: "G2 Leader Winter 2025",
+    width: 121,
+    height: 123,
+    className: "md:mt-16 h-fit object-contain",
+  },
+  {
+    src: "/images/webp/get-app.webp",
+    alt: "GetApp Best Functionality 2025",
+    width: 137,
+    height: 131,
+    className: "md:mt-20 h-fit object-contain",
+  },
+  {
+    src: "/images/svg/capterra.svg",
+    alt: "Capterra Best Value 2025",
+    width: 137,
+    height: 104,
+    className: "md:mt-16 h-fit object-contain",
+  },
+  {
+    src: "/images/webp/best-value.webp",
+    alt: "Capterra Shortlist 2025",
+    width: 122,
+    height: 111,
+    className: "h-fit object-contain",
+  },
+];
+
+export const makeOperationList = [
+  {
+    title: "faster",
+    description: "Estimate process",
+    start: 0,
+    end: 4,
+    suffix: "x",
+    icon: <CalculatorIcon />,
+  },
+  {
+    title: "faster",
+    description: "Job turnaround time",
+    start: 0,
+    end: 28,
+    suffix: "%",
+    icon: <ServiceIcon />,
+  },
+  {
+    title: "less",
+    description: "Time spent on admin work",
+    start: 0,
+    end: 38,
+    suffix: "%",
+    icon: <AdminWorkIcon fill="#1C2731" />,
+  },
+];
+
 export const platforms: Platform[] = [
   {
     name: "App Store",
@@ -68,41 +135,34 @@ export const platforms: Platform[] = [
 export const wantingMoreData = [
   {
     title: "Project Management",
-    features: [
+    content: [
       {
-        name: "Phases, Tasks, and Subtasks",
-        description:
-          "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Job Timeline View",
-        description:
-          "See the full history of communication, assignments, time logs, and photos for each job.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Gantt Chart View",
-        description:
-          "View project timelines, task dependencies, and upcoming work in a format that’s easy to visualize.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Internal Job Chat",
-        description:
-          "Every job has its own chat so field teams keep all the context in one place.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Photo Logging",
-        description:
-          "Attach photos, notes, and task completion records for final quality checks and documentation.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Tool & Equipment Assignment",
-        description:
-          "Assign tools to jobs and know who has what at any given moment.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Time Clock & Mileage Logs",
-        description:
-          "Track labor and mileage against specific jobs to stay profitable and organized.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
     ],
     review:
@@ -112,41 +172,108 @@ export const wantingMoreData = [
   },
   {
     title: "Project Management",
-    features: [
+    content: [
       {
-        name: "Phases, Tasks, and Subtasks",
-        description:
-          "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Job Timeline View",
-        description:
-          "See the full history of communication, assignments, time logs, and photos for each job.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Gantt Chart View",
-        description:
-          "View project timelines, task dependencies, and upcoming work in a format that’s easy to visualize.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Internal Job Chat",
-        description:
-          "Every job has its own chat so field teams keep all the context in one place.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Photo Logging",
-        description:
-          "Attach photos, notes, and task completion records for final quality checks and documentation.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Tool & Equipment Assignment",
-        description:
-          "Assign tools to jobs and know who has what at any given moment.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        name: "Time Clock & Mileage Logs",
-        description:
-          "Track labor and mileage against specific jobs to stay profitable and organized.",
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+    ],
+    review:
+      "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
+    user: "Satisfied Contractor+ User",
+    imageSrc: "/images/webp/circular-slide-1.webp",
+  },
+  {
+    title: "Project Management",
+    content: [
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+    ],
+    review:
+      "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
+    user: "Satisfied Contractor+ User",
+    imageSrc: "/images/webp/circular-slide-1.webp",
+  },
+  {
+    title: "Project Management",
+    content: [
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+      },
+      {
+        title: "Phases, Tasks, and Subtasks",
+        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
     ],
     review:

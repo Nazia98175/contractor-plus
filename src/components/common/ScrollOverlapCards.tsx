@@ -71,8 +71,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, [fieldServiceData]);
-  const backgroundClass =
-    theme === "dark" ? "field-service-card" : "field-service-card-2";
+  const className = theme === "dark" ? "field-service-card" : "wanting-more-bg";
   return (
     <div
       id="crm-cards-wrapper"
@@ -86,7 +85,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
           } crm-cards absolute top-10 left-[50%] flex h-screen w-full translate-x-[-50%] items-center justify-center sm:top-20 sm:h-[90vh] xl:top-0`}
         >
           <div
-            className={`no-scrollbar no-scrollbar ${backgroundClass} h-fit w-full max-w-[1272px] overflow-auto rounded-[14px] p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
+            className={`no-scrollbar ${className} h-fit w-full max-w-[1272px] overflow-auto p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
           >
             <FieldServiceCard
               slug={slug}

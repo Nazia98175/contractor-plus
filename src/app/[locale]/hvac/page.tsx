@@ -12,7 +12,20 @@ const page = () => {
     <>
       <Header />
       <main className="bg-white">
-        <HvcaHero />
+        <div className="relative">
+          <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[888] hidden h-[50px] w-full blur-[12.5px] lg:block"></div>
+          <img
+            className="absolute bottom-[-100px] left-0 z-[888] hidden h-[150px] w-full md:block"
+            src="/images/webp/hvca-clould.webp"
+            alt=""
+          />
+          <img
+            className="absolute bottom-[-87px] left-0 z-[888] block h-[100px] w-full md:hidden"
+            src="/images/webp/hvca-mobile-could.webp"
+            alt=""
+          />
+          <HvcaHero />
+        </div>
         <ServiceContractor />
         <HvcaSoftware />
         <WantingMore />

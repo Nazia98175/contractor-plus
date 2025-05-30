@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import FaqList from "./FaqList";
+import React from "react";
 import TextAnimation from "../common/TextAnimation";
+import HvcaFaqList from "./HvcaFaqList";
 import UseFaqToggle from "../hook/UseFaqToggle";
 
 type FaqItemType = {
@@ -11,61 +11,57 @@ type FaqItemType = {
 interface Props {
   faq: any;
 }
-const Faq: React.FC<Props> = ({ faq }) => {
+const HvcaFaq: React.FC<Props> = () => {
   const { openIndex, toggleFaq } = UseFaqToggle();
-
   const faqitems = [
     {
       id: 1,
-      question: "What is field service CRM?",
+      question: "Will my team actually use this?",
       answer:
-        "Field service CRM brings client contacts, communication and job records into a single system, letting you handle calls, texts and schedules without juggling separate apps.",
+        "Your team won’t want to live without it. It will make every single person’s job easier to the point you won’t be able to imagine running your HVAC business without Contractor+. Use it free and we’ll prove it. ",
     },
     {
       id: 2,
-      question: "How does Contractor+ capture and organize customer history?",
+      question:
+        "How fast can I switch from Jobber, Housecall Pro or ServiceTitan?",
       answer:
         "It links every call, message, email and file to each customer and each job address, so you can review past interactions and documents at a glance.",
     },
     {
       id: 3,
-      question: "How do I assign tasks and monitor work progress?",
+      question: "Can I import my current invoices, customers, and templates?",
       answer:
         "You drag and drop tasks on the schedule, view crew locations in real time and see status updates as work items are checked off or notes are added.",
     },
     {
       id: 4,
-      question: "How can my crew stay connected on the job?",
+      question: "What software/tools does Contractor+ replace?",
       answer:
         "Contractor+ includes built-in calling and texting, dedicated job chat rooms and automatic transcripts so everyone stays in sync without missing details.",
     },
     {
       id: 5,
-      question: "How does Contractor+ turn leads into signed contracts?",
+      question: "Does this work for small teams and large teams?",
       answer:
         "Capture inquiries through customized entry points, move opportunities through visual stages, then generate quotes and contracts clients can sign online—all within the same system.",
     },
-    {
-      id: 6,
-      question: "How do I keep every job and follow-up on track?",
-      answer:
-        "Set scheduled follow-ups and reminders, then use timeline views to see upcoming tasks and past actions. This ensures nothing gets overlooked. ",
-    },
   ];
   return (
-    <section className="relative z-20 overflow-hidden py-10">
+    <section className="bg-kuroiBlack relative z-20 overflow-hidden py-10">
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h3 className="section-heading text-center text-white">{faq?.title}</h3>
-      </TextAnimation>
-      <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-text text-secondary pt-4 text-center">
-          {faq?.sub_title}
+          Frequently asked questions
         </p>
       </TextAnimation>
+      <TextAnimation animateOnScroll={true} delay={0.2}>
+        <h3 className="section-heading text-center text-white">
+          What HVAC contractors want to know{" "}
+        </h3>
+      </TextAnimation>
       <div className="mx-auto max-w-[1190px] px-4 pt-[27px]">
-        {faq?.faq?.map((item: FaqItemType, index: number) => (
-          <FaqList
+        {faqitems.map((item: FaqItemType, index: number) => (
+          <HvcaFaqList
             key={index}
             data={item}
             isOpen={openIndex === index}
@@ -77,4 +73,4 @@ const Faq: React.FC<Props> = ({ faq }) => {
   );
 };
 
-export default Faq;
+export default HvcaFaq;

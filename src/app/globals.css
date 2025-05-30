@@ -6,7 +6,6 @@
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
   --color-brownish: #e8e9ea;
-  --color-highRise: #adb1b5;
   --color-doctor: #fafafa;
   --color-whiteSmoke: #f3f3f3;
   --color-iron: #45454a;
@@ -44,6 +43,11 @@
     #dc1112 -10.83%,
     #76090a 83.23%
   );
+  --background-image-white-linear: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 9.91%,
+    #fff 100%
+  );
   --background-image-black-linear: linear-gradient(
     180deg,
     rgba(12, 13, 17, 0) 18.46%,
@@ -66,6 +70,11 @@
       #ee1e25 0%,
       rgba(0, 0, 0, 0) 100%
     );
+  --background-image-faq-bg: linear-gradient(
+    270deg,
+    rgba(243, 243, 243, 0) 33.34%,
+    rgba(238, 30, 37, 0.4) 138.08%
+  );
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
@@ -162,6 +171,12 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+.countup-title {
+  @apply text-3xl leading-[38px] font-bold;
+}
+.countup-desc {
+  @apply font-montserrat text-lg font-medium;
 }
 @keyframes bounce {
   0%,
@@ -551,14 +566,24 @@ html {
   filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1));
 }
 
-.test {
-  background: radial-gradient(
-    ellipse at center,
-    #ee1e25 0%,
-    #c01a06 40%,
-    #0c0d11 100%
-  );
+.field-service-card-2 {
+  border-radius: 40px;
+  border: 1px solid #fff;
+  background:
+    radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(115deg, rgba(255, 202, 203, 0) -11.35%, #fff 93.46%);
+  box-shadow:
+    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
+    0px 5px 10px 0px rgba(0, 0, 0, 0.05),
+    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
 }
+
 .custom-shadow-img {
   filter: drop-shadow(-24px 18px 22px #00000078);
 }
@@ -660,6 +685,33 @@ html {
   background-color: #c01a06;
   filter: blur(100px);
   z-index: 3;
+}
+
+.text-gradient-black {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(0, 0, 0, 0) 7.61%,
+      rgba(238, 30, 37, 0.4) 99.65%
+    ),
+    #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text-gradient-light {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(0, 0, 0, 0) 7.61%,
+      rgba(238, 30, 37, 0.4) 99.65%
+    ),
+    #656c73;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .bg-lightBlack-desktop2 {

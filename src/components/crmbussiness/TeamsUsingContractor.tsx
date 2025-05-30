@@ -20,14 +20,6 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
 
   const t = useTranslations("crm");
 
-  const crmList = t.raw("crmList") as {
-    title: string;
-    description: string;
-    start: number;
-    end: number;
-    suffix: string;
-  }[];
-
   const icons = [
     <EstimateIcon2 key="estimate" fill="#3F464B" />,
     <ClockIcon key="clock" />,
@@ -37,25 +29,25 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
   return (
     <section
       ref={ref}
-      className="flex flex-col items-center justify-center main-container px-2 pt-11 md:pt-16 xl:pt-[94px] relative z-30"
+      className="main-container relative z-30 flex flex-col items-center justify-center px-2 pt-11 md:pt-16 xl:pt-[94px]"
     >
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h2 className="crm-gradient text-center section-heading !font-black lg:!font-semibold  max-w-[951px] mx-auto">
+        <h2 className="crm-gradient section-heading mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">
           {data?.title}
         </h2>
       </TextAnimation>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-style text-center">{data?.sub_title}</p>
       </TextAnimation>
-      <div className="grid px-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-6 md:mt-10 xl:mt-[52px] mb-8 sm:mb-12 md:mb-16 xl:mb-[70px] w-full">
+      <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-5 px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 xl:mt-[52px] xl:mb-[70px]">
         {data?.cards?.map((item: any, index: any) => (
           <article
             key={index}
-            className="flex flex-col gap-2 items-center text-center p-2.5 rounded-xl bg-doctor duration-300 hover:shadow-sm cursor-pointer"
+            className="bg-doctor flex cursor-pointer flex-col items-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
             <span className="mb-1">{icons[index % icons.length]}</span>
-            <h3 className="text-[30px] leading-[38px] font-bold text-winterWay flex items-center">
-              <span className="w-[60px] flex justify-center">
+            <h3 className="text-winterWay countup-title flex items-center">
+              <span className="flex w-[60px] justify-center">
                 {inView && (
                   <CountUp
                     start={item.start}
@@ -79,9 +71,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
               </span>
             </h3>
 
-            <p className="text-lg leading-[22px] font-medium tracking-wide text-secondary font-montserrat">
-              {item.sub_title}
-            </p>
+            <p className="text-secondary countup-desc">{item.sub_title}</p>
           </article>
         ))}
       </div>
@@ -92,12 +82,12 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
         distance={50}
         animateOnScroll={true}
       >
-        <div className="flex flex-wrap justify-center gap-8 md:gap-[53px] items-center">
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-[53px]">
           <Image
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="custom-shadow-img max-w-[121px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img max-w-[121px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Software Advice"
           />
 
@@ -105,7 +95,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="custom-shadow-img max-w-[103px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img max-w-[103px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Leader"
           />
 
@@ -113,14 +103,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="custom-shadow-img max-w-[137px] hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img max-w-[137px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Get App"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="custom-shadow-img hover:!rotate-6 duration-300 cursor-pointer hover:!scale-105"
+            className="custom-shadow-img cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
           />
         </div>

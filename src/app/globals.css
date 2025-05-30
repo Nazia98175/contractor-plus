@@ -542,17 +542,13 @@ html {
     lightgray 0% 0% / 100px 100px repeat,
     radial-gradient(
       146.13% 118.42% at 50% -15.5%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0) 99.59%
+      #ffffff14 0%,
+      #ffffff00 99.59%
     ),
-    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+    linear-gradient(180deg, #2e335a00 0%, #1c1b331a 100%);
   backdrop-filter: blur(20px);
   box-shadow: inset 0px 0px 100px rgba(204, 215, 255, 0.15);
   filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1));
-  /* filter: drop-shadow(0px -33px 40px rgba(0, 0, 0, 0.2))
-    drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.1)); */
 }
 
 .test {

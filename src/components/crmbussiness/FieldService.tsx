@@ -1,11 +1,10 @@
 "use client";
-import React, { useRef } from "react";
-import FieldServiceCard from "./FieldServiceCard";
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
-import { useGSAP } from "@gsap/react";
-import { fieldServiceData } from "../common/Helper";
+import React from "react";
+import ScrollOverlapCards from "../common/ScrollOverlapCards";
 import TextAnimation from "../common/TextAnimation";
 
 interface TheServiceProps {
@@ -17,78 +16,37 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   const t = useTranslations();
-  useGSAP(() => {
-    if (typeof window === "undefined") return;
-    setTimeout(() => {
-      const cards = document.querySelectorAll(".crm-cards");
-      const totalCards = cards.length;
-      gsap.set(cards[0], { y: "0%", scale: 1, rotate: 0 });
-      for (let i = 1; i < totalCards; i++) {
-        gsap.set(cards[i], {
-          y: "100%",
-          scale: 1,
-          rotation: 0,
-        });
-      }
-      const scrollTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#crm-cards-wrapper",
-          start: "top 10%",
-          end: `+=${(window.innerHeight / 100) * 90 * (totalCards - 1)}`,
-          pin: true,
-          scrub: 1,
-          markers: false,
-        },
-      });
-      for (let i = 0; i < totalCards; i++) {
-        const currentCard = cards[i];
-        const nextCard = cards[i + 1];
-        const position = i;
-        const rotation = i % 2 ? -5 : 5;
-        scrollTimeline.to(
-          currentCard,
-          {
-            scale: 0.8,
-            rotation: rotation,
-            duration: 1,
-            ease: "none",
-          },
-          position,
-        );
-        scrollTimeline.to(
-          nextCard,
-          {
-            y: "0%",
-            duration: 1,
-            ease: "none",
-          },
-          position,
-        );
-      }
-    }, 1000);
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, [fieldServiceData]);
+
   return (
     <section className="relative z-30 bg-transparent px-2 pt-14 sm:pt-20 lg:pt-2">
       <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="text-secondary mx-auto max-w-[813px] pb-6 text-center text-xl font-semibold md:hidden">
           {fieldService?.title}
         </h2>
-      </TextAnimation>{" "}
+      </TextAnimation>
       <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="section-heading gradient-text mx-auto hidden max-w-[813px] pb-6 text-center md:block">
           {fieldService?.title}
-        </h2>{" "}
+        </h2>
       </TextAnimation>
-      {/* <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" /> */}
-      <div
+
+      <ScrollOverlapCards
+        theme="dark"
+        slug={slug}
+        fieldService={fieldService}
+      />
+    </section>
+  );
+};
+
+export default FieldService;
+
+{
+  /* <div className="absolute bg-bottom w-full h-[25%] z-20 left-0 -bottom-1 rotate-180" /> */
+}
+{
+  /* <div
         id="crm-cards-wrapper"
         className="relative z-10 min-h-screen overflow-hidden px-2 xl:h-[90vh]"
       >
@@ -106,9 +64,5 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
             </div>
           </div>
         ))}
-      </div>
-    </section>
-  );
-};
-
-export default FieldService;
+      </div> */
+}

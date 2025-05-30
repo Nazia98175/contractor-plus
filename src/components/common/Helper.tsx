@@ -1,8 +1,10 @@
 import { JSX } from "react";
 import {
+  AdminWorkIcon,
   AssetIcon,
   BigChiefAIIcon,
   BookkeepingIcon,
+  CalculatorIcon,
   ClientIcon,
   EstimatesIcon,
   EstimaticIcon,
@@ -36,6 +38,71 @@ import {
   FileCode,
 } from "lucide-react";
 import { Platform, Review } from "@/types";
+
+export const awards = [
+  {
+    src: "/images/webp/software-advice.webp",
+    alt: "Software Advice Front Runners 2024",
+    width: 121,
+    height: 123,
+    className: "h-fit object-contain",
+  },
+  {
+    src: "/images/webp/leader.webp",
+    alt: "G2 Leader Winter 2025",
+    width: 121,
+    height: 123,
+    className: "md:mt-16 h-fit object-contain",
+  },
+  {
+    src: "/images/webp/get-app.webp",
+    alt: "GetApp Best Functionality 2025",
+    width: 137,
+    height: 131,
+    className: "md:mt-20 h-fit object-contain",
+  },
+  {
+    src: "/images/svg/capterra.svg",
+    alt: "Capterra Best Value 2025",
+    width: 137,
+    height: 104,
+    className: "md:mt-16 h-fit object-contain",
+  },
+  {
+    src: "/images/webp/best-value.webp",
+    alt: "Capterra Shortlist 2025",
+    width: 122,
+    height: 111,
+    className: "h-fit object-contain",
+  },
+];
+
+export const makeOperationList = [
+  {
+    title: "faster",
+    description: "Estimate process",
+    start: 0,
+    end: 4,
+    suffix: "x",
+    icon: <CalculatorIcon />,
+  },
+  {
+    title: "faster",
+    description: "Job turnaround time",
+    start: 0,
+    end: 28,
+    suffix: "%",
+    icon: <ServiceIcon />,
+  },
+  {
+    title: "less",
+    description: "Time spent on admin work",
+    start: 0,
+    end: 38,
+    suffix: "%",
+    icon: <AdminWorkIcon fill="#1C2731" />,
+  },
+];
 
 export const platforms: Platform[] = [
   {

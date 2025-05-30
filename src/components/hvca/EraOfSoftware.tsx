@@ -12,10 +12,10 @@ const EraOfSoftware = () => {
         enough to REALLY make a huge difference in your business. Contractor+ is
         the anti-software. We’re an operating system.
       </p>
-      <div className="mx-auto max-w-[700px] overflow-hidden rounded-[45px] mt-[117px]">
+      <div className="w-full max-w-[700px] mx-auto overflow-hidden rounded-[45px] mt-[117px]">
         <img
           src="/images/webp/era-of-software.webp"
-          className="rounded-3xl"
+          className="object-cover w-full h-full"
           alt="Era of Software"
         />
       </div>

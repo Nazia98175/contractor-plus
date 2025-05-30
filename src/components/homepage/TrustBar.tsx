@@ -6,11 +6,22 @@ import { Platform } from "@/types";
 
 interface TrustBarProps {
   platforms: Platform[];
+  showTrustedSection?: boolean;
+  className?: string;
 }
 
-const TrustBar: React.FC<TrustBarProps> = ({ platforms }) => {
+const TrustBar: React.FC<TrustBarProps> = ({
+  platforms,
+  showTrustedSection,
+  className,
+}) => {
   return (
-    <section className="relative">
+    <section className={`relative ${className}`}>
+      {showTrustedSection && (
+        <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
+          Trusted by over <strong>50,000</strong> build and service contractors
+        </h2>
+      )}
       <CardReveal
         staggerDelay={0.4}
         animationDuration={0.8}

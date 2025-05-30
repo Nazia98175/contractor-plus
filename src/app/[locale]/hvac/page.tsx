@@ -15,7 +15,7 @@ const page = () => {
       <Header />
       <main className="bg-white">
         <div className="relative">
-          <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[888] hidden h-[50px] w-full blur-[12.5px] lg:block"></div>
+          <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[888] hidden h-[60px] w-full blur-[12.5px] lg:block"></div>
           <img
             className="absolute bottom-[-100px] left-0 z-[888] hidden h-[150px] w-full md:block"
             src="/images/webp/hvca-clould.webp"
@@ -33,8 +33,11 @@ const page = () => {
         <WantingMore />
         <EraOfSoftware />
         <AwardBadges />
-        <HvcaFaq faq={[]} />
+        {/* <Whatever
+            whateverOperation={homePageContent?.data?.whateverOperation}
+          /> */}
       </main>
+      <HvcaFaq faq={[]} />
     </>
   );
 };

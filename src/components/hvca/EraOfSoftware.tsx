@@ -2,8 +2,8 @@ import React from "react";
 
 const EraOfSoftware = () => {
   return (
-    <section className="no-scrollbar relative z-10 overflow-x-hidden overflow-y-visible px-2">
-      <div className="bg-white-linear absolute -bottom-[10%] left-0 z-10 h-[237px] w-full blur-xl"></div>
+    <section className="no-scrollbar relative overflow-x-hidden px-2">
+      <div className="bg-white-linear absolute -bottom-[2%] left-0 z-0 h-[237px] w-full"></div>
       <div className="bg-romanRed absolute top-1/2 -left-5 h-5 w-full max-w-[300px] -translate-y-[60%] rotate-45 rounded-full blur-[44px]"></div>
       <h2 className="section-heading text-gradient-black mx-auto max-w-[730px] text-center">
         The era of software for HVAC is out. The operating system is in.

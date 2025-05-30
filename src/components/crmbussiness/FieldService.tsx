@@ -30,7 +30,6 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
           {fieldService?.title}
         </h2>
       </TextAnimation>
-
       <ScrollOverlapCards
         theme="dark"
         slug={slug}

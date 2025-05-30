@@ -52,8 +52,63 @@ const HvcaHero = () => {
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
 
-      <HeroAnimatedIcon />
+      {/* <HeroAnimatedIcon /> */}
       <HeroAnimatedMobileIcon />
+      <span className="absolute top-0 left-[10%] z-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1020"
+          height="671"
+          fill="none"
+          viewBox="0 0 1020 671"
+        >
+          <g
+            filter="url(#filter0_f_1464_68065)"
+            style={{ mixBlendMode: "plus-lighter" }}
+          >
+            <path
+              stroke="url(#paint0_linear_1464_68065)"
+              strokeLinecap="round"
+              strokeWidth="216"
+              d="M197 957.924 507.5 416.5 823-129.962"
+            ></path>
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_1464_68065"
+              x1="853.107"
+              x2="600.639"
+              y1="357.525"
+              y2="55.953"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.062" stopOpacity="0"></stop>
+              <stop offset="0.997" stopColor="#A6070C"></stop>
+              <stop offset="1"></stop>
+            </linearGradient>
+            <filter
+              id="filter0_f_1464_68065"
+              width="1018.04"
+              height="1479.92"
+              x="0.982"
+              y="-325.98"
+              colorInterpolationFilters="sRGB"
+              filterUnits="userSpaceOnUse"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+              <feBlend
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              ></feBlend>
+              <feGaussianBlur
+                result="effect1_foregroundBlur_1464_68065"
+                stdDeviation="44"
+              ></feGaussianBlur>
+            </filter>
+          </defs>
+        </svg>
+      </span>
       <Image
         width={769}
         height={800}
@@ -91,7 +146,7 @@ const HvcaHero = () => {
           width={400}
           height={400}
           className="h-full w-full"
-          src="/images/webp/hvca-slider-img.webp"
+          src="/images/webp/hvca-slider-img-1.webp"
           alt="custom-image"
         />
         {/* <Swiper

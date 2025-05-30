@@ -66,6 +66,11 @@
       #ee1e25 0%,
       rgba(0, 0, 0, 0) 100%
     );
+  --background-image-faq-bg: linear-gradient(
+    270deg,
+    rgba(243, 243, 243, 0) 33.34%,
+    rgba(238, 30, 37, 0.4) 138.08%
+  );
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;

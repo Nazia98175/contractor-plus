@@ -44,6 +44,11 @@
     #dc1112 -10.83%,
     #76090a 83.23%
   );
+  --background-image-white-linear: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 9.91%,
+    #fff 100%
+  );
   --background-image-black-linear: linear-gradient(
     180deg,
     rgba(12, 13, 17, 0) 18.46%,
@@ -669,6 +674,33 @@ html {
   background-color: #c01a06;
   filter: blur(100px);
   z-index: 3;
+}
+
+.text-gradient-black {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(0, 0, 0, 0) 7.61%,
+      rgba(238, 30, 37, 0.4) 99.65%
+    ),
+    #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text-gradient-light {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(0, 0, 0, 0) 7.61%,
+      rgba(238, 30, 37, 0.4) 99.65%
+    ),
+    #656c73;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .bg-lightBlack-desktop2 {

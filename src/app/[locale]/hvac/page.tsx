@@ -34,8 +34,8 @@ const page = () => {
         {/* <Whatever
             whateverOperation={homePageContent?.data?.whateverOperation}
           /> */}
-        <HvcaFaq faq={[]} />
       </main>
+      <HvcaFaq faq={[]} />
     </>
   );
 };

@@ -1,4 +1,6 @@
 import Header from "@/components/common/Header";
+import Finally from "@/components/homepage/Finally";
+import Whatever from "@/components/homepage/Whatever";
 import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
 import HvcaFaq from "@/components/hvca/HvcaFaq";
@@ -31,9 +33,6 @@ const page = () => {
         <WantingMore />
         <EraOfSoftware />
         <AwardBadges />
-        {/* <Whatever
-            whateverOperation={homePageContent?.data?.whateverOperation}
-          /> */}
         <HvcaFaq faq={[]} />
       </main>
     </>

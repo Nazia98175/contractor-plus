@@ -15,7 +15,7 @@ const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
     <>
       <div
         onClick={onToggle}
-        className={`mb-3 cursor-pointer rounded-lg px-2 py-3 transition-all duration-300 ease-in-out sm:mb-6 ${isOpen ? "bg-faq-bg" : "bg-transparent"}`}
+        className={`opacity-35-bg mb-3 cursor-pointer rounded-lg px-2 py-3 transition-all duration-300 ease-in-out sm:mb-6 ${isOpen ? "bg-faq-bg" : "bg-transparent"}`}
       >
         <button className="flex w-full cursor-pointer items-center justify-between gap-5">
           <h3 className="paragraph !mt-0 text-start !font-black !text-white">

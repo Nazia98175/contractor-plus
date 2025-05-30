@@ -1,13 +1,62 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { HeroAnimatedIcon, HeroAnimatedMobileIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import VideoOptimizer from "../homepage/VideoOptimizer";
+import "swiper/css"; // Core Swiper styles
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const HvcaHero = () => {
+  const features = [
+    {
+      key: "support",
+      title: "We Provide Support",
+      description:
+        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+    },
+    {
+      key: "questions",
+      title: "We Answer Your Questions",
+      description:
+        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+    },
+    {
+      key: "safety",
+      title: "We Help You Drive Safely",
+      description:
+        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+    },
+    {
+      key: "support",
+      title: "We Provide Support",
+      description:
+        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+    },
+    {
+      key: "questions",
+      title: "We Answer Your Questions",
+      description:
+        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+    },
+    {
+      key: "safety",
+      title: "We Help You Drive Safely",
+      description:
+        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+    },
+  ];
+
   return (
-    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
+    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
+      <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[99999] h-[50px] w-full blur-[20px]"></div>
+      <img
+        className="absolute bottom-[-81px] left-0 z-[99999] h-[100px] w-full"
+        src="/images/webp/hvca-clould.webp"
+        alt=""
+      />
       <HeroAnimatedIcon />
       <HeroAnimatedMobileIcon />
       <Image
@@ -42,6 +91,46 @@ const HvcaHero = () => {
           </div>
         </div>
       </div>
+      <div className="absolute right-[5%] bottom-0 z-[1000] flex w-full max-w-[300px]">
+        <Image
+          width={400}
+          height={400}
+          className="h-full w-full"
+          src="/images/webp/hvca-slider-img.webp"
+          alt="custom-image"
+        />
+        {/* <Swiper
+          direction="vertical"
+          modules={[Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          spaceBetween={16}
+          centeredSlides={true}
+          slidesPerView={3}
+          loop={true}
+          style={{ maxHeight: "600px" }}
+        >
+          {features.map((feature, index) => (
+            <SwiperSlide key={index}>
+              <div className="h-full min-h-[180px] rounded-[20px] bg-white p-5">
+                <div className="mb-5 max-h-[50px]">
+                  <img
+                    src="/images/webp/hero-video-ovelay.webp"
+                    alt={`icon-${feature.title}`}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+                <h3 className="mb-[14px] font-[Poppins] text-[18px] font-medium text-black sm:text-[20px]">
+                  {feature.title}
+                </h3>
+                <p className="text-[14px] text-[#9E9EBC]">
+                  {feature.description}
+                </p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper> */}
+      </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
         <VideoOptimizer
           highResUrl="/video/hero-video.mp4"
@@ -63,7 +152,7 @@ const HvcaHero = () => {
           src={"/images/webp/hero-video-ovelay.webp"}
           alt="hero-video-ovelay"
         />
-        <div className="bg-kuroiBlack absolute bottom-[-3px] z-[9999] hidden h-[10px] w-full lg:block"></div>
+        {/* <div className="bg-kuroiBlack absolute bottom-[-3px] z-[1000] hidden h-[10px] w-full lg:block"></div> */}
       </div>
     </section>
   );

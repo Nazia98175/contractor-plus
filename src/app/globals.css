@@ -6,7 +6,6 @@
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
   --color-brownish: #e8e9ea;
-  --color-highRise: #adb1b5;
   --color-doctor: #fafafa;
   --color-whiteSmoke: #f3f3f3;
   --color-iron: #45454a;
@@ -172,6 +171,12 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+.countup-title {
+  @apply text-3xl leading-[38px] font-bold;
+}
+.countup-desc {
+  @apply font-montserrat text-lg font-medium;
 }
 @keyframes bounce {
   0%,

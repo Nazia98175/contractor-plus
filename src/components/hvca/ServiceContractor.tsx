@@ -4,7 +4,7 @@ import { blackPlatforms } from "../common/Helper";
 
 const ServiceContractor = () => {
   return (
-    <section className="relative z-20 mx-auto w-full max-w-[1050px] space-y-4 px-2 pt-3 pb-14 sm:space-y-6 md:space-y-7 xl:space-y-9">
+    <section className="relative z-20 mx-auto w-full max-w-[1050px] space-y-4 px-2 pt-[83px] pb-14 sm:space-y-6 md:space-y-7 md:pt-[130px] xl:space-y-9">
       <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
         Trusted by over <strong>50,000</strong> build and service contractors
       </h2>{" "}

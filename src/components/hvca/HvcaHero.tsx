@@ -49,14 +49,9 @@ const HvcaHero = () => {
   ];
 
   return (
-    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20">
+    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
-      <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[99999] h-[50px] w-full blur-[20px]"></div>
-      <img
-        className="absolute bottom-[-81px] left-0 z-[99999] h-[100px] w-full"
-        src="/images/webp/hvca-clould.webp"
-        alt=""
-      />
+
       <HeroAnimatedIcon />
       <HeroAnimatedMobileIcon />
       <Image
@@ -83,7 +78,7 @@ const HvcaHero = () => {
           <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
             <button className="bg-red-linear primary-btn h-10">
               <span className="hidden md:flex">Get started FREE</span>
-              {/* <span className="flex md:hidden">{cta_button_text}</span> */}
+              <span className="flex md:hidden">Download App</span>
             </button>
             <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
               No Credit Card Required
@@ -91,7 +86,7 @@ const HvcaHero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-[5%] bottom-0 z-[1000] flex w-full max-w-[300px]">
+      <div className="absolute right-[5%] bottom-0 z-[1000] hidden w-full max-w-[300px] lg:flex">
         <Image
           width={400}
           height={400}

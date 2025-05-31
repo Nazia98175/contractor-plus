@@ -16,11 +16,11 @@ export default function AwardBadges() {
   return (
     <section
       ref={ref}
-      className="no-scrollbar relative z-10 h-full w-full overflow-x-hidden overflow-y-visible"
+      className="no-scrollbar relative h-full w-full overflow-x-hidden overflow-y-visible"
     >
       <img
         src="/images/webp/red.png"
-        className="inset absolute -bottom-[20%] -z-10 h-[120%] w-full object-fill"
+        className="inset absolute -bottom-[20%] -z-[5] h-[120%] w-full object-fill"
         alt=""
       />
 
@@ -49,9 +49,9 @@ export default function AwardBadges() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col items-center text-center">
+      <div className="mt-10 flex flex-col items-center px-2 text-center">
         <button className="bg-red-linear primary-btn h-10">
-          <span className="hidden md:flex">Get started FREE</span>{" "}
+          <span className="flex">Get started FREE</span>{" "}
           <span>
             <ArrowIcon fill="#fff" />
           </span>

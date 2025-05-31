@@ -1,47 +1,81 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import { HeroAnimatedIcon, HeroAnimatedMobileIcon } from "../common/Icons";
+import "swiper/css"; // Core Swiper styles
+import { HeroAnimatedMobileIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import VideoOptimizer from "../homepage/VideoOptimizer";
-import "swiper/css"; // Core Swiper styles
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import HvcaHeroSlider from "./HvcaHeroSlider";
 
 const HvcaHero = () => {
   const features = [
     {
-      key: "support",
+      id: 1,
       title: "We Provide Support",
       description:
         "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
     },
     {
-      key: "questions",
+      id: 2,
       title: "We Answer Your Questions",
       description:
         "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
     },
     {
-      key: "safety",
+      id: 3,
       title: "We Help You Drive Safely",
       description:
         "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
     },
     {
-      key: "support",
+      id: 4,
       title: "We Provide Support",
       description:
         "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
     },
     {
-      key: "questions",
+      id: 5,
       title: "We Answer Your Questions",
       description:
         "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
     },
     {
-      key: "safety",
+      id: 6,
+      title: "We Help You Drive Safely",
+      description:
+        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+    },
+    {
+      id: 7,
+      title: "We Provide Support",
+      description:
+        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+    },
+    {
+      id: 8,
+      title: "We Answer Your Questions",
+      description:
+        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+    },
+    {
+      id: 9,
+      title: "We Help You Drive Safely",
+      description:
+        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+    },
+    {
+      id: 10,
+      title: "We Provide Support",
+      description:
+        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+    },
+    {
+      id: 11,
+      title: "We Answer Your Questions",
+      description:
+        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+    },
+    {
+      id: 12,
       title: "We Help You Drive Safely",
       description:
         "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
@@ -141,45 +175,8 @@ const HvcaHero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-[5%] bottom-0 z-[1000] hidden w-full max-w-[300px] lg:flex">
-        <Image
-          width={400}
-          height={400}
-          className="h-full w-full"
-          src="/images/webp/hvca-slider-img-1.webp"
-          alt="custom-image"
-        />
-        {/* <Swiper
-          direction="vertical"
-          modules={[Autoplay]}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          spaceBetween={16}
-          centeredSlides={true}
-          slidesPerView={3}
-          loop={true}
-          style={{ maxHeight: "600px" }}
-        >
-          {features.map((feature, index) => (
-            <SwiperSlide key={index}>
-              <div className="h-full min-h-[180px] rounded-[20px] bg-white p-5">
-                <div className="mb-5 max-h-[50px]">
-                  <img
-                    src="/images/webp/hero-video-ovelay.webp"
-                    alt={`icon-${feature.title}`}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <h3 className="mb-[14px] font-[Poppins] text-[18px] font-medium text-black sm:text-[20px]">
-                  {feature.title}
-                </h3>
-                <p className="text-[14px] text-[#9E9EBC]">
-                  {feature.description}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper> */}
+      <div className="absolute right-[5%] bottom-0 z-[1000] hidden h-[80%] w-[300px] bg-red-900 lg:flex">
+        <HvcaHeroSlider features={features} />
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
         <VideoOptimizer

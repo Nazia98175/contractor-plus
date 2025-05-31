@@ -5,7 +5,7 @@ import CardReveal from "../common/CardReveal";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 
-const HvcaSoftwareService = () => {
+const HvacSoftwareService = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -92,4 +92,4 @@ const HvcaSoftwareService = () => {
   );
 };
 
-export default HvcaSoftwareService;
+export default HvacSoftwareService;

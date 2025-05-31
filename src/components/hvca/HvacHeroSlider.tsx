@@ -15,11 +15,11 @@ interface Feature {
   description: string;
 }
 
-interface HvcaHeroSliderProps {
+interface HvacHeroSliderProps {
   features: Feature[];
 }
 
-const HvcaHeroSlider: React.FC<HvcaHeroSliderProps> = ({ features }) => {
+const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
   return (
     <Swiper
       direction="vertical"
@@ -65,4 +65,4 @@ const HvcaHeroSlider: React.FC<HvcaHeroSliderProps> = ({ features }) => {
   );
 };
 
-export default HvcaHeroSlider;
+export default HvacHeroSlider;

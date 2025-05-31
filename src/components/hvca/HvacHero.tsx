@@ -9,9 +9,9 @@ import {
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import VideoOptimizer from "../homepage/VideoOptimizer";
-import HvcaHeroSlider from "./HvcaHeroSlider";
+import HvacHeroSlider from "./HvacHeroSlider";
 
-const HvcaHero = () => {
+const HvacHero = () => {
   const features = [
     {
       id: 1,
@@ -149,7 +149,7 @@ const HvcaHero = () => {
           </div>
         </div>
         <div className="absolute right-[2%] bottom-0 z-[1000] hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
-          <HvcaHeroSlider features={features} />
+          <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
           <VideoOptimizer
@@ -200,4 +200,4 @@ const HvcaHero = () => {
   );
 };
 
-export default HvcaHero;
+export default HvacHero;

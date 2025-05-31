@@ -2,7 +2,7 @@ import React from "react";
 import { softwareCardData } from "../common/Helper";
 import { AlertIcon } from "../common/Icons";
 
-const HvcaSoftware = () => {
+const HvacSoftware = () => {
   return (
     <section className="relative z-30 h-full bg-cover bg-center bg-no-repeat pb-[120px] lg:bg-[url('/images/webp/software-bg.webp')]">
       <h3 className="heading text-winterWay mx-auto max-w-[90%] text-center !font-bold md:font-semibold">
@@ -26,4 +26,4 @@ const HvcaSoftware = () => {
   );
 };
 
-export default HvcaSoftware;
+export default HvacSoftware;

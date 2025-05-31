@@ -84,7 +84,7 @@ export const makeOperationList = [
     start: 0,
     end: 4,
     suffix: "x",
-    icon: <CalculatorIcon />,
+    icon: <CalculatorIcon className="md:text-lightBlack text-white" />,
   },
   {
     title: "faster",
@@ -92,7 +92,7 @@ export const makeOperationList = [
     start: 0,
     end: 28,
     suffix: "%",
-    icon: <ServiceIcon />,
+    icon: <ServiceIcon className="md:text-lightBlack text-white" />,
   },
   {
     title: "less",
@@ -100,7 +100,7 @@ export const makeOperationList = [
     start: 0,
     end: 38,
     suffix: "%",
-    icon: <AdminWorkIcon fill="#1C2731" />,
+    icon: <AdminWorkIcon className="md:text-lightBlack text-white" />,
   },
 ];
 

@@ -15,13 +15,13 @@ export default function AwardBadges() {
   return (
     <section
       ref={ref}
-      className="no-scrollbar relative z-10 h-full w-full overflow-x-hidden overflow-y-visible bg-[url('/images/webp/red.png')] bg-cover bg-no-repeat"
+      className="no-scrollbar relative z-10 h-full w-full overflow-x-hidden overflow-y-visible"
     >
-      {/* <img
+      <img
         src="/images/webp/red.png"
-        className="inset absolute -top-[10%] -z-10 h-auto w-full object-cover"
+        className="inset absolute top-0 -z-10 h-full w-full object-fill"
         alt=""
-      /> */}
+      />
 
       <div className="main-container relative z-20 grid grid-cols-1 gap-6 pt-20 sm:grid-cols-2 md:grid-cols-3">
         {makeOperationList.map((item, index) => (

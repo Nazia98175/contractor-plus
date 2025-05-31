@@ -24,7 +24,7 @@ export default function AwardBadges() {
         alt=""
       />
 
-      <div className="main-container relative z-20 grid grid-cols-1 gap-6 pt-20 sm:grid-cols-2 md:grid-cols-3">
+      <div className="main-container relative z-20 grid grid-cols-1 gap-3.5 pt-[130px] sm:grid-cols-2 sm:gap-6 sm:pt-20 md:grid-cols-3">
         {makeOperationList.map((item, index) => (
           <article
             key={index}

@@ -17,7 +17,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
       key={review.id}
       className="group relative z-20 min-h-[300px] w-full cursor-pointer text-white duration-300"
     >
-      <div className="flex flex-col gap-3 md:gap-5">
+      <div className="flex items-center gap-3 sm:flex-col sm:items-start md:gap-5">
         <div className="relative w-fit">
           <Image
             width={90}
@@ -26,7 +26,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
             alt="User"
             className="max-w-[90px] min-w-[90px] rounded"
           />
-          <div className="text-pleasure group-hover:text-blackRussian bg-kuroiBlack absolute -right-2 -bottom-2 h-fit rounded-full p-[5px] duration-300">
+          <div className="text-pleasure group-hover:text-blackRussian bg-lightblack absolute -right-2 -bottom-2 h-fit rounded-full p-[5px] duration-300">
             <PlayIcon2 />
           </div>
         </div>
@@ -36,7 +36,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
               <h5 className="font-inter truncate text-xl font-medium tracking-[0.1px] text-nowrap text-white lg:text-2xl">
                 {review.userName}
               </h5>
-              <h6 className="font-inter text-decemberSky mt-2.5 text-sm leading-[120%] font-medium tracking-[0.1px] md:text-base">
+              <h6 className="font-inter text-decemberSky mt-1 text-sm leading-[120%] font-medium tracking-[0.1px] sm:mt-2.5 md:text-base">
                 {review.userRole}
               </h6>
             </div>

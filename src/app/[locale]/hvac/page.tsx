@@ -1,5 +1,6 @@
 import Header from "@/components/common/Header";
 import { blackPlatforms, platforms } from "@/components/common/Helper";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Finally from "@/components/homepage/Finally";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
@@ -27,14 +28,15 @@ const page = () => {
         <HvcaSoftware />
         <WantingMore />
         <EraOfSoftware />
-        {/* <Whatever
-            whateverOperation={homePageContent?.data?.whateverOperation}
-          /> */}
       </div>
       <AwardBadges />
       <HvcaSoftwareService />
       <TrustBarHvca platforms={platforms} />
+      {/* <Whatever
+            whateverOperation={homePageContent?.data?.whateverOperation}
+          /> */}
       <HvcaFaq faq={[]} />
+      {/* <BlogPosts /> */}
     </>
   );
 };

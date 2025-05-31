@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
-import { HeroAnimatedMobileIcon } from "../common/Icons";
+import { HeroAnimatedMobileIcon, SliderIcon1 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import VideoOptimizer from "../homepage/VideoOptimizer";
 import HvcaHeroSlider from "./HvcaHeroSlider";
@@ -10,75 +10,99 @@ const HvcaHero = () => {
   const features = [
     {
       id: 1,
-      title: "We Provide Support",
-      description:
-        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "We make every Sholaz .",
     },
     {
       id: 2,
-      title: "We Answer Your Questions",
-      description:
-        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "Got lorem loren.",
     },
     {
       id: 3,
-      title: "We Help You Drive Safely",
-      description:
-        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "The Sholaz app is",
     },
     {
       id: 4,
-      title: "We Provide Support",
-      description:
-        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "We make every Sholaz .",
     },
     {
       id: 5,
-      title: "We Answer Your Questions",
-      description:
-        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "Got lorem loren.",
     },
     {
       id: 6,
-      title: "We Help You Drive Safely",
-      description:
-        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "The Sholaz app is",
     },
     {
       id: 7,
-      title: "We Provide Support",
-      description:
-        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "We make every Sholaz .",
     },
     {
       id: 8,
-      title: "We Answer Your Questions",
-      description:
-        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "Got lorem loren.",
     },
     {
       id: 9,
-      title: "We Help You Drive Safely",
-      description:
-        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "The Sholaz app is",
     },
     {
       id: 10,
-      title: "We Provide Support",
-      description:
-        "We make every Sholaz trip hassle-free! Our support pages help you set up your account, use the app, adjust fares, and much more.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "We make every Sholaz .",
     },
     {
       id: 11,
-      title: "We Answer Your Questions",
-      description:
-        "Got questions? Get answers! We will answer any questions you may have. And if you ever need help, our support is always available.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "Got lorem loren.",
     },
     {
       id: 12,
-      title: "We Help You Drive Safely",
-      description:
-        "The Sholaz app is packed with features to keep you safe and confident before, during, and after every trip.",
+      title: "24% faster",
+      icon: <SliderIcon1 />,
+      heading: "Job turnaround time",
+      percentage: 24,
+      description: "The Sholaz app is",
     },
   ];
 
@@ -175,7 +199,7 @@ const HvcaHero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-[5%] bottom-0 z-[1000] hidden h-[80%] w-[300px] bg-red-900 lg:flex">
+      <div className="absolute right-[2%] bottom-0 z-[1000] hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
         <HvcaHeroSlider features={features} />
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">

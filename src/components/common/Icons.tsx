@@ -2561,6 +2561,21 @@ export const HvacGlowHeroDesktopIcon = () => (
     </defs>
   </svg>
 );
+export const PlayIcon2 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="31"
+    height="30"
+    viewBox="0 0 31 30"
+    fill="none"
+  >
+    <rect x="0.5" width="30" height="30" rx="15" fill="#FEE7E8" />
+    <path
+      d="M13.0721 21.3141C12.7285 21.5412 12.3807 21.5545 12.0288 21.3539C11.677 21.1533 11.5007 20.843 11.5 20.423V9.57255C11.5 9.15321 11.6763 8.8429 12.0288 8.64162C12.3814 8.44034 12.7291 8.45362 13.0721 8.68146L21.4737 14.1067C21.783 14.3163 21.9376 14.6134 21.9376 14.9978C21.9376 15.3822 21.783 15.6792 21.4737 15.8889L13.0721 21.3141Z"
+      fill="#DC1112"
+    />
+  </svg>
+);
 export const HvacGlowHeroMobileIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

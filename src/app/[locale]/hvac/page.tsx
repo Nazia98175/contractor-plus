@@ -5,9 +5,9 @@ import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
 import HvacFaq from "@/components/hvca/HvacFaq";
 import HvacHero from "@/components/hvca/HvacHero";
+import HvacReview from "@/components/hvca/HvacReview";
 import HvacSoftware from "@/components/hvca/HvacSoftware";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
-
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
 
@@ -27,6 +27,7 @@ const page = () => {
         <EraOfSoftware />
       </div>
       <AwardBadges />
+      <HvacReview />
       <HvacSoftwareService />
       <TrustBarHvca platforms={platforms} />
       {/* <Whatever

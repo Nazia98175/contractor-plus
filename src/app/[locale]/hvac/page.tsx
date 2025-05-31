@@ -1,10 +1,15 @@
 import Header from "@/components/common/Header";
+import { blackPlatforms, platforms } from "@/components/common/Helper";
+import Finally from "@/components/homepage/Finally";
+import TrustBar from "@/components/homepage/TrustBar";
+import Whatever from "@/components/homepage/Whatever";
 import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
 import HvcaFaq from "@/components/hvca/HvcaFaq";
 import HvcaHero from "@/components/hvca/HvcaHero";
 import HvcaSoftware from "@/components/hvca/HvcaSoftware";
-import ServiceContractor from "@/components/hvca/ServiceContractor";
+import HvcaSoftwareService from "@/components/hvca/HvcaSoftwareService";
+import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
 
 const page = () => {
@@ -26,7 +31,11 @@ const page = () => {
           />
           <HvcaHero />
         </div>
-        <ServiceContractor />
+        <TrustBar
+          platforms={blackPlatforms}
+          showTrustedSection={true}
+          className="relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[83px] pb-14 sm:gap-6 md:gap-7 md:pt-[130px] xl:gap-9"
+        />
         <HvcaSoftware />
         <WantingMore />
         <EraOfSoftware />
@@ -34,6 +43,9 @@ const page = () => {
             whateverOperation={homePageContent?.data?.whateverOperation}
           /> */}
       </main>
+      <AwardBadges />
+      <HvcaSoftwareService />
+      <TrustBarHvca platforms={platforms} />
       <HvcaFaq faq={[]} />
     </>
   );

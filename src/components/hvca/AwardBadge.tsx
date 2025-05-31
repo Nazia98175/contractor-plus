@@ -15,15 +15,15 @@ export default function AwardBadges() {
   return (
     <section
       ref={ref}
-      className="no-scrollbar relative z-10 overflow-x-hidden overflow-y-visible pt-20 pb-[104px]"
+      className="no-scrollbar relative z-10 h-full w-full overflow-x-hidden overflow-y-visible bg-[url('/images/webp/red.png')] bg-cover bg-no-repeat"
     >
-      <img
+      {/* <img
         src="/images/webp/red.png"
-        className="inset absolute -z-10 h-auto w-full object-fill"
+        className="inset absolute -top-[10%] -z-10 h-auto w-full object-cover"
         alt=""
-      />
+      /> */}
 
-      <div className="main-container relative z-20 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="main-container relative z-20 grid grid-cols-1 gap-6 pt-20 sm:grid-cols-2 md:grid-cols-3">
         {makeOperationList.map((item, index) => (
           <article
             key={index}
@@ -57,7 +57,7 @@ export default function AwardBadges() {
         </p>
       </div>
 
-      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 md:items-start lg:gap-14">
+      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 pb-[179px] md:items-start lg:gap-14">
         {awards.map((award, index) => (
           <Image
             key={index}

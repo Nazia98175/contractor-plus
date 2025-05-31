@@ -568,7 +568,6 @@ html {
   filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1));
 }
 .wanting-more-bg {
-  border-radius: 40px;
   border: 1px solid #fff;
   background:
     radial-gradient(

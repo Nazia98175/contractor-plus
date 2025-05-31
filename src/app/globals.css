@@ -1221,3 +1221,28 @@ html {
 .swiper-slide-active .hero-slide-content {
   opacity: 1;
 }
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0px #a6070c);
+    opacity: 0.7;
+  }
+  50% {
+    filter: drop-shadow(0 0 24px #a6070c);
+    opacity: 1;
+  }
+}
+
+.glowing-path {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation:
+    draw 2.5s ease-out forwards,
+    glow-pulse 5s ease-in-out 2.5s infinite;
+}

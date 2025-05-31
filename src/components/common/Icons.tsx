@@ -2504,3 +2504,118 @@ export const SliderIcon1 = () => (
     />
   </svg>
 );
+export const HvacGlowHeroDesktopIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1012"
+    height="100%"
+    fill="none"
+    viewBox="0 0 1020 671"
+    className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block xl:left-[13%]"
+  >
+    <g
+      filter="url(#filter0_f_1464_68065)"
+      style={{ mixBlendMode: "plus-lighter" }}
+    >
+      <path
+        className="glowing-path"
+        stroke="url(#paint0_linear_1464_68065)"
+        strokeLinecap="round"
+        strokeWidth="216"
+        d="M197 957.924 507.5 416.5 823-129.962"
+      ></path>
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_1464_68065"
+        x1="853.107"
+        x2="600.639"
+        y1="357.525"
+        y2="55.953"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.062" stopOpacity="0"></stop>
+        <stop offset="0.997" stopColor="#A6070C"></stop>
+        <stop offset="1"></stop>
+      </linearGradient>
+      <filter
+        id="filter0_f_1464_68065"
+        width="1018.04"
+        height="1479.92"
+        x="0.982"
+        y="-325.98"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        ></feBlend>
+        <feGaussianBlur
+          result="effect1_foregroundBlur_1464_68065"
+          stdDeviation="44"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+);
+export const HvacGlowHeroMobileIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="320"
+    height="1139"
+    viewBox="0 0 320 1139"
+    fill="none"
+    className="pointer-events-none absolute top-0 left-0 z-10 lg:hidden xl:left-[13%]"
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_1465_35504)"
+    >
+      <path
+        className="glowing-path"
+        d="M133.485 176.792L-195.564 505.842L-524.614 834.891"
+        stroke="url(#paint0_linear_1465_35504)"
+        stroke-width="432"
+        stroke-linecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_1465_35504"
+        x="-828.614"
+        y="-127.208"
+        width="1266.1"
+        height="1266.1"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_1465_35504"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_1465_35504"
+        x1="-498.24"
+        y1="429.5"
+        x2="-378.239"
+        y2="785.01"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stop-opacity="0" />
+        <stop offset="0.996954" stop-color="#EE1E25" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
+    </defs>
+  </svg>
+);

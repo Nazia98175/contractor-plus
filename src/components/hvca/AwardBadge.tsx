@@ -16,15 +16,15 @@ export default function AwardBadges() {
   return (
     <section
       ref={ref}
-      className="no-scrollbar relative z-10 h-full w-full overflow-x-hidden overflow-y-visible"
+      className="no-scrollbar relative h-full w-full overflow-x-hidden overflow-y-visible"
     >
       <img
         src="/images/webp/red.png"
-        className="inset absolute -bottom-[20%] -z-10 h-[120%] w-full object-fill"
+        className="inset absolute -bottom-[20%] -z-[5] h-[120%] w-full object-fill"
         alt=""
       />
 
-      <div className="main-container relative z-20 grid grid-cols-1 gap-3.5 pt-[130px] sm:grid-cols-2 sm:gap-6 sm:pt-20 md:grid-cols-3">
+      <div className="main-container relative z-20 grid grid-cols-1 gap-3.5 pt-8 sm:grid-cols-2 sm:gap-6 sm:pt-0 md:grid-cols-3">
         {makeOperationList.map((item, index) => (
           <article
             key={index}
@@ -49,9 +49,9 @@ export default function AwardBadges() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col items-center text-center">
+      <div className="mt-10 flex flex-col items-center px-2 text-center">
         <button className="bg-red-linear primary-btn h-10">
-          <span className="hidden md:flex">Get started FREE</span>{" "}
+          <span className="flex">Get started FREE</span>{" "}
           <span>
             <ArrowIcon fill="#fff" />
           </span>

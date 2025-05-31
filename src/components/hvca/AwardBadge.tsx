@@ -15,11 +15,11 @@ export default function AwardBadges() {
   return (
     <section
       ref={ref}
-      className="no-scrollbar relative z-10 overflow-x-hidden overflow-y-visible py-12"
+      className="no-scrollbar relative z-10 overflow-x-hidden overflow-y-visible pt-20 pb-[104px]"
     >
       <img
         src="/images/webp/red.png"
-        className="absolute -top-[33%] left-0 z-10 h-[170%] w-full object-cover"
+        className="inset absolute -z-10 h-auto w-full object-fill"
         alt=""
       />
 

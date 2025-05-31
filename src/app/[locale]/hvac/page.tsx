@@ -22,7 +22,7 @@ const page = () => {
         <TrustBar
           platforms={blackPlatforms}
           showTrustedSection={true}
-          className="relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-1 pb-14 sm:gap-6 sm:pt-[13px] md:gap-7 xl:gap-9"
+          className="1xl:gap-13 relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-1 pb-13 sm:gap-6 sm:pt-[13px] md:gap-7 xl:gap-9"
         />
         <HvcaSoftware />
         <WantingMore />

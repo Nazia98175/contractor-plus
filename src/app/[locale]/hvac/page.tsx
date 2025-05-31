@@ -1,6 +1,5 @@
 import Header from "@/components/common/Header";
 import { blackPlatforms, platforms } from "@/components/common/Helper";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Finally from "@/components/homepage/Finally";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
@@ -12,41 +11,30 @@ import HvcaSoftware from "@/components/hvca/HvcaSoftware";
 import HvcaSoftwareService from "@/components/hvca/HvcaSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
+import Image from "next/image";
 
 const page = () => {
   return (
     <>
       <Header />
-      <main className="bg-white">
-        <div className="relative">
-          <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[888] hidden h-[60px] w-full blur-[12.5px] lg:block"></div>
-          <img
-            className="absolute bottom-[-100px] left-0 z-[888] hidden h-[150px] w-full md:block"
-            src="/images/webp/hvca-clould.webp"
-            alt=""
-          />
-          <img
-            className="absolute bottom-[-87px] left-0 z-[888] block h-[100px] w-full md:hidden"
-            src="/images/webp/hvca-mobile-could.webp"
-            alt=""
-          />
-          <HvcaHero />
-        </div>
+      <div className="bg-white">
+        <HvcaHero />
         <TrustBar
           platforms={blackPlatforms}
           showTrustedSection={true}
-          className="relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[83px] pb-14 sm:gap-6 md:gap-7 md:pt-[130px] xl:gap-9"
+          className="relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-1 pb-14 sm:gap-6 sm:pt-[13px] md:gap-7 xl:gap-9"
         />
         <HvcaSoftware />
         <WantingMore />
         <EraOfSoftware />
-      </main>
+        {/* <Whatever
+            whateverOperation={homePageContent?.data?.whateverOperation}
+          /> */}
+      </div>
       <AwardBadges />
       <HvcaSoftwareService />
       <TrustBarHvca platforms={platforms} />
-      {/* <Whatever/> */}
       <HvcaFaq faq={[]} />
-      {/* <BlogPosts /> */}
     </>
   );
 };

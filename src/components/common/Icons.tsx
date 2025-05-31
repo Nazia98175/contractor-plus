@@ -509,7 +509,7 @@ export const EstimatesAiIcon = () => (
         y2="21.7282"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient
@@ -520,7 +520,7 @@ export const EstimatesAiIcon = () => (
         y2="13.0331"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D9D9D9" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" stopOpacity="0" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient
@@ -531,7 +531,7 @@ export const EstimatesAiIcon = () => (
         y2="4.08588"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D9D9D9" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" stopOpacity="0" />
         <stop offset="1" />
       </linearGradient>
     </defs>
@@ -2578,8 +2578,8 @@ export const HvacGlowHeroMobileIcon = () => (
         className="glowing-path"
         d="M133.485 176.792L-195.564 505.842L-524.614 834.891"
         stroke="url(#paint0_linear_1465_35504)"
-        stroke-width="432"
-        stroke-linecap="round"
+        strokeWidth="432"
+        strokeLinecap="round"
       />
     </g>
     <defs>
@@ -2590,9 +2590,9 @@ export const HvacGlowHeroMobileIcon = () => (
         width="1266.1"
         height="1266.1"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -2612,9 +2612,9 @@ export const HvacGlowHeroMobileIcon = () => (
         y2="785.01"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.0622667" stop-opacity="0" />
-        <stop offset="0.996954" stop-color="#EE1E25" />
-        <stop offset="1" stop-color="white" />
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="white" />
       </linearGradient>
     </defs>
   </svg>

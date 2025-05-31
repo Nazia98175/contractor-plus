@@ -6,8 +6,8 @@
   <defs>
     <clipPath id="bgblur_0_637_34806_clip_path" transform="translate(52 51.5312)"><path d="M0 12.493C0 1.72932 13.0763 -3.5911 20.5912 4.11494L103.405 89.0351L182.094 169.616C189.516 177.216 184.131 190 173.509 190H12C5.37258 190 0 184.627 0 178V12.493Z"/>
   </clipPath><radialGradient id="paint0_radial_637_34806" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(26 171.5) rotate(-45) scale(94.0452 116.984)">
-  <stop stop-color="#FF5201"/>
-  <stop offset="1" stop-color="#FF5201" stop-opacity="0"/>
+  <stop stopColor="#FF5201"/>
+  <stop offset="1" stopColor="#FF5201" stopOpacity="0"/>
 </radialGradient>
 </defs>
 </svg>

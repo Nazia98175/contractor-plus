@@ -1246,3 +1246,16 @@ html {
     draw 2.5s ease-out forwards,
     glow-pulse 5s ease-in-out 2.5s infinite;
 }
+.hvac-software-bg::before {
+  @apply absolute top-0 left-0 -z-[99] h-full w-full bg-center bg-no-repeat;
+  content: "";
+  background-image: url("/images/svg/software-bg-mobile.svg");
+  background-size: 69% 100%;
+}
+
+@media (min-width: 1024px) {
+  .hvac-software-bg::before {
+    background-image: url("/images/webp/software-bg.webp");
+    background-size: 105% 100%;
+  }
+}

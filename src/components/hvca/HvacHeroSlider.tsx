@@ -33,7 +33,7 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
     >
       {features.map((feature, index) => (
         <SwiperSlide key={index}>
-          <div className="border-redPigment hero-slider hero-slide-content rounded-3xl border bg-green-900 p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
+          <div className="border-redPigment hero-slider hero-slide-content overflow-hidden rounded-3xl border p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
             <Image
               className="pointer-events-none absolute right-0 -z-40"
               src={"/images/svg/hero-slider-animated-svg.svg"}

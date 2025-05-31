@@ -2511,7 +2511,7 @@ export const HvacGlowHeroDesktopIcon = () => (
     height="100%"
     fill="none"
     viewBox="0 0 1020 671"
-    className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block xl:left-[13%]"
+    className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block"
   >
     <g
       filter="url(#filter0_f_1464_68065)"

@@ -37,9 +37,7 @@ const FeatureNavigation = ({
 
   return (
     <div
-      className={`sticky top-0 flex gap-1.5 ${
-        isMobile ? "w-full" : "lg:self-start"
-      } z-20 lg:w-fit`}
+      className="relative flex w-full gap-1.5 lg:w-fit lg:self-start"
       ref={featuresRef}
     >
       <div className="relative mt-1 hidden w-fit items-center justify-center px-1 lg:flex">
@@ -50,14 +48,8 @@ const FeatureNavigation = ({
         <Pathbg />
       </div>
 
-      <div
-        className={`font-jakarta no-scrollbar flex flex-row gap-[22px] py-2 lg:flex-col lg:py-0 ${
-          isMobile
-            ? "w-full justify-between overflow-x-auto"
-            : "lg:overflow-visible"
-        } relative whitespace-nowrap`}
-      >
-        {features.map((feature, index) => (
+      <div className="font-jakarta no-scrollbar relative z-40 flex w-full flex-row justify-between gap-[22px] overflow-x-auto bg-white py-2 whitespace-nowrap lg:flex-col lg:overflow-visible lg:py-0">
+        {features?.map((feature, index) => (
           <button
             ref={(el) => {
               buttonRefs.current[index] = el;

@@ -5,7 +5,7 @@ import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 
 const FeatureItem = ({ text }: { text: string }) => (
-  <article className="bg-doctor2 text-lightBlack text-lightblack ma-w-[500px] mx-2 flex w-full items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">
+  <article className="bg-doctor2 text-lightBlack text-lightblack mx-2 flex w-full max-w-[500px] items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">
     <CheckIcon width={25} height={25} className="min-w-5" />
     {text}
   </article>
@@ -19,7 +19,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
     <section className="relative pt-28 lg:pt-5">
       <Image
-        className="absolute -top-[35%] left-0 z-0 h-[83%] w-[100%] object-cover lg:h-[100%]"
+        className="absolute -top-[35%] left-0 z-0 h-[83%] w-[100%] object-cover lg:h-[100%] 2xl:h-[120%]"
         src={"/images/webp/finally-desktop-bg.webp"}
         alt="finally-desktop-bg"
         width={1920}
@@ -67,13 +67,13 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
           </p>
         </TextAnimation>
 
-        <div className="mt-3.5 w-full sm:mt-9">
+        {/* <div className="mt-3.5 w-full sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
             {trackProperties?.cards.map((text: any, index: any) => (
               <FeatureItem key={index} text={text?.text} />
             ))}
           </Marquee>
-        </div>
+        </div> */}
       </div>
     </section>
   );

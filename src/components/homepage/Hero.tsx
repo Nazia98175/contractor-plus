@@ -21,7 +21,8 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     cta_button_text,
     cta_button_link,
     ncc_text,
-    hero_image
+    hero_image,
+    mobileBtn
   } = homePageContent ?? {};
 console.log(hero_image?.url ,"urlll")
   return (
@@ -50,7 +51,7 @@ console.log(hero_image?.url ,"urlll")
           <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
             <button className="bg-red-linear primary-btn h-10">
               <span className="hidden md:flex">{cta_button_text}</span>
-              <span className="flex md:hidden">{cta_button_text}</span>
+              <span className="flex md:hidden">{mobileBtn}</span>
             </button>
             <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
               <CheckIcon />

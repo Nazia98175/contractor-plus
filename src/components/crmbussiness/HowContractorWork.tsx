@@ -3,8 +3,19 @@ import React from "react";
 import { CheckIcon, SideIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+interface Content{
+ title: string;
+}
 
-const HowContractorWork = () => {
+interface LikeYouDo{
+  title: string;
+  content: Content[]
+}
+
+interface Props{
+  data: LikeYouDo
+}
+const HowContractorWork: React.FC<Props> = ({data}) => {
   const features = [
     "Make it easier for team members to jump in",
     "Easily get the full story on every location",
@@ -30,12 +41,13 @@ const HowContractorWork = () => {
         <div className="w-full max-w-[742px] space-y-4 lg:space-y-5">
           <TextAnimation animateOnScroll={true} delay={0.3}>
             <h3 className="text-winterWay heading">
-              Made for how contractors, property managers, and REIs really work
+              {data?.title}
+              {/* Made for how contractors, property managers, and REIs really work */}
             </h3>
           </TextAnimation>
 
           <ul className="space-y-2 sm:space-y-3 lg:space-y-5">
-            {features.map((feature, index) => (
+            {data?.content?.map((feature, index) => (
               <li
                 key={index}
                 className="text-lightBlack flex gap-2.5 px-2 py-2.5 text-base font-medium sm:font-semibold md:px-3 xl:text-lg"
@@ -43,7 +55,7 @@ const HowContractorWork = () => {
                 <span className="max-w-5 min-w-5 md:max-w-6">
                   <CheckIcon width={25} height={25} />
                 </span>
-                <span>{feature}</span>
+                <span>{feature?.title}</span>
               </li>
             ))}
           </ul>

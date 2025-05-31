@@ -5,11 +5,11 @@ import { AlertIcon } from "../common/Icons";
 const HvcaSoftware = () => {
   return (
     <section className="relative z-30 h-full min-h-[445px] bg-cover bg-center bg-no-repeat pb-16 lg:max-h-[445px] lg:bg-[url('/images/webp/software-bg.webp')]">
-      <h3 className="heading text-winterWay mx-auto max-w-[90%] pt-7 text-center">
+      <h3 className="heading text-winterWay mx-auto max-w-[90%] text-center !font-bold md:font-semibold">
         Every HVAC software has the same story
       </h3>
 
-      <div className="main-container mt-5 flex flex-wrap gap-5 md:gap-8 xl:mt-[103px] xl:gap-12">
+      <div className="main-container mt-5 flex flex-wrap justify-center gap-5 xl:mt-[103px] xl:gap-8 2xl:gap-12">
         {softwareCardData.map((card, index) => (
           <article
             key={index}

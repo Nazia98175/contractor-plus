@@ -8,17 +8,23 @@ interface Props {
   service: ServiceData;
   slug: string;
   idx: any;
+  theme: "light" | "dark";
 }
 
-const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
+const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
 
+  const titleColor = theme === "dark" ? "text-white" : "text-lightBlack";
+  const featureTitleColor = theme === "dark" ? "text-white" : "text-lightBlack";
+  const featureDescColor =
+    theme === "dark" ? "text-secondary lg:text-superSilver" : "text-wallStreet";
+
   return (
-    <article className="relative z-30 flex flex-col items-start justify-between gap-7 text-white lg:flex-row">
+    <article className="relative z-30 flex flex-col items-start justify-between gap-7 lg:flex-row">
       <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
-          <h4 className="card-title">{service?.title}</h4>
+          <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
 
           {/* Image for mobile */}
           <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
@@ -38,8 +44,10 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx }) => {
                     <TickIcon />
                   </span>
                   <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className="card-heading">{feature?.title}</h5>
-                    <p className="text-secondary lg:text-superSilver card-desc">
+                    <h5 className={`card-heading ${featureTitleColor}`}>
+                      {feature?.title}
+                    </h5>
+                    <p className={`card-desc ${featureDescColor}`}>
                       {feature?.desc}
                     </p>
                   </div>

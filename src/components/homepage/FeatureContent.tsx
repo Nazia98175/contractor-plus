@@ -46,10 +46,11 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             <Image
               src={featureContentss?.[index]?.titleImg}
               alt="Feature"
-              fill
+              width={611}
+              height={245}
               className="rounded-md object-cover"
             />
-            <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" />
+            {/* <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" /> */}
           </div>
           <p className="text-wallStreet max-w-[615px] space-y-2 text-sm font-medium sm:text-base lg:text-lg">
             {content.desc}

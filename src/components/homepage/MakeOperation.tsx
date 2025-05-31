@@ -30,14 +30,6 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
 
   const t = useTranslations("makeoperation");
 
-  const makeOperationlist = t.raw("makeOperationlist") as {
-    title: string;
-    description: string;
-    start: number;
-    end: number;
-    suffix: string;
-  }[];
-
   const icons = [<EstimateIcon2 />, <TurnaroundIcon />, <AdminWorkIcon />];
 
   return (

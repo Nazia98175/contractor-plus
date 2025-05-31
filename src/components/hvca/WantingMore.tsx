@@ -3,21 +3,21 @@ import TextAnimation from "../common/TextAnimation";
 import { RedCurveLine, TickIcon } from "../common/Icons";
 import Image from "next/image";
 import { wantingMoreData } from "../common/Helper";
+import ScrollOverlapCards from "../common/ScrollOverlapCards";
 
 const curvePositions = [0, 50, 100];
 
 const WantingMore = () => {
   return (
-    <section className="relative z-30 overflow-hidden px-2 pb-16">
+    <section className="relative z-30 px-2 pb-16">
       <TextAnimation animateOnScroll={true} delay={0.3}>
         <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit max-w-[1004px] text-center !font-bold lg:!font-semibold">
           Contractor+ is the only HVAC software that doesn’t leave you still
           wanting more
         </h2>
       </TextAnimation>
-
-      <div className="relative mt-9 flex min-h-screen w-full flex-col items-center justify-center">
-        {curvePositions.map((topOffset, index) => (
+      <div className="relative mt-9 flex w-full flex-col items-center justify-center">
+        {/* {curvePositions.map((topOffset, index) => (
           <span
             key={index}
             className="absolute -left-[2%] z-30 block w-[108%]"
@@ -25,11 +25,11 @@ const WantingMore = () => {
           >
             <RedCurveLine />
           </span>
-        ))}
+        ))} */}
+        {/* 
+        <div className="border-romanRed absolute bottom-[20%] mx-auto h-full max-h-[613px] w-full max-w-[1312px] rounded-[40%] border bg-[rgba(242,19,20,0.27)] blur-[100px]"></div> */}
 
-        <div className="border-romanRed absolute bottom-[20%] mx-auto h-full max-h-[613px] w-full max-w-[1312px] rounded-[40%] border bg-[rgba(242,19,20,0.27)] blur-[100px]"></div>
-
-        {wantingMoreData.map((obj, idx) => (
+        {/* {wantingMoreData.map((obj, idx) => (
           <article
             key={idx}
             className="wanting-more-bg relative z-30 flex w-full max-w-[1232px] flex-col items-start justify-between gap-7 rounded-[14px] p-3 backdrop-blur-[20px] lg:flex-row lg:p-5 xl:rounded-[40px]"
@@ -38,7 +38,7 @@ const WantingMore = () => {
               <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
                 <h4 className="card-title text-lightBlack">{obj.title}</h4>
 
-                <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
+                <div className="h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
                   <Image
                     src={obj.imageSrc}
                     alt="service image"
@@ -82,8 +82,13 @@ const WantingMore = () => {
               />
             </div>
           </article>
-        ))}
-      </div>
+        ))} */}
+      </div>{" "}
+      <ScrollOverlapCards
+        theme="light"
+        slug={"testing"}
+        fieldService={{ cardsDetail: wantingMoreData }}
+      />
     </section>
   );
 };

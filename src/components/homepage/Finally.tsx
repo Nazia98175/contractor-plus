@@ -67,6 +67,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             ))}
           </CardReveal>
           <div className="relative mt-[45px] flex w-full flex-col-reverse justify-center gap-3 px-3 pb-8 sm:mt-16 md:mt-[83px] lg:flex-row lg:gap-8 lg:px-0 lg:pb-0">
+            {/* <div className="cmain absolute top-0 h-full w-full"></div> */}
             {/* Cloud Layer 1 */}
             <div className="pointer-events-none absolute bottom-0 left-0 z-20 hidden h-[160px] w-full lg:flex">
               <div className="animate-cloud-layer-1 absolute h-full w-full opacity-100">

@@ -1,0 +1,50 @@
+import Header from "@/components/common/Header";
+import { blackPlatforms } from "@/components/common/Helper";
+import Finally from "@/components/homepage/Finally";
+import TrustBar from "@/components/homepage/TrustBar";
+import Whatever from "@/components/homepage/Whatever";
+import AwardBadges from "@/components/hvca/AwardBadge";
+import EraOfSoftware from "@/components/hvca/EraOfSoftware";
+import HvcaFaq from "@/components/hvca/HvcaFaq";
+import HvcaHero from "@/components/hvca/HvcaHero";
+import HvcaSoftware from "@/components/hvca/HvcaSoftware";
+import WantingMore from "@/components/hvca/WantingMore";
+
+const page = () => {
+  return (
+    <>
+      <Header />
+      <main className="bg-white">
+        <div className="relative">
+          <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[888] hidden h-[60px] w-full blur-[12.5px] lg:block"></div>
+          <img
+            className="absolute bottom-[-100px] left-0 z-[888] hidden h-[150px] w-full md:block"
+            src="/images/webp/hvca-clould.webp"
+            alt=""
+          />
+          <img
+            className="absolute bottom-[-87px] left-0 z-[888] block h-[100px] w-full md:hidden"
+            src="/images/webp/hvca-mobile-could.webp"
+            alt=""
+          />
+          <HvcaHero />
+        </div>
+        <TrustBar
+          platforms={blackPlatforms}
+          showTrustedSection={true}
+          className="relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[83px] pb-14 sm:gap-6 md:gap-7 md:pt-[130px] xl:gap-9"
+        />
+        <HvcaSoftware />
+        <WantingMore />
+        <EraOfSoftware />
+        <AwardBadges />
+        {/* <Whatever
+            whateverOperation={homePageContent?.data?.whateverOperation}
+          /> */}
+      </main>
+      <HvcaFaq faq={[]} />
+    </>
+  );
+};
+
+export default page;

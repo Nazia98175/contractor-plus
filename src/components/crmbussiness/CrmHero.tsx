@@ -53,7 +53,9 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             />
             <div className="flex items-center justify-center">
               {[...Array(5)].map((_, i) => (
-                <StartIcon key={i} />
+                <span key={i} className="max-w-7 md:max-w-5">
+                  <StartIcon key={i} />
+                </span>
               ))}
             </div>
           </div>
@@ -66,7 +68,9 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             />
             <div className="flex items-center justify-center">
               {[...Array(5)].map((_, i) => (
-                <StartIcon key={i} />
+                <span className="max-w-7 md:max-w-5">
+                  <StartIcon key={i} />
+                </span>
               ))}
             </div>
           </div>

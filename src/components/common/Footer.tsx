@@ -25,6 +25,7 @@ interface FooterSection {
 
 interface Footer {
   copyrightTxt: string;
+  poweredBy: string;
   sections: FooterSection[];
   bottomLinks: FooterLink[];
 }
@@ -37,6 +38,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const t = useTranslations("footer");
+  console.log(footer ,"footer")
 
   const links: { text: string; href: string }[] = t
     .raw("links")
@@ -157,7 +159,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         <div className="flex items-center justify-between gap-3 pt-4">
           <div className="hidden items-center gap-3 md:flex relative z-10">
             <p className="text-secondary font-montserrat text-xs font-medium">
-              {t("poweredBy")}
+              {footer?.poweredBy}
             </p>
             <Image
               height={72}
@@ -195,7 +197,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             </div>
             <div className="flex items-center gap-3 md:hidden">
               <p className="text-secondary font-montserrat text-xs font-medium">
-                {t("poweredBy")}
+                {footer?.poweredBy}
               </p>
               <Image
                 height={72}

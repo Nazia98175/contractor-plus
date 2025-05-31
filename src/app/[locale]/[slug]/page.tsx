@@ -30,11 +30,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const [
     crmPageContent,
     reviews,
-    // section3,
-    // section4,
-    // section5,
-    // section6,
-    // section7,
+    section3,
+    section4,
+    section5,
+    section6,
+    section7,
     faq,
     blogs,
   ] = await Promise.all([
@@ -44,31 +44,31 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
       useParams.locale,
       "&populate[reviews][populate]=reviews",
     ),
-    // getCrmPage(
-    //   useParams?.slug,
-    //   useParams.locale,
-    //   "&populate[section3][populate]=cardsDetail",
-    // ),
-    // getCrmPage(
-    //   useParams?.slug,
-    //   useParams.locale,
-    //   "&populate[section4][populate][cardsDetail][populate]=content",
-    // ),
-    // getCrmPage(
-    //   useParams?.slug,
-    //   useParams.locale,
-    //   "&populate[section5][populate][cards]=*",
-    // ),
-    // getCrmPage(
-    //   useParams?.slug,
-    //   useParams.locale,
-    //   "&populate[section6][populate][tablerow]=true&populate[section6][populate][tableList]=true",
-    // ),
-    // getCrmPage(
-    //   useParams?.slug,
-    //   useParams.locale,
-    //   "&populate[section7][populate][cards]=*",
-    // ),
+    getCrmPage(
+      useParams?.slug,
+      useParams.locale,
+      "&populate[switchingTool][populate]=cardsDetail",
+    ),
+    getCrmPage(
+      useParams?.slug,
+      useParams.locale,
+      "&populate[fieldService][populate][cardsDetail][populate]=content",
+    ),
+    getCrmPage(
+      useParams?.slug,
+      useParams.locale,
+      "&populate[section5][populate][cardDetails][populate]=*",
+    ),
+    getCrmPage(
+      useParams?.slug,
+      useParams.locale,
+      "&populate[comparison][populate][centerLogo]=true&populate[comparison][populate][features]=true",
+    ),
+    getCrmPage(
+      useParams?.slug,
+      useParams.locale,
+      "&populate[section7][populate][cards]=*",
+    ),
     getCrmPage(
       useParams?.slug,
       useParams.locale,
@@ -85,13 +85,15 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <div className="black-bg">
             <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
             <TrustedService reviews={reviews} />
-            {/* <SwitchingTool switchingTool={section3?.data?.[0]?.section3} /> */}
+            <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
           </div>
-          {/* <FieldService
+          <FieldService
             slug={useParams?.slug}
-            fieldService={section4?.data?.[0]?.section4}
-          /> */}
-          {/* <div className="bg-white">
+            fieldService={section4?.data?.[0]?.fieldService}
+          />
+
+         
+          <div className="bg-white">
             {useParams?.slug === "crm" && (
               <TrackProperties
                 ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
@@ -99,11 +101,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               />
             )}
 
-            <LikeYouDoContacts />
-            <HowContractorWork />
+           <LikeYouDoContacts data={section5?.data?.[0]?.section5?.cardDetails?.[0]} />
+            <HowContractorWork data={section5?.data?.[0]?.section5?.cardDetails?.[1]} />
             <KindAdorable
               slug={useParams?.slug}
-              kindAdorable={section6?.data?.[0]?.section6}
+              kindAdorable={section6?.data?.[0]?.comparison}
             />
 
             <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
@@ -111,26 +113,25 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               data={crmPageContent?.data?.[0]?.section8}
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
-          </div> */}
+          </div> 
           <div className="relative w-full">
-            {/* <CrmSercive
+            <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-              data={crmPageContent?.data?.[0]?.section9}
-            /> */}
+              data={crmPageContent?.data?.[0]?.crmService}
+            />
             {/* Cloud Layer 1 */}
           </div>
 
-          {/* <TrustBar platforms={platforms} /> */}
+          <TrustBar platforms={platforms} />
           <Faq faq={faq?.data?.[0]?.faqs} />
           <BlogPosts
-            data={crmPageContent?.data?.[0]?.section11}
+            data={crmPageContent?.data?.[0]?.blogs}
             blogs={blogs}
           />
         </>
       )}
 
-      {/* <Footer /> */}
     </main>
   );
 };

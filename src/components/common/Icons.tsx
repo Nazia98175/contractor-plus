@@ -556,7 +556,7 @@ export const TrackingIcon = () => (
     </g>
   </svg>
 );
-export const ArrowIcon = () => (
+export const ArrowIcon = ({ fill = "#1C2731" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -569,7 +569,7 @@ export const ArrowIcon = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M6.83056 3.51928C7.04908 3.27132 7.40337 3.27132 7.62189 3.51928L13.3333 9.99998L7.62189 16.4807C7.40337 16.7286 7.04908 16.7286 6.83056 16.4807C6.61204 16.2327 6.61204 15.8307 6.83056 15.5828L11.7507 9.99998L6.83056 4.41719C6.61204 4.16924 6.61204 3.76723 6.83056 3.51928Z"
-      fill="#1C2731"
+      fill={fill}
     />
   </svg>
 );

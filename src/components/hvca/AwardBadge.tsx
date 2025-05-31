@@ -3,6 +3,7 @@ import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { awards, makeOperationList } from "../common/Helper";
+import { ArrowIcon } from "../common/Icons";
 
 export default function AwardBadges() {
   const { ref, inView } = useInView({
@@ -50,7 +51,10 @@ export default function AwardBadges() {
 
       <div className="mt-10 flex flex-col items-center text-center">
         <button className="bg-red-linear primary-btn h-10">
-          <span className="hidden md:flex">Get started FREE</span>
+          <span className="hidden md:flex">Get started FREE</span>{" "}
+          <span>
+            <ArrowIcon fill="#fff" />
+          </span>
         </button>
         <p className="text-winterWay mt-2 text-sm font-semibold">
           No Credit Card Required

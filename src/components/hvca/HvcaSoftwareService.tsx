@@ -1,10 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../common/CardReveal";
-import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
+import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
 
 const HvcaSoftwareService = () => {
   const [loading, setLoading] = useState<boolean>(false);

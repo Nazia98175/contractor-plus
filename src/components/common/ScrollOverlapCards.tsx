@@ -34,11 +34,10 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       const scrollTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: "#crm-cards-wrapper",
-          start: "top 10%",
+          start: "top 5%",
           end: `+=${(window.innerHeight / 100) * 90 * (totalCards - 1)}`,
           pin: true,
           scrub: 1,
-          markers: false,
         },
       });
       for (let i = 0; i < totalCards; i++) {
@@ -66,7 +65,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
           position,
         );
       }
-    }, 1000);
+    }, 2000);
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
@@ -82,10 +81,10 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
           key={index}
           className={`z-${
             index + 1
-          } crm-cards absolute top-10 left-[50%] flex h-screen w-full translate-x-[-50%] items-center justify-center sm:top-20 sm:h-[90vh] xl:top-0`}
+          } crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-20 sm:h-[90vh] xl:top-0 xl:h-screen`}
         >
           <div
-            className={`no-scrollbar ${className} h-fit w-full max-w-[1272px] overflow-auto p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
+            className={`no-scrollbar ${className} h-fit w-full max-w-[1272px] overflow-auto rounded-[14px] p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
           >
             <FieldServiceCard
               slug={slug}

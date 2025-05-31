@@ -1,0 +1,59 @@
+"use client";
+import React, { useState } from "react";
+import HvacReviewCard from "./HvacReviewCard";
+import { reviews } from "../common/Helper";
+import ReviewModal from "../common/ReviewModal";
+import SliderLayout from "../common/SliderLayout";
+
+const HvacReview = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
+
+  const openModal = (videoUrl: string) => {
+    setSelectedVideoUrl(videoUrl);
+    setIsModalOpen(true);
+  };
+  return (
+    <section className="main-container space-y-16 pb-24">
+      <h2 className="section-heading gradient-text text-center">
+        <span className="bg-sweetGarden bg-clip-text text-transparent">
+          4.7
+        </span>{" "}
+        <span className="bg-pantone bg-clip-text text-transparent">★</span>{" "}
+        across thousands of reviews
+      </h2>
+
+      <SliderLayout
+        wrapperClassName="relative w-full !h-auto"
+        slidesPerView={1}
+        spaceBetween={9}
+        breakpoints={{
+          640: { slidesPerView: 1.5, spaceBetween: 12 },
+          768: { slidesPerView: 2, spaceBetween: 16 },
+          1024: { slidesPerView: 2.5, spaceBetween: 20 },
+          1280: { slidesPerView: 3, spaceBetween: 35 },
+        }}
+        autoplay
+      >
+        {reviews.map((review, index) => (
+          <HvacReviewCard
+            review={review}
+            key={index}
+            openModal={
+              review.isModal
+                ? () => openModal(review.videolink || "")
+                : () => {}
+            }
+          />
+        ))}
+      </SliderLayout>
+      <ReviewModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoUrl={selectedVideoUrl || ""}
+      />
+    </section>
+  );
+};
+
+export default HvacReview;

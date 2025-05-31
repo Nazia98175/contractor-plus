@@ -31,7 +31,7 @@ const HvacSoftwareService = () => {
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="sub-heading mb-4 text-center text-white">
+            <h3 className="sub-heading mb-4 text-center !font-extrabold text-white">
               This is what HVAC software should have been all along
             </h3>
           </TextAnimation>

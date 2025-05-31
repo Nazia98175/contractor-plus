@@ -47,7 +47,7 @@ const HvcaFaq: React.FC<Props> = () => {
     },
   ];
   return (
-    <section className="relative overflow-x-hidden py-10">
+    <section className="relative z-20 overflow-x-hidden py-10">
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-text text-secondary pt-4 text-center">

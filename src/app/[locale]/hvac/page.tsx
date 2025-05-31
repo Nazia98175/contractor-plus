@@ -1,5 +1,5 @@
 import Header from "@/components/common/Header";
-import { blackPlatforms } from "@/components/common/Helper";
+import { blackPlatforms, platforms } from "@/components/common/Helper";
 import Finally from "@/components/homepage/Finally";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
@@ -8,6 +8,8 @@ import EraOfSoftware from "@/components/hvca/EraOfSoftware";
 import HvcaFaq from "@/components/hvca/HvcaFaq";
 import HvcaHero from "@/components/hvca/HvcaHero";
 import HvcaSoftware from "@/components/hvca/HvcaSoftware";
+import HvcaSoftwareService from "@/components/hvca/HvcaSoftwareService";
+import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
 
 const page = () => {
@@ -41,6 +43,8 @@ const page = () => {
             whateverOperation={homePageContent?.data?.whateverOperation}
           /> */}
       </main>
+      <HvcaSoftwareService />
+      <TrustBarHvca platforms={platforms} />
       <HvcaFaq faq={[]} />
     </>
   );

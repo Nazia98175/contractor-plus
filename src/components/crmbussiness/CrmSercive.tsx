@@ -34,61 +34,61 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
 
   return (
     <div className="relative w-full">
-      <div className="px-2 relative overflow-hidden xl:overflow-visible">
-        <span className="top-[-236px] left-[-6px] md:left-[209px] rotate-[90deg] absolute pointer-events-none">
+      <div className="relative overflow-hidden px-2 xl:overflow-visible">
+        <span className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]">
           <FooterRedLineIcon />
         </span>
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="section-heading text-white text-center">
+            <h3 className="section-heading text-decemberSky sub-heading text-center">
               {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <p className="paragraph-style text-center mb-7 md:mb-10 lg:mb-14">
+            <p className="paragraph-text text-secondary mb-7 text-center md:mb-10 lg:mb-14">
               {data?.sub_title}
             </p>
           </TextAnimation>
           <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
             <form
-              className="flex flex-col md:flex-row justify-center max-w-[550px] mx-auto md:max-w-[657px] w-full items-start gap-3"
+              className="mx-auto flex w-full max-w-[550px] flex-col items-start justify-center gap-3 md:max-w-[657px] md:flex-row"
               onSubmit={handleSubmit}
             >
-              <div className="md:max-w-[414px] w-full">
+              <div className="w-full md:max-w-[414px]">
                 <input
                   type="email"
                   placeholder={data?.placeholder}
                   required
                   value={email}
                   onChange={handleEmailChange}
-                  className="bg-lightBlack border-white border-b rounded-[6px] text-white outline-none px-2 w-full h-[40px]"
+                  className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
                 />
-                <p className="hidden md:flex items-center gap-2 pt-3">
+                <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span>
                     <CheckIcon />
                   </span>
-                  <span className="text-sm font-semibold font-myriad text-white">
+                  <span className="font-myriad text-sm font-semibold text-white">
                     {ncc}
                   </span>
                 </p>
               </div>
               <button
                 type="submit"
-                className="bg-red-linear h-10 primary-btn flex items-center justify-center !min-w-[230px] !w-full md:mx-0 md:!w-auto"
+                className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
                 disabled={loading}
               >
                 {loading ? (
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
                   `${createBtn}`
                 )}
               </button>
-              <div className="md:hidden flex justify-center items-center w-full">
+              <div className="flex w-full items-center justify-center md:hidden">
                 <p className="flex items-center gap-2 pt-1">
                   <span>
                     <CheckIcon />
                   </span>
-                  <span className="text-sm font-semibold font-myriad text-white">
+                  <span className="font-myriad text-sm font-semibold text-white">
                     {ncc}
                   </span>
                 </p>
@@ -98,26 +98,26 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
         </div>
       </div>
 
-      <div className="absolute -top-[28%] sm:-top-[33%] left-0 flex w-full h-[250px] z-0 pointer-events-none">
-        <div className="bg-white h-[60%] sm:h-[58%] w-full right-0 top-0 absolute blur-sm"></div>
-        <div className="absolute w-full h-full animate-cloud-layer-1 opacity-100">
+      <div className="pointer-events-none absolute -top-[28%] left-0 z-0 flex h-[250px] w-full sm:-top-[33%]">
+        <div className="absolute top-0 right-0 h-[60%] w-full bg-white blur-sm sm:h-[58%]"></div>
+        <div className="animate-cloud-layer-1 absolute h-full w-full opacity-100">
           <Image
             height={250}
             width={5000}
             src="/images/webp/claud-2.webp"
             alt="Cloud Layer 1"
-            className="h-full object-cover w-full"
+            className="h-full w-full object-cover"
             unoptimized
           />
         </div>
 
-        <div className="absolute w-full h-full animate-cloud-layer-2 opacity-100">
+        <div className="animate-cloud-layer-2 absolute h-full w-full opacity-100">
           <Image
             height={250}
             width={5000}
             src="/images/webp/claud-2.webp"
             alt="Cloud Layer 2"
-            className="h-full object-cover w-full"
+            className="h-full w-full object-cover"
             unoptimized
           />
         </div>

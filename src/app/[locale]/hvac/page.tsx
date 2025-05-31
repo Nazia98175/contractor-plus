@@ -39,9 +39,6 @@ const page = () => {
         <HvcaSoftware />
         <WantingMore />
         <EraOfSoftware />
-        {/* <Whatever
-            whateverOperation={homePageContent?.data?.whateverOperation}
-          /> */}
       </main>
       <AwardBadges />
       <HvcaSoftwareService />

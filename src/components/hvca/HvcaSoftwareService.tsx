@@ -28,16 +28,16 @@ const HvcaSoftwareService = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative z-10 w-full">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="section-heading text-center text-white">
+            <h3 className="sub-heading mb-4 text-center text-white">
               This is what HVAC software should have been all along
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <p className="paragraph-style mb-7 text-center md:mb-10 lg:mb-14">
+            <p className="paragraph-text text-decemberSky mb-7 text-center md:mb-8 lg:mb-9">
               Start using Contractor+ FREE. You won’t look back.
             </p>
           </TextAnimation>

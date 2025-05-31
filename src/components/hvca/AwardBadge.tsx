@@ -19,7 +19,7 @@ export default function AwardBadges() {
     >
       <img
         src="/images/webp/red.png"
-        className="inset absolute top-0 -z-10 h-full w-full object-fill"
+        className="inset absolute -bottom-[20%] -z-10 h-[120%] w-full object-fill"
         alt=""
       />
 
@@ -57,7 +57,7 @@ export default function AwardBadges() {
         </p>
       </div>
 
-      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 pb-[179px] md:items-start lg:gap-14">
+      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 pb-[105px] md:items-start lg:gap-14">
         {awards.map((award, index) => (
           <Image
             key={index}

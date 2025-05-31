@@ -1204,3 +1204,20 @@ html {
   );
   filter: blur(240px);
 }
+.hero-slider {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    radial-gradient(
+      91.02% 73.32% at -3.34% -16.67%,
+      #ee1e25 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  box-shadow: -2px -2px 10.7px 0px rgba(0, 0, 0, 0.25) inset;
+  isolation: isolate;
+}
+.hero-slide-content {
+  opacity: 0.3;
+}
+.swiper-slide-active .hero-slide-content {
+  opacity: 1;
+}

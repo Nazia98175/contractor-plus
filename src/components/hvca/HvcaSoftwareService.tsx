@@ -30,7 +30,7 @@ const HvcaSoftwareService = () => {
   return (
     <div className="relative w-full">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
-        <div className="pb-[75px]">
+        <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <h3 className="section-heading text-center text-white">
               This is what HVAC software should have been all along

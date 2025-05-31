@@ -1,11 +1,17 @@
 "use client";
 
+import Image from "next/image";
+import { JSX } from "react/jsx-runtime";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 interface Feature {
+  id: number;
   title: string;
+  icon: JSX.Element;
+  heading: string;
+  percentage: number;
   description: string;
 }
 
@@ -20,24 +26,38 @@ const HvcaHeroSlider: React.FC<HvcaHeroSliderProps> = ({ features }) => {
       modules={[Autoplay]}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
       spaceBetween={16}
-      slidesPerView={2.5}
+      slidesPerView={3}
+      centeredSlides={true}
       loop={true}
+      className="relative"
     >
       {features.map((feature, index) => (
         <SwiperSlide key={index}>
-          <div className="rounded-[20px] bg-green-900 p-5">
-            <div className="mb-5 max-h-[50px]">
-              <img
-                src="/images/webp/hero-video-ovelay.webp"
-                alt={`icon-${feature.title}`}
-                width={50}
-                height={50}
-              />
+          <div className="border-redPigment hero-slider hero-slide-content rounded-3xl border bg-green-900 p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
+            <Image
+              className="pointer-events-none absolute right-0 -z-40"
+              src={"/images/svg/hero-slider-animated-svg.svg"}
+              alt="hero-animated-icon"
+              width={130}
+              height={165}
+            />
+            <div className="mb-6 flex items-center gap-2 xl:mt-2">
+              {feature.icon}
+              <p className="font-grotesk text-base text-white capitalize">
+                {feature.heading}
+              </p>
             </div>
-            <h3 className="mb-[14px] font-[Poppins] text-[18px] font-medium text-red-900 sm:text-[20px]">
+            <h3 className="font-Poppins text-doctor mb-1 text-start text-lg font-medium lg:text-xl xl:text-2xl">
               {feature.title}
             </h3>
-            <p className="text-[14px] text-[#9E9EBC]">{feature.description}</p>
+            <div className="font-grotesk flex capitalize">
+              <span className="text-monstrousGreen mr-1 text-sm leading-[110%]">
+                {feature.percentage}%
+              </span>
+              <p className="text-lightBlackGrey text-xs">
+                {feature.description}
+              </p>
+            </div>
           </div>
         </SwiperSlide>
       ))}

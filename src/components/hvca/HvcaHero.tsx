@@ -181,14 +181,7 @@ const HvcaHero = () => {
             fill={true}
             src="/images/webp/claud.webp"
             alt="Cloud Layer 1"
-            className="hidden w-full object-cover sm:flex sm:h-20 lg:h-[150px]"
-            unoptimized
-          />
-          <Image
-            fill={true}
-            src="/images/webp/hvca-mobile-could.webp"
-            alt="Cloud Layer 2"
-            className="flex w-full object-cover sm:h-20 md:hidden"
+            className="w-full object-cover sm:h-20 lg:h-[150px]"
             unoptimized
           />
         </div>
@@ -198,14 +191,7 @@ const HvcaHero = () => {
             fill={true}
             src="/images/webp/claud.webp"
             alt="Cloud Layer 2"
-            className="hidden h-12 w-full object-cover sm:flex sm:h-20 lg:h-[150px]"
-            unoptimized
-          />
-          <Image
-            fill={true}
-            src="/images/webp/hvca-mobile-could.webp"
-            alt="Cloud Layer 2"
-            className="flex h-12 w-full object-cover sm:h-20 md:hidden"
+            className="h-12 w-full object-cover sm:h-20 lg:h-[150px]"
             unoptimized
           />
         </div>

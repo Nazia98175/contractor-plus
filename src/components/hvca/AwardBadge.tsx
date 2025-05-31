@@ -3,6 +3,7 @@ import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { awards, makeOperationList } from "../common/Helper";
+import { ArrowIcon } from "../common/Icons";
 
 export default function AwardBadges() {
   const { ref, inView } = useInView({
@@ -19,7 +20,7 @@ export default function AwardBadges() {
     >
       <img
         src="/images/webp/red.png"
-        className="inset absolute top-0 -z-10 h-full w-full object-fill"
+        className="inset absolute -bottom-[20%] -z-10 h-[120%] w-full object-fill"
         alt=""
       />
 
@@ -50,14 +51,17 @@ export default function AwardBadges() {
 
       <div className="mt-10 flex flex-col items-center text-center">
         <button className="bg-red-linear primary-btn h-10">
-          <span className="hidden md:flex">Get started FREE</span>
+          <span className="hidden md:flex">Get started FREE</span>{" "}
+          <span>
+            <ArrowIcon fill="#fff" />
+          </span>
         </button>
         <p className="text-winterWay mt-2 text-sm font-semibold">
           No Credit Card Required
         </p>
       </div>
 
-      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 pb-[179px] md:items-start lg:gap-14">
+      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 pb-[105px] md:items-start lg:gap-14">
         {awards.map((award, index) => (
           <Image
             key={index}

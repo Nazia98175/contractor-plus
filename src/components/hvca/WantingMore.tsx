@@ -1,13 +1,10 @@
 import { wantingMoreData } from "../common/Helper";
-import { RedCurveLine } from "../common/Icons";
 import ScrollOverlapCards from "../common/ScrollOverlapCards";
 import TextAnimation from "../common/TextAnimation";
 
-const curvePositions = [0, 50, 100];
-
 const WantingMore = () => {
   return (
-    <section className="relative px-2 pb-16">
+    <section className="relative overflow-hidden px-2 pb-16">
       <TextAnimation animateOnScroll={true} delay={0.1}>
         <h2 className="section-heading gradient-text-2 mx-auto w-fit max-w-[1004px] text-center !font-bold lg:!font-semibold">
           Contractor+ is the only HVAC software that doesn’t leave you still
@@ -15,16 +12,6 @@ const WantingMore = () => {
         </h2>
       </TextAnimation>
       <div className="relative mt-9 flex w-full flex-col items-center justify-center">
-        {curvePositions.map((topOffset, index) => (
-          <span
-            key={index}
-            className="absolute -left-[2%] block w-[108%]"
-            style={{ top: `${topOffset}px` }}
-          >
-            <RedCurveLine />
-          </span>
-        ))}
-
         <div className="border-romanRed absolute bottom-[20%] -z-[1] mx-auto h-full max-h-[613px] w-full max-w-[1312px] rounded-[40%] border bg-[rgba(242,19,20,0.27)] blur-[30px]"></div>
 
         {/* {wantingMoreData.map((obj, idx) => (
@@ -86,6 +73,7 @@ const WantingMore = () => {
         theme="light"
         slug={"testing"}
         fieldService={{ cardsDetail: wantingMoreData }}
+        curved={true}
       />
     </section>
   );

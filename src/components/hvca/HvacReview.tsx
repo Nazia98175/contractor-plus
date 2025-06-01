@@ -15,7 +15,7 @@ const HvacReview = () => {
   };
   return (
     <section className="main-container space-y-16 pb-24">
-      <h2 className="section-heading gradient-text text-center">
+      <h2 className="section-heading gradient-text relative z-20 text-center">
         <span className="bg-sweetGarden bg-clip-text text-transparent">
           4.7
         </span>{" "}
@@ -24,7 +24,7 @@ const HvacReview = () => {
       </h2>
 
       <SliderLayout
-        wrapperClassName="relative w-full !h-auto"
+        wrapperClassName="relative w-full !h-auto relative z-20"
         slidesPerView={1}
         spaceBetween={9}
         breakpoints={{

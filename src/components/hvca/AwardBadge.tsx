@@ -15,10 +15,7 @@ export default function AwardBadges() {
   });
 
   return (
-    <section
-      ref={ref}
-      className="no-scrollbar relative h-full w-full overflow-hidden"
-    >
+    <section ref={ref} className="no-scrollbar relative z-20 w-full">
       <AwardBadgesBackground />
       <div className="main-container relative z-20 grid grid-cols-1 gap-3.5 pt-[150px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-8">
         {makeOperationList.map((item, index) => (

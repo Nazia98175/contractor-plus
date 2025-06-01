@@ -1,17 +1,11 @@
 "use client";
 import { useTranslations } from "next-intl";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../common/CardReveal";
-import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
+import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-interface Props {
-  data: any;
-  ncc: string;
-  createBtn: string;
-}
 
-const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
+const HvacSoftwareService = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -33,20 +27,17 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative z-10 w-full">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
-        <span className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]">
-          <FooterRedLineIcon />
-        </span>
-        <div className="py-[75px]">
+        <div className="pb-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="section-heading text-decemberSky sub-heading text-center">
-              {data?.title}
+            <h3 className="sub-heading mb-4 text-center !font-extrabold text-white">
+              This is what HVAC software should have been all along
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <p className="paragraph-text text-secondary mb-7 text-center md:mb-10 lg:mb-14">
-              {data?.sub_title}
+            <p className="paragraph-text text-decemberSky mb-7 text-center md:mb-8 lg:mb-9">
+              Start using Contractor+ FREE. You won’t look back.
             </p>
           </TextAnimation>
           <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
@@ -57,18 +48,18 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
               <div className="w-full md:max-w-[414px]">
                 <input
                   type="email"
-                  placeholder={data?.placeholder}
+                  placeholder={"Your Email"}
                   required
                   value={email}
                   onChange={handleEmailChange}
-                  className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
+                  className="h-[40px] w-full rounded-[6px] bg-white px-2 text-[#ADB1B5] outline-none"
                 />
                 <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span>
                     <CheckIcon />
                   </span>
                   <span className="font-myriad text-sm font-semibold text-white">
-                    {ncc}
+                    No Credit Card Required
                   </span>
                 </p>
               </div>
@@ -80,7 +71,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
                 {loading ? (
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
-                  `${createBtn}`
+                  `${"Get started FREE"}`
                 )}
               </button>
               <div className="flex w-full items-center justify-center md:hidden">
@@ -89,7 +80,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
                     <CheckIcon />
                   </span>
                   <span className="font-myriad text-sm font-semibold text-white">
-                    {ncc}
+                    No Credit Card Required
                   </span>
                 </p>
               </div>
@@ -97,33 +88,8 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
           </CardReveal>
         </div>
       </div>
-
-      <div className="pointer-events-none absolute -top-[28%] left-0 z-0 flex h-[250px] w-full sm:-top-[33%]">
-        <div className="absolute top-0 right-0 h-[60%] w-full bg-white blur-sm sm:h-[58%]"></div>
-        <div className="animate-cloud-layer-1 absolute h-full w-full opacity-100">
-          <Image
-            height={250}
-            width={5000}
-            src="/images/webp/claud-2.webp"
-            alt="Cloud Layer 1"
-            className="h-full w-full object-cover"
-            unoptimized
-          />
-        </div>
-
-        <div className="animate-cloud-layer-2 absolute h-full w-full opacity-100">
-          <Image
-            height={250}
-            width={5000}
-            src="/images/webp/claud-2.webp"
-            alt="Cloud Layer 2"
-            className="h-full w-full object-cover"
-            unoptimized
-          />
-        </div>
-      </div>
     </div>
   );
 };
 
-export default CrmSercive;
+export default HvacSoftwareService;

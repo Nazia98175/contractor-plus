@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import TextAnimation from "../common/TextAnimation";
-import HvcaFaqList from "./HvcaFaqList";
+
 import UseFaqToggle from "../hook/UseFaqToggle";
+import HvacFaqList from "./HvacFaqList";
 
 type FaqItemType = {
   question: string;
@@ -11,7 +12,7 @@ type FaqItemType = {
 interface Props {
   faq: any;
 }
-const HvcaFaq: React.FC<Props> = () => {
+const HvacFaq: React.FC<Props> = () => {
   const { openIndex, toggleFaq } = UseFaqToggle();
   const faqitems = [
     {
@@ -47,7 +48,7 @@ const HvcaFaq: React.FC<Props> = () => {
     },
   ];
   return (
-    <section className="relative z-20 py-10">
+    <section className="relative z-20 overflow-x-hidden py-10">
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-text text-secondary pt-4 text-center">
@@ -61,7 +62,7 @@ const HvcaFaq: React.FC<Props> = () => {
       </TextAnimation>
       <div className="mx-auto max-w-[1190px] px-4 pt-[27px]">
         {faqitems.map((item: FaqItemType, index: number) => (
-          <HvcaFaqList
+          <HvacFaqList
             key={index}
             data={item}
             isOpen={openIndex === index}
@@ -73,4 +74,4 @@ const HvcaFaq: React.FC<Props> = () => {
   );
 };
 
-export default HvcaFaq;
+export default HvacFaq;

@@ -30,7 +30,7 @@ const CompareTable: React.FC<CompareTableProps> = ({ compareFeatures , headerLef
         </tr>
       </thead>
       <tbody>
-        {compareFeatures.map((feature, index) => (
+        {compareFeatures?.map((feature, index) => (
           <tr
             key={index}
             className={` border-decemberSky divide-x divide-decemberSky text-winterWay border-t font-jakarta font-semibold text-xs sm:text-sm lg:text-base`}

@@ -509,7 +509,7 @@ export const EstimatesAiIcon = () => (
         y2="21.7282"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient
@@ -520,7 +520,7 @@ export const EstimatesAiIcon = () => (
         y2="13.0331"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D9D9D9" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" stopOpacity="0" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient
@@ -531,7 +531,7 @@ export const EstimatesAiIcon = () => (
         y2="4.08588"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D9D9D9" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" stopOpacity="0" />
         <stop offset="1" />
       </linearGradient>
     </defs>
@@ -556,7 +556,7 @@ export const TrackingIcon = () => (
     </g>
   </svg>
 );
-export const ArrowIcon = () => (
+export const ArrowIcon = ({ fill = "#1C2731" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -569,7 +569,7 @@ export const ArrowIcon = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M6.83056 3.51928C7.04908 3.27132 7.40337 3.27132 7.62189 3.51928L13.3333 9.99998L7.62189 16.4807C7.40337 16.7286 7.04908 16.7286 6.83056 16.4807C6.61204 16.2327 6.61204 15.8307 6.83056 15.5828L11.7507 9.99998L6.83056 4.41719C6.61204 4.16924 6.61204 3.76723 6.83056 3.51928Z"
-      fill="#1C2731"
+      fill={fill}
     />
   </svg>
 );
@@ -2504,5 +2504,149 @@ export const RedCurveLine = () => (
       d="M-68 213.5C-68 213.5 144 0.999883 662 0.999928C1260 0.99998 1487 213.5 1487 213.5"
       stroke="#F21314"
     />
+  </svg>
+);
+export const SliderIcon1 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M20 6C20.58 6 21.05 6.2 21.42 6.59C21.8 7 22 7.45 22 8V19C22 19.55 21.8 20 21.42 20.41C21.05 20.8 20.58 21 20 21H4C3.42 21 2.95 20.8 2.58 20.41C2.2 20 2 19.55 2 19V8C2 7.45 2.2 7 2.58 6.59C2.95 6.2 3.42 6 4 6H8V4C8 3.42 8.2 2.95 8.58 2.58C8.95 2.2 9.42 2 10 2H14C14.58 2 15.05 2.2 15.42 2.58C15.8 2.95 16 3.42 16 4V6H20ZM4 8V19H20V8H4ZM14 6V4H10V6H14Z"
+      fill="white"
+    />
+  </svg>
+);
+export const HvacGlowHeroDesktopIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1012"
+    height="100%"
+    fill="none"
+    viewBox="0 0 1020 671"
+    className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block"
+  >
+    <g
+      filter="url(#filter0_f_1464_68065)"
+      style={{ mixBlendMode: "plus-lighter" }}
+    >
+      <path
+        className="glowing-path"
+        stroke="url(#paint0_linear_1464_68065)"
+        strokeLinecap="round"
+        strokeWidth="216"
+        d="M197 957.924 507.5 416.5 823-129.962"
+      ></path>
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_1464_68065"
+        x1="853.107"
+        x2="600.639"
+        y1="357.525"
+        y2="55.953"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.062" stopOpacity="0"></stop>
+        <stop offset="0.997" stopColor="#A6070C"></stop>
+        <stop offset="1"></stop>
+      </linearGradient>
+      <filter
+        id="filter0_f_1464_68065"
+        width="1018.04"
+        height="1479.92"
+        x="0.982"
+        y="-325.98"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feBlend
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        ></feBlend>
+        <feGaussianBlur
+          result="effect1_foregroundBlur_1464_68065"
+          stdDeviation="44"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+);
+export const PlayIcon2 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="31"
+    height="30"
+    viewBox="0 0 31 30"
+    fill="none"
+  >
+    <rect x="0.5" width="30" height="30" rx="15" fill="#FEE7E8" />
+    <path
+      d="M13.0721 21.3141C12.7285 21.5412 12.3807 21.5545 12.0288 21.3539C11.677 21.1533 11.5007 20.843 11.5 20.423V9.57255C11.5 9.15321 11.6763 8.8429 12.0288 8.64162C12.3814 8.44034 12.7291 8.45362 13.0721 8.68146L21.4737 14.1067C21.783 14.3163 21.9376 14.6134 21.9376 14.9978C21.9376 15.3822 21.783 15.6792 21.4737 15.8889L13.0721 21.3141Z"
+      fill="#DC1112"
+    />
+  </svg>
+);
+export const HvacGlowHeroMobileIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="320"
+    height="1139"
+    viewBox="0 0 320 1139"
+    fill="none"
+    className="pointer-events-none absolute top-0 left-0 z-10 lg:hidden xl:left-[13%]"
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_1465_35504)"
+    >
+      <path
+        className="glowing-path"
+        d="M133.485 176.792L-195.564 505.842L-524.614 834.891"
+        stroke="url(#paint0_linear_1465_35504)"
+        strokeWidth="432"
+        strokeLinecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_1465_35504"
+        x="-828.614"
+        y="-127.208"
+        width="1266.1"
+        height="1266.1"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_1465_35504"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_1465_35504"
+        x1="-498.24"
+        y1="429.5"
+        x2="-378.239"
+        y2="785.01"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="white" />
+      </linearGradient>
+    </defs>
   </svg>
 );

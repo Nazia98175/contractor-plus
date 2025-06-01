@@ -27,13 +27,13 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
           <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
 
           {/* Image for mobile */}
-          <div className="mx-auto h-full min-h-[245px] w-full max-w-[518px] rounded-lg md:h-auto xl:hidden">
+          <div className="mx-auto h-full min-h-[156px] w-full max-w-[518px] rounded-lg md:h-auto lg:min-h-[200px] xl:hidden xl:min-h-[245px]">
             <Image
               src={fieldServiceData?.[idx]?.img || "/placeholder.png"}
               alt={service?.title || "service image"}
               width={518}
               height={302}
-              className="h-auto w-full rounded-lg object-cover"
+              className="h-[70%] w-full rounded-lg object-cover xl:h-auto"
             />
           </div>
           <div className="flex flex-col gap-4 2xl:gap-6">

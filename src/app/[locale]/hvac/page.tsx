@@ -1,48 +1,40 @@
 import Header from "@/components/common/Header";
-import { blackPlatforms } from "@/components/common/Helper";
-import Finally from "@/components/homepage/Finally";
+import { blackPlatforms, platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/homepage/TrustBar";
-import Whatever from "@/components/homepage/Whatever";
 import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
-import HvcaFaq from "@/components/hvca/HvcaFaq";
-import HvcaHero from "@/components/hvca/HvcaHero";
-import HvcaSoftware from "@/components/hvca/HvcaSoftware";
+import HvacFaq from "@/components/hvca/HvacFaq";
+import HvacHero from "@/components/hvca/HvacHero";
+import HvacReview from "@/components/hvca/HvacReview";
+import HvacSoftware from "@/components/hvca/HvacSoftware";
+import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
+import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
 
 const page = () => {
   return (
     <>
       <Header />
-      <main className="bg-white">
-        <div className="relative">
-          <div className="bg-kuroiBlack absolute bottom-[15px] left-0 z-[888] hidden h-[60px] w-full blur-[12.5px] lg:block"></div>
-          <img
-            className="absolute bottom-[-100px] left-0 z-[888] hidden h-[150px] w-full md:block"
-            src="/images/webp/hvca-clould.webp"
-            alt=""
-          />
-          <img
-            className="absolute bottom-[-87px] left-0 z-[888] block h-[100px] w-full md:hidden"
-            src="/images/webp/hvca-mobile-could.webp"
-            alt=""
-          />
-          <HvcaHero />
-        </div>
+      <div className="bg-white">
+        <HvacHero />
         <TrustBar
           platforms={blackPlatforms}
           showTrustedSection={true}
-          className="relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[83px] pb-14 sm:gap-6 md:gap-7 md:pt-[130px] xl:gap-9"
+          className="1xl:gap-13 relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-1 pb-13 sm:gap-6 sm:pt-[13px] md:gap-7 xl:gap-9"
         />
-        <HvcaSoftware />
+        <HvacSoftware />
         <WantingMore />
         <EraOfSoftware />
-        <AwardBadges />
-        {/* <Whatever
+      </div>
+      <AwardBadges />
+      <HvacReview />
+      <HvacSoftwareService />
+      <TrustBarHvca platforms={platforms} />
+      {/* <Whatever
             whateverOperation={homePageContent?.data?.whateverOperation}
           /> */}
-      </main>
-      <HvcaFaq faq={[]} />
+      <HvacFaq faq={[]} />
+      {/* <BlogPosts /> */}
     </>
   );
 };

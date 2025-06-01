@@ -67,7 +67,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section7][populate][cards]=*",
+      "&populate[teamsUsingContractor][populate][cards]=*",
     ),
     getCrmPage(
       useParams?.slug,
@@ -108,9 +108,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               kindAdorable={section6?.data?.[0]?.comparison}
             />
 
-            <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
+            <TeamsUsingContractor data={section7?.data?.[0]?.teamsUsingContractor} />
             <ThousandsReviews
-              data={crmPageContent?.data?.[0]?.section8}
+              data={crmPageContent?.data?.[0]?.thousandReviews}
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
           </div> 

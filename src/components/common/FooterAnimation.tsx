@@ -33,15 +33,15 @@ const FooterAnimation: React.FC<DiagonalAuroraProps> = ({
 
         @keyframes diagonal-pulse {
           0% {
-            stroke-width: 432px;
+            strokewidth: 432px;
             filter: blur(44px);
           }
           50% {
-            stroke-width: 500px;
+            strokewidth: 500px;
             filter: blur(65px);
           }
           100% {
-            stroke-width: 432px;
+            strokewidth: 432px;
             filter: blur(44px);
           }
         }

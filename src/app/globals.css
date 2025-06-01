@@ -29,7 +29,9 @@
   --color-softMint: #effbf6;
   --color-athenaBlue: #6ddcff;
   --color-granite: #6f7176;
+  --color-sweetGarden: #5ed5a8;
   --color-dancingJewel: #439777;
+  --color-pantone: #ff9800;
   --color-heatherGrey: #9f9fa1;
   --color-blackRussian: #202125;
   --breakpoint-xs: 560px;
@@ -137,7 +139,7 @@ body {
   @apply text-xl leading-[140%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
 }
 .primary-btn {
-  @apply font-montserrat flex w-full cursor-pointer items-center justify-center rounded-lg px-6 py-2.5 font-black tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit;
+  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2.5 font-black tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit;
 }
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
@@ -568,7 +570,6 @@ html {
   filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1));
 }
 .wanting-more-bg {
-  border-radius: 40px;
   border: 1px solid #fff;
   background:
     radial-gradient(
@@ -1205,4 +1206,59 @@ html {
     #adb1b5
   );
   filter: blur(240px);
+}
+.hero-slider {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    radial-gradient(
+      91.02% 73.32% at -3.34% -16.67%,
+      #ee1e25 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  box-shadow: -2px -2px 10.7px 0px rgba(0, 0, 0, 0.25) inset;
+  isolation: isolate;
+}
+.hero-slide-content {
+  opacity: 0.3;
+}
+.swiper-slide-active .hero-slide-content {
+  opacity: 1;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0px #a6070c);
+    opacity: 0.7;
+  }
+  50% {
+    filter: drop-shadow(0 0 24px #a6070c);
+    opacity: 1;
+  }
+}
+
+.glowing-path {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation:
+    draw 2.5s ease-out forwards,
+    glow-pulse 5s ease-in-out 2.5s infinite;
+}
+.hvac-software-bg::before {
+  @apply absolute top-0 left-0 -z-[99] h-full w-full bg-center bg-no-repeat;
+  content: "";
+  background-image: url("/images/svg/software-bg-mobile.svg");
+  background-size: 69% 100%;
+}
+
+@media (min-width: 1024px) {
+  .hvac-software-bg::before {
+    background-image: url("/images/webp/software-bg.webp");
+    background-size: 105% 100%;
+  }
 }

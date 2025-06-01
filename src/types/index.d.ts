@@ -13,6 +13,11 @@ export interface Testimonial {
   username: string;
 }
 
+export interface ReviewCardProps {
+  review: Review;
+  openModal: () => void;
+}
+
 export interface ServiceData {
   heading: string;
   features: Feature[];

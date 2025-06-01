@@ -10,7 +10,7 @@ type FaqListProps = {
   isOpen: boolean;
   onToggle: () => void;
 };
-const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
+const HvacFaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
   return (
     <>
       <div
@@ -37,4 +37,4 @@ const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
   );
 };
 
-export default FaqList;
+export default HvacFaqList;

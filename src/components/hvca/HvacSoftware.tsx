@@ -2,14 +2,13 @@ import React from "react";
 import { softwareCardData } from "../common/Helper";
 import { AlertIcon } from "../common/Icons";
 
-const HvcaSoftware = () => {
+const HvacSoftware = () => {
   return (
-    <section className="relative z-30 h-full min-h-[445px] bg-cover bg-center bg-no-repeat pb-16 lg:max-h-[445px] lg:bg-[url('/images/webp/software-bg.webp')]">
-      <h3 className="heading text-winterWay mx-auto max-w-[90%] text-center !font-bold md:font-semibold">
+    <section className="1xl:pb-[151px] hvac-software-bg relative z-30 mx-auto w-full max-w-[1354px] overflow-hidden px-2 pb-12 md:pb-20 lg:pb-[100px] xl:pb-[120px]">
+      <h3 className="heading text-winterWay mx-auto max-w-[90%] text-center font-bold md:font-semibold">
         Every HVAC software has the same story
       </h3>
-
-      <div className="main-container mt-5 flex flex-wrap justify-center gap-5 xl:mt-[103px] xl:gap-8 2xl:gap-12">
+      <div className="1xl:mt-[91px] mt-5 flex flex-wrap justify-center gap-5 px-2 sm:mt-8 md:mt-12 md:px-6 lg:mt-16 xl:mt-20 xl:gap-8 2xl:gap-12">
         {softwareCardData.map((card, index) => (
           <article
             key={index}
@@ -26,4 +25,4 @@ const HvcaSoftware = () => {
   );
 };
 
-export default HvcaSoftware;
+export default HvacSoftware;

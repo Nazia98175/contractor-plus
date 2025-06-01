@@ -3,6 +3,7 @@ import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { awards, makeOperationList } from "../common/Helper";
+import { ArrowIcon } from "../common/Icons";
 
 export default function AwardBadges() {
   const { ref, inView } = useInView({
@@ -15,15 +16,15 @@ export default function AwardBadges() {
   return (
     <section
       ref={ref}
-      className="no-scrollbar relative z-10 overflow-x-hidden overflow-y-visible py-12"
+      className="no-scrollbar relative h-full w-full overflow-x-hidden overflow-y-visible"
     >
       <img
         src="/images/webp/red.png"
-        className="absolute -top-[33%] left-0 z-10 h-[170%] w-full object-cover"
+        className="inset absolute -bottom-[20%] -z-[5] h-[120%] w-full object-fill"
         alt=""
       />
 
-      <div className="main-container relative z-20 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="main-container relative z-20 grid grid-cols-1 gap-3.5 pt-8 sm:grid-cols-2 sm:gap-6 sm:pt-0 md:grid-cols-3">
         {makeOperationList.map((item, index) => (
           <article
             key={index}
@@ -48,16 +49,19 @@ export default function AwardBadges() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col items-center text-center">
+      <div className="mt-10 flex flex-col items-center px-2 text-center">
         <button className="bg-red-linear primary-btn h-10">
-          <span className="hidden md:flex">Get started FREE</span>
+          <span className="flex">Get started FREE</span>{" "}
+          <span>
+            <ArrowIcon fill="#fff" />
+          </span>
         </button>
         <p className="text-winterWay mt-2 text-sm font-semibold">
           No Credit Card Required
         </p>
       </div>
 
-      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 md:items-start lg:gap-14">
+      <div className="no-scrollbar mt-8 flex items-center justify-center gap-5 overflow-auto px-4 pb-[105px] md:items-start lg:gap-14">
         {awards.map((award, index) => (
           <Image
             key={index}

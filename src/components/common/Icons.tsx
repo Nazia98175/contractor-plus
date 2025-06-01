@@ -2547,8 +2547,8 @@ export const HvacGlowHeroDesktopIcon = () => (
         className="glowing-path"
         d="M197 957.924L507.5 416.5L823 -129.962"
         stroke="url(#paint0_linear_1465_39173)"
-        stroke-width="216"
-        stroke-linecap="round"
+        strokeWidth="216"
+        strokeLinecap="round"
       />
     </g>
     <defs>
@@ -2559,9 +2559,9 @@ export const HvacGlowHeroDesktopIcon = () => (
         width="1018.04"
         height="1479.92"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -2581,8 +2581,8 @@ export const HvacGlowHeroDesktopIcon = () => (
         y2="55.9527"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.0622667" stop-opacity="0" />
-        <stop offset="0.996954" stop-color="#A6070C" />
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#A6070C" />
         <stop offset="1" />
       </linearGradient>
     </defs>

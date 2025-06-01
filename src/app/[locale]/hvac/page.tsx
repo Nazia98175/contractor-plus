@@ -26,8 +26,10 @@ const page = () => {
         <WantingMore />
         <EraOfSoftware />
       </div>
-      <AwardBadges />
-      <HvacReview />
+      <div className="relative overflow-hidden">
+        <AwardBadges />
+        <HvacReview />
+      </div>
       <HvacSoftwareService />
       <TrustBarHvca platforms={platforms} />
       {/* <Whatever

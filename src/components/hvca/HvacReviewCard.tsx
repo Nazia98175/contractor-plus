@@ -15,7 +15,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
     <article
       onClick={review.isModal ? openModal : undefined}
       key={review.id}
-      className="group relative z-20 min-h-[300px] w-full cursor-pointer text-white duration-300"
+      className="group relative z-20 h-full w-full cursor-pointer text-white duration-300"
     >
       <div className="flex items-center gap-3 sm:flex-col sm:items-start md:gap-5">
         <div className="relative w-fit">

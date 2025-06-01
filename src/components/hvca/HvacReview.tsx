@@ -14,7 +14,7 @@ const HvacReview = () => {
     setIsModalOpen(true);
   };
   return (
-    <section className="main-container space-y-16 pb-24">
+    <section className="main-container space-y-16 pb-20 lg:pb-[100px] xl:pb-[113px]">
       <h2 className="section-heading gradient-text relative z-20 text-center">
         <span className="bg-sweetGarden bg-clip-text text-transparent">
           4.7
@@ -24,7 +24,8 @@ const HvacReview = () => {
       </h2>
 
       <SliderLayout
-        wrapperClassName="relative w-full !h-auto relative z-20"
+        swiperClassName="swiper-slide-hvac "
+        wrapperClassName="relative w-full h-auto relative z-20"
         slidesPerView={1}
         spaceBetween={9}
         breakpoints={{
@@ -33,7 +34,6 @@ const HvacReview = () => {
           1024: { slidesPerView: 2.5, spaceBetween: 20 },
           1280: { slidesPerView: 3, spaceBetween: 35 },
         }}
-        autoplay
       >
         {reviews.map((review, index) => (
           <HvacReviewCard

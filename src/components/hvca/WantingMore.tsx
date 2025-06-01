@@ -10,7 +10,7 @@ const curvePositions = [0, 50, 100];
 const WantingMore = () => {
   return (
     <section className="relative z-30 px-2 pb-16">
-      <TextAnimation animateOnScroll={true} delay={0.3}>
+      <TextAnimation animateOnScroll={true} delay={0.1}>
         <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit max-w-[1004px] text-center !font-bold lg:!font-semibold">
           Contractor+ is the only HVAC software that doesn’t leave you still
           wanting more

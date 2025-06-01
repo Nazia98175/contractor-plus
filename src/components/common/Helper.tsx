@@ -1178,8 +1178,7 @@ export const reviews = [
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
     review: `Since I started sending all my estimates using Contractor+, I have
-    stopped losing bids. The professional image I gain by using this app
-    is helping me win more business. Contractor+ is a game changer!`,
+    stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
     userRole: "Co-Owner, Rushville Restorations",
   },
   {

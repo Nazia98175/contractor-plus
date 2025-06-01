@@ -23,13 +23,13 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-7 lg:flex-row">
       <div className="w-full xl:max-w-[650px]">
-        <div className="flex flex-col gap-3 md:gap-4 2xl:gap-5">
+        <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
 
           {/* Image for mobile */}
           <div className="mx-auto h-full min-h-[156px] w-full max-w-[518px] rounded-lg md:h-auto lg:min-h-[200px] xl:hidden xl:min-h-[245px]">
             <Image
-              src={fieldServiceData?.[idx]?.img || "/placeholder.png"}
+              src={service.img || "/placeholder.png"}
               alt={service?.title || "service image"}
               width={518}
               height={302}
@@ -37,7 +37,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
             />
           </div>
           <div className="flex flex-col gap-4 2xl:gap-6">
-            {(isEstimate ? features.slice(0, -1) : features.slice(0, 4)).map(
+            {(isEstimate ? features.slice(0, -1) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
                   <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
@@ -69,7 +69,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
       {/* Desktop image */}
       <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
         <Image
-          src={fieldServiceData?.[idx]?.img || "/placeholder.png"}
+          src={service.img || "/placeholder.png"}
           alt={service?.title || "service image"}
           width={518}
           height={302}

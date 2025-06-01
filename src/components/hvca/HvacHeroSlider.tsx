@@ -44,7 +44,7 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
 
             {/* Active image (visible only when slide is active) */}
             <Image
-              className="hero-img inactive-img pointer-events-none absolute right-0 -z-40 opacity-30"
+              className="hero-img inactive-img pointer-events-none absolute right-0 -z-40 opacity-50"
               src="/images/webp/hero-slider-2.webp"
               alt="active icon"
               width={130}

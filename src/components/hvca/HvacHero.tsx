@@ -2,6 +2,7 @@
 import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
 import {
+  ArrowIcon,
   HeroAnimatedMobileIcon,
   HvacGlowHeroDesktopIcon,
   HvacGlowHeroMobileIcon,
@@ -20,6 +21,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "We make every Sholaz .",
+      img: "",
     },
     {
       id: 2,
@@ -127,7 +129,7 @@ const HvacHero = () => {
           <HvacGlowHeroDesktopIcon />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             <TextAnimation animateOnScroll={false} delay={3}>
-              <h1 className="main-heading gradient-text">
+              <h1 className="main-heading gradient-white">
                 Not just HVAC software. Meet your operating system.
               </h1>
             </TextAnimation>
@@ -139,7 +141,12 @@ const HvacHero = () => {
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
               <button className="bg-red-linear primary-btn h-10">
-                <span className="hidden md:flex">Get started FREE</span>
+                <span className="hidden md:flex">
+                  Get started FREE{" "}
+                  <span>
+                    <ArrowIcon fill="#fff" />
+                  </span>
+                </span>
                 <span className="flex md:hidden">Download App</span>
               </button>
               <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">

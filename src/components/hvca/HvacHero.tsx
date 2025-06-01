@@ -3,6 +3,7 @@ import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
 import {
   ArrowIcon,
+  CheckIcon,
   HeroAnimatedMobileIcon,
   HvacGlowHeroDesktopIcon,
   HvacGlowHeroMobileIcon,
@@ -149,7 +150,8 @@ const HvacHero = () => {
                 </span>
                 <span className="flex md:hidden">Download App</span>
               </button>
-              <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
+              <button className="font-myriad text-secondary flex cursor-pointer items-center gap-1.5 text-sm">
+                <CheckIcon />
                 No Credit Card Required
               </button>
             </div>

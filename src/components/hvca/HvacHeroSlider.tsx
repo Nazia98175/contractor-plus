@@ -33,11 +33,20 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
     >
       {features.map((feature, index) => (
         <SwiperSlide key={index}>
-          <div className="border-redPigment hero-slider hero-slide-content overflow-hidden rounded-3xl border p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
+          <div className="border-redPigment/35 hero-slider hero-slide-content overflow-hidden rounded-3xl border p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
             <Image
-              className="pointer-events-none absolute right-0 -z-40"
-              src={"/images/svg/hero-slider-animated-svg.svg"}
-              alt="hero-animated-icon"
+              className="hero-img active-img pointer-events-none absolute right-0 -z-40"
+              src="/images/svg/hero-slider-animated-svg.svg"
+              alt="inactive icon"
+              width={130}
+              height={165}
+            />
+
+            {/* Active image (visible only when slide is active) */}
+            <Image
+              className="hero-img inactive-img pointer-events-none absolute right-0 -z-40 opacity-30"
+              src="/images/webp/hero-slider-2.webp"
+              alt="active icon"
               width={130}
               height={165}
             />

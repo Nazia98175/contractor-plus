@@ -12,7 +12,7 @@ const HvacSoftware = () => {
         {softwareCardData.map((card, index) => (
           <article
             key={index}
-            className="software-bg flex w-full max-w-[390px] flex-col items-center justify-center gap-2.5 rounded-lg p-2.5"
+            className="software-bg card-shine flex w-full max-w-[390px] cursor-pointer flex-col items-center justify-center gap-2.5 rounded-lg p-2.5"
           >
             <AlertIcon />
             <h4 className="text-winterWay mx-auto w-full max-w-[355px] text-center text-base font-medium text-ellipsis text-shadow-[0px_0px_20px_rgba(255,255,255,0.50)] sm:text-lg xl:text-[22px]">

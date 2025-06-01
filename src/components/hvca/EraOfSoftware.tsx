@@ -2,9 +2,9 @@ import React from "react";
 
 const EraOfSoftware = () => {
   return (
-    <section className="no-scrollbar relative overflow-x-hidden">
-      <div className="bg-white-linear absolute -bottom-[1%] left-0 z-[2] h-24 w-full sm:h-[180px] lg:h-[237px]"></div>
-      <div className="bg-romanRed absolute top-1/2 -left-5 -z-[1] hidden h-5 w-full max-w-[300px] -translate-y-[60%] rotate-45 rounded-full blur-[44px] md:block"></div>
+    <section className="no-scrollbar relative z-0 overflow-x-hidden">
+      <div className="bg-white-linear absolute -bottom-[1%] left-0 z-[3] h-24 w-full sm:h-[180px] lg:h-[237px]"></div>
+      <div className="bg-romanRed absolute top-1/2 -left-5 z-0 hidden h-5 w-full max-w-[300px] -translate-y-[60%] rotate-45 rounded-full blur-[44px] md:block"></div>
       <h2 className="section-heading text-gradient-black mx-auto max-w-[730px] px-2 text-center">
         The era of software for HVAC is out. The operating system is in.
       </h2>
@@ -16,10 +16,10 @@ const EraOfSoftware = () => {
       </p>
 
       <div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[117px] xl:rounded-[45px]">
-        <div className="bg-secondary absolute bottom-0 left-1/2 -z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[70px] sm:block"></div>
+        <div className="bg-secondary absolute bottom-0 left-1/2 z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[100px] sm:block md:min-h-[550px]"></div>
         <img
           src="/images/webp/era-of-software.webp"
-          className="z-[1] hidden h-full w-full object-cover sm:block"
+          className="relative z-[2] hidden h-full w-full object-cover sm:block"
           alt="Era of Software"
         />
         <img

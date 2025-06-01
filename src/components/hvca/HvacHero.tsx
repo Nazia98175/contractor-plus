@@ -113,16 +113,16 @@ const HvacHero = () => {
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
-      <div className="relative z-20 overflow-hidden">
+      <div className="relative overflow-hidden">
         <Image
           width={769}
           height={800}
           src="/images/webp/hero-video-ovelay.webp"
           alt="Red Circle For designing"
-          className="pointer-events-none absolute top-0 left-0 z-20 block h-full w-full object-cover lg:hidden"
+          className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative z-20 flex items-end pt-[395px] pb-9 sm:pt-[269px] md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-9 sm:pt-[269px] md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
           <HvacGlowHeroDesktopIcon />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
@@ -148,7 +148,7 @@ const HvacHero = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-[2%] bottom-0 z-[1000] hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
+        <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">

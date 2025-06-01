@@ -466,6 +466,20 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.gradient-white {
+  background:
+    linear-gradient(
+      276.25deg,
+      rgba(238, 30, 37, 0.4) -11.28%,
+      rgba(0, 0, 0, 0) 99.63%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 @media (max-width: 640px) {
   .gradient-text {
     background:

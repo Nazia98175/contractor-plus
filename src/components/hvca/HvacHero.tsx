@@ -204,7 +204,7 @@ const HvacHero = () => {
             fill={true}
             src="/images/webp/claud.webp"
             alt="Cloud Layer 1"
-            className="w-full object-center mix-blend-multiply"
+            className="w-full object-center"
             unoptimized
           />
         </div>
@@ -214,7 +214,16 @@ const HvacHero = () => {
             fill={true}
             src="/images/webp/claud.webp"
             alt="Cloud Layer 2"
-            className="w-full object-center mix-blend-multiply"
+            className="w-full object-center"
+            unoptimized
+          />
+        </div>
+        <div className="absolute h-full w-[115%]">
+          <Image
+            fill={true}
+            src="/images/webp/claud.webp"
+            alt="Cloud Layer 2"
+            className="w-full object-center"
             unoptimized
           />
         </div>

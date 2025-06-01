@@ -14,7 +14,7 @@ const HvacReview = () => {
     setIsModalOpen(true);
   };
   return (
-    <section className="main-container space-y-16 pb-20 lg:pb-[100px] xl:pb-[113px]">
+    <section className="main-container space-y-12 pb-20 lg:space-y-16 lg:pb-[100px] xl:pb-[113px]">
       <h2 className="section-heading gradient-text relative z-20 text-center">
         <span className="bg-sweetGarden bg-clip-text text-transparent">
           4.7

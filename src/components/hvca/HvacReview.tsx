@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import HvacReviewCard from "./HvacReviewCard";
+import { useState } from "react";
 import { reviews } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
 import SliderLayout from "../common/SliderLayout";
+import HvacReviewCard from "./HvacReviewCard";
 
 const HvacReview = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -22,7 +22,6 @@ const HvacReview = () => {
         <span className="bg-pantone bg-clip-text text-transparent">★</span>{" "}
         across thousands of reviews
       </h2>
-
       <SliderLayout
         swiperClassName="swiper-slide-hvac "
         wrapperClassName="relative w-full h-auto relative z-20"

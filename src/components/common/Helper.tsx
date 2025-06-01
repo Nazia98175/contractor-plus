@@ -141,145 +141,167 @@ export const wantingMoreData = [
         desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Job Timeline View",
+        desc: "See the full history of communication, assignments, time logs, and photos for each job.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Gantt Chart View",
+        desc: "View project timelines, task dependencies, and upcoming work in a format that’s easy to visualize.",
+      },
+
+      {
+        title: "Internal Job Chat",
+        desc: "Every job has its own chat so field teams keep all the context in one place.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Photo Logging",
+        desc: "Attach photos, notes, and task completion records for final quality checks and documentation.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Tool & Equipment Assignment",
+        desc: "Assign tools to jobs and know who has what at any given moment. ",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
-      },
-      {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Time Clock & Mileage Logs",
+        desc: "Track labor and mileage against specific jobs to stay profitable and organized.",
       },
     ],
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    imageSrc: "/images/webp/circular-slide-1.webp",
+    img: "/images/webp/wanting-more-1.webp",
   },
   {
-    title: "Project Management",
+    title: "Field Service Management",
     content: [
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Smart Scheduling",
+        desc: "See every job, crew, and resource in one screen. Drag, drop, and assign work instantly.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Live Dispatch",
+        desc: "Reassign jobs and view availability based on who’s closest, free, or ahead of schedule.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Live GPS Crew Tracking",
+        desc: "Know where your teams are right now, without calling around.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Clock In / Out on Mobile",
+        desc: "Crew members can start and stop the day from their phones, GPS-verified",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Job Notes & Field Updates",
+        desc: "Capture real-time info from the field, including comments, photos, and task changes.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Onsite Payments",
+        desc: "Collect card or ACH payments in the field, and mark jobs paid before the truck even leaves.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Mobile App",
+        desc: "Contractor+ is mobile-first, so it’s easy to use where you need it most.",
       },
     ],
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    imageSrc: "/images/webp/circular-slide-1.webp",
+    img: "/images/webp/wanting-more-2.webp",
   },
   {
-    title: "Project Management",
+    title: "CRM",
     content: [
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Customer Profiles",
+        desc: "See full communication history, estimates, invoices, job records, and properties for each customer.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Property Profiles",
+        desc: "Track service history, documents, permits, and job progress tied to specific addresses.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Role-Based Contact Management",
+        desc: "Distinguish between tenants, landlords, vendors, subcontractors, and more.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Communication Timeline",
+        desc: "View all messages, emails, texts, voicemails, and calls by contact or property.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Call, Text, or Email Directly",
+        desc: "One-click outreach from inside the CRM. No switching apps.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Client Portal Access",
+        desc: "Clients can view quotes, approve work, pay invoices, and submit requests from their own dashboard.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Document Management",
+        desc: "Upload photos, permits, contracts, and warranties to any job or customer record.",
       },
     ],
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    imageSrc: "/images/webp/circular-slide-1.webp",
+    img: "/images/webp/wanting-more-3.webp",
   },
   {
-    title: "Project Management",
+    title: "Estimatic AI",
     content: [
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Prompt-Based Estimate Creation",
+        desc: "Give Estimatic the details of the job and ask it to create an estimate. Our AI builds it out so it’s ready to send off quickly.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Live Pricing",
+        desc: "Pulls real-time cost data from vendors like Lowe’s and Home Depot by zip code.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Line Item Templates & Assemblies",
+        desc: "Reusable formats speed up quoting and improve consistency.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Good / Better / Best Packages",
+        desc: "Create tiered proposals with upsell options baked in.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "Estimate to Contract Creation",
+        desc: "Signed estimates automatically become contracts with terms, scope, and payment info.",
       },
       {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
-      },
-      {
-        title: "Phases, Tasks, and Subtasks",
-        desc: "Structure jobs by phase with nested task assignments for better delegation and progress tracking.",
+        title: "eSignature",
+        desc: "Digital signature is already built in, so you don’t have to pay for a separate solution.",
       },
     ],
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    imageSrc: "/images/webp/circular-slide-1.webp",
+    img: "/images/webp/wanting-more-4.webp",
+  },
+  {
+    title: "Big Chief AI",
+    content: [
+      {
+        title: "Call Answering + Lead Capture",
+        desc: "Big Chief AI answers calls 24/7, qualifies leads and books appointments.",
+      },
+      {
+        title: "Collections",
+        desc: "Chasing down customers to pay overdue invoices can now be handled by an AI assistant that never needs a break.",
+      },
+      {
+        title: "Service Request Intake",
+        desc: "Ask Big Chief for any technical questions about using Contractor+ and get instant answers.",
+      },
+      {
+        title: "Business Advisor",
+        desc: "Big Chief analyzes your KPIs and gives you actionable advice for business growth.",
+      },
+    ],
+    review:
+      "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
+    user: "Satisfied Contractor+ User",
+    img: "/images/webp/wanting-more-5.webp",
   },
 ];
 

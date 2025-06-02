@@ -11,6 +11,11 @@ import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
 
+export const metadata = {
+  title: "Contractor-Plus - HVAC Software",
+  description: "Not just HVAC software. Meet your operating system.",
+};
+
 const page = () => {
   return (
     <>
@@ -26,8 +31,10 @@ const page = () => {
         <WantingMore />
         <EraOfSoftware />
       </div>
-      <AwardBadges />
-      <HvacReview />
+      <div className="relative overflow-hidden">
+        <AwardBadges />
+        <HvacReview />
+      </div>
       <HvacSoftwareService />
       <TrustBarHvca platforms={platforms} />
       {/* <Whatever

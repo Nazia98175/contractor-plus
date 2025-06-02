@@ -57,7 +57,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section5][populate][cardDetails][populate]=*",
+      "&populate[trackProperties][populate][cardDetails][populate]=*",
     ),
     getCrmPage(
       useParams?.slug,
@@ -97,12 +97,12 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             {useParams?.slug === "crm" && (
               <TrackProperties
                 ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-                trackProperties={section5?.data?.[0]?.section5}
+                trackProperties={section5?.data?.[0]?.trackProperties}
               />
             )}
 
-           <LikeYouDoContacts data={section5?.data?.[0]?.section5?.cardDetails?.[0]} />
-            <HowContractorWork data={section5?.data?.[0]?.section5?.cardDetails?.[1]} />
+           <LikeYouDoContacts data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]} />
+            <HowContractorWork data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]} />
             <KindAdorable
               slug={useParams?.slug}
               kindAdorable={section6?.data?.[0]?.comparison}

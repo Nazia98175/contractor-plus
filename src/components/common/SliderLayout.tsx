@@ -10,6 +10,7 @@ import { SwiperOptions } from "swiper/types";
 interface SliderLayoutProps extends SwiperOptions {
   children: React.ReactNode[];
   className?: string;
+  swiperClassName?: string;
   onSlideChange?: (swiper: SwiperClass) => void;
   wrapperClassName?: string;
   coverflowEffect?: {
@@ -32,6 +33,7 @@ interface SliderLayoutProps extends SwiperOptions {
 const SliderLayout: React.FC<SliderLayoutProps> = ({
   children,
   className = "mySwiper",
+  swiperClassName,
   wrapperClassName = "relative w-full",
   modules = [Pagination],
   effect = undefined, // <- disabled by default
@@ -176,7 +178,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
         {...rest}
       >
         {validChildren.map((child, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className={swiperClassName} key={index}>
             <div className="swiper-slide-inner">{child}</div>
           </SwiperSlide>
         ))}

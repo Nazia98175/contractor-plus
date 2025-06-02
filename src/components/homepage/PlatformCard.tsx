@@ -13,7 +13,7 @@ interface PlatformCardProps {
 
 const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
   return (
-    <div className="relative z-20 flex w-[47%] flex-col-reverse items-center justify-between gap-2.5 sm:w-fit sm:flex-col">
+    <div className="relative z-20 flex flex-col-reverse items-center justify-between gap-2.5 sm:w-fit sm:flex-col lg:w-[47%]">
       <img
         src={platform.logo}
         alt={`${platform.name} rating`}

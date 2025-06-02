@@ -34,8 +34,19 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         ))}
       </CardReveal>
 
-      <div className="relative z-50 lg:hidden">
-        <SliderLayout autoplay={true}>
+      <div className="max-w-[] relative z-50 px-2 lg:hidden">
+        <SliderLayout
+          spaceBetween={9}
+          slidesPerView={2}
+          breakpoints={{
+            320: { slidesPerView: 2, spaceBetween: 8 },
+            500: { slidesPerView: 3, spaceBetween: 8 },
+            640: { slidesPerView: 3, spaceBetween: 20 },
+            768: { slidesPerView: 4, spaceBetween: 20 },
+            1024: { slidesPerView: 5, spaceBetween: 20 },
+          }}
+          autoplay={true}
+        >
           {platforms.map((platform, index) => (
             <PlatformCard platform={platform} key={index} />
           ))}

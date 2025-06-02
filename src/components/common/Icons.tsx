@@ -304,20 +304,28 @@ export const GreenDotIcon = () => (
   </svg>
 );
 
-export const ServiceIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M12 19L10.75 16.25L8 15L10.75 13.75L12 11L13.25 13.75L16 15L13.25 16.25L12 19ZM5 22C4.45 22 3.979 21.804 3.587 21.412C3.195 21.02 2.99934 20.5493 3 20V6C3 5.45 3.196 4.979 3.588 4.587C3.98 4.195 4.45067 3.99933 5 4H6V2H8V4H16V2H18V4H19C19.55 4 20.021 4.196 20.413 4.588C20.805 4.98 21.0007 5.45067 21 6V20C21 20.55 20.804 21.021 20.412 21.413C20.02 21.805 19.5493 22.0007 19 22H5ZM5 20H19V10H5V20ZM5 8H19V6H5V8Z"
-      fill="#1C2731"
-    />
-  </svg>
-);
+interface ServiceIconProps {
+  className?: string;
+}
+
+export const ServiceIcon: React.FC<ServiceIconProps> = ({ className }) => {
+  const defaultClass = "text-[#1C2731]";
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={`${defaultClass} ${className ?? ""}`}
+    >
+      <path
+        d="M12 19L10.75 16.25L8 15L10.75 13.75L12 11L13.25 13.75L16 15L13.25 16.25L12 19ZM5 22C4.45 22 3.979 21.804 3.587 21.412C3.195 21.02 2.99934 20.5493 3 20V6C3 5.45 3.196 4.979 3.588 4.587C3.98 4.195 4.45067 3.99933 5 4H6V2H8V4H16V2H18V4H19C19.55 4 20.021 4.196 20.413 4.588C20.805 4.98 21.0007 5.45067 21 6V20C21 20.55 20.804 21.021 20.412 21.413C20.02 21.805 19.5493 22.0007 19 22H5ZM5 20H19V10H5V20ZM5 8H19V6H5V8Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
 
 interface CheckIconProps {
   width?: number;
@@ -1053,38 +1061,56 @@ export const TurnaroundIcon = () => (
     />
   </svg>
 );
+interface CalculatorIconProps {
+  className?: string;
+}
 
-export const CalculatorIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="31"
-    height="30"
-    viewBox="0 0 31 30"
-    fill="none"
-  >
-    <path
-      d="M24.0835 3.75H6.5835C5.2085 3.75 4.0835 4.875 4.0835 6.25V23.75C4.0835 25.125 5.2085 26.25 6.5835 26.25H24.0835C25.4585 26.25 26.5835 25.125 26.5835 23.75V6.25C26.5835 4.875 25.4585 3.75 24.0835 3.75ZM24.0835 23.75H6.5835V6.25H24.0835V23.75ZM8.0835 9.625H14.3335V11.5H8.0835V9.625ZM16.5835 19.75H22.8335V21.625H16.5835V19.75ZM16.5835 16.5H22.8335V18.375H16.5835V16.5ZM10.3335 22.5H12.2085V20H14.7085V18.125H12.2085V15.625H10.3335V18.125H7.8335V20H10.3335V22.5ZM17.9585 13.625L19.7085 11.875L21.4585 13.625L22.8335 12.375L21.0835 10.625L22.8335 8.875L21.4585 7.5L19.7085 9.25L17.9585 7.5L16.5835 8.875L18.3335 10.625L16.5835 12.375L17.9585 13.625Z"
-      fill="#1C2731"
-    />
-  </svg>
-);
+export const CalculatorIcon: React.FC<CalculatorIconProps> = ({
+  className,
+}) => {
+  const defaultClasses = "text-[#1C2731]"; // default color using Tailwind
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="31"
+      height="30"
+      viewBox="0 0 31 30"
+      fill="none"
+      className={`${defaultClasses} ${className ?? ""}`}
+    >
+      <path
+        d="M24.0835 3.75H6.5835C5.2085 3.75 4.0835 4.875 4.0835 6.25V23.75C4.0835 25.125 5.2085 26.25 6.5835 26.25H24.0835C25.4585 26.25 26.5835 25.125 26.5835 23.75V6.25C26.5835 4.875 25.4585 3.75 24.0835 3.75ZM24.0835 23.75H6.5835V6.25H24.0835V23.75ZM8.0835 9.625H14.3335V11.5H8.0835V9.625ZM16.5835 19.75H22.8335V21.625H16.5835V19.75ZM16.5835 16.5H22.8335V18.375H16.5835V16.5ZM10.3335 22.5H12.2085V20H14.7085V18.125H12.2085V15.625H10.3335V18.125H7.8335V20H10.3335V22.5ZM17.9585 13.625L19.7085 11.875L21.4585 13.625L22.8335 12.375L21.0835 10.625L22.8335 8.875L21.4585 7.5L19.7085 9.25L17.9585 7.5L16.5835 8.875L18.3335 10.625L16.5835 12.375L17.9585 13.625Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
 
-export const AdminWorkIcon = ({ fill = "white" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="31"
-    height="31"
-    viewBox="0 0 31 31"
-    fill="none"
-  >
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M28.167 21.7623V16.7498C28.167 16.5026 28.0936 16.261 27.9563 16.0555C27.8189 15.8499 27.6237 15.6898 27.3953 15.5952C27.167 15.5006 26.9157 15.4758 26.6732 15.524C26.4308 15.5723 26.2081 15.6913 26.0333 15.866L24.417 17.4823L17.8008 10.866C17.5664 10.6317 17.2485 10.5 16.917 10.5C16.5856 10.5 16.2677 10.6317 16.0333 10.866L11.917 14.9823L5.30076 8.36603C5.06501 8.13833 4.74926 8.01234 4.42151 8.01518C4.09377 8.01803 3.78025 8.14949 3.54849 8.38125C3.31673 8.61301 3.18527 8.92653 3.18242 9.25428C3.17957 9.58202 3.30557 9.89777 3.53326 10.1335L11.0333 17.6335C11.2677 17.8679 11.5856 17.9995 11.917 17.9995C12.2485 17.9995 12.5664 17.8679 12.8008 17.6335L16.917 13.5173L22.6495 19.2498L21.0333 20.866C20.8585 21.0408 20.7395 21.2635 20.6913 21.506C20.6431 21.7484 20.6678 21.9997 20.7624 22.2281C20.857 22.4565 21.0172 22.6517 21.2227 22.789C21.4282 22.9264 21.6698 22.9997 21.917 22.9998H26.917L26.977 22.9985C27.2962 22.9841 27.5976 22.8477 27.8191 22.6174C28.0405 22.3871 28.1651 22.0818 28.167 21.7623Z"
-      fill={fill}
-    />
-  </svg>
-);
+interface AdminWorkIconProps {
+  className?: string;
+}
+
+export const AdminWorkIcon: React.FC<AdminWorkIconProps> = ({ className }) => {
+  const defaultClass = "text-[#1C2731]";
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="31"
+      height="31"
+      viewBox="0 0 31 31"
+      fill="none"
+      className={`${defaultClass} ${className ?? ""}`}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M28.167 21.7623V16.7498C28.167 16.5026 28.0936 16.261 27.9563 16.0555C27.8189 15.8499 27.6237 15.6898 27.3953 15.5952C27.167 15.5006 26.9157 15.4758 26.6732 15.524C26.4308 15.5723 26.2081 15.6913 26.0333 15.866L24.417 17.4823L17.8008 10.866C17.5664 10.6317 17.2485 10.5 16.917 10.5C16.5856 10.5 16.2677 10.6317 16.0333 10.866L11.917 14.9823L5.30076 8.36603C5.06501 8.13833 4.74926 8.01234 4.42151 8.01518C4.09377 8.01803 3.78025 8.14949 3.54849 8.38125C3.31673 8.61301 3.18527 8.92653 3.18242 9.25428C3.17957 9.58202 3.30557 9.89777 3.53326 10.1335L11.0333 17.6335C11.2677 17.8679 11.5856 17.9995 11.917 17.9995C12.2485 17.9995 12.5664 17.8679 12.8008 17.6335L16.917 13.5173L22.6495 19.2498L21.0333 20.866C20.8585 21.0408 20.7395 21.2635 20.6913 21.506C20.6431 21.7484 20.6678 21.9997 20.7624 22.2281C20.857 22.4565 21.0172 22.6517 21.2227 22.789C21.4282 22.9264 21.6698 22.9997 21.917 22.9998H26.917L26.977 22.9985C27.2962 22.9841 27.5976 22.8477 27.8191 22.6174C28.0405 22.3871 28.1651 22.0818 28.167 21.7623Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
 export const SidebarArrowIcon = ({ isOpen }: { isOpen: boolean }) => (
   <svg
     className={`h-5 w-5 transition-transform duration-300 ease-in-out ${
@@ -2522,58 +2548,59 @@ export const SliderIcon1 = () => (
 );
 export const HvacGlowHeroDesktopIcon = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1012"
+    width="1020"
     height="100%"
+    viewBox="0 0 1020 850"
     fill="none"
-    viewBox="0 0 1020 671"
     className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <g
-      filter="url(#filter0_f_1464_68065)"
       style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_1465_39173)"
     >
       <path
         className="glowing-path"
-        stroke="url(#paint0_linear_1464_68065)"
-        strokeLinecap="round"
+        d="M197 957.924L507.5 416.5L823 -129.962"
+        stroke="url(#paint0_linear_1465_39173)"
         strokeWidth="216"
-        d="M197 957.924 507.5 416.5 823-129.962"
-      ></path>
+        strokeLinecap="round"
+      />
     </g>
     <defs>
-      <linearGradient
-        id="paint0_linear_1464_68065"
-        x1="853.107"
-        x2="600.639"
-        y1="357.525"
-        y2="55.953"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.062" stopOpacity="0"></stop>
-        <stop offset="0.997" stopColor="#A6070C"></stop>
-        <stop offset="1"></stop>
-      </linearGradient>
       <filter
-        id="filter0_f_1464_68065"
+        id="filter0_f_1465_39173"
+        x="0.981689"
+        y="-325.98"
         width="1018.04"
         height="1479.92"
-        x="0.982"
-        y="-325.98"
-        colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
+          mode="normal"
           in="SourceGraphic"
           in2="BackgroundImageFix"
           result="shape"
-        ></feBlend>
+        />
         <feGaussianBlur
-          result="effect1_foregroundBlur_1464_68065"
           stdDeviation="44"
-        ></feGaussianBlur>
+          result="effect1_foregroundBlur_1465_39173"
+        />
       </filter>
+      <linearGradient
+        id="paint0_linear_1465_39173"
+        x1="853.107"
+        y1="357.525"
+        x2="600.639"
+        y2="55.9527"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#A6070C" />
+        <stop offset="1" />
+      </linearGradient>
     </defs>
   </svg>
 );

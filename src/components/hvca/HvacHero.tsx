@@ -2,6 +2,8 @@
 import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
 import {
+  ArrowIcon,
+  CheckIcon,
   HeroAnimatedMobileIcon,
   HvacGlowHeroDesktopIcon,
   HvacGlowHeroMobileIcon,
@@ -20,6 +22,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "We make every Sholaz .",
+      img: "",
     },
     {
       id: 2,
@@ -113,21 +116,21 @@ const HvacHero = () => {
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
-      <div className="relative z-20 overflow-hidden">
+      <div className="relative overflow-hidden">
         <Image
           width={769}
           height={800}
           src="/images/webp/hero-video-ovelay.webp"
           alt="Red Circle For designing"
-          className="pointer-events-none absolute top-0 left-0 z-20 block h-full w-full object-cover lg:hidden"
+          className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative z-20 flex items-end pt-[269px] pb-9 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-9 sm:pt-[269px] md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
           <HvacGlowHeroDesktopIcon />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             <TextAnimation animateOnScroll={false} delay={3}>
-              <h1 className="main-heading gradient-text">
+              <h1 className="main-heading gradient-white">
                 Not just HVAC software. Meet your operating system.
               </h1>
             </TextAnimation>
@@ -139,23 +142,29 @@ const HvacHero = () => {
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
               <button className="bg-red-linear primary-btn h-10">
-                <span className="hidden md:flex">Get started FREE</span>
+                <span className="hidden md:flex">
+                  Get started FREE{" "}
+                  <span>
+                    <ArrowIcon fill="#fff" />
+                  </span>
+                </span>
                 <span className="flex md:hidden">Download App</span>
               </button>
-              <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
+              <button className="font-myriad text-secondary flex cursor-pointer items-center gap-1.5 text-sm">
+                <CheckIcon />
                 No Credit Card Required
               </button>
             </div>
           </div>
         </div>
-        <div className="absolute right-[2%] bottom-0 z-[1000] hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
+        <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
           <HvacHeroSlider features={features} />
         </div>
-        <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-          <VideoOptimizer
+        <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
+          {/* <VideoOptimizer
             highResUrl="/video/hero-video.mp4"
             lowResUrl="/video/hero-video.mp4"
-          />
+          /> */}
           {/* <video
             autoPlay
             muted
@@ -165,11 +174,25 @@ const HvacHero = () => {
             src="/video/hero-video.mp4"
           ></video> */}
           <Image
+            alt=""
+            src={"/images/webp/hvac-hero.webp"}
+            width={945}
+            height={729}
+            className="hidden w-full object-right sm:block"
+          />
+          <Image
+            alt=""
+            src={"/images/webp/hvac-hero-mobile.webp"}
+            width={945}
+            height={729}
+            className="block w-full object-contain sm:hidden"
+          />
+          <Image
             priority
             fill
             unoptimized
             className="absolute -top-[6%] !left-[-1%] hidden !h-[111%] w-full object-cover lg:block"
-            src={"/images/webp/hero-video-ovelay.webp"}
+            src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"
           />
           {/* <div className="bg-kuroiBlack absolute bottom-[-3px] z-[1000] hidden h-[10px] w-full lg:block"></div> */}
@@ -181,7 +204,7 @@ const HvacHero = () => {
             fill={true}
             src="/images/webp/claud.webp"
             alt="Cloud Layer 1"
-            className="w-full object-cover sm:h-20 lg:h-[150px]"
+            className="w-full object-center"
             unoptimized
           />
         </div>
@@ -191,7 +214,16 @@ const HvacHero = () => {
             fill={true}
             src="/images/webp/claud.webp"
             alt="Cloud Layer 2"
-            className="h-12 w-full object-cover sm:h-20 lg:h-[150px]"
+            className="w-full object-center"
+            unoptimized
+          />
+        </div>
+        <div className="absolute h-full w-[115%]">
+          <Image
+            fill={true}
+            src="/images/webp/claud.webp"
+            alt="Cloud Layer 2"
+            className="w-full object-center"
             unoptimized
           />
         </div>

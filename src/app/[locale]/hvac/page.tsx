@@ -41,7 +41,7 @@ const page = () => {
       <TrustBarHvca platforms={platforms} />
       {/* <Whatever whateverOperation={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq faq={[]} />
-      <BlogPosts className="bg-white" />
+      <BlogPosts className="relative z-20 bg-white" />
     </>
   );
 };

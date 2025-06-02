@@ -83,7 +83,6 @@ const HvacFaq: React.FC<Props> = () => {
             unoptimized
           />
         </div>
-        {/* Cloud Layer 2 */}
         <div className="animate-cloud-layer-2 absolute h-full w-[115%]">
           <Image
             fill={true}

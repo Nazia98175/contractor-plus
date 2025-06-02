@@ -5,6 +5,8 @@ import {
   ArrowIcon,
   CheckIcon,
   HeroAnimatedMobileIcon,
+  HeroSliderIcon1,
+  HeroSliderIcon2,
   HvacGlowHeroDesktopIcon,
   HvacGlowHeroMobileIcon,
   SliderIcon1,
@@ -22,7 +24,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "We make every Sholaz .",
-      img: "",
+      backgroundIcon: <HeroSliderIcon1 />,
     },
     {
       id: 2,
@@ -31,6 +33,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "Got lorem loren.",
+      backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 3,
@@ -39,6 +42,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "The Sholaz app is",
+      backgroundIcon: <HeroSliderIcon1 />,
     },
     {
       id: 4,
@@ -47,6 +51,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "We make every Sholaz .",
+      backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 5,
@@ -55,6 +60,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "Got lorem loren.",
+      backgroundIcon: <HeroSliderIcon1 />,
     },
     {
       id: 6,
@@ -63,6 +69,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "The Sholaz app is",
+      backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 7,
@@ -71,6 +78,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "We make every Sholaz .",
+      backgroundIcon: <HeroSliderIcon1 />,
     },
     {
       id: 8,
@@ -79,6 +87,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "Got lorem loren.",
+      backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 9,
@@ -87,6 +96,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "The Sholaz app is",
+      backgroundIcon: <HeroSliderIcon1 />,
     },
     {
       id: 10,
@@ -95,6 +105,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "We make every Sholaz .",
+      backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 11,
@@ -103,6 +114,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "Got lorem loren.",
+      backgroundIcon: <HeroSliderIcon1 />,
     },
     {
       id: 12,
@@ -111,6 +123,7 @@ const HvacHero = () => {
       heading: "Job turnaround time",
       percentage: 24,
       description: "The Sholaz app is",
+      backgroundIcon: <HeroSliderIcon2 />,
     },
   ];
 

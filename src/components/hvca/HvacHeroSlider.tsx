@@ -5,11 +5,13 @@ import { JSX } from "react/jsx-runtime";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { HeroSliderIcon1, HeroSliderIcon2 } from "../common/Icons";
 
 interface Feature {
   id: number;
   title: string;
   icon: JSX.Element;
+  backgroundIcon: JSX.Element;
   heading: string;
   percentage: number;
   description: string;
@@ -23,33 +25,20 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
   return (
     <Swiper
       direction="vertical"
-      // modules={[Autoplay]}
+      modules={[Autoplay]}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
       spaceBetween={16}
       slidesPerView={3}
       centeredSlides={true}
       loop={true}
-      className="relative"
+      className="custom-active-slider relative"
     >
       {features.map((feature, index) => (
         <SwiperSlide key={index}>
-          <div className="custom-gradient-border hero-slider hero-slide-content overflow-hidden rounded-3xl p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
-            <Image
-              className="hero-img active-img pointer-events-none absolute right-0 -z-40"
-              src="/images/svg/hero-slider-animated-svg.svg"
-              alt="inactive icon"
-              width={130}
-              height={165}
-            />
-
-            {/* Active image (visible only when slide is active) */}
-            <Image
-              className="hero-img inactive-img pointer-events-none absolute right-0 -z-40 opacity-50"
-              src="/images/webp/hero-slider-2.webp"
-              alt="active icon"
-              width={130}
-              height={165}
-            />
+          <div className="custom-gradient-border hero-slider overflow-hidden rounded-3xl p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
+            <div className="pointer-events-none absolute right-0 -z-40">
+              {feature.backgroundIcon}
+            </div>
             <div className="mb-6 flex items-center gap-2 xl:mt-2">
               {feature.icon}
               <p className="font-grotesk text-base text-white capitalize">

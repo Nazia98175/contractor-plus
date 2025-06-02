@@ -69,12 +69,12 @@ const WantingMore = () => {
           </article>
         ))} */}
       </div>{" "}
-      <ScrollOverlapCards
+      {/* <ScrollOverlapCards
         theme="light"
         slug={"testing"}
         fieldService={{ cardsDetail: wantingMoreData }}
         curved={true}
-      />
+      /> */}
     </section>
   );
 };

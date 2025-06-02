@@ -22,9 +22,9 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
   console.log(data?.title?.split("4.7 ★")?.[0], "splitt");
   return (
     <section>
-      <div className="main-container space-y-9 xl:space-y-16 relative z-20 py-7 xl:pt-[72px]">
+      <div className="main-container relative z-20 space-y-9 py-7 xl:space-y-16 xl:pt-[72px]">
         <TextAnimation animateOnScroll={true} delay={0.2}>
-          <h2 className="section-heading !font-black lg:!font-semibold crm-gradient text-center max-w-[951px] mx-auto">
+          <h2 className="section-heading crm-gradient mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">
             {/* There's a reason we have a {} */}
             {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
             {}

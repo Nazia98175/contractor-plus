@@ -17,7 +17,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
   className,
 }) => {
   return (
-    <section className={`relative ${className}`}>
+    <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
       {showTrustedSection && (
         <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
           Trusted by over <strong>50,000</strong> build and service contractors
@@ -34,7 +34,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         ))}
       </CardReveal>
 
-      <div className="max-w-[] relative z-50 px-2 lg:hidden">
+      <div className="relative z-50 px-4 lg:hidden">
         <SliderLayout
           spaceBetween={9}
           slidesPerView={2}
@@ -48,7 +48,10 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
           autoplay={true}
         >
           {platforms.map((platform, index) => (
-            <PlatformCard platform={platform} key={index} />
+            <div key={index} className="flex items-center justify-center">
+              {" "}
+              <PlatformCard platform={platform} />
+            </div>
           ))}
         </SliderLayout>
       </div>

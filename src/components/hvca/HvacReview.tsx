@@ -22,7 +22,7 @@ const HvacReview = () => {
         <span className="bg-pantone bg-clip-text text-transparent">★</span>{" "}
         across thousands of reviews
       </h2>
-      <SliderLayout
+      {/* <SliderLayout
         swiperClassName="swiper-slide-hvac "
         wrapperClassName="relative w-full h-auto relative z-20"
         slidesPerView={1}
@@ -50,7 +50,7 @@ const HvacReview = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         videoUrl={selectedVideoUrl || ""}
-      />
+      /> */}
     </section>
   );
 };

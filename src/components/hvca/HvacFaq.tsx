@@ -4,6 +4,7 @@ import TextAnimation from "../common/TextAnimation";
 
 import UseFaqToggle from "../hook/UseFaqToggle";
 import HvacFaqList from "./HvacFaqList";
+import Image from "next/image";
 
 type FaqItemType = {
   question: string;
@@ -48,9 +49,9 @@ const HvacFaq: React.FC<Props> = () => {
     },
   ];
   return (
-    <section className="relative z-20 overflow-x-hidden py-10">
+    <section className="relative z-20 overflow-hidden">
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
-      <div className="w-full px-2">
+      <div className="w-full px-2 py-10">
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <p className="paragraph-text text-secondary pt-4 text-center">
             Frequently asked questions
@@ -70,6 +71,36 @@ const HvacFaq: React.FC<Props> = () => {
               onToggle={() => toggleFaq(index)}
             />
           ))}
+        </div>
+      </div>
+      <div className="pointer-events-none relative left-0 flex h-12 w-full translate-y-1 sm:h-20 lg:h-[150px]">
+        <div className="animate-cloud-layer-1 absolute h-full w-[115%]">
+          <Image
+            fill={true}
+            src="/images/webp/claud.webp"
+            alt="Cloud Layer 1"
+            className="w-full object-center"
+            unoptimized
+          />
+        </div>
+        {/* Cloud Layer 2 */}
+        <div className="animate-cloud-layer-2 absolute h-full w-[115%]">
+          <Image
+            fill={true}
+            src="/images/webp/claud.webp"
+            alt="Cloud Layer 2"
+            className="w-full object-center"
+            unoptimized
+          />
+        </div>
+        <div className="absolute h-full w-[115%]">
+          <Image
+            fill={true}
+            src="/images/webp/claud.webp"
+            alt="Cloud Layer 2"
+            className="w-full object-center"
+            unoptimized
+          />
         </div>
       </div>
     </section>

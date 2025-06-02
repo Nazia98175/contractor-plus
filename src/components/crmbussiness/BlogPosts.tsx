@@ -7,11 +7,12 @@ import TextAnimation from "../common/TextAnimation";
 interface Props {
   data: any;
   blogs: any;
+  className: string;
 }
 
-const BlogPosts: React.FC<Props> = ({ data, blogs }) => {
+const BlogPosts: React.FC<Props> = ({ data, blogs, className }) => {
   return (
-    <section className="px-2 pt-4 pb-12 sm:px-4 lg:px-20">
+    <section className={`px-2 pt-4 pb-12 sm:px-4 lg:px-20 ${className || ""}`}>
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="mb-6 flex items-center justify-between">
           <TextAnimation animateOnScroll={true} delay={0.2}>

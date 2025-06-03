@@ -13,6 +13,7 @@ import {
 import TextAnimation from "../common/TextAnimation";
 import HvacHeroSlider from "./HvacHeroSlider";
 import CardRequiredButton from "../common/CardRequiredButton";
+import CloudsAnimation from "../common/CloudsAnimation";
 
 const HvacHero = () => {
   const features = [
@@ -194,7 +195,7 @@ const HvacHero = () => {
           />
         </div>
       </div>
-      <div className="pointer-events-none relative left-0 flex h-12 w-full sm:h-20 md:translate-y-1 lg:h-[150px]">
+      {/* <div className="pointer-events-none relative left-0 flex h-12 w-full sm:h-20 md:translate-y-1 lg:h-[150px]">
         <div className="animate-cloud-layer-1 absolute h-full w-[115%]">
           <Image
             fill={true}
@@ -204,7 +205,6 @@ const HvacHero = () => {
             unoptimized
           />
         </div>
-        {/* Cloud Layer 2 */}
         <div className="animate-cloud-layer-2 absolute h-full w-[115%]">
           <Image
             fill={true}
@@ -223,7 +223,8 @@ const HvacHero = () => {
             unoptimized
           />
         </div>
-      </div>
+      </div> */}
+      <CloudsAnimation />
     </section>
   );
 };

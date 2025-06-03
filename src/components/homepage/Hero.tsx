@@ -14,7 +14,7 @@ type HeroProps = {
   homePageContent: any;
 };
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
-  const t = useTranslations("hero");
+  // const t = useTranslations("hero");
   const {
     hero_title,
     hero_description,
@@ -61,7 +61,7 @@ console.log(hero_image?.url ,"urlll")
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-        <VideoOptimizer highResUrl={getMediaUrl(hero_image)} lowResUrl="/video/hero-video.mp4" />
+        <VideoOptimizer highResUrl={'/video/hero-video.mp4'} lowResUrl="/video/hero-video.mp4" />
         {/* <video
           autoPlay
           muted

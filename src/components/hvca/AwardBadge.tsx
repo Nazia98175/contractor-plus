@@ -78,14 +78,15 @@ export default function AwardBadges() {
         }}
       >
         {awards.map((award, index) => (
-          <Image
-            key={index}
-            src={award.src}
-            alt={award.alt}
-            width={award.width}
-            height={award.height}
-            className={`${award.className} transform cursor-pointer transition-transform duration-300 ease-in-out hover:rotate-6`}
-          />
+          <div className="flex items-center justify-center" key={index}>
+            <Image
+              src={award.src}
+              alt={award.alt}
+              width={award.width}
+              height={award.height}
+              className={`${award.className} transform cursor-pointer transition-transform duration-300 ease-in-out hover:rotate-6`}
+            />
+          </div>
         ))}
       </SliderLayout>
     </section>

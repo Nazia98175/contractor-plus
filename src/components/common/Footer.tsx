@@ -38,7 +38,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const t = useTranslations("footer");
-  console.log(footer ,"footer")
+
 
   const links: { text: string; href: string }[] = t
     .raw("links")

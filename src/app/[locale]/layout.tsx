@@ -5,9 +5,10 @@ import "../globals.css";
 import BackToTop from "@/components/common/BackToTop";
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import Footer from "@/components/common/Footer";
-import { getHomePage } from "@/services/homepage";
-import { getFooter } from "@/services/layout";
+import { getFooter, getHeader } from "@/services/layout";
 import ParticlesComponent from "@/components/common/ParticlesComponent";
+import Header from "@/components/common/Header";
+
 export const metadata: Metadata = {
   title:
     "Contractor - The only operating system for build & service contractors",
@@ -26,13 +27,15 @@ export default async function RootLayout({
   const messages = await getMessages({ locale });
   const useParams = await params;
 
-  const [ footer] = await Promise.all([
-   
+
+  const [header , footer] = await Promise.all([
+   getHeader(useParams?.locale , "&populate[btnTxt]=true&populate[bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true"),
     getFooter(
       useParams?.locale,
       "&populate[sections][populate]=*&populate[bottomLinks]=*",
     ),
   ]);
+  console.log(header , "header data")
   return (
     <html
       lang="en"
@@ -41,10 +44,10 @@ export default async function RootLayout({
       <body>
         <BackToTop />
         <NextIntlClientProvider messages={messages}>
-          {/* <Header header={header?.data?.navbar} /> */}
-          {children}
-          <Footer footer={footer?.data} />
-          <ParticlesComponent id="star-particles" />
+        <Header header={header?.data} />
+        {children}
+        <Footer footer={footer?.data} />
+        <ParticlesComponent id="star-particles" />
         </NextIntlClientProvider>
       </body>
     </html>

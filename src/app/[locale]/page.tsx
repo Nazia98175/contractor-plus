@@ -33,11 +33,11 @@ export default async function Home({
      //&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
-  console.log(coreFeatures , "homePage")
+  
   return (
       <div className="relative overflow-x-hidden">
         <div className="relative">
-          <Header />
+          {/* <Header /> */}
           <Hero homePageContent={homePageContent?.data} />
           <TrustBar platforms={platforms}  />
           <TheEngineContractor

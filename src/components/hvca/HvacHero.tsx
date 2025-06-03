@@ -4,7 +4,6 @@ import "swiper/css"; // Core Swiper styles
 import {
   ArrowIcon,
   CheckIcon,
-  HeroAnimatedMobileIcon,
   HeroSliderIcon1,
   HeroSliderIcon2,
   HvacGlowHeroDesktopIcon,
@@ -12,17 +11,17 @@ import {
   SliderIcon1,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import VideoOptimizer from "../homepage/VideoOptimizer";
 import HvacHeroSlider from "./HvacHeroSlider";
+import CardRequiredButton from "../common/CardRequiredButton";
 
 const HvacHero = () => {
   const features = [
     {
       id: 1,
-      title: "24% faster",
+      title: "3-4x faster",
       icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: 24,
+      heading: "Estimate process",
+      percentage: "+38",
       description: "We make every Sholaz .",
       backgroundIcon: <HeroSliderIcon1 />,
     },
@@ -31,16 +30,16 @@ const HvacHero = () => {
       title: "24% faster",
       icon: <SliderIcon1 />,
       heading: "Job turnaround time",
-      percentage: 24,
+      percentage: "24",
       description: "Got lorem loren.",
       backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 3,
-      title: "24% faster",
+      title: "3-4x faster",
       icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: 24,
+      heading: "Estimate process",
+      percentage: "+38",
       description: "The Sholaz app is",
       backgroundIcon: <HeroSliderIcon1 />,
     },
@@ -49,16 +48,16 @@ const HvacHero = () => {
       title: "24% faster",
       icon: <SliderIcon1 />,
       heading: "Job turnaround time",
-      percentage: 24,
+      percentage: "24",
       description: "We make every Sholaz .",
       backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 5,
-      title: "24% faster",
+      title: "3-4x faster",
       icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: 24,
+      heading: "Estimate process",
+      percentage: "+38",
       description: "Got lorem loren.",
       backgroundIcon: <HeroSliderIcon1 />,
     },
@@ -67,16 +66,16 @@ const HvacHero = () => {
       title: "24% faster",
       icon: <SliderIcon1 />,
       heading: "Job turnaround time",
-      percentage: 24,
+      percentage: "24",
       description: "The Sholaz app is",
       backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 7,
-      title: "24% faster",
+      title: "3-4x faster",
       icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: 24,
+      heading: "Estimate process",
+      percentage: "+38",
       description: "We make every Sholaz .",
       backgroundIcon: <HeroSliderIcon1 />,
     },
@@ -85,16 +84,16 @@ const HvacHero = () => {
       title: "24% faster",
       icon: <SliderIcon1 />,
       heading: "Job turnaround time",
-      percentage: 24,
+      percentage: "24",
       description: "Got lorem loren.",
       backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 9,
-      title: "24% faster",
+      title: "3-4x faster",
       icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: 24,
+      heading: "Estimate process",
+      percentage: "+38",
       description: "The Sholaz app is",
       backgroundIcon: <HeroSliderIcon1 />,
     },
@@ -103,16 +102,16 @@ const HvacHero = () => {
       title: "24% faster",
       icon: <SliderIcon1 />,
       heading: "Job turnaround time",
-      percentage: 24,
+      percentage: "24",
       description: "We make every Sholaz .",
       backgroundIcon: <HeroSliderIcon2 />,
     },
     {
       id: 11,
-      title: "24% faster",
+      title: "3-4x faster",
       icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: 24,
+      heading: "Estimate process",
+      percentage: "+38",
       description: "Got lorem loren.",
       backgroundIcon: <HeroSliderIcon1 />,
     },
@@ -121,7 +120,7 @@ const HvacHero = () => {
       title: "24% faster",
       icon: <SliderIcon1 />,
       heading: "Job turnaround time",
-      percentage: 24,
+      percentage: "24",
       description: "The Sholaz app is",
       backgroundIcon: <HeroSliderIcon2 />,
     },
@@ -163,10 +162,7 @@ const HvacHero = () => {
                 </span>
                 <span className="flex md:hidden">Download App</span>
               </button>
-              <button className="font-myriad text-secondary flex cursor-pointer items-center gap-1.5 text-sm">
-                <CheckIcon />
-                No Credit Card Required
-              </button>
+              <CardRequiredButton />
             </div>
           </div>
         </div>
@@ -174,18 +170,6 @@ const HvacHero = () => {
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
-          {/* <VideoOptimizer
-            highResUrl="/video/hero-video.mp4"
-            lowResUrl="/video/hero-video.mp4"
-          /> */}
-          {/* <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="3xl:object-cover relative -z-20 h-full w-full object-cover lg:object-right"
-            src="/video/hero-video.mp4"
-          ></video> */}
           <Image
             alt=""
             src={"/images/webp/hvac-hero.webp"}
@@ -208,7 +192,6 @@ const HvacHero = () => {
             src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"
           />
-          {/* <div className="bg-kuroiBlack absolute bottom-[-3px] z-[1000] hidden h-[10px] w-full lg:block"></div> */}
         </div>
       </div>
       <div className="pointer-events-none relative left-0 flex h-12 w-full sm:h-20 md:translate-y-1 lg:h-[150px]">

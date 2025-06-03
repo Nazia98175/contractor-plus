@@ -13,7 +13,7 @@ interface Feature {
   icon: JSX.Element;
   backgroundIcon: JSX.Element;
   heading: string;
-  percentage: number;
+  percentage: string;
   description: string;
 }
 

@@ -5,6 +5,7 @@ import TextAnimation from "../common/TextAnimation";
 import UseFaqToggle from "../hook/UseFaqToggle";
 import HvacFaqList from "./HvacFaqList";
 import Image from "next/image";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 type FaqItemType = {
   question: string;
@@ -57,11 +58,11 @@ const HvacFaq: React.FC<Props> = () => {
             Frequently asked questions
           </p>
         </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.2}>
-          <h3 className="section-heading text-center text-white">
+        <PrimaryAnimatedText delay={3000}>
+          <h3 className="section-heading faq-heading-text text-center">
             What HVAC contractors want to know{" "}
           </h3>
-        </TextAnimation>
+        </PrimaryAnimatedText>
         <div className="mx-auto max-w-[1190px] pt-[27px]">
           {faqitems.map((item: FaqItemType, index: number) => (
             <HvacFaqList

@@ -5,6 +5,7 @@ import AwardsTagsImg from "../common/AwardsTagsImg";
 import { makeOperationList } from "../common/Helper";
 import { ArrowIcon } from "../common/Icons";
 import AwardBadgesBackground from "./AwardBadgesBackground";
+import CardRequiredButton from "../common/CardRequiredButton";
 
 export default function AwardBadges() {
   const { ref, inView } = useInView({
@@ -43,16 +44,15 @@ export default function AwardBadges() {
           </article>
         ))}
       </div>
-      <div className="mt-10 flex flex-col items-center px-2 text-center">
+      <div className="mt-10 flex flex-col items-center gap-2 px-2 text-center">
         <button className="bg-red-linear primary-btn h-10">
           <span className="flex">Get started FREE</span>{" "}
           <span>
             <ArrowIcon fill="#fff" />
           </span>
         </button>
-        <p className="text-winterWay mt-2 text-sm font-semibold">
-          No Credit Card Required
-        </p>
+
+        <CardRequiredButton textColor="text-winterWay mt-2" />
       </div>
       <AwardsTagsImg />
     </section>

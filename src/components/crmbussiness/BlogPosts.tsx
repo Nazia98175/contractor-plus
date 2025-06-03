@@ -106,7 +106,7 @@ const BlogPosts: React.FC<Props> = ({
             {blogData.map((blog) => (
               <article
                 key={blog.id}
-                className="bg-blackRussian relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 sm:flex-row"
+                className={`${bgClass} bg-blackRussian relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 sm:flex-row`}
               >
                 <Image
                   src={blog.image}
@@ -119,7 +119,9 @@ const BlogPosts: React.FC<Props> = ({
                   <p className="font-jakarta text-secondary text-[10px] font-medium">
                     {blog.category} | {blog.date}
                   </p>
-                  <h3 className="font-jakarta text-base font-medium text-white">
+                  <h3
+                    className={`${textClass} font-jakarta text-base font-medium text-white`}
+                  >
                     {blog.title}
                   </h3>
                   <p className="text-wallStreet max-w-[300px] truncate pt-1 text-xs sm:max-w-[240px]">

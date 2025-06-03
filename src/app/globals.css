@@ -265,11 +265,11 @@ html {
   align-items: center;
 }
 .blog-post .swiper-pagination-bullet {
-  background: white !important;
+  background: #e3e6f0 !important;
   opacity: 1 !important;
 }
 .swiper-pagination-bullet {
-  background: #e3e6f0;
+  background: #e3e6f0 !important;
 }
 .blog-post .swiper-pagination-fraction,
 .swiper-pagination-custom,
@@ -1306,7 +1306,7 @@ html {
 }
 
 .custom-active-slider .swiper-slide {
-  opacity: 0.5;
+  opacity: 0.3;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1332,5 +1332,18 @@ html {
   isolation: isolate;
 }
 .hvac-faq-bg {
-  background: linear-gradient(270.49deg, #f3f3f300 33.34%, #ee1e2536 138.08%);
+  background: linear-gradient(270.49deg, #f3f3f300 33.34%, #ee1e2516 138.08%);
+}
+.faq-heading-text {
+  background:
+    linear-gradient(
+      270.38deg,
+      rgba(0, 0, 0, 0) 35.56%,
+      rgba(238, 30, 37, 0.4) 99.98%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

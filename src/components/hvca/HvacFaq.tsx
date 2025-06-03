@@ -6,6 +6,7 @@ import UseFaqToggle from "../hook/UseFaqToggle";
 import HvacFaqList from "./HvacFaqList";
 import Image from "next/image";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import CloudsAnimation from "../common/CloudsAnimation";
 
 type FaqItemType = {
   question: string;
@@ -75,33 +76,7 @@ const HvacFaq: React.FC<Props> = () => {
         </div>
       </div>
       <div className="pointer-events-none relative left-0 flex h-12 w-full translate-y-1 sm:h-20 lg:h-[150px]">
-        <div className="animate-cloud-layer-1 absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 1"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-        <div className="animate-cloud-layer-2 absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 2"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-        <div className="absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 2"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
+        <CloudsAnimation />
       </div>
     </section>
   );

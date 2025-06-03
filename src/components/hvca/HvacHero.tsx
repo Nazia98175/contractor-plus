@@ -128,7 +128,7 @@ const HvacHero = () => {
   ];
 
   return (
-    <section className="bg-kuroiBlack relative overflow-hidden">
+    <section className="bg-kuroiBlack relative">
       <div className="relative overflow-hidden">
         <Image
           width={769}
@@ -138,7 +138,7 @@ const HvacHero = () => {
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-9 sm:pt-[269px] md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
           <HvacGlowHeroDesktopIcon />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
@@ -195,35 +195,6 @@ const HvacHero = () => {
           />
         </div>
       </div>
-      {/* <div className="pointer-events-none relative left-0 flex h-12 w-full sm:h-20 md:translate-y-1 lg:h-[150px]">
-        <div className="animate-cloud-layer-1 absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 1"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-        <div className="animate-cloud-layer-2 absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 2"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-        <div className="absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 2"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-      </div> */}
       <CloudsAnimation />
     </section>
   );

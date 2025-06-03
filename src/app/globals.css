@@ -40,6 +40,10 @@
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
+  --breakpoint-2500: 2500px;
+  --breakpoint-3500: 3500px;
+  --breakpoint-4500: 4500px;
+  --breakpoint-5500: 5500px;
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,
@@ -518,23 +522,7 @@ html {
   background-clip: text;
   text-fill-color: transparent;
 }
-.cc {
-  position: relative;
-}
-.cc::before {
-  position: absolute;
-  top: 0px;
-  left: -120%;
-  width: 340%;
-  height: 105%;
-  content: "";
-  background-position: center;
-  background-image: url("/images/webp/hero-bg-video.webp");
-  background-size: 100% 160%;
-  background-repeat: no-repeat;
-  z-index: 10;
-  color: transparent;
-}
+
 .switch-tool-card {
   border: 0.5px solid rgba(255, 255, 255, 0.15);
   background:
@@ -1349,20 +1337,16 @@ html {
 }
 
 .clouds-1 {
-  background-image: url("/images/png/pngwing.png");
   animation: clouds-loop-1 300s infinite linear;
 }
 .clouds-2 {
-  background-image: url("/images/png/pngwing-2.png");
   animation: clouds-loop-2 160s infinite linear;
 }
 .clouds-3 {
-  background-image: url("/images/png/pngwing-3.png");
   animation: clouds-loop-3 190s infinite linear;
 }
 .clouds-4 {
-  background-image: url("/images/webp/claud.webp");
-  animation: clouds-loop-3 250s infinite linear;
+  animation: clouds-loop-3 200s infinite linear;
 }
 
 @keyframes clouds-loop-1 {
@@ -1372,7 +1356,7 @@ html {
 }
 @keyframes clouds-loop-2 {
   to {
-    background-position: -1000px 60;
+    background-position: -1800px 60;
   }
 }
 @keyframes clouds-loop-3 {
@@ -1387,47 +1371,5 @@ html {
 }
 
 .clouds {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
-  opacity: 1;
-  pointer-events: none;
-  position: absolute;
-  overflow: hidden;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-}
-
-.clouds-1 {
-  background-repeat: repeat-x;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 200px;
-}
-.clouds-2 {
-  background-repeat: repeat-x;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 180px;
-}
-
-.clouds-3 {
-  background-repeat: repeat-x;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 200px;
-}
-.clouds-4 {
-  background-repeat: repeat-x;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 120px;
+  /* filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1); */
 }

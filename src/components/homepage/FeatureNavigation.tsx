@@ -49,7 +49,7 @@ const FeatureNavigation = ({
       </div>
 
       <div className="font-jakarta no-scrollbar relative z-40 flex w-full flex-row justify-between gap-[22px] overflow-x-auto bg-white py-2 whitespace-nowrap lg:flex-col lg:overflow-visible lg:py-0">
-        {features.map((feature, index) => (
+        {features?.map((feature, index) => (
           <button
             ref={(el) => {
               buttonRefs.current[index] = el;

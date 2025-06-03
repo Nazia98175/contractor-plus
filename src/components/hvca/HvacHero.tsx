@@ -195,7 +195,10 @@ const HvacHero = () => {
           />
         </div>
       </div>
-      <CloudsAnimation />
+      <div>
+        <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
+        <CloudsAnimation />
+      </div>
     </section>
   );
 };

@@ -2,8 +2,11 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
+interface Props {
+  headerSubList: any;
+}
 
-const IndustriesDropdown = () => {
+const IndustriesDropdown:React.FC<Props> = ({headerSubList}) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
   const t = useTranslations("industries");
 
@@ -64,11 +67,11 @@ const IndustriesDropdown = () => {
     { image: "/images/webp/circular-slide-1.webp" },
   ];
   const fallbackImage = "/images/webp/circular-slide-1.webp";
-
+console.log(headerSubList , "wwwwww")
   return (
     <div className="relative z-[9999] flex grow gap-6 overflow-hidden">
       <div className="no-scrollbar grid w-full grid-cols-4 gap-3 overflow-auto">
-        {industriesLinks.map((link, index) => (
+        {headerSubList?.[0]?.links?.map((link:any, index:any) => (
           <button
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -76,7 +79,7 @@ const IndustriesDropdown = () => {
             className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
           >
             <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start group-hover:!text-white">
-              {link.label}
+              {link.linkTxt}
             </span>
           </button>
         ))}

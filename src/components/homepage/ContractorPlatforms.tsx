@@ -6,6 +6,7 @@ import { contractPlatforms } from "../common/Helper";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
+  console.log(contractPlatformsData , "contractor")
   return (
     <section className="relative z-20">
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">

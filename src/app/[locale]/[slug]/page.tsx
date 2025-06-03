@@ -47,27 +47,27 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section3][populate]=cardsDetail",
+      "&populate[switchingTool][populate]=cardsDetail",
     ),
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section4][populate][cardsDetail][populate]=content",
+      "&populate[fieldService][populate][cardsDetail][populate]=content",
     ),
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section5][populate][cards]=*",
+      "&populate[trackProperties][populate][cardDetails][populate]=*",
     ),
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section6][populate][tablerow]=true&populate[section6][populate][tableList]=true",
+      "&populate[comparison][populate][centerLogo]=true&populate[comparison][populate][features]=true",
     ),
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[section7][populate][cards]=*",
+      "&populate[teamsUsingContractor][populate][cards]=*",
     ),
     getCrmPage(
       useParams?.slug,
@@ -85,38 +85,40 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <div className="black-bg">
             <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
             <TrustedService reviews={reviews} />
-            <SwitchingTool switchingTool={section3?.data?.[0]?.section3} />
+            <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
           </div>
           <FieldService
             slug={useParams?.slug}
-            fieldService={section4?.data?.[0]?.section4}
+            fieldService={section4?.data?.[0]?.fieldService}
           />
+
+         
           <div className="bg-white">
             {useParams?.slug === "crm" && (
               <TrackProperties
                 ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-                trackProperties={section5?.data?.[0]?.section5}
+                trackProperties={section5?.data?.[0]?.trackProperties}
               />
             )}
 
-            <LikeYouDoContacts />
-            <HowContractorWork />
+           <LikeYouDoContacts data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]} />
+            <HowContractorWork data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]} />
             <KindAdorable
               slug={useParams?.slug}
-              kindAdorable={section6?.data?.[0]?.section6}
+              kindAdorable={section6?.data?.[0]?.comparison}
             />
 
-            <TeamsUsingContractor data={section7?.data?.[0]?.section7} />
+            <TeamsUsingContractor data={section7?.data?.[0]?.teamsUsingContractor} />
             <ThousandsReviews
-              data={crmPageContent?.data?.[0]?.section8}
+              data={crmPageContent?.data?.[0]?.thousandReviews}
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
-          </div>
+          </div> 
           <div className="relative w-full">
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-              data={crmPageContent?.data?.[0]?.section9}
+              data={crmPageContent?.data?.[0]?.crmService}
             />
             {/* Cloud Layer 1 */}
           </div>
@@ -124,13 +126,12 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <TrustBar platforms={platforms} />
           <Faq faq={faq?.data?.[0]?.faqs} />
           <BlogPosts
-            data={crmPageContent?.data?.[0]?.section11}
+            data={crmPageContent?.data?.[0]?.blogs}
             blogs={blogs}
           />
         </>
       )}
 
-      {/* <Footer /> */}
     </main>
   );
 };

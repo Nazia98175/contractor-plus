@@ -21,7 +21,7 @@ export const getHeader = async (
   locale: string,
   query: string
 ): Promise<HomePageResponse | null> => {
-  const url = `navbar?locale=${locale}${query}`;
+  const url = `header?locale=${locale}${query}`;
   try {
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;

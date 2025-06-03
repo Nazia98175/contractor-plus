@@ -66,7 +66,11 @@ export type CompareFeature = {
   name: string;
   eContractorHas: boolean;
   othersHave: boolean;
+  ourProduct: string;
+  featureName: string;
 };
+
+
 
 // types/navigation.ts
 

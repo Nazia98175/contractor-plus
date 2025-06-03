@@ -9,19 +9,22 @@ import {
 import TextAnimation from "../common/TextAnimation";
 import dynamic from "next/dynamic";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), { ssr: false })
+import {getMediaUrl} from '@/utils/getMediaUrl'
 type HeroProps = {
   homePageContent: any;
 };
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
-  const t = useTranslations("hero");
+  // const t = useTranslations("hero");
   const {
     hero_title,
     hero_description,
     cta_button_text,
     cta_button_link,
     ncc_text,
+    hero_image,
+    mobileBtn
   } = homePageContent ?? {};
-
+console.log(hero_image?.url ,"urlll")
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
@@ -48,7 +51,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
           <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
             <button className="bg-red-linear primary-btn h-10">
               <span className="hidden md:flex">{cta_button_text}</span>
-              <span className="flex md:hidden">{cta_button_text}</span>
+              <span className="flex md:hidden">{mobileBtn}</span>
             </button>
             <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
               <CheckIcon />
@@ -58,7 +61,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-        <VideoOptimizer highResUrl="/video/hero-video.mp4" lowResUrl="/video/hero-video.mp4" />
+        <VideoOptimizer highResUrl={'/video/hero-video.mp4'} lowResUrl="/video/hero-video.mp4" />
         {/* <video
           autoPlay
           muted

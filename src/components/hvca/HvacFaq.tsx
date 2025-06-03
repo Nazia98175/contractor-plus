@@ -77,7 +77,7 @@ const HvacFaq: React.FC<Props> = () => {
           </div>
         </div>
       </section>{" "}
-      <div className="h-[160px] w-full">
+      <div className="mt-8 h-[160px]">
         <CloudsAnimation />
         <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
       </div>

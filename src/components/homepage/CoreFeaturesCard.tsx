@@ -6,14 +6,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
-import { featureContents } from "../common/Helper";
+import { featureContentss as featureContents } from "../common/Helper";
 import { useGSAP } from "@gsap/react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const CoreFeaturesCard = () => {
+interface FeatureItem {
+  id: number;
+  title: string;
+  cardQuote: string | null;
+  userName: string | null;
+  cardImg: any | null;
+  content: {
+    id: number;
+    title: string;
+    desc: string;
+  }[];
+}
+interface Props {
+  featuresList: FeatureItem[]
+}
+
+const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [progressValue, setProgressValue] = useState(0);
 
@@ -198,6 +214,8 @@ const CoreFeaturesCard = () => {
       cleanup();
     };
   }, [features.length, calculateButtonPositions, isMobile]);
+  const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title); // all except last
+const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   return (
     <section
@@ -214,8 +232,9 @@ const CoreFeaturesCard = () => {
         style={{ willChange: isMobile ? "transform" : "auto" }}
       >
         <FeatureNavigation
-          features={features}
-          featureBtn={featureBtn}
+          // features={features}
+          features={titles}
+          featureBtn={[featureBtnC]}
           activeFeature={activeFeature}
           onFeatureClick={(index) => {
             setActiveFeature(index);
@@ -251,7 +270,8 @@ const CoreFeaturesCard = () => {
 
       <div className="w-full space-y-4 overflow-visible lg:max-w-[639px] lg:space-y-8">
         <FeatureContent
-          featureContents={featureContents}
+          // featureContents={featureContents}
+          featureContents={featuresList}
           contentRefs={contentRefs}
         />
       </div>

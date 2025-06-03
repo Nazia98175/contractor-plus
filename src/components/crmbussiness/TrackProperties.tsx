@@ -67,13 +67,13 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
           </p>
         </TextAnimation>
 
-        <div className="mt-3.5 w-full sm:mt-9">
+        {/* <div className="mt-3.5 w-full sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
             {trackProperties?.cards.map((text: any, index: any) => (
               <FeatureItem key={index} text={text?.text} />
             ))}
           </Marquee>
-        </div>
+        </div> */}
       </div>
     </section>
   );

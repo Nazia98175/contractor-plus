@@ -8,8 +8,10 @@ import FeaturesDropdown from "./FeaturesDropdown";
 import IndustriesDropdown from "./IndustriesDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
 import WhyContractorDropdown from "./WhyContractorDropdown";
-
-const HeaderLiItems = () => {
+interface Props{
+  headerList: any;
+}
+const HeaderLiItems:React.FC<Props> = ({headerList}) => {
   const t = useTranslations("menu");
 
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -20,11 +22,11 @@ const HeaderLiItems = () => {
 
   const menuItems = useMemo(
     () => [
-      { id: "whycontractordesktop", label: t("whycontractordesktop") },
-      { id: "features", label: t("features") },
-      { id: "industries", label: t("industries") },
-      { id: "pricing", label: t("pricing"), link: "/" },
-      { id: "resources", label: t("resources") },
+      { id: "whycontractordesktop", label: "whycontractordesktop" },
+      { id: "features", label: ("features") },
+      { id: "industries", label: ("industries") },
+      { id: "pricing", label: ("pricing"), link: "/" },
+      { id: "resources", label: ("resources") },
     ],
     [t],
   );
@@ -122,31 +124,31 @@ const HeaderLiItems = () => {
   return (
     <div onMouseLeave={handleMouseLeave}>
       <div className="flex w-full items-center gap-2">
-        {menuItems.map((item, index) =>
-          item.link ? (
+        {headerList.map((item:any, index:any) =>
+          item?.headerSubList?.length === 0 ? (
             <Link
               key={index}
-              href={item.link}
+              href={"#"}
               onMouseEnter={handleMouseLeave}
               className="header-li hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
             >
-              {item.label}
+              {item?.mainTitle}
             </Link>
           ) : (
             <button
               key={index}
-              onMouseEnter={() => handleMouseEnter(item.id)}
+              onMouseEnter={() => handleMouseEnter(menuItems?.[index]?.id)}
               className={`header-li flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px] ${
-                activeMenu === item.id
+                activeMenu === menuItems?.[index]?.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver"
               }`}
             >
-              {item.label}
+              {item?.mainTitle}
               <ChevronDown
                 size={16}
                 className={`transition-transform ${
-                  activeMenu === item.id ? "rotate-180" : ""
+                  activeMenu === menuItems?.[index]?.id ? "rotate-180" : ""
                 }`}
               />
             </button>
@@ -175,10 +177,10 @@ const HeaderLiItems = () => {
         onWheel={(e) => e.stopPropagation()}
       >
         <div ref={contentRef} className="flex grow flex-col overflow-hidden">
-          {activeMenu === "whycontractordesktop" && <WhyContractorDropdown />}
-          {activeMenu === "features" && <FeaturesDropdown />}
-          {activeMenu === "industries" && <IndustriesDropdown />}
-          {activeMenu === "resources" && <ResourcesDropdown />}
+          {activeMenu === "whycontractordesktop" && <WhyContractorDropdown headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList} />}
+          {activeMenu === "features" && <FeaturesDropdown isVisible headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList} />}
+          {activeMenu === "industries" && <IndustriesDropdown headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList}/>}
+          {activeMenu === "resources" && <ResourcesDropdown headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList}/>}
         </div>
       </div>
     </div>

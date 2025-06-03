@@ -3,7 +3,17 @@ import { useTranslations } from "next-intl";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import CoreFeaturesCard from "./CoreFeaturesCard";
 
-const CoreFeatures = () => {
+interface CoreFeaturesData {
+  title: string;
+  sub_title: string;
+  cardsDetail?: any; // Replace `any` with actual card structure if known
+}
+
+interface CoreFeaturesProps {
+  coreFeatures: CoreFeaturesData;
+}
+
+const CoreFeatures: React.FC<CoreFeaturesProps> = ({coreFeatures}) => {
   const t = useTranslations("corefeature");
 
   return (
@@ -13,13 +23,15 @@ const CoreFeatures = () => {
           className="sub-heading text-lightBlack w-full font-semibold md:w-fit"
           delay={3000}
         >
-          Contractor+ operates like your business really runs
+          {coreFeatures?.title}
+          {/* Contractor+ operates like your business really runs */}
         </PrimaryAnimatedText>
         <PrimaryAnimatedText className="mt-3 leading-[130%]" delay={4000}>
-          When the tools actually work together, you move like a company twice
-          your size.
+          {coreFeatures?.sub_title}
+          {/* When the tools actually work together, you move like a company twice
+          your size. */}
         </PrimaryAnimatedText>
-        <CoreFeaturesCard />
+        <CoreFeaturesCard featuresList={coreFeatures?.cardsDetail} />
       </div>
     </section>
   );

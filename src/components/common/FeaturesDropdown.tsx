@@ -31,11 +31,15 @@ import {
   TrophyIcon,
   WebsiteIncludedIcon,
 } from "./Icons";
+interface Props {
+  headerSubList: any;
+  isVisible: boolean;
+}
 
-const FeaturesDropdown = ({ isVisible = true }) => {
+const FeaturesDropdown:React.FC<Props> = ({ isVisible = true , headerSubList }) => {
   const t = useTranslations("features");
 
-  const featureIcons = {
+  const featureIcons: Record<string, React.ReactNode> = {
     crm: <ServiceIcon />,
     estimates: <EstimatesIcon />,
     mileage: <TrackingIcon />,
@@ -144,33 +148,33 @@ const FeaturesDropdown = ({ isVisible = true }) => {
   return (
     <div className="flex grow flex-col overflow-hidden">
       <div className="no-scrollbar grid grid-cols-3 overflow-auto">
-        {sections.map((section) => (
-          <div key={section.key}>
+        {headerSubList?.slice(0 , headerSubList?.length-1).map((section:any) => (
+          <div key={section.id}>
             <i className="text-lightBlack mb-2.5 flex h-[15px] text-sm font-semibold">
-              {t(section.headingKey)}
+              {section?.title}
             </i>
             <ul className="w-full space-y-3 space-x-6 pb-8">
-              {section.items.map((featureId) => (
+              {section?.links.map((featureId:any) => (
                 <li
                   className="group hover:bg-superSilver p-[6px] duration-200 ease-linear"
-                  key={featureId}
+                  key={featureId?.id}
                 >
-                  <Link href="/" className="group">
+                  <Link href={featureId?.linkUrl ?? "/"} className="group">
                     <div className="flex items-start gap-2.5">
                       <span>
-                        {featureIcons[featureId as keyof typeof featureIcons]}
+                        {featureIcons?.[featureId.icon]}
                       </span>
                       <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">
-                        {t(`${section.key}.${featureId}.label`)}
-                        {newFeatures[featureId as keyof typeof newFeatures] && (
+                        {featureId?.linkTxt}
+                        {featureId?.new && (
                           <div className="border-dancingJewel bg-softMint font-myriad text-dancingJewel flex h-5 items-center justify-center rounded-full border px-2 text-xs font-semibold tracking-[0.4px]">
-                            {t("newBadge")}
+                            {'New'}
                           </div>
                         )}
                       </div>
                     </div>
                     <p className="font-inter text-lightBlack text-sm">
-                      {t(`${section.key}.${featureId}.description`)}
+                      {featureId?.sub_title}
                     </p>
                   </Link>
                 </li>
@@ -181,16 +185,16 @@ const FeaturesDropdown = ({ isVisible = true }) => {
       </div>
       <div className="font-inter bg-doctor2 sticky bottom-0 left-0 flex w-full items-center justify-between gap-6">
         <Link className="all-features-button group" href="/">
-          {t("seeAllFeatures")}
+          {headerSubList[headerSubList?.length-1]?.links?.[0]?.linkTxt}
           <ArrowIcon />
         </Link>
         <div className="flex items-center gap-10">
           <Link className="all-features-button group" href="/">
-            {t("integrations")}
+          {headerSubList[headerSubList?.length-1]?.links?.[1]?.linkTxt}
             <ArrowIcon />
           </Link>
           <Link className="all-features-button group" href="/">
-            {t("productUpdates")}
+            {headerSubList[headerSubList?.length-1]?.links?.[2]?.linkTxt}
             <ArrowIcon />
           </Link>
         </div>

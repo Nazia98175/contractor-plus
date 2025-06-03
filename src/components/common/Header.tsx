@@ -8,11 +8,13 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface HeaderProps {
-  btnText?: string;
+  header: any;
 }
-const Header: React.FC<HeaderProps> = ({ btnText }) => {
+const Header: React.FC<HeaderProps> = ({ header}) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  console.log(header , "Headerrr")
 
   // Add scroll event listener
   useEffect(() => {
@@ -52,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ btnText }) => {
             <LogoIcon />
           </Link>
           <div className="hidden grow lg:flex">
-            <HeaderLiItems />
+            <HeaderLiItems headerList={header?.headerMain}  />
           </div>
           <div className="3xl:gap-3 flex w-fit items-center gap-4">
             <div className="flex items-center gap-1 xl:gap-3">
@@ -61,14 +63,14 @@ const Header: React.FC<HeaderProps> = ({ btnText }) => {
                 className="font-inter text-doctor2 hover:text-romanRed text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300 xl:text-sm"
                 href={"tel:(855) 392-8803"}
               >
-                (855) 392-8803
+                {header?.contact}
               </Link>
             </div>
             <button className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm">
-              {t("login")}
+              {header?.loginText}
             </button>
             <button className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex">
-              {btnText || t("signup")}
+              { header?.btnTxt?.btnTxt}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>
               <HamburgerIcon />

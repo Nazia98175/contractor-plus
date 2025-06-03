@@ -75,7 +75,7 @@ const HvacFaq: React.FC<Props> = () => {
           ))}
         </div>
       </div>
-      <div className="pointer-events-none relative left-0 flex h-12 w-full translate-y-1 sm:h-20 lg:h-[150px]">
+      <div className="left-0 h-[160px] w-full">
         <CloudsAnimation />
       </div>
     </section>

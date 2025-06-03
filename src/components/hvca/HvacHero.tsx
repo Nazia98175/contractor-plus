@@ -128,7 +128,7 @@ const HvacHero = () => {
   ];
 
   return (
-    <section className="bg-kuroiBlack relative">
+    <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative overflow-hidden">
         <Image
           width={769}

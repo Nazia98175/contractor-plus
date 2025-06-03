@@ -43,7 +43,7 @@
   --breakpoint-2500: 2500px;
   --breakpoint-3500: 3500px;
   --breakpoint-4500: 4500px;
-  --breakpoint-5500: 5500px;
+  --breakpoint-3500: 5500px;
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,
@@ -1356,7 +1356,7 @@ html {
 }
 @keyframes clouds-loop-2 {
   to {
-    background-position: -1800px 60;
+    background-position: -1800px 20;
   }
 }
 @keyframes clouds-loop-3 {
@@ -1366,10 +1366,10 @@ html {
 }
 @keyframes clouds-loop-4 {
   to {
-    background-position: -1979px 0;
+    background-position: -2000px 0;
   }
 }
 
 .clouds {
-  /* filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1); */
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
 }

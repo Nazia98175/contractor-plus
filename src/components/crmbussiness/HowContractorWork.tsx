@@ -12,7 +12,6 @@ const HowContractorWork = () => {
   ];
   return (
     <>
-      {" "}
       <section className="relative z-10 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 py-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
         {/* Left: Image */}
         <div className="flex w-full max-w-[480px] items-center justify-center">

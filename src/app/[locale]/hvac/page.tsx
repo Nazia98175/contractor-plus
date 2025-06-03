@@ -1,15 +1,11 @@
-import Header from "@/components/common/Header";
-import { blackPlatforms, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import TrustBar from "@/components/homepage/TrustBar";
-import Whatever from "@/components/homepage/Whatever";
 import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
 import HvacFaq from "@/components/hvca/HvacFaq";
 import HvacHero from "@/components/hvca/HvacHero";
 import HvacReview from "@/components/hvca/HvacReview";
 import HvacSoftware from "@/components/hvca/HvacSoftware";
-import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
 
@@ -41,7 +37,7 @@ const page = () => {
       <TrustBarHvca platforms={platforms} />
       {/* <Whatever whateverOperation={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq faq={[]} />
-      <BlogPosts className="relative z-20 bg-white" />
+      <BlogPosts className="relative z-20 bg-white" variant="secondary" />
     </>
   );
 };

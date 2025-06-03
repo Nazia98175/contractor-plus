@@ -5,12 +5,21 @@ import { blogData } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
 
 interface Props {
-  data: any;
-  blogs: any;
-  className: string;
+  data?: any;
+  blogs?: any;
+  className?: string;
+  variant?: "primary" | "secondary";
 }
 
-const BlogPosts: React.FC<Props> = ({ data, blogs, className }) => {
+const BlogPosts: React.FC<Props> = ({
+  data,
+  blogs,
+  className,
+  variant = "primary",
+}) => {
+  const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
+  const textClass = variant === "primary" ? "text-white" : "text-winterWay";
+
   return (
     <section className={`px-2 pt-4 pb-12 sm:px-4 lg:px-20 ${className || ""}`}>
       <div className="mx-auto w-full max-w-[1158px]">
@@ -35,7 +44,7 @@ const BlogPosts: React.FC<Props> = ({ data, blogs, className }) => {
             {blogData.map((blog) => (
               <article
                 key={blog.id}
-                className="card-shine bg-blackRussian relative z-20 flex w-full cursor-pointer flex-col items-start gap-4 rounded-xl p-2 sm:flex-row"
+                className={`card-shine ${bgClass} relative z-20 flex w-full cursor-pointer flex-col items-start gap-4 overflow-hidden rounded-xl p-2 sm:flex-row`}
               >
                 <Image
                   src={blog.image}
@@ -48,7 +57,9 @@ const BlogPosts: React.FC<Props> = ({ data, blogs, className }) => {
                   <p className="font-jakarta text-secondary text-[10px] font-medium">
                     {blog.category} | {blog.date}
                   </p>
-                  <h3 className="font-jakarta text-base font-medium text-white">
+                  <h3
+                    className={`font-jakarta text-base font-medium ${textClass}`}
+                  >
                     {blog.title}
                   </h3>
                   <p className="text-wallStreet max-w-[240px] truncate pt-1 text-xs">
@@ -60,7 +71,7 @@ const BlogPosts: React.FC<Props> = ({ data, blogs, className }) => {
           </div>
 
           {/* Right column (Featured Blog) */}
-          <div className="card-shine relative flex w-full cursor-pointer flex-col justify-end pb-3 sm:pb-6 xl:max-w-[700px]">
+          <div className="card-shine relative flex w-full cursor-pointer flex-col justify-end overflow-hidden pb-3 sm:pb-6 xl:max-w-[700px]">
             <Image
               width={684}
               height={361}

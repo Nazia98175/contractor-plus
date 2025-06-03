@@ -51,34 +51,37 @@ const HvacFaq: React.FC<Props> = () => {
     },
   ];
   return (
-    <section className="relative z-20 overflow-hidden">
-      <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
-      <div className="w-full px-2 py-10">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
-          <p className="paragraph-text text-secondary pt-4 text-center">
-            Frequently asked questions
-          </p>
-        </TextAnimation>
-        <PrimaryAnimatedText delay={3000}>
-          <h3 className="section-heading faq-heading-text text-center">
-            What HVAC contractors want to know{" "}
-          </h3>
-        </PrimaryAnimatedText>
-        <div className="mx-auto max-w-[1190px] pt-[27px]">
-          {faqitems.map((item: FaqItemType, index: number) => (
-            <HvacFaqList
-              key={index}
-              data={item}
-              isOpen={openIndex === index}
-              onToggle={() => toggleFaq(index)}
-            />
-          ))}
+    <div className="relative overflow-hidden">
+      <section className="relative z-20 overflow-hidden">
+        <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
+        <div className="w-full px-2 py-10">
+          <TextAnimation animateOnScroll={true} delay={0.2}>
+            <p className="paragraph-text text-secondary pt-4 text-center">
+              Frequently asked questions
+            </p>
+          </TextAnimation>
+          <PrimaryAnimatedText delay={3000}>
+            <h3 className="section-heading faq-heading-text text-center">
+              What HVAC contractors want to know{" "}
+            </h3>
+          </PrimaryAnimatedText>
+          <div className="mx-auto max-w-[1190px] pt-[27px]">
+            {faqitems.map((item: FaqItemType, index: number) => (
+              <HvacFaqList
+                key={index}
+                data={item}
+                isOpen={openIndex === index}
+                onToggle={() => toggleFaq(index)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="left-0 h-[160px] w-full">
+      </section>{" "}
+      <div className="h-[160px] w-full">
         <CloudsAnimation />
+        <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
       </div>
-    </section>
+    </div>
   );
 };
 

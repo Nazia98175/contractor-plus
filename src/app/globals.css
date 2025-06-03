@@ -1338,15 +1338,55 @@ html {
 
 .clouds-1 {
   animation: clouds-loop-1 300s infinite linear;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .clouds-2 {
   animation: clouds-loop-2 160s infinite linear;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .clouds-3 {
   animation: clouds-loop-3 190s infinite linear;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .clouds-4 {
   animation: clouds-loop-3 200s infinite linear;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 @keyframes clouds-loop-1 {
@@ -1371,5 +1411,6 @@ html {
 }
 
 .clouds {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  /* mix-blend-mode: multiply; */
 }

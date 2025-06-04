@@ -92,6 +92,7 @@
     0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c2:
     0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-c3: 18px 40px 150px rgba(0, 0, 0, 0.25);
 }
 @font-face {
   font-family: "Myriad Pro";
@@ -1325,7 +1326,13 @@ html {
   isolation: isolate;
 }
 .hvac-faq-bg {
-  background: linear-gradient(270.49deg, #f3f3f300 33.34%, #ee1e2516 138.08%);
+  background: #ed6b6b;
+  background: linear-gradient(
+    89deg,
+    #ed6b6b3b 0%,
+    #a89d9d05 41%,
+    #1b191900 100%
+  );
 }
 .faq-heading-text {
   background:
@@ -1429,4 +1436,7 @@ html {
 } */
 button {
   cursor: pointer;
+}
+.img-leinerar {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 9.91%, #fff 88.87%);
 }

@@ -58,16 +58,19 @@ const HvacFaq: React.FC<Props> = () => {
         <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
         <CommonFaqLayout
           className="w-full px-2 py-10"
-          heading="Frequently asked questions"
-          description="What HVAC contractors want to know"
+          heading="What HVAC contractors want to know"
+          description="Frequently asked questions"
           faqitems={faqitems}
           openIndex={openIndex}
           onToggle={toggleFaq}
           theme="hvac"
         />
       </section>
-      <div className="mt-8 h-[160px]">
-        <CloudsAnimation />
+      <div className="mt-8 md:h-[160px]">
+        <CloudsAnimation
+          cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+          cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+        />
         <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
       </div>
     </div>

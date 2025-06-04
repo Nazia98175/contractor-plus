@@ -66,8 +66,11 @@ const HvacFaq: React.FC<Props> = () => {
           theme="hvac"
         />
       </section>
-      <div className="mt-8 h-[160px]">
-        <CloudsAnimation />
+      <div className="mt-8 md:h-[160px]">
+        <CloudsAnimation
+          cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+          cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+        />
         <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
       </div>
     </div>

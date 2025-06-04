@@ -124,7 +124,7 @@ const HeaderLiItems:React.FC<Props> = ({headerList}) => {
   return (
     <div onMouseLeave={handleMouseLeave}>
       <div className="flex w-full items-center gap-2">
-        {headerList.map((item:any, index:any) =>
+        {headerList?.map((item:any, index:any) =>
           item?.headerSubList?.length === 0 ? (
             <Link
               key={index}

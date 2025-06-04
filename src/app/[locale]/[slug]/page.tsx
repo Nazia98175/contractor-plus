@@ -1,5 +1,4 @@
-import Footer from "@/components/common/Footer";
-import Header from "@/components/common/Header";
+
 import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
@@ -79,7 +78,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
   return (
     <main>
-      <Header />
+   
       {crmPageContent?.data?.length > 0 && (
         <>
           <div className="black-bg">

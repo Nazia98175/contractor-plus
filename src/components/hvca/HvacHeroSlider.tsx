@@ -13,7 +13,7 @@ interface Feature {
   icon: JSX.Element;
   backgroundIcon: JSX.Element;
   heading: string;
-  percentage: number;
+  percentage: string;
   description: string;
 }
 
@@ -24,12 +24,14 @@ interface HvacHeroSliderProps {
 const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
   return (
     <Swiper
+      effect="fade"
       direction="vertical"
       modules={[Autoplay]}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
       spaceBetween={16}
       slidesPerView={3}
       centeredSlides={true}
+      speed={700}
       loop={true}
       className="custom-active-slider relative"
     >

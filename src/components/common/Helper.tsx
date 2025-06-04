@@ -41,39 +41,24 @@ import { Platform, Review } from "@/types";
 
 export const awards = [
   {
-    src: "/images/webp/software-advice.webp",
+    src: "/images/png/software-advice.png",
     alt: "Software Advice Front Runners 2024",
-    width: 121,
-    height: 123,
-    className: "h-[100px] md:h-fit object-contain",
   },
   {
     src: "/images/webp/leader.webp",
     alt: "G2 Leader Winter 2025",
-    width: 121,
-    height: 123,
-    className: "h-[100px] md:mt-16 md:h-fit object-contain",
   },
   {
     src: "/images/webp/get-app.webp",
     alt: "GetApp Best Functionality 2025",
-    width: 137,
-    height: 131,
-    className: "h-[100px] md:mt-20 md:h-fit object-contain",
   },
   {
     src: "/images/svg/capterra.svg",
     alt: "Capterra Best Value 2025",
-    width: 137,
-    height: 104,
-    className: "h-[100px] md:mt-16 md:h-fit object-contain",
   },
   {
     src: "/images/webp/best-value.webp",
     alt: "Capterra Shortlist 2025",
-    width: 122,
-    height: 111,
-    className: "h-[100px] md:h-fit object-contain",
   },
 ];
 

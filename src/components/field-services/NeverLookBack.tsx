@@ -4,9 +4,9 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import { makeOperationList } from "../common/Helper";
 import { ArrowIcon } from "../common/Icons";
 import SoftwareUsed from "../common/SoftwareUsed";
-import AwardBadgesBackground from "./AwardBadgesBackground";
+import AwardBadgesBackground from "../hvca/AwardBadgesBackground";
 
-export default function AwardBadges() {
+export default function NeverLookBack() {
   return (
     <section className="no-scrollbar relative z-20 w-full">
       <AwardBadgesBackground />
@@ -14,15 +14,6 @@ export default function AwardBadges() {
         {makeOperationList.map((item, index) => (
           <SoftwareUsed key={index} item={item} />
         ))}
-      </div>
-      <div className="mt-10 flex flex-col items-center gap-2 px-2 text-center">
-        <button className="bg-red-linear primary-btn h-10">
-          <span className="flex">Get started FREE</span>{" "}
-          <span>
-            <ArrowIcon fill="#fff" />
-          </span>
-        </button>
-        <CardRequiredButton textColor="text-winterWay mt-2" />
       </div>
       <AwardsTagsImg />
     </section>

@@ -5,13 +5,17 @@ import TextAnimation from "../common/TextAnimation";
 import UseFaqToggle from "../hook/UseFaqToggle";
 import HvacFaqList from "./HvacFaqList";
 import Image from "next/image";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import CloudsAnimation from "../common/CloudsAnimation";
+import CommonFaqLayout from "../common/CommonFaqLayout";
 
 type FaqItemType = {
+  id: number;
   question: string;
   answer: string;
 };
 interface Props {
-  faq: any;
+  faq: FaqItemType[];
 }
 const HvacFaq: React.FC<Props> = () => {
   const { openIndex, toggleFaq } = UseFaqToggle();
@@ -49,60 +53,27 @@ const HvacFaq: React.FC<Props> = () => {
     },
   ];
   return (
-    <section className="relative z-20 overflow-hidden">
-      <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
-      <div className="w-full px-2 py-10">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
-          <p className="paragraph-text text-secondary pt-4 text-center">
-            Frequently asked questions
-          </p>
-        </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.2}>
-          <h3 className="section-heading text-center text-white">
-            What HVAC contractors want to know{" "}
-          </h3>
-        </TextAnimation>
-        <div className="mx-auto max-w-[1190px] pt-[27px]">
-          {faqitems.map((item: FaqItemType, index: number) => (
-            <HvacFaqList
-              key={index}
-              data={item}
-              isOpen={openIndex === index}
-              onToggle={() => toggleFaq(index)}
-            />
-          ))}
-        </div>
+    <div className="relative overflow-hidden">
+      <section className="relative z-30 overflow-hidden">
+        <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
+        <CommonFaqLayout
+          className="w-full px-2 py-10"
+          heading="What HVAC contractors want to know"
+          description="Frequently asked questions"
+          faqitems={faqitems}
+          openIndex={openIndex}
+          onToggle={toggleFaq}
+          theme="hvac"
+        />
+      </section>
+      <div className="mt-8 md:h-[160px]">
+        <CloudsAnimation
+          cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+          cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+        />
+        <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
       </div>
-      <div className="pointer-events-none relative left-0 flex h-12 w-full translate-y-1 sm:h-20 lg:h-[150px]">
-        <div className="animate-cloud-layer-1 absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 1"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-        <div className="animate-cloud-layer-2 absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 2"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-        <div className="absolute h-full w-[115%]">
-          <Image
-            fill={true}
-            src="/images/webp/claud.webp"
-            alt="Cloud Layer 2"
-            className="w-full object-center"
-            unoptimized
-          />
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 

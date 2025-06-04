@@ -167,7 +167,7 @@ const HvacHero = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
+        <div className="absolute right-[2%] bottom-16 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
@@ -195,10 +195,7 @@ const HvacHero = () => {
           />
         </div>
       </div>
-      <div>
-        <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
-        <CloudsAnimation />
-      </div>
+      <CloudsAnimation />
     </section>
   );
 };

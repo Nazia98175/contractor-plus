@@ -15,7 +15,7 @@ const EraOfSoftware = () => {
         the anti-software. We’re an operating system.
       </p>
 
-      <div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[100px] xl:rounded-[45px]">
+      <div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[116px] xl:rounded-[45px]">
         <div className="bg-secondary absolute bottom-0 left-1/2 z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[100px] sm:block md:min-h-[550px]"></div>
         <img
           src="/images/webp/era-of-software.webp"

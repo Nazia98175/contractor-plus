@@ -58,8 +58,8 @@ const HvacFaq: React.FC<Props> = () => {
         <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
         <CommonFaqLayout
           className="w-full px-2 py-10"
-          heading="Frequently asked questions"
-          description="What HVAC contractors want to know"
+          heading="What HVAC contractors want to know"
+          description="Frequently asked questions"
           faqitems={faqitems}
           openIndex={openIndex}
           onToggle={toggleFaq}

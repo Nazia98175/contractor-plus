@@ -3,15 +3,47 @@ import React from "react";
 import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 
 const RealTimeServiceConnector = () => {
+  const sliderData = [
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Real-Time Updates",
+      description:
+        "Get live updates from field workers and sync your team's progress instantly.",
+    },
+    {
+      title: "Asset Tracking",
+      description:
+        "Track the location and status of your tools, vehicles, and resources in real time.",
+    },
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Real-Time Updates",
+      description:
+        "Get live updates from field workers and sync your team's progress instantly.",
+    },
+    {
+      title: "Asset Tracking",
+      description:
+        "Track the location and status of your tools, vehicles, and resources in real time.",
+    },
+  ];
   return (
     <section className="relative z-20 overflow-hidden bg-white">
       <div className="relative mx-auto w-full">
-        <h3 className="main-heading section-heading text-gradient-black mx-auto mb-[33px] max-w-[1029px] px-2 text-center md:mb-[72px] xl:px-0">
+        <h3 className="main-heading section-heading text-gradient-black mx-auto max-w-[1029px] px-2 text-center xl:px-0">
           Field service management software that connects the work, the people,
           and the updates in <b>real time</b>
         </h3>
         <div className="relative">
-          <div className="mx-auto max-w-[1029px] px-6 md:px-2 xl:px-0">
+          <div className="mx-auto max-w-[1029px] overflow-hidden px-6 pt-[33px] sm:overflow-visible md:px-2 md:pt-[72px] xl:px-0">
             <Image
               width={871}
               height={532}
@@ -30,10 +62,11 @@ const RealTimeServiceConnector = () => {
               alt="real-time-service-connector-screen"
               unoptimized
             />
+            <div className="img-linear absolute bottom-[35%] left-0 z-50 block h-[10%] w-full rotate-180 sm:hidden"></div>
           </div>
-          <div className="img-leinerar absolute bottom-0 z-50 h-full w-full rotate-180"></div>
-          <div className="-mt-10 w-full">
-            <RealTimeServiceConnectorSlider />
+          <div className="img-linear absolute -bottom-[1%] z-10 hidden h-[60%] w-full rotate-180 sm:block"></div>
+          <div className="w-full sm:-mt-10">
+            <RealTimeServiceConnectorSlider sliderData={sliderData} />
           </div>
         </div>
       </div>

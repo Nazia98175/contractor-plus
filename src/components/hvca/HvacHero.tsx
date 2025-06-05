@@ -177,6 +177,7 @@ const HvacHero = () => {
             width={945}
             height={729}
             className="hidden w-full object-right sm:block"
+            unoptimized
           />
           <Image
             alt=""
@@ -184,6 +185,7 @@ const HvacHero = () => {
             width={945}
             height={729}
             className="block w-full object-contain sm:hidden"
+            unoptimized
           />
           <Image
             priority

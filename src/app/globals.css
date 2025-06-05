@@ -1355,7 +1355,7 @@ html {
 }
 
 .clouds-1 {
-  animation: clouds-loop-1 300s infinite linear;
+  animation: clouds-loop-1 500s infinite linear;
   mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 40%,
@@ -1368,7 +1368,7 @@ html {
   );
 }
 .clouds-2 {
-  animation: clouds-loop-2 160s infinite linear;
+  animation: clouds-loop-2 660s infinite linear;
   mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 40%,
@@ -1381,7 +1381,7 @@ html {
   );
 }
 .clouds-3 {
-  animation: clouds-loop-3 190s infinite linear;
+  animation: clouds-loop-3 700s infinite linear;
   mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 40%,
@@ -1394,7 +1394,7 @@ html {
   );
 }
 .clouds-4 {
-  animation: clouds-loop-3 200s infinite linear;
+  animation: clouds-loop-3 900s infinite linear;
   mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 40%,
@@ -1505,7 +1505,7 @@ button {
   max-width: 80px;
 }
 .real-time-active-slider .swiper-slide {
-  opacity: 0.6;
+  opacity: 0.2;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1544,4 +1544,18 @@ button {
 }
 .img-linear {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) 9.91%, #fff 88.87%);
+}
+.sun-reflect {
+  background: linear-gradient(253.42deg, #ffd9ae 9.71%, #ffffff 74.11%);
+  transform: rotate(180deg);
+}
+.sun-bg {
+  background: radial-gradient(
+    123.51% 78.6% at 56.08% 78.6%,
+    #fff2e3 1.66%,
+    #ffd57b 46.52%,
+    #ff9078 100%
+  );
+  box-shadow: inset 0px -10px 19.7px #ff787d;
+  transform: rotate(180deg);
 }

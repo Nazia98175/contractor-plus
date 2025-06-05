@@ -6,19 +6,9 @@ import { RealTimeServiceConnectorIcon } from "../common/Icons";
 const RealTimeServiceConnector = () => {
   const sliderData = [
     {
-      title: "Smart Schedule",
+      title: "Live Dispatch",
       description:
-        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-    },
-    {
-      title: "Real-Time Updates",
-      description:
-        "Get live updates from field workers and sync your team's progress instantly.",
-    },
-    {
-      title: "Asset Tracking",
-      description:
-        "Track the location and status of your tools, vehicles, and resources in real time.",
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
     },
     {
       title: "Smart Schedule",
@@ -26,14 +16,39 @@ const RealTimeServiceConnector = () => {
         "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
     },
     {
-      title: "Real-Time Updates",
+      title: "Job Details",
       description:
-        "Get live updates from field workers and sync your team's progress instantly.",
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
     },
     {
-      title: "Asset Tracking",
+      title: "Live Dispatch",
       description:
-        "Track the location and status of your tools, vehicles, and resources in real time.",
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+    },
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Job Details",
+      description:
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
+    },
+    {
+      title: "Live Dispatch",
+      description:
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+    },
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Job Details",
+      description:
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
     },
   ];
   return (

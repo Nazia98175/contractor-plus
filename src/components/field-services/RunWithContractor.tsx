@@ -1,6 +1,13 @@
+"use client";
 import React from "react";
-
-const data = [
+import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Slidericon } from "../common/Icons";
+const run_contractor = [
   {
     their: "Calling or texting each tech to check availability",
     your: "Drag-and-drop scheduling with real-time crew availability",
@@ -38,13 +45,21 @@ const data = [
 const RunWithContractor = () => {
   return (
     <section className="bg-white py-10">
-      <h3 className="section-heading text-kuroiBlack mx-auto max-w-[1029px] text-center">
+      <h3 className="section-heading text-kuroiBlack mx-auto mb-[44px] max-w-[1029px] text-center">
         You don’t have to run things their way anymore. Run it your way with
         Contractor+.
       </h3>
-
-      <div className="mx-auto w-full max-w-[1181px] space-y-3 px-4">
-        {data.map((item, index) => (
+      {/* Desktop view  */}
+      <div className="mx-auto hidden w-full max-w-[1181px] space-y-3 px-4 pt-5 md:block">
+        <div className="grid grid-cols-2">
+          <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl">
+            Their Way
+          </p>
+          <p className="font-myriad text-oldMoney text-center text-sm font-semibold sm:text-lg md:text-xl">
+            Your Way
+          </p>
+        </div>
+        {run_contractor.map((item, index) => (
           <div
             key={index}
             className="grid grid-cols-2 items-center gap-5 text-center"
@@ -53,26 +68,9 @@ const RunWithContractor = () => {
             <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
               <span>
                 {/* Red Cross Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.4243 12.8758L10.792 9.24285L14.423 5.61051L12.5567 3.74219L8.92366 7.37452L5.29132 3.74219L3.42432 5.61051L7.05533 9.24285L3.42432 12.8752L5.29264 14.7422L8.92366 11.1099L12.5547 14.7422L14.4243 12.8758Z"
-                    fill="#E74C3C"
-                  />
-                  <path
-                    d="M13.2642 3.03516L15.1304 4.90332L15.8364 5.61035L15.1304 6.31738L12.2056 9.24219L15.1313 12.1689L15.8394 12.877L15.1304 13.584L13.2612 15.4502L12.5542 16.1562L11.8472 15.4492L8.92334 12.5234L5.99951 15.4492L5.29346 16.1562L4.58545 15.4492L2.71729 13.583L2.01025 12.876L2.71729 12.168L5.64111 9.24219L2.71729 6.31738L2.01025 5.61035L2.71729 4.90332L4.5835 3.03516L5.2915 2.32812L8.92334 5.95996L11.8501 3.03516L12.5571 2.32812L13.2642 3.03516Z"
-                    stroke="#F21314"
-                    strokeOpacity="0.4"
-                    strokeWidth="2"
-                  />
-                </svg>
+                <RedCrossIcon />
               </span>
-              <p className="font-jakarta text-base font-medium text-[#F4ADA5]">
+              <p className="font-jakarta text-sangoPink text-start text-base font-medium">
                 {item.their}
               </p>
             </div>
@@ -81,56 +79,87 @@ const RunWithContractor = () => {
             <div className="flex items-center gap-2">
               {/* Arrow Icon */}
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="17"
-                  height="16"
-                  viewBox="0 0 17 16"
-                  fill="none"
-                >
-                  <path
-                    d="M5.38444 1.27406C5.71398 0.931129 6.23585 0.910279 6.58949 1.21011L6.6589 1.27406L13.1211 8.00013L6.6589 14.7262L6.58949 14.7902C6.23604 15.0898 5.71514 15.0686 5.38558 14.7262C5.03395 14.3603 5.03396 13.7659 5.38558 13.3999L10.5733 8.00013L5.38444 2.60032L5.323 2.52809C5.03488 2.16007 5.05491 1.61698 5.38444 1.27406Z"
-                    fill="#5ED5A8"
-                  />
-                </svg>
+                <GreenArrowIcon />
               </span>
               <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
                 <span>
                   {/* Green Dot Icon */}
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="3.28809"
-                      y="3.12109"
-                      width="8.24242"
-                      height="8.24242"
-                      rx="4.12121"
-                      fill="#78FF49"
-                    />
-                    <rect
-                      x="1.74263"
-                      y="1.57564"
-                      width="11.3333"
-                      height="11.3333"
-                      rx="5.66667"
-                      stroke="#78FF49"
-                      strokeOpacity="0.3"
-                      strokeWidth="3.09091"
-                    />
-                  </svg>
+                  <GreenDotIcon2 />
                 </span>
-                <p className="font-jakarta text-start text-base font-bold text-[#34755C]">
+                <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
                   {item.your}
                 </p>
               </div>
             </div>
           </div>
         ))}
+      </div>
+      {/* Mobile-view  */}
+      <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
+        <Swiper
+          navigation={{
+            nextEl: ".swiper-button-next2",
+            prevEl: ".swiper-button-prev2",
+          }}
+          pagination={{
+            el: ".swiper-pagination-real-time-2",
+            clickable: true,
+          }}
+          centeredSlides={true}
+          modules={[Navigation, Pagination]}
+          className="mySwiper"
+          slidesPerView={1}
+          loop={true}
+        >
+          {run_contractor.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="mx-auto grid w-fit grid-cols-1 items-center gap-5 text-center">
+                {/* Their way */}
+                <div>
+                  <p className="font-myriad text-highRise pb-3 text-center text-sm font-semibold sm:text-lg md:text-xl">
+                    Their Way
+                  </p>
+                  <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+                    <span>
+                      {/* Red Cross Icon */}
+                      <RedCrossIcon />
+                    </span>
+                    <p className="font-jakarta text-sangoPink text-start text-base font-medium">
+                      {item.their}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Your way */}
+                <div>
+                  <p className="font-myriad text-oldMoney pb-3 text-center text-base font-semibold sm:text-lg md:text-xl">
+                    Your Way
+                  </p>
+                  <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+                    <span>
+                      {/* Green Dot Icon */}
+                      <GreenDotIcon2 />
+                    </span>
+                    <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
+                      {item.your}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="relative mx-auto mt-4 flex w-full max-w-[158px] items-center justify-between gap-3">
+          <div className="swiper-button-prev2 !relative !right-0 !bottom-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
+            <Slidericon />
+          </div>
+
+          <div className="swiper-pagination-real-time-2 relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+
+          <div className="swiper-button-next2 !relative !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
+            <Slidericon />
+          </div>
+        </div>
       </div>
     </section>
   );

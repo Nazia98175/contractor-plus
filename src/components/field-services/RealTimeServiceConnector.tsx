@@ -38,7 +38,7 @@ const RealTimeServiceConnector = () => {
   ];
   return (
     <section className="relative z-20 overflow-hidden bg-white">
-      <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[10%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[30%]" />
+      <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[10%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
       <h3 className="main-heading section-heading text-gradient-black relative z-20 mx-auto max-w-[1029px] px-2 text-center xl:px-0">
         Field service management software that connects the work, the people,
         and the updates in <b>real time</b>

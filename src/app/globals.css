@@ -35,6 +35,10 @@
   --color-heatherGrey: #9f9fa1;
   --color-blackRussian: #202125;
   --color-rgba1: #ffffff99;
+  --color-highRise: #adb1b5;
+  --color-oldMoney: #275947;
+  --color-sangoPink: #f4ada5;
+  --color-majorelleGardens: #34755c;
   --breakpoint-xs: 560px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -94,6 +98,7 @@
   --shadow-c2:
     0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c3: 18px 40px 150px rgba(0, 0, 0, 0.25);
+  --shadow-c4: 18px 40px 80px rgba(0, 0, 0, 0.25);
 }
 @font-face {
   font-family: "Myriad Pro";
@@ -1441,6 +1446,17 @@ button {
   transition: background-color 0.3s;
 }
 .swiper-pagination-real-time-bullet:active {
+  background-color: #ef4444 !important;
+}
+.swiper-pagination-real-time-bullet-2 {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #cbd5e1 !important; /* slate-300 */
+  opacity: 1;
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+}
+.swiper-pagination-real-time-bullet-2:active {
   background-color: #ef4444 !important;
 }
 .custom-pagination

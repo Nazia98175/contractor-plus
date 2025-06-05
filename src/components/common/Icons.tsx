@@ -3469,3 +3469,59 @@ export const Slidericon = () => (
     />
   </svg>
 );
+export const RealTimeServiceConnectorIcon = ({
+  className = "sm:h-[600px] h-[300px]",
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="716"
+    height=""
+    viewBox="0 0 716 605"
+    fill="none"
+    className={className}
+  >
+    <g filter="url(#filter0_f_1762_3447)">
+      <path
+        d="M411.118 300.118L39.5588 200.559L-332 101"
+        stroke="url(#paint0_linear_1762_3447)"
+        stroke-width="432"
+        stroke-linecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_1762_3447"
+        x="-636.054"
+        y="-203.053"
+        width="1351.22"
+        height="807.225"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_1762_3447"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_1762_3447"
+        x1="-18.8631"
+        y1="-92.555"
+        x2="-276.922"
+        y2="157.276"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stop-color="white" stop-opacity="0" />
+        <stop offset="0.996954" stop-color="#EE1E25" />
+        <stop offset="1" stop-color="#FF777B" />
+      </linearGradient>
+    </defs>
+  </svg>
+);

@@ -1546,3 +1546,32 @@ button {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
+
+.their-way {
+  background:
+    linear-gradient(90deg, #f43737 -323.44%, rgba(244, 55, 55, 0) 51.22%),
+    rgba(255, 255, 255, 0.7);
+}
+.your-way {
+  background: linear-gradient(
+    90deg,
+    #78ff49 -323.44%,
+    rgba(120, 255, 73, 0) 51.22%
+  );
+  position: relative;
+}
+.your-way::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(90deg, #78FF49.44%, rgba(120, 255, 73, 0) 51.22%);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 10px;
+}

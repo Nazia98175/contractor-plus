@@ -3147,9 +3147,9 @@ export const HeroPlayStoreIcon = () => (
         width="23.8105"
         height="26.6315"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3198,9 +3198,9 @@ export const HeroPlayStoreIcon = () => (
         width="17.2085"
         height="13.3157"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3233,12 +3233,12 @@ export const HeroPlayStoreIcon = () => (
         y2="25.1146"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00A0FF" />
-        <stop offset="0.0066" stop-color="#00A1FF" />
-        <stop offset="0.2601" stop-color="#00BEFF" />
-        <stop offset="0.5122" stop-color="#00D2FF" />
-        <stop offset="0.7604" stop-color="#00DFFF" />
-        <stop offset="1" stop-color="#00E3FF" />
+        <stop stopColor="#00A0FF" />
+        <stop offset="0.0066" stopColor="#00A1FF" />
+        <stop offset="0.2601" stopColor="#00BEFF" />
+        <stop offset="0.5122" stopColor="#00D2FF" />
+        <stop offset="0.7604" stopColor="#00DFFF" />
+        <stop offset="1" stopColor="#00E3FF" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_1762_7003"
@@ -3248,10 +3248,10 @@ export const HeroPlayStoreIcon = () => (
         y2="19.4994"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FFE000" />
-        <stop offset="0.4087" stop-color="#FFBD00" />
-        <stop offset="0.7754" stop-color="#FFA500" />
-        <stop offset="1" stop-color="#FF9C00" />
+        <stop stopColor="#FFE000" />
+        <stop offset="0.4087" stopColor="#FFBD00" />
+        <stop offset="0.7754" stopColor="#FFA500" />
+        <stop offset="1" stopColor="#FF9C00" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_1762_7003"
@@ -3261,8 +3261,8 @@ export const HeroPlayStoreIcon = () => (
         y2="45.3454"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF3A44" />
-        <stop offset="1" stop-color="#C31162" />
+        <stop stopColor="#FF3A44" />
+        <stop offset="1" stopColor="#C31162" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_1762_7003"
@@ -3272,11 +3272,11 @@ export const HeroPlayStoreIcon = () => (
         y2="9.45348"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#32A071" />
-        <stop offset="0.0685" stop-color="#2DA771" />
-        <stop offset="0.4762" stop-color="#15CF74" />
-        <stop offset="0.8009" stop-color="#06E775" />
-        <stop offset="1" stop-color="#00F076" />
+        <stop stopColor="#32A071" />
+        <stop offset="0.0685" stopColor="#2DA771" />
+        <stop offset="0.4762" stopColor="#15CF74" />
+        <stop offset="0.8009" stopColor="#06E775" />
+        <stop offset="1" stopColor="#00F076" />
       </linearGradient>
     </defs>
   </svg>
@@ -3396,7 +3396,7 @@ export const BreakeIcon = () => (
     viewBox="0 0 33 32"
     fill="none"
   >
-    <g clip-path="url(#clip0_1776_6994)">
+    <g clipPath="url(#clip0_1776_6994)">
       <path
         d="M9.32321 25.5968H7.68148V14.9327C7.68148 14.5353 7.35807 14.2119 6.96065 14.2119H4.71823C4.32081 14.2119 3.9974 14.5353 3.9974 14.9327V25.5968H2.35559C1.95818 25.5968 1.63477 25.9203 1.63477 26.3177V27.9595C1.63477 28.3569 1.95818 28.6803 2.35559 28.6803H9.32321C9.72062 28.6803 10.044 28.3569 10.044 27.9595V26.3177C10.044 25.9203 9.7207 25.5968 9.32321 25.5968Z"
         fill="#AC0D0E"
@@ -3462,8 +3462,8 @@ export const Slidericon = () => (
     fill="none"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.275 19.7397C15.975 20.0868 15.4886 20.0868 15.1886 19.7397L8.5 12L15.1886 4.26035C15.4886 3.91322 15.975 3.91322 16.275 4.26035C16.575 4.60748 16.575 5.1703 16.275 5.51743L10.6727 12L16.275 18.4826C16.575 18.8297 16.575 19.3925 16.275 19.7397Z"
       fill="#D2D4D6"
     />
@@ -3549,8 +3549,8 @@ export const RealTimeServiceConnectorIcon = ({
       <path
         d="M411.118 300.118L39.5588 200.559L-332 101"
         stroke="url(#paint0_linear_1762_3447)"
-        stroke-width="432"
-        stroke-linecap="round"
+        strokeWidth="432"
+        strokeLinecap="round"
       />
     </g>
     <defs>
@@ -3561,9 +3561,9 @@ export const RealTimeServiceConnectorIcon = ({
         width="1351.22"
         height="807.225"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3583,9 +3583,9 @@ export const RealTimeServiceConnectorIcon = ({
         y2="157.276"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.0622667" stop-color="white" stop-opacity="0" />
-        <stop offset="0.996954" stop-color="#EE1E25" />
-        <stop offset="1" stop-color="#FF777B" />
+        <stop offset="0.0622667" stopColor="white" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#FF777B" />
       </linearGradient>
     </defs>
   </svg>

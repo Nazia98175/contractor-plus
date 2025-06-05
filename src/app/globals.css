@@ -1427,14 +1427,7 @@ html {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
   /* mix-blend-mode: multiply; */
 }
-/* .cc {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 71.47%,
-    #fff 81.73%
-  );
-  filter: blur(17.549999237060547px);
-} */
+
 button {
   cursor: pointer;
 }

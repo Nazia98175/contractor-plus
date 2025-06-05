@@ -5,42 +5,20 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
-const RealTimeServiceConnectorSlider = () => {
-  const sliderData = [
-    {
-      title: "Smart Schedule",
-      description:
-        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-    },
-    {
-      title: "Real-Time Updates",
-      description:
-        "Get live updates from field workers and sync your team's progress instantly.",
-    },
-    {
-      title: "Asset Tracking",
-      description:
-        "Track the location and status of your tools, vehicles, and resources in real time.",
-    },
-    {
-      title: "Smart Schedule",
-      description:
-        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-    },
-    {
-      title: "Real-Time Updates",
-      description:
-        "Get live updates from field workers and sync your team's progress instantly.",
-    },
-    {
-      title: "Asset Tracking",
-      description:
-        "Track the location and status of your tools, vehicles, and resources in real time.",
-    },
-  ];
+interface SliderItem {
+  title: string;
+  description: string;
+}
 
+interface RealTimeServiceConnectorSliderProps {
+  sliderData: SliderItem[];
+}
+
+const RealTimeServiceConnectorSlider: React.FC<
+  RealTimeServiceConnectorSliderProps
+> = ({ sliderData }) => {
   return (
-    <div className="1xl:px-0 custom-pagination relative z-50 mx-auto w-full max-w-[1414px] px-2">
+    <div className="1xl:px-0 custom-pagination relative z-50 mx-auto w-full max-w-[1414px] sm:px-2">
       <Swiper
         navigation={{
           nextEl: ".swiper-button-next",
@@ -50,16 +28,42 @@ const RealTimeServiceConnectorSlider = () => {
           el: ".swiper-pagination-real-time",
           clickable: true,
         }}
+        spaceBetween={36}
         centeredSlides={true}
         modules={[Navigation, Pagination]}
         className="mySwiper real-time-active-slider"
         slidesPerView={3}
         loop={true}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 36,
+          },
+        }}
       >
         {sliderData.map((item, index) => (
-          <SwiperSlide key={index} className="p-[14px]">
-            <h4>{item.title}</h4>
-            <p>{item.description}</p>
+          <SwiperSlide
+            key={index}
+            className="bg-rgba1 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px]"
+          >
+            <b className="font-jakarta text-lightBlack text-base lg:text-xl">
+              {item.title}
+            </b>
+            <p className="font-jakarta text-secondary mt-3 text-sm font-medium">
+              {item.description}
+            </p>
           </SwiperSlide>
         ))}
       </Swiper>

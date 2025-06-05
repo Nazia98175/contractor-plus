@@ -3147,9 +3147,9 @@ export const HeroPlayStoreIcon = () => (
         width="23.8105"
         height="26.6315"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3198,9 +3198,9 @@ export const HeroPlayStoreIcon = () => (
         width="17.2085"
         height="13.3157"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3233,12 +3233,12 @@ export const HeroPlayStoreIcon = () => (
         y2="25.1146"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00A0FF" />
-        <stop offset="0.0066" stop-color="#00A1FF" />
-        <stop offset="0.2601" stop-color="#00BEFF" />
-        <stop offset="0.5122" stop-color="#00D2FF" />
-        <stop offset="0.7604" stop-color="#00DFFF" />
-        <stop offset="1" stop-color="#00E3FF" />
+        <stop stopColor="#00A0FF" />
+        <stop offset="0.0066" stopColor="#00A1FF" />
+        <stop offset="0.2601" stopColor="#00BEFF" />
+        <stop offset="0.5122" stopColor="#00D2FF" />
+        <stop offset="0.7604" stopColor="#00DFFF" />
+        <stop offset="1" stopColor="#00E3FF" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_1762_7003"
@@ -3248,10 +3248,10 @@ export const HeroPlayStoreIcon = () => (
         y2="19.4994"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FFE000" />
-        <stop offset="0.4087" stop-color="#FFBD00" />
-        <stop offset="0.7754" stop-color="#FFA500" />
-        <stop offset="1" stop-color="#FF9C00" />
+        <stop stopColor="#FFE000" />
+        <stop offset="0.4087" stopColor="#FFBD00" />
+        <stop offset="0.7754" stopColor="#FFA500" />
+        <stop offset="1" stopColor="#FF9C00" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_1762_7003"
@@ -3261,8 +3261,8 @@ export const HeroPlayStoreIcon = () => (
         y2="45.3454"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF3A44" />
-        <stop offset="1" stop-color="#C31162" />
+        <stop stopColor="#FF3A44" />
+        <stop offset="1" stopColor="#C31162" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_1762_7003"
@@ -3272,11 +3272,11 @@ export const HeroPlayStoreIcon = () => (
         y2="9.45348"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#32A071" />
-        <stop offset="0.0685" stop-color="#2DA771" />
-        <stop offset="0.4762" stop-color="#15CF74" />
-        <stop offset="0.8009" stop-color="#06E775" />
-        <stop offset="1" stop-color="#00F076" />
+        <stop stopColor="#32A071" />
+        <stop offset="0.0685" stopColor="#2DA771" />
+        <stop offset="0.4762" stopColor="#15CF74" />
+        <stop offset="0.8009" stopColor="#06E775" />
+        <stop offset="1" stopColor="#00F076" />
       </linearGradient>
     </defs>
   </svg>
@@ -3396,7 +3396,7 @@ export const BreakeIcon = () => (
     viewBox="0 0 33 32"
     fill="none"
   >
-    <g clip-path="url(#clip0_1776_6994)">
+    <g clipPath="url(#clip0_1776_6994)">
       <path
         d="M9.32321 25.5968H7.68148V14.9327C7.68148 14.5353 7.35807 14.2119 6.96065 14.2119H4.71823C4.32081 14.2119 3.9974 14.5353 3.9974 14.9327V25.5968H2.35559C1.95818 25.5968 1.63477 25.9203 1.63477 26.3177V27.9595C1.63477 28.3569 1.95818 28.6803 2.35559 28.6803H9.32321C9.72062 28.6803 10.044 28.3569 10.044 27.9595V26.3177C10.044 25.9203 9.7207 25.5968 9.32321 25.5968Z"
         fill="#AC0D0E"
@@ -3450,5 +3450,143 @@ export const ScreenShotIcon = () => (
       d="M15.424 2C14.9781 2.00002 14.5451 2.14901 14.1936 2.42331C13.8421 2.69762 13.5923 3.08151 13.484 3.514L10.612 15H17.5C17.7652 15 18.0196 15.1054 18.2071 15.2929C18.3946 15.4804 18.5 15.7348 18.5 16C18.5 16.2652 18.3946 16.5196 18.2071 16.7071C18.0196 16.8946 17.7652 17 17.5 17H10.112L9.112 21H19C19.2652 21 19.5196 21.1054 19.7071 21.2929C19.8946 21.4804 20 21.7348 20 22C20 22.2652 19.8946 22.5196 19.7071 22.7071C19.5196 22.8946 19.2652 23 19 23H8.612L7.36 28H3.5C3.23478 28 2.98043 28.1054 2.79289 28.2929C2.60536 28.4804 2.5 28.7348 2.5 29C2.5 29.2652 2.60536 29.5196 2.79289 29.7071C2.98043 29.8946 3.23478 30 3.5 30H29.5C29.7652 30 30.0196 29.8946 30.2071 29.7071C30.3946 29.5196 30.5 29.2652 30.5 29C30.5 28.7348 30.3946 28.4804 30.2071 28.2929C30.0196 28.1054 29.7652 28 29.5 28H25.638L19.518 3.514C19.4095 3.08085 19.1591 2.69646 18.8068 2.42208C18.4545 2.14771 18.0205 1.99912 17.574 2H15.424Z"
       fill="#AC0D0E"
     />
+  </svg>
+);
+
+export const Slidericon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="24"
+    viewBox="0 0 25 24"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M16.275 19.7397C15.975 20.0868 15.4886 20.0868 15.1886 19.7397L8.5 12L15.1886 4.26035C15.4886 3.91322 15.975 3.91322 16.275 4.26035C16.575 4.60748 16.575 5.1703 16.275 5.51743L10.6727 12L16.275 18.4826C16.575 18.8297 16.575 19.3925 16.275 19.7397Z"
+      fill="#D2D4D6"
+    />
+  </svg>
+);
+
+export const RedCrossIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+  >
+    <path
+      d="M14.4243 12.8758L10.792 9.24285L14.423 5.61051L12.5567 3.74219L8.92366 7.37452L5.29132 3.74219L3.42432 5.61051L7.05533 9.24285L3.42432 12.8752L5.29264 14.7422L8.92366 11.1099L12.5547 14.7422L14.4243 12.8758Z"
+      fill="#E74C3C"
+    />
+    <path
+      d="M13.2642 3.03516L15.1304 4.90332L15.8364 5.61035L15.1304 6.31738L12.2056 9.24219L15.1313 12.1689L15.8394 12.877L15.1304 13.584L13.2612 15.4502L12.5542 16.1562L11.8472 15.4492L8.92334 12.5234L5.99951 15.4492L5.29346 16.1562L4.58545 15.4492L2.71729 13.583L2.01025 12.876L2.71729 12.168L5.64111 9.24219L2.71729 6.31738L2.01025 5.61035L2.71729 4.90332L4.5835 3.03516L5.2915 2.32812L8.92334 5.95996L11.8501 3.03516L12.5571 2.32812L13.2642 3.03516Z"
+      stroke="#F21314"
+      strokeOpacity="0.4"
+      strokeWidth="2"
+    />
+  </svg>
+);
+
+export const GreenArrowIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="17"
+    height="16"
+    viewBox="0 0 17 16"
+    fill="none"
+  >
+    <path
+      d="M5.38444 1.27406C5.71398 0.931129 6.23585 0.910279 6.58949 1.21011L6.6589 1.27406L13.1211 8.00013L6.6589 14.7262L6.58949 14.7902C6.23604 15.0898 5.71514 15.0686 5.38558 14.7262C5.03395 14.3603 5.03396 13.7659 5.38558 13.3999L10.5733 8.00013L5.38444 2.60032L5.323 2.52809C5.03488 2.16007 5.05491 1.61698 5.38444 1.27406Z"
+      fill="#5ED5A8"
+    />
+  </svg>
+);
+
+export const GreenDotIcon2 = () => (
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 15 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="3.28809"
+      y="3.12109"
+      width="8.24242"
+      height="8.24242"
+      rx="4.12121"
+      fill="#78FF49"
+    />
+    <rect
+      x="1.74263"
+      y="1.57564"
+      width="11.3333"
+      height="11.3333"
+      rx="5.66667"
+      stroke="#78FF49"
+      strokeOpacity="0.3"
+      strokeWidth="3.09091"
+    />
+  </svg>
+);
+export const RealTimeServiceConnectorIcon = ({
+  className = "pointer-events-none absolute bottom-[30%] -z-10",
+}) => (
+  <svg
+    width="716"
+    height="100%"
+    viewBox="0 0 716 605"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g filter="url(#filter0_f_1762_3447)">
+      <path
+        d="M411.118 300.118L39.5588 200.559L-332 101"
+        stroke="url(#paint0_linear_1762_3447)"
+        strokeWidth="432"
+        strokeLinecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_1762_3447"
+        x="-636.054"
+        y="-203.053"
+        width="1351.22"
+        height="807.225"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_1762_3447"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_1762_3447"
+        x1="-18.8631"
+        y1="-92.555"
+        x2="-276.922"
+        y2="157.276"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stopColor="white" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#FF777B" />
+      </linearGradient>
+    </defs>
   </svg>
 );

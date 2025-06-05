@@ -1,0 +1,168 @@
+"use client";
+import React from "react";
+import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Slidericon } from "../common/Icons";
+const run_contractor = [
+  {
+    their: "Calling or texting each tech to check availability",
+    your: "Drag-and-drop scheduling with real-time crew availability",
+  },
+  {
+    their: "Guessing locations or waiting for callbacks",
+    your: "AI receptionist answers, captures lead details, and books jobs",
+  },
+  {
+    their: "Missed calls, forgotten voicemails, manual callbacks",
+    your: "AI receptionist answers, captures lead details, and books jobs",
+  },
+  {
+    their: "Miscommunication through group texts or missed updates",
+    your: "Field updates sync instantly across mobile, office, and job chat",
+  },
+  {
+    their: "Paper timesheets or unreliable check-ins",
+    your: "GPS-stamped time clock inside the mobile app",
+  },
+  {
+    their: "Texts, emails, and Slack all over the place",
+    your: "Every job has its own chat thread, visible to all assigned team members",
+  },
+  {
+    their: "Verbal check-ins or unlogged inspections",
+    your: "Post-inspections with photos and task completion logs",
+  },
+  {
+    their: "Manually sent invoices and delayed payment",
+    your: "Instant invoice creation and onsite payment",
+  },
+];
+
+const RunWithContractor = () => {
+  return (
+    <section className="bg-white py-10">
+      <h3 className="section-heading text-kuroiBlack mx-auto mb-[44px] max-w-[1029px] text-center">
+        You don’t have to run things their way anymore. Run it your way with
+        Contractor+.
+      </h3>
+      {/* Desktop view  */}
+      <div className="mx-auto hidden w-full max-w-[1181px] space-y-3 px-4 pt-5 md:block">
+        <div className="grid grid-cols-2">
+          <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl">
+            Their Way
+          </p>
+          <p className="font-myriad text-oldMoney text-center text-sm font-semibold sm:text-lg md:text-xl">
+            Your Way
+          </p>
+        </div>
+        {run_contractor.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-2 items-center gap-5 text-center"
+          >
+            {/* Their way */}
+            <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+              <span>
+                {/* Red Cross Icon */}
+                <RedCrossIcon />
+              </span>
+              <p className="font-jakarta text-sangoPink text-start text-base font-medium">
+                {item.their}
+              </p>
+            </div>
+
+            {/* Your way */}
+            <div className="flex items-center gap-2">
+              {/* Arrow Icon */}
+              <span>
+                <GreenArrowIcon />
+              </span>
+              <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+                <span>
+                  {/* Green Dot Icon */}
+                  <GreenDotIcon2 />
+                </span>
+                <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
+                  {item.your}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* Mobile-view  */}
+      <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
+        <Swiper
+          navigation={{
+            nextEl: ".swiper-button-next2",
+            prevEl: ".swiper-button-prev2",
+          }}
+          pagination={{
+            el: ".swiper-pagination-real-time-2",
+            clickable: true,
+          }}
+          centeredSlides={true}
+          modules={[Navigation, Pagination]}
+          className="mySwiper"
+          slidesPerView={1}
+          loop={true}
+        >
+          {run_contractor.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="mx-auto grid w-fit grid-cols-1 items-center gap-5 text-center">
+                {/* Their way */}
+                <div>
+                  <p className="font-myriad text-highRise pb-3 text-center text-sm font-semibold sm:text-lg md:text-xl">
+                    Their Way
+                  </p>
+                  <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+                    <span>
+                      {/* Red Cross Icon */}
+                      <RedCrossIcon />
+                    </span>
+                    <p className="font-jakarta text-sangoPink text-start text-base font-medium">
+                      {item.their}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Your way */}
+                <div>
+                  <p className="font-myriad text-oldMoney pb-3 text-center text-base font-semibold sm:text-lg md:text-xl">
+                    Your Way
+                  </p>
+                  <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+                    <span>
+                      {/* Green Dot Icon */}
+                      <GreenDotIcon2 />
+                    </span>
+                    <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
+                      {item.your}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="relative mx-auto mt-4 flex w-full max-w-[158px] items-center justify-between gap-3">
+          <div className="swiper-button-prev2 !relative !right-0 !bottom-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
+            <Slidericon />
+          </div>
+
+          <div className="swiper-pagination-real-time-2 relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+
+          <div className="swiper-button-next2 !relative !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
+            <Slidericon />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default RunWithContractor;

@@ -28,13 +28,23 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-2">
-            <Image
-              src={review.profileUrl}
-              alt="avatar"
-              width={42}
-              height={42}
-              className="h-fit max-w-[42px] rounded-full object-contain"
-            />
+            {review?.profileUrl ? (
+              <Image
+                src={review.profileUrl}
+                alt="avatar"
+                width={42}
+                height={42}
+                className="h-fit max-w-[42px] rounded-full object-contain"
+              />
+            ) : (
+              <div className="flex text-white font-medium w-10 h-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.2)]">
+                {review?.userName
+                  ?.split(" ")
+                  .filter(Boolean)
+                  .map((word) => word[0].toUpperCase())
+                  .join("")}
+              </div>
+            )}
             <div className="max-w-[150px] truncate sm:max-w-[190px]">
               <div className="flex gap-2">
                 <h5 className="text-base font-medium text-white">

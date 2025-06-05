@@ -14,6 +14,7 @@ interface Props {
 const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
+  console.log(service , "service")
 
   const titleColor = theme === "dark" ? "text-white" : "text-lightBlack";
   const featureTitleColor = theme === "dark" ? "text-white" : "text-lightBlack";
@@ -37,12 +38,12 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
             />
           </div>
           <div className="flex flex-col gap-4 2xl:gap-6">
-            {(isEstimate ? features.slice(0, -1) : features.slice(0, 5)).map(
+            {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                  {!isEstimate && <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
                     <TickIcon />
-                  </span>
+                  </span>}
                   <div className="flex flex-col gap-2 xl:gap-3">
                     <h5 className={`card-heading ${featureTitleColor}`}>
                       {feature?.title}
@@ -60,8 +61,8 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
         {/* Estimate testimonial */}
         {isEstimate && (
           <p className="text-secondary card-review">
-            {features[features.length - 1]?.title} <br /> <br /> –{" "}
-            {features[features.length - 1]?.desc}
+            {service?.cardQuote} <br /> <br />
+            {service?.userName}
           </p>
         )}
       </div>

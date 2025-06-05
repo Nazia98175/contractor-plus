@@ -25,7 +25,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
     <ClockIcon key="clock" />,
     <MoreIcon key="more" />,
   ];
-
+  console.log(data, "dataaaaaaa");
   return (
     <section
       ref={ref}
@@ -58,16 +58,16 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
                     separator=","
                     suffix={item.suffix ?? ""}
                     preserveValue={true}
-                    prefix={item.title === "~" ? item.title : ""}
+                    prefix={item.prefix ?? ""}
                   />
                 )}
                 {!inView &&
-                  `${item.title === "~" && item.title}${item.end}${
-                    item.suffix ?? ""
-                  }`}
+                  (item?.value !== null
+                    ? `${item.value}${item.suffix ?? ""}`
+                    : `${item.end}${item.suffix ?? ""}`)}
               </span>
               <span className="inline-block px-2">
-                {item.title !== "0" && item.title !== "~" && item.title}
+                {item.title !== "n/a" && item.title}
               </span>
             </h3>
 

@@ -53,12 +53,13 @@ const CompareTable: React.FC<CompareTableProps> = ({ compareFeatures , headerLef
             </td>
             <td className="px-5 py-3 w-full">
               <div className="flex items-center justify-center">
-                {feature.othersHave ? (
-                  <CheckIcon
-                    width={24}
-                    height={24}
-                    className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
-                  />
+                {feature.competitorsNote !== null  ? (
+                  // <CheckIcon
+                  //   width={24}
+                  //   height={24}
+                  //   className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
+                  // />
+                  <p>{feature?.competitorsNote}</p>
                 ) : (
                   <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
                     <CloseIcon />

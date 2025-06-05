@@ -5,6 +5,7 @@ import FreedomToWork from "@/components/field-services/FreedomToWork";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
+import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import AwardBadges from "@/components/hvca/AwardBadge";
@@ -26,6 +27,7 @@ const FieldServicesPage = () => {
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />
+      <RunWithContractor />
       <FreedomToWork />
       <TimmingEffect />
       <div className="relative overflow-hidden">

@@ -3452,3 +3452,20 @@ export const ScreenShotIcon = () => (
     />
   </svg>
 );
+
+export const Slidericon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="24"
+    viewBox="0 0 25 24"
+    fill="none"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M16.275 19.7397C15.975 20.0868 15.4886 20.0868 15.1886 19.7397L8.5 12L15.1886 4.26035C15.4886 3.91322 15.975 3.91322 16.275 4.26035C16.575 4.60748 16.575 5.1703 16.275 5.51743L10.6727 12L16.275 18.4826C16.575 18.8297 16.575 19.3925 16.275 19.7397Z"
+      fill="#D2D4D6"
+    />
+  </svg>
+);

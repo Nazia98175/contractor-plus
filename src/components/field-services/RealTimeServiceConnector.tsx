@@ -10,26 +10,32 @@ const RealTimeServiceConnector = () => {
           Field service management software that connects the work, the people,
           and the updates in <b>real time</b>
         </h3>
-        <div className="mx-auto max-w-[1029px] px-6 md:px-2 xl:px-0">
-          <Image
-            width={871}
-            height={532}
-            className="shadow-c3 mx-auto hidden w-full max-w-[871px] rounded-t-[63px] object-cover md:block"
-            src={"/images/webp/real-time-service-connector-screen.webp"}
-            alt="real-time-service-connector-screen"
-            unoptimized
-          />
-          <Image
-            width={871}
-            height={532}
-            className="shadow-c3 mx-auto block w-full max-w-[871px] object-cover md:hidden"
-            src={"/images/webp/real-time-service-connector-screen-mobile.webp"}
-            alt="real-time-service-connector-screen"
-            unoptimized
-          />
+        <div className="relative">
+          <div className="relative">
+            <div className="mx-auto max-w-[1029px] px-6 md:px-2 xl:px-0">
+              <Image
+                width={871}
+                height={532}
+                className="shadow-c3 mx-auto hidden w-full max-w-[871px] rounded-t-[63px] object-cover md:block"
+                src={"/images/webp/real-time-service-connector-screen.webp"}
+                alt="real-time-service-connector-screen"
+                unoptimized
+              />
+              <Image
+                width={871}
+                height={532}
+                className="shadow-c3 mx-auto block w-full max-w-[871px] object-cover md:hidden"
+                src={
+                  "/images/webp/real-time-service-connector-screen-mobile.webp"
+                }
+                alt="real-time-service-connector-screen"
+                unoptimized
+              />
+            </div>
+            <div className="img-leinerar absolute bottom-0 z-50 h-[60%] w-full rotate-180"></div>
+          </div>
+          <RealTimeServiceConnectorSlider />
         </div>
-        <div className="img-leinerar absolute bottom-0 z-10 h-[128px] w-full rotate-180 md:h-[300px]"></div>
-        <RealTimeServiceConnectorSlider />
       </div>
     </section>
   );

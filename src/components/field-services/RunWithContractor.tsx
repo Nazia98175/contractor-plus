@@ -52,10 +52,10 @@ const RunWithContractor = () => {
       {/* Desktop view  */}
       <div className="mx-auto hidden w-full max-w-[1181px] space-y-3 px-4 pt-5 md:block">
         <div className="grid grid-cols-2">
-          <p className="font-myriad text-center text-sm font-semibold text-[#ADB1B5] sm:text-lg md:text-xl">
+          <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl">
             Their Way
           </p>
-          <p className="font-myriad text-center text-sm font-semibold text-[#275947] sm:text-lg md:text-xl">
+          <p className="font-myriad text-oldMoney text-center text-sm font-semibold sm:text-lg md:text-xl">
             Your Way
           </p>
         </div>
@@ -70,7 +70,7 @@ const RunWithContractor = () => {
                 {/* Red Cross Icon */}
                 <RedCrossIcon />
               </span>
-              <p className="font-jakarta text-start text-base font-medium text-[#F4ADA5]">
+              <p className="font-jakarta text-sangoPink text-start text-base font-medium">
                 {item.their}
               </p>
             </div>
@@ -86,7 +86,7 @@ const RunWithContractor = () => {
                   {/* Green Dot Icon */}
                   <GreenDotIcon2 />
                 </span>
-                <p className="font-jakarta text-start text-base font-bold text-[#34755C]">
+                <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
                   {item.your}
                 </p>
               </div>
@@ -116,7 +116,7 @@ const RunWithContractor = () => {
               <div className="grid grid-cols-1 items-center gap-5 text-center">
                 {/* Their way */}
                 <div>
-                  <p className="font-myriad pb-3 text-center text-sm font-semibold text-[#ADB1B5] sm:text-lg md:text-xl">
+                  <p className="font-myriad text-highRise pb-3 text-center text-sm font-semibold sm:text-lg md:text-xl">
                     Their Way
                   </p>
                   <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
@@ -124,7 +124,7 @@ const RunWithContractor = () => {
                       {/* Red Cross Icon */}
                       <RedCrossIcon />
                     </span>
-                    <p className="font-jakarta text-start text-base font-medium text-[#F4ADA5]">
+                    <p className="font-jakarta text-sangoPink text-start text-base font-medium">
                       {item.their}
                     </p>
                   </div>
@@ -132,15 +132,15 @@ const RunWithContractor = () => {
 
                 {/* Your way */}
                 <div>
-                  <p className="font-myriad pb-3 text-center text-sm font-semibold text-[#275947] sm:text-lg md:text-xl">
-                    Your Way{" "}
+                  <p className="font-myriad text-oldMoney pb-3 text-center text-base font-semibold sm:text-lg md:text-xl">
+                    Your Way
                   </p>
                   <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
                     <span>
                       {/* Green Dot Icon */}
                       <GreenDotIcon2 />
                     </span>
-                    <p className="font-jakarta text-start text-base font-bold text-[#34755C]">
+                    <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
                       {item.your}
                     </p>
                   </div>

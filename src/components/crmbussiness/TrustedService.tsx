@@ -44,7 +44,6 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
           <Marquee speed={30} direction="right" pauseOnHover>
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
-                variant="secondary"
                 key={review.id}
                 review={review as Review}
                 openModal={

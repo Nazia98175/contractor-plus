@@ -22,50 +22,65 @@ export default async function Home({
 }) {
   const useParams = await params;
   // const [homePageContent, contractPlatformsData, blogs, footer] =
-  const [homePageContent, contractPlatformsData,reviewsList, coreFeatures , blogs] = await Promise.all([
+  const [
+    homePageContent,
+    contractPlatformsData,
+    reviewsList,
+    coreFeatures,
+    blogs,
+  ] = await Promise.all([
     getHomePage(useParams.locale, "&populate=*"),
     getHomePage(
       useParams.locale,
-      "&populate[platforms][populate][platforms][populate]=image&populate[platforms][populate]=title"
+      "&populate[platforms][populate][platforms][populate]=image&populate[platforms][populate]=title",
     ),
-    getHomePage(useParams?.locale , "&populate[review][on][common.reviews][populate]=*"),
-    getHomePage(useParams?.locale , "&populate[coreFeatures][on][sections.features-section][populate][cardsDetail][populate][cardImg]=true&populate[coreFeatures][on][sections.features-section][populate][cardsDetail][populate][content]=*"),
-     //&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*
+    getHomePage(
+      useParams?.locale,
+      "&populate[review][on][common.reviews][populate]=*",
+    ),
+    getHomePage(
+      useParams?.locale,
+      "&populate[coreFeatures][on][sections.features-section][populate][cardsDetail][populate][cardImg]=true&populate[coreFeatures][on][sections.features-section][populate][cardsDetail][populate][content]=*",
+    ),
+    //&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
-  
+
   return (
-      <div className="relative overflow-x-hidden">
-        <div className="relative">
-          {/* <Header /> */}
-          <Hero homePageContent={homePageContent?.data} />
-          <TrustBar platforms={platforms}  />
-          <TheEngineContractor
-            engineContractor={homePageContent?.data?.engineContractor}
-          />
-        </div>
-        <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
-        <Finally finallyC={homePageContent?.data?.finally} />
-        <CoreFeatures coreFeatures={coreFeatures?.data?.coreFeatures?.[0]} />
-        <Features features={homePageContent?.data?.features} />
-        <ContractorIndustry
-          contractorIndustry={homePageContent?.data?.contractorIndustry}
+    <div className="relative overflow-x-hidden">
+      <div className="relative">
+        {/* <Header /> */}
+        <Hero homePageContent={homePageContent?.data} />
+        <TrustBar
+          platforms={platforms}
+          className="mx-auto w-full max-w-[889px]"
         />
-        <OurReviews reviewsList={reviewsList?.data?.review?.[0]?.reviews} reviews={homePageContent?.data?.reviews} />
-      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
-        <OurBlogs
-          blogs={blogs?.data}
-          blogHeading={homePageContent?.data?.blogs}
+        <TheEngineContractor
+          engineContractor={homePageContent?.data?.engineContractor}
         />
-        <div className="overflow-hidden relative ">
-          <EntireBusiness
-            entireBusiness={homePageContent?.data?.entireBusiness}
-            ncc_text={homePageContent?.data?.ncc_text}
-          />
-        </div>
       </div>
-      
-    
-    
+      <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
+      <Finally finallyC={homePageContent?.data?.finally} />
+      <CoreFeatures coreFeatures={coreFeatures?.data?.coreFeatures?.[0]} />
+      <Features features={homePageContent?.data?.features} />
+      <ContractorIndustry
+        contractorIndustry={homePageContent?.data?.contractorIndustry}
+      />
+      <OurReviews
+        reviewsList={reviewsList?.data?.review?.[0]?.reviews}
+        reviews={homePageContent?.data?.reviews}
+      />
+      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
+      <OurBlogs
+        blogs={blogs?.data}
+        blogHeading={homePageContent?.data?.blogs}
+      />
+      <div className="relative overflow-hidden">
+        <EntireBusiness
+          entireBusiness={homePageContent?.data?.entireBusiness}
+          ncc_text={homePageContent?.data?.ncc_text}
+        />
+      </div>
+    </div>
   );
 }

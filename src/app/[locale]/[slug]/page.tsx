@@ -129,7 +129,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             {/* Cloud Layer 1 */}
           </div>
 
-          <TrustBar platforms={platforms} />
+          <TrustBar
+            platforms={platforms}
+            className="mx-auto w-full max-w-[889px]"
+          />
           <Faq faq={faq?.data?.[0]?.faqs} />
           <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
         </>

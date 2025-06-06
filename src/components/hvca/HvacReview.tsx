@@ -4,6 +4,7 @@ import { reviews } from "../common/Helper";
 import ReviewModal from "../common/ReviewModal";
 import SliderLayout from "../common/SliderLayout";
 import HvacReviewCard from "./HvacReviewCard";
+import ThousandsReviews from "../crmbussiness/ThousandsReviews";
 
 const HvacReview = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -22,34 +23,9 @@ const HvacReview = () => {
         <span className="bg-pantone bg-clip-text text-transparent">★</span>{" "}
         across thousands of reviews
       </h2>
-      {/* <SliderLayout
-        swiperClassName="swiper-slide-hvac "
-        wrapperClassName="relative w-full h-auto relative z-20"
-        slidesPerView={1}
-        spaceBetween={9}
-        breakpoints={{
-          640: { slidesPerView: 1.5, spaceBetween: 12 },
-          768: { slidesPerView: 2, spaceBetween: 16 },
-          1024: { slidesPerView: 2.5, spaceBetween: 20 },
-          1280: { slidesPerView: 3, spaceBetween: 35 },
-        }}
-      >
-        {reviews.map((review, index) => (
-          <HvacReviewCard
-            review={review}
-            key={index}
-            openModal={
-              review.isModal
-                ? () => openModal(review.videolink || "")
-                : () => {}
-            }
-          />
-        ))}
-      </SliderLayout>
-      <ReviewModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        videoUrl={selectedVideoUrl || ""}
+      {/* <ThousandsReviews
+        data={crmPageContent?.data?.[0]?.thousandReviews}
+        reviews={reviews?.data?.[0]?.reviews?.reviews}
       /> */}
     </section>
   );

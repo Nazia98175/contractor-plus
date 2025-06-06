@@ -1,6 +1,12 @@
 import CloudsAnimation from "@/components/common/CloudsAnimation";
-import { blackPlatforms, platforms } from "@/components/common/Helper";
+import {
+  blackPlatforms,
+  makeOperationList,
+  platforms,
+} from "@/components/common/Helper";
+import SoftwareUsed from "@/components/common/SoftwareUsed";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustBar from "@/components/homepage/TrustBar";
 import Whatever from "@/components/homepage/Whatever";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
@@ -35,7 +41,10 @@ const page = () => {
       </div>
       <div className="relative overflow-hidden">
         <AwardBadges />
-        <HvacReview />
+        {/* <ThousandsReviews
+          data={crmPageContent?.data?.[0]?.thousandReviews}
+          reviews={reviews?.data?.[0]?.reviews?.reviews}
+        /> */}
       </div>
       <HvacSoftwareService />
       <TrustBarHvca platforms={platforms} />

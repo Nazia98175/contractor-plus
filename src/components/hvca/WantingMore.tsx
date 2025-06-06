@@ -68,13 +68,13 @@ const WantingMore = () => {
             </div>
           </article>
         ))} */}
-      </div>{" "}
-      {/* <ScrollOverlapCards
+      </div>
+      <ScrollOverlapCards
         theme="light"
         slug={"testing"}
         fieldService={{ cardsDetail: wantingMoreData }}
         curved={true}
-      /> */}
+      />
     </section>
   );
 };

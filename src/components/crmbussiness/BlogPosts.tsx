@@ -3,6 +3,7 @@ import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import { blogData } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
+import BlogArticle from "./BlogArticle";
 
 interface Props {
   data?: any;
@@ -42,31 +43,12 @@ const BlogPosts: React.FC<Props> = ({
         <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:flex xl:flex-row">
           <div className="flex w-full max-w-[600px] flex-col gap-4 xl:max-w-[450px]">
             {blogData.map((blog) => (
-              <article
+              <BlogArticle
                 key={blog.id}
-                className={`card-shine ${bgClass} relative z-20 flex w-full cursor-pointer flex-col items-start gap-4 overflow-hidden rounded-xl p-2 sm:flex-row`}
-              >
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={170}
-                  height={170}
-                  className="w-full rounded-md sm:max-w-[170px]"
-                />
-                <div className="flex-1 text-sm">
-                  <p className="font-jakarta text-secondary text-[10px] font-medium">
-                    {blog.category} | {blog.date}
-                  </p>
-                  <h3
-                    className={`font-jakarta text-base font-medium ${textClass}`}
-                  >
-                    {blog.title}
-                  </h3>
-                  <p className="text-wallStreet max-w-[240px] truncate pt-1 text-xs">
-                    {blog.descrition}
-                  </p>
-                </div>
-              </article>
+                blog={blog}
+                bgClass={bgClass}
+                textClass={textClass}
+              />
             ))}
           </div>
 
@@ -104,31 +86,12 @@ const BlogPosts: React.FC<Props> = ({
             }}
           >
             {blogData.map((blog) => (
-              <article
+              <BlogArticle
                 key={blog.id}
-                className={`${bgClass} bg-blackRussian relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 sm:flex-row`}
-              >
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={170}
-                  height={170}
-                  className="w-full rounded-md sm:max-w-[170px]"
-                />
-                <div className="flex-1 text-sm">
-                  <p className="font-jakarta text-secondary text-[10px] font-medium">
-                    {blog.category} | {blog.date}
-                  </p>
-                  <h3
-                    className={`${textClass} font-jakarta text-base font-medium text-white`}
-                  >
-                    {blog.title}
-                  </h3>
-                  <p className="text-wallStreet max-w-[300px] truncate pt-1 text-xs sm:max-w-[240px]">
-                    {blog.descrition}
-                  </p>
-                </div>
-              </article>
+                blog={blog}
+                bgClass={bgClass}
+                textClass={textClass}
+              />
             ))}
           </SliderLayout>
         </div>

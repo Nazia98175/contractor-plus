@@ -36,7 +36,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         <div className="bg-white-linear absolute -bottom-[84px] left-0 z-10 hidden h-[267px] w-full md:block"></div>
         <Image
           src="/images/webp/mix-screens.webp"
-          className="img-shadow hidden w-full max-w-[1098px] object-cover md:block"
+          className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"
           alt="Mobile"
           width={1098}
           height={578}
@@ -44,7 +44,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         />
         <Image
           src="/images/webp/mix-screens-mobile.webp"
-          className="img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
+          className="drop-shadow-img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
           alt="Mobile"
           width={1098}
           height={578}

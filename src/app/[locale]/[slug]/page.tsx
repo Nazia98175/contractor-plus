@@ -1,5 +1,3 @@
-import Footer from "@/components/common/Footer";
-import Header from "@/components/common/Header";
 import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
@@ -79,7 +77,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
   return (
     <main>
-      {/* <Header /> */}
       {crmPageContent?.data?.length > 0 && (
         <>
           <div className="black-bg">
@@ -94,18 +91,22 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
           <div className="bg-white">
             {useParams?.slug === "crm" && (
-              <TrackProperties
-                ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-                trackProperties={section5?.data?.[0]?.trackProperties}
-              />
-            )}
+              <>
+                <TrackProperties
+                  ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+                  trackProperties={section5?.data?.[0]?.trackProperties}
+                />
 
-            <LikeYouDoContacts
-              data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]}
-            />
-            <HowContractorWork
-              data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]}
-            />
+                <LikeYouDoContacts
+                  data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]}
+                />
+                <HowContractorWork
+                  ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+                  trackProperties={section5?.data?.[0]?.trackProperties}
+                  data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]}
+                />
+              </>
+            )}
             <KindAdorable
               slug={useParams?.slug}
               kindAdorable={section6?.data?.[0]?.comparison}

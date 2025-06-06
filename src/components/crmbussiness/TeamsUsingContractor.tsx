@@ -25,7 +25,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
     <ClockIcon key="clock" />,
     <MoreIcon key="more" />,
   ];
-
+  console.log(data, "dataaaaaaa");
   return (
     <section
       ref={ref}
@@ -58,16 +58,16 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
                     separator=","
                     suffix={item.suffix ?? ""}
                     preserveValue={true}
-                    prefix={item.title === "~" ? item.title : ""}
+                    prefix={item.prefix ?? ""}
                   />
                 )}
                 {!inView &&
-                  `${item.title === "~" && item.title}${item.end}${
-                    item.suffix ?? ""
-                  }`}
+                  (item?.value !== null
+                    ? `${item.value}${item.suffix ?? ""}`
+                    : `${item.end}${item.suffix ?? ""}`)}
               </span>
               <span className="inline-block px-2">
-                {item.title !== "0" && item.title !== "~" && item.title}
+                {item.title !== "n/a" && item.title}
               </span>
             </h3>
 
@@ -87,7 +87,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="custom-shadow-img max-w-[121px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img max-w-[121px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Software Advice"
           />
 
@@ -95,7 +95,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="custom-shadow-img max-w-[103px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img max-w-[103px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Leader"
           />
 
@@ -103,14 +103,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="custom-shadow-img max-w-[137px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img max-w-[137px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Get App"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="custom-shadow-img cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
           />
         </div>

@@ -13,9 +13,11 @@ interface LikeYouDo{
 }
 
 interface Props{
-  data: LikeYouDo
+  data: LikeYouDo;
+  ncc : string;
+  trackProperties: any;
 }
-const HowContractorWork: React.FC<Props> = ({data}) => {
+const HowContractorWork: React.FC<Props> = ({data , ncc , trackProperties}) => {
   const features = [
     "Make it easier for team members to jump in",
     "Easily get the full story on every location",
@@ -69,11 +71,11 @@ const HowContractorWork: React.FC<Props> = ({data}) => {
         className="mt-3.5 flex flex-col items-center justify-center gap-2.5 md:mt-7"
       >
         <button className="bg-red-linear primary-btn flex h-10 items-center gap-1.5">
-          Get started FREE
+         {trackProperties?.btnText}
           <SideIcon />
         </button>
         <button className="font-myriad text-wallStreet flex cursor-pointer items-center gap-1.5 text-sm font-semibold">
-          No Credit Card Required
+          {ncc}
         </button>
       </CardReveal>
     </>

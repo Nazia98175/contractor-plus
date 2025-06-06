@@ -8,7 +8,7 @@ import { OurReviewList } from "../common/Helper";
 import { GroupStartIcon } from "../common/Icons";
 import ReviewModal from "../common/ReviewModal";
 import TextAnimation from "../common/TextAnimation";
-import ReviewCard from "./ReviewCard";
+import ReviewCard from "../common/ReviewCard";
 import { Review } from "@/types";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 

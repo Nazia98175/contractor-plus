@@ -3,14 +3,31 @@ import { PlayIcon, StartIcon } from "../common/Icons";
 import Image from "next/image";
 import { Review } from "@/types";
 
+const VARIANT_CLASSES = {
+  primary: {
+    container: "bg-shutter md:bg-transparent p-3",
+    nameText: "text-white",
+    roleText: "text-secondary",
+    quoteText: "text-secondary",
+    modalButton: "bg-darkBlack",
+  },
+  secondary: {
+    container: "bg-rgba2 line-clamp-4 backdrop-blur-[7px] p-2",
+    nameText: "text-white",
+    roleText: "text-secondary",
+    quoteText: "text-decemberSky",
+    modalButton: "bg-stiletto",
+  },
+};
 interface ReviewCardProps {
   review: Review;
   openModal: () => void;
+  variant?: "primary" | "secondary";
 }
 
 const renderStars = (rating: number) => {
   return Array.from({ length: 5 }).map((_, index) => (
-    <span key={index}>
+    <span className="h-[18px] w-[18px]" key={index}>
       <StartIcon filled={index < rating} />
     </span>
   ));
@@ -19,44 +36,58 @@ const renderStars = (rating: number) => {
 const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   review,
   openModal,
+  variant = "primary",
 }) => {
+  const styles = VARIANT_CLASSES[variant];
   return (
     <div className="mr-5 h-full min-h-full">
       <article
         onClick={openModal}
-        className="trusted-service bg-shutter group relative -z-[10] flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] p-3 md:max-w-[419px] md:bg-transparent"
+        className={`group trusted-service relative flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] md:max-w-[419px] ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-2">
-            <Image
-              src={review.profileUrl}
-              alt="avatar"
-              width={42}
-              height={42}
-              className="h-fit max-w-[42px] rounded-full object-contain"
-            />
+            {review?.profileUrl ? (
+              <Image
+                src={review.profileUrl}
+                alt="avatar"
+                width={42}
+                height={42}
+                className="h-fit max-w-[42px] rounded-full object-contain"
+              />
+            ) : (
+              <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
+                {review?.userName
+                  ?.split(" ")
+                  .filter(Boolean)
+                  .map((word) => word[0].toUpperCase())
+                  .join("")}
+              </div>
+            )}
             <div className="max-w-[150px] truncate sm:max-w-[190px]">
               <div className="flex gap-2">
-                <h5 className="text-base font-medium text-white">
+                <h5 className={`text-base font-medium ${styles.nameText}`}>
                   {review.userName}
                 </h5>
                 <span
                   onClick={openModal}
-                  className="group-hover:text-pleasure flex h-5 w-5 items-center justify-center rounded-full bg-[#2A2A2E] text-white"
+                  className={`group-hover:text-pleasure flex h-5 w-5 items-center justify-center rounded-full text-white ${styles.modalButton}`}
                 >
                   <PlayIcon />
                 </span>
               </div>
-              <h6 className="text-secondary truncate text-xs font-medium tracking-[0.1px] text-nowrap">
+              <h6
+                className={`truncate text-xs font-medium tracking-[0.1px] text-nowrap ${styles.roleText}`}
+              >
                 {review.userRole}
               </h6>
             </div>
           </div>
-          <div className="flex items-center gap-1">
-            {renderStars(review.rating)}
-          </div>
+          <div className="flex items-center">{renderStars(review.rating)}</div>
         </div>
-        <p className="text-secondary mt-5 text-xs font-semibold sm:text-sm">
+        <p
+          className={`mt-5 text-xs font-semibold sm:text-sm ${styles.quoteText}`}
+        >
           "{review.review}"
         </p>
       </article>

@@ -1,8 +1,8 @@
 import React from "react";
-import { PlayIcon, StartIcon } from "../common/Icons";
+import { PlayIcon, StartIcon } from "./Icons";
 import Image from "next/image";
 import { Review } from "@/types";
-import { OurReviewList } from "../common/Helper";
+import { OurReviewList } from "./Helper";
 
 interface ReviewCardProps {
   review: Review;
@@ -12,7 +12,7 @@ interface ReviewCardProps {
 
 // Fixed helper function to render stars based on rating
 const renderStars = (rating: number) => {
-  const roundedRating = Math.round(Number(rating)); 
+  const roundedRating = Math.round(Number(rating));
   return Array.from({ length: 5 }).map((_, index) => (
     <span key={index}>
       <StartIcon filled={index < roundedRating} />
@@ -20,7 +20,11 @@ const renderStars = (rating: number) => {
   ));
 };
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ review, openModal , index }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({
+  review,
+  openModal,
+  index,
+}) => {
   return (
     <div className="mr-5 h-full min-h-full">
       <article

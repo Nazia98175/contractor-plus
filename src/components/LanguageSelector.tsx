@@ -49,7 +49,7 @@ const LanguageItem = memo(
     onClick: () => void;
   }) => (
     <div
-      className={`flex items-center justify-center gap-2 px-2 py-1 sm:py-2 text-superSilver font-medium tracking-[0.1px] leading-[142.857%] lg:text-xs sm:text-sm text-xs cursor-pointer transition-colors duration-200 ${
+      className={`text-superSilver flex cursor-pointer items-center justify-center gap-2 px-2 py-1 text-xs leading-[142.857%] font-medium tracking-[0.1px] transition-colors duration-200 sm:py-2 sm:text-sm lg:text-xs ${
         isActive ? "bg-gray-700/60" : "hover:bg-gray-800/60"
       }`}
       style={{
@@ -60,9 +60,9 @@ const LanguageItem = memo(
       }}
       onClick={onClick}
     >
-      <div className="flex gap-1 sm:gap-2 w-full items-center justify-start">
+      <div className="flex w-full items-center justify-start gap-1 sm:gap-2">
         <Image
-          className="object-cover w-3 sm:min-w-5 sm:w-5 rounded-full"
+          className="w-3 rounded-full object-cover sm:w-5 sm:min-w-5"
           src={language.imgPath}
           width={16}
           height={16}
@@ -70,13 +70,13 @@ const LanguageItem = memo(
           alt={`${language.code} flag`}
           loading="lazy" // Add lazy loading
         />
-        <h4 className="font-inter text-[10px] sm:text-xs xl:text-sm font-semibold">
+        <h4 className="font-inter text-[10px] font-semibold sm:text-xs xl:text-sm">
           {/* <span className="block sm:hidden ">{language.code}</span> */}
           <span className="hidden sm:block">{language.name}</span>
         </h4>
       </div>
     </div>
-  )
+  ),
 );
 
 LanguageItem.displayName = "LanguageItem";
@@ -85,7 +85,7 @@ const LanguageSelector = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [currentLanguage, setCurrentLanguage] = useState<LanguageOption>(
-    languages[0]
+    languages[0],
   );
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -155,7 +155,7 @@ const LanguageSelector = () => {
         router.replace(newPath, { scroll: false });
       }
     },
-    [pathname, router, currentLanguage]
+    [pathname, router, currentLanguage],
   );
 
   const toggleDropdown = useCallback(() => {
@@ -174,17 +174,17 @@ const LanguageSelector = () => {
         onClick={() => handleLanguageChange(language)}
       />
     ),
-    [currentLanguage, isOpen, handleLanguageChange]
+    [currentLanguage, isOpen, handleLanguageChange],
   );
 
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center gap-1 cursor-pointer bg-transparent py-1 px-1.5 sm:min-w-[110px] w-fit text-superSilver lg:text-xs sm:text-sm rounded hover:bg-white hover:text-kuroiBlack transition-colors duration-200"
+        className="text-superSilver hover:text-kuroiBlack flex w-fit cursor-pointer items-center gap-1 rounded bg-transparent px-1.5 py-1 transition-colors duration-200 hover:bg-white sm:min-w-[110px] sm:text-sm lg:text-xs"
         onClick={toggleDropdown}
       >
         <Image
-          className="object-cover sm:w-5 w-3 rounded-full"
+          className="w-3 rounded-full object-cover sm:w-5"
           src={currentLanguage.imgPath}
           width={20}
           height={20}
@@ -192,12 +192,12 @@ const LanguageSelector = () => {
           alt={`${currentLanguage.code} flag`}
           priority={true} // Prioritize loading this image
         />
-        <h4 className="font-inter text-xs xl:text-sm font-semibold">
+        <h4 className="font-inter text-xs font-semibold xl:text-sm">
           {/* <span className="block sm:hidden">{currentLanguage.code}</span> */}
           <span className="hidden sm:block">{currentLanguage.name}</span>
         </h4>
         <div
-          className={`transform transition-transform duration-300 ease-in-out lg:block hidden ${
+          className={`hidden transform transition-transform duration-300 ease-in-out lg:block ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         >
@@ -208,14 +208,14 @@ const LanguageSelector = () => {
       {/* Use conditional rendering to improve initial load time */}
       {isOpen && (
         <div
-          className={`absolute z-50 mt-1 right-0 w-full bg-kuroiBlack border border-gray-700 rounded-md shadow-lg py-1 max-h-60 overflow-auto backdrop-blur-sm transition-all duration-300 ease-out origin-top-right no-scrollbar ${
+          className={`bg-kuroiBlack no-scrollbar absolute right-0 z-50 mt-1 max-h-60 w-full origin-top-right overflow-auto rounded-md border border-gray-700 py-1 shadow-lg backdrop-blur-sm transition-all duration-300 ease-out ${
             isOpen
-              ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+              ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
+              : "pointer-events-none -translate-y-2 scale-95 opacity-0"
           }`}
         >
           {languages.map((language, index) =>
-            renderLanguageItem(language, index)
+            renderLanguageItem(language, index),
           )}
         </div>
       )}

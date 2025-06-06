@@ -20,7 +20,7 @@ const AwardsTagsImg = () => {
                 alt={award.alt}
                 width={135}
                 height={130}
-                className={`img-shadow aspect-square h-full w-full transform cursor-pointer object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
+                className={`drop-shadow-img-shadow aspect-square h-full w-full transform cursor-pointer object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
                   indexMtMap[index] || ""
                 }`}
               />
@@ -45,7 +45,7 @@ const AwardsTagsImg = () => {
               alt={award.alt}
               width={97}
               height={97}
-              className="img-shadow transform cursor-pointer object-center transition-transform duration-300 ease-in-out hover:rotate-6"
+              className="drop-shadow-img-shadow transform cursor-pointer object-center transition-transform duration-300 ease-in-out hover:rotate-6"
             />
           </div>
         ))}

@@ -23,8 +23,9 @@ const CompareCard: React.FC<CompareCardProps> = ({ feature }) => {
           )}
         </button>
         <button className="w-1/2 flex justify-center items-center">
-          {feature.othersHave ? (
-            <CheckIcon width={24} height={24} className="max-w-6 min-w-6" />
+          {feature.competitorsNote !== null ? (
+            // <CheckIcon width={24} height={24} className="max-w-6 min-w-6" />
+            <p>{feature?.competitorsNote}</p>
           ) : (
             <span className="max-w-6 min-w-6">
               <CloseIcon />

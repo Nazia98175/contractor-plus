@@ -1,4 +1,6 @@
 import React from "react";
+import Marquee from "react-fast-marquee";
+import TrustedServiceCard from "../crmbussiness/TrustedServiceCard";
 
 const ServiceContractorsMarquee = () => {
   return (
@@ -6,22 +8,19 @@ const ServiceContractorsMarquee = () => {
       <h3 className="main-heading section-heading gradient-white text-center">
         Trusted by over 50,000 build and service contractors
       </h3>
-      {/* <div className="">
-        <Marquee speed={30} direction="left" pauseOnHover className="py-5">
-          {reviewsList?.map((review: any, index: any) => (
-            <ReviewCard
-              key={review.id}
-              index={index}
-              review={review as Review}
-              openModal={
-                review.isModal
-                  ? () => openModal(review.videolink || "")
-                  : () => {}
-              }
-            />
-          ))}
-        </Marquee>
-      </div> */}
+      {/* <Marquee speed={30} direction="right" pauseOnHover>
+        {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
+          <TrustedServiceCard
+            key={review.id}
+            review={review as Review}
+            openModal={
+              review.isModal
+                ? () => openModal(review.videolink || "")
+                : () => {}
+            }
+          />
+        ))}
+      </Marquee> */}
     </section>
   );
 };

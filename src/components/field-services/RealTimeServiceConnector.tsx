@@ -1,54 +1,56 @@
 import Image from "next/image";
+import React from "react";
+import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
 
 const RealTimeServiceConnector = () => {
-  //
-  //   {
-  //     title: "Live Dispatch",
-  //     description:
-  //       "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-  //   },
-  //   {
-  //     title: "Smart Schedule",
-  //     description:
-  //       "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-  //   },
-  //   {
-  //     title: "Job Details",
-  //     description:
-  //       "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-  //   },
-  //   {
-  //     title: "Live Dispatch",
-  //     description:
-  //       "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-  //   },
-  //   {
-  //     title: "Smart Schedule",
-  //     description:
-  //       "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-  //   },
-  //   {
-  //     title: "Job Details",
-  //     description:
-  //       "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-  //   },
-  //   {
-  //     title: "Live Dispatch",
-  //     description:
-  //       "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-  //   },
-  //   {
-  //     title: "Smart Schedule",
-  //     description:
-  //       "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-  //   },
-  //   {
-  //     title: "Job Details",
-  //     description:
-  //       "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-  //   },
-  // ];
+  const sliderData = [
+    {
+      title: "Live Dispatch",
+      description:
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+    },
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Job Details",
+      description:
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
+    },
+    {
+      title: "Live Dispatch",
+      description:
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+    },
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Job Details",
+      description:
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
+    },
+    {
+      title: "Live Dispatch",
+      description:
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+    },
+    {
+      title: "Smart Schedule",
+      description:
+        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
+    },
+    {
+      title: "Job Details",
+      description:
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
+    },
+  ];
   return (
     <section className="relative z-20 overflow-hidden bg-white">
       <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[10%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
@@ -77,9 +79,9 @@ const RealTimeServiceConnector = () => {
           <div className="img-linear xs:bottom-[18%] xs:h-[56%] absolute bottom-[37%] left-0 z-10 block h-[34%] w-full rotate-180 sm:hidden"></div>
         </div>
         <div className="img-linear absolute -bottom-[1%] z-10 hidden h-[60%] w-full rotate-180 sm:block"></div>
-        {/* <div className="w-full sm:-mt-10">
+        <div className="w-full sm:-mt-10">
           <RealTimeServiceConnectorSlider sliderData={sliderData} />
-        </div> */}
+        </div>
       </div>
     </section>
   );

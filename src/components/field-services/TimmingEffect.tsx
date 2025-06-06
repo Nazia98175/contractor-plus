@@ -69,7 +69,7 @@ const TimmingEffect = () => {
           You check the live crew map, see who’s already moving, drag unassigned
           jobs onto the calendar & assign based on proximity.
         </p>
-        <TimmingEffectSlider sliderData={sliderData} />
+        {/* <TimmingEffectSlider sliderData={sliderData} /> */}
         <Button variant="primary" className="mt-3 mb-[6px]">
           <span className="hidden sm:flex">Get started FREE</span>
           <span className="flex sm:hidden">Download FREE App</span>

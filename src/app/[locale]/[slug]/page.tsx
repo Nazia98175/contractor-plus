@@ -79,7 +79,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
       {crmPageContent?.data?.length > 0 && (
         <>
           <div className="black-bg">
@@ -92,7 +92,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             fieldService={section4?.data?.[0]?.fieldService}
           />
 
-         
           <div className="bg-white">
             {useParams?.slug === "crm" && (
               <TrackProperties
@@ -101,19 +100,25 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               />
             )}
 
-           <LikeYouDoContacts data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]} />
-            <HowContractorWork data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]} />
+            <LikeYouDoContacts
+              data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]}
+            />
+            <HowContractorWork
+              data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]}
+            />
             <KindAdorable
               slug={useParams?.slug}
               kindAdorable={section6?.data?.[0]?.comparison}
             />
 
-            <TeamsUsingContractor data={section7?.data?.[0]?.teamsUsingContractor} />
+            <TeamsUsingContractor
+              data={section7?.data?.[0]?.teamsUsingContractor}
+            />
             <ThousandsReviews
               data={crmPageContent?.data?.[0]?.thousandReviews}
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
-          </div> 
+          </div>
           <div className="relative w-full">
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
@@ -125,13 +130,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
           <TrustBar platforms={platforms} />
           <Faq faq={faq?.data?.[0]?.faqs} />
-          <BlogPosts
-            data={crmPageContent?.data?.[0]?.blogs}
-            blogs={blogs}
-          />
+          <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
         </>
       )}
-
     </main>
   );
 };

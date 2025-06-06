@@ -27,15 +27,17 @@ export default async function RootLayout({
   const messages = await getMessages({ locale });
   const useParams = await params;
 
-
-  const [header , footer] = await Promise.all([
-   getHeader(useParams?.locale , "&populate[btnTxt]=true&populate[bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true"),
+  const [header, footer] = await Promise.all([
+    getHeader(
+      useParams?.locale,
+      "&populate[btnTxt]=true&populate[bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true",
+    ),
     getFooter(
       useParams?.locale,
       "&populate[sections][populate]=*&populate[bottomLinks]=*",
     ),
   ]);
-  console.log(header , "header data")
+  console.log(header, "header data");
   return (
     <html
       lang="en"
@@ -44,10 +46,10 @@ export default async function RootLayout({
       <body>
         <BackToTop />
         <NextIntlClientProvider messages={messages}>
-        <Header header={header?.data} />
-        {children}
-        <Footer footer={footer?.data} />
-        <ParticlesComponent id="star-particles" />
+          <Header header={header?.data} />
+          {children}
+          <Footer footer={footer?.data} />
+          <ParticlesComponent id="star-particles" />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -304,7 +304,7 @@ html {
   background: #3b82f6 !important;
   width: 24px !important;
 }
-.swiper-pagination-bullet-active {
+.blog-post .swiper-pagination-bullet-active {
   border-radius: 24px !important;
   background: #3b82f6 !important;
   width: 24px !important;
@@ -1508,12 +1508,15 @@ button {
   width: 100% !important;
   max-width: 80px;
 }
+.swiper-pagination-timming-section:active {
+  background-color: #ef4444 !important;
+  width: 10px !important;
+  height: 10px;
+}
 
 .swiper-pagination-timming-section {
   width: 10px !important;
-  background-color: blue !important;
+  height: 10px;
+  background-color: #000000 !important;
   border-radius: 100%;
-}
-.swiper-pagination-timming-section:active {
-  background-color: #ef4444 !important;
 }

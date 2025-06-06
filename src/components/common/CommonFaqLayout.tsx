@@ -16,7 +16,7 @@ interface CommonFaqLayoutProps {
   faqitems: FaqItemType[];
   openIndex: number | null;
   onToggle: (index: number) => void;
-  theme?: "hvac" | "light" | "dark";
+  variant?: "hvac" | "light" | "dark";
 }
 const CommonFaqLayout: React.FC<CommonFaqLayoutProps> = ({
   heading,
@@ -24,7 +24,7 @@ const CommonFaqLayout: React.FC<CommonFaqLayoutProps> = ({
   faqitems,
   openIndex,
   onToggle,
-  theme = "hvac",
+  variant = "hvac",
   className = " w-full px-2 py-10",
 }) => {
   return (
@@ -44,7 +44,7 @@ const CommonFaqLayout: React.FC<CommonFaqLayoutProps> = ({
           <HvacFaqList
             key={item.id}
             data={item}
-            theme={theme}
+            variant={variant}
             isOpen={openIndex === index}
             onClick={() => onToggle(index)}
           />

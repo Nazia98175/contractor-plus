@@ -26,6 +26,39 @@ export const metadata = {
 };
 
 const page = () => {
+  const faqitems = [
+    {
+      id: 1,
+      question: "Will my team actually use this?",
+      answer:
+        "Your team won’t want to live without it. It will make every single person’s job easier to the point you won’t be able to imagine running your HVAC business without Contractor+. Use it free and we’ll prove it. ",
+    },
+    {
+      id: 2,
+      question:
+        "How fast can I switch from Jobber, Housecall Pro or ServiceTitan?",
+      answer:
+        "It links every call, message, email and file to each customer and each job address, so you can review past interactions and documents at a glance.",
+    },
+    {
+      id: 3,
+      question: "Can I import my current invoices, customers, and templates?",
+      answer:
+        "You drag and drop tasks on the schedule, view crew locations in real time and see status updates as work items are checked off or notes are added.",
+    },
+    {
+      id: 4,
+      question: "What software/tools does Contractor+ replace?",
+      answer:
+        "Contractor+ includes built-in calling and texting, dedicated job chat rooms and automatic transcripts so everyone stays in sync without missing details.",
+    },
+    {
+      id: 5,
+      question: "Does this work for small teams and large teams?",
+      answer:
+        "Capture inquiries through customized entry points, move opportunities through visual stages, then generate quotes and contracts clients can sign online—all within the same system.",
+    },
+  ];
   return (
     <>
       <div className="bg-white">
@@ -49,7 +82,7 @@ const page = () => {
       <HvacSoftwareService />
       <TrustBarHvca platforms={platforms} />
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
-      <HvacFaq faq={[]} />
+      <HvacFaq faqitems={faqitems} variant="hvac" />
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
     </>
   );

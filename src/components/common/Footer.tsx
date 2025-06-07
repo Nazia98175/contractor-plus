@@ -39,7 +39,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const t = useTranslations("footer");
 
-
   const links: { text: string; href: string }[] = t
     .raw("links")
     .map((text: string) => ({
@@ -64,7 +63,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     <footer className="relative z-20 w-full overflow-hidden py-10 md:py-[62px]">
       {/* <ParticlesComponent id="star-particles" /> */}
       <span className="pointer-events-none absolute top-[-314px] left-0 hidden lg:block">
-      <FooterAnimatedIcon/>
+        <FooterAnimatedIcon />
       </span>
       <div className="main-container">
         <div className="mx-auto flex max-w-[414px] flex-col items-center justify-center space-y-5 pb-6 text-center">
@@ -157,7 +156,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </div> */}
 
         <div className="flex items-center justify-between gap-3 pt-4">
-          <div className="hidden items-center gap-3 md:flex relative z-10">
+          <div className="relative z-10 hidden items-center gap-3 md:flex">
             <p className="text-secondary font-montserrat text-xs font-medium">
               {footer?.poweredBy}
             </p>

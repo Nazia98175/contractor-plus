@@ -1084,13 +1084,6 @@ html::-webkit-scrollbar {
   @apply !h-auto;
 }
 
-.custom-active-slider .swiper-slide {
-  @apply opacity-30 transition-all duration-300 ease-in-out;
-}
-.custom-active-slider .swiper-slide-active {
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
-}
 .hero-slider {
   background:
     linear-gradient(0deg, #1c27316b, #1c27316b),
@@ -1238,4 +1231,14 @@ button {
 }
 .custom-pagination .swiper-pagination-bullet-active {
   @apply lg:!bg-shortcake !bg-lightishBlue h-1.5 w-6 rounded-3xl;
+}
+.custom-active-slider .swiper-slide {
+  @apply opacity-30 transition-all duration-300 ease-in-out;
+}
+.custom-active-slider .swiper-slide-active {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.slider-img-gradient {
+  background: linear-gradient(180deg, #ffffff00 0%, #fff 100%);
 }

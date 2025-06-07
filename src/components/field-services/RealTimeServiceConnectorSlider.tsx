@@ -1,81 +1,144 @@
 "use client";
+
+import React, { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Controller } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
+
 interface SliderItem {
   title: string;
   description: string;
 }
 
-interface RealTimeServiceConnectorSliderProps {
+interface Props {
   sliderData: SliderItem[];
 }
 
-const RealTimeServiceConnectorSlider: React.FC<
-  RealTimeServiceConnectorSliderProps
-> = ({ sliderData }) => {
+const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
+  const [topSwiper, setTopSwiper] = useState<any>(null);
+  const [bottomSwiper, setBottomSwiper] = useState<any>(null);
+
+  // UseEffect to set controller after both swipers are ready
+  useEffect(() => {
+    if (topSwiper && bottomSwiper) {
+      topSwiper.controller.control = bottomSwiper;
+      bottomSwiper.controller.control = topSwiper;
+    }
+  }, [topSwiper, bottomSwiper]);
+
   return (
-    <div className="1xl:px-0 custom-pagination relative z-50 mx-auto w-full max-w-[1414px] sm:px-2">
-      <Swiper
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        pagination={{
-          el: ".swiper-pagination-real-time",
-          clickable: true,
-        }}
-        spaceBetween={36}
-        centeredSlides={true}
-        modules={[Navigation, Pagination]}
-        className="mySwiper real-time-active-slider"
-        slidesPerView={3}
-        loop={true}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 16,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 24,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 24,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 36,
-          },
-        }}
-      >
-        {sliderData.map((item, index) => (
-          <SwiperSlide
-            key={index}
-            className="bg-rgba1 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px]"
-          >
-            <b className="font-jakarta text-lightBlack text-base lg:text-xl">
-              {item.title}
-            </b>
-            <p className="font-jakarta text-secondary mt-3 text-sm font-medium">
-              {item.description}
-            </p>
-          </SwiperSlide>
-        ))}
+    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
+      {/* Top Image Slider */}
+      <Swiper modules={[Controller]} onSwiper={setTopSwiper} slidesPerView={1}>
+        <SwiperSlide className="pt-[72px]">
+          <div className="mx-auto w-fit rounded-[55px] border-4 border-[#D7D7D7] bg-black p-[14px]">
+            <img
+              src={"/images/webp/real-slider-card-1.webp"}
+              alt="Slide Image"
+              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[72px]">
+          <div className="relative mx-auto w-fit overflow-hidden">
+            <img
+              src={"/images/webp/real-slider-card-2.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[771px] object-cover"
+            />
+            <div className="slider-img-gradient absolute top-0 right-0 h-full w-full max-w-[119px]"></div>
+            <div className="slider-img-gradient absolute top-0 left-0 h-full w-full max-w-[119px] opacity-75"></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[72px]">
+          <div className="mx-auto w-fit rounded-[55px] border-4 border-[#D7D7D7] bg-black p-[14px]">
+            <img
+              src={"/images/webp/real-slider-card-3.webp"}
+              alt="Slide Image"
+              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[72px]">
+          <div className="mx-auto flex w-full max-w-[550px] gap-6">
+            <img
+              src={"/images/webp/real-slider-group-1.webp"}
+              alt="Slide Image"
+              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+            />
+            <div className="">
+              <img
+                src={"/images/webp/real-slider-group-2.webp"}
+                alt="Slide Image"
+                className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+              />
+            </div>
+            <img
+              src={"/images/webp/real-slider-group-3.webp"}
+              alt="Slide Image"
+              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+            />
+            <img
+              src={"/images/webp/real-slider-group-4.webp"}
+              alt="Slide Image"
+              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+            />
+          </div>
+        </SwiperSlide>
       </Swiper>
-      <div className="relative mx-auto flex w-fit items-center justify-between gap-3">
-        <div className="swiper-button-prev !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
-          <Slidericon />
-        </div>
 
-        <div className="swiper-pagination-real-time relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+      <div className="slider-img-gradient relative z-20 -mt-[292px]">
+        <Swiper
+          modules={[Navigation, Pagination, Controller]}
+          onSwiper={setBottomSwiper}
+          slidesPerView={3}
+          spaceBetween={36}
+          centeredSlides={true}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          pagination={{
+            el: ".swiper-pagination-real-time",
+            clickable: true,
+          }}
+          className="real-time-active-slider"
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 36 },
+          }}
+        >
+          {sliderData.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className="bg-rgba1 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px] md:px-2"
+            >
+              <b className="font-jakarta text-lightBlack text-base lg:text-xl">
+                {item.title}
+              </b>
+              <p className="font-jakarta text-secondary mt-3 text-sm font-medium">
+                {item.description}
+              </p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-        <div className="swiper-button-next !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
-          <Slidericon />
+        {/* Navigation + Pagination */}
+        <div className="relative mx-auto flex w-fit items-center justify-between gap-3">
+          <div className="swiper-button-prev !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
+            <Slidericon />
+          </div>
+
+          <div className="swiper-pagination-real-time relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+
+          <div className="swiper-button-next !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
+            <Slidericon />
+          </div>
         </div>
       </div>
     </div>

@@ -52,6 +52,7 @@
   --color-sangoPink: #f4ada5;
   --color-majorelleGardens: #34755c;
   --color-irisIce: #e3e6f0;
+  --color-shortcake: #f99293;
 
   --color-rgba1: #ffffff99;
   --color-rgba2: #1c273133;
@@ -1160,58 +1161,7 @@ html::-webkit-scrollbar {
 button {
   @apply cursor-pointer;
 }
-.swiper-pagination-real-time-bullet {
-  @apply !bg-reflection !h-2.5 !w-2.5 !rounded-full opacity-100 transition-all duration-300 ease-linear;
-}
-.swiper-pagination-real-time-bullet:active {
-  @apply bg-glowing;
-}
-.swiper-pagination-real-time-bullet-2 {
-  @apply !bg-reflection !h-2.5 !w-2.5 !rounded-full opacity-100 transition-all duration-300 ease-linear;
-}
-.swiper-pagination-real-time-bullet-2:active {
-  @apply !bg-glowing;
-}
-.custom-pagination
-  .swiper-horizontal
-  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  @apply !left-0 !translate-x-0;
-}
-.custom-pagination
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet:active {
-  @apply !bg-superSilver !m-0 !w-[23px];
-}
-.custom-pagination
-  .swiper-pagination-bullet
-  .swiper-pagination-bullet-active
-  .swiper-pagination-bullet-active-main {
-  @apply !m-0 !w-[23px];
-}
-.custom-pagination
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  @apply !bg-lightishBlue;
-}
-.custom-pagination
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  @apply !m-0;
-}
-.custom-pagination
-  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  @apply !w-20 !max-w-full;
-}
+
 .real-time-active-slider .swiper-slide {
   @apply opacity-30 transition-all duration-300 ease-out;
 }
@@ -1260,52 +1210,6 @@ button {
   box-shadow: inset 0px -10px 19.7px #ff787d;
   transform: rotate(180deg);
 }
-.custom-pagination-timming-section
-  .swiper-horizontal
-  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  @apply left-0 translate-x-0;
-}
-.custom-pagination-timming-section
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet:active {
-  @apply !bg-superSilver !m-0 !w-[23px];
-}
-.custom-pagination-timming-section
-  .swiper-pagination-bullet
-  .swiper-pagination-bullet-active
-  .swiper-pagination-bullet-active-main {
-  @apply !m-0 w-[23px];
-}
-.custom-pagination-timming-section
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  @apply !bg-lightishBlue;
-}
-.custom-pagination-timming-section
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  @apply !m-0;
-}
-.custom-pagination-timming-section
-  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  @apply w-[80px] max-w-full;
-}
-.swiper-pagination-timming-section:active {
-  @apply !bg-glowing !h-2.5 !w-2.5;
-}
-.swiper-pagination-timming-section {
-  @apply !h-2.5 !w-2.5 rounded-[100%] bg-black;
-}
 .trusted-service::before {
   content: "";
   position: absolute;
@@ -1326,6 +1230,12 @@ button {
 .trusted-service:hover::before {
   @apply opacity-100;
 }
-.cc {
-  background-color: red;
+.swiper-pagination-real-time {
+  @apply relative;
+}
+.custom-pagination .swiper-pagination-bullet {
+  @apply !bg-superSilver !m-0 h-1.5 w-1.5 opacity-100 transition-all duration-300 ease-in;
+}
+.custom-pagination .swiper-pagination-bullet-active {
+  @apply lg:!bg-shortcake !bg-lightishBlue h-1.5 w-6 rounded-3xl;
 }

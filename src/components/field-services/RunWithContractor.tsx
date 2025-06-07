@@ -44,7 +44,7 @@ const run_contractor = [
 
 const RunWithContractor = () => {
   return (
-    <section className="bg-white py-10">
+    <section className="relative z-20 bg-white py-10">
       <h3 className="section-heading text-kuroiBlack mx-auto mb-[44px] max-w-[1029px] text-center">
         You don’t have to run things their way anymore. Run it your way with
         Contractor+.

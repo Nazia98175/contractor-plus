@@ -67,14 +67,14 @@ const RealTimeServiceConnectorSlider: React.FC<
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="relative mx-auto flex w-full max-w-[158px] items-center justify-between gap-3">
-        <div className="swiper-button-prev !relative !right-0 !bottom-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
+      <div className="relative mx-auto flex w-fit items-center justify-between gap-3">
+        <div className="swiper-button-prev !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
           <Slidericon />
         </div>
 
         <div className="swiper-pagination-real-time relative left-0 flex translate-x-0 items-center justify-center gap-1" />
 
-        <div className="swiper-button-next !relative !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
+        <div className="swiper-button-next !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
           <Slidericon />
         </div>
       </div>

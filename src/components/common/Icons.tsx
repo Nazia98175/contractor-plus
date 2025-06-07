@@ -2626,15 +2626,15 @@ export const PlayIcon2 = () => (
 export const ClaudIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="626"
-    height="195"
+    width="100%"
+    height="100%"
     viewBox="0 0 626 195"
     fill="none"
   >
     <path
       d="M33.8807 32.7746C10.616 -5.18618 -50.4001 -2.50946 -78 3.57399V195H626C608.228 167.746 552.355 168.774 526.64 172.694C532.16 180.129 539.646 190.295 525.429 171.477C511.211 152.659 467.536 154.714 447.476 158.094C421.303 119.809 373.831 118.349 353.367 122.404C355.952 91.5813 331.287 86.8497 318.631 88.3368C304.091 51.025 272.99 52.7824 259.258 58.3251C192.048 5.43962 113.853 26.2856 83.1566 43.3193C65.385 24.8256 42.9011 28.5838 33.8807 32.7746Z"
       fill="url(#paint0_linear_1882_1602)"
-      fill-opacity="0.5"
+      fillOpacity="0.5"
     />
     <defs>
       <linearGradient
@@ -2645,8 +2645,8 @@ export const ClaudIcon = () => (
         y2="530.4"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#616161" />
-        <stop offset="1" stop-color="#16171A" stop-opacity="0" />
+        <stop stopColor="#616161" />
+        <stop offset="1" stopColor="#16171A" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -3619,19 +3619,46 @@ export const RealTimeServiceConnectorIcon = ({
     </defs>
   </svg>
 );
-
+export const SmallIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 428 68"
+    fill="none"
+  >
+    <path
+      d="M56.2306 54.5476C29.9357 40.7314 0.809074 63.6371 0 65.455V68H428C423.469 43.8581 390.243 46.791 374.197 51.2752C372.578 43.2763 363.274 18.9163 338.193 18.5527C318.128 18.2618 307.718 35.8835 305.021 44.7307C294.988 23.7883 275.49 27.5211 266.994 32.0053C265.511 21.5825 253.564 0.591501 217.641 0.00976765C181.718 -0.571965 165.186 24.9761 161.41 37.8229C136.491 26.4791 117.855 41.0948 111.652 49.8206C83.82 23.9335 63.1078 42.1856 56.2306 54.5476Z"
+      fill="url(#paint0_linear_1882_1599)"
+      fillOpacity="0.4"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1882_1599"
+        x1="214"
+        y1="-10.88"
+        x2="214"
+        y2="184.96"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#616161" />
+        <stop offset="1" stopColor="#16171A" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 export const Claud2Icon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="552"
-    height="121"
-    viewBox="0 0 552 121"
+    width="100%"
+    height="100%"
+    viewBox="0 0 631 121"
     fill="none"
   >
     <path
       d="M550.719 80.5386C580.505 66.8441 616.65 88.8383 631 101.547V121H0C14.7376 108.161 79.8931 76.2595 114.41 95.7119C148.927 115.164 152.03 108.94 172.585 95.7119C193.14 82.4843 219.9 81.7062 236.189 86.7638C252.478 91.8214 273.033 99.6024 283.116 84.4295C308.713 40.4671 340.903 36.1875 356.028 37.3547C368.129 38.2884 374.256 34.8907 375.808 33.0752C382.013 26.4613 392.096 0.783426 439.8 0.0053304C503.714 -0.617146 540.377 53.4348 550.719 80.5386Z"
       fill="url(#paint0_linear_1882_1601)"
-      fill-opacity="0.5"
+      fillOpacity="0.5"
     />
     <defs>
       <linearGradient
@@ -3642,8 +3669,8 @@ export const Claud2Icon = () => (
         y2="329.12"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#616161" />
-        <stop offset="1" stop-color="#16171A" stop-opacity="0" />
+        <stop stopColor="#616161" />
+        <stop offset="1" stopColor="#16171A" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -3669,8 +3696,8 @@ export const Claud3Icon = () => (
         y2="542.355"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#14151B" />
-        <stop offset="1" stop-color="#0C0D11" />
+        <stop stopColor="#14151B" />
+        <stop offset="1" stopColor="#0C0D11" />
       </linearGradient>
     </defs>
   </svg>
@@ -3697,8 +3724,8 @@ export const Claud4Icon = () => (
         y2="563.007"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#14151B" />
-        <stop offset="1" stop-color="#0C0D11" />
+        <stop stopColor="#14151B" />
+        <stop offset="1" stopColor="#0C0D11" />
       </linearGradient>
     </defs>
   </svg>

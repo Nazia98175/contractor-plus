@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Controller } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Slidericon } from "../common/Icons";
+import { DownloadIcon, Slidericon } from "../common/Icons";
 
 interface SliderItem {
   title: string;
@@ -64,29 +64,42 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="pt-[72px]">
-          <div className="mx-auto flex w-full max-w-[550px] gap-6">
+          <div className="mx-auto flex w-full max-w-[550px] items-center gap-6">
             <img
               src={"/images/webp/real-slider-group-1.webp"}
               alt="Slide Image"
-              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+              className="h mx-auto w-full max-w-[112px] rounded-md object-cover"
             />
             <div className="">
               <img
                 src={"/images/webp/real-slider-group-2.webp"}
                 alt="Slide Image"
-                className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+                className="h mx-auto mb-[5px] w-full max-w-[112px] rounded-md object-cover"
               />
+              <DownloadIcon />
             </div>
             <img
               src={"/images/webp/real-slider-group-3.webp"}
               alt="Slide Image"
-              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+              className="h mx-auto w-full max-w-[112px] rounded-md object-cover"
             />
             <img
               src={"/images/webp/real-slider-group-4.webp"}
               alt="Slide Image"
-              className="shadow-c3 mx-auto w-full max-w-[871px] rounded-[45px] object-cover"
+              className="h mx-auto w-full max-w-[112px] rounded-md object-cover"
             />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[72px]">
+          <div className="relative mx-auto w-full max-w-[890px] overflow-hidden">
+            <img
+              src={"/images/webp/real-slider-card-5.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full object-cover"
+            />
+            <div className="slider-img-gradient absolute top-0 right-0 h-full w-full max-w-[250px] rotate-180"></div>
+            <div className="slider-img-gradient absolute top-0 left-0 h-full w-full max-w-[250px]"></div>
+            <div className="slider-img-gradient absolute top-0 h-[152px] w-full max-w-full rotate-180"></div>
           </div>
         </SwiperSlide>
       </Swiper>

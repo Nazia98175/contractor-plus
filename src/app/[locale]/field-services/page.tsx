@@ -15,12 +15,14 @@ import HvacSoftware from "@/components/hvca/HvacSoftware";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import WantingMore from "@/components/hvca/WantingMore";
+import { getUserLoc } from "@/services/map";
 export const metadata = {
   title: "Contractor + - Field Services",
   description:
     "One command center to visualize and run your entire field operation",
 };
-const FieldServicesPage = () => {
+const FieldServicesPage = async () => {
+   const location = await getUserLoc();
   const faqitems = [
     {
       id: 1,
@@ -68,7 +70,7 @@ const FieldServicesPage = () => {
   ];
   return (
     <>
-      <FieldServicesHero />
+      <FieldServicesHero location={location} />
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />

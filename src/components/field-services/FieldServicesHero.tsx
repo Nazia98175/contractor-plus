@@ -267,7 +267,7 @@ const FieldServicesHero = ({ location }: Props) => {
       latitude,
       longitude,
       city: location.city?.names?.en,
-      country: location.country?.names?.en,
+      country: location.country?.iso_code,
     };
   }, [location]);
 
@@ -279,18 +279,18 @@ const FieldServicesHero = ({ location }: Props) => {
       { id: 3, name: "David Brown", initials: "DB", color: "#45B7D1" },
       { id: 4, name: "Lisa Garcia", initials: "LG", color: "#96CEB4" },
       { id: 5, name: "John Smith", initials: "JS", color: "#FFEAA7" },
-      { id: 6, name: "Maria Lopez", initials: "ML", color: "#DDA0DD" },
-      { id: 7, name: "Robert Davis", initials: "RD", color: "#98D8C8" },
-      { id: 8, name: "Jennifer White", initials: "JW", color: "#F7DC6F" },
-      { id: 9, name: "Alex Turner", initials: "AT", color: "#BB8FCE" },
-      { id: 10, name: "Emma Davis", initials: "ED", color: "#85C1E9" },
+      // { id: 6, name: "Maria Lopez", initials: "ML", color: "#DDA0DD" },
+      // { id: 7, name: "Robert Davis", initials: "RD", color: "#98D8C8" },
+      // { id: 8, name: "Jennifer White", initials: "JW", color: "#F7DC6F" },
+      // { id: 9, name: "Alex Turner", initials: "AT", color: "#BB8FCE" },
+      // { id: 10, name: "Emma Davis", initials: "ED", color: "#85C1E9" },
     ];
 
     // Generate positions within a radius around the actual location
     return baseUsers.map((user, index) => {
       // Create a circle of positions around the center
       const angle = index * 36 + (Math.random() * 20 - 10); // 36 degrees apart with some randomness
-      const distance = 0.01 + Math.random() * 0.015; // 0.01 to 0.025 degrees (~1-3km radius)
+      const distance = 0.01 + Math.random() * 0.035; // 0.01 to 0.025 degrees (~1-3km radius)
 
       const offsetLat = distance * Math.sin((angle * Math.PI) / 180);
       const offsetLng = distance * Math.cos((angle * Math.PI) / 180);
@@ -456,6 +456,17 @@ const FieldServicesHero = ({ location }: Props) => {
         )}
       </div>
 
+{/* City Label - Middle Right */}
+      {processedLocation.city && processedLocation.country && (
+        <div className="absolute top-1/2 right-10 transform -translate-y-1/2 z-20">
+          <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-sm text-white px-4 py-2 rounded-lg border border-gray-600 flex items-center space-x-2">
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+            <span className="text-sm font-medium">
+              {processedLocation.city}, {processedLocation.country}
+            </span>
+          </div>
+        </div>
+      )}
       {/* Gradient overlay for better text readability */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 

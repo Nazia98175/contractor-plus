@@ -2622,6 +2622,35 @@ export const PlayIcon2 = () => (
     />
   </svg>
 );
+
+export const ClaudIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 626 195"
+    fill="none"
+  >
+    <path
+      d="M33.8807 32.7746C10.616 -5.18618 -50.4001 -2.50946 -78 3.57399V195H626C608.228 167.746 552.355 168.774 526.64 172.694C532.16 180.129 539.646 190.295 525.429 171.477C511.211 152.659 467.536 154.714 447.476 158.094C421.303 119.809 373.831 118.349 353.367 122.404C355.952 91.5813 331.287 86.8497 318.631 88.3368C304.091 51.025 272.99 52.7824 259.258 58.3251C192.048 5.43962 113.853 26.2856 83.1566 43.3193C65.385 24.8256 42.9011 28.5838 33.8807 32.7746Z"
+      fill="url(#paint0_linear_1882_1602)"
+      fillOpacity="0.5"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1882_1602"
+        x1="274"
+        y1="-31.2"
+        x2="274"
+        y2="530.4"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#616161" />
+        <stop offset="1" stopColor="#16171A" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 export const HvacGlowHeroMobileIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -3586,6 +3615,132 @@ export const RealTimeServiceConnectorIcon = ({
         <stop offset="0.0622667" stopColor="white" stopOpacity="0" />
         <stop offset="0.996954" stopColor="#EE1E25" />
         <stop offset="1" stopColor="#FF777B" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const FileIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="81"
+    height="111"
+    viewBox="0 0 81 111"
+    fill="none"
+  >
+    <path
+      d="M48.4137 33.4276H81V111H0V0H48.4137V33.4276ZM8.23598 103.203H43.0384V97.3668H8.23598V103.203ZM8.23598 91.5187H43.0384V85.6822H8.23598V91.5187ZM8.23598 79.8341H43.0384V73.9977H8.23598V79.8341ZM48.277 54.7243H60.5718V38.1939H48.277V54.7243ZM27.842 33.479H44.2775V20.8668H27.842V33.479ZM80.9932 21.0935H60.4306V0L80.9932 21.0935Z"
+      fill="white"
+    />
+  </svg>
+);
+export const SmallIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 428 68"
+    fill="none"
+  >
+    <path
+      d="M56.2306 54.5476C29.9357 40.7314 0.809074 63.6371 0 65.455V68H428C423.469 43.8581 390.243 46.791 374.197 51.2752C372.578 43.2763 363.274 18.9163 338.193 18.5527C318.128 18.2618 307.718 35.8835 305.021 44.7307C294.988 23.7883 275.49 27.5211 266.994 32.0053C265.511 21.5825 253.564 0.591501 217.641 0.00976765C181.718 -0.571965 165.186 24.9761 161.41 37.8229C136.491 26.4791 117.855 41.0948 111.652 49.8206C83.82 23.9335 63.1078 42.1856 56.2306 54.5476Z"
+      fill="url(#paint0_linear_1882_1599)"
+      fillOpacity="0.4"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1882_1599"
+        x1="214"
+        y1="-10.88"
+        x2="214"
+        y2="184.96"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#616161" />
+        <stop offset="1" stopColor="#16171A" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const Claud2Icon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 631 121"
+    fill="none"
+  >
+    <path
+      d="M550.719 80.5386C580.505 66.8441 616.65 88.8383 631 101.547V121H0C14.7376 108.161 79.8931 76.2595 114.41 95.7119C148.927 115.164 152.03 108.94 172.585 95.7119C193.14 82.4843 219.9 81.7062 236.189 86.7638C252.478 91.8214 273.033 99.6024 283.116 84.4295C308.713 40.4671 340.903 36.1875 356.028 37.3547C368.129 38.2884 374.256 34.8907 375.808 33.0752C382.013 26.4613 392.096 0.783426 439.8 0.0053304C503.714 -0.617146 540.377 53.4348 550.719 80.5386Z"
+      fill="url(#paint0_linear_1882_1601)"
+      fillOpacity="0.5"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1882_1601"
+        x1="315.5"
+        y1="-19.36"
+        x2="315.5"
+        y2="329.12"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#616161" />
+        <stop offset="1" stopColor="#16171A" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const Claud3Icon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 936 403"
+    fill="none"
+  >
+    <path
+      d="M28.2618 0C-316.997 9.16075e-07 -328.134 162.402 -352 171.955V700.56C25.0797 706.929 795.468 715.845 860.383 700.56C941.526 681.454 952.664 437.851 916.07 386.901C879.475 335.951 858.792 374.163 830.153 340.728C801.514 307.292 763.329 331.174 745.827 308.884C712.415 267.487 672.638 296.146 655.137 272.264C608.996 206.984 577.175 240.42 545.354 210.169C513.533 179.917 496.031 200.616 478.53 195.839C461.028 191.063 470.575 179.917 451.482 171.956C432.389 163.996 381.476 191.063 344.881 136.928C308.287 82.7943 282.83 100.308 246.236 97.1239C209.642 93.9396 149.182 49.3585 110.997 41.3976C72.8113 33.4367 64.856 -9.70956e-08 28.2618 0Z"
+      fill="url(#paint0_linear_1882_1598)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1882_1598"
+        x1="410.153"
+        y1="115.137"
+        x2="401.062"
+        y2="542.355"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#14151B" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const Claud4Icon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 1148 333"
+    fill="none"
+  >
+    <path
+      d="M1071.65 1.98193C1255.48 35.8597 1333 567.39 1333 588.807V736L5.49944 703.29C-16.5267 646.957 30.8611 609.677 89.8234 553.915C163.526 484.212 745.95 50.8111 884.46 66.387C971.294 76.1517 989.053 -14.3728 1071.65 1.98193Z"
+      fill="url(#paint0_linear_1882_1597)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1882_1597"
+        x1="788.781"
+        y1="119.521"
+        x2="779.316"
+        y2="563.007"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#14151B" />
+        <stop offset="1" stopColor="#0C0D11" />
       </linearGradient>
     </defs>
   </svg>

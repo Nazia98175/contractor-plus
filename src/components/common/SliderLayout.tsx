@@ -36,7 +36,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   swiperClassName,
   wrapperClassName = "relative w-full",
   modules = [Pagination],
-  effect = undefined, // <- disabled by default
+  effect = undefined,
   autoplay = false,
   pagination = false,
   slidesPerView = 2,

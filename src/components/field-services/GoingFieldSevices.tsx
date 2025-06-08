@@ -27,7 +27,7 @@ const field_service = [
 
 const GoingFieldSevices = () => {
   return (
-    <section className="relative bg-white pb-[54px] sm:pb-[60px] lg:pb-[95px]">
+    <section className="relative z-20 bg-white pb-[54px] sm:pb-[60px] lg:pb-[95px]">
       <img
         className="h-[210px] w-full object-cover"
         src="/images/webp/field-services.webp"

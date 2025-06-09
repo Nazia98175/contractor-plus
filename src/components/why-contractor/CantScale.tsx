@@ -12,9 +12,9 @@ const CantScale = () => {
         height={306}
         className="absolute -top-10 left-0 z-[1] max-w-20 md:top-0 lg:max-w-[177px]"
       />
-      <h3 className="relative z-10 text-center text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px]">
+      <h4 className="relative z-10 text-center text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px]">
         The industry has shifted.
-      </h3>
+      </h4>
 
       <div className="relative mx-auto flex h-full w-full max-w-[869px] flex-col gap-5 py-24 sm:justify-between sm:py-[220px] md:py-0">
         <div className="pointer-events-none absolute -top-[20%] left-1/2 z-0 mx-auto h-full max-h-[682px] min-h-[500px] w-full max-w-[646px] -translate-x-1/2 rounded-full bg-[url('/images/webp/cracked.webp')] bg-contain bg-center bg-no-repeat sm:min-h-[682px] md:-top-8"></div>

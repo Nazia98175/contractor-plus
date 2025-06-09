@@ -290,6 +290,18 @@ export const wantingMoreData = [
   },
 ];
 
+export const cantScaleData = [
+  {
+    text: "The contractors pulling ahead aren’t the ones grinding harder. They’ve rejected “the way it’s always been done” and rebuilt the back end",
+    iconAtStart: true,
+    pt: "md:pt-[247px] ml-auto",
+  },
+  {
+    text: "And now they’re outpacing everyone else without even trying.",
+    iconAtStart: false,
+    pt: "md:pb-[176px]",
+  },
+];
 export const softwareCardData = [
   {
     text: "There’s no easy way to upsell or present multiple package options",

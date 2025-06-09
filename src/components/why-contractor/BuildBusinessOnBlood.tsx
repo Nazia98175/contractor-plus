@@ -1,5 +1,6 @@
 import React from "react";
 import ContractorCard from "./ContractorCard";
+import Image from "next/image";
 
 const BuildBusinessOnBlood = () => {
   const builtYourBusiness = [
@@ -34,24 +35,34 @@ const BuildBusinessOnBlood = () => {
   ];
   return (
     <section className="relative z-10 mt-14 flex flex-col">
-      {/* <Image
-        src="/images/svg/snake.svg"
+      <Image
+        src="/images/svg/spider.svg"
+        alt="Sanke"
+        width={405}
+        height={306}
+        className="absolute top-10 right-0 z-[1] max-w-36 md:top-0 lg:max-w-[305px]"
+      />
+      <Image
+        src="/images/svg/snake-2.svg"
         alt="Sanke"
         width={177}
         height={306}
-        className="absolute -top-10 left-0 z-[1] max-w-20 md:top-0 lg:max-w-[177px]"
-      /> */}
-      <h3 className="text-secondary relative z-10 px-3 text-center text-[28px] font-medium -tracking-[0.56px]">
+        className="absolute -bottom-10 left-0 z-[1] max-w-20 lg:max-w-[250px]"
+      />
+      <h3 className="text-secondary relative z-10 px-3 text-center text-2xl font-medium -tracking-[0.56px] md:text-[28px]">
         You’ve built your business on blood, sweat, and tears
       </h3>
 
-      <div className="relative mx-auto flex h-full w-full max-w-[869px] flex-col gap-5 py-10 sm:justify-between sm:py-14 md:py-0">
+      <div className="relative mx-auto flex h-full w-full max-w-[900px] flex-col gap-5 py-10 sm:justify-between sm:py-14 md:py-0 lg:gap-8">
         <div className="pointer-events-none absolute top-[4%] left-1/2 z-0 mx-auto h-full max-h-[500px] min-h-[500px] w-full max-w-[500px] -translate-x-1/2 rounded-full bg-[url('/images/webp/spiders-web.webp')] bg-contain bg-center bg-no-repeat opacity-50 sm:min-h-[500px] md:top-0 md:opacity-100"></div>
 
         {builtYourBusiness.map((obj, index) => (
           <ContractorCard key={index} obj={obj} />
         ))}
       </div>
+      <h3 className="relative z-10 mt-10 px-3 text-center text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px]">
+        All that friction adds up. And it’s keeping your business stuck.
+      </h3>
     </section>
   );
 };

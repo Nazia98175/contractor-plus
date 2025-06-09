@@ -12,7 +12,7 @@ const CantScale = () => {
         height={306}
         className="absolute -top-10 left-0 z-[1] max-w-20 md:top-0 lg:max-w-[177px]"
       />
-      <h3 className="relative z-10 text-center text-xl font-medium text-[#44474B] md:text-2xl">
+      <h3 className="relative z-10 text-center text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px]">
         The industry has shifted.
       </h3>
 

@@ -1240,7 +1240,10 @@ button {
   transition: all 0.3s ease-in-out;
 }
 .slider-img-gradient {
-  background: linear-gradient(180deg, #ffffff00 0%, #fff 100%);
+  background: linear-gradient(3deg, #ffffff00 0%, #fff 100%);
+}
+.slider-cutom-gradient {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 }
 .polygon-bg {
   background:

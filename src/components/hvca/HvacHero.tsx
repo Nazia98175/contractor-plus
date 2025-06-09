@@ -172,7 +172,7 @@ const HvacHero = () => {
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
           <Image
-            alt=""
+            alt="hvac-hero"
             src={"/images/webp/hvac-hero.webp"}
             width={945}
             height={729}

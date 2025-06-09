@@ -2,7 +2,9 @@
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import TheEngineContractorLottie from "./TheEngineContractorLottie";
+import Lottie from "lottie-react";
+import animationData from "../../../public/lotties/the-engine-contractor.json";
+
 interface EngineContractor {
   title: string;
   sub_title: string;
@@ -52,22 +54,8 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
               {engineContractor?.[1]?.txt}
             </h2>
           </div>
-          <div className="flex w-full max-w-[356px] flex-col items-center -space-y-2">
-            <img
-              src="/images/webp/engine.webp"
-              className="w-full max-w-[90%] object-contain sm:max-w-[322px]"
-              alt="The engine 57,163 contractors run on"
-            />
-            <div className="bg-black-red-linear font-grotesk text-lightBlackGrey w-full space-y-1 overflow-hidden rounded-[14px] p-6 text-sm font-bold backdrop-blur-sm">
-              <h3 className="text-doctor text-2xl font-medium">
-                {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}we
-              </h3>
-              <p className="font-jakarta text-xs sm:text-sm">
-                <span className="text-monstrousGreen">+11</span>{" "}
-                {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
-              </p>
-            </div>
-            <TheEngineContractorLottie />
+          <div className="flex w-full max-w-[480px] flex-col items-center -space-y-2">
+            <Lottie animationData={animationData} loop autoplay />
           </div>
         </div>
       </div>

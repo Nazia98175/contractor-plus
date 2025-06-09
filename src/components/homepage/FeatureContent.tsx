@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { BlurIcon } from "../common/Icons";
 import { featureContentss } from "../common/Helper";
-
+import Lottie from "lottie-react";
 type FeatureContent = {
   id: number;
   title: string;
@@ -27,11 +27,13 @@ type Props = {
 };
 
 const FeatureContent = ({ featureContents, contentRefs }: Props) => {
-  const firstContents = featureContents?.map(feature => feature?.content[0]).filter(Boolean);
+  const firstContents = featureContents
+    ?.map((feature) => feature?.content[0])
+    .filter(Boolean);
 
   return (
     <>
-      {firstContents?.map((content:any, index:any) => (
+      {firstContents?.map((content: any, index: any) => (
         <div
           key={index}
           ref={(el) => {
@@ -43,19 +45,20 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             {content?.title}
           </h4>
           <div className="relative h-[230px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
-            <Image
-              src={featureContentss?.[index]?.titleImg}
-              alt="Feature"
-              width={611}
-              height={245}
-              className="rounded-md object-cover"
+            <Lottie
+              animationData={featureContentss?.[index]?.titleImg}
+              loop
+              autoplay
             />
             {/* <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" /> */}
           </div>
           <p className="text-wallStreet max-w-[615px] space-y-2 text-sm font-medium sm:text-base lg:text-lg">
             {content.desc}
             {featureContents?.[index]?.cardQuote && (
-              <span className="text-secondary"> {featureContents?.[index]?.cardQuote}</span>
+              <span className="text-secondary">
+                {" "}
+                {featureContents?.[index]?.cardQuote}
+              </span>
             )}
           </p>
         </div>

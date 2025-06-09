@@ -24,19 +24,19 @@ const OurBlogCard = ({
         src={blogListMobile?.[index]?.imageSrc}
         alt="blog images"
       />
-      <div className="relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden py-6">
-        <Image
+      <div className="polygon-bg relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden rounded-2xl py-6">
+        {/* <Image
           fill={true}
           className="pointer-events-none absolute top-0 -left-1 z-10 h-full w-full object-contain"
           src="images/svg/blog-bg.svg"
           alt="blog angle"
-        />
+        /> */}
         <Image
           width={160}
-          height={200}
+          height={126}
           src={blogListMobile?.[index]?.backgroundImage}
           alt={article.blogTitle}
-          className="absolute bottom-0 left-0 z-10 h-full max-h-[160px] w-fit object-cover"
+          className="absolute bottom-0 left-0 z-10 h-full max-h-[126px] w-fit object-cover"
         />
       </div>
       <div className="relative mt-2 w-[346px] px-2.5 py-6">

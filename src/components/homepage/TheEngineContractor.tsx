@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import TheEngineContractorLottie from "./TheEngineContractorLottie";
+import Lottie from "lottie-react";
 interface EngineContractor {
   title: string;
   sub_title: string;
@@ -52,8 +52,8 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
               {engineContractor?.[1]?.txt}
             </h2>
           </div>
-          <div className="flex w-full max-w-[356px] flex-col items-center -space-y-2">
-            <img
+          <div className="flex w-full max-w-[480px] flex-col items-center -space-y-2">
+            {/* <img
               src="/images/webp/engine.webp"
               className="w-full max-w-[90%] object-contain sm:max-w-[322px]"
               alt="The engine 57,163 contractors run on"
@@ -66,8 +66,12 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
                 <span className="text-monstrousGreen">+11</span>{" "}
                 {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
               </p>
-            </div>
-            <TheEngineContractorLottie />
+            </div> */}
+            <Lottie
+              animationData={require("../../../public/lotties/1.json")}
+              loop
+              autoplay
+            />
           </div>
         </div>
       </div>

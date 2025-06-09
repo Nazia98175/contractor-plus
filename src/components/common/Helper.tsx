@@ -1222,11 +1222,16 @@ export const reviews = [
     userRole: "CEO at Rands Mechanical",
   },
 ];
-
+import animationData from "../../../public/lotties/crm.json";
+import live_scheduling from "../../../public/lotties/live-scheduling.json";
+import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
+import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import property_profile from "../../../public/lotties/property-profile.json";
+import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",
-    titleImg: "/images/webp/core-1.webp",
+    titleImg: animationData,
     description:
       "Most “contractor CRMs” are just contact pages with a few job links. Contractor+ brings the full picture: ",
     highlight:
@@ -1234,21 +1239,21 @@ export const featureContentss = [
   },
   {
     title: "Send the right tech to the right job based on proximity",
-    titleImg: "/images/webp/core-2.webp",
+    titleImg: live_scheduling,
     description:
       "See team availability and location in real-time to assign jobs faster and smarter. Drag, drop, and delegate",
     highlight: "based on who’s closest and free. No more calling around. ",
   },
   {
     title: "Collaborate with your team on any job",
-    titleImg: "/images/webp/core-3.webp",
+    titleImg: internal_job_chat,
     description:
       "Each job has its own built-in group chat, keeping the whole crew on the same page",
     highlight: "and minimizing texts, missed updates, or miscommunication.",
   },
   {
     title: "Quotes that practically write themselves",
-    titleImg: "/images/webp/core-4.webp",
+    titleImg: estimate_builder,
     description:
       "Build accurate, professional estimates fast with live local pricing from Lowe’s, Home Depot",
     highlight:
@@ -1256,14 +1261,14 @@ export const featureContentss = [
   },
   {
     title: "The only CRM with property-specific profiles",
-    titleImg: "/images/webp/core-5.webp",
+    titleImg: property_profile,
     description:
       "Contractor+ is the only platform that lets you track the full history of every property you’ve ever serviced:",
     highlight: "communications,  photos & documents, invoices, even live cams.",
   },
   {
     title: "The ultimate AI assistant for contractors",
-    titleImg: "/images/webp/core-6.webp",
+    titleImg: big_chief_ai,
     description:
       "Every call and text gets answered. Every Lead is qualified and entered into your CRM, every Service Request is captured, every Estimate/Quote appointment is scheduled. Big Chief never sleeps..",
   },

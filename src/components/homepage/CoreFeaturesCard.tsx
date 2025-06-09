@@ -26,12 +26,13 @@ interface FeatureItem {
   }[];
 }
 interface Props {
-  featuresList: FeatureItem[]
+  featuresList: FeatureItem[];
 }
 
-const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
+const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [progressValue, setProgressValue] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   // Replace manual mobile detection with useMediaQuery
   const isMobile = useMediaQuery("(max-width: 1023px)");
@@ -45,6 +46,8 @@ const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
   const scrollTriggersRef = useRef<any[]>([]);
   const navHeightRef = useRef<number>(0);
   const isScrollingProgrammatically = useRef(false);
+  const initTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const resizeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
@@ -81,6 +84,47 @@ const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
     },
     [calculateButtonPositions, isMobile],
   );
+  const cleanup = useCallback(() => {
+    // Clear any pending timeouts
+    if (initTimeoutRef.current) {
+      clearTimeout(initTimeoutRef.current);
+      initTimeoutRef.current = null;
+    }
+    if (resizeTimeoutRef.current) {
+      clearTimeout(resizeTimeoutRef.current);
+      resizeTimeoutRef.current = null;
+    }
+
+    // Reset nav element styles (especially important for desktop)
+    const navEl = navContainerRef.current;
+    if (navEl && !isMobile) {
+      gsap.set(navEl, {
+        position: "relative",
+        top: "auto",
+        left: "auto",
+        right: "auto",
+        width: "auto",
+        zIndex: "auto",
+        transform: "none",
+      });
+    }
+
+    // Kill all ScrollTriggers
+    scrollTriggersRef.current.forEach((trigger) => {
+      if (trigger && typeof trigger.kill === "function") {
+        trigger.kill();
+      }
+    });
+    scrollTriggersRef.current = [];
+
+    // Kill all ScrollTriggers globally (safety net)
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+    // Force refresh ScrollTrigger
+    ScrollTrigger.refresh();
+
+    setIsInitialized(false);
+  }, [isMobile]);
 
   useEffect(() => {
     moveIndicator(activeFeature);
@@ -186,7 +230,7 @@ const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
       cleanup();
       setTimeout(() => {
         initialize();
-      }, 2000);
+      }, 3000);
     };
 
     // Wait for full window load (all images/resources loaded)
@@ -215,7 +259,7 @@ const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
     };
   }, [features.length, calculateButtonPositions, isMobile]);
   const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title); // all except last
-const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
+  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   return (
     <section

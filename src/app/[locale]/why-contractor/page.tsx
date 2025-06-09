@@ -7,13 +7,13 @@ import React from "react";
 
 const WhyContractorPage = () => {
   return (
-    <>
+    <main className="bg-kuroiBlack -z-[2]">
       <WhyContractorHero />
       <CantScale />
       <BuildBusinessOnBlood />
       <FastestWayToLoose />
       <NewWayToWin />
-    </>
+    </main>
   );
 };
 

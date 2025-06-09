@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import TheEngineContractorLottie from "./TheEngineContractorLottie";
 interface EngineContractor {
   title: string;
   sub_title: string;
@@ -23,9 +24,9 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
 
   return (
     <section className="relative overflow-hidden md:overflow-visible">
-      <div className="bg-athenaBlue pointer-events-none absolute bottom-0  left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
-      <div className="bg-athenaBlue pointer-events-none absolute top-[-20px] left-[-10px] h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] hidden lg:block"></div>
-      <div className="bg-athenaBlue pointer-events-none absolute top-[50px] right-[-10px] h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] hidden lg:block"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute bottom-0 left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-[-20px] left-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-[50px] right-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
       <div
         ref={ref}
         className="sm:border-secondary/10 relative z-30 mx-auto mt-10 w-full max-w-[98%] overflow-hidden rounded-[22px] bg-none bg-[100%_100%] bg-no-repeat min-[1440px]:max-w-[1364px] sm:mt-[40px] sm:border lg:bg-[url('/images/webp/engine-bg.web')] lg:bg-cover"
@@ -59,13 +60,14 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
             />
             <div className="bg-black-red-linear font-grotesk text-lightBlackGrey w-full space-y-1 overflow-hidden rounded-[14px] p-6 text-sm font-bold backdrop-blur-sm">
               <h3 className="text-doctor text-2xl font-medium">
-                {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}
+                {engineContractor?.[0]?.sub_title?.split("+11")?.[0]}we
               </h3>
               <p className="font-jakarta text-xs sm:text-sm">
                 <span className="text-monstrousGreen">+11</span>{" "}
                 {engineContractor?.[0]?.sub_title?.split("+11")?.[1]}
               </p>
             </div>
+            <TheEngineContractorLottie />
           </div>
         </div>
       </div>

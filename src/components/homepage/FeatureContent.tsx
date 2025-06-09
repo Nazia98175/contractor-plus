@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 import React from "react";
-import { BlurIcon } from "../common/Icons";
 import { featureContentss } from "../common/Helper";
-import Lottie from "lottie-react";
+import LottieAnimation from "../common/LottieAnimation";
 type FeatureContent = {
   id: number;
   title: string;
@@ -45,10 +43,8 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             {content?.title}
           </h4>
           <div className="relative h-[230px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
-            <Lottie
+            <LottieAnimation
               animationData={featureContentss?.[index]?.titleImg}
-              loop
-              autoplay
             />
             {/* <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" /> */}
           </div>

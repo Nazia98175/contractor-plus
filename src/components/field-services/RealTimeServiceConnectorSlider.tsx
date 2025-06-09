@@ -141,8 +141,8 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         </SwiperSlide>
         <SwiperSlide className="relative h-[660px] pt-[72px]">
           <div className="relative mx-auto">
-            <div className="absolute top-[-149px] right-[32%] h-[120px] w-full max-w-[200px] bg-white blur-[40px] md:h-[200px] lg:h-[281px] lg:max-w-[400px]"></div>
-            <div className="absolute right-[18%] bottom-[-50px] h-[120px] w-full max-w-[200px] bg-white blur-[40px] md:right-[35%] md:bottom-[-149px] md:h-[200px] lg:h-[281px] lg:max-w-[400px]"></div>
+            <div className="absolute top-[-87px] right-[20%] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:top-[-149px] sm:right-[32%] sm:max-w-[400px] md:h-[200px] lg:h-[281px]"></div>
+            <div className="absolute right-[18%] bottom-[-50px] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:right-[35%] sm:h-[200px] sm:max-w-[400px] md:bottom-[-149px] lg:h-[281px]"></div>
             <img
               src={"/images/webp/real-slider-card-11.webp"}
               alt="Slide Image"

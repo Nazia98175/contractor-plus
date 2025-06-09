@@ -34,7 +34,8 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
     <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
       {/* Top Image Slider */}
       <Swiper modules={[Controller]} onSwiper={setTopSwiper} slidesPerView={1}>
-        <SwiperSlide className="h-[625px] border pt-[72px]">
+        <SwiperSlide className="relative h-[625px] border pt-[72px]">
+          <div className="absolute bottom-[74px] h-[281px] w-full max-w-full bg-white blur-[40px]"></div>
           <div className="mx-auto w-fit rounded-[55px] border-4 border-[#D7D7D7] bg-black p-[14px]">
             <img
               src={"/images/webp/real-slider-card-1.webp"}
@@ -46,15 +47,16 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         <SwiperSlide className="h-[400px] border pt-[72px]">
           <div className="relative mx-auto w-fit overflow-hidden">
             <img
-              src={"/images/webp/real-slider-card-2.webp"}
+              src={"/images/webp/real-slider-card-22.webp"}
               alt="Slide Image"
               className="mx-auto w-full max-w-[771px] object-cover"
             />
-            <div className="slider-img-gradient absolute top-0 right-0 h-full w-full max-w-[119px]"></div>
-            <div className="slider-img-gradient absolute top-0 left-0 h-full w-full max-w-[119px] opacity-75"></div>
+            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+            {/* <div className="slider-img-gradient absolute top-0 left-0 h-full w-full max-w-[119px] opacity-75"></div> */}
           </div>
         </SwiperSlide>
-        <SwiperSlide className="h-[625px] border pt-[72px]">
+        <SwiperSlide className="relative h-[625px] border pt-[72px]">
+          <div className="absolute bottom-[74px] h-[281px] w-full max-w-full bg-white blur-[40px]"></div>
           <div className="mx-auto w-fit rounded-[55px] border-4 border-[#D7D7D7] bg-black p-[14px]">
             <img
               src={"/images/webp/real-slider-card-3.webp"}
@@ -63,7 +65,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="h-[200px] border pt-[72px]">
+        <SwiperSlide className="!flex !h-[400px] border pt-[72px]">
           <div className="mx-auto flex w-full max-w-[550px] items-center gap-6">
             <img
               src={"/images/webp/real-slider-group-1.webp"}
@@ -90,20 +92,21 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="h-[537px] border pt-[72px]">
+        <SwiperSlide className="h-[537px]">
           <div className="relative mx-auto max-h-[537px] w-full max-w-[752px] overflow-hidden">
             <img
               src={"/images/webp/real-slider-card-5.webp"}
               alt="Slide Image"
               className="mx-auto w-full object-cover"
             />
-            <div className="slider-img-gradient absolute top-0 right-0 h-full w-full max-w-[250px] rotate-180"></div>
-            <div className="slider-img-gradient absolute top-0 left-0 h-full w-full max-w-[250px]"></div>
-            <div className="slider-img-gradient absolute top-0 h-[152px] w-full max-w-full rotate-180"></div>
+            {/* <div className="slider-img-gradient absolute top-0 right-0 h-full w-full max-w-[250px] rotate-180"></div>
+            <div className="slider-img-gradient absolute top-0 left-0 h-full w-full max-w-[250px]"></div> */}
+            <div className="slider-img-gradient absolute bottom-[0px] h-[152px] w-full max-w-full rotate-180"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="h-[339px] border pt-[72px]">
+        <SwiperSlide className="!flex !h-[437px] items-end border pt-[72px]">
           <div className="relative mx-auto w-fit max-w-[992px] overflow-hidden">
+            <div className="slider-img-gradient absolute bottom-[0px] h-[152px] w-full max-w-full rotate-180"></div>
             <img
               src={"/images/webp/real-slider-card-6.webp"}
               alt="Slide Image"
@@ -120,7 +123,8 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="h-[660px] border pt-[72px]">
+        <SwiperSlide className="relative h-[660px] border pt-[72px]">
+          <div className="absolute bottom-[74px] h-[281px] w-full max-w-full bg-white blur-[40px]"></div>
           <div className="mx-auto w-fit rounded-[55px] border-4 border-[#D7D7D7] bg-black p-[14px]">
             <img
               src={"/images/webp/real-slider-card-8.webp"}

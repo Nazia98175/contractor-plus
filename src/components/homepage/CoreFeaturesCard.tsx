@@ -26,10 +26,10 @@ interface FeatureItem {
   }[];
 }
 interface Props {
-  featuresList: FeatureItem[]
+  featuresList: FeatureItem[];
 }
 
-const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
+const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [progressValue, setProgressValue] = useState(0);
 
@@ -186,7 +186,7 @@ const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
       cleanup();
       setTimeout(() => {
         initialize();
-      }, 2000);
+      }, 5000);
     };
 
     // Wait for full window load (all images/resources loaded)
@@ -215,7 +215,7 @@ const CoreFeaturesCard: React.FC<Props> = ({featuresList}) => {
     };
   }, [features.length, calculateButtonPositions, isMobile]);
   const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title); // all except last
-const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
+  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   return (
     <section

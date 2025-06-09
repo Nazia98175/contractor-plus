@@ -1242,3 +1242,15 @@ button {
 .slider-img-gradient {
   background: linear-gradient(180deg, #ffffff00 0%, #fff 100%);
 }
+.polygon-bg {
+  background:
+    linear-gradient(to right, transparent 80%, transparent 100%),
+    radial-gradient(
+      57.22% 46% at 12.87% 91.06%,
+      rgba(255, 82, 1, 0.12) 0%,
+      rgba(255, 82, 1, 0) 100%
+    ),
+    rgba(254, 231, 232, 0.2);
+  backdrop-filter: blur(26px);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}

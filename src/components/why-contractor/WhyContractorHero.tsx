@@ -24,7 +24,7 @@ const WhyContractorHero = () => {
       <div className="absolute bottom-0 left-0 h-fit w-[68%]">
         <Claud3Icon />
       </div>
-      <div className="absolute top-[32%] right-[20%] h-auto w-full max-w-[70%] sm:max-w-[428px]">
+      <div className="absolute top-[25%] right-0 h-auto w-full max-w-[70%] sm:top-[32%] sm:max-w-[428px] xl:right-[20%]">
         <SmallIcon />
       </div>
       <div className="absolute right-0 bottom-0 h-fit w-[90%]">
@@ -41,12 +41,11 @@ const WhyContractorHero = () => {
           priority
         />
       </div>
-      <div className="absolute bottom-20 left-1/2 z-[2] -translate-x-1/2">
+      <div className="absolute bottom-[4%] left-1/2 z-[2] min-h-[300px] w-full max-w-[300px] -translate-x-1/2">
         <Image
-          src="/images/svg/file.svg"
+          src="/images/webp/file.webp"
           alt="File"
-          width={81}
-          height={111}
+          fill
           className="h-full w-full object-cover"
           priority
         />

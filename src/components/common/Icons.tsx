@@ -3619,6 +3619,21 @@ export const RealTimeServiceConnectorIcon = ({
     </defs>
   </svg>
 );
+
+export const FileIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="81"
+    height="111"
+    viewBox="0 0 81 111"
+    fill="none"
+  >
+    <path
+      d="M48.4137 33.4276H81V111H0V0H48.4137V33.4276ZM8.23598 103.203H43.0384V97.3668H8.23598V103.203ZM8.23598 91.5187H43.0384V85.6822H8.23598V91.5187ZM8.23598 79.8341H43.0384V73.9977H8.23598V79.8341ZM48.277 54.7243H60.5718V38.1939H48.277V54.7243ZM27.842 33.479H44.2775V20.8668H27.842V33.479ZM80.9932 21.0935H60.4306V0L80.9932 21.0935Z"
+      fill="white"
+    />
+  </svg>
+);
 export const SmallIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

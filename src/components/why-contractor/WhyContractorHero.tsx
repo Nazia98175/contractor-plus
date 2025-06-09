@@ -21,13 +21,14 @@ const WhyContractorHero = () => {
       <div className="absolute top-[7%] right-0 h-auto w-full max-w-[70%] sm:top-[5%] sm:max-w-[626px]">
         <Claud2Icon />
       </div>
-      <div className="absolute bottom-0 left-0 h-fit w-[68%]">
-        <Claud3Icon />
-      </div>
       <div className="absolute top-[25%] right-0 h-auto w-full max-w-[70%] sm:top-[32%] sm:max-w-[428px] xl:right-[20%]">
         <SmallIcon />
       </div>
-      <div className="absolute right-0 bottom-0 h-fit w-[90%]">
+
+      <div className="absolute bottom-0 left-0 h-fit w-full md:w-[68%]">
+        <Claud3Icon />
+      </div>
+      <div className="absolute right-0 bottom-0 h-fit w-[140%] object-contain sm:w-full md:w-[90%]">
         <Claud4Icon />
       </div>
 
@@ -51,7 +52,6 @@ const WhyContractorHero = () => {
         />
       </div>
 
-      {/* Main content text */}
       <div className="relative z-10 flex h-full items-center justify-center font-bold text-white">
         <h2
           style={{

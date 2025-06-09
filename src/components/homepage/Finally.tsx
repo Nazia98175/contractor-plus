@@ -28,7 +28,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="relative z-30 space-y-4">
           <PrimaryAnimatedText delay={3000}>
             <h2 className="section-heading gradient-text relative z-40 text-center">
-              {finallyC?.[0]?.title ?? ""}
+              <span> {finallyC?.[0]?.title ?? ""}</span>
             </h2>
           </PrimaryAnimatedText>
           <CardReveal animateOnScroll={true}>

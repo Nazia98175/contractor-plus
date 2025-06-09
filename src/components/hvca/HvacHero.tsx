@@ -197,7 +197,7 @@ const HvacHero = () => {
           />
         </div>
       </div>
-      <CloudsAnimation />
+      <CloudsAnimation className="-bottom-[11%]" />
     </section>
   );
 };

@@ -26,8 +26,8 @@ const BlogPosts: React.FC<Props> = ({
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="mb-6 flex items-center justify-between">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h2 className="section-heading gradient-text w-full text-center text-white sm:w-fit">
-              {data?.title}
+            <h2 className="section-heading gradient-text w-full text-center sm:w-fit">
+              <span>{data?.title}</span>
             </h2>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>

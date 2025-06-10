@@ -33,7 +33,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         animateOnScroll={true}
       > */}
       <div className="relative z-10 flex items-center justify-center px-2">
-        <div className="bg-white-linear absolute -bottom-[84px] left-0 z-10 hidden h-[267px] w-full md:block"></div>
+        <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[267px] w-full md:block"></div>
         <Image
           src="/images/webp/mix-screens.webp"
           className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"

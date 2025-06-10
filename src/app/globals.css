@@ -78,6 +78,12 @@
     #dc1112 -10.83%,
     #76090a 83.23%
   );
+  --background-image-black-fade-custom: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 13.17%,
+    #0c0d11 95.85%
+  );
+
   --background-image-white-linear: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 9.91%,
@@ -190,7 +196,7 @@ body {
   @apply text-xl leading-[140%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
 }
 .primary-btn {
-  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-black tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit sm:py-2.5;
+  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit sm:py-2.5;
 }
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
@@ -1092,8 +1098,12 @@ html::-webkit-scrollbar {
 
 .hero-slider {
   background:
-    linear-gradient(0deg, #1c27316b, #1c27316b),
-    radial-gradient(67.83% 112.02% at 117.83% 100%, #ee1e25 0%, #00000000 100%);
+    linear-gradient(0deg, rgba(28, 39, 49, 0.42), rgba(28, 39, 49, 0.42)),
+    radial-gradient(
+      67.83% 112.02% at 117.83% 100%,
+      #ee1e25 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
 }
 .swiper-slide-active .hero-slider {
   background:
@@ -1239,7 +1249,7 @@ button {
   @apply lg:!bg-shortcake !bg-lightishBlue h-1.5 w-6 rounded-3xl;
 }
 .custom-active-slider .swiper-slide {
-  @apply opacity-30 transition-all duration-300 ease-in-out;
+  @apply opacity-50 transition-all duration-300 ease-in-out;
 }
 .custom-active-slider .swiper-slide-active {
   opacity: 1;
@@ -1263,8 +1273,6 @@ button {
   backdrop-filter: blur(26px);
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
-.initial-hidden-line {
-  transform: translateY(100%);
-  display: block;
-  overflow: hidden;
+.trusted-gradient {
+  background: linear-gradient(89deg, #0c0d11 31% 54%, #0c0d1100 108%);
 }

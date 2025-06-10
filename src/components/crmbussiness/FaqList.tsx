@@ -13,23 +13,22 @@ type FaqListProps = {
 const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
   return (
     <>
-      <div onClick={onToggle} className="mb-3 sm:mb-6 cursor-pointer">
-        <button className="flex justify-between items-center gap-5 cursor-pointer w-full py-3">
-          <h3 className="paragraph !font-black !text-white text-start">
+      <div onClick={onToggle} className="mb-3 cursor-pointer">
+        <button className="flex w-full cursor-pointer items-center justify-between gap-5 py-2">
+          <h3 className="paragraph text-start !font-black !text-white">
             {data.question}
           </h3>
-          <span className="relative w-6 h-6 inline-block">
+          <span className="relative inline-block h-6 w-6">
             <FaqIcon isOpen={isOpen} />
           </span>
         </button>
         <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
-          <p className="text-decemberSky text-sm sm:text-base font-jakarta max-w-[1113px] pt-4">
+          <p className="text-decemberSky font-jakarta max-w-[1113px] pt-4 text-sm sm:text-base">
             {data.answer?.split("<br/>").map((line, i) => (
               <span key={i}>
                 {line}
                 <br />
-                <br/>
-                
+                <br />
               </span>
             ))}
           </p>

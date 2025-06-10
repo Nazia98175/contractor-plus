@@ -63,7 +63,7 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
           </ul>
         </div>
       </section>
-      <div className="relative z-20 flex flex-col items-center justify-center gap-2.5">
+      <div className="relative z-20 flex flex-col items-center justify-center gap-2.5 px-2">
         <Button
           variant="primary"
           className="bg-red-linear primary-btn flex h-10 items-center gap-1.5"

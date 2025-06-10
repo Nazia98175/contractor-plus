@@ -19,7 +19,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
     <section className="relative pt-28 lg:pt-5">
       <Image
-        className="absolute -top-[35%] left-0 z-0 h-[83%] w-[100%] object-cover lg:h-[100%] 2xl:h-[120%]"
+        className="absolute -top-[35%] left-0 z-0 h-[83%] w-[100%] object-center lg:h-[100%] 2xl:h-[120%]"
         src={"/images/webp/finally-desktop-bg.webp"}
         alt="finally-desktop-bg"
         width={1920}

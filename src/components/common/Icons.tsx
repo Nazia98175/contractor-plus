@@ -3775,3 +3775,163 @@ export const DownloadIcon = () => (
     />
   </svg>
 );
+export const HalfRoundedIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 100% 1887"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g filter="url(#filter0_f_1167_3304)">
+      <ellipse
+        cx="721.472"
+        cy="968.47"
+        rx="778.798"
+        ry="568.866"
+        fill="#0C0D11"
+      />
+    </g>
+    <g filter="url(#filter1_f_1167_3304)">
+      <path
+        d="M1743.74 943.431C1743.74 1331.37 1296.4 1645.86 744.571 1645.86C192.746 1645.86 -254.598 1331.37 -254.598 943.431C-254.598 555.489 192.746 241 744.571 241C1296.4 241 1743.74 555.489 1743.74 943.431Z"
+        fill="#EE1E25"
+      />
+    </g>
+    <g filter="url(#filter2_f_1167_3304)">
+      <ellipse
+        cx="721.474"
+        cy="941.634"
+        rx="884.058"
+        ry="619.398"
+        fill="#C01A06"
+      />
+    </g>
+    <g filter="url(#filter3_f_1167_3304)">
+      <ellipse
+        cx="721.473"
+        cy="1000.18"
+        rx="918.227"
+        ry="461.454"
+        fill="#0C0D11"
+      />
+    </g>
+    <g filter="url(#filter4_f_1167_3304)">
+      <ellipse
+        cx="721.473"
+        cy="998.69"
+        rx="976.069"
+        ry="314.027"
+        fill="#0C0D11"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_1167_3304"
+        x="-257.326"
+        y="199.604"
+        width="1957.6"
+        height="1537.73"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="100"
+          result="effect1_foregroundBlur_1167_3304"
+        />
+      </filter>
+      <filter
+        id="filter1_f_1167_3304"
+        x="-495.198"
+        y="0.399994"
+        width="2479.54"
+        height="1886.06"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="120.3"
+          result="effect1_foregroundBlur_1167_3304"
+        />
+      </filter>
+      <filter
+        id="filter2_f_1167_3304"
+        x="-362.584"
+        y="122.236"
+        width="2168.12"
+        height="1638.8"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="100"
+          result="effect1_foregroundBlur_1167_3304"
+        />
+      </filter>
+      <filter
+        id="filter3_f_1167_3304"
+        x="-371.754"
+        y="363.722"
+        width="2186.45"
+        height="1272.91"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="87.5"
+          result="effect1_foregroundBlur_1167_3304"
+        />
+      </filter>
+      <filter
+        id="filter4_f_1167_3304"
+        x="-298.196"
+        y="641.063"
+        width="2039.34"
+        height="715.254"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="21.8"
+          result="effect1_foregroundBlur_1167_3304"
+        />
+      </filter>
+    </defs>
+  </svg>
+);

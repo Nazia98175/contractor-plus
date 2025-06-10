@@ -18,6 +18,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
       duration: 0.1,
       delay: 0.1,
       ease: "expo.in",
+      once: true,
     });
   }, []);
   return (

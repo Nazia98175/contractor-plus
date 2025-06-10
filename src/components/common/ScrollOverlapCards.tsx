@@ -31,7 +31,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         gsap.set(cards[i], {
           y: "100%",
           scale: 1,
-          rotation: 0,
         });
       }
       const scrollTimeline = gsap.timeline({
@@ -47,12 +46,10 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         const currentCard = cards[i];
         const nextCard = cards[i + 1];
         const position = i;
-        const rotation = i % 2 ? -5 : 5;
         scrollTimeline.to(
           currentCard,
           {
             scale: 0.8,
-            rotation: rotation,
             duration: 1,
             ease: "none",
           },

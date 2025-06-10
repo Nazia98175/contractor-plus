@@ -1,12 +1,25 @@
+"use client";
 import Image from "next/image";
 import { CheckIcon, RedClipIcon, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 interface TheHeroProps {
   hero: any;
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "expo.in",
+    });
+  }, []);
   return (
     <section className="relative z-10 pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
@@ -14,7 +27,11 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
         <RedClipIcon />
       </span>
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
-      <div className="mx-auto w-full max-w-[1050px]">
+      <div
+        ref={wrapperRef}
+        id="hero"
+        className="mx-auto w-full max-w-[1050px] opacity-0"
+      >
         <div className="relative mx-auto block max-w-[900px] px-5 pt-10 md:hidden">
           <div className="switch-tool-bg absolute top-[-10px] left-0 z-[-5] hidden h-[100px] w-full md:block"></div>
           <Image
@@ -26,12 +43,12 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           />
         </div>
         <div className="px-2 pt-8 md:pt-0">
-          <TextAnimation delay={0} animateOnScroll={false}>
+          <TextAnimation delay={0.6} animateOnScroll={false}>
             <h2 className="gradient-2 main-heading mx-auto mb-2 w-fit text-start sm:text-center md:mb-4 lg:mb-[26px]">
               {hero?.heroTitle}
             </h2>
           </TextAnimation>
-          <TextAnimation delay={0} animateOnScroll={false}>
+          <TextAnimation delay={0.6} animateOnScroll={false}>
             <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-center text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
               {hero?.heroDescription}
             </p>

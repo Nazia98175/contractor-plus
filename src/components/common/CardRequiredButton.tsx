@@ -10,7 +10,7 @@ const CardRequiredButton: React.FC<CardRequiredButtonProps> = ({
 }) => {
   return (
     <button
-      className={`${textColor} font-myriad hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex`}
+      className={`${textColor} font-myriad flex cursor-pointer items-center gap-1.5 text-sm font-semibold`}
     >
       <CheckIcon />
       No Credit Card Required

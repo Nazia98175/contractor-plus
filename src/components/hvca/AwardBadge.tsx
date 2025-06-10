@@ -22,7 +22,7 @@ export default function AwardBadges() {
             <ArrowIcon fill="#fff" />
           </span>
         </button>
-        <CardRequiredButton textColor="text-winterWay mt-2" />
+        <CardRequiredButton textColor="text-winterWay" />
       </div>
       <AwardsTagsImg />
     </section>

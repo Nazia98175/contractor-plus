@@ -172,7 +172,7 @@ body {
   @apply text-decemberSky font-jakarta text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply text-2xl leading-[130%] font-semibold sm:text-4xl lg:text-[42px] lg:tracking-[-0.84px];
+  @apply text-[26px] leading-[130%] font-bold sm:text-4xl lg:text-[42px] lg:tracking-[-0.84px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;

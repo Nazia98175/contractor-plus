@@ -5,6 +5,7 @@ import CardReveal from "../common/CardReveal";
 import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
+import CloudsAnimation from "../common/CloudsAnimation";
 interface Props {
   data: any;
   ncc: string;
@@ -33,7 +34,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative z-20 w-full overflow-hidden">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <span className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]">
           <FooterRedLineIcon />
@@ -98,29 +99,11 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute -top-[28%] left-0 z-0 flex h-[250px] w-full sm:-top-[33%]">
-        <div className="absolute top-0 right-0 h-[60%] w-full bg-white blur-sm sm:h-[58%]"></div>
-        <div className="animate-cloud-layer-1 absolute h-full w-full opacity-100">
-          <Image
-            height={250}
-            width={5000}
-            src="/images/webp/claud-2.webp"
-            alt="Cloud Layer 1"
-            className="h-full w-full object-cover"
-            unoptimized
-          />
-        </div>
-
-        <div className="animate-cloud-layer-2 absolute h-full w-full opacity-100">
-          <Image
-            height={250}
-            width={5000}
-            src="/images/webp/claud-2.webp"
-            alt="Cloud Layer 2"
-            className="h-full w-full object-cover"
-            unoptimized
-          />
-        </div>
+      <div className="pointer-events-none absolute top-[-16%] left-0 z-0 flex h-[250px] w-full rotate-180">
+        <CloudsAnimation
+          cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+          cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+        />
       </div>
     </div>
   );

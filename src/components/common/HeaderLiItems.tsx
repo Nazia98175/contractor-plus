@@ -8,10 +8,10 @@ import FeaturesDropdown from "./FeaturesDropdown";
 import IndustriesDropdown from "./IndustriesDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
 import WhyContractorDropdown from "./WhyContractorDropdown";
-interface Props{
+interface Props {
   headerList: any;
 }
-const HeaderLiItems:React.FC<Props> = ({headerList}) => {
+const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
   const t = useTranslations("menu");
 
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -23,10 +23,10 @@ const HeaderLiItems:React.FC<Props> = ({headerList}) => {
   const menuItems = useMemo(
     () => [
       { id: "whycontractordesktop", label: "whycontractordesktop" },
-      { id: "features", label: ("features") },
-      { id: "industries", label: ("industries") },
-      { id: "pricing", label: ("pricing"), link: "/" },
-      { id: "resources", label: ("resources") },
+      { id: "features", label: "features" },
+      { id: "industries", label: "industries" },
+      { id: "pricing", label: "pricing", link: "/" },
+      { id: "resources", label: "resources" },
     ],
     [t],
   );
@@ -124,7 +124,7 @@ const HeaderLiItems:React.FC<Props> = ({headerList}) => {
   return (
     <div onMouseLeave={handleMouseLeave}>
       <div className="flex w-full items-center gap-2">
-        {headerList?.map((item:any, index:any) =>
+        {headerList?.map((item: any, index: any) =>
           item?.headerSubList?.length === 0 ? (
             <Link
               key={index}
@@ -168,7 +168,7 @@ const HeaderLiItems:React.FC<Props> = ({headerList}) => {
       {/* Dropdown Panel */}
       <div
         ref={dropdownRef}
-        className={`shadow-c3 bg-doctor2 absolute top-[calc(100%+0px)] right-0 left-0 z-50 mx-auto flex max-h-[80vh] w-full max-w-[1920px] flex-col overflow-hidden ${
+        className={`shadow-c3 bg-doctor2 absolute top-[calc(100%+0px)] right-0 left-0 z-50 mx-auto flex max-h-[80vh] w-full flex-col overflow-hidden ${
           activeMenu ? "p-7" : ""
         }`}
         style={{
@@ -177,10 +177,41 @@ const HeaderLiItems:React.FC<Props> = ({headerList}) => {
         onWheel={(e) => e.stopPropagation()}
       >
         <div ref={contentRef} className="flex grow flex-col overflow-hidden">
-          {activeMenu === "whycontractordesktop" && <WhyContractorDropdown headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList} />}
-          {activeMenu === "features" && <FeaturesDropdown isVisible headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList} />}
-          {activeMenu === "industries" && <IndustriesDropdown headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList}/>}
-          {activeMenu === "resources" && <ResourcesDropdown headerSubList={headerList?.[menuItems.findIndex(i => i.id === activeMenu)]?.headerSubList}/>}
+          <div className="main-container flex grow flex-col overflow-hidden">
+            {activeMenu === "whycontractordesktop" && (
+              <WhyContractorDropdown
+                headerSubList={
+                  headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
+                    ?.headerSubList
+                }
+              />
+            )}
+            {activeMenu === "features" && (
+              <FeaturesDropdown
+                isVisible
+                headerSubList={
+                  headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
+                    ?.headerSubList
+                }
+              />
+            )}
+            {activeMenu === "industries" && (
+              <IndustriesDropdown
+                headerSubList={
+                  headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
+                    ?.headerSubList
+                }
+              />
+            )}
+            {activeMenu === "resources" && (
+              <ResourcesDropdown
+                headerSubList={
+                  headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
+                    ?.headerSubList
+                }
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

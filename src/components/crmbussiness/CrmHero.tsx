@@ -2,6 +2,7 @@ import Image from "next/image";
 import { RedClipIcon, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import Button from "../common/Button";
 interface TheHeroProps {
   hero: any;
 }
@@ -25,12 +26,12 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           />
         </div>
         <div className="px-2 pt-8 md:pt-0">
-          <TextAnimation animateOnScroll={false} delay={3}>
+          <TextAnimation delay={1} animateOnScroll={false}>
             <h2 className="gradient-2 main-heading mx-auto mb-2 w-fit text-start sm:text-center md:mb-4 lg:mb-[26px]">
               {hero?.heroTitle}
             </h2>
           </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={3}>
+          <TextAnimation animateOnScroll={false} delay={1}>
             <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-center text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
               {hero?.heroDescription}
             </p>
@@ -68,20 +69,23 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             />
             <div className="flex items-center justify-center">
               {[...Array(5)].map((_, i) => (
-                <span className="max-w-7 md:max-w-5">
-                  <StartIcon key={i} />
+                <span key={i} className="max-w-7 md:max-w-5">
+                  <StartIcon />
                 </span>
               ))}
             </div>
           </div>
           <div className="w-full px-2 sm:w-fit">
-            <button className="bg-red-linear primary-btn !h-[40px] gap-2">
+            <Button
+              variant="primary"
+              className="bg-red-linear primary-btn !h-[40px] gap-2"
+            >
               <span className="hidden lg:block">{hero?.createBtn}</span>
               <span className="block lg:hidden">Download App</span>
-            </button>
-            <p className="text-wallStreet sm:text-secondary font-myriad hidden pt-[6px] text-center !text-xs !font-semibold sm:block">
+            </Button>
+            <button className="text-wallStreet sm:text-secondary font-myriad hidden pt-[6px] text-center !text-xs !font-semibold sm:block">
               {hero?.ncc_txt}
-            </p>
+            </button>
           </div>
         </CardReveal>
         <div className="relative z-30 mx-auto hidden max-w-[900px] pt-9 md:block">

@@ -164,8 +164,7 @@ const ParticlesComponent = (props: ParticlesComponentProps) => {
     return null; // Don't render until particles are initialized
   }
 
-  const className =
-    props.className || "!absolute inset-0 w-full h-full pointer-event-none";
+  const className = props.className || "!absolute inset-0 w-full h-full  -z-10";
 
   return (
     <Particles

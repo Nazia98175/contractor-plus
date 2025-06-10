@@ -1,10 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { CheckIcon, FinallyDesktopBg, FinallyMobileBg } from "../common/Icons";
 import { useTranslations } from "next-intl";
-import TextAnimation from "../common/TextAnimation";
-import CardReveal from "../common/CardReveal";
 import Image from "next/image";
+import React from "react";
+import CardReveal from "../common/CardReveal";
+import CloudsAnimation from "../common/CloudsAnimation";
+import { CheckIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import FinallyBackground from "./FinallyBackground";
 interface Finally {
@@ -20,7 +20,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   const features: string[] = t.raw("features") || [];
 
   return (
-    <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white px-2 pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
+    <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
         <FinallyBackground />
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
@@ -28,7 +28,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="relative z-30 space-y-4">
           <PrimaryAnimatedText delay={3000}>
             <h2 className="section-heading gradient-text relative z-40 text-center">
-              {finallyC?.[0]?.title ?? ""}
+              <span> {finallyC?.[0]?.title ?? ""}</span>
             </h2>
           </PrimaryAnimatedText>
           <CardReveal animateOnScroll={true}>
@@ -56,26 +56,11 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             ))}
           </CardReveal>
           <div className="relative mt-[45px] flex w-full flex-col-reverse justify-center gap-3 px-3 pb-8 sm:mt-16 md:mt-[83px] lg:flex-row lg:gap-8 lg:px-0 lg:pb-0">
-            {/* <div className="cmain absolute top-0 h-full w-full"></div> */}
-            {/* Cloud Layer 1 */}
-            <div className="pointer-events-none absolute bottom-0 left-0 z-20 hidden h-[160px] w-full lg:flex">
-              <div className="animate-cloud-layer-1 absolute h-full w-full opacity-100">
-                <Image
-                  fill={true}
-                  src="/images/webp/claud.webp"
-                  alt="Cloud Layer 1"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              {/* Cloud Layer 2 */}
-              <div className="animate-cloud-layer-2 absolute h-full w-full opacity-100">
-                <Image
-                  fill={true}
-                  src="/images/webp/claud.webp"
-                  alt="Cloud Layer 2"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <div className="pointer-events-none absolute -bottom-8 left-0 z-20 hidden h-[160px] w-full lg:flex">
+              <CloudsAnimation
+                cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+                cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+              />
             </div>
             {/* <FogGenerator /> */}
             <CardReveal

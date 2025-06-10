@@ -3,21 +3,22 @@ import React from "react";
 import { CheckIcon, SideIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
-interface Content{
- title: string;
-}
-
-interface LikeYouDo{
+import Button from "../common/Button";
+interface Content {
   title: string;
-  content: Content[]
 }
 
-interface Props{
+interface LikeYouDo {
+  title: string;
+  content: Content[];
+}
+
+interface Props {
   data: LikeYouDo;
-  ncc : string;
+  ncc: string;
   trackProperties: any;
 }
-const HowContractorWork: React.FC<Props> = ({data , ncc , trackProperties}) => {
+const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
   const features = [
     "Make it easier for team members to jump in",
     "Easily get the full story on every location",
@@ -25,7 +26,7 @@ const HowContractorWork: React.FC<Props> = ({data , ncc , trackProperties}) => {
   ];
   return (
     <>
-      <section className="relative z-10 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 py-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
+      <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 py-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
         {/* Left: Image */}
         <div className="flex w-full max-w-[480px] items-center justify-center">
           <Image
@@ -62,22 +63,19 @@ const HowContractorWork: React.FC<Props> = ({data , ncc , trackProperties}) => {
           </ul>
         </div>
       </section>
-      <CardReveal
-        staggerDelay={0.15}
-        animationDuration={0.8}
-        distance={50}
-        delay={0.3}
-        animateOnScroll={true}
-        className="mt-3.5 flex flex-col items-center justify-center gap-2.5 md:mt-7"
-      >
-        <button className="bg-red-linear primary-btn flex h-10 items-center gap-1.5">
-         {trackProperties?.btnText}
+      <div className="relative z-20 mt-3.5 flex flex-col items-center justify-center gap-2.5 md:mt-7">
+        <Button
+          variant="primary"
+          className="bg-red-linear primary-btn flex h-10 items-center gap-1.5"
+        >
+          {trackProperties?.btnText}
           <SideIcon />
-        </button>
+        </Button>
         <button className="font-myriad text-wallStreet flex cursor-pointer items-center gap-1.5 text-sm font-semibold">
+          <CheckIcon />
           {ncc}
         </button>
-      </CardReveal>
+      </div>
     </>
   );
 };

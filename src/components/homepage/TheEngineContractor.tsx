@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import Lottie from "lottie-react";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
+import LottieAnimation from "../common/LottieAnimation";
 
 interface EngineContractor {
   title: string;
@@ -55,7 +56,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
             </h2>
           </div>
           <div className="flex w-full max-w-[480px] flex-col items-center -space-y-2">
-            <Lottie animationData={animationData} loop autoplay />
+            <LottieAnimation animationData={animationData} />
           </div>
         </div>
       </div>

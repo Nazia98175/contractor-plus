@@ -1275,7 +1275,7 @@ export const GroupStartIcon = () => (
 //     />
 //   </svg>
 // );
-export const StartIcon = ({ filled = true }: { filled: boolean }) => (
+export const StartIcon = ({ filled = true }: { filled?: boolean }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"

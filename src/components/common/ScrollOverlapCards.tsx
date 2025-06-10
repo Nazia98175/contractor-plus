@@ -68,7 +68,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
           position,
         );
       }
-    }, 2000);
+    }, 5000);
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };

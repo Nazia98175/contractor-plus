@@ -8,38 +8,42 @@ interface TheServiceProps {
   slug: string;
 }
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
-  console.log(kindAdorable , "kinddd")
+  console.log(kindAdorable, "kinddd");
   return (
-    <section className="overflow-x-auto max-w-[1092px] mx-auto px-2 pt-8 md:pt-16 lg:pt-[91px]">
+    <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-8 md:pt-16 lg:pt-[83px]">
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h2 className="section-heading gradient-text-2 !font-black text-center lg:!font-semibold w-fit mx-auto">
+        <h2 className="section-heading gradient-text-2 mx-auto w-fit text-center !font-black lg:!font-semibold">
           {/* What the others call a CRM is kind of adorable */}
           {kindAdorable?.title}
         </h2>
       </TextAnimation>
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <p className="max-w-[885px] mx-auto paragraph-style text-center">
+        <p className="paragraph-style mx-auto max-w-[885px] text-center">
           {/* Not all platforms are built to run a real business */}
           {kindAdorable?.subtitle}
         </p>
       </TextAnimation>
-      <div className="flex md:hidden w-full mt-8">
-        <button className="bg-doctor p-3 rounded-l-sm w-1/2 border-r border-decemberSky flex justify-center items-center">
+      <div className="mt-8 flex w-full md:hidden">
+        <button className="bg-doctor border-decemberSky flex w-1/2 items-center justify-center rounded-l-sm border-r p-3">
           <span className="max-w-[122px]">
             <BlackLogo />
           </span>
         </button>
-        <button className="p-3 w-1/2 text-center font-myriad font-semibold text-secondary bg-doctor tracking-[0.5px]">
+        <button className="font-myriad text-secondary bg-doctor w-1/2 p-3 text-center font-semibold tracking-[0.5px]">
           {kindAdorable?.headerRight}
         </button>
       </div>
-      <div className="border block md:hidden border-superSilver rounded-[6px] overflow-hidden mt-2 drop-shadow-2xl">
-        {kindAdorable?.features?.map((feature:any, index:any) => (
+      <div className="border-superSilver mt-2 block overflow-hidden rounded-[6px] border drop-shadow-2xl md:hidden">
+        {kindAdorable?.features?.map((feature: any, index: any) => (
           <CompareCard feature={feature} key={index} />
         ))}
       </div>
-      <div className="rounded-lg md:block hidden overflow-auto border-[0.5px] border-decemberSky mt-12">
-        <CompareTable compareFeatures={kindAdorable?.features} headerLeft={kindAdorable?.headerLeft} headerRight={kindAdorable?.headerRight} />
+      <div className="border-decemberSky mt-12 hidden overflow-auto rounded-lg border-[0.5px] md:block lg:mt-[51px]">
+        <CompareTable
+          compareFeatures={kindAdorable?.features}
+          headerLeft={kindAdorable?.headerLeft}
+          headerRight={kindAdorable?.headerRight}
+        />
       </div>
     </section>
   );

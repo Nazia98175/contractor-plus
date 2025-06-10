@@ -29,7 +29,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
   return (
     <section
       ref={ref}
-      className="main-container relative z-30 flex flex-col items-center justify-center px-2 pt-11 md:pt-16 xl:pt-[94px]"
+      className="main-container relative z-30 flex flex-col items-center justify-center px-2 pt-11 md:pt-16 xl:pt-[93px]"
     >
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h2 className="crm-gradient section-heading mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">

@@ -3,20 +3,20 @@ import React from "react";
 import TextAnimation from "../common/TextAnimation";
 import { CheckIcon } from "../common/Icons";
 
-interface Content{
- title: string;
-}
-
-interface LikeYouDo{
+interface Content {
   title: string;
-  content: Content[]
 }
 
-interface Props{
-  data: LikeYouDo
+interface LikeYouDo {
+  title: string;
+  content: Content[];
 }
 
-const LikeYouDoContacts: React.FC<Props> = ({data}) => {
+interface Props {
+  data: LikeYouDo;
+}
+
+const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
   const contactFeatures = [
     "Timeline of every job, message, and update",
     "All docs, permits, and photos in one place",

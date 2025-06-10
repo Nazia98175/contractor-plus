@@ -30,8 +30,6 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
 
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="font-jakarta text-secondary mx-auto max-w-[818px] text-center text-xl font-semibold sm:text-2xl md:text-3xl lg:text-[36px]">
-          {/* If you're switching between tools outside of your field service CRM,
-          it's not good enough */}
           {switchingTool?.title}
         </h3>
       </TextAnimation>

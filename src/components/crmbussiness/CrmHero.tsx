@@ -6,6 +6,7 @@ import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import AuroraEffect from "../common/AuroraEffect";
 interface TheHeroProps {
   hero: any;
 }
@@ -27,6 +28,13 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
       <span className="bubbling-animation pointer-events-none absolute top-[112px] right-[-194px] md:top-[-202px] md:right-0">
         <RedClipIcon />
       </span>
+      {/* <AuroraEffect
+        colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+        blend={0.5}
+        amplitude={1.0}
+        speed={0.5}
+      /> */}
+
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
       <div
         ref={wrapperRef}

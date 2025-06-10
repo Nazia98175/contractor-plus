@@ -15,21 +15,21 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
   const sectionRef = useRef(null);
 
   return (
-    <section className="px-2 relative pt-9 md:pt-11 z-10" ref={sectionRef}>
-      <div className="bg-reverse-black h-[160px] md:h-[296px] w-full block top-0 left-0 absolute z-[-5]" />
+    <section className="relative z-10 px-2 pt-9 md:pt-11" ref={sectionRef}>
+      <div className="bg-reverse-black absolute top-0 left-0 z-[-5] block h-[160px] w-full md:h-[296px]" />
       <img
-        className="absolute top-0 left-0 w-full h-full z-[-7] object-contain hidden md:block"
+        className="absolute top-0 left-0 z-[-7] hidden h-full w-full object-contain md:block"
         src="/images/webp/switch-tool-bg.webp"
         alt="switch-tool-bg"
       />
       <img
-        className="top-0 left-0 w-full h-full z-[-10] object-center block md:hidden absolute"
+        className="absolute top-0 left-0 z-[-10] block h-full w-full object-center md:hidden"
         src="/images/png/switch-tool-mobile-bg.png"
         alt="switch-tool-bg"
       />
 
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h3 className="max-w-[818px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-semibold font-jakarta text-center text-secondary">
+        <h3 className="font-jakarta text-secondary mx-auto max-w-[818px] text-center text-xl font-semibold sm:text-2xl md:text-3xl lg:text-[36px]">
           {/* If you're switching between tools outside of your field service CRM,
           it's not good enough */}
           {switchingTool?.title}

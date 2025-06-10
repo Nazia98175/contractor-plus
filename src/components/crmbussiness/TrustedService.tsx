@@ -56,7 +56,12 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
         </div>
 
         <div className="relative hidden w-full md:block">
-          <Marquee speed={30} direction="left" pauseOnHover className="py-5">
+          <Marquee
+            speed={30}
+            direction="left"
+            pauseOnHover
+            className="pt-4 pb-5"
+          >
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
                 key={review.id}

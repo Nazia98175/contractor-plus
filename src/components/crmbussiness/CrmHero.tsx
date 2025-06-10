@@ -3,19 +3,18 @@ import { RedClipIcon, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 interface TheHeroProps {
   hero: any;
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
   return (
-    <section className="relative z-10">
+    <section className="relative z-10 pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
       <span className="bubbling-animation pointer-events-none absolute top-[112px] right-[-194px] md:top-[-202px] md:right-0">
         <RedClipIcon />
       </span>
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
-      <div className="mx-auto w-full max-w-[1050px] pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
+      <div className="mx-auto w-full max-w-[1050px]">
         <div className="relative mx-auto block max-w-[900px] px-5 pt-10 md:hidden">
           <div className="switch-tool-bg absolute top-[-10px] left-0 z-[-5] hidden h-[100px] w-full md:block"></div>
           <Image
@@ -27,22 +26,22 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           />
         </div>
         <div className="px-2 pt-8 md:pt-0">
-          <TextAnimation delay={1} animateOnScroll={false}>
+          <TextAnimation delay={0} animateOnScroll={false}>
             <h2 className="gradient-2 main-heading mx-auto mb-2 w-fit text-start sm:text-center md:mb-4 lg:mb-[26px]">
               {hero?.heroTitle}
             </h2>
           </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={1}>
+          <TextAnimation delay={0} animateOnScroll={false}>
             <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-center text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
               {hero?.heroDescription}
             </p>
           </TextAnimation>
         </div>
         <CardReveal
-          staggerDelay={0.2}
-          animationDuration={0.8}
+          staggerDelay={0.6}
+          animationDuration={0.6}
           distance={50}
-          delay={3.1}
+          delay={0.3}
           animateOnScroll={false}
           className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5"
         >
@@ -89,16 +88,24 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             </button>
           </div>
         </CardReveal>
-        <div className="relative z-30 mx-auto hidden max-w-[900px] pt-9 md:block">
-          <Image
-            className="h-full w-full object-cover"
-            src="/images/webp/crm-hero.webp"
-            width={900}
-            height={616}
-            alt="crm-hero"
-            priority
-          />
-        </div>
+        <CardReveal
+          staggerDelay={0.6}
+          animationDuration={0.6}
+          distance={50}
+          delay={0.3}
+          animateOnScroll={false}
+        >
+          <div className="relative z-30 mx-auto hidden max-w-[900px] pt-9 md:block">
+            <Image
+              className="h-full w-full object-cover"
+              src="/images/webp/crm-hero.webp"
+              width={900}
+              height={616}
+              alt="crm-hero"
+              priority
+            />
+          </div>
+        </CardReveal>
       </div>
     </section>
   );

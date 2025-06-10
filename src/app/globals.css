@@ -1263,3 +1263,8 @@ button {
   backdrop-filter: blur(26px);
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
+.initial-hidden-line {
+  transform: translateY(100%);
+  display: block;
+  overflow: hidden;
+}

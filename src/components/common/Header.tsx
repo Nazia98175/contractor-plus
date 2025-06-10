@@ -10,11 +10,11 @@ import Link from "next/link";
 interface HeaderProps {
   header: any;
 }
-const Header: React.FC<HeaderProps> = ({ header}) => {
+const Header: React.FC<HeaderProps> = ({ header }) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  console.log(header , "Headerrr")
+  console.log(header, "Headerrr");
 
   // Add scroll event listener
   useEffect(() => {
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ header}) => {
             <LogoIcon />
           </Link>
           <div className="hidden grow lg:flex">
-            <HeaderLiItems headerList={header?.headerMain}  />
+            <HeaderLiItems headerList={header?.headerMain} />
           </div>
           <div className="3xl:gap-3 flex w-fit items-center gap-4">
             <div className="flex items-center gap-1 xl:gap-3">
@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ header}) => {
               {header?.loginText}
             </button>
             <button className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex">
-              { header?.btnTxt?.btnTxt}
+              {header?.btnTxt?.btnTxt}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>
               <HamburgerIcon />

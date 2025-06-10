@@ -1,132 +1,20 @@
 "use client";
 import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
+import CardRequiredButton from "../common/CardRequiredButton";
+import CloudsAnimation from "../common/CloudsAnimation";
 import {
   ArrowIcon,
-  CheckIcon,
-  HeroSliderIcon1,
-  HeroSliderIcon2,
   HvacGlowHeroDesktopIcon,
   HvacGlowHeroMobileIcon,
-  SliderIcon1,
+  SideIcon,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import HvacHeroSlider from "./HvacHeroSlider";
-import CardRequiredButton from "../common/CardRequiredButton";
-import CloudsAnimation from "../common/CloudsAnimation";
+import { features } from "../common/Helper";
+import Button from "../common/Button";
 
 const HvacHero = () => {
-  const features = [
-    {
-      id: 1,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 2,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 3,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 4,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 5,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 6,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 7,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 8,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 9,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 10,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 11,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 12,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-  ];
-
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative overflow-hidden">
@@ -138,7 +26,7 @@ const HvacHero = () => {
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:-mr-20 xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
           <HvacGlowHeroDesktopIcon />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
@@ -154,15 +42,11 @@ const HvacHero = () => {
             </p>
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
-              <button className="bg-red-linear primary-btn h-10">
-                <span className="hidden md:flex">
-                  Get started FREE{" "}
-                  <span>
-                    <ArrowIcon fill="#fff" />
-                  </span>
-                </span>
-                <span className="flex md:hidden">Download App</span>
-              </button>
+              <Button variant="primary">
+                <span className="block md:flex"> Get started FREE</span>
+                <span className="flex md:hidden">Download App</span>{" "}
+                <SideIcon />
+              </Button>
               <CardRequiredButton />
             </div>
           </div>
@@ -191,7 +75,7 @@ const HvacHero = () => {
             priority
             fill
             unoptimized
-            className="absolute -top-[6%] !left-[-1%] hidden !h-[111%] w-full object-cover lg:block"
+            className="absolute -top-[6%] !left-[-1%] hidden !h-[111%] w-full object-cover lg:left-0 lg:block"
             src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"
           />

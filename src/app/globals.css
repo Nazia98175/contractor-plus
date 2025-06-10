@@ -1276,3 +1276,17 @@ button {
 .trusted-gradient {
   background: linear-gradient(89deg, #0c0d11 31% 54%, #0c0d1100 108%);
 }
+.half-rouded-clip-path {
+  clip-path: ellipse(50% 15% at 50% 53%);
+  background-color: #ee1e25;
+  opacity: 90;
+  filter: blur(32px);
+}
+.half-rouded-clip-path-2 {
+  clip-path: ellipse(50% 15% at 50% 53%);
+  background-color: #000000;
+  opacity: 90;
+  filter: blur(87.5px);
+  filter: drop-shadow(20px 30px 20px rgba(0, 0, 0, 0.5));
+}
+/* Ellipse 2165 */

@@ -103,11 +103,10 @@ export default function TextAnimation({
         lines.current.push(...(split.lines as HTMLElement[]));
       });
 
-      gsap.set(lines.current, { y: "100%", opacity: 0 });
+      gsap.set(lines.current, { y: "100%" });
 
       const animationProps = {
         y: "0%",
-        opacity: 1,
         duration: 1,
         stagger: 0.1,
         ease: "power4.out",

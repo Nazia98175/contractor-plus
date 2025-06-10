@@ -41,12 +41,12 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
         </span>
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="section-heading text-decemberSky sub-heading text-center">
+            <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">
               {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <p className="paragraph-text text-secondary mb-7 text-center md:mb-10 lg:mb-14">
+            <p className="paragraph-text text-secondary mb-7 text-center md:mb-[34px]">
               {data?.sub_title}
             </p>
           </TextAnimation>
@@ -64,6 +64,19 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
                   onChange={handleEmailChange}
                   className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
                 />
+              </div>
+              <div className="flex w-full flex-col items-center justify-center md:w-fit">
+                <button
+                  type="submit"
+                  className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  ) : (
+                    `${createBtn}`
+                  )}
+                </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span>
                     <CheckIcon />
@@ -73,17 +86,6 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
                   </span>
                 </p>
               </div>
-              <button
-                type="submit"
-                className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
-                disabled={loading}
-              >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  `${createBtn}`
-                )}
-              </button>
               <div className="flex w-full items-center justify-center md:hidden">
                 <p className="flex items-center gap-2 pt-1">
                   <span>

@@ -418,7 +418,7 @@ export const cantScaleData = [
 ];
 export const softwareCardData = [
   {
-    text: "There’s no easy way to upsell or present multiple package options",
+    text: "There’s no easy way to upsell or present multiple package options...",
   },
   {
     text: "Field techs hate using them because they don’t make things easier",

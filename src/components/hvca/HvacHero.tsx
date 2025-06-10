@@ -17,6 +17,7 @@ import Button from "../common/Button";
 const HvacHero = () => {
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md"></div>
       <div className="relative overflow-hidden">
         <Image
           width={769}
@@ -55,9 +56,10 @@ const HvacHero = () => {
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
-          <span className="pointer-events-none absolute top-0 -left-[40%] z-10 hidden h-full w-full border-2 border-red-300 lg:block">
+          <span className="pointer-events-none absolute top-0 -left-[40%] z-10 hidden h-full w-full lg:block">
             <HvacGlowHeroDesktopIcon />
           </span>
+          <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
           <Image
             alt="hvac-hero"
             src={"/images/webp/hvac-hero.webp"}

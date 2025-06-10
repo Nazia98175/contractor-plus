@@ -3,6 +3,7 @@ import { RedClipIcon, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 interface TheHeroProps {
   hero: any;
 }

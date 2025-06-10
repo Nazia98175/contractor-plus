@@ -180,6 +180,12 @@ body {
 .sub-heading {
   @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
 }
+.small-heading {
+  @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
+}
+.xs-heading {
+  @apply text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px];
+}
 .heading {
   @apply text-xl leading-[140%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
 }

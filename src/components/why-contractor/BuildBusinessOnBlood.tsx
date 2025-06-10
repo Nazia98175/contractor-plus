@@ -49,7 +49,7 @@ const BuildBusinessOnBlood = () => {
         height={306}
         className="absolute -bottom-10 left-0 z-[1] max-w-20 xl:max-w-[250px]"
       />
-      <h3 className="text-secondary relative z-10 px-3 text-center text-2xl font-medium -tracking-[0.56px] md:text-[28px]">
+      <h3 className="text-secondary small-heading relative z-10 px-3">
         You’ve built your business on blood, sweat, and tears
       </h3>
 
@@ -60,7 +60,7 @@ const BuildBusinessOnBlood = () => {
           <ContractorCard key={index} obj={obj} />
         ))}
       </div>
-      <h4 className="relative z-10 mt-10 px-3 text-center text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px]">
+      <h4 className="xs-heading relative z-10 mt-10 px-3 text-center">
         All that friction adds up. And it’s keeping your business stuck.
       </h4>
     </section>

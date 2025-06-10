@@ -79,11 +79,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     <main>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <div className="black-bg">
-            <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
-            <TrustedService reviews={reviews} />
-            <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
-          </div>
+          <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
+          <TrustedService reviews={reviews} />
+          <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
           <FieldService
             slug={useParams?.slug}
             fieldService={section4?.data?.[0]?.fieldService}

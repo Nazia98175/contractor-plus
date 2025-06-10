@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { RedClipIcon, StartIcon } from "../common/Icons";
+import { CheckIcon, RedClipIcon, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
@@ -83,7 +83,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
               <span className="hidden lg:block">{hero?.createBtn}</span>
               <span className="block lg:hidden">Download App</span>
             </Button>
-            <button className="text-wallStreet sm:text-secondary font-myriad hidden pt-[6px] text-center !text-xs !font-semibold sm:block">
+            <button className="text-wallStreet sm:text-secondary font-myriad mt1.5 mx-auto hidden w-fit items-center gap-1.5 pt-[6px] text-center !text-xs !font-semibold sm:flex">
+              <CheckIcon />
               {hero?.ncc_txt}
             </button>
           </div>

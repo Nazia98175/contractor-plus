@@ -6,7 +6,7 @@ interface Props {
   headerSubList: any;
 }
 
-const IndustriesDropdown:React.FC<Props> = ({headerSubList}) => {
+const IndustriesDropdown: React.FC<Props> = ({ headerSubList }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
   const t = useTranslations("industries");
 
@@ -67,11 +67,11 @@ const IndustriesDropdown:React.FC<Props> = ({headerSubList}) => {
     { image: "/images/webp/circular-slide-1.webp" },
   ];
   const fallbackImage = "/images/webp/circular-slide-1.webp";
-console.log(headerSubList , "wwwwww")
+  console.log(headerSubList, "wwwwww");
   return (
     <div className="relative z-[9999] flex grow gap-6 overflow-hidden">
       <div className="no-scrollbar grid w-full grid-cols-4 gap-3 overflow-auto">
-        {headerSubList?.[0]?.links?.map((link:any, index:any) => (
+        {headerSubList?.[0]?.links?.map((link: any, index: any) => (
           <button
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -85,7 +85,7 @@ console.log(headerSubList , "wwwwww")
         ))}
       </div>
 
-      <div className="relative w-full max-w-[420px] overflow-hidden">
+      {/* <div className="relative w-full max-w-[420px] overflow-hidden">
         {resourceItems.map((item, index) => (
           <Image
             key={index}
@@ -109,7 +109,7 @@ console.log(headerSubList , "wwwwww")
             hoveredIndex === null ? "z-10 opacity-100" : "z-0 opacity-0"
           }`}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

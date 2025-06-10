@@ -7,13 +7,12 @@ import { gsap } from "gsap";
 import FeaturesDropdown from "./FeaturesDropdown";
 import IndustriesDropdown from "./IndustriesDropdown";
 import ResourcesDropdown from "./ResourcesDropdown";
-import WhyContractorDropdown from "./WhyContractorDropdown";
+
 interface Props {
   headerList: any;
 }
 const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
   const t = useTranslations("menu");
-
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [prevMenu, setPrevMenu] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -22,7 +21,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
 
   const menuItems = useMemo(
     () => [
-      { id: "whycontractordesktop", label: "whycontractordesktop" },
+      { id: "whycontractordesktop", label: "whycontractordesktop", link: "/" },
       { id: "features", label: "features" },
       { id: "industries", label: "industries" },
       { id: "pricing", label: "pricing", link: "/" },
@@ -178,14 +177,14 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
       >
         <div ref={contentRef} className="flex grow flex-col overflow-hidden">
           <div className="main-container flex grow flex-col overflow-hidden">
-            {activeMenu === "whycontractordesktop" && (
+            {/* {activeMenu === "whycontractordesktop" && (
               <WhyContractorDropdown
                 headerSubList={
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
               />
-            )}
+            )} */}
             {activeMenu === "features" && (
               <FeaturesDropdown
                 isVisible

@@ -2555,7 +2555,6 @@ export const HvacGlowHeroDesktopIcon = () => (
     height="100%"
     viewBox="0 0 1020 850"
     fill="none"
-    className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g

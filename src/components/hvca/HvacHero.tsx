@@ -26,9 +26,9 @@ const HvacHero = () => {
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:-mr-20 xl:pb-[208px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
-          <HvacGlowHeroDesktopIcon />
+
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             <TextAnimation animateOnScroll={false} delay={3}>
               <h1 className="main-heading gradient-white">
@@ -55,6 +55,9 @@ const HvacHero = () => {
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
+          <span className="pointer-events-none absolute top-0 -left-[40%] z-10 hidden h-full w-full border-2 border-red-300 lg:block">
+            <HvacGlowHeroDesktopIcon />
+          </span>
           <Image
             alt="hvac-hero"
             src={"/images/webp/hvac-hero.webp"}
@@ -75,7 +78,7 @@ const HvacHero = () => {
             priority
             fill
             unoptimized
-            className="absolute -top-[6%] !left-[-1%] hidden !h-[111%] w-full object-cover lg:left-0 lg:block"
+            className="absolute -top-[6%] hidden !h-[111%] w-full object-cover lg:-right-[3%] lg:block"
             src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"
           />

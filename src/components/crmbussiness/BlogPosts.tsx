@@ -27,7 +27,7 @@ const BlogPosts: React.FC<Props> = ({
       className={`relative z-20 px-2 pt-4 pb-12 sm:px-4 lg:px-20 ${className || ""}`}
     >
       <div className="mx-auto w-full max-w-[1158px]">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between md:mb-9">
           <PrimaryAnimatedText delay={3000}>
             <h2 className="section-heading faq-heading-text w-full text-center sm:w-fit">
               <span>{data?.title}</span>
@@ -44,7 +44,7 @@ const BlogPosts: React.FC<Props> = ({
         </div>
 
         <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:flex xl:flex-row">
-          <div className="flex w-full max-w-[600px] flex-col gap-4 xl:max-w-[450px]">
+          <div className="mx-auto flex w-full max-w-[600px] flex-col gap-4 xl:mx-0 xl:max-w-[450px]">
             {blogData.map((blog) => (
               <BlogArticle
                 key={blog.id}

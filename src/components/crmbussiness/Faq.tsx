@@ -53,7 +53,7 @@ const Faq: React.FC<Props> = ({ faq }) => {
     },
   ];
   return (
-    <section className="relative z-20 overflow-hidden py-10">
+    <section className="relative z-20 overflow-hidden py-10 md:pt-[76px] md:pb-[77px]">
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="section-heading text-center text-white">{faq?.title}</h3>

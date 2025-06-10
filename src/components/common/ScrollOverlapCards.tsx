@@ -78,7 +78,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         id="crm-cards-wrapper"
         className="relative z-10 min-h-screen overflow-hidden px-2 xl:h-[90vh]"
       >
-        {curved && (
+        {/* {curved && (
           <div className="relative top-[20%]">
             {curvePositions.map((topOffset, index) => (
               <span
@@ -90,7 +90,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
               </span>
             ))}
           </div>
-        )}
+        )} */}
 
         {fieldService?.cardsDetail.map((service: any, index: any) => (
           <div

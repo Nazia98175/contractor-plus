@@ -14,7 +14,7 @@ interface ReviewCardProps {
 const renderStars = (rating: number) => {
   const roundedRating = Math.round(Number(rating));
   return Array.from({ length: 5 }).map((_, index) => (
-    <span key={index}>
+    <span key={index} className="h-5 w-5">
       <StartIcon filled={index < roundedRating} />
     </span>
   ));

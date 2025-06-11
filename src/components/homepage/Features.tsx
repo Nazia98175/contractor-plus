@@ -30,7 +30,7 @@ const Features = ({ features }: { features: any }) => {
               <FeatureCard obj={obj} key={index} />
             ))}
           </CardReveal>
-          <div className="lg:hidden">
+          <div className="blog-post lg:hidden">
             <SliderLayout
               autoplay
               pagination

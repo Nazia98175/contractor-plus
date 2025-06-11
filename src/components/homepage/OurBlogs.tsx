@@ -116,7 +116,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             />
           ))}
         </CardReveal>
-        <div className="block sm:hidden">
+        <div className="blog-post block sm:hidden">
           <SliderLayout
             autoplay
             pagination

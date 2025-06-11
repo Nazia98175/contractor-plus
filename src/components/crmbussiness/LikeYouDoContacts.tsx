@@ -19,7 +19,7 @@ interface Props {
 const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col items-start justify-between gap-5 px-2 py-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
-      <div className="w-full max-w-[522px] space-y-4 lg:space-y-5">
+      <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-winterWay heading">
             {/* Track properties like you do your contacts */}
@@ -42,7 +42,7 @@ const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
         </ul>
       </div>
 
-      <div className="flex w-full max-w-[480px] items-center justify-center">
+      <div className="flex w-full items-center justify-center md:max-w-[480px]">
         <Image
           src="/images/webp/like-contacts.webp"
           alt="Illustration showing contractor workflow"

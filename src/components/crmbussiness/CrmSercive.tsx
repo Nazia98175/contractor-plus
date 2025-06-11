@@ -34,8 +34,9 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
   };
 
   return (
-    <div className="relative z-20 w-full overflow-hidden">
-      <div className="relative overflow-x-hidden px-2 xl:overflow-visible">
+    <div className="relative z-20 w-full">
+      <div className="relative overflow-hidden px-2 xl:overflow-visible">
+        <FooterRedLineIcon className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]" />
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">
@@ -98,10 +99,12 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute top-[-16%] left-0 z-0 flex h-[250px] w-full rotate-180">
+      <div className="pointer-events-none absolute top-[-11%] left-0 z-50 flex h-[67%] w-full rotate-180">
         <CloudsAnimation
-          cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
-          cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+          className="-bottom-[11%]"
+          imageClass="h-full z-20 !bottom-[-45px]"
+          cloud1Class="bottom-0"
+          cloud2Class="bottom-0"
         />
       </div>
     </div>

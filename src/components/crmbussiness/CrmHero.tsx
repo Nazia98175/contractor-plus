@@ -27,7 +27,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
   return (
     <section className="relative z-10 pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
-      <span className="bubbling-animation pointer-events-none absolute top-[112px] right-[-194px] md:top-[-202px] md:right-0">
+      <span className="pointer-events-none absolute top-[112px] right-[-194px] md:top-[-202px] md:right-0">
         <RedClipIcon />
       </span>
 

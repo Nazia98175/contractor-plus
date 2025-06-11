@@ -10,16 +10,14 @@ interface TheServiceProps {
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   console.log(kindAdorable, "kinddd");
   return (
-    <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-8 md:pt-16 lg:pt-[83px]">
+    <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-8 md:pt-16 lg:pt-[70px]">
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h2 className="section-heading gradient-text-2 mx-auto w-fit text-center !font-black lg:!font-semibold">
-          {/* What the others call a CRM is kind of adorable */}
           {kindAdorable?.title}
         </h2>
       </TextAnimation>
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-style mx-auto max-w-[885px] text-center">
-          {/* Not all platforms are built to run a real business */}
           {kindAdorable?.subtitle}
         </p>
       </TextAnimation>

@@ -48,12 +48,8 @@ const HvacHero = () => {
                 <span className="hidden md:flex"> Get started FREE</span>
                 <span className="flex md:hidden">Download App</span>{" "}
                 <SideIcon />
-              </Button> */}
-              <FreeAccountButton text={"Get started FREE"} />
-              <CardRequiredButton
-                className="text-wallStreet sm:text-secondary"
-                text={"No Credit Card Required"}
-              />
+              </Button>
+              {/* <CardRequiredButton /> */}
             </div>
           </div>
         </div>

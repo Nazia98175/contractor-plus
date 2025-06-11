@@ -37,7 +37,6 @@ export default async function RootLayout({
       "&populate[sections][populate]=*&populate[bottomLinks]=*",
     ),
   ]);
-  console.log(header, "header data");
   return (
     <html
       lang="en"

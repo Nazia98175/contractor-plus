@@ -35,10 +35,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
 
   return (
     <div className="relative z-20 w-full overflow-hidden">
-      <div className="relative overflow-hidden px-2 xl:overflow-visible">
-        <span className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]">
-          <FooterRedLineIcon />
-        </span>
+      <div className="relative overflow-x-hidden px-2 xl:overflow-visible">
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">

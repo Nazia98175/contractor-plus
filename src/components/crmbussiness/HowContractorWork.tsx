@@ -4,6 +4,8 @@ import { CheckIcon, SideIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
+import FreeAccountButton from "../common/FreeAccountButton";
+import CardRequiredButton from "../common/CardRequiredButton";
 interface Content {
   title: string;
 }
@@ -64,17 +66,14 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
         </div>
       </section>
       <div className="relative z-20 flex flex-col items-center justify-center gap-2.5 px-2">
-        <Button
-          variant="primary"
-          className="bg-red-linear primary-btn flex h-10 items-center gap-1.5"
-        >
-          {trackProperties?.btnText}
-          <SideIcon />
-        </Button>
-        <button className="font-myriad text-wallStreet flex cursor-pointer items-center gap-1.5 text-sm font-semibold">
-          <CheckIcon />
-          {ncc}
-        </button>
+        <FreeAccountButton
+          className="gap-1.5"
+          text={trackProperties?.btnText}
+        />
+        <CardRequiredButton
+          className="text-wallStreet sm:text-secondary"
+          text={ncc}
+        />
       </div>
     </>
   );

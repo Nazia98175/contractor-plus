@@ -1,6 +1,7 @@
 "use client";
 import AwardsTagsImg from "../common/AwardsTagsImg";
 import CardRequiredButton from "../common/CardRequiredButton";
+import FreeAccountButton from "../common/FreeAccountButton";
 import { makeOperationList } from "../common/Helper";
 import { ArrowIcon } from "../common/Icons";
 import SoftwareUsed from "../common/SoftwareUsed";
@@ -16,13 +17,11 @@ export default function AwardBadges() {
         ))}
       </div>
       <div className="mt-10 hidden flex-col items-center gap-2 px-2 text-center md:flex">
-        <button className="bg-red-linear primary-btn h-10">
-          <span className="flex">Get started FREE</span>{" "}
-          <span>
-            <ArrowIcon fill="#fff" />
-          </span>
-        </button>
-        {/* <CardRequiredButton className="text-winterWay" /> */}
+        <FreeAccountButton text={"Get started FREE"} />
+        <CardRequiredButton
+          className="text-winterWay"
+          text={"No Credit Card Required"}
+        />
       </div>
       <AwardsTagsImg />
     </section>

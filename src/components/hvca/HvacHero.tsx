@@ -13,6 +13,7 @@ import TextAnimation from "../common/TextAnimation";
 import HvacHeroSlider from "./HvacHeroSlider";
 import { features } from "../common/Helper";
 import Button from "../common/Button";
+import FreeAccountButton from "../common/FreeAccountButton";
 
 const HvacHero = () => {
   return (
@@ -43,12 +44,11 @@ const HvacHero = () => {
             </p>
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
-              <Button variant="primary">
-                <span className="hidden md:flex"> Get started FREE</span>
-                <span className="flex md:hidden">Download App</span>{" "}
-                <SideIcon />
-              </Button>
-              <CardRequiredButton />
+              <FreeAccountButton text={"Get started FREE"} />
+              <CardRequiredButton
+                className="text-wallStreet sm:text-secondary"
+                text={"No Credit Card Required"}
+              />
             </div>
           </div>
         </div>

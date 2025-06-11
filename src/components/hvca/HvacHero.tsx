@@ -48,7 +48,7 @@ const HvacHero = () => {
                 <span className="flex md:hidden">Download App</span>{" "}
                 <SideIcon />
               </Button>
-              {/* <CardRequiredButton /> */}
+              <CardRequiredButton />
             </div>
           </div>
         </div>

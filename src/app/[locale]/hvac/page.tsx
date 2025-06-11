@@ -18,6 +18,7 @@ import HvacReview from "@/components/hvca/HvacReview";
 import HvacSoftware from "@/components/hvca/HvacSoftware";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
+import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
 
 export const metadata = {
@@ -63,7 +64,7 @@ const page = () => {
     <>
       <div className="bg-white">
         <HvacHero />
-        <TrustBar
+        <TrustBatBuildContractor
           platforms={blackPlatforms}
           showTrustedSection={true}
           className="1xl:gap-13 relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-1 pb-14 sm:gap-6 sm:pt-[13px] md:gap-7 xl:gap-9 xl:pt-20"

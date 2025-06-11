@@ -34,7 +34,7 @@ const DropdownItem = ({
     <div>
       <button
         onClick={onToggle}
-        className={`flex items-center justify-between w-full header-li p-1 ${
+        className={`header-li flex w-full items-center justify-between p-1 ${
           isOpen ? "bg-white" : ""
         }`}
       >
@@ -43,9 +43,9 @@ const DropdownItem = ({
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out no-scrollbar  ${
+        className={`no-scrollbar overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen
-            ? "max-h-[500px] opacity-100 overflow-y-auto"
+            ? "max-h-[500px] overflow-y-auto opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
@@ -53,7 +53,7 @@ const DropdownItem = ({
           <ul className="space-y-2.5 bg-white p-2">
             {items.map((item, index) => (
               <li key={index}>
-                <Link href={item.href || "#"} className="block p-1 header-li">
+                <Link href={item.href || "#"} className="header-li block p-1">
                   <div className="flex items-center gap-2">
                     {item.icon && <span>{item.icon}</span>}
                     <span>{item.label}</span>
@@ -65,24 +65,24 @@ const DropdownItem = ({
               </li>
             ))}
             {id === "features" && isOpen && (
-              <div className="p-1.5 bg-superSilver mt-4">
+              <div className="bg-superSilver mt-4 p-1.5">
                 <div className="flex flex-col gap-1 p-[6px]">
                   <Link
-                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
                     href={"/"}
                   >
                     See All Features
                     <ArrowIcon />
                   </Link>
                   <Link
-                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
                     href={"/"}
                   >
                     Integrations
                     <ArrowIcon />
                   </Link>
                   <Link
-                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
                     href={"/"}
                   >
                     Product Updates
@@ -92,10 +92,10 @@ const DropdownItem = ({
               </div>
             )}
             {id === "whycontractor" && isOpen && (
-              <div className="p-1.5 bg-superSilver mt-4">
+              <div className="bg-superSilver mt-4 p-1.5">
                 <div className="flex flex-col gap-1 p-[6px]">
                   <Link
-                    className="flex items-center gap-2.5 text-xs font-inter font-medium text-lightBlack p-1"
+                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
                     href={"/"}
                   >
                     See All Features
@@ -132,7 +132,7 @@ const SideBar = ({
     {
       id: "whycontractor",
       label: "Why Contractor+?",
-      items: WhyContractorDropdownlinks,
+      path: "/why-contractor",
     },
     {
       id: "features",
@@ -147,7 +147,7 @@ const SideBar = ({
     {
       id: "pricing",
       label: "Pricing",
-      items: PricingDropdownLinks,
+      path: "/pricing",
     },
     {
       id: "resources",
@@ -160,19 +160,19 @@ const SideBar = ({
     <>
       {isshow && (
         <div
-          className="fixed inset-0 bg-black/60 bg-opacity-10 z-40 transition-opacity duration-300 ease-in-out lg:hidden"
+          className="bg-opacity-10 fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ease-in-out lg:hidden"
           onClick={() => setIsShow(false)}
         />
       )}
 
       <div
-        className={`fixed top-0 right-0 min-h-dvh overflow-hidden flex flex-col w-full bg-brownish z-50 shadow-lg transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`bg-brownish fixed top-0 right-0 z-50 flex min-h-dvh w-full transform flex-col overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:hidden ${
           isshow ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-2 flex flex-col grow overflow-hidden">
-          <div className="flex justify-between items-center mb-2 bg-lightBlack px-3 py-1.5 shadow-c1 rounded">
-            <Link className="w-24 h-[18px]" href={""}>
+        <div className="flex grow flex-col overflow-hidden p-2">
+          <div className="bg-lightBlack shadow-c1 mb-2 flex items-center justify-between rounded px-3 py-1.5">
+            <Link className="h-[18px] w-24" href={""}>
               <LogoIcon />
             </Link>
             <button onClick={() => setIsShow(false)}>
@@ -180,31 +180,42 @@ const SideBar = ({
             </button>
           </div>
 
-          <div className="space-y-1 grow overflow-auto my-5 no-scrollbar">
-            {menuItems.map((item) => (
-              <DropdownItem
-                key={item.id}
-                id={item.id}
-                title={item.label}
-                items={item.items}
-                isOpen={openDropdown === item.id}
-                onToggle={() => toggleDropdown(item.id)}
-              />
-            ))}
+          <div className="no-scrollbar my-5 grow space-y-1 overflow-auto">
+            {menuItems.map((item) =>
+              item.path ? (
+                <Link
+                  key={item.id}
+                  href={item.path}
+                  className="header-li block p-1"
+                  onClick={() => setIsShow(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <DropdownItem
+                  key={item.id}
+                  id={item.id}
+                  title={item.label}
+                  items={item.items || []}
+                  isOpen={openDropdown === item.id}
+                  onToggle={() => toggleDropdown(item.id)}
+                />
+              ),
+            )}
           </div>
 
           <div className="flex items-center justify-between gap-3">
             <Link
-              className="text-xs font-bold tracking-[0.1px] text-lightBlack font-inter"
+              className="text-lightBlack font-inter text-xs font-bold tracking-[0.1px]"
               href={"tel:855 392 8803"}
             >
               855 392 8803
             </Link>
             <div className="flex items-center gap-2">
-              <button className="text-xs font-bold tracking-[0.1px] text-lightBlack font-myriad px-2 py-1">
+              <button className="text-lightBlack font-myriad px-2 py-1 text-xs font-bold tracking-[0.1px]">
                 Login
               </button>
-              <button className="text-white font-semibold leading-[142.857%] tracking-[0.1px] font-myriad rounded bg-romanRed px-[14px] py-1">
+              <button className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white">
                 Sign Up
               </button>
             </div>

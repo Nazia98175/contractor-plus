@@ -14,8 +14,6 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  console.log(header, "Headerrr");
-
   // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {

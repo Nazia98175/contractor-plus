@@ -123,22 +123,29 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
   return (
     <div onMouseLeave={handleMouseLeave}>
       <div className="flex w-full items-center gap-2">
-        {headerList?.map((item: any, index: any) =>
-          item?.headerSubList?.length === 0 ? (
-            <Link
-              key={index}
-              href={"#"}
-              onMouseEnter={handleMouseLeave}
-              className="header-li hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
-            >
-              {item?.mainTitle}
-            </Link>
-          ) : (
+        {headerList?.map((item: any, index: number) => {
+          const menuItem = menuItems[index];
+          const isWhy = menuItem?.id === "whycontractordesktop";
+
+          if (item?.headerSubList?.length === 0 || isWhy) {
+            return (
+              <Link
+                key={index}
+                href={menuItem?.link || "#"}
+                onMouseEnter={handleMouseLeave}
+                className="header-li hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
+              >
+                {item?.mainTitle}
+              </Link>
+            );
+          }
+
+          return (
             <button
               key={index}
-              onMouseEnter={() => handleMouseEnter(menuItems?.[index]?.id)}
+              onMouseEnter={() => handleMouseEnter(menuItem?.id)}
               className={`header-li flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px] ${
-                activeMenu === menuItems?.[index]?.id
+                activeMenu === menuItem?.id
                   ? "!text-kuroiBlack bg-white"
                   : "text-superSilver"
               }`}
@@ -147,12 +154,12 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
               <ChevronDown
                 size={16}
                 className={`transition-transform ${
-                  activeMenu === menuItems?.[index]?.id ? "rotate-180" : ""
+                  activeMenu === menuItem?.id ? "rotate-180" : ""
                 }`}
               />
             </button>
-          ),
-        )}
+          );
+        })}
       </div>
 
       {/* Invisible gap-covering element */}

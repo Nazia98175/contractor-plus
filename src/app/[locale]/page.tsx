@@ -49,7 +49,6 @@ export default async function Home({
   return (
     <div className="relative overflow-x-hidden">
       <div className="relative">
-        {/* <Header /> */}
         <Hero homePageContent={homePageContent?.data} />
         <TrustBar
           platforms={platforms}

@@ -1,6 +1,11 @@
 "use client";
 import Image from "next/image";
-import { CheckIcon, RedClipIcon, StartIcon } from "../common/Icons";
+import {
+  CheckIcon,
+  RedClipIcon,
+  RedClipIconMobile,
+  StartIcon,
+} from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import Button from "../common/Button";
@@ -27,10 +32,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
   return (
     <section className="relative z-10 pt-[46px] sm:pt-20 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
-      <span className="pointer-events-none absolute top-[112px] right-[-194px] md:top-[-202px] md:right-0">
-        <RedClipIcon />
-      </span>
-
+      <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
+      <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
       <div
         ref={wrapperRef}
@@ -49,7 +52,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
         </div>
         <div className="px-2 pt-8 md:pt-0">
           <TextAnimation delay={0.6} animateOnScroll={false}>
-            <h2 className="gradient-2 main-heading mx-auto mb-2 w-fit text-start sm:text-center md:mb-4 lg:mb-[26px]">
+            <h2 className="gradient-2 main-heading mx-auto mb-2 w-fit text-start md:mb-4 md:text-center lg:mb-[26px]">
               {hero?.heroTitle}
             </h2>
           </TextAnimation>
@@ -67,7 +70,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           animateOnScroll={false}
           className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5"
         >
-          <div className="flex flex-col-reverse gap-1 sm:flex-col">
+          <div className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0">
             <Image
               src="/images/webp/play-google.webp"
               alt="google icon"
@@ -82,7 +85,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col-reverse gap-1 sm:flex-col">
+          <div className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0">
             <Image
               src="/images/svg/Apple-Icon.svg"
               alt="google icon"

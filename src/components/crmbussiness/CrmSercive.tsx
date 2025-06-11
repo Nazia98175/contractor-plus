@@ -102,7 +102,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
       <div className="pointer-events-none absolute top-[-11%] left-0 z-50 flex h-[67%] w-full rotate-180">
         <CloudsAnimation
           className="-bottom-[11%]"
-          imageClass="h-full z-20 !bottom-[-45px]"
+          imageClass="h-full z-20 !bottom-[-30px]"
           cloud1Class="bottom-0"
           cloud2Class="bottom-0"
         />

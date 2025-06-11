@@ -686,9 +686,9 @@ const FieldServicesHero = ({ location }: Props) => {
                         "circle-radius": 20,
                         "circle-color": "#FFFFFF",
                         "circle-opacity": 0.9,
-                        "circle-strokeWidth": 2,
+                        "circle-stroke-width": 2,
                         "circle-stroke-color": user.color,
-                        "circle-strokeOpacity": 1,
+                        "circle-stroke-opacity": 1,
                       }}
                     />
                   </Source>
@@ -810,7 +810,7 @@ const FieldServicesHero = ({ location }: Props) => {
                 <span className="flex sm:hidden">Download FREE App</span>
                 <ArrowIcon fill="white" className="hidden sm:block" />
               </Button>
-              <CardRequiredButton />
+              {/* <CardRequiredButton /> */}
             </div>
           </div>
         </div>

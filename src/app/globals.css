@@ -172,13 +172,13 @@ body {
   @apply text-decemberSky font-jakarta text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply text-[26px] leading-[130%] font-bold sm:text-4xl sm:font-semibold lg:text-[42px] lg:tracking-[-0.84px];
+  @apply text-2xl leading-[130%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;
 }
 .paragraph {
-  @apply text-wallStreet mt-4 font-medium;
+  @apply text-wallStreet font-medium;
 }
 .paragraph-style {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;

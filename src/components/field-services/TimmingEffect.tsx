@@ -75,7 +75,7 @@ const TimmingEffect = () => {
           <span className="flex sm:hidden">Download FREE App</span>
           <ArrowIcon fill="white" />
         </Button>
-        <CardRequiredButton />
+        {/* <CardRequiredButton /> */}
       </div>
     </section>
   );

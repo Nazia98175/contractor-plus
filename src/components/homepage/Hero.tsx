@@ -28,6 +28,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   } = homePageContent ?? {};
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
+      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 h-20 w-[120%] -translate-x-1/2 blur-[15px]"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
       <HeroAnimatedIcon />
       <HeroAnimatedMobileIcon />

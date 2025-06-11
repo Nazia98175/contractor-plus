@@ -61,7 +61,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const legalLinks = t.raw("legalLinks");
 
   return (
-    <footer className="no-scrollbar relative z-20 w-full overflow-y-hidden py-10 md:py-[62px] lg:overflow-y-visible">
+    <footer className="no-scrollbar relative z-20 w-full overflow-hidden py-10 md:py-[62px]">
       {/* <ParticlesComponent id="star-particles" /> */}
       <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />

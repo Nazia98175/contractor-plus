@@ -22,11 +22,11 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
         src="/images/webp/switch-tool-bg.webp"
         alt="switch-tool-bg"
       />
-      <img
+      {/* <img
         className="absolute top-0 left-0 z-[-10] block h-full w-full object-center md:hidden"
         src="/images/png/switch-tool-mobile-bg.png"
         alt="switch-tool-bg"
-      />
+      /> */}
 
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="font-jakarta text-secondary mx-auto max-w-[818px] text-center text-xl font-semibold sm:text-2xl md:text-3xl lg:text-[36px]">

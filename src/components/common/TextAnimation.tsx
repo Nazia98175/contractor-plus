@@ -153,7 +153,7 @@ export default function TextAnimation({
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div className="w-full" ref={containerRef} data-copy-wrapper="true">
       {children}
     </div>
   );

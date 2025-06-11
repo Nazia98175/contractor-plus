@@ -107,7 +107,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
               className="bg-red-linear primary-btn !h-[40px] gap-2"
             >
               <span className="hidden lg:block">{hero?.createBtn}</span>
-              <span className="block lg:hidden">Download App</span>
+              <span className="block lg:hidden">Download Free App</span>
             </Button>
             <button className="text-wallStreet sm:text-secondary font-myriad mt1.5 mx-auto hidden w-fit items-center gap-1.5 pt-[6px] text-center !text-xs !font-semibold sm:flex">
               <CheckIcon />

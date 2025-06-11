@@ -54,26 +54,25 @@ const HvacSoftwareService = () => {
                   onChange={handleEmailChange}
                   className="h-[40px] w-full rounded-[6px] bg-white px-2 text-[#ADB1B5] outline-none"
                 />
+              </div>
+              <div className="flex w-full flex-col items-center justify-center md:w-fit">
+                <button
+                  type="submit"
+                  className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  ) : (
+                    `${"Get started FREE"}`
+                  )}
+                </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
-                  <span>
-                    <CheckIcon />
-                  </span>
                   <span className="font-myriad text-sm font-semibold text-white">
                     No Credit Card Required
                   </span>
                 </p>
               </div>
-              <button
-                type="submit"
-                className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
-                disabled={loading}
-              >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  `${"Get started FREE"}`
-                )}
-              </button>
               <div className="flex w-full items-center justify-center md:hidden">
                 <p className="flex items-center gap-2 pt-1">
                   <span>

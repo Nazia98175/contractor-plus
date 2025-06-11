@@ -7,6 +7,8 @@ import {
   HeroAnimatedMobileIcon,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+import FreeAccountButton from "../common/FreeAccountButton";
+import CardRequiredButton from "../common/CardRequiredButton";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -24,7 +26,6 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     hero_image,
     mobileBtn,
   } = homePageContent ?? {};
-  console.log(hero_image?.url, "urlll");
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
@@ -48,7 +49,9 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               {hero_description}
             </p>
           </TextAnimation>
-          <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
+          <FreeAccountButton text={cta_button_text} />
+          <CardRequiredButton text={ncc_text} />
+          {/* <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
             <button className="bg-red-linear primary-btn h-10">
               <span className="hidden md:flex">{cta_button_text}</span>
               <span className="flex md:hidden">{mobileBtn}</span>
@@ -57,7 +60,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               <CheckIcon />
               {ncc_text}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">

@@ -27,7 +27,7 @@ const HvacHero = () => {
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px] 2xl:pt-[280px] 2xl:pb-[308px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
 
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
@@ -52,7 +52,7 @@ const HvacHero = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-[2%] bottom-16 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%] 2xl:h-[60%]">
+        <div className="absolute right-[2%] bottom-16 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">

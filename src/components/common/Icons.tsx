@@ -1317,14 +1317,14 @@ export const PlayIcon = () => (
   </svg>
 );
 
-export const RedClipIcon = () => (
+export const RedClipIcon = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
     height="1112"
     fill="none"
     viewBox="0 0 993 1112"
-    className="w-full max-w-[993px]"
+    className={className}
   >
     <g
       filter="url(#filter0_f_69_4651)"
@@ -1370,6 +1370,63 @@ export const RedClipIcon = () => (
           stdDeviation="44"
         ></feGaussianBlur>
       </filter>
+    </defs>
+  </svg>
+);
+export const RedClipIconMobile = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="1044"
+    viewBox="0 0 320 1044"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2110_17575)"
+    >
+      <path
+        d="M-107.131 304.667L304.435 521.833L716 739"
+        stroke="url(#paint0_linear_2110_17575)"
+        stroke-width="432"
+        stroke-linecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2110_17575"
+        x="-411.174"
+        y="0.623535"
+        width="1431.22"
+        height="1042.42"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_2110_17575"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2110_17575"
+        x1="320.908"
+        y1="833.553"
+        x2="625.106"
+        y2="613.892"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stop-opacity="0" />
+        <stop offset="0.996954" stop-color="#EE1E25" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
     </defs>
   </svg>
 );

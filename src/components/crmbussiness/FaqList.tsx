@@ -6,16 +6,25 @@ type FaqListProps = {
   data: {
     question: string;
     answer: string;
+    classNameQue?: string;
   };
   isOpen: boolean;
   onToggle: () => void;
+  classNameQue?: string;
 };
-const FaqList: React.FC<FaqListProps> = ({ data, isOpen, onToggle }) => {
+const FaqList: React.FC<FaqListProps> = ({
+  data,
+  isOpen,
+  onToggle,
+  classNameQue,
+}) => {
   return (
     <>
       <div onClick={onToggle} className="mb-3 cursor-pointer">
         <button className="flex w-full cursor-pointer items-center justify-between gap-5 py-2">
-          <h3 className="paragraph text-start !font-black !text-white">
+          <h3
+            className={`${classNameQue} paragraph text-start !font-black !text-white`}
+          >
             {data.question}
           </h3>
           <span className="relative inline-block h-6 w-6">

@@ -29,7 +29,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
   return (
     <section
       ref={ref}
-      className="main-container relative z-30 flex flex-col items-center justify-center px-2 pt-11 md:pt-16 xl:pt-[93px]"
+      className="main-container relative z-30 flex flex-col items-center justify-center px-2 pt-[52px] md:pt-16 xl:pt-[93px]"
     >
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h2 className="crm-gradient section-heading mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">
@@ -82,12 +82,12 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
         distance={50}
         animateOnScroll={true}
       >
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-[53px]">
+        <div className="flex flex-wrap items-center justify-center gap-[34px] sm:gap-8 md:gap-[53px]">
           <Image
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="drop-shadow-custom-shadow-img max-w-[121px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             alt="Software Advice"
           />
 
@@ -95,7 +95,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="drop-shadow-custom-shadow-img max-w-[103px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
@@ -103,7 +103,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="drop-shadow-custom-shadow-img max-w-[137px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
           />
           <Image

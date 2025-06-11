@@ -10,7 +10,7 @@ interface TheServiceProps {
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   console.log(kindAdorable, "kinddd");
   return (
-    <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-8 md:pt-16 lg:pt-[70px]">
+    <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-[53px] md:pt-16 lg:pt-[70px]">
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <h2 className="section-heading gradient-text-2 mx-auto w-fit text-center !font-black lg:!font-semibold">
           {kindAdorable?.title}
@@ -31,7 +31,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
           {kindAdorable?.headerRight}
         </button>
       </div>
-      <div className="border-superSilver mt-2 block overflow-hidden rounded-[6px] border drop-shadow-2xl md:hidden">
+      <div className="border-superSilver shadow-3xl mt-2 block overflow-hidden rounded-[6px] border md:hidden">
         {kindAdorable?.features?.map((feature: any, index: any) => (
           <CompareCard feature={feature} key={index} />
         ))}

@@ -28,7 +28,7 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
   ];
   return (
     <>
-      <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 py-10 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-[54px]">
+      <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 pt-7 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-[54px]">
         {/* Left: Image */}
         <div className="flex w-full max-w-[480px] items-center justify-center">
           <Image
@@ -50,14 +50,18 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
             </h3>
           </TextAnimation>
 
-          <ul className="space-y-2 sm:space-y-3 lg:space-y-5">
+          <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
             {data?.content?.map((feature, index) => (
               <li
                 key={index}
-                className="text-lightBlack flex gap-2.5 px-2 py-2.5 text-base font-medium sm:font-semibold md:px-3 xl:text-lg"
+                className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-center sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
               >
                 <span className="max-w-5 min-w-5 md:max-w-6">
-                  <CheckIcon width={25} height={25} />
+                  <CheckIcon
+                    className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
+                    width={25}
+                    height={25}
+                  />
                 </span>
                 <span>{feature?.title}</span>
               </li>
@@ -65,7 +69,7 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
           </ul>
         </div>
       </section>
-      <div className="relative z-20 flex flex-col items-center justify-center gap-2.5 px-2">
+      <div className="relative z-20 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
         <FreeAccountButton
           className="gap-1.5"
           text={trackProperties?.btnText}

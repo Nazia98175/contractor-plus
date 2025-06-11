@@ -49,18 +49,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               {hero_description}
             </p>
           </TextAnimation>
-          <FreeAccountButton text={cta_button_text} />
-          <CardRequiredButton text={ncc_text} />
-          {/* <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
-            <button className="bg-red-linear primary-btn h-10">
-              <span className="hidden md:flex">{cta_button_text}</span>
-              <span className="flex md:hidden">{mobileBtn}</span>
-            </button>
-            <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
-              <CheckIcon />
-              {ncc_text}
-            </button>
-          </div> */}
+
+          <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
+            <FreeAccountButton text={cta_button_text} />
+            <CardRequiredButton text={ncc_text} />
+          </div>
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">

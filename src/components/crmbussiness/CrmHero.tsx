@@ -7,6 +7,8 @@ import Button from "../common/Button";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import AuroraEffect from "../common/AuroraEffect";
+import FreeAccountButton from "../common/FreeAccountButton";
+import CardRequiredButton from "../common/CardRequiredButton";
 interface TheHeroProps {
   hero: any;
 }
@@ -101,18 +103,12 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
               ))}
             </div>
           </div>
-          <div className="w-full px-2 sm:w-fit">
-            <Button
-              variant="primary"
-              className="bg-red-linear primary-btn !h-[40px] gap-2"
-            >
-              <span className="hidden lg:block">{hero?.createBtn}</span>
-              <span className="block lg:hidden">Download Free App</span>
-            </Button>
-            <button className="text-wallStreet sm:text-secondary font-myriad mt1.5 mx-auto hidden w-fit items-center gap-1.5 pt-[6px] text-center !text-xs !font-semibold sm:flex">
-              <CheckIcon />
-              {hero?.ncc_txt}
-            </button>
+          <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
+            <FreeAccountButton text={hero?.createBtn} />
+            <CardRequiredButton
+              className="text-wallStreet sm:text-secondary"
+              text={hero?.ncc_txt}
+            />
           </div>
         </CardReveal>
         <CardReveal

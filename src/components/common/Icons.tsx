@@ -1320,10 +1320,11 @@ export const PlayIcon = () => (
 export const RedClipIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="993"
+    width="100%"
     height="1112"
     fill="none"
     viewBox="0 0 993 1112"
+    className="w-full max-w-[993px]"
   >
     <g
       filter="url(#filter0_f_69_4651)"

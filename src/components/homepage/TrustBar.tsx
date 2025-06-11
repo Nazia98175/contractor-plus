@@ -18,7 +18,7 @@ const TrustBar: React.FC<TrustBarProps> = ({
   return (
     <section className={`relative ${className}`}>
       {showTrustedSection && (
-        <h2 className="section-heading crm-gradient mx-auto max-w-[80%] text-center sm:max-w-full">
+        <h2 className="section-heading crm-gradient mx-auto text-center">
           Trusted by over <strong> 50,000</strong> build and service contractors
         </h2>
       )}

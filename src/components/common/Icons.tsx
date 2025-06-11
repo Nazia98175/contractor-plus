@@ -155,8 +155,8 @@ export const LinkdinIcon = () => (
 export const FooterLogoIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="224"
-    height="42"
+    width="100%"
+    height="100%"
     viewBox="0 0 224 42"
     fill="none"
   >
@@ -1183,8 +1183,8 @@ export const FooterRedLineIcon = ({ className = "" }) => (
       <path
         d="M535.262 689.666L202.131 497.333L-131 305"
         stroke="url(#paint0_linear_2110_13620)"
-        stroke-width="432"
-        stroke-linecap="round"
+        strokeWidth="432"
+        strokeLinecap="round"
       />
     </g>
     <defs>
@@ -1197,7 +1197,7 @@ export const FooterRedLineIcon = ({ className = "" }) => (
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -2299,8 +2299,8 @@ export const FooterAnimatedIcon = () => (
   <svg
     className={`svg-diagonal-container`}
     xmlns="http://www.w3.org/2000/svg"
-    width={515}
-    height={992}
+    width="100%"
+    height="100%"
     fill="none"
     viewBox="0 0 515 992"
     style={{ overflow: "visible" }}
@@ -2375,6 +2375,63 @@ export const FooterAnimatedIcon = () => (
         <stop offset="0" stopOpacity="0"></stop>
         <stop offset="0.5" stopColor="#EE1E25" stopOpacity="0.3"></stop>
         <stop offset="1" stopColor="#EE1E25" stopOpacity="0.7"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const BlueIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="463"
+    height="1002"
+    viewBox="0 0 463 1002"
+    fill="none"
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2140_4839)"
+    >
+      <path
+        d="M554.516 155L354.758 500.99L155 846.981"
+        stroke="url(#paint0_linear_2140_4839)"
+        strokeOpacity="0.15"
+        strokeWidth="85"
+        strokeLinecap="square"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2140_4839"
+        x="0.944336"
+        y="0.945312"
+        width="707.627"
+        height="1000.09"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="48"
+          result="effect1_foregroundBlur_2140_4839"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2140_4839"
+        x1="154.567"
+        y1="846.731"
+        x2="554.083"
+        y2="154.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#6DDCFF" stopOpacity="0" />
+        <stop offset="0.505" stopColor="#6DDCFF" />
+        <stop offset="1" stopColor="#6DDCFF" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -3762,165 +3819,5 @@ export const DownloadIcon = () => (
       d="M9.20768 28.3333C7.05435 28.3333 5.2174 27.5919 3.69685 26.1092C2.17629 24.6169 1.41602 22.7989 1.41602 20.655C1.41602 18.8133 1.96852 17.17 3.07352 15.725C4.18796 14.28 5.6424 13.3592 7.43685 12.9625C8.03185 10.7903 9.2124 9.0336 10.9785 7.69249C12.7541 6.34193 14.761 5.66666 16.9993 5.66666C19.7666 5.66666 22.1088 6.62999 24.026 8.55666C25.9527 10.4739 26.916 12.8161 26.916 15.5833C28.5499 15.7722 29.9005 16.4805 30.9677 17.7083C32.0443 18.9172 32.5827 20.3339 32.5827 21.9583C32.5827 23.7339 31.9641 25.2403 30.7268 26.4775C29.4896 27.7147 27.9832 28.3333 26.2077 28.3333H18.416C17.6416 28.3333 16.9757 28.0547 16.4185 27.4975C15.8613 26.9497 15.5827 26.2839 15.5827 25.5V18.2042L13.316 20.4L11.3327 18.4167L16.9993 12.75L22.666 18.4167L20.6827 20.4L18.416 18.2042V25.5H26.2077C27.1993 25.5 28.0352 25.1553 28.7152 24.4658C29.4046 23.7858 29.7493 22.95 29.7493 21.9583C29.7493 20.9667 29.4046 20.1308 28.7152 19.4508C28.0352 18.7614 27.1993 18.4167 26.2077 18.4167H24.0827V15.5833C24.0827 13.6283 23.3932 11.9567 22.0143 10.5683C20.6355 9.18943 18.9638 8.49999 16.9993 8.49999C15.0443 8.49999 13.3727 9.18943 11.9843 10.5683C10.6055 11.9567 9.91602 13.6283 9.91602 15.5833H9.20768C7.83824 15.5833 6.67185 16.0697 5.70852 17.0425C4.73574 18.0058 4.24935 19.1722 4.24935 20.5417C4.24935 21.9111 4.73574 23.0917 5.70852 24.0833C6.67185 25.0278 7.83824 25.5 9.20768 25.5H12.7493V28.3333"
       fill="#93E3C5"
     />
-  </svg>
-);
-export const HalfRoundedIcon = ({ className = "" }) => (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 100% 1887"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <g filter="url(#filter0_f_1167_3304)">
-      <ellipse
-        cx="721.472"
-        cy="968.47"
-        rx="778.798"
-        ry="568.866"
-        fill="#0C0D11"
-      />
-    </g>
-    <g filter="url(#filter1_f_1167_3304)">
-      <path
-        d="M1743.74 943.431C1743.74 1331.37 1296.4 1645.86 744.571 1645.86C192.746 1645.86 -254.598 1331.37 -254.598 943.431C-254.598 555.489 192.746 241 744.571 241C1296.4 241 1743.74 555.489 1743.74 943.431Z"
-        fill="#EE1E25"
-      />
-    </g>
-    <g filter="url(#filter2_f_1167_3304)">
-      <ellipse
-        cx="721.474"
-        cy="941.634"
-        rx="884.058"
-        ry="619.398"
-        fill="#C01A06"
-      />
-    </g>
-    <g filter="url(#filter3_f_1167_3304)">
-      <ellipse
-        cx="721.473"
-        cy="1000.18"
-        rx="918.227"
-        ry="461.454"
-        fill="#0C0D11"
-      />
-    </g>
-    <g filter="url(#filter4_f_1167_3304)">
-      <ellipse
-        cx="721.473"
-        cy="998.69"
-        rx="976.069"
-        ry="314.027"
-        fill="#0C0D11"
-      />
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_1167_3304"
-        x="-257.326"
-        y="199.604"
-        width="1957.6"
-        height="1537.73"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="100"
-          result="effect1_foregroundBlur_1167_3304"
-        />
-      </filter>
-      <filter
-        id="filter1_f_1167_3304"
-        x="-495.198"
-        y="0.399994"
-        width="2479.54"
-        height="1886.06"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="120.3"
-          result="effect1_foregroundBlur_1167_3304"
-        />
-      </filter>
-      <filter
-        id="filter2_f_1167_3304"
-        x="-362.584"
-        y="122.236"
-        width="2168.12"
-        height="1638.8"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="100"
-          result="effect1_foregroundBlur_1167_3304"
-        />
-      </filter>
-      <filter
-        id="filter3_f_1167_3304"
-        x="-371.754"
-        y="363.722"
-        width="2186.45"
-        height="1272.91"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="87.5"
-          result="effect1_foregroundBlur_1167_3304"
-        />
-      </filter>
-      <filter
-        id="filter4_f_1167_3304"
-        x="-298.196"
-        y="641.063"
-        width="2039.34"
-        height="715.254"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="21.8"
-          result="effect1_foregroundBlur_1167_3304"
-        />
-      </filter>
-    </defs>
   </svg>
 );

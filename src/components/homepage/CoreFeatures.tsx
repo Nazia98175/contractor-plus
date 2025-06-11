@@ -24,7 +24,6 @@ const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
           delay={3000}
         >
           {coreFeatures?.title}
-          {/* Contractor+ operates like your business really runs */}
         </PrimaryAnimatedText>
         <PrimaryAnimatedText className="mt-3 leading-[130%]" delay={4000}>
           {coreFeatures?.sub_title}

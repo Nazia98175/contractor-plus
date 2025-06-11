@@ -74,12 +74,11 @@ export default async function Home({
         blogs={blogs?.data}
         blogHeading={homePageContent?.data?.blogs}
       />
-      <div className="relative overflow-hidden">
-        <EntireBusiness
-          entireBusiness={homePageContent?.data?.entireBusiness}
-          ncc_text={homePageContent?.data?.ncc_text}
-        />
-      </div>
+
+      <EntireBusiness
+        entireBusiness={homePageContent?.data?.entireBusiness}
+        ncc_text={homePageContent?.data?.ncc_text}
+      />
     </div>
   );
 }

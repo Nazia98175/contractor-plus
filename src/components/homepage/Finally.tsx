@@ -34,7 +34,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           <CardReveal animateOnScroll={true}>
             <PrimaryAnimatedText
               delay={3000}
-              className="text-superSilver font-jakarta mx-auto max-w-[700px] text-center text-base font-medium"
+              className="text-superSilver mx-auto max-w-[755px] text-center text-base font-medium"
             >
               {finallyC?.[0]?.sub_title ?? ""}
             </PrimaryAnimatedText>
@@ -79,21 +79,21 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 }}
                 src="/images/webp/software-advice.webp"
                 alt="Software Advice"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-24"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
               />
               <Image
                 width={96}
                 height={104}
                 src="/images/webp/leader.webp"
                 alt="Leader"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-24"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
               />
               <Image
                 width={96}
                 height={91}
                 src="/images/webp/get-app.webp"
                 alt="Get App"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-24"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
               />
             </CardReveal>
             <CardReveal

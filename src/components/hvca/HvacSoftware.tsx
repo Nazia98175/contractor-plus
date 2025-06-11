@@ -5,7 +5,7 @@ import { AlertIcon } from "../common/Icons";
 const HvacSoftware = () => {
   return (
     <section className="1xl:pb-[151px] hvac-software-bg relative z-30 mx-auto w-full max-w-[1354px] overflow-hidden px-2 pb-12 md:pb-20 lg:pb-[100px] xl:pb-[120px]">
-      <h3 className="heading text-winterWay mx-auto hidden max-w-[90%] text-center !font-bold sm:block md:!font-semibold">
+      <h3 className="heading text-winterWay mx-auto hidden max-w-[90%] text-center !font-semibold sm:block">
         Every HVAC software has the same story
       </h3>
       <h3 className="heading crm-gradient mx-auto block max-w-[90%] text-center !font-bold sm:hidden">

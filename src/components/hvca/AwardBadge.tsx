@@ -22,7 +22,10 @@ export default function AwardBadges() {
             <ArrowIcon fill="#fff" />
           </span>
         </button>
-        {/* <CardRequiredButton className="text-winterWay" /> */}
+        <CardRequiredButton
+          className="text-winterWay"
+          text="No Credit Card Required"
+        />
       </div>
       <AwardsTagsImg />
     </section>

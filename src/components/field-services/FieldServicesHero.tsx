@@ -446,29 +446,29 @@ const WIREFRAME_STYLE: StyleSpecification = {
       filter: [
         "all",
         ["has", "name"],
-        ["match", ["get", "class"], ["motorway", "trunk", "primary"], true, false]
+        [
+          "match",
+          ["get", "class"],
+          ["motorway", "trunk", "primary"],
+          true,
+          false,
+        ],
       ],
       layout: {
         "text-field": ["get", "name"],
         "text-font": ["Noto Sans Regular"],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          12, 10,
-          16, 14
-        ],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 12, 10, 16, 14],
         "symbol-placement": "line",
         "text-rotation-alignment": "map",
         "text-pitch-alignment": "viewport",
-        "text-max-angle": 30
+        "text-max-angle": 30,
       },
       paint: {
         "text-color": "rgb(180,180,180)",
         "text-halo-color": "rgba(8,8,8,0.8)",
         "text-halo-width": 1,
-        "text-opacity": 0.8
-      }
+        "text-opacity": 0.8,
+      },
     },
     // Road labels for secondary roads
     {
@@ -480,29 +480,23 @@ const WIREFRAME_STYLE: StyleSpecification = {
       filter: [
         "all",
         ["has", "name"],
-        ["match", ["get", "class"], ["secondary", "tertiary"], true, false]
+        ["match", ["get", "class"], ["secondary", "tertiary"], true, false],
       ],
       layout: {
         "text-field": ["get", "name"],
         "text-font": ["Noto Sans Regular"],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          13, 9,
-          16, 12
-        ],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 13, 9, 16, 12],
         "symbol-placement": "line",
         "text-rotation-alignment": "map",
         "text-pitch-alignment": "viewport",
-        "text-max-angle": 30
+        "text-max-angle": 30,
       },
       paint: {
         "text-color": "rgb(160,160,160)",
         "text-halo-color": "rgba(8,8,8,0.8)",
         "text-halo-width": 1,
-        "text-opacity": 0.7
-      }
+        "text-opacity": 0.7,
+      },
     },
     // Area/place labels (neighborhoods, districts)
     {
@@ -514,28 +508,28 @@ const WIREFRAME_STYLE: StyleSpecification = {
       filter: [
         "all",
         ["has", "name"],
-        ["match", ["get", "class"], ["neighbourhood", "suburb", "quarter"], true, false]
+        [
+          "match",
+          ["get", "class"],
+          ["neighbourhood", "suburb", "quarter"],
+          true,
+          false,
+        ],
       ],
       layout: {
         "text-field": ["get", "name"],
         "text-font": ["Noto Sans Bold"],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          10, 11,
-          14, 16
-        ],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 10, 11, 14, 16],
         "text-anchor": "center",
         "text-max-width": 8,
-        "text-letter-spacing": 0.1
+        "text-letter-spacing": 0.1,
       },
       paint: {
         "text-color": "rgb(200,200,200)",
         "text-halo-color": "rgba(8,8,8,0.9)",
         "text-halo-width": 2,
-        "text-opacity": 0.9
-      }
+        "text-opacity": 0.9,
+      },
     },
     // City/town labels
     {
@@ -547,28 +541,22 @@ const WIREFRAME_STYLE: StyleSpecification = {
       filter: [
         "all",
         ["has", "name"],
-        ["match", ["get", "class"], ["city", "town"], true, false]
+        ["match", ["get", "class"], ["city", "town"], true, false],
       ],
       layout: {
         "text-field": ["get", "name"],
         "text-font": ["Noto Sans Bold"],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          8, 12,
-          12, 18
-        ],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 8, 12, 12, 18],
         "text-anchor": "center",
         "text-max-width": 8,
-        "text-letter-spacing": 0.15
+        "text-letter-spacing": 0.15,
       },
       paint: {
         "text-color": "rgb(220,220,220)",
         "text-halo-color": "rgba(8,8,8,0.9)",
         "text-halo-width": 2,
-        "text-opacity": 1
-      }
+        "text-opacity": 1,
+      },
     },
   ],
 };
@@ -670,116 +658,117 @@ const FieldServicesHero = ({ location }: Props) => {
             interactive={false} // Disable map interaction for hero section
           >
             {/* User Profile Pins */}
-            {mockUsers?.length > 0 && mockUsers.map((user:any) => (
-              <div key={user.id}>
-                {/* Pin Background Circle */}
-                <Source
-                  id={`user-bg-${user.id}`}
-                  type="geojson"
-                  data={{
-                    type: "FeatureCollection",
-                    features: [
-                      {
-                        type: "Feature",
-                        geometry: {
-                          type: "Point",
-                          coordinates: [user.lng, user.lat],
+            {mockUsers?.length > 0 &&
+              mockUsers.map((user: any) => (
+                <div key={user.id}>
+                  {/* Pin Background Circle */}
+                  <Source
+                    id={`user-bg-${user.id}`}
+                    type="geojson"
+                    data={{
+                      type: "FeatureCollection",
+                      features: [
+                        {
+                          type: "Feature",
+                          geometry: {
+                            type: "Point",
+                            coordinates: [user.lng, user.lat],
+                          },
+                          properties: {},
                         },
-                        properties: {},
-                      },
-                    ],
-                  }}
-                >
-                  <Layer
-                    id={`user-bg-layer-${user.id}`}
-                    type="circle"
-                    paint={{
-                      "circle-radius": 20,
-                      "circle-color": "#FFFFFF",
-                      "circle-opacity": 0.9,
-                      "circle-stroke-width": 2,
-                      "circle-stroke-color": user.color,
-                      "circle-stroke-opacity": 1,
+                      ],
                     }}
-                  />
-                </Source>
+                  >
+                    <Layer
+                      id={`user-bg-layer-${user.id}`}
+                      type="circle"
+                      paint={{
+                        "circle-radius": 20,
+                        "circle-color": "#FFFFFF",
+                        "circle-opacity": 0.9,
+                        "circle-strokeWidth": 2,
+                        "circle-stroke-color": user.color,
+                        "circle-strokeOpacity": 1,
+                      }}
+                    />
+                  </Source>
 
-                {/* Profile Picture Circle */}
-                <Source
-                  id={`user-profile-${user.id}`}
-                  type="geojson"
-                  data={{
-                    type: "FeatureCollection",
-                    features: [
-                      {
-                        type: "Feature",
-                        geometry: {
-                          type: "Point",
-                          coordinates: [user.lng, user.lat],
+                  {/* Profile Picture Circle */}
+                  <Source
+                    id={`user-profile-${user.id}`}
+                    type="geojson"
+                    data={{
+                      type: "FeatureCollection",
+                      features: [
+                        {
+                          type: "Feature",
+                          geometry: {
+                            type: "Point",
+                            coordinates: [user.lng, user.lat],
+                          },
+                          properties: {},
                         },
-                        properties: {},
-                      },
-                    ],
-                  }}
-                >
-                  <Layer
-                    id={`user-profile-layer-${user.id}`}
-                    type="circle"
-                    paint={{
-                      "circle-radius": 16,
-                      "circle-color": user.color,
-                      "circle-opacity": 1,
+                      ],
                     }}
-                  />
-                </Source>
+                  >
+                    <Layer
+                      id={`user-profile-layer-${user.id}`}
+                      type="circle"
+                      paint={{
+                        "circle-radius": 16,
+                        "circle-color": user.color,
+                        "circle-opacity": 1,
+                      }}
+                    />
+                  </Source>
 
-                {/* User Initials */}
-                <Source
-                  id={`user-text-${user.id}`}
-                  type="geojson"
-                  data={{
-                    type: "FeatureCollection",
-                    features: [
-                      {
-                        type: "Feature",
-                        geometry: {
-                          type: "Point",
-                          coordinates: [user.lng, user.lat],
+                  {/* User Initials */}
+                  <Source
+                    id={`user-text-${user.id}`}
+                    type="geojson"
+                    data={{
+                      type: "FeatureCollection",
+                      features: [
+                        {
+                          type: "Feature",
+                          geometry: {
+                            type: "Point",
+                            coordinates: [user.lng, user.lat],
+                          },
+                          properties: {
+                            initials: user.initials,
+                          },
                         },
-                        properties: {
-                          initials: user.initials,
-                        },
-                      },
-                    ],
-                  }}
-                >
-                  <Layer
-                    id={`user-text-layer-${user.id}`}
-                    type="symbol"
-                    layout={{
-                      "text-field": ["get", "initials"],
-                      "text-font": ["Noto Sans Bold"],
-                      "text-size": 12,
-                      "text-anchor": "center",
+                      ],
                     }}
-                    paint={{
-                      "text-color": "#FFFFFF",
-                      "text-halo-color": "rgba(0,0,0,0.3)",
-                      "text-halo-width": 1,
-                    }}
-                  />
-                </Source>
-              </div>
-            ))}
+                  >
+                    <Layer
+                      id={`user-text-layer-${user.id}`}
+                      type="symbol"
+                      layout={{
+                        "text-field": ["get", "initials"],
+                        "text-font": ["Noto Sans Bold"],
+                        "text-size": 12,
+                        "text-anchor": "center",
+                      }}
+                      paint={{
+                        "text-color": "#FFFFFF",
+                        "text-halo-color": "rgba(0,0,0,0.3)",
+                        "text-halo-width": 1,
+                      }}
+                    />
+                  </Source>
+                </div>
+              ))}
           </Map>
         )}
       </div>
 
-{/* City Label - Middle Right */}
+      {/* City Label - Middle Right */}
       {processedLocation.city && processedLocation.country && (
-        <div className="absolute top-1/2 right-10 transform -translate-y-1/2 z-20">
-          <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-sm text-white px-4 py-2 rounded-lg border border-gray-600 flex items-center space-x-2">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
+        <div className="absolute top-1/2 right-10 z-20 -translate-y-1/2 transform">
+          <div className="flex items-center space-x-2 rounded-lg border border-gray-600 bg-[rgba(255,255,255,0.1)] px-4 py-2 text-white backdrop-blur-sm">
+            <div className="h-2 w-2 rounded-full bg-white"></div>
             <span className="text-sm font-medium">
               {processedLocation.city}, {processedLocation.country}
             </span>

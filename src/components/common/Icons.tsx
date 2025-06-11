@@ -2392,9 +2392,9 @@ export const BlueIcon = () => (
       <path
         d="M554.516 155L354.758 500.99L155 846.981"
         stroke="url(#paint0_linear_2140_4839)"
-        stroke-opacity="0.15"
-        stroke-width="85"
-        stroke-linecap="square"
+        strokeOpacity="0.15"
+        strokeWidth="85"
+        strokeLinecap="square"
       />
     </g>
     <defs>
@@ -2405,9 +2405,9 @@ export const BlueIcon = () => (
         width="707.627"
         height="1000.09"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -2427,9 +2427,9 @@ export const BlueIcon = () => (
         y2="154.75"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#6DDCFF" stop-opacity="0" />
-        <stop offset="0.505" stop-color="#6DDCFF" />
-        <stop offset="1" stop-color="#6DDCFF" stop-opacity="0" />
+        <stop stopColor="#6DDCFF" stopOpacity="0" />
+        <stop offset="0.505" stopColor="#6DDCFF" />
+        <stop offset="1" stopColor="#6DDCFF" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -3878,9 +3878,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="1957.6"
         height="1537.73"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3899,9 +3899,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2479.54"
         height="1886.06"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3920,9 +3920,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2168.12"
         height="1638.8"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3941,9 +3941,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2186.45"
         height="1272.91"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3962,9 +3962,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2039.34"
         height="715.254"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"

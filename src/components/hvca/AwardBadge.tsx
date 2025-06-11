@@ -22,7 +22,7 @@ export default function AwardBadges() {
             <ArrowIcon fill="#fff" />
           </span>
         </button>
-        <CardRequiredButton className="text-winterWay" />
+        {/* <CardRequiredButton className="text-winterWay" /> */}
       </div>
       <AwardsTagsImg />
     </section>

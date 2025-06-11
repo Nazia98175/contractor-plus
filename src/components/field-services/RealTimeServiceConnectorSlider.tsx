@@ -5,7 +5,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Controller } from "swiper/modules";
+import { Navigation, Pagination, Controller, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { DownloadIcon, Slidericon } from "../common/Icons";
 
@@ -33,7 +33,15 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
   return (
     <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
       {/* Top Image Slider */}
-      <Swiper modules={[Controller]} onSwiper={setTopSwiper} slidesPerView={1}>
+      <Swiper
+        modules={[Controller, Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        onSwiper={setTopSwiper}
+        slidesPerView={1}
+      >
         <SwiperSlide className="relative h-[625px] pt-[72px]">
           <div className="absolute bottom-[-36px] h-[100px] w-full max-w-full bg-white blur-[9px] sm:h-[200px] lg:bottom-[74px] lg:h-[281px] lg:blur-[40px]"></div>
           <div className="px-4">
@@ -163,7 +171,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
 
       <div className="slider-img-gradient 0 relative z-20 -mt-[110px] sm:-mt-[126px] md:-mt-[200px] lg:-mt-[292px]">
         <Swiper
-          modules={[Navigation, Pagination, Controller]}
+          modules={[Navigation, Pagination, Controller, Autoplay]}
           onSwiper={setBottomSwiper}
           slidesPerView={3}
           spaceBetween={36}
@@ -175,6 +183,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           pagination={{
             el: ".swiper-pagination-real-time",
             clickable: true,
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
           }}
           className="real-time-active-slider"
           breakpoints={{

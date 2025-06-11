@@ -8,7 +8,13 @@ const EraOfSoftware = () => {
       <h2 className="section-heading text-gradient-black mx-auto max-w-[730px] px-2 text-center">
         The era of software for HVAC is out. The operating system is in.
       </h2>
-      <p className="text-gradient-light card-desc mx-auto mt-4 max-w-[1024px] px-2 text-center !font-semibold">
+      <p className="text-gradient-light mx-auto mt-4 hidden max-w-[1024px] px-2 text-center text-base font-semibold sm:block">
+        What other solutions call “all-in-one” is really just a collection of
+        features under one roof. The problem? Those features still don’t do
+        enough to REALLY make a huge difference in your business. Contractor+ is
+        the anti-software. We’re an operating system.
+      </p>
+      <p className="text-secondary mx-auto mt-3 block max-w-[1024px] px-2 text-center text-xs !font-semibold sm:hidden">
         What other solutions call “all-in-one” is really just a collection of
         features under one roof. The problem? Those features still don’t do
         enough to REALLY make a huge difference in your business. Contractor+ is

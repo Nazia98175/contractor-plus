@@ -46,22 +46,28 @@ export const awards = [
   {
     src: "/images/png/software-advice.png",
     alt: "Software Advice Front Runners 2024",
+    mt: "mt-2",
+    width: 100,
   },
   {
     src: "/images/webp/leader.webp",
     alt: "G2 Leader Winter 2025",
+    width: 81,
   },
   {
     src: "/images/webp/get-app.webp",
     alt: "GetApp Best Functionality 2025",
+    width: 130,
   },
   {
     src: "/images/svg/capterra.svg",
     alt: "Capterra Best Value 2025",
+    width: 120,
   },
   {
     src: "/images/webp/best-value.webp",
     alt: "Capterra Shortlist 2025",
+    width: 120,
   },
 ];
 

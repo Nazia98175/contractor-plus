@@ -263,11 +263,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   return (
     <section
       ref={containerRef}
-<<<<<<< HEAD
-      className="relative mx-auto mt-7 flex max-w-[912px] flex-col gap-9 overflow-visible md:px-3 lg:flex-row lg:p-6"
-=======
       className="relative mt-7 flex flex-col gap-9 overflow-visible md:px-3 lg:flex-row xl:p-6"
->>>>>>> 0b5dedb2bbbe34bd7223bd3d72e8923a029cf3a0
     >
       <div
         ref={navContainerRef}

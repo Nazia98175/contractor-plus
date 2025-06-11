@@ -155,8 +155,8 @@ export const LinkdinIcon = () => (
 export const FooterLogoIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="224"
-    height="42"
+    width="100%"
+    height="100%"
     viewBox="0 0 224 42"
     fill="none"
   >
@@ -2297,8 +2297,8 @@ export const FooterAnimatedIcon = () => (
   <svg
     className={`svg-diagonal-container`}
     xmlns="http://www.w3.org/2000/svg"
-    width={515}
-    height={992}
+    width="100%"
+    height="100%"
     fill="none"
     viewBox="0 0 515 992"
     style={{ overflow: "visible" }}
@@ -2373,6 +2373,63 @@ export const FooterAnimatedIcon = () => (
         <stop offset="0" stopOpacity="0"></stop>
         <stop offset="0.5" stopColor="#EE1E25" stopOpacity="0.3"></stop>
         <stop offset="1" stopColor="#EE1E25" stopOpacity="0.7"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const BlueIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="463"
+    height="1002"
+    viewBox="0 0 463 1002"
+    fill="none"
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2140_4839)"
+    >
+      <path
+        d="M554.516 155L354.758 500.99L155 846.981"
+        stroke="url(#paint0_linear_2140_4839)"
+        stroke-opacity="0.15"
+        stroke-width="85"
+        stroke-linecap="square"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2140_4839"
+        x="0.944336"
+        y="0.945312"
+        width="707.627"
+        height="1000.09"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="48"
+          result="effect1_foregroundBlur_2140_4839"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2140_4839"
+        x1="154.567"
+        y1="846.731"
+        x2="554.083"
+        y2="154.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#6DDCFF" stop-opacity="0" />
+        <stop offset="0.505" stop-color="#6DDCFF" />
+        <stop offset="1" stop-color="#6DDCFF" stop-opacity="0" />
       </linearGradient>
     </defs>
   </svg>

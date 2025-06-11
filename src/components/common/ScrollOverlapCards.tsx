@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { fieldServiceData } from "../common/Helper";
 import FieldServiceCard from "../crmbussiness/FieldServiceCard";
-import { RedCurveLine } from "./Icons";
 interface ScrollOverlapCardsProps {
   fieldService: any;
   slug: string;
@@ -18,7 +17,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   fieldService,
   slug,
   theme,
-  curved,
 }) => {
   const t = useTranslations();
   useGSAP(() => {
@@ -71,36 +69,21 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     };
   }, [fieldServiceData]);
   const className = theme === "dark" ? "field-service-card" : "wanting-more-bg";
-  const curvePositions = [0, 50, 100];
   return (
     <>
       <div
         id="crm-cards-wrapper"
-        className="relative z-10 min-h-screen overflow-hidden px-2 xl:h-[90vh]"
+        className="relative z-10 min-h-screen overflow-hidden px-2 xl:h-fit"
       >
-        {/* {curved && (
-          <div className="relative top-[20%]">
-            {curvePositions.map((topOffset, index) => (
-              <span
-                key={index}
-                className="absolute -left-[2%] block w-[108%]"
-                style={{ top: `${topOffset}px` }}
-              >
-                <RedCurveLine />
-              </span>
-            ))}
-          </div>
-        )} */}
-
         {fieldService?.cardsDetail.map((service: any, index: any) => (
           <div
             key={index}
             className={`z-${
               index + 1
-            } crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-20 sm:h-[90vh] xl:top-0 xl:h-screen`}
+            } crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-10 sm:h-[90vh] xl:top-0 xl:h-screen`}
           >
             <div
-              className={`no-scrollbar ${className} h-fit w-full max-w-[1272px] overflow-auto rounded-[14px] p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "pb-0" : ""}`}
+              className={` ${className} h-fit w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-8 xl:rounded-[40px] ${index === fieldServiceData.length - 1 ? "" : ""}`}
             >
               <FieldServiceCard
                 slug={slug}

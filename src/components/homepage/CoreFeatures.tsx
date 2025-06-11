@@ -13,12 +13,12 @@ interface CoreFeaturesProps {
   coreFeatures: CoreFeaturesData;
 }
 
-const CoreFeatures: React.FC<CoreFeaturesProps> = ({coreFeatures}) => {
+const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
   const t = useTranslations("corefeature");
 
   return (
     <section className="relative z-20 bg-white">
-      <div className="mx-auto max-w-[950px] px-2 pt-12 text-center md:text-start">
+      <div className="mx-auto max-w-[1200px] px-2 pt-12 text-center md:text-start">
         <PrimaryAnimatedText
           className="sub-heading text-lightBlack w-full font-semibold md:w-fit"
           delay={3000}

@@ -1195,7 +1195,7 @@ export const FooterRedLineIcon = ({ className = "" }) => (
         width="1274.33"
         height="992.738"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
@@ -1217,9 +1217,9 @@ export const FooterRedLineIcon = ({ className = "" }) => (
         y2="373.613"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.0622667" stop-opacity="0" />
-        <stop offset="0.996954" stop-color="#EE1E25" />
-        <stop offset="1" stop-color="white" />
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="white" />
       </linearGradient>
     </defs>
   </svg>

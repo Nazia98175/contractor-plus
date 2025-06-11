@@ -53,7 +53,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
           </TextAnimation>
 
           <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
-            <FreeAccountButton text={cta_button_text} />
+            <FreeAccountButton showIcon={false} text={cta_button_text} />
             <CardRequiredButton text={ncc_text} />
           </div>
         </div>

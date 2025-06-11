@@ -13,7 +13,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
   return (
     <article className="font-jakarta flex flex-col items-center justify-between rounded-lg bg-white p-3">
       <div>
-        <h4 className="text-winterWay text-center text-xl font-bold capitalize sm:text-2xl">
+        <h4 className="text-winterWay text-center text-xl font-bold sm:text-2xl">
           {obj.title}
         </h4>
         <p className="paragraph-text text-wallStreet mt-4 mb-5 text-center">

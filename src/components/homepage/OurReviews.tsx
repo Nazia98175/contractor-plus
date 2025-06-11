@@ -121,7 +121,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
         />
 
         {/* First row of reviews - scrolling right */}
-        <div className="w-full pt-[43px] md:pt-[60px] lg:pt-[80px]">
+        <div className="w-full">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {reviewsList?.map((review: any, index: any) => (
               <ReviewCard

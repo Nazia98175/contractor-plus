@@ -28,7 +28,8 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   } = homePageContent ?? {};
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
-      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 h-20 w-[120%] -translate-x-1/2 blur-[15px]"></div>
+      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 h-24 w-[120%] -translate-x-1/2 blur-[13px]"></div>
+      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 h-16 w-[120%] -translate-x-1/2 blur-[8px]"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
       <HeroAnimatedIcon />
       <HeroAnimatedMobileIcon />
@@ -46,7 +47,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             <h1 className="main-heading gradient-text mb-4">{hero_title}</h1>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={3}>
-            <p className="text-decemberSky font-jakarta mb-4 text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
+            <p className="text-decemberSky mb-4 text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
               {hero_description}
             </p>
           </TextAnimation>

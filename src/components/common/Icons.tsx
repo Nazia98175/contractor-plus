@@ -2440,7 +2440,7 @@ export const BlueIcon = () => (
 
 export const HeroAnimatedIcon = () => (
   <svg
-    className="svg-container pointer-events-none absolute top-0 left-0 z-10 hidden sm:block"
+    className="svg-container pointer-events-none absolute top-0 left-0 z-20 hidden sm:block"
     width={768}
     height={562}
     viewBox="0 0 768 562"

@@ -17,13 +17,6 @@ interface Props {
 }
 
 const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
-  const contactFeatures = [
-    "Timeline of every job, message, and update",
-    "All docs, permits, and photos in one place",
-    "Log emails using property-specific CC addresses",
-    "Add live camera feeds to any property",
-    "Track permits tied to each location",
-  ];
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col items-start justify-between gap-5 px-2 py-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
       <div className="w-full max-w-[522px] space-y-4 lg:space-y-5">

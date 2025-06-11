@@ -1,4 +1,5 @@
 import { platforms } from "@/components/common/Helper";
+import { FooterRedLineIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -118,20 +119,19 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
           </div>
-          <div className="relative w-full">
+          <div className="relative overflow-hidden">
+            <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] max-h-[994px] w-full max-w-[840px]" />
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.crmService}
             />
-            {/* Cloud Layer 1 */}
+            <TrustBar
+              platforms={platforms}
+              className="mx-auto w-full max-w-[889px]"
+            />
+            <Faq faq={faq?.data?.[0]?.faqs} />
           </div>
-
-          <TrustBar
-            platforms={platforms}
-            className="mx-auto w-full max-w-[889px]"
-          />
-          <Faq faq={faq?.data?.[0]?.faqs} />
           <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
         </>
       )}

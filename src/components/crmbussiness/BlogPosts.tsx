@@ -5,6 +5,7 @@ import { blogData } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
 import BlogArticle from "./BlogArticle";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import Button from "../common/Button";
 
 interface Props {
   data?: any;
@@ -35,10 +36,13 @@ const BlogPosts: React.FC<Props> = ({
           </PrimaryAnimatedText>
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <div className="hidden md:block">
-              <button className="bg-red-linear primary-btn h-10 gap-2">
+              <Button
+                variant="primary"
+                className="bg-red-linear primary-btn h-10 gap-2"
+              >
                 {data?.btnTxt}
                 <BlogBtnIcon />
-              </button>
+              </Button>
             </div>
           </TextAnimation>
         </div>

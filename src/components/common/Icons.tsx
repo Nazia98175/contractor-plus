@@ -1167,58 +1167,60 @@ export const DropdownIcon = () => (
     />
   </svg>
 );
-export const FooterRedLineIcon = () => (
+export const FooterRedLineIcon = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="515"
-    height="992"
+    width="100%"
+    height="100%"
+    viewBox="0 0 840 994"
     fill="none"
-    viewBox="0 0 515 992"
+    className={className}
   >
     <g
-      filter="url(#filter0_f_115_2066)"
       style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2110_13620)"
     >
       <path
-        stroke="url(#paint0_linear_115_2066)"
-        strokeLinecap="round"
-        strokeWidth="432"
-        d="M210.045 305-40.978 739.784l-251.023 434.786"
-      ></path>
+        d="M535.262 689.666L202.131 497.333L-131 305"
+        stroke="url(#paint0_linear_2110_13620)"
+        stroke-width="432"
+        stroke-linecap="round"
+      />
     </g>
     <defs>
-      <linearGradient
-        id="paint0_linear_115_2066"
-        x1="-359.41"
-        x2="-139.291"
-        y1="755.313"
-        y2="1065.72"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.062" stopOpacity="0"></stop>
-        <stop offset="0.997" stopColor="#EE1E25"></stop>
-        <stop offset="1" stopColor="#fff"></stop>
-      </linearGradient>
       <filter
-        id="filter0_f_115_2066"
-        width="1110.12"
-        height="1477.64"
-        x="-596.037"
-        y="0.964"
-        colorInterpolationFilters="sRGB"
+        id="filter0_f_2110_13620"
+        x="-435.036"
+        y="0.963867"
+        width="1274.33"
+        height="992.738"
         filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
       >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feBlend
+          mode="normal"
           in="SourceGraphic"
           in2="BackgroundImageFix"
           result="shape"
-        ></feBlend>
+        />
         <feGaussianBlur
-          result="effect1_foregroundBlur_115_2066"
           stdDeviation="44"
-        ></feGaussianBlur>
+          result="effect1_foregroundBlur_2110_13620"
+        />
       </filter>
+      <linearGradient
+        id="paint0_linear_2110_13620"
+        x1="221.563"
+        y1="199.086"
+        x2="-92.3632"
+        y2="373.613"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stop-opacity="0" />
+        <stop offset="0.996954" stop-color="#EE1E25" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
     </defs>
   </svg>
 );

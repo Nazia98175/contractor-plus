@@ -15,14 +15,18 @@ export default function AwardBadges() {
           <SoftwareUsed key={index} item={item} />
         ))}
       </div>
-      <div className="mt-10 flex flex-col items-center gap-2 px-2 text-center">
+      <div className="mt-10 hidden flex-col items-center gap-2 px-2 text-center md:flex">
         <button className="bg-red-linear primary-btn h-10">
           <span className="flex">Get started FREE</span>{" "}
           <span>
             <ArrowIcon fill="#fff" />
           </span>
         </button>
+<<<<<<< HEAD
+        <CardRequiredButton className="text-winterWay" />
+=======
         {/* <CardRequiredButton className="text-winterWay" /> */}
+>>>>>>> 0b5dedb2bbbe34bd7223bd3d72e8923a029cf3a0
       </div>
       <AwardsTagsImg />
     </section>

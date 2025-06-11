@@ -43,43 +43,35 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   };
 
   return (
-    <div className="relative z-20 px-2">
-      <div className="pt-[38px] pb-7 md:pt-[44px]">
-        <PrimaryAnimatedText
-          className="text-decemberSky font-jakarta text-center text-[26px] font-extrabold sm:text-[28px] md:text-[32px]"
-          delay={3000}
+    <div className="relative z-10 px-2 pt-[38px] pb-7 md:py-11">
+      <PrimaryAnimatedText
+        className="text-decemberSky text-center text-[26px] font-extrabold sm:text-[28px] md:text-[32px]"
+        delay={3000}
+      >
+        {entireBusiness?.[0]?.title}
+      </PrimaryAnimatedText>
+      <PrimaryAnimatedText
+        className="paragraph-text text-decemberSky py-4 text-center font-medium"
+        delay={3000}
+      >
+        {entireBusiness?.[0]?.sub_title}
+      </PrimaryAnimatedText>
+      <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
+        <form
+          className="flex flex-col items-start justify-center gap-2.5 md:flex-row"
+          onSubmit={handleSubmit}
         >
-          {entireBusiness?.[0]?.title}
-        </PrimaryAnimatedText>
-        <PrimaryAnimatedText
-          className="paragraph-text text-decemberSky font-jakarta py-4 text-center font-medium"
-          delay={3000}
-        >
-          {entireBusiness?.[0]?.sub_title}
-        </PrimaryAnimatedText>
-        <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
-          <form
-            className="flex flex-col items-start justify-center gap-3 md:flex-row"
-            onSubmit={handleSubmit}
-          >
-            <div className="w-full md:max-w-[414px]">
-              <input
-                type="email"
-                placeholder={entireBusiness?.[1]?.txt}
-                required
-                value={email}
-                onChange={handleEmailChange}
-                className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
-              />
-              <p className="hidden items-center gap-2 pt-3 md:flex">
-                <span>
-                  <CheckIcon />
-                </span>
-                <span className="font-myriad text-sm font-semibold text-white">
-                  {ncc_text}
-                </span>
-              </p>
-            </div>
+          <div className="w-full md:max-w-[414px]">
+            <input
+              type="email"
+              placeholder={entireBusiness?.[1]?.txt}
+              required
+              value={email}
+              onChange={handleEmailChange}
+              className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
+            />
+          </div>
+          <div className="w-full sm:w-fit">
             <button
               type="submit"
               className="bg-red-linear primary-btn mx-auto flex h-10 w-full !min-w-[230px] items-center justify-center sm:!w-auto md:mx-0"
@@ -91,8 +83,8 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
                 entireBusiness?.[2]?.btnTxt
               )}
             </button>
-            <div className="flex w-full items-center justify-center md:hidden">
-              <p className="flex items-center gap-2 pt-1">
+            <div className="mt-3 flex w-full items-center justify-center">
+              <p className="flex items-center gap-2">
                 <span>
                   <CheckIcon />
                 </span>
@@ -101,9 +93,9 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
                 </span>
               </p>
             </div>
-          </form>
-        </CardReveal>
-      </div>
+          </div>
+        </form>
+      </CardReveal>
     </div>
   );
 };

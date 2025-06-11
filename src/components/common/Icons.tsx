@@ -155,8 +155,8 @@ export const LinkdinIcon = () => (
 export const FooterLogoIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="224"
-    height="42"
+    width="100%"
+    height="100%"
     viewBox="0 0 224 42"
     fill="none"
   >
@@ -2297,8 +2297,8 @@ export const FooterAnimatedIcon = () => (
   <svg
     className={`svg-diagonal-container`}
     xmlns="http://www.w3.org/2000/svg"
-    width={515}
-    height={992}
+    width="100%"
+    height="100%"
     fill="none"
     viewBox="0 0 515 992"
     style={{ overflow: "visible" }}
@@ -2373,6 +2373,63 @@ export const FooterAnimatedIcon = () => (
         <stop offset="0" stopOpacity="0"></stop>
         <stop offset="0.5" stopColor="#EE1E25" stopOpacity="0.3"></stop>
         <stop offset="1" stopColor="#EE1E25" stopOpacity="0.7"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const BlueIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="463"
+    height="1002"
+    viewBox="0 0 463 1002"
+    fill="none"
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2140_4839)"
+    >
+      <path
+        d="M554.516 155L354.758 500.99L155 846.981"
+        stroke="url(#paint0_linear_2140_4839)"
+        strokeOpacity="0.15"
+        strokeWidth="85"
+        strokeLinecap="square"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2140_4839"
+        x="0.944336"
+        y="0.945312"
+        width="707.627"
+        height="1000.09"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="48"
+          result="effect1_foregroundBlur_2140_4839"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2140_4839"
+        x1="154.567"
+        y1="846.731"
+        x2="554.083"
+        y2="154.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#6DDCFF" stopOpacity="0" />
+        <stop offset="0.505" stopColor="#6DDCFF" />
+        <stop offset="1" stopColor="#6DDCFF" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -3821,9 +3878,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="1957.6"
         height="1537.73"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3842,9 +3899,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2479.54"
         height="1886.06"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3863,9 +3920,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2168.12"
         height="1638.8"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3884,9 +3941,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2186.45"
         height="1272.91"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -3905,9 +3962,9 @@ export const HalfRoundedIcon = ({ className = "" }) => (
         width="2039.34"
         height="715.254"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"

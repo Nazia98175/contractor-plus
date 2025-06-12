@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import CardRequiredButton from "../common/CardRequiredButton";
 
 interface EntireBusiness {
   title: string;
@@ -58,10 +59,10 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
       </PrimaryAnimatedText>
       <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
         <form
-          className="flex flex-col items-start justify-center gap-2.5 md:flex-row"
+          className="flex flex-col items-center justify-center gap-2.5 md:flex-row md:items-start"
           onSubmit={handleSubmit}
         >
-          <div className="w-full md:max-w-[414px]">
+          <div className="w-full sm:max-w-[414px]">
             <input
               type="email"
               placeholder={entireBusiness?.[1]?.txt}
@@ -71,10 +72,10 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
               className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
             />
           </div>
-          <div className="w-full sm:w-fit">
+          <div className="w-full md:w-fit">
             <button
               type="submit"
-              className="bg-red-linear primary-btn mx-auto flex h-10 w-full !min-w-[230px] items-center justify-center sm:!w-auto md:mx-0"
+              className="bg-red-linear primary-btn mx-auto flex h-10 w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
               disabled={loading}
             >
               {loading ? (
@@ -84,14 +85,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
               )}
             </button>
             <div className="mt-3 flex w-full items-center justify-center">
-              <p className="flex items-center gap-2">
-                <span>
-                  <CheckIcon />
-                </span>
-                <span className="font-myriad text-sm font-semibold text-white">
-                  {ncc_text}
-                </span>
-              </p>
+              <CardRequiredButton text={ncc_text} />
             </div>
           </div>
         </form>

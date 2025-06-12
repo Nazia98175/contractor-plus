@@ -8,9 +8,9 @@ interface Props {
 const GoingFieldSevicesCard: React.FC<Props> = ({ step }) => {
   return (
     <div className="relative z-10 flex flex-col items-center text-center">
-      <div className="absolute right-[10px] bottom-0 h-[84px] w-[160px] bg-[#f9f2f200] backdrop-blur-[0.6px]"></div>
+      {/* <div className="absolute right-[10px] bottom-0 h-[84px] w-[160px] bg-[#f9f2f200] backdrop-blur-[0.6px]"></div> */}
       <div className="mb-2">{step.icon}</div>
-      <p className="text-winterWay font-jakarta max-w-[264px] text-center text-base font-medium sm:text-lg md:text-xl">
+      <p className="text-winterWay max-w-[264px] text-center text-base font-medium sm:text-lg md:text-xl md:leading-[116%]">
         {step.text}
       </p>
     </div>

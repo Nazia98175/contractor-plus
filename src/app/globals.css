@@ -166,13 +166,13 @@ body {
   @apply mx-auto w-full max-w-[1308px] px-2;
 }
 .main-heading {
-  @apply text-[26px] leading-[130%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
+  @apply text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .hero-description {
   @apply text-decemberSky font-jakarta text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply text-2xl leading-[130%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
+  @apply text-2xl leading-[128%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;
@@ -456,6 +456,13 @@ html::-webkit-scrollbar {
 .gradient-white {
   background:
     linear-gradient(276.25deg, #ee1e2566 -11.28%, #00000000 99.63%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.grey-gradient {
+  background: linear-gradient(180deg, #ffffff -10.35%, #0c0d11 166.92%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1237,7 +1244,7 @@ button {
   @apply !bg-superSilver !m-0 h-1.5 w-1.5 opacity-100 transition-all duration-300 ease-in;
 }
 .custom-pagination .swiper-pagination-bullet-active {
-  @apply lg:!bg-shortcake !bg-lightishBlue h-1.5 w-6 rounded-3xl;
+  @apply !bg-lightishBlue h-1.5 w-6 rounded-3xl;
 }
 .custom-active-slider .swiper-slide {
   @apply opacity-50 transition-all duration-300 ease-in-out;

@@ -11,7 +11,7 @@ const run_contractor = [
   },
   {
     their: "Guessing locations or waiting for callbacks",
-    your: "AI receptionist answers, captures lead details, and books jobs",
+    your: "Live GPS tracking shows where everyone is on a map",
   },
   {
     their: "Missed calls, forgotten voicemails, manual callbacks",
@@ -42,17 +42,17 @@ const run_contractor = [
 const RunWithContractor = () => {
   return (
     <section className="relative z-20 bg-white py-10">
-      <h3 className="section-heading text-kuroiBlack mx-auto mb-[44px] max-w-[1029px] text-center">
+      <h3 className="section-heading crm-gradient mx-auto mb-[44px] max-w-[950px] text-center">
         You don’t have to run things their way anymore. Run it your way with
         Contractor+.
       </h3>
       {/* Desktop view  */}
-      <div className="mx-auto hidden w-full max-w-[1181px] space-y-3 px-4 pt-5 md:block">
+      <div className="mx-auto hidden w-full max-w-[1181px] space-y-5 px-4 md:block">
         <div className="grid grid-cols-2">
-          <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl">
+          <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
             Their Way
           </p>
-          <p className="font-myriad text-oldMoney text-center text-sm font-semibold sm:text-lg md:text-xl">
+          <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
             Your Way
           </p>
         </div>
@@ -67,7 +67,7 @@ const RunWithContractor = () => {
                 {/* Red Cross Icon */}
                 <RedCrossIcon />
               </span>
-              <p className="font-jakarta text-sangoPink text-start text-base font-medium">
+              <p className="text-sangoPink text-start text-base text-[17px] leading-[130%] font-medium">
                 {item.their}
               </p>
             </div>
@@ -83,7 +83,7 @@ const RunWithContractor = () => {
                   {/* Green Dot Icon */}
                   <GreenDotIcon2 />
                 </span>
-                <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
+                <p className="text-majorelleGardens text-start text-[17px] leading-[130%] font-bold">
                   {item.your}
                 </p>
               </div>

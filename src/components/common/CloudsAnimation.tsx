@@ -30,11 +30,6 @@ const CloudsAnimation = ({
       <div
         className={`${cloud4Class} clouds-3 absolute right-0 bottom-0 left-0 w-full bg-[url("/images/png/pngwing-3.png")] bg-contain bg-repeat-x opacity-30 sm:block sm:h-20 md:h-28 lg:h-[160px]`}
       ></div>
-      <img
-        className={`${imageClass} absolute bottom-4 left-0 h-28 w-full object-left-bottom`}
-        src="/images/png/cloud-layer.png"
-        alt="cloud-layer"
-      />
     </div>
   );
 };

@@ -74,7 +74,7 @@ const FieldServicesHero = (props?: Props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [location, setLocation] = useState({
     latitude: 28.6139, // Default to Delhi - this ensures map loads immediately
-    longitude: 77.2090,
+    longitude: 77.209,
     city: "",
     country: "",
   });
@@ -85,10 +85,10 @@ const FieldServicesHero = (props?: Props) => {
         (position) => {
           console.log("Latitude:", position.coords.latitude);
           console.log("Longitude:", position.coords.longitude);
-          setLocation(prevLocation => ({
+          setLocation((prevLocation) => ({
             ...prevLocation, // Use functional update to avoid stale closure
             latitude: position.coords.latitude,
-            longitude: position.coords.longitude
+            longitude: position.coords.longitude,
           }));
         },
         (error) => {
@@ -126,7 +126,7 @@ const FieldServicesHero = (props?: Props) => {
 
     // Use fixed seed for consistent positions - this prevents regeneration issues
     const fixedAngles = [0, 72, 144, 216, 288]; // Fixed angles for 5 users
-    const fixedDistances = [0.015, 0.020, 0.018, 0.022, 0.017]; // Fixed distances
+    const fixedDistances = [0.015, 0.02, 0.018, 0.022, 0.017]; // Fixed distances
 
     return baseUsers.map((user, index) => {
       const angle = fixedAngles[index];
@@ -161,7 +161,7 @@ const FieldServicesHero = (props?: Props) => {
       {/* Map Background */}
       <div className="absolute inset-0 h-full w-full">
         {/* Black shadow overlay around the edges */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="pointer-events-none absolute inset-0 z-10">
           <div className="absolute inset-0 shadow-[inset_0_0_150px_50px_rgba(0,0,0,0.8)]"></div>
         </div>
 
@@ -200,11 +200,20 @@ const FieldServicesHero = (props?: Props) => {
           {mockUsers?.length > 0 &&
             mockUsers.map((user: any) => {
               // Add safety check for coordinates
-              if (!user.lat || !user.lng || isNaN(user.lat) || isNaN(user.lng)) {
-                console.warn(`Invalid coordinates for user ${user.id}:`, user.lat, user.lng);
+              if (
+                !user.lat ||
+                !user.lng ||
+                isNaN(user.lat) ||
+                isNaN(user.lng)
+              ) {
+                console.warn(
+                  `Invalid coordinates for user ${user.id}:`,
+                  user.lat,
+                  user.lng,
+                );
                 return null;
               }
-              
+
               return (
                 <div key={user.id}>
                   {/* Pin Background Circle */}
@@ -327,19 +336,19 @@ const FieldServicesHero = (props?: Props) => {
       <div className="pointer-events-none absolute inset-0 z-15 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
       {/* Content overlay */}
-      <div className="main-container 1xl:pb-[150px] relative z-30 pt-[393px] pb-11 sm:pb-16 md:pt-[110px] md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
+      <div className="main-container 1xl:pb-[171px] relative z-30 pt-[393px] pb-11 sm:pb-16 md:pt-[110px] md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
         <div className="w-full max-w-[732px]">
           <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]">
-            <div className="font-jakarta rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px]">
+            <div className="rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px] backdrop-filter-[1.50px]">
               <span className="text-secondary">
                 Field Service Management Software
               </span>
             </div>
           </div>
-          <h3 className="main-heading gradient-white sm:text-white">
+          <h3 className="main-heading grey-gradient sm:text-white">
             One command center to visualize and run your entire field operation
           </h3>
-          <p className="hero-description mt-[6px] mb-4 sm:my-[26px]">
+          <p className="hero-description mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
             Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams.
           </p>
@@ -368,7 +377,6 @@ const FieldServicesHero = (props?: Props) => {
 };
 
 export default FieldServicesHero;
-
 
 // "use client";
 // import React, { useState, useCallback, useMemo, useEffect } from "react";
@@ -683,7 +691,7 @@ export default FieldServicesHero;
 //       <div className="main-container 1xl:pb-[150px] relative z-20 pt-[393px] pb-11 sm:pb-16 md:pt-[110px] md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
 //         <div className="w-full max-w-[732px]">
 //           <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]">
-//             <div className="font-jakarta rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px]">
+//             <div className=" rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px]">
 //               <span className="text-secondary">
 //                 Field Service Management Software
 //               </span>

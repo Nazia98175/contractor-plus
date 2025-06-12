@@ -200,10 +200,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
               key={index}
               className="bg-rgba1 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px] md:px-2"
             >
-              <b className="font-jakarta text-lightBlack text-base lg:text-xl">
+              <b className="text-lightBlack text-base lg:text-xl">
                 {item.title}
               </b>
-              <p className="font-jakarta text-secondary mt-3 text-sm font-medium">
+              <p className="text-secondary mt-3 text-sm font-medium">
                 {item.description}
               </p>
             </SwiperSlide>

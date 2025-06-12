@@ -135,8 +135,8 @@ const FieldServicesPage = async ({ params }: PageParams) => {
   ];
   return (
     <>
-      <FieldServicesHero />
-      <ServiceContractorsMarquee />
+      <FieldServicesHero location={location} />
+      {/* <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />
       <RunWithContractor />
@@ -145,7 +145,7 @@ const FieldServicesPage = async ({ params }: PageParams) => {
         <NeverLookBack />
         <ThousandsReviews data={OurReviewList} reviews={dummyReviews} />
         <HvacSoftwareService />
-      </div>
+      </div> */}
       {/* <HvacSoftwareService /> */}
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq

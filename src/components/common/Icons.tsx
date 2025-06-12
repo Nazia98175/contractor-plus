@@ -1224,6 +1224,63 @@ export const FooterRedLineIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+export const FooterRedLineMobileIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="994"
+    viewBox="0 0 320 994"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2110_15956)"
+    >
+      <path
+        d="M431.262 689.666L98.1311 497.333L-235 305"
+        stroke="url(#paint0_linear_2110_15956)"
+        stroke-width="432"
+        stroke-linecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2110_15956"
+        x="-539.036"
+        y="0.963867"
+        width="1274.33"
+        height="992.738"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_2110_15956"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2110_15956"
+        x1="117.563"
+        y1="199.086"
+        x2="-196.363"
+        y2="373.613"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stop-opacity="0" />
+        <stop offset="0.996954" stop-color="#EE1E25" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 
 export const GroupStartIcon = () => (
   <svg

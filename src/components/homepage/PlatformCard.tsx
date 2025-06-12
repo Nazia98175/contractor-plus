@@ -19,9 +19,9 @@ const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
         alt={`${platform.name} rating`}
         className="h-8 max-w-[140px] object-contain sm:max-w-[155px] md:h-10"
       />
-      <div className="flex">
+      <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (
-          <span key={i} className="max-w-5 min-w-4">
+          <span key={i} className="max-w-[22px] min-w-4 sm:min-w-[22px]">
             <StartIcon key={i} filled={i < platform.rating} />
           </span>
         ))}

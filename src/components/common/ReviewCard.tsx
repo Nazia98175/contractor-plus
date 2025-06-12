@@ -14,7 +14,7 @@ interface ReviewCardProps {
 const renderStars = (rating: number) => {
   const roundedRating = Math.round(Number(rating));
   return Array.from({ length: 5 }).map((_, index) => (
-    <span key={index}>
+    <span key={index} className="h-5 w-5">
       <StartIcon filled={index < roundedRating} />
     </span>
   ));
@@ -65,7 +65,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay font-jakarta mt-3 line-clamp-3 px-2 text-sm font-semibold tracking-[0.1px]">
+        <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
           "{review.review}"
         </p>
       </article>

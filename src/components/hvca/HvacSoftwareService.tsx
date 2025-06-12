@@ -31,12 +31,12 @@ const HvacSoftwareService = () => {
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="sub-heading mb-4 text-center !font-extrabold text-white">
+            <h3 className="sub-heading mb-4 text-center font-extrabold text-white">
               This is what HVAC software should have been all along
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <p className="paragraph-text text-decemberSky mb-7 text-center md:mb-8 lg:mb-9">
+            <p className="text-decemberSky mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl">
               Start using Contractor+ FREE. You won’t look back.
             </p>
           </TextAnimation>
@@ -52,28 +52,27 @@ const HvacSoftwareService = () => {
                   required
                   value={email}
                   onChange={handleEmailChange}
-                  className="h-[40px] w-full rounded-[6px] bg-white px-2 text-[#ADB1B5] outline-none"
+                  className="h-[40px] w-full rounded-[6px] bg-white px-2 outline-none placeholder:text-[#ADB1B5]"
                 />
+              </div>
+              <div className="flex w-full flex-col items-center justify-center md:w-fit">
+                <button
+                  type="submit"
+                  className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  ) : (
+                    `${"Get started FREE"}`
+                  )}
+                </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
-                  <span>
-                    <CheckIcon />
-                  </span>
                   <span className="font-myriad text-sm font-semibold text-white">
                     No Credit Card Required
                   </span>
                 </p>
               </div>
-              <button
-                type="submit"
-                className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
-                disabled={loading}
-              >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  `${"Get started FREE"}`
-                )}
-              </button>
               <div className="flex w-full items-center justify-center md:hidden">
                 <p className="flex items-center gap-2 pt-1">
                   <span>

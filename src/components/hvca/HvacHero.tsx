@@ -1,134 +1,24 @@
 "use client";
 import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
+import CardRequiredButton from "../common/CardRequiredButton";
+import CloudsAnimation from "../common/CloudsAnimation";
 import {
   ArrowIcon,
-  CheckIcon,
-  HeroSliderIcon1,
-  HeroSliderIcon2,
   HvacGlowHeroDesktopIcon,
   HvacGlowHeroMobileIcon,
-  SliderIcon1,
+  SideIcon,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import HvacHeroSlider from "./HvacHeroSlider";
-import CardRequiredButton from "../common/CardRequiredButton";
-import CloudsAnimation from "../common/CloudsAnimation";
+import { features } from "../common/Helper";
+import Button from "../common/Button";
+import FreeAccountButton from "../common/FreeAccountButton";
 
 const HvacHero = () => {
-  const features = [
-    {
-      id: 1,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 2,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 3,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 4,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 5,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 6,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 7,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 8,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 9,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 10,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "We make every Sholaz .",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-    {
-      id: 11,
-      title: "3-4x faster",
-      icon: <SliderIcon1 />,
-      heading: "Estimate process",
-      percentage: "+38",
-      description: "Got lorem loren.",
-      backgroundIcon: <HeroSliderIcon1 />,
-    },
-    {
-      id: 12,
-      title: "24% faster",
-      icon: <SliderIcon1 />,
-      heading: "Job turnaround time",
-      percentage: "24",
-      description: "The Sholaz app is",
-      backgroundIcon: <HeroSliderIcon2 />,
-    },
-  ];
-
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md"></div>
       <div className="relative overflow-hidden">
         <Image
           width={769}
@@ -140,7 +30,7 @@ const HvacHero = () => {
         />
         <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
           <HvacGlowHeroMobileIcon />
-          <HvacGlowHeroDesktopIcon />
+
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             <TextAnimation animateOnScroll={false} delay={3}>
               <h1 className="main-heading gradient-white">
@@ -148,22 +38,17 @@ const HvacHero = () => {
               </h1>
             </TextAnimation>
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
-            <p className="text-decemberSky my-4 mb-4 max-w-[478px] text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg xl:my-[26px]">
+            <p className="text-decemberSky mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[478px] sm:text-sm md:text-base md:font-medium lg:my-[26px] lg:text-lg">
               Contractor+ connects every function of your business so it finally
               all works in sync.
             </p>
             {/* </TextAnimation> */}
-            <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
-              <button className="bg-red-linear primary-btn h-10">
-                <span className="hidden md:flex">
-                  Get started FREE{" "}
-                  <span>
-                    <ArrowIcon fill="#fff" />
-                  </span>
-                </span>
-                <span className="flex md:hidden">Download App</span>
-              </button>
-              <CardRequiredButton />
+            <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
+              <FreeAccountButton text={"Get started FREE"} />
+              <CardRequiredButton
+                className="text-wallStreet sm:text-secondary"
+                text={"No Credit Card Required"}
+              />
             </div>
           </div>
         </div>
@@ -171,8 +56,12 @@ const HvacHero = () => {
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
+          <span className="pointer-events-none absolute top-0 -left-[40%] z-10 hidden h-full w-full lg:block">
+            <HvacGlowHeroDesktopIcon />
+          </span>
+          <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
           <Image
-            alt=""
+            alt="hvac-hero"
             src={"/images/webp/hvac-hero.webp"}
             width={945}
             height={729}
@@ -191,13 +80,13 @@ const HvacHero = () => {
             priority
             fill
             unoptimized
-            className="absolute -top-[6%] !left-[-1%] hidden !h-[111%] w-full object-cover lg:block"
+            className="absolute -top-[6%] hidden !h-[111%] w-full object-cover lg:-right-[3%] lg:block"
             src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"
           />
         </div>
       </div>
-      <CloudsAnimation />
+      <CloudsAnimation className="-bottom-[6%]" />
     </section>
   );
 };

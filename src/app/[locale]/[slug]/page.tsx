@@ -1,4 +1,9 @@
+import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { platforms } from "@/components/common/Helper";
+import {
+  FooterRedLineIcon,
+  FooterRedLineMobileIcon,
+} from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -12,7 +17,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import TrustBar from "@/components/homepage/TrustBar";
+import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { notFound } from "next/navigation";
@@ -50,7 +55,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[fieldService][populate][cardsDetail][populate]=content",
+      "&populate[fieldService][populate][cardsDetail][populate]=*",
     ),
     getCrmPage(
       useParams?.slug,
@@ -79,11 +84,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     <main>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <div className="black-bg">
-            <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
-            <TrustedService reviews={reviews} />
-            <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
-          </div>
+          <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
+          <TrustedService reviews={reviews} />
+          <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
           <FieldService
             slug={useParams?.slug}
             fieldService={section4?.data?.[0]?.fieldService}
@@ -120,21 +123,29 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
           </div>
-          <div className="relative w-full">
+          <div className="relative overflow-hidden">
+            <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
+            <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.crmService}
             />
-            {/* Cloud Layer 1 */}
+            <TrustBarHvca
+              platforms={platforms}
+              className="mx-auto w-full max-w-[889px]"
+            />
+            <Faq
+              faq={faq?.data?.[0]?.faqs}
+              classNameAnswer="pt-1"
+              mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+            />
           </div>
-
-          <TrustBar
-            platforms={platforms}
-            className="mx-auto w-full max-w-[889px]"
+          <BlogPosts
+            data={crmPageContent?.data?.[0]?.blogs}
+            blogs={blogs}
+            className="mt-7 md:mt-9"
           />
-          <Faq faq={faq?.data?.[0]?.faqs} />
-          <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
         </>
       )}
     </main>

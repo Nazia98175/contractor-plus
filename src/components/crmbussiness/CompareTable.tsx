@@ -6,25 +6,28 @@ interface CompareTableProps {
   headerLeft: string;
   compareFeatures: CompareFeature[];
   headerRight: string;
-
 }
 
-const CompareTable: React.FC<CompareTableProps> = ({ compareFeatures , headerLeft , headerRight }) => {
+const CompareTable: React.FC<CompareTableProps> = ({
+  compareFeatures,
+  headerLeft,
+  headerRight,
+}) => {
   return (
     <table className="min-w-full text-left whitespace-nowrap">
       <thead>
-        <tr className="md:text-lg lg:text-xl font-myriad divide-x divide-decemberSky">
-          <th className="p-3 lg:p-5 w-1/3 font-bold text-center text-wallStreet">
-           {headerLeft}
+        <tr className="font-myriad divide-decemberSky divide-x md:text-lg lg:text-xl">
+          <th className="text-wallStreet w-1/3 p-3 text-center font-bold lg:p-5">
+            {headerLeft}
           </th>
-          <th className="p-1 sm:p-3 lg:p-5 w-1/3 text-center font-semibold  text-wallStreet">
-            <div className="flex justify-center items-center">
+          <th className="text-wallStreet w-1/3 p-1 text-center font-semibold sm:p-3 lg:p-5">
+            <div className="flex items-center justify-center">
               <span className="max-w-24 min-w-20 lg:max-w-[148px]">
                 <BlackLogo />
               </span>
             </div>
           </th>
-          <th className="p-3 lg:p-5 w-1/3 font-myriad text-lg xl:text-2xl text-center font-semibold text-secondary">
+          <th className="font-myriad text-secondary bg-doctor w-1/3 p-3 text-center text-lg font-semibold lg:p-5 xl:text-2xl">
             {headerRight}
           </th>
         </tr>
@@ -33,11 +36,11 @@ const CompareTable: React.FC<CompareTableProps> = ({ compareFeatures , headerLef
         {compareFeatures?.map((feature, index) => (
           <tr
             key={index}
-            className={` border-decemberSky divide-x divide-decemberSky text-winterWay border-t font-jakarta font-semibold text-xs sm:text-sm lg:text-base`}
+            className={`border-decemberSky divide-decemberSky text-winterWay font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base`}
           >
-            <td className="lg:px-5 p-2.5 lg:py-3">{feature.featureName}</td>
-            <td className="lg:px-5 p-2.5 lg:py-3 ">
-              <div className="flex justify-center items-center">
+            <td className="p-2.5 lg:px-5 lg:py-3">{feature.featureName}</td>
+            <td className="p-2.5 lg:px-5 lg:py-3">
+              <div className="flex items-center justify-center">
                 {feature.ourProduct == "available" ? (
                   <CheckIcon
                     width={24}
@@ -51,9 +54,9 @@ const CompareTable: React.FC<CompareTableProps> = ({ compareFeatures , headerLef
                 )}
               </div>
             </td>
-            <td className="px-5 py-3 w-full">
+            <td className="bg-doctor w-full px-5 py-3">
               <div className="flex items-center justify-center">
-                {feature.competitorsNote !== null  ? (
+                {feature.competitorsNote !== null ? (
                   // <CheckIcon
                   //   width={24}
                   //   height={24}

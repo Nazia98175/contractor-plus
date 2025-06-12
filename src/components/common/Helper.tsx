@@ -9,6 +9,8 @@ import {
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
+  HeroSliderIcon1,
+  HeroSliderIcon2,
   InvoicingIcon,
   LeadGenerationIcon,
   PaymentsIcon,
@@ -18,6 +20,7 @@ import {
   ReportingIcon,
   SchedulingIcon,
   ServiceIcon,
+  SliderIcon1,
   TelephoneIcon,
   TimeIcon,
   TrackingIcon,
@@ -43,22 +46,28 @@ export const awards = [
   {
     src: "/images/png/software-advice.png",
     alt: "Software Advice Front Runners 2024",
+    mt: "mt-2",
+    width: 100,
   },
   {
     src: "/images/webp/leader.webp",
     alt: "G2 Leader Winter 2025",
+    width: 81,
   },
   {
     src: "/images/webp/get-app.webp",
     alt: "GetApp Best Functionality 2025",
+    width: 130,
   },
   {
     src: "/images/svg/capterra.svg",
     alt: "Capterra Best Value 2025",
+    width: 120,
   },
   {
     src: "/images/webp/best-value.webp",
     alt: "Capterra Shortlist 2025",
+    width: 120,
   },
 ];
 
@@ -290,9 +299,132 @@ export const wantingMoreData = [
   },
 ];
 
+export const features = [
+  {
+    id: 1,
+    title: "3-4x faster",
+    icon: <SliderIcon1 />,
+    heading: "Estimate process",
+    percentage: "+38",
+    description: "We make every Sholaz .",
+    backgroundIcon: <HeroSliderIcon1 />,
+  },
+  {
+    id: 2,
+    title: "24% faster",
+    icon: <SliderIcon1 />,
+    heading: "Job turnaround time",
+    percentage: "24",
+    description: "Got lorem loren.",
+    backgroundIcon: <HeroSliderIcon2 />,
+  },
+  {
+    id: 3,
+    title: "3-4x faster",
+    icon: <SliderIcon1 />,
+    heading: "Estimate process",
+    percentage: "+38",
+    description: "The Sholaz app is",
+    backgroundIcon: <HeroSliderIcon1 />,
+  },
+  {
+    id: 4,
+    title: "24% faster",
+    icon: <SliderIcon1 />,
+    heading: "Job turnaround time",
+    percentage: "24",
+    description: "We make every Sholaz .",
+    backgroundIcon: <HeroSliderIcon2 />,
+  },
+  {
+    id: 5,
+    title: "3-4x faster",
+    icon: <SliderIcon1 />,
+    heading: "Estimate process",
+    percentage: "+38",
+    description: "Got lorem loren.",
+    backgroundIcon: <HeroSliderIcon1 />,
+  },
+  {
+    id: 6,
+    title: "24% faster",
+    icon: <SliderIcon1 />,
+    heading: "Job turnaround time",
+    percentage: "24",
+    description: "The Sholaz app is",
+    backgroundIcon: <HeroSliderIcon2 />,
+  },
+  {
+    id: 7,
+    title: "3-4x faster",
+    icon: <SliderIcon1 />,
+    heading: "Estimate process",
+    percentage: "+38",
+    description: "We make every Sholaz .",
+    backgroundIcon: <HeroSliderIcon1 />,
+  },
+  {
+    id: 8,
+    title: "24% faster",
+    icon: <SliderIcon1 />,
+    heading: "Job turnaround time",
+    percentage: "24",
+    description: "Got lorem loren.",
+    backgroundIcon: <HeroSliderIcon2 />,
+  },
+  {
+    id: 9,
+    title: "3-4x faster",
+    icon: <SliderIcon1 />,
+    heading: "Estimate process",
+    percentage: "+38",
+    description: "The Sholaz app is",
+    backgroundIcon: <HeroSliderIcon1 />,
+  },
+  {
+    id: 10,
+    title: "24% faster",
+    icon: <SliderIcon1 />,
+    heading: "Job turnaround time",
+    percentage: "24",
+    description: "We make every Sholaz .",
+    backgroundIcon: <HeroSliderIcon2 />,
+  },
+  {
+    id: 11,
+    title: "3-4x faster",
+    icon: <SliderIcon1 />,
+    heading: "Estimate process",
+    percentage: "+38",
+    description: "Got lorem loren.",
+    backgroundIcon: <HeroSliderIcon1 />,
+  },
+  {
+    id: 12,
+    title: "24% faster",
+    icon: <SliderIcon1 />,
+    heading: "Job turnaround time",
+    percentage: "24",
+    description: "The Sholaz app is",
+    backgroundIcon: <HeroSliderIcon2 />,
+  },
+];
+
+export const cantScaleData = [
+  {
+    text: "The contractors pulling ahead aren’t the ones grinding harder. They’ve rejected “the way it’s always been done” and rebuilt the back end",
+    iconAtStart: true,
+    pt: "md:pt-[247px] ml-auto",
+  },
+  {
+    text: "And now they’re outpacing everyone else without even trying.",
+    iconAtStart: false,
+    pt: "md:pb-[176px]",
+  },
+];
 export const softwareCardData = [
   {
-    text: "There’s no easy way to upsell or present multiple package options",
+    text: "There’s no easy way to upsell or present multiple package options...",
   },
   {
     text: "Field techs hate using them because they don’t make things easier",
@@ -1222,11 +1354,16 @@ export const reviews = [
     userRole: "CEO at Rands Mechanical",
   },
 ];
-
+import animationData from "../../../public/lotties/crm.json";
+import live_scheduling from "../../../public/lotties/live-scheduling.json";
+import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
+import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import property_profile from "../../../public/lotties/property-profile.json";
+import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",
-    titleImg: "/images/webp/core-1.webp",
+    titleImg: animationData,
     description:
       "Most “contractor CRMs” are just contact pages with a few job links. Contractor+ brings the full picture: ",
     highlight:
@@ -1234,21 +1371,21 @@ export const featureContentss = [
   },
   {
     title: "Send the right tech to the right job based on proximity",
-    titleImg: "/images/webp/core-2.webp",
+    titleImg: live_scheduling,
     description:
       "See team availability and location in real-time to assign jobs faster and smarter. Drag, drop, and delegate",
     highlight: "based on who’s closest and free. No more calling around. ",
   },
   {
     title: "Collaborate with your team on any job",
-    titleImg: "/images/webp/core-3.webp",
+    titleImg: internal_job_chat,
     description:
       "Each job has its own built-in group chat, keeping the whole crew on the same page",
     highlight: "and minimizing texts, missed updates, or miscommunication.",
   },
   {
     title: "Quotes that practically write themselves",
-    titleImg: "/images/webp/core-4.webp",
+    titleImg: estimate_builder,
     description:
       "Build accurate, professional estimates fast with live local pricing from Lowe’s, Home Depot",
     highlight:
@@ -1256,14 +1393,14 @@ export const featureContentss = [
   },
   {
     title: "The only CRM with property-specific profiles",
-    titleImg: "/images/webp/core-5.webp",
+    titleImg: property_profile,
     description:
       "Contractor+ is the only platform that lets you track the full history of every property you’ve ever serviced:",
     highlight: "communications,  photos & documents, invoices, even live cams.",
   },
   {
     title: "The ultimate AI assistant for contractors",
-    titleImg: "/images/webp/core-6.webp",
+    titleImg: big_chief_ai,
     description:
       "Every call and text gets answered. Every Lead is qualified and entered into your CRM, every Service Request is captured, every Estimate/Quote appointment is scheduled. Big Chief never sleeps..",
   },

@@ -47,9 +47,8 @@ export default async function Home({
   ]);
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative">
       <div className="relative">
-        {/* <Header /> */}
         <Hero homePageContent={homePageContent?.data} />
         <TrustBar
           platforms={platforms}
@@ -75,12 +74,11 @@ export default async function Home({
         blogs={blogs?.data}
         blogHeading={homePageContent?.data?.blogs}
       />
-      <div className="relative overflow-hidden">
-        <EntireBusiness
-          entireBusiness={homePageContent?.data?.entireBusiness}
-          ncc_text={homePageContent?.data?.ncc_text}
-        />
-      </div>
+
+      <EntireBusiness
+        entireBusiness={homePageContent?.data?.entireBusiness}
+        ncc_text={homePageContent?.data?.ncc_text}
+      />
     </div>
   );
 }

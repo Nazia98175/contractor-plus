@@ -78,6 +78,12 @@
     #dc1112 -10.83%,
     #76090a 83.23%
   );
+  --background-image-black-fade-custom: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 13.17%,
+    #0c0d11 95.85%
+  );
+
   --background-image-white-linear: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 9.91%,
@@ -160,19 +166,19 @@ body {
   @apply mx-auto w-full max-w-[1308px] px-2;
 }
 .main-heading {
-  @apply text-[26px] leading-[130%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
+  @apply text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .hero-description {
   @apply text-decemberSky font-jakarta text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply text-2xl leading-[130%] font-semibold sm:text-4xl lg:text-[42px] lg:tracking-[-0.84px];
+  @apply text-2xl leading-[128%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;
 }
 .paragraph {
-  @apply text-wallStreet mt-4 font-medium;
+  @apply text-wallStreet font-medium;
 }
 .paragraph-style {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
@@ -180,17 +186,23 @@ body {
 .sub-heading {
   @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
 }
+.small-heading {
+  @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
+}
+.xs-heading {
+  @apply text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px];
+}
 .heading {
-  @apply text-xl leading-[140%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
+  @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
 }
 .primary-btn {
-  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-black tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit sm:py-2.5;
+  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit sm:py-2.5;
 }
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
 .feature-btn {
-  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[100%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
+  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[75%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
 .header-li-dropdown {
   @apply font-inter text-lightBlack px-1 text-xs font-semibold duration-300 ease-linear lg:text-sm xl:text-base;
@@ -449,6 +461,13 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+.grey-gradient {
+  background: linear-gradient(180deg, #ffffff -10.35%, #0c0d11 166.92%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 @media (max-width: 640px) {
   .gradient-text {
     background:
@@ -495,16 +514,7 @@ html::-webkit-scrollbar {
   transform-style: preserve-3d;
   will-change: transform, opacity;
 }
-.switch-tool-text {
-  background: linear-gradient(91deg, #fff 0%, #ffffff00 103.32%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  text-shadow: 0px 0px 20px #ffffff80;
-}
+
 .field-service-card {
   border: 1px solid #ffffff4e;
   z-index: 9999;
@@ -1047,7 +1057,7 @@ html::-webkit-scrollbar {
     glow-pulse 5s ease-in-out 2.5s infinite;
 }
 .hvac-software-bg::before {
-  @apply absolute top-0 left-0 -z-[99] h-full w-full bg-center bg-no-repeat;
+  @apply absolute -top-[8%] left-0 -z-[99] h-full w-full bg-center bg-no-repeat;
   content: "";
   background-image: url("/images/svg/software-bg-mobile.svg");
   background-size: 69% 100%;
@@ -1086,8 +1096,12 @@ html::-webkit-scrollbar {
 
 .hero-slider {
   background:
-    linear-gradient(0deg, #1c27316b, #1c27316b),
-    radial-gradient(67.83% 112.02% at 117.83% 100%, #ee1e25 0%, #00000000 100%);
+    linear-gradient(0deg, rgba(28, 39, 49, 0.42), rgba(28, 39, 49, 0.42)),
+    radial-gradient(
+      67.83% 112.02% at 117.83% 100%,
+      #ee1e25 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
 }
 .swiper-slide-active .hero-slider {
   background:
@@ -1230,15 +1244,60 @@ button {
   @apply !bg-superSilver !m-0 h-1.5 w-1.5 opacity-100 transition-all duration-300 ease-in;
 }
 .custom-pagination .swiper-pagination-bullet-active {
-  @apply lg:!bg-shortcake !bg-lightishBlue h-1.5 w-6 rounded-3xl;
+  @apply !bg-lightishBlue h-1.5 w-6 rounded-3xl;
 }
 .custom-active-slider .swiper-slide {
-  @apply opacity-30 transition-all duration-300 ease-in-out;
+  @apply opacity-50 transition-all duration-300 ease-in-out;
 }
 .custom-active-slider .swiper-slide-active {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 .slider-img-gradient {
-  background: linear-gradient(180deg, #ffffff00 0%, #fff 100%);
+  background: linear-gradient(3deg, #ffffff00 0%, #fff 100%);
+}
+.slider-cutom-gradient {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+}
+.polygon-bg {
+  background:
+    linear-gradient(to right, transparent 80%, transparent 100%),
+    radial-gradient(
+      57.22% 46% at 12.87% 91.06%,
+      rgba(255, 82, 1, 0.12) 0%,
+      rgba(255, 82, 1, 0) 100%
+    ),
+    rgba(254, 231, 232, 0.2);
+  backdrop-filter: blur(26px);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+.trusted-gradient {
+  background: linear-gradient(89deg, #0c0d11 31% 54%, #0c0d1100 108%);
+}
+.half-rouded-clip-path {
+  clip-path: ellipse(50% 15% at 50% 53%);
+  background-color: #ee1e25;
+  opacity: 90;
+  filter: blur(32px);
+}
+.half-rouded-clip-path-2 {
+  clip-path: ellipse(50% 15% at 50% 53%);
+  background-color: #000000;
+  opacity: 90;
+  filter: blur(87.5px);
+  filter: drop-shadow(20px 30px 20px rgba(0, 0, 0, 0.5));
+}
+.switch-tool-text {
+  background: linear-gradient(91deg, #fff 0%, #ffffff00 103.32%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gg {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 71.47%,
+    #fff 81.73%
+  );
+  width: 100%;
 }

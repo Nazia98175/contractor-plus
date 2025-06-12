@@ -19,10 +19,9 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  console.log(data?.title?.split("4.7 ★")?.[0], "splitt");
   return (
     <section>
-      <div className="main-container relative z-20 space-y-9 py-7 xl:space-y-16 xl:pt-[72px]">
+      <div className="main-container relative z-20 space-y-8 py-7 sm:space-y-9 xl:space-y-16 xl:pt-[68px]">
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2 className="section-heading crm-gradient mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">
             {/* There's a reason we have a {} */}

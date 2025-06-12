@@ -37,9 +37,8 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
         </h3>
       </CardReveal>
       <div className="relative h-fit pt-7">
-        <div className="bg-kuroiBlack pointer-events-none absolute bottom-0 left-[-6%] z-40 hidden h-full w-24 rounded border blur-2xl lg:block xl:w-[200px] 2xl:w-[370px]"></div>
-        <div className="bg-kuroiBlack pointer-events-none absolute right-[-6%] z-40 hidden h-full w-24 blur-2xl lg:block xl:w-[200px] 2xl:w-[370px]"></div>
-
+        <div className="trusted-gradient pointer-events-none absolute bottom-0 left-[0px] z-40 hidden h-full w-24 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
+        <div className="trusted-gradient pointer-events-none absolute right-[0px] bottom-0 z-40 hidden h-full w-24 rotate-180 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="w-full">
           <Marquee speed={30} direction="right" pauseOnHover>
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
@@ -57,7 +56,12 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
         </div>
 
         <div className="relative hidden w-full md:block">
-          <Marquee speed={30} direction="left" pauseOnHover className="py-5">
+          <Marquee
+            speed={30}
+            direction="left"
+            pauseOnHover
+            className="pt-4 pb-5"
+          >
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
                 key={review.id}

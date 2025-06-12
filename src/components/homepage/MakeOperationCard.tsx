@@ -1,5 +1,7 @@
+import Lottie from "lottie-react";
 import React from "react";
 import CountUp from "react-countup";
+import LottieAnimation from "../common/LottieAnimation";
 
 const MakeOperationCard = ({
   item,
@@ -14,7 +16,7 @@ const MakeOperationCard = ({
 }) => {
   return (
     <article className="flex flex-col items-center gap-2 text-center">
-      <span>{icons[index]}</span>
+      <LottieAnimation className="h-8 w-8" animationData={icons[index]} />
       <h3 className="countup-title text-white">
         {inView ? (
           <CountUp
@@ -26,7 +28,7 @@ const MakeOperationCard = ({
         ) : (
           `${item.start}${item.suffix}`
         )}
-        <span className="inline-block px-2">{item.title}</span>
+        <span className="inline-block px-2 text-[22px]">{item.title}</span>
       </h3>
 
       <p className="text-secondary countup-desc">{item.sub_title}</p>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
 import {
+  BlueIcon,
   DownArrowIcon,
   FooterAnimatedIcon,
   FooterLogoIcon,
@@ -60,17 +61,21 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const legalLinks = t.raw("legalLinks");
 
   return (
-    <footer className="relative z-20 w-full overflow-hidden py-10 md:py-[62px]">
+    <footer className="no-scrollbar relative z-20 w-full overflow-y-visible py-10 md:py-[62px]">
       {/* <ParticlesComponent id="star-particles" /> */}
-      <span className="pointer-events-none absolute top-[-314px] left-0 hidden lg:block">
+      <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />
       </span>
+      <span className="pointer-events-none absolute top-[-364px] right-0 hidden lg:block">
+        <BlueIcon />
+      </span>
+
       <div className="main-container">
-        <div className="mx-auto flex max-w-[414px] flex-col items-center justify-center space-y-5 pb-6 text-center">
+        <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
           <FooterLogoIcon />
         </div>
 
-        <div className="hidden w-full flex-wrap justify-center gap-3 pt-7 md:flex">
+        <div className="hidden w-full flex-wrap justify-center gap-3 md:flex">
           {footer?.sections?.map((section, idx) => (
             <FooterSection
               key={idx}
@@ -92,7 +97,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 className="flex w-full flex-col justify-between px-4 py-2 text-start"
               >
                 <div className="flex w-full items-center justify-between">
-                  <h3 className="font-jakarta text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-white">
                     {section.title}
                   </h3>
                   <span
@@ -121,42 +126,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           ))}
         </div>
 
-        {/* <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
-          {sections.map((title, idx) => (
-            <div key={idx} className="max-w-[150px] w-full">
-              <button
-                onClick={() => toggleSection(title)}
-                className="flex flex-col justify-between px-4 w-full py-2 text-start"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <h3 className="text-base font-bold text-white font-jakarta">
-                    {title}
-                  </h3>
-                  <span
-                    className={`transition-transform duration-300 ${
-                      openSection === title ? "rotate-180" : ""
-                    }`}
-                  >
-                    <DownArrowIcon />
-                  </span>
-                </div>
-                <AnimateHeight
-                  duration={500}
-                  height={openSection === title ? "auto" : 0}
-                >
-                  <div className="flex flex-col gap-2 pt-4 sm:pt-6">
-                    {links.slice(...ranges[idx]).map((link, i) => (
-                      <FooterLinkItem key={i} list={link} />
-                    ))}
-                  </div>
-                </AnimateHeight>
-              </button>
-            </div>
-          ))}
-        </div> */}
-
-        <div className="flex items-center justify-between gap-3 pt-4">
-          <div className="relative z-10 hidden items-center gap-3 md:flex">
+        <div className="mt-3 flex items-center justify-between gap-3 py-4">
+          <div className="relative z-10 hidden items-center gap-3 lg:flex">
             <p className="text-secondary font-montserrat text-xs font-medium">
               {footer?.poweredBy}
             </p>
@@ -169,8 +140,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="Powered by Logo"
             />
           </div>
-          <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row md:w-fit">
-            <div className="text-secondary font-montserrat flex flex-col-reverse items-center gap-4 text-xs font-medium md:flex-row">
+          <div className="flex w-full flex-col items-center justify-between gap-4 lg:w-fit lg:flex-row">
+            <div className="text-secondary font-montserrat flex flex-col-reverse items-center gap-4 text-xs font-medium lg:flex-row">
               <p>
                 © {currentYear} {footer?.copyrightTxt}
               </p>
@@ -194,7 +165,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 <LinkdinIcon />
               </Link>
             </div>
-            <div className="flex items-center gap-3 md:hidden">
+            <div className="flex items-center gap-3 lg:hidden">
               <p className="text-secondary font-montserrat text-xs font-medium">
                 {footer?.poweredBy}
               </p>
@@ -223,11 +194,9 @@ const FooterSection = ({
   title: string;
   links: { text: string; href: string }[];
 }) => (
-  <div className="w-full max-w-[270px]">
-    <h3 className="font-jakarta pb-2 text-base font-bold text-white">
-      {title}
-    </h3>
-    <div className="flex flex-col gap-2">
+  <div className="w-full max-w-[180px] lg:max-w-[201px]">
+    <h3 className="pb-2.5 text-base font-bold text-white">{title}</h3>
+    <div className="flex flex-col gap-2.5">
       {links.map((list, index) => (
         <FooterLinkItem key={index} list={list} />
       ))}
@@ -240,12 +209,10 @@ export const FooterLinkItem = ({
 }: {
   list: { text: string; href: string };
 }) => (
-  <div className="group relative h-fit w-full md:w-fit">
-    <Link
-      className="text-decemberSky font-jakarta hover:text-romanRed text-xs leading-[140%] transition-all duration-200 ease-in-out md:text-sm lg:text-base"
-      href={list.href}
-    >
-      {list.text}
-    </Link>
-  </div>
+  <Link
+    className="text-decemberSky hover:text-romanRed text-xs leading-[16px] transition-all duration-200 ease-in-out md:text-sm lg:w-full lg:text-base"
+    href={list.href}
+  >
+    {list.text}
+  </Link>
 );

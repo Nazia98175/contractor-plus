@@ -2,7 +2,6 @@ import React from "react";
 import { TickIcon } from "../common/Icons";
 import { ServiceData } from "@/types";
 import Image from "next/image";
-import { fieldServiceData } from "../common/Helper";
 
 interface Props {
   service: ServiceData;
@@ -14,12 +13,14 @@ interface Props {
 const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
-  console.log(service , "service")
 
   const titleColor = theme === "dark" ? "text-white" : "text-lightBlack";
   const featureTitleColor = theme === "dark" ? "text-white" : "text-lightBlack";
   const featureDescColor =
     theme === "dark" ? "text-secondary lg:text-superSilver" : "text-wallStreet";
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
+
+  console.log(imageBaseUrl.split("api"), "service");
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-7 lg:flex-row">
@@ -30,7 +31,10 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
           {/* Image for mobile */}
           <div className="mx-auto h-full min-h-[156px] w-full max-w-[518px] rounded-lg md:h-auto lg:min-h-[200px] xl:hidden xl:min-h-[245px]">
             <Image
-              src={service.img || "/placeholder.png"}
+              src={
+                `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
+                "/placeholder.png"
+              }
               alt={service?.title || "service image"}
               width={518}
               height={302}
@@ -41,9 +45,11 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  {!isEstimate && <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                    <TickIcon />
-                  </span>}
+                  {!isEstimate && (
+                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                      <TickIcon />
+                    </span>
+                  )}
                   <div className="flex flex-col gap-2 xl:gap-3">
                     <h5 className={`card-heading ${featureTitleColor}`}>
                       {feature?.title}

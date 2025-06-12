@@ -3,6 +3,9 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import CardReveal from "../common/CardReveal";
+import make_operations_1 from "../../../public/lotties/make-operations-1.json";
+import make_operations_2 from "../../../public/lotties/make-operations-2.json";
+import make_operations_3 from "../../../public/lotties/make-operations-3.json";
 import {
   AdminWorkIcon,
   EstimateIcon2,
@@ -30,7 +33,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
 
   const t = useTranslations("makeoperation");
 
-  const icons = [<EstimateIcon2 />, <TurnaroundIcon />, <AdminWorkIcon />];
+  const icons = [make_operations_1, make_operations_2, make_operations_3];
 
   return (
     <section ref={ref} className="relative z-10 pt-16">

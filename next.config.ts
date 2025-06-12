@@ -3,11 +3,17 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 // next.config.js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    
+const nextConfig: import("next").NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "167.88.43.123",
+      },
+    ],
+  },
 };
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 });
 export default withBundleAnalyzer(withNextIntl(nextConfig));

@@ -600,6 +600,7 @@ export const blogData = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-post-1.webp",
+    href: "/",
   },
   {
     id: 2,
@@ -609,6 +610,7 @@ export const blogData = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-post-2.webp",
+    href: "/",
   },
   {
     id: 3,
@@ -618,6 +620,7 @@ export const blogData = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-post-3.webp",
+    href: "/",
   },
 ];
 export const compareFeatures = [

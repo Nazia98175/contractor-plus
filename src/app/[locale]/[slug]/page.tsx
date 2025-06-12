@@ -55,7 +55,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     getCrmPage(
       useParams?.slug,
       useParams.locale,
-      "&populate[fieldService][populate][cardsDetail][populate]=content",
+      "&populate[fieldService][populate][cardsDetail][populate]=*",
     ),
     getCrmPage(
       useParams?.slug,

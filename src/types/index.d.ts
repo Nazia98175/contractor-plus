@@ -27,6 +27,7 @@ export interface ServiceData {
   content: any;
   cardQuote: string;
   userName: string;
+  cardImg?: { url?: string };
 }
 
 export type ContractorPlatformsProps = {
@@ -72,8 +73,6 @@ export type CompareFeature = {
   featureName: string;
   competitorsNote: string;
 };
-
-
 
 // types/navigation.ts
 

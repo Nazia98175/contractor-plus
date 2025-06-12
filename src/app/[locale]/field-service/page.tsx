@@ -1,5 +1,6 @@
 import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
@@ -7,22 +8,27 @@ import RealTimeServiceConnector from "@/components/field-services/RealTimeServic
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
-import AwardBadges from "@/components/hvca/AwardBadge";
-import EraOfSoftware from "@/components/hvca/EraOfSoftware";
+import WhatEverClient from "@/components/homepage/WhatEverClient";
 import HvacFaq from "@/components/hvca/HvacFaq";
-import HvacReview from "@/components/hvca/HvacReview";
-import HvacSoftware from "@/components/hvca/HvacSoftware";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
-import WantingMore from "@/components/hvca/WantingMore";
+import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
 export const metadata = {
   title: "Contractor + - Field Services",
   description:
     "One command center to visualize and run your entire field operation",
 };
-const FieldServicesPage = async () => {
-   const location = await getUserLoc();
+
+interface PageParams {
+  params: {
+    locale?: string;
+  };
+}
+
+const FieldServicesPage = async ({ params }: PageParams) => {
+  const useParams = await params;
+  const location = await getUserLoc();
   const faqitems = [
     {
       id: 1,
@@ -68,9 +74,17 @@ const FieldServicesPage = async () => {
         "Yes. Contractor+ has the fastest and most professional-looking contractor estimates in the industry. Our AI quickly pulls in live pricing for materials and labor rates to build out estimates faster than you've ever done before. Offer customers “Good, Better, Best” options, add groups and line items, and even get eSignatures on the spot. ",
     },
   ];
+  const [homePageContent, reviewsList] = await Promise.all([
+    getHomePage(useParams?.locale || "en", "&populate=*"),
+    getHomePage(
+      useParams?.locale || "en",
+      "&populate[review][on][common.reviews][populate]=*",
+    ),
+  ]);
+
   return (
     <>
-      <FieldServicesHero  />
+      <FieldServicesHero />
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />
@@ -85,12 +99,15 @@ const FieldServicesPage = async () => {
         <HvacSoftwareService />
       </div>
       {/* <HvacSoftwareService /> */}
-      <TrustBarHvca platforms={platforms} />
-      {/* <Whatever whateverOperation={homePageContent?.data?.whateverOperation} /> */}
+      <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq
         faqitems={faqitems}
         className="mt-12 md:mt-[74px]"
         variant="dark"
+      />
+      <WhatEverClient
+        data={homePageContent?.data?.whateverOperation}
+        issection={false}
       />
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
     </>

@@ -336,19 +336,19 @@ const FieldServicesHero = (props?: Props) => {
       <div className="pointer-events-none absolute inset-0 z-15 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
       {/* Content overlay */}
-      <div className="main-container 1xl:pb-[171px] relative z-30 pt-[393px] pb-11 sm:pb-16 md:pt-[110px] md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
+      <div className="main-container 1xl:pb-[171px] relative z-30 pt-[393px] pb-10 sm:pb-16 md:pt-[110px] md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
         <div className="w-full max-w-[732px]">
-          <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]">
+          <div className="w-full rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px] sm:w-fit">
             <div className="rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px] backdrop-filter-[1.50px]">
               <span className="text-secondary">
                 Field Service Management Software
               </span>
             </div>
           </div>
-          <h3 className="main-heading grey-gradient sm:text-white">
+          <h3 className="main-heading grey-gradient mt-2 sm:mt-0 sm:text-white">
             One command center to visualize and run your entire field operation
           </h3>
-          <p className="hero-description mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
+          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
             Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams.
           </p>
@@ -367,7 +367,7 @@ const FieldServicesHero = (props?: Props) => {
                 <span className="flex sm:hidden">Download FREE App</span>
                 <ArrowIcon fill="white" className="hidden sm:block" />
               </Button>
-              <CardRequiredButton text="jh" />
+              <CardRequiredButton text="No credit card required" />
             </div>
           </div>
         </div>

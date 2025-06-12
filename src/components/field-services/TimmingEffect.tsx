@@ -3,6 +3,7 @@ import TimmingEffectSlider from "./TimmingEffectSlider";
 import Button from "../common/Button";
 import { Arrow, ArrowIcon } from "../common/Icons";
 import CardRequiredButton from "../common/CardRequiredButton";
+import Image from "next/image";
 
 const TimmingEffect = () => {
   const sliderData = [
@@ -49,33 +50,54 @@ const TimmingEffect = () => {
   ];
   return (
     <section className="relative h-dvh overflow-hidden bg-white">
-      <div className="sun-bg absolute -top-[20%] -right-[13%] z-10 h-[400] w-[400px] rounded-full"></div>
+      <h2
+        style={{
+          background:
+            "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+        className="section-heading text-center"
+      >
+        A system that finally connects field and office
+      </h2>
+      <p className="text-darkness mt-5 text-center text-lg font-semibold">
+        Here’s what it feels like when everything just works
+      </p>
+      <div className="sun-bg absolute top-0 -right-[13%] z-10 h-[400] w-[400px] rounded-full"></div>
       <div className="sun-reflect absolute right-0 h-full w-full rotate-180"></div>
       <img
-        className="absolute top-0 right-0 z-10 max-h-[150px] max-w-[500px] object-cover"
+        className="absolute top-[15%] right-0 z-10 max-h-[150px] max-w-[500px] object-cover"
         src="/images/png/timming-effect-cloud-2.png"
         alt=""
       />
       <img
-        className="absolute top-0 left-0 z-10 max-h-[305px] w-full object-center"
+        className="absolute top-[15%] left-0 z-10 max-h-[305px] w-full object-center"
         src="/images/webp/timming-effect-cloud-1.webp"
         alt=""
       />
-      <div className="relative z-20 mx-auto flex w-full max-w-[702px] flex-col items-center px-2 md:px-0">
+      <div className="relative z-20 mx-auto flex h-full w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
         <div className="text-phantom text-center text-[42px] font-semibold -tracking-[0.84px]">
           07 : 00 AM
         </div>
-        <p className="font-jakarta text-secondary my-6 text-center text-[22px] font-medium">
+        <p className="text-secondary mt-6 mb-2 text-center text-sm leading-[110%] font-medium md:text-lg lg:text-[22px]">
           You check the live crew map, see who’s already moving, drag unassigned
           jobs onto the calendar & assign based on proximity.
         </p>
+        <Image
+          width={611}
+          height={245}
+          src="/images/webp/timing.webp"
+          alt="Timing Image"
+        />
         {/* <TimmingEffectSlider sliderData={sliderData} /> */}
         <Button variant="primary" className="mt-3 mb-[6px]">
           <span className="hidden sm:flex">Get started FREE</span>
           <span className="flex sm:hidden">Download FREE App</span>
           <ArrowIcon fill="white" />
         </Button>
-        {/* <CardRequiredButton /> */}
+        <CardRequiredButton text="No credit card required" />
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  EstimateIcon2,
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
@@ -39,6 +40,8 @@ import {
   Users,
   LayoutList,
   FileCode,
+  TruckIcon,
+  TruckElectricIcon,
 } from "lucide-react";
 import { Platform, Review } from "@/types";
 
@@ -93,6 +96,33 @@ export const makeOperationList = [
     description: "Time spent on admin work",
     start: 0,
     end: 38,
+    suffix: "%",
+    icon: <AdminWorkIcon className="md:text-lightBlack text-white" />,
+  },
+];
+export const swichToContractordata = [
+  {
+    description: "Estimate process",
+    start: 0,
+    end: 27,
+    suffix: "%",
+    icon: <EstimateIcon2 fill="#3F464b" />,
+  },
+  {
+    title: "hours",
+    description: "Job turnaround time",
+    start: 0,
+    end: 28,
+    icon: (
+      <TruckElectricIcon className="md:text-lightBlack text-white" width={35} />
+    ),
+  },
+  {
+    title: "less",
+    description: "Time spent on admin work",
+    start: 3,
+    end: 5,
+    isRange: true,
     suffix: "%",
     icon: <AdminWorkIcon className="md:text-lightBlack text-white" />,
   },

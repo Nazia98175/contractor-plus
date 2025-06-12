@@ -28,7 +28,7 @@ const MakeOperationCard = ({
         ) : (
           `${item.start}${item.suffix}`
         )}
-        <span className="inline-block px-2 text-[22px]">{item.title}</span>
+        <span className="inline-block px-2 text-2xl">{item.title}</span>
       </h3>
 
       <p className="text-secondary countup-desc">{item.sub_title}</p>

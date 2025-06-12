@@ -126,42 +126,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           ))}
         </div>
 
-        {/* <div className="md:hidden grid grid-cols-2 max-w-[350px] mx-auto">
-          {sections.map((title, idx) => (
-            <div key={idx} className="max-w-[150px] w-full">
-              <button
-                onClick={() => toggleSection(title)}
-                className="flex flex-col justify-between px-4 w-full py-2 text-start"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <h3 className="text-base font-bold text-white ">
-                    {title}
-                  </h3>
-                  <span
-                    className={`transition-transform duration-300 ${
-                      openSection === title ? "rotate-180" : ""
-                    }`}
-                  >
-                    <DownArrowIcon />
-                  </span>
-                </div>
-                <AnimateHeight
-                  duration={500}
-                  height={openSection === title ? "auto" : 0}
-                >
-                  <div className="flex flex-col gap-2 pt-4 sm:pt-6">
-                    {links.slice(...ranges[idx]).map((link, i) => (
-                      <FooterLinkItem key={i} list={link} />
-                    ))}
-                  </div>
-                </AnimateHeight>
-              </button>
-            </div>
-          ))}
-        </div> */}
-
         <div className="mt-3 flex items-center justify-between gap-3 py-4">
-          <div className="relative z-10 hidden items-center gap-3 md:flex">
+          <div className="relative z-10 hidden items-center gap-3 lg:flex">
             <p className="text-secondary font-montserrat text-xs font-medium">
               {footer?.poweredBy}
             </p>
@@ -174,8 +140,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="Powered by Logo"
             />
           </div>
-          <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row md:w-fit">
-            <div className="text-secondary font-montserrat flex flex-col-reverse items-center gap-4 text-xs font-medium md:flex-row">
+          <div className="flex w-full flex-col items-center justify-between gap-4 lg:w-fit lg:flex-row">
+            <div className="text-secondary font-montserrat flex flex-col-reverse items-center gap-4 text-xs font-medium lg:flex-row">
               <p>
                 © {currentYear} {footer?.copyrightTxt}
               </p>
@@ -199,7 +165,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 <LinkdinIcon />
               </Link>
             </div>
-            <div className="flex items-center gap-3 md:hidden">
+            <div className="flex items-center gap-3 lg:hidden">
               <p className="text-secondary font-montserrat text-xs font-medium">
                 {footer?.poweredBy}
               </p>
@@ -228,7 +194,7 @@ const FooterSection = ({
   title: string;
   links: { text: string; href: string }[];
 }) => (
-  <div className="w-full max-w-[270px]">
+  <div className="w-full max-w-[180px] lg:max-w-[201px]">
     <h3 className="pb-2.5 text-base font-bold text-white">{title}</h3>
     <div className="flex flex-col gap-2.5">
       {links.map((list, index) => (
@@ -244,7 +210,7 @@ export const FooterLinkItem = ({
   list: { text: string; href: string };
 }) => (
   <Link
-    className="text-decemberSky hover:text-romanRed text-xs leading-[16px] transition-all duration-200 ease-in-out md:text-sm lg:text-base"
+    className="text-decemberSky hover:text-romanRed text-xs leading-[16px] transition-all duration-200 ease-in-out md:text-sm lg:w-full lg:text-base"
     href={list.href}
   >
     {list.text}

@@ -85,7 +85,7 @@ const SwitchingToolMobile = ({
         cardRef3.current,
         {
           x: "0%",
-          y: "25%",
+          y: "33%",
           rotation: 0,
           scale: 1,
           filter: "blur(0px)",
@@ -112,7 +112,7 @@ const SwitchingToolMobile = ({
               className="h-full w-full object-cover"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-lg font-medium xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
@@ -130,7 +130,7 @@ const SwitchingToolMobile = ({
               className="h-full w-full object-cover"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-lg font-medium xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
@@ -148,7 +148,7 @@ const SwitchingToolMobile = ({
               className="h-full w-full object-cover"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-lg font-medium xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>

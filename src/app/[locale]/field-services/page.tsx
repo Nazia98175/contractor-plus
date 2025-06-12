@@ -70,7 +70,7 @@ const FieldServicesPage = async () => {
   ];
   return (
     <>
-      <FieldServicesHero location={location} />
+      <FieldServicesHero  />
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />

@@ -155,8 +155,8 @@ export const LinkdinIcon = () => (
 export const FooterLogoIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="224"
-    height="42"
+    width="100%"
+    height="100%"
     viewBox="0 0 224 42"
     fill="none"
   >
@@ -1167,58 +1167,60 @@ export const DropdownIcon = () => (
     />
   </svg>
 );
-export const FooterRedLineIcon = () => (
+export const FooterRedLineIcon = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="515"
-    height="992"
+    width="100%"
+    height="100%"
+    viewBox="0 0 840 994"
     fill="none"
-    viewBox="0 0 515 992"
+    className={className}
   >
     <g
-      filter="url(#filter0_f_115_2066)"
       style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2110_13620)"
     >
       <path
-        stroke="url(#paint0_linear_115_2066)"
-        strokeLinecap="round"
+        d="M535.262 689.666L202.131 497.333L-131 305"
+        stroke="url(#paint0_linear_2110_13620)"
         strokeWidth="432"
-        d="M210.045 305-40.978 739.784l-251.023 434.786"
-      ></path>
+        strokeLinecap="round"
+      />
     </g>
     <defs>
-      <linearGradient
-        id="paint0_linear_115_2066"
-        x1="-359.41"
-        x2="-139.291"
-        y1="755.313"
-        y2="1065.72"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.062" stopOpacity="0"></stop>
-        <stop offset="0.997" stopColor="#EE1E25"></stop>
-        <stop offset="1" stopColor="#fff"></stop>
-      </linearGradient>
       <filter
-        id="filter0_f_115_2066"
-        width="1110.12"
-        height="1477.64"
-        x="-596.037"
-        y="0.964"
-        colorInterpolationFilters="sRGB"
+        id="filter0_f_2110_13620"
+        x="-435.036"
+        y="0.963867"
+        width="1274.33"
+        height="992.738"
         filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
+          mode="normal"
           in="SourceGraphic"
           in2="BackgroundImageFix"
           result="shape"
-        ></feBlend>
+        />
         <feGaussianBlur
-          result="effect1_foregroundBlur_115_2066"
           stdDeviation="44"
-        ></feGaussianBlur>
+          result="effect1_foregroundBlur_2110_13620"
+        />
       </filter>
+      <linearGradient
+        id="paint0_linear_2110_13620"
+        x1="221.563"
+        y1="199.086"
+        x2="-92.3632"
+        y2="373.613"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="white" />
+      </linearGradient>
     </defs>
   </svg>
 );
@@ -1275,7 +1277,7 @@ export const GroupStartIcon = () => (
 //     />
 //   </svg>
 // );
-export const StartIcon = ({ filled = true }: { filled: boolean }) => (
+export const StartIcon = ({ filled = true }: { filled?: boolean }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
@@ -1315,13 +1317,14 @@ export const PlayIcon = () => (
   </svg>
 );
 
-export const RedClipIcon = () => (
+export const RedClipIcon = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="993"
+    width="100%"
     height="1112"
     fill="none"
     viewBox="0 0 993 1112"
+    className={className}
   >
     <g
       filter="url(#filter0_f_69_4651)"
@@ -1367,6 +1370,63 @@ export const RedClipIcon = () => (
           stdDeviation="44"
         ></feGaussianBlur>
       </filter>
+    </defs>
+  </svg>
+);
+export const RedClipIconMobile = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="1044"
+    viewBox="0 0 320 1044"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2110_17575)"
+    >
+      <path
+        d="M-107.131 304.667L304.435 521.833L716 739"
+        stroke="url(#paint0_linear_2110_17575)"
+        stroke-width="432"
+        stroke-linecap="round"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2110_17575"
+        x="-411.174"
+        y="0.623535"
+        width="1431.22"
+        height="1042.42"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="44"
+          result="effect1_foregroundBlur_2110_17575"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2110_17575"
+        x1="320.908"
+        y1="833.553"
+        x2="625.106"
+        y2="613.892"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.0622667" stop-opacity="0" />
+        <stop offset="0.996954" stop-color="#EE1E25" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
     </defs>
   </svg>
 );
@@ -2297,8 +2357,8 @@ export const FooterAnimatedIcon = () => (
   <svg
     className={`svg-diagonal-container`}
     xmlns="http://www.w3.org/2000/svg"
-    width={515}
-    height={992}
+    width="100%"
+    height="100%"
     fill="none"
     viewBox="0 0 515 992"
     style={{ overflow: "visible" }}
@@ -2377,10 +2437,67 @@ export const FooterAnimatedIcon = () => (
     </defs>
   </svg>
 );
+export const BlueIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="463"
+    height="1002"
+    viewBox="0 0 463 1002"
+    fill="none"
+  >
+    <g
+      style={{ mixBlendMode: "plus-lighter" }}
+      filter="url(#filter0_f_2140_4839)"
+    >
+      <path
+        d="M554.516 155L354.758 500.99L155 846.981"
+        stroke="url(#paint0_linear_2140_4839)"
+        strokeOpacity="0.15"
+        strokeWidth="85"
+        strokeLinecap="square"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_2140_4839"
+        x="0.944336"
+        y="0.945312"
+        width="707.627"
+        height="1000.09"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="48"
+          result="effect1_foregroundBlur_2140_4839"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_2140_4839"
+        x1="154.567"
+        y1="846.731"
+        x2="554.083"
+        y2="154.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#6DDCFF" stopOpacity="0" />
+        <stop offset="0.505" stopColor="#6DDCFF" />
+        <stop offset="1" stopColor="#6DDCFF" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 
 export const HeroAnimatedIcon = () => (
   <svg
-    className="svg-container pointer-events-none absolute top-0 left-0 z-10 hidden sm:block"
+    className="svg-container pointer-events-none absolute top-0 left-0 z-20 hidden sm:block"
     width={768}
     height={562}
     viewBox="0 0 768 562"
@@ -2521,20 +2638,7 @@ export const HeroAnimatedMobileIcon = () => (
     </defs>
   </svg>
 );
-export const RedCurveLine = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
-    viewBox="0 0 1438 214"
-    fill="none"
-  >
-    <path
-      d="M-68 213.5C-68 213.5 144 0.999883 662 0.999928C1260 0.99998 1487 213.5 1487 213.5"
-      stroke="#F21314"
-    />
-  </svg>
-);
+
 export const SliderIcon1 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -2555,7 +2659,6 @@ export const HvacGlowHeroDesktopIcon = () => (
     height="100%"
     viewBox="0 0 1020 850"
     fill="none"
-    className="pointer-events-none absolute top-0 left-0 z-10 hidden lg:block"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g
@@ -3620,6 +3723,23 @@ export const RealTimeServiceConnectorIcon = ({
   </svg>
 );
 
+export const Cross2Icon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="17"
+    height="17"
+    viewBox="0 0 17 17"
+    fill="none"
+  >
+    <path
+      d="M12.8398 2.29297L14.7061 4.16113L15.4121 4.86816L14.7061 5.5752L11.7812 8.5L14.707 11.4268L15.415 12.1348L14.7061 12.8418L12.8369 14.708L12.1299 15.4141L11.4229 14.707L8.49902 11.7812L5.5752 14.707L4.86914 15.4141L4.16113 14.707L2.29297 12.8408L1.58594 12.1338L2.29297 11.4258L5.2168 8.5L2.29297 5.5752L1.58594 4.86816L2.29297 4.16113L4.15918 2.29297L4.86719 1.58594L8.49902 5.21777L11.4258 2.29297L12.1328 1.58594L12.8398 2.29297Z"
+      fill="#3F464B"
+      stroke="#1C2731"
+      strokeWidth="2"
+    />
+  </svg>
+);
+
 export const FileIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -3743,5 +3863,19 @@ export const Claud4Icon = () => (
         <stop offset="1" stopColor="#0C0D11" />
       </linearGradient>
     </defs>
+  </svg>
+);
+export const DownloadIcon = () => (
+  <svg
+    width="34"
+    height="34"
+    viewBox="0 0 34 34"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.20768 28.3333C7.05435 28.3333 5.2174 27.5919 3.69685 26.1092C2.17629 24.6169 1.41602 22.7989 1.41602 20.655C1.41602 18.8133 1.96852 17.17 3.07352 15.725C4.18796 14.28 5.6424 13.3592 7.43685 12.9625C8.03185 10.7903 9.2124 9.0336 10.9785 7.69249C12.7541 6.34193 14.761 5.66666 16.9993 5.66666C19.7666 5.66666 22.1088 6.62999 24.026 8.55666C25.9527 10.4739 26.916 12.8161 26.916 15.5833C28.5499 15.7722 29.9005 16.4805 30.9677 17.7083C32.0443 18.9172 32.5827 20.3339 32.5827 21.9583C32.5827 23.7339 31.9641 25.2403 30.7268 26.4775C29.4896 27.7147 27.9832 28.3333 26.2077 28.3333H18.416C17.6416 28.3333 16.9757 28.0547 16.4185 27.4975C15.8613 26.9497 15.5827 26.2839 15.5827 25.5V18.2042L13.316 20.4L11.3327 18.4167L16.9993 12.75L22.666 18.4167L20.6827 20.4L18.416 18.2042V25.5H26.2077C27.1993 25.5 28.0352 25.1553 28.7152 24.4658C29.4046 23.7858 29.7493 22.95 29.7493 21.9583C29.7493 20.9667 29.4046 20.1308 28.7152 19.4508C28.0352 18.7614 27.1993 18.4167 26.2077 18.4167H24.0827V15.5833C24.0827 13.6283 23.3932 11.9567 22.0143 10.5683C20.6355 9.18943 18.9638 8.49999 16.9993 8.49999C15.0443 8.49999 13.3727 9.18943 11.9843 10.5683C10.6055 11.9567 9.91602 13.6283 9.91602 15.5833H9.20768C7.83824 15.5833 6.67185 16.0697 5.70852 17.0425C4.73574 18.0058 4.24935 19.1722 4.24935 20.5417C4.24935 21.9111 4.73574 23.0917 5.70852 24.0833C6.67185 25.0278 7.83824 25.5 9.20768 25.5H12.7493V28.3333"
+      fill="#93E3C5"
+    />
   </svg>
 );

@@ -1,5 +1,5 @@
-"use client"
-import { useTranslations } from "next-intl";
+"use client";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import {
   CheckIcon,
@@ -7,9 +7,11 @@ import {
   HeroAnimatedMobileIcon,
 } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-import dynamic from "next/dynamic";
-const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), { ssr: false })
-import {getMediaUrl} from '@/utils/getMediaUrl'
+import FreeAccountButton from "../common/FreeAccountButton";
+import CardRequiredButton from "../common/CardRequiredButton";
+const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
+  ssr: false,
+});
 type HeroProps = {
   homePageContent: any;
 };
@@ -22,11 +24,12 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     cta_button_link,
     ncc_text,
     hero_image,
-    mobileBtn
+    mobileBtn,
   } = homePageContent ?? {};
-console.log(hero_image?.url ,"urlll")
   return (
     <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
+      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 h-24 w-[120%] -translate-x-1/2 blur-[13px]"></div>
+      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 h-16 w-[120%] -translate-x-1/2 blur-[8px]"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
       <HeroAnimatedIcon />
       <HeroAnimatedMobileIcon />
@@ -44,36 +47,25 @@ console.log(hero_image?.url ,"urlll")
             <h1 className="main-heading gradient-text mb-4">{hero_title}</h1>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={3}>
-            <p className="text-decemberSky font-jakarta mb-4 text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
+            <p className="text-decemberSky mb-4 text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
               {hero_description}
             </p>
           </TextAnimation>
+
           <div className="flex w-full flex-col items-center gap-2.5 sm:w-fit">
-            <button className="bg-red-linear primary-btn h-10">
-              <span className="hidden md:flex">{cta_button_text}</span>
-              <span className="flex md:hidden">{mobileBtn}</span>
-            </button>
-            <button className="font-myriad flex cursor-pointer items-center gap-1.5 text-sm text-white">
-              <CheckIcon />
-              {ncc_text}
-            </button>
+            <FreeAccountButton showIcon={false} text={cta_button_text} />
+            <CardRequiredButton text={ncc_text} />
           </div>
         </div>
       </div>
       <div className="absolute top-0 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-        <VideoOptimizer highResUrl={'/video/hero-video.mp4'} lowResUrl="/video/hero-video.mp4" />
-        {/* <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="3xl:object-cover relative -z-20 h-full w-full object-cover lg:object-right"
-          src="/video/hero-video.mp4"
-        ></video> */}
+        <VideoOptimizer
+          highResUrl={"/video/hero-video.mp4"}
+          lowResUrl="/video/hero-video.mp4"
+        />
         <Image
-          priority
+          loading="lazy"
           fill
-          unoptimized
           className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"
           src={"/images/webp/hero-video-ovelay.webp"}
           alt="hero-video-ovelay"

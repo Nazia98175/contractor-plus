@@ -10,7 +10,6 @@ import WhyChooseUs from "@/components/industry/WhyChooseUs";
 const IndusryPage = () => {
   return (
     <div>
-      {/* <Header /> */}
       {/* <TrustBar /> */}
       <SoftwareSolutions />
       <ServiceSoftware />

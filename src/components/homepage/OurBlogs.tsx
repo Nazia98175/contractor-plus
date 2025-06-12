@@ -45,7 +45,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
   };
   const blogListMobile = [
     {
-      id: "01",
+      id: 1,
       title: "Contractor+ Blog",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
@@ -54,7 +54,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       backgroundImage: "/images/svg/blog-1.svg",
     },
     {
-      id: "02",
+      id: 2,
       title: "Podcasts",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
@@ -63,7 +63,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       backgroundImage: "/images/svg/blog-2.svg",
     },
     {
-      id: "03",
+      id: 3,
       title: "FREE Tools & Templates",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
@@ -116,7 +116,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             />
           ))}
         </CardReveal>
-        <div className="block sm:hidden">
+        <div className="blog-post block sm:hidden">
           <SliderLayout
             autoplay
             pagination

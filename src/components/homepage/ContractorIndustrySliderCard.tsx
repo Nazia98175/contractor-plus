@@ -12,7 +12,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
       className="h-full w-full"
     >
       <div className="bg-lightBlack border-winterWay shadow-c3 relative w-full rounded-xl border p-2.5 ease-in-out">
-        <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-xl">
+        <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-base">
           {show.title}
         </h2>
         <Image

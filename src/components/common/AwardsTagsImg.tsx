@@ -43,9 +43,9 @@ const AwardsTagsImg = () => {
             <Image
               src={award.src}
               alt={award.alt}
-              width={97}
+              width={award.width}
               height={97}
-              className="drop-shadow-img-shadow transform cursor-pointer object-center transition-transform duration-300 ease-in-out hover:rotate-6"
+              className={`drop-shadow-img-shadow hover:rotate-6 ${award.mt} transform cursor-pointer object-center transition-transform duration-300 ease-in-out`}
             />
           </div>
         ))}

@@ -4,6 +4,8 @@ import SliderLayout from "../common/SliderLayout";
 import { blogData } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
 import BlogArticle from "./BlogArticle";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import Button from "../common/Button";
 
 interface Props {
   data?: any;
@@ -22,26 +24,31 @@ const BlogPosts: React.FC<Props> = ({
   const textClass = variant === "primary" ? "text-white" : "text-winterWay";
 
   return (
-    <section className={`px-2 pt-4 pb-12 sm:px-4 lg:px-20 ${className || ""}`}>
+    <section
+      className={`relative z-20 px-2 pt-4 pb-12 sm:px-4 lg:px-20 ${className || ""}`}
+    >
       <div className="mx-auto w-full max-w-[1158px]">
-        <div className="mb-6 flex items-center justify-between">
-          <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h2 className="section-heading gradient-text w-full text-center text-white sm:w-fit">
-              {data?.title}
+        <div className="mb-6 flex items-center justify-between md:mb-9">
+          <PrimaryAnimatedText delay={3000}>
+            <h2 className="section-heading faq-heading-text w-full text-center sm:w-fit">
+              <span>{data?.title}</span>
             </h2>
-          </TextAnimation>
+          </PrimaryAnimatedText>
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <div className="hidden md:block">
-              <button className="bg-red-linear primary-btn h-10 gap-2">
+              <Button
+                variant="primary"
+                className="bg-red-linear primary-btn h-10 gap-2"
+              >
                 {data?.btnTxt}
                 <BlogBtnIcon />
-              </button>
+              </Button>
             </div>
           </TextAnimation>
         </div>
 
         <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:flex xl:flex-row">
-          <div className="flex w-full max-w-[600px] flex-col gap-4 xl:max-w-[450px]">
+          <div className="mx-auto flex w-full max-w-[600px] flex-col gap-4 xl:mx-0 xl:max-w-[450px]">
             {blogData.map((blog) => (
               <BlogArticle
                 key={blog.id}

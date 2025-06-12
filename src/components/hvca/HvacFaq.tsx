@@ -38,7 +38,7 @@ const HvacFaq: React.FC<Props> = ({ className = "", faqitems, variant }) => {
           variant={variant}
         />
       </section>
-      <div className="mt-8 md:h-[160px]">
+      <div className="mt-8 md:h-[76px]">
         <CloudsAnimation
           cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
           cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"

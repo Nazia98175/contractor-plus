@@ -104,7 +104,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
       </div>
       <div className="relative">
         <Image
-          className="max=h-[350px] absolute top-0 left-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
+          className="max=h-[350px] pointer-events-none absolute top-0 left-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
           src={"/images/webp/marquee-layers.webp"}
           alt="layers"
           width={370}
@@ -112,7 +112,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           unoptimized
         />
         <Image
-          className="max=h-[350px] absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
+          className="max=h-[350px] pointer-events-none absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
           src={"/images/webp/marquee-layers-right.webp"}
           alt="layers"
           width={370}
@@ -121,7 +121,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
         />
 
         {/* First row of reviews - scrolling right */}
-        <div className="w-full pt-[43px] md:pt-[60px] lg:pt-[80px]">
+        <div className="w-full">
           <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
             {reviewsList?.map((review: any, index: any) => (
               <ReviewCard

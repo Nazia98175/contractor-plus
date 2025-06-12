@@ -46,7 +46,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
         className={`group trusted-service relative flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] md:max-w-[419px] ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             {review?.profileUrl ? (
               <Image
                 src={review.profileUrl}
@@ -77,7 +77,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 </span>
               </div>
               <h6
-                className={`truncate text-xs font-medium tracking-[0.1px] text-nowrap ${styles.roleText}`}
+                className={`truncate pt-1 text-xs font-medium tracking-[0.1px] text-nowrap ${styles.roleText}`}
               >
                 {review.userRole}
               </h6>

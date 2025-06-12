@@ -111,7 +111,7 @@ const SwitchingToolDesktop = ({
               className="h-full max-h-[99px] w-full object-center"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-lg font-medium xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
@@ -129,7 +129,7 @@ const SwitchingToolDesktop = ({
               className="h-full max-h-[99px] w-full object-center"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-lg font-medium xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
@@ -147,7 +147,7 @@ const SwitchingToolDesktop = ({
               className="h-full max-h-[99px] w-full object-center"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta max-w-[90%] pt-[18px] text-lg font-medium xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta max-w-[90%] pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>

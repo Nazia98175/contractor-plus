@@ -65,7 +65,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay font-jakarta mt-3 line-clamp-3 px-2 text-sm font-semibold tracking-[0.1px]">
+        <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
           "{review.review}"
         </p>
       </article>

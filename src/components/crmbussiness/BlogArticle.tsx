@@ -24,7 +24,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
   return (
     <article
       key={blog.id}
-      className={`${bgClass} relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 sm:flex-row`}
+      className={`${bgClass} card-shine relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 sm:flex-row`}
     >
       <Image
         src={blog.image}

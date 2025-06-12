@@ -5,6 +5,7 @@ import CardReveal from "../common/CardReveal";
 import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
+import CloudsAnimation from "../common/CloudsAnimation";
 interface Props {
   data: any;
   ncc: string;
@@ -33,19 +34,17 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative z-20 w-full">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
-        <span className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]">
-          <FooterRedLineIcon />
-        </span>
+        <FooterRedLineIcon className="pointer-events-none absolute top-[-236px] left-[-6px] rotate-[90deg] md:left-[209px]" />
         <div className="py-[75px]">
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <h3 className="section-heading text-decemberSky sub-heading text-center">
+            <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">
               {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={true} delay={0.2}>
-            <p className="paragraph-text text-secondary mb-7 text-center md:mb-10 lg:mb-14">
+            <p className="paragraph-text text-secondary mb-7 text-center md:mb-[34px]">
               {data?.sub_title}
             </p>
           </TextAnimation>
@@ -63,6 +62,19 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
                   onChange={handleEmailChange}
                   className="bg-lightBlack h-[40px] w-full rounded-[6px] border-b border-white px-2 text-white outline-none"
                 />
+              </div>
+              <div className="flex w-full flex-col items-center justify-center md:w-fit">
+                <button
+                  type="submit"
+                  className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  ) : (
+                    `${createBtn}`
+                  )}
+                </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span>
                     <CheckIcon />
@@ -72,17 +84,6 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
                   </span>
                 </p>
               </div>
-              <button
-                type="submit"
-                className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
-                disabled={loading}
-              >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  `${createBtn}`
-                )}
-              </button>
               <div className="flex w-full items-center justify-center md:hidden">
                 <p className="flex items-center gap-2 pt-1">
                   <span>
@@ -98,29 +99,13 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute -top-[28%] left-0 z-0 flex h-[250px] w-full sm:-top-[33%]">
-        <div className="absolute top-0 right-0 h-[60%] w-full bg-white blur-sm sm:h-[58%]"></div>
-        <div className="animate-cloud-layer-1 absolute h-full w-full opacity-100">
-          <Image
-            height={250}
-            width={5000}
-            src="/images/webp/claud-2.webp"
-            alt="Cloud Layer 1"
-            className="h-full w-full object-cover"
-            unoptimized
-          />
-        </div>
-
-        <div className="animate-cloud-layer-2 absolute h-full w-full opacity-100">
-          <Image
-            height={250}
-            width={5000}
-            src="/images/webp/claud-2.webp"
-            alt="Cloud Layer 2"
-            className="h-full w-full object-cover"
-            unoptimized
-          />
-        </div>
+      <div className="pointer-events-none absolute top-[-11%] left-0 z-50 flex h-[67%] w-full rotate-180">
+        <CloudsAnimation
+          className="-bottom-[11%]"
+          imageClass="h-full z-20 !bottom-[-30px]"
+          cloud1Class="bottom-0"
+          cloud2Class="bottom-0"
+        />
       </div>
     </div>
   );

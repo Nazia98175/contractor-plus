@@ -49,7 +49,6 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         >
           {platforms.map((platform, index) => (
             <div key={index} className="flex items-center justify-center">
-              {" "}
               <PlatformCard platform={platform} />
             </div>
           ))}

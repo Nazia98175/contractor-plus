@@ -25,7 +25,10 @@ const FaqList: React.FC<FaqListProps> = ({
 }) => {
   return (
     <>
-      <div onClick={onToggle} className={`px-4 ${containerClassName}`}>
+      <div
+        onClick={onToggle}
+        className={`flex flex-col gap-3 px-4 md:gap-5 ${containerClassName}`}
+      >
         <button
           className={`${classNameQue} flex w-full cursor-pointer items-center justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black text-white lg:text-lg`}
         >

@@ -1,5 +1,8 @@
 import { platforms } from "@/components/common/Helper";
-import { FooterRedLineIcon } from "@/components/common/Icons";
+import {
+  FooterRedLineIcon,
+  FooterRedLineMobileIcon,
+} from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -13,7 +16,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import TrustBar from "@/components/homepage/TrustBar";
+import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { notFound } from "next/navigation";
@@ -120,27 +123,27 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             />
           </div>
           <div className="relative overflow-hidden">
-            <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] max-h-[994px] w-full max-w-[840px]" />
+            <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
+            <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.crmService}
             />
-            <TrustBar
+            <TrustBarHvca
               platforms={platforms}
               className="mx-auto w-full max-w-[889px]"
             />
             <Faq
               faq={faq?.data?.[0]?.faqs}
-              classNameQue=""
-              containerClassName="mb-[19px]"
-              classNameAnswer="!pt-1"
+              classNameAnswer="pt-1"
+              mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
             />
           </div>
           <BlogPosts
             data={crmPageContent?.data?.[0]?.blogs}
             blogs={blogs}
-            className="mt-9"
+            className="mt-7 md:mt-9"
           />
         </>
       )}

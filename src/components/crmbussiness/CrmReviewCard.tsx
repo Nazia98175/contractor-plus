@@ -16,7 +16,7 @@ const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
     <article
       onClick={review.isModal ? openModal : undefined}
       key={review.id}
-      className="group relative z-20 min-h-[300px] w-full cursor-pointer bg-white duration-300"
+      className="group relative z-20 w-full cursor-pointer bg-white duration-300"
     >
       <div className="flex items-center gap-3 md:gap-4">
         <div className="relative">

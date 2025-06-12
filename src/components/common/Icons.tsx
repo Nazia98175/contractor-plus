@@ -1423,9 +1423,9 @@ export const RedClipIconMobile = ({ className = "" }) => (
         y2="613.892"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.0622667" stop-opacity="0" />
-        <stop offset="0.996954" stop-color="#EE1E25" />
-        <stop offset="1" stop-color="white" />
+        <stop offset="0.0622667" stopOpacity="0" />
+        <stop offset="0.996954" stopColor="#EE1E25" />
+        <stop offset="1" stopColor="white" />
       </linearGradient>
     </defs>
   </svg>

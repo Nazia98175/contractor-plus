@@ -70,7 +70,7 @@ const BlogPosts: React.FC<Props> = ({
             />
             <div className="relative z-10 px-3 pt-20 sm:px-6">
               <p className="text-decemberSky font-jakarta text-base font-medium">
-                Contractor | 5 minutes ago
+                Contractor+ | 5 minutes ago
               </p>
               <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize sm:text-[30px] md:text-[36px]">
                 Discover The Member Benefits Of USA Contracting!

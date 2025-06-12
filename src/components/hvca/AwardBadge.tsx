@@ -16,7 +16,7 @@ export default function AwardBadges() {
           <SoftwareUsed key={index} item={item} />
         ))}
       </div>
-      <div className="mt-10 hidden flex-col items-center gap-2 px-2 text-center md:flex">
+      <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">
         <FreeAccountButton text={"Get started FREE"} />
         <CardRequiredButton
           className="text-winterWay"

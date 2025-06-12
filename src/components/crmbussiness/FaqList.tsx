@@ -7,39 +7,40 @@ type FaqListProps = {
     question: string;
     answer: string;
     classNameQue?: string;
+    classNameAnswer?: string;
   };
   isOpen: boolean;
   onToggle: () => void;
   classNameQue?: string;
+  classNameAnswer?: string;
+  containerClassName?: string;
 };
 const FaqList: React.FC<FaqListProps> = ({
   data,
   isOpen,
   onToggle,
   classNameQue,
+  classNameAnswer,
+  containerClassName,
 }) => {
   return (
     <>
-      <div onClick={onToggle} className="mb-3 cursor-pointer">
-        <button className="flex w-full cursor-pointer items-center justify-between gap-5 py-2">
-          <h3
-            className={`${classNameQue} paragraph text-start !font-black !text-white`}
-          >
-            {data.question}
-          </h3>
+      <div onClick={onToggle} className={`px-4 ${containerClassName}`}>
+        <button
+          className={`${classNameQue} flex w-full cursor-pointer items-center justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black text-white lg:text-lg`}
+        >
+          {data.question}
           <span className="relative inline-block h-6 w-6">
             <FaqIcon isOpen={isOpen} />
           </span>
         </button>
         <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
-          <p className="text-decemberSky font-jakarta max-w-[1113px] pt-4 text-sm sm:text-base">
-            {data.answer?.split("<br/>").map((line, i) => (
-              <span key={i}>
-                {line}
-                <br />
-                <br />
-              </span>
-            ))}
+          <p
+            className={`text-decemberSky font-jakarta h-fit max-w-[1113px] px-2 pt-1 text-sm leading-[126%] md:text-base ${classNameAnswer} `}
+          >
+            {data.answer
+              ?.split("<br/>")
+              .map((line, i) => <span key={i}>{line}</span>)}
           </p>
         </AnimateHeight>
       </div>

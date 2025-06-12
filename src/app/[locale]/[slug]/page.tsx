@@ -130,7 +130,12 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               platforms={platforms}
               className="mx-auto w-full max-w-[889px]"
             />
-            <Faq faq={faq?.data?.[0]?.faqs} classNameQue="paragraph-text" />
+            <Faq
+              faq={faq?.data?.[0]?.faqs}
+              classNameQue=""
+              containerClassName="mb-[19px]"
+              classNameAnswer="!pt-1"
+            />
           </div>
           <BlogPosts
             data={crmPageContent?.data?.[0]?.blogs}

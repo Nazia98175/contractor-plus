@@ -29,7 +29,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
           <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
 
           {/* Image for mobile */}
-          <div className="mx-auto h-full min-h-[156px] w-full max-w-[518px] rounded-lg md:h-auto lg:min-h-[200px] xl:hidden xl:min-h-[245px]">
+          <div className="h-full min-h-[156px] w-full max-w-[518px] rounded-lg md:h-auto lg:min-h-[200px] xl:mx-auto xl:hidden xl:min-h-[245px]">
             <Image
               src={
                 `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
@@ -76,7 +76,10 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
       {/* Desktop image */}
       <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
         <Image
-          src={service.img || "/placeholder.png"}
+          src={
+            `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
+            "/placeholder.png"
+          }
           alt={service?.title || "service image"}
           width={518}
           height={302}

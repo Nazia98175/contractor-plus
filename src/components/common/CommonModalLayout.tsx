@@ -57,25 +57,25 @@ const CommonModalLayout: React.FC<CommonModalLayoutProps> = ({
         aria-hidden="true"
       />
       <div
-        className={`fixed inset-0 flex w-screen items-center justify-center p-4 z-[9999] ${containerClassName}`}
+        className={`fixed inset-0 z-[9999] flex w-screen items-center justify-center p-2 sm:p-4 ${containerClassName}`}
         onClick={handleOverlayClick}
       >
         <DialogPanel
-          className={`space-y-4 relative p-7 md:p-12 max-h-full flex transition-all duration-300 ease-in-out ${
+          className={`relative flex max-h-full space-y-4 p-0 transition-all duration-300 ease-in-out sm:p-7 md:p-12 ${
             animationState ? "scale-100 opacity-100" : "scale-95 opacity-0"
           } ${className}`}
         >
           <div
-            className={`max-h-full relative flex flex-col w-full rounded-2xl ${contentWrapperClassName}`}
+            className={`relative flex max-h-full w-full flex-col rounded-2xl ${contentWrapperClassName}`}
           >
             <button
               onClick={onClose}
-              className={`bg-white w-fit ml-auto rounded-full cursor-pointer p-1 absolute -top-8 -right-8 ${closeButtonClassName}`}
+              className={`absolute -top-8 right-0 ml-auto w-fit cursor-pointer rounded-full bg-white p-1 sm:-right-8 ${closeButtonClassName}`}
             >
               <ModalCrossIcon />
             </button>
             <div
-              className={`overflow-auto max-h-full h-full w-full bg-white rounded-2xl ${contentClassName}`}
+              className={`h-full max-h-full w-full overflow-auto rounded-lg bg-white sm:rounded-xl md:rounded-2xl ${contentClassName}`}
             >
               {children}
             </div>

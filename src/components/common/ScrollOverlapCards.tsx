@@ -18,7 +18,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   slug,
   theme,
 }) => {
-  console.log(fieldService,"field service data from api")
+  console.log(fieldService, "field service data from api");
   const t = useTranslations();
   useGSAP(() => {
     if (typeof window === "undefined") return;
@@ -30,6 +30,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         gsap.set(cards[i], {
           y: "100%",
           scale: 1,
+          rotation: 0,
         });
       }
       const scrollTimeline = gsap.timeline({
@@ -45,11 +46,13 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         const currentCard = cards[i];
         const nextCard = cards[i + 1];
         const position = i;
+        const rotation = i % 2 ? -5 : 5;
         scrollTimeline.to(
           currentCard,
           {
             scale: 0.8,
             duration: 1,
+            rotation: rotation,
             ease: "none",
           },
           position,
@@ -69,6 +72,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, [fieldServiceData]);
+  const curvePositions = [0, 50, 100];
   const className = theme === "dark" ? "field-service-card" : "wanting-more-bg";
   return (
     <>

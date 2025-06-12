@@ -40,7 +40,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
         <div className="trusted-gradient pointer-events-none absolute bottom-0 left-[0px] z-40 hidden h-full w-24 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="trusted-gradient pointer-events-none absolute right-[0px] bottom-0 z-40 hidden h-full w-24 rotate-180 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="w-full">
-          <Marquee speed={30} direction="right" pauseOnHover>
+          <Marquee pauseOnClick speed={30} direction="right" pauseOnHover>
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
                 key={review.id}

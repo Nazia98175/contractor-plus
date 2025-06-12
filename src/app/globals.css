@@ -367,10 +367,13 @@ html::-webkit-scrollbar {
     inset 0 0 5px #ffffff26;
 }
 .rfm-child {
-  @apply flex h-auto;
+  @apply flex !h-full;
+}
+.rfm-marquee {
+  @apply !items-stretch;
 }
 .rfm-initial-child-container {
-  @apply flex flex-col justify-center;
+  @apply flex items-stretch justify-items-normal;
 }
 .animate-border {
   @apply relative overflow-hidden;
@@ -832,8 +835,8 @@ html::-webkit-scrollbar {
   content: "";
   position: absolute;
   top: 0;
-  left: -150%;
-  width: 300%;
+  left: -100%;
+  width: 200%;
   height: 100%;
   background: linear-gradient(
     120deg,
@@ -846,7 +849,7 @@ html::-webkit-scrollbar {
 }
 
 .card-shine:hover::before {
-  animation: shine 0.75s linear forwards;
+  animation: shine 0.45s linear forwards;
 }
 
 @keyframes breathe {

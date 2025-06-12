@@ -20,13 +20,13 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
     <CommonModalLayout
       open={isOpen}
       onClose={onClose}
-      className="max-w-[768px] w-full p-3 sm:p-4 rounded-lg"
+      className="w-full max-w-[768px] rounded-lg sm:p-3 md:p-4"
     >
       <div className="aspect-video w-full">
         {embedUrl && (
           <iframe
             src={embedUrl}
-            className="w-full h-full rounded-lg"
+            className="h-full w-full rounded-lg"
             allowFullScreen
             title="Video player"
           ></iframe>

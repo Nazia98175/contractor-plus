@@ -1389,8 +1389,8 @@ export const RedClipIconMobile = ({ className = "" }) => (
       <path
         d="M-107.131 304.667L304.435 521.833L716 739"
         stroke="url(#paint0_linear_2110_17575)"
-        stroke-width="432"
-        stroke-linecap="round"
+        strokeWidth="432"
+        strokeLinecap="round"
       />
     </g>
     <defs>
@@ -1401,9 +1401,9 @@ export const RedClipIconMobile = ({ className = "" }) => (
         width="1431.22"
         height="1042.42"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"

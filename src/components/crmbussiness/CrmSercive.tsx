@@ -93,14 +93,12 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn }) => {
           </form>
         </CardReveal>
       </div>
-      <div className="pointer-events-none absolute top-[-11%] left-0 z-50 flex h-[67%] w-full rotate-180">
-        <CloudsAnimation
-          className="-bottom-[11%]"
-          imageClass="h-full z-20 !bottom-[-30px]"
-          cloud1Class="bottom-0"
-          cloud2Class="bottom-0"
-        />
-      </div>
+      <CloudsAnimation
+        className="pointer-events-none absolute top-[-11%] -bottom-[11%] left-0 z-50 flex h-[67%] w-full rotate-180"
+        imageClass="h-[50%] z-20 !bottom-[-30px]"
+        cloud1Class="bottom-0"
+        cloud2Class="bottom-0"
+      />
     </section>
   );
 };

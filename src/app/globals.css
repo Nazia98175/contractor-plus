@@ -1293,3 +1293,11 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.gg {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 71.47%,
+    #fff 81.73%
+  );
+  width: 100%;
+}

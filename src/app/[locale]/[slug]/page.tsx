@@ -1,3 +1,4 @@
+import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,

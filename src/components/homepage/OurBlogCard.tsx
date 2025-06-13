@@ -13,7 +13,7 @@ const OurBlogCard = ({
   return (
     <article
       key={blogListMobile?.[index]?.id}
-      className="relative h-fit w-full max-w-[406px] overflow-hidden md:h-[400px] xl:pt-10"
+      className="card-shine relative h-fit w-full max-w-[406px] cursor-pointer overflow-hidden md:h-[400px] xl:pt-10"
     >
       <img
         className="absolute top-16 right-0 w-full"

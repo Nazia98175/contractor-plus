@@ -65,7 +65,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />
       </span>
-      <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden w-full max-w-[463px] lg:block" />
+      <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block" />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
           <FooterLogoIcon />

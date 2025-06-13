@@ -2494,13 +2494,14 @@ export const FooterAnimatedIcon = () => (
     </defs>
   </svg>
 );
-export const BlueIcon = () => (
+export const BlueIcon = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="463"
+    width="100%"
     height="1002"
     viewBox="0 0 463 1002"
     fill="none"
+    className={className}
   >
     <g
       style={{ mixBlendMode: "plus-lighter" }}

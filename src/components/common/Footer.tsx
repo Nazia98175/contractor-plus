@@ -62,14 +62,10 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
 
   return (
     <footer className="no-scrollbar relative z-20 w-full overflow-y-visible py-10 md:py-[62px]">
-      {/* <ParticlesComponent id="star-particles" /> */}
       <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />
       </span>
-      <span className="pointer-events-none absolute top-[-364px] right-0 hidden lg:block">
-        <BlueIcon />
-      </span>
-
+      <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden w-full max-w-[463px] lg:block" />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
           <FooterLogoIcon />
@@ -126,7 +122,10 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           ))}
         </div>
 
-        <div className="mt-3 flex items-center justify-between gap-3 py-4">
+        <div className="mt-7 flex w-full flex-col items-center justify-between gap-4 lg:flex-row">
+          <p className="text-secondary hidden text-xs leading-[200%] lg:flex">
+            © {currentYear} {footer?.copyrightTxt}
+          </p>
           <div className="relative z-10 hidden items-center gap-3 lg:flex">
             <p className="text-secondary font-montserrat text-xs font-medium">
               {footer?.poweredBy}
@@ -140,24 +139,19 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="Powered by Logo"
             />
           </div>
-          <div className="flex w-full flex-col items-center justify-between gap-4 lg:w-fit lg:flex-row">
-            <div className="text-secondary font-montserrat flex flex-col-reverse items-center gap-4 text-xs font-medium lg:flex-row">
-              <p>
-                © {currentYear} {footer?.copyrightTxt}
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {footer?.bottomLinks?.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    href={item?.url}
-                    className="hover:text-romanRed transition-all duration-300"
-                  >
-                    {item?.urlText}
-                  </Link>
-                ))}
-              </div>
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
+            <div className="text-secondary flex flex-wrap justify-center gap-4 text-xs leading-[200%]">
+              {footer?.bottomLinks?.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item?.url}
+                  className="hover:text-romanRed transition-all duration-300"
+                >
+                  {item?.urlText}
+                </Link>
+              ))}
             </div>
-            <div className="flex gap-3">
+            <div className="sm:py-o flex gap-3 py-1">
               <Link href="https://x.com/">
                 <TwitterIcon />
               </Link>
@@ -165,19 +159,22 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 <LinkdinIcon />
               </Link>
             </div>
-            <div className="flex items-center gap-3 lg:hidden">
-              <p className="text-secondary font-montserrat text-xs font-medium">
-                {footer?.poweredBy}
-              </p>
-              <Image
-                height={72}
-                width={72}
-                unoptimized
-                className="w-full max-w-[72px]"
-                src="/images/webp/footer-logo.webp"
-                alt="Powered by Logo"
-              />
-            </div>
+          </div>
+          <p className="text-secondary flex text-xs leading-[200%] lg:hidden">
+            © {currentYear} {footer?.copyrightTxt}
+          </p>
+          <div className="relative z-10 flex items-center gap-3 pt-2.5 lg:hidden">
+            <p className="text-secondary font-montserrat text-xs font-medium">
+              {footer?.poweredBy}
+            </p>
+            <Image
+              height={72}
+              width={72}
+              unoptimized
+              className="mx-auto w-full max-w-[72px]"
+              src="/images/webp/footer-logo.webp"
+              alt="Powered by Logo"
+            />
           </div>
         </div>
       </div>

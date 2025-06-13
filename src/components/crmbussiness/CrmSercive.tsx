@@ -36,12 +36,12 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn, mobileBtn }) => {
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
       <div className="pt-[93px] pb-10 sm:py-[75px]">
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        <TextAnimation animateOnScroll={false} delay={0.2}>
           <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">
             {data?.title}
           </h3>
         </TextAnimation>
-        <TextAnimation animateOnScroll={true} delay={0.2}>
+        <TextAnimation animateOnScroll={false} delay={0.2}>
           <p className="paragraph-text text-secondary mb-7 text-center md:mb-[34px]">
             {data?.sub_title}
           </p>
@@ -73,17 +73,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn, mobileBtn }) => {
                   `${createBtn}`
                 )}
               </button>
-              <button
-                type="submit"
-                className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center sm:hidden md:mx-0 md:!w-auto"
-                disabled={loading}
-              >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  `${mobileBtn}`
-                )}
-              </button>
+
               <p className="hidden items-center gap-2 pt-3 md:flex">
                 <span>
                   <CheckIcon />
@@ -106,7 +96,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn, mobileBtn }) => {
           </form>
           <button
             type="submit"
-            className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center sm:hidden md:mx-0 md:!w-auto"
+            className="bg-red-linear primary-btn h-10 !w-full sm:!hidden md:mx-0 md:!w-auto"
             disabled={loading}
           >
             {loading ? (

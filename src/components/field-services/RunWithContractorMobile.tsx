@@ -50,7 +50,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                 <p className="font-myriad text-oldMoney pb-3 text-center text-base font-semibold sm:text-lg md:text-xl">
                   Your Way
                 </p>
-                <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+                <div className="your-way flex items-center gap-2 rounded-[10px] px-3 py-2">
                   <span>
                     {/* Green Dot Icon */}
                     <GreenDotIcon2 />

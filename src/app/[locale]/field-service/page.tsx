@@ -20,13 +20,11 @@ export const metadata = {
     "One command center to visualize and run your entire field operation",
 };
 
-interface PageParams {
-  params: {
-    locale?: string;
-  };
+interface Params {
+  params: Promise<{ locale: string }>;
 }
 
-const FieldServicesPage = async ({ params }: PageParams) => {
+const FieldServicesPage = async ({ params }: Params) => {
   const useParams = await params;
   const location = await getUserLoc();
   const faqitems = [

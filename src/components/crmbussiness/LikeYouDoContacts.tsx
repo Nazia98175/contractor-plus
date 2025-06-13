@@ -18,7 +18,7 @@ interface Props {
 
 const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
   return (
-    <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-10 sm:py-14 md:flex-row md:gap-10 lg:py-16">
+    <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:py-16">
       <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
         <TextAnimation animateOnScroll={true} delay={0.3}>
           <h3 className="text-winterWay heading">{data?.title}</h3>

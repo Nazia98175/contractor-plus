@@ -6,6 +6,7 @@ import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
 import TiltedCardEffect from "../common/TiltedCardEffect";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
+import Link from "next/link";
 
 // Define types for the show information
 interface Show {
@@ -212,7 +213,9 @@ const ContractorIndustrySlider: React.FC = () => {
         className="relative h-full w-full !py-10"
       >
         {showInfo.map((show, index) => (
-          <ContractorIndustrySliderCard show={show} key={index} />
+          <Link href={"#"} key={index}>
+            <ContractorIndustrySliderCard show={show} />
+          </Link>
         ))}
       </SliderLayout>
     </div>

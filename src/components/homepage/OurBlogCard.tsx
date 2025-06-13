@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const OurBlogCard = ({
@@ -11,7 +12,8 @@ const OurBlogCard = ({
   index: number;
 }) => {
   return (
-    <article
+    <Link
+      href={"#"}
       key={blogListMobile?.[index]?.id}
       className="card-shine relative h-fit w-full max-w-[406px] cursor-pointer overflow-hidden md:h-[400px] xl:pt-10"
     >
@@ -53,7 +55,7 @@ const OurBlogCard = ({
           {article.blogDescription}
         </p>
       </div>
-    </article>
+    </Link>
   );
 };
 

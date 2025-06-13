@@ -47,7 +47,7 @@ const RunWithContractor = () => {
         Contractor+.
       </h3>
       {/* Desktop view  */}
-      <div className="mx-auto hidden w-full max-w-[1181px] space-y-5 px-4 md:block">
+      <div className="mx-auto hidden w-full max-w-[1213px] space-y-5 px-4 md:block">
         <div className="grid grid-cols-2">
           <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
             Their Way
@@ -59,7 +59,7 @@ const RunWithContractor = () => {
         {run_contractor.map((item, index) => (
           <div
             key={index}
-            className="grid grid-cols-2 items-center gap-5 text-center"
+            className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
           >
             {/* Their way */}
             <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
@@ -78,7 +78,7 @@ const RunWithContractor = () => {
               <span>
                 <GreenArrowIcon />
               </span>
-              <div className="your-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+              <div className="your-way flex items-center gap-2 rounded-[10px] px-3 py-2">
                 <span>
                   {/* Green Dot Icon */}
                   <GreenDotIcon2 />

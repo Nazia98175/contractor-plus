@@ -7,12 +7,12 @@ const AnimatedShape = () => {
   const shape2Ref = useRef(null);
 
   useEffect(() => {
-    gsap.set(containerRef.current, { rotation: -10 });
+    gsap.set(containerRef.current, { rotation: -20 });
 
     const tl = gsap.timeline({
       repeat: -1,
       yoyo: true,
-      defaults: { ease: "power1.inOut", duration: 2 },
+      defaults: { ease: "power1.inOut", duration: 4 },
     });
 
     tl.to(containerRef.current, {
@@ -27,7 +27,7 @@ const AnimatedShape = () => {
     >
       <div
         ref={shape1Ref}
-        className="rectangle-shape absolute -bottom-0 h-[100%] w-full object-cover"
+        className="rectangle-shape absolute -bottom-0 h-full w-full object-cover"
       ></div>
     </div>
   );

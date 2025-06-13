@@ -119,7 +119,8 @@ export default function TextAnimation({
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 75%",
-            once: false,
+            once: true,
+            toggleActions: "play none none reset",
           },
         });
       } else {

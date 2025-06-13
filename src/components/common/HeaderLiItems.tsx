@@ -133,9 +133,10 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
                 key={index}
                 href={menuItem?.link || "#"}
                 onMouseEnter={handleMouseLeave}
-                className="header-li hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
+                className="header-li hover:text-superSilver group text-kuroiBlack relative flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
               >
                 {item?.mainTitle}
+                <span className="footer-li-hover"></span>
               </Link>
             );
           }

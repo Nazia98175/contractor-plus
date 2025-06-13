@@ -35,11 +35,11 @@ const CommonFaqLayout: React.FC<CommonFaqLayoutProps> = ({
         </h3>
       </PrimaryAnimatedText>
       <TextAnimation animateOnScroll={true} delay={0.2}>
-        <p className="paragraph-text text-secondary pt-4 text-center">
+        <p className="paragraph-text text-secondary pt-2 text-center sm:pt-4">
           {description}
         </p>
       </TextAnimation>
-      <div className="relative z-50 mx-auto max-w-[1190px] pt-[27px]">
+      <div className="relative z-50 mx-auto max-w-[1190px] pt-[23px] sm:pt-[27px] md:pt-8">
         {faqitems?.map((item, index) => (
           <HvacFaqList
             key={item.id}

@@ -33,7 +33,7 @@ const HvacFaqList: React.FC<FaqListProps> = ({
     <>
       <div
         onClick={onClick}
-        className={`mb-3 cursor-pointer rounded-lg px-4 py-3 transition-all duration-300 ease-in-out sm:mb-6 ${getVariantClass(
+        className={`mb-3 cursor-pointer rounded-lg px-4 py-3 transition-all duration-300 ease-in-out sm:mb-5 ${getVariantClass(
           variant,
           isOpen,
         )}`}

@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Blog {
   id: string | number;
   image: string;
   title: string;
+  href: string;
   category: string;
   date: string;
   descrition: string;
@@ -22,7 +24,8 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
   textClass = "",
 }) => {
   return (
-    <article
+    <Link
+      href={blog.href}
       key={blog.id}
       className={`${bgClass} card-shine relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 sm:flex-row`}
     >
@@ -44,7 +47,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
           {blog.descrition}
         </p>
       </div>
-    </article>
+    </Link>
   );
 };
 

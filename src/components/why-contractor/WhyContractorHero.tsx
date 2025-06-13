@@ -1,69 +1,130 @@
-import React from "react";
-import {
-  Claud2Icon,
-  Claud3Icon,
-  Claud4Icon,
-  ClaudIcon,
-  SmallIcon,
-} from "../common/Icons";
+"use client";
+
+import { useState, useRef } from "react";
+import { LogoIcon } from "../common/Icons";
 import Image from "next/image";
 
 const WhyContractorHero = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
-    <section className="relative h-[98vh] overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 z-[1] h-full max-h-[600px] w-full max-w-[1138px] -translate-x-1/2 rounded-[1138px] bg-[rgba(105,105,105,0.50)] blur-[150px] sm:max-h-[474px]"></div>
-      {/* Left icon */}
-      <div className="absolute top-[10%] left-0 h-fit w-full max-w-[80%] sm:max-w-[626px]">
-        <ClaudIcon />
-      </div>
-
-      {/* Right icon */}
-      <div className="absolute top-[7%] right-0 h-auto w-full max-w-[70%] sm:top-[5%] sm:max-w-[626px]">
-        <Claud2Icon />
-      </div>
-      <div className="absolute top-[25%] right-0 h-auto w-full max-w-[70%] sm:top-[32%] sm:max-w-[428px] xl:right-[20%]">
-        <SmallIcon />
-      </div>
-
-      <div className="absolute bottom-0 left-0 h-fit w-full md:w-[68%]">
-        <Claud3Icon />
-      </div>
-      <div className="absolute right-0 bottom-0 h-fit w-[140%] object-contain sm:w-full md:w-[90%]">
-        <Claud4Icon />
-      </div>
-
-      {/* Background tree image */}
-      <div className="absolute bottom-0 left-0 z-[3] h-[297px] w-full">
-        <Image
-          src="/images/svg/tree.svg"
-          alt="Decorative tree graphic"
-          fill
-          className="h-full w-full object-cover"
-          priority
-        />
-      </div>
-      <div className="absolute bottom-[4%] left-1/2 z-[2] min-h-[300px] w-full max-w-[300px] -translate-x-1/2">
-        <Image
-          src="/images/webp/file.webp"
-          alt="File"
-          fill
-          className="h-full w-full object-cover"
-          priority
-        />
-      </div>
-
-      <div className="relative z-10 flex h-full items-center justify-center font-bold text-white">
-        <h2
-          style={{
-            background: "linear-gradient(180deg, #0C0D11 4.55%, #FFF 115.15%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-          className="main-heading w-fit"
-        >
-          Why Contractor+?
+    <section className="pb-14 sm:pb-20 pt-[88px] sm:pt-[127px] bg-[url('/images/png/why-contractor-hero-bg.png')] bg-top bg-cover">
+      <div className="mx-auto max-w-[830px] px-2">
+        <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
+          You can't scale a contracting business built on bottlenecks
         </h2>
+        <p className="hero-description mb-8 text-center !text-[#8A8E91] sm:mb-[42px]">
+          Hard work got you here. But it's not enough to get you{" "}
+          <span className="text-decemberSky italic">where you want to go.</span>
+        </p>
+        <div className="relative">
+          <div className="absolute top-1/2 left-0 h-auto w-full max-w-[274px] translate-y-[-50%] blur-[12px]">
+            <Image
+              className="w-full"
+              src={"/images/png/why-contactor-hero-img-1.png"}
+              height={100}
+              width={100}
+              alt="WhyContractorHeroImg"
+            />
+          </div>
+          <div className="absolute top-1/2 right-0 h-auto w-full max-w-[274px] translate-y-[-50%] blur-[12px]">
+            <Image
+              className="w-full"
+              src={"/images/png/why-contactor-hero-img-2.png"}
+              height={100}
+              width={100}
+              alt="WhyContractorHeroImg"
+            />
+          </div>
+          <div className="relative mx-auto h-[306px] max-w-[526px] overflow-hidden rounded-lg bg-[#00000033]">
+            <video
+              ref={videoRef}
+              className="block h-full w-full object-cover"
+              onEnded={() => setIsPlaying(false)}
+              playsInline
+            >
+              <source src="/video/hero-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div
+              className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
+                isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
+              }`}
+              onClick={handlePlayPause}
+            >
+              <button
+                className="flex size-[60px] items-center justify-center rounded-full bg-[#FFFFFF1F] backdrop-blur-[24px] transition-transform hover:scale-110"
+                aria-label={isPlaying ? "Pause video" : "Play video"}
+              >
+                {isPlaying ? (
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                  </svg>
+                ) : (
+                  <svg
+                    className="ps-1"
+                    width="22"
+                    height="26"
+                    viewBox="0 0 22 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.64417 25.6281C2.95692 26.0824 2.26142 26.109 1.55768 25.7078C0.853933 25.3066 0.501375 24.686 0.5 23.8459V2.14511C0.5 1.30643 0.852559 0.685805 1.55768 0.283239C2.2628 -0.119328 2.9583 -0.0927691 3.64417 0.362913L20.4475 11.2133C21.066 11.6327 21.3753 12.2267 21.3753 12.9955C21.3753 13.7643 21.066 14.3584 20.4475 14.7777L3.64417 25.6281Z"
+                      fill="white"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+            <div className="absolute right-0 bottom-0 left-0 bg-[#00000052] p-2 backdrop-blur-[42px]">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-white xl:text-xl">
+                  Chad Cranfill
+                </h3>
+                <div className="hidden items-center gap-2 text-xs text-white sm:flex sm:text-sm">
+                  <span className="opacity-[32%]">Switched From JobTer</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold">→</span>
+                    <span className="max-w-20">
+                      {" "}
+                      <LogoIcon />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-superSilver text-xs sm:mt-2 sm:text-sm max-sm:my-2">
+                Owner, Cranfill Construction
+              </p>
+              <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">
+                <span className="opacity-[32%]">Switched From JobTer</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold">→</span>
+                  <span className="max-w-20">
+                    {" "}
+                    <LogoIcon />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

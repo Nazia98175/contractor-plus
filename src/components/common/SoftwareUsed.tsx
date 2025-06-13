@@ -5,9 +5,10 @@ interface SoftwareItem {
   icon: React.ReactNode;
   start: number;
   end: number;
-  suffix: string;
-  title: string;
+  suffix?: string;
+  title?: string;
   description: string;
+  isRange?: boolean;
 }
 interface SoftwareUsedProps {
   item: SoftwareItem;
@@ -22,11 +23,16 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
   return (
     <article
       ref={ref}
-      className="flex flex-col items-center gap-2 rounded-xl p-4 text-center transition"
+      className="flex flex-col items-center justify-between gap-2 rounded-xl p-4 text-center transition"
     >
       <span className="fill-white">{item.icon}</span>
-      <h3 className="md:text-lightBlack countup-title text-white">
-        {inView ? (
+
+      <h3 className="md:text-winterWay countup-title text-white">
+        {item.isRange ? (
+          // Display range directly if isRange is true
+          <span>{`${item.start}–${item.end}`}</span>
+        ) : inView ? (
+          // Use CountUp for single numbers
           <CountUp
             start={item.start}
             end={item.end}
@@ -36,7 +42,9 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
         ) : (
           `${item.end}${item.suffix}`
         )}{" "}
-        <span className="inline-block px-2">{item.title}</span>
+        <span className="inline-block text-2xl font-semibold">
+          {item.title}
+        </span>
       </h3>
       <p className="countup-desc md:text-winterWay text-decemberSky">
         {item.description}

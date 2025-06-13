@@ -39,7 +39,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-style text-center">{data?.sub_title}</p>
       </TextAnimation>
-      <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-5 px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 xl:mt-[52px] xl:mb-[70px]">
+      <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-[18px] px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 md:gap-[30px] xl:mt-[52px] xl:mb-[70px]">
         {data?.cards?.map((item: any, index: any) => (
           <article
             key={index}

@@ -65,7 +65,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />
       </span>
-      <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden w-full max-w-[463px] lg:block" />
+      <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block" />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
           <FooterLogoIcon />
@@ -92,7 +92,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 onClick={() => toggleSection(section.title)}
                 className="flex w-full flex-col justify-between px-4 py-2 text-start"
               >
-                <div className="flex w-full items-center justify-between">
+                <div className="mx-auto flex w-fit items-center justify-between">
                   <h3 className="text-base font-bold text-white">
                     {section.title}
                   </h3>
@@ -151,7 +151,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 </Link>
               ))}
             </div>
-            <div className="sm:py-o flex gap-3 py-1">
+            <div className="hidden gap-3 py-1 sm:flex sm:py-0">
               <Link href="https://x.com/">
                 <TwitterIcon />
               </Link>
@@ -163,6 +163,14 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           <p className="text-secondary flex text-xs leading-[200%] lg:hidden">
             © {currentYear} {footer?.copyrightTxt}
           </p>
+          <div className="flex gap-3 py-1 sm:hidden sm:py-0">
+            <Link href="https://x.com/">
+              <TwitterIcon />
+            </Link>
+            <Link href="https://www.linkedin.com/">
+              <LinkdinIcon />
+            </Link>
+          </div>
           <div className="relative z-10 flex items-center gap-3 pt-2.5 lg:hidden">
             <p className="text-secondary font-montserrat text-xs font-medium">
               {footer?.poweredBy}

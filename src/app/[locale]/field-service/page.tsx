@@ -132,7 +132,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     },
   ];
   return (
-    <>
+    <main className="overflow-hidden">
       <FieldServicesHero />
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
@@ -141,7 +141,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <TimmingEffect />
       <div className="relative overflow-hidden">
         <NeverLookBack />
-        <ThousandsReviews data={OurReviewList} reviews={dummyReviews} />
+        {/* <ThousandsReviews data={OurReviewList} reviews={dummyReviews} /> */}
         <HvacSoftwareService />
       </div>
       {/* <HvacSoftwareService /> */}
@@ -156,7 +156,7 @@ const FieldServicesPage = async ({ params }: Params) => {
         issection={false}
       />
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
-    </>
+    </main>
   );
 };
 

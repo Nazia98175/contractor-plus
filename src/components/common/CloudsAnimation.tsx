@@ -1,4 +1,3 @@
-import React from "react";
 const CloudsAnimation = ({
   className = "",
   cloud1Class = "",
@@ -6,6 +5,7 @@ const CloudsAnimation = ({
   cloud3Class = "",
   cloud4Class = "",
   imageClass = "",
+  imageClassMobile = "",
 }: {
   className?: string;
   cloud1Class?: string;
@@ -13,6 +13,7 @@ const CloudsAnimation = ({
   cloud3Class?: string;
   cloud4Class?: string;
   imageClass?: string;
+  imageClassMobile?: string;
 }) => {
   return (
     <div
@@ -31,8 +32,13 @@ const CloudsAnimation = ({
         className={`${cloud4Class} clouds-3 absolute right-0 bottom-0 left-0 w-full bg-[url("/images/png/pngwing-3.png")] bg-contain bg-repeat-x opacity-30 grayscale-75 sm:h-20 md:h-28 lg:h-[160px]`}
       ></div>
       <img
-        className={`${imageClass} absolute bottom-4 left-0 h-28 w-full object-left-bottom`}
+        className={`${imageClass} absolute bottom-4 left-0 hidden h-28 w-full object-left-bottom md:flex`}
         src="/images/png/cloud-layer.png"
+        alt="cloud-layer"
+      />
+      <img
+        className={`${imageClassMobile} absolute bottom-4 left-0 flex h-full w-full object-left-bottom`}
+        src="/images/png/cloud-layer-mobile.png"
         alt="cloud-layer"
       />
     </div>

@@ -5,16 +5,22 @@ interface FreeAccountButtonProps {
   className?: string;
   text: string;
   showIcon?: boolean;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
   onClick,
   text = "",
   className,
   showIcon = true,
+  disabled,
+  type,
 }) => {
   return (
     <>
       <button
+        type={type}
+        disabled={disabled}
         onClick={onClick}
         className={`primary-btn bg-red-linear h-[40px] gap-2 ${className}`}
       >

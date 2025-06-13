@@ -128,6 +128,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
             <CrmSercive
               createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
+              mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.crmService}
             />

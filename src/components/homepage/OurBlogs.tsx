@@ -84,13 +84,10 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             </h2>
           </PrimaryAnimatedText>
           <div className="hidden md:block">
-            <PrimaryLink
-              href="#"
-              className="bg-red-linear primary-btn h-10 gap-2"
-            >
+            <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
-            </PrimaryLink>
+            </button>
           </div>
         </div>
         <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
@@ -98,13 +95,10 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             {blogHeading?.[0]?.title}
           </h2>
           <div className="hidden md:block">
-            <PrimaryLink
-              href="#"
-              className="bg-red-linear primary-btn h-10 gap-2"
-            >
+            <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}
               <BlogBtnIcon />
-            </PrimaryLink>
+            </button>
           </div>
         </div>
 

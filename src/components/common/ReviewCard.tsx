@@ -43,8 +43,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
               className="max-w-[42px] rounded-full object-contain"
             />
             <div>
-              <div className="flex items-center gap-3">
-                <p className="text-lightBlack max-w-[190px] truncate text-base font-medium text-nowrap">
+              <div className="flex items-center gap-2">
+                <p className="text-lightBlack max-w-[160px] truncate text-base font-medium text-nowrap">
                   {review.userName}
                 </p>
                 {review.isModal && (
@@ -56,12 +56,12 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
                   </span>
                 )}
               </div>
-              <p className="text-secondary truncate pt-1 text-xs font-medium">
+              <p className="text-secondary max-w-[160px] truncate pt-1 text-xs font-medium text-nowrap">
                 {review.userRole}
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-[2px]">
             {renderStars(review.rating)}
           </div>
         </div>

@@ -15,6 +15,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
   const embedUrl = videoUrl?.includes("youtube.com/watch")
     ? videoUrl.replace("watch?v=", "embed/")
     : videoUrl;
+  console.log(videoUrl, "video");
 
   return (
     <CommonModalLayout

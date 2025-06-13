@@ -10,82 +10,78 @@ import {
 import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
 import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
+import { reverseGeocode } from "@/services/map";
 
-interface MaxMindLocation {
-  city?: {
-    geoname_id: number;
-    names: {
-      en: string;
-      [key: string]: string;
-    };
-  };
-  continent?: {
-    code: string;
-    geoname_id: number;
-    names: {
-      en: string;
-      [key: string]: string;
-    };
-  };
-  country?: {
-    iso_code: string;
-    geoname_id: number;
-    names: {
-      en: string;
-      [key: string]: string;
-    };
-  };
-  location?: {
-    accuracy_radius: number;
-    latitude: number;
-    longitude: number;
-    time_zone: string;
-  };
-  postal?: {
-    code: string;
-  };
-  subdivisions?: Array<{
-    iso_code: string;
-    geoname_id: number;
-    names: {
-      en: string;
-      [key: string]: string;
-    };
-  }>;
-  traits?: {
-    autonomous_system_number?: number;
-    autonomous_system_organization?: string;
-    connection_type?: string;
-    isp?: string;
-    organization?: string;
-    ip_address?: string;
-    network?: string;
-  };
-  maxmind?: {
-    queries_remaining: number;
-  };
+interface GeolocationData {
+  latitude: number;
+  longitude: number;
+  city?: string;
+  country?: string;
 }
 
-interface Props {
-  location: MaxMindLocation;
-}
-
-const FieldServicesHero = ({location}: Props) => {
+const FieldServicesHero = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [location, setLocation] = useState<GeolocationData | null>(null);
+  const [mapKey, setMapKey] = useState(0); // Key to force map reload
  
+  // Get user's geolocation
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          
+          // Get city and country from reverse geocoding
+          const { city, country } = await reverseGeocode(latitude, longitude);
+          
+          setLocation({
+            latitude,
+            longitude,
+            city,
+            country,
+          });
+          // Reload map to ensure pins become visible
+          setMapKey(prev => prev + 1);
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+          // Fallback to default location (Delhi, India)
+          setLocation({
+            latitude: 28.6139,
+            longitude: 77.2090,
+            city: "Delhi",
+            country: "IN",
+          });
+          setMapKey(prev => prev + 1);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 600000
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+      // Fallback to default location
+      setLocation({
+        latitude: 28.6139,
+        longitude: 77.2090,
+        city: "Delhi",
+        country: "IN",
+      });
+      setMapKey(prev => prev + 1);
+    }
+  }, []);
 
- 
-  // Default location (Delhi, India)
   // Process location data
   const processedLocation = useMemo(() => {
-    const latitude = location?.location?.latitude;
-    const longitude = location?.location?.longitude;
+    if (!location) return null;
 
     return {
-      latitude,
-      longitude,
-      city: location.city?.names?.en,
-      country: location.country?.iso_code,
+      latitude: location.latitude,
+      longitude: location.longitude,
+      city: location.city,
+      country: location.country,
     };
   }, [location]);
 
@@ -98,10 +94,12 @@ const FieldServicesHero = ({location}: Props) => {
       { id: 4, name: "Lisa Garcia", initials: "LG", color: "#96CEB4" },
       { id: 5, name: "John Smith", initials: "JS", color: "#FFEAA7" },
     ];
- // Only generate positions if we have valid coordinates
+
+    // Only generate positions if we have valid coordinates
     if (!processedLocation?.latitude || !processedLocation?.longitude) {
       return [];
     }
+    
     // Generate positions within a radius around the actual location
     return baseUsers.map((user, index) => {
       // Create a circle of positions around the center
@@ -129,22 +127,25 @@ const FieldServicesHero = ({location}: Props) => {
     console.error("Map error:", event);
     setIsLoading(false);
   }, []);
+
   console.log(processedLocation, "location");
+
   return (
     <section className="relative overflow-hidden">
       {/* Map Background */}
       <div className="absolute inset-0 h-full w-full">
-        {isLoading && (
+        {(isLoading || !location) && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-black">
             <div className="text-center">
               <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-white"></div>
-              {/* <p className="text-white">Loading field operations...</p> */}
+              <p className="text-white">Getting your location...</p>
             </div>
           </div>
         )}
 
         {location && (
           <Map
+            key={mapKey} // Force reload when key changes
             initialViewState={{
               longitude: processedLocation?.longitude,
               latitude: processedLocation?.latitude,
@@ -274,16 +275,18 @@ const FieldServicesHero = ({location}: Props) => {
       </div>
 
       {/* City Label - Middle Right */}
-      {processedLocation.city && processedLocation.country && (
+      {processedLocation?.city && (
         <div className="absolute top-1/2 right-10 z-20 -translate-y-1/2 transform">
           <div className="flex items-center space-x-2 rounded-lg border border-gray-600 bg-[rgba(255,255,255,0.1)] px-4 py-2 text-white backdrop-blur-sm">
             <div className="h-2 w-2 rounded-full bg-white"></div>
             <span className="text-sm font-medium">
-              {processedLocation.city}, {processedLocation.country}
+              {processedLocation.city}
+              {processedLocation.country && `, ${processedLocation.country}`}
             </span>
           </div>
         </div>
       )}
+
       {/* Gradient overlay for better text readability */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
@@ -329,3 +332,4 @@ const FieldServicesHero = ({location}: Props) => {
 };
 
 export default FieldServicesHero;
+

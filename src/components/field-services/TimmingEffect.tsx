@@ -49,7 +49,7 @@ const TimmingEffect = () => {
     },
   ];
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section id="h-screen" className="relative overflow-hidden bg-white">
       <h2
         style={{
           background:
@@ -65,7 +65,7 @@ const TimmingEffect = () => {
       <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
         Here’s what it feels like when everything just works
       </p>
-      <div className="relative mt-10 flex h-[80vh] flex-col items-center justify-center overflow-hidden md:justify-end md:overflow-visible">
+      <div className="relative mt-10 flex h-[80vh] flex-col items-center justify-center overflow-hidden md:overflow-visible">
         {/* SUN IMAGE  */}
         <div className="sun-bg absolute -top-[5%] -right-[20%] z-[3] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:h-[400] xl:w-[400px]"></div>
         {/* TOP WHITE BLUR LINE  */}
@@ -88,8 +88,26 @@ const TimmingEffect = () => {
           alt="Claud For design"
         />
         <div className="relative z-20 mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
-          <div className="text-phantom text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
-            07 : 00 AM
+          <div className="text-phantom flex text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
+            <div className="flex h-[45px] overflow-hidden flex-col">
+            <span>07</span>
+            <span>08</span>
+            <span>09</span>
+            <span>10</span>
+            <span>11</span>
+            <span>12</span>
+            <span>01</span> 
+            <span>02</span>
+            <span>03</span>
+            <span>04</span>
+            <span>05</span>
+             </div> : <div className="flex h-[45px] overflow-hidden flex-col">
+              <div>00</div><div>00</div><div>00</div><div>00</div><div>00</div> </div> <div>
+                <div className="flex overflow-hidden flex-col h-[45px]"> 
+                  <div>AM</div>
+                <div>PM</div>
+                 </div>
+              </div>
           </div>
           <p className="text-secondary mt-6 mb-2 text-center text-sm leading-[110%] font-medium md:text-lg lg:text-[22px]">
             You check the live crew map, see who’s already moving, drag

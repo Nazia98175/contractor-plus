@@ -8,6 +8,7 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Link from "next/link";
+import AnimatedShape from "./AnimatedShape";
 interface TheHeroProps {
   hero: any;
 }
@@ -142,15 +143,15 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           delay={0.9}
           animateOnScroll={false}
         >
-          <div className="relative z-30 mx-auto hidden max-w-[900px] pt-9 md:block">
+          <div className="relative z-30 mx-auto mt-9 hidden max-w-[900px] overflow-hidden rounded-[55px] border-4 border-[#D7D7D7] p-4 md:block">
             <Image
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-[45px] object-cover"
               src="/images/webp/crm-hero.webp"
               width={900}
               height={616}
               alt="crm-hero"
-              priority
             />
+            <AnimatedShape />
           </div>
         </CardReveal>
       </div>

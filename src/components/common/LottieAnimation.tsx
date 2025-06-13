@@ -18,6 +18,7 @@ const LottieAnimation = ({
   const lottieRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,24 +39,27 @@ const LottieAnimation = ({
     };
   }, []);
 
+  // Single useEffect to handle animation
   useEffect(() => {
     if (lottieRef.current) {
-      if (isVisible) {
+      if (isVisible && !hasPlayed) {
+        // Play only if visible AND hasn't played before
         lottieRef.current.goToAndPlay(0, true);
-        console.log("start animation");
-      } else {
+        setHasPlayed(true);
+      } else if (!isVisible && !hasPlayed) {
+        // Pause only if not visible and hasn't played yet
         lottieRef.current.pause();
-        console.log("Paused animation");
       }
+      // If hasPlayed is true, do nothing (keep it in its final state)
     }
-  }, [isVisible]);
+  }, [isVisible, hasPlayed]);
 
   return (
     <div className={className} ref={containerRef}>
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
-        autoplay={autoplay}
+        autoplay={false} // Always false to control manually
         loop={loop}
       />
     </div>

@@ -7,6 +7,7 @@ import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+import Link from "next/link";
 interface TheHeroProps {
   hero: any;
 }
@@ -63,7 +64,10 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             delay={0.6}
             animateOnScroll={false}
           >
-            <div className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0">
+            <Link
+              href=""
+              className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
+            >
               <Image
                 src="/images/webp/play-google.webp"
                 alt="google icon"
@@ -77,7 +81,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
                   </span>
                 ))}
               </div>
-            </div>
+            </Link>
           </CardReveal>
           <CardReveal
             staggerDelay={0.5}
@@ -86,7 +90,10 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             delay={0.8}
             animateOnScroll={false}
           >
-            <div className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0">
+            <Link
+              href=""
+              className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
+            >
               <Image
                 src="/images/svg/Apple-Icon.svg"
                 alt="google icon"
@@ -100,7 +107,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
                   </span>
                 ))}
               </div>
-            </div>
+            </Link>
           </CardReveal>
           <CardReveal
             staggerDelay={0.6}

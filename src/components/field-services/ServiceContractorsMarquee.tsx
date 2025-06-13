@@ -4,7 +4,7 @@ import TrustedServiceCard from "../crmbussiness/TrustedServiceCard";
 
 const ServiceContractorsMarquee = () => {
   return (
-    <section className="">
+    <section>
       <h3 className="main-heading section-heading gradient-white text-center">
         Trusted by over 50,000 build and service contractors
       </h3>

@@ -21,9 +21,7 @@ export const metadata = {
 };
 
 interface Params {
-  
-    params: Promise<{ locale: string;}>;
-
+  params: Promise<{ locale: string }>;
 }
 
 const FieldServicesPage = async ({ params }: Params) => {
@@ -136,7 +134,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   return (
     <>
       <FieldServicesHero />
-      {/* <ServiceContractorsMarquee />
+      <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />
       <RunWithContractor />
@@ -145,7 +143,7 @@ const FieldServicesPage = async ({ params }: Params) => {
         <NeverLookBack />
         <ThousandsReviews data={OurReviewList} reviews={dummyReviews} />
         <HvacSoftwareService />
-      </div> */}
+      </div>
       {/* <HvacSoftwareService /> */}
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq

@@ -50,7 +50,6 @@ const TimmingEffect = () => {
   ];
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="sun-bg absolute top-0 -right-[13%] z-[1] h-[400] w-[400px] rounded-full"></div>
       <h2
         style={{
           background:
@@ -59,29 +58,37 @@ const TimmingEffect = () => {
           backgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
-        className="section-heading relative z-[4] text-center"
+        className="section-heading relative z-[4] px-2 text-center"
       >
         A system that finally connects field and office
       </h2>
-      <p className="text-darkness relative z-[4] mt-5 text-center text-lg font-semibold">
+      <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
         Here’s what it feels like when everything just works
       </p>
-      <div className="relative mt-10 flex h-[80vh] flex-col items-center justify-end overflow-visible">
-        <div className="absolute -top-[25%] left-1/2 z-[3] h-[250px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[25px]"></div>
-        <div className="absolute -bottom-[25%] left-1/2 z-[3] h-[250px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[25px]"></div>
+      <div className="relative mt-10 flex h-[80vh] flex-col items-center justify-center overflow-hidden md:justify-end md:overflow-visible">
+        {/* SUN IMAGE  */}
+        <div className="sun-bg absolute -top-[5%] -right-[20%] z-[3] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:h-[400] xl:w-[400px]"></div>
+        {/* TOP WHITE BLUR LINE  */}
+        <div className="absolute -top-[17%] left-1/2 z-[3] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
+        {/* BOTTOM WHITE BLUR LINE  */}
+        <div className="absolute -bottom-[25%] left-1/2 z-[3] h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[25px] md:h-[250px]"></div>
+
+        {/* ORANGE BLUR LINEAR BACKGROUND  */}
         <div className="sun-reflect absolute right-0 h-full w-full rotate-180"></div>
+        {/* CLAUD IMAGE 1  */}
         <img
-          className="absolute top-0 right-0 z-[2] max-h-[150px] max-w-[500px] object-cover"
+          className="absolute top-0 right-[4%] z-[2] max-h-[150px] max-w-[500px] object-cover opacity-40 md:right-0 md:opacity-100"
           src="/images/png/timming-effect-cloud-2.png"
-          alt=""
+          alt="Claud For design"
         />
+        {/* CLAUD IMAGE 1  */}
         <img
-          className="absolute top-0 left-0 z-[1] max-h-[305px] w-full object-center"
+          className="absolute top-0 left-0 z-[1] max-h-[305px] w-full object-center opacity-40 md:opacity-100"
           src="/images/webp/timming-effect-cloud-1.webp"
-          alt=""
+          alt="Claud For design"
         />
         <div className="relative z-20 mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
-          <div className="text-phantom text-center text-[42px] font-semibold -tracking-[0.84px]">
+          <div className="text-phantom text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
             07 : 00 AM
           </div>
           <p className="text-secondary mt-6 mb-2 text-center text-sm leading-[110%] font-medium md:text-lg lg:text-[22px]">
@@ -97,7 +104,7 @@ const TimmingEffect = () => {
         </div>
       </div>
 
-      <div className="relative z-[3] flex flex-col items-center justify-center">
+      <div className="relative z-[3] flex flex-col items-center justify-center px-2">
         <Button variant="primary" className="mt-3 mb-[6px]">
           <span className="hidden sm:flex">Get started FREE</span>
           <span className="flex sm:hidden">Download FREE App</span>

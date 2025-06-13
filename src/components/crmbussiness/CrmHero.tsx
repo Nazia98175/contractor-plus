@@ -45,7 +45,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
         </div>
         <div className="px-2 pt-8 md:pt-0">
           <TextAnimation delay={0.2} animateOnScroll={false}>
-            <h2 className="gradient-2 main-heading mx-auto mb-2 w-fit text-start md:mb-4 md:text-center lg:mb-[26px]">
+            <h2 className="gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]">
               {hero?.heroTitle}
             </h2>
           </TextAnimation>
@@ -108,9 +108,19 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             distance={50}
             delay={1.0}
             animateOnScroll={false}
+            className="w-full sm:w-fit"
           >
             <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
-              <FreeAccountButton text={hero?.createBtn} />
+              <FreeAccountButton
+                className="!hidden sm:!flex"
+                text={hero?.createBtn}
+                showIcon={false}
+              />
+              <FreeAccountButton
+                showIcon={false}
+                className="!flex w-full sm:!hidden"
+                text={hero?.mobileBtn}
+              />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
                 text={hero?.ncc_txt}

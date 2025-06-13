@@ -3,6 +3,7 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
+import FreeAccountButton from "../common/FreeAccountButton";
 
 const FeatureItem = ({ text }: { text: string }) => (
   <article className="bg-doctor2 text-lightBlack text-lightblack mx-2 flex w-full max-w-[500px] items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">
@@ -62,18 +63,21 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
 
       {/* Heading + Paragraph */}
       <div className="relative z-10 px-2 md:-mt-3">
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={false} delay={0.3}>
           <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit text-center !font-black lg:!font-semibold">
             {trackProperties?.title}
           </h2>
         </TextAnimation>
 
-        <TextAnimation animateOnScroll={true} delay={0.3}>
+        <TextAnimation animateOnScroll={false} delay={0.3}>
           <p className="paragraph-style mx-auto max-w-[950px] text-center">
             {trackProperties?.sub_title}
           </p>
         </TextAnimation>
-
+        <FreeAccountButton
+          className="mt-3 !flex gap-1.5 sm:!hidden"
+          text={trackProperties?.mobileBtn}
+        />
         {/* <div className="mt-3.5 w-full sm:mt-9">
           <Marquee speed={30} direction="right" pauseOnHover>
             {trackProperties?.cards.map((text: any, index: any) => (

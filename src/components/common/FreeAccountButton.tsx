@@ -9,16 +9,18 @@ interface FreeAccountButtonProps {
 const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
   onClick,
   text = "",
-  className = "bg-red-linear primary-btn h-[40px] gap-2",
+  className,
   showIcon = true,
 }) => {
   return (
     <>
-      <Button onClick={onClick} className={className}>
-        <span className="hidden lg:block">{text}</span>
-        <span className="block lg:hidden">{text}</span>
+      <button
+        onClick={onClick}
+        className={`primary-btn bg-red-linear h-[40px] gap-2 ${className}`}
+      >
+        {text}
         {showIcon && <SideIcon />}
-      </Button>
+      </button>
     </>
   );
 };

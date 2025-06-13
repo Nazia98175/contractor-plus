@@ -68,10 +68,6 @@
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
-  --breakpoint-2500: 2500px;
-  --breakpoint-3500: 3500px;
-  --breakpoint-4500: 4500px;
-  --breakpoint-3500: 5500px;
 
   --background-image-red-linear: linear-gradient(
     262deg,
@@ -197,6 +193,9 @@ body {
 }
 .primary-btn {
   @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:w-fit sm:py-2.5;
+}
+.secondary-btn {
+  @apply font-montserrat w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:flex sm:w-fit sm:py-2.5;
 }
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;

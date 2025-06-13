@@ -101,6 +101,20 @@ const TimmingEffect = () => {
             src="/images/webp/timing.webp"
             alt="Timing Image"
           />
+
+          {/* {to-do : add timing-4 to timing-9 for images } */}
+          {/* <Image
+            width={611}
+            height={245}
+            src="/images/webp/bigchief.webp"
+            alt="Timing Image"
+          />
+          <Image
+            width={611}
+            height={245}
+            src="/images/webp/timing-3.webp"
+            alt="Timing Image"
+          /> */}
         </div>
       </div>
 

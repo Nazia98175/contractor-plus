@@ -79,6 +79,11 @@
     rgba(12, 13, 17, 0) 13.17%,
     #0c0d11 95.85%
   );
+  --background-image-black-fade-new: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 13.17%,
+    #0c0d11 80.92%
+  );
 
   --background-image-white-linear: linear-gradient(
     0deg,

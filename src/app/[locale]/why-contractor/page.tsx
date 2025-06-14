@@ -31,7 +31,9 @@ const WhyContractorPage = () => {
         <IndustryShifted />
         <AnimationHeader />
       </main>
-      <main className="bg-kuroiBlack pt-[67px] sm:pt-[157px]">
+      <main className="bg-kuroiBlack pt-[67px] sm:pt-[157px] relative">
+        <span className="w-[1px] h-full bg-wallStreet block absolute z-[1] top-[-9%] left-1/2 translate-x-[-50%]"></span>
+        <span className="w-[1px] h-[18px] rounded-full block absolute z-[1] top-[-9%] left-1/2 translate-x-[-50%] bg-gradient-to-br from-[#EE1E25] to-[#881115]"></span>
         <BloodEnough />
         <SeperateSolution />
         <ReverseVideo />

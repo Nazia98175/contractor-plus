@@ -1,3 +1,4 @@
+import TextAnimation from "../common/TextAnimation";
 import { FrictionTextGroup } from "./Icons";
 
 const SeperateSolution = () => {
@@ -10,10 +11,12 @@ const SeperateSolution = () => {
 
   return (
     <section className="pt-9 pb-[46px]">
-      <div className="mx-auto max-w-[733px]">
-        <h3 className="sub-heading text-secondary mb-10 text-center font-semibold sm:mb-16 xl:px-4">
-          Every separate solution introduces friction into your business{" "}
-        </h3>
+      <div className="relative z-10 mx-auto max-w-[733px]">
+        <TextAnimation animateOnScroll={true} delay={0}>
+          <h3 className="sub-heading text-secondary mb-10 text-center font-semibold sm:mb-16 xl:px-4">
+            Every separate solution introduces friction into your business{" "}
+          </h3>
+        </TextAnimation>
         <div className="grid grid-cols-1 gap-x-11 gap-y-8 sm:grid-cols-2">
           {frictionItems.map((item, index) => (
             <div
@@ -33,15 +36,19 @@ const SeperateSolution = () => {
                   fill="#3F464B"
                 />
               </svg>
-              <p className="text-wallStreet text-center text-sm leading-[130%] font-semibold lg:text-base xl:text-lg">
-                {item}
-              </p>
+              <TextAnimation animateOnScroll={true} delay={0}>
+                <p className="text-wallStreet text-center text-sm leading-[130%] font-semibold lg:text-base xl:text-lg">
+                  {item}
+                </p>
+              </TextAnimation>
             </div>
           ))}
         </div>
-        <span className="mt-11 flex justify-center">
-          <FrictionTextGroup />
-        </span>
+        <TextAnimation animateOnScroll={true} delay={0}>
+          <span className="mt-11 flex justify-center">
+            <FrictionTextGroup />
+          </span>
+        </TextAnimation>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { StrokeText } from "./Icons";
+import TextAnimation from "../common/TextAnimation";
 
 const ReverseVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -99,10 +100,10 @@ const ReverseVideo = () => {
   }, []);
 
   return (
-    <section className="relative z-10 h-[242px] sm:h-[541px] px-2.5">
+    <section className="relative z-[0] h-[242px] px-2.5 sm:h-[541px]">
       <video
         ref={videoRef}
-        className="absolute z-[-1] h-full w-full object-cover object-top left-0"
+        className="absolute left-0 z-[-1] h-full w-full object-cover object-top"
         muted
         playsInline
         preload="auto"
@@ -112,26 +113,27 @@ const ReverseVideo = () => {
       </video>
 
       <div
-        className="absolute -top-1 left-0 h-10 sm:h-[142px] w-full"
+        className="absolute -top-1 left-0 h-10 w-full sm:h-[142px]"
         style={{
           background:
             "linear-gradient(180deg, #0C0D11 0%, rgba(12, 13, 17, 0) 90.88%)",
         }}
       ></div>
       <div
-        className="absolute -bottom-1 left-0 h-20 sm:h-[250px] w-full rotate-180"
+        className="absolute -bottom-1 left-0 h-20 w-full rotate-180 sm:h-[250px]"
         style={{
           background:
             "linear-gradient(180deg, #0C0D11 0%, rgba(12, 13, 17, 0) 90.88%)",
         }}
       ></div>
-
-      <div className="relative z-10 flex h-full flex-col items-center justify-center pt-10">
-        <h2 className="text-lg leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px] text-center text-white">
-          "If it ain't broke, don't fix it" is the
-        </h2>
-        <StrokeText />
-      </div>
+      <TextAnimation animateOnScroll={true} delay={0}>
+        <div className="relative z-10 flex h-full flex-col items-center justify-center pt-10">
+          <h2 className="text-center text-lg leading-[127%] font-extrabold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
+            "If it ain't broke, don't fix it" is the
+          </h2>
+          <StrokeText />
+        </div>
+      </TextAnimation>
     </section>
   );
 };

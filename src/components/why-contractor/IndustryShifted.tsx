@@ -1,4 +1,6 @@
 import React, { JSX } from "react";
+import TextAnimation from "../common/TextAnimation";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 interface IndustryItem {
   id: number;
@@ -108,31 +110,34 @@ const IndustryShifted: React.FC = () => {
   return (
     <section className="pt-[17px] pb-6 sm:pt-[38px] sm:pb-11">
       <div className="main-container mx-auto max-w-7xl px-4">
-        <h3 className="sub-heading mb-[34px] text-center text-2xl text-gray-300 sm:mb-[37px]">
-          <span className="font-semibold">The industry has</span>{" "}
-          <span className="font-extralight">shifted</span>
-        </h3>
+        <TextAnimation animateOnScroll={true} delay={0}>
+          <h3 className="sub-heading mb-[34px] text-center text-gray-300 sm:mb-[37px]">
+            <span className="font-semibold">The industry has</span>{" "}
+            <span className="font-extralight">shifted</span>
+          </h3>
+        </TextAnimation>
         <div className="flex flex-col gap-1 sm:flex-row">
           {industryItems.map((item, index) => (
-            <div
-              key={index}
-              className={`flex w-full flex-col items-center justify-center p-2.5 ${
-                index === 2
-                  ? ""
-                  : "max-sm:border-b [border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)]"
-              }`}
-            >
-              {item.icon}
-              <p
-                className="mt-2.5 bg-clip-text text-center text-lg font-bold text-transparent xl:text-2xl"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",
-                }}
+            <PrimaryAnimatedText key={index} className="w-full" delay={1000}>
+              <div
+                className={`flex w-full flex-col items-center justify-center p-2.5 ${
+                  index === 2
+                    ? ""
+                    : "[border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)] max-sm:border-b"
+                }`}
               >
-                {item.text}
-              </p>
-            </div>
+                {item.icon}
+                <p
+                  className="mt-2.5 bg-clip-text text-center text-lg font-bold text-transparent xl:text-2xl"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",
+                  }}
+                >
+                  {item.text}
+                </p>
+              </div>
+            </PrimaryAnimatedText>
           ))}
         </div>
       </div>

@@ -8,7 +8,7 @@ const ServiceContractorsMarquee = () => {
       <h3 className="section-heading gradient-white hidden text-center sm:block">
         Trusted by over 50,000 build and service contractors
       </h3>
-      <h3 className="gradient-white mx-auto block max-w-[90%] text-center text-[26px] leading-[130%] font-bold sm:hidden">
+      <h3 className="gradient-white mx-auto block max-w-[288px] text-center text-[26px] leading-[130%] font-bold sm:hidden">
         Trusted by over 50,000 build and service contractors
       </h3>
       {/* <Marquee speed={30} direction="right" pauseOnHover>

@@ -858,6 +858,30 @@ html::-webkit-scrollbar {
 .card-shine:hover::before {
   animation: shine 0.45s linear forwards;
 }
+.card-shine-2 {
+  @apply relative overflow-hidden;
+}
+.card-shine-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(200, 0, 0, 0) 0%,
+    /* transparent start */ rgba(255, 100, 100, 0.067) 50%,
+    /* reddish mid-glow */ rgba(200, 0, 0, 0) 100% /* transparent end */
+  );
+  z-index: 10;
+  transform: translateX(-100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.card-shine-2:hover::before {
+  animation: shine 0.45s linear forwards;
+}
 
 @keyframes breathe {
   0% {

@@ -82,8 +82,7 @@ const page = () => {
       </div>
       <HvacSoftwareService
         title="This is what HVAC software should have been all along"
-        desc="
-"
+        desc=""
       />
       <TrustBarHvca platforms={platforms} />
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}

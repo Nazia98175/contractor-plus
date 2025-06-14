@@ -267,7 +267,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     >
       <div
         ref={navContainerRef}
-        className={`z-20 w-full lg:max-w-[345px] lg:min-w-[345px] ${
+        className={`z-20 w-full overflow-hidden lg:max-w-[345px] lg:min-w-[345px] ${
           isMobile
             ? "shadow-c2 w-full min-w-[340px] bg-white px-2 transition-all duration-200"
             : ""

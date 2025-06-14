@@ -139,10 +139,14 @@ const FieldServicesPage = async ({ params }: Params) => {
       <RealTimeServiceConnector />
       <RunWithContractor />
       <TimmingEffect />
-
       <NeverLookBack />
       {/* <ThousandsReviews data={OurReviewList} reviews={dummyReviews} /> */}
-      <HvacSoftwareService />
+      <HvacSoftwareService
+        descColorClass="text-secondary"
+        title="This is what field service management software 
+        should have been all along"
+        desc="Start using Contractor+ free. You won’t look back."
+      />
 
       {/* <HvacSoftwareService /> */}
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />

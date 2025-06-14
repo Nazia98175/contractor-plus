@@ -80,7 +80,11 @@ const page = () => {
           reviews={reviews?.data?.[0]?.reviews?.reviews}
         /> */}
       </div>
-      <HvacSoftwareService />
+      <HvacSoftwareService
+        title="This is what HVAC software should have been all along"
+        desc="
+"
+      />
       <TrustBarHvca platforms={platforms} />
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq faqitems={faqitems} variant="hvac" />

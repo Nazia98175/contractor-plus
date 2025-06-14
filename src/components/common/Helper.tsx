@@ -113,11 +113,10 @@ export const swichToContractordata = [
     title: "hours",
     description: "Saved weekly on scheduling and updates",
     start: 0,
-    end: 28,
+    end: 15,
     icon: <DelieveryIcon />,
   },
   {
-    title: "less",
     description: "Fewer software tools used",
     start: 3,
     end: 5,

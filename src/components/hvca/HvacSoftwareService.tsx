@@ -5,7 +5,17 @@ import CardReveal from "../common/CardReveal";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 
-const HvacSoftwareService = () => {
+interface HvacSoftwareServiceProps {
+  title: string;
+  desc: string;
+  descColorClass?: string;
+}
+
+const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
+  title,
+  desc,
+  descColorClass = "text-decemberSky",
+}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -31,13 +41,15 @@ const HvacSoftwareService = () => {
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <h3 className="sub-heading mb-4 text-center font-extrabold text-white">
-              This is what HVAC software should have been all along
+            <h3 className="sub-heading mx-auto mb-4 max-w-[840px] text-center font-extrabold text-white">
+              {title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <p className="text-decemberSky mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl">
-              Start using Contractor+ FREE. You won’t look back.
+            <p
+              className={`${descColorClass} mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl xl:!leading-[124%]`}
+            >
+              {desc}
             </p>
           </TextAnimation>
           <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>

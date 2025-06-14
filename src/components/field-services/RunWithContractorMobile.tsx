@@ -28,10 +28,10 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
       >
         {run_contractor.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="mx-auto grid w-fit grid-cols-1 items-center gap-5 text-center">
+            <div className="mx-auto grid w-fit grid-cols-1 items-center gap-3 text-center">
               {/* Their way */}
               <div>
-                <p className="font-myriad text-highRise pb-3 text-center text-sm font-semibold sm:text-lg md:text-xl">
+                <p className="font-myriad text-highRise pb-2 text-center text-sm font-semibold sm:text-lg md:text-xl">
                   Their Way
                 </p>
                 <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
@@ -39,7 +39,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                     {/* Red Cross Icon */}
                     <RedCrossIcon />
                   </span>
-                  <p className="font-jakarta text-sangoPink text-start text-base font-medium">
+                  <p className="text-sangoPink text-start text-sm font-medium">
                     {item.their}
                   </p>
                 </div>
@@ -47,7 +47,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
 
               {/* Your way */}
               <div>
-                <p className="font-myriad text-oldMoney pb-3 text-center text-base font-semibold sm:text-lg md:text-xl">
+                <p className="font-myriad text-oldMoney pb-2 text-center text-base font-semibold sm:text-lg md:text-xl">
                   Your Way
                 </p>
                 <div className="your-way flex items-center gap-2 rounded-[10px] px-3 py-2">
@@ -55,7 +55,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                     {/* Green Dot Icon */}
                     <GreenDotIcon2 />
                   </span>
-                  <p className="font-jakarta text-majorelleGardens text-start text-base font-bold">
+                  <p className="text-majorelleGardens text-start text-sm font-bold">
                     {item.your}
                   </p>
                 </div>
@@ -64,7 +64,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="relative mx-auto mt-4 flex w-full max-w-[158px] items-center justify-between gap-3">
+      <div className="relative mx-auto mt-3 flex w-full max-w-[158px] items-center justify-between gap-3">
         <div className="swiper-button-prev2 !relative !right-0 !bottom-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
           <Slidericon />
         </div>

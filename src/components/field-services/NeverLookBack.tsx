@@ -6,10 +6,10 @@ import SoftwareUsed from "../common/SoftwareUsed";
 export default function NeverLookBack() {
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-[70px]">
-      <div className="absolute -top-1 z-0 h-2 w-full bg-white"></div>
+      <div className="absolute -top-1 z-[2] h-3 w-full bg-white"></div>
       <img
         src="/images/webp/red-linear-bg.webp"
-        className="absolute -top-1 left-0 -z-[2] h-[124%] w-full bg-cover"
+        className="absolute -top-0 left-0 -z-[3] h-[124%] w-full bg-cover"
         alt="Red Lineaar background"
       />
 

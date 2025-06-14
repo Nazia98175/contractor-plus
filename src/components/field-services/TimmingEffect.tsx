@@ -126,7 +126,7 @@ const TimmingEffect = () => {
         </div>
       </div>
 
-      <div className="relative z-[5] -mt-10 flex flex-col items-center justify-center px-3">
+      <div className="relative z-[5] -mt-20 flex flex-col items-center justify-center px-3 sm:-mt-10">
         <Button variant="primary" className="mt-3 mb-[6px]">
           <span className="hidden sm:flex">Get started FREE</span>
           <span className="flex sm:hidden">Download FREE App</span>

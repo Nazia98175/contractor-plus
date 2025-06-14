@@ -29,7 +29,7 @@ const AwardsTagsImg = () => {
         })}
       </div>
       <SliderLayout
-        wrapperClassName="lg:mt-8 mt-20 md:hidden gap-5 px-4 lg:pb-[105px] pb-20 lg:gap-14 tags-award"
+        wrapperClassName="lg:mt-8 mt-12 md:hidden gap-5 px-4 lg:pb-[105px] pb-20 lg:gap-14 tags-award"
         spaceBetween={9}
         slidesPerView={2}
         breakpoints={{

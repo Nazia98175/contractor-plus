@@ -57,8 +57,16 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             animateOnScroll={false}
             className="flex w-full flex-col items-center gap-2.5 sm:w-fit"
           >
-            <FreeAccountButton showIcon={false} text={cta_button_text} />
-            <FreeAccountButton showIcon={false} text={mobileBtn} />
+            <FreeAccountButton
+              showIcon={false}
+              text={cta_button_text}
+              className="!hidden sm:!flex"
+            />
+            <FreeAccountButton
+              showIcon={false}
+              text={mobileBtn}
+              className="flex sm:!hidden"
+            />
             <CardRequiredButton text={ncc_text} />
           </CardReveal>
         </div>

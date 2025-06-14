@@ -17,6 +17,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import EntireBusiness from "@/components/homepage/EntireBusiness";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
@@ -139,6 +140,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
               data={crmPageContent?.data?.[0]?.crmService}
             />
+
             <TrustBarHvca
               platforms={platforms}
               className="mx-auto w-full max-w-[889px]"

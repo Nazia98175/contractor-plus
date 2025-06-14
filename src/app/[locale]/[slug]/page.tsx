@@ -20,10 +20,17 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
+};
+export const metadata: Metadata = {
+  title:
+    "Contractor+ A field service CRM that runs your business, not just stores contacts",
+  description:
+    "Built-in phone and SMS. AI receptionist. Property profiles. Full communication history. You no longer need 6 separate tools to do what Contractor+ CRM does in one.",
 };
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;

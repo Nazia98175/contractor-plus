@@ -7,6 +7,7 @@ import IndustryShifted from "@/components/why-contractor/IndustryShifted";
 import NewWayToWin from "@/components/why-contractor/NewWayToWin";
 import ReverseVideo from "@/components/why-contractor/ReverseVideo";
 import SeperateSolution from "@/components/why-contractor/SeperateSolution";
+import VideoBottomPart from "@/components/why-contractor/VideoBottomPart";
 import WhyContractorHero from "@/components/why-contractor/WhyContractorHero";
 import Image from "next/image";
 import React from "react";
@@ -31,6 +32,7 @@ const WhyContractorPage = () => {
         <BloodEnough />
         <SeperateSolution />
         <ReverseVideo />
+        <VideoBottomPart />
       </main>
       {/* <CantScale />
       <BuildBusinessOnBlood />

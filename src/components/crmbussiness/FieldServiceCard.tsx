@@ -23,24 +23,22 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   console.log(imageBaseUrl.split("api"), "service");
 
   return (
-    <article className="relative z-30 flex flex-col items-start justify-between gap-7 lg:flex-row">
+    <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
 
           {/* Image for mobile */}
-          <div className="h-full min-h-[156px] w-full max-w-[518px] rounded-lg md:h-auto lg:min-h-[200px] xl:mx-auto xl:hidden xl:min-h-[245px]">
-            <Image
-              src={
-                `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
-                "/placeholder.png"
-              }
-              alt={service?.title || "service image"}
-              width={518}
-              height={302}
-              className="h-[70%] w-full rounded-lg object-cover xl:h-auto"
-            />
-          </div>
+          <Image
+            src={
+              `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
+              "/placeholder.png"
+            }
+            alt={service?.title || "service image"}
+            width={518}
+            height={156}
+            className="mx-auto h-auto max-h-[240px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+          />
           <div className="flex flex-col gap-4 2xl:gap-6">
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
@@ -74,7 +72,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
       </div>
 
       {/* Desktop image */}
-      <div className="hidden w-full max-w-[518px] rounded-lg xl:block">
+      <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
         <Image
           src={
             `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||

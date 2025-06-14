@@ -35,7 +35,7 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn, mobileBtn }) => {
 
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
-      <div className="pt-[93px] pb-10 sm:py-[75px]">
+      <div className="pt-[110px] pb-10 sm:pt-[120px] sm:pb-[75px]">
         <TextAnimation animateOnScroll={false} delay={0.2}>
           <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">
             {data?.title}

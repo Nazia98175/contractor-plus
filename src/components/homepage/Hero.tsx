@@ -18,7 +18,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     hero_title,
     hero_description,
     cta_button_text,
-    cta_button_link,
+
     ncc_text,
     hero_image,
     mobileBtn,
@@ -58,6 +58,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             className="flex w-full flex-col items-center gap-2.5 sm:w-fit"
           >
             <FreeAccountButton showIcon={false} text={cta_button_text} />
+            <FreeAccountButton showIcon={false} text={mobileBtn} />
             <CardRequiredButton text={ncc_text} />
           </CardReveal>
         </div>

@@ -42,7 +42,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           <h4 className="text-wallStreet text-lg leading-[100%] font-bold sm:text-xl md:text-2xl">
             {content?.title}
           </h4>
-          <div className="relative h-[230px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
+          <div className="relative h-[181px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
             <LottieAnimation
               animationData={featureContentss?.[index]?.titleImg}
             />

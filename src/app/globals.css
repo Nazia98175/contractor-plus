@@ -1302,7 +1302,6 @@ button {
       rgba(255, 82, 1, 0) 100%
     ),
     rgba(254, 231, 232, 0.2);
-  backdrop-filter: blur(26px);
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 .trusted-gradient {

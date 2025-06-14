@@ -75,7 +75,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     },
   ];
   return (
-    <section className="relative z-10 bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
+    <section className="relative z-10 overflow-hidden bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
           <PrimaryAnimatedText delay={3000}>

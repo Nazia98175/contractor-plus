@@ -52,7 +52,7 @@ export default async function Home({
         <Hero homePageContent={homePageContent?.data} />
         <TrustBar
           platforms={platforms}
-          className="mx-auto w-full max-w-[889px]"
+          className="mx-auto w-full max-w-[889px] py-4"
         />
         <TheEngineContractor
           engineContractor={homePageContent?.data?.engineContractor}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SliderRedLineIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import ContractorIndustrySlider from "./ContractorIndustrySlider";
+import PrimaryLink from "../common/PrimaryLInk";
 interface Industry {
   title: string;
   sub_title: string;
@@ -18,7 +19,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   contractorIndustry,
 }) => {
   const t = useTranslations("industry");
-console.log(contractorIndustry?.[0]?.title , "title")
+  console.log(contractorIndustry?.[0]?.title, "title");
   return (
     <section className="relative overflow-hidden">
       <Image
@@ -54,9 +55,9 @@ console.log(contractorIndustry?.[0]?.title , "title")
             {contractorIndustry?.[0]?.sub_title ?? ""}
           </PrimaryAnimatedText>
           <div className="hidden items-center justify-center md:flex">
-            <button className="bg-red-linear primary-btn h-10">
+            <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.[1]?.btnTxt ?? ""}
-            </button>
+            </PrimaryLink>
           </div>
         </div>
         <ContractorIndustrySlider />

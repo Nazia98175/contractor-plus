@@ -26,17 +26,17 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
   });
 
   return (
-    <section className="relative overflow-hidden md:overflow-visible">
+    <section className="relative overflow-hidden">
       <div className="bg-athenaBlue pointer-events-none absolute bottom-0 left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
-      <div className="bg-athenaBlue pointer-events-none absolute top-[-20px] left-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
-      <div className="bg-athenaBlue pointer-events-none absolute top-[50px] right-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-[50px] left-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-[80px] right-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
       <div
         ref={ref}
         className="sm:border-secondary/10 relative z-30 mx-auto mt-10 w-full max-w-[98%] overflow-hidden rounded-[22px] bg-none bg-[100%_100%] bg-no-repeat min-[1440px]:max-w-[1364px] sm:mt-[40px] sm:border lg:bg-[url('/images/webp/engine-bg.web')] lg:bg-cover"
       >
         <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-[-40px] left-[50%] hidden h-[200px] w-full max-w-[60px] -rotate-45 rounded-[10px] opacity-10 blur-[30px] lg:block"></div>
         <div className="color-animation pointer-events-none absolute right-[0px] bottom-[-40px] hidden h-[200px] w-full max-w-[300px] rounded-[10px] bg-[#EE1E25] opacity-75 blur-[30px] md:block"></div>
-        <div className="flex flex-col items-center justify-center gap-8 pb-8 md:flex-row md:justify-between md:py-[30px] md:!pr-[30px] md:!pl-[54px]">
+        <div className="flex flex-col items-center justify-center gap-8 pb-8 md:flex-row md:justify-between md:!px-[30px] md:py-[30px]">
           <div className="flex w-full flex-col gap-1.5">
             <h2 className="section-heading gradient-engine-text text-center md:text-left">
               {engineContractor?.[0]?.title}&nbsp;

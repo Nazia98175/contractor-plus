@@ -12,7 +12,7 @@ const AnimatedShape = () => {
     const tl = gsap.timeline({
       repeat: -1,
       yoyo: true,
-      defaults: { ease: "power1.inOut", duration: 4 },
+      defaults: { ease: "power1.inOut", duration: 6 },
     });
 
     tl.to(containerRef.current, {

@@ -132,7 +132,7 @@ const FieldServicesHero = () => {
 
   return (
     <section className="relative overflow-visible">
-      <div className="border-kuroiBlack absolute top-1/2 left-1/2 z-20 h-[170%] w-[130%] -translate-x-1/2 -translate-y-1/2 rounded-[1631px] border-[236px] blur-[25px]"></div>
+      <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-20 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[160%] lg:w-[130%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
       {/* Map Background */}
       <div className="absolute inset-0 h-full w-full">
         {(isLoading || !location) && (
@@ -292,7 +292,7 @@ const FieldServicesHero = () => {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
       {/* Content overlay */}
-      <div className="main-container 1xl:pb-[150px] relative z-20 pt-[393px] pb-11 sm:pb-16 md:pt-[110px] md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
+      <div className="main-container 1xl:pb-[160px] relative z-20 pt-[393px] pb-10 sm:pb-16 md:pb-20 lg:pb-[100px] xl:pt-[134px] xl:pb-[120px]">
         <div className="w-full max-w-[732px]">
           <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]">
             <div className="rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px]">
@@ -301,14 +301,17 @@ const FieldServicesHero = () => {
               </span>
             </div>
           </div>
-          <h3 className="main-heading mt-2 text-white sm:mt-0">
+          <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
+            One command center to visualize and run your entire field operation
+          </h3>
+          <h3 className="main-heading mt-2 hidden text-white lg:block">
             One command center to visualize and run your entire field operation
           </h3>
           <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
             Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams.
           </p>
-          <div className="flex w-full flex-col-reverse items-center gap-2.5 sm:flex-row">
+          <div className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5">
             <div className="flex items-center gap-2.5">
               <button>
                 <HeroPlayStoreIcon />
@@ -323,7 +326,10 @@ const FieldServicesHero = () => {
                 <span className="flex sm:hidden">Download FREE App</span>
                 <ArrowIcon fill="white" className="hidden sm:block" />
               </Button>
-              <CardRequiredButton text="No credit card required" />
+              <CardRequiredButton
+                text="No credit card required"
+                className="hidden text-white sm:flex"
+              />
             </div>
           </div>
         </div>

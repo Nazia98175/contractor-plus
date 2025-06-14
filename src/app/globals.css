@@ -63,6 +63,7 @@
   --breakpoint-xs: 560px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
+  --breakpoint-900: 900px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-1xl: 1440px;
@@ -78,6 +79,11 @@
     180deg,
     rgba(12, 13, 17, 0) 13.17%,
     #0c0d11 95.85%
+  );
+  --background-image-black-fade-new: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 13.17%,
+    #0c0d11 80.92%
   );
 
   --background-image-white-linear: linear-gradient(
@@ -219,10 +225,10 @@ body {
   @apply font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px];
 }
 .card-heading {
-  @apply font-montserrat lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%];
+  @apply font-montserrat lg:font-jakarta text-sm leading-none font-semibold md:text-base lg:font-bold xl:text-lg xl:leading-[79%];
 }
 .card-desc {
-  @apply text-xs font-medium sm:text-sm lg:text-base;
+  @apply text-xs font-medium sm:text-sm xl:text-base;
 }
 .card-review {
   @apply font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm;
@@ -238,7 +244,7 @@ body {
   @apply text-3xl leading-[38px] font-bold;
 }
 .countup-desc {
-  @apply font-montserrat text-lg font-medium;
+  @apply font-montserrat text-lg leading-[128%] font-medium;
 }
 @keyframes bounce {
   0%,

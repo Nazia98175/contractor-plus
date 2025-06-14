@@ -154,7 +154,11 @@ const FieldServicesPage = async ({ params }: Params) => {
         faqitems={faqitems}
         className="mt-12 md:mt-[74px]"
         variant="dark"
+        heading="What contractors want to know"
+        isClaud={false}
+        isBlueLinear={false}
       />
+
       <WhatEverClient
         data={homePageContent?.data?.whateverOperation}
         issection={false}

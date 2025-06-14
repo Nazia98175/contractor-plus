@@ -243,7 +243,7 @@ body {
   @apply text-3xl leading-[38px] font-bold;
 }
 .countup-desc {
-  @apply font-montserrat text-lg font-medium;
+  @apply font-montserrat text-lg leading-[128%] font-medium;
 }
 @keyframes bounce {
   0%,

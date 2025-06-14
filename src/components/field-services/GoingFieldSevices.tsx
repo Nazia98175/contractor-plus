@@ -27,7 +27,7 @@ const field_service = [
 
 const GoingFieldSevices = () => {
   return (
-    <section className="relative z-20 bg-white px-2 pb-[54px] sm:pb-[60px] lg:pb-[95px]">
+    <section className="relative z-20 bg-white px-2 pb-[52px] sm:pb-[60px] lg:pb-[95px]">
       <img
         className="h-[210px] w-full object-cover"
         src="/images/webp/field-services.webp"
@@ -39,7 +39,7 @@ const GoingFieldSevices = () => {
       <h3 className="sub-heading crm-gradient block text-center font-bold sm:hidden">
         There’s no easy way to see what’s going on in the field
       </h3>
-      <div className="relative mx-auto grid max-w-[1100px] grid-cols-1 items-center justify-between gap-6 px-2.5 pt-7 sm:grid-cols-2 sm:pt-9 lg:grid-cols-3 lg:gap-0">
+      <div className="relative mx-auto flex max-w-[1100px] grid-cols-1 flex-wrap justify-center gap-6 px-0.5 pt-9 lg:grid lg:grid-cols-3 lg:gap-0">
         {/* Dashed line */}
         <div className="absolute top-[49px] left-1/2 z-0 hidden w-[65%] -translate-x-1/2 transform bg-[#F8F8F8] py-2 lg:block">
           <DashedLineIcon />

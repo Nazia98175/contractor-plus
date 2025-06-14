@@ -6,6 +6,7 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  DelieveryIcon,
   EstimateIcon2,
   EstimatesIcon,
   EstimaticIcon,
@@ -102,7 +103,7 @@ export const makeOperationList = [
 ];
 export const swichToContractordata = [
   {
-    description: "Estimate process",
+    description: "Increase in jobs completed on time",
     start: 0,
     end: 27,
     suffix: "%",
@@ -110,21 +111,19 @@ export const swichToContractordata = [
   },
   {
     title: "hours",
-    description: "Job turnaround time",
+    description: "Saved weekly on scheduling and updates",
     start: 0,
     end: 28,
-    icon: (
-      <TruckElectricIcon className="md:text-lightBlack text-white" width={35} />
-    ),
+    icon: <DelieveryIcon />,
   },
   {
     title: "less",
-    description: "Time spent on admin work",
+    description: "Fewer software tools used",
     start: 3,
     end: 5,
     isRange: true,
     suffix: "%",
-    icon: <AdminWorkIcon className="md:text-lightBlack text-white" />,
+    icon: <AdminWorkIcon className="md:text-winterWay text-white" />,
   },
 ];
 

@@ -1,3 +1,6 @@
+import { platforms } from "@/components/common/Helper";
+import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
+import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
 import BuildBusinessOnBlood from "@/components/why-contractor/BuildBusinessOnBlood";
@@ -33,6 +36,14 @@ const WhyContractorPage = () => {
         <SeperateSolution />
         <ReverseVideo />
         <VideoBottomPart />
+        <HvacSoftwareService
+          descColorClass="text-secondary"
+          title="All unified. All in sync. All in one place."
+          desc="This is what it feels like to finally run your business, not be run by it."
+        />
+        <main className="pb-14">
+        <TrustBarHvca showTrustedSection={false} platforms={platforms} />
+        </main>
       </main>
       {/* <CantScale />
       <BuildBusinessOnBlood />

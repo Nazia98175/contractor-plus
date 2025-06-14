@@ -11,7 +11,7 @@ import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
   title:
-    "Contractor - The only operating system for build & service contractors",
+    "Contractor+ The only operating system for build & service contractors",
   description:
     "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth.",
 };

@@ -8,6 +8,7 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Link from "next/link";
+import AnimatedShape from "./AnimatedShape";
 interface TheHeroProps {
   hero: any;
 }
@@ -36,13 +37,16 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
       >
         <div className="relative mx-auto block max-w-[900px] px-5 pt-10 md:hidden">
           <div className="switch-tool-bg absolute top-[-10px] left-0 z-[-5] hidden h-[100px] w-full md:block"></div>
-          <Image
-            width={900}
-            height={616}
-            className="h-full w-full object-cover"
-            src="/images/webp/crm-hero.webp"
-            alt="crm hero"
-          />
+          <div className="relative w-full overflow-hidden rounded-[55px] border-4 border-[#D7D7D7] p-4">
+            <Image
+              width={900}
+              height={616}
+              className="h-full w-full rounded-[45px] object-cover"
+              src="/images/webp/crm-hero.webp"
+              alt="crm hero"
+            />
+            <AnimatedShape />
+          </div>
         </div>
         <div className="px-2 pt-8 md:pt-0">
           <TextAnimation delay={0.2} animateOnScroll={false}>
@@ -142,15 +146,15 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           delay={0.9}
           animateOnScroll={false}
         >
-          <div className="relative z-30 mx-auto hidden max-w-[900px] pt-9 md:block">
+          <div className="relative z-30 mx-auto mt-9 hidden max-w-[900px] overflow-hidden rounded-[55px] border-4 border-[#D7D7D7] p-4 md:block">
             <Image
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-[45px] object-cover"
               src="/images/webp/crm-hero.webp"
               width={900}
               height={616}
               alt="crm-hero"
-              priority
             />
+            <AnimatedShape />
           </div>
         </CardReveal>
       </div>

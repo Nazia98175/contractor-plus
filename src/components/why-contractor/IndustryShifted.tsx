@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 
 interface IndustryItem {
   id: number;
@@ -19,8 +19,8 @@ const IndustryShifted: React.FC = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M26.6667 9.15618V13.8393C26.6667 14.0703 26.5992 14.296 26.4727 14.488C26.3463 14.68 26.1666 14.8297 25.9564 14.918C25.7461 15.0064 25.5148 15.0295 25.2916 14.9845C25.0684 14.9395 24.8634 14.8283 24.7025 14.665L23.2146 13.1549L17.1239 19.3364C16.9081 19.5554 16.6155 19.6784 16.3104 19.6784C16.0053 19.6784 15.7126 19.5554 15.4968 19.3364L11.7076 15.4907L5.61686 21.6722C5.39984 21.8849 5.10917 22.0026 4.80746 22C4.50574 21.9973 4.21713 21.8745 4.00378 21.6579C3.79043 21.4414 3.66941 21.1485 3.66679 20.8423C3.66417 20.5361 3.78015 20.2411 3.98977 20.0208L10.894 13.0136C11.1098 12.7947 11.4024 12.6717 11.7076 12.6717C12.0127 12.6717 12.3053 12.7947 12.5211 13.0136L16.3104 16.8594L21.5875 11.5036L20.0997 9.99354C19.9388 9.83022 19.8292 9.62214 19.7848 9.39563C19.7405 9.16912 19.7633 8.93434 19.8503 8.72098C19.9374 8.50761 20.0849 8.32523 20.274 8.1969C20.4632 8.06857 20.6857 8.00005 20.9132 8H25.516L25.5713 8.00117C25.8651 8.01464 26.1426 8.14212 26.3465 8.35728C26.5503 8.57244 26.665 8.85769 26.6667 9.15618Z"
             fill="url(#paint0_linear_2437_2871)"
           />
@@ -33,8 +33,8 @@ const IndustryShifted: React.FC = () => {
               y2="-20.2652"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#A9A9A9" />
-              <stop offset="0.55" stop-color="#0C1711" />
+              <stop stopColor="#A9A9A9" />
+              <stop offset="0.55" stopColor="#0C1711" />
             </linearGradient>
           </defs>
         </svg>
@@ -64,8 +64,8 @@ const IndustryShifted: React.FC = () => {
               y2="65.3788"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#A9A9A9" />
-              <stop offset="0.55" stop-color="#0C1711" />
+              <stop stopColor="#A9A9A9" />
+              <stop offset="0.55" stopColor="#0C1711" />
             </linearGradient>
           </defs>
         </svg>
@@ -95,8 +95,8 @@ const IndustryShifted: React.FC = () => {
               y2="84.5447"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#A9A9A9" />
-              <stop offset="0.55" stop-color="#0C1711" />
+              <stop stopColor="#A9A9A9" />
+              <stop offset="0.55" stopColor="#0C1711" />
             </linearGradient>
           </defs>
         </svg>
@@ -106,9 +106,9 @@ const IndustryShifted: React.FC = () => {
   ];
 
   return (
-    <section className="pt-[17px] pb-[34px] sm:pt-[38px] sm:pb-11">
+    <section className="pt-[17px] pb-6 sm:pt-[38px] sm:pb-11">
       <div className="main-container mx-auto max-w-7xl px-4">
-        <h3 className="sub-heading mb-[34px] text-center text-2xl text-gray-300 sm:mb-[37px] sm:text-4xl">
+        <h3 className="sub-heading mb-[34px] text-center text-2xl text-gray-300 sm:mb-[37px]">
           <span className="font-semibold">The industry has</span>{" "}
           <span className="font-extralight">shifted</span>
         </h3>
@@ -119,7 +119,7 @@ const IndustryShifted: React.FC = () => {
               className={`flex w-full flex-col items-center justify-center p-2.5 ${
                 index === 2
                   ? ""
-                  : "border-b [border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)]"
+                  : "max-sm:border-b [border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)]"
               }`}
             >
               {item.icon}

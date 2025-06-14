@@ -4,8 +4,11 @@ import TrustedServiceCard from "../crmbussiness/TrustedServiceCard";
 
 const ServiceContractorsMarquee = () => {
   return (
-    <section className="">
-      <h3 className="main-heading section-heading gradient-white text-center">
+    <section className="relative z-20">
+      <h3 className="section-heading gradient-white hidden text-center sm:block">
+        Trusted by over 50,000 build and service contractors
+      </h3>
+      <h3 className="gradient-white mx-auto block max-w-[90%] text-center text-[26px] leading-[130%] font-bold sm:hidden">
         Trusted by over 50,000 build and service contractors
       </h3>
       {/* <Marquee speed={30} direction="right" pauseOnHover>

@@ -129,15 +129,16 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
 
           if (item?.headerSubList?.length === 0 || isWhy) {
             return (
-              <Link
-                key={index}
-                href={menuItem?.link || "#"}
-                onMouseEnter={handleMouseLeave}
-                className="header-li hover:text-superSilver group text-kuroiBlack relative flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
-              >
-                {item?.mainTitle}
+              <span key={index} className="group relative">
+                <Link
+                  href={menuItem?.link || "#"}
+                  onMouseEnter={handleMouseLeave}
+                  className="header-li group hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"
+                >
+                  {item?.mainTitle}
+                </Link>
                 <span className="footer-li-hover"></span>
-              </Link>
+              </span>
             );
           }
 

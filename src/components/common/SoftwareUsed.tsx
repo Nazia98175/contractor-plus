@@ -23,7 +23,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
   return (
     <article
       ref={ref}
-      className="flex flex-col items-center justify-between gap-2 rounded-xl p-4 text-center transition"
+      className="flex flex-col items-center justify-between gap-2.5 rounded-xl p-2.5 text-center transition"
     >
       <span className="fill-white">{item.icon}</span>
 

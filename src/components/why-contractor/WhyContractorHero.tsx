@@ -20,7 +20,7 @@ const WhyContractorHero = () => {
   };
 
   return (
-    <section className="pb-14 sm:pb-20 pt-[88px] sm:pt-[127px] bg-[url('/images/png/why-contractor-hero-bg.png')] bg-top bg-cover">
+    <section className="pt-[88px] pb-14 sm:pt-[127px] sm:pb-20">
       <div className="mx-auto max-w-[830px] px-2">
         <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
           You can't scale a contracting business built on bottlenecks
@@ -109,7 +109,7 @@ const WhyContractorHero = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-superSilver text-xs sm:mt-2 sm:text-sm max-sm:my-2">
+              <p className="text-superSilver text-xs max-sm:my-2 sm:mt-2 sm:text-sm">
                 Owner, Cranfill Construction
               </p>
               <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">

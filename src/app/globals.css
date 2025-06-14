@@ -79,6 +79,11 @@
     rgba(12, 13, 17, 0) 13.17%,
     #0c0d11 95.85%
   );
+  --background-image-black-fade-new: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 13.17%,
+    #0c0d11 80.92%
+  );
 
   --background-image-white-linear: linear-gradient(
     0deg,
@@ -238,7 +243,7 @@ body {
   @apply text-3xl leading-[38px] font-bold;
 }
 .countup-desc {
-  @apply font-montserrat text-lg font-medium;
+  @apply font-montserrat text-lg leading-[128%] font-medium;
 }
 @keyframes bounce {
   0%,
@@ -1305,4 +1310,41 @@ button {
     #fff 81.73%
   );
   width: 100%;
+}
+.ddd {
+  clip-path: polygon(0 56%, 0% 100%, 100% 100%);
+  background: linear-gradient(
+    11.21deg,
+    #0a0b0e 45.56%,
+    rgba(10, 11, 14, 0) 84.42%
+  );
+  box-shadow:
+    0 0 40px rgba(10, 11, 14, 0.5),
+    inset 0 0 60px rgba(10, 11, 14, 0.3);
+}
+.ddd-2 {
+  clip-path: polygon(99% 60%, 0% 100%, 100% 100%);
+}
+.gradient-shape {
+  width: 800px;
+  height: 400px;
+  background: linear-gradient(
+    11.21deg,
+    #0a0b0e 45.56%,
+    rgba(10, 11, 14, 0) 84.42%
+  );
+
+  border-radius: 20px;
+  box-shadow:
+    0 25px 50px rgba(102, 126, 234, 0.4),
+    0 15px 35px rgba(118, 75, 162, 0.3),
+    0 5px 15px rgba(240, 147, 251, 0.2);
+  position: relative;
+}
+.rectangle-shape {
+  background: linear-gradient(
+    11.21deg,
+    #0a0b0e 45.56%,
+    rgba(10, 11, 14, 0) 84.42%
+  );
 }

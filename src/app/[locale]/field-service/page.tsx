@@ -132,31 +132,39 @@ const FieldServicesPage = async ({ params }: Params) => {
     },
   ];
   return (
-    <>
+    <main className="overflow-hidden">
       <FieldServicesHero />
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />
       <RunWithContractor />
       <TimmingEffect />
-      <div className="relative overflow-hidden">
-        <NeverLookBack />
-        <ThousandsReviews data={OurReviewList} reviews={dummyReviews} />
-        <HvacSoftwareService />
-      </div>
+      <NeverLookBack />
+      {/* <ThousandsReviews data={OurReviewList} reviews={dummyReviews} /> */}
+      <HvacSoftwareService
+        descColorClass="text-secondary"
+        title="This is what field service management software 
+        should have been all along"
+        desc="Start using Contractor+ free. You won’t look back."
+      />
+
       {/* <HvacSoftwareService /> */}
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq
         faqitems={faqitems}
         className="mt-12 md:mt-[74px]"
         variant="dark"
+        heading="What contractors want to know"
+        isClaud={false}
+        isBlueLinear={false}
       />
+
       <WhatEverClient
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
-    </>
+    </main>
   );
 };
 

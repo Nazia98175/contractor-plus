@@ -129,7 +129,7 @@ const FooterLogoWithStars: React.FC = () => {
 
       {/* Logo with higher z-index to appear on top of particles */}
       <div className="border-rgba4 relative z-30 w-fit rounded-[28px] border p-2 xl:p-5">
-        <div className="border-rgba5 relative flex h-[55px] w-[55px] items-center justify-center overflow-hidden rounded-[28px] border lg:h-20 lg:w-20 lg:rounded-3xl xl:h-[110px] xl:w-[110px]">
+        <div className="border-rgba5 relative flex h-[67px] w-[67px] items-center justify-center overflow-hidden rounded-[28px] border lg:h-20 lg:w-20 lg:rounded-3xl xl:h-[110px] xl:w-[110px]">
           <OnIcon className="whatever-border-layer-1 pointer-events-none absolute -z-1 h-full w-full" />
           <OnIconw className="whatever-border-layer-2 pointer-events-none absolute h-[99%] w-[99%]" />
           <Image

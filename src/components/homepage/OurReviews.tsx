@@ -27,6 +27,8 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
   const openModal = (videoUrl: string) => {
+    console.log("Opening modal with URL:", videoUrl);
+
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
@@ -39,6 +41,8 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
     userRole: t(`ourReviews.${review.id}.userRole`),
     review: t(`ourReviews.${review.id}.review`),
   }));
+  console.log("reviews", reviews);
+  console.log("reviewsList", reviewsList);
 
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
@@ -130,7 +134,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
                 review={review as Review}
                 openModal={
                   review.isModal
-                    ? () => openModal(review.videolink || "")
+                    ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
               />
@@ -148,7 +152,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
                 review={review as Review}
                 openModal={
                   review.isModal
-                    ? () => openModal(review.videolink || "")
+                    ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
               />

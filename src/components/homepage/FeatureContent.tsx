@@ -48,7 +48,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             />
             {/* <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" /> */}
           </div>
-          <p className="text-wallStreet max-w-[615px] space-y-2 text-sm font-medium sm:text-base lg:text-lg">
+          <p className="text-wallStreet space-y-2 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
             {content.desc}
             {featureContents?.[index]?.cardQuote && (
               <span className="text-secondary">

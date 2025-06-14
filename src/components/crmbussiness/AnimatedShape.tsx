@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 const AnimatedShape = () => {
   const containerRef = useRef(null);
   const shape1Ref = useRef(null);
-  const shape2Ref = useRef(null);
 
   useEffect(() => {
     gsap.set(containerRef.current, { rotation: -20 });

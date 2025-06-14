@@ -87,7 +87,11 @@ const page = () => {
       />
       <TrustBarHvca platforms={platforms} />
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
-      <HvacFaq faqitems={faqitems} variant="hvac" />
+      <HvacFaq
+        faqitems={faqitems}
+        variant="hvac"
+        heading="What HVAC contractors want to know "
+      />
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
     </>
   );

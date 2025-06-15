@@ -16,7 +16,7 @@ import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
-import {debugLog} from '@/utils/getConsole'
+import { debugLog } from "@/utils/getConsole";
 export const metadata = {
   title: "Contractor + - Field Services",
   description:
@@ -191,6 +191,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     ),
   ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
   console.log(
     crmPageContent?.data?.[0],
     thousandReviews?.data?.[0]?.thousandReviews?.reviews,
@@ -200,25 +201,38 @@ const FieldServicesPage = async ({ params }: Params) => {
   debugLog("feild-serv" , crmPageContent?.data?.[0])
 // console.log(crmPageContent?.data?.[0] , "thousand reviewss")
 >>>>>>> b5e2d57dd8a3d517ab3d51a722ea9c5f6691517b
+=======
+  debugLog("feild-serv", crmPageContent?.data?.[0]);
+  // console.log(crmPageContent?.data?.[0] , "thousand reviewss")
+>>>>>>> e3ece8f7b68e0a9040109c38dba3470409be1ebc
   return (
     <main className="overflow-hidden">
       <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
       <ServiceContractorsMarquee reviews={reviews} />
       <GoingFieldSevices switchingTool={section3?.data?.[0]?.switchingTool} />
-      <RealTimeServiceConnector fieldService={section4?.data?.[0]?.fieldService} />
-      <RunWithContractor  kindAdorable={section6?.data?.[0]?.comparison}/>
+      <RealTimeServiceConnector
+        fieldService={section4?.data?.[0]?.fieldService}
+      />
+      <RunWithContractor kindAdorable={section6?.data?.[0]?.comparison} />
       <TimmingEffect />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <NeverLookBack />
+=======
+      <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
+>>>>>>> e3ece8f7b68e0a9040109c38dba3470409be1ebc
       <ThousandsReviews
         data={crmPageContent?.data?.[0]?.thousandReviews}
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
       />
+<<<<<<< HEAD
 =======
       <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
       <ThousandsReviews data={crmPageContent?.data?.[0]?.thousandReviews}
               reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews} />
 >>>>>>> b5e2d57dd8a3d517ab3d51a722ea9c5f6691517b
+=======
+>>>>>>> e3ece8f7b68e0a9040109c38dba3470409be1ebc
       <HvacSoftwareService
         createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
         mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}

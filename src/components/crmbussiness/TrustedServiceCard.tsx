@@ -39,6 +39,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   variant = "primary",
 }) => {
   const styles = VARIANT_CLASSES[variant];
+  const hasVideo = review.isModal && review.videoLink;
   return (
     <div className="mr-5 !h-auto">
       <article
@@ -64,17 +65,21 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                   .join("")}
               </div>
             )}
-            <div className="max-w-[150px] truncate sm:max-w-[190px]">
-              <div className="flex gap-2">
-                <h5 className={`text-base font-medium ${styles.nameText}`}>
+            <div className="max-w-[150px] sm:max-w-[190px]">
+              <div className="flex items-center gap-2">
+                <h5
+                  className={`truncate text-base font-medium ${styles.nameText}`}
+                >
                   {review.userName}
                 </h5>
-                <span
-                  onClick={openModal}
-                  className={`group-hover:text-pleasure flex h-5 w-5 items-center justify-center rounded-full text-white ${styles.modalButton}`}
-                >
-                  <PlayIcon />
-                </span>
+                {review.isModal && review.videoLink && (
+                  <span
+                    onClick={openModal}
+                    className={`group-hover:text-pleasure flex h-full min-h-5 w-full max-w-5 min-w-5 items-center justify-center rounded-full text-white ${styles.modalButton}`}
+                  >
+                    <PlayIcon />
+                  </span>
+                )}
               </div>
               <h6
                 className={`truncate pt-1 text-xs font-medium tracking-[0.1px] text-nowrap ${styles.roleText}`}

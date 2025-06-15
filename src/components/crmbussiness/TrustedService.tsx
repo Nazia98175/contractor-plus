@@ -46,7 +46,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
                 key={review.id}
                 review={review as Review}
                 openModal={
-                 review.isModal
+                  review.isModal
                     ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
@@ -76,11 +76,13 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
           </Marquee>
         </div>
       </div>
-      <ReviewModal
-        videoUrl={selectedVideoUrl || ""}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {selectedVideoUrl && (
+        <ReviewModal
+          videoUrl={selectedVideoUrl || ""}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 };

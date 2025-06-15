@@ -1,7 +1,7 @@
 "use client";
+import { ReviewCardProps } from "@/types";
 import Image from "next/image";
 import { PlayIcon, StartIcon } from "../common/Icons";
-import { Review, ReviewCardProps } from "@/types";
 
 const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   const renderStars = (rating: number) => {

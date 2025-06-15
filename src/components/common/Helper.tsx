@@ -1394,6 +1394,7 @@ import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
 import property_profile from "../../../public/lotties/property-profile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
+import mobile from "../../../public/lotties/11-mobile.json";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",
@@ -1412,7 +1413,7 @@ export const featureContentss = [
   },
   {
     title: "Collaborate with your team on any job",
-    titleImg: internal_job_chat,
+    titleImg: mobile,
     description:
       "Each job has its own built-in group chat, keeping the whole crew on the same page",
     highlight: "and minimizing texts, missed updates, or miscommunication.",

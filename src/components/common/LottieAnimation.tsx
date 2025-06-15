@@ -12,7 +12,6 @@ interface LottieProps {
 const LottieAnimation = ({
   className,
   animationData,
-  autoplay = false,
   loop = false,
 }: LottieProps) => {
   const lottieRef = useRef<any>(null);

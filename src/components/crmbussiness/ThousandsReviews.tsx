@@ -19,6 +19,8 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+
+  console.log(data ,"reviews")
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 py-7 sm:space-y-9 xl:space-y-16 xl:pt-[68px]">

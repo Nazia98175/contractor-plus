@@ -4,15 +4,19 @@ import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFaqLayout from "../common/CommonFaqLayout";
 import UseFaqToggle from "../hook/UseFaqToggle";
 
+
 type FaqItemType = {
   id: number;
   question: string;
   answer: string;
-  className?: string;
-  variant?: string;
 };
+
 interface Props {
-  faqitems: FaqItemType[];
+  faqitems: {
+    title?: string;
+    sub_title?: string;
+    faq?: FaqItemType[]; 
+  };
   className?: string;
   variant?: "hvac" | "light" | "dark";
   heading: string;
@@ -28,7 +32,7 @@ const HvacFaq: React.FC<Props> = ({
   isBlueLinear = true,
 }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
-
+console.log(faqitems , "feild faq")
   return (
     <div className={`${className} relative overflow-hidden`}>
       <section className="relative z-30 overflow-hidden">
@@ -37,9 +41,9 @@ const HvacFaq: React.FC<Props> = ({
         )}
         <CommonFaqLayout
           className="w-full px-2 py-10"
-          heading={heading}
-          description="Frequently asked questions"
-          faqitems={faqitems}
+          heading={faqitems?.title || ""}
+          description={faqitems?.sub_title || ""}
+          faqitems={faqitems?.faq || []}
           openIndex={openIndex}
           onToggle={toggleFaq}
           variant={variant}

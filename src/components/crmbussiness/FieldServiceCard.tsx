@@ -31,7 +31,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
           {/* Image for mobile */}
           <Image
             src={
-              `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
+              `${imageBaseUrl.split("api")[0].slice(0, -1)}/${service?.cardImg?.url}` ||
               "/placeholder.png"
             }
             alt={service?.title || "service image"}
@@ -75,7 +75,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
         <Image
           src={
-            `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` ||
+            `${imageBaseUrl.split("api")[0].slice(0, -1)}/${service?.cardImg?.url}` ||
             "/placeholder.png"
           }
           alt={service?.title || "service image"}

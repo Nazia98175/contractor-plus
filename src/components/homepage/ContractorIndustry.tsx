@@ -19,7 +19,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   contractorIndustry,
 }) => {
   const t = useTranslations("industry");
-  console.log(contractorIndustry?.[0]?.title, "title");
+
   return (
     <section className="relative overflow-hidden">
       <Image

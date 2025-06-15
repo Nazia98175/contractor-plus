@@ -1,7 +1,7 @@
 "use client";
+import { ReviewCardProps } from "@/types";
 import Image from "next/image";
 import { PlayIcon, StartIcon } from "../common/Icons";
-import { Review, ReviewCardProps } from "@/types";
 
 const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   const renderStars = (rating: number) => {
@@ -20,13 +20,23 @@ const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
     >
       <div className="flex items-center gap-3 md:gap-4">
         <div className="relative">
-          <Image
-            width={90}
-            height={90}
-            src={review.profileUrl}
-            alt="User"
-            className="max-w-[90px] min-w-[90px] rounded"
-          />
+          {review?.profileUrl ? (
+            <Image
+              width={90}
+              height={90}
+              src={review.profileUrl}
+              alt="User"
+              className="max-w-[90px] min-w-[90px] rounded"
+            />
+          ) : (
+            <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
+              {review?.userName
+                ?.split(" ")
+                .filter(Boolean)
+                .map((word) => word[0].toUpperCase())
+                .join("")}
+            </div>
+          )}
           <div className="text-pleasure group-hover:text-blackRussian absolute -right-2 -bottom-2 rounded-full bg-white p-[5px] duration-300">
             <PlayIcon />
           </div>
@@ -48,7 +58,7 @@ const CrmReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
         </div>
       </div>
       <p className="font-jakarta text-winterWay mt-3 p-2 text-left text-sm font-medium tracking-[0.1px] md:text-base xl:text-lg">
-        "{review.review}"
+        {review?.review[0] !== `"` ? `"${review.review}"` : review.review}
       </p>
     </article>
   );

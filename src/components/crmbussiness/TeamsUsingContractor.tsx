@@ -6,7 +6,7 @@ import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
-interface Props {
+export interface Props {
   data: any;
 }
 const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
@@ -21,11 +21,10 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
   const t = useTranslations("crm");
 
   const icons = [
-    <EstimateIcon2 key="estimate" fill="#3F464B" />,
+    <EstimateIcon2 key="estimate" className="fill-[#3F464B]" />,
     <ClockIcon key="clock" />,
     <MoreIcon key="more" />,
   ];
-  console.log(data, "dataaaaaaa");
   return (
     <section
       ref={ref}
@@ -45,7 +44,9 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             key={index}
             className="bg-doctor flex cursor-pointer flex-col items-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
-            <span className="mb-1">{icons[index % icons.length]}</span>
+            <span className="mb-1 h-[31px] w-[31px]">
+              {icons[index % icons.length]}
+            </span>
             <h3 className="text-winterWay countup-title flex items-center">
               <span className="flex w-[60px] justify-center">
                 {inView && (

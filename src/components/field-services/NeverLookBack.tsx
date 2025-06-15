@@ -1,9 +1,12 @@
 "use client";
+import { debugLog } from "@/utils/getConsole";
 import AwardsTagsImg from "../common/AwardsTagsImg";
 import { swichToContractordata } from "../common/Helper";
 import SoftwareUsed from "../common/SoftwareUsed";
+import { Props } from "../crmbussiness/TeamsUsingContractor";
 
-export default function NeverLookBack() {
+ const  NeverLookBack: React.FC<Props> = ( {data}) => {
+  debugLog("data" , data)
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-14 sm:pt-[70px]">
       <div className="absolute -top-1 z-[2] h-3 w-full bg-white"></div>
@@ -19,16 +22,19 @@ export default function NeverLookBack() {
       />
 
       <h3 className="sub-heading text-winterWay mb-[13px] hidden text-center font-semibold sm:block">
-        Teams that switch to Contractor+ never look back
+        {/* Teams that switch to Contractor+ never look back */}
+        {data?.title}
       </h3>
       <h3 className="crm-gradient mx-auto mb-[9px] block max-w-[307px] text-center text-[19px] font-bold sm:hidden">
-        Teams that switch to Contractor+ never look back
+        {/* Teams that switch to Contractor+ never look back */}
+        {data?.title}
       </h3>
       <p className="paragraph-text gradient-text-2 sm:text-darkness text-center leading-[124%] sm:bg-none sm:font-semibold">
-        We help you get ahead, not just get by
+        {/* We help you get ahead, not just get by */}
+        {data?.sub_title}
       </p>
       <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
-        {swichToContractordata.map((item, index) => (
+        {data?.cards?.map((item:any, index:any) => (
           <SoftwareUsed key={index} item={item} />
         ))}
       </div>
@@ -36,3 +42,4 @@ export default function NeverLookBack() {
     </section>
   );
 }
+export default NeverLookBack;

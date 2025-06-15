@@ -6,15 +6,23 @@ import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 
 interface HvacSoftwareServiceProps {
-  title: string;
-  desc: string;
+  
+  data: any;
+  ncc: string;
+  createBtn: string;
+  mobileBtn: string;
+
+ 
   descColorClass?: string;
 }
 
 const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
-  title,
-  desc,
+  
   descColorClass = "text-decemberSky",
+  ncc ,
+  createBtn,
+  mobileBtn ,
+  data
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -42,14 +50,14 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>
             <h3 className="sub-heading mx-auto mb-4 max-w-[840px] text-center font-extrabold text-white">
-              {title}
+              {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.2}>
             <p
               className={`${descColorClass} mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl xl:!leading-[124%]`}
             >
-              {desc}
+              {data?.sub_title}
             </p>
           </TextAnimation>
           <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
@@ -60,7 +68,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
               <div className="w-full md:max-w-[414px]">
                 <input
                   type="email"
-                  placeholder={"Your Email"}
+                  placeholder={data?.placeholder}
                   required
                   value={email}
                   onChange={handleEmailChange}
@@ -76,12 +84,12 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
                   {loading ? (
                     <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                   ) : (
-                    `${"Get started FREE"}`
+                    `${createBtn}`
                   )}
                 </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span className="font-myriad text-sm font-semibold text-white">
-                    No Credit Card Required
+                   {ncc}
                   </span>
                 </p>
               </div>
@@ -91,7 +99,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
                     <CheckIcon />
                   </span>
                   <span className="font-myriad text-sm font-semibold text-white">
-                    No Credit Card Required
+                   {ncc}
                   </span>
                 </p>
               </div>

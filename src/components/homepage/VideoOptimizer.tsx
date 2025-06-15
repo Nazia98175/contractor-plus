@@ -45,7 +45,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   const performSpeedTest = (): Promise<boolean> => {
     return new Promise((resolve) => {
       const startTime = Date.now();
-      const testFileUrl = "/speed-test.jpg"; // Ensure this file exists in public
+      const testFileUrl = "/images/webp/speed-test.webp";
       fetch(testFileUrl)
         .then((response) => response.blob())
         .then((data) => {

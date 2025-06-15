@@ -1407,6 +1407,7 @@ import {
   SubManagementIcon,
   TaskManagementIcon,
 } from "../why-contractor/Icons";
+import mobile from "../../../public/lotties/11-mobile.json";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",
@@ -1425,7 +1426,7 @@ export const featureContentss = [
   },
   {
     title: "Collaborate with your team on any job",
-    titleImg: internal_job_chat,
+    titleImg: mobile,
     description:
       "Each job has its own built-in group chat, keeping the whole crew on the same page",
     highlight: "and minimizing texts, missed updates, or miscommunication.",

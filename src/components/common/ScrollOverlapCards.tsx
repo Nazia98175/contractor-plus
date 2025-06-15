@@ -18,7 +18,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   slug,
   theme,
 }) => {
-  console.log(fieldService, "field service data from api");
   const t = useTranslations();
   useGSAP(() => {
     if (typeof window === "undefined") return;
@@ -72,7 +71,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, [fieldServiceData]);
-  const curvePositions = [0, 50, 100];
   const className = theme === "dark" ? "field-service-card" : "wanting-more-bg";
   return (
     <>
@@ -80,6 +78,9 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         id="crm-cards-wrapper"
         className="relative z-10 min-h-screen overflow-hidden lg:px-2 xl:h-fit"
       >
+        <h2 className="gradient-text 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
+          {fieldService?.title}
+        </h2>
         {fieldService?.cardsDetail.map((service: any, index: any) => (
           <div
             key={index}

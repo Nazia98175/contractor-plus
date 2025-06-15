@@ -30,8 +30,8 @@ const WhyContractorPage = () => {
         <AnimationHeader />
       </main>
       <main className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]">
-        <span className="bg-wallStreet absolute top-[-9%] left-1/2 z-[1] block h-full w-[1px] translate-x-[-50%]"></span>
-        <span className="absolute top-[-9%] left-1/2 z-[1] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"></span>
+        <span className="bg-wallStreet absolute top-[-5%] left-1/2 z-[1] block h-full w-[1px] translate-x-[-50%]"></span>
+        <span className="absolute top-[-5%] left-1/2 z-[1] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"></span>
         <BloodEnough />
         <SeperateSolution />
         <ReverseVideo />

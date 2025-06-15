@@ -3,11 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { GreenDotIcon2, RedCrossIcon, Slidericon } from "../common/Icons";
 import { Navigation, Pagination } from "swiper/modules";
 interface RunWithContractorMobileProps {
-  run_contractor: { their: string; your: string }[];
+  run_contractor: { ourProductNote: string; competitorsNote: string  }[];
+  your: string;
+  their: string;
 }
 
 const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
-  run_contractor,
+  run_contractor, your , their
 }) => {
   return (
     <>
@@ -32,7 +34,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
               {/* Their way */}
               <div>
                 <p className="font-myriad text-highRise pb-2 text-center text-sm font-semibold sm:text-lg md:text-xl">
-                  Their Way
+                 {their}
                 </p>
                 <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
                   <span>
@@ -40,7 +42,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                     <RedCrossIcon />
                   </span>
                   <p className="text-sangoPink text-start text-sm font-medium">
-                    {item.their}
+                    {item.competitorsNote}
                   </p>
                 </div>
               </div>
@@ -48,7 +50,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
               {/* Your way */}
               <div>
                 <p className="font-myriad text-oldMoney pb-2 text-center text-base font-semibold sm:text-lg md:text-xl">
-                  Your Way
+              {your}
                 </p>
                 <div className="your-way flex items-center gap-2 rounded-[10px] px-3 py-2">
                   <span>
@@ -56,7 +58,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                     <GreenDotIcon2 />
                   </span>
                   <p className="text-majorelleGardens text-start text-sm font-bold">
-                    {item.your}
+                    {item.ourProductNote}
                   </p>
                 </div>
               </div>

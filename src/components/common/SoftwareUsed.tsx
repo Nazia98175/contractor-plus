@@ -9,6 +9,8 @@ interface SoftwareItem {
   title?: string;
   description: string;
   isRange?: boolean;
+  sub_title: string;
+  prefix: string;
 }
 interface SoftwareUsedProps {
   item: SoftwareItem;
@@ -37,17 +39,18 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
             start={item.start}
             end={item.end}
             duration={2.5}
-            suffix={item.suffix}
+            suffix={item.suffix ?? ""}
+            prefix={item.prefix ?? ""}
           />
         ) : (
           `${item.end}${item.suffix}`
         )}{" "}
         <span className="inline-block text-2xl font-semibold">
-          {item.title}
+          {item.title  !== "N/A" && item.title}
         </span>
       </h3>
       <p className="countup-desc md:text-winterWay text-decemberSky">
-        {item.description}
+        {item.description || item?.sub_title}
       </p>
     </article>
   );

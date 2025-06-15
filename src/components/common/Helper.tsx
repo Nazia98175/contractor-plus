@@ -6,32 +6,23 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
-  ClientPortalIcon,
-  ContractIcon,
   DelieveryIcon,
   EstimateIcon2,
-  EstimateInvoicesIcons,
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
-  FieldServiceManagementIcon,
   HeroSliderIcon1,
   HeroSliderIcon2,
   InvoicingIcon,
   LeadGenerationIcon,
-  MoreEyeIcon,
   PaymentsIcon,
   PROIcon,
   ProjectIcon,
-  ProjectManageMentIcon,
   PropertyIcon,
-  PropertyProfilesIcon,
   ReportingIcon,
   SchedulingIcon,
   ServiceIcon,
   SliderIcon1,
-  SubManagementIcon,
-  TaskManagementIcon,
   TelephoneIcon,
   TimeIcon,
   TrackingIcon,
@@ -52,7 +43,6 @@ import {
   FileCode,
   TruckIcon,
   TruckElectricIcon,
-  PhoneIcon,
 } from "lucide-react";
 import { Platform, Review } from "@/types";
 
@@ -1404,6 +1394,19 @@ import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
 import property_profile from "../../../public/lotties/property-profile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
+import {
+  ClientPortalIcon,
+  ContractIcon,
+  CrmPropertyIcon,
+  EstimateInvoicesIcons,
+  FieldServiceManagementIcon,
+  MoreEyeIcon,
+  PhoneIcon,
+  ProjectManageMentIcon,
+  ScheludingIcon,
+  SubManagementIcon,
+  TaskManagementIcon,
+} from "../why-contractor/Icons";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",
@@ -1671,7 +1674,7 @@ export const fieldServiceData = [
 
 export const operatingSystemList = [
   {
-    icon: <PropertyProfilesIcon />,
+    icon: <CrmPropertyIcon />,
     title: "CRM & Property Profiles",
   },
   {
@@ -1691,7 +1694,7 @@ export const operatingSystemList = [
     title: "Contracts & eSign",
   },
   {
-    icon: <SchedulingIcon />,
+    icon: <ScheludingIcon />,
     title: "Scheduling & Dispatch",
   },
   {

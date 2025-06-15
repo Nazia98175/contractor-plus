@@ -4,6 +4,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "./RunWithContractorMobile";
+import { TheServiceProps } from "../crmbussiness/KindAdorable";
+import { debugLog } from "@/utils/getConsole";
 const run_contractor = [
   {
     their: "Calling or texting each tech to check availability",
@@ -39,24 +41,24 @@ const run_contractor = [
   },
 ];
 
-const RunWithContractor = () => {
+const RunWithContractor:React.FC<TheServiceProps> = ({kindAdorable}) => {
+  debugLog("KINDA" , kindAdorable)
   return (
     <section className="relative z-20 bg-white pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
       <h3 className="section-heading crm-gradient mx-auto mb-[44px] max-w-[950px] text-center">
-        You don’t have to run things their way anymore. Run it your way with
-        Contractor+.
+        {kindAdorable?.title}
       </h3>
       {/* Desktop view  */}
       <div className="mx-auto hidden w-full max-w-[1213px] space-y-5 px-4 md:block">
         <div className="grid grid-cols-2">
           <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
-            Their Way
+           {kindAdorable?.headerLeft}
           </p>
           <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
-            Your Way
+            {kindAdorable?.headerRight}
           </p>
         </div>
-        {run_contractor.map((item, index) => (
+        {kindAdorable?.features?.map((item:any, index:any) => (
           <div
             key={index}
             className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
@@ -68,7 +70,7 @@ const RunWithContractor = () => {
                 <RedCrossIcon />
               </span>
               <p className="text-sangoPink text-start text-[17px] leading-[130%] font-medium">
-                {item.their}
+                {item.competitorsNote}
               </p>
             </div>
 
@@ -84,7 +86,7 @@ const RunWithContractor = () => {
                   <GreenDotIcon2 />
                 </span>
                 <p className="text-majorelleGardens text-start text-[17px] leading-[130%] font-bold">
-                  {item.your}
+                  {item.ourProductNote}
                 </p>
               </div>
             </div>
@@ -93,7 +95,7 @@ const RunWithContractor = () => {
       </div>
       {/* Mobile-view  */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
-        <RunWithContractorMobile run_contractor={run_contractor} />
+        <RunWithContractorMobile their={kindAdorable?.headerLeft} your={kindAdorable?.headerRight} run_contractor={kindAdorable?.features} />
       </div>
     </section>
   );

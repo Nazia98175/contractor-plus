@@ -6,7 +6,7 @@ import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
-interface Props {
+export interface Props {
   data: any;
 }
 const TeamsUsingContractor: React.FC<Props> = ({ data }) => {

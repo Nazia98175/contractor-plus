@@ -7,9 +7,9 @@ import React from "react";
 import ScrollOverlapCards from "../common/ScrollOverlapCards";
 import TextAnimation from "../common/TextAnimation";
 
-interface TheServiceProps {
+export interface TheServiceProps {
   fieldService: any;
-  slug: string;
+  slug?: string;
 }
 
 gsap.registerPlugin(useGSAP);
@@ -32,7 +32,7 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
       </TextAnimation>
       <ScrollOverlapCards
         theme="dark"
-        slug={slug}
+        slug={slug || ""}
         fieldService={fieldService}
       />
     </section>

@@ -2,8 +2,11 @@ import Image from "next/image";
 import React from "react";
 import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
+import { TheServiceProps } from "../crmbussiness/FieldService";
+import { debugLog } from "@/utils/getConsole";
 
-const RealTimeServiceConnector = () => {
+const RealTimeServiceConnector:React.FC<TheServiceProps> = ({fieldService}) => {
+  debugLog("fieldServv" , fieldService)
   const sliderData = [
     {
       title: "Live Dispatch",
@@ -55,10 +58,21 @@ const RealTimeServiceConnector = () => {
     <section className="relative z-20 overflow-hidden bg-white">
       <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
       <h3 className="section-heading crm-gradient relative z-20 mx-auto max-w-[1029px] px-2 text-center xl:px-0">
-        Field service management software that connects the work, the people,
-        and the updates in <b>real time</b>
+        {/* Field service management software that connects the work, the people,
+        and the updates in <b>real time</b> */}
+       {(() => {
+    const title = fieldService?.title || "";
+    const words = title.trim().split(" ");
+    const lastTwo = words.slice(-2).join(" ");
+    const rest = words.slice(0, -2).join(" ");
+    return (
+      <>
+        {rest} <b>{lastTwo}</b>
+      </>
+    );
+  })()}
       </h3>
-      <RealTimeServiceConnectorSlider sliderData={sliderData} />
+      <RealTimeServiceConnectorSlider sliderData={fieldService?.cardsDetail} />
     </section>
   );
 };

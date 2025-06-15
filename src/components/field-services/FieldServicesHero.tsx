@@ -1,16 +1,16 @@
 "use client";
-import React, { useState, useCallback, useMemo, useEffect } from "react";
-import Map, { Source, Layer, NavigationControl } from "react-map-gl/maplibre";
-import type { FeatureCollection } from "geojson";
+import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
+import { reverseGeocode } from "@/services/map";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import Map, { Layer, Source } from "react-map-gl/maplibre";
+import Button from "../common/Button";
+import CardRequiredButton from "../common/CardRequiredButton";
 import {
   ArrowIcon,
   HeroAppStoreIcon,
   HeroPlayStoreIcon,
+  LocationIcon,
 } from "../common/Icons";
-import Button from "../common/Button";
-import CardRequiredButton from "../common/CardRequiredButton";
-import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
-import { reverseGeocode } from "@/services/map";
 
 interface GeolocationData {
   latitude: number;
@@ -18,8 +18,19 @@ interface GeolocationData {
   city?: string;
   country?: string;
 }
+interface heroProps {
+  heroTitle: string;
+  heroTitle1: string;
+  heroDescription: string;
+  ncc_txt: string;
+  mobileBtn: string;
+  createBtn: string;
+}
+interface Props {
+  hero: heroProps;
+}
 
-const FieldServicesHero = () => {
+const FieldServicesHero: React.FC<Props> = ({ hero }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [location, setLocation] = useState<GeolocationData | null>(null);
   const [mapKey, setMapKey] = useState(0); // Key to force map reload
@@ -61,8 +72,6 @@ const FieldServicesHero = () => {
         },
       );
     } else {
-      console.error("Geolocation is not supported by this browser.");
-      // Fallback to default location
       setLocation({
         latitude: 28.6139,
         longitude: 77.209,
@@ -88,11 +97,41 @@ const FieldServicesHero = () => {
   // Generate dynamic user positions around the actual location
   const mockUsers = useMemo(() => {
     const baseUsers = [
-      { id: 1, name: "Mike Johnson", initials: "MJ", color: "#FF6B6B" },
-      { id: 2, name: "Sarah Wilson", initials: "SW", color: "#4ECDC4" },
-      { id: 3, name: "David Brown", initials: "DB", color: "#45B7D1" },
-      { id: 4, name: "Lisa Garcia", initials: "LG", color: "#96CEB4" },
-      { id: 5, name: "John Smith", initials: "JS", color: "#FFEAA7" },
+      {
+        id: 1,
+        name: "Mike Johnson",
+        initials: "MJ",
+        color: "#FF6B6B",
+        imgUrl: "/images/png/location-1.png",
+      },
+      {
+        id: 2,
+        name: "Sarah Wilson",
+        initials: "SW",
+        color: "#4ECDC4",
+        imgUrl: "/images/png/location-1.png",
+      },
+      {
+        id: 3,
+        name: "David Brown",
+        initials: "DB",
+        color: "#45B7D1",
+        imgUrl: "/images/png/location-1.png",
+      },
+      {
+        id: 4,
+        name: "Lisa Garcia",
+        initials: "LG",
+        color: "#96CEB4",
+        imgUrl: "/images/png/location-1.png",
+      },
+      {
+        id: 5,
+        name: "John Smith",
+        initials: "JS",
+        color: "#FFEAA7",
+        imgUrl: "/images/png/location-1.png",
+      },
     ];
 
     // Only generate positions if we have valid coordinates
@@ -127,8 +166,6 @@ const FieldServicesHero = () => {
     console.error("Map error:", event);
     setIsLoading(false);
   }, []);
-
-  console.log(processedLocation, "location");
 
   return (
     <section className="relative overflow-visible">
@@ -190,18 +227,7 @@ const FieldServicesHero = () => {
                       ],
                     }}
                   >
-                    <Layer
-                      id={`user-bg-layer-${user.id}`}
-                      type="circle"
-                      paint={{
-                        "circle-radius": 20,
-                        "circle-color": "#FFFFFF",
-                        "circle-opacity": 0.9,
-                        "circle-stroke-width": 2,
-                        "circle-stroke-color": user.color,
-                        "circle-stroke-opacity": 1,
-                      }}
-                    />
+                    <Layer id={`user-bg-layer-${user.id}`} type="circle" />
                   </Source>
 
                   {/* Profile Picture Circle */}
@@ -217,7 +243,7 @@ const FieldServicesHero = () => {
                             type: "Point",
                             coordinates: [user.lng, user.lat],
                           },
-                          properties: {},
+                          properties: user.imgUrl,
                         },
                       ],
                     }}
@@ -278,12 +304,12 @@ const FieldServicesHero = () => {
       {/* City Label - Middle Right */}
       {processedLocation?.city && (
         <div className="absolute top-1/2 right-10 z-20 -translate-y-1/2 transform">
-          <div className="flex items-center space-x-2 rounded-lg border border-gray-600 bg-[rgba(255,255,255,0.1)] px-4 py-2 text-white backdrop-blur-sm">
-            <div className="h-2 w-2 rounded-full bg-white"></div>
-            <span className="text-sm font-medium">
+          <div className="flex items-center gap-2.5 rounded-lg bg-[#ffffff1a] p-1.5 text-white backdrop-blur-[3px]">
+            <LocationIcon />
+            <b className="text-base leading-normal text-white">
               {processedLocation.city}
               {processedLocation.country && `, ${processedLocation.country}`}
-            </span>
+            </b>
           </div>
         </div>
       )}
@@ -297,19 +323,23 @@ const FieldServicesHero = () => {
           <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]">
             <div className="rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px]">
               <span className="text-secondary">
-                Field Service Management Software
+                {hero?.heroTitle1}
+                {/* Field Service Management Software */}
               </span>
             </div>
           </div>
           <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
-            One command center to visualize and run your entire field operation
+            {hero?.heroTitle}
+            {/* One command center to visualize and run your entire field operation */}
           </h3>
           <h3 className="main-heading mt-2 hidden text-white lg:block">
-            One command center to visualize and run your entire field operation
+            {hero?.heroTitle}
+            {/* One command center to visualize and run your entire field operation */}
           </h3>
           <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
-            Contractor+ brings job scheduling, dispatch, crew visibility, and
-            communication into one live hub for office & field teams.
+            {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
+            communication into one live hub for office & field teams. */}
+            {hero?.heroDescription}
           </p>
           <div className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5">
             <div className="flex items-center gap-2.5">
@@ -322,12 +352,12 @@ const FieldServicesHero = () => {
             </div>
             <div className="flex w-full flex-col items-center justify-center gap-[6px] sm:w-fit">
               <Button variant="primary">
-                <span className="hidden sm:flex">Get started FREE</span>
-                <span className="flex sm:hidden">Download FREE App</span>
+                <span className="hidden sm:flex">{hero?.createBtn}</span>
+                <span className="flex sm:hidden">{hero?.mobileBtn}</span>
                 <ArrowIcon fill="white" className="hidden sm:block" />
               </Button>
               <CardRequiredButton
-                text="No credit card required"
+                text={hero?.ncc_txt}
                 className="hidden text-white sm:flex"
               />
             </div>

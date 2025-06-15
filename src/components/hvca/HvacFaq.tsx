@@ -32,7 +32,7 @@ const HvacFaq: React.FC<Props> = ({
   isBlueLinear = true,
 }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
-console.log(faqitems , "feild faq")
+
   return (
     <div className={`${className} relative overflow-hidden`}>
       <section className="relative z-30 overflow-hidden">

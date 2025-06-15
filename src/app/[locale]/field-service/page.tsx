@@ -16,6 +16,7 @@ import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
+import { debugLog } from "@/utils/getConsole";
 export const metadata = {
   title: "Contractor + - Field Services",
   description:
@@ -189,20 +190,19 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[thousandReviews][populate]=reviews",
     ),
   ]);
-  console.log(
-    crmPageContent?.data?.[0],
-    thousandReviews?.data?.[0]?.thousandReviews?.reviews,
-    "thousand reviewss",
-  );
+  debugLog("feild-serv", crmPageContent?.data?.[0]);
+  // console.log(crmPageContent?.data?.[0] , "thousand reviewss")
   return (
     <main className="overflow-hidden">
-      <FieldServicesHero />
+      <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
       <ServiceContractorsMarquee reviews={reviews} />
-      <GoingFieldSevices />
-      <RealTimeServiceConnector />
-      <RunWithContractor />
+      <GoingFieldSevices switchingTool={section3?.data?.[0]?.switchingTool} />
+      <RealTimeServiceConnector
+        fieldService={section4?.data?.[0]?.fieldService}
+      />
+      <RunWithContractor kindAdorable={section6?.data?.[0]?.comparison} />
       <TimmingEffect />
-      <NeverLookBack />
+      <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
       <ThousandsReviews
         data={crmPageContent?.data?.[0]?.thousandReviews}
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}

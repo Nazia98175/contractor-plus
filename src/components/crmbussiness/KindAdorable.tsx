@@ -3,9 +3,9 @@ import { BlackLogo } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CompareCard from "./CompareCard";
 import CompareTable from "./CompareTable";
-interface TheServiceProps {
+export interface TheServiceProps {
   kindAdorable: any;
-  slug: string;
+  slug?: string;
 }
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
  

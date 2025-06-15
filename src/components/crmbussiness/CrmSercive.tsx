@@ -2,10 +2,9 @@
 import { useTranslations } from "next-intl";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../common/CardReveal";
-import { CheckIcon, FooterRedLineIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
 import CloudsAnimation from "../common/CloudsAnimation";
-import FreeAccountButton from "../common/FreeAccountButton";
+import { CheckIcon } from "../common/Icons";
+import TextAnimation from "../common/TextAnimation";
 interface Props {
   data: any;
   ncc: string;

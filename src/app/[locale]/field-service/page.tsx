@@ -1,4 +1,4 @@
-import { OurReviewList, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
@@ -134,7 +134,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     },
   ];
 
- const [
+  const [
     crmPageContent,
     reviews,
     section3,
@@ -144,11 +144,11 @@ const FieldServicesPage = async ({ params }: Params) => {
     section7,
     faq,
     blogs,
-    thousandReviews
+    thousandReviews,
   ] = await Promise.all([
     getCrmPage("field-service", useParams.locale, "&populate=*"),
     getCrmPage(
-     "field-service",
+      "field-service",
       useParams.locale,
       "&populate[reviews][populate]=reviews",
     ),
@@ -183,9 +183,17 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[faqs][populate]=faq",
     ),
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-    getCrmPage("field-service" , useParams?.locale , "&populate[thousandReviews][populate]=reviews")
+    getCrmPage(
+      "field-service",
+      useParams?.locale,
+      "&populate[thousandReviews][populate]=reviews",
+    ),
   ]);
-console.log(crmPageContent?.data?.[0] , thousandReviews?.data?.[0]?.thousandReviews?.reviews , "thousand reviewss")
+  console.log(
+    crmPageContent?.data?.[0],
+    thousandReviews?.data?.[0]?.thousandReviews?.reviews,
+    "thousand reviewss",
+  );
   return (
     <main className="overflow-hidden">
       <FieldServicesHero />
@@ -195,20 +203,22 @@ console.log(crmPageContent?.data?.[0] , thousandReviews?.data?.[0]?.thousandRevi
       <RunWithContractor />
       <TimmingEffect />
       <NeverLookBack />
-      <ThousandsReviews data={crmPageContent?.data?.[0]?.thousandReviews}
-              reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews} />
+      <ThousandsReviews
+        data={crmPageContent?.data?.[0]?.thousandReviews}
+        reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
+      />
       <HvacSoftwareService
-      createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
-              mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
-              ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-              data={crmPageContent?.data?.[0]?.crmService}
+        createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
+        mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
+        ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+        data={crmPageContent?.data?.[0]?.crmService}
         descColorClass="text-secondary"
       />
 
       {/* <HvacSoftwareService /> */}
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq
-      faqitems={faq?.data?.[0]?.faqs}
+        faqitems={faq?.data?.[0]?.faqs}
         // faqitems={faqitems}
         className="mt-12 md:mt-[74px]"
         variant="dark"
@@ -221,8 +231,12 @@ console.log(crmPageContent?.data?.[0] , thousandReviews?.data?.[0]?.thousandRevi
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
-      <BlogPosts data={crmPageContent?.data?.[0]?.blogs}
-            blogs={blogs} className="relative z-20 bg-white" variant="secondary" />
+      <BlogPosts
+        data={crmPageContent?.data?.[0]?.blogs}
+        blogs={blogs}
+        className="relative z-20 bg-white"
+        variant="secondary"
+      />
     </main>
   );
 };

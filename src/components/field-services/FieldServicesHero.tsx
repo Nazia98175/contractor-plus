@@ -18,8 +18,21 @@ interface GeolocationData {
   city?: string;
   country?: string;
 }
+interface  heroProps{
+  heroTitle: string,
+  heroTitle1: string,
+  heroDescription: string,
+  ncc_txt: string;
+  mobileBtn: string;
+  createBtn: string;
 
-const FieldServicesHero = () => {
+
+}
+interface Props{
+  hero: heroProps
+}
+
+const FieldServicesHero:React.FC<Props> = ({hero}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [location, setLocation] = useState<GeolocationData | null>(null);
   const [mapKey, setMapKey] = useState(0); // Key to force map reload
@@ -128,7 +141,7 @@ const FieldServicesHero = () => {
     setIsLoading(false);
   }, []);
 
-  console.log(processedLocation, "location");
+  // console.log(processedLocation, "location");
 
   return (
     <section className="relative overflow-visible">
@@ -297,19 +310,23 @@ const FieldServicesHero = () => {
           <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]">
             <div className="rounded-md bg-[#333434] px-3 py-1 text-xs font-semibold tracking-[-0.24px]">
               <span className="text-secondary">
-                Field Service Management Software
+                {hero?.heroTitle1}
+                {/* Field Service Management Software */}
               </span>
             </div>
           </div>
           <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
-            One command center to visualize and run your entire field operation
+            {hero?.heroTitle}
+            {/* One command center to visualize and run your entire field operation */}
           </h3>
           <h3 className="main-heading mt-2 hidden text-white lg:block">
-            One command center to visualize and run your entire field operation
+            {hero?.heroTitle}
+            {/* One command center to visualize and run your entire field operation */}
           </h3>
           <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
-            Contractor+ brings job scheduling, dispatch, crew visibility, and
-            communication into one live hub for office & field teams.
+            {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
+            communication into one live hub for office & field teams. */}
+            {hero?.heroDescription}
           </p>
           <div className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5">
             <div className="flex items-center gap-2.5">
@@ -322,12 +339,12 @@ const FieldServicesHero = () => {
             </div>
             <div className="flex w-full flex-col items-center justify-center gap-[6px] sm:w-fit">
               <Button variant="primary">
-                <span className="hidden sm:flex">Get started FREE</span>
-                <span className="flex sm:hidden">Download FREE App</span>
+                <span className="hidden sm:flex">{hero?.createBtn}</span>
+                <span className="flex sm:hidden">{hero?.mobileBtn}</span>
                 <ArrowIcon fill="white" className="hidden sm:block" />
               </Button>
               <CardRequiredButton
-                text="No credit card required"
+                text={hero?.ncc_txt}
                 className="hidden text-white sm:flex"
               />
             </div>

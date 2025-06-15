@@ -16,7 +16,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
       setSelectedVideoUrl(videoUrl);
       setIsModalOpen(true);
     };
-    console.log(reviews , "kjjjjj")
+   
   return (
     <section className="relative z-20">
       <h3 className="section-heading gradient-white hidden text-center sm:block">

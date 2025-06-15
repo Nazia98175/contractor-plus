@@ -8,7 +8,7 @@ interface TheServiceProps {
   slug: string;
 }
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
-  console.log(kindAdorable, "kinddd");
+ 
   return (
     <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-[53px] md:pt-16 lg:pt-[70px]">
       <TextAnimation animateOnScroll={true} delay={0.2}>

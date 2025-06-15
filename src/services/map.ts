@@ -14,7 +14,7 @@ export const getUserLoc = async () => {
       },
     );
 
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error: any) {
     console.error("Error fetching user location:", error);

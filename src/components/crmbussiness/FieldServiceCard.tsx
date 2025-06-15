@@ -20,7 +20,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
     theme === "dark" ? "text-secondary lg:text-superSilver" : "text-wallStreet";
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
 
-  console.log(imageBaseUrl.split("api")[0]?.slice(0,-1), "service");
+  // console.log(imageBaseUrl.split("api")[0]?.slice(0,-1), "service");
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">

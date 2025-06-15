@@ -67,7 +67,7 @@ const IndustriesDropdown: React.FC<Props> = ({ headerSubList }) => {
     { image: "/images/webp/circular-slide-1.webp" },
   ];
   const fallbackImage = "/images/webp/circular-slide-1.webp";
-  console.log(headerSubList, "wwwwww");
+  
   return (
     <div className="relative z-[9999] flex grow gap-6 overflow-hidden">
       <div className="no-scrollbar grid w-full grid-cols-4 gap-3 overflow-auto">

@@ -16,6 +16,7 @@ import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
+import {debugLog} from '@/utils/getConsole'
 export const metadata = {
   title: "Contractor + - Field Services",
   description:
@@ -185,10 +186,11 @@ const FieldServicesPage = async ({ params }: Params) => {
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
     getCrmPage("field-service" , useParams?.locale , "&populate[thousandReviews][populate]=reviews")
   ]);
-console.log(crmPageContent?.data?.[0] , thousandReviews?.data?.[0]?.thousandReviews?.reviews , "thousand reviewss")
+  debugLog("feild-serv" , crmPageContent?.data?.[0])
+// console.log(crmPageContent?.data?.[0] , "thousand reviewss")
   return (
     <main className="overflow-hidden">
-      <FieldServicesHero />
+      <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
       <ServiceContractorsMarquee reviews={reviews} />
       <GoingFieldSevices />
       <RealTimeServiceConnector />

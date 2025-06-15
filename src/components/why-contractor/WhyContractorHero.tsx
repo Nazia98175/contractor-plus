@@ -3,6 +3,8 @@
 import { useState, useRef } from "react";
 import { LogoIcon } from "../common/Icons";
 import Image from "next/image";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import TextAnimation from "../common/TextAnimation";
 
 const WhyContractorHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,15 +22,30 @@ const WhyContractorHero = () => {
   };
 
   return (
-    <section className="pb-14 sm:pb-20 pt-[88px] sm:pt-[127px] bg-[url('/images/png/why-contractor-hero-bg.png')] bg-top bg-cover">
+    <section className="pt-[88px] pb-14 sm:pt-[127px] sm:pb-20">
       <div className="mx-auto max-w-[830px] px-2">
-        <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
+        {/* <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
           You can't scale a contracting business built on bottlenecks
-        </h2>
-        <p className="hero-description mb-8 text-center !text-[#8A8E91] sm:mb-[42px]">
-          Hard work got you here. But it's not enough to get you{" "}
-          <span className="text-decemberSky italic">where you want to go.</span>
-        </p>
+        </h2> */}
+        {/* <PrimaryAnimatedText
+          className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4"
+          delay={3000}
+        >
+          You can't scale a contracting business built on bottlenecks
+        </PrimaryAnimatedText> */}
+        <TextAnimation animateOnScroll={false} delay={0}>
+          <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
+            You can't scale a contracting business built on bottlenecks
+          </h2>
+        </TextAnimation>
+        <TextAnimation animateOnScroll={false} delay={0.4}>
+          <p className="hero-description mb-8 text-center !text-[#8A8E91] sm:mb-[42px]">
+            Hard work got you here. But it's not enough to get you{" "}
+            <span className="text-decemberSky italic">
+              where you want to go.
+            </span>
+          </p>
+        </TextAnimation>
         <div className="relative">
           <div className="absolute top-1/2 left-0 h-auto w-full max-w-[274px] translate-y-[-50%] blur-[12px]">
             <Image
@@ -109,7 +126,7 @@ const WhyContractorHero = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-superSilver text-xs sm:mt-2 sm:text-sm max-sm:my-2">
+              <p className="text-superSilver text-xs max-sm:my-2 sm:mt-2 sm:text-sm">
                 Owner, Cranfill Construction
               </p>
               <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">

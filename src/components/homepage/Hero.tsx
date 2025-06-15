@@ -18,7 +18,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     hero_title,
     hero_description,
     cta_button_text,
-    cta_button_link,
+
     ncc_text,
     hero_image,
     mobileBtn,
@@ -35,7 +35,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         height={800}
         src="/images/webp/hero-video-ovelay.webp"
         alt="Red Circle For designing"
-        className="pointer-events-none absolute top-0 left-0 z-20 block h-full w-full object-cover lg:hidden"
+        className="pointer-events-none absolute top-0 left-0 z-[-1] block h-full w-full object-cover lg:hidden"
         layout="lazy"
       />
       <div className="main-container relative z-10 flex items-end pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
@@ -57,12 +57,21 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             animateOnScroll={false}
             className="flex w-full flex-col items-center gap-2.5 sm:w-fit"
           >
-            <FreeAccountButton showIcon={false} text={cta_button_text} />
+            <FreeAccountButton
+              showIcon={false}
+              text={cta_button_text}
+              className="!hidden sm:!flex"
+            />
+            <FreeAccountButton
+              showIcon={false}
+              text={mobileBtn}
+              className="flex sm:!hidden"
+            />
             <CardRequiredButton text={ncc_text} />
           </CardReveal>
         </div>
       </div>
-      <div className="absolute top-0 -z-10 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
+      <div className="3xl:right-[0%] absolute top-0 -z-10 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
         <VideoOptimizer
           highResUrl={"/video/hero-video.mp4"}
           lowResUrl="/video/hero-video.mp4"

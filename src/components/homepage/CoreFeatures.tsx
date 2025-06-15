@@ -18,7 +18,7 @@ const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
 
   return (
     <section className="relative z-20 bg-white">
-      <div className="mx-auto max-w-[985px] px-2 pt-12 text-center md:text-start">
+      <div className="main-container pt-12 text-center md:text-start">
         <PrimaryAnimatedText
           className="sub-heading text-lightBlack w-full font-semibold md:w-fit"
           delay={3000}

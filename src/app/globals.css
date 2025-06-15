@@ -63,6 +63,7 @@
   --breakpoint-xs: 560px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
+  --breakpoint-900: 900px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-1xl: 1440px;
@@ -78,6 +79,11 @@
     180deg,
     rgba(12, 13, 17, 0) 13.17%,
     #0c0d11 95.85%
+  );
+  --background-image-black-fade-new: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 13.17%,
+    #0c0d11 80.92%
   );
 
   --background-image-white-linear: linear-gradient(
@@ -219,10 +225,10 @@ body {
   @apply font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px];
 }
 .card-heading {
-  @apply font-montserrat lg:font-jakarta text-sm leading-none font-semibold sm:text-base lg:text-lg lg:font-bold xl:leading-[79%];
+  @apply font-montserrat lg:font-jakarta text-sm leading-none font-semibold md:text-base lg:font-bold xl:text-lg xl:leading-[79%];
 }
 .card-desc {
-  @apply text-xs font-medium sm:text-sm lg:text-base;
+  @apply text-xs font-medium sm:text-sm xl:text-base;
 }
 .card-review {
   @apply font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm;
@@ -238,7 +244,7 @@ body {
   @apply text-3xl leading-[38px] font-bold;
 }
 .countup-desc {
-  @apply font-montserrat text-lg font-medium;
+  @apply font-montserrat text-lg leading-[128%] font-medium;
 }
 @keyframes bounce {
   0%,
@@ -853,6 +859,30 @@ html::-webkit-scrollbar {
 .card-shine:hover::before {
   animation: shine 0.45s linear forwards;
 }
+.card-shine-2 {
+  @apply relative overflow-hidden;
+}
+.card-shine-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(200, 0, 0, 0) 0%,
+    /* transparent start */ rgba(255, 100, 100, 0.067) 50%,
+    /* reddish mid-glow */ rgba(200, 0, 0, 0) 100% /* transparent end */
+  );
+  z-index: 10;
+  transform: translateX(-100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.card-shine-2:hover::before {
+  animation: shine 0.45s linear forwards;
+}
 
 @keyframes breathe {
   0% {
@@ -1273,7 +1303,6 @@ button {
       rgba(255, 82, 1, 0) 100%
     ),
     rgba(254, 231, 232, 0.2);
-  backdrop-filter: blur(26px);
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 .trusted-gradient {

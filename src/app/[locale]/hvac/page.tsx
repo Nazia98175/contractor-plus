@@ -80,10 +80,17 @@ const page = () => {
           reviews={reviews?.data?.[0]?.reviews?.reviews}
         /> */}
       </div>
-      <HvacSoftwareService />
+      <HvacSoftwareService
+        title="This is what HVAC software should have been all along"
+        desc=""
+      />
       <TrustBarHvca platforms={platforms} />
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
-      <HvacFaq faqitems={faqitems} variant="hvac" />
+      <HvacFaq
+        faqitems={faqitems}
+        variant="hvac"
+        heading="What HVAC contractors want to know "
+      />
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
     </>
   );

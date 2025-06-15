@@ -204,7 +204,10 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         </PrimaryAnimatedText>
 
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
-          <div className="flex flex-col items-center justify-center bg-center md:flex-row md:justify-between md:pt-5 lg:gap-5">
+          <div
+            style={{ backgroundSize: "100% 100%" }}
+            className="no-repeat flex flex-col items-center justify-center bg-[url('/images/svg/red-line_animated.svg')] md:flex-row md:justify-between md:bg-none md:pt-5 lg:gap-5"
+          >
             {/* Left Section */}
             <div className="left-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat md:h-[300px] md:bg-[url('/images/svg/left-red-lines_animated.svg')] md:py-8 lg:py-[59px]">
               <div
@@ -263,7 +266,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             </div>
 
             {/* Right Section */}
-            <div className="right-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat py-8 md:h-[300px] md:bg-[url('/images/svg/right-red-line_animated.svg')] lg:py-[59px]">
+            <div className="right-section relative h-[190px] w-full max-w-[409px] bg-cover bg-no-repeat py-8 md:h-[300px] md:bg-[url('/images/svg/right-red-line_animated.svg')] lg:py-[59px]">
               <div
                 ref={right1Ref}
                 className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"

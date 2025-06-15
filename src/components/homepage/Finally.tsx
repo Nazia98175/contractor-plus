@@ -22,6 +22,16 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   return (
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
+        <img
+          className="absolute top-[-152px] left-0 z-20 hidden h-full w-full md:block"
+          src="/images/webp/finally-desktop-bg.webp"
+          alt="finally bg"
+        />
+        <img
+          className="absolute top-[0px] left-0 z-20 block h-full w-full md:hidden"
+          src="/images/webp/finally-mobile-bg.webp"
+          alt="finally bg"
+        />
         <FinallyBackground />
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
@@ -67,7 +77,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               staggerDelay={0.4}
               animationDuration={0.8}
               distance={50}
-              className="flex flex-row gap-4 lg:flex-col"
+              className="flex flex-row items-center gap-4 lg:flex-col"
             >
               <Image
                 width={96}
@@ -93,7 +103,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 height={91}
                 src="/images/webp/get-app.webp"
                 alt="Get App"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
               />
             </CardReveal>
             <CardReveal

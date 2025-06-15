@@ -7,6 +7,7 @@ import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
 import OurBlogCard from "./OurBlogCard";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import PrimaryLink from "../common/PrimaryLInk";
 
 interface Blogs {
   blogTitle: string;
@@ -74,7 +75,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     },
   ];
   return (
-    <section className="relative z-10 bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
+    <section className="relative z-10 overflow-hidden bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
           <PrimaryAnimatedText delay={3000}>
@@ -105,7 +106,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           staggerDelay={0.15}
           animationDuration={0.8}
           distance={50}
-          className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:gap-7"
+          className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid xl:gap-7"
         >
           {blogs.map((article, index) => (
             <OurBlogCard
@@ -116,15 +117,16 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             />
           ))}
         </CardReveal>
-        <div className="blog-post block sm:hidden">
+        <div className="blog-post block xl:hidden">
           <SliderLayout
             autoplay
             pagination
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
-              520: { slidesPerView: 1.5, spaceBetween: 14 },
-              640: { slidesPerView: 2, spaceBetween: 14 },
-              768: { slidesPerView: 2.6, spaceBetween: 16 },
+              520: { slidesPerView: 1.5, spaceBetween: 12 },
+              640: { slidesPerView: 2, spaceBetween: 12 },
+              768: { slidesPerView: 2, spaceBetween: 16 },
+              900: { slidesPerView: 2.3, spaceBetween: 16 },
             }}
           >
             {blogs.map((article, index) => (

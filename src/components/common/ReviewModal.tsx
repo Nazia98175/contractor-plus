@@ -12,11 +12,11 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
   onClose,
   videoUrl,
 }) => {
-  const embedUrl = videoUrl?.includes("youtube.com/watch")
-    ? videoUrl.replace("watch?v=", "embed/")
-    : videoUrl;
-  console.log(videoUrl, "video");
-
+  const embedUrl = videoUrl
+    ? videoUrl.includes("youtube.com/watch")
+      ? videoUrl.replace("watch?v=", "embed/")
+      : videoUrl
+    : "";
   return (
     <CommonModalLayout
       open={isOpen}

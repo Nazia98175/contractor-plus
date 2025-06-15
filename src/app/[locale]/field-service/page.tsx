@@ -144,6 +144,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     section7,
     faq,
     blogs,
+    thousandReviews
   ] = await Promise.all([
     getCrmPage("field-service", useParams.locale, "&populate=*"),
     getCrmPage(
@@ -182,21 +183,28 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[faqs][populate]=faq",
     ),
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
+    getCrmPage("field-service" , useParams?.locale , "&populate[thousandReviews][populate]=reviews")
   ]);
-
+console.log(crmPageContent?.data?.[0] , thousandReviews?.data?.[0]?.thousandReviews?.reviews , "thousand reviewss")
   return (
     <main className="overflow-hidden">
       <FieldServicesHero />
-      <ServiceContractorsMarquee />
+      <ServiceContractorsMarquee reviews={reviews} />
       <GoingFieldSevices />
       <RealTimeServiceConnector />
       <RunWithContractor />
       <TimmingEffect />
-      <div className="relative overflow-hidden">
-        <NeverLookBack />
-        {/* <ThousandsReviews data={OurReviewList} reviews={dummyReviews} /> */}
-        <HvacSoftwareService />
-      </div>
+      <NeverLookBack />
+      <ThousandsReviews data={crmPageContent?.data?.[0]?.thousandReviews}
+              reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews} />
+      <HvacSoftwareService
+      createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
+              mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
+              ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+              data={crmPageContent?.data?.[0]?.crmService}
+        descColorClass="text-secondary"
+      />
+
       {/* <HvacSoftwareService /> */}
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq
@@ -204,7 +212,11 @@ const FieldServicesPage = async ({ params }: Params) => {
         // faqitems={faqitems}
         className="mt-12 md:mt-[74px]"
         variant="dark"
+        heading="What contractors want to know"
+        isClaud={false}
+        isBlueLinear={false}
       />
+
       <WhatEverClient
         data={homePageContent?.data?.whateverOperation}
         issection={false}

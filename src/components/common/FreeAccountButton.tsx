@@ -22,7 +22,7 @@ const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
         type={type}
         disabled={disabled}
         onClick={onClick}
-        className={`primary-btn bg-red-linear h-[40px] gap-2 ${className}`}
+        className={`secondary-btn bg-red-linear h-[40px] gap-2 ${className}`}
       >
         {text}
         {showIcon && <SideIcon />}

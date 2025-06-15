@@ -1,9 +1,7 @@
-import React from "react";
-import TimmingEffectSlider from "./TimmingEffectSlider";
-import Button from "../common/Button";
-import { Arrow, ArrowIcon } from "../common/Icons";
-import CardRequiredButton from "../common/CardRequiredButton";
 import Image from "next/image";
+import Button from "../common/Button";
+import CardRequiredButton from "../common/CardRequiredButton";
+import { ArrowIcon } from "../common/Icons";
 
 const TimmingEffect = () => {
   const sliderData = [
@@ -49,7 +47,7 @@ const TimmingEffect = () => {
     },
   ];
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative bg-white">
       <h2
         style={{
           background:
@@ -62,16 +60,26 @@ const TimmingEffect = () => {
       >
         A system that finally connects field and office
       </h2>
-      <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
+      <p
+        style={{
+          background:
+            "linear-gradient(275.84deg, rgba(0, 0, 0, 0) 7.61%, rgba(238, 30, 37, 0.4) 99.65%), #A2A2A2",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+          color: "transparent",
+        }}
+        className="text-darkness gradient-text-2 relative z-[4] mt-3 text-center text-xs font-semibold sm:!bg-none sm:text-sm md:mt-5 md:text-base xl:text-lg"
+      >
         Here’s what it feels like when everything just works
       </p>
-      <div className="relative mt-10 flex h-[80vh] flex-col items-center justify-center overflow-hidden md:justify-end md:overflow-visible">
+      <div className="relative mt-10 flex h-[80vh] flex-col items-center justify-center overflow-hidden md:overflow-visible xl:justify-end">
         {/* SUN IMAGE  */}
-        <div className="sun-bg absolute -top-[5%] -right-[20%] z-[3] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:h-[400] xl:w-[400px]"></div>
+        <div className="sun-bg absolute -top-[5%] -right-[20%] z-[3] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:-right-[200px] xl:h-[400] xl:w-[400px]"></div>
         {/* TOP WHITE BLUR LINE  */}
-        <div className="absolute -top-[17%] left-1/2 z-[3] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
+        <div className="absolute -top-[7%] left-1/2 z-[3] h-20 w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:-top-[17%] sm:h-[200px] lg:blur-[25px] xl:-top-[20%] xl:h-[250px]"></div>
         {/* BOTTOM WHITE BLUR LINE  */}
-        <div className="absolute -bottom-[25%] left-1/2 z-[3] h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[25px] md:h-[250px]"></div>
+        <div className="absolute -bottom-[15%] left-1/2 z-[3] h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[25px] md:h-[250px]"></div>
 
         {/* ORANGE BLUR LINEAR BACKGROUND  */}
         <div className="sun-reflect absolute right-0 h-full w-full rotate-180"></div>
@@ -118,13 +126,16 @@ const TimmingEffect = () => {
         </div>
       </div>
 
-      <div className="relative z-[3] flex flex-col items-center justify-center px-2">
+      <div className="relative z-[5] -mt-20 flex flex-col items-center justify-center px-3 sm:-mt-10">
         <Button variant="primary" className="mt-3 mb-[6px]">
           <span className="hidden sm:flex">Get started FREE</span>
           <span className="flex sm:hidden">Download FREE App</span>
           <ArrowIcon fill="white" />
         </Button>
-        <CardRequiredButton text="No credit card required" />
+        <CardRequiredButton
+          text="No credit card required"
+          className="relative z-[3]"
+        />
       </div>
     </section>
   );

@@ -23,9 +23,9 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
   return (
     <article
       ref={ref}
-      className="flex flex-col items-center justify-between gap-2 rounded-xl p-4 text-center transition"
+      className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
     >
-      <span className="fill-white">{item.icon}</span>
+      <span className="max-w-7 fill-white sm:max-w-8">{item.icon}</span>
 
       <h3 className="md:text-winterWay countup-title text-white">
         {item.isRange ? (

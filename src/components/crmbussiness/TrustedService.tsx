@@ -46,8 +46,8 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
                 key={review.id}
                 review={review as Review}
                 openModal={
-                  review.isModal
-                    ? () => openModal(review.videolink || "")
+                 review.isModal
+                    ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
               />
@@ -68,7 +68,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
                 review={review as Review}
                 openModal={
                   review.isModal
-                    ? () => openModal(review.videolink || "")
+                    ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
               />

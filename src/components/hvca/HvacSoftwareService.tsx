@@ -5,7 +5,25 @@ import CardReveal from "../common/CardReveal";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 
-const HvacSoftwareService = () => {
+interface HvacSoftwareServiceProps {
+  
+  data: any;
+  ncc: string;
+  createBtn: string;
+  mobileBtn: string;
+
+ 
+  descColorClass?: string;
+}
+
+const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
+  
+  descColorClass = "text-decemberSky",
+  ncc ,
+  createBtn,
+  mobileBtn ,
+  data
+}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
@@ -25,19 +43,21 @@ const HvacSoftwareService = () => {
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
   };
-
+console.log(data ,"fffff")
   return (
     <div className="relative z-10 w-full">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <h3 className="sub-heading mb-4 text-center font-extrabold text-white">
-              This is what HVAC software should have been all along
+            <h3 className="sub-heading mx-auto mb-4 max-w-[840px] text-center font-extrabold text-white">
+              {data?.title}
             </h3>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <p className="text-decemberSky mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl">
-              Start using Contractor+ FREE. You won’t look back.
+            <p
+              className={`${descColorClass} mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl xl:!leading-[124%]`}
+            >
+              {data?.sub_title}
             </p>
           </TextAnimation>
           <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
@@ -48,7 +68,7 @@ const HvacSoftwareService = () => {
               <div className="w-full md:max-w-[414px]">
                 <input
                   type="email"
-                  placeholder={"Your Email"}
+                  placeholder={data?.placeholder}
                   required
                   value={email}
                   onChange={handleEmailChange}
@@ -64,12 +84,12 @@ const HvacSoftwareService = () => {
                   {loading ? (
                     <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                   ) : (
-                    `${"Get started FREE"}`
+                    `${createBtn}`
                   )}
                 </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span className="font-myriad text-sm font-semibold text-white">
-                    No Credit Card Required
+                   {ncc}
                   </span>
                 </p>
               </div>
@@ -79,7 +99,7 @@ const HvacSoftwareService = () => {
                     <CheckIcon />
                   </span>
                   <span className="font-myriad text-sm font-semibold text-white">
-                    No Credit Card Required
+                   {ncc}
                   </span>
                 </p>
               </div>

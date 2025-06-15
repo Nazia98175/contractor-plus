@@ -1031,21 +1031,24 @@ export const CrossIcon = () => (
   </svg>
 );
 
-type EstimateIcon2Props = {
-  fill?: string;
-};
+import React from "react";
 
-export const EstimateIcon2 = ({ fill = "#ffffff" }: EstimateIcon2Props) => (
+interface EstimateIcon2Props {
+  className?: string;
+}
+
+export const EstimateIcon2: React.FC<EstimateIcon2Props> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="32"
-    height="31"
+    width="100%"
+    height="100%"
     viewBox="0 0 32 31"
+    className={className}
     fill="none"
   >
     <path
       d="M2.04443 29.7339L3.99949 29.7339L24.5188 8.07064L6.97325 29.7339L10.542 29.7339L25.6923 8.18271L24.6311 13.4436L26.5048 11.8141L26.6869 16.0828L30.5985 1.2105L15.519 5.17644L21.1111 6.10595L19.2063 7.75888L22.8672 6.74878L2.04443 21.2361V22.5906L14.6948 13.9762L3.38664 24.3703L11.7752 18.3777L2.04443 28.2636V29.7339ZM12.5005 3.5L9.95597 5.46876L22.5624 2.12718L9.37569 1.20166L12.5005 3.5ZM27.4787 17.5567L28.8998 16.5L30.5721 17.7566L29.7983 8.72146L27.4787 17.5567Z"
-      fill={fill}
+      fill="currentColor"
     />
   </svg>
 );
@@ -2106,56 +2109,6 @@ export const AlertIcon = () => (
       d="M30.6298 4.20416C30.4599 4.03358 30.2578 3.89831 30.0354 3.80612C29.8129 3.71393 29.5745 3.66664 29.3337 3.66699H14.667C14.4262 3.66664 14.1877 3.71393 13.9653 3.80612C13.7428 3.89831 13.5408 4.03358 13.3708 4.20416L4.20416 13.3708C4.03358 13.5408 3.89831 13.7428 3.80612 13.9653C3.71393 14.1877 3.66664 14.4262 3.66699 14.667V29.3337C3.66699 29.8213 3.85949 30.287 4.20416 30.6298L13.3708 39.7965C13.5408 39.9671 13.7428 40.1024 13.9653 40.1945C14.1877 40.2867 14.4262 40.334 14.667 40.3337H29.3337C29.8213 40.3337 30.287 40.1412 30.6298 39.7965L39.7965 30.6298C39.9671 30.4599 40.1024 30.2578 40.1945 30.0354C40.2867 29.8129 40.334 29.5745 40.3337 29.3337V14.667C40.334 14.4262 40.2867 14.1877 40.1945 13.9653C40.1024 13.7428 39.9671 13.5408 39.7965 13.3708L30.6298 4.20416ZM23.8337 31.167H20.167V27.5003H23.8337V31.167ZM23.8337 23.8337H20.167V12.8337H23.8337V23.8337Z"
       fill="#E74C3C"
     />
-  </svg>
-);
-export const BlurIcon = ({ className = "" }) => (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 611 245"
-    fill="none"
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <foreignObject x="-127" y="-182" width="866" height="609">
-      <div
-        style={{
-          backdropFilter: "blur(4.05px)",
-          height: "100%",
-          width: "100%",
-        }}
-      ></div>
-    </foreignObject>
-    <g filter="url(#filter0_f_783_13277)" data-figma-bg-blur-radius="8.1">
-      <path
-        d="M631.5 122.5C631.5 167.483 604.054 215.326 544.999 254.567C486.364 293.53 402.032 319.5 306 319.5C209.968 319.5 125.636 293.53 67.001 254.567C7.94641 215.326 -19.5 167.483 -19.5 122.5C-19.5 77.517 7.94641 29.6739 67.001 -9.56741C125.636 -48.5302 209.968 -74.5 306 -74.5C402.032 -74.5 486.364 -48.5301 544.999 -9.56739C604.054 29.6739 631.5 77.517 631.5 122.5Z"
-        stroke="#FAFAFA"
-        strokeWidth="115"
-      />
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_783_13277"
-        x="-127"
-        y="-182"
-        width="866"
-        height="609"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="25"
-          result="effect1_foregroundBlur_783_13277"
-        />
-      </filter>
-    </defs>
   </svg>
 );
 
@@ -3277,6 +3230,25 @@ export const HeroSliderIcon2 = ({ className = "" }) => (
     </defs>
   </svg>
 );
+interface DelieveryIconProps {
+  className?: string;
+}
+
+export const DelieveryIcon: React.FC<DelieveryIconProps> = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 30 30"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M3.75 16.875L2.8125 15H9.375L8.625 13.125H2.5L1.5625 11.25H11.3125L10.5625 9.375H1.3875L0.3125 7.5H5C5 6.83696 5.26339 6.20107 5.73223 5.73223C6.20107 5.26339 6.83696 5 7.5 5H22.5V10H26.25L30 15V21.25H27.5C27.5 22.2446 27.1049 23.1984 26.4017 23.9017C25.6984 24.6049 24.7446 25 23.75 25C22.7554 25 21.8016 24.6049 21.0983 23.9017C20.3951 23.1984 20 22.2446 20 21.25H15C15 22.2446 14.6049 23.1984 13.9017 23.9017C13.1984 24.6049 12.2446 25 11.25 25C10.2554 25 9.30161 24.6049 8.59835 23.9017C7.89509 23.1984 7.5 22.2446 7.5 21.25H5V16.875H3.75ZM23.75 23.125C24.2473 23.125 24.7242 22.9275 25.0758 22.5758C25.4275 22.2242 25.625 21.7473 25.625 21.25C25.625 20.7527 25.4275 20.2758 25.0758 19.9242C24.7242 19.5725 24.2473 19.375 23.75 19.375C23.2527 19.375 22.7758 19.5725 22.4242 19.9242C22.0725 20.2758 21.875 20.7527 21.875 21.25C21.875 21.7473 22.0725 22.2242 22.4242 22.5758C22.7758 22.9275 23.2527 23.125 23.75 23.125ZM25.625 11.875H22.5V15H28.075L25.625 11.875ZM11.25 23.125C11.7473 23.125 12.2242 22.9275 12.5758 22.5758C12.9275 22.2242 13.125 21.7473 13.125 21.25C13.125 20.7527 12.9275 20.2758 12.5758 19.9242C12.2242 19.5725 11.7473 19.375 11.25 19.375C10.7527 19.375 10.2758 19.5725 9.92417 19.9242C9.57254 20.2758 9.375 20.7527 9.375 21.25C9.375 21.7473 9.57254 22.2242 9.92417 22.5758C10.2758 22.9275 10.7527 23.125 11.25 23.125Z"
+      fill="currentColor"
+    />
+  </svg>
+);
 export const HeroPlayStoreIcon = () => (
   <svg
     width="143"
@@ -3566,8 +3538,8 @@ export const DashedLineIcon = () => (
 export const RunningBehindIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="33"
-    height="33"
+    width="100%"
+    height="100%"
     viewBox="0 0 33 33"
     fill="none"
   >
@@ -3581,8 +3553,8 @@ export const RunningBehindIcon = () => (
 export const BreakeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="33"
-    height="32"
+    width="100%"
+    height="100%"
     viewBox="0 0 33 32"
     fill="none"
   >
@@ -3631,8 +3603,8 @@ export const BreakeIcon = () => (
 export const ScreenShotIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="33"
-    height="32"
+    width="100%"
+    height="100%"
     viewBox="0 0 33 32"
     fill="none"
   >

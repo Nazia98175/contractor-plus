@@ -14,6 +14,17 @@ import TrustBar from "@/components/homepage/TrustBar";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getBlogs } from "@/services/blogs";
 import { getHomePage } from "@/services/homepage";
+import LottieAnimation from "@/components/common/LottieAnimation";
+import test1 from "../../../public/test/1.json";
+import test2 from "../../../public/test/2_CRM_opt.json";
+import test3 from "../../../public/test/3_Live Scheduling_opt.json";
+import test4 from "../../../public/test/4_Internal Job Chat_opt.json";
+import test5 from "../../../public/test/5_Estimate Builder_opt.json";
+import test6 from "../../../public/test/6_Property Profile_opt.json";
+import test7 from "../../../public/test/7_Big Chief AI_opt.json";
+import test8 from "../../../public/test/8_icon star_opt.json";
+import test9 from "../../../public/test/9_icon car_opt.json";
+import test10 from "../../../public/test/10_icon arrow_opt.json";
 
 export default async function Home({
   params,
@@ -52,7 +63,7 @@ export default async function Home({
         <Hero homePageContent={homePageContent?.data} />
         <TrustBar
           platforms={platforms}
-          className="mx-auto w-full max-w-[889px]"
+          className="mx-auto w-full max-w-[889px] py-4"
         />
         <TheEngineContractor
           engineContractor={homePageContent?.data?.engineContractor}
@@ -79,6 +90,16 @@ export default async function Home({
         entireBusiness={homePageContent?.data?.entireBusiness}
         ncc_text={homePageContent?.data?.ncc_text}
       />
+      <LottieAnimation className="w-[500px]" animationData={test1} />
+      <LottieAnimation className="w-[500px]" animationData={test2} />
+      <LottieAnimation className="w-[500px]" animationData={test3} />
+      <LottieAnimation className="w-[500px]" animationData={test4} />
+      <LottieAnimation className="w-[500px]" animationData={test5} />
+      <LottieAnimation className="w-[500px]" animationData={test6} />
+      <LottieAnimation className="w-[500px]" animationData={test7} />
+      <LottieAnimation className="w-[500px]" animationData={test8} />
+      <LottieAnimation className="w-[500px]" animationData={test9} />
+      <LottieAnimation className="w-[500px]" animationData={test10} />
     </div>
   );
 }

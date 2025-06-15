@@ -42,13 +42,12 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           <h4 className="text-wallStreet text-lg leading-[100%] font-bold sm:text-xl md:text-2xl">
             {content?.title}
           </h4>
-          <div className="relative h-[230px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
+          <div className="relative h-[181px] w-full overflow-hidden rounded-lg bg-white p-3 lg:h-[245px]">
             <LottieAnimation
               animationData={featureContentss?.[index]?.titleImg}
             />
-            {/* <BlurIcon className="absolute inset-0 h-full w-full mix-blend-luminosity" /> */}
           </div>
-          <p className="text-wallStreet max-w-[615px] space-y-2 text-sm font-medium sm:text-base lg:text-lg">
+          <p className="text-wallStreet space-y-2 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
             {content.desc}
             {featureContents?.[index]?.cardQuote && (
               <span className="text-secondary">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const OurBlogCard = ({
@@ -11,9 +12,10 @@ const OurBlogCard = ({
   index: number;
 }) => {
   return (
-    <article
+    <Link
+      href={"#"}
       key={blogListMobile?.[index]?.id}
-      className="card-shine relative h-fit w-full max-w-[406px] cursor-pointer overflow-hidden md:h-[400px] xl:pt-10"
+      className="card-shine-2 group relative h-fit w-full max-w-[406px] cursor-pointer rounded-2xl md:h-[400px]"
     >
       <img
         className="absolute top-16 right-0 w-full"
@@ -46,14 +48,14 @@ const OurBlogCard = ({
           src="/images/webp/blog-angle2.webp"
           alt="blog angle"
         />
-        <h3 className="text-winterWay font-jakarta relative z-10 pb-2 text-base leading-none font-extrabold md:text-lg">
+        <h3 className="text-winterWay font-jakarta group-hover: relative z-10 pb-2 text-base leading-none font-extrabold transition-all duration-300 ease-in-out md:text-lg">
           {article.blogTitle}
         </h3>
         <p className="text-secondary font-jakarta relative z-10 max-w-[255px] text-xs font-medium">
           {article.blogDescription}
         </p>
       </div>
-    </article>
+    </Link>
   );
 };
 

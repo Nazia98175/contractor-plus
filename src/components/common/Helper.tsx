@@ -6,6 +6,7 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  DelieveryIcon,
   EstimateIcon2,
   EstimatesIcon,
   EstimaticIcon,
@@ -49,28 +50,31 @@ export const awards = [
   {
     src: "/images/png/software-advice.png",
     alt: "Software Advice Front Runners 2024",
-    mt: "mt-2",
+    mt: "mt-3",
     width: 100,
   },
   {
     src: "/images/webp/leader.webp",
     alt: "G2 Leader Winter 2025",
+    mt: "mt-3",
     width: 81,
   },
   {
     src: "/images/webp/get-app.webp",
     alt: "GetApp Best Functionality 2025",
-    width: 130,
+    width: 115,
   },
   {
     src: "/images/svg/capterra.svg",
     alt: "Capterra Best Value 2025",
+    mt: "mt-3",
     width: 120,
   },
   {
     src: "/images/webp/best-value.webp",
+    mt: "mt-2",
     alt: "Capterra Shortlist 2025",
-    width: 120,
+    width: 110,
   },
 ];
 
@@ -102,29 +106,26 @@ export const makeOperationList = [
 ];
 export const swichToContractordata = [
   {
-    description: "Estimate process",
+    description: "Increase in jobs completed on time",
     start: 0,
     end: 27,
     suffix: "%",
-    icon: <EstimateIcon2 fill="#3F464b" />,
+    icon: <EstimateIcon2 className="md:text-winterWay text-white" />,
   },
   {
     title: "hours",
-    description: "Job turnaround time",
+    description: "Saved weekly on scheduling and updates",
     start: 0,
-    end: 28,
-    icon: (
-      <TruckElectricIcon className="md:text-lightBlack text-white" width={35} />
-    ),
+    end: 15,
+    icon: <DelieveryIcon className="md:text-winterWay text-white" />,
   },
   {
-    title: "less",
-    description: "Time spent on admin work",
+    description: "Fewer software tools used",
     start: 3,
     end: 5,
     isRange: true,
     suffix: "%",
-    icon: <AdminWorkIcon className="md:text-lightBlack text-white" />,
+    icon: <AdminWorkIcon className="md:text-winterWay text-white" />,
   },
 ];
 

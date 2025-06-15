@@ -4,6 +4,7 @@ import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
 import IndustryShifted from "@/components/why-contractor/IndustryShifted";
+import OperatingSystem from "@/components/why-contractor/OperatingSystem";
 import ReverseVideo from "@/components/why-contractor/ReverseVideo";
 import SeperateSolution from "@/components/why-contractor/SeperateSolution";
 import VideoBottomPart from "@/components/why-contractor/VideoBottomPart";
@@ -35,6 +36,7 @@ const WhyContractorPage = () => {
         <ReverseVideo />
         <VideoBottomPart />
         <WayToWin />
+        <OperatingSystem />
         <HvacSoftwareService
           descColorClass="text-secondary"
           title="All unified. All in sync. All in one place."

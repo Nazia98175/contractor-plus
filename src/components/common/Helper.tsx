@@ -6,23 +6,32 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  ClientPortalIcon,
+  ContractIcon,
   DelieveryIcon,
   EstimateIcon2,
+  EstimateInvoicesIcons,
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
+  FieldServiceManagementIcon,
   HeroSliderIcon1,
   HeroSliderIcon2,
   InvoicingIcon,
   LeadGenerationIcon,
+  MoreEyeIcon,
   PaymentsIcon,
   PROIcon,
   ProjectIcon,
+  ProjectManageMentIcon,
   PropertyIcon,
+  PropertyProfilesIcon,
   ReportingIcon,
   SchedulingIcon,
   ServiceIcon,
   SliderIcon1,
+  SubManagementIcon,
+  TaskManagementIcon,
   TelephoneIcon,
   TimeIcon,
   TrackingIcon,
@@ -43,6 +52,7 @@ import {
   FileCode,
   TruckIcon,
   TruckElectricIcon,
+  PhoneIcon,
 } from "lucide-react";
 import { Platform, Review } from "@/types";
 
@@ -1656,5 +1666,52 @@ export const fieldServiceData = [
       },
     ],
     img: "/images/webp/field-service-5.webp",
+  },
+];
+
+export const operatingSystemList = [
+  {
+    icon: <PropertyProfilesIcon />,
+    title: "CRM & Property Profiles",
+  },
+  {
+    icon: <ProjectManageMentIcon />,
+    title: "Project Management",
+  },
+  {
+    icon: <FieldServiceManagementIcon />,
+    title: "Field Service Management",
+  },
+  {
+    icon: <EstimateInvoicesIcons />,
+    title: "Estimates & Invoicess",
+  },
+  {
+    icon: <ContractIcon />,
+    title: "Contracts & eSign",
+  },
+  {
+    icon: <SchedulingIcon />,
+    title: "Scheduling & Dispatch",
+  },
+  {
+    icon: <PhoneIcon />,
+    title: "Calls, Text, & Email",
+  },
+  {
+    icon: <TaskManagementIcon />,
+    title: "Task Management",
+  },
+  {
+    icon: <SubManagementIcon />,
+    title: "Team & Sub Management",
+  },
+  {
+    icon: <ClientPortalIcon />,
+    title: "Client Portal",
+  },
+  {
+    icon: <MoreEyeIcon />,
+    title: "& More",
   },
 ];

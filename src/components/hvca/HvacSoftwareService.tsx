@@ -43,7 +43,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
   };
-console.log(data ,"fffff")
+
   return (
     <div className="relative z-10 w-full">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">

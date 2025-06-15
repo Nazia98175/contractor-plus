@@ -3,12 +3,12 @@ import { BlackLogo } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import CompareCard from "./CompareCard";
 import CompareTable from "./CompareTable";
-interface TheServiceProps {
+export interface TheServiceProps {
   kindAdorable: any;
-  slug: string;
+  slug?: string;
 }
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
-  console.log(kindAdorable, "kinddd");
+ 
   return (
     <section className="mx-auto max-w-[1092px] overflow-x-auto px-2 pt-[53px] md:pt-16 lg:pt-[70px]">
       <TextAnimation animateOnScroll={true} delay={0.2}>

@@ -7,7 +7,7 @@ import SwitchingToolMobile from "./SwitchingToolMobile";
 import SwitchingToolDesktop from "./SwitchingToolDekstop";
 
 gsap.registerPlugin(ScrollTrigger);
-interface TheSwitchingToolProps {
+export interface TheSwitchingToolProps {
   switchingTool: any;
 }
 

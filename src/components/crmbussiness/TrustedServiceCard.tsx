@@ -26,9 +26,10 @@ interface ReviewCardProps {
 }
 
 const renderStars = (rating: number) => {
+  const numericRating = Number(rating);
   return Array.from({ length: 5 }).map((_, index) => (
     <span className="h-[18px] w-[18px]" key={index}>
-      <StartIcon filled={index < rating} />
+      <StartIcon filled={index < numericRating} />
     </span>
   ));
 };

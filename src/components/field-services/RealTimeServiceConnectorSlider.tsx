@@ -10,6 +10,7 @@ import { DownloadIcon, Slidericon } from "../common/Icons";
 interface SliderItem {
   title: string;
   description: string;
+  content: { desc: string }[];
 }
 
 interface Props {
@@ -202,7 +203,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
                 {item.title}
               </b>
               <p className="text-secondary mt-3 text-sm font-medium">
-                {item.description}
+                {item?.content?.[0]?.desc}
               </p>
             </SwiperSlide>
           ))}

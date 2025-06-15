@@ -196,7 +196,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <RealTimeServiceConnector fieldService={section4?.data?.[0]?.fieldService} />
       <RunWithContractor  kindAdorable={section6?.data?.[0]?.comparison}/>
       <TimmingEffect />
-      <NeverLookBack />
+      <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
       <ThousandsReviews data={crmPageContent?.data?.[0]?.thousandReviews}
               reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews} />
       <HvacSoftwareService

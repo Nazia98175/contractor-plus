@@ -47,7 +47,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
                 review={review as Review}
                 openModal={
                   review.isModal
-                    ? () => openModal(review.videolink || "")
+                    ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
               />
@@ -68,7 +68,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
                 review={review as Review}
                 openModal={
                   review.isModal
-                    ? () => openModal(review.videolink || "")
+                    ? () => openModal(review.videoLink || "")
                     : () => {}
                 }
               />
@@ -76,11 +76,13 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
           </Marquee>
         </div>
       </div>
-      <ReviewModal
-        videoUrl={selectedVideoUrl || ""}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {selectedVideoUrl && (
+        <ReviewModal
+          videoUrl={selectedVideoUrl || ""}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 };

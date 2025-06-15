@@ -24,11 +24,9 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
       <div className="main-container relative z-20 space-y-8 py-7 sm:space-y-9 xl:space-y-16 xl:pt-[68px]">
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2 className="section-heading crm-gradient mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">
-            {/* There's a reason we have a {} */}
             {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
             {}
             {data?.title?.split("4.7 ★")?.[1]}
-            {/* average across thousands of reviews */}
           </h2>
         </TextAnimation>
 
@@ -50,7 +48,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
               key={index}
               openModal={
                 review.isModal
-                  ? () => openModal(review.videolink || "")
+                  ? () => openModal(review.videoLink || "")
                   : () => {}
               }
             />

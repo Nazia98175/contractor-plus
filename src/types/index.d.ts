@@ -62,7 +62,7 @@ export interface Review {
   rating: number;
   review: string;
   isModal?: boolean;
-  videolink?: string;
+  videoLink?: string;
 }
 
 export type CompareFeature = {

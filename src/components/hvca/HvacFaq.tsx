@@ -9,30 +9,35 @@ import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFaqLayout from "../common/CommonFaqLayout";
 
+
 type FaqItemType = {
   id: number;
   question: string;
   answer: string;
-  className?: string;
-  variant?: string;
 };
+
 interface Props {
-  faqitems: FaqItemType[];
+  faqitems: {
+    title?: string;
+    sub_title?: string;
+    faq?: FaqItemType[]; 
+  };
   className?: string;
   variant?: "hvac" | "light" | "dark";
 }
+
 const HvacFaq: React.FC<Props> = ({ className = "", faqitems, variant }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
-
+console.log(faqitems , "feild faq")
   return (
     <div className={`${className} relative overflow-hidden`}>
       <section className="relative z-30 overflow-hidden">
         <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
         <CommonFaqLayout
           className="w-full px-2 py-10"
-          heading="What HVAC contractors want to know"
-          description="Frequently asked questions"
-          faqitems={faqitems}
+          heading={faqitems?.title || ""}
+          description={faqitems?.sub_title || ""}
+          faqitems={faqitems?.faq || []}
           openIndex={openIndex}
           onToggle={toggleFaq}
           variant={variant}

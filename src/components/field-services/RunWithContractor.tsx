@@ -95,7 +95,7 @@ const RunWithContractor:React.FC<TheServiceProps> = ({kindAdorable}) => {
       </div>
       {/* Mobile-view  */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
-        <RunWithContractorMobile run_contractor={run_contractor} />
+        <RunWithContractorMobile their={kindAdorable?.headerLeft} your={kindAdorable?.headerRight} run_contractor={kindAdorable?.features} />
       </div>
     </section>
   );

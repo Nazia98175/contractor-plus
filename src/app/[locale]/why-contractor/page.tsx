@@ -3,6 +3,7 @@ import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
+import Dashboard from "@/components/why-contractor/Dashboard";
 import IndustryShifted from "@/components/why-contractor/IndustryShifted";
 import OperatingSystem from "@/components/why-contractor/OperatingSystem";
 import ReverseVideo from "@/components/why-contractor/ReverseVideo";
@@ -36,6 +37,7 @@ const WhyContractorPage = () => {
         <ReverseVideo />
         <VideoBottomPart />
         <WayToWin />
+        <Dashboard />
         <OperatingSystem />
         <HvacSoftwareService
           descColorClass="text-secondary"

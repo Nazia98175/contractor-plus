@@ -109,7 +109,7 @@ const IndustryShifted: React.FC = () => {
 
   return (
     <section className="pt-[17px] pb-6 sm:pt-[38px] sm:pb-11">
-      <div className="main-container mx-auto max-w-7xl px-4">
+      <div className="max-w-[1340px] mx-auto px-4">
         <TextAnimation animateOnScroll={true} delay={0}>
           <h3 className="sub-heading mb-[34px] text-center text-gray-300 sm:mb-[37px]">
             <span className="font-semibold">The industry has</span>{" "}

@@ -18,7 +18,7 @@ import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
 import { debugLog } from "@/utils/getConsole";
 export const metadata = {
-  title: "Contractor + - Field Services",
+  title: "Contractor Plus - Field Service",
   description:
     "One command center to visualize and run your entire field operation",
 };

@@ -33,6 +33,11 @@ export const metadata: Metadata = {
   description:
     "Built-in phone and SMS. AI receptionist. Property profiles. Full communication history. You no longer need 6 separate tools to do what Contractor+ CRM does in one.",
 };
+interface Props {
+  slug: string;
+  fieldService: any;
+  theme: "light" | "dark" | "estimateTheme";
+}
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;
   if (!useParams?.slug) {
@@ -87,7 +92,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     ),
     getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
   ]);
-
+  const theme = useParams.slug === "estimate" ? "estimateTheme" : "dark";
   return (
     <main>
       {crmPageContent?.data?.length > 0 && (
@@ -98,6 +103,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <FieldService
             slug={useParams?.slug}
             fieldService={section4?.data?.[0]?.fieldService}
+            theme={theme}
           />
 
           <div className="bg-white">

@@ -75,6 +75,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     light: "wanting-more-bg",
     dark: "field-service-card",
     estimateTheme: "estimate-overlap-card",
+    goldTheme: "gold-overlap-card",
   };
   const className = themeClassMap[theme] || "wanting-more-bg";
   return (

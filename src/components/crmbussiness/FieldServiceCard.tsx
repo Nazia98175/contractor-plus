@@ -16,19 +16,27 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
 
   const themeColors = {
     light: {
-      titleColor: "text-lightBlack",
+      titleColor:
+        "text-lightBlack  font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px]",
       heading: "text-lightBlack",
       desc: "text-wallStreet",
+      isEstimateText: "text-secondary",
+      isEstimateTextColor2: "text-secondary",
     },
     dark: {
-      titleColor: "text-white",
+      titleColor:
+        "text-white  font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px]",
       heading: "text-white",
       desc: "text-secondary lg:text-superSilver",
+      isEstimateText: "text-secondary",
+      isEstimateTextColor2: "text-secondary",
     },
     estimateTheme: {
-      titleColor: "text-white",
+      titleColor: "estimate-text text-base font-semibold ",
       heading: "text-white",
-      desc: "text-secondary",
+      desc: "text-superSilver",
+      isEstimateText: "text-secondary",
+      isEstimateTextColor2: "font-bold",
     },
   };
 
@@ -36,6 +44,8 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   const titleColor = currentColors.titleColor;
   const featureTitleColor = currentColors.heading;
   const featureDescColor = currentColors.desc;
+  const isEstimateTextColor = currentColors.desc;
+  const isEstimateTextColor2 = currentColors.desc;
 
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
 
@@ -43,9 +53,8 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
-          <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
+          <h4 className={`${titleColor}`}>{service?.title}</h4>
 
-          {/* Image for mobile */}
           <Image
             src={
               service?.cardImg?.url
@@ -82,9 +91,12 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
 
         {/* Estimate testimonial */}
         {isEstimate && (
-          <p className="text-secondary card-review">
+          <p className={`card-review ${isEstimateTextColor}`}>
             {service?.cardQuote} <br /> <br />
-            {service?.userName}
+            <p className={`card-review ${isEstimateTextColor2}`}>
+              {" "}
+              {service?.userName}
+            </p>
           </p>
         )}
       </div>

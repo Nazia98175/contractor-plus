@@ -1406,3 +1406,16 @@ button {
     0px 30px 60px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
 }
+.estimate-text {
+  background:
+    linear-gradient(
+      275.49deg,
+      rgba(0, 0, 0, 0) 75.83%,
+      rgba(238, 30, 37, 0.4) 91.89%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

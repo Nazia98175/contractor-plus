@@ -1,106 +1,138 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { StrokeText } from "./Icons";
 import TextAnimation from "../common/TextAnimation";
 
 const ReverseVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [debugInfo, setDebugInfo] = useState({
-    isPlaying: false,
-    currentTime: 0,
-    duration: 0,
-    error: "",
-    videoState: "not loaded",
-  });
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isPlayingRef = useRef(false);
+  const directionRef = useRef<"forward" | "reverse" | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    const section = sectionRef.current;
+    if (!video || !section) return;
 
-    let isReversing = false;
-    let reverseInterval: NodeJS.Timeout | null = null;
-
-    const updateDebug = () => {
-      setDebugInfo({
-        isPlaying: !video.paused,
-        currentTime: video.currentTime,
-        duration: video.duration,
-        error: "",
-        videoState: isReversing ? "reversing" : "playing forward",
-      });
-    };
+    let lastScrollY = window.scrollY;
 
     const playForward = () => {
-      isReversing = false;
-      if (reverseInterval) {
-        clearInterval(reverseInterval);
-        reverseInterval = null;
-      }
+      if (isPlayingRef.current && directionRef.current === "forward") return;
 
-      video.playbackRate = 0.65; // 30% faster than 0.5
-      video
-        .play()
-        .then(() => {
-          console.log("Video playing forward");
-          updateDebug();
-        })
-        .catch((e) => {
-          console.error("Play error:", e);
-          setDebugInfo((prev) => ({ ...prev, error: e.message }));
-        });
-    };
+      isPlayingRef.current = true;
+      directionRef.current = "forward";
 
-    const startReverse = () => {
-      console.log("Starting reverse");
-      isReversing = true;
-      video.pause();
-
-      reverseInterval = setInterval(() => {
-        if (video.currentTime <= 0.05) {
-          clearInterval(reverseInterval!);
-          reverseInterval = null;
-          video.currentTime = 0;
-          playForward();
+      const animate = () => {
+        if (video.currentTime < video.duration - 0.1) {
+          video.currentTime = Math.min(
+            video.duration,
+            video.currentTime + 0.01,
+          );
+          animationFrameRef.current = requestAnimationFrame(animate);
         } else {
-          video.currentTime -= 0.02; // 30% faster reverse
+          video.currentTime = video.duration;
+          isPlayingRef.current = false;
+          directionRef.current = null;
         }
-        updateDebug();
-      }, 40); // Faster interval
-    };
+      };
 
-    const handleTimeUpdate = () => {
-      updateDebug();
-
-      if (!isReversing && video.currentTime >= video.duration - 0.1) {
-        startReverse();
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
       }
+      animate();
     };
 
-    const handleError = (e: Event) => {
-      console.error("Video error:", e);
-      setDebugInfo((prev) => ({ ...prev, error: "Video loading error" }));
+    const playReverse = () => {
+      if (isPlayingRef.current && directionRef.current === "reverse") return;
+
+      isPlayingRef.current = true;
+      directionRef.current = "reverse";
+
+      const animate = () => {
+        if (video.currentTime > 0.01) {
+          video.currentTime = Math.max(0, video.currentTime - 0.01);
+          animationFrameRef.current = requestAnimationFrame(animate);
+        } else {
+          video.currentTime = 0;
+          isPlayingRef.current = false;
+          directionRef.current = null;
+        }
+      };
+
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      animate();
     };
 
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    video.addEventListener("error", handleError);
-    video.addEventListener("loadeddata", () => {
-      console.log("Video loaded, duration:", video.duration);
-      playForward();
-    });
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const currentScrollY = window.scrollY;
 
-    if (video.readyState >= 3) {
-      playForward();
-    }
+      // Check if section is visible
+      const isVisible = rect.top < windowHeight && rect.bottom > 0;
+
+      if (!isVisible) {
+        if (animationFrameRef.current) {
+          cancelAnimationFrame(animationFrameRef.current);
+          animationFrameRef.current = null;
+        }
+        isPlayingRef.current = false;
+        directionRef.current = null;
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      // Only process if not currently playing
+      if (!isPlayingRef.current) {
+        const scrollDelta = currentScrollY - lastScrollY;
+
+        // Need significant scroll to trigger (at least 5 pixels)
+        if (Math.abs(scrollDelta) > 5) {
+          if (scrollDelta > 0) {
+            // Scrolling down - play forward if not at end
+            if (video.currentTime < video.duration - 0.1) {
+              playForward();
+            }
+          } else {
+            // Scrolling up - play reverse if not at start
+            if (video.currentTime > 0.1) {
+              playReverse();
+            }
+          }
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Wait for video to be ready
+    const handleLoadedMetadata = () => {
+      video.pause();
+      video.currentTime = 0;
+    };
+
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
 
     return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-      video.removeEventListener("error", handleError);
-      if (reverseInterval) clearInterval(reverseInterval);
+      window.removeEventListener("scroll", handleScroll);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, []);
 
   return (
-    <section className="relative z-[0] h-[242px] px-2.5 sm:h-[541px]">
+    <section
+      ref={sectionRef}
+      className="relative z-[0] h-[242px] px-2.5 sm:h-[541px]"
+    >
       <video
         ref={videoRef}
         className="absolute left-0 z-[-1] h-full w-full object-cover object-top"

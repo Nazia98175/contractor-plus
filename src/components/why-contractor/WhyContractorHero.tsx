@@ -114,11 +114,11 @@ const WhyContractorHero = () => {
             </div>
             <div className="absolute right-0 bottom-0 left-0 bg-[#00000052] p-2 backdrop-blur-[42px]">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-white xl:text-xl">
+                <h3 className="text-lg font-semibold tracking-normal font-myriad text-white xl:text-xl">
                   Chad Cranfill
                 </h3>
-                <div className="hidden items-center gap-2 text-xs text-white sm:flex sm:text-sm">
-                  <span className="opacity-[32%]">Switched From JobTer</span>
+                <div className="hidden items-center gap-2 text-xs tracking-normal text-white sm:flex sm:text-sm">
+                  <span className="opacity-[32%] font-myriad">Switched From JobTer</span>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold">→</span>
                     <span className="max-w-20">
@@ -128,7 +128,7 @@ const WhyContractorHero = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-superSilver text-xs max-sm:my-1.5 sm:mt-1.5 sm:text-sm">
+              <p className="text-superSilver font-myriad tracking-[0.5px] text-xs max-sm:my-1.5 sm:mt-1.5 sm:text-sm">
                 Owner, Cranfill Construction
               </p>
               <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">

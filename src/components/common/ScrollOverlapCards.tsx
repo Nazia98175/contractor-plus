@@ -9,7 +9,7 @@ import FieldServiceCard from "../crmbussiness/FieldServiceCard";
 interface ScrollOverlapCardsProps {
   fieldService: any;
   slug: string;
-  theme: "light" | "dark";
+  theme: "light" | "dark" | "estimateTheme";
   curved?: boolean;
 }
 
@@ -71,7 +71,12 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, [fieldServiceData]);
-  const className = theme === "dark" ? "field-service-card" : "wanting-more-bg";
+  const themeClassMap: Record<string, string> = {
+    light: "wanting-more-bg",
+    dark: "field-service-card",
+    estimateTheme: "estimate-overlap-card",
+  };
+  const className = themeClassMap[theme] || "wanting-more-bg";
   return (
     <>
       <div

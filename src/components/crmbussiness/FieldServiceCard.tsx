@@ -7,20 +7,37 @@ interface Props {
   service: ServiceData;
   slug: string;
   idx: any;
-  theme: "light" | "dark";
+  theme: "light" | "dark" | "estimateTheme";
 }
 
 const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
 
-  const titleColor = theme === "dark" ? "text-white" : "text-lightBlack";
-  const featureTitleColor = theme === "dark" ? "text-white" : "text-lightBlack";
-  const featureDescColor =
-    theme === "dark" ? "text-secondary lg:text-superSilver" : "text-wallStreet";
-  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
+  const themeColors = {
+    light: {
+      titleColor: "text-lightBlack",
+      heading: "text-lightBlack",
+      desc: "text-wallStreet",
+    },
+    dark: {
+      titleColor: "text-white",
+      heading: "text-white",
+      desc: "text-secondary lg:text-superSilver",
+    },
+    estimateTheme: {
+      titleColor: "text-white",
+      heading: "text-white",
+      desc: "text-secondary",
+    },
+  };
 
-  // console.log(imageBaseUrl.split("api")[0]?.slice(0,-1), "service");
+  const currentColors = themeColors[theme] || themeColors["light"];
+  const titleColor = currentColors.titleColor;
+  const featureTitleColor = currentColors.heading;
+  const featureDescColor = currentColors.desc;
+
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
@@ -30,9 +47,10 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
 
           {/* Image for mobile */}
           <Image
-            src={ service?.cardImg?.url ?
-              `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` :
-              "/placeholder.png"
+            src={
+              service?.cardImg?.url
+                ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+                : "/placeholder.png"
             }
             alt={service?.title || "service image"}
             width={518}
@@ -75,8 +93,9 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
         <Image
           src={
-           service?.cardImg?.url ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}` :
-            "/placeholder.png"
+            service?.cardImg?.url
+              ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+              : "/placeholder.png"
           }
           alt={service?.title || "service image"}
           width={518}

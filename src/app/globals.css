@@ -53,8 +53,8 @@
   --color-majorelleGardens: #34755c;
   --color-irisIce: #e3e6f0;
   --color-shortcake: #f99293;
-  --color-cyanBlue: #8A8E91;
-  --color-tealBlue: #585A5E;
+  --color-cyanBlue: #8a8e91;
+  --color-tealBlue: #585a5e;
 
   --color-rgba1: #ffffff99;
   --color-x`: #1c273133;
@@ -71,6 +71,8 @@
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
+
+  --text-custom-4xl: 32px;
 
   --background-image-red-linear: linear-gradient(
     262deg,
@@ -188,7 +190,7 @@ body {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
 }
 .sub-heading {
-  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px] ;
+  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
 }
 .small-heading {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
@@ -1385,4 +1387,22 @@ button {
   border: 1px solid #00000000;
   background: #1c273133;
   backdrop-filter: blur(7px);
+}
+.estimate-overlap-card {
+  border: 1px solid #fff;
+  background:
+    lightgray 0% 0% / 100px 100px repeat,
+    radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+  box-shadow:
+    0px -33px 40px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
+    0px 5px 10px 0px rgba(0, 0, 0, 0.05),
+    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
 }

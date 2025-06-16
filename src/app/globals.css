@@ -72,6 +72,8 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
 
+  --text-custom-4xl:32px;
+
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,

@@ -53,6 +53,8 @@
   --color-majorelleGardens: #34755c;
   --color-irisIce: #e3e6f0;
   --color-shortcake: #f99293;
+  --color-cyanBlue: #8A8E91;
+  --color-tealBlue: #585A5E;
 
   --color-rgba1: #ffffff99;
   --color-x`: #1c273133;
@@ -69,6 +71,8 @@
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
+
+  --text-custom-4xl:32px;
 
   --background-image-red-linear: linear-gradient(
     262deg,
@@ -186,7 +190,7 @@ body {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
 }
 .sub-heading {
-  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
+  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px] ;
 }
 .small-heading {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];

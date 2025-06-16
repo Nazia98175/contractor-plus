@@ -146,7 +146,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           delay={0.9}
           animateOnScroll={false}
         >
-          <div className="relative w-fit overflow-hidden p-1">
+          <div className="relative mx-auto w-fit overflow-hidden p-1">
             <div className="z-30 mx-auto mt-9 hidden max-w-[900px] overflow-hidden rounded-[55px] border-4 border-[#D7D7D7] p-4 md:block">
               <Image
                 className="h-full w-full rounded-[45px] object-cover"

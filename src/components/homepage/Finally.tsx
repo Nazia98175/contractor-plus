@@ -32,19 +32,19 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
         />
-        <FinallyBackground />
+        {/* <FinallyBackground /> */}
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="relative z-30 space-y-4">
           <PrimaryAnimatedText delay={3000}>
-            <h2 className="section-heading gradient-text relative z-40 text-center">
+            <h2 className="section-heading gradient-text relative z-40 px-2 text-center">
               <span> {finallyC?.[0]?.title ?? ""}</span>
             </h2>
           </PrimaryAnimatedText>
           <CardReveal animateOnScroll={true}>
             <PrimaryAnimatedText
               delay={3000}
-              className="text-superSilver mx-auto max-w-[755px] text-center text-base font-medium"
+              className="text-superSilver mx-auto max-w-[755px] px-2 text-center text-base font-medium"
             >
               {finallyC?.[0]?.sub_title ?? ""}
             </PrimaryAnimatedText>

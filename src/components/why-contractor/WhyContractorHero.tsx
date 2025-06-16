@@ -22,8 +22,8 @@ const WhyContractorHero = () => {
   };
 
   return (
-    <section className="pt-[88px] pb-14 sm:pt-[127px] sm:pb-20">
-      <div className="mx-auto max-w-[830px] px-2">
+    <section className="pt-[70px] pb-14 sm:pt-[127px] sm:pb-20">
+      <div className="mx-auto max-w-[830px] px-3">
         {/* <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
           You can't scale a contracting business built on bottlenecks
         </h2> */}
@@ -34,7 +34,7 @@ const WhyContractorHero = () => {
           You can't scale a contracting business built on bottlenecks
         </PrimaryAnimatedText> */}
         <TextAnimation animateOnScroll={false} delay={0}>
-          <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
+          <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:mb-4">
             You can't scale a contracting business built on bottlenecks
           </h2>
         </TextAnimation>
@@ -65,7 +65,7 @@ const WhyContractorHero = () => {
               alt="WhyContractorHeroImg"
             />
           </div>
-          <div className="relative mx-auto h-[306px] max-w-[526px] overflow-hidden rounded-lg bg-[#00000033]">
+          <div className="relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px]">
             <video
               ref={videoRef}
               className="block h-full w-full object-cover"
@@ -80,7 +80,9 @@ const WhyContractorHero = () => {
                 isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
               }`}
               onClick={handlePlayPause}
-            >
+            ></div>
+            <div className="absolute left-1/2 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 top-[50px]">
+              {" "}
               <button
                 className="flex size-[60px] items-center justify-center rounded-full bg-[#FFFFFF1F] backdrop-blur-[24px] transition-transform hover:scale-110"
                 aria-label={isPlaying ? "Pause video" : "Play video"}
@@ -112,11 +114,11 @@ const WhyContractorHero = () => {
             </div>
             <div className="absolute right-0 bottom-0 left-0 bg-[#00000052] p-2 backdrop-blur-[42px]">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-white xl:text-xl">
+                <h3 className="text-lg font-semibold tracking-normal font-myriad text-white xl:text-xl">
                   Chad Cranfill
                 </h3>
-                <div className="hidden items-center gap-2 text-xs text-white sm:flex sm:text-sm">
-                  <span className="opacity-[32%]">Switched From JobTer</span>
+                <div className="hidden items-center gap-2 text-xs tracking-normal text-white sm:flex sm:text-sm">
+                  <span className="opacity-[32%] font-myriad">Switched From JobTer</span>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold">→</span>
                     <span className="max-w-20">
@@ -126,7 +128,7 @@ const WhyContractorHero = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-superSilver text-xs max-sm:my-2 sm:mt-2 sm:text-sm">
+              <p className="text-superSilver font-myriad tracking-[0.5px] text-xs max-sm:my-1.5 sm:mt-1.5 sm:text-sm">
                 Owner, Cranfill Construction
               </p>
               <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">

@@ -108,10 +108,10 @@ const IndustryShifted: React.FC = () => {
   ];
 
   return (
-    <section className="pt-[17px] pb-6 sm:pt-[38px] sm:pb-11">
-      <div className="main-container mx-auto max-w-7xl px-4">
+    <section className="pb-20 sm:pb-[35px]">
+      <div className="mx-auto max-w-[1340px] px-4">
         <TextAnimation animateOnScroll={true} delay={0}>
-          <h3 className="sub-heading mb-[34px] text-center text-gray-300 sm:mb-[37px]">
+          <h3 className="sub-heading mb-[34px] text-center text-gray-300 max-sm:!text-lg sm:mb-[37px]">
             <span className="font-semibold">The industry has</span>{" "}
             <span className="font-extralight">shifted</span>
           </h3>
@@ -126,9 +126,9 @@ const IndustryShifted: React.FC = () => {
                     : "[border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)] max-sm:border-b"
                 }`}
               >
-                {item.icon}
+                <div className="mb-2.5">{item.icon}</div>
                 <p
-                  className="mt-2.5 bg-clip-text text-center text-lg font-bold text-transparent xl:text-2xl"
+                  className="bg-clip-text text-center text-lg font-bold text-transparent xl:text-2xl"
                   style={{
                     backgroundImage:
                       "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",

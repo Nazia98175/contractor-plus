@@ -111,6 +111,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <ThousandsReviews
         data={crmPageContent?.data?.[0]?.thousandReviews}
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
+        variant="secondary"
       />
       <HvacSoftwareService
         createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}

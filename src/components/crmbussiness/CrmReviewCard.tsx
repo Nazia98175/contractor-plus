@@ -46,8 +46,12 @@ const CrmReviewCard: React.FC<Props> = ({
       key={review.id}
       className={`group relative z-20 w-full cursor-pointer duration-300 ${styles.container}`}
     >
-      <div className="flex items-center gap-3 md:gap-4">
-        <div className="relative">
+      <div
+        className={`flex gap-3 md:gap-4 ${
+          variant === "primary" ? "flex-row items-center" : "flex-col"
+        }`}
+      >
+        <div className="relative w-fit">
           {review?.profileUrl ? (
             <Image
               width={90}
@@ -58,7 +62,7 @@ const CrmReviewCard: React.FC<Props> = ({
             />
           ) : (
             <div
-              className={`bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium ${styles.userNameStyle}`}
+              className={`bg-rgba3 flex h-10 w-10 items-center justify-center rounded-sm font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
             >
               {review?.userName
                 ?.split(" ")
@@ -94,7 +98,9 @@ const CrmReviewCard: React.FC<Props> = ({
         </div>
       </div>
       <p
-        className={`font-jakarta mt-3 p-2 text-left text-sm font-medium tracking-[0.1px] md:text-base xl:text-lg ${styles.reviewText}`}
+        className={`mt-3 text-left text-sm font-medium tracking-[0.1px] md:text-base xl:text-lg ${
+          variant === "primary" ? "p-2" : ""
+        } ${styles.reviewText}`}
       >
         {review?.review?.startsWith('"') ? review.review : `"${review.review}"`}
       </p>

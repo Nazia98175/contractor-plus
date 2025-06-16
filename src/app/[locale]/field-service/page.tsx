@@ -123,6 +123,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       <HvacFaq
         faqitems={faq?.data?.[0]?.faqs}
+        // faqitems={faqitems}
         className="mt-12 md:mt-[74px]"
         variant="dark"
         heading="What contractors want to know"

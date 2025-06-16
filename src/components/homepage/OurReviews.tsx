@@ -33,14 +33,6 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
     setIsModalOpen(true);
   };
 
-  // When modal is open, marquee should be paused
-  const t = useTranslations("reviews");
-  const translatedReviews = OurReviewList.map((review) => ({
-    ...review,
-    userName: t(`ourReviews.${review.id}.username`),
-    userRole: t(`ourReviews.${review.id}.userRole`),
-    review: t(`ourReviews.${review.id}.review`),
-  }));
 
 
   return (

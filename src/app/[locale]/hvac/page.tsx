@@ -34,7 +34,7 @@ const page = () => {
       id: 1,
       question: "Will my team actually use this?",
       answer:
-        "Your team won’t want to live without it. It will make every single person’s job easier to the point you won’t be able to imagine running your HVAC business without Contractor+. Use it free and we’ll prove it. ",
+        "Your team won't want to live without it. It will make every single person's job easier to the point you won't be able to imagine running your HVAC business without Contractor+. Use it free and we'll prove it. ",
     },
     {
       id: 2,
@@ -83,20 +83,29 @@ const page = () => {
         <AwardBadges />
         <ThousandsReviews
           data={
-            "There’s a reason we have a 4.7 ★  average across  thousands of reviews"
+            "There's a reason we have a 4.7 ★  average across  thousands of reviews"
           }
           reviews={reviews}
           variant="secondary"
         />
       </div>
       <HvacSoftwareService
-        title="This is what HVAC software should have been all along"
-        desc=""
+        data={{
+          title: "This is what HVAC software should have been all along",
+          sub_title: "",
+          placeholder: "Enter your email"
+        }}
+        ncc="No credit card required"
+        createBtn="Get Started Free"
+        mobileBtn="Download App"
+        mobileBtnHref="/app-download"
       />
       <TrustBarHvca platforms={platforms} />
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq
-        faqitems={faqitems}
+        faqitems={{
+          faq: faqitems
+        }}
         variant="hvac"
         heading="What HVAC contractors want to know "
       />

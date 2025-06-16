@@ -52,13 +52,8 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
-<<<<<<< HEAD
-        <div className="">
-          <h4 className={`card-title ${titleColor}`}>{service?.title}</h4>
-=======
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`${titleColor}`}>{service?.title}</h4>
->>>>>>> cf552032468e3b6a852de9eb5a91a6efd202c4d1
 
           <Image
             src={

@@ -55,7 +55,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
             </h2>
           </div>
           <div className="ml-[-33px] flex w-full max-w-[360px] flex-col items-center -space-y-2 sm:ml-0">
-            <LottieAnimation animationData={animationData} />
+            <LottieAnimation loop={true} animationData={animationData} />
           </div>
         </div>
       </div>

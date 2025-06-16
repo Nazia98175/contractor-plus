@@ -32,7 +32,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
         />
-        <FinallyBackground />
+        {/* <FinallyBackground /> */}
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="relative z-30 space-y-4">

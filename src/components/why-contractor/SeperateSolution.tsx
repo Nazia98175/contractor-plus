@@ -11,7 +11,7 @@ const SeperateSolution = () => {
 
   return (
     <section className="pt-9 pb-[46px]">
-      <div className="relative z-10 mx-auto max-w-[733px]">
+      <div className="relative z-20 mx-auto max-w-[733px]">
         <TextAnimation animateOnScroll={true} delay={0}>
           <h3 className="sub-heading text-secondary mb-10 text-center font-semibold sm:mb-16 xl:px-4">
             Every separate solution introduces friction into your business{" "}

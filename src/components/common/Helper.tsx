@@ -1394,6 +1394,19 @@ import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
 import property_profile from "../../../public/lotties/property-profile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
+import {
+  ClientPortalIcon,
+  ContractIcon,
+  CrmPropertyIcon,
+  EstimateInvoicesIcons,
+  FieldServiceManagementIcon,
+  MoreEyeIcon,
+  PhoneIcon,
+  ProjectManageMentIcon,
+  ScheludingIcon,
+  SubManagementIcon,
+  TaskManagementIcon,
+} from "../why-contractor/Icons";
 import mobile from "../../../public/lotties/11-mobile.json";
 export const featureContentss = [
   {
@@ -1657,5 +1670,52 @@ export const fieldServiceData = [
       },
     ],
     img: "/images/webp/field-service-5.webp",
+  },
+];
+
+export const operatingSystemList = [
+  {
+    icon: <CrmPropertyIcon />,
+    title: "CRM & Property Profiles",
+  },
+  {
+    icon: <ProjectManageMentIcon />,
+    title: "Project Management",
+  },
+  {
+    icon: <FieldServiceManagementIcon />,
+    title: "Field Service Management",
+  },
+  {
+    icon: <EstimateInvoicesIcons />,
+    title: "Estimates & Invoicess",
+  },
+  {
+    icon: <ContractIcon />,
+    title: "Contracts & eSign",
+  },
+  {
+    icon: <ScheludingIcon />,
+    title: "Scheduling & Dispatch",
+  },
+  {
+    icon: <PhoneIcon />,
+    title: "Calls, Text, & Email",
+  },
+  {
+    icon: <TaskManagementIcon />,
+    title: "Task Management",
+  },
+  {
+    icon: <SubManagementIcon />,
+    title: "Team & Sub Management",
+  },
+  {
+    icon: <ClientPortalIcon />,
+    title: "Client Portal",
+  },
+  {
+    icon: <MoreEyeIcon />,
+    title: "& More",
   },
 ];

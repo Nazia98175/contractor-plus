@@ -1389,7 +1389,56 @@ button {
   backdrop-filter: blur(7px);
 }
 
+.gradient-grey-border-left {
+  border-left: double 1px transparent;
+  background-image:
+    linear-gradient(#0c0d11, #0c0d11),
+    radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+@media (min-width: 1024px) {
+  .lg\:gradient-grey-border-left {
+    border-left: double 1px transparent;
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .lg\:gradient-grey-border-right {
+    border-right: double 1px transparent;
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 100% 50%, #505050 0%, #0c0d11 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+}
+
+@media (max-width: 1023px) {
+  .max-lg\:gradient-grey-border-left {
+    border-left: double 1px transparent;
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+}
+
+.gradient-grey-border-top {
+  border-top: double 1px transparent;
+  background-image:
+    linear-gradient(#0c0d11, #0c0d11),
+    radial-gradient(55.06% 1639.81% at 49.31% 40.74%, #505050 0%, #0c0d11 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
 .estimate-overlap-card {
+  border-radius: 40px;
   border: 1px solid #fff;
   background:
     lightgray 0% 0% / 100px 100px repeat,

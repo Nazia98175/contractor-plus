@@ -10,12 +10,17 @@ import TextAnimation from "../common/TextAnimation";
 export interface TheServiceProps {
   fieldService: any;
   slug?: string;
+  theme: "light" | "dark" | "estimateTheme";
 }
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
+const FieldService: React.FC<TheServiceProps> = ({
+  fieldService,
+  slug,
+  theme,
+}) => {
   const t = useTranslations();
 
   return (
@@ -31,7 +36,7 @@ const FieldService: React.FC<TheServiceProps> = ({ fieldService, slug }) => {
         </h2>
       </TextAnimation>
       <ScrollOverlapCards
-        theme="dark"
+        theme={theme}
         slug={slug || ""}
         fieldService={fieldService}
       />

@@ -14,7 +14,7 @@ interface HvacSoftwareServiceProps {
   titleClass?: string;
   inputClass?: string;
   ccClass?: string;
-  mobileBtnHref:string
+  mobileBtnHref: string;
 }
 
 const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
@@ -82,14 +82,14 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
                 />
               </div>
               <div className="flex w-full flex-col items-center justify-center md:w-fit">
-                {mobileBtn && (
+                {mobileBtn && mobileBtnHref && (
                   <Link
-                    href={mobileBtnHref}
+                    href={mobileBtnHref || "/default-path"}
                     className="w-full max-sm:inline-block sm:!hidden"
                   >
                     <button
                       type="button"
-                      className="bg-red-linear primary-btn flex h-10 !min-w-[230px] items-center justify-center w-full md:mx-0 md:!w-auto"
+                      className="bg-red-linear primary-btn flex h-10 w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
                       disabled={loading}
                     >
                       {loading ? (

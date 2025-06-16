@@ -62,6 +62,7 @@ const page = () => {
         "Capture inquiries through customized entry points, move opportunities through visual stages, then generate quotes and contracts clients can sign online—all within the same system.",
     },
   ];
+
   return (
     <>
       <div className="bg-white">

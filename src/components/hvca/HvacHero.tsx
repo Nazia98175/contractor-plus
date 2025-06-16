@@ -14,12 +14,11 @@ import HvacHeroSlider from "./HvacHeroSlider";
 import { features } from "../common/Helper";
 import Button from "../common/Button";
 import FreeAccountButton from "../common/FreeAccountButton";
-
 const HvacHero = () => {
   return (
-    <section className="bg-kuroiBlack relative overflow-hidden">
+    <section className="bg-kuroiBlack relative overflow-hidden lg:pt-[180px]">
       <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md"></div>
-      <div className="relative overflow-hidden">
+      <div className="overflow-hidden">
         <Image
           width={769}
           height={800}
@@ -28,9 +27,8 @@ const HvacHero = () => {
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
           layout="lazy"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[180px] lg:pb-[150px] xl:pb-[208px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[0px] lg:pb-[150px] xl:pb-[355px]">
           <HvacGlowHeroMobileIcon />
-
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             <TextAnimation animateOnScroll={false} delay={3}>
               <h1 className="main-heading gradient-white">
@@ -61,7 +59,7 @@ const HvacHero = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-[2%] bottom-16 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[7%]">
+        <div className="absolute right-[2%] bottom-16 z-10 hidden h-[62%] w-[314px] lg:flex xl:right-[2%]">
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
@@ -95,9 +93,8 @@ const HvacHero = () => {
           />
         </div>
       </div>
-      <CloudsAnimation className="-bottom-[6%]" />
+      <CloudsAnimation className="-bottom-[6%] lg:-bottom-[4%]" />
     </section>
   );
 };
-
 export default HvacHero;

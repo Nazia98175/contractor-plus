@@ -3,7 +3,7 @@ import { PlusIcon } from "./Icons";
 
 const VideoBottomPart = () => {
   return (
-    <section className="flex flex-col gap-[154px] pt-[67px] pb-[118px] sm:pt-[94px] sm:pb-20">
+    <section className="flex flex-col gap-[154px] pt-[67px] sm:pt-[94px] relative">
       <TextAnimation animateOnScroll={true} delay={0}>
         <div className="relative z-10 mx-auto max-w-[873px] p-3 backdrop-blur-[5px] sm:p-[22px]">
           <h3 className="sub-heading text-secondary mb-1 text-center font-semibold xl:px-44">

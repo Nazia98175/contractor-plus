@@ -1,4 +1,4 @@
-import { platforms } from "@/components/common/Helper";
+import { OurReviewList, platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
@@ -190,21 +190,8 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[thousandReviews][populate]=reviews",
     ),
   ]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console.log(
-    crmPageContent?.data?.[0],
-    thousandReviews?.data?.[0]?.thousandReviews?.reviews,
-    "thousand reviewss",
-  );
-=======
-  debugLog("feild-serv" , crmPageContent?.data?.[0])
-// console.log(crmPageContent?.data?.[0] , "thousand reviewss")
->>>>>>> b5e2d57dd8a3d517ab3d51a722ea9c5f6691517b
-=======
   debugLog("feild-serv", crmPageContent?.data?.[0]);
   // console.log(crmPageContent?.data?.[0] , "thousand reviewss")
->>>>>>> e3ece8f7b68e0a9040109c38dba3470409be1ebc
   return (
     <main className="overflow-hidden">
       <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
@@ -215,24 +202,11 @@ const FieldServicesPage = async ({ params }: Params) => {
       />
       <RunWithContractor kindAdorable={section6?.data?.[0]?.comparison} />
       <TimmingEffect />
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <NeverLookBack />
-=======
       <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
->>>>>>> e3ece8f7b68e0a9040109c38dba3470409be1ebc
       <ThousandsReviews
         data={crmPageContent?.data?.[0]?.thousandReviews}
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
       />
-<<<<<<< HEAD
-=======
-      <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
-      <ThousandsReviews data={crmPageContent?.data?.[0]?.thousandReviews}
-              reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews} />
->>>>>>> b5e2d57dd8a3d517ab3d51a722ea9c5f6691517b
-=======
->>>>>>> e3ece8f7b68e0a9040109c38dba3470409be1ebc
       <HvacSoftwareService
         createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
         mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}

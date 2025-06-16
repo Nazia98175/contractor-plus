@@ -455,13 +455,13 @@ export const cantScaleData = [
 ];
 export const softwareCardData = [
   {
-    text: "There’s no easy way to upsell or present multiple package options...",
+    text: "Enterprise solutions are complex, clunky, and expensive",
   },
   {
-    text: "Field techs hate using them because they don’t make things easier",
+    text: "Field techs hate using them because they don’t make things easier...",
   },
   {
-    text: "You still have to build workarounds where features fall short",
+    text: "You still have to build workarounds where features fall",
   },
 ];
 export const blackPlatforms: Platform[] = [

@@ -1388,43 +1388,11 @@ button {
   background: #1c273133;
   backdrop-filter: blur(7px);
 }
-<<<<<<< HEAD
-.estimate-overlap-card {
-  border: 1px solid #fff;
-  background:
-    lightgray 0% 0% / 100px 100px repeat,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0) 99.59%
-    ),
-    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
-  box-shadow:
-    0px -33px 40px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
-    0px 5px 10px 0px rgba(0, 0, 0, 0.05),
-    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
-    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-}
-.estimate-text {
-  background:
-    linear-gradient(
-      275.49deg,
-      rgba(0, 0, 0, 0) 75.83%,
-      rgba(238, 30, 37, 0.4) 91.89%
-    ),
-    #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-=======
 .gradient-grey-border-left {
   border-left: double 1px transparent;
-  background-image: linear-gradient(#0C0D11, #0C0D11),
-    radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0C0D11 100%);
+  background-image:
+    linear-gradient(#0c0d11, #0c0d11),
+    radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -1432,16 +1400,18 @@ button {
 @media (min-width: 1024px) {
   .lg\:gradient-grey-border-left {
     border-left: double 1px transparent;
-    background-image: linear-gradient(#0C0D11, #0C0D11),
-      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0C0D11 100%);
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .lg\:gradient-grey-border-right {
     border-right: double 1px transparent;
-    background-image: linear-gradient(#0C0D11, #0C0D11),
-      radial-gradient(22.22% 48.33% at 100% 50%, #505050 0%, #0C0D11 100%);
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 100% 50%, #505050 0%, #0c0d11 100%);
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -1450,22 +1420,19 @@ button {
 @media (max-width: 1023px) {
   .max-lg\:gradient-grey-border-left {
     border-left: double 1px transparent;
-    background-image: linear-gradient(#0C0D11, #0C0D11),
-      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0C0D11 100%);
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 }
 
- .gradient-grey-border-top {
-    border-top: double 1px transparent;
-    background-image: linear-gradient(#0C0D11, #0C0D11),
-    radial-gradient(55.06% 1639.81% at 49.31% 40.74%, #505050 0%, #0C0D11 100%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-  }
-
-
-  
-  
->>>>>>> 9150276f9df9f3c500eb32a028c99ec6d9c77e90
+.gradient-grey-border-top {
+  border-top: double 1px transparent;
+  background-image:
+    linear-gradient(#0c0d11, #0c0d11),
+    radial-gradient(55.06% 1639.81% at 49.31% 40.74%, #505050 0%, #0c0d11 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}

@@ -2,7 +2,9 @@ import CloudsAnimation from "@/components/common/CloudsAnimation";
 import {
   blackPlatforms,
   makeOperationList,
+  OurReviewList,
   platforms,
+  reviews,
 } from "@/components/common/Helper";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -78,10 +80,13 @@ const page = () => {
       </div>
       <div className="relative overflow-hidden">
         <AwardBadges />
-        {/* <ThousandsReviews
-          data={crmPageContent?.data?.[0]?.thousandReviews}
-          reviews={reviews?.data?.[0]?.reviews?.reviews}
-        /> */}
+        <ThousandsReviews
+          data={
+            "There’s a reason we have a 4.7 ★  average across  thousands of reviews"
+          }
+          reviews={reviews}
+          variant="secondary"
+        />
       </div>
       <HvacSoftwareService
         title="This is what HVAC software should have been all along"

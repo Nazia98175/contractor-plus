@@ -1,11 +1,12 @@
 import React from "react";
 import { FooterLogoIcon } from "../common/Icons";
 import { operatingSystemList } from "../common/Helper";
+import Image from "next/image";
 
 const OperatingSystem = () => {
   return (
-    <div className="relative z-10 bg-kuroiBlack">
-      <div className="mx-auto max-w-[855px] max-xl:px-4 pt-10 sm:pt-20">
+    <div className="bg-kuroiBlack relative z-10 overflow-x-hidden">
+      <div className="mx-auto max-w-[855px] pt-10 max-xl:px-4 sm:pt-20">
         <div className="mx-auto max-w-[222px]">
           {" "}
           <FooterLogoIcon />
@@ -15,7 +16,7 @@ const OperatingSystem = () => {
             backgroundImage:
               "linear-gradient(95.5deg, #FFFFFF, #FFFFFF, #BE0C0C)",
           }}
-          className="section-heading max-sm:!text-custom-4xl !font-normal bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-9 sm:pt-4 text-center text-transparent"
+          className="section-heading max-sm:!text-custom-4xl bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-9 text-center !font-normal text-transparent sm:pt-4"
         >
           The only operating system for build and service contractors
         </h2>
@@ -23,7 +24,7 @@ const OperatingSystem = () => {
           style={{
             backgroundImage: "linear-gradient(0deg, #ADB1B5, #00000033)",
           }}
-          className="bg-clip-text pt-2 pb-[1px] text-center leading-[110%] text-transparent text-sm sm:text-base xl:text-lg"
+          className="bg-clip-text pt-2 pb-[1px] text-center text-sm leading-[110%] text-transparent sm:text-base xl:text-lg"
         >
           Contractor+ is where friction goes to die
         </p>
@@ -34,7 +35,7 @@ const OperatingSystem = () => {
             backgroundImage:
               "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",
           }}
-          className="bg-clip-text max-sm:!font-semibold pb-11.5 text-center text-[26px] !leading-[100%] font-light tracking-tight text-transparent max-lg:text-xl max-md:text-base"
+          className="bg-clip-text pb-11.5 text-center text-[26px] !leading-[100%] font-light tracking-tight text-transparent max-lg:text-xl max-md:text-base max-sm:!font-semibold"
         >
           Replace the stack of tools and apps you’ve been duct-taping together
           with a single platform to replace them all. No complexity, no sticker
@@ -50,7 +51,7 @@ const OperatingSystem = () => {
             return (
               <div
                 key={i}
-                className={`flex min-h-20 w-1/3 flex-col justify-center rounded-xl border-[#5050509a] max-lg:min-h-18 max-lg:w-1/2 max-md:max-h-16.5 max-md:min-h-16 max-md:max-w-[150px] lg:items-center ${isNotFirstInRowDesktop ? "lg:border-l" : ""} ${isNotFirstInRowMobile ? "max-lg:border-l" : ""} ${isSecondLast ? "lg:border-r" : ""} ${isLast ? "border-t border-l-0" : ""} `}
+                className={`relative flex min-h-20 w-1/3 flex-col justify-center rounded-xl max-lg:min-h-18 max-lg:w-1/2 max-md:max-h-16.5 max-md:min-h-16 max-md:max-w-[150px] lg:items-center ${isNotFirstInRowDesktop ? "lg:gradient-grey-border-left" : ""} ${isNotFirstInRowMobile ? "max-lg:gradient-grey-border-left" : ""} ${isSecondLast ? "lg:gradient-grey-border-right" : ""} ${isLast ? "gradient-grey-border-top " : ""} `}
               >
                 <div className="flex flex-col items-center justify-center gap-2.5 p-2.5 max-md:mx-auto max-md:max-w-32.5">
                   <span>{obj.icon}</span>
@@ -69,6 +70,7 @@ const OperatingSystem = () => {
           })}
         </div>
       </div>
+
     </div>
   );
 };

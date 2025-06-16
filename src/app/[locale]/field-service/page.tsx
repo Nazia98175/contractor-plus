@@ -102,6 +102,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <ServiceContractorsMarquee reviews={reviews} />
       <GoingFieldSevices switchingTool={section3?.data?.[0]?.switchingTool} />
       <RealTimeServiceConnector
+        theme="estimateTheme"
         fieldService={section4?.data?.[0]?.fieldService}
       />
       <RunWithContractor kindAdorable={section6?.data?.[0]?.comparison} />
@@ -117,6 +118,7 @@ const FieldServicesPage = async ({ params }: Params) => {
         ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
         data={crmPageContent?.data?.[0]?.crmService}
         descColorClass="text-secondary"
+        mobileBtnHref={""}
       />
 
       {/* <HvacSoftwareService /> */}

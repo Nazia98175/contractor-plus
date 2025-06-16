@@ -3,7 +3,7 @@ import { TickIcon } from "./Icons";
 
 const Dashboard = () => {
   return (
-    <div className="relative z-10 -mt-20 xl:mt-[-130px] bg-kuroiBlack">
+    <div className="bg-kuroiBlack relative z-10 -mt-20 xl:mt-[-97px]">
       <Image
         unoptimized
         width={100}
@@ -16,31 +16,31 @@ const Dashboard = () => {
         unoptimized
         width={100}
         height={100}
-        className="w-full max-md:hidden"
+        className="w-full max-md:hidden xl:h-[1300px] 2xl:h-[unset]"
         src={"/images/png/dashboard-img.png"}
         alt="dashboard"
       />
-      <div className="md:absolute md:top-[12%] md:left-1/2 z-10 mx-auto grid grid-cols-1 md:grid-cols-2 w-full max-w-[1100px] md:translate-x-[-50%] justify-between px-3 lg:h-[400px] max-md:gap-24 max-md:mt-10">
-        <div className="flex flex-col items-center justify-center gap-3 px-3 h-fit md:max-w-[280px] lg:max-w-[327px] md:mx-auto text-center md:mt-12 lg:mt-[72px]">
-          <p className="text-highRise text-lg md:text-base lg:text-lg font-semibold">
+      <div className="z-10 mx-auto grid w-full max-w-[1100px] grid-cols-1 justify-between px-3 max-md:mt-10 max-md:gap-24 md:absolute md:top-[12%] md:left-1/2 md:translate-x-[-50%] md:grid-cols-2 lg:h-[400px]">
+        <div className="flex h-fit flex-col items-center justify-center gap-[18px] sm:gap-3 max-sm:py-3 px-3 text-center md:mx-auto md:mt-12 md:max-w-[280px] lg:mt-[72px] lg:max-w-[327px]">
+          <p className="text-cyanBlue text-lg font-semibold md:text-base lg:text-lg">
             One dashboard for office and field
           </p>
           <TickIcon />
         </div>
-        <div className="flex flex-col items-center justify-center gap-3 px-4 h-fit md:max-w-[280px] lg:max-w-[327px] md:mx-auto text-center">
-          <p className="text-highRise text-lg md:text-base lg:text-lg font-semibold">
+        <div className="flex h-fit flex-col items-center justify-center gap-[18px] sm:gap-3 max-sm:py-3 px-3 text-center md:mx-auto md:max-w-[280px] lg:max-w-[327px]">
+          <p className="text-cyanBlue text-lg font-semibold md:text-base lg:text-lg">
             One source of truth
           </p>
           <TickIcon />
         </div>
-        <div className="flex flex-col items-center justify-center gap-3 px-4 h-fit md:max-w-[280px] lg:max-w-[327px] md:mx-auto text-center md:mt-12 lg:mt-[72px]">
-          <p className="text-highRise text-lg md:text-base lg:text-lg font-semibold">
+        <div className="flex h-fit flex-col items-center justify-center gap-[18px] sm:gap-3 max-sm:py-3 px-3 text-center md:mx-auto md:mt-12 md:max-w-[280px] lg:mt-[72px] lg:max-w-[327px]">
+          <p className="text-cyanBlue text-lg font-semibold md:text-base lg:text-lg">
             One solution that needs no workarounds
           </p>
           <TickIcon />
         </div>
-        <div className="flex flex-col items-center justify-center gap-3 px-4 h-fit md:max-w-[280px] lg:max-w-[327px] md:mx-auto text-center">
-          <p className="text-highRise text-lg md:text-base lg:text-lg font-semibold">
+        <div className="flex h-fit flex-col items-center justify-center gap-[18px] sm:gap-3 max-sm:py-3 px-3 text-center md:mx-auto md:max-w-[280px] lg:max-w-[327px]">
+          <p className="text-cyanBlue text-lg font-semibold md:text-base lg:text-lg">
             One mobile app your team actually uses
           </p>
           <TickIcon />

@@ -133,7 +133,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   ];
   return (
     <>
-      <FieldServicesHero />
+      {/* <FieldServicesHero /> */}
       <ServiceContractorsMarquee />
       <GoingFieldSevices />
       <RealTimeServiceConnector />

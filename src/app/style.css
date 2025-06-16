@@ -1,0 +1,39 @@
+.upper-text-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(233, 156, 68, 0) 34.64%,
+    rgba(233, 156, 68, 0.12) 54.36%,
+    #e99c44 76.65%
+  );
+
+  /* background-position: 0% 10%; */
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  font-family: "Plus Jakarta Sans";
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.84px;
+}
+
+.bottom-text-gradient {
+  background: linear-gradient(
+    180deg,
+    #e99c44 -86.79%,
+    rgba(233, 156, 68, 0) 83.02%
+  );
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  font-family: "Plus Jakarta Sans";
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.84px;
+}

@@ -25,7 +25,7 @@ const BlogPosts: React.FC<Props> = ({
 
   return (
     <section
-      className={`relative z-20 px-2 pt-4 pb-12 sm:px-4 lg:px-20 ${className || ""}`}
+      className={`relative z-20 px-2 pt-4 pb-12 sm:px-4 xl:px-20 ${className || ""}`}
     >
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="mb-6 flex items-center justify-between md:mb-9">
@@ -47,7 +47,7 @@ const BlogPosts: React.FC<Props> = ({
           </TextAnimation>
         </div>
 
-        <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:flex xl:flex-row">
+        <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:gap-4 md:flex md:flex-row xl:gap-6">
           <div className="mx-auto flex w-full max-w-[600px] flex-col gap-4 xl:mx-0 xl:max-w-[450px]">
             {blogData.map((blog) => (
               <BlogArticle
@@ -68,11 +68,11 @@ const BlogPosts: React.FC<Props> = ({
               alt="Featured Blog"
               className="absolute top-0 h-full w-full rounded-xl object-cover"
             />
-            <div className="relative z-10 px-3 pt-20 sm:px-6">
+            <div className="relative z-10 px-3 pt-20 xl:px-6">
               <p className="text-decemberSky font-jakarta text-base font-medium">
                 Contractor+ | 5 minutes ago
               </p>
-              <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize sm:text-[30px] md:text-[36px]">
+              <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
                 Discover The Member Benefits Of USA Contracting!
               </h3>
               <p className="text-superSilver font-jakarta mt-2 text-base">
@@ -82,7 +82,7 @@ const BlogPosts: React.FC<Props> = ({
             </div>
           </div>
         </div>
-        <div className="blog-post block sm:hidden">
+        <div className="blog-post block md:hidden">
           <SliderLayout
             autoplay
             pagination
@@ -90,6 +90,7 @@ const BlogPosts: React.FC<Props> = ({
               320: { slidesPerView: 1, spaceBetween: 12 },
               520: { slidesPerView: 1.5, spaceBetween: 12 },
               640: { slidesPerView: 2, spaceBetween: 14 },
+              768: { slidesPerView: 2, spaceBetween: 14 },
             }}
           >
             {blogData.map((blog) => (

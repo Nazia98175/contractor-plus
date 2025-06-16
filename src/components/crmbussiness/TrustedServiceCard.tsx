@@ -18,11 +18,18 @@ const VARIANT_CLASSES = {
     quoteText: "text-decemberSky",
     modalButton: "bg-stiletto",
   },
+  tertiary: {
+    container: "sm:bg-rgba2 bg-transparent backdrop-blur-[7px] p-2",
+    nameText: "text-white",
+    roleText: "text-secondary",
+    quoteText: "text-decemberSky",
+    modalButton: "bg-stiletto",
+  },
 };
 interface ReviewCardProps {
   review: Review;
   openModal: () => void;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
 }
 
 const renderStars = (rating: number) => {
@@ -40,7 +47,6 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   variant = "primary",
 }) => {
   const styles = VARIANT_CLASSES[variant];
-  const hasVideo = review.isModal && review.videoLink;
   return (
     <div className="mr-5 !h-auto">
       <article

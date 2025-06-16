@@ -57,7 +57,7 @@
   --color-tealBlue: #585A5E;
 
   --color-rgba1: #ffffff99;
-  --color-rgba2: #1c273133;
+  --color-x`: #1c273133;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
@@ -1381,4 +1381,10 @@ button {
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   position: relative;
+}
+.cc {
+  border-radius: 10px;
+  border: 1px solid #00000000;
+  background: #1c273133;
+  backdrop-filter: blur(7px);
 }

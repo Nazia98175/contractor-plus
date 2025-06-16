@@ -18,13 +18,12 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     hero_title,
     hero_description,
     cta_button_text,
-
     ncc_text,
     hero_image,
     mobileBtn,
   } = homePageContent ?? {};
   return (
-    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden">
+    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-24 w-[120%] -translate-x-1/2 blur-[13px] lg:block"></div>
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-16 w-[120%] -translate-x-1/2 blur-[8px] lg:block"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
@@ -38,24 +37,23 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         className="pointer-events-none absolute top-0 left-0 z-[-1] block h-full w-full object-cover lg:hidden"
         layout="lazy"
       />
-      <div className="main-container relative z-10 flex items-end pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
-        <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[628px]">
-          <TextAnimation animateOnScroll={false} delay={0.6}>
-            <h1 className="main-heading gradient-text mb-4">{hero_title}</h1>
+      <div className="main-container relative z-10 flex items-end">
+        <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
+          <TextAnimation animateOnScroll={false} delay={0.2}>
+            <h1 className="main-heading gradient-text">{hero_title}</h1>
           </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0.6}>
-            <p className="text-decemberSky mb-4 text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
+          <TextAnimation animateOnScroll={false} delay={0.4}>
+            <p className="text-decemberSky text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
               {hero_description}
             </p>
           </TextAnimation>
-
           <CardReveal
             staggerDelay={0.6}
             animationDuration={0.6}
             distance={50}
-            delay={0.3}
+            delay={1.0}
             animateOnScroll={false}
-            className="flex w-full flex-col items-center gap-2.5 sm:w-fit"
+            className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit"
           >
             <FreeAccountButton
               showIcon={false}
@@ -73,8 +71,12 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       </div>
       <div className="3xl:right-[0%] absolute top-0 -z-10 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
         <VideoOptimizer
-          highResUrl={"/video/hero-video.mp4"}
-          lowResUrl="/video/hero-video.mp4"
+          highResUrl={
+            "http://167.88.43.123:1337/uploads/hero_video_6e22969f62.mp4"
+          }
+          lowResUrl={
+            "http://167.88.43.123:1337/uploads/hero_video_6e22969f62.mp4"
+          }
         />
         <Image
           loading="lazy"

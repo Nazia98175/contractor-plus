@@ -5,7 +5,7 @@ import { operatingSystemList } from "../common/Helper";
 const OperatingSystem = () => {
   return (
     <div className="relative z-10 bg-kuroiBlack">
-      <div className="mx-auto max-w-[855px] max-xl:px-4 pt-16">
+      <div className="mx-auto max-w-[855px] max-xl:px-4 pt-10 sm:pt-20">
         <div className="mx-auto max-w-[222px]">
           {" "}
           <FooterLogoIcon />
@@ -15,7 +15,7 @@ const OperatingSystem = () => {
             backgroundImage:
               "linear-gradient(95.5deg, #FFFFFF, #FFFFFF, #BE0C0C)",
           }}
-          className="section-heading bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-4 text-center text-transparent"
+          className="section-heading !font-normal bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-4 text-center text-transparent"
         >
           The only operating system for build and service contractors
         </h2>
@@ -40,7 +40,7 @@ const OperatingSystem = () => {
           with a single platform to replace them all. No complexity, no sticker
           shock.{" "}
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-y-4.5 max-md:gap-y-5">
+        <div className="flex flex-wrap items-center justify-center gap-y-[18px]">
           {operatingSystemList.map((obj, i) => {
             const isSecondLast = i === operatingSystemList.length - 2;
             const isLast = i === operatingSystemList.length - 1;

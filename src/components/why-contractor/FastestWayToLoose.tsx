@@ -21,7 +21,7 @@ const FastestWayToLoose = () => {
       <h3 className="text-secondary small-heading relative z-10 px-3">
         If it ain’t broke, don’t fix it” is the fastest way to lose
       </h3>
-      <h4 className="xs-heading relative z-10 mt-3 px-3 text-center">
+      <h4 className="xs-heading text-cyanBlue relative z-10 mt-3 px-3 text-center">
         Your work ethic isn’t holding you back. It’s your workflow.{" "}
       </h4>
       <div className="mt-5 flex flex-col items-center justify-center gap-5 md:mt-10 md:flex-row lg:mt-16 lg:gap-11">

@@ -71,7 +71,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           <FooterLogoIcon />
         </div>
 
-        <div className="hidden w-full flex-wrap justify-center gap-3 md:flex">
+        <div className="hidden w-full flex-wrap justify-center gap-4 md:flex">
           {footer?.sections?.map((section, idx) => (
             <FooterSection
               key={idx}
@@ -123,11 +123,11 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </div>
 
         <div className="mt-7 flex w-full flex-col items-center justify-between gap-4 lg:flex-row">
-          <p className="text-secondary hidden text-xs leading-[200%] lg:flex">
+          <p className="text-tealBlue hidden text-xs leading-[200%] lg:flex">
             © {currentYear} {footer?.copyrightTxt}
           </p>
           <div className="relative z-10 hidden items-center gap-3 lg:flex">
-            <p className="text-secondary font-montserrat text-xs font-medium">
+            <p className="text-tealBlue font-montserrat text-xs font-medium">
               {footer?.poweredBy}
             </p>
             <Image
@@ -140,7 +140,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             />
           </div>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <div className="text-secondary flex flex-wrap justify-center gap-4 text-xs leading-[200%]">
+            <div className="text-tealBlue flex flex-wrap justify-center gap-4 text-xs leading-[200%]">
               {footer?.bottomLinks?.map((item, idx) => (
                 <Link
                   key={idx}
@@ -160,7 +160,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               </Link>
             </div>
           </div>
-          <p className="text-secondary flex text-xs leading-[200%] lg:hidden">
+          <p className="text-tealBlue flex text-xs leading-[200%] lg:hidden">
             © {currentYear} {footer?.copyrightTxt}
           </p>
           <div className="flex gap-3 py-1 sm:hidden sm:py-0">
@@ -172,17 +172,17 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             </Link>
           </div>
           <div className="relative z-10 flex items-center gap-3 pt-2.5 lg:hidden">
-            <p className="text-secondary font-montserrat text-xs font-medium">
+            <p className="text-tealBlue font-montserrat text-xs font-medium">
               {footer?.poweredBy}
             </p>
-            <Image
-              height={72}
-              width={72}
-              unoptimized
-              className="mx-auto w-full max-w-[72px]"
-              src="/images/webp/footer-logo.webp"
-              alt="Powered by Logo"
-            />
+              <Image
+                height={72}
+                width={72}
+                unoptimized
+                className="mx-auto w-full max-w-[72px]"
+                src="/images/webp/footer-logo.webp"
+                alt="Powered by Logo"
+              />
           </div>
         </div>
       </div>

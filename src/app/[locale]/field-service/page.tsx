@@ -137,12 +137,7 @@ const FieldServicesPage = async ({ params }: Params) => {
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
-      <BlogPosts
-        data={crmPageContent?.data?.[0]?.blogs}
-        blogs={blogs}
-        className="relative z-20 bg-white"
-        variant="secondary"
-      />
+      <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
     </main>
   );
 };

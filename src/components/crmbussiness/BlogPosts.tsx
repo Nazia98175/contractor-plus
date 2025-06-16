@@ -30,7 +30,13 @@ const BlogPosts: React.FC<Props> = ({
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="mb-6 flex items-center justify-between md:mb-9">
           <PrimaryAnimatedText delay={3000}>
-            <h2 className="section-heading faq-heading-text w-full text-center sm:w-fit">
+            <h2
+              className={`w-full text-center sm:w-fit ${
+                variant === "primary"
+                  ? "faq-heading-text text-[31px] font-semibold tracking-[-0.62px]"
+                  : "section-heading"
+              }`}
+            >
               <span>{data?.title}</span>
             </h2>
           </PrimaryAnimatedText>

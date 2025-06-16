@@ -1,12 +1,11 @@
 "use client";
 import { debugLog } from "@/utils/getConsole";
 import AwardsTagsImg from "../common/AwardsTagsImg";
-import { swichToContractordata } from "../common/Helper";
 import SoftwareUsed from "../common/SoftwareUsed";
 import { Props } from "../crmbussiness/TeamsUsingContractor";
 
- const  NeverLookBack: React.FC<Props> = ( {data}) => {
-  debugLog("data" , data)
+const NeverLookBack: React.FC<Props> = ({ data }) => {
+  debugLog("data", data);
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-14 sm:pt-[70px]">
       <div className="absolute -top-1 z-[2] h-3 w-full bg-white"></div>
@@ -29,17 +28,21 @@ import { Props } from "../crmbussiness/TeamsUsingContractor";
         {/* Teams that switch to Contractor+ never look back */}
         {data?.title}
       </h3>
-      <p className="paragraph-text gradient-text-2 sm:text-darkness text-center leading-[124%] sm:bg-none sm:font-semibold">
+      <p className="paragraph-text gradient-text-2 text-center leading-[124%] sm:hidden">
+        {/* We help you get ahead, not just get by */}
+        {data?.sub_title}
+      </p>
+      <p className="paragraph-text text-darkness hidden text-center leading-[124%] font-semibold sm:block">
         {/* We help you get ahead, not just get by */}
         {data?.sub_title}
       </p>
       <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
-        {data?.cards?.map((item:any, index:any) => (
+        {data?.cards?.map((item: any, index: any) => (
           <SoftwareUsed key={index} item={item} />
         ))}
       </div>
       <AwardsTagsImg />
     </section>
   );
-}
+};
 export default NeverLookBack;

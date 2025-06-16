@@ -15,10 +15,10 @@ const VARIANT_CLASSES = {
   secondary: {
     container: "bg-rgba2 backdrop-blur-md",
     nameText: "text-white",
-    roleText: "text-secondary",
-    reviewText: "text-decemberSky",
+    roleText: "text-decemberSky",
+    reviewText: "text-secondary",
     userNameStyle: "text-white",
-    playBg: "bg-white text-secondary group-hover:text-white",
+    playBg: "bg-white text-secondary group-hover:text-pleasure",
   },
 };
 
@@ -94,7 +94,7 @@ const CrmReviewCard: React.FC<Props> = ({
         </div>
       </div>
       <p
-        className={`font-jakarta text-winterWay mt-3 p-2 text-left text-sm font-medium tracking-[0.1px] md:text-base xl:text-lg ${styles.reviewText}`}
+        className={`font-jakarta mt-3 p-2 text-left text-sm font-medium tracking-[0.1px] md:text-base xl:text-lg ${styles.reviewText}`}
       >
         {review?.review?.startsWith('"') ? review.review : `"${review.review}"`}
       </p>

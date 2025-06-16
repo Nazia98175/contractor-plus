@@ -40,9 +40,20 @@ const WhyContractorPage = () => {
         <Dashboard />
         <OperatingSystem />
         <HvacSoftwareService
-          descColorClass="text-secondary"
-          title="All unified. All in sync. All in one place."
-          desc="This is what it feels like to finally run your business, not be run by it."
+          data={{
+            title: "All unified. All in sync. All in one place.",
+            sub_title:
+              "This is what it feels like to finally run your business, not be run by it.",
+            placeholder: "Your Email",
+          }}
+          createBtn="Get started FREE"
+          descColorClass="text-secondary max-sm:!text-sm sm:text-base md:text-!lg"
+          ncc="No credit card required"
+          mobileBtn="Download FREE App"
+          titleClass="max-sm:!text-2xl"
+          inputClass="max-sm:!hidden"
+          ccClass="max-sm:!hidden"
+          mobileBtnHref="https://contractorplus.app/"
         />
         <main className="pb-14">
           <TrustBarHvca showTrustedSection={false} platforms={platforms} />

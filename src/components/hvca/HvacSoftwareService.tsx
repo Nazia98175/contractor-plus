@@ -4,25 +4,29 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../common/CardReveal";
 import { CheckIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
-
+import Link from "next/link";
 interface HvacSoftwareServiceProps {
-  
   data: any;
   ncc: string;
   createBtn: string;
   mobileBtn: string;
-
- 
   descColorClass?: string;
+  titleClass?: string;
+  inputClass?: string;
+  ccClass?: string;
+  mobileBtnHref:string
 }
 
 const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
-  
   descColorClass = "text-decemberSky",
-  ncc ,
+  ncc,
   createBtn,
-  mobileBtn ,
-  data
+  mobileBtn,
+  data,
+  titleClass,
+  inputClass,
+  ccClass,
+  mobileBtnHref,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -49,7 +53,9 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <h3 className="sub-heading mx-auto mb-4 max-w-[840px] text-center font-extrabold text-white">
+            <h3
+              className={`sub-heading mx-auto mb-4 max-w-[840px] text-center font-extrabold text-white ${titleClass}`}
+            >
               {data?.title}
             </h3>
           </TextAnimation>
@@ -65,7 +71,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
               className="mx-auto flex w-full max-w-[550px] flex-col items-start justify-center gap-3 md:max-w-[657px] md:flex-row"
               onSubmit={handleSubmit}
             >
-              <div className="w-full md:max-w-[414px]">
+              <div className={`w-full md:max-w-[414px] ${inputClass}`}>
                 <input
                   type="email"
                   placeholder={data?.placeholder}
@@ -76,9 +82,27 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
                 />
               </div>
               <div className="flex w-full flex-col items-center justify-center md:w-fit">
+                {mobileBtn && (
+                  <Link
+                    href={mobileBtnHref}
+                    className="w-full max-sm:inline-block sm:!hidden"
+                  >
+                    <button
+                      type="button"
+                      className="bg-red-linear primary-btn flex h-10 !min-w-[230px] items-center justify-center w-full md:mx-0 md:!w-auto"
+                      disabled={loading}
+                    >
+                      {loading ? (
+                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                      ) : (
+                        `${mobileBtn}`
+                      )}
+                    </button>
+                  </Link>
+                )}
                 <button
                   type="submit"
-                  className="bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto"
+                  className={`bg-red-linear primary-btn flex h-10 !w-full !min-w-[230px] items-center justify-center md:mx-0 md:!w-auto ${mobileBtn && "max-sm:!hidden"}`}
                   disabled={loading}
                 >
                   {loading ? (
@@ -89,17 +113,19 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
                 </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
                   <span className="font-myriad text-sm font-semibold text-white">
-                   {ncc}
+                    {ncc}
                   </span>
                 </p>
               </div>
-              <div className="flex w-full items-center justify-center md:hidden">
+              <div
+                className={`flex w-full items-center justify-center md:hidden ${ccClass}`}
+              >
                 <p className="flex items-center gap-2 pt-1">
                   <span>
                     <CheckIcon />
                   </span>
                   <span className="font-myriad text-sm font-semibold text-white">
-                   {ncc}
+                    {ncc}
                   </span>
                 </p>
               </div>

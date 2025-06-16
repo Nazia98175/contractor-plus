@@ -9,18 +9,20 @@ import CrmReviewCard from "./CrmReviewCard";
 interface Props {
   data: any;
   reviews: any;
+  variant?: "primary" | "secondary"; // ✅ restrict variant
 }
 
-const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
+const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
+  console.log(reviews, "review");
+  console.log(data, "data new");
 
   const openModal = (videoUrl: string) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
 
-  
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 py-7 sm:space-y-9 xl:space-y-16 xl:pt-[68px]">
@@ -48,6 +50,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews }) => {
             <CrmReviewCard
               review={review}
               key={index}
+              variant={variant}
               openModal={
                 review.isModal
                   ? () => openModal(review.videoLink || "")

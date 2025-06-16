@@ -1,4 +1,4 @@
-import { platforms } from "@/components/common/Helper";
+import { OurReviewList, platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
@@ -30,51 +30,7 @@ interface Params {
 const FieldServicesPage = async ({ params }: Params) => {
   const useParams = await params;
   const location = await getUserLoc();
-  const faqitems = [
-    {
-      id: 1,
-      question: " Can I assign jobs based on where my team is?",
-      answer:
-        "Yes. Contractor+ shows you a live GPS map of your entire crew, so you can assign jobs based on location, availability, or skill",
-    },
-    {
-      id: 2,
-      question: "How do schedule changes get communicated to the field?",
-      answer:
-        "Instantly. If you move or reassign a job, your crew is notified immediately through the mobile app with updated details, tasks, and location info. You won’t need to call or text anyone.",
-    },
-    {
-      id: 3,
-      question: "What if I miss a call from a potential client?",
-      answer:
-        "Big Chief, our built-in AI receptionist, will answer for you. It captures lead details, books appointments, and drops them right into your pipeline. It works after-hours too!",
-    },
-    {
-      id: 4,
-      question: " Do my field techs need to be tech-savvy to use this?",
-      answer:
-        "Not at all. Contractor+ was built mobile-first for crews on the go. Most techs are up and running within minutes.",
-    },
-    {
-      id: 5,
-      question: "Can I take payments on-site through Contractor+?",
-      answer:
-        "Yes. Your crew can collect card or ACH payments in the field, directly from the job or via the client portal. You can even get a free card reader with certain plans.",
-    },
-    {
-      id: 6,
-      question:
-        "Does Contractor+ replace my current scheduling and dispatch tools?",
-      answer:
-        "Yes. Contractor+ consolidates job scheduling, dispatch, crew tracking, time logging, and communication into one system.",
-    },
-    {
-      id: 7,
-      question: "Can I build estimates in the field?",
-      answer:
-        "Yes. Contractor+ has the fastest and most professional-looking contractor estimates in the industry. Our AI quickly pulls in live pricing for materials and labor rates to build out estimates faster than you've ever done before. Offer customers “Good, Better, Best” options, add groups and line items, and even get eSignatures on the spot. ",
-    },
-  ];
+
   const [homePageContent] = await Promise.all([
     getHomePage(useParams?.locale || "en", "&populate=*"),
     getHomePage(
@@ -82,58 +38,6 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[review][on][common.reviews][populate]=*",
     ),
   ]);
-  const dummyReviews = [
-    {
-      id: 1,
-      name: "John Smith",
-      company: "Smith Plumbing Services",
-      rating: 5,
-      review:
-        "Contractor+ has completely transformed how we manage our field operations. The real-time tracking is a game-changer!",
-      date: "2024-01-15",
-      verified: true,
-    },
-    {
-      id: 2,
-      name: "Sarah Johnson",
-      company: "Johnson HVAC Solutions",
-      rating: 5,
-      review:
-        "The scheduling and dispatch features have saved us hours every week. Our techs love the mobile app!",
-      date: "2024-01-10",
-      verified: true,
-    },
-    {
-      id: 3,
-      name: "Mike Davis",
-      company: "Davis Electric Co.",
-      rating: 5,
-      review:
-        "Big Chief AI receptionist never misses a call. We've increased our leads by 40% since implementing Contractor+",
-      date: "2024-01-05",
-      verified: true,
-    },
-    {
-      id: 4,
-      name: "Lisa Brown",
-      company: "Brown Roofing & Construction",
-      rating: 4,
-      review:
-        "Great software for managing crews and jobs. The GPS tracking helps us optimize routes and save on fuel costs.",
-      date: "2023-12-28",
-      verified: true,
-    },
-    {
-      id: 5,
-      name: "Robert Wilson",
-      company: "Wilson Home Services",
-      rating: 5,
-      review:
-        "The ability to create estimates in the field and get instant signatures has accelerated our sales process significantly.",
-      date: "2023-12-20",
-      verified: true,
-    },
-  ];
 
   const [
     crmPageContent,

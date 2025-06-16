@@ -44,7 +44,16 @@ const HvacHero = () => {
             </p>
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
-              <FreeAccountButton text={"Get started FREE"} />
+              <FreeAccountButton
+                showIcon={false}
+                text={"Get started FREE"}
+                className="!hidden sm:!flex"
+              />
+              <FreeAccountButton
+                showIcon={false}
+                text={"Download App"}
+                className="flex sm:!hidden"
+              />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
                 text={"No Credit Card Required"}

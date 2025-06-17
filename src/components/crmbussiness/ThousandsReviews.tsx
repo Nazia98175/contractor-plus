@@ -29,7 +29,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2
             className={`section-heading ${
-              variant === "primary" ? "crm-gradient" : "gradient-white"
+              variant === "secondary" ? "gradient-white" : "crm-gradient"
             } mx-auto max-w-[951px] text-center !font-black lg:!font-semibold`}
           >
             {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />

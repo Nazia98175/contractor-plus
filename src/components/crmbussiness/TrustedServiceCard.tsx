@@ -100,7 +100,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
         <p
           className={`mt-5 line-clamp-5 text-xs font-semibold sm:text-sm ${styles.quoteText}`}
         >
-          "{review.review}"
+          {review.review}
         </p>
       </article>
     </div>

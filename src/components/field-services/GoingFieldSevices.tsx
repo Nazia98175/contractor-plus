@@ -33,7 +33,7 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
   return (
     <section className="relative z-20 bg-white pb-[52px] sm:pb-[60px] lg:pb-[95px]">
       <img
-        className="h-[210px] w-full object-cover"
+        className="h-[180px] w-full object-cover"
         src="/images/webp/field-services.webp"
         alt="Map Image"
       />

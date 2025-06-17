@@ -12,6 +12,7 @@ import {
   LinkdinIcon,
   TwitterIcon,
 } from "./Icons";
+import { usePathname } from "next/navigation";
 
 interface FooterLink {
   url: string;
@@ -33,35 +34,49 @@ interface Footer {
 
 interface TheFooterProps {
   footer: Footer;
+  variant?: "light" | "dark";
 }
 
+const variantClasses = {
+  light: {
+    sectionTitle: "text-lightBlack",
+    linkText: "text-winterWay hover:text-romanRed",
+    bottomlink: "text-wallStreet hover:text-romanRed",
+    copyright: "text-wallStreet",
+    powered: "text-wallStreet",
+    background: "bg-white",
+  },
+  dark: {
+    sectionTitle: "text-white",
+    linkText: "text-decemberSky hover:text-romanRed",
+    bottomlink: "text-highRise hover:text-romanRed",
+    copyright: "text-highRise",
+    powered: "text-highRise",
+    background: "bg-transparent",
+  },
+};
+
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
+  const pathname = usePathname();
+
+  console.log("Actual pathname:", pathname);
+
+  const variant = pathname.toLowerCase().includes("hvac") ? "light" : "dark";
+  console.log("Variant:", variant);
+
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const t = useTranslations("footer");
-
-  const links: { text: string; href: string }[] = t
-    .raw("links")
-    .map((text: string) => ({
-      text,
-      href: "#", // TODO: Replace with actual URLs
-    }));
-
-  const sections: string[] = t.raw("sections");
-  const ranges = [
-    [0, 10],
-    [10, 21],
-    [21, 33],
-    [33, 36],
-  ];
+  const styles = variantClasses[variant];
 
   const toggleSection = (title: string) => {
     setOpenSection(openSection === title ? null : title);
   };
-  const legalLinks = t.raw("legalLinks");
 
   return (
-    <footer className="no-scrollbar relative z-20 w-full overflow-y-visible py-10 md:py-[62px]">
+    <footer
+      className={`no-scrollbar md:py-[62px]" relative z-20 w-full overflow-y-visible bg-transparent py-10 ${styles.background}`}
+    >
       <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />
       </span>
@@ -80,6 +95,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 text: link.urlText,
                 href: link.url ?? "#",
               }))}
+              variant={variant}
             />
           ))}
         </div>
@@ -93,7 +109,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 className="flex w-full flex-col justify-between px-4 py-2 text-start"
               >
                 <div className="mx-auto flex w-fit items-center justify-between">
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className={`text-base font-bold ${styles.sectionTitle}`}>
                     {section.title}
                   </h3>
                   <span
@@ -113,6 +129,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                       <FooterLinkItem
                         key={i}
                         list={{ text: link.urlText, href: link.url ?? "#" }}
+                        variant={variant}
                       />
                     ))}
                   </div>
@@ -123,11 +140,16 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </div>
 
         <div className="mt-7 flex w-full flex-col items-center justify-between gap-4 lg:flex-row">
-          <p className="text-tealBlue hidden text-xs leading-[200%] lg:flex">
+          <p
+            className={`hidden text-xs leading-[200%] lg:flex ${styles.copyright}`}
+          >
             © {currentYear} {footer?.copyrightTxt}
           </p>
+
           <div className="relative z-10 hidden items-center gap-3 lg:flex">
-            <p className="text-tealBlue font-montserrat text-xs font-medium">
+            <p
+              className={`font-montserrat text-xs font-medium ${styles.powered}`}
+            >
               {footer?.poweredBy}
             </p>
             <Image
@@ -139,13 +161,16 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="Powered by Logo"
             />
           </div>
+
           <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <div className="text-tealBlue flex flex-wrap justify-center gap-4 text-xs leading-[200%]">
+            <div
+              className={`flex flex-wrap justify-center gap-4 text-xs leading-[200%]`}
+            >
               {footer?.bottomLinks?.map((item, idx) => (
                 <Link
                   key={idx}
                   href={item?.url}
-                  className="hover:text-romanRed transition-all duration-300"
+                  className={`transition-all duration-300 ${styles.bottomlink}`}
                 >
                   {item?.urlText}
                 </Link>
@@ -160,9 +185,13 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               </Link>
             </div>
           </div>
-          <p className="text-tealBlue flex text-xs leading-[200%] lg:hidden">
+
+          <p
+            className={`flex text-xs leading-[200%] lg:hidden ${styles.copyright}`}
+          >
             © {currentYear} {footer?.copyrightTxt}
           </p>
+
           <div className="flex gap-3 py-1 sm:hidden sm:py-0">
             <Link href="https://x.com/">
               <TwitterIcon />
@@ -171,18 +200,21 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               <LinkdinIcon />
             </Link>
           </div>
+
           <div className="relative z-10 flex items-center gap-3 pt-2.5 lg:hidden">
-            <p className="text-tealBlue font-montserrat text-xs font-medium">
+            <p
+              className={`font-montserrat text-xs font-medium ${styles.powered}`}
+            >
               {footer?.poweredBy}
             </p>
-              <Image
-                height={72}
-                width={72}
-                unoptimized
-                className="mx-auto w-full max-w-[72px]"
-                src="/images/webp/footer-logo.webp"
-                alt="Powered by Logo"
-              />
+            <Image
+              height={72}
+              width={72}
+              unoptimized
+              className="mx-auto w-full max-w-[72px]"
+              src="/images/webp/footer-logo.webp"
+              alt="Powered by Logo"
+            />
           </div>
         </div>
       </div>
@@ -195,29 +227,41 @@ export default Footer;
 const FooterSection = ({
   title,
   links,
+  variant = "dark",
 }: {
   title: string;
   links: { text: string; href: string }[];
-}) => (
-  <div className="w-full max-w-[180px] lg:max-w-[201px]">
-    <h3 className="pb-2.5 text-base font-bold text-white">{title}</h3>
-    <div className="flex flex-col gap-2.5">
-      {links.map((list, index) => (
-        <FooterLinkItem key={index} list={list} />
-      ))}
+  variant?: "light" | "dark";
+}) => {
+  const styles = variantClasses[variant];
+  return (
+    <div className="w-full max-w-[180px] lg:max-w-[201px]">
+      <h3 className={`pb-2.5 text-base font-bold ${styles.sectionTitle}`}>
+        {title}
+      </h3>
+      <div className="flex flex-col gap-2.5">
+        {links.map((list, index) => (
+          <FooterLinkItem key={index} list={list} variant={variant} />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const FooterLinkItem = ({
   list,
+  variant = "dark",
 }: {
   list: { text: string; href: string };
-}) => (
-  <Link
-    className="text-decemberSky hover:text-romanRed text-xs leading-[16px] transition-all duration-200 ease-in-out md:text-sm lg:w-full lg:text-base"
-    href={list.href}
-  >
-    {list.text}
-  </Link>
-);
+  variant?: "light" | "dark";
+}) => {
+  const styles = variantClasses[variant];
+  return (
+    <Link
+      className={`${styles.linkText} text-xs leading-[16px] transition-all duration-200 ease-in-out md:text-sm lg:w-full lg:text-base`}
+      href={list.href}
+    >
+      {list.text}
+    </Link>
+  );
+};

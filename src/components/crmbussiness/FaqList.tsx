@@ -1,4 +1,3 @@
-import React from "react";
 import AnimateHeight from "react-animate-height";
 import { FaqIcon } from "../common/Icons";
 

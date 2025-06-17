@@ -142,7 +142,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <BlogPosts
         data={crmPageContent?.data?.[0]?.blogs}
         blogs={blogs}
-        className="mt-7 md:mt-9"
+        className="mt-7 pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>
   );

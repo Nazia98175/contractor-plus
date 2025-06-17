@@ -25,7 +25,7 @@ const BlogPosts: React.FC<Props> = ({
 
   return (
     <section
-      className={`relative z-20 px-2 pt-4 pb-12 sm:px-4 xl:px-20 ${className || ""}`}
+      className={`relative z-20 px-2 pt-4 sm:px-4 xl:px-20 ${className || ""}`}
     >
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="mb-6 flex items-center justify-between md:mb-9">

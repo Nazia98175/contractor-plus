@@ -75,7 +75,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
 
   return (
     <footer
-      className={`no-scrollbar md:py-[62px]" relative z-20 w-full overflow-y-visible bg-transparent py-10 ${styles.background}`}
+      className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 md:py-[62px] ${styles.background}`}
     >
       <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
         <FooterAnimatedIcon />

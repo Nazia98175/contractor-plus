@@ -148,7 +148,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   );
 
   return (
-    <section ref={sectionRef} className="relative z-10 w-full overflow-hidden">
+    <section ref={sectionRef} className="relative z-10 w-full">
       {/* Desktop Background */}
       {isDesktop && (
         <Image

@@ -48,7 +48,9 @@ const CrmReviewCard: React.FC<Props> = ({
     >
       <div
         className={`flex gap-3 md:gap-4 ${
-          variant === "primary" ? "flex-row items-center" : "flex-col"
+          variant === "primary"
+            ? "flex-row items-center"
+            : "flex-row sm:flex-col"
         }`}
       >
         <div className="relative w-fit">
@@ -62,7 +64,7 @@ const CrmReviewCard: React.FC<Props> = ({
             />
           ) : (
             <div
-              className={`bg-rgba3 flex h-10 w-10 items-center justify-center rounded-sm font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
+              className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
             >
               {review?.userName
                 ?.split(" ")
@@ -78,7 +80,7 @@ const CrmReviewCard: React.FC<Props> = ({
           </div>
         </div>
         <div className="flex w-full flex-col gap-1.5">
-          <div className="flex w-full flex-wrap justify-between gap-1.5 sm:flex-nowrap sm:gap-2">
+          <div className="flex w-full flex-col flex-wrap justify-between gap-1.5 sm:flex-row sm:flex-nowrap sm:gap-2">
             <div className="max-w-[182px] text-left">
               <h5
                 className={`font-inter truncate text-xl font-medium tracking-[0.1px] text-nowrap lg:text-2xl ${styles.nameText}`}
@@ -86,7 +88,7 @@ const CrmReviewCard: React.FC<Props> = ({
                 {review.userName}
               </h5>
               <h6
-                className={`font-inter text-sm leading-[120%] font-medium tracking-[0.1px] md:text-base ${styles.roleText}`}
+                className={`font-inter mt-1.5 text-sm leading-[120%] font-medium tracking-[0.1px] sm:mt-2.5 md:text-base ${styles.roleText}`}
               >
                 {review.userRole}
               </h6>

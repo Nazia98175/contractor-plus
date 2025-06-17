@@ -55,6 +55,7 @@
   --color-shortcake: #f99293;
   --color-cyanBlue: #8a8e91;
   --color-tealBlue: #585a5e;
+  --color-coconut: #e6e9f5;
 
   --color-rgba1: #ffffff99;
   --color-x`: #1c273133;
@@ -1525,6 +1526,56 @@ button {
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
+/* why contractor header lines animation */
+.animated-line {
+  animation: bounceUpDown 10s ease-in-out infinite;
+}
+
+.animated-line:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.animated-line:nth-child(3) {
+  animation-delay: 1.6s;
+}
+.animated-line:nth-child(4) {
+  animation-delay: 2.4s;
+}
+.animated-line:nth-child(5) {
+  animation-delay: 3.2s;
+}
+.animated-line:nth-child(6) {
+  animation-delay: 4s;
+}
+.animated-line:nth-child(7) {
+  animation-delay: 4.8s;
+}
+.animated-line:nth-child(8) {
+  animation-delay: 5.6s;
+}
+.animated-line:nth-child(9) {
+  animation-delay: 6.4s;
+}
+.animated-line:nth-child(10) {
+  animation-delay: 7.2s;
+}
+.animated-line:nth-child(11) {
+  animation-delay: 8s;
+}
+.animated-line:nth-child(12) {
+  animation-delay: 8.8s;
+}
+
+@keyframes bounceUpDown {
+  0% {
+    transform: translateY(-400px);
+  }
+  50% {
+    transform: translateY(600px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
 .estimate-text {
   background:
     linear-gradient(
@@ -1537,4 +1588,9 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.compare-table-bg {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e6e9f5;
+  backdrop-filter: blur(31px);
 }

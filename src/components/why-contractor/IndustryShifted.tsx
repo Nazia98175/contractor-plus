@@ -111,9 +111,8 @@ const IndustryShifted: React.FC = () => {
     <section className="pb-20 sm:pb-[35px]">
       <div className="mx-auto max-w-[1340px] px-4">
         <TextAnimation animateOnScroll={true} delay={0}>
-          <h3 className="sub-heading mb-[34px] text-center text-gray-300 max-sm:!text-lg sm:mb-[37px]">
-            <span className="font-semibold">The industry has</span>{" "}
-            <span className="font-extralight">shifted</span>
+          <h3 className="sub-heading !font-light mb-[34px] text-center text-gray-300 max-sm:!text-lg sm:mb-[37px]">
+            The industry shifted
           </h3>
         </TextAnimation>
         <div className="flex flex-col gap-1 sm:flex-row">

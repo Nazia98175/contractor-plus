@@ -1,5 +1,6 @@
-export const TickIcon = () => (
+export const TickIcon = ({ className = "" }) => (
   <svg
+  className={className}
     width="23"
     height="22"
     viewBox="0 0 23 22"

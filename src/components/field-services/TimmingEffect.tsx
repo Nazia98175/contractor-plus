@@ -332,7 +332,7 @@ const TimmingEffect = () => {
             backgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
-          className="section-heading relative z-[4] px-2 pt-8 text-center"
+          className="section-heading relative z-[4] px-2 text-center"
         >
           A system that finally connects field and office
         </h2>
@@ -394,9 +394,8 @@ const TimmingEffect = () => {
         </div>
 
         <div className="relative z-[3] flex flex-col items-center justify-center px-2">
-          <Button variant="primary" className="mt-3 mb-[6px]">
-            <span className="hidden sm:flex">Get started FREE</span>
-            <span className="flex sm:hidden">Download FREE App</span>
+          <Button variant="primary" className="mt-3 mb-1.5">
+            Get started FREE
             <ArrowIcon fill="white" />
           </Button>
           <CardRequiredButton text="No credit card required" />

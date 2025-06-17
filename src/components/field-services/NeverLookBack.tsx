@@ -8,15 +8,15 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
   debugLog("data", data);
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-14 sm:pt-[70px]">
-      <div className="absolute -top-1 z-[2] h-3 w-full bg-white"></div>
+      <div className="absolute -top-1 z-[2] hidden h-3 w-full bg-white sm:block"></div>
       <img
         src="/images/webp/red-linear-bg.webp"
         className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
         alt="Red Lineaar background"
       />
       <img
-        src="/images/png/red-linear-mobile.png"
-        className="absolute -top-0 left-0 -z-[3] block h-[124%] w-full bg-cover sm:hidden"
+        src="/images/webp/red-linear-mobile.webp"
+        className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-cover sm:hidden"
         alt="Red Lineaar background"
       />
 
@@ -24,7 +24,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         {/* Teams that switch to Contractor+ never look back */}
         {data?.title}
       </h3>
-      <h3 className="crm-gradient mx-auto mb-[9px] block max-w-[307px] text-center text-[19px] font-bold sm:hidden">
+      <h3 className="crm-gradient mx-auto mb-[9px] block max-w-[307px] text-center text-[19px] font-extrabold sm:hidden">
         {/* Teams that switch to Contractor+ never look back */}
         {data?.title}
       </h3>

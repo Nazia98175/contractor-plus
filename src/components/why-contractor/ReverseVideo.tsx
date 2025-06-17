@@ -159,7 +159,7 @@ const ReverseVideo = () => {
         }}
       ></div>
       <TextAnimation animateOnScroll={true} delay={0}>
-        <div className="relative z-10 flex h-full flex-col items-center justify-center pt-10">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center pt-14 sm:pt-36">
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
             "If it ain't broke, don't fix it" is the
           </h2>

@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import { LogoIcon } from "../common/Icons";
 import Image from "next/image";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import TextAnimation from "../common/TextAnimation";
 
 const WhyContractorHero = () => {
@@ -22,17 +21,228 @@ const WhyContractorHero = () => {
   };
 
   return (
-    <section className="pt-[70px] pb-14 sm:pt-[127px] sm:pb-20">
-      <div className="mx-auto max-w-[830px] px-3">
-        {/* <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4">
-          You can't scale a contracting business built on bottlenecks
-        </h2> */}
-        {/* <PrimaryAnimatedText
-          className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:mb-4"
-          delay={3000}
-        >
-          You can't scale a contracting business built on bottlenecks
-        </PrimaryAnimatedText> */}
+    <section className="pt-[70px] pb-14 sm:pt-[127px] sm:pb-20 px-3">
+      <div className="mx-auto max-w-[830px] relative">
+          <div className="absolute top-[40%] sm:top-0 left-0 mx-auto w-full max-w-[600px] lg:max-w-[840px] pointer-events-none">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 841 1247"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="0.5"
+                y1="0"
+                x2="0.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="168.5"
+                y1="0"
+                x2="168.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="336.5"
+                y1="0"
+                x2="336.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="504.5"
+                y1="0"
+                x2="504.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="672.5"
+                y1="0"
+                x2="672.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="840.5"
+                y1="0"
+                x2="840.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="0.5"
+                y1="347"
+                x2="0.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="168.5"
+                y1="347"
+                x2="168.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="336.5"
+                y1="347"
+                x2="336.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="504.5"
+                y1="347"
+                x2="504.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="672.5"
+                y1="347"
+                x2="672.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="840.5"
+                y1="347"
+                x2="840.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <g className="red-glow">
+                <image
+                  className="animated-line"
+                  x="0"
+                  y="400"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="168"
+                  y="550"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="336"
+                  y="480"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="504"
+                  y="500"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="672"
+                  y="525"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="840"
+                  y="650"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="0"
+                  y="750"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="168"
+                  y="900"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="336"
+                  y="830"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="504"
+                  y="850"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="672"
+                  y="875"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="840"
+                  y="1000"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="0"
+                  y="1060"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="840"
+                  y="1100"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+              </g>
+            </svg>
+          </div>
         <TextAnimation animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:mb-4">
             You can't scale a contracting business built on bottlenecks
@@ -81,7 +291,7 @@ const WhyContractorHero = () => {
               }`}
               onClick={handlePlayPause}
             ></div>
-            <div className="absolute left-1/2 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 top-[50px]">
+            <div className="absolute top-[50px] left-1/2 -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2">
               {" "}
               <button
                 className="flex size-[60px] items-center justify-center rounded-full bg-[#FFFFFF1F] backdrop-blur-[24px] transition-transform hover:scale-110"
@@ -114,11 +324,13 @@ const WhyContractorHero = () => {
             </div>
             <div className="absolute right-0 bottom-0 left-0 bg-[#00000052] p-2 backdrop-blur-[42px]">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold tracking-normal font-myriad text-white xl:text-xl">
+                <h3 className="font-myriad text-lg font-semibold tracking-normal text-white xl:text-xl">
                   Chad Cranfill
                 </h3>
                 <div className="hidden items-center gap-2 text-xs tracking-normal text-white sm:flex sm:text-sm">
-                  <span className="opacity-[32%] font-myriad">Switched From JobTer</span>
+                  <span className="font-myriad opacity-[32%]">
+                    Switched From JobTer
+                  </span>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold">→</span>
                     <span className="max-w-20">
@@ -128,7 +340,7 @@ const WhyContractorHero = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-superSilver font-myriad tracking-[0.5px] text-xs max-sm:my-1.5 sm:mt-1.5 sm:text-sm">
+              <p className="text-superSilver font-myriad text-xs tracking-[0.5px] max-sm:my-1.5 sm:mt-1.5 sm:text-sm">
                 Owner, Cranfill Construction
               </p>
               <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">

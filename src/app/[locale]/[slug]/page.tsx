@@ -18,6 +18,7 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import EntireBusiness from "@/components/homepage/EntireBusiness";
+import HvacFaq from "@/components/hvca/HvacFaq";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";

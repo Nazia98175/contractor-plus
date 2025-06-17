@@ -4,7 +4,6 @@ import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFaqLayout from "../common/CommonFaqLayout";
 import UseFaqToggle from "../hook/UseFaqToggle";
 
-
 type FaqItemType = {
   id: number;
   question: string;
@@ -15,7 +14,7 @@ interface Props {
   faqitems: {
     title?: string;
     sub_title?: string;
-    faq?: FaqItemType[]; 
+    faq?: FaqItemType[];
   };
   className?: string;
   variant?: "hvac" | "light" | "dark";

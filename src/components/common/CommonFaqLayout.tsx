@@ -25,7 +25,7 @@ const CommonFaqLayout: React.FC<CommonFaqLayoutProps> = ({
   openIndex,
   onToggle,
   variant = "hvac",
-  className = " w-full px-2 py-10",
+  className = "w-full px-2 py-10",
 }) => {
   return (
     <div className={`${className}`}>

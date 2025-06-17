@@ -1,5 +1,8 @@
+import React from "react";
 import AnimateHeight from "react-animate-height";
 import { FaqIcon } from "../common/Icons";
+
+type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 
 type FaqListProps = {
   data: {
@@ -10,43 +13,76 @@ type FaqListProps = {
   };
   isOpen: boolean;
   onToggle: () => void;
+  variant?: VariantType;
   classNameQue?: string;
   classNameAnswer?: string;
   containerClassName?: string;
 };
+
+const variantStyles = {
+  default: {
+    question: "text-white",
+    answer: "text-decemberSky",
+  },
+  light: {
+    question: "text-gray-100",
+    answer: "text-gray-300",
+  },
+  dark: {
+    question: "text-gray-900",
+    answer: "text-gray-700",
+  },
+  accent: {
+    question: "text-primary",
+    answer: "text-secondary",
+  },
+  muted: {
+    question: "text-gray-500",
+    answer: "text-gray-400",
+  },
+};
+
 const FaqList: React.FC<FaqListProps> = ({
   data,
   isOpen,
   onToggle,
+  variant = "default",
   classNameQue,
   classNameAnswer,
   containerClassName,
 }) => {
+  const currentVariant = variantStyles[variant];
+
   return (
-    <>
+    <div
+      onClick={onToggle}
+      className={`relative mb-5 flex flex-col rounded-lg px-2 ${containerClassName}`}
+    >
       <div
-        onClick={onToggle}
-        className={`flex flex-col gap-3 px-4 md:gap-5 ${containerClassName}`}
+        className={`${
+          isOpen ? "h-full" : "h-0"
+        } bg-faq-bg-2 pointer-events-none absolute inset-0 z-0 w-full overflow-hidden rounded-lg transition-all duration-200`}
+      ></div>
+
+      <button
+        className={`flex w-full cursor-pointer items-center justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black ${currentVariant.question} ${classNameQue} ${isOpen ? "faq-opened" : ""} `}
       >
-        <button
-          className={`${classNameQue} flex w-full cursor-pointer items-center justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black text-white lg:text-lg`}
+        {data.question}
+        <span className="relative inline-block h-6 w-6">
+          <FaqIcon isOpen={isOpen} />
+        </span>
+      </button>
+
+      <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
+        <p
+          className={`font-jakarta max-w-[1113px] px-2 pt-1 pb-3 text-sm leading-[126%] ${currentVariant.answer} ${classNameAnswer} ${isOpen ? "text-visible" : ""} `}
         >
-          {data.question}
-          <span className="relative inline-block h-6 w-6">
-            <FaqIcon isOpen={isOpen} />
-          </span>
-        </button>
-        <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
-          <p
-            className={`text-decemberSky font-jakarta h-fit max-w-[1113px] px-2 pt-1 text-sm leading-[126%] md:text-base ${classNameAnswer} `}
-          >
-            {data.answer
-              ?.split("<br/>")
-              .map((line, i) => <span key={i}>{line}</span>)}
-          </p>
-        </AnimateHeight>
-      </div>
-    </>
+          {data.answer
+            ?.split("<br/>")
+            .map((line, i) => <span key={i}>{line}</span>)}
+        </p>
+      </AnimateHeight>
+    </div>
   );
 };
 

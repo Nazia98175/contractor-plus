@@ -93,7 +93,7 @@ const page = () => {
         data={{
           title: "This is what HVAC software should have been all along",
           sub_title: "",
-          placeholder: "Enter your email"
+          placeholder: "Enter your email",
         }}
         ncc="No credit card required"
         createBtn="Get Started Free"
@@ -104,7 +104,7 @@ const page = () => {
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq
         faqitems={{
-          faq: faqitems
+          faq: faqitems,
         }}
         variant="hvac"
         heading="What HVAC contractors want to know "

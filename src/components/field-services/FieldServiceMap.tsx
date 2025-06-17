@@ -237,7 +237,7 @@ const FieldServiceMap: React.FC = () => {
         </div>
       )}
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-0"></div>
     </>
   );
 };

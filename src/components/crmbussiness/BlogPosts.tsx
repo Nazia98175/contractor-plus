@@ -43,7 +43,7 @@ const BlogPosts: React.FC<Props> = ({
           <TextAnimation animateOnScroll={true} delay={0.2}>
             <div className="hidden md:block">
               <Button
-                variant="primary"
+                // variant="primary"
                 className="bg-red-linear primary-btn h-10 gap-2"
               >
                 {data?.btnTxt}

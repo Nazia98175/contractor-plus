@@ -30,28 +30,23 @@ interface Props {
 const FieldServicesHero: React.FC<Props> = ({ hero }) => {
   return (
     <section className="relative overflow-visible">
-      <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-20 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[130%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
+      <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-20 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
 
       <FieldServiceMap />
       {/* Gradient overlay for better text readability */}
-      {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div> */}
+      <div className="pointer-events-none absolute inset-0"></div>
 
       {/* Content overlay */}
-      <div className="main-container 1xl:pb-[160px] relative z-20 pt-[393px] pb-10 sm:pb-16 md:pb-20 lg:pb-[100px] xl:pt-[138px] xl:pb-[120px] 2xl:pt-[150px]">
+      <div className="main-container relative z-20 pt-[393px] pb-10 sm:pb-16 md:pb-20 lg:pb-[100px] xl:pt-[138px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
         <div className="w-full max-w-[732px]">
-          {/* <div className="w-fit rounded-md bg-[linear-gradient(90deg,_rgba(255,163,163,1)_0%,_rgba(255,163,163,0.59)_8%,_rgba(255,163,163,0)_80%)] p-[1px]"> */}
-          <div className="w-fit rounded-md border border-[#FFA3A3] bg-[rgba(63,_70,_75,_0.10)] px-3 py-1 text-xs font-semibold tracking-[-0.24px] backdrop-blur-[2px]">
-            <span className="text-secondary">
-              {hero?.heroTitle1}
-              {/* Field Service Management Software */}
-            </span>
+          <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
+            {hero?.heroTitle1}
           </div>
-          {/* </div> */}
           <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
             {hero?.heroTitle}
             {/* One command center to visualize and run your entire field operation */}
           </h3>
-          <h3 className="main-heading mt-2 hidden text-white lg:block">
+          <h3 className="main-heading hidden text-white lg:block">
             {hero?.heroTitle}
             {/* One command center to visualize and run your entire field operation */}
           </h3>

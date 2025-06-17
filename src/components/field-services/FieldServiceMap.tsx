@@ -1,9 +1,10 @@
 "use client";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Map, { Layer, Source } from "react-map-gl/maplibre";
+import Map from "react-map-gl/maplibre";
 import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
 import { reverseGeocode } from "@/services/map";
 import { LocationIcon } from "../common/Icons";
+import Image from "next/image";
 
 interface GeolocationData {
   latitude: number;
@@ -11,54 +12,6 @@ interface GeolocationData {
   city?: string;
   country?: string;
 }
-
-interface MockUser {
-  id: number;
-  name: string;
-  initials: string;
-  color: string;
-  imgUrl: string;
-  lat?: number;
-  lng?: number;
-}
-
-const BASE_MOCK_USERS: MockUser[] = [
-  {
-    id: 1,
-    name: "Mike Johnson",
-    initials: "MJ",
-    color: "#FF6B6B",
-    imgUrl: "/images/png/location-1.png",
-  },
-  {
-    id: 2,
-    name: "Sarah Wilson",
-    initials: "SW",
-    color: "#4ECDC4",
-    imgUrl: "/images/png/location-2.png",
-  },
-  {
-    id: 3,
-    name: "David Brown",
-    initials: "DB",
-    color: "#45B7D1",
-    imgUrl: "/images/png/location-3.png",
-  },
-  {
-    id: 4,
-    name: "Lisa Garcia",
-    initials: "LG",
-    color: "#96CEB4",
-    imgUrl: "/images/png/location-4.png",
-  },
-  {
-    id: 5,
-    name: "John Smith",
-    initials: "JS",
-    color: "#FFEAA7",
-    imgUrl: "/images/png/location-5.png",
-  },
-];
 
 const DEFAULT_LOCATION: GeolocationData = {
   latitude: 28.6139,
@@ -109,44 +62,9 @@ const FieldServiceMap: React.FC = () => {
     };
   }, [location]);
 
-  const mockUsers = useMemo(() => {
-    if (!processedLocation?.latitude || !processedLocation?.longitude)
-      return [];
-
-    return BASE_MOCK_USERS.map((user, index) => {
-      const angle = index * 36 + (Math.random() * 20 - 10);
-      const distance = 0.01 + Math.random() * 0.035;
-      const offsetLat = distance * Math.sin((angle * Math.PI) / 180);
-      const offsetLng = distance * Math.cos((angle * Math.PI) / 180);
-
-      return {
-        ...user,
-        lat: processedLocation.latitude + offsetLat,
-        lng: processedLocation.longitude + offsetLng,
-      };
-    });
-  }, [processedLocation]);
-
-  const onMapLoad = useCallback(
-    (event: any) => {
-      const map = event.target;
-
-      mockUsers.forEach((user) => {
-        if (!map.hasImage(`user-icon-${user.id}`)) {
-          const img = new Image(84, 90);
-          img.src = user.imgUrl;
-          img.onload = () => {
-            if (!map.hasImage(`user-icon-${user.id}`)) {
-              map.addImage(`user-icon-${user.id}`, img, { pixelRatio: 2 });
-            }
-          };
-        }
-      });
-
-      setIsLoading(false);
-    },
-    [mockUsers],
-  );
+  const onMapLoad = useCallback(() => {
+    setIsLoading(false);
+  }, []);
 
   const onMapError = useCallback((event: any) => {
     console.error("Map error:", event);
@@ -186,47 +104,12 @@ const FieldServiceMap: React.FC = () => {
             minZoom={8}
             attributionControl={false}
             interactive={false}
-          >
-            {mockUsers.map((user) => (
-              <Source
-                key={user.id}
-                id={`user-icon-${user.id}-src`}
-                type="geojson"
-                data={{
-                  type: "FeatureCollection",
-                  features: [
-                    {
-                      type: "Feature",
-                      geometry: {
-                        type: "Point",
-                        coordinates: [user.lng!, user.lat!],
-                      },
-                      properties: {
-                        icon: `user-icon-${user.id}`,
-                      },
-                    },
-                  ],
-                }}
-              >
-                <Layer
-                  id={`user-icon-${user.id}-layer`}
-                  type="symbol"
-                  layout={{
-                    "icon-image": ["get", "icon"],
-                    "icon-size": 1,
-                    "icon-allow-overlap": true,
-                    "icon-anchor": "bottom",
-                    "icon-offset": [0, 0],
-                  }}
-                />
-              </Source>
-            ))}
-          </Map>
+          />
         )}
       </div>
 
-      {processedLocation?.city && (
-        <div className="absolute top-1/2 right-10 z-20 -translate-y-1/2 transform">
+      {/* {processedLocation?.city && (
+        <div className="absolute top-[53%] right-[17%] z-20 transform">
           <div className="flex items-center gap-2.5 rounded-lg bg-[#ffffff1a] p-1.5 text-white backdrop-blur-[3px]">
             <LocationIcon />
             <b className="text-sm leading-normal text-white lg:text-base">
@@ -235,9 +118,7 @@ const FieldServiceMap: React.FC = () => {
             </b>
           </div>
         </div>
-      )}
-
-      <div className="pointer-events-none absolute inset-0"></div>
+      )} */}
     </>
   );
 };

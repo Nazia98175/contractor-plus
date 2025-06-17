@@ -8,6 +8,7 @@ import {
   HeroPlayStoreIcon,
 } from "../common/Icons";
 import FieldServiceMap from "./FieldServiceMap";
+import Image from "next/image";
 
 interface GeolocationData {
   latitude: number;
@@ -37,8 +38,8 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
       <div className="pointer-events-none absolute inset-0"></div>
 
       {/* Content overlay */}
-      <div className="main-container relative z-20 pt-[393px] pb-10 sm:pb-16 md:pb-20 lg:pb-[100px] xl:pt-[138px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
-        <div className="w-full max-w-[732px]">
+      <div className="main-container relative z-20 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:flex-row lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
+        <div className="w-full lg:max-w-[732px]">
           <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
             {hero?.heroTitle1}
           </div>
@@ -50,7 +51,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
             {hero?.heroTitle}
             {/* One command center to visualize and run your entire field operation */}
           </h3>
-          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 max-w-[532px] sm:my-[26px]">
+          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
             {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams. */}
             {hero?.heroDescription}
@@ -77,6 +78,14 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
             </div>
           </div>
         </div>
+        <Image
+          className="w-full max-w-[355px] object-cover"
+          src={"/images/png/group-with-location.png"}
+          width={22}
+          height={22}
+          alt="location"
+          unoptimized
+        />
       </div>
     </section>
   );

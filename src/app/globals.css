@@ -55,6 +55,7 @@
   --color-shortcake: #f99293;
   --color-cyanBlue: #8a8e91;
   --color-tealBlue: #585a5e;
+  --color-coconut: #e6e9f5;
 
   --color-rgba1: #ffffff99;
   --color-x`: #1c273133;
@@ -1358,14 +1359,7 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.gg {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 71.47%,
-    #fff 81.73%
-  );
-  width: 100%;
-}
+
 .ddd {
   clip-path: polygon(0 56%, 0% 100%, 100% 100%);
   background: linear-gradient(
@@ -1582,5 +1576,21 @@ button {
     transform: translateY(-400px);
   }
 }
-
-
+.estimate-text {
+  background:
+    linear-gradient(
+      275.49deg,
+      rgba(0, 0, 0, 0) 75.83%,
+      rgba(238, 30, 37, 0.4) 91.89%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.compare-table-bg {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e6e9f5;
+  backdrop-filter: blur(31px);
+}

@@ -12,7 +12,7 @@ const CardRequiredButton: React.FC<CardRequiredButtonProps> = ({
 }) => {
   return (
     <button
-      className={`${className} font-myriad flex cursor-pointer items-center gap-1.5 text-sm font-semibold`}
+      className={`${className} font-myriad hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex`}
     >
       <CheckIcon />
       {text}

@@ -36,7 +36,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
       heading: "text-white",
       desc: "text-superSilver",
       isEstimateText: "text-secondary",
-      isEstimateTextColor2: "font-bold",
+      isEstimateTextColor2: "!font-bold",
     },
   };
 
@@ -93,7 +93,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
         {isEstimate && (
           <p className={`card-review ${isEstimateTextColor}`}>
             {service?.cardQuote} <br /> <br />
-            <span className={` ${isEstimateTextColor2}`}>
+            <span className={`${isEstimateTextColor2}`}>
               {service?.userName}
             </span>
           </p>

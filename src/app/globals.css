@@ -175,7 +175,7 @@ body {
   @apply text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .hero-description {
-  @apply text-decemberSky font-jakarta text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
+  @apply text-decemberSky text-xs leading-[130%] font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
   @apply text-2xl leading-[128%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
@@ -1239,6 +1239,33 @@ button {
   z-index: 0;
   border-radius: 10px;
 }
+.field-service {
+  background: rgba(63, 70, 75, 0.1);
+  backdrop-filter: blur(1.85px);
+  position: relative;
+}
+
+.field-service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 0.8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 163, 163, 1) 0%,
+    rgba(255, 163, 163, 0.59) 8%,
+    rgba(255, 163, 163, 0) 80%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 6px;
+}
+
 .img-linear {
   background: linear-gradient(0deg, #ffffff00 9.91%, #fff 88.87%);
 }

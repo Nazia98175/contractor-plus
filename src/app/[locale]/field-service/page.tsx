@@ -1,4 +1,4 @@
-import { OurReviewList, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
@@ -138,7 +138,12 @@ const FieldServicesPage = async ({ params }: Params) => {
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
-      <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
+
+      <BlogPosts
+        data={crmPageContent?.data?.[0]?.blogs}
+        blogs={blogs}
+        className="mt-7 md:mt-9"
+      />
     </main>
   );
 };

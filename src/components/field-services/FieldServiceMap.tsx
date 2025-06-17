@@ -3,8 +3,6 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Map from "react-map-gl/maplibre";
 import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
 import { reverseGeocode } from "@/services/map";
-import { LocationIcon } from "../common/Icons";
-import Image from "next/image";
 
 interface GeolocationData {
   latitude: number;

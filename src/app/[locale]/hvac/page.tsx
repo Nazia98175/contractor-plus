@@ -109,6 +109,9 @@ const page = () => {
         variant="hvac"
         heading="What HVAC contractors want to know "
       />
+
+      {/* <Faq /> */}
+
       <BlogPosts className="relative z-20 bg-white" variant="secondary" />
     </>
   );

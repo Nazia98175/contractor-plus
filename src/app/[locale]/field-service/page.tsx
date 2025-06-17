@@ -111,6 +111,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <ThousandsReviews
         data={crmPageContent?.data?.[0]?.thousandReviews}
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
+        variant="secondary"
       />
       <HvacSoftwareService
         createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
@@ -137,12 +138,7 @@ const FieldServicesPage = async ({ params }: Params) => {
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
-      <BlogPosts
-        data={crmPageContent?.data?.[0]?.blogs}
-        blogs={blogs}
-        className="relative z-20 bg-white"
-        variant="secondary"
-      />
+      <BlogPosts data={crmPageContent?.data?.[0]?.blogs} blogs={blogs} />
     </main>
   );
 };

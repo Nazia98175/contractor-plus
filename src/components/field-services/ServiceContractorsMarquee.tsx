@@ -18,7 +18,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
   };
 
   return (
-    <section className="relative z-20 mb-9 pt-[60px] md:mb-12 lg:mb-[60px] xl:mb-[78px]">
+    <section className="relative z-20 pt-[60px] pb-9 md:pb-12 lg:pb-[60px] xl:pb-[78px]">
       <h3 className="section-heading gradient-white mb-4 text-center sm:mb-8 md:mb-10 lg:mb-12">
         {reviews?.data?.[0]?.reviews?.title}
       </h3>

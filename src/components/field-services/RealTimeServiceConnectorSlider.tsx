@@ -33,6 +33,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
     <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
       {/* Top Image Slider */}
       <Swiper
+        centeredSlides={true}
         modules={[Controller, Autoplay]}
         // autoplay={{
         //   delay: 3000,
@@ -183,10 +184,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          // autoplay={{
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

@@ -41,24 +41,24 @@ const run_contractor = [
   },
 ];
 
-const RunWithContractor:React.FC<TheServiceProps> = ({kindAdorable}) => {
-  debugLog("KINDA" , kindAdorable)
+const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
+  debugLog("KINDA", kindAdorable);
   return (
     <section className="relative z-20 bg-white pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
-      <h3 className="section-heading crm-gradient mx-auto mb-[44px] max-w-[950px] text-center">
+      <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
         {kindAdorable?.title}
       </h3>
       {/* Desktop view  */}
       <div className="mx-auto hidden w-full max-w-[1213px] space-y-5 px-4 md:block">
         <div className="grid grid-cols-2">
           <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
-           {kindAdorable?.headerLeft}
+            {kindAdorable?.headerLeft}
           </p>
           <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
             {kindAdorable?.headerRight}
           </p>
         </div>
-        {kindAdorable?.features?.map((item:any, index:any) => (
+        {kindAdorable?.features?.map((item: any, index: any) => (
           <div
             key={index}
             className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
@@ -95,7 +95,11 @@ const RunWithContractor:React.FC<TheServiceProps> = ({kindAdorable}) => {
       </div>
       {/* Mobile-view  */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
-        <RunWithContractorMobile their={kindAdorable?.headerLeft} your={kindAdorable?.headerRight} run_contractor={kindAdorable?.features} />
+        <RunWithContractorMobile
+          their={kindAdorable?.headerLeft}
+          your={kindAdorable?.headerRight}
+          run_contractor={kindAdorable?.features}
+        />
       </div>
     </section>
   );

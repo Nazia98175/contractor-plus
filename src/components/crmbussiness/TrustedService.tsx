@@ -21,9 +21,8 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
     setIsModalOpen(true);
   };
 
-
   return (
-    <section className="relative overflow-hidden pt-7 md:pt-0">
+    <section className="relative overflow-hidden pt-7">
       <CardReveal animateOnScroll={true}>
         <h3 className="section-heading service-text relative z-50 mx-auto max-w-[90%] px-3 text-center text-white">
           {reviews?.data?.[0]?.reviews?.title}

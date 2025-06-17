@@ -85,7 +85,7 @@ const SwitchingToolMobile = ({
         cardRef3.current,
         {
           x: "0%",
-          y: "33%",
+          y: "26%",
           rotation: 0,
           scale: 1,
           filter: "blur(0px)",

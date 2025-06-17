@@ -36,7 +36,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const icons = [make_operations_1, make_operations_2, make_operations_3];
 
   return (
-    <section ref={ref} className="relative z-10 pt-16">
+    <section ref={ref} className="relative z-10 overflow-hidden pt-16">
       <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-0 left-0 hidden h-[500px] w-full max-w-[40px] rotate-[-45deg] rounded-[10px] opacity-20 blur-[34px] lg:block"></div>
       <Image
         className="color-animation-2 pointer-events-none absolute -top-0 z-0 block max-w-[700px] object-cover lg:hidden"

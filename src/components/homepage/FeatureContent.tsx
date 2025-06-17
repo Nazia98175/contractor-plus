@@ -13,10 +13,6 @@ type FeatureContent = {
     title: string;
     desc: string;
   }[];
-  // title: string;
-  // highlight?: string;
-  // description: string;
-  // titleImg: string;
 };
 
 type Props = {

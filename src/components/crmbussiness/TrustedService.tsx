@@ -21,13 +21,6 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
     setIsModalOpen(true);
   };
 
-  const t = useTranslations("reviews");
-  const translatedReviews = OurReviewList.map((review) => ({
-    ...review,
-    userName: t(`ourReviews.${review.id}.username`),
-    userRole: t(`ourReviews.${review.id}.userRole`),
-    review: t(`ourReviews.${review.id}.review`),
-  }));
 
   return (
     <section className="relative overflow-hidden pt-7 md:pt-0">

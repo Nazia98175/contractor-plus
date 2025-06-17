@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import { LogoIcon } from "../common/Icons";
 import Image from "next/image";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import TextAnimation from "../common/TextAnimation";
 
 const WhyContractorHero = () => {
@@ -22,495 +21,228 @@ const WhyContractorHero = () => {
   };
 
   return (
-    <section className="pt-[70px] pb-14 sm:pt-[127px] sm:pb-20">
-      <div className="mx-auto max-w-[830px] px-3 relative">
-        <div className="max-w-[840px] w-full mx-auto absolute top-0">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 841 1247"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              x1="0.5"
-              y1="-2.18557e-08"
-              x2="0.500039"
-              y2="900"
-              stroke="url(#paint0_linear_4001_1722)"
-            />
-            <line
-              x1="0.5"
-              y1="404"
-              x2="0.499996"
-              y2="496"
-              stroke="url(#paint1_linear_4001_1722)"
-            />
-            <line
-              x1="0.5"
-              y1="721"
-              x2="0.499996"
-              y2="813"
-              stroke="url(#paint2_radial_4001_1722)"
-            />
-            <line
-              x1="168.5"
-              y1="-2.18557e-08"
-              x2="168.5"
-              y2="900"
-              stroke="url(#paint3_linear_4001_1722)"
-            />
-            <line
-              x1="168.5"
-              y1="557"
-              x2="168.5"
-              y2="649"
-              stroke="url(#paint4_linear_4001_1722)"
-            />
-            <line
-              x1="336.5"
-              y1="-2.18557e-08"
-              x2="336.5"
-              y2="900"
-              stroke="url(#paint5_linear_4001_1722)"
-            />
-            <line
-              x1="336.5"
-              y1="489"
-              x2="336.5"
-              y2="581"
-              stroke="url(#paint6_linear_4001_1722)"
-            />
-            <line
-              x1="504.5"
-              y1="-2.18557e-08"
-              x2="504.5"
-              y2="900"
-              stroke="url(#paint7_linear_4001_1722)"
-            />
-            <line
-              x1="504.5"
-              y1="508"
-              x2="504.5"
-              y2="600"
-              stroke="url(#paint8_linear_4001_1722)"
-            />
-            <line
-              x1="672.5"
-              y1="-2.18557e-08"
-              x2="672.5"
-              y2="900"
-              stroke="url(#paint9_linear_4001_1722)"
-            />
-            <line
-              x1="672.5"
-              y1="534"
-              x2="672.5"
-              y2="626"
-              stroke="url(#paint10_linear_4001_1722)"
-            />
-            <line
-              x1="840.5"
-              y1="-2.18557e-08"
-              x2="840.5"
-              y2="900"
-              stroke="url(#paint11_linear_4001_1722)"
-            />
-            <line
-              x1="840.5"
-              y1="662"
-              x2="840.5"
-              y2="754"
-              stroke="url(#paint12_linear_4001_1722)"
-            />
-            <line
-              x1="0.5"
-              y1="347"
-              x2="0.500039"
-              y2="1247"
-              stroke="url(#paint13_linear_4001_1722)"
-            />
-            <line
-              x1="0.5"
-              y1="751"
-              x2="0.499996"
-              y2="843"
-              stroke="url(#paint14_radial_4001_1722)"
-            />
-            <line
-              x1="0.5"
-              y1="1068"
-              x2="0.499996"
-              y2="1160"
-              stroke="url(#paint15_radial_4001_1722)"
-            />
-            <line
-              x1="168.5"
-              y1="347"
-              x2="168.5"
-              y2="1247"
-              stroke="url(#paint16_linear_4001_1722)"
-            />
-            <line
-              x1="168.5"
-              y1="904"
-              x2="168.5"
-              y2="996"
-              stroke="url(#paint17_radial_4001_1722)"
-            />
-            <line
-              x1="336.5"
-              y1="347"
-              x2="336.5"
-              y2="1247"
-              stroke="url(#paint18_linear_4001_1722)"
-            />
-            <line
-              x1="336.5"
-              y1="836"
-              x2="336.5"
-              y2="928"
-              stroke="url(#paint19_radial_4001_1722)"
-            />
-            <line
-              x1="504.5"
-              y1="347"
-              x2="504.5"
-              y2="1247"
-              stroke="url(#paint20_linear_4001_1722)"
-            />
-            <line
-              x1="504.5"
-              y1="855"
-              x2="504.5"
-              y2="947"
-              stroke="url(#paint21_radial_4001_1722)"
-            />
-            <line
-              x1="672.5"
-              y1="347"
-              x2="672.5"
-              y2="1247"
-              stroke="url(#paint22_linear_4001_1722)"
-            />
-            <line
-              x1="672.5"
-              y1="881"
-              x2="672.5"
-              y2="973"
-              stroke="url(#paint23_radial_4001_1722)"
-            />
-            <line
-              x1="840.5"
-              y1="347"
-              x2="840.5"
-              y2="1247"
-              stroke="url(#paint24_linear_4001_1722)"
-            />
-            <line
-              x1="840.5"
-              y1="1009"
-              x2="840.5"
-              y2="1101"
-              stroke="url(#paint25_linear_4001_1722)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_4001_1722"
-                x1="-1.02321"
-                y1="841.5"
-                x2="-1.02321"
-                y2="-25.5"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.823742" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_4001_1722"
-                x1="-1.00005"
-                y1="404"
-                x2="-1.00005"
-                y2="464"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint2_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(-0.5 721) rotate(-180) scale(0.483333 20.4388)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <linearGradient
-                id="paint3_linear_4001_1722"
-                x1="168"
-                y1="639.5"
-                x2="168"
-                y2="0"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.63" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_4001_1722"
-                x1="167"
-                y1="557"
-                x2="167"
-                y2="617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_4001_1722"
-                x1="336"
-                y1="565"
-                x2="336"
-                y2="0"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.41" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint6_linear_4001_1722"
-                x1="335"
-                y1="489"
-                x2="335"
-                y2="549"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint7_linear_4001_1722"
-                x1="504"
-                y1="558"
-                x2="504"
-                y2="0"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.445" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint8_linear_4001_1722"
-                x1="503"
-                y1="508"
-                x2="503"
-                y2="568"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint9_linear_4001_1722"
-                x1="671.029"
-                y1="632.5"
-                x2="671.029"
-                y2="129.5"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="1" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint10_linear_4001_1722"
-                x1="671"
-                y1="534"
-                x2="671"
-                y2="594"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint11_linear_4001_1722"
-                x1="838.993"
-                y1="803"
-                x2="838.993"
-                y2="21"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="1" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint12_linear_4001_1722"
-                x1="839"
-                y1="662"
-                x2="839"
-                y2="722"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint13_linear_4001_1722"
-                x1="-1.02321"
-                y1="1188.5"
-                x2="-1.02321"
-                y2="321.5"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.823742" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint14_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(1.00004 803) rotate(-90) scale(40 1691.49)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <radialGradient
-                id="paint15_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(1.00004 1120) rotate(-90) scale(40 1691.49)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <linearGradient
-                id="paint16_linear_4001_1722"
-                x1="168"
-                y1="986.5"
-                x2="168"
-                y2="347"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.63" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint17_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(169 956) rotate(-90) scale(40 1691.49)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <linearGradient
-                id="paint18_linear_4001_1722"
-                x1="336"
-                y1="912"
-                x2="336"
-                y2="347"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.41" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint19_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(337 888) rotate(-90) scale(40 1691.49)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <linearGradient
-                id="paint20_linear_4001_1722"
-                x1="504"
-                y1="905"
-                x2="504"
-                y2="347"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="0.445" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint21_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(505 907) rotate(-90) scale(40 1691.49)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <linearGradient
-                id="paint22_linear_4001_1722"
-                x1="671.029"
-                y1="979.5"
-                x2="671.029"
-                y2="476.5"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="1" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint23_radial_4001_1722"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(673 933) rotate(-90) scale(40 1691.49)"
-              >
-                <stop stopColor="#FF9999" />
-                <stop offset="1" stopColor="#0F0C11" />
-              </radialGradient>
-              <linearGradient
-                id="paint24_linear_4001_1722"
-                x1="838.993"
-                y1="1150"
-                x2="838.993"
-                y2="368"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#2E2E2E" />
-                <stop offset="1" stopColor="#2E2E2E" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint25_linear_4001_1722"
-                x1="839"
-                y1="1009"
-                x2="839"
-                y2="1069"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF9999" stopOpacity="0" />
-                <stop offset="0.53" stopColor="#FF9999" stopOpacity="0.41" />
-                <stop offset="1" stopColor="#FF9999" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+    <section className="pt-[70px] pb-14 sm:pt-[127px] sm:pb-20 px-3">
+      <div className="mx-auto max-w-[830px] relative">
+          <div className="absolute top-[40%] sm:top-0 left-0 mx-auto w-full max-w-[600px] lg:max-w-[840px] pointer-events-none">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 841 1247"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="0.5"
+                y1="0"
+                x2="0.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="168.5"
+                y1="0"
+                x2="168.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="336.5"
+                y1="0"
+                x2="336.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="504.5"
+                y1="0"
+                x2="504.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="672.5"
+                y1="0"
+                x2="672.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="840.5"
+                y1="0"
+                x2="840.5"
+                y2="900"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="0.5"
+                y1="347"
+                x2="0.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="168.5"
+                y1="347"
+                x2="168.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="336.5"
+                y1="347"
+                x2="336.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="504.5"
+                y1="347"
+                x2="504.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="672.5"
+                y1="347"
+                x2="672.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <line
+                x1="840.5"
+                y1="347"
+                x2="840.5"
+                y2="1247"
+                stroke="#2E2E2E"
+                strokeOpacity="0.3"
+              />
+              <g className="red-glow">
+                <image
+                  className="animated-line"
+                  x="0"
+                  y="400"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="168"
+                  y="550"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="336"
+                  y="480"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="504"
+                  y="500"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="672"
+                  y="525"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="840"
+                  y="650"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="0"
+                  y="750"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="168"
+                  y="900"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="336"
+                  y="830"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="504"
+                  y="850"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="672"
+                  y="875"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="840"
+                  y="1000"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="0"
+                  y="1060"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+                <image
+                  className="animated-line"
+                  x="840"
+                  y="1100"
+                  width="1"
+                  height="100"
+                  href="/images/svg/gradient-red-line.svg"
+                />
+              </g>
+            </svg>
+          </div>
         <TextAnimation animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:mb-4">
             You can't scale a contracting business built on bottlenecks

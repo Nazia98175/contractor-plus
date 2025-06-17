@@ -1,6 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+
 interface SoftwareItem {
   icon: React.ReactNode;
   start: number;
@@ -9,12 +10,14 @@ interface SoftwareItem {
   title?: string;
   description: string;
   isRange?: boolean;
-  sub_title: string;
-  prefix: string;
+  sub_title?: string;  // Made optional
+  prefix?: string;     // Made optional
 }
+
 interface SoftwareUsedProps {
   item: SoftwareItem;
 }
+
 const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -22,13 +25,14 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
     rootMargin: "50px 0px",
     fallbackInView: true,
   });
+
   return (
     <article
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
     >
       <span className="max-w-7 fill-white sm:max-w-8">{item.icon}</span>
-
+       
       <h3 className="md:text-winterWay countup-title text-white">
         {item.isRange ? (
           // Display range directly if isRange is true
@@ -46,7 +50,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
           `${item.end}${item.suffix}`
         )}{" "}
         <span className="inline-block text-2xl font-semibold">
-          {item.title  !== "N/A" && item.title}
+          {item.title !== "N/A" && item.title}
         </span>
       </h3>
       <p className="countup-desc md:text-winterWay text-decemberSky">

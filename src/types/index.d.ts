@@ -45,11 +45,10 @@ export interface PlatformItem {
   title: string;
   description: string;
   image: string;
-  // add any other fields you expect
 }
 
 export interface HomePageResponse {
-  data: any; // Replace `any` with your actual API response type if known
+  data: any;
   meta?: any;
 }
 export interface Review {

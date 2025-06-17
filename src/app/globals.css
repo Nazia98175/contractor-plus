@@ -1388,6 +1388,7 @@ button {
   background: #1c273133;
   backdrop-filter: blur(7px);
 }
+
 .gradient-grey-border-left {
   border-left: double 1px transparent;
   background-image:
@@ -1455,3 +1456,104 @@ button {
     0px 30px 60px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
 }
+
+.gradient-grey-border-left {
+  border-left: double 1px transparent;
+  background-image:
+    linear-gradient(#0c0d11, #0c0d11),
+    radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+@media (min-width: 1024px) {
+  .lg\:gradient-grey-border-left {
+    border-left: double 1px transparent;
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .lg\:gradient-grey-border-right {
+    border-right: double 1px transparent;
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 100% 50%, #505050 0%, #0c0d11 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+}
+
+@media (max-width: 1023px) {
+  .max-lg\:gradient-grey-border-left {
+    border-left: double 1px transparent;
+    background-image:
+      linear-gradient(#0c0d11, #0c0d11),
+      radial-gradient(22.22% 48.33% at 0% 50%, #505050 0%, #0c0d11 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+}
+
+.gradient-grey-border-top {
+  border-top: double 1px transparent;
+  background-image:
+    linear-gradient(#0c0d11, #0c0d11),
+    radial-gradient(55.06% 1639.81% at 49.31% 40.74%, #505050 0%, #0c0d11 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+/* why contractor header lines animation */
+.animated-line {
+  animation: bounceUpDown 10s ease-in-out infinite;
+}
+
+.animated-line:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.animated-line:nth-child(3) {
+  animation-delay: 1.6s;
+}
+.animated-line:nth-child(4) {
+  animation-delay: 2.4s;
+}
+.animated-line:nth-child(5) {
+  animation-delay: 3.2s;
+}
+.animated-line:nth-child(6) {
+  animation-delay: 4s;
+}
+.animated-line:nth-child(7) {
+  animation-delay: 4.8s;
+}
+.animated-line:nth-child(8) {
+  animation-delay: 5.6s;
+}
+.animated-line:nth-child(9) {
+  animation-delay: 6.4s;
+}
+.animated-line:nth-child(10) {
+  animation-delay: 7.2s;
+}
+.animated-line:nth-child(11) {
+  animation-delay: 8s;
+}
+.animated-line:nth-child(12) {
+  animation-delay: 8.8s;
+}
+
+@keyframes bounceUpDown {
+  0% {
+    transform: translateY(-400px);
+  }
+  50% {
+    transform: translateY(600px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+
+

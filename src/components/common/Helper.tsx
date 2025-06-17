@@ -686,7 +686,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 2,
     review: "ourReviews.review",
-    videolink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     isModal: true,
   },
   {
@@ -696,7 +696,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 1,
     review: "ourReviews.review",
-    videolink: "https://www.youtube.com/watch?v=8ts4jsNZtgM",
+    videoLink: "https://www.youtube.com/watch?v=8ts4jsNZtgM",
     isModal: true,
   },
   {
@@ -706,7 +706,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 4,
     review: "ourReviews.review",
-    videolink: "https://www.youtube.com/watch?v=R5Q47lOKtdI",
+    videoLink: "https://www.youtube.com/watch?v=R5Q47lOKtdI",
     isModal: true,
   },
   {
@@ -716,7 +716,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 2,
     review: "ourReviews.review",
-    videolink: "https://www.youtube.com/watch?v=L49D7VE_Usw",
+    videoLink: "https://www.youtube.com/watch?v=L49D7VE_Usw",
     isModal: true,
   },
   {
@@ -726,7 +726,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 5,
     isModal: true,
-    videolink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
     review: "ourReviews.review",
   },
   {
@@ -736,7 +736,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     rating: 1,
     review: "ourReviews.review",
-    videolink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,
   },
   {
@@ -746,7 +746,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     isModal: true,
     rating: 4,
-    videolink: "https://www.youtube.com/watch?v=r-Fg4MymoXI",
+    videoLink: "https://www.youtube.com/watch?v=r-Fg4MymoXI",
     review: "ourReviews.review",
   },
   {
@@ -756,7 +756,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     isModal: true,
     rating: 5,
-    videolink: "https://www.youtube.com/watch?v=eANJwuWMDpM",
+    videoLink: "https://www.youtube.com/watch?v=eANJwuWMDpM",
     review: "ourReviews.review",
   },
 
@@ -767,7 +767,7 @@ export const OurReviewList: Review[] = [
     userRole: "ourReviews.userRole",
     isModal: true,
     rating: 1,
-    videolink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
     review: "ourReviews.review",
   },
 ];

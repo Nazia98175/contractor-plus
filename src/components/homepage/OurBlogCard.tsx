@@ -15,7 +15,7 @@ const OurBlogCard = ({
     <Link
       href={"#"}
       key={blogListMobile?.[index]?.id}
-      className="card-shine-2 group relative h-fit w-full max-w-[406px] cursor-pointer rounded-2xl md:h-[400px]"
+      className="group relative h-fit w-full max-w-[406px] cursor-pointer rounded-2xl md:h-[400px]"
     >
       <img
         className="absolute top-16 right-0 w-full"
@@ -26,7 +26,7 @@ const OurBlogCard = ({
         src={blogListMobile?.[index]?.imageSrc}
         alt="blog images"
       />
-      <div className="polygon-bg relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden rounded-2xl py-6">
+      <div className="polygon-bg card-shine-2 relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden rounded-2xl py-6">
         {/* <Image
           fill={true}
           className="pointer-events-none absolute top-0 -left-1 z-10 h-full w-full object-contain"
@@ -41,17 +41,17 @@ const OurBlogCard = ({
           className="absolute bottom-0 left-0 z-10 h-full max-h-[126px] w-fit object-cover"
         />
       </div>
-      <div className="relative mt-2 w-[346px] px-2.5 py-6">
+      <div className="relative mt-2 w-[346px] overflow-hidden px-2.5 py-6">
         <Image
           fill={true}
           className="absolute top-0 left-0 z-0 h-full w-full"
           src="/images/webp/blog-angle2.webp"
           alt="blog angle"
         />
-        <h3 className="text-winterWay font-jakarta group-hover: relative z-10 pb-2 text-base leading-none font-extrabold transition-all duration-300 ease-in-out md:text-lg">
+        <h3 className="text-winterWay relative z-10 pb-2 text-base leading-none font-extrabold transition-all duration-300 ease-in-out md:text-lg">
           {article.blogTitle}
         </h3>
-        <p className="text-secondary font-jakarta relative z-10 max-w-[255px] text-xs font-medium">
+        <p className="text-secondary relative z-10 max-w-[255px] text-xs font-medium">
           {article.blogDescription}
         </p>
       </div>

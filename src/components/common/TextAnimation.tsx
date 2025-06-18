@@ -18,16 +18,17 @@ export default function TextAnimation({
   children,
   animateOnScroll = true,
   delay = 0,
-  preserveClasses = true, // New option to preserve all classes
+  preserveClasses = true,
 }: TextRevealAnimationsProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const elementRefs = useRef<HTMLElement[]>([]);
   const splitRefs = useRef<SplitText[]>([]);
   const lines = useRef<HTMLElement[]>([]);
+  const hasAnimated = useRef<boolean>(false);
 
   useGSAP(
     () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || hasAnimated.current) return;
 
       splitRefs.current = [];
       lines.current = [];
@@ -43,7 +44,6 @@ export default function TextAnimation({
       elements.forEach((element) => {
         elementRefs.current.push(element);
 
-        // Store the original classnames before splitting
         const originalClasses = element.className;
 
         const split = SplitText.create(element, {
@@ -54,34 +54,28 @@ export default function TextAnimation({
         });
         splitRefs.current.push(split);
 
-        // Apply original classes to inner elements
         if (preserveClasses && originalClasses) {
-          const classesToPreserve = originalClasses.split(" ").filter(
-            (cls) =>
-              // Preserve gradient classes and other special styling classes
-              cls.includes("gradient") ||
-              cls.includes("text-") ||
-              cls.includes("font-") ||
-              cls.includes("bg-"),
-          );
+          const classesToPreserve = originalClasses
+            .split(" ")
+            .filter(
+              (cls) =>
+                cls.includes("gradient") ||
+                cls.includes("text-") ||
+                cls.includes("font-") ||
+                cls.includes("bg-"),
+            );
 
           split.lines.forEach((line) => {
-            // For each line find both the line element and its inner div
-            // Add classes to both to ensure styles are properly applied
-
-            // Add classes to line element
             classesToPreserve.forEach((cls) => {
               line.classList.add(cls);
             });
 
-            // Find and add classes to inner div element (which contains the text)
             const innerDiv = line.querySelector("div");
             if (innerDiv) {
               classesToPreserve.forEach((cls) => {
                 innerDiv.classList.add(cls);
               });
 
-              // Special handling for gradients - need to set the background-clip
               if (classesToPreserve.some((cls) => cls.includes("gradient"))) {
                 innerDiv.style.webkitBackgroundClip = "text";
                 innerDiv.style.backgroundClip = "text";
@@ -111,6 +105,9 @@ export default function TextAnimation({
         stagger: 0.1,
         ease: "power4.out",
         delay: delay,
+        onComplete: () => {
+          hasAnimated.current = true;
+        },
       };
 
       if (animateOnScroll) {
@@ -120,7 +117,12 @@ export default function TextAnimation({
             trigger: containerRef.current,
             start: "top 75%",
             once: true,
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
+            onToggle: (self) => {
+              if (self.isActive && !hasAnimated.current) {
+                hasAnimated.current = true;
+              }
+            },
           },
         });
       } else {
@@ -133,6 +135,7 @@ export default function TextAnimation({
             split.revert();
           }
         });
+        hasAnimated.current = false;
       };
     },
     {

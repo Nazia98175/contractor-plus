@@ -79,7 +79,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
           <PrimaryAnimatedText delay={3000}>
-            <h2 className="font-jakarta gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
+            <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
               {blogHeading?.[0]?.title}
             </h2>
           </PrimaryAnimatedText>
@@ -91,7 +91,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </div>
         </div>
         <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
-          <h2 className="font-jakarta gradient-text-2 text-center text-[26px] font-semibold text-black md:text-start md:text-[35px] lg:text-[42px]">
+          <h2 className="gradient-text-2 text-center text-[26px] font-semibold text-black md:text-start md:text-[35px] lg:text-[42px]">
             {blogHeading?.[0]?.title}
           </h2>
           <div className="hidden md:block">

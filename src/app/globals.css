@@ -886,7 +886,10 @@ html::-webkit-scrollbar {
   transition: opacity 0.3s ease-in-out;
 }
 .card-shine-2:hover::before {
-  animation: shine 0.45s linear forwards;
+  animation: shine 0.55s linear forwards;
+}
+.group:hover .card-shine-2::before {
+  animation: shine 0.55s linear forwards;
 }
 
 @keyframes pulse-stroke {

@@ -28,7 +28,12 @@ const HvacHero = () => {
           layout="lazy"
         />
         <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[0px] lg:pb-[150px] xl:pb-[355px]">
-          <HvacGlowHeroMobileIcon />
+          {/* <HvacGlowHeroMobileIcon /> */}
+          <img
+            className="pointer-events-none absolute top-0 left-0 z-10 w-full max-w-[320px] lg:hidden xl:left-[13%]"
+            src="/images/webp/hvac-hero-gradient-mobile.webp"
+            alt="hvac gradient"
+          />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             <TextAnimation animateOnScroll={false} delay={3}>
               <h1 className="main-heading gradient-white">
@@ -64,7 +69,12 @@ const HvacHero = () => {
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
           <span className="pointer-events-none absolute top-0 -left-[40%] z-10 hidden h-full w-full lg:block">
-            <HvacGlowHeroDesktopIcon />
+            <img
+              className="w-full"
+              src="/images/webp/hvac-hero-gradient.webp"
+              alt="hvac gradient"
+            />
+            {/* <HvacGlowHeroDesktopIcon /> */}
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
           <Image

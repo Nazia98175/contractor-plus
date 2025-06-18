@@ -1,16 +1,13 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { Review } from "@/types";
 import Image from "next/image";
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 import CardReveal from "../common/CardReveal";
-import { OurReviewList } from "../common/Helper";
 import { GroupStartIcon } from "../common/Icons";
-import ReviewModal from "../common/ReviewModal";
-import TextAnimation from "../common/TextAnimation";
-import ReviewCard from "../common/ReviewCard";
-import { Review } from "@/types";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import ReviewCard from "../common/ReviewCard";
+import ReviewModal from "../common/ReviewModal";
 
 interface Reviews {
   title: string;
@@ -27,13 +24,9 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
   const openModal = (videoUrl: string) => {
-   
-
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-
-
 
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
@@ -99,7 +92,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
       </div>
       <div className="relative">
         <Image
-          className="max=h-[350px] pointer-events-none absolute top-0 left-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
+          className="pointer-events-none absolute top-0 left-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
           src={"/images/webp/marquee-layers.webp"}
           alt="layers"
           width={370}
@@ -107,7 +100,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           unoptimized
         />
         <Image
-          className="max=h-[350px] pointer-events-none absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
+          className="pointer-events-none absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
           src={"/images/webp/marquee-layers-right.webp"}
           alt="layers"
           width={370}

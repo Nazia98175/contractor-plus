@@ -2305,64 +2305,6 @@ export const BigChiefIcon = () => (
   </svg>
 );
 
-export const MakeOperationRedLineIcon = () => (
-  <svg
-    className="svg-container"
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
-    fill="none"
-    viewBox="0 0 1479 1112"
-  >
-    <g
-      filter="url(#filter0_f_783_6314)"
-      style={{ mixBlendMode: "plus-lighter" }}
-    >
-      <path
-        className="main-path"
-        stroke="url(#paint0_linear_783_6314)"
-        strokeLinecap="round"
-        strokeWidth="432"
-        d="m305 305 434.784 251.023 434.786 251.023"
-      ></path>
-    </g>
-    <defs>
-      <linearGradient
-        id="paint0_linear_783_6314"
-        x1="755.313"
-        x2="1065.72"
-        y1="874.455"
-        y2="654.336"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.062" stopOpacity="0"></stop>
-        <stop offset="0.997" stopColor="#EE1E25"></stop>
-        <stop offset="1" stopColor="#fff"></stop>
-      </linearGradient>
-      <filter
-        id="filter0_f_783_6314"
-        width="1477.64"
-        height="1110.12"
-        x="0.964"
-        y="0.964"
-        colorInterpolationFilters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
-        <feBlend
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        ></feBlend>
-        <feGaussianBlur
-          result="effect1_foregroundBlur_783_6314"
-          stdDeviation="44"
-        ></feGaussianBlur>
-      </filter>
-    </defs>
-  </svg>
-);
-
 export const FooterAnimatedIcon = () => (
   <svg
     className={`svg-diagonal-container`}

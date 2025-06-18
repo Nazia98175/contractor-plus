@@ -1,9 +1,11 @@
+import CommonFormField from "@/components/common/CommonFormField";
 import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
@@ -14,7 +16,7 @@ import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
+
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
@@ -124,13 +126,13 @@ const FieldServicesPage = async ({ params }: Params) => {
 
       <div className="relative overflow-visible">
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-        <HvacSoftwareService
+
+        <CrmSercive
           createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
           mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
           ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
           data={crmPageContent?.data?.[0]?.crmService}
-          descColorClass="text-secondary"
-          mobileBtnHref={""}
+          showClouds={false}
         />
 
         <TrustBarHvca

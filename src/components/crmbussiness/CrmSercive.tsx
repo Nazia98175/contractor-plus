@@ -5,9 +5,16 @@ interface Props {
   ncc: string;
   createBtn: string;
   mobileBtn: string;
+  showClouds?: boolean;
 }
 
-const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn, mobileBtn }) => {
+const CrmSercive: React.FC<Props> = ({
+  data,
+  ncc,
+  createBtn,
+  mobileBtn,
+  showClouds,
+}) => {
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
       <div className="pt-[110px] pb-10 sm:pt-[120px] sm:pb-[75px]">
@@ -20,13 +27,15 @@ const CrmSercive: React.FC<Props> = ({ data, ncc, createBtn, mobileBtn }) => {
           mobileBtn={mobileBtn}
         />
       </div>
-      <CloudsAnimation
-        className="pointer-events-none absolute top-[-13%] -bottom-[11%] left-0 z-50 flex h-[67%] w-full rotate-180 sm:top-[-11%]"
-        imageClass="h-[50%] z-20 !bottom-[-30px]"
-        imageClassMobile="h-[50%] z-20 !bottom-[30px]"
-        cloud1Class="md:bottom-0 !bottom-[47px] sm:bottom-[65px] h-[84px]"
-        cloud2Class="bottom-0"
-      />
+      {showClouds !== false && (
+        <CloudsAnimation
+          className="pointer-events-none absolute top-[-13%] -bottom-[11%] left-0 z-50 flex h-[67%] w-full rotate-180 sm:top-[-11%]"
+          imageClass="h-[50%] z-20 !bottom-[-30px]"
+          imageClassMobile="h-[50%] z-20 !bottom-[30px]"
+          cloud1Class="md:bottom-0 !bottom-[47px] sm:bottom-[65px] h-[84px]"
+          cloud2Class="bottom-0"
+        />
+      )}
     </section>
   );
 };

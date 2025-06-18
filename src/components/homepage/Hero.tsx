@@ -22,7 +22,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     mobileBtn,
   } = homePageContent ?? {};
   return (
-    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
+    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 mx-auto w-full max-w-[2500px] overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-24 w-[120%] -translate-x-1/2 blur-[13px] lg:block"></div>
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-16 w-[120%] -translate-x-1/2 blur-[8px] lg:block"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px] lg:hidden"></div>

@@ -862,7 +862,7 @@ html::-webkit-scrollbar {
 }
 
 .card-shine:hover::before {
-  animation: shine 0.45s linear forwards;
+  animation: shine 0.7s linear forwards;
 }
 .card-shine-2 {
   @apply relative overflow-hidden;

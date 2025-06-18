@@ -2187,7 +2187,7 @@ export const SliderRedLineIcon = () => (
 export const ReviewIcon = () => (
   <svg
     width="100%"
-    className="inline max-w-16 sm:max-w-24 lg:max-w-[109px]"
+    className="mx-1 inline max-w-16 sm:max-w-24 lg:max-w-[109px]"
     height="100%"
     viewBox="0 0 109 33"
     fill="none"

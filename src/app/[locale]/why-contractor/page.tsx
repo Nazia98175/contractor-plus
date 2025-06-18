@@ -1,6 +1,6 @@
 "use client";
 import { platforms } from "@/components/common/Helper";
-import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
+// import ThousandsReviews from "@/components/hvca/ThousandsReviews";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
@@ -85,7 +85,7 @@ const WhyContractorPage = () => {
         <WayToWin />
         <Dashboard />
         <OperatingSystem />
-        <HvacSoftwareService
+        {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
             sub_title:
@@ -100,7 +100,7 @@ const WhyContractorPage = () => {
           inputClass="max-sm:!hidden"
           ccClass="max-sm:!hidden"
           mobileBtnHref="https://contractorplus.app/"
-        />
+        /> */}
         <main className="pb-14">
           <TrustBarHvca showTrustedSection={false} platforms={platforms} />
         </main>

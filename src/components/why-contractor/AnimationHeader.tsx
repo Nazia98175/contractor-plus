@@ -13,13 +13,15 @@ const AnimationHeader = () => {
 
     const trigger = ScrollTrigger.create({
       trigger: sectionRef.current,
-      start: "top center",
+      start: "top 30%", // Changed from "top center" to trigger when element is 30% from top
       end: "bottom center",
       scrub: 1,
-      toggleClass: {
-        targets: sectionRef.current,
-        className: "scroll-active",
+      onEnter: () => {
+        // Add the class when entering the trigger zone
+        sectionRef.current?.classList.add("scroll-active");
       },
+      // Remove toggleClass to prevent class removal on scroll back
+      // onLeaveBack: () => {} // Don't do anything when scrolling back
     });
 
     return () => {
@@ -35,46 +37,55 @@ const AnimationHeader = () => {
       <style jsx>{`
         h3 {
           color: #8a8e91;
-          transition: color 0.3s ease;
+        }
+
+        h6 {
+          color: #656c73;
         }
 
         .highlighted-span {
-          color: #d2d4d6;
-          transition: color 0.3s ease;
+          color: #fff;
         }
 
         .scroll-active h3 {
-          color: #d2d4d6 !important;
+          color: #fff !important;
+        }
+
+        .scroll-active h6 {
+          color: #fff !important;
         }
 
         .scroll-active .highlighted-span {
-          color: #7f0f12 !important;
+          color: #F21314 !important;
         }
 
         /* Plus icon default */
         svg path {
           fill: #3f464b;
           stroke: #1c2731;
-          transition: all 0.3s ease;
+          transition: all 0.3s ease-in-out;
         }
 
         /* Plus icon on scroll */
         .scroll-active svg path {
-          fill: #d2d4d6 !important;
-          stroke: #d2d4d6 !important;
+          fill: #fff !important;
+          stroke: #fff !important;
+        }
+        .scroll-active .icon-span {
+          transform: rotate(45deg);
         }
       `}</style>
 
       <TextAnimation animateOnScroll={true} delay={0}>
-        <h3 className="sub-heading mb-1 text-center font-semibold max-sm:!text-lg">
+        <h3 className="sub-heading mb-1 text-center font-semibold max-sm:!text-lg duration-300">
           The contractors pulling ahead aren't grinding harder.
         </h3>
       </TextAnimation>
 
       <TextAnimation animateOnScroll={true} delay={0}>
-        <h6 className="text-wallStreet text-center text-xs leading-[130%] lg:text-lg xl:text-[22px]">
+        <h6 className="text-center text-xs leading-[130%] lg:text-lg xl:text-[22px] duration-300">
           They've
-          <span className="highlighted-span font-medium italic">
+          <span className="highlighted-span font-medium italic duration-300">
             {" "}
             rebuilt the back end,{" "}
           </span>
@@ -82,7 +93,7 @@ const AnimationHeader = () => {
         </h6>
       </TextAnimation>
 
-      <span className="mt-[18px] flex justify-center">
+      <span className="icon-span mt-[18px] flex justify-center duration-300">
         <svg
           width="31"
           height="31"

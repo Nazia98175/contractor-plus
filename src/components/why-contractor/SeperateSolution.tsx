@@ -23,74 +23,59 @@ const SeperateSolution = () => {
     const headings = section?.querySelectorAll("h3");
     const paragraphs = section?.querySelectorAll("p");
     const svgs = section?.querySelectorAll(".grid svg path");
+    const frictionGroupSvgs = section?.querySelectorAll("span svg path"); // For FrictionTextGroup SVGs
 
-    // Animate <h3>
+    // Animate <h3> - one time activation
     headings?.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { color: "#8A8E91" },
-        {
-          color: "#D2D4D6",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: true,
-            onLeave: () => gsap.to(el, { color: "#8A8E91", duration: 0.3 }),
-            onLeaveBack: () => gsap.to(el, { color: "#8A8E91", duration: 0.3 }),
-          },
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 60%",
+        onEnter: () => {
+          gsap.to(el, { color: "#fff", duration: 0.3 });
         },
-      );
+      });
     });
 
-    // Animate <p>
+    // Animate <p> - one time activation
     paragraphs?.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { color: "#656C73" },
-        {
-          color: "#D2D4D6",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: true,
-            onLeave: () => gsap.to(el, { color: "#656C73", duration: 0.3 }),
-            onLeaveBack: () => gsap.to(el, { color: "#656C73", duration: 0.3 }),
-          },
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 60%",
+        onEnter: () => {
+          gsap.to(el, { color: "#fff", duration: 0.3 });
         },
-      );
+      });
     });
 
-    // Animate <svg> paths
-    // Animate <svg> paths
+    // Animate <svg> paths - one time activation
     svgs?.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { fill: "#25292D", stroke: "#25292D" },
-        {
-          fill: "#7F0F12",
-          stroke: "#7F0F12",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: true,
-            onLeave: () =>
-              gsap.to(el, {
-                fill: "#25292D",
-                stroke: "#25292D",
-                duration: 0.3,
-              }),
-            onLeaveBack: () =>
-              gsap.to(el, {
-                fill: "#25292D",
-                stroke: "#25292D",
-                duration: 0.3,
-              }),
-          },
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 60%",
+        onEnter: () => {
+          gsap.to(el, {
+            fill: "#F21314",
+            stroke: "#F21314",
+            duration: 0.3,
+          });
         },
-      );
+      });
+    });
+
+    // Animate FrictionTextGroup SVG paths - one time activation
+    frictionGroupSvgs?.forEach((el) => {
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 60%",
+        onEnter: () => {
+          gsap.to(el, {
+            fill: "#fff",
+            stroke: "#fff",
+            duration: 0.3,
+            opacity: 1,
+          });
+        },
+      });
     });
 
     return () => {
@@ -102,7 +87,10 @@ const SeperateSolution = () => {
     <section ref={sectionRef} className="pt-9 pb-[46px]">
       <div className="relative z-20 mx-auto max-w-[733px]">
         <TextAnimation animateOnScroll={true} delay={0}>
-          <h3 className="sub-heading mb-10 text-center font-semibold sm:mb-16 xl:px-4">
+          <h3
+            className="sub-heading mb-10 text-center font-semibold sm:mb-16 xl:px-4"
+            style={{ color: "#8A8E91" }}
+          >
             Every separate solution introduces friction into your business
           </h3>
         </TextAnimation>
@@ -128,7 +116,10 @@ const SeperateSolution = () => {
                 />
               </svg>
               <TextAnimation animateOnScroll={true} delay={0}>
-                <p className="text-center text-sm leading-[130%] font-semibold lg:text-base xl:text-lg">
+                <p
+                  className="text-center text-sm leading-[130%] font-semibold lg:text-base xl:text-lg"
+                  style={{ color: "#656C73" }}
+                >
                   {item}
                 </p>
               </TextAnimation>

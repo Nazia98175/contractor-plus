@@ -24,7 +24,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
         title={entireBusiness?.[0]?.title}
         sub_title={entireBusiness?.[0]?.sub_title}
         placeholder={entireBusiness?.[1]?.txt}
-        createBtn={entireBusiness?.[0]?.btnTxt}
+        createBtn={entireBusiness?.[2]?.btnTxt}
         mobileBtn={entireBusiness?.[1]?.mobileBtn}
         ncc={ncc_text}
       />

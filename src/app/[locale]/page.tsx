@@ -69,10 +69,10 @@ export default async function Home({
         reviews={homePageContent?.data?.reviews}
       />
       <WhatEverClient data={homePageContent?.data?.whateverOperation} />
-      <OurBlogs
+      {/* <OurBlogs
         blogs={blogs?.data}
         blogHeading={homePageContent?.data?.blogs}
-      />
+      /> */}
 
       <EntireBusiness
         entireBusiness={homePageContent?.data?.entireBusiness}

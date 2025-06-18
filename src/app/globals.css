@@ -889,18 +889,6 @@ html::-webkit-scrollbar {
   animation: shine 0.45s linear forwards;
 }
 
-@keyframes breathe {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 @keyframes pulse-stroke {
   0% {
     stroke-width: 432px;
@@ -926,11 +914,6 @@ html::-webkit-scrollbar {
     stroke-width: 500px;
     filter: blur(55px);
   }
-}
-
-.svg-container {
-  animation: breathe 6s ease-in-out infinite;
-  transform-origin: center center;
 }
 
 .main-path {
@@ -1026,24 +1009,10 @@ html::-webkit-scrollbar {
 .software-bg:hover::before {
   @apply left-[125%] opacity-100;
 }
-.svg-mobile-container {
-  animation: breathe-mobile 8s ease-in-out infinite;
-  transform-origin: center center;
-}
 
 .mobile-path {
   animation: pulse-mobile-stroke 5s ease-in-out infinite;
   transform-origin: center center;
-}
-
-@keyframes breathe-mobile {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
 }
 
 @keyframes pulse-mobile-stroke {

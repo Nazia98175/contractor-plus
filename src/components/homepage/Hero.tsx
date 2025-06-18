@@ -4,7 +4,6 @@ import Image from "next/image";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
-import { HeroAnimatedIcon, HeroAnimatedMobileIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
@@ -27,8 +26,18 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-24 w-[120%] -translate-x-1/2 blur-[13px] lg:block"></div>
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-16 w-[120%] -translate-x-1/2 blur-[8px] lg:block"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px]"></div>
-      <HeroAnimatedIcon />
-      <HeroAnimatedMobileIcon />
+      <Image
+        className="hidden sm:block"
+        src={"/images/webp/hero-red-line.webp"}
+        alt="hero-red-line"
+        fill
+        layout="lazy"
+      />
+      <img
+        className="absolute top-[36%] flex h-full w-[110%] object-center sm:hidden"
+        src={"/images/webp/hero-red-line-mobile.webp"}
+        alt="hero-red-line"
+      />
       <Image
         width={769}
         height={800}

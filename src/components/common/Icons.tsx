@@ -2591,64 +2591,6 @@ export const HeroAnimatedIcon = () => (
     </defs>
   </svg>
 );
-export const HeroAnimatedMobileIcon = () => (
-  <svg
-    width={400}
-    height={1044}
-    viewBox="0 0 320 1044"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="svg-mobile-container pointer-events-none absolute top-[10%] right-0 z-10 block sm:hidden"
-  >
-    <g
-      style={{ mixBlendMode: "plus-lighter" }}
-      filter="url(#filter0_f_1356_7999)"
-    >
-      <path
-        className="mobile-path"
-        d="M-107.131 304.668L304.435 521.834L716 739.001"
-        stroke="url(#paint0_linear_1356_7999)"
-        strokeWidth="432"
-        strokeLinecap="round"
-      />
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_1356_7999"
-        x="-411.174"
-        y="0.625"
-        width="1431.22"
-        height="1042.42"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="44"
-          result="effect1_foregroundBlur_1356_7999"
-        />
-      </filter>
-      <linearGradient
-        id="paint0_linear_1356_7999"
-        x1="320.908"
-        y1="833.554"
-        x2="625.106"
-        y2="613.892"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.0622667" stopOpacity="0" />
-        <stop offset="0.996954" stopColor="#EE1E25" />
-        <stop offset="1" stopColor="white" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
 
 export const SliderIcon1 = () => (
   <svg

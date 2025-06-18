@@ -1,4 +1,3 @@
-import MainLoader from "@/components/common/MainLoader";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import Head from "next/head";
 import { ReactNode } from "react";

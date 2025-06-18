@@ -95,7 +95,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   ]);
   const theme = useParams.slug === "estimate" ? "estimateTheme" : "dark";
   return (
-    <main>
+    <>
       {crmPageContent?.data?.length > 0 && (
         <>
           <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
@@ -165,7 +165,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           />
         </>
       )}
-    </main>
+    </>
   );
 };
 

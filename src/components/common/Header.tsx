@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface HeaderProps {
-  header: any;
+  header?: any;
 }
 const Header: React.FC<HeaderProps> = ({ header }) => {
   const [isshow, setIsShow] = useState(false);

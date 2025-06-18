@@ -104,10 +104,12 @@ const page = () => {
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq
         faqitems={{
-          faq: faqitems,
+          title: "What HVAC contractors want to know",
+          sub_title: "Frequently asked questions",
+          faq: faqitems, // assuming faqitems is your array of FAQ objects
         }}
         variant="hvac"
-        heading="What HVAC contractors want to know "
+        heading="What HVAC contractors want to know"
       />
 
       {/* <Faq /> */}

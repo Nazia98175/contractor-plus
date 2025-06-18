@@ -54,7 +54,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>
             <h3
-              className={`sub-heading mx-auto mb-4 max-w-[840px] text-center font-extrabold text-white ${titleClass}`}
+              className={`sub-heading mx-auto mb-4 max-w-[840px] text-center font-bold text-white ${titleClass}`}
             >
               {data?.title}
             </h3>

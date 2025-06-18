@@ -37,7 +37,6 @@ const TimmingEffect = () => {
         end: `+=${window.innerHeight * 6}`,
         pin: true,
         scrub: 1,
-        markers: true,
       },
     });
 

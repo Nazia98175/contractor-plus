@@ -48,7 +48,7 @@ const HvacHero = () => {
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
-                showIcon={false}
+                showIcon={true}
                 text={"Get started FREE"}
                 className="!hidden sm:!flex"
               />
@@ -68,7 +68,7 @@ const HvacHero = () => {
           <HvacHeroSlider features={features} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
-          <span className="pointer-events-none absolute top-0 -left-[40%] z-10 hidden h-full w-full lg:block">
+          <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">
             <img
               className="w-full"
               src="/images/webp/hvac-hero-gradient.webp"

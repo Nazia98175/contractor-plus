@@ -205,7 +205,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
           <div
             style={{ backgroundSize: "100% 100%" }}
-            className="no-repeat flex flex-col items-center justify-center bg-[url('/images/svg/red-line_animated.svg')] md:flex-row md:justify-between md:bg-none md:pt-5 lg:gap-5"
+            className="no-repeat flex flex-col items-center justify-center md:flex-row md:justify-between md:bg-none md:pt-5 lg:gap-5"
           >
             {/* Left Section */}
             <div className="left-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat md:h-[300px] md:bg-[url('/images/svg/left-red-lines_animated.svg')] md:py-8 lg:py-[59px]">

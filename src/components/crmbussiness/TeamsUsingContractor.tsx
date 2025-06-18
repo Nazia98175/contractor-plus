@@ -83,12 +83,12 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
         distance={50}
         animateOnScroll={true}
       >
-        <div className="flex flex-wrap items-center justify-center gap-[34px] sm:gap-8 md:gap-[53px]">
+        <div className="isolate flex flex-wrap items-center justify-center gap-[34px] overflow-visible sm:gap-8 md:gap-[53px]">
           <Image
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="drop-shadow-custom-shadow-img max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            className="drop-shadow-custom-shadow-img isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             alt="Software Advice"
           />
 
@@ -96,7 +96,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="drop-shadow-custom-shadow-img max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
+            className="drop-shadow-custom-shadow-img isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
@@ -104,14 +104,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="drop-shadow-custom-shadow-img max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
+            className="drop-shadow-custom-shadow-img isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="drop-shadow-custom-shadow-img cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="drop-shadow-custom-shadow-img isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
           />
         </div>

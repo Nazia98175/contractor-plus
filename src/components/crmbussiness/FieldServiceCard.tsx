@@ -65,6 +65,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
             width={518}
             height={156}
             className="mx-auto h-auto max-h-[240px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            unoptimized
           />
           <div className="flex flex-col gap-4 2xl:gap-6">
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(

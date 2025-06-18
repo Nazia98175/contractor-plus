@@ -19,8 +19,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
     gsap.to(wrapperRef.current, {
       opacity: 1,
       duration: 0.1,
-      delay: 0.2,
-      ease: "expo.in",
+      delay: 0.1,
+      ease: "elastic.in",
       once: true,
     });
   }, []);
@@ -135,7 +135,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           delay={0.9}
           animateOnScroll={false}
         >
-          <div className="relative mx-auto w-fit overflow-hidden p-5">
+          <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
                 <Image

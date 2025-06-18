@@ -1,5 +1,10 @@
 import { platforms } from "@/components/common/Helper";
+import {
+  FooterRedLineIcon,
+  FooterRedLineMobileIcon,
+} from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/field-services/FieldServicesHero";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
@@ -9,7 +14,6 @@ import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import HvacFaq from "@/components/hvca/HvacFaq";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
@@ -95,7 +99,9 @@ const FieldServicesPage = async ({ params }: Params) => {
     ),
   ]);
   debugLog("feild-serv", crmPageContent?.data?.[0]);
-  // console.log(crmPageContent?.data?.[0] , "thousand reviewss")
+  debugLog("feild-serv", faq?.data?.[0]?.faqs);
+  console.log(crmPageContent?.data?.[0], "thousand reviewss");
+  console.log(faq?.data?.[0]?.faqs, "faq");
   return (
     <main className="overflow-hidden">
       <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
@@ -113,26 +119,30 @@ const FieldServicesPage = async ({ params }: Params) => {
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
         variant="secondary"
       />
-      <HvacSoftwareService
-        createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
-        mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
-        ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-        data={crmPageContent?.data?.[0]?.crmService}
-        descColorClass="text-secondary"
-        mobileBtnHref={""}
-      />
 
       {/* <HvacSoftwareService /> */}
-      <TrustBarHvca showTrustedSection={false} platforms={platforms} />
-      <HvacFaq
-        faqitems={faq?.data?.[0]?.faqs}
-        // faqitems={faqitems}
-        className="mt-12 md:mt-[74px]"
-        variant="dark"
-        heading="What contractors want to know"
-        isClaud={false}
-        isBlueLinear={false}
-      />
+
+      <div className="relative overflow-visible">
+        <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
+        <HvacSoftwareService
+          createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
+          mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
+          ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+          data={crmPageContent?.data?.[0]?.crmService}
+          descColorClass="text-secondary"
+          mobileBtnHref={""}
+        />
+
+        <TrustBarHvca
+          platforms={platforms}
+          className="mx-auto w-full max-w-[889px]"
+        />
+        <Faq
+          faq={faq?.data?.[0]?.faqs}
+          classNameAnswer="pt-1"
+          mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+        />
+      </div>
 
       <WhatEverClient
         data={homePageContent?.data?.whateverOperation}

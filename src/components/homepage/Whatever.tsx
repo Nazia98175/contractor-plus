@@ -198,7 +198,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <PrimaryAnimatedText delay={3000}>
           <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
-            {whateverOperation?.[0]?.title}
+            <span>{whateverOperation?.[0]?.title}</span>
           </h3>
         </PrimaryAnimatedText>
 

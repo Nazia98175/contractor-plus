@@ -8,7 +8,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
   debugLog("data", data);
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-14 sm:pt-[70px]">
-      <div className="absolute -top-1 z-[2] hidden h-3 w-full bg-white sm:block"></div>
+      <div className="absolute -top-0.5 z-[2] hidden h-3 w-full bg-white sm:block"></div>
       <img
         src="/images/webp/red-linear-bg.webp"
         className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
@@ -16,7 +16,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       />
       <img
         src="/images/webp/red-linear-mobile.webp"
-        className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-cover sm:hidden"
+        className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-top sm:hidden"
         alt="Red Lineaar background"
       />
 

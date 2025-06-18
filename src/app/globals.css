@@ -1566,3 +1566,7 @@ button {
   border: 1px solid #e6e9f5;
   backdrop-filter: blur(31px);
 }
+.f {
+  background-color: #0c0d11;
+  filter: blur(40.04999923706055px);
+}

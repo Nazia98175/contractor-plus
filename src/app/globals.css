@@ -1201,7 +1201,7 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  padding: 1px;
+  padding: 0.8px;
   background: linear-gradient(90deg, #78FF49.44%, #78ff4900 51.22%);
   mask:
     linear-gradient(#fff 0 0) content-box,

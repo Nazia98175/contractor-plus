@@ -43,7 +43,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   return (
     <>
       <TextAnimation animateOnScroll={false} delay={0.2}>
-        <h3 className="section-heading text-decemberSky sub-heading pb-2 text-center">
+        <h3 className="section-heading text-decemberSky sub-heading mx-auto max-w-[780px] pb-2 text-center">
           {title}
         </h3>
       </TextAnimation>

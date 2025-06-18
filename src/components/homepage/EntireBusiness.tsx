@@ -1,4 +1,3 @@
-"use client";
 import CommonFormField from "../common/CommonFormField";
 
 interface EntireBusiness {

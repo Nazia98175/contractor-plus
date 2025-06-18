@@ -1,4 +1,3 @@
-"use client";
 import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFormField from "../common/CommonFormField";
 interface Props {

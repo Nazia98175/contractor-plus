@@ -3,20 +3,24 @@ import React, { useEffect, useRef } from "react";
 
 const AnimatedShape = () => {
   const containerRef = useRef(null);
-  const shape1Ref = useRef(null);
 
   useEffect(() => {
-    gsap.set(containerRef.current, { rotation: -20 });
+    const isMobile = window.innerWidth <= 768;
+
+    const startRotation = isMobile ? -5 : -20;
+    const endRotation = isMobile ? -20 : 10;
 
     const tl = gsap.timeline({
       repeat: -1,
       yoyo: true,
-      defaults: { ease: "power1.inOut", duration: 30 },
+      defaults: { ease: "power1.inOut", duration: 20 },
     });
 
-    tl.to(containerRef.current, {
-      rotation: 10,
-    });
+    tl.fromTo(
+      containerRef.current,
+      { rotation: startRotation },
+      { rotation: endRotation },
+    );
   }, []);
 
   return (
@@ -24,10 +28,7 @@ const AnimatedShape = () => {
       ref={containerRef}
       className="absolute top-[-7%] -left-[25%] h-[130%] w-[150%]"
     >
-      <div
-        ref={shape1Ref}
-        className="rectangle-shape absolute -bottom-0 h-full w-full object-cover"
-      ></div>
+      <div className="rectangle-shape absolute bottom-[-15%] h-full w-full object-cover sm:-bottom-0"></div>
     </div>
   );
 };

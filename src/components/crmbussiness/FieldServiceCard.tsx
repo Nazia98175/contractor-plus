@@ -64,7 +64,7 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
             alt={service?.title || "service image"}
             width={518}
             height={156}
-            className="mx-auto h-auto max-h-[240px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             unoptimized
           />
           <div className="flex flex-col gap-4 2xl:gap-6">

@@ -85,7 +85,7 @@ const SwitchingToolMobile = ({
         cardRef3.current,
         {
           x: "0%",
-          y: "26%",
+          y: "30%",
           rotation: 0,
           scale: 1,
           filter: "blur(0px)",
@@ -101,7 +101,7 @@ const SwitchingToolMobile = ({
       <div className="relative mx-auto flex max-w-[1180px] flex-col items-center justify-center pb-16 lg:flex-row">
         <article
           ref={cardRef1}
-          className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
+          className="border-iron switch-tool-card w-full max-w-[410px] rounded-[20px] p-5 sm:rounded-[40px]"
         >
           <div className="flex w-full justify-center">
             <Image
@@ -119,7 +119,7 @@ const SwitchingToolMobile = ({
 
         <article
           ref={cardRef2}
-          className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
+          className="border-iron switch-tool-card w-full max-w-[410px] rounded-[20px] p-5 sm:rounded-[40px]"
         >
           <div className="flex w-full justify-center">
             <Image
@@ -137,7 +137,7 @@ const SwitchingToolMobile = ({
 
         <article
           ref={cardRef3}
-          className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
+          className="border-iron switch-tool-card w-full max-w-[410px] rounded-[20px] p-5 sm:rounded-[40px]"
         >
           <div className="flex w-full justify-center">
             <Image

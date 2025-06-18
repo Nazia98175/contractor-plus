@@ -31,7 +31,7 @@ const FieldService: React.FC<TheServiceProps> = ({
         </h2>
       </TextAnimation> */}
       <TextAnimation animateOnScroll={true} delay={0.3}>
-        <h2 className="gradient-text 3xl:hidden mx-auto block max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
+        <h2 className="gradient-text 3xl:hidden mx-auto block max-w-[813px] px-1 pb-10 text-center text-xl font-semibold -tracking-[0.72px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px]">
           {fieldService?.title}
         </h2>
       </TextAnimation>

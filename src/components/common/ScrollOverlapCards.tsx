@@ -82,7 +82,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     <>
       <div
         id="crm-cards-wrapper"
-        className="relative z-10 min-h-screen overflow-hidden lg:px-2 xl:h-fit"
+        className="relative z-10 min-h-[108dvh] overflow-hidden sm:min-h-dvh lg:px-2 xl:h-fit"
       >
         <h2 className="gradient-text 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
           {fieldService?.title}

@@ -81,7 +81,9 @@ const CrmReviewCard: React.FC<Props> = ({
         </div>
         <div className="flex w-full flex-col gap-1.5">
           <div className="flex w-full flex-col flex-wrap justify-between gap-1.5 sm:flex-row sm:flex-nowrap sm:gap-2">
-            <div className="max-w-[182px] text-left">
+            <div
+              className={`${variant === "secondary" ? "max-w-[275px] text-left" : "max-w-[182px] text-left"}`}
+            >
               <h5
                 className={`font-inter truncate text-xl font-medium tracking-[0.1px] text-nowrap lg:text-2xl ${styles.nameText}`}
               >

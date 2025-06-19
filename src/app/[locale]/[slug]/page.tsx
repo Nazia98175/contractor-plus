@@ -129,7 +129,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               slug={useParams?.slug}
               kindAdorable={section6?.data?.[0]?.comparison}
             />
-
             <TeamsUsingContractor
               data={section7?.data?.[0]?.teamsUsingContractor}
             />

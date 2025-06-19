@@ -311,6 +311,13 @@ html::-webkit-scrollbar {
 .swiper {
   @apply h-full w-full;
 }
+.hii {
+  background: #0c0d11;
+  box-shadow:
+    -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
+    -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
+    -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
+}
 /* .swiper-slide {
   text-align: center;
   display: flex;

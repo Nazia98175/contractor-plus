@@ -32,7 +32,7 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
   ];
   debugLog("switchingTool", switchingTool);
   return (
-    <section className="relative z-20 bg-white pb-[52px] sm:pb-[60px] lg:pb-[95px]">
+    <section className="relative z-20 pb-[52px] sm:pb-[60px] lg:pb-[95px]">
       <img
         className="h-[150px] w-full object-cover sm:h-[180px]"
         src="/images/webp/field-services.webp"
@@ -46,7 +46,6 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       </TextAnimation>
 
       <h3 className="sub-heading crm-gradient block px-2 text-center font-bold sm:hidden">
-        {/* There’s no easy way to see what’s going on in the field */}
         {switchingTool?.title}
       </h3>
       <div className="relative mx-auto flex max-w-[1100px] grid-cols-1 flex-wrap justify-center gap-6 px-0.5 pt-9 lg:grid lg:grid-cols-3 lg:gap-0">

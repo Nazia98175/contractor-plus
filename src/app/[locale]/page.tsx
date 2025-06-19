@@ -77,6 +77,7 @@ export default async function Home({
       <EntireBusiness
         entireBusiness={homePageContent?.data?.entireBusiness}
         ncc_text={homePageContent?.data?.ncc_text}
+        mobileBtn={homePageContent?.data?.mobileBtn}
       />
     </div>
   );

@@ -108,11 +108,13 @@ const FieldServicesPage = async ({ params }: Params) => {
     <main className="overflow-hidden">
       <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
       <ServiceContractorsMarquee reviews={reviews} />
-      <GoingFieldSevices switchingTool={section3?.data?.[0]?.switchingTool} />
-      <RealTimeServiceConnector
-        theme="estimateTheme"
-        fieldService={section4?.data?.[0]?.fieldService}
-      />
+      <div className="bg-white">
+        <GoingFieldSevices switchingTool={section3?.data?.[0]?.switchingTool} />
+        <RealTimeServiceConnector
+          theme="estimateTheme"
+          fieldService={section4?.data?.[0]?.fieldService}
+        />
+      </div>
       <RunWithContractor kindAdorable={section6?.data?.[0]?.comparison} />
       <TimmingEffect />
       <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />

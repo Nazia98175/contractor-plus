@@ -21,7 +21,11 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
 
   const menuItems = useMemo(
     () => [
-      { id: "whycontractordesktop", label: "whycontractordesktop", link: "/" },
+      {
+        id: "whycontractordesktop",
+        label: "whycontractordesktop",
+        link: "/why-contractor",
+      },
       { id: "features", label: "features" },
       { id: "industries", label: "industries" },
       { id: "pricing", label: "pricing", link: "/" },

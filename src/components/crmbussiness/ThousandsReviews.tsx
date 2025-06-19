@@ -23,19 +23,17 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
 
   return (
     <section>
-      <div className="main-container relative z-20 space-y-8 py-7 sm:space-y-9 xl:space-y-16 xl:pt-[68px]">
-        <TextAnimation animateOnScroll={true}>
-          <h2 className={`section-heading mx-auto max-w-[951px] text-center`}>
-            <span
-              className={` ${
-                variant === "secondary" ? "gradient-white" : "crm-gradient"
-              }`}
-            >
-              {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
-              {data?.title?.split("4.7 ★")?.[1]}
-            </span>
-          </h2>
-        </TextAnimation>
+      <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
+        <h2 className={`section-heading mx-auto max-w-[951px] text-center`}>
+          <span
+            className={` ${
+              variant === "secondary" ? "gradient-white" : "crm-gradient"
+            }`}
+          >
+            {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
+            {data?.title?.split("4.7 ★")?.[1]}
+          </span>
+        </h2>
 
         <SliderLayout
           wrapperClassName="relative w-full !h-auto"

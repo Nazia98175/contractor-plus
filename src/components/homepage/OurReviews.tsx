@@ -37,10 +37,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           </h3>
         </PrimaryAnimatedText>
         <CardReveal
-          staggerDelay={0.4}
-          animationDuration={0.8}
           distance={50}
-          once={true}
           className="flex flex-col items-center gap-4 sm:flex-row md:gap-6"
         >
           <Image

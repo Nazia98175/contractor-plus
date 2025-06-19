@@ -49,13 +49,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             </TextAnimation>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <CardReveal
-              staggerDelay={0.4}
-              animationDuration={0.6}
-              distance={50}
-              delay={0.6}
-              animateOnScroll={false}
-            >
+            <CardReveal distance={50} delay={0.6}>
               <Link
                 href=""
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
@@ -75,13 +69,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
                 </div>
               </Link>
             </CardReveal>
-            <CardReveal
-              staggerDelay={0.5}
-              animationDuration={0.6}
-              distance={50}
-              delay={0.8}
-              animateOnScroll={false}
-            >
+            <CardReveal distance={50} delay={0.8}>
               <Link
                 href=""
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
@@ -101,14 +89,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
                 </div>
               </Link>
             </CardReveal>
-            <CardReveal
-              staggerDelay={0.6}
-              animationDuration={0.6}
-              distance={50}
-              delay={1.0}
-              animateOnScroll={false}
-              className="w-full sm:w-fit"
-            >
+            <CardReveal distance={50} delay={1.0} className="w-full sm:w-fit">
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
                 <FreeAccountButton
                   className="!hidden sm:!flex"
@@ -128,13 +109,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
             </CardReveal>
           </div>
         </div>
-        <CardReveal
-          staggerDelay={1}
-          animationDuration={0.6}
-          distance={50}
-          delay={0.9}
-          animateOnScroll={false}
-        >
+        <CardReveal distance={50} delay={0.9}>
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">

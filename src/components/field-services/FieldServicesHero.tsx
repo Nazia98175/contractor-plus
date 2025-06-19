@@ -63,11 +63,8 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
             {hero?.heroDescription}
           </p>
           <CardReveal
-            staggerDelay={0.4}
-            animationDuration={0.6}
             distance={50}
             delay={0.6}
-            animateOnScroll={false}
             className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5"
           >
             <div className="flex items-center gap-2.5">

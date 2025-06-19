@@ -8,6 +8,7 @@ import {
   BlueIcon,
   DownArrowIcon,
   FooterAnimatedIcon,
+  FooterLightIcon,
   FooterLogoIcon,
   LinkdinIcon,
   TwitterIcon,
@@ -80,7 +81,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block" />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
-          <FooterLogoIcon />
+          {variant === "dark" ? <FooterLogoIcon /> : <FooterLightIcon />}
         </div>
 
         <div className="hidden w-full flex-wrap justify-center gap-4 md:flex">
@@ -114,7 +115,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                       openSection === section.title ? "rotate-180" : ""
                     }`}
                   >
-                    <DownArrowIcon />
+                    <DownArrowIcon variant={variant === "dark"} />
                   </span>
                 </div>
                 <AnimateHeight

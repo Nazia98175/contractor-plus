@@ -6,7 +6,6 @@ interface Props {
   className?: string;
   delay?: number;
   distance?: number;
-  animateOnScroll?: boolean;
 }
 
 const CardReveal: React.FC<Props> = ({
@@ -21,9 +20,9 @@ const CardReveal: React.FC<Props> = ({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
-          observer.disconnect();
+          observer.disconnect(); // 🔒 stop after first trigger
         }
       },
       { threshold: 0.2 },
@@ -32,7 +31,7 @@ const CardReveal: React.FC<Props> = ({
     if (ref.current) observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, []);
+  }, [isVisible]); // ✅ dependency to avoid stale closure
 
   return (
     <div

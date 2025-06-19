@@ -43,7 +43,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               </p>
             </TextAnimation>
             <div className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit">
-              <CardReveal distance={50} delay={0.5} animateOnScroll={false}>
+              <CardReveal distance={50} delay={0.5}>
                 <FreeAccountButton
                   showIcon={false}
                   text={cta_button_text}
@@ -51,14 +51,14 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 />
               </CardReveal>
 
-              <CardReveal distance={50} delay={0.7} animateOnScroll={false}>
+              <CardReveal distance={50} delay={0.7}>
                 <FreeAccountButton
                   showIcon={false}
                   text={mobileBtn}
                   className="flex sm:!hidden"
                 />
               </CardReveal>
-              <CardReveal distance={50} delay={0.9} animateOnScroll={false}>
+              <CardReveal distance={50} delay={0.9}>
                 <CardRequiredButton text={ncc_text} />
               </CardReveal>
             </div>

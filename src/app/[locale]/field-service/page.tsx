@@ -1,9 +1,5 @@
-import CommonFormField from "@/components/common/CommonFormField";
 import { platforms } from "@/components/common/Helper";
-import {
-  FooterRedLineIcon,
-  FooterRedLineMobileIcon,
-} from "@/components/common/Icons";
+import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -22,7 +18,7 @@ import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
-import { debugLog } from "@/utils/getConsole";
+
 export const metadata = {
   title: "Contractor Plus - Field Service",
   description:
@@ -35,7 +31,7 @@ interface Params {
 
 const FieldServicesPage = async ({ params }: Params) => {
   const useParams = await params;
-  const location = await getUserLoc();
+  // const location = await getUserLoc();
 
   const [homePageContent] = await Promise.all([
     getHomePage(useParams?.locale || "en", "&populate=*"),

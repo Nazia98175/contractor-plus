@@ -40,17 +40,13 @@ const BlogPosts: React.FC<Props> = ({
               <span>{data?.title}</span>
             </h2>
           </PrimaryAnimatedText>
-          <TextAnimation animateOnScroll={true} delay={0.2}>
-            <div className="hidden md:block">
-              <Button
-                // variant="primary"
-                className="bg-red-linear primary-btn h-10 gap-2"
-              >
-                {data?.btnTxt}
-                <BlogBtnIcon />
-              </Button>
-            </div>
-          </TextAnimation>
+
+          <div className="hidden md:block">
+            <Button className="bg-red-linear primary-btn h-10 gap-2">
+              {data?.btnTxt}
+              <BlogBtnIcon />
+            </Button>
+          </div>
         </div>
 
         <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:gap-4 md:flex md:flex-row xl:gap-6">

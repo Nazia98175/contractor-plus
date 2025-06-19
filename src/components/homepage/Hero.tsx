@@ -40,10 +40,10 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <Image
         width={769}
         height={800}
+        priority
         src="/images/webp/hero-video-ovelay.webp"
         alt="Red Circle For designing"
         className="pointer-events-none absolute top-0 left-0 z-[-1] block h-full w-full object-cover lg:hidden"
-        layout="lazy"
       />
       <div className="main-container relative z-10 flex items-end">
         <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
@@ -83,11 +83,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
           lowResUrl={"/video/hero-video-higher.mp4"}
         />
         <Image
-          loading="lazy"
           fill
           className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"
           src={"/images/webp/hero-video-ovelay.webp"}
           alt="hero-video-ovelay"
+          priority
         />
         <div className="bg-kuroiBlack absolute bottom-[-3px] z-[9999] hidden h-[10px] w-full lg:block"></div>
       </div>

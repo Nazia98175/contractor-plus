@@ -62,7 +62,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               priority
             />
             <Image
-              className="hidden w-full max-w-[80px] md:block"
+              className="hidden h-auto w-full max-w-[80px] md:block"
               src="/images/svg/capterra-icon2.svg"
               alt="capterra icon"
               width={80}

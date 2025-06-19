@@ -7,7 +7,7 @@ import { Props } from "../crmbussiness/TeamsUsingContractor";
 const NeverLookBack: React.FC<Props> = ({ data }) => {
   debugLog("data", data);
   return (
-    <section className="no-scrollbar relative z-10 w-full bg-white pt-14 sm:pt-[70px]">
+    <section className="no-scrollbar relative z-10 w-full bg-white pt-[50px] sm:pt-14 md:pt-[70px]">
       <div className="absolute -top-0.5 z-[2] hidden h-3 w-full bg-white sm:block"></div>
       <img
         src="/images/webp/red-linear-bg.webp"

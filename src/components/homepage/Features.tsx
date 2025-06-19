@@ -21,8 +21,6 @@ const Features = ({ features }: { features: any }) => {
       <div className="main-container !px-0 sm:!px-2">
         <div className="bg-doctor py-4 sm:rounded-4xl md:py-6 lg:rounded-[32px] lg:py-8 xl:p-9">
           <CardReveal
-            staggerDelay={0.15}
-            animationDuration={0.8}
             distance={50}
             className="hidden gap-6 lg:grid lg:grid-cols-3"
           >

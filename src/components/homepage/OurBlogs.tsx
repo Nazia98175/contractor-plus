@@ -103,8 +103,6 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
 
         <CardReveal
-          staggerDelay={0.15}
-          animationDuration={0.8}
           distance={50}
           className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid xl:gap-7"
         >

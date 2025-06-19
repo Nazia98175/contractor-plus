@@ -33,7 +33,7 @@ const BlogPosts: React.FC<Props> = ({
             <h2
               className={`w-full text-center sm:w-fit ${
                 variant === "primary"
-                  ? "faq-heading-text text-[31px] font-semibold tracking-[-0.62px]"
+                  ? "faq-heading-text text-2xl font-semibold tracking-[-0.62px] sm:text-[31px]"
                   : "section-heading"
               }`}
             >

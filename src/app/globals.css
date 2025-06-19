@@ -311,7 +311,7 @@ html::-webkit-scrollbar {
 .swiper {
   @apply h-full w-full;
 }
-.hii {
+.custom-shadow {
   background: #0c0d11;
   box-shadow:
     -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),

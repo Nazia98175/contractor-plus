@@ -170,6 +170,20 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
       </Swiper>
 
       <div className="slider-img-gradient relative z-20 -mt-[126px] md:-mt-[200px] lg:-mt-[292px]">
+        <div
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(255, 255, 255, 0.00) 9.91%, #FFF 88.87%)",
+          }}
+          className="absolute -top-[40%] left-1/2 h-[292px] w-[130%] -translate-x-1/2 rotate-180"
+        ></div>
+        <div
+          style={{
+            background:
+              "linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 79.73%)",
+          }}
+          className="absolute right-0 hidden h-24 w-[406px] bg-red-400 xl:block"
+        ></div>
         <Swiper
           modules={[Navigation, Pagination, Controller, Autoplay]}
           onSwiper={setBottomSwiper}

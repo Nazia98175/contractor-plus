@@ -3,7 +3,7 @@ import TextAnimation from "../common/TextAnimation";
 
 const WayToWin = () => {
   return (
-    <div className="relative z-20 max-sm:mt-[120px]">
+    <div className="relative z-[0] max-sm:mt-[120px]">
       <div className="absolute top-0 left-1/2 z-10 mx-auto w-full max-w-[1100px] translate-x-[-50%] px-3 pt-5 sm:pt-20">
         <TextAnimation animateOnScroll={true} delay={0}>
           <h2 className="main-heading !font-semibold text-center max-sm:!text-lg">

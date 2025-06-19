@@ -40,7 +40,6 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
     setTimeout(() => {
       setLoading(false);
       setEmail("");
-      console.log("Form submitted with email:", email);
     }, 2000);
   };
 
@@ -66,7 +65,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
               {data?.sub_title}
             </p>
           </TextAnimation>
-          <CardReveal staggerDelay={0.15} animationDuration={0.8} distance={50}>
+          <CardReveal>
             <form
               className="mx-auto flex w-full max-w-[550px] flex-col items-start justify-center gap-3 md:max-w-[657px] md:flex-row"
               onSubmit={handleSubmit}

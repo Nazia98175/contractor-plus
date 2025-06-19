@@ -35,10 +35,8 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
 
       <h3 className="md:text-winterWay countup-title text-white">
         {item.isRange ? (
-          // Display range directly if isRange is true
           <span>{`${item.start}–${item.end}`}</span>
         ) : inView ? (
-          // Use CountUp for single numbers
           <CountUp
             start={item.start}
             end={item.end}

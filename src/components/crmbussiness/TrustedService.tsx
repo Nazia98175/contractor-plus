@@ -21,7 +21,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
 
   return (
     <section className="relative overflow-hidden">
-      <CardReveal animateOnScroll={true}>
+      <CardReveal>
         <h3 className="section-heading service-text relative z-50 mx-auto max-w-[90%] px-3 text-center text-white">
           {reviews?.data?.[0]?.reviews?.title}
         </h3>

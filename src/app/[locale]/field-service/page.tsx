@@ -1,9 +1,5 @@
-import CommonFormField from "@/components/common/CommonFormField";
 import { platforms } from "@/components/common/Helper";
-import {
-  FooterRedLineIcon,
-  FooterRedLineMobileIcon,
-} from "@/components/common/Icons";
+import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -22,7 +18,7 @@ import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomePage } from "@/services/homepage";
 import { getUserLoc } from "@/services/map";
-import { debugLog } from "@/utils/getConsole";
+
 export const metadata = {
   title: "Contractor Plus - Field Service",
   description:
@@ -35,7 +31,7 @@ interface Params {
 
 const FieldServicesPage = async ({ params }: Params) => {
   const useParams = await params;
-  const location = await getUserLoc();
+  // const location = await getUserLoc();
 
   const [homePageContent] = await Promise.all([
     getHomePage(useParams?.locale || "en", "&populate=*"),
@@ -100,10 +96,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[thousandReviews][populate]=reviews",
     ),
   ]);
-  debugLog("feild-serv", crmPageContent?.data?.[0]);
-  debugLog("feild-serv", faq?.data?.[0]?.faqs);
-  console.log(crmPageContent?.data?.[0], "thousand reviewss");
-  console.log(faq?.data?.[0]?.faqs, "faq");
+
   return (
     <main className="overflow-hidden">
       <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
@@ -123,8 +116,6 @@ const FieldServicesPage = async ({ params }: Params) => {
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
         variant="secondary"
       />
-
-      {/* <HvacSoftwareService /> */}
 
       <div className="relative overflow-visible">
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
@@ -156,7 +147,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <BlogPosts
         data={crmPageContent?.data?.[0]?.blogs}
         blogs={blogs}
-        className="mt-7 pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
+        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>
   );

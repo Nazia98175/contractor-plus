@@ -6,17 +6,21 @@ interface CompareTableProps {
   headerLeft: string;
   compareFeatures: CompareFeature[];
   headerRight: string;
+  slug?: string;
 }
 
 const CompareTable: React.FC<CompareTableProps> = ({
   compareFeatures,
   headerLeft,
   headerRight,
+  slug,
 }) => {
   return (
     <table className="min-w-full text-left whitespace-nowrap">
       <thead>
-        <tr className="font-myriad divide-decemberSky divide-x md:text-lg lg:text-xl">
+        <tr
+          className={`font-myriad lg:text-xl" divide-x md:text-lg ${slug === "estimate" ? "divide-coconut" : "divide-decemberSky"}`}
+        >
           <th className="text-wallStreet w-1/3 p-3 text-center font-bold lg:p-5">
             {headerLeft}
           </th>
@@ -27,7 +31,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
               </span>
             </div>
           </th>
-          <th className="font-myriad text-secondary bg-doctor w-1/3 p-3 text-center text-lg font-semibold lg:p-5 xl:text-2xl">
+          <th className="font-myriad text-secondary w-1/3 p-3 text-center text-lg font-semibold lg:p-5 xl:text-2xl">
             {headerRight}
           </th>
         </tr>
@@ -36,9 +40,11 @@ const CompareTable: React.FC<CompareTableProps> = ({
         {compareFeatures?.map((feature, index) => (
           <tr
             key={index}
-            className={`border-decemberSky divide-decemberSky text-winterWay font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base`}
+            className={` ${slug === "estimate" ? "divide-coconut border-coconut text-highRise" : "divide-decemberSky border-decemberSky text-winterWay"} font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base`}
           >
-            <td className="p-2.5 lg:px-5 lg:py-3">{feature.featureName}</td>
+            <td className="text-winterWay p-2.5 lg:px-5 lg:py-3">
+              {feature.featureName}
+            </td>
             <td className="p-2.5 lg:px-5 lg:py-3">
               <div className="flex items-center justify-center">
                 {feature.ourProduct == "available" ? (
@@ -54,7 +60,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
                 )}
               </div>
             </td>
-            <td className="bg-doctor w-full px-5 py-3">
+            <td className="w-full px-5 py-3">
               <div className="flex items-center justify-center">
                 {feature.competitorsNote !== null ? (
                   // <CheckIcon

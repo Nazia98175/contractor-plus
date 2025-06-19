@@ -22,10 +22,10 @@ const HvacHero = () => {
         <Image
           width={769}
           height={800}
+          priority
           src="/images/webp/hero-video-ovelay.webp"
           alt="Red Circle For designing"
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
-          layout="lazy"
         />
         <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[0px] lg:pb-[150px] xl:pb-[355px]">
           {/* <HvacGlowHeroMobileIcon /> */}

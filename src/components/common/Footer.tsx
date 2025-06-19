@@ -8,6 +8,7 @@ import {
   BlueIcon,
   DownArrowIcon,
   FooterAnimatedIcon,
+  FooterLightIcon,
   FooterLogoIcon,
   LinkdinIcon,
   TwitterIcon,
@@ -59,10 +60,7 @@ const variantClasses = {
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
 
-  console.log("Actual pathname:", pathname);
-
   const variant = pathname.toLowerCase().includes("hvac") ? "light" : "dark";
-  console.log("Variant:", variant);
 
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -83,7 +81,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block" />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
-          <FooterLogoIcon />
+          {variant === "dark" ? <FooterLogoIcon /> : <FooterLightIcon />}
         </div>
 
         <div className="hidden w-full flex-wrap justify-center gap-4 md:flex">
@@ -117,7 +115,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                       openSection === section.title ? "rotate-180" : ""
                     }`}
                   >
-                    <DownArrowIcon />
+                    <DownArrowIcon variant={variant === "dark"} />
                   </span>
                 </div>
                 <AnimateHeight
@@ -156,7 +154,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
-              className="mx-auto w-full max-w-[72px]"
+              className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
             />
@@ -211,7 +209,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
-              className="mx-auto w-full max-w-[72px]"
+              className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
             />

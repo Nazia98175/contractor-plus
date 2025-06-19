@@ -77,12 +77,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
         ))}
       </div>
 
-      <CardReveal
-        staggerDelay={0.15}
-        animationDuration={0.8}
-        distance={50}
-        animateOnScroll={true}
-      >
+      <CardReveal distance={50}>
         <div className="isolate flex flex-wrap items-center justify-center gap-[34px] overflow-visible sm:gap-8 md:gap-[53px]">
           <Image
             width={121}

@@ -4,10 +4,14 @@ import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/FieldService";
 import { debugLog } from "@/utils/getConsole";
+import TextAnimation from "../common/TextAnimation";
 
-const RealTimeServiceConnector: React.FC<TheServiceProps> = ({ fieldService, theme }) => {
+const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
+  fieldService,
+  theme,
+}) => {
   debugLog("fieldServv", fieldService);
-  
+
   const sliderData = [
     {
       title: "Live Dispatch",
@@ -57,22 +61,27 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({ fieldService, the
   ];
 
   return (
-    <section className={`relative z-20 overflow-hidden bg-white ${theme || ''}`}>
+    <section
+      className={`relative z-20 overflow-hidden bg-white ${theme || ""}`}
+    >
       <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
-      <h3 className="section-heading crm-gradient relative z-20 mx-auto max-w-[1029px] px-2 text-center xl:px-0">
-          
-        {(() => {
-          const title = fieldService?.title || "";
-          const words = title.trim().split(" ");
-          const lastTwo = words.slice(-2).join(" ");
-          const rest = words.slice(0, -2).join(" ");
-          return (
-            <>
-              {rest} <b>{lastTwo}</b>
-            </>
-          );
-        })()}
-      </h3>
+
+      <TextAnimation animateOnScroll={true} delay={0.2}>
+        <h3 className="section-heading crm-gradient relative z-20 mx-auto max-w-[1029px] px-2 text-center xl:px-0">
+          {(() => {
+            const title = fieldService?.title || "";
+            const words = title.trim().split(" ");
+            const lastTwo = words.slice(-2).join(" ");
+            const rest = words.slice(0, -2).join(" ");
+            return (
+              <>
+                {rest} <b>{lastTwo}</b>
+              </>
+            );
+          })()}
+        </h3>
+      </TextAnimation>
+
       <RealTimeServiceConnectorSlider sliderData={fieldService?.cardsDetail} />
     </section>
   );

@@ -20,11 +20,13 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
 
   return (
     <section className="custom-shadow relative z-20 pb-9 md:pb-12 lg:pb-[60px] xl:pb-[78px]">
-      <h3 className="section-heading mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 sm:max-w-[70%] md:mb-10 lg:mb-12 xl:max-w-full">
-        <span className="gradient-white">
-          {reviews.data?.[0].reviews.title}
-        </span>
-      </h3>
+      <TextAnimation animateOnScroll={true} delay={0}>
+        <h3 className="section-heading mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 sm:max-w-[70%] md:mb-10 lg:mb-12 xl:max-w-full">
+          <span className="gradient-white">
+            {reviews.data?.[0].reviews.title}
+          </span>
+        </h3>
+      </TextAnimation>
 
       <Marquee speed={30} direction="right" pauseOnHover>
         {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (

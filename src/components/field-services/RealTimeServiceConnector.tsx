@@ -66,7 +66,7 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
     >
       <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
 
-      <TextAnimation animateOnScroll={true}>
+      <TextAnimation animateOnScroll={true} delay={0.2}>
         <h3 className="section-heading crm-gradient relative z-20 mx-auto max-w-[1029px] px-2 text-center xl:px-0">
           {(() => {
             const title = fieldService?.title || "";

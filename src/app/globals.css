@@ -312,7 +312,6 @@ html::-webkit-scrollbar {
   @apply h-full w-full;
 }
 .custom-shadow {
-  background: #0c0d11;
   box-shadow:
     -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
     -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),

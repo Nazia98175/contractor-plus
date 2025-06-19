@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 interface VideoOptimizerProps {
   lowResUrl: string;
@@ -61,9 +62,9 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
     });
   };
   return (
-    <>
+    <div className="hero-video-overlay relative">
       {isLoading ? (
-        <div>Loading video...</div>
+        <Image src={"/images/webp/speed-test.webp"} fill alt="poster" />
       ) : (
         <>
           <video
@@ -82,7 +83,9 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           </video>
         </>
       )}
-    </>
+      <div className="bg-kuroiBlack absolute bottom-[-5%] h-[10%] w-[102%] blur-[8px]"></div>
+      <div className="bg-kuroiBlack 3xl:block absolute top-[-2%] right-[-24px] hidden h-[102%] w-[4%] blur-[8px]"></div>
+    </div>
   );
 };
 export default VideoOptimizer;

@@ -311,7 +311,7 @@ html::-webkit-scrollbar {
 .swiper {
   @apply h-full w-full;
 }
-.hii {
+.custom-shadow {
   background: #0c0d11;
   box-shadow:
     -11.759px 10.583px 13.825px 0px rgba(0, 0, 0, 0.14),
@@ -1573,7 +1573,17 @@ button {
   border: 1px solid #e6e9f5;
   backdrop-filter: blur(31px);
 }
-.f {
-  background-color: #0c0d11;
-  filter: blur(40.04999923706055px);
+
+.hero-video-overlay::before {
+  position: absolute;
+  content: "";
+  top: -13% !important;
+  left: -36% !important;
+  width: 100%;
+  height: 126%;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background: url("/images/png/hero-video-ovelay-2.png");
+  filter: blur(25.95000076293945px);
 }

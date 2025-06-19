@@ -34,10 +34,11 @@ const Faq: React.FC<Props> = ({
       className={`${mainContainerclassName} relative z-20 overflow-hidden px-2 py-10 md:pt-[66px] md:pb-[71px]`}
     >
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
-
-      <h3 className="section-heading text-center">
-        <span className="faq-heading-text">{faq?.title}</span>
-      </h3>
+      <TextAnimation animateOnScroll={true} delay={0}>
+        <h3 className="section-heading text-center">
+          <span className="faq-heading-text">{faq?.title}</span>
+        </h3>
+      </TextAnimation>
 
       <p className="paragraph-text text-secondary pt-1.5 text-center sm:pt-4">
         {faq?.sub_title}

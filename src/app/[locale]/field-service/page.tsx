@@ -100,8 +100,6 @@ const FieldServicesPage = async ({ params }: Params) => {
       "&populate[thousandReviews][populate]=reviews",
     ),
   ]);
-  debugLog("feild-serv", crmPageContent?.data?.[0]);
-  debugLog("feild-serv", faq?.data?.[0]?.faqs);
 
   return (
     <main className="overflow-hidden">
@@ -122,8 +120,6 @@ const FieldServicesPage = async ({ params }: Params) => {
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}
         variant="secondary"
       />
-
-      {/* <HvacSoftwareService /> */}
 
       <div className="relative overflow-visible">
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />

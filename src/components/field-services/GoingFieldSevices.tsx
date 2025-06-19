@@ -39,11 +39,11 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
         alt="Map Image"
       />
 
-      {/* <TextAnimation animateOnScroll={true} delay={0}> */}
-      <h3 className="sub-heading text-winterWay hidden px-2 text-center font-semibold sm:block">
-        {switchingTool?.title}
-      </h3>
-      {/* </TextAnimation> */}
+      <TextAnimation animateOnScroll={true} delay={0}>
+        <h3 className="sub-heading text-winterWay hidden px-2 text-center font-semibold sm:block">
+          {switchingTool?.title}
+        </h3>
+      </TextAnimation>
 
       <h3 className="sub-heading crm-gradient block px-2 text-center font-bold sm:hidden">
         {/* There’s no easy way to see what’s going on in the field */}

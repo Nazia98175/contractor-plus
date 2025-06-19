@@ -40,7 +40,6 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
     setTimeout(() => {
       setLoading(false);
       setEmail("");
-      console.log("Form submitted with email:", email);
     }, 2000);
   };
 

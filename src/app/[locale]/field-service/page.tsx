@@ -102,8 +102,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   ]);
   debugLog("feild-serv", crmPageContent?.data?.[0]);
   debugLog("feild-serv", faq?.data?.[0]?.faqs);
-  console.log(crmPageContent?.data?.[0], "thousand reviewss");
-  console.log(faq?.data?.[0]?.faqs, "faq");
+
   return (
     <main className="overflow-hidden">
       <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />

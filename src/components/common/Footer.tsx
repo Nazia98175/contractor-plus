@@ -59,10 +59,7 @@ const variantClasses = {
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
 
-  console.log("Actual pathname:", pathname);
-
   const variant = pathname.toLowerCase().includes("hvac") ? "light" : "dark";
-  console.log("Variant:", variant);
 
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);

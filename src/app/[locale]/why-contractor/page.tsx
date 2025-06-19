@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { platforms } from "@/components/common/Helper";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
@@ -18,8 +18,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhyContractorPage = () => {
-  const redDotRef = useRef(null);
-  const sectionRef = useRef(null);
+  const redDotRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // Register ScrollTrigger plugin
@@ -27,8 +27,9 @@ const WhyContractorPage = () => {
 
     // Calculate the exact distance the dot should travel
     const calculateDistance = () => {
+      if (!sectionRef.current) return 0;
       const sectionHeight = sectionRef.current.offsetHeight;
-      return sectionHeight + (sectionHeight * 0.1); // Add 10% extra
+      return sectionHeight + sectionHeight * 0.1; // Add 10% extra
     };
 
     // Create the scroll animation for the red dot
@@ -41,12 +42,12 @@ const WhyContractorPage = () => {
         end: "bottom bottom", // Animate until the very bottom of the section
         scrub: 1,
         invalidateOnRefresh: true, // Recalculate on window resize
-      }
+      },
     });
 
     return () => {
       // Cleanup
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -65,12 +66,15 @@ const WhyContractorPage = () => {
         <IndustryShifted />
         <AnimationHeader />
       </main>
-      <main ref={sectionRef} className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]">
+      <main
+        ref={sectionRef}
+        className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
+      >
         {/* Background line (gray/wallStreet color) */}
         <span className="bg-wallStreet absolute top-[-5%] left-1/2 z-[1] block h-full w-[1px] translate-x-[-50%]"></span>
-        
+
         {/* Animated red dot that moves on scroll - starts at top of gray line */}
-        <span 
+        <span
           ref={redDotRef}
           className="absolute top-[-5%] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"
         ></span>

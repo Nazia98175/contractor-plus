@@ -22,17 +22,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     mobileBtn,
   } = homePageContent ?? {};
   return (
-    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
+    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-24 w-[120%] -translate-x-1/2 blur-[13px] lg:block"></div>
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-16 w-[120%] -translate-x-1/2 blur-[8px] lg:block"></div>
       <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px] lg:hidden"></div>
-      {/* <Image
-        className="hidden sm:block"
-        src={"/images/webp/hero-red-line.webp"}
-        alt="hero-red-line"
-        fill
-        layout="lazy"
-      /> */}
+
       <img
         className="absolute top-0 left-0 hidden max-h-[800px] w-full max-w-[800px] object-center sm:block"
         src={"/images/webp/hero-red-line.webp"}
@@ -85,12 +79,8 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       </div>
       <div className="3xl:right-[0%] absolute top-0 -z-10 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
         <VideoOptimizer
-          highResUrl={
-            "http://167.88.43.123:1337/uploads/hero_video_6e22969f62.mp4"
-          }
-          lowResUrl={
-            "http://167.88.43.123:1337/uploads/hero_video_6e22969f62.mp4"
-          }
+          highResUrl={"/video/hero-video.mp4"}
+          lowResUrl={"/video/hero-video-higher.mp4"}
         />
         <Image
           loading="lazy"

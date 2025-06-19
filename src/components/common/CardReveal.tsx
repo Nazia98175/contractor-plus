@@ -1,111 +1,49 @@
 "use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import React, { ReactNode, useLayoutEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-interface CardRevealProps {
+interface Props {
   children: ReactNode;
-  staggerDelay?: number;
-  animationDuration?: number;
   className?: string;
-  distance?: number;
-  easing?: string;
-  debug?: boolean;
-  once?: boolean;
-  animateOnScroll?: boolean;
   delay?: number;
+  distance?: number;
+  animateOnScroll?: boolean;
 }
 
-const CardReveal: React.FC<CardRevealProps> = ({
+const CardReveal: React.FC<Props> = ({
   children,
-  staggerDelay = 0.15,
-  animationDuration = 0.8,
   className = "",
   delay = 0,
   distance = 50,
-  easing = "power2.out",
-  debug = false,
-  once = false,
-  animateOnScroll = true,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  useLayoutEffect(() => {
-    if (typeof window === "undefined") return;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
 
-    const container = containerRef.current;
-    if (!container) return;
+    if (ref.current) observer.observe(ref.current);
 
-    const cards = Array.from(container.children) as HTMLElement[];
-    if (!cards.length) return;
-
-    // Initial state
-    gsap.set(cards, {
-      y: distance,
-      opacity: 0,
-    });
-
-    if (animateOnScroll) {
-      // Animate on scroll
-      scrollTriggerRef.current = ScrollTrigger.create({
-        trigger: container,
-        start: "top 75%",
-        end: "bottom 25%",
-        markers: debug,
-        toggleActions: "play none none none",
-        once,
-        onEnter: () => {
-          gsap.to(cards, {
-            y: 0,
-            opacity: 1,
-            duration: animationDuration,
-            stagger: staggerDelay,
-            ease: easing,
-            overwrite: true,
-          });
-        },
-      });
-    } else {
-      // Auto animate on mount
-      gsap.to(cards, {
-        y: 0,
-        opacity: 1,
-        duration: animationDuration,
-        stagger: staggerDelay,
-        ease: easing,
-        overwrite: true,
-        delay,
-      });
-    }
-
-    const handleResize = () => {
-      if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.refresh();
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      if (scrollTriggerRef.current) scrollTriggerRef.current.kill();
-      gsap.killTweensOf(cards);
-    };
-  }, [
-    distance,
-    staggerDelay,
-    animationDuration,
-    easing,
-    debug,
-    once,
-    animateOnScroll,
-  ]);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div ref={containerRef} className={className}>
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${className}`}
+      style={{
+        transitionDelay: `${delay}s`,
+        transform: isVisible ? "translateY(0)" : `translateY(${distance}px)`,
+        opacity: isVisible ? 1 : 0,
+      }}
+    >
       {children}
     </div>
   );

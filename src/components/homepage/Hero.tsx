@@ -5,6 +5,9 @@ import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import TextAnimation from "../common/TextAnimation";
 import HerosectionBackground from "./HerosectionBackground";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -12,40 +15,53 @@ const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
   const { hero_title, hero_description, cta_button_text, ncc_text, mobileBtn } =
     homePageContent ?? {};
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.5,
+      delay: 0.2,
+      ease: "power2.out",
+    });
+  }, []);
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
         <div className="main-container relative z-10 flex items-end">
-          <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
+          <div
+            ref={wrapperRef}
+            style={{ opacity: 0 }}
+            className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]"
+          >
             <TextAnimation animateOnScroll={false} delay={0.2}>
               <h1 className="main-heading gradient-text">{hero_title}</h1>
             </TextAnimation>
-            <TextAnimation animateOnScroll={false} delay={0.4}>
+            <TextAnimation animateOnScroll={false} delay={0.35}>
               <p className="text-decemberSky text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
                 {hero_description}
               </p>
             </TextAnimation>
-            <CardReveal
-              staggerDelay={0.6}
-              animationDuration={0.6}
-              distance={50}
-              delay={1.0}
-              animateOnScroll={false}
-              className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit"
-            >
-              <FreeAccountButton
-                showIcon={false}
-                text={cta_button_text}
-                className="!hidden sm:!flex"
-              />
-              <FreeAccountButton
-                showIcon={false}
-                text={mobileBtn}
-                className="flex sm:!hidden"
-              />
-              <CardRequiredButton text={ncc_text} />
-            </CardReveal>
+            <div className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit">
+              <CardReveal distance={50} delay={0.5} animateOnScroll={false}>
+                <FreeAccountButton
+                  showIcon={false}
+                  text={cta_button_text}
+                  className="!hidden sm:!flex"
+                />
+              </CardReveal>
+
+              <CardReveal distance={50} delay={0.7} animateOnScroll={false}>
+                <FreeAccountButton
+                  showIcon={false}
+                  text={mobileBtn}
+                  className="flex sm:!hidden"
+                />
+              </CardReveal>
+              <CardReveal distance={50} delay={0.9} animateOnScroll={false}>
+                <CardRequiredButton text={ncc_text} />
+              </CardReveal>
+            </div>
           </div>
         </div>
         <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom lg:w-[64%]">

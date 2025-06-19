@@ -74,8 +74,8 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             playsInline
             poster={poster}
             onError={(e) => console.error("Video load error:", e)}
-            onLoadStart={() => console.log("Video loading started")}
-            onCanPlay={() => console.log("Video can play")}
+            // onLoadStart={() => console.log("Video loading started")}
+            // onCanPlay={() => console.log("Video can play")}
             className="3xl:object-cover h-full min-h-[500px] w-full object-cover lg:object-center"
           >
             <source src={videoUrl} type={type} />

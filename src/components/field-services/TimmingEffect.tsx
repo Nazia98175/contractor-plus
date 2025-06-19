@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import TimeAnimation from "./TimeAnimation";
 import { useGSAP } from "@gsap/react";
 import { stepOneAnimation, stepTwoAnimation } from "./animations";
+import TextAnimation from "../common/TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -323,6 +324,7 @@ const TimmingEffect = () => {
 
         className="relative min-h-[100vh] bg-white" // Back to original height
       >
+        {/* <TextAnimation animateOnScroll={true} delay={0}> */}
         <h2
           style={{
             background:
@@ -335,6 +337,8 @@ const TimmingEffect = () => {
         >
           A system that finally connects field and office
         </h2>
+        {/* </TextAnimation> */}
+
         <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
           Here's what it feels like when everything just works
         </p>

@@ -42,7 +42,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 {hero_description}
               </p>
             </TextAnimation>
-            <div className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit">
+            <div className="mt-2 flex w-fit flex-col items-center gap-2.5 sm:mt-0">
               <CardReveal distance={50} delay={0.5}>
                 <FreeAccountButton
                   showIcon={false}

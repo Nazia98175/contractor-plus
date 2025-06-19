@@ -138,9 +138,8 @@ const FeatureNavigation = ({
       </div>
 
       <div
-        className="no-scrollbar relative z-[99] flex w-full flex-row gap-[22px] overflow-auto bg-white py-2 whitespace-nowrap lg:flex-col lg:overflow-visible lg:py-0"
+        className="no-scrollbar relative z-[99] flex flex-row gap-[22px] overflow-auto bg-white py-2 whitespace-nowrap lg:flex-col lg:py-0"
         style={{
-          // Prevent content reflow
           contain: "layout",
         }}
       >
@@ -151,7 +150,7 @@ const FeatureNavigation = ({
             }}
             onClick={() => onFeatureClick(index)}
             key={feature}
-            className={`feature-btn ${
+            className={`feature-btn truncate lg:w-[180px] ${
               isMobile ? "text-sm" : ""
             } cursor-pointer transition-colors duration-200 ${
               index === activeFeature

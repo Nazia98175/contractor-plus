@@ -12,7 +12,7 @@ interface LottieProps {
 const LottieAnimation = ({
   className,
   animationData,
-  loop = false,
+  loop = true,
 }: LottieProps) => {
   const lottieRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);

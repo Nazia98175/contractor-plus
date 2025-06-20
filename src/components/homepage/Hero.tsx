@@ -67,8 +67,8 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom lg:w-[64%]">
           <div className="relative -z-10 h-full w-full">
             <VideoOptimizer
-              highResUrl={"/video/hero-video.mp4"}
-              lowResUrl={"/video/hero-video-higher.mp4"}
+              highResUrl={"/video/hero-video-higher.mp4"}
+              lowResUrl={"/video/hero-video.mp4"}
               videoUrl={homePageContent?.hero_image?.url}
             />
           </div>

@@ -28,7 +28,6 @@ export default async function Home({
     blogs,
   } = await getHomepageData(useParams?.locale);
 
-  console.log(homePageContent, "home");
   return (
     <div className="relative">
       <div className="relative overflow-hidden">

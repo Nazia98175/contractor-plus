@@ -23,13 +23,19 @@ import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
+import { getBlogs } from "@/services/blogs";
+import { getCrmPage } from "@/services/crm";
 
 export const metadata = {
   title: "Contractor + - HVAC Software",
   description: "Not just HVAC software. Meet your operating system.",
 };
+type PageProps = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+const page = async ({ params }: PageProps) => {
+  const useParams = await params;
 
-const page = () => {
   const faqitems = [
     {
       id: 1,
@@ -63,6 +69,10 @@ const page = () => {
         "Capture inquiries through customized entry points, move opportunities through visual stages, then generate quotes and contracts clients can sign online—all within the same system.",
     },
   ];
+
+  const [blogs] = await Promise.all([
+    getCrmPage("crm", useParams.locale, "&populate=*"),
+  ]);
 
   return (
     <>
@@ -119,7 +129,12 @@ const page = () => {
 
       {/* <Faq /> */}
 
-      <BlogPosts className="relative z-20 bg-white" variant="secondary" />
+      <BlogPosts
+        data={blogs?.data?.[0]?.blogs}
+        blogs={blogs?.data?.[0]?.blogs}
+        className="relative z-20 bg-white"
+        variant="secondary"
+      />
     </>
   );
 };

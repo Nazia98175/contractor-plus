@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
@@ -16,22 +17,36 @@ interface SoftwareItem {
 
 interface SoftwareUsedProps {
   item: SoftwareItem;
+  icons?: { url: string }[];
+  index?: number;
 }
 
-const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item }) => {
+const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item, icons, index }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
     rootMargin: "50px 0px",
     fallbackInView: true,
   });
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
 
   return (
     <article
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
     >
-      <span className="max-w-7 fill-white sm:max-w-8">{item.icon}</span>
+      {icons && index !== undefined && (
+        <div className="aspect-[1/1]] relative size-7 fill-white sm:size-8">
+          <Image
+            src={
+              `${imageBaseUrl.split("api")[0].slice(0, -1)}${icons[index]?.url}` ||
+              "/"
+            }
+            fill
+            alt={`${item.title} icon`}
+          />
+        </div>
+      )}
 
       <h3 className="md:text-winterWay countup-title text-white">
         {item.isRange ? (

@@ -320,11 +320,11 @@ const TimmingEffect = () => {
   return (
     <div className="relative">
       <section className="relative min-h-[100vh] bg-white">
-        <TextAnimation animateOnScroll={true} delay={0}>
-          <h2 className="section-heading relative z-[4] bg-[linear-gradient(276deg,rgba(238,30,37,0.4)_8%,_rgba(0,0,0,0)_100%),_#D8D8D8] bg-clip-text px-2 text-center text-transparent">
-            A system that finally connects field and office
-          </h2>
-        </TextAnimation>
+        {/* <TextAnimation animateOnScroll={true} delay={0}> */}
+        <h2 className="section-heading timing-gradient relative z-[4] px-2 text-center">
+          A system that finally connects field and office
+        </h2>
+        {/* </TextAnimation> */}
 
         <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
           Here's what it feels like when everything just works

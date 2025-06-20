@@ -485,6 +485,20 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.timing-gradient {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(238, 30, 37, 0.4) 7.61%,
+      rgba(0, 0, 0, 0) 99.65%
+    ),
+    #d8d8d8;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 @media (max-width: 640px) {
   .gradient-text {
     background:

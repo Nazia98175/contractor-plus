@@ -48,7 +48,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     section4,
     section5,
     section6,
-    section7,
+    neverLookBackData,
     faq,
     blogs,
     thousandReviews,
@@ -82,7 +82,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     getCrmPage(
       "field-service",
       useParams.locale,
-      "&populate[teamsUsingContractor][populate][cards]=*",
+      "&populate[teamsUsingContractor][populate]=*",
     ),
     getCrmPage(
       "field-service",
@@ -110,7 +110,9 @@ const FieldServicesPage = async ({ params }: Params) => {
       </div>
       <RunWithContractor kindAdorable={section6?.data?.[0]?.comparison} />
       <TimmingEffect />
-      <NeverLookBack data={section7?.data?.[0]?.teamsUsingContractor} />
+      <NeverLookBack
+        data={neverLookBackData?.data?.[0]?.teamsUsingContractor}
+      />
       <ThousandsReviews
         data={crmPageContent?.data?.[0]?.thousandReviews}
         reviews={thousandReviews?.data?.[0]?.thousandReviews?.reviews}

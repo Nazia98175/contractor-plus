@@ -1,32 +1,22 @@
-import CloudsAnimation from "@/components/common/CloudsAnimation";
 import {
   blackPlatforms,
-  makeOperationList,
-  OurReviewList,
   platforms,
-  reviews,
+  reviews
 } from "@/components/common/Helper";
-import { SliderRedLineIcon } from "@/components/common/Icons";
-import SoftwareUsed from "@/components/common/SoftwareUsed";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
-import TrustBar from "@/components/homepage/TrustBar";
-import Whatever from "@/components/homepage/Whatever";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
 import HvacFaq from "@/components/hvca/HvacFaq";
 import HvacHero from "@/components/hvca/HvacHero";
-import HvacReview from "@/components/hvca/HvacReview";
 import HvacSoftware from "@/components/hvca/HvacSoftware";
 import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
-import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
-import { title } from "process";
 
 export const metadata = {
   title: "Contractor + - HVAC Software",

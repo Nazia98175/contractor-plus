@@ -6,7 +6,7 @@ interface VideoOptimizerProps {
   highResUrl: string;
   poster?: string;
   type?: string;
-  videoUrl: string;
+  videoUrl?: string;
 }
 const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   lowResUrl,
@@ -44,6 +44,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
     }
     checkConnectionAndLoadVideo();
   }, [lowResUrl, highResUrl]);
+
   const performSpeedTest = (): Promise<boolean> => {
     return new Promise((resolve) => {
       const startTime = Date.now();

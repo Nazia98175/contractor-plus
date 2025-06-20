@@ -99,13 +99,13 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         </span>
       )}
       {isCrmRoute && (
-        <span className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
+        <div className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           <img
             className="h-full w-full"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
           />
-        </span>
+        </div>
       )}
 
       <BlueIcon

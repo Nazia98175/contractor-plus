@@ -46,10 +46,10 @@ export default async function RootLayout({
       <body>
         <BackToTop />
         <NextIntlClientProvider messages={messages}>
-          <Header header={header?.data} />
+          {/* <Header header={header?.data} /> */}
           {children}
-          <Footer footer={footer?.data} />
-          <ParticlesComponent id="star-particles" />
+          {/* <Footer footer={footer?.data} /> */}
+          {/* <ParticlesComponent id="star-particles" /> */}
         </NextIntlClientProvider>
       </body>
     </html>

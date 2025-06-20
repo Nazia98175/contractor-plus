@@ -317,12 +317,7 @@ html::-webkit-scrollbar {
     -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
     -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
 }
-/* .swiper-slide {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+
 .blog-post .swiper-pagination-bullet {
   background: #e3e6f0 !important;
   opacity: 1 !important;

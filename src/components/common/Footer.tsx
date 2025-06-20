@@ -104,7 +104,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <div key={idx} className="w-full max-w-[150px]">
               <button
                 onClick={() => toggleSection(section.title)}
-                className="flex w-full flex-col justify-between px-4 py-2 text-start"
+                className="flex w-full flex-col justify-between py-2 text-start sm:px-4"
               >
                 <div className="mx-auto flex w-fit items-center justify-between">
                   <h3 className={`text-base font-bold ${styles.sectionTitle}`}>

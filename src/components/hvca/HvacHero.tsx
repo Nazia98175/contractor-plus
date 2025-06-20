@@ -27,7 +27,7 @@ const HvacHero = () => {
           alt="Red Circle For designing"
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[0px] lg:pb-[150px] xl:pb-[355px]">
+        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[0px] lg:pb-[150px] xl:pb-[355px] 2xl:pb-[370px]">
           {/* <HvacGlowHeroMobileIcon /> */}
           <img
             className="pointer-events-none absolute top-0 left-0 z-10 w-full max-w-[320px] lg:hidden xl:left-[13%]"

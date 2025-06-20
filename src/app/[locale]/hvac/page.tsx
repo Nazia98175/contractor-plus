@@ -83,45 +83,43 @@ const page = async ({ params }: PageProps) => {
           <TrustBatBuildContractor
             platforms={blackPlatforms}
             showTrustedSection={true}
-            className="1xl:gap-13 relative z-20 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[43px] pb-14 sm:gap-6 md:gap-7 md:pt-[13px] xl:gap-9 xl:pt-16"
+            className="1xl:gap-12 relative z-10 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[43px] pb-14 sm:gap-6 md:gap-7 md:pt-[13px] xl:gap-9 xl:pt-5"
           />
         </div>
         <HvacSoftware />
         <WantingMore />
         <EraOfSoftware />
       </div>
-      <div className="relative overflow-x-hidden">
-        <div className="relative overflow-hidden">
-          <AwardBadges />
-          <ThousandsReviews
-            data={
-              "There's a reason we have a 4.7 ★  average across  thousands of reviews"
-            }
-            reviews={reviews}
-            variant="secondary"
-          />
-        </div>
-        <span className="absolute top-[845px] left-[-150px] flex !min-h-[600px] !min-w-[270px] rotate-[-49deg] rounded-3xl bg-[#62171D] blur-3xl sm:hidden"></span>
-        <HvacSoftwareService
-          data={{
-            title: "This is what HVAC software should have been all along",
-            sub_title: "Start using Contractor+ FREE. You won’t look back.",
-            placeholder: "Enter your email",
-          }}
-          ncc="No credit card required"
-          createBtn="Get Started Free"
-          mobileBtn="Download App"
-          mobileBtnHref="/app-download"
-        />
 
-        <TrustBarHvca platforms={platforms} />
-      </div>
+      <AwardBadges />
+      <ThousandsReviews
+        data={
+          "There's a reason we have a 4.7 ★  average across  thousands of reviews"
+        }
+        reviews={reviews}
+        variant="secondary"
+      />
+
+      <HvacSoftwareService
+        data={{
+          title: "This is what HVAC software should have been all along",
+          sub_title: "Start using Contractor+ FREE. You won’t look back.",
+          placeholder: "Enter your email",
+        }}
+        ncc="No credit card required"
+        createBtn="Get Started Free"
+        mobileBtn="Download App"
+        mobileBtnHref="/app-download"
+      />
+
+      <TrustBarHvca platforms={platforms} />
+
       {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
       <HvacFaq
         faqitems={{
           title: "What HVAC contractors want to know",
           sub_title: "Frequently asked questions",
-          faq: faqitems, // assuming faqitems is your array of FAQ objects
+          faq: faqitems,
         }}
         variant="hvac"
         heading="What HVAC contractors want to know"

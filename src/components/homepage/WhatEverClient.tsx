@@ -10,7 +10,7 @@ type WhatEverClientProps = {
 
 const WhatEverClient = ({ data, issection = true }: WhatEverClientProps) => {
   return (
-    <div className="bg-kuroiBlack relative overflow-hidden">
+    <div className="bg-kuroiBlack relative overflow-visible">
       <Whatever whateverOperation={data} />
       {issection && <MakeOperation whateverOperation={data} />}
     </div>

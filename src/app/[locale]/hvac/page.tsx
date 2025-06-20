@@ -26,6 +26,7 @@ import WantingMore from "@/components/hvca/WantingMore";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
+import { title } from "process";
 
 export const metadata = {
   title: "Contractor + - HVAC Software",
@@ -95,9 +96,7 @@ const page = async ({ params }: PageProps) => {
 
       <AwardBadges />
       <ThousandsReviews
-        data={
-          "There's a reason we have a 4.7 ★  average across  thousands of reviews"
-        }
+        data={{ title: "4.7 ★ across thousands of reviews" }}
         reviews={reviews}
         variant="secondary"
       />
@@ -114,9 +113,11 @@ const page = async ({ params }: PageProps) => {
         mobileBtnHref="/app-download"
       />
 
-      <TrustBarHvca platforms={platforms} />
-
-      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
+      <TrustBarHvca platforms={platforms} className="xl:pb-20" />
+      <WhatEverClient
+        data={homePageContent?.data?.whateverOperation}
+        issection={false}
+      />
       <HvacFaq
         faqitems={{
           title: "What HVAC contractors want to know",
@@ -126,8 +127,6 @@ const page = async ({ params }: PageProps) => {
         variant="hvac"
         heading="What HVAC contractors want to know"
       />
-
-      {/* <Faq /> */}
 
       <BlogPosts
         data={blogs?.data?.[0]?.blogs}

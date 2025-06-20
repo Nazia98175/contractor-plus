@@ -211,7 +211,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             <div className="left-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat md:h-[300px] md:bg-[url('/images/svg/left-red-lines_animated.svg')] md:py-8 lg:py-[59px]">
               <div
                 ref={left1Ref}
-                className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
+                className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-20 lg:w-20"
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -241,7 +241,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               </div>
               <div
                 ref={left3Ref}
-                className="flex h-[62px] w-[62px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
+                className="flex h-[62px] w-[62px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px] xl:h-[93px] xl:w-[93px]"
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -268,7 +268,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             <div className="right-section relative h-[190px] w-full max-w-[409px] bg-cover bg-no-repeat py-8 md:h-[300px] md:bg-[url('/images/svg/right-red-line_animated.svg')] lg:py-[59px]">
               <div
                 ref={right1Ref}
-                className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
+                className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px] xl:h-[93px] xl:w-[93px]"
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -283,7 +283,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               </div>
               <div
                 ref={right2Ref}
-                className="flex h-[46px] w-[46px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
+                className="flex h-[46px] w-[46px] items-center justify-center p-2 will-change-transform lg:h-[72px] lg:w-[72px]"
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />

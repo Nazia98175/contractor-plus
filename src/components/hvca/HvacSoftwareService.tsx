@@ -48,7 +48,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
   };
 
   return (
-    <div className="relative z-10 w-full pt-8 lg:pt-[90px]">
+    <div className="relative z-10 w-full pt-8 lg:pt-[90px] xl:pt-[113px]">
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>

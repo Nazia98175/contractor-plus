@@ -9,6 +9,8 @@ import {
 } from "../common/Icons";
 import FieldServiceMap from "./FieldServiceMap";
 import Image from "next/image";
+import TextAnimation from "../common/TextAnimation";
+import CardReveal from "../common/CardReveal";
 
 interface GeolocationData {
   latitude: number;
@@ -31,7 +33,7 @@ interface Props {
 const FieldServicesHero: React.FC<Props> = ({ hero }) => {
   return (
     <section className="relative overflow-visible">
-      <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-20 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
+      <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-10 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
 
       <FieldServiceMap />
       {/* Gradient overlay for better text readability */}
@@ -40,23 +42,31 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
       {/* Content overlay */}
       <div className="main-container relative z-20 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:flex-row lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
         <div className="w-full lg:max-w-[732px]">
-          <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
-            {hero?.heroTitle1}
-          </div>
-          <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
-            {hero?.heroTitle}
-            {/* One command center to visualize and run your entire field operation */}
-          </h3>
-          <h3 className="main-heading hidden text-white lg:block">
-            {hero?.heroTitle}
-            {/* One command center to visualize and run your entire field operation */}
-          </h3>
+          <TextAnimation animateOnScroll={false} delay={0}>
+            <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
+              {hero?.heroTitle1}
+            </div>
+          </TextAnimation>
+          <TextAnimation animateOnScroll={false} delay={0}>
+            <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
+              {hero?.heroTitle}
+            </h3>
+          </TextAnimation>
+          <TextAnimation animateOnScroll={false} delay={0.3}>
+            <h3 className="main-heading hidden text-white lg:block">
+              {hero?.heroTitle}
+            </h3>
+          </TextAnimation>
           <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
             {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams. */}
             {hero?.heroDescription}
           </p>
-          <div className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5">
+          <CardReveal
+            distance={50}
+            delay={0.6}
+            className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5"
+          >
             <div className="flex items-center gap-2.5">
               <button>
                 <HeroPlayStoreIcon />
@@ -76,11 +86,11 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
                 className="hidden text-white sm:flex"
               />
             </div>
-          </div>
+          </CardReveal>
         </div>
         <Image
           className="w-full max-w-[355px] object-cover"
-          src={"/images/png/group-with-location.png"}
+          src={"/images/webp/group-with-location.webp"}
           width={22}
           height={22}
           alt="location"

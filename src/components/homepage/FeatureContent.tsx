@@ -33,12 +33,12 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           ref={(el) => {
             contentRefs.current[index] = el;
           }}
-          className="bg-doctor w-full scroll-mt-8 space-y-2.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
+          className="bg-doctor w-[500px] w-full scroll-mt-8 space-y-2.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
         >
           <h4 className="text-wallStreet text-lg leading-[100%] font-bold sm:text-xl md:text-2xl">
             {content?.title}
           </h4>
-          <div className="relative w-full overflow-hidden rounded-lg">
+          <div className="relative w-full overflow-hidden">
             <LottieAnimation
               animationData={featureContentss?.[index]?.titleImg}
             />
@@ -47,7 +47,6 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             {content.desc}
             {featureContents?.[index]?.cardQuote && (
               <span className="text-secondary">
-                {" "}
                 {featureContents?.[index]?.cardQuote}
               </span>
             )}

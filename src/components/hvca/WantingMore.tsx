@@ -3,6 +3,7 @@ import ScrollOverlapCards from "../common/ScrollOverlapCards";
 import TextAnimation from "../common/TextAnimation";
 
 const WantingMore = () => {
+  console.log("wanting more", wantingMoreData);
   return (
     <section className="relative overflow-hidden px-2 pb-16">
       <TextAnimation animateOnScroll={true} delay={0.1}>
@@ -18,6 +19,7 @@ const WantingMore = () => {
         theme="light"
         slug={"testing"}
         fieldService={{ cardsDetail: wantingMoreData }}
+        apiData={false}
       />
     </section>
   );

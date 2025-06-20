@@ -105,6 +105,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             slug={useParams?.slug}
             fieldService={section4?.data?.[0]?.fieldService}
             theme={theme}
+            apiData={true}
           />
 
           <div className="bg-white">
@@ -129,7 +130,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               slug={useParams?.slug}
               kindAdorable={section6?.data?.[0]?.comparison}
             />
-
             <TeamsUsingContractor
               data={section7?.data?.[0]?.teamsUsingContractor}
             />
@@ -155,7 +155,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <Faq
               faq={faq?.data?.[0]?.faqs}
               classNameAnswer="pt-1"
-              mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+              mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0 px-2"
             />
           </div>
           <BlogPosts

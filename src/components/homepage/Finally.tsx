@@ -6,7 +6,6 @@ import CardReveal from "../common/CardReveal";
 import CloudsAnimation from "../common/CloudsAnimation";
 import { CheckIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import FinallyBackground from "./FinallyBackground";
 interface Finally {
   title: string;
   sub_title: string;
@@ -37,11 +36,11 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="relative z-30 space-y-4">
           <PrimaryAnimatedText delay={3000}>
-            <h2 className="section-heading gradient-text relative z-40 px-2 text-center">
+            <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
               <span> {finallyC?.[0]?.title ?? ""}</span>
             </h2>
           </PrimaryAnimatedText>
-          <CardReveal animateOnScroll={true}>
+          <CardReveal distance={50}>
             <PrimaryAnimatedText
               delay={3000}
               className="text-superSilver mx-auto max-w-[755px] px-2 text-center text-base font-medium"
@@ -50,8 +49,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             </PrimaryAnimatedText>
           </CardReveal>
           <CardReveal
-            staggerDelay={0.15}
-            animationDuration={0.8}
             distance={50}
             className="relative z-10 flex flex-wrap items-center justify-center gap-3 pt-2 md:gap-[22px]"
           >
@@ -74,8 +71,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             </div>
             {/* <FogGenerator /> */}
             <CardReveal
-              staggerDelay={0.4}
-              animationDuration={0.8}
               distance={50}
               className="flex flex-row items-center gap-4 lg:flex-col"
             >
@@ -106,11 +101,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
               />
             </CardReveal>
-            <CardReveal
-              staggerDelay={0.4}
-              animationDuration={0.8}
-              distance={50}
-            >
+            <CardReveal distance={50}>
               <div className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40">
                 <Image
                   height={600}

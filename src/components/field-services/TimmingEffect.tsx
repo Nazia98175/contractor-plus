@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import TimeAnimation from "./TimeAnimation";
 import { useGSAP } from "@gsap/react";
 import { stepOneAnimation, stepTwoAnimation } from "./animations";
+import TextAnimation from "../common/TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -318,23 +319,13 @@ const TimmingEffect = () => {
 
   return (
     <div className="relative">
-      <section
-        // ref={timelineWrapperRef}
-
-        className="relative min-h-[100vh] bg-white" // Back to original height
-      >
-        <h2
-          style={{
-            background:
-              "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-          className="section-heading relative z-[4] px-2 text-center"
-        >
+      <section className="relative min-h-[100vh] bg-white">
+        {/* <TextAnimation animateOnScroll={true} delay={0}> */}
+        <h2 className="section-heading timing-gradient relative z-[4] px-2 text-center">
           A system that finally connects field and office
         </h2>
+        {/* </TextAnimation> */}
+
         <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
           Here's what it feels like when everything just works
         </p>

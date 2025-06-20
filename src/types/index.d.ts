@@ -50,6 +50,7 @@ export interface PlatformItem {
 export interface HomePageResponse {
   data: any;
   meta?: any;
+  
 }
 export interface Review {
   id: string | number;

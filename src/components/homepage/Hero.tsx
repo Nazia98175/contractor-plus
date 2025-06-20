@@ -1,95 +1,79 @@
 "use client";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import TextAnimation from "../common/TextAnimation";
+import HerosectionBackground from "./HerosectionBackground";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
-type HeroProps = {
-  homePageContent: any;
-};
-const Hero = ({ homePageContent }: { homePageContent: any }) => {
-  // const t = useTranslations("hero");
-  const {
-    hero_title,
-    hero_description,
-    cta_button_text,
-    ncc_text,
-    hero_image,
-    mobileBtn,
-  } = homePageContent ?? {};
-  return (
-    <section className="lg:bg-kuroiBlack hero-mobile-bg relative z-20 mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
-      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-24 w-[120%] -translate-x-1/2 blur-[13px] lg:block"></div>
-      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[5%] left-1/2 z-20 hidden h-16 w-[120%] -translate-x-1/2 blur-[8px] lg:block"></div>
-      <div className="bg-athenaBlue absolute top-56 right-0 h-6 w-full max-w-[800px] rotate-45 blur-[40px] lg:hidden"></div>
 
-      <img
-        className="absolute top-0 left-0 hidden max-h-[800px] w-full max-w-[800px] object-center sm:block"
-        src={"/images/webp/hero-red-line.webp"}
-        alt="hero-red-line"
-      />
-      <img
-        className="absolute top-[36%] flex h-full w-[110%] object-center sm:hidden"
-        src={"/images/webp/hero-red-line-mobile.webp"}
-        alt="hero-red-line"
-      />
-      <Image
-        width={769}
-        height={800}
-        src="/images/webp/hero-video-ovelay.webp"
-        alt="Red Circle For designing"
-        className="pointer-events-none absolute top-0 left-0 z-[-1] block h-full w-full object-cover lg:hidden"
-        layout="lazy"
-      />
-      <div className="main-container relative z-10 flex items-end">
-        <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
-          <TextAnimation animateOnScroll={false} delay={0.2}>
-            <h1 className="main-heading gradient-text">{hero_title}</h1>
-          </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0.4}>
-            <p className="text-decemberSky text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
-              {hero_description}
-            </p>
-          </TextAnimation>
-          <CardReveal
-            staggerDelay={0.6}
-            animationDuration={0.6}
-            distance={50}
-            delay={1.0}
-            animateOnScroll={false}
-            className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit"
+const Hero = ({ homePageContent }: { homePageContent: any }) => {
+  const { hero_title, hero_description, cta_button_text, ncc_text, mobileBtn } =
+    homePageContent ?? {};
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.5,
+      delay: 0.2,
+      ease: "power2.out",
+    });
+  }, []);
+  return (
+    <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
+      <HerosectionBackground />
+      <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] lg:pt-[140px]">
+        <div className="main-container relative z-10 flex items-end">
+          <div
+            ref={wrapperRef}
+            style={{ opacity: 0 }}
+            className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]"
           >
-            <FreeAccountButton
-              showIcon={false}
-              text={cta_button_text}
-              className="!hidden sm:!flex"
-            />
-            <FreeAccountButton
-              showIcon={false}
-              text={mobileBtn}
-              className="flex sm:!hidden"
-            />
-            <CardRequiredButton text={ncc_text} />
-          </CardReveal>
+            <TextAnimation animateOnScroll={false} delay={0.2}>
+              <h1 className="main-heading gradient-text">{hero_title}</h1>
+            </TextAnimation>
+            <TextAnimation animateOnScroll={false} delay={0.35}>
+              <p className="text-decemberSky text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
+                {hero_description}
+              </p>
+            </TextAnimation>
+            <div className="mt-2 flex w-fit flex-col items-center gap-2.5 sm:mt-0">
+              <CardReveal
+                className="hidden h-10 sm:flex"
+                distance={50}
+                delay={0.5}
+                animateOnMount={true}
+              >
+                <FreeAccountButton showIcon={false} text={cta_button_text} />
+              </CardReveal>
+              <CardReveal
+                className="flex sm:hidden"
+                distance={50}
+                delay={0.6}
+                animateOnMount={true}
+              >
+                <FreeAccountButton showIcon={false} text={mobileBtn} />
+              </CardReveal>
+              <CardReveal distance={50} delay={0.6}>
+                <CardRequiredButton text={ncc_text} />
+              </CardReveal>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="3xl:right-[0%] absolute top-0 -z-10 aspect-video h-full max-h-[1200px] w-full object-bottom lg:right-[-15%] lg:max-h-[750px]">
-        <VideoOptimizer
-          highResUrl={"/video/hero-video.mp4"}
-          lowResUrl={"/video/hero-video-higher.mp4"}
-        />
-        <Image
-          loading="lazy"
-          fill
-          className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"
-          src={"/images/webp/hero-video-ovelay.webp"}
-          alt="hero-video-ovelay"
-        />
-        <div className="bg-kuroiBlack absolute bottom-[-3px] z-[9999] hidden h-[10px] w-full lg:block"></div>
+        <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom lg:w-[64%]">
+          <div className="relative -z-10 h-full w-full">
+            <VideoOptimizer
+              highResUrl={"/video/hero-video-higher.mp4"}
+              lowResUrl={"/video/hero-video.mp4"}
+              videoUrl={homePageContent?.hero_image?.url}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

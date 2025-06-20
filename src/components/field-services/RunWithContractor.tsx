@@ -6,6 +6,7 @@ import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "./RunWithContractorMobile";
 import { TheServiceProps } from "../crmbussiness/KindAdorable";
 import { debugLog } from "@/utils/getConsole";
+import TextAnimation from "../common/TextAnimation";
 const run_contractor = [
   {
     their: "Calling or texting each tech to check availability",
@@ -45,9 +46,12 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
   debugLog("KINDA", kindAdorable);
   return (
     <section className="relative z-20 bg-white pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
-      <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
-        {kindAdorable?.title}
-      </h3>
+      <TextAnimation animateOnScroll={true} delay={0}>
+        <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
+          {kindAdorable?.title}
+        </h3>
+      </TextAnimation>
+
       {/* Desktop view  */}
       <div className="mx-auto hidden w-full max-w-[1213px] space-y-5 px-4 md:block">
         <div className="grid grid-cols-2">

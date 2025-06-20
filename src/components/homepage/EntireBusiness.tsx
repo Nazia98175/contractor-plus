@@ -7,15 +7,18 @@ interface EntireBusiness {
   btnTxt: string;
   mobileBtn: string;
   url: string;
+  
 }
 interface TheEntireBusinessProps {
   entireBusiness: EntireBusiness[];
   ncc_text: string;
+  mobileBtn: string;
 }
 
 const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   entireBusiness,
   ncc_text,
+  mobileBtn
 }) => {
   return (
     <div className="relative z-10 px-2 pt-[38px] pb-7 md:py-11">
@@ -24,7 +27,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
         sub_title={entireBusiness?.[0]?.sub_title}
         placeholder={entireBusiness?.[1]?.txt}
         createBtn={entireBusiness?.[2]?.btnTxt}
-        mobileBtn={entireBusiness?.[1]?.mobileBtn}
+        mobileBtn={mobileBtn}
         ncc={ncc_text}
       />
     </div>

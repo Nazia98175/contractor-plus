@@ -24,8 +24,6 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         </h2>
       )}
       <CardReveal
-        staggerDelay={0.4}
-        animationDuration={0.8}
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >

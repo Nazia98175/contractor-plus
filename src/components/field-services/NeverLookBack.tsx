@@ -7,7 +7,7 @@ import { Props } from "../crmbussiness/TeamsUsingContractor";
 const NeverLookBack: React.FC<Props> = ({ data }) => {
   debugLog("data", data);
   return (
-    <section className="no-scrollbar relative z-10 w-full bg-white pt-14 sm:pt-[70px]">
+    <section className="no-scrollbar relative z-10 w-full bg-white pt-[50px] sm:pt-14 md:pt-[70px]">
       <div className="absolute -top-0.5 z-[2] hidden h-3 w-full bg-white sm:block"></div>
       <img
         src="/images/webp/red-linear-bg.webp"
@@ -21,24 +21,25 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       />
 
       <h3 className="sub-heading text-winterWay mb-[13px] hidden text-center font-semibold sm:block">
-        {/* Teams that switch to Contractor+ never look back */}
         {data?.title}
       </h3>
       <h3 className="crm-gradient mx-auto mb-[9px] block max-w-[307px] text-center text-[19px] font-extrabold sm:hidden">
-        {/* Teams that switch to Contractor+ never look back */}
         {data?.title}
       </h3>
       <p className="paragraph-text gradient-text-2 text-center leading-[124%] sm:hidden">
-        {/* We help you get ahead, not just get by */}
         {data?.sub_title}
       </p>
       <p className="paragraph-text text-darkness hidden text-center leading-[124%] font-semibold sm:block">
-        {/* We help you get ahead, not just get by */}
         {data?.sub_title}
       </p>
       <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
         {data?.cards?.map((item: any, index: any) => (
-          <SoftwareUsed key={index} item={item} />
+          <SoftwareUsed
+            key={index}
+            item={item}
+            icons={data?.images}
+            index={index}
+          />
         ))}
       </div>
       <AwardsTagsImg />

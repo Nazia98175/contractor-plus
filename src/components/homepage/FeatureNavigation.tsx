@@ -129,7 +129,6 @@ const FeatureNavigation = ({
           ref={indicatorRef}
           className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black"
           style={{
-            // Smooth transition for indicator movement
             transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             transform: "translate(-50%, 6px)",
           }}
@@ -140,7 +139,9 @@ const FeatureNavigation = ({
       <div
         className="no-scrollbar relative z-[99] flex flex-row gap-[22px] overflow-auto bg-white py-2 whitespace-nowrap lg:flex-col lg:py-0"
         style={{
-          contain: "layout",
+          WebkitOverflowScrolling: "touch",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
       >
         {features?.map((feature, index) => (
@@ -150,7 +151,7 @@ const FeatureNavigation = ({
             }}
             onClick={() => onFeatureClick(index)}
             key={feature}
-            className={`feature-btn truncate lg:w-[180px] ${
+            className={`feature-btn w-full lg:w-[180px] lg:truncate ${
               isMobile ? "text-sm" : ""
             } cursor-pointer transition-colors duration-200 ${
               index === activeFeature

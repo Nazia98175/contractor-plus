@@ -51,7 +51,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
     <div className="mr-5 !h-auto">
       <article
         onClick={openModal}
-        className={`group trusted-service relative flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${styles.container}`}
+        className={`group trusted-service flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">

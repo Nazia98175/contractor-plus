@@ -26,8 +26,8 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   }, []);
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
-      <HerosectionBackground />
-      <div className="relative mx-auto w-full max-w-[1920px] pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
+      {/* <HerosectionBackground /> */}
+      <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
         <div className="main-container relative z-10 flex items-end">
           <div
             ref={wrapperRef}
@@ -51,14 +51,14 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 />
               </CardReveal>
 
-              <CardReveal distance={50} delay={0.7}>
+              <CardReveal distance={50} delay={0.6}>
                 <FreeAccountButton
                   showIcon={false}
                   text={mobileBtn}
                   className="flex sm:!hidden"
                 />
               </CardReveal>
-              <CardReveal distance={50} delay={0.9}>
+              <CardReveal distance={50} delay={0.6}>
                 <CardRequiredButton text={ncc_text} />
               </CardReveal>
             </div>

@@ -105,6 +105,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             slug={useParams?.slug}
             fieldService={section4?.data?.[0]?.fieldService}
             theme={theme}
+            apiData={true}
           />
 
           <div className="bg-white">

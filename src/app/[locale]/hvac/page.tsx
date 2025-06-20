@@ -25,6 +25,7 @@ import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
+import { getHomepageData } from "@/services/homePage/getHomepageData";
 
 export const metadata = {
   title: "Contractor + - HVAC Software",
@@ -74,6 +75,7 @@ const page = async ({ params }: PageProps) => {
     getCrmPage("crm", useParams.locale, "&populate=*"),
   ]);
 
+  const { homePageContent } = await getHomepageData(useParams?.locale);
   return (
     <>
       <div className="bg-white">
@@ -113,10 +115,9 @@ const page = async ({ params }: PageProps) => {
           mobileBtn="Download App"
           mobileBtnHref="/app-download"
         />
-
         <TrustBarHvca platforms={platforms} />
       </div>
-      {/* <WhatEverClient data={homePageContent?.data?.whateverOperation} /> */}
+      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
       <HvacFaq
         faqitems={{
           title: "What HVAC contractors want to know",

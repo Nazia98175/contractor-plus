@@ -8,9 +8,16 @@ interface Props {
   slug: string;
   idx: any;
   theme: "light" | "dark" | "estimateTheme";
+  apiData: boolean;
 }
 
-const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
+const FieldServiceCard: React.FC<Props> = ({
+  service,
+  slug,
+  idx,
+  theme,
+  apiData = true,
+}) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
   console.log("data", service);
@@ -103,17 +110,27 @@ const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
 
       {/* Desktop image */}
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
-        <Image
-          src={
-            service?.cardImg?.url
-              ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
-              : "/placeholder.png"
-          }
-          alt={service?.title || "service image"}
-          width={518}
-          height={302}
-          className="h-auto w-full rounded-lg object-cover"
-        />
+        {apiData ? (
+          <Image
+            src={
+              service?.cardImg?.url
+                ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+                : "/placeholder.png"
+            }
+            alt={service?.title || "service image"}
+            width={518}
+            height={302}
+            className="h-auto w-full rounded-lg object-cover"
+          />
+        ) : (
+          <Image
+            src={`${service.cardImg}`}
+            alt={service?.title || "service image"}
+            width={518}
+            height={302}
+            className="h-auto w-full rounded-lg object-cover"
+          />
+        )}
       </div>
     </article>
   );

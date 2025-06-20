@@ -11,6 +11,7 @@ export interface TheServiceProps {
   fieldService: any;
   slug?: string;
   theme: "light" | "dark" | "estimateTheme";
+  apiData?: boolean;
 }
 
 gsap.registerPlugin(useGSAP);
@@ -20,6 +21,7 @@ const FieldService: React.FC<TheServiceProps> = ({
   fieldService,
   slug,
   theme,
+  apiData = true,
 }) => {
   const t = useTranslations();
 
@@ -39,6 +41,7 @@ const FieldService: React.FC<TheServiceProps> = ({
         theme={theme}
         slug={slug || ""}
         fieldService={fieldService}
+        apiData={apiData}
       />
     </section>
   );

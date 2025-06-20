@@ -43,20 +43,21 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               </p>
             </TextAnimation>
             <div className="mt-2 flex w-fit flex-col items-center gap-2.5 sm:mt-0">
-              <CardReveal distance={50} delay={0.5}>
-                <FreeAccountButton
-                  showIcon={false}
-                  text={cta_button_text}
-                  className="!hidden sm:!flex"
-                />
+              <CardReveal
+                className="hidden h-10 sm:flex"
+                distance={50}
+                delay={0.5}
+                animateOnMount={true}
+              >
+                <FreeAccountButton showIcon={false} text={cta_button_text} />
               </CardReveal>
-
-              <CardReveal distance={50} delay={0.6}>
-                <FreeAccountButton
-                  showIcon={false}
-                  text={mobileBtn}
-                  className=""
-                />
+              <CardReveal
+                className="flex sm:hidden"
+                distance={50}
+                delay={0.6}
+                animateOnMount={true}
+              >
+                <FreeAccountButton showIcon={false} text={mobileBtn} />
               </CardReveal>
               <CardReveal distance={50} delay={0.6}>
                 <CardRequiredButton text={ncc_text} />

@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Map from "react-map-gl/maplibre";
 import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
 import { reverseGeocode } from "@/services/map";
+import { LocationIcon } from "../common/Icons";
 
 interface GeolocationData {
   latitude: number;
@@ -106,8 +107,8 @@ const FieldServiceMap: React.FC = () => {
         )}
       </div>
 
-      {/* {processedLocation?.city && (
-        <div className="absolute top-[53%] right-[17%] z-20 transform">
+      {processedLocation?.city && (
+        <div className="absolute top-[34%] right-[35%] z-20 transform sm:top-[32%] sm:right-[42%] lg:top-[60%] lg:right-[12%] xl:top-[53%] xl:right-[17%]">
           <div className="flex items-center gap-2.5 rounded-lg bg-[#ffffff1a] p-1.5 text-white backdrop-blur-[3px]">
             <LocationIcon />
             <b className="text-sm leading-normal text-white lg:text-base">
@@ -116,7 +117,7 @@ const FieldServiceMap: React.FC = () => {
             </b>
           </div>
         </div>
-      )} */}
+      )}
     </>
   );
 };

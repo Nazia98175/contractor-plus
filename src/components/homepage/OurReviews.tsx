@@ -81,7 +81,6 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               </span>
             </div>
             <p className="text-winterWay font-jakarta pt-1 text-center text-xs font-medium md:text-start">
-              {/* {t("basedOn", { count: 1320 })} */}
               {reviews?.[0]?.sub_title?.split("4.9")?.[1] ?? ""}
             </p>
           </div>

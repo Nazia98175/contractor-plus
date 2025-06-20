@@ -266,7 +266,7 @@ body {
   animation: bounce 1.2s ease-in-out infinite;
 }
 html::-webkit-scrollbar {
-  @apply hidden;
+  @apply hidden w-0;
 }
 
 .whatever-border-layer-1 {

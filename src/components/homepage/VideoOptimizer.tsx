@@ -6,7 +6,7 @@ interface VideoOptimizerProps {
   highResUrl: string;
   poster?: string;
   type?: string;
-  videoUrl: string;
+  videoUrl?: string;
 }
 const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   lowResUrl,
@@ -44,6 +44,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
     }
     checkConnectionAndLoadVideo();
   }, [lowResUrl, highResUrl]);
+
   const performSpeedTest = (): Promise<boolean> => {
     return new Promise((resolve) => {
       const startTime = Date.now();
@@ -77,7 +78,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             onError={(e) => console.error("Video load error:", e)}
             // onLoadStart={() => console.log("Video loading started")}
             // onCanPlay={() => console.log("Video can play")}
-            className="3xl:object-cover h-full min-h-[500px] w-full object-cover lg:object-center"
+            className="h-full min-h-[500px] w-full object-cover lg:object-right"
           >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.

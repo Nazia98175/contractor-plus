@@ -8,6 +8,7 @@ import {
   BellIcon,
   BigChiefAIIcon,
   BigChiefIcon,
+  BookPingIcon,
   ClientIcon,
   EstimatesAiIcon,
   EstimatesIcon,
@@ -70,6 +71,7 @@ const FeaturesDropdown: React.FC<Props> = ({
     PropertyProfiles: <PropertyProfilesIcon />,
     ServiceRequests: <ServiceRequestsIcon />,
     BigChief: <BigChiefIcon />,
+    BookPing: <BookPingIcon />,
   };
 
   if (!isVisible) {

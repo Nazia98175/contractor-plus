@@ -69,6 +69,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             <VideoOptimizer
               highResUrl={"/video/hero-video.mp4"}
               lowResUrl={"/video/hero-video-higher.mp4"}
+              videoUrl={homePageContent?.hero_image?.url}
             />
             {/* <div className="ccc absolute top-0 left-0 z-50 h-full w-full bg-black"></div> */}
           </div>

@@ -16,7 +16,7 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getCrmPage } from "@/services/crm";
-import { getHomePage } from "@/services/homepage";
+import { getHomePage } from "@/services/homePage/homepage";
 import { getUserLoc } from "@/services/map";
 
 export const metadata = {

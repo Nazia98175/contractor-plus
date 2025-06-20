@@ -6,6 +6,7 @@ interface VideoOptimizerProps {
   highResUrl: string;
   poster?: string;
   type?: string;
+  videoUrl: string;
 }
 const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   lowResUrl,

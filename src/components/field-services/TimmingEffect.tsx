@@ -319,22 +319,9 @@ const TimmingEffect = () => {
 
   return (
     <div className="relative">
-      <section
-        // ref={timelineWrapperRef}
-
-        className="relative min-h-[100vh] bg-white" // Back to original height
-      >
+      <section className="relative min-h-[100vh] bg-white">
         <TextAnimation animateOnScroll={true} delay={0}>
-          <h2
-            style={{
-              background:
-                "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-            className="section-heading relative z-[4] px-2 text-center"
-          >
+          <h2 className="section-heading relative z-[4] bg-[linear-gradient(276deg,rgba(238,30,37,0.4)_8%,_rgba(0,0,0,0)_100%),_#D8D8D8] bg-clip-text px-2 text-center text-transparent">
             A system that finally connects field and office
           </h2>
         </TextAnimation>

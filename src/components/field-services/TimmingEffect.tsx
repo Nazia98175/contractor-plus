@@ -9,7 +9,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import TimeAnimation from "./TimeAnimation";
 import { useGSAP } from "@gsap/react";
-import { stepOneAnimation, stepTwoAnimation } from "./animations";
+import {
+  stepFiveAnimation,
+  stepFourAnimation,
+  stepOneAnimation,
+  stepSevenAnimation,
+  stepSixAnimation,
+  stepThreeAnimation,
+  stepTwoAnimation,
+} from "./animations";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -21,297 +29,52 @@ const TimmingEffect = () => {
   console.log(timelineWrapperRef, "timelineWrapperRef");
   console.log("====================================");
   useGSAP(() => {
-    // if (typeof window === "undefined") return;
-    // setTimeout(() => {
-    const firstStepUpperMin = 6450;
-    const secondStepUpperMin = 8900;
-    const thirdStepUpperMin = 14150;
-    const fourStepUpperMin = 18650;
-    const fiveStepUpperMin = 22400;
-    const sixStepUpperMin = 26900;
-    const seventhStepUpperMin = 34400;
     const scrollTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#timeline-wrapper",
         start: "top 0%",
-        end: `+=${window.innerHeight * 6}`,
+        end: `+=${window.innerHeight * 8}`,
         pin: true,
         scrub: 1,
-        markers: true,
+        markers: false,
       },
     });
 
     // STEP ONE ANIMATION
+    // TIll 8:10AM
     scrollTimeline.add(stepOneAnimation());
-
     scrollTimeline.addPause(1);
+
     // STEP TWO ANIMATION
+    // TIll 9:00AM
     scrollTimeline.add(stepTwoAnimation());
     scrollTimeline.addPause(2);
+
     // STEP THREE ANIMATION
-    scrollTimeline
-      .to(
-        ".upper-minute-time",
-        {
-          y: -thirdStepUpperMin - 50,
-          ease: "expo.inOut",
-        },
-        "step-3",
-      )
+    // TIll 10:45AM
+    scrollTimeline.add(stepThreeAnimation());
+    scrollTimeline.addPause(4);
 
-      .to(
-        ".middle-minute-time",
-        {
-          y: -thirdStepUpperMin - 100,
-          ease: "expo.inOut",
-        },
-        "step-3",
-      )
-      .to(
-        ".bottom-minute-time",
-        {
-          y: -thirdStepUpperMin - 150,
-          ease: "expo.inOut",
-        },
-        "step-3",
-      )
-      .to(
-        ".upper-hour-time",
-        {
-          y: -400,
-          ease: "expo.inOut",
-        },
-        "step-3",
-      )
-      .to(
-        ".middle-hour-time",
-        {
-          y: -450,
-          ease: "expo.inOut",
-        },
-        "step-3",
-      )
-      .to(
-        ".bottom-hour-time",
-        {
-          y: -500,
-          ease: "expo.inOut",
-        },
-        "step-3",
-      );
-    scrollTimeline.addPause(2);
     // STEP FOUR ANIMATION
-    scrollTimeline
-      .to(
-        ".upper-minute-time",
-        {
-          y: -fourStepUpperMin - 50,
-          ease: "expo.inOut",
-        },
-        "step-4",
-      )
-      .to(
-        ".middle-minute-time",
-        {
-          y: -fourStepUpperMin - 100,
-          ease: "expo.inOut",
-        },
-        "step-4",
-      )
-      .to(
-        ".bottom-minute-time",
-        {
-          y: -fourStepUpperMin - 150,
-          ease: "expo.inOut",
-        },
-        "step-4",
-      )
-      .to(
-        ".upper-hour-time",
-        {
-          y: -500,
-          ease: "expo.inOut",
-        },
-        "step-4",
-      )
-      .to(
-        ".middle-hour-time",
-        {
-          y: -550,
-          ease: "expo.inOut",
-        },
-        "step-4",
-      )
-      .to(
-        ".bottom-hour-time",
-        {
-          y: -600,
-          ease: "expo.inOut",
-        },
-        "step-4",
-      );
-    scrollTimeline.to(
-      "#am-pm-wrapper",
-      {
-        y: -50,
-        ease: "none",
-        duration: 0.06,
-        delay: 0.31,
-      },
-      "step-4",
-    );
+    // TIll 12:45PM
+    scrollTimeline.add(stepFourAnimation());
+    scrollTimeline.addPause(6);
+
     // STEP FIVE ANIMATION
-    scrollTimeline
-      .to(
-        ".upper-minute-time",
-        {
-          y: -fiveStepUpperMin - 50,
-          ease: "expo.inOut",
-        },
-        "step-5",
-      )
-      .to(
-        ".middle-minute-time",
-        {
-          y: -fiveStepUpperMin - 100,
-          ease: "expo.inOut",
-        },
-        "step-5",
-      )
-      .to(
-        ".bottom-minute-time",
-        {
-          y: -fiveStepUpperMin - 150,
-          ease: "expo.inOut",
-        },
-        "step-5",
-      )
-      .to(
-        ".upper-hour-time",
-        {
-          y: -550,
-          ease: "expo.inOut",
-        },
-        "step-5",
-      )
-      .to(
-        ".middle-hour-time",
-        {
-          y: -600,
-          ease: "expo.inOut",
-        },
-        "step-5",
-      )
-      .to(
-        ".bottom-hour-time",
-        {
-          y: -650,
-          ease: "expo.inOut",
-        },
-        "step-5",
-      );
+    // TIll 1:30PM
+    scrollTimeline.add(stepFiveAnimation());
+    scrollTimeline.addPause(4);
 
-    scrollTimeline.addPause(2);
+    // STEP SIX ANIMATION
+    // TIll 3:00PM
+    scrollTimeline.add(stepSixAnimation());
+    scrollTimeline.addPause(4);
 
-    scrollTimeline
-      .to(
-        ".upper-minute-time",
-        {
-          y: -sixStepUpperMin - 50,
-          ease: "expo.inOut",
-        },
-        "step-6",
-      )
-      .to(
-        ".middle-minute-time",
-        {
-          y: -sixStepUpperMin - 100,
-          ease: "expo.inOut",
-        },
-        "step-6",
-      )
-      .to(
-        ".bottom-minute-time",
-        {
-          y: -sixStepUpperMin - 150,
-          ease: "expo.inOut",
-        },
-        "step-6",
-      )
-      .to(
-        ".upper-hour-time",
-        {
-          y: -650,
-          ease: "expo.inOut",
-        },
-        "step-6",
-      )
-      .to(
-        ".middle-hour-time",
-        {
-          y: -700,
-          ease: "expo.inOut",
-        },
-        "step-6",
-      )
-      .to(
-        ".bottom-hour-time",
-        {
-          y: -750,
-          ease: "expo.inOut",
-        },
-        "step-6",
-      );
+    // STEP SEVEN ANIMATION
+    // TIll 5:30PM
+    scrollTimeline.add(stepSevenAnimation());
+    scrollTimeline.addPause(4);
 
-    scrollTimeline
-      .to(
-        ".upper-minute-time",
-        {
-          y: -seventhStepUpperMin - 50,
-          ease: "expo.inOut",
-        },
-        "step-7",
-      )
-      .to(
-        ".middle-minute-time",
-        {
-          y: -seventhStepUpperMin - 100,
-          ease: "expo.inOut",
-        },
-        "step-7",
-      )
-      .to(
-        ".bottom-minute-time",
-        {
-          y: -seventhStepUpperMin - 150,
-          ease: "expo.inOut",
-        },
-        "step-7",
-      )
-      .to(
-        ".upper-hour-time",
-        {
-          y: -750,
-          ease: "expo.inOut",
-        },
-        "step-7",
-      )
-      .to(
-        ".middle-hour-time",
-        {
-          y: -800,
-          ease: "expo.inOut",
-        },
-        "step-7",
-      )
-      .to(
-        ".bottom-hour-time",
-        {
-          y: -850,
-          ease: "expo.inOut",
-        },
-        "step-7",
-      );
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
@@ -320,8 +83,6 @@ const TimmingEffect = () => {
   return (
     <div className="relative">
       <section
-        // ref={timelineWrapperRef}
-
         className="relative min-h-[100vh] bg-white" // Back to original height
       >
         <h2
@@ -347,29 +108,96 @@ const TimmingEffect = () => {
           {/* SUN IMAGE  */}
           <div
             id="sun-wrapper"
-            className="sun-bg absolute -top-[5%] -right-[20%] z-[3] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:h-[400] xl:w-[400px]"
+            className="sun-bg absolute -top-[5%] -right-[20%] z-[13] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:h-[400] xl:w-[400px]"
           ></div>
           {/* TOP WHITE BLUR LINE  */}
-          <div className="absolute -top-[17%] left-1/2 z-[3] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
+          <div className="absolute -top-[17%] left-1/2 z-[10000] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
           {/* BOTTOM WHITE BLUR LINE  */}
-          <div className="absolute -bottom-[25%] left-1/2 z-[3] h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[25px] md:h-[250px]"></div>
-
+          {/* <div className="absolute -bottom-[25%] left-1/2 z-[3] h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-red-400 blur-[25px] md:h-[250px]"></div> */}
           {/* ORANGE BLUR LINEAR BACKGROUND  */}
-          <div className="sun-reflect absolute right-0 h-full w-full rotate-180"></div>
-          {/* CLOUD IMAGE 1  */}
+          {/* <div className="sun-reflect absolute top-[-7.29vw] right-[-13.5vw] z-[20] h-[25.64vw] w-[25.64vw] rotate-180"></div> */}
+          {/* INITIAL CLOUD 1  */}
           <img
-            id="cloud-1"
-            className="absolute top-[-30%] right-[-14%] z-[2] w-full max-w-[300px] -rotate-20 object-cover opacity-40 md:right-0 md:opacity-100"
-            src="/images/png/timming-effect-cloud-2.png"
-            alt="Claud For design"
+            src="/images/png/initial-cloud.png"
+            id="initial-cloud"
+            className="absolute top-0 z-[21] w-full"
+            alt=""
           />
-          {/* CLOUD IMAGE 2  */}
+          {/* STEP 1 CLOUD */}
           <img
-            id="cloud-2"
-            className="absolute top-0 left-0 z-[1] max-h-[305px] w-full object-center opacity-40 md:opacity-100"
-            src="/images/webp/timming-effect-cloud-1.webp"
-            alt="Claud For design"
+            src="/images/png/step-1-cloud.png"
+            id="step-1-cloud"
+            className="absolute top-0 z-[21] w-full opacity-0"
+            alt=""
           />
+          {/* STEP 2 CLOUD */}
+          <img
+            src="/images/png/step-2-cloud.png"
+            id="step-2-cloud"
+            className="absolute top-0 z-[21] w-full opacity-0"
+            alt=""
+          />
+          {/* STEP 3 CLOUD */}
+          <img
+            src="/images/png/step-3-cloud.png"
+            id="step-3-cloud"
+            className="absolute top-0 z-[21] w-full opacity-0"
+            alt=""
+          />{" "}
+          {/* STEP 4 CLOUD */}
+          <img
+            src="/images/png/step-4-cloud.png"
+            id="step-4-cloud"
+            className="absolute top-0 z-[21] w-full opacity-0"
+            alt=""
+          />
+          {/* STEP 6 CLOUD */}
+          <img
+            src="/images/png/step-6-cloud.png"
+            id="step-6-cloud"
+            className="absolute top-0 z-[21] w-full opacity-0"
+            alt=""
+          />{" "}
+          {/* STEP 7 CLOUD */}
+          <img
+            src="/images/png/step-7-cloud.png"
+            id="step-7-cloud"
+            className="absolute top-0 z-[21] w-full opacity-0"
+            alt=""
+          />
+          {/* ENVIRONMENT BACKGROUND GRADIENT */}
+          <div
+            id="bg-initial"
+            className="bg-gradient-initial absolute top-0 left-0 h-full w-full"
+          ></div>
+          <div
+            id="bg-step-1"
+            className="bg-gradient-step-1 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
+          <div
+            id="bg-step-2"
+            className="bg-gradient-step-2 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
+          <div
+            id="bg-step-3"
+            className="bg-gradient-step-3 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
+          <div
+            id="bg-step-4"
+            className="bg-gradient-step-4 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
+          <div
+            id="bg-step-5"
+            className="bg-gradient-step-5 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
+          <div
+            id="bg-step-6"
+            className="bg-gradient-step-6 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
+          <div
+            id="bg-step-7"
+            className="bg-gradient-step-7 absolute top-0 left-0 h-full w-full opacity-0"
+          ></div>
           <div className="relative z-20 mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
             <div className="flex items-center">
               <TimeAnimation />

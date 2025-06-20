@@ -36,7 +36,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item, icons, index }) => {
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
     >
       {icons && index !== undefined && (
-        <div className="aspect-[1/1]] relative size-7 fill-white sm:size-8">
+        <div className="relative aspect-[1/1] size-7 sm:size-8">
           <Image
             src={
               `${imageBaseUrl.split("api")[0].slice(0, -1)}${icons[index]?.url}` ||

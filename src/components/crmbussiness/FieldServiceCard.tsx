@@ -13,7 +13,7 @@ interface Props {
 const FieldServiceCard: React.FC<Props> = ({ service, slug, idx, theme }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
-
+  console.log("data", service);
   const themeColors = {
     light: {
       titleColor:

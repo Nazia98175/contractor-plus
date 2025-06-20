@@ -20,7 +20,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
           height={205}
           src={show.image}
           alt={show.title}
-          className="relative w-full object-cover"
+          className="relative w-full rounded-md object-cover"
         />
       </div>
     </TiltedCardEffect>

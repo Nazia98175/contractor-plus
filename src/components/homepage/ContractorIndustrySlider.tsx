@@ -1,10 +1,8 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import "swiper/css/effect-coverflow";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
-import TiltedCardEffect from "../common/TiltedCardEffect";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
 import Link from "next/link";
 

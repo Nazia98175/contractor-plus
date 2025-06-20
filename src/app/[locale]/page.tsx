@@ -11,8 +11,7 @@ import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import { getBlogs } from "@/services/blogs";
-import { getHomePage } from "@/services/homepage";
+import { getHomepageData } from "@/services/homePage/getHomepageData";
 
 export default async function Home({
   params,
@@ -20,34 +19,19 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const useParams = await params;
-  // const [homePageContent, contractPlatformsData, blogs, footer] =
-  const [
+
+  const {
     homePageContent,
     contractPlatformsData,
     reviewsList,
     coreFeatures,
     blogs,
-  ] = await Promise.all([
-    getHomePage(useParams.locale, "&populate=*"),
-    getHomePage(
-      useParams.locale,
-      "&populate[platforms][populate][platforms][populate]=image&populate[platforms][populate]=title",
-    ),
-    getHomePage(
-      useParams?.locale,
-      "&populate[review][on][common.reviews][populate]=*",
-    ),
-    getHomePage(
-      useParams?.locale,
-      "&populate[coreFeatures][on][sections.features-section][populate][cardsDetail][populate][cardImg]=true&populate[coreFeatures][on][sections.features-section][populate][cardsDetail][populate][content]=*",
-    ),
-    //&populate[platforms][populate][title]=*&populate[platforms][populate][platforms]=*
-    getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-  ]);
+  } = await getHomepageData(useParams?.locale);
 
+  console.log(homePageContent, "home");
   return (
     <div className="relative">
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <Hero homePageContent={homePageContent?.data} />
         <TrustBar
           platforms={platforms}
@@ -77,6 +61,7 @@ export default async function Home({
       <EntireBusiness
         entireBusiness={homePageContent?.data?.entireBusiness}
         ncc_text={homePageContent?.data?.ncc_text}
+        mobileBtn={homePageContent?.data?.mobileBtn}
       />
     </div>
   );

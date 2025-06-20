@@ -26,7 +26,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   }, []);
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
-      {/* <HerosectionBackground /> */}
+      <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
         <div className="main-container relative z-10 flex items-end">
           <div
@@ -69,17 +69,9 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             <VideoOptimizer
               highResUrl={"/video/hero-video.mp4"}
               lowResUrl={"/video/hero-video-higher.mp4"}
+              videoUrl={homePageContent?.hero_image?.url}
             />
-            {/* <div className="ccc absolute top-0 left-0 z-50 h-full w-full bg-black"></div> */}
           </div>
-          {/* <Image
-            fill
-            className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"
-            src={"/images/webp/hero-video-ovelay.webp"}
-            alt="hero-video-ovelay"
-            priority
-          /> */}
-          {/* <div className="bg-kuroiBlack absolute bottom-[-3px] z-[9999] hidden h-[10px] w-full lg:block"></div> */}
         </div>
       </div>
     </section>

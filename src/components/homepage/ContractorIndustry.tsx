@@ -42,7 +42,10 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       </span>
       <div className="relative z-20 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
         <div className="px-2">
-          <PrimaryAnimatedText delay={3000}>
+          <PrimaryAnimatedText
+            className="mx-auto w-full max-w-[883px] text-center"
+            delay={3000}
+          >
             <h3 className="section-heading gradient-text text-center">
               {contractorIndustry?.[0]?.title ?? ""}
             </h3>

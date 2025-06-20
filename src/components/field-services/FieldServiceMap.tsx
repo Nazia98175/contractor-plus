@@ -76,7 +76,7 @@ const FieldServiceMap: React.FC = () => {
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-black">
             <div className="text-center">
               <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-white"></div>
-              <p className="text-white">Getting your location...</p>
+              {/* <p className="text-white">Getting your location...</p> */}
             </div>
           </div>
         )}

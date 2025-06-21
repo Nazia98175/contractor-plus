@@ -185,7 +185,7 @@ const ContractorIndustrySlider: React.FC = () => {
         autoplay={{
           delay: 3000,
         }}
-        speed={500}
+        speed={700}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={4}

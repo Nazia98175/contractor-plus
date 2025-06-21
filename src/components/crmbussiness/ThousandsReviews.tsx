@@ -15,6 +15,7 @@ interface Props {
 const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
+  console.log(reviews, "slug crm");
 
   const openModal = (videoUrl: string) => {
     setSelectedVideoUrl(videoUrl);

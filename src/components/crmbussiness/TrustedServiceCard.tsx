@@ -44,7 +44,7 @@ const renderStars = (rating: number) => {
 const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   review,
   openModal,
-  variant = "primary",
+  variant = "secondary",
 }) => {
   const styles = VARIANT_CLASSES[variant];
   return (

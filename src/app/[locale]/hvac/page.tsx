@@ -1,8 +1,4 @@
-import {
-  blackPlatforms,
-  platforms,
-  reviews
-} from "@/components/common/Helper";
+import { blackPlatforms, platforms, reviews } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
@@ -68,7 +64,7 @@ const page = async ({ params }: PageProps) => {
 
   const { homePageContent } = await getHomepageData(useParams?.locale);
   return (
-    <>
+    <main className="overflow-hidden">
       <div className="bg-white">
         <div className="relative">
           <div className="absolute bottom-[205px] left-0 z-50 block h-[45px] w-full bg-white blur-[9px] sm:hidden"></div>
@@ -124,7 +120,7 @@ const page = async ({ params }: PageProps) => {
         className="relative z-20 bg-white"
         variant="secondary"
       />
-    </>
+    </main>
   );
 };
 

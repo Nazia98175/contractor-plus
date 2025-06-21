@@ -132,6 +132,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             />
             <TeamsUsingContractor
               data={section7?.data?.[0]?.teamsUsingContractor}
+              slug={useParams?.slug}
             />
             <ThousandsReviews
               data={crmPageContent?.data?.[0]?.thousandReviews}

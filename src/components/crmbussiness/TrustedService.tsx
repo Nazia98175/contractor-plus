@@ -22,7 +22,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
   return (
     <section className="relative overflow-hidden">
       <CardReveal>
-        <h3 className="section-heading service-text xs:max-w-[90%] relative z-50 mx-auto max-w-[276px] px-3 text-center text-white">
+        <h3 className="section-heading service-text xs:max-w-[90%] relative z-50 mx-auto max-w-[72%] px-3 text-center text-white">
           {reviews?.data?.[0]?.reviews?.title}
         </h3>
       </CardReveal>

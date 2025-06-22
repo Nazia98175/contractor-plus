@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { fieldServiceData } from "../common/Helper";
 import FieldServiceCard from "../crmbussiness/FieldServiceCard";
+import { themeClassMap } from "@/utils/getVariants";
 interface ScrollOverlapCardsProps {
   fieldService: any;
   slug: string;
@@ -75,12 +76,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, [fieldServiceData]);
-  const themeClassMap: Record<string, string> = {
-    light: "wanting-more-bg",
-    dark: "field-service-card",
-    estimateTheme: "estimate-overlap-card",
-    goldTheme: "gold-overlap-card",
-  };
+
   const className = themeClassMap[theme] || "wanting-more-bg";
   return (
     <>

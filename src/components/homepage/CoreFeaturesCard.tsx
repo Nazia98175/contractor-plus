@@ -42,7 +42,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const features: string[] = t.raw("features") || [];
   const featureBtn: string[] = [t.raw("featureBtn") || "Learn More"];
 
-  // Mobile detection
+  // Mobile detection with resize listener
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 1023);
@@ -157,7 +157,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         cancelAnimationFrame(rafId.current);
       }
     };
-  }, [isMobile, isSticky]);
+  }, [isSticky, isMobile]);
 
   // Move indicator - debounced to prevent shaking
   const moveIndicator = useCallback(
@@ -255,14 +255,9 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     >
       <div
         ref={navContainerRef}
-        className={`left-0 z-20 w-fit ${
-          isMobile
-            ? `w-full ${isSticky ? "sticky top-20 right-0 left-0" : "relative"}`
-            : "lg:sticky lg:top-28 lg:self-start"
-        }`}
-        style={{
-          willChange: isMobile ? "transform" : "auto",
-        }}
+        className={`left-0 z-20 w-full ${
+          isSticky ? "sticky top-20" : "relative"
+        } lg:sticky lg:top-28 lg:w-fit lg:self-start`}
       >
         <FeatureNavigation
           features={titles}

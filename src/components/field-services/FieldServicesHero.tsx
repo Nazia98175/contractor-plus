@@ -47,7 +47,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
               {hero?.heroTitle1}
             </div>
           </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0}>
+          <TextAnimation animateOnScroll={false} delay={0.2}>
             <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
               {hero?.heroTitle}
             </h3>
@@ -102,4 +102,3 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
 };
 
 export default FieldServicesHero;
-

@@ -14,7 +14,7 @@ interface CommonFormFieldProps {
   ncc: string;
   showTitle?: boolean;
   showDescription?: boolean;
-  variant?: "default" | "dark" | "light";
+  variant?: "default" | "primary" | "secondary";
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({
@@ -50,7 +50,6 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   const getVariantStyles = () => {
     return variantsForm[variant];
   };
-
   const variantStyles = getVariantStyles();
 
   return (
@@ -58,7 +57,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       {showTitle && (
         <TextAnimation animateOnScroll={false} delay={0.2}>
           <h3
-            className={`section-heading mx-auto max-w-[780px] pb-2 text-center ${variantStyles.title}`}
+            className={`mx-auto max-w-[780px] pb-2 text-center ${variantStyles.title}`}
           >
             {title}
           </h3>

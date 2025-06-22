@@ -22,7 +22,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   return (
     <div className="relative z-10 px-2 pt-[38px] pb-7 md:py-11">
       <CommonFormField
-        variant="dark"
+        variant="primary"
         title={entireBusiness?.[0]?.title}
         sub_title={entireBusiness?.[0]?.sub_title}
         placeholder={entireBusiness?.[1]?.txt}

@@ -11,13 +11,13 @@ export const variantsForm = {
     subtitle: "text-secondary",
     input: "bg-white text-gray-900 placeholder:text-secondary",
   },
-  dark: {
-    title: "text-decemberSky sub-heading",
+  primary: {
+    title: "text-decemberSky sub-heading font-extrabold",
     subtitle: "text-decemberSky",
     input:
       "bg-lightBlack text-white placeholder:text-white border-b border-white",
   },
-  light: {
+  secondary: {
     title: "text-gray-900",
     subtitle: "text-gray-600",
     input: "bg-gray-100 text-gray-900 placeholder:text-gray-500",

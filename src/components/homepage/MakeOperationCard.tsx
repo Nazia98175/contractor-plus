@@ -1,4 +1,3 @@
-import Lottie from "lottie-react";
 import React from "react";
 import CountUp from "react-countup";
 import LottieAnimation from "../common/LottieAnimation";

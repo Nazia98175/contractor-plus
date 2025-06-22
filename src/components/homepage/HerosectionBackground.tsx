@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const HerosectionBackground = () => {
@@ -11,18 +10,11 @@ const HerosectionBackground = () => {
         alt="hero-red-line"
       />
       <img
-        className="absolute top-[36%] flex h-full w-[110%] object-center sm:hidden"
+        className="absolute top-[46%] flex h-full w-[110%] object-center sm:hidden"
         src={"/images/webp/hero-red-line-mobile.webp"}
         alt="hero-red-line"
       />
-      {/* <Image
-        width={769}
-        height={800}
-        priority
-        src="/images/webp/hero-video-ovelay.webp"
-        alt="Red Circle For designing"
-        className="pointer-events-none absolute top-0 left-0 z-[-1] block h-full w-full object-cover lg:hidden"
-      /> */}
+      <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[10%] -left-[0px] z-0 block h-[16%] w-[139%] blur-[8px]"></div>
     </>
   );
 };

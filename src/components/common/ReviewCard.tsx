@@ -1,4 +1,3 @@
-import React from "react";
 import { PlayIcon, StartIcon } from "./Icons";
 import Image from "next/image";
 import { Review } from "@/types";

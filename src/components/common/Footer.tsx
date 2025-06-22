@@ -61,6 +61,10 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
 
   const variant = pathname.toLowerCase().includes("hvac") ? "light" : "dark";
+  // 👇 Add this condition
+  const isCrmRoute =
+    pathname.toLowerCase().includes("crm") ||
+    pathname.toLowerCase().includes("estimate");
 
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -75,10 +79,38 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     <footer
       className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 md:py-[62px] ${styles.background}`}
     >
-      <span className="pointer-events-none absolute -top-[200px] left-0 hidden max-w-[300px] lg:block xl:top-[-314px] xl:max-w-[550px]">
-        <FooterAnimatedIcon />
-      </span>
-      <BlueIcon className="pointer-events-none absolute top-[-364px] right-0 hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block" />
+      {!isCrmRoute && (
+        <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
+          {variant === "dark" ? (
+            <img
+              className="h-full w-full"
+              src="/images/webp/footer-gradient-dark.webp"
+              alt="footer gradient"
+            />
+          ) : (
+            <img
+              className="h-full w-full"
+              src="/images/webp/footer-gradient.webp"
+              alt="footer gradient"
+            />
+          )}
+
+          {/* <FooterAnimatedIcon /> */}
+        </span>
+      )}
+      {isCrmRoute && (
+        <div className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
+          <img
+            className="h-full w-full"
+            src="/images/webp/footer-gradient-right.webp"
+            alt="footer gradient"
+          />
+        </div>
+      )}
+
+      <BlueIcon
+        className={` ${isCrmRoute ? "top-[-124px] left-0" : "top-[-364px] right-0"} pointer-events-none absolute hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block`}
+      />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
           {variant === "dark" ? <FooterLogoIcon /> : <FooterLightIcon />}
@@ -104,7 +136,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <div key={idx} className="w-full max-w-[150px]">
               <button
                 onClick={() => toggleSection(section.title)}
-                className="flex w-full flex-col justify-between px-4 py-2 text-start"
+                className="flex w-full flex-col justify-between py-2 text-start sm:px-4"
               >
                 <div className="mx-auto flex w-fit items-center justify-between">
                   <h3 className={`text-base font-bold ${styles.sectionTitle}`}>

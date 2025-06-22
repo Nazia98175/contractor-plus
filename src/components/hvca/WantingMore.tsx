@@ -18,6 +18,7 @@ const WantingMore = () => {
         theme="light"
         slug={"testing"}
         fieldService={{ cardsDetail: wantingMoreData }}
+        apiData={false}
       />
     </section>
   );

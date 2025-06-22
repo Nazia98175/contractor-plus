@@ -11,14 +11,18 @@ interface ScrollOverlapCardsProps {
   slug: string;
   theme: "light" | "dark" | "estimateTheme";
   curved?: boolean;
+  apiData?: boolean;
 }
 
 const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   fieldService,
   slug,
   theme,
+  apiData = true,
 }) => {
   const t = useTranslations();
+  console.log(fieldService);
+
   useGSAP(() => {
     if (typeof window === "undefined") return;
     setTimeout(() => {
@@ -102,6 +106,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
                 idx={index}
                 service={service}
                 theme={theme}
+                apiData={apiData}
               />
             </div>
           </div>

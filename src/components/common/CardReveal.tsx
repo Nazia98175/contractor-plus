@@ -6,6 +6,7 @@ interface Props {
   className?: string;
   delay?: number;
   distance?: number;
+  animateOnMount?: boolean; // New prop to force animation on mount
 }
 
 const CardReveal: React.FC<Props> = ({
@@ -13,25 +14,57 @@ const CardReveal: React.FC<Props> = ({
   className = "",
   delay = 0,
   distance = 50,
+  animateOnMount = false,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    // If animateOnMount is true, trigger animation immediately
+    if (animateOnMount && !hasAnimated) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+        setHasAnimated(true);
+      }, 100); // Small delay to ensure CSS transition works
+
+      return () => clearTimeout(timer);
+    }
+
+    // Otherwise use IntersectionObserver
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
+        if (entry.isIntersecting && !hasAnimated) {
           setIsVisible(true);
-          observer.disconnect(); // 🔒 stop after first trigger
+          setHasAnimated(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.2 },
+      {
+        threshold: 0.1,
+        rootMargin: "50px", // Trigger slightly before element is visible
+      },
     );
 
-    if (ref.current) observer.observe(ref.current);
+    if (ref.current) {
+      // Check if element is already in viewport on mount
+      const rect = ref.current.getBoundingClientRect();
+      const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isInViewport && !hasAnimated) {
+        // Element is already visible, trigger animation
+        setTimeout(() => {
+          setIsVisible(true);
+          setHasAnimated(true);
+        }, 100);
+      } else {
+        // Element is not visible, use observer
+        observer.observe(ref.current);
+      }
+    }
 
     return () => observer.disconnect();
-  }, [isVisible]); // ✅ dependency to avoid stale closure
+  }, [hasAnimated, animateOnMount]);
 
   return (
     <div

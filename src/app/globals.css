@@ -266,7 +266,7 @@ body {
   animation: bounce 1.2s ease-in-out infinite;
 }
 html::-webkit-scrollbar {
-  @apply hidden;
+  @apply hidden w-0;
 }
 
 .whatever-border-layer-1 {
@@ -317,12 +317,7 @@ html::-webkit-scrollbar {
     -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
     -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
 }
-/* .swiper-slide {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+
 .blog-post .swiper-pagination-bullet {
   background: #e3e6f0 !important;
   opacity: 1 !important;
@@ -490,6 +485,20 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.timing-gradient {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(238, 30, 37, 0.4) 7.61%,
+      rgba(0, 0, 0, 0) 99.65%
+    ),
+    #d8d8d8;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 @media (max-width: 640px) {
   .gradient-text {
     background:
@@ -509,7 +518,7 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
-.crm-gradient {
+.crm-gradient .line {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
   -webkit-background-clip: text;

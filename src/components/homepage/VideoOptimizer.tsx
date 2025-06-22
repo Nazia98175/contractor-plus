@@ -6,7 +6,7 @@ interface VideoOptimizerProps {
   highResUrl: string;
   poster?: string;
   type?: string;
-  videoUrl: string;
+  videoUrl?: string;
 }
 const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   lowResUrl,
@@ -44,6 +44,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
     }
     checkConnectionAndLoadVideo();
   }, [lowResUrl, highResUrl]);
+
   const performSpeedTest = (): Promise<boolean> => {
     return new Promise((resolve) => {
       const startTime = Date.now();
@@ -77,7 +78,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             onError={(e) => console.error("Video load error:", e)}
             // onLoadStart={() => console.log("Video loading started")}
             // onCanPlay={() => console.log("Video can play")}
-            className="3xl:object-cover h-full min-h-[500px] w-full object-cover lg:object-center"
+            className="h-full min-h-[500px] w-full object-cover lg:object-right"
           >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.
@@ -85,7 +86,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
         </>
       )}
       <div className="bg-kuroiBlack absolute bottom-[-5%] h-[10%] w-[102%] blur-[8px]"></div>
-      <div className="bg-kuroiBlack 3xl:block absolute top-[-2%] right-[-24px] hidden h-[102%] w-[4%] blur-[8px]"></div>
+      <div className="bg-kuroiBlack 3xl:flex absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] blur-[11px]"></div>
     </div>
   );
 };

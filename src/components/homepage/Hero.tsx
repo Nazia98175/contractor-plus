@@ -27,7 +27,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
-      <div className="relative mx-auto w-full max-w-[1920px] pt-[269px] pb-9 md:pb-[100px] lg:pt-[140px] lg:pb-[150px] xl:pb-[196px]">
+      <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] lg:pt-[140px]">
         <div className="main-container relative z-10 flex items-end">
           <div
             ref={wrapperRef}
@@ -42,23 +42,24 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 {hero_description}
               </p>
             </TextAnimation>
-            <div className="mt-2 flex w-full flex-col items-center gap-2.5 sm:mt-0 sm:w-fit">
-              <CardReveal distance={50} delay={0.5}>
-                <FreeAccountButton
-                  showIcon={false}
-                  text={cta_button_text}
-                  className="!hidden sm:!flex"
-                />
+            <div className="mt-2 flex w-fit flex-col items-center gap-2.5 sm:mt-0">
+              <CardReveal
+                className="hidden h-10 sm:flex"
+                distance={50}
+                delay={0.5}
+                animateOnMount={true}
+              >
+                <FreeAccountButton showIcon={false} text={cta_button_text} />
               </CardReveal>
-
-              <CardReveal distance={50} delay={0.7}>
-                <FreeAccountButton
-                  showIcon={false}
-                  text={mobileBtn}
-                  className="flex sm:!hidden"
-                />
+              <CardReveal
+                className="flex sm:hidden"
+                distance={50}
+                delay={0.6}
+                animateOnMount={true}
+              >
+                <FreeAccountButton showIcon={false} text={mobileBtn} />
               </CardReveal>
-              <CardReveal distance={50} delay={0.9}>
+              <CardReveal distance={50} delay={0.6}>
                 <CardRequiredButton text={ncc_text} />
               </CardReveal>
             </div>
@@ -67,20 +68,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
         <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom lg:w-[64%]">
           <div className="relative -z-10 h-full w-full">
             <VideoOptimizer
-              highResUrl={"/video/hero-video.mp4"}
-              lowResUrl={"/video/hero-video-higher.mp4"}
+              highResUrl={"/video/hero-video-higher.mp4"}
+              lowResUrl={"/video/hero-video.mp4"}
               videoUrl={homePageContent?.hero_image?.url}
             />
-            {/* <div className="ccc absolute top-0 left-0 z-50 h-full w-full bg-black"></div> */}
           </div>
-          {/* <Image
-            fill
-            className="absolute -top-[6%] hidden h-[110%] w-full object-cover lg:block"
-            src={"/images/webp/hero-video-ovelay.webp"}
-            alt="hero-video-ovelay"
-            priority
-          /> */}
-          {/* <div className="bg-kuroiBlack absolute bottom-[-3px] z-[9999] hidden h-[10px] w-full lg:block"></div> */}
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ import CrmReviewCard from "./CrmReviewCard";
 interface Props {
   data: any;
   reviews: any;
-  variant?: "primary" | "secondary"; // ✅ restrict variant
+  variant?: "primary" | "secondary";
 }
 
 const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {

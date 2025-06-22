@@ -194,7 +194,7 @@ export const wantingMoreData = [
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    img: "/images/webp/wanting-more-1.webp",
+    cardImg: "/images/webp/wanting-more-1.webp",
   },
   {
     title: "Field Service Management",
@@ -231,7 +231,7 @@ export const wantingMoreData = [
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    img: "/images/webp/wanting-more-2.webp",
+    cardImg: "/images/webp/wanting-more-2.webp",
   },
   {
     title: "CRM",
@@ -268,7 +268,7 @@ export const wantingMoreData = [
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    img: "/images/webp/wanting-more-3.webp",
+    cardImg: "/images/webp/wanting-more-3.webp",
   },
   {
     title: "Estimatic AI",
@@ -301,7 +301,7 @@ export const wantingMoreData = [
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    img: "/images/webp/wanting-more-4.webp",
+    cardImg: "/images/webp/wanting-more-4.webp",
   },
   {
     title: "Big Chief AI",
@@ -326,7 +326,7 @@ export const wantingMoreData = [
     review:
       "I used to spend hours piecing together quotes. Now I can hammer one out in minutes, and my clients love the professional look. ",
     user: "Satisfied Contractor+ User",
-    img: "/images/webp/wanting-more-5.webp",
+    cardImg: "/images/webp/wanting-more-5.webp",
   },
 ];
 

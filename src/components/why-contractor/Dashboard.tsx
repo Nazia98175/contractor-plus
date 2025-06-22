@@ -106,7 +106,9 @@ const Dashboard = () => {
           ].map((text, i) => (
             <div
               key={i}
-              ref={(el) => (itemRefs.current[i] = el)}
+              ref={(el) => {
+                itemRefs.current[i] = el;
+              }}
               className="dashboard-item flex h-fit flex-col items-center justify-center gap-[18px] px-3 text-center max-sm:py-3 sm:gap-3 md:mx-auto md:mt-12 md:max-w-[280px] lg:mt-[72px] lg:max-w-[327px]"
             >
               <p className="dashboard-title text-lg font-semibold duration-300 md:text-base lg:text-lg">

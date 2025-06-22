@@ -7,7 +7,6 @@ interface EntireBusiness {
   btnTxt: string;
   mobileBtn: string;
   url: string;
-  
 }
 interface TheEntireBusinessProps {
   entireBusiness: EntireBusiness[];
@@ -18,11 +17,12 @@ interface TheEntireBusinessProps {
 const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   entireBusiness,
   ncc_text,
-  mobileBtn
+  mobileBtn,
 }) => {
   return (
     <div className="relative z-10 px-2 pt-[38px] pb-7 md:py-11">
       <CommonFormField
+        variant="dark"
         title={entireBusiness?.[0]?.title}
         sub_title={entireBusiness?.[0]?.sub_title}
         placeholder={entireBusiness?.[1]?.txt}

@@ -10,6 +10,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import WhateverBackground from "./WhateverBackground";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -113,7 +114,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               ease: "power2.out",
               scrollTrigger,
             });
-          }, 3000);
+          }, 300);
         };
 
         animate(left1Ref.current, "47%", "25%", -150, -80);
@@ -140,7 +141,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               ease: "power2.out",
               scrollTrigger,
             });
-          }, 3000);
+          }, 300);
         }
       });
     },
@@ -152,52 +153,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       ref={sectionRef}
       className="relative z-10 w-full overflow-hidden px-2"
     >
-      {/* Desktop Background */}
-      {isDesktop && (
-        <Image
-          className="pointer-events-none absolute -top-[42%] right-0 z-10 max-w-[700px] object-cover"
-          src="/images/webp/Whatever-right-bg.webp"
-          width={700}
-          height={300}
-          alt="gradient background"
-        />
-      )}
-
-      {!isDesktop && (
-        <div>
-          <picture>
-            <source
-              media="(max-width: 1023px)"
-              srcSet="/images/webp/whatever-gredient-bg-mobile-left.webp"
-              type="image/webp"
-            />
-            <Image
-              className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-cover"
-              src="/images/webp/whatever-gredient-bg-mobile-left.webp"
-              width={500}
-              height={1000}
-              alt="gradient background left"
-              priority
-            />
-          </picture>
-          <picture>
-            <source
-              media="(max-width: 1023px)"
-              srcSet="/images/webp/whatever-gredient-bg-mobile-right.webp"
-              type="image/webp"
-            />
-            <Image
-              className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-center"
-              src="/images/webp/whatever-gredient-bg-mobile-right.webp"
-              width={500}
-              height={1000}
-              alt="gradient background right"
-              priority
-            />
-          </picture>
-        </div>
-      )}
-
+      <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <PrimaryAnimatedText delay={3000}>
           <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">

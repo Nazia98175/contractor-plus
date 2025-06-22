@@ -19,7 +19,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   useEffect(() => {
     gsap.to(wrapperRef.current, {
       opacity: 1,
-      duration: 0.5,
+      duration: 0.1,
       delay: 0.2,
       ease: "power2.out",
     });

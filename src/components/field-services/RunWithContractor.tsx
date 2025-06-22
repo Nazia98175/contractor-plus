@@ -46,7 +46,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
   debugLog("KINDA", kindAdorable);
   return (
     <section className="relative z-20 bg-white pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
-      <TextAnimation animateOnScroll={true} delay={0}>
+      <TextAnimation animateOnScroll={true} delay={1}>
         <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
           {kindAdorable?.title}
         </h3>

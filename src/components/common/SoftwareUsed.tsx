@@ -35,7 +35,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item, icons, index }) => {
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
     >
-      {/* {icons && index !== undefined && (
+      {icons && index !== undefined && (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <Image
             src={
@@ -46,8 +46,10 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item, icons, index }) => {
             alt={`${item.title} icon`}
           />
         </div>
-      )} */}
-      <span className="size-7 sm:size-8">{item.icon}</span>
+      )}
+      {!icons && !index && (
+        <span className="size-7 sm:size-8">{item.icon}</span>
+      )}
       <h3 className="md:text-winterWay countup-title text-white">
         {item.isRange ? (
           <span>{`${item.start}–${item.end}`}</span>
@@ -63,7 +65,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({ item, icons, index }) => {
           `${item.end}${item.suffix}`
         )}{" "}
         <span className="inline-block text-2xl font-semibold">
-          {item.title !== "N/A" && item.title}
+          {item.title !== "N/A" && item.title !== "less" && item.title}
         </span>
       </h3>
       <p className="countup-desc md:text-winterWay text-decemberSky">

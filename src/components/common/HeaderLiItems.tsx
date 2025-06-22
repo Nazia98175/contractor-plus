@@ -28,7 +28,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
       },
       { id: "features", label: "features" },
       { id: "industries", label: "industries" },
-      { id: "pricing", label: "pricing", link: "/" },
+      { id: "pricing", label: "pricing", link: "/pricing" },
       { id: "resources", label: "resources" },
     ],
     [t],

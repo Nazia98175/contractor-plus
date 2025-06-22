@@ -23,6 +23,7 @@
   --color-ruinedSmores: #111216;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
+  --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
   --color-reflection: #cbd5e1;
@@ -211,6 +212,7 @@ body {
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
+
 .feature-btn {
   @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[75%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
@@ -547,19 +549,15 @@ html::-webkit-scrollbar {
 }
 
 .field-service-card {
-  border: 1px solid #ffffff4e;
   z-index: 9999;
+  backdrop-filter: blur(18px);
+  filter: drop-shadow(0 15px 30px #0000001a);
   background:
-    lightgray 0% 0% / 100px 100px repeat,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      #ffffff14 0%,
-      #ffffff00 99.59%
-    ),
-    linear-gradient(180deg, #2e335a00 0%, #1c1b331a 100%);
-  backdrop-filter: blur(20px);
-  box-shadow: inset 0px 0px 100px #ccd7ff26;
-  filter: drop-shadow(0px 15px 30px #0000001a);
+    0 0 / 100px 100px,
+    radial-gradient(146.13% 118.42% at 50% -15.5%, #171717 0%, #fff0 99.59%),
+    linear-gradient(#2e335a00 0%, #1c1b331a 100%);
+  border: 1px solid #ffffff4e;
+  box-shadow: inset 0 0 100px #ccd7ff26;
 }
 .wanting-more-bg {
   border: 1px solid #fff;

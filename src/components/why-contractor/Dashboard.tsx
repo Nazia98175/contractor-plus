@@ -20,7 +20,7 @@ const Dashboard = () => {
         start: "top 80%",
         end: "80% bottom",
         scrub: 1,
-        markers: true,
+        markers: false,
         onUpdate: (self) => {
           const progress = self.progress;
           const totalItems = itemRefs.current.length;
@@ -118,7 +118,7 @@ const Dashboard = () => {
             ref={(el) => {
               itemRefs.current[i] = el;
             }}
-            className={`dashboard-item flex h-fit flex-col items-center justify-center gap-[18px] px-3 text-center max-sm:py-3 sm:gap-3 md:mx-auto md:mt-12 md:max-w-[280px] lg:mt-[72px] lg:max-w-[327px] ${i === 0 ? "-translate-y-10" : i === 3 ? "translate-y-10" : ""}`}
+            className={`dashboard-item flex h-fit flex-col items-center justify-center gap-[18px] px-3 text-center max-sm:py-3 sm:gap-3 md:mx-auto md:mt-12 md:max-w-[280px] lg:mt-[72px] lg:max-w-[327px] ${i === 1 ? "-translate-y-20" : i === 2 ? "translate-y-20" : ""}`}
           >
             <p className="dashboard-title text-lg font-semibold text-white opacity-60 duration-300 md:text-base lg:text-lg">
               {text}

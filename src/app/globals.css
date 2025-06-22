@@ -64,7 +64,7 @@
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
 
-  --breakpoint-xs: 390px;
+  --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -180,7 +180,7 @@ body {
   @apply text-decemberSky text-xs leading-[130%] font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
+  @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-4xl lg:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;
@@ -192,7 +192,7 @@ body {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
 }
 .sub-heading {
-  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
+  @apply xs:text-2xl text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
 }
 .small-heading {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];

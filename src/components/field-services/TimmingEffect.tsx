@@ -82,9 +82,7 @@ const TimmingEffect = () => {
 
   return (
     <div className="relative">
-      <section
-        className="relative min-h-[100vh] bg-white" // Back to original height
-      >
+      <section className="relative min-h-[100vh] bg-white">
         <h2
           style={{
             background:

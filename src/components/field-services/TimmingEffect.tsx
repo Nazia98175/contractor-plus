@@ -97,7 +97,6 @@ const TimmingEffect = () => {
         >
           A system that finally connects field and office
         </h2>
-        {/* </TextAnimation> */}
 
         <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
           Here's what it feels like when everything just works

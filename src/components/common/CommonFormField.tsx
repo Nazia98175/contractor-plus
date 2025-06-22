@@ -55,7 +55,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       )}
 
       {showDescription && (
-        <TextAnimation animateOnScroll={false} delay={0.2}>
+        <TextAnimation animateOnScroll={false} delay={0.4}>
           <p className="paragraph-text text-secondary mb-7 text-center md:mb-[34px]">
             {sub_title}
           </p>

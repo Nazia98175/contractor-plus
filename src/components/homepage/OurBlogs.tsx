@@ -1,13 +1,9 @@
 "use client";
-import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
-import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-import OurBlogCard from "./OurBlogCard";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import PrimaryLink from "../common/PrimaryLInk";
+import SliderLayout from "../common/SliderLayout";
+import OurBlogCard from "./OurBlogCard";
 
 interface Blogs {
   blogTitle: string;
@@ -26,24 +22,6 @@ interface TheBlogProps {
 }
 
 const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
-  const t = useTranslations("blogs");
-  const blogList = t.raw("blogList") as {
-    id: number;
-    title: string;
-    date: string;
-    category: string;
-    description: string;
-    image: string;
-  }[];
-
-  // Get featured blog data
-  const featuredBlog = t.raw("featuredBlog") as {
-    category: string;
-    timeAgo: string;
-    title: string;
-    description: string;
-    image: string;
-  };
   const blogListMobile = [
     {
       id: 1,
@@ -70,7 +48,6 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "305px",
-      // hasBlurEffect: true,
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];

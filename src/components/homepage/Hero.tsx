@@ -59,7 +59,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               >
                 <FreeAccountButton showIcon={false} text={mobileBtn} />
               </CardReveal>
-              <CardReveal distance={50} delay={0.6}>
+              <CardReveal distance={50} delay={0.8}>
                 <CardRequiredButton text={ncc_text} />
               </CardReveal>
             </div>

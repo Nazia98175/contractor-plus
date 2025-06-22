@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { BlogBtnIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
-import { blogData } from "../common/Helper";
-import TextAnimation from "../common/TextAnimation";
-import BlogArticle from "./BlogArticle";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import Button from "../common/Button";
+import { blogData } from "../common/Helper";
+import { BlogBtnIcon } from "../common/Icons";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import SliderLayout from "../common/SliderLayout";
+import BlogArticle from "./BlogArticle";
 
 interface Props {
   data?: any;

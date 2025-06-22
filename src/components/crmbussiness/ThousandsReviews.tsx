@@ -25,7 +25,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
-        <TextAnimation animateOnScroll={true} delay={0}>
+        <TextAnimation animateOnScroll={true} delay={0.8}>
           <h2
             className={`section-heading mx-auto max-w-[951px] text-center ${
               variant === "secondary" ? "gradient-white" : "crm-gradient"

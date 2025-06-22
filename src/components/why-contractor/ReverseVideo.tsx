@@ -2,129 +2,46 @@
 import { useEffect, useRef } from "react";
 import { StrokeText } from "./Icons";
 import TextAnimation from "../common/TextAnimation";
-
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const ReverseVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isPlayingRef = useRef(false);
-  const directionRef = useRef<"forward" | "reverse" | null>(null);
-  const animationFrameRef = useRef<number | null>(null);
-
   useEffect(() => {
     const video = videoRef.current;
     const section = sectionRef.current;
     if (!video || !section) return;
 
-    let lastScrollY = window.scrollY;
+    gsap.registerPlugin(ScrollTrigger);
 
-    const playForward = () => {
-      if (isPlayingRef.current && directionRef.current === "forward") return;
-
-      isPlayingRef.current = true;
-      directionRef.current = "forward";
-
-      const animate = () => {
-        if (video.currentTime < video.duration - 0.1) {
-          video.currentTime = Math.min(
-            video.duration,
-            video.currentTime + 0.01,
-          );
-          animationFrameRef.current = requestAnimationFrame(animate);
-        } else {
-          video.currentTime = video.duration;
-          isPlayingRef.current = false;
-          directionRef.current = null;
-        }
-      };
-
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      animate();
+    // Ensure video metadata is loaded
+    const setupScroll = () => {
+      gsap.to(video, {
+        currentTime: video.duration || 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+          end: "bottom bottom",
+          scrub: true,
+          markers: false,
+          pin: false, // set to true if you wanna pin the section
+          onUpdate: (self) => {
+            video.currentTime = self.progress * video.duration;
+          },
+        },
+      });
     };
 
-    const playReverse = () => {
-      if (isPlayingRef.current && directionRef.current === "reverse") return;
-
-      isPlayingRef.current = true;
-      directionRef.current = "reverse";
-
-      const animate = () => {
-        if (video.currentTime > 0.01) {
-          video.currentTime = Math.max(0, video.currentTime - 0.01);
-          animationFrameRef.current = requestAnimationFrame(animate);
-        } else {
-          video.currentTime = 0;
-          isPlayingRef.current = false;
-          directionRef.current = null;
-        }
-      };
-
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      animate();
-    };
-
-    const handleScroll = () => {
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const currentScrollY = window.scrollY;
-
-      // Check if section is visible
-      const isVisible = rect.top < windowHeight && rect.bottom > 0;
-
-      if (!isVisible) {
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-          animationFrameRef.current = null;
-        }
-        isPlayingRef.current = false;
-        directionRef.current = null;
-        lastScrollY = currentScrollY;
-        return;
-      }
-
-      // Only process if not currently playing
-      if (!isPlayingRef.current) {
-        const scrollDelta = currentScrollY - lastScrollY;
-
-        // Need significant scroll to trigger (at least 5 pixels)
-        if (Math.abs(scrollDelta) > 5) {
-          if (scrollDelta > 0) {
-            // Scrolling down - play forward if not at end
-            if (video.currentTime < video.duration - 0.1) {
-              playForward();
-            }
-          } else {
-            // Scrolling up - play reverse if not at start
-            if (video.currentTime > 0.1) {
-              playReverse();
-            }
-          }
-        }
-      }
-
-      lastScrollY = currentScrollY;
-    };
-
-    // Add scroll listener
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Wait for video to be ready
-    const handleLoadedMetadata = () => {
-      video.pause();
-      video.currentTime = 0;
-    };
-
-    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    if (video.readyState >= 2) {
+      setupScroll();
+    } else {
+      video.addEventListener("loadedmetadata", setupScroll);
+    }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 

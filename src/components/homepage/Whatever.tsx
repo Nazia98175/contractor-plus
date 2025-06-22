@@ -113,7 +113,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               ease: "power2.out",
               scrollTrigger,
             });
-          }, 3000);
+          }, 300);
         };
 
         animate(left1Ref.current, "47%", "25%", -150, -80);
@@ -140,7 +140,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               ease: "power2.out",
               scrollTrigger,
             });
-          }, 3000);
+          }, 300);
         }
       });
     },

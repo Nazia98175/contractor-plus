@@ -43,14 +43,14 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
-        <SwiperSlide className="relative h-[625px] pt-10 sm:pt-14 md:pt-16 xl:pt-[72px]">
+        <SwiperSlide className="relative px-2 pt-3 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
           <div className="absolute -bottom-14 h-[100px] w-full max-w-full bg-white blur-[9px] sm:h-[200px] lg:bottom-[74px] lg:h-[281px] lg:blur-[40px]"></div>
-          <div className="px-2">
-            <div className="mx-auto w-fit rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] md:p-[14px] xl:rounded-[55px]">
+          <div>
+            <div className="mx-auto w-fit overflow-hidden rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] md:p-[14px] xl:rounded-[55px]">
               <img
                 src={"/images/webp/real-slider-card-1.webp"}
                 alt="Slide Image"
-                className="shadow-c3 mx-auto w-full max-w-[871px] rounded-3xl object-cover xl:rounded-[45px]"
+                className="sm:shadow-c3 mx-auto w-full max-w-[871px] rounded-3xl object-cover xl:rounded-[45px]"
               />
             </div>
           </div>
@@ -170,7 +170,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         </SwiperSlide> */}
       </Swiper>
 
-      <div className="slider-img-gradient relative z-20 -mt-[126px] md:-mt-[200px] lg:-mt-[292px]">
+      <div className="slider-img-gradient relative z-20 -mt-[150px] md:-mt-[200px] lg:-mt-[292px]">
         <div
           style={{
             background:
@@ -200,10 +200,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 3000,
+          //   disableOnInteraction: false,
+          // }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },
@@ -214,9 +214,9 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           {sliderData.map((item, index) => (
             <SwiperSlide
               key={index}
-              className="bg-rgba1 relative z-30 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px] md:px-2"
+              className="bg-rgba1 relative z-30 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px]"
             >
-              <b className="text-lightBlack z-20 text-base lg:text-xl">
+              <b className="text-lightBlack z-20 text-lg lg:text-xl">
                 {item.title}
               </b>
               <p className="text-secondary mt-3 text-sm font-medium">

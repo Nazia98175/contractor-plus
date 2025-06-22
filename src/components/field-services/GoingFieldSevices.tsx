@@ -46,7 +46,7 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       </TextAnimation>
 
       <h3 className="sub-heading crm-gradient block px-2 text-center font-bold sm:hidden">
-        <span className="line"> {switchingTool?.title} </span>
+        {switchingTool?.title}
       </h3>
       <div className="relative mx-auto flex max-w-[1100px] grid-cols-1 flex-wrap justify-center gap-6 px-0.5 pt-9 lg:grid lg:grid-cols-3 lg:gap-0">
         {/* Dashed line */}

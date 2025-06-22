@@ -185,9 +185,7 @@ body {
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;
 }
-.paragraph {
-  @apply text-wallStreet font-medium;
-}
+
 .paragraph-style {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
 }
@@ -520,7 +518,7 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
-.crm-gradient .line {
+.crm-gradient {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
   -webkit-background-clip: text;
@@ -1197,9 +1195,14 @@ button {
 .real-time-active-slider .swiper-slide {
   @apply opacity-30 transition-all duration-300 ease-out;
 }
-
+.real-time-active-slider .swiper-slide p {
+  @apply text-decemberSky;
+}
 .real-time-active-slider .swiper-slide-active {
   @apply opacity-100 transition-all duration-300 ease-out;
+}
+.real-time-active-slider .swiper-slide-active p {
+  @apply text-secondary;
 }
 
 .their-way {

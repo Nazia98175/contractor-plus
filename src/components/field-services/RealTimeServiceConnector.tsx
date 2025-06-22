@@ -68,19 +68,17 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
 
       <TextAnimation animateOnScroll={true} delay={0.84}>
         <h3 className="section-heading crm-gradient mx-auto max-w-[1029px] px-2 text-center xl:px-0">
-          <span className="line">
-            {(() => {
-              const title = fieldService?.title || "";
-              const words = title.trim().split(" ");
-              const lastTwo = words.slice(-2).join(" ");
-              const rest = words.slice(0, -2).join(" ");
-              return (
-                <>
-                  {rest} <b>{lastTwo}</b>
-                </>
-              );
-            })()}
-          </span>
+          {(() => {
+            const title = fieldService?.title || "";
+            const words = title.trim().split(" ");
+            const lastTwo = words.slice(-2).join(" ");
+            const rest = words.slice(0, -2).join(" ");
+            return (
+              <>
+                {rest} <b>{lastTwo}</b>
+              </>
+            );
+          })()}
         </h3>
       </TextAnimation>
 

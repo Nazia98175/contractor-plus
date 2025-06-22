@@ -20,7 +20,7 @@ const Dashboard = () => {
         start: "top 80%",
         end: "80% bottom",
         scrub: 1,
-        markers: true,
+        markers: false,
         onUpdate: (self) => {
           const progress = self.progress;
           const totalItems = itemRefs.current.length;

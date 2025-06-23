@@ -1,5 +1,6 @@
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
+import MainLoader from "@/components/common/MainLoader";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -105,59 +106,63 @@ const FieldServicesPage = async ({ params }: Params) => {
     blogs,
     thousandReviews,
   } = await getFeaturesPageData("field-service", useParams?.locale);
+
   return (
-    <main className="overflow-hidden">
-      <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
-      <ServiceContractorsMarquee reviews={reviews} />
-      <div className="bg-white">
-        <GoingFieldSevices switchingTool={switchingTool?.switchingTool} />
-        <RealTimeServiceConnector
-          theme="estimateTheme"
-          fieldService={fieldServiceData?.fieldService}
-        />
-      </div>
-      <RunWithContractor kindAdorable={comparison?.comparison} />
-      <TimmingEffect />
-      <NeverLookBack data={teamsUsingContractor?.teamsUsingContractor} />
-      <ThousandsReviews
-        data={crmPageContent?.data?.[0]?.thousandReviews}
-        reviews={thousandReviews?.thousandReviews?.reviews}
-        variant="secondary"
-      />
-
-      <div className="relative overflow-visible">
-        <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
-        <CrmSercive
-          createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
-          mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
-          ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-          data={crmPageContent?.data?.[0]?.crmService}
-          showClouds={false}
+    <>
+      <MainLoader />
+      <main className="overflow-hidden">
+        <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
+        <ServiceContractorsMarquee reviews={reviews} />
+        <div className="bg-white">
+          <GoingFieldSevices switchingTool={switchingTool?.switchingTool} />
+          <RealTimeServiceConnector
+            theme="estimateTheme"
+            fieldService={fieldServiceData?.fieldService}
+          />
+        </div>
+        <RunWithContractor kindAdorable={comparison?.comparison} />
+        <TimmingEffect />
+        <NeverLookBack data={teamsUsingContractor?.teamsUsingContractor} />
+        <ThousandsReviews
+          data={crmPageContent?.data?.[0]?.thousandReviews}
+          reviews={thousandReviews?.thousandReviews?.reviews}
+          variant="secondary"
         />
 
-        <TrustBarHvca
-          platforms={platforms}
-          className="mx-auto w-full max-w-[889px]"
-        />
-        <Faq
-          faq={faqs?.faqs}
-          classNameAnswer="pt-1"
-          mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
-        />
-      </div>
+        <div className="relative overflow-visible">
+          <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
 
-      <WhatEverClient
-        data={homePageContent?.data?.whateverOperation}
-        issection={false}
-      />
+          <CrmSercive
+            createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
+            mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
+            ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+            data={crmPageContent?.data?.[0]?.crmService}
+            showClouds={false}
+          />
 
-      <BlogPosts
-        data={crmPageContent?.data?.[0]?.blogs}
-        blogs={blogs}
-        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
-      />
-    </main>
+          <TrustBarHvca
+            platforms={platforms}
+            className="mx-auto w-full max-w-[889px]"
+          />
+          <Faq
+            faq={faqs?.faqs}
+            classNameAnswer="pt-1"
+            mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+          />
+        </div>
+
+        <WhatEverClient
+          data={homePageContent?.data?.whateverOperation}
+          issection={false}
+        />
+
+        <BlogPosts
+          data={crmPageContent?.data?.[0]?.blogs}
+          blogs={blogs}
+          className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
+        />
+      </main>
+    </>
   );
 };
 

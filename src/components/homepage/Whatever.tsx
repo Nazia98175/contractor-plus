@@ -5,13 +5,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import WhateverBackground from "./WhateverBackground";
-import { textSplit } from "../common/TextSplit";
+// import { textSplit } from "../common/TextSplit";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -148,11 +147,11 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
     },
     { scope: sectionRef, dependencies: [isMobile, isTablet, isDesktop] },
   );
-  useEffect(() => {
-    setTimeout(() => {
-      textSplit("#review-title-2");
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     textSplit("#review-title-2");
+  //   }, 1000);
+  // }, []);
 
   return (
     <section ref={sectionRef} className="relative z-10 w-full px-2">

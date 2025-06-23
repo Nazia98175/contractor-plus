@@ -7,7 +7,7 @@ import ReviewModal from "../common/ReviewModal";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { textSplit } from "../common/TextSplit";
+// import { textSplit } from "../common/TextSplit";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 interface TheReviewProps {
   reviews: any;

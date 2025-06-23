@@ -20,14 +20,14 @@ const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-0">
       <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
-        <TextAnimation animateOnScroll={true} delay={0.3}>
-          <h3 className="text-winterWay heading hidden sm:block">
-            {data?.title}
-          </h3>
-          <h3 className="gradient-text-2 block text-[22px] font-extrabold sm:hidden">
-            {data?.title}
-          </h3>
-        </TextAnimation>
+        {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
+        <h3 className="text-winterWay heading hidden sm:block">
+          {data?.title}
+        </h3>
+        <h3 className="gradient-text-2 block text-[22px] font-extrabold sm:hidden">
+          {data?.title}
+        </h3>
+        {/* </TextAnimation> */}
 
         <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
           {data?.content?.map((feature, index) => (

@@ -5,12 +5,13 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import WhateverBackground from "./WhateverBackground";
+import { textSplit } from "../common/TextSplit";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -147,16 +148,19 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
     },
     { scope: sectionRef, dependencies: [isMobile, isTablet, isDesktop] },
   );
+  useEffect(() => {
+    setTimeout(() => {
+      textSplit("#review-title-2");
+    }, 1000);
+  }, []);
 
   return (
     <section ref={sectionRef} className="relative z-10 w-full px-2">
       <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
-        <PrimaryAnimatedText delay={3000}>
-          <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
-            <span>{whateverOperation?.[0]?.title}</span>
-          </h3>
-        </PrimaryAnimatedText>
+        <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
+          <span>{whateverOperation?.[0]?.title}</span>
+        </h3>
 
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
           <div

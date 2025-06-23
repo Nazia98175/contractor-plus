@@ -15,15 +15,6 @@ const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
   const { hero_title, hero_description, cta_button_text, ncc_text, mobileBtn } =
     homePageContent ?? {};
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    gsap.to(wrapperRef.current, {
-      opacity: 1,
-      duration: 0.1,
-      delay: 0.1,
-      ease: "power2.out",
-    });
-  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,15 +24,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     }, 1000);
   }, []);
   return (
-    <section className="lg:bg-kuroiBlack main-loader relative z-20 w-full overflow-hidden">
+    <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
-          <div
-            ref={wrapperRef}
-            style={{ opacity: 0 }}
-            className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]"
-          >
+          <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
             <TextAnimation delay={0.2}>
               <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
                 {hero_title}

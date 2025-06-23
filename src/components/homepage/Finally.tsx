@@ -109,7 +109,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   width={715}
                   src="/images/webp/ipad.webp"
                   alt="Ipad Design"
-                  className="max-h-[213px] w-full object-center sm:max-h-full lg:max-w-[715px]"
+                  className="max-h-full w-full object-center lg:max-w-[715px]"
                 />
                 <Image
                   height={300}

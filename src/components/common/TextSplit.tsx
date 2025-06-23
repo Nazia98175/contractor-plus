@@ -22,8 +22,8 @@ export const textSplit = (id: string) => {
       trigger: id,
       start: "top 75%",
       once: true,
-      markers: true,
       toggleActions: "play none none none",
+      //   markers: true,
     },
   });
 };

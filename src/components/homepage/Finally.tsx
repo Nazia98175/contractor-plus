@@ -35,18 +35,15 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="relative z-30 space-y-4">
-          <PrimaryAnimatedText delay={3000}>
-            <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
-              <span> {finallyC?.[0]?.title ?? ""}</span>
-            </h2>
-          </PrimaryAnimatedText>
+          {/* <PrimaryAnimatedText delay={3000}> */}
+          <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
+            <span> {finallyC?.[0]?.title ?? ""}</span>
+          </h2>
+          {/* </PrimaryAnimatedText> */}
           <CardReveal distance={50}>
-            <PrimaryAnimatedText
-              delay={3000}
-              className="text-superSilver mx-auto max-w-[755px] px-2 text-center text-base font-medium"
-            >
+            <h3 className="text-superSilver mx-auto max-w-[755px] px-2 text-center text-base font-medium">
               {finallyC?.[0]?.sub_title ?? ""}
-            </PrimaryAnimatedText>
+            </h3>
           </CardReveal>
           <CardReveal
             distance={50}
@@ -109,7 +106,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   width={715}
                   src="/images/webp/ipad.webp"
                   alt="Ipad Design"
-                  className="max-h-[213px] w-full object-center sm:max-h-full lg:max-w-[715px]"
+                  className="max-h-full w-full object-center lg:max-w-[715px]"
                 />
                 <Image
                   height={300}

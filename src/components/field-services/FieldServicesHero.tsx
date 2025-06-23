@@ -1,17 +1,17 @@
 "use client";
-import React, { use, useEffect } from "react";
+import gsap from "gsap";
+import Image from "next/image";
+import React, { useEffect } from "react";
 import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
+import CardReveal from "../common/CardReveal";
 import {
   ArrowIcon,
   HeroAppStoreIcon,
   HeroPlayStoreIcon,
 } from "../common/Icons";
-import FieldServiceMap from "./FieldServiceMap";
-import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
-import CardReveal from "../common/CardReveal";
-import gsap from "gsap";
+import FieldServiceMap from "./FieldServiceMap";
 
 interface GeolocationData {
   latitude: number;
@@ -37,7 +37,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
       gsap.to(".main-loader", {
         opacity: 0,
       });
-    }, 1000);
+    }, 3000);
   }, []);
   return (
     <section className="relative overflow-visible">
@@ -91,7 +91,8 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
               </Button>
               <CardRequiredButton
                 text={hero?.ncc_txt}
-                className="hidden text-white sm:flex"
+                showIcon={false}
+                className="text-secondary hidden sm:flex"
               />
             </div>
           </CardReveal>

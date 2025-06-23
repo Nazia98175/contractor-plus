@@ -62,7 +62,7 @@ const FieldServiceCard: React.FC<Props> = ({
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`${titleColor}`}>{service?.title}</h4>
 
-          <Image
+          {/* <Image
             src={
               service?.cardImg?.url
                 ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
@@ -74,6 +74,30 @@ const FieldServiceCard: React.FC<Props> = ({
             className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             unoptimized
           />
+ */}
+
+          {apiData ? (
+            <Image
+              src={
+                service?.cardImg?.url
+                  ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+                  : "/placeholder.png"
+              }
+              alt={service?.title || "service image"}
+              width={518}
+              height={302}
+              className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            />
+          ) : (
+            <Image
+              src={`${service.cardImg}`}
+              alt={service?.title || "service image"}
+              width={518}
+              height={302}
+              className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            />
+          )}
+
           <div className="flex flex-col gap-4 2xl:gap-6">
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (

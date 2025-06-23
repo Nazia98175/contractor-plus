@@ -67,13 +67,13 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       )}
 
       {showDescription && (
-        <TextAnimation animateOnScroll={false} delay={0.2}>
-          <p
-            className={`paragraph-text mb-7 text-center md:mb-[34px] ${variantStyles.subtitle}`}
-          >
-            {sub_title}
-          </p>
-        </TextAnimation>
+        // <TextAnimation animateOnScroll={false} delay={0.2}>
+        <p
+          className={`paragraph-text mb-7 text-center md:mb-[34px] ${variantStyles.subtitle}`}
+        >
+          {sub_title}
+        </p>
+        // </TextAnimation>
       )}
       <CardReveal distance={50}>
         <form

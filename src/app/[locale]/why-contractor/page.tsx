@@ -69,7 +69,7 @@ const WhyContractorPage = () => {
       </main>
       <main
         ref={sectionRef}
-        className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
+        className="bg-kuroiBlack relative overflow-hidden pt-[67px] sm:pt-[157px]"
       >
         {/* Background line (gray/wallStreet color) */}
         <span className="bg-wallStreet absolute top-[-5%] left-1/2 z-[1] block h-full w-[1px] translate-x-[-50%]"></span>
@@ -101,23 +101,23 @@ const WhyContractorPage = () => {
           ccClass="max-sm:!hidden"
           mobileBtnHref="https://contractorplus.app/"
         /> */}
-
-        <div className="pb-14">
-          <HvacSoftwareService
-            data={{
-              title: "All unified. All in sync. All in one place.",
-              sub_title:
-                "This is what it feels like to finally run your business, not be run by it.",
-              placeholder: "Your Email",
-            }}
-            ncc="No credit card required"
-            createBtn="Get Started Free"
-            mobileBtn="Download App"
-            mobileBtnHref="/app-download"
-          />
-          <TrustBarHvca showTrustedSection={false} platforms={platforms} />
-        </div>
       </main>
+      <div className="pb-14">
+        <HvacSoftwareService
+          data={{
+            title: "All unified. All in sync. All in one place.",
+            sub_title:
+              "This is what it feels like to finally run your business, not be run by it.",
+            placeholder: "Your Email",
+          }}
+          ncc="No credit card required"
+          createBtn="Get Started Free"
+          mobileBtn="Download App"
+          mobileBtnHref="/app-download"
+          className="pt-12 md:!pt-0 xl:!pt-[11px]"
+        />
+        <TrustBarHvca showTrustedSection={false} platforms={platforms} />
+      </div>
     </>
   );
 };

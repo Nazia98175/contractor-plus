@@ -15,6 +15,7 @@ interface HvacSoftwareServiceProps {
   inputClass?: string;
   ccClass?: string;
   mobileBtnHref: string;
+  className?: string;
 }
 
 const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
@@ -27,6 +28,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
   inputClass,
   ccClass,
   mobileBtnHref,
+  className = "relative z-10 w-full pt-8 lg:pt-[90px] xl:pt-[113px]",
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -48,7 +50,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
   };
 
   return (
-    <div className="relative z-10 w-full pt-8 lg:pt-[90px] xl:pt-[113px]">
+    <div className={` ${className}`}>
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[47px] md:pb-[75px]">
           <TextAnimation animateOnScroll={false} delay={0.2}>
@@ -70,7 +72,9 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
               className="mx-auto flex w-full max-w-[550px] flex-col items-start justify-center gap-3 md:max-w-[657px] md:flex-row"
               onSubmit={handleSubmit}
             >
-              <div className={`w-full md:max-w-[414px] ${inputClass}`}>
+              <div
+                className={`hidden w-full sm:flex md:max-w-[414px] ${inputClass}`}
+              >
                 <input
                   type="email"
                   placeholder={data?.placeholder}
@@ -120,7 +124,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
               <div
                 className={`flex w-full items-center justify-center md:hidden ${ccClass}`}
               >
-                <p className="flex items-center gap-2 pt-1">
+                <p className="hidden items-center gap-2 pt-1 sm:flex">
                   <span>
                     <CheckIcon />
                   </span>

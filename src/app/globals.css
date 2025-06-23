@@ -188,7 +188,7 @@ body {
   @apply text-decemberSky xs:text-sm text-xs leading-[130%] font-semibold md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-4xl lg:text-[42px];
+  @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;

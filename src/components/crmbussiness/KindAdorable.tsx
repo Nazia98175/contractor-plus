@@ -37,7 +37,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
         {/* </TextAnimation> */}
         {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
         <p
-          className={`${slug === "estimate" ? "text-decemberSky" : "text-wallStreet"} paragraph-style relative z-40 mx-auto max-w-[885px] text-center`}
+          className={`${slug === "estimate" ? "!text-decemberSky" : "!text-wallStreet"} paragraph-style relative z-40 mx-auto max-w-[885px] text-center`}
         >
           {kindAdorable?.subtitle}
         </p>

@@ -109,7 +109,7 @@ const FieldServicesPage = async ({ params }: Params) => {
 
   return (
     <>
-      <MainLoader />
+      {/* <MainLoader /> */}
       <main className="overflow-hidden">
         <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
         <ServiceContractorsMarquee reviews={reviews} />

@@ -48,7 +48,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
             </div>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
+            <h3 className="main-heading gradient-text mt-1.5 sm:max-w-[470px] lg:hidden">
               {hero?.heroTitle}
             </h3>
           </TextAnimation>
@@ -57,7 +57,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
               {hero?.heroTitle}
             </h3>
           </TextAnimation>
-          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
+          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] sm:max-w-[470px] lg:max-w-[532px]">
             {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams. */}
             {hero?.heroDescription}

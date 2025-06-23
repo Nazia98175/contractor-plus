@@ -47,10 +47,10 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
   return (
     <section className="relative z-20 bg-white pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
       {/* <TextAnimation animateOnScroll={true} delay={0.6}> */}
-      <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
+      <h3 className="section-heading crm-gradient mx-auto mb-8 hidden max-w-[950px] text-center sm:block md:mb-[44px]">
         {kindAdorable?.title}
       </h3>
-      <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
+      <h3 className="crm-gradient xs:text-[22px] mx-auto mb-8 max-w-[370px] px-2 text-center text-[19px] font-bold sm:hidden md:mb-[44px]">
         {kindAdorable?.title}
       </h3>
       {/* </TextAnimation> */}

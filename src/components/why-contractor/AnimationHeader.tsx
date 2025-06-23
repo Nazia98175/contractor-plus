@@ -13,7 +13,7 @@ const AnimationHeader = () => {
 
     const trigger = ScrollTrigger.create({
       trigger: sectionRef.current,
-      start: "top 30%", // Changed from "top center" to trigger when element is 30% from top
+      start: "top center", // Changed from "top center" to trigger when element is 30% from top
       end: "bottom center",
       scrub: 1,
       onEnter: () => {

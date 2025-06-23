@@ -29,7 +29,7 @@ const WhyContractorPage = () => {
     const calculateDistance = () => {
       if (!sectionRef.current) return 0;
       const sectionHeight = sectionRef.current.offsetHeight;
-      return sectionHeight + sectionHeight * 0.1; // Add 10% extra
+      return sectionHeight + sectionHeight * 0; // Add 10% extra
     };
 
     // Create the scroll animation for the red dot
@@ -71,12 +71,12 @@ const WhyContractorPage = () => {
         className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
       >
         {/* Background line (gray/wallStreet color) */}
-        <span className="bg-wallStreet absolute top-[-5%] left-1/2 z-[1] block h-full w-[1px] translate-x-[-50%]"></span>
+        <span className="bg-wallStreet absolute top-[-300px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%]"></span>
 
         {/* Animated red dot that moves on scroll - starts at top of gray line */}
         <span
           ref={redDotRef}
-          className="absolute top-[-5%] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"
+          className="absolute top-[-300px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"
         ></span>
         <BloodEnough />
         <SeperateSolution />
@@ -84,8 +84,9 @@ const WhyContractorPage = () => {
         <VideoBottomPart />
         <WayToWin />
         <Dashboard />
-        <OperatingSystem />
-        {/* <ThousandsReviews
+      </main>
+      <OperatingSystem />
+      {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
             sub_title:
@@ -101,9 +102,8 @@ const WhyContractorPage = () => {
           ccClass="max-sm:!hidden"
           mobileBtnHref="https://contractorplus.app/"
         /> */}
-        <main className="pb-14">
-          <TrustBarHvca showTrustedSection={false} platforms={platforms} />
-        </main>
+      <main className="pb-14">
+        <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       </main>
     </>
   );

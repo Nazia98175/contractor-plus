@@ -13,7 +13,7 @@ const BloodEnough = () => {
 
     const trigger = ScrollTrigger.create({
       trigger: sectionRef.current,
-      start: "top 30%", // Trigger when element is 30% from top
+      start: "top center",
       end: "bottom center",
       scrub: 1,
       onEnter: () => {
@@ -53,7 +53,7 @@ const BloodEnough = () => {
         }
 
         .scroll-active .highlighted-span {
-          color: #F21314 !important;
+          color: #f21314 !important;
         }
 
         svg path {

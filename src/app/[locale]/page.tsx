@@ -20,25 +20,19 @@ export async function generateMetadata({
 }: {
   params: { slug: string; locale: string };
 }): Promise<Metadata | undefined> {
-  const page = await getSeoData("homepage",params.locale );
-  
-  console.log(page , "hommmm")
+  const page = await getSeoData("homepage", params.locale);
 
   if (!page) {
     return;
   }
 
   return {
-    title:
-      page?.seoMeta?.metaTitle ||
-      page?.hero_title ||
-      `Contractor+`,
+    title: page?.seoMeta?.metaTitle || page?.hero_title || `Contractor+`,
     description: page?.seoMeta?.metaDescription || page?.hero?.subtitle || "",
     keywords: page?.seoMeta?.keywords || "",
     alternates: {
       canonical:
-        page?.seoMeta?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}`,
+        page?.seoMeta?.canonicalUrl ?? `${process.env.NEXT_PUBLIC_DOMAIN}`,
     },
   };
 }

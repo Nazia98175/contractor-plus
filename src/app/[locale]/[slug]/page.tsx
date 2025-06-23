@@ -39,7 +39,7 @@ export async function generateMetadata({
     "services-pages",
     resolvedParams.locale,
     resolvedParams.slug,
-    "&populate[seoMeta]=true&populate[hero]=true"
+    "&populate[seoMeta]=true&populate[hero]=true",
   );
   if (!page) return;
 
@@ -69,6 +69,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   }
   const {
     crmPageContent,
+    heroImg ,
     reviews,
     switchingTool,
     fieldServiceData,
@@ -84,7 +85,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     <>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <CrmHero hero={page?.hero} slug={useParams?.slug} />
+          <CrmHero hero={page?.hero} slug={useParams?.slug} heroImg={heroImg} />
           <TrustedService reviews={reviews} />
           <SwitchingTool switchingTool={switchingTool?.switchingTool} />
           <FieldService

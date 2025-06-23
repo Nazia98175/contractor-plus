@@ -3,6 +3,7 @@ import { getCrmPage } from "./crm";
 
 export interface CrmLikePageDataResponse {
   crmPageContent: any | null;
+  heroImg?: any ,
   reviews: any | null;
   switchingTool: any | null;
   fieldServiceData: any | null;
@@ -20,6 +21,7 @@ export const getFeaturesPageData = async (
 ): Promise<CrmLikePageDataResponse> => {
   const [
     pageContentRes,
+    heroImg,
     reviewsRes,
     switchingToolRes,
     fieldServiceRes,
@@ -31,6 +33,7 @@ export const getFeaturesPageData = async (
     thousandReviewsRes,
   ] = await Promise.all([
     getCrmPage(slug, locale, "&populate=*"),
+    getCrmPage(slug , locale , "&populate[hero][populate]=heroImg"),
     getCrmPage(slug, locale, "&populate[reviews][populate]=reviews"),
     getCrmPage(slug, locale, "&populate[switchingTool][populate]=cardsDetail"),
     getCrmPage(slug, locale, "&populate[fieldService][populate][cardsDetail][populate]=*"),
@@ -44,6 +47,7 @@ export const getFeaturesPageData = async (
 
   return {
     crmPageContent: pageContentRes || null,
+    heroImg: heroImg?.data?.[0]?.hero?.heroImg || null ,
     reviews: reviewsRes || null,
     switchingTool: switchingToolRes?.data?.[0] || null,
     fieldServiceData: fieldServiceRes?.data?.[0] || null,

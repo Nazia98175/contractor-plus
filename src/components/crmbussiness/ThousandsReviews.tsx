@@ -15,7 +15,6 @@ interface Props {
 const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
-  console.log(reviews, "slug crm");
 
   const openModal = (videoUrl: string) => {
     setSelectedVideoUrl(videoUrl);
@@ -25,16 +24,16 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
-        <TextAnimation animateOnScroll={true} delay={0.8}>
-          <h2
-            className={`section-heading mx-auto max-w-[951px] text-center ${
-              variant === "secondary" ? "gradient-white" : "crm-gradient"
-            }`}
-          >
-            {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
-            {data?.title?.split("4.7 ★")?.[1]}
-          </h2>
-        </TextAnimation>
+        {/* <TextAnimation animateOnScroll={true} delay={0.8}> */}
+        <h2
+          className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
+            variant === "secondary" ? "gradient-white" : "crm-gradient"
+          }`}
+        >
+          {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
+          {data?.title?.split("4.7 ★")?.[1]}
+        </h2>
+        {/* </TextAnimation> */}
 
         <SliderLayout
           wrapperClassName="relative w-full !h-auto"

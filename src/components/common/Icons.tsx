@@ -1284,6 +1284,33 @@ export const FooterRedLineMobileIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+export const LineIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="271"
+    height="2"
+    viewBox="0 0 271 2"
+    fill="none"
+  >
+    <path
+      d="M0.999985 0.5C0.723842 0.5 0.499985 0.723858 0.499985 1C0.499985 1.27614 0.723842 1.5 0.999985 1.5V0.5ZM0.999985 1V1.5H270.333V1V0.5H0.999985V1Z"
+      fill="url(#paint0_radial_2820_6822)"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_2820_6822"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(14.0647 8.49999) rotate(-32.4544) scale(144.109 213.678)"
+      >
+        <stop stop-color="#0E0D11" />
+        <stop offset="1" stop-color="white" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
 
 export const GroupStartIcon = () => (
   <svg

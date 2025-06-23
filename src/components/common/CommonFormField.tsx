@@ -14,6 +14,7 @@ interface CommonFormFieldProps {
   ncc: string;
   showTitle?: boolean;
   showDescription?: boolean;
+  className?: string;
   variant?: "default" | "primary" | "secondary";
 }
 
@@ -27,6 +28,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   showTitle = true,
   showDescription = true,
   variant = "default",
+  className,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -55,13 +57,13 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   return (
     <>
       {showTitle && (
-        <TextAnimation animateOnScroll={false} delay={0.2}>
-          <h3
-            className={`mx-auto max-w-[780px] pb-2 text-center ${variantStyles.title}`}
-          >
-            {title}
-          </h3>
-        </TextAnimation>
+        // <TextAnimation animateOnScroll={false} delay={0.2}>
+        <h3
+          className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
+        >
+          {title}
+        </h3>
+        // </TextAnimation>
       )}
 
       {showDescription && (

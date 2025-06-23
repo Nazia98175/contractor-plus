@@ -50,9 +50,9 @@ const variantClasses = {
   dark: {
     sectionTitle: "text-white",
     linkText: "text-decemberSky hover:text-romanRed",
-    bottomlink: "text-highRise hover:text-romanRed",
-    copyright: "text-highRise",
-    powered: "text-highRise",
+    bottomlink: "text-secondary hover:text-romanRed",
+    copyright: "text-secondary",
+    powered: "text-secondary",
     background: "bg-transparent",
   },
 };

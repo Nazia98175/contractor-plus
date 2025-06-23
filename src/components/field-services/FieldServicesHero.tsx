@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { use, useEffect } from "react";
 import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
 import {
@@ -11,6 +11,7 @@ import FieldServiceMap from "./FieldServiceMap";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import gsap from "gsap";
 
 interface GeolocationData {
   latitude: number;
@@ -31,6 +32,13 @@ interface Props {
 }
 
 const FieldServicesHero: React.FC<Props> = ({ hero }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      gsap.to(".main-loader", {
+        opacity: 0,
+      });
+    }, 1000);
+  }, []);
   return (
     <section className="relative overflow-visible">
       <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-10 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
@@ -48,7 +56,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
             </div>
           </TextAnimation>
           <TextAnimation animateOnScroll={false} delay={0.2}>
-            <h3 className="main-heading gradient-text mt-1.5 lg:hidden">
+            <h3 className="main-heading gradient-text mt-1.5 sm:max-w-[470px] lg:hidden">
               {hero?.heroTitle}
             </h3>
           </TextAnimation>
@@ -57,7 +65,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
               {hero?.heroTitle}
             </h3>
           </TextAnimation>
-          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
+          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] sm:max-w-[470px] lg:max-w-[532px]">
             {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
             communication into one live hub for office & field teams. */}
             {hero?.heroDescription}

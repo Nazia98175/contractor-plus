@@ -11,7 +11,8 @@ import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
-import { getCrmPage } from "@/services/crm";
+import { getCrmPage } from "@/services/features/crm";
+
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 
 export const metadata = {

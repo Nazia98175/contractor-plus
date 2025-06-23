@@ -18,7 +18,7 @@ interface Props {
 
 const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
-    <section className="relative pt-28 lg:pt-5">
+    <section className="relative sm:pt-28 lg:pt-5">
       <Image
         className="absolute -top-[35%] left-0 z-0 hidden h-[83%] w-[100%] object-center md:flex lg:h-[100%] 2xl:h-[120%]"
         src={"/images/webp/finally-desktop-bg.webp"}
@@ -64,7 +64,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
       {/* Heading + Paragraph */}
       <div className="relative z-10 px-2 md:-mt-3">
         <TextAnimation animateOnScroll={false} delay={0.3}>
-          <h2 className="section-heading gradient-text-2 z-30 mx-auto w-fit text-center !font-black lg:!font-semibold">
+          <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
             {trackProperties?.title}
           </h2>
         </TextAnimation>

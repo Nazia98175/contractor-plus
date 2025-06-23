@@ -1,7 +1,6 @@
-import MonthlyPlan from "@/components/pricing/MonthlyPlan";
+import Plans from "@/components/pricing/Plans";
+import MonthlyPlan from "@/components/pricing/Plans";
 import PricingHero from "@/components/pricing/PricingHero";
-import Image from "next/image";
-import React from "react";
 
 const PricingPage = () => {
   return (
@@ -10,7 +9,7 @@ const PricingPage = () => {
         <PricingHero />
       </div>
       <div className="bg-white">
-        <MonthlyPlan />
+        <Plans />
       </div>
     </main>
   );

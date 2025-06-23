@@ -39,11 +39,11 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
         alt="Map Image"
       />
 
-      <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h3 className="sub-heading text-winterWay hidden px-2 text-center font-semibold sm:block">
-          <span>{switchingTool?.title}</span>
-        </h3>
-      </TextAnimation>
+      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
+      <h3 className="sub-heading text-winterWay hidden px-2 text-center font-semibold sm:block">
+        <span>{switchingTool?.title}</span>
+      </h3>
+      {/* </TextAnimation> */}
 
       <h3 className="sub-heading crm-gradient block px-2 text-center font-bold sm:hidden">
         {switchingTool?.title}

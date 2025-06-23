@@ -55,11 +55,11 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     <section className="relative z-10 overflow-hidden bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
-          <PrimaryAnimatedText delay={3000}>
-            <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
-              {blogHeading?.[0]?.title}
-            </h2>
-          </PrimaryAnimatedText>
+          {/* <PrimaryAnimatedText delay={3000}> */}
+          <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
+            {blogHeading?.[0]?.title}
+          </h2>
+          {/* </PrimaryAnimatedText> */}
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}

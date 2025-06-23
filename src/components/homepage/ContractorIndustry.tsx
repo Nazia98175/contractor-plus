@@ -42,21 +42,15 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       </span>
       <div className="relative z-20 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
         <div className="px-2">
-          <PrimaryAnimatedText
-            className="mx-auto w-full max-w-[883px] text-center"
-            delay={3000}
-          >
+          <div className="mx-auto w-full max-w-[883px] text-center">
             <h3 className="section-heading gradient-text text-center">
               {contractorIndustry?.[0]?.title ?? ""}
             </h3>
-          </PrimaryAnimatedText>
+          </div>
 
-          <PrimaryAnimatedText
-            className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal"
-            delay={3000}
-          >
+          <h6 className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
             {contractorIndustry?.[0]?.sub_title ?? ""}
-          </PrimaryAnimatedText>
+          </h6>
           <div className="hidden items-center justify-center md:flex">
             <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.[1]?.btnTxt ?? ""}

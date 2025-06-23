@@ -275,12 +275,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           </div>
         </div>
 
-        <PrimaryAnimatedText delay={3000}>
-          <p className="text-granite text-center text-lg capitalize opacity-90">
-            <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
-            {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
-          </p>
-        </PrimaryAnimatedText>
+        {/* <PrimaryAnimatedText delay={3000}> */}
+        <p className="text-granite text-center text-lg capitalize opacity-90">
+          <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
+          {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
+        </p>
+        {/* </PrimaryAnimatedText> */}
       </div>
     </section>
   );

@@ -34,6 +34,7 @@ const PricingHero = () => {
             createBtn="Get started FREE"
             mobileBtn="Get started FREE"
             showTitle={false}
+            variant="primary"
             showDescription={false}
           />
         </div>

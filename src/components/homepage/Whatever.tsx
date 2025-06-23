@@ -149,10 +149,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   );
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative z-10 w-full overflow-hidden px-2"
-    >
+    <section ref={sectionRef} className="relative z-10 w-full px-2">
       <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <PrimaryAnimatedText delay={3000}>

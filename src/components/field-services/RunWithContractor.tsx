@@ -50,6 +50,9 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
       <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
         {kindAdorable?.title}
       </h3>
+      <h3 className="section-heading crm-gradient mx-auto mb-8 max-w-[950px] text-center md:mb-[44px]">
+        {kindAdorable?.title}
+      </h3>
       {/* </TextAnimation> */}
 
       {/* Desktop view  */}

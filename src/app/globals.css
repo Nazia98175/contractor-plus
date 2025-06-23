@@ -3,12 +3,14 @@
 
 @import "tailwindcss";
 @theme {
+  /* FONTS */
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
 
+  /* COLORS */
   --color-secondary: #adb1b5;
   --color-superSilver: #f0f0f0;
   --color-wallStreet: #656c73;
@@ -62,7 +64,9 @@
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
 
-  --breakpoint-xs: 375px;
+  /* BREAKPOINTS */
+
+  --breakpoint-xs: 376px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -72,8 +76,10 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
 
+  /* FONT-SIZE */
   --text-custom-4xl: 32px;
 
+  /* BACKGROUNG_IMG */
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,
@@ -128,7 +134,13 @@
     #a89d9d05 41%,
     #1b191900 100%
   );
+  --background-image-custom-1: linear-gradient(
+    180deg,
+    #0c0d1100 18.46%,
+    #0c0d11 69.34%
+  );
 
+  /* SHADOW */
   --shadow-c1:
     0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c2:
@@ -136,6 +148,7 @@
   --shadow-c3: 18px 40px 150px rgba(0, 0, 0, 0.25);
   --shadow-c4: 18px 40px 80px rgba(0, 0, 0, 0.25);
 
+  /* DROP-SHADOW */
   --drop-shadow-custom-shadow-img: 24px 18px 22px #00000078;
   --drop-shadow-img-shadow: (
     -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)

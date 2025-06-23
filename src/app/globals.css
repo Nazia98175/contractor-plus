@@ -66,7 +66,7 @@
 
   /* BREAKPOINTS */
 
-  --breakpoint-xs: 376px;
+  --breakpoint-xs: 374px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -182,13 +182,13 @@ body {
   @apply mx-auto w-full max-w-[1308px] px-2;
 }
 .main-heading {
-  @apply text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
+  @apply xs:text-[28px] text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .hero-description {
-  @apply text-decemberSky text-xs leading-[130%] font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
+  @apply text-decemberSky xs:text-sm text-xs leading-[130%] font-semibold md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-4xl lg:text-[42px];
+  @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;

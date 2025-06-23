@@ -91,12 +91,24 @@ const TimmingEffect = () => {
             backgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
-          className="section-heading relative z-[4] px-2 pt-8 text-center"
+          className="section-heading relative z-[4] hidden px-2 text-center sm:block"
+        >
+          A system that finally connects field and office
+        </h2>
+        <h2
+          style={{
+            background:
+              "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
         >
           A system that finally connects field and office
         </h2>
 
-        <p className="text-darkness relative z-[4] mt-3 text-center text-xs font-semibold sm:text-sm md:mt-5 md:text-base xl:text-lg">
+        <p className="text-darkness xs:text-sm relative z-[4] mt-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
           Here's what it feels like when everything just works
         </p>
         <div

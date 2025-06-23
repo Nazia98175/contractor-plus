@@ -60,7 +60,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     <>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <CrmHero hero={page?.hero} />
+          <CrmHero hero={page?.hero} slug={useParams?.slug} />
           <TrustedService reviews={reviews} />
           <SwitchingTool switchingTool={switchingTool?.switchingTool} />
           <FieldService
@@ -109,6 +109,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               mobileBtn={page?.hero?.mobileBtn}
               ncc={page?.hero?.ncc_txt}
               data={page?.crmService}
+              variant="primary"
+              className="xs:max-w-[89%] max-w-[83%] sm:max-w-[1120px]"
             />
 
             <TrustBarHvca

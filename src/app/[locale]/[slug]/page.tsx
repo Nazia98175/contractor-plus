@@ -27,12 +27,32 @@ import { notFound } from "next/navigation";
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
-export const metadata: Metadata = {
-  title:
-    "Contractor+ A field service CRM that runs your business, not just stores contacts",
-  description:
-    "Built-in phone and SMS. AI receptionist. Property profiles. Full communication history. You no longer need 6 separate tools to do what Contractor+ CRM does in one.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string; locale: string };
+}): Promise<Metadata | undefined> {
+  const data = await getFeaturesPageData(params.slug, params.locale);
+  const page = data?.crmPageContent?.data?.[0];
+
+  if (!page || data?.crmPageContent?.data?.length === 0) {
+    return;
+  }
+
+  return {
+    title: page?.seoMeta?.metaTitle || page?.hero?.title || `Contractor+ ${params?.slug}`,
+    description: page?.seoMeta?.metaDescription || page?.hero?.subtitle || "",
+    keywords: page?.seoMeta?.keywords || "",
+    alternates: {
+      canonical:  page?.seoMeta?.canonicalUrl ?? `${process.env.NEXT_PUBLIC_DOMAIN}/${params.slug}`,
+    },
+    openGraph: {
+      title: page?.metaTitle,
+      description: page?.metaDescription,
+      url: page?.seoMeta?.canonicalUrl ?? `${process.env.NEXT_PUBLIC_DOMAIN}/${params.slug}`,
+    },
+  };
+}
 interface Props {
   slug: string;
   fieldService: any;
@@ -56,6 +76,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
   const page = crmPageContent?.data?.[0];
+
+  console.log( "seoMeta" , crmPageContent)
   return (
     <>
       {crmPageContent?.data?.length > 0 && (

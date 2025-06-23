@@ -122,84 +122,92 @@ const TimmingEffect = () => {
           <img
             src="/images/png/initial-cloud.png"
             id="initial-cloud"
-            className="absolute top-0 z-[21] w-full"
+            className="absolute top-0 z-[21] h-full w-full"
             alt=""
           />
           {/* STEP 1 CLOUD */}
           <img
             src="/images/png/step-1-cloud.png"
             id="step-1-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full opacity-0"
             alt=""
           />
           {/* STEP 2 CLOUD */}
           <img
             src="/images/png/step-2-cloud.png"
             id="step-2-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full opacity-0"
             alt=""
           />
           {/* STEP 3 CLOUD */}
           <img
             src="/images/png/step-3-cloud.png"
             id="step-3-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full opacity-0"
             alt=""
           />{" "}
           {/* STEP 4 CLOUD */}
           <img
             src="/images/png/step-4-cloud.png"
             id="step-4-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full opacity-0"
             alt=""
           />
           {/* STEP 6 CLOUD */}
           <img
             src="/images/png/step-6-cloud.png"
             id="step-6-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full opacity-0"
             alt=""
           />{" "}
           {/* STEP 7 CLOUD */}
           <img
             src="/images/png/step-7-cloud.png"
             id="step-7-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full opacity-0"
             alt=""
           />
           {/* ENVIRONMENT BACKGROUND GRADIENT */}
-          <div
+          <img
             id="bg-initial"
+            src="/images/png/initial-step-one.png"
             className="bg-gradient-initial absolute top-0 left-0 h-full w-full"
-          ></div>
-          <div
+          />
+          <img
             id="bg-step-1"
+            src="/images/png/bg-gradient-step-1.png"
             className="bg-gradient-step-1 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
+          />
+          <img
             id="bg-step-2"
+            src="/images/png/bg-gradient-step-2.png"
             className="bg-gradient-step-2 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
+          />
+          <img
             id="bg-step-3"
+            src="/images/png/bg-gradient-step-3.png"
             className="bg-gradient-step-3 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
+          />
+          <img
             id="bg-step-4"
-            className="bg-gradient-step-4 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
+            src="/images/png/bg-gradient-step-4.png"
+            className="absolute top-0 left-0 h-full w-full opacity-0"
+          />
+          <img
             id="bg-step-5"
-            className="bg-gradient-step-5 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
+            src="/images/png/bg-gradient-step-5.png"
+            className="absolute top-0 left-0 h-full w-full opacity-0"
+          />
+          <img
             id="bg-step-6"
-            className="bg-gradient-step-6 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
+            src="/images/png/bg-gradient-step-6.png"
+            className="absolute top-0 left-0 h-full w-full opacity-0"
+          />
+          <img
             id="bg-step-7"
-            className="bg-gradient-step-7 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
+            src="/images/png/bg-gradient-step-7.png"
+            className="absolute top-0 left-0 h-full w-full opacity-0"
+          />
           <div className="relative z-20 mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
             <div className="flex items-center">
               <TimeAnimation />

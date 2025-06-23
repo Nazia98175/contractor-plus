@@ -39,6 +39,8 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
             item={item}
             icons={data?.images}
             index={index}
+            titleColor="text-white md:text-winterWay"
+            paragraphColor="text-decemberSky md:text-white"
           />
         ))}
       </div>

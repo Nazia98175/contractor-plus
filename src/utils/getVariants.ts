@@ -7,7 +7,7 @@ export const themeClassMap: Record<string, string> = {
 
 export const variantsForm = {
   default: {
-    title: "text-decemberSky sub-heading font-extrabold",
+    title: "text-white sub-heading font-extrabold",
     subtitle: "text-secondary",
     input: "bg-white text-gray-900 placeholder:text-secondary",
   },

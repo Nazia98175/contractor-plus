@@ -128,10 +128,8 @@ const FieldServicesPage = async ({ params }: Params) => {
           reviews={thousandReviews?.thousandReviews?.reviews}
           variant="secondary"
         />
-
         <div className="relative overflow-visible">
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
           <CrmSercive
             createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
             mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
@@ -139,7 +137,6 @@ const FieldServicesPage = async ({ params }: Params) => {
             data={crmPageContent?.data?.[0]?.crmService}
             showClouds={false}
           />
-
           <TrustBarHvca
             platforms={platforms}
             className="mx-auto w-full max-w-[889px]"
@@ -150,12 +147,10 @@ const FieldServicesPage = async ({ params }: Params) => {
             mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
           />
         </div>
-
         <WhatEverClient
           data={homePageContent?.data?.whateverOperation}
           issection={false}
         />
-
         <BlogPosts
           data={crmPageContent?.data?.[0]?.blogs}
           blogs={blogs}

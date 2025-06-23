@@ -16,6 +16,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 
 const WhyContractorPage = () => {
   const redDotRef = useRef<HTMLElement>(null);
@@ -72,7 +73,6 @@ const WhyContractorPage = () => {
       >
         {/* Background line (gray/wallStreet color) */}
         <span className="bg-wallStreet absolute top-[-5%] left-1/2 z-[1] block h-full w-[1px] translate-x-[-50%]"></span>
-
         {/* Animated red dot that moves on scroll - starts at top of gray line */}
         <span
           ref={redDotRef}
@@ -101,9 +101,22 @@ const WhyContractorPage = () => {
           ccClass="max-sm:!hidden"
           mobileBtnHref="https://contractorplus.app/"
         /> */}
-        <main className="pb-14">
+
+        <div className="pb-14">
+          <HvacSoftwareService
+            data={{
+              title: "All unified. All in sync. All in one place.",
+              sub_title:
+                "This is what it feels like to finally run your business, not be run by it.",
+              placeholder: "Your Email",
+            }}
+            ncc="No credit card required"
+            createBtn="Get Started Free"
+            mobileBtn="Download App"
+            mobileBtnHref="/app-download"
+          />
           <TrustBarHvca showTrustedSection={false} platforms={platforms} />
-        </main>
+        </div>
       </main>
     </>
   );

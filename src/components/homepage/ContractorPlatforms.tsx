@@ -9,9 +9,9 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   return (
     <section className="relative z-20">
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
-        <div className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
+        <h4 className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
           {contractPlatformsData?.data?.platforms?.title?.title}
-        </div>
+        </h4>
         <CardReveal
           distance={50}
           className="3xl:gap-8 flex flex-wrap justify-center gap-4 gap-y-[30px] sm:gap-y-8 lg:flex-nowrap lg:justify-between"

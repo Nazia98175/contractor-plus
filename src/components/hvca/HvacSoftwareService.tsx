@@ -111,6 +111,7 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
                   )}
                 </button>
                 <p className="hidden items-center gap-2 pt-3 md:flex">
+                  <CheckIcon />
                   <span className="font-myriad text-sm font-semibold text-white">
                     {ncc}
                   </span>

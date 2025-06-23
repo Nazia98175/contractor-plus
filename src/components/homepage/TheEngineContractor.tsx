@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
 import LottieAnimation from "../common/LottieAnimation";
+import Lottie from "lottie-react";
 
 interface EngineContractor {
   title: string;
@@ -35,7 +36,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
       >
         <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-[-40px] left-[50%] hidden h-[200px] w-full max-w-[60px] -rotate-45 rounded-[10px] opacity-10 blur-[30px] lg:block"></div>
         <div className="color-animation pointer-events-none absolute right-[0px] bottom-[-40px] hidden h-[200px] w-full max-w-[300px] rounded-[10px] bg-[#EE1E25] opacity-75 blur-[30px] md:block"></div>
-        <div className="flex flex-col items-center justify-center gap-8 pb-8 md:flex-row md:justify-between md:!px-[30px] md:py-[30px]">
+        <div className="flex flex-col items-center justify-center gap-2 pb-8 sm:gap-8 md:flex-row md:justify-between md:!px-[30px] md:py-[30px]">
           <div className="flex w-full flex-col gap-1.5">
             <h2 className="section-heading gradient-engine-text text-center md:text-left">
               {engineContractor?.[0]?.title}&nbsp;
@@ -55,7 +56,8 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
             </h2>
           </div>
           <div className="ml-[-33px] flex w-full max-w-[360px] flex-col items-center -space-y-2 sm:ml-0">
-            <LottieAnimation loop={true} animationData={animationData} />
+            {/* <LottieAnimation loop={true} animationData={animationData} /> */}
+            <Lottie loop={true} animationData={animationData} />
           </div>
         </div>
       </div>

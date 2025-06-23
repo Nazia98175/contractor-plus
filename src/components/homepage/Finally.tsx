@@ -41,7 +41,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           </h2>
           {/* </PrimaryAnimatedText> */}
           <CardReveal distance={50}>
-            <h3 className="text-superSilver mx-auto max-w-[755px] px-2 text-center text-base font-medium">
+            <h3 className="text-superSilver mx-auto max-w-[755px] px-2 text-center text-sm font-medium sm:text-base">
               {finallyC?.[0]?.sub_title ?? ""}
             </h3>
           </CardReveal>
@@ -52,7 +52,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             {finallyC?.[1]?.txt?.split(",")?.map((feature, index) => (
               <div
                 key={index}
-                className="font-myriad text-superSilver flex items-center gap-1.5 text-sm font-medium sm:gap-2 sm:text-base sm:font-semibold"
+                className="font-myriad text-superSilver flex items-center gap-1.5 text-base font-medium sm:gap-2 sm:font-semibold"
               >
                 <CheckIcon />
                 {feature}

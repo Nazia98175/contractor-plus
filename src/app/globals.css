@@ -66,7 +66,7 @@
 
   /* BREAKPOINTS */
 
-  --breakpoint-xs: 374px;
+  --breakpoint-xs: 376px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -1459,16 +1459,11 @@ button {
   background-clip: content-box, border-box;
 }
 .estimate-overlap-card {
-  border-radius: 40px;
   border: 1px solid #fff;
   background:
-    lightgray 0% 0% / 100px 100px repeat,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0) 99.59%
-    ),
-    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+    0 0 / 100px 100px,
+    radial-gradient(146.13% 118.42% at 50% -15.5%, #171717 0%, #fff0 99.59%),
+    linear-gradient(#2e335a00 0%, #1c1b331a 100%);
   box-shadow:
     0px -33px 40px 0px rgba(0, 0, 0, 0.2),
     0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,

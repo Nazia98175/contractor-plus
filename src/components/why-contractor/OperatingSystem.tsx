@@ -51,7 +51,7 @@ const OperatingSystem = () => {
             return (
               <div
                 key={i}
-                className={`relative flex min-h-20 w-1/3 flex-col justify-center rounded-xl max-lg:min-h-18 max-lg:w-1/2 max-md:max-h-16.5 max-md:min-h-16 max-md:max-w-[150px] lg:items-center ${isNotFirstInRowDesktop ? "lg:gradient-grey-border-left" : ""} ${isNotFirstInRowMobile ? "max-lg:gradient-grey-border-left" : ""} ${isSecondLast ? "lg:gradient-grey-border-right" : ""} ${isLast ? "gradient-grey-border-top " : ""} `}
+                className={`relative flex min-h-20 w-1/3 flex-col justify-center rounded-xl max-lg:min-h-18 max-lg:w-1/2 max-md:max-h-16.5 max-md:min-h-16 max-md:max-w-[150px] lg:items-center ${isNotFirstInRowDesktop ? "lg:gradient-grey-border-left" : ""} ${isNotFirstInRowMobile ? "max-lg:gradient-grey-border-left" : ""} ${isSecondLast ? "lg:gradient-grey-border-right" : ""} ${isLast ? "gradient-grey-border-top" : ""} `}
               >
                 <div className="flex flex-col items-center justify-center gap-2.5 p-2.5 max-md:mx-auto max-md:max-w-32.5">
                   <span>{obj.icon}</span>
@@ -70,7 +70,6 @@ const OperatingSystem = () => {
           })}
         </div>
       </div>
-
     </div>
   );
 };

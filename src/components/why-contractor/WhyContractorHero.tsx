@@ -275,7 +275,7 @@ const WhyContractorHero = () => {
               alt="WhyContractorHeroImg"
             />
           </div>
-          <div className="relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px]">
+          <div className="relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px] group">
             <video
               ref={videoRef}
               className="block h-full w-full object-cover"
@@ -291,11 +291,16 @@ const WhyContractorHero = () => {
               }`}
               onClick={handlePlayPause}
             ></div>
-            <div className="absolute top-[50px] left-1/2 -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2">
+            <div
+              className={`absolute top-[50px] left-1/2 -translate-x-1/2 group-hover:!opacity-100 sm:top-1/2 sm:-translate-y-1/2 ${
+                isPlaying ? "opacity-0" : ""
+              }`}
+            >
               {" "}
               <button
                 className="flex size-[60px] items-center justify-center rounded-full bg-[#FFFFFF1F] backdrop-blur-[24px] transition-transform hover:scale-110"
                 aria-label={isPlaying ? "Pause video" : "Play video"}
+                onClick={handlePlayPause}
               >
                 {isPlaying ? (
                   <svg

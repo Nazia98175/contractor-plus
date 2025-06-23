@@ -69,8 +69,8 @@ const SeperateSolution = () => {
         start: "top 60%",
         onEnter: () => {
           gsap.to(el, {
-            fill: "#fff",
-            stroke: "#fff",
+            fill: "#F21314",
+            stroke: "#F21314",
             duration: 0.3,
             opacity: 1,
           });

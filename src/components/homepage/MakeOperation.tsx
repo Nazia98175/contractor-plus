@@ -49,17 +49,14 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       />
 
       <div className="main-container relative pb-10">
-        <PrimaryAnimatedText delay={3000}>
-          <h3 className="section-heading gradient-text text-center font-semibold">
-            {whateverOperation?.[1]?.title}
-          </h3>
-        </PrimaryAnimatedText>
-        <PrimaryAnimatedText
-          className="text-secondary pt-2 text-center text-sm sm:text-base md:text-lg xl:text-[22px]"
-          delay={3000}
-        >
+        {/* <PrimaryAnimatedText delay={3000}> */}
+        <h3 className="section-heading gradient-text text-center font-semibold">
+          {whateverOperation?.[1]?.title}
+        </h3>
+        {/* </PrimaryAnimatedText> */}
+        <h4 className="text-secondary pt-2 text-center text-sm sm:text-base md:text-lg xl:text-[22px]">
           {whateverOperation?.[1]?.sub_title}
-        </PrimaryAnimatedText>
+        </h4>
         <CardReveal
           distance={50}
           className="grid grid-cols-1 gap-5 pt-8 sm:grid-cols-2 md:grid-cols-3"

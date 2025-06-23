@@ -29,16 +29,16 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
           <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
-            <TextAnimation delay={0.2}>
-              <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
-                {hero_title}
-              </h1>
-            </TextAnimation>
-            <TextAnimation delay={0.35}>
-              <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[97%] sm:text-sm md:text-base md:font-medium lg:text-lg">
-                {hero_description}
-              </p>
-            </TextAnimation>
+            {/* <TextAnimation delay={0.2}> */}
+            <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
+              {hero_title}
+            </h1>
+            {/* </TextAnimation> */}
+            {/* <TextAnimation delay={0.35}> */}
+            <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[97%] sm:text-sm md:text-base md:font-medium lg:text-lg">
+              {hero_description}
+            </p>
+            {/* </TextAnimation> */}
             <div className="xs:w-fit xs:items-center mt-2 flex w-full flex-col justify-center gap-2.5 sm:mt-0">
               <CardReveal
                 className="hidden h-10 sm:flex"

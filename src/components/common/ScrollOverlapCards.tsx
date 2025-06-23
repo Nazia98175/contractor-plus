@@ -22,7 +22,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   apiData = true,
 }) => {
   const t = useTranslations();
-  console.log(fieldService);
+
 
   useGSAP(() => {
     if (typeof window === "undefined") return;

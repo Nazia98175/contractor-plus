@@ -16,7 +16,7 @@ interface TextRevealAnimationsProps {
 
 export default function TextAnimation({
   children,
-  animateOnScroll = true,
+  animateOnScroll = false,
   delay = 0,
   preserveClasses = true,
 }: TextRevealAnimationsProps) {

@@ -64,7 +64,7 @@
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
 
-  --breakpoint-xs: 375px;
+  --breakpoint-xs: 376px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -130,7 +130,13 @@
     #a89d9d05 41%,
     #1b191900 100%
   );
+  --background-image-custom-1: linear-gradient(
+    180deg,
+    #0c0d1100 18.46%,
+    #0c0d11 69.34%
+  );
 
+  /* SHADOW */
   --shadow-c1:
     0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c2:

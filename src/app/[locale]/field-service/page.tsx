@@ -1,6 +1,5 @@
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
-import MainLoader from "@/components/common/MainLoader";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";

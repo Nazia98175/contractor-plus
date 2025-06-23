@@ -1,4 +1,3 @@
-import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -17,12 +16,11 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import EntireBusiness from "@/components/homepage/EntireBusiness";
-import HvacFaq from "@/components/hvca/HvacFaq";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getSeoData } from "@/services/common/seoMeta";
 
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
+import { getSeoMeta } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 

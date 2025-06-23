@@ -25,19 +25,43 @@ import { notFound } from "next/navigation";
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
-
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string; locale: string };
-}): Promise<Metadata> {
-  const { crmPageContent } = await getFeaturesPageData(
-    params.slug,
-    params.locale,
-  );
-  const page = crmPageContent?.data?.[0];
+}): Promise<Metadata | undefined> {
+  const data = await getFeaturesPageData(params.slug, params.locale);
+  const page = data?.crmPageContent?.data?.[0];
 
-  return getSeoMeta(page?.seoMeta);
+  if (!page || data?.crmPageContent?.data?.length === 0) {
+    return;
+  }
+
+  return {
+    title:
+      page?.seoMeta?.metaTitle ||
+      page?.hero?.title ||
+      `Contractor+ ${params?.slug}`,
+    description: page?.seoMeta?.metaDescription || page?.hero?.subtitle || "",
+    keywords: page?.seoMeta?.keywords || "",
+    alternates: {
+      canonical:
+        page?.seoMeta?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${params.slug}`,
+    },
+    openGraph: {
+      title: page?.metaTitle,
+      description: page?.metaDescription,
+      url:
+        page?.seoMeta?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${params.slug}`,
+    },
+  };
+}
+interface Props {
+  slug: string;
+  fieldService: any;
+  theme: "light" | "dark" | "estimateTheme";
 }
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;
@@ -57,6 +81,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
   const page = crmPageContent?.data?.[0];
+
+  console.log("seoMeta", crmPageContent);
   return (
     <>
       {crmPageContent?.data?.length > 0 && (

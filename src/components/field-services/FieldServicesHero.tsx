@@ -66,8 +66,6 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
             </h3>
           </TextAnimation>
           <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] sm:max-w-[470px] lg:max-w-[532px]">
-            {/* Contractor+ brings job scheduling, dispatch, crew visibility, and
-            communication into one live hub for office & field teams. */}
             {hero?.heroDescription}
           </p>
           <CardReveal
@@ -91,7 +89,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
               </Button>
               <CardRequiredButton
                 text={hero?.ncc_txt}
-                showIcon={false}
+                showIcon={true}
                 className="text-secondary hidden sm:flex"
               />
             </div>

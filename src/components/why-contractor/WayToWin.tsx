@@ -3,10 +3,10 @@ import TextAnimation from "../common/TextAnimation";
 
 const WayToWin = () => {
   return (
-    <div className="relative z-[0] max-sm:mt-[120px]">
+    <div className="relative max-sm:mt-[120px]">
       <div className="absolute top-0 left-1/2 z-10 mx-auto w-full max-w-[1100px] translate-x-[-50%] px-3 pt-5 sm:pt-20">
         <TextAnimation animateOnScroll={true} delay={0}>
-          <h2 className="main-heading !font-semibold text-center max-sm:!text-lg">
+          <h2 className="main-heading text-center !font-semibold max-sm:!text-lg">
             <span className="text-white">The new way to win? </span>
             <span className="mx-auto block bg-gradient-to-b from-[#FFFFFF] to-[#BE0C0C] bg-clip-text text-transparent max-sm:max-w-[80%]">
               A connected system that moves as one.
@@ -21,14 +21,16 @@ const WayToWin = () => {
           </p>
         </TextAnimation>
       </div>
-      <Image
-        unoptimized
-        className="w-full max-sm:hidden xl:h-[707px] 2xl:h-[unset]"
-        height={100}
-        width={100}
-        src={"/images/png/way-to-win-bg.png"}
-        alt="way to win"
-      />
+      <div className="relative mx-auto max-w-[1440px] before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-kuroiBlack before:to-transparent before:content-[''] after:absolute after:top-0 after:right-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:from-kuroiBlack after:to-transparent after:content-['']">
+        <Image
+          unoptimized
+          className="w-full max-sm:hidden xl:h-[707px] 2xl:h-[unset]"
+          height={100}
+          width={100}
+          src={"/images/png/way-to-win-bg.png"}
+          alt="way to win"
+        />
+      </div>
       <Image
         unoptimized
         className="w-full sm:hidden"

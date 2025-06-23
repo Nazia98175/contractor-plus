@@ -154,6 +154,10 @@
     -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)
   );
 }
+
+.image-custom-shadow {
+  -webkit-filter: drop-shadow(24px 18px 22px #00000078);
+}
 @font-face {
   font-family: "Myriad Pro";
   src: url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");

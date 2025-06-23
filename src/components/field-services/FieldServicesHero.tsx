@@ -91,7 +91,8 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
               </Button>
               <CardRequiredButton
                 text={hero?.ncc_txt}
-                className="hidden text-white sm:flex"
+                showIcon={false}
+                className="text-secondary hidden sm:flex"
               />
             </div>
           </CardReveal>

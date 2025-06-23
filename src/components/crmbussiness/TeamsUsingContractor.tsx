@@ -86,7 +86,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="drop-shadow-custom-shadow-img isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            className="image-custom-shadow isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             alt="Software Advice"
           />
 
@@ -94,7 +94,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="drop-shadow-custom-shadow-img isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
+            className="image-custom-shadow isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
@@ -102,14 +102,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="drop-shadow-custom-shadow-img isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
+            className="image-custom-shadow isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="drop-shadow-custom-shadow-img isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="image-custom-shadow isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
           />
         </div>

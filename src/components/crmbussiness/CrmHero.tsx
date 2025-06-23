@@ -46,7 +46,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
           <div className="px-2 pt-8 md:pt-0">
             <TextAnimation delay={0.2} animateOnScroll={false}>
               <h2
-                className={`${slug === "estimate" ? "max-w-[698px]" : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"} gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
+                className={`${slug === "estimate" ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]" : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"} gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
               >
                 {hero?.heroTitle}
               </h2>

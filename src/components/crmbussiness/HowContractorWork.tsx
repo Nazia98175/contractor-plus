@@ -47,7 +47,7 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
             <h3 className="text-winterWay hidden text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:block sm:text-2xl sm:font-semibold md:text-3xl xl:text-4xl">
               {data?.title}
             </h3>
-            <h3 className="gradient-text-2 xs:max-w-[83%] block max-w-[83%] text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:hidden sm:max-w-full">
+            <h3 className="gradient-text-2 xs:max-w-[83%] block max-w-[91%] text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:hidden sm:max-w-full">
               {data?.title}
             </h3>
           </TextAnimation>

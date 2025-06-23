@@ -52,6 +52,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
               "/"
             }
             fill
+            className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}
           />
         </div>

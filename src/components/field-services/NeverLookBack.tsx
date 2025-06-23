@@ -23,7 +23,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       <h3 className="sub-heading text-winterWay mb-[13px] hidden text-center font-semibold sm:block">
         {data?.title}
       </h3>
-      <h3 className="crm-gradient mx-auto mb-[9px] block max-w-[307px] text-center text-[19px] font-extrabold sm:hidden">
+      <h3 className="crm-gradient xs:text-[22px] mx-auto mb-[9px] block max-w-[330px] text-center text-[19px] font-extrabold sm:hidden">
         {data?.title}
       </h3>
       <p className="paragraph-text gradient-text-2 text-center leading-[124%] sm:hidden">
@@ -39,8 +39,8 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
             item={item}
             icons={data?.images}
             index={index}
-            titleColor="text-white md:text-winterWay"
-            paragraphColor="text-decemberSky md:text-white"
+            titleColor="text-white sm:text-winterWay"
+            paragraphColor="text-decemberSky sm:text-white"
           />
         ))}
       </div>

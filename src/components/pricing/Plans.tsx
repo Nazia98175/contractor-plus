@@ -1,7 +1,7 @@
 import React from "react";
 import PlanCard from "./PlanCard";
 
-const MonthlyPlan = () => {
+const Plans = () => {
   return (
     <div>
       <PlanCard />
@@ -9,4 +9,4 @@ const MonthlyPlan = () => {
   );
 };
 
-export default MonthlyPlan;
+export default Plans;

@@ -47,7 +47,6 @@
   --color-phantom: #e99c44;
   --color-heatherGrey: #9f9fa1;
   --color-blackRussian: #202125;
-  --color-highRise: #adb1b5;
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
   --color-sangoPink: #f4ada5;
@@ -57,9 +56,8 @@
   --color-cyanBlue: #8a8e91;
   --color-tealBlue: #585a5e;
   --color-coconut: #e6e9f5;
-
+  --color-cyberspace: #44474b;
   --color-rgba1: #ffffff99;
-  --color-x`: #1c273133;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
@@ -140,11 +138,8 @@
 
   --drop-shadow-custom-shadow-img: 24px 18px 22px #00000078;
   --drop-shadow-img-shadow: (
-      -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)
-    )
-    drop-shadow(-11.7591px 10.5832px 13.8252px rgba(0, 0, 0, 0.14175))
-    drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
-    drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
+    -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)
+  );
 }
 @font-face {
   font-family: "Myriad Pro";
@@ -196,7 +191,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px];
+  @apply text-lg font-semibold -tracking-[0.44px] sm:text-xl md:text-[22px];
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;

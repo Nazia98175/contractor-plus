@@ -55,7 +55,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
       {/* Desktop view  */}
       <div className="mx-auto hidden w-full max-w-[1213px] space-y-5 px-4 md:block">
         <div className="grid grid-cols-2">
-          <p className="font-myriad text-highRise text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
+          <p className="font-myriad text-secondary text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
             {kindAdorable?.headerLeft}
           </p>
           <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">

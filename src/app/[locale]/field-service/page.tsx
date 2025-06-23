@@ -25,7 +25,6 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
-
   const page = await getSeoData(
     "services-pages",
     resolvedParams.locale,

@@ -41,7 +41,6 @@ export async function generateMetadata({
     resolvedParams.slug,
     "&populate[seoMeta]=true&populate[hero]=true"
   );
-  console.log(page , "crmmm")
   if (!page) return;
 
   return {

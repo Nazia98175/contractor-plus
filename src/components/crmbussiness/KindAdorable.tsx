@@ -30,7 +30,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
       >
         <TextAnimation animateOnScroll={true} delay={0.2}>
           <h2
-            className={`${slug === "estimate" ? "gradient-text" : "gradient-text-2"} section-heading xs:max-w-full relative z-40 mx-auto w-fit max-w-[79%] text-center !font-black lg:!font-semibold`}
+            className={`${slug === "estimate" ? "gradient-text" : "gradient-text-2"} section-heading xs:max-w-[84%] relative z-40 mx-auto w-fit max-w-[88%] text-center !font-black sm:max-w-full lg:!font-semibold`}
           >
             {kindAdorable?.title}
           </h2>

@@ -60,7 +60,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     <>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <CrmHero hero={page?.hero} />
+          <CrmHero hero={page?.hero} slug={useParams?.slug} />
           <TrustedService reviews={reviews} />
           <SwitchingTool switchingTool={switchingTool?.switchingTool} />
           <FieldService

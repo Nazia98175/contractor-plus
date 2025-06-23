@@ -11,8 +11,6 @@ export interface Props {
   slug?: string;
 }
 const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
-  console.log(slug, "slug");
-
   // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -33,11 +31,11 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
       ref={ref}
       className="main-container relative z-30 flex flex-col items-center justify-center px-2 py-[52px] md:py-16 xl:py-[93px]"
     >
-      <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h2 className="crm-gradient section-heading xs:max-w-[951px] mx-auto max-w-[83%] text-center !font-black lg:!font-semibold">
-          {data?.title}
-        </h2>
-      </TextAnimation>
+      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
+      <h2 className="crm-gradient section-heading xs:max-w-[88%] mx-auto max-w-[83%] text-center !font-black sm:max-w-[951px] lg:!font-semibold">
+        {data?.title}
+      </h2>
+      {/* </TextAnimation> */}
       <TextAnimation animateOnScroll={true} delay={0.2}>
         <p className="paragraph-style text-center">{data?.sub_title}</p>
       </TextAnimation>

@@ -110,7 +110,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               ncc={page?.hero?.ncc_txt}
               data={page?.crmService}
               variant="primary"
-              className={` ${useParams?.slug === "crm" ? "xs:max-w-[89%] max-w-[83%] sm:max-w-[1120px]" : "xs:max-w-[81%] max-w-[76%] sm:max-w-[780px]"}`}
+              className={` ${useParams?.slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[780px] sm:pt-0"}`}
             />
 
             <TrustBarHvca

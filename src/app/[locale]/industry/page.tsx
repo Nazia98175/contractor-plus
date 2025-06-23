@@ -6,7 +6,11 @@ import SoftwareSolutions from "@/components/industry/SoftwareSolutions";
 import TakeControl from "@/components/industry/TakeControl";
 import Trusted from "@/components/industry/Trusted";
 import WhyChooseUs from "@/components/industry/WhyChooseUs";
-
+export const metadata = {
+  title: "Not just HVAC software Meet your operating system",
+  description:
+    "Contractor+ connects every function of your business so it finally all works in sync.",
+};
 const IndusryPage = () => {
   return (
     <div>

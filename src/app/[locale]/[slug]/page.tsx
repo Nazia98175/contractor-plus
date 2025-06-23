@@ -1,4 +1,3 @@
-import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -17,26 +16,28 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import EntireBusiness from "@/components/homepage/EntireBusiness";
-import HvacFaq from "@/components/hvca/HvacFaq";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
+import { getSeoMeta } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
-export const metadata: Metadata = {
-  title:
-    "Contractor+ A field service CRM that runs your business, not just stores contacts",
-  description:
-    "Built-in phone and SMS. AI receptionist. Property profiles. Full communication history. You no longer need 6 separate tools to do what Contractor+ CRM does in one.",
-};
-interface Props {
-  slug: string;
-  fieldService: any;
-  theme: "light" | "dark" | "estimateTheme";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string; locale: string };
+}): Promise<Metadata> {
+  const { crmPageContent } = await getFeaturesPageData(
+    params.slug,
+    params.locale,
+  );
+  const page = crmPageContent?.data?.[0];
+
+  return getSeoMeta(page?.seoMeta);
 }
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;

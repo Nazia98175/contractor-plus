@@ -12,6 +12,18 @@ import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
+import { getSeoMeta } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { homePageContent } = await getHomepageData(params.locale);
+
+  return getSeoMeta(homePageContent?.data?.seoMeta);
+}
 
 export default async function Home({
   params,

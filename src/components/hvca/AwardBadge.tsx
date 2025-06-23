@@ -19,7 +19,7 @@ export default function AwardBadges() {
         className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-top sm:hidden"
         alt="Red Lineaar background"
       />
-      <div className="main-container relative z-20 grid grid-cols-1 gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-8">
+      <div className="main-container main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 sm:pt-10 md:grid-cols-3 md:pt-8 xl:grid xl:grid-cols-3">
         {makeOperationList.map((item, index) => (
           <SoftwareUsed key={index} item={item} />
         ))}

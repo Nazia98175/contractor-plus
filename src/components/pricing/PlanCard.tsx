@@ -29,7 +29,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
   const suffix = isAnnual ? "/yr" : "/mo";
   return (
     <article
-      className={`font-myriad max-w-[317px] rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] ${plan.cardClass ?? ""}`}
+      className={`font-myriad group max-w-[317px] cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
@@ -55,12 +55,12 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
         </div>
 
         <button
-          className={`my-4 flex h-10 w-full items-center justify-center rounded-lg font-semibold tracking-[0.1px] lg:my-6 ${
+          className={`my-4 flex h-10 w-full items-center justify-center rounded-lg font-semibold tracking-[0.1px] duration-300 lg:my-6 ${
             plan.isPro
-              ? "border-winterWay text-wallStreet border bg-[#F5F5F5]"
+              ? "border-winterWay group-hover:bg-wallStreet border bg-[#F5F5F5] group-hover:border-transparent group-hover:text-[#f5f5f5]"
               : plan.isProTeam
-                ? "bg-[#FEE7E8] text-[#AC0D0E]"
-                : "border-winterWay text-wallStreet border"
+                ? "bg-[#FEE7E8] text-[#AC0D0E] group-hover:bg-[#AC0D0E] group-hover:text-[#FEE7E8]"
+                : "border-winterWay text-wallStreet group-hover:bg-wallStreet border group-hover:border-transparent group-hover:text-[#f5f5f5]"
           }`}
         >
           {plan.cta}

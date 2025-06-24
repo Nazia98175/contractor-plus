@@ -11,12 +11,14 @@ import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
-import { getCrmPage } from "@/services/crm";
+import { getCrmPage } from "@/services/features/crm";
+
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 
 export const metadata = {
-  title: "Contractor + - HVAC Software",
-  description: "Not just HVAC software. Meet your operating system.",
+  title: "Not just HVAC software Meet your operating system",
+  description:
+    "Contractor+ connects every function of your business so it finally all works in sync.",
 };
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -65,16 +67,14 @@ const page = async ({ params }: PageProps) => {
   const { homePageContent } = await getHomepageData(useParams?.locale);
   return (
     <main className="overflow-hidden">
-      <div className="bg-white">
-        <div className="relative">
-          <div className="absolute bottom-[205px] left-0 z-50 block h-[45px] w-full bg-white blur-[9px] sm:hidden"></div>
-          <HvacHero />
-          <TrustBatBuildContractor
-            platforms={blackPlatforms}
-            showTrustedSection={true}
-            className="1xl:gap-12 relative z-10 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[43px] pb-14 sm:gap-6 md:gap-7 md:pt-[13px] xl:gap-9 xl:pt-5"
-          />
-        </div>
+      <div className="relative bg-white">
+        <HvacHero />
+        <TrustBatBuildContractor
+          platforms={blackPlatforms}
+          showTrustedSection={true}
+          className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
+        />
+
         <HvacSoftware />
         <WantingMore />
         <EraOfSoftware />
@@ -117,7 +117,7 @@ const page = async ({ params }: PageProps) => {
       <BlogPosts
         data={blogs?.data?.[0]?.blogs}
         blogs={blogs?.data?.[0]?.blogs}
-        className="relative z-20 bg-white"
+        className="relative z-20 bg-white pb-8"
         variant="secondary"
       />
     </main>

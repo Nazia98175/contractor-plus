@@ -11,12 +11,37 @@ import OurReviews from "@/components/homepage/OurReviews";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
+import { getSeoData } from "@/services/common/seoMeta";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoData("homepage", resolvedParams?.locale);
+
+  if (!page) {
+    return;
+  }
+
+  return {
+    title: page?.seoMeta?.metaTitle || page?.hero_title || `Contractor+`,
+    description: page?.seoMeta?.metaDescription || page?.hero?.subtitle || "",
+    keywords: page?.seoMeta?.keywords || "",
+    alternates: {
+      canonical:
+        page?.seoMeta?.canonicalUrl ?? `${process.env.NEXT_PUBLIC_DOMAIN}`,
+    },
+  };
+}
 
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) {
   const useParams = await params;
 

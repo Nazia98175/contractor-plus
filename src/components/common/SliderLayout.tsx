@@ -44,7 +44,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   loop = true,
   grabCursor = true,
   centeredSlides,
-  speed = 100,
+  speed = 600,
   coverflowEffect = {
     rotate: 0,
     stretch: 0,

@@ -10,6 +10,7 @@ interface Props {
   data?: any;
   blogs?: any;
   className?: string;
+  classMaxwidth?: string;
   variant?: "primary" | "secondary";
 }
 
@@ -17,6 +18,7 @@ const BlogPosts: React.FC<Props> = ({
   data,
   blogs,
   className,
+  classMaxwidth,
   variant = "primary",
 }) => {
   const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
@@ -27,10 +29,10 @@ const BlogPosts: React.FC<Props> = ({
       className={`relative z-20 px-2 pt-4 sm:px-4 xl:px-20 ${className || ""}`}
     >
       <div className="mx-auto w-full max-w-[1158px]">
-        <div className="xs:justify-between mb-6 flex items-center justify-center md:mb-9">
+        <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
           <PrimaryAnimatedText delay={3000}>
             <h2
-              className={`w-full text-center sm:w-fit ${
+              className={`w-full text-center sm:w-fit sm:text-start lg:max-w-full ${classMaxwidth || "max-w-[483px]"} ${
                 variant === "primary"
                   ? "faq-heading-text text-center text-2xl font-semibold tracking-[-0.62px] sm:text-[31px]"
                   : "section-heading"

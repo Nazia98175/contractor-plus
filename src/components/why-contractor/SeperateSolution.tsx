@@ -25,33 +25,56 @@ const SeperateSolution = () => {
     const svgs = section?.querySelectorAll(".grid svg path");
     const frictionGroupSvgs = section?.querySelectorAll("span svg path"); // For FrictionTextGroup SVGs
 
-    // Animate <h3> - one time activation
+    // Animate <h3> with reversible behavior
     headings?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
         start: "top 60%",
+        end: "bottom 40%",
         onEnter: () => {
           gsap.to(el, { color: "#fff", duration: 0.3 });
+        },
+        onLeaveBack: () => {
+          gsap.to(el, { color: "#8A8E91", duration: 0.3 });
+        },
+        onEnterBack: () => {
+          gsap.to(el, { color: "#fff", duration: 0.3 });
+        },
+        onLeave: () => {
+          // Optional: uncomment to revert when scrolling past
+          // gsap.to(el, { color: "#8A8E91", duration: 0.3 });
         },
       });
     });
 
-    // Animate <p> - one time activation
+    // Animate <p> with reversible behavior
     paragraphs?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
         start: "top 60%",
+        end: "bottom 40%",
         onEnter: () => {
           gsap.to(el, { color: "#fff", duration: 0.3 });
+        },
+        onLeaveBack: () => {
+          gsap.to(el, { color: "#656C73", duration: 0.3 });
+        },
+        onEnterBack: () => {
+          gsap.to(el, { color: "#fff", duration: 0.3 });
+        },
+        onLeave: () => {
+          // Optional: uncomment to revert when scrolling past
+          // gsap.to(el, { color: "#656C73", duration: 0.3 });
         },
       });
     });
 
-    // Animate <svg> paths - one time activation
+    // Animate <svg> paths with reversible behavior
     svgs?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
         start: "top 60%",
+        end: "bottom 40%",
         onEnter: () => {
           gsap.to(el, {
             fill: "#F21314",
@@ -59,14 +82,37 @@ const SeperateSolution = () => {
             duration: 0.3,
           });
         },
+        onLeaveBack: () => {
+          gsap.to(el, {
+            fill: "#25292D",
+            stroke: "#25292D",
+            duration: 0.3,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(el, {
+            fill: "#F21314",
+            stroke: "#F21314",
+            duration: 0.3,
+          });
+        },
+        onLeave: () => {
+          // Optional: uncomment to revert when scrolling past
+          // gsap.to(el, {
+          //   fill: "#25292D",
+          //   stroke: "#25292D",
+          //   duration: 0.3,
+          // });
+        },
       });
     });
 
-    // Animate FrictionTextGroup SVG paths - one time activation
+    // Animate FrictionTextGroup SVG paths with reversible behavior
     frictionGroupSvgs?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
         start: "top 60%",
+        end: "bottom 40%",
         onEnter: () => {
           gsap.to(el, {
             fill: "#F21314",
@@ -74,6 +120,31 @@ const SeperateSolution = () => {
             duration: 0.3,
             opacity: 1,
           });
+        },
+        onLeaveBack: () => {
+          gsap.to(el, {
+            fill: "#25292D", // Assuming original fill color
+            stroke: "#25292D", // Assuming original stroke color
+            duration: 0.3,
+            opacity: 0.5, // Assuming original opacity
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(el, {
+            fill: "#F21314",
+            stroke: "#F21314",
+            duration: 0.3,
+            opacity: 1,
+          });
+        },
+        onLeave: () => {
+          // Optional: uncomment to revert when scrolling past
+          // gsap.to(el, {
+          //   fill: "#25292D",
+          //   stroke: "#25292D",
+          //   duration: 0.3,
+          //   opacity: 0.5,
+          // });
         },
       });
     });

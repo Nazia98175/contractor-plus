@@ -1,52 +1,86 @@
 "use client";
+import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
-import Link from "next/link";
 import AnimatedShape from "./AnimatedShape";
 interface TheHeroProps {
   hero: any;
+  slug?: string;
+  heroImg?: any;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
-
+const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
+  // const wrapperRef = useRef<HTMLDivElement | null>(null);
+  // useEffect(() => {
+  //   gsap.to(wrapperRef.current, {
+  //     opacity: 1,
+  //     duration: 0.1,
+  //     delay: 0.1,
+  //     ease: "elastic.in",
+  //     once: true,
+  //   });
+  // }, []);
   useEffect(() => {
-    gsap.to(wrapperRef.current, {
-      opacity: 1,
-      duration: 0.1,
-      delay: 0.1,
-      ease: "elastic.in",
-      once: true,
-    });
+    setTimeout(() => {
+      gsap.to(".main-loader", {
+        opacity: 0,
+      });
+    }, 1000);
   }, []);
+
+  const imageUrl = getMediaUrl(heroImg);
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
+      <CardReveal distance={30} delay={0.1}>
+        <div className="hidden items-center justify-center pb-6 md:flex">
+          <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+            {slug === "estimate"
+              ? "Contractor Estimate Software"
+              : "   Field Service CRM"}
+          </span>
+        </div>
+      </CardReveal>
       <div
-        ref={wrapperRef}
         id="hero"
-        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse opacity-0 md:flex-col"
+        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
-            <TextAnimation delay={0.2} animateOnScroll={false}>
-              <h2 className="gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]">
-                {hero?.heroTitle}
-              </h2>
-            </TextAnimation>
-            <TextAnimation delay={0.4} animateOnScroll={false}>
-              <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
-                {hero?.heroDescription}
-              </p>
-            </TextAnimation>
+            {/* <TextAnimation delay={0.3} animateOnScroll={false}> */}
+            <h2
+              className={`${
+                slug === "estimate"
+                  ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]"
+                  : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"
+              } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
+            >
+              {slug !== "crm" && hero?.heroTitle}
+
+              {slug === "crm" && (
+                <>
+                  {hero?.heroTitle1}{" "}
+                  <span className="text-white">{hero?.heroTitle2}</span>{" "}
+                  <span>{hero?.heroTitle3}</span>
+                </>
+              )}
+            </h2>
+            {/* </TextAnimation> */}
+            {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}
+            <p
+              className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
+            >
+              {hero?.heroDescription}
+            </p>
+            {/* </TextAnimation> */}
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.6}>
@@ -113,13 +147,16 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
-                <Image
-                  className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                  src="/images/webp/crm-hero.webp"
-                  width={900}
-                  height={616}
-                  alt="crm-hero"
-                />
+                {imageUrl && (
+                  <Image
+                    className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                    // src="/images/webp/crm-hero.webp"
+                    src={imageUrl}
+                    width={900}
+                    height={616}
+                    alt="crm-hero"
+                  />
+                )}
                 <AnimatedShape />
               </div>
             </div>

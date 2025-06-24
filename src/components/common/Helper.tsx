@@ -131,6 +131,16 @@ export const swichToContractordata = [
 
 export const platforms: Platform[] = [
   {
+    name: "Capterra",
+    logo: "/images/webp/capterraRating.webp",
+    rating: 5,
+  },
+  {
+    name: "G2 Crowd",
+    logo: "/images/webp/g2Rating.webp",
+    rating: 5,
+  },
+  {
     name: "App Store",
     logo: "/images/svg/apple-rating.svg",
     rating: 5,
@@ -140,21 +150,11 @@ export const platforms: Platform[] = [
     logo: "/images/webp/play-google.webp",
     rating: 5,
   },
-  {
-    name: "G2 Crowd",
-    logo: "/images/webp/g2Rating.webp",
-    rating: 5,
-  },
-  {
-    name: "Capterra",
-    logo: "/images/webp/capterraRating.webp",
-    rating: 5,
-  },
-  {
-    name: "Software Advice",
-    logo: "images/svg/software-advice-rating.svg",
-    rating: 5,
-  },
+  // {
+  //   name: "Software Advice",
+  //   logo: "images/svg/software-advice-rating.svg",
+  //   rating: 5,
+  // },
 ];
 
 export const wantingMoreData = [
@@ -620,6 +620,58 @@ export const trackFeatures = [
   "All docs, permits, and photos in one place",
   "Log emails using property-specific CC addresses",
   "Add live camera feeds to any property",
+];
+
+export const planData = [
+  {
+    title: "Freedom",
+    subtitle: "Free forever",
+    monthlyPrice: 0,
+    note: "Just Starting",
+    cta: "Start for free",
+    featuresHeading: "Features Included :",
+    features: [
+      "Manage leads & clients",
+      "Unlimited estimates & invoices",
+      "Custom logo",
+      "National average material pricing",
+      "Multiple workspaces",
+      "Available on web, mobile & tablet",
+    ],
+  },
+  {
+    title: "PRO",
+    subtitle: "1 user",
+    monthlyPrice: 29,
+    note: "For Solopreneurs",
+    cta: "Get started",
+    featuresHeading: "Everything in FREEDOM +",
+    features: [
+      "Optional line items & add-ons",
+      "Requests & scheduling",
+      "Client portal",
+      "Live local cost data",
+      "Email, SMS, and voice",
+      "PRO website included",
+    ],
+    isPro: true,
+  },
+  {
+    title: "PRO Team",
+    subtitle: "Up to 5 users",
+    monthlyPrice: 95,
+    note: "For Teams",
+    cta: "Get started",
+    featuresHeading: "Everything in PRO +",
+    features: [
+      "$29/month per additional user",
+      "Manage team / employees",
+      "Personal, group & client chats",
+      "Custom URL & branding",
+      "Connect Quickbooks Online",
+    ],
+    isProTeam: true,
+  },
 ];
 
 export const blogData = [

@@ -1,12 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import TrustedServiceCard from "../crmbussiness/TrustedServiceCard";
 import { Review } from "@/types";
 import ReviewModal from "../common/ReviewModal";
-import TextAnimation from "../common/TextAnimation";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { textSplit } from "../common/TextSplit";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 interface TheReviewProps {
   reviews: any;
 }
@@ -18,14 +20,17 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     textSplit("#review-title");
+  //   }, 3000);
+  // }, []);
 
   return (
     <section className="custom-shadow relative pb-9 md:pb-12 lg:pb-[60px] xl:pb-[78px]">
-      <TextAnimation delay={0.2} animateOnScroll={true}>
-        <h3 className="section-heading gradient-white relative z-50 mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 sm:max-w-[70%] md:mb-10 lg:mb-12 xl:max-w-full">
-          {reviews.data?.[0].reviews.title}
-        </h3>
-      </TextAnimation>
+      <h3 className="section-heading gradient-white xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 md:mb-10 lg:mb-12 xl:max-w-full">
+        {reviews.data?.[0].reviews.title}
+      </h3>
 
       <Marquee
         speed={30}

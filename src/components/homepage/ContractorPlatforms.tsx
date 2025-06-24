@@ -9,12 +9,9 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   return (
     <section className="relative z-20">
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
-        <PrimaryAnimatedText
-          className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold"
-          delay={3000}
-        >
+        <h4 className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
           {contractPlatformsData?.data?.platforms?.title?.title}
-        </PrimaryAnimatedText>
+        </h4>
         <CardReveal
           distance={50}
           className="3xl:gap-8 flex flex-wrap justify-center gap-4 gap-y-[30px] sm:gap-y-8 lg:flex-nowrap lg:justify-between"
@@ -38,7 +35,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>
-                <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-1 text-center duration-200">
+                <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-[30px] text-center duration-200 sm:px-2 xl:px-[54px]">
                   {`${obj.description}`}
                 </p>
               </article>

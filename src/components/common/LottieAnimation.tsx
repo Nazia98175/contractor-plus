@@ -25,7 +25,7 @@ const LottieAnimation = ({
       },
       {
         threshold: 1.0, // Entire element must be fully in view
-        rootMargin: "-100px 0px -100px 0px", // top | right | bottom | left
+        rootMargin: "-80px 0px -80px 0px", // top | right | bottom | left
       },
     );
 

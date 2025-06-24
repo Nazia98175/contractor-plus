@@ -1,6 +1,7 @@
 "use client";
 import { platforms } from "@/components/common/Helper";
 // import ThousandsReviews from "@/components/hvca/ThousandsReviews";
+import CommonFormField from "@/components/common/CommonFormField";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
@@ -12,10 +13,10 @@ import SeperateSolution from "@/components/why-contractor/SeperateSolution";
 import VideoBottomPart from "@/components/why-contractor/VideoBottomPart";
 import WayToWin from "@/components/why-contractor/WayToWin";
 import WhyContractorHero from "@/components/why-contractor/WhyContractorHero";
-import Image from "next/image";
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const WhyContractorPage = () => {
   const redDotRef = useRef<HTMLElement>(null);
@@ -105,6 +106,22 @@ const WhyContractorPage = () => {
       <main className="pb-14">
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       </main>
+      <div className="pb-14">
+        <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
+          <CommonFormField
+            title={"All unified. All in sync. All in one place."}
+            sub_title={
+              "This is what it feels like to finally run your business, not be run by it."
+            }
+            placeholder={"Your Email"}
+            createBtn={"Get Started Free"}
+            mobileBtn={"Download FREE App"}
+            ncc={"No credit card required"}
+            variant={"primary"}
+          />
+        </div>
+        <TrustBarHvca showTrustedSection={false} platforms={platforms} />
+      </div>
     </>
   );
 };

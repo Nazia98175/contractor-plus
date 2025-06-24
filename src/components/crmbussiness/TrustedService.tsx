@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 import CardReveal from "../common/CardReveal";
 import ReviewModal from "../common/ReviewModal";
 import TrustedServiceCard from "./TrustedServiceCard";
+import TextAnimation from "../common/TextAnimation";
 
 interface TheReviewProps {
   reviews: any;
@@ -21,11 +22,11 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
 
   return (
     <section className="relative overflow-hidden">
-      <CardReveal>
-        <h3 className="section-heading service-text xs:max-w-[90%] relative z-50 mx-auto max-w-[72%] px-3 text-center text-white">
-          {reviews?.data?.[0]?.reviews?.title}
-        </h3>
-      </CardReveal>
+      {/* <TextAnimation delay={0.2}> */}
+      <h3 className="section-heading service-text xs:max-w-[80%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-full">
+        {reviews?.data?.[0]?.reviews?.title}
+      </h3>
+      {/* </TextAnimation> */}
       <div className="relative h-fit pt-7">
         <div className="trusted-gradient pointer-events-none absolute bottom-0 left-[0px] z-40 hidden h-full w-24 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="trusted-gradient pointer-events-none absolute right-[0px] bottom-0 z-40 hidden h-full w-24 rotate-180 lg:block xl:w-[200px] 2xl:w-[370px]"></div>

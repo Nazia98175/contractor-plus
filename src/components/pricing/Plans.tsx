@@ -3,7 +3,7 @@ import PlanCard from "./PlanCard";
 
 const Plans = () => {
   return (
-    <div>
+    <div className="mx-auto w-full max-w-[1092px] px-14 py-[22px]">
       <PlanCard />
     </div>
   );

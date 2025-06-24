@@ -622,6 +622,61 @@ export const trackFeatures = [
   "Add live camera feeds to any property",
 ];
 
+export const planData = [
+  {
+    title: "Freedom",
+    subtitle: "Free forever",
+    price: "$0",
+    note: "Just Starting",
+    cta: "Start for free",
+    featuresHeading: "Features Included :",
+    features: [
+      "Manage leads & clients",
+      "Unlimited estimates & invoices",
+      "Custom logo",
+      "National average material pricing",
+      "Multiple workspaces",
+      "Available on web, mobile & tablet",
+    ],
+    buttonClass: "",
+    cardClass: "",
+  },
+  {
+    title: "PRO",
+    subtitle: "1 user",
+    price: "$29",
+    note: "For Solopreneurs",
+    cta: "Get started",
+    featuresHeading: "Everything in FREEDOM +",
+    features: [
+      "Optional line items & add-ons",
+      "Requests & scheduling",
+      "Client portal",
+      "Live local cost data",
+      "Email, SMS, and voice",
+      "PRO website included",
+    ],
+    isPro: true,
+    cardClass: "",
+  },
+  {
+    title: "PRO Team",
+    subtitle: "Up to 5 users",
+    price: "$95",
+    note: "For Teams",
+    cta: "Get started",
+    featuresHeading: "Everything in PRO +",
+    features: [
+      "$29/month per additional user",
+      "Manage team / employees",
+      "Personal, group & client chats",
+      "Custom URL & branding",
+      "Connect Quickbooks Online",
+    ],
+    isProTeam: true,
+    cardClass: "",
+  },
+];
 export const blogData = [
   {
     id: 1,

@@ -9,9 +9,10 @@ import TextAnimation from "../common/TextAnimation";
 
 interface TheReviewProps {
   reviews: any;
+  slug?: string;
 }
 
-const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
+const TrustedService: React.FC<TheReviewProps> = ({ reviews, slug }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -35,6 +36,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
                 key={review.id}
+                slug={slug}
                 review={review as Review}
                 openModal={
                   review.isModal
@@ -55,6 +57,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
           >
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
+                slug={slug}
                 key={review.id}
                 review={review as Review}
                 openModal={

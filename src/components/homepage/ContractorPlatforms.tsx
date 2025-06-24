@@ -35,7 +35,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>
-                <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-1 text-center duration-200">
+                <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-[30px] text-center duration-200 sm:px-2 xl:px-[54px]">
                   {`${obj.description}`}
                 </p>
               </article>

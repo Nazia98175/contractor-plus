@@ -131,6 +131,16 @@ export const swichToContractordata = [
 
 export const platforms: Platform[] = [
   {
+    name: "Capterra",
+    logo: "/images/webp/capterraRating.webp",
+    rating: 5,
+  },
+  {
+    name: "G2 Crowd",
+    logo: "/images/webp/g2Rating.webp",
+    rating: 5,
+  },
+  {
     name: "App Store",
     logo: "/images/svg/apple-rating.svg",
     rating: 5,
@@ -140,21 +150,11 @@ export const platforms: Platform[] = [
     logo: "/images/webp/play-google.webp",
     rating: 5,
   },
-  {
-    name: "G2 Crowd",
-    logo: "/images/webp/g2Rating.webp",
-    rating: 5,
-  },
-  {
-    name: "Capterra",
-    logo: "/images/webp/capterraRating.webp",
-    rating: 5,
-  },
-  {
-    name: "Software Advice",
-    logo: "images/svg/software-advice-rating.svg",
-    rating: 5,
-  },
+  // {
+  //   name: "Software Advice",
+  //   logo: "images/svg/software-advice-rating.svg",
+  //   rating: 5,
+  // },
 ];
 
 export const wantingMoreData = [

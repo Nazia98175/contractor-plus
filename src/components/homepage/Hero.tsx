@@ -35,7 +35,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             </h1>
             {/* </TextAnimation> */}
             {/* <TextAnimation delay={0.35}> */}
-            <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[97%] sm:text-sm md:text-base md:font-medium lg:text-lg">
+            <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
               {hero_description}
             </p>
             {/* </TextAnimation> */}

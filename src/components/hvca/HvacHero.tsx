@@ -23,7 +23,6 @@ const HvacHero = () => {
         <Image
           width={769}
           height={800}
-          priority
           src="/images/webp/hero-video-ovelay.webp"
           alt="Red Circle For designing"
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
@@ -96,7 +95,6 @@ const HvacHero = () => {
           <Image
             priority
             fill
-            unoptimized
             className="absolute -top-[6%] hidden !h-[111%] w-full object-cover lg:-right-[3%] lg:block"
             src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"

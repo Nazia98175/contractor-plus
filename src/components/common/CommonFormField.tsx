@@ -4,6 +4,7 @@ import TextAnimation from "./TextAnimation";
 import CardReveal from "./CardReveal";
 import { CheckIcon } from "./Icons";
 import { variantsForm } from "@/utils/getVariants";
+import CardRequiredButton from "./CardRequiredButton";
 
 interface CommonFormFieldProps {
   title: string;
@@ -15,7 +16,7 @@ interface CommonFormFieldProps {
   showTitle?: boolean;
   showDescription?: boolean;
   className?: string;
-  variant?: "default" | "primary" | "secondary";
+  variant?: "default" | "primary" | "secondary" | "tertiary";
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({
@@ -103,20 +104,12 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
               )}
             </button>
 
-            <p className="hidden items-center gap-2 pt-3 md:flex">
-              <CheckIcon />
-              <span className="font-myriad text-sm font-semibold text-white">
-                {ncc}
-              </span>
-            </p>
+            <div className="hidden items-center gap-2 pt-3 md:flex">
+              <CardRequiredButton className="text-white" text={ncc} />
+            </div>
           </div>
           <div className="flex w-full items-center justify-center md:hidden">
-            <p className="flex items-center gap-2 pt-1">
-              <CheckIcon />
-              <span className="font-myriad text-sm font-semibold text-white">
-                {ncc}
-              </span>
-            </p>
+            <CardRequiredButton className="text-white" text={ncc} />
           </div>
         </form>
 

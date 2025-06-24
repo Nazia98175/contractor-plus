@@ -32,9 +32,7 @@ const Faq: React.FC<Props> = ({
   const { openIndex, toggleFaq } = UseFaqToggle();
 
   return (
-    <section
-      className={`${mainContainerclassName} relative z-20 px-2 py-10 md:pt-[66px] md:pb-[71px]`}
-    >
+    <section className={`${mainContainerclassName} relative z-20`}>
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
       <h3

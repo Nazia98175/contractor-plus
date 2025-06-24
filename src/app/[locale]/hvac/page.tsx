@@ -16,7 +16,7 @@ import { getCrmPage } from "@/services/features/crm";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 
 export const metadata = {
-  title: "Contractor + - HVAC Software",
+  title: "Contractor Plus - HVAC Software",
   description: "Not just HVAC software. Meet your operating system.",
 };
 type PageProps = {
@@ -66,16 +66,14 @@ const page = async ({ params }: PageProps) => {
   const { homePageContent } = await getHomepageData(useParams?.locale);
   return (
     <main className="overflow-hidden">
-      <div className="bg-white">
-        <div className="relative">
-          <div className="absolute bottom-[205px] left-0 z-50 block h-[45px] w-full bg-white blur-[9px] sm:hidden"></div>
-          <HvacHero />
-          <TrustBatBuildContractor
-            platforms={blackPlatforms}
-            showTrustedSection={true}
-            className="1xl:gap-12 relative z-10 mx-auto flex w-full max-w-[1050px] flex-col gap-4 px-2 pt-[43px] pb-14 sm:gap-6 md:gap-7 md:pt-[13px] xl:gap-9 xl:pt-5"
-          />
-        </div>
+      <div className="relative bg-white">
+        <HvacHero />
+        <TrustBatBuildContractor
+          platforms={blackPlatforms}
+          showTrustedSection={true}
+          className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
+        />
+
         <HvacSoftware />
         <WantingMore />
         <EraOfSoftware />

@@ -3,21 +3,14 @@ import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
 import CardRequiredButton from "../common/CardRequiredButton";
 import CloudsAnimation from "../common/CloudsAnimation";
-import {
-  ArrowIcon,
-  HvacGlowHeroDesktopIcon,
-  HvacGlowHeroMobileIcon,
-  SideIcon,
-} from "../common/Icons";
+import FreeAccountButton from "../common/FreeAccountButton";
+import { features } from "../common/Helper";
 import TextAnimation from "../common/TextAnimation";
 import HvacHeroSlider from "./HvacHeroSlider";
-import { features } from "../common/Helper";
-import Button from "../common/Button";
-import FreeAccountButton from "../common/FreeAccountButton";
 const HvacHero = () => {
   return (
-    <section className="bg-kuroiBlack relative overflow-hidden lg:pt-[180px]">
-      <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md"></div>
+    <section className="bg-kuroiBlack relative overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>
       <div className="overflow-hidden">
         <Image
           width={769}
@@ -27,10 +20,9 @@ const HvacHero = () => {
           alt="Red Circle For designing"
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
         />
-        <div className="main-container relative flex items-end pt-[395px] pb-16 sm:pt-[269px] sm:pb-28 md:pb-[100px] lg:pt-[0px] lg:pb-[150px] xl:pb-[355px] 2xl:pb-[370px]">
-          {/* <HvacGlowHeroMobileIcon /> */}
+        <div className="main-container xs:pb-28 relative flex items-end pt-[395px] pb-16 md:pt-[250px] md:pb-[100px] lg:pt-[168px] lg:pb-[150px] xl:pb-[355px] 2xl:pt-[180px] 2xl:pb-[370px]">
           <img
-            className="pointer-events-none absolute top-0 left-0 z-10 w-full max-w-[320px] lg:hidden xl:left-[13%]"
+            className="pointer-events-none absolute top-0 left-0 z-10 w-full max-w-[320px] object-cover sm:max-w-[400px] lg:hidden xl:left-[13%]"
             src="/images/webp/hvac-hero-gradient-mobile.webp"
             alt="hvac gradient"
           />
@@ -41,7 +33,7 @@ const HvacHero = () => {
               </h1>
             </TextAnimation>
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
-            <p className="text-decemberSky mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[478px] sm:text-sm md:text-base md:font-medium lg:my-[26px] lg:text-lg">
+            <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[478px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
               Contractor+ connects every function of your business so it finally
               all works in sync.
             </p>
@@ -67,7 +59,7 @@ const HvacHero = () => {
         <div className="absolute right-[2%] bottom-16 z-10 hidden h-[62%] w-[314px] lg:flex xl:right-[2%]">
           <HvacHeroSlider features={features} />
         </div>
-        <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full max-w-[945px] lg:max-h-[750px]">
+        <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full lg:max-h-[750px] lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">
             <img
               className="w-full"
@@ -82,7 +74,7 @@ const HvacHero = () => {
             src={"/images/webp/hvac-hero.webp"}
             width={945}
             height={729}
-            className="hidden w-full object-right sm:block"
+            className="hidden w-full object-right md:block"
             unoptimized
           />
           <Image
@@ -90,7 +82,7 @@ const HvacHero = () => {
             src={"/images/webp/hvac-hero-mobile.webp"}
             width={945}
             height={729}
-            className="block w-full object-contain sm:hidden"
+            className="block w-full object-cover md:hidden"
             unoptimized
           />
           <Image

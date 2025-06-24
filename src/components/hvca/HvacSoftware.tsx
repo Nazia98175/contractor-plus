@@ -1,6 +1,4 @@
-import React from "react";
 import { softwareCardData } from "../common/Helper";
-import { AlertIcon } from "../common/Icons";
 import HvacSoftwareCard from "./HvacSoftwareCard";
 
 const HvacSoftware = () => {

@@ -106,7 +106,7 @@ const page = async ({ params }: PageProps) => {
       />
       <div className="relative">
         <Faq
-          mainContainerclassName="pt-9 pb-16"
+          mainContainerclassName="pt-9 pb-16 z-20"
           faq={{
             title: "What HVAC contractors want to know",
             sub_title: "Frequently asked questions",
@@ -115,7 +115,7 @@ const page = async ({ params }: PageProps) => {
           classNameAnswer="pt-1"
           classHeadingMaxWidth="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
         />
-        <div className="mt-8 md:h-[76px]">
+        <div className="pointer-events-none mt-8 md:h-[76px]">
           <CloudsAnimation
             cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
             cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"

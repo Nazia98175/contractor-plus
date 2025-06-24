@@ -626,7 +626,7 @@ export const planData = [
   {
     title: "Freedom",
     subtitle: "Free forever",
-    price: "$0",
+    monthlyPrice: 0,
     note: "Just Starting",
     cta: "Start for free",
     featuresHeading: "Features Included :",
@@ -642,7 +642,7 @@ export const planData = [
   {
     title: "PRO",
     subtitle: "1 user",
-    price: "$29",
+    monthlyPrice: 29,
     note: "For Solopreneurs",
     cta: "Get started",
     featuresHeading: "Everything in FREEDOM +",
@@ -659,7 +659,7 @@ export const planData = [
   {
     title: "PRO Team",
     subtitle: "Up to 5 users",
-    price: "$95",
+    monthlyPrice: 95,
     note: "For Teams",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
@@ -673,6 +673,7 @@ export const planData = [
     isProTeam: true,
   },
 ];
+
 export const blogData = [
   {
     id: 1,

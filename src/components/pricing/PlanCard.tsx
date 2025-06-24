@@ -4,7 +4,7 @@ import { ActivationIcon, LineIcon, ListIcon } from "../common/Icons";
 interface PlanData {
   title: string;
   subtitle: string;
-  price: string;
+  monthlyPrice: number;
   note: string;
   cta: string;
   cardClass?: string;
@@ -16,9 +16,17 @@ interface PlanData {
 
 interface PlanCardProps {
   plan: PlanData;
+  isAnnual: boolean;
 }
 
-const PlanCard: React.FC<PlanCardProps> = ({ plan }) => {
+const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
+  const rawAnnualPrice = plan.monthlyPrice * 12;
+  const discountedAnnualPrice = rawAnnualPrice * 0.6;
+
+  const priceValue = isAnnual ? discountedAnnualPrice : plan.monthlyPrice;
+  const formattedPrice = `$${priceValue.toFixed(0)}`;
+
+  const suffix = isAnnual ? "/yr" : "/mo";
   return (
     <article
       className={`font-myriad rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] ${plan.cardClass ?? ""}`}
@@ -35,8 +43,8 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan }) => {
         </div>
 
         <h3 className="text-winterWay mt-8 text-[38px] leading-[122%] font-bold">
-          {plan.price}{" "}
-          <span className="text-secondary text-lg font-semibold">/mo</span>
+          {formattedPrice}
+          <span className="text-secondary text-lg font-semibold">{suffix}</span>
         </h3>
 
         <div className="py-1.5">

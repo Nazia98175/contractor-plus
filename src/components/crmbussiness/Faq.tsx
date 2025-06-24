@@ -19,6 +19,7 @@ interface Props {
   classNameAnswer?: string;
   containerClassName?: string;
   mainContainerclassName?: string;
+  classHeadingMaxWidth?: string;
 }
 const Faq: React.FC<Props> = ({
   faq,
@@ -26,6 +27,7 @@ const Faq: React.FC<Props> = ({
   classNameAnswer,
   containerClassName,
   mainContainerclassName,
+  classHeadingMaxWidth,
 }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
 
@@ -35,7 +37,9 @@ const Faq: React.FC<Props> = ({
     >
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
-      <h3 className="section-heading text-center">
+      <h3
+        className={`section-heading text-center ${classHeadingMaxWidth || ""}`}
+      >
         <span className="faq-heading-text">{faq?.title}</span>
       </h3>
       {/* </TextAnimation> */}

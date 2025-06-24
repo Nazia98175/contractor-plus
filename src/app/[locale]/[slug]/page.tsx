@@ -145,12 +145,14 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               faq={faqs?.faqs}
               classNameAnswer="pt-1"
               mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0 px-2"
+              classHeadingMaxWidth="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
             />
           </div>
           <BlogPosts
             data={page?.blogs}
             blogs={blogs}
             className="mt-7 md:mt-9"
+            classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
           />
         </>
       )}

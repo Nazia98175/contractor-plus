@@ -27,11 +27,11 @@ const HvacHero = () => {
             alt="hvac gradient"
           />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
-            <TextAnimation animateOnScroll={false} delay={3}>
-              <h1 className="main-heading gradient-white">
-                Not just HVAC software. Meet your operating system.
-              </h1>
-            </TextAnimation>
+            {/* <TextAnimation animateOnScroll={false} delay={3}> */}
+            <h1 className="main-heading gradient-white">
+              Not just HVAC software. Meet your operating system.
+            </h1>
+            {/* </TextAnimation> */}
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
             <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[478px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
               Contractor+ connects every function of your business so it finally
@@ -46,7 +46,7 @@ const HvacHero = () => {
               />
               <FreeAccountButton
                 showIcon={false}
-                text={"Download App"}
+                text={"Download FREE App"}
                 className="flex sm:!hidden"
               />
               <CardRequiredButton

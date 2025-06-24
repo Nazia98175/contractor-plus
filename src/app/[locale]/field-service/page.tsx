@@ -1,6 +1,5 @@
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
-import MainLoader from "@/components/common/MainLoader";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -14,15 +13,24 @@ import ServiceContractorsMarquee from "@/components/field-services/ServiceContra
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
-import { getBlogs } from "@/services/blogs";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { getHomePage } from "@/services/homePage/homepage";
+import { getSeoMeta } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Contractor Plus - Field Service",
-  description:
-    "One command center to visualize and run your entire field operation",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { crmPageContent } = await getFeaturesPageData(
+    "field-service",
+    params.locale,
+  );
+  const page = crmPageContent?.data?.[0];
+
+  return getSeoMeta(page?.seoMeta);
+}
 
 interface Params {
   params: Promise<{ locale: string }>;

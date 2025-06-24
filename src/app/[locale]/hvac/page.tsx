@@ -16,8 +16,9 @@ import { getCrmPage } from "@/services/features/crm";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 
 export const metadata = {
-  title: "Contractor Plus - HVAC Software",
-  description: "Not just HVAC software. Meet your operating system.",
+  title: "Not just HVAC software Meet your operating system",
+  description:
+    "Contractor+ connects every function of your business so it finally all works in sync.",
 };
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;

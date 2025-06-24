@@ -40,7 +40,7 @@ const Dashboard = () => {
 
       ScrollTrigger.create({
         trigger: ref,
-        start: "top 80%", // Trigger earlier - when item is 80% down the viewport
+        start: window.innerWidth < 768 ? "top 10%" : "top 140%", // Earlier trigger on mobile, later on desktop
         end: "bottom center",
         onEnter: () => {
           const tickPath = ref.querySelector(".tick-icon path");

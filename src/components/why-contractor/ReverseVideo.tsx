@@ -1,24 +1,43 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StrokeText } from "./Icons";
 import TextAnimation from "../common/TextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
-const ReverseVideo = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+const ReverseFrames = () => {
+  const imageRef = useRef<HTMLImageElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [currentFrame, setCurrentFrame] = useState(0);
+   
+  const totalFrames = 13;  
+  const frameBasePath = "/images/hand-video/";  
+  const frameExtension = ".png"; 
+  const frameDigits = 5;
+  const framePaths = Array.from({ length: totalFrames }, (_, i) => {
+    const frameNumber = (i + 1).toString().padStart(frameDigits, '0');
+    return `${frameBasePath}${frameNumber}${frameExtension}`;
+  });
+ 
   useEffect(() => {
-    const video = videoRef.current;
+    const preloadFrames = () => {
+      framePaths.forEach((path) => {
+        const img = new Image();
+        img.src = path;
+      });
+    };
+    preloadFrames();
+  }, []);
+
+  useEffect(() => {
     const section = sectionRef.current;
-    if (!video || !section) return;
+    if (!section) return;
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Ensure video metadata is loaded
     const setupScroll = () => {
-      gsap.to(video, {
-        currentTime: video.duration || 1,
+      gsap.to({}, {
+        duration: 1,
         ease: "none",
         scrollTrigger: {
           trigger: section,
@@ -26,37 +45,31 @@ const ReverseVideo = () => {
           end: "bottom bottom",
           scrub: true,
           markers: false,
-          pin: false, // set to true if you wanna pin the section
-          onUpdate: (self) => {
-            video.currentTime = self.progress * video.duration;
+          pin: false,  
+          onUpdate: (self) => { 
+            const frameIndex = Math.floor(self.progress * (totalFrames - 1));
+            setCurrentFrame(frameIndex);
           },
         },
       });
     };
 
-    if (video.readyState >= 2) {
-      setupScroll();
-    } else {
-      video.addEventListener("loadedmetadata", setupScroll);
-    }
+    setupScroll();
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [totalFrames]);
 
   return (
     <section ref={sectionRef} className="relative z-[0] bg-[#000] px-2.5">
-      <video
-        ref={videoRef}
+      <img
+        ref={imageRef}
+        src={framePaths[currentFrame]}
+        alt={`Frame ${currentFrame + 1}`}
         className="relative z-[-1] mx-auto h-full w-full max-w-[1440px] object-cover object-top"
-        muted
-        playsInline
-        preload="auto"
-      >
-        <source src="/video/l-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        loading="eager"
+      />
 
       <div
         className="absolute -top-1 left-0 z-10 h-10 w-full sm:h-[142px]"
@@ -84,4 +97,4 @@ const ReverseVideo = () => {
   );
 };
 
-export default ReverseVideo;
+export default ReverseFrames;

@@ -638,8 +638,6 @@ export const planData = [
       "Multiple workspaces",
       "Available on web, mobile & tablet",
     ],
-    buttonClass: "",
-    cardClass: "",
   },
   {
     title: "PRO",
@@ -657,7 +655,6 @@ export const planData = [
       "PRO website included",
     ],
     isPro: true,
-    cardClass: "",
   },
   {
     title: "PRO Team",
@@ -674,7 +671,6 @@ export const planData = [
       "Connect Quickbooks Online",
     ],
     isProTeam: true,
-    cardClass: "",
   },
 ];
 export const blogData = [

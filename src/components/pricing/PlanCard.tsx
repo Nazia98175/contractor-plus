@@ -29,12 +29,12 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
   const suffix = isAnnual ? "/yr" : "/mo";
   return (
     <article
-      className={`font-myriad rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] ${plan.cardClass ?? ""}`}
+      className={`font-myriad max-w-[317px] rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] ${plan.cardClass ?? ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h4 className="xs-heading text-wallStreet !font-bold">
+            <h4 className="xs-heading text-wallStreet leading-[120%] !font-bold">
               {plan.title}
             </h4>
             <p className="text-secondary text-sm">{plan.subtitle}</p>
@@ -42,7 +42,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
           {plan.isProTeam && <ActivationIcon />}
         </div>
 
-        <h3 className="text-winterWay mt-8 text-[38px] leading-[122%] font-bold">
+        <h3 className="text-winterWay mt-4 text-[38px] leading-[122%] font-bold md:mt-8">
           {formattedPrice}
           <span className="text-secondary text-lg font-semibold">{suffix}</span>
         </h3>
@@ -55,7 +55,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
         </div>
 
         <button
-          className={`my-6 flex h-10 w-full items-center justify-center rounded-lg font-semibold tracking-[0.1px] ${
+          className={`my-4 flex h-10 w-full items-center justify-center rounded-lg font-semibold tracking-[0.1px] lg:my-6 ${
             plan.isPro
               ? "border-winterWay text-wallStreet border bg-[#F5F5F5]"
               : plan.isProTeam
@@ -69,7 +69,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
         <h5 className="text-secondary mb-3.5 text-base font-bold">
           {plan.featuresHeading}
         </h5>
-        <ul className="space-y-4">
+        <ul className="space-y-3 md:space-y-4">
           {plan.features.map((feature, idx) => (
             <li
               key={idx}

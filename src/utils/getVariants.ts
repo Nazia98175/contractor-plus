@@ -18,8 +18,9 @@ export const variantsForm = {
       "bg-lightBlack text-white placeholder:text-white border-b border-white",
   },
   secondary: {
-    title: "text-gray-900",
-    subtitle: "text-gray-600",
-    input: "bg-gray-100 text-gray-900 placeholder:text-gray-500",
+    title: "text-decemberSky sub-heading font-extrabold",
+    subtitle: "text-decemberSky",
+    input:
+      "bg-kkuroiBlack text-white placeholder:text-white border-b border-white",
   },
 };

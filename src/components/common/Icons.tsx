@@ -1295,8 +1295,8 @@ export const ListIcon = () => (
   >
     <rect width="18" height="18" rx="9" fill="#D1FADF" />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M12.8225 5.54176L7.4525 10.7243L6.0275 9.20177C5.765 8.95426 5.3525 8.93927 5.0525 9.14927C4.76 9.36677 4.6775 9.74926 4.8575 10.0568L6.545 12.8018C6.71 13.0568 6.995 13.2143 7.3175 13.2143C7.625 13.2143 7.9175 13.0568 8.0825 12.8018C8.3525 12.4493 13.505 6.30676 13.505 6.30676C14.18 5.61676 13.3625 5.00927 12.8225 5.53427V5.54176Z"
       fill="#34755C"
     />
@@ -1323,8 +1323,8 @@ export const LineIcon = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(14.0647 8.49999) rotate(-32.4544) scale(144.109 213.678)"
       >
-        <stop stop-color="#0E0D11" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="#0E0D11" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </radialGradient>
     </defs>
   </svg>

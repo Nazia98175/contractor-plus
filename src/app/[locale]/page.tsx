@@ -18,9 +18,10 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
-  const page = await getSeoData("homepage", params.locale);
+  const resolvedParams = await params;
+  const page = await getSeoData("homepage", resolvedParams?.locale);
 
   if (!page) {
     return;
@@ -40,7 +41,7 @@ export async function generateMetadata({
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) {
   const useParams = await params;
 

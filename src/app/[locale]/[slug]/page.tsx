@@ -20,6 +20,7 @@ import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import { getSeoData } from "@/services/common/seoMeta";
 
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
+import { getSeoMeta } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 

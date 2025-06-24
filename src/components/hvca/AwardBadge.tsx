@@ -11,15 +11,15 @@ export default function AwardBadges() {
       <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>
       <img
         src="/images/webp/red-linear-bg.webp"
-        className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
+        className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover md:block"
         alt="Red Lineaar background"
       />
       <img
         src="/images/webp/red-linear-mobile.webp"
-        className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-top sm:hidden"
+        className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-top md:hidden"
         alt="Red Lineaar background"
       />
-      <div className="main-container main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 sm:pt-10 md:grid-cols-3 md:pt-8 xl:grid xl:grid-cols-3">
+      <div className="main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-0 xl:grid xl:grid-cols-3">
         {makeOperationList.map((item, index) => (
           <SoftwareUsed key={index} item={item} />
         ))}

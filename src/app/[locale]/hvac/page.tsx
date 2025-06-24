@@ -117,7 +117,7 @@ const page = async ({ params }: PageProps) => {
       <BlogPosts
         data={blogs?.data?.[0]?.blogs}
         blogs={blogs?.data?.[0]?.blogs}
-        className="relative z-20 bg-white"
+        className="relative z-20 bg-white pb-8"
         variant="secondary"
       />
     </main>

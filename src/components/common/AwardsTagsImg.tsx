@@ -11,7 +11,7 @@ const AwardsTagsImg = () => {
   };
   return (
     <>
-      <div className="mt-8 hidden items-center justify-center gap-5 px-4 pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
+      <div className="hidden items-center justify-center gap-5 px-4 pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
         {awards.map((award, index) => {
           return (
             <div key={index} className="h-[100px] max-w-[130px] md:h-[122px]">

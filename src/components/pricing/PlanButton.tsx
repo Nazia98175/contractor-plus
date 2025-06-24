@@ -12,14 +12,14 @@ const PlanButton: React.FC<PlanButtonProps> = ({
   className = "",
 }) => {
   const baseStyles: string =
-    "my-4 h-10 w-full rounded-lg font-semibold tracking-[0.1px] duration-300 lg:my-6 flex items-center justify-center";
+    "  h-10 w-full rounded-lg font-semibold tracking-[0.1px] duration-300 flex items-center justify-center";
 
   const variantStyles: Record<string, string> = {
     pro: "bg-offWhite group-hover:bg-wallStreet group-hover:border-transparent group-hover:text-offWhite",
     proTeam:
       "bg-softBlush text-thickRed group-hover:bg-thickRed group-hover:text-softBlush",
     default:
-      "border-winterWay text-wallStreet group-hover:bg-wallStreet group-hover:border-transparent group-hover:text-offWhite",
+      "border-winterWay border text-wallStreet group-hover:bg-wallStreet group-hover:border-transparent group-hover:text-offWhite",
   };
 
   return (

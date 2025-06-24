@@ -57,6 +57,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
 
         <PlanButton
           cta={plan.cta}
+          className="my-4 lg:my-6"
           variant={plan.isPro ? "pro" : plan.isProTeam ? "proTeam" : "default"}
         />
 

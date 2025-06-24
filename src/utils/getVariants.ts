@@ -23,4 +23,9 @@ export const variantsForm = {
     input:
       "bg-kkuroiBlack text-white placeholder:text-white border-b border-white",
   },
+  tertiary: {
+    title: "text-white sub-heading font-extrabold max-w-full",
+    subtitle: "text-decemberSky",
+    input: "bg-white text-secondary placeholder:text-secondary ",
+  },
 };

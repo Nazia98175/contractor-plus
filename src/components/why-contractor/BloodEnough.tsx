@@ -13,14 +13,26 @@ const BloodEnough = () => {
 
     const trigger = ScrollTrigger.create({
       trigger: sectionRef.current,
-      start: "top 30%", // Trigger when element is 30% from top
+      start: "top center",
       end: "bottom center",
       scrub: 1,
       onEnter: () => {
-        // Add the class when entering the trigger zone
+        // Add the class when scrolling down and entering
         sectionRef.current?.classList.add("scroll-active");
       },
-      // Remove toggleClass to prevent class removal on scroll back
+      onLeaveBack: () => {
+        // Remove the class when scrolling back up
+        sectionRef.current?.classList.remove("scroll-active");
+      },
+      onEnterBack: () => {
+        // Add the class when scrolling back down into view
+        sectionRef.current?.classList.add("scroll-active");
+      },
+      onLeave: () => {
+        // Optional: Remove class when scrolling past the element
+        // Uncomment if you want the effect to reverse when scrolling far down
+        // sectionRef.current?.classList.remove("scroll-active");
+      },
     });
 
     return () => {
@@ -36,36 +48,46 @@ const BloodEnough = () => {
       <style jsx>{`
         h3 {
           color: #8a8e91;
+          transition: color 0.3s ease-in-out;
         }
+
         h6 {
           color: #656c73;
+          transition: color 0.3s ease-in-out;
         }
 
         .highlighted-span {
           color: #d2d4d6;
+          transition: color 0.3s ease-in-out;
         }
 
         .scroll-active h3 {
           color: #fff !important;
         }
+
         .scroll-active h6 {
           color: #fff !important;
         }
 
         .scroll-active .highlighted-span {
-          color: #F21314 !important;
+          color: #f21314 !important;
         }
 
         svg path {
           fill: #3f464b;
           stroke: #1c2731;
-          transition: all 0.3s ease;
+          transition: all 0.3s ease-in-out;
         }
 
         .scroll-active svg path {
           fill: #fff !important;
           stroke: #fff !important;
         }
+
+        .icon-span {
+          transition: transform 0.3s ease-in-out;
+        }
+
         .scroll-active .icon-span {
           transform: rotate(45deg);
         }

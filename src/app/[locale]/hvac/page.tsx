@@ -1,5 +1,7 @@
+import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, platforms, reviews } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/hvca/AwardBadge";
@@ -87,7 +89,7 @@ const page = async ({ params }: PageProps) => {
         variant="secondary"
       />
 
-      <HvacSoftwareService
+      {/* <HvacSoftwareService
         data={{
           title: "This is what HVAC software should have been all along",
           sub_title: "Start using Contractor+ FREE. You won’t look back.",
@@ -97,23 +99,36 @@ const page = async ({ params }: PageProps) => {
         createBtn="Get Started Free"
         mobileBtn="Download App"
         mobileBtnHref="/app-download"
-      />
+      /> */}
 
+      <div className="pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
+        <CommonFormField
+          variant="tertiary"
+          title={"This is what HVAC software should have been all along"}
+          sub_title={"Start using Contractor+ FREE. You won’t look back."}
+          placeholder={"Your Email"}
+          createBtn={"Get Started Free"}
+          mobileBtn={"Download FREE App"}
+          ncc={"No credit card required"}
+        />
+      </div>
       <TrustBarHvca platforms={platforms} className="xl:pb-20" />
       <WhatEverClient
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
-      <HvacFaq
-        faqitems={{
-          title: "What HVAC contractors want to know",
-          sub_title: "Frequently asked questions",
-          faq: faqitems,
-        }}
-        variant="hvac"
-        heading="What HVAC contractors want to know"
-      />
 
+      <div className="pt-9">
+        <Faq
+          faq={{
+            title: "What HVAC contractors want to know",
+            sub_title: "Frequently asked questions",
+            faq: faqitems,
+          }}
+          classNameAnswer="pt-1"
+          classHeadingMaxWidth="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
+        />
+      </div>
       <BlogPosts
         data={blogs?.data?.[0]?.blogs}
         blogs={blogs?.data?.[0]?.blogs}

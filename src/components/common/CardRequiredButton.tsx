@@ -8,13 +8,13 @@ interface CardRequiredButtonProps {
 }
 
 const CardRequiredButton: React.FC<CardRequiredButtonProps> = ({
-  className = "",
+  className = "text-secondary",
   text = "",
-  showIcon = true,
+  showIcon = false,
 }) => {
   return (
     <button
-      className={`${className} font-myriad text-secondary hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex`}
+      className={`${className} font-myriad hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex`}
     >
       {showIcon && <CheckIcon />}
       {text}

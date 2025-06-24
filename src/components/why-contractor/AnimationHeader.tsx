@@ -13,15 +13,26 @@ const AnimationHeader = () => {
 
     const trigger = ScrollTrigger.create({
       trigger: sectionRef.current,
-      start: "top 30%", // Changed from "top center" to trigger when element is 30% from top
+      start: "top center",
       end: "bottom center",
       scrub: 1,
       onEnter: () => {
-        // Add the class when entering the trigger zone
+        // Add the class when scrolling down and entering
         sectionRef.current?.classList.add("scroll-active");
       },
-      // Remove toggleClass to prevent class removal on scroll back
-      // onLeaveBack: () => {} // Don't do anything when scrolling back
+      onLeaveBack: () => {
+        // Remove the class when scrolling back up
+        sectionRef.current?.classList.remove("scroll-active");
+      },
+      onEnterBack: () => {
+        // Add the class when scrolling back down into view
+        sectionRef.current?.classList.add("scroll-active");
+      },
+      onLeave: () => {
+        // Optional: Remove class when scrolling past the element
+        // Uncomment if you want the effect to reverse when scrolling far down
+        // sectionRef.current?.classList.remove("scroll-active");
+      },
     });
 
     return () => {
@@ -37,14 +48,17 @@ const AnimationHeader = () => {
       <style jsx>{`
         h3 {
           color: #8a8e91;
+          transition: color 0.3s ease-in-out;
         }
 
         h6 {
           color: #656c73;
+          transition: color 0.3s ease-in-out;
         }
 
         .highlighted-span {
           color: #fff;
+          transition: color 0.3s ease-in-out;
         }
 
         .scroll-active h3 {
@@ -56,7 +70,7 @@ const AnimationHeader = () => {
         }
 
         .scroll-active .highlighted-span {
-          color: #F21314 !important;
+          color: #f21314 !important;
         }
 
         /* Plus icon default */
@@ -71,19 +85,24 @@ const AnimationHeader = () => {
           fill: #fff !important;
           stroke: #fff !important;
         }
+
+        .icon-span {
+          transition: transform 0.3s ease-in-out;
+        }
+
         .scroll-active .icon-span {
           transform: rotate(45deg);
         }
       `}</style>
 
       <TextAnimation animateOnScroll={true} delay={0}>
-        <h3 className="sub-heading mb-1 text-center font-semibold max-sm:!text-lg duration-300">
+        <h3 className="sub-heading mb-1 text-center font-semibold duration-300 max-sm:!text-lg">
           The contractors pulling ahead aren't grinding harder.
         </h3>
       </TextAnimation>
 
       <TextAnimation animateOnScroll={true} delay={0}>
-        <h6 className="text-center text-xs leading-[130%] lg:text-lg xl:text-[22px] duration-300">
+        <h6 className="text-center text-xs leading-[130%] duration-300 lg:text-lg xl:text-[22px]">
           They've
           <span className="highlighted-span font-medium italic duration-300">
             {" "}

@@ -1,3 +1,4 @@
+import CloudsAnimation from "@/components/common/CloudsAnimation";
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, platforms, reviews } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -6,10 +7,8 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/hvca/AwardBadge";
 import EraOfSoftware from "@/components/hvca/EraOfSoftware";
-import HvacFaq from "@/components/hvca/HvacFaq";
 import HvacHero from "@/components/hvca/HvacHero";
 import HvacSoftware from "@/components/hvca/HvacSoftware";
-import HvacSoftwareService from "@/components/hvca/HvacSoftwareService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/hvca/WantingMore";
@@ -89,18 +88,6 @@ const page = async ({ params }: PageProps) => {
         variant="secondary"
       />
 
-      {/* <HvacSoftwareService
-        data={{
-          title: "This is what HVAC software should have been all along",
-          sub_title: "Start using Contractor+ FREE. You won’t look back.",
-          placeholder: "Enter your email",
-        }}
-        ncc="No credit card required"
-        createBtn="Get Started Free"
-        mobileBtn="Download App"
-        mobileBtnHref="/app-download"
-      /> */}
-
       <div className="pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
         <CommonFormField
           variant="tertiary"
@@ -117,9 +104,9 @@ const page = async ({ params }: PageProps) => {
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
-
-      <div className="pt-9">
+      <div className="relative">
         <Faq
+          mainContainerclassName="pt-9 pb-16 z-20"
           faq={{
             title: "What HVAC contractors want to know",
             sub_title: "Frequently asked questions",
@@ -128,6 +115,13 @@ const page = async ({ params }: PageProps) => {
           classNameAnswer="pt-1"
           classHeadingMaxWidth="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
         />
+        <div className="pointer-events-none mt-8 md:h-[76px]">
+          <CloudsAnimation
+            cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+            cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+          />
+          <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
+        </div>
       </div>
       <BlogPosts
         data={blogs?.data?.[0]?.blogs}

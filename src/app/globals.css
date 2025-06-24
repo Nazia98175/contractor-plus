@@ -160,7 +160,10 @@
 
 .image-custom-shadow {
   -webkit-filter: drop-shadow(24px 18px 22px #00000078);
+  filter: drop-shadow(24px 18px 22px #00000078);
+  box-shadow: 24px 18px 22px #00000078;
 }
+
 @font-face {
   font-family: "Myriad Pro";
   src: url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");

@@ -11,7 +11,7 @@ interface Feature {
 interface Plan {
   name: string;
   cta: string;
-  variant: string;
+  variant: "default" | "pro" | "proTeam";
 }
 
 const ComparisonTable: React.FC = () => {

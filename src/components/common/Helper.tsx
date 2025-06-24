@@ -150,11 +150,11 @@ export const platforms: Platform[] = [
     logo: "/images/webp/play-google.webp",
     rating: 5,
   },
-  // {
-  //   name: "Software Advice",
-  //   logo: "images/svg/software-advice-rating.svg",
-  //   rating: 5,
-  // },
+  {
+    name: "Software Advice",
+    logo: "images/svg/software-advice-rating.svg",
+    rating: 5,
+  },
 ];
 
 export const wantingMoreData = [

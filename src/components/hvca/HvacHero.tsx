@@ -5,9 +5,17 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CloudsAnimation from "../common/CloudsAnimation";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { features } from "../common/Helper";
-import TextAnimation from "../common/TextAnimation";
 import HvacHeroSlider from "./HvacHeroSlider";
+import { useEffect } from "react";
+import gsap from "gsap";
 const HvacHero = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      gsap.to(".main-loader", {
+        opacity: 0,
+      });
+    }, 1000);
+  }, []);
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>

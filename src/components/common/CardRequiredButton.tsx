@@ -10,7 +10,7 @@ interface CardRequiredButtonProps {
 const CardRequiredButton: React.FC<CardRequiredButtonProps> = ({
   className = "",
   text = "",
-  showIcon = true,
+  showIcon = false,
 }) => {
   return (
     <button

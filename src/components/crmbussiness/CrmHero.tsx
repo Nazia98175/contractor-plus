@@ -41,7 +41,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
       <CardReveal distance={30} delay={0.1}>
-        <div className="hidden items-center justify-center pb-6 md:flex">
+        <div className="hidden items-center justify-center pb-1 md:flex">
           <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
             {slug === "estimate"
               ? "Contractor Estimate Software"

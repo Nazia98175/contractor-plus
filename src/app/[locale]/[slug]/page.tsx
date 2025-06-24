@@ -93,7 +93,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             fieldService={fieldServiceData?.fieldService}
             theme={theme}
             apiData={true}
-            mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-full mx-auto"
+            mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
           />
 
           <div className="bg-white">

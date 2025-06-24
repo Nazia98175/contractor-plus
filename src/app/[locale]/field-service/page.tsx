@@ -106,6 +106,7 @@ const FieldServicesPage = async ({ params }: Params) => {
             ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
             data={crmPageContent?.data?.[0]?.crmService}
             showClouds={false}
+            className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
           />
           <TrustBarHvca
             platforms={platforms}
@@ -114,7 +115,8 @@ const FieldServicesPage = async ({ params }: Params) => {
           <Faq
             faq={faqs?.faqs}
             classNameAnswer="pt-1"
-            mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+            mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+            classHeadingMaxWidth="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
           />
         </div>
         <WhatEverClient

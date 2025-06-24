@@ -17,6 +17,8 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
+import { getSeoData } from "@/services/common/seoMeta";
+
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { getSeoMeta } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
@@ -25,36 +27,33 @@ import { notFound } from "next/navigation";
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
-  const data = await getFeaturesPageData(params.slug, params.locale);
-  const page = data?.crmPageContent?.data?.[0];
+  const resolvedParams = await params;
 
-  if (!page || data?.crmPageContent?.data?.length === 0) {
-    return;
-  }
+  const page = await getSeoData(
+    "services-pages",
+    resolvedParams.locale,
+    resolvedParams.slug,
+    "&populate[seoMeta]=true&populate[hero]=true",
+  );
+  if (!page) return;
 
   return {
     title:
-      page?.seoMeta?.metaTitle ||
-      page?.hero?.title ||
-      `Contractor+ ${params?.slug}`,
-    description: page?.seoMeta?.metaDescription || page?.hero?.subtitle || "",
-    keywords: page?.seoMeta?.keywords || "",
+      page.seoMeta?.metaTitle ||
+      page.hero?.heroTitle ||
+      `Contractor+ ${resolvedParams.slug}`,
+    description: page.seoMeta?.metaDescription || page.hero?.subtitle || "",
+    keywords: page.seoMeta?.keywords || "",
     alternates: {
       canonical:
-        page?.seoMeta?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}/${params.slug}`,
-    },
-    openGraph: {
-      title: page?.metaTitle,
-      description: page?.metaDescription,
-      url:
-        page?.seoMeta?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}/${params.slug}`,
+        page.seoMeta?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${resolvedParams.slug}`,
     },
   };
 }
@@ -70,6 +69,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   }
   const {
     crmPageContent,
+    heroImg ,
     reviews,
     switchingTool,
     fieldServiceData,
@@ -81,13 +81,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
   const page = crmPageContent?.data?.[0];
-
-  console.log("seoMeta", crmPageContent);
   return (
     <>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <CrmHero hero={page?.hero} slug={useParams?.slug} />
+          <CrmHero hero={page?.hero} slug={useParams?.slug} heroImg={heroImg} />
           <TrustedService reviews={reviews} />
           <SwitchingTool switchingTool={switchingTool?.switchingTool} />
           <FieldService

@@ -13,23 +13,40 @@ import ServiceContractorsMarquee from "@/components/field-services/ServiceContra
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
+import { getBlogs } from "@/services/blogs";
+import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { getHomePage } from "@/services/homePage/homepage";
-import { getSeoMeta } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const { crmPageContent } = await getFeaturesPageData(
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoData(
+    "services-pages",
+    resolvedParams.locale,
     "field-service",
-    params.locale,
+    "&populate[seoMeta]=true&populate[hero]=true",
   );
-  const page = crmPageContent?.data?.[0];
 
-  return getSeoMeta(page?.seoMeta);
+  if (!page) return;
+
+  return {
+    title:
+      page.seoMeta?.metaTitle ||
+      page.hero?.heroTitle ||
+      `Contractor+ field-service`,
+    description: page.seoMeta?.metaDescription || page.hero?.subtitle || "",
+    keywords: page.seoMeta?.keywords || "",
+    alternates: {
+      canonical:
+        page.seoMeta?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/field-service`,
+    },
+  };
 }
 
 interface Params {
@@ -47,61 +64,6 @@ const FieldServicesPage = async ({ params }: Params) => {
     ),
   ]);
 
-  // const [
-  //   crmPageContent,
-  //   reviews,
-  //   section3,
-  //   section4,
-  //   section5,
-  //   section6,
-  //   neverLookBackData,
-  //   faq,
-  //   blogs,
-  //   thousandReviews,
-  // ] = await Promise.all([
-  //   getCrmPage("field-service", useParams.locale, "&populate=*"),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[reviews][populate]=reviews",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[switchingTool][populate]=cardsDetail",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[fieldService][populate][cardsDetail][populate]=*",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[trackProperties][populate][cardDetails][populate]=*",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[comparison][populate][centerLogo]=true&populate[comparison][populate][features]=true",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[teamsUsingContractor][populate]=*",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[faqs][populate]=faq",
-  //   ),
-  //   getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams?.locale,
-  //     "&populate[thousandReviews][populate]=reviews",
-  //   ),
-  // ]);
   const {
     crmPageContent,
     reviews,

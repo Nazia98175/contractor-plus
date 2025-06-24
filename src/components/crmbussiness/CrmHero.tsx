@@ -9,11 +9,13 @@ import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import TextAnimation from "../common/TextAnimation";
 import Link from "next/link";
 import AnimatedShape from "./AnimatedShape";
+import { getMediaUrl } from "@/utils/getMediaUrl";
 interface TheHeroProps {
   hero: any;
   slug?: string;
+  heroImg?: any;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
+const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     gsap.to(wrapperRef.current, {
@@ -24,6 +26,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
       once: true,
     });
   }, []);
+
+  const imageUrl = getMediaUrl(heroImg);
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
@@ -138,13 +142,16 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
-                <Image
-                  className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                  src="/images/webp/crm-hero.webp"
-                  width={900}
-                  height={616}
-                  alt="crm-hero"
-                />
+                {imageUrl && (
+                  <Image
+                    className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                    // src="/images/webp/crm-hero.webp"
+                    src={imageUrl}
+                    width={900}
+                    height={616}
+                    alt="crm-hero"
+                  />
+                )}
                 <AnimatedShape />
               </div>
             </div>

@@ -20,7 +20,7 @@ const FieldServiceCard: React.FC<Props> = ({
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
-  console.log("data", service);
+ 
   const themeColors = {
     light: {
       titleColor:

@@ -1,5 +1,6 @@
+import ComparisonTable from "@/components/pricing/ComparisonTable";
 import Plans from "@/components/pricing/Plans";
-import MonthlyPlan from "@/components/pricing/Plans";
+
 import PricingHero from "@/components/pricing/PricingHero";
 
 const PricingPage = () => {
@@ -10,6 +11,7 @@ const PricingPage = () => {
       </div>
       <div className="bg-white">
         <Plans />
+        <ComparisonTable />
       </div>
     </main>
   );

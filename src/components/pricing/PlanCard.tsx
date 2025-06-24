@@ -1,5 +1,6 @@
 import React from "react";
 import { ActivationIcon, LineIcon, ListIcon } from "../common/Icons";
+import PlanButton from "./PlanButton";
 
 interface PlanData {
   title: string;
@@ -29,7 +30,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
   const suffix = isAnnual ? "/yr" : "/mo";
   return (
     <article
-      className={`font-myriad max-w-[317px] rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] ${plan.cardClass ?? ""}`}
+      className={`font-myriad group max-w-[317px] cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
@@ -54,17 +55,11 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
           </p>
         </div>
 
-        <button
-          className={`my-4 flex h-10 w-full items-center justify-center rounded-lg font-semibold tracking-[0.1px] lg:my-6 ${
-            plan.isPro
-              ? "border-winterWay text-wallStreet border bg-[#F5F5F5]"
-              : plan.isProTeam
-                ? "bg-[#FEE7E8] text-[#AC0D0E]"
-                : "border-winterWay text-wallStreet border"
-          }`}
-        >
-          {plan.cta}
-        </button>
+        <PlanButton
+          cta={plan.cta}
+          className="my-4 lg:my-6"
+          variant={plan.isPro ? "pro" : plan.isProTeam ? "proTeam" : "default"}
+        />
 
         <h5 className="text-secondary mb-3.5 text-base font-bold">
           {plan.featuresHeading}

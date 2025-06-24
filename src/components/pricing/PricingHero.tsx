@@ -7,7 +7,7 @@ const PricingHero = () => {
   return (
     <section className="relative px-2 pt-[137px] pb-[200px]">
       <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%] lg:-bottom-[8%]"></div>
-      <CloudsAnimation className="-bottom-[6%] -z-10 lg:-bottom-[4%]" />
+      <CloudsAnimation className="-bottom-[6%] !-z-0 lg:-bottom-[4%]" />
       <img
         src="/images/webp/pricing.webp"
         alt=""

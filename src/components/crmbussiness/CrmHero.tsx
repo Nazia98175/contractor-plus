@@ -1,30 +1,36 @@
 "use client";
+import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
-import Link from "next/link";
 import AnimatedShape from "./AnimatedShape";
-import { getMediaUrl } from "@/utils/getMediaUrl";
 interface TheHeroProps {
   hero: any;
   slug?: string;
   heroImg?: any;
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  // const wrapperRef = useRef<HTMLDivElement | null>(null);
+  // useEffect(() => {
+  //   gsap.to(wrapperRef.current, {
+  //     opacity: 1,
+  //     duration: 0.1,
+  //     delay: 0.1,
+  //     ease: "elastic.in",
+  //     once: true,
+  //   });
+  // }, []);
   useEffect(() => {
-    gsap.to(wrapperRef.current, {
-      opacity: 1,
-      duration: 0.1,
-      delay: 0.1,
-      ease: "elastic.in",
-      once: true,
-    });
+    setTimeout(() => {
+      gsap.to(".main-loader", {
+        opacity: 0,
+      });
+    }, 1000);
   }, []);
 
   const imageUrl = getMediaUrl(heroImg);
@@ -44,9 +50,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
         </div>
       </CardReveal>
       <div
-        ref={wrapperRef}
         id="hero"
-        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse opacity-0 md:flex-col"
+        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">

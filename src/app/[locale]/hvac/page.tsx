@@ -15,6 +15,7 @@ import WantingMore from "@/components/hvca/WantingMore";
 import { getCrmPage } from "@/services/features/crm";
 
 import { getHomepageData } from "@/services/homePage/getHomepageData";
+import Image from "next/image";
 
 export const metadata = {
   title: "Not just HVAC software Meet your operating system",
@@ -75,38 +76,43 @@ const page = async ({ params }: PageProps) => {
           showTrustedSection={true}
           className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
         />
-
         <HvacSoftware />
         <WantingMore />
         <EraOfSoftware />
       </div>
-
       <AwardBadges />
       <ThousandsReviews
         data={{ title: "4.7 ★ across thousands of reviews" }}
         reviews={reviews}
         variant="secondary"
       />
-
-      <div className="pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
-        <CommonFormField
-          variant="tertiary"
-          title={"This is what HVAC software should have been all along"}
-          sub_title={"Start using Contractor+ FREE. You won’t look back."}
-          placeholder={"Your Email"}
-          createBtn={"Get Started Free"}
-          mobileBtn={"Download FREE App"}
-          ncc={"No credit card required"}
+      <div className="relative overflow-x-hidden">
+        <Image
+          fill
+          className="pointer-events-none absolute top-[10%] left-0 z-10 block h-full w-full object-fill sm:hidden"
+          src="/images/webp/large-comet-hvac.webp"
+          alt="large-comet-hvac"
         />
+        <div className="px-2 pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
+          <CommonFormField
+            variant="tertiary"
+            title={"This is what HVAC software should have been all along"}
+            sub_title={"Start using Contractor+ FREE. You won’t look back."}
+            placeholder={"Your Email"}
+            createBtn={"Get Started Free"}
+            mobileBtn={"Download FREE App"}
+            ncc={"No credit card required"}
+          />
+        </div>
+        <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
       </div>
-      <TrustBarHvca platforms={platforms} className="xl:pb-20" />
       <WhatEverClient
         data={homePageContent?.data?.whateverOperation}
         issection={false}
       />
       <div className="relative">
         <Faq
-          mainContainerclassName="pt-9 pb-16 z-20"
+          mainContainerclassName="pt-9 pb-16 z-20 px-2"
           faq={{
             title: "What HVAC contractors want to know",
             sub_title: "Frequently asked questions",

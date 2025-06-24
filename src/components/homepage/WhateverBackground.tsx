@@ -11,7 +11,7 @@ const WhateverBackground = ({ isDesktop }: WhateverBackgroundProps) => {
       {/* Desktop Background */}
       {isDesktop && (
         <Image
-          className="pointer-events-none absolute -top-[42%] right-0 z-10 max-w-[700px] object-cover"
+          className="pointer-events-none absolute -top-[5%] right-0 z-10 max-w-[700px] object-cover sm:-top-[42%]"
           src="/images/webp/Whatever-right-bg.webp"
           width={700}
           height={300}

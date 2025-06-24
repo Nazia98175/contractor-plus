@@ -1,5 +1,6 @@
 import React from "react";
 import { ActivationIcon, LineIcon, ListIcon } from "../common/Icons";
+import PlanButton from "./PlanButton";
 
 interface PlanData {
   title: string;
@@ -54,17 +55,10 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
           </p>
         </div>
 
-        <button
-          className={`my-4 flex h-10 w-full items-center justify-center rounded-lg font-semibold tracking-[0.1px] duration-300 lg:my-6 ${
-            plan.isPro
-              ? "border-winterWay group-hover:bg-wallStreet border bg-[#F5F5F5] group-hover:border-transparent group-hover:text-[#f5f5f5]"
-              : plan.isProTeam
-                ? "bg-[#FEE7E8] text-[#AC0D0E] group-hover:bg-[#AC0D0E] group-hover:text-[#FEE7E8]"
-                : "border-winterWay text-wallStreet group-hover:bg-wallStreet border group-hover:border-transparent group-hover:text-[#f5f5f5]"
-          }`}
-        >
-          {plan.cta}
-        </button>
+        <PlanButton
+          cta={plan.cta}
+          variant={plan.isPro ? "pro" : plan.isProTeam ? "proTeam" : "default"}
+        />
 
         <h5 className="text-secondary mb-3.5 text-base font-bold">
           {plan.featuresHeading}

@@ -17,7 +17,7 @@ const CloudsAnimation = ({
 }) => {
   return (
     <div
-      className={`${className} clouds absolute right-0 -bottom-[9%] left-0 z-0 h-full overflow-hidden`}
+      className={`${className} clouds absolute right-0 -bottom-[9%] left-0 z-20 h-full overflow-hidden`}
     >
       <div
         className={`${cloud1Class} clouds-1 absolute right-0 bottom-[62px] left-0 h-12 w-full bg-[url("/images/png/pngwing.png")] bg-contain bg-repeat-x opacity-30 grayscale-75 sm:bottom-[50px] sm:h-16 md:bottom-[30px] md:h-20 lg:bottom-0`}

@@ -116,7 +116,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
         {/* Mobile Button */}
         <button
           onClick={handleSubmit}
-          className="bg-red-linear primary-btn h-10 !w-full sm:!hidden md:mx-0 md:!w-auto"
+          className="bg-red-linear primary-btn mx-auto h-10 !w-full max-w-[500px] sm:!hidden md:mx-0 md:!w-auto"
           disabled={loading}
         >
           {loading ? (

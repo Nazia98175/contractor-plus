@@ -8,10 +8,10 @@ const Plans: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <div className="font-myriad mx-auto w-full max-w-[1092px] px-2 py-[22px] xl:px-14">
-      <div className="mb-8 flex items-center justify-center gap-3 py-3">
+    <div className="font-myriad relative z-20 mx-auto w-full max-w-[1092px] px-2 pt-12 pb-[22px] xl:px-14">
+      <div className="mb-2 flex items-center justify-center gap-3 py-3 sm:mb-4 lg:mb-8">
         <button
-          className={`text-sm sm:text-base lg:text-lg ${!isAnnual ? "text-wallStreet" : "text-secondary"}`}
+          className={`text-lg ${!isAnnual ? "text-wallStreet" : "text-secondary"}`}
         >
           Monthly Plan
         </button>
@@ -26,7 +26,7 @@ const Plans: React.FC = () => {
         </label>
         <div className="flex items-center gap-2.5">
           <button
-            className={`text-sm font-bold sm:text-base lg:text-lg ${isAnnual ? "text-winterWay" : "text-secondary"}`}
+            className={`text-lg font-bold ${isAnnual ? "text-winterWay" : "text-secondary"}`}
           >
             Annual Plan
           </button>
@@ -37,7 +37,7 @@ const Plans: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex w-full flex-wrap justify-center gap-5 lg:flex-nowrap">
         {planData.map((plan, index) => (
           <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
         ))}

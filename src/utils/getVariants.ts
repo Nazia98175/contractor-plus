@@ -21,7 +21,7 @@ export const variantsForm = {
     title: "text-decemberSky sub-heading font-extrabold",
     subtitle: "text-decemberSky",
     input:
-      "bg-kkuroiBlack text-white placeholder:text-white border-b border-white",
+      "bg-kuroiBlack text-white placeholder:text-white border-b border-white",
   },
   tertiary: {
     title: "text-white sub-heading font-extrabold max-w-full",

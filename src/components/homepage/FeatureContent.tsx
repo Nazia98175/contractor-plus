@@ -40,6 +40,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
           </h4>
           <div className="relative w-full overflow-hidden">
             <LottieAnimation
+              loop={false}
               animationData={featureContentss?.[index]?.titleImg}
             />
           </div>

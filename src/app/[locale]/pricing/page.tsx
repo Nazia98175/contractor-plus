@@ -1,6 +1,4 @@
-import { OurReviewList } from "@/components/common/Helper";
 import Faq from "@/components/crmbussiness/Faq";
-import OurReviews from "@/components/homepage/OurReviews";
 import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";

@@ -27,7 +27,21 @@ const CompleteFeatureList = () => {
     },
   ];
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
+      <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
+        {reviewsList?.map((review, index) => (
+          <ReviewCard
+            index={index}
+            key={review.id}
+            review={review as unknown as Review}
+            openModal={
+              review.isModal
+                ? () => openModal(review.videoLink || "")
+                : () => {}
+            }
+          />
+        ))}
+      </Marquee>
       <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
         {reviewsList?.map((review, index) => (
           <ReviewCard

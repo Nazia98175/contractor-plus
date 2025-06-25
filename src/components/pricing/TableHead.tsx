@@ -5,15 +5,15 @@ import { Plan } from "@/types";
 const TableHead: React.FC<{ plans: Plan[] }> = ({ plans }) => (
   <thead>
     <tr>
-      <th className="text-wallStreet w-1/4 px-8 py-5 text-center text-2xl font-bold">
+      <th className="text-wallStreet w-1/4 px-4 py-5 text-center text-xl font-bold lg:text-2xl xl:px-8">
         Compare plans
       </th>
       {plans.map((plan) => (
         <th
           key={plan.name}
-          className="group border-decemberSky w-1/4 border-l px-8 py-5 text-center"
+          className="group border-decemberSky w-1/4 border-l px-3 py-5 text-center xl:px-5"
         >
-          <span className="text-winterWay text-2xl text-[28px] font-semibold">
+          <span className="text-winterWay text-2xl font-semibold lg:text-[28px]">
             {plan.name}
           </span>
           <PlanButton

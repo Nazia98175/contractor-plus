@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import TableHead from "./TableHead";
-import { communicationFeatures, leadFeatures, plans } from "../common/Helper";
+import {
+  communicationFeatures,
+  estimateFeatures,
+  leadFeatures,
+  plans,
+} from "../common/Helper";
 import TableSectionTitle from "./TableSectionHead";
 import TableFeatureRow from "./TableFeatureRow";
 
-// 👇 this part goes outside the component
 const initialOpenStates: Record<string, boolean> = {};
 leadFeatures.forEach((_, i) => (initialOpenStates[`lead-${i}`] = true));
 communicationFeatures.forEach(
@@ -47,6 +51,21 @@ const ComparisonTable: React.FC = () => {
 
             <TableSectionTitle title="Communication" />
             {communicationFeatures.map((feature, i) => {
+              const key = `comm-${i}`;
+              return (
+                <TableFeatureRow
+                  key={feature.name}
+                  feature={feature}
+                  index={key}
+                  isOpen={openStates[key] ?? true}
+                  toggle={() => toggleCollapse(key)}
+                  isMobile={false}
+                  plans={plans}
+                />
+              );
+            })}
+            <TableSectionTitle title="Estimates, Bids, Quotes, Proposals, Scopes" />
+            {estimateFeatures.map((feature, i) => {
               const key = `comm-${i}`;
               return (
                 <TableFeatureRow

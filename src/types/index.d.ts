@@ -60,7 +60,7 @@ export interface Plan {
 export interface tableFeature {
   name: string;
   description: string;
-  available: boolean[];
+  available: Availability[];
 }
 export interface Review {
   id: string | number;

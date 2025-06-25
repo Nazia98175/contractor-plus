@@ -117,7 +117,7 @@ const WhyContractorPage = () => {
             createBtn={"Get Started Free"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            variant={"primary"}
+            variant={"tertiary"}
           />
         </div>
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />

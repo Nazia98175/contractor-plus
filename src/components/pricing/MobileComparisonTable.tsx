@@ -80,7 +80,7 @@ const MobileComparisonTable: React.FC<Props> = ({
                                 <CloseIcon width={22} height={22} />
                               )
                             ) : (
-                              <span className="text-wallStreet text-sm">
+                              <span className="text-winterWay xs:text-xs text-center text-[10px]">
                                 {value}
                               </span>
                             )}

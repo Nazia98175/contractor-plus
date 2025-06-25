@@ -152,7 +152,7 @@ export const platforms: Platform[] = [
   },
   {
     name: "Software Advice",
-    logo: "images/svg/software-advice-rating.svg",
+    logo: "/images/svg/software-advice-rating.svg",
     rating: 5,
   },
 ];

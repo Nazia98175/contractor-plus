@@ -2,7 +2,7 @@
 import { platforms } from "@/components/common/Helper";
 // import ThousandsReviews from "@/components/hvca/ThousandsReviews";
 import CommonFormField from "@/components/common/CommonFormField";
-import TrustBarHvca from "@/components/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
 import Dashboard from "@/components/why-contractor/Dashboard";
@@ -117,7 +117,7 @@ const WhyContractorPage = () => {
             createBtn={"Get Started Free"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            variant={"primary"}
+            variant={"tertiary"}
           />
         </div>
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />

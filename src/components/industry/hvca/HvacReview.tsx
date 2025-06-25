@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { reviews } from "../common/Helper";
-import ReviewModal from "../common/ReviewModal";
-import SliderLayout from "../common/SliderLayout";
+import { reviews } from "../../common/Helper";
+import ReviewModal from "../../common/ReviewModal";
+import SliderLayout from "../../common/SliderLayout";
 import HvacReviewCard from "./HvacReviewCard";
-import ThousandsReviews from "../crmbussiness/ThousandsReviews";
+import ThousandsReviews from "../../crmbussiness/ThousandsReviews";
 
 const HvacReview = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

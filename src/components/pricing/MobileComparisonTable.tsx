@@ -13,23 +13,20 @@ const MobileComparisonTable: React.FC<Props> = () => {
   return (
     <div className="space-y-4">
       {comparisonTableData.map((group, gIndex) => (
-        <div
-          key={gIndex}
-          className="mb-6 rounded-lg border border-gray-300 bg-white shadow-sm"
-        >
-          <div className="text-winterWay mb-2 flex items-center gap-2 text-base font-semibold">
-            <span>{group.title}</span>
-          </div>
+        <div key={gIndex} className="mb-6 overflow-hidden rounded-lg">
+          <h4 className="text-winterWay bg-superSilver mb-2 flex items-center gap-2 px-2 py-2.5 text-base font-semibold tracking-[0.1px]">
+            {group.title}
+          </h4>
 
           {group.features.map((feature, fIndex) => {
             const tooltipId = `tooltip-${group.key}-${fIndex}`;
             return (
               <div
                 key={fIndex}
-                className="border-decemberSky flex flex-col items-center justify-between border-t p-2 text-sm sm:text-base"
+                className="border-superSilver bg-doctor flex flex-col items-center justify-between gap-2 border-b p-2 text-base"
               >
                 <div className="flex items-center justify-center gap-1">
-                  <span className="text-wallStreet font-medium">
+                  <span className="text-winterWay font-medium tracking-[0.1px]">
                     {feature.name}
                   </span>
                   <span
@@ -41,20 +38,28 @@ const MobileComparisonTable: React.FC<Props> = () => {
                       size={16}
                     />
                   </span>
-                  <Tooltip id={tooltipId} place="top" />
+                  <Tooltip
+                    className="max-w-[280px] text-center text-[10px] leading-snug"
+                    id={tooltipId}
+                    place="top"
+                  />
                 </div>
 
-                <div className="flex items-center gap-4 pt-2">
+                <div className="grid w-full grid-cols-3 gap-4 rounded-sm bg-white py-[5px]">
                   {feature.available.map((value, i) => (
                     <div
                       key={i}
-                      className="flex h-5 w-5 items-center justify-center"
+                      className={`flex items-center justify-center ${
+                        i !== feature.available.length - 1
+                          ? "border-superSilver border-r"
+                          : ""
+                      }`}
                     >
                       {typeof value === "boolean" ? (
                         value ? (
-                          <CheckIcon width={20} height={20} />
+                          <CheckIcon width={22} height={22} />
                         ) : (
-                          <CloseIcon width={20} height={20} />
+                          <CloseIcon width={22} height={22} />
                         )
                       ) : (
                         <span className="text-wallStreet text-sm">{value}</span>

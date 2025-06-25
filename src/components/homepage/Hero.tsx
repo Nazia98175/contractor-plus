@@ -23,6 +23,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       });
     }, 1000);
   }, []);
+
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />

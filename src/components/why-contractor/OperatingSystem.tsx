@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterLogoIcon } from "../common/Icons";
+import { FooterLogoIcon, WhyContractorGradientIcon } from "../common/Icons";
 import { operatingSystemList } from "../common/Helper";
 import Image from "next/image";
 
@@ -8,59 +8,7 @@ const OperatingSystem = () => {
     <div className="bg-kuroiBlack relative z-10 overflow-hidden">
       <div className="bg-athenaBlue absolute top-[0px] left-0 hidden h-[500px] w-[60px] rotate-45 opacity-25 blur-[40px] md:block"></div>
       <span className="absolute top-[0px] right-0 hidden w-full max-w-[614px] overflow-hidden md:block">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          fill="none"
-          viewBox="0 0 770 1256"
-        >
-          <g
-            filter="url(#filter0_f_2968_3209)"
-            style={{ mixBlendMode: "plus-lighter" }}
-          >
-            <path
-              stroke="url(#paint0_linear_2968_3209)"
-              strokeLinecap="round"
-              strokeWidth="432"
-              d="m304.021 304.779 355 355 354.999 355.001"
-            ></path>
-          </g>
-          <defs>
-            <linearGradient
-              id="paint0_linear_2968_3209"
-              x1="591.605"
-              x2="948.407"
-              y1="971.38"
-              y2="839.101"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0.062" stopOpacity="0"></stop>
-              <stop offset="0.997" stopColor="#EE1E25"></stop>
-              <stop offset="1" stopColor="#fff"></stop>
-            </linearGradient>
-            <filter
-              id="filter0_f_2968_3209"
-              width="1318"
-              height="1318"
-              x="0.021"
-              y="0.779"
-              colorInterpolationFilters="sRGB"
-              filterUnits="userSpaceOnUse"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
-              <feBlend
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              ></feBlend>
-              <feGaussianBlur
-                result="effect1_foregroundBlur_2968_3209"
-                stdDeviation="44"
-              ></feGaussianBlur>
-            </filter>
-          </defs>
-        </svg>
+        <WhyContractorGradientIcon />
       </span>
 
       <div className="mx-auto max-w-[855px] pt-10 max-xl:px-4 sm:pt-20">

@@ -28,7 +28,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
-        {blackPlatforms.map((platform, index) => (
+        {platforms.map((platform, index) => (
           <PlatformCard platform={platform} key={index} />
         ))}
       </CardReveal>

@@ -1,6 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import PlanButton from "./PlanButton"; // Ensure this component is defined
+import AnimateHeight from "react-animate-height";
+import {
+  CheckIcon,
+  CloseIcon,
+  DownArrowIcon,
+  UpArrowIcon,
+} from "../common/Icons";
+import {
+  ArrowDown01,
+  ArrowDownCircle,
+  ArrowDownNarrowWide,
+  ChevronDown,
+} from "lucide-react";
 
 interface Feature {
   name: string;
@@ -26,7 +39,7 @@ const ComparisonTable: React.FC = () => {
       name: "Track Your Leads & Clients",
       description:
         "Track leads, clients, subs, vendors, tenants, and over 50+ 'contact types' so you maintain a comprehensive communication history with every point of contact that's relevant to your business.",
-      available: [true, true, true],
+      available: [true, true, false],
     },
     {
       name: "Opportunities Kanban",
@@ -82,50 +95,52 @@ const ComparisonTable: React.FC = () => {
             </td>
           </tr>
           {features.map((feature, index) => (
-            <tr key={index}>
-              <td
-                className="border border-gray-300 p-4"
-                style={{
-                  width: "25%",
-                  transition: "max-height 0.3s ease-in-out",
-                  overflow: "hidden",
-                  maxHeight: openStates[index] ? "200px" : "50px",
-                }}
-              >
+            <tr
+              key={index}
+              className={`${index === features.length - 1 ? "" : "border-b"} border-decemberSky`}
+            >
+              <td className="border-r border-gray-300">
                 <div
-                  className="flex cursor-pointer items-center"
+                  className={`flex h-full cursor-pointer items-center justify-between gap-3 px-5 pt-3 pb-3`}
                   onClick={() => toggleCollapse(index)}
                 >
-                  <span
-                    className={`text-winter text-base font-bold ${
-                      !openStates[index] && "hidden"
-                    }`}
-                  >
+                  <span className="text-winterWay text-base">
                     {feature.name}
                   </span>
                   <span
-                    className={`ml-2 transform ${
+                    className={`transform ${
                       openStates[index] ? "rotate-0" : "rotate-180"
                     } transition-transform`}
                   >
-                    ▼
+                    <ChevronDown width={20} color="#656C73" />
                   </span>
-                  {!openStates[index] && (
-                    <div className="w-full text-center text-green-500">✔</div>
-                  )}
                 </div>
-                {openStates[index] && (
-                  <p className="mt-2 text-sm text-gray-600">
+
+                <AnimateHeight
+                  id="example-panel"
+                  duration={500}
+                  height={openStates[index] ? "auto" : 0}
+                >
+                  <p className="text-wallStreet max-w-[223px] pb-3 pl-5 text-xs">
                     {feature.description}
                   </p>
-                )}
+                </AnimateHeight>
               </td>
               {feature.available.map((avail, idx) => (
                 <td
                   key={idx}
-                  className="border border-gray-300 p-4 text-center"
+                  className="border-r border-gray-300 px-5 py-3 text-center"
                 >
-                  {avail && <span className="text-green-500">✔</span>}
+                  {avail && (
+                    <span className="flex items-center justify-center">
+                      <CheckIcon width={24} height={24} />
+                    </span>
+                  )}
+                  {!avail && (
+                    <span className="flex items-center justify-center">
+                      <CloseIcon width={24} height={24} />
+                    </span>
+                  )}
                 </td>
               ))}
             </tr>

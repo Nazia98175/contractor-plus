@@ -332,6 +332,11 @@ interface CheckIconProps {
   height?: number;
   className?: string;
 }
+interface CLoseIconProps {
+  width?: number;
+  height?: number;
+  className?: string;
+}
 export const BlackLogo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -786,13 +791,15 @@ export const ClientIcon = () => (
     />
   </svg>
 );
-export const CloseIcon = () => (
+
+export const CloseIcon = ({ width, height, className }: CLoseIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
+    width={width || 18}
+    height={height || 18}
     viewBox="0 0 25 24"
     fill="none"
+    className={className}
   >
     <path
       fillRule="evenodd"

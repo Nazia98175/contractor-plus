@@ -159,7 +159,7 @@ const SeperateSolution = () => {
       <div className="relative z-20 mx-auto max-w-[733px]">
         <TextAnimation animateOnScroll={true} delay={0}>
           <h3
-            className="sub-heading mb-10 text-center font-semibold sm:mb-16 xl:px-4"
+            className="sub-heading mb-10 text-center font-semibold sm:mb-[73px] xl:px-4"
             style={{ color: "#8A8E91" }}
           >
             Every separate solution introduces friction into your business
@@ -179,7 +179,7 @@ const SeperateSolution = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
+                <path
                   d="M67.5715 58.0335L46.3958 35.1268L69.2905 13.9507L58.4106 2.17092L35.5039 23.3466L14.3281 0.443819L2.55587 11.3361L23.7237 34.2385L0.828925 55.4146L11.7212 67.1868L34.6159 46.0107L55.7837 68.9131L67.5715 58.0335Z"
                   fill="#25292D"
                   stroke="#25292D"

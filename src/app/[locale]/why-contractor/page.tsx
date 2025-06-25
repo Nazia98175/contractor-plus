@@ -103,9 +103,9 @@ const WhyContractorPage = () => {
           ccClass="max-sm:!hidden"
           mobileBtnHref="https://contractorplus.app/"
         /> */}
-      <main className="pb-14">
+      {/* <main className="pb-14">
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />
-      </main>
+      </main> */}
       <div className="pb-14">
         <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
           <CommonFormField

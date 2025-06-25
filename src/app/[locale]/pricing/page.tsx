@@ -5,7 +5,7 @@ import PricingHero from "@/components/pricing/PricingHero";
 
 const PricingPage = () => {
   return (
-    <main className="overflow-hidden">
+    <main className="font-myriad overflow-hidden">
       <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-cover">
         <PricingHero />
       </div>

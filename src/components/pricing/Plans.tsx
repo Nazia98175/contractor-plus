@@ -21,6 +21,7 @@ const Plans: React.FC = () => {
         Prices are in USD. Pricing excludes VAT & sales tax where applicable.
         Annual contracts are billed upfront in one invoice.
       </p>
+      <button>Compare plan features</button>
     </section>
   );
 };

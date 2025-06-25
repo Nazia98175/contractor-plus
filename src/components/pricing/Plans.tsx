@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { planData } from "../common/Helper";
+import { ScrollDownIcon } from "../common/Icons";
 import PlanCard from "./PlanCard";
 import PlanToggle from "./PlanToggle";
 
@@ -8,7 +9,7 @@ const Plans: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <section className="relative z-20 mx-auto w-full max-w-[1092px] space-y-4 px-2 pt-12 pb-[22px] lg:space-y-8 xl:px-14">
+    <section className="relative z-20 mx-auto flex w-full max-w-[1092px] flex-col items-center justify-center space-y-4 px-2 pt-12 pb-[22px] lg:space-y-8 xl:px-14">
       <PlanToggle isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
 
       <div className="flex w-full flex-wrap justify-center gap-5 lg:flex-nowrap">
@@ -17,11 +18,14 @@ const Plans: React.FC = () => {
         ))}
       </div>
 
-      <p className="text-winterWay text-center text-xs">
+      <p className="text-winterWay text-xs">
         Prices are in USD. Pricing excludes VAT & sales tax where applicable.
         Annual contracts are billed upfront in one invoice.
       </p>
-      <button>Compare plan features</button>
+      <button className="text-winterWay hover:bg-superSilver flex h-8 items-center justify-center gap-1 rounded-md px-3 text-sm font-semibold tracking-[0.1px] duration-300">
+        Compare plan features
+        <ScrollDownIcon />
+      </button>
     </section>
   );
 };

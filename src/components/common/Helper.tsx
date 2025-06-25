@@ -487,7 +487,7 @@ export const blackPlatforms: Platform[] = [
   },
   {
     name: "Software Advice",
-    logo: "images/webp/black-software.webp",
+    logo: "/images/webp/black-software.webp",
     rating: 5,
   },
 ];

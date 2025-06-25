@@ -159,7 +159,6 @@
 }
 
 .image-custom-shadow {
-  filter: drop-shadow(24px 18px 22px #00000078);
   -webkit-filter: drop-shadow(24px 18px 22px #00000078);
 }
 

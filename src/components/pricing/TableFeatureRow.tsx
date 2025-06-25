@@ -10,7 +10,6 @@ interface TableFeatureRowProps {
   isOpen: boolean;
   toggle: () => void;
   isMobile: boolean;
-  plans: Plan[];
 }
 
 const TableFeatureRow: React.FC<TableFeatureRowProps> = ({
@@ -18,55 +17,7 @@ const TableFeatureRow: React.FC<TableFeatureRowProps> = ({
   index,
   isOpen,
   toggle,
-  isMobile,
-  plans,
 }) => {
-  if (isMobile) {
-    return (
-      <div className="rounded-lg border border-gray-300 p-4">
-        <div
-          className="flex cursor-pointer items-start justify-between"
-          onClick={toggle}
-        >
-          <span className="text-winterWay text-lg font-semibold">
-            {feature.name}
-          </span>
-          <ChevronDown
-            className={`transform transition-transform ${
-              isOpen ? "rotate-0" : "rotate-180"
-            }`}
-            width={20}
-            color="#656C73"
-          />
-        </div>
-        <AnimateHeight
-          id={`feature-desc-${index}`}
-          duration={500}
-          height={isOpen ? "auto" : 0}
-        >
-          <p className="text-wallStreet mt-2 max-w-[90%] text-sm">
-            {feature.description}
-          </p>
-        </AnimateHeight>
-        <div className="mt-4 space-y-2">
-          {feature.available.map((avail, idx) => (
-            <div
-              key={idx}
-              className="text-wallStreet border-decemberSky flex items-center justify-between border-t pt-2 text-sm sm:text-base"
-            >
-              <span className="font-medium">{plans[idx].name}</span>
-              {avail ? (
-                <CheckIcon width={20} height={20} />
-              ) : (
-                <CloseIcon width={20} height={20} />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <tr className="border-decemberSky border-b">
       <td className="border-r border-gray-300">

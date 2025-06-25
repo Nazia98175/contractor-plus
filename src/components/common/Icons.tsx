@@ -792,6 +792,27 @@ export const ClientIcon = () => (
   </svg>
 );
 
+export const ScrollDownIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+  >
+    <path
+      d="M9.00005 16.5L4.61255 11.25H13.3875L9.00005 16.5Z"
+      fill="currentColor"
+    />
+    <path
+      d="M9.00005 16.5L4.61255 11.25H13.3875L9.00005 16.5Z"
+      fill="black"
+      fill-opacity="0.2"
+    />
+    <path d="M7.5 2.25H10.5V12.375H7.5V2.25Z" fill="currentColor" />
+    <path d="M7.5 2.25H10.5V12.375H7.5V2.25Z" fill="black" fill-opacity="0.2" />
+  </svg>
+);
 export const CloseIcon = ({ width, height, className }: CLoseIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

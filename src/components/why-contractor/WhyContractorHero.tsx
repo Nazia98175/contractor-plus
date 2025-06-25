@@ -249,7 +249,7 @@ const WhyContractorHero = () => {
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0.4}>
-          <p className="hero-description mb-8 text-center !text-[#8A8E91] sm:mb-[42px]">
+          <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
             Hard work got you here. But it's not enough to get you{" "}
             <span className="text-decemberSky italic">
               where you want to go.
@@ -275,7 +275,7 @@ const WhyContractorHero = () => {
               alt="WhyContractorHeroImg"
             />
           </div>
-          <div className="relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px] group">
+          <div className="group relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px]">
             <video
               ref={videoRef}
               className="block h-full w-full object-cover"

@@ -1,48 +1,27 @@
 "use client";
-import { MoveLeftIcon } from "lucide-react";
 import React, { useState } from "react";
 import { planData } from "../common/Helper";
 import PlanCard from "./PlanCard";
+import PlanToggle from "./PlanToggle";
 
 const Plans: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <div className="font-myriad relative z-20 mx-auto w-full max-w-[1092px] px-2 pt-12 pb-[22px] xl:px-14">
-      <div className="mb-2 flex items-center justify-center gap-3 py-3 sm:mb-4 lg:mb-8">
-        <button
-          className={`text-lg ${!isAnnual ? "text-wallStreet" : "text-secondary"}`}
-        >
-          Monthly Plan
-        </button>
-        <label className="inline-flex cursor-pointer items-center">
-          <input
-            type="checkbox"
-            className="peer sr-only"
-            checked={isAnnual}
-            onChange={() => setIsAnnual(!isAnnual)}
-          />
-          <div className="peer bg-wallStreet relative h-6 w-10 rounded-full peer-checked:bg-[linear-gradient(262deg,_#DC1112_-10.83%,_#76090A_83.23%)] peer-focus:outline-none after:absolute after:start-[2.5px] after:top-1/2 after:h-[19px] after:min-w-[19px] after:-translate-y-1/2 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-[82%] peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full"></div>
-        </label>
-        <div className="flex items-center gap-2.5">
-          <button
-            className={`text-lg font-bold ${isAnnual ? "text-winterWay" : "text-secondary"}`}
-          >
-            Annual Plan
-          </button>
-          <p className="hidden items-center gap-2 text-base text-[#4F5357] md:flex lg:text-lg">
-            <MoveLeftIcon color="#5ED5A8" />
-            Save up to 40%
-          </p>
-        </div>
-      </div>
+    <section className="relative z-20 mx-auto w-full max-w-[1092px] space-y-4 px-2 pt-12 pb-[22px] lg:space-y-8 xl:px-14">
+      <PlanToggle isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
 
       <div className="flex w-full flex-wrap justify-center gap-5 lg:flex-nowrap">
         {planData.map((plan, index) => (
           <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
         ))}
       </div>
-    </div>
+
+      <p className="text-winterWay text-center text-xs">
+        Prices are in USD. Pricing excludes VAT & sales tax where applicable.
+        Annual contracts are billed upfront in one invoice.
+      </p>
+    </section>
   );
 };
 

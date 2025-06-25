@@ -680,209 +680,228 @@ export const plans: Plan[] = [
   { name: "PRO Team", cta: "Get started", variant: "proTeam" },
 ];
 
-export const leadFeatures: tableFeature[] = [
+export const comparisonTableData: {
+  title: string;
+  key: string;
+  features: tableFeature[];
+}[] = [
   {
-    name: "Track Your Leads & Clients",
-    description:
-      "Track leads, clients, subs, vendors, tenants, and over 50+ 'contact types' so you maintain a comprehensive communication history with every point of contact that's relevant to your business.",
-    available: [true, true, true],
-  },
-  {
-    name: "Opportunities Kanban",
-    description:
-      "Can track your deal flow using the Opportunities Kanban. This gives you a clear view of how your business is performing, and how much value each pipeline stage. Never let an opportunity slip through the cracks again.",
-    available: [false, true, true],
-  },
-  {
-    name: "Booking & Request Forms",
-    description:
-      "You can allow your clients to schedule estimates, or book your services directly from your website, or social media, and have these events show up on the appropriate schedule inside Contractor+.",
-    available: [false, true, true],
-  },
-  {
-    name: "Schedule Estimates",
-    description:
-      "Have an upcoming assessment/estimate/quote (whatever you call it)? You can schedule these appointments and assign them to the appropriate team members based on their availability.",
-    available: [false, true, true],
-  },
-  {
-    name: "Follow-Up Reminders",
-    description:
-      "Need a reminder to follow up? You can quickly create reminders, and even automatically create reminders to follow up when certain conditions are met. This ensures your team is never dropping the ball.",
-    available: [false, true, true],
-  },
-  {
-    name: "Residential & Commercial",
-    description: "Add both Residential & Commercial clients.",
-    available: [false, true, true],
-  },
-  {
-    name: "Multiple Points of Contact",
-    description:
-      "There's Contacts, Service Addresses, and Jobs. Each of these can have multiple points of contact. Each contact has their own communication timeline. Really convenient and easy to manage.",
-    available: [true, true, true],
-  },
-  {
-    name: "Multiple Service Addresses",
-    description:
-      "Each client can have multiple service addresses. Each service address has its own profile, schedule, photos & documents, etc.",
-    available: [false, true, true],
-  },
-  {
-    name: "Tenant & Property Access",
-    description:
-      "Every business is different. Track whatever additional information is important to you-like entry codes, PO Number, Tenant Name, Tenant Number etc.",
-    available: [false, true, true],
-  },
+    title: "Lead & Client Management",
+    key: "lead",
+    features: [
+      {
+        name: "Track Your Leads & Clients",
+        description:
+          "Track leads, clients, subs, vendors, tenants, and over 50+ 'contact types' so you maintain a comprehensive communication history with every point of contact that's relevant to your business.",
+        available: [true, true, true],
+      },
+      {
+        name: "Opportunities Kanban",
+        description:
+          "Can track your deal flow using the Opportunities Kanban. This gives you a clear view of how your business is performing, and how much value each pipeline stage. Never let an opportunity slip through the cracks again.",
+        available: [false, true, true],
+      },
+      {
+        name: "Booking & Request Forms",
+        description:
+          "You can allow your clients to schedule estimates, or book your services directly from your website, or social media, and have these events show up on the appropriate schedule inside Contractor+.",
+        available: [false, true, true],
+      },
+      {
+        name: "Schedule Estimates",
+        description:
+          "Have an upcoming assessment/estimate/quote (whatever you call it)? You can schedule these appointments and assign them to the appropriate team members based on their availability.",
+        available: [false, true, true],
+      },
+      {
+        name: "Follow-Up Reminders",
+        description:
+          "Need a reminder to follow up? You can quickly create reminders, and even automatically create reminders to follow up when certain conditions are met. This ensures your team is never dropping the ball.",
+        available: [false, true, true],
+      },
+      {
+        name: "Residential & Commercial",
+        description: "Add both Residential & Commercial clients.",
+        available: [false, true, true],
+      },
+      {
+        name: "Multiple Points of Contact",
+        description:
+          "There's Contacts, Service Addresses, and Jobs. Each of these can have multiple points of contact. Each contact has their own communication timeline. Really convenient and easy to manage.",
+        available: [true, true, true],
+      },
+      {
+        name: "Multiple Service Addresses",
+        description:
+          "Each client can have multiple service addresses. Each service address has its own profile, schedule, photos & documents, etc.",
+        available: [false, true, true],
+      },
+      {
+        name: "Tenant & Property Access",
+        description:
+          "Every business is different. Track whatever additional information is important to you-like entry codes, PO Number, Tenant Name, Tenant Number etc.",
+        available: [false, true, true],
+      },
 
-  {
-    name: "Custom Client Portal",
-    description:
-      "A beautiful, sleek, secure & custom-branded client portal experience.",
-    available: [false, true, true],
-  },
-  {
-    name: "On-The-Way Notifications",
-    description:
-      "Notify your clients when you're on the way, or running late. Drop them an ETA and keep them updated. Proper communication builds trust and improves client satisfaction.",
-    available: [false, true, true],
-  },
-  {
-    name: "Automatically Collect Client Reviews",
-    description:
-      "All you have to do is enter your links for Google My Business and/or Yelp, and configure when you'd like to ask your clients for reviews, the software will handle the rest for you! Now you can grow your client testimonials and increase your online visibility on auto-pilot!",
-    available: [false, true, true],
-  },
+      {
+        name: "Custom Client Portal",
+        description:
+          "A beautiful, sleek, secure & custom-branded client portal experience.",
+        available: [false, true, true],
+      },
+      {
+        name: "On-The-Way Notifications",
+        description:
+          "Notify your clients when you're on the way, or running late. Drop them an ETA and keep them updated. Proper communication builds trust and improves client satisfaction.",
+        available: [false, true, true],
+      },
+      {
+        name: "Automatically Collect Client Reviews",
+        description:
+          "All you have to do is enter your links for Google My Business and/or Yelp, and configure when you'd like to ask your clients for reviews, the software will handle the rest for you! Now you can grow your client testimonials and increase your online visibility on auto-pilot!",
+        available: [false, true, true],
+      },
 
-  {
-    name: "Automated Client Referrals",
-    description:
-      "Built-in automation settings that let you promote your referral program to your clients. You can specify how much you want to pay for client referrals, and Contractor+ will automatically promote your referral incentive to your clients. You can specify WHEN you want your clients to learn about your referral program, and we'll handle the rest.",
-    available: [false, true, true],
+      {
+        name: "Automated Client Referrals",
+        description:
+          "Built-in automation settings that let you promote your referral program to your clients. You can specify how much you want to pay for client referrals, and Contractor+ will automatically promote your referral incentive to your clients. You can specify WHEN you want your clients to learn about your referral program, and we'll handle the rest.",
+        available: [false, true, true],
+      },
+      {
+        name: "Contracts & eSignatures",
+        description: (
+          <>
+            Automatically attach a client contract to any estimate or invoice
+            and require your client sign the agreement before scheduling the
+            work. <br /> <br /> Our lawyer has drafted a default client contract
+            that is valid and legally binding in most places, and, you can
+            customize your agreement for your specific terms and how you define
+            your client relationships. Either way - configure it once, and never
+            write another client contract again.
+          </>
+        ),
+        available: [false, true, true],
+      },
+      {
+        name: "W9 Form Automation",
+        description:
+          "Generate a W9 form for any client in the click of a button, or automatically attach it to any outgoing invoice email.",
+        available: [false, true, true],
+      },
+    ],
   },
   {
-    name: "Contracts & eSignatures",
-    description: (
-      <>
-        Automatically attach a client contract to any estimate or invoice and
-        require your client sign the agreement before scheduling the work.{" "}
-        <br /> <br /> Our lawyer has drafted a default client contract that is
-        valid and legally binding in most places, and, you can customize your
-        agreement for your specific terms and how you define your client
-        relationships. Either way - configure it once, and never write another
-        client contract again.
-      </>
-    ),
-    available: [false, true, true],
+    title: "Communication",
+    key: "comm",
+    features: [
+      {
+        name: "Contractor+ Voice",
+        description:
+          "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
+        available: [true, true, true],
+      },
+      {
+        name: "Two-Way SMS",
+        description:
+          "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
+        available: [false, true, true],
+      },
+      {
+        name: "Two-Way Email",
+        description:
+          "Send & receive email to your connected Gmail, Outlook or IMAP accounts. If you receive an email from an existing contact, it will be added directly to that contact in your Contractor+ CRM.",
+        available: [false, true, true],
+      },
+      {
+        name: "Call Recordings & Transcripts",
+        description:
+          "Every call is recorded and transcribed, making each and every call fully searchable. ",
+        available: [false, true, true],
+      },
+      {
+        name: "AI Sentiment Analysis",
+        description:
+          "All calls are analyzed for sentiment, and you can sort/filter by sentiment in the contacts list view, helping you identify clients that need a little extra TLC or outreach.",
+        available: [false, true, true],
+      },
+      {
+        name: "Big Chief AI Assistant",
+        description:
+          'Big Chief can answer your phone calls, qualify and capture your leads, intake service requests and schedule appointments. 24/7/365, without ever needing a break or "being busy on the other line" again.',
+        available: [false, true, true],
+      },
+    ],
   },
   {
-    name: "W9 Form Automation",
-    description:
-      "Generate a W9 form for any client in the click of a button, or automatically attach it to any outgoing invoice email.",
-    available: [false, true, true],
+    title: "Estimates, Bids, Quotes, Proposals, Scopes",
+    key: "est",
+    features: [
+      {
+        name: "Call It What You Want",
+        description:
+          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you rename the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
+        available: [false, true, true],
+      },
+      {
+        name: "Optional Line Items & Add-Ons",
+        description:
+          "You can add multiple optional line items per group, pre-select which options are recommended, and choose whether you want to allow the user to select multiple options per group or a single option per group. This can be used to dynamically populate the total based on the preference of each lead or client. Perfect for Good/Better/Best or upsells and addons.",
+        available: [false, true, true],
+      },
+      {
+        name: "Local Material Pricing",
+        description:
+          "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
+        available: [false, true, true],
+      },
+      {
+        name: "Local Labor Rates",
+        description:
+          "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
+        available: [false, true, true],
+      },
+      {
+        name: "Estimatic AI",
+        description:
+          "Estimatic allows you to create estimates using the latest, most advanced reasoning models. You can upload photos, a competitors estimate, and even blueprints or drawings, tell it what you need to create an estimate for, and it will produce a beautiful, accurate, fully itemized estimate in minutes.",
+        available: [false, true, true],
+      },
+      {
+        name: "Line Item & Group Templates",
+        description:
+          'Import or setup your cost book as "Line Item Templates" or "Group Templates" for instant recall when creating an estimate. Your templates are also accessible by Estimatic AI.',
+        available: [false, true, true],
+      },
+      {
+        name: "Change Requests",
+        description:
+          "Your clients can request changes to an estimate or quote before approving it. This helps you work with your clients to get them a quote they're happy with before they sign your contract or you start your work.",
+        available: [false, true, true],
+      },
+
+      {
+        name: "Markup",
+        description:
+          "Add your markup on a per line item basis or globally at the bottom of any estimate or quote. You put your costs on the line item, and then mark it up so you can track your profitability, with full attribution at every job.",
+        available: [false, true, true],
+      },
+      {
+        name: "Adjustments",
+        description:
+          "Need to make a positive or negative adjustment at the bottom of an estimate or quote? No problem.",
+        available: [false, true, true],
+      },
+      {
+        name: "Ratio Lock",
+        description:
+          "Ratio Lock automates calculating the materials you need to complete a task. Just configure the amount of materials you need for one standard unit of measurement, enable the ratio lock and then increase the labor quantity. The materials will scale proportionally. ",
+        available: [false, true, true],
+      },
+    ],
   },
 ];
-export const communicationFeatures: tableFeature[] = [
-  {
-    name: "Contractor+ Voice",
-    description:
-      "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
-    available: [true, true, true],
-  },
-  {
-    name: "Two-Way SMS",
-    description:
-      "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
-    available: [false, true, true],
-  },
-  {
-    name: "Two-Way Email",
-    description:
-      "Send & receive email to your connected Gmail, Outlook or IMAP accounts. If you receive an email from an existing contact, it will be added directly to that contact in your Contractor+ CRM.",
-    available: [false, true, true],
-  },
-  {
-    name: "Call Recordings & Transcripts",
-    description:
-      "Every call is recorded and transcribed, making each and every call fully searchable. ",
-    available: [false, true, true],
-  },
-  {
-    name: "AI Sentiment Analysis",
-    description:
-      "All calls are analyzed for sentiment, and you can sort/filter by sentiment in the contacts list view, helping you identify clients that need a little extra TLC or outreach.",
-    available: [false, true, true],
-  },
-  {
-    name: "Big Chief AI Assistant",
-    description:
-      'Big Chief can answer your phone calls, qualify and capture your leads, intake service requests and schedule appointments. 24/7/365, without ever needing a break or "being busy on the other line" again.',
-    available: [false, true, true],
-  },
-];
-export const estimateFeatures: tableFeature[] = [
-  {
-    name: "Call It What You Want",
-    description:
-      "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you rename the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
-    available: [false, true, true],
-  },
-  {
-    name: "Optional Line Items & Add-Ons",
-    description:
-      "You can add multiple optional line items per group, pre-select which options are recommended, and choose whether you want to allow the user to select multiple options per group or a single option per group. This can be used to dynamically populate the total based on the preference of each lead or client. Perfect for Good/Better/Best or upsells and addons.",
-    available: [false, true, true],
-  },
-  {
-    name: "Local Material Pricing",
-    description:
-      "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
-    available: [false, true, true],
-  },
-  {
-    name: "Local Labor Rates",
-    description:
-      "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
-    available: [false, "2.9% Per Transaction", "From 2.59%* Per Transaction"],
-  },
-  {
-    name: "Estimatic AI",
-    description:
-      "Estimatic allows you to create estimates using the latest, most advanced reasoning models. You can upload photos, a competitors estimate, and even blueprints or drawings, tell it what you need to create an estimate for, and it will produce a beautiful, accurate, fully itemized estimate in minutes.",
-    available: [false, true, true],
-  },
-  {
-    name: "Line Item & Group Templates",
-    description:
-      'Import or setup your cost book as "Line Item Templates" or "Group Templates" for instant recall when creating an estimate. Your templates are also accessible by Estimatic AI.',
-    available: [false, true, true],
-  },
-  {
-    name: "Change Requests",
-    description:
-      "Your clients can request changes to an estimate or quote before approving it. This helps you work with your clients to get them a quote they're happy with before they sign your contract or you start your work.",
-    available: [false, true, true],
-  },
 
-  {
-    name: "Markup",
-    description:
-      "Add your markup on a per line item basis or globally at the bottom of any estimate or quote. You put your costs on the line item, and then mark it up so you can track your profitability, with full attribution at every job.",
-    available: [false, true, true],
-  },
-  {
-    name: "Adjustments",
-    description:
-      "Need to make a positive or negative adjustment at the bottom of an estimate or quote? No problem.",
-    available: [false, true, true],
-  },
-  {
-    name: "Ratio Lock",
-    description:
-      "Ratio Lock automates calculating the materials you need to complete a task. Just configure the amount of materials you need for one standard unit of measurement, enable the ratio lock and then increase the labor quantity. The materials will scale proportionally. ",
-    available: [false, true, true],
-  },
-];
 export const blogData = [
   {
     id: 1,

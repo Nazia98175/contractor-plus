@@ -5,7 +5,7 @@ import { useState } from "react";
 interface Props {
   headerSubList: any;
 }
-const ResourcesDropdown:React.FC<Props> = ({headerSubList}) => {
+const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
   const t = useTranslations("resources");
 
@@ -60,7 +60,7 @@ const ResourcesDropdown:React.FC<Props> = ({headerSubList}) => {
   return (
     <div className="relative z-[9999] flex grow gap-8 overflow-hidden">
       <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
-        {headerSubList?.[0]?.links?.map((link:any, index:any) => (
+        {headerSubList?.[0]?.links?.map((link: any, index: any) => (
           <button
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -74,7 +74,7 @@ const ResourcesDropdown:React.FC<Props> = ({headerSubList}) => {
         ))}
       </div>
 
-      <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
+      {/* <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
         {resourceItems.map((item, index) => (
           <Image
             key={index}
@@ -98,7 +98,7 @@ const ResourcesDropdown:React.FC<Props> = ({headerSubList}) => {
             hoveredIndex === null ? "z-10 opacity-100" : "z-0 opacity-0"
           }`}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

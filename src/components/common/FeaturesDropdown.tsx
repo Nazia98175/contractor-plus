@@ -17,6 +17,7 @@ import {
   FinancingIcon,
   InvoicingIcon,
   LeadGenerationIcon,
+  MilageIcon,
   MileageIcon,
   PaymentsIcon,
   PROIcon,
@@ -47,7 +48,7 @@ const FeaturesDropdown: React.FC<Props> = ({
   const featureIcons: Record<string, React.ReactNode> = {
     crm: <CrmIcon />,
     estimates: <EstimatesIcon />,
-    mileage: <TrackingIcon />,
+    mileage: <MilageIcon />,
     fieldService: <FieldServiceIcon />,
     dealFlow: <TrophyIcon />,
     timeClock: <TimeIcon />,

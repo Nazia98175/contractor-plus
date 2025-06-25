@@ -50,7 +50,17 @@ export interface PlatformItem {
 export interface HomePageResponse {
   data: any;
   meta?: any;
-  
+}
+
+export interface Plan {
+  name: string;
+  cta: string;
+  variant: "default" | "pro" | "proTeam";
+}
+export interface tableFeature {
+  name: string;
+  description: string;
+  available: boolean[];
 }
 export interface Review {
   id: string | number;

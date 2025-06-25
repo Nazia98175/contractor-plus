@@ -44,7 +44,7 @@ import {
   TruckIcon,
   TruckElectricIcon,
 } from "lucide-react";
-import { Platform, Review } from "@/types";
+import { Plan, Platform, Review, tableFeature } from "@/types";
 
 export const awards = [
   {
@@ -657,7 +657,7 @@ export const planData = [
     isPro: true,
   },
   {
-    title: "PRO Team",
+    title: "Most popular",
     subtitle: "Up to 5 users",
     monthlyPrice: 95,
     note: "For Teams",
@@ -674,6 +674,70 @@ export const planData = [
   },
 ];
 
+export const plans: Plan[] = [
+  { name: "Freedom", cta: "Start for free", variant: "default" },
+  { name: "PRO", cta: "Get started", variant: "pro" },
+  { name: "PRO Team", cta: "Get started", variant: "proTeam" },
+];
+
+export const leadFeatures: tableFeature[] = [
+  {
+    name: "Track Your Leads & Clients",
+    description:
+      "Track leads, clients, subs, vendors, tenants, and over 50+ 'contact types' so you maintain a comprehensive communication history with every point of contact that's relevant to your business.",
+    available: [true, true, true],
+  },
+  {
+    name: "Opportunities Kanban",
+    description:
+      "Can track your deal flow using the Opportunities Kanban. This gives you a clear view of how your business is performing, and how much value each pipeline stage. Never let an opportunity slip through the cracks again.",
+    available: [false, true, true],
+  },
+  {
+    name: "Booking & Request Forms",
+    description:
+      "You can allow your clients to schedule estimates, or book your services directly from your website, or social media, and have these events show up on the appropriate schedule inside Contractor+.",
+    available: [false, true, true],
+  },
+  {
+    name: "Schedule Estimates",
+    description:
+      "Have an upcoming assessment/estimate/quote (whatever you call it)? You can schedule these appointments and assign them to the appropriate team members based on their availability.",
+    available: [false, true, true],
+  },
+  {
+    name: "Multiple Points of Contact",
+    description:
+      "There's Contacts, Service Addresses, and Jobs. Each of these can have multiple points of contact. Each contact has their own communication timeline. Really convenient and easy to manage.",
+    available: [false, true, true],
+  },
+  {
+    name: "Tenant & Property Access",
+    description:
+      "Every business is different. Track whatever additional information is important to you-like entry codes, PO Number, Tenant Name, Tenant Number etc.",
+    available: [false, true, true],
+  },
+];
+export const communicationFeatures: tableFeature[] = [
+  {
+    name: "Contractor+ Voice",
+    description:
+      "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
+    available: [true, true, true],
+  },
+  {
+    name: "Two-Way SMS",
+    description:
+      "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
+    available: [false, true, true],
+  },
+  {
+    name: "Two-Way Email",
+    description:
+      "Send & receive email to your connected Gmail, Outlook or IMAP accounts. If you receive an email from an existing contact, it will be added directly to that contact in your Contractor+ CRM.",
+    available: [false, true, true],
+  },
+];
 export const blogData = [
   {
     id: 1,

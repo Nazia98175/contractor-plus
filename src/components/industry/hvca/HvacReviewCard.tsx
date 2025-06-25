@@ -1,7 +1,7 @@
 import { ReviewCardProps } from "@/types";
 import Image from "next/image";
 import React from "react";
-import { PlayIcon2, StartIcon } from "../common/Icons";
+import { PlayIcon2, StartIcon } from "../../common/Icons";
 
 const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   const renderStars = (rating: number) => {

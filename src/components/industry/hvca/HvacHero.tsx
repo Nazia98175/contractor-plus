@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
 import "swiper/css"; // Core Swiper styles
-import CardRequiredButton from "../common/CardRequiredButton";
-import CloudsAnimation from "../common/CloudsAnimation";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { features } from "../common/Helper";
 import HvacHeroSlider from "./HvacHeroSlider";
 import { useEffect } from "react";
 import gsap from "gsap";
+import FreeAccountButton from "@/components/common/FreeAccountButton";
+import CloudsAnimation from "@/components/common/CloudsAnimation";
+import { features } from "@/components/common/Helper";
+import CardRequiredButton from "@/components/common/CardRequiredButton";
 const HvacHero = () => {
   useEffect(() => {
     setTimeout(() => {
@@ -47,12 +47,10 @@ const HvacHero = () => {
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
-                showIcon={true}
                 text={"Get started FREE"}
                 className="!hidden sm:!flex"
               />
               <FreeAccountButton
-                showIcon={false}
                 text={"Download FREE App"}
                 className="flex sm:!hidden"
               />

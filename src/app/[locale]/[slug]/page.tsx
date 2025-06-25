@@ -16,7 +16,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import TrustBarHvca from "@/components/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import { getSeoData } from "@/services/common/seoMeta";
 
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";

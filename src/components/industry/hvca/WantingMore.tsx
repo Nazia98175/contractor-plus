@@ -1,6 +1,5 @@
-import { wantingMoreData } from "../common/Helper";
-import ScrollOverlapCards from "../common/ScrollOverlapCards";
-import TextAnimation from "../common/TextAnimation";
+import { wantingMoreData } from "@/components/common/Helper";
+import ScrollOverlapCards from "@/components/common/ScrollOverlapCards";
 
 const WantingMore = () => {
   return (

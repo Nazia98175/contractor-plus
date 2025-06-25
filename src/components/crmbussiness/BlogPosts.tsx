@@ -2,9 +2,8 @@ import Image from "next/image";
 import Button from "../common/Button";
 import { blogData } from "../common/Helper";
 import { BlogBtnIcon } from "../common/Icons";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import SliderLayout from "../common/SliderLayout";
 import BlogArticle from "./BlogArticle";
+import SliderLayout from "../common/SliderLayout";
 
 interface Props {
   data?: any;
@@ -30,17 +29,17 @@ const BlogPosts: React.FC<Props> = ({
     >
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
-          <PrimaryAnimatedText delay={3000}>
-            <h2
-              className={`w-full text-center sm:w-fit sm:text-start lg:max-w-full ${classMaxwidth || "max-w-[483px]"} ${
-                variant === "primary"
-                  ? "faq-heading-text text-center text-2xl font-semibold tracking-[-0.62px] sm:text-[31px]"
-                  : "section-heading"
-              }`}
-            >
-              <span>{data?.title}</span>
-            </h2>
-          </PrimaryAnimatedText>
+          {/* <PrimaryAnimatedText delay={3000}> */}
+          <h2
+            className={`w-full text-center sm:w-fit sm:text-start lg:max-w-full ${classMaxwidth || "max-w-[483px]"} ${
+              variant === "primary"
+                ? "faq-heading-text text-center text-2xl font-semibold tracking-[-0.62px] sm:text-[31px]"
+                : "section-heading"
+            }`}
+          >
+            <span>{data?.title}</span>
+          </h2>
+          {/* </PrimaryAnimatedText> */}
 
           <div className="hidden md:block">
             <Button className="bg-red-linear primary-btn h-10 gap-2">

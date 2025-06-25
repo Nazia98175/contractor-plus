@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { ReviewIcon } from "../common/Icons";
-import ReviewModal from "../common/ReviewModal";
 import SliderLayout from "../common/SliderLayout";
-import TextAnimation from "../common/TextAnimation";
 import CrmReviewCard from "./CrmReviewCard";
+import ReviewModal from "../common/ReviewModal";
 
 interface Props {
   data: any;

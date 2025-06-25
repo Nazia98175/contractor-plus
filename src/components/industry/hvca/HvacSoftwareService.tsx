@@ -1,9 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { ChangeEvent, FormEvent, useState } from "react";
-import CardReveal from "../common/CardReveal";
-import { CheckIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
+import CardReveal from "../../common/CardReveal";
+import { CheckIcon } from "../../common/Icons";
+import TextAnimation from "../../common/TextAnimation";
 import Link from "next/link";
 interface HvacSoftwareServiceProps {
   data: any;

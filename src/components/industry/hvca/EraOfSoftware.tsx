@@ -1,5 +1,3 @@
-import React from "react";
-
 const EraOfSoftware = () => {
   return (
     <section className="no-scrollbar relative z-10 overflow-x-hidden">

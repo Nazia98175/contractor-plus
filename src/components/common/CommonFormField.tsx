@@ -1,10 +1,8 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useState } from "react";
-import TextAnimation from "./TextAnimation";
-import CardReveal from "./CardReveal";
-import { CheckIcon } from "./Icons";
 import { variantsForm } from "@/utils/getVariants";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import CardRequiredButton from "./CardRequiredButton";
+import CardReveal from "./CardReveal";
 
 interface CommonFormFieldProps {
   title: string;

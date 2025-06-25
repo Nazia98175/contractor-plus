@@ -1,4 +1,4 @@
-import { softwareCardData } from "../common/Helper";
+import { softwareCardData } from "@/components/common/Helper";
 import HvacSoftwareCard from "./HvacSoftwareCard";
 
 const HvacSoftware = () => {

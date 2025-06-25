@@ -1,9 +1,10 @@
 "use client";
-import AwardsTagsImg from "../common/AwardsTagsImg";
-import CardRequiredButton from "../common/CardRequiredButton";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { makeOperationList } from "../common/Helper";
-import SoftwareUsed from "../common/SoftwareUsed";
+
+import AwardsTagsImg from "@/components/common/AwardsTagsImg";
+import CardRequiredButton from "@/components/common/CardRequiredButton";
+import FreeAccountButton from "@/components/common/FreeAccountButton";
+import { makeOperationList } from "@/components/common/Helper";
+import SoftwareUsed from "@/components/common/SoftwareUsed";
 
 export default function AwardBadges() {
   return (

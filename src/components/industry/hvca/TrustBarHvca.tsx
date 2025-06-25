@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
-import CardReveal from "../common/CardReveal";
+import CardReveal from "@/components/common/CardReveal";
+import { blackPlatforms } from "@/components/common/Helper";
+import SliderLayout from "@/components/common/SliderLayout";
+import PlatformCard from "@/components/homepage/PlatformCard";
 import { Platform } from "@/types";
-import PlatformCard from "../homepage/PlatformCard";
-import SliderLayout from "../common/SliderLayout";
+import React from "react";
 
 interface TrustBarProps {
   platforms: Platform[];
@@ -11,7 +12,7 @@ interface TrustBarProps {
   className?: string;
 }
 
-const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
+const TrustBarHvca: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
@@ -19,7 +20,7 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
       {showTrustedSection && (
-        <h2 className="section-heading crm-gradient xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center font-bold sm:mb-8 md:mb-10 lg:mb-12 lg:!font-semibold xl:max-w-full">
+        <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
           Trusted by over <strong>50,000</strong> build and service contractors
         </h2>
       )}
@@ -27,7 +28,7 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
-        {platforms.map((platform, index) => (
+        {blackPlatforms.map((platform, index) => (
           <PlatformCard platform={platform} key={index} />
         ))}
       </CardReveal>
@@ -56,4 +57,4 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   );
 };
 
-export default TrustBatBuildContractor;
+export default TrustBarHvca;

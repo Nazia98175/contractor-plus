@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
-import CardReveal from "../common/CardReveal";
+
+import PlatformCard from "@/components/homepage/PlatformCard";
+import SliderLayout from "@/components/common/SliderLayout";
 import { Platform } from "@/types";
-import PlatformCard from "../homepage/PlatformCard";
-import SliderLayout from "../common/SliderLayout";
+import CardReveal from "@/components/common/CardReveal";
 
 interface TrustBarProps {
   platforms: Platform[];
@@ -11,7 +12,7 @@ interface TrustBarProps {
   className?: string;
 }
 
-const TrustBarHvca: React.FC<TrustBarProps> = ({
+const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
@@ -19,7 +20,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
       {showTrustedSection && (
-        <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
+        <h2 className="section-heading crm-gradient xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center font-bold sm:mb-8 md:mb-10 lg:mb-12 lg:!font-semibold xl:max-w-full">
           Trusted by over <strong>50,000</strong> build and service contractors
         </h2>
       )}
@@ -56,4 +57,4 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
   );
 };
 
-export default TrustBarHvca;
+export default TrustBatBuildContractor;

@@ -31,7 +31,7 @@ const VideoBottomPart = () => {
 
         const trigger = ScrollTrigger.create({
           trigger: ref.current,
-          start: "top 60%", 
+          start: "top 60%",
           end: "bottom 20%",
           markers: false, // Markers removed
           onEnter: () => {
@@ -114,7 +114,7 @@ const VideoBottomPart = () => {
 
           <div
             ref={sectionRef2}
-            className="video-section-wrapper relative z-10 mx-auto max-w-[873px] p-3 backdrop-blur-[5px] sm:p-[22px]"
+            className="video-section-wrapper relative z-10 mx-auto max-w-[927px] p-3 backdrop-blur-[5px] sm:p-[22px]"
           >
             <TextAnimation animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">

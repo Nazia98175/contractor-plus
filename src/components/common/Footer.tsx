@@ -65,7 +65,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const isCrmRoute =
     pathname.toLowerCase().includes("crm") ||
     pathname.toLowerCase().includes("estimate") ||
-    pathname.toLowerCase().includes("field-service");
+    pathname.toLowerCase().includes("field-service") ||
+    pathname.toLowerCase().includes("why-contractor");
 
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);

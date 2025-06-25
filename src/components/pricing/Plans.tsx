@@ -18,7 +18,7 @@ const Plans: React.FC = () => {
         ))}
       </div>
 
-      <p className="text-winterWay text-xs">
+      <p className="text-winterWay text-center text-xs">
         Prices are in USD. Pricing excludes VAT & sales tax where applicable.
         Annual contracts are billed upfront in one invoice.
       </p>

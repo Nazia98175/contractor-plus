@@ -17,6 +17,7 @@ import {
   FinancingIcon,
   InvoicingIcon,
   LeadGenerationIcon,
+  MilageIcon,
   MileageIcon,
   PaymentsIcon,
   PROIcon,
@@ -32,6 +33,7 @@ import {
   TrophyIcon,
   WebsiteIncludedIcon,
 } from "./Icons";
+import { CrmIcon } from "./MainIcon";
 interface Props {
   headerSubList: any;
   isVisible: boolean;
@@ -44,9 +46,9 @@ const FeaturesDropdown: React.FC<Props> = ({
   const t = useTranslations("features");
 
   const featureIcons: Record<string, React.ReactNode> = {
-    crm: <ServiceIcon />,
+    crm: <CrmIcon />,
     estimates: <EstimatesIcon />,
-    mileage: <TrackingIcon />,
+    mileage: <MilageIcon />,
     fieldService: <FieldServiceIcon />,
     dealFlow: <TrophyIcon />,
     timeClock: <TimeIcon />,

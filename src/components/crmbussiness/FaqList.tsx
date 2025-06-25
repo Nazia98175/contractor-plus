@@ -37,8 +37,8 @@ const variantStyles = {
     answer: "text-secondary",
   },
   muted: {
-    question: "text-gray-500",
-    answer: "text-gray-400",
+    question: "text-winterWay",
+    answer: "text-secondary",
   },
 };
 

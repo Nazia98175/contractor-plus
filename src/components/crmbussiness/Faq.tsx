@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import FaqList from "./FaqList";
 import TextAnimation from "../common/TextAnimation";
 import UseFaqToggle from "../hook/UseFaqToggle";
-
+type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 type FaqItemType = {
   question: string;
   answer: string;
@@ -20,6 +20,7 @@ interface Props {
   containerClassName?: string;
   mainContainerclassName?: string;
   classHeadingMaxWidth?: string;
+  variant?: VariantType;
 }
 const Faq: React.FC<Props> = ({
   faq,
@@ -28,6 +29,7 @@ const Faq: React.FC<Props> = ({
   containerClassName,
   mainContainerclassName,
   classHeadingMaxWidth,
+  variant = "default",
 }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
 
@@ -56,6 +58,7 @@ const Faq: React.FC<Props> = ({
             classNameQue={classNameQue}
             classNameAnswer={classNameAnswer}
             containerClassName={containerClassName}
+            variant={variant}
           />
         ))}
       </div>

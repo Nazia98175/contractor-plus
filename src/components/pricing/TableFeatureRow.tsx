@@ -90,7 +90,7 @@ const TableFeatureRow: React.FC<TableFeatureRowProps> = ({
           duration={500}
           height={isOpen ? "auto" : 0}
         >
-          <p className="text-wallStreet max-w-[223px] px-3 pb-3 text-xs xl:pl-5">
+          <p className="text-wallStreet w-full max-w-[223px] pb-3 pl-3 text-xs xl:pl-5">
             {feature.description}
           </p>
         </AnimateHeight>
@@ -104,11 +104,15 @@ const TableFeatureRow: React.FC<TableFeatureRowProps> = ({
               : ""
           }`}
         >
-          <span className="flex items-center justify-center">
-            {avail ? (
-              <CheckIcon width={24} height={24} />
+          <span className="text-secondary semibold flex items-center justify-center text-sm font-medium italic">
+            {typeof avail === "boolean" ? (
+              avail ? (
+                <CheckIcon width={24} height={24} />
+              ) : (
+                <CloseIcon width={24} height={24} />
+              )
             ) : (
-              <CloseIcon width={24} height={24} />
+              avail
             )}
           </span>
         </td>

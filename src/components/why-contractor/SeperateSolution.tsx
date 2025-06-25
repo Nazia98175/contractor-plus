@@ -165,7 +165,6 @@ const SeperateSolution = () => {
             Every separate solution introduces friction into your business
           </h3>
         </TextAnimation>
-
         <div className="grid grid-cols-1 gap-x-11 gap-y-8 sm:grid-cols-2">
           {frictionItems.map((item, index) => (
             <div
@@ -196,7 +195,6 @@ const SeperateSolution = () => {
             </div>
           ))}
         </div>
-
         <TextAnimation animateOnScroll={true} delay={0}>
           <span className="mt-11 flex justify-center">
             <FrictionTextGroup />

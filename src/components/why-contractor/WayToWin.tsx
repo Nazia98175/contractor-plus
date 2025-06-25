@@ -21,7 +21,7 @@ const WayToWin = () => {
           </p>
         </TextAnimation>
       </div>
-      <div className="relative mx-auto max-w-[1440px] before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-kuroiBlack before:to-transparent before:content-[''] after:absolute after:top-0 after:right-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:from-kuroiBlack after:to-transparent after:content-['']">
+      <div className="before:from-kuroiBlack after:from-kuroiBlack relative mx-auto max-w-[1440px] before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:to-transparent before:content-[''] after:absolute after:top-0 after:right-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:to-transparent after:content-['']">
         <Image
           unoptimized
           className="w-full max-sm:hidden xl:h-[707px] 2xl:h-[unset]"

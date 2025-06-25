@@ -43,7 +43,12 @@ const TableFeatureRow: React.FC<FeatureRowProps> = ({
       </AnimateHeight>
     </td>
     {feature.available.map((avail, idx) => (
-      <td key={idx} className="border-r border-gray-300 px-5 py-3 text-center">
+      <td
+        key={idx}
+        className={`px-5 py-3 text-center ${
+          idx === feature.available.length - 1 ? "" : "border-r border-gray-300"
+        }`}
+      >
         <span className="flex items-center justify-center">
           {avail ? (
             <CheckIcon width={24} height={24} />

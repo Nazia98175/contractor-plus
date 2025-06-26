@@ -6,7 +6,7 @@ import CloudsAnimation from "../common/CloudsAnimation";
 const PricingHero = () => {
   return (
     <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] sm:pb-[200px]">
-      <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%] lg:-bottom-[8%]"></div>
+      <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <img
         src="/images/webp/pricing.webp"

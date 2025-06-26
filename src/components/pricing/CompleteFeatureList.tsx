@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 import ReviewCard from "../common/ReviewCard";
 import { Review } from "@/types";
 import ReviewModal from "../common/ReviewModal";
+import { OurReviewList, reviews } from "../common/Helper";
 
 const CompleteFeatureList = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -13,23 +14,15 @@ const CompleteFeatureList = () => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  const reviewsList = [
-    {
-      id: 1,
-      userName: " John Doe",
-      userRole: "CEO, Tech Solutions",
-      rating: 5,
-      review:
-        "Contractor+ has transformed our project management. The intuitive interface and powerful features have streamlined our workflow, making it easier to collaborate with our team and clients. Highly recommend!",
-      profileUrl: "/images/png/contractor-1.png",
-      videoLink: "",
-      isModal: false,
-    },
-  ];
+
   return (
-    <div className="w-full bg-white">
-      <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
-        {reviewsList?.map((review, index) => (
+    <div className="relative w-full">
+      {/* <div className="absolute -top-[20%] left-1/2 h-[140%] w-[120%] -translate-x-1/2 rounded-[1805px] border-[350px] border-red-400 blur-[40px] backdrop-blur-[40px]"></div> */}
+      <h2 className="crm-gradient section-heading mx-auto w-fit text-center !font-semibold">
+        See complete PRO feature list below
+      </h2>
+      <Marquee speed={20} direction="right" className="z-10 py-5" pauseOnHover>
+        {reviews?.map((review, index) => (
           <ReviewCard
             index={index}
             key={review.id}
@@ -42,8 +35,8 @@ const CompleteFeatureList = () => {
           />
         ))}
       </Marquee>
-      <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
-        {reviewsList?.map((review, index) => (
+      <Marquee speed={20} direction="left" className="py-5" pauseOnHover>
+        {reviews?.map((review, index) => (
           <ReviewCard
             index={index}
             key={review.id}

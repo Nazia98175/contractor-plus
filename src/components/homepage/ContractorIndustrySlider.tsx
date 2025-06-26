@@ -29,151 +29,151 @@ const ContractorIndustrySlider: React.FC = () => {
       image: "/images/webp/circular-slide-2.webp",
     },
     {
-      title: "Plumbing",
+      title: "Construction",
       image: "/images/webp/circular-slide-3.webp",
     },
     {
-      title: "The Penguin",
+      title: "Drywall",
       image: "/images/webp/circular-slide-4.webp",
     },
     {
-      title: "Strange Darling",
+      title: "HVAC",
       image: "/images/webp/circular-slide-5.webp",
     },
     {
-      title: "Re:ZERO",
+      title: "Mechanical",
       image: "/images/webp/circular-slide-6.webp",
     },
     {
-      title: "Rebel Ridge",
+      title: "Painting",
       image: "/images/webp/circular-slide-7.webp",
     },
     {
-      title: "Outlaw",
+      title: "Remodeling",
       image: "/images/webp/circular-slide-8.webp",
     },
     {
-      title: "Pleasure",
+      title: "Carpet Cleaning",
       image: "/images/webp/circular-slide-9.webp",
     },
     {
-      title: "Joker: Folie à Deux",
+      title: "Chimney Sweeping",
       image: "/images/webp/circular-slide-10.webp",
     },
     {
-      title: "The Penguin",
+      title: "Plumbing",
       image: "/images/webp/circular-slide-1.webp",
     },
     {
-      title: "Strange Darling",
+      title: "Drywall",
       image: "/images/webp/circular-slide-4.webp",
     },
     {
-      title: "Re:ZERO",
+      title: "Mechanical",
       image: "/images/webp/circular-slide-6.webp",
     },
     {
-      title: "Rebel Ridge",
+      title: "Construction",
       image: "/images/webp/circular-slide-3.webp",
     },
     {
-      title: "Outlaw",
+      title: "Remodeling",
       image: "/images/webp/circular-slide-8.webp",
     },
     {
-      title: "Pleasure",
+      title: "Chimney Sweeping",
       image: "/images/webp/circular-slide-10.webp",
     },
     {
-      title: "General Contractor",
+      title: "Cleaning",
       image: "/images/webp/circular-slide-11.webp",
     },
     {
-      title: "Plumbing",
+      title: "Electrician",
       image: "/images/webp/circular-slide-12.webp",
     },
     {
-      title: "General Contractor",
+      title: "Elevator",
       image: "/images/webp/circular-slide-13.webp",
     },
     {
-      title: "Plumbing",
+      title: "Excavation",
       image: "/images/webp/circular-slide-14.webp",
     },
     {
-      title: "The Penguin",
+      title: "Fence",
       image: "/images/webp/circular-slide-15.webp",
     },
     {
-      title: "Strange Darling",
+      title: "Flooring",
       image: "/images/webp/circular-slide-16.webp",
     },
     {
-      title: "Re:ZERO",
+      title: "Garage Door",
       image: "/images/webp/circular-slide-17.webp",
     },
     {
-      title: "Rebel Ridge",
+      title: "Handyman",
       image: "/images/webp/circular-slide-18.webp",
     },
     {
-      title: "Outlaw",
+      title: "Irrigation",
       image: "/images/webp/circular-slide-19.webp",
     },
     {
-      title: "Pleasure",
+      title: "Janitorial",
       image: "/images/webp/circular-slide-20.webp",
     },
     {
-      title: "Joker: Folie à Deux",
+      title: "Junk Removal",
       image: "/images/webp/circular-slide-21.webp",
     },
     {
-      title: "The Penguin",
+      title: "Landscaping",
       image: "/images/webp/circular-slide-22.webp",
     },
     {
-      title: "Strange Darling",
+      title: "Lawn Care",
       image: "/images/webp/circular-slide-23.webp",
     },
     {
-      title: "Re:ZERO",
+      title: "Locksmith",
       image: "/images/webp/circular-slide-24.webp",
     },
     {
-      title: "Rebel Ridge",
+      title: "Paving",
       image: "/images/webp/circular-slide-25.webp",
     },
     {
-      title: "Pleasure",
+      title: "Pest Control",
       image: "/images/webp/circular-slide-27.webp",
     },
     {
-      title: "Pleasure",
+      title: "Pressure Washing",
       image: "/images/webp/circular-slide-28.webp",
     },
     {
-      title: "Joker: Folie à Deux",
+      title: "Property Maintenance",
       image: "/images/webp/circular-slide-29.webp",
     },
     {
-      title: "The Penguin",
+      title: "Restoration",
       image: "/images/webp/circular-slide-30.webp",
     },
     {
-      title: "Strange Darling",
+      title: "Snow Removal",
       image: "/images/webp/circular-slide-31.webp",
     },
     {
-      title: "Re:ZERO",
+      title: "Solar",
       image: "/images/webp/circular-slide-32.webp",
     },
     {
-      title: "Rebel Ridge",
+      title: "Tiling",
       image: "/images/webp/circular-slide-33.webp",
     },
     {
-      title: "Pleasure",
+      title: "Tree Care",
       image: "/images/webp/circular-slide-34.webp",
     },
   ];
@@ -182,9 +182,9 @@ const ContractorIndustrySlider: React.FC = () => {
     <div className="relative">
       <SliderLayout
         effect="coverflow"
-        autoplay={{
-          delay: 3000,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        // }}
         speed={700}
         grabCursor={true}
         centeredSlides={true}

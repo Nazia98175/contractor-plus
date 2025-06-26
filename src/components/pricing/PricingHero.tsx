@@ -28,7 +28,7 @@ const PricingHero = () => {
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0.4}>
-          <p className="hero-description max-w-[600px] text-center text-[#818181] sm:!text-[#8A8E91]">
+          <p className="hero-description mx-auto max-w-[600px] text-center text-[#818181] sm:!text-[#8A8E91]">
             What the other guys charge extra for, Contractor+ makes it standard.{" "}
             Upgrade when you need more firepower to grow.
           </p>

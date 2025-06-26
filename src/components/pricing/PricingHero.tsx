@@ -20,7 +20,7 @@ const PricingHero = () => {
       <div className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
         Plans and Pricing
       </div>
-      <div className="relative mx-auto w-full max-w-[700px]">
+      <div className="relative mx-auto w-full max-w-[650px]">
         <TextAnimation animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:block md:mt-0">
             Free to start, free to stay. Level up when you’re ready.
@@ -32,9 +32,9 @@ const PricingHero = () => {
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0.4}>
-          <p className="hero-description mx-auto max-w-[600px] text-center text-[#818181] sm:!text-[#8A8E91]">
-            What the other guys charge extra for, Contractor+ makes it standard.{" "}
-            Upgrade when you need more firepower to grow.
+          <p className="hero-description text-center text-[#818181] sm:!text-[#8A8E91]">
+            What the other guys charge extra for, Contractor+ offers without
+            hidden charges. Upgrade when you need more firepower to grow.
           </p>
         </TextAnimation>
         <div className="pt-5 sm:pt-7">

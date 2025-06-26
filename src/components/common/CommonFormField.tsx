@@ -103,11 +103,11 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             </button>
 
             <div className="hidden items-center gap-2 pt-3 md:flex">
-              <CardRequiredButton className="text-white" text={ncc} />
+              <CardRequiredButton text={ncc} />
             </div>
           </div>
           <div className="flex w-full items-center justify-center md:hidden">
-            <CardRequiredButton className="text-white" text={ncc} />
+            <CardRequiredButton text={ncc} />
           </div>
         </form>
 

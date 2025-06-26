@@ -2,16 +2,19 @@ import React from "react";
 import TextAnimation from "../common/TextAnimation";
 import CommonFormField from "../common/CommonFormField";
 import CloudsAnimation from "../common/CloudsAnimation";
+import Image from "next/image";
 
 const PricingHero = () => {
   return (
     <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] sm:pb-[200px]">
       <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
-      <img
+      <Image
         src="/images/webp/pricing.webp"
-        alt=""
-        className="absolute top-0 right-0 -z-10 hidden h-full w-full max-w-[200px] xl:block"
+        alt="Pricing Hero"
+        height={1000}
+        width={200}
+        className="absolute top-0 right-0 -z-10 hidden h-full w-full max-w-[200px] object-contain xl:block"
       />
       <div className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
         Plans and Pricing

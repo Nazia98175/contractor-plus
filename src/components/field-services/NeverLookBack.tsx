@@ -3,6 +3,7 @@ import { debugLog } from "@/utils/getConsole";
 import AwardsTagsImg from "../common/AwardsTagsImg";
 import SoftwareUsed from "../common/SoftwareUsed";
 import { Props } from "../crmbussiness/TeamsUsingContractor";
+import Image from "next/image";
 
 const NeverLookBack: React.FC<Props> = ({ data }) => {
   debugLog("data", data);
@@ -10,7 +11,10 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
     <section className="no-scrollbar relative z-10 w-full bg-white pt-[50px] sm:pt-14 md:pt-[70px]">
       <div className="pointer-events-none absolute top-[-86px] left-[-20%] z-50 h-[150px] w-[140%] bg-white blur-[34px]"></div>
       <div className="absolute -top-0.5 z-[2] hidden h-3 w-full bg-white sm:block"></div>
-      <img
+      <Image
+        width={1440}
+        height={200}
+        priority
         src="/images/webp/red-linear-bg.webp"
         className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
         alt="Red Lineaar background"

@@ -128,53 +128,74 @@ const TimmingEffect = () => {
           {/* ORANGE BLUR LINEAR BACKGROUND  */}
           {/* <div className="sun-reflect absolute top-[-7.29vw] right-[-13.5vw] z-[20] h-[25.64vw] w-[25.64vw] rotate-180"></div> */}
           {/* INITIAL CLOUD 1  */}
-          <img
+          <Image
             src="/images/png/initial-cloud.png"
             id="initial-cloud"
             className="absolute top-0 z-[21] w-full"
             alt=""
+            width={1440}
+            height={150}
+            priority
           />
           {/* STEP 1 CLOUD */}
-          <img
+          <Image
             src="/images/png/step-1-cloud.png"
             id="step-1-cloud"
             className="absolute top-0 z-[21] w-full opacity-0"
             alt=""
+            width={1440}
+            height={150}
+            priority
           />
           {/* STEP 2 CLOUD */}
-          <img
+          <Image
             src="/images/png/step-2-cloud.png"
             id="step-2-cloud"
             className="absolute top-0 z-[21] w-full opacity-0"
             alt=""
+            width={1440}
+            height={140}
+            priority
           />
           {/* STEP 3 CLOUD */}
-          <img
+          <Image
             src="/images/png/step-3-cloud.png"
             id="step-3-cloud"
             className="absolute top-0 z-[21] w-full opacity-0"
             alt=""
+            width={1440}
+            height={150}
+            priority
           />{" "}
           {/* STEP 4 CLOUD */}
-          <img
+          <Image
             src="/images/png/step-4-cloud.png"
             id="step-4-cloud"
             className="absolute top-0 z-[21] w-full opacity-0"
             alt=""
+            width={1440}
+            height={150}
+            priority
           />
           {/* STEP 6 CLOUD */}
-          <img
+          <Image
             src="/images/png/step-6-cloud.png"
             id="step-6-cloud"
             className="absolute top-0 z-[21] w-full opacity-0"
             alt=""
+            width={1440}
+            height={150}
+            priority
           />{" "}
           {/* STEP 7 CLOUD */}
-          <img
+          <Image
             src="/images/png/step-7-cloud.png"
             id="step-7-cloud"
             className="absolute top-0 z-[21] w-full opacity-0"
             alt=""
+            width={1440}
+            height={150}
+            priority
           />
           {/* ENVIRONMENT BACKGROUND GRADIENT */}
           <div
@@ -226,6 +247,7 @@ const TimmingEffect = () => {
             <Image
               width={611}
               height={245}
+              priority
               src="/images/webp/timing.webp"
               alt="Timing Image"
             />

@@ -63,6 +63,8 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 alt="avatar"
                 width={42}
                 height={42}
+                priority
+                unoptimized
                 className="h-fit max-w-[42px] rounded-full object-contain"
               />
             ) : (

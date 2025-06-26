@@ -41,17 +41,19 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
         height={240}
         className="h-full max-h-[240px] w-full rounded-lg object-cover transition-transform duration-300"
       />
-      <div className="mt-8">
+      <div className="mt-5 sm:mt-8">
         <div className="text-secondary font-jakarta flex items-center gap-2 text-sm font-semibold">
           <span>{article.category}</span>
           <span>•</span>
           <span>{article.date}</span>
         </div>
-        <div className="my-3 flex items-center justify-between">
-          <h3 className="text-eerie text-2xl font-semibold">{article.title}</h3>
+        <div className="my-2 flex items-center justify-between sm:my-3">
+          <h3 className="text-eerie text-lg font-semibold sm:text-xl md:text-2xl">
+            {article.title}
+          </h3>
           <CardArrowIcon className="stroke-eerie h-6 w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
         </div>
-        <p className="text-flintstone mb-6 text-sm font-semibold">
+        <p className="text-flintstone mb-4 text-sm font-semibold sm:mb-6">
           {article.description}
         </p>
         <div className="flex flex-wrap gap-2">

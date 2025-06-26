@@ -21,7 +21,7 @@ export const variantsForm = {
     title: "text-decemberSky sub-heading font-extrabold",
     subtitle: "text-decemberSky",
     input:
-      "bg-kuroiBlack text-white placeholder:text-white border-b border-white",
+      "bg-kuroiBlack text-secondary placeholder:text-secondary border-b border-white",
   },
   tertiary: {
     title: "text-white sub-heading font-extrabold max-w-full",
@@ -30,7 +30,7 @@ export const variantsForm = {
   },
   white: {
     title: "text-winterWay sub-heading font-extrabold max-w-full",
-    subtitle: "text-[#4D4D4D] sm:text-secondary font-medium",
+    subtitle: "text-pantone sm:text-secondary font-medium",
     input: "bg-white placeholder:text-secondary border-b border-cyanBlue",
   },
 };

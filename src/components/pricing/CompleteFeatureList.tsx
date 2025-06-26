@@ -58,7 +58,7 @@ const CompleteFeatureList = () => {
         </Marquee>
       </div>
 
-      <button className="text-winterWay border-decemberSky hover:bg-superSilver relative z-20 mt-10 hidden h-8 items-center justify-center gap-1 rounded-md border px-3 text-sm font-semibold tracking-[0.1px] duration-300 sm:flex">
+      <button className="text-secondary border-winterWay hover:text-winterWay hover:bg-superSilver relative z-20 mt-10 hidden h-8 items-center justify-center gap-1 rounded-md border px-3 text-sm font-semibold tracking-[0.1px] duration-300 sm:flex">
         Compare plan features
         <ScrollDownIcon />
       </button>

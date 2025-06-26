@@ -61,7 +61,10 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
 
   const variant =
-    pathname.toLowerCase().includes("hvac") || "pricing" ? "light" : "dark";
+    pathname.toLowerCase().includes("hvac") ||
+    pathname.toLowerCase().includes("pricing")
+      ? "light"
+      : "dark";
   // 👇 Add this condition
   const isCrmRoute =
     pathname.toLowerCase().includes("crm") ||

@@ -66,6 +66,6 @@ export const variantStylesCardButton = {
   default: "text-secondary",
   primary: "text-primary",
   light: "text-white",
-  dark: "text-darkBlue",
+  dark: "text-decemberSky",
   muted: "text-muted",
 };

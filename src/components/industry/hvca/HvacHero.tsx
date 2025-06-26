@@ -60,7 +60,7 @@ const HvacHero = () => {
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
-                text={"No Credit Card Required"}
+                text={"No credit card required"}
               />
             </div>
           </div>

@@ -8,23 +8,23 @@ interface CardRequiredButtonProps {
   className?: string;
   text: string;
   showIcon?: boolean;
-  variant?: VariantType;
+  variantBtn?: VariantType;
 }
 
 const CardRequiredButton: React.FC<CardRequiredButtonProps> = ({
   className = "",
   text = "",
   showIcon = false,
-  variant = "default",
+  variantBtn = "default",
 }) => {
-  const variantStyles = variantStylesCardButton[variant];
+  const variantStyles = variantStylesCardButton[variantBtn];
   return (
-    <button
-      className={`${className} font-myriad hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex ${variantStyles}`}
+    <p
+      className={`${className} font-myriad hidden items-center gap-1.5 text-sm font-semibold sm:flex ${variantStyles}`}
     >
       {showIcon && <CheckIcon />}
       {text}
-    </button>
+    </p>
   );
 };
 

@@ -25,7 +25,7 @@ const ReverseFrames = () => {
   useEffect(() => {
     const preloadFrames = () => {
       framePaths.forEach((path) => {
-        const img = new Image();
+        const img = new window.Image();
         img.src = path;
       });
     };

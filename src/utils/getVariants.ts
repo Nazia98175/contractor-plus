@@ -28,6 +28,12 @@ export const variantsForm = {
     subtitle: "text-decemberSky",
     input: "bg-white text-secondary placeholder:text-secondary ",
   },
+  white: {
+    title: "text-winterWay sub-heading font-extrabold max-w-full",
+    subtitle: "text-[#4D4D4D] sm:text-secondary font-medium",
+    input:
+      "bg-white text-white placeholder:text-secondary border-b border-cyanBlue",
+  },
 };
 export const headingStyles = {
   default: { title: "faq-heading-text", sub_title: "text-secondary" },

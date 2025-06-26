@@ -14,6 +14,7 @@ const PricingHero = () => {
         alt="Pricing Hero"
         height={1000}
         width={200}
+        priority
         className="absolute top-0 right-0 -z-10 hidden h-full w-full max-w-[200px] object-contain xl:block"
       />
       <div className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">

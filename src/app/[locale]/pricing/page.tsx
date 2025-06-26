@@ -30,11 +30,11 @@ const PricingPage = () => {
           headingVariant="primary"
         />
         <div className="relative overflow-x-hidden">
-          <div className="px-2 pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
+          <div className="px-2 pb-12 lg:pb-[65px]">
             <CommonFormField
-              variant="secondary"
-              title={"This is what HVAC software should have been all along"}
-              sub_title={"Start using Contractor+ FREE. You won’t look back."}
+              variant="white"
+              title={"Start using Contractor+ for free"}
+              sub_title={"Try it out now. Upgrade when you're ready."}
               placeholder={"Your Email"}
               createBtn={"Get Started Free"}
               mobileBtn={"Download FREE App"}

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CloudsAnimation = ({
   className = "",
   cloud1Class = "",
@@ -31,12 +33,18 @@ const CloudsAnimation = ({
       <div
         className={`${cloud4Class} clouds-3 absolute right-0 bottom-0 left-0 w-full bg-[url("/images/png/pngwing-3.png")] bg-contain bg-repeat-x opacity-30 grayscale-75 sm:h-20 md:h-28 lg:h-[160px]`}
       ></div>
-      <img
+      <Image
+        sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+        width={1920}
+        height={100}
         className={`${imageClass} absolute bottom-4 left-0 hidden h-28 w-full object-left-bottom md:flex`}
         src="/images/png/cloud-layer.png"
         alt="cloud-layer"
       />
-      <img
+      <Image
+        sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+        width={1920}
+        height={100}
         className={`${imageClassMobile} absolute bottom-4 left-0 flex h-full w-full object-left-bottom`}
         src="/images/png/cloud-layer-mobile.png"
         alt="cloud-layer"

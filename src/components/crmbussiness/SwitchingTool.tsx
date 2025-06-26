@@ -5,6 +5,7 @@ import { useRef } from "react";
 import TextAnimation from "../common/TextAnimation";
 import SwitchingToolMobile from "./SwitchingToolMobile";
 import SwitchingToolDesktop from "./SwitchingToolDekstop";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 export interface TheSwitchingToolProps {
@@ -17,10 +18,14 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
   return (
     <section className="relative z-10 px-2 pt-9 md:pt-11" ref={sectionRef}>
       <div className="bg-reverse-black absolute top-0 left-0 z-[-5] block h-[160px] w-full md:h-[296px]" />
-      <img
+      <Image
+        sizes="(max-width: 768px) 368px, (min-width: 769px) 368px"
+        width={368}
+        height={165}
         className="absolute top-0 left-0 z-[-7] hidden h-full w-full object-contain md:block"
         src="/images/webp/switch-tool-bg.webp"
         alt="switch-tool-bg"
+        priority
       />
 
       {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}

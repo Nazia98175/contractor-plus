@@ -31,8 +31,7 @@ export const variantsForm = {
   white: {
     title: "text-winterWay sub-heading font-extrabold max-w-full",
     subtitle: "text-[#4D4D4D] sm:text-secondary font-medium",
-    input:
-      "bg-white text-white placeholder:text-secondary border-b border-cyanBlue",
+    input: "bg-white placeholder:text-secondary border-b border-cyanBlue",
   },
 };
 export const headingStyles = {

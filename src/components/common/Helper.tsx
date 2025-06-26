@@ -657,7 +657,7 @@ export const planData = [
     isPro: true,
   },
   {
-    title: "Most popular",
+    title: "Pro Team",
     subtitle: "Up to 5 users",
     monthlyPrice: 95,
     note: "For Teams",

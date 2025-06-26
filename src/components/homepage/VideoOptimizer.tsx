@@ -66,7 +66,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   return (
     <div className="hero-video-overlay relative">
       {isLoading ? (
-        <Image src={"/images/webp/thumbnail.webp"} fill alt="poster" />
+        <Image src={"/images/webp/hero-video-poster.webp"} fill alt="poster" />
       ) : (
         <>
           <video
@@ -74,7 +74,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             muted
             loop
             playsInline
-            poster={poster || "/images/webp/thumbnail.webp"}
+            poster={poster || "/images/webp/hero-video-poster.webp"}
             onError={(e) => console.error("Video load error:", e)}
             // onLoadStart={() => console.log("Video loading started")}
             // onCanPlay={() => console.log("Video can play")}

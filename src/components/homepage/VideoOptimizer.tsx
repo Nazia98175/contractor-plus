@@ -74,7 +74,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             muted
             loop
             playsInline
-            poster={poster}
+            poster={poster || "/images/webp/speed-test.webp"}
             onError={(e) => console.error("Video load error:", e)}
             // onLoadStart={() => console.log("Video loading started")}
             // onCanPlay={() => console.log("Video can play")}

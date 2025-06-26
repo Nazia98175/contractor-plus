@@ -8,6 +8,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
   debugLog("data", data);
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-[50px] sm:pt-14 md:pt-[70px]">
+      <div className="pointer-events-none absolute top-[-86px] left-[-20%] z-50 h-[150px] w-[140%] bg-white blur-[34px]"></div>
       <div className="absolute -top-0.5 z-[2] hidden h-3 w-full bg-white sm:block"></div>
       <img
         src="/images/webp/red-linear-bg.webp"

@@ -49,7 +49,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
         </div>
         <div className="my-3 flex items-center justify-between">
           <h3 className="text-eerie text-2xl font-semibold">{article.title}</h3>
-          <CardArrowIcon className="stroke-eerie h-6 w-6 transition-all duration-200 ease-in group-hover:translate-x-1.5" />
+          <CardArrowIcon className="stroke-eerie h-6 w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
         </div>
         <p className="text-flintstone mb-6 text-sm font-semibold">
           {article.description}

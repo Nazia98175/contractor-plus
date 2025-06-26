@@ -230,14 +230,13 @@ const TimmingEffect = () => {
               alt="Timing Image"
             />
           </div>
-        </div>
-
-        <div className="relative z-[3] flex flex-col items-center justify-center px-2">
-          <Button variant="primary" className="mt-3 mb-1.5">
-            Get started FREE
-            <ArrowIcon fill="white" />
-          </Button>
-          <CardRequiredButton text="No credit card required" />
+          <div className="relative z-[3] flex flex-col items-center justify-center px-2">
+            <Button variant="primary" className="mt-3 mb-1.5">
+              Get started FREE
+              <ArrowIcon fill="white" />
+            </Button>
+            <CardRequiredButton text="No credit card required" />
+          </div>
         </div>
       </section>
     </div>

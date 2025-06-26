@@ -57,3 +57,10 @@ export const variantStyles = {
     answer: "text-secondary",
   },
 };
+export const variantStylesCardButton = {
+  default: "text-secondary",
+  primary: "text-primary",
+  light: "text-white",
+  dark: "text-darkBlue",
+  muted: "text-muted",
+};

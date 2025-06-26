@@ -28,7 +28,11 @@ const HvacHero = () => {
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
         />
         <div className="main-container xs:pb-28 relative flex items-end pt-[395px] pb-16 md:pt-[250px] md:pb-[100px] lg:pt-[168px] lg:pb-[150px] xl:pb-[355px] 2xl:pt-[180px] 2xl:pb-[370px]">
-          <img
+          <Image
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            width={1920}
+            height={100}
+            priority
             className="pointer-events-none absolute top-0 left-0 z-10 w-full max-w-[320px] object-cover sm:max-w-[400px] lg:hidden xl:left-[13%]"
             src="/images/webp/hvac-hero-gradient-mobile.webp"
             alt="hvac gradient"
@@ -66,7 +70,11 @@ const HvacHero = () => {
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full lg:max-h-[750px] lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">
-            <img
+            <Image
+              sizes="(max-width: 768px) 300px, (min-width: 769px) 300px"
+              width={300}
+              height={1000}
+              priority
               className="w-full"
               src="/images/webp/hvac-hero-gradient.webp"
               alt="hvac gradient"

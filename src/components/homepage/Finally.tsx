@@ -21,12 +21,20 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   return (
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
-        <img
+        <Image
+          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+          width={1920}
+          height={100}
+          priority
           className="absolute top-[-152px] left-0 z-20 hidden h-full w-full md:block"
           src="/images/webp/finally-desktop-bg.webp"
           alt="finally bg"
         />
-        <img
+        <Image
+          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+          width={1920}
+          height={100}
+          priority
           className="absolute top-[0px] left-0 z-20 block h-full w-full md:hidden"
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"

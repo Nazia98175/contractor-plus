@@ -3,6 +3,7 @@ import React from "react";
 import FaqList from "./FaqList";
 import TextAnimation from "../common/TextAnimation";
 import UseFaqToggle from "../hook/UseFaqToggle";
+import { headingStyles } from "@/utils/getVariants";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 type HeadingVariant = "default" | "primary" | "white" | "accent";
@@ -39,12 +40,6 @@ const Faq: React.FC<Props> = ({
 }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
 
-  const headingStyles = {
-    default: { title: "faq-heading-text", sub_title: "text-secondary" },
-    primary: { title: "gradient-text-2", sub_title: "text-secondary" },
-    white: { title: "text-white", sub_title: "text-lightGray" },
-    accent: { title: "text-accent", sub_title: "text-secondary" },
-  };
   const currentHeading = headingStyles[headingVariant];
 
   return (

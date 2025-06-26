@@ -29,3 +29,31 @@ export const variantsForm = {
     input: "bg-white text-secondary placeholder:text-secondary ",
   },
 };
+export const headingStyles = {
+  default: { title: "faq-heading-text", sub_title: "text-secondary" },
+  primary: { title: "gradient-text-2", sub_title: "text-secondary" },
+  white: { title: "text-white", sub_title: "text-lightGray" },
+  accent: { title: "text-accent", sub_title: "text-secondary" },
+};
+export const variantStyles = {
+  default: {
+    question: "text-white",
+    answer: "text-decemberSky",
+  },
+  light: {
+    question: "text-gray-100",
+    answer: "text-gray-300",
+  },
+  dark: {
+    question: "text-gray-900",
+    answer: "text-gray-700",
+  },
+  accent: {
+    question: "text-primary",
+    answer: "text-secondary",
+  },
+  muted: {
+    question: "text-winterWay",
+    answer: "text-secondary",
+  },
+};

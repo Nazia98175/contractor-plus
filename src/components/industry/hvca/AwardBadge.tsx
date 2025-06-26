@@ -38,7 +38,7 @@ export default function AwardBadges() {
         <FreeAccountButton text={"Get started FREE"} />
         <CardRequiredButton
           className="text-winterWay"
-          text={"No Credit Card Required"}
+          text={"No credit card required"}
         />
       </div>
       <AwardsTagsImg />

@@ -30,20 +30,22 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
   const suffix = isAnnual ? "/yr" : "/mo";
   return (
     <article
-      className={`font-myriad group max-w-[317px] cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
+      className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h4 className="xs-heading text-wallStreet leading-[120%] !font-bold">
+            <h4 className="text-wallStreet text-[22px] leading-[120%] !font-bold">
               {plan.title}
             </h4>
-            <p className="text-secondary text-sm">{plan.subtitle}</p>
+            <p className="text-secondary text-sm leading-[125%]">
+              {plan.subtitle}
+            </p>
           </div>
           {plan.isProTeam && <ActivationIcon />}
         </div>
 
-        <h3 className="text-winterWay mt-4 text-[38px] leading-[122%] font-bold md:mt-8">
+        <h3 className="text-winterWay mt-5 text-[38px] !leading-[122%] font-bold md:mt-8">
           {formattedPrice}
           <span className="text-secondary text-lg font-semibold">{suffix}</span>
         </h3>
@@ -57,14 +59,14 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
 
         <PlanButton
           cta={plan.cta}
-          className="my-4 lg:my-6"
+          className="my-6"
           variant={plan.isPro ? "pro" : plan.isProTeam ? "proTeam" : "default"}
         />
 
-        <h5 className="text-secondary mb-3.5 text-base font-bold">
+        <h5 className="text-secondary mb-3.5 text-base leading-[130%] font-bold">
           {plan.featuresHeading}
         </h5>
-        <ul className="space-y-3 md:space-y-4">
+        <ul className="space-y-4">
           {plan.features.map((feature, idx) => (
             <li
               key={idx}

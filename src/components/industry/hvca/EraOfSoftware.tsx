@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const EraOfSoftware = () => {
   return (
     <section className="no-scrollbar relative z-10 overflow-x-hidden">
@@ -21,12 +23,20 @@ const EraOfSoftware = () => {
 
       <div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[116px] xl:rounded-[45px]">
         <div className="bg-secondary absolute bottom-0 left-1/2 z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[100px] sm:block md:min-h-[550px]"></div>
-        <img
+        <Image
+          sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+          width={1920}
+          height={500}
+          priority
           src="/images/webp/era-of-software.webp"
           className="relative z-[2] hidden h-full w-full object-cover sm:block"
           alt="Era of Software"
         />
-        <img
+        <Image
+          sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+          width={1920}
+          height={500}
+          priority
           src="/images/webp/mobile-software-era.webp"
           className="z-[1] block h-full w-full object-cover sm:hidden"
           alt="Era of Software"

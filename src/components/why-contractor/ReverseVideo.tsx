@@ -4,6 +4,7 @@ import { StrokeText } from "./Icons";
 import TextAnimation from "../common/TextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,16 +12,16 @@ const ReverseFrames = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [currentFrame, setCurrentFrame] = useState(0);
-   
-  const totalFrames = 13;  
-  const frameBasePath = "/images/hand-video/";  
-  const frameExtension = ".png"; 
+
+  const totalFrames = 13;
+  const frameBasePath = "/images/hand-video/";
+  const frameExtension = ".png";
   const frameDigits = 5;
   const framePaths = Array.from({ length: totalFrames }, (_, i) => {
-    const frameNumber = (i + 1).toString().padStart(frameDigits, '0');
+    const frameNumber = (i + 1).toString().padStart(frameDigits, "0");
     return `${frameBasePath}${frameNumber}${frameExtension}`;
   });
- 
+
   useEffect(() => {
     const preloadFrames = () => {
       framePaths.forEach((path) => {
@@ -36,22 +37,25 @@ const ReverseFrames = () => {
     if (!section) return;
 
     const setupScroll = () => {
-      gsap.to({}, {
-        duration: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 50%",
-          end: "bottom bottom",
-          scrub: true,
-          markers: false,
-          pin: false,  
-          onUpdate: (self) => { 
-            const frameIndex = Math.floor(self.progress * (totalFrames - 1));
-            setCurrentFrame(frameIndex);
+      gsap.to(
+        {},
+        {
+          duration: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 50%",
+            end: "bottom bottom",
+            scrub: true,
+            markers: false,
+            pin: false,
+            onUpdate: (self) => {
+              const frameIndex = Math.floor(self.progress * (totalFrames - 1));
+              setCurrentFrame(frameIndex);
+            },
           },
         },
-      });
+      );
     };
 
     setupScroll();
@@ -63,7 +67,10 @@ const ReverseFrames = () => {
 
   return (
     <section ref={sectionRef} className="relative z-[0] bg-[#000] px-2.5">
-      <img
+      <Image
+        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
+        width={1440}
+        height={500}
         ref={imageRef}
         src={framePaths[currentFrame]}
         alt={`Frame ${currentFrame + 1}`}
@@ -86,7 +93,7 @@ const ReverseFrames = () => {
         }}
       ></div>
       <TextAnimation animateOnScroll={true} delay={0}>
-        <div className="absolute top-1/2 left-1/2 z-10 flex h-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-14 sm:pt-36 w-full">
+        <div className="absolute top-1/2 left-1/2 z-10 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-14 sm:pt-36">
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
             "If it ain't broke, don't fix it" is the
           </h2>

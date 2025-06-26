@@ -6,7 +6,6 @@ import { Props } from "../crmbussiness/TeamsUsingContractor";
 import Image from "next/image";
 
 const NeverLookBack: React.FC<Props> = ({ data }) => {
-  debugLog("data", data);
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-[50px] sm:pt-14 md:pt-[70px]">
       <div className="pointer-events-none absolute top-[-86px] left-[-20%] z-50 h-[150px] w-[140%] bg-white blur-[34px]"></div>
@@ -15,11 +14,16 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         width={1440}
         height={200}
         priority
+        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
         src="/images/webp/red-linear-bg.webp"
         className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
         alt="Red Lineaar background"
       />
-      <img
+      <Image
+        width={1440}
+        height={200}
+        priority
+        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
         src="/images/webp/red-linear-mobile.webp"
         className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-top sm:hidden"
         alt="Red Lineaar background"

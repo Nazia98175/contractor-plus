@@ -30,7 +30,7 @@ const PricingPage = () => {
           headingVariant="primary"
         />
         <div className="relative overflow-x-hidden">
-          <div className="px-2 pb-12 lg:pb-[65px]">
+          <div className="px-2 pb-12 lg:pb-9">
             <CommonFormField
               variant="white"
               title={"Start using Contractor+ for free"}
@@ -43,7 +43,7 @@ const PricingPage = () => {
           </div>
           <TrustBarHvca
             platforms={blackPlatforms}
-            className="pb-[148px] xl:pb-20"
+            className="pb-[91px] xl:pb-10"
           />
         </div>
       </div>

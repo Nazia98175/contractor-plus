@@ -101,6 +101,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
           width={22}
           height={22}
           alt="location"
+          priority
           unoptimized
         />
       </div>

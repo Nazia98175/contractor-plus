@@ -275,12 +275,15 @@ const BlogArticle = () => {
 
   return (
     <div className="main-container custom-pagination relative z-20">
+      <h2 className="pb-8 text-2xl font-semibold text-[#1A1A1A]">
+        Most popular articles
+      </h2>
       <Swiper
-        slidesPerView={3}
-        slidesPerGroup={3}
+        slidesPerView={1}
+        slidesPerGroup={1}
         speed={500}
         grid={{
-          rows: 3,
+          rows: 2,
           fill: "row",
         }}
         spaceBetween={32}
@@ -292,6 +295,26 @@ const BlogArticle = () => {
           el: ".swiper-pagination-real-time-2",
           clickable: true,
           dynamicMainBullets: 5,
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            grid: { rows: 2, fill: "row" },
+            spaceBetween: 16,
+          },
+          640: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            grid: { rows: 2, fill: "row" },
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            grid: { rows: 3, fill: "row" },
+            spaceBetween: 32,
+          },
         }}
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"

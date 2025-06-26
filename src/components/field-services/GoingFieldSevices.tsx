@@ -9,6 +9,7 @@ import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
 import { TheSwitchingToolProps } from "../crmbussiness/SwitchingTool";
 import { debugLog } from "@/utils/getConsole";
 import TextAnimation from "../common/TextAnimation";
+import Image from "next/image";
 
 const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
   switchingTool,
@@ -33,7 +34,10 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
   debugLog("switchingTool", switchingTool);
   return (
     <section className="relative z-20 pb-[52px] sm:pb-[60px] lg:pb-[95px]">
-      <img
+      <Image
+        width={1440}
+        height={150}
+        priority
         className="h-[150px] w-full object-cover sm:h-[180px]"
         src="/images/webp/field-services.webp"
         alt="Map Image"

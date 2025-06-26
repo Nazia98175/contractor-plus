@@ -30,7 +30,7 @@ const MobileComparisonTable: React.FC<Props> = ({
               </h4>
               <span
                 className={`transform ${
-                  isOpen ? "rotate-0" : "rotate-180"
+                  isOpen ? "rotate-180" : "rotate-0"
                 } transition-transform`}
               >
                 <ChevronDown width={20} color="#656C73" />

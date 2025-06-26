@@ -3,10 +3,11 @@ import TextAnimation from "../common/TextAnimation";
 import CommonFormField from "../common/CommonFormField";
 import CloudsAnimation from "../common/CloudsAnimation";
 import Image from "next/image";
+import { DownScrollIcon } from "../common/Icons";
 
 const PricingHero = () => {
   return (
-    <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] sm:pb-[200px]">
+    <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] md:pb-24">
       <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <Image
@@ -22,7 +23,7 @@ const PricingHero = () => {
       </div>
       <div className="relative mx-auto w-full max-w-[650px]">
         <TextAnimation animateOnScroll={false} delay={0}>
-          <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:block md:mt-0">
+          <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:block">
             Free to start, free to stay. Level up when you’re ready.
           </h2>
         </TextAnimation>
@@ -32,7 +33,7 @@ const PricingHero = () => {
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0.4}>
-          <p className="hero-description text-center text-[#818181] sm:!text-[#8A8E91]">
+          <p className="hero-description text-trolleyGrey sm:text-ancientPewter text-center">
             What the other guys charge extra for, Contractor+ offers without
             hidden charges. Upgrade when you need more firepower to grow.
           </p>
@@ -50,6 +51,10 @@ const PricingHero = () => {
             showDescription={false}
           />
         </div>
+
+        <button className="text-pantone mx-auto mt-12 hidden w-fit duration-300 hover:text-white xl:flex">
+          <DownScrollIcon />
+        </button>
       </div>
     </section>
   );

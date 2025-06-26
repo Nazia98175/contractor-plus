@@ -664,6 +664,7 @@ export const planData = [
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
     features: [
+      "Up to 5 users",
       "$29/month per additional user",
       "Manage team / employees",
       "Personal, group & client chats",

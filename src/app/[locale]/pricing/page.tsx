@@ -50,8 +50,7 @@ const PricingPage = () => {
             faq: faqitems,
           }}
           classNameAnswer="pt-1"
-          headingClassName="gradient-text-2"
-          classHeadingMaxWidth="w-fit mx-auto"
+          TittleClassName="w-fit mx-auto gradient-text-2"
           variant="muted"
         />
       </div>

@@ -119,7 +119,7 @@ const page = async ({ params }: PageProps) => {
             faq: faqitems,
           }}
           classNameAnswer="pt-1"
-          classHeadingMaxWidth="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
+          TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
         />
         <div className="pointer-events-none mt-8 md:h-[76px]">
           <CloudsAnimation

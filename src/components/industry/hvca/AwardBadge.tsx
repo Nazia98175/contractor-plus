@@ -5,20 +5,29 @@ import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
 import { makeOperationList } from "@/components/common/Helper";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
+import Image from "next/image";
 
 export default function AwardBadges() {
   return (
     <section className="no-scrollbar relative w-full">
       <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>
-      <img
+      <Image
+        sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+        width={1920}
+        height={500}
         src="/images/webp/red-linear-bg.webp"
         className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover md:block"
         alt="Red Lineaar background"
+        priority
       />
-      <img
+      <Image
+        sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+        width={1920}
+        height={500}
         src="/images/webp/red-linear-mobile.webp"
         className="absolute top-0 left-0 -z-[5] block h-[110%] w-full bg-top md:hidden"
         alt="Red Lineaar background"
+        priority
       />
       <div className="main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-0 xl:grid xl:grid-cols-3">
         {makeOperationList.map((item, index) => (

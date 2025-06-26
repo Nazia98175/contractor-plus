@@ -13,11 +13,14 @@ const OurBlogCard = ({
 }) => {
   return (
     <Link
-      href={"#"}
+      href={""}
       key={blogListMobile?.[index]?.id}
       className="group relative h-fit w-full max-w-[406px] cursor-pointer rounded-2xl md:h-[400px]"
     >
-      <img
+      <Image
+        sizes="(max-width: 768px) 160px, min(768px, 160px)"
+        width={160}
+        height={126}
         className="absolute top-16 right-0 w-full"
         style={{
           maxWidth: blogListMobile?.[index]?.imageWidth,
@@ -25,14 +28,9 @@ const OurBlogCard = ({
         }}
         src={blogListMobile?.[index]?.imageSrc}
         alt="blog images"
+        unoptimized
       />
       <div className="polygon-bg card-shine-2 relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden rounded-2xl py-6">
-        {/* <Image
-          fill={true}
-          className="pointer-events-none absolute top-0 -left-1 z-10 h-full w-full object-contain"
-          src="images/svg/blog-bg.svg"
-          alt="blog angle"
-        /> */}
         <Image
           width={160}
           height={126}

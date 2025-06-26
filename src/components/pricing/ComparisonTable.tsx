@@ -49,7 +49,7 @@ const ComparisonTable: React.FC = () => {
   };
 
   return (
-    <section className="font-myriad mx-auto w-full max-w-[1092px] px-2 py-16 xl:px-0 xl:py-[106px]">
+    <section className="font-myriad relative z-20 mx-auto w-full max-w-[1092px] px-2 py-12 sm:py-16 xl:px-0 xl:pt-[106px] xl:pb-[130px]">
       <div className="hidden lg:block">
         <DesktopComparisonTable
           openStates={desktopOpenStates}

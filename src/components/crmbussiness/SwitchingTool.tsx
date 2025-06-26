@@ -24,7 +24,7 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
       />
 
       {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
-      <h3 className="font-jakarta text-secondary xs:max-w-[75%] mx-auto max-w-[96%] text-center text-xl font-semibold sm:max-w-[850px] sm:text-2xl md:text-3xl lg:text-[36px]">
+      <h3 className="font-jakarta text-secondary xs:max-w-[75%] mx-auto max-w-[96%] text-center text-xl font-semibold sm:text-2xl md:text-3xl lg:text-[36px]">
         {switchingTool?.title}
       </h3>
       {/* </TextAnimation> */}

@@ -46,6 +46,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
             {slug === "estimate"
               ? "Contractor Estimate Software"
               : "   Field Service CRM"}
+            {/* <span>{hero?.heroTitle1}</span> */}
           </span>
         </div>
       </CardReveal>

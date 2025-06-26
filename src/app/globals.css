@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"); */
 
 @import "tailwindcss";
 @theme {
@@ -28,6 +29,22 @@
   --color-ruinedSmores: #111216;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
+  --color-eerie: #1a1a1a;
+  --color-flintstone: #667085;
+  --color-dragonlord: #6941c6;
+  --color-lviv: #363f72;
+  --color-wash: #f8f9fc;
+  --color-sugar: #f9f5ff;
+  --color-alice: #f0f9ff;
+  --color-led: #026aa2;
+  --color-sinopia: #c4320a;
+  --color-fatback: #fff6ed;
+  --color-blarney: #027a48;
+  --color-mint: #ecfdf3;
+  --color-bramble: #c11574;
+  --color-placebo: #fdf2fa;
+  --color-kikorangi: #3538cd;
+  --color-aliceBlue: #eef4ff;
   --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;

@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import "../globals.css";
 import "../style.css";
+
 import BackToTop from "@/components/common/BackToTop";
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import Footer from "@/components/common/Footer";

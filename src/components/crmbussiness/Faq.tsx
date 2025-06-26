@@ -5,7 +5,7 @@ import TextAnimation from "../common/TextAnimation";
 import UseFaqToggle from "../hook/UseFaqToggle";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
-
+type HeadingVariant = "default" | "primary" | "white" | "accent";
 type FaqItemType = {
   question: string;
   answer: string;
@@ -24,6 +24,7 @@ interface Props {
   mainContainerclassName?: string;
   TittleClassName?: string;
   variant?: VariantType;
+  headingVariant?: HeadingVariant;
 }
 
 const Faq: React.FC<Props> = ({
@@ -34,39 +35,28 @@ const Faq: React.FC<Props> = ({
   mainContainerclassName,
   TittleClassName,
   variant = "default",
+  headingVariant = "default",
 }) => {
   const { openIndex, toggleFaq } = UseFaqToggle();
 
-  const headingVariantMap: Record<VariantType, string> = {
-    default: "faq-heading-text",
-    light: "text-white",
-    dark: "text-darkBlue",
-    accent: "text-accent",
-    muted: "text-muted",
+  const headingStyles = {
+    default: { title: "faq-heading-text", sub_title: "text-secondary" },
+    primary: { title: "gradient-text-2", sub_title: "text-secondary" },
+    white: { title: "text-white", sub_title: "text-lightGray" },
+    accent: { title: "text-accent", sub_title: "text-secondary" },
   };
-
-  const paragraphVariantMap: Record<VariantType, string> = {
-    default: "text-secondary",
-    light: "text-lightGray",
-    dark: "text-darkGray",
-    accent: "text-accent",
-    muted: "text-muted",
-  };
+  const currentHeading = headingStyles[headingVariant];
 
   return (
     <section className={`${mainContainerclassName} relative z-20`}>
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
-
-      {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
       <h3
-        className={`section-heading text-center ${headingVariantMap[variant]} ${TittleClassName}`}
+        className={`section-heading text-center ${currentHeading.title} ${TittleClassName}`}
       >
         {faq?.title}
       </h3>
-      {/* </TextAnimation> */}
-
       <p
-        className={`paragraph-text pt-1.5 text-center sm:pt-4 ${paragraphVariantMap[variant]}`}
+        className={`paragraph-text pt-1.5 text-center sm:pt-4 ${currentHeading.sub_title}`}
       >
         {faq?.sub_title}
       </p>

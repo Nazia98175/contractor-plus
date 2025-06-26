@@ -33,7 +33,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       <p className="paragraph-text text-darkness hidden text-center leading-[124%] font-semibold sm:block">
         {data?.sub_title}
       </p>
-      <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
+      <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 pb-10 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
         {data?.cards?.map((item: any, index: any) => (
           <SoftwareUsed
             key={index}

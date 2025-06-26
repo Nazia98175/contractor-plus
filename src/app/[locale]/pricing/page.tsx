@@ -43,10 +43,10 @@ const PricingPage = () => {
       <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-cover">
         <PricingHero />
       </div>
-      <CompleteFeatureList />
+
       <div className="bg-white">
         <Plans />
-        {/* <OurReviews reviewsList={OurReviewList} reviews={"hello"} /> */}
+        <CompleteFeatureList />
         <ComparisonTable />
         <Faq
           mainContainerclassName="pt-9 pb-16 z-20 px-2"

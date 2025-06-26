@@ -1854,7 +1854,7 @@ export const FaqIcon = ({ isOpen }: { isOpen: boolean }) => (
       y1="12"
       x2="19"
       y2="12"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
     />
@@ -1864,7 +1864,7 @@ export const FaqIcon = ({ isOpen }: { isOpen: boolean }) => (
       y1="5"
       x2="12"
       y2="19"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       className={`origin-center transition-transform duration-300 ${

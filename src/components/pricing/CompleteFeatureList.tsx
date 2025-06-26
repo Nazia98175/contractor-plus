@@ -41,25 +41,22 @@ const CompleteFeatureList = () => {
           />
         ))}
       </Marquee>
-      <Marquee
-        speed={20}
-        direction="left"
-        className="!hidden py-5 md:!block"
-        pauseOnHover
-      >
-        {reviews?.map((review, index) => (
-          <ReviewCard
-            index={index}
-            key={review.id}
-            review={review as unknown as Review}
-            openModal={
-              review.isModal
-                ? () => openModal(review.videoLink || "")
-                : () => {}
-            }
-          />
-        ))}
-      </Marquee>
+      <div className="relative hidden w-full md:block">
+        <Marquee speed={20} direction="left" className="py-5" pauseOnHover>
+          {reviews?.map((review, index) => (
+            <ReviewCard
+              index={index}
+              key={review.id}
+              review={review as unknown as Review}
+              openModal={
+                review.isModal
+                  ? () => openModal(review.videoLink || "")
+                  : () => {}
+              }
+            />
+          ))}
+        </Marquee>
+      </div>
 
       <button className="text-winterWay border-decemberSky hover:bg-superSilver relative z-20 mt-10 hidden h-8 items-center justify-center gap-1 rounded-md border px-3 text-sm font-semibold tracking-[0.1px] duration-300 sm:flex">
         Compare plan features

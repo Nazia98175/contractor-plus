@@ -1,5 +1,7 @@
-import { pricingfaqitems } from "@/components/common/Helper";
+import CommonFormField from "@/components/common/CommonFormField";
+import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
 import Faq from "@/components/crmbussiness/Faq";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";
@@ -27,6 +29,23 @@ const PricingPage = () => {
           variant="muted"
           headingVariant="primary"
         />
+        <div className="relative overflow-x-hidden">
+          <div className="px-2 pb-12 lg:pb-[65px]">
+            <CommonFormField
+              variant="white"
+              title={"Start using Contractor+ for free"}
+              sub_title={"Try it out now. Upgrade when you're ready."}
+              placeholder={"Your Email"}
+              createBtn={"Get Started Free"}
+              mobileBtn={"Download FREE App"}
+              ncc={"No credit card required"}
+            />
+          </div>
+          <TrustBarHvca
+            platforms={blackPlatforms}
+            className="pb-[148px] xl:pb-20"
+          />
+        </div>
       </div>
     </main>
   );

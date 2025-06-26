@@ -14,7 +14,7 @@ interface CommonFormFieldProps {
   showTitle?: boolean;
   showDescription?: boolean;
   className?: string;
-  variant?: "default" | "primary" | "secondary" | "tertiary";
+  variant?: "default" | "primary" | "secondary" | "tertiary" | "white";
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({

@@ -216,7 +216,7 @@ body {
   @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
 .paragraph-text {
-  @apply text-sm sm:text-base lg:text-lg;
+  @apply text-sm sm:text-base lg:text-lg xl:text-xl;
 }
 
 .paragraph-style {

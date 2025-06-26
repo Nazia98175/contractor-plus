@@ -13,7 +13,6 @@ const PricingPage = () => {
       <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover">
         <PricingHero />
       </div>
-
       <div className="bg-white">
         <Plans />
         <CompleteFeatureList />

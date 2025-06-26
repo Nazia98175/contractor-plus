@@ -278,6 +278,7 @@ const BlogArticle = () => {
       <Swiper
         slidesPerView={3}
         slidesPerGroup={3}
+        speed={500}
         grid={{
           rows: 3,
           fill: "row",

@@ -33,7 +33,7 @@ const IndustryShifted: React.FC = () => {
       <div className="mx-auto max-w-[1340px] px-4">
         <TextAnimation animateOnScroll={true} delay={0}>
           <h3 className="sub-heading mb-[34px] text-center !font-light text-gray-300 max-sm:!text-lg sm:mb-[37px]">
-            The industry shifted
+            The industry has shifted
           </h3>
         </TextAnimation>
         <div className="flex flex-col gap-1 sm:flex-row">

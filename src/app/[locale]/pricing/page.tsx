@@ -26,8 +26,9 @@ const PricingPage = () => {
             faq: pricingfaqitems,
           }}
           classNameAnswer="pt-1"
-          TittleClassName="w-fit mx-auto gradient-text-2"
+          TittleClassName="w-fit mx-auto "
           variant="muted"
+          headingVariant="primary"
         />
         <div className="relative overflow-x-hidden">
           <div className="px-2 pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">

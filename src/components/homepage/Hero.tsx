@@ -15,13 +15,22 @@ const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
   const { hero_title, hero_description, cta_button_text, ncc_text, mobileBtn } =
     homePageContent ?? {};
-
+  // const wrapperRef = useRef<HTMLDivElement | null>(null);
+  // useEffect(() => {
+  //   gsap.to(wrapperRef.current, {
+  //     opacity: 1,
+  //     duration: 0.1,
+  //     delay: 0.1,
+  //     ease: "elastic.in",
+  //     once: true,
+  //   });
+  // }, []);
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".main-loader", {
         opacity: 0,
       });
-    }, 1000);
+    }, 3000);
   }, []);
 
   return (

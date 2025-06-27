@@ -28,10 +28,12 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
 
                 <div className="animate-border relative rounded-xl">
                   <Image
-                    width={405}
+                    width={389}
                     height={187}
+                    sizes="(max-width: 768px) 289px, 389px"
                     src={contractPlatforms?.[index]?.img}
                     alt={`${obj.title}`}
+                    priority
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>

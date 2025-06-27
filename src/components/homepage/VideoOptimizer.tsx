@@ -66,7 +66,14 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
   return (
     <div className="hero-video-overlay relative">
       {isLoading ? (
-        <Image src={"/images/webp/hero-video-poster.webp"} fill alt="poster" />
+        <Image
+          className="object-cover"
+          src={"/images/webp/hero-video-poster.webp"}
+          fill
+          alt="poster"
+          priority
+          sizes="(max-width: 1024px) 100vw, 1008px"
+        />
       ) : (
         <>
           <video

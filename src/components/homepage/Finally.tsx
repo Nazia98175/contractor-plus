@@ -98,23 +98,22 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               </div>
             </CardReveal>
             <CardReveal distance={50}>
-              <div>
-                <div className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40">
-                  <Image
-                    height={600}
-                    width={715}
-                    src="/images/webp/ipad.webp"
-                    alt="Ipad Design"
-                    className="max-h-full w-full object-center lg:max-w-[715px]"
-                  />
-                  <Image
-                    height={300}
-                    width={300}
-                    src="/images/webp/mobile.webp"
-                    alt="Mobile Design"
-                    className="absolute top-[20%] right-0 max-w-[35%] object-contain md:top-[8%] lg:max-w-[280px] xl:max-w-[300px]"
-                  />
-                </div>
+              <div className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40">
+                <Image
+                  height={600}
+                  width={715}
+                  src="/images/webp/ipad.webp"
+                  alt="Ipad Design"
+                  className="max-h-full w-full object-center lg:max-w-[715px]"
+                  priority
+                />
+                <Image
+                  height={300}
+                  width={300}
+                  src="/images/webp/mobile.webp"
+                  alt="Mobile Design"
+                  className="absolute top-[20%] right-0 max-w-[35%] object-contain md:top-[8%] lg:max-w-[280px] xl:max-w-[300px]"
+                />
               </div>
             </CardReveal>
           </div>

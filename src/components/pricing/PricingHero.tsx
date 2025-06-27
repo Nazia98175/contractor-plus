@@ -4,10 +4,11 @@ import CommonFormField from "../common/CommonFormField";
 import CloudsAnimation from "../common/CloudsAnimation";
 import Image from "next/image";
 import { DownScrollIcon } from "../common/Icons";
+import { PlansProps } from "@/types";
 
-const PricingHero = () => {
+const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
   return (
-    <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] md:pb-24">
+    <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24">
       <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <Image
@@ -38,7 +39,7 @@ const PricingHero = () => {
             hidden charges. Upgrade when you need more firepower to grow.
           </p>
         </TextAnimation>
-        <div className="pt-5 sm:pt-7">
+        <div className="pt-5 xl:pt-7">
           <CommonFormField
             title=""
             sub_title=""
@@ -52,7 +53,10 @@ const PricingHero = () => {
           />
         </div>
 
-        <button className="text-pantone mx-auto mt-12 hidden w-fit duration-300 hover:text-white xl:flex">
+        <button
+          onClick={onScroll}
+          className="text-pantone mx-auto mt-12 hidden w-fit duration-300 hover:text-white xl:flex"
+        >
           <DownScrollIcon />
         </button>
       </div>

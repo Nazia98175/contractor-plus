@@ -1,3 +1,4 @@
+"use client";
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
 import Faq from "@/components/crmbussiness/Faq";
@@ -6,31 +7,44 @@ import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";
 import PricingHero from "@/components/pricing/PricingHero";
+import { useRef } from "react";
 
 const PricingPage = () => {
+  const compariosnTableRef = useRef<HTMLDivElement>(null);
+  const plansRef = useRef<HTMLDivElement>(null);
+  const scrollToTable = () => {
+    if (!compariosnTableRef.current) return;
+    compariosnTableRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToPlans = () => {
+    plansRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <main className="font-myriad overflow-hidden">
       <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover">
-        <PricingHero />
+        <PricingHero onScroll={scrollToPlans} />
       </div>
       <div className="bg-white">
-        <Plans />
-        <CompleteFeatureList />
-        <ComparisonTable />
+        <div ref={plansRef}>
+          <Plans onScroll={scrollToTable} />
+        </div>
+        <CompleteFeatureList onScroll={scrollToTable} />
+        <ComparisonTable ref={compariosnTableRef} />
         <Faq
-          mainContainerclassName="pb-16 z-20 px-2"
+          mainContainerclassName="pb-16 lg:pb-24 xl:pb-[134px] z-20 px-2"
           faq={{
             title: "What contractors want to know ",
             sub_title: "Frequently asked questions",
             faq: pricingfaqitems,
           }}
           classNameAnswer="pt-1"
-          TittleClassName="w-fit mx-auto "
+          TittleClassName="w-fit mx-auto !leading-[130%]"
           variant="muted"
           headingVariant="primary"
         />
         <div className="relative overflow-x-hidden">
-          <div className="px-2 pb-12 lg:pb-9">
+          <div className="px-2 pb-12 lg:pb-9 xl:pb-12">
             <CommonFormField
               variantBtn="primary"
               variant="white"
@@ -44,7 +58,7 @@ const PricingPage = () => {
           </div>
           <TrustBarHvca
             platforms={blackPlatforms}
-            className="pb-[91px] xl:pb-10"
+            className="pb-[91px] sm:pb-10"
           />
         </div>
       </div>

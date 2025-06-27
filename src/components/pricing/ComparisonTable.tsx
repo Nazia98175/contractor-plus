@@ -1,9 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { comparisonTableData, plans } from "../common/Helper";
+import React, { forwardRef, useState } from "react";
+import { comparisonTableData } from "../common/Helper";
 import DesktopComparisonTable from "./DesktopComparisonTable";
 import MobileComparisonTable from "./MobileComparisonTable";
-import TableHead from "./TableHead";
 import MobilePlansHeader from "./MobilePlansHead";
 
 // Initialize desktop openStates per feature (all open)
@@ -26,7 +25,8 @@ const generateInitialMobileStates = () => {
   return states;
 };
 
-const ComparisonTable: React.FC = () => {
+// Correct usage of forwardRef
+const ComparisonTable = forwardRef<HTMLDivElement, {}>((props, ref) => {
   const [desktopOpenStates, setDesktopOpenStates] = useState(
     generateInitialDesktopStates(),
   );
@@ -49,7 +49,10 @@ const ComparisonTable: React.FC = () => {
   };
 
   return (
-    <section className="font-myriad relative z-20 mx-auto w-full max-w-[1092px] px-2 py-12 sm:py-16 xl:px-0 xl:pt-[106px] xl:pb-[134px]">
+    <section
+      ref={ref}
+      className="font-myriad relative z-20 mx-auto w-full max-w-[1092px] px-2 py-12 sm:py-16 lg:pb-24 xl:px-0 xl:pt-[106px] xl:pb-[130px]"
+    >
       <div className="hidden lg:block">
         <DesktopComparisonTable
           openStates={desktopOpenStates}
@@ -66,6 +69,6 @@ const ComparisonTable: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ComparisonTable;

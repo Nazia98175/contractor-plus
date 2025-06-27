@@ -34,7 +34,7 @@ const FaqList: React.FC<FaqListProps> = ({
   return (
     <div
       onClick={onToggle}
-      className={`relative mb-5 flex flex-col rounded-lg px-2 ${containerClassName}`}
+      className={`relative flex flex-col rounded-lg px-2 ${containerClassName}`}
     >
       <div
         className={`${

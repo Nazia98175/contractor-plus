@@ -56,7 +56,7 @@ const Faq: React.FC<Props> = ({
         {faq?.sub_title}
       </p>
 
-      <div className="mx-auto max-w-[1190px] pt-[27px]">
+      <div className="mx-auto max-w-[1190px] space-y-5 pt-[27px]">
         {faq?.faq?.map((item: FaqItemType, index: number) => (
           <FaqList
             key={index}

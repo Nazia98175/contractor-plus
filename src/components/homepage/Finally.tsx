@@ -26,14 +26,16 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           className="absolute top-[-152px] left-0 z-20 hidden h-full w-full md:block"
           src="/images/webp/finally-desktop-bg.webp"
           alt="finally bg"
-          loading="lazy"
+          priority
+          sizes="(100vw)"
         />
         <Image
           fill
           className="absolute top-[0px] left-0 z-20 block h-full w-full md:hidden"
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
-          loading="lazy"
+          priority
+          sizes="(100vw)"
         />
         {/* <FinallyBackground /> */}
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
@@ -80,6 +82,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/software-advice.webp"
                   alt="Software Advice"
                   className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
+                  sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
                 <Image
                   width={96}
@@ -87,6 +90,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/leader.webp"
                   alt="Leader"
                   className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
+                  sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
                 <Image
                   width={96}
@@ -94,6 +98,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/get-app.webp"
                   alt="Get App"
                   className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
+                  sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
             </CardReveal>
@@ -106,6 +111,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   alt="Ipad Design"
                   className="max-h-full w-full object-center lg:max-w-[715px]"
                   priority
+                  sizes="(min-width: 1024px) 715px, 100vw"
                 />
                 <Image
                   height={300}
@@ -113,6 +119,8 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/mobile.webp"
                   alt="Mobile Design"
                   className="absolute top-[20%] right-0 max-w-[35%] object-contain md:top-[8%] lg:max-w-[280px] xl:max-w-[300px]"
+                  sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
+                  priority
                 />
               </div>
             </CardReveal>

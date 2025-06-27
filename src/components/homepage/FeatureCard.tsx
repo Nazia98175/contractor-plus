@@ -21,7 +21,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
         </p>
       </div>
       <div className="relative h-[187px] w-full">
-        <Image src={obj.img} alt={obj.title} fill className="object-center" />
+        <Image
+          src={obj.img}
+          alt={obj.title}
+          fill
+          className="object-center"
+          sizes="(min-width: 768px) 360px, 320px"
+        />
       </div>
     </article>
   );

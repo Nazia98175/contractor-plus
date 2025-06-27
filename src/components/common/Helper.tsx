@@ -43,6 +43,14 @@ import {
   FileCode,
   TruckIcon,
   TruckElectricIcon,
+  Construction,
+  Plug,
+  Wrench,
+  Hammer,
+  Paintbrush2,
+  ThermometerSun,
+  Castle,
+  Flower,
 } from "lucide-react";
 import { Plan, Platform, Review, tableFeature } from "@/types";
 
@@ -674,7 +682,48 @@ export const planData = [
     isProTeam: true,
   },
 ];
-
+export const contractorTypes: OptionType[] = [
+  {
+    value: "contractor",
+    label: "General Contractor",
+    icon: <Construction color="white" />,
+  },
+  {
+    value: "electrician",
+    label: "Electrician",
+    icon: <Plug color="white" />,
+  },
+  {
+    value: "plumber",
+    label: "Plumber",
+    icon: <Wrench color="white" />,
+  },
+  {
+    value: "carpenter",
+    label: "Carpenter",
+    icon: <Hammer color="white" />,
+  },
+  {
+    value: "painter",
+    label: "Painter",
+    icon: <Paintbrush2 color="white" />,
+  },
+  {
+    value: "hvac",
+    label: "HVAC Technician",
+    icon: <ThermometerSun color="white" />,
+  },
+  {
+    value: "roofer",
+    label: "Roofer",
+    icon: <Castle color="white" />,
+  },
+  {
+    value: "landscaper",
+    label: "Landscaper",
+    icon: <Flower color="white" />,
+  },
+];
 export const plans: Plan[] = [
   { name: "Freedom", cta: "Start for free", variant: "default" },
   { name: "PRO", cta: "Get started", variant: "pro" },
@@ -2087,6 +2136,7 @@ import {
   TaskManagementIcon,
 } from "../why-contractor/Icons";
 import mobile from "../../../public/lotties/11-mobile.json";
+import { OptionType } from "../blog/CustomSelect";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",

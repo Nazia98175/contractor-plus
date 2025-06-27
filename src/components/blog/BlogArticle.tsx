@@ -274,8 +274,8 @@ const BlogArticle = () => {
   ];
 
   return (
-    <div className="custom-pagination custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2">
-      <h2 className="text-eerieBlack pb-8 text-2xl font-semibold">
+    <div className="custom-pagination custom-pagination relative z-20 mx-auto mt-8 w-full max-w-[1224px] px-2 pb-6 sm:mt-10 lg:mt-12">
+      <h2 className="text-eerieBlack pb-4 text-2xl font-semibold sm:pb-6 xl:pb-8">
         Most popular articles
       </h2>
       <Swiper
@@ -333,12 +333,12 @@ const BlogArticle = () => {
         ))}
       </Swiper>
       <div className="relative mt-3 flex w-full items-center justify-between gap-3">
-        <div className="swiper-button-prev2 text-flintstone !relative !right-0 !bottom-0 !m-0 flex cursor-pointer items-center justify-center gap-2 text-sm font-medium after:hidden">
+        <div className="swiper-button-prev2 text-flintstone !relative !right-0 !bottom-0 !m-0 hidden cursor-pointer items-center justify-center gap-2 text-sm font-medium after:hidden sm:flex">
           <ArrowLeft color="#667085" /> Previous
         </div>
         <div className="swiper-pagination-real-time-4 relative left-0 flex translate-x-0 items-center justify-center gap-1" />
 
-        <div className="swiper-button-next2 text-flintstone !relative !bottom-0 !left-0 !m-0 flex cursor-pointer items-center justify-center gap-2 text-sm font-medium after:hidden">
+        <div className="swiper-button-next2 text-flintstone !relative !bottom-0 !left-0 !m-0 hidden cursor-pointer items-center justify-center gap-2 text-sm font-medium after:hidden md:flex">
           Next <ArrowRight color="#667085" />
         </div>
       </div>

@@ -19,13 +19,15 @@ const SeperateSolution = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const isMobile = window.innerWidth < 768;
+
     const section = sectionRef.current;
     const headings = section?.querySelectorAll("h3");
     const paragraphs = section?.querySelectorAll("p");
     const svgs = section?.querySelectorAll(".grid svg path");
-    const frictionGroupSvgs = section?.querySelectorAll("span svg path"); // For FrictionTextGroup SVGs
+    const frictionGroupSvgs = section?.querySelectorAll("span svg path");
 
-    // Animate <h3> with reversible behavior
+    // Animate <h3>
     headings?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
@@ -35,19 +37,16 @@ const SeperateSolution = () => {
           gsap.to(el, { color: "#fff", duration: 0.3 });
         },
         onLeaveBack: () => {
-          gsap.to(el, { color: "#8A8E91", duration: 0.3 });
+          if (!isMobile) gsap.to(el, { color: "#8A8E91", duration: 0.3 });
         },
         onEnterBack: () => {
-          gsap.to(el, { color: "#fff", duration: 0.3 });
+          if (!isMobile) gsap.to(el, { color: "#fff", duration: 0.3 });
         },
-        onLeave: () => {
-          // Optional: uncomment to revert when scrolling past
-          // gsap.to(el, { color: "#8A8E91", duration: 0.3 });
-        },
+        once: isMobile,
       });
     });
 
-    // Animate <p> with reversible behavior
+    // Animate <p>
     paragraphs?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
@@ -57,19 +56,16 @@ const SeperateSolution = () => {
           gsap.to(el, { color: "#fff", duration: 0.3 });
         },
         onLeaveBack: () => {
-          gsap.to(el, { color: "#656C73", duration: 0.3 });
+          if (!isMobile) gsap.to(el, { color: "#656C73", duration: 0.3 });
         },
         onEnterBack: () => {
-          gsap.to(el, { color: "#fff", duration: 0.3 });
+          if (!isMobile) gsap.to(el, { color: "#fff", duration: 0.3 });
         },
-        onLeave: () => {
-          // Optional: uncomment to revert when scrolling past
-          // gsap.to(el, { color: "#656C73", duration: 0.3 });
-        },
+        once: isMobile,
       });
     });
 
-    // Animate <svg> paths with reversible behavior
+    // Animate SVG icons in grid
     svgs?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
@@ -83,31 +79,26 @@ const SeperateSolution = () => {
           });
         },
         onLeaveBack: () => {
-          gsap.to(el, {
-            fill: "#25292D",
-            stroke: "#25292D",
-            duration: 0.3,
-          });
+          if (!isMobile)
+            gsap.to(el, {
+              fill: "#25292D",
+              stroke: "#25292D",
+              duration: 0.3,
+            });
         },
         onEnterBack: () => {
-          gsap.to(el, {
-            fill: "#F21314",
-            stroke: "#F21314",
-            duration: 0.3,
-          });
+          if (!isMobile)
+            gsap.to(el, {
+              fill: "#F21314",
+              stroke: "#F21314",
+              duration: 0.3,
+            });
         },
-        onLeave: () => {
-          // Optional: uncomment to revert when scrolling past
-          // gsap.to(el, {
-          //   fill: "#25292D",
-          //   stroke: "#25292D",
-          //   duration: 0.3,
-          // });
-        },
+        once: isMobile,
       });
     });
 
-    // Animate FrictionTextGroup SVG paths with reversible behavior
+    // Animate FrictionTextGroup SVGs
     frictionGroupSvgs?.forEach((el) => {
       ScrollTrigger.create({
         trigger: el,
@@ -122,30 +113,24 @@ const SeperateSolution = () => {
           });
         },
         onLeaveBack: () => {
-          gsap.to(el, {
-            fill: "#25292D", // Assuming original fill color
-            stroke: "#25292D", // Assuming original stroke color
-            duration: 0.3,
-            opacity: 0.5, // Assuming original opacity
-          });
+          if (!isMobile)
+            gsap.to(el, {
+              fill: "#25292D",
+              stroke: "#25292D",
+              duration: 0.3,
+              opacity: 0.5,
+            });
         },
         onEnterBack: () => {
-          gsap.to(el, {
-            fill: "#F21314",
-            stroke: "#F21314",
-            duration: 0.3,
-            opacity: 1,
-          });
+          if (!isMobile)
+            gsap.to(el, {
+              fill: "#F21314",
+              stroke: "#F21314",
+              duration: 0.3,
+              opacity: 1,
+            });
         },
-        onLeave: () => {
-          // Optional: uncomment to revert when scrolling past
-          // gsap.to(el, {
-          //   fill: "#25292D",
-          //   stroke: "#25292D",
-          //   duration: 0.3,
-          //   opacity: 0.5,
-          // });
-        },
+        once: isMobile,
       });
     });
 
@@ -165,6 +150,7 @@ const SeperateSolution = () => {
             Every separate solution introduces friction into your business
           </h3>
         </TextAnimation>
+
         <div className="grid grid-cols-1 gap-x-11 gap-y-8 sm:grid-cols-2">
           {frictionItems.map((item, index) => (
             <div
@@ -195,6 +181,7 @@ const SeperateSolution = () => {
             </div>
           ))}
         </div>
+
         <TextAnimation animateOnScroll={true} delay={0}>
           <span className="mt-11 flex justify-center">
             <FrictionTextGroup />

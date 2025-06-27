@@ -39,7 +39,7 @@ const PricingPage = () => {
             faq: pricingfaqitems,
           }}
           classNameAnswer="pt-1"
-          TittleClassName="w-fit mx-auto !leading-[130%]"
+          TittleClassName="w-fit mx-auto opacity-90 sm:opacity-100  !leading-[130%]"
           variant="muted"
           headingVariant="primary"
         />

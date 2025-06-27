@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SearchIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,8 +32,17 @@ const BlogHero = () => {
         </h1>
         <h1 className="gradient-text-shadow relative z-10">Contractor+ HQ</h1>
       </div>
-      <div className="relative z-30 mt-16 rounded-lg bg-[rgba(12,13,17,0.42)] p-2.5 backdrop-blur-[42px]">
-        hello
+      <div className="relative z-30 mx-auto mt-16 flex w-full max-w-[788px] items-center justify-center rounded-lg bg-[rgba(12,13,17,0.42)] p-2.5 backdrop-blur-[42px]">
+        <select name="" id=""></select>
+        <div className="border-secondary flex h-10 w-full items-center rounded-md border pl-3.5">
+          <SearchIcon color="white" />
+          <input
+            type="text"
+            autoFocus
+            placeholder="Most popular articles"
+            className="w-full px-3 text-white placeholder:text-white focus:outline-none"
+          />
+        </div>
       </div>
 
       {/* IMAGE ON TOP (foreground parallax) */}

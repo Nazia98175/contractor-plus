@@ -22,22 +22,18 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
         <Image
-          priority
-          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-          width={1920}
-          height={100}
+          fill
           className="absolute top-[-152px] left-0 z-20 hidden h-full w-full md:block"
           src="/images/webp/finally-desktop-bg.webp"
           alt="finally bg"
+          loading="lazy"
         />
         <Image
-          priority
-          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-          width={1920}
-          height={100}
+          fill
           className="absolute top-[0px] left-0 z-20 block h-full w-full md:hidden"
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
+          loading="lazy"
         />
         {/* <FinallyBackground /> */}
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
@@ -76,31 +72,30 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               />
             </div>
             {/* <FogGenerator /> */}
-            <CardReveal
-              distance={50}
-              className="flex flex-row items-center gap-4 lg:flex-col"
-            >
-              <Image
-                width={96}
-                height={104}
-                src="/images/webp/software-advice.webp"
-                alt="Software Advice"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
-              />
-              <Image
-                width={96}
-                height={104}
-                src="/images/webp/leader.webp"
-                alt="Leader"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
-              />
-              <Image
-                width={96}
-                height={91}
-                src="/images/webp/get-app.webp"
-                alt="Get App"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
-              />
+            <CardReveal distance={50}>
+              <div className="flex flex-row items-center gap-4 lg:flex-col">
+                <Image
+                  width={96}
+                  height={104}
+                  src="/images/webp/software-advice.webp"
+                  alt="Software Advice"
+                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
+                />
+                <Image
+                  width={96}
+                  height={104}
+                  src="/images/webp/leader.webp"
+                  alt="Leader"
+                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
+                />
+                <Image
+                  width={96}
+                  height={91}
+                  src="/images/webp/get-app.webp"
+                  alt="Get App"
+                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
+                />
+              </div>
             </CardReveal>
             <CardReveal distance={50}>
               <div className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40">
@@ -110,6 +105,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/ipad.webp"
                   alt="Ipad Design"
                   className="max-h-full w-full object-center lg:max-w-[715px]"
+                  priority
                 />
                 <Image
                   height={300}

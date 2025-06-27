@@ -38,14 +38,14 @@ const CloudsAnimation = ({
         className={`${imageClass} absolute bottom-4 left-0 hidden h-28 w-full object-left-bottom md:flex`}
         src="/images/png/cloud-layer.png"
         alt="cloud-layer"
-        loading="lazy"
+        priority
       />
       <Image
         fill
         className={`${imageClassMobile} absolute bottom-4 left-0 flex h-full w-full object-left-bottom`}
         src="/images/png/cloud-layer-mobile.png"
         alt="cloud-layer"
-        loading="lazy"
+        priority
       />
     </div>
   );

@@ -33,7 +33,7 @@ const PricingHero = () => {
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0.4}>
-          <p className="hero-description text-trolleyGrey sm:text-ancientPewter text-center">
+          <p className="hero-description text-trolleyGrey sm:text-cyanBlue text-center">
             What the other guys charge extra for, Contractor+ offers without
             hidden charges. Upgrade when you need more firepower to grow.
           </p>

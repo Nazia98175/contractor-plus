@@ -83,11 +83,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               <Image
                 width={96}
                 height={104}
-                style={{
-                  filter: `
-                drop-shadow(-111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04))
-                `,
-                }}
                 src="/images/webp/software-advice.webp"
                 alt="Software Advice"
                 className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"

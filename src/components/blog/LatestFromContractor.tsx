@@ -1,4 +1,10 @@
+"use client";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlogCard from "./BlogCard";
+import "swiper/css";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useState, useEffect } from "react";
 
 const LatestFromContractor = () => {
   const latestContractorData = [
@@ -6,59 +12,163 @@ const LatestFromContractor = () => {
       id: 1,
       category: "Contractor",
       date: "1 Jan 2023",
-      title: "Bill Walsh leadership lessons",
+      title: "UX review presentations",
       description:
-        "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+        "How do you create compelling presentations that wow your colleagues and impress your managers?",
       image: "/images/webp/blog-card-3.webp",
-      link: "/articles/bill-walsh-leadership",
+      link: "/articles/large",
       tags: ["Leadership", "Management"],
-      isSmall: false,
+      second: [
+        {
+          id: 2,
+          category: "Contractor",
+          date: "1 Jan 2023",
+          title: "Migrating to Linear 101",
+          description:
+            "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
+          image: "/images/webp/blog-card-5.webp",
+          link: "/articles/small-1",
+          tags: ["Architecture", "Planning"],
+        },
+        {
+          id: 3,
+          category: "Contractor",
+          date: "1 Jan 2023",
+          title: "Building your API Stack",
+          description:
+            "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
+          image: "/images/webp/blog-card-2.webp",
+          link: "/articles/small-2",
+          tags: ["Design", "Frameworks"],
+        },
+      ],
     },
     {
-      id: 2,
+      id: 4,
       category: "Contractor",
       date: "1 Jan 2023",
-      title: "Bill Walsh leadership lessons",
+      title: "UX review presentations 2",
       description:
-        "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
-      image: "/images/webp/blog-card-5.webp",
-      link: "/articles/bill-walsh-leadership",
-      tags: ["Architecture", "Tools"],
-      isSmall: true,
-    },
-    {
-      id: 3,
-      category: "Contractor",
-      date: "1 Jan 2023",
-      title: "PM mental models",
-      description:
-        "Mental models are simple expressions of complex processes or relationships.",
-      image: "/images/webp/blog-card-2.webp",
-      link: "/articles/pm-mental-models",
-      tags: ["Product", "Research", "Frameworks"],
-      isSmall: true,
+        "How do you create compelling presentations that wow your colleagues and impress your managers?",
+      image: "/images/webp/blog-card-3.webp",
+      link: "/articles/large-2",
+      tags: ["Leadership", "Management"],
+      second: [
+        {
+          id: 5,
+          category: "Contractor",
+          date: "1 Jan 2023",
+          title: "Building your API Stack",
+          description:
+            "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+          image: "/images/webp/blog-card-5.webp",
+          link: "/articles/small-3",
+          tags: ["Architecture", "Planning"],
+        },
+        {
+          id: 6,
+          category: "Contractor",
+          date: "1 Jan 2023",
+          title: "Building your API Stack",
+          description:
+            "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+          image: "/images/webp/blog-card-2.webp",
+          link: "/articles/small-4",
+          tags: ["Design", "Frameworks"],
+        },
+      ],
     },
   ];
 
-  const largeArticles = latestContractorData.filter((a) => !a.isSmall);
-  const smallArticles = latestContractorData.filter((a) => a.isSmall);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 1024);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // Flatten Data for mobile
+  const allArticles = latestContractorData.flatMap((group) => [
+    { ...group, variant: "large" as "large" },
+    ...group.second.map((item) => ({ ...item, variant: "small" as "small" })),
+  ]);
 
   return (
-    <section className="main-container custom-pagination relative z-20 py-8">
+    <section className="custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2 py-8">
       <h2 className="text-eerieBlack pb-7 text-2xl font-semibold">
         Latest from Contractor+ HQ
       </h2>
+      <Swiper
+        slidesPerView={1}
+        navigation={{
+          nextEl: ".swiper-button-next3",
+          prevEl: ".swiper-button-prev3",
+        }}
+        pagination={{
+          el: ".swiper-pagination-real-time-2",
+          clickable: true,
+        }}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 16,
+          },
+          640: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 20,
+          },
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div>
-          {largeArticles.map((article, index) => (
-            <BlogCard article={article} key={index} />
-          ))}
+          1024: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+        }}
+      >
+        {isMobile
+          ? allArticles.map((article) => (
+              <SwiperSlide key={article.id}>
+                <BlogCard article={article} variant={article.variant} />
+              </SwiperSlide>
+            ))
+          : latestContractorData.map((group) => (
+              <SwiperSlide
+                key={group.id}
+                className="!grid w-full gap-8 lg:!grid-cols-2"
+              >
+                <div className="hidden lg:block">
+                  <BlogCard article={group} variant="large" />
+                </div>
+                <div className="flex w-full flex-col justify-between gap-6 sm:flex-row lg:w-fit lg:flex-col">
+                  {group.second.map((article) => (
+                    <BlogCard
+                      key={article.id}
+                      article={article}
+                      variant="small"
+                    />
+                  ))}
+                </div>
+              </SwiperSlide>
+            ))}
+      </Swiper>
+
+      <div className="relative mt-3 flex w-full items-center justify-between gap-3">
+        <div className="swiper-button-prev3 text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium">
+          <ArrowLeft color="#667085" /> Previous
         </div>
-        <div className="flex flex-col gap-6 sm:flex-row lg:flex-col xl:gap-8">
-          {smallArticles.map((article, index) => (
-            <BlogCard article={article} key={index} />
-          ))}
+        <div className="swiper-pagination-real-time-2 flex items-center justify-center gap-1" />
+        <div className="swiper-button-next3 text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium">
+          Next <ArrowRight color="#667085" />
         </div>
       </div>
     </section>

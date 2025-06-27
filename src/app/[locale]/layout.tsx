@@ -12,10 +12,9 @@ import ParticlesComponent from "@/components/common/ParticlesComponent";
 import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
-  title:
-    "Contractor+ The only operating system for build & service contractors",
+  title: "Free to start, free to stay. Level up when you’re ready.",
   description:
-    "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth.",
+    "What the other guys charge extra for, Contractor+ offers without hidden charges. Upgrade when you need more firepower to grow.",
 };
 
 export default async function RootLayout({

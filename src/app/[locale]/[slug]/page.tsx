@@ -137,6 +137,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               data={page?.crmService}
               variant="primary"
               className={` ${useParams?.slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[780px] sm:pt-0"}`}
+              variantBtn="light"
             />
             <TrustBarHvca
               platforms={platforms}

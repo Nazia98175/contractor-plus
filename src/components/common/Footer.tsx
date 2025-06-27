@@ -88,13 +88,21 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (
-            <img
+            <Image
+              height={457}
+              width={300}
+              unoptimized
+              priority
               className="h-full w-full"
               src="/images/webp/footer-gradient-dark.webp"
               alt="footer gradient"
             />
           ) : (
-            <img
+            <Image
+              height={200}
+              width={1440}
+              priority
+              unoptimized
               className="h-full w-full"
               src="/images/webp/footer-gradient.webp"
               alt="footer gradient"
@@ -106,7 +114,11 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       )}
       {isCrmRoute && (
         <div className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
-          <img
+          <Image
+            height={457}
+            width={300}
+            unoptimized
+            priority
             className="h-full w-full"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
@@ -196,6 +208,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
+              priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
@@ -251,6 +264,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
+              priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"

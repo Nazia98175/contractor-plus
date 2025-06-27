@@ -15,6 +15,7 @@ interface CommonFormFieldProps {
   showDescription?: boolean;
   className?: string;
   variant?: "default" | "primary" | "secondary" | "tertiary" | "white";
+  variantBtn?: "default" | "primary" | "light" | "dark" | "muted";
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({
@@ -27,6 +28,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   showTitle = true,
   showDescription = true,
   variant = "default",
+  variantBtn = "default",
   className,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -103,11 +105,11 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             </button>
 
             <div className="hidden items-center gap-2 pt-3 md:flex">
-              <CardRequiredButton text={ncc} />
+              <CardRequiredButton variantBtn={variantBtn} text={ncc} />
             </div>
           </div>
           <div className="flex w-full items-center justify-center md:hidden">
-            <CardRequiredButton text={ncc} />
+            <CardRequiredButton text={ncc} variantBtn={variantBtn} />
           </div>
         </form>
 

@@ -107,6 +107,7 @@ const FieldServicesPage = async ({ params }: Params) => {
             data={crmPageContent?.data?.[0]?.crmService}
             showClouds={false}
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
+            variantBtn="dark"
           />
           <TrustBarHvca
             platforms={platforms}

@@ -102,6 +102,7 @@ const page = async ({ params }: PageProps) => {
             createBtn={"Get Started Free"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
+            variantBtn="dark"
           />
         </div>
         <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />

@@ -22,19 +22,19 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
         <Image
+          priority
           sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
           width={1920}
           height={100}
-          priority
           className="absolute top-[-152px] left-0 z-20 hidden h-full w-full md:block"
           src="/images/webp/finally-desktop-bg.webp"
           alt="finally bg"
         />
         <Image
+          priority
           sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
           width={1920}
           height={100}
-          priority
           className="absolute top-[0px] left-0 z-20 block h-full w-full md:hidden"
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
@@ -83,11 +83,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               <Image
                 width={96}
                 height={104}
-                style={{
-                  filter: `
-                drop-shadow(-111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04))
-                `,
-                }}
                 src="/images/webp/software-advice.webp"
                 alt="Software Advice"
                 className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"

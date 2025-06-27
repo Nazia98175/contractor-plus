@@ -274,7 +274,7 @@ const BlogArticle = () => {
   ];
 
   return (
-    <div className="main-container custom-pagination relative z-20">
+    <div className="custom-pagination custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2">
       <h2 className="text-eerieBlack pb-8 text-2xl font-semibold">
         Most popular articles
       </h2>
@@ -300,16 +300,23 @@ const BlogArticle = () => {
           320: {
             slidesPerView: 1,
             slidesPerGroup: 1,
-            grid: { rows: 2, fill: "row" },
+            grid: { rows: 1, fill: "row" },
             spaceBetween: 16,
           },
           640: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            grid: { rows: 1, fill: "row" },
+            spaceBetween: 20,
+          },
+          768: {
             slidesPerView: 2,
             slidesPerGroup: 2,
             grid: { rows: 2, fill: "row" },
             spaceBetween: 20,
           },
-          1024: {
+
+          1280: {
             slidesPerView: 3,
             slidesPerGroup: 3,
             grid: { rows: 3, fill: "row" },

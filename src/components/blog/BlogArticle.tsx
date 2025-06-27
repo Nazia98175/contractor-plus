@@ -275,7 +275,7 @@ const BlogArticle = () => {
 
   return (
     <div className="main-container custom-pagination relative z-20">
-      <h2 className="pb-8 text-2xl font-semibold text-[#1A1A1A]">
+      <h2 className="text-eerieBlack pb-8 text-2xl font-semibold">
         Most popular articles
       </h2>
       <Swiper

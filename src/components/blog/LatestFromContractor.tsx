@@ -107,7 +107,7 @@ const LatestFromContractor = () => {
           prevEl: ".swiper-button-prev3",
         }}
         pagination={{
-          el: ".swiper-pagination-real-time-2",
+          el: ".swiper-pagination-real-time-3",
           clickable: true,
         }}
         modules={[Pagination, Navigation]}
@@ -166,7 +166,7 @@ const LatestFromContractor = () => {
         <div className="swiper-button-prev3 text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium">
           <ArrowLeft color="#667085" /> Previous
         </div>
-        <div className="swiper-pagination-real-time-2 flex items-center justify-center gap-1" />
+        <div className="swiper-pagination-real-time-3 flex items-center justify-center gap-1" />
         <div className="swiper-button-next3 text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium">
           Next <ArrowRight color="#667085" />
         </div>

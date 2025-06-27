@@ -169,43 +169,6 @@ const WayToWin = () => {
           src={"/images/png/way-to-win-bg-mobile.png"}
           alt="way to win"
         />
-
-        {/* Building Lights Overlay - Mobile */}
-        <div className="pointer-events-none absolute inset-0">
-          {/* Mobile building lights with adjusted positions */}
-          <div className="absolute top-[50%] left-[15%] grid grid-cols-2 gap-1">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={`mobile-left-${i}`}
-                className={`h-0.5 w-0.5 rounded-sm transition-all duration-[800ms] ease-in-out ${
-                  windowLights[i]
-                    ? pulsingWindows.includes(i)
-                      ? "animate-pulse bg-yellow-200/80 shadow-[0_0_4px_rgba(254,240,138,0.8)]"
-                      : "bg-yellow-200/60 shadow-[0_0_3px_rgba(254,240,138,0.6)]"
-                    : "bg-gray-800/20"
-                }`}
-              />
-            ))}
-          </div>
-
-          <div className="absolute top-[45%] right-[20%] grid grid-cols-2 gap-1">
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={`mobile-right-${i}`}
-                className={`h-0.5 w-0.5 rounded-sm transition-all duration-[1000ms] ease-in-out ${
-                  windowLights[i + 6]
-                    ? pulsingWindows.includes(i + 6)
-                      ? "animate-pulse bg-amber-200/70 shadow-[0_0_4px_rgba(252,211,77,0.7)]"
-                      : "bg-yellow-100/50 shadow-[0_0_2px_rgba(254,240,138,0.5)]"
-                    : "bg-gray-700/15"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Mobile ambient glow */}
-          <div className="absolute top-[48%] left-[25%] h-12 w-12 animate-pulse bg-yellow-200/10 blur-2xl" />
-        </div>
       </div>
     </div>
   );

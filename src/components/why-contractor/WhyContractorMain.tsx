@@ -72,12 +72,12 @@ const WhyContractorMain = () => {
         className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
       >
         {/* Background line (gray/wallStreet color) */}
-        <span className="bg-wallStreet absolute top-[-300px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%]"></span>
+        <span className="bg-wallStreet absolute top-[-250px] sm:top-[-300px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%]"></span>
 
         {/* Animated red dot that moves on scroll - starts at top of gray line */}
         <span
           ref={redDotRef}
-          className="absolute top-[-300px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"
+          className="absolute top-[-250px] sm:top-[-300px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"
         ></span>
         <BloodEnough />
         <SeperateSolution />

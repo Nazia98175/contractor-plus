@@ -1,7 +1,7 @@
 import BlogCard from "./BlogCard";
 
 const LatestFromContractor = () => {
-  const articles = [
+  const latestContractorData = [
     {
       id: 1,
       category: "Contractor",
@@ -12,11 +12,10 @@ const LatestFromContractor = () => {
       image: "/images/webp/blog-card-3.webp",
       link: "/articles/bill-walsh-leadership",
       tags: ["Leadership", "Management"],
+      isSmall: false,
     },
-  ];
-  const smallArticles = [
     {
-      id: 1,
+      id: 2,
       category: "Contractor",
       date: "1 Jan 2023",
       title: "Bill Walsh leadership lessons",
@@ -28,7 +27,7 @@ const LatestFromContractor = () => {
       isSmall: true,
     },
     {
-      id: 2,
+      id: 3,
       category: "Contractor",
       date: "1 Jan 2023",
       title: "PM mental models",
@@ -40,6 +39,10 @@ const LatestFromContractor = () => {
       isSmall: true,
     },
   ];
+
+  const largeArticles = latestContractorData.filter((a) => !a.isSmall);
+  const smallArticles = latestContractorData.filter((a) => a.isSmall);
+
   return (
     <section className="main-container custom-pagination relative z-20 py-8">
       <h2 className="text-eerieBlack pb-7 text-2xl font-semibold">
@@ -48,7 +51,7 @@ const LatestFromContractor = () => {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div>
-          {articles.map((article, index) => (
+          {largeArticles.map((article, index) => (
             <BlogCard article={article} key={index} />
           ))}
         </div>

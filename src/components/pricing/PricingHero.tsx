@@ -9,7 +9,7 @@ import { PlansProps } from "@/types";
 const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
   return (
     <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24">
-      <div className="absolute -bottom-[12%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
+      <div className="xs:-bottom-[12%] absolute -bottom-[10%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <Image
         src="/images/webp/pricing.webp"

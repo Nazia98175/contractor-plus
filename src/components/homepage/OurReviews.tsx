@@ -47,6 +47,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
             width={135}
             height={40}
             priority
+            sizes="(max-width: 768px) 135px"
           />
 
           <div className="flex items-center gap-2">
@@ -57,6 +58,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               width={135}
               height={40}
               priority
+              sizes="(min-width: 768px) 135px"
             />
             <Image
               className="hidden h-auto w-full max-w-[80px] md:block"
@@ -65,6 +67,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               width={80}
               height={40}
               priority
+              sizes="(min-width: 768px) 80px"
             />
           </div>
           <div>
@@ -93,7 +96,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           alt="layers"
           width={370}
           height={300}
-          unoptimized
+          sizes="(min-width: 1024px) 370px"
         />
         <Image
           className="pointer-events-none absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
@@ -101,7 +104,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           alt="layers"
           width={370}
           height={300}
-          unoptimized
+          sizes="(min-width: 1024px) 370px"
         />
 
         {/* First row of reviews - scrolling right */}

@@ -188,7 +188,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={40}
                   height={40}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 40px, 30px"
                 />
               </div>
               <div
@@ -203,7 +204,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={38}
                   height={38}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 38px, 26px"
                 />
               </div>
               <div
@@ -218,7 +220,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={66}
                   height={17}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 66px, 45px"
                 />
               </div>
             </div>
@@ -245,7 +248,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={38}
                   height={38}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 38px, 29px"
                 />
               </div>
               <div
@@ -260,7 +264,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={38}
                   height={38}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 38px, 29px"
                 />
               </div>
               <div
@@ -275,7 +280,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={33}
                   height={33}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 33px, 21px"
                 />
               </div>
             </div>

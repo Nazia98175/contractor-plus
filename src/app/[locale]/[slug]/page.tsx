@@ -1,29 +1,16 @@
-import { platforms } from "@/components/common/Helper";
-import {
-  FooterRedLineIcon,
-  FooterRedLineMobileIcon,
-} from "@/components/common/Icons";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmHero from "@/components/crmbussiness/CrmHero";
-import CrmSercive from "@/components/crmbussiness/CrmSercive";
-import Faq from "@/components/crmbussiness/Faq";
-import FieldService from "@/components/crmbussiness/FieldService";
-import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
-import KindAdorable from "@/components/crmbussiness/KindAdorable";
-import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
-import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
-import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
-import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
-import TrackProperties from "@/components/crmbussiness/TrackProperties";
-import TrustedService from "@/components/crmbussiness/TrustedService";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
-import { getSeoData } from "@/services/common/seoMeta";
-
-import { getFeaturesPageData } from "@/services/features/getCrmPageData";
-import { getSeoMeta } from "@/utils/getSeoMeta";
+import { Suspense } from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
+import CrmHero from "@/components/crmbussiness/CrmHero";
+import FieldService from "@/components/crmbussiness/FieldService";
+import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
+import TrustedService from "@/components/crmbussiness/TrustedService";
+import { getSeoData } from "@/services/common/seoMeta";
+import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 
+
+const SlugPageClient = dynamic(() => import("@/components/slugPage/SlugPageClient"));
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
@@ -95,67 +82,29 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             apiData={true}
             mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
           />
-
-          <div className="bg-white">
-            {useParams?.slug === "crm" && (
-              <>
-                <TrackProperties
-                  ncc={page?.hero?.ncc_txt}
-                  trackProperties={trackProperties?.trackProperties}
-                />
-
-                <LikeYouDoContacts
-                  data={trackProperties?.trackProperties?.cardDetails?.[0]}
-                />
-                <HowContractorWork
-                  ncc={page?.hero?.ncc_txt}
-                  trackProperties={trackProperties?.trackProperties}
-                  data={trackProperties?.trackProperties?.cardDetails?.[1]}
-                />
-              </>
-            )}
-            <KindAdorable
-              slug={useParams?.slug}
-              kindAdorable={comparison?.comparison}
-            />
-            <TeamsUsingContractor
-              data={teamsUsingContractor?.teamsUsingContractor}
-              slug={useParams?.slug}
-            />
-            <ThousandsReviews
-              data={page?.thousandReviews}
-              reviews={reviews?.data?.[0]?.reviews?.reviews}
-            />
-          </div>
-          <div className="relative overflow-hidden">
-            <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-            <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-            <CrmSercive
-              createBtn={page?.hero?.createBtn}
-              mobileBtn={page?.hero?.mobileBtn}
-              ncc={page?.hero?.ncc_txt}
-              data={page?.crmService}
-              variant="primary"
-              className={` ${useParams?.slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[780px] sm:pt-0"}`}
-              variantBtn="light"
-            />
-            <TrustBarHvca
-              platforms={platforms}
-              className="mx-auto w-full max-w-[889px]"
-            />
-            <Faq
-              faq={faqs?.faqs}
-              classNameAnswer="pt-1"
-              mainContainerclassName="px-2 pt-[66px] pb-0 md:pt-[76px] md:pb-[83px]"
-              TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
-            />
-          </div>
-          <BlogPosts
-            data={page?.blogs}
+          <Suspense fallback={<div>Loading...</div>}>
+          <SlugPageClient
+            slug={useParams?.slug}
+            fieldService={fieldServiceData?.fieldService}
+            theme={theme}
+            ncc={page?.hero?.ncc_txt}
+            trackProperties={trackProperties?.trackProperties}
+            likeYouDo={trackProperties?.trackProperties?.cardDetails?.[0]}
+            howContractorWork={
+              trackProperties?.trackProperties?.cardDetails?.[1]
+            }
+            kindAdorable={comparison?.comparison}
+            teamUsingContractor={teamsUsingContractor?.teamsUsingContractor}
+            crmService={page?.crmService}
+            thousandReviews={page?.thousandReviews}
+            reviews={reviews?.data?.[0]?.reviews?.reviews}
+            faq={faqs?.faqs}
             blogs={blogs}
-            className="mt-7 md:mt-9"
-            classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
+            blogsList={page?.blogs}
+            createBtn={page?.hero?.createBtn}
+            mobileBtn={page?.hero?.mobileBtn}
           />
+          </Suspense>
         </>
       )}
     </>

@@ -32,6 +32,7 @@ const PricingPage = () => {
         <div className="relative overflow-x-hidden">
           <div className="px-2 pb-12 lg:pb-9">
             <CommonFormField
+              variantBtn="primary"
               variant="white"
               title={"Start using Contractor+ for free"}
               sub_title={"Try it out now. Upgrade when you're ready."}

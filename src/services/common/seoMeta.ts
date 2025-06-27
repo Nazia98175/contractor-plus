@@ -23,6 +23,7 @@ interface SeoDataItem {
  * @param locale - locale string (e.g., 'en', 'fr', 'es')
  * @param slug - (optional) page slug or title used for filtering (if dynamic)
  * @param query - (optional) populate query string for seoMeta, hero, etc.
+ * @returns {SeoDataItem} Normalized single SeoDataItem object (never an array)
  */
 export const getSeoData = async (
   collectionType: string,

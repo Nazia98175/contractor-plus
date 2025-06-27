@@ -24,11 +24,11 @@ const PricingHero = () => {
       <div className="relative mx-auto w-full max-w-[650px]">
         <TextAnimation animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:block">
-            Free to start, free to stay. Level up when you’re ready.
+            Free to start, free to stay. <br /> Level up when you’re ready.
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0}>
-          <h2 className="main-heading mt-1.5 mb-4 bg-[linear-gradient(276.25deg,_rgba(245,25,30,0.3)_-11.28%,_rgba(255,255,255)_45%)] bg-clip-text text-center !font-medium text-transparent sm:hidden">
+          <h2 className="main-heading xs:max-w-[80%] mx-auto mt-1.5 mb-4 bg-[linear-gradient(276.25deg,_rgba(245,25,30,0.3)_-11.28%,_rgba(255,255,255)_45%)] bg-clip-text text-center !font-medium text-transparent sm:hidden">
             Free to start, free to stay. Level up when you’re ready.
           </h2>
         </TextAnimation>

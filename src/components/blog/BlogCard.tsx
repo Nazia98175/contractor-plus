@@ -12,6 +12,7 @@ interface BlogCardProps {
     image: string;
     link: string;
     tags: string[];
+    isSmall?: boolean;
   };
 }
 const tagColors: Record<string, { bg: string; text: string }> = {
@@ -23,6 +24,7 @@ const tagColors: Record<string, { bg: string; text: string }> = {
   Frameworks: { bg: "bg-fatback", text: "text-sinopia" },
   "Software Development": { bg: "bg-mint", text: "text-blarney" },
   Tools: { bg: "bg-placebo", text: "text-bramble" },
+  Architecture: { bg: "bg-alice", text: "text-led" },
   SaaS: { bg: "bg-placebo", text: "text-bramble" },
   Podcasts: { bg: "bg-sugar", text: "text-dragonlord" },
   "Customer Success": { bg: "bg-wash", text: "text-lviv" },
@@ -32,26 +34,35 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
   return (
     <Link
       href={article.link}
-      className="group flex flex-col transition-all duration-200 ease-in"
+      className={` ${article.isSmall ? "flex-col gap-6 lg:flex-row" : "flex-col"} group flex transition-all duration-200 ease-in`}
     >
-      <Image
-        src={article.image}
-        alt={article.title}
-        width={400}
-        height={240}
-        className="h-full max-h-[240px] w-full rounded-lg object-cover transition-transform duration-300"
-      />
-      <div className="mt-5 sm:mt-8">
-        <div className="text-secondary font-jakarta flex items-center gap-2 text-sm font-semibold">
+      <div
+        className={` ${article.isSmall ? "h-[240px] w-full lg:h-[200px] lg:w-[50%]" : "h-[240px] w-full"} overflow-hidden rounded-lg`}
+      >
+        <Image
+          src={article.image}
+          alt={article.title}
+          width={400}
+          height={240}
+          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+
+      <div
+        className={`${article.isSmall ? "h-auto w-full lg:w-[49%]" : "mt-5 sm:mt-8"}`}
+      >
+        <div className="text-secondary flex items-center gap-2 text-sm font-semibold">
           <span>{article.category}</span>
           <span>•</span>
           <span>{article.date}</span>
         </div>
         <div className="my-2 flex items-center justify-between sm:my-3">
-          <h3 className="text-eerie text-lg font-semibold sm:text-xl md:text-2xl">
+          <h3
+            className={`${article.isSmall ? "text-lg" : "text-lg sm:text-xl md:text-2xl"} text-eerieBlack font-semibold`}
+          >
             {article.title}
           </h3>
-          <CardArrowIcon className="stroke-eerie h-6 w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
+          <CardArrowIcon className="stroke-eerieBlack h-6 w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
         </div>
         <p className="text-flintstone mb-4 text-sm font-semibold sm:mb-6">
           {article.description}

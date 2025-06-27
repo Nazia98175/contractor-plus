@@ -1,4 +1,5 @@
 import BlogArticle from "@/components/blog/BlogArticle";
+import LatestFromContractor from "@/components/blog/LatestFromContractor";
 import React from "react";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export const metadata = {
 const BlogPage = () => {
   return (
     <div className="relative z-20 bg-white">
+      <LatestFromContractor />
       <BlogArticle />
     </div>
   );

@@ -292,7 +292,7 @@ const BlogArticle = () => {
           prevEl: ".swiper-button-prev2",
         }}
         pagination={{
-          el: ".swiper-pagination-real-time-2",
+          el: ".swiper-pagination-real-time-4",
           clickable: true,
           dynamicMainBullets: 5,
         }}
@@ -336,7 +336,7 @@ const BlogArticle = () => {
         <div className="swiper-button-prev2 text-flintstone !relative !right-0 !bottom-0 !m-0 flex cursor-pointer items-center justify-center gap-2 text-sm font-medium after:hidden">
           <ArrowLeft color="#667085" /> Previous
         </div>
-        <div className="swiper-pagination-real-time-2 relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+        <div className="swiper-pagination-real-time-4 relative left-0 flex translate-x-0 items-center justify-center gap-1" />
 
         <div className="swiper-button-next2 text-flintstone !relative !bottom-0 !left-0 !m-0 flex cursor-pointer items-center justify-center gap-2 text-sm font-medium after:hidden">
           Next <ArrowRight color="#667085" />

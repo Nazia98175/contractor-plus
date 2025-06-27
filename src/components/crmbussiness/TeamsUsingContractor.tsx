@@ -82,24 +82,36 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
 
       <CardReveal distance={50}>
         <div className="isolate flex flex-wrap items-center justify-center gap-[34px] overflow-visible sm:gap-8 md:gap-[53px]">
-          <img
+          <Image
+            priority
+            width={121}
+            height={90}
             src="/images/webp/software-advice.webp"
             className="isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             alt="Software Advice"
           />
 
-          <img
+          <Image
+            priority
+            width={121}
+            height={90}
             src="/images/webp/leader.webp"
             className="isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
-          <img
+          <Image
+            priority
+            width={121}
+            height={90}
             src="/images/webp/get-app.webp"
             className="isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
           />
-          <img
+          <Image
+            priority
+            width={121}
+            height={90}
             src="/images/svg/capterra.svg"
             className="isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"

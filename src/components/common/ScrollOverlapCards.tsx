@@ -23,7 +23,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
 }) => {
   const t = useTranslations();
 
-
   useGSAP(() => {
     if (typeof window === "undefined") return;
     setTimeout(() => {

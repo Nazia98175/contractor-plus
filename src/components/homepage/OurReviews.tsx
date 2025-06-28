@@ -52,20 +52,20 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
           <div className="flex items-center gap-2">
             <Image
-              className="hidden w-full max-w-[135px] md:block"
+              className="hidden w-full min-w-[62px] md:block"
               src="/images/webp/g2Rating.webp"
               alt="capterra icon"
-              width={135}
-              height={40}
+              width={62}
+              height={48}
               priority
-              sizes="(min-width: 768px) 135px"
+              sizes="(min-width: 768px) 62px"
             />
             <Image
-              className="hidden h-auto w-full max-w-[80px] md:block"
+              className="hidden h-auto max-h-[60px] w-full max-w-20 md:block"
               src="/images/svg/capterra-icon2.svg"
               alt="capterra icon"
               width={80}
-              height={40}
+              height={60}
               priority
               sizes="(min-width: 768px) 80px"
             />

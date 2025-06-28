@@ -96,11 +96,11 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
         </div>
         <Image
           className="w-full max-w-[355px] object-cover"
-          src={"/images/webp/group-with-location.webp"}
-          width={22}
-          height={22}
+          src="/images/webp/group-with-location.webp"
+          width={355}
+          height={355}
           alt="location"
-          priority
+          sizes="(max-width: 768px) 100vw, 355px"
           unoptimized
         />
       </div>

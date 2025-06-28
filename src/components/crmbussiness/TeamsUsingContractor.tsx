@@ -88,6 +88,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             height={90}
             src="/images/webp/software-advice.webp"
             className="isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            sizes="(max-width: 768px) 40vw, 121px"
             alt="Software Advice"
           />
 
@@ -107,7 +108,9 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             src="/images/webp/get-app.webp"
             className="isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
+            sizes="(max-width: 768px) 40vw, 121px"
           />
+
           <Image
             priority
             width={121}
@@ -115,6 +118,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             src="/images/svg/capterra.svg"
             className="isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
+            sizes="(max-width: 768px) 40vw, 121px"
           />
         </div>
       </CardReveal>

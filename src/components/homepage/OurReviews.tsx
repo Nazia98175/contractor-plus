@@ -89,7 +89,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           </div>
         </CardReveal>
       </div>
-      <div className="relative">
+      <div className="relative mx-auto w-full max-w-[1920px] px-2">
         <Image
           className="pointer-events-none absolute top-0 left-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"
           src={"/images/webp/marquee-layers.webp"}

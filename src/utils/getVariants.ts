@@ -86,10 +86,10 @@ export const tagColors: Record<string, { bg: string; text: string }> = {
 export const variantsBlogCard = {
   small: {
     wrapper:
-      "group flex flex-col gap-6 lg:flex-row transition-all duration-200 ease-in",
+      "group flex flex-col gap-6 h-full lg:flex-row transition-all duration-200 ease-in",
     imageWrapper:
-      "overflow-hidden rounded-lg max-h-[240px] lg:max-h-[200px] min-h-[200px] h-full",
-    contentWrapper: "h-auto w-full ",
+      "overflow-hidden rounded-lg lg:w-1/2 max-h-[240px] lg:max-h-[200px] min-h-[150px] h-full",
+    contentWrapper: "h-auto w-full lg:w-[49%] ",
     title: "text-lg text-eerieBlack font-semibold",
   },
   large: {

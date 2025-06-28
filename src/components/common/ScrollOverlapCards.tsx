@@ -94,7 +94,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
             } crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-10 sm:h-[90vh] xl:top-0 xl:h-screen`}
           >
             <div
-              className={` ${className} h-fit w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-6 xl:rounded-[40px] xl:p-8 ${index === fieldServiceData.length - 1 ? "" : ""}`}
+              className={` ${className} relative h-fit w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-6 xl:rounded-[40px] xl:p-8 ${index === fieldServiceData.length - 1 ? "" : ""}`}
             >
               <FieldServiceCard
                 slug={slug}

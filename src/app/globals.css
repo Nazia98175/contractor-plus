@@ -588,15 +588,7 @@ html::-webkit-scrollbar {
 .field-service-card {
   position: relative;
   z-index: 9999;
-  background-color: rgba(23, 23, 23, 0.9);
-  background:
-    0 0 / 100px 100px,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      #171717 0%,
-      rgba(255, 255, 255, 0) 99.59%
-    ),
-    linear-gradient(rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+  background: #050508;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow:
     inset 0 0 100px rgba(204, 215, 255, 0.15),
@@ -607,26 +599,23 @@ html::-webkit-scrollbar {
   backdrop-filter: blur(20px);
   background-blend-mode: overlay;
 }
+
 .wanting-more-bg {
-  position: relative;
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #fff;
   background:
     radial-gradient(
       146.13% 118.42% at 50% -15.5%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0) 99.59%
+      #ffffff14 0%,
+      #ffffff00 99.59%
     ),
     linear-gradient(115deg, #ffcacb -11.35%, #fff 93.46%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow:
-    inset 0 0 100px rgba(204, 215, 255, 0.15),
-    0 5px 10px rgba(0, 0, 0, 0.05),
-    0 15px 30px rgba(0, 0, 0, 0.05),
-    0 30px 60px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(20px);
+    0px 0px 100px 0px #ccd7ff26 inset,
+    0px 5px 10px 0px #0000000d,
+    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+    0px 30px 60px 0px #0000001a;
   backdrop-filter: blur(20px);
-  background-blend-mode: overlay;
+  z-index: 9999;
 }
 
 .gradient-2 {
@@ -1502,27 +1491,18 @@ button {
   background-clip: content-box, border-box;
 }
 .estimate-overlap-card {
-  position: relative;
-  z-index: 1;
-  background-color: rgba(23, 23, 23, 0.8);
+  border: 1px solid #fff;
   background:
     0 0 / 100px 100px,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      #171717 0%,
-      rgba(255, 255, 255, 0) 99.59%
-    ),
-    linear-gradient(rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+    radial-gradient(146.13% 118.42% at 50% -15.5%, #171717 0%, #fff0 99.59%),
+    linear-gradient(#2e335a00 0%, #1c1b331a 100%);
   box-shadow:
-    0 -33px 40px rgba(0, 0, 0, 0.2),
-    inset 0 0 100px rgba(204, 215, 255, 0.15),
-    0 5px 10px rgba(0, 0, 0, 0.05),
-    0 15px 30px rgba(0, 0, 0, 0.05),
-    0 30px 60px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(20px);
+    0px -33px 40px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
+    0px 5px 10px 0px rgba(0, 0, 0, 0.05),
+    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
-  background-blend-mode: overlay;
 }
 
 .gradient-grey-border-left {

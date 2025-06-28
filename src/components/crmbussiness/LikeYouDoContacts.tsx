@@ -53,7 +53,7 @@ const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
           width={480}
           height={600}
           className="h-auto w-full object-contain"
-          priority
+          sizes="(max-width: 767px) 480px"
         />
       </div>
     </section>

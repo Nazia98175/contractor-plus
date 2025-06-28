@@ -30,7 +30,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ article, variant = "large" }) => {
           alt={article.title}
           width={400}
           height={240}
-          className={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-105`}
+          className={`h-full min-h-[240px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[150px]`}
         />
       </div>
       <div className={styles.contentWrapper}>

@@ -75,12 +75,17 @@ export const tagColors: Record<string, { bg: string; text: string }> = {
   Product: { bg: "bg-alice", text: "text-led" },
   Research: { bg: "bg-aliceBlue", text: "text-kikorangi" },
   Design: { bg: "bg-aliceBlue", text: "text-dragonlord" },
+  DesignSecondary: { bg: "bg-mint", text: "text-blarney" },
   Frameworks: { bg: "bg-fatback", text: "text-sinopia" },
   "Software Development": { bg: "bg-mint", text: "text-blarney" },
   Tools: { bg: "bg-placebo", text: "text-bramble" },
   Architecture: { bg: "bg-alice", text: "text-led" },
   SaaS: { bg: "bg-placebo", text: "text-bramble" },
   Podcasts: { bg: "bg-sugar", text: "text-dragonlord" },
+  Planning: { bg: "bg-placebo", text: "text-bramble" },
+  Blueprint: { bg: "bg-placebo", text: "text-bramble" },
+  Drywall: { bg: "bg-aliceBlue", text: "text-kikorangi" },
+  Plumbing: { bg: "bg-sugar", text: "text-dragonlord" },
   "Customer Success": { bg: "bg-wash", text: "text-lviv" },
 };
 export const variantsBlogCard = {
@@ -94,7 +99,8 @@ export const variantsBlogCard = {
   },
   large: {
     wrapper: "group flex flex-col transition-all duration-200 ease-in",
-    imageWrapper: "w-full overflow-hidden rounded-lg max-h-[240px] h-full",
+    imageWrapper:
+      "w-full overflow-hidden rounded-lg max-h-[240px] min-h-[200px] h-full",
     contentWrapper: "mt-5 sm:mt-8",
     title: "text-lg sm:text-xl md:text-2xl text-eerieBlack font-semibold",
   },

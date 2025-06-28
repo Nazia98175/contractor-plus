@@ -5,81 +5,10 @@ import "swiper/css";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
+import { latestContractorData } from "../common/Helper";
+import SwiperNavWithPagination from "./SwiperNavWithPagination";
 
 const LatestFromContractor = () => {
-  const latestContractorData = [
-    {
-      id: 1,
-      category: "Contractor",
-      date: "1 Jan 2023",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      image: "/images/webp/blog-card-3.webp",
-      link: "/articles/large",
-      tags: ["Leadership", "Management"],
-      second: [
-        {
-          id: 2,
-          category: "Contractor",
-          date: "1 Jan 2023",
-          title: "Migrating to Linear 101",
-          description:
-            "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-          image: "/images/webp/blog-card-5.webp",
-          link: "/articles/small-1",
-          tags: ["Architecture", "Planning"],
-        },
-        {
-          id: 3,
-          category: "Contractor",
-          date: "1 Jan 2023",
-          title: "Building your API Stack",
-          description:
-            "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-          image: "/images/webp/blog-card-2.webp",
-          link: "/articles/small-2",
-          tags: ["Design", "Frameworks"],
-        },
-      ],
-    },
-    {
-      id: 4,
-      category: "Contractor",
-      date: "1 Jan 2023",
-      title: "UX review presentations 2",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      image: "/images/webp/blog-card-3.webp",
-      link: "/articles/large-2",
-      tags: ["Leadership", "Management"],
-      second: [
-        {
-          id: 5,
-          category: "Contractor",
-          date: "1 Jan 2023",
-          title: "Building your API Stack",
-          description:
-            "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
-          image: "/images/webp/blog-card-5.webp",
-          link: "/articles/small-3",
-          tags: ["Architecture", "Planning"],
-        },
-        {
-          id: 6,
-          category: "Contractor",
-          date: "1 Jan 2023",
-          title: "Building your API Stack",
-          description:
-            "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
-          image: "/images/webp/blog-card-2.webp",
-          link: "/articles/small-4",
-          tags: ["Design", "Frameworks"],
-        },
-      ],
-    },
-  ];
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -97,7 +26,7 @@ const LatestFromContractor = () => {
 
   return (
     <section className="custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2 pt-8">
-      <h2 className="text-eerieBlack pb-4 text-2xl font-semibold sm:pb-7">
+      <h2 className="text-eerieBlack pb-4 text-2xl font-semibold xl:pb-6">
         Latest from Contractor+ HQ
       </h2>
       <Swiper
@@ -121,7 +50,7 @@ const LatestFromContractor = () => {
           640: {
             slidesPerView: 2,
             slidesPerGroup: 1,
-            spaceBetween: 20,
+            spaceBetween: 16,
           },
           768: {
             slidesPerView: 2,
@@ -144,12 +73,12 @@ const LatestFromContractor = () => {
           : latestContractorData.map((group) => (
               <SwiperSlide
                 key={group.id}
-                className="!grid w-full gap-8 lg:!grid-cols-2"
+                className="!grid w-full gap-5 lg:!grid-cols-2 xl:gap-8"
               >
                 <div className="hidden lg:block">
                   <BlogCard article={group} variant="large" />
                 </div>
-                <div className="flex w-full flex-col justify-between gap-6 sm:flex-row lg:w-fit lg:flex-col">
+                <div className="flex h-full w-full flex-col gap-6 sm:flex-row lg:w-fit lg:flex-col">
                   {group.second.map((article) => (
                     <BlogCard
                       key={article.id}
@@ -162,15 +91,11 @@ const LatestFromContractor = () => {
             ))}
       </Swiper>
 
-      <div className="relative mt-6 flex w-full items-center justify-between gap-3 lg:mt-10 xl:mt-12">
-        <div className="swiper-button-prev3 text-flintstone hidden cursor-pointer items-center gap-2 text-sm font-medium md:flex">
-          <ArrowLeft color="#667085" /> Previous
-        </div>
-        <div className="swiper-pagination-real-time-3 flex items-center justify-center gap-1" />
-        <div className="swiper-button-next3 text-flintstone hidden cursor-pointer items-center gap-2 text-sm font-medium md:flex">
-          Next <ArrowRight color="#667085" />
-        </div>
-      </div>
+      <SwiperNavWithPagination
+        prevClass="swiper-button-prev3"
+        nextClass="swiper-button-next3"
+        paginationClass="swiper-pagination-real-time-3"
+      />
     </section>
   );
 };

@@ -24,22 +24,24 @@ const BlogCard: React.FC<BlogCardProps> = ({ article, variant = "large" }) => {
   const styles = variantsBlogCard[variant];
   return (
     <Link href={article.link} className={styles.wrapper}>
-      <Image
-        src={article.image}
-        alt={article.title}
-        width={400}
-        height={240}
-        className={`w-full object-cover transition-transform duration-300 hover:scale-105 ${styles.imageWrapper}`}
-      />
+      <div className={`${styles.imageWrapper}`}>
+        <Image
+          src={article.image}
+          alt={article.title}
+          width={400}
+          height={240}
+          className={`h-full min-h-[240px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[150px]`}
+        />
+      </div>
       <div className={styles.contentWrapper}>
-        <div className="text-secondary flex items-center gap-2 text-sm font-semibold">
+        <div className="text-secondary flex items-center gap-2 text-sm leading-[130%] font-semibold">
           <span>{article.category}</span>
           <span>•</span>
           <span>{article.date}</span>
         </div>
-        <div className="my-2 flex items-center justify-between sm:my-3">
+        <div className="my-2 flex items-start justify-between sm:my-3">
           <h3 className={styles.title}>{article.title}</h3>
-          <CardArrowIcon className="stroke-eerieBlack h-6 w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
+          <CardArrowIcon className="stroke-eerieBlack h-6 w-6 max-w-6 min-w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
         </div>
         <p className="text-flintstone mb-4 line-clamp-3 text-sm leading-[112%] font-normal sm:mb-6 md:text-base">
           {article.description}

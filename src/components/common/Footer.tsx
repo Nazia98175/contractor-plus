@@ -62,7 +62,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
 
   const variant =
     pathname.toLowerCase().includes("hvac") ||
-    pathname.toLowerCase().includes("pricing")
+    pathname.toLowerCase().includes("pricing") ||
+    pathname.toLowerCase().includes("blog")
       ? "light"
       : "dark";
   // 👇 Add this condition

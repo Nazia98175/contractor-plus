@@ -1,36 +1,19 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import { useEffect, useRef, useState } from "react";
-import CustomSelect from "./CustomSelect";
+import { useState } from "react";
 import { contractorTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
+import CustomSelect from "./CustomSelect";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const BlogHero = () => {
-  const bgRef = useRef<HTMLDivElement>(null);
   const [selectedValue, setSelectedValue] = useState("contractor");
 
-  useEffect(() => {
-    if (bgRef.current) {
-      gsap.to(bgRef.current, {
-        y: 100,
-        ease: "none",
-        scrollTrigger: {
-          trigger: bgRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
-  }, []);
-
   return (
-    <div className="relative h-[90vh]">
-      <div className="relative z-10 pt-44 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
+    <div className="relative bg-[url('/images/svg/parallax.svg')] bg-cover bg-fixed bg-center pt-44 pb-[400px] 2xl:pt-52">
+      <div className="relative -z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
         <h1 className="gradient-text-shadow absolute bottom-0 left-1/2 z-0 -translate-x-1/2 blur-[26px]">
           Contractor+ HQ
         </h1>
@@ -58,12 +41,6 @@ const BlogHero = () => {
           </button>
         </div>
       </div>
-
-      <div
-        ref={bgRef}
-        className="absolute inset-0 z-20 bg-cover bg-center"
-        style={{ backgroundImage: 'url("/images/svg/parallax.svg")' }}
-      />
     </div>
   );
 };

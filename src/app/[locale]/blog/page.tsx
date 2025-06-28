@@ -4,7 +4,7 @@ import LatestFromContractor from "@/components/blog/LatestFromContractor";
 import React from "react";
 
 export const metadata = {
-  title: "Not just HVAC software Meet your operating system",
+  title: "Contractor Plus - Blogs",
   description:
     "Contractor+ connects every function of your business so it finally all works in sync.",
 };

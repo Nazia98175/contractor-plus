@@ -36,7 +36,7 @@ const BlogHero = () => {
         </h1>
         <h1 className="gradient-text-shadow relative z-10">Contractor+ HQ</h1>
       </div>
-      <div className="relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg bg-[rgba(12,13,17,0.42)] p-2.5 backdrop-blur-[42px] sm:flex-row">
+      <div className="font-myriad relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg bg-[rgba(12,13,17,0.42)] p-2.5 backdrop-blur-[42px] sm:flex-row">
         <CustomSelect
           options={contractorTypes}
           value={selectedValue}
@@ -53,7 +53,7 @@ const BlogHero = () => {
               className="text-decemberSky placeholder:text-decemberSky w-full px-3 tracking-[0.1px] focus:outline-none"
             />
           </div>
-          <button className="bg-romanRed h-10 w-10 rounded-lg p-2 duration-300 hover:opacity-80">
+          <button className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80">
             <SearchIcon color="#fff" />
           </button>
         </div>

@@ -37,7 +37,8 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       <Image
         width={1440}
         height={150}
-        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
+        unoptimized
         className="h-[150px] w-full object-cover sm:h-[180px]"
         src="/images/webp/field-services.webp"
         alt="Map Image"

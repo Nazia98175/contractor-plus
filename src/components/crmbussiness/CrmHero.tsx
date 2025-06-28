@@ -94,6 +94,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
                   alt="google icon"
                   width={144}
                   height={36}
+                  sizes="(max-width: 768px) 100px, 144px"
+                  priority
                 />
                 <div className="flex items-center justify-center">
                   {[...Array(5)].map((_, i) => (
@@ -114,6 +116,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
                   alt="google icon"
                   width={144}
                   height={36}
+                  sizes="(max-width: 768px) 100px, 144px"
+                  priority
                 />
                 <div className="flex items-center justify-center">
                   {[...Array(5)].map((_, i) => (
@@ -151,11 +155,12 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
                 {imageUrl && (
                   <Image
                     className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                    // src="/images/webp/crm-hero.webp"
                     src={imageUrl}
                     width={900}
                     height={616}
                     alt="crm-hero"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                    priority
                   />
                 )}
                 <AnimatedShape />

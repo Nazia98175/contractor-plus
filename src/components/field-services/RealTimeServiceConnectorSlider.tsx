@@ -50,9 +50,9 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="mx-auto w-full max-w-[871px] rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
                 unoptimized
-                priority
                 width={871}
                 height={625}
+                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
                 src={"/images/webp/real-slider-card-1.webp"}
                 alt="Slide Image"
                 className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"

@@ -96,8 +96,8 @@ const LatestFromContractor = () => {
   ]);
 
   return (
-    <section className="custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2 py-8">
-      <h2 className="text-eerieBlack pb-7 text-2xl font-semibold">
+    <section className="custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2 pt-8">
+      <h2 className="text-eerieBlack pb-4 text-2xl font-semibold sm:pb-7">
         Latest from Contractor+ HQ
       </h2>
       <Swiper
@@ -162,12 +162,12 @@ const LatestFromContractor = () => {
             ))}
       </Swiper>
 
-      <div className="relative mt-3 flex w-full items-center justify-between gap-3">
-        <div className="swiper-button-prev3 text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium">
+      <div className="relative mt-6 flex w-full items-center justify-between gap-3 lg:mt-10 xl:mt-12">
+        <div className="swiper-button-prev3 text-flintstone hidden cursor-pointer items-center gap-2 text-sm font-medium md:flex">
           <ArrowLeft color="#667085" /> Previous
         </div>
         <div className="swiper-pagination-real-time-3 flex items-center justify-center gap-1" />
-        <div className="swiper-button-next3 text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium">
+        <div className="swiper-button-next3 text-flintstone hidden cursor-pointer items-center gap-2 text-sm font-medium md:flex">
           Next <ArrowRight color="#667085" />
         </div>
       </div>

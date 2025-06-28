@@ -42,7 +42,7 @@ const OperatingSystem = () => {
           }}
           className="bg-clip-text pb-11.5 text-center text-[26px] !leading-[100%] font-light tracking-tight text-transparent max-lg:text-xl max-md:text-base max-sm:!font-semibold"
         >
-          Replace the stack of tools and apps you’ve been duct-taping together
+          Rebuild the stack of tools and apps you’ve been duct-taping together
           with a single platform to replace them all. No complexity, no sticker
           shock.{" "}
         </p>

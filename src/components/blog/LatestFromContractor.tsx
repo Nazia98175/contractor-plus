@@ -1,11 +1,10 @@
 "use client";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlogCard from "./BlogCard";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState, useEffect } from "react";
 import { latestContractorData } from "../common/Helper";
+import BlogCard from "./BlogCard";
 import SwiperNavWithPagination from "./SwiperNavWithPagination";
 
 const LatestFromContractor = () => {

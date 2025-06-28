@@ -16,14 +16,14 @@ const SwiperNavWithPagination: React.FC<SwiperNavWithPaginationProps> = ({
   paginationClass,
 }) => {
   return (
-    <div className="relative mt-6 flex w-full items-center justify-between gap-3 border-t border-[#eaecf0] pt-5">
+    <div className="relative mt-6 flex w-full items-center justify-center gap-3 border-t border-[#eaecf0] pt-5 md:justify-between">
       <div
         className={`${prevClass} text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden`}
       >
         <ArrowLeft height={20} width={20} color="#667085" /> Previous
       </div>
       <div
-        className={`${paginationClass} flex items-center justify-center gap-1`}
+        className={`${paginationClass} hidden items-center justify-center gap-1 md:flex`}
       />
       <div
         className={`${nextClass} text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden`}

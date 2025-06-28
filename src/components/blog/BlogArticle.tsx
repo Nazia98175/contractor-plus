@@ -1,11 +1,10 @@
 "use client";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import { Grid, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import BlogCard from "./BlogCard";
 import { articles } from "../common/Helper";
+import BlogCard from "./BlogCard";
 import SwiperNavWithPagination from "./SwiperNavWithPagination";
 const BlogArticle = () => {
   return (

@@ -28,7 +28,7 @@ const LottieAnimation = ({
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.5, // More reliable for Safari - triggers when 50% visible
+        threshold: 0.1,
       },
     );
 

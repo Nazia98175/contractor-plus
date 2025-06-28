@@ -1,4 +1,46 @@
+import { Plan, Platform, Review, tableFeature } from "@/types";
+import {
+  Book,
+  Building,
+  Calculator,
+  Calendar,
+  Castle,
+  Clipboard,
+  DollarSign,
+  FileCode,
+  FileText,
+  Flower,
+  Hammer,
+  Headphones,
+  LayoutList,
+  Paintbrush2,
+  Plug,
+  Search,
+  ThermometerSun,
+  Users,
+  Wrench,
+} from "lucide-react";
 import { JSX } from "react";
+import mobile from "../../../public/lotties/11-mobile.json";
+import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
+import animationData from "../../../public/lotties/crm.json";
+import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import live_scheduling from "../../../public/lotties/live-scheduling.json";
+import property_profile from "../../../public/lotties/property-profile.json";
+import { OptionType } from "../blog/CustomSelect";
+import {
+  ClientPortalIcon,
+  ContractIcon,
+  CrmPropertyIcon,
+  EstimateInvoicesIcons,
+  FieldServiceManagementIcon,
+  MoreEyeIcon,
+  PhoneIcon,
+  ProjectManageMentIcon,
+  ScheludingIcon,
+  SubManagementIcon,
+  TaskManagementIcon,
+} from "../why-contractor/Icons";
 import {
   AdminWorkIcon,
   AssetIcon,
@@ -6,6 +48,7 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  ContractorToolsIcon,
   DelieveryIcon,
   EstimateIcon2,
   EstimatesIcon,
@@ -28,31 +71,6 @@ import {
   TrackingIcon,
   TrophyIcon,
 } from "./Icons";
-import {
-  Book,
-  FileText,
-  Headphones,
-  Calculator,
-  Clipboard,
-  Search,
-  DollarSign,
-  Building,
-  Calendar,
-  Users,
-  LayoutList,
-  FileCode,
-  TruckIcon,
-  TruckElectricIcon,
-  Construction,
-  Plug,
-  Wrench,
-  Hammer,
-  Paintbrush2,
-  ThermometerSun,
-  Castle,
-  Flower,
-} from "lucide-react";
-import { Plan, Platform, Review, tableFeature } from "@/types";
 
 export const awards = [
   {
@@ -686,7 +704,7 @@ export const contractorTypes: OptionType[] = [
   {
     value: "contractor",
     label: "General Contractor",
-    icon: <Construction color="white" />,
+    icon: <ContractorToolsIcon />,
   },
   {
     value: "electrician",
@@ -2116,27 +2134,6 @@ export const reviews = [
     userRole: "CEO at Rands Mechanical",
   },
 ];
-import animationData from "../../../public/lotties/crm.json";
-import live_scheduling from "../../../public/lotties/live-scheduling.json";
-import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
-import estimate_builder from "../../../public/lotties/estimate-builder.json";
-import property_profile from "../../../public/lotties/property-profile.json";
-import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
-import {
-  ClientPortalIcon,
-  ContractIcon,
-  CrmPropertyIcon,
-  EstimateInvoicesIcons,
-  FieldServiceManagementIcon,
-  MoreEyeIcon,
-  PhoneIcon,
-  ProjectManageMentIcon,
-  ScheludingIcon,
-  SubManagementIcon,
-  TaskManagementIcon,
-} from "../why-contractor/Icons";
-import mobile from "../../../public/lotties/11-mobile.json";
-import { OptionType } from "../blog/CustomSelect";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",

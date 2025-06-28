@@ -88,6 +88,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             height={90}
             src="/images/webp/software-advice.webp"
             className="isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            sizes="(max-width: 768px) 40vw, 121px"
             alt="Software Advice"
           />
 

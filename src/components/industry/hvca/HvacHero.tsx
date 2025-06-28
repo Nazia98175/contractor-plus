@@ -26,6 +26,7 @@ const HvacHero = () => {
           src="/images/webp/hero-video-ovelay.webp"
           alt="Red Circle For designing"
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
+          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
         />
         <div className="main-container xs:pb-28 relative flex items-end pt-[395px] pb-16 md:pt-[250px] md:pb-[100px] lg:pt-[168px] lg:pb-[150px] xl:pb-[355px] 2xl:pt-[180px] 2xl:pb-[370px]">
           <Image

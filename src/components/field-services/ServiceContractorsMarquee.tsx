@@ -36,7 +36,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
         speed={30}
         direction="right"
         pauseOnHover
-        className="relative z-50"
+        className="relative z-50 mx-auto w-full max-w-[1920px]"
       >
         {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
           <TrustedServiceCard

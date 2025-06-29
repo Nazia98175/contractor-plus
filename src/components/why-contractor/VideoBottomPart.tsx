@@ -33,13 +33,17 @@ const VideoBottomPart = () => {
           trigger: ref.current,
           start: "top 60%",
           end: "bottom 20%",
-          markers: false, // Markers removed
+          markers: false,
+          once: window.innerWidth < 768, // only once on mobile
           onEnter: () => {
             console.log(`Section ${index} entered`);
             ref.current?.classList.add("scroll-active");
           },
           onLeaveBack: () => {
-            ref.current?.classList.remove("scroll-active");
+            // Only allow remove on desktop
+            if (window.innerWidth >= 768) {
+              ref.current?.classList.remove("scroll-active");
+            }
           },
         });
       });

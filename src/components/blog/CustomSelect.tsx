@@ -1,6 +1,7 @@
 "use client";
 import { ChevronDown, ConstructionIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { SearchIcon } from "../common/Icons";
 
 export interface OptionType {
   value: string;
@@ -71,7 +72,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       </button>
 
       <div
-        className={` ${isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} border-decemberSky bg-kuroiBlack/70 sm:bg-kuroiBlack/50 text-decemberSky absolute z-50 mt-1 w-full rounded-md border text-sm backdrop-blur-[42px] duration-300 hover:text-white`}
+        className={` ${isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} border-decemberSky bg-kuroiBlack/70 sm:bg-kuroiBlack/50 text-decemberSky absolute z-50 mt-1 w-full overflow-hidden rounded-md border text-sm backdrop-blur-[42px] duration-300 hover:text-white`}
       >
         <div
           onWheel={(e) => e.stopPropagation()}

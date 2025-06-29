@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   AnimatedLineIcon,
   LogoIcon,
@@ -12,14 +12,68 @@ import TextAnimation from "../common/TextAnimation";
 
 const WhyContractorHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // Listen for messages from YouTube iframe
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== "https://www.youtube.com") return;
+
+      try {
+        const data = JSON.parse(event.data);
+        // Check if it's a player state change event
+        if (
+          data.event === "infoDelivery" &&
+          data.info &&
+          data.info.playerState !== undefined
+        ) {
+          // 1 = playing, 2 = paused, 0 = ended
+          if (data.info.playerState === 1) {
+            setIsPlaying(true);
+          } else if (
+            data.info.playerState === 2 ||
+            data.info.playerState === 0
+          ) {
+            setIsPlaying(false);
+          }
+        }
+      } catch (e) {
+        // Ignore non-JSON messages
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    // Request player state updates
+    const interval = setInterval(() => {
+      if (iframeRef.current) {
+        iframeRef.current.contentWindow?.postMessage(
+          '{"event":"listening","id":1,"channel":"widget"}',
+          "*",
+        );
+      }
+    }, 100);
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+      clearInterval(interval);
+    };
+  }, []);
 
   const handlePlayPause = () => {
-    if (videoRef.current) {
+    if (iframeRef.current) {
       if (isPlaying) {
-        videoRef.current.pause();
+        // Pause YouTube video
+        iframeRef.current.contentWindow?.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          "*",
+        );
       } else {
-        videoRef.current.play();
+        // Play YouTube video
+        iframeRef.current.contentWindow?.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          "*",
+        );
       }
       setIsPlaying(!isPlaying);
     }
@@ -64,27 +118,29 @@ const WhyContractorHero = () => {
             />
           </div>
           <div className="group relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px]">
-            <video
-              ref={videoRef}
-              className="block h-full w-full object-cover"
-              onEnded={() => setIsPlaying(false)}
-              playsInline
-            >
-              <source src="/video/hero-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div
-              className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
-                isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
-              }`}
-              onClick={handlePlayPause}
-            ></div>
+            <div className="relative h-full w-full">
+              <iframe
+                ref={iframeRef}
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/eANJwuWMDpM?si=K7u7DBNE0XpumljU&enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+              <div
+                className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
+                  isPlaying ? "pointer-events-none opacity-0" : "opacity-100"
+                }`}
+                onClick={handlePlayPause}
+              ></div>
+            </div>
             <div
               className={`absolute top-[50px] left-1/2 -translate-x-1/2 group-hover:!opacity-100 sm:top-1/2 sm:-translate-y-1/2 ${
                 isPlaying ? "opacity-0" : ""
               }`}
             >
-              {" "}
               <button
                 className="flex size-[60px] items-center justify-center rounded-full bg-[#FFFFFF1F] backdrop-blur-[24px] transition-transform hover:scale-110"
                 aria-label={isPlaying ? "Pause video" : "Play video"}

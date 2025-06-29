@@ -37,11 +37,13 @@ const OurBlogCard = ({
           src={blogListMobile?.[index]?.backgroundImage}
           alt={article.blogTitle}
           className="absolute bottom-0 left-0 z-10 h-full max-h-[126px] w-fit object-cover"
+          sizes="(max-width: 768px) 160px, min(768px, 160px)"
         />
       </div>
       <div className="relative mt-2 w-[346px] overflow-hidden px-2.5 py-6">
         <Image
-          fill={true}
+          fill
+          sizes="(max-width: 768px) 346px, min(768px, 346px)"
           className="absolute top-0 left-0 z-0 h-full w-full"
           src="/images/webp/blog-angle2.webp"
           alt="blog angle"

@@ -44,7 +44,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
             1024: { slidesPerView: 2.5, spaceBetween: 20 },
             1280: { slidesPerView: 3, spaceBetween: 35 },
           }}
-          autoplay
+          loop={false}
         >
           {reviews.map((review: any, index: any) => (
             <CrmReviewCard

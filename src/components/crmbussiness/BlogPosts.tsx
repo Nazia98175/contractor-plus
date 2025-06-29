@@ -69,6 +69,7 @@ const BlogPosts: React.FC<Props> = ({
               src="/images/webp/blog-right-side.webp"
               alt="Featured Blog"
               className="absolute top-0 h-full w-full rounded-xl object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 684px"
             />
             <div className="relative z-10 px-3 pt-20 xl:px-6">
               <p className="text-decemberSky font-jakarta text-base font-medium">

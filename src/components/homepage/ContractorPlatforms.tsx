@@ -20,7 +20,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
             (obj: PlatformItem, index: number) => (
               <article
                 key={index}
-                className="group w-full max-w-[430px] cursor-pointer p-2 sm:w-[48%]"
+                className="group w-full max-w-[430px] p-2 sm:w-[48%]"
               >
                 {/* <h3 className="mb-3 lg:mb-4 text-white duration-200 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold px-1.5 py-1 w-fit">
                   {obj.title}

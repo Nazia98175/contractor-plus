@@ -1,4 +1,46 @@
+import { Plan, Platform, Review, tableFeature } from "@/types";
+import {
+  Book,
+  Building,
+  Calculator,
+  Calendar,
+  Castle,
+  Clipboard,
+  DollarSign,
+  FileCode,
+  FileText,
+  Flower,
+  Hammer,
+  Headphones,
+  LayoutList,
+  Paintbrush2,
+  Plug,
+  Search,
+  ThermometerSun,
+  Users,
+  Wrench,
+} from "lucide-react";
 import { JSX } from "react";
+import mobile from "../../../public/lotties/11-mobile.json";
+import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
+import animationData from "../../../public/lotties/crm.json";
+import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import live_scheduling from "../../../public/lotties/live-scheduling.json";
+import property_profile from "../../../public/lotties/property-profile.json";
+import { OptionType } from "../blog/CustomSelect";
+import {
+  ClientPortalIcon,
+  ContractIcon,
+  CrmPropertyIcon,
+  EstimateInvoicesIcons,
+  FieldServiceManagementIcon,
+  MoreEyeIcon,
+  PhoneIcon,
+  ProjectManageMentIcon,
+  ScheludingIcon,
+  SubManagementIcon,
+  TaskManagementIcon,
+} from "../why-contractor/Icons";
 import {
   AdminWorkIcon,
   AssetIcon,
@@ -6,6 +48,7 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  ContractorToolsIcon,
   DelieveryIcon,
   EstimateIcon2,
   EstimatesIcon,
@@ -28,23 +71,6 @@ import {
   TrackingIcon,
   TrophyIcon,
 } from "./Icons";
-import {
-  Book,
-  FileText,
-  Headphones,
-  Calculator,
-  Clipboard,
-  Search,
-  DollarSign,
-  Building,
-  Calendar,
-  Users,
-  LayoutList,
-  FileCode,
-  TruckIcon,
-  TruckElectricIcon,
-} from "lucide-react";
-import { Plan, Platform, Review, tableFeature } from "@/types";
 
 export const awards = [
   {
@@ -674,7 +700,566 @@ export const planData = [
     isProTeam: true,
   },
 ];
-
+export const latestContractorData = [
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/latest-blog-1.webp",
+    link: "/articles/large",
+    tags: ["Plumbing", "Drywall", "Blueprint"],
+    second: [
+      {
+        id: 2,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Migrating to Linear 101",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-1",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 3,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-2",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations 2",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/large-2",
+    tags: ["Leadership", "Management"],
+    second: [
+      {
+        id: 5,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-3",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 6,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-4",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations 2",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/large-2",
+    tags: ["Leadership", "Management"],
+    second: [
+      {
+        id: 8,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-3",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 9,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-4",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations 2",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/large-2",
+    tags: ["Leadership", "Management"],
+    second: [
+      {
+        id: 11,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-3",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 12,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-4",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+];
+export const articles = [
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 12,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 12,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+];
+export const contractorTypes: OptionType[] = [
+  {
+    value: "contractor",
+    label: "General Contractor",
+    icon: <ContractorToolsIcon />,
+  },
+  {
+    value: "electrician",
+    label: "Electrician",
+    icon: <Plug color="white" />,
+  },
+  {
+    value: "plumber",
+    label: "Plumber",
+    icon: <Wrench color="white" />,
+  },
+  {
+    value: "carpenter",
+    label: "Carpenter",
+    icon: <Hammer color="white" />,
+  },
+  {
+    value: "painter",
+    label: "Painter",
+    icon: <Paintbrush2 color="white" />,
+  },
+  {
+    value: "hvac",
+    label: "HVAC Technician",
+    icon: <ThermometerSun color="white" />,
+  },
+  {
+    value: "roofer",
+    label: "Roofer",
+    icon: <Castle color="white" />,
+  },
+  {
+    value: "landscaper",
+    label: "Landscaper",
+    icon: <Flower color="white" />,
+  },
+];
 export const plans: Plan[] = [
   { name: "Freedom", cta: "Start for free", variant: "default" },
   { name: "PRO", cta: "Get started", variant: "pro" },
@@ -2067,26 +2652,6 @@ export const reviews = [
     userRole: "CEO at Rands Mechanical",
   },
 ];
-import animationData from "../../../public/lotties/crm.json";
-import live_scheduling from "../../../public/lotties/live-scheduling.json";
-import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
-import estimate_builder from "../../../public/lotties/estimate-builder.json";
-import property_profile from "../../../public/lotties/property-profile.json";
-import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
-import {
-  ClientPortalIcon,
-  ContractIcon,
-  CrmPropertyIcon,
-  EstimateInvoicesIcons,
-  FieldServiceManagementIcon,
-  MoreEyeIcon,
-  PhoneIcon,
-  ProjectManageMentIcon,
-  ScheludingIcon,
-  SubManagementIcon,
-  TaskManagementIcon,
-} from "../why-contractor/Icons";
-import mobile from "../../../public/lotties/11-mobile.json";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",

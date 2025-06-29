@@ -1,12 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimation from "../common/TextAnimation";
 
 const BloodEnough = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const hasAnimatedOnMobile = useRef(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -17,28 +33,42 @@ const BloodEnough = () => {
       end: "bottom center",
       scrub: 1,
       onEnter: () => {
-        // Add the class when scrolling down and entering
+        // On mobile, only animate once
+        if (isMobile && hasAnimatedOnMobile.current) {
+          return;
+        }
+
         sectionRef.current?.classList.add("scroll-active");
+
+        if (isMobile) {
+          hasAnimatedOnMobile.current = true;
+        }
       },
       onLeaveBack: () => {
-        // Remove the class when scrolling back up
-        sectionRef.current?.classList.remove("scroll-active");
+        // Only remove class on desktop
+        if (!isMobile) {
+          sectionRef.current?.classList.remove("scroll-active");
+        }
       },
       onEnterBack: () => {
-        // Add the class when scrolling back down into view
-        sectionRef.current?.classList.add("scroll-active");
+        // Only re-add class on desktop
+        if (!isMobile) {
+          sectionRef.current?.classList.add("scroll-active");
+        }
       },
       onLeave: () => {
         // Optional: Remove class when scrolling past the element
-        // Uncomment if you want the effect to reverse when scrolling far down
-        // sectionRef.current?.classList.remove("scroll-active");
+        // Only on desktop
+        // if (!isMobile) {
+        //   sectionRef.current?.classList.remove("scroll-active");
+        // }
       },
     });
 
     return () => {
       trigger.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div

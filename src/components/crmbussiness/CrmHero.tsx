@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
@@ -8,7 +9,9 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
-import AnimatedShape from "./AnimatedShape";
+const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
+
+// import AnimatedShape from "./AnimatedShape";
 interface TheHeroProps {
   hero: any;
   slug?: string;

@@ -1,11 +1,6 @@
 "use client";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslations } from "next-intl";
 import React from "react";
 import ScrollOverlapCards from "../common/ScrollOverlapCards";
-import TextAnimation from "../common/TextAnimation";
 
 export interface TheServiceProps {
   fieldService: any;
@@ -15,9 +10,6 @@ export interface TheServiceProps {
   mainClassName?: string;
 }
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
 const FieldService: React.FC<TheServiceProps> = ({
   fieldService,
   slug,
@@ -25,22 +17,15 @@ const FieldService: React.FC<TheServiceProps> = ({
   apiData = true,
   mainClassName,
 }) => {
-  const t = useTranslations();
+
 
   return (
     <section className="relative z-30 px-2 pt-14 sm:pt-20 lg:pt-2">
-      {/* <TextAnimation animateOnScroll={true} delay={0.3}>
-        <h2 className="text-secondary 3xl:hidden mx-auto max-w-[830px] pb-6 text-center text-xl font-semibold -tracking-[0.72px]">
-          {fieldService?.title}
-        </h2>
-      </TextAnimation> */}
-      {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
       <h2
         className={`gradient-text 3xl:hidden mx-auto block px-1 pb-10 text-center text-xl font-semibold -tracking-[0.72px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] ${mainClassName || "max-w-[813px]"}`}
       >
         {fieldService?.title}
       </h2>
-      {/* </TextAnimation> */}
       <ScrollOverlapCards
         theme={theme}
         slug={slug || ""}

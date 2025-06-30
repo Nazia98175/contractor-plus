@@ -18,7 +18,7 @@ const Features = ({ features }: { features: any }) => {
 
   return (
     <section className="relative z-20 bg-white pt-11 pb-6 sm:px-2 lg:pb-[46px] xl:pt-[45px]">
-      <div className="main-container !px-0 sm:!px-2">
+      <div className="mx-auto w-full max-w-[1338px] px-2">
         <div className="bg-doctor py-4 sm:rounded-4xl md:py-6 lg:rounded-[32px] lg:py-8 xl:p-9">
           <CardReveal
             distance={50}

@@ -103,7 +103,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
         />
       </div> */}
       </div>
-      <div className="font-inter bg-doctor2 sticky bottom-0 left-0 flex w-full items-center justify-between gap-6">
+      <div className="font-inter sticky bottom-0 left-0 flex w-full items-center justify-between gap-6">
         <Link className="all-features-button group" href="/">
           Go to Resource Hub
           <ArrowIcon />

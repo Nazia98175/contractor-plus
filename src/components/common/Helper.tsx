@@ -2222,14 +2222,6 @@ export const rightIcons = [
   },
 ];
 
-export interface FeatureLink {
-  id: string;
-  label: string;
-  description: string;
-  href: string;
-  isNew: boolean;
-  icon: JSX.Element;
-}
 export const featurelinks = [
   {
     id: "crm",

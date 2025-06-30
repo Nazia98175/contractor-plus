@@ -1,4 +1,5 @@
 import BlogDetailHero from "@/components/blogdetails/BlogDetailHero";
+import TravelBlog from "@/components/blogdetails/TravelBlog";
 import React from "react";
 
 export const metadata = {
@@ -10,6 +11,7 @@ const BlogDetails = () => {
   return (
     <main className="bg-white">
       <BlogDetailHero />
+      <TravelBlog />
     </main>
   );
 };

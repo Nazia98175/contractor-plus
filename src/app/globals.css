@@ -10,6 +10,7 @@
   --font-myriad: "Myriad Pro", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
+  --font-work: "Work Sans", sans-serif;
 
   /* COLORS */
   --color-secondary: #adb1b5;
@@ -26,6 +27,7 @@
   --color-iron: #45454a;
   --color-doctor2: #f8f8f8;
   --color-lightishBlue: #3b82f6;
+  --color-indiaInk: #3b3c4a;
   --color-ruinedSmores: #111216;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
@@ -35,6 +37,7 @@
   --color-wash: #f8f9fc;
   --color-sugar: #f9f5ff;
   --color-alice: #f0f9ff;
+  --color-sambucus: ##181a2a;
   --color-led: #026aa2;
   --color-sinopia: #c4320a;
   --color-fatback: #fff6ed;
@@ -232,7 +235,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply text-lg font-semibold -tracking-[0.44px] sm:text-xl md:text-[22px];
+  @apply text-lg sm:text-xl md:text-[22px];
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
@@ -276,6 +279,9 @@ body {
 }
 .footer-li-hover {
   @apply absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 rounded-full bg-white transition-all duration-300 group-hover:w-full;
+}
+.blog-detail-heading {
+  @apply text-sambucus mt-8 text-2xl font-semibold;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -801,6 +807,13 @@ html::-webkit-scrollbar {
   }
 }
 
+.blog-detail-hero-shadow {
+  box-shadow:
+    -37.02px -31px 37.9px 0px rgba(0, 0, 0, 0.2),
+    -11.759px 2px 13.825px 0px rgba(0, 0, 0, 0.14),
+    -4.878px 4.39px 8.267px 0px rgba(0, 0, 0, 0.17),
+    -1.132px 1.019px 4.385px 0px rgba(0, 0, 0, 0.21);
+}
 /* .color-animation-1 {
   animation: spreadColor1 3s ease-in-out infinite;
 }

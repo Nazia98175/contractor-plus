@@ -60,7 +60,7 @@ const BuildBusinessOnBlood = () => {
           <ContractorCard key={index} obj={obj} />
         ))}
       </div>
-      <h4 className="xs-heading text-cyberspace relative z-10 mt-10 px-3 text-center">
+      <h4 className="xs-heading text-cyberspace relative z-10 mt-10 px-3 text-center font-semibold -tracking-[0.44px]">
         All that friction adds up. And it’s keeping your business stuck.
       </h4>
     </section>

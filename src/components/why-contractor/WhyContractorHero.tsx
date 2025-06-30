@@ -1,20 +1,79 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { LogoIcon } from "../common/Icons";
+import { useState, useRef, useEffect } from "react";
+import {
+  AnimatedLineIcon,
+  LogoIcon,
+  VideoPauseIcon,
+  VideoPlayIcon,
+} from "../common/Icons";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 
 const WhyContractorHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // Listen for messages from YouTube iframe
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== "https://www.youtube.com") return;
+
+      try {
+        const data = JSON.parse(event.data);
+        // Check if it's a player state change event
+        if (
+          data.event === "infoDelivery" &&
+          data.info &&
+          data.info.playerState !== undefined
+        ) {
+          // 1 = playing, 2 = paused, 0 = ended
+          if (data.info.playerState === 1) {
+            setIsPlaying(true);
+          } else if (
+            data.info.playerState === 2 ||
+            data.info.playerState === 0
+          ) {
+            setIsPlaying(false);
+          }
+        }
+      } catch (e) {
+        // Ignore non-JSON messages
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    // Request player state updates
+    const interval = setInterval(() => {
+      if (iframeRef.current) {
+        iframeRef.current.contentWindow?.postMessage(
+          '{"event":"listening","id":1,"channel":"widget"}',
+          "*",
+        );
+      }
+    }, 100);
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+      clearInterval(interval);
+    };
+  }, []);
 
   const handlePlayPause = () => {
-    if (videoRef.current) {
+    if (iframeRef.current) {
       if (isPlaying) {
-        videoRef.current.pause();
+        // Pause YouTube video
+        iframeRef.current.contentWindow?.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          "*",
+        );
       } else {
-        videoRef.current.play();
+        // Play YouTube video
+        iframeRef.current.contentWindow?.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          "*",
+        );
       }
       setIsPlaying(!isPlaying);
     }
@@ -24,224 +83,7 @@ const WhyContractorHero = () => {
     <section className="px-3 pt-[70px] pb-14 sm:pt-[127px] sm:pb-20">
       <div className="relative mx-auto max-w-[830px]">
         <div className="pointer-events-none absolute top-[40%] left-0 mx-auto w-full max-w-[600px] sm:top-0 lg:max-w-[840px]">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 841 1247"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              x1="0.5"
-              y1="0"
-              x2="0.5"
-              y2="900"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="168.5"
-              y1="0"
-              x2="168.5"
-              y2="900"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="336.5"
-              y1="0"
-              x2="336.5"
-              y2="900"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="504.5"
-              y1="0"
-              x2="504.5"
-              y2="900"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="672.5"
-              y1="0"
-              x2="672.5"
-              y2="900"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="840.5"
-              y1="0"
-              x2="840.5"
-              y2="900"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="0.5"
-              y1="347"
-              x2="0.5"
-              y2="1247"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="168.5"
-              y1="347"
-              x2="168.5"
-              y2="1247"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="336.5"
-              y1="347"
-              x2="336.5"
-              y2="1247"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="504.5"
-              y1="347"
-              x2="504.5"
-              y2="1247"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="672.5"
-              y1="347"
-              x2="672.5"
-              y2="1247"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <line
-              x1="840.5"
-              y1="347"
-              x2="840.5"
-              y2="1247"
-              stroke="#2E2E2E"
-              strokeOpacity="0.3"
-            />
-            <g className="red-glow">
-              <image
-                className="animated-line"
-                x="0"
-                y="400"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="168"
-                y="550"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="336"
-                y="480"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="504"
-                y="500"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="672"
-                y="525"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="840"
-                y="650"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="0"
-                y="750"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="168"
-                y="900"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="336"
-                y="830"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="504"
-                y="850"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="672"
-                y="875"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="840"
-                y="1000"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="0"
-                y="1060"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-              <image
-                className="animated-line"
-                x="840"
-                y="1100"
-                width="1"
-                height="100"
-                href="/images/svg/gradient-red-line.svg"
-              />
-            </g>
-          </svg>
+          <AnimatedLineIcon />
         </div>
         <TextAnimation animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:mb-4">
@@ -249,7 +91,7 @@ const WhyContractorHero = () => {
           </h2>
         </TextAnimation>
         <TextAnimation animateOnScroll={false} delay={0.4}>
-          <p className="hero-description mb-8 text-center !text-[#8A8E91] sm:mb-[42px]">
+          <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
             Hard work got you here. But it's not enough to get you{" "}
             <span className="text-decemberSky italic">
               where you want to go.
@@ -275,56 +117,36 @@ const WhyContractorHero = () => {
               alt="WhyContractorHeroImg"
             />
           </div>
-          <div className="relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px] group">
-            <video
-              ref={videoRef}
-              className="block h-full w-full object-cover"
-              onEnded={() => setIsPlaying(false)}
-              playsInline
-            >
-              <source src="/video/hero-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div
-              className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
-                isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
-              }`}
-              onClick={handlePlayPause}
-            ></div>
+          <div className="group relative mx-auto max-w-[526px] overflow-hidden rounded-lg bg-[#00000033] max-sm:h-full max-sm:min-h-[233px] max-sm:w-full sm:h-[306px]">
+            <div className="relative h-full w-full">
+              <iframe
+                ref={iframeRef}
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/eANJwuWMDpM?si=K7u7DBNE0XpumljU&enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+              <div
+                className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
+                  isPlaying ? "pointer-events-none opacity-0" : "opacity-100"
+                }`}
+                onClick={handlePlayPause}
+              ></div>
+            </div>
             <div
               className={`absolute top-[50px] left-1/2 -translate-x-1/2 group-hover:!opacity-100 sm:top-1/2 sm:-translate-y-1/2 ${
                 isPlaying ? "opacity-0" : ""
               }`}
             >
-              {" "}
               <button
                 className="flex size-[60px] items-center justify-center rounded-full bg-[#FFFFFF1F] backdrop-blur-[24px] transition-transform hover:scale-110"
                 aria-label={isPlaying ? "Pause video" : "Play video"}
                 onClick={handlePlayPause}
               >
-                {isPlaying ? (
-                  <svg
-                    className="h-8 w-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                  </svg>
-                ) : (
-                  <svg
-                    className="ps-1"
-                    width="22"
-                    height="26"
-                    viewBox="0 0 22 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.64417 25.6281C2.95692 26.0824 2.26142 26.109 1.55768 25.7078C0.853933 25.3066 0.501375 24.686 0.5 23.8459V2.14511C0.5 1.30643 0.852559 0.685805 1.55768 0.283239C2.2628 -0.119328 2.9583 -0.0927691 3.64417 0.362913L20.4475 11.2133C21.066 11.6327 21.3753 12.2267 21.3753 12.9955C21.3753 13.7643 21.066 14.3584 20.4475 14.7777L3.64417 25.6281Z"
-                      fill="white"
-                    />
-                  </svg>
-                )}
+                {isPlaying ? <VideoPauseIcon /> : <VideoPlayIcon />}
               </button>
             </div>
             <div className="absolute right-0 bottom-0 left-0 bg-[#00000052] p-2 backdrop-blur-[42px]">

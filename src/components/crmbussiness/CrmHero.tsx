@@ -1,29 +1,42 @@
 "use client";
+import dynamic from "next/dynamic";
+import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
-import Link from "next/link";
-import AnimatedShape from "./AnimatedShape";
+const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
+
+// import AnimatedShape from "./AnimatedShape";
 interface TheHeroProps {
   hero: any;
   slug?: string;
+  heroImg?: any;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
+const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
+  // const wrapperRef = useRef<HTMLDivElement | null>(null);
+  // useEffect(() => {
+  //   gsap.to(wrapperRef.current, {
+  //     opacity: 1,
+  //     duration: 0.1,
+  //     delay: 0.1,
+  //     ease: "elastic.in",
+  //     once: true,
+  //   });
+  // }, []);
   useEffect(() => {
-    gsap.to(wrapperRef.current, {
-      opacity: 1,
-      duration: 0.1,
-      delay: 0.1,
-      ease: "elastic.in",
-      once: true,
-    });
+    setTimeout(() => {
+      gsap.to(".main-loader", {
+        opacity: 0,
+      });
+    }, 1000);
   }, []);
+
+  const imageUrl = getMediaUrl(heroImg);
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
@@ -31,26 +44,38 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
       <CardReveal distance={30} delay={0.1}>
-        <div className="hidden items-center justify-center pb-6 md:flex">
+        <div className="hidden items-center justify-center pb-1 md:flex">
           <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
             {slug === "estimate"
               ? "Contractor Estimate Software"
               : "   Field Service CRM"}
+            {/* <span>{hero?.heroTitle1}</span> */}
           </span>
         </div>
       </CardReveal>
       <div
-        ref={wrapperRef}
         id="hero"
-        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse opacity-0 md:flex-col"
+        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
             {/* <TextAnimation delay={0.3} animateOnScroll={false}> */}
             <h2
-              className={`${slug === "estimate" ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]" : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"} gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
+              className={`${
+                slug === "estimate"
+                  ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]"
+                  : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"
+              } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
             >
-              {hero?.heroTitle}
+              {slug !== "crm" && hero?.heroTitle}
+
+              {slug === "crm" && (
+                <>
+                  {hero?.heroTitle1}{" "}
+                  <span className="text-white">{hero?.heroTitle2}</span>{" "}
+                  <span>{hero?.heroTitle3}</span>
+                </>
+              )}
             </h2>
             {/* </TextAnimation> */}
             {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}
@@ -72,6 +97,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
                   alt="google icon"
                   width={144}
                   height={36}
+                  sizes="(max-width: 768px) 100px, 144px"
+                  priority
                 />
                 <div className="flex items-center justify-center">
                   {[...Array(5)].map((_, i) => (
@@ -92,6 +119,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
                   alt="google icon"
                   width={144}
                   height={36}
+                  sizes="(max-width: 768px) 100px, 144px"
+                  priority
                 />
                 <div className="flex items-center justify-center">
                   {[...Array(5)].map((_, i) => (
@@ -126,13 +155,17 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
-                <Image
-                  className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                  src="/images/webp/crm-hero.webp"
-                  width={900}
-                  height={616}
-                  alt="crm-hero"
-                />
+                {imageUrl && (
+                  <Image
+                    className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                    src={imageUrl}
+                    width={900}
+                    height={616}
+                    alt="crm-hero"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                    priority
+                  />
+                )}
                 <AnimatedShape />
               </div>
             </div>

@@ -6,7 +6,6 @@ import make_operations_1 from "../../../public/lotties/make-operations-1.json";
 import make_operations_2 from "../../../public/lotties/make-operations-2.json";
 import make_operations_3 from "../../../public/lotties/make-operations-3.json";
 import CardReveal from "../common/CardReveal";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import MakeOperationCard from "./MakeOperationCard";
 interface Whatever {
   title: string;
@@ -38,6 +37,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         fill
         alt="gradient background"
         priority
+        sizes="(max-width: 1023px) 700px"
       />
       <Image
         className="pointer-events-none absolute -top-[50%] right-0 z-0 hidden w-full max-w-[800px] lg:block"
@@ -46,6 +46,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         height={1200}
         alt="gradient background"
         priority
+        sizes="(min-width: 1024px) 800px"
       />
 
       <div className="main-container relative pb-10">

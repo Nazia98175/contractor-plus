@@ -1,5 +1,11 @@
 "use client";
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, {
+  ReactNode,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 interface Props {
   children: ReactNode;
@@ -20,7 +26,7 @@ const CardReveal: React.FC<Props> = ({
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // If animateOnMount is true, trigger animation immediately
     if (animateOnMount && !hasAnimated) {
       const timer = setTimeout(() => {
@@ -74,6 +80,7 @@ const CardReveal: React.FC<Props> = ({
         transitionDelay: `${delay}s`,
         transform: isVisible ? "translateY(0)" : `translateY(${distance}px)`,
         opacity: isVisible ? 1 : 0,
+        willChange: "transform, opacity",
       }}
     >
       {children}

@@ -20,7 +20,7 @@ const FieldServiceCard: React.FC<Props> = ({
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
-  console.log("data", service);
+
   const themeColors = {
     light: {
       titleColor:
@@ -86,6 +86,9 @@ const FieldServiceCard: React.FC<Props> = ({
               alt={service?.title || "service image"}
               width={518}
               height={302}
+              unoptimized
+              priority
+              sizes="(max-width: 768px) 300px, min(768px, 300px)"
               className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             />
           ) : (
@@ -94,6 +97,9 @@ const FieldServiceCard: React.FC<Props> = ({
               alt={service?.title || "service image"}
               width={518}
               height={302}
+              unoptimized
+              priority
+              sizes="(max-width: 768px) 300px, min(768px, 300px)"
               className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             />
           )}
@@ -145,6 +151,9 @@ const FieldServiceCard: React.FC<Props> = ({
             width={518}
             height={302}
             className="h-auto w-full rounded-lg object-cover"
+            unoptimized
+            priority
+            sizes="(max-width: 768px) 300px, min(768px, 300px)"
           />
         ) : (
           <Image
@@ -153,6 +162,9 @@ const FieldServiceCard: React.FC<Props> = ({
             width={518}
             height={302}
             className="h-auto w-full rounded-lg object-cover"
+            unoptimized
+            priority
+            sizes="(max-width: 768px) 300px, min(768px, 300px)"
           />
         )}
       </div>

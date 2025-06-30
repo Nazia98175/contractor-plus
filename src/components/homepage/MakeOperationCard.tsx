@@ -1,4 +1,3 @@
-import React from "react";
 import CountUp from "react-countup";
 import LottieAnimation from "../common/LottieAnimation";
 
@@ -27,7 +26,7 @@ const MakeOperationCard = ({
         ) : (
           `${item.start}${item.suffix}`
         )}
-        <span className="inline-block px-2 text-2xl">{item.title}</span>
+        <span className="ml-1 inline-block text-2xl">{item.title}</span>
       </h3>
 
       <p className="text-secondary countup-desc">{item.sub_title}</p>

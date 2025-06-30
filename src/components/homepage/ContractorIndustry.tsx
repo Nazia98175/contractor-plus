@@ -28,13 +28,15 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
         alt="webp bg"
         width={900}
         height={700}
+        sizes="900px"
       />
       <Image
         className="bubbling-animation svgTwinkle absolute top-0 right-0 z-0 hidden h-full w-full max-w-[700px] object-center lg:block"
         src="/images/webp/contractor-right-bg.webp"
         alt="webp bg"
-        width={300}
+        width={700}
         height={300}
+        sizes="700px"
       />
 
       <span className="absolute top-0 left-0 block h-full w-full md:hidden">
@@ -51,11 +53,11 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
           <h6 className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
             {contractorIndustry?.[0]?.sub_title ?? ""}
           </h6>
-          <div className="hidden items-center justify-center md:flex">
+          {/* <div className="hidden items-center justify-center md:flex">
             <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.[1]?.btnTxt ?? ""}
             </PrimaryLink>
-          </div>
+          </div> */}
         </div>
         <ContractorIndustrySlider />
       </div>

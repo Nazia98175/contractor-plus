@@ -8,6 +8,7 @@ interface Props {
   showClouds?: boolean;
   className?: string;
   variant?: "default" | "primary" | "secondary";
+  variantBtn?: "default" | "primary" | "light" | "dark" | "muted";
 }
 
 const CrmSercive: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const CrmSercive: React.FC<Props> = ({
   showClouds,
   className,
   variant = "default",
+  variantBtn = "default",
 }) => {
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
@@ -31,6 +33,7 @@ const CrmSercive: React.FC<Props> = ({
           mobileBtn={mobileBtn}
           variant={variant}
           className={className}
+          variantBtn={variantBtn}
         />
       </div>
       {showClouds !== false && (

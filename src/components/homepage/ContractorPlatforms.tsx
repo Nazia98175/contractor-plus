@@ -20,7 +20,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
             (obj: PlatformItem, index: number) => (
               <article
                 key={index}
-                className="group w-full max-w-[430px] cursor-pointer p-2 sm:w-[48%]"
+                className="group w-full max-w-[430px] p-2 sm:w-[48%]"
               >
                 {/* <h3 className="mb-3 lg:mb-4 text-white duration-200 mt-5 text-base sm:text-xl lg:text-2xl font-jakarta font-bold px-1.5 py-1 w-fit">
                   {obj.title}
@@ -28,14 +28,16 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
 
                 <div className="animate-border relative rounded-xl">
                   <Image
-                    width={405}
+                    width={389}
                     height={187}
+                    sizes="(max-width: 768px) 289px, 389px"
                     src={contractPlatforms?.[index]?.img}
                     alt={`${obj.title}`}
+                    priority
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>
-                <p className="paragraph-text text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 px-1 text-center duration-200">
+                <p className="text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 text-center text-sm duration-200 sm:px-2 md:text-base xl:text-lg">
                   {`${obj.description}`}
                 </p>
               </article>

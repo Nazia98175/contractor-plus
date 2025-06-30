@@ -10,6 +10,7 @@ import Link from "next/link";
 interface Show {
   title: string;
   image: string;
+  itemPath: string;
 }
 
 const ContractorIndustrySlider: React.FC = () => {
@@ -17,163 +18,203 @@ const ContractorIndustrySlider: React.FC = () => {
 
   const showInfo: Show[] = [
     {
+      itemPath: "/",
       title: "General Contractor",
       image: "/images/png/circular-slide-1.png",
     },
     {
+      itemPath: "/",
       title: "Plumbing",
       image: "/images/webp/circular-slide-1.webp",
     },
     {
+      itemPath: "/",
       title: "General Contractor",
       image: "/images/webp/circular-slide-2.webp",
     },
     {
-      title: "Plumbing",
+      itemPath: "/",
+      title: "Construction",
       image: "/images/webp/circular-slide-3.webp",
     },
     {
-      title: "The Penguin",
+      itemPath: "/",
+      title: "Drywall",
       image: "/images/webp/circular-slide-4.webp",
     },
     {
-      title: "Strange Darling",
+      itemPath: "/",
+      title: "HVAC",
       image: "/images/webp/circular-slide-5.webp",
     },
     {
-      title: "Re:ZERO",
+      itemPath: "/",
+      title: "Mechanical",
       image: "/images/webp/circular-slide-6.webp",
     },
     {
-      title: "Rebel Ridge",
+      itemPath: "/",
+      title: "Painting",
       image: "/images/webp/circular-slide-7.webp",
     },
     {
-      title: "Outlaw",
+      itemPath: "/",
+      title: "Remodeling",
       image: "/images/webp/circular-slide-8.webp",
     },
     {
-      title: "Pleasure",
+      itemPath: "/",
+      title: "Carpet Cleaning",
       image: "/images/webp/circular-slide-9.webp",
     },
     {
-      title: "Joker: Folie à Deux",
+      itemPath: "/",
+      title: "Chimney Sweeping",
       image: "/images/webp/circular-slide-10.webp",
     },
     {
-      title: "The Penguin",
+      itemPath: "/",
+      title: "Plumbing",
       image: "/images/webp/circular-slide-1.webp",
     },
     {
-      title: "Strange Darling",
+      itemPath: "/",
+      title: "Drywall",
       image: "/images/webp/circular-slide-4.webp",
     },
     {
-      title: "Re:ZERO",
+      itemPath: "/",
+      title: "Mechanical",
       image: "/images/webp/circular-slide-6.webp",
     },
     {
-      title: "Rebel Ridge",
+      itemPath: "/",
+      title: "Construction",
       image: "/images/webp/circular-slide-3.webp",
     },
     {
-      title: "Outlaw",
+      itemPath: "/",
+      title: "Remodeling",
       image: "/images/webp/circular-slide-8.webp",
     },
     {
-      title: "Pleasure",
+      itemPath: "/",
+      title: "Chimney Sweeping",
       image: "/images/webp/circular-slide-10.webp",
     },
     {
-      title: "General Contractor",
+      itemPath: "/",
+      title: "Cleaning",
       image: "/images/webp/circular-slide-11.webp",
     },
     {
-      title: "Plumbing",
+      itemPath: "/",
+      title: "Electrician",
       image: "/images/webp/circular-slide-12.webp",
     },
     {
-      title: "General Contractor",
+      itemPath: "/",
+      title: "Elevator",
       image: "/images/webp/circular-slide-13.webp",
     },
     {
-      title: "Plumbing",
+      itemPath: "/",
+      title: "Excavation",
       image: "/images/webp/circular-slide-14.webp",
     },
     {
-      title: "The Penguin",
+      itemPath: "/",
+      title: "Fence",
       image: "/images/webp/circular-slide-15.webp",
     },
     {
-      title: "Strange Darling",
+      itemPath: "/",
+      title: "Flooring",
       image: "/images/webp/circular-slide-16.webp",
     },
     {
-      title: "Re:ZERO",
+      itemPath: "/",
+      title: "Garage Door",
       image: "/images/webp/circular-slide-17.webp",
     },
     {
-      title: "Rebel Ridge",
+      itemPath: "/",
+      title: "Handyman",
       image: "/images/webp/circular-slide-18.webp",
     },
     {
-      title: "Outlaw",
+      itemPath: "/",
+      title: "Irrigation",
       image: "/images/webp/circular-slide-19.webp",
     },
     {
-      title: "Pleasure",
+      itemPath: "/",
+      title: "Janitorial",
       image: "/images/webp/circular-slide-20.webp",
     },
     {
-      title: "Joker: Folie à Deux",
+      itemPath: "/",
+      title: "Junk Removal",
       image: "/images/webp/circular-slide-21.webp",
     },
     {
-      title: "The Penguin",
+      itemPath: "/",
+      title: "Landscaping",
       image: "/images/webp/circular-slide-22.webp",
     },
     {
-      title: "Strange Darling",
+      itemPath: "/",
+      title: "Lawn Care",
       image: "/images/webp/circular-slide-23.webp",
     },
     {
-      title: "Re:ZERO",
+      itemPath: "/",
+      title: "Locksmith",
       image: "/images/webp/circular-slide-24.webp",
     },
     {
-      title: "Rebel Ridge",
+      itemPath: "/",
+      title: "Paving",
       image: "/images/webp/circular-slide-25.webp",
     },
     {
-      title: "Pleasure",
+      itemPath: "/",
+      title: "Pest Control",
       image: "/images/webp/circular-slide-27.webp",
     },
     {
-      title: "Pleasure",
+      itemPath: "/",
+      title: "Pressure Washing",
       image: "/images/webp/circular-slide-28.webp",
     },
     {
-      title: "Joker: Folie à Deux",
+      itemPath: "/",
+      title: "Property Maintenance",
       image: "/images/webp/circular-slide-29.webp",
     },
     {
-      title: "The Penguin",
+      itemPath: "/",
+      title: "Restoration",
       image: "/images/webp/circular-slide-30.webp",
     },
     {
-      title: "Strange Darling",
+      itemPath: "/",
+      title: "Snow Removal",
       image: "/images/webp/circular-slide-31.webp",
     },
     {
-      title: "Re:ZERO",
+      itemPath: "/",
+      title: "Solar",
       image: "/images/webp/circular-slide-32.webp",
     },
     {
-      title: "Rebel Ridge",
+      itemPath: "/",
+      title: "Tiling",
       image: "/images/webp/circular-slide-33.webp",
     },
     {
-      title: "Pleasure",
+      itemPath: "/",
+      title: "Tree Care",
       image: "/images/webp/circular-slide-34.webp",
     },
   ];
@@ -185,8 +226,8 @@ const ContractorIndustrySlider: React.FC = () => {
         autoplay={{
           delay: 3000,
         }}
+        freeMode={true}
         speed={700}
-        grabCursor={true}
         centeredSlides={true}
         slidesPerView={4}
         loop={true}
@@ -211,7 +252,7 @@ const ContractorIndustrySlider: React.FC = () => {
         className="relative h-full w-full !py-10"
       >
         {showInfo.map((show, index) => (
-          <Link href={"#"} key={index}>
+          <Link href={show.itemPath} key={index}>
             <ContractorIndustrySliderCard show={show} />
           </Link>
         ))}

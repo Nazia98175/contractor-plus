@@ -50,7 +50,20 @@ export interface PlatformItem {
 export interface HomePageResponse {
   data: any;
   meta?: any;
-  
+}
+export type PlansProps = {
+  onScroll: () => void;
+};
+
+export interface Plan {
+  name: string;
+  cta: string;
+  variant: "default" | "pro" | "proTeam";
+}
+export interface tableFeature {
+  name: string;
+  description: any;
+  available: Availability[];
 }
 export interface Review {
   id: string | number;

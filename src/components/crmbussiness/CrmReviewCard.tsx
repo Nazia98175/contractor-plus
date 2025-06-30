@@ -72,12 +72,16 @@ const CrmReviewCard: React.FC<Props> = ({
                 .map((word) => word[0].toUpperCase())
                 .join("")}
             </div>
+          )}{" "}
+          {review.isModal && (
+            <div
+              className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
+            >
+              <span className="group-hover:text-romanRed text-lightBlack">
+                <PlayIcon />
+              </span>
+            </div>
           )}
-          <div
-            className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
-          >
-            <PlayIcon />
-          </div>
         </div>
         <div className="flex w-full flex-col gap-1.5">
           <div className="flex w-full flex-col flex-wrap justify-between gap-1.5 sm:flex-row sm:flex-nowrap sm:gap-2">

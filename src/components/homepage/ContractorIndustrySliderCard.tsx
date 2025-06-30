@@ -1,4 +1,3 @@
-import React from "react";
 import TiltedCardEffect from "../common/TiltedCardEffect";
 import Image from "next/image";
 
@@ -21,6 +20,8 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
           src={show.image}
           alt={show.title}
           className="relative w-full rounded-md object-cover"
+          priority
+          sizes="(max-width: 768px) 205px, (max-width: 1200px) 205px"
         />
       </div>
     </TiltedCardEffect>

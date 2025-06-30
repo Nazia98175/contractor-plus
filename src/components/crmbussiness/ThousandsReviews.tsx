@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { ReviewIcon } from "../common/Icons";
-import ReviewModal from "../common/ReviewModal";
 import SliderLayout from "../common/SliderLayout";
-import TextAnimation from "../common/TextAnimation";
 import CrmReviewCard from "./CrmReviewCard";
+import ReviewModal from "../common/ReviewModal";
 
 interface Props {
   data: any;
@@ -45,7 +44,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
             1024: { slidesPerView: 2.5, spaceBetween: 20 },
             1280: { slidesPerView: 3, spaceBetween: 35 },
           }}
-          autoplay
+          loop={false}
         >
           {reviews.map((review: any, index: any) => (
             <CrmReviewCard

@@ -29,6 +29,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
         createBtn={entireBusiness?.[2]?.btnTxt}
         mobileBtn={mobileBtn}
         ncc={ncc_text}
+        variantBtn="light"
       />
     </div>
   );

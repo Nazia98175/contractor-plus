@@ -1,4 +1,46 @@
+import { Plan, Platform, Review, tableFeature } from "@/types";
+import {
+  Book,
+  Building,
+  Calculator,
+  Calendar,
+  Castle,
+  Clipboard,
+  DollarSign,
+  FileCode,
+  FileText,
+  Flower,
+  Hammer,
+  Headphones,
+  LayoutList,
+  Paintbrush2,
+  Plug,
+  Search,
+  ThermometerSun,
+  Users,
+  Wrench,
+} from "lucide-react";
 import { JSX } from "react";
+import mobile from "../../../public/lotties/11-mobile.json";
+import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
+import animationData from "../../../public/lotties/crm.json";
+import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import live_scheduling from "../../../public/lotties/live-scheduling.json";
+import property_profile from "../../../public/lotties/property-profile.json";
+import { OptionType } from "../blog/CustomSelect";
+import {
+  ClientPortalIcon,
+  ContractIcon,
+  CrmPropertyIcon,
+  EstimateInvoicesIcons,
+  FieldServiceManagementIcon,
+  MoreEyeIcon,
+  PhoneIcon,
+  ProjectManageMentIcon,
+  ScheludingIcon,
+  SubManagementIcon,
+  TaskManagementIcon,
+} from "../why-contractor/Icons";
 import {
   AdminWorkIcon,
   AssetIcon,
@@ -6,6 +48,7 @@ import {
   BookkeepingIcon,
   CalculatorIcon,
   ClientIcon,
+  ContractorToolsIcon,
   DelieveryIcon,
   EstimateIcon2,
   EstimatesIcon,
@@ -28,23 +71,6 @@ import {
   TrackingIcon,
   TrophyIcon,
 } from "./Icons";
-import {
-  Book,
-  FileText,
-  Headphones,
-  Calculator,
-  Clipboard,
-  Search,
-  DollarSign,
-  Building,
-  Calendar,
-  Users,
-  LayoutList,
-  FileCode,
-  TruckIcon,
-  TruckElectricIcon,
-} from "lucide-react";
-import { Platform, Review } from "@/types";
 
 export const awards = [
   {
@@ -131,6 +157,16 @@ export const swichToContractordata = [
 
 export const platforms: Platform[] = [
   {
+    name: "Capterra",
+    logo: "/images/webp/capterraRating.webp",
+    rating: 5,
+  },
+  {
+    name: "G2 Crowd",
+    logo: "/images/webp/g2Rating.webp",
+    rating: 5,
+  },
+  {
     name: "App Store",
     logo: "/images/svg/apple-rating.svg",
     rating: 5,
@@ -141,18 +177,8 @@ export const platforms: Platform[] = [
     rating: 5,
   },
   {
-    name: "G2 Crowd",
-    logo: "/images/webp/g2Rating.webp",
-    rating: 5,
-  },
-  {
-    name: "Capterra",
-    logo: "/images/webp/capterraRating.webp",
-    rating: 5,
-  },
-  {
     name: "Software Advice",
-    logo: "images/svg/software-advice-rating.svg",
+    logo: "/images/svg/software-advice-rating.svg",
     rating: 5,
   },
 ];
@@ -487,7 +513,7 @@ export const blackPlatforms: Platform[] = [
   },
   {
     name: "Software Advice",
-    logo: "images/webp/black-software.webp",
+    logo: "/images/webp/black-software.webp",
     rating: 5,
   },
 ];
@@ -622,6 +648,1244 @@ export const trackFeatures = [
   "Add live camera feeds to any property",
 ];
 
+export const planData = [
+  {
+    title: "Freedom",
+    subtitle: "Free forever",
+    monthlyPrice: 0,
+    note: "Just Starting",
+    cta: "Start for free",
+    featuresHeading: "Features Included :",
+    features: [
+      "Manage leads & clients",
+      "Unlimited estimates & invoices",
+      "Custom logo",
+      "National average material pricing",
+      "Multiple workspaces",
+      "Available on web, mobile & tablet",
+    ],
+  },
+  {
+    title: "PRO",
+    subtitle: "1 user",
+    monthlyPrice: 29,
+    note: "For Solopreneurs",
+    cta: "Get started",
+    featuresHeading: "Everything in FREEDOM +",
+    features: [
+      "Optional line items & add-ons",
+      "Requests & scheduling",
+      "Client portal",
+      "Live local cost data",
+      "Email, SMS, and voice",
+      "PRO website included",
+    ],
+    isPro: true,
+  },
+  {
+    title: "Pro Team",
+    subtitle: "Up to 5 users",
+    monthlyPrice: 95,
+    note: "For Teams",
+    cta: "Get started",
+    featuresHeading: "Everything in PRO +",
+    features: [
+      "Up to 5 users",
+      "$29/month per additional user",
+      "Manage team / employees",
+      "Personal, group & client chats",
+      "Custom URL & branding",
+      "Connect Quickbooks Online",
+    ],
+    isProTeam: true,
+  },
+];
+export const latestContractorData = [
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/latest-blog-1.webp",
+    link: "/articles/large",
+    tags: ["Plumbing", "Drywall", "Blueprint"],
+    second: [
+      {
+        id: 2,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Migrating to Linear 101",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-1",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 3,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-2",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations 2",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/large-2",
+    tags: ["Leadership", "Management"],
+    second: [
+      {
+        id: 5,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-3",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 6,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-4",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations 2",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/large-2",
+    tags: ["Leadership", "Management"],
+    second: [
+      {
+        id: 8,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-3",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 9,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-4",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "UX review presentations 2",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/large-2",
+    tags: ["Leadership", "Management"],
+    second: [
+      {
+        id: 11,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get",
+        image: "/images/webp/latest-blog-2.webp",
+        link: "/articles/small-3",
+        tags: ["Architecture", "Planning"],
+      },
+      {
+        id: 12,
+        category: "Contractor",
+        date: "1 Jan 2023",
+        title: "Building your API Stack",
+        description:
+          "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag",
+        image: "/images/webp/latest-blog-3.webp",
+        link: "/articles/small-4",
+        tags: ["Design", "Frameworks"],
+      },
+    ],
+  },
+];
+export const articles = [
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 12,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 12,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+];
+export const contractorTypes: OptionType[] = [
+  {
+    value: "contractor",
+    label: "General Contractor",
+    icon: <ContractorToolsIcon />,
+  },
+  {
+    value: "electrician",
+    label: "Electrician",
+    icon: <Plug color="white" />,
+  },
+  {
+    value: "plumber",
+    label: "Plumber",
+    icon: <Wrench color="white" />,
+  },
+  {
+    value: "carpenter",
+    label: "Carpenter",
+    icon: <Hammer color="white" />,
+  },
+  {
+    value: "painter",
+    label: "Painter",
+    icon: <Paintbrush2 color="white" />,
+  },
+  {
+    value: "hvac",
+    label: "HVAC Technician",
+    icon: <ThermometerSun color="white" />,
+  },
+  {
+    value: "roofer",
+    label: "Roofer",
+    icon: <Castle color="white" />,
+  },
+  {
+    value: "landscaper",
+    label: "Landscaper",
+    icon: <Flower color="white" />,
+  },
+];
+export const plans: Plan[] = [
+  { name: "Freedom", cta: "Start for free", variant: "default" },
+  { name: "PRO", cta: "Get started", variant: "pro" },
+  { name: "PRO Team", cta: "Get started", variant: "proTeam" },
+];
+
+export const comparisonTableData: {
+  title: string;
+  key: string;
+  features: tableFeature[];
+}[] = [
+  {
+    title: "Lead & Client Management",
+    key: "lead",
+    features: [
+      {
+        name: "Track Your Leads & Clients",
+        description:
+          "Track leads, clients, subs, vendors, tenants, and over 50+ 'contact types' so you maintain a comprehensive communication history with every point of contact that's relevant to your business.",
+        available: [true, true, true],
+      },
+      {
+        name: "Opportunities Kanban",
+        description:
+          "Can track your deal flow using the Opportunities Kanban. This gives you a clear view of how your business is performing, and how much value each pipeline stage. Never let an opportunity slip through the cracks again.",
+        available: [false, true, true],
+      },
+      {
+        name: "Booking & Request Forms",
+        description:
+          "You can allow your clients to schedule estimates, or book your services directly from your website, or social media, and have these events show up on the appropriate schedule inside Contractor+.",
+        available: [false, true, true],
+      },
+      {
+        name: "Schedule Estimates",
+        description:
+          "Have an upcoming assessment/estimate/quote (whatever you call it)? You can schedule these appointments and assign them to the appropriate team members based on their availability.",
+        available: [false, true, true],
+      },
+      {
+        name: "Follow-Up Reminders",
+        description:
+          "Need a reminder to follow up? You can quickly create reminders, and even automatically create reminders to follow up when certain conditions are met. This ensures your team is never dropping the ball.",
+        available: [false, true, true],
+      },
+      {
+        name: "Residential & Commercial",
+        description: "Add both Residential & Commercial clients.",
+        available: [false, true, true],
+      },
+      {
+        name: "Multiple Points of Contact",
+        description:
+          "There's Contacts, Service Addresses, and Jobs. Each of these can have multiple points of contact. Each contact has their own communication timeline. Really convenient and easy to manage.",
+        available: [true, true, true],
+      },
+      {
+        name: "Multiple Service Addresses",
+        description:
+          "Each client can have multiple service addresses. Each service address has its own profile, schedule, photos & documents, etc.",
+        available: [false, true, true],
+      },
+      {
+        name: "Tenant & Property Access",
+        description:
+          "Every business is different. Track whatever additional information is important to you-like entry codes, PO Number, Tenant Name, Tenant Number etc.",
+        available: [false, true, true],
+      },
+
+      {
+        name: "Custom Client Portal",
+        description:
+          "A beautiful, sleek, secure & custom-branded client portal experience.",
+        available: [false, true, true],
+      },
+      {
+        name: "On-The-Way Notifications",
+        description:
+          "Notify your clients when you're on the way, or running late. Drop them an ETA and keep them updated. Proper communication builds trust and improves client satisfaction.",
+        available: [false, true, true],
+      },
+      {
+        name: "Automatically Collect Client Reviews",
+        description:
+          "All you have to do is enter your links for Google My Business and/or Yelp, and configure when you'd like to ask your clients for reviews, the software will handle the rest for you! Now you can grow your client testimonials and increase your online visibility on auto-pilot!",
+        available: [false, true, true],
+      },
+
+      {
+        name: "Automated Client Referrals",
+        description:
+          "Built-in automation settings that let you promote your referral program to your clients. You can specify how much you want to pay for client referrals, and Contractor+ will automatically promote your referral incentive to your clients. You can specify WHEN you want your clients to learn about your referral program, and we'll handle the rest.",
+        available: [false, true, true],
+      },
+      {
+        name: "Contracts & eSignatures",
+        description: (
+          <>
+            Automatically attach a client contract to any estimate or invoice
+            and require your client sign the agreement before scheduling the
+            work. <br /> <br /> Our lawyer has drafted a default client contract
+            that is valid and legally binding in most places, and, you can
+            customize your agreement for your specific terms and how you define
+            your client relationships. Either way - configure it once, and never
+            write another client contract again.
+          </>
+        ),
+        available: [false, true, true],
+      },
+      {
+        name: "W9 Form Automation",
+        description:
+          "Generate a W9 form for any client in the click of a button, or automatically attach it to any outgoing invoice email.",
+        available: [false, true, true],
+      },
+    ],
+  },
+  {
+    title: "Communication",
+    key: "comm",
+    features: [
+      {
+        name: "Contractor+ Voice",
+        description:
+          "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
+        available: [true, true, true],
+      },
+      {
+        name: "Two-Way SMS",
+        description:
+          "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
+        available: [false, true, true],
+      },
+      {
+        name: "Two-Way Email",
+        description:
+          "Send & receive email to your connected Gmail, Outlook or IMAP accounts. If you receive an email from an existing contact, it will be added directly to that contact in your Contractor+ CRM.",
+        available: [false, true, true],
+      },
+      {
+        name: "Call Recordings & Transcripts",
+        description:
+          "Every call is recorded and transcribed, making each and every call fully searchable. ",
+        available: [false, true, true],
+      },
+      {
+        name: "AI Sentiment Analysis",
+        description:
+          "All calls are analyzed for sentiment, and you can sort/filter by sentiment in the contacts list view, helping you identify clients that need a little extra TLC or outreach.",
+        available: [false, true, true],
+      },
+      {
+        name: "Big Chief AI Assistant",
+        description:
+          'Big Chief can answer your phone calls, qualify and capture your leads, intake service requests and schedule appointments. 24/7/365, without ever needing a break or "being busy on the other line" again.',
+        available: [false, true, true],
+      },
+    ],
+  },
+  {
+    title: "Estimates, Bids, Quotes, Proposals, Scopes",
+    key: "est",
+    features: [
+      {
+        name: "Call It What You Want",
+        description:
+          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you rename the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
+        available: [false, true, true],
+      },
+      {
+        name: "Optional Line Items & Add-Ons",
+        description:
+          "You can add multiple optional line items per group, pre-select which options are recommended, and choose whether you want to allow the user to select multiple options per group or a single option per group. This can be used to dynamically populate the total based on the preference of each lead or client. Perfect for Good/Better/Best or upsells and addons.",
+        available: [false, true, true],
+      },
+      {
+        name: "Local Material Pricing",
+        description:
+          "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
+        available: [false, true, true],
+      },
+      {
+        name: "Local Labor Rates",
+        description:
+          "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
+        available: [false, true, true],
+      },
+      {
+        name: "Estimatic AI",
+        description:
+          "Estimatic allows you to create estimates using the latest, most advanced reasoning models. You can upload photos, a competitors estimate, and even blueprints or drawings, tell it what you need to create an estimate for, and it will produce a beautiful, accurate, fully itemized estimate in minutes.",
+        available: [false, true, true],
+      },
+      {
+        name: "Line Item & Group Templates",
+        description:
+          'Import or setup your cost book as "Line Item Templates" or "Group Templates" for instant recall when creating an estimate. Your templates are also accessible by Estimatic AI.',
+        available: [false, true, true],
+      },
+      {
+        name: "Change Requests",
+        description:
+          "Your clients can request changes to an estimate or quote before approving it. This helps you work with your clients to get them a quote they're happy with before they sign your contract or you start your work.",
+        available: [false, true, true],
+      },
+
+      {
+        name: "Markup",
+        description:
+          "Add your markup on a per line item basis or globally at the bottom of any estimate or quote. You put your costs on the line item, and then mark it up so you can track your profitability, with full attribution at every job.",
+        available: [false, true, true],
+      },
+      {
+        name: "Adjustments",
+        description:
+          "Need to make a positive or negative adjustment at the bottom of an estimate or quote? No problem.",
+        available: [false, true, true],
+      },
+      {
+        name: "Ratio Lock",
+        description:
+          "Ratio Lock automates calculating the materials you need to complete a task. Just configure the amount of materials you need for one standard unit of measurement, enable the ratio lock and then increase the labor quantity. The materials will scale proportionally. ",
+        available: [false, true, true],
+      },
+    ],
+  },
+  {
+    title: "Invoicing & Payments",
+    key: "pay",
+    features: [
+      {
+        name: "Automated Invoicing",
+        description:
+          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you rename the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
+        available: [false, true, true],
+      },
+      {
+        name: "Upcoming Payment Notifications",
+        description:
+          "Your clients will automatically be notified about upcoming payments. No need to communicate these things manually.",
+        available: [false, true, true],
+      },
+      {
+        name: "Past Due Reminders",
+        description:
+          "You can automatically notify your clients anytime there's a past due balance. One less thing you (or your bookkeeper) needs to keep tabs on.",
+        available: [false, true, true],
+      },
+      {
+        name: "Change Orders",
+        description:
+          "Want to assess a Late Fee in the event a client is late on a payment? You can configure the late fee amount to be assessed and when to assess the fee. It's all automated so you don't have to think about it.",
+        available: [false, true, true],
+      },
+      {
+        name: "Late Fees",
+        description:
+          "You can choose whether or not you'd like to assess a late fee when an invoice becomes past-due. If configured, the late fee will be automatically assessed.",
+        available: [false, true, true],
+      },
+      {
+        name: "Import Expenses",
+        description:
+          "If you've added expenses that are marked as billable, and they haven't been invoices yet, you can quickly import them to any invoice for collections.",
+        available: [false, true, true],
+      },
+      {
+        name: "Batch/Bulk Payments",
+        description:
+          "If you have clients that have multiple projects going in parallel, they may cut you a check for more than one invoice/job. This allows you to record a single payment and attribute it to different invoices/jobs quickly and easily.",
+        available: [false, true, true],
+      },
+
+      {
+        name: "Credit & Debit Payments",
+        description:
+          "You can accept payments from all major debit and credit cards directly on your invoices, in your client portal and in-person.",
+        available: [false, true, true],
+      },
+      {
+        name: "ACH Payments",
+        description:
+          "Collecting a bank/ACH payment has never been easier. We've integrated with Plaid to facilitate fast, secure, frictionless ACH payments. Your clients can login to their bank, click pay, and the transaction is complete!",
+        available: [
+          false,
+          "2.9% Per Transaction",
+          "From 2.59%* Per Transaction",
+        ],
+      },
+      {
+        name: "Mobile Card Readers",
+        description:
+          "Order bluetooth Card Readers to accept payments in the field and on-the-go! We'll even send qualifying members a FREE card reader on the house.",
+        available: [
+          false,
+          "1% Per Transaction",
+          "1% Per Transaction (Capped at $10)",
+        ],
+      },
+      {
+        name: "Pass Transaction Fees To Clients",
+        description:
+          "Fees eat into every contractors margins. We allow you to pass the fees you'd normally have to eat, directly as a convenience fee for choosing to pay via card. This essentially means fee-free credit card processing for your business.",
+        available: [false, true, true],
+      },
+      {
+        name: "Accept Gratuity",
+        description:
+          "If enabled, you can give your customers the option to add a tip when making a payment. This is becoming more common in some areas and is a great way to reward your technicians for a job well done, that doesn't impact your margins.",
+        available: [false, true, true],
+      },
+      {
+        name: "Deposits",
+        description:
+          "You can specify your deposit requirements directly on an Estimate or Invoice and have it dynamically added to the contract. Your client will pay the deposit on a specified date or immediately upon approving the job.",
+        available: [false, true, true],
+      },
+      {
+        name: "Payment Schedules",
+        description:
+          "You can define an entire date or milestone specific schedule of payments on any Estimate, Invoice or Job. This can be automatically added to your client agreement so your client is contractually agreeing to the specific schedule. ",
+        available: [false, true, true],
+      },
+      {
+        name: "Wisetack Consumer Financing",
+        description: `Win more jobs and increase your average job size by offering "buy now pay later" style consumer financing to your customers directly on your estimates and invoices. By integrating this into your sales process, you'll sell more, and make more. `,
+        available: [false, true, true],
+      },
+      {
+        name: "Recurring Billing / Subscriptions",
+        description:
+          "Store your clients payment method on file to automatically bill them on a schedule, such as, upon each visit completion, or manually as a job progresses. No more needing to knock on the door or manually send an invoice. Fully automated, the way it should be. ",
+        available: [false, false, true],
+      },
+      {
+        name: "Next Day Funding",
+        description:
+          "Accept a card payment today, the funds hit your account the next business day. This is our standard turnaround for trusted merchants.",
+        available: [false, true, true],
+      },
+      {
+        name: "Instant Payouts",
+        description:
+          "Want your funds faster? If you can't wait until the next day, you can get your funds as soon as 30 minutes with Instant Payouts for 1%.",
+        available: [false, "1% Per Payout", "1% Per Payout"],
+      },
+    ],
+  },
+  {
+    title: "Job & Project Management",
+    key: "job",
+    features: [
+      {
+        name: "Tasks",
+        description:
+          "Keep track of your Tasks & Sub-Tasks to maintain an accurate progress report on every Job Site.",
+        available: [false, true, true],
+      },
+      {
+        name: "Subtasks",
+        description:
+          "Subtasks can be created under any task. Allowing you to break tasks into smaller steps, ensuring more accurate tracking & transparency across the board.",
+        available: [false, false, true],
+      },
+      {
+        name: "Gantt",
+        description: "Easily manage multi-phase projects with Gantt.",
+        available: [false, false, true],
+      },
+      {
+        name: "Import Phases & Tasks From Estimate",
+        description:
+          'Import "Groups" and "Line Items" as "Phases" and "Tasks" at the Job, to create a Job Template that can then be delegated and scheduled.',
+        available: [false, true, true],
+      },
+      {
+        name: "Recurring Jobs",
+        description:
+          "Have a job that reoccurs multiple times? A weekly visit? A monthly service call? You can quickly create recurring jobs in Contractor+. You can even attach a Service Agreement and configure automated billing to match the schedule of your recurring jobs!",
+        available: [false, true, true],
+      },
+      {
+        name: "Work Orders",
+        description:
+          "Prefer to use Work Orders to keep track of your jobs/projects? Contractor+ has both Jobs & Work Orders, so you can use whatever makes the most sense for your business.",
+        available: [false, true, true],
+      },
+      {
+        name: "Checklists",
+        description:
+          "Create multiple checklists for any Job, specific Phase or specific Task. Mandate the completion of these checklists on a specific schedule. With multiple templates to choose from.",
+        available: [false, false, true],
+      },
+
+      {
+        name: "Post-Inspections",
+        description:
+          "Post-Inspection reports allow you to review the work your crews have completed in the field, and optionally share the before and after results with your clients.",
+        available: [false, true, true],
+      },
+      {
+        name: "Photos & Documents",
+        description:
+          "Attach Photos and Documents to any Client or Project. Additional storage can be purchased if your limit is reached.",
+        available: [false, "250GB", "1TB"],
+      },
+      {
+        name: "Permits",
+        description:
+          "Track your permits for any job / project in a dedicated permits tab.",
+        available: [false, true, true],
+      },
+      {
+        name: "Weather",
+        description:
+          "Automatically track the Weather Forecast for any Job Site",
+        available: [false, true, true],
+      },
+      {
+        name: "Bid Management",
+        description:
+          "Have a specific Task or Phase of a Job that you need to find a subcontractor for? Open it up for bidding, or send a bid request to specific subcontractors in your area.",
+        available: [false, true, "Coming Soon"],
+      },
+      {
+        name: "Subcontractor Collaboration",
+        description:
+          "Collaborate with other contractors in real-time. Share Job, Phase or Task access with other companies using Contractor+ & invite your existing subcontractors without needing to pay for their access. Free for you, free for them. Everybody wins.",
+        available: [false, true, "Coming Soon"],
+      },
+    ],
+  },
+  {
+    title: "Productivity",
+    key: "productivity",
+    features: [
+      {
+        name: "To Do's",
+        description: "Add your Employees as Team Members.",
+        available: [true, true, "Coming Soon"],
+      },
+      {
+        name: "Reminders",
+        description:
+          "Never let something slip through the cracks again. Schedule reminders so you'll be alerted when it's time to follow up. ",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Action Items",
+        description:
+          "Never lose sight of anything that requires your attention again. Right on your dashboard, you can see any notification or alert that requires your input.",
+        available: [true, true, "coming soon"],
+      },
+      {
+        name: "Notes",
+        description:
+          "Notes can be added under just about anything, are visible in your communication history, and can be searched.",
+        available: [true, true, "coming soon"],
+      },
+      {
+        name: "Custom Reports",
+        description:
+          "With over 15+ built-in reports, you’ll know exactly how your business is doing.",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Custom Fields",
+        description:
+          "Need to track a specific variable on a per Lead, Client, Job, Estimate, Invoice (or whatever) basis? You can create all your Custom Fields to completely customize your Work Flow.",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Time Clock",
+        description:
+          "You can have your individual employees clock in and out against any task or job. You (or your managers) can optionally clock in and out on behalf of individual team members and even edit their past entry's. This will make your bookkeepers life a lot easier, while also giving you the ability to generate reports to know how efficient your employees are.",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Mileage Log",
+        description:
+          "You can track the mileage of any team member, and see their GPS route data at any time. All without having to purchase any additional external hardware or devices. This makes mileage reimbursement a breeze for your accountant.",
+        available: [false, true, "coming soon"],
+      },
+
+      {
+        name: "Tool & Equipment Tracking",
+        description:
+          "A streamlined tool and asset management solution with optional low-cost Bluetooth Tool Tags™ or - COMING SOON - one of 3 GPS trackers (no contracts, $25/tracker/month). Stop your tools from growing legs, hold your team and subs accountable, and always know where everything is located.",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Expense Tracking",
+        description:
+          "Track your expenses, know which expenses are reimbursable or billable and even import expenses and receipts to your invoices for reimbursement.",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Shopping Lists",
+        description:
+          "Never forget what you need to pick up at the store, or send the list via email like a purchase order to your preferred vendor(s) and expedite the ordering process.",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Full Control Over Settings",
+        description:
+          "You'll get access to change all kinds of settings related to Branding, Estimates, Invoices, Post-Inspections, Payments and more. ",
+        available: [false, true, "coming soon"],
+      },
+      {
+        name: "Email & SMS Templates",
+        description:
+          "Save a ton of time by configuring templates that you commonly send your clients and contacts. ",
+        available: [false, true, "Coming Soon"],
+      },
+      {
+        name: "Multiple Workspaces",
+        description:
+          "Big Chief is Contractor+'s native AI assistant & is trained on over 300 knowledgebase articles, all past customer communication, hundreds of past QA test cases, and has read access to all your important account information. The ultimate 24/7/365 support assistant and business growth advisor.",
+        available: [false, true, "Coming Soon"],
+      },
+      {
+        name: "Big Chief AI",
+        description:
+          "Big Chief is Contractor+'s native AI assistant & is trained on over 300 knowledgebase articles, all past customer communication, hundreds of past QA test cases, and has read access to all your important account information. The ultimate 24/7/365 support assistant and business growth advisor.",
+        available: [false, true, "Coming Soon"],
+      },
+    ],
+  },
+  {
+    title: "Integrations",
+    key: "integration",
+    features: [
+      {
+        name: "QuickBooks Online",
+        description:
+          "Sync your clients, estimates, invoices, payments, expenses and products & services with QuickBooks Online. ",
+        available: [false, false, true],
+      },
+      {
+        name: "CompanyCam",
+        description:
+          "Sync all your photos and documents directly to CompanyCam & vice versa. ",
+        available: [false, false, true],
+      },
+      {
+        name: "Thumbtack",
+        description:
+          "We offer exclusive lead generation to our clients. But for those who prefer to use Thumbtack, we've made a simple integration that lets you access your Thumbtack leads right inside the leads panel of Contractor+.",
+        available: [false, true, true],
+      },
+      {
+        name: "Angi",
+        description:
+          "Prefer Angi? We've made a simple integration that lets you access your Angi leads right inside the leads panel of Contractor+.",
+        available: [false, true, true],
+      },
+      {
+        name: "EarthCam",
+        description:
+          "If you use EarthCam, you can add your Job Site Live Cams to any job, client or service address. This lets you see what's going on at every job site, right from your Contractor+ dashboard.",
+        available: [false, true, true],
+      },
+      {
+        name: "Shovels",
+        description:
+          "Instantly access permit data for any property / service address.",
+        available: [false, true, true],
+      },
+      {
+        name: "iCal",
+        description: "Two-way calendar sync with any iCal calendar.",
+        available: [false, true, true],
+      },
+      {
+        name: "Google Calendar",
+        description: "Two-way calendar sync with any Google Calendar.",
+        available: [false, true, true],
+      },
+
+      {
+        name: "Outlook Calendar",
+        description: "Two-way calendar sync with any Outlook calendar.",
+        available: [false, true, true],
+      },
+      {
+        name: "Zapier",
+        description:
+          "Over 5,000 possible integrations you can configure to work with Contractor+ through Zapier.",
+        available: [false, false, true],
+      },
+      {
+        name: "SDevelopers API",
+        description:
+          "We have a full RESTful API, enabling you to build your own custom solutions that are in communication with Contractor+.",
+        available: [false, false, true],
+      },
+    ],
+  },
+];
+export const pricingfaqitems = [
+  {
+    id: 1,
+    question: "What are the differences between FREE, PRO and PRO TEAM?",
+    answer:
+      "The FREE plan allows you to manage your clients, prepare and send estimates, invoices, even collect payments via credit card and eCheck. You can do pretty much everything you need for a smaller proprietorship or single-member business. PRO will allow you to add your employees, coworkers, admin assistants, and subcontractors to collaborate on projects. It also gives you a lot more control over individual settings and configurations throughout the app. ULTIMATE is maximum performance – everything to the max. All the features of PRO + enterprise level customizations, third party API integrations, more payment options, it’s Contractor+ – without limits.  For a one man operation, the free version should work just fine. For small teams, PRO should be enough to get the job done. And for the medium to larger companies who expect the best and want it all – ULTIMATE is the plan that was designed for you.",
+  },
+  {
+    id: 2,
+    question:
+      "What if I buy an annual subscription of PRO but want to upgrade to ULTIMATE later?",
+    answer:
+      "We will prorate the difference between the two costs and apply any unused/remaining balance from your currently active PRO subscriptions to the cost of your Ultimate upgrade. There’s never a problem upgrading or downgrading at any time!",
+  },
+  {
+    id: 3,
+    question: "Do you have tutorials or offer assistance with account setup?",
+    answer:
+      "We offer both. We have video overviews and tutorials of every main feature and setting screen throughout our app. We also have coachmarks in the mobile apps that walk you through and explain each feature. We also have an amazing Customer Success team available 5 days a week offering 1-on-1 Zoom setup sessions, and demos. We’re here for you in every way possible to make sure you get up and running quickly and know how to properly utilize the app.",
+  },
+  {
+    id: 4,
+    question: "What is your cancellation & refund policy?",
+    answer:
+      "You can cancel at any time. It’s self-service, so you can upgrade, downgrade and cancel your account on your own in the click of a button. We offer a free for life version of our software and 14 day trials of most premium features (such as the job schedule and the team chat). During this period you should determine for yourself if upgrading to PRO or ULTIMATE is the best option for your business. You should not upgrade until you’ve properly evaluated the software, learned how to use everything and know that it’s the best choice for you. As such, Contractor+  is a digital, intangible good, and all sales are final. We will not honor any refunds for any reason, under any circumstances. We have thousands of users using our software successfully.  If you need help setting anything up or have questions, our Customer Success team is very accessible.",
+  },
+];
 export const blogData = [
   {
     id: 1,
@@ -958,14 +2222,6 @@ export const rightIcons = [
   },
 ];
 
-export interface FeatureLink {
-  id: string;
-  label: string;
-  description: string;
-  href: string;
-  isNew: boolean;
-  icon: JSX.Element;
-}
 export const featurelinks = [
   {
     id: "crm",
@@ -1388,26 +2644,6 @@ export const reviews = [
     userRole: "CEO at Rands Mechanical",
   },
 ];
-import animationData from "../../../public/lotties/crm.json";
-import live_scheduling from "../../../public/lotties/live-scheduling.json";
-import internal_job_chat from "../../../public/lotties/internal-job-chat.json";
-import estimate_builder from "../../../public/lotties/estimate-builder.json";
-import property_profile from "../../../public/lotties/property-profile.json";
-import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
-import {
-  ClientPortalIcon,
-  ContractIcon,
-  CrmPropertyIcon,
-  EstimateInvoicesIcons,
-  FieldServiceManagementIcon,
-  MoreEyeIcon,
-  PhoneIcon,
-  ProjectManageMentIcon,
-  ScheludingIcon,
-  SubManagementIcon,
-  TaskManagementIcon,
-} from "../why-contractor/Icons";
-import mobile from "../../../public/lotties/11-mobile.json";
 export const featureContentss = [
   {
     title: "The first CRM that thinks like a contractor",

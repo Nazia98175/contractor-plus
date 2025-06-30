@@ -19,19 +19,24 @@ interface Props {
 const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
     <section className="relative sm:pt-28 lg:pt-5">
+      {/* Desktop background image */}
       <Image
         className="absolute -top-[35%] left-0 z-0 hidden h-[83%] w-[100%] object-center md:flex lg:h-[100%] 2xl:h-[120%]"
-        src={"/images/webp/finally-desktop-bg.webp"}
+        src="/images/webp/finally-desktop-bg.webp"
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
+        sizes="100vw"
       />
+
+      {/* Mobile background image */}
       <Image
         className="absolute top-0 left-0 z-0 flex h-[110%] w-[100%] object-center md:hidden"
-        src={"/images/webp/finally-mobile-bg.webp"}
+        src="/images/webp/finally-mobile-bg.webp"
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
+        sizes="100vw"
       />
       {/* Device Images */}
       {/* <CardReveal
@@ -48,15 +53,16 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
           alt="Mobile"
           width={1098}
           height={578}
-          unoptimized
+          sizes="(min-width: 768px) 100vw"
         />
+
         <Image
           src="/images/webp/mix-screens-mobile.webp"
           className="drop-shadow-img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
           alt="Mobile"
           width={1098}
           height={578}
-          unoptimized
+          sizes="(max-width: 767px) 100vw"
         />
       </div>
       {/* </CardReveal> */}

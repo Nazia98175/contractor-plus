@@ -21,11 +21,14 @@ const LottieAnimation = ({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // console.log("Is intersecting:", entry.isIntersecting);
+        // console.log("Intersection Ratio:", entry.intersectionRatio);
+        // console.log("Bounding Client Rect:", entry.boundingClientRect);
+        // console.log("Viewport (Root) Bounds:", entry.rootBounds);
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 1.0, // Entire element must be fully in view
-        rootMargin: "-100px 0px -100px 0px", // top | right | bottom | left
+        threshold: 0.1,
       },
     );
 
@@ -40,13 +43,13 @@ const LottieAnimation = ({
     };
   }, []);
 
-  // Handle animation play/pause
   useEffect(() => {
-    if (lottieRef.current) {
+    const lottieInstance = lottieRef.current;
+    if (lottieInstance && typeof lottieInstance.play === "function") {
       if (isVisible) {
-        lottieRef.current.play();
+        lottieInstance.play();
       } else {
-        lottieRef.current.pause();
+        lottieInstance.pause();
       }
     }
   }, [isVisible]);

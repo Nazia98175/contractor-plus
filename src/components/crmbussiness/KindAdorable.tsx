@@ -1,6 +1,5 @@
-import { compareFeatures } from "../common/Helper";
+import Image from "next/image";
 import { BlackLogo } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
 import CompareCard from "./CompareCard";
 import CompareTable from "./CompareTable";
 export interface TheServiceProps {
@@ -12,12 +11,19 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
     <section className="relative">
       {slug === "estimate" && (
         <div>
-          <img
+          <Image
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            width={1920}
+            height={100}
             className="absolute top-[-152px] left-0 z-10 hidden h-full w-full md:block"
             src="/images/webp/finally-desktop-bg.webp"
             alt="finally bg"
           />
-          <img
+
+          <Image
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            width={1920}
+            height={100}
             className="absolute top-[-195px] left-0 z-10 block h-full w-full md:hidden"
             src="/images/webp/finally-mobile-bg.webp"
             alt=""

@@ -252,70 +252,70 @@ export const WIREFRAME_STYLE: StyleSpecification = {
       }
     },
     // Area/place labels (neighborhoods, districts)
-    {
-      id: "place_labels",
-      type: "symbol",
-      source: "openmaptiles",
-      "source-layer": "place",
-      minzoom: 10,
-      filter: [
-        "all",
-        ["has", "name"],
-        ["match", ["get", "class"], ["neighbourhood", "suburb", "quarter"], true, false]
-      ],
-      layout: {
-        "text-field": ["get", "name"],
-        "text-font": ["Noto Sans Bold"],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          10, 11,
-          14, 16
-        ],
-        "text-anchor": "center",
-        "text-max-width": 8,
-        "text-letter-spacing": 0.1
-      },
-      paint: {
-        "text-color": "rgb(200,200,200)",
-        "text-halo-color": "rgba(8,8,8,0.9)",
-        "text-halo-width": 2,
-        "text-opacity": 0.9
-      }
-    },
+    // {
+    //   id: "place_labels",
+    //   type: "symbol",
+    //   source: "openmaptiles",
+    //   "source-layer": "place",
+    //   minzoom: 10,
+    //   filter: [
+    //     "all",
+    //     ["has", "name"],
+    //     ["match", ["get", "class"], ["neighbourhood", "suburb", "quarter"], true, false]
+    //   ],
+    //   layout: {
+    //     "text-field": ["get", "name"],
+    //     "text-font": ["Noto Sans Bold"],
+    //     "text-size": [
+    //       "interpolate",
+    //       ["linear"],
+    //       ["zoom"],
+    //       10, 11,
+    //       14, 16
+    //     ],
+    //     "text-anchor": "center",
+    //     "text-max-width": 8,
+    //     "text-letter-spacing": 0.1
+    //   },
+    //   paint: {
+    //     "text-color": "rgb(200,200,200)",
+    //     "text-halo-color": "rgba(8,8,8,0.9)",
+    //     "text-halo-width": 2,
+    //     "text-opacity": 0.9
+    //   }
+    // },
     // City/town labels
-    {
-      id: "city_labels",
-      type: "symbol",
-      source: "openmaptiles",
-      "source-layer": "place",
-      minzoom: 8,
-      filter: [
-        "all",
-        ["has", "name"],
-        ["match", ["get", "class"], ["city", "town"], true, false]
-      ],
-      layout: {
-        "text-field": ["get", "name"],
-        "text-font": ["Noto Sans Bold"],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          8, 12,
-          12, 18
-        ],
-        "text-anchor": "center",
-        "text-max-width": 8,
-        "text-letter-spacing": 0.15
-      },
-      paint: {
-        "text-color": "rgb(220,220,220)",
-        "text-halo-color": "rgba(8,8,8,0.9)",
-        "text-halo-width": 2,
-        "text-opacity": 1
-      }
-    },
+    // {
+    //   id: "city_labels",
+    //   type: "symbol",
+    //   source: "openmaptiles",
+    //   "source-layer": "place",
+    //   minzoom: 8,
+    //   filter: [
+    //     "all",
+    //     ["has", "name"],
+    //     ["match", ["get", "class"], ["city", "town"], true, false]
+    //   ],
+    //   layout: {
+    //     "text-field": ["get", "name"],
+    //     "text-font": ["Noto Sans Bold"],
+    //     "text-size": [
+    //       "interpolate",
+    //       ["linear"],
+    //       ["zoom"],
+    //       8, 12,
+    //       12, 18
+    //     ],
+    //     "text-anchor": "center",
+    //     "text-max-width": 8,
+    //     "text-letter-spacing": 0.15
+    //   },
+    //   paint: {
+    //     "text-color": "rgb(220,220,220)",
+    //     "text-halo-color": "rgba(8,8,8,0.9)",
+    //     "text-halo-width": 2,
+    //     "text-opacity": 1
+    //   }
+    // },
   ],
 };

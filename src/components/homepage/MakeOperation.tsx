@@ -30,7 +30,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const icons = [make_operations_1, make_operations_2, make_operations_3];
 
   return (
-    <section ref={ref} className="relative z-10 overflow-visible pt-16">
+    <section ref={ref} className="relative z-10 pt-16">
       <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-0 left-0 hidden h-[500px] w-full max-w-[40px] rotate-[-45deg] rounded-[10px] opacity-20 blur-[34px] lg:block"></div>
       <Image
         className="pointer-events-none absolute -top-[10%] z-0 block max-w-[700px] object-cover lg:hidden"
@@ -40,7 +40,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         priority
       />
       <Image
-        className="pointer-events-none absolute -top-[50%] right-[-6px] z-0 hidden w-full max-w-[800px] lg:block"
+        className="pointer-events-none absolute -top-[50%] right-0 z-0 hidden w-full max-w-[800px] lg:block"
         src="/images/webp/large-comet.webp"
         width={800}
         height={1200}
@@ -49,17 +49,14 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       />
 
       <div className="main-container relative pb-10">
-        <PrimaryAnimatedText delay={3000}>
-          <h3 className="section-heading gradient-text text-center font-semibold">
-            {whateverOperation?.[1]?.title}
-          </h3>
-        </PrimaryAnimatedText>
-        <PrimaryAnimatedText
-          className="text-secondary pt-2 text-center text-sm sm:text-base md:text-lg xl:text-[22px]"
-          delay={3000}
-        >
+        {/* <PrimaryAnimatedText delay={3000}> */}
+        <h3 className="section-heading gradient-text text-center font-semibold">
+          {whateverOperation?.[1]?.title}
+        </h3>
+        {/* </PrimaryAnimatedText> */}
+        <h4 className="text-secondary pt-2 text-center text-sm sm:text-base md:text-lg xl:text-[22px]">
           {whateverOperation?.[1]?.sub_title}
-        </PrimaryAnimatedText>
+        </h4>
         <CardReveal
           distance={50}
           className="grid grid-cols-1 gap-5 pt-8 sm:grid-cols-2 md:grid-cols-3"

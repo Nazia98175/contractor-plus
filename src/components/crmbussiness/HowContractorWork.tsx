@@ -43,12 +43,14 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
 
         {/* Right: Content */}
         <div className="w-full max-w-[742px] space-y-4 lg:space-y-5">
-          <TextAnimation animateOnScroll={true} delay={0.3}>
-            <h3 className="text-winterWay heading">
-              {data?.title}
-              {/* Made for how contractors, property managers, and REIs really work */}
-            </h3>
-          </TextAnimation>
+          {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
+          <h3 className="text-winterWay hidden text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:block sm:text-2xl sm:font-semibold md:text-3xl xl:text-4xl">
+            {data?.title}
+          </h3>
+          <h3 className="gradient-text-2 xs:max-w-[83%] block max-w-[91%] text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:hidden sm:max-w-full">
+            {data?.title}
+          </h3>
+          {/* </TextAnimation> */}
 
           <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
             {data?.content?.map((feature, index) => (

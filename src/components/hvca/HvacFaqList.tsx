@@ -39,7 +39,7 @@ const HvacFaqList: React.FC<FaqListProps> = ({
         )}`}
       >
         <button className="flex w-full cursor-pointer items-center justify-between gap-5">
-          <h3 className="paragraph !mt-0 text-start !font-black !text-white">
+          <h3 className="!mt-0 text-start font-black text-white">
             {data.question}
           </h3>
           <span className="relative inline-block h-6 w-6">
@@ -47,7 +47,7 @@ const HvacFaqList: React.FC<FaqListProps> = ({
           </span>
         </button>
         <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
-          <p className="text-decemberSky font-jakarta w-[90%] max-w-[1113px] pt-4 text-sm sm:text-base">
+          <p className="text-decemberSky w-[90%] max-w-[1113px] pt-4 text-sm sm:text-base">
             {data.answer
               ?.split("<br/>")
               .map((line, i) => <span key={i}>{line}</span>)}

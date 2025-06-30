@@ -50,9 +50,9 @@ const variantClasses = {
   dark: {
     sectionTitle: "text-white",
     linkText: "text-decemberSky hover:text-romanRed",
-    bottomlink: "text-highRise hover:text-romanRed",
-    copyright: "text-highRise",
-    powered: "text-highRise",
+    bottomlink: "text-secondary hover:text-romanRed",
+    copyright: "text-secondary",
+    powered: "text-secondary",
     background: "bg-transparent",
   },
 };
@@ -107,10 +107,14 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           />
         </div>
       )}
+      {isCrmRoute ? (
+        <div className="bg-athenaBlue absolute top-[-124px] left-0 hidden h-[500px] w-[60px] rotate-45 opacity-30 blur-[40px] md:block"></div>
+      ) : (
+        <BlueIcon
+          className={` ${isCrmRoute ? "top-[-124px] left-0" : "top-[-364px] right-0"} pointer-events-none absolute hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block`}
+        />
+      )}
 
-      <BlueIcon
-        className={` ${isCrmRoute ? "top-[-124px] left-0" : "top-[-364px] right-0"} pointer-events-none absolute hidden h-full max-h-[1002px] w-full max-w-[463px] lg:block`}
-      />
       <div className="main-container">
         <div className="mx-auto flex max-w-[169px] flex-col items-center justify-center space-y-5 pb-8 text-center sm:max-w-[222px] xl:pb-12">
           {variant === "dark" ? <FooterLogoIcon /> : <FooterLightIcon />}

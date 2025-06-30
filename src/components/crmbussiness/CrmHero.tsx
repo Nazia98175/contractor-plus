@@ -11,10 +11,10 @@ import Link from "next/link";
 import AnimatedShape from "./AnimatedShape";
 interface TheHeroProps {
   hero: any;
+  slug?: string;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
+const CrmHero: React.FC<TheHeroProps> = ({ hero, slug }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
-
   useEffect(() => {
     gsap.to(wrapperRef.current, {
       opacity: 1,
@@ -30,6 +30,15 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
+      <CardReveal distance={30} delay={0.1}>
+        <div className="hidden items-center justify-center pb-6 md:flex">
+          <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+            {slug === "estimate"
+              ? "Contractor Estimate Software"
+              : "   Field Service CRM"}
+          </span>
+        </div>
+      </CardReveal>
       <div
         ref={wrapperRef}
         id="hero"
@@ -37,16 +46,20 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero }) => {
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
-            <TextAnimation delay={0.2} animateOnScroll={false}>
-              <h2 className="gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]">
-                {hero?.heroTitle}
-              </h2>
-            </TextAnimation>
-            <TextAnimation delay={0.4} animateOnScroll={false}>
-              <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
-                {hero?.heroDescription}
-              </p>
-            </TextAnimation>
+            {/* <TextAnimation delay={0.3} animateOnScroll={false}> */}
+            <h2
+              className={`${slug === "estimate" ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]" : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"} gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
+            >
+              {hero?.heroTitle}
+            </h2>
+            {/* </TextAnimation> */}
+            {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}
+            <p
+              className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
+            >
+              {hero?.heroDescription}
+            </p>
+            {/* </TextAnimation> */}
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.6}>

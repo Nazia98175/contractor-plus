@@ -40,7 +40,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
         {compareFeatures?.map((feature, index) => (
           <tr
             key={index}
-            className={` ${slug === "estimate" ? "divide-coconut border-coconut text-highRise" : "divide-decemberSky border-decemberSky text-winterWay"} font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base`}
+            className={` ${slug === "estimate" ? "divide-coconut border-coconut text-secondary" : "divide-decemberSky border-decemberSky text-winterWay"} font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base`}
           >
             <td className="text-winterWay p-2.5 lg:px-5 lg:py-3">
               {feature.featureName}

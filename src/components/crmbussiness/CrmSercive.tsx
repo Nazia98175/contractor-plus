@@ -6,6 +6,8 @@ interface Props {
   createBtn: string;
   mobileBtn: string;
   showClouds?: boolean;
+  className?: string;
+  variant?: "default" | "primary" | "secondary";
 }
 
 const CrmSercive: React.FC<Props> = ({
@@ -14,6 +16,8 @@ const CrmSercive: React.FC<Props> = ({
   createBtn,
   mobileBtn,
   showClouds,
+  className,
+  variant = "default",
 }) => {
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
@@ -25,6 +29,8 @@ const CrmSercive: React.FC<Props> = ({
           placeholder={data?.placeholder}
           createBtn={createBtn}
           mobileBtn={mobileBtn}
+          variant={variant}
+          className={className}
         />
       </div>
       {showClouds !== false && (

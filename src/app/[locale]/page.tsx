@@ -29,7 +29,7 @@ export default async function Home({
   } = await getHomepageData(useParams?.locale);
 
   return (
-    <div className="relative">
+    <>
       <div className="relative overflow-hidden">
         <Hero homePageContent={homePageContent?.data} />
         <TrustBar
@@ -56,12 +56,11 @@ export default async function Home({
         blogs={blogs?.data}
         blogHeading={homePageContent?.data?.blogs}
       />
-
       <EntireBusiness
         entireBusiness={homePageContent?.data?.entireBusiness}
         ncc_text={homePageContent?.data?.ncc_text}
         mobileBtn={homePageContent?.data?.mobileBtn}
       />
-    </div>
+    </>
   );
 }

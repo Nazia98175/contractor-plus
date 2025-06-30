@@ -19,17 +19,10 @@ const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
   return (
     <section className="relative z-20 bg-white">
       <div className="mx-auto w-full max-w-[985px] pt-12 text-center md:text-start">
-        <PrimaryAnimatedText
-          className="sub-heading text-lightBlack w-full font-semibold md:w-fit"
-          delay={3000}
-        >
+        <h4 className="sub-heading text-lightBlack w-full font-semibold md:w-fit">
           {coreFeatures?.title}
-        </PrimaryAnimatedText>
-        <PrimaryAnimatedText className="mt-3 leading-[130%]" delay={4000}>
-          {coreFeatures?.sub_title}
-          {/* When the tools actually work together, you move like a company twice
-          your size. */}
-        </PrimaryAnimatedText>
+        </h4>
+        <h5 className="mt-3 leading-[130%]">{coreFeatures?.sub_title}</h5>
         <CoreFeaturesCard featuresList={coreFeatures?.cardsDetail} />
       </div>
     </section>

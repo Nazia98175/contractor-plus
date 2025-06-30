@@ -5,11 +5,11 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import WhateverBackground from "./WhateverBackground";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -53,154 +53,121 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       }
     });
   };
-  useGSAP(
-    () => {
-      waitUntilFullyLoaded().then(() => {
-        if (!sectionRef.current || !containerRef.current) return;
+  useEffect(() => {
+    const setupAnimation = () => {
+      if (
+        !sectionRef.current ||
+        !containerRef.current ||
+        !left1Ref.current ||
+        !left2Ref.current ||
+        !left3Ref.current ||
+        !right1Ref.current ||
+        !right2Ref.current ||
+        !right3Ref.current ||
+        !centerRef.current
+      ) {
+        return;
+      }
 
-        // Clear previous triggers and tweens
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-        gsap.killTweensOf([
-          left1Ref.current,
-          left2Ref.current,
-          left3Ref.current,
-          right1Ref.current,
-          right2Ref.current,
-          right3Ref.current,
-          centerRef.current,
-        ]);
-
-        const getInitial = (val: number) => {
-          if (isMobile) return val * 0.6;
-          if (isTablet) return val * 0.8;
-          return val;
-        };
-
-        const scrollTrigger = {
-          trigger: sectionRef.current,
-          start: "top 70%",
-          end: "bottom bottom",
-          scrub: 1,
-        };
-
-        const animate = (
-          el: HTMLDivElement | null,
-          finalX: string,
-          finalY: string,
-          initialX: number,
-          initialY: number,
-        ) => {
-          if (!el) return;
-          gsap.set(el, {
-            position: "absolute",
-            left: finalX,
-            top: finalY,
-            xPercent: -50,
-            yPercent: -50,
-            opacity: 0,
-            scale: 0.2,
-            filter: "blur(8px)",
-            x: getInitial(initialX),
-            y: getInitial(initialY),
-          });
-          setTimeout(() => {
-            gsap.to(el, {
-              x: 0,
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              filter: "blur(0px)",
-              ease: "power2.out",
-              scrollTrigger,
-            });
-          }, 3000);
-        };
-
-        animate(left1Ref.current, "47%", "25%", -150, -80);
-        animate(left2Ref.current, "18%", "70%", -150, 80);
-        animate(left3Ref.current, "81%", "75%", -150, 80);
-
-        animate(right1Ref.current, "26%", "30%", 150, -80);
-        animate(right2Ref.current, "79%", "70%", 150, 80);
-        animate(right3Ref.current, "28%", "75%", 150, 80);
-
-        if (centerRef.current) {
-          gsap.set(centerRef.current, {
-            y: 80,
-            scale: 0.3,
-            opacity: 0,
-            filter: "blur(8px)",
-          });
-          setTimeout(() => {
-            gsap.to(centerRef.current, {
-              y: 0,
-              scale: 1,
-              opacity: 1,
-              filter: "blur(0px)",
-              ease: "power2.out",
-              scrollTrigger,
-            });
-          }, 3000);
-        }
+      // Optional: Only kill triggers created by this component, not global ones
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.trigger === sectionRef.current) t.kill();
       });
-    },
-    { scope: sectionRef, dependencies: [isMobile, isTablet, isDesktop] },
-  );
+
+      gsap.killTweensOf([
+        left1Ref.current,
+        left2Ref.current,
+        left3Ref.current,
+        right1Ref.current,
+        right2Ref.current,
+        right3Ref.current,
+        centerRef.current,
+      ]);
+
+      const getInitial = (val: number) => {
+        if (isMobile) return val * 0.6;
+        if (isTablet) return val * 0.8;
+        return val;
+      };
+
+      const scrollTrigger = {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "bottom bottom",
+        scrub: 1,
+      };
+
+      const animate = (
+        el: HTMLDivElement | null,
+        finalX: string,
+        finalY: string,
+        initialX: number,
+        initialY: number,
+      ) => {
+        if (!el) return;
+        gsap.set(el, {
+          position: "absolute",
+          left: finalX,
+          top: finalY,
+          xPercent: -50,
+          yPercent: -50,
+          opacity: 0,
+          scale: 0.2,
+          filter: "blur(8px)",
+          x: getInitial(initialX),
+          y: getInitial(initialY),
+        });
+
+        gsap.to(el, {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+          ease: "power2.out",
+          scrollTrigger,
+        });
+      };
+
+      animate(left1Ref.current, "47%", "25%", -150, -80);
+      animate(left2Ref.current, "18%", "70%", -150, 80);
+      animate(left3Ref.current, "81%", "75%", -150, 80);
+      animate(right1Ref.current, "26%", "30%", 150, -80);
+      animate(right2Ref.current, "79%", "70%", 150, 80);
+      animate(right3Ref.current, "28%", "75%", 150, 80);
+
+      gsap.set(centerRef.current, {
+        y: 80,
+        scale: 0.3,
+        opacity: 0,
+        filter: "blur(8px)",
+      });
+      gsap.to(centerRef.current, {
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        filter: "blur(0px)",
+        ease: "power2.out",
+        scrollTrigger,
+      });
+    };
+
+    waitUntilFullyLoaded().then(setupAnimation);
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.trigger === sectionRef.current) t.kill();
+      });
+    };
+  }, [isMobile, isTablet, isDesktop]);
 
   return (
-    <section ref={sectionRef} className="relative z-10 w-full">
-      {/* Desktop Background */}
-      {isDesktop && (
-        <Image
-          className="pointer-events-none absolute -top-[42%] right-0 z-10 max-w-[700px] object-cover"
-          src="/images/webp/Whatever-right-bg.webp"
-          width={700}
-          height={300}
-          alt="gradient background"
-        />
-      )}
-
-      {!isDesktop && (
-        <div>
-          <picture>
-            <source
-              media="(max-width: 1023px)"
-              srcSet="/images/webp/whatever-gredient-bg-mobile-left.webp"
-              type="image/webp"
-            />
-            <Image
-              className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-cover"
-              src="/images/webp/whatever-gredient-bg-mobile-left.webp"
-              width={500}
-              height={1000}
-              alt="gradient background left"
-              priority
-            />
-          </picture>
-          <picture>
-            <source
-              media="(max-width: 1023px)"
-              srcSet="/images/webp/whatever-gredient-bg-mobile-right.webp"
-              type="image/webp"
-            />
-            <Image
-              className="pointer-events-none absolute top-0 right-0 z-10 h-full w-full object-center"
-              src="/images/webp/whatever-gredient-bg-mobile-right.webp"
-              width={500}
-              height={1000}
-              alt="gradient background right"
-              priority
-            />
-          </picture>
-        </div>
-      )}
-
+    <section ref={sectionRef} className="relative z-10 w-full px-2">
+      <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
-        <PrimaryAnimatedText delay={3000}>
-          <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
-            <span>{whateverOperation?.[0]?.title}</span>
-          </h3>
-        </PrimaryAnimatedText>
+        <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
+          <span>{whateverOperation?.[0]?.title}</span>
+        </h3>
 
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
           <div
@@ -315,12 +282,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           </div>
         </div>
 
-        <PrimaryAnimatedText delay={3000}>
-          <p className="text-granite text-center text-lg capitalize opacity-90">
-            <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
-            {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
-          </p>
-        </PrimaryAnimatedText>
+        {/* <PrimaryAnimatedText delay={3000}> */}
+        <p className="text-granite text-center text-lg capitalize opacity-90">
+          <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
+          {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
+        </p>
+        {/* </PrimaryAnimatedText> */}
       </div>
     </section>
   );

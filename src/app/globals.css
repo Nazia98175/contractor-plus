@@ -3,12 +3,14 @@
 
 @import "tailwindcss";
 @theme {
+  /* FONTS */
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-myriad: "Myriad Pro", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
 
+  /* COLORS */
   --color-secondary: #adb1b5;
   --color-superSilver: #f0f0f0;
   --color-wallStreet: #656c73;
@@ -23,6 +25,7 @@
   --color-ruinedSmores: #111216;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
+  --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
   --color-reflection: #cbd5e1;
@@ -46,7 +49,6 @@
   --color-phantom: #e99c44;
   --color-heatherGrey: #9f9fa1;
   --color-blackRussian: #202125;
-  --color-highRise: #adb1b5;
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
   --color-sangoPink: #f4ada5;
@@ -56,14 +58,15 @@
   --color-cyanBlue: #8a8e91;
   --color-tealBlue: #585a5e;
   --color-coconut: #e6e9f5;
-
+  --color-cyberspace: #44474b;
   --color-rgba1: #ffffff99;
-  --color-x`: #1c273133;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
 
-  --breakpoint-xs: 560px;
+  /* BREAKPOINTS */
+
+  --breakpoint-xs: 376px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -73,8 +76,10 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
 
+  /* FONT-SIZE */
   --text-custom-4xl: 32px;
 
+  /* BACKGROUNG_IMG */
   --background-image-red-linear: linear-gradient(
     262deg,
     #dc1112 -10.83%,
@@ -129,7 +134,13 @@
     #a89d9d05 41%,
     #1b191900 100%
   );
+  --background-image-custom-1: linear-gradient(
+    180deg,
+    #0c0d1100 18.46%,
+    #0c0d11 69.34%
+  );
 
+  /* SHADOW */
   --shadow-c1:
     0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   --shadow-c2:
@@ -137,13 +148,15 @@
   --shadow-c3: 18px 40px 150px rgba(0, 0, 0, 0.25);
   --shadow-c4: 18px 40px 80px rgba(0, 0, 0, 0.25);
 
+  /* DROP-SHADOW */
   --drop-shadow-custom-shadow-img: 24px 18px 22px #00000078;
   --drop-shadow-img-shadow: (
-      -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)
-    )
-    drop-shadow(-11.7591px 10.5832px 13.8252px rgba(0, 0, 0, 0.14175))
-    drop-shadow(-4.87787px 4.39008px 8.26719px rgba(0, 0, 0, 0.169969))
-    drop-shadow(-1.13236px 1.01913px 4.38496px rgba(0, 0, 0, 0.21));
+    -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)
+  );
+}
+
+.image-custom-shadow {
+  -webkit-filter: drop-shadow(24px 18px 22px #00000078);
 }
 @font-face {
   font-family: "Myriad Pro";
@@ -173,31 +186,29 @@ body {
   @apply mx-auto w-full max-w-[1308px] px-2;
 }
 .main-heading {
-  @apply text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
+  @apply xs:text-[28px] text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl xl:text-[52px];
 }
 .hero-description {
-  @apply text-decemberSky text-xs leading-[130%] font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg;
+  @apply text-decemberSky xs:text-sm text-xs leading-[130%] font-semibold md:text-base md:font-medium lg:text-lg;
 }
 .section-heading {
-  @apply text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-4xl sm:font-semibold lg:text-[42px];
+  @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg;
 }
-.paragraph {
-  @apply text-wallStreet font-medium;
-}
+
 .paragraph-style {
   @apply text-wallStreet mt-1.5 text-sm md:mt-4 md:text-base md:font-medium;
 }
 .sub-heading {
-  @apply text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
+  @apply xs:text-2xl text-xl !leading-[128%] sm:text-[26px] md:text-[28px] lg:text-[32px];
 }
 .small-heading {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply text-lg font-semibold -tracking-[0.44px] text-[#44474B] sm:text-xl md:text-[22px];
+  @apply text-lg font-semibold -tracking-[0.44px] sm:text-xl md:text-[22px];
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
@@ -211,6 +222,7 @@ body {
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
+
 .feature-btn {
   @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[75%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
@@ -518,7 +530,7 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
-.crm-gradient .line {
+.crm-gradient {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
   -webkit-background-clip: text;
@@ -547,19 +559,15 @@ html::-webkit-scrollbar {
 }
 
 .field-service-card {
-  border: 1px solid #ffffff4e;
   z-index: 9999;
+  backdrop-filter: blur(18px);
+  filter: drop-shadow(0 15px 30px #0000001a);
   background:
-    lightgray 0% 0% / 100px 100px repeat,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      #ffffff14 0%,
-      #ffffff00 99.59%
-    ),
-    linear-gradient(180deg, #2e335a00 0%, #1c1b331a 100%);
-  backdrop-filter: blur(20px);
-  box-shadow: inset 0px 0px 100px #ccd7ff26;
-  filter: drop-shadow(0px 15px 30px #0000001a);
+    0 0 / 100px 100px,
+    radial-gradient(146.13% 118.42% at 50% -15.5%, #171717 0%, #fff0 99.59%),
+    linear-gradient(#2e335a00 0%, #1c1b331a 100%);
+  border: 1px solid #ffffff4e;
+  box-shadow: inset 0 0 100px #ccd7ff26;
 }
 .wanting-more-bg {
   border: 1px solid #fff;
@@ -1199,9 +1207,14 @@ button {
 .real-time-active-slider .swiper-slide {
   @apply opacity-30 transition-all duration-300 ease-out;
 }
-
+.real-time-active-slider .swiper-slide p {
+  @apply text-decemberSky;
+}
 .real-time-active-slider .swiper-slide-active {
   @apply opacity-100 transition-all duration-300 ease-out;
+}
+.real-time-active-slider .swiper-slide-active p {
+  @apply text-secondary;
 }
 
 .their-way {
@@ -1446,16 +1459,11 @@ button {
   background-clip: content-box, border-box;
 }
 .estimate-overlap-card {
-  border-radius: 40px;
   border: 1px solid #fff;
   background:
-    lightgray 0% 0% / 100px 100px repeat,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0) 99.59%
-    ),
-    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+    0 0 / 100px 100px,
+    radial-gradient(146.13% 118.42% at 50% -15.5%, #171717 0%, #fff0 99.59%),
+    linear-gradient(#2e335a00 0%, #1c1b331a 100%);
   box-shadow:
     0px -33px 40px 0px rgba(0, 0, 0, 0.2),
     0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,

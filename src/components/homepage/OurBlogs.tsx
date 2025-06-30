@@ -1,13 +1,9 @@
 "use client";
-import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
-import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-import OurBlogCard from "./OurBlogCard";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import PrimaryLink from "../common/PrimaryLInk";
+import SliderLayout from "../common/SliderLayout";
+import OurBlogCard from "./OurBlogCard";
 
 interface Blogs {
   blogTitle: string;
@@ -26,24 +22,6 @@ interface TheBlogProps {
 }
 
 const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
-  const t = useTranslations("blogs");
-  const blogList = t.raw("blogList") as {
-    id: number;
-    title: string;
-    date: string;
-    category: string;
-    description: string;
-    image: string;
-  }[];
-
-  // Get featured blog data
-  const featuredBlog = t.raw("featuredBlog") as {
-    category: string;
-    timeAgo: string;
-    title: string;
-    description: string;
-    image: string;
-  };
   const blogListMobile = [
     {
       id: 1,
@@ -70,7 +48,6 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "305px",
-      // hasBlurEffect: true,
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
@@ -78,11 +55,11 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     <section className="relative z-10 overflow-hidden bg-white px-4 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
-          <PrimaryAnimatedText delay={3000}>
-            <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
-              {blogHeading?.[0]?.title}
-            </h2>
-          </PrimaryAnimatedText>
+          {/* <PrimaryAnimatedText delay={3000}> */}
+          <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
+            {blogHeading?.[0]?.title}
+          </h2>
+          {/* </PrimaryAnimatedText> */}
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.[1]?.btnTxt}

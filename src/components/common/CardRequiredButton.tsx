@@ -4,17 +4,19 @@ import { CheckIcon } from "./Icons";
 interface CardRequiredButtonProps {
   className?: string;
   text: string;
+  showIcon?: boolean;
 }
 
 const CardRequiredButton: React.FC<CardRequiredButtonProps> = ({
-  className = "text-secondary",
+  className = "",
   text = "",
+  showIcon = true,
 }) => {
   return (
     <button
-      className={`${className} font-myriad hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex`}
+      className={`${className} font-myriad text-secondary hidden cursor-pointer items-center gap-1.5 text-sm font-semibold sm:flex`}
     >
-      <CheckIcon />
+      {showIcon && <CheckIcon />}
       {text}
     </button>
   );

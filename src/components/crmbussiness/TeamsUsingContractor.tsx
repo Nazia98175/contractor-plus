@@ -8,8 +8,9 @@ import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
 export interface Props {
   data: any;
+  slug?: string;
 }
-const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
+const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
   // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -28,16 +29,16 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
   return (
     <section
       ref={ref}
-      className="main-container relative z-30 flex flex-col items-center justify-center px-2 pt-[52px] md:pt-16 xl:pt-[93px]"
+      className="main-container relative z-30 flex flex-col items-center justify-center px-2 py-[52px] md:py-16 xl:py-[93px]"
     >
-      <TextAnimation animateOnScroll={true} delay={0.2}>
-        <h2 className="crm-gradient section-heading mx-auto max-w-[951px] text-center !font-black lg:!font-semibold">
-          {data?.title}
-        </h2>
-      </TextAnimation>
-      <TextAnimation animateOnScroll={true} delay={0.2}>
-        <p className="paragraph-style text-center">{data?.sub_title}</p>
-      </TextAnimation>
+      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
+      <h2 className="crm-gradient section-heading xs:max-w-[95%] mx-auto max-w-[92%] text-center !font-black sm:max-w-[951px] lg:!font-semibold">
+        {data?.title}
+      </h2>
+      {/* </TextAnimation> */}
+      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
+      <p className="paragraph-style text-center">{data?.sub_title}</p>
+      {/* </TextAnimation> */}
       <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-[18px] px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 md:gap-[30px] xl:mt-[52px] xl:mb-[70px]">
         {data?.cards?.map((item: any, index: any) => (
           <article
@@ -47,8 +48,10 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             <span className="mb-1 h-[31px] w-[31px]">
               {icons[index % icons.length]}
             </span>
-            <h3 className="text-winterWay countup-title flex items-center">
-              <span className="flex w-[60px] justify-center">
+            <h3 className="text-winterWay countup-title flex items-center justify-center">
+              <span
+                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[60px]"}`}
+              >
                 {inView && (
                   <CountUp
                     start={item.start}
@@ -83,7 +86,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/software-advice.webp"
-            className="drop-shadow-custom-shadow-img isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            className="image-custom-shadow isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             alt="Software Advice"
           />
 
@@ -91,7 +94,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/leader.webp"
-            className="drop-shadow-custom-shadow-img isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
+            className="image-custom-shadow isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
@@ -99,14 +102,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data }) => {
             width={121}
             height={80}
             src="/images/webp/get-app.webp"
-            className="drop-shadow-custom-shadow-img isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
+            className="image-custom-shadow isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
           />
           <Image
             width={121}
             height={80}
             src="/images/svg/capterra.svg"
-            className="drop-shadow-custom-shadow-img isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="image-custom-shadow isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
           />
         </div>

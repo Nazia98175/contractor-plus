@@ -20,8 +20,7 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import EntireBusiness from "@/components/homepage/EntireBusiness";
 import HvacFaq from "@/components/hvca/HvacFaq";
 import TrustBarHvca from "@/components/hvca/TrustBarHvca";
-import { getBlogs } from "@/services/blogs";
-import { getCrmPage } from "@/services/crm";
+import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -44,66 +43,29 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   if (!useParams?.slug) {
     return notFound();
   }
-  const [
+  const {
     crmPageContent,
     reviews,
-    section3,
-    section4,
-    section5,
-    section6,
-    section7,
-    faq,
+    switchingTool,
+    fieldServiceData,
+    trackProperties,
+    comparison,
+    teamsUsingContractor,
+    faqs,
     blogs,
-  ] = await Promise.all([
-    getCrmPage(useParams?.slug, useParams.locale, "&populate=*"),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[reviews][populate]=reviews",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[switchingTool][populate]=cardsDetail",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[fieldService][populate][cardsDetail][populate]=*",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[trackProperties][populate][cardDetails][populate]=*",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[comparison][populate][centerLogo]=true&populate[comparison][populate][features]=true",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[teamsUsingContractor][populate][cards]=*",
-    ),
-    getCrmPage(
-      useParams?.slug,
-      useParams.locale,
-      "&populate[faqs][populate]=faq",
-    ),
-    getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-  ]);
-  const theme = useParams.slug === "estimate" ? "estimateTheme" : "dark";
+  } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
+  const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
+  const page = crmPageContent?.data?.[0];
   return (
     <>
       {crmPageContent?.data?.length > 0 && (
         <>
-          <CrmHero hero={crmPageContent?.data?.[0]?.hero} />
+          <CrmHero hero={page?.hero} slug={useParams?.slug} />
           <TrustedService reviews={reviews} />
-          <SwitchingTool switchingTool={section3?.data?.[0]?.switchingTool} />
+          <SwitchingTool switchingTool={switchingTool?.switchingTool} />
           <FieldService
             slug={useParams?.slug}
-            fieldService={section4?.data?.[0]?.fieldService}
+            fieldService={fieldServiceData?.fieldService}
             theme={theme}
             apiData={true}
           />
@@ -112,29 +74,30 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             {useParams?.slug === "crm" && (
               <>
                 <TrackProperties
-                  ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-                  trackProperties={section5?.data?.[0]?.trackProperties}
+                  ncc={page?.hero?.ncc_txt}
+                  trackProperties={trackProperties?.trackProperties}
                 />
 
                 <LikeYouDoContacts
-                  data={section5?.data?.[0]?.trackProperties?.cardDetails?.[0]}
+                  data={trackProperties?.trackProperties?.cardDetails?.[0]}
                 />
                 <HowContractorWork
-                  ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-                  trackProperties={section5?.data?.[0]?.trackProperties}
-                  data={section5?.data?.[0]?.trackProperties?.cardDetails?.[1]}
+                  ncc={page?.hero?.ncc_txt}
+                  trackProperties={trackProperties?.trackProperties}
+                  data={trackProperties?.trackProperties?.cardDetails?.[1]}
                 />
               </>
             )}
             <KindAdorable
               slug={useParams?.slug}
-              kindAdorable={section6?.data?.[0]?.comparison}
+              kindAdorable={comparison?.comparison}
             />
             <TeamsUsingContractor
-              data={section7?.data?.[0]?.teamsUsingContractor}
+              data={teamsUsingContractor?.teamsUsingContractor}
+              slug={useParams?.slug}
             />
             <ThousandsReviews
-              data={crmPageContent?.data?.[0]?.thousandReviews}
+              data={page?.thousandReviews}
               reviews={reviews?.data?.[0]?.reviews?.reviews}
             />
           </div>
@@ -142,24 +105,25 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
             <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
             <CrmSercive
-              createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
-              mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
-              ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
-              data={crmPageContent?.data?.[0]?.crmService}
+              createBtn={page?.hero?.createBtn}
+              mobileBtn={page?.hero?.mobileBtn}
+              ncc={page?.hero?.ncc_txt}
+              data={page?.crmService}
+              variant="primary"
+              className={` ${useParams?.slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[780px] sm:pt-0"}`}
             />
-
             <TrustBarHvca
               platforms={platforms}
               className="mx-auto w-full max-w-[889px]"
             />
             <Faq
-              faq={faq?.data?.[0]?.faqs}
+              faq={faqs?.faqs}
               classNameAnswer="pt-1"
               mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0 px-2"
             />
           </div>
           <BlogPosts
-            data={crmPageContent?.data?.[0]?.blogs}
+            data={page?.blogs}
             blogs={blogs}
             className="mt-7 md:mt-9"
           />

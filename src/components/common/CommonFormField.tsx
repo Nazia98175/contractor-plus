@@ -3,6 +3,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import TextAnimation from "./TextAnimation";
 import CardReveal from "./CardReveal";
 import { CheckIcon } from "./Icons";
+import { variantsForm } from "@/utils/getVariants";
 
 interface CommonFormFieldProps {
   title: string;
@@ -11,6 +12,10 @@ interface CommonFormFieldProps {
   createBtn: string;
   mobileBtn?: string;
   ncc: string;
+  showTitle?: boolean;
+  showDescription?: boolean;
+  className?: string;
+  variant?: "default" | "primary" | "secondary";
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({
@@ -20,6 +25,10 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   createBtn,
   mobileBtn,
   ncc,
+  showTitle = true,
+  showDescription = true,
+  variant = "default",
+  className,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -40,18 +49,32 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
     setEmail(e.target.value);
   };
 
+  const getVariantStyles = () => {
+    return variantsForm[variant];
+  };
+  const variantStyles = getVariantStyles();
+
   return (
     <>
-      <TextAnimation animateOnScroll={false} delay={0.2}>
-        <h3 className="section-heading text-decemberSky sub-heading mx-auto max-w-[780px] pb-2 text-center">
+      {showTitle && (
+        // <TextAnimation animateOnScroll={false} delay={0.2}>
+        <h3
+          className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
+        >
           {title}
         </h3>
-      </TextAnimation>
-      <TextAnimation animateOnScroll={false} delay={0.2}>
-        <p className="paragraph-text text-secondary mb-7 text-center md:mb-[34px]">
+        // </TextAnimation>
+      )}
+
+      {showDescription && (
+        // <TextAnimation animateOnScroll={false} delay={0.2}>
+        <p
+          className={`paragraph-text mb-7 text-center md:mb-[34px] ${variantStyles.subtitle}`}
+        >
           {sub_title}
         </p>
-      </TextAnimation>
+        // </TextAnimation>
+      )}
       <CardReveal distance={50}>
         <form
           className="mx-auto hidden w-full max-w-[550px] flex-col items-start justify-center gap-3 sm:flex md:max-w-[657px] md:flex-row"
@@ -64,7 +87,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
               required
               value={email}
               onChange={handleEmailChange}
-              className="h-[40px] w-full rounded-[6px] bg-white px-2 outline-none placeholder:text-[#ADB1B5]"
+              className={`h-[40px] w-full rounded-[6px] px-2 outline-none ${variantStyles.input}`}
             />
           </div>
           <div className="flex w-full flex-col items-center justify-center md:w-fit">

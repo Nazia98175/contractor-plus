@@ -1,0 +1,7 @@
+.timing-text-style .split-line {
+  text-align: center;
+}
+
+.bg-gradient-bar {
+  background: linear-gradient(180deg, white, transparent);
+}

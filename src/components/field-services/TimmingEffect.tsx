@@ -18,249 +18,369 @@ import {
   stepThreeAnimation,
   stepTwoAnimation,
 } from "./animations";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(useGSAP);
+// Register the SplitText plugin
+gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const TimmingEffect = () => {
   const timelineWrapperRef = useRef(null);
 
-  console.log("====================================");
-  console.log(timelineWrapperRef, "timelineWrapperRef");
-  console.log("====================================");
   useGSAP(() => {
-    const scrollTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#timeline-wrapper",
-        start: "top 0%",
-        end: `+=${window.innerHeight * 8}`,
-        pin: true,
-        scrub: 1,
-        markers: false,
-      },
-    });
+    setTimeout(() => {
+      const scrollTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#timeline-wrapper",
+          start: "top 0%",
+          end: `+=${window.innerHeight * 6}`,
+          pin: true,
+          scrub: 1,
+          markers: false,
+        },
+      });
+      const timingImage = document.querySelectorAll(".timing-imgs");
+      const timingTextElements = document.querySelectorAll(".timing-text");
+      console.log(timingImage);
+      if (timingTextElements.length === 0) return;
+      timingImage.forEach((element, index) => {
+        if (index == 0) {
+          gsap.set(element, {
+            y: 0,
+            opacity: 1,
+          });
+        } else {
+          gsap.set(element, {
+            y: 100,
+            opacity: 0,
+          });
+        }
+      });
+      timingTextElements.forEach((element, index) => {
+        const splitText = new SplitText(element as HTMLElement, {
+          type: "lines",
+          mask: "lines",
+          linesClass: "split-line",
+        });
+        const line = splitText.lines;
+        if (index === 0) {
+          gsap.set(line, { y: "0%", opacity: 1 });
+        } else {
+          gsap.set(line, { y: "100%", opacity: 0 });
+        }
+      });
+      // STEP ONE ANIMATION
+      // TIll 8:10AM
+      scrollTimeline.add(stepOneAnimation());
 
-    // STEP ONE ANIMATION
-    // TIll 8:10AM
-    scrollTimeline.add(stepOneAnimation());
-    scrollTimeline.addPause(1);
+      // STEP TWO ANIMATION
+      // TIll 9:00AMAR
+      scrollTimeline.add(stepTwoAnimation());
 
-    // STEP TWO ANIMATION
-    // TIll 9:00AM
-    scrollTimeline.add(stepTwoAnimation());
-    scrollTimeline.addPause(2);
+      // STEP THREE ANIMATION
+      // TIll 10:45AM
+      scrollTimeline.add(stepThreeAnimation());
 
-    // STEP THREE ANIMATION
-    // TIll 10:45AM
-    scrollTimeline.add(stepThreeAnimation());
-    scrollTimeline.addPause(4);
+      // STEP FOUR ANIMATION
+      // TIll 12:45PM
+      scrollTimeline.add(stepFourAnimation());
 
-    // STEP FOUR ANIMATION
-    // TIll 12:45PM
-    scrollTimeline.add(stepFourAnimation());
-    scrollTimeline.addPause(6);
+      // STEP FIVE ANIMATION
+      // TIll 1:30PM
+      scrollTimeline.add(stepFiveAnimation());
 
-    // STEP FIVE ANIMATION
-    // TIll 1:30PM
-    scrollTimeline.add(stepFiveAnimation());
-    scrollTimeline.addPause(4);
+      // STEP SIX ANIMATION
+      // TIll 3:00PM
+      scrollTimeline.add(stepSixAnimation());
 
-    // STEP SIX ANIMATION
-    // TIll 3:00PM
-    scrollTimeline.add(stepSixAnimation());
-    scrollTimeline.addPause(4);
+      // STEP SEVEN ANIMATION
+      // TIll 5:30PM
+      scrollTimeline.add(stepSevenAnimation());
 
-    // STEP SEVEN ANIMATION
-    // TIll 5:30PM
-    scrollTimeline.add(stepSevenAnimation());
-    scrollTimeline.addPause(4);
-
+      gsap.set("#timeline-wrapper", {
+        opacity: 1,
+      });
+    }, 500);
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
 
   return (
-    <div className="relative">
-      <section className="relative min-h-[100vh] bg-white">
-        <h2
-          style={{
-            background:
-              "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-          className="section-heading relative z-[4] hidden px-2 text-center sm:block"
-        >
-          A system that finally connects field and office
-        </h2>
-        <h2
-          style={{
-            background:
-              "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-          className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
-        >
-          A system that finally connects field and office
-        </h2>
+    <div className="timing-text-style relative bg-white">
+      <h2
+        style={{
+          background:
+            "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+        className="section-heading relative z-[4] hidden px-2 text-center sm:block"
+      >
+        A system that finally connects field and office
+      </h2>
+      <h2
+        style={{
+          background:
+            "linear-gradient(276deg, rgba(238, 30, 37, 0.4) 8%, rgba(0, 0, 0, 0) 100%), #D8D8D8",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+        className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
+      >
+        A system that finally connects field and office
+      </h2>
 
-        <p className="text-darkness xs:text-sm relative z-[4] mt-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
-          Here's what it feels like when everything just works
-        </p>
+      <p className="text-darkness xs:text-sm relative z-[4] my-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
+        Here's what it feels like when everything just works
+      </p>
+      <div
+        ref={timelineWrapperRef}
+        id="timeline-wrapper"
+        className="relative flex h-[100vh] flex-col items-center justify-center overflow-hidden opacity-0"
+      >
+        <div className="bg-gradient-bar absolute top-0 left-0 z-[100] h-[10vh] w-full"></div>
+        {/* SUN IMAGE  */}
         <div
-          ref={timelineWrapperRef}
-          id="timeline-wrapper"
-          className="relative mt-10 flex min-h-[100vh] flex-col items-center justify-center overflow-hidden md:overflow-hidden"
-        >
-          {/* SUN IMAGE  */}
-          <div
-            id="sun-wrapper"
-            className="sun-bg absolute -top-[5%] -right-[20%] z-[13] h-[165px] w-[165px] rounded-full min-[400px]:-right-[13%] sm:-top-[10%] sm:z-[1] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] xl:h-[400] xl:w-[400px]"
-          ></div>
-          {/* TOP WHITE BLUR LINE  */}
-          <div className="absolute -top-[17%] left-1/2 z-[10000] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
-          {/* BOTTOM WHITE BLUR LINE  */}
-          {/* <div className="absolute -bottom-[25%] left-1/2 z-[3] h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-red-400 blur-[25px] md:h-[250px]"></div> */}
-          {/* ORANGE BLUR LINEAR BACKGROUND  */}
-          {/* <div className="sun-reflect absolute top-[-7.29vw] right-[-13.5vw] z-[20] h-[25.64vw] w-[25.64vw] rotate-180"></div> */}
-          {/* INITIAL CLOUD 1  */}
-          <Image
-            src="/images/png/initial-cloud.png"
-            id="initial-cloud"
-            className="absolute top-0 z-[21] w-full"
-            alt=""
-            width={1440}
-            height={150}
-            priority
-          />
-          {/* STEP 1 CLOUD */}
-          <Image
-            src="/images/png/step-1-cloud.png"
-            id="step-1-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
-            alt=""
-            width={1440}
-            height={150}
-            priority
-          />
-          {/* STEP 2 CLOUD */}
-          <Image
-            src="/images/png/step-2-cloud.png"
-            id="step-2-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
-            alt=""
-            width={1440}
-            height={140}
-            priority
-          />
-          {/* STEP 3 CLOUD */}
-          <Image
-            src="/images/png/step-3-cloud.png"
-            id="step-3-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
-            alt=""
-            width={1440}
-            height={150}
-            priority
-          />{" "}
-          {/* STEP 4 CLOUD */}
-          <Image
-            src="/images/png/step-4-cloud.png"
-            id="step-4-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
-            alt=""
-            width={1440}
-            height={150}
-            priority
-          />
-          {/* STEP 6 CLOUD */}
-          <Image
-            src="/images/png/step-6-cloud.png"
-            id="step-6-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
-            alt=""
-            width={1440}
-            height={150}
-            priority
-          />{" "}
-          {/* STEP 7 CLOUD */}
-          <Image
-            src="/images/png/step-7-cloud.png"
-            id="step-7-cloud"
-            className="absolute top-0 z-[21] w-full opacity-0"
-            alt=""
-            width={1440}
-            height={150}
-            priority
-          />
-          {/* ENVIRONMENT BACKGROUND GRADIENT */}
-          <div
-            id="bg-initial"
-            className="bg-gradient-initial absolute top-0 left-0 h-full w-full"
-          ></div>
-          <div
-            id="bg-step-1"
-            className="bg-gradient-step-1 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
-            id="bg-step-2"
-            className="bg-gradient-step-2 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
-            id="bg-step-3"
-            className="bg-gradient-step-3 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
-            id="bg-step-4"
-            className="bg-gradient-step-4 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
-            id="bg-step-5"
-            className="bg-gradient-step-5 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
-            id="bg-step-6"
-            className="bg-gradient-step-6 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div
-            id="bg-step-7"
-            className="bg-gradient-step-7 absolute top-0 left-0 h-full w-full opacity-0"
-          ></div>
-          <div className="relative z-20 mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
-            <div className="flex items-center">
-              <TimeAnimation />
-              <div className="text-phantom relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
-                <div id="am-pm-wrapper" className="flex flex-col">
-                  <span className="h-[50px]">AM</span>
-                  <span className="h-[50px]">PM</span>
-                </div>
+          id="sun-wrapper"
+          className="sun-bg absolute top-[-20%] right-[-10%] z-[13] h-[27.7vw] w-[27.7vw] rounded-full"
+        ></div>
+        {/* TOP WHITE BLUR LINE  */}
+        <div className="absolute -top-[17%] left-1/2 z-[10000] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
+        <img
+          src="/images/png/initial-cloud.png"
+          id="initial-cloud"
+          className="absolute top-0 z-[21] h-full w-full"
+          alt=""
+        />
+        {/* STEP 1 CLOUD */}
+        <img
+          src="/images/png/step-1-cloud.png"
+          id="step-1-cloud"
+          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          alt=""
+        />
+        {/* STEP 2 CLOUD */}
+        <img
+          src="/images/png/step-2-cloud.png"
+          id="step-2-cloud"
+          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          alt=""
+        />
+        {/* STEP 3 CLOUD */}
+        <img
+          src="/images/png/step-3-cloud.png"
+          id="step-3-cloud"
+          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          alt=""
+        />{" "}
+        {/* STEP 4 CLOUD */}
+        <img
+          src="/images/png/step-4-cloud.png"
+          id="step-4-cloud"
+          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          alt=""
+        />
+        {/* STEP 6 CLOUD */}
+        <img
+          src="/images/png/step-6-cloud.png"
+          id="step-6-cloud"
+          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          alt=""
+        />{" "}
+        {/* STEP 7 CLOUD */}
+        <img
+          src="/images/png/step-7-cloud.png"
+          id="step-7-cloud"
+          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          alt=""
+        />
+        {/* ENVIRONMENT BACKGROUND GRADIENT */}
+        <img
+          id="bg-initial"
+          src="/images/png/initial-step-one.png"
+          className="bg-gradient-initial absolute top-0 left-0 h-full w-full"
+        />
+        <img
+          id="bg-step-1"
+          src="/images/png/bg-gradient-step-1.png"
+          className="bg-gradient-step-1 absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <img
+          id="bg-step-2"
+          src="/images/png/bg-gradient-step-2.png"
+          className="bg-gradient-step-2 absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <img
+          id="bg-step-3"
+          src="/images/png/bg-gradient-step-3.png"
+          className="bg-gradient-step-3 absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <img
+          id="bg-step-4"
+          src="/images/png/bg-gradient-step-4.png"
+          className="absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <img
+          id="bg-step-5"
+          src="/images/png/bg-gradient-step-5.png"
+          className="absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <img
+          id="bg-step-6"
+          src="/images/png/bg-gradient-step-6.png"
+          className="absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <img
+          id="bg-step-7"
+          src="/images/png/bg-gradient-step-7.png"
+          className="absolute top-0 left-0 h-full w-full opacity-0"
+        />
+        <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
+          <div className="flex items-center">
+            <TimeAnimation />
+            <div className="relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] text-black sm:text-3xl md:text-[42px]">
+              <div id="am-pm-wrapper" className="flex flex-col">
+                <span className="h-[50px]">AM</span>
+                <span className="h-[50px]">PM</span>
               </div>
             </div>
-            <p className="text-secondary mt-6 mb-2 text-center text-sm leading-[110%] font-medium md:text-lg lg:text-[22px]">
+          </div>
+          <div className="relative">
+            <p
+              id="timing-text-1"
+              className="timing-text relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
               You check the live crew map, see who's already moving, drag
               unassigned jobs onto the calendar & assign based on proximity.
             </p>
+            <p
+              id="timing-text-2"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              Big Chief AI call attendant answers two calls while you’re in a
+              meeting, books a walkthrough, and adds the leads to your CRM.
+            </p>
+            <p
+              id="timing-text-3"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              A technician updates task status and uploads job photos without
+              needing a check-in.
+            </p>
+            <p
+              id="timing-text-4"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              One tech’s stuck in traffic. You reassign their next visit to a
+              nearby available team with a single drag and drop.
+            </p>
+            <p
+              id="timing-text-5"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              A tech completes a work order, gets the docs signed via mobile,
+              and takes payment on-site.
+            </p>
+            <p
+              id="timing-text-6"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              A recurring client submits a service request through the portal—it
+              drops straight into your dispatch board.
+            </p>
+            <p
+              id="timing-text-7"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              You get an alert that a tool hasn’t been checked back in. You
+              follow up immediately.
+            </p>{" "}
+            <p
+              id="timing-text-8"
+              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+            >
+              All crews are clocked out, all jobs are closed, and you didn’t
+              once need to chase down an update.
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
             <Image
+              id="timing-img-1"
               width={611}
               height={245}
-              priority
+              className="timing-imgs relative"
               src="/images/webp/timing.webp"
               alt="Timing Image"
             />
-          </div>
-          <div className="relative z-[3] flex flex-col items-center justify-center px-2">
-            <Button variant="primary" className="mt-3 mb-1.5">
-              Get started FREE
-              <ArrowIcon fill="white" />
-            </Button>
-            <CardRequiredButton text="No credit card required" />
+            <Image
+              id="timing-img-2"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 2.png"
+              alt="Timing Image"
+            />
+            <Image
+              id="timing-img-3"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 3.png"
+              alt="Timing Image"
+            />
+            <Image
+              id="timing-img-4"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 4.png"
+              alt="Timing Image"
+            />
+            <Image
+              id="timing-img-5"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 5.png"
+              alt="Timing Image"
+            />
+            <Image
+              id="timing-img-6"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 6.png"
+              alt="Timing Image"
+            />
+            <Image
+              id="timing-img-7"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 7.png"
+              alt="Timing Image"
+            />
+            <Image
+              id="timing-img-8"
+              width={611}
+              height={245}
+              className="timing-imgs absolute top-0 left-0"
+              src="/images/png/CRM 8.png"
+              alt="Timing Image"
+            />
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="relative z-20 flex flex-col items-center justify-center px-2">
+        <Button variant="primary" className="mt-3 mb-1.5">
+          Get started FREE
+          <ArrowIcon fill="white" />
+        </Button>
+        <CardRequiredButton text="No credit card required" />
+      </div>
     </div>
   );
 };

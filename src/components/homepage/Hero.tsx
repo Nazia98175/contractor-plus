@@ -1,13 +1,11 @@
 "use client";
+import gsap from "gsap";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
-import TextAnimation from "../common/TextAnimation";
 import HerosectionBackground from "./HerosectionBackground";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -30,7 +28,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       gsap.to(".main-loader", {
         opacity: 0,
       });
-    }, 3000);
+    }, 1000);
   }, []);
 
   return (
@@ -39,21 +37,21 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
           <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
-            {/* <TextAnimation delay={0.2}> */}
-            <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
-              {hero_title}
-            </h1>
-            {/* </TextAnimation> */}
-            {/* <TextAnimation delay={0.35}> */}
-            <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
-              {hero_description}
-            </p>
-            {/* </TextAnimation> */}
+            <CardReveal distance={50} delay={0.2}>
+              <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
+                {hero_title}
+              </h1>
+            </CardReveal>
+            <CardReveal distance={50} delay={0.4}>
+              <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
+                {hero_description}
+              </p>
+            </CardReveal>
             <div className="xs:w-fit xs:items-center mt-2 flex w-full flex-col justify-center gap-2.5 sm:mt-0">
               <CardReveal
                 className="hidden h-10 sm:flex"
                 distance={50}
-                delay={0.45}
+                delay={0.6}
                 animateOnMount={true}
               >
                 <FreeAccountButton showIcon={false} text={cta_button_text} />
@@ -61,16 +59,12 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               <CardReveal
                 className="flex sm:hidden"
                 distance={50}
-                delay={0.5}
+                delay={0.8}
                 animateOnMount={true}
               >
                 <FreeAccountButton showIcon={false} text={mobileBtn} />
               </CardReveal>
-              <CardReveal
-                className="xs:w-fit w-full"
-                distance={50}
-                delay={0.55}
-              >
+              <CardReveal className="xs:w-fit w-full" distance={50} delay={1}>
                 <CardRequiredButton className="w-full" text={ncc_text} />
               </CardReveal>
             </div>

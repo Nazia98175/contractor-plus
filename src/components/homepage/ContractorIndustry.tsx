@@ -53,11 +53,11 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
           <h6 className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
             {contractorIndustry?.[0]?.sub_title ?? ""}
           </h6>
-          <div className="hidden items-center justify-center md:flex">
+          {/* <div className="hidden items-center justify-center md:flex">
             <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.[1]?.btnTxt ?? ""}
             </PrimaryLink>
-          </div>
+          </div> */}
         </div>
         <ContractorIndustrySlider />
       </div>

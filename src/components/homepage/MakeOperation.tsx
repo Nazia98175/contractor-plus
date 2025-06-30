@@ -6,7 +6,6 @@ import make_operations_1 from "../../../public/lotties/make-operations-1.json";
 import make_operations_2 from "../../../public/lotties/make-operations-2.json";
 import make_operations_3 from "../../../public/lotties/make-operations-3.json";
 import CardReveal from "../common/CardReveal";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import MakeOperationCard from "./MakeOperationCard";
 interface Whatever {
   title: string;

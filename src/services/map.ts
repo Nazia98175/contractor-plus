@@ -13,13 +13,14 @@ export const reverseGeocode = async (latitude: number, longitude: number) => {
             const feature = mapboxData.features[0];
             
             // Extract city from Mapbox response
-            let city = 'Your Location';
+            let city = '';
             let country = '';
             
             // Look through context array for place/locality
             if (feature.context) {
               const placeContext = feature.context.find((ctx: any) => 
-                ctx.id.startsWith('place.') || ctx.id.startsWith('locality.')
+                ctx.id.startsWith('place.') 
+              // || ctx.id.startsWith('locality.')
               );
               if (placeContext) {
                 city = placeContext.text;
@@ -35,7 +36,7 @@ export const reverseGeocode = async (latitude: number, longitude: number) => {
             }
             
             // If no context, use the main feature text
-            if (city === 'Your Location' && feature.text) {
+            if (city === '' && feature.text) {
               city = feature.text;
             }
             
@@ -128,34 +129,6 @@ export const reverseGeocode = async (latitude: number, longitude: number) => {
       city: "Your Location", 
       country: "", 
       source: 'error' 
-    };
-  }
-};
-
-// Alternative: Use Next.js API route (recommended for production)
-export const reverseGeocodeViaAPI = async (latitude: number, longitude: number) => {
-  try {
-    const response = await fetch(
-      `/api/geocode?lat=${latitude}&lon=${longitude}`
-    );
-
-    if (!response.ok) {
-      throw new Error('API geocoding request failed');
-    }
-
-    const data = await response.json();
-    return {
-      city: data.city || 'Your Location',
-      country: data.country || '',
-      source: data.source || 'api'
-    };
-
-  } catch (error) {
-    console.error('API reverse geocoding error:', error);
-    return { 
-      city: 'Your Location', 
-      country: '',
-      source: 'error'
     };
   }
 };

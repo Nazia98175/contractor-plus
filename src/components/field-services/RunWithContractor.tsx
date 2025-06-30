@@ -5,45 +5,10 @@ import "swiper/css/pagination";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "./RunWithContractorMobile";
 import { TheServiceProps } from "../crmbussiness/KindAdorable";
-import { debugLog } from "@/utils/getConsole";
 import TextAnimation from "../common/TextAnimation";
-const run_contractor = [
-  {
-    their: "Calling or texting each tech to check availability",
-    your: "Drag-and-drop scheduling with real-time crew availability",
-  },
-  {
-    their: "Guessing locations or waiting for callbacks",
-    your: "Live GPS tracking shows where everyone is on a map",
-  },
-  {
-    their: "Missed calls, forgotten voicemails, manual callbacks",
-    your: "AI receptionist answers, captures lead details, and books jobs",
-  },
-  {
-    their: "Miscommunication through group texts or missed updates",
-    your: "Field updates sync instantly across mobile, office, and job chat",
-  },
-  {
-    their: "Paper timesheets or unreliable check-ins",
-    your: "GPS-stamped time clock inside the mobile app",
-  },
-  {
-    their: "Texts, emails, and Slack all over the place",
-    your: "Every job has its own chat thread, visible to all assigned team members",
-  },
-  {
-    their: "Verbal check-ins or unlogged inspections",
-    your: "Post-inspections with photos and task completion logs",
-  },
-  {
-    their: "Manually sent invoices and delayed payment",
-    your: "Instant invoice creation and onsite payment",
-  },
-];
+import CardReveal from "../common/CardReveal";
 
 const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
-  debugLog("KINDA", kindAdorable);
   return (
     <section className="relative z-20 bg-white pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
       {/* <TextAnimation animateOnScroll={true} delay={0.6}> */}
@@ -66,7 +31,9 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
           </p>
         </div>
         {kindAdorable?.features?.map((item: any, index: any) => (
-          <div
+          <CardReveal
+            distance={50}
+            delay={0.1}
             key={index}
             className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
           >
@@ -97,7 +64,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
                 </p>
               </div>
             </div>
-          </div>
+          </CardReveal>
         ))}
       </div>
       {/* Mobile-view  */}

@@ -1,6 +1,5 @@
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
-import MainLoader from "@/components/common/MainLoader";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -13,16 +12,42 @@ import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
+import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { getHomePage } from "@/services/homePage/homepage";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Contractor Plus - Field Service",
-  description:
-    "One command center to visualize and run your entire field operation",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoData(
+    "services-pages",
+    resolvedParams.locale,
+    "field-service",
+    "&populate[seoMeta]=true&populate[hero]=true",
+  );
+
+  if (!page) return;
+
+  return {
+    title:
+      page.seoMeta?.metaTitle ||
+      page.hero?.heroTitle ||
+      `Contractor+ field-service`,
+    description: page.seoMeta?.metaDescription || page.hero?.subtitle || "",
+    keywords: page.seoMeta?.keywords || "",
+    alternates: {
+      canonical:
+        page.seoMeta?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/field-service`,
+    },
+  };
+}
 
 interface Params {
   params: Promise<{ locale: string }>;
@@ -39,61 +64,6 @@ const FieldServicesPage = async ({ params }: Params) => {
     ),
   ]);
 
-  // const [
-  //   crmPageContent,
-  //   reviews,
-  //   section3,
-  //   section4,
-  //   section5,
-  //   section6,
-  //   neverLookBackData,
-  //   faq,
-  //   blogs,
-  //   thousandReviews,
-  // ] = await Promise.all([
-  //   getCrmPage("field-service", useParams.locale, "&populate=*"),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[reviews][populate]=reviews",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[switchingTool][populate]=cardsDetail",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[fieldService][populate][cardsDetail][populate]=*",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[trackProperties][populate][cardDetails][populate]=*",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[comparison][populate][centerLogo]=true&populate[comparison][populate][features]=true",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[teamsUsingContractor][populate]=*",
-  //   ),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams.locale,
-  //     "&populate[faqs][populate]=faq",
-  //   ),
-  //   getBlogs(useParams?.locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-  //   getCrmPage(
-  //     "field-service",
-  //     useParams?.locale,
-  //     "&populate[thousandReviews][populate]=reviews",
-  //   ),
-  // ]);
   const {
     crmPageContent,
     reviews,
@@ -128,18 +98,17 @@ const FieldServicesPage = async ({ params }: Params) => {
           reviews={thousandReviews?.thousandReviews?.reviews}
           variant="secondary"
         />
-
         <div className="relative overflow-visible">
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
           <CrmSercive
             createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
             mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
             ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
             data={crmPageContent?.data?.[0]?.crmService}
             showClouds={false}
+            className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
+            variantBtn="dark"
           />
-
           <TrustBarHvca
             platforms={platforms}
             className="mx-auto w-full max-w-[889px]"
@@ -147,15 +116,14 @@ const FieldServicesPage = async ({ params }: Params) => {
           <Faq
             faq={faqs?.faqs}
             classNameAnswer="pt-1"
-            mainContainerclassName="md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+            mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+            TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
           />
         </div>
-
         <WhatEverClient
           data={homePageContent?.data?.whateverOperation}
           issection={false}
         />
-
         <BlogPosts
           data={crmPageContent?.data?.[0]?.blogs}
           blogs={blogs}

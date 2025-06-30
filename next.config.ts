@@ -12,6 +12,9 @@ const nextConfig: import("next").NextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizePackageImports: ["lottie-react", "swiper"],
+  },
 };
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",

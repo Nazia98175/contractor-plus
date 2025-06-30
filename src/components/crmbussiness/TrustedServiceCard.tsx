@@ -28,6 +28,7 @@ const VARIANT_CLASSES = {
 };
 interface ReviewCardProps {
   review: Review;
+  slug?: string;
   openModal: () => void;
   variant?: "primary" | "secondary" | "tertiary";
 }
@@ -45,13 +46,14 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   review,
   openModal,
   variant = "secondary",
+  slug,
 }) => {
   const styles = VARIANT_CLASSES[variant];
   return (
     <div className="mr-5 !h-auto">
       <article
         onClick={openModal}
-        className={`group trusted-service flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${styles.container}`}
+        className={`group trusted-service flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${slug === "crm" ? "bg-shutter sm:bg-transparent" : "bg-transparent"} ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">
@@ -61,6 +63,8 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 alt="avatar"
                 width={42}
                 height={42}
+                priority
+                unoptimized
                 className="h-fit max-w-[42px] rounded-full object-contain"
               />
             ) : (

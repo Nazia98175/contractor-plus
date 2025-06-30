@@ -1,12 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimation from "../common/TextAnimation";
 
 const BloodEnough = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const hasAnimatedOnMobile = useRef(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -17,16 +33,42 @@ const BloodEnough = () => {
       end: "bottom center",
       scrub: 1,
       onEnter: () => {
-        // Add the class when entering the trigger zone
+        // On mobile, only animate once
+        if (isMobile && hasAnimatedOnMobile.current) {
+          return;
+        }
+
         sectionRef.current?.classList.add("scroll-active");
+
+        if (isMobile) {
+          hasAnimatedOnMobile.current = true;
+        }
       },
-      // Remove toggleClass to prevent class removal on scroll back
+      onLeaveBack: () => {
+        // Only remove class on desktop
+        if (!isMobile) {
+          sectionRef.current?.classList.remove("scroll-active");
+        }
+      },
+      onEnterBack: () => {
+        // Only re-add class on desktop
+        if (!isMobile) {
+          sectionRef.current?.classList.add("scroll-active");
+        }
+      },
+      onLeave: () => {
+        // Optional: Remove class when scrolling past the element
+        // Only on desktop
+        // if (!isMobile) {
+        //   sectionRef.current?.classList.remove("scroll-active");
+        // }
+      },
     });
 
     return () => {
       trigger.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
@@ -36,18 +78,23 @@ const BloodEnough = () => {
       <style jsx>{`
         h3 {
           color: #8a8e91;
+          transition: color 0.3s ease-in-out;
         }
+
         h6 {
           color: #656c73;
+          transition: color 0.3s ease-in-out;
         }
 
         .highlighted-span {
           color: #d2d4d6;
+          transition: color 0.3s ease-in-out;
         }
 
         .scroll-active h3 {
           color: #fff !important;
         }
+
         .scroll-active h6 {
           color: #fff !important;
         }
@@ -59,13 +106,18 @@ const BloodEnough = () => {
         svg path {
           fill: #3f464b;
           stroke: #1c2731;
-          transition: all 0.3s ease;
+          transition: all 0.3s ease-in-out;
         }
 
         .scroll-active svg path {
           fill: #fff !important;
           stroke: #fff !important;
         }
+
+        .icon-span {
+          transition: transform 0.3s ease-in-out;
+        }
+
         .scroll-active .icon-span {
           transform: rotate(45deg);
         }

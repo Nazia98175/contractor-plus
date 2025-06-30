@@ -9,9 +9,10 @@ import TextAnimation from "../common/TextAnimation";
 
 interface TheReviewProps {
   reviews: any;
+  slug?: string;
 }
 
-const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
+const TrustedService: React.FC<TheReviewProps> = ({ reviews, slug }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -27,7 +28,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
         {reviews?.data?.[0]?.reviews?.title}
       </h3>
       {/* </TextAnimation> */}
-      <div className="relative h-fit pt-7">
+      <div className="relative mx-auto h-fit w-full max-w-[1920px] px-2 pt-7">
         <div className="trusted-gradient pointer-events-none absolute bottom-0 left-[0px] z-40 hidden h-full w-24 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="trusted-gradient pointer-events-none absolute right-[0px] bottom-0 z-40 hidden h-full w-24 rotate-180 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="w-full">
@@ -35,6 +36,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
                 key={review.id}
+                slug={slug}
                 review={review as Review}
                 openModal={
                   review.isModal
@@ -55,6 +57,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews }) => {
           >
             {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
               <TrustedServiceCard
+                slug={slug}
                 key={review.id}
                 review={review as Review}
                 openModal={

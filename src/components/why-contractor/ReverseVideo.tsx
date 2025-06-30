@@ -1,62 +1,82 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StrokeText } from "./Icons";
 import TextAnimation from "../common/TextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+
 gsap.registerPlugin(ScrollTrigger);
-const ReverseVideo = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+const ReverseFrames = () => {
+  const imageRef = useRef<HTMLImageElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [currentFrame, setCurrentFrame] = useState(0);
+
+  const totalFrames = 13;
+  const frameBasePath = "/images/hand-video/";
+  const frameExtension = ".png";
+  const frameDigits = 5;
+  const framePaths = Array.from({ length: totalFrames }, (_, i) => {
+    const frameNumber = (i + 1).toString().padStart(frameDigits, "0");
+    return `${frameBasePath}${frameNumber}${frameExtension}`;
+  });
+
   useEffect(() => {
-    const video = videoRef.current;
-    const section = sectionRef.current;
-    if (!video || !section) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Ensure video metadata is loaded
-    const setupScroll = () => {
-      gsap.to(video, {
-        currentTime: video.duration || 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 50%",
-          end: "bottom bottom",
-          scrub: true,
-          markers: false,
-          pin: false, // set to true if you wanna pin the section
-          onUpdate: (self) => {
-            video.currentTime = self.progress * video.duration;
-          },
-        },
+    const preloadFrames = () => {
+      framePaths.forEach((path) => {
+        const img = new window.Image();
+        img.src = path;
       });
     };
+    preloadFrames();
+  }, []);
 
-    if (video.readyState >= 2) {
-      setupScroll();
-    } else {
-      video.addEventListener("loadedmetadata", setupScroll);
-    }
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const setupScroll = () => {
+      gsap.to(
+        {},
+        {
+          duration: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 50%",
+            end: "bottom bottom",
+            scrub: true,
+            markers: false,
+            pin: false,
+            onUpdate: (self) => {
+              const frameIndex = Math.floor(self.progress * (totalFrames - 1));
+              setCurrentFrame(frameIndex);
+            },
+          },
+        },
+      );
+    };
+
+    setupScroll();
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [totalFrames]);
 
   return (
     <section ref={sectionRef} className="relative z-[0] bg-[#000] px-2.5">
-      <video
-        ref={videoRef}
+      <Image
+        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
+        width={1440}
+        height={500}
+        ref={imageRef}
+        src={framePaths[currentFrame]}
+        alt={`Frame ${currentFrame + 1}`}
         className="relative z-[-1] mx-auto h-full w-full max-w-[1440px] object-cover object-top"
-        muted
-        playsInline
-        preload="auto"
-      >
-        <source src="/video/l-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        loading="eager"
+      />
 
       <div
         className="absolute -top-1 left-0 z-10 h-10 w-full sm:h-[142px]"
@@ -73,7 +93,7 @@ const ReverseVideo = () => {
         }}
       ></div>
       <TextAnimation animateOnScroll={true} delay={0}>
-        <div className="absolute top-1/2 left-1/2 z-10 flex h-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-14 sm:pt-36 w-full">
+        <div className="absolute top-1/2 left-1/2 z-10 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-14 sm:pt-36">
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
             "If it ain't broke, don't fix it" is the
           </h2>
@@ -84,4 +104,4 @@ const ReverseVideo = () => {
   );
 };
 
-export default ReverseVideo;
+export default ReverseFrames;

@@ -60,11 +60,18 @@ const variantClasses = {
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
 
-  const variant = pathname.toLowerCase().includes("hvac") ? "light" : "dark";
+  const variant =
+    pathname.toLowerCase().includes("hvac") ||
+    pathname.toLowerCase().includes("pricing") ||
+    pathname.toLowerCase().includes("blog")
+      ? "light"
+      : "dark";
   // 👇 Add this condition
   const isCrmRoute =
     pathname.toLowerCase().includes("crm") ||
-    pathname.toLowerCase().includes("estimate");
+    pathname.toLowerCase().includes("estimate") ||
+    pathname.toLowerCase().includes("field-service") ||
+    pathname.toLowerCase().includes("why-contractor");
 
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -82,13 +89,21 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (
-            <img
+            <Image
+              height={457}
+              width={300}
+              unoptimized
+              priority
               className="h-full w-full"
               src="/images/webp/footer-gradient-dark.webp"
               alt="footer gradient"
             />
           ) : (
-            <img
+            <Image
+              height={200}
+              width={1440}
+              priority
+              unoptimized
               className="h-full w-full"
               src="/images/webp/footer-gradient.webp"
               alt="footer gradient"
@@ -100,7 +115,11 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       )}
       {isCrmRoute && (
         <div className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
-          <img
+          <Image
+            height={457}
+            width={300}
+            unoptimized
+            priority
             className="h-full w-full"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
@@ -190,6 +209,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
+              priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
@@ -245,6 +265,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
+              priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"

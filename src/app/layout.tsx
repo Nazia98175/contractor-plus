@@ -1,7 +1,7 @@
 import SmoothScroll from "@/components/common/SmoothScroll";
 import Head from "next/head";
 import { ReactNode } from "react";
-
+import "swiper/css";
 type Props = {
   children: ReactNode;
 };

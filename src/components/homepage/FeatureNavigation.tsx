@@ -54,7 +54,7 @@ const FeatureNavigation = ({
 
   return (
     <div
-      className="shadow-c2 relative flex w-full gap-1.5 overflow-auto bg-white px-2 sm:shadow-none lg:self-start"
+      className="relative flex w-full gap-1.5 overflow-auto bg-white px-2 lg:self-start"
       ref={featuresRef}
       style={{
         contain: "layout",
@@ -63,7 +63,7 @@ const FeatureNavigation = ({
       <div className="relative hidden w-fit min-w-[9px] items-center justify-center px-1 lg:flex">
         <button
           ref={indicatorRef}
-          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black"
+          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black duration-200"
           style={{
             transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             transform: "translate(-50%, 6px)",
@@ -74,7 +74,7 @@ const FeatureNavigation = ({
       </div>
 
       <div
-        className="no-scrollbar relative z-[99] flex flex-row gap-[22px] overflow-auto bg-white py-2 whitespace-nowrap lg:flex-col lg:py-0"
+        className="no-scrollbar relative z-[99] flex flex-row gap-[22px] overflow-auto py-2 whitespace-nowrap lg:flex-col lg:py-0"
         style={{
           WebkitOverflowScrolling: "touch",
           scrollbarWidth: "none",

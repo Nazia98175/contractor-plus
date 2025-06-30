@@ -1,6 +1,7 @@
 import React from "react";
 import AnimateHeight from "react-animate-height";
 import { FaqIcon } from "../common/Icons";
+import { variantStyles } from "@/utils/getVariants";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 
@@ -19,29 +20,6 @@ type FaqListProps = {
   containerClassName?: string;
 };
 
-const variantStyles = {
-  default: {
-    question: "text-white",
-    answer: "text-decemberSky",
-  },
-  light: {
-    question: "text-gray-100",
-    answer: "text-gray-300",
-  },
-  dark: {
-    question: "text-gray-900",
-    answer: "text-gray-700",
-  },
-  accent: {
-    question: "text-primary",
-    answer: "text-secondary",
-  },
-  muted: {
-    question: "text-gray-500",
-    answer: "text-gray-400",
-  },
-};
-
 const FaqList: React.FC<FaqListProps> = ({
   data,
   isOpen,
@@ -56,7 +34,7 @@ const FaqList: React.FC<FaqListProps> = ({
   return (
     <div
       onClick={onToggle}
-      className={`relative mb-5 flex flex-col rounded-lg px-2 ${containerClassName}`}
+      className={`relative flex flex-col rounded-lg px-2 ${containerClassName}`}
     >
       <div
         className={`${

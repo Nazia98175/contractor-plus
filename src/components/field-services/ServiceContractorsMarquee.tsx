@@ -28,7 +28,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
 
   return (
     <section className="custom-shadow relative pb-9 md:pb-12 lg:pb-[60px] xl:pb-[78px]">
-      <h3 className="section-heading gradient-white relative z-50 mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 sm:max-w-[70%] md:mb-10 lg:mb-12 xl:max-w-full">
+      <h3 className="section-heading gradient-white xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 md:mb-10 lg:mb-12 xl:max-w-full">
         {reviews.data?.[0].reviews.title}
       </h3>
 
@@ -36,7 +36,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
         speed={30}
         direction="right"
         pauseOnHover
-        className="relative z-50"
+        className="relative z-50 mx-auto w-full max-w-[1920px]"
       >
         {reviews?.data?.[0]?.reviews?.reviews?.map((review: any) => (
           <TrustedServiceCard

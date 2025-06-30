@@ -162,7 +162,10 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   }, [isMobile, isTablet, isDesktop]);
 
   return (
-    <section ref={sectionRef} className="relative z-10 w-full px-2">
+    <section
+      ref={sectionRef}
+      className="relative z-10 w-full overflow-hidden px-2"
+    >
       <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
@@ -172,7 +175,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
           <div
             style={{ backgroundSize: "100% 100%" }}
-            className="no-repeat flex flex-col items-center justify-center bg-[url('/images/svg/red-line_animated.svg')] md:flex-row md:justify-between md:bg-none md:pt-5 lg:gap-5"
+            className="no-repeat flex flex-col items-center justify-center bg-[url('/images/svg/red-line_animated.svg')] md:flex-row md:justify-between md:bg-none lg:gap-5"
           >
             {/* Left Section */}
             <div className="left-section relative h-[190px] w-full max-w-[409px] bg-cover bg-center bg-no-repeat md:h-[300px] md:bg-[url('/images/svg/left-red-lines_animated.svg')] md:py-8 lg:py-[59px]">
@@ -188,7 +191,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={40}
                   height={40}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 40px, 30px"
                 />
               </div>
               <div
@@ -203,7 +207,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={38}
                   height={38}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 38px, 26px"
                 />
               </div>
               <div
@@ -218,7 +223,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={66}
                   height={17}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 66px, 45px"
                 />
               </div>
             </div>
@@ -245,7 +251,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={38}
                   height={38}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 38px, 29px"
                 />
               </div>
               <div
@@ -260,7 +267,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={38}
                   height={38}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 38px, 29px"
                 />
               </div>
               <div
@@ -275,7 +283,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                   width={33}
                   height={33}
                   alt="contractor"
-                  loading="lazy"
+                  priority
+                  sizes="(min-width: 1024px) 33px, 21px"
                 />
               </div>
             </div>

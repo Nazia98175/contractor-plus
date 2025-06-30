@@ -1,9 +1,8 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useState } from "react";
-import TextAnimation from "./TextAnimation";
-import CardReveal from "./CardReveal";
-import { CheckIcon } from "./Icons";
 import { variantsForm } from "@/utils/getVariants";
+import React, { ChangeEvent, FormEvent, useState } from "react";
+import CardRequiredButton from "./CardRequiredButton";
+import CardReveal from "./CardReveal";
 
 interface CommonFormFieldProps {
   title: string;
@@ -15,7 +14,8 @@ interface CommonFormFieldProps {
   showTitle?: boolean;
   showDescription?: boolean;
   className?: string;
-  variant?: "default" | "primary" | "secondary";
+  variant?: "default" | "primary" | "secondary" | "tertiary" | "white";
+  variantBtn?: "default" | "primary" | "light" | "dark" | "muted";
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({
@@ -28,6 +28,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   showTitle = true,
   showDescription = true,
   variant = "default",
+  variantBtn = "default",
   className,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -103,27 +104,19 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
               )}
             </button>
 
-            <p className="hidden items-center gap-2 pt-3 md:flex">
-              <CheckIcon />
-              <span className="font-myriad text-sm font-semibold text-white">
-                {ncc}
-              </span>
-            </p>
+            <div className="hidden items-center gap-2 pt-3 md:flex">
+              <CardRequiredButton variantBtn={variantBtn} text={ncc} />
+            </div>
           </div>
           <div className="flex w-full items-center justify-center md:hidden">
-            <p className="flex items-center gap-2 pt-1">
-              <CheckIcon />
-              <span className="font-myriad text-sm font-semibold text-white">
-                {ncc}
-              </span>
-            </p>
+            <CardRequiredButton text={ncc} variantBtn={variantBtn} />
           </div>
         </form>
 
         {/* Mobile Button */}
         <button
           onClick={handleSubmit}
-          className="bg-red-linear primary-btn h-10 !w-full sm:!hidden md:mx-0 md:!w-auto"
+          className="bg-red-linear primary-btn mx-auto h-10 !w-full max-w-[500px] sm:!hidden md:mx-0 md:!w-auto"
           disabled={loading}
         >
           {loading ? (

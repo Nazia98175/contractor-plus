@@ -1,4 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"); */
 
 @import "tailwindcss";
@@ -19,12 +20,30 @@
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
   --color-whiteSmoke: #f3f3f3;
+  --color-offWhite: #f5f5f5;
+  --color-thickRed: #ac0d0e;
+  --color-softBlush: #fee7e8;
   --color-iron: #45454a;
   --color-doctor2: #f8f8f8;
   --color-lightishBlue: #3b82f6;
   --color-ruinedSmores: #111216;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
+  --color-flintstone: #667085;
+  --color-dragonlord: #6941c6;
+  --color-lviv: #363f72;
+  --color-wash: #f8f9fc;
+  --color-sugar: #f9f5ff;
+  --color-alice: #f0f9ff;
+  --color-led: #026aa2;
+  --color-sinopia: #c4320a;
+  --color-fatback: #fff6ed;
+  --color-blarney: #027a48;
+  --color-mint: #ecfdf3;
+  --color-bramble: #c11574;
+  --color-placebo: #fdf2fa;
+  --color-kikorangi: #3538cd;
+  --color-aliceBlue: #eef4ff;
   --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
@@ -40,15 +59,20 @@
   --color-lightBlackGrey: #999;
   --color-expressionismGreen: #56c299;
   --color-lightBlack: #1c2731;
+  --color-eerieBlack: #1a1a1a;
   --color-softMint: #effbf6;
   --color-athenaBlue: #6ddcff;
   --color-granite: #6f7176;
   --color-sweetGarden: #5ed5a8;
   --color-dancingJewel: #439777;
   --color-pantone: #ff9800;
+  --color-ancestral: #d0d0d0;
   --color-phantom: #e99c44;
   --color-heatherGrey: #9f9fa1;
   --color-blackRussian: #202125;
+  --color-pantone: #4d4d4d;
+  --color-trolleyGrey: #818181;
+
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
   --color-sangoPink: #f4ada5;
@@ -66,7 +90,7 @@
 
   /* BREAKPOINTS */
 
-  --breakpoint-xs: 374px;
+  --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
@@ -150,14 +174,14 @@
 
   /* DROP-SHADOW */
   --drop-shadow-custom-shadow-img: 24px 18px 22px #00000078;
-  --drop-shadow-img-shadow: (
-    -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105)
-  );
+  --drop-shadow-img-shadow: -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105);
+  --drop-shadow-c5: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
 }
 
 .image-custom-shadow {
   -webkit-filter: drop-shadow(24px 18px 22px #00000078);
 }
+
 @font-face {
   font-family: "Myriad Pro";
   src: url("/fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
@@ -195,7 +219,7 @@ body {
   @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
 .paragraph-text {
-  @apply text-sm sm:text-base lg:text-lg;
+  @apply text-sm sm:text-base lg:text-lg xl:text-xl;
 }
 
 .paragraph-style {
@@ -322,6 +346,9 @@ html::-webkit-scrollbar {
 }
 .swiper {
   @apply h-full w-full;
+}
+.swiper-button-disabled {
+  @apply pointer-events-none cursor-not-allowed opacity-50;
 }
 .custom-shadow {
   box-shadow:
@@ -559,16 +586,20 @@ html::-webkit-scrollbar {
 }
 
 .field-service-card {
+  position: relative;
   z-index: 9999;
-  backdrop-filter: blur(18px);
-  filter: drop-shadow(0 15px 30px #0000001a);
-  background:
-    0 0 / 100px 100px,
-    radial-gradient(146.13% 118.42% at 50% -15.5%, #171717 0%, #fff0 99.59%),
-    linear-gradient(#2e335a00 0%, #1c1b331a 100%);
-  border: 1px solid #ffffff4e;
-  box-shadow: inset 0 0 100px #ccd7ff26;
+  background: #050508;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset 0 0 100px rgba(204, 215, 255, 0.15),
+    0 15px 30px rgba(0, 0, 0, 0.2);
+
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background-blend-mode: overlay;
 }
+
 .wanting-more-bg {
   border: 1px solid #fff;
   background:
@@ -631,6 +662,21 @@ html::-webkit-scrollbar {
   backdrop-filter: blur(25.399999618530273px);
   z-index: -8;
 }
+
+.gradient-text-shadow {
+  background: radial-gradient(
+    151.49% 952.2% at -23.16% 127.47%,
+    #0c0d11 0%,
+    #ffffff 50%,
+    #0c0d11 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .bg-white-linear {
   background: linear-gradient(
     180deg,
@@ -755,7 +801,7 @@ html::-webkit-scrollbar {
   }
 }
 
-.color-animation-1 {
+/* .color-animation-1 {
   animation: spreadColor1 3s ease-in-out infinite;
 }
 
@@ -772,7 +818,7 @@ html::-webkit-scrollbar {
     transform: scale(1);
     opacity: 0.1;
   }
-}
+} */
 
 @keyframes breathe {
   0% {
@@ -1360,20 +1406,6 @@ button {
   -webkit-text-fill-color: transparent;
 }
 
-.ddd {
-  clip-path: polygon(0 56%, 0% 100%, 100% 100%);
-  background: linear-gradient(
-    11.21deg,
-    #0a0b0e 45.56%,
-    rgba(10, 11, 14, 0) 84.42%
-  );
-  box-shadow:
-    0 0 40px rgba(10, 11, 14, 0.5),
-    inset 0 0 60px rgba(10, 11, 14, 0.3);
-}
-.ddd-2 {
-  clip-path: polygon(99% 60%, 0% 100%, 100% 100%);
-}
 .gradient-shape {
   width: 800px;
   height: 400px;
@@ -1459,23 +1491,18 @@ button {
   background-clip: content-box, border-box;
 }
 .estimate-overlap-card {
-  border-radius: 40px;
-  border: 1px solid #fff;
-  background:
-    lightgray 0% 0% / 100px 100px repeat,
-    radial-gradient(
-      146.13% 118.42% at 50% -15.5%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0) 99.59%
-    ),
-    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+  position: relative;
+  z-index: 9999;
+  background: #050508;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow:
-    0px -33px 40px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 100px 0px rgba(204, 215, 255, 0.15) inset,
-    0px 5px 10px 0px rgba(0, 0, 0, 0.05),
-    0px 15px 30px 0px rgba(0, 0, 0, 0.05),
-    0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+    inset 0 0 100px rgba(204, 215, 255, 0.15),
+    0 15px 30px rgba(0, 0, 0, 0.2);
+
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
+  background-blend-mode: overlay;
 }
 
 .gradient-grey-border-left {
@@ -1607,4 +1634,12 @@ button {
   background-position: center;
   background: url("/images/png/hero-video-ovelay-2.png");
   filter: blur(25.95000076293945px);
+}
+.crm-cards {
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.swiper-pagination-number span {
+  @apply !bg-lightishBlue relative !m-0 flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold text-white;
 }

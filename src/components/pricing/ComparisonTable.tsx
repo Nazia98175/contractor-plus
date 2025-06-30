@@ -20,7 +20,7 @@ const generateInitialDesktopStates = () => {
 const generateInitialMobileStates = () => {
   const states: Record<string, boolean> = {};
   comparisonTableData.forEach((group) => {
-    states[group.key] = true;
+    states[group.key] = false;
   });
   return states;
 };

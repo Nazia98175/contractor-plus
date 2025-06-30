@@ -120,7 +120,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             width={300}
             unoptimized
             priority
-            className="h-full w-full"
+            className="h-full w-full object-cover"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
           />
@@ -208,7 +208,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
-              unoptimized
               priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"

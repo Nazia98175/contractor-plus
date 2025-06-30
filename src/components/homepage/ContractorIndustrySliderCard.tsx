@@ -1,4 +1,3 @@
-import React from "react";
 import TiltedCardEffect from "../common/TiltedCardEffect";
 import Image from "next/image";
 

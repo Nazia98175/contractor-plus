@@ -2222,14 +2222,6 @@ export const rightIcons = [
   },
 ];
 
-export interface FeatureLink {
-  id: string;
-  label: string;
-  description: string;
-  href: string;
-  isNew: boolean;
-  icon: JSX.Element;
-}
 export const featurelinks = [
   {
     id: "crm",
@@ -2610,7 +2602,7 @@ export const reviews = [
     id: 1,
     userName: "Brandon Geiger",
     profileUrl: "/images/webp/rushville.webp",
-    rating: 4.5,
+    rating: 5,
     videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
@@ -2618,22 +2610,12 @@ export const reviews = [
     stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
     userRole: "Co-Owner, Rushville Restorations",
   },
+
   {
     id: 2,
-    userName: "James Bond",
-    profileUrl: "/images/webp/rands.webp",
-    rating: 4.5,
-    videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
-    isModal: true,
-    companyLogo: "/images/svg/randsIcon.svg",
-    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
-    userRole: "CEO at Rands Mechanical",
-  },
-  {
-    id: 3,
     userName: "Juan Garcia",
     profileUrl: "/images/webp/juan-gracia.webp",
-    rating: 4.5,
+    rating: 5,
     videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
@@ -2641,14 +2623,14 @@ export const reviews = [
     userRole: "Owner, Nailed It Miami",
   },
   {
-    id: 4,
-    userName: "James Bond",
+    id: 3,
+    userName: "Scott Azure",
     profileUrl: "/images/webp/rands.webp",
-    rating: 4.5,
+    rating: 5,
     videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
-    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
+    review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
     userRole: "CEO at Rands Mechanical",
   },
 ];

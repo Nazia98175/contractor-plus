@@ -1,18 +1,116 @@
 "use client";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useRef, useState } from "react";
+import type SwiperCore from "swiper";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-import { Grid, Navigation, Pagination } from "swiper/modules";
+import { Grid, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { articles } from "../common/Helper";
 import BlogCard from "./BlogCard";
-import SwiperNavWithPagination from "./SwiperNavWithPagination";
+
 const BlogArticle = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const swiperRef = useRef<SwiperCore | null>(null);
+
+  const slidesPerGroup = 1;
+  const totalPages = Math.ceil(articles.length / slidesPerGroup);
+
+  const handlePageClick = (page: number) => {
+    swiperRef.current?.slideTo(page * slidesPerGroup);
+  };
+
+  const renderPagination = () => {
+    const pages = [];
+
+    // If total pages are 3 or less, show simple pagination
+    if (totalPages <= 3) {
+      for (let i = 0; i < totalPages; i++) {
+        pages.push(
+          <span
+            key={i}
+            onClick={() => handlePageClick(i)}
+            className={`cursor-pointer px-1 ${
+              currentPage === i ? "font-bold text-black" : "text-gray-500"
+            }`}
+          >
+            {i + 1}
+          </span>,
+        );
+      }
+      return pages;
+    }
+
+    // First page
+    pages.push(
+      <span
+        key={0}
+        onClick={() => handlePageClick(0)}
+        className={`cursor-pointer px-1 ${
+          currentPage === 0 ? "font-bold text-black" : "text-gray-500"
+        }`}
+      >
+        1
+      </span>,
+    );
+
+    // Left dots
+    if (currentPage > 3) {
+      pages.push(<span key="left-dots">...</span>);
+    }
+
+    // Middle pages
+    for (
+      let i = Math.max(1, currentPage - 1);
+      i <= Math.min(totalPages - 2, currentPage + 1);
+      i++
+    ) {
+      pages.push(
+        <span
+          key={i}
+          onClick={() => handlePageClick(i)}
+          className={`cursor-pointer px-1 ${
+            currentPage === i ? "font-bold text-black" : "text-gray-500"
+          }`}
+        >
+          {i + 1}
+        </span>,
+      );
+    }
+
+    // Right dots
+    if (currentPage < totalPages - 4) {
+      pages.push(<span key="right-dots">...</span>);
+    }
+
+    // Last page
+    pages.push(
+      <span
+        key={totalPages - 1}
+        onClick={() => handlePageClick(totalPages - 1)}
+        className={`cursor-pointer px-1 ${
+          currentPage === totalPages - 1
+            ? "font-bold text-black"
+            : "text-gray-500"
+        }`}
+      >
+        {totalPages}
+      </span>,
+    );
+
+    return pages;
+  };
+
   return (
-    <div className="custom-pagination custom-pagination relative z-20 mx-auto mt-8 w-full max-w-[1224px] px-2 pb-6 sm:mt-10 lg:mt-12 xl:mt-14">
+    <div className="relative z-20 mx-auto mt-8 w-full max-w-[1224px] px-2 pb-6 sm:mt-10 lg:mt-12 xl:mt-14">
       <h2 className="text-eerieBlack pb-4 text-2xl font-semibold lg:pb-6 xl:pb-8">
         Most popular articles
       </h2>
       <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSlideChange={(swiper) =>
+          setCurrentPage(Math.floor(swiper.activeIndex / slidesPerGroup))
+        }
         slidesPerView={1}
         slidesPerGroup={1}
         speed={500}
@@ -24,11 +122,6 @@ const BlogArticle = () => {
         navigation={{
           nextEl: ".swiper-button-next2",
           prevEl: ".swiper-button-prev2",
-        }}
-        pagination={{
-          el: ".swiper-pagination-real-time-4",
-          clickable: true,
-          dynamicMainBullets: 5,
         }}
         breakpoints={{
           320: {
@@ -49,7 +142,6 @@ const BlogArticle = () => {
             grid: { rows: 2, fill: "row" },
             spaceBetween: 20,
           },
-
           1280: {
             slidesPerView: 3,
             slidesPerGroup: 3,
@@ -57,7 +149,7 @@ const BlogArticle = () => {
             spaceBetween: 32,
           },
         }}
-        modules={[Grid, Pagination, Navigation]}
+        modules={[Grid, Navigation]}
         className="mySwiper"
       >
         {articles.map((article, index) => (
@@ -66,11 +158,18 @@ const BlogArticle = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <SwiperNavWithPagination
-        prevClass="swiper-button-prev2"
-        nextClass="swiper-button-next2"
-        paginationClass="swiper-pagination-real-time-4"
-      />
+
+      <div className="relative mt-6 flex w-full items-center justify-center gap-3 border-t border-[#eaecf0] pt-5 md:justify-between">
+        <div className="text-flintstone swiper-button-prev2 flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden">
+          <ArrowLeft height={20} width={20} color="#667085" /> Previous
+        </div>
+        <div className="relative flex items-center justify-center gap-1">
+          {renderPagination()}
+        </div>
+        <div className="text-flintstone swiper-button-next2 flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden">
+          Next <ArrowRight height={20} width={20} color="#667085" />
+        </div>
+      </div>
     </div>
   );
 };

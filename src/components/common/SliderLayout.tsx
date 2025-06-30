@@ -39,7 +39,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   effect = undefined,
   autoplay = false,
   pagination = false,
-  slidesPerView = 2,
+  slidesPerView,
   spaceBetween = 8,
   loop = true,
   grabCursor = true,

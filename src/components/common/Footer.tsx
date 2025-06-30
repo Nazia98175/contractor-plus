@@ -92,7 +92,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={457}
               width={300}
-              unoptimized
               priority
               className="h-full w-full"
               src="/images/webp/footer-gradient-dark.webp"
@@ -103,7 +102,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={200}
               width={1440}
               priority
-              unoptimized
               className="h-full w-full"
               src="/images/webp/footer-gradient.webp"
               alt="footer gradient"
@@ -118,9 +116,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           <Image
             height={457}
             width={300}
-            unoptimized
             priority
-            className="h-full w-full"
+            className="h-full w-full object-cover"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
           />
@@ -208,7 +205,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
-              unoptimized
               priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
@@ -264,7 +260,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
-              unoptimized
               priority
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"

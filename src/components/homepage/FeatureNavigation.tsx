@@ -63,7 +63,7 @@ const FeatureNavigation = ({
       <div className="relative hidden w-fit min-w-[9px] items-center justify-center px-1 lg:flex">
         <button
           ref={indicatorRef}
-          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black"
+          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black duration-200"
           style={{
             transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             transform: "translate(-50%, 6px)",

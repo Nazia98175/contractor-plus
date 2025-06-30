@@ -1,10 +1,8 @@
 "use client";
-import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
 import LottieAnimation from "../common/LottieAnimation";
-import Lottie from "lottie-react";
 
 interface EngineContractor {
   title: string;
@@ -19,7 +17,6 @@ interface TheEngineContractorProps {
 const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
   engineContractor,
 }) => {
-  const t = useTranslations("engine");
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -56,8 +53,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
             </h2>
           </div>
           <div className="ml-[-33px] flex w-full max-w-[450px] flex-col items-center -space-y-2 sm:ml-0">
-            {/* <LottieAnimation loop={true} animationData={animationData} /> */}
-            <Lottie loop={true} animationData={animationData} />
+            <LottieAnimation animationData={animationData} />
           </div>
         </div>
       </div>

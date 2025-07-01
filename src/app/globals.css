@@ -379,7 +379,10 @@ html::-webkit-scrollbar {
   @apply !relative !bottom-0;
 }
 .blog-post .swiper-pagination {
-  @apply !relative !z-[777] !mt-2 !block;
+  @apply !relative !z-[777] !mx-0 !mt-2 !block;
+}
+.blog-post .swiper-pagination-bullet {
+  @apply !mx-0;
 }
 .blog-post .swiper-pagination-bullet-active {
   @apply !bg-lightishBlue !w-6 !rounded-3xl;

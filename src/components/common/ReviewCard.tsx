@@ -31,7 +31,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   index,
 }) => {
   const profileImage = review.profileUrl || OurReviewList?.[index]?.profileUrl;
-  const initials = getInitials(review.userName || "");
+  const initials = getInitials(review.userName ?? "");
   return (
     <div className="mr-5 h-full min-h-full">
       <article
@@ -51,7 +51,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
                 className="max-w-[42px] rounded-full object-contain"
               />
             ) : (
-              <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-red-900 text-base font-semibold text-white">
+              <div className="bg-primary flex h-[42px] w-[42px] items-center justify-center rounded-full text-base font-semibold text-red-900">
                 {initials}
               </div>
             )}

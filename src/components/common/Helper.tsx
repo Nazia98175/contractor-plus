@@ -2148,7 +2148,7 @@ export const compareFeatures = [
 export const OurReviewList: Review[] = [
   {
     id: 1,
-    profileUrl: "/images/webp/rushville.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -2158,7 +2158,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 2,
-    profileUrl: "/images/webp/review-profile-7.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -2168,7 +2168,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 3,
-    profileUrl: "/images/webp/review-profile-2.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 4,
@@ -2178,7 +2178,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 4,
-    profileUrl: "/images/webp/review-profile-3.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -2188,7 +2188,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 5,
-    profileUrl: "/images/webp/juan-gracia.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 5,
@@ -2198,7 +2198,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 6,
-    profileUrl: "/images/webp/rands.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -2208,7 +2208,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 7,
-    profileUrl: "/images/webp/josh-lesson.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -2218,7 +2218,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 8,
-    profileUrl: "/images/webp/chad-cranified.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -2229,6 +2229,36 @@ export const OurReviewList: Review[] = [
 
   {
     id: 9,
+    profileUrl: "",
+    userName: "ourReviews.username",
+    userRole: "ourReviews.userRole",
+    isModal: true,
+    rating: 1,
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    review: "ourReviews.review",
+  },
+  {
+    id: 10,
+    profileUrl: "/images/webp/joshua.webp",
+    userName: "ourReviews.username",
+    userRole: "ourReviews.userRole",
+    isModal: true,
+    rating: 1,
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    review: "ourReviews.review",
+  },
+  {
+    id: 11,
+    profileUrl: "/images/webp/joshua.webp",
+    userName: "ourReviews.username",
+    userRole: "ourReviews.userRole",
+    isModal: true,
+    rating: 1,
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    review: "ourReviews.review",
+  },
+  {
+    id: 12,
     profileUrl: "/images/webp/joshua.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",

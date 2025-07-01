@@ -90,21 +90,23 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (
             <Image
-              height={457}
-              width={300}
-              priority
-              className="h-full w-full"
               src="/images/webp/footer-gradient-dark.webp"
               alt="footer gradient"
+              width={1440} // Set to actual container width if known
+              height={457}
+              sizes="100vw"
+              unoptimized
+              className="h-auto w-full" // Maintain aspect ratio
             />
           ) : (
             <Image
-              height={200}
-              width={1440}
-              priority
-              className="h-full w-full"
               src="/images/webp/footer-gradient.webp"
               alt="footer gradient"
+              width={1440}
+              height={200}
+              sizes="100vw"
+              unoptimized
+              className="h-auto w-full" // Maintain aspect ratio
             />
           )}
 
@@ -116,7 +118,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
           <Image
             height={457}
             width={300}
-            priority
+            unoptimized
+            sizes="100vw"
             className="h-full w-full object-cover"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
@@ -206,6 +209,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               priority
+              sizes="72px"
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
@@ -260,7 +264,12 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
+<<<<<<< HEAD
               priority
+=======
+              unoptimized
+              sizes="72px"
+>>>>>>> 4995c7ae79c4e71b0cde54a3344a50df6d47209a
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"

@@ -135,6 +135,8 @@ const page = async ({ params }: PageProps) => {
         blogs={blogs?.data?.[0]?.blogs}
         className="relative z-20 bg-white pb-8"
         variant="secondary"
+        title="HVAC topics from Contractor+ HQ"
+        headingVariant="tertiary"
       />
     </main>
   );

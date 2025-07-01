@@ -1,13 +1,12 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { OnIcon, OnIconw } from "../common/Icons";
+import { OnIcon, OnIconw, WhatEverIcon } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import WhateverBackground from "./WhateverBackground";
 
@@ -292,9 +291,10 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         </div>
 
         {/* <PrimaryAnimatedText delay={3000}> */}
-        <p className="text-granite text-center text-lg capitalize opacity-90">
-          <span className="sm:!text-heatherGrey pr-2 !text-white">5000+</span>
+        <p className="text-granite mx-auto flex w-fit items-center gap-2 text-center text-lg capitalize opacity-90">
+          <span className="pr-2 !text-white">5000+</span>
           {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
+          <WhatEverIcon className="h-5 w-5" />
         </p>
         {/* </PrimaryAnimatedText> */}
       </div>

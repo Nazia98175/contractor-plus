@@ -27,15 +27,15 @@ const BlogDetails = () => {
           }}
           ncc="No credit card required"
           createBtn="Get started FREE"
-          mobileBtn="Get Started"
+          mobileBtn="Download Free App"
           showClouds={true}
-          className="w-full max-w-[646px]"
+          className="w-full max-w-[646px] pt-12"
           variant="primary"
           variantBtn="dark"
         />
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] block max-h-[994px] w-full max-w-[840px]" />
       </div>
-      <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
+      <TrustBarHvca platforms={platforms} className="pb-[104px] xl:pb-20" />
       <ContractorArticles />
     </>
   );

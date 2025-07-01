@@ -20,7 +20,7 @@ const ContractorArticles = () => {
 
       <div className="relative z-30 mx-auto w-full max-w-[1224px] px-2 pt-8 pb-6">
         <div className="flex items-center justify-between pb-4">
-          <h2 className="text-eerieBlack text-xl font-semibold md:text-2xl lg:pb-6 xl:pb-8">
+          <h2 className="text-eerieBlack text-lg font-semibold sm:text-xl md:text-2xl">
             Related articles from Contractor+ HQ
           </h2>
           <button className="group hidden items-center gap-1 text-sm font-medium sm:flex">

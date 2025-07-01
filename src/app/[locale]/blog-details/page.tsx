@@ -30,7 +30,7 @@ const BlogDetails = () => {
           createBtn="Get started FREE"
           mobileBtn="Download Free App"
           showClouds={true}
-          className="w-full max-w-[646px] pt-12"
+          className="w-full max-w-[646px] pt-14"
           variant="primary"
           variantBtn="dark"
         />

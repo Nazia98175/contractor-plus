@@ -10,17 +10,17 @@ import CloudsAnimation from "../common/CloudsAnimation";
 const ContractorArticles = () => {
   return (
     <div className="relative bg-white">
-      <div className="pointer-events-none absolute -top-[4%] left-0 z-20 h-24 w-full bg-white blur-[20px] sm:blur-[12px] md:-top-[5%]"></div>
-      <div className="pointer-events-none absolute -top-[9%] left-0 z-20 h-24 w-full md:-top-[13%] md:h-[160px]">
+      <div className="pointer-events-none absolute -top-[5%] -left-5 z-30 h-28 w-[110%] bg-white blur-[12px] md:-top-[4%] md:h-[130px]"></div>
+      <div className="pointer-events-none absolute -top-[11%] left-0 z-20 h-[110px] w-full blur-[6px] sm:-top-[12%] sm:blur-[4px] md:h-[160px]">
         <CloudsAnimation
           cloud1Class="top-0"
           cloud2Class="top-0 sm:top-[50px] md:top-[55px] lg:top-0"
         />
       </div>
 
-      <div className="relative z-20 mx-auto w-full max-w-[1224px] px-2 pt-8 pb-6">
+      <div className="relative z-30 mx-auto w-full max-w-[1224px] px-2 pt-8 pb-6">
         <div className="flex items-center justify-between pb-4">
-          <h2 className="text-eerieBlack text-xl font-semibold md:text-2xl lg:pb-6 xl:pb-8">
+          <h2 className="text-eerieBlack text-lg font-semibold sm:text-xl md:text-2xl">
             Related articles from Contractor+ HQ
           </h2>
           <button className="group hidden items-center gap-1 text-sm font-medium sm:flex">

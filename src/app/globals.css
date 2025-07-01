@@ -38,7 +38,7 @@
   --color-wash: #f8f9fc;
   --color-sugar: #f9f5ff;
   --color-alice: #f0f9ff;
-  --color-sambucus: ##181a2a;
+  --color-sambucus: #181a2a;
   --color-led: #026aa2;
   --color-sinopia: #c4320a;
   --color-fatback: #fff6ed;
@@ -236,7 +236,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply 1xl:text-[22px] text-lg sm:text-xl;
+  @apply 1xl:text-[22px] text-lg xl:text-xl;
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;

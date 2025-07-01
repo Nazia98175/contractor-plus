@@ -1,6 +1,7 @@
 import BlogDetailHero from "@/components/blogdetails/BlogDetailHero";
 import ContractorArticles from "@/components/blogdetails/ContractorArticles";
 import TravelBlog from "@/components/blogdetails/TravelBlog";
+import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -14,7 +15,7 @@ export const metadata = {
 };
 const BlogDetails = () => {
   return (
-    <>
+    <main className="overflow-hidden">
       <main className="bg-white">
         <BlogDetailHero />
         <TravelBlog />
@@ -29,15 +30,16 @@ const BlogDetails = () => {
           createBtn="Get started FREE"
           mobileBtn="Download Free App"
           showClouds={true}
-          className="w-full max-w-[646px] pt-12"
+          className="w-full max-w-[646px] pt-14"
           variant="primary"
           variantBtn="dark"
         />
+        <TrustBarHvca platforms={platforms} className="pb-[104px] xl:pb-20" />
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] block max-h-[994px] w-full max-w-[840px]" />
       </div>
-      <TrustBarHvca platforms={platforms} className="pb-[104px] xl:pb-20" />
+
       <ContractorArticles />
-    </>
+    </main>
   );
 };
 

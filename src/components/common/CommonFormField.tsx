@@ -105,11 +105,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             </button>
 
             <div className="hidden items-center gap-2 pt-3 md:flex">
-              <CardRequiredButton
-                variantBtn={variantBtn}
-                text={ncc}
-                showIcon={true}
-              />
+              <CardRequiredButton variantBtn={variantBtn} text={ncc} />
             </div>
           </div>
           <div className="flex w-full items-center justify-center md:hidden">

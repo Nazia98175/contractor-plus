@@ -6,6 +6,7 @@ import SwiperNavWithPagination from "../blog/SwiperNavWithPagination";
 import { contractorArticles } from "../common/Helper";
 import { CardArrowIcon } from "../common/MainIcon";
 import CloudsAnimation from "../common/CloudsAnimation";
+import Link from "next/link";
 
 const ContractorArticles = () => {
   return (
@@ -23,12 +24,15 @@ const ContractorArticles = () => {
           <h2 className="text-eerieBlack text-lg font-semibold sm:text-xl md:text-2xl">
             Related articles from Contractor+ HQ
           </h2>
-          <button className="group hidden items-center gap-1 text-sm font-medium sm:flex">
+          <Link
+            href="/blog"
+            className="group hidden items-center gap-1 text-sm font-medium sm:flex"
+          >
             View All
             <span>
               <CardArrowIcon className="stroke-eerieBlack h-6 w-6 max-w-6 min-w-6 transition-all duration-200 ease-in group-hover:translate-x-1.5" />
             </span>
-          </button>
+          </Link>
         </div>
         <Swiper
           slidesPerView={1}

@@ -20,7 +20,7 @@ const BlogDetails = () => {
         <BlogDetailHero />
         <TravelBlog />
       </main>
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <CrmSercive
           data={{
             title: "The only OS for build and service contractors.",

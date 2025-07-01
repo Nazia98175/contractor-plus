@@ -1,17 +1,17 @@
-// app/api/image-proxy/route.ts
+// src/app/api/image-proxy/route.ts
+
 import { NextRequest } from "next/server";
 import http from "http";
 import https from "https";
 import { parse } from "url";
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<Response> {
   const url = req.nextUrl.searchParams.get("url");
 
   if (!url) {
     return new Response("Missing 'url' query parameter", { status: 400 });
   }
 
-  // ✅ Only allow proxying from your trusted Strapi server
   const parsed = parse(url);
   if (!parsed.hostname?.includes("167.88.43.123")) {
     return new Response("Access denied.", { status: 403 });
@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
 
   const client = url.startsWith("https") ? https : http;
 
-  return new Promise((resolve, reject) => {
+  return new Promise<Response>((resolve, reject) => {
     client.get(url, (imageRes) => {
       const contentType = imageRes.headers["content-type"] || "image/webp";
       const headers = new Headers({

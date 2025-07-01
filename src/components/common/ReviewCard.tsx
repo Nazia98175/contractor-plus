@@ -32,6 +32,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
 }) => {
   const profileImage = review.profileUrl || OurReviewList?.[index]?.profileUrl;
   const initials = getInitials(review.userName || "");
+
   return (
     <div className="mr-5 h-full min-h-full">
       <article

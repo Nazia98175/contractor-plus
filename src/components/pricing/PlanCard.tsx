@@ -52,7 +52,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
 
         <div className="py-1.5">
           <LineIcon />
-          <p className="text-wallStreet pt-2 text-xs font-medium">
+          <p className="text-wallStreet font-inter pt-2 text-xs font-medium">
             {plan.note}
           </p>
         </div>

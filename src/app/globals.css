@@ -29,6 +29,7 @@
   --color-lightishBlue: #3b82f6;
   --color-indiaInk: #3b3c4a;
   --color-ruinedSmores: #111216;
+  --color-coldGrey: #9f9f9f;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
   --color-flintstone: #667085;
@@ -235,7 +236,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply text-lg sm:text-xl md:text-[22px];
+  @apply 1xl:text-[22px] text-lg sm:text-xl;
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
@@ -378,7 +379,10 @@ html::-webkit-scrollbar {
   @apply !relative !bottom-0;
 }
 .blog-post .swiper-pagination {
-  @apply !relative !z-[777] !mt-2 !block;
+  @apply !relative !z-[777] !mx-0 !mt-2 !block;
+}
+.blog-post .swiper-pagination-bullet {
+  @apply !mx-0;
 }
 .blog-post .swiper-pagination-bullet-active {
   @apply !bg-lightishBlue !w-6 !rounded-3xl;

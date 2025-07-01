@@ -91,12 +91,16 @@ export const LogoIcon = () => (
   </svg>
 );
 
-export const TwitterIcon = () => (
+export const TwitterIcon = ({
+  width = 18,
+  height = 18,
+  ...props
+}: IconProps) => (
   <svg
     className="group"
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width={width}
+    height={height}
     fill="none"
     viewBox="0 0 18 18"
   >
@@ -114,13 +118,17 @@ export const TwitterIcon = () => (
     </defs>
   </svg>
 );
-
-export const LinkdinIcon = () => (
+interface IconProps extends React.SVGProps<SVGSVGElement> {}
+export const LinkdinIcon = ({
+  width = 18,
+  height = 18,
+  ...props
+}: IconProps) => (
   <svg
     className="group"
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width={width}
+    height={height}
     fill="none"
     viewBox="0 0 18 18"
   >
@@ -149,6 +157,22 @@ export const LinkdinIcon = () => (
         <path fill="#fff" d="M0 0h18v18H0z"></path>
       </clipPath>
     </defs>
+  </svg>
+);
+export const WikipediaIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="group"
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+  >
+    <path
+      d="M18.158 23.9935L14.574 15.1151C13.146 18.0451 11.578 21.1224 10.234 23.9935C10.22 24.0082 9.576 23.9935 9.576 23.9935C7.518 18.9138 5.39 13.9078 3.318 8.87231C2.842 7.63553 1.162 5.66256 0 5.66256V5H7.084V5.66256C6.244 5.66256 4.816 6.25151 5.18 7.20854C6.188 9.47598 9.716 18.266 10.682 20.504C11.34 19.1199 13.202 15.4685 14 13.9225C13.37 12.6268 11.382 7.76804 10.794 6.5607C10.346 5.76563 9.212 5.66256 8.344 5.66256C8.344 5.44171 8.358 5.29447 8.344 5.01472L14.588 5.02945V5.61839C13.734 5.66256 12.936 5.97176 13.3 6.82573C14.14 8.65145 14.63 9.96186 15.4 11.6551C15.638 11.1545 16.898 8.4306 17.5 7.00241C17.864 6.04538 17.318 5.66256 15.806 5.66256C15.82 5.48588 15.82 5.17668 15.82 5.02945C17.766 5.01472 20.692 5.01472 21.21 5V5.61839C20.216 5.66256 19.194 6.22206 18.662 7.07603L16.1 12.7299C16.352 13.4808 18.844 19.2966 19.11 19.9445L24.5 6.94352C24.08 5.88342 22.876 5.66256 22.4 5.66256V5L28 5.04417V5.66256C26.768 5.66256 25.998 6.39874 25.55 7.50301C24.43 10.1385 21 18.531 18.76 23.9935H18.158Z"
+      fill="#656C73"
+      className="group-hover:fill-romanRed transition-all duration-200 ease-in-out"
+    />
   </svg>
 );
 

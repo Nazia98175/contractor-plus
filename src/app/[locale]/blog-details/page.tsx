@@ -1,5 +1,10 @@
 import BlogDetailHero from "@/components/blogdetails/BlogDetailHero";
+import ContractorArticles from "@/components/blogdetails/ContractorArticles";
 import TravelBlog from "@/components/blogdetails/TravelBlog";
+import { platforms } from "@/components/common/Helper";
+import { FooterRedLineMobileIcon } from "@/components/common/Icons";
+import CrmSercive from "@/components/crmbussiness/CrmSercive";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import React from "react";
 
 export const metadata = {
@@ -9,10 +14,30 @@ export const metadata = {
 };
 const BlogDetails = () => {
   return (
-    <main className="bg-white">
-      <BlogDetailHero />
-      <TravelBlog />
-    </main>
+    <>
+      <main className="bg-white">
+        <BlogDetailHero />
+        <TravelBlog />
+      </main>
+      <div className="relative">
+        <CrmSercive
+          data={{
+            title: "The only OS for build and service contractors.",
+            placeholder: "Enter your email",
+          }}
+          ncc="No credit card required"
+          createBtn="Get started FREE"
+          mobileBtn="Download Free App"
+          showClouds={true}
+          className="w-full max-w-[646px] pt-12"
+          variant="primary"
+          variantBtn="dark"
+        />
+        <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] block max-h-[994px] w-full max-w-[840px]" />
+      </div>
+      <TrustBarHvca platforms={platforms} className="pb-[104px] xl:pb-20" />
+      <ContractorArticles />
+    </>
   );
 };
 

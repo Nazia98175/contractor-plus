@@ -1,9 +1,8 @@
 "use client";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { ArrowIcon } from "./Icons";
-import Link from "next/link";
 interface Props {
   headerSubList: any;
 }
@@ -64,16 +63,17 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
       <div className="relative z-[9999] flex grow gap-8 overflow-auto">
         <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
           {headerSubList?.[0]?.links?.map((link: any, index: any) => (
-            <button
+            <Link
+              href={link?.linkUrl ?? "#"}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               key={index}
               className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
             >
-              <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit text-start group-hover:!text-white">
+              <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start group-hover:!text-white">
                 {link.linkTxt}
               </span>
-            </button>
+            </Link>
           ))}
         </div>
 

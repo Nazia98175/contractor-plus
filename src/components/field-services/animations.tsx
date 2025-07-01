@@ -63,13 +63,61 @@ export const stepOneAnimation = () => {
         ease: "none",
       },
       "same",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-4vw",
+        y: "-4vw",
+        ease: "none",
+      },
+      "same",
+    )
+    .to(
+      "#timing-text-1 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "same",
+    )
+    .to(
+      "#timing-text-2 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "same",
+    )
+    .to(
+      "#timing-img-1",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "same",
+    )
+    .to(
+      "#timing-img-2",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "same",
     );
 };
 
 export const stepTwoAnimation = () => {
   const tl = gsap.timeline();
   return tl
-
     .to(
       ".middle-minute-time",
       {
@@ -120,6 +168,55 @@ export const stepTwoAnimation = () => {
       {
         opacity: 1,
         ease: "none",
+      },
+      "step-2",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-19vw",
+        y: "-4vw",
+        ease: "none",
+      },
+      "step-2",
+    )
+    .to(
+      "#timing-text-2 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-2",
+    )
+    .to(
+      "#timing-text-3 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-2",
+    )
+    .to(
+      "#timing-img-2",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-2",
+    )
+    .to(
+      "#timing-img-3",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
       },
       "step-2",
     );
@@ -187,6 +284,55 @@ export const stepThreeAnimation = () => {
       {
         opacity: 1,
         ease: "none",
+      },
+      "step-3",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-20vw",
+        y: "-2vw",
+        ease: "none",
+      },
+      "step-3",
+    )
+    .to(
+      "#timing-text-3 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-3",
+    )
+    .to(
+      "#timing-text-4 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-3",
+    )
+    .to(
+      "#timing-img-3",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-3",
+    )
+    .to(
+      "#timing-img-4",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
       },
       "step-3",
     );
@@ -266,6 +412,55 @@ export const stepFourAnimation = () => {
         ease: "none",
       },
       "step-4",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-45vw",
+        y: "-3vw",
+        ease: "none",
+      },
+      "step-4",
+    )
+    .to(
+      "#timing-text-4 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-4",
+    )
+    .to(
+      "#timing-text-5 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-4",
+    )
+    .to(
+      "#timing-img-4",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-4",
+    )
+    .to(
+      "#timing-img-5",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-4",
     );
 };
 
@@ -322,6 +517,55 @@ export const stepFiveAnimation = () => {
       {
         opacity: 1,
         ease: "none",
+      },
+      "step-5",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-65vw",
+        y: "-4vw",
+        ease: "none",
+      },
+      "step-5",
+    )
+    .to(
+      "#timing-text-5 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-5",
+    )
+    .to(
+      "#timing-text-6 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-5",
+    )
+    .to(
+      "#timing-img-5",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-5",
+    )
+    .to(
+      "#timing-img-6",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
       },
       "step-5",
     );
@@ -382,6 +626,55 @@ export const stepSixAnimation = () => {
         ease: "none",
       },
       "step-6",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-70vw",
+        y: "0vw",
+        ease: "none",
+      },
+      "step-6",
+    )
+    .to(
+      "#timing-text-6 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-6",
+    )
+    .to(
+      "#timing-text-7 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-6",
+    )
+    .to(
+      "#timing-img-6",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-6",
+    )
+    .to(
+      "#timing-img-7",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-6",
     );
 };
 
@@ -422,6 +715,55 @@ export const stepSevenAnimation = () => {
         y: 60,
         ease: "none",
         zIndex: 100,
+      },
+      "step-7",
+    )
+    .to(
+      "#sun-wrapper",
+      {
+        x: "-88vw",
+        y: "3vw",
+        ease: "none",
+      },
+      "step-7",
+    )
+    .to(
+      "#timing-text-7 .split-line",
+      {
+        y: "-105%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-7",
+    )
+    .to(
+      "#timing-text-8 .split-line",
+      {
+        y: "0",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-7",
+    )
+    .to(
+      "#timing-img-7",
+      {
+        y: "-100%",
+        opacity: 0,
+        delay: 0.2,
+        ease: "expo.inOut",
+      },
+      "step-7",
+    )
+    .to(
+      "#timing-img-8",
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.2,
+        ease: "expo.inOut",
       },
       "step-7",
     );

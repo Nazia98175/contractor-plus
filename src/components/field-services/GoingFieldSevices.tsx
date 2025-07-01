@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import {
   BreakeIcon,
   DashedLineIcon,
@@ -10,7 +11,11 @@ import { TheSwitchingToolProps } from "../crmbussiness/SwitchingTool";
 import { debugLog } from "@/utils/getConsole";
 import TextAnimation from "../common/TextAnimation";
 import Image from "next/image";
-
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+// Register the SplitText plugin
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
   switchingTool,
 }) => {
@@ -31,18 +36,42 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       text: switchingTool?.cardsDetail?.[2]?.text,
     },
   ];
+
+  useEffect(() => {
+    const scrollTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#going-field-service",
+        start: "top 50%",
+        endTrigger: "#parallex-img-wrapper",
+        end: `bottom 100px`,
+        markers: false,
+        scrub: 2,
+      },
+    });
+
+    scrollTimeline.to("#parallex-img", {
+      y: -100,
+      ease: "none",
+    });
+  }, []);
   debugLog("switchingTool", switchingTool);
   return (
-    <section className="relative z-20 pb-[52px] sm:pb-[60px] lg:pb-[95px]">
-      <Image
-        width={1440}
-        height={150}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
-        unoptimized
-        className="h-[150px] w-full object-cover sm:h-[180px]"
-        src="/images/webp/field-services.webp"
-        alt="Map Image"
-      />
+    <section
+      id="going-field-service"
+      className="relative z-20 pb-[52px] sm:pb-[60px] lg:pb-[95px]"
+    >
+      <div id="parallex-img-wrapper">
+        <Image
+          width={1440}
+          height={150}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
+          unoptimized
+          className="h-[150px] w-full object-cover sm:h-[180px]"
+          id="parallex-img"
+          src="/images/webp/field-services.webp"
+          alt="Map Image"
+        />
+      </div>
 
       {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
       <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[868px]">

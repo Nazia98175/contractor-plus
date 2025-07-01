@@ -85,89 +85,143 @@ const TimeAnimation = () => {
   return (
     <div className="text-phantom relative flex h-[50px] flex-col items-center text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
       {/* MIDDLE TIME */}
-      <div id="middle-time-wrapper" className="flex h-[50px] overflow-hidden">
-        <div
-          style={{ willChange: "transform" }}
-          className="middle-hour-time flex translate-y-[-300px] flex-col items-center"
-        >
-          {hour.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {hour.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {hour.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
+      <div
+        id="middle-time-wrapper"
+        className="flex h-[50px] items-center overflow-hidden"
+      >
+        <div className="h-[50px]">
+          <div
+            style={{ willChange: "transform" }}
+            className="middle-hour-time flex translate-y-[-300px] flex-col items-center"
+          >
+            {hour.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {hour.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {hour.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+          </div>
         </div>
-        <span className="opacity-100">:</span>
-        <div className="middle-minute-time flex translate-y-[-3000px] flex-col">
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
-          {minutes.map((obj, index) => (
-            <span key={index} className="flex h-[50px]">
-              {obj}
-            </span>
-          ))}
+        <div className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black">
+          :
+        </div>
+        <div className="h-[50px]">
+          <div className="middle-minute-time flex translate-y-[-3000px] flex-col">
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+            {minutes.map((obj, index) => (
+              <div
+                key={index}
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+              >
+                {obj}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

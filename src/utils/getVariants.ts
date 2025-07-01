@@ -106,3 +106,9 @@ export const variantsBlogCard = {
     title: "text-lg sm:text-xl md:text-2xl text-eerieBlack font-semibold",
   },
 };
+export const headingVariantMap: Record<string, string> = {
+  primary:
+    "faq-heading-text text-center text-2xl font-semibold tracking-[-0.62px] sm:text-[31px]",
+  secondary: "section-heading",
+  tertiary: " hvac-blog-card-heading section-heading", // Optional extra variant
+};

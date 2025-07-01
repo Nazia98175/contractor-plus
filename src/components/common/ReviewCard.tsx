@@ -18,12 +18,20 @@ const renderStars = (rating: number) => {
     </span>
   ));
 };
+const getInitials = (name: string) => {
+  if (!name) return "";
+  const words = name.trim().split(" ");
+  if (words.length === 1) return words[0][0]?.toUpperCase();
+  return `${words[0][0]?.toUpperCase()}${words[1][0]?.toUpperCase()}`;
+};
 
 const ReviewCard: React.FC<ReviewCardProps> = ({
   review,
   openModal,
   index,
 }) => {
+  const profileImage = review.profileUrl || OurReviewList?.[index]?.profileUrl;
+  const initials = getInitials(review.userName ?? "");
   return (
     <div className="mr-5 h-full min-h-full">
       <article
@@ -34,13 +42,19 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
-            <Image
-              src={review.profileUrl || OurReviewList?.[index]?.profileUrl}
-              alt="avatar"
-              width={42}
-              height={42}
-              className="max-w-[42px] rounded-full object-contain"
-            />
+            {profileImage ? (
+              <Image
+                src={profileImage}
+                alt="avatar"
+                width={42}
+                height={42}
+                className="max-w-[42px] rounded-full object-contain"
+              />
+            ) : (
+              <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black text-base font-semibold text-white">
+                {initials}
+              </div>
+            )}
             <div>
               <div className="flex items-center gap-2">
                 <p className="text-lightBlack max-w-[160px] truncate text-base font-medium text-nowrap">

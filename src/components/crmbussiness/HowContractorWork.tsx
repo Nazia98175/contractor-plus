@@ -56,7 +56,7 @@ const HowContractorWork: React.FC<Props> = ({ data, ncc, trackProperties }) => {
             {data?.content?.map((feature, index) => (
               <li
                 key={index}
-                className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-center sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
+                className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
               >
                 <span className="max-w-5 min-w-5 md:max-w-6">
                   <CheckIcon

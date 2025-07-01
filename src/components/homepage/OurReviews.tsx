@@ -27,6 +27,10 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+  // const slicedata = reviewsList.slice(0, 6);
+  // console.log(slicedata, "slidece data");
+  // const slicefull = reviewsList.slice(6);
+  // console.log(slicefull, "slidece full");
 
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
@@ -109,37 +113,41 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
         {/* First row of reviews - scrolling right */}
         <div className="w-full">
-          <Marquee speed={30} direction="right" className="py-5" pauseOnHover>
-            {reviewsList?.map((review: any, index: any) => (
-              <ReviewCard
-                index={index}
-                key={review.id}
-                review={review as Review}
-                openModal={
-                  review.isModal
-                    ? () => openModal(review.videoLink || "")
-                    : () => {}
-                }
-              />
-            ))}
+          <Marquee speed={35} direction="right" className="py-5" pauseOnHover>
+            {reviewsList
+              ?.slice(0, 6)
+              .map((review: any, index: any) => (
+                <ReviewCard
+                  index={index}
+                  key={review.id}
+                  review={review as Review}
+                  openModal={
+                    review.isModal
+                      ? () => openModal(review.videoLink || "")
+                      : () => {}
+                  }
+                />
+              ))}
           </Marquee>
         </div>
 
         {/* Second row of reviews - scrolling left */}
         <div className="hidden w-full md:block">
-          <Marquee speed={30} direction="left" pauseOnHover className="py-5">
-            {reviewsList?.map((review: any, index: any) => (
-              <ReviewCard
-                key={review.id}
-                index={index}
-                review={review as Review}
-                openModal={
-                  review.isModal
-                    ? () => openModal(review.videoLink || "")
-                    : () => {}
-                }
-              />
-            ))}
+          <Marquee speed={35} direction="left" pauseOnHover className="py-5">
+            {reviewsList
+              ?.slice(6)
+              .map((review: any, index: any) => (
+                <ReviewCard
+                  key={review.id}
+                  index={index}
+                  review={review as Review}
+                  openModal={
+                    review.isModal
+                      ? () => openModal(review.videoLink || "")
+                      : () => {}
+                  }
+                />
+              ))}
           </Marquee>
         </div>
       </div>

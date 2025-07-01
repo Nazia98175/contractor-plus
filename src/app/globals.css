@@ -29,6 +29,7 @@
   --color-lightishBlue: #3b82f6;
   --color-indiaInk: #3b3c4a;
   --color-ruinedSmores: #111216;
+  --color-coldGrey: #9f9f9f;
   --color-petal: #ebe6e6;
   --color-asphalt: #030101;
   --color-flintstone: #667085;
@@ -37,7 +38,7 @@
   --color-wash: #f8f9fc;
   --color-sugar: #f9f5ff;
   --color-alice: #f0f9ff;
-  --color-sambucus: ##181a2a;
+  --color-sambucus: #181a2a;
   --color-led: #026aa2;
   --color-sinopia: #c4320a;
   --color-fatback: #fff6ed;
@@ -235,7 +236,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply text-lg sm:text-xl md:text-[22px];
+  @apply 1xl:text-[22px] text-lg xl:text-xl;
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
@@ -251,7 +252,7 @@ body {
 }
 
 .feature-btn {
-  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[75%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
+  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[110%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
 .header-li-dropdown {
   @apply font-inter text-lightBlack px-1 text-xs font-semibold duration-300 ease-linear lg:text-sm xl:text-base;
@@ -281,7 +282,7 @@ body {
   @apply absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 rounded-full bg-white transition-all duration-300 group-hover:w-full;
 }
 .blog-detail-heading {
-  @apply text-sambucus mt-8 text-2xl font-semibold;
+  @apply text-sambucus 1xl:mt-8 mt-5 text-2xl font-semibold;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -378,7 +379,10 @@ html::-webkit-scrollbar {
   @apply !relative !bottom-0;
 }
 .blog-post .swiper-pagination {
-  @apply !relative !z-[777] !mt-2 !block;
+  @apply !relative !z-[777] !mx-0 !mt-2 !block;
+}
+.blog-post .swiper-pagination-bullet {
+  @apply !mx-0;
 }
 .blog-post .swiper-pagination-bullet-active {
   @apply !bg-lightishBlue !w-6 !rounded-3xl;
@@ -1655,4 +1659,17 @@ button {
 }
 .swiper-pagination-number span {
   @apply !bg-lightishBlue relative !m-0 flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold text-white;
+}
+.hvac-blog-card-heading {
+  background:
+    linear-gradient(
+      270.38deg,
+      rgba(0, 0, 0, 0) 35.56%,
+      rgba(238, 30, 37, 0.4) 99.98%
+    ),
+    #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

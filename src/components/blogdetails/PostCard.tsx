@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const PostCard = () => {
   return (
-    <article className="mx-auto flex max-w-[967px] flex-col gap-5 sm:flex-row">
+    <article className="relative z-30 mx-auto flex max-w-[967px] flex-col gap-5 sm:flex-row">
       <Image
         src="/images/webp/review-profile-7.webp"
         alt=""

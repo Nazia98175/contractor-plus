@@ -651,11 +651,11 @@ export const trackFeatures = [
 export const planData = [
   {
     title: "Freedom",
-    subtitle: "It's free - for as long as you need!",
+    subtitle: "Free forever",
     monthlyPrice: 0,
-    note: "Just Getting Started",
+    note: "Just Starting",
     cta: "Start for free",
-    featuresHeading: "Everything you need to get started!",
+    featuresHeading: "Features Included :",
     features: [
       "Manage leads & clients",
       "Unlimited estimates & invoices",
@@ -667,7 +667,7 @@ export const planData = [
   },
   {
     title: "PRO",
-    subtitle: "(With Annual Pre-Pay)",
+    subtitle: "1 user",
     monthlyPrice: 29,
     note: "For Solopreneurs",
     cta: "Get started",
@@ -684,18 +684,18 @@ export const planData = [
   },
   {
     title: "Pro Team",
-    subtitle: "First 5 team members included",
+    subtitle: "Up to 5 users",
     monthlyPrice: 95,
-    note: "For PRO Teams That Need It ALL!",
+    note: "For Teams",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
     features: [
-      "Additional users $29/month",
+      "Up to 5 users",
+      "$29/month per additional user",
       "Manage team / employees",
       "Personal, group & client chats",
       "Custom URL & branding",
       "Connect Quickbooks Online",
-      "Zapier & developers API ",
     ],
     isProTeam: true,
   },

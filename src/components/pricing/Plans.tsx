@@ -20,14 +20,14 @@ const Plans: React.FC<PlansProps> = ({ onScroll }) => {
       </div>
 
       <p className="text-winterWay xs:max-w-[80%] mx-auto mt-6 text-center text-xs sm:mt-0">
-        All prices in USD. Pricing excludes sales tax where applicable. Annual
-        contracts are billed in one invoice, up front.
+        Prices are in USD. Pricing excludes VAT & sales tax where applicable.
+        Annual contracts are billed upfront in one invoice.
       </p>
       <button
         onClick={onScroll}
         className="text-winterWay hover:bg-superSilver mb-6 flex h-8 items-center justify-center gap-1 rounded-md px-3 text-sm font-semibold tracking-[0.1px] duration-300 sm:mb-0"
       >
-        See complete PRO feature list below
+        Compare plan features
         <ScrollDownIcon />
       </button>
     </section>

@@ -70,7 +70,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       {showDescription && (
         // <TextAnimation animateOnScroll={false} delay={0.2}>
         <p
-          className={`paragraph-text mb-7 text-center md:mb-[34px] ${variantStyles.subtitle}`}
+          className={`paragraph-text pb-7 text-center md:pb-[34px] ${variantStyles.subtitle}`}
         >
           {sub_title}
         </p>
@@ -105,7 +105,11 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             </button>
 
             <div className="hidden items-center gap-2 pt-3 md:flex">
-              <CardRequiredButton variantBtn={variantBtn} text={ncc} />
+              <CardRequiredButton
+                variantBtn={variantBtn}
+                text={ncc}
+                showIcon={true}
+              />
             </div>
           </div>
           <div className="flex w-full items-center justify-center md:hidden">

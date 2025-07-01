@@ -93,7 +93,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   return (
     <>
       {/* Critical above-the-fold content - Server Component */}
-      <img src="http://167.88.43.123:1337/uploads/5_d7fecadc48.webp" />
       <CrmHero hero={page?.hero} slug={useParams?.slug} heroImg={heroImg} />
       <TrustedService reviews={reviews} slug={useParams?.slug} />
       <SwitchingTool switchingTool={switchingTool?.switchingTool} />

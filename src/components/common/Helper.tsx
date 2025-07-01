@@ -668,7 +668,8 @@ export const planData = [
   {
     title: "PRO",
     subtitle: "1 user",
-    monthlyPrice: 29,
+    monthlyPrice: 49,
+    annuallyPrice: 29,
     note: "For Solopreneurs",
     cta: "Get started",
     featuresHeading: "Everything in FREEDOM +",
@@ -685,7 +686,8 @@ export const planData = [
   {
     title: "Pro Team",
     subtitle: "Up to 5 users",
-    monthlyPrice: 95,
+    monthlyPrice: 145,
+    annuallyPrice: 95,
     note: "For Teams",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",

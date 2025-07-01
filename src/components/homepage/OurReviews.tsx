@@ -113,7 +113,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
         {/* First row of reviews - scrolling right */}
         <div className="w-full">
-          <Marquee speed={100} direction="right" className="py-5" pauseOnHover>
+          <Marquee speed={35} direction="right" className="py-5" pauseOnHover>
             {reviewsList
               ?.slice(0, 6)
               .map((review: any, index: any) => (
@@ -133,7 +133,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
         {/* Second row of reviews - scrolling left */}
         <div className="hidden w-full md:block">
-          <Marquee speed={100} direction="left" pauseOnHover className="py-5">
+          <Marquee speed={35} direction="left" pauseOnHover className="py-5">
             {reviewsList
               ?.slice(6)
               .map((review: any, index: any) => (

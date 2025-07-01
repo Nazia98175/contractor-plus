@@ -34,8 +34,11 @@ const BlogDetails = () => {
           variant="primary"
           variantBtn="dark"
         />
-        <TrustBarHvca platforms={platforms} className="pb-[104px] xl:pb-20" />
-        <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] block max-h-[994px] w-full max-w-[840px]" />
+        <TrustBarHvca
+          platforms={platforms}
+          className="z-20 pb-[104px] xl:pb-20"
+        />
+        <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] z-0 block max-h-[994px] w-full max-w-[840px]" />
       </div>
 
       <ContractorArticles />

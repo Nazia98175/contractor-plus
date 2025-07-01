@@ -13,7 +13,7 @@ const BlogDetailContent = () => {
         of your travels.
       </p>
       <h4 className="blog-detail-heading">Research Your Destination</h4>
-      <p className="xs-heading text-indiaInk mt-4">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3">
         Before embarking on your journey, take the time to research your
         destination. This includes understanding the local culture, customs, and
         laws, as well as identifying top attractions, restaurants, and
@@ -26,7 +26,7 @@ const BlogDetailContent = () => {
         adipiscing vitae. Viverra adipiscing at in tellus.
       </p>
       <h4 className="blog-detail-heading">Plan Your Itinerary</h4>
-      <p className="xs-heading text-indiaInk mt-4">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3">
         While it's essential to leave room for spontaneity and unexpected
         adventures, having a rough itinerary can help you make the most of your
         time and budget. Identify the must-see sights and experiences and
@@ -45,7 +45,7 @@ const BlogDetailContent = () => {
         className="mt-8 max-h-[310px] rounded-lg object-cover object-top"
       />
       <h4 className="blog-detail-heading">Pack Lightly and Smartly</h4>
-      <p className="xs-heading text-indiaInk mt-4">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3">
         Traveling can expose you to new environments and potential health risks,
         so it's crucial to take precautions to stay safe and healthy. This
         includes researching any required vaccinations or medications, staying
@@ -56,7 +56,7 @@ const BlogDetailContent = () => {
       <h4 className="blog-detail-heading">
         Immerse Yourself in the Local Culture
       </h4>
-      <p className="xs-heading text-indiaInk mt-4">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3">
         One of the most rewarding aspects of traveling is immersing yourself in
         the local culture and customs. This includes trying local cuisine,
         attending cultural events and festivals, and interacting with locals.
@@ -64,7 +64,7 @@ const BlogDetailContent = () => {
         making connections and showing respect.
       </p>
       <h4 className="blog-detail-heading">Stay Safe and Healthy</h4>
-      <p className="xs-heading text-indiaInk mt-4 max-w-[625px]">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3 max-w-[625px]">
         Traveling can expose you to new environments and potential health risks,
         so it's crucial to take precautions to stay safe and healthy. This
         includes researching any required vaccinations or medications, staying
@@ -73,7 +73,7 @@ const BlogDetailContent = () => {
         and to be aware of your surroundings at all times.
       </p>
       <h4 className="blog-detail-heading">Capture Memories</h4>
-      <p className="xs-heading text-indiaInk mt-4 max-w-[625px]">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3 max-w-[625px]">
         Finally, don't forget to capture memories of your journey. Whether it's
         through photographs, journaling, or souvenirs, preserving the moments
         and experiences of your travels can bring joy and nostalgia for years to

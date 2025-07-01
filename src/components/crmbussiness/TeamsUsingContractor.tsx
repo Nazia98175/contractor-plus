@@ -2,7 +2,12 @@
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { ClockIcon, EstimateIcon2, MoreIcon } from "../common/Icons";
+import {
+  CalanderIcon,
+  ClockIcon,
+  EstimateIcon2,
+  MoreIcon,
+} from "../common/Icons";
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
@@ -19,11 +24,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
     fallbackInView: true,
   });
 
-  const t = useTranslations("crm");
-
   const icons = [
     <EstimateIcon2 key="estimate" className="fill-[#3F464B]" />,
     <ClockIcon key="clock" />,
+    <MoreIcon key="more" />,
+  ];
+  const icons2 = [
+    <ClockIcon key="clock" />,
+    <CalanderIcon key="estimate" className="fill-[#3F464B]" />,
     <MoreIcon key="more" />,
   ];
   return (
@@ -46,7 +54,11 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             className="bg-doctor flex cursor-pointer flex-col items-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
             <span className="mb-1 h-[31px] w-[31px]">
-              {icons[index % icons.length]}
+              {slug === "crm" ? (
+                <> {icons[index % icons.length]}</>
+              ) : (
+                <>{icons2[index % icons.length]}</>
+              )}
             </span>
             <h3 className="text-winterWay countup-title flex items-center justify-center">
               <span
@@ -69,10 +81,12 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                   (item?.value !== null
                     ? `${item.value}${item.suffix ?? ""}`
                     : `${item.end}${item.suffix ?? ""}`)}
-              </span>
-              <span className="inline-block px-2">
-                {item.title !== "n/a" && item.title}
-              </span>
+              </span>{" "}
+              {slug === "crm" ? (
+                <span className="inline-block px-2">
+                  {item.title !== "n/a" && item.title}
+                </span>
+              ) : undefined}
             </h3>
 
             <p className="text-secondary countup-desc">{item.sub_title}</p>

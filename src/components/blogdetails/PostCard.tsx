@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const PostCard = () => {
   return (
-    <article className="relative z-30 mx-auto flex max-w-[967px] flex-col gap-5 sm:flex-row">
+    <article className="relative z-30 mx-auto flex flex-col gap-5 sm:max-w-[90%] sm:flex-row md:max-w-[80%] xl:max-w-[967px]">
       <Image
         src="/images/webp/review-profile-7.webp"
         alt=""
         width={90}
         height={90}
-        className="h-[90px] w-[90] rounded-full"
+        className="h-[90px] w-[90] rounded-sm sm:rounded-full"
       />
       <div className="space-y-2.5">
         <h5 className="font-inter md:ext-2xl text-xl font-medium tracking-[0.1px]">

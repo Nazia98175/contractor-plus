@@ -22,7 +22,7 @@ const TableFeatureRow: React.FC<TableFeatureRowProps> = ({
     <tr className="border-decemberSky border-b">
       <td className="border-r border-gray-300">
         <div
-          className="flex h-full cursor-pointer items-center justify-between gap-1 px-3 pt-3 pb-3 xl:gap-3 xl:px-5"
+          className="flex h-full cursor-pointer items-start justify-between gap-1 px-3 pt-3 pb-3 xl:gap-3 xl:px-5"
           onClick={toggle}
         >
           <span className="text-winterWay text-sm lg:text-base">

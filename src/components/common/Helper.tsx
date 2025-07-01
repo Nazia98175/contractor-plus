@@ -651,11 +651,11 @@ export const trackFeatures = [
 export const planData = [
   {
     title: "Freedom",
-    subtitle: "Free forever",
+    subtitle: "It's free - for as long as you need!",
     monthlyPrice: 0,
-    note: "Just Starting",
+    note: "Just Getting Started",
     cta: "Start for free",
-    featuresHeading: "Features Included :",
+    featuresHeading: "Everything you need to get started!",
     features: [
       "Manage leads & clients",
       "Unlimited estimates & invoices",
@@ -667,7 +667,7 @@ export const planData = [
   },
   {
     title: "PRO",
-    subtitle: "1 user",
+    subtitle: "(With Annual Pre-Pay)",
     monthlyPrice: 29,
     note: "For Solopreneurs",
     cta: "Get started",
@@ -684,18 +684,18 @@ export const planData = [
   },
   {
     title: "Pro Team",
-    subtitle: "Up to 5 users",
+    subtitle: "First 5 team members included",
     monthlyPrice: 95,
-    note: "For Teams",
+    note: "For PRO Teams That Need It ALL!",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
     features: [
-      "Up to 5 users",
-      "$29/month per additional user",
+      "Additional users $29/month",
       "Manage team / employees",
       "Personal, group & client chats",
       "Custom URL & branding",
       "Connect Quickbooks Online",
+      "Zapier & developers API ",
     ],
     isProTeam: true,
   },
@@ -1791,12 +1791,7 @@ export const comparisonTableData: {
         description: `Win more jobs and increase your average job size by offering "buy now pay later" style consumer financing to your customers directly on your estimates and invoices. By integrating this into your sales process, you'll sell more, and make more. `,
         available: [false, true, true],
       },
-      {
-        name: "Recurring Billing / Subscriptions",
-        description:
-          "Store your clients payment method on file to automatically bill them on a schedule, such as, upon each visit completion, or manually as a job progresses. No more needing to knock on the door or manually send an invoice. Fully automated, the way it should be. ",
-        available: [false, false, true],
-      },
+
       {
         name: "Next Day Funding",
         description:
@@ -1880,18 +1875,6 @@ export const comparisonTableData: {
         description:
           "Automatically track the Weather Forecast for any Job Site",
         available: [false, true, true],
-      },
-      {
-        name: "Bid Management",
-        description:
-          "Have a specific Task or Phase of a Job that you need to find a subcontractor for? Open it up for bidding, or send a bid request to specific subcontractors in your area.",
-        available: [false, true, "Coming Soon"],
-      },
-      {
-        name: "Subcontractor Collaboration",
-        description:
-          "Collaborate with other contractors in real-time. Share Job, Phase or Task access with other companies using Contractor+ & invite your existing subcontractors without needing to pay for their access. Free for you, free for them. Everybody wins.",
-        available: [false, true, "Coming Soon"],
       },
     ],
   },
@@ -2025,12 +2008,7 @@ export const comparisonTableData: {
           "If you use EarthCam, you can add your Job Site Live Cams to any job, client or service address. This lets you see what's going on at every job site, right from your Contractor+ dashboard.",
         available: [false, true, true],
       },
-      {
-        name: "Shovels",
-        description:
-          "Instantly access permit data for any property / service address.",
-        available: [false, true, true],
-      },
+
       {
         name: "iCal",
         description: "Two-way calendar sync with any iCal calendar.",
@@ -2054,7 +2032,7 @@ export const comparisonTableData: {
         available: [false, false, true],
       },
       {
-        name: "SDevelopers API",
+        name: "Developers API",
         description:
           "We have a full RESTful API, enabling you to build your own custom solutions that are in communication with Contractor+.",
         available: [false, false, true],
@@ -2857,6 +2835,41 @@ export const reviews = [
   },
   {
     id: 3,
+    userName: "Scott Azure",
+    profileUrl: "/images/webp/rands.webp",
+    rating: 5,
+    videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
+    userRole: "CEO at Rands Mechanical",
+  },
+  {
+    id: 4,
+    userName: "Brandon Geiger",
+    profileUrl: "/images/webp/rushville.webp",
+    rating: 5,
+    videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `Since I started sending all my estimates using Contractor+, I have
+    stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+    userRole: "Co-Owner, Rushville Restorations",
+  },
+
+  {
+    id: 5,
+    userName: "Juan Garcia",
+    profileUrl: "/images/webp/juan-gracia.webp",
+    rating: 5,
+    videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.`,
+    userRole: "Owner, Nailed It Miami",
+  },
+  {
+    id: 6,
     userName: "Scott Azure",
     profileUrl: "/images/webp/rands.webp",
     rating: 5,

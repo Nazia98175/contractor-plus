@@ -1,12 +1,10 @@
 import BlogDetailHero from "@/components/blogdetails/BlogDetailHero";
 import ContractorArticles from "@/components/blogdetails/ContractorArticles";
 import TravelBlog from "@/components/blogdetails/TravelBlog";
-import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
-import React from "react";
 
 export const metadata = {
   title: "Contractor Plus - Blogs Details",

@@ -690,12 +690,12 @@ export const planData = [
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
     features: [
-      "Up to 5 users",
       "$29/month per additional user",
       "Manage team / employees",
       "Personal, group & client chats",
       "Custom URL & branding",
       "Connect Quickbooks Online",
+      "Zapier & developer API",
     ],
     isProTeam: true,
   },
@@ -1803,6 +1803,53 @@ export const comparisonTableData: {
         description:
           "Want your funds faster? If you can't wait until the next day, you can get your funds as soon as 30 minutes with Instant Payouts for 1%.",
         available: [false, "1% Per Payout", "1% Per Payout"],
+      },
+    ],
+  },
+  {
+    title: "Team Collaboration",
+    key: "collab",
+    features: [
+      {
+        name: "Manage Team Membersg",
+        description: "Add your Employees as Team Members.",
+        available: [false, false, true],
+      },
+      {
+        name: "Roles & User Permissions",
+        description:
+          "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
+        available: [false, false, true],
+      },
+      {
+        name: "Comprehensive Mobile App",
+        description:
+          "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
+        available: [true, true, true],
+      },
+      {
+        name: "Chat",
+        description:
+          "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
+        available: [false, true, true],
+      },
+      {
+        name: "Drag & Drop Scheduling",
+        description:
+          "View the Schedule for your entire team. Send or Print any individual schedule, quickly assign Team Member's to individual visits, and keep track of unscheduled events that need to be scheduled.",
+        available: [false, true, true],
+      },
+      {
+        name: "Real-Time Dispatching",
+        description:
+          "You can schedule events without having anyone assigned. You can see your scheduled, unscheduled & unassigned jobs on the in-app Schedule and assign team members or groups of team members based on their individual availability.",
+        available: [false, false, true],
+      },
+      {
+        name: "Live Map",
+        description:
+          "Track your entire team's whereabouts white they're on the clock or tracking their mileage. See who's on the Job Site & see who's driving. Start a chat, delegate/assign a task, and more - right from the map view!",
+        available: [false, false, true],
       },
     ],
   },

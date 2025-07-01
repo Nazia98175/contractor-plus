@@ -264,12 +264,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
-<<<<<<< HEAD
-              priority
-=======
               unoptimized
               sizes="72px"
->>>>>>> 4995c7ae79c4e71b0cde54a3344a50df6d47209a
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"

@@ -10,8 +10,8 @@ import CloudsAnimation from "../common/CloudsAnimation";
 const ContractorArticles = () => {
   return (
     <div className="relative bg-white">
-      <div className="pointer-events-none absolute -top-[4%] left-0 z-10 h-24 w-full bg-white blur-[12px] md:-top-[3%]"></div>
-      <div className="pointer-events-none absolute -top-[3%] left-0 z-20 h-24 w-full md:-top-[13%] md:h-[160px]">
+      <div className="pointer-events-none absolute -top-[5%] -left-5 z-30 h-28 w-[110%] bg-white blur-[12px] md:-top-[4%] md:h-[130px]"></div>
+      <div className="pointer-events-none absolute -top-[11%] left-0 z-20 h-[110px] w-full blur-[6px] sm:-top-[12%] sm:blur-[4px] md:h-[160px]">
         <CloudsAnimation
           cloud1Class="top-0"
           cloud2Class="top-0 sm:top-[50px] md:top-[55px] lg:top-0"

@@ -1383,6 +1383,10 @@ button {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullet {
+  @apply !mx-[3px];
+}
 .slider-img-gradient {
   background: linear-gradient(3deg, #ffffff00 0%, #fff 100%);
 }

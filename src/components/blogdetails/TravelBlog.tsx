@@ -2,6 +2,8 @@ import React from "react";
 import BlogDetailContent from "./BlogDetailContent";
 import TableOfContent from "./TableOfContent";
 import PostCard from "./PostCard";
+import BusinessFeatureCard from "./BusinessFeatureCard";
+import VideoSection from "./VideoSection";
 
 const TravelBlog = () => {
   return (
@@ -10,8 +12,15 @@ const TravelBlog = () => {
         <div className="1xl:basis-[71%] lg:w-2/3">
           <BlogDetailContent />
         </div>
-        <div className="1xl:basis-[26%] lg:w-1/3">
-          <TableOfContent />
+        {/* RIGHT SIDE CONTENT  */}
+        <div className="1xl:basis-[26%] space-y-8 lg:w-1/3">
+          <VideoSection />
+          <div className="flex flex-col justify-between gap-8 sm:flex-row-reverse lg:flex-col">
+            <TableOfContent />
+            <div className="basis-[60%]">
+              <BusinessFeatureCard />
+            </div>
+          </div>
         </div>
       </div>
       <PostCard />

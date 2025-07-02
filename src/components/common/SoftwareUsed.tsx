@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-
+import LottieAnimation from "./LottieAnimation";
+import animationData from "../../../public/lotties/the-engine-contractor.json";
 interface SoftwareItem {
   icon: React.ReactNode;
   start: number;
@@ -55,6 +56,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
             className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}
           />
+          {/* <LottieAnimation loop={true} animationData={animationData} /> */}
         </div>
       ) : (
         <span className="size-7 sm:size-8">{item.icon}</span>

@@ -5,7 +5,7 @@ import { Plan } from "@/types";
 const TableHead: React.FC<{ plans: Plan[] }> = ({ plans }) => (
   <thead>
     <tr className="border-decemberSky border-b">
-      <th className="text-wallStreet w-1/4 px-4 py-5 text-center text-xl font-bold lg:text-2xl xl:px-8">
+      <th className="text-wallStreet w-1/4 px-3.5 py-5 text-center text-xl font-bold text-nowrap lg:text-2xl xl:px-8">
         Compare plans
       </th>
       {plans.map((plan) => (

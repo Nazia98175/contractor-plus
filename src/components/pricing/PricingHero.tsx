@@ -8,7 +8,7 @@ import { PlansProps } from "@/types";
 
 const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
   return (
-    <section className="relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24">
+    <section className="font-jakarta relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24">
       <div className="xs:-bottom-[12%] absolute -bottom-[10%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <Image
@@ -22,7 +22,7 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
       <div className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
         Plans and Pricing
       </div>
-      <div className="relative mx-auto w-full max-w-[650px]">
+      <div className="relative mx-auto w-full max-w-[700px]">
         <TextAnimation animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:block">
             Free to start, free to stay. <br /> Level up when you’re ready.

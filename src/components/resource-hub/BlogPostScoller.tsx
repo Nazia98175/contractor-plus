@@ -268,7 +268,7 @@ export function BlogPostScroller() {
                   </div>
 
                   <CardHeader className="flex-grow">
-                    <div className="text-muted-foreground mb-2 flex items-center text-sm">
+                    <div className="mb-2 flex items-center text-sm text-[#71717a]">
                       <CalendarDays className="mr-1 h-4 w-4" />
                       {post.date}
                     </div>
@@ -285,7 +285,7 @@ export function BlogPostScroller() {
                       rel="noopener noreferrer"
                       className="w-full"
                     >
-                      <Button variant="outline" className="w-full">
+                      <Button variant="outline" className="w-full rounded-md">
                         Read Article
                       </Button>
                     </a>

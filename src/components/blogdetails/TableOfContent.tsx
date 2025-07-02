@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BusinessFeatureCard from "./BusinessFeatureCard";
 
 const TableOfContent = () => {
   const tableLinks = [

@@ -4,13 +4,16 @@ import { blogData } from "../common/Helper";
 import { BlogBtnIcon } from "../common/Icons";
 import BlogArticle from "./BlogArticle";
 import SliderLayout from "../common/SliderLayout";
+import { headingVariantMap } from "@/utils/getVariants";
 
 interface Props {
   data?: any;
   blogs?: any;
   className?: string;
+  title?: string;
   classMaxwidth?: string;
   variant?: "primary" | "secondary";
+  headingVariant?: "primary" | "secondary" | "tertiary";
 }
 
 const BlogPosts: React.FC<Props> = ({
@@ -19,6 +22,8 @@ const BlogPosts: React.FC<Props> = ({
   className,
   classMaxwidth,
   variant = "primary",
+  headingVariant = "primary",
+  title,
 }) => {
   const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
   const textClass = variant === "primary" ? "text-white" : "text-winterWay";
@@ -31,13 +36,11 @@ const BlogPosts: React.FC<Props> = ({
         <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
           {/* <PrimaryAnimatedText delay={3000}> */}
           <h2
-            className={`w-full text-center sm:w-fit sm:text-start lg:max-w-full ${classMaxwidth || "max-w-[483px]"} ${
-              variant === "primary"
-                ? "faq-heading-text text-center text-2xl font-semibold tracking-[-0.62px] sm:text-[31px]"
-                : "section-heading"
-            }`}
+            className={`w-full text-center sm:w-fit sm:text-start lg:max-w-full ${
+              classMaxwidth || "max-w-[483px]"
+            } ${headingVariantMap[headingVariant]}`}
           >
-            <span>{data?.title}</span>
+            <span>{title || data?.title}</span>
           </h2>
           {/* </PrimaryAnimatedText> */}
 

@@ -1,9 +1,9 @@
-// app/fonts.ts
 import {
   Inter,
   Montserrat,
   Plus_Jakarta_Sans,
   Space_Grotesk,
+  Work_Sans,
 } from "next/font/google";
 
 export const inter = Inter({
@@ -27,5 +27,11 @@ export const plusJakartaSans = Plus_Jakarta_Sans({
 export const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-grotesk",
+  display: "swap",
+});
+
+export const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-work-sans",
   display: "swap",
 });

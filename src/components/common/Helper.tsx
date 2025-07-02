@@ -690,12 +690,12 @@ export const planData = [
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
     features: [
-      "Up to 5 users",
       "$29/month per additional user",
       "Manage team / employees",
       "Personal, group & client chats",
       "Custom URL & branding",
       "Connect Quickbooks Online",
+      "Zapier & developer API",
     ],
     isProTeam: true,
   },
@@ -1218,6 +1218,209 @@ export const articles = [
     tags: ["Podcasts", "Customer Success"],
   },
 ];
+export const contractorArticles = [
+  {
+    id: 1,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 2,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 3,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 4,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 5,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 6,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+  {
+    id: 7,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Bill Walsh leadership lessons",
+    description:
+      "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/images/webp/blog-card-1.webp",
+    link: "/articles/bill-walsh-leadership",
+    tags: ["Leadership", "Management"],
+  },
+  {
+    id: 8,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "PM mental models",
+    description:
+      "Mental models are simple expressions of complex processes or relationships.",
+    image: "/images/webp/blog-card-2.webp",
+    link: "/articles/pm-mental-models",
+    tags: ["Product", "Research", "Frameworks"],
+  },
+  {
+    id: 9,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "What is Wireframing?",
+    description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/blog-card-3.webp",
+    link: "/articles/what-is-wireframing",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 10,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "How collaboration makes us better designers",
+    description:
+      "Collaboration can make our teams stronger, and our individual designs better.",
+    image: "/images/webp/blog-card-4.webp",
+    link: "/articles/collaboration-better-designers",
+    tags: ["Design", "Research"],
+  },
+  {
+    id: 11,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Our top 10 Javascript frameworks to use",
+    description:
+      "JavaScript frameworks make development easy with extensive features and functionalities.",
+    image: "/images/webp/blog-card-5.webp",
+    link: "/articles/top-javascript-frameworks",
+    tags: ["Software Development", "Tools", "SaaS"],
+  },
+  {
+    id: 12,
+    category: "Contractor",
+    date: "1 Jan 2023",
+    title: "Podcast: Creating a better CX Community",
+    description:
+      "Starting a community doesn't need to be complicated, but how do you get started?",
+    image: "/images/webp/blog-card-6.webp",
+    link: "/articles/podcast-better-cx-community",
+    tags: ["Podcasts", "Customer Success"],
+  },
+];
+
 export const contractorTypes: OptionType[] = [
   {
     value: "contractor",
@@ -1588,12 +1791,7 @@ export const comparisonTableData: {
         description: `Win more jobs and increase your average job size by offering "buy now pay later" style consumer financing to your customers directly on your estimates and invoices. By integrating this into your sales process, you'll sell more, and make more. `,
         available: [false, true, true],
       },
-      {
-        name: "Recurring Billing / Subscriptions",
-        description:
-          "Store your clients payment method on file to automatically bill them on a schedule, such as, upon each visit completion, or manually as a job progresses. No more needing to knock on the door or manually send an invoice. Fully automated, the way it should be. ",
-        available: [false, false, true],
-      },
+
       {
         name: "Next Day Funding",
         description:
@@ -1605,6 +1803,53 @@ export const comparisonTableData: {
         description:
           "Want your funds faster? If you can't wait until the next day, you can get your funds as soon as 30 minutes with Instant Payouts for 1%.",
         available: [false, "1% Per Payout", "1% Per Payout"],
+      },
+    ],
+  },
+  {
+    title: "Team Collaboration",
+    key: "collab",
+    features: [
+      {
+        name: "Manage Team Membersg",
+        description: "Add your Employees as Team Members.",
+        available: [false, false, true],
+      },
+      {
+        name: "Roles & User Permissions",
+        description:
+          "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
+        available: [false, false, true],
+      },
+      {
+        name: "Comprehensive Mobile App",
+        description:
+          "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
+        available: [true, true, true],
+      },
+      {
+        name: "Chat",
+        description:
+          "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
+        available: [false, true, true],
+      },
+      {
+        name: "Drag & Drop Scheduling",
+        description:
+          "View the Schedule for your entire team. Send or Print any individual schedule, quickly assign Team Member's to individual visits, and keep track of unscheduled events that need to be scheduled.",
+        available: [false, true, true],
+      },
+      {
+        name: "Real-Time Dispatching",
+        description:
+          "You can schedule events without having anyone assigned. You can see your scheduled, unscheduled & unassigned jobs on the in-app Schedule and assign team members or groups of team members based on their individual availability.",
+        available: [false, false, true],
+      },
+      {
+        name: "Live Map",
+        description:
+          "Track your entire team's whereabouts white they're on the clock or tracking their mileage. See who's on the Job Site & see who's driving. Start a chat, delegate/assign a task, and more - right from the map view!",
+        available: [false, false, true],
       },
     ],
   },
@@ -1677,18 +1922,6 @@ export const comparisonTableData: {
         description:
           "Automatically track the Weather Forecast for any Job Site",
         available: [false, true, true],
-      },
-      {
-        name: "Bid Management",
-        description:
-          "Have a specific Task or Phase of a Job that you need to find a subcontractor for? Open it up for bidding, or send a bid request to specific subcontractors in your area.",
-        available: [false, true, "Coming Soon"],
-      },
-      {
-        name: "Subcontractor Collaboration",
-        description:
-          "Collaborate with other contractors in real-time. Share Job, Phase or Task access with other companies using Contractor+ & invite your existing subcontractors without needing to pay for their access. Free for you, free for them. Everybody wins.",
-        available: [false, true, "Coming Soon"],
       },
     ],
   },
@@ -1822,12 +2055,7 @@ export const comparisonTableData: {
           "If you use EarthCam, you can add your Job Site Live Cams to any job, client or service address. This lets you see what's going on at every job site, right from your Contractor+ dashboard.",
         available: [false, true, true],
       },
-      {
-        name: "Shovels",
-        description:
-          "Instantly access permit data for any property / service address.",
-        available: [false, true, true],
-      },
+
       {
         name: "iCal",
         description: "Two-way calendar sync with any iCal calendar.",
@@ -1851,7 +2079,7 @@ export const comparisonTableData: {
         available: [false, false, true],
       },
       {
-        name: "SDevelopers API",
+        name: "Developers API",
         description:
           "We have a full RESTful API, enabling you to build your own custom solutions that are in communication with Contractor+.",
         available: [false, false, true],
@@ -1945,7 +2173,7 @@ export const compareFeatures = [
 export const OurReviewList: Review[] = [
   {
     id: 1,
-    profileUrl: "/images/webp/rushville.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -1955,7 +2183,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 2,
-    profileUrl: "/images/webp/review-profile-7.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -1965,7 +2193,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 3,
-    profileUrl: "/images/webp/review-profile-2.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 4,
@@ -1975,7 +2203,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 4,
-    profileUrl: "/images/webp/review-profile-3.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -1985,7 +2213,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 5,
-    profileUrl: "/images/webp/juan-gracia.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 5,
@@ -1995,7 +2223,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 6,
-    profileUrl: "/images/webp/rands.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -2005,7 +2233,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 7,
-    profileUrl: "/images/webp/josh-lesson.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -2015,7 +2243,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 8,
-    profileUrl: "/images/webp/chad-cranified.webp",
+    profileUrl: "",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -2026,6 +2254,36 @@ export const OurReviewList: Review[] = [
 
   {
     id: 9,
+    profileUrl: "",
+    userName: "ourReviews.username",
+    userRole: "ourReviews.userRole",
+    isModal: true,
+    rating: 1,
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    review: "ourReviews.review",
+  },
+  {
+    id: 10,
+    profileUrl: "/images/webp/joshua.webp",
+    userName: "ourReviews.username",
+    userRole: "ourReviews.userRole",
+    isModal: true,
+    rating: 1,
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    review: "ourReviews.review",
+  },
+  {
+    id: 11,
+    profileUrl: "/images/webp/joshua.webp",
+    userName: "ourReviews.username",
+    userRole: "ourReviews.userRole",
+    isModal: true,
+    rating: 1,
+    videoLink: "https://www.youtube.com/watch?v=Y4dbkmz995c",
+    review: "ourReviews.review",
+  },
+  {
+    id: 12,
     profileUrl: "/images/webp/joshua.webp",
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
@@ -2222,14 +2480,6 @@ export const rightIcons = [
   },
 ];
 
-export interface FeatureLink {
-  id: string;
-  label: string;
-  description: string;
-  href: string;
-  isNew: boolean;
-  icon: JSX.Element;
-}
 export const featurelinks = [
   {
     id: "crm",
@@ -2610,7 +2860,7 @@ export const reviews = [
     id: 1,
     userName: "Brandon Geiger",
     profileUrl: "/images/webp/rushville.webp",
-    rating: 4.5,
+    rating: 5,
     videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
@@ -2618,22 +2868,12 @@ export const reviews = [
     stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
     userRole: "Co-Owner, Rushville Restorations",
   },
+
   {
     id: 2,
-    userName: "James Bond",
-    profileUrl: "/images/webp/rands.webp",
-    rating: 4.5,
-    videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
-    isModal: true,
-    companyLogo: "/images/svg/randsIcon.svg",
-    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
-    userRole: "CEO at Rands Mechanical",
-  },
-  {
-    id: 3,
     userName: "Juan Garcia",
     profileUrl: "/images/webp/juan-gracia.webp",
-    rating: 4.5,
+    rating: 5,
     videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
@@ -2641,14 +2881,49 @@ export const reviews = [
     userRole: "Owner, Nailed It Miami",
   },
   {
-    id: 4,
-    userName: "James Bond",
+    id: 3,
+    userName: "Scott Azure",
     profileUrl: "/images/webp/rands.webp",
-    rating: 4.5,
+    rating: 5,
     videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     isModal: true,
     companyLogo: "/images/svg/randsIcon.svg",
-    review: `I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen.`,
+    review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
+    userRole: "CEO at Rands Mechanical",
+  },
+  {
+    id: 4,
+    userName: "Brandon Geiger",
+    profileUrl: "/images/webp/rushville.webp",
+    rating: 5,
+    videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `Since I started sending all my estimates using Contractor+, I have
+    stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+    userRole: "Co-Owner, Rushville Restorations",
+  },
+
+  {
+    id: 5,
+    userName: "Juan Garcia",
+    profileUrl: "/images/webp/juan-gracia.webp",
+    rating: 5,
+    videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.`,
+    userRole: "Owner, Nailed It Miami",
+  },
+  {
+    id: 6,
+    userName: "Scott Azure",
+    profileUrl: "/images/webp/rands.webp",
+    rating: 5,
+    videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    isModal: true,
+    companyLogo: "/images/svg/randsIcon.svg",
+    review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
     userRole: "CEO at Rands Mechanical",
   },
 ];

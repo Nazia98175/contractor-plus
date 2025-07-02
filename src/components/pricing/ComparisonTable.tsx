@@ -10,7 +10,7 @@ const generateInitialDesktopStates = () => {
   const states: Record<string, boolean> = {};
   comparisonTableData.forEach((section) => {
     section.features.forEach((_, i) => {
-      states[`${section.key}-${i}`] = true;
+      states[`${section.key}-${i}`] = false;
     });
   });
   return states;
@@ -20,7 +20,7 @@ const generateInitialDesktopStates = () => {
 const generateInitialMobileStates = () => {
   const states: Record<string, boolean> = {};
   comparisonTableData.forEach((group) => {
-    states[group.key] = true;
+    states[group.key] = false;
   });
   return states;
 };
@@ -35,10 +35,20 @@ const ComparisonTable = forwardRef<HTMLDivElement, {}>((props, ref) => {
   );
 
   const toggleDesktopCollapse = (key: string) => {
-    setDesktopOpenStates((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+    setDesktopOpenStates((prev) => {
+      const isCurrentlyOpen = prev[key];
+      const newStates: Record<string, boolean> = {};
+
+      Object.keys(prev).forEach((k) => {
+        newStates[k] = false;
+      });
+
+      if (!isCurrentlyOpen) {
+        newStates[key] = true;
+      }
+
+      return newStates;
+    });
   };
 
   const toggleMobileCollapse = (key: string) => {

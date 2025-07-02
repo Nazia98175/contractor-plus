@@ -23,7 +23,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
       <>
         <Image
           fill
-          className="absolute top-[-152px] left-0 z-20 hidden h-full w-full md:block"
+          className="absolute top-[-20%] left-0 z-20 hidden h-full w-full md:block"
           src="/images/webp/finally-desktop-bg.webp"
           alt="finally bg"
           priority

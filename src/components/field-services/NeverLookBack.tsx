@@ -1,5 +1,4 @@
 "use client";
-import { debugLog } from "@/utils/getConsole";
 import AwardsTagsImg from "../common/AwardsTagsImg";
 import SoftwareUsed from "../common/SoftwareUsed";
 import { Props } from "../crmbussiness/TeamsUsingContractor";

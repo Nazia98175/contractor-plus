@@ -16,7 +16,7 @@ export function CalculatorSearch({
       <Input
         type="search"
         placeholder="Search calculators..."
-        className="pl-10"
+        className="rounded-lg border border-gray-300 py-2 pr-2 pl-10 focus:outline-none"
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
       />

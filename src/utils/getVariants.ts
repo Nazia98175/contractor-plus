@@ -91,7 +91,7 @@ export const tagColors: Record<string, { bg: string; text: string }> = {
 export const variantsBlogCard = {
   small: {
     wrapper:
-      "group flex flex-col gap-5 xl:gap-6 h-full lg:flex-row transition-all duration-200 ease-in",
+      "group flex flex-col gap-5 xl:gap-6 h-full lg:flex-row transition-all duration-200 ease-in cursor-pointer",
     imageWrapper:
       "overflow-hidden rounded-lg lg:w-1/2 max-h-[240px] lg:max-h-[200px] min-h-[150px] h-full",
     contentWrapper: "h-auto w-full lg:w-[49%] ",
@@ -99,7 +99,8 @@ export const variantsBlogCard = {
       "text-lg lg:text-lg sm:text-xl md:text-2xl text-eerieBlack font-semibold",
   },
   large: {
-    wrapper: "group flex flex-col transition-all duration-200 ease-in",
+    wrapper:
+      "group flex flex-col transition-all duration-200 ease-in cursor-pointer",
     imageWrapper:
       "w-full overflow-hidden rounded-lg max-h-[240px] min-h-[200px] h-full",
     contentWrapper: "mt-5 xl:mt-8",

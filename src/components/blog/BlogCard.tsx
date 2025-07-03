@@ -11,19 +11,24 @@ interface BlogCardProps {
     title: string;
     description: string;
     image: string;
-    link: string;
+
     tags: string[];
     isSmall?: boolean;
   };
   variant?: "large" | "small";
+  onClick?: () => void;
 }
 
 const defaultColor = { bg: "bg-gray-500", text: "text-white" };
 
-const BlogCard: React.FC<BlogCardProps> = ({ article, variant = "large" }) => {
+const BlogCard: React.FC<BlogCardProps> = ({
+  article,
+  variant = "large",
+  onClick,
+}) => {
   const styles = variantsBlogCard[variant];
   return (
-    <Link href={article.link} className={styles.wrapper}>
+    <div onClick={onClick} className={styles.wrapper}>
       <div className={`${styles.imageWrapper}`}>
         <Image
           src={article.image}
@@ -60,7 +65,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ article, variant = "large" }) => {
           })}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

@@ -222,6 +222,9 @@ body {
 .section-heading {
   @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
+.section-heading-2 {
+  @apply xs:text-2xl text-xl leading-[138%] font-bold sm:text-[30px] md:font-semibold md:tracking-[-0.84px] lg:text-4xl xl:text-[42px];
+}
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg xl:text-xl;
 }

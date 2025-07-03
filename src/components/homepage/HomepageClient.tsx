@@ -38,7 +38,10 @@ const HomepageClient = ({
         reviewsList={reviewsList?.data?.review?.[0]?.reviews}
         reviews={homePageContent?.data?.reviews}
       />
-      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
+      <WhatEverClient
+        data={homePageContent?.data?.whateverOperation}
+        className="overflow-hidden"
+      />
       <OurBlogs
         blogs={blogs?.data}
         blogHeading={homePageContent?.data?.blogs}

@@ -4,6 +4,10 @@ import { ReviewIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import CrmReviewCard from "./CrmReviewCard";
 import ReviewModal from "../common/ReviewModal";
+import ReviewCard from "../common/ReviewCard";
+import { Review } from "@/types";
+import Marquee from "react-fast-marquee";
+import TrustedServiceCard from "./TrustedServiceCard";
 
 interface Props {
   data: any;
@@ -21,8 +25,10 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   };
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
+        <div className="trusted-gradient pointer-events-none absolute -bottom-[10%] left-[0px] z-40 hidden h-full w-20 lg:block xl:w-[100px] 2xl:w-[150px]"></div>
+        <div className="trusted-gradient pointer-events-none absolute right-[0px] -bottom-[10%] z-40 hidden h-full w-20 rotate-180 lg:block xl:w-[100px] 2xl:w-[150px]"></div>
         {/* <TextAnimation animateOnScroll={true} delay={0.8}> */}
         <h2
           className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
@@ -34,23 +40,11 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
         </h2>
         {/* </TextAnimation> */}
 
-        <SliderLayout
-          wrapperClassName="relative w-full !h-auto"
-          slidesPerView={1}
-          spaceBetween={9}
-          breakpoints={{
-            640: { slidesPerView: 1.5, spaceBetween: 12 },
-            768: { slidesPerView: 2, spaceBetween: 16 },
-            1024: { slidesPerView: 2.5, spaceBetween: 20 },
-            1280: { slidesPerView: 3, spaceBetween: 35 },
-          }}
-          loop={false}
-        >
-          {reviews.map((review: any, index: any) => (
-            <CrmReviewCard
-              review={review}
-              key={index}
-              variant={variant}
+        <Marquee pauseOnClick speed={30} direction="right" pauseOnHover>
+          {reviews.map((review: any) => (
+            <TrustedServiceCard
+              key={review.id}
+              review={review as Review}
               openModal={
                 review.isModal
                   ? () => openModal(review.videoLink || "")
@@ -58,7 +52,21 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
               }
             />
           ))}
-        </SliderLayout>
+        </Marquee>
+
+        <Marquee pauseOnClick speed={30} direction="left" pauseOnHover>
+          {reviews.map((review: any) => (
+            <TrustedServiceCard
+              key={review.id}
+              review={review as Review}
+              openModal={
+                review.isModal
+                  ? () => openModal(review.videoLink || "")
+                  : () => {}
+              }
+            />
+          ))}
+        </Marquee>
       </div>
       <ReviewModal
         isOpen={isModalOpen}

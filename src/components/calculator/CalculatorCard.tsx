@@ -16,7 +16,7 @@ interface CalculatorCardProps {
     name: string;
     description: string;
     isAvailable: boolean;
-    path?: string;
+    path: string;
     category?: string;
   };
   showCategory?: boolean;
@@ -45,7 +45,7 @@ export function CalculatorCard({
       <CardFooter>
         {calculator.isAvailable ? (
           <Button className="w-full">
-            <Link href={calculator.path} className="flex items-center">
+            <Link href={calculator.path || "/"} className="flex items-center">
               <Calculator className="mr-2 h-4 w-4" />
               View
             </Link>

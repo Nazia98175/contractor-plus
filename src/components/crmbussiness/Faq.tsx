@@ -2,7 +2,7 @@
 import React from "react";
 import FaqList from "./FaqList";
 import TextAnimation from "../common/TextAnimation";
-import UseFaqToggle from "../hook/UseFaqToggle";
+import UseFaqToggle from "../hooks/UseFaqToggle";
 import { headingStyles } from "@/utils/getVariants";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";

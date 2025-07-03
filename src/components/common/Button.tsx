@@ -26,7 +26,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ) => {
-    const baseClasses = "flex items-center justify-center gap-2 w-full py-2";
+    const baseClasses =
+      "flex items-center justify-center gap-2 w-full py-2 px-6 sm:py-2.5 rounded-lg";
     const combinedClasses =
       `${baseClasses} ${VARIANT_CLASSES[variant]} ${className}`.trim();
 

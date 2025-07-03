@@ -5,7 +5,7 @@ const EraOfSoftware = () => {
     <section className="no-scrollbar relative z-10 overflow-x-hidden">
       <div className="bg-white-linear absolute -bottom-[1%] left-0 z-[3] h-24 w-full sm:h-[180px] lg:h-[237px]"></div>
       <div className="bg-romanRed absolute top-1/2 -left-[77px] z-0 hidden h-5 w-full max-w-[300px] -translate-y-[60%] rotate-45 rounded-full blur-[44px] md:block"></div>
-      <h2 className="section-heading text-gradient-black mx-auto max-w-[730px] px-2 text-center">
+      <h2 className="section-heading-2 text-gradient-black mx-auto max-w-[730px] px-2 text-center">
         The era of software for HVAC is out. The operating system is in.
       </h2>
       <p className="text-gradient-light mx-auto mt-4 hidden max-w-[1024px] px-2 text-center text-base font-semibold sm:block">

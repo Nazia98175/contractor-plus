@@ -29,7 +29,7 @@ export function CalculatorCard({
   return (
     <Card
       key={calculator.id}
-      className="h-full transition-shadow hover:shadow-md"
+      className="flex h-full flex-col transition-shadow hover:shadow-md"
     >
       <CardHeader className="pb-3">
         <CardTitle className="text-lg">{calculator.name}</CardTitle>
@@ -39,7 +39,7 @@ export function CalculatorCard({
           </CardDescription>
         )}
       </CardHeader>
-      <CardContent className="pb-2">
+      <CardContent className="flex-1 pb-2">
         <p className="text-sm text-[#71717a]">{calculator.description}</p>
       </CardContent>
       <CardFooter>

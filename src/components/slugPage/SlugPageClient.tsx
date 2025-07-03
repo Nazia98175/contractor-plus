@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { LazyWrapper } from "@/components/LazyWrapper";
-import {  Platform } from "@/types";
+import { Platform } from "@/types";
 const SlugPageClientOptimized = ({
   slug,
   ncc,
@@ -24,10 +24,12 @@ const SlugPageClientOptimized = ({
   // Load platforms data lazily
   useEffect(() => {
     let mounted = true;
-    
+
     const loadPlatforms = async () => {
       try {
-        const { platforms: platformsData } = await import("@/components/common/Helper");
+        const { platforms: platformsData } = await import(
+          "@/components/common/Helper"
+        );
         if (mounted) {
           setPlatforms(platformsData);
         }
@@ -37,7 +39,7 @@ const SlugPageClientOptimized = ({
     };
 
     // Use requestIdleCallback if available, otherwise setTimeout
-    if ('requestIdleCallback' in window) {
+    if ("requestIdleCallback" in window) {
       requestIdleCallback(loadPlatforms);
     } else {
       setTimeout(loadPlatforms, 100);
@@ -58,13 +60,13 @@ const SlugPageClientOptimized = ({
               props={{ ncc, trackProperties }}
               fallback={<div className="h-32 animate-pulse bg-gray-100" />}
             />
-            
+
             <LazyWrapper
               importFn={() => import("../crmbussiness/LikeYouDoContacts")}
               props={{ data: likeYouDo }}
               fallback={<div className="h-40 animate-pulse bg-gray-100" />}
             />
-            
+
             <LazyWrapper
               importFn={() => import("../crmbussiness/HowContractorWork")}
               props={{ ncc, trackProperties, data: howContractorWork }}
@@ -72,7 +74,7 @@ const SlugPageClientOptimized = ({
             />
           </>
         )}
-        
+
         <LazyWrapper
           importFn={() => import("../crmbussiness/KindAdorable")}
           props={{ slug, kindAdorable }}
@@ -101,19 +103,33 @@ const SlugPageClientOptimized = ({
       <div className="relative overflow-hidden">
         {/* Icons loaded only when visible */}
         <LazyWrapper
-          importFn={() => import("../common/Icons").then(mod => ({ default: mod.FooterRedLineIcon }))}
+          importFn={() =>
+            import("../common/Icons").then((mod) => ({
+              default: mod.FooterRedLineIcon,
+            }))
+          }
           className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block"
-          props={{ className: "pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" }}
-          fallback={<div className="w-full h-32" />}
+          props={{
+            className:
+              "pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block",
+          }}
+          fallback={<div className="h-32 w-full" />}
           threshold={0.01}
           rootMargin="200px"
         />
 
         <LazyWrapper
-          importFn={() => import("../common/Icons").then(mod => ({ default: mod.FooterRedLineMobileIcon }))}
+          importFn={() =>
+            import("../common/Icons").then((mod) => ({
+              default: mod.FooterRedLineMobileIcon,
+            }))
+          }
           className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden"
-          props={{ className: "pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" }}
-          fallback={<div className="w-full h-32" />}
+          props={{
+            className:
+              "pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden",
+          }}
+          fallback={<div className="h-32 w-full" />}
           threshold={0.01}
           rootMargin="200px"
         />
@@ -127,7 +143,7 @@ const SlugPageClientOptimized = ({
             data: crmService,
             variant: "primary",
             className: ` ${slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[780px] sm:pt-0"}`,
-            variantBtn: "light"
+            variantBtn: "light",
           }}
           fallback={<div className="h-48 animate-pulse bg-gray-100" />}
           threshold={0.05}
@@ -139,7 +155,7 @@ const SlugPageClientOptimized = ({
             importFn={() => import("../industry/hvca/TrustBarHvca")}
             props={{
               platforms,
-              className: "mx-auto w-full max-w-[889px]"
+              className: "mx-auto w-full max-w-[889px]",
             }}
             fallback={<div className="h-20 animate-pulse bg-gray-100" />}
             threshold={0.05}
@@ -152,8 +168,9 @@ const SlugPageClientOptimized = ({
           props={{
             faq,
             classNameAnswer: "pt-1",
-            mainContainerclassName: "px-2 pt-[66px] pb-0 md:pt-[76px] md:pb-[83px]",
-            TittleClassName: "max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
+            mainContainerclassName:
+              "px-2 pt-[66px] pb-0 md:pt-[76px] md:pb-[83px]",
+            TittleClassName: "max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto",
           }}
           fallback={<div className="h-64 animate-pulse bg-gray-100" />}
           threshold={0.05}
@@ -166,8 +183,8 @@ const SlugPageClientOptimized = ({
         props={{
           data: blogsList,
           blogs,
-          className: "mt-7 md:mt-9",
-          classMaxwidth: "max-w-[90%] xs:max-w-[98%] sm:max-w-full"
+          className: "mt-7 md:mt-9 mb-20",
+          classMaxwidth: "max-w-[90%] xs:max-w-[98%] sm:max-w-full",
         }}
         fallback={<div className="h-80 animate-pulse bg-gray-100" />}
         threshold={0.05}

@@ -8,6 +8,7 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/hvca/AwardBadge";
 import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
 import HvacHero from "@/components/industry/hvca/HvacHero";
+import HvacReview from "@/components/industry/hvca/HvacReview";
 import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
@@ -84,7 +85,12 @@ const page = async ({ params }: PageProps) => {
         <EraOfSoftware />
       </div>
       <AwardBadges />
-      <ThousandsReviews
+      {/* <ThousandsReviews
+        data={{ title: "4.7 ★ across thousands of reviews" }}
+        reviews={reviews}
+        variant="secondary"
+      /> */}
+      <HvacReview
         data={{ title: "4.7 ★ across thousands of reviews" }}
         reviews={reviews}
         variant="secondary"

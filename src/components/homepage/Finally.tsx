@@ -15,9 +15,6 @@ interface TheFinallyProps {
   finallyC: Finally[];
 }
 const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
-  const t = useTranslations("finally");
-  const features: string[] = t.raw("features") || [];
-
   return (
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
@@ -48,7 +45,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           </h2>
           {/* </PrimaryAnimatedText> */}
           <CardReveal distance={50}>
-            <h3 className="text-superSilver mx-auto max-w-[650px] px-2 text-center text-sm font-medium sm:text-base">
+            <h3 className="text-superSilver mx-auto max-w-[750px] px-2 text-center text-sm font-medium sm:text-base">
               {finallyC?.[0]?.sub_title ?? ""}
             </h3>
           </CardReveal>

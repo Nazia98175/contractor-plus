@@ -249,7 +249,7 @@ const ContractorIndustrySlider: React.FC = () => {
         onSlideChange={(swiper: { realIndex: React.SetStateAction<number> }) =>
           setActiveIndex(swiper.realIndex)
         }
-        className="relative h-full w-full !py-10"
+        className="relative h-full w-full !pt-10"
       >
         {showInfo.map((show, index) => (
           <Link href={show.itemPath} key={index}>

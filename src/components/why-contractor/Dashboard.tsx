@@ -165,7 +165,7 @@ const Dashboard = () => {
             <p className="dashboard-title text-lg font-semibold text-white opacity-60 duration-300 md:text-base lg:text-lg">
               {text}
             </p>
-            <span className="relative flex items-center justify-center">
+            <span className="relative flex items-center justify-center py-10 md:py-0">
               <svg
                 className="glow-svg pointer-events-none absolute top-1/2 left-1/2 -translate-1/2 opacity-0 duration-500 ease-out"
                 style={{

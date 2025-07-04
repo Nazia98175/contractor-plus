@@ -54,11 +54,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
                     className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
                   />
                 ) : (
-                  <CloseIcon
-                    width={24}
-                    height={24}
-                    className="w-full max-w-5 min-w-5 md:!max-w-10 md:!min-w-10"
-                  />
+                  <CloseIcon width={24} height={24} />
                 )}
               </div>
             </td>
@@ -73,7 +69,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
                   <p>{feature?.competitorsNote}</p>
                 ) : (
                   <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
-                    <CloseIcon />
+                    <CloseIcon width={24} height={24} />
                   </span>
                 )}
               </div>

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { LazyWrapper } from "@/components/LazyWrapper";
 import { Platform } from "@/types";
+import Image from "next/image";
 const SlugPageClientOptimized = ({
   slug,
   ncc,
@@ -133,23 +134,32 @@ const SlugPageClientOptimized = ({
           threshold={0.01}
           rootMargin="200px"
         />
+        <div className="relative">
+          <Image
+            width={800}
+            height={1000}
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            className="absolute top-[10px] left-0 z-10 hidden max-h-[800px] w-full max-w-[800px] object-center sm:block"
+            src={"/images/webp/hero-red-line.webp"}
+            alt="hero-red-line"
+          />
 
-        <LazyWrapper
-          importFn={() => import("../crmbussiness/CrmSercive")}
-          props={{
-            createBtn,
-            mobileBtn,
-            ncc,
-            data: crmService,
-            variant: "primary",
-            className: ` ${slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[780px] sm:pt-0"}`,
-            variantBtn: "light",
-          }}
-          fallback={<div className="h-48 animate-pulse bg-gray-100" />}
-          threshold={0.05}
-          rootMargin="100px"
-        />
-
+          <LazyWrapper
+            importFn={() => import("../crmbussiness/CrmSercive")}
+            props={{
+              createBtn,
+              mobileBtn,
+              ncc,
+              data: crmService,
+              variant: "primary",
+              className: ` ${slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"}`,
+              variantBtn: "light",
+            }}
+            fallback={<div className="h-48 animate-pulse bg-gray-100" />}
+            threshold={0.05}
+            rootMargin="100px"
+          />
+        </div>
         {platforms && (
           <LazyWrapper
             importFn={() => import("../industry/hvca/TrustBarHvca")}

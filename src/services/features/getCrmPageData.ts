@@ -46,7 +46,7 @@ export const getFeaturesPageData = async (
    
   ]);
 
-  console.log(pageContentRes , )
+
 
   return {
     crmPageContent: pageContentRes || null,

@@ -5,6 +5,7 @@ import SliderLayout from "../common/SliderLayout";
 import { useTranslations } from "next-intl";
 import CardReveal from "../common/CardReveal";
 import { featureKeys } from "../common/Helper";
+import { subtle } from "crypto";
 type HeroProps = {
   features: any; // Replace `any` with the actual type if available
 };
@@ -12,7 +13,7 @@ const Features = ({ features }: { features: any }) => {
   const t = useTranslations("feature");
   const featureData = featureKeys.map((item, index) => ({
     title: features?.[index]?.title,
-    desc: features?.[index]?.description,
+    subTitle: features?.[index]?.subTitle,
     img: item.img,
   }));
 

@@ -40,7 +40,7 @@ const TimmingEffect = () => {
       });
       const timingImage = document.querySelectorAll(".timing-imgs");
       const timingTextElements = document.querySelectorAll(".timing-text");
-      console.log(timingImage);
+    
       if (timingTextElements.length === 0) return;
       timingImage.forEach((element, index) => {
         if (index == 0) {

@@ -20,7 +20,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews, slug }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  console.log(reviews, "reviews list");
+  
 
   return (
     <section className="relative overflow-hidden">

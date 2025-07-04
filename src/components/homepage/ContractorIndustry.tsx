@@ -6,13 +6,13 @@ import ContractorIndustrySlider from "./ContractorIndustrySlider";
 import PrimaryLink from "../common/PrimaryLInk";
 interface Industry {
   title: string;
-  sub_title: string;
+  subTitle: string;
   url: string;
   btnText: string;
 }
 
 interface TheIndustryProps {
-  contractorIndustry: Industry[];
+  contractorIndustry: Industry;
 }
 
 const ContractorIndustry: React.FC<TheIndustryProps> = ({
@@ -46,18 +46,18 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
         <div className="px-2">
           <div className="mx-auto w-full max-w-[883px] text-center">
             <h3 className="section-heading gradient-text text-center">
-              {contractorIndustry?.[0]?.title ?? ""}
+              {contractorIndustry?.title ?? ""}
             </h3>
           </div>
 
           <h6 className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
-            {contractorIndustry?.[0]?.sub_title ?? ""}
+            {contractorIndustry?.subTitle ?? ""}
           </h6>
-          {/* <div className="hidden items-center justify-center md:flex">
+          <div className="hidden items-center justify-center md:flex">
             <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
-              {contractorIndustry?.[1]?.btnText ?? ""}
+              {contractorIndustry?.btnText ?? ""}
             </PrimaryLink>
-          </div> */}
+          </div>
         </div>
         <ContractorIndustrySlider />
       </div>

@@ -49,7 +49,7 @@ export default function FreeEstimateMaker({
 
   const handleExport = async () => {
     // This is now handled directly in the EstimatePreview component
-    console.log("Export functionality moved to EstimatePreview component");
+   
   };
 
   const handleTemplateSelected = () => {

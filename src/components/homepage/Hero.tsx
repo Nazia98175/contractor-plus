@@ -11,7 +11,7 @@ const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
 });
 
 const Hero = ({ homePageContent }: { homePageContent: any }) => {
-  const { hero_title, hero_description, cta_button_text, ncc_text, mobileBtn } =
+  const { heroTitle, heroDescription, createBtn, nccTxt, mobileBtn } =
     homePageContent ?? {};
   // const wrapperRef = useRef<HTMLDivElement | null>(null);
   // useEffect(() => {
@@ -39,12 +39,12 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
           <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
             <CardReveal distance={50} delay={0.2}>
               <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
-                {hero_title}
+                {heroTitle}
               </h1>
             </CardReveal>
             <CardReveal distance={50} delay={0.4}>
               <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
-                {hero_description}
+                {heroDescription}
               </p>
             </CardReveal>
             <div className="xs:items-center mt-2 flex w-full flex-col justify-center gap-2.5 sm:mt-0 sm:w-fit">
@@ -54,7 +54,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 delay={0.6}
                 animateOnMount={true}
               >
-                <FreeAccountButton showIcon={false} text={cta_button_text} />
+                <FreeAccountButton showIcon={false} text={createBtn} />
               </CardReveal>
               <CardReveal
                 className="flex w-full sm:hidden"
@@ -69,7 +69,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1}>
-                <CardRequiredButton className="w-full" text={ncc_text} />
+                <CardRequiredButton className="w-full" text={nccTxt} />
               </CardReveal>
             </div>
           </div>

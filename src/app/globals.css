@@ -76,6 +76,7 @@
   --color-blackRussian: #202125;
   --color-pantone: #4d4d4d;
   --color-trolleyGrey: #818181;
+  --color-discoBall: #d5d5d5;
 
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
@@ -1679,4 +1680,11 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.gradient-text-404 {
+  background: linear-gradient(180deg, #fff 0%, #777 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

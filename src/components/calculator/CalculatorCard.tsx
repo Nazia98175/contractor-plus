@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../resource-hub/Card";
+} from "../ui/Card";
 import Button from "../common/Button";
 import Link from "next/link";
 

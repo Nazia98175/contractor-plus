@@ -24,7 +24,9 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const resolvedVariant: "light" | "dark" =
-    pathname.includes("resource") || pathname.includes("calculators")
+    pathname.includes("resource") ||
+    pathname.includes("calculators") ||
+    pathname.includes("free-estimate-maker")
       ? "light"
       : "dark";
 

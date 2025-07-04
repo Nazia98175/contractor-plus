@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./Card";
+} from "../ui/Card";
 import { Skeleton } from "./Skeleton";
 import {
   Carousel,

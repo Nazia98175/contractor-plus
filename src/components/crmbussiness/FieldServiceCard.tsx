@@ -54,7 +54,7 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
 
-  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL as string}`;
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
@@ -78,9 +78,14 @@ const FieldServiceCard: React.FC<Props> = ({
 
           {apiData ? (
             <Image
+              // src={
+              //   service?.cardImg?.url
+              //     ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+              //     : "/placeholder.png"
+              // }
               src={
                 service?.cardImg?.url
-                  ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+                  ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
                   : "/placeholder.png"
               }
               alt={service?.title || "service image"}
@@ -142,11 +147,16 @@ const FieldServiceCard: React.FC<Props> = ({
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
         {apiData ? (
           <Image
-            src={
-              service?.cardImg?.url
-                ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
-                : "/placeholder.png"
-            }
+          src={
+                service?.cardImg?.url
+                  ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
+                  : "/placeholder.png"
+              }
+            // src={
+            //   service?.cardImg?.url
+            //     ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+            //     : "/placeholder.png"
+            // }
             alt={service?.title || "service image"}
             width={518}
             height={302}

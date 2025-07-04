@@ -32,7 +32,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
   }, []);
 
   return (
-    <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
+    <section className="lg:bg-kuroiBlack relative z-20 w-full">
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
@@ -47,7 +47,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 {hero_description}
               </p>
             </CardReveal>
-            <div className="xs:w-fit xs:items-center mt-2 flex w-full flex-col justify-center gap-2.5 sm:mt-0">
+            <div className="xs:items-center mt-2 flex w-full flex-col justify-center gap-2.5 sm:mt-0 sm:w-fit">
               <CardReveal
                 className="hidden h-10 sm:flex"
                 distance={50}
@@ -57,14 +57,18 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 <FreeAccountButton showIcon={false} text={cta_button_text} />
               </CardReveal>
               <CardReveal
-                className="flex sm:hidden"
+                className="flex w-full sm:hidden"
                 distance={50}
                 delay={0.8}
                 animateOnMount={true}
               >
-                <FreeAccountButton showIcon={false} text={mobileBtn} />
+                <FreeAccountButton
+                  showIcon={false}
+                  text={mobileBtn}
+                  className="!w-full"
+                />
               </CardReveal>
-              <CardReveal className="xs:w-fit w-full" distance={50} delay={1}>
+              <CardReveal className="flex w-fit" distance={50} delay={1}>
                 <CardRequiredButton className="w-full" text={ncc_text} />
               </CardReveal>
             </div>

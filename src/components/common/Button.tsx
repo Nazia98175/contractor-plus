@@ -1,9 +1,11 @@
 import React from "react";
 
 type ButtonVariant = "primary" | "secondary" | "danger" | "outline" | "text";
+type ButtonSize = "sm" | "default" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
@@ -13,7 +15,11 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   outline: "border border-gray-300 text-gray-800 hover:bg-gray-100",
   text: "border border-gray-300 text-gray-800 hover:bg-gray-100",
 };
-
+const SIZE_CLASSES: Record<ButtonSize, string> = {
+  sm: "py-1.5 px-4  text-sm",
+  default: "py-2.5 px-6 text-base",
+  lg: "py-3 px-8 text-lg",
+};
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -21,14 +27,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       className = "",
       variant = "primary",
+      size = "default",
       type = "button",
       ...props
     },
     ref,
   ) => {
-    const baseClasses = "flex items-center justify-center gap-2 w-full py-2";
+    const baseClasses =
+      "flex items-center justify-center gap-2 w-full rounded-lg";
     const combinedClasses =
-      `${baseClasses} ${VARIANT_CLASSES[variant]} ${className}`.trim();
+      `${baseClasses} ${SIZE_CLASSES[size]} ${VARIANT_CLASSES[variant]} ${className}`.trim();
 
     return (
       <button

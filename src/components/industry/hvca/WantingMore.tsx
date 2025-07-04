@@ -5,7 +5,8 @@ const WantingMore = () => {
   return (
     <section className="relative overflow-hidden px-2 pb-16">
       {/* <TextAnimation animateOnScroll={true} delay={0.1}> */}
-      <h2 className="section-heading gradient-text-2 relative z-20 mx-auto w-fit max-w-[1004px] text-center font-bold lg:font-semibold">
+
+      <h2 className="section-heading-2 gradient-text-2 relative z-20 mx-auto w-fit max-w-[1004px] text-center font-bold lg:font-semibold">
         Contractor+ is the only HVAC software that doesn’t leave you still
         wanting more
       </h2>

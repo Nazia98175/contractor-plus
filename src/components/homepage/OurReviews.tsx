@@ -56,7 +56,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
           <div className="flex items-center gap-2">
             <Image
-              className="hidden w-full min-w-[62px] md:block"
+              className="hidden w-full min-w-[58px] md:block"
               src="/images/webp/g2Rating.webp"
               alt="capterra icon"
               width={62}
@@ -65,7 +65,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               sizes="(min-width: 768px) 62px"
             />
             <Image
-              className="hidden h-auto max-h-[60px] w-full max-w-20 md:block"
+              className="hidden h-auto max-h-[60px] w-full md:block md:max-w-20"
               src="/images/svg/capterra-icon2.svg"
               alt="capterra icon"
               width={80}
@@ -76,18 +76,16 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           </div>
           <div>
             <div className="flex items-center gap-3">
-              <h3 className="text-winterWay font-jakarta text-sm font-bold">
+              <h3 className="text-winterWay text-sm font-bold">
                 {reviews?.[0]?.sub_title?.split("4.9")?.[0] ?? ""}
               </h3>
 
-              <p className="text-dancingJewel font-jakarta text-base font-extrabold">
-                4.9
-              </p>
+              <p className="text-dancingJewel text-base font-extrabold">4.9</p>
               <span>
                 <GroupStartIcon />
               </span>
             </div>
-            <p className="text-winterWay font-jakarta pt-1 text-center text-xs font-medium md:text-start">
+            <p className="text-winterWay pt-1 text-center text-xs font-medium md:text-start">
               {reviews?.[0]?.sub_title?.split("4.9")?.[1] ?? ""}
             </p>
           </div>

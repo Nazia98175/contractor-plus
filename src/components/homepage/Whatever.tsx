@@ -161,10 +161,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   }, [isMobile, isTablet, isDesktop]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative z-10 w-full overflow-hidden px-2"
-    >
+    <section ref={sectionRef} className="relative z-10 w-full px-2">
       <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">

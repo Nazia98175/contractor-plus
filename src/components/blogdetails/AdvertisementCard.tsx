@@ -10,7 +10,7 @@ const businessBenefits = [
   "Estimating & Invoicing",
   "Access from PC, Android and iOS!",
 ];
-const BusinessFeatureCard = () => {
+const AdvertisementCard = () => {
   return (
     <article className="flex w-full flex-col justify-center rounded-xl bg-[url('/images/webp/table-content-bg.webp')] bg-cover px-6 pt-[42px] pb-[30px]">
       <span className="relative mx-auto max-w-[168px]">
@@ -63,4 +63,4 @@ const BusinessFeatureCard = () => {
   );
 };
 
-export default BusinessFeatureCard;
+export default AdvertisementCard;

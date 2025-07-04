@@ -8,6 +8,7 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/hvca/AwardBadge";
 import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
 import HvacHero from "@/components/industry/hvca/HvacHero";
+import HvacReview from "@/components/industry/hvca/HvacReview";
 import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
@@ -70,18 +71,26 @@ const page = async ({ params }: PageProps) => {
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
-        <HvacHero />
-        <TrustBatBuildContractor
-          platforms={blackPlatforms}
-          showTrustedSection={true}
-          className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
-        />
+        <div className="relative">
+          <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div>
+          <HvacHero />
+          <TrustBatBuildContractor
+            platforms={blackPlatforms}
+            showTrustedSection={true}
+            className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
+          />
+        </div>
         <HvacSoftware />
         <WantingMore />
         <EraOfSoftware />
       </div>
       <AwardBadges />
-      <ThousandsReviews
+      {/* <ThousandsReviews
+        data={{ title: "4.7 ★ across thousands of reviews" }}
+        reviews={reviews}
+        variant="secondary"
+      /> */}
+      <HvacReview
         data={{ title: "4.7 ★ across thousands of reviews" }}
         reviews={reviews}
         variant="secondary"

@@ -1,14 +1,12 @@
-import React from "react";
-import { ResourceCard } from "./ResourceCard";
 import {
   ArrowRight,
   BarChart3,
   Calculator,
   FileText,
-  Link,
   Wrench,
 } from "lucide-react";
 import { BlogPostScroller } from "./BlogPostScoller";
+import { ResourceCard } from "./ResourceCard";
 
 const Resource = () => {
   return (

@@ -6,8 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { latestContractorData } from "../common/Helper";
 import BlogCard from "./BlogCard";
 import SwiperNavWithPagination from "./SwiperNavWithPagination";
+import { handleClickProps } from "@/types";
 
-const LatestFromContractor = () => {
+const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -75,7 +76,11 @@ const LatestFromContractor = () => {
                 className="!grid w-full gap-5 lg:!grid-cols-2 xl:gap-8"
               >
                 <div className="hidden lg:block">
-                  <BlogCard article={group} variant="large" />
+                  <BlogCard
+                    article={group}
+                    variant="large"
+                    onClick={() => handleClick(group.title)}
+                  />
                 </div>
                 <div className="flex h-full w-full flex-col gap-6 sm:flex-row lg:w-fit lg:flex-col">
                   {group.second.map((article) => (
@@ -83,6 +88,7 @@ const LatestFromContractor = () => {
                       key={article.id}
                       article={article}
                       variant="small"
+                      onClick={() => handleClick(article.title)}
                     />
                   ))}
                 </div>

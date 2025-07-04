@@ -17,7 +17,7 @@ const HerosectionBackground = () => {
         width={800}
         height={1000}
         sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-        className="absolute top-[46%] flex h-full w-[110%] object-center sm:hidden"
+        className="pointer-events-none absolute top-[46%] z-50 flex h-full w-[110%] object-center sm:hidden"
         src={"/images/webp/hero-red-line-mobile.webp"}
         alt="hero-red-line"
       />

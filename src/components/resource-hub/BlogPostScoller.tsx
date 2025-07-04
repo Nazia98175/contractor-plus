@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./Card";
+} from "../ui/Card";
 import { Skeleton } from "./Skeleton";
 import {
   Carousel,
@@ -18,7 +18,7 @@ import {
   CarouselPrevious,
 } from "./Carousel";
 import Button from "../common/Button";
-import { toast } from "../hook/useToast";
+import { toast } from "../hooks/useToast";
 
 // Fallback data in case the API fetch fails
 const FALLBACK_POSTS = [
@@ -262,7 +262,7 @@ export function BlogPostScroller() {
                           "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d";
                       }}
                     />
-                    <div className="bg-primary text-primary-foreground absolute top-2 right-2 rounded px-2 py-1 text-xs">
+                    <div className="absolute top-2 right-2 rounded bg-[#dc2626] px-2 py-1 text-xs text-white">
                       {post.category}
                     </div>
                   </div>
@@ -294,7 +294,7 @@ export function BlogPostScroller() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="mt-4 flex justify-end gap-2">
+          <div className="mt-8 flex justify-end gap-2">
             <CarouselPrevious className="static" />
             <CarouselNext className="static" />
           </div>

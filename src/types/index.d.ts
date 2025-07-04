@@ -17,6 +17,9 @@ export interface ReviewCardProps {
   review: Review;
   openModal: () => void;
 }
+export interface handleClickProps {
+  handleClick: (title: string) => void;
+}
 
 export interface ServiceData {
   heading: string;

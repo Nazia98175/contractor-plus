@@ -6,11 +6,16 @@ const MakeOperation = dynamic(() => import("./MakeOperation"), { ssr: false });
 type WhatEverClientProps = {
   data: any;
   issection?: boolean;
+  className?: string;
 };
 
-const WhatEverClient = ({ data, issection = true }: WhatEverClientProps) => {
+const WhatEverClient = ({
+  data,
+  issection = true,
+  className,
+}: WhatEverClientProps) => {
   return (
-    <div className="bg-kuroiBlack relative">
+    <div className={`bg-kuroiBlack relative ${className}`}>
       <Whatever whateverOperation={data} />
       {issection && <MakeOperation whateverOperation={data} />}
     </div>

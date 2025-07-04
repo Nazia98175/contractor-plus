@@ -375,7 +375,7 @@ const TimmingEffect = () => {
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        <Button variant="primary" className="mt-3 mb-1.5">
+        <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
           Get started FREE
           <ArrowIcon fill="white" />
         </Button>

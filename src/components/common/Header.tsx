@@ -1,18 +1,36 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { HamburgerIcon, LogoIcon } from "./Icons";
-import HeaderLiItems from "./HeaderLiItems";
-import LanguageSelector from "../LanguageSelector";
-import SideBar from "./SideBar";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import LanguageSelector from "../LanguageSelector";
+import HeaderLiItems from "./HeaderLiItems";
+import { HamburgerIcon, LogoIcon } from "./Icons";
+import SideBar from "./SideBar";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   header?: any;
+  variant?: "light" | "dark";
 }
+
+const headerVariantClasses = {
+  light: {
+    background: "bg-kuroiBlack",
+  },
+  dark: { background: "bg-none" },
+};
+
 const Header: React.FC<HeaderProps> = ({ header }) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const resolvedVariant: "light" | "dark" =
+    pathname.includes("resource") ||
+    pathname.includes("calculators") ||
+    pathname.includes("free-estimate-maker")
+      ? "light"
+      : "dark";
+
+  const styles = headerVariantClasses[resolvedVariant];
 
   // Add scroll event listener
   useEffect(() => {
@@ -35,13 +53,11 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
     };
   }, [scrolled]);
 
-  const t = useTranslations("menu");
-
   return (
     <header className="fixed top-4 z-[99] w-full rounded px-2">
       <div
         className={`flex h-fit min-h-9 w-full items-center rounded transition-all duration-300 lg:py-3 ${
-          scrolled ? "bg-kuroiBlack shadow-c2" : "bg-none"
+          scrolled ? "bg-kuroiBlack shadow-c2" : styles.background
         }`}
       >
         <div className="main-container flex items-center justify-between py-1.5 lg:gap-3 xl:gap-[54px]">

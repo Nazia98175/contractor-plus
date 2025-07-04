@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import Button from "../common/Button";
-import { Card, CardFooter, CardHeader } from "./Card";
+import { Card, CardFooter, CardHeader } from "../ui/Card";
 
 interface ResourceCardProps {
   title: string;

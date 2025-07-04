@@ -8,7 +8,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-} from "./Breadcrumbs";
+} from "../ui/Breadcrumbs";
 import Link from "next/link";
 import { CalculatorSearch } from "./CalculatorSearch";
 import { ViewToggle } from "./ViewToggle";

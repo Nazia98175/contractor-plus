@@ -1,5 +1,5 @@
+import { Tabs, TabsList, TabsTrigger } from "../ui/Tabs";
 import { CalculatorCategory } from "./Calculator";
-import { Tabs, TabsList, TabsTrigger } from "./Tabs";
 
 interface CategoryTabsProps {
   categories: CalculatorCategory[];

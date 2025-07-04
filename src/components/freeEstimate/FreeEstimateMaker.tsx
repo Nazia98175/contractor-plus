@@ -2,13 +2,24 @@
 import { useState } from "react";
 import { useMetaTags } from "../hooks/use-meta-tags";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import { useEstimateItems } from "../hooks/use-estimate";
+import {
+  EstimateInfo,
+  EstimateItem,
+  useEstimateItems,
+} from "../hooks/use-estimate";
 import { EstimateForm } from "./EstimateForm";
 import { PageHeader } from "./PageHeader";
 import { TemplateSelector } from "./TemplateSelector";
 import { SEOContent } from "./SEOContent";
 
-export default function FreeEstimateMaker() {
+interface FreeEstimateMakerProps {
+  initialItems: EstimateItem[];
+  initialEstimateInfo: EstimateInfo;
+}
+export default function FreeEstimateMaker({
+  initialItems,
+  initialEstimateInfo,
+}: FreeEstimateMakerProps) {
   const {
     items,
     addItem,
@@ -20,7 +31,7 @@ export default function FreeEstimateMaker() {
     estimateInfo,
     updateEstimateInfo,
     calculateTotal,
-  } = useEstimateItems();
+  } = useEstimateItems(initialItems, initialEstimateInfo);
 
   const [activeTab, setActiveTab] = useState("create");
 

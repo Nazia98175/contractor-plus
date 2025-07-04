@@ -79,7 +79,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     trackProperties: trackProperties?.trackProperties,
     comparison: comparison?.comparison,
     teamsUsingContractor: teamsUsingContractor?.teamsUsingContractor,
-    crmService: page?.crmService,
+    crmService: page?.emailSignupSection,
     thousandReviews: page?.thousandReviews,
     reviewsData: reviews?.data?.[0]?.reviews?.reviews,
     faq: faqs?.faqs,
@@ -87,7 +87,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     blogsList: page?.blogs,
     createBtn: page?.hero?.createBtn,
     mobileBtn: page?.hero?.mobileBtn,
-    ncc: page?.hero?.ncc_txt,
+    ncc: page?.hero?.nccTxt,
   };
 
   return (

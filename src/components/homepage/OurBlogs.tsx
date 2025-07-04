@@ -12,7 +12,7 @@ interface Blogs {
 }
 interface BlogHeading {
   title: string;
-  btnTxt: string;
+  btnText: string;
   url: string;
 }
 
@@ -62,7 +62,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           {/* </PrimaryAnimatedText> */}
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
-              {blogHeading?.[1]?.btnTxt}
+              {blogHeading?.[1]?.btnText}
               <BlogBtnIcon />
             </button>
           </div>
@@ -73,7 +73,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
-              {blogHeading?.[1]?.btnTxt}
+              {blogHeading?.[1]?.btnText}
               <BlogBtnIcon />
             </button>
           </div>
@@ -116,7 +116,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
         <div className="flex justify-center pt-4 md:hidden">
           <button className="bg-red-linear primary-btn h-10 gap-2">
-            {blogHeading?.[1]?.btnTxt}
+            {blogHeading?.[1]?.btnText}
             <BlogBtnIcon />
           </button>
         </div>

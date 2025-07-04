@@ -8,7 +8,7 @@ interface Industry {
   title: string;
   sub_title: string;
   url: string;
-  btnTxt: string;
+  btnText: string;
 }
 
 interface TheIndustryProps {
@@ -55,7 +55,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
           </h6>
           {/* <div className="hidden items-center justify-center md:flex">
             <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
-              {contractorIndustry?.[1]?.btnTxt ?? ""}
+              {contractorIndustry?.[1]?.btnText ?? ""}
             </PrimaryLink>
           </div> */}
         </div>

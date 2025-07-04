@@ -103,7 +103,7 @@ const FieldServicesPage = async ({ params }: Params) => {
           <CrmSercive
             createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
             mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
-            ncc={crmPageContent?.data?.[0]?.hero?.ncc_txt}
+            ncc={crmPageContent?.data?.[0]?.hero?.nccTxt}
             data={crmPageContent?.data?.[0]?.crmService}
             showClouds={false}
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"

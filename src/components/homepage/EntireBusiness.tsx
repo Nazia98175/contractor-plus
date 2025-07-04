@@ -4,7 +4,7 @@ interface EntireBusiness {
   title: string;
   sub_title: string;
   txt: string;
-  btnTxt: string;
+  btnText: string;
   mobileBtn: string;
   url: string;
 }
@@ -26,7 +26,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
         title={entireBusiness?.[0]?.title}
         sub_title={entireBusiness?.[0]?.sub_title}
         placeholder={entireBusiness?.[1]?.txt}
-        createBtn={entireBusiness?.[2]?.btnTxt}
+        createBtn={entireBusiness?.[2]?.btnText}
         mobileBtn={mobileBtn}
         ncc={ncc_text}
         variantBtn="light"

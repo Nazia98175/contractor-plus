@@ -43,7 +43,7 @@ export default async function Home({
     coreFeatures,
     blogs,
   } = await getHomepageData(useParams?.locale);
-
+console.log(homePageContent , "homee")
   return (
     <>
       <div className="relative overflow-hidden">
@@ -52,17 +52,17 @@ export default async function Home({
           platforms={platforms}
           className="mx-auto w-full max-w-[889px] py-4"
         />
-        <TheEngineContractor
+        {/* <TheEngineContractor
           engineContractor={homePageContent?.data?.engineContractor}
-        />
+        /> */}
       </div>
-      <HomepageClient
+      {/* <HomepageClient
         homePageContent={homePageContent}
         contractPlatformsData={contractPlatformsData}
         reviewsList={reviewsList}
         coreFeatures={coreFeatures}
         blogs={blogs}
-      />
+      /> */}
     </>
   );
 }

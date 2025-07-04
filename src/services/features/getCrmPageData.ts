@@ -21,7 +21,7 @@ export const getFeaturesPageData = async (
 ): Promise<CrmLikePageDataResponse> => {
   const [
     pageContentRes,
-    heroImg,
+    // heroImg,
     reviewsRes,
     switchingToolRes,
     fieldServiceRes,
@@ -33,21 +33,24 @@ export const getFeaturesPageData = async (
     thousandReviewsRes,
   ] = await Promise.all([
     getCrmPage(slug, locale, "&populate=*"),
-    getCrmPage(slug , locale , "&populate[hero][populate]=heroImg"),
+    // getCrmPage(slug , locale , "&populate[hero][populate]=heroImg"),
     getCrmPage(slug, locale, "&populate[reviews][populate]=reviews"),
-    getCrmPage(slug, locale, "&populate[switchingTool][populate]=cardsDetail"),
-    getCrmPage(slug, locale, "&populate[fieldService][populate][cardsDetail][populate]=*"),
-    getCrmPage(slug, locale, "&populate[trackProperties][populate][cardDetails][populate]=*"),
-    getCrmPage(slug, locale, "&populate[comparison][populate][centerLogo]=true&populate[comparison][populate][features]=true"),
-    getCrmPage(slug, locale, "&populate[teamsUsingContractor][populate]=*"),
+    getCrmPage(slug, locale, "&populate[commonProblems][populate]=cardsDetail"),
+    getCrmPage(slug, locale, "&populate[problemSolutionSection][populate][cardsDetail][populate]=*"),
+    getCrmPage(slug, locale, "&populate[featureHighlightSection][populate][featuresList][populate]=*"),
+    getCrmPage(slug, locale, "&populate[featureComparisonTable][populate][centerLogo]=true&populate[comparison][populate][features]=true"),
+    getCrmPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
     getCrmPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-    getCrmPage(slug, locale, "&populate[thousandReviews][populate]=reviews"),
+    getCrmPage(slug, locale, "&populate[reviewTrustSection][populate]=reviews"),
+   
   ]);
+
+  console.log(pageContentRes , )
 
   return {
     crmPageContent: pageContentRes || null,
-    heroImg: heroImg?.data?.[0]?.hero?.heroImg || null ,
+    // heroImg: heroImg?.data?.[0]?.hero?.heroImg || null ,
     reviews: reviewsRes || null,
     switchingTool: switchingToolRes?.data?.[0] || null,
     fieldServiceData: fieldServiceRes?.data?.[0] || null,

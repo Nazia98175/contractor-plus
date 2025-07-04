@@ -145,7 +145,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"
-                  text={hero?.ncc_txt}
+                  text={hero?.nccTxt}
                 />
               </div>
             </CardReveal>

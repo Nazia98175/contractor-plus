@@ -27,23 +27,23 @@ export const getHomepageData = async (
 
   const [
     homePageContent,
-    contractPlatformsData,
-    reviewsList,
-    coreFeatures,
+    // contractPlatformsData,
+    // reviewsList,
+    // coreFeatures,
     blogs,
   ] = await Promise.all([
     getHomePage(locale, populateDefault),
-    getHomePage(locale, populatePlatforms),
-    getHomePage(locale, populateReviews),
-    getHomePage(locale, populateCoreFeatures),
+    // getHomePage(locale, populatePlatforms),
+    // getHomePage(locale, populateReviews),
+    // getHomePage(locale, populateCoreFeatures),
     getBlogs(locale, blogQuery),
   ]);
 
   return {
     homePageContent,
-    contractPlatformsData,
-    reviewsList,
-    coreFeatures,
+    // contractPlatformsData,
+    // reviewsList,
+    // coreFeatures,
     blogs,
   };
 };

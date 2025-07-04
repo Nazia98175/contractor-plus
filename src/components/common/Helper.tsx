@@ -2944,14 +2944,14 @@ export const pricingfaqitems = [
     id: 1,
     question: "What are the differences between FREE, PRO and PRO TEAM?",
     answer:
-      "The FREE plan allows you to manage your clients, prepare and send estimates, invoices, even collect payments via credit card and eCheck. You can do pretty much everything you need for a smaller proprietorship or single-member business. PRO will allow you to add your employees, coworkers, admin assistants, and subcontractors to collaborate on projects. It also gives you a lot more control over individual settings and configurations throughout the app. ULTIMATE is maximum performance – everything to the max. All the features of PRO + enterprise level customizations, third party API integrations, more payment options, it’s Contractor+ – without limits.  For a one man operation, the free version should work just fine. For small teams, PRO should be enough to get the job done. And for the medium to larger companies who expect the best and want it all – ULTIMATE is the plan that was designed for you.",
+      "The FREE plan allows you to manage your clients, prepare and send estimates, invoices, even collect payments via credit card and eCheck. You can do pretty much everything you need for a smaller proprietorship or single-member business. PRO will allow you to add your employees, coworkers, admin assistants, and subcontractors to collaborate on projects. It also gives you a lot more control over individual settings and configurations throughout the app. PRO TEAM is maximum performance – everything to the max. All the features of PRO + enterprise level customizations, third party API integrations, more payment options, it’s Contractor+ – without limits.  For a one man operation, the free version should work just fine. For small teams, PRO should be enough to get the job done. And for the medium to larger companies who expect the best and want it all – PRO TEAM is the plan that was designed for you.",
   },
   {
     id: 2,
     question:
-      "What if I buy an annual subscription of PRO but want to upgrade to ULTIMATE later?",
+      " What if I buy an annual subscription of PRO but want to upgrade to PRO TEAM later?",
     answer:
-      "We will prorate the difference between the two costs and apply any unused/remaining balance from your currently active PRO subscriptions to the cost of your Ultimate upgrade. There’s never a problem upgrading or downgrading at any time!",
+      "We will prorate the difference between the two costs and apply any unused/remaining balance from your currently active PRO subscriptions to the cost of your PRO TEAM upgrade. There’s never a problem upgrading or downgrading at any time!",
   },
   {
     id: 3,

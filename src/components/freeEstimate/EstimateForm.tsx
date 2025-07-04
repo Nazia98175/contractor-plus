@@ -1,29 +1,30 @@
 "use client";
-import { useState, useRef } from "react";
-import { EstimateInfo, EstimateItem } from "../hooks/use-estimate";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import Button from "../common/Button";
+import { useRef, useState } from "react";
+
 import {
   Building,
   FileEdit,
   FileText,
+  Image,
   Plus,
   Trash2,
   User,
   X,
 } from "lucide-react";
-import { Tabs, TabsContent, TabsList } from "../ui/Tabs";
-import { TabsTrigger } from "@radix-ui/react-tabs";
-import Image from "next/image";
-import { useFileUpload } from "../hooks/useFileUpload";
-import { useToast } from "../hooks/useToast";
-import { useIsMobile } from "../hooks/useIsMobile";
+import { LineItemRow } from "./LineItemRow";
+
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { LineItemRow } from "./LineItemRow";
+import Button from "../common/Button";
+import { EstimateInfo, EstimateItem } from "../hooks/use-estimate";
+import { useFileUpload } from "../hooks/useFileUpload";
+import { useIsMobile } from "../hooks/useIsMobile";
+import { useToast } from "../hooks/useToast";
+import { AspectRatio } from "../ui/Aspectratio";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
 import { Input } from "../ui/Input";
 import { Label } from "../ui/Label";
-import { AspectRatio } from "../ui/Aspectratio";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
 import { Textarea } from "../ui/Textarea";
 
 interface EstimateFormProps {
@@ -577,8 +578,8 @@ export function EstimateForm({
                                   />
                                 </AspectRatio>
                                 <Button
-                                  //   size="icon"
-                                  //   variant="ghost"
+                                  // size="icon"
+                                  // variant="ghost"
                                   className="bg-background/80 absolute top-1 right-1 h-6 w-6 rounded-full"
                                   onClick={handleClearLogo}
                                 >
@@ -588,7 +589,7 @@ export function EstimateForm({
                             ) : (
                               <label className="hover:bg-muted/50 flex h-28 w-full max-w-[180px] cursor-pointer flex-col items-center justify-center rounded-md border border-dashed transition-colors">
                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                  {/* <Image className="text-muted-foreground mb-1 h-8 w-8" /> */}
+                                  <Image className="text-muted-foreground mb-1 h-8 w-8" />
                                   <p className="text-muted-foreground text-xs">
                                     Upload logo
                                   </p>

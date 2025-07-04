@@ -30,15 +30,15 @@ export function PageHeader() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="flex items-center gap-3">
-        <div className="flex-shrink-0 rounded-md bg-red-600 p-2">
+      <div className="flex items-start gap-3">
+        <div className="mt-1 flex-shrink-0 rounded-md bg-red-600 p-2">
           <FileText className="h-6 w-6 text-white" />
         </div>
         <div>
           <h1 className="text-3xl font-bold tracking-tight">
             Free Estimate Templates
           </h1>
-          <p className="text-muted-foreground max-w-3xl">
+          <p className="max-w-3xl text-[#71717a]">
             Use our professional estimate templates to create customized
             estimates for any project. Add line items, adjust quantities and
             rates, and export to PDF for free.

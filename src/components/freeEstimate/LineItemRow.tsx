@@ -79,7 +79,7 @@ export function LineItemRow({
 
             <div className="col-span-2">
               <div className="relative">
-                <span className="text-muted-foreground absolute inset-y-0 left-0 flex items-center pl-3">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-[#71717a]">
                   $
                 </span>
                 <Input
@@ -108,9 +108,7 @@ export function LineItemRow({
       {isMobile && (
         <div className="grid grid-cols-12 gap-2">
           <div className="col-span-4">
-            <label className="text-muted-foreground mb-1 block text-xs">
-              Qty
-            </label>
+            <label className="mb-1 block text-xs text-[#71717a]">Qty</label>
             <Input
               type="number"
               min="0"
@@ -123,11 +121,11 @@ export function LineItemRow({
           </div>
 
           <div className="col-span-4">
-            <label className="text-muted-foreground mb-1 block text-xs">
+            <label className="mb-1 block text-xs text-[#71717a]">
               Rate ($)
             </label>
             <div className="relative">
-              <span className="text-muted-foreground absolute inset-y-0 left-0 flex items-center pl-2 text-xs">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-2 text-xs text-[#71717a]">
                 $
               </span>
               <Input
@@ -144,9 +142,7 @@ export function LineItemRow({
           </div>
 
           <div className="col-span-4">
-            <label className="text-muted-foreground mb-1 block text-xs">
-              Amount
-            </label>
+            <label className="mb-1 block text-xs text-[#71717a]">Amount</label>
             <div className="bg-background flex h-10 w-full items-center overflow-hidden rounded-md border px-2">
               <span className="truncate text-sm">
                 ${(item.quantity * item.rate).toFixed(2)}
@@ -160,9 +156,7 @@ export function LineItemRow({
       {isMobile && (
         <div className="grid grid-cols-12 gap-2">
           <div className="col-span-4">
-            <label className="text-muted-foreground mb-1 block text-xs">
-              Unit
-            </label>
+            <label className="mb-1 block text-xs text-[#71717a]">Unit</label>
             <Select
               value={item.unit}
               onValueChange={(value) => onUpdate({ unit: value })}

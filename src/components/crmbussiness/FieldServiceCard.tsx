@@ -147,11 +147,11 @@ const FieldServiceCard: React.FC<Props> = ({
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
         {apiData ? (
           <Image
-          src={
-                service?.cardImg?.url
-                  ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
-                  : "/placeholder.png"
-              }
+            src={
+              service?.cardImg?.url
+                ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
+                : "/placeholder.png"
+            }
             // src={
             //   service?.cardImg?.url
             //     ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`

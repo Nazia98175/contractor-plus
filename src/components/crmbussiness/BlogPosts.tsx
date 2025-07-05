@@ -111,7 +111,7 @@ const BlogPosts: React.FC<Props> = ({
         </div>
         <div className="block pt-4 md:hidden">
           <button className="bg-red-linear primary-btn h-10 gap-2">
-            {data?.btnText}
+            {blogs?.btnText}
             <BlogBtnIcon />
           </button>
         </div>

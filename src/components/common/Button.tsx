@@ -1,13 +1,7 @@
 import React from "react";
 
-type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "danger"
-  | "outline"
-  | "text"
-  | "ghost";
-type ButtonSize = "sm" | "default" | "lg" | "icon";
+type ButtonVariant = "primary" | "secondary" | "danger" | "outline" | "text";
+type ButtonSize = "sm" | "default" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -20,13 +14,11 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500",
   outline: "border border-gray-300 text-gray-800 hover:bg-gray-100",
   text: "border border-gray-300 text-gray-800 hover:bg-gray-100",
-  ghost: "hover:bg-accent hover:text-accent-foreground",
 };
 const SIZE_CLASSES: Record<ButtonSize, string> = {
   sm: "py-1.5 px-4  text-sm",
-  default: "py-2.5 px-6 text-base h-10",
+  default: "py-2.5 px-6 text-base",
   lg: "py-3 px-8 text-lg",
-  icon: "h-10 w-10",
 };
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -41,7 +33,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ) => {
-    const baseClasses = "flex items-center justify-center gap-2  rounded-lg";
+    const baseClasses =
+      "flex items-center justify-center gap-2 w-full rounded-lg";
     const combinedClasses =
       `${baseClasses} ${SIZE_CLASSES[size]} ${VARIANT_CLASSES[variant]} ${className}`.trim();
 

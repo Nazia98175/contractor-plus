@@ -19,7 +19,7 @@ const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard , heroImg}) => {
     }, 1000);
   }, []);
    const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
-   console.log(heroImg, "hero in hvac hero");
+  
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>

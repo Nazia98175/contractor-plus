@@ -71,7 +71,7 @@ export interface tableFeature {
 }
 export interface Review {
   id: string | number;
-  profileUrl: string;
+  profileImg: string;
   userName?: string;
   companyLogo?: string;
   role?: string;

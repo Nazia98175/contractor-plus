@@ -24,10 +24,10 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
       <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
         {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
         <h3 className="text-winterWay heading hidden sm:block">
-         {trackProperties?.featuresList?.[1]?.title}
+         {trackProperties?.featuresList?.[0]?.title}
         </h3>
         <h3 className="gradient-text-2 block text-[22px] font-extrabold sm:hidden">
-         {trackProperties?.featuresList?.[1]?.title}
+         {trackProperties?.featuresList?.[0]?.title}
         </h3>
         {/* </TextAnimation> */}
 

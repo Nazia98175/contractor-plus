@@ -45,10 +45,10 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
         <div className="w-full max-w-[742px] space-y-4 lg:space-y-5">
           {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
           <h3 className="text-winterWay hidden text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:block sm:text-2xl sm:font-semibold md:text-3xl xl:text-4xl">
-            {trackProperties?.featuresList?.[0]?.title}
+            {trackProperties?.featuresList?.[1]?.title}
           </h3>
           <h3 className="gradient-text-2 xs:max-w-[83%] block max-w-[91%] text-[22px] !leading-[130%] font-extrabold tracking-[-0.72px] sm:hidden sm:max-w-full">
-            {trackProperties?.featuresList?.[0]?.title}
+            {trackProperties?.featuresList?.[1]?.title}
           </h3>
           {/* </TextAnimation> */}
 

@@ -33,7 +33,7 @@ const MakeOperationCard = ({
         <span className="ml-1 inline-block text-2xl">{item.title}</span>
       </h3>
 
-      <p className="text-secondary countup-desc">{item.sub_title}</p>
+      <p className="text-secondary countup-desc">{item.subTitle}</p>
     </article>
   );
 };

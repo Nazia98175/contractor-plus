@@ -119,8 +119,8 @@ const LazyContentLoader = ({ data }: LazyContentLoaderProps) => {
             theme={data.theme}
             ncc={data.ncc}
             trackProperties={data.trackProperties}
-            likeYouDo={data.trackProperties?.cardDetails?.[0]}
-            howContractorWork={data.trackProperties?.cardDetails?.[1]}
+            // likeYouDo={data.trackProperties?.cardDetails?.[0]}
+            // howContractorWork={data.trackProperties?.cardDetails?.[1]}
             kindAdorable={data.comparison}
             teamUsingContractor={data.teamsUsingContractor}
             crmService={data.crmService}

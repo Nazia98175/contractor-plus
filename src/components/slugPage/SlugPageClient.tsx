@@ -7,8 +7,8 @@ const SlugPageClientOptimized = ({
   slug,
   ncc,
   trackProperties,
-  likeYouDo,
-  howContractorWork,
+  // likeYouDo,
+  // howContractorWork,
   kindAdorable,
   teamUsingContractor,
   thousandReviews,
@@ -22,7 +22,6 @@ const SlugPageClientOptimized = ({
 }: any) => {
   const [platforms, setPlatforms] = useState<Platform[] | null>(null);
 
-  // Load platforms data lazily
   useEffect(() => {
     let mounted = true;
 
@@ -64,13 +63,13 @@ const SlugPageClientOptimized = ({
 
             <LazyWrapper
               importFn={() => import("../crmbussiness/LikeYouDoContacts")}
-              props={{ data: likeYouDo }}
+              props={{ trackProperties}}
               fallback={<div className="h-40 animate-pulse bg-gray-100" />}
             />
 
             <LazyWrapper
               importFn={() => import("../crmbussiness/HowContractorWork")}
-              props={{ ncc, trackProperties, data: howContractorWork }}
+              props={{ ncc, trackProperties, }}
               fallback={<div className="h-48 animate-pulse bg-gray-100" />}
             />
           </>

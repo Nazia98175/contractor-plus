@@ -8,29 +8,31 @@ interface Content {
 }
 
 interface LikeYouDo {
-  title: string;
-  content: Content[];
+ featuresList: {
+    title: string;
+    content: Content[];
+  }[];
 }
 
 interface Props {
-  data: LikeYouDo;
+  trackProperties: LikeYouDo ;
 }
 
-const LikeYouDoContacts: React.FC<Props> = ({ data }) => {
+const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-0">
       <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
         {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
         <h3 className="text-winterWay heading hidden sm:block">
-          {data?.title}
+         {trackProperties?.featuresList?.[1]?.title}
         </h3>
         <h3 className="gradient-text-2 block text-[22px] font-extrabold sm:hidden">
-          {data?.title}
+         {trackProperties?.featuresList?.[1]?.title}
         </h3>
         {/* </TextAnimation> */}
 
         <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
-          {data?.content?.map((feature, index) => (
+          {trackProperties?.featuresList?.[0]?.content?.map((feature:any, index:number) => (
             <li
               key={index}
               className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"

@@ -11,11 +11,11 @@ import ReviewModal from "../common/ReviewModal";
 
 interface Reviews {
   title: string;
-  sub_title: string;
+  subTitle: string;
 }
 
 interface TheReviewsProps {
-  reviews: Reviews[];
+  reviews: Reviews;
   reviewsList: any;
 }
 
@@ -27,17 +27,14 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  // const slicedata = reviewsList.slice(0, 6);
-  // console.log(slicedata, "slidece data");
-  // const slicefull = reviewsList.slice(6);
-  // console.log(slicefull, "slidece full");
+ 
 
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
       <div className="main-container flex flex-col items-center justify-between gap-3 text-center md:text-start lg:flex-row">
         {/* <PrimaryAnimatedText delay={3000}> */}
         <h3 className="section-heading gradient-text-2 text-center text-black md:text-start">
-          {reviews?.[0]?.title ?? ""}
+          {reviews?.title ?? ""}
         </h3>
         {/* </PrimaryAnimatedText> */}
         <CardReveal
@@ -77,7 +74,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           <div>
             <div className="flex items-center gap-3">
               <h3 className="text-winterWay text-sm font-bold">
-                {reviews?.[0]?.sub_title?.split("4.9")?.[0] ?? ""}
+                {reviews?.subTitle?.split("4.8")?.[0] ?? ""}
               </h3>
 
               <p className="text-dancingJewel text-base font-extrabold">4.9</p>
@@ -86,7 +83,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               </span>
             </div>
             <p className="text-winterWay pt-1 text-center text-xs font-medium md:text-start">
-              {reviews?.[0]?.sub_title?.split("4.9")?.[1] ?? ""}
+              {reviews?.subTitle?.split("4.8")?.[1] ?? ""}
             </p>
           </div>
         </CardReveal>

@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
               {header?.loginText}
             </button>
             <button className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex">
-              {header?.btnTxt?.btnTxt}
+              {header?.btnText?.btnText}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>
               <HamburgerIcon />

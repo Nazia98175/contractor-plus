@@ -2,31 +2,34 @@ import CommonFormField from "../common/CommonFormField";
 
 interface EntireBusiness {
   title: string;
-  sub_title: string;
+  subTitle: string;
   txt: string;
-  btnTxt: string;
+  btnText: string;
   mobileBtn: string;
   url: string;
+  placeholder: string;
 }
 interface TheEntireBusinessProps {
-  entireBusiness: EntireBusiness[];
+  entireBusiness: EntireBusiness;
   ncc_text: string;
   mobileBtn: string;
+  createBtn: string;
 }
 
 const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   entireBusiness,
   ncc_text,
   mobileBtn,
+  createBtn
 }) => {
   return (
     <div className="relative z-10 px-2 pt-[38px] pb-7 md:py-11">
       <CommonFormField
         variant="primary"
-        title={entireBusiness?.[0]?.title}
-        sub_title={entireBusiness?.[0]?.sub_title}
-        placeholder={entireBusiness?.[1]?.txt}
-        createBtn={entireBusiness?.[2]?.btnTxt}
+        title={entireBusiness?.title}
+        sub_title={entireBusiness?.subTitle}
+        placeholder={entireBusiness?.placeholder}
+        createBtn={createBtn}
         mobileBtn={mobileBtn}
         ncc={ncc_text}
         variantBtn="light"

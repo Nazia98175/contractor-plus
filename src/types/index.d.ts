@@ -46,11 +46,12 @@ export interface Platform {
 
 export interface PlatformItem {
   title: string;
-  description: string;
+  text: string;
   image: string;
 }
 
 export interface HomePageResponse {
+  hero: any;
   data: any;
   meta?: any;
 }

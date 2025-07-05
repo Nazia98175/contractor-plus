@@ -18,7 +18,7 @@ interface BlogHeading {
 
 interface TheBlogProps {
   blogs: Blogs[];
-  blogHeading: BlogHeading[];
+  blogHeading: BlogHeading;
 }
 
 const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
@@ -51,29 +51,30 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       backgroundImage: "/images/svg/blog-3.svg",
     },
   ];
+
   return (
     <section className="relative z-10 overflow-hidden bg-white px-2 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
           {/* <PrimaryAnimatedText delay={3000}> */}
           <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
-            {blogHeading?.[0]?.title}
+            {blogHeading?.title}
           </h2>
           {/* </PrimaryAnimatedText> */}
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
-              {blogHeading?.[1]?.btnTxt}
+              {blogHeading?.btnTxt}
               <BlogBtnIcon />
             </button>
           </div>
         </div>
         <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
           <h2 className="gradient-text-2 text-center text-[26px] font-semibold text-black md:text-start md:text-[35px] lg:text-[42px]">
-            {blogHeading?.[0]?.title}
+            {blogHeading?.title}
           </h2>
           <div className="hidden md:block">
             <button className="bg-red-linear primary-btn h-10 gap-2">
-              {blogHeading?.[1]?.btnTxt}
+              {blogHeading?.btnTxt}
               <BlogBtnIcon />
             </button>
           </div>
@@ -116,7 +117,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
         <div className="flex justify-center pt-4 md:hidden">
           <button className="bg-red-linear primary-btn h-10 gap-2">
-            {blogHeading?.[1]?.btnTxt}
+            {blogHeading?.btnTxt}
             <BlogBtnIcon />
           </button>
         </div>

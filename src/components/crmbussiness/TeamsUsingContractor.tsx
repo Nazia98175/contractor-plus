@@ -45,7 +45,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
       </h2>
       {/* </TextAnimation> */}
       {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
-      <p className="paragraph-style text-center">{data?.sub_title}</p>
+      <p className="paragraph-style text-center">{data?.subTitle}</p>
       {/* </TextAnimation> */}
       <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-[18px] px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 md:gap-[30px] xl:mt-[52px] xl:mb-[70px]">
         {data?.cards?.map((item: any, index: any) => (
@@ -89,7 +89,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
               ) : undefined}
             </h3>
 
-            <p className="text-secondary countup-desc">{item.sub_title}</p>
+            <p className="text-secondary countup-desc">{item.subTitle}</p>
           </article>
         ))}
       </div>

@@ -8,7 +8,9 @@ import FreeAccountButton from "@/components/common/FreeAccountButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { features } from "@/components/common/Helper";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
-const HvacHero = () => {
+import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
+
+const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard}) => {
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".main-loader", {
@@ -16,6 +18,7 @@ const HvacHero = () => {
       });
     }, 1000);
   }, []);
+ 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>
@@ -41,33 +44,32 @@ const HvacHero = () => {
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
             <h1 className="main-heading gradient-white">
-              Not just HVAC software. Meet your operating system.
+              {hero?.heroTitle}
             </h1>
             {/* </TextAnimation> */}
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
             <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[478px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
-              Contractor+ connects every function of your business so it finally
-              all works in sync.
+              {hero?.heroDescription}
             </p>
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
-                text={"Get started FREE"}
+                text={hero?.createBtn}
                 className="!hidden sm:!flex"
               />
               <FreeAccountButton
-                text={"Download FREE App"}
+                text={hero?.mobileBtn}
                 className="flex sm:!hidden"
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
-                text={"No credit card required"}
+                text={hero?.nccTxt}
               />
             </div>
           </div>
         </div>
         <div className="absolute right-[2%] bottom-16 z-10 hidden h-[62%] w-[314px] lg:flex xl:right-[2%]">
-          <HvacHeroSlider features={features} />
+          <HvacHeroSlider features={homeCard} />
         </div>
         <div className="absolute top-0 right-0 h-full max-h-[1200px] w-full lg:max-h-[750px] lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">

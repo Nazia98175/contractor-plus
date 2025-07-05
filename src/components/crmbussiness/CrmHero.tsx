@@ -12,10 +12,11 @@ import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
-interface TheHeroProps {
+export interface TheHeroProps {
   hero: any;
   slug?: string;
   heroImg?: any;
+  homeCard?: any;
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   // const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -67,15 +68,9 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
                   : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"
               } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
             >
-              {slug !== "crm" && hero?.heroTitle}
+              {hero?.heroTitle}
 
-              {slug === "crm" && (
-                <>
-                  {hero?.heroTitle1}{" "}
-                  <span className="text-white">{hero?.heroTitle2}</span>{" "}
-                  <span>{hero?.heroTitle3}</span>
-                </>
-              )}
+              
             </h2>
             {/* </TextAnimation> */}
             {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}
@@ -145,7 +140,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"
-                  text={hero?.ncc_txt}
+                  text={hero?.nccTxt}
                 />
               </div>
             </CardReveal>

@@ -3,13 +3,12 @@ import { HomePageResponse } from "@/types";
 import { AxiosResponse } from "axios";
 import { notFound } from "next/navigation";
 
-export const getCrmPage = async (
+export const getIndustryPage = async (
   slug: string,  
   locale: string,
   query: string
 ): Promise<HomePageResponse | null> => {
-const url = `features-pages?filters[pageName][$eq]=${slug}&locale=${locale}${query}`;
-  //  const url = `services-pages?filters[title][$eq]=${slug}&locale=${locale}${query}`;
+const url = `industries-pages?filters[pageName][$eq]=${slug}&locale=${locale}${query}`;
  
   try {
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);

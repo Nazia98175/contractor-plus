@@ -8,11 +8,11 @@ import { CheckIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 interface Finally {
   title: string;
-  sub_title: string;
-  txt: string;
+  subTitle: string;
+  solutionsList: any;
 }
 interface TheFinallyProps {
-  finallyC: Finally[];
+  finallyC: Finally;
 }
 const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   return (
@@ -41,25 +41,25 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="relative z-30 space-y-4">
           {/* <PrimaryAnimatedText delay={3000}> */}
           <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
-            <span> {finallyC?.[0]?.title ?? ""}</span>
+            <span> {finallyC?.title ?? ""}</span>
           </h2>
           {/* </PrimaryAnimatedText> */}
           <CardReveal distance={50}>
             <h3 className="text-superSilver mx-auto max-w-[750px] px-2 text-center text-sm font-medium sm:text-base">
-              {finallyC?.[0]?.sub_title ?? ""}
+              {finallyC?.subTitle ?? ""}
             </h3>
           </CardReveal>
           <CardReveal
             distance={50}
             className="relative z-10 flex flex-wrap items-center justify-center gap-3 pt-2 md:gap-[22px]"
           >
-            {finallyC?.[1]?.txt?.split(",")?.map((feature, index) => (
+            {finallyC?.solutionsList?.map((feature:any, index:number) => (
               <div
                 key={index}
                 className="font-myriad text-superSilver flex items-center gap-1.5 text-base font-medium sm:gap-2 sm:font-semibold"
               >
                 <CheckIcon />
-                {feature}
+                {feature?.text}
               </div>
             ))}
           </CardReveal>

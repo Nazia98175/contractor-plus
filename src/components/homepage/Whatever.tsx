@@ -16,10 +16,10 @@ if (typeof window !== "undefined") {
 
 interface Whatever {
   title: string;
-  sub_title: string;
+  subTitle: string;
 }
 interface TheWhateverProps {
-  whateverOperation: Whatever[];
+  whateverOperation: Whatever;
 }
 
 const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
@@ -165,7 +165,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
         <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
-          <span>{whateverOperation?.[0]?.title}</span>
+          <span>{whateverOperation?.title}</span>
         </h3>
 
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
@@ -290,7 +290,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         {/* <PrimaryAnimatedText delay={3000}> */}
         <p className="text-granite mx-auto flex w-fit items-center gap-2 text-center text-lg capitalize opacity-90">
           <span className="pr-2 !text-white">5000+</span>
-          {whateverOperation?.[0]?.sub_title?.split("5000+")?.[1]}
+          {whateverOperation?.subTitle?.split("5000+")?.[1]}
           <WhatEverIcon className="h-5 w-5" />
         </p>
         {/* </PrimaryAnimatedText> */}

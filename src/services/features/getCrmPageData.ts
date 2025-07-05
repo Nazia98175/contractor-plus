@@ -35,7 +35,7 @@ export const getFeaturesPageData = async (
   ] = await Promise.all([
     getCrmPage(slug, locale, "&populate=*"),
     getCrmPage(slug , locale , "&populate[hero][populate]=heroImg"),
-    getCrmPage(slug, locale, "&populate[reviews][populate]=reviews"),
+    getCrmPage(slug, locale, "&populate[reviews][populate][reviews][populate]=profileImg"),
     getCrmPage(slug, locale, "&populate[commonProblems][populate]=cardsDetail"),
     getCrmPage(slug, locale, "&populate[problemSolutionSection][populate][cardsDetail][populate]=*"),
     getCrmPage(slug, locale, "&populate[featureHighlightSection][populate][featuresList][populate]=*"),
@@ -43,7 +43,7 @@ export const getFeaturesPageData = async (
     getCrmPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
     getCrmPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-    getCrmPage(slug, locale, "&populate[reviewTrustSection][populate]=reviews"),
+    getCrmPage(slug, locale, "&populate[reviewTrustSection][populate][reviews][populate]=profileImg"),
    
   ]);
 

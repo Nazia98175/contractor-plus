@@ -31,6 +31,7 @@ interface ReviewCardProps {
   slug?: string;
   openModal: () => void;
   variant?: "primary" | "secondary" | "tertiary";
+
 }
 
 const renderStars = (rating: number) => {
@@ -48,7 +49,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   variant = "secondary",
   slug,
 }) => {
+  console.log(review , "review in card");
   const styles = VARIANT_CLASSES[variant];
+  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI 
   return (
     <div className="mr-5 !h-auto">
       <article
@@ -57,9 +60,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">
-            {review?.profileImg ? (
+            {review?.profileImg && typeof review.profileImg === 'object' && 'url' in review.profileImg ? (
               <Image
-                src={review.profileImg}
+                src={`${imageBaseUrl}${review.profileImg?.url}`}
                 alt="avatar"
                 width={42}
                 height={42}

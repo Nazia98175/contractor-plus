@@ -44,7 +44,7 @@ export const getIndustryPageData = async (
     getIndustryPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
     getIndustryPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-    getIndustryPage(slug, locale, "&populate[reviewTrustSection][populate]=reviews"),
+    getIndustryPage(slug, locale, "&populate[reviewTrustSection][populate][reviews][populate]=profileImg"),
    
   ]);
 

@@ -40,13 +40,13 @@ const BlogPosts: React.FC<Props> = ({
               classMaxwidth || "max-w-[483px]"
             } ${headingVariantMap[headingVariant]}`}
           >
-            <span>{title || data?.title}</span>
+            <span>{title || blogs?.title}</span>
           </h2>
           {/* </PrimaryAnimatedText> */}
 
           <div className="hidden md:block">
             <Button className="bg-red-linear primary-btn h-10 gap-2">
-              {data?.btnText}
+              {blogs?.btnText}
               <BlogBtnIcon />
             </Button>
           </div>

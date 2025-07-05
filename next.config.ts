@@ -11,6 +11,11 @@ const nextConfig: import("next").NextConfig = {
         hostname: "167.88.43.123",
         port: "1337",
       },
+      {
+        protocol: "http",
+        hostname: "167.88.43.123",
+        port: "2050",
+      },
     ],
   },
   experimental: {

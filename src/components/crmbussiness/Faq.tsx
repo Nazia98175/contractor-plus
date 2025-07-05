@@ -16,7 +16,7 @@ type FaqItemType = {
 interface Props {
   faq: {
     title?: string;
-    sub_title?: string;
+    subTitle?: string;
     faq?: FaqItemType[];
   };
   classNameQue?: string;
@@ -53,7 +53,7 @@ const Faq: React.FC<Props> = ({
       <p
         className={`paragraph-text pt-1.5 text-center sm:pt-4 ${currentHeading.sub_title}`}
       >
-        {faq?.sub_title}
+        {faq?.subTitle}
       </p>
 
       <div className="mx-auto max-w-[1190px] space-y-5 pt-[27px]">

@@ -77,7 +77,7 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
 
         {/* <TextAnimation animateOnScroll={false} delay={0.3}> */}
         <p className="paragraph-style mx-auto max-w-[950px] text-center">
-          {trackProperties?.sub_title}
+          {trackProperties?.subTitle}
         </p>
         {/* </TextAnimation> */}
         <FreeAccountButton

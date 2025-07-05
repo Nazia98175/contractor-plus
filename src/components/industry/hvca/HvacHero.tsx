@@ -10,7 +10,7 @@ import { features } from "@/components/common/Helper";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 
-const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard}) => {
+const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard , heroImg}) => {
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".main-loader", {
@@ -18,7 +18,8 @@ const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard}) => {
       });
     }, 1000);
   }, []);
- 
+   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
+  
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>
@@ -85,22 +86,22 @@ const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard}) => {
             {/* <HvacGlowHeroDesktopIcon /> */}
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
-          <Image
+          {heroImg?.url && <Image
             alt="hvac-hero"
-            src={"/images/webp/hvac-hero.webp"}
+            src={`${imageBaseUrl}${heroImg?.url}`}
             width={945}
             height={729}
             className="hidden w-full object-right md:block"
             unoptimized
-          />
-          <Image
+          />}
+         {heroImg?.url && <Image
             alt=""
-            src={"/images/webp/hvac-hero-mobile.webp"}
+            src={`${imageBaseUrl}${heroImg?.url}`}
             width={945}
             height={729}
             className="block w-full object-cover md:hidden"
             unoptimized
-          />
+          />}
           <Image
             priority
             fill

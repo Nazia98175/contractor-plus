@@ -24,7 +24,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   const [animationReady, setAnimationReady] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<any>(null); // Store timeline reference
-  console.log("fieldService", fieldService);
+ 
   // Initialize animations when GSAP is loaded
   useEffect(() => {
     if (!isLoaded || !gsapInstance || animationReady) return;

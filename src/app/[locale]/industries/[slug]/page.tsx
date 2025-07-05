@@ -52,7 +52,7 @@ const page = async ({ params }: PageProps) => {
     getCrmPage("crm", useParams.locale, "&populate=*"),
   ]);
   const { homePageContent } = await getHomepageData(useParams?.locale);
-console.log(thousandReviews, "crmPageContent faqs");
+
   
   return (
     <main className="overflow-hidden">

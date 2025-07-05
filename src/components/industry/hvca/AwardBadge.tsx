@@ -12,7 +12,7 @@ interface AwardBadgesProps {
 }
 
 export default function AwardBadges({buttonInfo, teamsUsingContractor}: AwardBadgesProps) {
-  console.log("AwardBadges teamsUsingContractor", teamsUsingContractor);
+ 
   return (
     <section className="no-scrollbar relative w-full">
       <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>

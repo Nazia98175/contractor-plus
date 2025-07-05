@@ -46,7 +46,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
           }}
           loop={false}
         >
-          {reviews.map((review: any, index: any) => (
+          {data?.reviews?.map((review: any, index: any) => (
             <CrmReviewCard
               review={review}
               key={index}

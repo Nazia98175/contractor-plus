@@ -80,7 +80,6 @@ export interface Review {
   review: string;
   isModal?: boolean;
   videoLink?: string;
-  profileUrl?: string;
 }
 
 export type CompareFeature = {

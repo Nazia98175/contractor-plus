@@ -38,7 +38,7 @@ const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
         {/* </TextAnimation> */}
 
         <Marquee pauseOnClick speed={30} direction="right" pauseOnHover>
-          {reviews.map((review: any) => (
+          {reviews?.map((review: any) => (
             <TrustedServiceCard
               key={review.id}
               review={review as Review}

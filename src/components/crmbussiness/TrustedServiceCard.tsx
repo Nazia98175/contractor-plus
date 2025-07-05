@@ -57,9 +57,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">
-            {review?.profileUrl ? (
+            {review?.profileImg ? (
               <Image
-                src={review.profileUrl}
+                src={review.profileImg}
                 alt="avatar"
                 width={42}
                 height={42}
@@ -69,11 +69,16 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
               />
             ) : (
               <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
-                {review?.userName
-                  ?.split(" ")
-                  .filter(Boolean)
-                  .map((word) => word[0].toUpperCase())
-                  .join("")}
+                {(() => {
+                  const words = review?.userName?.split(" ").filter(Boolean);
+                  if (!words || words.length === 0) return "";
+                  const firstInitial = words[0][0].toUpperCase();
+                  const lastInitial =
+                    words.length > 1
+                      ? words[words.length - 1][0].toUpperCase()
+                      : "";
+                  return firstInitial + lastInitial;
+                })()}
               </div>
             )}
             <div className="max-w-[150px] sm:max-w-[190px]">

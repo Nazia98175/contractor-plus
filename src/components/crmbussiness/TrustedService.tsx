@@ -2,10 +2,8 @@
 import { Review } from "@/types";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import CardReveal from "../common/CardReveal";
 import ReviewModal from "../common/ReviewModal";
 import TrustedServiceCard from "./TrustedServiceCard";
-import TextAnimation from "../common/TextAnimation";
 
 interface TheReviewProps {
   reviews: any;
@@ -20,7 +18,6 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews, slug }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  
 
   return (
     <section className="relative overflow-hidden">

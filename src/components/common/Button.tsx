@@ -16,7 +16,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   text: "border border-gray-300 text-gray-800 hover:bg-gray-100",
 };
 const SIZE_CLASSES: Record<ButtonSize, string> = {
-  sm: "py-1.5 px-4  text-sm",
+  sm: "py-1.5 px-4 text-sm",
   default: "py-2.5 px-6 text-base",
   lg: "py-3 px-8 text-lg",
 };

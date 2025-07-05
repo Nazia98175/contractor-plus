@@ -49,7 +49,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   variant = "secondary",
   slug,
 }) => {
-  console.log(review , "review in card");
+
   const styles = VARIANT_CLASSES[variant];
   const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI 
   return (

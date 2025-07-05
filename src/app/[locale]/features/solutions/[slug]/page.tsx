@@ -89,7 +89,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: page?.hero?.mobileBtn,
     ncc: page?.hero?.nccTxt,
   };
-  console.log("testing", reviews);
+ 
   return (
     <>
       {/* Critical above-the-fold content - Server Component */}

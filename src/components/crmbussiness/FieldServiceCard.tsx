@@ -54,7 +54,7 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
 
-  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL as string}`;
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
@@ -160,7 +160,7 @@ const FieldServiceCard: React.FC<Props> = ({
             alt={service?.title || "service image"}
             width={518}
             height={302}
-            className="h-auto w-full rounded-lg object-cover"
+            className="h-auto w-full rounded-lg border object-cover"
             unoptimized
             priority
             sizes="(max-width: 768px) 300px, min(768px, 300px)"

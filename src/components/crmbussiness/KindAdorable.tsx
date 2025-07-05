@@ -45,7 +45,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
         <p
           className={`${slug === "estimate" ? "!text-decemberSky" : "!text-wallStreet"} paragraph-style relative z-40 mx-auto max-w-[885px] text-center`}
         >
-          {kindAdorable?.subtitle}
+          {kindAdorable?.subTitle}
         </p>
         {/* </TextAnimation> */}
         <div className="relative z-40 mt-8 flex w-full md:hidden">

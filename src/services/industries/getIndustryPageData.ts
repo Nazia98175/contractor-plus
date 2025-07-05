@@ -39,7 +39,7 @@ export const getIndustryPageData = async (
     getIndustryPage(slug, locale, "&populate[hero][populate]=cards"),
     getIndustryPage(slug, locale, "&populate[trustedCompanies][populate]=images"),
     getIndustryPage(slug, locale, "&populate[commonProblems][populate]=cardsDetail"),
-    getIndustryPage(slug, locale, "&populate[problemSolutionSection][populate][cardsDetail][populate]=*"),
+    getIndustryPage(slug, locale, "&populate[problemSolutionSection][populate][cardsDetail][populate][cardImg]=true&populate[problemSolutionSection][populate][cardsDetail][populate][content]=true"),
     getIndustryPage(slug, locale, "&populate[featureHighlightIndustrySection][populate][images][populate]=*"),
     getIndustryPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
     getIndustryPage(slug, locale, "&populate[faqs][populate]=faq"),

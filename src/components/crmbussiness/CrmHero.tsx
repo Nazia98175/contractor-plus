@@ -12,10 +12,11 @@ import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
-interface TheHeroProps {
+export interface TheHeroProps {
   hero: any;
   slug?: string;
   heroImg?: any;
+  homeCard?: any;
 }
 const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   // const wrapperRef = useRef<HTMLDivElement | null>(null);

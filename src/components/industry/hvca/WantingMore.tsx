@@ -1,14 +1,17 @@
 import { wantingMoreData } from "@/components/common/Helper";
 import ScrollOverlapCards from "@/components/common/ScrollOverlapCards";
-
-const WantingMore = () => {
+interface WantingMoreProps {
+  fieldServiceData: any;
+  slug: string;
+}
+const WantingMore: React.FC<WantingMoreProps> = ({fieldServiceData , slug}) => {
+  console.log("fieldServiceData", fieldServiceData);
   return (
     <section className="relative overflow-hidden px-2 pb-16">
       {/* <TextAnimation animateOnScroll={true} delay={0.1}> */}
 
       <h2 className="section-heading-2 gradient-text-2 relative z-20 mx-auto w-fit max-w-[1004px] text-center font-bold lg:font-semibold">
-        Contractor+ is the only HVAC software that doesn’t leave you still
-        wanting more
+        {fieldServiceData?.title}
       </h2>
       {/* </TextAnimation> */}
       <div className="relative mt-9 flex w-full flex-col items-center justify-center">
@@ -16,9 +19,9 @@ const WantingMore = () => {
       </div>
       <ScrollOverlapCards
         theme="light"
-        slug={"testing"}
-        fieldService={{ cardsDetail: wantingMoreData }}
+        fieldService={fieldServiceData}
         apiData={false}
+        slug={slug}
       />
     </section>
   );

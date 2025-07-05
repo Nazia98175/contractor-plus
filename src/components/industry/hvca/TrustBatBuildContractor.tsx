@@ -10,18 +10,23 @@ interface TrustBarProps {
   platforms: Platform[];
   showTrustedSection?: boolean;
   className?: string;
+  trustedCompanies?: any;
 }
 
 const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
+  trustedCompanies,
   platforms,
   showTrustedSection,
   className,
 }) => {
+ 
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
       {showTrustedSection && (
         <h2 className="section-heading crm-gradient xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center font-bold sm:mb-8 md:mb-10 lg:mb-12 lg:!font-semibold xl:max-w-full">
-          Trusted by over <strong>50,000</strong> build and service contractors
+         {trustedCompanies?.title?.split("50,000")?.[0]
+         }<strong>50,000</strong>{trustedCompanies?.title?.split("50,000")?.[1]}
+       
         </h2>
       )}
       <CardReveal

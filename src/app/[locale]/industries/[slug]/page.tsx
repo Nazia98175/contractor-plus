@@ -1,0 +1,137 @@
+import CloudsAnimation from "@/components/common/CloudsAnimation";
+import CommonFormField from "@/components/common/CommonFormField";
+import { blackPlatforms, platforms, reviews } from "@/components/common/Helper";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import Faq from "@/components/crmbussiness/Faq";
+import WhatEverClient from "@/components/homepage/WhatEverClient";
+import AwardBadges from "@/components/industry/hvca/AwardBadge";
+import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
+import HvacHero from "@/components/industry/hvca/HvacHero";
+import HvacReview from "@/components/industry/hvca/HvacReview";
+import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
+import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
+import WantingMore from "@/components/industry/hvca/WantingMore";
+import { getCrmPage } from "@/services/features/crm";
+
+import { getHomepageData } from "@/services/homePage/getHomepageData";
+import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+
+export const metadata = {
+  title: "Not just HVAC software Meet your operating system",
+  description:
+    "Contractor+ connects every function of your business so it finally all works in sync.",
+};
+type PageProps = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+const page = async ({ params }: PageProps) => {
+  const useParams = await params;
+
+    if (!useParams?.slug) {
+      return notFound();
+    }
+  
+    const {
+      crmPageContent,
+      heroImg,
+      homeCards,
+      trustedCompanies,
+      switchingTool,
+      fieldServiceData,
+      trackProperties,
+      teamsUsingContractor,
+      faqs,
+      blogsList,
+      thousandReviews
+    } = await getIndustryPageData(useParams?.slug, useParams?.locale);
+
+  const [blogs] = await Promise.all([
+    getCrmPage("crm", useParams.locale, "&populate=*"),
+  ]);
+  const { homePageContent } = await getHomepageData(useParams?.locale);
+console.log(thousandReviews, "crmPageContent faqs");
+  
+  return (
+    <main className="overflow-hidden">
+      <div className="relative bg-white">
+        <div className="relative">
+          <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div>
+          <HvacHero hero={crmPageContent?.hero} homeCard={homeCards} heroImg={heroImg} />
+          <TrustBatBuildContractor
+            trustedCompanies={trustedCompanies}
+            platforms={blackPlatforms}
+            showTrustedSection={true}
+            className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
+          />
+        </div>
+        <HvacSoftware switchingTool={switchingTool} />
+        <WantingMore fieldServiceData={fieldServiceData} slug={crmPageContent?.pageName} />
+        <EraOfSoftware trackProperties={trackProperties} />
+      </div>
+      <AwardBadges teamsUsingContractor={teamsUsingContractor} buttonInfo={crmPageContent?.hero} />
+      {/* <ThousandsReviews
+        data={{ title: "4.7 ★ across thousands of reviews" }}
+        reviews={reviews}
+        variant="secondary"
+      /> */}
+      <HvacReview
+        data={{ title: thousandReviews?.title }}
+        reviews={thousandReviews?.reviews}
+        variant="secondary"
+      />
+      <div className="relative overflow-x-hidden">
+        <Image
+          fill
+          className="pointer-events-none absolute top-[10%] left-0 z-10 block h-full w-full object-fill sm:hidden"
+          src="/images/webp/large-comet-hvac.webp"
+          alt="large-comet-hvac"
+        />
+        <div className="px-2 pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
+          <CommonFormField
+ 
+            variant="tertiary"
+            title={crmPageContent?.emailSignupSection?.title}
+            sub_title={crmPageContent?.emailSignupSection?.subTitle}
+            placeholder={crmPageContent?.emailSignupSection?.placeholder}
+            createBtn={crmPageContent?.hero?.createBtn}
+            mobileBtn={crmPageContent?.hero?.mobileBtn}
+            ncc={crmPageContent?.hero?.nccTxt}
+            variantBtn="dark"
+          />
+        </div>
+        <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
+      </div>
+      <WhatEverClient
+        data={homePageContent?.data?.contractorConnects}
+        issection={false}
+      />
+      <div className="relative">
+        <Faq
+          mainContainerclassName="pt-9 pb-16 z-20 px-2"
+          faq={faqs?.faqs}
+          classNameAnswer="pt-1"
+          TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
+        />
+        <div className="pointer-events-none mt-8 md:h-[76px]">
+          <CloudsAnimation
+            cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
+            cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
+          />
+          <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
+        </div>
+      </div>
+      <BlogPosts
+        data={blogsList}
+        blogs={crmPageContent?.blogs}
+        className="relative z-20 bg-white pb-8"
+        variant="secondary"
+        headingVariant="tertiary"
+      />
+    </main>
+  );
+};
+
+export default page;

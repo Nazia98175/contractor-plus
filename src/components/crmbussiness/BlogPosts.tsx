@@ -23,7 +23,7 @@ const BlogPosts: React.FC<Props> = ({
   classMaxwidth,
   variant = "primary",
   headingVariant = "primary",
-  title,
+  title="",
 }) => {
   const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
   const textClass = variant === "primary" ? "text-white" : "text-winterWay";
@@ -40,7 +40,7 @@ const BlogPosts: React.FC<Props> = ({
               classMaxwidth || "max-w-[483px]"
             } ${headingVariantMap[headingVariant]}`}
           >
-            <span>{title || blogs?.title}</span>
+            <span>{ blogs?.title || title}</span>
           </h2>
           {/* </PrimaryAnimatedText> */}
 

@@ -7,6 +7,7 @@ import CrmHero from "@/components/crmbussiness/CrmHero";
 import ClientOnlyWrapper from "@/components/client/ClientOnlyWrapper";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
+import { console } from "inspector";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -89,7 +90,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: page?.hero?.mobileBtn,
     ncc: page?.hero?.nccTxt,
   };
-  console.log("testing", reviews);
+
   return (
     <>
       {/* Critical above-the-fold content - Server Component */}

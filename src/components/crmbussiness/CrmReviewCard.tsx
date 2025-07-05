@@ -25,6 +25,7 @@ const VARIANT_CLASSES = {
 interface Props extends ReviewCardProps {
   variant?: "primary" | "secondary";
 }
+console.log();
 
 const CrmReviewCard: React.FC<Props> = ({
   review,
@@ -54,11 +55,11 @@ const CrmReviewCard: React.FC<Props> = ({
         }`}
       >
         <div className="relative w-fit">
-          {review?.profileUrl ? (
+          {review?.profileImg ? (
             <Image
               width={90}
               height={90}
-              src={review.profileUrl}
+              src={review.profileImg}
               alt="User"
               className="max-w-[90px] min-w-[90px] rounded"
             />

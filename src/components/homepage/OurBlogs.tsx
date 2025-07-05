@@ -1,4 +1,5 @@
 "use client";
+import Button from "../common/Button";
 import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
@@ -62,10 +63,10 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </h2>
           {/* </PrimaryAnimatedText> */}
           <div className="hidden md:block">
-            <button className="bg-red-linear primary-btn h-10 gap-2">
+            <Button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.btnTxt}
               <BlogBtnIcon />
-            </button>
+            </Button>
           </div>
         </div>
         <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
@@ -73,10 +74,10 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             {blogHeading?.title}
           </h2>
           <div className="hidden md:block">
-            <button className="bg-red-linear primary-btn h-10 gap-2">
+            <Button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.btnTxt}
               <BlogBtnIcon />
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -116,10 +117,10 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </SliderLayout>
         </div>
         <div className="flex justify-center pt-4 md:hidden">
-          <button className="bg-red-linear primary-btn h-10 gap-2">
+          <Button className="bg-red-linear primary-btn h-10 gap-2">
             {blogHeading?.btnTxt}
             <BlogBtnIcon />
-          </button>
+          </Button>
         </div>
       </div>
     </section>

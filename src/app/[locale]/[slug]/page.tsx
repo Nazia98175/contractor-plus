@@ -58,7 +58,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     comparison,
     teamsUsingContractor,
     faqs,
-    blogs,
+    blogsList,
+    thousandReviews,
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
 
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
@@ -83,8 +84,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     thousandReviews: page?.thousandReviews,
     reviewsData: reviews?.data?.[0]?.reviews?.reviews,
     faq: faqs?.faqs,
-    blogs,
-    blogsList: page?.blogs,
+    blogsList,
+    blogs: page?.blogs,
     createBtn: page?.hero?.createBtn,
     mobileBtn: page?.hero?.mobileBtn,
     ncc: page?.hero?.nccTxt,

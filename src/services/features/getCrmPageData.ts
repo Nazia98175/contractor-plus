@@ -12,6 +12,7 @@ export interface CrmLikePageDataResponse {
   teamsUsingContractor: any | null;
   faqs: any | null;
   blogsList: any | null;
+  blogs?: any | null;
   thousandReviews: any | null;
 }
 

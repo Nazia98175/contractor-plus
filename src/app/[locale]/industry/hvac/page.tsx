@@ -125,7 +125,7 @@ const page = async ({ params }: PageProps) => {
           mainContainerclassName="pt-9 pb-16 z-20 px-2"
           faq={{
             title: "What HVAC contractors want to know",
-            sub_title: "Frequently asked questions",
+            subTitle: "Frequently asked questions",
             faq: faqitems,
           }}
           classNameAnswer="pt-1"

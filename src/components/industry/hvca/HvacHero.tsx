@@ -10,7 +10,7 @@ import { features } from "@/components/common/Helper";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 
-const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard , heroImg}) => {
+const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".main-loader", {
@@ -18,8 +18,8 @@ const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard , heroImg}) => {
       });
     }, 1000);
   }, []);
-   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
-  
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
+
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>
@@ -44,9 +44,7 @@ const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard , heroImg}) => {
           />
           <div className="relative z-30 w-full sm:space-y-6 lg:max-w-[750px]">
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
-            <h1 className="main-heading gradient-white">
-              {hero?.heroTitle}
-            </h1>
+            <h1 className="main-heading gradient-white">{hero?.heroTitle}</h1>
             {/* </TextAnimation> */}
             {/* <TextAnimation animateOnScroll={false} delay={3}> */}
             <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[478px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
@@ -86,22 +84,26 @@ const HvacHero:React.FC<TheHeroProps> = ({hero , homeCard , heroImg}) => {
             {/* <HvacGlowHeroDesktopIcon /> */}
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
-          {heroImg?.url && <Image
-            alt="hvac-hero"
-            src={`${imageBaseUrl}${heroImg?.url}`}
-            width={945}
-            height={729}
-            className="hidden w-full object-right md:block"
-            unoptimized
-          />}
-         {heroImg?.url && <Image
-            alt=""
-            src={`${imageBaseUrl}${heroImg?.url}`}
-            width={945}
-            height={729}
-            className="block w-full object-cover md:hidden"
-            unoptimized
-          />}
+          {heroImg?.url && (
+            <Image
+              alt="hvac-hero"
+              src={`${imageBaseUrl}${heroImg?.url}`}
+              width={945}
+              height={729}
+              className="hidden w-full object-right md:block"
+              unoptimized
+            />
+          )}
+          {heroImg?.url && (
+            <Image
+              alt=""
+              src={`${imageBaseUrl}${heroImg?.url}`}
+              width={945}
+              height={729}
+              className="block w-full object-cover md:hidden"
+              unoptimized
+            />
+          )}
           <Image
             priority
             fill

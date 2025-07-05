@@ -27,7 +27,6 @@ interface HvacHeroSliderProps {
 }
 
 const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
-
   return (
     <Swiper
       effect="fade"
@@ -54,7 +53,9 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
               </p>
             </div>
             <h3 className="font-Poppins text-doctor mb-1 text-start text-lg font-medium lg:text-xl xl:text-2xl">
-              {feature?.prefix ?? ""}{feature?.end}{feature?.suffix} {" "} {feature.title}
+              {feature?.prefix ?? ""}
+              {feature?.end}
+              {feature?.suffix} {feature.title}
             </h3>
             <div className="font-grotesk flex capitalize">
               <span className="text-monstrousGreen mr-1 text-sm leading-[110%]">

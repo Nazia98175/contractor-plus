@@ -3025,7 +3025,7 @@ export const compareFeatures = [
 export const OurReviewList: Review[] = [
   {
     id: 1,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -3035,7 +3035,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 2,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -3045,7 +3045,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 3,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 4,
@@ -3055,7 +3055,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 4,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 2,
@@ -3065,7 +3065,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 5,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 5,
@@ -3075,7 +3075,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 6,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     rating: 1,
@@ -3085,7 +3085,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 7,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -3095,7 +3095,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 8,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -3106,7 +3106,7 @@ export const OurReviewList: Review[] = [
 
   {
     id: 9,
-    profileImg: "",
+    profileImg: { url: "" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -3116,7 +3116,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 10,
-    profileImg: "/images/webp/joshua.webp",
+    profileImg: { url: "/images/webp/joshua.webp" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -3126,7 +3126,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 11,
-    profileImg: "/images/webp/joshua.webp",
+    profileImg: { url: "/images/webp/joshua.webp" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,
@@ -3136,7 +3136,7 @@ export const OurReviewList: Review[] = [
   },
   {
     id: 12,
-    profileImg: "/images/webp/joshua.webp",
+    profileImg: { url: "/images/webp/joshua.webp" },
     userName: "ourReviews.username",
     userRole: "ourReviews.userRole",
     isModal: true,

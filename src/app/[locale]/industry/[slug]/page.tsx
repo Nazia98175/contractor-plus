@@ -130,8 +130,8 @@ const page = async ({ params }: PageProps) => {
           imageClassMobile="hidden"
           imageClass="hidden"
           cloud1Class="md:!bottom-[53px] sm:!bottom-[32px] !bottom-[24px]"
-          cloud2Class="sm:!bottom-[55px] !bottom-[29px] "
-          className="bottom-[0%] sm:bottom-[-4%]"
+          cloud2Class="sm:!bottom-[55px] !bottom-[29px] sm:hidden"
+          className="bottom-[0%] w-screen overflow-hidden sm:bottom-[-4%]"
         />
         <div className="cloud-layer-bottom absolute bottom-[-1%] z-50 h-[68px] w-full sm:bottom-[-2%] sm:h-[64px] md:-bottom-[2%]"></div>
       </div>

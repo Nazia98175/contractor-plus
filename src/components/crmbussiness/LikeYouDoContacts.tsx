@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import TextAnimation from "../common/TextAnimation";
 import { CheckIcon } from "../common/Icons";
 
 interface Content {
@@ -8,14 +7,14 @@ interface Content {
 }
 
 interface LikeYouDo {
- featuresList: {
+  featuresList: {
     title: string;
     content: Content[];
   }[];
 }
 
 interface Props {
-  trackProperties: LikeYouDo ;
+  trackProperties: LikeYouDo;
 }
 
 const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
@@ -24,27 +23,29 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
       <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
         {/* <TextAnimation animateOnScroll={true} delay={0.3}> */}
         <h3 className="text-winterWay heading hidden sm:block">
-         {trackProperties?.featuresList?.[0]?.title}
+          {trackProperties?.featuresList?.[0]?.title}
         </h3>
         <h3 className="gradient-text-2 block text-[22px] font-extrabold sm:hidden">
-         {trackProperties?.featuresList?.[0]?.title}
+          {trackProperties?.featuresList?.[0]?.title}
         </h3>
         {/* </TextAnimation> */}
 
         <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
-          {trackProperties?.featuresList?.[0]?.content?.map((feature:any, index:number) => (
-            <li
-              key={index}
-              className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
-            >
-              <CheckIcon
-                className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
-                width={25}
-                height={25}
-              />
-              <span>{feature?.title}</span>
-            </li>
-          ))}
+          {trackProperties?.featuresList?.[0]?.content?.map(
+            (feature: any, index: number) => (
+              <li
+                key={index}
+                className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
+              >
+                <CheckIcon
+                  className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
+                  width={25}
+                  height={25}
+                />
+                <span>{feature?.title}</span>
+              </li>
+            ),
+          )}
         </ul>
       </div>
 

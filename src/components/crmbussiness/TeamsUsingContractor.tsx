@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import LottieAnimation from "../common/LottieAnimation";
 export interface Props {
   data: any;
   slug?: string;
@@ -60,6 +61,10 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                 <>{icons2[index % icons.length]}</>
               )}
             </span>
+            {/* <LottieAnimation
+              className="mb-1 h-[31px] w-[31px]"
+              animationData={item.lottieJson}
+            /> */}
             <h3 className="text-winterWay countup-title flex items-center justify-center">
               <span
                 className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[60px]"}`}

@@ -105,7 +105,7 @@ const page = async ({ params }: PageProps) => {
           <CommonFormField
             variant="tertiary"
             title={crmPageContent?.emailSignupSection?.title}
-            sub_title={crmPageContent?.emailSignupSection?.subTitle}
+            subTitle={crmPageContent?.emailSignupSection?.subTitle}
             placeholder={crmPageContent?.emailSignupSection?.placeholder}
             createBtn={crmPageContent?.hero?.createBtn}
             mobileBtn={crmPageContent?.hero?.mobileBtn}

@@ -49,7 +49,7 @@ const PricingPage = () => {
               variantBtn="primary"
               variant="white"
               title={"Start using Contractor+ for free"}
-              sub_title={"Try it out now. Upgrade when you're ready."}
+              subTitle={"Try it out now. Upgrade when you're ready."}
               placeholder={"Your Email"}
               createBtn={"Get Started Free"}
               mobileBtn={"Download FREE App"}

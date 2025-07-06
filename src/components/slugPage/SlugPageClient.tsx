@@ -53,7 +53,7 @@ const SlugPageClientOptimized = ({
   return (
     <>
       <div className="bg-white">
-        {slug === "crm" && (
+        {slug === "project-managment" && (
           <>
             <LazyWrapper
               importFn={() => import("../crmbussiness/TrackProperties")}
@@ -63,13 +63,13 @@ const SlugPageClientOptimized = ({
 
             <LazyWrapper
               importFn={() => import("../crmbussiness/LikeYouDoContacts")}
-              props={{ trackProperties}}
+              props={{ trackProperties }}
               fallback={<div className="h-40 animate-pulse bg-gray-100" />}
             />
 
             <LazyWrapper
               importFn={() => import("../crmbussiness/HowContractorWork")}
-              props={{ ncc, trackProperties, }}
+              props={{ ncc, trackProperties }}
               fallback={<div className="h-48 animate-pulse bg-gray-100" />}
             />
           </>

@@ -20,14 +20,14 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
   entireBusiness,
   ncc_text,
   mobileBtn,
-  createBtn
+  createBtn,
 }) => {
   return (
     <div className="relative z-10 px-2 pt-[38px] pb-7 md:py-11">
       <CommonFormField
         variant="primary"
         title={entireBusiness?.title}
-        sub_title={entireBusiness?.subTitle}
+        subTitle={entireBusiness?.subTitle}
         placeholder={entireBusiness?.placeholder}
         createBtn={createBtn}
         mobileBtn={mobileBtn}

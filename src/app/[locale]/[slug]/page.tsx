@@ -60,7 +60,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     teamsUsingContractor,
     faqs,
     blogsList,
-    thousandReviews
+    thousandReviews,
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
 
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
@@ -95,8 +95,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     <>
       {/* Critical above-the-fold content - Server Component */}
       <CrmHero hero={pageData?.hero} slug={useParams?.slug} heroImg={heroImg} />
-     <TrustedService reviews={reviews} slug={useParams?.slug} />
-       <SwitchingTool switchingTool={pageData?.switchingTool} />
+      <TrustedService reviews={reviews} slug={useParams?.slug} />
+      <SwitchingTool switchingTool={pageData?.switchingTool} />
       {/* Everything else loads client-side - THIS is the key! */}
       <ClientOnlyWrapper data={pageData} />
     </>

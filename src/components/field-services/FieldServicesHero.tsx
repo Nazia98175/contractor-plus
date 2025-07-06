@@ -23,7 +23,7 @@ interface heroProps {
   heroTitle: string;
   heroTitle1: string;
   heroDescription: string;
-  ncc_txt: string;
+  nccTxt: string;
   mobileBtn: string;
   createBtn: string;
 }
@@ -88,7 +88,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
                 <ArrowIcon fill="white" className="hidden sm:block" />
               </Button>
               <CardRequiredButton
-                text={hero?.ncc_txt}
+                text={hero?.nccTxt}
                 className="text-secondary hidden sm:flex"
               />
             </div>

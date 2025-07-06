@@ -21,10 +21,6 @@ const LottieAnimation = ({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // console.log("Is intersecting:", entry.isIntersecting);
-        // console.log("Intersection Ratio:", entry.intersectionRatio);
-        // console.log("Bounding Client Rect:", entry.boundingClientRect);
-        // console.log("Viewport (Root) Bounds:", entry.rootBounds);
         setIsVisible(entry.isIntersecting);
       },
       {

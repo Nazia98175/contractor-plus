@@ -2,6 +2,7 @@ import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import Image from "next/image";
 import { Review } from "@/types";
+import { getInitials } from "../common/ReviewCard";
 
 const VARIANT_CLASSES = {
   primary: {
@@ -49,6 +50,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   slug,
 }) => {
   const styles = VARIANT_CLASSES[variant];
+  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
   return (
     <div className="mr-5 !h-auto">
       <article
@@ -57,9 +59,11 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">
-            {review?.profileUrl ? (
+            {review?.profileImg &&
+            typeof review.profileImg === "object" &&
+            "url" in review.profileImg ? (
               <Image
-                src={review.profileUrl}
+                src={`${imageBaseUrl}${review.profileImg?.url}`}
                 alt="avatar"
                 width={42}
                 height={42}
@@ -69,11 +73,17 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
               />
             ) : (
               <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
-                {review?.userName
-                  ?.split(" ")
-                  .filter(Boolean)
-                  .map((word) => word[0].toUpperCase())
-                  .join("")}
+                {/* {(() => {
+                  const words = review?.userName?.split(" ").filter(Boolean);
+                  if (!words || words.length === 0) return "";
+                  const firstInitial = words[0][0].toUpperCase();
+                  const lastInitial =
+                    words.length > 1
+                      ? words[words.length - 1][0].toUpperCase()
+                      : "";
+                  return firstInitial + lastInitial;
+                })()} */}
+                {getInitials(review.userName ?? "")}
               </div>
             )}
             <div className="max-w-[150px] sm:max-w-[190px]">

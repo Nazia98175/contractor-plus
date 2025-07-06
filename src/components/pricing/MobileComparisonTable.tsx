@@ -4,20 +4,21 @@ import { Tooltip } from "react-tooltip";
 import { comparisonTableData } from "../common/Helper";
 import { CheckIcon, CloseIcon, TooltipIcon } from "../common/Icons";
 import PlanButton from "./PlanButton";
+import AnimateHeight from "react-animate-height";
 
 interface Props {
-  openStates: Record<string, boolean>;
+  openKey: string | null;
   toggleCollapse: (key: string) => void;
 }
 
 const MobileComparisonTable: React.FC<Props> = ({
-  openStates,
+  openKey,
   toggleCollapse,
 }) => {
   return (
     <div className="space-y-2.5">
       {comparisonTableData.map((group) => {
-        const isOpen = openStates[group.key];
+        const isOpen = openKey === group.key;
 
         return (
           <div key={group.key} className="overflow-hidden rounded-lg">
@@ -37,8 +38,9 @@ const MobileComparisonTable: React.FC<Props> = ({
               </span>
             </div>
 
-            {isOpen && (
-              <>
+            <AnimateHeight duration={300} height={isOpen ? "auto" : 0}>
+              {" "}
+              <div>
                 {group.features.map((feature, fIndex) => {
                   const tooltipId = `tooltip-${group.key}-${fIndex}`;
                   return (
@@ -105,8 +107,8 @@ const MobileComparisonTable: React.FC<Props> = ({
                     size="small"
                   />
                 </div>
-              </>
-            )}
+              </div>
+            </AnimateHeight>
           </div>
         );
       })}

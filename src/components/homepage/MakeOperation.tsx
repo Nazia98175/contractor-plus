@@ -9,22 +9,21 @@ import CardReveal from "../common/CardReveal";
 import MakeOperationCard from "./MakeOperationCard";
 interface Whatever {
   title: string;
-  sub_title: string;
+  subTitle: string;
   start: number;
   end: number;
   suffix: string;
 }
 
 interface TheWhateverProps {
-  whateverOperation: Whatever[];
+  resultStats?: any;
 }
-const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
+const MakeOperation: React.FC<TheWhateverProps> = ({ resultStats }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   });
 
-  const t = useTranslations("makeoperation");
 
   const icons = [make_operations_1, make_operations_2, make_operations_3];
 
@@ -52,19 +51,18 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       <div className="main-container relative pb-10">
         {/* <PrimaryAnimatedText delay={3000}> */}
         <h3 className="section-heading gradient-text text-center font-semibold">
-          {whateverOperation?.[1]?.title}
+          {resultStats?.title}
         </h3>
         {/* </PrimaryAnimatedText> */}
         <h4 className="text-secondary pt-2 text-center text-sm sm:text-base md:text-lg xl:text-[22px]">
-          {whateverOperation?.[1]?.sub_title}
+          {resultStats?.subTitle}
         </h4>
         <CardReveal
           distance={50}
           className="grid grid-cols-1 gap-5 pt-8 sm:grid-cols-2 md:grid-cols-3"
         >
-          {whateverOperation
-            ?.slice(2, 5)
-            .map((item, index) => (
+          {resultStats?.cards?.length > 0 &&
+            resultStats?.cards?.map((item:any, index:number) => (
               <MakeOperationCard
                 item={item}
                 index={index}

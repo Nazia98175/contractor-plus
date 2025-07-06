@@ -6,8 +6,13 @@ import FreeAccountButton from "@/components/common/FreeAccountButton";
 import { makeOperationList } from "@/components/common/Helper";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 import Image from "next/image";
+interface AwardBadgesProps {
+  buttonInfo: any;
+  teamsUsingContractor: any;
+}
 
-export default function AwardBadges() {
+export default function AwardBadges({buttonInfo, teamsUsingContractor}: AwardBadgesProps) {
+ 
   return (
     <section className="no-scrollbar relative w-full">
       <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>
@@ -30,15 +35,15 @@ export default function AwardBadges() {
         priority
       />
       <div className="main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-0 xl:grid xl:grid-cols-3">
-        {makeOperationList.map((item, index) => (
+        {teamsUsingContractor?.cards?.map((item:any, index:number) => (
           <SoftwareUsed key={index} item={item} />
         ))}
       </div>
       <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">
-        <FreeAccountButton text={"Get started FREE"} />
+        <FreeAccountButton text={buttonInfo?.createBtn} />
         <CardRequiredButton
           className="text-winterWay"
-          text={"No credit card required"}
+          text={buttonInfo?.nccTxt}
         />
       </div>
       <AwardsTagsImg />

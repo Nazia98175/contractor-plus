@@ -42,7 +42,7 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
         <div className="pt-5 xl:pt-7">
           <CommonFormField
             title=""
-            sub_title=""
+            subTitle=""
             ncc="No credit card required"
             placeholder="Your email"
             createBtn="Get started FREE"

@@ -15,6 +15,11 @@ interface Feature {
   heading: string;
   percentage: string;
   description: string;
+  value: string;
+  suffix?: string;
+  subTitle: string;
+  end: number;
+  prefix?: string;
 }
 
 interface HvacHeroSliderProps {
@@ -44,18 +49,20 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
             <div className="mb-6 flex items-center gap-2 xl:mt-2">
               {feature.icon}
               <p className="font-grotesk text-base text-white capitalize">
-                {feature.heading}
+                {feature.value}
               </p>
             </div>
             <h3 className="font-Poppins text-doctor mb-1 text-start text-lg font-medium lg:text-xl xl:text-2xl">
-              {feature.title}
+              {feature?.prefix ?? ""}
+              {feature?.end}
+              {feature?.suffix} {feature.title}
             </h3>
             <div className="font-grotesk flex capitalize">
               <span className="text-monstrousGreen mr-1 text-sm leading-[110%]">
-                {feature.percentage}%
+                {feature?.subTitle ? feature?.subTitle.split("%")[0] : ""}%
               </span>
               <p className="text-lightBlackGrey text-xs">
-                {feature.description}
+                {feature?.subTitle.split("%")[1]}
               </p>
             </div>
           </div>

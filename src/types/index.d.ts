@@ -17,6 +17,9 @@ export interface ReviewCardProps {
   review: Review;
   openModal: () => void;
 }
+export interface handleClickProps {
+  handleClick: (title: string) => void;
+}
 
 export interface ServiceData {
   heading: string;
@@ -43,11 +46,12 @@ export interface Platform {
 
 export interface PlatformItem {
   title: string;
-  description: string;
+  text: string;
   image: string;
 }
 
 export interface HomePageResponse {
+  hero: any;
   data: any;
   meta?: any;
 }
@@ -67,7 +71,9 @@ export interface tableFeature {
 }
 export interface Review {
   id: string | number;
-  profileUrl: string;
+  profileImg: {
+    url: string;
+  };
   userName?: string;
   companyLogo?: string;
   role?: string;

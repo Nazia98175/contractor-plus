@@ -4,7 +4,7 @@ import React from "react";
 interface FeatureCardProps {
   obj: {
     title: string;
-    desc: string;
+    subTitle: string;
     img: string;
   };
 }
@@ -17,7 +17,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj }) => {
           {obj.title}
         </h4>
         <p className="text-wallStreet mt-4 mb-5 text-center text-sm font-semibold sm:font-normal md:text-base xl:text-lg">
-          {obj.desc}
+          {obj.subTitle}
         </p>
       </div>
       <div className="relative h-[187px] w-full">

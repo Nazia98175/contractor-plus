@@ -8,8 +8,8 @@ export const getCrmPage = async (
   locale: string,
   query: string
 ): Promise<HomePageResponse | null> => {
-  // const url = `services-pages?filters[slug][$eq]=${slug}&locale=${locale}${query}`;
-   const url = `services-pages?filters[title][$eq]=${slug}&locale=${locale}${query}`;
+const url = `features-pages?filters[pageName][$eq]=${slug}&locale=${locale}${query}`;
+  //  const url = `services-pages?filters[title][$eq]=${slug}&locale=${locale}${query}`;
  
   try {
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);

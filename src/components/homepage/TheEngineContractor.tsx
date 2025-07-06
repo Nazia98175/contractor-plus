@@ -6,12 +6,12 @@ import LottieAnimation from "../common/LottieAnimation";
 
 interface EngineContractor {
   title: string;
-  sub_title: string;
+  subTitle: string;
   txt: string;
 }
 
 interface TheEngineContractorProps {
-  engineContractor: EngineContractor[];
+  engineContractor: EngineContractor;
 }
 
 const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
@@ -21,6 +21,15 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
     triggerOnce: true,
     threshold: 0.3,
   });
+const title = 'The engine 57,163 contractors run on';
+
+const match = title.match(/^(.*?)(\d[\d,\.]*)(.*)$/);
+if (!match) {
+    return null; // Handle the case where the title doesn't match the expected format
+  }
+const before = match[1]; // "The engine "
+const number = match[2]; // "57,163"
+  const after = match[3];  // " contractors run on"
 
   return (
     <section className="relative overflow-hidden">
@@ -36,12 +45,12 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
         <div className="flex flex-col items-center justify-center gap-2 sm:gap-8 md:flex-row md:justify-between md:!px-[30px]">
           <div className="flex w-full flex-col gap-1.5">
             <h2 className="section-heading gradient-engine-text text-center md:text-left">
-              {engineContractor?.[0]?.title}&nbsp;
+              {before}&nbsp;
               {inView ? (
                 <CountUp
                   className="inline-flex w-fit max-w-[73px] min-w-[73px] sm:max-w-[105px] sm:min-w-[105px] lg:max-w-[141px] lg:min-w-[141px] xl:max-w-[123px] xl:min-w-[123px]"
                   start={0}
-                  end={57163}
+                  end={+(number.replace(/,/g, ""))} // Remove commas for CountUp
                   duration={3}
                   separator=","
                 />
@@ -49,7 +58,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
                 "0"
               )}{" "}
               <br />
-              {engineContractor?.[1]?.txt}
+              {after}
             </h2>
           </div>
           <div className="ml-[-33px] flex w-full max-w-[450px] flex-col items-center -space-y-2 sm:ml-0">

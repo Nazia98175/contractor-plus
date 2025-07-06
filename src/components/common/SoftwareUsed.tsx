@@ -12,7 +12,7 @@ interface SoftwareItem {
   title?: string;
   description: string;
   isRange?: boolean;
-  sub_title?: string;
+  subTitle?: string;
   prefix?: string;
 }
 
@@ -82,7 +82,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       </h3>
 
       <p className={`countup-desc ${paragraphColor}`}>
-        {item.description || item?.sub_title}
+        {item.description || item?.subTitle}
       </p>
     </article>
   );

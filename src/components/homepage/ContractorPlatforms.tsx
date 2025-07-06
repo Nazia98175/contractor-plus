@@ -6,17 +6,18 @@ import { contractPlatforms } from "../common/Helper";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
+
   return (
     <section className="relative z-20">
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
         <h4 className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
-          {contractPlatformsData?.data?.platforms?.title?.title}
+          {contractPlatformsData?.title}
         </h4>
         <CardReveal
           distance={50}
           className="3xl:gap-8 flex flex-wrap justify-center gap-4 gap-y-[30px] sm:gap-y-8 lg:flex-nowrap lg:justify-between"
         >
-          {contractPlatformsData?.data?.platforms?.platforms.map(
+          {contractPlatformsData?.cardsDetail?.map(
             (obj: PlatformItem, index: number) => (
               <article
                 key={index}
@@ -32,13 +33,13 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                     height={187}
                     sizes="(max-width: 768px) 289px, 389px"
                     src={contractPlatforms?.[index]?.img}
-                    alt={`${obj.title}`}
+                    alt={`${obj.text}`}
                     priority
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>
                 <p className="text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 text-center text-sm duration-200 sm:px-2 md:text-base xl:text-lg">
-                  {`${obj.description}`}
+                  {`${obj.text}`}
                 </p>
               </article>
             ),

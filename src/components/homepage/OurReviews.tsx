@@ -11,11 +11,11 @@ import ReviewModal from "../common/ReviewModal";
 
 interface Reviews {
   title: string;
-  sub_title: string;
+  subTitle: string;
 }
 
 interface TheReviewsProps {
-  reviews: Reviews[];
+  reviews: Reviews;
   reviewsList: any;
 }
 
@@ -27,17 +27,14 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  // const slicedata = reviewsList.slice(0, 6);
-  // console.log(slicedata, "slidece data");
-  // const slicefull = reviewsList.slice(6);
-  // console.log(slicefull, "slidece full");
+ 
 
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
       <div className="main-container flex flex-col items-center justify-between gap-3 text-center md:text-start lg:flex-row">
         {/* <PrimaryAnimatedText delay={3000}> */}
         <h3 className="section-heading gradient-text-2 text-center text-black md:text-start">
-          {reviews?.[0]?.title ?? ""}
+          {reviews?.title ?? ""}
         </h3>
         {/* </PrimaryAnimatedText> */}
         <CardReveal
@@ -56,7 +53,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
           <div className="flex items-center gap-2">
             <Image
-              className="hidden w-full min-w-[62px] md:block"
+              className="hidden w-full min-w-[58px] md:block"
               src="/images/webp/g2Rating.webp"
               alt="capterra icon"
               width={62}
@@ -65,7 +62,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               sizes="(min-width: 768px) 62px"
             />
             <Image
-              className="hidden h-auto max-h-[60px] w-full max-w-20 md:block"
+              className="hidden h-auto max-h-[60px] w-full md:block md:max-w-20"
               src="/images/svg/capterra-icon2.svg"
               alt="capterra icon"
               width={80}
@@ -76,19 +73,17 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           </div>
           <div>
             <div className="flex items-center gap-3">
-              <h3 className="text-winterWay font-jakarta text-sm font-bold">
-                {reviews?.[0]?.sub_title?.split("4.9")?.[0] ?? ""}
+              <h3 className="text-winterWay text-sm font-bold">
+                {reviews?.subTitle?.split("4.8")?.[0] ?? ""}
               </h3>
 
-              <p className="text-dancingJewel font-jakarta text-base font-extrabold">
-                4.9
-              </p>
+              <p className="text-dancingJewel text-base font-extrabold">4.9</p>
               <span>
                 <GroupStartIcon />
               </span>
             </div>
-            <p className="text-winterWay font-jakarta pt-1 text-center text-xs font-medium md:text-start">
-              {reviews?.[0]?.sub_title?.split("4.9")?.[1] ?? ""}
+            <p className="text-winterWay pt-1 text-center text-xs font-medium md:text-start">
+              {reviews?.subTitle?.split("4.8")?.[1] ?? ""}
             </p>
           </div>
         </CardReveal>

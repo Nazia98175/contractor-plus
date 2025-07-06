@@ -17,7 +17,7 @@ const TrustBar: React.FC<TrustBarProps> = ({
   className,
 }) => {
   return (
-    <section className={`relative ${className}`}>
+    <section className={`relative z-20 ${className}`}>
       {showTrustedSection && (
         <h2 className="section-heading crm-gradient mx-auto text-center">
           Trusted by over <strong> 50,000</strong> build and service contractors

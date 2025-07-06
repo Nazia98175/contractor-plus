@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowIcon } from "./Icons";
+import Image from "next/image";
 interface Props {
   headerSubList: any;
 }
@@ -70,40 +71,40 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
               key={index}
               className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
             >
-              <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start group-hover:!text-white">
+              <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start !font-extrabold group-hover:!text-white">
                 {link.linkTxt}
               </span>
             </Link>
           ))}
         </div>
 
-        {/* <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
-        {resourceItems.map((item, index) => (
+        <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
+          {resourceItems.map((item, index) => (
+            <Image
+              key={index}
+              src={item.image}
+              alt={industriesLinks[index]?.label || "Industry preview"}
+              unoptimized
+              width={480}
+              height={320}
+              className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+                hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
+              }`}
+            />
+          ))}
           <Image
-            key={index}
-            src={item.image}
-            alt={industriesLinks[index]?.label || "Industry preview"}
+            src={fallbackImage}
+            alt="Select an industry"
             unoptimized
             width={480}
             height={320}
             className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
-              hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
+              hoveredIndex === null ? "z-10 opacity-100" : "z-0 opacity-0"
             }`}
           />
-        ))}
-        <Image
-          src={fallbackImage}
-          alt="Select an industry"
-          unoptimized
-          width={480}
-          height={320}
-          className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
-            hoveredIndex === null ? "z-10 opacity-100" : "z-0 opacity-0"
-          }`}
-        />
-      </div> */}
+        </div>
       </div>
-      <div className="font-inter sticky bottom-0 left-0 flex w-full items-center justify-between gap-6">
+      <div className="font-inter sticky bottom-0 left-0 mt-10 flex w-full items-center justify-between gap-6">
         <Link className="all-features-button group" href="/">
           Go to Resource Hub
           <ArrowIcon />

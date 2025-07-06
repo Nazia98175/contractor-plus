@@ -8,8 +8,9 @@ import { Grid, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { articles } from "../common/Helper";
 import BlogCard from "./BlogCard";
+import { handleClickProps } from "@/types";
 
-const BlogArticle = () => {
+const BlogArticle: React.FC<handleClickProps> = ({ handleClick }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const swiperRef = useRef<SwiperCore | null>(null);
 
@@ -154,7 +155,10 @@ const BlogArticle = () => {
       >
         {articles.map((article, index) => (
           <SwiperSlide key={index}>
-            <BlogCard article={article} />
+            <BlogCard
+              article={article}
+              onClick={() => handleClick(article.title)}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

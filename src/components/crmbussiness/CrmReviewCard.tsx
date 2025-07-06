@@ -2,6 +2,7 @@
 import { ReviewCardProps } from "@/types";
 import Image from "next/image";
 import { PlayIcon, StartIcon } from "../common/Icons";
+import { getInitials } from "../common/ReviewCard";
 
 const VARIANT_CLASSES = {
   primary: {
@@ -25,6 +26,7 @@ const VARIANT_CLASSES = {
 interface Props extends ReviewCardProps {
   variant?: "primary" | "secondary";
 }
+console.log();
 
 const CrmReviewCard: React.FC<Props> = ({
   review,
@@ -39,7 +41,7 @@ const CrmReviewCard: React.FC<Props> = ({
       </span>
     ));
   };
-
+  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
   return (
     <article
       onClick={review.isModal ? openModal : undefined}
@@ -54,11 +56,13 @@ const CrmReviewCard: React.FC<Props> = ({
         }`}
       >
         <div className="relative w-fit">
-          {review?.profileUrl ? (
+          {review?.profileImg &&
+            typeof review.profileImg === "object" &&
+            "url" in review.profileImg ? (
             <Image
               width={90}
               height={90}
-              src={review.profileUrl}
+             src={`${imageBaseUrl}${review.profileImg?.url}`}
               alt="User"
               className="max-w-[90px] min-w-[90px] rounded"
             />
@@ -66,11 +70,7 @@ const CrmReviewCard: React.FC<Props> = ({
             <div
               className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
             >
-              {review?.userName
-                ?.split(" ")
-                .filter(Boolean)
-                .map((word) => word[0].toUpperCase())
-                .join("")}
+              {getInitials(review.userName ?? "")}
             </div>
           )}{" "}
           {review.isModal && (

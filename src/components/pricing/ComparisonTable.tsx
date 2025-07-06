@@ -5,57 +5,35 @@ import DesktopComparisonTable from "./DesktopComparisonTable";
 import MobileComparisonTable from "./MobileComparisonTable";
 import MobilePlansHeader from "./MobilePlansHead";
 
-// Initialize desktop openStates per feature (all open)
-const generateInitialDesktopStates = () => {
-  const states: Record<string, boolean> = {};
-  comparisonTableData.forEach((section) => {
-    section.features.forEach((_, i) => {
-      states[`${section.key}-${i}`] = false;
-    });
-  });
-  return states;
-};
-
-// Initialize mobile openStates per group (all open)
-const generateInitialMobileStates = () => {
-  const states: Record<string, boolean> = {};
-  comparisonTableData.forEach((group) => {
-    states[group.key] = false;
-  });
-  return states;
-};
-
 // Correct usage of forwardRef
 const ComparisonTable = forwardRef<HTMLDivElement, {}>((props, ref) => {
-  const [desktopOpenStates, setDesktopOpenStates] = useState(
-    generateInitialDesktopStates(),
-  );
-  const [mobileOpenStates, setMobileOpenStates] = useState(
-    generateInitialMobileStates(),
-  );
+  const [desktopOpenStates, setDesktopOpenStates] = useState(() => {
+    const states: Record<string, boolean> = {};
+    comparisonTableData.forEach((section) => {
+      section.features.forEach((_, i) => {
+        states[`${section.key}-${i}`] = false;
+      });
+    });
+    return states;
+  });
+
+  const [mobileOpenKey, setMobileOpenKey] = useState<string | null>(null);
 
   const toggleDesktopCollapse = (key: string) => {
     setDesktopOpenStates((prev) => {
-      const isCurrentlyOpen = prev[key];
       const newStates: Record<string, boolean> = {};
-
       Object.keys(prev).forEach((k) => {
         newStates[k] = false;
       });
-
-      if (!isCurrentlyOpen) {
+      if (!prev[key]) {
         newStates[key] = true;
       }
-
       return newStates;
     });
   };
 
   const toggleMobileCollapse = (key: string) => {
-    setMobileOpenStates((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+    setMobileOpenKey((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -73,7 +51,7 @@ const ComparisonTable = forwardRef<HTMLDivElement, {}>((props, ref) => {
       <div className="block lg:hidden">
         <MobilePlansHeader />
         <MobileComparisonTable
-          openStates={mobileOpenStates}
+          openKey={mobileOpenKey}
           toggleCollapse={toggleMobileCollapse}
         />
       </div>

@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { fieldServiceData } from "../common/Helper";
@@ -110,7 +109,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
             st.kill();
           }
         });
-        
+
         // Kill the timeline if it exists
         if (timelineRef.current) {
           timelineRef.current.kill();
@@ -128,10 +127,13 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   if (!isLoaded) {
     return (
       <div className="min-h-[108dvh] animate-pulse">
-        <div className="mx-auto mt-[60px] h-12 max-w-[813px] bg-gray-200 rounded"></div>
+        <div className="mx-auto mt-[60px] h-12 max-w-[813px] rounded bg-gray-200"></div>
         <div className="mt-10 space-y-4">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="mx-auto h-64 max-w-[1272px] bg-gray-200 rounded-xl"></div>
+            <div
+              key={i}
+              className="mx-auto h-64 max-w-[1272px] rounded-xl bg-gray-200"
+            ></div>
           ))}
         </div>
       </div>
@@ -144,9 +146,16 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       id="crm-cards-wrapper"
       className="relative z-10 min-h-[108dvh] overflow-hidden sm:min-h-dvh lg:px-2 xl:h-fit"
     >
-      <h2 className="gradient-text 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
-        {fieldService?.title}
-      </h2>
+      {slug === "general-contractor" ? (
+        <h2 className="heading-text-2 3xl:block mx-auto mt-[60px] hidden pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
+          {fieldService?.title}
+        </h2>
+      ) : (
+        <h2 className="gradient-text 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
+          {fieldService?.title}
+        </h2>
+      )}
+
       {fieldService?.cardsDetail?.map((service: any, index: any) => (
         <div
           key={index}

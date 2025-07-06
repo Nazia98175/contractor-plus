@@ -39,15 +39,18 @@ export default async function Home({
   const {
     homePageContent,
     contractPlatformsData,
+    problemSolutions,
+    featurHighlight,
     reviewsList,
-    coreFeatures,
+    resultStatsSection,
     blogs,
   } = await getHomepageData(useParams?.locale);
+
 
   return (
     <>
       <div className="relative overflow-hidden">
-        <Hero homePageContent={homePageContent?.data} />
+        <Hero homePageContent={homePageContent?.data?.hero} />
         <TrustBar
           platforms={platforms}
           className="mx-auto w-full max-w-[889px] py-4"
@@ -58,9 +61,11 @@ export default async function Home({
       </div>
       <HomepageClient
         homePageContent={homePageContent}
-        contractPlatformsData={contractPlatformsData}
-        reviewsList={reviewsList}
-        coreFeatures={coreFeatures}
+        contractPlatformsData={contractPlatformsData?.data?.commonProblems}
+        problemSolutions={problemSolutions?.data?.problemSolutionSection}
+        featurHighlight={featurHighlight?.data?.featureHighlightSection}
+        reviewsList={reviewsList?.data?.reviews}
+        resultStats={resultStatsSection?.data?.resultsStatsSection}
         blogs={blogs}
       />
     </>

@@ -35,7 +35,7 @@ const PricingPage = () => {
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[134px] z-20 px-2"
           faq={{
             title: "What contractors want to know ",
-            sub_title: "Frequently asked questions",
+            subTitle: "Frequently asked questions",
             faq: pricingfaqitems,
           }}
           classNameAnswer="pt-1"
@@ -49,7 +49,7 @@ const PricingPage = () => {
               variantBtn="primary"
               variant="white"
               title={"Start using Contractor+ for free"}
-              sub_title={"Try it out now. Upgrade when you're ready."}
+              subTitle={"Try it out now. Upgrade when you're ready."}
               placeholder={"Your Email"}
               createBtn={"Get Started Free"}
               mobileBtn={"Download FREE App"}

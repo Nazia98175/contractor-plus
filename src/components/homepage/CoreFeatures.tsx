@@ -5,8 +5,8 @@ import CoreFeaturesCard from "./CoreFeaturesCard";
 
 interface CoreFeaturesData {
   title: string;
-  sub_title: string;
-  cardsDetail?: any; // Replace `any` with actual card structure if known
+  subTitle: string;
+  features?: any; // Replace `any` with actual card structure if known
 }
 
 interface CoreFeaturesProps {
@@ -22,8 +22,8 @@ const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
         <h4 className="sub-heading text-lightBlack w-full font-semibold md:w-fit">
           {coreFeatures?.title}
         </h4>
-        <h5 className="mt-3 leading-[130%]">{coreFeatures?.sub_title}</h5>
-        <CoreFeaturesCard featuresList={coreFeatures?.cardsDetail} />
+        <h5 className="mt-3 leading-[130%]">{coreFeatures?.subTitle}</h5>
+        <CoreFeaturesCard featuresList={coreFeatures?.features} />
       </div>
     </section>
   );

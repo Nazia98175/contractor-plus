@@ -7,6 +7,7 @@ import CrmHero from "@/components/crmbussiness/CrmHero";
 import ClientOnlyWrapper from "@/components/client/ClientOnlyWrapper";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
+import { console } from "inspector";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -20,10 +21,10 @@ export async function generateMetadata({
   const resolvedParams = await params;
 
   const page = await getSeoData(
-    "services-pages",
+    "features-pages",
     resolvedParams.locale,
     resolvedParams.slug,
-    "&populate[seoMeta]=true&populate[hero]=true",
+    "&populate[seoMetaData]=true&populate[hero]=true",
   );
   if (!page) return;
 
@@ -58,7 +59,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     comparison,
     teamsUsingContractor,
     faqs,
-    blogs,
+    blogsList,
+    thousandReviews,
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
 
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
@@ -68,34 +70,33 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     return notFound();
   }
 
-  // Serialize data for client component
   const pageData = {
     slug: useParams?.slug,
     theme,
     hero: page?.hero,
     reviews,
-    switchingTool: switchingTool?.switchingTool,
-    fieldServiceData: fieldServiceData?.fieldService,
-    trackProperties: trackProperties?.trackProperties,
-    comparison: comparison?.comparison,
-    teamsUsingContractor: teamsUsingContractor?.teamsUsingContractor,
-    crmService: page?.crmService,
-    thousandReviews: page?.thousandReviews,
+    switchingTool: switchingTool?.commonProblems,
+    fieldServiceData: fieldServiceData,
+    trackProperties: trackProperties,
+    comparison: comparison,
+    teamsUsingContractor: teamsUsingContractor,
+    crmService: page?.emailSignupSection,
+    thousandReviews: thousandReviews,
     reviewsData: reviews?.data?.[0]?.reviews?.reviews,
     faq: faqs?.faqs,
-    blogs,
-    blogsList: page?.blogs,
+    blogsList,
+    blogs: page?.blogs,
     createBtn: page?.hero?.createBtn,
     mobileBtn: page?.hero?.mobileBtn,
-    ncc: page?.hero?.ncc_txt,
+    ncc: page?.hero?.nccTxt,
   };
 
   return (
     <>
       {/* Critical above-the-fold content - Server Component */}
-      <CrmHero hero={page?.hero} slug={useParams?.slug} heroImg={heroImg} />
+      <CrmHero hero={pageData?.hero} slug={useParams?.slug} heroImg={heroImg} />
       <TrustedService reviews={reviews} slug={useParams?.slug} />
-      <SwitchingTool switchingTool={switchingTool?.switchingTool} />
+      <SwitchingTool switchingTool={pageData?.switchingTool} />
       {/* Everything else loads client-side - THIS is the key! */}
       <ClientOnlyWrapper data={pageData} />
     </>

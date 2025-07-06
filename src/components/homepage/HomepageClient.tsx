@@ -21,32 +21,39 @@ const EntireBusiness = dynamic(() => import("./EntireBusiness"), {
 const HomepageClient = ({
   homePageContent,
   contractPlatformsData,
+  problemSolutions,
+  featurHighlight,
   reviewsList,
-  coreFeatures,
+  resultStats,
   blogs,
 }: any) => {
   return (
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
-      <Finally finallyC={homePageContent?.data?.finally} />
-      <CoreFeatures coreFeatures={coreFeatures?.data?.coreFeatures?.[0]} />
-      <Features features={homePageContent?.data?.features} />
+      <Finally finallyC={problemSolutions} />
+      <CoreFeatures coreFeatures={featurHighlight} />
+      <Features features={homePageContent?.data?.serviceList} />
       <ContractorIndustry
-        contractorIndustry={homePageContent?.data?.contractorIndustry}
+        contractorIndustry={homePageContent?.data?.Industries}
       />
       <OurReviews
-        reviewsList={reviewsList?.data?.review?.[0]?.reviews}
-        reviews={homePageContent?.data?.reviews}
+        reviewsList={reviewsList?.reviews}
+        reviews={reviewsList}
       />
-      <WhatEverClient data={homePageContent?.data?.whateverOperation} />
+      <WhatEverClient
+        data={homePageContent?.data?.contractorConnects}
+        resultStats={resultStats}
+        className="overflow-hidden"
+      />
       <OurBlogs
         blogs={blogs?.data}
         blogHeading={homePageContent?.data?.blogs}
       />
       <EntireBusiness
-        entireBusiness={homePageContent?.data?.entireBusiness}
-        ncc_text={homePageContent?.data?.ncc_text}
-        mobileBtn={homePageContent?.data?.mobileBtn}
+        entireBusiness={homePageContent?.data?.emailSignupSection}
+        ncc_text={homePageContent?.data?.hero?.nccTxt}
+        mobileBtn={homePageContent?.data?.hero?.mobileBtn}
+        createBtn={homePageContent?.data?.hero?.createBtn}
       />
     </>
   );

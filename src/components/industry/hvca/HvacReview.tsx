@@ -1,12 +1,18 @@
 "use client";
-import { useState } from "react";
-import { reviews } from "../../common/Helper";
-import ReviewModal from "../../common/ReviewModal";
-import SliderLayout from "../../common/SliderLayout";
-import HvacReviewCard from "./HvacReviewCard";
-import ThousandsReviews from "../../crmbussiness/ThousandsReviews";
+import React, { useState } from "react";
+import { Review } from "@/types";
+import Marquee from "react-fast-marquee";
+import { ReviewIcon } from "@/components/common/Icons";
+import TrustedServiceCard from "@/components/crmbussiness/TrustedServiceCard";
+import ReviewModal from "@/components/common/ReviewModal";
 
-const HvacReview = () => {
+interface Props {
+  data: any;
+  reviews: any;
+  variant?: "primary" | "secondary";
+}
+
+const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -14,19 +20,57 @@ const HvacReview = () => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+
   return (
-    <section className="main-container space-y-12 pb-20 lg:space-y-16 lg:pb-[100px] xl:pb-[113px]">
-      <h2 className="section-heading gradient-text relative z-20 text-center">
-        <span className="bg-sweetGarden bg-clip-text text-transparent">
-          4.7
-        </span>{" "}
-        <span className="bg-pantone bg-clip-text text-transparent">★</span>{" "}
-        across thousands of reviews
-      </h2>
-      {/* <ThousandsReviews
-        data={crmPageContent?.data?.[0]?.thousandReviews}
-        reviews={reviews?.data?.[0]?.reviews?.reviews}
-      /> */}
+    <section className="overflow-hidden">
+      <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
+        <div className="trusted-gradient pointer-events-none absolute -bottom-[10%] left-[0px] z-40 hidden h-full w-20 lg:block xl:w-[100px] 2xl:w-[150px]"></div>
+        <div className="trusted-gradient pointer-events-none absolute right-[0px] -bottom-[10%] z-40 hidden h-full w-20 rotate-180 lg:block xl:w-[100px] 2xl:w-[150px]"></div>
+        {/* <TextAnimation animateOnScroll={true} delay={0.8}> */}
+        <h2
+          className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
+            variant === "secondary" ? "gradient-white" : "crm-gradient"
+          }`}
+        >
+          {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
+          {data?.title?.split("4.7 ★")?.[1]}
+        </h2>
+        {/* </TextAnimation> */}
+
+        <Marquee pauseOnClick speed={30} direction="right" pauseOnHover>
+          {reviews?.map((review: any) => (
+            <TrustedServiceCard
+              key={review.id}
+              review={review as Review}
+              openModal={
+                review.isModal
+                  ? () => openModal(review.videoLink || "")
+                  : () => {}
+              }
+            />
+          ))}
+        </Marquee>
+
+        <Marquee pauseOnClick speed={30} direction="left" pauseOnHover>
+          {reviews?.length > 0 &&
+            reviews?.map((review: any) => (
+              <TrustedServiceCard
+                key={review.id}
+                review={review as Review}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videoLink || "")
+                    : () => {}
+                }
+              />
+            ))}
+        </Marquee>
+      </div>
+      <ReviewModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoUrl={selectedVideoUrl || ""}
+      />
     </section>
   );
 };

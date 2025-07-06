@@ -10,6 +10,7 @@ interface PlanData {
   cta: string;
   cardClass?: string;
   isPro?: boolean;
+  annuallyPrice?: number;
   isProTeam?: boolean;
   featuresHeading: string;
   features: string[];
@@ -21,13 +22,12 @@ interface PlanCardProps {
 }
 
 const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
-  const rawAnnualPrice = plan.monthlyPrice * 12;
-  const discountedAnnualPrice = rawAnnualPrice * 0.6;
-
-  const priceValue = isAnnual ? discountedAnnualPrice : plan.monthlyPrice;
+  const priceValue =
+    isAnnual && plan.annuallyPrice !== undefined
+      ? plan.annuallyPrice
+      : plan.monthlyPrice;
   const formattedPrice = `$${priceValue.toFixed(0)}`;
 
-  const suffix = isAnnual ? "/yr" : "/mo";
   return (
     <article
       className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
@@ -47,7 +47,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
 
         <h3 className="text-winterWay mt-5 text-[38px] !leading-[122%] font-bold md:mt-8">
           {formattedPrice}
-          <span className="text-secondary text-lg font-semibold">{suffix}</span>
+          <span className="text-secondary text-lg font-semibold">/mo</span>
         </h3>
 
         <div className="py-1.5">

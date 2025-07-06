@@ -57,7 +57,7 @@ const page = async ({ params }: PageProps) => {
     <main className="overflow-hidden">
       <div className="relative bg-white">
         <div className="relative">
-          <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div>
+          {/* <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div> */}
           <HvacHero
             hero={crmPageContent?.hero}
             homeCard={homeCards}
@@ -121,18 +121,19 @@ const page = async ({ params }: PageProps) => {
       />
       <div className="relative">
         <Faq
-          mainContainerclassName="pt-9 pb-16 z-20 px-2"
+          mainContainerclassName="pt-9 pb-36 z-20 px-2"
           faq={faqs?.faqs}
           classNameAnswer="pt-1"
           TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
         />
-        <div className="pointer-events-none mt-8 md:h-[76px]">
-          <CloudsAnimation
-            cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
-            cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
-          />
-          <div className="bg-white-linear absolute -bottom-3 z-50 h-7 w-full drop-shadow-[0_30px_30px_rgba(255,255,255,0.7)]"></div>
-        </div>
+        <CloudsAnimation
+          imageClassMobile="hidden"
+          imageClass="hidden"
+          cloud1Class="md:!bottom-[53px] sm:!bottom-[32px] !bottom-[24px]"
+          cloud2Class="sm:!bottom-[55px] !bottom-[29px] "
+          className="bottom-[0%] sm:bottom-[-4%]"
+        />
+        <div className="cloud-layer-bottom absolute bottom-[-1%] z-50 h-[68px] w-full sm:bottom-[-2%] sm:h-[64px] md:-bottom-[2%]"></div>
       </div>
       <BlogPosts
         data={blogsList}

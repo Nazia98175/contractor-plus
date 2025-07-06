@@ -1698,3 +1698,6 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
+.cloud-layer-bottom {
+  background: linear-gradient(#fff0 6%, #fff 65.94%);
+}

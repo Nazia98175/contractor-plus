@@ -23,7 +23,7 @@ const BlogPosts: React.FC<Props> = ({
   classMaxwidth,
   variant = "primary",
   headingVariant = "primary",
-  title="",
+  title = "",
 }) => {
   const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
   const textClass = variant === "primary" ? "text-white" : "text-winterWay";
@@ -36,11 +36,11 @@ const BlogPosts: React.FC<Props> = ({
         <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
           {/* <PrimaryAnimatedText delay={3000}> */}
           <h2
-            className={`w-full text-center sm:w-fit sm:text-start lg:max-w-full ${
+            className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
               classMaxwidth || "max-w-[483px]"
             } ${headingVariantMap[headingVariant]}`}
           >
-            <span>{ blogs?.title || title}</span>
+            {blogs?.title || title}
           </h2>
           {/* </PrimaryAnimatedText> */}
 

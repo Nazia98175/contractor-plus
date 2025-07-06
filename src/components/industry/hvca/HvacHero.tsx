@@ -1,14 +1,13 @@
 "use client";
+import CardRequiredButton from "@/components/common/CardRequiredButton";
+import CloudsAnimation from "@/components/common/CloudsAnimation";
+import FreeAccountButton from "@/components/common/FreeAccountButton";
+import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
+import gsap from "gsap";
 import Image from "next/image";
+import React, { useEffect } from "react";
 import "swiper/css"; // Core Swiper styles
 import HvacHeroSlider from "./HvacHeroSlider";
-import { useEffect } from "react";
-import gsap from "gsap";
-import FreeAccountButton from "@/components/common/FreeAccountButton";
-import CloudsAnimation from "@/components/common/CloudsAnimation";
-import { features } from "@/components/common/Helper";
-import CardRequiredButton from "@/components/common/CardRequiredButton";
-import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 
 const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
@@ -22,7 +21,6 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 z-20 block h-20 w-[120%] -translate-x-1/2 bg-[#0E0F12] blur-md md:bottom-[10%] lg:bottom-0"></div>
       <div className="overflow-hidden">
         <Image
           width={769}
@@ -113,7 +111,11 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
           />
         </div>
       </div>
-      <CloudsAnimation className="-bottom-[6%] lg:-bottom-[4%]" />
+      <CloudsAnimation
+        className="!-bottom-[7%] lg:-bottom-[4%]"
+        imageClassMobile="hidden"
+      />
+      <div className="cloud-layer-bottom absolute bottom-[-2%] z-50 block h-[48px] w-full sm:bottom-[-2%] sm:h-[47px] md:bottom-[-2%] xl:bottom-[-5%]"></div>
     </section>
   );
 };

@@ -1688,3 +1688,13 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Contractor+ puts your entire operation under one roof */
+
+.heading-text-2 {
+  background:
+    linear-gradient(92.96deg, #ee1e2566 18.56%, #00000000 81.93%), #0c0d11;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

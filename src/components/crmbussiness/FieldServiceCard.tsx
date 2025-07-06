@@ -149,7 +149,7 @@ const FieldServiceCard: React.FC<Props> = ({
             alt={service?.title || "service image"}
             width={518}
             height={302}
-            className="h-auto w-full rounded-lg object-cover"
+            className="h-auto w-full rounded-lg border object-cover"
             unoptimized
             priority
             sizes="(max-width: 768px) 300px, min(768px, 300px)"

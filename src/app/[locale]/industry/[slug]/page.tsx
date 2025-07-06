@@ -30,36 +30,39 @@ type PageProps = {
 const page = async ({ params }: PageProps) => {
   const useParams = await params;
 
-    if (!useParams?.slug) {
-      return notFound();
-    }
-  
-    const {
-      crmPageContent,
-      heroImg,
-      homeCards,
-      trustedCompanies,
-      switchingTool,
-      fieldServiceData,
-      trackProperties,
-      teamsUsingContractor,
-      faqs,
-      blogsList,
-      thousandReviews
-    } = await getIndustryPageData(useParams?.slug, useParams?.locale);
+  if (!useParams?.slug) {
+    return notFound();
+  }
+
+  const {
+    crmPageContent,
+    heroImg,
+    homeCards,
+    trustedCompanies,
+    switchingTool,
+    fieldServiceData,
+    trackProperties,
+    teamsUsingContractor,
+    faqs,
+    blogsList,
+    thousandReviews,
+  } = await getIndustryPageData(useParams?.slug, useParams?.locale);
 
   const [blogs] = await Promise.all([
     getCrmPage("crm", useParams.locale, "&populate=*"),
   ]);
   const { homePageContent } = await getHomepageData(useParams?.locale);
 
-  
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
         <div className="relative">
           <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div>
-          <HvacHero hero={crmPageContent?.hero} homeCard={homeCards} heroImg={heroImg} />
+          <HvacHero
+            hero={crmPageContent?.hero}
+            homeCard={homeCards}
+            heroImg={heroImg}
+          />
           <TrustBatBuildContractor
             trustedCompanies={trustedCompanies}
             platforms={blackPlatforms}
@@ -68,10 +71,19 @@ const page = async ({ params }: PageProps) => {
           />
         </div>
         <HvacSoftware switchingTool={switchingTool} />
-        <WantingMore fieldServiceData={fieldServiceData} slug={crmPageContent?.pageName} />
-        <EraOfSoftware trackProperties={trackProperties} />
+        <WantingMore
+          fieldServiceData={fieldServiceData}
+          slug={crmPageContent?.pageName}
+        />
+        <EraOfSoftware
+          trackProperties={trackProperties}
+          slug={crmPageContent?.pageName}
+        />
       </div>
-      <AwardBadges teamsUsingContractor={teamsUsingContractor} buttonInfo={crmPageContent?.hero} />
+      <AwardBadges
+        teamsUsingContractor={teamsUsingContractor}
+        buttonInfo={crmPageContent?.hero}
+      />
       {/* <ThousandsReviews
         data={{ title: "4.7 ★ across thousands of reviews" }}
         reviews={reviews}
@@ -91,7 +103,6 @@ const page = async ({ params }: PageProps) => {
         />
         <div className="px-2 pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
           <CommonFormField
- 
             variant="tertiary"
             title={crmPageContent?.emailSignupSection?.title}
             sub_title={crmPageContent?.emailSignupSection?.subTitle}

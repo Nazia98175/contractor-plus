@@ -26,6 +26,7 @@ const VARIANT_CLASSES = {
 interface Props extends ReviewCardProps {
   variant?: "primary" | "secondary";
 }
+console.log();
 
 const CrmReviewCard: React.FC<Props> = ({
   review,

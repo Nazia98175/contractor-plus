@@ -72,10 +72,8 @@ export interface tableFeature {
 export interface Review {
   id: string | number;
   profileImg: {
-    url: string;
-    alternativeText?: string;
-    caption?: string;
-  } | string; // Adjusted to handle both object and string types
+    url:string
+  };
   userName?: string;
   companyLogo?: string;
   role?: string;

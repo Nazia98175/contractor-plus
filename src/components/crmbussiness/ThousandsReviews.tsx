@@ -19,6 +19,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+  console.log("checking", data);
 
   return (
     <section>

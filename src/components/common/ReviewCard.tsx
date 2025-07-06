@@ -18,7 +18,7 @@ const renderStars = (rating: number) => {
     </span>
   ));
 };
-const getInitials = (name: string) => {
+export const getInitials = (name: string) => {
   if (!name) return "";
   const words = name.trim().split(" ");
   if (words.length === 1) return words[0][0]?.toUpperCase();
@@ -30,7 +30,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   openModal,
   index,
 }) => {
-  const profileImage = review.profileUrl || OurReviewList?.[index]?.profileUrl;
+   const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
+
   const initials = getInitials(review.userName ?? "");
   return (
     <div className="mr-5 h-full min-h-full">
@@ -42,9 +43,9 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
-            {profileImage ? (
+            {review?.profileImg && typeof review.profileImg === 'object' && 'url' in review.profileImg  ? (
               <Image
-                src={profileImage}
+                 src={`${imageBaseUrl}${review.profileImg?.url}`}
                 alt="avatar"
                 width={42}
                 height={42}

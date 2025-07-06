@@ -29,7 +29,7 @@ export async function generateMetadata({
     "services-pages",
     resolvedParams.locale,
     "field-service",
-    "&populate[seoMeta]=true&populate[hero]=true",
+    "&populate[seoMetaData]=true&populate[hero]=true",
   );
 
   if (!page) return;

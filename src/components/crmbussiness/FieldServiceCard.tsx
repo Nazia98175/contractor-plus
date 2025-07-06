@@ -55,32 +55,19 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimateTextColor2 = currentColors.desc;
 
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
-
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`${titleColor}`}>{service?.title}</h4>
 
-          {/* <Image
-            src={
-              service?.cardImg?.url
-                ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
-                : "/placeholder.png"
-            }
-            alt={service?.title || "service image"}
-            width={518}
-            height={156}
-            className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
-            unoptimized
-          />
- */}
-
-          {apiData ? (
+          {service?.cardImg &&
+          typeof service?.cardImg === "object" &&
+          "url" in service?.cardImg ? (
             <Image
               // src={
               //   service?.cardImg?.url
-              //     ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
+              //     ? `${imageBaseUrl}${service?.cardImg?.url}`
               //     : "/placeholder.png"
               // }
               src={
@@ -145,7 +132,9 @@ const FieldServiceCard: React.FC<Props> = ({
 
       {/* Desktop image */}
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
-        {apiData ? (
+        {service?.cardImg &&
+        typeof service?.cardImg === "object" &&
+        "url" in service?.cardImg ? (
           <Image
             src={
               service?.cardImg?.url

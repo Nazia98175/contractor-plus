@@ -52,17 +52,18 @@ const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
         </Marquee>
 
         <Marquee pauseOnClick speed={30} direction="left" pauseOnHover>
-          {reviews.map((review: any) => (
-            <TrustedServiceCard
-              key={review.id}
-              review={review as Review}
-              openModal={
-                review.isModal
-                  ? () => openModal(review.videoLink || "")
-                  : () => {}
-              }
-            />
-          ))}
+          {reviews?.length > 0 &&
+            reviews?.map((review: any) => (
+              <TrustedServiceCard
+                key={review.id}
+                review={review as Review}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videoLink || "")
+                    : () => {}
+                }
+              />
+            ))}
         </Marquee>
       </div>
       <ReviewModal

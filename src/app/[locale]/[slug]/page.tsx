@@ -21,10 +21,10 @@ export async function generateMetadata({
   const resolvedParams = await params;
 
   const page = await getSeoData(
-    "services-pages",
+    "features-pages",
     resolvedParams.locale,
     resolvedParams.slug,
-    "&populate[seoMeta]=true&populate[hero]=true",
+    "&populate[seoMetaData]=true&populate[hero]=true",
   );
   if (!page) return;
 

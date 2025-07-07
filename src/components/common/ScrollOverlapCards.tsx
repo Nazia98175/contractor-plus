@@ -11,6 +11,7 @@ interface ScrollOverlapCardsProps {
   theme: "light" | "dark" | "estimateTheme";
   curved?: boolean;
   apiData?: boolean;
+  getHeadingClass?: () => string;
 }
 
 const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
@@ -18,6 +19,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   slug,
   theme,
   apiData = true,
+  getHeadingClass,
 }) => {
   const { gsapInstance, isLoaded, registerCleanup } = useGSAPDynamic();
   const [animationReady, setAnimationReady] = useState(false);
@@ -146,15 +148,11 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       id="crm-cards-wrapper"
       className="relative z-10 min-h-[108dvh] overflow-hidden sm:min-h-dvh lg:px-2 xl:h-fit"
     >
-      {slug === "general-contractor" ? (
-        <h2 className="heading-text-2 3xl:block mx-auto mt-[60px] hidden pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
-          {fieldService?.title}
-        </h2>
-      ) : (
-        <h2 className="gradient-text-2 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
-          {fieldService?.title}
-        </h2>
-      )}
+      <h2
+        className={`${getHeadingClass ? getHeadingClass() : ""} 3xl:block mx-auto mt-[60px] hidden pb-10 text-center text-4xl font-semibold -tracking-[0.72px]`}
+      >
+        {fieldService?.title}
+      </h2>
 
       {fieldService?.cardsDetail?.map((service: any, index: any) => (
         <div

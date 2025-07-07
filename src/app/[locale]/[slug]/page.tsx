@@ -90,6 +90,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: page?.hero?.mobileBtn,
     ncc: page?.hero?.nccTxt,
   };
+  console.log("eqwds", switchingTool);
 
   return (
     <>

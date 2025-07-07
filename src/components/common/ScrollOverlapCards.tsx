@@ -151,7 +151,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
           {fieldService?.title}
         </h2>
       ) : (
-        <h2 className="gradient-text 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
+        <h2 className="gradient-text-2 3xl:block mx-auto mt-[60px] hidden max-w-[813px] pb-10 text-center text-4xl font-semibold -tracking-[0.72px]">
           {fieldService?.title}
         </h2>
       )}

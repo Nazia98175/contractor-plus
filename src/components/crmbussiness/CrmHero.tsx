@@ -50,8 +50,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
             {slug === "estimate"
               ? "Contractor Estimate Software"
               : "   Field Service CRM"}
-            {/* <span>{hero?.heroTitle1}</span> */}
           </span>
+          {/* <span>{hero?.heroTitle1}</span> */}
         </div>
       </CardReveal>
       <div
@@ -69,8 +69,6 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
               } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
             >
               {hero?.heroTitle}
-
-              
             </h2>
             {/* </TextAnimation> */}
             {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}

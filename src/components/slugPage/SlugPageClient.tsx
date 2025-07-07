@@ -47,13 +47,13 @@ const SlugPageClientOptimized = ({
 
     return () => {
       mounted = false;
-    };
+    };  
   }, []);
 
   return (
     <>
       <div className="bg-white">
-        {slug === "project-managment" && (
+        {Boolean(trackProperties?.featureHighlightSectionVisible) && (
           <>
             <LazyWrapper
               importFn={() => import("../crmbussiness/TrackProperties")}

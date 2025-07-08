@@ -3,7 +3,7 @@ import React from "react";
 
 const EstimaticAiPage = () => {
   return (
-    <main>
+    <main className="overflow-hidden">
       <EstimaticHero />
     </main>
   );

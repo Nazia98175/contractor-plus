@@ -4300,9 +4300,9 @@ export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
   images: [
-    { url: "/images/svg/arrow-up-right.svg" }, // First icon
-    { url: "/images/svg/truck-icon.svg" }, // Second icon
-    { url: "/images/svg/graph-arrow.svg" }, // Third icon
+    { url: "/images/svg/PipleLine-Track.svg" }, // First icon
+    { url: "/images/svg/trend-down.svg" }, // Second icon
+    { url: "/images/svg/truck-fast.svg" }, // Third icon
   ],
   cards: [
     {

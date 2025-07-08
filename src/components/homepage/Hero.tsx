@@ -7,6 +7,7 @@ import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
 import TextAnimation from "../common/TextAnimation";
+import SplitText from "../common/SplitText";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -43,6 +44,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 {heroTitle}
               </h1>
             </TextAnimation>
+            {/* <SplitText
+              splitType="lines"
+              className="main-heading w-full max-w-[300px]"
+              text="dsfghvcdfxgchjbklkkfghjklljhgfhjkl;kjhghjkl;kjhgfhjkl"
+            /> */}
             <CardReveal distance={50} delay={0.4}>
               <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
                 {heroDescription}

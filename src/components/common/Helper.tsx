@@ -4190,6 +4190,12 @@ export const estimaticReviews = {
   ],
 };
 
+export const contractorIndustry = {
+  title: "Designed to handle the complexity of every crew, job, and trade",
+  subTitle: "Contractor+ serves 30+ industries",
+  url: null,
+  btnText: null,
+};
 export const estimaticCardData = {
   data: [
     {

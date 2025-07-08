@@ -1,9 +1,12 @@
 import {
+  contractorIndustry,
   estimaticCardData,
   estimaticReviews,
+  runWithContractorData,
 } from "@/components/common/Helper";
 import FieldService from "@/components/crmbussiness/FieldService";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import AiEstimateSoftware from "@/components/estimaticAi/AiEstimateSoftware";
 import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 
@@ -13,14 +16,15 @@ const EstimaticAiPage = () => {
       <EstimaticHero />
       {/* <OurBlogs /> */}
       <TrustedService reviews={estimaticReviews} slug="crm" />
-      {/* <FieldService
+      <AiEstimateSoftware runWithContractorData={runWithContractorData} />
+      <FieldService
         fieldService={estimaticCardData}
         theme="dark"
         slug="estimatic"
         apiData={false}
         mainClassName="text-center"
-      /> */}
-      {/* <ContractorIndustry contractorIndustry={indus} /> */}
+      />
+      <ContractorIndustry contractorIndustry={contractorIndustry} />
     </main>
   );
 };

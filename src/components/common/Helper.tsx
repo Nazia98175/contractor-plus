@@ -4101,3 +4101,13 @@ export const fieldcarddetail = [
     text: "Other solutions don’t really show you where revenue is getting stuck.",
   },
 ];
+
+export const dealflowhero = {
+  nccTxt: "No credit card required",
+  createBtn: "Get started FREE",
+  heroTitle:
+    "The one board that shows every deal, dollar value, and what to do next",
+  heroDescription:
+    "Drag and drop every lead through a visual board. Track dollar \nvalues, follow-ups, and next steps. Convert leads to a job in one click.",
+  mobileBtn: "Download FREE App",
+};

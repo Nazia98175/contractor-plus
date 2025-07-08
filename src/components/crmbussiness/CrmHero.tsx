@@ -37,7 +37,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
     }, 1000);
   }, []);
 
-  const imageUrl = getMediaUrl(heroImg);
+  const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
+
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>

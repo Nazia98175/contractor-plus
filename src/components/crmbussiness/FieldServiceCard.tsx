@@ -99,7 +99,7 @@ const FieldServiceCard: React.FC<Props> = ({
             //   sizes="(max-width: 768px) 300px, min(768px, 300px)"
             //   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             // />
-            <Image
+            <ImageProxy
               src={`${service.cardImg}`}
               alt={service?.title || "service image"}
               width={518}
@@ -150,17 +150,12 @@ const FieldServiceCard: React.FC<Props> = ({
         {service?.cardImg &&
         typeof service?.cardImg === "object" &&
         "url" in service?.cardImg ? (
-          <Image
+          <ImageProxy
             src={
               service?.cardImg?.url
-                ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
+                ? service?.cardImg?.url
                 : "/placeholder.png"
             }
-            // src={
-            //   service?.cardImg?.url
-            //     ? `${imageBaseUrl.split("api")[0].slice(0, -1)}${service?.cardImg?.url}`
-            //     : "/placeholder.png"
-            // }
             alt={service?.title || "service image"}
             width={518}
             height={302}

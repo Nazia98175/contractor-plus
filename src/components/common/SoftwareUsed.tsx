@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import LottieAnimation from "./LottieAnimation";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
+import ImageProxy from "./ImageProxy";
 interface SoftwareItem {
   icon: React.ReactNode;
   start: number;
@@ -47,7 +48,13 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     >
       {icons && index !== undefined ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
-          <Image
+          <ImageProxy
+            src={`${icons[index]?.url}` || "/"}
+            fill
+            className="brightness-0 invert filter sm:filter-none"
+            alt={`${item.title} icon`}
+          ></ImageProxy>
+          {/* <Image
             src={
               `${imageBaseUrl.split("api")[0].slice(0, -1)}${icons[index]?.url}` ||
               "/"
@@ -55,7 +62,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
             fill
             className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}
-          />
+          /> */}
           {/* <LottieAnimation loop={true} animationData={animationData} /> */}
         </div>
       ) : (

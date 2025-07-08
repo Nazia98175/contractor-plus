@@ -8,6 +8,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import "swiper/css"; // Core Swiper styles
 import HvacHeroSlider from "./HvacHeroSlider";
+import ImageProxy from "@/components/common/ImageProxy";
 
 const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
@@ -83,9 +84,9 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
           {heroImg?.url && (
-            <Image
+            <ImageProxy
               alt="hvac-hero"
-              src={`${imageBaseUrl}${heroImg?.url}`}
+              src={`${heroImg?.url}`}
               width={945}
               height={729}
               className="hidden w-full object-right md:block"
@@ -93,9 +94,9 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             />
           )}
           {heroImg?.url && (
-            <Image
+            <ImageProxy
               alt=""
-              src={`${imageBaseUrl}${heroImg?.url}`}
+              src={`${heroImg?.url}`}
               width={945}
               height={729}
               className="block w-full object-cover md:hidden"

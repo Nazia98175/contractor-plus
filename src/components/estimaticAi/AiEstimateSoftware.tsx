@@ -42,7 +42,7 @@ const AiEstimateSoftware: React.FC<TheServiceProps> = ({
             className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
           >
             {/* Their way */}
-            <div className="their-way flex items-center gap-3 rounded-[10px] px-3 py-2">
+            <div className="estimate-software flex items-center gap-3 rounded-[10px] px-3 py-2">
               <span>
                 {/* Red Cross Icon */}
                 <RedCrossIcon />

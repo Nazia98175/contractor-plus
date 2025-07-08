@@ -41,6 +41,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   });
 
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
+
   console.log("edwsa", item);
   return (
     <article

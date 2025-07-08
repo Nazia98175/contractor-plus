@@ -30,7 +30,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       gsap.to(".main-loader", {
         opacity: 0,
       });
-    }, 1000);
+    }, 5000);
   }, []);
 
   return (
@@ -39,7 +39,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
           <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
-            <TextAnimation delay={0.5}>
+            <TextAnimation delay={0.1}>
               <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
                 {heroTitle}
               </h1>

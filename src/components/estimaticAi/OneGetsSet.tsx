@@ -13,9 +13,12 @@ const OneGetsSet = () => {
           <TripleChevronIcon />
         </span>
       </div>
-      <div className="flex justify-between rounded-3xl border border-[#51585C] pt-4">
-        <div className="flex w-[45%] items-center justify-center">
-          <h4>Other AI estimating software</h4>
+      <div className="flex justify-between rounded-3xl border border-[#51585C] pt-6">
+        <div className="col flex w-[45%] flex-col items-center justify-center">
+          <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-xl font-semibold">
+            <h4>Other AI estimating software</h4>
+            <Image src="/images/png/😖.png" alt="" width={28} height={28} />
+          </div>
           <Image
             width={425}
             height={395}
@@ -24,12 +27,20 @@ const OneGetsSet = () => {
           />
         </div>
         <EstimateDividerIcon />
-        <div className="flex w-[52%] items-center">
+        <div className="flex w-[52%] flex-col items-center justify-end">
           <Image
-            width={595}
-            height={410}
+            width={140}
+            height={20}
+            alt=""
+            className="mb-3"
+            src="/images/svg/estimatic.svg"
+          />
+          <Image
+            width={598}
+            height={415}
             src="/images/webp/redone-estimatic.webp"
             alt="Other AI estimating software"
+            className="object-cover"
           />
         </div>
       </div>

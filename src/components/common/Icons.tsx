@@ -4608,8 +4608,8 @@ export const EstimateDividerIcon = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(0 197) rotate(90) scale(304 639.842)"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#0C0D11" stop-opacity="0" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#0C0D11" stopOpacity="0" />
       </radialGradient>
     </defs>
   </svg>

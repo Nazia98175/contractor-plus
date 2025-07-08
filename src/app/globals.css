@@ -49,7 +49,7 @@
   --color-kikorangi: #3538cd;
   --color-aliceBlue: #eef4ff;
   --color-darkKnight: #101b25;
-  --color-kuroiBlack: #0c0d11;
+  --color-kuroiBlack: rgba(13, 14, 18);
   --color-shutter: #1f1f27;
   --color-reflection: #cbd5e1;
   --color-romanRed: #f21314;
@@ -1700,4 +1700,7 @@ button {
 }
 .cloud-layer-bottom {
   background: linear-gradient(#fff0 6%, #fff 65.94%);
+}
+body {
+  isolation: isolate;
 }

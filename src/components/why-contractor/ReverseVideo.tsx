@@ -5,6 +5,7 @@ import TextAnimation from "../common/TextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import ImageSequenceCanvas from "./ImageSequenceCanvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +68,7 @@ const ReverseFrames = () => {
 
   return (
     <section ref={sectionRef} className="relative z-[0] bg-[#000] px-2.5">
-      <Image
+      {/* <Image
         sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
         width={1440}
         height={500}
@@ -76,7 +77,8 @@ const ReverseFrames = () => {
         alt={`Frame ${currentFrame + 1}`}
         className="relative z-[-1] mx-auto h-full w-full max-w-[1440px] object-cover object-top"
         loading="eager"
-      />
+      /> */}
+      <ImageSequenceCanvas className="relative z-[-1] mx-auto w-full max-w-[1440px] object-cover object-top" />
 
       <div
         className="absolute -top-1 left-0 z-10 h-10 w-full sm:h-[142px]"

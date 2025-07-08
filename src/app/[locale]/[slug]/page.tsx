@@ -103,18 +103,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
       <SwitchingTool switchingTool={pageData?.switchingTool} />
       {/* Everything else loads client-side - THIS is the key! */}
       <ClientOnlyWrapper data={pageData} />
-      <div className="bg-white">
-        <GoingFieldSevices
-          switchingTool={{
-            title: "There’s no easy way to see what’s going on in the field",
-            cardsDetail: fieldcarddetail,
-          }}
-        />
-        {/* <RealTimeServiceConnector
-          theme="estimateTheme"
-          fieldService={fieldServiceData?.fieldService}
-        /> */}
-      </div>
     </>
   );
 };

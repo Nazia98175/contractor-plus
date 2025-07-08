@@ -4111,3 +4111,219 @@ export const dealflowhero = {
     "Drag and drop every lead through a visual board. Track dollar \nvalues, follow-ups, and next steps. Convert leads to a job in one click.",
   mobileBtn: "Download FREE App",
 };
+
+export const dealReviews = {
+  data: [
+    {
+      reviews: {
+        title: "Trusted by over 50,000 build and service contractors",
+        subTitle: null,
+        reviews: [
+          {
+            id: 1,
+            userName: "Brandon Geiger",
+            profileUrl: "/images/webp/rushville.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `Since I started sending all my estimates using Contractor+, I have
+stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+            userRole: "Co-Owner, Rushville Restorations",
+          },
+          {
+            id: 2,
+            userName: "Juan Garcia",
+            profileUrl: "/images/webp/juan-gracia.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 3,
+            userName: "Scott Azure",
+            profileUrl: "/images/webp/rands.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
+            userRole: "CEO at Rands Mechanical",
+          },
+          {
+            id: 4,
+            userName: "Brandon Geiger",
+            profileUrl: "/images/webp/rushville.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `Since I started sending all my estimates using Contractor+, I have
+stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+            userRole: "Co-Owner, Rushville Restorations",
+          },
+          {
+            id: 5,
+            userName: "Juan Garcia",
+            profileUrl: "/images/webp/juan-gracia.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 6,
+            userName: "Scott Azure",
+            profileUrl: "/images/webp/rands.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
+            userRole: "CEO at Rands Mechanical",
+          },
+        ],
+      },
+    },
+  ],
+};
+
+export const realTimeServiceSliderData = [
+  {
+    title: "Live Dispatch",
+    content: [
+      {
+        desc: "See who's available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+      },
+    ],
+  },
+  {
+    title: "Job Details",
+    content: [
+      {
+        desc: "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
+      },
+    ],
+  },
+  {
+    title: "Field Updates",
+    content: [
+      {
+        desc: "Crews can upload photos, notes, and task changes straight from the field. Everything lives in one central hub.",
+      },
+    ],
+  },
+  {
+    title: "Crew Efficiency",
+    content: [
+      {
+        desc: "Track time, mileage, and task completion with zero paper. Know who's doing what, where, and when",
+      },
+    ],
+  },
+  {
+    title: "AI Call Attendant",
+    content: [
+      {
+        desc: "Big Chief answers your calls 24/7, captures lead details, and books jobs while you focus on the field.",
+      },
+    ],
+  },
+  {
+    title: "Onsite Payments",
+    content: [
+      {
+        desc: "Collect payment the moment the job's done. Accept cards or ACH in the field and mark the invoice as paid.",
+      },
+    ],
+  },
+  {
+    title: "CRM",
+    content: [
+      {
+        desc: "Track customers, properties, and communication history in one CRM that's built for the way contractors work.",
+      },
+    ],
+  },
+  {
+    title: "Mobile App",
+    content: [
+      {
+        desc: "Run your business from anywhere. The intuitive Contractor+ app puts scheduling, dispatch, and updates in your pocket.",
+      },
+    ],
+  },
+];
+
+export const runWithContractorData = {
+  title:
+    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
+  headerLeft: "Their way",
+  headerRight: "Your way",
+  features: [
+    {
+      competitorsNote: "CRMs built for sales reps, not contractors",
+      ourProductNote:
+        "Pipeline built around jobs, properties, and real revenue",
+    },
+    {
+      competitorsNote: "No clear view of what’s stuck or worth chasing",
+      ourProductNote: "See dollar value at every stage and where deals stall",
+    },
+    {
+      competitorsNote: "Switching tabs to send estimates or schedule jobs",
+      ourProductNote: "One click from lead to estimate or job site visit",
+    },
+    {
+      competitorsNote: "One click from lead to estimate or job site visit",
+      ourProductNote:
+        "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+    },
+    {
+      competitorsNote: "“Won” means the deal disappears into another system",
+      ourProductNote: "Deals stay connected to the job through to completion",
+    },
+    {
+      competitorsNote: "Re-entering data across CRM, estimates, and jobs",
+      ourProductNote:
+        "Enter the information once, and it syncs to everything instantly",
+    },
+  ],
+};
+
+export const neverLookBackData = {
+  title: "Teams that switch to Contractor+ never look back",
+  sub_title: "We help you get ahead, not just get by.",
+  images: [
+    { url: "/images/svg/arrow-up-right.svg" }, // First icon
+    { url: "/images/svg/truck-icon.svg" }, // Second icon
+    { url: "/images/svg/graph-arrow.svg" }, // Third icon
+  ],
+  cards: [
+    {
+      start: 0,
+      end: 28,
+      suffix: "%",
+      title: "",
+      description: "Boost in revenue with visual pipeline tracking",
+    },
+    {
+      start: 9,
+      end: 10,
+      title: "",
+      description: "Contractors see higher sales productivity",
+    },
+    {
+      start: 80,
+      end: 80,
+      suffix: "%",
+      title: "",
+      description: "Of leads weren’t fully tracked before using Contractor+",
+    },
+  ],
+};

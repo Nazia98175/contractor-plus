@@ -2,6 +2,7 @@ import React from "react";
 import { TickIcon } from "../common/Icons";
 import { ServiceData } from "@/types";
 import Image from "next/image";
+import ImageProxy from "../common/ImageProxy";
 
 interface Props {
   service: ServiceData;
@@ -64,15 +65,10 @@ const FieldServiceCard: React.FC<Props> = ({
           {service?.cardImg &&
           typeof service?.cardImg === "object" &&
           "url" in service?.cardImg ? (
-            <Image
-              // src={
-              //   service?.cardImg?.url
-              //     ? `${imageBaseUrl}${service?.cardImg?.url}`
-              //     : "/placeholder.png"
-              // }
+            <ImageProxy
               src={
                 service?.cardImg?.url
-                  ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
+                  ? service?.cardImg?.url
                   : "/placeholder.png"
               }
               alt={service?.title || "service image"}
@@ -82,8 +78,27 @@ const FieldServiceCard: React.FC<Props> = ({
               priority
               sizes="(max-width: 768px) 300px, min(768px, 300px)"
               className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
-            />
+            ></ImageProxy>
           ) : (
+            // <Image
+            //   // src={
+            //   //   service?.cardImg?.url
+            //   //     ? `${imageBaseUrl}${service?.cardImg?.url}`
+            //   //     : "/placeholder.png"
+            //   // }
+            //   src={
+            //     service?.cardImg?.url
+            //       ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
+            //       : "/placeholder.png"
+            //   }
+            //   alt={service?.title || "service image"}
+            //   width={518}
+            //   height={302}
+            //   unoptimized
+            //   priority
+            //   sizes="(max-width: 768px) 300px, min(768px, 300px)"
+            //   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            // />
             <Image
               src={`${service.cardImg}`}
               alt={service?.title || "service image"}

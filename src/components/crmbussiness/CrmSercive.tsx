@@ -26,7 +26,7 @@ const CrmSercive: React.FC<Props> = ({
       <div className="pt-14 pb-10 sm:pt-20 sm:pb-[75px] lg:pt-[110px] xl:pt-[120px]">
         <CommonFormField
           title={data?.title}
-          subTitle={data?.sub_title}
+          subTitle={data?.subTitle}
           ncc={ncc}
           placeholder={data?.placeholder}
           createBtn={createBtn}

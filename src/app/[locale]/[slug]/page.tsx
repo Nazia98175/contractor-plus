@@ -8,6 +8,9 @@ import ClientOnlyWrapper from "@/components/client/ClientOnlyWrapper";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import { console } from "inspector";
+import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
+import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
+import { fieldcarddetail } from "@/components/common/Helper";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;

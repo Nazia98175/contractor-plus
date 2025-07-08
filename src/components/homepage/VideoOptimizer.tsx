@@ -92,8 +92,8 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           </video>
         </>
       )}
-      <div className="bg-kuroiBlack absolute bottom-[-5%] h-[10%] w-[102%] blur-[8px]"></div>
-      <div className="bg-kuroiBlack 3xl:flex absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] blur-[11px]"></div>
+      <div className="absolute bottom-[-5%] z-10 h-[10%] w-[102%] bg-[rgba(13,14,18)] blur-[8px]"></div>
+      <div className="3xl:flex absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] bg-[rgba(13,14,18)] blur-[11px]"></div>
     </div>
   );
 };

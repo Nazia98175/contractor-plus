@@ -11,6 +11,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
       </span>
     ));
   };
+  console.log(review , "review in hvac review card");
   return (
     <article
       onClick={review.isModal ? openModal : undefined}
@@ -22,7 +23,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
           <Image
             width={90}
             height={90}
-            src={review.profileUrl}
+            src={review.profileImg?.url}
             alt="User"
             className="max-w-[90px] min-w-[90px] rounded"
           />

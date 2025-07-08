@@ -14,11 +14,13 @@ interface SoftwareItem {
   isRange?: boolean;
   subTitle?: string;
   prefix?: string;
+  lottieJson: unknown;
 }
 
 interface SoftwareUsedProps {
   item: SoftwareItem;
   icons?: { url: string }[];
+  lottieJson?: object;
   index?: number;
   titleColor?: string;
   paragraphColor?: string;
@@ -40,6 +42,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
 
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
 
+  console.log("edwsa", item);
   return (
     <article
       ref={ref}
@@ -56,12 +59,15 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
             className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}
           />
-          {/* <LottieAnimation loop={true} animationData={animationData} /> */}
         </div>
       ) : (
         <span className="size-7 sm:size-8">{item.icon}</span>
       )}
-
+      <LottieAnimation
+        className="h-9 w-8"
+        loop={true}
+        animationData={item.lottieJson}
+      />
       <h3 className={`countup-title ${titleColor}`}>
         {item.isRange ? (
           <span>{`${item.start}–${item.end}`}</span>

@@ -2966,6 +2966,37 @@ export const pricingfaqitems = [
       "You can cancel at any time. It’s self-service, so you can upgrade, downgrade and cancel your account on your own in the click of a button. We offer a free for life version of our software and 14 day trials of most premium features (such as the job schedule and the team chat). During this period you should determine for yourself if upgrading to PRO or ULTIMATE is the best option for your business. You should not upgrade until you’ve properly evaluated the software, learned how to use everything and know that it’s the best choice for you. As such, Contractor+  is a digital, intangible good, and all sales are final. We will not honor any refunds for any reason, under any circumstances. We have thousands of users using our software successfully.  If you need help setting anything up or have questions, our Customer Success team is very accessible.",
   },
 ];
+
+export const estimateFaq = {
+  title: "hello",
+  faq: [
+    {
+      id: 1,
+      question: "What are the differences between FREE, PRO and PRO TEAM?",
+      answer:
+        "The FREE plan allows you to manage your clients, prepare and send estimates, invoices, even collect payments via credit card and eCheck. You can do pretty much everything you need for a smaller proprietorship or single-member business. PRO will allow you to add your employees, coworkers, admin assistants, and subcontractors to collaborate on projects. It also gives you a lot more control over individual settings and configurations throughout the app. PRO TEAM is maximum performance – everything to the max. All the features of PRO + enterprise level customizations, third party API integrations, more payment options, it’s Contractor+ – without limits.  For a one man operation, the free version should work just fine. For small teams, PRO should be enough to get the job done. And for the medium to larger companies who expect the best and want it all – PRO TEAM is the plan that was designed for you.",
+    },
+    {
+      id: 2,
+      question:
+        " What if I buy an annual subscription of PRO but want to upgrade to PRO TEAM later?",
+      answer:
+        "We will prorate the difference between the two costs and apply any unused/remaining balance from your currently active PRO subscriptions to the cost of your PRO TEAM upgrade. There’s never a problem upgrading or downgrading at any time!",
+    },
+    {
+      id: 3,
+      question: "Do you have tutorials or offer assistance with account setup?",
+      answer:
+        "We offer both. We have video overviews and tutorials of every main feature and setting screen throughout our app. We also have coachmarks in the mobile apps that walk you through and explain each feature. We also have an amazing Customer Success team available 5 days a week offering 1-on-1 Zoom setup sessions, and demos. We’re here for you in every way possible to make sure you get up and running quickly and know how to properly utilize the app.",
+    },
+    {
+      id: 4,
+      question: "What is your cancellation & refund policy?",
+      answer:
+        "You can cancel at any time. It’s self-service, so you can upgrade, downgrade and cancel your account on your own in the click of a button. We offer a free for life version of our software and 14 day trials of most premium features (such as the job schedule and the team chat). During this period you should determine for yourself if upgrading to PRO or ULTIMATE is the best option for your business. You should not upgrade until you’ve properly evaluated the software, learned how to use everything and know that it’s the best choice for you. As such, Contractor+  is a digital, intangible good, and all sales are final. We will not honor any refunds for any reason, under any circumstances. We have thousands of users using our software successfully.  If you need help setting anything up or have questions, our Customer Success team is very accessible.",
+    },
+  ],
+};
 export const blogData = [
   {
     id: 1,
@@ -4518,37 +4549,36 @@ export const dealReviews2 = {
   reviews: [
     {
       id: 1,
-      userName: "Brandon Geiger",
-      userRole: "Co-Owner, Rushville Restorations",
+      userName: "Juan Garcia",
+      userRole: "Owner, Nailed It Miami",
       isModal: true,
       review:
-        '"Since I started sending all my estimates using Contractor+, I’ve closed more jobs and won more business. Contractor+ is a game changer!"',
+        '"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."',
       rating: 5,
-      useriImage: "/images/webp/rushville.webp",
-
-      videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+      useriImage: "/images/webp/juan-gracia.webp",
+      videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
     },
     {
       id: 2,
       userName: "Brandon Geiger",
-      userRole: "CEO at Rands Mechanical",
-      isModal: false,
+      userRole: "Co-Owner, Rushville Restorations",
+      isModal: true,
       review:
-        '"I have all my techs using Contractor+ now. We were using 3 apps before and paying more — Contractor+ does it all at a fraction of the price. The best I’ve seen."',
+        '"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"',
       rating: 5,
       useriImage: "/images/webp/rands.webp",
-      videoLink: null,
+      videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     },
     {
       id: 3,
       isModal: true,
-      userName: "Juan Garcia",
-      userRole: "Owner, Nailed It Miami",
+      userName: "Scott Azure",
+      userRole: " CEO at Rands Mechanical",
       review:
-        '"I started with just a few dollars left and took a chance. Contractor+ helped me grow faster than I imagined."',
+        '"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."',
       rating: 5,
-      useriImage: "/images/webp/rushville.webp",
-      videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+      useriImage: "/images/webp/rands.webp",
+      videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     },
   ],
 };

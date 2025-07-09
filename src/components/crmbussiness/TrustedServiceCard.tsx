@@ -3,6 +3,7 @@ import { PlayIcon, StartIcon } from "../common/Icons";
 import Image from "next/image";
 import { Review } from "@/types";
 import { getInitials } from "../common/ReviewCard";
+import ImageProxy from "../common/ImageProxy";
 
 const VARIANT_CLASSES = {
   primary: {
@@ -62,8 +63,8 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             {review?.profileImg &&
             typeof review.profileImg === "object" &&
             "url" in review.profileImg ? (
-              <Image
-                src={`${imageBaseUrl}${review.profileImg?.url}`}
+              <ImageProxy
+                src={review.profileImg?.url}
                 alt="avatar"
                 width={42}
                 height={42}
@@ -71,6 +72,15 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 unoptimized
                 className="h-fit max-w-[42px] rounded-full object-contain"
               />
+              // <Image
+              //   src={`${imageBaseUrl}${review.profileImg?.url}`}
+              //   alt="avatar"
+              //   width={42}
+              //   height={42}
+              //   priority
+              //   unoptimized
+              //   className="h-fit max-w-[42px] rounded-full object-contain"
+              // />
             ) : (
               <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
                 {/* {(() => {

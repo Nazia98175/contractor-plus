@@ -2,6 +2,7 @@ import { PlayIcon, StartIcon } from "./Icons";
 import Image from "next/image";
 import { Review } from "@/types";
 import { OurReviewList } from "./Helper";
+import ImageProxy from "./ImageProxy";
 
 interface ReviewCardProps {
   review: Review;
@@ -44,13 +45,20 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
         <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
             {review?.profileImg && typeof review.profileImg === 'object' && 'url' in review.profileImg  ? (
-              <Image
-                 src={`${imageBaseUrl}${review.profileImg?.url}`}
+              <ImageProxy
+                 src={review.profileImg?.url}
                 alt="avatar"
                 width={42}
                 height={42}
                 className="max-w-[42px] rounded-full object-contain"
               />
+              // <Image
+              //    src={`${imageBaseUrl}${review.profileImg?.url}`}
+              //   alt="avatar"
+              //   width={42}
+              //   height={42}
+              //   className="max-w-[42px] rounded-full object-contain"
+              // />
             ) : (
               <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black text-base font-semibold text-white">
                 {initials}

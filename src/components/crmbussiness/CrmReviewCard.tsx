@@ -3,6 +3,7 @@ import { ReviewCardProps } from "@/types";
 import Image from "next/image";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import { getInitials } from "../common/ReviewCard";
+import ImageProxy from "../common/ImageProxy";
 
 const VARIANT_CLASSES = {
   primary: {
@@ -59,10 +60,10 @@ const CrmReviewCard: React.FC<Props> = ({
           {review?.profileImg &&
             typeof review.profileImg === "object" &&
             "url" in review.profileImg ? (
-            <Image
+            <ImageProxy
               width={90}
               height={90}
-             src={`${imageBaseUrl}${review.profileImg?.url}`}
+             src={review.profileImg?.url}
               alt="User"
               className="max-w-[90px] min-w-[90px] rounded"
             />

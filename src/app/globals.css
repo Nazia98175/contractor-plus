@@ -1288,6 +1288,15 @@ button {
   background:
     linear-gradient(90deg, #f43737 -323.44%, #f4373700 51.22%), #ffffffb3;
 }
+
+.estimate-software {
+  background: linear-gradient(
+    90deg,
+    #f43737 -323.44%,
+    rgba(244, 55, 55, 0) 51.22%
+  );
+}
+
 .your-way {
   background: linear-gradient(90deg, #78ff49 -323.44%, #78ff4900 51.22%);
   position: relative;

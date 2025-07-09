@@ -7,7 +7,7 @@ import PlanToggle from "./PlanToggle";
 import { PlansProps } from "@/types";
 
 const Plans: React.FC<PlansProps> = ({ onScroll }) => {
-  const [isAnnual, setIsAnnual] = useState(true);
+  const [isAnnual, setIsAnnual] = useState(false);
 
   return (
     <section className="relative z-20 mx-auto flex w-full max-w-[1092px] flex-col items-center justify-center px-2 pt-2 pb-[22px] sm:space-y-8 sm:pt-8 xl:px-14 xl:pt-12">

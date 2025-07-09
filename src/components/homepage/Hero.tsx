@@ -46,7 +46,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
             </TextAnimation>
             {/* <SplitText
               splitType="lines"
-              className="main-heading w-full max-w-[300px]"
+              className="main-heading w-full max-w-[300px] text-white"
               text="dsfghvcdfxgchjbklkkfghjklljhgfhjkl;kjhghjkl;kjhgfhjkl"
             /> */}
             <CardReveal distance={50} delay={0.4}>

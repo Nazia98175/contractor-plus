@@ -4595,3 +4595,8 @@ export const dealReviews2 = {
     },
   ],
 };
+export const blogheading = {
+  title: "hello",
+  btnText: "View All Blogs",
+  btnUrl: "/",
+};

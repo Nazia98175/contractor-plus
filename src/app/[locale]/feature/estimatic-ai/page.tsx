@@ -1,5 +1,7 @@
 "use client";
 import {
+  blogheading,
+  blogList,
   contractorIndustry,
   dealReviews2,
   estimateFaq,
@@ -7,6 +9,7 @@ import {
   estimaticCardData,
   estimaticReviews,
 } from "@/components/common/Helper";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
@@ -55,6 +58,11 @@ const EstimaticAiPage = () => {
         classNameAnswer="pt-1"
         mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+      />
+      <BlogPosts
+        data={blogheading}
+        blogs={blogList}
+        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>
   );

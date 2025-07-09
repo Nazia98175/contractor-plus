@@ -1,4 +1,3 @@
-"use client";
 import {
   blogheading,
   blogList,
@@ -8,8 +7,11 @@ import {
   estimateSoftwareData,
   estimaticCardData,
   estimaticReviews,
+  formData,
+  platforms,
 } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
@@ -18,19 +20,18 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 
 const EstimaticAiPage = () => {
   return (
     <main className="overflow-hidden">
       <EstimaticHero />
-      {/* <OurBlogs /> */}
       <TrustedService reviews={estimaticReviews} slug="crm" />
       <RunWithContractor
         kindAdorable={estimateSoftwareData}
         variant="dark"
         icon={true}
       />
-
       <OneGetsSet />
       <FieldService
         fieldService={estimaticCardData}
@@ -46,13 +47,24 @@ const EstimaticAiPage = () => {
           btnText: contractorIndustry.btnText ?? "",
         }}
       />
-
       <ThousandsReviews
         data={dealReviews2}
         reviews={dealReviews2.reviews}
         variant="secondary"
       />
-
+      <CrmSercive
+        createBtn={"Get started FREE"}
+        mobileBtn={"Download FREE App"}
+        ncc={"No credit card required"}
+        data={formData}
+        showClouds={false}
+        className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
+        variantBtn="dark"
+      />{" "}
+      <TrustBarHvca
+        platforms={platforms}
+        className="mx-auto w-full max-w-[889px]"
+      />
       <Faq
         faq={estimateFaq}
         classNameAnswer="pt-1"

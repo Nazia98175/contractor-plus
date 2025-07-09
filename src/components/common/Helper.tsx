@@ -2968,32 +2968,45 @@ export const pricingfaqitems = [
 ];
 
 export const estimateFaq = {
-  title: "hello",
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
   faq: [
     {
       id: 1,
-      question: "What are the differences between FREE, PRO and PRO TEAM?",
+      question:
+        "How is Estimatic different from tools like ChatGPT or other AI estimate generators?",
       answer:
-        "The FREE plan allows you to manage your clients, prepare and send estimates, invoices, even collect payments via credit card and eCheck. You can do pretty much everything you need for a smaller proprietorship or single-member business. PRO will allow you to add your employees, coworkers, admin assistants, and subcontractors to collaborate on projects. It also gives you a lot more control over individual settings and configurations throughout the app. PRO TEAM is maximum performance – everything to the max. All the features of PRO + enterprise level customizations, third party API integrations, more payment options, it’s Contractor+ – without limits.  For a one man operation, the free version should work just fine. For small teams, PRO should be enough to get the job done. And for the medium to larger companies who expect the best and want it all – PRO TEAM is the plan that was designed for you.",
+        "Our AI estimate software actually pulls from your real cost book, current supplier pricing, and local labor rates. While other tools give you generic estimates, Estimatic builds accurate, client-ready bids that match how you quote jobs.",
     },
     {
       id: 2,
-      question:
-        " What if I buy an annual subscription of PRO but want to upgrade to PRO TEAM later?",
+      question: "Can I still control or edit the estimate?",
       answer:
-        "We will prorate the difference between the two costs and apply any unused/remaining balance from your currently active PRO subscriptions to the cost of your PRO TEAM upgrade. There’s never a problem upgrading or downgrading at any time!",
+        "Absolutely. Estimatic gives you a complete draft in a couple minutes, but you’ll always have the final say. Review, adjust, and approve line items just like you would normally (but WAY faster!)",
     },
     {
       id: 3,
-      question: "Do you have tutorials or offer assistance with account setup?",
+      question: "Can Estimatic read job photos and blueprints? ",
       answer:
-        "We offer both. We have video overviews and tutorials of every main feature and setting screen throughout our app. We also have coachmarks in the mobile apps that walk you through and explain each feature. We also have an amazing Customer Success team available 5 days a week offering 1-on-1 Zoom setup sessions, and demos. We’re here for you in every way possible to make sure you get up and running quickly and know how to properly utilize the app.",
+        "Yes — upload jobsite photos, blueprints, and/or drawings when you create your estimate for the AI to use. ",
     },
     {
       id: 4,
-      question: "What is your cancellation & refund policy?",
+      question: "Will it match my usual estimate format?",
       answer:
-        "You can cancel at any time. It’s self-service, so you can upgrade, downgrade and cancel your account on your own in the click of a button. We offer a free for life version of our software and 14 day trials of most premium features (such as the job schedule and the team chat). During this period you should determine for yourself if upgrading to PRO or ULTIMATE is the best option for your business. You should not upgrade until you’ve properly evaluated the software, learned how to use everything and know that it’s the best choice for you. As such, Contractor+  is a digital, intangible good, and all sales are final. We will not honor any refunds for any reason, under any circumstances. We have thousands of users using our software successfully.  If you need help setting anything up or have questions, our Customer Success team is very accessible.",
+        "Yes. Use your saved templates and upload your cost book so the final output looks like your usual estimates. No reformatting or manual entry necessary. We don’t force you into a rigid layout. ",
+    },
+    {
+      id: 5,
+      question: "What data is used for pricing? ",
+      answer:
+        "Estimatic searches to find  real-time pricing from vendors like Lowe’s, Home Depot, Menards, Ace Hardware, Build.com, and ABC Supply. It also uses a proprietary labor rate index based on over 500,000 approved estimates and official BLS data. ",
+    },
+    {
+      id: 6,
+      question: "Is Estimatic part of Contractor+ or a separate tool?",
+      answer:
+        "It’s fully built into Contractor+. That means your estimates automatically connect to your CRM, service requests, job schedule, and invoicing. It’s included with your regular subscription and each estimate created costs a minimal dollar amount (just to cover the cost of using AI). ",
     },
   ],
 };

@@ -49,6 +49,7 @@ const EstimaticAiPage = () => {
         reviews={dealReviews2.reviews}
         variant="secondary"
       />
+
       <Faq
         faq={estimateFaq}
         classNameAnswer="pt-1"

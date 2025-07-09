@@ -58,12 +58,12 @@ const CrmReviewCard: React.FC<Props> = ({
       >
         <div className="relative w-fit">
           {review?.profileImg &&
-            typeof review.profileImg === "object" &&
-            "url" in review.profileImg ? (
+          typeof review.profileImg === "object" &&
+          "url" in review.profileImg ? (
             <ImageProxy
               width={90}
               height={90}
-             src={review.profileImg?.url}
+              src={review.profileImg?.url}
               alt="User"
               className="max-w-[90px] min-w-[90px] rounded"
             />

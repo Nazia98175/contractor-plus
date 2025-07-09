@@ -4676,3 +4676,44 @@ export const neverLookBackData = {
     },
   ],
 };
+
+export const dealReviews2 = {
+  title: "There’s a reason we have a 4.7 ★ average across thousands of reviews",
+  subTitle: null,
+  reviews: [
+    {
+      id: 1,
+      userName: "Brandon Geiger",
+      userRole: "Co-Owner, Rushville Restorations",
+      isModal: true,
+      review:
+        '"Since I started sending all my estimates using Contractor+, I’ve closed more jobs and won more business. Contractor+ is a game changer!"',
+      rating: 5,
+      useriImage: "/images/webp/rushville.webp",
+
+      videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    },
+    {
+      id: 2,
+      userName: "Brandon Geiger",
+      userRole: "CEO at Rands Mechanical",
+      isModal: false,
+      review:
+        '"I have all my techs using Contractor+ now. We were using 3 apps before and paying more — Contractor+ does it all at a fraction of the price. The best I’ve seen."',
+      rating: 5,
+      useriImage: "/images/webp/rands.webp",
+      videoLink: null,
+    },
+    {
+      id: 3,
+      isModal: true,
+      userName: "Juan Garcia",
+      userRole: "Owner, Nailed It Miami",
+      review:
+        '"I started with just a few dollars left and took a chance. Contractor+ helped me grow faster than I imagined."',
+      rating: 5,
+      useriImage: "/images/webp/rushville.webp",
+      videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    },
+  ],
+};

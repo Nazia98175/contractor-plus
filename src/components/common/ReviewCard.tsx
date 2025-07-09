@@ -31,7 +31,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   openModal,
   index,
 }) => {
-   const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
+  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
 
   const initials = getInitials(review.userName ?? "");
   return (
@@ -44,14 +44,17 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
-            {review?.profileImg && typeof review.profileImg === 'object' && 'url' in review.profileImg  ? (
+            {review?.profileImg &&
+            typeof review.profileImg === "object" &&
+            "url" in review.profileImg ? (
               <ImageProxy
-                 src={review.profileImg?.url}
+                src={review.profileImg?.url}
                 alt="avatar"
                 width={42}
                 height={42}
                 className="max-w-[42px] rounded-full object-contain"
               />
+            ) : (
               // <Image
               //    src={`${imageBaseUrl}${review.profileImg?.url}`}
               //   alt="avatar"
@@ -59,7 +62,6 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
               //   height={42}
               //   className="max-w-[42px] rounded-full object-contain"
               // />
-            ) : (
               <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black text-base font-semibold text-white">
                 {initials}
               </div>

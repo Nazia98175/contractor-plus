@@ -4,16 +4,21 @@ import { EstimateDividerIcon, TripleChevronIcon } from "../common/Icons";
 const OneGetsSet = () => {
   return (
     <div className="main-container">
-      <div className="section-heading service-text mb-12 flex items-center justify-center gap-3 text-center">
-        <span>
+      <div className="section-heading service-text flex flex-col items-center justify-center gap-3 text-center md:flex-row lg:mb-12">
+        <span className="hidden md:block">
           <TripleChevronIcon />
         </span>
-        One gets sent. The other gets redone.
+        <span className="hidden md:block">
+          One gets sent. The other gets redone.
+        </span>
+        <span className="mx-auto block max-w-[296px] md:hidden">
+          Finished estimate output
+        </span>
         <span>
           <TripleChevronIcon />
         </span>
       </div>
-      <div className="flex flex-col items-center justify-between rounded-3xl border-[#51585C] pt-6 lg:flex-row lg:border">
+      <div className="flex flex-col items-center justify-between gap-2 rounded-3xl border-[#51585C] pt-6 lg:flex-row lg:border">
         <div className="flex flex-col items-center justify-center lg:w-[46%]">
           <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-xl font-semibold">
             <h4>Other AI estimating software</h4>
@@ -30,6 +35,14 @@ const OneGetsSet = () => {
             height={395}
             src="/images/webp/estimate-other.webp"
             alt="Other AI estimating software"
+            className="hidden lg:block"
+          />
+          <Image
+            width={598}
+            height={415}
+            src="/images/webp/other-estimate-mobile.webp"
+            alt="Other AI estimating software"
+            className="block lg:hidden"
           />
         </div>
         <span className="hidden lg:block">

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "../field-services/RunWithContractorMobile";
@@ -30,9 +31,14 @@ const AiEstimateSoftware: React.FC<TheServiceProps> = ({
           <p className="font-myriad text-secondary text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
             {runWithContractorData.headerLeft}
           </p>
-          <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
-            {runWithContractorData.headerRight}
-          </p>
+
+          <Image
+            src="/images/svg/estimatic.svg"
+            alt="Estimatic "
+            className="mx-auto"
+            width={120}
+            height={20}
+          />
         </div>
         {runWithContractorData?.features?.map((item: any, index: any) => (
           <CardReveal

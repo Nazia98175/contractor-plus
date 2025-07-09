@@ -4609,6 +4609,42 @@ export const runWithContractorData = {
   ],
 };
 
+export const estimateSoftwareData = {
+  title: "Not all AI estimate software makes your life easier",
+  sub_title: "Some AI estimators get “close”. Estimatic gets it right.",
+  headerLeft: "Their way",
+  headerRight: "Your way",
+  features: [
+    {
+      competitorsNote: "CRMs built for sales reps, not contractors",
+      ourProductNote:
+        "Pipeline built around jobs, properties, and real revenue",
+    },
+    {
+      competitorsNote: "No clear view of what’s stuck or worth chasing",
+      ourProductNote: "See dollar value at every stage and where deals stall",
+    },
+    {
+      competitorsNote: "Switching tabs to send estimates or schedule jobs",
+      ourProductNote: "One click from lead to estimate or job site visit",
+    },
+    {
+      competitorsNote: "One click from lead to estimate or job site visit",
+      ourProductNote:
+        "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+    },
+    {
+      competitorsNote: "“Won” means the deal disappears into another system",
+      ourProductNote: "Deals stay connected to the job through to completion",
+    },
+    {
+      competitorsNote: "Re-entering data across CRM, estimates, and jobs",
+      ourProductNote:
+        "Enter the information once, and it syncs to everything instantly",
+    },
+  ],
+};
+
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",

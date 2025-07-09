@@ -1,3 +1,4 @@
+"use client";
 import {
   contractorIndustry,
   estimateSoftwareData,
@@ -27,11 +28,17 @@ const EstimaticAiPage = () => {
       <FieldService
         fieldService={estimaticCardData}
         theme="dark"
-        slug="estimatic"
+        slug="estimateTheme"
         apiData={false}
         mainClassName="text-center"
       />
-      <ContractorIndustry contractorIndustry={contractorIndustry} />
+      <ContractorIndustry
+        contractorIndustry={{
+          ...contractorIndustry,
+          url: contractorIndustry.url ?? "",
+          btnText: contractorIndustry.btnText ?? "",
+        }}
+      />
     </main>
   );
 };

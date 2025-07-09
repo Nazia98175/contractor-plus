@@ -37,7 +37,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
     }, 1000);
   }, []);
 
-  const imageUrl = getMediaUrl(heroImg);
+  const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
+
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
@@ -50,8 +51,8 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
             {slug === "estimate"
               ? "Contractor Estimate Software"
               : "   Field Service CRM"}
-            {/* <span>{hero?.heroTitle1}</span> */}
           </span>
+          {/* <span>{hero?.heroTitle1}</span> */}
         </div>
       </CardReveal>
       <div
@@ -69,8 +70,6 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
               } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
             >
               {hero?.heroTitle}
-
-              
             </h2>
             {/* </TextAnimation> */}
             {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}

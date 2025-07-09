@@ -1,13 +1,13 @@
 import React from "react";
 
-interface StatisticDataProps {
+interface StatisticCardProps {
   obj: {
     title: string;
     desc: string;
   };
 }
 
-const StatisticData: React.FC<StatisticDataProps> = ({ obj }) => {
+const StatisticCard: React.FC<StatisticCardProps> = ({ obj }) => {
   return (
     <article className="flex w-full max-w-[307px] flex-col">
       <span className="h-[1px] w-full bg-[radial-gradient(circle,_#ff0000_0%,_rgba(0,0,0,0.6)_60%,_rgba(0,0,0,1)_100%)]"></span>
@@ -19,4 +19,4 @@ const StatisticData: React.FC<StatisticDataProps> = ({ obj }) => {
   );
 };
 
-export default StatisticData;
+export default StatisticCard;

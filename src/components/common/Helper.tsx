@@ -4612,35 +4612,48 @@ export const runWithContractorData = {
 export const estimateSoftwareData = {
   title: "Not all AI estimate software makes your life easier",
   sub_title: "Some AI estimators get “close”. Estimatic gets it right.",
-  headerLeft: "Their way",
+  headerLeft: "Other Options",
   headerRight: "Your way",
   features: [
     {
-      competitorsNote: "CRMs built for sales reps, not contractors",
+      competitorsNote:
+        "Uses AI that’s not much different than the free version of ChatGPT",
+      ourProductNote: "Built on advanced AI models fine-tuned for estimating	",
+    },
+    {
+      competitorsNote: "Standalone tool with inadequate  add-on features",
       ourProductNote:
-        "Pipeline built around jobs, properties, and real revenue",
+        "Estimates auto sync to contacts, jobs, and scheduling tools in Contractor+",
     },
     {
-      competitorsNote: "No clear view of what’s stuck or worth chasing",
-      ourProductNote: "See dollar value at every stage and where deals stall",
-    },
-    {
-      competitorsNote: "Switching tabs to send estimates or schedule jobs",
-      ourProductNote: "One click from lead to estimate or job site visit",
-    },
-    {
-      competitorsNote: "One click from lead to estimate or job site visit",
+      competitorsNote: "Generic line items that don’t match how you bid",
       ourProductNote:
-        "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+        "Labor, materials, assemblies, permits, and info-only lines built to your exact format",
     },
     {
-      competitorsNote: "“Won” means the deal disappears into another system",
-      ourProductNote: "Deals stay connected to the job through to completion",
-    },
-    {
-      competitorsNote: "Re-entering data across CRM, estimates, and jobs",
+      competitorsNote: "Limited supply integrations",
       ourProductNote:
-        "Enter the information once, and it syncs to everything instantly",
+        "Live pricing from Home Depot, Lowe’s, Menards, Ace, Build.com, ABC Supply",
+    },
+    {
+      competitorsNote: "AI guesses numbers based on who-knows-what",
+      ourProductNote:
+        "Estimates are tied to your real labor rates, cost book, and local material prices",
+    },
+    {
+      competitorsNote: "Can only read text input",
+      ourProductNote:
+        "Can read photos, blueprints, and drawings for more context about the job",
+    },
+    {
+      competitorsNote: "Limited customizability",
+      ourProductNote: "Built-in options for labor and material markup",
+    },
+    {
+      competitorsNote:
+        "$120/mo. for 5 people to use a standalone estimating & invoice tool",
+      ourProductNote:
+        "$95/mo. for 5 people to use the entire Contractor+ operating system. Only pay for what you use",
     },
   ],
 };

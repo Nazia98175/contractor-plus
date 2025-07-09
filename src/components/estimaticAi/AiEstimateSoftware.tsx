@@ -79,11 +79,11 @@ const AiEstimateSoftware: React.FC<TheServiceProps> = ({
       </div>
       {/* Mobile-view  */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
-        <RunWithContractorMobile
+        {/* <RunWithContractorMobile
           their={runWithContractorData.headerLeft}
           your={runWithContractorData.headerRight}
           run_contractor={runWithContractorData.features}
-        />
+        /> */}
       </div>
     </section>
   );

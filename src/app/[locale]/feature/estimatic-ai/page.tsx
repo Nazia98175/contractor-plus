@@ -2,6 +2,7 @@ import {
   contractorIndustry,
   estimaticCardData,
   estimaticReviews,
+  realTimeServiceSliderData,
   runWithContractorData,
 } from "@/components/common/Helper";
 import FieldService from "@/components/crmbussiness/FieldService";
@@ -9,6 +10,8 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import AiEstimateSoftware from "@/components/estimaticAi/AiEstimateSoftware";
 import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
+import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
+import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 
 const EstimaticAiPage = () => {
@@ -17,7 +20,12 @@ const EstimaticAiPage = () => {
       <EstimaticHero />
       {/* <OurBlogs /> */}
       <TrustedService reviews={estimaticReviews} slug="crm" />
-      <AiEstimateSoftware runWithContractorData={runWithContractorData} />
+      <RunWithContractor
+        kindAdorable={runWithContractorData}
+        variant="dark"
+        icon={true}
+      />
+      {/* <AiEstimateSoftware runWithContractorData={runWithContractorData} /> */}
       <OneGetsSet />
       <FieldService
         fieldService={estimaticCardData}

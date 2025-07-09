@@ -8,6 +8,24 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import StatisticData from "./StatisticData";
 
 const EstimaticHero = () => {
+  const estimateHeroData = [
+    {
+      title: "<9",
+      desc: "Minutes spent on an estimate",
+    },
+    {
+      title: "$100k+",
+      desc: "More in annual profit from fewer underbids",
+    },
+    {
+      title: "2x",
+      desc: "Higher close rate for estimates sent same-day",
+    },
+    {
+      title: "30%",
+      desc: "Reduction in material cost errors",
+    },
+  ];
   return (
     <section className="bg-cover bg-fixed text-white xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
       <div className="main-container flex justify-center pt-[164px] pb-20 xl:justify-between">
@@ -116,7 +134,11 @@ const EstimaticHero = () => {
         </div>
       </div>
 
-      <StatisticData />
+      <div className="main-container grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
+        {estimateHeroData.map((obj, index) => (
+          <StatisticData key={index} obj={obj} />
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,14 +1,19 @@
 import {
+  dealflowFaq,
   dealflowhero,
   dealReviews,
   dealReviews2,
   fieldcarddetail,
+  formData,
   neverLookBackData,
+  platforms,
   realTimeServiceSliderData,
   reviews,
   runWithContractorData,
 } from "@/components/common/Helper";
 import CrmHero from "@/components/crmbussiness/CrmHero";
+import CrmSercive from "@/components/crmbussiness/CrmSercive";
+import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
@@ -16,6 +21,7 @@ import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
+import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import { title } from "process";
 import React from "react";
 
@@ -51,6 +57,25 @@ const page = () => {
         data={dealReviews2}
         reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
         variant="secondary"
+      />
+      <CrmSercive
+        createBtn={"Get started FREE"}
+        mobileBtn={"Download FREE App"}
+        ncc={"No credit card required"}
+        data={formData}
+        showClouds={false}
+        className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
+        variantBtn="dark"
+      />
+      <TrustBarHvca
+        platforms={platforms}
+        className="mx-auto w-full max-w-[889px]"
+      />
+      <Faq
+        faq={dealflowFaq}
+        classNameAnswer="pt-1"
+        mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+        TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
       />
     </div>
   );

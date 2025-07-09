@@ -4600,3 +4600,53 @@ export const blogheading = {
   btnText: "View All Blogs",
   btnUrl: "/",
 };
+export const formData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle:
+    "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
+  title: "This is what opportunity tracker software should have been all along",
+};
+export const dealflowFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "Can I customize the pipeline stages to match my sales process?",
+      answer:
+        "Yes. You can create and label your own stages like “Estimate Sent,” “Pending Approval,” or “Needs Follow-up”—so the pipeline mirrors how you actually sell.",
+    },
+    {
+      id: 2,
+      question: "Does this replace my spreadsheet or Trello board?YY",
+      answer:
+        "Yes. Deal Flow Tracker replaces disconnected tools with one unified system. It tracks your leads visually, ties them to jobs, and updates your revenue forecast in real time.",
+    },
+    {
+      id: 3,
+      question: "Can I see the dollar value of deals in each stage? ",
+      answer:
+        "Absolutely. You’ll see how much money is sitting in “pending,” “approved,” or any custom stage. You’ll always know where your revenue stands. ",
+    },
+    {
+      id: 4,
+      question: "Can my team update the pipeline from their phones?",
+      answer:
+        "Yes. The mobile app lets field or office staff drag deals across stages and add notes or updates on the go. ",
+    },
+    {
+      id: 5,
+      question: "How does this help me close more deals?",
+      answer:
+        "By showing you exactly which leads are stuck, who’s responsible, and what’s at risk. You can follow up faster and prioritize the deals most likely to close.",
+    },
+    {
+      id: 6,
+      question: "Is this included with the Contractor+ platform?",
+      answer:
+        "Yes. Deal Flow Tracker is a core part of the platform and works seamlessly with CRM, estimates, jobs, and scheduling.",
+    },
+  ],
+};

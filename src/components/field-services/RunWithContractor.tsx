@@ -16,7 +16,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
 }) => {
   const variantClasses = {
     light: {
-      title: "crm-gradient",
+      title: "crm-gradient max-w-[950px]",
       description: "crm-gradient",
       theirwaybg: "their-way",
       yourwaybg: "your-way",
@@ -42,18 +42,22 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
     >
       <h3
-        className={`section-heading mx-auto mb-8 hidden max-w-[950px] px-2 text-center sm:block md:mb-[44px] ${styles.title}`}
+        className={`section-heading mx-auto hidden px-2 text-center sm:block ${styles.title}`}
       >
         {kindAdorable?.title}
       </h3>
       <h3
-        className={`xs:text-[22px] mx-auto mb-8 max-w-[370px] px-2 text-center text-[19px] font-bold sm:hidden md:mb-[44px] ${styles.description}`}
+        className={`xs:text-[22px] mx-auto max-w-[370px] px-2 text-center text-[19px] font-bold sm:hidden ${styles.description}`}
       >
         {kindAdorable?.title}
       </h3>
+      <p className="hero-description mt-3 text-center">
+        {" "}
+        {kindAdorable?.title}
+      </p>
 
       {/* Desktop View */}
-      <div className="mx-auto hidden w-full max-w-[1213px] space-y-5 px-4 md:block">
+      <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">
           <p className="font-myriad text-secondary text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
             {kindAdorable?.headerLeft}

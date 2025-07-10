@@ -4,10 +4,6 @@ import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/KindAdorable";
 import RunWithContractorMobile from "./RunWithContractorMobile";
-<<<<<<< HEAD
-=======
-
->>>>>>> 15751ed1dfb5ba1c9d852746604068f41ff1cb98
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",
@@ -34,10 +30,6 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     },
   };
   const styles = variantClasses[variant];
-<<<<<<< HEAD
-=======
-
->>>>>>> 15751ed1dfb5ba1c9d852746604068f41ff1cb98
   return (
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}

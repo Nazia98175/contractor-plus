@@ -10,7 +10,6 @@ export interface TheServiceProps {
 const AiEstimateSoftware: React.FC<TheServiceProps> = ({
   runWithContractorData,
 }) => {
-  console.log(runWithContractorData);
   return (
     <section className="relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
       {/* <TextAnimation animateOnScroll={true} delay={0.6}> */}

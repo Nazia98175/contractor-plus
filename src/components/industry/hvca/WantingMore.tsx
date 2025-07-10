@@ -7,7 +7,6 @@ const WantingMore: React.FC<WantingMoreProps> = ({
   fieldServiceData,
   slug,
 }) => {
-  console.log(fieldServiceData, "Hello");
   return (
     <section className="relative overflow-hidden px-2 pb-16">
       {/* <TextAnimation animateOnScroll={true} delay={0.1}> */}

@@ -43,7 +43,6 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
 
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
 
-  console.log("edwsa", item);
   return (
     <article
       ref={ref}
@@ -67,7 +66,6 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
             alt={`${item.title} icon`}
           /> */}
           {/* <LottieAnimation loop={true} animationData={animationData} /> */}
-        
         </div>
       ) : (
         <span className="size-7 sm:size-8">{item.icon}</span>

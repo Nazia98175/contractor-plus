@@ -53,7 +53,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       </h3>
       <p className="hero-description mt-3 text-center">
         {" "}
-        {kindAdorable?.title}
+        {kindAdorable?.subTitle}
       </p>
 
       {/* Desktop View */}
@@ -85,12 +85,12 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
           >
             {/* Their Way */}
             <div
-              className={`their-way flex items-center gap-3 rounded-[10px] px-3 py-2 ${styles.theirwaybg}`}
+              className={`their-way flex max-w-[570px] items-center gap-3 rounded-[10px] px-3 py-2 ${styles.theirwaybg}`}
             >
               <span>
                 <RedCrossIcon />
               </span>
-              <p className="text-sangoPink text-start text-[17px] leading-[130%] font-medium">
+              <p className="text-sangoPink text-start text-sm leading-[130%] font-medium md:text-[17.5px]">
                 {item.competitorsNote}
               </p>
             </div>
@@ -106,7 +106,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                 <span>
                   <GreenDotIcon2 />
                 </span>
-                <p className="text-majorelleGardens text-start text-[17px] leading-[130%] font-bold">
+                <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold md:text-[17.5px]">
                   {item.ourProductNote}
                 </p>
               </div>

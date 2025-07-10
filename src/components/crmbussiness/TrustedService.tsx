@@ -8,9 +8,14 @@ import TrustedServiceCard from "./TrustedServiceCard";
 interface TheReviewProps {
   reviews: any;
   slug?: string;
+  className?: string;
 }
 
-const TrustedService: React.FC<TheReviewProps> = ({ reviews, slug }) => {
+const TrustedService: React.FC<TheReviewProps> = ({
+  reviews,
+  slug,
+  className,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -20,7 +25,7 @@ const TrustedService: React.FC<TheReviewProps> = ({ reviews, slug }) => {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className={`relative overflow-hidden ${className}`}>
       {/* <TextAnimation delay={0.2}> */}
       <h3 className="section-heading service-text xs:max-w-[80%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-full">
         {reviews?.data?.[0]?.reviews?.title}

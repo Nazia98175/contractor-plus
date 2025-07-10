@@ -26,9 +26,9 @@ const EstimaticHero = () => {
     },
   ];
   return (
-    <section className="bg-cover bg-fixed pb-[117px] text-white xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
-      <div className="main-container flex justify-center pt-[164px] pb-4 xl:justify-between">
-        <div className="1xl:max-w-[621px] w-full md:max-w-[600px]">
+    <section className="bg-cover bg-fixed pb-14 text-white xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
+      <div className="main-container flex justify-center pt-[126px] pb-1.5 xl:justify-between">
+        <div className="1xl:max-w-[621px] w-full pt-10 md:max-w-[600px]">
           <Image
             src="/images/svg/estimatic.svg"
             width={160}
@@ -133,7 +133,7 @@ const EstimaticHero = () => {
         </div>
       </div>
 
-      <div className="main-container grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
+      <div className="main-container relative z-30 grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
         {estimateHeroData.map((obj, index) => (
           <StatisticCard key={index} obj={obj} />
         ))}

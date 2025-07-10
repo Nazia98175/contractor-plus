@@ -4477,7 +4477,7 @@ export const runWithContractorData = {
 
 export const estimateSoftwareData = {
   title: "Not all AI estimate software makes your life easier",
-  sub_title: "Some AI estimators get “close”. Estimatic gets it right.",
+  subTitle: "Some AI estimators get “close”. Estimatic gets it right.",
   headerLeft: "Other Options",
   headerRight: "Your way",
   features: [
@@ -4595,11 +4595,31 @@ export const dealReviews2 = {
     },
   ],
 };
-export const blogheading = {
-  title: "hello",
-  btnText: "View All Blogs",
+export const estimaticBlogHeadingData = {
+  id: 1,
+  title: "AI related topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
   btnUrl: "/",
 };
+export const estimaticControlData = {
+  id: 320,
+  title: "Scheduling the day’s jobs feels harder than it needs to be",
+  cardsDetail: [
+    {
+      id: 1671,
+      text: "You still can’t print or share a full schedule without copying it into a spreadsheet.",
+    },
+    {
+      id: 1672,
+      text: "You’re forced to find a workaround like Zapier just to sync calendars",
+    },
+    {
+      id: 1673,
+      text: "You don’t have a clear picture of what’s booked, what’s pending, and what needs a crew",
+    },
+  ],
+};
+
 export const formData = {
   id: 282,
   placeholder: "Your Email",

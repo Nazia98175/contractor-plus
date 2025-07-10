@@ -33,7 +33,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
       scale: 1,
       stagger: 0.06,
       duration: 2.5,
-      ease: "elastic.out(1,0.3)",
+      ease: "elastic.out(1,0.5)",
       scrollTrigger: {
         trigger: "#finally-icon-wrapper",
         start: "top 90%",
@@ -113,30 +113,36 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               id="finally-icon-wrapper"
               className="flex flex-row items-center gap-4 lg:flex-col"
             >
-              <Image
-                width={96}
-                height={104}
-                src="/images/webp/software-advice.webp"
-                alt="Software Advice"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
-                sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
-              />
-              <Image
-                width={96}
-                height={104}
-                src="/images/webp/leader.webp"
-                alt="Leader"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
-                sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
-              />
-              <Image
-                width={96}
-                height={91}
-                src="/images/webp/get-app.webp"
-                alt="Get App"
-                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
-                sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
-              />
+              <div className="flex duration-300 ease-in-out hover:!scale-105 hover:!rotate-6">
+                <Image
+                  width={96}
+                  height={104}
+                  src="/images/webp/software-advice.webp"
+                  alt="Software Advice"
+                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
+                  sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+                />
+              </div>
+              <div className="flex duration-300 ease-in-out hover:!scale-105 hover:!rotate-6">
+                <Image
+                  width={96}
+                  height={104}
+                  src="/images/webp/leader.webp"
+                  alt="Leader"
+                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
+                  sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+                />
+              </div>
+              <div className="flex duration-300 ease-in-out hover:!scale-105 hover:!rotate-6">
+                <Image
+                  width={96}
+                  height={91}
+                  src="/images/webp/get-app.webp"
+                  alt="Get App"
+                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
+                  sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+                />
+              </div>
             </div>
             <div
               id="ipad-mobile-wrapper"

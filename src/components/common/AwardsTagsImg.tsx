@@ -3,14 +3,19 @@ import { awards } from "./Helper";
 import Image from "next/image";
 import SliderLayout from "./SliderLayout";
 
-const AwardsTagsImg = () => {
+interface AwardsTagsImgProps {
+  className?: string;
+}
+
+const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className }) => {
   const indexMtMap: Record<number, string> = {
     1: "md:mt-16",
     2: "md:mt-20",
     3: "md:mt-16",
   };
+
   return (
-    <>
+    <main className={`${className}`}>
       <div className="hidden items-center justify-center gap-5 px-4 pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
         {awards.map((award, index) => {
           return (
@@ -50,7 +55,7 @@ const AwardsTagsImg = () => {
           </div>
         ))}
       </SliderLayout>
-    </>
+    </main>
   );
 };
 

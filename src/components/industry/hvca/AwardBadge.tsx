@@ -3,7 +3,6 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
-import { makeOperationList } from "@/components/common/Helper";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 import Image from "next/image";
 interface AwardBadgesProps {
@@ -11,8 +10,10 @@ interface AwardBadgesProps {
   teamsUsingContractor: any;
 }
 
-export default function AwardBadges({buttonInfo, teamsUsingContractor}: AwardBadgesProps) {
- 
+export default function AwardBadges({
+  buttonInfo,
+  teamsUsingContractor,
+}: AwardBadgesProps) {
   return (
     <section className="no-scrollbar relative w-full">
       <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>
@@ -35,7 +36,7 @@ export default function AwardBadges({buttonInfo, teamsUsingContractor}: AwardBad
         priority
       />
       <div className="main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-0 xl:grid xl:grid-cols-3">
-        {teamsUsingContractor?.cards?.map((item:any, index:number) => (
+        {teamsUsingContractor?.cards?.map((item: any, index: number) => (
           <SoftwareUsed key={index} item={item} />
         ))}
       </div>

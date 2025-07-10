@@ -26,7 +26,7 @@ const EstimaticHero = () => {
     },
   ];
   return (
-    <section className="bg-cover bg-fixed pb-14 text-white xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
+    <section className="bg-cover pb-14 text-white xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
       <div className="main-container flex justify-center pt-[126px] pb-1.5 xl:justify-between">
         <div className="1xl:max-w-[621px] w-full pt-10 md:max-w-[600px]">
           <Image

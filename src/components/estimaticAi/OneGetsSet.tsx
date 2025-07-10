@@ -74,7 +74,7 @@ const OneGetsSet = () => {
         </div>
       </div>
 
-      <h4 className="sub-heading mx-auto mt-7 max-w-[742px] text-center text-[#717171]">
+      <h4 className="mx-auto mt-7 max-w-[742px] text-center text-sm text-[#717171] md:text-xl lg:text-[32px]">
         Don’t <span className="text-white">hand off</span> control of your
         estimating process to a tool that can’t bid like you do
       </h4>

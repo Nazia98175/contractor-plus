@@ -60,10 +60,7 @@ const EstimaticAiPage = () => {
           btnText: contractorIndustry.btnText ?? "",
         }}
       />
-      {/* <AwardBadges
-        teamsUsingContractor={TeamsUsingContractor}
-        buttonInfo="hero"
-      /> */}
+
       <AwardsTagsImg className="mt-[133px]" />
       <ThousandsReviews
         data={dealReviews2}

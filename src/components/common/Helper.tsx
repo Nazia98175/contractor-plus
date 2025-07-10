@@ -4608,14 +4608,23 @@ export const estimaticControlData = {
     {
       id: 1671,
       text: "You still can’t print or share a full schedule without copying it into a spreadsheet.",
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
     },
     {
       id: 1672,
       text: "You’re forced to find a workaround like Zapier just to sync calendars",
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
     },
     {
       id: 1673,
       text: "You don’t have a clear picture of what’s booked, what’s pending, and what needs a crew",
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
     },
   ],
 };

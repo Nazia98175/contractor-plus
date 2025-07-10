@@ -47,8 +47,8 @@ export default async function Home({
   } = await getHomepageData(useParams?.locale);
 
   return (
-    <>
-      <div id="view-port-screen" className="relative overflow-hidden opacity-0">
+    <div id="home-page-wrapper" className="">
+      <div id="home-page-view-port-screen" className="relative opacity-0">
         <Hero homePageContent={homePageContent?.data?.hero} />
         <TrustBar
           platforms={platforms}
@@ -67,6 +67,6 @@ export default async function Home({
         resultStats={resultStatsSection?.data?.resultsStatsSection}
         blogs={blogs}
       />
-    </>
+    </div>
   );
 }

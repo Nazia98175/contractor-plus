@@ -18,9 +18,11 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     homePageContent ?? {};
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
-      gsap.to("#view-port-screen", {
+      gsap.to("#home-page-view-port-screen", {
         opacity: 1,
+        duration: 1,
       });
     }, 1000);
   }, []);

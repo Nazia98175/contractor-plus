@@ -1,11 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { JSX } from "react/jsx-runtime";
-import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { HeroSliderIcon1, HeroSliderIcon2 } from "../../common/Icons";
 
 interface Feature {
   id: number;

@@ -4607,21 +4607,33 @@ export const estimaticControlData = {
   cardsDetail: [
     {
       id: 1671,
-      text: "You still can’t print or share a full schedule without copying it into a spreadsheet.",
+      text: (
+        <>
+          AI isn’t replacing <br /> your judgment
+        </>
+      ),
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,
     },
     {
       id: 1672,
-      text: "You’re forced to find a workaround like Zapier just to sync calendars",
+      text: (
+        <>
+          You can tweak, edit, or <br /> override any line
+        </>
+      ),
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,
     },
     {
       id: 1673,
-      text: "You don’t have a clear picture of what’s booked, what’s pending, and what needs a crew",
+      text: (
+        <>
+          "Estimatic shows its work <br /> (no black box)"
+        </>
+      ),
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,
@@ -4632,10 +4644,17 @@ export const estimaticControlData = {
 export const formData = {
   id: 282,
   placeholder: "Your Email",
+  subTitle: "Get started with Estimatic AI in Contractor+ today.",
+  title: "The AI estimate generator that will change your business forever",
+};
+export const estimateFormData = {
+  id: 282,
+  placeholder: "Your Email",
   subTitle:
     "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
   title: "This is what opportunity tracker software should have been all along",
 };
+
 export const dealflowFaq = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",

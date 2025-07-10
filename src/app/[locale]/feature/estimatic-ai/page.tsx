@@ -4,12 +4,12 @@ import {
   contractorIndustry,
   dealReviews2,
   estimateFaq,
+  estimateFormData,
   estimateSoftwareData,
   estimaticBlogHeadingData,
   estimaticCardData,
   estimaticControlData,
   estimaticReviews,
-  formData,
   platforms,
 } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -37,7 +37,7 @@ const EstimaticAiPage = () => {
       <TrustedService
         reviews={estimaticReviews}
         slug="crm"
-        className="pt-6 pb-3.5"
+        className="lg:pt-6 lg:pb-3.5"
       />
       <RunWithContractor
         kindAdorable={estimateSoftwareData}
@@ -74,7 +74,7 @@ const EstimaticAiPage = () => {
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
         ncc={"No credit card required"}
-        data={formData}
+        data={estimateFormData}
         showClouds={false}
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"

@@ -1,12 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import "swiper/css/effect-coverflow";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
-import Link from "next/link";
 
-// Define types for the show information
 interface Show {
   title: string;
   image: string;

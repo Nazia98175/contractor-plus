@@ -1,12 +1,8 @@
 "use client";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
-import RunWithContractorMobile from "./RunWithContractorMobile";
-import { TheServiceProps } from "../crmbussiness/KindAdorable";
-import TextAnimation from "../common/TextAnimation";
 import CardReveal from "../common/CardReveal";
+import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
+import { TheServiceProps } from "../crmbussiness/KindAdorable";
+import RunWithContractorMobile from "./RunWithContractorMobile";
 
 const RunWithContractor: React.FC<TheServiceProps> = ({ kindAdorable }) => {
   return (

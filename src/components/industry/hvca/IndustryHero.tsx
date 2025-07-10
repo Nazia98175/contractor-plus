@@ -6,11 +6,10 @@ import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import "swiper/css"; // Core Swiper styles
 import HvacHeroSlider from "./HvacHeroSlider";
 import ImageProxy from "@/components/common/ImageProxy";
 
-const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
+const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".main-loader", {
@@ -19,6 +18,9 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
     }, 1000);
   }, []);
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
+
+  console.log(heroImg, "heroImg");
+  console.log(imageBaseUrl, "imageBaseUrl");
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
@@ -84,7 +86,7 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
           {heroImg?.url && (
-            <ImageProxy
+            <Image
               alt="hvac-hero"
               src={`${heroImg?.url}`}
               width={945}
@@ -95,7 +97,7 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
           )}
           {heroImg?.url && (
             <ImageProxy
-              alt=""
+              alt="hvac-hero"
               src={`${heroImg?.url}`}
               width={945}
               height={729}
@@ -120,4 +122,4 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
     </section>
   );
 };
-export default HvacHero;
+export default IndustryHero;

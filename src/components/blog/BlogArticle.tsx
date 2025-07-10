@@ -2,8 +2,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef, useState } from "react";
 import type SwiperCore from "swiper";
-import "swiper/css/grid";
-import "swiper/css/pagination";
 import { Grid, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { articles } from "../common/Helper";

@@ -1,12 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import "swiper/css/effect-coverflow";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
-import Link from "next/link";
 
-// Define types for the show information
 interface Show {
   title: string;
   image: string;
@@ -247,9 +244,9 @@ const ContractorIndustrySlider: React.FC = () => {
         className="relative h-full w-full !pt-10"
       >
         {showInfo.map((show, index) => (
-          <Link href={show.itemPath} key={index}>
+          <div key={index}>
             <ContractorIndustrySliderCard show={show} />
-          </Link>
+          </div>
         ))}
       </SliderLayout>
     </div>

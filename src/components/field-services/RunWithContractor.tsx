@@ -1,14 +1,9 @@
 "use client";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
-import RunWithContractorMobile from "./RunWithContractorMobile";
-import { TheServiceProps } from "../crmbussiness/KindAdorable";
-import CardReveal from "../common/CardReveal";
 import Image from "next/image";
-
+import CardReveal from "../common/CardReveal";
+import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
+import { TheServiceProps } from "../crmbussiness/KindAdorable";
+import RunWithContractorMobile from "./RunWithContractorMobile";
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",
@@ -34,9 +29,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       background: "bg-transparent",
     },
   };
-
   const styles = variantClasses[variant];
-
   return (
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
@@ -53,9 +46,8 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       </h3>
       <p className="hero-description mt-3 text-center">
         {" "}
-        {kindAdorable?.title}
+        {kindAdorable?.subTitle}
       </p>
-
       {/* Desktop View */}
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">
@@ -85,16 +77,15 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
           >
             {/* Their Way */}
             <div
-              className={`their-way flex items-center gap-3 rounded-[10px] px-3 py-2 ${styles.theirwaybg}`}
+              className={`their-way flex max-w-[570px] items-center gap-3 rounded-[10px] px-3 py-2 ${styles.theirwaybg}`}
             >
               <span>
                 <RedCrossIcon />
               </span>
-              <p className="text-sangoPink text-start text-[17px] leading-[130%] font-medium">
+              <p className="text-sangoPink text-start text-sm leading-[130%] font-medium md:text-[17.5px]">
                 {item.competitorsNote}
               </p>
             </div>
-
             {/* Your Way */}
             <div className="flex items-center gap-2">
               <span>
@@ -106,7 +97,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                 <span>
                   <GreenDotIcon2 />
                 </span>
-                <p className="text-majorelleGardens text-start text-[17px] leading-[130%] font-bold">
+                <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold md:text-[17.5px]">
                   {item.ourProductNote}
                 </p>
               </div>
@@ -114,7 +105,6 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
           </CardReveal>
         ))}
       </div>
-
       {/* Mobile View */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
         <RunWithContractorMobile
@@ -128,5 +118,4 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     </section>
   );
 };
-
 export default RunWithContractor;

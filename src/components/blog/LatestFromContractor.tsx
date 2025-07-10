@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import "swiper/css";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { latestContractorData } from "../common/Helper";

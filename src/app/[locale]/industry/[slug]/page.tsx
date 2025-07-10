@@ -6,7 +6,7 @@ import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/hvca/AwardBadge";
 import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
-import HvacHero from "@/components/industry/hvca/HvacHero";
+import IndustryHero from "@/components/industry/hvca/IndustryHero";
 import HvacReview from "@/components/industry/hvca/HvacReview";
 import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
@@ -52,13 +52,14 @@ const page = async ({ params }: PageProps) => {
     getCrmPage("crm", useParams.locale, "&populate=*"),
   ]);
   const { homePageContent } = await getHomepageData(useParams?.locale);
+console.log(homePageContent,"homePageContent");
 
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
         <div className="relative">
           {/* <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div> */}
-          <HvacHero
+          <IndustryHero
             hero={crmPageContent?.hero}
             homeCard={homeCards}
             heroImg={heroImg}

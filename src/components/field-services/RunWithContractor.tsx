@@ -47,7 +47,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       >
         {kindAdorable?.title}
       </h3>
-      <p className="hero-description mt-3 text-center">
+      <p className="hero-description mx-auto mt-3 max-w-[80%] text-center">
         {" "}
         {kindAdorable?.subTitle}
       </p>

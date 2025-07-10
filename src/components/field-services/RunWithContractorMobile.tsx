@@ -41,7 +41,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
       >
         {run_contractor.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="mx-auto grid w-fit grid-cols-1 items-center gap-3 text-center">
+            <div className="mx-auto mt-11 grid w-fit grid-cols-1 items-center gap-[22px] text-center">
               {/* Their Way */}
               <div>
                 <p className="font-myriad text-secondary pb-2 text-center text-sm font-semibold sm:text-lg md:text-xl">

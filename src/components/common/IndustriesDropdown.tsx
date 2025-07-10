@@ -50,22 +50,6 @@ const IndustriesDropdown: React.FC<Props> = ({ headerSubList }) => {
     { image: "/images/webp/circular-slide-1.webp" },
     { image: "/images/webp/circular-slide-1.webp" },
     { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
   ];
   const fallbackImage = "/images/webp/circular-slide-1.webp";
 

@@ -262,7 +262,7 @@ body {
   @apply font-inter text-lightBlack px-1 text-xs font-extrabold duration-300 ease-linear lg:text-sm xl:text-base;
 }
 .all-features-button {
-  @apply text-lightBlack font-inter flex items-center gap-2.5 p-1 text-lg font-medium md:text-xl;
+  @apply text-lightBlack font-inter 1xl:text-xl flex items-center gap-2.5 p-1 text-lg font-medium;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

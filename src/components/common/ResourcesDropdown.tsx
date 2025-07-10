@@ -60,7 +60,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
               unoptimized
               width={480}
               height={320}
-              className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+              className={`bg-kuroiBlack absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
                 hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
               }`}
             />
@@ -77,8 +77,8 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
           />
         </div>
       </div>
-      <div className="font-inter sticky bottom-0 left-0 mt-10 flex w-full items-center justify-between gap-6">
-        <Link className="all-features-button group" href="/">
+      <div className="font-inter sticky bottom-0 left-0 mt-8 flex w-full items-center justify-between gap-6">
+        <Link className="all-features-button group" href="/resources">
           Go to Resource Hub
           <ArrowIcon />
         </Link>

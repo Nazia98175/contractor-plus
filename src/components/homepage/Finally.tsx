@@ -6,6 +6,7 @@ import CardReveal from "../common/CardReveal";
 import CloudsAnimation from "../common/CloudsAnimation";
 import { CheckIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import Copy from "../common/Copy";
 interface Finally {
   title: string;
   subTitle: string;
@@ -40,26 +41,36 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="relative z-30 space-y-4">
           {/* <PrimaryAnimatedText delay={3000}> */}
-          <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
-            <span> {finallyC?.title ?? ""}</span>
-          </h2>
+          <Copy animateOnScroll={true}>
+            <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
+              <span> {finallyC?.title ?? ""}</span>
+            </h2>
+          </Copy>
+
           {/* </PrimaryAnimatedText> */}
-          <CardReveal distance={50}>
+          <Copy animateOnScroll={true}>
             <h3 className="text-superSilver mx-auto max-w-[750px] px-2 text-center text-sm font-medium sm:text-base">
               {finallyC?.subTitle ?? ""}
             </h3>
-          </CardReveal>
+          </Copy>
           <CardReveal
             distance={50}
             className="relative z-10 flex flex-wrap items-center justify-center gap-3 pt-2 md:gap-[22px]"
           >
-            {finallyC?.solutionsList?.map((feature:any, index:number) => (
+            {finallyC?.solutionsList?.map((feature: any, index: number) => (
               <div
                 key={index}
                 className="font-myriad text-superSilver flex items-center gap-1.5 text-base font-medium sm:gap-2 sm:font-semibold"
               >
-                <CheckIcon />
-                {feature?.text}
+                <Copy animateOnScroll={true} delay={0.08 * index}>
+                  <span>
+                    <CheckIcon />
+                  </span>
+                </Copy>
+
+                <Copy animateOnScroll={true} delay={0.09 * index}>
+                  <span className="">{feature?.text}</span>
+                </Copy>
               </div>
             ))}
           </CardReveal>

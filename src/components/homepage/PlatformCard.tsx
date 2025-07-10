@@ -14,7 +14,7 @@ interface PlatformCardProps {
 
 const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
   return (
-    <div className="relative z-20 flex flex-col-reverse items-center justify-between gap-2.5 sm:w-fit sm:flex-col lg:w-[47%]">
+    <div className="plateform-cards relative z-20 flex flex-col-reverse items-center justify-between gap-2.5 sm:w-fit sm:flex-col lg:w-[47%]">
       <Image
         width={155}
         height={40}

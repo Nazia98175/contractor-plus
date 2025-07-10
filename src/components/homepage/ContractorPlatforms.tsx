@@ -4,19 +4,19 @@ import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import { contractPlatforms } from "../common/Helper";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import Copy from "../common/Copy";
 
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
-
   return (
     <section className="relative z-20">
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
-        <h4 className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
-          {contractPlatformsData?.title}
-        </h4>
-        <CardReveal
-          distance={50}
-          className="3xl:gap-8 flex flex-wrap justify-center gap-4 gap-y-[30px] sm:gap-y-8 lg:flex-nowrap lg:justify-between"
-        >
+        <Copy animateOnScroll={true}>
+          <h4 className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
+            {contractPlatformsData?.title}
+          </h4>
+        </Copy>
+
+        <div className="3xl:gap-8 flex flex-wrap justify-center gap-4 gap-y-[30px] sm:gap-y-8 lg:flex-nowrap lg:justify-between">
           {contractPlatformsData?.cardsDetail?.map(
             (obj: PlatformItem, index: number) => (
               <article
@@ -38,13 +38,15 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
                   />
                 </div>
-                <p className="text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 text-center text-sm duration-200 sm:px-2 md:text-base xl:text-lg">
-                  {`${obj.text}`}
-                </p>
+                <Copy animateOnScroll={true}>
+                  <p className="text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 text-center text-sm duration-200 sm:px-2 md:text-base xl:text-lg">
+                    {`${obj.text}`}
+                  </p>
+                </Copy>
               </article>
             ),
           )}
-        </CardReveal>
+        </div>
       </div>
       <div className="bg-kuroiBlack absolute bottom-[-1px] z-30 h-[3px] w-full"></div>
     </section>

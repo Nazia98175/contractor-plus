@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import CardReveal from "../common/CardReveal";
 import PlatformCard from "./PlatformCard";
 import { Platform } from "@/types";
 import SliderLayout from "../common/SliderLayout";
+import gsap from "gsap";
 
 interface TrustBarProps {
   platforms: Platform[];
@@ -16,6 +17,21 @@ const TrustBar: React.FC<TrustBarProps> = ({
   showTrustedSection,
   className,
 }) => {
+  useEffect(() => {
+    gsap.set(".plateform-cards", {
+      y: 100,
+      scale: 0.96,
+      opacity: 0,
+    });
+
+    gsap.to(".plateform-cards", {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      stagger: 0.05,
+      delay: 1.4,
+    });
+  }, []);
   return (
     <section className={`relative z-20 ${className}`}>
       {showTrustedSection && (
@@ -23,14 +39,11 @@ const TrustBar: React.FC<TrustBarProps> = ({
           Trusted by over <strong> 50,000</strong> build and service contractors
         </h2>
       )}
-      <CardReveal
-        distance={50}
-        className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
-      >
+      <div className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap">
         {platforms.map((platform, index) => (
           <PlatformCard platform={platform} key={index} />
         ))}
-      </CardReveal>
+      </div>
       <div className="relative z-50 px-4 lg:hidden">
         <SliderLayout
           spaceBetween={9}

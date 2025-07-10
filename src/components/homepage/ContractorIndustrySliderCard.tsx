@@ -10,7 +10,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
       throttleSpeed={15}
       className="h-auto w-full"
     >
-      <div className="bg-lightBlack border-winterWay shadow-c3 relative h-auto w-full rounded-xl border p-2.5 ease-in-out">
+      <div className="bg-lightBlack border-winterWay relative h-auto w-full rounded-xl border p-2.5 ease-in-out">
         <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-base">
           {show.title}
         </h2>

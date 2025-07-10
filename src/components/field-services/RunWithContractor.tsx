@@ -1,4 +1,5 @@
 "use client";
+<<<<<<< HEAD
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -36,6 +37,12 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
   };
 
   const styles = variantClasses[variant];
+=======
+import CardReveal from "../common/CardReveal";
+import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
+import { TheServiceProps } from "../crmbussiness/KindAdorable";
+import RunWithContractorMobile from "./RunWithContractorMobile";
+>>>>>>> 87cd2e5965ae0ad17001b17ace974dd3cd116693
 
   return (
     <section

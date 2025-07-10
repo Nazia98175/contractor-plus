@@ -16,6 +16,10 @@ const nextConfig: import("next").NextConfig = {
         hostname: "167.88.43.123",
         port: "2050",
       },
+      {
+        protocol: "https",
+        hostname: "contractor-plus-website.s3.us-east-2.amazonaws.com",
+      },
     ],
   },
   experimental: {

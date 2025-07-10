@@ -2,6 +2,10 @@ import SmoothScroll from "@/components/common/SmoothScroll";
 import Head from "next/head";
 import { ReactNode } from "react";
 import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+
 type Props = {
   children: ReactNode;
 };

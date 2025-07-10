@@ -1,9 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
+
 import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 import { SwiperOptions } from "swiper/types";
 

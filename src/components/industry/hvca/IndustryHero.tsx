@@ -6,11 +6,10 @@ import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import "swiper/css"; // Core Swiper styles
 import HvacHeroSlider from "./HvacHeroSlider";
 import ImageProxy from "@/components/common/ImageProxy";
 
-const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
+const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".main-loader", {
@@ -19,6 +18,10 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
     }, 1000);
   }, []);
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
+
+  console.log(heroImg,"heroImg");
+  console.log(imageBaseUrl,"imageBaseUrl");
+  
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
@@ -83,10 +86,21 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             {/* <HvacGlowHeroDesktopIcon /> */}
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
+           {heroImg?.url && (
+                <Image
+                  alt="hvac-hero"
+                  src={`${heroImg?.url}`}
+                  width={945}
+                  height={729}
+                  className="hidden w-full object-right md:block"
+                  unoptimized
+                />
+            )}
           {heroImg?.url && (
             <ImageProxy
               alt="hvac-hero"
               src={`${heroImg?.url}`}
+<<<<<<< HEAD:src/components/industry/hvca/HvacHero.tsx
               width={945}
               height={729}
               className="hidden w-full object-right md:block"
@@ -97,12 +111,14 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             <ImageProxy
               alt=""
               src={`${heroImg?.url}`}
+=======
+>>>>>>> 87cd2e5965ae0ad17001b17ace974dd3cd116693:src/components/industry/hvca/IndustryHero.tsx
               width={945}
               height={729}
               className="block w-full object-cover md:hidden"
               unoptimized
             />
-          )}
+          )} 
           <Image
             priority
             fill
@@ -120,4 +136,4 @@ const HvacHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
     </section>
   );
 };
-export default HvacHero;
+export default IndustryHero;

@@ -5,6 +5,8 @@ import CompareTable from "./CompareTable";
 export interface TheServiceProps {
   kindAdorable: any;
   slug?: string;
+  variant?: "light" | "dark";
+  icon?: boolean;
 }
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   return (

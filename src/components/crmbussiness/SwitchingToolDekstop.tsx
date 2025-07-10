@@ -104,14 +104,17 @@ const SwitchingToolDesktop = ({
         >
           <div className="flex w-full justify-center">
             <Image
-              src="/images/webp/switch-card-4.webp"
-              width={370}
-              height={99}
+              src={
+                switchingTool?.cardsDetail?.[0]?.img ||
+                "/images/webp/switch-card-4.webp"
+              }
+              width={switchingTool?.cardsDetail?.[0]?.imgWidth || 370}
+              height={switchingTool?.cardsDetail?.[0]?.imgHeight || 99}
               alt="card 1"
-              className="h-full max-h-[99px] w-full object-center"
+              className="max-h-[99px] object-center"
             />
           </div>
-          <h4 className="1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
@@ -122,14 +125,17 @@ const SwitchingToolDesktop = ({
         >
           <div className="flex w-full justify-center">
             <Image
-              src="/images/webp/switch-card-5.webp"
-              width={370}
-              height={99}
+              src={
+                switchingTool?.cardsDetail?.[1]?.img ||
+                "/images/webp/switch-card-5.webp"
+              }
+              width={switchingTool?.cardsDetail?.[1]?.imgWidth || 370}
+              height={switchingTool?.cardsDetail?.[1]?.imgHeight || 99}
               alt="card 2"
-              className="h-full max-h-[99px] w-full object-center"
+              className="max-h-[99px] object-center"
             />
           </div>
-          <h4 className="1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
@@ -140,14 +146,17 @@ const SwitchingToolDesktop = ({
         >
           <div className="flex w-full justify-center">
             <Image
-              src="/images/webp/switch-card-6.webp"
-              width={370}
-              height={99}
+              src={
+                switchingTool?.cardsDetail?.[2]?.img ||
+                "/images/webp/switch-card-6.webp"
+              }
+              width={switchingTool?.cardsDetail?.[2]?.imgWidth || 370}
+              height={switchingTool?.cardsDetail?.[2]?.imgHeight || 99}
               alt="card 3"
-              className="h-full max-h-[99px] w-full object-center"
+              className="max-h-[99px] object-center"
             />
           </div>
-          <h4 className="1xl:text-[22px] font-jakarta max-w-[90%] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="1xl:text-[22px] max-w-[90%] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>

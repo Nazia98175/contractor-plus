@@ -1,7 +1,7 @@
 import { ReviewCardProps } from "@/types";
-import Image from "next/image";
 import React from "react";
 import { PlayIcon2, StartIcon } from "../../common/Icons";
+import ImageProxy from "@/components/common/ImageProxy";
 
 const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
   const renderStars = (rating: number) => {
@@ -11,7 +11,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
       </span>
     ));
   };
-  console.log(review , "review in hvac review card");
+  console.log(review, "review in hvac review card");
   return (
     <article
       onClick={review.isModal ? openModal : undefined}
@@ -20,13 +20,20 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
     >
       <div className="flex items-center gap-3 sm:flex-col sm:items-start md:gap-5">
         <div className="relative w-fit">
-          <Image
+          <ImageProxy
             width={90}
             height={90}
             src={review.profileImg?.url}
             alt="User"
             className="max-w-[90px] min-w-[90px] rounded"
-          />
+          ></ImageProxy>
+          {/* <Image
+            width={90}
+            height={90}
+            src={review.profileImg?.url}
+            alt="User"
+            className="max-w-[90px] min-w-[90px] rounded"
+          /> */}
           <div className="text-pleasure group-hover:text-blackRussian bg-lightblack absolute -right-2 -bottom-2 h-fit rounded-full p-[5px] duration-300">
             <PlayIcon2 />
           </div>

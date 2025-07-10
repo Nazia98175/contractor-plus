@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
+import ImageProxy from "@/components/common/ImageProxy";
 
 const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
@@ -18,9 +19,8 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   }, []);
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
 
-  console.log(heroImg,"heroImg");
-  console.log(imageBaseUrl,"imageBaseUrl");
-  
+  console.log(heroImg, "heroImg");
+  console.log(imageBaseUrl, "imageBaseUrl");
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
@@ -85,18 +85,18 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             {/* <HvacGlowHeroDesktopIcon /> */}
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
-           {heroImg?.url && (
-                <Image
-                  alt="hvac-hero"
-                  src={`${heroImg?.url}`}
-                  width={945}
-                  height={729}
-                  className="hidden w-full object-right md:block"
-                  unoptimized
-                />
-            )}
           {heroImg?.url && (
             <Image
+              alt="hvac-hero"
+              src={`${heroImg?.url}`}
+              width={945}
+              height={729}
+              className="hidden w-full object-right md:block"
+              unoptimized
+            />
+          )}
+          {heroImg?.url && (
+            <ImageProxy
               alt="hvac-hero"
               src={`${heroImg?.url}`}
               width={945}
@@ -104,7 +104,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
               className="block w-full object-cover md:hidden"
               unoptimized
             />
-          )} 
+          )}
           <Image
             priority
             fill

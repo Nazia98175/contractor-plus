@@ -1,4 +1,3 @@
-import { wantingMoreData } from "@/components/common/Helper";
 import ScrollOverlapCards from "@/components/common/ScrollOverlapCards";
 interface WantingMoreProps {
   fieldServiceData: any;

@@ -3,8 +3,8 @@ import { EstimateDividerIcon, TripleChevronIcon } from "../common/Icons";
 
 const OneGetsSet = () => {
   return (
-    <div className="main-container">
-      <div className="section-heading service-text flex flex-col items-center justify-center gap-3 text-center md:flex-row lg:mb-12">
+    <div className="main-container pb-8 md:pb-16 xl:mt-7 xl:pb-20">
+      <div className="section-heading service-text flex flex-col items-center justify-center gap-3 text-center md:flex-row md:opacity-70 lg:mb-12">
         <span className="hidden md:block">
           <TripleChevronIcon />
         </span>

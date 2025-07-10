@@ -1,9 +1,8 @@
+import { Review } from "@/types";
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
-import Image from "next/image";
-import { Review } from "@/types";
-import { getInitials } from "../common/ReviewCard";
 import ImageProxy from "../common/ImageProxy";
+import { getInitials } from "../common/ReviewCard";
 
 const VARIANT_CLASSES = {
   primary: {
@@ -72,6 +71,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 unoptimized
                 className="h-fit max-w-[42px] rounded-full object-contain"
               />
+            ) : (
               // <Image
               //   src={`${imageBaseUrl}${review.profileImg?.url}`}
               //   alt="avatar"
@@ -81,7 +81,6 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
               //   unoptimized
               //   className="h-fit max-w-[42px] rounded-full object-contain"
               // />
-            ) : (
               <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
                 {/* {(() => {
                   const words = review?.userName?.split(" ").filter(Boolean);

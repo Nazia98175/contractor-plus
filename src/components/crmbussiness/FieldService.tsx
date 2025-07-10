@@ -29,7 +29,7 @@ const FieldService: React.FC<TheServiceProps> = ({
         return "gradient-text max-w-[813px]";
     }
   };
-  console.log(fieldService);
+
   return (
     <section className="relative z-30 px-2 pt-14 sm:pt-20 lg:pt-2">
       <h2

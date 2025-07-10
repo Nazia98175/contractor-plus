@@ -21,8 +21,6 @@ const CrmSercive: React.FC<Props> = ({
   variant = "default",
   variantBtn = "default",
 }) => {
-  console.log(data, "form");
-
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
       <div className="pt-14 pb-10 sm:pt-20 sm:pb-[75px] lg:pt-[110px] xl:pt-[120px]">

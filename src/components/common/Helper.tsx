@@ -4477,7 +4477,7 @@ export const runWithContractorData = {
 
 export const estimateSoftwareData = {
   title: "Not all AI estimate software makes your life easier",
-  sub_title: "Some AI estimators get “close”. Estimatic gets it right.",
+  subTitle: "Some AI estimators get “close”. Estimatic gets it right.",
   headerLeft: "Other Options",
   headerRight: "Your way",
   features: [
@@ -4595,18 +4595,66 @@ export const dealReviews2 = {
     },
   ],
 };
-export const blogheading = {
-  title: "hello",
-  btnText: "View All Blogs",
+export const estimaticBlogHeadingData = {
+  id: 1,
+  title: "AI related topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
   btnUrl: "/",
 };
+export const estimaticControlData = {
+  id: 320,
+  title: "Scheduling the day’s jobs feels harder than it needs to be",
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          AI isn’t replacing <br /> your judgment
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          You can tweak, edit, or <br /> override any line
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          "Estimatic shows its work <br /> (no black box)"
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
+
 export const formData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle: "Get started with Estimatic AI in Contractor+ today.",
+  title: "The AI estimate generator that will change your business forever",
+};
+export const estimateFormData = {
   id: 282,
   placeholder: "Your Email",
   subTitle:
     "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
   title: "This is what opportunity tracker software should have been all along",
 };
+
 export const dealflowFaq = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",

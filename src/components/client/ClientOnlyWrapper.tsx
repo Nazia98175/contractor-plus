@@ -22,7 +22,6 @@ export default function ClientOnlyWrapper({ data }: ClientOnlyWrapperProps) {
   useEffect(() => {
     setHasMounted(true);
   }, []);
-  console.log("tetvd", data);
 
   if (!hasMounted) {
     return (

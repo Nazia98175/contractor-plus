@@ -1,5 +1,4 @@
 "use client";
-
 import { JSX } from "react/jsx-runtime";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -4,7 +4,6 @@ import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/KindAdorable";
 import RunWithContractorMobile from "./RunWithContractorMobile";
-
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",
@@ -30,9 +29,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       background: "bg-transparent",
     },
   };
-
   const styles = variantClasses[variant];
-
   return (
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
@@ -51,7 +48,6 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
         {" "}
         {kindAdorable?.subTitle}
       </p>
-
       {/* Desktop View */}
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">
@@ -90,7 +86,6 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                 {item.competitorsNote}
               </p>
             </div>
-
             {/* Your Way */}
             <div className="flex items-center gap-2">
               <span>
@@ -110,7 +105,6 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
           </CardReveal>
         ))}
       </div>
-
       {/* Mobile View */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
         <RunWithContractorMobile
@@ -124,5 +118,4 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     </section>
   );
 };
-
 export default RunWithContractor;

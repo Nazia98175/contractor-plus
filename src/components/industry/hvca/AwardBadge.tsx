@@ -1,5 +1,4 @@
 "use client";
-
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeAccountButton from "@/components/common/FreeAccountButton";

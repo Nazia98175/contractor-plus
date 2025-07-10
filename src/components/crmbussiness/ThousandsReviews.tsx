@@ -9,9 +9,15 @@ interface Props {
   data: any;
   reviews: any;
   variant?: "primary" | "secondary";
+  apiData?: boolean;
 }
 
-const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
+const ThousandsReviews: React.FC<Props> = ({
+  data,
+  reviews,
+  variant,
+  apiData,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -57,6 +63,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
                   ? () => openModal(review.videoLink || "")
                   : () => {}
               }
+              apiData={apiData}
             />
           ))}
         </SliderLayout>

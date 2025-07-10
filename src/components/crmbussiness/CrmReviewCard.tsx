@@ -26,12 +26,14 @@ const VARIANT_CLASSES = {
 
 interface Props extends ReviewCardProps {
   variant?: "primary" | "secondary";
+  apiData?: boolean;
 }
 
 const CrmReviewCard: React.FC<Props> = ({
   review,
   openModal,
   variant = "primary",
+  apiData = true,
 }) => {
   const styles = VARIANT_CLASSES[variant];
   const renderStars = (rating: number) => {
@@ -55,34 +57,56 @@ const CrmReviewCard: React.FC<Props> = ({
             : "flex-row sm:flex-col"
         }`}
       >
-        <div className="relative w-fit">
-          {review?.profileImg &&
-          typeof review.profileImg === "object" &&
-          "url" in review.profileImg ? (
-            <ImageProxy
+        {apiData ? (
+          <div className="relative w-fit">
+            {review?.profileImg &&
+            typeof review.profileImg === "object" &&
+            "url" in review.profileImg ? (
+              <ImageProxy
+                width={90}
+                height={90}
+                src={review.profileImg?.url}
+                alt="User"
+                className="max-w-[90px] min-w-[90px] rounded"
+              />
+            ) : (
+              <div
+                className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
+              >
+                {getInitials(review.userName ?? "")}
+              </div>
+            )}{" "}
+            {review.isModal && (
+              <div
+                className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
+              >
+                <span className="group-hover:text-romanRed text-lightBlack">
+                  <PlayIcon />
+                </span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="relative w-fit">
+            <Image
               width={90}
               height={90}
-              src={review.profileImg?.url}
+              src={`${review.profileImg}`}
               alt="User"
               className="max-w-[90px] min-w-[90px] rounded"
             />
-          ) : (
-            <div
-              className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
-            >
-              {getInitials(review.userName ?? "")}
-            </div>
-          )}{" "}
-          {review.isModal && (
-            <div
-              className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
-            >
-              <span className="group-hover:text-romanRed text-lightBlack">
-                <PlayIcon />
-              </span>
-            </div>
-          )}
-        </div>
+            {review.isModal && (
+              <div
+                className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
+              >
+                <span className="group-hover:text-romanRed text-lightBlack">
+                  <PlayIcon />
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="flex w-full flex-col gap-1.5">
           <div className="flex w-full flex-col flex-wrap justify-between gap-1.5 sm:flex-row sm:flex-nowrap sm:gap-2">
             <div

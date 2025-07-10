@@ -4568,7 +4568,7 @@ export const dealReviews2 = {
       review:
         '"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."',
       rating: 5,
-      useriImage: "/images/webp/juan-gracia.webp",
+      profileImg: "/images/webp/juan-gracia.webp",
       videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
     },
     {
@@ -4579,7 +4579,7 @@ export const dealReviews2 = {
       review:
         '"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"',
       rating: 5,
-      useriImage: "/images/webp/rands.webp",
+      profileImg: "/images/webp/rands.webp",
       videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     },
     {
@@ -4590,7 +4590,7 @@ export const dealReviews2 = {
       review:
         '"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."',
       rating: 5,
-      useriImage: "/images/webp/rands.webp",
+      profileImg: "/images/webp/rands.webp",
       videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
     },
   ],
@@ -4697,4 +4697,11 @@ export const dealflowFaq = {
         "Yes. Deal Flow Tracker is a core part of the platform and works seamlessly with CRM, estimates, jobs, and scheduling.",
     },
   ],
+};
+
+export const dealFlowBlogHeadingData = {
+  id: 1,
+  title: "Deal Flow Tracking  topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
 };

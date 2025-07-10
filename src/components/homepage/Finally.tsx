@@ -1,12 +1,16 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import CardReveal from "../common/CardReveal";
 import CloudsAnimation from "../common/CloudsAnimation";
 import { CheckIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import Copy from "../common/Copy";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 interface Finally {
   title: string;
   subTitle: string;
@@ -16,6 +20,28 @@ interface TheFinallyProps {
   finallyC: Finally;
 }
 const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
+  useEffect(() => {
+    gsap.set("#finally-icon-wrapper img", {
+      y: 200,
+      opacity: 0,
+      scale: 0.97,
+    });
+
+    gsap.to("#finally-icon-wrapper img", {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      stagger: 0.06,
+      duration: 2.5,
+      ease: "elastic.out(1,0.3)",
+      scrollTrigger: {
+        trigger: "#finally-icon-wrapper",
+        start: "top 90%",
+        markers: false,
+        once: true,
+      },
+    });
+  }, []);
   return (
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
       <>
@@ -83,56 +109,58 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               />
             </div>
             {/* <FogGenerator /> */}
-            <CardReveal distance={50}>
-              <div className="flex flex-row items-center gap-4 lg:flex-col">
-                <Image
-                  width={96}
-                  height={104}
-                  src="/images/webp/software-advice.webp"
-                  alt="Software Advice"
-                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
-                  sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
-                />
-                <Image
-                  width={96}
-                  height={104}
-                  src="/images/webp/leader.webp"
-                  alt="Leader"
-                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
-                  sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
-                />
-                <Image
-                  width={96}
-                  height={91}
-                  src="/images/webp/get-app.webp"
-                  alt="Get App"
-                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
-                  sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
-                />
-              </div>
-            </CardReveal>
-            <CardReveal distance={50}>
-              <div className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40">
-                <Image
-                  height={600}
-                  width={715}
-                  src="/images/webp/ipad.webp"
-                  alt="Ipad Design"
-                  className="max-h-full w-full object-center lg:max-w-[715px]"
-                  priority
-                  sizes="(min-width: 1024px) 715px, 100vw"
-                />
-                <Image
-                  height={300}
-                  width={300}
-                  src="/images/webp/mobile.webp"
-                  alt="Mobile Design"
-                  className="absolute top-[20%] right-0 max-w-[35%] object-contain md:top-[8%] lg:max-w-[280px] xl:max-w-[300px]"
-                  sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
-                  priority
-                />
-              </div>
-            </CardReveal>
+            <div
+              id="finally-icon-wrapper"
+              className="flex flex-row items-center gap-4 lg:flex-col"
+            >
+              <Image
+                width={96}
+                height={104}
+                src="/images/webp/software-advice.webp"
+                alt="Software Advice"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
+                sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+              />
+              <Image
+                width={96}
+                height={104}
+                src="/images/webp/leader.webp"
+                alt="Leader"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
+                sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+              />
+              <Image
+                width={96}
+                height={91}
+                src="/images/webp/get-app.webp"
+                alt="Get App"
+                className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
+                sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+              />
+            </div>
+            <div
+              id="ipad-mobile-wrapper"
+              className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40"
+            >
+              <Image
+                height={600}
+                width={715}
+                src="/images/webp/ipad.webp"
+                alt="Ipad Design"
+                className="max-h-full w-full object-center lg:max-w-[715px]"
+                priority
+                sizes="(min-width: 1024px) 715px, 100vw"
+              />
+              <Image
+                height={300}
+                width={300}
+                src="/images/webp/mobile.webp"
+                alt="Mobile Design"
+                className="absolute top-[20%] right-0 max-w-[35%] object-contain md:top-[8%] lg:max-w-[280px] xl:max-w-[300px]"
+                sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
+                priority
+              />
+            </div>
           </div>
         </div>
       </>

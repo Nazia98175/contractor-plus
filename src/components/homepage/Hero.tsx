@@ -21,6 +21,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
     setTimeout(() => {
       gsap.to("#view-port-screen", {
         opacity: 1,
+        duration: 1,
       });
     }, 1000);
   }, []);

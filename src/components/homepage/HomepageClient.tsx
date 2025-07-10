@@ -31,15 +31,12 @@ const HomepageClient = ({
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
       <Finally finallyC={problemSolutions} />
-      <CoreFeatures coreFeatures={featurHighlight} />
+      {/* <CoreFeatures coreFeatures={featurHighlight} /> */}
       <Features features={homePageContent?.data?.serviceList} />
       <ContractorIndustry
         contractorIndustry={homePageContent?.data?.Industries}
       />
-      <OurReviews
-        reviewsList={reviewsList?.reviews}
-        reviews={reviewsList}
-      />
+      <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />
       <WhatEverClient
         data={homePageContent?.data?.contractorConnects}
         resultStats={resultStats}

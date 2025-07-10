@@ -46,10 +46,9 @@ export default async function Home({
     blogs,
   } = await getHomepageData(useParams?.locale);
 
-
   return (
     <>
-      <div className="relative overflow-hidden">
+      <div id="view-port-screen" className="relative overflow-hidden opacity-0">
         <Hero homePageContent={homePageContent?.data?.hero} />
         <TrustBar
           platforms={platforms}

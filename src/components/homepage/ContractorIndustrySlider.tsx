@@ -247,9 +247,9 @@ const ContractorIndustrySlider: React.FC = () => {
         className="relative h-full w-full !pt-10"
       >
         {showInfo.map((show, index) => (
-          <Link href={show.itemPath} key={index}>
+          <div key={index}>
             <ContractorIndustrySliderCard show={show} />
-          </Link>
+          </div>
         ))}
       </SliderLayout>
     </div>

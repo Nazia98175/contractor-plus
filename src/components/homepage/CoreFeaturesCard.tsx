@@ -295,7 +295,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
       <div className="relative z-20 h-full lg:w-fit">
         <div
           ref={navContainerRef}
-          className={`z-20 max-h-full min-h-full w-full lg:w-fit lg:self-start`}
+          className={`z-20 w-full lg:w-fit lg:self-start`}
         >
           <FeatureNavigation
             features={titles}

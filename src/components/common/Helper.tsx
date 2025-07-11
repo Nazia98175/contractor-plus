@@ -20,7 +20,6 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
-import { JSX } from "react";
 import mobile from "../../../public/lotties/11-mobile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
 import animationData from "../../../public/lotties/crm.json";
@@ -4579,14 +4578,14 @@ export const dealReviews2 = {
       review:
         '"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"',
       rating: 5,
-      profileImg: "/images/webp/rands.webp",
+      profileImg: "/images/webp/rushville.webp",
       videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
     },
     {
       id: 3,
       isModal: true,
       userName: "Scott Azure",
-      userRole: " CEO at Rands Mechanical",
+      userRole: "CEO at Rands Mechanical",
       review:
         '"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."',
       rating: 5,

@@ -31,6 +31,7 @@ export interface ServiceData {
   cardQuote: string;
   userName: string;
   cardImg?: { url?: string };
+  lottieJson?: object;
 }
 
 export type ContractorPlatformsProps = {

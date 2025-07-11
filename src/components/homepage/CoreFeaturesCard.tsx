@@ -250,32 +250,34 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   useEffect(() => {
-    const container = containerRef.current;
-    const navContainer = navContainerRef.current;
-    const content = contentRef.current;
+    setTimeout(() => {
+      const container = containerRef.current;
+      const navContainer = navContainerRef.current;
+      const content = contentRef.current;
 
-    if (!container || !navContainer || !content) return;
+      if (!container || !navContainer || !content) return;
 
-    // Create ScrollTrigger for pinning the navigation
-    const pinTrigger = ScrollTrigger.create({
-      trigger: container,
-      start: "top 90px",
-      end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
-      pin: navContainer,
-      pinSpacing: false,
-      invalidateOnRefresh: true,
-      // Optional: Add some debugging
-      markers: false, // Set to true for debugging
-      onUpdate: (self) => {
-        // Optional: Handle any updates during scroll
-        console.log("Pin progress:", self.progress);
-      },
-    });
+      // Create ScrollTrigger for pinning the navigation
+      const pinTrigger = ScrollTrigger.create({
+        trigger: container,
+        start: "top 90px",
+        end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
+        pin: navContainer,
+        pinSpacing: false,
+        invalidateOnRefresh: true,
+        // Optional: Add some debugging
+        markers: false, // Set to true for debugging
+        onUpdate: (self) => {
+          // Optional: Handle any updates during scroll
+          console.log("Pin progress:", self.progress);
+        },
+      });
 
-    // Cleanup function
-    return () => {
-      pinTrigger.kill();
-    };
+      // Cleanup function
+      return () => {
+        pinTrigger.kill();
+      };
+    }, 2500);
   }, []);
 
   // Optional: Refresh ScrollTrigger on window resize

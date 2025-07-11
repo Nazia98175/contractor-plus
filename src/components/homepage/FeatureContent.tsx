@@ -3,6 +3,7 @@ import React from "react";
 import { featureContentss } from "../common/Helper";
 import LottieAnimation from "../common/LottieAnimation";
 import Image from "next/image";
+
 type FeatureContent = {
   id: number;
   title: string;
@@ -23,10 +24,6 @@ type Props = {
 };
 
 const FeatureContent = ({ featureContents, contentRefs }: Props) => {
-  // const firstContents = featureContents
-  //   ?.map((feature) => feature?.content[0])
-  //   .filter(Boolean);
-
   console.log(featureContents);
 
   return (
@@ -46,9 +43,10 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             </h4>
             <div className="relative w-full overflow-hidden">
               <LottieAnimation
-                loop={true}
+                loop={false}
                 animationData={featureContentss?.[index]?.titleImg}
                 className="hidden sm:block"
+                playOnce={true} // Enable play-once behavior
               />
 
               <Image
@@ -61,11 +59,6 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             </div>
             <p className="text-wallStreet space-y-2 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
               {content.description}
-              {/* {featureContents?.[index]?.cardQuote && (
-              <span className="text-secondary">
-                {featureContents?.[index]?.cardQuote}
-              </span>
-            )} */}
             </p>
           </div>
         ))}

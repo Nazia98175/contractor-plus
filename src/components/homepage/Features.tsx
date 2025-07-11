@@ -1,13 +1,9 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { featureKeys } from "../common/Helper";
 import SliderLayout from "../common/SliderLayout";
 import FeatureCard from "./FeatureCard";
-type HeroProps = {
-  features: any; // Replace `any` with the actual type if available
-};
+
 const Features = ({ features }: { features: any }) => {
-  const t = useTranslations("feature");
   const featureData = featureKeys.map((item, index) => ({
     title: features?.[index]?.title,
     subTitle: features?.[index]?.subTitle,

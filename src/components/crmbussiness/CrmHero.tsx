@@ -30,13 +30,6 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   //     once: true,
   //   });
   // }, []);
-  useEffect(() => {
-    setTimeout(() => {
-      gsap.to(".main-loader", {
-        opacity: 0,
-      });
-    }, 1000);
-  }, []);
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 

@@ -3,7 +3,6 @@ import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import LottieAnimation from "./LottieAnimation";
-import animationData from "../../../public/lotties/the-engine-contractor.json";
 import ImageProxy from "./ImageProxy";
 interface SoftwareItem {
   icon: React.ReactNode;

@@ -12,14 +12,14 @@ const AiEstimateSoftware: React.FC<TheServiceProps> = ({
 }) => {
   return (
     <section className="relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
-      {/* <TextAnimation animateOnScroll={true} delay={0.6}> */}
+      {/* <Copy animateOnScroll={true} delay={0.6}> */}
       <h3 className="section-heading service-text mx-auto mb-8 hidden max-w-[950px] px-2 text-center sm:block md:mb-[44px]">
         {runWithContractorData.title}
       </h3>
       <h3 className="service-text xs:text-[22px] mx-auto mb-8 max-w-[370px] px-2 text-center text-[19px] font-bold sm:hidden md:mb-[44px]">
         {runWithContractorData.title}
       </h3>
-      {/* </TextAnimation> */}
+      {/* </Copy> */}
       <p className="text-lf mt-3 text-center font-medium">
         {runWithContractorData.sub_title}
       </p>

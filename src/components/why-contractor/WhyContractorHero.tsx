@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimatedLineIcon,
   LogoIcon,
   VideoPauseIcon,
   VideoPlayIcon,
 } from "../common/Icons";
-import Image from "next/image";
-import TextAnimation from "../common/TextAnimation";
+import Copy from "../common/Copy";
 
 const WhyContractorHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -85,19 +85,19 @@ const WhyContractorHero = () => {
         <div className="pointer-events-none absolute top-[40%] left-0 mx-auto w-full max-w-[600px] sm:top-0 lg:max-w-[840px]">
           <AnimatedLineIcon />
         </div>
-        <TextAnimation animateOnScroll={false} delay={0}>
+        <Copy animateOnScroll={false} delay={0}>
           <h2 className="main-heading mb-2 bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent max-sm:mx-auto sm:mb-4">
             You can't scale a contracting business built on bottlenecks
           </h2>
-        </TextAnimation>
-        <TextAnimation animateOnScroll={false} delay={0.4}>
+        </Copy>
+        <Copy animateOnScroll={false} delay={0.4}>
           <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
             Hard work got you here. But it's not enough to get you{" "}
             <span className="text-decemberSky italic">
               where you want to go.
             </span>
           </p>
-        </TextAnimation>
+        </Copy>
         <div className="relative">
           <div className="absolute top-1/2 left-0 h-auto w-full max-w-[274px] translate-y-[-50%] blur-[12px]">
             <Image

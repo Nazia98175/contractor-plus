@@ -50,7 +50,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
   }, []);
   return (
     <section ref={sectionRef} className="relative overflow-hidden px-2 pb-16">
-      {/* <TextAnimation animateOnScroll={true} delay={0.1}> */}
+      {/* <Copy animateOnScroll={true} delay={0.1}> */}
 
       <div
         ref={headingRef}
@@ -71,7 +71,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
           </h2>
         )}
       </div>
-      {/* </TextAnimation> */}
+      {/* </Copy> */}
 
       <ScrollOverlapCards
         theme="light"

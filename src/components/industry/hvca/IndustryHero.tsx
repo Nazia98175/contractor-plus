@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
+import Copy from "@/components/common/Copy";
 
 const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   useEffect(() => {
@@ -40,16 +41,16 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             alt="hvac gradient"
           />
           <div className="relative z-30 w-full sm:space-y-6 md:max-w-[70%]">
-            {/* <TextAnimation animateOnScroll={false} delay={3}> */}
-            <h1 className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl">
-              {hero?.heroTitle}
-            </h1>
-            {/* </TextAnimation> */}
-            {/* <TextAnimation animateOnScroll={false} delay={3}> */}
-            <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[514px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
-              {hero?.heroDescription}
-            </p>
-            {/* </TextAnimation> */}
+            <Copy animateOnScroll={false} delay={3}>
+              <h1 className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl">
+                {hero?.heroTitle}
+              </h1>
+            </Copy>
+            <Copy animateOnScroll={false} delay={3}>
+              <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[514px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
+                {hero?.heroDescription}
+              </p>
+            </Copy>
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
                 text={hero?.createBtn}

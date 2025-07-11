@@ -26,7 +26,7 @@ const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
         <div className="trusted-gradient pointer-events-none absolute -bottom-[10%] left-[0px] z-40 hidden h-full w-20 lg:block xl:w-[100px] 2xl:w-[150px]"></div>
         <div className="trusted-gradient pointer-events-none absolute right-[0px] -bottom-[10%] z-40 hidden h-full w-20 rotate-180 lg:block xl:w-[100px] 2xl:w-[150px]"></div>
-        {/* <TextAnimation animateOnScroll={true} delay={0.8}> */}
+        {/* <Copy animateOnScroll={true} delay={0.8}> */}
         <h2
           className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
             variant === "secondary" ? "gradient-white" : "crm-gradient"
@@ -35,7 +35,7 @@ const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
           {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
           {data?.title?.split("4.7 ★")?.[1]}
         </h2>
-        {/* </TextAnimation> */}
+        {/* </Copy> */}
 
         <Marquee pauseOnClick speed={30} direction="right" pauseOnHover>
           {reviews?.map((review: any) => (

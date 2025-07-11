@@ -1,14 +1,11 @@
 "use client";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import React, { useEffect } from "react";
-import CardReveal from "../common/CardReveal";
-import CloudsAnimation from "../common/CloudsAnimation";
-import { CheckIcon } from "../common/Icons";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import Copy from "../common/Copy";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import CloudsAnimation from "../common/CloudsAnimation";
+import Copy from "../common/Copy";
+import { CheckIcon } from "../common/Icons";
 gsap.registerPlugin(ScrollTrigger);
 
 interface Finally {
@@ -87,14 +84,12 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
         <div className="relative z-30 space-y-4">
-          {/* <PrimaryAnimatedText delay={3000}> */}
           <Copy animateOnScroll={true}>
             <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
               <span> {finallyC?.title ?? ""}</span>
             </h2>
           </Copy>
 
-          {/* </PrimaryAnimatedText> */}
           <Copy animateOnScroll={true}>
             <h3 className="text-superSilver mx-auto max-w-[750px] px-2 text-center text-sm font-medium sm:text-base">
               {finallyC?.subTitle ?? ""}

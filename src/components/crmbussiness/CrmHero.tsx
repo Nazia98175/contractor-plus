@@ -9,6 +9,7 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
+import Copy from "../common/Copy";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -61,7 +62,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
-            {/* <TextAnimation delay={0.3} animateOnScroll={false}> */}
+            {/* <Copy delay={0.3} animateOnScroll={false}> */}
             <h2
               className={`${
                 slug === "estimate"
@@ -71,14 +72,14 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
             >
               {hero?.heroTitle}
             </h2>
-            {/* </TextAnimation> */}
-            {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}
-            <p
-              className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
-            >
-              {hero?.heroDescription}
-            </p>
-            {/* </TextAnimation> */}
+            {/* </Copy> */}
+            <Copy delay={0.5} animateOnScroll={false}>
+              <p
+                className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
+              >
+                {hero?.heroDescription}
+              </p>
+            </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.6}>

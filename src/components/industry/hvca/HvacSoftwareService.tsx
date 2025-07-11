@@ -53,20 +53,20 @@ const HvacSoftwareService: React.FC<HvacSoftwareServiceProps> = ({
     <div className={` ${className}`}>
       <div className="relative overflow-hidden px-2 xl:overflow-visible">
         <div className="pb-[47px] md:pb-[75px]">
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          <Copy animateOnScroll={false} delay={0.2}>
             <h3
               className={`sub-heading mx-auto mb-4 max-w-[840px] text-center font-bold text-white ${titleClass}`}
             >
               {data?.title}
             </h3>
-          </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          </Copy>
+          <Copy animateOnScroll={false} delay={0.2}>
             <p
               className={`${descColorClass} mb-7 text-center text-base font-medium md:mb-8 lg:mb-9 lg:text-lg xl:text-xl xl:!leading-[124%]`}
             >
               {data?.sub_title}
             </p>
-          </TextAnimation>
+          </Copy>
           <CardReveal>
             <form
               className="mx-auto flex w-full max-w-[550px] flex-col items-start justify-center gap-3 md:max-w-[657px] md:flex-row"

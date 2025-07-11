@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect } from "react";
 import Copy from "../common/Copy";
-import { contractPlatforms } from "../common/Helper";
+
 gsap.registerPlugin(ScrollTrigger);
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   console.log(contractPlatformsData, "contractPlatformsData");
@@ -30,6 +30,10 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
       },
     });
   }, []);
+
+  console.log("====================================");
+  console.log(contractPlatformsData);
+  console.log("====================================");
   return (
     <section className="relative z-20">
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
@@ -54,7 +58,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                     width={389}
                     height={187}
                     sizes="(max-width: 768px) 289px, 389px"
-                    src={getMediaUrl(obj.cardImg) || "/fallback.jpg"}
+                    src={obj.cardImg.url || "/fallback.jpg"}
                     alt={`${obj.text}`}
                     priority
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"

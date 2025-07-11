@@ -9,13 +9,6 @@ import React, { useEffect } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
 
 const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
-  useEffect(() => {
-    setTimeout(() => {
-      gsap.to(".main-loader", {
-        opacity: 0,
-      });
-    }, 1000);
-  }, []);
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
 
   return (

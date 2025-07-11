@@ -17,7 +17,7 @@ export const getHomepageData = async (
   locale: string,
 ): Promise<HomepageDataResponse> => {
   const populateDefault = "&populate=*";
-  const populatePlatforms = "&populate[commonProblems][populate]=cardsDetail";
+  const populatePlatforms = "&populate[commonProblems][populate][cardsDetail][populate]=*";
   const populateReviews = "&populate[reviews][populate]=reviews";
   const populateProblemSolutions = "&populate[problemSolutionSection][populate]=solutionsList";
   const featurHighlights = "&populate[featureHighlightSection][populate]=features";

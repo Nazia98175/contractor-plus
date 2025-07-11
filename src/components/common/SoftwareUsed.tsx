@@ -54,7 +54,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       ) : icons && index !== undefined && icons[index]?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <ImageProxy
-            src="/images/svg/PipleLine-Track.svg"
+            src={icons[index].url}
             fill
             className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}

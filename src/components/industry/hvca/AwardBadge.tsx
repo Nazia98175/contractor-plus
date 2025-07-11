@@ -8,7 +8,7 @@ import {
   FasterIcon3,
 } from "@/components/common/Icons";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
-import { getDecryptedItem } from "@/utils/localStorage";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 interface AwardBadgesProps {
@@ -22,11 +22,7 @@ export default function AwardBadges({
   teamsUsingContractor,
   customIconsMap,
 }: AwardBadgesProps) {
-  const [commonData, setCommonData] = useState<any>(null);
-    useEffect(() => {
-      const data = getDecryptedItem("commonData");
-      setCommonData(data);
-    }, []);
+  
   return (
     <section className="no-scrollbar relative w-full">
       <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>
@@ -54,10 +50,10 @@ export default function AwardBadges({
         ))}
       </div>
       <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">
-        <FreeAccountButton text={commonData?.getStartedFreeBtn} />
+        <FreeAccountButton text={buttonInfo?.getStartedFreeBtn} />
         <CardRequiredButton
           className="text-winterWay"
-          text={commonData?.nccTxt}
+          text={buttonInfo?.nccTxt}
         />
       </div>
       <AwardsTagsImg />

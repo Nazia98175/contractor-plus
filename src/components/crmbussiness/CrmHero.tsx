@@ -9,7 +9,6 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
-import { getDecryptedItem } from "@/utils/localStorage";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -18,8 +17,9 @@ export interface TheHeroProps {
   slug?: string;
   heroImg?: any;
   homeCard?: any;
+  commonData?: any;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
+const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg , commonData}) => {
   // const wrapperRef = useRef<HTMLDivElement | null>(null);
   // useEffect(() => {
   //   gsap.to(wrapperRef.current, {
@@ -30,12 +30,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   //     once: true,
   //   });
   // }, []);
-  const [commonData, setCommonData] = useState<any>(null);
-  useEffect(() => {
-    const data = getDecryptedItem("commonData");
-
-    setCommonData(data);
-  }, []);
+ 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 
   return (

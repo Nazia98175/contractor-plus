@@ -4,7 +4,7 @@ import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
-import { getDecryptedItem } from "@/utils/localStorage";
+
 
 interface CommonFormFieldProps {
   title: string;
@@ -56,11 +56,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
     return variantsForm[variant];
   };
   const variantStyles = getVariantStyles();
-const [commonData, setCommonData] = useState<any>(null);
-  useEffect(() => {
-    const data = getDecryptedItem("commonData");
-    setCommonData(data);
-  }, []);
+
   return (
     <>
       {showTitle && (
@@ -103,16 +99,16 @@ const [commonData, setCommonData] = useState<any>(null);
                 {loading ? (
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
-                  commonData?.getStartedFreeBtn
+                  createBtn
                 )}
               </button>
 
               <div className="hidden items-center gap-2 pt-3 md:flex">
-                <CardRequiredButton variantBtn={variantBtn} text={commonData?.nccTxt} />
+                <CardRequiredButton variantBtn={variantBtn} text={ncc} />
               </div>
             </div>
             <div className="flex w-full items-center justify-center md:hidden">
-              <CardRequiredButton text={commonData?.nccTxt} variantBtn={variantBtn} />
+              <CardRequiredButton text={ncc} variantBtn={variantBtn} />
             </div>
           </form>
 
@@ -125,7 +121,7 @@ const [commonData, setCommonData] = useState<any>(null);
             {loading ? (
               <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
             ) : (
-              commonData?.mobileBtn
+              mobileBtn
             )}
           </button>
         </CardReveal>

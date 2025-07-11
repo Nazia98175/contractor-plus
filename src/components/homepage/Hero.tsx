@@ -9,7 +9,6 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
 import TextAnimation from "../common/TextAnimation";
 import SplitText from "../common/SplitText";
-import { setEncryptedItem } from "@/utils/localStorage";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -19,7 +18,7 @@ const Hero = ({ homePageContent , commonData }: { homePageContent: any  , common
     homePageContent ?? {};
 
   useEffect(() => {
-    setEncryptedItem("commonData", commonData);
+  
     window.scrollTo(0, 0);
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen", {

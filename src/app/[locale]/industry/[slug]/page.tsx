@@ -54,6 +54,7 @@ const page = async ({ params }: PageProps) => {
     faqs,
     blogsList,
     thousandReviews,
+    commonData
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
 
   const [blogs] = await Promise.all([
@@ -78,6 +79,7 @@ const page = async ({ params }: PageProps) => {
             hero={crmPageContent?.hero}
             homeCard={homeCards}
             heroImg={heroImg}
+            commonData={commonData}
           />
           <TrustBatBuildContractor
             trustedCompanies={trustedCompanies}
@@ -98,7 +100,7 @@ const page = async ({ params }: PageProps) => {
       </div>
       <AwardBadges
         teamsUsingContractor={teamsUsingContractor}
-        buttonInfo={crmPageContent?.hero}
+        buttonInfo={commonData}
         customIconsMap={
           useParams.slug === "hvac" ? customIconsMap : customIconsMap2
         }
@@ -126,16 +128,16 @@ const page = async ({ params }: PageProps) => {
             title={crmPageContent?.emailSignupSection?.title}
             subTitle={crmPageContent?.emailSignupSection?.subTitle}
             placeholder={crmPageContent?.emailSignupSection?.placeholder}
-            createBtn={crmPageContent?.hero?.createBtn}
-            mobileBtn={crmPageContent?.hero?.mobileBtn}
-            ncc={crmPageContent?.hero?.nccTxt}
+            createBtn={commonData?.getStartedFreeBtn}
+            mobileBtn={commonData?.mobileBtn}
+            ncc={commonData?.nccTxt}
             variantBtn="dark"
           />
         </div>
         <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
       </div>
       <WhatEverClient
-        // data={homePageContent?.data?.contractorConnects}
+        data={commonData?.contractorConnects}
         issection={false}
       />
       <div className="relative">

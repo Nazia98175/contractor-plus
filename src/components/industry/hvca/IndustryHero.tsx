@@ -7,15 +7,11 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
-import { getDecryptedItem } from "@/utils/localStorage";
 
-const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
+
+const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg  , commonData}) => {
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
- const [commonData, setCommonData] = useState<any>(null);
-  useEffect(() => {
-    const data = getDecryptedItem("commonData");
-    setCommonData(data);
-  }, []);
+
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">

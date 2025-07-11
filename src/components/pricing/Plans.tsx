@@ -5,6 +5,7 @@ import { ScrollDownIcon } from "../common/Icons";
 import PlanCard from "./PlanCard";
 import PlanToggle from "./PlanToggle";
 import { PlansProps } from "@/types";
+import CardReveal from "../common/CardReveal";
 
 const Plans: React.FC<PlansProps> = ({ onScroll }) => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -15,7 +16,9 @@ const Plans: React.FC<PlansProps> = ({ onScroll }) => {
 
       <div className="flex w-full flex-wrap justify-center gap-5 lg:flex-nowrap">
         {planData.map((plan, index) => (
-          <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
+          <CardReveal distance={100} delay={2} key={index}>
+            <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
+          </CardReveal>
         ))}
       </div>
 

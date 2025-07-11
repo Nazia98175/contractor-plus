@@ -138,7 +138,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   height={104}
                   src="/images/webp/software-advice.webp"
                   alt="Software Advice"
-                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
+                  className="w-full max-w-12 object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[88px]"
                   sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
@@ -148,7 +148,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   height={104}
                   src="/images/webp/leader.webp"
                   alt="Leader"
-                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
+                  className="w-full max-w-12 object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[86px]"
                   sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
@@ -158,7 +158,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   height={91}
                   src="/images/webp/get-app.webp"
                   alt="Get App"
-                  className="w-full max-w-12 cursor-pointer object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
+                  className="w-full max-w-12 object-cover drop-shadow-xl/25 sm:max-w-16 md:max-w-20 lg:max-w-[110px]"
                   sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>

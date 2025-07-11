@@ -20,7 +20,12 @@ export interface ReviewCardProps {
 export interface handleClickProps {
   handleClick: (title: string) => void;
 }
-
+export interface TheServiceProps {
+  kindAdorable: any;
+  slug?: string;
+  variant?: "light" | "dark";
+  icon?: boolean;
+}
 export interface ServiceData {
   heading: string;
   features: Feature[];

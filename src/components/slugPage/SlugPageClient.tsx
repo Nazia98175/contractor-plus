@@ -47,7 +47,7 @@ const SlugPageClientOptimized = ({
 
     return () => {
       mounted = false;
-    };  
+    };
   }, []);
 
   return (

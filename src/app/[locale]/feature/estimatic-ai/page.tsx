@@ -52,7 +52,10 @@ const EstimaticAiPage = () => {
         apiData={false}
         mainClassName="text-center"
       />
-      <SwitchingTool switchingTool={estimaticControlData} />
+      <SwitchingTool
+        className="pb-[113px]"
+        switchingTool={estimaticControlData}
+      />
       <ContractorIndustry
         contractorIndustry={{
           ...contractorIndustry,

@@ -15,7 +15,7 @@ export default function Error({
       <img
         className="absolute bottom-[20px] left-0 w-full max-w-[155px]"
         src="/images/webp/404-wires.webp"
-        alt=""
+        alt="Disconnected wires graphic for 404 error page"
       />
       <div className="flex w-full max-w-[1120px] flex-col items-center justify-between gap-5 lg:flex-row">
         <div className="flex w-full max-w-[400px] flex-col items-center justify-center px-4 md:px-0">

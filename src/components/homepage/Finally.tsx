@@ -41,6 +41,27 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         once: true,
       },
     });
+
+    gsap.set("#ipad-mobile-wrapper img", {
+      y: 200,
+      opacity: 0,
+      scale: 0.97,
+    });
+
+    gsap.to("#ipad-mobile-wrapper img", {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      stagger: 0.13,
+      duration: 2.5,
+      ease: "elastic.out(1,0.5)",
+      scrollTrigger: {
+        trigger: "#ipad-mobile-wrapper",
+        start: "top 90%",
+        markers: false,
+        once: true,
+      },
+    });
   }, []);
   return (
     <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
@@ -79,10 +100,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               {finallyC?.subTitle ?? ""}
             </h3>
           </Copy>
-          <CardReveal
-            distance={50}
-            className="relative z-10 flex flex-wrap items-center justify-center gap-3 pt-2 md:gap-[22px]"
-          >
+          <div className="relative z-10 flex flex-wrap items-center justify-center gap-3 pt-2 md:gap-[22px]">
             {finallyC?.solutionsList?.map((feature: any, index: number) => (
               <div
                 key={index}
@@ -99,7 +117,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 </Copy>
               </div>
             ))}
-          </CardReveal>
+          </div>
           <div className="relative mt-[45px] flex w-full flex-col-reverse justify-center gap-3 px-3 pb-8 sm:mt-16 md:mt-[83px] lg:flex-row lg:gap-8 lg:px-0 lg:pb-0">
             <div className="absolute bottom-0 left-0 z-20 hidden h-[71px] w-full bg-white blur-[12px] lg:block"></div>
             <div className="pointer-events-none absolute -bottom-8 left-0 z-20 hidden h-[160px] w-full lg:block">
@@ -110,6 +128,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
             </div>
             {/* <FogGenerator /> */}
             <div
+              data-lag="0.8"
               id="finally-icon-wrapper"
               className="flex flex-row items-center gap-4 lg:flex-col"
             >

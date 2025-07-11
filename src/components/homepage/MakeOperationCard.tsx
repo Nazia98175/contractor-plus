@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import LottieAnimation from "../common/LottieAnimation";
+import Copy from "../common/Copy";
 
 const MakeOperationCard = ({
   item,
@@ -30,10 +31,13 @@ const MakeOperationCard = ({
         ) : (
           `${item.start}${item.suffix}`
         )}
-        <span className="ml-1 inline-block text-2xl">{item.title}</span>
+        <Copy animateOnScroll={true}>
+          <span className="ml-1 inline-block text-2xl">{item.title}</span>
+        </Copy>
       </h3>
-
-      <p className="text-secondary countup-desc">{item.subTitle}</p>
+      <Copy animateOnScroll={true}>
+        <p className="text-secondary countup-desc">{item.subTitle}</p>
+      </Copy>
     </article>
   );
 };

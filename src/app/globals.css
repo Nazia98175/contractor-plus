@@ -581,6 +581,15 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.gradient-text-2 .line {
+  background:
+    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 .crm-gradient {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;

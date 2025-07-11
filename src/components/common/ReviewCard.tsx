@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Review } from "@/types";
 import { OurReviewList } from "./Helper";
 import ImageProxy from "./ImageProxy";
+import Copy from "./Copy";
 
 interface ReviewCardProps {
   review: Review;
@@ -89,9 +90,11 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
-          "{review.review}"
-        </p>
+        <Copy animateOnScroll={true}>
+          <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
+            "{review.review}"
+          </p>
+        </Copy>
       </article>
     </div>
   );

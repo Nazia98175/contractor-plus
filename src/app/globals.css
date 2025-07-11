@@ -262,7 +262,7 @@ body {
   @apply font-inter text-lightBlack px-1 text-xs font-extrabold duration-300 ease-linear lg:text-sm xl:text-base;
 }
 .all-features-button {
-  @apply text-lightBlack font-inter flex items-center gap-2.5 p-1 text-lg font-medium md:text-xl;
+  @apply text-lightBlack font-inter 1xl:text-xl flex items-center gap-2.5 p-1 text-lg font-medium;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -574,6 +574,15 @@ html::-webkit-scrollbar {
   }
 }
 .gradient-text-2 {
+  background:
+    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gradient-text-2 .line {
   background:
     linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
   -webkit-background-clip: text;

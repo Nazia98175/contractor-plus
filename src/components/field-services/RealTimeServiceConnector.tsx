@@ -11,7 +11,6 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
   theme,
 }) => {
   debugLog("fieldServv", fieldService);
-  console.log(fieldService, "field");
 
   const sliderData = [
     {

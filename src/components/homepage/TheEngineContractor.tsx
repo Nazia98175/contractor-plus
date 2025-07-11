@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
 import LottieAnimation from "../common/LottieAnimation";
+import Image from "next/image";
 
 interface EngineContractor {
   title: string;
@@ -21,15 +22,15 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
     triggerOnce: true,
     threshold: 0.3,
   });
-const title = 'The engine 57,163 contractors run on';
+  const title = "The engine 57,163 contractors run on";
 
-const match = title.match(/^(.*?)(\d[\d,\.]*)(.*)$/);
-if (!match) {
+  const match = title.match(/^(.*?)(\d[\d,\.]*)(.*)$/);
+  if (!match) {
     return null; // Handle the case where the title doesn't match the expected format
   }
-const before = match[1]; // "The engine "
-const number = match[2]; // "57,163"
-  const after = match[3];  // " contractors run on"
+  const before = match[1]; // "The engine "
+  const number = match[2]; // "57,163"
+  const after = match[3]; // " contractors run on"
 
   return (
     <section className="relative overflow-hidden">
@@ -50,7 +51,7 @@ const number = match[2]; // "57,163"
                 <CountUp
                   className="inline-flex w-fit max-w-[73px] min-w-[73px] sm:max-w-[105px] sm:min-w-[105px] lg:max-w-[141px] lg:min-w-[141px] xl:max-w-[123px] xl:min-w-[123px]"
                   start={0}
-                  end={+(number.replace(/,/g, ""))} // Remove commas for CountUp
+                  end={+number.replace(/,/g, "")}
                   duration={3}
                   separator=","
                 />
@@ -61,8 +62,18 @@ const number = match[2]; // "57,163"
               {after}
             </h2>
           </div>
-          <div className="ml-[-33px] flex w-full max-w-[450px] flex-col items-center -space-y-2 sm:ml-0">
-            <LottieAnimation animationData={animationData} />
+          <div className="flex w-full max-w-[450px] flex-col items-center -space-y-2">
+            <LottieAnimation
+              animationData={animationData}
+              className="hidden sm:block"
+            />
+            <Image
+              src="/images/webp/engine.webp"
+              alt="engine contractor"
+              width={356}
+              className="object-cover sm:hidden"
+              height={192}
+            />
           </div>
         </div>
       </div>

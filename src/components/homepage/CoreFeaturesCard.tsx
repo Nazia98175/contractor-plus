@@ -3,13 +3,18 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 interface FeatureItem {
   id: number;
   title: string;
   cardQuote: string | null;
   userName: string | null;
   cardImg: any | null;
+  imgSrc: string;
   content: {
     id: number;
     title: string;
@@ -23,10 +28,10 @@ interface Props {
 
 const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const [activeFeature, setActiveFeature] = useState(0);
-  const [progressValue, setProgressValue] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
+  const contentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const featuresRef = useRef<HTMLDivElement | null>(null);
   const navContainerRef = useRef<HTMLDivElement | null>(null);
@@ -40,7 +45,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
-  const featureBtn: string[] = [t.raw("featureBtn") || "Learn More"];
 
   // Mobile detection with resize listener
   useEffect(() => {
@@ -62,8 +66,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
   // Update progress value and scroll active button into view
   useEffect(() => {
-    setProgressValue(activeFeature / (features.length - 1));
-
     if (isMobile && featureButtonsRef.current[activeFeature]) {
       featureButtonsRef.current[activeFeature]?.scrollIntoView({
         behavior: "smooth",
@@ -132,7 +134,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         const totalScroll = containerEl.offsetHeight - windowHeight;
         const currentScroll = scrollY - containerTop;
         const progress = Math.max(0, Math.min(1, currentScroll / totalScroll));
-        setProgressValue(progress);
       }
 
       ticking = false;
@@ -248,30 +249,73 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
   const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
+  useEffect(() => {
+    setTimeout(() => {
+      const container = containerRef.current;
+      const navContainer = navContainerRef.current;
+      const content = contentRef.current;
+
+      if (!container || !navContainer || !content) return;
+
+      // Create ScrollTrigger for pinning the navigation
+      const pinTrigger = ScrollTrigger.create({
+        trigger: container,
+        start: "top 90px",
+        end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
+        pin: navContainer,
+        pinSpacing: false,
+        invalidateOnRefresh: true,
+        // Optional: Add some debugging
+        markers: false, // Set to true for debugging
+        onUpdate: (self) => {
+          // Optional: Handle any updates during scroll
+          console.log("Pin progress:", self.progress);
+        },
+      });
+
+      // Cleanup function
+      return () => {
+        pinTrigger.kill();
+      };
+    }, 2500);
+  }, []);
+
+  // Optional: Refresh ScrollTrigger on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section
       ref={containerRef}
-      className="relative mt-7 flex flex-col justify-between gap-9 overflow-visible lg:flex-row lg:px-3 xl:p-6"
+      className="relative mt-7 flex flex-col gap-9 overflow-visible lg:flex-row lg:px-3 xl:p-6"
     >
-      <div
-        ref={navContainerRef}
-        className={`left-0 z-20 w-full ${
-          isSticky ? "sticky top-20" : "relative"
-        } lg:sticky lg:top-28 lg:w-fit lg:self-start`}
-      >
-        <FeatureNavigation
-          features={titles}
-          featureBtn={[featureBtnC]}
-          activeFeature={activeFeature}
-          onFeatureClick={handleFeatureClick}
-          indicatorRef={indicatorRef}
-          featuresRef={featuresRef}
-          featureButtonsRef={featureButtonsRef}
-          isMobile={isMobile}
-        />
+      <div className="relative z-20 h-full lg:w-fit">
+        <div
+          ref={navContainerRef}
+          className={`z-20 w-full lg:w-fit lg:self-start`}
+        >
+          <FeatureNavigation
+            features={titles}
+            featureBtn={[featureBtnC]}
+            activeFeature={activeFeature}
+            onFeatureClick={handleFeatureClick}
+            indicatorRef={indicatorRef}
+            featuresRef={featuresRef}
+            featureButtonsRef={featureButtonsRef}
+            isMobile={isMobile}
+          />
+        </div>
       </div>
 
-      <div className="w-full space-y-4 overflow-visible lg:w-[80%] lg:space-y-8">
+      <div
+        ref={contentRef}
+        className="w-full space-y-4 overflow-visible lg:w-[80%] lg:space-y-8"
+      >
         <FeatureContent
           featureContents={featuresList}
           contentRefs={contentRefs}

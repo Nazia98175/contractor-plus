@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Review } from "@/types";
 import { OurReviewList } from "./Helper";
 import ImageProxy from "./ImageProxy";
+import Copy from "./Copy";
 
 interface ReviewCardProps {
   review: Review;
@@ -31,7 +32,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   openModal,
   index,
 }) => {
-   const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
+  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
 
   const initials = getInitials(review.userName ?? "");
   return (
@@ -44,14 +45,17 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       >
         <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
-            {review?.profileImg && typeof review.profileImg === 'object' && 'url' in review.profileImg  ? (
+            {review?.profileImg &&
+            typeof review.profileImg === "object" &&
+            "url" in review.profileImg ? (
               <ImageProxy
-                 src={review.profileImg?.url}
+                src={review.profileImg?.url}
                 alt="avatar"
                 width={42}
                 height={42}
                 className="max-w-[42px] rounded-full object-contain"
               />
+            ) : (
               // <Image
               //    src={`${imageBaseUrl}${review.profileImg?.url}`}
               //   alt="avatar"
@@ -59,7 +63,6 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
               //   height={42}
               //   className="max-w-[42px] rounded-full object-contain"
               // />
-            ) : (
               <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black text-base font-semibold text-white">
                 {initials}
               </div>
@@ -87,9 +90,11 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
-          "{review.review}"
-        </p>
+        <Copy animateOnScroll={true}>
+          <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
+            "{review.review}"
+          </p>
+        </Copy>
       </article>
     </div>
   );

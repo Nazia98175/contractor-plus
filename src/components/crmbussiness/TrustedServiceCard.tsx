@@ -1,33 +1,10 @@
+import { Review } from "@/types";
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
-import Image from "next/image";
-import { Review } from "@/types";
-import { getInitials } from "../common/ReviewCard";
 import ImageProxy from "../common/ImageProxy";
+import { getInitials } from "../common/ReviewCard";
+import { VARIANT_CLASSES } from "@/utils/getVariants";
 
-const VARIANT_CLASSES = {
-  primary: {
-    container: "bg-shutter md:bg-transparent p-3",
-    nameText: "text-white",
-    roleText: "text-secondary",
-    quoteText: "text-secondary",
-    modalButton: "bg-darkBlack",
-  },
-  secondary: {
-    container: "bg-rgba2 line-clamp-4 backdrop-blur-[7px] p-2",
-    nameText: "text-white",
-    roleText: "text-secondary",
-    quoteText: "text-decemberSky",
-    modalButton: "bg-stiletto",
-  },
-  tertiary: {
-    container: "sm:bg-rgba2 bg-transparent backdrop-blur-[7px] p-2",
-    nameText: "text-white",
-    roleText: "text-secondary",
-    quoteText: "text-decemberSky",
-    modalButton: "bg-stiletto",
-  },
-};
 interface ReviewCardProps {
   review: Review;
   slug?: string;
@@ -72,6 +49,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 unoptimized
                 className="h-fit max-w-[42px] rounded-full object-contain"
               />
+            ) : (
               // <Image
               //   src={`${imageBaseUrl}${review.profileImg?.url}`}
               //   alt="avatar"
@@ -81,7 +59,6 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
               //   unoptimized
               //   className="h-fit max-w-[42px] rounded-full object-contain"
               // />
-            ) : (
               <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
                 {/* {(() => {
                   const words = review?.userName?.split(" ").filter(Boolean);

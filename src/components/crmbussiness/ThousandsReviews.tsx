@@ -4,14 +4,21 @@ import { ReviewIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import CrmReviewCard from "./CrmReviewCard";
 import ReviewModal from "../common/ReviewModal";
+import Copy from "../common/Copy";
 
 interface Props {
   data: any;
   reviews: any;
   variant?: "primary" | "secondary";
+  apiData?: boolean;
 }
 
-const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
+const ThousandsReviews: React.FC<Props> = ({
+  data,
+  reviews,
+  variant,
+  apiData,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -24,7 +31,6 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
-        {/* <TextAnimation animateOnScroll={true} delay={0.8}> */}
         <h2
           className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
             variant === "secondary" ? "gradient-white" : "crm-gradient"
@@ -33,7 +39,6 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
           {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
           {data?.title?.split("4.7 ★")?.[1]}
         </h2>
-        {/* </TextAnimation> */}
 
         <SliderLayout
           wrapperClassName="relative w-full !h-auto"
@@ -57,6 +62,7 @@ const ThousandsReviews: React.FC<Props> = ({ data, reviews, variant }) => {
                   ? () => openModal(review.videoLink || "")
                   : () => {}
               }
+              apiData={apiData}
             />
           ))}
         </SliderLayout>

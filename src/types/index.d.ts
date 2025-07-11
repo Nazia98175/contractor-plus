@@ -20,7 +20,12 @@ export interface ReviewCardProps {
 export interface handleClickProps {
   handleClick: (title: string) => void;
 }
-
+export interface TheServiceProps {
+  kindAdorable: any;
+  slug?: string;
+  variant?: "light" | "dark";
+  icon?: boolean;
+}
 export interface ServiceData {
   heading: string;
   features: Feature[];
@@ -31,6 +36,7 @@ export interface ServiceData {
   cardQuote: string;
   userName: string;
   cardImg?: { url?: string };
+  lottieJson?: object;
 }
 
 export type ContractorPlatformsProps = {
@@ -45,6 +51,7 @@ export interface Platform {
 }
 
 export interface PlatformItem {
+  cardImg: any;
   title: string;
   text: string;
   image: string;

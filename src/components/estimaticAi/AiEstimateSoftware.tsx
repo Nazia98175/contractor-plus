@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "../field-services/RunWithContractorMobile";
@@ -9,7 +10,6 @@ export interface TheServiceProps {
 const AiEstimateSoftware: React.FC<TheServiceProps> = ({
   runWithContractorData,
 }) => {
-  console.log(runWithContractorData);
   return (
     <section className="relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px]">
       {/* <TextAnimation animateOnScroll={true} delay={0.6}> */}
@@ -30,9 +30,14 @@ const AiEstimateSoftware: React.FC<TheServiceProps> = ({
           <p className="font-myriad text-secondary text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
             {runWithContractorData.headerLeft}
           </p>
-          <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
-            {runWithContractorData.headerRight}
-          </p>
+
+          <Image
+            src="/images/svg/estimatic.svg"
+            alt="Estimatic "
+            className="mx-auto"
+            width={120}
+            height={20}
+          />
         </div>
         {runWithContractorData?.features?.map((item: any, index: any) => (
           <CardReveal
@@ -73,11 +78,11 @@ const AiEstimateSoftware: React.FC<TheServiceProps> = ({
       </div>
       {/* Mobile-view  */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
-        <RunWithContractorMobile
+        {/* <RunWithContractorMobile
           their={runWithContractorData.headerLeft}
           your={runWithContractorData.headerRight}
           run_contractor={runWithContractorData.features}
-        />
+        /> */}
       </div>
     </section>
   );

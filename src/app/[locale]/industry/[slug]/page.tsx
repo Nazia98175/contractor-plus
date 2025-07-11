@@ -18,6 +18,14 @@ import { getHomepageData } from "@/services/homePage/getHomepageData";
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import {
+  FasterIcon1,
+  FasterIcon2,
+  FasterIcon3,
+  FasterIcon4,
+  FasterIcon5,
+  FasterIcon6,
+} from "@/components/common/Icons";
 
 export const metadata = {
   title: "Not just HVAC software Meet your operating system",
@@ -52,13 +60,20 @@ const page = async ({ params }: PageProps) => {
     getCrmPage("crm", useParams.locale, "&populate=*"),
   ]);
   const { homePageContent } = await getHomepageData(useParams?.locale);
-console.log(homePageContent,"homePageContent");
-
+  const customIconsMap: Record<number, React.ReactNode> = {
+    0: <FasterIcon1 />,
+    1: <FasterIcon2 />,
+    2: <FasterIcon3 />,
+  };
+  const customIconsMap2: Record<number, React.ReactNode> = {
+    0: <FasterIcon4 />,
+    1: <FasterIcon5 />,
+    2: <FasterIcon6 />,
+  };
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
         <div className="relative">
-          {/* <div className="bg-white-linear absolute top-[66%] z-50 block h-[79px] w-full blur-[12px] md:top-[61%] lg:hidden"></div> */}
           <IndustryHero
             hero={crmPageContent?.hero}
             homeCard={homeCards}
@@ -84,6 +99,9 @@ console.log(homePageContent,"homePageContent");
       <AwardBadges
         teamsUsingContractor={teamsUsingContractor}
         buttonInfo={crmPageContent?.hero}
+        customIconsMap={
+          useParams.slug === "hvac" ? customIconsMap : customIconsMap2
+        }
       />
       {/* <ThousandsReviews
         data={{ title: "4.7 ★ across thousands of reviews" }}

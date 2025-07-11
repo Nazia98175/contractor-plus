@@ -17,47 +17,20 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
   }[];
 
   const resourceItems = [
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-2.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
-    { image: "/images/webp/circular-slide-1.webp" },
+    { image: "/images/webp/contractor+HQ.webp" },
+    { image: "/images/webp/industry-events.webp" },
+    { image: "/images/webp/podcasts.webp" },
+    { image: "/images/webp/Affiliates.webp" },
+    { image: "/images/webp/calculators.webp" },
+    { image: "/images/webp/supplier-partner-program.webp" },
+    { image: "/images/webp/free-estimate-templates.webp" },
+    { image: "/images/webp/Roadmap.webp" },
+    { image: "/images/webp/material-comparison-search.webp" },
+    { image: "/images/webp/Contact-us.webp" },
+    { image: "/images/webp/usa-labor-pricing.webp" },
+    { image: "/images/webp/developers-aPI.webp" },
   ];
-  const fallbackImage = "/images/webp/circular-slide-1.webp";
+  const fallbackImage = "/images/webp/developers-aPI.webp";
 
   return (
     <div className="flex grow flex-col overflow-hidden">
@@ -87,7 +60,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
               unoptimized
               width={480}
               height={320}
-              className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+              className={`bg-kuroiBlack absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
                 hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
               }`}
             />
@@ -104,8 +77,8 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
           />
         </div>
       </div>
-      <div className="font-inter sticky bottom-0 left-0 mt-10 flex w-full items-center justify-between gap-6">
-        <Link className="all-features-button group" href="/">
+      <div className="font-inter sticky bottom-0 left-0 mt-8 flex w-full items-center justify-between gap-6">
+        <Link className="all-features-button group" href="/resources">
           Go to Resource Hub
           <ArrowIcon />
         </Link>

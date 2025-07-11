@@ -1,6 +1,5 @@
 "use client";
 import CardReveal from "@/components/common/CardReveal";
-import { blackPlatforms } from "@/components/common/Helper";
 import SliderLayout from "@/components/common/SliderLayout";
 import PlatformCard from "@/components/homepage/PlatformCard";
 import { Platform } from "@/types";

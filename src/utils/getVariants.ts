@@ -113,3 +113,26 @@ export const headingVariantMap: Record<string, string> = {
   secondary: "section-heading",
   tertiary: " hvac-blog-card-heading section-heading", // Optional extra variant
 };
+export const VARIANT_CLASSES = {
+  primary: {
+    container: "bg-shutter md:bg-transparent p-3",
+    nameText: "text-white",
+    roleText: "text-secondary",
+    quoteText: "text-secondary",
+    modalButton: "bg-darkBlack",
+  },
+  secondary: {
+    container: "bg-rgba2 line-clamp-4 backdrop-blur-[7px] p-2",
+    nameText: "text-white",
+    roleText: "text-secondary",
+    quoteText: "text-decemberSky",
+    modalButton: "bg-stiletto",
+  },
+  tertiary: {
+    container: "sm:bg-rgba2 bg-transparent backdrop-blur-[7px] p-2",
+    nameText: "text-white",
+    roleText: "text-secondary",
+    quoteText: "text-decemberSky",
+    modalButton: "bg-stiletto",
+  },
+};

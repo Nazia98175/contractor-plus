@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 import PlatformCard from "@/components/homepage/PlatformCard";
 import SliderLayout from "@/components/common/SliderLayout";
 import { Platform } from "@/types";
@@ -19,14 +18,13 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   showTrustedSection,
   className,
 }) => {
- 
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
       {showTrustedSection && (
         <h2 className="section-heading crm-gradient xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center font-bold sm:mb-8 md:mb-10 lg:mb-12 lg:!font-semibold xl:max-w-full">
-         {trustedCompanies?.title?.split("50,000")?.[0]
-         }<strong>50,000</strong>{trustedCompanies?.title?.split("50,000")?.[1]}
-       
+          {trustedCompanies?.title?.split("50,000")?.[0]}
+          <strong>50,000</strong>
+          {trustedCompanies?.title?.split("50,000")?.[1]}
         </h2>
       )}
       <CardReveal

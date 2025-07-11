@@ -1,5 +1,4 @@
 "use client";
-
 import { JSX } from "react/jsx-runtime";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,9 +28,9 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
       effect="fade"
       direction="vertical"
       modules={[Autoplay]}
-      autoplay={{ delay: 2000, disableOnInteraction: false }}
+      autoplay={{ delay: 2000 }}
       spaceBetween={16}
-      slidesPerView={3}
+      slidesPerView={2.7}
       centeredSlides={true}
       speed={700}
       loop={true}

@@ -20,7 +20,6 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
-import { JSX } from "react";
 import mobile from "../../../public/lotties/11-mobile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
 import animationData from "../../../public/lotties/crm.json";
@@ -2966,6 +2965,50 @@ export const pricingfaqitems = [
       "You can cancel at any time. It’s self-service, so you can upgrade, downgrade and cancel your account on your own in the click of a button. We offer a free for life version of our software and 14 day trials of most premium features (such as the job schedule and the team chat). During this period you should determine for yourself if upgrading to PRO or ULTIMATE is the best option for your business. You should not upgrade until you’ve properly evaluated the software, learned how to use everything and know that it’s the best choice for you. As such, Contractor+  is a digital, intangible good, and all sales are final. We will not honor any refunds for any reason, under any circumstances. We have thousands of users using our software successfully.  If you need help setting anything up or have questions, our Customer Success team is very accessible.",
   },
 ];
+
+export const estimateFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "How is Estimatic different from tools like ChatGPT or other AI estimate generators?",
+      answer:
+        "Our AI estimate software actually pulls from your real cost book, current supplier pricing, and local labor rates. While other tools give you generic estimates, Estimatic builds accurate, client-ready bids that match how you quote jobs.",
+    },
+    {
+      id: 2,
+      question: "Can I still control or edit the estimate?",
+      answer:
+        "Absolutely. Estimatic gives you a complete draft in a couple minutes, but you’ll always have the final say. Review, adjust, and approve line items just like you would normally (but WAY faster!)",
+    },
+    {
+      id: 3,
+      question: "Can Estimatic read job photos and blueprints? ",
+      answer:
+        "Yes — upload jobsite photos, blueprints, and/or drawings when you create your estimate for the AI to use. ",
+    },
+    {
+      id: 4,
+      question: "Will it match my usual estimate format?",
+      answer:
+        "Yes. Use your saved templates and upload your cost book so the final output looks like your usual estimates. No reformatting or manual entry necessary. We don’t force you into a rigid layout. ",
+    },
+    {
+      id: 5,
+      question: "What data is used for pricing? ",
+      answer:
+        "Estimatic searches to find  real-time pricing from vendors like Lowe’s, Home Depot, Menards, Ace Hardware, Build.com, and ABC Supply. It also uses a proprietary labor rate index based on over 500,000 approved estimates and official BLS data. ",
+    },
+    {
+      id: 6,
+      question: "Is Estimatic part of Contractor+ or a separate tool?",
+      answer:
+        "It’s fully built into Contractor+. That means your estimates automatically connect to your CRM, service requests, job schedule, and invoicing. It’s included with your regular subscription and each estimate created costs a minimal dollar amount (just to cover the cost of using AI). ",
+    },
+  ],
+};
 export const blogData = [
   {
     id: 1,
@@ -3787,6 +3830,7 @@ export const featureContentss = [
       "Most “contractor CRMs” are just contact pages with a few job links. Contractor+ brings the full picture: ",
     highlight:
       "timelines, call transcripts, AI sentiment tracking, and role-specific contacts..",
+    imgSrc: "/images/webp/core-1.webp",
   },
   {
     title: "Send the right tech to the right job based on proximity",
@@ -3794,6 +3838,7 @@ export const featureContentss = [
     description:
       "See team availability and location in real-time to assign jobs faster and smarter. Drag, drop, and delegate",
     highlight: "based on who’s closest and free. No more calling around. ",
+    imgSrc: "/images/webp/core-2.webp",
   },
   {
     title: "Collaborate with your team on any job",
@@ -3801,6 +3846,7 @@ export const featureContentss = [
     description:
       "Each job has its own built-in group chat, keeping the whole crew on the same page",
     highlight: "and minimizing texts, missed updates, or miscommunication.",
+    imgSrc: "/images/webp/core-3.webp",
   },
   {
     title: "Quotes that practically write themselves",
@@ -3809,6 +3855,7 @@ export const featureContentss = [
       "Build accurate, professional estimates fast with live local pricing from Lowe’s, Home Depot",
     highlight:
       "and more. Contractor+ pulls your line items, adds markup, and generates client-ready contracts in minutes.",
+    imgSrc: "/images/webp/core-4.webp",
   },
   {
     title: "The only CRM with property-specific profiles",
@@ -3816,12 +3863,14 @@ export const featureContentss = [
     description:
       "Contractor+ is the only platform that lets you track the full history of every property you’ve ever serviced:",
     highlight: "communications,  photos & documents, invoices, even live cams.",
+    imgSrc: "/images/webp/core-5.webp",
   },
   {
     title: "The ultimate AI assistant for contractors",
     titleImg: big_chief_ai,
     description:
       "Every call and text gets answered. Every Lead is qualified and entered into your CRM, every Service Request is captured, every Estimate/Quote appointment is scheduled. Big Chief never sleeps..",
+    imgSrc: "/images/webp/core-6.webp",
   },
 ];
 
@@ -4193,238 +4242,60 @@ export const estimaticReviews = {
 export const contractorIndustry = {
   title: "Designed to handle the complexity of every crew, job, and trade",
   subTitle: "Contractor+ serves 30+ industries",
-  url: null,
-  btnText: null,
+  url: "",
+  btnText: "",
 };
 export const estimaticCardData = {
-  data: [
+  id: 1,
+  title: "How to create a winning AI estimate ",
+  cardsDetail: [
     {
-      fieldService: {
-        title: "hello",
-        service: [
-          {
-            heading: "Customer Management",
-            features: [
-              {
-                title: "Contact profiles + communication history",
-                description:
-                  "See every call, text, and email tied to each contact, all in one place.",
-              },
-              {
-                title: "Property profiles",
-                description:
-                  "Just like customers, each property gets its own profile with full job history, files, and communication timeline.",
-              },
-              {
-                title: "Role-based contact labeling",
-                description:
-                  "Whether owner, tenant, or property manager, label contacts by role within a profile.",
-              },
-              {
-                title: "Client portal access",
-                description:
-                  "Give your clients a clean, professional portal to view estimates, invoices, and project updates.",
-              },
-              // {
-              //   title: "Timeline view for every client and property",
-              //   description:
-              //     "Scroll through a full history of every interaction, file, and update tied to each person or place.",
-              // },
-              // {
-              //   title: "Contracts, eSign, and payments",
-              //   description:
-              //     "Quotes become contracts, contracts get signed, and invoices get paid—all in one flow.",
-              // },
-              // {
-              //   title: "Scheduled follow-ups",
-              //   description:
-              //     "Business keeps you busy. Scheduled follow-ups make sure nothing slips through the cracks.",
-              // },
-            ],
-            testimonial: {
-              user: "Excellent field tracking!",
-              username: "John Doe",
-            },
-            img: "/images/webp/field-service-1.webp",
-          },
-          {
-            heading: "Job Management",
-            features: [
-              {
-                title: "Property-based job tracking",
-                description:
-                  "Our field service CRM software has property-specific profiles to easily manage work by address, not just customer.",
-              },
-              {
-                title: "Task assignments & status tracking",
-                description:
-                  "Keep jobs moving by assigning tasks and instantly seeing what’s done and what’s not.",
-              },
-              {
-                title: "Job notes and photos",
-                description:
-                  "Capture site conditions, material needs, and daily progress with notes and images that live in your home service CRM.",
-              },
-              {
-                title: "Estimate builder with live pricing",
-                description:
-                  "Create fast, accurate estimates that pull in live pricing from Lowe’s and Home Depot.",
-              },
-              {
-                title: "Contract generation based on job details",
-                description:
-                  "Once your estimate’s locked, the contract writes itself using job data you already entered.",
-              },
-              // {
-              //   title: "Time clock & mileage logs",
-              //   description:
-              //     "Built-in logs keep your payroll and reimbursements clean and accurate.",
-              // },
-              // {
-              //   title: "Internal job chat",
-              //   description:
-              //     "Bring everyone involved with a job into a dedicated space to communicate.",
-              // },
-              // {
-              //   title: "Gantt chart views",
-              //   description:
-              //     "Map out the full job timeline and adjust schedules so nothing goes sideways.",
-              // },
-            ],
-            img: "/images/webp/field-service-2.webp",
-          },
-          {
-            heading: "Team Management",
-            features: [
-              {
-                title: "Workspace toggle (for multi-location)",
-                description:
-                  "Manage multiple locations under one roof and keep everything separate but connected.",
-              },
-              {
-                title: "Live team map view with GPS tracking",
-                description:
-                  "See where your team is right now so you can make faster decisions.",
-              },
-              {
-                title: "Drag-and-drop job scheduling",
-                description:
-                  "Move things around as needed without redoing the whole day.",
-              },
-              {
-                title: "Availability-based job assignment",
-                description:
-                  "Send the right tech based on who’s nearby and available.",
-              },
-              {
-                title: "Task ownership and accountability",
-                description:
-                  "Make it obvious who’s doing what and when it’s due, so everyone is held accountable.",
-              },
-              {
-                title: "Chat-based job communication",
-                description:
-                  "Every job has its own chat so your crew doesn’t have to dig through texts.",
-              },
-              // {
-              //   title: "Clock in/out support on mobile",
-              //   description:
-              //     "Finally, there’s a CRM for field services that works well on mobile. Let your team easily clock in and out from our mobile app.",
-              // },
-              // {
-              //   title: "Mileage logging & time tracking",
-              //   description:
-              //     "Log miles and hours automatically and tag them to the right job.",
-              // },
-            ],
-            img: "/images/webp/field-service-3.webp",
-          },
-          {
-            heading: "Communication",
-            features: [
-              {
-                title: "Built-in phone system with IVR and routing",
-                description:
-                  "Contractor+ comes with calling and IVR baked in. No more separate telephony solutions.",
-              },
-              {
-                title: "1-click call/text/email directly from CRM",
-                description:
-                  "Call, text, or email anyone in your system right from their profile.",
-              },
-              {
-                title: "AI call transcription & recording",
-                description:
-                  "Every call is recorded and transcribed so nothing gets missed or misheard.",
-              },
-              {
-                title: "Sentiment analysis on calls",
-                description:
-                  "AI picks up the tone so you know how conversations really went.",
-              },
-              {
-                title: "Scheduled messages & follow-ups",
-                description:
-                  "Never forget to follow up. Just schedule it and move on.",
-              },
-              {
-                title: "Job-specific chats (internal team use)",
-                description:
-                  "Chat with your crew about a job without losing context or switching apps.",
-              },
-              // {
-              //   title: "Voicemail logging and playback",
-              //   description: "Listen to any voicemail without ever leaving the CRM.",
-              // },
-              // {
-              //   title: "Communication timeline",
-              //   description:
-              //     "See every call, text, and email for a customer or property in one scrollable thread.",
-              // },
-            ],
-            img: "/images/webp/field-service-4.webp",
-          },
-          {
-            heading: "Lead Management",
-            features: [
-              {
-                title: "Opportunity Kanban board (deal tracker)",
-                description:
-                  "Track deal progress visually with a simple board that shows where every lead stands.",
-              },
-              {
-                title: "Custom pipeline stages",
-                description:
-                  "Set your own pipeline stages to match how your sales process works.",
-              },
-              {
-                title: "Lead profiles with status filter",
-                description:
-                  "Stay focused by filtering leads by status, urgency, or follow-up timing.",
-              },
-              {
-                title: "Follow-up scheduling",
-                description:
-                  "Set reminders to follow up so no lead gets forgotten or buried.",
-              },
-              {
-                title: "Property-based leads",
-                description:
-                  "Track new opportunities by address so you can quote with full context.",
-              },
-              {
-                title: "Upcoming: Workflow automation",
-                description:
-                  "Automation is on the way to help you re-engage cold leads without any manual work.",
-              },
-            ],
-            img: "/images/webp/field-service-5.webp",
-          },
-        ],
+      title: "Step 1",
+      content: [
+        {
+          title: "Describe the estimate to Estimatic",
+          desc: "It’s simple. Just tell Estimatic what you need an estimate for and give it as much context as you want. You can upload photos, blueprints, drawings, or even a competing quote.",
+        },
+      ],
+      cardQuote: {
+        user: "Excellent field tracking!",
+        username: "John Doe",
       },
+      cardImg: "/images/webp/describe-estimate.webp",
+    },
+    {
+      title: "Step 2",
+      content: [
+        {
+          title: "Estimatic builds your estimate",
+          desc: "Using your cost book, real-time pricing from suppliers, and live local labor rates, Estimatic builds a detailed, accurate estimate, 100x faster than any human.",
+        },
+      ],
+      cardImg: "/images/webp/estimatic-builds.webp",
+    },
+    {
+      title: "Step 3",
+      content: [
+        {
+          title: "You tweak (if needed) + approve",
+          desc: "Estimatic shows its work so you feel confident in yours. Tweak any details like margins or materials, and add markup before approving",
+        },
+      ],
+      cardImg: "/images/webp/you-tweak.webp",
+    },
+    {
+      title: "STEP 4",
+      content: [
+        {
+          title: "Send your estimate",
+          desc: "Whether you’re at the office or at your customer’s kitchen table, send your estimate faster than anyone else, and let them eSign without extra software. ",
+        },
+      ],
+      cardImg: "/images/webp/send-your-estimate.webp",
     },
   ],
 };
+
 export const dealReviews = {
   data: [
     {
@@ -4609,6 +4480,55 @@ export const runWithContractorData = {
   ],
 };
 
+export const estimateSoftwareData = {
+  title: "Not all AI estimate software makes your life easier",
+  subTitle: "Some AI estimators get “close”. Estimatic gets it right.",
+  headerLeft: "Other Options",
+  headerRight: "Your way",
+  features: [
+    {
+      competitorsNote:
+        "Uses AI that’s not much different than the free version of ChatGPT",
+      ourProductNote: "Built on advanced AI models fine-tuned for estimating	",
+    },
+    {
+      competitorsNote: "Standalone tool with inadequate  add-on features",
+      ourProductNote:
+        "Estimates auto sync to contacts, jobs, and scheduling tools in Contractor+",
+    },
+    {
+      competitorsNote: "Generic line items that don’t match how you bid",
+      ourProductNote:
+        "Labor, materials, assemblies, permits, and info-only lines built to your exact format",
+    },
+    {
+      competitorsNote: "Limited supply integrations",
+      ourProductNote:
+        "Live pricing from Home Depot, Lowe’s, Menards, Ace, Build.com, ABC Supply",
+    },
+    {
+      competitorsNote: "AI guesses numbers based on who-knows-what",
+      ourProductNote:
+        "Estimates are tied to your real labor rates, cost book, and local material prices",
+    },
+    {
+      competitorsNote: "Can only read text input",
+      ourProductNote:
+        "Can read photos, blueprints, and drawings for more context about the job",
+    },
+    {
+      competitorsNote: "Limited customizability",
+      ourProductNote: "Built-in options for labor and material markup",
+    },
+    {
+      competitorsNote:
+        "$120/mo. for 5 people to use a standalone estimating & invoice tool",
+      ourProductNote:
+        "$95/mo. for 5 people to use the entire Contractor+ operating system. Only pay for what you use",
+    },
+  ],
+};
+
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
@@ -4639,4 +4559,154 @@ export const neverLookBackData = {
       description: "Of leads weren’t fully tracked before using Contractor+",
     },
   ],
+};
+
+export const dealReviews2 = {
+  title: "There’s a reason we have a 4.7 ★ average across thousands of reviews",
+  subTitle: null,
+  reviews: [
+    {
+      id: 1,
+      userName: "Juan Garcia",
+      userRole: "Owner, Nailed It Miami",
+      isModal: true,
+      review:
+        '"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."',
+      rating: 5,
+      profileImg: "/images/webp/juan-gracia.webp",
+      videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+    },
+    {
+      id: 2,
+      userName: "Brandon Geiger",
+      userRole: "Co-Owner, Rushville Restorations",
+      isModal: true,
+      review:
+        '"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"',
+      rating: 5,
+      profileImg: "/images/webp/rushville.webp",
+      videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+    },
+    {
+      id: 3,
+      isModal: true,
+      userName: "Scott Azure",
+      userRole: "CEO at Rands Mechanical",
+      review:
+        '"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."',
+      rating: 5,
+      profileImg: "/images/webp/rands.webp",
+      videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+    },
+  ],
+};
+export const estimaticBlogHeadingData = {
+  id: 1,
+  title: "AI related topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
+};
+export const estimaticControlData = {
+  id: 320,
+  title: "Scheduling the day’s jobs feels harder than it needs to be",
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          AI isn’t replacing <br /> your judgment
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          You can tweak, edit, or <br /> override any line
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          "Estimatic shows its work <br /> (no black box)"
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
+
+export const formData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle: "Get started with Estimatic AI in Contractor+ today.",
+  title: "The AI estimate generator that will change your business forever",
+};
+export const estimateFormData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle:
+    "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
+  title: "This is what opportunity tracker software should have been all along",
+};
+
+export const dealflowFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "Can I customize the pipeline stages to match my sales process?",
+      answer:
+        "Yes. You can create and label your own stages like “Estimate Sent,” “Pending Approval,” or “Needs Follow-up”—so the pipeline mirrors how you actually sell.",
+    },
+    {
+      id: 2,
+      question: "Does this replace my spreadsheet or Trello board?YY",
+      answer:
+        "Yes. Deal Flow Tracker replaces disconnected tools with one unified system. It tracks your leads visually, ties them to jobs, and updates your revenue forecast in real time.",
+    },
+    {
+      id: 3,
+      question: "Can I see the dollar value of deals in each stage? ",
+      answer:
+        "Absolutely. You’ll see how much money is sitting in “pending,” “approved,” or any custom stage. You’ll always know where your revenue stands. ",
+    },
+    {
+      id: 4,
+      question: "Can my team update the pipeline from their phones?",
+      answer:
+        "Yes. The mobile app lets field or office staff drag deals across stages and add notes or updates on the go. ",
+    },
+    {
+      id: 5,
+      question: "How does this help me close more deals?",
+      answer:
+        "By showing you exactly which leads are stuck, who’s responsible, and what’s at risk. You can follow up faster and prioritize the deals most likely to close.",
+    },
+    {
+      id: 6,
+      question: "Is this included with the Contractor+ platform?",
+      answer:
+        "Yes. Deal Flow Tracker is a core part of the platform and works seamlessly with CRM, estimates, jobs, and scheduling.",
+    },
+  ],
+};
+
+export const dealFlowBlogHeadingData = {
+  id: 1,
+  title: "Deal Flow Tracking  topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
 };

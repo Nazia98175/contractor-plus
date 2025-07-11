@@ -28,11 +28,12 @@ const HomepageClient = ({
   blogs,
   commonData,
 }: any) => {
+
   return (
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
       <Finally finallyC={problemSolutions} />
-      {/* <CoreFeatures coreFeatures={featurHighlight} /> */}
+      <CoreFeatures coreFeatures={featurHighlight} />
       <Features features={homePageContent?.data?.serviceList} />
       <ContractorIndustry
         contractorIndustry={homePageContent?.data?.Industries}

@@ -2,10 +2,8 @@ import Image from "next/image";
 import { BlackLogo } from "../common/Icons";
 import CompareCard from "./CompareCard";
 import CompareTable from "./CompareTable";
-export interface TheServiceProps {
-  kindAdorable: any;
-  slug?: string;
-}
+import { TheServiceProps } from "@/types";
+
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   return (
     <section className="relative">
@@ -26,7 +24,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
             height={100}
             className="absolute top-[-195px] left-0 z-10 block h-full w-full md:hidden"
             src="/images/webp/finally-mobile-bg.webp"
-            alt=""
+            alt="Finally Mobile Background"
           />
         </div>
       )}

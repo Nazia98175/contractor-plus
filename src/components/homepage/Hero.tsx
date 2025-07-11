@@ -4,11 +4,11 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
 import TextAnimation from "../common/TextAnimation";
 import SplitText from "../common/SplitText";
-import Copy from "../common/Copy";
 import { setEncryptedItem } from "@/utils/localStorage";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
@@ -20,9 +20,11 @@ const Hero = ({ homePageContent , commonData }: { homePageContent: any  , common
 
   useEffect(() => {
     setEncryptedItem("commonData", commonData);
+    window.scrollTo(0, 0);
     setTimeout(() => {
-      gsap.to("#view-port-screen", {
+      gsap.to("#home-page-view-port-screen", {
         opacity: 1,
+        duration: 1,
       });
     }, 1000);
   }, []);

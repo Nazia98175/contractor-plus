@@ -40,7 +40,7 @@ const TimmingEffect = () => {
       });
       const timingImage = document.querySelectorAll(".timing-imgs");
       const timingTextElements = document.querySelectorAll(".timing-text");
-    
+
       if (timingTextElements.length === 0) return;
       timingImage.forEach((element, index) => {
         if (index == 0) {
@@ -152,49 +152,55 @@ const TimmingEffect = () => {
           src="/images/png/initial-cloud.png"
           id="initial-cloud"
           className="absolute top-0 z-[21] h-full w-full"
-          alt=""
+          alt="Initial background cloud graphic"
         />
+
         {/* STEP 1 CLOUD */}
         <img
           src="/images/png/step-1-cloud.png"
           id="step-1-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt=""
+          alt="Cloud graphic for step 1 transition"
         />
+
         {/* STEP 2 CLOUD */}
         <img
           src="/images/png/step-2-cloud.png"
           id="step-2-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt=""
+          alt="Cloud graphic for step 2 transition"
         />
+
         {/* STEP 3 CLOUD */}
         <img
           src="/images/png/step-3-cloud.png"
           id="step-3-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt=""
-        />{" "}
+          alt="Cloud graphic for step 3 transition"
+        />
+
         {/* STEP 4 CLOUD */}
         <img
           src="/images/png/step-4-cloud.png"
           id="step-4-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt=""
+          alt="Cloud graphic for step 4 transition"
         />
+
         {/* STEP 6 CLOUD */}
         <img
           src="/images/png/step-6-cloud.png"
           id="step-6-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt=""
-        />{" "}
+          alt="Cloud graphic for step 6 transition"
+        />
+
         {/* STEP 7 CLOUD */}
         <img
           src="/images/png/step-7-cloud.png"
           id="step-7-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt=""
+          alt="Cloud graphic for step 7 transition"
         />
         {/* ENVIRONMENT BACKGROUND GRADIENT */}
         <img

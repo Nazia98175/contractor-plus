@@ -8,7 +8,7 @@ const PostCard = () => {
     <article className="relative z-30 mx-auto flex flex-col gap-5 sm:max-w-[90%] sm:flex-row md:max-w-[80%] xl:max-w-[967px]">
       <Image
         src="/images/webp/review-profile-7.webp"
-        alt=""
+        alt="User Profile"
         width={90}
         height={90}
         className="h-[90px] w-[90] rounded-sm sm:rounded-full"

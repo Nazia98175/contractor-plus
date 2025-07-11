@@ -1,5 +1,4 @@
 import { ReviewCardProps } from "@/types";
-import Image from "next/image";
 import React from "react";
 import { PlayIcon2, StartIcon } from "../../common/Icons";
 import ImageProxy from "@/components/common/ImageProxy";

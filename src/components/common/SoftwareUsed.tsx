@@ -43,7 +43,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   });
 
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL as string}`;
-
+  console.log("item", item, "images", icons);
   return (
     <article
       ref={ref}
@@ -54,7 +54,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       ) : icons && index !== undefined && icons[index]?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <ImageProxy
-            src={icons[index].url}
+            src="/images/svg/PipleLine-Track.svg"
             fill
             className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}

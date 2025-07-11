@@ -27,6 +27,7 @@ const HomepageClient = ({
   resultStats,
   blogs,
 }: any) => {
+
   return (
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />

@@ -45,6 +45,7 @@ export interface Platform {
 }
 
 export interface PlatformItem {
+  cardImg: any;
   title: string;
   text: string;
   image: string;

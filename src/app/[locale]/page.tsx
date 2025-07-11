@@ -45,6 +45,7 @@ export default async function Home({
     resultStatsSection,
     blogs,
   } = await getHomepageData(useParams?.locale);
+  console.log("testing to img", contractPlatformsData);
 
   return (
     <div id="home-page-wrapper" className="">

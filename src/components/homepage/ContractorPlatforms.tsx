@@ -8,6 +8,8 @@ import Copy from "../common/Copy";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ImageProxy from "../common/ImageProxy";
+import { getMediaUrl } from "@/utils/getMediaUrl";
 gsap.registerPlugin(ScrollTrigger);
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   useEffect(() => {
@@ -49,16 +51,21 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                 key={index}
                 className="group plateform-boxes w-full max-w-[430px] p-2 sm:w-[48%]"
               >
-                {/* <h3 className="font-jakarta mt-5 mb-3 w-fit px-1.5 py-1 text-base font-bold text-white duration-200 sm:text-xl lg:mb-4 lg:text-2xl">
-                  {obj.title}
-                </h3> */}
-
                 <div className="animate-border relative rounded-xl">
                   <Image
                     width={389}
                     height={187}
                     sizes="(max-width: 768px) 289px, 389px"
                     src={contractPlatforms?.[index]?.img}
+                    alt={`${obj.text}`}
+                    priority
+                    className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
+                  />
+                  <Image
+                    width={389}
+                    height={187}
+                    sizes="(max-width: 768px) 289px, 389px"
+                    src={getMediaUrl(obj.cardImg) || "/fallback.jpg"}
                     alt={`${obj.text}`}
                     priority
                     className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"

@@ -5,15 +5,15 @@ import Copy from "@/components/common/Copy";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import Image from "next/image";
-<<<<<<< HEAD
-import React from "react";
-=======
 import React, { useEffect, useState } from "react";
->>>>>>> bbb4a423bb3981bb423a09b673e9afe2b5b6963c
 import HvacHeroSlider from "./HvacHeroSlider";
 
-
-const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg  , commonData}) => {
+const IndustryHero: React.FC<TheHeroProps> = ({
+  hero,
+  homeCard,
+  heroImg,
+  commonData,
+}) => {
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
 
   return (

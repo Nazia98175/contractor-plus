@@ -27,9 +27,11 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
         {embedUrl && (
           <iframe
             src={embedUrl}
-            className="h-full w-full rounded-lg"
+            className="w-full rounded-lg"
             allowFullScreen
             title="Video player"
+            tabIndex={-1}
+            loading="lazy"
           ></iframe>
         )}
       </div>

@@ -1,11 +1,8 @@
 "use client";
-import React from "react";
-import FeatureCard from "./FeatureCard";
-import SliderLayout from "../common/SliderLayout";
 import { useTranslations } from "next-intl";
-import CardReveal from "../common/CardReveal";
 import { featureKeys } from "../common/Helper";
-import { subtle } from "crypto";
+import SliderLayout from "../common/SliderLayout";
+import FeatureCard from "./FeatureCard";
 type HeroProps = {
   features: any; // Replace `any` with the actual type if available
 };

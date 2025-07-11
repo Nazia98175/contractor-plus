@@ -1,8 +1,9 @@
-import React from "react";
-import { TickIcon } from "../common/Icons";
 import { ServiceData } from "@/types";
 import Image from "next/image";
+import React from "react";
+import { TickIcon } from "../common/Icons";
 import ImageProxy from "../common/ImageProxy";
+import LottieAnimation from "../common/LottieAnimation";
 
 interface Props {
   service: ServiceData;
@@ -55,7 +56,6 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
 
-  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
@@ -80,25 +80,6 @@ const FieldServiceCard: React.FC<Props> = ({
               className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             ></ImageProxy>
           ) : (
-            // <Image
-            //   // src={
-            //   //   service?.cardImg?.url
-            //   //     ? `${imageBaseUrl}${service?.cardImg?.url}`
-            //   //     : "/placeholder.png"
-            //   // }
-            //   src={
-            //     service?.cardImg?.url
-            //       ? `/api/image-proxy?url=${encodeURIComponent(`${imageBaseUrl}${service?.cardImg?.url}`)}`
-            //       : "/placeholder.png"
-            //   }
-            //   alt={service?.title || "service image"}
-            //   width={518}
-            //   height={302}
-            //   unoptimized
-            //   priority
-            //   sizes="(max-width: 768px) 300px, min(768px, 300px)"
-            //   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
-            // />
             <ImageProxy
               src={`${service.cardImg}`}
               alt={service?.title || "service image"}
@@ -147,14 +128,13 @@ const FieldServiceCard: React.FC<Props> = ({
 
       {/* Desktop image */}
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
-        {service?.cardImg &&
+        {!service?.lottieJson &&
+        service?.cardImg &&
         typeof service?.cardImg === "object" &&
         "url" in service?.cardImg ? (
           <ImageProxy
             src={
-              service?.cardImg?.url
-                ? service?.cardImg?.url
-                : "/placeholder.png"
+              service?.cardImg?.url ? service?.cardImg?.url : "/placeholder.png"
             }
             alt={service?.title || "service image"}
             width={518}
@@ -164,6 +144,8 @@ const FieldServiceCard: React.FC<Props> = ({
             priority
             sizes="(max-width: 768px) 300px, min(768px, 300px)"
           />
+        ) : service?.lottieJson ? (
+          <LottieAnimation animationData={service?.lottieJson} />
         ) : (
           <Image
             src={`${service.cardImg}`}

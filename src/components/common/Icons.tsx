@@ -2768,63 +2768,7 @@ export const SliderIcon1 = () => (
     />
   </svg>
 );
-export const HvacGlowHeroDesktopIcon = () => (
-  <svg
-    width="1020"
-    height="100%"
-    viewBox="0 0 1020 850"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g
-      style={{ mixBlendMode: "plus-lighter" }}
-      filter="url(#filter0_f_1465_39173)"
-    >
-      <path
-        className="glowing-path"
-        d="M197 957.924L507.5 416.5L823 -129.962"
-        stroke="url(#paint0_linear_1465_39173)"
-        strokeWidth="216"
-        strokeLinecap="round"
-      />
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_1465_39173"
-        x="0.981689"
-        y="-325.98"
-        width="1018.04"
-        height="1479.92"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="44"
-          result="effect1_foregroundBlur_1465_39173"
-        />
-      </filter>
-      <linearGradient
-        id="paint0_linear_1465_39173"
-        x1="853.107"
-        y1="357.525"
-        x2="600.639"
-        y2="55.9527"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.0622667" stopOpacity="0" />
-        <stop offset="0.996954" stopColor="#A6070C" />
-        <stop offset="1" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+
 export const PlayIcon2 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

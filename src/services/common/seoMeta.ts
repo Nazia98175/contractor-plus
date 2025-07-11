@@ -56,3 +56,5 @@ export const getSeoData = async (
     throw new Error(error);
   }
 };
+
+

@@ -1,6 +1,7 @@
 import { getBlogs } from "@/services/blogs";
 import { getIndustryPage } from "./industry";
 import { get } from "http";
+import { getCommonData } from "../common/commonData";
 
 export interface CrmLikePageDataResponse {
   crmPageContent: any | null;
@@ -15,6 +16,7 @@ export interface CrmLikePageDataResponse {
   blogsList: any | null;
   blogs?: any | null;
   thousandReviews: any | null;
+  commonData: any | null;
 }
 
 export const getIndustryPageData = async (
@@ -33,6 +35,7 @@ export const getIndustryPageData = async (
     faqsRes,
     blogs,
     thousandReviewsRes,
+    commonData,
   ] = await Promise.all([
     getIndustryPage(slug, locale, "&populate=*"),
     getIndustryPage(slug , locale , "&populate[hero][populate]=heroImg"),
@@ -45,7 +48,7 @@ export const getIndustryPageData = async (
     getIndustryPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
     getIndustryPage(slug, locale, "&populate[reviewTrustSection][populate][reviews][populate]=profileImg"),
-   
+   getCommonData(),
   ]);
 
   return {
@@ -60,5 +63,6 @@ export const getIndustryPageData = async (
     faqs: faqsRes?.data?.[0] || null,
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
+    commonData: commonData || null,
   };
 };

@@ -14,7 +14,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
   fieldServiceData,
   slug,
 }) => {
-  console.log(fieldServiceData, "data from api");
+ 
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 

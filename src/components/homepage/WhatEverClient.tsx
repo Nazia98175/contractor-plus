@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+
 const Whatever = dynamic(() => import("./Whatever"), { ssr: false });
 const MakeOperation = dynamic(() => import("./MakeOperation"), { ssr: false });
 type WhatEverClientProps = {
-  data: any;
+  data?: any;
   issection?: boolean;
   className?: string;
   resultStats?: any;

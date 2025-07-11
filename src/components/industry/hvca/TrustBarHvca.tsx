@@ -9,12 +9,14 @@ interface TrustBarProps {
   platforms: Platform[];
   showTrustedSection?: boolean;
   className?: string;
+  trustBarImages?: any;
 }
 
 const TrustBarHvca: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
+  trustBarImages,
 }) => {
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
@@ -27,9 +29,17 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
-        {platforms.map((platform, index) => (
-          <PlatformCard platform={platform} key={index} />
-        ))}
+        {trustBarImages
+          ? trustBarImages.map((item: any, index: number) => (
+              <div key={index} className="flex items-center justify-center">
+                <PlatformCard platform={item} />
+              </div>
+            ))
+          : platforms.map((platform, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <PlatformCard platform={platform} />
+              </div>
+            ))}
       </CardReveal>
 
       <div className="relative z-50 px-4 lg:hidden">
@@ -45,11 +55,17 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
           }}
           autoplay={true}
         >
-          {platforms.map((platform, index) => (
-            <div key={index} className="flex items-center justify-center">
-              <PlatformCard platform={platform} />
-            </div>
-          ))}
+          {trustBarImages
+            ? trustBarImages.map((item: any, index: number) => (
+                <div key={index} className="flex items-center justify-center">
+                  <PlatformCard platform={item} />
+                </div>
+              ))
+            : platforms.map((platform, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <PlatformCard platform={platform} />
+                </div>
+              ))}
         </SliderLayout>
       </div>
     </section>

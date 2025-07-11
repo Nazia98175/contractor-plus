@@ -1,23 +1,18 @@
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import CommonFormField from "@/components/common/CommonFormField";
-import { blackPlatforms, platforms, reviews } from "@/components/common/Helper";
+import { blackPlatforms, platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/hvca/AwardBadge";
 import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
-import IndustryHero from "@/components/industry/hvca/IndustryHero";
 import HvacReview from "@/components/industry/hvca/HvacReview";
 import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
+import IndustryHero from "@/components/industry/hvca/IndustryHero";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/industry/hvca/WantingMore";
-import { getCrmPage } from "@/services/features/crm";
 
-import { getHomepageData } from "@/services/homePage/getHomepageData";
-import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
-import Image from "next/image";
-import { notFound } from "next/navigation";
 import {
   FasterIcon1,
   FasterIcon2,
@@ -26,6 +21,9 @@ import {
   FasterIcon5,
   FasterIcon6,
 } from "@/components/common/Icons";
+import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Not just HVAC software Meet your operating system",
@@ -54,13 +52,10 @@ const page = async ({ params }: PageProps) => {
     faqs,
     blogsList,
     thousandReviews,
-    commonData
+    commonData,
+    trustBarImages,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
-
-  const [blogs] = await Promise.all([
-    getCrmPage("crm", useParams.locale, "&populate=*"),
-  ]);
-  const { homePageContent } = await getHomepageData(useParams?.locale);
+  console.log(crmPageContent?.emailSignupSection, "email section");
   const customIconsMap: Record<number, React.ReactNode> = {
     0: <FasterIcon1 />,
     1: <FasterIcon2 />,
@@ -134,12 +129,9 @@ const page = async ({ params }: PageProps) => {
             variantBtn="dark"
           />
         </div>
-        <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
+        <TrustBarHvca platforms={platforms} trustBarImages={trustBarImages} className="pb-[148px] xl:pb-20" />
       </div>
-      <WhatEverClient
-        data={commonData?.contractorConnects}
-        issection={false}
-      />
+      <WhatEverClient data={commonData?.contractorConnects} issection={false} />
       <div className="relative">
         <Faq
           mainContainerclassName="pt-9 pb-36 z-20 px-2"

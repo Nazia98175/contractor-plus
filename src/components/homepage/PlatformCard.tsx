@@ -6,6 +6,7 @@ interface Platform {
   logo: string;
   name: string;
   rating: number;
+  url?: string;
 }
 
 interface PlatformCardProps {
@@ -19,17 +20,17 @@ const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
         width={155}
         height={40}
         sizes="(max-width: 768px) 155px, (min-width: 769px) 155px"
-        src={platform.logo}
+        src={(platform.url as string) || platform.logo}
         alt={`${platform.name} rating`}
-        className="h-8 max-w-[140px] object-contain sm:max-w-[155px] md:h-10"
+        className="h-28 max-w-[140px] object-contain sm:max-w-[155px] md:h-36"
       />
-      <div className="flex gap-0.5">
+      {/* <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (
           <span key={i} className="max-w-[22px] min-w-4 sm:min-w-[22px]">
             <StartIcon key={i} filled={i < platform.rating} />
           </span>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

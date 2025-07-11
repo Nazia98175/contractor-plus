@@ -2,15 +2,9 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
-import {
-  FasterIcon1,
-  FasterIcon2,
-  FasterIcon3,
-} from "@/components/common/Icons";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 interface AwardBadgesProps {
   buttonInfo: any;
   teamsUsingContractor: any;

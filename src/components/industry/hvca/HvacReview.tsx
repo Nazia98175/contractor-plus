@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Review } from "@/types";
 import Marquee from "react-fast-marquee";
 import { ReviewIcon } from "@/components/common/Icons";

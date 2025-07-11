@@ -1,15 +1,12 @@
 "use client";
 import { PlatformItem } from "@/types";
-import Image from "next/image";
-import CardReveal from "../common/CardReveal";
-import { contractPlatforms } from "../common/Helper";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import Copy from "../common/Copy";
-import { useEffect } from "react";
+import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImageProxy from "../common/ImageProxy";
-import { getMediaUrl } from "@/utils/getMediaUrl";
+import Image from "next/image";
+import { useEffect } from "react";
+import Copy from "../common/Copy";
+import { contractPlatforms } from "../common/Helper";
 gsap.registerPlugin(ScrollTrigger);
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
   useEffect(() => {

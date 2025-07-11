@@ -66,6 +66,7 @@ const EstimaticAiPage = () => {
         data={dealReviews2}
         reviews={dealReviews2.reviews}
         variant="secondary"
+        apiData={false}
       />
       <CrmSercive
         createBtn={"Get started FREE"}

@@ -4,11 +4,9 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
-import TextAnimation from "../common/TextAnimation";
-import SplitText from "../common/SplitText";
-import Copy from "../common/Copy";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });

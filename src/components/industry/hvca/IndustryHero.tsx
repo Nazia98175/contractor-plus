@@ -19,9 +19,6 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   }, []);
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
 
-  console.log(heroImg, "heroImg");
-  console.log(imageBaseUrl, "imageBaseUrl");
-
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="overflow-hidden">
@@ -96,8 +93,8 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             />
           )}
           {heroImg?.url && (
-            <ImageProxy
-              alt="hvac-hero"
+            <Image
+              alt=""
               src={`${heroImg?.url}`}
               width={945}
               height={729}

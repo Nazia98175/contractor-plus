@@ -2,8 +2,15 @@
 import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
-import { TheServiceProps } from "../crmbussiness/KindAdorable";
 import RunWithContractorMobile from "./RunWithContractorMobile";
+import Copy from "../common/Copy";
+
+export interface TheServiceProps {
+  kindAdorable: any;
+  slug?: string;
+  variant?: "light" | "dark";
+  icon?: boolean;
+}
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",
@@ -34,6 +41,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
     >
+      {/* <Copy animateOnScroll={true}> */}
       <h3
         className={`section-heading mx-auto hidden px-2 text-center sm:block ${styles.title}`}
       >
@@ -44,10 +52,13 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       >
         {kindAdorable?.title}
       </h3>
-      <p className="hero-description mx-auto mt-3 max-w-[80%] text-center">
-        {" "}
-        {kindAdorable?.subTitle}
-      </p>
+      {/* </Copy> */}
+
+      <Copy animateOnScroll={true}>
+        <p className="hero-description mx-auto mt-3 max-w-[80%] text-center">
+          {kindAdorable?.subTitle}
+        </p>
+      </Copy>
       {/* Desktop View */}
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">

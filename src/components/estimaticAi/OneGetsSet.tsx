@@ -1,10 +1,16 @@
 import Image from "next/image";
 import { EstimateDividerIcon, TripleChevronIcon } from "../common/Icons";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 
 const OneGetsSet = () => {
   return (
     <div className="main-container pb-8 md:pb-16 xl:mt-7 xl:pb-20">
-      <div className="section-heading service-text flex flex-col items-center justify-center gap-3 text-center md:flex-row md:opacity-70 lg:mb-12">
+      <CardReveal
+        animateOnMount={true}
+        distance={150}
+        className="section-heading service-text flex flex-col items-center justify-center gap-3 text-center md:flex-row md:opacity-70 lg:mb-12"
+      >
         <span className="hidden md:block">
           <TripleChevronIcon />
         </span>
@@ -17,7 +23,7 @@ const OneGetsSet = () => {
         <span>
           <TripleChevronIcon />
         </span>
-      </div>
+      </CardReveal>
       <div className="flex flex-col items-center justify-between gap-2 rounded-3xl border-[#51585C] pt-6 lg:flex-row lg:border">
         <div className="flex flex-col items-center justify-center lg:w-[46%]">
           <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-xl font-semibold">
@@ -74,10 +80,12 @@ const OneGetsSet = () => {
         </div>
       </div>
 
-      <h4 className="mx-auto mt-7 max-w-[742px] text-center text-sm text-[#717171] md:text-xl lg:text-[32px]">
-        Don’t <span className="text-white">hand off</span> control of your
-        estimating process to a tool that can’t bid like you do
-      </h4>
+      <Copy animateOnScroll={true}>
+        <h4 className="mx-auto mt-7 max-w-[742px] text-center text-sm text-[#717171] md:text-xl lg:text-[32px]">
+          Don’t <span className="text-white">hand off</span> control of your
+          estimating process to a tool that can’t bid like you do
+        </h4>
+      </Copy>
     </div>
   );
 };

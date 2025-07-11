@@ -5,6 +5,7 @@ import { BlogBtnIcon } from "../common/Icons";
 import BlogArticle from "./BlogArticle";
 import SliderLayout from "../common/SliderLayout";
 import { headingVariantMap } from "@/utils/getVariants";
+import Copy from "../common/Copy";
 
 interface Props {
   data?: any;
@@ -34,7 +35,7 @@ const BlogPosts: React.FC<Props> = ({
     >
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
-          {/* <PrimaryAnimatedText delay={3000}> */}
+          {/* <Copy animateOnScroll={true}> */}
           <h2
             className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
               classMaxwidth || "max-w-[483px]"
@@ -42,7 +43,7 @@ const BlogPosts: React.FC<Props> = ({
           >
             {blogs?.title || title}
           </h2>
-          {/* </PrimaryAnimatedText> */}
+          {/* </Copy> */}
 
           <div className="hidden md:block">
             <Button className="bg-red-linear primary-btn h-10 gap-2">

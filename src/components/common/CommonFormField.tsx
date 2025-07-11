@@ -3,6 +3,7 @@ import { variantsForm } from "@/utils/getVariants";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
+import Copy from "./Copy";
 
 interface CommonFormFieldProps {
   title: string;
@@ -58,17 +59,21 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   return (
     <>
       {showTitle && (
-        <h3
-          className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
-        >
-          {title}
-        </h3>
+        <Copy animateOnScroll={true}>
+          <h3
+            className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
+          >
+            {title}
+          </h3>
+        </Copy>
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">
-        <p className={`paragraph-text text-center ${variantStyles.subtitle}`}>
-          {subTitle}
-        </p>
+        <Copy animateOnScroll={true}>
+          <p className={`paragraph-text text-center ${variantStyles.subtitle}`}>
+            {subTitle}
+          </p>
+        </Copy>
         <CardReveal distance={50}>
           <form
             className="mx-auto hidden w-full max-w-[550px] flex-col items-start justify-center gap-3 sm:flex md:max-w-[657px] md:flex-row"

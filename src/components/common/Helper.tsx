@@ -3830,6 +3830,7 @@ export const featureContentss = [
       "Most “contractor CRMs” are just contact pages with a few job links. Contractor+ brings the full picture: ",
     highlight:
       "timelines, call transcripts, AI sentiment tracking, and role-specific contacts..",
+    imgSrc: "/images/webp/core-1.webp",
   },
   {
     title: "Send the right tech to the right job based on proximity",
@@ -3837,6 +3838,7 @@ export const featureContentss = [
     description:
       "See team availability and location in real-time to assign jobs faster and smarter. Drag, drop, and delegate",
     highlight: "based on who’s closest and free. No more calling around. ",
+    imgSrc: "/images/webp/core-2.webp",
   },
   {
     title: "Collaborate with your team on any job",
@@ -3844,6 +3846,7 @@ export const featureContentss = [
     description:
       "Each job has its own built-in group chat, keeping the whole crew on the same page",
     highlight: "and minimizing texts, missed updates, or miscommunication.",
+    imgSrc: "/images/webp/core-3.webp",
   },
   {
     title: "Quotes that practically write themselves",
@@ -3852,6 +3855,7 @@ export const featureContentss = [
       "Build accurate, professional estimates fast with live local pricing from Lowe’s, Home Depot",
     highlight:
       "and more. Contractor+ pulls your line items, adds markup, and generates client-ready contracts in minutes.",
+    imgSrc: "/images/webp/core-4.webp",
   },
   {
     title: "The only CRM with property-specific profiles",
@@ -3859,12 +3863,14 @@ export const featureContentss = [
     description:
       "Contractor+ is the only platform that lets you track the full history of every property you’ve ever serviced:",
     highlight: "communications,  photos & documents, invoices, even live cams.",
+    imgSrc: "/images/webp/core-5.webp",
   },
   {
     title: "The ultimate AI assistant for contractors",
     titleImg: big_chief_ai,
     description:
       "Every call and text gets answered. Every Lead is qualified and entered into your CRM, every Service Request is captured, every Estimate/Quote appointment is scheduled. Big Chief never sleeps..",
+    imgSrc: "/images/webp/core-6.webp",
   },
 ];
 

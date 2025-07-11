@@ -4,12 +4,13 @@ import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
 
-interface FeatureItem {
+export interface FeatureItem {
   id: number;
   title: string;
   cardQuote: string | null;
   userName: string | null;
   cardImg: any | null;
+  imgSrc: string;
   content: {
     id: number;
     title: string;

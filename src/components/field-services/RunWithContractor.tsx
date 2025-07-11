@@ -4,13 +4,8 @@ import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "./RunWithContractorMobile";
 import Copy from "../common/Copy";
+import { TheServiceProps } from "@/types";
 
-export interface TheServiceProps {
-  kindAdorable: any;
-  slug?: string;
-  variant?: "light" | "dark";
-  icon?: boolean;
-}
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",

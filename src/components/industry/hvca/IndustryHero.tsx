@@ -91,7 +91,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             unoptimized
           /> */}
           <Image
-            alt=""
+            alt="HVAC industry hero illustration"
             src={`${heroImg?.url}`}
             width={945}
             height={729}

@@ -64,7 +64,7 @@ const TimmingEffectSlider: React.FC<TimmingEffectSliderProps> = ({
           >
             <div></div>
             <div className="flex items-center gap-2.5 p-[6px]">
-              <img src={item.imgPath} alt="" />
+              <img src={item.imgPath} alt={item.name} />
               <div>
                 <p>{item.job}</p>
                 <h5>{item.name}</h5>

@@ -14,6 +14,7 @@ interface FeatureItem {
   cardQuote: string | null;
   userName: string | null;
   cardImg: any | null;
+  imgSrc: string;
   content: {
     id: number;
     title: string;

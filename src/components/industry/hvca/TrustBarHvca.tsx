@@ -32,7 +32,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         {trustBarImages
           ? trustBarImages.map((item: any, index: number) => (
               <div key={index} className="flex items-center justify-center">
-                <PlatformCard platform={item} />
+                <PlatformCard platform={item} className="h-28 md:h-36" />
               </div>
             ))
           : platforms.map((platform, index) => (
@@ -58,7 +58,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
           {trustBarImages
             ? trustBarImages.map((item: any, index: number) => (
                 <div key={index} className="flex items-center justify-center">
-                  <PlatformCard platform={item} />
+                  <PlatformCard platform={item} className="h-28 md:h-36" />
                 </div>
               ))
             : platforms.map((platform, index) => (

@@ -79,6 +79,7 @@ const page = async ({ params }: PageProps) => {
           <TrustBatBuildContractor
             trustedCompanies={trustedCompanies}
             platforms={blackPlatforms}
+            trustBarImages={trustBarImages}
             showTrustedSection={true}
             className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
           />
@@ -129,7 +130,11 @@ const page = async ({ params }: PageProps) => {
             variantBtn="dark"
           />
         </div>
-        <TrustBarHvca platforms={platforms} trustBarImages={trustBarImages} className="pb-[148px] xl:pb-20" />
+        <TrustBarHvca
+          platforms={platforms}
+          trustBarImages={trustBarImages}
+          className="pb-[148px] xl:pb-20"
+        />
       </div>
       <WhatEverClient data={commonData?.contractorConnects} issection={false} />
       <div className="relative">

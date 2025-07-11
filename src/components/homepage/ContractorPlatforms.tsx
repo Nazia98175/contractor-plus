@@ -9,6 +9,7 @@ import Copy from "../common/Copy";
 import { contractPlatforms } from "../common/Helper";
 gsap.registerPlugin(ScrollTrigger);
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
+  console.log(contractPlatformsData, "contractPlatformsData");
   useEffect(() => {
     gsap.set(".plateform-boxes", {
       y: 100,
@@ -49,15 +50,6 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                 className="group plateform-boxes w-full max-w-[430px] p-2 sm:w-[48%]"
               >
                 <div className="animate-border relative rounded-xl">
-                  <Image
-                    width={389}
-                    height={187}
-                    sizes="(max-width: 768px) 289px, 389px"
-                    src={contractPlatforms?.[index]?.img}
-                    alt={`${obj.text}`}
-                    priority
-                    className="relative z-[10px] max-h-[187px] overflow-hidden rounded-md object-cover"
-                  />
                   <Image
                     width={389}
                     height={187}

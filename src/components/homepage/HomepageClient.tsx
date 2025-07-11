@@ -27,7 +27,6 @@ const HomepageClient = ({
   resultStats,
   blogs,
 }: any) => {
-  console.log("wdfdwe", contractPlatformsData);
 
   return (
     <>

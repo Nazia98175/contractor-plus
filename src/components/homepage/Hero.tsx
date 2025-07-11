@@ -9,15 +9,17 @@ import HerosectionBackground from "./HerosectionBackground";
 import TextAnimation from "../common/TextAnimation";
 import SplitText from "../common/SplitText";
 import Copy from "../common/Copy";
+import { setEncryptedItem } from "@/utils/localStorage";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
 
-const Hero = ({ homePageContent }: { homePageContent: any }) => {
+const Hero = ({ homePageContent , commonData }: { homePageContent: any  , commonData: any}) => {
   const { heroTitle, heroDescription, createBtn, nccTxt, mobileBtn } =
     homePageContent ?? {};
 
   useEffect(() => {
+    setEncryptedItem("commonData", commonData);
     setTimeout(() => {
       gsap.to("#view-port-screen", {
         opacity: 1,
@@ -53,7 +55,7 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
                 delay={1.3}
                 animateOnMount={true}
               >
-                <FreeAccountButton showIcon={false} text={createBtn} />
+                <FreeAccountButton showIcon={false} text={commonData?.getStartedFreeBtn} />
               </CardReveal>
               <CardReveal
                 className="flex w-full sm:hidden"
@@ -63,12 +65,12 @@ const Hero = ({ homePageContent }: { homePageContent: any }) => {
               >
                 <FreeAccountButton
                   showIcon={false}
-                  text={mobileBtn}
+                  text={commonData?.mobileBtn}
                   className="!w-full"
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1.5}>
-                <CardRequiredButton className="w-full" text={nccTxt} />
+                <CardRequiredButton className="w-full" text={commonData?.nccTxt} />
               </CardReveal>
             </div>
           </div>

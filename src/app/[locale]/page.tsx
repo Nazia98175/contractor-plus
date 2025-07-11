@@ -44,12 +44,13 @@ export default async function Home({
     reviewsList,
     resultStatsSection,
     blogs,
+    commonData
   } = await getHomepageData(useParams?.locale);
 
   return (
     <>
       <div id="view-port-screen" className="relative overflow-hidden opacity-0">
-        <Hero homePageContent={homePageContent?.data?.hero} />
+        <Hero commonData={commonData} homePageContent={homePageContent?.data?.hero} />
         <TrustBar
           platforms={platforms}
           className="mx-auto w-full max-w-[889px] py-4"
@@ -66,6 +67,7 @@ export default async function Home({
         reviewsList={reviewsList?.data?.reviews}
         resultStats={resultStatsSection?.data?.resultsStatsSection}
         blogs={blogs}
+        commonData={commonData}
       />
     </>
   );

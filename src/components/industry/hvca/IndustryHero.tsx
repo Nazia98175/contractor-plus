@@ -5,12 +5,17 @@ import FreeAccountButton from "@/components/common/FreeAccountButton";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
+import { getDecryptedItem } from "@/utils/localStorage";
 
 const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
-
+ const [commonData, setCommonData] = useState<any>(null);
+  useEffect(() => {
+    const data = getDecryptedItem("commonData");
+    setCommonData(data);
+  }, []);
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -45,16 +50,16 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             {/* </TextAnimation> */}
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
-                text={hero?.createBtn}
+                text={commonData?.getStartedFreeBtn}
                 className="!hidden sm:!flex"
               />
               <FreeAccountButton
-                text={hero?.mobileBtn}
+                text={commonData?.mobileBtn}
                 className="flex sm:!hidden"
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
-                text={hero?.nccTxt}
+                text={commonData?.nccTxt}
               />
             </div>
           </div>

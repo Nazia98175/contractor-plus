@@ -1,9 +1,10 @@
 "use client";
 import { variantsForm } from "@/utils/getVariants";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
+import { getDecryptedItem } from "@/utils/localStorage";
 
 interface CommonFormFieldProps {
   title: string;
@@ -55,7 +56,11 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
     return variantsForm[variant];
   };
   const variantStyles = getVariantStyles();
-
+const [commonData, setCommonData] = useState<any>(null);
+  useEffect(() => {
+    const data = getDecryptedItem("commonData");
+    setCommonData(data);
+  }, []);
   return (
     <>
       {showTitle && (
@@ -98,16 +103,16 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
                 {loading ? (
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
-                  createBtn
+                  commonData?.getStartedFreeBtn
                 )}
               </button>
 
               <div className="hidden items-center gap-2 pt-3 md:flex">
-                <CardRequiredButton variantBtn={variantBtn} text={ncc} />
+                <CardRequiredButton variantBtn={variantBtn} text={commonData?.nccTxt} />
               </div>
             </div>
             <div className="flex w-full items-center justify-center md:hidden">
-              <CardRequiredButton text={ncc} variantBtn={variantBtn} />
+              <CardRequiredButton text={commonData?.nccTxt} variantBtn={variantBtn} />
             </div>
           </form>
 
@@ -120,7 +125,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             {loading ? (
               <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
             ) : (
-              mobileBtn
+              commonData?.mobileBtn
             )}
           </button>
         </CardReveal>

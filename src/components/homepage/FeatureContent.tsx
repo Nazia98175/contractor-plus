@@ -24,7 +24,7 @@ type Props = {
 };
 
 const FeatureContent = ({ featureContents, contentRefs }: Props) => {
-  console.log(featureContents);
+
 
   return (
     <>

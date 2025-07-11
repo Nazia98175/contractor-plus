@@ -4,11 +4,12 @@ import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
+import { getDecryptedItem } from "@/utils/localStorage";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -29,7 +30,12 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   //     once: true,
   //   });
   // }, []);
+  const [commonData, setCommonData] = useState<any>(null);
+  useEffect(() => {
+    const data = getDecryptedItem("commonData");
 
+    setCommonData(data);
+  }, []);
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 
   return (
@@ -122,17 +128,17 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
                 <FreeAccountButton
                   className="!hidden sm:!flex"
-                  text={hero?.createBtn}
+                  text={commonData?.getStartedFreeBtn}
                   showIcon={false}
                 />
                 <FreeAccountButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
-                  text={hero?.mobileBtn}
+                  text={commonData?.mobileBtn}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"
-                  text={hero?.nccTxt}
+                  text={commonData?.nccTxt}
                 />
               </div>
             </CardReveal>

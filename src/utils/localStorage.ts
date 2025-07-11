@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 
-const SECRET_KEY = process.env.NEXT_PUBLIC_SECRET_KEY; // 🔐 Replace with env var in production
+const SECRET_KEY = process.env.NEXT_PUBLIC_SECRET_KEY as string; // 🔐 Replace with env var in production
 
 export const setEncryptedItem = (key: string, value: any) => {
   try {

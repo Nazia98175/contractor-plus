@@ -135,7 +135,7 @@ const page = async ({ params }: PageProps) => {
         <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
       </div>
       <WhatEverClient
-        data={homePageContent?.data?.contractorConnects}
+        // data={homePageContent?.data?.contractorConnects}
         issection={false}
       />
       <div className="relative">

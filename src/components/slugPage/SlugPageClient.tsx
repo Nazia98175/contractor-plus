@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { LazyWrapper } from "@/components/LazyWrapper";
 import { Platform } from "@/types";
 import Image from "next/image";
+import { getDecryptedItem } from "@/utils/localStorage";
 const SlugPageClientOptimized = ({
   slug,
-  ncc,
   trackProperties,
   // likeYouDo,
   // howContractorWork,
@@ -17,11 +17,13 @@ const SlugPageClientOptimized = ({
   blogsList,
   faq,
   crmService,
-  createBtn,
-  mobileBtn,
 }: any) => {
   const [platforms, setPlatforms] = useState<Platform[] | null>(null);
-
+  const [commonData, setCommonData] = useState<any>(null);
+  useEffect(() => {
+    const data = getDecryptedItem("commonData");
+    setCommonData(data);
+  }, []);
   useEffect(() => {
     let mounted = true;
 
@@ -57,7 +59,7 @@ const SlugPageClientOptimized = ({
           <>
             <LazyWrapper
               importFn={() => import("../crmbussiness/TrackProperties")}
-              props={{ ncc, trackProperties }}
+              props={{ ncc: commonData?.nccTxt, trackProperties }}
               fallback={<div className="h-32 animate-pulse bg-gray-100" />}
             />
 
@@ -69,7 +71,7 @@ const SlugPageClientOptimized = ({
 
             <LazyWrapper
               importFn={() => import("../crmbussiness/HowContractorWork")}
-              props={{ ncc, trackProperties }}
+              props={{ ncc: commonData?.nccTxt, trackProperties }}
               fallback={<div className="h-48 animate-pulse bg-gray-100" />}
             />
           </>
@@ -146,9 +148,9 @@ const SlugPageClientOptimized = ({
           <LazyWrapper
             importFn={() => import("../crmbussiness/CrmSercive")}
             props={{
-              createBtn,
-              mobileBtn,
-              ncc,
+              createBtn: commonData?.getStartedFreeBtn,
+              mobileBtn: commonData?.mobileBtn,
+              ncc: commonData?.nccTxt,
               data: crmService,
               variant: "primary",
               className: ` ${slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"}`,

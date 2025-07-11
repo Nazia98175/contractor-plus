@@ -8,8 +8,8 @@ import Copy from "../common/Copy";
 interface Industry {
   title: string;
   subTitle: string;
-  url: string;
-  btnText: string;
+  url: string| null;
+  btnText: string| null;
 }
 
 interface TheIndustryProps {

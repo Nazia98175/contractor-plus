@@ -2591,12 +2591,6 @@ export const comparisonTableData: {
         name: "Credit & Debit Payments",
         description:
           "You can accept payments from all major debit and credit cards directly on your invoices, in your client portal and in-person.",
-        available: [false, true, true],
-      },
-      {
-        name: "ACH Payments",
-        description:
-          "Collecting a bank/ACH payment has never been easier. We've integrated with Plaid to facilitate fast, secure, frictionless ACH payments. Your clients can login to their bank, click pay, and the transaction is complete!",
         available: [
           false,
           "2.9% Per Transaction",
@@ -2604,14 +2598,20 @@ export const comparisonTableData: {
         ],
       },
       {
-        name: "Mobile Card Readers",
+        name: "ACH Payments",
         description:
-          "Order bluetooth Card Readers to accept payments in the field and on-the-go! We'll even send qualifying members a FREE card reader on the house.",
+          "Collecting a bank/ACH payment has never been easier. We've integrated with Plaid to facilitate fast, secure, frictionless ACH payments. Your clients can login to their bank, click pay, and the transaction is complete!",
         available: [
           false,
           "1% Per Transaction",
           "1% Per Transaction (Capped at $10)",
         ],
+      },
+      {
+        name: "Mobile Card Readers",
+        description:
+          "Order bluetooth Card Readers to accept payments in the field and on-the-go! We'll even send qualifying members a FREE card reader on the house.",
+        available: [false, true, true],
       },
       {
         name: "Pass Transaction Fees To Clients",

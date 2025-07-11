@@ -35,15 +35,15 @@ const BlogPosts: React.FC<Props> = ({
     >
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
-          <Copy animateOnScroll={true}>
-            <h2
-              className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
-                classMaxwidth || "max-w-[483px]"
-              } ${headingVariantMap[headingVariant]}`}
-            >
-              {blogs?.title || title}
-            </h2>
-          </Copy>
+          {/* <Copy animateOnScroll={true}> */}
+          <h2
+            className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
+              classMaxwidth || "max-w-[483px]"
+            } ${headingVariantMap[headingVariant]}`}
+          >
+            {blogs?.title || title}
+          </h2>
+          {/* </Copy> */}
 
           <div className="hidden md:block">
             <Button className="bg-red-linear primary-btn h-10 gap-2">

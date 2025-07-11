@@ -21,14 +21,11 @@ const Features = ({ features }: { features: any }) => {
     <section className="relative z-20 bg-white pt-11 pb-6 sm:px-2 lg:pb-[46px] xl:pt-[45px]">
       <div className="mx-auto w-full max-w-[1338px] px-2">
         <div className="bg-doctor py-4 sm:rounded-4xl md:py-6 lg:rounded-[32px] lg:py-8 xl:p-9">
-          <CardReveal
-            distance={50}
-            className="hidden gap-6 lg:grid lg:grid-cols-3"
-          >
+          <div className="hidden gap-6 lg:grid lg:grid-cols-3">
             {featureData.map((obj, index) => (
-              <FeatureCard obj={obj} key={index} />
+              <FeatureCard obj={obj} index={index} key={index} />
             ))}
-          </CardReveal>
+          </div>
           <div className="blog-post lg:hidden">
             <SliderLayout
               autoplay
@@ -41,7 +38,7 @@ const Features = ({ features }: { features: any }) => {
               }}
             >
               {featureData.map((obj, index) => (
-                <FeatureCard obj={obj} key={index} />
+                <FeatureCard obj={obj} index={index} key={index} />
               ))}
             </SliderLayout>
           </div>

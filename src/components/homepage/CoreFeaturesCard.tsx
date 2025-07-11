@@ -23,7 +23,6 @@ interface Props {
 
 const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const [activeFeature, setActiveFeature] = useState(0);
-  const [progressValue, setProgressValue] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -40,7 +39,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
-  const featureBtn: string[] = [t.raw("featureBtn") || "Learn More"];
 
   // Mobile detection with resize listener
   useEffect(() => {
@@ -62,8 +60,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
   // Update progress value and scroll active button into view
   useEffect(() => {
-    setProgressValue(activeFeature / (features.length - 1));
-
     if (isMobile && featureButtonsRef.current[activeFeature]) {
       featureButtonsRef.current[activeFeature]?.scrollIntoView({
         behavior: "smooth",
@@ -132,7 +128,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         const totalScroll = containerEl.offsetHeight - windowHeight;
         const currentScroll = scrollY - containerTop;
         const progress = Math.max(0, Math.min(1, currentScroll / totalScroll));
-        setProgressValue(progress);
       }
 
       ticking = false;

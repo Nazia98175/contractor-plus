@@ -4,6 +4,7 @@ import { SliderRedLineIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import ContractorIndustrySlider from "./ContractorIndustrySlider";
 import PrimaryLink from "../common/PrimaryLInk";
+import Copy from "../common/Copy";
 interface Industry {
   title: string;
   subTitle: string;
@@ -45,14 +46,17 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       <div className="relative z-20 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
         <div className="px-2">
           <div className="mx-auto w-full max-w-[883px] text-center">
-            <h3 className="section-heading gradient-text text-center">
-              {contractorIndustry?.title ?? ""}
-            </h3>
+            <Copy animateOnScroll={true}>
+              <h3 className="section-heading gradient-text text-center">
+                {contractorIndustry?.title ?? ""}
+              </h3>
+            </Copy>
           </div>
-
-          <h6 className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
-            {contractorIndustry?.subTitle ?? ""}
-          </h6>
+          <Copy animateOnScroll={true}>
+            <h6 className="text-superSilver font-jakarta py-4 text-center text-base font-medium sm:font-normal">
+              {contractorIndustry?.subTitle ?? ""}
+            </h6>
+          </Copy>
           {/* <div className="hidden items-center justify-center md:flex">
             <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
               {contractorIndustry?.btnText ?? ""}

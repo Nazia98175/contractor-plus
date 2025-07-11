@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimation from "../common/TextAnimation";
+import Copy from "../common/Copy";
 
 const AnimationHeader = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

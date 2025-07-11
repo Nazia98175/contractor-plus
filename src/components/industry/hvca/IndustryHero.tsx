@@ -1,13 +1,12 @@
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
+import Copy from "@/components/common/Copy";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
-import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
-import Copy from "@/components/common/Copy";
 
 const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;

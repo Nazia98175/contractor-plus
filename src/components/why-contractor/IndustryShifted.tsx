@@ -1,7 +1,7 @@
 import React, { JSX } from "react";
-import TextAnimation from "../common/TextAnimation";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import { CustomerDemandIcon, GlassIcon, GrowthIcon } from "../common/Icons";
+import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
+import Copy from "../common/Copy";
 
 interface IndustryItem {
   id: number;

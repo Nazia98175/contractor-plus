@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import ImageSequenceCanvas from "./ImageSequenceCanvas";
+import Copy from "../common/Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 

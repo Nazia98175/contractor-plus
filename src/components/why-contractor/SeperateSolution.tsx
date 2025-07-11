@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimation from "../common/TextAnimation";
 import { FrictionTextGroup } from "./Icons";
+import Copy from "../common/Copy";
 
 const SeperateSolution = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

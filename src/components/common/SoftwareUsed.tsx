@@ -24,6 +24,7 @@ interface SoftwareUsedProps {
   index?: number;
   titleColor?: string;
   paragraphColor?: string;
+  icon?: any;
 }
 
 const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
@@ -32,6 +33,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   index,
   titleColor = "md:text-winterWay  text-white",
   paragraphColor = " md:text-winterWay text-decemberSky",
+  icon,
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -47,33 +49,26 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
     >
-      {icons && index !== undefined ? (
+      {icon ? (
+        <span className="size-7 sm:size-8">{icon}</span>
+      ) : icons && index !== undefined && icons[index]?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <ImageProxy
-            src={`${icons[index]?.url}` || "/"}
+            src={icons[index].url}
             fill
             className="brightness-0 invert filter sm:filter-none"
             alt={`${item.title} icon`}
-          ></ImageProxy>
-          {/* <Image
-            src={
-              `${imageBaseUrl.split("api")[0].slice(0, -1)}${icons[index]?.url}` ||
-              "/"
-            }
-            fill
-            className="brightness-0 invert filter sm:filter-none"
-            alt={`${item.title} icon`}
-          /> */}
-          {/* <LottieAnimation loop={true} animationData={animationData} /> */}
+          />
         </div>
-      ) : (
+      ) : item.icon ? (
         <span className="size-7 sm:size-8">{item.icon}</span>
+      ) : (
+        <LottieAnimation
+          className="h-9 w-8"
+          loop={true}
+          animationData={item.lottieJson}
+        />
       )}
-      <LottieAnimation
-        className="h-9 w-8"
-        loop={true}
-        animationData={item.lottieJson}
-      />
       <h3 className={`countup-title ${titleColor}`}>
         {item.isRange ? (
           <span>{`${item.start}–${item.end}`}</span>

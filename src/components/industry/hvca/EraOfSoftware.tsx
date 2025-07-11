@@ -8,7 +8,7 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
   slug,
 }) => {
   return (
-    <section className="no-scrollbar relative z-10 overflow-x-hidden">
+    <section className="no-scrollbar relative z-10 overflow-hidden">
       <div className="bg-white-linear absolute -bottom-[1%] left-0 z-[3] h-24 w-full sm:h-[180px] lg:h-[237px]"></div>
       <div className="bg-romanRed absolute top-1/2 -left-[77px] z-0 hidden h-5 w-full max-w-[300px] -translate-y-[60%] rotate-45 rounded-full blur-[44px] md:block"></div>
 
@@ -38,7 +38,7 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
           alt="Era of Software"
         />
         <Image
-          sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+          sizes="(max-width: 768px) 100vw, min-width:(768px, 100vw)"
           width={1920}
           height={500}
           priority

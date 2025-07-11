@@ -9,6 +9,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw, WhatEverIcon } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import WhateverBackground from "./WhateverBackground";
+import Copy from "../common/Copy";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -164,9 +165,11 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
     <section ref={sectionRef} className="relative z-10 w-full px-2">
       <WhateverBackground isDesktop />
       <div className="relative z-20 w-full overflow-visible pt-12 pb-[53px] will-change-transform">
-        <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
-          <span>{whateverOperation?.title}</span>
-        </h3>
+        <Copy animateOnScroll={true}>
+          <h3 className="section-heading gradient-text mb-[21px] text-center md:mb-8">
+            <span>{whateverOperation?.title}</span>
+          </h3>
+        </Copy>
 
         <div ref={containerRef} className="mx-auto max-w-[1002px] px-2 lg:px-0">
           <div
@@ -289,8 +292,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
 
         {/* <PrimaryAnimatedText delay={3000}> */}
         <p className="text-granite mx-auto flex w-fit items-center gap-2 text-center text-lg capitalize opacity-90">
-          <span className="pr-2 !text-white">5000+</span>
-          {whateverOperation?.subTitle?.split("5000+")?.[1]}
+          <Copy animateOnScroll={true}>
+            <span className="pr-2 !text-white">5000+</span>
+          </Copy>
+          <Copy animateOnScroll={true}>
+            <span> {whateverOperation?.subTitle?.split("5000+")?.[1]}</span>
+          </Copy>
           <WhatEverIcon className="h-5 w-5" />
         </p>
         {/* </PrimaryAnimatedText> */}

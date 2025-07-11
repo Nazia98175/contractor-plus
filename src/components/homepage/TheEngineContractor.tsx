@@ -21,15 +21,15 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
     triggerOnce: true,
     threshold: 0.3,
   });
-const title = 'The engine 57,163 contractors run on';
+  const title = "The engine 57,163 contractors run on";
 
-const match = title.match(/^(.*?)(\d[\d,\.]*)(.*)$/);
-if (!match) {
+  const match = title.match(/^(.*?)(\d[\d,\.]*)(.*)$/);
+  if (!match) {
     return null; // Handle the case where the title doesn't match the expected format
   }
-const before = match[1]; // "The engine "
-const number = match[2]; // "57,163"
-  const after = match[3];  // " contractors run on"
+  const before = match[1]; // "The engine "
+  const number = match[2]; // "57,163"
+  const after = match[3]; // " contractors run on"
 
   return (
     <section className="relative overflow-hidden">
@@ -50,7 +50,7 @@ const number = match[2]; // "57,163"
                 <CountUp
                   className="inline-flex w-fit max-w-[73px] min-w-[73px] sm:max-w-[105px] sm:min-w-[105px] lg:max-w-[141px] lg:min-w-[141px] xl:max-w-[123px] xl:min-w-[123px]"
                   start={0}
-                  end={+(number.replace(/,/g, ""))} // Remove commas for CountUp
+                  end={+number.replace(/,/g, "")} // Remove commas for CountUp
                   duration={3}
                   separator=","
                 />

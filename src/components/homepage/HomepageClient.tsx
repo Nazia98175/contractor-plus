@@ -31,7 +31,7 @@ const HomepageClient = ({
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />
       <Finally finallyC={problemSolutions} />
-      {/* <CoreFeatures coreFeatures={featurHighlight} /> */}
+      <CoreFeatures coreFeatures={featurHighlight} />
       <Features features={homePageContent?.data?.serviceList} />
       <ContractorIndustry
         contractorIndustry={homePageContent?.data?.Industries}

@@ -8,6 +8,7 @@ import { GroupStartIcon } from "../common/Icons";
 import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import ReviewCard from "../common/ReviewCard";
 import ReviewModal from "../common/ReviewModal";
+import Copy from "../common/Copy";
 
 interface Reviews {
   title: string;
@@ -27,15 +28,17 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
- 
 
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-[25px] pb-[35px] md:pt-10 md:pb-16">
       <div className="main-container flex flex-col items-center justify-between gap-3 text-center md:text-start lg:flex-row">
         {/* <PrimaryAnimatedText delay={3000}> */}
-        <h3 className="section-heading gradient-text-2 text-center text-black md:text-start">
-          {reviews?.title ?? ""}
-        </h3>
+        <Copy animateOnScroll={true}>
+          <h3 className="section-heading gradient-text-2 text-center text-black md:text-start">
+            {reviews?.title ?? ""}
+          </h3>
+        </Copy>
+
         {/* </PrimaryAnimatedText> */}
         <CardReveal
           distance={50}

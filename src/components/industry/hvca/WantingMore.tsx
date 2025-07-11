@@ -29,7 +29,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
       pin: headingRef.current,
       pinSpacing: false, // Prevents extra spacing
       scrub: false,
-      markers: true,
+      markers: false,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         // Optional: Add any additional animations during scroll

@@ -1,14 +1,12 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import {
-  WhyContractorDropdownlinks,
   IndustriesDropdownLinks,
   ResourcesDropdownlinks,
-  PricingDropdownLinks,
   featurelinks,
 } from "./Helper";
-import Link from "next/link";
-import { CrossIcon, LogoIcon, SidebarArrowIcon, ArrowIcon } from "./Icons";
+import { ArrowIcon, CrossIcon, LogoIcon, SidebarArrowIcon } from "./Icons";
 
 interface DropdownItemProps {
   title: string;

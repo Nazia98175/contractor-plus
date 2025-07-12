@@ -1,9 +1,7 @@
-import { PlayIcon, StartIcon } from "./Icons";
-import Image from "next/image";
 import { Review } from "@/types";
-import { OurReviewList } from "./Helper";
-import ImageProxy from "./ImageProxy";
 import Copy from "./Copy";
+import { PlayIcon, StartIcon } from "./Icons";
+import ImageProxy from "./ImageProxy";
 
 interface ReviewCardProps {
   review: Review;

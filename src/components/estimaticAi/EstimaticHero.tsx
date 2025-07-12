@@ -6,15 +6,9 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { StartIcon } from "../common/Icons";
 import StatisticCard from "./StatisticCard";
 import Copy from "../common/Copy";
+import { estimateHeroData } from "../common/Utils";
 
 const EstimaticHero = () => {
-  const estimateHeroData = [
-    { title: "<9", desc: "Minutes spent on an estimate" },
-    { title: "$100k+", desc: "More in annual profit from fewer underbids" },
-    { title: "2x", desc: "Higher close rate for estimates sent same-day" },
-    { title: "30%", desc: "Reduction in material cost errors" },
-  ];
-
   return (
     <section className="bg-cover pb-8 text-white md:pb-14 xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
       <div className="main-container flex justify-center pt-[126px] pb-1.5 xl:justify-between">

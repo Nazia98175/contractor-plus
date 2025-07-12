@@ -1,12 +1,11 @@
 "use client";
+import { PlansProps, Review } from "@/types";
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
-import ReviewCard from "../common/ReviewCard";
-import { PlansProps, Review } from "@/types";
-import ReviewModal from "../common/ReviewModal";
-import { OurReviewList, reviews } from "../common/Helper";
+import { reviews } from "../common/Helper";
 import { ScrollDownIcon } from "../common/Icons";
-import Copy from "../common/Copy";
+import ReviewCard from "../common/ReviewCard";
+import ReviewModal from "../common/ReviewModal";
 
 const CompleteFeatureList: React.FC<PlansProps> = ({ onScroll }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

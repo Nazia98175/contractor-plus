@@ -1,16 +1,12 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 // Only import critical above-the-fold component
-import CrmHero from "@/components/crmbussiness/CrmHero";
 import ClientOnlyWrapper from "@/components/client/ClientOnlyWrapper";
-import TrustedService from "@/components/crmbussiness/TrustedService";
+import CrmHero from "@/components/crmbussiness/CrmHero";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
-import { console } from "inspector";
-import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
-import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
-import { fieldcarddetail } from "@/components/common/Helper";
+import TrustedService from "@/components/crmbussiness/TrustedService";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -64,7 +60,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     faqs,
     blogsList,
     thousandReviews,
-    commonData
+    commonData,
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
 
   const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
@@ -98,7 +94,12 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   return (
     <>
       {/* Critical above-the-fold content - Server Component */}
-      <CrmHero commonData={commonData} hero={pageData?.hero} slug={useParams?.slug} heroImg={heroImg} />
+      <CrmHero
+        commonData={commonData}
+        hero={pageData?.hero}
+        slug={useParams?.slug}
+        heroImg={heroImg}
+      />
       <TrustedService reviews={reviews} slug={useParams?.slug} />
       <SwitchingTool switchingTool={pageData?.switchingTool} />
       {/* Everything else loads client-side - THIS is the key! */}

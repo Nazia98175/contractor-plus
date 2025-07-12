@@ -2,7 +2,7 @@
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
 import Faq from "@/components/crmbussiness/Faq";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
 import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";

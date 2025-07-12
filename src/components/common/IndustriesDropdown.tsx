@@ -1,6 +1,5 @@
 "use client";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 interface Props {
@@ -58,7 +57,7 @@ const IndustriesDropdown: React.FC<Props> = ({ headerSubList }) => {
       <div className="no-scrollbar grid w-full grid-cols-4 gap-3 overflow-auto">
         {headerSubList?.[0]?.links?.map((link: any, index: any) => (
           <Link
-            href={link?.linkUrl ?? "#"}
+            href={link?.linkUrl ?? "/"}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}

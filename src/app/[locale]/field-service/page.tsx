@@ -12,7 +12,7 @@ import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
 import { getBlogs } from "@/services/blogs";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";

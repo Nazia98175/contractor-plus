@@ -5,7 +5,7 @@ import Copy from "../common/Copy";
 
 const OneGetsSet = () => {
   return (
-    <div className="main-container pb-8 md:pb-16 xl:mt-7 xl:pb-20">
+    <div className="main-container sm:pb-8 md:pb-16 xl:mt-7 xl:pb-20">
       <CardReveal
         animateOnMount={true}
         distance={150}
@@ -17,16 +17,16 @@ const OneGetsSet = () => {
         <span className="hidden md:block">
           One gets sent. The other gets redone.
         </span>
-        <span className="mx-auto block max-w-[296px] md:hidden">
-          Finished estimate output
+        <span className="mx-auto block max-w-[296px] !text-[26px] sm:!text-[30px] md:hidden">
+          Finished estimate <br /> output
         </span>
         <span>
           <TripleChevronIcon />
         </span>
       </CardReveal>
-      <div className="flex flex-col items-center justify-between gap-2 rounded-3xl border-[#51585C] pt-6 lg:flex-row lg:border">
+      <div className="flex flex-col items-center justify-between gap-2 rounded-3xl border-[#51585C] pt-5 sm:pt-6 lg:flex-row lg:border">
         <div className="flex flex-col items-center justify-center lg:w-[46%]">
-          <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-xl font-semibold">
+          <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-sm font-semibold sm:text-base md:text-xl">
             <h4>Other AI estimating software</h4>
             <Image
               src="/images/png/😖.png"
@@ -57,7 +57,7 @@ const OneGetsSet = () => {
         <div className="flex w-full flex-col items-center justify-end lg:w-[53%]">
           <div className="mb-3 flex items-center justify-center gap-3.5">
             <Image
-              width={140}
+              width={90}
               height={20}
               alt="Estimatic logo"
               src="/images/svg/estimatic.svg"

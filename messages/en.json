@@ -75,30 +75,7 @@
   "potentialIntegrations": "Potential Integrations",
   "makeoperation": {
     "heading": "Make operations your competitive edge",
-    "desc": "The ROI from Contractor+ makes the choice easy",
-    "makeOperationlist": [
-      {
-        "title": "faster",
-        "description": "Estimate process",
-        "start": 0,
-        "end": 4,
-        "suffix": "x"
-      },
-      {
-        "title": "faster",
-        "description": "Job turnaround time",
-        "start": 0,
-        "end": 28,
-        "suffix": "%"
-      },
-      {
-        "title": "less",
-        "description": "Time spent on admin work",
-        "start": 0,
-        "end": 38,
-        "suffix": "%"
-      }
-    ]
+    "desc": "The ROI from Contractor+ makes the choice easy"
   },
 
   "crm": {

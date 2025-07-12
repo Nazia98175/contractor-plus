@@ -23,7 +23,7 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
 export const metadata = {
   title: "The first AI estimator worth trusting",
@@ -37,7 +37,7 @@ const EstimaticAiPage = () => {
       <TrustedService
         reviews={estimaticReviews}
         slug="crm"
-        className="lg:pt-6 lg:pb-3.5"
+        className="pb-6 lg:pt-6 lg:pb-3.5"
       />
       <RunWithContractor
         kindAdorable={estimateSoftwareData}
@@ -64,7 +64,7 @@ const EstimaticAiPage = () => {
         }}
       />
 
-      <AwardsTagsImg className="mt-[133px]" />
+      <AwardsTagsImg className="sm:mt-24 xl:mt-[133px]" />
       <ThousandsReviews
         data={dealReviews2}
         reviews={dealReviews2.reviews}

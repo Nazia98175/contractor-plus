@@ -17,7 +17,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className }) => {
 
   return (
     <main className={`${className}`}>
-      <div className="hidden items-center justify-center gap-5 px-4 pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
+      <div className="hidden items-center justify-center gap-5 px-4 pb-20 sm:pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
         {awards.map((award, index) => {
           return (
             <CardReveal distance={150} delay={index * 0.2} key={index}>

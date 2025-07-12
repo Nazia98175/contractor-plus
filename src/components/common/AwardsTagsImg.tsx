@@ -2,6 +2,7 @@ import React from "react";
 import { awards } from "./Helper";
 import Image from "next/image";
 import SliderLayout from "./SliderLayout";
+import CardReveal from "./CardReveal";
 
 interface AwardsTagsImgProps {
   className?: string;
@@ -19,17 +20,19 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className }) => {
       <div className="hidden items-center justify-center gap-5 px-4 pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
         {awards.map((award, index) => {
           return (
-            <div key={index} className="h-[100px] max-w-[130px] md:h-[122px]">
-              <Image
-                src={award.src}
-                alt={award.alt}
-                width={135}
-                height={130}
-                className={`drop-shadow-img-shadow aspect-square h-full w-full transform cursor-pointer object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
-                  indexMtMap[index] || ""
-                }`}
-              />
-            </div>
+            <CardReveal distance={150} delay={index * 0.2} key={index}>
+              <div className="h-[100px] max-w-[130px] md:h-[122px]">
+                <Image
+                  src={award.src}
+                  alt={award.alt}
+                  width={135}
+                  height={130}
+                  className={`drop-shadow-img-shadow aspect-square h-full w-full transform cursor-pointer object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
+                    indexMtMap[index] || ""
+                  }`}
+                />
+              </div>
+            </CardReveal>
           );
         })}
       </div>

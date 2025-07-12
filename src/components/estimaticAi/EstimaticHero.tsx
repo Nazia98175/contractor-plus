@@ -149,7 +149,7 @@ const EstimaticHero = () => {
       {/* Stats Cards */}
       <div className="main-container relative z-30 mt-8 grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-4 xl:gap-8">
         {estimateHeroData.map((obj, index) => (
-          <CardReveal key={index} distance={150} delay={1.6 + index * 0.1}>
+          <CardReveal key={index} distance={150} delay={1 + index * 0.1}>
             <StatisticCard obj={obj} />
           </CardReveal>
         ))}

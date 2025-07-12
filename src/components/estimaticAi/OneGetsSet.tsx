@@ -5,7 +5,7 @@ import Copy from "../common/Copy";
 
 const OneGetsSet = () => {
   return (
-    <div className="main-container sm:pb-8 md:pb-16 xl:mt-7 xl:pb-20">
+    <div className="main-container overflow-hidden sm:pb-8 md:pb-16 xl:mt-7 xl:pb-20">
       <CardReveal
         animateOnMount={true}
         distance={150}
@@ -25,7 +25,7 @@ const OneGetsSet = () => {
         </span>
       </CardReveal>
       <div className="flex flex-col items-center justify-between gap-2 rounded-3xl border-[#51585C] pt-5 sm:pt-6 lg:flex-row lg:border">
-        <div className="flex flex-col items-center justify-center lg:w-[46%]">
+        <div className="lg:w- flex flex-col items-center justify-center lg:w-[44%] xl:w-[46%]">
           <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-sm font-semibold sm:text-base md:text-xl">
             <h4>Other AI estimating software</h4>
             <Image
@@ -51,15 +51,16 @@ const OneGetsSet = () => {
             className="block lg:hidden"
           />
         </div>
-        <span className="hidden lg:block">
+        <span className="relative hidden lg:block">
           <EstimateDividerIcon />
         </span>
-        <div className="flex w-full flex-col items-center justify-end lg:w-[53%]">
-          <div className="mb-3 flex items-center justify-center gap-3.5">
+        <div className="flex h-full w-full flex-col justify-between gap-3 overflow-hidden pr-0.5 lg:w-[55.5%] xl:w-[53.5%] xl:gap-0">
+          <div className="relative z-10 flex items-center justify-center gap-3.5">
             <Image
-              width={90}
+              width={120}
               height={20}
               alt="Estimatic logo"
+              className="max-w-[90px] sm:max-w-[120px]"
               src="/images/svg/estimatic.svg"
             />
             <Image
@@ -71,11 +72,11 @@ const OneGetsSet = () => {
             />
           </div>
           <Image
-            width={598}
-            height={415}
+            width={640}
+            height={420}
             src="/images/webp/redone-estimatic.webp"
             alt="Other AI estimating software"
-            className="object-cover"
+            className="z-0 object-cover xl:-mt-1"
           />
         </div>
       </div>

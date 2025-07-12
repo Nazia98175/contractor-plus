@@ -38,6 +38,7 @@ const EstimaticAiPage = () => {
         reviews={estimaticReviews}
         slug="crm"
         className="pb-6 lg:pt-6 lg:pb-3.5"
+        apiData={false}
       />
       <RunWithContractor
         kindAdorable={estimateSoftwareData}

@@ -3454,7 +3454,8 @@ export const estimaticBlogHeadingData = {
 };
 export const estimaticControlData = {
   id: 320,
-  title: "Scheduling the day’s jobs feels harder than it needs to be",
+  title: "You’re still in control. Estimatic just gets you there faster.",
+  sub_title: "No gimmicks, just a damn good estimate.",
   cardsDetail: [
     {
       id: 1671,

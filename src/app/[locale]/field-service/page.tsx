@@ -36,14 +36,14 @@ export async function generateMetadata({
 
   return {
     title:
-      page.seoMeta?.metaTitle ||
+      page.seoMetaData?.metaTitle ||
       page.hero?.heroTitle ||
       `Contractor+ field-service`,
-    description: page.seoMeta?.metaDescription || page.hero?.subtitle || "",
-    keywords: page.seoMeta?.keywords || "",
+    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
+    keywords: page.seoMetaData?.keywords || "",
     alternates: {
       canonical:
-        page.seoMeta?.canonicalUrl ??
+        page.seoMetaData?.canonicalUrl ??
         `${process.env.NEXT_PUBLIC_DOMAIN}/field-service`,
     },
   };

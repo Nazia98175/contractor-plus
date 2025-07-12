@@ -23,7 +23,7 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
 export const metadata = {
   title: " Contractor Plus - The first AI estimator worth trusting",

@@ -1248,6 +1248,14 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+.faq-heading-text .line {
+  background:
+    linear-gradient(270.38deg, #00000000 35.56%, #ee1e2566 99.98%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 .clouds-1 {
   animation: clouds-loop-1 500s infinite linear;
@@ -1466,6 +1474,12 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.switch-tool-text .line {
+  background: linear-gradient(91deg, #fff 0%, #ffffff00 103.32%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .gradient-shape {
   width: 800px;
@@ -1495,12 +1509,6 @@ button {
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   position: relative;
-}
-.cc {
-  border-radius: 10px;
-  border: 1px solid #00000000;
-  background: #1c273133;
-  backdrop-filter: blur(7px);
 }
 
 .gradient-grey-border-left {
@@ -1677,6 +1685,19 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
+.estimate-text .line {
+  background:
+    linear-gradient(
+      275.49deg,
+      rgba(0, 0, 0, 0) 75.83%,
+      rgba(238, 30, 37, 0.4) 91.89%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 .compare-table-bg {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid #e6e9f5;
@@ -1719,6 +1740,12 @@ button {
 }
 
 .gradient-text-404 {
+  background: linear-gradient(180deg, #fff 0%, #777 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text-404 .line {
   background: linear-gradient(180deg, #fff 0%, #777 100%);
   background-clip: text;
   -webkit-background-clip: text;

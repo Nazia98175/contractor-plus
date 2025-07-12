@@ -22,7 +22,7 @@ const SlugPageClientOptimized = ({
   crmService,
 }: any) => {
   const [platforms, setPlatforms] = useState<Platform[] | null>(null);
- 
+
   useEffect(() => {
     let mounted = true;
 
@@ -162,7 +162,7 @@ const SlugPageClientOptimized = ({
         </div>
         {platforms && (
           <LazyWrapper
-            importFn={() => import("../industry/hvca/TrustBarHvca")}
+            importFn={() => import("../industry/TrustBarHvca")}
             props={{
               platforms,
               className: "mx-auto w-full max-w-[889px]",

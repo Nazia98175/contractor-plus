@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { AlertIcon } from "../../common/Icons";
+import { AlertIcon } from "../common/Icons";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 
-const HvacSoftwareCard = ({ card }: { card: any }) => {
+const SoftwareCard = ({ card }: { card: any }) => {
   const cardRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -55,4 +55,4 @@ const HvacSoftwareCard = ({ card }: { card: any }) => {
   );
 };
 
-export default HvacSoftwareCard;
+export default SoftwareCard;

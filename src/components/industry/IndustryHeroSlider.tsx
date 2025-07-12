@@ -18,11 +18,13 @@ interface Feature {
   prefix?: string;
 }
 
-interface HvacHeroSliderProps {
+interface IndustryHeroSliderProps {
   features: Feature[];
 }
 
-const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
+const IndustryHeroSlider: React.FC<IndustryHeroSliderProps> = ({
+  features,
+}) => {
   return (
     <Swiper
       effect="fade"
@@ -68,4 +70,4 @@ const HvacHeroSlider: React.FC<HvacHeroSliderProps> = ({ features }) => {
   );
 };
 
-export default HvacHeroSlider;
+export default IndustryHeroSlider;

@@ -1,5 +1,5 @@
-import SoftwareCard from "./SoftwareCard";
 import { TheSwitchingToolProps } from "@/components/crmbussiness/SwitchingTool";
+import SoftwareCard from "./SoftwareCard";
 
 const MovingSoftware: React.FC<TheSwitchingToolProps> = ({ switchingTool }) => {
   return (

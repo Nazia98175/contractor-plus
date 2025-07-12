@@ -45,13 +45,13 @@ const Faq: React.FC<Props> = ({
   return (
     <section className={`${mainContainerclassName} relative z-20`}>
       <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
-      {/* <Copy animateOnScroll={true}> */}
-      <h3
-        className={`section-heading text-center ${currentHeading.title} ${TittleClassName}`}
-      >
-        {faq?.title}
-      </h3>
-      {/* </Copy> */}
+      <Copy animateOnScroll={true}>
+        <h3
+          className={`section-heading text-center ${currentHeading.title} ${TittleClassName}`}
+        >
+          {faq?.title}
+        </h3>
+      </Copy>
       <Copy animateOnScroll={true}>
         <p
           className={`paragraph-text pt-1.5 text-center sm:pt-4 ${currentHeading.sub_title}`}

@@ -4,7 +4,7 @@ import TravelBlog from "@/components/blogdetails/TravelBlog";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
 export const metadata = {
   title: "Contractor Plus - Blogs Details",

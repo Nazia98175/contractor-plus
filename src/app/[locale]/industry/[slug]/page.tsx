@@ -4,13 +4,13 @@ import { blackPlatforms, platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import AwardBadges from "@/components/industry/hvca/AwardBadge";
-import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
-import SecondaryReview from "@/components/industry/hvca/SecondaryReview";
-import IndustryHero from "@/components/industry/hvca/IndustryHero";
-import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
-import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
-import WantingMore from "@/components/industry/hvca/WantingMore";
+import AwardBadges from "@/components/industry/AwardBadge";
+import EraOfSoftware from "@/components/industry/EraOfSoftware";
+import SecondaryReview from "@/components/industry/SecondaryReview";
+import IndustryHero from "@/components/industry/IndustryHero";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
+import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContractor";
+import WantingMore from "@/components/industry/WantingMore";
 
 import {
   FasterIcon1,
@@ -23,7 +23,7 @@ import {
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import MovingSoftware from "@/components/industry/hvca/MovingSoftware";
+import MovingSoftware from "@/components/industry/MovingSoftware";
 
 export const metadata = {
   title: "Not just HVAC software Meet your operating system",

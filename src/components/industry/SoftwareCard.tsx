@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { AlertIcon } from "../../common/Icons";
+import { AlertIcon } from "../common/Icons";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);

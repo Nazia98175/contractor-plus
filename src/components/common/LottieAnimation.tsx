@@ -7,15 +7,15 @@ interface LottieProps {
   className?: string;
   loop?: boolean;
   autoplay?: boolean;
-  playOnce?: boolean; // New optional prop for play-once behavior
+  playOnce?: boolean; 
 }
 
 const LottieAnimation = ({
   className,
   animationData,
-  loop = true, // Keep original default
-  autoplay = true, // Keep original default
-  playOnce = false, // New prop - default to false to maintain existing behavior
+  loop = true,
+  autoplay = true,
+  playOnce = false, 
 }: LottieProps) => {
   const lottieRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);

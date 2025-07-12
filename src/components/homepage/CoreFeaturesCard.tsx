@@ -8,6 +8,7 @@ import gsap from "gsap";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
 interface FeatureItem {
   id: number;
   title: string;
@@ -42,6 +43,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const isScrollingProgrammatically = useRef(false);
   const lastActiveFeature = useRef(0);
   const rafId = useRef<number | null>(null);
+  const scrollTriggerInstance = useRef<ScrollTrigger | null>(null);
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
@@ -49,7 +51,8 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   // Mobile detection with resize listener
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 1023);
+      const mobile = window.innerWidth <= 1023;
+      setIsMobile(mobile);
     };
 
     checkMobile();
@@ -75,90 +78,137 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     }
   }, [activeFeature, features.length, isMobile]);
 
-  // Optimized scroll handling
+  // Optimized scroll handling - ONLY for mobile sticky and active feature detection
   useEffect(() => {
-    let ticking = false;
+    if (isMobile) {
+      let ticking = false;
 
-    const processScroll = () => {
-      if (isScrollingProgrammatically.current) {
-        ticking = false;
-        return;
-      }
+      const processScroll = () => {
+        if (isScrollingProgrammatically.current) {
+          ticking = false;
+          return;
+        }
 
-      const containerEl = containerRef.current;
-      const navEl = navContainerRef.current;
+        const containerEl = containerRef.current;
+        const navEl = navContainerRef.current;
 
-      if (!containerEl || !navEl) {
-        ticking = false;
-        return;
-      }
+        if (!containerEl || !navEl) {
+          ticking = false;
+          return;
+        }
 
-      const scrollY = window.scrollY;
-      const containerTop = containerEl.offsetTop;
+        const scrollY = window.scrollY;
+        const containerTop = containerEl.offsetTop;
 
-      // Check if navigation should be sticky (mobile only)
-      if (isMobile) {
+        // Check if navigation should be sticky (mobile only)
         const shouldBeSticky = scrollY > containerTop - 40;
         if (isSticky !== shouldBeSticky) {
           setIsSticky(shouldBeSticky);
         }
-      }
 
-      // Find active feature based on scroll position
-      const windowHeight = window.innerHeight;
-      const offset = isMobile ? navHeightRef.current : 0;
-      let newActiveFeature = lastActiveFeature.current;
+        // Find active feature based on scroll position
+        const windowHeight = window.innerHeight;
+        const offset = navHeightRef.current;
+        let newActiveFeature = lastActiveFeature.current;
 
-      for (let i = contentRefs.current.length - 1; i >= 0; i--) {
-        const ref = contentRefs.current[i];
-        if (!ref) continue;
+        for (let i = contentRefs.current.length - 1; i >= 0; i--) {
+          const ref = contentRefs.current[i];
+          if (!ref) continue;
 
-        const rect = ref.getBoundingClientRect();
-        const elementTop = rect.top - offset;
-        const center = windowHeight / 2;
+          const rect = ref.getBoundingClientRect();
+          const elementTop = rect.top - offset;
+          const center = windowHeight / 2;
 
-        if (elementTop < center) {
-          newActiveFeature = i;
-          break;
+          if (elementTop < center) {
+            newActiveFeature = i;
+            break;
+          }
         }
-      }
 
-      // Only update if changed
-      if (newActiveFeature !== lastActiveFeature.current) {
-        lastActiveFeature.current = newActiveFeature;
-        setActiveFeature(newActiveFeature);
-      }
+        // Only update if changed
+        if (newActiveFeature !== lastActiveFeature.current) {
+          lastActiveFeature.current = newActiveFeature;
+          setActiveFeature(newActiveFeature);
+        }
 
-      // Update progress for mobile
-      if (isMobile && containerEl) {
-        const totalScroll = containerEl.offsetHeight - windowHeight;
-        const currentScroll = scrollY - containerTop;
-        const progress = Math.max(0, Math.min(1, currentScroll / totalScroll));
-      }
+        ticking = false;
+      };
 
-      ticking = false;
-    };
+      const handleScroll = () => {
+        if (!ticking) {
+          if (rafId.current) {
+            cancelAnimationFrame(rafId.current);
+          }
+          rafId.current = requestAnimationFrame(processScroll);
+          ticking = true;
+        }
+      };
 
-    const handleScroll = () => {
-      if (!ticking) {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll(); // Initial check
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
         if (rafId.current) {
           cancelAnimationFrame(rafId.current);
         }
-        rafId.current = requestAnimationFrame(processScroll);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-      }
-    };
+      };
+    }
   }, [isSticky, isMobile]);
+
+  // Desktop ScrollTrigger setup - ONLY for desktop
+  useEffect(() => {
+    if (!isMobile) {
+      // Wait for DOM to be ready
+      const timer = setTimeout(() => {
+        const container = containerRef.current;
+        const navContainer = navContainerRef.current;
+        const content = contentRef.current;
+
+        if (!container || !navContainer || !content) return;
+
+        // Kill existing ScrollTrigger
+        if (scrollTriggerInstance.current) {
+          scrollTriggerInstance.current.kill();
+        }
+
+        // Create new ScrollTrigger for pinning the navigation
+        scrollTriggerInstance.current = ScrollTrigger.create({
+          trigger: container,
+          start: "top 90px",
+          end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
+          pin: navContainer,
+          pinSpacing: false,
+          invalidateOnRefresh: true,
+          markers: false,
+          onUpdate: (self) => {
+            // Find active feature based on scroll progress
+            if (!isScrollingProgrammatically.current) {
+              const progress = self.progress;
+              const totalFeatures = contentRefs.current.length;
+              const newActiveFeature = Math.min(
+                Math.floor(progress * totalFeatures),
+                totalFeatures - 1
+              );
+              
+              if (newActiveFeature !== lastActiveFeature.current) {
+                lastActiveFeature.current = newActiveFeature;
+                setActiveFeature(newActiveFeature);
+              }
+            }
+          },
+        });
+      }, 100);
+
+      return () => {
+        clearTimeout(timer);
+        if (scrollTriggerInstance.current) {
+          scrollTriggerInstance.current.kill();
+          scrollTriggerInstance.current = null;
+        }
+      };
+    }
+  }, [isMobile]);
 
   // Move indicator - debounced to prevent shaking
   const moveIndicator = useCallback(
@@ -232,7 +282,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
         setTimeout(() => {
           isScrollingProgrammatically.current = false;
-        }, 800); // Slightly longer timeout for smoother experience
+        }, 800);
       }
 
       if (isMobile && featureButtonsRef.current[index]) {
@@ -246,49 +296,33 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     [isMobile],
   );
 
-  const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
-  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
-
-  useEffect(() => {
-    setTimeout(() => {
-      const container = containerRef.current;
-      const navContainer = navContainerRef.current;
-      const content = contentRef.current;
-
-      if (!container || !navContainer || !content) return;
-
-      // Create ScrollTrigger for pinning the navigation
-      const pinTrigger = ScrollTrigger.create({
-        trigger: container,
-        start: "top 90px",
-        end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
-        pin: navContainer,
-        pinSpacing: false,
-        invalidateOnRefresh: true,
-        // Optional: Add some debugging
-        markers: false, // Set to true for debugging
-        onUpdate: (self) => {
-          // Optional: Handle any updates during scroll
-          console.log("Pin progress:", self.progress);
-        },
-      });
-
-      // Cleanup function
-      return () => {
-        pinTrigger.kill();
-      };
-    }, 2500);
-  }, []);
-
-  // Optional: Refresh ScrollTrigger on window resize
+  // Refresh ScrollTrigger on window resize
   useEffect(() => {
     const handleResize = () => {
-      ScrollTrigger.refresh();
+      if (!isMobile) {
+        ScrollTrigger.refresh();
+      }
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (scrollTriggerInstance.current) {
+        scrollTriggerInstance.current.kill();
+      }
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, []);
+
+  const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
+  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
+
   return (
     <section
       ref={containerRef}
@@ -297,7 +331,11 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
       <div className="relative z-20 h-full lg:w-fit">
         <div
           ref={navContainerRef}
-          className={`z-20 w-full lg:w-fit lg:self-start`}
+          className={`z-20 w-full lg:w-fit lg:self-start ${
+            isMobile && isSticky
+              ? "fixed top-20 left-0 right-0 bg-white shadow-md"
+              : ""
+          }`}
         >
           <FeatureNavigation
             features={titles}
@@ -314,7 +352,9 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
       <div
         ref={contentRef}
-        className="w-full space-y-4 overflow-visible lg:w-[80%] lg:space-y-8"
+        className={`w-full space-y-4 overflow-visible lg:w-[80%] lg:space-y-8 ${
+          isMobile && isSticky ? "pt-16" : ""
+        }`}
       >
         <FeatureContent
           featureContents={featuresList}

@@ -58,7 +58,7 @@ const IndustriesDropdown: React.FC<Props> = ({ headerSubList }) => {
       <div className="no-scrollbar grid w-full grid-cols-4 gap-3 overflow-auto">
         {headerSubList?.[0]?.links?.map((link: any, index: any) => (
           <Link
-            href={link?.linkUrl ?? "#"}
+            href={link?.linkUrl ?? "/"}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}

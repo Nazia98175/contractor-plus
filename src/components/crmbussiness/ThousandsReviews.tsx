@@ -26,7 +26,6 @@ const ThousandsReviews: React.FC<Props> = ({
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
- 
 
   return (
     <section>

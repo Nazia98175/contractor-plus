@@ -28,7 +28,6 @@ const HomepageClient = ({
   blogs,
   commonData,
 }: any) => {
-
   return (
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />

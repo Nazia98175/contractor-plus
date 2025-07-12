@@ -76,31 +76,7 @@
   "whatever": "Quel que soit ce que vous utilisez, Contractor+ se connecte",
   "makeoperation": {
     "heading": "Faites de vos opérations un avantage concurrentiel",
-    "desc": "Le retour sur investissement avec Contractor+ rend le choix évident",
-
-    "makeOperationlist": [
-      {
-        "title": "plus rapide",
-        "description": "Processus d’estimation",
-        "start": 0,
-        "end": 4,
-        "suffix": "x"
-      },
-      {
-        "title": "plus rapide",
-        "description": "Temps d’exécution des projets",
-        "start": 0,
-        "end": 28,
-        "suffix": "%"
-      },
-      {
-        "title": "moins",
-        "description": "Temps passé sur les tâches administratives",
-        "start": 0,
-        "end": 38,
-        "suffix": "%"
-      }
-    ]
+    "desc": "Le retour sur investissement avec Contractor+ rend le choix évident"
   },
   "footer": {
     "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",

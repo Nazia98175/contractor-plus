@@ -75,30 +75,7 @@
   "potentialIntegrations": "Integraciones Potenciales",
   "makeoperation": {
     "heading": "Haz de tus operaciones una ventaja competitiva",
-    "desc": "El retorno de inversión con Contractor+ hace que la decisión sea fácil",
-    "makeOperationlist": [
-      {
-        "title": "más rápido",
-        "description": "Proceso de estimación",
-        "start": 0,
-        "end": 4,
-        "suffix": "x"
-      },
-      {
-        "title": "más rápido",
-        "description": "Tiempo de entrega del trabajo",
-        "start": 0,
-        "end": 28,
-        "suffix": "%"
-      },
-      {
-        "title": "menos",
-        "description": "Tiempo dedicado a tareas administrativas",
-        "start": 0,
-        "end": 38,
-        "suffix": "%"
-      }
-    ]
+    "desc": "El retorno de inversión con Contractor+ hace que la decisión sea fácil"
   },
 
   "footer": {

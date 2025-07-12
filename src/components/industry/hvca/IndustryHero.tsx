@@ -1,12 +1,15 @@
+// Updated IndustryHero component with adaptive title
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
+// import AdaptiveHeroTitle from "@/components/common/AdaptiveHeroTitle";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
+import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 
 const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
@@ -33,16 +36,19 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             alt="hvac gradient"
           />
           <div className="relative z-30 w-full sm:space-y-6 md:max-w-[70%]">
-            {/* <TextAnimation animateOnScroll={false} delay={3}> */}
-            <h1 className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl">
-              {hero?.heroTitle}
-            </h1>
-            {/* </TextAnimation> */}
-            {/* <TextAnimation animateOnScroll={false} delay={3}> */}
+            {/* Replace the original h1 with AdaptiveHeroTitle */}
+            <AdaptiveHeroTitle
+              // title={hero?.heroTitle || ""}
+              title={hero?.heroTitle || ""}
+              className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl"
+              minFontSize={16}
+              maxFontSize={48}
+            />
+
             <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[514px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
               {hero?.heroDescription}
             </p>
-            {/* </TextAnimation> */}
+
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
                 text={hero?.createBtn}
@@ -75,14 +81,6 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
             />
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
-          {/* <Image
-            alt="hvac-hero"
-            src={`${heroImg?.url}`}
-            width={945}
-            height={729}
-            className="w-full object-cover md:block"
-            unoptimized
-          /> */}
           <Image
             alt=""
             src={`${heroImg?.url}`}
@@ -109,4 +107,5 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
     </section>
   );
 };
+
 export default IndustryHero;

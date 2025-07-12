@@ -72,7 +72,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
                 key={index}
               >
                 <Image
-                  src={award.src}
+                  src={award.url}
                   alt={award.alt || "Award Image"}
                   width={award.width}
                   height={97}

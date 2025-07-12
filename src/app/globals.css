@@ -516,7 +516,7 @@ html::-webkit-scrollbar {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.gradient-text {
+.gradient-text .line {
   background:
     linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #ffffff;
   -webkit-background-clip: text;
@@ -533,7 +533,7 @@ html::-webkit-scrollbar {
   text-fill-color: transparent;
 }
 
-.gradient-white {
+.gradient-white .line {
   background:
     linear-gradient(276.25deg, #ee1e2566 -11.28%, #00000000 99.63%), #ffffff;
   -webkit-background-clip: text;
@@ -571,7 +571,7 @@ html::-webkit-scrollbar {
   text-fill-color: transparent;
 }
 @media (max-width: 640px) {
-  .gradient-text {
+  .gradient-text .line {
     background:
       linear-gradient(275.84deg, #ee1e2566 7.61%, #00000000 99.65%),
       linear-gradient(0deg, #ffffff, #ffffff), #ffffff;
@@ -581,7 +581,7 @@ html::-webkit-scrollbar {
     text-fill-color: transparent;
   }
 }
-.gradient-text-2 {
+.gradient-text-2 .line {
   background:
     linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
   -webkit-background-clip: text;
@@ -598,7 +598,7 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
-.crm-gradient {
+.crm-gradient .line {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
   -webkit-background-clip: text;
@@ -659,7 +659,7 @@ html::-webkit-scrollbar {
   z-index: 9999;
 }
 
-.gradient-2 {
+.gradient-2 .line {
   background:
     linear-gradient(276.25deg, #ee1e2566 -11.28%, #00000000 99.63%), #b3b3b3;
   -webkit-background-clip: text;
@@ -668,7 +668,7 @@ html::-webkit-scrollbar {
   text-fill-color: transparent;
 }
 @media screen and (max-width: 640px) {
-  .gradient-2 {
+  .gradient-2 .line {
     background:
       linear-gradient(275.84deg, #ee1e2566 7.61%, #00000000 99.65%),
       linear-gradient(0deg, #ffffff, #ffffff), #ffffff;
@@ -796,7 +796,7 @@ html::-webkit-scrollbar {
     opacity: 0.8;
   }
 }
-.service-text {
+.service-text .line {
   background:
     linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
   -webkit-background-clip: text;

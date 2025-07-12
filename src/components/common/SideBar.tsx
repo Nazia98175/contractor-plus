@@ -7,6 +7,8 @@ import {
   featurelinks,
 } from "./Helper";
 import { ArrowIcon, CrossIcon, LogoIcon, SidebarArrowIcon } from "./Icons";
+import { featureIcons } from "./FeaturesDropdown";
+import { sub } from "date-fns";
 
 interface DropdownItemProps {
   title: string;
@@ -15,6 +17,7 @@ interface DropdownItemProps {
     description?: string;
     href: string;
     icon?: React.ReactNode;
+    title?: string;
   }>;
   isOpen: boolean;
   onToggle: () => void;
@@ -50,8 +53,9 @@ const DropdownItem = ({
         <div className="py-1">
           <ul className="space-y-2.5 bg-white p-2">
             {items.map((item, index) => (
-              <li key={index}>
-                <Link href={item.href || "#"} className="header-li block p-1">
+             item?.label !== "" && <> <li key={index}>
+
+                <Link href={item?.href || "#"} className="header-li block p-1">
                   <div className="flex items-center gap-2">
                     {item.icon && <span>{item.icon}</span>}
                     <span>{item.label}</span>
@@ -61,18 +65,17 @@ const DropdownItem = ({
                   )}
                 </Link>
               </li>
-            ))}
-            {id === "features" && isOpen && (
+                {item?.title === "bottomLinks" && isOpen && (
               <div className="bg-superSilver mt-4 p-1.5">
                 <div className="flex flex-col gap-1 p-[6px]">
                   <Link
                     className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
-                    href={"/"}
+                    href={item?.href || "/"}
                   >
-                    See All Features
+                    {item.label}
                     <ArrowIcon />
                   </Link>
-                  <Link
+                  {/* <Link
                     className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
                     href={"/"}
                   >
@@ -85,11 +88,14 @@ const DropdownItem = ({
                   >
                     Product Updates
                     <ArrowIcon />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             )}
-            {id === "whycontractor" && isOpen && (
+              </>
+            ))}
+          
+            {/* {id === "whycontractor" && isOpen && (
               <div className="bg-superSilver mt-4 p-1.5">
                 <div className="flex flex-col gap-1 p-[6px]">
                   <Link
@@ -101,7 +107,7 @@ const DropdownItem = ({
                   </Link>
                 </div>
               </div>
-            )}
+            )} */}
           </ul>
         </div>
       </div>
@@ -112,9 +118,11 @@ const DropdownItem = ({
 const SideBar = ({
   setIsShow,
   isshow,
+  header
 }: {
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
   isshow: boolean;
+  header: any;
 }) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -125,7 +133,7 @@ const SideBar = ({
       setOpenDropdown(dropdownName);
     }
   };
-
+ console.log("Header data:", header);
   const menuItems = [
     {
       id: "whycontractor",
@@ -153,6 +161,30 @@ const SideBar = ({
       items: ResourcesDropdownlinks,
     },
   ];
+const menuItemss = header?.headerMain?.map((item: any, index: number) => {
+  const items =
+    item?.headerSubList?.length > 0
+      ? item.headerSubList.flatMap((subItem: any) =>
+       
+          subItem?.links?.map((sub: any) => ({
+            label: sub?.linkTxt || "",
+            href: sub?.linkUrl || "",
+            title: subItem?.title || "",
+            icon: sub?.icon ? (
+             featureIcons?.[sub?.icon] || null
+            ) : null,
+          })) || []
+        )
+      : [];
+
+  return {
+    id: item.id || `menu-item-${index}`,
+    label: item.mainTitle || "",
+    path: item?.mainLink || "",
+    ...(items.length > 0 && { items }), // only include if exists
+  };
+});
+console.log("Menu Items:", menuItemss);
 
   return (
     <>
@@ -179,8 +211,8 @@ const SideBar = ({
           </div>
 
           <div className="no-scrollbar my-5 grow space-y-1 overflow-auto">
-            {menuItems.map((item) =>
-              item.path ? (
+            {menuItemss.map((item:any) =>
+              !(item.items?.length > 0) ? (
                 <Link
                   key={item.id}
                   href={item.path}
@@ -205,16 +237,16 @@ const SideBar = ({
           <div className="flex items-center justify-between gap-3">
             <Link
               className="text-lightBlack font-inter text-xs font-bold tracking-[0.1px]"
-              href={"tel:855 392 8803"}
+              href={`tel:${header?.contact || "(855) 392-8803"}`}
             >
-              855 392 8803
+              {header?.contact}
             </Link>
             <div className="flex items-center gap-2">
               <button className="text-lightBlack font-myriad px-2 py-1 text-xs font-bold tracking-[0.1px]">
-                Login
+                {header?.loginText || "Login"}
               </button>
               <button className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white">
-                Sign Up
+               {header?.btnText?.btnText || "Get Started"}
               </button>
             </div>
           </div>

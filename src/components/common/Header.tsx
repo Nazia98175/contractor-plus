@@ -7,7 +7,7 @@ import { HamburgerIcon, LogoIcon } from "./Icons";
 import SideBar from "./SideBar";
 import { usePathname } from "next/navigation";
 
-interface HeaderProps {
+export interface HeaderProps {
   header?: any;
   variant?: "light" | "dark";
 }
@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
             <button className="lg:hidden" onClick={() => setIsShow(true)}>
               <HamburgerIcon />
             </button>
-            <SideBar isshow={isshow} setIsShow={setIsShow} />
+            <SideBar header={header} isshow={isshow} setIsShow={setIsShow} />
           </div>
         </div>
       </div>

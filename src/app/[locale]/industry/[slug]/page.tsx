@@ -91,7 +91,9 @@ const page = async ({ params }: PageProps) => {
     1: <FasterIcon5 />,
     2: <FasterIcon6 />,
   };
-  console.log("commonData", commonData);
+  // console.log("trackProperties", trackProperties);
+ 
+  console.log("teamsUsingContractor", teamsUsingContractor);
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">

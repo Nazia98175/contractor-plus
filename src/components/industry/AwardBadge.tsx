@@ -50,7 +50,7 @@ export default function AwardBadges({
           text={buttonInfo?.nccTxt}
         />
       </div>
-      <AwardsTagsImg />
+      <AwardsTagsImg images={teamsUsingContractor?.images} />
     </section>
   );
 }

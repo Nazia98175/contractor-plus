@@ -34,7 +34,7 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
         {trustBarImages?.length > 0 ?trustBarImages?.map((platform:any, index:number) => (
-          <PlatformCard platform={platform} key={index} />
+          <PlatformCard platform={platform} key={index} apiData={true} />
         )): 
           platforms.map((platform, index) => (
             <PlatformCard platform={platform} key={index} />  
@@ -56,9 +56,9 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
         >
           {trustBarImages?.length >0 ? trustBarImages?.map((platform:any, index:number) => (
             <div key={index} className="flex items-center justify-center">
-              <PlatformCard platform={platform} />
+              <PlatformCard platform={platform} apiData={true} />
             </div> )): 
-            platforms.map((platform, index) => (
+            platforms?.map((platform, index) => (
               <div key={index} className="flex items-center justify-center">
                 <PlatformCard platform={platform} />
               </div>

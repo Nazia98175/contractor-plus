@@ -62,10 +62,11 @@ const FieldServiceCard: React.FC<Props> = ({
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`${titleColor}`}>{service?.title}</h4>
 
-          {service?.cardImg &&
+          {!service?.lottieJson &&
+          service?.cardImg &&
           typeof service?.cardImg === "object" &&
           "url" in service?.cardImg ? (
-            <ImageProxy
+            <Image
               src={
                 service?.cardImg?.url
                   ? service?.cardImg?.url
@@ -78,10 +79,15 @@ const FieldServiceCard: React.FC<Props> = ({
               priority
               sizes="(max-width: 768px) 300px, min(768px, 300px)"
               className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
-            ></ImageProxy>
+            />
+          ) : service?.lottieJson ? (
+            <LottieAnimation
+              animationData={service?.lottieJson}
+              className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            />
           ) : (
-            <ImageProxy
-              src={`${service.cardImg}`}
+            <Image
+              src={`${"/placeholder.png"}`}
               alt={service?.title || "service image"}
               width={518}
               height={302}
@@ -128,11 +134,12 @@ const FieldServiceCard: React.FC<Props> = ({
 
       {/* Desktop image */}
       <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
-        {!service?.lottieJson &&
-        service?.cardImg &&
-        typeof service?.cardImg === "object" &&
-        "url" in service?.cardImg ? (
-          <ImageProxy
+        {service?.lottieJson ? (
+          <LottieAnimation animationData={service?.lottieJson} />
+        ) : service?.cardImg &&
+          typeof service?.cardImg === "object" &&
+          "url" in service?.cardImg ? (
+          <Image
             src={
               service?.cardImg?.url ? service?.cardImg?.url : "/placeholder.png"
             }
@@ -144,11 +151,9 @@ const FieldServiceCard: React.FC<Props> = ({
             priority
             sizes="(max-width: 768px) 300px, min(768px, 300px)"
           />
-        ) : service?.lottieJson ? (
-          <LottieAnimation animationData={service?.lottieJson} />
         ) : (
           <Image
-            src={`${service.cardImg}`}
+            src={`${service.cardImg?.url}`}
             alt={service?.title || "service image"}
             width={518}
             height={302}

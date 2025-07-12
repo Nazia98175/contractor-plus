@@ -12,7 +12,7 @@ interface Props {
   variant?: "primary" | "secondary";
 }
 
-const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
+const SecondaryReview: React.FC<Props> = ({ data, reviews, variant }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -75,4 +75,4 @@ const HvacReview: React.FC<Props> = ({ data, reviews, variant }) => {
   );
 };
 
-export default HvacReview;
+export default SecondaryReview;

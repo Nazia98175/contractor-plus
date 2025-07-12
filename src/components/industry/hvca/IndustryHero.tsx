@@ -8,7 +8,7 @@ import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import Image from "next/image";
 import React from "react";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
-import HvacHeroSlider from "./HvacHeroSlider";
+import IndustryHeroSlider from "./IndustryHeroSlider";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,
@@ -70,7 +70,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
           </div>
         </div>
         <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[2%]">
-          <HvacHeroSlider features={homeCard} />
+          <IndustryHeroSlider features={homeCard} />
         </div>
         <div className="absolute top-0 right-0 h-full w-full lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">

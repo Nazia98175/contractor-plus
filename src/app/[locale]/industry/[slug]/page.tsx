@@ -6,8 +6,7 @@ import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/hvca/AwardBadge";
 import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
-import HvacReview from "@/components/industry/hvca/HvacReview";
-import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
+import SecondaryReview from "@/components/industry/hvca/SecondaryReview";
 import IndustryHero from "@/components/industry/hvca/IndustryHero";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
@@ -24,6 +23,7 @@ import {
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import MovingSoftware from "@/components/industry/hvca/MovingSoftware";
 
 export const metadata = {
   title: "Not just HVAC software Meet your operating system",
@@ -84,7 +84,7 @@ const page = async ({ params }: PageProps) => {
             className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
           />
         </div>
-        <HvacSoftware switchingTool={switchingTool} />
+        <MovingSoftware switchingTool={switchingTool} />
         <WantingMore
           fieldServiceData={fieldServiceData}
           slug={crmPageContent?.pageName}
@@ -106,7 +106,7 @@ const page = async ({ params }: PageProps) => {
         reviews={reviews}
         variant="secondary"
       /> */}
-      <HvacReview
+      <SecondaryReview
         data={{ title: thousandReviews?.title }}
         reviews={thousandReviews?.reviews}
         variant="secondary"

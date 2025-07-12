@@ -38,7 +38,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
   }, []);
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
-  console.log(commonData, "crm hero");
+ 
 
   return (
     <section

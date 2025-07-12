@@ -317,6 +317,38 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     [isMobile],
   );
 
+  const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
+  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
+
+  useEffect(() => {
+    setTimeout(() => {
+      const container = containerRef.current;
+      const navContainer = navContainerRef.current;
+      const content = contentRef.current;
+
+      if (!container || !navContainer || !content) return;
+      console.log(content.offsetHeight);
+
+      // Create ScrollTrigger for pinning the navigation
+      const pinTrigger = ScrollTrigger.create({
+        trigger: container,
+        start: "top 90px",
+        end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
+        pin: navContainer,
+        pinSpacing: false,
+        invalidateOnRefresh: true,
+        // Optional: Add some debugging
+        markers: false, // Set to true for debugging
+      });
+
+      // Cleanup function
+      return () => {
+        pinTrigger.kill();
+      };
+    }, 2500);
+  }, []);
+
+  // Optional: Refresh ScrollTrigger on window resize
   // Refresh ScrollTrigger on window resize
   useEffect(() => {
     const handleResize = () => {
@@ -341,8 +373,8 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     };
   }, []);
 
-  const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
-  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
+  // const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
+  // const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   return (
     <section

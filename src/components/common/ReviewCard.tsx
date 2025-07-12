@@ -39,9 +39,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
     <div className="mr-5 h-full min-h-full">
       <article
         onClick={review.isModal ? openModal : undefined}
-        className={` ${
-          review.isModal ? "cursor-pointer" : ""
-        } bg-doctor group btn-hover relative flex h-full min-h-full w-full max-w-[350px] flex-col justify-between overflow-hidden rounded-[10px] p-2 md:max-w-[419px]`}
+        className={`bg-doctor btn-hover relative flex h-full min-h-full w-full max-w-[350px] flex-col justify-between overflow-hidden rounded-[10px] p-2 md:max-w-[419px]`}
       >
         <div className="flex items-start justify-between gap-5 lg:p-2">
           <div className="flex items-center gap-2">
@@ -75,7 +73,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
                 {review.isModal && (
                   <span
                     onClick={openModal}
-                    className="group-hover:text-romanRed text-lightBlack"
+                    className="hover:text-romanRed text-lightBlack cursor-pointer"
                   >
                     <PlayIcon />
                   </span>
@@ -92,7 +90,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
         </div>
         <Copy animateOnScroll={true}>
           <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
-            "{review.review}"
+            {review.review}
           </p>
         </Copy>
       </article>

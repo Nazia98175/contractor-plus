@@ -4533,7 +4533,7 @@ export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
   images: [
-    { url: "/images/svg/PipleLine-Track.svg" }, // First icon
+    { url: "/images/svg/PipleLine-Track.svg" },
     { url: "/images/svg/trend-down.svg" }, // Second icon
     { url: "/images/svg/truck-fast.svg" }, // Third icon
   ],
@@ -4544,6 +4544,7 @@ export const neverLookBackData = {
       suffix: "%",
       title: "",
       description: "Boost in revenue with visual pipeline tracking",
+      url: "/images/svg/PipleLine-Track.svg",
     },
     {
       start: 9,

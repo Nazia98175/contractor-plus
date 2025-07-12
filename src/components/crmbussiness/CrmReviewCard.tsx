@@ -48,7 +48,7 @@ const CrmReviewCard: React.FC<Props> = ({
     <article
       onClick={review.isModal ? openModal : undefined}
       key={review.id}
-      className={`group relative z-20 w-full cursor-pointer duration-300 ${styles.container}`}
+      className={`relative z-20 w-full duration-300 ${styles.container}`}
     >
       <div
         className={`flex gap-3 md:gap-4 ${
@@ -78,9 +78,9 @@ const CrmReviewCard: React.FC<Props> = ({
             )}{" "}
             {review.isModal && (
               <div
-                className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
+                className={`absolute -right-2 -bottom-2 z-20 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
               >
-                <span className="group-hover:text-romanRed text-lightBlack">
+                <span className="hover:text-romanRed text-lightBlack cursor-pointer">
                   <PlayIcon />
                 </span>
               </div>
@@ -97,9 +97,9 @@ const CrmReviewCard: React.FC<Props> = ({
             />
             {review.isModal && (
               <div
-                className={`absolute -right-2 -bottom-2 rounded-full p-[5px] duration-300 ${styles.playBg}`}
+                className={`absolute -right-2 -bottom-2 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
               >
-                <span className="group-hover:text-romanRed text-lightBlack">
+                <span className="hover:text-romanRed text-lightBlack">
                   <PlayIcon />
                 </span>
               </div>

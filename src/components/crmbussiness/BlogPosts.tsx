@@ -28,7 +28,7 @@ const BlogPosts: React.FC<Props> = ({
 }) => {
   const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
   const textClass = variant === "primary" ? "text-white" : "text-winterWay";
- 
+
   return (
     <section
       className={`relative z-20 px-2 pt-4 sm:px-4 xl:px-20 ${className || ""}`}

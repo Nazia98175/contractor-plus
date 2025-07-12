@@ -4532,36 +4532,51 @@ export const estimateSoftwareData = {
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
-  images: [
-    { url: "/images/svg/PipleLine-Track.svg" },
-    { url: "/images/svg/trend-down.svg" }, // Second icon
-    { url: "/images/svg/truck-fast.svg" }, // Third icon
-  ],
   cards: [
     {
+      id: 1,
+      title: null,
+      subTitle: "Boost in revenue with visual pipeline tracking",
+      start: 0,
+      end: 4,
+      suffix: "x",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/PipleLine-Track.svg", // Assuming you're storing local assets
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Contractors see higher sales productivity",
       start: 0,
       end: 28,
       suffix: "%",
-      title: "",
-      description: "Boost in revenue with visual pipeline tracking",
-      url: "/images/svg/PipleLine-Track.svg",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/trend-down.svg",
+      },
     },
     {
-      start: 9,
-      end: 10,
-      title: "",
-      description: "Contractors see higher sales productivity",
-    },
-    {
-      start: 80,
-      end: 80,
+      id: 3,
+      title: null,
+      subTitle: "Of leads weren’t fully tracked before using Contractor+",
+      start: 0,
+      end: 38,
       suffix: "%",
-      title: "",
-      description: "Of leads weren’t fully tracked before using Contractor+",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/truck-fast.svg",
+      },
     },
   ],
 };
-
 export const dealReviews2 = {
   title: "There’s a reason we have a 4.7 ★ average across thousands of reviews",
   subTitle: null,

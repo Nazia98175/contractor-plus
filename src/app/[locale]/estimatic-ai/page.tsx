@@ -26,7 +26,7 @@ import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
 export const metadata = {
-  title: "The first AI estimator worth trusting",
+  title: " Contractor Plus - The first AI estimator worth trusting",
   description:
     "Estimatic references your costbook, live supplier pricing, and local labor rates to build estimates the same way you do. Just 100x faster.",
 };
@@ -38,6 +38,7 @@ const EstimaticAiPage = () => {
         reviews={estimaticReviews}
         slug="crm"
         className="pb-6 lg:pt-6 lg:pb-3.5"
+        apiData={false}
       />
       <RunWithContractor
         kindAdorable={estimateSoftwareData}

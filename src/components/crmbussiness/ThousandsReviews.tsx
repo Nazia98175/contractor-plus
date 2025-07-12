@@ -30,15 +30,16 @@ const ThousandsReviews: React.FC<Props> = ({
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
-        <h2
-          className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
-            variant === "secondary" ? "gradient-white" : "crm-gradient"
-          }`}
-        >
-          {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
-          {data?.title?.split("4.7 ★")?.[1]}
-        </h2>
-
+        <Copy animateOnScroll={false}>
+          <h2
+            className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
+              variant === "secondary" ? "gradient-white" : "crm-gradient"
+            }`}
+          >
+            {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
+            {data?.title?.split("4.7 ★")?.[1]}
+          </h2>
+        </Copy>
         <SliderLayout
           wrapperClassName="relative w-full !h-auto"
           slidesPerView={1}

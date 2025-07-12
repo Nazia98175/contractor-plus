@@ -75,7 +75,7 @@ const CrmReviewCard: React.FC<Props> = ({
               >
                 {getInitials(review.userName ?? "")}
               </div>
-            )}{" "}
+            )}
             {review.isModal && (
               <div
                 className={`absolute -right-2 -bottom-2 z-20 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
@@ -88,18 +88,26 @@ const CrmReviewCard: React.FC<Props> = ({
           </div>
         ) : (
           <div className="relative w-fit">
-            <Image
-              width={90}
-              height={90}
-              src={`${review.profileImg}`}
-              alt="User"
-              className="max-w-[90px] min-w-[90px] rounded"
-            />
+            {review?.profileImg ? (
+              <Image
+                width={90}
+                height={90}
+                src={`${review.profileImg}`}
+                alt="User"
+                className="max-w-[90px] min-w-[90px] rounded"
+              />
+            ) : (
+              <div
+                className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
+              >
+                {getInitials(review.userName ?? "")}
+              </div>
+            )}
             {review.isModal && (
               <div
-                className={`absolute -right-2 -bottom-2 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
+                className={`absolute -right-2 -bottom-2 z-20 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
               >
-                <span className="hover:text-romanRed text-lightBlack">
+                <span className="hover:text-romanRed text-lightBlack cursor-pointer">
                   <PlayIcon />
                 </span>
               </div>

@@ -30,9 +30,14 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({
         alt="switch-tool-bg"
       />
 
-      <Copy animateOnScroll={true} delay={0.2}>
-        <h3 className="font-jakarta text-secondary xs:max-w-[75%] mx-auto max-w-[96%] text-center text-xl font-semibold sm:max-w-[850px] sm:text-2xl md:text-3xl lg:text-[36px]">
+      <Copy animateOnScroll={true}>
+        <h3 className="text-secondary xs:max-w-[75%] mx-auto max-w-[96%] text-center text-xl font-semibold sm:max-w-[850px] sm:text-2xl md:text-3xl lg:text-[36px]">
           {switchingTool?.title}
+        </h3>
+      </Copy>
+      <Copy animateOnScroll={true}>
+        <h3 className="text-secondary xs:max-w-[75%] mx-auto max-w-[96%] text-center text-xs font-semibold sm:max-w-[850px] sm:text-base md:text-lg lg:text-[#B2B2B2] xl:text-lg">
+          {switchingTool?.sub_title}
         </h3>
       </Copy>
       <div className="block lg:hidden">

@@ -68,13 +68,13 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
 
       {/* Heading + Paragraph */}
       <div className="relative z-10 px-2 md:-mt-3">
-        <Copy animateOnScroll={false} delay={0.3}>
+        <Copy animateOnScroll={false} delay={0.1}>
           <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
             {trackProperties?.title}
           </h2>
         </Copy>
 
-        <Copy animateOnScroll={false} delay={0.3}>
+        <Copy animateOnScroll={false} delay={0.2}>
           <p className="paragraph-style mx-auto max-w-[950px] text-center">
             {trackProperties?.subTitle}
           </p>

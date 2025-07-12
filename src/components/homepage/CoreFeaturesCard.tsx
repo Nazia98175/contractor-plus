@@ -120,7 +120,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
           if (!ref) continue;
 
           const rect = ref.getBoundingClientRect();
-          const elementCenter = rect.top + (rect.height / 2);
+          const elementCenter = rect.top + rect.height / 2;
 
           // Check if element center is in the play zone
           if (elementCenter >= playZoneStart && elementCenter <= playZoneEnd) {
@@ -189,7 +189,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
             // Find active feature based on which Lottie animation is playing
             if (!isScrollingProgrammatically.current) {
               let newActiveFeature = lastActiveFeature.current;
-              
+
               // Check each content section to see which one is in the "play zone"
               const windowHeight = window.innerHeight;
               const playZoneStart = windowHeight * 0.3; // 30% from top
@@ -200,15 +200,18 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
                 if (!ref) continue;
 
                 const rect = ref.getBoundingClientRect();
-                const elementCenter = rect.top + (rect.height / 2);
+                const elementCenter = rect.top + rect.height / 2;
 
                 // Check if element center is in the play zone
-                if (elementCenter >= playZoneStart && elementCenter <= playZoneEnd) {
+                if (
+                  elementCenter >= playZoneStart &&
+                  elementCenter <= playZoneEnd
+                ) {
                   newActiveFeature = i;
                   break;
                 }
               }
-              
+
               if (newActiveFeature !== lastActiveFeature.current) {
                 lastActiveFeature.current = newActiveFeature;
                 setActiveFeature(newActiveFeature);
@@ -383,7 +386,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
           ref={navContainerRef}
           className={`z-20 w-full lg:w-fit lg:self-start ${
             isMobile && isSticky
-              ? "fixed top-20 left-0 right-0 bg-white shadow-md"
+              ? "fixed top-20 right-0 left-0 bg-white shadow-md"
               : ""
           }`}
         >

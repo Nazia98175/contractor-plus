@@ -36,7 +36,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
     <div className="mr-5 !h-auto">
       <article
         onClick={openModal}
-        className={`group trusted-service flex h-full w-full max-w-[350px] cursor-pointer flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${slug === "crm" ? "bg-shutter sm:bg-transparent" : "bg-transparent"} ${styles.container}`}
+        className={`trusted-service flex h-full w-full max-w-[350px] flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${slug === "crm" ? "bg-shutter sm:bg-transparent" : "bg-transparent"} ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">
@@ -90,7 +90,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 {review.isModal && review.videoLink && (
                   <span
                     onClick={openModal}
-                    className={`group-hover:text-pleasure flex h-full min-h-5 w-full max-w-5 min-w-5 items-center justify-center rounded-full text-white ${styles.modalButton}`}
+                    className={`hover:text-pleasure flex h-full min-h-5 w-full max-w-5 min-w-5 cursor-pointer items-center justify-center rounded-full text-white ${styles.modalButton}`}
                   >
                     <PlayIcon />
                   </span>

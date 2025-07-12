@@ -3000,7 +3000,7 @@ export const estimaticReviews = {
           {
             id: 1,
             userName: "Richard Tooley",
-            profileUrl: null,
+            profileImg: null,
             rating: 5,
             videoLink: null,
             isModal: false,
@@ -3011,7 +3011,7 @@ export const estimaticReviews = {
           {
             id: 2,
             userName: "Richard Tooley",
-            profileUrl: null,
+            profileImg: null,
             rating: 5,
             videoLink: null,
             isModal: false,
@@ -3022,7 +3022,7 @@ export const estimaticReviews = {
           {
             id: 3,
             userName: "Scott Azure",
-            profileUrl: "/images/webp/rands.webp",
+            profileImg: "/images/webp/rands.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
             isModal: true,
@@ -3033,7 +3033,7 @@ export const estimaticReviews = {
           {
             id: 4,
             userName: "Richard Tooley",
-            profileUrl: null,
+            profileImg: null,
             rating: 5,
             videoLink: null,
             isModal: false,
@@ -3044,7 +3044,7 @@ export const estimaticReviews = {
           {
             id: 5,
             userName: "Richard Tooley",
-            profileUrl: null,
+            profileImg: null,
             rating: 5,
             videoLink: null,
             isModal: false,
@@ -3055,7 +3055,7 @@ export const estimaticReviews = {
           {
             id: 6,
             userName: "Scott Azure",
-            profileUrl: "/images/webp/rands.webp",
+            profileImg: "/images/webp/rands.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
             isModal: true,
@@ -3454,7 +3454,8 @@ export const estimaticBlogHeadingData = {
 };
 export const estimaticControlData = {
   id: 320,
-  title: "Scheduling the day’s jobs feels harder than it needs to be",
+  title: "You’re still in control. Estimatic just gets you there faster.",
+  sub_title: "No gimmicks, just a damn good estimate.",
   cardsDetail: [
     {
       id: 1671,

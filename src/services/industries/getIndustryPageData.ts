@@ -36,7 +36,7 @@ export const getIndustryPageData = async (
     blogs,
     thousandReviewsRes,
     commonData,
-    trustBarImages,
+    // trustBarImages,
   ] = await Promise.all([
     getIndustryPage(slug, locale, "&populate=*"),
     getIndustryPage(slug, locale, "&populate[hero][populate]=heroImg"),
@@ -44,7 +44,7 @@ export const getIndustryPageData = async (
     getIndustryPage(
       slug,
       locale,
-      "&populate[trustedCompanies][populate]=images",
+      "&populate[trustedCompanies]=*",
     ),
     getIndustryPage(
       slug,
@@ -59,7 +59,7 @@ export const getIndustryPageData = async (
     getIndustryPage(
       slug,
       locale,
-      "&populate[featureHighlightIndustrySection][populate][images][populate]=*",
+      "&populate[featureHighlightIndustrySection][populate][image][populate]=*",
     ),
     getIndustryPage(
       slug,
@@ -74,11 +74,11 @@ export const getIndustryPageData = async (
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
     getCommonData(),
-    getIndustryPage(
-      slug,
-      locale,
-      "&populate[emailSignupSection][populate]=images",
-    ),
+    // getIndustryPage(
+    //   slug,
+    //   locale,
+    //   "&populate[emailSignupSection]",
+    // ),
   ]);
 
   return {
@@ -97,7 +97,6 @@ export const getIndustryPageData = async (
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
     commonData: commonData || null,
-    trustBarImages:
-      trustBarImages?.data?.[0]?.emailSignupSection?.images || null,
+    trustBarImages: null,
   };
 };

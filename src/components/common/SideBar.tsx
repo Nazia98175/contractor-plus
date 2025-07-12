@@ -53,7 +53,7 @@ const DropdownItem = ({
         <div className="py-1">
           <ul className="space-y-2.5 bg-white p-2">
             {items.map((item, index) => (
-             item?.label !== "" && <> <li key={index}>
+             item?.label !== "" && <div key={index}> <li >
 
                 <Link href={item?.href || "#"} className="header-li block p-1">
                   <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ const DropdownItem = ({
                 </div>
               </div>
             )}
-              </>
+              </div>
             ))}
           
             {/* {id === "whycontractor" && isOpen && (

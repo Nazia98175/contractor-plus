@@ -29,8 +29,8 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
-        {trustBarImages
-          ? trustBarImages.map((item: any, index: number) => (
+        {trustBarImages !== null || trustBarImages?.length > 0
+          ? trustBarImages?.map((item: any, index: number) => (
               <div key={index} className="flex items-center justify-center">
                 <PlatformCard platform={item} className="h-28 md:h-36" />
               </div>
@@ -55,8 +55,8 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
           }}
           autoplay={true}
         >
-          {trustBarImages
-            ? trustBarImages.map((item: any, index: number) => (
+          {trustBarImages !== null || trustBarImages?.length > 0
+            ? trustBarImages?.map((item: any, index: number) => (
                 <div key={index} className="flex items-center justify-center">
                   <PlatformCard platform={item} className="h-28 md:h-36" />
                 </div>

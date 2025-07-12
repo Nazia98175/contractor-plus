@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { AxiosResponse } from "axios";
 
 interface SeoDataItem {
-  seoMeta?: {
+  seoMetaData?: {
     metaTitle?: string;
     metaDescription?: string;
     keywords?: string;
@@ -11,7 +11,7 @@ interface SeoDataItem {
   };
   hero?: {
     heroTitle?: string;
-    subtitle?: string;
+    subTitle?: string;
   };
   hero_title?: string;
 }
@@ -32,10 +32,9 @@ export const getSeoData = async (
   query: string = "&populate=*"
 ): Promise<SeoDataItem | null> => {
   const url =
-    collectionType === "services-pages"
-      ? `${collectionType}?filters[title][$eq]=${slug}&locale=${locale}${query}`
-      : `${collectionType}?locale=${locale}${query}`;
-
+    collectionType === "homepage" 
+      ? `${collectionType}?locale=${locale}&populate[seoMetaData]=true&populate[hero]=true` : `${collectionType}?filters[pageName][$eq]=${slug}&locale=${locale}${query}`
+  
   try {
     const res: AxiosResponse<{ data?: SeoDataItem | SeoDataItem[] }> = await axiosInstance.get(url);
     const { data } = res.data;

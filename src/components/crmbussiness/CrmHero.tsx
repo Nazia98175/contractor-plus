@@ -38,7 +38,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
   // }, []);
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
-  console.log(hero, "deal fleow");
+ 
 
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">

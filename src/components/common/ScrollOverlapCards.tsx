@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { fieldServiceData } from "../common/Helper";
 import FieldServiceCard from "../crmbussiness/FieldServiceCard";
 import { themeClassMap } from "@/utils/getVariants";
 import { useGSAPDynamic } from "@/hooks/useGSAPDynamic";
@@ -141,7 +140,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       </div>
     );
   }
-  console.log(fieldService);
+ 
 
   return (
     <div

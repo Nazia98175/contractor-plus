@@ -34,7 +34,7 @@ const BlogPosts: React.FC<Props> = ({
       className={`relative z-20 px-2 pt-4 sm:px-4 xl:px-20 ${className || ""}`}
     >
       <div className="mx-auto w-full max-w-[1158px]">
-        <div className="xs:justify-center mb-6 flex items-center justify-center sm:justify-between md:mb-9">
+        <div className="xs:justify-center mb-6 flex items-start justify-center sm:justify-between md:mb-9 lg:items-center">
           {/* <Copy animateOnScroll={true}> */}
           <h2
             className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
@@ -46,7 +46,7 @@ const BlogPosts: React.FC<Props> = ({
           {/* </Copy> */}
 
           <div className="hidden md:block">
-            <Button className="bg-red-linear primary-btn h-10 gap-2">
+            <Button className="bg-red-linear primary-btn mt-0.5 h-10 gap-2 lg:mt-0">
               {blogs?.btnText}
               <BlogBtnIcon />
             </Button>

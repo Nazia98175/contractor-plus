@@ -64,7 +64,7 @@ const EstimaticAiPage = () => {
         }}
       />
 
-      <AwardsTagsImg className="lg:mt-24 xl:mt-[133px]" />
+      <AwardsTagsImg className="sm:mt-24 xl:mt-[133px]" />
       <ThousandsReviews
         data={dealReviews2}
         reviews={dealReviews2.reviews}

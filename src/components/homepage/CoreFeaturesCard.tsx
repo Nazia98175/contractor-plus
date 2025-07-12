@@ -256,6 +256,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
       const content = contentRef.current;
 
       if (!container || !navContainer || !content) return;
+      console.log(content.offsetHeight);
 
       // Create ScrollTrigger for pinning the navigation
       const pinTrigger = ScrollTrigger.create({
@@ -267,10 +268,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         invalidateOnRefresh: true,
         // Optional: Add some debugging
         markers: false, // Set to true for debugging
-        onUpdate: (self) => {
-          // Optional: Handle any updates during scroll
-          console.log("Pin progress:", self.progress);
-        },
       });
 
       // Cleanup function

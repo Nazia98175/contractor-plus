@@ -26,22 +26,25 @@ const CrmHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
 }) => {
-  // const wrapperRef = useRef<HTMLDivElement | null>(null);
-  // useEffect(() => {
-  //   gsap.to(wrapperRef.current, {
-  //     opacity: 1,
-  //     duration: 0.1,
-  //     delay: 0.1,
-  //     ease: "elastic.in",
-  //     once: true,
-  //   });
-  // }, []);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "elastic.in",
+      once: true,
+    });
+  }, []);
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
   console.log(commonData, "crm hero");
 
   return (
-    <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
+    <section
+      ref={wrapperRef}
+      className="relative z-10 pt-[46px] pb-10 opacity-0 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]"
+    >
       <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
@@ -62,18 +65,18 @@ const CrmHero: React.FC<TheHeroProps> = ({
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
-            {/* <Copy delay={0.3} animateOnScroll={false}> */}
-            <h2
-              className={`${
-                slug === "estimate"
-                  ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]"
-                  : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"
-              } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
-            >
-              {hero?.heroTitle}
-            </h2>
-            {/* </Copy> */}
-            <Copy delay={0.5} animateOnScroll={false}>
+            <Copy delay={0.2} animateOnScroll={false}>
+              <h2
+                className={`${
+                  slug === "estimate"
+                    ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]"
+                    : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"
+                } gradient-2 main-heading mb-2 w-fit text-start sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]`}
+              >
+                {hero?.heroTitle}
+              </h2>
+            </Copy>
+            <Copy delay={0.4} animateOnScroll={false}>
               <p
                 className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
               >
@@ -82,7 +85,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
             </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <CardReveal distance={50} delay={0.6}>
+            <CardReveal distance={50} delay={0.5}>
               <Link
                 href=""
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
@@ -104,7 +107,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
                 </div>
               </Link>
             </CardReveal>
-            <CardReveal distance={50} delay={0.8}>
+            <CardReveal distance={50} delay={0.6} className="">
               <Link
                 href=""
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
@@ -126,7 +129,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
                 </div>
               </Link>
             </CardReveal>
-            <CardReveal distance={50} delay={1.0} className="w-full sm:w-fit">
+            <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
                 <FreeAccountButton
                   className="!hidden sm:!flex"

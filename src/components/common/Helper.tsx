@@ -4152,14 +4152,11 @@ export const fieldcarddetail = [
 ];
 
 export const dealflowhero = {
-  nccTxt: "No credit card required",
-  createBtn: "Get started FREE",
-  heroTitle:
-    "The one board that shows every deal, dollar value, and what to do next",
-  heroDescription:
-    "Drag and drop every lead through a visual board. Track dollar \nvalues, follow-ups, and next steps. Convert leads to a job in one click.",
+  getStartedFreeBtn: "Get started FREE",
   mobileBtn: "Download FREE App",
+  nccTxt: "No credit card required",
 };
+
 export const estimaticReviews = {
   data: [
     {
@@ -4306,19 +4303,19 @@ export const dealReviews = {
           {
             id: 1,
             userName: "Brandon Geiger",
-            profileUrl: "/images/webp/rushville.webp",
+            profileImg: "/images/webp/rushville.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
             isModal: true,
             companyLogo: "/images/svg/randsIcon.svg",
             review: `Since I started sending all my estimates using Contractor+, I have
-stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+   stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
             userRole: "Co-Owner, Rushville Restorations",
           },
           {
             id: 2,
             userName: "Juan Garcia",
-            profileUrl: "/images/webp/juan-gracia.webp",
+            profileImg: "/images/webp/juan-gracia.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
             isModal: true,
@@ -4329,7 +4326,7 @@ stopped losing bids. The professional image I gain by using this app is helping 
           {
             id: 3,
             userName: "Scott Azure",
-            profileUrl: "/images/webp/rands.webp",
+            profileImg: "/images/webp/rands.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
             isModal: true,
@@ -4340,19 +4337,19 @@ stopped losing bids. The professional image I gain by using this app is helping 
           {
             id: 4,
             userName: "Brandon Geiger",
-            profileUrl: "/images/webp/rushville.webp",
+            profileImg: "/images/webp/rushville.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
             isModal: true,
             companyLogo: "/images/svg/randsIcon.svg",
             review: `Since I started sending all my estimates using Contractor+, I have
-stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+   stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
             userRole: "Co-Owner, Rushville Restorations",
           },
           {
             id: 5,
             userName: "Juan Garcia",
-            profileUrl: "/images/webp/juan-gracia.webp",
+            profileImg: "/images/webp/juan-gracia.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
             isModal: true,
@@ -4363,7 +4360,7 @@ stopped losing bids. The professional image I gain by using this app is helping 
           {
             id: 6,
             userName: "Scott Azure",
-            profileUrl: "/images/webp/rands.webp",
+            profileImg: "/images/webp/rands.webp",
             rating: 5,
             videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
             isModal: true,

@@ -133,7 +133,7 @@ const SideBar = ({
       setOpenDropdown(dropdownName);
     }
   };
- console.log("Header data:", header);
+
   const menuItems = [
     {
       id: "whycontractor",
@@ -184,7 +184,7 @@ const menuItemss = header?.headerMain?.map((item: any, index: number) => {
     ...(items.length > 0 && { items }), // only include if exists
   };
 });
-console.log("Menu Items:", menuItemss);
+
 
   return (
     <>

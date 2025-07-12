@@ -2,12 +2,9 @@ import Image from "next/image";
 import { BlackLogo } from "../common/Icons";
 import CompareCard from "./CompareCard";
 import CompareTable from "./CompareTable";
-export interface TheServiceProps {
-  kindAdorable: any;
-  slug?: string;
-  variant?: "light" | "dark";
-  icon?: boolean;
-}
+import { TheServiceProps } from "@/types";
+import Copy from "../common/Copy";
+
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   return (
     <section className="relative">
@@ -28,7 +25,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
             height={100}
             className="absolute top-[-195px] left-0 z-10 block h-full w-full md:hidden"
             src="/images/webp/finally-mobile-bg.webp"
-            alt=""
+            alt="Finally Mobile Background"
           />
         </div>
       )}
@@ -36,20 +33,20 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
       <div
         className={`mx-auto max-w-[1092px] overflow-x-auto px-2 pt-[53px] md:pt-16 lg:pt-[70px]`}
       >
-        {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
-        <h2
-          className={`${slug === "estimate" ? "gradient-text" : "gradient-text-2"} section-heading xs:max-w-[84%] relative z-40 mx-auto w-fit max-w-[88%] text-center !font-black sm:max-w-full lg:!font-semibold`}
-        >
-          {kindAdorable?.title}
-        </h2>
-        {/* </TextAnimation> */}
-        {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
-        <p
-          className={`${slug === "estimate" ? "!text-decemberSky" : "!text-wallStreet"} paragraph-style relative z-40 mx-auto max-w-[885px] text-center`}
-        >
-          {kindAdorable?.subTitle}
-        </p>
-        {/* </TextAnimation> */}
+        <Copy animateOnScroll={true} delay={0.2}>
+          <h2
+            className={`${slug === "estimate" ? "gradient-text" : "gradient-text-2"} section-heading xs:max-w-[84%] relative z-40 mx-auto w-fit max-w-[88%] text-center !font-black sm:max-w-full lg:!font-semibold`}
+          >
+            {kindAdorable?.title}
+          </h2>
+        </Copy>
+        <Copy animateOnScroll={true} delay={0.2}>
+          <p
+            className={`${slug === "estimate" ? "!text-decemberSky" : "!text-wallStreet"} paragraph-style relative z-40 mx-auto max-w-[885px] text-center`}
+          >
+            {kindAdorable?.subTitle}
+          </p>
+        </Copy>
         <div className="relative z-40 mt-8 flex w-full md:hidden">
           <button
             className={`border-decemberSky flex w-1/2 items-center justify-center rounded-l-sm border-r p-3 ${slug === "estimate" ? "bg-[rgba(255,255,255,0.80)]" : "bg-doctor"}`}

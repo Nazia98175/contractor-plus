@@ -4,11 +4,12 @@ import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
+import Copy from "../common/Copy";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -17,8 +18,9 @@ export interface TheHeroProps {
   slug?: string;
   heroImg?: any;
   homeCard?: any;
+  commonData?: any;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
+const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg , commonData}) => {
   // const wrapperRef = useRef<HTMLDivElement | null>(null);
   // useEffect(() => {
   //   gsap.to(wrapperRef.current, {
@@ -29,7 +31,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
   //     once: true,
   //   });
   // }, []);
-
+ 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 
   return (
@@ -54,7 +56,7 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
-            {/* <TextAnimation delay={0.3} animateOnScroll={false}> */}
+            {/* <Copy delay={0.3} animateOnScroll={false}> */}
             <h2
               className={`${
                 slug === "estimate"
@@ -64,14 +66,14 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
             >
               {hero?.heroTitle}
             </h2>
-            {/* </TextAnimation> */}
-            {/* <TextAnimation delay={0.5} animateOnScroll={false}> */}
-            <p
-              className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
-            >
-              {hero?.heroDescription}
-            </p>
-            {/* </TextAnimation> */}
+            {/* </Copy> */}
+            <Copy delay={0.5} animateOnScroll={false}>
+              <p
+                className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
+              >
+                {hero?.heroDescription}
+              </p>
+            </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.6}>
@@ -122,17 +124,17 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg }) => {
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
                 <FreeAccountButton
                   className="!hidden sm:!flex"
-                  text={hero?.createBtn}
+                  text={commonData?.getStartedFreeBtn}
                   showIcon={false}
                 />
                 <FreeAccountButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
-                  text={hero?.mobileBtn}
+                  text={commonData?.mobileBtn}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"
-                  text={hero?.nccTxt}
+                  text={commonData?.nccTxt}
                 />
               </div>
             </CardReveal>

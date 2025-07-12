@@ -26,6 +26,7 @@ const HomepageClient = ({
   reviewsList,
   resultStats,
   blogs,
+  commonData,
 }: any) => {
 
   return (
@@ -39,7 +40,7 @@ const HomepageClient = ({
       />
       <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />
       <WhatEverClient
-        data={homePageContent?.data?.contractorConnects}
+        data={commonData?.contractorConnects}
         resultStats={resultStats}
         className="overflow-hidden"
       />
@@ -49,9 +50,9 @@ const HomepageClient = ({
       />
       <EntireBusiness
         entireBusiness={homePageContent?.data?.emailSignupSection}
-        ncc_text={homePageContent?.data?.hero?.nccTxt}
-        mobileBtn={homePageContent?.data?.hero?.mobileBtn}
-        createBtn={homePageContent?.data?.hero?.createBtn}
+        ncc_text={commonData?.nccTxt}
+        mobileBtn={commonData?.mobileBtn}
+        createBtn={commonData?.getStartedFreeBtn}
       />
     </>
   );

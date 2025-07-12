@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TextAnimation from "../common/TextAnimation";
+import { useEffect, useRef, useState } from "react";
+import Copy from "../common/Copy";
 
 const AnimationHeader = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -125,13 +125,13 @@ const AnimationHeader = () => {
         }
       `}</style>
 
-      <TextAnimation animateOnScroll={true} delay={0}>
+      <Copy animateOnScroll={true} delay={0}>
         <h3 className="sub-heading mb-1 text-center font-semibold duration-300 max-sm:!text-lg">
           The contractors pulling ahead aren't grinding harder.
         </h3>
-      </TextAnimation>
+      </Copy>
 
-      <TextAnimation animateOnScroll={true} delay={0}>
+      <Copy animateOnScroll={true} delay={0}>
         <h6 className="text-center text-xs leading-[130%] duration-300 lg:text-lg xl:text-[22px]">
           They've
           <span className="highlighted-span font-medium italic duration-300">
@@ -140,7 +140,7 @@ const AnimationHeader = () => {
           </span>
           because it's the only way forward.
         </h6>
-      </TextAnimation>
+      </Copy>
 
       <span className="icon-span mt-[18px] flex justify-center duration-300">
         <svg

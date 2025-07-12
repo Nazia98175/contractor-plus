@@ -1,15 +1,13 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { SliderRedLineIcon } from "../common/Icons";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import ContractorIndustrySlider from "./ContractorIndustrySlider";
-import PrimaryLink from "../common/PrimaryLInk";
 import Copy from "../common/Copy";
+import { SliderRedLineIcon } from "../common/Icons";
+import ContractorIndustrySlider from "./ContractorIndustrySlider";
 interface Industry {
   title: string;
   subTitle: string;
-  url: string| null;
-  btnText: string| null;
+  url: string | null;
+  btnText: string | null;
 }
 
 interface TheIndustryProps {

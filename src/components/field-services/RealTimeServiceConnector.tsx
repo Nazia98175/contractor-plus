@@ -1,10 +1,8 @@
-import Image from "next/image";
+import { debugLog } from "@/utils/getConsole";
 import React from "react";
-import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/FieldService";
-import { debugLog } from "@/utils/getConsole";
-import TextAnimation from "../common/TextAnimation";
+import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 
 const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
   fieldService,
@@ -66,7 +64,7 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
     >
       <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
 
-      {/* <TextAnimation animateOnScroll={true} delay={0.84}> */}
+      {/* <Copy animateOnScroll={true} delay={0.84}> */}
       <h3 className="xs:text-2xl crm-gradient xs:max-w-[90%] mx-auto px-2 text-center text-xl font-bold sm:hidden xl:px-0">
         {(() => {
           const title = fieldService?.title || "";
@@ -93,7 +91,7 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
           );
         })()}
       </h3>
-      {/* </TextAnimation> */}
+      {/* </Copy> */}
 
       <RealTimeServiceConnectorSlider sliderData={fieldService?.cardsDetail} />
     </section>

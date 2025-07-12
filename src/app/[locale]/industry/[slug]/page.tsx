@@ -1,20 +1,26 @@
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import CommonFormField from "@/components/common/CommonFormField";
-import { blackPlatforms, platforms, reviews } from "@/components/common/Helper";
+import { blackPlatforms, platforms } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/hvca/AwardBadge";
 import EraOfSoftware from "@/components/industry/hvca/EraOfSoftware";
-import IndustryHero from "@/components/industry/hvca/IndustryHero";
 import HvacReview from "@/components/industry/hvca/HvacReview";
 import HvacSoftware from "@/components/industry/hvca/HvacSoftware";
+import IndustryHero from "@/components/industry/hvca/IndustryHero";
 import TrustBarHvca from "@/components/industry/hvca/TrustBarHvca";
 import TrustBatBuildContractor from "@/components/industry/hvca/TrustBatBuildContractor";
 import WantingMore from "@/components/industry/hvca/WantingMore";
-import { getCrmPage } from "@/services/features/crm";
 
-import { getHomepageData } from "@/services/homePage/getHomepageData";
+import {
+  FasterIcon1,
+  FasterIcon2,
+  FasterIcon3,
+  FasterIcon4,
+  FasterIcon5,
+  FasterIcon6,
+} from "@/components/common/Icons";
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -46,13 +52,20 @@ const page = async ({ params }: PageProps) => {
     faqs,
     blogsList,
     thousandReviews,
+    commonData,
+    trustBarImages,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
-
-  const [blogs] = await Promise.all([
-    getCrmPage("crm", useParams.locale, "&populate=*"),
-  ]);
-  const { homePageContent } = await getHomepageData(useParams?.locale);
-
+  console.log(crmPageContent?.emailSignupSection, "email section");
+  const customIconsMap: Record<number, React.ReactNode> = {
+    0: <FasterIcon1 />,
+    1: <FasterIcon2 />,
+    2: <FasterIcon3 />,
+  };
+  const customIconsMap2: Record<number, React.ReactNode> = {
+    0: <FasterIcon4 />,
+    1: <FasterIcon5 />,
+    2: <FasterIcon6 />,
+  };
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
@@ -61,10 +74,12 @@ const page = async ({ params }: PageProps) => {
             hero={crmPageContent?.hero}
             homeCard={homeCards}
             heroImg={heroImg}
+            commonData={commonData}
           />
           <TrustBatBuildContractor
             trustedCompanies={trustedCompanies}
             platforms={blackPlatforms}
+            trustBarImages={trustBarImages}
             showTrustedSection={true}
             className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
           />
@@ -81,7 +96,10 @@ const page = async ({ params }: PageProps) => {
       </div>
       <AwardBadges
         teamsUsingContractor={teamsUsingContractor}
-        buttonInfo={crmPageContent?.hero}
+        buttonInfo={commonData}
+        customIconsMap={
+          useParams.slug === "hvac" ? customIconsMap : customIconsMap2
+        }
       />
       {/* <ThousandsReviews
         data={{ title: "4.7 ★ across thousands of reviews" }}
@@ -106,18 +124,19 @@ const page = async ({ params }: PageProps) => {
             title={crmPageContent?.emailSignupSection?.title}
             subTitle={crmPageContent?.emailSignupSection?.subTitle}
             placeholder={crmPageContent?.emailSignupSection?.placeholder}
-            createBtn={crmPageContent?.hero?.createBtn}
-            mobileBtn={crmPageContent?.hero?.mobileBtn}
-            ncc={crmPageContent?.hero?.nccTxt}
+            createBtn={commonData?.getStartedFreeBtn}
+            mobileBtn={commonData?.mobileBtn}
+            ncc={commonData?.nccTxt}
             variantBtn="dark"
           />
         </div>
-        <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
+        <TrustBarHvca
+          platforms={platforms}
+          trustBarImages={trustBarImages}
+          className="pb-[148px] xl:pb-20"
+        />
       </div>
-      <WhatEverClient
-        data={homePageContent?.data?.contractorConnects}
-        issection={false}
-      />
+      <WhatEverClient data={commonData?.contractorConnects} issection={false} />
       <div className="relative">
         <Faq
           mainContainerclassName="pt-9 pb-36 z-20 px-2"

@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
-import { CheckIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
+import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
+import { CheckIcon } from "../common/Icons";
 
 const FeatureItem = ({ text }: { text: string }) => (
   <article className="bg-doctor2 text-lightBlack text-lightblack mx-2 flex w-full max-w-[500px] items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">
@@ -69,17 +68,17 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
 
       {/* Heading + Paragraph */}
       <div className="relative z-10 px-2 md:-mt-3">
-        {/* <TextAnimation animateOnScroll={false} delay={0.3}> */}
-        <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
-          {trackProperties?.title}
-        </h2>
-        {/* </TextAnimation> */}
+        <Copy animateOnScroll={false} delay={0.3}>
+          <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
+            {trackProperties?.title}
+          </h2>
+        </Copy>
 
-        {/* <TextAnimation animateOnScroll={false} delay={0.3}> */}
-        <p className="paragraph-style mx-auto max-w-[950px] text-center">
-          {trackProperties?.subTitle}
-        </p>
-        {/* </TextAnimation> */}
+        <Copy animateOnScroll={false} delay={0.3}>
+          <p className="paragraph-style mx-auto max-w-[950px] text-center">
+            {trackProperties?.subTitle}
+          </p>
+        </Copy>
         <FreeAccountButton
           className="mt-3 !flex gap-1.5 sm:!hidden"
           text={trackProperties?.mobileBtn}

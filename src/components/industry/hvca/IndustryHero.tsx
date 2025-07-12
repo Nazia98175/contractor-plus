@@ -2,16 +2,21 @@
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
+import Copy from "@/components/common/Copy";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
 // import AdaptiveHeroTitle from "@/components/common/AdaptiveHeroTitle";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
-import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HvacHeroSlider from "./HvacHeroSlider";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 
-const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
+const IndustryHero: React.FC<TheHeroProps> = ({
+  hero,
+  homeCard,
+  heroImg,
+  commonData,
+}) => {
   const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
 
   return (
@@ -51,16 +56,16 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
 
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
               <FreeAccountButton
-                text={hero?.createBtn}
+                text={commonData?.getStartedFreeBtn}
                 className="!hidden sm:!flex"
               />
               <FreeAccountButton
-                text={hero?.mobileBtn}
+                text={commonData?.mobileBtn}
                 className="flex sm:!hidden"
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
-                text={hero?.nccTxt}
+                text={commonData?.nccTxt}
               />
             </div>
           </div>
@@ -82,7 +87,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({ hero, homeCard, heroImg }) => {
           </span>
           <div className="bg-black-fade-custom absolute right-0 bottom-0 h-full w-full"></div>
           <Image
-            alt=""
+            alt="HVAC industry hero illustration"
             src={`${heroImg?.url}`}
             width={945}
             height={729}

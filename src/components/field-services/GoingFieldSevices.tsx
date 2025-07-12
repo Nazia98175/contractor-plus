@@ -1,4 +1,9 @@
 "use client";
+import { debugLog } from "@/utils/getConsole";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import React, { useEffect } from "react";
 import {
   BreakeIcon,
@@ -6,14 +11,8 @@ import {
   RunningBehindIcon,
   ScreenShotIcon,
 } from "../common/Icons";
-import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
 import { TheSwitchingToolProps } from "../crmbussiness/SwitchingTool";
-import { debugLog } from "@/utils/getConsole";
-import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
@@ -73,11 +72,11 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
         />
       </div>
 
-      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
+      {/* <Copy animateOnScroll={true} delay={0.2}> */}
       <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[868px]">
         <span>{switchingTool?.title}</span>
       </h3>
-      {/* </TextAnimation> */}
+      {/* </Copy> */}
 
       <h3 className="sub-heading crm-gradient mx-auto w-full max-w-[350px] px-2 text-center font-bold sm:hidden">
         {switchingTool?.title}

@@ -1,17 +1,15 @@
 "use client";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import {
   CalanderIcon,
   ClockIcon,
   EstimateIcon2,
   MoreIcon,
 } from "../common/Icons";
-import Image from "next/image";
-import TextAnimation from "../common/TextAnimation";
-import CardReveal from "../common/CardReveal";
-import LottieAnimation from "../common/LottieAnimation";
 export interface Props {
   data: any;
   slug?: string;
@@ -40,14 +38,14 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
       ref={ref}
       className="main-container relative z-30 flex flex-col items-center justify-center px-2 py-[52px] md:py-16 xl:py-[93px]"
     >
-      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
-      <h2 className="crm-gradient section-heading xs:max-w-[95%] mx-auto max-w-[92%] text-center !font-black sm:max-w-[951px] lg:!font-semibold">
-        {data?.title}
-      </h2>
-      {/* </TextAnimation> */}
-      {/* <TextAnimation animateOnScroll={true} delay={0.2}> */}
-      <p className="paragraph-style text-center">{data?.subTitle}</p>
-      {/* </TextAnimation> */}
+      <Copy animateOnScroll={true} delay={0.2}>
+        <h2 className="crm-gradient section-heading xs:max-w-[95%] mx-auto max-w-[92%] text-center !font-black sm:max-w-[951px] lg:!font-semibold">
+          {data?.title}
+        </h2>
+      </Copy>
+      <Copy animateOnScroll={true} delay={0.2}>
+        <p className="paragraph-style text-center">{data?.subTitle}</p>
+      </Copy>
       <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-[18px] px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 md:gap-[30px] xl:mt-[52px] xl:mb-[70px]">
         {data?.cards?.map((item: any, index: any) => (
           <article

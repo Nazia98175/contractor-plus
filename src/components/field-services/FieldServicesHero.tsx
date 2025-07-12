@@ -1,7 +1,6 @@
 "use client";
-import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
@@ -10,8 +9,8 @@ import {
   HeroAppStoreIcon,
   HeroPlayStoreIcon,
 } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
 import FieldServiceMap from "./FieldServiceMap";
+import Copy from "../common/Copy";
 
 interface GeolocationData {
   latitude: number;
@@ -43,21 +42,21 @@ const FieldServicesHero: React.FC<Props> = ({ hero }) => {
       {/* Content overlay */}
       <div className="main-container relative z-20 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:flex-row lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
         <div className="w-full lg:max-w-[732px]">
-          <TextAnimation animateOnScroll={false} delay={0}>
+          <Copy animateOnScroll={false} delay={0}>
             <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
               {hero?.heroTitle1}
             </div>
-          </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0.2}>
+          </Copy>
+          <Copy animateOnScroll={false} delay={0.2}>
             <h3 className="main-heading gradient-text mt-1.5 sm:max-w-[470px] lg:hidden">
               {hero?.heroTitle}
             </h3>
-          </TextAnimation>
-          <TextAnimation animateOnScroll={false} delay={0.3}>
+          </Copy>
+          <Copy animateOnScroll={false} delay={0.3}>
             <h3 className="main-heading hidden text-white lg:block">
               {hero?.heroTitle}
             </h3>
-          </TextAnimation>
+          </Copy>
           <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] sm:max-w-[470px] lg:max-w-[532px]">
             {hero?.heroDescription}
           </p>

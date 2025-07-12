@@ -11,7 +11,7 @@ const HvacReviewCard: React.FC<ReviewCardProps> = ({ review, openModal }) => {
       </span>
     ));
   };
-  console.log(review, "review in hvac review card");
+
   return (
     <article
       onClick={review.isModal ? openModal : undefined}

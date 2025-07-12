@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TextAnimation from "../common/TextAnimation";
+import { useEffect, useRef } from "react";
+import Copy from "../common/Copy";
 
 const VideoBottomPart = () => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
@@ -93,11 +93,11 @@ const VideoBottomPart = () => {
             ref={sectionRef1}
             className="video-section-wrapper relative z-10 mx-auto max-w-[873px] p-3 backdrop-blur-[5px] sm:p-[22px]"
           >
-            <TextAnimation animateOnScroll={true} delay={0}>
+            <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">
                 Your work ethic isn't broken… But your workflow IS.
               </h3>
-            </TextAnimation>
+            </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
               <svg
                 width="31"
@@ -120,12 +120,12 @@ const VideoBottomPart = () => {
             ref={sectionRef2}
             className="video-section-wrapper relative z-10 mx-auto max-w-[927px] p-3 backdrop-blur-[5px] sm:p-[22px]"
           >
-            <TextAnimation animateOnScroll={true} delay={0}>
+            <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">
                 It's a thousand micro inefficiencies stealing time and bleeding
                 margin.
               </h3>
-            </TextAnimation>
+            </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
               <svg
                 width="31"
@@ -150,11 +150,11 @@ const VideoBottomPart = () => {
             ref={sectionRef3}
             className="video-section-wrapper relative z-10 mx-auto max-w-[873px] p-3 backdrop-blur-[5px] sm:p-[22px]"
           >
-            <TextAnimation animateOnScroll={true} delay={0}>
+            <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading text-center font-semibold duration-300 xl:px-6">
                 You're not scaling, you're just surviving.
               </h3>
-            </TextAnimation>
+            </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
               <svg
                 width="31"
@@ -177,12 +177,12 @@ const VideoBottomPart = () => {
             ref={sectionRef4}
             className="video-section-wrapper relative z-10 mx-auto max-w-[873px] p-3 backdrop-blur-[5px] sm:p-[22px]"
           >
-            <TextAnimation animateOnScroll={true} delay={0}>
+            <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading text-center font-semibold duration-300 xl:px-6">
                 And in this market, if you're not getting ahead.. you're falling
                 more and more behind.
               </h3>
-            </TextAnimation>
+            </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
               <svg
                 width="31"

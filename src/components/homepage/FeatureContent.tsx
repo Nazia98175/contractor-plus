@@ -2,13 +2,15 @@
 import React from "react";
 import { featureContentss } from "../common/Helper";
 import LottieAnimation from "../common/LottieAnimation";
-// import Copy from "../common/Copy";
+import Image from "next/image";
+
 type FeatureContent = {
   id: number;
   title: string;
   cardQuote: string | null;
   userName: string | null;
   cardImg: any | null;
+  imgSrc: string;
   content: {
     id: number;
     title: string;
@@ -22,10 +24,6 @@ type Props = {
 };
 
 const FeatureContent = ({ featureContents, contentRefs }: Props) => {
-  // const firstContents = featureContents
-  //   ?.map((feature) => feature?.content[0])
-  //   .filter(Boolean);
-
   return (
     <>
       {featureContents
@@ -43,20 +41,23 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             </h4>
             <div className="relative w-full overflow-hidden">
               <LottieAnimation
-                loop={true}
+                loop={false}
                 animationData={featureContentss?.[index]?.titleImg}
+                className="hidden sm:block"
+                playOnce={true} // Enable play-once behavior
+              />
+
+              <Image
+                src={featureContentss?.[index].imgSrc}
+                alt={content?.subTitle || "Feature Image"}
+                width={611}
+                height={245}
+                className="object-cover sm:hidden"
               />
             </div>
-            {/* <Copy animateOnScroll={true}> */}
-            <p className="text-wallStreet text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
+            <p className="text-wallStreet space-y-2 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
               {content.description}
-              {/* {featureContents?.[index]?.cardQuote && (
-              <span className="text-secondary">
-                {featureContents?.[index]?.cardQuote}
-              </span>
-            )} */}
             </p>
-            {/* </Copy> */}
           </div>
         ))}
     </>

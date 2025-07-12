@@ -1,10 +1,10 @@
-import React from "react";
-import TextAnimation from "../common/TextAnimation";
-import CommonFormField from "../common/CommonFormField";
-import CloudsAnimation from "../common/CloudsAnimation";
-import Image from "next/image";
-import { DownScrollIcon } from "../common/Icons";
 import { PlansProps } from "@/types";
+import Image from "next/image";
+import React from "react";
+import CloudsAnimation from "../common/CloudsAnimation";
+import CommonFormField from "../common/CommonFormField";
+import Copy from "../common/Copy";
+import { DownScrollIcon } from "../common/Icons";
 
 const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
   return (
@@ -23,22 +23,22 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
         Plans and Pricing
       </div>
       <div className="relative mx-auto w-full max-w-[700px]">
-        <TextAnimation animateOnScroll={false} delay={0}>
-          <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:block">
-            Free to start, free to stay. <br /> Level up when you’re ready.
-          </h2>
-        </TextAnimation>
-        <TextAnimation animateOnScroll={false} delay={0}>
-          <h2 className="main-heading xs:max-w-[80%] mx-auto mt-1.5 mb-4 bg-[linear-gradient(276.25deg,_rgba(245,25,30,0.3)_-11.28%,_rgba(255,255,255)_45%)] bg-clip-text text-center !font-medium text-transparent sm:hidden">
-            Free to start, free to stay. Level up when you’re ready.
-          </h2>
-        </TextAnimation>
-        <TextAnimation animateOnScroll={false} delay={0.4}>
+        {/* <Copy delay={1}> */}
+        <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:block">
+          Free to start, free to stay. <br /> Level up when you’re ready.
+        </h2>
+        {/* </Copy> */}
+        {/* <Copy delay={1.2}> */}
+        <h2 className="main-heading xs:max-w-[80%] mx-auto mt-1.5 mb-4 bg-[linear-gradient(276.25deg,_rgba(245,25,30,0.3)_-11.28%,_rgba(255,255,255)_45%)] bg-clip-text text-center !font-medium text-transparent sm:hidden">
+          Free to start, free to stay. Level up when you’re ready.
+        </h2>
+        {/* </Copy> */}
+        <Copy delay={0.3}>
           <p className="hero-description text-trolleyGrey sm:text-cyanBlue text-center">
             What the other guys charge extra for, Contractor+ offers without
             hidden charges. Upgrade when you need more firepower to grow.
           </p>
-        </TextAnimation>
+        </Copy>
         <div className="pt-5 xl:pt-7">
           <CommonFormField
             title=""

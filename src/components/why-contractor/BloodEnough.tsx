@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TextAnimation from "../common/TextAnimation";
+import { useEffect, useRef, useState } from "react";
+import Copy from "../common/Copy";
 
 const BloodEnough = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -123,13 +123,13 @@ const BloodEnough = () => {
         }
       `}</style>
 
-      <TextAnimation animateOnScroll={true} delay={0}>
+      <Copy animateOnScroll={true} delay={0}>
         <h3 className="sub-heading mb-1 text-center font-semibold duration-300 max-sm:!text-lg">
           Blood, sweat, and tears used to be enough
         </h3>
-      </TextAnimation>
+      </Copy>
 
-      <TextAnimation animateOnScroll={true} delay={0}>
+      <Copy animateOnScroll={true} delay={0}>
         <h6 className="text-center text-xs leading-[130%] duration-300 sm:text-sm lg:text-lg xl:text-[22px]">
           Up at 4am to be on the job site. Hours of hard labor into the evening
           hours. A new software tool to solve one problem… a new workaround for
@@ -139,7 +139,7 @@ const BloodEnough = () => {
             But now? It's keeping you stuck.
           </span>
         </h6>
-      </TextAnimation>
+      </Copy>
 
       <span className="icon-span mt-[18px] flex justify-center duration-300">
         <svg

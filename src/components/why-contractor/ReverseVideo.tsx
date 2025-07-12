@@ -1,10 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { StrokeText } from "./Icons";
-import TextAnimation from "../common/TextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Copy from "../common/Copy";
+import { StrokeText } from "./Icons";
 import ImageSequenceCanvas from "./ImageSequenceCanvas";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -94,14 +93,14 @@ const ReverseFrames = () => {
             "linear-gradient(180deg, #0C0D11 0%, rgba(12, 13, 17, 0) 90.88%)",
         }}
       ></div>
-      <TextAnimation animateOnScroll={true} delay={0}>
+      <Copy animateOnScroll={true} delay={0}>
         <div className="absolute top-1/2 left-1/2 z-10 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-14 sm:pt-36">
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
             "If it ain't broke, don't fix it" is the
           </h2>
           <StrokeText />
         </div>
-      </TextAnimation>
+      </Copy>
     </section>
   );
 };

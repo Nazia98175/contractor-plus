@@ -1,6 +1,7 @@
 import { getBlogs } from "@/services/blogs";
 import { HomePageResponse } from "@/types";
 import { getHomePage } from "./homepage";
+import { getCommonData } from "../common/commonData";
 
 // Optional: Define return type if you're using TypeScript strongly
 export interface HomepageDataResponse {
@@ -11,6 +12,7 @@ export interface HomepageDataResponse {
   featurHighlight: HomePageResponse | null;
   resultStatsSection: HomePageResponse | null;
   blogs: any | null;
+  commonData: any | null; 
 }
 
 export const getHomepageData = async (
@@ -32,6 +34,7 @@ export const getHomepageData = async (
     reviewsList,
     resultStatsSection,
     blogs,
+    commonData,
   ] = await Promise.all([
     getHomePage(locale, populateDefault),
     getHomePage(locale, populatePlatforms),
@@ -40,6 +43,7 @@ export const getHomepageData = async (
     getHomePage(locale, populateReviews),
     getHomePage(locale, resultStats),
     getBlogs(locale, blogQuery),
+    getCommonData(),
   ]);
 
   return {
@@ -50,5 +54,6 @@ export const getHomepageData = async (
     reviewsList,
     resultStatsSection,
     blogs,
+    commonData
   };
 };

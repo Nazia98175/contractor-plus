@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TextAnimation from "../common/TextAnimation";
+import { useEffect, useRef } from "react";
+import Copy from "../common/Copy";
 import { FrictionTextGroup } from "./Icons";
 
 const SeperateSolution = () => {
@@ -142,14 +142,14 @@ const SeperateSolution = () => {
   return (
     <section ref={sectionRef} className="pt-9 pb-[46px]">
       <div className="relative z-20 mx-auto max-w-[733px]">
-        <TextAnimation animateOnScroll={true} delay={0}>
+        <Copy animateOnScroll={true} delay={0}>
           <h3
             className="sub-heading mb-10 text-center font-semibold sm:mb-[73px] xl:px-4"
             style={{ color: "#8A8E91" }}
           >
             Every separate solution introduces friction into your business
           </h3>
-        </TextAnimation>
+        </Copy>
 
         <div className="grid grid-cols-1 gap-x-11 gap-y-8 sm:grid-cols-2">
           {frictionItems.map((item, index) => (
@@ -170,23 +170,23 @@ const SeperateSolution = () => {
                   stroke="#25292D"
                 />
               </svg>
-              <TextAnimation animateOnScroll={true} delay={0}>
+              <Copy animateOnScroll={true} delay={0}>
                 <p
                   className="text-center text-sm leading-[130%] font-semibold lg:text-base xl:text-lg"
                   style={{ color: "#656C73" }}
                 >
                   {item}
                 </p>
-              </TextAnimation>
+              </Copy>
             </div>
           ))}
         </div>
 
-        <TextAnimation animateOnScroll={true} delay={0}>
+        <Copy animateOnScroll={true} delay={0}>
           <span className="mt-11 flex justify-center">
             <FrictionTextGroup />
           </span>
-        </TextAnimation>
+        </Copy>
       </div>
     </section>
   );

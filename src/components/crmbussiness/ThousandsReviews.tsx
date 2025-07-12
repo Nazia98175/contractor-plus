@@ -4,6 +4,7 @@ import { ReviewIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import CrmReviewCard from "./CrmReviewCard";
 import ReviewModal from "../common/ReviewModal";
+import Copy from "../common/Copy";
 
 interface Props {
   data: any;
@@ -25,12 +26,11 @@ const ThousandsReviews: React.FC<Props> = ({
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  console.log("checking", data);
+ 
 
   return (
     <section>
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
-        {/* <TextAnimation animateOnScroll={true} delay={0.8}> */}
         <h2
           className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
             variant === "secondary" ? "gradient-white" : "crm-gradient"
@@ -39,7 +39,6 @@ const ThousandsReviews: React.FC<Props> = ({
           {data?.title?.split("4.7 ★")?.[0]} <ReviewIcon />
           {data?.title?.split("4.7 ★")?.[1]}
         </h2>
-        {/* </TextAnimation> */}
 
         <SliderLayout
           wrapperClassName="relative w-full !h-auto"

@@ -24,6 +24,7 @@ const TrustedService: React.FC<TheReviewProps> = ({
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+  console.log(reviews, "reviews deal flow");
 
   return (
     <section className={`relative overflow-hidden ${className}`}>

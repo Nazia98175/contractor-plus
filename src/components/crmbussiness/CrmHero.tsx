@@ -20,7 +20,12 @@ export interface TheHeroProps {
   homeCard?: any;
   commonData?: any;
 }
-const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg , commonData}) => {
+const CrmHero: React.FC<TheHeroProps> = ({
+  hero,
+  slug,
+  heroImg,
+  commonData,
+}) => {
   // const wrapperRef = useRef<HTMLDivElement | null>(null);
   // useEffect(() => {
   //   gsap.to(wrapperRef.current, {
@@ -31,8 +36,9 @@ const CrmHero: React.FC<TheHeroProps> = ({ hero, slug, heroImg , commonData}) =>
   //     once: true,
   //   });
   // }, []);
- 
+
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
+  console.log(hero, "deal fleow");
 
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">

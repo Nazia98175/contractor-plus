@@ -43,7 +43,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
           <div className="relative z-30 w-full sm:space-y-6 md:max-w-[70%]">
             {/* Replace the original h1 with AdaptiveHeroTitle */}
             <AdaptiveHeroTitle
-              // title={hero?.heroTitle || ""}
+              // title={`Property Maintenance`}
               title={hero?.heroTitle || ""}
               className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl"
               minFontSize={16}

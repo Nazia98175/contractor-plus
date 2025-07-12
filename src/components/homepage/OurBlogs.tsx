@@ -117,12 +117,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             ))}
           </SliderLayout>
         </div>
-        <div className="flex justify-center pt-4 md:hidden">
+        <Link
+          href={blogHeading.btnUrl}
+          className="flex justify-center pt-4 md:hidden"
+        >
           <Button className="bg-red-linear primary-btn h-10 gap-2">
             {blogHeading?.btnTxt}
             <BlogBtnIcon />
           </Button>
-        </div>
+        </Link>
       </div>
     </section>
   );

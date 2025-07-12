@@ -1,8 +1,8 @@
 "use client";
+import Link from "next/link";
 import Button from "../common/Button";
 import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import SliderLayout from "../common/SliderLayout";
 import OurBlogCard from "./OurBlogCard";
 
@@ -15,6 +15,7 @@ interface BlogHeading {
   title: string;
   btnTxt: string;
   url: string;
+  btnUrl: string;
 }
 
 interface TheBlogProps {
@@ -62,12 +63,12 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             {blogHeading?.title}
           </h2>
           {/* </PrimaryAnimatedText> */}
-          <div className="hidden md:block">
+          <Link href={blogHeading?.btnUrl} className="hidden md:block">
             <Button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.btnTxt}
               <BlogBtnIcon />
             </Button>
-          </div>
+          </Link>
         </div>
         <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
           <h2 className="gradient-text-2 text-center text-[26px] font-semibold text-black md:text-start md:text-[35px] lg:text-[42px]">

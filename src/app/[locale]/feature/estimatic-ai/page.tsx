@@ -37,7 +37,7 @@ const EstimaticAiPage = () => {
       <TrustedService
         reviews={estimaticReviews}
         slug="crm"
-        className="lg:pt-6 lg:pb-3.5"
+        className="pb-6 lg:pt-6 lg:pb-3.5"
       />
       <RunWithContractor
         kindAdorable={estimateSoftwareData}
@@ -64,7 +64,7 @@ const EstimaticAiPage = () => {
         }}
       />
 
-      <AwardsTagsImg className="mt-[133px]" />
+      <AwardsTagsImg className="lg:mt-24 xl:mt-[133px]" />
       <ThousandsReviews
         data={dealReviews2}
         reviews={dealReviews2.reviews}

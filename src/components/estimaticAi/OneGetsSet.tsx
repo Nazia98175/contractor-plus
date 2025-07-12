@@ -26,7 +26,7 @@ const OneGetsSet = () => {
       </CardReveal>
       <div className="flex flex-col items-center justify-between gap-2 rounded-3xl border-[#51585C] pt-6 lg:flex-row lg:border">
         <div className="flex flex-col items-center justify-center lg:w-[46%]">
-          <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-xl font-semibold">
+          <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-sm font-semibold sm:text-base md:text-xl">
             <h4>Other AI estimating software</h4>
             <Image
               src="/images/png/😖.png"
@@ -57,7 +57,7 @@ const OneGetsSet = () => {
         <div className="flex w-full flex-col items-center justify-end lg:w-[53%]">
           <div className="mb-3 flex items-center justify-center gap-3.5">
             <Image
-              width={140}
+              width={90}
               height={20}
               alt="Estimatic logo"
               src="/images/svg/estimatic.svg"

@@ -4656,9 +4656,8 @@ export const formData = {
 export const estimateFormData = {
   id: 282,
   placeholder: "Your Email",
-  subTitle:
-    "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
-  title: "This is what opportunity tracker software should have been all along",
+  title: "The AI estimate generator that will change your business forever",
+  subTitle: "Get started with Estimatic AI in Contractor+ today.",
 };
 
 export const dealflowFaq = {

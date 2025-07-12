@@ -20,7 +20,7 @@ type FeatureContent = {
 
 type Props = {
   featureContents: FeatureContent[];
-  contentRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+  contentRefs: React.RefObject<(HTMLDivElement | null)[]>;
 };
 
 const FeatureContent = ({ featureContents, contentRefs }: Props) => {
@@ -30,9 +30,11 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
         ?.slice(0, featureContents?.length - 1)
         ?.map((content: any, index: any) => (
           <div
-            key={index}
+            key={`feature-${content.id}-${index}`}
             ref={(el) => {
-              contentRefs.current[index] = el;
+              if (contentRefs.current) {
+                contentRefs.current[index] = el;
+              }
             }}
             className="bg-doctor w-full scroll-mt-8 space-y-2.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
           >
@@ -44,11 +46,12 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
                 loop={false}
                 animationData={featureContentss?.[index]?.titleImg}
                 className="hidden sm:block"
-                playOnce={true} // Enable play-once behavior
+                playOnce={true}
+                useSyncedPlayZone={true}
               />
 
               <Image
-                src={featureContentss?.[index].imgSrc}
+                src={featureContentss?.[index]?.imgSrc}
                 alt={content?.subTitle || "Feature Image"}
                 width={611}
                 height={245}

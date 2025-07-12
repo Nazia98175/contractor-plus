@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
-import FaqList from "./FaqList";
-import TextAnimation from "../common/TextAnimation";
-import UseFaqToggle from "../hooks/UseFaqToggle";
 import { headingStyles } from "@/utils/getVariants";
+import React from "react";
 import Copy from "../common/Copy";
+import UseFaqToggle from "../hooks/UseFaqToggle";
+import FaqList from "./FaqList";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 type HeadingVariant = "default" | "primary" | "white" | "accent";

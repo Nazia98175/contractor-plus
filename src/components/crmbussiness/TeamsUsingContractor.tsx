@@ -1,18 +1,15 @@
 "use client";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import {
   CalanderIcon,
   ClockIcon,
   EstimateIcon2,
   MoreIcon,
 } from "../common/Icons";
-import Image from "next/image";
-import TextAnimation from "../common/TextAnimation";
-import CardReveal from "../common/CardReveal";
-import LottieAnimation from "../common/LottieAnimation";
-import Copy from "../common/Copy";
 export interface Props {
   data: any;
   slug?: string;

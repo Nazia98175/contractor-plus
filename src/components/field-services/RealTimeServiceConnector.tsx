@@ -1,10 +1,8 @@
-import Image from "next/image";
+import { debugLog } from "@/utils/getConsole";
 import React from "react";
-import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/FieldService";
-import { debugLog } from "@/utils/getConsole";
-import TextAnimation from "../common/TextAnimation";
+import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
 
 const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
   fieldService,

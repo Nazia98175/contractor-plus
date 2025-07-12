@@ -1,7 +1,6 @@
 "use client";
-import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
@@ -10,8 +9,8 @@ import {
   HeroAppStoreIcon,
   HeroPlayStoreIcon,
 } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
 import FieldServiceMap from "./FieldServiceMap";
+import Copy from "../common/Copy";
 
 interface GeolocationData {
   latitude: number;

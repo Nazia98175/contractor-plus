@@ -7,8 +7,6 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
-import TextAnimation from "../common/TextAnimation";
-import SplitText from "../common/SplitText";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });

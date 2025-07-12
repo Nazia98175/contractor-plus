@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
-import { CheckIcon } from "../common/Icons";
-import TextAnimation from "../common/TextAnimation";
-import FreeAccountButton from "../common/FreeAccountButton";
 import Copy from "../common/Copy";
+import FreeAccountButton from "../common/FreeAccountButton";
+import { CheckIcon } from "../common/Icons";
 
 const FeatureItem = ({ text }: { text: string }) => (
   <article className="bg-doctor2 text-lightBlack text-lightblack mx-2 flex w-full max-w-[500px] items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">

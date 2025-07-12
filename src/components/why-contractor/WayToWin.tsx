@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import TextAnimation from "../common/TextAnimation";
+import { useEffect, useState } from "react";
 import Copy from "../common/Copy";
 
 const WayToWin = () => {

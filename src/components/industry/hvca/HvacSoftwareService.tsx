@@ -1,10 +1,10 @@
 "use client";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { ChangeEvent, FormEvent, useState } from "react";
 import CardReveal from "../../common/CardReveal";
 import { CheckIcon } from "../../common/Icons";
-import TextAnimation from "../../common/TextAnimation";
-import Link from "next/link";
+import Copy from "@/components/common/Copy";
 interface HvacSoftwareServiceProps {
   data: any;
   ncc: string;

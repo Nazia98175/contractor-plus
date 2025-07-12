@@ -5,3 +5,35 @@
 .bg-gradient-bar {
   background: linear-gradient(180deg, white, transparent);
 }
+/* Add this to your globals.css or tailwind.css file */
+@keyframes whitePulse {
+  0% {
+    fill: white;
+  }
+  25% {
+    fill: #696a6d;
+  }
+  50% {
+    fill: #424244;
+  }
+  75% {
+    fill: #696a6d;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+.chevron {
+  animation: whitePulse 6s infinite ease-in-out;
+}
+
+.chevron-1 {
+  animation-delay: 0s;
+}
+.chevron-2 {
+  animation-delay: 3s;
+}
+.chevron-3 {
+  animation-delay: 6s;
+}

@@ -1,23 +1,11 @@
-import { Plan, Platform, Review, tableFeature } from "@/types";
+import { Plan, Platform, tableFeature } from "@/types";
 import {
-  Book,
-  Building,
-  Calculator,
-  Calendar,
   Castle,
-  Clipboard,
-  DollarSign,
-  FileCode,
-  FileText,
   Flower,
   Hammer,
-  Headphones,
-  LayoutList,
   Paintbrush2,
   Plug,
-  Search,
   ThermometerSun,
-  Users,
   Wrench,
 } from "lucide-react";
 import mobile from "../../../public/lotties/11-mobile.json";
@@ -49,8 +37,6 @@ import {
   EstimatesIcon,
   EstimaticIcon,
   FieldServiceIcon,
-  HeroSliderIcon1,
-  HeroSliderIcon2,
   InvoicingIcon,
   LeadGenerationIcon,
   PaymentsIcon,
@@ -60,7 +46,6 @@ import {
   ReportingIcon,
   SchedulingIcon,
   ServiceIcon,
-  SliderIcon1,
   TelephoneIcon,
   TimeIcon,
   TrackingIcon,
@@ -127,117 +112,6 @@ export const platforms: Platform[] = [
   },
 ];
 
-export const features = [
-  {
-    id: 1,
-    title: "3-4x faster",
-    icon: <SliderIcon1 />,
-    heading: "Estimate process",
-    percentage: "+38",
-    description: "We make every Sholaz .",
-    backgroundIcon: <HeroSliderIcon1 />,
-  },
-  {
-    id: 2,
-    title: "24% faster",
-    icon: <SliderIcon1 />,
-    heading: "Job turnaround time",
-    percentage: "24",
-    description: "Got lorem loren.",
-    backgroundIcon: <HeroSliderIcon2 />,
-  },
-  {
-    id: 3,
-    title: "3-4x faster",
-    icon: <SliderIcon1 />,
-    heading: "Estimate process",
-    percentage: "+38",
-    description: "The Sholaz app is",
-    backgroundIcon: <HeroSliderIcon1 />,
-  },
-  {
-    id: 4,
-    title: "24% faster",
-    icon: <SliderIcon1 />,
-    heading: "Job turnaround time",
-    percentage: "24",
-    description: "We make every Sholaz .",
-    backgroundIcon: <HeroSliderIcon2 />,
-  },
-  {
-    id: 5,
-    title: "3-4x faster",
-    icon: <SliderIcon1 />,
-    heading: "Estimate process",
-    percentage: "+38",
-    description: "Got lorem loren.",
-    backgroundIcon: <HeroSliderIcon1 />,
-  },
-  {
-    id: 6,
-    title: "24% faster",
-    icon: <SliderIcon1 />,
-    heading: "Job turnaround time",
-    percentage: "24",
-    description: "The Sholaz app is",
-    backgroundIcon: <HeroSliderIcon2 />,
-  },
-  {
-    id: 7,
-    title: "3-4x faster",
-    icon: <SliderIcon1 />,
-    heading: "Estimate process",
-    percentage: "+38",
-    description: "We make every Sholaz .",
-    backgroundIcon: <HeroSliderIcon1 />,
-  },
-  {
-    id: 8,
-    title: "24% faster",
-    icon: <SliderIcon1 />,
-    heading: "Job turnaround time",
-    percentage: "24",
-    description: "Got lorem loren.",
-    backgroundIcon: <HeroSliderIcon2 />,
-  },
-  {
-    id: 9,
-    title: "3-4x faster",
-    icon: <SliderIcon1 />,
-    heading: "Estimate process",
-    percentage: "+38",
-    description: "The Sholaz app is",
-    backgroundIcon: <HeroSliderIcon1 />,
-  },
-  {
-    id: 10,
-    title: "24% faster",
-    icon: <SliderIcon1 />,
-    heading: "Job turnaround time",
-    percentage: "24",
-    description: "We make every Sholaz .",
-    backgroundIcon: <HeroSliderIcon2 />,
-  },
-  {
-    id: 11,
-    title: "3-4x faster",
-    icon: <SliderIcon1 />,
-    heading: "Estimate process",
-    percentage: "+38",
-    description: "Got lorem loren.",
-    backgroundIcon: <HeroSliderIcon1 />,
-  },
-  {
-    id: 12,
-    title: "24% faster",
-    icon: <SliderIcon1 />,
-    heading: "Job turnaround time",
-    percentage: "24",
-    description: "The Sholaz app is",
-    backgroundIcon: <HeroSliderIcon2 />,
-  },
-];
-
 export const blackPlatforms: Platform[] = [
   {
     name: "App Store",
@@ -266,31 +140,6 @@ export const blackPlatforms: Platform[] = [
   },
 ];
 
-export const menuItems = [
-  {
-    id: "whycontractor",
-    label: "Why Contractor+?",
-  },
-  { id: "features", label: "Features" },
-  { id: "industries", label: "Industries" },
-  { id: "pricing", label: "Pricing" },
-  { id: "resources", label: "Resources" },
-];
-
-export const contractPlatforms = [
-  {
-    img: "/images/webp/big-guys.webp",
-    key: "card1",
-  },
-  {
-    img: "/images/webp/poppular-solution.webp",
-    key: "card2",
-  },
-  {
-    img: "/images/webp/all-in-one.webp",
-    key: "card3",
-  },
-];
 export const IndustriesDropdownLinks = [
   { label: "General Contractor", href: "/" },
   { label: "Plumbing", href: "/" },
@@ -332,42 +181,8 @@ export const IndustriesDropdownLinks = [
   { label: "Septic & Pump", href: "/" },
   { label: "Small Engine Repair", href: "/" },
 ];
-export const WhyContractorDropdownlinks = [
-  {
-    label: "Your Day With Contractor+",
-    description: "A Free Demo Also If You Wish",
-    href: "/",
-  },
-  {
-    label: "Pricing",
-    description: "Dollars & Bills Here",
-    href: "/",
-  },
-  {
-    label: "Schedule A Demo",
-    description: "A Free Demo Also If You Wish",
-    href: "/",
-  },
-  {
-    label: "Support",
-    description: "Need Content",
-    href: "/",
-  },
-];
+
 export const ResourcesDropdownlinks = [
-  { label: "Contractor+ Blog", href: "/" },
-  { label: "Industry Events", href: "/" },
-  { label: "Hard Hat Chat", href: "/" },
-  { label: "Mindset Monday", href: "/" },
-  { label: "Supply Partner Program", href: "/" },
-  { label: "The Owners Perspective", href: "/" },
-  { label: "Features Roadmap", href: "/" },
-  { label: "Free Tools & Templates", href: "/" },
-  { label: "Support Center", href: "/" },
-  { label: "Regional Labor Pricing", href: "/" },
-  { label: "Regional Material Pricing", href: "/" },
-];
-export const PricingDropdownLinks = [
   { label: "Contractor+ Blog", href: "/" },
   { label: "Industry Events", href: "/" },
   { label: "Hard Hat Chat", href: "/" },
@@ -2823,77 +2638,6 @@ export const blogList = [
     image: "/images/webp/blog-3.webp",
   },
 ];
-export const leftIcons = [
-  {
-    src: "/images/webp/outlook.webp",
-    width: 40,
-    height: 40,
-    size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
-    imgSize: "lg:max-w-[40px] max-w-[30px]",
-    initialX: -150,
-    initialY: -80,
-    finalX: "47%",
-    finalY: "25%",
-  },
-  {
-    src: "/images/png/contractor-1.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[58px] lg:h-[85px] h-[58px]",
-    imgSize: "lg:max-w-[38px] max-w-[26px]",
-    initialX: -150,
-    initialY: 80,
-    finalX: "18%",
-    finalY: "70%",
-  },
-  {
-    src: "/images/png/contractor-3.png",
-    width: 66,
-    height: 17,
-    size: "lg:w-[85px] w-[62px] lg:h-[85px] h-[62px]",
-    imgSize: "lg:max-w-[66px] max-w-[45px]",
-    initialX: -150,
-    initialY: 80,
-    finalX: "81%",
-    finalY: "75%",
-  },
-];
-
-export const rightIcons = [
-  {
-    src: "/images/png/contractor-4.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[55px] lg:h-[85px] h-[55px]",
-    imgSize: "lg:max-w-[38px] max-w-[29px]",
-    initialX: 150,
-    initialY: -80,
-    finalX: "26%",
-    finalY: "30%",
-  },
-  {
-    src: "/images/png/contractor-5.png",
-    width: 38,
-    height: 38,
-    size: "lg:w-[85px] w-[46px] lg:h-[85px] h-[46px]",
-    imgSize: "lg:max-w-[38px] max-w-[25px]",
-    initialX: 150,
-    initialY: 80,
-    finalX: "79%",
-    finalY: "70%",
-  },
-  {
-    src: "/images/png/contractor-6.png",
-    width: 33,
-    height: 33,
-    size: "lg:w-[61px] w-10 lg:h-[61px] h-10",
-    imgSize: "lg:max-w-[33px] max-w-[21px]",
-    initialX: 150,
-    initialY: 80,
-    finalX: "28%",
-    finalY: "75%",
-  },
-];
 
 export const featurelinks = [
   {
@@ -3055,218 +2799,6 @@ export const featurelinks = [
     href: "/",
     icon: <TimeIcon />,
     isNew: true,
-  },
-];
-export const servicedata = [
-  {
-    heading: "Customer Management",
-    features: [
-      {
-        title: "Contact profiles + communication history",
-        description:
-          "See every call, text, and email tied to each contact, all in one place.",
-      },
-      {
-        title: "Property profiles",
-        description:
-          "Just like customers, each property gets its own profile with full job history, files, and communication timeline.",
-      },
-      {
-        title: "Role-based contact labeling",
-        description:
-          "Whether owner, tenant, or property manager, label contacts by role within a profile.",
-      },
-      {
-        title: "Client portal access",
-        description:
-          "Give your clients a clean, professional portal to view estimates, invoices, and project updates.",
-      },
-      {
-        title: "Timeline view for every client and property",
-        description:
-          "Scroll through a full history of every interaction, file, and update tied to each person or place.",
-      },
-      {
-        title: "Contracts, eSign, and payments",
-        description:
-          "Quotes become contracts, contracts get signed, and invoices get paid—all in one flow.",
-      },
-      {
-        title: "Scheduled follow-ups",
-        description:
-          "Business keeps you busy. Scheduled follow-ups make sure nothing slips through the cracks.",
-      },
-    ],
-    user: "Excellent field tracking!",
-    username: "John Doe",
-  },
-  {
-    heading: "Job Management",
-    features: [
-      {
-        title: "Property-based job tracking",
-        description:
-          "Our field service crm software has property-specific profiles to easily manage work by address, not just customer.",
-      },
-      {
-        title: "Task assignments & status tracking",
-        description:
-          "Keep jobs moving by assigning tasks and instantly seeing what’s done and what’s not.",
-      },
-      {
-        title: "Job notes and photos",
-        description:
-          "Capture site conditions, material needs, and daily progress with notes and images that live in your home service crm.",
-      },
-      {
-        title: "Estimate builder with live pricing",
-        description:
-          "Create fast, accurate estimates that pull in live pricing from Lowe’s and Home Depot. ",
-      },
-      {
-        title: "Contract generation based on job details",
-        description:
-          "Once your estimate’s locked, the contract writes itself using job data you already entered.",
-      },
-      {
-        title: "Time clock & mileage logs",
-        description:
-          "Built-in logs keep your payroll and reimbursements clean and accurate.",
-      },
-      {
-        title: "Internal job chat",
-        description:
-          "Bring everyone involved with a job into a dedicated space to communicate. ",
-      },
-      {
-        title: "Gantt chart views",
-        description:
-          "Map out the full job timeline and adjust schedules so nothing goes sideways. ",
-      },
-    ],
-  },
-  {
-    heading: "Team Management",
-    features: [
-      {
-        title: "Workspace toggle (for multi-location)",
-        description:
-          "Manage multiple locations under one roof and keep everything separate but connected.",
-      },
-      {
-        title: "Live team map view with GPS tracking",
-        description:
-          "See where your team is right now so you can make faster decisions.",
-      },
-      {
-        title: "Drag-and-drop job scheduling",
-        description:
-          "Move things around as needed without redoing the whole day.",
-      },
-      {
-        title: "Availability-based job assignment",
-        description: "Send the right tech based on who’s nearby and available.",
-      },
-      {
-        title: "Task ownership and accountability",
-        description:
-          "Make it obvious who’s doing what and when it’s due, so everyone is held accountable. ",
-      },
-      {
-        title: "Chat-based job communication",
-        description:
-          "Every job has its own chat so your crew doesn’t have to dig through texts.",
-      },
-      {
-        title: "Clock in/out support on mobile",
-        description:
-          "Finally, there’s a CRM for field services that works well on mobile. Let your team easily clock in and out from our mobile app.  ",
-      },
-      {
-        title: "Mileage logging & time tracking",
-        description:
-          "Log miles and hours automatically and tag them to the right job.",
-      },
-    ],
-  },
-  {
-    heading: "Communication",
-    features: [
-      {
-        title: "Built-in phone system with IVR and routing",
-        description:
-          "Contractor+ comes with calling and IVR baked in. No more separate telephony solutions.",
-      },
-      {
-        title: "1-click call/text/email directly from CRM",
-        description:
-          "Call, text, or email anyone in your system right from their profile.",
-      },
-      {
-        title: "AI call transcription & recording",
-        description:
-          "Every call is recorded and transcribed so nothing gets missed or misheard.",
-      },
-      {
-        title: "Sentiment analysis on calls",
-        description:
-          "AI picks up the tone so you know how conversations really went.",
-      },
-      {
-        title: "Scheduled messages & follow-ups",
-        description: "Never forget to follow up. Just schedule it and move on.",
-      },
-      {
-        title: "Job-specific chats (internal team use)",
-        description:
-          "Chat with your crew about a job without losing context or switching apps.",
-      },
-      {
-        title: "Voicemail logging and playback",
-        description: "Listen to any voicemail without ever leaving the CRM. ",
-      },
-      {
-        title: "Communication timeline ",
-        description:
-          "See every call, text, and email for a customer or property in one scrollable thread.",
-      },
-    ],
-  },
-
-  {
-    heading: "Lead Management",
-    features: [
-      {
-        title: "Opportunity Kanban board (deal tracker)",
-        description:
-          "Track deal progress visually with a simple board that shows where every lead stands.",
-      },
-      {
-        title: "Custom pipeline stages",
-        description:
-          "Set your own pipeline stages to match how your sales process works.",
-      },
-      {
-        title: "Lead profiles with status filter",
-        description:
-          "Stay focused by filtering leads by status, urgency, or follow-up timing.",
-      },
-      {
-        title: "Follow-up scheduling",
-        description:
-          "Set reminders to follow up so no lead gets forgotten or buried.",
-      },
-      {
-        title: "Property-based leads",
-        description:
-          "Track new opportunities by address so you can quote with full context.",
-      },
-      {
-        title: "Upcoming: Workflow automation",
-        description:
-          "Automation is on the way to help you re-engage cold leads without any manual work.",
-      },
-    ],
   },
 ];
 

@@ -2,14 +2,13 @@
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
-import Copy from "@/components/common/Copy";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
 // import AdaptiveHeroTitle from "@/components/common/AdaptiveHeroTitle";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import HvacHeroSlider from "./HvacHeroSlider";
+import React from "react";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
+import HvacHeroSlider from "./HvacHeroSlider";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,

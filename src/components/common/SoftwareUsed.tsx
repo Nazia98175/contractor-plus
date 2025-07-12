@@ -45,7 +45,6 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     fallbackInView: true,
   });
 
-  console.log(item, "item");
   return (
     <article
       ref={ref}

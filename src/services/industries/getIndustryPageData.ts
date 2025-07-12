@@ -1,10 +1,10 @@
 import { getBlogs } from "@/services/blogs";
+import { getCommonData } from "../common/commonData";
 import { getIndustryPage } from "./industry";
-import { get } from "http";
 
 export interface CrmLikePageDataResponse {
   crmPageContent: any | null;
-  heroImg?: any ,
+  heroImg?: any;
   homeCards: any | null;
   trustedCompanies: any | null;
   switchingTool: any | null;
@@ -15,11 +15,13 @@ export interface CrmLikePageDataResponse {
   blogsList: any | null;
   blogs?: any | null;
   thousandReviews: any | null;
+  commonData: any | null;
+  trustBarImages: any | null;
 }
 
 export const getIndustryPageData = async (
   slug: string,
-  locale: string
+  locale: string,
 ): Promise<CrmLikePageDataResponse> => {
   const [
     pageContentRes,
@@ -33,32 +35,69 @@ export const getIndustryPageData = async (
     faqsRes,
     blogs,
     thousandReviewsRes,
+    commonData,
+    trustBarImages,
   ] = await Promise.all([
     getIndustryPage(slug, locale, "&populate=*"),
-    getIndustryPage(slug , locale , "&populate[hero][populate]=heroImg"),
+    getIndustryPage(slug, locale, "&populate[hero][populate]=heroImg"),
     getIndustryPage(slug, locale, "&populate[hero][populate]=cards"),
-    getIndustryPage(slug, locale, "&populate[trustedCompanies][populate]=images"),
-    getIndustryPage(slug, locale, "&populate[commonProblems][populate]=cardsDetail"),
-    getIndustryPage(slug, locale, "&populate[problemSolutionSection][populate][cardsDetail][populate][cardImg]=true&populate[problemSolutionSection][populate][cardsDetail][populate][content]=true"),
-    getIndustryPage(slug, locale, "&populate[featureHighlightIndustrySection][populate][images][populate]=*"),
-    getIndustryPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[trustedCompanies][populate]=images",
+    ),
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[commonProblems][populate]=cardsDetail",
+    ),
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[problemSolutionSection][populate][cardsDetail][populate][cardImg]=true&populate[problemSolutionSection][populate][cardsDetail][populate][content]=true",
+    ),
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[featureHighlightIndustrySection][populate][images][populate]=*",
+    ),
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[resultsStatsSection][populate][cards][populate]=*",
+    ),
     getIndustryPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
-    getIndustryPage(slug, locale, "&populate[reviewTrustSection][populate][reviews][populate]=profileImg"),
-   
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
+    ),
+    getCommonData(),
+    getIndustryPage(
+      slug,
+      locale,
+      "&populate[emailSignupSection][populate]=images",
+    ),
   ]);
 
   return {
     crmPageContent: pageContentRes?.data?.[0] || null,
-    heroImg: heroImg?.data?.[0]?.hero?.heroImg || null ,
+    heroImg: heroImg?.data?.[0]?.hero?.heroImg || null,
     homeCards: homeCards?.data?.[0]?.hero?.cards || null,
     trustedCompanies: trustedCompaniesRes?.data?.[0]?.trustedCompanies || null,
     switchingTool: switchingToolRes?.data?.[0]?.commonProblems || null,
-    fieldServiceData: fieldServiceRes?.data?.[0]?.problemSolutionSection || null,
-    trackProperties: trackPropertiesRes?.data?.[0]?.featureHighlightIndustrySection || null,
-    teamsUsingContractor: teamsUsingContractorRes?.data?.[0]?.resultsStatsSection || null,
+    fieldServiceData:
+      fieldServiceRes?.data?.[0]?.problemSolutionSection || null,
+    trackProperties:
+      trackPropertiesRes?.data?.[0]?.featureHighlightIndustrySection || null,
+    teamsUsingContractor:
+      teamsUsingContractorRes?.data?.[0]?.resultsStatsSection || null,
     faqs: faqsRes?.data?.[0] || null,
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
+    commonData: commonData || null,
+    trustBarImages:
+      trustBarImages?.data?.[0]?.emailSignupSection?.images || null,
   };
 };

@@ -1,4 +1,9 @@
 "use client";
+import { debugLog } from "@/utils/getConsole";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import React, { useEffect } from "react";
 import {
   BreakeIcon,
@@ -6,14 +11,8 @@ import {
   RunningBehindIcon,
   ScreenShotIcon,
 } from "../common/Icons";
-import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
 import { TheSwitchingToolProps } from "../crmbussiness/SwitchingTool";
-import { debugLog } from "@/utils/getConsole";
-import TextAnimation from "../common/TextAnimation";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({

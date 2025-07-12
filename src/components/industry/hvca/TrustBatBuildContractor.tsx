@@ -10,6 +10,7 @@ interface TrustBarProps {
   showTrustedSection?: boolean;
   className?: string;
   trustedCompanies?: any;
+  trustBarImages?: any;
 }
 
 const TrustBatBuildContractor: React.FC<TrustBarProps> = ({

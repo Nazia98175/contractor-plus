@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TextAnimation from "../common/TextAnimation";
-import { FrictionTextGroup } from "./Icons";
+import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
+import { FrictionTextGroup } from "./Icons";
 
 const SeperateSolution = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

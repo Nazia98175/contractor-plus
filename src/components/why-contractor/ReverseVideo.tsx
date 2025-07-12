@@ -1,12 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { StrokeText } from "./Icons";
-import TextAnimation from "../common/TextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import ImageSequenceCanvas from "./ImageSequenceCanvas";
+import { useEffect, useRef, useState } from "react";
 import Copy from "../common/Copy";
+import { StrokeText } from "./Icons";
+import ImageSequenceCanvas from "./ImageSequenceCanvas";
 
 gsap.registerPlugin(ScrollTrigger);
 

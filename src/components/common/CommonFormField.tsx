@@ -1,9 +1,10 @@
 "use client";
 import { variantsForm } from "@/utils/getVariants";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
+
 
 interface CommonFormFieldProps {
   title: string;

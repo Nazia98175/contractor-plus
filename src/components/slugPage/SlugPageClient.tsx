@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { LazyWrapper } from "@/components/LazyWrapper";
 import { Platform } from "@/types";
 import Image from "next/image";
+
 const SlugPageClientOptimized = ({
   slug,
-  ncc,
   trackProperties,
   // likeYouDo,
   // howContractorWork,
@@ -16,12 +16,13 @@ const SlugPageClientOptimized = ({
   blogs,
   blogsList,
   faq,
-  crmService,
   createBtn,
   mobileBtn,
+  ncc,
+  crmService,
 }: any) => {
   const [platforms, setPlatforms] = useState<Platform[] | null>(null);
-
+ 
   useEffect(() => {
     let mounted = true;
 
@@ -146,9 +147,9 @@ const SlugPageClientOptimized = ({
           <LazyWrapper
             importFn={() => import("../crmbussiness/CrmSercive")}
             props={{
-              createBtn,
-              mobileBtn,
-              ncc,
+              createBtn: createBtn,
+              mobileBtn: mobileBtn,
+              ncc: ncc,
               data: crmService,
               variant: "primary",
               className: ` ${slug === "crm" ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"}`,

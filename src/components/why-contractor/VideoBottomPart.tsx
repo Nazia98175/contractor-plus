@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TextAnimation from "../common/TextAnimation";
+import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 
 const VideoBottomPart = () => {

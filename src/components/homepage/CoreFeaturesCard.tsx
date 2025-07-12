@@ -106,20 +106,24 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
           setIsSticky(shouldBeSticky);
         }
 
-        // Find active feature based on scroll position
+        // Find active feature based on which Lottie animation should be playing
         const windowHeight = window.innerHeight;
         const offset = navHeightRef.current;
         let newActiveFeature = lastActiveFeature.current;
 
-        for (let i = contentRefs.current.length - 1; i >= 0; i--) {
+        // Use the same logic as Lottie's play zone (30% from top, 70% from top)
+        const playZoneStart = windowHeight * 0.3;
+        const playZoneEnd = windowHeight * 0.7;
+
+        for (let i = 0; i < contentRefs.current.length; i++) {
           const ref = contentRefs.current[i];
           if (!ref) continue;
 
           const rect = ref.getBoundingClientRect();
-          const elementTop = rect.top - offset;
-          const center = windowHeight / 2;
+          const elementCenter = rect.top + (rect.height / 2);
 
-          if (elementTop < center) {
+          // Check if element center is in the play zone
+          if (elementCenter >= playZoneStart && elementCenter <= playZoneEnd) {
             newActiveFeature = i;
             break;
           }
@@ -182,14 +186,28 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
           invalidateOnRefresh: true,
           markers: false,
           onUpdate: (self) => {
-            // Find active feature based on scroll progress
+            // Find active feature based on which Lottie animation is playing
             if (!isScrollingProgrammatically.current) {
-              const progress = self.progress;
-              const totalFeatures = contentRefs.current.length;
-              const newActiveFeature = Math.min(
-                Math.floor(progress * totalFeatures),
-                totalFeatures - 1
-              );
+              let newActiveFeature = lastActiveFeature.current;
+              
+              // Check each content section to see which one is in the "play zone"
+              const windowHeight = window.innerHeight;
+              const playZoneStart = windowHeight * 0.3; // 30% from top
+              const playZoneEnd = windowHeight * 0.7; // 70% from top
+
+              for (let i = 0; i < contentRefs.current.length; i++) {
+                const ref = contentRefs.current[i];
+                if (!ref) continue;
+
+                const rect = ref.getBoundingClientRect();
+                const elementCenter = rect.top + (rect.height / 2);
+
+                // Check if element center is in the play zone
+                if (elementCenter >= playZoneStart && elementCenter <= playZoneEnd) {
+                  newActiveFeature = i;
+                  break;
+                }
+              }
               
               if (newActiveFeature !== lastActiveFeature.current) {
                 lastActiveFeature.current = newActiveFeature;

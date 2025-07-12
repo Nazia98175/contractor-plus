@@ -7,7 +7,8 @@ interface LottieProps {
   className?: string;
   loop?: boolean;
   autoplay?: boolean;
-  playOnce?: boolean; 
+  playOnce?: boolean;
+  useSyncedPlayZone?: boolean;
 }
 
 const LottieAnimation = ({
@@ -15,98 +16,288 @@ const LottieAnimation = ({
   animationData,
   loop = true,
   autoplay = true,
-  playOnce = false, 
+  playOnce = false,
+  useSyncedPlayZone = false,
 }: LottieProps) => {
   const lottieRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
-  const [shouldPlay, setShouldPlay] = useState(false);
+  const [wasCompletelyOutOfView, setWasCompletelyOutOfView] = useState(false);
+
+  // Debug logging
+  console.log('🎬 LottieAnimation Props:', {
+    className,
+    hasAnimationData: !!animationData,
+    loop,
+    autoplay,
+    playOnce,
+    useSyncedPlayZone,
+    isVisible,
+    hasPlayed
+  });
 
   useEffect(() => {
+    console.log('📍 Setting up IntersectionObserver', {
+      useSyncedPlayZone,
+      playOnce,
+      containerExists: !!containerRef.current
+    });
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const isIntersecting = entry.isIntersecting;
-        setIsVisible(isIntersecting);
+        const rect = entry.boundingClientRect;
+        const windowHeight = window.innerHeight;
+        
+        // Check if element is completely out of view
+        const isCompletelyAboveView = rect.bottom < 0;
+        const isCompletelyBelowView = rect.top > windowHeight;
+        const isCompletelyOutOfView = isCompletelyAboveView || isCompletelyBelowView;
+        
+        console.log('👀 Intersection Observer Callback:', {
+          isIntersecting: entry.isIntersecting,
+          useSyncedPlayZone,
+          rect: {
+            top: rect.top,
+            bottom: rect.bottom,
+            height: rect.height
+          },
+          windowHeight,
+          isCompletelyOutOfView,
+          wasCompletelyOutOfView,
+          hasPlayed
+        });
 
-        if (playOnce) {
-          // New play-once behavior
-          if (isIntersecting) {
-            // Animation is in viewport
-            if (!hasPlayed) {
-              // Play only if it hasn't been played yet
-              setShouldPlay(true);
-              setHasPlayed(true);
-            }
-          } else {
-            // Animation is out of viewport
-            const rect = entry.target.getBoundingClientRect();
-            const isCompletelyOutOfView = rect.bottom < 0 || rect.top > window.innerHeight;
-            
-            if (isCompletelyOutOfView) {
-              // Reset when completely out of view to allow replay
-              setHasPlayed(false);
-              setShouldPlay(false);
-            }
-          }
+        // Track if element was completely out of view
+        if (isCompletelyOutOfView && !wasCompletelyOutOfView) {
+          console.log('📍 Element went completely out of view');
+          setWasCompletelyOutOfView(true);
+        }
+        
+        // Reset hasPlayed when element re-enters viewport after being completely out
+        if (!isCompletelyOutOfView && wasCompletelyOutOfView && hasPlayed) {
+          console.log('🔄 Element re-entered viewport - resetting hasPlayed');
+          setHasPlayed(false);
+          setWasCompletelyOutOfView(false);
+        }
+        
+        // Reset wasCompletelyOutOfView when element is back in viewport
+        if (!isCompletelyOutOfView && wasCompletelyOutOfView) {
+          setWasCompletelyOutOfView(false);
+        }
+
+        if (useSyncedPlayZone) {
+          // Special behavior for CoreFeatures - synced with sidebar (more lenient play zone)
+          const elementCenter = rect.top + (rect.height / 2);
+          const playZoneStart = windowHeight * 0.1; // 10% from top (more lenient)
+          const playZoneEnd = windowHeight * 0.9; // 90% from top (more lenient)
+          
+          // Primary method: element center in play zone
+          const isInPlayZone = elementCenter >= playZoneStart && elementCenter <= playZoneEnd;
+          
+          // Fallback method: element is partially visible and close to center
+          const elementTop = rect.top;
+          const elementBottom = rect.bottom;
+          const isPartiallyVisible = elementTop < windowHeight && elementBottom > 0;
+          const isNearCenter = elementTop < windowHeight * 0.6 && elementBottom > windowHeight * 0.4;
+          
+          // Use primary method, with fallback for edge cases
+          const shouldPlay = isInPlayZone || (isPartiallyVisible && isNearCenter);
+          
+          console.log('🎯 Enhanced Synced Play Zone:', {
+            elementCenter,
+            elementTop,
+            elementBottom,
+            playZoneStart,
+            playZoneEnd,
+            isInPlayZone,
+            isPartiallyVisible,
+            isNearCenter,
+            shouldPlay,
+            previousIsVisible: isVisible
+          });
+          
+          setIsVisible(shouldPlay);
+        } else {
+          // Original behavior for all other components - simple intersection
+          console.log('🔄 Simple Intersection:', {
+            isIntersecting: entry.isIntersecting,
+            previousIsVisible: isVisible
+          });
+          
+          setIsVisible(entry.isIntersecting);
         }
       },
       {
-        threshold: playOnce ? 0.3 : 0.1, // Higher threshold for play-once to trigger when more centered
-        rootMargin: playOnce ? '-20% 0px -20% 0px' : '0px' // Start playing when 10% from top/bottom
+        threshold: useSyncedPlayZone 
+          ? [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] 
+          : (playOnce ? 0.3 : 0.1),
+        rootMargin: useSyncedPlayZone 
+          ? '0px' 
+          : (playOnce ? '-20% 0px -20% 0px' : '0px')
       }
     );
 
     if (containerRef.current) {
+      console.log('✅ Observer attached to element');
       observer.observe(containerRef.current);
+    } else {
+      console.log('❌ No container element to observe');
     }
 
     return () => {
       if (containerRef.current) {
+        console.log('🧹 Cleanup: Observer disconnected');
         observer.unobserve(containerRef.current);
       }
     };
-  }, [hasPlayed, playOnce]);
+  }, [playOnce, useSyncedPlayZone, isVisible, wasCompletelyOutOfView, hasPlayed]);
 
   useEffect(() => {
     const lottieInstance = lottieRef.current;
+    
+    console.log('🎮 Lottie Control Effect:', {
+      hasLottieInstance: !!lottieInstance,
+      hasPlayMethod: lottieInstance ? typeof lottieInstance.play === "function" : false,
+      isVisible,
+      hasPlayed,
+      playOnce,
+      useSyncedPlayZone
+    });
+
     if (lottieInstance && typeof lottieInstance.play === "function") {
+      
       if (playOnce) {
-        // New play-once behavior
-        if (shouldPlay && isVisible) {
-          // Reset to beginning and play
-          lottieInstance.goToAndStop(0, true);
-          lottieInstance.play();
-        } else if (!isVisible) {
-          // Pause when not visible
+        console.log('🎯 Play-once behavior triggered');
+        
+        // Play-once behavior
+        if (isVisible) {
+          if (!hasPlayed) {
+            console.log('▶️ Playing animation (first time)');
+            
+            // Only manage other animations if this is synced (CoreFeatures)
+            if (useSyncedPlayZone) {
+              console.log('🛑 Stopping other synced animations');
+              
+              // Stop other synced animations
+              const allSyncedElements = document.querySelectorAll('[data-lottie-synced="true"]');
+              console.log('📊 Found synced elements:', allSyncedElements.length);
+              
+              allSyncedElements.forEach((el: any, index) => {
+                if (el.__lottieInstance && el.__lottieInstance !== lottieInstance) {
+                  console.log(`⏸️ Pausing synced animation ${index}`);
+                  el.__lottieInstance.pause();
+                  el.setAttribute('data-lottie-synced', 'false');
+                }
+              });
+              
+              // Mark this as the active synced animation
+              if (containerRef.current) {
+                console.log('🏷️ Marking as active synced animation');
+                containerRef.current.setAttribute('data-lottie-synced', 'true');
+                (containerRef.current as any).__lottieInstance = lottieInstance;
+              }
+            }
+            
+            // Play animation
+            try {
+              lottieInstance.goToAndStop(0, true);
+              lottieInstance.play();
+              setHasPlayed(true);
+              console.log('✅ Animation started successfully');
+            } catch (error) {
+              console.error('❌ Error playing animation:', error);
+            }
+          } else {
+            console.log('⏭️ Animation already played, skipping');
+          }
+        } else {
+          console.log('👁️ Animation not visible - pausing');
           lottieInstance.pause();
+          if (containerRef.current) {
+            containerRef.current.setAttribute('data-lottie-synced', 'false');
+          }
         }
       } else {
-        // Original behavior - play/pause based on visibility
+        console.log('🔁 Regular loop behavior triggered');
+        
+        // Regular loop behavior
         if (isVisible) {
-          lottieInstance.play();
+          console.log('▶️ Playing looping animation');
+          
+          // Only manage other animations if this is synced (CoreFeatures)
+          if (useSyncedPlayZone) {
+            console.log('🛑 Stopping other synced animations (loop mode)');
+            
+            // Stop other synced animations
+            const allSyncedElements = document.querySelectorAll('[data-lottie-synced="true"]');
+            console.log('📊 Found synced elements:', allSyncedElements.length);
+            
+            allSyncedElements.forEach((el: any, index) => {
+              if (el.__lottieInstance && el.__lottieInstance !== lottieInstance) {
+                console.log(`⏸️ Pausing synced animation ${index} (loop mode)`);
+                el.__lottieInstance.pause();
+                el.setAttribute('data-lottie-synced', 'false');
+              }
+            });
+            
+            // Mark this as the active synced animation
+            if (containerRef.current) {
+              console.log('🏷️ Marking as active synced animation (loop mode)');
+              containerRef.current.setAttribute('data-lottie-synced', 'true');
+              (containerRef.current as any).__lottieInstance = lottieInstance;
+            }
+          }
+          
+          try {
+            lottieInstance.play();
+            console.log('✅ Looping animation started successfully');
+          } catch (error) {
+            console.error('❌ Error playing looping animation:', error);
+          }
         } else {
+          console.log('⏸️ Pausing animation (not visible)');
           lottieInstance.pause();
+          if (containerRef.current) {
+            containerRef.current.setAttribute('data-lottie-synced', 'false');
+          }
         }
       }
+    } else {
+      console.log('❌ No lottie instance or play method not available');
     }
-  }, [shouldPlay, isVisible, playOnce]);
+  }, [isVisible, hasPlayed, playOnce, useSyncedPlayZone]);
 
-  // Handle animation complete - using onComplete prop instead of addEventListener
+  // Handle animation complete
   const handleComplete = () => {
+    console.log('🏁 Animation completed');
+    
     if (playOnce && !loop) {
-      setShouldPlay(false);
+      console.log('⏹️ Stopping completed play-once animation');
+      const lottieInstance = lottieRef.current;
+      if (lottieInstance) {
+        lottieInstance.pause();
+      }
     }
   };
+
+  // Debug animation data
+  useEffect(() => {
+    console.log('🎨 Animation Data Check:', {
+      hasAnimationData: !!animationData,
+      animationDataType: typeof animationData,
+      animationDataKeys: animationData ? Object.keys(animationData) : 'N/A'
+    });
+  }, [animationData]);
 
   return (
     <div className={className} ref={containerRef}>
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
-        autoplay={playOnce ? false : autoplay} // Disable autoplay for play-once mode
+        autoplay={playOnce ? false : autoplay}
         loop={loop}
-        onComplete={playOnce ? handleComplete : undefined} // Use onComplete prop instead of addEventListener
+        onComplete={playOnce ? handleComplete : undefined}
       />
     </div>
   );

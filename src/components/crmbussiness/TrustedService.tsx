@@ -10,12 +10,14 @@ interface TheReviewProps {
   reviews: any;
   slug?: string;
   className?: string;
+  apiData?: boolean;
 }
 
 const TrustedService: React.FC<TheReviewProps> = ({
   reviews,
   slug,
   className,
+  apiData,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
@@ -50,6 +52,7 @@ const TrustedService: React.FC<TheReviewProps> = ({
                       ? () => openModal(review.videoLink || "")
                       : () => {}
                   }
+                  apiData={apiData}
                 />
               ))}
           </Marquee>
@@ -74,6 +77,7 @@ const TrustedService: React.FC<TheReviewProps> = ({
                       ? () => openModal(review.videoLink || "")
                       : () => {}
                   }
+                  apiData={apiData}
                 />
               ))}
           </Marquee>

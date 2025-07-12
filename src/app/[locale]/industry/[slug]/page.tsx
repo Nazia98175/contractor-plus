@@ -78,8 +78,7 @@ const page = async ({ params }: PageProps) => {
     faqs,
     blogsList,
     thousandReviews,
-    commonData,
-    trustBarImages,
+    commonData
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
   
   const customIconsMap: Record<number, React.ReactNode> = {
@@ -92,6 +91,7 @@ const page = async ({ params }: PageProps) => {
     1: <FasterIcon5 />,
     2: <FasterIcon6 />,
   };
+  console.log("commonData", commonData);
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
@@ -105,7 +105,7 @@ const page = async ({ params }: PageProps) => {
           <TrustBatBuildContractor
             trustedCompanies={trustedCompanies}
             platforms={blackPlatforms}
-            trustBarImages={trustBarImages}
+            trustBarImages={commonData?.trustedCompaniesBlackBG}
             showTrustedSection={true}
             className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
           />
@@ -158,7 +158,7 @@ const page = async ({ params }: PageProps) => {
         </div>
         <TrustBarHvca
           platforms={platforms}
-          trustBarImages={trustBarImages}
+          trustBarImages={commonData?.trustedCompaniesWhiteBG}
           className="pb-[148px] xl:pb-20"
         />
       </div>

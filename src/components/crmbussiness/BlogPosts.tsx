@@ -35,22 +35,23 @@ const BlogPosts: React.FC<Props> = ({
     >
       <div className="mx-auto w-full max-w-[1158px]">
         <div className="xs:justify-center mb-6 flex items-start justify-center sm:justify-between md:mb-9 lg:items-center">
-          {/* <Copy animateOnScroll={true}> */}
-          <h2
-            className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
-              classMaxwidth || "max-w-[483px]"
-            } ${headingVariantMap[headingVariant]}`}
-          >
-            {blogs?.title || title}
-          </h2>
-          {/* </Copy> */}
-
-          <div className="hidden md:block">
-            <Button className="bg-red-linear primary-btn mt-0.5 h-10 gap-2 lg:mt-0">
-              {blogs?.btnText}
-              <BlogBtnIcon />
-            </Button>
-          </div>
+          <Copy animateOnScroll={true}>
+            <h2
+              className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
+                classMaxwidth || "max-w-[483px]"
+              } ${headingVariantMap[headingVariant]}`}
+            >
+              {blogs?.title || title}
+            </h2>
+          </Copy>
+          <Copy animateOnScroll={true}>
+            <div className="hidden md:block">
+              <Button className="bg-red-linear primary-btn mt-0.5 h-10 gap-2 lg:mt-0">
+                {blogs?.btnText}
+                <BlogBtnIcon />
+              </Button>
+            </div>
+          </Copy>
         </div>
 
         <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:gap-4 md:flex md:flex-row xl:gap-6">

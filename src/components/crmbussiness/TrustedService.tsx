@@ -30,11 +30,11 @@ const TrustedService: React.FC<TheReviewProps> = ({
 
   return (
     <section className={`relative overflow-hidden ${className}`}>
-      {/* <Copy animateOnScroll={true}> */}
-      <h3 className="section-heading service-text xs:max-w-[80%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-full">
-        {reviews?.data?.[0]?.reviews?.title}
-      </h3>
-      {/* </Copy> */}
+      <Copy animateOnScroll={true}>
+        <h3 className="section-heading service-text xs:max-w-[80%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-full">
+          {reviews?.data?.[0]?.reviews?.title}
+        </h3>
+      </Copy>
       <div className="relative mx-auto h-fit w-full max-w-[1920px] px-2 pt-7">
         <div className="trusted-gradient pointer-events-none absolute bottom-0 left-[0px] z-40 hidden h-full w-24 lg:block xl:w-[200px] 2xl:w-[370px]"></div>
         <div className="trusted-gradient pointer-events-none absolute right-[0px] bottom-0 z-40 hidden h-full w-24 rotate-180 lg:block xl:w-[200px] 2xl:w-[370px]"></div>

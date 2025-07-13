@@ -16,7 +16,7 @@ type CrmBussinessPageProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+ params: Promise<{ locale: string; slug: string }>;
 }) {
   const resolvedParams = await params;
   const page = await getSeoData(

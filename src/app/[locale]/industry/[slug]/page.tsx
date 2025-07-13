@@ -28,7 +28,7 @@ import { Metadata } from "next";
 import { getSeoData } from "@/services/common/seoMeta";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
 
-export async function generateMetadata({ params }: { params: { slug: string; locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }>; }) {
   const resolvedParams = await params;
   const page = await getSeoData(
     "industries-pages",

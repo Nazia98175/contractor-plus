@@ -1,14 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import {
-  IndustriesDropdownLinks,
-  ResourcesDropdownlinks,
-  featurelinks,
-} from "./Helper";
-import { ArrowIcon, CrossIcon, LogoIcon, SidebarArrowIcon } from "./Icons";
 import { featureIcons } from "./FeaturesDropdown";
-import { sub } from "date-fns";
+import { CrossIcon, LogoIcon, SidebarArrowIcon } from "./Icons";
 
 interface DropdownItemProps {
   title: string;
@@ -32,7 +26,7 @@ const DropdownItem = ({
   id,
 }: DropdownItemProps) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <button
         onClick={onToggle}
         className={`header-li flex w-full items-center justify-between p-1 ${
@@ -44,72 +38,33 @@ const DropdownItem = ({
       </button>
 
       <div
-        className={`no-scrollbar overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen
-            ? "max-h-[500px] overflow-y-auto opacity-100"
-            : "max-h-0 opacity-0"
+        className={`no-scrollbar grow overflow-auto transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[calc(100vh-245px)] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="py-1">
-          <ul className="space-y-2.5 bg-white p-2">
-            {items.map((item, index) => (
-             item?.label !== "" && <div key={index}> <li >
-
-                <Link href={item?.href || "#"} className="header-li block p-1">
-                  <div className="flex items-center gap-2">
-                    {item.icon && <span>{item.icon}</span>}
-                    <span>{item.label}</span>
-                  </div>
-                  {item.description && (
-                    <p className="hidden">{item.description}</p>
-                  )}
-                </Link>
-              </li>
-                {item?.title === "bottomLinks" && isOpen && (
-              <div className="bg-superSilver mt-4 p-1.5">
-                <div className="flex flex-col gap-1 p-[6px]">
-                  <Link
-                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
-                    href={item?.href || "/"}
-                  >
-                    {item.label}
-                    <ArrowIcon />
-                  </Link>
-                  {/* <Link
-                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
-                    href={"/"}
-                  >
-                    Integrations
-                    <ArrowIcon />
-                  </Link>
-                  <Link
-                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
-                    href={"/"}
-                  >
-                    Product Updates
-                    <ArrowIcon />
-                  </Link> */}
+        <ul className="h-full space-y-2.5 bg-white p-2">
+          {items.map(
+            (item, index) =>
+              item?.label !== "" && (
+                <div key={index}>
+                  <li key={item.href || index}>
+                    <Link
+                      href={item?.href || "#"}
+                      className="header-li block p-1"
+                    >
+                      <div className="flex items-center gap-2">
+                        {item.icon && <span>{item.icon}</span>}
+                        <span>{item.label}</span>
+                      </div>
+                      {item.description && (
+                        <p className="hidden">{item.description}</p>
+                      )}
+                    </Link>
+                  </li>
                 </div>
-              </div>
-            )}
-              </div>
-            ))}
-          
-            {/* {id === "whycontractor" && isOpen && (
-              <div className="bg-superSilver mt-4 p-1.5">
-                <div className="flex flex-col gap-1 p-[6px]">
-                  <Link
-                    className="font-inter text-lightBlack flex items-center gap-2.5 p-1 text-xs font-medium"
-                    href={"/"}
-                  >
-                    See All Features
-                    <ArrowIcon />
-                  </Link>
-                </div>
-              </div>
-            )} */}
-          </ul>
-        </div>
+              ),
+          )}
+        </ul>
       </div>
     </div>
   );
@@ -118,7 +73,7 @@ const DropdownItem = ({
 const SideBar = ({
   setIsShow,
   isshow,
-  header
+  header,
 }: {
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
   isshow: boolean;
@@ -134,57 +89,27 @@ const SideBar = ({
     }
   };
 
-  const menuItems = [
-    {
-      id: "whycontractor",
-      label: "Why Contractor+?",
-      path: "/why-contractor",
-    },
-    {
-      id: "features",
-      label: "Features",
-      items: featurelinks,
-    },
-    {
-      id: "industries",
-      label: "Industries",
-      items: IndustriesDropdownLinks,
-    },
-    {
-      id: "pricing",
-      label: "Pricing",
-      path: "/pricing",
-    },
-    {
-      id: "resources",
-      label: "Resources",
-      items: ResourcesDropdownlinks,
-    },
-  ];
-const menuItemss = header?.headerMain?.map((item: any, index: number) => {
-  const items =
-    item?.headerSubList?.length > 0
-      ? item.headerSubList.flatMap((subItem: any) =>
-       
-          subItem?.links?.map((sub: any) => ({
-            label: sub?.linkTxt || "",
-            href: sub?.linkUrl || "",
-            title: subItem?.title || "",
-            icon: sub?.icon ? (
-             featureIcons?.[sub?.icon] || null
-            ) : null,
-          })) || []
-        )
-      : [];
+  const menuItemss = header?.headerMain?.map((item: any, index: number) => {
+    const items =
+      item?.headerSubList?.length > 0
+        ? item.headerSubList.flatMap(
+            (subItem: any) =>
+              subItem?.links?.map((sub: any) => ({
+                label: sub?.linkTxt || "",
+                href: sub?.linkUrl || "",
+                title: subItem?.title || "",
+                icon: sub?.icon ? featureIcons?.[sub?.icon] || null : null,
+              })) || [],
+          )
+        : [];
 
-  return {
-    id: item.id || `menu-item-${index}`,
-    label: item.mainTitle || "",
-    path: item?.mainLink || "",
-    ...(items.length > 0 && { items }), // only include if exists
-  };
-});
-
+    return {
+      id: item.id || `menu-item-${index}`,
+      label: item.mainTitle || "",
+      path: item?.mainLink || "",
+      ...(items.length > 0 && { items }),
+    };
+  });
 
   return (
     <>
@@ -196,7 +121,7 @@ const menuItemss = header?.headerMain?.map((item: any, index: number) => {
       )}
 
       <div
-        className={`bg-brownish fixed top-0 right-0 z-50 flex min-h-dvh w-full transform flex-col overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`bg-brownish fixed inset-0 z-50 flex h-dvh w-full transform flex-col overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:hidden ${
           isshow ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -210,28 +135,32 @@ const menuItemss = header?.headerMain?.map((item: any, index: number) => {
             </button>
           </div>
 
-          <div className="no-scrollbar my-5 grow space-y-1 overflow-auto">
-            {menuItemss.map((item:any) =>
-              !(item.items?.length > 0) ? (
-                <Link
-                  key={item.id}
-                  href={item.path}
-                  className="header-li block p-1"
-                  onClick={() => setIsShow(false)}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <DropdownItem
-                  key={item.id}
-                  id={item.id}
-                  title={item.label}
-                  items={item.items || []}
-                  isOpen={openDropdown === item.id}
-                  onToggle={() => toggleDropdown(item.id)}
-                />
-              ),
-            )}
+          <div className="grow overflow-hidden">
+            <div className="no-scrollbar h-full space-y-1 overflow-auto">
+              {menuItemss.map((item: any) =>
+                !(item.items?.length > 0) ? (
+                  <Link
+                    key={item.id}
+                    href={item.path}
+                    className="header-li block p-1"
+                    onClick={() => setIsShow(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <>
+                    <DropdownItem
+                      key={item.id}
+                      id={item.id}
+                      title={item.label}
+                      items={item.items || []}
+                      isOpen={openDropdown === item.id}
+                      onToggle={() => toggleDropdown(item.id)}
+                    />
+                  </>
+                ),
+              )}
+            </div>
           </div>
 
           <div className="flex items-center justify-between gap-3">
@@ -246,7 +175,7 @@ const menuItemss = header?.headerMain?.map((item: any, index: number) => {
                 {header?.loginText || "Login"}
               </button>
               <button className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white">
-               {header?.btnText?.btnText || "Get Started"}
+                {header?.btnText?.btnText || "Get Started"}
               </button>
             </div>
           </div>

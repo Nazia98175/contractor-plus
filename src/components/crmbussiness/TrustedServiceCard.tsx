@@ -1,10 +1,10 @@
 import { Review } from "@/types";
+import { VARIANT_CLASSES } from "@/utils/getVariants";
+import Image from "next/image";
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import ImageProxy from "../common/ImageProxy";
 import { getInitials } from "../common/ReviewCard";
-import { VARIANT_CLASSES } from "@/utils/getVariants";
-import Image from "next/image";
 
 interface ReviewCardProps {
   review: Review;
@@ -31,11 +31,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   apiData = true,
 }) => {
   const styles = VARIANT_CLASSES[variant];
-  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
   return (
     <div className="mr-5 !h-auto">
       <article
-        onClick={openModal}
         className={`trusted-service flex h-full w-full max-w-[350px] flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${slug === "crm" ? "bg-shutter sm:bg-transparent" : "bg-transparent"} ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">

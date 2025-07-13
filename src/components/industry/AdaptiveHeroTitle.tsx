@@ -146,11 +146,11 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
       </h1>
 
       {/* Debug info - remove in production */}
-      {process.env.NODE_ENV === "development" && isAdjusted && (
+      {/* {process.env.NODE_ENV === "development" && isAdjusted && (
         <div className="mt-2 text-xs text-gray-500">
           Final font size: {finalFontSize}px
         </div>
-      )}
+      )} */}
     </>
   );
 };

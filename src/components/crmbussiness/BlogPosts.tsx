@@ -37,7 +37,7 @@ const BlogPosts: React.FC<Props> = ({
         <div className="xs:justify-center mb-6 flex items-start justify-center sm:justify-between md:mb-9 lg:items-center">
           <Copy animateOnScroll={true}>
             <h2
-              className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
+              className={`hvac-blog-card-heading mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
                 classMaxwidth || "max-w-[483px]"
               } ${headingVariantMap[headingVariant]}`}
             >
@@ -81,7 +81,8 @@ const BlogPosts: React.FC<Props> = ({
                 Contractor+ | 5 minutes ago
               </p>
               <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
-                {data?.[0]?.blogTitle || "How to create compelling presentations?"}
+                {data?.[0]?.blogTitle ||
+                  "How to create compelling presentations?"}
               </h3>
               <p className="text-superSilver font-jakarta mt-2 text-base">
                 {data?.[0]?.blogDescription ||

@@ -541,7 +541,7 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
-.gradient-white .line {
+.gradient-white {
   background:
     linear-gradient(276.25deg, #ee1e2566 -11.28%, #00000000 99.63%), #ffffff;
   -webkit-background-clip: text;
@@ -599,6 +599,14 @@ html::-webkit-scrollbar {
   text-fill-color: transparent;
 }
 .crm-gradient .line {
+  background:
+    linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.crm-gradient {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
   -webkit-background-clip: text;
@@ -1726,6 +1734,19 @@ button {
   @apply !bg-lightishBlue relative !m-0 flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold text-white;
 }
 .hvac-blog-card-heading {
+  background:
+    linear-gradient(
+      270.38deg,
+      rgba(0, 0, 0, 0) 35.56%,
+      rgba(238, 30, 37, 0.4) 99.98%
+    ),
+    #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.hvac-blog-card-heading .line {
   background:
     linear-gradient(
       270.38deg,

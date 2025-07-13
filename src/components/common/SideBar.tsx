@@ -47,7 +47,7 @@ const DropdownItem = ({
             (item, index) =>
               item?.label !== "" && (
                 <div key={index}>
-                  <li>
+                  <li key={item.href || index}>
                     <Link
                       href={item?.href || "#"}
                       className="header-li block p-1"

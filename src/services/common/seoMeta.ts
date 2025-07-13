@@ -22,18 +22,17 @@ interface SeoDataItem {
  * @param collectionType - API collection name (e.g., 'homepage', 'services-pages')
  * @param locale - locale string (e.g., 'en', 'fr', 'es')
  * @param slug - (optional) page slug or title used for filtering (if dynamic)
- * @param query - (optional) populate query string for seoMeta, hero, etc.
  * @returns {SeoDataItem} Normalized single SeoDataItem object (never an array)
  */
 export const getSeoData = async (
   collectionType: string,
   locale: string,
-  slug?: string,
-  query: string = "&populate=*"
+  slug?: string
 ): Promise<SeoDataItem | null> => {
+  const queryString = "&populate[seoMetaData]=true&populate[hero]=true";
   const url =
     collectionType === "homepage" 
-      ? `${collectionType}?locale=${locale}&populate[seoMetaData]=true&populate[hero]=true` : `${collectionType}?filters[pageName][$eq]=${slug}&locale=${locale}${query}`
+      ? `${collectionType}?locale=${locale}${queryString}` : `${collectionType}?filters[pageName][$eq]=${slug}&locale=${locale}${queryString}`;
   
   try {
     const res: AxiosResponse<{ data?: SeoDataItem | SeoDataItem[] }> = await axiosInstance.get(url);

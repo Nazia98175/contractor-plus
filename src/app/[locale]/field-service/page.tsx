@@ -26,10 +26,9 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoData(
-    "services-pages",
+    "solution-pages",
     resolvedParams.locale,
-    "field-service",
-    "&populate[seoMetaData]=true&populate[hero]=true",
+    "field-service"
   );
 
   if (!page) return;

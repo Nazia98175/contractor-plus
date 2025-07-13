@@ -8,34 +8,6 @@ interface SeoMeta {
   keywords?: string;
 }
 
-interface GetSeoMetaOptions {
-  seoMeta?: SeoMeta;
-  fallbackTitle?: string;
-  fallbackDescription?: string;
-  slug?: string;
-  locale?: string;
-}
-
-export const getSeoMeta = ({
-  seoMeta,
-  fallbackTitle = "Contractor+",
-  fallbackDescription = "",
-  slug,
-  locale,
-}: GetSeoMetaOptions): Metadata => {
-  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
-  const localePath =
-    locale && locale !== "en" ? `/${locale}/${slug}` : `/${slug}`;
-
-  return {
-    title: seoMeta?.metaTitle || `${fallbackTitle} ${slug}`,
-    description: seoMeta?.metaDescription || fallbackDescription,
-    keywords: seoMeta?.keywords,
-    alternates: {
-      canonical: seoMeta?.canonicalUrl || `${baseUrl}${localePath}`,
-    },
-  };
-};
 
 interface GenerateSeoMetadataOptions {
   page: any;
@@ -46,6 +18,7 @@ export const generateSeoMetadata = ({
   page,
   slug,
 }: GenerateSeoMetadataOptions): Metadata => {
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
   const title =
     page?.seoMetaData?.metaTitle ||
     page?.hero?.heroTitle ||
@@ -57,8 +30,8 @@ export const generateSeoMetadata = ({
   const keywords = page?.seoMetaData?.keywords || "";
 
   const canonical =
-    page?.seoMetaData?.canonicalUrl ??
-    `${process.env.NEXT_PUBLIC_DOMAIN}/${slug || ""}`;
+    `${baseUrl}${page?.seoMetaData?.canonicalUrl}` ||
+    `${baseUrl}/${slug || ""}`;
 
   return {
     title,

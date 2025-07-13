@@ -22,8 +22,7 @@ export async function generateMetadata({
   const page = await getSeoData(
     "features-pages",
     resolvedParams.locale,
-    resolvedParams.slug,
-    "&populate[seoMetaData]=true&populate[hero]=true",
+    resolvedParams.slug
   );
 
   if (!page) return;

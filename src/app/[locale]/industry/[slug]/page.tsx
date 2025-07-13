@@ -33,8 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const page = await getSeoData(
     "industries-pages",
     resolvedParams.locale,
-    resolvedParams.slug,
-    "&populate[seoMetaData]=true&populate[hero]=true"
+    resolvedParams.slug
   );
 
   if (!page) return;

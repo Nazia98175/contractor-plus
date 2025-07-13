@@ -16,3 +16,19 @@ export const getBlogs = async (
     return notFound();
   }
 };
+
+
+export const getBlogsByCategory = async (
+  locale: string,
+  categoryText: string
+): Promise<HomePageResponse | null> => {
+  const url = `blogs?filters[categoryListForFilter][list][text][$eq]=${categoryText}&locale=${locale}&publicationState=live&populate[category][populate][list]=*&populate[categoryListForFilter][populate][list]=*`;
+
+  try {
+    const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
+    return res.data;
+  } catch (error: any) {
+    console.log("Failed to fetch blogs by category:", error?.response?.data);
+    return notFound();
+  }
+};

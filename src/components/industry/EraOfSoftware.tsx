@@ -8,7 +8,7 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
   slug,
 }) => {
 
-  console.log("trackProperties Image", trackProperties?.image);
+ 
   return (
     <section className="no-scrollbar relative z-10 overflow-hidden">
       <div className="bg-white-linear absolute -bottom-[1%] left-0 z-[3] h-24 w-full sm:h-[180px] lg:h-[237px]"></div>

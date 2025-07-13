@@ -12,11 +12,13 @@ interface Platform {
 interface PlatformCardProps {
   platform: Platform;
   className?: string;
+  apiData?: boolean; // Optional prop to handle API data
 }
 
 const PlatformCard: React.FC<PlatformCardProps> = ({
   platform,
   className = "h-10 md:h-8",
+  apiData = false, // Default to false if not provided
 }) => {
   return (
     <div className="plateform-cards relative z-20 flex flex-col-reverse items-center justify-between gap-2.5 sm:w-fit sm:flex-col lg:w-[47%]">
@@ -28,7 +30,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
         alt={`${platform.name} rating`}
         className={`${className} max-w-[140px] object-contain sm:max-w-[155px]`}
       />
-      {className === "h-10 md:h-8" && (
+      {!apiData && className === "h-10 md:h-8" && (
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, i) => (
             <span key={i} className="max-w-[22px] min-w-4 sm:min-w-[22px]">

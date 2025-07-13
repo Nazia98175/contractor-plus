@@ -19,6 +19,7 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
+  trustBarImages
 }) => {
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
@@ -33,9 +34,12 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
-        {platforms.map((platform, index) => (
-          <PlatformCard platform={platform} key={index} />
-        ))}
+        {trustBarImages?.length > 0 ?trustBarImages?.map((platform:any, index:number) => (
+          <PlatformCard platform={platform} key={index} apiData={true} />
+        )): 
+          platforms.map((platform, index) => (
+            <PlatformCard platform={platform} key={index} />  
+          ))}
       </CardReveal>
 
       <div className="relative z-50 px-4 lg:hidden">
@@ -51,11 +55,17 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
           }}
           autoplay={true}
         >
-          {platforms.map((platform, index) => (
+          {trustBarImages?.length >0 ? trustBarImages?.map((platform:any, index:number) => (
             <div key={index} className="flex items-center justify-center">
-              <PlatformCard platform={platform} />
-            </div>
-          ))}
+              <PlatformCard platform={platform} apiData={true} />
+            </div> )): 
+            platforms?.map((platform, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <PlatformCard platform={platform} />
+              </div>
+            ))}     
+
+      
         </SliderLayout>
       </div>
     </section>

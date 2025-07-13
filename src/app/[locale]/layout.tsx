@@ -31,13 +31,15 @@ export default async function RootLayout({
   const [header, footer] = await Promise.all([
     getHeader(
       useParams?.locale,
-      "&populate[btnText]=true&populate[bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true",
+      "&populate[btnText]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true",
     ),
     getFooter(
       useParams?.locale,
-      "&populate[sections][populate]=*&populate[bottomLinks]=*",
+      "&populate[sections][populate]=*",
     ),
   ]);
+  console.log("Header data:", header);
+  console.log("Footer data:", footer);
   return (
     <html
       lang="en"

@@ -14,11 +14,12 @@ const url = `industries-pages?filters[pageName][$eq]=${slug}&locale=${locale}${q
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log("Failed to fetch crmpage:", error);
+    console.log("Failed to fetch industrypage:", error);
    
     if (error.response?.status === 404) {
       return notFound(); // will render 404.tsx
     }
+    console.log(error)
     throw new Error(error);
   }
 };

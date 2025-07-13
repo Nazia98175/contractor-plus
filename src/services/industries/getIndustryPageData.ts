@@ -16,7 +16,7 @@ export interface CrmLikePageDataResponse {
   blogs?: any | null;
   thousandReviews: any | null;
   commonData: any | null;
-  trustBarImages: any | null;
+ 
 }
 
 export const getIndustryPageData = async (
@@ -35,8 +35,7 @@ export const getIndustryPageData = async (
     faqsRes,
     blogs,
     thousandReviewsRes,
-    commonData,
-    trustBarImages,
+    commonData
   ] = await Promise.all([
     getIndustryPage(slug, locale, "&populate=*"),
     getIndustryPage(slug, locale, "&populate[hero][populate]=heroImg"),
@@ -44,7 +43,7 @@ export const getIndustryPageData = async (
     getIndustryPage(
       slug,
       locale,
-      "&populate[trustedCompanies][populate]=images",
+      "&populate[trustedCompanies]=*",
     ),
     getIndustryPage(
       slug,
@@ -59,12 +58,12 @@ export const getIndustryPageData = async (
     getIndustryPage(
       slug,
       locale,
-      "&populate[featureHighlightIndustrySection][populate][images][populate]=*",
+      "&populate[featureHighlightIndustrySection][populate][image][populate]=*",
     ),
     getIndustryPage(
       slug,
       locale,
-      "&populate[resultsStatsSection][populate][cards][populate]=*",
+      "&populate[resultsStatsSection][populate][cards][populate]=true&populate[resultsStatsSection][populate][images]=true",
     ),
     getIndustryPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
@@ -73,12 +72,7 @@ export const getIndustryPageData = async (
       locale,
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
-    getCommonData(),
-    getIndustryPage(
-      slug,
-      locale,
-      "&populate[emailSignupSection][populate]=images",
-    ),
+    getCommonData()
   ]);
 
   return {
@@ -96,8 +90,6 @@ export const getIndustryPageData = async (
     faqs: faqsRes?.data?.[0] || null,
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
-    commonData: commonData || null,
-    trustBarImages:
-      trustBarImages?.data?.[0]?.emailSignupSection?.images || null,
+    commonData: commonData || null
   };
 };

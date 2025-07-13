@@ -38,14 +38,7 @@ interface Props {
   headerSubList: any;
   isVisible: boolean;
 }
-
-const FeaturesDropdown: React.FC<Props> = ({
-  isVisible = true,
-  headerSubList,
-}) => {
-  const t = useTranslations("features");
-
-  const featureIcons: Record<string, React.ReactNode> = {
+ export const featureIcons: Record<string, React.ReactNode> = {
     crm: <CrmIcon />,
     estimates: <EstimatesIcon />,
     mileage: <MilageIcon />,
@@ -75,6 +68,13 @@ const FeaturesDropdown: React.FC<Props> = ({
     BigChief: <BigChiefIcon />,
     BookPing: <BookPingIcon />,
   };
+const FeaturesDropdown: React.FC<Props> = ({
+  isVisible = true,
+  headerSubList,
+}) => {
+  const t = useTranslations("features");
+
+
 
   if (!isVisible) {
     return null;

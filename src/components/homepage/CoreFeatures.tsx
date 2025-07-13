@@ -1,12 +1,10 @@
 "use client";
-import { useTranslations } from "next-intl";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import CoreFeaturesCard from "./CoreFeaturesCard";
 
 interface CoreFeaturesData {
   title: string;
   subTitle: string;
-  features?: any; // Replace `any` with actual card structure if known
+  features?: any; 
 }
 
 interface CoreFeaturesProps {
@@ -14,7 +12,6 @@ interface CoreFeaturesProps {
 }
 
 const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
-  const t = useTranslations("corefeature");
 
   return (
     <section className="relative z-20 bg-white">

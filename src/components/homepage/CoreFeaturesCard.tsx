@@ -3,11 +3,6 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import FeatureNavigation from "./FeatureNavigation";
 import FeatureContent from "./FeatureContent";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 interface FeatureItem {
   id: number;
@@ -15,7 +10,6 @@ interface FeatureItem {
   cardQuote: string | null;
   userName: string | null;
   cardImg: any | null;
-  imgSrc: string;
   content: {
     id: number;
     title: string;
@@ -32,7 +26,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
-  const contentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const featuresRef = useRef<HTMLDivElement | null>(null);
   const navContainerRef = useRef<HTMLDivElement | null>(null);
@@ -43,7 +36,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const isScrollingProgrammatically = useRef(false);
   const lastActiveFeature = useRef(0);
   const rafId = useRef<number | null>(null);
-  const scrollTriggerInstance = useRef<ScrollTrigger | null>(null);
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
@@ -51,8 +43,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   // Mobile detection with resize listener
   useEffect(() => {
     const checkMobile = () => {
-      const mobile = window.innerWidth <= 1023;
-      setIsMobile(mobile);
+      setIsMobile(window.innerWidth <= 1023);
     };
 
     checkMobile();
@@ -78,158 +69,90 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     }
   }, [activeFeature, features.length, isMobile]);
 
-  // Optimized scroll handling - ONLY for mobile sticky and active feature detection
+  // Optimized scroll handling
   useEffect(() => {
-    if (isMobile) {
-      let ticking = false;
+    let ticking = false;
 
-      const processScroll = () => {
-        if (isScrollingProgrammatically.current) {
-          ticking = false;
-          return;
-        }
+    const processScroll = () => {
+      if (isScrollingProgrammatically.current) {
+        ticking = false;
+        return;
+      }
 
-        const containerEl = containerRef.current;
-        const navEl = navContainerRef.current;
+      const containerEl = containerRef.current;
+      const navEl = navContainerRef.current;
 
-        if (!containerEl || !navEl) {
-          ticking = false;
-          return;
-        }
+      if (!containerEl || !navEl) {
+        ticking = false;
+        return;
+      }
 
-        const scrollY = window.scrollY;
-        const containerTop = containerEl.offsetTop;
+      const scrollY = window.scrollY;
+      const containerTop = containerEl.offsetTop;
 
-        // Check if navigation should be sticky (mobile only)
+      // Check if navigation should be sticky (mobile only)
+      if (isMobile) {
         const shouldBeSticky = scrollY > containerTop - 40;
         if (isSticky !== shouldBeSticky) {
           setIsSticky(shouldBeSticky);
         }
+      }
 
-        // Find active feature based on which Lottie animation should be playing
-        const windowHeight = window.innerHeight;
-        const offset = navHeightRef.current;
-        let newActiveFeature = lastActiveFeature.current;
+      // Find active feature based on scroll position
+      const windowHeight = window.innerHeight;
+      const offset = isMobile ? navHeightRef.current : 0;
+      let newActiveFeature = lastActiveFeature.current;
 
-        // Use the same logic as Lottie's play zone (30% from top, 70% from top)
-        const playZoneStart = windowHeight * 0.3;
-        const playZoneEnd = windowHeight * 0.7;
+      for (let i = contentRefs.current.length - 1; i >= 0; i--) {
+        const ref = contentRefs.current[i];
+        if (!ref) continue;
 
-        for (let i = 0; i < contentRefs.current.length; i++) {
-          const ref = contentRefs.current[i];
-          if (!ref) continue;
+        const rect = ref.getBoundingClientRect();
+        const elementTop = rect.top - offset;
+        const center = windowHeight / 2;
 
-          const rect = ref.getBoundingClientRect();
-          const elementCenter = rect.top + rect.height / 2;
-
-          // Check if element center is in the play zone
-          if (elementCenter >= playZoneStart && elementCenter <= playZoneEnd) {
-            newActiveFeature = i;
-            break;
-          }
+        if (elementTop < center) {
+          newActiveFeature = i;
+          break;
         }
+      }
 
-        // Only update if changed
-        if (newActiveFeature !== lastActiveFeature.current) {
-          lastActiveFeature.current = newActiveFeature;
-          setActiveFeature(newActiveFeature);
-        }
+      // Only update if changed
+      if (newActiveFeature !== lastActiveFeature.current) {
+        lastActiveFeature.current = newActiveFeature;
+        setActiveFeature(newActiveFeature);
+      }
 
-        ticking = false;
-      };
+      // Update progress for mobile
+      if (isMobile && containerEl) {
+        const totalScroll = containerEl.offsetHeight - windowHeight;
+        const currentScroll = scrollY - containerTop;
+        const progress = Math.max(0, Math.min(1, currentScroll / totalScroll));
+      }
 
-      const handleScroll = () => {
-        if (!ticking) {
-          if (rafId.current) {
-            cancelAnimationFrame(rafId.current);
-          }
-          rafId.current = requestAnimationFrame(processScroll);
-          ticking = true;
-        }
-      };
+      ticking = false;
+    };
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll(); // Initial check
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
         if (rafId.current) {
           cancelAnimationFrame(rafId.current);
         }
-      };
-    }
+        rafId.current = requestAnimationFrame(processScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, [isSticky, isMobile]);
-
-  // Desktop ScrollTrigger setup - ONLY for desktop
-  useEffect(() => {
-    if (!isMobile) {
-      // Wait for DOM to be ready
-      const timer = setTimeout(() => {
-        const container = containerRef.current;
-        const navContainer = navContainerRef.current;
-        const content = contentRef.current;
-
-        if (!container || !navContainer || !content) return;
-
-        // Kill existing ScrollTrigger
-        if (scrollTriggerInstance.current) {
-          scrollTriggerInstance.current.kill();
-        }
-
-        // Create new ScrollTrigger for pinning the navigation
-        scrollTriggerInstance.current = ScrollTrigger.create({
-          trigger: container,
-          start: "top 90px",
-          end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
-          pin: navContainer,
-          pinSpacing: false,
-          invalidateOnRefresh: true,
-          markers: false,
-          onUpdate: (self) => {
-            // Find active feature based on which Lottie animation is playing
-            if (!isScrollingProgrammatically.current) {
-              let newActiveFeature = lastActiveFeature.current;
-
-              // Check each content section to see which one is in the "play zone"
-              const windowHeight = window.innerHeight;
-              const playZoneStart = windowHeight * 0.3; // 30% from top
-              const playZoneEnd = windowHeight * 0.7; // 70% from top
-
-              for (let i = 0; i < contentRefs.current.length; i++) {
-                const ref = contentRefs.current[i];
-                if (!ref) continue;
-
-                const rect = ref.getBoundingClientRect();
-                const elementCenter = rect.top + rect.height / 2;
-
-                // Check if element center is in the play zone
-                if (
-                  elementCenter >= playZoneStart &&
-                  elementCenter <= playZoneEnd
-                ) {
-                  newActiveFeature = i;
-                  break;
-                }
-              }
-
-              if (newActiveFeature !== lastActiveFeature.current) {
-                lastActiveFeature.current = newActiveFeature;
-                setActiveFeature(newActiveFeature);
-              }
-            }
-          },
-        });
-      }, 100);
-
-      return () => {
-        clearTimeout(timer);
-        if (scrollTriggerInstance.current) {
-          scrollTriggerInstance.current.kill();
-          scrollTriggerInstance.current = null;
-        }
-      };
-    }
-  }, [isMobile]);
 
   // Move indicator - debounced to prevent shaking
   const moveIndicator = useCallback(
@@ -303,7 +226,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
         setTimeout(() => {
           isScrollingProgrammatically.current = false;
-        }, 800);
+        }, 800); // Slightly longer timeout for smoother experience
       }
 
       if (isMobile && featureButtonsRef.current[index]) {
@@ -320,95 +243,30 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
   const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
-  useEffect(() => {
-    setTimeout(() => {
-      const container = containerRef.current;
-      const navContainer = navContainerRef.current;
-      const content = contentRef.current;
-
-      if (!container || !navContainer || !content) return;
-      console.log(content.offsetHeight);
-
-      // Create ScrollTrigger for pinning the navigation
-      const pinTrigger = ScrollTrigger.create({
-        trigger: container,
-        start: "top 90px",
-        end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
-        pin: navContainer,
-        pinSpacing: false,
-        invalidateOnRefresh: true,
-        // Optional: Add some debugging
-        markers: false, // Set to true for debugging
-      });
-
-      // Cleanup function
-      return () => {
-        pinTrigger.kill();
-      };
-    }, 2500);
-  }, []);
-
-  // Optional: Refresh ScrollTrigger on window resize
-  // Refresh ScrollTrigger on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (!isMobile) {
-        ScrollTrigger.refresh();
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isMobile]);
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      if (scrollTriggerInstance.current) {
-        scrollTriggerInstance.current.kill();
-      }
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-      }
-    };
-  }, []);
-
-  // const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
-  // const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
-
   return (
     <section
       ref={containerRef}
-      className="relative mt-7 flex flex-col gap-9 overflow-visible lg:flex-row lg:px-3 xl:p-6"
+      className="relative mt-7 flex flex-col justify-between gap-9 overflow-visible lg:flex-row lg:px-3 xl:p-6"
     >
-      <div className="relative z-20 h-full lg:w-fit">
-        <div
-          ref={navContainerRef}
-          className={`z-20 w-full lg:w-fit lg:self-start ${
-            isMobile && isSticky
-              ? "fixed top-20 right-0 left-0 bg-white shadow-md"
-              : ""
-          }`}
-        >
-          <FeatureNavigation
-            features={titles}
-            featureBtn={[featureBtnC]}
-            activeFeature={activeFeature}
-            onFeatureClick={handleFeatureClick}
-            indicatorRef={indicatorRef}
-            featuresRef={featuresRef}
-            featureButtonsRef={featureButtonsRef}
-            isMobile={isMobile}
-          />
-        </div>
+      <div
+        ref={navContainerRef}
+        className={`left-0 z-20 w-full ${
+          isSticky ? "sticky top-20" : "relative"
+        } lg:sticky lg:top-28 lg:w-fit lg:self-start`}
+      >
+        <FeatureNavigation
+          features={titles}
+          featureBtn={[featureBtnC]}
+          activeFeature={activeFeature}
+          onFeatureClick={handleFeatureClick}
+          indicatorRef={indicatorRef}
+          featuresRef={featuresRef}
+          featureButtonsRef={featureButtonsRef}
+          isMobile={isMobile}
+        />
       </div>
 
-      <div
-        ref={contentRef}
-        className={`w-full space-y-4 overflow-visible lg:w-[80%] lg:space-y-8 ${
-          isMobile && isSticky ? "pt-16" : ""
-        }`}
-      >
+      <div className="w-full space-y-4 overflow-visible lg:w-[80%] lg:space-y-8">
         <FeatureContent
           featureContents={featuresList}
           contentRefs={contentRefs}

@@ -62,6 +62,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     slug: useParams?.slug,
     theme,
     hero: page?.hero,
+    featureTag: page?.featureTag,
     reviews,
     switchingTool: switchingTool?.commonProblems,
     fieldServiceData: fieldServiceData,
@@ -78,7 +79,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-
+ 
   return (
     <>
       {/* Critical above-the-fold content - Server Component */}
@@ -87,6 +88,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         hero={pageData?.hero}
         slug={useParams?.slug}
         heroImg={heroImg}
+        featureTag={pageData?.featureTag}
       />
       <TrustedService reviews={reviews} slug={useParams?.slug} />
       <SwitchingTool switchingTool={pageData?.switchingTool} />

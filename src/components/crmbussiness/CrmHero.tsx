@@ -19,12 +19,14 @@ export interface TheHeroProps {
   heroImg?: any;
   homeCard?: any;
   commonData?: any;
+  featureTag?: string;
 }
 const CrmHero: React.FC<TheHeroProps> = ({
   hero,
   slug,
   heroImg,
   commonData,
+  featureTag,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -52,11 +54,9 @@ const CrmHero: React.FC<TheHeroProps> = ({
       <CardReveal distance={30} delay={0.1}>
         <div className="hidden items-center justify-center pb-1 md:flex">
           <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
-            {slug === "estimate"
-              ? "Contractor Estimate Software"
-              : "   Field Service CRM"}
+           {featureTag || "Feature Highlight"}
           </span>
-          {/* <span>{hero?.heroTitle1}</span> */}
+         
         </div>
       </CardReveal>
       <div

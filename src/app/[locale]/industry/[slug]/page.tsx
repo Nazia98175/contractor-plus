@@ -78,7 +78,8 @@ const page = async ({ params }: PageProps) => {
     faqs,
     blogsList,
     thousandReviews,
-    commonData
+    commonData ,
+    blogsByCategory
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
   
   const customIconsMap: Record<number, React.ReactNode> = {
@@ -91,9 +92,7 @@ const page = async ({ params }: PageProps) => {
     1: <FasterIcon5 />,
     2: <FasterIcon6 />,
   };
-  // console.log("trackProperties", trackProperties);
- 
-  console.log("teamsUsingContractor", teamsUsingContractor);
+
   return (
     <main className="overflow-hidden">
       <div className="relative bg-white">
@@ -182,7 +181,7 @@ const page = async ({ params }: PageProps) => {
         <div className="cloud-layer-bottom absolute bottom-[-1%] z-50 h-[68px] w-full sm:bottom-[-2%] sm:h-[64px] md:-bottom-[2%]"></div>
       </div>
       <BlogPosts
-        data={blogsList}
+        data={blogsByCategory || []}
         blogs={crmPageContent?.blogs}
         className="relative z-20 bg-white pb-8"
         variant="secondary"

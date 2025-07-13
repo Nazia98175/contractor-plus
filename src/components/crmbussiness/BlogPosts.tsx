@@ -81,11 +81,11 @@ const BlogPosts: React.FC<Props> = ({
                 Contractor+ | 5 minutes ago
               </p>
               <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
-                Discover The Member Benefits Of USA Contracting!
+                {data?.[0]?.blogTitle || "How to create compelling presentations?"}
               </h3>
               <p className="text-superSilver font-jakarta mt-2 text-base">
-                How do you create compelling presentations that wow your
-                colleagues and impress your managers?
+                {data?.[0]?.blogDescription ||
+                  "Learn how to create compelling presentations that captivate your audience and effectively communicate your message."}
               </p>
             </div>
           </div>

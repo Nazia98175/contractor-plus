@@ -31,7 +31,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
     { image: "/images/webp/developers-aPI.webp" },
   ];
   const fallbackImage = "/images/webp/developers-aPI.webp";
-
+  console.log("headerSubList", headerSubList);
   return (
     <div className="flex grow flex-col overflow-hidden">
       <div className="relative z-[9999] flex grow gap-8 overflow-auto">
@@ -79,18 +79,20 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
       </div>
       <div className="font-inter sticky bottom-0 left-0 mt-8 flex w-full items-center justify-between gap-6">
         <Link className="all-features-button group" href="/resources">
-          Go to Resource Hub
+          {headerSubList?.[1]?.title === "bottomLinks" &&
+            headerSubList?.[1]?.links?.[0]?.linkTxt}
           <ArrowIcon />
         </Link>
         <div className="flex items-center gap-10">
-          <Link className="all-features-button group" href="/">
-            Get Demo
-            <ArrowIcon />
-          </Link>
-          <Link className="all-features-button group" href="/">
-            Investors
-            <ArrowIcon />
-          </Link>
+          {headerSubList?.[1]?.title === "bottomLinks" &&
+            headerSubList?.[1]?.links
+              ?.slice(1, headerSubList?.[1]?.links?.length)
+              ?.map((link: any, index: any) => (
+                <Link className="all-features-button group" href="/">
+                  {link?.linkTxt}
+                  <ArrowIcon />
+                </Link>
+              ))}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-// utils/getSeoMeta.ts
+
 import { Metadata } from "next";
 
 interface SeoMeta {
@@ -37,24 +37,35 @@ export const getSeoMeta = ({
   };
 };
 
+interface GenerateSeoMetadataOptions {
+  page: any;
+  slug?: string;
+}
 
+export const generateSeoMetadata = ({
+  page,
+  slug,
+}: GenerateSeoMetadataOptions): Metadata => {
+  const title =
+    page?.seoMetaData?.metaTitle ||
+    page?.hero?.heroTitle ||
+    (slug ? `Contractor+ ${slug}` : "");
 
-// import { Metadata } from "next";
+  const description =
+    page?.seoMetaData?.metaDescription || page?.hero?.subTitle || "";
 
-// interface SeoMeta {
-//   metaTitle?: string;
-//   metaDescription?: string;
-//   canonicalUrl?: string;
-//   keywords?: string;
-// }
+  const keywords = page?.seoMetaData?.keywords || "";
 
-// export const getSeoMeta = (seoMeta: SeoMeta | undefined): Metadata => {
-//   return {
-//     title: seoMeta?.metaTitle || "Default Title",
-//     description: seoMeta?.metaDescription || "Default Description",
-//     keywords: seoMeta?.keywords,
-//     alternates: {
-//       canonical: seoMeta?.canonicalUrl,
-//     },
-//   };
-// };
+  const canonical =
+    page?.seoMetaData?.canonicalUrl ??
+    `${process.env.NEXT_PUBLIC_DOMAIN}/${slug || ""}`;
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical,
+    },
+  };
+};

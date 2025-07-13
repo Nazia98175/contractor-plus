@@ -7,6 +7,7 @@ import ClientOnlyWrapper from "@/components/client/ClientOnlyWrapper";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import { generateSeoMetadata } from "@/utils/getSeoMeta";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -15,33 +16,20 @@ type CrmBussinessPageProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata | undefined> {
+  params: { slug: string; locale: string };
+}) {
   const resolvedParams = await params;
-
   const page = await getSeoData(
     "features-pages",
     resolvedParams.locale,
     resolvedParams.slug,
     "&populate[seoMetaData]=true&populate[hero]=true",
   );
+
   if (!page) return;
 
-  return {
-    title:
-      page.seoMetaData?.metaTitle ||
-      page.hero?.heroTitle ||
-      `Contractor+ ${resolvedParams.slug}`,
-    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
-    keywords: page.seoMetaData?.keywords || "",
-    alternates: {
-      canonical:
-        page.seoMetaData?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}/${resolvedParams.slug}`,
-    },
-  };
+  return generateSeoMetadata({ page, slug: resolvedParams.slug });
 }
-
 const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   const useParams = await params;
   if (!useParams?.slug) {

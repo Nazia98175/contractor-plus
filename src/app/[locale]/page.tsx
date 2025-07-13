@@ -5,7 +5,9 @@ import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import TrustBar from "@/components/homepage/TrustBar";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
+import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
+
 export async function generateMetadata({
   params,
 }: {
@@ -14,19 +16,9 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const page = await getSeoData("homepage", resolvedParams?.locale);
 
-  if (!page) {
-    return;
-  }
+  if (!page) return;
 
-  return {
-    title: page?.seoMetaData?.metaTitle || page?.hero?.heroTitle || `Contractor+`,
-    description: page?.seoMetaData?.metaDescription || page?.hero?.subTitle || "",
-    keywords: page?.seoMetaData?.keywords || "",
-    alternates: {
-      canonical:
-        page?.seoMetaData?.canonicalUrl ?? `${process.env.NEXT_PUBLIC_DOMAIN}`,
-    },
-  };
+  return generateSeoMetadata({ page });
 }
 
 export default async function Home({

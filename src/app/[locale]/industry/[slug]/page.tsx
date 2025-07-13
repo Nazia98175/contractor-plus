@@ -26,35 +26,20 @@ import { notFound } from "next/navigation";
 import MovingSoftware from "@/components/industry/MovingSoftware";
 import { Metadata } from "next";
 import { getSeoData } from "@/services/common/seoMeta";
+import { generateSeoMetadata } from "@/utils/getSeoMeta";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata | undefined> {
+export async function generateMetadata({ params }: { params: { slug: string; locale: string } }) {
   const resolvedParams = await params;
-
   const page = await getSeoData(
     "industries-pages",
     resolvedParams.locale,
     resolvedParams.slug,
-    "&populate[seoMetaData]=true&populate[hero]=true",
+    "&populate[seoMetaData]=true&populate[hero]=true"
   );
+
   if (!page) return;
- 
-  return {
-    title:
-      page.seoMetaData?.metaTitle ||
-      page.hero?.heroTitle ||
-      `Contractor+ ${resolvedParams.slug}`,
-    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
-    keywords: page.seoMetaData?.keywords || "",
-    alternates: {
-      canonical:
-        page.seoMetaData?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}/${resolvedParams.slug}`,
-    },
-  };
+
+  return generateSeoMetadata({ page, slug: resolvedParams.slug });
 }
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;

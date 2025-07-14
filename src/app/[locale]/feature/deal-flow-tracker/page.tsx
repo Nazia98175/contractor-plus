@@ -43,6 +43,7 @@ const page = () => {
           heroDescription:
             "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
         }}
+        featureTag="Opportunity Tracker"
         heroImg="/images/webp/deal-flow-hero.webp"
         slug="crm"
         commonData={dealflowhero}

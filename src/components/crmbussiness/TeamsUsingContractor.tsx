@@ -51,9 +51,9 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
         {data?.cards?.map((item: any, index: any) => (
           <article
             key={index}
-            className="bg-doctor flex cursor-pointer flex-col items-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
+            className="bg-doctor flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
-            <span className="mb-1 h-[31px] w-[31px]">
+            <span className="mb-1 flex h-[31px] w-[31px] items-center justify-center">
               {slug === "crm" ? (
                 <> {icons[index % icons.length]}</>
               ) : (

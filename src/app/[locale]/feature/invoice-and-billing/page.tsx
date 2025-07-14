@@ -1,25 +1,23 @@
 import {
+  billingformData,
+  billingNeverLookBackData,
   billingVsthWayYouCouldData,
   blogList,
-  dealFlowBlogHeadingData,
   dealflowFaq,
   dealflowhero,
   dealReviews,
   dealReviews2,
-  fieldcarddetail,
-  formData,
-  neverLookBackData,
   platforms,
   realTimeServiceSliderData,
-  runWithContractorData,
+  simpleWayToBill,
 } from "@/components/common/Helper";
+import { billingBlogPost } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import FinallyConnectsField from "@/components/dealflowtracker/FinallyConnectsField";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
@@ -52,7 +50,7 @@ const BillingPage = () => {
           switchingTool={{
             title:
               "There’s no simple way to bill a job that doesn’t go exactly to plan",
-            cardsDetail: fieldcarddetail,
+            cardsDetail: simpleWayToBill,
           }}
         />
         <RealTimeServiceConnector
@@ -60,17 +58,17 @@ const BillingPage = () => {
           fieldService={{
             title:
               "The only pipeline built to follow the flow of actual contracting work",
-            cardsDetail: realTimeServiceSliderData, // ← imported from helper
+            cardsDetail: realTimeServiceSliderData,
           }}
         />
         <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
         <TimmingEffect />
-        {/* <FinallyConnectsField /> */}
-        <NeverLookBack data={neverLookBackData} />
+
+        <NeverLookBack data={billingNeverLookBackData} />
       </div>
       <ThousandsReviews
         data={dealReviews2}
-        reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+        reviews={dealReviews2.reviews}
         variant="secondary"
         apiData={false}
       />
@@ -78,7 +76,7 @@ const BillingPage = () => {
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
         ncc={"No credit card required"}
-        data={formData}
+        data={billingformData}
         showClouds={false}
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
@@ -103,7 +101,7 @@ const BillingPage = () => {
 
       <BlogPosts
         data={blogList}
-        blogs={dealFlowBlogHeadingData}
+        blogs={billingBlogPost}
         className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>

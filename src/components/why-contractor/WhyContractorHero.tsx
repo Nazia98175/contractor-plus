@@ -9,6 +9,7 @@ import {
   VideoPlayIcon,
 } from "../common/Icons";
 import Copy from "../common/Copy";
+import gsap from "gsap";
 
 const WhyContractorHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -78,6 +79,23 @@ const WhyContractorHero = () => {
       setIsPlaying(!isPlaying);
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-why-contractor", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
 
   return (
     <section className="opacity-0 px-3 pt-[70px] pb-14 sm:pt-[127px] sm:pb-20" id="why-contractor-hero-section">
@@ -86,7 +104,7 @@ const WhyContractorHero = () => {
           <AnimatedLineIcon />
         </div>
         <Copy animateOnScroll={false} delay={0}>
-          <h2 className="main-heading mb-2 white-gray-gradient text-center !font-extralight max-sm:mx-auto sm:mb-4">
+          <h2 className="main-heading why-contractor-hero  white-gray-gradient mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4">
             You can't scale a contracting business built on bottlenecks
           </h2>
         </Copy>

@@ -38,6 +38,7 @@ const HomepageClient = ({
         contractorIndustry={homePageContent?.data?.Industries}
       />
       <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />
+
       <WhatEverClient
         data={commonData?.contractorConnects}
         resultStats={resultStats}

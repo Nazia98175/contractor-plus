@@ -11,23 +11,28 @@ const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
 
-const Hero = ({ homePageContent , commonData }: { homePageContent: any  , commonData: any}) => {
+const Hero = ({
+  homePageContent,
+  commonData,
+}: {
+  homePageContent: any;
+  commonData: any;
+}) => {
   const { heroTitle, heroDescription, createBtn, nccTxt, mobileBtn } =
     homePageContent ?? {};
 
   useEffect(() => {
-  
     window.scrollTo(0, 0);
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen", {
         opacity: 1,
         duration: 1,
       });
-        gsap.to("#home-page-header-view-port-screen", {
+      gsap.to("#home-page-header-view-port-screen", {
         opacity: 1,
         duration: 1,
       });
-        gsap.to("#home-page-footer-view-port-screen", {
+      gsap.to("#home-page-footer-view-port-screen", {
         opacity: 1,
         duration: 1,
       });
@@ -45,11 +50,7 @@ const Hero = ({ homePageContent , commonData }: { homePageContent: any  , common
                 {heroTitle}
               </h1>
             </Copy>
-            {/* <SplitText
-              splitType="lines"
-              className="main-heading w-full max-w-[300px] text-white"
-              text="dsfghvcdfxgchjbklkkfghjklljhgfhjkl;kjhghjkl;kjhgfhjkl"
-            /> */}
+
             <Copy animateOnScroll={false} delay={1.2}>
               <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
                 {heroDescription}
@@ -62,7 +63,10 @@ const Hero = ({ homePageContent , commonData }: { homePageContent: any  , common
                 delay={1.3}
                 animateOnMount={true}
               >
-                <FreeAccountButton showIcon={false} text={commonData?.getStartedFreeBtn} />
+                <FreeAccountButton
+                  showIcon={false}
+                  text={commonData?.getStartedFreeBtn}
+                />
               </CardReveal>
               <CardReveal
                 className="flex w-full sm:hidden"
@@ -77,7 +81,10 @@ const Hero = ({ homePageContent , commonData }: { homePageContent: any  , common
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1.5}>
-                <CardRequiredButton className="w-full" text={commonData?.nccTxt} />
+                <CardRequiredButton
+                  className="w-full"
+                  text={commonData?.nccTxt}
+                />
               </CardReveal>
             </div>
           </div>

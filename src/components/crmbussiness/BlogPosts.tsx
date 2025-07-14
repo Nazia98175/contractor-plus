@@ -37,7 +37,7 @@ const BlogPosts: React.FC<Props> = ({
         <div className="xs:justify-center mb-6 flex items-start justify-center sm:justify-between md:mb-9 lg:items-center">
           <Copy animateOnScroll={true}>
             <h2
-              className={`hvac-blog-card-heading mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
+              className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
                 classMaxwidth || "max-w-[483px]"
               } ${headingVariantMap[headingVariant]}`}
             >

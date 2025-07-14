@@ -31,7 +31,7 @@ import Revenue_Forecast_Updated from "../../../public/lotties/Revenue-Forecast-U
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
-const FinallyConnectsField = () => {
+const TestingConnect = () => {
   const timelineWrapperRef = useRef(null);
 
   useGSAP(() => {
@@ -410,4 +410,4 @@ const FinallyConnectsField = () => {
   );
 };
 
-export default FinallyConnectsField;
+export default TestingConnect;

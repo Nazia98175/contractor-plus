@@ -14,6 +14,9 @@ import animationData from "../../../public/lotties/crm.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
 import live_scheduling from "../../../public/lotties/live-scheduling.json";
 import property_profile from "../../../public/lotties/property-profile.json";
+import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
+import lead_icon_black from "../../../public/lotties/lead-icon-black.json";
+import sale_productivity from "../../../public/lotties/sale-productivity.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
   ClientPortalIcon,
@@ -2764,6 +2767,21 @@ export const fieldcarddetail = [
     text: "Other solutions don’t really show you where revenue is getting stuck.",
   },
 ];
+export const simpleWayToBill = [
+  {
+    text: "You’re manually updating estimates every time something changes.",
+  },
+  {
+    text: (
+      <>
+        You’re sending multiple invoices just to reflect <br /> one job.
+      </>
+    ),
+  },
+  {
+    text: "You’re losing money when labor, materials, or mileage go unbilled.",
+  },
+];
 
 export const dealflowhero = {
   getStartedFreeBtn: "Get started FREE",
@@ -3196,13 +3214,13 @@ export const neverLookBackData = {
       title: null,
       subTitle: "Boost in revenue with visual pipeline tracking",
       start: 0,
-      end: 4,
-      suffix: "x",
+      end: 28,
+      suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: up_arrow_black,
       cardImage: {
-        url: "/images/svg/PipleLine-Track.svg", // Assuming you're storing local assets
+        url: null, // Assuming you're storing local assets
       },
     },
     {
@@ -3210,13 +3228,13 @@ export const neverLookBackData = {
       title: null,
       subTitle: "Contractors see higher sales productivity",
       start: 0,
-      end: 28,
-      suffix: "%",
+      end: 10,
+      suffix: "",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: sale_productivity,
       cardImage: {
-        url: "/images/svg/trend-down.svg",
+        url: null,
       },
     },
     {
@@ -3224,13 +3242,69 @@ export const neverLookBackData = {
       title: null,
       subTitle: "Of leads weren’t fully tracked before using Contractor+",
       start: 0,
-      end: 38,
+      end: 80,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: lead_icon_black,
+      cardImage: {
+        url: null,
+      },
+    },
+  ],
+};
+export const billingNeverLookBackData = {
+  title: "Teams that switch to Contractor+ never look back",
+  sub_title: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: (
+        <>
+          Revenue increase from capturing <br /> unbilled items
+        </>
+      ),
+      start: 5,
+      end: 10,
+      suffix: "%",
+      prefix: "5-",
+      value: 5,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/PipleLine-Track.svg",
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: (
+        <>
+          Savings in billing admin <br /> time{" "}
+        </>
+      ),
+      start: 0,
+      end: 50,
       suffix: "%",
       prefix: null,
       value: null,
       lottieJson: null,
       cardImage: {
-        url: "/images/svg/truck-fast.svg",
+        url: "/images/svg/saving-bill.svg",
+      },
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Average fewer disputes from real-time documentation",
+      start: 0,
+      end: 40,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/trend-down.svg",
       },
     },
   ],
@@ -3326,6 +3400,14 @@ export const formData = {
   placeholder: "Your Email",
   subTitle: "Get started with Estimatic AI in Contractor+ today.",
   title: "The AI estimate generator that will change your business forever",
+};
+export const billingformData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle:
+    "Start using Contractor+ free. Upgrade for the full operating system.",
+  title:
+    "This is what field service invoicing software should have been all along",
 };
 export const estimateFormData = {
   id: 282,

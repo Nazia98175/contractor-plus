@@ -60,7 +60,7 @@ const BillingPage = () => {
           fieldService={{
             title:
               "The only pipeline built to follow the flow of actual contracting work",
-            cardsDetail: realTimeServiceSliderData, // ← imported from helper
+            cardsDetail: realTimeServiceSliderData,
           }}
         />
         <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
@@ -70,7 +70,7 @@ const BillingPage = () => {
       </div>
       <ThousandsReviews
         data={dealReviews2}
-        reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+        reviews={dealReviews2.reviews}
         variant="secondary"
         apiData={false}
       />

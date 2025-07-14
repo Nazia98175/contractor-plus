@@ -135,7 +135,7 @@ const Dashboard = () => {
         unoptimized
         width={100}
         height={100}
-        className="w-full md:hidden"
+        className="w-full md:hidden "
         src={"/images/png/dashboard-img-mobile.png"}
         alt="dashboard"
       />
@@ -143,8 +143,8 @@ const Dashboard = () => {
         unoptimized
         width={100}
         height={100}
-        className="mx-auto w-full max-w-[1440px] max-md:hidden xl:h-[1300px]"
-        src={"/images/png/dashboard-img.png"}
+        className="mx-auto w-full max-w-[1440px] max-md:hidden xl:h-[1300px] object-cover mix-blend-difference"
+        src={"/images/png/flow-energy-desktop.gif"}
         alt="dashboard"
       />
       <div className="z-10 mx-auto grid w-full max-w-[1100px] grid-cols-1 justify-between px-3 max-md:mt-10 max-md:gap-24 md:absolute md:top-[12%] md:left-1/2 md:translate-x-[-50%] md:grid-cols-2 lg:h-[300px] xl:h-[400px]">

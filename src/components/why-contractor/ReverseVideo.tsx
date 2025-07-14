@@ -9,64 +9,10 @@ import ImageSequenceCanvas from "./ImageSequenceCanvas";
 gsap.registerPlugin(ScrollTrigger);
 
 const ReverseFrames = () => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [currentFrame, setCurrentFrame] = useState(0);
-
-  const totalFrames = 13;
-  const frameBasePath = "/images/hand-video/";
-  const frameExtension = ".png";
-  const frameDigits = 5;
-  const framePaths = Array.from({ length: totalFrames }, (_, i) => {
-    const frameNumber = (i + 1).toString().padStart(frameDigits, "0");
-    return `${frameBasePath}${frameNumber}${frameExtension}`;
-  });
-
-  useEffect(() => {
-    const preloadFrames = () => {
-      framePaths.forEach((path) => {
-        const img = new window.Image();
-        img.src = path;
-      });
-    };
-    preloadFrames();
-  }, []);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const setupScroll = () => {
-      gsap.to(
-        {},
-        {
-          duration: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 50%",
-            end: "bottom bottom",
-            scrub: true,
-            markers: false,
-            pin: false,
-            onUpdate: (self) => {
-              const frameIndex = Math.floor(self.progress * (totalFrames - 1));
-              setCurrentFrame(frameIndex);
-            },
-          },
-        },
-      );
-    };
-
-    setupScroll();
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, [totalFrames]);
+  
 
   return (
-    <section ref={sectionRef} className="relative z-[0] bg-[#000] px-2.5">
+    <section  className="relative z-[0] bg-[#000] px-2.5">
       {/* <Image
         sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
         width={1440}

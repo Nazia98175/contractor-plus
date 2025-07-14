@@ -174,9 +174,9 @@ const ImageSequenceCanvas: React.FC<ImageSequenceProps> = ({
     // Setup scroll trigger
     ScrollTrigger.create({
       trigger: container,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: 1,
+      start: "50% 90%",
+      end: "50% 70%",
+      scrub: 2,
       markers: false,
       onUpdate: (self) => {
         tl.progress(self.progress);
@@ -196,7 +196,7 @@ const ImageSequenceCanvas: React.FC<ImageSequenceProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative h-[115vh] w-full ${className}`}
+      className={`relative h-screen w-full ${className}`}
     >
       <canvas
         ref={canvasRef}

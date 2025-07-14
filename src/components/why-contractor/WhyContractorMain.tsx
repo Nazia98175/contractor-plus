@@ -1,6 +1,5 @@
 "use client";
 import { platforms } from "@/components/common/Helper";
-// import ThousandsReviews from "@/components/hvca/ThousandsReviews";
 import CommonFormField from "@/components/common/CommonFormField";
 import TrustBarHvca from "@/components/industry/TrustBarHvca";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
@@ -45,6 +44,27 @@ const WhyContractorMain = () => {
         invalidateOnRefresh: true, // Recalculate on window resize
       },
     });
+
+
+      gsap.to("#why-contractor-hero-section", {
+            opacity: 1,
+            duration: 1,
+          });
+
+      gsap.to("#home-page-header-view-port-screen", {
+            opacity: 1,
+            duration: 1,
+          });
+
+      gsap.to("#industry-shifted-section", {
+            opacity: 1,
+            duration: 1,
+          });
+
+            gsap.to("#home-page-footer-view-port-screen", {
+            opacity: 1,
+            duration: 1,
+          });
 
     return () => {
       // Cleanup

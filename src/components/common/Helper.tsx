@@ -14,6 +14,9 @@ import animationData from "../../../public/lotties/crm.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
 import live_scheduling from "../../../public/lotties/live-scheduling.json";
 import property_profile from "../../../public/lotties/property-profile.json";
+import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
+import lead_icon_black from "../../../public/lotties/lead-icon-black.json";
+import sale_productivity from "../../../public/lotties/sale-productivity.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
   ClientPortalIcon,
@@ -3215,9 +3218,9 @@ export const neverLookBackData = {
       suffix: "x",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: up_arrow_black,
       cardImage: {
-        url: "/images/svg/PipleLine-Track.svg", // Assuming you're storing local assets
+        url: null, // Assuming you're storing local assets
       },
     },
     {
@@ -3229,9 +3232,9 @@ export const neverLookBackData = {
       suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: lead_icon_black,
       cardImage: {
-        url: "/images/svg/trend-down.svg",
+        url: null,
       },
     },
     {
@@ -3243,9 +3246,9 @@ export const neverLookBackData = {
       suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: sale_productivity,
       cardImage: {
-        url: "/images/svg/truck-fast.svg",
+        url: null,
       },
     },
   ],

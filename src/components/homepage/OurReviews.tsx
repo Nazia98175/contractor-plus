@@ -108,9 +108,24 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           height={300}
           sizes="(min-width: 1024px) 370px"
         />
-
+        <div className="block w-full md:hidden">
+          <Marquee speed={35} direction="right" className="py-5" pauseOnHover>
+            {reviewsList.map((review: any, index: any) => (
+              <ReviewCard
+                index={index}
+                key={review.id}
+                review={review as Review}
+                openModal={
+                  review.isModal
+                    ? () => openModal(review.videoLink || "")
+                    : () => {}
+                }
+              />
+            ))}
+          </Marquee>
+        </div>
         {/* First row of reviews - scrolling right */}
-        <div className="w-full">
+        <div className="hidden w-full md:block">
           <Marquee speed={35} direction="right" className="py-5" pauseOnHover>
             {reviewsList
               ?.slice(0, 6)

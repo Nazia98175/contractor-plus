@@ -40,7 +40,6 @@ const CrmHero: React.FC<TheHeroProps> = ({
   }, []);
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
- 
 
   return (
     <section
@@ -54,9 +53,8 @@ const CrmHero: React.FC<TheHeroProps> = ({
       <CardReveal distance={30} delay={0.1}>
         <div className="hidden items-center justify-center pb-1 md:flex">
           <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
-           {featureTag || "Feature Highlight"}
+            {featureTag || "Feature Highlight"}
           </span>
-         
         </div>
       </CardReveal>
       <div

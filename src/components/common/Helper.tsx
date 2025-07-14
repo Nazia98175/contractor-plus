@@ -2764,6 +2764,21 @@ export const fieldcarddetail = [
     text: "Other solutions don’t really show you where revenue is getting stuck.",
   },
 ];
+export const simpleWayToBill = [
+  {
+    text: "You’re manually updating estimates every time something changes.",
+  },
+  {
+    text: (
+      <>
+        You’re sending multiple invoices just to reflect <br /> one job.
+      </>
+    ),
+  },
+  {
+    text: "You’re losing money when labor, materials, or mileage go unbilled.",
+  },
+];
 
 export const dealflowhero = {
   getStartedFreeBtn: "Get started FREE",
@@ -3235,6 +3250,62 @@ export const neverLookBackData = {
     },
   ],
 };
+export const billingNeverLookBackData = {
+  title: "Teams that switch to Contractor+ never look back",
+  sub_title: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: (
+        <>
+          Revenue increase from capturing <br /> unbilled items
+        </>
+      ),
+      start: 5,
+      end: 10,
+      suffix: "%",
+      prefix: "5-",
+      value: 5,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/PipleLine-Track.svg",
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: (
+        <>
+          Savings in billing admin <br /> time{" "}
+        </>
+      ),
+      start: 0,
+      end: 50,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/saving-bill.svg",
+      },
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Average fewer disputes from real-time documentation",
+      start: 0,
+      end: 40,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/trend-down.svg",
+      },
+    },
+  ],
+};
 export const dealReviews2 = {
   title: "There’s a reason we have a 4.7 ★ average across thousands of reviews",
   subTitle: null,
@@ -3326,6 +3397,14 @@ export const formData = {
   placeholder: "Your Email",
   subTitle: "Get started with Estimatic AI in Contractor+ today.",
   title: "The AI estimate generator that will change your business forever",
+};
+export const billingformData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle:
+    "Start using Contractor+ free. Upgrade for the full operating system.",
+  title:
+    "This is what field service invoicing software should have been all along",
 };
 export const estimateFormData = {
   id: 282,

@@ -6,6 +6,7 @@ import TrustBar from "@/components/homepage/TrustBar";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
+import { console } from "inspector";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -39,6 +40,7 @@ export default async function Home({
     commonData,
   } = await getHomepageData(useParams?.locale);
 
+  console.log("Home page data fetched:")
   return (
     <div id="home-page-wrapper" className="">
       <div id="home-page-view-port-screen" className="relative opacity-0">

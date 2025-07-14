@@ -23,7 +23,15 @@ const Hero = ({ homePageContent , commonData }: { homePageContent: any  , common
         opacity: 1,
         duration: 1,
       });
-    }, 1000);
+        gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+        gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
   }, []);
 
   return (

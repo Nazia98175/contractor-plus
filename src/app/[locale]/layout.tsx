@@ -47,7 +47,8 @@ export default async function RootLayout({
       <body>
         <BackToTop />
         <NextIntlClientProvider messages={messages}>
-          <Header header={header?.data} />
+        
+                <Header header={header?.data} />
           <div id="smooth-wrapper">
             <div id="smooth-content">
               {children}

@@ -73,7 +73,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   };
   return (
     <footer
-      className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 md:py-[62px] ${styles.background}`}
+    id="home-page-footer-view-port-screen"
+      className={`opacity-0 no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 md:py-[62px] ${styles.background}`}
     >
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">

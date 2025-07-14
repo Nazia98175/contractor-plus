@@ -73,7 +73,7 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       </div>
 
       {/* <Copy animateOnScroll={true} delay={0.2}> */}
-      <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[868px]">
+      <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[1068px]">
         <span>{switchingTool?.title}</span>
       </h3>
       {/* </Copy> */}

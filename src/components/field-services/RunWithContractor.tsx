@@ -13,7 +13,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
 }) => {
   const variantClasses = {
     light: {
-      title: "crm-gradient max-w-[950px]",
+      title: "crm-gradient ",
       description: "crm-gradient",
       theirwaybg: "their-way",
       yourwaybg: "your-way",

@@ -10,6 +10,7 @@ import {
   EstimateIcon2,
   MoreIcon,
 } from "../common/Icons";
+import LottieAnimation from "../common/LottieAnimation";
 export interface Props {
   data: any;
   slug?: string;

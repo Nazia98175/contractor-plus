@@ -79,16 +79,25 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
       </div>
       <div className="font-inter sticky bottom-0 left-0 mt-8 flex w-full items-center justify-between gap-6">
         <Link className="all-features-button group" href="/resources">
-          {headerSubList?.[headerSubList?.length - 1]?.title === "bottomLinks" &&
+          {headerSubList?.[headerSubList?.length - 1]?.title ===
+            "bottomLinks" &&
             headerSubList?.[headerSubList?.length - 1]?.links?.[0]?.linkTxt}
           <ArrowIcon />
         </Link>
         <div className="flex items-center gap-10">
-          {headerSubList?.[headerSubList?.length - 1]?.title === "bottomLinks" &&
+          {headerSubList?.[headerSubList?.length - 1]?.title ===
+            "bottomLinks" &&
             headerSubList?.[headerSubList?.length - 1]?.links
-              ?.slice(1, headerSubList?.[headerSubList?.length - 1]?.links?.length)
+              ?.slice(
+                1,
+                headerSubList?.[headerSubList?.length - 1]?.links?.length,
+              )
               ?.map((link: any, index: any) => (
-                <Link className="all-features-button group" href="/">
+                <Link
+                  key={`${link?.linkTxt}-${index}`}
+                  className="all-features-button group"
+                  href="/"
+                >
                   {link?.linkTxt}
                   <ArrowIcon />
                 </Link>

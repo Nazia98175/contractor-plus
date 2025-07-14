@@ -209,7 +209,7 @@
   font-display: swap;
 }
 body {
-  @apply bg-kuroiBlack font-jakarta;
+  @apply bg-kuroiBlack font-jakarta isolate;
 }
 .main-container {
   @apply mx-auto w-full max-w-[1308px] px-2;
@@ -1784,7 +1784,4 @@ button {
 }
 .cloud-layer-bottom {
   background: linear-gradient(#fff0 6%, #fff 65.94%);
-}
-body {
-  isolation: isolate;
 }

@@ -5,7 +5,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 
 interface RunWithContractorMobileProps {
-  run_contractor: { ourProductNote: string; competitorsNote: string }[];
+  run_contractor: { ourProductNote: string; competitorsNote: string }[] | any[];
   your: string;
   their: string;
   style: {
@@ -39,7 +39,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
         slidesPerView={1}
         loop={true}
       >
-        {run_contractor.map((item, index) => (
+        {run_contractor?.[0]?.comparisonList?.map((item:any, index:any) => (
           <SwiperSlide key={index}>
             <div className="mx-auto mt-11 grid w-fit grid-cols-1 items-center gap-[22px] text-center">
               {/* Their Way */}
@@ -54,7 +54,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                     <RedCrossIcon />
                   </span>
                   <p className="text-sangoPink text-start text-sm font-medium">
-                    {item.competitorsNote}
+                    {item.details}
                   </p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
                     <GreenDotIcon2 />
                   </span>
                   <p className="text-majorelleGardens text-start text-sm font-bold">
-                    {item.ourProductNote}
+                   {run_contractor?.[0]?.comparisonList[index]?.details}
                   </p>
                 </div>
               </div>

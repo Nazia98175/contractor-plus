@@ -21,7 +21,7 @@ const ThousandsReviews: React.FC<Props> = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
-
+   console.log("ThousandsReviews Data:", data, reviews);
   const openModal = (videoUrl: string) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
@@ -52,7 +52,7 @@ const ThousandsReviews: React.FC<Props> = ({
           }}
           loop={false}
         >
-          {data?.reviews?.map((review: any, index: any) => (
+          {(data?.hasOwnProperty("reviews") ?data?.reviews : reviews)?.map((review: any, index: any) => (
             <CrmReviewCard
               review={review}
               key={index}

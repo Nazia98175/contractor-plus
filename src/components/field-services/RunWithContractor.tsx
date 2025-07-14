@@ -5,6 +5,7 @@ import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "./RunWithContractorMobile";
 import Copy from "../common/Copy";
 import { TheServiceProps } from "@/types";
+import { debugLog } from "@/utils/getConsole";
 
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
@@ -32,6 +33,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     },
   };
   const styles = variantClasses[variant];
+  debugLog("RunWithContractor Props:", kindAdorable);
   return (
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
@@ -58,7 +60,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">
           <p className="font-myriad text-secondary text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
-            {kindAdorable?.headerLeft}
+            {kindAdorable?.comaprisons?.[0]?.title}
           </p>
           {icon ? (
             <Image
@@ -70,11 +72,11 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
             />
           ) : (
             <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
-              {kindAdorable?.headerRight}
+              {kindAdorable?.comaprisons?.[1]?.title}
             </p>
           )}
         </div>
-        {kindAdorable?.features?.map((item: any, index: number) => (
+        {kindAdorable?.comaprisons?.[0]?.comparisonList?.map((item: any, index: number) => (
           <CardReveal
             distance={50}
             delay={0.1}
@@ -89,7 +91,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                 <RedCrossIcon />
               </span>
               <p className="text-sangoPink text-start text-sm leading-[130%] font-medium md:text-[17.5px]">
-                {item.competitorsNote}
+                {item.details}
               </p>
             </div>
             {/* Your Way */}
@@ -104,7 +106,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                   <GreenDotIcon2 />
                 </span>
                 <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold md:text-[17.5px]">
-                  {item.ourProductNote}
+                  {kindAdorable?.comaprisons?.[0]?.comparisonList[index]?.details}
                 </p>
               </div>
             </div>
@@ -114,9 +116,9 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       {/* Mobile View */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
         <RunWithContractorMobile
-          their={kindAdorable?.headerLeft}
-          your={kindAdorable?.headerRight}
-          run_contractor={kindAdorable?.features}
+          their={kindAdorable?.comaprisons?.[0]?.title}
+          your={kindAdorable?.comaprisons?.[1]?.title}
+          run_contractor={kindAdorable?.comaprisons}
           style={styles}
           icon={icon}
         />

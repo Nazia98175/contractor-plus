@@ -33,10 +33,7 @@ export default async function RootLayout({
       useParams?.locale,
       "&populate[btnText]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true",
     ),
-    getFooter(
-      useParams?.locale,
-      "&populate[sections][populate]=*",
-    ),
+    getFooter(useParams?.locale, "&populate[sections][populate]=*"),
   ]);
 
   return (
@@ -47,8 +44,7 @@ export default async function RootLayout({
       <body>
         <BackToTop />
         <NextIntlClientProvider messages={messages}>
-        
-                <Header header={header?.data} />
+          <Header header={header?.data} />
           <div id="smooth-wrapper">
             <div id="smooth-content">
               {children}

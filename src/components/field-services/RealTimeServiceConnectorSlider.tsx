@@ -250,7 +250,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             1024: { slidesPerView: 3, spaceBetween: 36 },
           }}
         >
-          {sliderData.map((item, index) => (
+          {sliderData?.map((item, index) => (
             <SwiperSlide
               key={index}
               className="bg-rgba1 relative z-30 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px]"
@@ -259,7 +259,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
                 {item.title}
               </b>
               <p className="text-secondary mt-3 text-sm font-medium">
-                {item?.content?.[0]?.desc}
+                {item?.description}
               </p>
             </SwiperSlide>
           ))}

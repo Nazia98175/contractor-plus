@@ -93,7 +93,7 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
       </h3>
       {/* </Copy> */}
 
-      <RealTimeServiceConnectorSlider sliderData={fieldService?.cardsDetail} />
+      <RealTimeServiceConnectorSlider sliderData={fieldService?.solutionCards} />
     </section>
   );
 };

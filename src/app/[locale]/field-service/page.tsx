@@ -17,6 +17,8 @@ import { getBlogs } from "@/services/blogs";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { getHomePage } from "@/services/homePage/homepage";
+import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
+import { getSolutionPage } from "@/services/solutions/solution";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -26,7 +28,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoData(
-    "solution-pages",
+    "solutions",
     resolvedParams.locale,
     "field-service"
   );
@@ -55,16 +57,10 @@ interface Params {
 const FieldServicesPage = async ({ params }: Params) => {
   const useParams = await params;
 
-  const [homePageContent] = await Promise.all([
-    getHomePage(useParams?.locale || "en", "&populate=*"),
-    getHomePage(
-      useParams?.locale || "en",
-      "&populate[review][on][common.reviews][populate]=*",
-    ),
-  ]);
+ 
 
   const {
-    crmPageContent,
+    solutionPageContent,
     reviews,
     switchingTool,
     fieldServiceData,
@@ -74,42 +70,44 @@ const FieldServicesPage = async ({ params }: Params) => {
     faqs,
     blogs,
     thousandReviews,
-  } = await getFeaturesPageData("field-service", useParams?.locale);
-
+    commonData,
+  } = await getSolutionPageData("field-service", useParams?.locale);
+ console.log("Field Services Page Data:", trackProperties)
   return (
     <>
       {/* <MainLoader /> */}
       <main className="overflow-hidden">
-        <FieldServicesHero hero={crmPageContent?.data?.[0]?.hero} />
+        <FieldServicesHero hero={solutionPageContent?.data?.[0]?.hero} commonData={commonData} />
         <ServiceContractorsMarquee reviews={reviews} />
         <div className="bg-white">
-          <GoingFieldSevices switchingTool={switchingTool?.switchingTool} />
+          <GoingFieldSevices switchingTool={switchingTool?.commonProblems} />
           <RealTimeServiceConnector
             theme="estimateTheme"
-            fieldService={fieldServiceData?.fieldService}
+            fieldService={fieldServiceData}
           />
         </div>
-        <RunWithContractor kindAdorable={comparison?.comparison} />
-        <TimmingEffect />
-        <NeverLookBack data={teamsUsingContractor?.teamsUsingContractor} />
+      <RunWithContractor kindAdorable={comparison} />
+        <TimmingEffect timingEff={trackProperties} commonData={commonData} />
+          <NeverLookBack data={teamsUsingContractor} />
         <ThousandsReviews
-          data={crmPageContent?.data?.[0]?.thousandReviews}
-          reviews={thousandReviews?.thousandReviews?.reviews}
+          data={solutionPageContent?.data?.[0]?.reviewTrustSection}
+          reviews={thousandReviews?.reviews}
           variant="secondary"
-        />
+        /> 
         <div className="relative overflow-visible">
-          <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
+           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
           <CrmSercive
-            createBtn={crmPageContent?.data?.[0]?.hero?.createBtn}
-            mobileBtn={crmPageContent?.data?.[0]?.hero?.mobileBtn}
-            ncc={crmPageContent?.data?.[0]?.hero?.nccTxt}
-            data={crmPageContent?.data?.[0]?.crmService}
+            createBtn={commonData?.getStartedFreeBtn}
+            mobileBtn={commonData?.mobileBtn}
+            ncc={commonData?.nccTxt}
+            data={solutionPageContent?.data?.[0]?.emailSignupSection}
             showClouds={false}
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="dark"
           />
           <TrustBarHvca
             platforms={platforms}
+            trustBarImages={commonData?.trustedCompaniesWhiteBG}
             className="mx-auto w-full max-w-[889px]"
           />
           <Faq
@@ -118,14 +116,14 @@ const FieldServicesPage = async ({ params }: Params) => {
             mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
             TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
           />
-        </div>
+        </div> 
         <WhatEverClient
-          data={homePageContent?.data?.whateverOperation}
+          data={commonData?.contractorConnects}
           issection={false}
         />
         <BlogPosts
-          data={crmPageContent?.data?.[0]?.blogs}
-          blogs={blogs}
+          data={blogs}
+          blogs={solutionPageContent?.data?.[0]?.blogs}
           className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
         />
       </main>

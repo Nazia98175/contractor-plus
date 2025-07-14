@@ -1785,3 +1785,17 @@ button {
 .cloud-layer-bottom {
   background: linear-gradient(#fff0 6%, #fff 65.94%);
 }
+.why-contractor-hero {
+  background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.why-contractor-hero .line {
+  background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

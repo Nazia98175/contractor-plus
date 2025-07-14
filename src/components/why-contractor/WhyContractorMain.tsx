@@ -54,40 +54,46 @@ const WhyContractorMain = () => {
 
   return (
     <>
-      <main className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-cover">
-        <Image
-          className="absolute top-0 left-0 z-[-1] h-auto w-full"
-          src={"/images/webp/why-contractor-hero-bg.webp"}
-          height={100}
-          width={100}
-          alt="WhyContractorHeroImg"
-          unoptimized
-        />
-        <WhyContractorHero />
-        <IndustryShifted />
-        <AnimationHeader />
-      </main>
-      <main
-        ref={sectionRef}
-        className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
-      >
-        {/* Background line (gray/wallStreet color) */}
-        <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
+      <div id="home-page-wrapper-2" className="">
+        <div
+          id="home-page-view-port-screen-why-contractor"
+          className="relative opacity-0"
+        >
+          <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-cover">
+            <Image
+              className="absolute top-0 left-0 z-[-1] h-auto w-full"
+              src={"/images/webp/why-contractor-hero-bg.webp"}
+              height={100}
+              width={100}
+              alt="WhyContractorHeroImg"
+              unoptimized
+            />
+            <WhyContractorHero />
+            <IndustryShifted />
+            <AnimationHeader />
+          </div>
+        </div>
+        <main
+          ref={sectionRef}
+          className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
+        >
+          {/* Background line (gray/wallStreet color) */}
+          <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
 
-        {/* Animated red dot that moves on scroll - starts at top of gray line */}
-        <span
-          ref={redDotRef}
-          className="absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115] sm:top-[-300px]"
-        ></span>
-        <BloodEnough />
-        <SeperateSolution />
-        <ReverseVideo />
-        <VideoBottomPart />
-        <WayToWin />
-        <Dashboard />
-      </main>
-      <OperatingSystem />
-      {/* <ThousandsReviews
+          {/* Animated red dot that moves on scroll - starts at top of gray line */}
+          <span
+            ref={redDotRef}
+            className="absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115] sm:top-[-300px]"
+          ></span>
+          <BloodEnough />
+          <SeperateSolution />
+          <ReverseVideo />
+          <VideoBottomPart />
+          <WayToWin />
+          <Dashboard />
+        </main>
+        <OperatingSystem />
+        {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
             sub_title:
@@ -103,24 +109,25 @@ const WhyContractorMain = () => {
           ccClass="max-sm:!hidden"
           mobileBtnHref="https://contractorplus.app/"
         /> */}
-      {/* <main className="pb-14">
+        {/* <main className="pb-14">
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       </main> */}
-      <div className="pb-14">
-        <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
-          <CommonFormField
-            title={"All unified. All in sync. All in one place."}
-            subTitle={
-              "This is what it feels like to finally run your business, not be run by it."
-            }
-            placeholder={"Your Email"}
-            createBtn={"Get Started Free"}
-            mobileBtn={"Download FREE App"}
-            ncc={"No credit card required"}
-            variant={"tertiary"}
-          />
+        <div className="pb-14">
+          <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
+            <CommonFormField
+              title={"All unified. All in sync. All in one place."}
+              subTitle={
+                "This is what it feels like to finally run your business, not be run by it."
+              }
+              placeholder={"Your Email"}
+              createBtn={"Get Started Free"}
+              mobileBtn={"Download FREE App"}
+              ncc={"No credit card required"}
+              variant={"tertiary"}
+            />
+          </div>
+          <TrustBarHvca showTrustedSection={false} platforms={platforms} />
         </div>
-        <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       </div>
     </>
   );

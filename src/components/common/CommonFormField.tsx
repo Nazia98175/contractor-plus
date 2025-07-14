@@ -5,9 +5,8 @@ import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
 
-
 interface CommonFormFieldProps {
-  title: string;
+  title?: string;
   subTitle: string;
   placeholder: string;
   createBtn: string;

@@ -18,20 +18,16 @@ import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
-
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import FinallyConnectsField from "@/components/dealflowtracker/FinallyConnectsField";
-import TestingConnect from "@/components/dealflowtracker/TestingConnect";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
-import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import TrustBarHvca from "@/components/industry/TrustBarHvca";
-import { Subtitles } from "lucide-react";
-import { title } from "process";
+
 import React from "react";
 const page = () => {
   return (
@@ -43,6 +39,7 @@ const page = () => {
           heroDescription:
             "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
         }}
+        featureTag="Opportunity Tracker"
         heroImg="/images/webp/deal-flow-hero.webp"
         slug="crm"
         commonData={dealflowhero}

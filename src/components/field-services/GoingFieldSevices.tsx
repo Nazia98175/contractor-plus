@@ -1,5 +1,4 @@
 "use client";
-import { debugLog } from "@/utils/getConsole";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -53,7 +52,7 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       ease: "none",
     });
   }, []);
-  debugLog("switchingTool", switchingTool);
+ 
   return (
     <section
       id="going-field-service"

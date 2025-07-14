@@ -40,7 +40,7 @@ export default async function Home({
     commonData,
   } = await getHomepageData(useParams?.locale);
 
-  console.log("Home page data fetched:")
+
   return (
     <div id="home-page-wrapper" className="">
       <div id="home-page-view-port-screen" className="relative opacity-0">

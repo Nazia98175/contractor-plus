@@ -5,7 +5,7 @@ import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
 import RunWithContractorMobile from "./RunWithContractorMobile";
 import Copy from "../common/Copy";
 import { TheServiceProps } from "@/types";
-import { debugLog } from "@/utils/getConsole";
+
 
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
@@ -33,7 +33,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     },
   };
   const styles = variantClasses[variant];
-  debugLog("RunWithContractor Props:", kindAdorable);
+  
   return (
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}

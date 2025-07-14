@@ -1,4 +1,3 @@
-import { debugLog } from "@/utils/getConsole";
 import React from "react";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/FieldService";
@@ -8,7 +7,7 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
   fieldService,
   theme,
 }) => {
-  debugLog("fieldServv", fieldService);
+ 
 
   const sliderData = [
     {

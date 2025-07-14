@@ -72,7 +72,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     thousandReviews,
     commonData,
   } = await getSolutionPageData("field-service", useParams?.locale);
- console.log("Field Services Page Data:", trackProperties)
+ 
   return (
     <>
       {/* <MainLoader /> */}

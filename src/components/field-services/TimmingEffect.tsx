@@ -24,8 +24,8 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 interface TimmingEffectProps {
-  timingEff: any;
-  commonData: any;
+  timingEff?: any;
+  commonData?: any;
 }
 
 const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) => {

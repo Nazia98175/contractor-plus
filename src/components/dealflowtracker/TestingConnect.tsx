@@ -19,6 +19,14 @@ import {
   stepThreeAnimation,
   stepTwoAnimation,
 } from "../field-services/dealflowanimation";
+import LottieAnimation from "../common/LottieAnimation";
+import Lead_Captured from "../../../public/lotties/Lead-Captured.json";
+import Initial_Contact from "../../../public/lotties/Initial-Contact.json";
+import Estimate_Scheduled from "../../../public/lotties/Estimate-Scheduled.json";
+import Estimate_Sent from "../../../public/lotties/Estimate-Sent.json";
+import Deal_Approved from "../../../public/lotties/Deal-Approved.json";
+import Job_Scheduled from "../../../public/lotties/Job-Scheduled.json";
+import Revenue_Forecast_Updated from "../../../public/lotties/Revenue-Forecast-Updated.json";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -151,7 +159,7 @@ const TestingConnect = () => {
       </h2>
 
       <p className="text-darkness xs:text-sm relative z-[4] my-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
-        Here's what it feels like when everything just works
+        A drag-and-drop Kanban view that simplifies opportunities
       </p>
       <div
         ref={timelineWrapperRef}
@@ -218,53 +226,52 @@ const TestingConnect = () => {
         />
 
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
+          {/* Heading  */}
           <div className="relative">
             <h2
               id="timing-text-heading-1"
-              className="timing-text-heading text-phantom relative mt-6 text-center text-sm leading-[120%] font-semibold lg:text-[35px] xl:text-[42px]"
+              className="timing-text-heading text-phantom relative mt-6 text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
               Lead Captured
             </h2>
             <h2
               id="timing-text-heading-2"
-              className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-sm leading-[120%] font-semibold whitespace-nowrap lg:text-[35px] xl:text-[42px]"
+              className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
               Estimate Scheduled
             </h2>
             <h2
               id="timing-text-heading-3"
-              className="timing-text-heading text-phantom absolute top-0 left-0 w-full text-center text-sm leading-[120%] font-semibold lg:text-[35px] xl:text-[42px]"
+              className="timing-text-heading text-phantom absolute top-0 left-0 w-full text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
               Estimate Sent
             </h2>
             <h2
               id="timing-text-heading-4"
-              className="timing-text-heading text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
               Deal Approved
             </h2>
             <h2
               id="timing-text-heading-5"
-              className="timing-text-heading text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
-              The new job is created and scheduled, with the original deal,
-              estimate, and client details fully synced across Contractor+.
+              Job Scheduled
             </h2>
             <h2
               id="timing-text-heading-6"
-              className="timing-text-heading text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
-              Your pipeline now reflects the converted value, updating your
-              projected revenue and helping you prioritize what’s next.
+              Revenue Forecast Updated
             </h2>
             <h2
               id="timing-text-heading-7"
-              className="timing-text-heading absolute top-0 left-0 …"
+              className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
             >
-              Your team marks the job complete and an invoice is generated
-              automatically.
+              Initial Contact
             </h2>
           </div>
+          {/* Description  */}
           <div className="relative">
             <p
               id="timing-text-1"
@@ -283,95 +290,111 @@ const TestingConnect = () => {
             </p>
             <p
               id="timing-text-3"
-              className="timing-text text-secondary absolute top-0 left-1/2 mt-6 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
               The estimate is generated and linked directly to the deal card.
             </p>
             <p
               id="timing-text-4"
-              className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
               You move the card to “Approved” and convert it to a job instantly.
             </p>
             <p
               id="timing-text-5"
-              className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
               The new job is created and scheduled, with the original deal,
               estimate, and client details fully synced across Contractor+.
             </p>
             <p
               id="timing-text-6"
-              className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
               Your pipeline now reflects the converted value, updating your
               projected revenue and helping you prioritize what’s next.
             </p>
             <p
               id="timing-text-7"
-              className="timing-text absolute top-0 left-0 …"
+              className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              Your team marks the job complete and an invoice is generated
-              automatically.
+              You or your team follows up, logs notes, and assigns a dollar
+              value to the opportunity.
             </p>
           </div>
-          <div className="relative mt-8 overflow-hidden">
-            <Image
+          {/* Images  */}
+          <div className="relative mt-5 overflow-hidden">
+            <div
               id="timing-img-1"
-              width={611}
-              height={245}
-              className="timing-imgs relative"
-              src="/images/webp/lead.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs relative h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Lead_Captured}
+              />
+            </div>
+
+            <div
               id="timing-img-2"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/estimatic-schedule.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Estimate_Scheduled}
+              />
+            </div>
+            <div
               id="timing-img-3"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/estimated-sent.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Estimate_Sent}
+              />
+            </div>
+            <div
               id="timing-img-4"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/deal-approved.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Deal_Approved}
+              />
+            </div>
+            <div
               id="timing-img-5"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/job-schedule.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Job_Scheduled}
+              />
+            </div>
+            <div
               id="timing-img-6"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/forcast-updated.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Revenue_Forecast_Updated}
+              />
+            </div>
+            <div
               id="timing-img-7"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/forcast-updated.webp"
-              alt="Timing Image"
-            />
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Initial_Contact}
+              />
+            </div>
           </div>
         </div>
       </div>

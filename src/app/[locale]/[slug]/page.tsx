@@ -16,13 +16,13 @@ type CrmBussinessPageProps = {
 export async function generateMetadata({
   params,
 }: {
- params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
   const resolvedParams = await params;
   const page = await getSeoData(
     "features-pages",
     resolvedParams.locale,
-    resolvedParams.slug
+    resolvedParams.slug,
   );
 
   if (!page) return;
@@ -78,21 +78,27 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
- 
+
   return (
     <>
-      {/* Critical above-the-fold content - Server Component */}
-      <CrmHero
-        commonData={commonData}
-        hero={pageData?.hero}
-        slug={useParams?.slug}
-        heroImg={heroImg}
-        featureTag={pageData?.featureTag}
-      />
-      <TrustedService reviews={reviews} slug={useParams?.slug} />
-      <SwitchingTool switchingTool={pageData?.switchingTool} />
-      {/* Everything else loads client-side - THIS is the key! */}
-      <ClientOnlyWrapper data={pageData} />
+      <div id="home-page-wrapper-2" className="">
+        <div
+          id="home-page-view-port-screen-fetures"
+          className="relative opacity-0"
+        >
+          <CrmHero
+            commonData={commonData}
+            hero={pageData?.hero}
+            slug={useParams?.slug}
+            heroImg={heroImg}
+            featureTag={pageData?.featureTag}
+          />{" "}
+        </div>
+        <TrustedService reviews={reviews} slug={useParams?.slug} />
+        <SwitchingTool switchingTool={pageData?.switchingTool} />
+        {/* Everything else loads client-side - THIS is the key! */}
+        <ClientOnlyWrapper data={pageData} />{" "}
+      </div>
     </>
   );
 };

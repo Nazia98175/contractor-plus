@@ -41,6 +41,24 @@ const CrmHero: React.FC<TheHeroProps> = ({
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-fetures", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
+
   return (
     <section
       ref={wrapperRef}

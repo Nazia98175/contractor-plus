@@ -148,16 +148,14 @@ const SideBar = ({
                     {item.label}
                   </Link>
                 ) : (
-                  <>
-                    <DropdownItem
-                      key={item.id}
-                      id={item.id}
-                      title={item.label}
-                      items={item.items || []}
-                      isOpen={openDropdown === item.id}
-                      onToggle={() => toggleDropdown(item.id)}
-                    />
-                  </>
+                  <DropdownItem
+                    key={item.id}
+                    id={item.id}
+                    title={item.label}
+                    items={item.items || []}
+                    isOpen={openDropdown === item.id}
+                    onToggle={() => toggleDropdown(item.id)}
+                  />
                 ),
               )}
             </div>

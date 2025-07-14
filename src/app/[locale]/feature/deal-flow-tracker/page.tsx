@@ -64,7 +64,7 @@ const page = () => {
           }}
         />
         <RunWithContractor kindAdorable={runWithContractorData} />
-        <TestingConnect />
+        {/* <TestingConnect /> */}
         <FinallyConnectsField />
         <NeverLookBack data={neverLookBackData} />
       </div>

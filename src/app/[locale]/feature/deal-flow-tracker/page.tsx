@@ -22,6 +22,7 @@ import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import FinallyConnectsField from "@/components/dealflowtracker/FinallyConnectsField";
+import TestingConnect from "@/components/dealflowtracker/TestingConnect";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
@@ -63,7 +64,7 @@ const page = () => {
           }}
         />
         <RunWithContractor kindAdorable={runWithContractorData} />
-        {/* <TimmingEffect /> */}
+        <TestingConnect />
         <FinallyConnectsField />
         <NeverLookBack data={neverLookBackData} />
       </div>

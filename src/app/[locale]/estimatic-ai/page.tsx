@@ -32,19 +32,24 @@ export const metadata = {
 };
 const EstimaticAiPage = () => {
   return (
-    <main className="overflow-hidden">
-      <EstimaticHero />
-      <TrustedService
-        reviews={estimaticReviews}
-        slug="crm"
-        className="pb-6 lg:pt-6 lg:pb-3.5"
-        apiData={false}
-      />
-      <RunWithContractor
-        kindAdorable={estimateSoftwareData}
-        variant="dark"
-        icon={true}
-      />
+    <main id="home-page-wrapper-2" className="overflow-hidden">
+      <div
+        id="home-page-view-port-screen-estimatic-ai"
+        className="relative opacity-0"
+      >
+        <EstimaticHero />
+        <TrustedService
+          reviews={estimaticReviews}
+          slug="crm"
+          className="pb-6 lg:pt-6 lg:pb-3.5"
+          apiData={false}
+        />
+        <RunWithContractor
+          kindAdorable={estimateSoftwareData}
+          variant="dark"
+          icon={true}
+        />
+      </div>
 
       <OneGetsSet />
       <FieldService

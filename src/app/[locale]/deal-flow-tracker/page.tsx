@@ -44,7 +44,7 @@ const DealFlowTracker = () => {
       />
       <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       <div className="overflow-hidden bg-white">
-        <div className="pt-10">
+        <div>
           <GoingFieldSevices
             isImageshow={false}
             switchingTool={{
@@ -63,12 +63,15 @@ const DealFlowTracker = () => {
         <FinallyConnectsField />
         <NeverLookBack data={neverLookBackData} />
       </div>
-      <ThousandsReviews
-        data={dealReviews2}
-        reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
-        variant="secondary"
-        apiData={false}
-      />
+      <div className="relative">
+        <div className="bg-kuroiBlack pointer-events-none absolute -top-0.5 z-20 h-1 w-full"></div>
+        <ThousandsReviews
+          data={dealReviews2}
+          reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+          variant="secondary"
+          apiData={false}
+        />
+      </div>
       <CrmSercive
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}

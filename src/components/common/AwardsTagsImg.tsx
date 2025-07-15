@@ -15,9 +15,9 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
     2: "md:mt-20",
     3: "md:mt-16",
   };
- 
+
   return (
-    <main className={`${className}`}>
+    <main className={` ${className}`}>
       <div className="hidden items-center justify-center gap-5 px-4 pb-20 sm:pb-[105px] md:flex md:items-start md:pb-[162px] lg:gap-14">
         {images?.length > 0
           ? images?.map((award: any, index: number) => {

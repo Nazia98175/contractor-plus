@@ -44,7 +44,7 @@ const DealFlowTracker = () => {
       />
       <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       <div className="overflow-hidden bg-white">
-        <div>
+        <div className="pt-10">
           <GoingFieldSevices
             isImageshow={false}
             switchingTool={{

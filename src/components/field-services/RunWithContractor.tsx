@@ -39,7 +39,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     >
       {/* <Copy animateOnScroll={true}> */}
       <h3
-        className={`section-heading mx-auto hidden px-2 text-center sm:block ${styles.title}`}
+        className={`section-heading mx-auto hidden w-full max-w-[1020px] px-2 text-center sm:block ${styles.title}`}
       >
         {kindAdorable?.title}
       </h3>

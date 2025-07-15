@@ -3077,42 +3077,6 @@ export const realTimeServiceSliderData = {
   ],
 };
 
-export const runWithContractorData = {
-  title:
-    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
-  headerLeft: "Their way",
-  headerRight: "Your way",
-  features: [
-    {
-      competitorsNote: "CRMs built for sales reps, not contractors",
-      ourProductNote:
-        "Pipeline built around jobs, properties, and real revenue",
-    },
-    {
-      competitorsNote: "No clear view of what’s stuck or worth chasing",
-      ourProductNote: "See dollar value at every stage and where deals stall",
-    },
-    {
-      competitorsNote: "Switching tabs to send estimates or schedule jobs",
-      ourProductNote: "One click from lead to estimate or job site visit",
-    },
-    {
-      competitorsNote: "One click from lead to estimate or job site visit",
-      ourProductNote:
-        "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
-    },
-    {
-      competitorsNote: "“Won” means the deal disappears into another system",
-      ourProductNote: "Deals stay connected to the job through to completion",
-    },
-    {
-      competitorsNote: "Re-entering data across CRM, estimates, and jobs",
-      ourProductNote:
-        "Enter the information once, and it syncs to everything instantly",
-    },
-  ],
-};
-
 export const billingVsthWayYouCouldData = {
   title: "How you’ve been billing vs. the way you could be",
   headerLeft: "The old way",
@@ -3421,4 +3385,58 @@ export const dealFlowBlogHeadingData = {
   title: "Deal Flow Tracking  topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
   btnUrl: "/",
+};
+
+export const runWithContractorData = {
+  title:
+    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
+  subTitle: null,
+  comaprisons: [
+    {
+      title: "Their way",
+      comparisonList: [
+        {
+          details: "CRMs built for sales reps, not contractors",
+        },
+        {
+          details: "No clear view of what’s stuck or worth chasing",
+        },
+        {
+          details: "Switching tabs to send estimates or schedule jobs",
+        },
+        {
+          details: "No way to track why deals are lost",
+        },
+        { details: "“Won” means the deal disappears into another system" },
+        {
+          details: "Re-entering data across CRM, estimates, and jobs",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Pipeline built around jobs, properties, and real revenue",
+        },
+        {
+          details: "See dollar value at every stage and where deals stall",
+        },
+        {
+          details: "One click from lead to estimate or job site visit",
+        },
+        {
+          details:
+            "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+        },
+        {
+          details: "Deals stay connected to the job through to completion",
+        },
+        {
+          details:
+            "Enter the information once, and it syncs to everything instantly",
+        },
+      ],
+    },
+  ],
 };

@@ -15,7 +15,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         priority
         sizes="(max-width: 768px) 1440px, min-width:(768px, 1440px)"
         src="/images/webp/red-linear-bg.webp"
-        className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover object-cover sm:block"
+        className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
         alt="Red Lineaar background"
       />
       <Image

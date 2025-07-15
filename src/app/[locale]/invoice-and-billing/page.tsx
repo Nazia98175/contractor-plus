@@ -7,9 +7,11 @@ import {
   dealflowhero,
   dealReviews,
   dealReviews2,
+  platforms,
   realTimeServiceSliderData,
   simpleWayToBill,
 } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
 import {
   billingBlogPost,
   billingVsthWayYouCouldData,
@@ -26,6 +28,11 @@ import RealTimeServiceConnector from "@/components/field-services/RealTimeServic
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 
+export const metadata = {
+  title: "Living invoices that instantly reflect every change",
+  description:
+    "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
+};
 const BillingPage = () => {
   return (
     <main className="relative z-10">
@@ -46,13 +53,17 @@ const BillingPage = () => {
       />
       <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       <div className="overflow-hidden bg-white">
-        <GoingFieldSevices
-          switchingTool={{
-            title:
-              "There’s no simple way to bill a job that doesn’t go exactly to plan",
-            cardsDetail: simpleWayToBill,
-          }}
-        />
+        <div className="pt-8 sm:pt-12">
+          <GoingFieldSevices
+            isImageshow={false}
+            switchingTool={{
+              title:
+                "There’s no simple way to bill a job that doesn’t go exactly to plan",
+              cardsDetail: simpleWayToBill,
+            }}
+          />
+        </div>
+
         <RealTimeServiceConnector
           theme="estimateTheme"
           fieldService={{
@@ -80,10 +91,7 @@ const BillingPage = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      {/* <TrustBarHvca
-        platforms={platforms}
-        className="mx-auto w-full max-w-[889px]"
-      /> */}
+      <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
       <Faq
         faq={dealflowFaq}
         classNameAnswer="pt-1"

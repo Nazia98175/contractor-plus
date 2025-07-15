@@ -263,58 +263,51 @@ const FinallyMakesInvoicing = () => {
               id="timing-text-1"
               className="timing-text text-secondary relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              You check the live crew map, see who's already moving, drag
-              unassigned jobs onto the calendar & assign based on proximity.
+              The crew clocks in from the mobile app. Mileage starts tracking
+              automatically.
             </p>
             <p
               id="timing-text-2"
               className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              Big Chief AI call attendant answers two calls while you’re in a
-              meeting, books a walkthrough, and adds the leads to your CRM.
+              Two team members log time and materials used so far—already tagged
+              to the invoice draft.
             </p>
             <p
               id="timing-text-3"
               className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              A technician updates task status and uploads job photos without
-              needing a check-in.
+              The customer requests two small extras. You create a change order,
+              and send it for eSignature.
             </p>
             <p
               id="timing-text-4"
               className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              One tech’s stuck in traffic. You reassign their next visit to a
-              nearby available team with a single drag and drop.
+              Change order is signed by the customer. Contractor+ updates the
+              invoice, adjusts totals, and logs the time stamped signature.
             </p>
             <p
               id="timing-text-5"
               className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              A tech completes a work order, gets the docs signed via mobile,
-              and takes payment on-site.
+              The crew wraps up the job. With one tap, the aggregated uninvoiced
+              billable items are added to the invoice.
             </p>
             <p
               id="timing-text-6"
               className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              A recurring client submits a service request through the portal—it
-              drops straight into your dispatch board.
+              The client pays online using ACH. Contractor+ confirms payment and
+              auto-applies it to the job record.
             </p>
             <p
               id="timing-text-7"
               className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
             >
-              You get an alert that a tool hasn’t been checked back in. You
-              follow up immediately.
+              Job closed, books updated, and you didn’t have to manually change
+              a thing or re-enter any information.
             </p>{" "}
-            <p
-              id="timing-text-8"
-              className="timing-text text-secondary absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-            >
-              All crews are clocked out, all jobs are closed, and you didn’t
-              once need to chase down an update.
-            </p>
           </div>
           <div className="relative overflow-hidden">
             <Image
@@ -322,7 +315,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs relative"
-              src="/images/webp/timing.webp"
+              src="/images/webp/invoice-timing-1.webp"
               alt="Timing Image"
             />
             <Image
@@ -330,7 +323,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 2.png"
+              src="/images/webp/invoice-timing-2.webp"
               alt="Timing Image"
             />
             <Image

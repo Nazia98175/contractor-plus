@@ -14,7 +14,7 @@ import {
   stepFiveAnimation,
   stepFourAnimation,
   stepOneAnimation,
-  stepSevenAnimation,
+  // stepSevenAnimation,
   stepSixAnimation,
   stepThreeAnimation,
   stepTwoAnimation,
@@ -120,7 +120,7 @@ const TestingConnect = () => {
 
       // STEP SEVEN ANIMATION
       // TIll 5:30PM
-      scrollTimeline.add(stepSevenAnimation());
+      // scrollTimeline.add(stepSevenAnimation());
 
       gsap.set("#timeline-wrapper", {
         opacity: 1,

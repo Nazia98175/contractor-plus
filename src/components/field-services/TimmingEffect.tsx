@@ -109,7 +109,7 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-
+  console.log(timingEff , "timingEff");
   return (
     <div className="timing-text-style relative bg-white">
       <h2
@@ -259,7 +259,7 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
             </div>
           </div>
           <div className="relative">
-            
+           
             <p
               id="timing-text-1"
               className="timing-text relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"

@@ -62,32 +62,47 @@ const FieldServiceCard: React.FC<Props> = ({
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
           <h4 className={`${titleColor}`}>{service?.title}</h4>
 
-          {!service?.lottieJson &&
-          service?.cardImg &&
-          typeof service?.cardImg === "object" &&
-          "url" in service?.cardImg ? (
-            <Image
-              src={
-                service?.cardImg?.url
-                  ? service?.cardImg?.url
-                  : "/placeholder.png"
-              }
-              alt={service?.title || "service image"}
-              width={518}
-              height={302}
-              unoptimized
-              priority
-              sizes="(max-width: 768px) 300px, min(768px, 300px)"
-              className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
-            />
-          ) : service?.lottieJson ? (
-            <LottieAnimation
-              animationData={service?.lottieJson}
-              className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
-            />
+          {apiData ? (
+            <>
+              {!service?.lottieJson &&
+              service?.cardImg &&
+              typeof service?.cardImg === "object" &&
+              "url" in service?.cardImg ? (
+                <Image
+                  src={
+                    service?.cardImg?.url
+                      ? service?.cardImg?.url
+                      : "/placeholder.png"
+                  }
+                  alt={service?.title || "service image"}
+                  width={518}
+                  height={302}
+                  unoptimized
+                  priority
+                  sizes="(max-width: 768px) 300px, min(768px, 300px)"
+                  className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+                />
+              ) : service?.lottieJson ? (
+                <LottieAnimation
+                  animationData={service?.lottieJson}
+                  className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+                />
+              ) : (
+                <Image
+                  src={`${"/placeholder.png"}`}
+                  alt={service?.title || "service image"}
+                  width={518}
+                  height={302}
+                  unoptimized
+                  priority
+                  sizes="(max-width: 768px) 300px, min(768px, 300px)"
+                  className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+                />
+              )}
+            </>
           ) : (
             <Image
-              src={`${"/placeholder.png"}`}
+              src={`${service?.cardImg}`}
               alt={service?.title || "service image"}
               width={518}
               height={302}
@@ -133,37 +148,54 @@ const FieldServiceCard: React.FC<Props> = ({
       </div>
 
       {/* Desktop image */}
-      <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
-        {service?.lottieJson ? (
-          <LottieAnimation animationData={service?.lottieJson} />
-        ) : service?.cardImg &&
-          typeof service?.cardImg === "object" &&
-          "url" in service?.cardImg ? (
+      {apiData ? (
+        <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
+          {service?.lottieJson ? (
+            <LottieAnimation animationData={service?.lottieJson} />
+          ) : service?.cardImg &&
+            typeof service?.cardImg === "object" &&
+            "url" in service?.cardImg ? (
+            <Image
+              src={
+                service?.cardImg?.url
+                  ? service?.cardImg?.url
+                  : "/placeholder.png"
+              }
+              alt={service?.title || "service image"}
+              width={518}
+              height={302}
+              className="h-auto w-full rounded-lg object-cover"
+              unoptimized
+              priority
+              sizes="(max-width: 768px) 300px, min(768px, 300px)"
+            />
+          ) : (
+            <Image
+              src={`${service.cardImg?.url}`}
+              alt={service?.title || "service image"}
+              width={518}
+              height={302}
+              className="h-auto w-full rounded-lg object-cover"
+              unoptimized
+              priority
+              sizes="(max-width: 768px) 300px, min(768px, 300px)"
+            />
+          )}
+        </div>
+      ) : (
+        <>
           <Image
-            src={
-              service?.cardImg?.url ? service?.cardImg?.url : "/placeholder.png"
-            }
+            src={`${service?.cardImg}`}
             alt={service?.title || "service image"}
             width={518}
             height={302}
-            className="h-auto w-full rounded-lg border object-cover"
             unoptimized
             priority
             sizes="(max-width: 768px) 300px, min(768px, 300px)"
+            className="h-auto w-full max-w-[290px] object-cover md:block lg:max-w-[370px] xl:max-w-[518px]"
           />
-        ) : (
-          <Image
-            src={`${service.cardImg?.url}`}
-            alt={service?.title || "service image"}
-            width={518}
-            height={302}
-            className="h-auto w-full rounded-lg object-cover"
-            unoptimized
-            priority
-            sizes="(max-width: 768px) 300px, min(768px, 300px)"
-          />
-        )}
-      </div>
+        </>
+      )}
     </article>
   );
 };

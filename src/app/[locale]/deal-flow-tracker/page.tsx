@@ -115,12 +115,15 @@ const DealFlowTracker = () => {
       />
       <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       <div className="overflow-hidden bg-white">
-        <GoingFieldSevices
-          switchingTool={{
-            title: "There’s no easy way to see what’s going on in the field",
-            cardsDetail: fieldcarddetail,
-          }}
-        />
+        <div>
+          <GoingFieldSevices
+            isImageshow={false}
+            switchingTool={{
+              title: "There’s no easy way to see what’s going on in the field",
+              cardsDetail: fieldcarddetail,
+            }}
+          />
+        </div>
 
         <ContractorWork theme="estimateTheme" fieldService={fieldServiceData} />
         <RunWithContractor kindAdorable={runWithContractorData} />

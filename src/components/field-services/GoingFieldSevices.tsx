@@ -14,9 +14,9 @@ import { TheSwitchingToolProps } from "../crmbussiness/SwitchingTool";
 import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
-  switchingTool,
-}) => {
+const GoingFieldSevices: React.FC<
+  TheSwitchingToolProps & { isImageshow?: boolean }
+> = ({ switchingTool, isImageshow = true }) => {
   const field_service = [
     {
       id: 1,
@@ -52,25 +52,26 @@ const GoingFieldSevices: React.FC<TheSwitchingToolProps> = ({
       ease: "none",
     });
   }, []);
- 
+
   return (
     <section
       id="going-field-service"
       className="relative z-20 pb-[52px] sm:pb-[60px] lg:pb-[95px]"
     >
-      <div id="parallex-img-wrapper">
-        <Image
-          width={1440}
-          height={150}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
-          unoptimized
-          className="h-[150px] w-full object-cover sm:h-[180px]"
-          id="parallex-img"
-          src="/images/webp/field-services.webp"
-          alt="Map Image"
-        />
-      </div>
-
+      {isImageshow && (
+        <div id="parallex-img-wrapper">
+          <Image
+            width={1440}
+            height={150}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
+            unoptimized
+            className="h-[150px] w-full object-cover sm:h-[180px]"
+            id="parallex-img"
+            src="/images/webp/field-services.webp"
+            alt="Map Image"
+          />
+        </div>
+      )}
       {/* <Copy animateOnScroll={true} delay={0.2}> */}
       <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[1068px]">
         <span>{switchingTool?.title}</span>

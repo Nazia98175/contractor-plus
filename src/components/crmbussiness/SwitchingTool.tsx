@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export interface TheSwitchingToolProps {
   switchingTool: any;
   className?: string;
+  isImageshow?: boolean;
 }
 
 const SwitchingTool: React.FC<TheSwitchingToolProps> = ({

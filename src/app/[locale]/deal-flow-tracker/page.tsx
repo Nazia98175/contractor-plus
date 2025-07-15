@@ -87,7 +87,7 @@ const DealFlowTracker = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
+      <TrustBar platforms={platforms} className="md:pb-[148px] xl:pb-20" />
       <Faq
         faq={dealflowFaq}
         classNameAnswer="pt-1"

@@ -83,7 +83,7 @@ const TimeAnimation = () => {
   ];
 
   return (
-    <div className="text-phantom relative flex h-[50px] flex-col items-center text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
+    <div className="timing-text-heading text-phantom relative flex h-[50px] flex-col items-center text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
       {/* MIDDLE TIME */}
       <div
         id="middle-time-wrapper"
@@ -97,7 +97,7 @@ const TimeAnimation = () => {
             {hour.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -105,7 +105,7 @@ const TimeAnimation = () => {
             {hour.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -113,14 +113,14 @@ const TimeAnimation = () => {
             {hour.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
             ))}
           </div>
         </div>
-        <div className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black">
+        <div className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center">
           :
         </div>
         <div className="h-[50px]">
@@ -128,7 +128,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -136,7 +136,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -144,7 +144,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -152,7 +152,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -160,7 +160,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -168,7 +168,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -176,7 +176,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -184,7 +184,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -192,7 +192,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -200,7 +200,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -208,7 +208,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>
@@ -216,7 +216,7 @@ const TimeAnimation = () => {
             {minutes.map((obj, index) => (
               <div
                 key={index}
-                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center text-black"
+                className="flex h-[50px] max-h-[50px] min-h-[50px] items-center justify-center"
               >
                 {obj}
               </div>

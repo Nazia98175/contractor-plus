@@ -19,23 +19,23 @@ export const billingSliderData = {
   solutionCards: [
     {
       id: 57,
-      title: "Visual Pipeline",
+      title: "Live Dispatch",
       description:
-        "Track every deal in a drag-and-drop Kanban board that shows exactly where things stand—and what they’re worth.",
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
       image: null,
     },
     {
       id: 58,
-      title: "Dollar Value Visibility",
+      title: "Estimate-to-Invoice",
       description:
-        "See how much revenue is sitting in each stage of your pipeline. Forecast with real numbers instead of rough guesses.",
+        "Approved estimates become invoices instantly. No double-entry or manual document creation.",
       image: null,
     },
     {
       id: 59,
-      title: "One-Click Conversion",
+      title: "Job Details",
       description:
-        "Turn any opportunity into an estimate or job instantly without retyping or  duplicate entry.",
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
       image: null,
     },
     {

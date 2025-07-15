@@ -9,7 +9,7 @@ const OneGetsSet = () => {
       <CardReveal
         animateOnMount={true}
         distance={150}
-        className="section-heading service-text flex flex-col items-center justify-center gap-3 text-center md:flex-row md:opacity-70 lg:mb-12"
+        className="section-heading gradient-white flex flex-col items-center justify-center gap-3 text-center md:flex-row md:opacity-70 lg:mb-12"
       >
         <span className="hidden md:block">
           <TripleChevronIcon />

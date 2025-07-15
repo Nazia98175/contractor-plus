@@ -3006,72 +3006,76 @@ export const dealReviews = {
   ],
 };
 
-export const realTimeServiceSliderData = [
-  {
-    title: "Live Dispatch",
-    content: [
-      {
-        desc: "See who's available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-      },
-    ],
-  },
-  {
-    title: "Job Details",
-    content: [
-      {
-        desc: "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-      },
-    ],
-  },
-  {
-    title: "Field Updates",
-    content: [
-      {
-        desc: "Crews can upload photos, notes, and task changes straight from the field. Everything lives in one central hub.",
-      },
-    ],
-  },
-  {
-    title: "Crew Efficiency",
-    content: [
-      {
-        desc: "Track time, mileage, and task completion with zero paper. Know who's doing what, where, and when",
-      },
-    ],
-  },
-  {
-    title: "AI Call Attendant",
-    content: [
-      {
-        desc: "Big Chief answers your calls 24/7, captures lead details, and books jobs while you focus on the field.",
-      },
-    ],
-  },
-  {
-    title: "Onsite Payments",
-    content: [
-      {
-        desc: "Collect payment the moment the job's done. Accept cards or ACH in the field and mark the invoice as paid.",
-      },
-    ],
-  },
-  {
-    title: "CRM",
-    content: [
-      {
-        desc: "Track customers, properties, and communication history in one CRM that's built for the way contractors work.",
-      },
-    ],
-  },
-  {
-    title: "Mobile App",
-    content: [
-      {
-        desc: "Run your business from anywhere. The intuitive Contractor+ app puts scheduling, dispatch, and updates in your pocket.",
-      },
-    ],
-  },
-];
+export const realTimeServiceSliderData = {
+  title:
+    "Field service management software that connects the work, the people, and the updates in real time",
+  slug: "field-service",
+  solutionCards: [
+    {
+      id: 57,
+      title: "Visual Pipeline",
+      description:
+        "Track every deal in a drag-and-drop Kanban board that shows exactly where things stand—and what they’re worth.",
+      image: null,
+    },
+    {
+      id: 58,
+      title: "Dollar Value Visibility",
+      description:
+        "See how much revenue is sitting in each stage of your pipeline. Forecast with real numbers instead of rough guesses.",
+      image: null,
+    },
+    {
+      id: 59,
+      title: "One-Click Conversion",
+      description:
+        "Turn any opportunity into an estimate or job instantly without retyping or  duplicate entry.",
+      image: null,
+    },
+    {
+      id: 60,
+      title: "Lost Deal Tracking",
+      description:
+        "Log why a deal was lost so you can spot patterns, refine your sales process, and improve your close rate.",
+      image: null,
+    },
+    {
+      id: 61,
+      title: "Conversion Metrics",
+      description:
+        "See how many deals your team is winning and who’s winning them. Spot top performers and coach the rest.",
+      image: null,
+    },
+    {
+      id: 62,
+      title: "Job-Linked Deals",
+      description:
+        "Every deal is tied to a property or project and not just a contact. Sales always stay connected to the job site.",
+      image: null,
+    },
+    {
+      id: 63,
+      title: "Full Integrated",
+      description:
+        "Deal Flow Tracker is deeply integrated with Contractor+ estimates, CRM, and job workflows.",
+      image: null,
+    },
+    {
+      id: 64,
+      title: "Lead Assignment",
+      description:
+        "Assign leads to specific team members for accountability and visibility across the sales team.",
+      image: null,
+    },
+    {
+      id: 65,
+      title: "Mobile App",
+      description:
+        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
+      image: null,
+    },
+  ],
+};
 
 export const runWithContractorData = {
   title:

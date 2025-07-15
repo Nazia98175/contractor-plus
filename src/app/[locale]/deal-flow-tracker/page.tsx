@@ -28,77 +28,6 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 import TrustBar from "@/components/common/TrustBar";
 import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 const DealFlowTracker = () => {
-  const fieldServiceData = {
-    title:
-      "Field service management software that connects the work, the people, and the updates in real time",
-    slug: "field-service",
-    solutionCards: [
-      {
-        id: 57,
-        title: "Visual Pipeline",
-        description:
-          "Track every deal in a drag-and-drop Kanban board that shows exactly where things stand—and what they’re worth.",
-        image: null,
-      },
-      {
-        id: 58,
-        title: "Dollar Value Visibility",
-        description:
-          "See how much revenue is sitting in each stage of your pipeline. Forecast with real numbers instead of rough guesses.",
-        image: null,
-      },
-      {
-        id: 59,
-        title: "One-Click Conversion",
-        description:
-          "Turn any opportunity into an estimate or job instantly without retyping or  duplicate entry.",
-        image: null,
-      },
-      {
-        id: 60,
-        title: "Field Updates",
-        description:
-          "Crews can upload photos, notes, and task changes straight from the field. Everything lives in one central hub.",
-        image: null,
-      },
-      {
-        id: 61,
-        title: "Crew Efficiency",
-        description:
-          "Track time, mileage, and task completion with zero paper. Know who’s doing what, where, and when.",
-        image: null,
-      },
-      {
-        id: 62,
-        title: "AI Call Attendant",
-        description:
-          "Big Chief answers your calls 24/7, captures lead details, and books jobs while you focus on the field.",
-        image: null,
-      },
-      {
-        id: 63,
-        title: "Onsite Payments",
-        description:
-          "Collect payment the moment the job’s done. Accept cards or ACH in the field and mark the invoice as paid.",
-        image: null,
-      },
-      {
-        id: 64,
-        title: "CRM",
-        description:
-          "Track customers, properties, and communication history in one CRM that’s built for the way contractors work.",
-        image: null,
-      },
-      {
-        id: 65,
-        title: "Mobile App",
-        description:
-          "Run your business from anywhere. The intuitive Contractor+ app puts scheduling, dispatch, and updates in your pocket.",
-        image: null,
-      },
-    ],
-  };
-
   return (
     <div>
       <CrmHero
@@ -125,7 +54,10 @@ const DealFlowTracker = () => {
           />
         </div>
 
-        <ContractorWork theme="estimateTheme" fieldService={fieldServiceData} />
+        <ContractorWork
+          theme="estimateTheme"
+          fieldService={realTimeServiceSliderData}
+        />
         <RunWithContractor kindAdorable={runWithContractorData} />
         {/* <TestingConnect /> */}
         <FinallyConnectsField />

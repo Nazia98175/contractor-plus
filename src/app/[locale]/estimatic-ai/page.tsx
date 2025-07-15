@@ -5,13 +5,14 @@ import {
   dealReviews2,
   estimateFaq,
   estimateFormData,
-  estimateSoftwareData,
   estimaticBlogHeadingData,
   estimaticCardData,
   estimaticControlData,
   estimaticReviews,
   platforms,
 } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
+import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -23,8 +24,6 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
-import TrustBarHvca from "@/components/common/TrustBar";
-import TrustBar from "@/components/common/TrustBar";
 
 export const metadata = {
   title: " Contractor Plus - The first AI estimator worth trusting",

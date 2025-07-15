@@ -92,8 +92,18 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           </video>
         </>
       )}
-      <div className="absolute bottom-[-5%] z-10 h-[10%] w-[102%] bg-[rgba(13,14,18)] blur-[8px]"></div>
-      <div className="3xl:flex absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] bg-[rgba(13,14,18)] blur-[11px]"></div>
+      {/* <div className="hero-blur absolute bottom-[-5%] z-10 h-[10%] w-[102%] bg-[rgba(13,14,18)] blur-[8px]"></div> */}
+      {/* <div className="3xl:flex hero-blur-2 absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] bg-[rgba(13,14,18)] blur-[11px]"></div> */}
+      <img
+        className="absolute bottom-[-4%] z-10 h-[30%] w-[102%]"
+        src="/images/png/hero-blur-2.png"
+        alt=""
+      />
+      <img
+        className="3xl:flex absolute top-[-4%] right-[-107px] hidden h-[104%] w-[32%]"
+        src="/images/png/blur.png"
+        alt=""
+      />
     </div>
   );
 };

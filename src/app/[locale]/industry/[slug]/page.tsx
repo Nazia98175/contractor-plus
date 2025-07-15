@@ -6,9 +6,8 @@ import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/AwardBadge";
 import EraOfSoftware from "@/components/industry/EraOfSoftware";
-import SecondaryReview from "@/components/industry/SecondaryReview";
 import IndustryHero from "@/components/industry/IndustryHero";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
+import SecondaryReview from "@/components/industry/SecondaryReview";
 import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContractor";
 import WantingMore from "@/components/industry/WantingMore";
 
@@ -20,20 +19,24 @@ import {
   FasterIcon5,
   FasterIcon6,
 } from "@/components/common/Icons";
+import TrustBar from "@/components/common/TrustBar";
+import MovingSoftware from "@/components/industry/MovingSoftware";
+import { getSeoData } from "@/services/common/seoMeta";
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
+import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import MovingSoftware from "@/components/industry/MovingSoftware";
-import { Metadata } from "next";
-import { getSeoData } from "@/services/common/seoMeta";
-import { generateSeoMetadata } from "@/utils/getSeoMeta";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }>; }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
   const resolvedParams = await params;
   const page = await getSeoData(
     "industries-pages",
     resolvedParams.locale,
-    resolvedParams.slug
+    resolvedParams.slug,
   );
 
   if (!page) return;
@@ -62,10 +65,10 @@ const page = async ({ params }: PageProps) => {
     faqs,
     blogsList,
     thousandReviews,
-    commonData ,
-    blogsByCategory
+    commonData,
+    blogsByCategory,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
-  
+
   const customIconsMap: Record<number, React.ReactNode> = {
     0: <FasterIcon1 />,
     1: <FasterIcon2 />,
@@ -141,7 +144,7 @@ const page = async ({ params }: PageProps) => {
             variantBtn="dark"
           />
         </div>
-        <TrustBarHvca
+        <TrustBar
           platforms={platforms}
           trustBarImages={commonData?.trustedCompaniesWhiteBG}
           className="pb-[148px] xl:pb-20"

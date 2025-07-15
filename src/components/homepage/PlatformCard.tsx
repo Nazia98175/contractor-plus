@@ -1,6 +1,7 @@
 import React from "react";
 import { StartIcon } from "../common/Icons";
 import Image from "next/image";
+import CardReveal from "../common/CardReveal";
 
 interface Platform {
   logo: string;
@@ -17,11 +18,11 @@ interface PlatformCardProps {
 
 const PlatformCard: React.FC<PlatformCardProps> = ({
   platform,
-  className = "h-full max-h-[96px]",
+  className = "h-full max-h-[38px]",
   apiData = false, // Default to false if not provided
 }) => {
   return (
-    <div className="plateform-cards relative z-20 flex flex-col-reverse items-center justify-between gap-2.5 sm:w-fit sm:flex-col lg:w-[47%]">
+    <CardReveal className="plateform-cards relative z-20 flex flex-col items-center justify-between gap-2.5 sm:w-fit lg:w-[47%]">
       <Image
         width={155}
         height={94}
@@ -30,7 +31,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
         alt={`${platform.name} rating`}
         className={`${className} max-w-[140px] object-contain sm:max-w-[155px]`}
       />
-      {!apiData && className === "h-10 md:h-8" && (
+      {!apiData && (
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, i) => (
             <span key={i} className="max-w-[22px] min-w-4 sm:min-w-[22px]">
@@ -39,7 +40,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
           ))}
         </div>
       )}
-    </div>
+    </CardReveal>
   );
 };
 

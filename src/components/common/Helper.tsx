@@ -87,7 +87,7 @@ export const awards = [
   },
 ];
 
-export const platforms: Platform[] = [
+export const platforms = [
   {
     name: "Capterra",
     logo: "/images/webp/capterraRating.webp",
@@ -3006,105 +3006,73 @@ export const dealReviews = {
   ],
 };
 
-export const realTimeServiceSliderData = [
-  {
-    title: "Live Dispatch",
-    content: [
-      {
-        desc: "See who's available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-      },
-    ],
-  },
-  {
-    title: "Job Details",
-    content: [
-      {
-        desc: "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-      },
-    ],
-  },
-  {
-    title: "Field Updates",
-    content: [
-      {
-        desc: "Crews can upload photos, notes, and task changes straight from the field. Everything lives in one central hub.",
-      },
-    ],
-  },
-  {
-    title: "Crew Efficiency",
-    content: [
-      {
-        desc: "Track time, mileage, and task completion with zero paper. Know who's doing what, where, and when",
-      },
-    ],
-  },
-  {
-    title: "AI Call Attendant",
-    content: [
-      {
-        desc: "Big Chief answers your calls 24/7, captures lead details, and books jobs while you focus on the field.",
-      },
-    ],
-  },
-  {
-    title: "Onsite Payments",
-    content: [
-      {
-        desc: "Collect payment the moment the job's done. Accept cards or ACH in the field and mark the invoice as paid.",
-      },
-    ],
-  },
-  {
-    title: "CRM",
-    content: [
-      {
-        desc: "Track customers, properties, and communication history in one CRM that's built for the way contractors work.",
-      },
-    ],
-  },
-  {
-    title: "Mobile App",
-    content: [
-      {
-        desc: "Run your business from anywhere. The intuitive Contractor+ app puts scheduling, dispatch, and updates in your pocket.",
-      },
-    ],
-  },
-];
-
-export const runWithContractorData = {
+export const realTimeServiceSliderData = {
   title:
-    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
-  headerLeft: "Their way",
-  headerRight: "Your way",
-  features: [
+    "Field service management software that connects the work, the people, and the updates in real time",
+  slug: "field-service",
+  solutionCards: [
     {
-      competitorsNote: "CRMs built for sales reps, not contractors",
-      ourProductNote:
-        "Pipeline built around jobs, properties, and real revenue",
+      id: 57,
+      title: "Visual Pipeline",
+      description:
+        "Track every deal in a drag-and-drop Kanban board that shows exactly where things stand—and what they’re worth.",
+      image: null,
     },
     {
-      competitorsNote: "No clear view of what’s stuck or worth chasing",
-      ourProductNote: "See dollar value at every stage and where deals stall",
+      id: 58,
+      title: "Dollar Value Visibility",
+      description:
+        "See how much revenue is sitting in each stage of your pipeline. Forecast with real numbers instead of rough guesses.",
+      image: null,
     },
     {
-      competitorsNote: "Switching tabs to send estimates or schedule jobs",
-      ourProductNote: "One click from lead to estimate or job site visit",
+      id: 59,
+      title: "One-Click Conversion",
+      description:
+        "Turn any opportunity into an estimate or job instantly without retyping or  duplicate entry.",
+      image: null,
     },
     {
-      competitorsNote: "One click from lead to estimate or job site visit",
-      ourProductNote:
-        "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+      id: 60,
+      title: "Lost Deal Tracking",
+      description:
+        "Log why a deal was lost so you can spot patterns, refine your sales process, and improve your close rate.",
+      image: null,
     },
     {
-      competitorsNote: "“Won” means the deal disappears into another system",
-      ourProductNote: "Deals stay connected to the job through to completion",
+      id: 61,
+      title: "Conversion Metrics",
+      description:
+        "See how many deals your team is winning and who’s winning them. Spot top performers and coach the rest.",
+      image: null,
     },
     {
-      competitorsNote: "Re-entering data across CRM, estimates, and jobs",
-      ourProductNote:
-        "Enter the information once, and it syncs to everything instantly",
+      id: 62,
+      title: "Job-Linked Deals",
+      description:
+        "Every deal is tied to a property or project and not just a contact. Sales always stay connected to the job site.",
+      image: null,
+    },
+    {
+      id: 63,
+      title: "Full Integrated",
+      description:
+        "Deal Flow Tracker is deeply integrated with Contractor+ estimates, CRM, and job workflows.",
+      image: null,
+    },
+    {
+      id: 64,
+      title: "Lead Assignment",
+      description:
+        "Assign leads to specific team members for accountability and visibility across the sales team.",
+      image: null,
+    },
+    {
+      id: 65,
+      title: "Mobile App",
+      description:
+        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
+      image: null,
     },
   ],
 };
@@ -3156,54 +3124,6 @@ export const billingVsthWayYouCouldData = {
     },
   ],
 };
-export const estimateSoftwareData = {
-  title: "Not all AI estimate software makes your life easier",
-  subTitle: "Some AI estimators get “close”. Estimatic gets it right.",
-  headerLeft: "Other Options",
-  headerRight: "Your way",
-  features: [
-    {
-      competitorsNote:
-        "Uses AI that’s not much different than the free version of ChatGPT",
-      ourProductNote: "Built on advanced AI models fine-tuned for estimating	",
-    },
-    {
-      competitorsNote: "Standalone tool with inadequate  add-on features",
-      ourProductNote:
-        "Estimates auto sync to contacts, jobs, and scheduling tools in Contractor+",
-    },
-    {
-      competitorsNote: "Generic line items that don’t match how you bid",
-      ourProductNote:
-        "Labor, materials, assemblies, permits, and info-only lines built to your exact format",
-    },
-    {
-      competitorsNote: "Limited supply integrations",
-      ourProductNote:
-        "Live pricing from Home Depot, Lowe’s, Menards, Ace, Build.com, ABC Supply",
-    },
-    {
-      competitorsNote: "AI guesses numbers based on who-knows-what",
-      ourProductNote:
-        "Estimates are tied to your real labor rates, cost book, and local material prices",
-    },
-    {
-      competitorsNote: "Can only read text input",
-      ourProductNote:
-        "Can read photos, blueprints, and drawings for more context about the job",
-    },
-    {
-      competitorsNote: "Limited customizability",
-      ourProductNote: "Built-in options for labor and material markup",
-    },
-    {
-      competitorsNote:
-        "$120/mo. for 5 people to use a standalone estimating & invoice tool",
-      ourProductNote:
-        "$95/mo. for 5 people to use the entire Contractor+ operating system. Only pay for what you use",
-    },
-  ],
-};
 
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
@@ -3220,7 +3140,7 @@ export const neverLookBackData = {
       value: null,
       lottieJson: up_arrow_black,
       cardImage: {
-        url: null, // Assuming you're storing local assets
+        url: null,
       },
     },
     {
@@ -3228,8 +3148,9 @@ export const neverLookBackData = {
       title: null,
       subTitle: "Contractors see higher sales productivity",
       start: 0,
-      end: 10,
-      suffix: "",
+      end: 9,
+      suffix: null,
+      denominator: 10, // This enables "9 in 10" display
       prefix: null,
       value: null,
       lottieJson: sale_productivity,
@@ -3253,6 +3174,7 @@ export const neverLookBackData = {
     },
   ],
 };
+
 export const billingNeverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
@@ -3465,4 +3387,58 @@ export const dealFlowBlogHeadingData = {
   title: "Deal Flow Tracking  topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
   btnUrl: "/",
+};
+
+export const runWithContractorData = {
+  title:
+    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
+  subTitle: null,
+  comaprisons: [
+    {
+      title: "Their way",
+      comparisonList: [
+        {
+          details: "CRMs built for sales reps, not contractors",
+        },
+        {
+          details: "No clear view of what’s stuck or worth chasing",
+        },
+        {
+          details: "Switching tabs to send estimates or schedule jobs",
+        },
+        {
+          details: "No way to track why deals are lost",
+        },
+        { details: "“Won” means the deal disappears into another system" },
+        {
+          details: "Re-entering data across CRM, estimates, and jobs",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Pipeline built around jobs, properties, and real revenue",
+        },
+        {
+          details: "See dollar value at every stage and where deals stall",
+        },
+        {
+          details: "One click from lead to estimate or job site visit",
+        },
+        {
+          details:
+            "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+        },
+        {
+          details: "Deals stay connected to the job through to completion",
+        },
+        {
+          details:
+            "Enter the information once, and it syncs to everything instantly",
+        },
+      ],
+    },
+  ],
 };

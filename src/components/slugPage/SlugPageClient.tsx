@@ -162,7 +162,7 @@ const SlugPageClientOptimized = ({
         </div>
         {platforms && (
           <LazyWrapper
-            importFn={() => import("../industry/TrustBarHvca")}
+            importFn={() => import("../common/TrustBar")}
             props={{
               platforms,
               className: "mx-auto w-full max-w-[889px]",

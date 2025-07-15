@@ -12,6 +12,76 @@ export const billingBlogPost = {
   btnUrl: "/",
 };
 
+export const billingSliderData = {
+  title:
+    "Turn the full job history into one clean invoice, without manual re-entry.",
+  slug: "field-service",
+  solutionCards: [
+    {
+      id: 57,
+      title: "Visual Pipeline",
+      description:
+        "Track every deal in a drag-and-drop Kanban board that shows exactly where things stand—and what they’re worth.",
+      image: null,
+    },
+    {
+      id: 58,
+      title: "Dollar Value Visibility",
+      description:
+        "See how much revenue is sitting in each stage of your pipeline. Forecast with real numbers instead of rough guesses.",
+      image: null,
+    },
+    {
+      id: 59,
+      title: "One-Click Conversion",
+      description:
+        "Turn any opportunity into an estimate or job instantly without retyping or  duplicate entry.",
+      image: null,
+    },
+    {
+      id: 60,
+      title: "Lost Deal Tracking",
+      description:
+        "Log why a deal was lost so you can spot patterns, refine your sales process, and improve your close rate.",
+      image: null,
+    },
+    {
+      id: 61,
+      title: "Conversion Metrics",
+      description:
+        "See how many deals your team is winning and who’s winning them. Spot top performers and coach the rest.",
+      image: null,
+    },
+    {
+      id: 62,
+      title: "Job-Linked Deals",
+      description:
+        "Every deal is tied to a property or project and not just a contact. Sales always stay connected to the job site.",
+      image: null,
+    },
+    {
+      id: 63,
+      title: "Full Integrated",
+      description:
+        "Deal Flow Tracker is deeply integrated with Contractor+ estimates, CRM, and job workflows.",
+      image: null,
+    },
+    {
+      id: 64,
+      title: "Lead Assignment",
+      description:
+        "Assign leads to specific team members for accountability and visibility across the sales team.",
+      image: null,
+    },
+    {
+      id: 65,
+      title: "Mobile App",
+      description:
+        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
+      image: null,
+    },
+  ],
+};
 export const invoiceFaqData = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",
@@ -45,6 +115,137 @@ export const invoiceFaqData = {
       question: "Do you support recurring billing for repeat clients?",
       answer:
         "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+  ],
+};
+
+export const estimateSoftwareData = {
+  title: "Not all AI estimate software makes your life easier",
+  subTitle: "Some AI estimators get “close”. Estimatic gets it right.",
+  comaprisons: [
+    {
+      title: "Other Options",
+      comparisonList: [
+        {
+          details:
+            "Uses AI that’s not much different than the free version of ChatGPT",
+        },
+        {
+          details: "Standalone tool with inadequate  add-on features",
+        },
+        {
+          details: "Generic line items that don’t match how you bid",
+        },
+        {
+          details: "Limited supply integrations",
+        },
+        { details: "AI guesses numbers based on who-knows-what" },
+        {
+          details: "Can only read text input",
+        },
+        { details: "Limited customizability" },
+        {
+          details:
+            "$120/mo. for 5 people to use a standalone estimating & invoice tool",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Built on advanced AI models fine-tuned for estimating	",
+        },
+        {
+          details:
+            "Estimates auto sync to contacts, jobs, and scheduling tools in Contractor+",
+        },
+        {
+          details:
+            "Labor, materials, assemblies, permits, and info-only lines built to your exact format",
+        },
+        {
+          details:
+            "Live pricing from Home Depot, Lowe’s, Menards, Ace, Build.com, ABC Supply",
+        },
+        {
+          details:
+            "Estimates are tied to your real labor rates, cost book, and local material prices",
+        },
+        {
+          details:
+            "Can read photos, blueprints, and drawings for more context about the job",
+        },
+        {
+          details: "Built-in options for labor and material markup",
+        },
+        {
+          details:
+            "$95/mo. for 5 people to use the entire Contractor+ operating system. Only pay for what you use",
+        },
+      ],
+    },
+  ],
+};
+export const billingVsthWayYouCouldData = {
+  title: "How you’ve been billing vs. the way you could be",
+  subTitle:
+    "Contractor+ simplifies billing at every step—no more chaos, no more missed charges.",
+  comaprisons: [
+    {
+      title: "The old way",
+      comparisonList: [
+        { details: "Creating invoices from scratch after every job" },
+        { details: "Re-entering hours, materials, and mileage manually" },
+        {
+          details:
+            "Forgetting to bill for small add-ons like extra material or mileage",
+        },
+        { details: "Chasing approvals for changes after the job is done" },
+        {
+          details: "Using one system to track time and another to bill",
+        },
+        { details: "Rebuilding new invoices when the scope changes" },
+        {
+          details:
+            "Separate apps for recurring billing, payments, and invoicing",
+        },
+        { details: "Clients asking for invoices or payment links" },
+      ],
+    },
+    {
+      title: "The Contractor+ way",
+      comparisonList: [
+        {
+          details:
+            "Convert estimates, jobs, or work orders into invoices in one click",
+        },
+        {
+          details: "Everything auto-populates from time logs and job data",
+        },
+        {
+          details:
+            "Contractor+ captures all uninvoiced items so you can add them to the invoice",
+        },
+        {
+          details: "Clients e-sign change orders before they hit the invoice",
+        },
+        {
+          details:
+            "Time, tasks, and charges all feed into one invoice automatically",
+        },
+        {
+          details:
+            "Recurring jobs, card-on-file payments, and invoicing in one platform",
+        },
+        {
+          details: "Invoices update automatically with every change order",
+        },
+        {
+          details:
+            "Clients access and pay invoices through a self-serve portal",
+        },
+      ],
     },
   ],
 };

@@ -1,7 +1,7 @@
 "use client";
 import { platforms } from "@/components/common/Helper";
 import CommonFormField from "@/components/common/CommonFormField";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
+import TrustBar from "@/components/common/TrustBar";
 import AnimationHeader from "@/components/why-contractor/AnimationHeader";
 import BloodEnough from "@/components/why-contractor/BloodEnough";
 import Dashboard from "@/components/why-contractor/Dashboard";
@@ -146,7 +146,7 @@ const WhyContractorMain = () => {
               variant={"tertiary"}
             />
           </div>
-          <TrustBarHvca showTrustedSection={false} platforms={platforms} />
+          <TrustBar showTrustedSection={false} platforms={platforms} />
         </div>
       </div>
     </>

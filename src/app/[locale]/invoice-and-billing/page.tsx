@@ -1,31 +1,38 @@
+import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
 import {
   billingformData,
   billingNeverLookBackData,
-  billingVsthWayYouCouldData,
   blogList,
   dealflowFaq,
   dealflowhero,
   dealReviews,
   dealReviews2,
   platforms,
-  realTimeServiceSliderData,
   simpleWayToBill,
 } from "@/components/common/Helper";
-import { billingBlogPost } from "@/components/common/Utils";
+import TrustBar from "@/components/common/TrustBar";
+import {
+  billingBlogPost,
+  billingSliderData,
+  billingVsthWayYouCouldData,
+} from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
-import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
-import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
+export const metadata = {
+  title: "Living invoices that instantly reflect every change",
+  description:
+    "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
+};
 const BillingPage = () => {
   return (
     <main className="relative z-10">
@@ -46,24 +53,24 @@ const BillingPage = () => {
       />
       <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       <div className="overflow-hidden bg-white">
-        <GoingFieldSevices
-          switchingTool={{
-            title:
-              "There’s no simple way to bill a job that doesn’t go exactly to plan",
-            cardsDetail: simpleWayToBill,
-          }}
-        />
-        <RealTimeServiceConnector
+        <div className="pt-8 sm:pt-12">
+          <GoingFieldSevices
+            isImageshow={false}
+            switchingTool={{
+              title:
+                "There’s no simple way to bill a job that doesn’t go exactly to plan",
+              cardsDetail: simpleWayToBill,
+            }}
+          />
+        </div>
+
+        {/* <InvoiceSlider /> */}
+        <ContractorWork
           theme="estimateTheme"
-          fieldService={{
-            title:
-              "The only pipeline built to follow the flow of actual contracting work",
-            cardsDetail: realTimeServiceSliderData,
-          }}
+          fieldService={billingSliderData}
         />
         <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
-        <TimmingEffect />
-
+        <FinallyMakesInvoicing />
         <NeverLookBack data={billingNeverLookBackData} />
       </div>
       <ThousandsReviews
@@ -81,10 +88,7 @@ const BillingPage = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca
-        platforms={platforms}
-        className="mx-auto w-full max-w-[889px]"
-      />
+      <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
       <Faq
         faq={dealflowFaq}
         classNameAnswer="pt-1"

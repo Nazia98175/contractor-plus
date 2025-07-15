@@ -2,6 +2,7 @@ import { Review } from "@/types";
 import Copy from "./Copy";
 import { PlayIcon, StartIcon } from "./Icons";
 import ImageProxy from "./ImageProxy";
+import Image from "next/image";
 
 interface ReviewCardProps {
   review: Review;
@@ -44,7 +45,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {review?.profileImg &&
             typeof review.profileImg === "object" &&
             "url" in review.profileImg ? (
-              <ImageProxy
+              <Image
                 src={review.profileImg?.url}
                 alt="avatar"
                 width={42}

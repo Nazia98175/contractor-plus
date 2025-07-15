@@ -1,8 +1,8 @@
 "use client";
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
 import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";
@@ -56,10 +56,7 @@ const PricingPage = () => {
               ncc={"No credit card required"}
             />
           </div>
-          <TrustBarHvca
-            platforms={blackPlatforms}
-            className="pb-[91px] sm:pb-10"
-          />
+          <TrustBar platforms={blackPlatforms} className="pb-[91px] sm:pb-10" />
         </div>
       </div>
     </main>

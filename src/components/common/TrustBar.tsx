@@ -12,24 +12,23 @@ interface TrustBarProps {
   trustBarImages?: any;
 }
 
-const TrustBarHvca: React.FC<TrustBarProps> = ({
+const TrustBar: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
   trustBarImages,
 }) => {
   return (
-    <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
+    <section
+      className={`relative z-30 mx-auto w-full max-w-[889px] ${className}`}
+    >
       {showTrustedSection && (
         <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
           Trusted by over <strong>50,000</strong> build and service contractors
         </h2>
       )}
-      <CardReveal
-        distance={50}
-        className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
-      >
-        {trustBarImages !== null || trustBarImages?.length > 0
+      <div className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap">
+        {trustBarImages && trustBarImages.length > 0
           ? trustBarImages?.map((item: any, index: number) => (
               <div key={index} className="flex items-center justify-center">
                 <PlatformCard platform={item} className="h-28 md:h-36" />
@@ -40,7 +39,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
                 <PlatformCard platform={platform} />
               </div>
             ))}
-      </CardReveal>
+      </div>
 
       <div className="relative z-50 px-4 lg:hidden">
         <SliderLayout
@@ -55,7 +54,7 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
           }}
           autoplay={true}
         >
-          {trustBarImages !== null || trustBarImages?.length > 0
+          {trustBarImages && trustBarImages.length > 0
             ? trustBarImages?.map((item: any, index: number) => (
                 <div key={index} className="flex items-center justify-center">
                   <PlatformCard platform={item} className="h-28 md:h-36" />
@@ -72,4 +71,4 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
   );
 };
 
-export default TrustBarHvca;
+export default TrustBar;

@@ -22,7 +22,7 @@ const HerosectionBackground = () => {
         alt="hero-red-line"
       />
       <div className="bg-kuroiBlack pointer-events-none absolute -bottom-[10%] -left-[0px] z-0 block h-[16%] w-[139%] blur-[8px]"></div>
-      <div className="bg-custom-1 absolute -bottom-0 left-[0%] block h-full w-[110%] sm:hidden"></div>
+      {/* <div className="bg-custom-1 absolute -bottom-0 left-[0%] block h-full w-[110%] sm:hidden"></div> */}
     </>
   );
 };

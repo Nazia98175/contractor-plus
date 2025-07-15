@@ -23,7 +23,12 @@ import { SplitText } from "gsap/SplitText";
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
-const TimmingEffect = () => {
+interface TimmingEffectProps {
+  timingEff?: any;
+  commonData?: any;
+}
+
+const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) => {
   const timelineWrapperRef = useRef(null);
 
   useGSAP(() => {
@@ -117,7 +122,7 @@ const TimmingEffect = () => {
         }}
         className="section-heading relative z-[4] hidden px-2 text-center sm:block"
       >
-        A system that finally connects field and office
+        {timingEff?.title}
       </h2>
       <h2
         style={{
@@ -129,11 +134,11 @@ const TimmingEffect = () => {
         }}
         className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
       >
-        A system that finally connects field and office
+        {timingEff?.title}
       </h2>
 
       <p className="text-darkness xs:text-sm relative z-[4] my-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
-        Here's what it feels like when everything just works
+        {timingEff?.subTitle}
       </p>
       <div
         ref={timelineWrapperRef}
@@ -254,6 +259,7 @@ const TimmingEffect = () => {
             </div>
           </div>
           <div className="relative">
+            
             <p
               id="timing-text-1"
               className="timing-text relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
@@ -382,10 +388,10 @@ const TimmingEffect = () => {
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
         <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
-          Get started FREE
+          {commonData?.getStartedFreeBtn}
           <ArrowIcon fill="white" />
         </Button>
-        <CardRequiredButton text="No credit card required" />
+        <CardRequiredButton text={commonData?.nccTxt} />
       </div>
     </div>
   );

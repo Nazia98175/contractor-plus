@@ -13,7 +13,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         width={1440}
         height={200}
         priority
-        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
+        sizes="(max-width: 768px) 1440px, min-width:(768px, 1440px)"
         src="/images/webp/red-linear-bg.webp"
         className="absolute -top-0 left-0 -z-[3] hidden h-[124%] w-full bg-cover sm:block"
         alt="Red Lineaar background"
@@ -35,10 +35,10 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         {data?.title}
       </h3>
       <p className="paragraph-text gradient-text-2 text-center leading-[124%] sm:hidden">
-        {data?.sub_title}
+        {data?.subTitle}
       </p>
       <p className="paragraph-text text-darkness hidden text-center leading-[124%] font-semibold sm:block">
-        {data?.sub_title}
+        {data?.subTitle}
       </p>
       <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 pb-10 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
         {data?.cards?.map((item: any, index: any) => (

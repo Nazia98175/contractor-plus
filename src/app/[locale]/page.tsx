@@ -2,12 +2,13 @@ import { platforms } from "@/components/common/Helper";
 import Hero from "@/components/homepage/Hero";
 import HomepageClient from "@/components/homepage/HomepageClient";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
-import TrustBar from "@/components/homepage/TrustBar";
+import TrustBarHvca from "@/components/common/TrustBar";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import { console } from "inspector";
 import { Metadata } from "next";
+import TrustBar from "@/components/common/TrustBar";
 
 export async function generateMetadata({
   params,
@@ -40,7 +41,6 @@ export default async function Home({
     commonData,
   } = await getHomepageData(useParams?.locale);
 
-  console.log("Home page data fetched:")
   return (
     <div id="home-page-wrapper" className="">
       <div id="home-page-view-port-screen" className="relative opacity-0">

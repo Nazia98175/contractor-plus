@@ -20,7 +20,7 @@ export const getHomepageData = async (
 ): Promise<HomepageDataResponse> => {
   const populateDefault = "&populate=*";
   const populatePlatforms = "&populate[commonProblems][populate][cardsDetail][populate]=*";
-  const populateReviews = "&populate[reviews][populate]=reviews";
+  const populateReviews = "&populate[reviews][populate][reviews][populate]=profileImg";
   const populateProblemSolutions = "&populate[problemSolutionSection][populate]=solutionsList";
   const featurHighlights = "&populate[featureHighlightSection][populate]=features";
   const resultStats = "&populate[resultsStatsSection][populate]=cards";

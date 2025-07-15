@@ -5,31 +5,33 @@ import {
   dealflowhero,
   dealReviews,
   dealReviews2,
-  estimaticBlogHeadingData,
   fieldcarddetail,
   formData,
   neverLookBackData,
   platforms,
   realTimeServiceSliderData,
-  reviews,
   runWithContractorData,
 } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 import FinallyConnectsField from "@/components/dealflowtracker/FinallyConnectsField";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
-import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
-
-import React from "react";
-const page = () => {
+export const metadata = {
+  title:
+    " The one board that shows every deal, dollar value, and what to do next",
+  description:
+    "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
+};
+const DealFlowTracker = () => {
   return (
     <div>
       <CrmHero
@@ -44,33 +46,37 @@ const page = () => {
         slug="crm"
         commonData={dealflowhero}
       />
-      <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      <div className="pb-6">
+        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      </div>
       <div className="overflow-hidden bg-white">
-        <GoingFieldSevices
-          switchingTool={{
-            title: "There’s no easy way to see what’s going on in the field",
-            cardsDetail: fieldcarddetail,
-          }}
-        />
-        <RealTimeServiceConnector
+        <div className="pt-8 sm:pt-12">
+          <GoingFieldSevices
+            isImageshow={false}
+            switchingTool={{
+              title: "There’s no easy way to see what’s going on in the field",
+              cardsDetail: fieldcarddetail,
+            }}
+          />
+        </div>
+        <ContractorWork
           theme="estimateTheme"
-          fieldService={{
-            title:
-              "The only pipeline built to follow the flow of actual contracting work",
-            cardsDetail: realTimeServiceSliderData, // ← imported from helper
-          }}
+          fieldService={realTimeServiceSliderData}
         />
         <RunWithContractor kindAdorable={runWithContractorData} />
         {/* <TestingConnect /> */}
         <FinallyConnectsField />
         <NeverLookBack data={neverLookBackData} />
       </div>
-      <ThousandsReviews
-        data={dealReviews2}
-        reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
-        variant="secondary"
-        apiData={false}
-      />
+      <div className="relative">
+        <div className="bg-kuroiBlack pointer-events-none absolute -top-1 z-20 h-2 w-full"></div>
+        <ThousandsReviews
+          data={dealReviews2}
+          reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+          variant="secondary"
+          apiData={false}
+        />
+      </div>
       <CrmSercive
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
@@ -80,10 +86,7 @@ const page = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca
-        platforms={platforms}
-        className="mx-auto w-full max-w-[889px]"
-      />
+      <TrustBar platforms={platforms} className="md:pb-[148px] xl:pb-20" />
       <Faq
         faq={dealflowFaq}
         classNameAnswer="pt-1"
@@ -97,7 +100,6 @@ const page = () => {
         }}
         issection={false}
       />
-
       <BlogPosts
         data={blogList}
         blogs={dealFlowBlogHeadingData}
@@ -106,5 +108,4 @@ const page = () => {
     </div>
   );
 };
-
-export default page;
+export default DealFlowTracker;

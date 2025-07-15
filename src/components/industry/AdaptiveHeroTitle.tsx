@@ -58,8 +58,6 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
 
       lineCount = splitTextRef.current.lines.length;
 
-      console.log(`Font size: ${currentFontSize}px, Lines: ${lineCount}`);
-
       // If more than maxLines, reduce font size and try again
       if (lineCount > maxLines && currentFontSize > minFontSize) {
         currentFontSize -= fontSizeStep;

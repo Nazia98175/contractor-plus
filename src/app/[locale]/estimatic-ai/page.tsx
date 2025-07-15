@@ -5,13 +5,14 @@ import {
   dealReviews2,
   estimateFaq,
   estimateFormData,
-  estimateSoftwareData,
   estimaticBlogHeadingData,
   estimaticCardData,
   estimaticControlData,
   estimaticReviews,
   platforms,
 } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
+import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -23,7 +24,6 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
 export const metadata = {
   title: " Contractor Plus - The first AI estimator worth trusting",
@@ -32,19 +32,25 @@ export const metadata = {
 };
 const EstimaticAiPage = () => {
   return (
-    <main className="overflow-hidden">
-      <EstimaticHero />
-      <TrustedService
-        reviews={estimaticReviews}
-        slug="crm"
-        className="pb-6 lg:pt-6 lg:pb-3.5"
-        apiData={false}
-      />
-      <RunWithContractor
-        kindAdorable={estimateSoftwareData}
-        variant="dark"
-        icon={true}
-      />
+    <main id="home-page-wrapper-2" className="overflow-hidden">
+      <div
+        id="home-page-view-port-screen-estimatic-ai"
+        className="relative opacity-0"
+      >
+        <EstimaticHero />
+        <TrustedService
+          reviews={estimaticReviews}
+          slug="crm"
+          className="pb-6 lg:pt-6 lg:pb-3.5"
+          apiData={false}
+        />
+        <RunWithContractor
+          kindAdorable={estimateSoftwareData}
+          variant="dark"
+          icon={true}
+        />
+      </div>
+
       <OneGetsSet />
       <FieldService
         fieldService={estimaticCardData}
@@ -81,7 +87,7 @@ const EstimaticAiPage = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca
+      <TrustBar
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"
       />

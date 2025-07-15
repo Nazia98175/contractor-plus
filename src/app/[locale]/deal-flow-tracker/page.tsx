@@ -27,6 +27,12 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 
 import TrustBar from "@/components/common/TrustBar";
 import ContractorWork from "@/components/dealflowtracker/ContractorWork";
+export const metadata = {
+  title:
+    " The one board that shows every deal, dollar value, and what to do next",
+  description:
+    "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
+};
 const DealFlowTracker = () => {
   return (
     <div>
@@ -42,9 +48,11 @@ const DealFlowTracker = () => {
         slug="crm"
         commonData={dealflowhero}
       />
-      <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      <div className="pb-6">
+        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      </div>
       <div className="overflow-hidden bg-white">
-        <div className="pt-10">
+        <div className="pt-8 sm:pt-12">
           <GoingFieldSevices
             isImageshow={false}
             switchingTool={{

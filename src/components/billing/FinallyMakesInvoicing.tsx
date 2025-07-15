@@ -1,13 +1,8 @@
 "use client";
 import Image from "next/image";
-import Button from "../common/Button";
-import CardRequiredButton from "../common/CardRequiredButton";
-import { ArrowIcon } from "../common/Icons";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-
 import { useGSAP } from "@gsap/react";
 
 import { SplitText } from "gsap/SplitText";
@@ -331,7 +326,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 3.png"
+              src="/images/svg/invoice-timing-3.svg"
               alt="Timing Image"
             />
             <Image
@@ -339,7 +334,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 4.png"
+              src="/images/webp/invoice-timing-4.webp"
               alt="Timing Image"
             />
             <Image
@@ -347,7 +342,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 5.png"
+              src="/images/webp/invoice-timing-5.webp"
               alt="Timing Image"
             />
             <Image
@@ -355,7 +350,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 6.png"
+              src="/images/webp/invoice-timing-6.webp"
               alt="Timing Image"
             />
             <Image
@@ -363,7 +358,7 @@ const FinallyMakesInvoicing = () => {
               width={611}
               height={245}
               className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 7.png"
+              src="/images/webp/invoice-timing-7.webp"
               alt="Timing Image"
             />
             <Image

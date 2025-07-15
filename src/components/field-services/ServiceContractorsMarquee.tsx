@@ -7,12 +7,17 @@ import ReviewModal from "../common/ReviewModal";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { log } from "node:console";
 // import { textSplit } from "../common/TextSplit";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 interface TheReviewProps {
   reviews: any;
+  apiData?: boolean;
 }
-const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
+const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({
+  reviews,
+  apiData,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
@@ -25,6 +30,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
   //     textSplit("#review-title");
   //   }, 3000);
   // }, []);
+  console.log(reviews, "review seciton");
 
   return (
     <section className="custom-shadow relative pb-9 md:pb-12 lg:pb-[60px] xl:pb-[78px]">
@@ -48,6 +54,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({ reviews }) => {
                 ? () => openModal(review.videoLink || "")
                 : () => {}
             }
+            apiData={apiData}
           />
         ))}
       </Marquee>

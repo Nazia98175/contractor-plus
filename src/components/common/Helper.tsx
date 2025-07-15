@@ -3113,54 +3113,6 @@ export const runWithContractorData = {
   ],
 };
 
-export const billingVsthWayYouCouldData = {
-  title: "How you’ve been billing vs. the way you could be",
-  headerLeft: "The old way",
-  headerRight: "The Contractor+ way",
-  features: [
-    {
-      competitorsNote: "Creating invoices from scratch after every job	",
-      ourProductNote:
-        "Convert estimates, jobs, or work orders into invoices in one click",
-    },
-    {
-      competitorsNote: "Re-entering hours, materials, and mileage manually",
-      ourProductNote: "Everything auto-populates from time logs and job data",
-    },
-    {
-      competitorsNote:
-        "Forgetting to bill for small add-ons like extra material or mileage	",
-      ourProductNote:
-        "Contractor+ captures all uninvoiced items so you can add them to the invoice",
-    },
-    {
-      competitorsNote: "Chasing approvals for changes after the job is done",
-      ourProductNote:
-        "Clients e-sign change orders before they hit the invoice",
-    },
-    {
-      competitorsNote: "Using one system to track time and another to bill",
-      ourProductNote:
-        "Time, tasks, and charges all feed into one invoice automatically",
-    },
-    {
-      competitorsNote: "Rebuilding new invoices when the scope changes",
-      ourProductNote:
-        "Recurring jobs, card-on-file payments, and invoicing in one platform",
-    },
-    {
-      competitorsNote:
-        "Separate apps for recurring billing, payments, and invoicing",
-      ourProductNote: "Invoices update automatically with every change order",
-    },
-    {
-      competitorsNote: "Clients asking for invoices or payment links	",
-      ourProductNote:
-        "Clients access and pay invoices through a self-serve portal",
-    },
-  ],
-};
-
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",

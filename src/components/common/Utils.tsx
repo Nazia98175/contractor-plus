@@ -117,3 +117,65 @@ export const estimateSoftwareData = {
     },
   ],
 };
+export const billingVsthWayYouCouldData = {
+  title: "How you’ve been billing vs. the way you could be",
+  subTitle:
+    "Contractor+ simplifies billing at every step—no more chaos, no more missed charges.",
+  comaprisons: [
+    {
+      title: "The old way",
+      comparisonList: [
+        { details: "Creating invoices from scratch after every job" },
+        { details: "Re-entering hours, materials, and mileage manually" },
+        {
+          details:
+            "Forgetting to bill for small add-ons like extra material or mileage",
+        },
+        { details: "Chasing approvals for changes after the job is done" },
+        {
+          details: "Using one system to track time and another to bill",
+        },
+        { details: "Rebuilding new invoices when the scope changes" },
+        {
+          details:
+            "Separate apps for recurring billing, payments, and invoicing",
+        },
+        { details: "Clients asking for invoices or payment links" },
+      ],
+    },
+    {
+      title: "The Contractor+ way",
+      comparisonList: [
+        {
+          details:
+            "Convert estimates, jobs, or work orders into invoices in one click",
+        },
+        {
+          details: "Everything auto-populates from time logs and job data",
+        },
+        {
+          details:
+            "Contractor+ captures all uninvoiced items so you can add them to the invoice",
+        },
+        {
+          details: "Clients e-sign change orders before they hit the invoice",
+        },
+        {
+          details:
+            "Time, tasks, and charges all feed into one invoice automatically",
+        },
+        {
+          details:
+            "Recurring jobs, card-on-file payments, and invoicing in one platform",
+        },
+        {
+          details: "Invoices update automatically with every change order",
+        },
+        {
+          details:
+            "Clients access and pay invoices through a self-serve portal",
+        },
+      ],
+    },
+  ],
+};

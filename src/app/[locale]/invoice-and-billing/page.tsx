@@ -2,17 +2,18 @@ import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
 import {
   billingformData,
   billingNeverLookBackData,
-  billingVsthWayYouCouldData,
   blogList,
   dealflowFaq,
   dealflowhero,
   dealReviews,
   dealReviews2,
-  platforms,
   realTimeServiceSliderData,
   simpleWayToBill,
 } from "@/components/common/Helper";
-import { billingBlogPost } from "@/components/common/Utils";
+import {
+  billingBlogPost,
+  billingVsthWayYouCouldData,
+} from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
@@ -62,7 +63,6 @@ const BillingPage = () => {
         />
         <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
         <FinallyMakesInvoicing />
-
         <NeverLookBack data={billingNeverLookBackData} />
       </div>
       <ThousandsReviews

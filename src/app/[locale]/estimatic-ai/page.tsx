@@ -24,6 +24,7 @@ import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import TrustBarHvca from "@/components/common/TrustBar";
+import TrustBar from "@/components/common/TrustBar";
 
 export const metadata = {
   title: " Contractor Plus - The first AI estimator worth trusting",
@@ -81,7 +82,7 @@ const EstimaticAiPage = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca
+      <TrustBar
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"
       />

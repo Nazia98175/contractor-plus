@@ -3140,7 +3140,7 @@ export const neverLookBackData = {
       value: null,
       lottieJson: up_arrow_black,
       cardImage: {
-        url: null, // Assuming you're storing local assets
+        url: null,
       },
     },
     {
@@ -3148,8 +3148,9 @@ export const neverLookBackData = {
       title: null,
       subTitle: "Contractors see higher sales productivity",
       start: 0,
-      end: 10,
-      suffix: "",
+      end: 9,
+      suffix: null,
+      denominator: 10, // This enables "9 in 10" display
       prefix: null,
       value: null,
       lottieJson: sale_productivity,
@@ -3173,6 +3174,7 @@ export const neverLookBackData = {
     },
   ],
 };
+
 export const billingNeverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",

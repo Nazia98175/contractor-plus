@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import ImageProxy from "./ImageProxy";
 import LottieAnimation from "./LottieAnimation";
 import Image from "next/image";
+
 interface SoftwareItem {
   icon: React.ReactNode;
   start: number;
@@ -14,6 +15,7 @@ interface SoftwareItem {
   isRange?: boolean;
   subTitle?: string;
   prefix?: string;
+  denominator?: number; // Optional: for "in 10" style
   lottieJson: unknown;
   cardImage?: {
     url?: string;
@@ -34,8 +36,8 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   item,
   icons,
   index,
-  titleColor = "md:text-winterWay  text-white",
-  paragraphColor = " md:text-winterWay text-decemberSky",
+  titleColor = "md:text-winterWay text-white",
+  paragraphColor = "md:text-winterWay text-decemberSky",
   icon,
 }) => {
   const { ref, inView } = useInView({
@@ -56,13 +58,13 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
           loop={true}
           animationData={item.lottieJson}
         />
-      ) : item.cardImage ? (
+      ) : item.cardImage?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <Image
-            src={`${item.cardImage.url}`}
+            src={item.cardImage.url}
             fill
             className="brightness-0 invert filter sm:filter-none"
-            alt={`${item.title} icon`}
+            alt={`${item.title ?? "icon"}`}
           />
         </div>
       ) : icon ? (
@@ -73,33 +75,48 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
             src={icons[index].url}
             fill
             className="brightness-0 invert filter sm:filter-none"
-            alt={`${item.title} icon`}
+            alt={`${item.title ?? "icon"}`}
           />
         </div>
       ) : (
         <span className="size-7 sm:size-8">{item.icon}</span>
       )}
+
       <h3 className={`countup-title ${titleColor}`}>
         {item.isRange ? (
           <span>{`${item.start}–${item.end}`}</span>
-        ) : inView ? (
-          <CountUp
-            start={item.start}
-            end={item.end}
-            duration={2.5}
-            suffix={item.suffix ?? ""}
-            prefix={item.prefix ?? ""}
-          />
         ) : (
-          `${item.end}${item.suffix ?? ""}`
-        )}{" "}
-        <span className="inline-block text-2xl font-semibold">
-          {item.title !== "N/A" && item.title !== "less" && item.title}
-        </span>
+          <>
+            {inView ? (
+              <CountUp
+                start={item.start}
+                end={item.end}
+                duration={2.5}
+                prefix={item.prefix ?? ""}
+              />
+            ) : (
+              `${item.end}`
+            )}
+            {item.suffix && (
+              <span className="ml-1 whitespace-pre-wrap">{item.suffix}</span>
+            )}
+            {item.denominator && (
+              <span className="ml-1 !font-semibold">
+                in <span className="countup-title"> {item.denominator}</span>
+              </span>
+            )}
+          </>
+        )}
+
+        {item.title && (
+          <span className="ml-1 inline-block text-2xl font-semibold">
+            {item.title}
+          </span>
+        )}
       </h3>
 
       <p className={`countup-desc ${paragraphColor}`}>
-        {item.description || item?.subTitle}
+        {item.description || item.subTitle}
       </p>
     </article>
   );

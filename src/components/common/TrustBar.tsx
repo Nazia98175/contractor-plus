@@ -12,7 +12,7 @@ interface TrustBarProps {
   trustBarImages?: any;
 }
 
-const TrustBarHvca: React.FC<TrustBarProps> = ({
+const TrustBar: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
@@ -71,4 +71,4 @@ const TrustBarHvca: React.FC<TrustBarProps> = ({
   );
 };
 
-export default TrustBarHvca;
+export default TrustBar;

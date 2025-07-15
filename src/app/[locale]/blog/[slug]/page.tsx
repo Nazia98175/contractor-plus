@@ -4,7 +4,8 @@ import TravelBlog from "@/components/blogdetails/TravelBlog";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
+import TrustBarHvca from "@/components/common/TrustBar";
+import TrustBar from "@/components/common/TrustBar";
 
 export const metadata = {
   title: "Contractor Plus - Blogs Details",
@@ -32,10 +33,7 @@ const BlogDetails = () => {
           variant="primary"
           variantBtn="dark"
         />
-        <TrustBarHvca
-          platforms={platforms}
-          className="z-20 pb-[104px] xl:pb-20"
-        />
+        <TrustBar platforms={platforms} className="z-20 pb-[104px] xl:pb-20" />
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] z-0 block max-h-[994px] w-full max-w-[840px]" />
       </div>
 

@@ -11,6 +11,7 @@ import {
   realTimeServiceSliderData,
   simpleWayToBill,
 } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
 import { billingBlogPost } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
@@ -24,7 +25,6 @@ import RealTimeServiceConnector from "@/components/field-services/RealTimeServic
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
 
 const BillingPage = () => {
   return (
@@ -81,7 +81,7 @@ const BillingPage = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca
+      <TrustBar
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"
       />

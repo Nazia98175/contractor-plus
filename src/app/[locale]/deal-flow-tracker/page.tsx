@@ -5,13 +5,11 @@ import {
   dealflowhero,
   dealReviews,
   dealReviews2,
-  estimaticBlogHeadingData,
   fieldcarddetail,
   formData,
   neverLookBackData,
   platforms,
   realTimeServiceSliderData,
-  reviews,
   runWithContractorData,
 } from "@/components/common/Helper";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -26,10 +24,8 @@ import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
-import { getHomePage } from "@/services/homePage/homepage";
 
-import React from "react";
+import TrustBar from "@/components/common/TrustBar";
 const DealFlowTracker = () => {
   return (
     <div>
@@ -81,7 +77,7 @@ const DealFlowTracker = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
+      <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
       <Faq
         faq={dealflowFaq}
         classNameAnswer="pt-1"

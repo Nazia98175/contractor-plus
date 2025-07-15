@@ -1,5 +1,6 @@
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
+import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
@@ -12,13 +13,8 @@ import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
 import TimmingEffect from "@/components/field-services/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import TrustBarHvca from "@/components/industry/TrustBarHvca";
-import { getBlogs } from "@/services/blogs";
 import { getSeoData } from "@/services/common/seoMeta";
-import { getFeaturesPageData } from "@/services/features/getCrmPageData";
-import { getHomePage } from "@/services/homePage/homepage";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
-import { getSolutionPage } from "@/services/solutions/solution";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -30,7 +26,7 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "field-service"
+    "field-service",
   );
 
   if (!page) return;
@@ -57,8 +53,6 @@ interface Params {
 const FieldServicesPage = async ({ params }: Params) => {
   const useParams = await params;
 
- 
-
   const {
     solutionPageContent,
     reviews,
@@ -72,12 +66,15 @@ const FieldServicesPage = async ({ params }: Params) => {
     thousandReviews,
     commonData,
   } = await getSolutionPageData("field-service", useParams?.locale);
- 
+
   return (
     <>
       {/* <MainLoader /> */}
       <main className="overflow-hidden">
-        <FieldServicesHero hero={solutionPageContent?.data?.[0]?.hero} commonData={commonData} />
+        <FieldServicesHero
+          hero={solutionPageContent?.data?.[0]?.hero}
+          commonData={commonData}
+        />
         <ServiceContractorsMarquee reviews={reviews} />
         <div className="bg-white">
           <GoingFieldSevices switchingTool={switchingTool?.commonProblems} />
@@ -86,16 +83,16 @@ const FieldServicesPage = async ({ params }: Params) => {
             fieldService={fieldServiceData}
           />
         </div>
-      <RunWithContractor kindAdorable={comparison} />
+        <RunWithContractor kindAdorable={comparison} />
         <TimmingEffect timingEff={trackProperties} commonData={commonData} />
-          <NeverLookBack data={teamsUsingContractor} />
+        <NeverLookBack data={teamsUsingContractor} />
         <ThousandsReviews
           data={solutionPageContent?.data?.[0]?.reviewTrustSection}
           reviews={thousandReviews?.reviews}
           variant="secondary"
-        /> 
+        />
         <div className="relative overflow-visible">
-           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
+          <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
           <CrmSercive
             createBtn={commonData?.getStartedFreeBtn}
             mobileBtn={commonData?.mobileBtn}
@@ -105,7 +102,7 @@ const FieldServicesPage = async ({ params }: Params) => {
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="dark"
           />
-          <TrustBarHvca
+          <TrustBar
             platforms={platforms}
             trustBarImages={commonData?.trustedCompaniesWhiteBG}
             className="mx-auto w-full max-w-[889px]"
@@ -116,7 +113,7 @@ const FieldServicesPage = async ({ params }: Params) => {
             mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
             TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
           />
-        </div> 
+        </div>
         <WhatEverClient
           data={commonData?.contractorConnects}
           issection={false}

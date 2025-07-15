@@ -1,5 +1,4 @@
 import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
-import InvoiceSlider from "@/components/billing/InvoiceSlider";
 import {
   billingformData,
   billingNeverLookBackData,
@@ -9,12 +8,12 @@ import {
   dealReviews,
   dealReviews2,
   platforms,
-  realTimeServiceSliderData,
   simpleWayToBill,
 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import {
   billingBlogPost,
+  billingSliderData,
   billingVsthWayYouCouldData,
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -26,7 +25,6 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
-import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 
@@ -69,7 +67,7 @@ const BillingPage = () => {
         {/* <InvoiceSlider /> */}
         <ContractorWork
           theme="estimateTheme"
-          fieldService={realTimeServiceSliderData}
+          fieldService={billingSliderData}
         />
         <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
         <FinallyMakesInvoicing />

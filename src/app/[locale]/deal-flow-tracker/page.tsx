@@ -24,9 +24,14 @@ import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-
 import TrustBar from "@/components/common/TrustBar";
 import ContractorWork from "@/components/dealflowtracker/ContractorWork";
+export const metadata = {
+  title:
+    " The one board that shows every deal, dollar value, and what to do next",
+  description:
+    "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
+};
 const DealFlowTracker = () => {
   return (
     <div>
@@ -42,15 +47,19 @@ const DealFlowTracker = () => {
         slug="crm"
         commonData={dealflowhero}
       />
-      <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      <div className="pb-6">
+        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      </div>
       <div className="overflow-hidden bg-white">
-        <GoingFieldSevices
-          switchingTool={{
-            title: "There’s no easy way to see what’s going on in the field",
-            cardsDetail: fieldcarddetail,
-          }}
-        />
-
+        <div className="pt-8 sm:pt-12">
+          <GoingFieldSevices
+            isImageshow={false}
+            switchingTool={{
+              title: "There’s no easy way to see what’s going on in the field",
+              cardsDetail: fieldcarddetail,
+            }}
+          />
+        </div>
         <ContractorWork
           theme="estimateTheme"
           fieldService={realTimeServiceSliderData}
@@ -60,12 +69,15 @@ const DealFlowTracker = () => {
         <FinallyConnectsField />
         <NeverLookBack data={neverLookBackData} />
       </div>
-      <ThousandsReviews
-        data={dealReviews2}
-        reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
-        variant="secondary"
-        apiData={false}
-      />
+      <div className="relative">
+        <div className="bg-kuroiBlack pointer-events-none absolute -top-1 z-20 h-2 w-full"></div>
+        <ThousandsReviews
+          data={dealReviews2}
+          reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+          variant="secondary"
+          apiData={false}
+        />
+      </div>
       <CrmSercive
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
@@ -89,7 +101,6 @@ const DealFlowTracker = () => {
         }}
         issection={false}
       />
-
       <BlogPosts
         data={blogList}
         blogs={dealFlowBlogHeadingData}
@@ -98,5 +109,4 @@ const DealFlowTracker = () => {
     </div>
   );
 };
-
 export default DealFlowTracker;

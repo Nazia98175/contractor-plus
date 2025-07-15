@@ -3077,38 +3077,50 @@ export const realTimeServiceSliderData = {
   ],
 };
 
-export const runWithContractorData = {
-  title:
-    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
-  headerLeft: "Their way",
-  headerRight: "Your way",
+export const billingVsthWayYouCouldData = {
+  title: "How you’ve been billing vs. the way you could be",
+  headerLeft: "The old way",
+  headerRight: "The Contractor+ way",
   features: [
     {
-      competitorsNote: "CRMs built for sales reps, not contractors",
+      competitorsNote: "Creating invoices from scratch after every job	",
       ourProductNote:
-        "Pipeline built around jobs, properties, and real revenue",
+        "Convert estimates, jobs, or work orders into invoices in one click",
     },
     {
-      competitorsNote: "No clear view of what’s stuck or worth chasing",
-      ourProductNote: "See dollar value at every stage and where deals stall",
+      competitorsNote: "Re-entering hours, materials, and mileage manually",
+      ourProductNote: "Everything auto-populates from time logs and job data",
     },
     {
-      competitorsNote: "Switching tabs to send estimates or schedule jobs",
-      ourProductNote: "One click from lead to estimate or job site visit",
-    },
-    {
-      competitorsNote: "One click from lead to estimate or job site visit",
+      competitorsNote:
+        "Forgetting to bill for small add-ons like extra material or mileage	",
       ourProductNote:
-        "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+        "Contractor+ captures all uninvoiced items so you can add them to the invoice",
     },
     {
-      competitorsNote: "“Won” means the deal disappears into another system",
-      ourProductNote: "Deals stay connected to the job through to completion",
-    },
-    {
-      competitorsNote: "Re-entering data across CRM, estimates, and jobs",
+      competitorsNote: "Chasing approvals for changes after the job is done",
       ourProductNote:
-        "Enter the information once, and it syncs to everything instantly",
+        "Clients e-sign change orders before they hit the invoice",
+    },
+    {
+      competitorsNote: "Using one system to track time and another to bill",
+      ourProductNote:
+        "Time, tasks, and charges all feed into one invoice automatically",
+    },
+    {
+      competitorsNote: "Rebuilding new invoices when the scope changes",
+      ourProductNote:
+        "Recurring jobs, card-on-file payments, and invoicing in one platform",
+    },
+    {
+      competitorsNote:
+        "Separate apps for recurring billing, payments, and invoicing",
+      ourProductNote: "Invoices update automatically with every change order",
+    },
+    {
+      competitorsNote: "Clients asking for invoices or payment links	",
+      ourProductNote:
+        "Clients access and pay invoices through a self-serve portal",
     },
   ],
 };
@@ -3128,7 +3140,7 @@ export const neverLookBackData = {
       value: null,
       lottieJson: up_arrow_black,
       cardImage: {
-        url: null, // Assuming you're storing local assets
+        url: null,
       },
     },
     {
@@ -3136,8 +3148,9 @@ export const neverLookBackData = {
       title: null,
       subTitle: "Contractors see higher sales productivity",
       start: 0,
-      end: 10,
-      suffix: "",
+      end: 9,
+      suffix: null,
+      denominator: 10, // This enables "9 in 10" display
       prefix: null,
       value: null,
       lottieJson: sale_productivity,
@@ -3161,6 +3174,7 @@ export const neverLookBackData = {
     },
   ],
 };
+
 export const billingNeverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
@@ -3373,4 +3387,58 @@ export const dealFlowBlogHeadingData = {
   title: "Deal Flow Tracking  topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
   btnUrl: "/",
+};
+
+export const runWithContractorData = {
+  title:
+    "Other platforms keep you stuck tracking deals their way.  Do it your way with Contractor+.",
+  subTitle: null,
+  comaprisons: [
+    {
+      title: "Their way",
+      comparisonList: [
+        {
+          details: "CRMs built for sales reps, not contractors",
+        },
+        {
+          details: "No clear view of what’s stuck or worth chasing",
+        },
+        {
+          details: "Switching tabs to send estimates or schedule jobs",
+        },
+        {
+          details: "No way to track why deals are lost",
+        },
+        { details: "“Won” means the deal disappears into another system" },
+        {
+          details: "Re-entering data across CRM, estimates, and jobs",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Pipeline built around jobs, properties, and real revenue",
+        },
+        {
+          details: "See dollar value at every stage and where deals stall",
+        },
+        {
+          details: "One click from lead to estimate or job site visit",
+        },
+        {
+          details:
+            "No way to track why deals are lost	Log lost reasons to spot patterns and improve close rates",
+        },
+        {
+          details: "Deals stay connected to the job through to completion",
+        },
+        {
+          details:
+            "Enter the information once, and it syncs to everything instantly",
+        },
+      ],
+    },
+  ],
 };

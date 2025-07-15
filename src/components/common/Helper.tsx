@@ -87,7 +87,7 @@ export const awards = [
   },
 ];
 
-export const platforms: Platform[] = [
+export const platforms = [
   {
     name: "Capterra",
     logo: "/images/webp/capterraRating.webp",

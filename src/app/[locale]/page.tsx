@@ -2,7 +2,7 @@ import { platforms } from "@/components/common/Helper";
 import Hero from "@/components/homepage/Hero";
 import HomepageClient from "@/components/homepage/HomepageClient";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
-import TrustBar from "@/components/homepage/TrustBar";
+import TrustBarHvca from "@/components/industry/TrustBarHvca";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
@@ -40,7 +40,6 @@ export default async function Home({
     commonData,
   } = await getHomepageData(useParams?.locale);
 
-
   return (
     <div id="home-page-wrapper" className="">
       <div id="home-page-view-port-screen" className="relative opacity-0">
@@ -48,7 +47,8 @@ export default async function Home({
           commonData={commonData}
           homePageContent={homePageContent?.data?.hero}
         />
-        <TrustBar
+        <TrustBarHvca
+          showTrustedSection={true}
           platforms={platforms}
           className="mx-auto w-full max-w-[889px] py-4"
         />

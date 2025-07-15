@@ -27,9 +27,10 @@ import RealTimeServiceConnector from "@/components/field-services/RealTimeServic
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import TrustBarHvca from "@/components/industry/TrustBarHvca";
+import { getHomePage } from "@/services/homePage/homepage";
 
 import React from "react";
-const page = () => {
+const DealFlowTracker = () => {
   return (
     <div>
       <CrmHero
@@ -80,10 +81,7 @@ const page = () => {
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBarHvca
-        platforms={platforms}
-        className="mx-auto w-full max-w-[889px]"
-      />
+      <TrustBarHvca platforms={platforms} className="pb-[148px] xl:pb-20" />
       <Faq
         faq={dealflowFaq}
         classNameAnswer="pt-1"
@@ -107,4 +105,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DealFlowTracker;

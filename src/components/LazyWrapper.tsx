@@ -12,7 +12,8 @@ interface LazyWrapperProps {
 
 export const LazyWrapper: React.FC<LazyWrapperProps> = ({
   importFn,
-  fallback = <div className="h-32 animate-pulse bg-gray-100" />,
+  fallback = <></>,
+  // <div className="h-32 animate-pulse bg-gray-100" />,
   className = "",
   props = {},
   threshold,

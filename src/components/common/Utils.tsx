@@ -12,6 +12,76 @@ export const billingBlogPost = {
   btnUrl: "/",
 };
 
+export const billingSliderData = {
+  title:
+    "Turn the full job history into one clean invoice, without manual re-entry.",
+  slug: "field-service",
+  solutionCards: [
+    {
+      id: 57,
+      title: "Live Dispatch",
+      description:
+        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
+      image: null,
+    },
+    {
+      id: 58,
+      title: "Estimate-to-Invoice",
+      description:
+        "Approved estimates become invoices instantly. No double-entry or manual document creation.",
+      image: null,
+    },
+    {
+      id: 59,
+      title: "Job Details",
+      description:
+        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
+      image: null,
+    },
+    {
+      id: 60,
+      title: "Lost Deal Tracking",
+      description:
+        "Log why a deal was lost so you can spot patterns, refine your sales process, and improve your close rate.",
+      image: null,
+    },
+    {
+      id: 61,
+      title: "Conversion Metrics",
+      description:
+        "See how many deals your team is winning and who’s winning them. Spot top performers and coach the rest.",
+      image: null,
+    },
+    {
+      id: 62,
+      title: "Job-Linked Deals",
+      description:
+        "Every deal is tied to a property or project and not just a contact. Sales always stay connected to the job site.",
+      image: null,
+    },
+    {
+      id: 63,
+      title: "Full Integrated",
+      description:
+        "Deal Flow Tracker is deeply integrated with Contractor+ estimates, CRM, and job workflows.",
+      image: null,
+    },
+    {
+      id: 64,
+      title: "Lead Assignment",
+      description:
+        "Assign leads to specific team members for accountability and visibility across the sales team.",
+      image: null,
+    },
+    {
+      id: 65,
+      title: "Mobile App",
+      description:
+        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
+      image: null,
+    },
+  ],
+};
 export const invoiceFaqData = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",

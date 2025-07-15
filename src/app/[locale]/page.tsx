@@ -49,7 +49,6 @@ export default async function Home({
           homePageContent={homePageContent?.data?.hero}
         />
         <TrustBar
-          showTrustedSection={true}
           platforms={platforms}
           className="mx-auto w-full max-w-[889px] py-4"
         />

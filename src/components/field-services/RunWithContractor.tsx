@@ -6,7 +6,6 @@ import RunWithContractorMobile from "./RunWithContractorMobile";
 import Copy from "../common/Copy";
 import { TheServiceProps } from "@/types";
 
-
 const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",
@@ -14,7 +13,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
 }) => {
   const variantClasses = {
     light: {
-      title: "crm-gradient ",
+      title: "crm-gradient",
       description: "crm-gradient",
       theirwaybg: "their-way",
       yourwaybg: "your-way",
@@ -23,7 +22,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       background: "bg-white",
     },
     dark: {
-      title: "service-text",
+      title: "gradient-white",
       description: "service-text",
       theirwaybg: "estimate-software",
       yourwaybg: "your-way",
@@ -33,7 +32,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     },
   };
   const styles = variantClasses[variant];
-  
+
   return (
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
@@ -52,7 +51,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       {/* </Copy> */}
 
       <Copy animateOnScroll={true}>
-        <p className="hero-description mx-auto mt-3 max-w-[80%] text-center">
+        <p className="text-decemberSky mx-auto mt-3 max-w-[80%] text-center">
           {kindAdorable?.subTitle}
         </p>
       </Copy>
@@ -76,42 +75,47 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
             </p>
           )}
         </div>
-        {kindAdorable?.comaprisons?.[0]?.comparisonList?.map((item: any, index: number) => (
-          <CardReveal
-            distance={50}
-            delay={0.1}
-            key={index}
-            className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
-          >
-            {/* Their Way */}
-            <div
-              className={`their-way flex max-w-[570px] items-center gap-3 rounded-[10px] px-3 py-2 ${styles.theirwaybg}`}
+        {kindAdorable?.comaprisons?.[0]?.comparisonList?.map(
+          (item: any, index: number) => (
+            <CardReveal
+              distance={50}
+              delay={0.1}
+              key={index}
+              className="grid grid-cols-2 items-center gap-5 text-center lg:gap-2"
             >
-              <span>
-                <RedCrossIcon />
-              </span>
-              <p className="text-sangoPink text-start text-sm leading-[130%] font-medium md:text-[17.5px]">
-                {item.details}
-              </p>
-            </div>
-            {/* Your Way */}
-            <div className="flex items-center gap-2">
-              <span>
-                <GreenArrowIcon />
-              </span>
+              {/* Their Way */}
               <div
-                className={`your-way flex items-center gap-2 rounded-[10px] px-3 py-2 ${styles.yourwaybg}`}
+                className={`their-way flex max-w-[570px] items-center gap-3 rounded-[10px] px-3 py-2 ${styles.theirwaybg}`}
               >
                 <span>
-                  <GreenDotIcon2 />
+                  <RedCrossIcon />
                 </span>
-                <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold md:text-[17.5px]">
-                  {kindAdorable?.comaprisons?.[0]?.comparisonList[index]?.details}
+                <p className="text-sangoPink text-start text-sm leading-[130%] font-medium md:text-[17.5px]">
+                  {item.details}
                 </p>
               </div>
-            </div>
-          </CardReveal>
-        ))}
+              {/* Your Way */}
+              <div className="flex items-center gap-2">
+                <span>
+                  <GreenArrowIcon />
+                </span>
+                <div
+                  className={`your-way flex items-center gap-2 rounded-[10px] px-3 py-2 ${styles.yourwaybg}`}
+                >
+                  <span>
+                    <GreenDotIcon2 />
+                  </span>
+                  <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold md:text-[17.5px]">
+                    {
+                      kindAdorable?.comaprisons?.[0]?.comparisonList[index]
+                        ?.details
+                    }
+                  </p>
+                </div>
+              </div>
+            </CardReveal>
+          ),
+        )}
       </div>
       {/* Mobile View */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">

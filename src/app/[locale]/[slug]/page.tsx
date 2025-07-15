@@ -1,14 +1,16 @@
 import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
-// Only import critical above-the-fold component
-import ClientOnlyWrapper from "@/components/client/ClientOnlyWrapper";
 import CrmHero from "@/components/crmbussiness/CrmHero";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
-
+import FieldService from "@/components/crmbussiness/FieldService";
+import dynamic from "next/dynamic";
+// Lazy load the heavy components
+const SlugPageClient = dynamic(
+  () => import("@/components/slugPage/SlugPageClient"),
+);
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
@@ -96,8 +98,30 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         </div>
         <TrustedService reviews={reviews} slug={useParams?.slug} />
         <SwitchingTool switchingTool={pageData?.switchingTool} />
-        {/* Everything else loads client-side - THIS is the key! */}
-        <ClientOnlyWrapper data={pageData} />{" "}
+        <FieldService
+          slug={pageData.slug}
+          fieldService={pageData.fieldServiceData}
+          theme={pageData.theme as "light" | "dark" | "estimateTheme"}
+          apiData={true}
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+
+        {/* Lazy loaded content */}
+        <SlugPageClient
+          slug={pageData.slug}
+          trackProperties={pageData.trackProperties}
+          kindAdorable={pageData.comparison}
+          teamUsingContractor={pageData.teamsUsingContractor}
+          thousandReviews={pageData.thousandReviews}
+          reviews={pageData.reviewsData}
+          blogs={pageData.blogs}
+          blogsList={pageData.blogsList}
+          faq={pageData.faq}
+          createBtn={pageData.createBtn}
+          mobileBtn={pageData.mobileBtn}
+          ncc={pageData.ncc}
+          crmService={pageData.crmService}
+        />
       </div>
     </>
   );

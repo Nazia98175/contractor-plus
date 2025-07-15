@@ -1,4 +1,5 @@
 import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
+import OneClearInvoice from "@/components/billing/OneClearInvoice";
 import {
   billingformData,
   billingNeverLookBackData,
@@ -64,8 +65,7 @@ const BillingPage = () => {
           />
         </div>
 
-        {/* <InvoiceSlider /> */}
-        <ContractorWork
+        <OneClearInvoice
           theme="estimateTheme"
           fieldService={billingSliderData}
         />

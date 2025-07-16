@@ -91,7 +91,7 @@ const BillingPage = () => {
       <Faq
         faq={billingFaqData}
         classNameAnswer="pt-1"
-        mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+        mainContainerclassName="px-2 md:pb-[76px]  md:pb-[83px] pb-10"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
       />
       <WhatEverClient

@@ -95,7 +95,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
             <AdaptiveHeroTitle
               // title={`Property Maintenance`}
               title={hero?.heroTitle || ""}
-              className="gradient-2 xs:text-[28px] gradient-white mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
+              className="gradient-2 xs:text-[28px] mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
               minFontSize={16}
               maxFontSize={48}
             />

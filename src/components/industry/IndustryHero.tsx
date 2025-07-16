@@ -32,7 +32,6 @@ const IndustryHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
-
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">

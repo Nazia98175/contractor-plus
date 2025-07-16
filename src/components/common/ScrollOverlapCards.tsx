@@ -140,7 +140,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       </div>
     );
   }
- 
 
   return (
     <div

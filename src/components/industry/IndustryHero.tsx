@@ -1,15 +1,13 @@
-// Updated IndustryHero component with adaptive title
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
-// import AdaptiveHeroTitle from "@/components/common/AdaptiveHeroTitle";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
+import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import IndustryHeroSlider from "./IndustryHeroSlider";
-import gsap from "gsap";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,
@@ -17,7 +15,6 @@ const IndustryHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
 }) => {
-  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {

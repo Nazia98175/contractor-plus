@@ -25,6 +25,7 @@ interface IndustryHeroSliderProps {
 const IndustryHeroSlider: React.FC<IndustryHeroSliderProps> = ({
   features,
 }) => {
+  
   return (
     <Swiper
       effect="fade"
@@ -38,7 +39,7 @@ const IndustryHeroSlider: React.FC<IndustryHeroSliderProps> = ({
       loop={true}
       className="custom-active-slider relative"
     >
-      {features.map((feature, index) => (
+      {features?.map((feature, index) => (
         <SwiperSlide key={index}>
           <div className="custom-gradient-border hero-slider overflow-hidden rounded-3xl p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
             {/* <div className="pointer-events-none absolute right-0 -z-40">

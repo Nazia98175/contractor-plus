@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import { TickIcon } from "./Icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import { TickIcon } from "./Icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,22 +130,22 @@ const Dashboard = () => {
       ref={sectionRef}
       className="bg-kuroiBlack relative z-[0] -mt-10 lg:-mt-16 xl:mt-[-97px]"
     >
-      <Image
-        unoptimized
-        width={100}
-        height={100}
-        className="w-full md:hidden "
-        src={"/images/png/dashboard-img-mobile.png"}
-        alt="dashboard"
-      />
-      <Image
-        unoptimized
-        width={100}
-        height={100}
-        className="mx-auto w-full max-w-[1440px] max-md:hidden xl:h-[1300px] object-cover mix-blend-difference"
-        src={"/images/png/flow-energy-desktop.gif"}
-        alt="dashboard"
-      />
+      <video
+        className="w-full mix-blend-screen md:hidden"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/video/dashboard-mobile.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="mx-auto w-full max-w-[1440px] mix-blend-screen max-md:hidden xl:h-[1300px] rela overflow-hidden">
+        <video className="w-full h-full" autoPlay loop muted playsInline>
+          <source src="/video/dashboard-desktop.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="z-10 mx-auto grid w-full max-w-[1100px] grid-cols-1 justify-between px-3 max-md:mt-10 max-md:gap-24 md:absolute md:top-[12%] md:left-1/2 md:translate-x-[-50%] md:grid-cols-2 lg:h-[300px] xl:h-[400px]">
         {[
           "One dashboard for office and field",

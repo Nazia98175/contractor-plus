@@ -37,6 +37,8 @@ const IndustryHero: React.FC<TheHeroProps> = ({
       }, 700);
     }, []);
 
+  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
+//  console.log(homeCard, "homeCard in IndustryHero");
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -88,9 +90,9 @@ const IndustryHero: React.FC<TheHeroProps> = ({
             </div>
           </div>
         </div>
-        <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[2%]">
+        {homeCard?.length > 0 && <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[2%]">
           <IndustryHeroSlider features={homeCard} />
-        </div>
+        </div>}
         <div className="absolute top-0 right-0 h-full w-full lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">
             <Image

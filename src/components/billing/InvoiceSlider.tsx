@@ -1,96 +1,253 @@
-import React from "react";
-import { RealTimeServiceConnectorIcon } from "../common/Icons";
-import { TheServiceProps } from "../crmbussiness/FieldService";
-import RealTimeServiceConnectorSlider from "../field-services/RealTimeServiceConnectorSlider";
+"use client";
+import React, { useEffect, useState } from "react";
+import { Autoplay, Controller, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { DownloadIcon, Slidericon } from "../common/Icons";
+import Image from "next/image";
 
-const InvoiceSlider: React.FC<TheServiceProps> = ({ fieldService, theme }) => {
-  const sliderData = [
-    {
-      title: "Live Dispatch",
-      description:
-        "See who's available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-    },
-    {
-      title: "Live Dispatch",
-      description:
-        "See who's available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-    },
-    {
-      title: "Job Details",
-      description:
-        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-    },
-    {
-      title: "Field Updates",
-      description:
-        "Crews can upload photos, notes, and task changes straight from the field. Everything lives in one central hub.",
-    },
-    {
-      title: "Crew Efficiency",
-      description:
-        "Track time, mileage, and task completion with zero paper. Know who's doing what, where, and when",
-    },
-    {
-      title: "AI Call Attendant",
-      description:
-        "Big Chief answers your calls 24/7, captures lead details, and books jobs while you focus on the field.",
-    },
-    {
-      title: "Onsite Payments",
-      description:
-        "Collect payment the moment the job's done. Accept cards or ACH in the field and mark the invoice as paid.",
-    },
-    {
-      title: "CRM",
-      description:
-        "Track customers, properties, and communication history in one CRM that's built for the way contractors work.",
-    },
-    {
-      title: "Mobile App",
-      description:
-        "Run your business from anywhere. The intuitive Contractor+ app puts scheduling, dispatch, and updates in your pocket.",
-    },
-  ];
+interface SliderItem {
+  title: string;
+  description: string;
+  content: { desc: string }[];
+}
+
+interface Props {
+  sliderData: SliderItem[];
+}
+
+const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
+  const [topSwiper, setTopSwiper] = useState<any>(null);
+  const [bottomSwiper, setBottomSwiper] = useState<any>(null);
+
+  // UseEffect to set controller after both swipers are ready
+  useEffect(() => {
+    if (topSwiper && bottomSwiper) {
+      topSwiper.controller.control = bottomSwiper;
+      bottomSwiper.controller.control = topSwiper;
+    }
+  }, [topSwiper, bottomSwiper]);
 
   return (
-    <section
-      className={`relative z-20 overflow-visible bg-white ${theme || ""}`}
-    >
-      <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
+    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
+      {/* Top Image Slider */}
+      <Swiper
+        centeredSlides={true}
+        modules={[Controller, Autoplay]}
+        speed={600}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false,
+        }}
+        onSwiper={setTopSwiper}
+        slidesPerView={1}
+      >
+        <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
+          <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[60%]"></div>
+          <div className="h-full px-2">
+            <div className="mx-auto w-full max-w-[871px] rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
+              <Image
+                unoptimized
+                width={871}
+                height={625}
+                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                src={"/images/webp/real-slider-card-1.webp"}
+                alt="Slide Image"
+                className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="sm:!min-h-[400px] md:pt-[72px]">
+          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              width={668}
+              height={300}
+              priority
+              src={"/images/webp/dollar-visual.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[780px] object-cover"
+            />
+            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
+          {/* <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[80px] lg:h-[180px] lg:blur-[40px] xl:top-[99%]"></div> */}
+          <div className="h-full px-2">
+            <div className="mx-auto w-full max-w-[670px]">
+              <Image
+                priority
+                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                width={835}
+                height={624}
+                src={"/images/webp/deal-approved.webp"}
+                alt="Slide Image"
+                className="mx-auto rounded-3xl"
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[72px] sm:!min-h-[400px]">
+          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              width={668}
+              height={300}
+              priority
+              src={"/images/webp/lost-deal-track.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[780px] object-cover"
+            />
+            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="relative sm:h-[537px]">
+          <div className="relative mx-auto overflow-hidden">
+            {/* <div className="absolute top-[0px] h-[52px] w-full rotate-180 bg-white blur-3xl"></div> */}
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 571px, (min-width: 769px) 571px"
+              width={571}
+              height={537}
+              priority
+              src={"/images/webp/conversion-metric.webp"}
+              alt="Slide Image"
+              className="mx-auto max-h-[537px] w-full object-cover md:max-w-[571px]"
+            />
 
-      {/* <Copy animateOnScroll={true} delay={0.84}> */}
-      <h3 className="xs:text-2xl crm-gradient xs:max-w-[90%] mx-auto px-2 text-center text-xl font-bold sm:hidden xl:px-0">
-        {(() => {
-          const title = fieldService?.title || "";
-          const words = title.trim().split(" ");
-          const lastTwo = words.slice(-2).join(" ");
-          const rest = words.slice(0, -2).join(" ");
-          return (
-            <>
-              {rest} <b>{lastTwo}</b>
-            </>
-          );
-        })()}
-      </h3>
-      <h3 className="section-heading crm-gradient mx-auto hidden max-w-[1029px] px-2 text-center sm:block">
-        {(() => {
-          const title = fieldService?.title || "";
-          const words = title.trim().split(" ");
-          const lastTwo = words.slice(-2).join(" ");
-          const rest = words.slice(0, -2).join(" ");
-          return (
-            <>
-              {rest} <b>{lastTwo}</b>
-            </>
-          );
-        })()}
-      </h3>
-      {/* </Copy> */}
+            <div className="slider-img-gradient absolute bottom-[0px] h-[152px] w-full max-w-full rotate-180"></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
+          <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[70%]"></div>
+          <div className="h-full px-2">
+            <div className="mx-auto w-full max-w-[600px]">
+              <Image
+                unoptimized
+                width={871}
+                height={625}
+                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                src={"/images/webp/job-linked.webp"}
+                alt="Slide Image"
+                className="h-full w-full rounded-3xl object-cover xl:rounded-[45px]"
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[100px] sm:!min-h-[400px]">
+          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              width={668}
+              height={300}
+              priority
+              src={"/images/webp/full-integrated.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[780px] object-cover"
+            />
+            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[100px] sm:!min-h-[400px]">
+          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              width={668}
+              height={300}
+              priority
+              src={"/images/webp/lead-assignment.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[780px] object-cover"
+            />
+            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="relative pt-12 sm:pt-10 md:!h-[660px]">
+          <div className="relative mx-auto">
+            <div className="absolute top-[-87px] right-[20%] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:top-[-149px] sm:right-[32%] sm:max-w-[400px] md:h-[200px] lg:h-[250px]"></div>
+            <div className="absolute right-[18%] bottom-[-50px] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:right-[35%] sm:h-[200px] sm:max-w-[400px] md:bottom-[-149px] lg:h-[251px]"></div>
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
+              width={900}
+              height={382}
+              priority
+              src={"/images/webp/real-slider-card-11.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[850px] object-cover xl:max-w-[900px]"
+            />
+          </div>
+        </SwiperSlide>
+      </Swiper>
 
-      <RealTimeServiceConnectorSlider
-        sliderData={fieldService?.solutionCards}
-      />
-    </section>
+      <div className="slider-img-gradient relative z-20 -mt-[100px] lg:-mt-[252px]">
+        <div className="absolute -bottom-[15%] left-1/2 h-[200px] w-[130%] -translate-x-1/2 rotate-180 bg-white blur-xl sm:-top-[40%] sm:h-[292px]"></div>
+        <div
+          style={{
+            background:
+              "linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 79.73%)",
+          }}
+          className="absolute right-0 bottom-0 hidden h-24 w-[406px] xl:block"
+        ></div>
+        <Swiper
+          modules={[Navigation, Pagination, Controller, Autoplay]}
+          onSwiper={setBottomSwiper}
+          slidesPerView={3}
+          speed={600}
+          spaceBetween={36}
+          centeredSlides={true}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          pagination={{
+            el: ".swiper-pagination-real-time",
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
+          className="real-time-active-slider"
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 36 },
+          }}
+        >
+          {sliderData?.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className="bg-rgba1 relative z-30 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px]"
+            >
+              <b className="text-lightBlack z-20 text-lg lg:text-xl">
+                {item.title}
+              </b>
+              <p className="text-secondary mt-3 text-sm font-medium">
+                {item?.description}
+              </p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Navigation + Pagination */}
+        <div className="relative mx-auto flex w-fit items-center justify-between gap-3">
+          <div className="swiper-button-prev !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
+            <Slidericon />
+          </div>
+
+          <div className="swiper-pagination-real-time relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+
+          <div className="swiper-button-next !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
+            <Slidericon />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -41,11 +41,11 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
       <Swiper
         centeredSlides={true}
         modules={[Controller, Autoplay]}
-        speed={600}
-        // autoplay={{
-        //   delay: 6000,
-        //   disableOnInteraction: false,
-        // }}
+        speed={100}
+        autoplay={{
+          delay: 8000,
+          disableOnInteraction: false,
+        }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
@@ -153,10 +153,10 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          // autoplay={{
-          //   delay: 6000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 8000,
+            disableOnInteraction: false,
+          }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

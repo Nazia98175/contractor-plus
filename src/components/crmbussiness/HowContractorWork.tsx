@@ -13,7 +13,7 @@ interface LikeYouDo {
 }
 
 interface Props {
-  data: LikeYouDo;
+  data?: LikeYouDo;
   ncc: string;
   trackProperties: any;
 }

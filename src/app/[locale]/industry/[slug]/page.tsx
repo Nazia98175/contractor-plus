@@ -39,7 +39,7 @@ export async function generateMetadata({
     resolvedParams.slug,
   );
 
-  if (!page) return;
+  if (!page) notFound();
 
   return generateSeoMetadata({ page, slug: resolvedParams.slug });
 }

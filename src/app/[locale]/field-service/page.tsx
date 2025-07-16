@@ -16,6 +16,7 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -29,7 +30,7 @@ export async function generateMetadata({
     "field-service",
   );
 
-  if (!page) return;
+  if (!page) notFound();
 
   return {
     title:

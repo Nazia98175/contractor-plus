@@ -43,7 +43,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 {review?.profileImg &&
                 typeof review.profileImg === "object" &&
                 "url" in review.profileImg ? (
-                  <ImageProxy
+                  <Image
                     src={review.profileImg?.url}
                     alt="avatar"
                     width={42}

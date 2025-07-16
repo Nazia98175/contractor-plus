@@ -60,6 +60,7 @@ const FieldServiceCard: React.FC<Props> = ({
   console.log(service,"service");
   console.log(apiData,"apiData");
   
+  console.log("Mobile Image URL:", service?.cardImg?.url);
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">

@@ -180,7 +180,6 @@ const page = async ({ params }: PageProps) => {
           variant="secondary"
           headingVariant="tertiary"
         />
-        <div className="pointer-events-none absolute bottom-[-3px] z-[999] h-[6px] w-full bg-white"></div>
       </div>
     </main>
   );

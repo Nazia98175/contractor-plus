@@ -81,40 +81,45 @@ const page = async ({ params }: PageProps) => {
   };
 
   return (
-    <main className="overflow-hidden">
-      <div className="relative bg-white">
-        <div className="relative">
-          <IndustryHero
-            hero={crmPageContent?.hero}
-            homeCard={homeCards}
-            heroImg={heroImg}
-            commonData={commonData}
+    <main className="home-page-wrapper-2 overflow-hidden">
+      <div id="home-page-view-port-screen-hvac" className="relative opacity-0">
+        <div className="relative bg-white">
+          <div className="relative">
+            <div className="relative">
+              <IndustryHero
+                hero={crmPageContent?.hero}
+                homeCard={homeCards}
+                heroImg={heroImg}
+                commonData={commonData}
+              />
+              <div className="absolute bottom-[-2px] z-20 h-1 w-full bg-white"></div>
+            </div>
+            <TrustBatBuildContractor
+              trustedCompanies={trustedCompanies}
+              platforms={blackPlatforms}
+              trustBarImages={commonData?.trustedCompaniesBlackBG}
+              showTrustedSection={true}
+              className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
+            />
+          </div>
+          <MovingSoftware switchingTool={switchingTool} />
+          <WantingMore
+            fieldServiceData={fieldServiceData}
+            slug={crmPageContent?.pageName}
           />
-          <TrustBatBuildContractor
-            trustedCompanies={trustedCompanies}
-            platforms={blackPlatforms}
-            trustBarImages={commonData?.trustedCompaniesBlackBG}
-            showTrustedSection={true}
-            className="relative z-10 mx-auto flex w-full max-w-[1050px] flex-col px-2 pt-[43px] pb-14 md:pt-[13px] xl:pt-5"
+          <EraOfSoftware
+            trackProperties={trackProperties}
+            slug={crmPageContent?.pageName}
           />
         </div>
-        <MovingSoftware switchingTool={switchingTool} />
-        <WantingMore
-          fieldServiceData={fieldServiceData}
-          slug={crmPageContent?.pageName}
-        />
-        <EraOfSoftware
-          trackProperties={trackProperties}
-          slug={crmPageContent?.pageName}
+        <AwardBadges
+          teamsUsingContractor={teamsUsingContractor}
+          buttonInfo={commonData}
+          customIconsMap={
+            useParams.slug === "hvac" ? customIconsMap : customIconsMap2
+          }
         />
       </div>
-      <AwardBadges
-        teamsUsingContractor={teamsUsingContractor}
-        buttonInfo={commonData}
-        customIconsMap={
-          useParams.slug === "hvac" ? customIconsMap : customIconsMap2
-        }
-      />
       {/* <ThousandsReviews
         data={{ title: "4.7 ★ across thousands of reviews" }}
         reviews={reviews}
@@ -167,13 +172,16 @@ const page = async ({ params }: PageProps) => {
         />
         <div className="cloud-layer-bottom absolute bottom-[-1%] z-50 h-[68px] w-full sm:bottom-[-2%] sm:h-[64px] md:-bottom-[2%]"></div>
       </div>
-      <BlogPosts
-        data={blogsByCategory || []}
-        blogs={crmPageContent?.blogs}
-        className="relative z-20 bg-white pb-8"
-        variant="secondary"
-        headingVariant="tertiary"
-      />
+      <div className="relative">
+        <BlogPosts
+          data={blogsByCategory || []}
+          blogs={crmPageContent?.blogs}
+          className="relative z-20 bg-white pb-8"
+          variant="secondary"
+          headingVariant="tertiary"
+        />
+        <div className="pointer-events-none absolute bottom-[-3px] z-[999] h-[6px] w-full bg-white"></div>
+      </div>
     </main>
   );
 };

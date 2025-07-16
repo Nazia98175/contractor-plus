@@ -4,7 +4,6 @@ import {
   billingformData,
   billingNeverLookBackData,
   blogList,
-  dealflowFaq,
   dealflowhero,
   dealReviews,
   dealReviews2,
@@ -14,6 +13,7 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import {
   billingBlogPost,
+  billingFaqData,
   billingSliderData,
   billingVsthWayYouCouldData,
 } from "@/components/common/Utils";
@@ -89,7 +89,7 @@ const BillingPage = () => {
       />
       <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
       <Faq
-        faq={dealflowFaq}
+        faq={billingFaqData}
         classNameAnswer="pt-1"
         mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"

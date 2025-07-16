@@ -508,9 +508,19 @@ html::-webkit-scrollbar {
     transform: translateY(-5px);
   }
 }
+
 .line {
   will-change: transform;
 }
+
+.white-gray-gradient .line {
+  background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .gradient-engine-text {
   background: linear-gradient(to right, white, rgba(238, 30, 37, 0.4) 100%);
   -webkit-background-clip: text;

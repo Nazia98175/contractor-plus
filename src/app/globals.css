@@ -1826,3 +1826,16 @@ body::after {
   background-size: cover;
   z-index: 50;
 }
+.crm-overlap-car-heading {
+  background:
+    linear-gradient(
+      276.94deg,
+      rgba(0, 0, 0, 0) -8.06%,
+      rgba(238, 30, 37, 0.4) 83.81%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

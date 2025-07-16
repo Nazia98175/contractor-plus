@@ -22,6 +22,8 @@ const FieldService: React.FC<TheServiceProps> = ({
     switch (slug) {
       case "general-contractor":
         return "heading-text-2";
+      case "crm":
+        return "crm-overlap-car-heading";
       case "hvac":
         return "gradient-text-2";
       case "plumbing-contractor":
@@ -31,7 +33,6 @@ const FieldService: React.FC<TheServiceProps> = ({
     }
   };
 
-  
   return (
     <section className="relative z-30 px-2 pt-14 sm:pt-20 lg:pt-2">
       <Copy animateOnScroll={true}>

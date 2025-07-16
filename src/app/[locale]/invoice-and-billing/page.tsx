@@ -4,7 +4,6 @@ import {
   billingformData,
   billingNeverLookBackData,
   blogList,
-  dealflowFaq,
   dealflowhero,
   dealReviews,
   dealReviews2,
@@ -14,6 +13,7 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import {
   billingBlogPost,
+  billingFaqData,
   billingSliderData,
   billingVsthWayYouCouldData,
 } from "@/components/common/Utils";
@@ -23,7 +23,6 @@ import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
@@ -90,9 +89,9 @@ const BillingPage = () => {
       />
       <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
       <Faq
-        faq={dealflowFaq}
+        faq={billingFaqData}
         classNameAnswer="pt-1"
-        mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+        mainContainerclassName="px-2 md:pb-[76px]  md:pb-[83px] pb-10"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
       />
       <WhatEverClient

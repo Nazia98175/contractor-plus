@@ -19,19 +19,17 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   platforms,
   showTrustedSection,
   className,
-  trustBarImages
+  trustBarImages,
 }) => {
-
-
-   const renderTitleWithHighlightedNumbers = (title: string) => {
+  const renderTitleWithHighlightedNumbers = (title: string) => {
     if (!title) return null;
-    
+
     // Regular expression to find numbers with optional commas and decimal points
     const numberRegex = /(\d{1,3}(?:,\d{3})*(?:\.\d+)?)/g;
-    
+
     // Split the title by numbers while keeping the numbers in the result
     const parts = title.split(numberRegex);
-    
+
     return parts.map((part, index) => {
       // Check if this part matches our number pattern
       if (numberRegex.test(part) || /^\d/.test(part)) {
@@ -41,11 +39,9 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
     });
   };
 
-
-
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
-     {showTrustedSection && (
+      {showTrustedSection && (
         <h2 className="section-heading crm-gradient xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center font-bold sm:mb-8 md:mb-10 lg:mb-12 lg:!font-semibold xl:max-w-full">
           {renderTitleWithHighlightedNumbers(trustedCompanies?.title)}
         </h2>
@@ -54,12 +50,22 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
         distance={50}
         className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap"
       >
-        {trustBarImages?.length > 0 ?trustBarImages?.map((platform:any, index:number) => (
-          <PlatformCard platform={platform} key={index} apiData={true} />
-        )): 
-          platforms.map((platform, index) => (
-            <PlatformCard platform={platform} key={index} />  
-          ))}
+        {trustBarImages?.length > 0
+          ? trustBarImages?.map((platform: any, index: number) => (
+              <PlatformCard
+                platform={platform}
+                key={index}
+                apiData={true}
+                className={`${className}`}
+              />
+            ))
+          : platforms.map((platform, index) => (
+              <PlatformCard
+                platform={platform}
+                key={index}
+                className={`${className}`}
+              />
+            ))}
       </CardReveal>
 
       <div className="relative z-50 px-4 lg:hidden">
@@ -75,17 +81,24 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
           }}
           autoplay={true}
         >
-          {trustBarImages?.length >0 ? trustBarImages?.map((platform:any, index:number) => (
-            <div key={index} className="flex items-center justify-center">
-              <PlatformCard platform={platform} apiData={true} />
-            </div> )): 
-            platforms?.map((platform, index) => (
-              <div key={index} className="flex items-center justify-center">
-                <PlatformCard platform={platform} />
-              </div>
-            ))}     
-
-      
+          {trustBarImages?.length > 0
+            ? trustBarImages?.map((platform: any, index: number) => (
+                <div key={index} className="flex items-center justify-center">
+                  <PlatformCard
+                    platform={platform}
+                    apiData={true}
+                    className={`${className}`}
+                  />
+                </div>
+              ))
+            : platforms?.map((platform, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <PlatformCard
+                    platform={platform}
+                    className={`${className}`}
+                  />
+                </div>
+              ))}
         </SliderLayout>
       </div>
     </section>

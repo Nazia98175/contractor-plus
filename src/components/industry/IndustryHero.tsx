@@ -1,12 +1,11 @@
-// Updated IndustryHero component with adaptive title
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
-// import AdaptiveHeroTitle from "@/components/common/AdaptiveHeroTitle";
 import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import IndustryHeroSlider from "./IndustryHeroSlider";
 
@@ -16,8 +15,23 @@ const IndustryHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
 }) => {
-  const imageBaseUrl = `${process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string}`;
-//  console.log(homeCard, "homeCard in IndustryHero");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-hvac", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -69,9 +83,11 @@ const IndustryHero: React.FC<TheHeroProps> = ({
             </div>
           </div>
         </div>
-        {homeCard?.length > 0 && <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[2%]">
-          <IndustryHeroSlider features={homeCard} />
-        </div>}
+        {homeCard?.length > 0 && (
+          <div className="absolute right-[2%] bottom-0 z-10 hidden h-[70%] w-[314px] lg:flex xl:right-[2%]">
+            <IndustryHeroSlider features={homeCard} />
+          </div>
+        )}
         <div className="absolute top-0 right-0 h-full w-full lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">
             <Image

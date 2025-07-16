@@ -9,7 +9,6 @@ import Copy from "../common/Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 const ContractorPlatforms = ({ contractPlatformsData }: any) => {
-
   useEffect(() => {
     gsap.set(".plateform-boxes", {
       y: 100,
@@ -36,7 +35,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
       <div className="main-container pt-lg:[37px] relative flex flex-col gap-[26px] pt-[22px] pb-[30px] md:gap-10 md:pb-0 lg:gap-9 lg:pt-[42px]">
         <Copy animateOnScroll={true}>
           <h4 className="sub-heading text-secondary mx-auto w-full max-w-[678px] text-center font-semibold">
-            {contractPlatformsData?.title}wsa
+            {contractPlatformsData?.title}
           </h4>
         </Copy>
 

@@ -98,13 +98,13 @@ const WhyContractorHero = () => {
   }, []);
 
   return (
-    <section className="px-3 pt-[70px] pb-14 sm:pt-[127px] sm:pb-20">
+    <section className="opacity-0 px-3 pt-[70px] pb-14 sm:pt-[127px] sm:pb-20" id="why-contractor-hero-section">
       <div className="relative mx-auto max-w-[830px]">
         <div className="pointer-events-none absolute top-[40%] left-0 mx-auto w-full max-w-[600px] sm:top-0 lg:max-w-[840px]">
           <AnimatedLineIcon />
         </div>
         <Copy animateOnScroll={false} delay={0}>
-          <h2 className="main-heading why-contractor-hero mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4">
+          <h2 className="main-heading why-contractor-hero  white-gray-gradient mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4">
             You can't scale a contracting business built on bottlenecks
           </h2>
         </Copy>

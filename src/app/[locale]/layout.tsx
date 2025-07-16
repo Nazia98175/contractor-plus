@@ -4,12 +4,14 @@ import { getLocale, getMessages } from "next-intl/server";
 import "../globals.css";
 import "../style.css";
 
-import BackToTop from "@/components/common/BackToTop";
+// ✅ Now use dynamic
+
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
+import BackToTop from "@/components/common/BackToTop";
 import Footer from "@/components/common/Footer";
-import { getFooter, getHeader } from "@/services/layout";
-import ParticlesComponent from "@/components/common/ParticlesComponent";
 import Header from "@/components/common/Header";
+import ParticlesComponent from "@/components/common/ParticlesComponent";
+import { getFooter, getHeader } from "@/services/layout";
 
 export const metadata: Metadata = {
   title: "Free to start, free to stay. Level up when you’re ready.",

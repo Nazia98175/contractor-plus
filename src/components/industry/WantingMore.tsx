@@ -14,7 +14,6 @@ const WantingMore: React.FC<WantingMoreProps> = ({
   fieldServiceData,
   slug,
 }) => {
- 
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
@@ -76,7 +75,6 @@ const WantingMore: React.FC<WantingMoreProps> = ({
       <ScrollOverlapCards
         theme="light"
         fieldService={fieldServiceData}
-        apiData={false}
         slug={slug}
       />
     </section>

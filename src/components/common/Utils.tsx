@@ -18,66 +18,60 @@ export const billingSliderData = {
   slug: "field-service",
   solutionCards: [
     {
-      id: 57,
-      title: "Live Dispatch",
-      description:
-        "See who’s available and closest to a job in real time, and dispatch the right person. Crews get notified instantly.",
-      image: null,
-    },
-    {
       id: 58,
       title: "Estimate-to-Invoice",
       description:
         "Approved estimates become invoices instantly. No double-entry or manual document creation.",
       image: null,
     },
-    {
-      id: 59,
-      title: "Job Details",
-      description:
-        "No more digging for details. Everything tied to the job lives in one place, from tasks to work orders and billing.",
-      image: null,
-    },
+
     {
       id: 60,
-      title: "Lost Deal Tracking",
+      title: "Uninvoiced Items Aggregator",
       description:
-        "Log why a deal was lost so you can spot patterns, refine your sales process, and improve your close rate.",
+        "Contractor+ automatically pulls in unbilled labor, materials, mileage, and expenses. Add to the invoice in one click.",
       image: null,
     },
     {
       id: 61,
-      title: "Conversion Metrics",
+      title: "Smart Change Orders",
       description:
-        "See how many deals your team is winning and who’s winning them. Spot top performers and coach the rest.",
+        "Positive or negative change orders are captured as they happen and updated on the invoice instantly. ",
       image: null,
     },
     {
       id: 62,
-      title: "Job-Linked Deals",
+      title: "Recurring Billing",
       description:
-        "Every deal is tied to a property or project and not just a contact. Sales always stay connected to the job site.",
+        "Set up automatic invoices for repeat jobs and maintenance plans. Store cards and charge them after recurring visits.",
       image: null,
     },
     {
       id: 63,
-      title: "Full Integrated",
+      title: "Progress Billing",
       description:
-        "Deal Flow Tracker is deeply integrated with Contractor+ estimates, CRM, and job workflows.",
+        "Invoice in phases or milestones as work is completed during long-term projects.",
       image: null,
     },
     {
       id: 64,
-      title: "Lead Assignment",
+      title: "Online Payments",
       description:
-        "Assign leads to specific team members for accountability and visibility across the sales team.",
+        "Get payment faster by letting clients pay by card or ACH directly from the invoice.",
       image: null,
     },
     {
       id: 65,
-      title: "Mobile App",
+      title: "Late Fees & Auto-Reminder",
       description:
-        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
+        "Set invoice terms and late fees. Contractor+ sends auto-reminders so you don’t have to follow up.",
+      image: null,
+    },
+    {
+      id: 66,
+      title: "eSign on Change Orders",
+      description:
+        "Make any change orders legally defensible contract amendments with built-in eSignature. ",
       image: null,
     },
   ],

@@ -116,7 +116,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           fieldService={pageData.fieldServiceData}
           theme={pageData.theme as "light" | "dark" | "estimateTheme"}
           apiData={true}
-          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
         />
 
         {/* Direct component rendering without lazy loading */}

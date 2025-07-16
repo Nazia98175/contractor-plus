@@ -209,7 +209,7 @@
   font-display: swap;
 }
 body {
-  @apply bg-kuroiBlack font-jakarta isolate;
+  @apply bg-kuroiBlack font-jakarta relative isolate;
 }
 .main-container {
   @apply mx-auto w-full max-w-[1308px] px-2;
@@ -508,9 +508,19 @@ html::-webkit-scrollbar {
     transform: translateY(-5px);
   }
 }
+
 .line {
   will-change: transform;
 }
+
+.white-gray-gradient .line {
+  background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .gradient-engine-text {
   background: linear-gradient(to right, white, rgba(238, 30, 37, 0.4) 100%);
   -webkit-background-clip: text;
@@ -1806,4 +1816,26 @@ button {
 .hero-blur-2 {
   -webkit-backdrop-filter: blur(11px);
   backdrop-filter: blur(11px);
+}
+body::after {
+  content: "";
+  inset: 0px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: 50;
+}
+.crm-overlap-car-heading {
+  background:
+    linear-gradient(
+      276.94deg,
+      rgba(0, 0, 0, 0) -8.06%,
+      rgba(238, 30, 37, 0.4) 83.81%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

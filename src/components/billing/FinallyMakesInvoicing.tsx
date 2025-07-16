@@ -4,18 +4,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-
 import { SplitText } from "gsap/SplitText";
+import TimeAnimation from "../field-services/TimeAnimation";
+import request_change from "../../../public/lotties/request-change.json";
+import img1 from "../../../public/lotties/billing-animation-1.json";
+import img2 from "../../../public/lotties/billing-animation-2.json";
+import img4 from "../../../public/lotties/billing-animation-4.json";
+import img5 from "../../../public/lotties/billing-animation-5.json";
+import img6 from "../../../public/lotties/billing-animation-6.json";
+import img7 from "../../../public/lotties/billing-animation-7.json";
 import {
   stepFiveAnimation,
   stepFourAnimation,
   stepOneAnimation,
-  stepSevenAnimation,
   stepSixAnimation,
   stepThreeAnimation,
   stepTwoAnimation,
-} from "../field-services/animations";
-import TimeAnimation from "../field-services/TimeAnimation";
+} from "./InvoiceAnimation";
+import LottieAnimation from "../common/LottieAnimation";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -88,10 +94,6 @@ const FinallyMakesInvoicing = () => {
       // STEP SIX ANIMATION
       // TIll 3:00PM
       scrollTimeline.add(stepSixAnimation());
-
-      // STEP SEVEN ANIMATION
-      // TIll 5:30PM
-      scrollTimeline.add(stepSevenAnimation());
 
       gsap.set("#timeline-wrapper", {
         opacity: 1,
@@ -192,13 +194,6 @@ const FinallyMakesInvoicing = () => {
           alt="Cloud graphic for step 6 transition"
         />
 
-        {/* STEP 7 CLOUD */}
-        <img
-          src="/images/png/step-7-cloud.png"
-          id="step-7-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
-          alt="Cloud graphic for step 7 transition"
-        />
         {/* ENVIRONMENT BACKGROUND GRADIENT */}
         <img
           id="bg-initial"
@@ -235,11 +230,7 @@ const FinallyMakesInvoicing = () => {
           src="/images/png/bg-gradient-step-6.png"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
-        <img
-          id="bg-step-7"
-          src="/images/png/bg-gradient-step-7.png"
-          className="absolute top-0 left-0 h-full w-full opacity-0"
-        />
+
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
           <div className="flex items-center">
             <TimeAnimation />
@@ -304,71 +295,78 @@ const FinallyMakesInvoicing = () => {
               a thing or re-enter any information.
             </p>{" "}
           </div>
-          <div className="relative overflow-hidden">
-            <Image
+          <div className="relative flex items-center justify-center overflow-hidden">
+            <div
               id="timing-img-1"
-              width={611}
-              height={245}
-              className="timing-imgs relative"
-              src="/images/webp/invoice-timing-1.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs relative h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={img1}
+              />
+            </div>
+
+            <div
               id="timing-img-2"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/invoice-timing-2.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={img2}
+              />
+            </div>
+            <div
               id="timing-img-3"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/svg/invoice-timing-3.svg"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={request_change}
+              />
+            </div>
+            <div
               id="timing-img-4"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/invoice-timing-4.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] max-w-[400px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={img4}
+              />
+            </div>
+            <div
               id="timing-img-5"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/invoice-timing-5.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={img5}
+              />
+            </div>
+            <div
               id="timing-img-6"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/invoice-timing-6.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={img6}
+              />
+            </div>
+            <div
               id="timing-img-7"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/webp/invoice-timing-7.webp"
-              alt="Timing Image"
-            />
-            <Image
-              id="timing-img-8"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 8.png"
-              alt="Timing Image"
-            />
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={img7}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
   }, [topSwiper, bottomSwiper]);
 
   return (
-    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
+    <div className="custom-pagination custom-active-slider relative mx-auto w-full max-w-[1414px]">
       {/* Top Image Slider */}
       <Swiper
         centeredSlides={true}
@@ -101,7 +101,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex h-full items-center justify-center pt-16 sm:pt-12 lg:min-h-[500px]">
+          <div className="flex h-full items-center justify-center pt-16 sm:pt-12 lg:min-h-[500px] lg:pt-0">
             <LottieAnimation
               className="mx-auto w-full max-w-[1285px]"
               loop={true}

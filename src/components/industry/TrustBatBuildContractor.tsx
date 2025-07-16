@@ -21,13 +21,33 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
   className,
   trustBarImages
 }) => {
+
+
+   const renderTitleWithHighlightedNumbers = (title: string) => {
+    if (!title) return null;
+    
+    // Regular expression to find numbers with optional commas and decimal points
+    const numberRegex = /(\d{1,3}(?:,\d{3})*(?:\.\d+)?)/g;
+    
+    // Split the title by numbers while keeping the numbers in the result
+    const parts = title.split(numberRegex);
+    
+    return parts.map((part, index) => {
+      // Check if this part matches our number pattern
+      if (numberRegex.test(part) || /^\d/.test(part)) {
+        return <strong key={index}>{part}</strong>;
+      }
+      return part;
+    });
+  };
+
+
+
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
-      {showTrustedSection && (
+     {showTrustedSection && (
         <h2 className="section-heading crm-gradient xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center font-bold sm:mb-8 md:mb-10 lg:mb-12 lg:!font-semibold xl:max-w-full">
-          {trustedCompanies?.title?.split("50,000")?.[0]}
-          <strong>50,000</strong>
-          {trustedCompanies?.title?.split("50,000")?.[1]}
+          {renderTitleWithHighlightedNumbers(trustedCompanies?.title)}
         </h2>
       )}
       <CardReveal

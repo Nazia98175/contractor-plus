@@ -43,7 +43,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
         modules={[Controller, Autoplay]}
         speed={100}
         autoplay={{
-          delay: 8000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         onSwiper={setTopSwiper}
@@ -154,7 +154,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
             clickable: true,
           }}
           autoplay={{
-            delay: 8000,
+            delay: 6000,
             disableOnInteraction: false,
           }}
           className="real-time-active-slider"

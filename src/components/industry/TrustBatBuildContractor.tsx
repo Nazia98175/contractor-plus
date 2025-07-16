@@ -60,7 +60,11 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
               />
             ))
           : platforms.map((platform, index) => (
-              <PlatformCard platform={platform} key={index} />
+              <PlatformCard
+                platform={platform}
+                key={index}
+                className={`${className}`}
+              />
             ))}
       </CardReveal>
 
@@ -80,12 +84,19 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
           {trustBarImages?.length > 0
             ? trustBarImages?.map((platform: any, index: number) => (
                 <div key={index} className="flex items-center justify-center">
-                  <PlatformCard platform={platform} apiData={true} />
+                  <PlatformCard
+                    platform={platform}
+                    apiData={true}
+                    className={`${className}`}
+                  />
                 </div>
               ))
             : platforms?.map((platform, index) => (
                 <div key={index} className="flex items-center justify-center">
-                  <PlatformCard platform={platform} />
+                  <PlatformCard
+                    platform={platform}
+                    className={`${className}`}
+                  />
                 </div>
               ))}
         </SliderLayout>

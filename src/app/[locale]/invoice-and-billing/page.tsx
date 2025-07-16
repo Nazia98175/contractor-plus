@@ -23,7 +23,6 @@ import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import NeverLookBack from "@/components/field-services/NeverLookBack";
 import RunWithContractor from "@/components/field-services/RunWithContractor";

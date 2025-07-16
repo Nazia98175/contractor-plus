@@ -56,6 +56,10 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
 
+  console.log( service?.cardImg?.url,"service");
+  console.log(service,"service");
+  console.log(apiData,"apiData");
+  
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">

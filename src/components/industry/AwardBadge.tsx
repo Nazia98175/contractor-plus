@@ -18,7 +18,7 @@ export default function AwardBadges({
 }: AwardBadgesProps) {
   return (
     <section className="no-scrollbar relative w-full">
-      <div className="-top-0.5 left-0 h-1.5 w-full bg-white"></div>
+      <div className="absolute -top-0.5 left-0 h-1.5 w-full bg-white"></div>
       <Image
         sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
         width={1920}

@@ -75,7 +75,7 @@ const CardReveal: React.FC<Props> = ({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${className}`}
+      className={`translate-z-0 transition-all duration-700 ease-out will-change-transform backface-hidden ${className}`}
       style={{
         transitionDelay: `${delay}s`,
         transform: isVisible ? "translateY(0)" : `translateY(${distance}px)`,

@@ -209,7 +209,7 @@
   font-display: swap;
 }
 body {
-  @apply bg-kuroiBlack font-jakarta isolate;
+  @apply bg-kuroiBlack font-jakarta relative isolate;
 }
 .main-container {
   @apply mx-auto w-full max-w-[1308px] px-2;
@@ -1816,4 +1816,13 @@ button {
 .hero-blur-2 {
   -webkit-backdrop-filter: blur(11px);
   backdrop-filter: blur(11px);
+}
+body::after {
+  content: "";
+  inset: 0px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: 50;
 }

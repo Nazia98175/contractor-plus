@@ -26,7 +26,7 @@ import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 
 export const metadata = {
-  title: " Contractor Plus - The first AI estimator worth trusting",
+  title: "Contractor Plus - The first AI estimator worth trusting",
   description:
     "Estimatic references your costbook, live supplier pricing, and local labor rates to build estimates the same way you do. Just 100x faster.",
 };

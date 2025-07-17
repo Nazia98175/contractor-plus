@@ -2,6 +2,7 @@ import {
   blogList,
   dealFlowBlogHeadingData,
   dealflowFaq,
+  dealflowformData,
   dealflowhero,
   dealReviews,
   dealReviews2,
@@ -81,7 +82,7 @@ const DealFlowTracker = () => {
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
         ncc={"No credit card required"}
-        data={formData}
+        data={dealflowformData}
         showClouds={false}
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"

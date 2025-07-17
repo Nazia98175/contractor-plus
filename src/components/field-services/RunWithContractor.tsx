@@ -107,7 +107,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                   </span>
                   <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold md:text-[17.5px]">
                     {
-                      kindAdorable?.comaprisons?.[0]?.comparisonList[index]
+                      kindAdorable?.comaprisons?.[1]?.comparisonList[index]
                         ?.details
                     }
                   </p>

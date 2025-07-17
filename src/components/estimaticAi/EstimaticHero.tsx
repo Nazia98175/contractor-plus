@@ -10,6 +10,8 @@ import Copy from "../common/Copy";
 import { estimateHeroData } from "../common/Utils";
 import { useEffect } from "react";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 
 const EstimaticHero = () => {
   useEffect(() => {
@@ -29,7 +31,12 @@ const EstimaticHero = () => {
       });
     }, 700);
   }, []);
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
 
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
   return (
     <section className="bg-cover pb-8 text-white md:pb-14 xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
       <div className="main-container flex justify-center pt-[126px] pb-1.5 xl:justify-between">
@@ -72,11 +79,17 @@ const EstimaticHero = () => {
                   className="!hidden sm:!flex"
                   text="Get started FREE"
                   showIcon={false}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <FreeAccountButton
                   className="!flex w-full sm:!hidden"
                   text="Download FREE App"
                   showIcon={false}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

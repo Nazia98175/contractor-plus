@@ -29,6 +29,9 @@ import payment_sign from "../../../public/lotties/playement-sign.json";
 import dispatch_board from "../../../public/lotties/dispatch-board.json";
 import checked_back from "../../../public/lotties/checked-back.json";
 import job_closed from "../../../public/lotties/job-closed.json";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import FreeAccountButton from "../common/FreeAccountButton";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -123,6 +126,12 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
     };
   }, []);
   console.log(timingEff, "timingEff");
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
+
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
   return (
     <div className="timing-text-style relative bg-white">
       <h2
@@ -415,10 +424,13 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
-          {commonData?.getStartedFreeBtn}
-          <ArrowIcon fill="white" />
-        </Button>
+        <FreeAccountButton
+          text={commonData?.getStartedFreeBtn}
+          showIcon={true}
+          onClick={handleClick}
+          loading={loading}
+          disabled={loading}
+        />
         <CardRequiredButton text={commonData?.nccTxt} />
       </div>
     </div>

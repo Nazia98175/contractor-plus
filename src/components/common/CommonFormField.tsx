@@ -6,6 +6,7 @@ import CardReveal from "./CardReveal";
 import Copy from "./Copy";
 import { usePathname } from "next/navigation";
 import { generateOneLinkUrl } from "@/app/lib/generateOneLinkUrl";
+import ButtonLoader from "./ButtonLoader";
 
 interface CommonFormFieldProps {
   title?: string;
@@ -104,11 +105,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
                 className="bg-red-linear primary-btn hidden h-10 !w-full !min-w-[230px] items-center justify-center sm:flex md:mx-0 md:!w-auto"
                 disabled={loading}
               >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  createBtn
-                )}
+                {loading ? <ButtonLoader /> : createBtn}
               </button>
 
               <div className="hidden items-center gap-2 pt-3 md:flex">
@@ -129,7 +126,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             >
               {mobileBtn || "Get started FREE"}
             </button>
-            
+
             {/* No credit card required text for mobile */}
             <div className="flex items-center justify-center">
               <CardRequiredButton text={ncc} variantBtn={variantBtn} />

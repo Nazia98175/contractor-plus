@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import FreeAccountButton from "../common/FreeAccountButton";
 import { CheckIcon } from "../common/Icons";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 interface Content {
   title: string;
 }
@@ -18,11 +21,12 @@ interface Props {
   trackProperties: any;
 }
 const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
-  const features = [
-    "Make it easier for team members to jump in",
-    "Easily get the full story on every location",
-    "Manage leads, clients, vendors, subs, and properties easier than ever",
-  ];
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
+
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
   return (
     <>
       <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 pt-7 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-[48px] lg:pb-[54px]">
@@ -74,7 +78,11 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
         <FreeAccountButton
           className="gap-1.5"
           text={trackProperties?.btnText}
+          onClick={handleClick}
+          loading={loading}
+          disabled={loading}
         />
+
         <CardRequiredButton className="text-wallStreet" text={ncc} />
       </div>
     </>

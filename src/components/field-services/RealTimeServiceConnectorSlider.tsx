@@ -4,7 +4,11 @@ import { Autoplay, Controller, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { DownloadIcon, Slidericon } from "../common/Icons";
 import Image from "next/image";
-
+import LottieAnimation from "../common/LottieAnimation";
+import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
+import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
+import Field_Updates from "../../../public/lotties/Field-Updates.json";
+import Crew_efficiency from "../../../public/lotties/Crew-efficiency.json";
 interface SliderItem {
   title: string;
   description: string;
@@ -34,10 +38,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6000,
+        //   disableOnInteraction: false,
+        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
@@ -58,18 +62,12 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="pt-[72px] sm:!min-h-[400px]">
-          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
-              width={668}
-              height={300}
-              priority
-              src={"/images/webp/real-slider-card-2.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full max-w-[668px] object-cover"
+          <div className="relative mx-auto min-h-full w-full max-w-[668px] overflow-hidden object-cover sm:w-fit">
+            <LottieAnimation
+              className="h-full w-full"
+              loop={true}
+              animationData={Live_dispatch}
             />
-            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
@@ -88,81 +86,28 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="!flex min-h-[200px] pt-5 sm:!h-[400px] sm:pt-14 md:pt-16 xl:pt-[72px]">
-          <div className="absolute top-[80%] bottom-[-36px] h-[50px] w-[120%] max-w-full bg-white blur-[9px] sm:w-full lg:bottom-[74px] lg:blur-[40px]"></div>
-          <div className="mx-auto flex w-full max-w-[550px] flex-wrap items-center gap-3 sm:flex-nowrap md:gap-6">
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 112px, (min-width: 769px) 112px"
-              width={112}
-              height={111}
-              priority
-              src={"/images/webp/real-slider-group-1.webp"}
-              alt="Slide Image"
-              className="mx-auto h-auto w-full max-w-[112px] rounded-md object-cover"
-            />
-            <div>
-              <Image
-                unoptimized
-                sizes="(max-width: 768px) 112px, (min-width: 769px) 112px"
-                width={112}
-                height={111}
-                src={"/images/webp/real-slider-group-2.webp"}
-                alt="Slide Image"
-                className="mx-auto mb-[5px] h-auto w-full max-w-[112px] rounded-md object-cover"
-              />
-              <DownloadIcon />
-            </div>
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 112px, (min-width: 769px) 112px"
-              width={112}
-              height={111}
-              priority
-              src={"/images/webp/real-slider-group-3.webp"}
-              alt="Slide Image"
-              className="mx-auto h-auto w-full max-w-[112px] rounded-md object-cover"
-            />
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 112px, (min-width: 769px) 112px"
-              width={112}
-              height={111}
-              priority
-              src={"/images/webp/real-slider-group-4.webp"}
-              alt="Slide Image"
-              className="mx-auto h-auto w-full max-w-[112px] rounded-md object-cover"
-            />
-          </div>
+        <SwiperSlide className="mx-auto !flex min-h-[200px] pt-5 sm:!h-[400px] sm:pt-14 md:pt-16 xl:pt-[72px]">
+          <LottieAnimation
+            className="mx-auto h-full w-full max-w-[660px]"
+            loop={true}
+            animationData={Field_Updates}
+          />
         </SwiperSlide>
         <SwiperSlide className="relative sm:h-[537px]">
           <div className="relative mx-auto overflow-hidden">
-            <div className="absolute top-[0px] h-[52px] w-full rotate-180 bg-white blur-3xl"></div>
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 571px, (min-width: 769px) 571px"
-              width={571}
-              height={537}
-              priority
-              src={"/images/webp/real-slider-card-5.webp"}
-              alt="Slide Image"
-              className="mx-auto max-h-[537px] w-full object-cover md:max-w-[571px]"
+            <LottieAnimation
+              className="mx-auto h-full w-full max-w-[660px]"
+              loop={true}
+              animationData={Crew_efficiency}
             />
-
-            <div className="slider-img-gradient absolute bottom-[0px] h-[152px] w-full max-w-full rotate-180"></div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="!flex h-[300px] items-end pt-12 md:!h-[400px] md:pt-4 lg:pt-[72px]">
           <div className="relative mx-auto flex h-full w-fit max-w-[992px] items-center justify-center overflow-hidden">
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 500px, (min-width: 769px) 500px"
-              width={650}
-              height={328}
-              priority
-              src={"/images/webp/real-slider-card-6.webp"}
-              alt="Slide Image"
-              className="mx-auto h-full w-full max-w-[500px] object-cover lg:max-w-[650px] lg:object-contain"
+            <LottieAnimation
+              className="mx-auto h-full w-full max-w-[660px]"
+              loop={true}
+              animationData={Ai_Call}
             />
           </div>
         </SwiperSlide>
@@ -239,10 +184,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 6000,
+          //   disableOnInteraction: false,
+          // }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

@@ -1,4 +1,5 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
@@ -7,6 +8,7 @@ import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";
 import PricingHero from "@/components/pricing/PricingHero";
+import { usePathname } from "next/navigation";
 import { useRef } from "react";
 
 const PricingPage = () => {

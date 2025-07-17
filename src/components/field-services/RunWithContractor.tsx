@@ -50,14 +50,14 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
           {kindAdorable?.title}
         </h3>
       </Copy>
-
-      <Copy animateOnScroll={true} delay={0.2}>
-        {issubHeadingShow && (
+      {issubHeadingShow && (
+        <Copy animateOnScroll={true} delay={0.2}>
           <p className="text-decemberSky mx-auto mt-3 max-w-[80%] text-center">
             {kindAdorable?.subTitle}
           </p>
-        )}
-      </Copy>
+        </Copy>
+      )}
+
       {/* Desktop View */}
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">

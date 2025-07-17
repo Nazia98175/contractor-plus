@@ -4,8 +4,6 @@ import { TheServiceProps } from "../crmbussiness/FieldService";
 import ContractorWorkSlider from "./ContractorWorkSlider";
 
 const ContractorWork: React.FC<TheServiceProps> = ({ fieldService, theme }) => {
-  console.log(fieldService.problemSolutionSection, "field service");
-
   return (
     <section
       className={`relative z-20 overflow-visible bg-white ${theme || ""}`}

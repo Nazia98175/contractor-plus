@@ -71,7 +71,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
         <span className="size-7 sm:size-8">{icon}</span>
       ) : icons && index !== undefined && icons[index]?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
-          <ImageProxy
+          <Image
             src={icons[index].url}
             fill
             className="brightness-0 invert filter sm:filter-none"

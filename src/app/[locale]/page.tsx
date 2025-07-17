@@ -9,6 +9,7 @@ import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import { console } from "inspector";
 import { Metadata } from "next";
 import TrustBar from "@/components/common/TrustBar";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -18,7 +19,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const page = await getSeoData("homepage", resolvedParams?.locale);
 
-  if (!page) return;
+  if (!page) notFound();
 
   return generateSeoMetadata({ page });
 }

@@ -319,7 +319,7 @@ const FinallyMakesInvoicing = () => {
             </div>
             <div
               id="timing-img-3"
-              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+              className="timing-imgs absolute top-0 left-1/2 h-[245px] max-w-[400px] -translate-x-1/2"
             >
               <LottieAnimation
                 className="h-full w-full"
@@ -329,7 +329,7 @@ const FinallyMakesInvoicing = () => {
             </div>
             <div
               id="timing-img-4"
-              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] max-w-[400px]"
+              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
             >
               <LottieAnimation
                 className="h-full w-full"

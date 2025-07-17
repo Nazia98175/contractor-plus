@@ -21,11 +21,6 @@ interface Props {
   trackProperties: any;
 }
 const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
-  const features = [
-    "Make it easier for team members to jump in",
-    "Easily get the full story on every location",
-    "Manage leads, clients, vendors, subs, and properties easier than ever",
-  ];
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
 

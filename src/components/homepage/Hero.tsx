@@ -40,7 +40,7 @@ const Hero = ({
   }, []);
 
   return (
-    <section className="lg:bg-kuroiBlack relative z-20 w-full">
+    <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">

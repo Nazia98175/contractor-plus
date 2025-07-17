@@ -19,6 +19,16 @@ import {
   stepTwoAnimation,
 } from "./animations";
 import { SplitText } from "gsap/SplitText";
+import LottieAnimation from "../common/LottieAnimation";
+import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
+import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
+import Field_Updates from "../../../public/lotties/Field-Updates.json";
+import Crew_efficiency from "../../../public/lotties/Crew-efficiency.json";
+import drag_drop from "../../../public/lotties/drag-and-drop.json";
+import payment_sign from "../../../public/lotties/playement-sign.json";
+import dispatch_board from "../../../public/lotties/dispatch-board.json";
+import checked_back from "../../../public/lotties/checked-back.json";
+import job_closed from "../../../public/lotties/job-closed.json";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -28,7 +38,10 @@ interface TimmingEffectProps {
   commonData?: any;
 }
 
-const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) => {
+const TimmingEffect: React.FC<TimmingEffectProps> = ({
+  timingEff,
+  commonData,
+}) => {
   const timelineWrapperRef = useRef(null);
 
   useGSAP(() => {
@@ -109,7 +122,7 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-  console.log(timingEff , "timingEff");
+  console.log(timingEff, "timingEff");
   return (
     <div className="timing-text-style relative bg-white">
       <h2
@@ -259,7 +272,6 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
             </div>
           </div>
           <div className="relative">
-           
             <p
               id="timing-text-1"
               className="timing-text relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
@@ -317,71 +329,87 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
               once need to chase down an update.
             </p>
           </div>
-          <div className="relative overflow-hidden">
-            <Image
+          <div className="relative mt-4 overflow-hidden">
+            <div
               id="timing-img-1"
-              width={611}
-              height={245}
-              className="timing-imgs relative"
-              src="/images/webp/timing.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs relative mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Live_dispatch}
+              />
+            </div>
+            <div
               id="timing-img-2"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 2.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Ai_Call}
+              />
+            </div>
+            <div
               id="timing-img-3"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 3.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Field_Updates}
+              />
+            </div>
+            <div
               id="timing-img-4"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 4.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={drag_drop}
+              />
+            </div>
+            <div
               id="timing-img-5"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 5.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={payment_sign}
+              />
+            </div>
+            <div
               id="timing-img-6"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 6.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={dispatch_board}
+              />
+            </div>
+            <div
               id="timing-img-7"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 7.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={checked_back}
+              />
+            </div>
+            <div
               id="timing-img-8"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 8.png"
-              alt="Timing Image"
-            />
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={job_closed}
+              />
+            </div>
           </div>
         </div>
       </div>

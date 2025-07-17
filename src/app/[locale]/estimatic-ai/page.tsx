@@ -48,6 +48,7 @@ const EstimaticAiPage = () => {
           kindAdorable={estimateSoftwareData}
           variant="dark"
           icon={true}
+          issubHeadingShow={true}
         />
       </div>
 

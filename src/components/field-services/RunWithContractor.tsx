@@ -10,6 +10,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
   kindAdorable,
   variant = "light",
   icon = false,
+  issubHeadingShow = false,
 }) => {
   const variantClasses = {
     light: {
@@ -37,24 +38,26 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     <section
       className={`relative z-20 pt-10 pb-9 sm:pt-9 sm:pb-14 md:pb-[75px] ${styles.background}`}
     >
-      {/* <Copy animateOnScroll={true}> */}
-      <h3
-        className={`section-heading mx-auto hidden w-full max-w-[1020px] px-2 text-center sm:block ${styles.title}`}
-      >
-        {kindAdorable?.title}
-      </h3>
-      <h3
-        className={`xs:text-[22px] mx-auto max-w-[370px] px-2 text-center text-[19px] font-bold sm:hidden ${styles.description}`}
-      >
-        {kindAdorable?.title}
-      </h3>
-      {/* </Copy> */}
-
-      <Copy animateOnScroll={true}>
-        <p className="text-decemberSky mx-auto mt-3 max-w-[80%] text-center">
-          {kindAdorable?.subTitle}
-        </p>
+      <Copy animateOnScroll={true} delay={0.1}>
+        <h3
+          className={`section-heading mx-auto hidden w-full max-w-[1020px] px-2 text-center sm:block ${styles.title}`}
+        >
+          {kindAdorable?.title}
+        </h3>
+        <h3
+          className={`xs:text-[22px] mx-auto max-w-[370px] px-2 text-center text-[19px] font-bold sm:hidden ${styles.description}`}
+        >
+          {kindAdorable?.title}
+        </h3>
       </Copy>
+      {issubHeadingShow && (
+        <Copy animateOnScroll={true} delay={0.2}>
+          <p className="text-decemberSky mx-auto mt-3 max-w-[80%] text-center">
+            {kindAdorable?.subTitle}
+          </p>
+        </Copy>
+      )}
+
       {/* Desktop View */}
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">

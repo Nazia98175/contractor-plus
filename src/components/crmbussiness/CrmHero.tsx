@@ -11,6 +11,8 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -59,7 +61,12 @@ const CrmHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
 
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
   return (
     <section
       ref={wrapperRef}
@@ -159,11 +166,17 @@ const CrmHero: React.FC<TheHeroProps> = ({
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <FreeAccountButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

@@ -1,12 +1,15 @@
 "use client";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
+import { generateOneLinkUrl } from "@/app/lib/generateOneLinkUrl";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -38,9 +41,15 @@ const Hero = ({
       });
     }, 700);
   }, []);
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
+
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
 
   return (
-    <section className="lg:bg-kuroiBlack relative z-20 w-full">
+    <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
@@ -66,8 +75,12 @@ const Hero = ({
                 <FreeAccountButton
                   showIcon={false}
                   text={commonData?.getStartedFreeBtn}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
               </CardReveal>
+              {/* mobile */}
               <CardReveal
                 className="flex w-full sm:hidden"
                 distance={50}
@@ -78,6 +91,9 @@ const Hero = ({
                   showIcon={false}
                   text={commonData?.mobileBtn}
                   className="!w-full"
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1.5}>

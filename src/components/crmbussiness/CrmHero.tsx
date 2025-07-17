@@ -11,6 +11,8 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { usePathname } from "next/navigation";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -59,7 +61,12 @@ const CrmHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
 
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
   return (
     <section
       ref={wrapperRef}
@@ -95,7 +102,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
             <AdaptiveHeroTitle
               // title={`Property Maintenance`}
               title={hero?.heroTitle || ""}
-              className="gradient-2 xs:text-[28px] gradient-white mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
+              className="gradient-2 xs:text-[28px] mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
               minFontSize={16}
               maxLines={3}
               maxFontSize={48}
@@ -112,7 +119,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.5}>
               <Link
-                href=""
+                href="#"
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
               >
                 <Image
@@ -160,11 +167,17 @@ const CrmHero: React.FC<TheHeroProps> = ({
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <FreeAccountButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
+                  onClick={handleClick}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

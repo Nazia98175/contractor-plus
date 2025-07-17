@@ -8,6 +8,8 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import IndustryHeroSlider from "./IndustryHeroSlider";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { usePathname } from "next/navigation";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,
@@ -32,6 +34,12 @@ const IndustryHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
+
+  const { loading, handleRedirect } = useOneLinkRedirect();
+  const pathname = usePathname();
+  const handleClick = () => {
+    handleRedirect({ pathname, email: "user@example.com" });
+  };
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -71,10 +79,16 @@ const IndustryHero: React.FC<TheHeroProps> = ({
               <FreeAccountButton
                 text={commonData?.getStartedFreeBtn}
                 className="!hidden sm:!flex"
+                onClick={handleClick}
+                loading={loading}
+                disabled={loading}
               />
               <FreeAccountButton
                 text={commonData?.mobileBtn}
                 className="flex sm:!hidden"
+                onClick={handleClick}
+                loading={loading}
+                disabled={loading}
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"

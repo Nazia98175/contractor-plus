@@ -3008,7 +3008,7 @@ export const dealReviews = {
 
 export const realTimeServiceSliderData = {
   title:
-    "Field service management software that connects the work, the people, and the updates in real time",
+    "The only pipeline built to follow the flow of actual contracting work",
   slug: "field-service",
   solutionCards: [
     {
@@ -3127,7 +3127,7 @@ export const billingVsthWayYouCouldData = {
 
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
-  sub_title: "We help you get ahead, not just get by.",
+  subTitle: "We help you get ahead, not just get by.",
   cards: [
     {
       id: 1,
@@ -3338,6 +3338,13 @@ export const estimateFormData = {
   subTitle: "Get started with Estimatic AI in Contractor+ today.",
 };
 
+export const dealflowformData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle:
+    "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
+  title: "This is what opportunity tracker software should have been all along",
+};
 export const dealflowFaq = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",

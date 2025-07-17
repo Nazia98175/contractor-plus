@@ -11,12 +11,14 @@ interface CopyProps {
   children: ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
+  className?: string;
 }
 
 export default function Copy({
   children,
   animateOnScroll = true,
   delay = 0,
+  className,
 }: CopyProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const elementRefs = useRef<HTMLElement[]>([]);
@@ -127,7 +129,7 @@ export default function Copy({
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div className={`${className}`} ref={containerRef} data-copy-wrapper="true">
       {children}
     </div>
   );

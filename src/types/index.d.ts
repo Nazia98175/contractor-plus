@@ -25,6 +25,7 @@ export interface TheServiceProps {
   slug?: string;
   variant?: "light" | "dark";
   icon?: boolean;
+  issubHeadingShow?: boolean;
 }
 export interface ServiceData {
   heading: string;

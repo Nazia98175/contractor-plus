@@ -54,16 +54,10 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             className="bg-doctor flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
             <span className="mb-1 flex h-[31px] w-[31px] items-center justify-center">
-              {slug === "crm" ? (
-                <> {icons[index % icons.length]}</>
-              ) : (
-                <>{icons2[index % icons.length]}</>
-              )}
+              {icons[index % icons.length]}
+              <LottieAnimation animationData={item.lottieJson} />
             </span>
-            {/* <LottieAnimation
-              className="mb-1 h-[31px] w-[31px]"
-              animationData={item.lottieJson}
-            /> */}
+
             <h3 className="text-winterWay countup-title flex items-center justify-center">
               <span
                 className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[60px]"}`}

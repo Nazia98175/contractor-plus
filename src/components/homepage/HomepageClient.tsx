@@ -36,7 +36,9 @@ const HomepageClient = ({
       <CoreFeatures coreFeatures={featurHighlight} />
       <Features features={homePageContent?.data?.serviceList} />
       <div className="relative overflow-hidden">
-        <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />{" "}
+        <ContractorIndustry
+          contractorIndustry={homePageContent?.data?.Industries}
+        />
         <Image
           className="animated-image pointer-events-none absolute top-0 left-0 z-20 hidden h-full w-full max-w-[900px] object-center md:block"
           src="/images/webp/contractor-left-bg.webp"
@@ -53,7 +55,8 @@ const HomepageClient = ({
           height={300}
           sizes="700px"
         />
-      </div>
+      </div>{" "}
+      <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />{" "}
       <WhatEverClient
         data={commonData?.contractorConnects}
         resultStats={resultStats}

@@ -60,7 +60,7 @@ export const getIndustryPageData = async (
     getIndustryPage(
       slug,
       locale,
-      "&populate[featureHighlightIndustrySection][populate][image][populate]=*",
+      "&populate[featureHighlightIndustrySection][populate][images][populate]=*",
     ),
     getIndustryPage(
       slug,

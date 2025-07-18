@@ -4,26 +4,22 @@ import { AxiosResponse } from "axios";
 import { notFound } from "next/navigation";
 
 export const getIndustryPage = async (
-  slug: string,  
+  slug: string,
   locale: string,
-  query: string
+  query: string,
 ): Promise<HomePageResponse | null> => {
-const url = `industries-pages?filters[pageName][$eq]=${slug}&locale=${locale}${query}`;
- 
+  const url = `industries-pages?filters[pageName][$eq]=${slug}&locale=${locale}${query}`;
+
   try {
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log("Failed to fetch industrypage:", error);
-   
+    console.log("Failed to fetch industrypage:", error.response?.data);
+
     if (error.response?.status === 404) {
       return notFound(); // will render 404.tsx
     }
-    console.log(error)
+    console.log(error);
     throw new Error(error);
   }
 };
-
-
-
-

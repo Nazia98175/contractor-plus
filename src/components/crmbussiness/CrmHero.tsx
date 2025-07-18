@@ -189,7 +189,9 @@ const CrmHero: React.FC<TheHeroProps> = ({
         <CardReveal distance={50} delay={0.9}>
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
-              <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
+              <div
+                className={` ${slug === "business-voice" ? "max-w-[329px]" : "z-30 max-w-[900px] rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4"} mx-auto mt-9 block overflow-hidden`}
+              >
                 {imageUrl && (
                   <Image
                     className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"

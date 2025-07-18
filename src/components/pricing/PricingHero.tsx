@@ -1,14 +1,34 @@
 import { PlansProps } from "@/types";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFormField from "../common/CommonFormField";
 import Copy from "../common/Copy";
 import { DownScrollIcon } from "../common/Icons";
+import gsap from "gsap";
 
 const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
+
+  useEffect(() => {
+      setTimeout(() => {
+        gsap.to("#pricing-page-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-header-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-footer-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+      }, 500);
+    }, []);
+
+
   return (
-    <section className="font-jakarta relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24">
+    <section id="pricing-page-view-port-screen" className="font-jakarta relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24">
       <div className="xs:-bottom-[12%] absolute -bottom-[10%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <Image
@@ -23,11 +43,11 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
         Plans and Pricing
       </div>
       <div className="relative mx-auto w-full max-w-[700px]">
-        {/* <Copy delay={1}> */}
+        <Copy delay={1}>
         <h2 className="main-heading mb-4 hidden bg-[linear-gradient(180deg,_#FFFFFF_25%,_#0C1711_177.29%)] bg-clip-text text-center !font-extralight text-transparent sm:block">
           Free to start, free to stay. <br /> Level up when you’re ready.
         </h2>
-        {/* </Copy> */}
+        </Copy>
         {/* <Copy delay={1.2}> */}
         <h2 className="main-heading xs:max-w-[80%] mx-auto mt-1.5 mb-4 bg-[linear-gradient(276.25deg,_rgba(245,25,30,0.3)_-11.28%,_rgba(255,255,255)_45%)] bg-clip-text text-center !font-medium text-transparent sm:hidden">
           Free to start, free to stay. Level up when you’re ready.

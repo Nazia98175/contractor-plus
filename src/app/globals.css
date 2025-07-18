@@ -542,6 +542,22 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+.gradient-text-version-v2 .line {
+  background:
+    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.gradient-text-version-v2 {
+  background:
+    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 .gradient-white .line {
   background:
@@ -791,29 +807,7 @@ html::-webkit-scrollbar {
 .glow-ellipse {
   @apply absolute top-1/2 left-1/2 -translate-1/2 -translate-x-1/2 rounded-[50%] opacity-90;
 }
-@keyframes floatPulsePing {
-  0% {
-    transform: translateX(0);
-    opacity: 0.8;
-  }
-  25% {
-    transform: translateX(-25px);
-    opacity: 0.9;
-    transform: scale(1.2);
-  }
-  50% {
-    transform: translateX(-45px);
-    opacity: 1;
-  }
-  75% {
-    transform: translateX(-25px);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0.8;
-  }
-}
+
 .service-text .line {
   background:
     linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
@@ -821,11 +815,6 @@ html::-webkit-scrollbar {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-}
-
-.animated-image {
-  animation: floatPulsePing 10s ease-in-out infinite;
-  transform-origin: center;
 }
 
 @keyframes bubbling {
@@ -837,10 +826,7 @@ html::-webkit-scrollbar {
     transform: translateY(-10px) scale(1.05);
   }
 }
-.bubbling-animation {
-  display: inline-block;
-  animation: bubbling 4s infinite ease-in-out;
-}
+
 .color-animation {
   animation: spreadColor 3s ease-in-out infinite;
 }

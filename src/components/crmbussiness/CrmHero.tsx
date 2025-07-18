@@ -190,7 +190,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div
-                className={` ${slug === "business-voice" ? "max-w-[329px]" : "z-30 max-w-[900px] rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4"} mx-auto mt-9 block overflow-hidden`}
+                className={` ${slug === "business-voice" || slug === "contractor-pay" ? "max-w-[329px]" : "z-30 max-w-[900px] rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4"} mx-auto mt-9 block overflow-hidden`}
               >
                 {imageUrl && (
                   <Image

@@ -59,7 +59,7 @@ const EstimaticAiPage = () => {
         theme="dark"
         slug="estimateTheme"
         apiData={false}
-        mainClassName="text-center"
+        mainClassName="text-center "
       />
       <div className="relative overflow-hidden">
         <SwitchingTool

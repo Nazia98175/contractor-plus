@@ -13,6 +13,7 @@ import {
   LinkdinIcon,
   TwitterIcon,
 } from "./Icons";
+import { footerVariantClasses } from "@/utils/getVariants";
 interface FooterLink {
   url: string;
   urlText: string;
@@ -32,24 +33,7 @@ interface TheFooterProps {
   footer: Footer;
   variant?: "light" | "dark";
 }
-const variantClasses = {
-  light: {
-    sectionTitle: "text-lightBlack",
-    linkText: "text-winterWay hover:text-romanRed",
-    bottomlink: "text-wallStreet hover:text-romanRed",
-    copyright: "text-wallStreet",
-    powered: "text-wallStreet",
-    background: "bg-white",
-  },
-  dark: {
-    sectionTitle: "text-white",
-    linkText: "text-decemberSky hover:text-romanRed",
-    bottomlink: "text-secondary hover:text-romanRed",
-    copyright: "text-secondary",
-    powered: "text-secondary",
-    background: "bg-transparent",
-  },
-};
+
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
   const variant =
@@ -62,7 +46,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     pathname.toLowerCase().includes("construction-management-software")
       ? "light"
       : "dark";
-  // :point_down: Add this condition
   const isCrmRoute =
     pathname.toLowerCase().includes("crm") ||
     pathname.toLowerCase().includes("estimate") ||
@@ -71,7 +54,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const t = useTranslations("footer");
-  const styles = variantClasses[variant];
+  const styles = footerVariantClasses[variant];
   const toggleSection = (title: string) => {
     setOpenSection(openSection === title ? null : title);
   };
@@ -86,11 +69,11 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               src="/images/webp/footer-gradient-dark.webp"
               alt="footer gradient"
-              width={1440} // Set to actual container width if known
+              width={1440}
               height={457}
               sizes="100vw"
               unoptimized
-              className="h-auto w-full" // Maintain aspect ratio
+              className="h-auto w-full"
             />
           ) : (
             <Image
@@ -100,10 +83,9 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={200}
               sizes="100vw"
               unoptimized
-              className="h-auto w-full" // Maintain aspect ratio
+              className="h-auto w-full"
             />
           )}
-          {/* <FooterAnimatedIcon /> */}
         </span>
       )}
       {isCrmRoute && (
@@ -270,7 +252,7 @@ const FooterSection = ({
   links: { text: string; href: string }[];
   variant?: "light" | "dark";
 }) => {
-  const styles = variantClasses[variant];
+  const styles = footerVariantClasses[variant];
   return (
     <div className="w-full max-w-[180px] lg:max-w-[201px]">
       <h3 className={`pb-2.5 text-base font-bold ${styles.sectionTitle}`}>
@@ -291,7 +273,7 @@ export const FooterLinkItem = ({
   list: { text: string; href: string };
   variant?: "light" | "dark";
 }) => {
-  const styles = variantClasses[variant];
+  const styles = footerVariantClasses[variant];
   return (
     <Link
       className={`${styles.linkText} text-xs leading-[16px] transition-all duration-200 ease-in-out md:text-sm lg:w-full lg:text-base`}

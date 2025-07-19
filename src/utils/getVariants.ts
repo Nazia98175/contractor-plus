@@ -136,3 +136,21 @@ export const VARIANT_CLASSES = {
     modalButton: "bg-stiletto",
   },
 };
+export const footerVariantClasses = {
+  light: {
+    sectionTitle: "text-lightBlack",
+    linkText: "text-winterWay hover:text-romanRed",
+    bottomlink: "text-wallStreet hover:text-romanRed",
+    copyright: "text-wallStreet",
+    powered: "text-wallStreet",
+    background: "bg-white",
+  },
+  dark: {
+    sectionTitle: "text-white",
+    linkText: "text-decemberSky hover:text-romanRed",
+    bottomlink: "text-secondary hover:text-romanRed",
+    copyright: "text-secondary",
+    powered: "text-secondary",
+    background: "bg-transparent",
+  },
+};

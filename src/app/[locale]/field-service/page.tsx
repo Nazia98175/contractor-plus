@@ -69,63 +69,62 @@ const FieldServicesPage = async ({ params }: Params) => {
   } = await getSolutionPageData("field-service", useParams?.locale);
 
   return (
-    <>
-      {/* <MainLoader /> */}
-      <main className="overflow-hidden">
+    <main id="home-page-wrapper-2" className="overflow-hidden">
+      <div
+        id="home-page-view-port-screen-field-service"
+        className="relative opacity-0"
+      >
         <FieldServicesHero
           hero={solutionPageContent?.data?.[0]?.hero}
           commonData={commonData}
         />
-        <ServiceContractorsMarquee reviews={reviews} />
-        <div className="bg-white">
-          <GoingFieldSevices switchingTool={switchingTool?.commonProblems} />
-          <RealTimeServiceConnector
-            theme="estimateTheme"
-            fieldService={fieldServiceData}
-          />
-        </div>
-        <RunWithContractor kindAdorable={comparison} />
-        <TimmingEffect timingEff={trackProperties} commonData={commonData} />
-        <NeverLookBack data={teamsUsingContractor} />
-        <ThousandsReviews
-          data={solutionPageContent?.data?.[0]?.reviewTrustSection}
-          reviews={thousandReviews?.reviews}
-          variant="secondary"
+      </div>
+      <ServiceContractorsMarquee reviews={reviews} />
+      <div className="bg-white">
+        <GoingFieldSevices switchingTool={switchingTool?.commonProblems} />
+        <RealTimeServiceConnector
+          theme="estimateTheme"
+          fieldService={fieldServiceData}
         />
-        <div className="relative overflow-visible">
-          <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-          <CrmSercive
-            createBtn={commonData?.getStartedFreeBtn}
-            mobileBtn={commonData?.mobileBtn}
-            ncc={commonData?.nccTxt}
-            data={solutionPageContent?.data?.[0]?.emailSignupSection}
-            showClouds={false}
-            className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
-            variantBtn="dark"
-          />
-          <TrustBar
-            platforms={platforms}
-            trustBarImages={commonData?.trustedCompaniesWhiteBG}
-            className="mx-auto w-full max-w-[889px]"
-          />
-          <Faq
-            faq={faqs?.faqs}
-            classNameAnswer="pt-1"
-            mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
-            TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
-          />
-        </div>
-        <WhatEverClient
-          data={commonData?.contractorConnects}
-          issection={false}
+      </div>
+      <RunWithContractor kindAdorable={comparison} />
+      <TimmingEffect timingEff={trackProperties} commonData={commonData} />
+      <NeverLookBack data={teamsUsingContractor} />
+      <ThousandsReviews
+        data={solutionPageContent?.data?.[0]?.reviewTrustSection}
+        reviews={thousandReviews?.reviews}
+        variant="secondary"
+      />
+      <div className="relative overflow-visible">
+        <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
+        <CrmSercive
+          createBtn={commonData?.getStartedFreeBtn}
+          mobileBtn={commonData?.mobileBtn}
+          ncc={commonData?.nccTxt}
+          data={solutionPageContent?.data?.[0]?.emailSignupSection}
+          showClouds={false}
+          className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
+          variantBtn="dark"
         />
-        <BlogPosts
-          data={blogs}
-          blogs={solutionPageContent?.data?.[0]?.blogs}
-          className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
+        <TrustBar
+          platforms={platforms}
+          trustBarImages={commonData?.trustedCompaniesWhiteBG}
+          className="mx-auto w-full max-w-[889px]"
         />
-      </main>
-    </>
+        <Faq
+          faq={faqs?.faqs}
+          classNameAnswer="pt-1"
+          mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
+          TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+        />
+      </div>
+      <WhatEverClient data={commonData?.contractorConnects} issection={false} />
+      <BlogPosts
+        data={blogs}
+        blogs={solutionPageContent?.data?.[0]?.blogs}
+        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
+      />
+    </main>
   );
 };
 

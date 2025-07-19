@@ -4,7 +4,6 @@ import TravelBlog from "@/components/blogdetails/TravelBlog";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
-import TrustBarHvca from "@/components/common/TrustBar";
 import TrustBar from "@/components/common/TrustBar";
 
 export const metadata = {
@@ -14,11 +13,14 @@ export const metadata = {
 };
 const BlogDetails = () => {
   return (
-    <main className="overflow-hidden">
-      <main className="bg-white">
+    <main id="home-page-wrapper-2">
+      <div
+        id="home-page-view-port-screen-blog"
+        className="relative bg-white opacity-0"
+      >
         <BlogDetailHero />
         <TravelBlog />
-      </main>
+      </div>
       <div className="relative overflow-hidden">
         <CrmSercive
           data={{

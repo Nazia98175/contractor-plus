@@ -1,15 +1,15 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
-import { generateOneLinkUrl } from "@/app/lib/generateOneLinkUrl";
-import { usePathname } from "next/navigation";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import Image from "next/image";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });

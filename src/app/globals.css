@@ -1795,23 +1795,7 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.hero-blur {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-}
-.hero-blur-2 {
-  -webkit-backdrop-filter: blur(11px);
-  backdrop-filter: blur(11px);
-}
-body::after {
-  content: "";
-  inset: 0px;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  z-index: 50;
-}
+
 .crm-overlap-car-heading {
   background:
     linear-gradient(

@@ -13,8 +13,10 @@ const BlogPage = () => {
   };
 
   return (
-    <main>
-      <BlogHero />
+    <main id="home-page-wrapper-2">
+      <div id="home-page-view-port-screen-blog" className="relative opacity-0">
+        <BlogHero />
+      </div>
       <div className="relative z-20 bg-white">
         <LatestFromContractor handleClick={handleClick} />
         <BlogArticle handleClick={handleClick} />

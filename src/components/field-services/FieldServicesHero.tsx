@@ -1,19 +1,15 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
-import Button from "../common/Button";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
-import {
-  ArrowIcon,
-  HeroAppStoreIcon,
-  HeroPlayStoreIcon,
-} from "../common/Icons";
-import FieldServiceMap from "./FieldServiceMap";
 import Copy from "../common/Copy";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { usePathname } from "next/navigation";
 import FreeAccountButton from "../common/FreeAccountButton";
+import { HeroAppStoreIcon, HeroPlayStoreIcon } from "../common/Icons";
+import FieldServiceMap from "./FieldServiceMap";
 
 interface GeolocationData {
   latitude: number;
@@ -37,6 +33,24 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
   const handleClick = () => {
     handleRedirect({ pathname, email: "user@example.com" });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-field-service", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
+
   return (
     <section className="relative overflow-visible">
       <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-10 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>

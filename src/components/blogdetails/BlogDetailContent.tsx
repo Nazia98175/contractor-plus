@@ -64,7 +64,7 @@ const BlogDetailContent = () => {
         making connections and showing respect.
       </p>
       <h4 className="blog-detail-heading">Stay Safe and Healthy</h4>
-      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3 max-w-[625px]">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3 lg:max-w-[625px]">
         Traveling can expose you to new environments and potential health risks,
         so it's crucial to take precautions to stay safe and healthy. This
         includes researching any required vaccinations or medications, staying
@@ -73,7 +73,7 @@ const BlogDetailContent = () => {
         and to be aware of your surroundings at all times.
       </p>
       <h4 className="blog-detail-heading">Capture Memories</h4>
-      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3 max-w-[625px]">
+      <p className="xs-heading text-indiaInk 1xl:mt-4 mt-3 lg:max-w-[625px]">
         Finally, don't forget to capture memories of your journey. Whether it's
         through photographs, journaling, or souvenirs, preserving the moments
         and experiences of your travels can bring joy and nostalgia for years to

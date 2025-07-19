@@ -20,8 +20,6 @@ const headerVariantClasses = {
 };
 
 const Header: React.FC<HeaderProps> = ({ header }) => {
-
-  
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -56,7 +54,10 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   }, [scrolled]);
 
   return (
-    <header className="fixed top-4 z-[99] w-full rounded px-2 opacity-0" id="home-page-header-view-port-screen">
+    <header
+      className="fixed top-4 z-[99] w-full rounded px-2 opacity-0"
+      id="home-page-header-view-port-screen"
+    >
       <div
         className={`flex h-fit min-h-9 w-full items-center rounded transition-all duration-300 lg:py-3 ${
           scrolled ? "bg-kuroiBlack shadow-c2" : styles.background

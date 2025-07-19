@@ -1,9 +1,8 @@
+import Image from "next/image";
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import ImageProxy from "./ImageProxy";
 import LottieAnimation from "./LottieAnimation";
-import Image from "next/image";
 
 interface SoftwareItem {
   icon: React.ReactNode;

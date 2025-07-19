@@ -1,6 +1,26 @@
+"use client";
+import gsap from "gsap";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const BlogDetailHero = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-blog", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
   return (
     <section className="relative h-full bg-[url('/images/webp/blog-hero-detail-bg.webp')] bg-cover bg-center pt-24 lg:pt-[119px] 2xl:pt-[150px]">
       <div className="main-container h-full">

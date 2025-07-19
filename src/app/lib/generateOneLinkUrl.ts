@@ -2,6 +2,19 @@ interface OneLinkOptions {
   email?: string;
 }
 
+// Helper function to detect device type
+function getDeviceType(): "mobile" | "desktop" {
+  if (typeof window === "undefined") return "desktop";
+
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobile =
+    /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+      userAgent,
+    );
+
+  return isMobile ? "mobile" : "desktop";
+}
+
 export function generateOneLinkUrl(
   pathname: string,
   options: OneLinkOptions = {},
@@ -18,17 +31,17 @@ export function generateOneLinkUrl(
       ? pathParts.slice(1).join("/")
       : pathParts.join("/");
 
-  // Use the clean path as campaign (or 'home' if empty)
   const campaign = cleanPath || "home";
 
-  // For deep_link_value, we can use the same path
-  // or you can remove this if not needed
   const deepLinkValue = cleanPath;
+
+  // Get device type
+  const deviceType = getDeviceType();
 
   // Build URL with parameters
   const params = new URLSearchParams({
-    pid: "web",
-    utm_source: "web",
+    pid: deviceType,
+    utm_source: deviceType,
     utm_medium: "feature",
     utm_campaign: campaign,
     utm_term: lang,

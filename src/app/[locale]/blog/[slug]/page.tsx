@@ -15,10 +15,10 @@ export const metadata = {
 const BlogDetails = () => {
   return (
     <main className="overflow-hidden">
-      <main className="bg-white">
+      <div className="bg-white">
         <BlogDetailHero />
         <TravelBlog />
-      </main>
+      </div>
       <div className="relative overflow-hidden">
         <CrmSercive
           data={{

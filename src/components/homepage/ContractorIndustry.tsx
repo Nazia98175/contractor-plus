@@ -38,11 +38,6 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
               {contractorIndustry?.subTitle ?? ""}
             </h6>
           </Copy>
-          {/* <div className="hidden items-center justify-center md:flex">
-            <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
-              {contractorIndustry?.btnText ?? ""}
-            </PrimaryLink>
-          </div> */}
         </div>
         <ContractorIndustrySlider />
       </div>

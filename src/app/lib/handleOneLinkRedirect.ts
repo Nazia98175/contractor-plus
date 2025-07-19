@@ -22,7 +22,7 @@ export const useOneLinkRedirect = () => {
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     const useNewTab = forceNewTab || (!isMobile && !forceSameTab);
-    const url = generateOneLinkUrl(pathname, email ? { email } : {});
+    const url = generateOneLinkUrl(pathname, email?.trim() ? { email } : {});
 
     if (useNewTab) {
       window.open(url, "_blank");

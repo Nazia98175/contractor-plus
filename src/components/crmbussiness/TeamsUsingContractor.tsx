@@ -60,7 +60,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
 
             <h3 className="text-winterWay countup-title flex items-center justify-center">
               <span
-                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[60px]"}`}
+                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[68px]"}`}
               >
                 {inView && (
                   <CountUp
@@ -79,12 +79,11 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                   (item?.value !== null
                     ? `${item.value}${item.suffix ?? ""}`
                     : `${item.end}${item.suffix ?? ""}`)}
-              </span>{" "}
-              {slug === "crm" ? (
-                <span className="inline-block px-2">
-                  {item.title !== "n/a" && item.title}
-                </span>
-              ) : undefined}
+              </span>
+
+              <span className="inline-block px-2">
+                {item.title !== "n/a" && item.title}
+              </span>
             </h3>
 
             <p className="text-secondary countup-desc">{item.subTitle}</p>

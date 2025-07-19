@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Button from "../common/Button";
 import { blogData } from "../common/Helper";
@@ -6,6 +7,7 @@ import BlogArticle from "./BlogArticle";
 import SliderLayout from "../common/SliderLayout";
 import { headingVariantMap } from "@/utils/getVariants";
 import Copy from "../common/Copy";
+import { useRouter } from "next/navigation";
 
 interface Props {
   data?: any;
@@ -28,13 +30,17 @@ const BlogPosts: React.FC<Props> = ({
 }) => {
   const bgClass = variant === "primary" ? "bg-blackRussian" : "bg-doctor2";
   const textClass = variant === "primary" ? "text-white" : "text-winterWay";
+  const router = useRouter();
 
+  const goToNewPage = () => {
+    router.push("/blog");
+  };
   return (
     <section
       className={`relative z-20 px-2 pt-4 sm:px-4 xl:px-20 ${className || ""}`}
     >
       <div className="mx-auto w-full max-w-[1158px]">
-        <div className="xs:justify-center mb-6 flex items-start justify-center sm:justify-between md:mb-9 lg:items-center">
+        <div className="xs:justify-center mb-6 flex items-start justify-center gap-2 sm:justify-between md:mb-9 lg:items-center">
           <Copy animateOnScroll={true}>
             <h2
               className={`mx-auto w-full text-center sm:w-fit sm:text-start md:mx-0 lg:max-w-full ${
@@ -46,7 +52,10 @@ const BlogPosts: React.FC<Props> = ({
           </Copy>
           <Copy animateOnScroll={true}>
             <div className="hidden md:block">
-              <Button className="bg-red-linear primary-btn mt-0.5 h-10 gap-2 lg:mt-0">
+              <Button
+                onClick={goToNewPage}
+                className="bg-red-linear primary-btn mt-0.5 h-10 gap-2 lg:mt-0"
+              >
                 {blogs?.btnText}
                 <BlogBtnIcon />
               </Button>

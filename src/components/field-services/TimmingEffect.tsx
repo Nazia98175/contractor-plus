@@ -1,14 +1,24 @@
 "use client";
-import Image from "next/image";
-import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
-import { ArrowIcon } from "../common/Icons";
 
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import TimeAnimation from "./TimeAnimation";
-import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import { usePathname } from "next/navigation";
+import { useRef } from "react";
+import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
+import checked_back from "../../../public/lotties/checked-back.json";
+import dispatch_board from "../../../public/lotties/dispatch-board.json";
+import drag_drop from "../../../public/lotties/drag-and-drop.json";
+import Field_Updates from "../../../public/lotties/Field-Updates.json";
+import job_closed from "../../../public/lotties/job-closed.json";
+import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
+import payment_sign from "../../../public/lotties/playement-sign.json";
+import location from "../../../public/lotties/location.json";
+import FreeAccountButton from "../common/FreeAccountButton";
+import LottieAnimation from "../common/LottieAnimation";
 import {
   stepFiveAnimation,
   stepFourAnimation,
@@ -18,20 +28,7 @@ import {
   stepThreeAnimation,
   stepTwoAnimation,
 } from "./animations";
-import { SplitText } from "gsap/SplitText";
-import LottieAnimation from "../common/LottieAnimation";
-import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
-import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
-import Field_Updates from "../../../public/lotties/Field-Updates.json";
-import Crew_efficiency from "../../../public/lotties/Crew-efficiency.json";
-import drag_drop from "../../../public/lotties/drag-and-drop.json";
-import payment_sign from "../../../public/lotties/playement-sign.json";
-import dispatch_board from "../../../public/lotties/dispatch-board.json";
-import checked_back from "../../../public/lotties/checked-back.json";
-import job_closed from "../../../public/lotties/job-closed.json";
-import { usePathname } from "next/navigation";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import FreeAccountButton from "../common/FreeAccountButton";
+import TimeAnimation from "./TimeAnimation";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -273,7 +270,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
           <div className="flex items-center">
             <TimeAnimation />
-            <div className="relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] text-black sm:text-3xl md:text-[42px]">
+            <div className="text-phantom relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
               <div id="am-pm-wrapper" className="flex flex-col">
                 <span className="h-[50px]">AM</span>
                 <span className="h-[50px]">PM</span>
@@ -346,7 +343,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={Live_dispatch}
+                animationData={location}
               />
             </div>
             <div

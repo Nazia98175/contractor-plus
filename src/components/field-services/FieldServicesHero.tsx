@@ -53,6 +53,15 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
 
   return (
     <section className="relative overflow-visible">
+      <Image
+        className="3xl:right-[13%] absolute top-[29%] right-[11%] z-20 w-full max-w-[355px] object-cover min-[2500px]:right-[15%]"
+        src="/images/webp/group-with-location.webp"
+        width={355}
+        height={355}
+        alt="location"
+        sizes="(max-width: 768px) 100vw, 355px"
+        unoptimized
+      />
       <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-10 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
 
       <FieldServiceMap />
@@ -60,7 +69,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
       <div className="pointer-events-none absolute inset-0"></div>
 
       {/* Content overlay */}
-      <div className="main-container relative z-20 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:flex-row lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
+      <div className="main-container z-20 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:flex-row lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
         <div className="w-full lg:max-w-[732px]">
           <Copy animateOnScroll={false} delay={0}>
             <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
@@ -117,15 +126,6 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
             </div>
           </CardReveal>
         </div>
-        <Image
-          className="w-full max-w-[355px] object-cover"
-          src="/images/webp/group-with-location.webp"
-          width={355}
-          height={355}
-          alt="location"
-          sizes="(max-width: 768px) 100vw, 355px"
-          unoptimized
-        />
       </div>
     </section>
   );

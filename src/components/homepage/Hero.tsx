@@ -9,7 +9,6 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
-import Image from "next/image";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -39,14 +38,14 @@ const Hero = ({
         opacity: 1,
         duration: 1,
       });
-    }, 700);
+    },1000);
   }, []);
+
+
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
 
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
+  
 
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
@@ -75,7 +74,7 @@ const Hero = ({
                 <FreeAccountButton
                   showIcon={false}
                   text={commonData?.getStartedFreeBtn}
-                  onClick={handleClick}
+                 onClick={() => handleRedirect({ pathname })}
                   loading={loading}
                   disabled={loading}
                 />
@@ -91,7 +90,7 @@ const Hero = ({
                   showIcon={false}
                   text={commonData?.mobileBtn}
                   className="!w-full"
-                  onClick={handleClick}
+                  onClick={() => handleRedirect({ pathname, email: "" })}
                   loading={loading}
                   disabled={loading}
                 />

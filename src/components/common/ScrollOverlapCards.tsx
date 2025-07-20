@@ -22,8 +22,11 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
 }) => {
   const { gsapInstance, isLoaded, registerCleanup } = useGSAPDynamic();
   const [animationReady, setAnimationReady] = useState(false);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<any>(null); // Store timeline reference
+
+  // Function to calculate and update maximum height
 
   // Initialize animations when GSAP is loaded
   useEffect(() => {
@@ -127,7 +130,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   // Show loading state while GSAP loads
   if (!isLoaded) {
     return (
-      <div className="min-h-[108dvh] animate-pulse">
+      <div className="min-h-[100vh] animate-pulse">
         <div className="mx-auto mt-[60px] h-12 max-w-[813px] rounded bg-gray-200"></div>
         <div className="mt-10 space-y-4">
           {[...Array(3)].map((_, i) => (
@@ -145,14 +148,8 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     <div
       ref={containerRef}
       id="crm-cards-wrapper"
-      className="relative z-10 min-h-[108dvh] overflow-hidden sm:min-h-dvh lg:px-2 xl:h-fit"
+      className="relative z-10 min-h-[100vh] overflow-hidden sm:min-h-dvh lg:px-2 xl:h-fit"
     >
-      <h2
-        className={`${getHeadingClass ? getHeadingClass() : ""} 3xl:block mx-auto mt-[60px] hidden pb-10 text-center text-4xl font-semibold -tracking-[0.72px]`}
-      >
-        {fieldService?.title}
-      </h2>
-
       {fieldService?.cardsDetail?.map((service: any, index: any) => (
         <div
           key={index}

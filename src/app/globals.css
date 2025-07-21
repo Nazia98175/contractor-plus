@@ -78,7 +78,7 @@
   --color-pantone: #4d4d4d;
   --color-trolleyGrey: #818181;
   --color-discoBall: #d5d5d5;
-
+  --color-fiftieth: #515151;
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
   --color-sangoPink: #f4ada5;
@@ -281,7 +281,7 @@ body {
   @apply text-xs font-medium sm:text-sm xl:text-base;
 }
 .event-card-tittle {
-  @apply text-pantone3 text-2xl font-semibold;
+  @apply text-pantone3 text-base font-semibold md:text-lg lg:text-xl xl:text-2xl;
 }
 .card-review {
   @apply font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm;
@@ -1812,4 +1812,21 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.swiper-pagination-real-time-4 {
+  @apply relative w-[93px] max-w-[93px] min-w-[93px] overflow-hidden;
+}
+.swiper-pagination-real-time-4 span {
+  @apply relative;
+}
+.custom-pagination-2 .swiper-pagination-bullet {
+  @apply !bg-fiftieth !m-0 transition-all duration-300 ease-in;
+}
+.custom-pagination-2 .swiper-pagination-bullet-active {
+  @apply h-1.5 w-6 rounded-3xl !bg-white;
+}
+.custom-pagination-2
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 0% !important;
+  transform: translateX(-0%) !important;
 }

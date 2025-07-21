@@ -2,12 +2,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 
-import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import {
+  Pagination,
+  Autoplay,
+  EffectCoverflow,
+  Navigation,
+} from "swiper/modules";
 import { SwiperOptions } from "swiper/types";
 
 interface SliderLayoutProps extends SwiperOptions {
   children: React.ReactNode[];
   className?: string;
+  Navigation?: any;
   swiperClassName?: string;
   onSlideChange?: (swiper: SwiperClass) => void;
   wrapperClassName?: string;
@@ -33,7 +39,7 @@ const SliderLayout: React.FC<SliderLayoutProps> = ({
   className = "mySwiper",
   swiperClassName,
   wrapperClassName = "relative w-full",
-  modules = [Pagination],
+  modules = [Pagination, Navigation],
   effect = undefined,
   autoplay = false,
   pagination = false,

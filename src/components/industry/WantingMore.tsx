@@ -40,7 +40,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
     updateMaxHeight();
     const cards = document.querySelectorAll(".crm-cards");
     const totalCards = cards.length;
-    // Create the pinning animation
+
     if (maxHeight > 0) {
       const startScreen = (window.innerHeight - maxHeight) / 2 - 100 + "px";
       console.log(startScreen);
@@ -55,11 +55,9 @@ const WantingMore: React.FC<WantingMoreProps> = ({
         markers: false,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
-          // Optional: Add any additional animations during scroll
           const progress = self.progress;
-          // Example: Fade out heading as it approaches the end
           gsap.to(headingRef.current, {
-            opacity: 1 - progress * 0.3, // Subtle fade effect
+            opacity: 1 - progress * 0.3,
             duration: 0.1,
           });
         },

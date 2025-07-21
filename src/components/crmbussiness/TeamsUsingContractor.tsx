@@ -11,12 +11,13 @@ import {
   MoreIcon,
 } from "../common/Icons";
 import LottieAnimation from "../common/LottieAnimation";
+
 export interface Props {
   data: any;
   slug?: string;
 }
+
 const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
-  // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -29,11 +30,16 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
     <ClockIcon key="clock" />,
     <MoreIcon key="more" />,
   ];
-  const icons2 = [
-    <ClockIcon key="clock" />,
-    <CalanderIcon key="estimate" className="fill-[#3F464B]" />,
-    <MoreIcon key="more" />,
-  ];
+
+  // ✅ Get all indexes where lottieJson exists
+  const lottieIndexes = data?.cards?.reduce(
+    (acc: number[], item: any, index: number) => {
+      if (item.lottieJson) acc.push(index);
+      return acc;
+    },
+    [],
+  );
+
   return (
     <section
       ref={ref}
@@ -44,18 +50,23 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
           {data?.title}
         </h2>
       </Copy>
+
       <Copy animateOnScroll={true} delay={0.2}>
         <p className="paragraph-style text-center">{data?.subTitle}</p>
       </Copy>
+
       <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-[18px] px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 md:gap-[30px] xl:mt-[52px] xl:mb-[70px]">
-        {data?.cards?.map((item: any, index: any) => (
+        {data?.cards?.map((item: any, index: number) => (
           <article
             key={index}
             className="bg-doctor flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
-            <span className="mb-1 flex h-[31px] w-[31px] items-center justify-center">
-              {icons[index % icons.length]}
-              <LottieAnimation animationData={item.lottieJson} />
+            <span className="mb-1 flex h-[40px] w-[40px] items-center justify-center">
+              {lottieIndexes.includes(index) ? (
+                <LottieAnimation animationData={item.lottieJson} />
+              ) : (
+                icons[index % icons.length]
+              )}
             </span>
 
             <h3 className="text-winterWay countup-title flex items-center justify-center">

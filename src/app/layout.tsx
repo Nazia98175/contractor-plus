@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import "./globals.css";
+import "./style.css";
 
 type Props = {
   children: ReactNode;
@@ -12,7 +14,7 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <>
+    <html>
       <Head>
         <script
           type="text/javascript"
@@ -20,8 +22,9 @@ export default function RootLayout({ children }: Props) {
           async={true}
         ></script>
       </Head>
-      <SmoothScroll />
-      {children}
-    </>
+      <body><SmoothScroll />
+      {children}</body>
+      
+    </html>
   );
 }

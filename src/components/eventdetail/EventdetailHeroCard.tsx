@@ -40,7 +40,7 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
           width={150}
           height={150}
         />
-        <b className="text-master text-center text-base font-normal">
+        <b className="text-master text-center text-sm font-normal sm:text-base">
           {item.label}
           <span className="ml-2 rounded-3xl bg-[#3D3D3D] px-2 py-1 text-[#D2D4D6]">
             {item.tag}

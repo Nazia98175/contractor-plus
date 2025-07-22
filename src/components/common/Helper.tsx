@@ -3577,3 +3577,42 @@ export const allEventSections = [
     ],
   },
 ];
+
+export const eventFAQs = [
+  {
+    id: 1,
+    question: "When and where is AU 2024 taking place? ",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 2,
+    question: "How can my company become a sponsor at AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 3,
+    question: "What learning and networking will be part of AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 4,
+    question: "Will there be a digital experience?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 5,
+    question: "Can I meet with Autodesk product and industry experts at AU?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 6,
+    question: "What are the AU Community Rules?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 7,
+    question:
+      "I’m a journalist. What can I expect from a press/media perspective?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+];

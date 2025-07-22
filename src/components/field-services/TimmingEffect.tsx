@@ -29,6 +29,7 @@ import {
   stepTwoAnimation,
 } from "./animations";
 import TimeAnimation from "./TimeAnimation";
+import Image from "next/image";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -125,10 +126,6 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
   console.log(timingEff, "timingEff");
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
-
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
   return (
     <div className="timing-text-style relative bg-white">
       <h2
@@ -180,50 +177,62 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         />
 
         {/* STEP 1 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-1-cloud.png"
           id="step-1-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 1 transition"
         />
 
         {/* STEP 2 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-2-cloud.png"
           id="step-2-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 2 transition"
         />
 
         {/* STEP 3 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-3-cloud.png"
           id="step-3-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 3 transition"
         />
 
         {/* STEP 4 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-4-cloud.png"
           id="step-4-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 4 transition"
         />
 
         {/* STEP 6 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-6-cloud.png"
           id="step-6-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 6 transition"
         />
 
         {/* STEP 7 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-7-cloud.png"
           id="step-7-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 7 transition"
         />
         {/* ENVIRONMENT BACKGROUND GRADIENT */}
@@ -424,9 +433,9 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <FreeAccountButton
           text={commonData?.getStartedFreeBtn}
           showIcon={true}
-          onClick={handleClick}
           loading={loading}
           disabled={loading}
+          onClick={() => handleRedirect({ pathname })}
         />
         <CardRequiredButton text={commonData?.nccTxt} />
       </div>

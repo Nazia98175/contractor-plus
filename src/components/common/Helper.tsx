@@ -3449,3 +3449,131 @@ export const runWithContractorData = {
     },
   ],
 };
+export const allEventSections = [
+  {
+    sectionId: "conference-events",
+    sectionHeading: "Must-Attend Conference & Expo’s",
+    events: [
+      {
+        id: 1,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 2,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 3,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 4,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "upcoming-events",
+    sectionHeading: "All Upcoming Events",
+    events: [
+      {
+        id: 5,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 6,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 7,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 8,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "all-events",
+    sectionHeading: "All Past Events",
+    events: [
+      {
+        id: 9,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 10,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 11,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 12,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+];

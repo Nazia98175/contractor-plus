@@ -31,7 +31,7 @@ const ConferenceCard = ({
         <Copy delay={0.1}>
           <Link
             className="font-montserrat text-sm leading-[142.857%] font-medium tracking-[0.1px] whitespace-nowrap text-white"
-            href="/"
+            href={`/events-directory/${swiperId}`}
           >
             View All
           </Link>
@@ -69,7 +69,7 @@ const ConferenceCard = ({
             <Copy delay={0.4}>
               <Link
                 className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
-                href="/"
+                href={`/events-directory/${swiperId}`}
               >
                 View All
               </Link>

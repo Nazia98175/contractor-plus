@@ -74,6 +74,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <main className="overflow-hidden">
         <FieldServicesHero
           hero={solutionPageContent?.data?.[0]?.hero}
+          solutionTag={solutionPageContent?.data?.[0]?.solutionTag}
           commonData={commonData}
         />
         <ServiceContractorsMarquee reviews={reviews} />

@@ -41,7 +41,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
   }, []);
 
   const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
-
+ 
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -59,7 +59,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
-
+console.log(heroImg, "heroImg in CrmHero");
   return (
     <section
       ref={wrapperRef}
@@ -177,10 +177,10 @@ const CrmHero: React.FC<TheHeroProps> = ({
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
-                {imageUrl && (
+                {heroImg?.url && (
                   <Image
                     className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                    src={imageUrl}
+                    src={heroImg?.url}
                     width={900}
                     height={616}
                     alt="crm-hero"

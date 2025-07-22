@@ -94,7 +94,7 @@ const SwitchingToolDesktop = ({
     },
     { dependencies: [sectionRef], scope: sectionRef },
   );
-
+   console.log(switchingTool, "switchingTool in SwitchingToolDesktop");
   return (
     <div className="relative px-2" ref={sectionRef}>
       <div className="relative mx-auto mt-10 flex max-w-[1180px] flex-col items-center justify-center pb-16 lg:flex-row">
@@ -105,7 +105,7 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.[0]?.img ||
+                switchingTool?.cardsDetail?.[0]?.cardImg?.url ||
                 "/images/webp/switch-card-4.webp"
               }
               width={switchingTool?.cardsDetail?.[0]?.imgWidth || 370}
@@ -126,7 +126,7 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.[1]?.img ||
+                switchingTool?.cardsDetail?.[1]?.cardImg?.url ||
                 "/images/webp/switch-card-5.webp"
               }
               width={switchingTool?.cardsDetail?.[1]?.imgWidth || 370}
@@ -147,7 +147,7 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.[2]?.img ||
+                switchingTool?.cardsDetail?.cardImg?.url ||
                 "/images/webp/switch-card-6.webp"
               }
               width={switchingTool?.cardsDetail?.[2]?.imgWidth || 370}

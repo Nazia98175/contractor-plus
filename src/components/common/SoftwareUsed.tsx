@@ -53,7 +53,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     >
       {item.lottieJson ? (
         <LottieAnimation
-          className="h-9 w-8"
+          className="h-9 w-8 fill-white"
           loop={true}
           animationData={item.lottieJson}
         />

@@ -4,7 +4,6 @@ import React from "react";
 import { TickIcon } from "../common/Icons";
 import LottieAnimation from "../common/LottieAnimation";
 import { themeColors } from "@/utils/getVariants";
-
 interface Props {
   service: ServiceData;
   slug: string;

@@ -43,7 +43,7 @@ const SpeakersEvents = () => {
     },
   ];
   return (
-    <section className="px-2 py-20">
+    <section className="px-2 py-8">
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle"> {`Speakers at {EventName}`}</h4>

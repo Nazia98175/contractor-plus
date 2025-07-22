@@ -109,11 +109,8 @@ const FinallyConnectsField = () => {
     };
   }, []);
 
-  const { loading, handleRedirect } = useOneLinkRedirect();
   const pathname = usePathname();
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">
       <h2
@@ -366,7 +363,7 @@ const FinallyConnectsField = () => {
           <FreeAccountButton
             className="mx-auto mt-3 mb-1.5 !w-fit"
             text={"Get started FREE"}
-            onClick={handleClick}
+            onClick={() => handleRedirect({ pathname })}
             loading={loading}
             disabled={loading}
           />
@@ -375,7 +372,7 @@ const FinallyConnectsField = () => {
           <FreeAccountButton
             className="mx-auto mt-3 mb-1.5 !w-fit"
             text={"Download FREE App"}
-            onClick={handleClick}
+            onClick={() => handleRedirect({ pathname })}
             loading={loading}
             disabled={loading}
           />

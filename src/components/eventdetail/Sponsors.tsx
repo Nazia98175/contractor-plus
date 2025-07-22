@@ -83,46 +83,48 @@ const Sponsors = () => {
         </div>
 
         <div className="mx-auto w-full overflow-hidden py-10">
-          <Swiper
-            className="w-full border border-[#1C2731]"
-            modules={[Pagination, Navigation]}
-            pagination={{
-              el: ".swiper-pagination-sponsor",
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            navigation={{
-              nextEl: ".sponsor-button-next",
-              prevEl: ".sponsor-button-prev",
-            }}
-            spaceBetween={7}
-            slidesPerView={2}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-              updateVisibleSlides(swiper);
-            }}
-            onSlideChange={updateVisibleSlides}
-            onResize={(swiper) => updateVisibleSlides(swiper)}
-            breakpoints={{
-              500: { slidesPerView: 4, spaceBetween: 7 },
-              765: { slidesPerView: 5, spaceBetween: 10 },
-              870: { slidesPerView: 5, spaceBetween: 15 },
-              1024: { slidesPerView: 6, spaceBetween: 14 },
-              1124: { slidesPerView: 7, spaceBetween: 15 },
-            }}
-          >
-            {sponsorLogo.map((member, index) => (
-              <SwiperSlide key={index}>
-                <SponsorCard
-                  image={member.images}
-                  index={index}
-                  isFirstVisible={index === firstVisible}
-                  isLastVisible={index === lastVisible}
-                  isLastCard={index === sponsorLogo.length - 1}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <CardReveal delay={0.4} distance={50}>
+            <Swiper
+              className="w-full border border-[#1C2731]"
+              modules={[Pagination, Navigation]}
+              pagination={{
+                el: ".swiper-pagination-sponsor",
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              navigation={{
+                nextEl: ".sponsor-button-next",
+                prevEl: ".sponsor-button-prev",
+              }}
+              spaceBetween={7}
+              slidesPerView={2}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                updateVisibleSlides(swiper);
+              }}
+              onSlideChange={updateVisibleSlides}
+              onResize={(swiper) => updateVisibleSlides(swiper)}
+              breakpoints={{
+                500: { slidesPerView: 4, spaceBetween: 7 },
+                765: { slidesPerView: 5, spaceBetween: 10 },
+                870: { slidesPerView: 5, spaceBetween: 15 },
+                1024: { slidesPerView: 6, spaceBetween: 14 },
+                1124: { slidesPerView: 7, spaceBetween: 15 },
+              }}
+            >
+              {sponsorLogo.map((member, index) => (
+                <SwiperSlide key={index}>
+                  <SponsorCard
+                    image={member.images}
+                    index={index}
+                    isFirstVisible={index === firstVisible}
+                    isLastVisible={index === lastVisible}
+                    isLastCard={index === sponsorLogo.length - 1}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </CardReveal>
         </div>
       </div>
     </section>

@@ -1,41 +1,49 @@
 import React from "react";
+import CardReveal from "../common/CardReveal";
+import Image from "next/image";
 
 const SpeakerCard = ({ member }: { member: any }) => {
   return (
-    <article className="group relative h-full w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300">
-      <img
-        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        src={member.image}
-        alt={member.name}
-      />
-      <div className="absolute bottom-0 left-0 z-10 w-full bg-[rgba(0,0,0,0.32)] p-3 backdrop-blur-[16px]">
-        <p className="font-sm font-semibold text-[#ADB1B5]">
-          CEO Of Gracias Restorations
-        </p>
-        <div className="flex items-center justify-between gap-3 pt-3">
-          <h4 className="text-xl font-semibold text-white md:text-2xl">
-            Mark Jerry
-          </h4>
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M7 17L17 7M17 7H7M17 7V17"
-                stroke="#8D8D8D"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
-    </article>
+    <>
+      <CardReveal delay={0.1} distance={50}>
+        <article className="group relative h-full w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300">
+          <Image
+            height={500}
+            width={500}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            src={member.image}
+            alt={member.name}
+          />
+          <div className="absolute bottom-0 left-0 z-10 w-full bg-[rgba(0,0,0,0.32)] p-3 backdrop-blur-[16px]">
+            <p className="font-sm font-semibold text-[#ADB1B5]">
+              CEO Of Gracias Restorations
+            </p>
+            <div className="flex items-center justify-between gap-3 pt-3">
+              <h4 className="text-xl font-semibold text-white md:text-2xl">
+                Mark Jerry
+              </h4>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="#8D8D8D"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </article>
+      </CardReveal>
+    </>
   );
 };
 

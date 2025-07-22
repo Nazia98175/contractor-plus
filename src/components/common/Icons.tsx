@@ -4701,3 +4701,19 @@ export const CustomSliderIcon = () => (
     />
   </svg>
 );
+export const EventHeroIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36"
+    height="36"
+    viewBox="0 0 36 36"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.295 6.33474C12.6883 5.88842 13.3261 5.88842 13.7194 6.33474L24 18L13.7194 29.6653C13.3261 30.1116 12.6883 30.1116 12.295 29.6653C11.9017 29.219 11.9017 28.4953 12.295 28.049L21.1512 18L12.295 7.95098C11.9017 7.50467 11.9017 6.78105 12.295 6.33474Z"
+      fill="#4E4E4E"
+    />
+  </svg>
+);

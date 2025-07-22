@@ -24,7 +24,7 @@ const ConferenceCard = ({
 }: ConferenceCardProps) => {
   return (
     <>
-      <div className="flex justify-between sm:hidden">
+      <div className="flex justify-between px-2 sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">{sectionHeading}</h4>
         </Copy>

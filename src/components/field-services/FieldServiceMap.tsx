@@ -19,57 +19,13 @@ const DEFAULT_LOCATION: GeolocationData = {
   country: "IN",
 };
 
-const FieldServiceMap: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [location, setLocation] = useState<GeolocationData | null>(null);
-  const [mapKey, setMapKey] = useState(0);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const { latitude, longitude } = position.coords;
-          const { city, country } = await reverseGeocode(latitude, longitude);
-
-          setLocation({ latitude, longitude, city, country });
-          setMapKey((prev) => prev + 1);
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-          setLocation(DEFAULT_LOCATION);
-          setMapKey((prev) => prev + 1);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 600000,
-        },
-      );
-    } else {
-      setLocation(DEFAULT_LOCATION);
-      setMapKey((prev) => prev + 1);
-    }
-  }, []);
-
-  const processedLocation = useMemo(() => {
-    if (!location) return null;
-    return {
-      latitude: location.latitude,
-      longitude: location.longitude,
-      city: location.city,
-      country: location.country,
-    };
-  }, [location]);
-
-  const onMapLoad = useCallback(() => {
-    setIsLoading(false);
-  }, []);
-
-  const onMapError = useCallback((event: any) => {
-    console.error("Map error:", event);
-    setIsLoading(false);
-  }, []);
-
+const FieldServiceMap: React.FC<{
+  location: GeolocationData | null;
+  isLoading: boolean;
+  mapKey: number;
+  onMapLoad: () => void;
+  onMapError: (event: any) => void;
+}> = ({ location, isLoading, mapKey, onMapLoad, onMapError }) => {
   return (
     <>
       <div className="absolute inset-0 h-full w-full">
@@ -86,8 +42,8 @@ const FieldServiceMap: React.FC = () => {
           <Map
             key={mapKey}
             initialViewState={{
-              longitude: processedLocation?.longitude,
-              latitude: processedLocation?.latitude,
+              longitude: location.longitude,
+              latitude: location.latitude,
               zoom: 13,
             }}
             style={{
@@ -106,18 +62,6 @@ const FieldServiceMap: React.FC = () => {
           />
         )}
       </div>
-
-      {processedLocation?.city && (
-        <div className="absolute top-[34%] right-[35%] z-20 transform sm:top-[32%] sm:right-[42%] lg:top-[60%] lg:right-[12%] xl:top-[53%] xl:right-[17%]">
-          <div className="flex items-center gap-2.5 rounded-lg bg-[#ffffff1a] p-1.5 text-white backdrop-blur-[3px]">
-            <LocationIcon />
-            <b className="text-sm leading-normal text-white lg:text-base">
-              {processedLocation.city}
-              {processedLocation.country && `, ${processedLocation.country}`}
-            </b>
-          </div>
-        </div>
-      )}
     </>
   );
 };

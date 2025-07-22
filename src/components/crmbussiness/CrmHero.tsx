@@ -63,10 +63,6 @@ const CrmHero: React.FC<TheHeroProps> = ({
   }, []);
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
-
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
   return (
     <section
       ref={wrapperRef}
@@ -154,7 +150,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
-                  onClick={handleClick}
+                  onClick={() => handleRedirect({ pathname })}
                   loading={loading}
                   disabled={loading}
                 />
@@ -162,7 +158,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
-                  onClick={handleClick}
+                  onClick={() => handleRedirect({ pathname })}
                   loading={loading}
                   disabled={loading}
                 />

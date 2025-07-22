@@ -88,9 +88,9 @@ const EventPricing = () => {
             </div>
           </div>
         </div>
-        <div className="relative mx-auto w-full py-10">
-          <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-32px] z-10 hidden h-[103%] w-[115px] blur-[9px] sm:blur-[15px] md:block md:w-[130px]"></div>
-          <div className="bg-kuroiBlack pointer-events-none absolute right-[-32px] bottom-[-6%] z-10 hidden h-[103%] w-[115px] blur-[9px] sm:blur-[15px] md:block md:w-[130px]"></div>
+        <div className="relative mx-auto w-full overflow-hidden py-10">
+          <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-28px] z-10 hidden h-[103%] w-[115px] blur-[9px] sm:blur-[15px] md:block md:w-[130px] lg:left-[-32px]"></div>
+          <div className="bg-kuroiBlack pointer-events-none absolute right-[-28px] bottom-[-6%] z-10 hidden h-[103%] w-[115px] blur-[9px] sm:blur-[15px] md:block md:w-[130px] lg:right-[-32px]"></div>
           <Swiper
             modules={[Pagination, Navigation]}
             pagination={{

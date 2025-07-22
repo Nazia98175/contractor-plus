@@ -36,9 +36,10 @@ interface heroProps {
 interface Props {
   hero: heroProps;
   commonData?: any;
+  solutionTag?: string;
 }
 
-const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
+const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -118,7 +119,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
         <div className="relative z-20 w-full lg:max-w-[732px]">
           <Copy animateOnScroll={false} delay={0}>
             <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
-              {/* {hero?.heroTitle1} */} Field Service Management
+              {solutionTag}
             </div>
           </Copy>
           <Copy animateOnScroll={false} delay={0.2}>

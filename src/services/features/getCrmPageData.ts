@@ -39,7 +39,7 @@ export const getFeaturesPageData = async (
     getCrmPage(slug, locale, "&populate=*"),
     getCrmPage(slug , locale , "&populate[hero][populate]=heroImg"),
     getCrmPage(slug, locale, "&populate[reviews][populate][reviews][populate]=profileImg"),
-    getCrmPage(slug, locale, "&populate[commonProblems][populate]=cardsDetail"),
+    getCrmPage(slug, locale, "&populate[commonProblems][populate][cardsDetail][populate]=cardImg"),
     getCrmPage(slug, locale, "&populate[problemSolutionSection][populate][cardsDetail][populate][cardImg]=true&populate[problemSolutionSection][populate][cardsDetail][populate][content]=true"),
     getCrmPage(slug, locale, "&populate[featureHighlightSection][populate][featuresList][populate]=*"),
     getCrmPage(slug, locale, "&populate[featureComparisonTable][populate][features]=true"),

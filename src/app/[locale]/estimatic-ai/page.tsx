@@ -24,6 +24,7 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
+import Image from "next/image";
 
 export const metadata = {
   title: "Contractor Plus - The first AI estimator worth trusting",
@@ -48,6 +49,7 @@ const EstimaticAiPage = () => {
           kindAdorable={estimateSoftwareData}
           variant="dark"
           icon={true}
+          issubHeadingShow={true}
         />
       </div>
 
@@ -57,19 +59,38 @@ const EstimaticAiPage = () => {
         theme="dark"
         slug="estimateTheme"
         apiData={false}
-        mainClassName="text-center"
+        mainClassName="text-center "
       />
-      <SwitchingTool
-        className="pb-[113px]"
-        switchingTool={estimaticControlData}
-      />
-      <ContractorIndustry
-        contractorIndustry={{
-          ...contractorIndustry,
-          url: contractorIndustry.url ?? "",
-          btnText: contractorIndustry.btnText ?? "",
-        }}
-      />
+      <div className="relative overflow-hidden">
+        <SwitchingTool
+          className="pb-[113px]"
+          switchingTool={estimaticControlData}
+        />
+
+        <ContractorIndustry
+          contractorIndustry={{
+            ...contractorIndustry,
+            url: contractorIndustry.url ?? "",
+            btnText: contractorIndustry.btnText ?? "",
+          }}
+        />
+        <Image
+          className="pointer-events-none absolute bottom-0 left-0 z-20 hidden h-[90%] w-full max-w-[900px] object-center md:block"
+          src="/images/webp/josh-lesson-left-background.webp"
+          alt="webp bg"
+          width={900}
+          height={700}
+          sizes="900px"
+        />
+        <Image
+          className="svgTwinkle absolute right-0 bottom-0 z-0 hidden h-[50%] w-full max-w-[700px] object-center lg:block"
+          src="/images/webp/josh-lesson-right-background.webp"
+          alt="webp bg"
+          width={700}
+          height={300}
+          sizes="700px"
+        />
+      </div>
 
       <AwardsTagsImg className="sm:mt-24 xl:mt-[133px]" />
       <ThousandsReviews

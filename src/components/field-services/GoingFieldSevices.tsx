@@ -56,7 +56,7 @@ const GoingFieldSevices: React.FC<
   return (
     <section
       id="going-field-service"
-      className="relative z-20 pb-[52px] sm:pb-[60px] lg:pb-[95px]"
+      className="relative z-20 overflow-hidden pb-[52px] sm:pb-[60px] lg:pb-[95px]"
     >
       {isImageshow && (
         <div id="parallex-img-wrapper">

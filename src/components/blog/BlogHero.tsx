@@ -1,12 +1,29 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { contractorTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
 import CustomSelect from "./CustomSelect";
+import gsap from "gsap";
 
 const BlogHero = () => {
   const [selectedValue, setSelectedValue] = useState("contractor");
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-blog", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
   return (
     <div className="relative bg-[url('/images/webp/parallax.webp')] bg-cover bg-fixed bg-center pt-44 pb-[400px] 2xl:pt-52">
       <div className="relative -z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">

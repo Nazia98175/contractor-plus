@@ -1,6 +1,8 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
@@ -36,11 +38,13 @@ const Hero = ({
         opacity: 1,
         duration: 1,
       });
-    }, 700);
+    }, 1000);
   }, []);
 
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
-    <section className="lg:bg-kuroiBlack relative z-20 w-full">
+    <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
@@ -66,8 +70,12 @@ const Hero = ({
                 <FreeAccountButton
                   showIcon={false}
                   text={commonData?.getStartedFreeBtn}
+                  onClick={() => handleRedirect({ pathname })}
+                  loading={loading}
+                  disabled={loading}
                 />
               </CardReveal>
+              {/* mobile */}
               <CardReveal
                 className="flex w-full sm:hidden"
                 distance={50}
@@ -78,6 +86,9 @@ const Hero = ({
                   showIcon={false}
                   text={commonData?.mobileBtn}
                   className="!w-full"
+                  onClick={() => handleRedirect({ pathname, email: "" })}
+                  loading={loading}
+                  disabled={loading}
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1.5}>

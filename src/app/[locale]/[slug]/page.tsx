@@ -16,7 +16,10 @@ import CrmService from "@/components/crmbussiness/CrmSercive";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import { FooterRedLineIcon, FooterRedLineMobileIcon } from "@/components/common/Icons";
+import {
+  FooterRedLineIcon,
+  FooterRedLineMobileIcon,
+} from "@/components/common/Icons";
 import { platforms } from "@/components/common/Helper";
 import Image from "next/image";
 
@@ -93,7 +96,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
   return (
     <>
-      <div id="home-page-wrapper-2" className="">
+      <div id="home-page-wrapper-2">
         <div
           id="home-page-view-port-screen-fetures"
           className="relative opacity-0"
@@ -106,11 +109,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             featureTag={pageData?.featureTag}
           />
         </div>
-        
+
         <TrustedService reviews={reviews} slug={useParams?.slug} />
-        
+
         <SwitchingTool switchingTool={pageData?.switchingTool} />
-        
+
         <FieldService
           slug={pageData.slug}
           fieldService={pageData.fieldServiceData}
@@ -123,27 +126,42 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         <div className="bg-white">
           {Boolean(trackProperties?.featureHighlightSectionVisible) && (
             <>
-              <TrackProperties ncc={pageData.ncc} trackProperties={pageData.trackProperties} />
-              
+              <TrackProperties
+                ncc={pageData.ncc}
+                trackProperties={pageData.trackProperties}
+              />
+
               <LikeYouDoContacts trackProperties={pageData.trackProperties} />
-              
-              <HowContractorWork ncc={pageData.ncc} trackProperties={pageData.trackProperties} />
+
+              <HowContractorWork
+                ncc={pageData.ncc}
+                trackProperties={pageData.trackProperties}
+              />
             </>
           )}
 
-          <KindAdorable slug={pageData.slug} kindAdorable={pageData.comparison} />
+          <KindAdorable
+            slug={pageData.slug}
+            kindAdorable={pageData.comparison}
+          />
 
-          <TeamsUsingContractor data={pageData.teamsUsingContractor} slug={pageData.slug} />
+          <TeamsUsingContractor
+            data={pageData.teamsUsingContractor}
+            slug={pageData.slug}
+          />
 
-          <ThousandsReviews data={pageData.thousandReviews} reviews={pageData.reviewsData} />
+          <ThousandsReviews
+            data={pageData.thousandReviews}
+            reviews={pageData.reviewsData}
+          />
         </div>
 
         <div className="relative overflow-hidden">
           {/* Background Icons */}
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-          
+
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-          
+
           <div className="relative">
             <Image
               width={800}
@@ -161,8 +179,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               data={pageData.crmService}
               variant="primary"
               className={`${
-                pageData.slug === "crm" 
-                  ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0" 
+                pageData.slug === "crm"
+                  ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
                   : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
               }`}
               variantBtn="light"
@@ -185,7 +203,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         <BlogPosts
           data={pageData.blogsList}
           blogs={pageData.blogs}
-          className="mt-7 md:mt-9 mb-20"
+          className="mt-7 mb-20 md:mt-9"
           classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
         />
       </div>

@@ -1,14 +1,24 @@
 "use client";
-import Image from "next/image";
-import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
-import { ArrowIcon } from "../common/Icons";
 
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import TimeAnimation from "./TimeAnimation";
-import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import { usePathname } from "next/navigation";
+import { useRef } from "react";
+import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
+import checked_back from "../../../public/lotties/checked-back.json";
+import dispatch_board from "../../../public/lotties/dispatch-board.json";
+import drag_drop from "../../../public/lotties/drag-and-drop.json";
+import Field_Updates from "../../../public/lotties/Field-Updates.json";
+import job_closed from "../../../public/lotties/job-closed.json";
+import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
+import payment_sign from "../../../public/lotties/playement-sign.json";
+import location from "../../../public/lotties/location.json";
+import FreeAccountButton from "../common/FreeAccountButton";
+import LottieAnimation from "../common/LottieAnimation";
 import {
   stepFiveAnimation,
   stepFourAnimation,
@@ -18,7 +28,8 @@ import {
   stepThreeAnimation,
   stepTwoAnimation,
 } from "./animations";
-import { SplitText } from "gsap/SplitText";
+import TimeAnimation from "./TimeAnimation";
+import Image from "next/image";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -28,7 +39,10 @@ interface TimmingEffectProps {
   commonData?: any;
 }
 
-const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) => {
+const TimmingEffect: React.FC<TimmingEffectProps> = ({
+  timingEff,
+  commonData,
+}) => {
   const timelineWrapperRef = useRef(null);
 
   useGSAP(() => {
@@ -109,7 +123,9 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-  console.log(timingEff , "timingEff");
+  console.log(timingEff, "timingEff");
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <div className="timing-text-style relative bg-white">
       <h2
@@ -161,50 +177,62 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
         />
 
         {/* STEP 1 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-1-cloud.png"
           id="step-1-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 1 transition"
         />
 
         {/* STEP 2 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-2-cloud.png"
           id="step-2-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 2 transition"
         />
 
         {/* STEP 3 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-3-cloud.png"
           id="step-3-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 3 transition"
         />
 
         {/* STEP 4 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-4-cloud.png"
           id="step-4-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 4 transition"
         />
 
         {/* STEP 6 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-6-cloud.png"
           id="step-6-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 6 transition"
         />
 
         {/* STEP 7 CLOUD */}
-        <img
+        <Image
+          width={1920}
+          height={200}
           src="/images/png/step-7-cloud.png"
           id="step-7-cloud"
-          className="absolute top-0 z-[21] h-full w-full opacity-0"
+          className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 7 transition"
         />
         {/* ENVIRONMENT BACKGROUND GRADIENT */}
@@ -251,7 +279,7 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
           <div className="flex items-center">
             <TimeAnimation />
-            <div className="relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] text-black sm:text-3xl md:text-[42px]">
+            <div className="text-phantom relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
               <div id="am-pm-wrapper" className="flex flex-col">
                 <span className="h-[50px]">AM</span>
                 <span className="h-[50px]">PM</span>
@@ -259,7 +287,6 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
             </div>
           </div>
           <div className="relative">
-           
             <p
               id="timing-text-1"
               className="timing-text relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
@@ -317,80 +344,99 @@ const TimmingEffect:React.FC<TimmingEffectProps> = ({timingEff , commonData}) =>
               once need to chase down an update.
             </p>
           </div>
-          <div className="relative overflow-hidden">
-            <Image
+          <div className="relative mt-4 overflow-hidden">
+            <div
               id="timing-img-1"
-              width={611}
-              height={245}
-              className="timing-imgs relative"
-              src="/images/webp/timing.webp"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs relative mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={location}
+              />
+            </div>
+            <div
               id="timing-img-2"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 2.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Ai_Call}
+              />
+            </div>
+            <div
               id="timing-img-3"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 3.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={Field_Updates}
+              />
+            </div>
+            <div
               id="timing-img-4"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 4.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={drag_drop}
+              />
+            </div>
+            <div
               id="timing-img-5"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 5.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={payment_sign}
+              />
+            </div>
+            <div
               id="timing-img-6"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 6.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={dispatch_board}
+              />
+            </div>
+            <div
               id="timing-img-7"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 7.png"
-              alt="Timing Image"
-            />
-            <Image
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={checked_back}
+              />
+            </div>
+            <div
               id="timing-img-8"
-              width={611}
-              height={245}
-              className="timing-imgs absolute top-0 left-0"
-              src="/images/png/CRM 8.png"
-              alt="Timing Image"
-            />
+              className="timing-imgs absolute top-0 left-0 mx-auto h-[245px] w-full max-w-[611px]"
+            >
+              <LottieAnimation
+                className="h-full w-full"
+                loop={true}
+                animationData={job_closed}
+              />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
-          {commonData?.getStartedFreeBtn}
-          <ArrowIcon fill="white" />
-        </Button>
+        <FreeAccountButton
+          text={commonData?.getStartedFreeBtn}
+          showIcon={true}
+          loading={loading}
+          disabled={loading}
+          onClick={() => handleRedirect({ pathname })}
+        />
         <CardRequiredButton text={commonData?.nccTxt} />
       </div>
     </div>

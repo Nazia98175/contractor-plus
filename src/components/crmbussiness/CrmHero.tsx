@@ -11,6 +11,8 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { usePathname } from "next/navigation";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -59,7 +61,8 @@ const CrmHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
-console.log(heroImg, "heroImg in CrmHero");
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section
       ref={wrapperRef}
@@ -82,28 +85,16 @@ console.log(heroImg, "heroImg in CrmHero");
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
-            {/* <Copy delay={0.2} animateOnScroll={false}> */}
-            {/* <h2
-                className={`${
-                  slug === "estimate"
-                    ? "xs:max-w-[78%] max-w-[88%] sm:max-w-[698px]"
-                    : "xs:max-w-[78%] max-w-[88%] sm:max-w-[927px]"
-                } `}
-              >
-                {hero?.heroTitle}
-              </h2> */}
             <AdaptiveHeroTitle
-              // title={`Property Maintenance`}
               title={hero?.heroTitle || ""}
-              className="gradient-2 xs:text-[28px] gradient-white mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
+              className="gradient-2 xs:text-[28px] mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
               minFontSize={16}
+              maxLines={3}
               maxFontSize={48}
             />
             {/* </Copy> */}
             <Copy delay={0.4} animateOnScroll={false}>
-              <p
-                className={`${slug === "estimate" ? "max-w-[465px]" : "max-w-[826px]"} text-decemberSky mx-auto mb-4 text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg`}
-              >
+              <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
                 {hero?.heroDescription}
               </p>
             </Copy>
@@ -111,7 +102,7 @@ console.log(heroImg, "heroImg in CrmHero");
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.5}>
               <Link
-                href=""
+                href="#"
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
               >
                 <Image
@@ -159,11 +150,17 @@ console.log(heroImg, "heroImg in CrmHero");
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
+                  onClick={() => handleRedirect({ pathname })}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <FreeAccountButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
+                  onClick={() => handleRedirect({ pathname })}
+                  loading={loading}
+                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

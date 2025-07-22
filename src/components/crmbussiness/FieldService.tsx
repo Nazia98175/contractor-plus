@@ -27,9 +27,11 @@ const FieldService: React.FC<TheServiceProps> = ({
       case "hvac":
         return "gradient-text-2";
       case "plumbing-contractor":
-        return "plumbing-text text-green-600 font-bold";
+        return "plumbing-text font-bold";
+      case "estimatic-ai":
+        return "heading-text-2";
       default:
-        return "gradient-text max-w-[813px]";
+        return "gradient-text-version-v2 max-w-[813px]";
     }
   };
 

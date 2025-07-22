@@ -4,6 +4,9 @@ import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
+import { usePathname } from "next/navigation";
+import { generateOneLinkUrl } from "@/app/lib/generateOneLinkUrl";
+import ButtonLoader from "./ButtonLoader";
 
 interface CommonFormFieldProps {
   title?: string;
@@ -34,6 +37,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
+  const pathname = usePathname();
 
   const handleSubmit = (
     e: FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>,
@@ -41,14 +45,19 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setEmail("");
-    }, 2000);
+    // For desktop: include email parameter
+    const oneLinkUrl = generateOneLinkUrl(pathname, { email });
+    window.location.href = oneLinkUrl;
   };
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+  };
+
+  const handleMobileClick = () => {
+    // For mobile: no email parameter needed
+    const oneLinkUrl = generateOneLinkUrl(pathname);
+    window.location.href = oneLinkUrl;
   };
 
   const getVariantStyles = () => {
@@ -75,6 +84,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
           </p>
         </Copy>
         <CardReveal distance={50}>
+          {/* Desktop Form - Hidden on Mobile */}
           <form
             className="mx-auto hidden w-full max-w-[550px] flex-col items-start justify-center gap-3 sm:flex md:max-w-[657px] md:flex-row"
             onSubmit={handleSubmit}
@@ -95,11 +105,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
                 className="bg-red-linear primary-btn hidden h-10 !w-full !min-w-[230px] items-center justify-center sm:flex md:mx-0 md:!w-auto"
                 disabled={loading}
               >
-                {loading ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                ) : (
-                  createBtn
-                )}
+                {loading ? <ButtonLoader /> : createBtn}
               </button>
 
               <div className="hidden items-center gap-2 pt-3 md:flex">
@@ -111,18 +117,21 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             </div>
           </form>
 
-          {/* Mobile Button */}
-          <button
-            onClick={handleSubmit}
-            className="bg-red-linear primary-btn mx-auto h-10 !w-full max-w-[500px] sm:!hidden md:mx-0 md:!w-auto"
-            disabled={loading}
-          >
-            {loading ? (
-              <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-            ) : (
-              mobileBtn
-            )}
-          </button>
+          {/* Mobile Button - Direct to App Store */}
+          <div className="flex flex-col items-center gap-3 sm:hidden">
+            <button
+              onClick={handleMobileClick}
+              className="bg-red-linear primary-btn mx-auto h-10 !w-full max-w-[500px]"
+              type="button"
+            >
+              {mobileBtn || "Get started FREE"}
+            </button>
+
+            {/* No credit card required text for mobile */}
+            <div className="flex items-center justify-center">
+              <CardRequiredButton text={ncc} variantBtn={variantBtn} />
+            </div>
+          </div>
         </CardReveal>
       </div>
     </>

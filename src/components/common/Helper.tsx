@@ -179,8 +179,8 @@ export const planData = [
     isPro: true,
   },
   {
-    title: "Pro Team",
-    subtitle: "Minimum of 5 user",
+    title: "PRO Team",
+    subtitle: "Minimum of 5 users",
     monthlyPrice: 29,
     annuallyPrice: 19,
     note: "For Teams",
@@ -3008,7 +3008,7 @@ export const dealReviews = {
 
 export const realTimeServiceSliderData = {
   title:
-    "Field service management software that connects the work, the people, and the updates in real time",
+    "The only pipeline built to follow the flow of actual contracting work",
   slug: "field-service",
   solutionCards: [
     {
@@ -3127,7 +3127,7 @@ export const billingVsthWayYouCouldData = {
 
 export const neverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
-  sub_title: "We help you get ahead, not just get by.",
+  subTitle: "We help you get ahead, not just get by.",
   cards: [
     {
       id: 1,
@@ -3338,6 +3338,13 @@ export const estimateFormData = {
   subTitle: "Get started with Estimatic AI in Contractor+ today.",
 };
 
+export const dealflowformData = {
+  id: 282,
+  placeholder: "Your Email",
+  subTitle:
+    "Start using Contractor+ free. You’ll wonder how you ever lived without it.",
+  title: "This is what opportunity tracker software should have been all along",
+};
 export const dealflowFaq = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",
@@ -3442,3 +3449,170 @@ export const runWithContractorData = {
     },
   ],
 };
+export const allEventSections = [
+  {
+    sectionId: "conference-events",
+    sectionHeading: "Must-Attend Conference & Expo’s",
+    events: [
+      {
+        id: 1,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 2,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 3,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 4,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "upcoming-events",
+    sectionHeading: "All Upcoming Events",
+    events: [
+      {
+        id: 5,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 6,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 7,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 8,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "all-events",
+    sectionHeading: "All Past Events",
+    events: [
+      {
+        id: 9,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 10,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 11,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 12,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+];
+
+export const eventFAQs = [
+  {
+    id: 1,
+    question: "When and where is AU 2024 taking place? ",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 2,
+    question: "How can my company become a sponsor at AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 3,
+    question: "What learning and networking will be part of AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 4,
+    question: "Will there be a digital experience?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 5,
+    question: "Can I meet with Autodesk product and industry experts at AU?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 6,
+    question: "What are the AU Community Rules?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 7,
+    question:
+      "I’m a journalist. What can I expect from a press/media perspective?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+];

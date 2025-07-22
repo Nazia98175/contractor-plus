@@ -24,6 +24,10 @@ import {
   stepThreeAnimation,
   stepTwoAnimation,
 } from "../field-services/dealflowanimation";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import FreeAccountButton from "../common/FreeAccountButton";
+import CardReveal from "../common/CardReveal";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -105,6 +109,8 @@ const FinallyConnectsField = () => {
     };
   }, []);
 
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">
       <h2
@@ -349,10 +355,28 @@ const FinallyConnectsField = () => {
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
+        {/* <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
           Get started FREE
           <ArrowIcon fill="white" />
-        </Button>
+        </Button> */}
+        <CardReveal className="hidden md:block">
+          <FreeAccountButton
+            className="mx-auto mt-3 mb-1.5 !w-fit"
+            text={"Get started FREE"}
+            onClick={() => handleRedirect({ pathname })}
+            loading={loading}
+            disabled={loading}
+          />
+        </CardReveal>
+        <CardReveal className="block md:hidden">
+          <FreeAccountButton
+            className="mx-auto mt-3 mb-1.5 !w-fit"
+            text={"Download FREE App"}
+            onClick={() => handleRedirect({ pathname })}
+            loading={loading}
+            disabled={loading}
+          />
+        </CardReveal>
         <CardRequiredButton text="No credit card required" />
       </div>
     </div>

@@ -1,10 +1,12 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 interface AwardBadgesProps {
   buttonInfo: any;
   teamsUsingContractor: any;
@@ -16,6 +18,8 @@ export default function AwardBadges({
   teamsUsingContractor,
   customIconsMap,
 }: AwardBadgesProps) {
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="no-scrollbar relative w-full">
       <div className="absolute -top-0.5 left-0 h-1.5 w-full bg-white"></div>
@@ -43,7 +47,12 @@ export default function AwardBadges({
         ))}
       </div>
       <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">
-        <FreeAccountButton text={buttonInfo?.getStartedFreeBtn} />
+        <FreeAccountButton
+          text={buttonInfo?.getStartedFreeBtn}
+          onClick={() => handleRedirect({ pathname })}
+          loading={loading}
+          disabled={loading}
+        />
         <CardRequiredButton
           className="text-winterWay"
           text={buttonInfo?.nccTxt}

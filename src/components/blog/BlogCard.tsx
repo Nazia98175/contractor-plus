@@ -28,8 +28,11 @@ const BlogCard: React.FC<BlogCardProps> = ({
 }) => {
   const styles = variantsBlogCard[variant];
   return (
-    <div onClick={onClick} className={styles.wrapper}>
-      <div className={`${styles.imageWrapper}`}>
+    <div
+      onClick={onClick}
+      className={`${styles.wrapper} card-shine relative overflow-hidden`}
+    >
+      <div className={`${styles.imageWrapper} `}>
         <Image
           src={article.image}
           alt={article.title}

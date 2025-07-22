@@ -21,23 +21,6 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
 
   return (
     <section className="relative overflow-hidden">
-      <Image
-        className="animated-image pointer-events-none absolute top-0 left-0 z-20 hidden h-full w-full max-w-[900px] object-center md:block"
-        src="/images/webp/contractor-left-bg.webp"
-        alt="webp bg"
-        width={900}
-        height={700}
-        sizes="900px"
-      />
-      <Image
-        className="bubbling-animation svgTwinkle absolute top-0 right-0 z-0 hidden h-full w-full max-w-[700px] object-center lg:block"
-        src="/images/webp/contractor-right-bg.webp"
-        alt="webp bg"
-        width={700}
-        height={300}
-        sizes="700px"
-      />
-
       <span className="absolute top-0 left-0 block h-full w-full md:hidden">
         <SliderRedLineIcon />
       </span>
@@ -55,11 +38,6 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
               {contractorIndustry?.subTitle ?? ""}
             </h6>
           </Copy>
-          {/* <div className="hidden items-center justify-center md:flex">
-            <PrimaryLink href="#" className="bg-red-linear primary-btn h-10">
-              {contractorIndustry?.btnText ?? ""}
-            </PrimaryLink>
-          </div> */}
         </div>
         <ContractorIndustrySlider />
       </div>

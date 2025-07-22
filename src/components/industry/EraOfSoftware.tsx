@@ -7,8 +7,6 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
   trackProperties,
   slug,
 }) => {
-
- 
   return (
     <section className="no-scrollbar relative z-10 overflow-hidden">
       <div className="bg-white-linear absolute -bottom-[1%] left-0 z-[3] h-24 w-full sm:h-[180px] lg:h-[237px]"></div>
@@ -27,40 +25,40 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
       <p className="text-secondary mx-auto mt-3 block max-w-[1024px] px-2 text-center text-xs !font-semibold sm:hidden">
         {trackProperties?.subTitle}
       </p>
-<div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[116px] xl:rounded-[45px]">
-  {/* Blurred Background */}
-  <div className="bg-secondary absolute bottom-0 left-1/2 z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[100px] sm:block md:min-h-[550px]" />
+      <div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[116px] xl:rounded-[45px]">
+        {/* Blurred Background */}
+        <div className="bg-secondary absolute bottom-0 left-1/2 z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[100px] sm:block md:min-h-[550px]" />
 
-  {/* Desktop Image */}
-  <Image
-    sizes="(max-width: 768px) 100vw, 768px"
-    width={1920}
-    height={500}
-    priority
-    src={
-      trackProperties?.image?.url
-        ? trackProperties.image.url
-        : "/images/webp/era-of-software.webp"
-    }
-    className="relative z-[2] hidden h-full w-full object-cover sm:block"
-    alt="Era of Software"
-  />
+        {/* Desktop Image */}
+        <Image
+          sizes="(max-width: 768px) 100vw, 768px"
+          width={1920}
+          height={500}
+          priority
+          src={
+            trackProperties?.image?.url
+              ? trackProperties.image.url
+              : "/images/webp/era-of-software.webp"
+          }
+          className="relative z-[2] hidden h-full w-full object-cover sm:block"
+          alt="Era of Software"
+        />
 
-  {/* Mobile Image */}
-  <Image
-    sizes="(max-width: 768px) 100vw, 768px"
-    width={1920}
-    height={500}
-    priority
-    src={
-      trackProperties?.image?.url
-        ? trackProperties.image.url
-        : "/images/webp/mobile-software-era.webp"
-    }
-    className="z-[1] block h-full w-full object-cover sm:hidden"
-    alt="Era of Software"
-  />
-</div>
+        {/* Mobile Image */}
+        <Image
+          sizes="(max-width: 768px) 100vw, 768px"
+          width={1920}
+          height={500}
+          priority
+          src={
+            trackProperties?.image?.url
+              ? trackProperties.image.url
+              : "/images/webp/mobile-software-era.webp"
+          }
+          className="z-[1] block h-full w-full object-cover sm:hidden"
+          alt="Era of Software"
+        />
+      </div>
 
       {/* <div className="mx-auto w-full max-w-[700px] overflow-hidden sm:mt-16 sm:px-2 lg:mt-[116px] xl:rounded-[45px]">
         <div className="bg-secondary absolute bottom-0 left-1/2 z-[1] hidden h-full max-h-[550px] w-full max-w-[760px] -translate-x-1/2 rounded-[760px] blur-[100px] sm:block md:min-h-[550px]"></div>

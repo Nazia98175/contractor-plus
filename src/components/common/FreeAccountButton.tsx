@@ -1,12 +1,13 @@
-import Button from "./Button";
+import ButtonLoader from "./ButtonLoader";
 import { SideIcon } from "./Icons";
 interface FreeAccountButtonProps {
-  onClick?: () => void;
+  onClick?: any;
   className?: string;
   text: string;
   showIcon?: boolean;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
+  loading?: boolean;
 }
 const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
   onClick,
@@ -15,6 +16,7 @@ const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
   showIcon = true,
   disabled,
   type,
+  loading = false,
 }) => {
   return (
     <>
@@ -24,8 +26,14 @@ const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
         onClick={onClick}
         className={`secondary-btn bg-red-linear h-[40px] gap-2 ${className}`}
       >
-        {text}
-        {showIcon && <SideIcon />}
+        {loading ? (
+          <ButtonLoader />
+        ) : (
+          <>
+            {text}
+            {showIcon && <SideIcon />}
+          </>
+        )}
       </button>
     </>
   );

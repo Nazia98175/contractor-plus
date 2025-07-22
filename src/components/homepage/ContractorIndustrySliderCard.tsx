@@ -1,3 +1,4 @@
+import Copy from "../common/Copy";
 import TiltedCardEffect from "../common/TiltedCardEffect";
 import Image from "next/image";
 
@@ -11,9 +12,11 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
       className="h-auto w-full"
     >
       <div className="bg-lightBlack border-winterWay relative h-auto w-full rounded-xl border p-2.5 ease-in-out">
-        <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-base">
-          {show.title}
-        </h2>
+        <Copy>
+          <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-base">
+            {show.title}
+          </h2>
+        </Copy>
         <Image
           width={205}
           height={205}

@@ -4,6 +4,7 @@ import SliderLayout from "@/components/common/SliderLayout";
 import PlatformCard from "@/components/homepage/PlatformCard";
 import { Platform } from "@/types";
 import React from "react";
+import Copy from "./Copy";
 
 interface TrustBarProps {
   platforms: Platform[];
@@ -22,16 +23,23 @@ const TrustBar: React.FC<TrustBarProps> = ({
     <section
       className={`relative z-30 mx-auto w-full max-w-[889px] ${className}`}
     >
-      {showTrustedSection && (
-        <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
-          Trusted by over <strong>50,000</strong> build and service contractors
-        </h2>
-      )}
+      <Copy delay={0.1}>
+        {showTrustedSection && (
+          <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
+            Trusted by over <strong>50,000</strong> build and service
+            contractors
+          </h2>
+        )}
+      </Copy>
       <div className="hidden flex-wrap items-center justify-center gap-9 lg:flex lg:flex-nowrap">
         {trustBarImages && trustBarImages.length > 0
           ? trustBarImages?.map((item: any, index: number) => (
               <div key={index} className="flex items-center justify-center">
-                <PlatformCard platform={item} apiData={true} className="h-28 md:h-36" />
+                <PlatformCard
+                  platform={item}
+                  apiData={true}
+                  className="h-28 md:h-36"
+                />
               </div>
             ))
           : platforms.map((platform, index) => (
@@ -57,7 +65,11 @@ const TrustBar: React.FC<TrustBarProps> = ({
           {trustBarImages && trustBarImages.length > 0
             ? trustBarImages?.map((item: any, index: number) => (
                 <div key={index} className="flex items-center justify-center">
-                  <PlatformCard apiData={true} platform={item} className="h-28 md:h-36" />
+                  <PlatformCard
+                    apiData={true}
+                    platform={item}
+                    className="h-28 md:h-36"
+                  />
                 </div>
               ))
             : platforms.map((platform, index) => (

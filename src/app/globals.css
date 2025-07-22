@@ -17,6 +17,7 @@
   --color-superSilver: #f0f0f0;
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
+  --color-pantone3: #b4b4b4;
   --color-darkness: #a2a2a2;
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
@@ -31,6 +32,7 @@
   --color-ruinedSmores: #111216;
   --color-coldGrey: #9f9f9f;
   --color-petal: #ebe6e6;
+  --color-than: #8d8d8d;
   --color-asphalt: #030101;
   --color-flintstone: #667085;
   --color-dragonlord: #6941c6;
@@ -65,11 +67,12 @@
   --color-lightBlack: #1c2731;
   --color-eerieBlack: #1a1a1a;
   --color-softMint: #effbf6;
+  --color-master: #aeaeae;
   --color-athenaBlue: #6ddcff;
   --color-granite: #6f7176;
   --color-sweetGarden: #5ed5a8;
   --color-dancingJewel: #439777;
-  --color-pantone: #ff9800;
+  --color-pantone2: #ff9800;
   --color-ancestral: #d0d0d0;
   --color-phantom: #e99c44;
   --color-heatherGrey: #9f9fa1;
@@ -77,7 +80,7 @@
   --color-pantone: #4d4d4d;
   --color-trolleyGrey: #818181;
   --color-discoBall: #d5d5d5;
-
+  --color-fiftieth: #515151;
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
   --color-sangoPink: #f4ada5;
@@ -246,7 +249,7 @@ body {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
 }
 .primary-btn {
-  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95;
+  @apply font-montserrat flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg text-sm font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:text-base;
 }
 .secondary-btn {
   @apply font-montserrat w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:flex sm:w-fit sm:py-2.5;
@@ -278,6 +281,9 @@ body {
 }
 .card-desc {
   @apply text-xs font-medium sm:text-sm xl:text-base;
+}
+.event-card-tittle {
+  @apply text-pantone3 text-base font-semibold md:text-lg lg:text-xl xl:text-2xl;
 }
 .card-review {
   @apply font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm;
@@ -542,6 +548,22 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+.gradient-text-version-v2 .line {
+  background:
+    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.gradient-text-version-v2 {
+  background:
+    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 .gradient-white .line {
   background:
@@ -791,29 +813,7 @@ html::-webkit-scrollbar {
 .glow-ellipse {
   @apply absolute top-1/2 left-1/2 -translate-1/2 -translate-x-1/2 rounded-[50%] opacity-90;
 }
-@keyframes floatPulsePing {
-  0% {
-    transform: translateX(0);
-    opacity: 0.8;
-  }
-  25% {
-    transform: translateX(-25px);
-    opacity: 0.9;
-    transform: scale(1.2);
-  }
-  50% {
-    transform: translateX(-45px);
-    opacity: 1;
-  }
-  75% {
-    transform: translateX(-25px);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0.8;
-  }
-}
+
 .service-text .line {
   background:
     linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
@@ -821,11 +821,6 @@ html::-webkit-scrollbar {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-}
-
-.animated-image {
-  animation: floatPulsePing 10s ease-in-out infinite;
-  transform-origin: center;
 }
 
 @keyframes bubbling {
@@ -837,10 +832,7 @@ html::-webkit-scrollbar {
     transform: translateY(-10px) scale(1.05);
   }
 }
-.bubbling-animation {
-  display: inline-block;
-  animation: bubbling 4s infinite ease-in-out;
-}
+
 .color-animation {
   animation: spreadColor 3s ease-in-out infinite;
 }
@@ -1809,23 +1801,7 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.hero-blur {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-}
-.hero-blur-2 {
-  -webkit-backdrop-filter: blur(11px);
-  backdrop-filter: blur(11px);
-}
-body::after {
-  content: "";
-  inset: 0px;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  z-index: 50;
-}
+
 .crm-overlap-car-heading {
   background:
     linear-gradient(
@@ -1838,4 +1814,54 @@ body::after {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.swiper-pagination-real-time-4 {
+  @apply relative w-[93px] max-w-[93px] min-w-[93px] overflow-hidden;
+}
+.swiper-pagination-real-time-4 span {
+  @apply relative;
+}
+.custom-pagination-2 .swiper-pagination-bullet {
+  @apply !bg-fiftieth !m-0 transition-all duration-300 ease-in;
+}
+.custom-pagination-2 .swiper-pagination-bullet-active {
+  @apply h-1.5 w-6 rounded-3xl !bg-white;
+}
+.custom-pagination-2
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 0% !important;
+  transform: translateX(-0%) !important;
+}
+.event-hero-text-color {
+  background: linear-gradient(180deg, #fff -12.5%, #0c0d11 134.17%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.event-hero-text-color .line {
+  background: linear-gradient(180deg, #fff -12.5%, #0c0d11 134.17%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.event-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 13, 17, 0) 10.78%,
+    #0c0d11 84.74%
+  );
+}
+
+.img-overlay::after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  background: #0c0d1169;
 }

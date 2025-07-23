@@ -133,23 +133,35 @@ export const reverseGeocode = async (latitude: number, longitude: number) => {
   }
 };
 
-export const getMaxMindLocation = async (ip: string | undefined) => {
+export const getMaxMindLocation = async (ip?: string) => {
   const accountId = process.env.NEXT_PUBLIC_API_MAXMIND_ID;
   const licenseKey = process.env.NEXT_PUBLIC_API_MAXMIND_KEY;
 
-  const encodedCreds = Buffer.from(`${accountId}:${licenseKey}`).toString("base64");
-
-  const response = await fetch(`https://geoip.maxmind.com/geoip/v2.1/city/${ip}`, {
-    headers: {
-      Authorization: `Basic ${encodedCreds}`,
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    console.error("Failed to fetch from MaxMind:", await response.text());
+  if (!accountId || !licenseKey) {
+    console.error("MaxMind credentials are missing.");
     return null;
   }
 
-  return response.json();
-}
+  const target = ip !== "::1" ? ip : "me"; // if IP is undefined, fallback to "me"
+  const encodedCreds = Buffer.from(`${accountId}:${licenseKey}`).toString("base64");
+
+  try {
+    const response = await fetch(`https://geoip.maxmind.com/geoip/v2.1/city/${target}`, {
+      headers: {
+        Authorization: `Basic ${encodedCreds}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      console.error("Failed to fetch from MaxMind:", await response.text());
+      return null;
+    }
+
+    return await response.json();
+  } catch (err) {
+    console.error("Error calling MaxMind:", err);
+    return null;
+  }
+};
+

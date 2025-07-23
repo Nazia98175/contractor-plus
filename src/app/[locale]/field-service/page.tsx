@@ -72,10 +72,10 @@ const FieldServicesPage = async ({ params }: Params) => {
   const ip = (await cookies()).get("user-ip")?.value;
   console.log("User IP:", ip);
   let geoLocation = null;
-  if (ip && ip !== "::1") {
-    geoLocation = await getMaxMindLocation(ip);
-  }
-  console.log("📍 User GeoLocation:", geoLocation);
+
+  geoLocation = await getMaxMindLocation(ip);
+
+
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div

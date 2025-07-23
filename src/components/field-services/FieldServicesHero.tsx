@@ -103,7 +103,7 @@ const FieldServicesHero: React.FC<Props> = ({
 
       <FieldServiceMap
         location={processedLocation}
-        isLoading={isLoading}
+        // isLoading={isLoading}
         mapKey={mapKey}
         onMapLoad={() => setIsLoading(false)}
         onMapError={(e) => {

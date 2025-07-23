@@ -20,7 +20,7 @@ const DEFAULT_LOCATION: GeolocationData = {
 
 const FieldServiceMap: React.FC<{
   location: GeolocationData | null;
-  isLoading: boolean;
+  isLoading?: boolean;
   mapKey: number;
   onMapLoad: () => void;
   onMapError: (event: any) => void;

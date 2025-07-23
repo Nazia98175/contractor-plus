@@ -3616,3 +3616,95 @@ export const eventFAQs = [
     answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
   },
 ];
+
+export const speakerEventsItems = [
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Global Innovations",
+    image: "/images/webp/speaker-card-1.webp",
+  },
+  {
+    name: "Nelson Mendala",
+    role: "CEO Of Mendala Mechanical LLC",
+    image: "/images/webp/speaker-card-2.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Retail Construction LLC",
+    image: "/images/webp/speaker-card-3.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Global Innovations",
+    image: "/images/webp/speaker-card-1.webp",
+  },
+  {
+    name: "Nelson Mendala",
+    role: "CEO Of Mendala Mechanical LLC",
+    image: "/images/webp/speaker-card-2.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Retail Construction LLC",
+    image: "/images/webp/speaker-card-3.webp",
+  },
+];
+
+export const sponsorLogo = [
+  { images: "/images/webp/sponser-logo.webp" },
+  { images: "/images/webp/sponser-logo-2.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+  { images: "/images/webp/sponser-logo-4.webp" },
+  { images: "/images/webp/sponser-logo-5.webp" },
+  { images: "/images/webp/sponser-logo-6.webp" },
+  { images: "/images/webp/sponser-logo-7.webp" },
+  { images: "/images/webp/sponser-logo-7.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+  { images: "/images/webp/sponser-logo-2.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+];
+
+export const eventPricingDetail = [
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-2.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-1.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Mid Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-3.webp",
+    pricing: "$69.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-2.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-1.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Mid Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-3.webp",
+    pricing: "$69.00",
+  },
+];

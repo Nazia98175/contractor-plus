@@ -30,7 +30,7 @@ const EventDetailHero = () => {
       });
     }, 700);
   }, []);
-  const mainItem = [
+  const eventdetailitem = [
     {
       id: 1,
       logoUrl: "/images/svg/car-brand-logo.svg",
@@ -71,7 +71,7 @@ const EventDetailHero = () => {
           modules={[EffectFade, Navigation, Pagination]}
           className="mySwiper"
         >
-          {mainItem.map((item, index) => (
+          {eventdetailitem.map((item, index) => (
             <SwiperSlide className="pb-[30px]">
               <EventdetailHeroCard item={item} key={index} />
             </SwiperSlide>

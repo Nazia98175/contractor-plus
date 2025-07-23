@@ -18,10 +18,10 @@ interface EventsCardProps {
 
 const EventsCard: React.FC<EventsCardProps> = ({ Item }) => {
   return (
-    <article className="group cursor-pointer">
+    <article className="card-shine-2 cursor-pointer">
       <CardReveal delay={0.1} distance={50}>
         <Image
-          className="h-full max-h-[240px] w-full rounded-lg object-cover duration-200 ease-in-out group-hover:scale-95"
+          className="card-shine-2 h-full max-h-[240px] w-full rounded-lg object-cover"
           src={Item.imgPath}
           alt={Item.heading}
           width={384}

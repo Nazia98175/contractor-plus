@@ -8,40 +8,9 @@ import { CustomSliderIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import SpeakerCard from "./SpeakerCard";
+import { speakerEventsItems } from "../common/Helper";
 
 const SpeakersEvents = () => {
-  const teamMembers = [
-    {
-      name: "Mark Jerry",
-      role: "CEO Of Global Innovations",
-      image: "/images/webp/speaker-card-1.webp",
-    },
-    {
-      name: "Nelson Mendala",
-      role: "CEO Of Mendala Mechanical LLC",
-      image: "/images/webp/speaker-card-2.webp",
-    },
-    {
-      name: "Mark Jerry",
-      role: "CEO Of Retail Construction LLC",
-      image: "/images/webp/speaker-card-3.webp",
-    },
-    {
-      name: "Mark Jerry",
-      role: "CEO Of Global Innovations",
-      image: "/images/webp/speaker-card-1.webp",
-    },
-    {
-      name: "Nelson Mendala",
-      role: "CEO Of Mendala Mechanical LLC",
-      image: "/images/webp/speaker-card-2.webp",
-    },
-    {
-      name: "Mark Jerry",
-      role: "CEO Of Retail Construction LLC",
-      image: "/images/webp/speaker-card-3.webp",
-    },
-  ];
   return (
     <section className="px-2 py-8">
       <div className="flex justify-between sm:hidden">
@@ -103,7 +72,7 @@ const SpeakersEvents = () => {
               },
             }}
           >
-            {teamMembers.map((member, index) => (
+            {speakerEventsItems.map((member, index) => (
               <SwiperSlide key={index}>
                 <SpeakerCard member={member} />
               </SwiperSlide>

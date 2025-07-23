@@ -6,10 +6,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
 interface WantingMoreProps {
   fieldServiceData: any;
   slug: string;
 }
+
 const WantingMore: React.FC<WantingMoreProps> = ({
   fieldServiceData,
   slug,
@@ -17,6 +19,8 @@ const WantingMore: React.FC<WantingMoreProps> = ({
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [maxHeight, setMaxHeight] = useState<number>(0);
+  const [headingHeight, setHeadingHeight] = useState<number>(0);
+
   const updateMaxHeight = () => {
     setTimeout(() => {
       const cards = document.querySelectorAll(".crm-cards .wanting-more-bg");
@@ -34,16 +38,34 @@ const WantingMore: React.FC<WantingMoreProps> = ({
       setMaxHeight(currentMaxHeight);
     }, 1000);
   };
+
+  const updateHeadingHeight = () => {
+    if (headingRef.current) {
+      const height = headingRef.current.getBoundingClientRect().height;
+      setHeadingHeight(height);
+      console.log("Heading height:", height);
+    }
+  };
+
   console.log(maxHeight);
+  console.log("Current heading height:", headingHeight);
+
   useEffect(() => {
     if (!sectionRef.current || !headingRef.current) return;
+
     updateMaxHeight();
+    updateHeadingHeight();
+
     const cards = document.querySelectorAll(".crm-cards");
     const totalCards = cards.length;
-    // Create the pinning animation
-    if (maxHeight > 0) {
-      const startScreen = (window.innerHeight - maxHeight) / 2 - 100 + "px";
-      console.log(startScreen);
+
+    if (maxHeight > 0 && headingHeight > 0) {
+      const startScreen = (window.innerHeight - maxHeight) / 2 - 60 + "px";
+      const isVisible =
+        (window.innerHeight - maxHeight) / 2 - 60 > headingHeight;
+      console.log((window.innerHeight - maxHeight) / 2 - 70);
+      console.log(isVisible, "isVisible=================>");
+      if (!isVisible) return;
       // ScrollTrigger.getAll().forEach((st) => st.kill());
       const pinTrigger = ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -55,11 +77,9 @@ const WantingMore: React.FC<WantingMoreProps> = ({
         markers: false,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
-          // Optional: Add any additional animations during scroll
           const progress = self.progress;
-          // Example: Fade out heading as it approaches the end
           gsap.to(headingRef.current, {
-            opacity: 1 - progress * 0.3, // Subtle fade effect
+            opacity: 1 - progress * 0.3,
             duration: 0.1,
           });
         },
@@ -70,7 +90,20 @@ const WantingMore: React.FC<WantingMoreProps> = ({
         pinTrigger.kill();
       };
     }
-  }, [maxHeight]);
+  }, [maxHeight, headingHeight]);
+
+  // Update heading height on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      updateHeadingHeight();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section ref={sectionRef} className="relative overflow-hidden px-2 pb-16">
       {/* <Copy animateOnScroll={true} delay={0.1}> */}

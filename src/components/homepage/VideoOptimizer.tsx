@@ -83,8 +83,6 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             playsInline
             poster={poster || "/images/webp/hero-video-poster.webp"}
             onError={(e) => console.error("Video load error:", e)}
-            // onLoadStart={() => console.log("Video loading started")}
-            // onCanPlay={() => console.log("Video can play")}
             className="h-full min-h-[500px] w-full object-cover lg:object-right"
           >
             <source src={videoUrl} type={type} />

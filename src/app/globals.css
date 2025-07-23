@@ -1718,15 +1718,21 @@ button {
   position: absolute;
   content: "";
   top: -13% !important;
-  left: -36% !important;
+  left: -40% !important;
   width: 100%;
   height: 126%;
   background-size: 100% 100% !important;
   background-repeat: no-repeat;
   background-position: center;
-  background: url("/images/png/hero-video-ovelay-2.png");
-  filter: blur(25.95000076293945px);
+  background: url("/images/png/hero-video-ovelay-2.png") no-repeat center;
+  z-index: 10;
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  transform: translateZ(0);
+  will-change: transform;
+  box-shadow: 0 4px 20px rgba(13, 14, 18, 0.6);
 }
+
 .crm-cards {
   will-change: transform, opacity;
   -webkit-backface-visibility: hidden;

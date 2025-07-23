@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "./Button";
 import { EventDetailIcon } from "./Icons";
+import { usePathname, useRouter } from "next/navigation";
 
 interface DirectoryItem {
   imgUrl: string;
@@ -16,6 +17,10 @@ interface DirectoryProps {
 }
 
 const Directory: React.FC<DirectoryProps> = ({ item }) => {
+  const router = useRouter();
+  const handleRedirect = () => {
+    router.push("/events-directory/events-detail");
+  };
   return (
     <div className="img-overlay relative mx-auto flex w-full max-w-[811px] flex-col items-center justify-center">
       <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
@@ -39,7 +44,7 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
         <p className="text-decemberSky my-3 text-center text-sm sm:text-base lg:text-lg">
           {item.description}
         </p>
-        <Button className="w-full max-w-[189px]">
+        <Button onClick={handleRedirect} className="w-full max-w-[189px]">
           {item.button} <EventDetailIcon />
         </Button>
       </div>

@@ -1003,9 +1003,10 @@ html::-webkit-scrollbar {
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(200, 0, 0, 0) 0%,
-    /* transparent start */ rgba(255, 100, 100, 0.067) 50%,
-    /* reddish mid-glow */ rgba(200, 0, 0, 0) 100% /* transparent end */
+    rgba(173, 177, 181, 0) 0%,
+    /* fully transparent */ rgba(173, 177, 181, 0.1) 25%,
+    /* subtle tint */ rgba(173, 177, 181, 0.18) 50%,
+    /* stronger tint */ rgba(173, 177, 181, 0.25) 75%
   );
   z-index: 10;
   transform: translateX(-100%);

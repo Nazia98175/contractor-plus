@@ -23,10 +23,10 @@ interface GeolocationData {
 }
 
 const DEFAULT_LOCATION: GeolocationData = {
-  latitude: 28.6139,
-  longitude: 77.209,
-  city: "Delhi",
-  country: "IN",
+  latitude: 40.7128,
+  longitude: 74.0060,
+  city: "New York",
+  country: "US",
 };
 interface heroProps {
   heroTitle: string;

@@ -69,14 +69,13 @@ const FieldServicesPage = async ({ params }: Params) => {
     commonData,
   } = await getSolutionPageData("field-service", useParams?.locale);
 
-
   const ip = (await cookies()).get("user-ip")?.value;
   console.log("User IP:", ip);
   let geoLocation = null;
   if (ip && ip !== "::1") {
     geoLocation = await getMaxMindLocation(ip);
-    console.log("📍 User GeoLocation:", geoLocation);
   }
+  console.log("📍 User GeoLocation:", geoLocation);
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div
@@ -88,6 +87,7 @@ const FieldServicesPage = async ({ params }: Params) => {
           solutionTag={solutionPageContent?.data?.[0]?.solutionTag}
           commonData={commonData}
           geoLocation={geoLocation}
+          locale={useParams?.locale}
         />
       </div>
       <ServiceContractorsMarquee reviews={reviews} />

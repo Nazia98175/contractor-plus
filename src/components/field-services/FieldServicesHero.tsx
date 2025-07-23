@@ -38,9 +38,16 @@ interface Props {
   commonData?: any;
   solutionTag?: string;
   geoLocation?: any | null;
+  locale?: string | undefined;
 }
 
-const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag  , geoLocation}) => {
+const FieldServicesHero: React.FC<Props> = ({
+  hero,
+  commonData,
+  solutionTag,
+  geoLocation,
+  locale,
+}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -66,10 +73,15 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag  , 
 
   useEffect(() => {
     if (geoLocation) {
-    setLocation(geoLocation);
-    setMapKey((prev) => prev + 1);
-    return;
-  }
+      setLocation({
+        latitude: geoLocation?.location?.latitude,
+        longitude: geoLocation?.location?.longitude,
+        city: geoLocation?.city?.names[locale || "en"],
+        country: geoLocation?.country?.iso_code?.toUpperCase() || "",
+      });
+      setMapKey((prev) => prev + 1);
+      return;
+    }
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {

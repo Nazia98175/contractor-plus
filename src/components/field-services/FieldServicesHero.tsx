@@ -14,7 +14,6 @@ import {
   LocationIcon,
 } from "../common/Icons";
 import FieldServiceMap from "./FieldServiceMap";
-import { reverseGeocode } from "@/services/map";
 
 interface GeolocationData {
   latitude: number;
@@ -81,27 +80,7 @@ const FieldServicesHero: React.FC<Props> = ({
       });
       setMapKey((prev) => prev + 1);
       return;
-    }
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(
-    //     async (position) => {
-    //       const { latitude, longitude } = position.coords;
-    //       const { city, country } = await reverseGeocode(latitude, longitude);
-    //       setLocation({ latitude, longitude, city, country });
-    //       setMapKey((prev) => prev + 1);
-    //     },
-    //     (error) => {
-    //       console.error("Error getting location:", error);
-    //       setLocation(DEFAULT_LOCATION);
-    //       setMapKey((prev) => prev + 1);
-    //     },
-    //     {
-    //       enableHighAccuracy: true,
-    //       timeout: 10000,
-    //       maximumAge: 600000,
-    //     },
-    //   );
-    // } 
+    } 
     else {
       setLocation(DEFAULT_LOCATION);
       setMapKey((prev) => prev + 1);

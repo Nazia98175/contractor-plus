@@ -13,6 +13,7 @@ import { CustomSliderIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import SponsorCard from "./SponsorsCard";
+import { sponsorLogo } from "../common/Helper";
 
 interface SponsorItem {
   images: string;
@@ -22,20 +23,6 @@ const Sponsors = () => {
   const [firstVisible, setFirstVisible] = useState<number>(0);
   const [lastVisible, setLastVisible] = useState<number>(0);
   const swiperRef = useRef<SwiperType | null>(null);
-
-  const sponsorLogo: SponsorItem[] = [
-    { images: "/images/webp/sponser-logo.webp" },
-    { images: "/images/webp/sponser-logo-2.webp" },
-    { images: "/images/webp/sponser-logo-3.webp" },
-    { images: "/images/webp/sponser-logo-4.webp" },
-    { images: "/images/webp/sponser-logo-5.webp" },
-    { images: "/images/webp/sponser-logo-6.webp" },
-    { images: "/images/webp/sponser-logo-7.webp" },
-    { images: "/images/webp/sponser-logo-7.webp" },
-    { images: "/images/webp/sponser-logo-3.webp" },
-    { images: "/images/webp/sponser-logo-2.webp" },
-    { images: "/images/webp/sponser-logo-3.webp" },
-  ];
 
   const updateVisibleSlides = (swiper: SwiperType) => {
     const start = swiper.activeIndex;

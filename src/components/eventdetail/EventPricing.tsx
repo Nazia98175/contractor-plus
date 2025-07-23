@@ -10,52 +10,9 @@ import Copy from "../common/Copy";
 import SpeakerCard from "./SpeakerCard";
 import PricingCard from "./PricingCard";
 import { Description } from "@headlessui/react";
+import { eventPricingDetail } from "../common/Helper";
 
 const EventPricing = () => {
-  const pricingdetail = [
-    {
-      seatname: "Front Row Seat",
-      Description:
-        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-      image: "/images/webp/pricing-card-2.webp",
-      pricing: "$99.00",
-    },
-    {
-      seatname: "Front Row Seat",
-      Description:
-        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-      image: "/images/webp/pricing-card-1.webp",
-      pricing: "$99.00",
-    },
-    {
-      seatname: "Mid Row Seat",
-      Description:
-        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-      image: "/images/webp/pricing-card-3.webp",
-      pricing: "$69.00",
-    },
-    {
-      seatname: "Front Row Seat",
-      Description:
-        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-      image: "/images/webp/pricing-card-2.webp",
-      pricing: "$99.00",
-    },
-    {
-      seatname: "Front Row Seat",
-      Description:
-        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-      image: "/images/webp/pricing-card-1.webp",
-      pricing: "$99.00",
-    },
-    {
-      seatname: "Mid Row Seat",
-      Description:
-        "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-      image: "/images/webp/pricing-card-3.webp",
-      pricing: "$69.00",
-    },
-  ];
   return (
     <section className="px-2 py-10">
       <div className="flex justify-between sm:hidden">
@@ -119,7 +76,7 @@ const EventPricing = () => {
               },
             }}
           >
-            {pricingdetail.map((pricing, index) => (
+            {eventPricingDetail.map((pricing, index) => (
               <SwiperSlide key={index}>
                 <PricingCard pricing={pricing} />
               </SwiperSlide>

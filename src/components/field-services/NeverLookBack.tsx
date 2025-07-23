@@ -31,7 +31,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       <h3 className="sub-heading text-winterWay mb-[13px] hidden text-center font-semibold sm:block">
         {data?.title}
       </h3>
-      <h3 className="crm-gradient xs:text-[22px] xs:max-w-[93%] mx-auto mb-[9px] block max-w-[88%] text-center text-[19px] font-extrabold sm:hidden sm:max-w-[330px]">
+      <h3 className="crm-gradient xs:text-[22px] xs:max-w-[93%] relative z-50 mx-auto mb-[9px] block max-w-[88%] text-center text-[19px] font-extrabold sm:hidden sm:max-w-[330px]">
         {data?.title}
       </h3>
       <p className="paragraph-text gradient-text-2 text-center leading-[124%] sm:hidden">

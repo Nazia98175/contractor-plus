@@ -2,14 +2,18 @@ import Image from "next/image";
 import React from "react";
 import { CheckIcon } from "../common/Icons";
 import Copy from "../common/Copy";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Content {
   title: string;
+  cardImg: string;
 }
 
 interface LikeYouDo {
+  cardImg: string | StaticImport;
   featuresList: {
     title: string;
+    cardImg: string;
     content: Content[];
   }[];
 }
@@ -52,7 +56,7 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
 
       <div className="flex w-full items-center justify-center md:max-w-[480px]">
         <Image
-          src="/images/webp/like-contacts.webp"
+          src={trackProperties?.cardImg}
           alt="Illustration showing contractor workflow"
           width={480}
           height={600}

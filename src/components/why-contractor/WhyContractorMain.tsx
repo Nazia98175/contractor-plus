@@ -45,26 +45,25 @@ const WhyContractorMain = () => {
       },
     });
 
+    gsap.to("#why-contractor-hero-section", {
+      opacity: 1,
+      duration: 1,
+    });
 
-      gsap.to("#why-contractor-hero-section", {
-            opacity: 1,
-            duration: 1,
-          });
+    gsap.to("#home-page-header-view-port-screen", {
+      opacity: 1,
+      duration: 1,
+    });
 
-      gsap.to("#home-page-header-view-port-screen", {
-            opacity: 1,
-            duration: 1,
-          });
+    gsap.to("#industry-shifted-section", {
+      opacity: 1,
+      duration: 1,
+    });
 
-      gsap.to("#industry-shifted-section", {
-            opacity: 1,
-            duration: 1,
-          });
-
-            gsap.to("#home-page-footer-view-port-screen", {
-            opacity: 1,
-            duration: 1,
-          });
+    gsap.to("#home-page-footer-view-port-screen", {
+      opacity: 1,
+      duration: 1,
+    });
 
     return () => {
       // Cleanup
@@ -146,7 +145,7 @@ const WhyContractorMain = () => {
               variant={"tertiary"}
             />
           </div>
-          <TrustBar showTrustedSection={false} platforms={platforms} />
+          <TrustBar showTrustedSection={true} platforms={platforms} />
         </div>
       </div>
     </>

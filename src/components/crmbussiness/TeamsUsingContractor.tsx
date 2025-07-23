@@ -11,12 +11,13 @@ import {
   MoreIcon,
 } from "../common/Icons";
 import LottieAnimation from "../common/LottieAnimation";
+
 export interface Props {
   data: any;
   slug?: string;
 }
+
 const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
-  // Improved intersection observer with higher threshold and rootMargin
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -29,11 +30,16 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
     <ClockIcon key="clock" />,
     <MoreIcon key="more" />,
   ];
-  const icons2 = [
-    <ClockIcon key="clock" />,
-    <CalanderIcon key="estimate" className="fill-[#3F464B]" />,
-    <MoreIcon key="more" />,
-  ];
+
+  // ✅ Get all indexes where lottieJson exists
+  const lottieIndexes = data?.cards?.reduce(
+    (acc: number[], item: any, index: number) => {
+      if (item.lottieJson) acc.push(index);
+      return acc;
+    },
+    [],
+  );
+
   return (
     <section
       ref={ref}
@@ -44,23 +50,28 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
           {data?.title}
         </h2>
       </Copy>
+
       <Copy animateOnScroll={true} delay={0.2}>
         <p className="paragraph-style text-center">{data?.subTitle}</p>
       </Copy>
+
       <div className="mt-6 mb-8 grid w-full grid-cols-1 gap-[18px] px-2 sm:mb-12 sm:grid-cols-2 md:mt-10 md:mb-16 md:grid-cols-3 md:gap-[30px] xl:mt-[52px] xl:mb-[70px]">
-        {data?.cards?.map((item: any, index: any) => (
+        {data?.cards?.map((item: any, index: number) => (
           <article
             key={index}
             className="bg-doctor flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
-            <span className="mb-1 flex h-[31px] w-[31px] items-center justify-center">
-              {icons[index % icons.length]}
-              <LottieAnimation animationData={item.lottieJson} />
+            <span className="mb-1 flex h-[40px] w-[40px] items-center justify-center">
+              {lottieIndexes.includes(index) ? (
+                <LottieAnimation animationData={item.lottieJson} />
+              ) : (
+                icons[index % icons.length]
+              )}
             </span>
 
             <h3 className="text-winterWay countup-title flex items-center justify-center">
               <span
-                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[60px]"}`}
+                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[68px]"}`}
               >
                 {inView && (
                   <CountUp
@@ -79,12 +90,11 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                   (item?.value !== null
                     ? `${item.value}${item.suffix ?? ""}`
                     : `${item.end}${item.suffix ?? ""}`)}
-              </span>{" "}
-              {slug === "crm" ? (
-                <span className="inline-block px-2">
-                  {item.title !== "n/a" && item.title}
-                </span>
-              ) : undefined}
+              </span>
+
+              <span className="inline-block px-2">
+                {item.title !== "n/a" && item.title}
+              </span>
             </h3>
 
             <p className="text-secondary countup-desc">{item.subTitle}</p>
@@ -93,13 +103,13 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
       </div>
 
       <CardReveal distance={50}>
-        <div className="drop-shadow-img-shadow isolate flex flex-wrap items-center justify-center gap-[34px] overflow-visible sm:gap-8 md:gap-[53px]">
+        <div className="isolate flex flex-wrap items-center justify-center gap-[34px] overflow-visible sm:gap-8 md:gap-[53px]">
           <Image
             priority
             width={121}
             height={90}
             src="/images/webp/software-advice.webp"
-            className="drop-shadow-img-shadow isolate max-w-[116px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            className="max-w-[116px] cursor-pointer object-cover duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             sizes="(max-width: 768px) 40vw, 121px"
             alt="Software Advice"
           />
@@ -109,7 +119,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             width={121}
             height={90}
             src="/images/webp/leader.webp"
-            className="drop-shadow-img-shadow isolate max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
+            className="max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
@@ -118,7 +128,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             width={121}
             height={90}
             src="/images/webp/get-app.webp"
-            className="drop-shadow-img-shadow isolate max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
+            className="max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
             sizes="(max-width: 768px) 40vw, 121px"
           />
@@ -128,7 +138,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             width={121}
             height={90}
             src="/images/svg/capterra.svg"
-            className="drop-shadow-img-shadow isolate cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
             sizes="(max-width: 768px) 40vw, 121px"
           />

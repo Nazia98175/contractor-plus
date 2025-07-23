@@ -22,9 +22,10 @@ export default function RootLayout({ children }: Props) {
           async={true}
         ></script>
       </Head>
-      <body><SmoothScroll />
-      {children}</body>
-      
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

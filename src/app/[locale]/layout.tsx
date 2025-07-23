@@ -1,17 +1,12 @@
-import { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
-import "../globals.css";
-import "../style.css";
-
-// ✅ Now use dynamic
-
-import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import BackToTop from "@/components/common/BackToTop";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import ParticlesComponent from "@/components/common/ParticlesComponent";
+import SmoothScrollSetup from "@/components/common/SmoothScroll";
 import { getFooter, getHeader } from "@/services/layout";
+import { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Free to start, free to stay. Level up when you’re ready.",
@@ -39,23 +34,19 @@ export default async function RootLayout({
   ]);
 
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable}`}
-    >
-      <body>
-        <BackToTop />
-        <NextIntlClientProvider messages={messages}>
-          <Header header={header?.data} />
-          <div id="smooth-wrapper">
-            <div id="smooth-content">
-              {children}
-              <Footer footer={footer?.data} />
-            </div>
+    <>
+      <SmoothScrollSetup />
+      <BackToTop />
+      <NextIntlClientProvider messages={messages}>
+        <Header header={header?.data} />
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            {children}
+            <Footer footer={footer?.data} />
           </div>
-          <ParticlesComponent id="star-particles" />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+        </div>
+        <ParticlesComponent id="star-particles" />
+      </NextIntlClientProvider>
+    </>
   );
 }

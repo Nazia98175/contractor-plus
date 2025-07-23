@@ -1658,8 +1658,10 @@ export const OnIcon: React.FC<OnIconProps> = ({ className = "" }) => (
     <foreignObject x="-3.50938" y="-3.50742" width="85.728" height="85.7268">
       <div
         style={{
-          backdropFilter: "blur(2.2px)",
+          // backdropFilter: "blur(2.2px)",
+          // WebkitBackdropFilter: "blur(2.2px)",
           clipPath: "url(#bgblur_0_84_12022_clip_path)",
+          WebkitClipPath: "url(#bgblur_0_84_12022_clip_path)",
           height: "100%",
           width: "100%",
         }}
@@ -1723,11 +1725,10 @@ export const OnIconw: React.FC<OnIconProps> = ({ className = "" }) => (
           >
             <div
               style={{
-                background:
-                  "conic-gradient(from 90deg, rgba(0, 0, 0, 0) 0deg, rgba(255, 82, 1, 0.2723) 294.896deg, rgba(255, 82, 1, 1) 360deg)",
                 height: "100%",
                 width: "100%",
                 opacity: 1,
+                backgroundColor: "rgba(255, 82, 1, 0.5)",
               }}
             ></div>
           </foreignObject>
@@ -4698,6 +4699,22 @@ export const CustomSliderIcon = () => (
       clipRule="evenodd"
       d="M8.19667 4.22316C8.45889 3.92561 8.88404 3.92561 9.14627 4.22316L16 12L9.14627 19.7768C8.88404 20.0744 8.45889 20.0744 8.19667 19.7768C7.93444 19.4793 7.93444 18.9969 8.19667 18.6993L14.1008 12L8.19667 5.30065C7.93444 5.00311 7.93444 4.5207 8.19667 4.22316Z"
       fill="white"
+    />
+  </svg>
+);
+export const EventHeroIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36"
+    height="36"
+    viewBox="0 0 36 36"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.295 6.33474C12.6883 5.88842 13.3261 5.88842 13.7194 6.33474L24 18L13.7194 29.6653C13.3261 30.1116 12.6883 30.1116 12.295 29.6653C11.9017 29.219 11.9017 28.4953 12.295 28.049L21.1512 18L12.295 7.95098C11.9017 7.50467 11.9017 6.78105 12.295 6.33474Z"
+      fill="#4E4E4E"
     />
   </svg>
 );

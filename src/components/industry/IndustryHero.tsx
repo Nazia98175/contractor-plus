@@ -35,11 +35,8 @@ const IndustryHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
-  const { loading, handleRedirect } = useOneLinkRedirect();
   const pathname = usePathname();
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -79,14 +76,14 @@ const IndustryHero: React.FC<TheHeroProps> = ({
               <FreeAccountButton
                 text={commonData?.getStartedFreeBtn}
                 className="!hidden sm:!flex"
-                onClick={handleClick}
+                onClick={() => handleRedirect({ pathname })}
                 loading={loading}
                 disabled={loading}
               />
               <FreeAccountButton
                 text={commonData?.mobileBtn}
                 className="flex sm:!hidden"
-                onClick={handleClick}
+                onClick={() => handleRedirect({ pathname })}
                 loading={loading}
                 disabled={loading}
               />

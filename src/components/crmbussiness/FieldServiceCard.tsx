@@ -2,9 +2,8 @@ import { ServiceData } from "@/types";
 import Image from "next/image";
 import React from "react";
 import { TickIcon } from "../common/Icons";
-import ImageProxy from "../common/ImageProxy";
 import LottieAnimation from "../common/LottieAnimation";
-
+import { themeColors } from "@/utils/getVariants";
 interface Props {
   service: ServiceData;
   slug: string;
@@ -23,32 +22,6 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
 
-  const themeColors = {
-    light: {
-      titleColor:
-        "text-lightBlack  font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px]",
-      heading: "text-lightBlack",
-      desc: "text-wallStreet",
-      isEstimateText: "text-secondary",
-      isEstimateTextColor2: "text-secondary",
-    },
-    dark: {
-      titleColor:
-        "text-white  font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px]",
-      heading: "text-white",
-      desc: "text-secondary lg:text-superSilver",
-      isEstimateText: "text-secondary",
-      isEstimateTextColor2: "text-secondary",
-    },
-    estimateTheme: {
-      titleColor: "estimate-text text-base font-semibold ",
-      heading: "text-white",
-      desc: "text-superSilver",
-      isEstimateText: "text-secondary",
-      isEstimateTextColor2: "!font-bold",
-    },
-  };
-
   const currentColors = themeColors[theme] || themeColors["light"];
   const titleColor = currentColors.titleColor;
   const featureTitleColor = currentColors.heading;
@@ -56,11 +29,6 @@ const FieldServiceCard: React.FC<Props> = ({
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
 
-  console.log(service?.cardImg?.url, "service");
-  console.log(service, "service");
-  console.log(apiData, "apiData");
-
-  console.log("Mobile Image URL:", service?.cardImg?.url);
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">

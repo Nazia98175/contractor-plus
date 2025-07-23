@@ -24,14 +24,14 @@ const ConferenceCard = ({
 }: ConferenceCardProps) => {
   return (
     <>
-      <div className="flex justify-between sm:hidden">
+      <div className="flex justify-between px-2 sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">{sectionHeading}</h4>
         </Copy>
         <Copy delay={0.1}>
           <Link
             className="font-montserrat text-sm leading-[142.857%] font-medium tracking-[0.1px] whitespace-nowrap text-white"
-            href="/"
+            href={`/events-directory/${swiperId}`}
           >
             View All
           </Link>
@@ -69,7 +69,7 @@ const ConferenceCard = ({
             <Copy delay={0.4}>
               <Link
                 className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
-                href="/"
+                href={`/events-directory/${swiperId}`}
               >
                 View All
               </Link>

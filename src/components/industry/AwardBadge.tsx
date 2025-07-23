@@ -18,11 +18,8 @@ export default function AwardBadges({
   teamsUsingContractor,
   customIconsMap,
 }: AwardBadgesProps) {
-  const { loading, handleRedirect } = useOneLinkRedirect();
   const pathname = usePathname();
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="no-scrollbar relative w-full">
       <div className="absolute -top-0.5 left-0 h-1.5 w-full bg-white"></div>
@@ -52,7 +49,7 @@ export default function AwardBadges({
       <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">
         <FreeAccountButton
           text={buttonInfo?.getStartedFreeBtn}
-          onClick={handleClick}
+          onClick={() => handleRedirect({ pathname })}
           loading={loading}
           disabled={loading}
         />

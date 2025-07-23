@@ -3449,3 +3449,262 @@ export const runWithContractorData = {
     },
   ],
 };
+export const allEventSections = [
+  {
+    sectionId: "conference-events",
+    sectionHeading: "Must-Attend Conference & Expo’s",
+    events: [
+      {
+        id: 1,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 2,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 3,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 4,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "upcoming-events",
+    sectionHeading: "All Upcoming Events",
+    events: [
+      {
+        id: 5,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 6,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 7,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 8,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "all-events",
+    sectionHeading: "All Past Events",
+    events: [
+      {
+        id: 9,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 10,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 11,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 12,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+];
+
+export const eventFAQs = [
+  {
+    id: 1,
+    question: "When and where is AU 2024 taking place? ",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 2,
+    question: "How can my company become a sponsor at AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 3,
+    question: "What learning and networking will be part of AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 4,
+    question: "Will there be a digital experience?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 5,
+    question: "Can I meet with Autodesk product and industry experts at AU?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 6,
+    question: "What are the AU Community Rules?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 7,
+    question:
+      "I’m a journalist. What can I expect from a press/media perspective?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+];
+
+export const speakerEventsItems = [
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Global Innovations",
+    image: "/images/webp/speaker-card-1.webp",
+  },
+  {
+    name: "Nelson Mendala",
+    role: "CEO Of Mendala Mechanical LLC",
+    image: "/images/webp/speaker-card-2.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Retail Construction LLC",
+    image: "/images/webp/speaker-card-3.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Global Innovations",
+    image: "/images/webp/speaker-card-1.webp",
+  },
+  {
+    name: "Nelson Mendala",
+    role: "CEO Of Mendala Mechanical LLC",
+    image: "/images/webp/speaker-card-2.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Retail Construction LLC",
+    image: "/images/webp/speaker-card-3.webp",
+  },
+];
+
+export const sponsorLogo = [
+  { images: "/images/webp/sponser-logo.webp" },
+  { images: "/images/webp/sponser-logo-2.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+  { images: "/images/webp/sponser-logo-4.webp" },
+  { images: "/images/webp/sponser-logo-5.webp" },
+  { images: "/images/webp/sponser-logo-6.webp" },
+  { images: "/images/webp/sponser-logo-7.webp" },
+  { images: "/images/webp/sponser-logo-7.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+  { images: "/images/webp/sponser-logo-2.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+];
+
+export const eventPricingDetail = [
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-2.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-1.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Mid Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-3.webp",
+    pricing: "$69.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-2.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-1.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Mid Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-3.webp",
+    pricing: "$69.00",
+  },
+];

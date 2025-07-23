@@ -132,3 +132,24 @@ export const reverseGeocode = async (latitude: number, longitude: number) => {
     };
   }
 };
+
+export const getMaxMindLocation = async (ip: string | undefined) => {
+  const accountId = process.env.NEXT_PUBLIC_API_MAXMIND_ID;
+  const licenseKey = process.env.NEXT_PUBLIC_API_MAXMIND_KEY;
+
+  const encodedCreds = Buffer.from(`${accountId}:${licenseKey}`).toString("base64");
+
+  const response = await fetch(`https://geoip.maxmind.com/geoip/v2.1/city/${ip}`, {
+    headers: {
+      Authorization: `Basic ${encodedCreds}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    console.error("Failed to fetch from MaxMind:", await response.text());
+    return null;
+  }
+
+  return response.json();
+}

@@ -37,9 +37,10 @@ interface Props {
   hero: heroProps;
   commonData?: any;
   solutionTag?: string;
+  geoLocation?: any | null;
 }
 
-const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) => {
+const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag  , geoLocation}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -64,6 +65,11 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (geoLocation) {
+    setLocation(geoLocation);
+    setMapKey((prev) => prev + 1);
+    return;
+  }
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
@@ -87,7 +93,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) 
       setLocation(DEFAULT_LOCATION);
       setMapKey((prev) => prev + 1);
     }
-  }, []);
+  }, [geoLocation]);
 
   const processedLocation = useMemo(() => {
     if (!location) return null;

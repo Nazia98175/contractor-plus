@@ -113,7 +113,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           yPercent: -50,
           opacity: 0,
           scale: 0.2,
-          filter: "blur(8px)",
+
           x: getInitial(initialX),
           y: getInitial(initialY),
         });
@@ -123,7 +123,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           y: 0,
           opacity: 1,
           scale: 1,
-          filter: "blur(0px)",
+
           ease: "power2.out",
           scrollTrigger,
         });
@@ -140,13 +140,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         y: 80,
         scale: 0.3,
         opacity: 0,
-        filter: "blur(8px)",
       });
       gsap.to(centerRef.current, {
         y: 0,
         scale: 1,
         opacity: 1,
-        filter: "blur(0px)",
+
         ease: "power2.out",
         scrollTrigger,
       });

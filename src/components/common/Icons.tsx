@@ -1658,8 +1658,10 @@ export const OnIcon: React.FC<OnIconProps> = ({ className = "" }) => (
     <foreignObject x="-3.50938" y="-3.50742" width="85.728" height="85.7268">
       <div
         style={{
-          backdropFilter: "blur(2.2px)",
+          // backdropFilter: "blur(2.2px)",
+          // WebkitBackdropFilter: "blur(2.2px)",
           clipPath: "url(#bgblur_0_84_12022_clip_path)",
+          WebkitClipPath: "url(#bgblur_0_84_12022_clip_path)",
           height: "100%",
           width: "100%",
         }}
@@ -1723,11 +1725,10 @@ export const OnIconw: React.FC<OnIconProps> = ({ className = "" }) => (
           >
             <div
               style={{
-                background:
-                  "conic-gradient(from 90deg, rgba(0, 0, 0, 0) 0deg, rgba(255, 82, 1, 0.2723) 294.896deg, rgba(255, 82, 1, 1) 360deg)",
                 height: "100%",
                 width: "100%",
                 opacity: 1,
+                backgroundColor: "rgba(255, 82, 1, 0.5)",
               }}
             ></div>
           </foreignObject>

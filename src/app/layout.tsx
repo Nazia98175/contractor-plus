@@ -1,10 +1,10 @@
-import SmoothScroll from "@/components/common/SmoothScroll";
+import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import Head from "next/head";
 import { ReactNode } from "react";
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
 import "./globals.css";
 import "./style.css";
 
@@ -14,7 +14,10 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html>
+    <html
+      lang="en"
+      className={`${inter.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable}`}
+    >
       <Head>
         <script
           type="text/javascript"
@@ -22,10 +25,7 @@ export default function RootLayout({ children }: Props) {
           async={true}
         ></script>
       </Head>
-      <body>
-        <SmoothScroll />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

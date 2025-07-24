@@ -53,7 +53,7 @@ const FaqList: React.FC<FaqListProps> = ({
 
       <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
         <p
-          className={`max-w-[1113px] px-2 pt-1 pb-3 text-sm leading-[126%] xl:text-base ${currentVariant.answer} ${classNameAnswer} ${isOpen ? "text-visible" : ""} `}
+          className={`max-w-[1173px] px-2 pt-1 pb-3 text-sm leading-[126%] xl:text-base ${currentVariant.answer} ${classNameAnswer} ${isOpen ? "text-visible" : ""} `}
         >
           {data.answer
             ?.split("<br/>")

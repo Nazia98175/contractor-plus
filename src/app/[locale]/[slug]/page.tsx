@@ -22,7 +22,6 @@ import {
 } from "@/components/common/Icons";
 import { platforms } from "@/components/common/Helper";
 import Image from "next/image";
-import { log } from "console";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -94,7 +93,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-  console.log(pageData, "4dewsa");
 
   return (
     <>
@@ -110,12 +108,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             heroImg={heroImg}
             featureTag={pageData?.featureTag}
           />
+
+          <TrustedService reviews={reviews} slug={useParams?.slug} />
+
+          <SwitchingTool switchingTool={pageData?.switchingTool} />
         </div>
-
-        <TrustedService reviews={reviews} slug={useParams?.slug} />
-
-        <SwitchingTool switchingTool={pageData?.switchingTool} />
-
         <FieldService
           slug={pageData.slug}
           fieldService={pageData.fieldServiceData}

@@ -1,11 +1,10 @@
 import Copy from "@/components/common/Copy";
-import { eventFAQs, pricingfaqitems } from "@/components/common/Helper";
+import { eventFAQs } from "@/components/common/Helper";
 import Faq from "@/components/crmbussiness/Faq";
 import EventDetailHero from "@/components/eventdetail/EventDetailHero";
 import EventPricing from "@/components/eventdetail/EventPricing";
 import SpeakersEvents from "@/components/eventdetail/SpeakersEvents";
 import Sponsors from "@/components/eventdetail/Sponsors";
-import React from "react";
 
 const EventsDetailPage = () => {
   return (

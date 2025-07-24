@@ -6,6 +6,7 @@ import Copy from "@/components/common/Copy";
 import { allEventSections } from "@/components/common/Helper";
 import { CustomSliderIcon } from "@/components/common/Icons";
 import gsap from "gsap";
+import CardReveal from "@/components/common/CardReveal";
 
 const SectionEventsPage = () => {
   const params = useParams();
@@ -59,17 +60,17 @@ const SectionEventsPage = () => {
       >
         <div className="main-container relative">
           <div className="mb-[30px] flex items-center gap-2.5">
-            <Copy delay={0.1}>
+            <CardReveal delay={0.1} distance={50}>
               <button
                 className="flex items-center gap-2"
                 onClick={() => router.back()}
               >
-                <span className="rotate-180">
+                <span className="w-fit rotate-180">
                   <CustomSliderIcon />
                 </span>
                 <h4 className="event-card-tittle">{sectionHeading}</h4>
               </button>
-            </Copy>
+            </CardReveal>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredEvents.map((event) => (

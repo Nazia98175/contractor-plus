@@ -1011,9 +1011,9 @@ html::-webkit-scrollbar {
   background: linear-gradient(
     120deg,
     rgba(173, 177, 181, 0) 0%,
-    /* fully transparent */ rgba(173, 177, 181, 0.1) 25%,
-    /* subtle tint */ rgba(173, 177, 181, 0.18) 50%,
-    /* stronger tint */ rgba(173, 177, 181, 0.25) 75%
+    rgba(173, 177, 181, 0.1) 25%,
+    rgba(173, 177, 181, 0.18) 50%,
+    rgba(173, 177, 181, 0.25) 75%
   );
   z-index: 10;
   transform: translateX(-100%);
@@ -1878,4 +1878,11 @@ button {
   background-size: cover;
   content: "";
   background: #0c0d1169;
+}
+.mac-os-blur-events {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  transform: translateZ(0);
+  will-change: transform;
+  box-shadow: 0 4px 10px rgba(13, 14, 18, 0.6);
 }

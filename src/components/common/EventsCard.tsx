@@ -10,15 +10,17 @@ interface EventsCardItem {
   description: string;
   linkPath: string;
   imgPath: string;
+  onClick?: () => void;
 }
 
 interface EventsCardProps {
   Item: EventsCardItem;
+  onClick?: any;
 }
 
-const EventsCard: React.FC<EventsCardProps> = ({ Item }) => {
+const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
   return (
-    <article className="card-shine-2 cursor-pointer">
+    <article onClick={onClick} className="card-shine-2 group cursor-pointer">
       <CardReveal delay={0.1} distance={50}>
         <Image
           className="h-full max-h-[240px] w-full rounded-lg object-cover"
@@ -29,20 +31,20 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item }) => {
         />
       </CardReveal>
       <Copy delay={0.2}>
-        <p className="text-secondary mt-4 text-xs font-semibold duration-200 ease-in-out group-hover:!text-white lg:mt-6 lg:text-sm xl:mt-8">
+        <p className="text-secondary mt-4 text-xs font-semibold duration-200 ease-in-out lg:mt-6 lg:text-sm xl:mt-8">
           {Item.role}
         </p>
       </Copy>
       <CardReveal delay={0.3} distance={50}>
         <div className="my-3 flex items-center justify-between gap-4">
-          <h2 className="event-card-tittle duration-200 ease-in-out group-hover:!text-white">
+          <h2 className="event-card-tittle duration-200 ease-in-out">
             {Item.heading}
           </h2>
           <CardArrowIcon />
         </div>
       </CardReveal>
       <Copy delay={0.4}>
-        <h3 className="text-flintstone text-sm duration-200 ease-in-out group-hover:!text-white lg:text-base">
+        <h3 className="text-flintstone text-sm duration-200 ease-in-out lg:text-base">
           {Item.description}
         </h3>
       </Copy>

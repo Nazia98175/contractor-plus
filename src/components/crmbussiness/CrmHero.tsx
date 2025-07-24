@@ -186,10 +186,10 @@ const CrmHero: React.FC<TheHeroProps> = ({
                 <div className="bg-kuroiBlack absolute bottom-0 h-[10%] blur-[20px]"></div>
               </div> */}
               <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
-                {heroImg?.url && (
+                {imageUrl && (
                   <Image
                     className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                    src={heroImg?.url}
+                    src={imageUrl}
                     width={900}
                     height={616}
                     alt="crm-hero"

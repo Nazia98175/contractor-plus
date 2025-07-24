@@ -3192,9 +3192,9 @@ export const billingNeverLookBackData = {
       suffix: "%",
       prefix: "5-",
       value: 5,
-      lottieJson: null,
+      lottieJson: up_arrow_black,
       cardImage: {
-        url: "/images/svg/PipleLine-Track.svg",
+        url: null,
       },
     },
     {
@@ -3224,9 +3224,9 @@ export const billingNeverLookBackData = {
       suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: lead_icon_black,
       cardImage: {
-        url: "/images/svg/trend-down.svg",
+        url: null,
       },
     },
   ],

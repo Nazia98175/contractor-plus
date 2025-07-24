@@ -93,7 +93,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-  console.log(pageData, "4dewsa");
 
   return (
     <>

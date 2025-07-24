@@ -22,19 +22,19 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
     router.push("/events-directory/events-detail");
   };
   return (
-    <div className="img-overlay relative mx-auto flex w-full max-w-[811px] flex-col items-center justify-center">
+    <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
       <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
       <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-22%] h-[110%] w-[115px] blur-[9px] sm:left-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
       <div className="bg-kuroiBlack xs:bottom-[-15%] pointer-events-none absolute right-0 bottom-[-22%] h-[77px] w-[110%] blur-[9px] sm:bottom-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
       <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
       <Image
-        className="w-full rounded-lg object-cover"
+        className="h-full max-h-[449px] w-full rounded-lg object-cover"
         src={item.imgUrl}
         alt={item.heading}
         width={811}
         height={449}
       />
-      <div className="absolute -bottom-[30px] z-30 flex w-full flex-col items-center justify-center">
+      <div className="absolute bottom-[0px] z-30 flex w-full flex-col items-center justify-center">
         <b className="text-master text-center text-sm sm:text-base lg:text-lg">
           {item.place}
         </b>

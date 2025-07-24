@@ -1,15 +1,12 @@
 "use client";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import EventsCard from "../common/EventsCard";
 import { CustomSliderIcon } from "../common/Icons";
 import { Key } from "react";
-import Link from "next/link";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
+import { useRouter } from "next/navigation";
 
 interface ConferenceCardProps {
   sectionHeading: string;
@@ -22,6 +19,7 @@ const ConferenceCard = ({
   EventCardItem,
   swiperId,
 }: ConferenceCardProps) => {
+  const router = useRouter();
   return (
     <>
       <div className="flex justify-between px-2 sm:hidden">
@@ -29,12 +27,12 @@ const ConferenceCard = ({
           <h4 className="event-card-tittle">{sectionHeading}</h4>
         </Copy>
         <Copy delay={0.1}>
-          <Link
+          <button
             className="font-montserrat text-sm leading-[142.857%] font-medium tracking-[0.1px] whitespace-nowrap text-white"
-            href={`/events-directory/${swiperId}`}
+            onClick={() => router.push(`/events-directory/${swiperId}`)}
           >
             View All
-          </Link>
+          </button>
         </Copy>
       </div>
       <section className="main-container flex flex-col-reverse gap-6 sm:flex-col sm:gap-0">
@@ -45,35 +43,29 @@ const ConferenceCard = ({
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">
-            <div className="relative flex items-center gap-2">
-              <CardReveal delay={0.1} distance={50}>
+            <CardReveal delay={0.1} distance={50}>
+              <div className="relative flex items-center gap-2">
                 <button
                   className={`swiper-button-prev-${swiperId} relative flex h-6 w-6 rotate-180 items-center justify-center opacity-100 disabled:opacity-40`}
                 >
                   <CustomSliderIcon />
                 </button>
-              </CardReveal>
-              <CardReveal delay={0.2} distance={50}>
                 <div
                   className={`swiper-pagination-${swiperId} swiper-pagination-real-time-4 relative left-0 flex items-center justify-center gap-1`}
                 />
-              </CardReveal>
-              <CardReveal delay={0.3} distance={50}>
                 <button
                   className={`swiper-button-next-${swiperId} relative flex h-6 w-6 items-center justify-center opacity-100 disabled:opacity-40`}
                 >
                   <CustomSliderIcon />
                 </button>
-              </CardReveal>
-            </div>
-            <Copy delay={0.4}>
-              <Link
-                className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
-                href={`/events-directory/${swiperId}`}
-              >
-                View All
-              </Link>
-            </Copy>
+                <button
+                  className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
+                  onClick={() => router.push(`/events-directory/${swiperId}`)}
+                >
+                  View All
+                </button>
+              </div>
+            </CardReveal>
           </div>
         </div>
         <div className="gap-8">
@@ -107,7 +99,10 @@ const ConferenceCard = ({
           >
             {EventCardItem.map((Item: any, index: Key | null | undefined) => (
               <SwiperSlide key={index}>
-                <EventsCard Item={Item} />
+                <EventsCard
+                  Item={Item}
+                  onClick={() => router.push(`/events-directory/${swiperId}`)}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

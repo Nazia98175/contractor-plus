@@ -1,14 +1,10 @@
 "use client";
 import gsap from "gsap";
-import React, { useEffect } from "react";
-import Button from "../common/Button";
-import Image from "next/image";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { EventDetailIcon, EventHeroIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
+import { useEffect } from "react";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Directory from "../common/Directory";
+import { CustomSliderIcon } from "../common/Icons";
 
 const EventsDirectoryHero = () => {
   useEffect(() => {
@@ -39,7 +35,7 @@ const EventsDirectoryHero = () => {
     },
     {
       id: 2,
-      imgUrl: "/images/webp/event-hero.webp",
+      imgUrl: "/images/webp/snow.webp",
       heading: "Autodesk University 2025",
       place: "September 15 – 18, 2025 • Nashville, TN",
       description: "Autodesk University 2025",
@@ -53,7 +49,7 @@ const EventsDirectoryHero = () => {
     >
       <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between sm:px-4 xl:px-0">
         <button className="event-hero-navigation-prev hidden rotate-180 sm:flex">
-          <EventHeroIcon />
+          <CustomSliderIcon />
         </button>
         <Swiper
           slidesPerView={2}
@@ -73,7 +69,7 @@ const EventsDirectoryHero = () => {
           ))}
         </Swiper>
         <button className="event-hero-navigation-next hidden sm:flex">
-          <EventHeroIcon />
+          <CustomSliderIcon />
         </button>
       </div>
     </section>

@@ -28,8 +28,8 @@ const AdvertisementCard = () => {
         ))}
       </ul>
 
-      <button className="font-myriad mt-5 flex h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-[linear-gradient(262deg,_#DC1112_-10.83%,_#76090A_83.23%)] px-3 font-extrabold tracking-[0.1px] whitespace-nowrap text-white italic duration-300 hover:scale-95">
-        Get started FREE
+      <button className="font-myriad mt-5 flex h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-white px-3 font-extrabold tracking-[0.1px] whitespace-nowrap italic duration-300 hover:scale-95">
+        <span className="red-linear-bg w-full"> Get started FREE</span>
       </button>
 
       <Link

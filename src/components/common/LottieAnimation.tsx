@@ -14,7 +14,7 @@ interface LottieProps {
 const LottieAnimation = ({
   className,
   animationData,
-  loop = true,
+  loop = false,
   autoplay = true,
   playOnce = false,
   useSyncedPlayZone = false,

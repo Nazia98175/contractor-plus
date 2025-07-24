@@ -22,6 +22,7 @@ import {
 } from "@/components/common/Icons";
 import { platforms } from "@/components/common/Helper";
 import Image from "next/image";
+import { log } from "console";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -93,6 +94,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
+  console.log(pageData, "4dewsa");
 
   return (
     <>

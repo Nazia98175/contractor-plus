@@ -14,7 +14,6 @@ import {
   LocationIcon,
 } from "../common/Icons";
 import FieldServiceMap from "./FieldServiceMap";
-import { reverseGeocode } from "@/services/map";
 
 interface GeolocationData {
   latitude: number;
@@ -24,10 +23,10 @@ interface GeolocationData {
 }
 
 const DEFAULT_LOCATION: GeolocationData = {
-  latitude: 28.6139,
-  longitude: 77.209,
-  city: "Delhi",
-  country: "IN",
+  latitude: 40.7128,
+  longitude: 74.0060,
+  city: "New York",
+  country: "US",
 };
 interface heroProps {
   heroTitle: string;
@@ -37,9 +36,17 @@ interface Props {
   hero: heroProps;
   commonData?: any;
   solutionTag?: string;
+  geoLocation?: any | null;
+  locale?: string | undefined;
 }
 
-const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) => {
+const FieldServicesHero: React.FC<Props> = ({
+  hero,
+  commonData,
+  solutionTag,
+  geoLocation,
+  locale,
+}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -64,30 +71,21 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const { latitude, longitude } = position.coords;
-          const { city, country } = await reverseGeocode(latitude, longitude);
-          setLocation({ latitude, longitude, city, country });
-          setMapKey((prev) => prev + 1);
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-          setLocation(DEFAULT_LOCATION);
-          setMapKey((prev) => prev + 1);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 600000,
-        },
-      );
-    } else {
+    if (geoLocation) {
+      setLocation({
+        latitude: geoLocation?.location?.latitude,
+        longitude: geoLocation?.location?.longitude,
+        city: geoLocation?.city?.names[locale || "en"],
+        country: geoLocation?.country?.iso_code?.toUpperCase() || "",
+      });
+      setMapKey((prev) => prev + 1);
+      return;
+    } 
+    else {
       setLocation(DEFAULT_LOCATION);
       setMapKey((prev) => prev + 1);
     }
-  }, []);
+  }, [geoLocation]);
 
   const processedLocation = useMemo(() => {
     if (!location) return null;
@@ -105,7 +103,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData , solutionTag }) 
 
       <FieldServiceMap
         location={processedLocation}
-        isLoading={isLoading}
+        // isLoading={isLoading}
         mapKey={mapKey}
         onMapLoad={() => setIsLoading(false)}
         onMapError={(e) => {

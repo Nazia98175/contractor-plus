@@ -14,7 +14,7 @@ interface CopyProps {
   className?: string;
 }
 
-export default function Copy({
+function Copy({
   children,
   animateOnScroll = true,
   delay = 0,
@@ -134,3 +134,5 @@ export default function Copy({
     </div>
   );
 }
+
+export default Copy;

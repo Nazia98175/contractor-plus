@@ -59,11 +59,16 @@ const SectionEventsPage = () => {
       >
         <div className="main-container relative">
           <div className="mb-[30px] flex items-center gap-2.5">
-            <button className="rotate-180" onClick={() => router.back()}>
-              <CustomSliderIcon />
-            </button>
             <Copy delay={0.1}>
-              <h1 className="event-card-tittle">{sectionHeading}</h1>
+              <button
+                className="flex items-center gap-2"
+                onClick={() => router.back()}
+              >
+                <span className="rotate-180">
+                  <CustomSliderIcon />
+                </span>
+                <h4 className="event-card-tittle">{sectionHeading}</h4>
+              </button>
             </Copy>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

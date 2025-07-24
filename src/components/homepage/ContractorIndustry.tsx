@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import Copy from "../common/Copy";
 import { SliderRedLineIcon } from "../common/Icons";
 import ContractorIndustrySlider from "./ContractorIndustrySlider";

@@ -7,6 +7,8 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 import "./globals.css";
 import "./style.css";
+import "swiper/css/navigation";
+import "swiper/css/effect-creative";
 
 type Props = {
   children: ReactNode;

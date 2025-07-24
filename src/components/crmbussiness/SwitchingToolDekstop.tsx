@@ -94,10 +94,6 @@ const SwitchingToolDesktop = ({
     },
     { dependencies: [sectionRef], scope: sectionRef },
   );
-<<<<<<< HEAD
-  console.log(switchingTool, "switchingTool in SwitchingToolDesktop");
-=======
->>>>>>> 0d4c870b35bd99593ec854ac1654df49538e1767
   return (
     <div className="relative px-2" ref={sectionRef}>
       <div className="relative mx-auto mt-10 flex max-w-[1180px] flex-col items-center justify-center pb-16 lg:flex-row">

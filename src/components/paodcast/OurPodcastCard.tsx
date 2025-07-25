@@ -16,10 +16,10 @@ interface OurPodcastCardProps {
 
 const OurPodcastCard: React.FC<OurPodcastCardProps> = ({ Item }) => {
   return (
-    <article className="bg-lightBlack w-fit p-5">
-      <div className="relative flex h-full max-h-[260px] items-center justify-center">
+    <article className="bg-lightBlack p-3 md:p-5">
+      <div className="relative flex h-fit max-h-[180px] items-center justify-center overflow-hidden md:max-h-[260px]">
         <Image
-          className="absolute z-10 w-full object-cover blur-sm"
+          className="absolute z-10 max-h-[180px] w-full object-cover blur-sm md:max-h-[260px]"
           src={Item.cardImgUrl}
           alt={Item.heading}
           fill
@@ -32,17 +32,17 @@ const OurPodcastCard: React.FC<OurPodcastCardProps> = ({ Item }) => {
           height={240}
         />
       </div>
-      <div className="">
+      <div>
         <div className="flex items-center justify-between gap-2">
           <p className="text-secondary text-sm font-semibold">{Item.update}</p>
           {Item.icon.map((Icon, index) => (
             <span key={index}>{Icon}</span>
           ))}
         </div>
-        <b className="my-[6px] text-[28px] tracking-[-0.56px] text-white">
+        <b className="my-[6px] text-lg tracking-[-0.56px] text-white md:text-xl lg:text-2xl xl:text-[28px]">
           {Item.heading}
         </b>
-        <h5 className="text-secondary block text-sm leading-[160%] font-medium">
+        <h5 className="text-secondary block text-xs leading-[160%] font-medium md:text-sm">
           {Item.subHeading}
         </h5>
         {Item.listed && (

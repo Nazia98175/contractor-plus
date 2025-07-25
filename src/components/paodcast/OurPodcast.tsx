@@ -41,8 +41,7 @@ const OurPodcast = () => {
           Our Podcasts
         </h2>
       </Copy>
-      42px
-      <div className="grid w-full grid-cols-2 px-2 md:px-4 lg:px-8 xl:gap-[42px]">
+      <div className="grid w-full grid-cols-1 gap-6 px-2 sm:grid-cols-2 md:px-4 lg:gap-8 lg:px-8 xl:gap-[42px]">
         {cardItems.map((item, index) => (
           <OurPodcastCard key={index} Item={item} />
         ))}

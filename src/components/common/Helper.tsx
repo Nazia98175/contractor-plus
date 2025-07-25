@@ -3317,6 +3317,49 @@ export const estimaticControlData = {
   ],
 };
 
+export const property_profiles_ControlData = {
+  id: 320,
+  title: "Without full job visibility, you’re always one step behind",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          You can’t remember the details of a job from six months ago, and
+          there’s no easy way to look it up.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          Communications are split between tenant texts, the owner's emails, and
+          your office's notes.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          CRMs don’t have a property view, leaving you to connect the dots for
+          each property they own.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
 export const formData = {
   id: 282,
   placeholder: "Your Email",
@@ -3708,3 +3751,231 @@ export const eventPricingDetail = [
     pricing: "$69.00",
   },
 ];
+
+export const propertyCardData = {
+  id: 1,
+  title:
+    "A job management solution for multi-phase projects, work orders, and recurring jobs",
+  cardsDetail: [
+    {
+      title: " Property Record",
+      content: [
+        {
+          title: "Property Email",
+          desc: "Assign a unique email to each property to automatically log every conversation in its timeline.",
+        },
+        {
+          title: "Property Timeline",
+          desc: "See a property's entire history in one feed, from the first job to the latest email.",
+        },
+        {
+          title: "Files & Photos",
+          desc: "Store all permits, blueprints, and job photos directly on the property profile for instant team access.",
+        },
+        {
+          title: "Property Contacts",
+          desc: "Link owners, tenants, and managers to a single property so you always contact the right person.",
+        },
+      ],
+      cardQuote: {
+        user: "Excellent field tracking!",
+        username: "John Doe",
+      },
+      cardImg: "/images/webp/property-record.webp",
+    },
+    {
+      title: " Smart Workflows & Tracking",
+      content: [
+        {
+          title: "Asset Tracking",
+          desc: "Track service history and warranty info for specific equipment at a property, like HVAC units or water heaters.",
+        },
+        {
+          title: "Recurring Maintenance",
+          desc: "Set up and manage scheduled maintenance plans or service agreements tied directly to a property.",
+        },
+        {
+          title: "Mobile Optimized",
+          desc: "View and update any property's complete history, files, and timeline directly from the field via the app.",
+        },
+      ],
+      cardImg: "/images/webp/smart-workflow-tracking.webp",
+    },
+  ],
+};
+
+export const propertyaddressContractorData = {
+  title: "There’s finally one source of truth for every property address",
+  subTitle: null,
+  comaprisons: [
+    {
+      title: "The old way",
+      comparisonList: [
+        {
+          details: "Software that only gives client & job-level views",
+        },
+        {
+          details: "Hunting for info in emails, spreadsheets, and camera rolls",
+        },
+        {
+          details: "Manually saving emails or hoping you can find them again",
+        },
+        {
+          details:
+            "Property info is just an address field under a client's name.",
+        },
+        {
+          details:
+            "Job photos and permits are lost in different text threads and folders",
+        },
+        {
+          details: "Complex workarounds for getting property information",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Option for property-level workflows in one tap",
+        },
+        {
+          details:
+            "Finding any document, photo, or note in one central property hub",
+        },
+        {
+          details:
+            "Automatically logging conversations with a unique email for each property",
+        },
+        {
+          details:
+            "Every property gets its own rich profile with a dedicated timeline and file storage",
+        },
+        {
+          details:
+            "All files and photos are stored directly on the property’s profile for easy access",
+        },
+        {
+          details:
+            "Linking all relevant contacts to a property so you always call the right person",
+        },
+        {
+          details:
+            "Every property has its own view and self-updates with new info",
+        },
+      ],
+    },
+  ],
+};
+
+export const propertyFeatureData = {
+  id: 1,
+  title: null,
+  subTitle: null,
+  btnText: "Get started FREE",
+  btnUrl: null,
+  mobileBtn: "Download FREE App",
+};
+
+export const propertyFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "How is this different from just adding a service address to a client?",
+      answer:
+        "A service address is just a line of text. A Contractor+ Property Profile is a complete, independent hub for that address. It has its own dedicated timeline, file storage, contact list (for tenants, owners, etc.), and unique email address. This property-centric model keeps all information about the location perfectly organized, instead of scattering it across various client records.",
+    },
+    {
+      id: 2,
+      question:
+        "How does the unique property email address work? Is it complicated?",
+      answer:
+        "It's incredibly simple. When you create a property, we automatically generate a unique, private email address for it. There is no setup required from you. Just CC that address on your emails or forward important conversations to it, and they will be logged in that property's timeline automatically.",
+    },
+    {
+      id: 3,
+      question: "Who benefits most from Property Profiles? ",
+      answer:
+        "While any service business can use it, it's a game-changer for contractors with recurring clients at the same locations (like HVAC, plumbing, or electrical) and anyone who works with property managers, real estate investors, or landlords. If you service multiple properties, this is the ultimate organizational tool. ",
+    },
+    {
+      id: 4,
+      question:
+        "Can I add my existing documents and photos to a property's timeline?",
+      answer:
+        "Yes. The mobile app lets field or office staff drag deals across stages and add notes or updates on the go. ",
+    },
+    {
+      id: 5,
+      question:
+        "Is my data secure, especially with tenant and owner information?",
+      answer:
+        "Absolutely. All data is stored with bank-level security. Property Profiles in our property manager CRM help you improve security and privacy by separating information. Details about one property, including its specific contacts and files, are kept distinct and separate from other properties, even if they share the same owner.",
+    },
+    {
+      id: 6,
+      question: "Can my technicians access this information from the field?",
+      answer:
+        "Yes. The entire Property Profile (including the timeline, documents, photos, and contacts) is fully accessible on the Contractor+ mobile app. Your crew can pull up a property's history before they arrive and upload their own notes and photos directly from the job site, keeping the record perfectly up-to-date.",
+    },
+  ],
+};
+
+export const propertyprofilesformData = {
+  placeholder: "Your Email",
+  subTitle: "This is what a property management CRM should have been all along",
+  title: "Start using Contractor+ free. Upgrade for the full operating system.",
+};
+
+export const propertyprofilesHeadingData = {
+  id: 1,
+  title: "Property management topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
+};
+
+export const property_profiles_comparisonData = {
+  id: 1,
+  title: "One of these is not like the other (thank goodness)",
+  subTitle: "Contractor+ makes the choice clear",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Dedicated Property/Location Record",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Consolidated Property Timeline",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+
+    {
+      featureName: "Unique Email for Auto-Logging",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Photo/Doc Storage",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Contact List",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "CRM Profile View for Properties",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+  ],
+};

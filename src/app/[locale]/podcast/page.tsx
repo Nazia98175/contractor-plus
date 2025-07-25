@@ -1,4 +1,4 @@
-import PodcastHero from "@/components/paodcast/PodcastHero";
+import PodcastHero from "@/components/podcast/PodcastHero";
 import React from "react";
 
 const PodcastPage = () => {

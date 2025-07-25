@@ -24,6 +24,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
     rootMargin: "50px 0px",
     fallbackInView: true,
   });
+  console.log(data, "data in teams using contractor");
 
   const icons = [
     <EstimateIcon2 key="estimate" className="fill-[#3F464B]" />,
@@ -63,7 +64,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
           >
             <span className="mb-1 flex h-[40px] w-[40px] items-center justify-center">
               {lottieIndexes.includes(index) ? (
-                <LottieAnimation animationData={item.lottieJson} />
+                <LottieAnimation loop={true} animationData={item.lottieJson} />
               ) : (
                 icons[index % icons.length]
               )}

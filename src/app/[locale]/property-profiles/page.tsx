@@ -10,6 +10,7 @@ import {
   estimaticControlData,
   neverLookBackData,
   platforms,
+  property_profiles_comparisonData,
   property_profiles_ControlData,
   propertyaddressContractorData,
   propertyCardData,
@@ -38,6 +39,7 @@ import Image from "next/image";
 import React from "react";
 import CrmService from "@/components/crmbussiness/CrmSercive";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import KindAdorable from "@/components/crmbussiness/KindAdorable";
 
 export const metadata = {
   title:
@@ -69,11 +71,16 @@ const page = () => {
         theme="dark"
         slug="estimateTheme"
         apiData={false}
-        mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
+        mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
       />
       <div className="bg-white">
         <TrackProfiles ncc="" trackProperties={propertyFeatureData} />
         <RunWithContractor kindAdorable={propertyaddressContractorData} />
+
+        <KindAdorable
+          slug={"estimate"}
+          kindAdorable={property_profiles_comparisonData}
+        />
         <TeamsUsingContractor data={neverLookBackData} slug={""} />
         <ThousandsReviews
           data={dealReviews2}

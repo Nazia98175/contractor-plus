@@ -7,6 +7,8 @@ import Copy from "../common/Copy";
 
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   const showBackground = Boolean(kindAdorable?.showBackground) ?? false;
+  console.log("kindAdorable", kindAdorable);
+
   return (
     <section className="relative">
       {showBackground && (

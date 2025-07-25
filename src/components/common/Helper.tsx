@@ -3936,3 +3936,46 @@ export const propertyprofilesHeadingData = {
   btnText: "Contractor+ HQ",
   btnUrl: "/",
 };
+
+export const property_profiles_comparisonData = {
+  id: 1,
+  title: "One of these is not like the other (thank goodness)",
+  subTitle: "Contractor+ makes the choice clear",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Dedicated Property/Location Record",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Consolidated Property Timeline",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+
+    {
+      featureName: "Unique Email for Auto-Logging",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Photo/Doc Storage",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Contact List",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "CRM Profile View for Properties",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+  ],
+};

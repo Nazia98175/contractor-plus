@@ -27,7 +27,7 @@ export default function RootLayout({ children }: Props) {
           async={true}
         ></script>
       </Head>
-      <body>{children}</body>
+      <body className="font-jakarta">{children}</body>
     </html>
   );
 }

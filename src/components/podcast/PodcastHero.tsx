@@ -1,58 +1,21 @@
-import React from "react";
-import Copy from "../common/Copy";
-import { YouTubeIcon } from "../common/AppIcons";
 import Image from "next/image";
+import { YouTubeIcon } from "../common/AppIcons";
+import Copy from "../common/Copy";
 
 const PodcastHero = () => {
-  type Guest = {
-    name: string;
-    role: string;
-    company?: string;
-    image: string;
-    blurred?: boolean;
-  };
-
-  const guests: Guest[] = [
-    {
-      name: "You could be our next guest!",
-      role: "",
-      image: "/guests/guest1.png",
-      blurred: true,
-    },
-    {
-      name: "Gerritt Bake",
-      role: "Founder, American Contractor Network",
-      image: "/guests/gerritt.png",
-    },
-    {
-      name: "Justin Smith",
-      role: "CEO, Contractor+",
-      image: "/guests/justin.png",
-    },
-    {
-      name: "Roshan Sethia",
-      role: "CTO, Contractor+",
-      image: "/guests/roshan.png",
-    },
-    {
-      name: "You could be our next guest!",
-      role: "",
-      image: "/guests/guest2.png",
-      blurred: true,
-    },
-  ];
-
   return (
-    <section className="pt-[194px]">
+    <section className="relative mx-auto w-full max-w-[1312px] px-2">
       <Copy delay={0.2}>
         <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
           Contractor+ Podcasts
         </h4>
+      </Copy>
+      <Copy delay={0}>
         <h2 className="main-heading gradient-white mb-4 text-center !font-medium text-transparent">
           Voices of the Trade
         </h2>
       </Copy>
-      <Copy delay={0.3}>
+      <Copy delay={0.4}>
         <p className="hero-description !text-trolleyGrey my-[26px] text-center">
           Unfiltered. Unapologetic. Unmissable.
         </p>
@@ -63,24 +26,90 @@ const PodcastHero = () => {
       >
         Subscribe on YouTube <YouTubeIcon />
       </button>
+      <div className="relative mx-auto mb-[-100px] hidden w-full max-w-[1316px] sm:-mb-[160px] sm:block lg:-mb-[200px]">
+        {/* <div className="relative translate-x-[200px] text-center">
+          <Image
+            src="/images/webp/you-could-be-man.webp"
+            alt="You could be our next guest!"
+            height={513}
+            width={410}
+            className="h-fit max-h-[513px] object-contain"
+          />
+          <BlurIcon classNames="absolute left-[30%] top-[-4%]" />
+          <b className="podcast-hero-user text-base leading-[120%] font-semibold">
+            You could be our next guest!
+          </b>
+        </div>
 
-      <div className="flex flex-wrap justify-center gap-8">
-        {guests.map((guest, index) => (
-          <div key={index} className="w-40 text-center">
-            <div className="relative mx-auto mb-3 h-40 w-40">
-              <Image
-                src={guest.image}
-                alt={guest.name}
-                fill
-                className={`rounded-full object-cover ${guest.blurred ? "opacity-70 blur-sm" : ""}`}
-              />
-            </div>
-            <p className="text-sm font-semibold">{guest.name}</p>
-            {guest.role && (
-              <p className="mt-1 text-xs text-gray-400">{guest.role}</p>
-            )}
-          </div>
-        ))}
+        <div className="translate-x-[100px] text-center">
+          <Image
+            src="/images/webp/gerritt-bake-podcast.webp"
+            alt="Gerritt Bake"
+            height={513}
+            width={410}
+            className="h-fit max-h-[513px] object-contain"
+          />
+          <b className="podcast-hero-user text-base leading-[120%] font-semibold">
+            Gerritt Bake
+          </b>
+          <p className="text-rgba6 mt-1 text-base leading-[120%] font-medium">
+            Founder, American Contractor Network
+          </p>
+        </div>
+
+        <div className="mt-[33px] text-center">
+          <Image
+            src="/images/webp/podcast-jistin-smith.webp"
+            alt="Justin Smith"
+            height={513}
+            width={410}
+            className="h-fit max-h-[513px] object-contain"
+          />
+          <b className="podcast-hero-user text-base leading-[120%] font-semibold">
+            Justin Smith
+          </b>
+          <p className="text-rgba6 mt-1 text-base leading-[120%] font-medium">
+            CEO, Contractor+
+          </p>
+        </div>
+
+        <div className="mt-[40px] translate-x-[-100px] text-center">
+          <Image
+            src="/images/webp/roshan-podcast.webp"
+            alt="Roshan Sethia"
+            height={513}
+            width={410}
+            className="h-fit max-h-[513px] object-contain"
+          />
+          <b className="podcast-hero-user text-base leading-[120%] font-semibold">
+            Roshan Sethia
+          </b>
+          <p className="text-rgba6 mt-1 text-base leading-[120%] font-medium">
+            CTO, Contractor+
+          </p>
+        </div>
+
+        <div className="relative translate-x-[-200px] text-center">
+          <Image
+            src="/images/webp/you-could-be-woman.webp"
+            alt="You could be our next guest!"
+            height={513}
+            width={410}
+            className="h-fit max-h-[513px] object-contain"
+          />
+          <BlurIcon classNames="absolute left-[30%] top-[-4%]" />
+          <b className="podcast-hero-user text-base leading-[120%] font-semibold">
+            You could be our next guest!
+          </b>
+        </div> */}
+
+        <Image
+          src={"/images/webp/trader-group.webp"}
+          width={1050}
+          height={579}
+          alt="trader-group"
+          className="relative mx-auto max-h-[831px] w-full object-cover"
+        />
       </div>
     </section>
   );

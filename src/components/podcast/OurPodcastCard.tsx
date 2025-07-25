@@ -24,16 +24,18 @@ const OurPodcastCard: React.FC<OurPodcastCardProps> = ({ Item }) => {
           alt={Item.heading}
           fill
         />
-        <Image
-          className="relative z-20 w-full max-w-[240px] object-cover"
-          src={Item.cardImgUrl}
-          alt={Item.heading}
-          width={240}
-          height={240}
-        />
+        <div className="p-2.5">
+          <Image
+            className="relative z-20 w-full max-w-[240px] object-cover"
+            src={Item.cardImgUrl}
+            alt={Item.heading}
+            width={240}
+            height={240}
+          />
+        </div>
       </div>
       <div>
-        <div className="flex items-center justify-between gap-2">
+        <div className="mt-[35px] flex items-center justify-between gap-2">
           <p className="text-secondary text-sm font-semibold">{Item.update}</p>
           {Item.icon.map((Icon, index) => (
             <span key={index}>{Icon}</span>

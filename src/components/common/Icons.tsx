@@ -4792,3 +4792,60 @@ export const HotspotIcon = () => (
     />
   </svg>
 );
+export const BlurIcon = ({ classNames = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="156"
+    height="174"
+    viewBox="0 0 156 174"
+    fill="none"
+    className={`${classNames}`}
+  >
+    <foreignObject x="0.1" y="0.100092" width="155.8" height="173.8">
+      <div
+        style={{
+          backdropFilter: "blur(4.75px)",
+          clipPath: "url(#bgblur_0_5217_321_clip_path)",
+          height: "100%",
+          width: "100%",
+        }}
+      ></div>
+    </foreignObject>
+    <g filter="url(#filter0_f_5217_321)" data-figma-bg-blur-radius="9.5">
+      <path
+        d="M127 87.0001C127 119.033 105.062 145 78 145C50.938 145 29 119.033 29 87.0001C29 54.9676 50.938 29.0001 78 29.0001C105.062 29.0001 127 54.9676 127 87.0001Z"
+        fill="#0C1711"
+        fill-opacity="0.01"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_5217_321"
+        x="0.1"
+        y="0.100092"
+        width="155.8"
+        height="173.8"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="14.45"
+          result="effect1_foregroundBlur_5217_321"
+        />
+      </filter>
+      <clipPath
+        id="bgblur_0_5217_321_clip_path"
+        transform="translate(-0.1 -0.100092)"
+      >
+        <path d="M127 87.0001C127 119.033 105.062 145 78 145C50.938 145 29 119.033 29 87.0001C29 54.9676 50.938 29.0001 78 29.0001C105.062 29.0001 127 54.9676 127 87.0001Z" />
+      </clipPath>
+    </defs>
+  </svg>
+);

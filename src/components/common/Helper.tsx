@@ -3317,6 +3317,49 @@ export const estimaticControlData = {
   ],
 };
 
+export const property_profiles_ControlData = {
+  id: 320,
+  title: "Without full job visibility, you’re always one step behind",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          You can’t remember the details of a job from six months ago, and
+          there’s no easy way to look it up.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          Communications are split between tenant texts, the owner's emails, and
+          your office's notes.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          CRMs don’t have a property view, leaving you to connect the dots for
+          each property they own.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
 export const formData = {
   id: 282,
   placeholder: "Your Email",
@@ -3708,3 +3751,128 @@ export const eventPricingDetail = [
     pricing: "$69.00",
   },
 ];
+
+export const propertyCardData = {
+  id: 1,
+  title:
+    "A job management solution for multi-phase projects, work orders, and recurring jobs",
+  cardsDetail: [
+    {
+      title: " Property Record",
+      content: [
+        {
+          title: "Property Email",
+          desc: "Assign a unique email to each property to automatically log every conversation in its timeline.",
+        },
+        {
+          title: "Property Timeline",
+          desc: "See a property's entire history in one feed, from the first job to the latest email.",
+        },
+        {
+          title: "Files & Photos",
+          desc: "Store all permits, blueprints, and job photos directly on the property profile for instant team access.",
+        },
+        {
+          title: "Property Contacts",
+          desc: "Link owners, tenants, and managers to a single property so you always contact the right person.",
+        },
+      ],
+      cardQuote: {
+        user: "Excellent field tracking!",
+        username: "John Doe",
+      },
+      cardImg: "/images/webp/describe-estimate.webp",
+    },
+    {
+      title: " Smart Workflows & Tracking",
+      content: [
+        {
+          title: "Asset Tracking",
+          desc: "Track service history and warranty info for specific equipment at a property, like HVAC units or water heaters.",
+        },
+        {
+          title: "Recurring Maintenance",
+          desc: "Set up and manage scheduled maintenance plans or service agreements tied directly to a property.",
+        },
+        {
+          title: "Mobile Optimized",
+          desc: "View and update any property's complete history, files, and timeline directly from the field via the app.",
+        },
+      ],
+      cardImg: "/images/webp/estimatic-builds.webp",
+    },
+  ],
+};
+
+export const propertyaddressContractorData = {
+  title: "There’s finally one source of truth for every property address",
+  subTitle: null,
+  comaprisons: [
+    {
+      title: "The old way",
+      comparisonList: [
+        {
+          details: "Software that only gives client & job-level views",
+        },
+        {
+          details: "Hunting for info in emails, spreadsheets, and camera rolls",
+        },
+        {
+          details: "Manually saving emails or hoping you can find them again",
+        },
+        {
+          details:
+            "Property info is just an address field under a client's name.",
+        },
+        {
+          details:
+            "Job photos and permits are lost in different text threads and folders",
+        },
+        {
+          details: "Complex workarounds for getting property information",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Option for property-level workflows in one tap",
+        },
+        {
+          details:
+            "Finding any document, photo, or note in one central property hub",
+        },
+        {
+          details:
+            "Automatically logging conversations with a unique email for each property",
+        },
+        {
+          details:
+            "Every property gets its own rich profile with a dedicated timeline and file storage",
+        },
+        {
+          details:
+            "All files and photos are stored directly on the property’s profile for easy access",
+        },
+        {
+          details:
+            "Linking all relevant contacts to a property so you always call the right person",
+        },
+        {
+          details:
+            "Every property has its own view and self-updates with new info",
+        },
+      ],
+    },
+  ],
+};
+
+export const propertyFeatureData = {
+  id: 324,
+  title: null,
+  subTitle: null,
+  btnText: "Get started FREE",
+  btnUrl: null,
+  mobileBtn: "Download FREE App",
+};

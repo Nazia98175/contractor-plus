@@ -11,7 +11,11 @@ import {
 import Copy from "../common/Copy";
 import gsap from "gsap";
 
-const WhyContractorHero = () => {
+interface WhyContractorHeroProps {
+  pageContent: any;
+}
+
+const WhyContractorHero:React.FC<WhyContractorHeroProps> = ({pageContent}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -105,14 +109,15 @@ const WhyContractorHero = () => {
         </div>
         <Copy animateOnScroll={false} delay={0}>
           <h2 className="main-heading why-contractor-hero  white-gray-gradient mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4">
-            You can't scale a contracting business built on bottlenecks
+            {pageContent?.hero?.title}
           </h2>
         </Copy>
         <Copy animateOnScroll={false} delay={0.4}>
           <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
-            Hard work got you here. But it's not enough to get you{" "}
+            {pageContent?.hero?.subTitle}{" "}
+           
             <span className="text-decemberSky italic">
-              where you want to go.
+             {pageContent?.hero?.subTitleItalic}
             </span>
           </p>
         </Copy>
@@ -140,7 +145,7 @@ const WhyContractorHero = () => {
               <iframe
                 ref={iframeRef}
                 className="absolute inset-0 h-full w-full"
-                src="https://www.youtube.com/embed/eANJwuWMDpM?si=K7u7DBNE0XpumljU&enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+                src={pageContent?.hero?.videoUrl}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -170,11 +175,11 @@ const WhyContractorHero = () => {
             <div className="absolute right-0 bottom-0 left-0 bg-[#00000052] p-2 backdrop-blur-[42px]">
               <div className="flex items-center justify-between">
                 <h3 className="font-myriad text-lg font-semibold tracking-normal text-white xl:text-xl">
-                  Chad Cranfill
+                  {pageContent?.hero?.userName}
                 </h3>
                 <div className="hidden items-center gap-2 text-xs tracking-normal text-white sm:flex sm:text-sm">
                   <span className="font-myriad opacity-[32%]">
-                    Switched From JobTer
+                    {pageContent?.hero?.switchFrom}
                   </span>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold">→</span>
@@ -186,10 +191,10 @@ const WhyContractorHero = () => {
                 </div>
               </div>
               <p className="text-superSilver font-myriad text-xs tracking-[0.5px] max-sm:my-1.5 sm:mt-1.5 sm:text-sm">
-                Owner, Cranfill Construction
+                {pageContent?.hero?.userRole}
               </p>
               <div className="flex items-center gap-2 text-xs text-white sm:hidden sm:text-sm">
-                <span className="opacity-[32%]">Switched From JobTer</span>
+                <span className="opacity-[32%]">{pageContent?.hero?.switchFrom}</span>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold">→</span>
                   <span className="max-w-20">

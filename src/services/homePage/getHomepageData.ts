@@ -43,7 +43,7 @@ export const getHomepageData = async (
     getHomePage(locale, populateReviews),
     getHomePage(locale, resultStats),
     getBlogs(locale, blogQuery),
-    getCommonData(),
+    getCommonData(locale),
   ]);
 
   return {

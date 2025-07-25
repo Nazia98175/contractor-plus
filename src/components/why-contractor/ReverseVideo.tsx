@@ -8,7 +8,11 @@ import ImageSequenceCanvas from "./ImageSequenceCanvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ReverseFrames = () => {
+interface PropReverseVideo {
+  reverseVideo: any;
+}
+
+const ReverseFrames:React.FC<PropReverseVideo>= ({reverseVideo}) => {
   
 
   return (
@@ -42,8 +46,9 @@ const ReverseFrames = () => {
       <Copy animateOnScroll={true} delay={0}>
         <div className="absolute top-1/2 left-1/2 z-10 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-14 sm:pt-36">
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
-            "If it ain't broke, don't fix it" is the
+            {reverseVideo?.description}
           </h2>
+          <p>{reverseVideo?.subDescription}</p>
           <StrokeText />
         </div>
       </Copy>

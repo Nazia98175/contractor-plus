@@ -6,7 +6,11 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import { FrictionTextGroup } from "./Icons";
 
-const SeperateSolution = () => {
+interface PropSolution {
+  seperateSolution: any;
+}
+
+const SeperateSolution:React.FC<PropSolution> = ({seperateSolution}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const frictionItems = [
@@ -147,12 +151,12 @@ const SeperateSolution = () => {
             className="sub-heading mb-10 text-center font-semibold sm:mb-[73px] xl:px-4"
             style={{ color: "#8A8E91" }}
           >
-            Every separate solution introduces friction into your business
+            {seperateSolution?.title}
           </h3>
         </Copy>
 
         <div className="grid grid-cols-1 gap-x-11 gap-y-8 sm:grid-cols-2">
-          {frictionItems.map((item, index) => (
+          {seperateSolution?.list?.map((item:any, index:number) => (
             <div
               key={index}
               className="flex flex-col items-center justify-center gap-6 px-3 py-2.5"
@@ -175,7 +179,7 @@ const SeperateSolution = () => {
                   className="text-center text-sm leading-[130%] font-semibold lg:text-base xl:text-lg"
                   style={{ color: "#656C73" }}
                 >
-                  {item}
+                  {item?.text}
                 </p>
               </Copy>
             </div>

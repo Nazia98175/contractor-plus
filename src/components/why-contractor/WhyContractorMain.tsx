@@ -17,7 +17,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const WhyContractorMain = () => {
+interface WhyContractorMainProps {
+  data: {
+    commonData: any;
+    pageContent: any;
+    industryShiftHighlights: any;
+    narrativeFlow: any;
+    seperateSolution: any;
+  };
+}
+
+const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
   const redDotRef = useRef<HTMLElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -87,9 +97,9 @@ const WhyContractorMain = () => {
               alt="WhyContractorHeroImg"
               unoptimized
             />
-            <WhyContractorHero />
-            <IndustryShifted />
-            <AnimationHeader />
+            <WhyContractorHero pageContent={data?.pageContent} />
+            <IndustryShifted industry={data?.industryShiftHighlights} />
+            <AnimationHeader animationHeader={data?.narrativeFlow?.animationHeader} />
           </div>
         </div>
         <main
@@ -104,10 +114,10 @@ const WhyContractorMain = () => {
             ref={redDotRef}
             className="absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115] sm:top-[-300px]"
           ></span>
-          <BloodEnough />
-          <SeperateSolution />
-          <ReverseVideo />
-          <VideoBottomPart />
+          <BloodEnough bloodEnough={data?.narrativeFlow?.animationHeader?.[1]} />
+          <SeperateSolution seperateSolution={data?.seperateSolution} />
+          <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
+          <VideoBottomPart list={data?.narrativeFlow?.list} />
           <WayToWin />
           <Dashboard />
         </main>
@@ -145,7 +155,7 @@ const WhyContractorMain = () => {
               variant={"tertiary"}
             />
           </div>
-          <TrustBar showTrustedSection={true} platforms={platforms} />
+          {/* <TrustBar showTrustedSection={true} platforms={platforms} /> */}
         </div>
       </div>
     </>

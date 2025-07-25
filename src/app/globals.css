@@ -1886,3 +1886,15 @@ button {
   will-change: transform;
   box-shadow: 0 4px 10px rgba(13, 14, 18, 0.6);
 }
+.podcast-gradient-text {
+  background: linear-gradient(91deg, #fff 50.11%, #be0c0c 75.25%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.podcast-gradient-text .line {
+  background: linear-gradient(91deg, #fff 50.11%, #be0c0c 75.25%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

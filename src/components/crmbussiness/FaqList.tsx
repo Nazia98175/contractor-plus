@@ -2,6 +2,7 @@ import React from "react";
 import AnimateHeight from "react-animate-height";
 import { FaqIcon } from "../common/Icons";
 import { variantStyles } from "@/utils/getVariants";
+import Copy from "../common/Copy";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 
@@ -42,24 +43,27 @@ const FaqList: React.FC<FaqListProps> = ({
         } bg-faq-bg-2 pointer-events-none absolute inset-0 z-0 w-full overflow-hidden rounded-lg transition-all duration-200`}
       ></div>
 
-      <button
-        className={`flex w-full cursor-pointer items-start justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black xl:text-lg ${currentVariant.question} ${classNameQue} ${isOpen ? "faq-opened" : ""} `}
-      >
-        {data.question}
-        <span className="relative mt-0.5 inline-block h-6 w-6 max-w-6 min-w-6">
-          <FaqIcon isOpen={isOpen} />
-        </span>
-      </button>
-
-      <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
-        <p
-          className={`max-w-[1173px] px-2 pt-1 pb-3 text-sm leading-[126%] xl:text-base ${currentVariant.answer} ${classNameAnswer} ${isOpen ? "text-visible" : ""} `}
+      <Copy delay={0.3}>
+        <button
+          className={`flex w-full cursor-pointer items-start justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black xl:text-lg ${currentVariant.question} ${classNameQue} ${isOpen ? "faq-opened" : ""} `}
         >
-          {data.answer
-            ?.split("<br/>")
-            .map((line, i) => <span key={i}>{line}</span>)}
-        </p>
-      </AnimateHeight>
+          {data.question}
+          <span className="relative mt-0.5 inline-block h-6 w-6 max-w-6 min-w-6">
+            <FaqIcon isOpen={isOpen} />
+          </span>
+        </button>
+      </Copy>
+      <Copy delay={0.4}>
+        <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
+          <p
+            className={`max-w-[1173px] px-2 pt-1 pb-3 text-sm leading-[126%] xl:text-base ${currentVariant.answer} ${classNameAnswer} ${isOpen ? "text-visible" : ""} `}
+          >
+            {data.answer
+              ?.split("<br/>")
+              .map((line, i) => <span key={i}>{line}</span>)}
+          </p>
+        </AnimateHeight>
+      </Copy>
     </div>
   );
 };

@@ -40,18 +40,18 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
         priority
         className="absolute top-0 right-0 -z-10 hidden h-full w-full max-w-[200px] object-contain xl:block"
       />
-      <h2 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
+      <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
         Plans and Pricing
-      </h2>
-      <div className="relative mx-auto w-full max-w-[700px]">
+      </h4>
+      <div className="relative mx-auto w-full max-w-[740px]">
         <Copy delay={0.2}>
-          <h2 className="main-heading gradient-white mb-4 text-center font-extralight text-transparent">
+          <h2 className="main-heading gradient-white mb-4 text-center !font-extralight text-transparent">
             Free to start, free to stay. <br /> Level up when you’re ready.
           </h2>
         </Copy>
 
         <Copy delay={0.3}>
-          <p className="hero-description text-trolleyGrey sm:text-cyanBlue text-center">
+          <p className="hero-description !text-trolleyGrey text-center">
             What the other guys charge extra for, Contractor+ offers without
             hidden charges. Upgrade when you need more firepower to grow.
           </p>

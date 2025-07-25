@@ -11,7 +11,7 @@ const EventsDirectoryPage = () => {
       <div className="mx-auto w-full max-w-[898px]">
         <CommonFormField
           className="mt-[79px]"
-          title="Are you ready for the best Subcontractor Management Solution you’ve ever used?"
+          title="Are you looking for a better way to operate your contracting business?"
           subTitle="Start using Contractor+ free. You won’t look back."
           placeholder="Your Email"
           createBtn="Get started FREE"

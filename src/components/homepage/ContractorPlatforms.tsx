@@ -61,7 +61,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                   />
                 </div>
                 <Copy animateOnScroll={true}>
-                  <p className="text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 text-center text-sm duration-200 sm:px-2 md:text-base xl:text-lg">
+                  <p className="text-decemberSky group-hover:text-lightBlack group-hover:bg-whiteSmoke white mt-5 text-center text-sm duration-200 md:text-base xl:text-lg">
                     {`${obj.text}`}
                   </p>
                 </Copy>

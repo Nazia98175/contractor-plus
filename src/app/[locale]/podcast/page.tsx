@@ -1,5 +1,5 @@
-import OurPodcast from "@/components/paodcast/OurPodcast";
-import PodcastHero from "@/components/paodcast/PodcastHero";
+import OurPodcast from "@/components/podcast/OurPodcast";
+import PodcastHero from "@/components/podcast/PodcastHero";
 import React from "react";
 
 const PodcastPage = () => {

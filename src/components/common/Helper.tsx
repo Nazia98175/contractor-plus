@@ -3781,7 +3781,7 @@ export const propertyCardData = {
         user: "Excellent field tracking!",
         username: "John Doe",
       },
-      cardImg: "/images/webp/describe-estimate.webp",
+      cardImg: "/images/webp/property-record.webp",
     },
     {
       title: " Smart Workflows & Tracking",
@@ -3799,7 +3799,7 @@ export const propertyCardData = {
           desc: "View and update any property's complete history, files, and timeline directly from the field via the app.",
         },
       ],
-      cardImg: "/images/webp/estimatic-builds.webp",
+      cardImg: "/images/webp/smart-workflow-tracking.webp",
     },
   ],
 };
@@ -3869,10 +3869,70 @@ export const propertyaddressContractorData = {
 };
 
 export const propertyFeatureData = {
-  id: 324,
+  id: 1,
   title: null,
   subTitle: null,
   btnText: "Get started FREE",
   btnUrl: null,
   mobileBtn: "Download FREE App",
+};
+
+export const propertyFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "How is this different from just adding a service address to a client?",
+      answer:
+        "A service address is just a line of text. A Contractor+ Property Profile is a complete, independent hub for that address. It has its own dedicated timeline, file storage, contact list (for tenants, owners, etc.), and unique email address. This property-centric model keeps all information about the location perfectly organized, instead of scattering it across various client records.",
+    },
+    {
+      id: 2,
+      question:
+        "How does the unique property email address work? Is it complicated?",
+      answer:
+        "It's incredibly simple. When you create a property, we automatically generate a unique, private email address for it. There is no setup required from you. Just CC that address on your emails or forward important conversations to it, and they will be logged in that property's timeline automatically.",
+    },
+    {
+      id: 3,
+      question: "Who benefits most from Property Profiles? ",
+      answer:
+        "While any service business can use it, it's a game-changer for contractors with recurring clients at the same locations (like HVAC, plumbing, or electrical) and anyone who works with property managers, real estate investors, or landlords. If you service multiple properties, this is the ultimate organizational tool. ",
+    },
+    {
+      id: 4,
+      question:
+        "Can I add my existing documents and photos to a property's timeline?",
+      answer:
+        "Yes. The mobile app lets field or office staff drag deals across stages and add notes or updates on the go. ",
+    },
+    {
+      id: 5,
+      question:
+        "Is my data secure, especially with tenant and owner information?",
+      answer:
+        "Absolutely. All data is stored with bank-level security. Property Profiles in our property manager CRM help you improve security and privacy by separating information. Details about one property, including its specific contacts and files, are kept distinct and separate from other properties, even if they share the same owner.",
+    },
+    {
+      id: 6,
+      question: "Can my technicians access this information from the field?",
+      answer:
+        "Yes. The entire Property Profile (including the timeline, documents, photos, and contacts) is fully accessible on the Contractor+ mobile app. Your crew can pull up a property's history before they arrive and upload their own notes and photos directly from the job site, keeping the record perfectly up-to-date.",
+    },
+  ],
+};
+
+export const propertyprofilesformData = {
+  placeholder: "Your Email",
+  subTitle: "This is what a property management CRM should have been all along",
+  title: "Start using Contractor+ free. Upgrade for the full operating system.",
+};
+
+export const propertyprofilesHeadingData = {
+  id: 1,
+  title: "Property management topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
 };

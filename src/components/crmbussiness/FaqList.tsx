@@ -3,6 +3,7 @@ import AnimateHeight from "react-animate-height";
 import { FaqIcon } from "../common/Icons";
 import { variantStyles } from "@/utils/getVariants";
 import Copy from "../common/Copy";
+import CardReveal from "../common/CardReveal";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 
@@ -33,17 +34,17 @@ const FaqList: React.FC<FaqListProps> = ({
   const currentVariant = variantStyles[variant];
 
   return (
-    <div
-      onClick={onToggle}
-      className={`relative flex flex-col rounded-lg px-2 ${containerClassName}`}
-    >
+    <CardReveal delay={0.1} distance={50}>
       <div
-        className={`${
-          isOpen ? "h-full" : "h-0"
-        } bg-faq-bg-2 pointer-events-none absolute inset-0 z-0 w-full overflow-hidden rounded-lg transition-all duration-200`}
-      ></div>
+        onClick={onToggle}
+        className={`relative flex flex-col rounded-lg px-2 ${containerClassName}`}
+      >
+        <div
+          className={`${
+            isOpen ? "h-full" : "h-0"
+          } bg-faq-bg-2 pointer-events-none absolute inset-0 z-0 w-full overflow-hidden rounded-lg transition-all duration-200`}
+        ></div>
 
-      <Copy delay={0.3}>
         <button
           className={`flex w-full cursor-pointer items-start justify-between gap-5 px-2 py-3 text-start text-base leading-[127%] font-black xl:text-lg ${currentVariant.question} ${classNameQue} ${isOpen ? "faq-opened" : ""} `}
         >
@@ -52,8 +53,7 @@ const FaqList: React.FC<FaqListProps> = ({
             <FaqIcon isOpen={isOpen} />
           </span>
         </button>
-      </Copy>
-      <Copy delay={0.4}>
+
         <AnimateHeight duration={500} height={isOpen ? "auto" : 0}>
           <p
             className={`max-w-[1173px] px-2 pt-1 pb-3 text-sm leading-[126%] xl:text-base ${currentVariant.answer} ${classNameAnswer} ${isOpen ? "text-visible" : ""} `}
@@ -63,8 +63,8 @@ const FaqList: React.FC<FaqListProps> = ({
               .map((line, i) => <span key={i}>{line}</span>)}
           </p>
         </AnimateHeight>
-      </Copy>
-    </div>
+      </div>
+    </CardReveal>
   );
 };
 

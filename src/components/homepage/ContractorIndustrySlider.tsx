@@ -51,7 +51,7 @@ const ContractorIndustrySlider: React.FC = () => {
     },
     {
       itemPath: "/",
-      title: "Painting contractor",
+      title: "Painting",
       image: "/images/webp/painting-contractor.webp",
     },
     {

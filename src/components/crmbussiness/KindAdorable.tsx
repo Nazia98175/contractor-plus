@@ -70,7 +70,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
           ))}
         </div>
         <div
-          className={`relative z-40 mt-12 hidden overflow-auto rounded-xl border-[0.5px] bg-[rgba(255,255,255,0.80)] md:block lg:mt-[51px] ${showBackground ? "border-coconut" : "border-decemberSky"}`}
+          className={`relative z-40 mt-12 hidden overflow-auto rounded-xl border-[0.5px] bg-rgba7 md:block lg:mt-[51px] ${showBackground ? "border-coconut" : "border-decemberSky"}`}
         >
           <CompareTable
             compareFeatures={kindAdorable?.features}

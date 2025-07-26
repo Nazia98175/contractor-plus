@@ -23,9 +23,9 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
       <span className="absolute top-0 left-0 block h-full w-full md:hidden">
         <SliderRedLineIcon />
       </span>
-      <div className="relative z-20 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
+      <div className="relative z-30 mx-auto w-full max-w-[1010px] pt-7 md:pt-8">
         <div className="px-2">
-          <div className="mx-auto w-full max-w-[883px] text-center">
+          <div className="relative mx-auto w-full max-w-[883px] text-center">
             <Copy animateOnScroll={true}>
               <h3 className="section-heading gradient-text text-center">
                 {contractorIndustry?.title ?? ""}

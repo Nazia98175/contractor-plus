@@ -24,6 +24,9 @@ interface WhyContractorMainProps {
     industryShiftHighlights: any;
     narrativeFlow: any;
     seperateSolution: any;
+    connectedSystem: any;
+    featuresPlatform: any;
+    emailSign: any;
   };
 }
 
@@ -118,10 +121,10 @@ const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
           <SeperateSolution seperateSolution={data?.seperateSolution} />
           <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
           <VideoBottomPart list={data?.narrativeFlow?.list} />
-          <WayToWin />
-          <Dashboard />
+          <WayToWin connectedSystem={data?.connectedSystem} />
+          <Dashboard connectedSystem={data?.connectedSystem}  />
         </main>
-        <OperatingSystem />
+        <OperatingSystem image={data?.connectedSystem?.image} featuresPlatform={data?.featuresPlatform} />
         {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
@@ -144,18 +147,20 @@ const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
         <div className="pb-14">
           <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
             <CommonFormField
-              title={"All unified. All in sync. All in one place."}
+
+              title={data?.emailSign?.title}
               subTitle={
-                "This is what it feels like to finally run your business, not be run by it."
+                data?.emailSign?.subTitle
               }
-              placeholder={"Your Email"}
-              createBtn={"Get Started Free"}
-              mobileBtn={"Download FREE App"}
-              ncc={"No credit card required"}
+              placeholder={data?.emailSign?.placeholder}
+              createBtn={data?.commonData?.getStartedFreeBtn}
+              mobileBtn={data?.commonData?.mobileBtn}
+              ncc={data?.commonData?.nccTxt}
               variant={"tertiary"}
+             
             />
           </div>
-          {/* <TrustBar showTrustedSection={true} platforms={platforms} /> */}
+          {/* <TrustBar  trustBarImages={data?.commonData?.trustedCompaniesWhiteBG} showTrustedSection={false} platforms={platforms} /> */}
         </div>
       </div>
     </>

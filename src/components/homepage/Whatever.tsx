@@ -217,7 +217,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[45px] object-cover lg:max-w-[66px]"
-                  src="/images/png/contractor-3.png"
+                  src="/images/svg/contractor-3.svg"
                   width={66}
                   height={17}
                   alt="contractor"

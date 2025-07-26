@@ -38,7 +38,7 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
       {/* Device Images */}
       <CardReveal distance={50}>
         <div className="relative z-10 flex items-center justify-center px-2">
-          <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full md:block"></div>
+          <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full blur-[21px] md:block"></div>
           <Image
             src="/images/webp/mix-screens.webp"
             className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"

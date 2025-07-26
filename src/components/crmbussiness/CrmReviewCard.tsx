@@ -38,7 +38,7 @@ const CrmReviewCard: React.FC<Props> = ({
   const styles = VARIANT_CLASSES[variant];
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, index) => (
-      <span key={index} className="h-5 w-5">
+      <span key={index} className="mt-1 h-5 w-5">
         <StartIcon filled={index < Math.round(rating)} />
       </span>
     ));

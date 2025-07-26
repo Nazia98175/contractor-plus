@@ -40,18 +40,19 @@ const BillingPage = () => {
         hero={{
           featureTag: "Contractor Invoicing Software",
           heroTitle: "Living invoices that instantly reflect every change",
-          heroDescription: (
-            <>
-              Contractor+ automatically captures uninvoiced billables and <br />
-              updates your invoice with time stamped change orders.
-            </>
-          ),
+          heroDescription:
+            "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
         }}
         heroImg="/images/webp/invoicing-billing.webp"
         slug="crm"
         commonData={dealflowhero}
       />
-      <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+      <TrustedService
+        reviews={dealReviews}
+        slug="crm"
+        apiData={false}
+        className="shadow-c5"
+      />
       <div className="overflow-hidden bg-white">
         <div className="pt-8 sm:pt-12">
           <GoingFieldSevices

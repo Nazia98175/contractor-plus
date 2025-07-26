@@ -3991,3 +3991,370 @@ export const property_profiles_comparisonData = {
     },
   ],
 };
+
+export const propertyCRMSection = {
+  id: 324,
+  title: "The contract’s real job starts after it’s signed",
+  subTitle:
+    "When a client ghosts you, threatens a chargeback, or claims “you never said that”—your agreement is the only thing protecting your business.",
+  btnText: "Get started FREE",
+  btnUrl: null, // can be replaced with a link like "/signup" if needed
+  mobileBtn: "Download FREE App",
+  featureHighlightSectionVisible: true,
+  featuresList: [
+    {
+      id: 408,
+      title:
+        "With Contractor+, every agreement is airtight, time stamped, and stored for exactly this moment.",
+      content: [
+        {
+          title: "Signed scope changes with cost breakdowns",
+          text: "Signed scope changes with cost breakdowns",
+        },
+        {
+          title: "Timestamped approvals and communication logs",
+          text: "Timestamped approvals and communication logs",
+        },
+        {
+          title: "Stored and searchable records tied to each job",
+          text: "Stored and searchable records tied to each job",
+        },
+      ],
+      cardImg: {
+        src: "/images/property-tracking.png",
+        alt: "Track properties",
+      },
+    },
+  ],
+};
+
+export const automate_ControlData = {
+  id: 320,
+  title: "Managing client agreements is more complicated than it should be",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          You’re using one system for estimates, another for contracts, and a
+          third for signatures.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          Your tools don’t talk to each other, which means more admin and more
+          risk.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          If things go south, you can’t even find the signed agreement or change
+          order (if it exists at all).
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
+
+export const automatedCardData = {
+  id: 1,
+  title:
+    "A contract system that automatically writes, tracks, and stores agreements",
+  cardsDetail: [
+    {
+      id: 1,
+      title: " Agreement Creation",
+      content: [
+        {
+          title: "Estimate-to-Contract Merge",
+          desc: "Automatically generate contracts using data from approved estimates, without any copy & paste.",
+        },
+        {
+          title: "Lawyer-Crafted Templates",
+          desc: "Pre-built, legally sound templates tailored for construction and service jobs.",
+        },
+        {
+          title: "Custom Clause Library",
+          desc: "Add your own clauses once, then reuse them across all agreements.",
+        },
+        {
+          title: "Smart Field Detection",
+          desc: "Auto-fills job info like scope, pricing, dates, and location from your project data.",
+        },
+      ],
+      cardQuote: {
+        user: "Excellent field tracking!",
+        username: "John Doe",
+      },
+      cardImg: "/images/webp/agree-creation.webp",
+    },
+    {
+      id: 2,
+      title: "  Signature & Approval ",
+      content: [
+        {
+          title: "Built-In E-Signatures",
+          desc: "Collect signatures in-person or digitally.  No third-party software needed.",
+        },
+        {
+          title: "Audit Trail",
+          desc: "Each signed doc includes timestamp, IP address, and device info for protection.",
+        },
+        {
+          title: "Client Review Portal",
+          desc: "Clients can review, comment, and sign contracts from any device.",
+        },
+        {
+          title: "Approval Reminder",
+          desc: "Automated follow-ups ensure no agreement gets stuck waiting.",
+        },
+      ],
+      cardImg: "/images/webp/signature-approved.webp",
+    },
+    {
+      id: 3,
+      title: "Change Management",
+      content: [
+        {
+          title: " Instant Change Orders",
+          desc: "Modify job scope on the fly and generate a new agreement in seconds.",
+        },
+        {
+          title: "Editable Scope Change Templates",
+          desc: "Pre-configured language makes it easy to spell out what’s changing and what it costs.",
+        },
+        {
+          title: "Amendment Tracking",
+          desc: "Every version of every contract is tracked and time-stamped.",
+        },
+        {
+          title: "Digital Re-Approval",
+          desc: "Clients can re-sign updated contracts without downloading anything.",
+        },
+      ],
+      cardImg: "/images/webp/change-management.webp",
+    },
+    {
+      id: 4,
+      title: "Storage & Access",
+      content: [
+        {
+          title: "Automatic Document Storage",
+          desc: "Signed agreements are tied to the job record and stored in the cloud.",
+        },
+        {
+          title: "Searchable Archive",
+          desc: "Find any past contract, change order, or completion cert by job, client, or keyword.",
+        },
+        {
+          title: "Access Control",
+          desc: "Control who on your team can view, edit, or send legal docs.",
+        },
+        {
+          title: "Downloadable Backups",
+          desc: "Export signed documents anytime for offline recordkeeping.",
+        },
+      ],
+      cardImg: "/images/webp/storage-access.webp",
+    },
+    {
+      id: 5,
+      title: "Recurring Docs",
+      content: [
+        {
+          title: "Recurring Service Agreements",
+          desc: "Set terms once for weekly/monthly/seasonal jobs and automate renewals.",
+        },
+        {
+          title: "Auto-Renewal Alerts",
+          desc: "Get notified when contracts are expiring so nothing slips through.",
+        },
+        {
+          title: "Completion Certificates",
+          desc: "Auto-generate signed certificates when work wraps up.",
+        },
+        {
+          title: "Client-Triggered Renewals",
+          desc: "Invoice in phases or partials based on completed work.",
+        },
+        {
+          title: "Cash Flow & Profitability Visibility",
+          desc: "Let clients renew service terms directly via the portal. No manual follow-up needed.",
+        },
+      ],
+      cardImg: "/images/webp/requeere-doc.webp",
+    },
+  ],
+};
+
+export const automate_comparisonData = {
+  id: 1,
+  title: "What they call a “premium” feature, we call standard",
+  subTitle: "The features they hide behind paywalls come standard here.",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Built-in eSignature With Date/Time/IP tracking",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "Integrated Change Order Generation",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+
+    {
+      featureName: "Lawyer-Reviewed Template Library",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Customizable Contract Templates",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Centralized & Automated Document Storage",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "No Forced Plan Upgrade or 3rd Party Tool",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Estimate-to-Contract Creation",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+  ],
+};
+
+export const automateneverlookBackData = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Average savings by canceling tools like Docusign",
+      start: 0,
+      end: 300,
+      suffix: "/mo",
+      prefix: "$",
+      value: null,
+      lottieJson: up_arrow_black,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Average subscriptions canceled",
+      start: 0,
+      end: 2,
+      suffix: null,
+      denominator: 10, // This enables "9 in 10" display
+      prefix: null,
+      value: null,
+      lottieJson: sale_productivity,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Admin time savings",
+      start: 0,
+      end: 13,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: lead_icon_black,
+      cardImage: {
+        url: null,
+      },
+    },
+  ],
+};
+
+export const automatedformData = {
+  placeholder: "Your Email",
+  subTitle:
+    "What contractor client agreement software should have been all along",
+  title: "Get started with Contractor+ today.",
+};
+
+export const automatedFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question: "Do I still need to use DocuSign or another eSignature tool?",
+      answer:
+        "Nope. Contractor+ includes secure, legally binding eSignatures built right in. You can collect signatures digitally or in person without needing any third-party software or extra subscriptions.",
+    },
+    {
+      id: 2,
+      question: "Can I customize the contracts with my own terms and clauses?",
+      answer:
+        "Use our lawyer-crafted templates as a starting point, then add your own custom clauses or modify language however you want. You can even save your favorite clauses for reuse.",
+    },
+    {
+      id: 3,
+      question: "What happens when the scope of a job changes? ",
+      answer:
+        "It’s all handled. We know that scope creep and change orders are a major headache. Contractor+ has a dedicated, integrated workflow for creating and signing change orders. You can quickly generate a formal amendment, get the client's signature on-site or online, and it's automatically documented and time stamped on the invoice.  ",
+    },
+    {
+      id: 4,
+      question: "What kinds of agreements can I automate? ",
+      answer:
+        "Contractor+ supports service contracts, change orders, recurring agreements, completion certificates, and more. Each one auto-fills with your job, estimate, or invoice data.",
+    },
+    {
+      id: 5,
+      question:
+        "Where are the signed contracts stored? Can I access them later?",
+      answer:
+        "Every signed document is automatically stored in your Contractor+ account and tied to the job record. You can search, download, or reference them anytime—with full audit trails and backups.",
+    },
+    {
+      id: 6,
+      question: "Will this work on mobile for field teams?",
+      answer:
+        "Yes. Your crews can create and sign agreements right from the Contractor+ mobile app. It’s super simple and intuitive.",
+    },
+  ],
+};
+
+export const automatedHeadingData = {
+  id: 1,
+  title: "Auto Agreement topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
+};

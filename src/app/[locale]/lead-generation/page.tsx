@@ -1,4 +1,5 @@
 import CommonFormField from "@/components/common/CommonFormField";
+import CommonLogos from "@/components/common/CommonLogos";
 import {
   blackPlatforms,
   competitordoes,
@@ -14,6 +15,7 @@ import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
+import AlwaysTransparentAccessible from "@/components/lead-generation/AlwaysTransparentAccessible";
 import LeadGenerationHero from "@/components/lead-generation/LeadGenerationHero";
 import LottieStat from "@/components/lead-generation/LottieStat";
 
@@ -44,8 +46,16 @@ const LeadGeneration = () => {
         />
       </div>
       <RunWithContractor kindAdorable={leadGenerationData} />
-
       <div className="bg-white">
+        <AlwaysTransparentAccessible
+          imgPath="/images/webp/always-transparent.webp"
+          headingPrimary="Always transparent,"
+          headingSecondary="Always accessible"
+          description="See what’s going on 24/7 and access reports in your own personal local SEO portal. You’ll never wonder what’s been done or how your rankings look. Access your dashboard anytime. "
+        />
+        <div className="pt-9 pb-[84px]">
+          <CommonLogos />
+        </div>
         <ThousandsReviews
           data={dealReviews2}
           reviews={dealReviews2.reviews}

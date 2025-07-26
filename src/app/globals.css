@@ -1925,3 +1925,6 @@ button {
 .lead-generation-img-overlay {
   background: linear-gradient(180deg, #0c0d1100 0%, #0c0d11 100%);
 }
+.white-gradient-img-overlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 97.66%);
+}

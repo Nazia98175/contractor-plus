@@ -39,10 +39,19 @@ const EstimaticAiPage = async ({
 }) => {
   const useParams = await params;
 
-  const { pageContent, heroImg , reviews , comaprisonList , faqs} = await getEstimaticPageData(
-    useParams?.locale,
-  );
-  console.log(comaprisonList , "aiiii")
+  const {
+    pageContent,
+    heroImg,
+    reviews,
+    comaprisonList,
+    problemSolution,
+    commonProblem,
+    industry,
+    thousandReviews,
+    faqs,
+    commonData,
+  } = await getEstimaticPageData(useParams?.locale);
+  console.log(thousandReviews, "aiiii");
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div

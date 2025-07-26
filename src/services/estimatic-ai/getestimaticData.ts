@@ -7,6 +7,10 @@ export interface EstimaticPageData {
   heroImg?: any;
   reviews: any | null;
   comaprisonList: any | null;
+  problemSolution: any | null;
+  commonProblem: any | null;
+  industry: any | null;
+  thousandReviews: any | null;
   commonData: any | null;
   faqs: any | null;
   //   blogsByCategory?: any | null;
@@ -20,12 +24,12 @@ export const getEstimaticPageData = async (
     heroImg,
     reviewsRes,
     comparisonListRes,
-    // switchingToolRes,
-    // fieldServiceRes,
-    // trackPropertiesRes,
-    // teamsUsingContractorRes,
+    problemSolutionRes,
+    commonProblemsRes,
+    industriesRes,
+    thousandReviewsRes,
     faqsRes,
-    // thousandReviewsRes,
+
     commonData,
     // blogsByCategoryRes
   ] = await Promise.all([
@@ -39,33 +43,23 @@ export const getEstimaticPageData = async (
       locale,
       "&populate[comparisonTableEstimatic][populate][comparisons][populate]=comparisonList",
     ),
-    // getIndustryPage(
-    //   slug,
-    //   locale,
-    //   "&populate[trustedCompanies]=*",
-    // ),
-    // getIndustryPage(
-    //   slug,
-    //   locale,
-    //   "&populate[commonProblems][populate]=cardsDetail",
-    // ),
-    // getIndustryPage(
-    //   slug,
-    //   locale,
-    //   "&populate[problemSolutionSection][populate][cardsDetail][populate][cardImg]=true&populate[problemSolutionSection][populate][cardsDetail][populate][content]=true",
-    // ),
-    // getIndustryPage(
-    //   slug,
-    //   locale,
-    //   "&populate[featureHighlightIndustrySection][populate][images][populate]=*",
-    // ),
-    // getIndustryPage(
-    //   slug,
-    //   locale,
-    //   "&populate[resultsStatsSection][populate][cards][populate]=true&populate[resultsStatsSection][populate][images]=true",
-    // ),
-    getEstimaticPage( locale, "&populate[faqs][populate]=faq"),
-   
+    getEstimaticPage(
+      locale,
+      "&populate[problemSolutionSection][populate][cardsDetail][populate][cardImg]=true&populate[problemSolutionSection][populate][cardsDetail][populate][content]=true",
+    ),
+    getEstimaticPage(
+      locale,
+      "&populate[commonProblems][populate][cardsDetail][populate]=cardImg",
+    ),
+    getEstimaticPage(
+      locale,
+      "&populate[Industries][populate][imageCard][populate]=image",
+    ),
+    getEstimaticPage(
+      locale,
+      "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
+    ),
+    getEstimaticPage(locale, "&populate[faqs][populate]=faq"),
 
     getCommonData(locale),
     // getBlogsByCategory(locale, slug)
@@ -76,17 +70,13 @@ export const getEstimaticPageData = async (
     heroImg: heroImg?.data?.hero?.heroImg || null,
     reviews: reviewsRes?.data?.reviews || null,
     comaprisonList: comparisonListRes?.data?.comparisonTableEstimatic || null,
-    // trustedCompanies: trustedCompaniesRes?.data?.[0]?.trustedCompanies || null,
-    // switchingTool: switchingToolRes?.data?.[0]?.commonProblems || null,
-    // fieldServiceData:
-    //   fieldServiceRes?.data?.[0]?.problemSolutionSection || null,
-    // trackProperties:
-    //   trackPropertiesRes?.data?.[0]?.featureHighlightIndustrySection || null,
-    // teamsUsingContractor:
-    //   teamsUsingContractorRes?.data?.[0]?.resultsStatsSection || null,
+    problemSolution: problemSolutionRes?.data?.problemSolutionSection || null,
+    commonProblem: commonProblemsRes?.data?.commonProblems || null,
+    industry: industriesRes?.data?.Industries || null,
+
     faqs: faqsRes?.data?.[0] || null,
-    // blogsList: blogs || null,
-    // thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
+
+    thousandReviews: thousandReviewsRes?.data?.reviewTrustSection || null,
     commonData: commonData || null,
     // blogsByCategory: blogsByCategoryRes?.data || null,
   };

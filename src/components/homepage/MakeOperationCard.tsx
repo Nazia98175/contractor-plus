@@ -17,7 +17,7 @@ const MakeOperationCard = ({
     <article className="flex flex-col items-center gap-2 text-center">
       <LottieAnimation
         loop={true}
-        className="xcc h-8 w-8 fill-white text-white"
+        className="h-8 w-8 fill-white text-white"
         animationData={icons[index]}
       />
 

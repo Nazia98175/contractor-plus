@@ -2783,6 +2783,18 @@ export const simpleWayToBill = [
   },
 ];
 
+export const competitordoes = [
+  {
+    text: "Your leads are going to the business who showed up first.",
+  },
+  {
+    text: "Missed reviews and weak content drive down your rank.",
+  },
+  {
+    text: "A weak profile kills trust before you even get a chance to bid.",
+  },
+];
+
 export const dealflowhero = {
   getStartedFreeBtn: "Get started FREE",
   mobileBtn: "Download FREE App",

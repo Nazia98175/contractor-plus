@@ -2,7 +2,6 @@ import React from "react";
 import AnimateHeight from "react-animate-height";
 import { FaqIcon } from "../common/Icons";
 import { variantStyles } from "@/utils/getVariants";
-import Copy from "../common/Copy";
 import CardReveal from "../common/CardReveal";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";

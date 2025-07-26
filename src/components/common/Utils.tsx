@@ -280,3 +280,123 @@ export const billingFaqData = {
     },
   ],
 };
+export const leadGenerationData = {
+  title:
+    "Sure, you could hire an SEO agency or contractor… if you like playing roulette",
+
+  comaprisons: [
+    {
+      title: "Local SEO Agency",
+      comparisonList: [
+        { details: "$1000+ per month with sketchy contracts " },
+        {
+          details:
+            "Manually sending photos, reviews, and updates to your SEO agency",
+        },
+        {
+          details: "Wondering what you’re actually getting for that retainer",
+        },
+        {
+          details:
+            "Still being told to “get more reviews” with no tools to do it",
+        },
+        {
+          details: "Getting the same generic posts every other contractor uses",
+        },
+        { details: "Disconnected from the systems you use daily" },
+        {
+          details: "Hoping someone remembered to flag that fake 1-star review",
+        },
+        { details: "Instant invoice creation and onsite payment" },
+      ],
+    },
+    {
+      title: "Contractor+ Local",
+      comparisonList: [
+        {
+          details: "$249 per month and you can cancel anytime",
+        },
+        {
+          details:
+            "Just upload your photos to Contractor+ Local, we’ll handle the rest",
+        },
+        {
+          details:
+            "Get heatmaps and real-time ranking reports you can actually understand",
+        },
+        {
+          details:
+            "Automate review requests and replies with your voice and tone",
+        },
+        {
+          details: "Turn 5-star reviews into posts without lifting a finger",
+        },
+        {
+          details:
+            "Local SEO is built into the system you use to run your business",
+        },
+        {
+          details: "Auto-flag shady reviews with no extra effort",
+        },
+
+        {
+          details: "Manually sent invoices and delayed payment",
+        },
+      ],
+    },
+  ],
+};
+export const leadHGenerationFaqData = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question: "s this really only $249/monthly? ",
+      answer:
+        "Yes! Contractor+ Local literally has the functionality of 10+ platforms and an agency in one solution. It’s the cost of a bad lead or two you might pay for elsewhere. With a 33:1 return for every dollar spent, it’s like an unfair advantage. ",
+    },
+    {
+      id: 2,
+      question: "Do I need to manage the posts, photos, and reviews myself? ",
+      answer:
+        "No sweat. Just create a change order. More materials, added labor, a client request… it’s all built into the system when it happens. Everything stays tracked, approved, and visible.",
+    },
+    {
+      id: 3,
+      question: "What makes this better than hiring a local SEO agency? ",
+      answer:
+        "The system automatically pulls in any unbilled time, mileage, materials, or expenses tied to the job. You’ll see a running list of uninvoiced items. Add them in one click.  ",
+    },
+    {
+      id: 4,
+      question: "Will this help me get more reviews?",
+      answer:
+        "Absolutely. You can invoice by milestone, percentage, or scope completion. It’s perfect for multi-phase jobs or long-term projects that need progress billing. ",
+    },
+    {
+      id: 5,
+      question: "Is this the same thing as reputation management?",
+      answer:
+        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+    {
+      id: 6,
+      question: "Is there a contract involved?",
+      answer:
+        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+    {
+      id: 7,
+      question: "How do I start?",
+      answer:
+        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+    {
+      id: 8,
+      question: "Can I subscribe to this service on the free plan?",
+      answer:
+        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+  ],
+};

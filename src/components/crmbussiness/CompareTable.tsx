@@ -18,9 +18,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
   return (
     <table className="min-w-full text-left whitespace-nowrap">
       <thead>
-        <tr
-          className={`font-myriad lg:text-xl" divide-x md:text-lg ${slug === "estimate" ? "divide-coconut" : "divide-decemberSky"}`}
-        >
+        <tr className="font-myriad divide-coconut divide-x md:text-lg lg:text-xl">
           <th className="text-wallStreet w-1/3 p-3 text-center font-bold lg:p-5">
             {headerLeft}
           </th>
@@ -40,7 +38,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
         {compareFeatures?.map((feature, index) => (
           <tr
             key={index}
-            className={` ${slug === "estimate" ? "divide-coconut border-coconut text-secondary" : "divide-decemberSky border-decemberSky text-winterWay"} font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base`}
+            className="border-decemberSky divide-coconut text-winterWay font-jakarta divide-x border-t text-xs font-semibold sm:text-sm lg:text-base"
           >
             <td className="text-winterWay p-2.5 lg:px-5 lg:py-3">
               {feature.featureName}
@@ -61,11 +59,6 @@ const CompareTable: React.FC<CompareTableProps> = ({
             <td className="w-full px-5 py-3">
               <div className="flex items-center justify-center">
                 {feature.competitorsNote !== null ? (
-                  // <CheckIcon
-                  //   width={24}
-                  //   height={24}
-                  //   className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
-                  // />
                   <i>{feature?.competitorsNote}</i>
                 ) : (
                   <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">

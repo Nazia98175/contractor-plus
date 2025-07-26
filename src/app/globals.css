@@ -90,6 +90,7 @@
   --color-cyanBlue: #8a8e91;
   --color-tealBlue: #585a5e;
   --color-coconut: #e6e9f5;
+  --color-lightGray: #a3a3a3;
   --color-cyberspace: #44474b;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
@@ -1920,4 +1921,7 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.lead-generation-img-overlay {
+  background: linear-gradient(180deg, #0c0d1100 0%, #0c0d11 100%);
 }

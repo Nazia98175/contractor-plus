@@ -1,11 +1,13 @@
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import {
-  HotspotIcon,
+  CustomSliderIcon,
   HotSpotIcon2,
   SpotyfiIcon,
   YoutubeIcon,
 } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
 import OurPodcastCard from "./OurPodcastCard";
 import RecentEpisodesCards from "./RecentEpisodesCards";
 
@@ -88,7 +90,7 @@ const OurPodcast = () => {
     },
   ];
   return (
-    <section className="w-full px-2">
+    <section className="custom-pagination-2 w-full px-2">
       <Copy delay={0.1}>
         <h2 className="podcast-gradient-text sub-heading mt-12 mb-10 text-center font-semibold md:mb-16">
           Our Podcasts
@@ -104,7 +106,17 @@ const OurPodcast = () => {
           Recent Episodes
         </h2>
       </Copy>
-      <SliderLayout
+      <Swiper
+        pagination={{
+          el: ".swiper-pagination-speaker-2",
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        modules={[Pagination, Navigation]}
+        navigation={{
+          nextEl: ".sponsor-button-next",
+          prevEl: ".sponsor-button-prev",
+        }}
         breakpoints={{
           100: { slidesPerView: 1, spaceBetween: 10 },
           450: { slidesPerView: 2, spaceBetween: 20 },
@@ -115,9 +127,27 @@ const OurPodcast = () => {
         className="mx-auto w-full max-w-[1354px]"
       >
         {cardItemsRecents.map((item, index) => (
-          <RecentEpisodesCards key={index} Item={item} />
+          <SwiperSlide>
+            <RecentEpisodesCards key={index} Item={item} />
+          </SwiperSlide>
         ))}
-      </SliderLayout>
+      </Swiper>
+
+      <div className="relative mx-auto flex w-fit items-center gap-2 py-10">
+        <CardReveal delay={0.1} distance={50}>
+          <button className="sponsor-button-next relative flex h-6 w-6 rotate-180 items-center justify-center opacity-100 disabled:opacity-40">
+            <CustomSliderIcon />
+          </button>
+        </CardReveal>
+        <CardReveal delay={0.2} distance={50}>
+          <div className="swiper-pagination-speaker-2 swiper-pagination-real-time-4 !relative left-0 flex items-center justify-center gap-1" />
+        </CardReveal>
+        <CardReveal delay={0.3} distance={50}>
+          <button className="sponsor-button-prev relative flex h-6 w-6 items-center justify-center opacity-100 disabled:opacity-40">
+            <CustomSliderIcon />
+          </button>
+        </CardReveal>
+      </div>
     </section>
   );
 };

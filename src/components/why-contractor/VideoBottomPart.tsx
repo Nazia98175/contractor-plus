@@ -5,7 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 
-const VideoBottomPart = () => {
+interface PropList {
+  list :any;
+}
+
+const VideoBottomPart:React.FC<PropList> = ({list}) => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
   const sectionRef2 = useRef<HTMLDivElement>(null);
   const sectionRef3 = useRef<HTMLDivElement>(null);
@@ -95,7 +99,7 @@ const VideoBottomPart = () => {
           >
             <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">
-                Your work ethic isn't broken… But your workflow IS.
+               {list?.[0]?.text}
               </h3>
             </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -122,8 +126,7 @@ const VideoBottomPart = () => {
           >
             <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">
-                It's a thousand micro inefficiencies stealing time and bleeding
-                margin.
+               {list?.[1]?.text}
               </h3>
             </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -152,7 +155,7 @@ const VideoBottomPart = () => {
           >
             <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading text-center font-semibold duration-300 xl:px-6">
-                You're not scaling, you're just surviving.
+                {list?.[2]?.text}
               </h3>
             </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -179,8 +182,7 @@ const VideoBottomPart = () => {
           >
             <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading text-center font-semibold duration-300 xl:px-6">
-                And in this market, if you're not getting ahead.. you're falling
-                more and more behind.
+                {list?.[3]?.text}
               </h3>
             </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">

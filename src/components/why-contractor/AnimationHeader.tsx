@@ -5,7 +5,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import Copy from "../common/Copy";
 
-const AnimationHeader = () => {
+interface AnimationProp {
+  animationHeader: any;
+}
+const AnimationHeader:React.FC<AnimationProp> = ({animationHeader}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const hasAnimatedOnMobile = useRef(false);
@@ -127,18 +130,18 @@ const AnimationHeader = () => {
 
       <Copy animateOnScroll={true} delay={0}>
         <h3 className="sub-heading mb-1 text-center font-semibold duration-300 max-sm:!text-lg">
-          The contractors pulling ahead aren't grinding harder.
+          {animationHeader?.[0]?.title}
         </h3>
       </Copy>
 
       <Copy animateOnScroll={true} delay={0}>
         <h6 className="text-center text-xs leading-[130%] duration-300 lg:text-lg xl:text-[22px]">
-          They've
+         {animationHeader?.[0]?.subTitle1}
           <span className="highlighted-span font-medium italic duration-300">
             {" "}
-            rebuilt the back end,{" "}
+            {animationHeader?.[0]?.subTitleRed}{" "}
           </span>
-          because it's the only way forward.
+          {animationHeader?.[0]?.subTitle2}
         </h6>
       </Copy>
 

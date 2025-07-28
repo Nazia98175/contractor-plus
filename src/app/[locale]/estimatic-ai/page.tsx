@@ -24,6 +24,7 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
+import { getEstimaticPageData } from "@/services/estimatic-ai/getestimaticData";
 import Image from "next/image";
 
 export const metadata = {
@@ -31,7 +32,26 @@ export const metadata = {
   description:
     "Estimatic references your costbook, live supplier pricing, and local labor rates to build estimates the same way you do. Just 100x faster.",
 };
-const EstimaticAiPage = () => {
+const EstimaticAiPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}) => {
+  const useParams = await params;
+
+  const {
+    pageContent,
+    heroImg,
+    reviews,
+    comaprisonList,
+    problemSolution,
+    commonProblem,
+    industry,
+    thousandReviews,
+    faqs,
+    commonData,
+  } = await getEstimaticPageData(useParams?.locale);
+  console.log(thousandReviews, "aiiii");
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div

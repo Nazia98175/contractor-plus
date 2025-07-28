@@ -2,7 +2,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Copy from "../common/Copy";
 
-const WayToWin = () => {
+export interface PropWayToWin {
+  connectedSystem: any;
+}
+
+const WayToWin:React.FC<PropWayToWin> = ({connectedSystem}) => {
   const [windowLights, setWindowLights] = useState<boolean[]>([]);
   const [pulsingWindows, setPulsingWindows] = useState<number[]>([]);
 
@@ -63,17 +67,15 @@ const WayToWin = () => {
       <div className="absolute top-0 left-1/2 z-10 mx-auto w-full max-w-[1100px] translate-x-[-50%] px-3 pt-5 sm:pt-20">
         <Copy animateOnScroll={true} delay={0}>
           <h2 className="main-heading text-center !font-semibold max-sm:!text-lg">
-            <span className="text-white">The new way to win? </span>
+            <span className="text-white">{connectedSystem?.title}</span>
             <span className="mx-auto block bg-gradient-to-b from-[#FFFFFF] to-[#BE0C0C] bg-clip-text text-transparent max-sm:max-w-[80%]">
-              A connected system that moves as one.
+              {connectedSystem?.subTitle}
             </span>{" "}
           </h2>
         </Copy>
         <Copy animateOnScroll={true} delay={0}>
           <p className="text-superSilver mx-auto mt-4 text-center text-sm leading-[130%] font-medium sm:max-w-[70%] sm:text-base xl:text-lg">
-            Contractors who want growth are moving from a frankenstack of
-            software and tools to one solution that removes every point of
-            friction.{" "}
+            {connectedSystem?.description}{" "}
           </p>
         </Copy>
       </div>

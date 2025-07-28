@@ -44,7 +44,7 @@ export const getSolutionPageData = async (
     getSolutionPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
     getSolutionPage(slug, locale, "&populate[reviewTrustSection][populate][reviews][populate]=profileImg"),
-    getCommonData()
+    getCommonData(locale)
   ]);
 console.log(fieldServiceRes, "Field Service Res")
   return {

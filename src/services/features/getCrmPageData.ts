@@ -47,7 +47,7 @@ export const getFeaturesPageData = async (
     getCrmPage(slug, locale, "&populate[faqs][populate]=faq"),
     getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
     getCrmPage(slug, locale, "&populate[reviewTrustSection][populate][reviews][populate]=profileImg"),
-    getCommonData()
+    getCommonData(locale)
   ]);
 
   return {

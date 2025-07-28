@@ -90,8 +90,9 @@ const CombinesPowerfulAiSlider = () => {
         // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
+        className="!h-auto"
       >
-        <SwiperSlide>
+        <SwiperSlide className="!h-auto">
           <div className="mx-auto h-fit max-h-[313px] w-full max-w-[441px]">
             <Image
               unoptimized
@@ -132,7 +133,7 @@ const CombinesPowerfulAiSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative w-full max-w-[730px]">
+          <div className="relative mx-auto w-full max-w-[730px] overflow-hidden">
             <Image
               unoptimized
               sizes="(max-width: 768px) 730px, (min-width: 769px) 50vw"
@@ -141,14 +142,15 @@ const CombinesPowerfulAiSlider = () => {
               priority
               src={"/images/webp/photo-optimization.webp"}
               alt="Slide Image"
-              className="mx-auto w-full max-w-[780px] object-cover"
+              className="mx-auto w-full object-cover"
             />
-            <div className="white-gradient-img-overlay-2 absolute top-0 right-[-10px] h-full w-full max-w-[119px]"></div>
+            <div className="absolute top-[-13%] left-[-10%] h-[30%] w-[120%] bg-white blur-[20px]"></div>
+            <div className="absolute top-0 right-[-10%] h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
+            <div className="absolute top-0 left-[-10%] h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative mx-auto w-full max-w-[452px] overflow-hidden">
-            {/* <div className="absolute top-[0px] h-[52px] w-full rotate-180 bg-white blur-3xl"></div> */}
+        <SwiperSlide className="!h-auto">
+          <div className="relative mx-auto flex h-full w-full max-w-[452px] items-end pb-[98px]">
             <Image
               unoptimized
               sizes="(max-width: 768px) 571px, (min-width: 769px) 571px"
@@ -157,38 +159,37 @@ const CombinesPowerfulAiSlider = () => {
               priority
               src={"/images/webp/review-requests.webp"}
               alt="Slide Image"
-              className="mx-auto max-h-[537px] w-full object-cover md:max-w-[571px]"
+              className="mx-auto w-full object-cover"
             />
-
-            <div className="slider-img-gradient absolute bottom-[0px] h-[152px] w-full max-w-full rotate-180"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="mx-auto w-full max-w-[79px]">
+        <SwiperSlide className="!h-auto py-8">
+          <div className="mx-auto flex h-full w-full max-w-[596px] items-center justify-center">
             <Image
               unoptimized
               width={871}
               height={625}
-              sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+              sizes="(max-width: 768px) 596px, (min-width: 769px) 50vw"
               src={"/images/webp/qa-management.webp"}
               alt="Slide Image"
-              className="h-full w-full object-cover"
+              className="h-fit w-full object-cover"
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative mx-auto max-h-[238px] w-full max-w-[79px] overflow-hidden">
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
-              width={668}
-              height={300}
-              priority
-              src={"/images/webp/citation-sync.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full max-w-[780px] object-cover"
-            />
-            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+        <SwiperSlide className="!h-auto w-full">
+          <div className="relative h-full max-w-[79px] overflow-hidden">
+            <div className="flex h-full w-full items-center justify-center border">
+              <Image
+                unoptimized
+                sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+                width={668}
+                height={300}
+                priority
+                src={"/images/webp/citation-sync.webp"}
+                alt="Slide Image"
+                className="mx-auto w-full max-w-[780px] object-cover"
+              />
+            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>

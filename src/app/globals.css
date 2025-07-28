@@ -1932,6 +1932,3 @@ button {
 .white-gradient-img-overlay {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 97.66%);
 }
-.white-gradient-img-overlay-2 {
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
-}

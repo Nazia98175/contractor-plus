@@ -37,9 +37,11 @@ const OurPodcastCard: React.FC<OurPodcastCardProps> = ({ Item }) => {
       <div>
         <div className="mt-[35px] flex items-center justify-between gap-2">
           <p className="text-secondary text-sm font-semibold">{Item.update}</p>
-          {Item.icon.map((Icon, index) => (
-            <span key={index}>{Icon}</span>
-          ))}
+          <span className="flex items-center gap-3">
+            {Item.icon.map((Icon, index) => (
+              <span key={index}>{Icon}</span>
+            ))}
+          </span>
         </div>
         <b className="my-[6px] text-lg tracking-[-0.56px] text-white md:text-xl lg:text-2xl xl:text-[28px]">
           {Item.heading}

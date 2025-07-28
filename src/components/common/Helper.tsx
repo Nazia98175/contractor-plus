@@ -3,6 +3,7 @@ import {
   Castle,
   Flower,
   Hammer,
+  icons,
   Paintbrush2,
   Plug,
   ThermometerSun,
@@ -36,6 +37,7 @@ import {
   BigChiefAIIcon,
   BookkeepingIcon,
   ClientIcon,
+  ClockIcon,
   ContractorToolsIcon,
   EstimatesIcon,
   EstimaticIcon,
@@ -53,6 +55,7 @@ import {
   TimeIcon,
   TrackingIcon,
   TrophyIcon,
+  UpArrowIcon,
 } from "./Icons";
 
 export const awards = [
@@ -3162,7 +3165,7 @@ export const neverLookBackData = {
       start: 0,
       end: 9,
       suffix: null,
-      denominator: 10, // This enables "9 in 10" display
+      denominator: 10,
       prefix: null,
       value: null,
       lottieJson: sale_productivity,
@@ -3186,7 +3189,57 @@ export const neverLookBackData = {
     },
   ],
 };
-
+export const neverLookBackData2 = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Boost in revenue with visual pipeline tracking",
+      start: 0,
+      end: 28,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: up_arrow_black,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Contractors see higher sales productivity",
+      start: 0,
+      end: 9,
+      suffix: null,
+      denominator: 10,
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: null,
+      },
+      icons: <ClockIcon />,
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Of leads weren’t fully tracked before using Contractor+",
+      start: 0,
+      end: 80,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: null,
+      },
+      icons: <UpArrowIcon />,
+    },
+  ],
+};
 export const billingNeverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
@@ -3843,6 +3896,10 @@ export const propertyaddressContractorData = {
             "Job photos and permits are lost in different text threads and folders",
         },
         {
+          details:
+            "Confusion over who to contact: the tenant, the owner, or the manager?",
+        },
+        {
           details: "Complex workarounds for getting property information",
         },
       ],
@@ -3943,7 +4000,11 @@ export const propertyprofilesformData = {
   subTitle: "This is what a property management CRM should have been all along",
   title: "Start using Contractor+ free. Upgrade for the full operating system.",
 };
-
+export const propertyprofilesformData2 = {
+  placeholder: "Your Email",
+  subTitle: "This is what a property management CRM should have been all along",
+  title: "This is what a property management CRM should have been all along",
+};
 export const propertyprofilesHeadingData = {
   id: 1,
   title: "Property management topics in Contractor+ HQ",
@@ -3964,6 +4025,48 @@ export const property_profiles_comparisonData = {
       featureName: "Dedicated Property/Location Record",
       ourProduct: "available",
       competitorsNote: null,
+    },
+    {
+      featureName: "Consolidated Property Timeline",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+
+    {
+      featureName: "Unique Email for Auto-Logging",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Photo/Doc Storage",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Contact List",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "CRM Profile View for Properties",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+  ],
+};
+export const property_profiles_comparisonData2 = {
+  id: 1,
+  title: "One of these is not like the other (thank goodness)",
+  subTitle: "Contractor+ makes the choice clear",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Dedicated Property/Location Record",
+      ourProduct: "available",
+      competitorsNote: "Limited",
     },
     {
       featureName: "Consolidated Property Timeline",

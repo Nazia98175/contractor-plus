@@ -1,5 +1,10 @@
 import Copy from "../common/Copy";
-import { YoutubeIcon } from "../common/Icons";
+import {
+  HotspotIcon,
+  HotSpotIcon2,
+  SpotyfiIcon,
+  YoutubeIcon,
+} from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import OurPodcastCard from "./OurPodcastCard";
 import RecentEpisodesCards from "./RecentEpisodesCards";
@@ -9,8 +14,8 @@ const OurPodcast = () => {
     {
       id: 1,
       cardImgUrl: "/images/png/card-logo.png",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
+      update: "Monthly Updates",
+      heading: "Contractor+ Podcast",
       subHeading:
         "Join us as we dive into the latest advancements in AI and what they mean for our future.",
       icon: [<YoutubeIcon />],
@@ -18,58 +23,67 @@ const OurPodcast = () => {
     },
     {
       id: 2,
-      cardImgUrl: "/images/png/card-logo.png",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
+      cardImgUrl: "/images/webp/groth-mind-set-log.webp",
+      update: "Every Monday .  1 PM EST",
+      heading: "Growth Mindset Monday",
       subHeading:
         "Join us as we dive into the latest advancements in AI and what they mean for our future.",
       icon: [<YoutubeIcon />],
-      calander: "Add to Calendar",
-    },
-    {
-      id: 2,
-      cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
-      subHeading:
-        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
-      icon: [<YoutubeIcon />],
-    },
-  ];
-  const cardItemsRecents = [
-    {
-      id: 1,
-      cardImgUrl: "/images/png/card-logo.png",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
-      calander: "Add to Calendar",
-    },
-    {
-      id: 2,
-      cardImgUrl: "/images/png/card-logo.png",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
       calander: "Add to Calendar",
     },
     {
       id: 3,
       cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
+      update: "Weekly",
+      heading: "The Owner’s Perspective",
+      subHeading:
+        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
+      icon: [<YoutubeIcon />],
+    },
+    {
+      id: 4,
+      cardImgUrl: "/images/webp/hard-chat-logo.webp",
+      update: "Monthly",
+      heading: "Hard Hat Chat",
+      subHeading:
+        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
+      icon: [<HotSpotIcon2 />, <SpotyfiIcon />],
+    },
+  ];
+  const cardItemsRecents = [
+    {
+      id: 1,
+      cardImgUrl: "/images/webp/owner-prospective.webp",
+      update: "27th June 2025 . 12:24 PM",
+      heading: "The Owner’s Prespective",
+      calander: "Add to Calendar",
+    },
+    {
+      id: 2,
+      cardImgUrl: "/images/webp/hard-chat-logo.webp",
+      update: "27th June 2025 . 12:24 PM",
+      heading: "Hard Hat Chat",
+      calander: "Add to Calendar",
+    },
+    {
+      id: 3,
+      cardImgUrl: "/images/webp/owner-prospective.webp",
+      update: "27th June 2025 . 12:24 PM",
+      heading: "The Owner’s Prespective",
       calander: "Add to Calendar",
     },
     {
       id: 4,
-      cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
+      cardImgUrl: "/images/webp/hard-chat-logo.webp",
+      update: "27th June 2025 . 12:24 PM",
+      heading: "Hard Hat Chat",
       calander: "Add to Calendar",
     },
     {
       id: 5,
       cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "Latest Episode",
-      heading: "Exploring the Future of AI",
+      update: "27th June 2025 . 12:24 PM",
+      heading: "The Owner’s Prespective",
       calander: "Add to Calendar",
     },
   ];
@@ -87,7 +101,7 @@ const OurPodcast = () => {
       </div>
       <Copy delay={0.1}>
         <h2 className="podcast-gradient-text sub-heading mt-12 mb-10 text-center font-semibold md:mt-16">
-          Our Podcasts
+          Recent Episodes
         </h2>
       </Copy>
       <SliderLayout

@@ -9,14 +9,17 @@ import {
   estimaticCardData,
   estimaticControlData,
   neverLookBackData,
+  neverLookBackData2,
   platforms,
   property_profiles_comparisonData,
+  property_profiles_comparisonData2,
   property_profiles_ControlData,
   propertyaddressContractorData,
   propertyCardData,
   propertyFaq,
   propertyFeatureData,
   propertyprofilesformData,
+  propertyprofilesformData2,
   propertyprofilesHeadingData,
   runWithContractorData,
 } from "@/components/common/Helper";
@@ -77,15 +80,14 @@ const page = () => {
       <div className="bg-white">
         <TrackProfiles ncc="" trackProperties={propertyFeatureData} />
         <RunWithContractor kindAdorable={propertyaddressContractorData} />
-
         <KindAdorable
           slug={"estimate"}
-          kindAdorable={property_profiles_comparisonData}
+          kindAdorable={property_profiles_comparisonData2}
         />
-        <TeamsUsingContractor data={neverLookBackData} slug={""} />
+        <TeamsUsingContractor data={neverLookBackData2} slug={""} />
         <ThousandsReviews
           data={dealReviews2}
-          reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+          reviews={dealReviews2.reviews}
           variant="primary"
           apiData={false}
         />
@@ -93,9 +95,7 @@ const page = () => {
       <div className="relative overflow-hidden">
         {/* Background Icons */}
         <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
         <div className="relative">
           <Image
             width={800}
@@ -110,7 +110,7 @@ const page = () => {
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            data={propertyprofilesformData}
+            data={propertyprofilesformData2}
             variant="primary"
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="light"

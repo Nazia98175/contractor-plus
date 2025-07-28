@@ -61,6 +61,7 @@ const page = () => {
         heroImg="/images/webp/property-profiles.webp"
         slug="crm"
         commonData={dealflowhero}
+        apiData={false}
       />
       <div className="pb-6">
         <TrustedService reviews={dealReviews} slug="crm" apiData={false} />

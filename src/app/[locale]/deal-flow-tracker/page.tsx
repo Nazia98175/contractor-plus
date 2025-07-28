@@ -46,6 +46,7 @@ const DealFlowTracker = () => {
         heroImg="/images/webp/deal-flow-hero.webp"
         slug="crm"
         commonData={dealflowhero}
+        apiData={false}
       />
       <div className="pb-6">
         <TrustedService reviews={dealReviews} slug="crm" apiData={false} />

@@ -16,6 +16,7 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
 import RunWithContractor from "@/components/field-services/RunWithContractor";
 import AlwaysTransparentAccessible from "@/components/lead-generation/AlwaysTransparentAccessible";
+import CombinesPowerfulAi from "@/components/lead-generation/CombinesPowerfulAi";
 import LeadGenerationHero from "@/components/lead-generation/LeadGenerationHero";
 import LottieStat from "@/components/lead-generation/LottieStat";
 
@@ -34,7 +35,6 @@ const LeadGeneration = () => {
         />
         <LottieStat className="mt-8 gap-[55px]" />
       </div>
-
       <div className="bg-white pt-8 pb-[42px] sm:pt-12 sm:pb-[50px] md:pt-[76px] lg:pb-[85px]">
         <GoingFieldSevices
           isImageshow={false}
@@ -46,7 +46,9 @@ const LeadGeneration = () => {
         />
       </div>
       <RunWithContractor kindAdorable={leadGenerationData} />
-      <div className="bg-white">
+
+      <div className="overflow-hidden bg-white">
+        <CombinesPowerfulAi />
         <AlwaysTransparentAccessible
           imgPath="/images/webp/always-transparent.webp"
           headingPrimary="Always transparent,"

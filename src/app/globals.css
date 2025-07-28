@@ -92,6 +92,7 @@
   --color-coconut: #e6e9f5;
   --color-lightGray: #a3a3a3;
   --color-cyberspace: #44474b;
+  --color-codexGrey: #9c9c9c;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
@@ -240,6 +241,9 @@ body {
 }
 .section-heading-2 {
   @apply xs:text-2xl text-xl leading-[138%] font-bold sm:text-[30px] md:font-semibold md:tracking-[-0.84px] lg:text-4xl xl:text-[42px];
+}
+.section-heading-3 {
+  @apply xs:text-2xl text-kuroiBlack text-xl leading-[138%] font-semibold sm:text-[30px] md:tracking-[-0.84px] lg:text-4xl xl:text-[42px];
 }
 .paragraph-text {
   @apply text-sm sm:text-base lg:text-lg xl:text-xl;
@@ -1927,4 +1931,7 @@ button {
 }
 .white-gradient-img-overlay {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 97.66%);
+}
+.white-gradient-img-overlay-2 {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }

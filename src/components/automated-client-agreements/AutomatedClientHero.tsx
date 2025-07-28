@@ -184,10 +184,10 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
                 <div className="bg-kuroiBlack absolute bottom-0 h-[10%] blur-[20px]"></div>
               </div> */}
               <div className="z-30 mx-auto mt-9 max-w-[700px]">
-                {imageUrl && (
+                {heroImg && (
                   <Image
                     className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                    src={imageUrl}
+                    src={heroImg}
                     width={900}
                     height={616}
                     alt="crm-hero"

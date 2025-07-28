@@ -154,3 +154,28 @@ export const footerVariantClasses = {
     background: "bg-transparent",
   },
 };
+export const themeColors = {
+  light: {
+    titleColor:
+      "text-lightBlack  font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px]",
+    heading: "text-lightBlack",
+    desc: "text-wallStreet",
+    isEstimateText: "text-secondary",
+    isEstimateTextColor2: "text-secondary",
+  },
+  dark: {
+    titleColor:
+      "text-white  font-montserrat lg:font-jakarta text-base font-semibold md:text-2xl xl:text-[26px]",
+    heading: "text-white",
+    desc: "text-secondary lg:text-superSilver",
+    isEstimateText: "text-secondary",
+    isEstimateTextColor2: "text-secondary",
+  },
+  estimateTheme: {
+    titleColor: "estimate-text text-base font-semibold ",
+    heading: "text-white",
+    desc: "text-superSilver",
+    isEstimateText: "text-secondary",
+    isEstimateTextColor2: "!font-bold",
+  },
+};

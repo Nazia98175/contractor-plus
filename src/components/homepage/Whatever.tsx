@@ -113,7 +113,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           yPercent: -50,
           opacity: 0,
           scale: 0.2,
-          filter: "blur(8px)",
+
           x: getInitial(initialX),
           y: getInitial(initialY),
         });
@@ -123,7 +123,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           y: 0,
           opacity: 1,
           scale: 1,
-          filter: "blur(0px)",
+
           ease: "power2.out",
           scrollTrigger,
         });
@@ -140,13 +140,12 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         y: 80,
         scale: 0.3,
         opacity: 0,
-        filter: "blur(8px)",
       });
       gsap.to(centerRef.current, {
         y: 0,
         scale: 1,
         opacity: 1,
-        filter: "blur(0px)",
+
         ease: "power2.out",
         scrollTrigger,
       });
@@ -218,7 +217,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[45px] object-cover lg:max-w-[66px]"
-                  src="/images/png/contractor-3.png"
+                  src="/images/svg/contractor-3.svg"
                   width={66}
                   height={17}
                   alt="contractor"

@@ -15,9 +15,7 @@ interface TheEngineContractorProps {
   engineContractor: EngineContractor;
 }
 
-const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
-  engineContractor,
-}) => {
+const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -33,7 +31,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({
   const after = match[3]; // " contractors run on"
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden pb-10 sm:pb-0">
       <div className="bg-athenaBlue pointer-events-none absolute bottom-0 left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
       <div className="bg-athenaBlue pointer-events-none absolute top-[50px] left-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>
       <div className="bg-athenaBlue pointer-events-none absolute top-[80px] right-[-10px] hidden h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] lg:block"></div>

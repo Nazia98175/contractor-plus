@@ -17,7 +17,8 @@ import { getSeoData } from "@/services/common/seoMeta";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-
+import { cookies } from "next/headers";
+import { getMaxMindLocation } from "@/services/map";
 export async function generateMetadata({
   params,
 }: {
@@ -68,6 +69,13 @@ const FieldServicesPage = async ({ params }: Params) => {
     commonData,
   } = await getSolutionPageData("field-service", useParams?.locale);
 
+  const ip = (await cookies()).get("user-ip")?.value;
+  console.log("User IP:", ip);
+  let geoLocation = null;
+
+  geoLocation = await getMaxMindLocation(ip);
+
+
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div
@@ -76,7 +84,10 @@ const FieldServicesPage = async ({ params }: Params) => {
       >
         <FieldServicesHero
           hero={solutionPageContent?.data?.[0]?.hero}
+          solutionTag={solutionPageContent?.data?.[0]?.solutionTag}
           commonData={commonData}
+          geoLocation={geoLocation}
+          locale={useParams?.locale}
         />
       </div>
       <ServiceContractorsMarquee reviews={reviews} />

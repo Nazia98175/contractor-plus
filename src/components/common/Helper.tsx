@@ -179,15 +179,15 @@ export const planData = [
     isPro: true,
   },
   {
-    title: "Pro Team",
-    subtitle: "Minimum of 5 user",
+    title: "PRO Team",
+    subtitle: "Minimum of 5 users",
     monthlyPrice: 29,
     annuallyPrice: 19,
     note: "For Teams",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
     features: [
-      "$29/month per additional user",
+      "additionalUser",
       "Manage team / employees",
       "Personal, group & client chats",
       "Custom URL & branding",
@@ -2783,6 +2783,18 @@ export const simpleWayToBill = [
   },
 ];
 
+export const competitordoes = [
+  {
+    text: "Your leads are going to the business who showed up first.",
+  },
+  {
+    text: "Missed reviews and weak content drive down your rank.",
+  },
+  {
+    text: "A weak profile kills trust before you even get a chance to bid.",
+  },
+];
+
 export const dealflowhero = {
   getStartedFreeBtn: "Get started FREE",
   mobileBtn: "Download FREE App",
@@ -3192,9 +3204,9 @@ export const billingNeverLookBackData = {
       suffix: "%",
       prefix: "5-",
       value: 5,
-      lottieJson: null,
+      lottieJson: up_arrow_black,
       cardImage: {
-        url: "/images/svg/PipleLine-Track.svg",
+        url: null,
       },
     },
     {
@@ -3224,9 +3236,9 @@ export const billingNeverLookBackData = {
       suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: lead_icon_black,
       cardImage: {
-        url: "/images/svg/trend-down.svg",
+        url: null,
       },
     },
   ],
@@ -3317,6 +3329,49 @@ export const estimaticControlData = {
   ],
 };
 
+export const property_profiles_ControlData = {
+  id: 320,
+  title: "Without full job visibility, you’re always one step behind",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          You can’t remember the details of a job from six months ago, and
+          there’s no easy way to look it up.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          Communications are split between tenant texts, the owner's emails, and
+          your office's notes.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          CRMs don’t have a property view, leaving you to connect the dots for
+          each property they own.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
 export const formData = {
   id: 282,
   placeholder: "Your Email",
@@ -3448,4 +3503,860 @@ export const runWithContractorData = {
       ],
     },
   ],
+};
+export const allEventSections = [
+  {
+    sectionId: "conference-events",
+    sectionHeading: "Must-Attend Conference & Expo’s",
+    events: [
+      {
+        id: 1,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 2,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 3,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 4,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "upcoming-events",
+    sectionHeading: "All Upcoming Events",
+    events: [
+      {
+        id: 5,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 6,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 7,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 8,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+  {
+    sectionId: "all-events",
+    sectionHeading: "All Past Events",
+    events: [
+      {
+        id: 9,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "PM mental models",
+        description:
+          "Mental models are simple expressions of complex processes or relationships.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 10,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "What is Wireframing?",
+        description:
+          "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+        linkPath: "Event Details",
+      },
+      {
+        id: 11,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+      {
+        id: 12,
+        imgPath: "/images/webp/snow.webp",
+        role: "September 15 – 18, 2025 • Nashville, TN",
+        heading: "Bill Walsh leadership lessons",
+        description:
+          "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
+        linkPath: "Event Details",
+      },
+    ],
+  },
+];
+
+export const eventFAQs = [
+  {
+    id: 1,
+    question: "When and where is AU 2024 taking place? ",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 2,
+    question: "How can my company become a sponsor at AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 3,
+    question: "What learning and networking will be part of AU 2025?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 4,
+    question: "Will there be a digital experience?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 5,
+    question: "Can I meet with Autodesk product and industry experts at AU?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 6,
+    question: "What are the AU Community Rules?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+  {
+    id: 7,
+    question:
+      "I’m a journalist. What can I expect from a press/media perspective?",
+    answer: "AU 2025 will be held in Nashville, Tennessee from September 15–18",
+  },
+];
+
+export const speakerEventsItems = [
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Global Innovations",
+    image: "/images/webp/speaker-card-1.webp",
+  },
+  {
+    name: "Nelson Mendala",
+    role: "CEO Of Mendala Mechanical LLC",
+    image: "/images/webp/speaker-card-2.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Retail Construction LLC",
+    image: "/images/webp/speaker-card-3.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Global Innovations",
+    image: "/images/webp/speaker-card-1.webp",
+  },
+  {
+    name: "Nelson Mendala",
+    role: "CEO Of Mendala Mechanical LLC",
+    image: "/images/webp/speaker-card-2.webp",
+  },
+  {
+    name: "Mark Jerry",
+    role: "CEO Of Retail Construction LLC",
+    image: "/images/webp/speaker-card-3.webp",
+  },
+];
+
+export const sponsorLogo = [
+  { images: "/images/webp/sponser-logo.webp" },
+  { images: "/images/webp/sponser-logo-2.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+  { images: "/images/webp/sponser-logo-4.webp" },
+  { images: "/images/webp/sponser-logo-5.webp" },
+  { images: "/images/webp/sponser-logo-6.webp" },
+  { images: "/images/webp/sponser-logo-7.webp" },
+  { images: "/images/webp/sponser-logo-7.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+  { images: "/images/webp/sponser-logo-2.webp" },
+  { images: "/images/webp/sponser-logo-3.webp" },
+];
+
+export const eventPricingDetail = [
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-2.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-1.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Mid Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-3.webp",
+    pricing: "$69.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-2.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Front Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-1.webp",
+    pricing: "$99.00",
+  },
+  {
+    seatname: "Mid Row Seat",
+    Description:
+      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+    image: "/images/webp/pricing-card-3.webp",
+    pricing: "$69.00",
+  },
+];
+
+export const propertyCardData = {
+  id: 1,
+  title:
+    "A job management solution for multi-phase projects, work orders, and recurring jobs",
+  cardsDetail: [
+    {
+      title: " Property Record",
+      content: [
+        {
+          title: "Property Email",
+          desc: "Assign a unique email to each property to automatically log every conversation in its timeline.",
+        },
+        {
+          title: "Property Timeline",
+          desc: "See a property's entire history in one feed, from the first job to the latest email.",
+        },
+        {
+          title: "Files & Photos",
+          desc: "Store all permits, blueprints, and job photos directly on the property profile for instant team access.",
+        },
+        {
+          title: "Property Contacts",
+          desc: "Link owners, tenants, and managers to a single property so you always contact the right person.",
+        },
+      ],
+      cardQuote: {
+        user: "Excellent field tracking!",
+        username: "John Doe",
+      },
+      cardImg: "/images/webp/property-record.webp",
+      lottieJson: null,
+    },
+    {
+      title: " Smart Workflows & Tracking",
+      content: [
+        {
+          title: "Asset Tracking",
+          desc: "Track service history and warranty info for specific equipment at a property, like HVAC units or water heaters.",
+        },
+        {
+          title: "Recurring Maintenance",
+          desc: "Set up and manage scheduled maintenance plans or service agreements tied directly to a property.",
+        },
+        {
+          title: "Mobile Optimized",
+          desc: "View and update any property's complete history, files, and timeline directly from the field via the app.",
+        },
+      ],
+      cardImg: "/images/webp/smart-workflow-tracking.webp",
+      lottieJson: null,
+    },
+  ],
+};
+
+export const propertyaddressContractorData = {
+  title: "There’s finally one source of truth for every property address",
+  subTitle: null,
+  comaprisons: [
+    {
+      title: "The old way",
+      comparisonList: [
+        {
+          details: "Software that only gives client & job-level views",
+        },
+        {
+          details: "Hunting for info in emails, spreadsheets, and camera rolls",
+        },
+        {
+          details: "Manually saving emails or hoping you can find them again",
+        },
+        {
+          details:
+            "Property info is just an address field under a client's name.",
+        },
+        {
+          details:
+            "Job photos and permits are lost in different text threads and folders",
+        },
+        {
+          details: "Complex workarounds for getting property information",
+        },
+      ],
+    },
+    {
+      title: "Your way",
+      comparisonList: [
+        {
+          details: "Option for property-level workflows in one tap",
+        },
+        {
+          details:
+            "Finding any document, photo, or note in one central property hub",
+        },
+        {
+          details:
+            "Automatically logging conversations with a unique email for each property",
+        },
+        {
+          details:
+            "Every property gets its own rich profile with a dedicated timeline and file storage",
+        },
+        {
+          details:
+            "All files and photos are stored directly on the property’s profile for easy access",
+        },
+        {
+          details:
+            "Linking all relevant contacts to a property so you always call the right person",
+        },
+        {
+          details:
+            "Every property has its own view and self-updates with new info",
+        },
+      ],
+    },
+  ],
+};
+
+export const propertyFeatureData = {
+  id: 1,
+  title: null,
+  subTitle: null,
+  btnText: "Get started FREE",
+  btnUrl: null,
+  mobileBtn: "Download FREE App",
+};
+
+export const propertyFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "How is this different from just adding a service address to a client?",
+      answer:
+        "A service address is just a line of text. A Contractor+ Property Profile is a complete, independent hub for that address. It has its own dedicated timeline, file storage, contact list (for tenants, owners, etc.), and unique email address. This property-centric model keeps all information about the location perfectly organized, instead of scattering it across various client records.",
+    },
+    {
+      id: 2,
+      question:
+        "How does the unique property email address work? Is it complicated?",
+      answer:
+        "It's incredibly simple. When you create a property, we automatically generate a unique, private email address for it. There is no setup required from you. Just CC that address on your emails or forward important conversations to it, and they will be logged in that property's timeline automatically.",
+    },
+    {
+      id: 3,
+      question: "Who benefits most from Property Profiles? ",
+      answer:
+        "While any service business can use it, it's a game-changer for contractors with recurring clients at the same locations (like HVAC, plumbing, or electrical) and anyone who works with property managers, real estate investors, or landlords. If you service multiple properties, this is the ultimate organizational tool. ",
+    },
+    {
+      id: 4,
+      question:
+        "Can I add my existing documents and photos to a property's timeline?",
+      answer:
+        "Yes. The mobile app lets field or office staff drag deals across stages and add notes or updates on the go. ",
+    },
+    {
+      id: 5,
+      question:
+        "Is my data secure, especially with tenant and owner information?",
+      answer:
+        "Absolutely. All data is stored with bank-level security. Property Profiles in our property manager CRM help you improve security and privacy by separating information. Details about one property, including its specific contacts and files, are kept distinct and separate from other properties, even if they share the same owner.",
+    },
+    {
+      id: 6,
+      question: "Can my technicians access this information from the field?",
+      answer:
+        "Yes. The entire Property Profile (including the timeline, documents, photos, and contacts) is fully accessible on the Contractor+ mobile app. Your crew can pull up a property's history before they arrive and upload their own notes and photos directly from the job site, keeping the record perfectly up-to-date.",
+    },
+  ],
+};
+
+export const propertyprofilesformData = {
+  placeholder: "Your Email",
+  subTitle: "This is what a property management CRM should have been all along",
+  title: "Start using Contractor+ free. Upgrade for the full operating system.",
+};
+
+export const propertyprofilesHeadingData = {
+  id: 1,
+  title: "Property management topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
+};
+
+export const property_profiles_comparisonData = {
+  id: 1,
+  title: "One of these is not like the other (thank goodness)",
+  subTitle: "Contractor+ makes the choice clear",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Dedicated Property/Location Record",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Consolidated Property Timeline",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+
+    {
+      featureName: "Unique Email for Auto-Logging",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Photo/Doc Storage",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Contact List",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "CRM Profile View for Properties",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+  ],
+};
+
+export const propertyCRMSection = {
+  id: 324,
+  title: "The contract’s real job starts after it’s signed",
+  subTitle:
+    "When a client ghosts you, threatens a chargeback, or claims “you never said that”—your agreement is the only thing protecting your business.",
+  btnText: "Get started FREE",
+  btnUrl: null, // can be replaced with a link like "/signup" if needed
+  mobileBtn: "Download FREE App",
+  featureHighlightSectionVisible: true,
+  featuresList: [
+    {
+      id: 408,
+      title:
+        "With Contractor+, every agreement is airtight, time stamped, and stored for exactly this moment.",
+      content: [
+        {
+          title: "Signed scope changes with cost breakdowns",
+          text: "Signed scope changes with cost breakdowns",
+        },
+        {
+          title: "Timestamped approvals and communication logs",
+          text: "Timestamped approvals and communication logs",
+        },
+        {
+          title: "Stored and searchable records tied to each job",
+          text: "Stored and searchable records tied to each job",
+        },
+      ],
+      cardImg: {
+        src: "/images/property-tracking.png",
+        alt: "Track properties",
+      },
+    },
+  ],
+};
+
+export const automate_ControlData = {
+  id: 320,
+  title: "Managing client agreements is more complicated than it should be",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <>
+          You’re using one system for estimates, another for contracts, and a
+          third for signatures.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>
+          Your tools don’t talk to each other, which means more admin and more
+          risk.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          If things go south, you can’t even find the signed agreement or change
+          order (if it exists at all).
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
+
+export const automatedCardData = {
+  id: 1,
+  title:
+    "A contract system that automatically writes, tracks, and stores agreements",
+  cardsDetail: [
+    {
+      id: 1,
+      title: " Agreement Creation",
+      content: [
+        {
+          title: "Estimate-to-Contract Merge",
+          desc: "Automatically generate contracts using data from approved estimates, without any copy & paste.",
+        },
+        {
+          title: "Lawyer-Crafted Templates",
+          desc: "Pre-built, legally sound templates tailored for construction and service jobs.",
+        },
+        {
+          title: "Custom Clause Library",
+          desc: "Add your own clauses once, then reuse them across all agreements.",
+        },
+        {
+          title: "Smart Field Detection",
+          desc: "Auto-fills job info like scope, pricing, dates, and location from your project data.",
+        },
+      ],
+      cardQuote: {
+        user: "Excellent field tracking!",
+        username: "John Doe",
+      },
+      cardImg: "/images/webp/agree-creation.webp",
+    },
+    {
+      id: 2,
+      title: "  Signature & Approval ",
+      content: [
+        {
+          title: "Built-In E-Signatures",
+          desc: "Collect signatures in-person or digitally.  No third-party software needed.",
+        },
+        {
+          title: "Audit Trail",
+          desc: "Each signed doc includes timestamp, IP address, and device info for protection.",
+        },
+        {
+          title: "Client Review Portal",
+          desc: "Clients can review, comment, and sign contracts from any device.",
+        },
+        {
+          title: "Approval Reminder",
+          desc: "Automated follow-ups ensure no agreement gets stuck waiting.",
+        },
+      ],
+      cardImg: "/images/webp/signature-approved.webp",
+    },
+    {
+      id: 3,
+      title: "Change Management",
+      content: [
+        {
+          title: " Instant Change Orders",
+          desc: "Modify job scope on the fly and generate a new agreement in seconds.",
+        },
+        {
+          title: "Editable Scope Change Templates",
+          desc: "Pre-configured language makes it easy to spell out what’s changing and what it costs.",
+        },
+        {
+          title: "Amendment Tracking",
+          desc: "Every version of every contract is tracked and time-stamped.",
+        },
+        {
+          title: "Digital Re-Approval",
+          desc: "Clients can re-sign updated contracts without downloading anything.",
+        },
+      ],
+      cardImg: "/images/webp/change-management.webp",
+    },
+    {
+      id: 4,
+      title: "Storage & Access",
+      content: [
+        {
+          title: "Automatic Document Storage",
+          desc: "Signed agreements are tied to the job record and stored in the cloud.",
+        },
+        {
+          title: "Searchable Archive",
+          desc: "Find any past contract, change order, or completion cert by job, client, or keyword.",
+        },
+        {
+          title: "Access Control",
+          desc: "Control who on your team can view, edit, or send legal docs.",
+        },
+        {
+          title: "Downloadable Backups",
+          desc: "Export signed documents anytime for offline recordkeeping.",
+        },
+      ],
+      cardImg: "/images/webp/storage-access.webp",
+    },
+    {
+      id: 5,
+      title: "Recurring Docs",
+      content: [
+        {
+          title: "Recurring Service Agreements",
+          desc: "Set terms once for weekly/monthly/seasonal jobs and automate renewals.",
+        },
+        {
+          title: "Auto-Renewal Alerts",
+          desc: "Get notified when contracts are expiring so nothing slips through.",
+        },
+        {
+          title: "Completion Certificates",
+          desc: "Auto-generate signed certificates when work wraps up.",
+        },
+        {
+          title: "Client-Triggered Renewals",
+          desc: "Invoice in phases or partials based on completed work.",
+        },
+        {
+          title: "Cash Flow & Profitability Visibility",
+          desc: "Let clients renew service terms directly via the portal. No manual follow-up needed.",
+        },
+      ],
+      cardImg: "/images/webp/requeere-doc.webp",
+    },
+  ],
+};
+
+export const automate_comparisonData = {
+  id: 1,
+  title: "What they call a “premium” feature, we call standard",
+  subTitle: "The features they hide behind paywalls come standard here.",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Built-in eSignature With Date/Time/IP tracking",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "Integrated Change Order Generation",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+
+    {
+      featureName: "Lawyer-Reviewed Template Library",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Customizable Contract Templates",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Centralized & Automated Document Storage",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "No Forced Plan Upgrade or 3rd Party Tool",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Estimate-to-Contract Creation",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+  ],
+};
+
+export const automateneverlookBackData = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Average savings by canceling tools like Docusign",
+      start: 0,
+      end: 300,
+      suffix: "/mo",
+      prefix: "$",
+      value: null,
+      lottieJson: up_arrow_black,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Average subscriptions canceled",
+      start: 0,
+      end: 2,
+      suffix: null,
+      denominator: 10, // This enables "9 in 10" display
+      prefix: null,
+      value: null,
+      lottieJson: sale_productivity,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Admin time savings",
+      start: 0,
+      end: 13,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: lead_icon_black,
+      cardImage: {
+        url: null,
+      },
+    },
+  ],
+};
+
+export const automatedformData = {
+  placeholder: "Your Email",
+  subTitle:
+    "What contractor client agreement software should have been all along",
+  title: "Get started with Contractor+ today.",
+};
+
+export const automatedFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question: "Do I still need to use DocuSign or another eSignature tool?",
+      answer:
+        "Nope. Contractor+ includes secure, legally binding eSignatures built right in. You can collect signatures digitally or in person without needing any third-party software or extra subscriptions.",
+    },
+    {
+      id: 2,
+      question: "Can I customize the contracts with my own terms and clauses?",
+      answer:
+        "Use our lawyer-crafted templates as a starting point, then add your own custom clauses or modify language however you want. You can even save your favorite clauses for reuse.",
+    },
+    {
+      id: 3,
+      question: "What happens when the scope of a job changes? ",
+      answer:
+        "It’s all handled. We know that scope creep and change orders are a major headache. Contractor+ has a dedicated, integrated workflow for creating and signing change orders. You can quickly generate a formal amendment, get the client's signature on-site or online, and it's automatically documented and time stamped on the invoice.  ",
+    },
+    {
+      id: 4,
+      question: "What kinds of agreements can I automate? ",
+      answer:
+        "Contractor+ supports service contracts, change orders, recurring agreements, completion certificates, and more. Each one auto-fills with your job, estimate, or invoice data.",
+    },
+    {
+      id: 5,
+      question:
+        "Where are the signed contracts stored? Can I access them later?",
+      answer:
+        "Every signed document is automatically stored in your Contractor+ account and tied to the job record. You can search, download, or reference them anytime—with full audit trails and backups.",
+    },
+    {
+      id: 6,
+      question: "Will this work on mobile for field teams?",
+      answer:
+        "Yes. Your crews can create and sign agreements right from the Contractor+ mobile app. It’s super simple and intuitive.",
+    },
+  ],
+};
+
+export const automatedHeadingData = {
+  id: 1,
+  title: "Auto Agreement topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
 };

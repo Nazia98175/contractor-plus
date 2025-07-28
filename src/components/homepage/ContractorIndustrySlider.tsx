@@ -16,8 +16,18 @@ const ContractorIndustrySlider: React.FC = () => {
   const showInfo: Show[] = [
     {
       itemPath: "/",
-      title: "General Contractor",
-      image: "/images/webp/general-contractor.webp",
+      title: "Plumbing business",
+      image: "/images/webp/plumbing-business.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Hvac contractor",
+      image: "/images/webp/hvac-contractor.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Electrician",
+      image: "/images/webp/electrician.webp",
     },
     {
       itemPath: "/",
@@ -26,13 +36,28 @@ const ContractorIndustrySlider: React.FC = () => {
     },
     {
       itemPath: "/",
-      title: "Carpet cleaning",
-      image: "/images/webp/carpet-cleaning.webp",
+      title: "Remodeling contractor",
+      image: "/images/webp/remodeling-contractor.webp",
     },
     {
       itemPath: "/",
-      title: "Chimney sweep",
-      image: "/images/webp/chimney-sweep.webp",
+      title: "Restoration contractor",
+      image: "/images/webp/restoration-contractor.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Roofing",
+      image: "/images/webp/roofing.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Painting",
+      image: "/images/webp/painting-contractor.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Handyman",
+      image: "/images/webp/handyman.webp",
     },
     {
       itemPath: "/",
@@ -41,13 +66,8 @@ const ContractorIndustrySlider: React.FC = () => {
     },
     {
       itemPath: "/",
-      title: "Construction contractor",
-      image: "/images/webp/construction-contractor.webp",
-    },
-    {
-      itemPath: "/",
-      title: "Pressure washing",
-      image: "/images/webp/pressure-washing.webp",
+      title: "Carpet cleaning",
+      image: "/images/webp/carpet-cleaning.webp",
     },
     {
       itemPath: "/",
@@ -56,8 +76,23 @@ const ContractorIndustrySlider: React.FC = () => {
     },
     {
       itemPath: "/",
-      title: "Electrician",
-      image: "/images/webp/electrician.webp",
+      title: "Construction contractor",
+      image: "/images/webp/construction-contractor.webp",
+    },
+    {
+      itemPath: "/",
+      title: "General Contractor",
+      image: "/images/webp/general-contractor.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Chimney sweep",
+      image: "/images/webp/chimney-sweep.webp",
+    },
+    {
+      itemPath: "/",
+      title: "Pressure washing",
+      image: "/images/webp/pressure-washing.webp",
     },
     {
       itemPath: "/",
@@ -84,16 +119,7 @@ const ContractorIndustrySlider: React.FC = () => {
       title: "Garage door",
       image: "/images/webp/garage-door.webp",
     },
-    {
-      itemPath: "/",
-      title: "Handyman",
-      image: "/images/webp/handyman.webp",
-    },
-    {
-      itemPath: "/",
-      title: "Hvac contractor",
-      image: "/images/webp/hvac-contractor.webp",
-    },
+
     {
       itemPath: "/",
       title: "Irrigation business",
@@ -129,11 +155,7 @@ const ContractorIndustrySlider: React.FC = () => {
       title: "Mechanical contractor",
       image: "/images/webp/mechanical-contractor.webp",
     },
-    {
-      itemPath: "/",
-      title: "Painting contractor",
-      image: "/images/webp/painting-contractor.webp",
-    },
+
     {
       itemPath: "/",
       title: "Paving",
@@ -144,11 +166,7 @@ const ContractorIndustrySlider: React.FC = () => {
       title: "Pest control",
       image: "/images/webp/pest-control.webp",
     },
-    {
-      itemPath: "/",
-      title: "Plumbing business",
-      image: "/images/webp/plumbing-business.webp",
-    },
+
     {
       itemPath: "/",
       title: "Pool builder",
@@ -159,21 +177,7 @@ const ContractorIndustrySlider: React.FC = () => {
       title: "Property management",
       image: "/images/webp/property-management-maintenance.webp",
     },
-    {
-      itemPath: "/",
-      title: "Remodeling contractor",
-      image: "/images/webp/remodeling-contractor.webp",
-    },
-    {
-      itemPath: "/",
-      title: "Restoration contractor",
-      image: "/images/webp/restoration-contractor.webp",
-    },
-    {
-      itemPath: "/",
-      title: "Roofing",
-      image: "/images/webp/roofing.webp",
-    },
+
     {
       itemPath: "/",
       title: "Septic pumping",

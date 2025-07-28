@@ -1,21 +1,19 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
-import { CheckIcon } from "../common/Icons";
 
-const FeatureItem = ({ text }: { text: string }) => (
-  <article className="bg-doctor2 text-lightBlack text-lightblack mx-2 flex w-full max-w-[500px] items-center gap-2.5 rounded p-3 text-sm font-semibold text-nowrap md:text-base lg:text-lg">
-    <CheckIcon width={25} height={25} className="min-w-5" />
-    {text}
-  </article>
-);
 interface Props {
   ncc: string;
   trackProperties: any;
 }
 
-const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
+const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="relative sm:pt-28 lg:pt-5">
       {/* Desktop background image */}
@@ -38,33 +36,28 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         sizes="100vw"
       />
       {/* Device Images */}
-      {/* <CardReveal
-        staggerDelay={0.15}
-        animationDuration={0.8}
-        distance={50}
-        animateOnScroll={true}
-      > */}
-      <div className="relative z-10 flex items-center justify-center px-2">
-        <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full md:block"></div>
-        <Image
-          src="/images/webp/mix-screens.webp"
-          className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"
-          alt="Mobile"
-          width={1098}
-          height={578}
-          sizes="(min-width: 768px) 100vw"
-        />
+      <CardReveal distance={50}>
+        <div className="relative z-10 flex items-center justify-center px-2">
+          <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full blur-[21px] md:block"></div>
+          <Image
+            src="/images/webp/mix-screens.webp"
+            className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"
+            alt="Mobile"
+            width={1098}
+            height={578}
+            sizes="(min-width: 768px) 100vw"
+          />
 
-        <Image
-          src="/images/webp/mix-screens-mobile.webp"
-          className="drop-shadow-img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
-          alt="Mobile"
-          width={1098}
-          height={578}
-          sizes="(max-width: 767px) 100vw"
-        />
-      </div>
-      {/* </CardReveal> */}
+          <Image
+            src="/images/webp/mix-screens-mobile.webp"
+            className="drop-shadow-img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
+            alt="Mobile"
+            width={1098}
+            height={578}
+            sizes="(max-width: 767px) 100vw"
+          />
+        </div>
+      </CardReveal>
 
       {/* Heading + Paragraph */}
       <div className="relative z-10 px-2 md:-mt-3">
@@ -82,14 +75,9 @@ const TrackProperties: React.FC<Props> = ({ ncc, trackProperties }) => {
         <FreeAccountButton
           className="mt-3 !flex gap-1.5 sm:!hidden"
           text={trackProperties?.mobileBtn}
+          onClick={() => handleRedirect({ pathname })}
+          loading={loading}
         />
-        {/* <div className="mt-3.5 w-full sm:mt-9">
-          <Marquee speed={30} direction="right" pauseOnHover>
-            {trackProperties?.cards.map((text: any, index: any) => (
-              <FeatureItem key={index} text={text?.text} />
-            ))}
-          </Marquee>
-        </div> */}
       </div>
     </section>
   );

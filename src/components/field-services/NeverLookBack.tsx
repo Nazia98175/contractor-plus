@@ -31,7 +31,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       <h3 className="sub-heading text-winterWay mb-[13px] hidden text-center font-semibold sm:block">
         {data?.title}
       </h3>
-      <h3 className="crm-gradient xs:text-[22px] xs:max-w-[93%] mx-auto mb-[9px] block max-w-[88%] text-center text-[19px] font-extrabold sm:hidden sm:max-w-[330px]">
+      <h3 className="crm-gradient xs:text-[22px] xs:max-w-[93%] relative z-50 mx-auto mb-[9px] block max-w-[88%] text-center text-[19px] font-extrabold sm:hidden sm:max-w-[330px]">
         {data?.title}
       </h3>
       <p className="paragraph-text gradient-text-2 text-center leading-[124%] sm:hidden">
@@ -40,7 +40,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       <p className="paragraph-text text-darkness hidden text-center leading-[124%] font-semibold sm:block">
         {data?.subTitle}
       </p>
-      <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-7 pb-10 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
+      <div className="main-container relative z-20 flex flex-wrap justify-center gap-3.5 pt-7 pb-10 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
         {data?.cards?.map((item: any, index: any) => (
           <SoftwareUsed
             key={index}

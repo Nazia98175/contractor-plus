@@ -94,7 +94,6 @@ const SwitchingToolDesktop = ({
     },
     { dependencies: [sectionRef], scope: sectionRef },
   );
-
   return (
     <div className="relative px-2" ref={sectionRef}>
       <div className="relative mx-auto mt-10 flex max-w-[1180px] flex-col items-center justify-center pb-16 lg:flex-row">
@@ -105,13 +104,13 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.[0]?.img ||
+                switchingTool?.cardsDetail?.[0]?.cardImg?.url ||
                 "/images/webp/switch-card-4.webp"
               }
               width={switchingTool?.cardsDetail?.[0]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[0]?.imgHeight || 99}
               alt="card 1"
-              className="max-h-[99px] object-center"
+              className="h-auto w-full object-center"
             />
           </div>
           <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
@@ -126,13 +125,13 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.[1]?.img ||
+                switchingTool?.cardsDetail?.[1]?.cardImg?.url ||
                 "/images/webp/switch-card-5.webp"
               }
               width={switchingTool?.cardsDetail?.[1]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[1]?.imgHeight || 99}
               alt="card 2"
-              className="max-h-[99px] object-center"
+              className="h-auto w-full object-center"
             />
           </div>
           <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
@@ -147,13 +146,13 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.[2]?.img ||
+                switchingTool?.cardsDetail?.cardImg?.url ||
                 "/images/webp/switch-card-6.webp"
               }
               width={switchingTool?.cardsDetail?.[2]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[2]?.imgHeight || 99}
               alt="card 3"
-              className="max-h-[99px] object-center"
+              className="h-auto w-full object-center"
             />
           </div>
           <h4 className="1xl:text-[22px] max-w-[90%] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">

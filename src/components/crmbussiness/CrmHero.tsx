@@ -23,6 +23,7 @@ export interface TheHeroProps {
   homeCard?: any;
   commonData?: any;
   featureTag?: string;
+  apiData?: boolean;
 }
 const CrmHero: React.FC<TheHeroProps> = ({
   hero,
@@ -30,6 +31,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
   featureTag,
+  apiData = true,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -42,7 +44,8 @@ const CrmHero: React.FC<TheHeroProps> = ({
     });
   }, []);
 
-  const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
+  console.log(heroImg, "crm hero");
+  // const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,10 +66,6 @@ const CrmHero: React.FC<TheHeroProps> = ({
   }, []);
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
-
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
   return (
     <section
       ref={wrapperRef}
@@ -154,7 +153,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
-                  onClick={handleClick}
+                  onClick={() => handleRedirect({ pathname })}
                   loading={loading}
                   disabled={loading}
                 />
@@ -162,7 +161,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
-                  onClick={handleClick}
+                  onClick={() => handleRedirect({ pathname })}
                   loading={loading}
                   disabled={loading}
                 />
@@ -177,22 +176,49 @@ const CrmHero: React.FC<TheHeroProps> = ({
         <CardReveal distance={50} delay={0.9}>
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
-              <div
-                className={` ${slug === "business-voice" || slug === "contractor-pay" ? "max-w-[329px]" : "z-30 max-w-[900px] rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4"} mx-auto mt-9 block overflow-hidden`}
-              >
-                {imageUrl && (
-                  <Image
-                    className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                    src={imageUrl}
-                    width={900}
-                    height={616}
-                    alt="crm-hero"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                    priority
-                  />
-                )}
-                <AnimatedShape />
-              </div>
+              {/* <div className="w-full max-w-[329px]">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={""}
+                  width={329}
+                  height={666}
+                  alt="crm-hero"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 329px"
+                  priority
+                />
+                <div className="bg-kuroiBlack absolute bottom-0 h-[10%] blur-[20px]"></div>
+              </div> */}
+              {apiData ? (
+                <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
+                  {heroImg?.url && (
+                    <Image
+                      className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                      src={heroImg?.url}
+                      width={900}
+                      height={616}
+                      alt="crm-hero"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                      priority
+                    />
+                  )}
+                  <AnimatedShape />
+                </div>
+              ) : (
+                <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
+                  {heroImg && (
+                    <Image
+                      className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                      src={heroImg}
+                      width={900}
+                      height={616}
+                      alt="crm-hero"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                      priority
+                    />
+                  )}
+                  <AnimatedShape />
+                </div>
+              )}
             </div>
           </div>
         </CardReveal>

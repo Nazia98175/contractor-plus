@@ -7,6 +7,8 @@ import Copy from "../common/Copy";
 
 const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
   const showBackground = Boolean(kindAdorable?.showBackground) ?? false;
+  console.log("kindAdorable", kindAdorable);
+
   return (
     <section className="relative">
       {showBackground && (
@@ -68,7 +70,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
           ))}
         </div>
         <div
-          className={`relative z-40 mt-12 hidden overflow-auto rounded-xl border-[0.5px] bg-[rgba(255,255,255,0.80)] md:block lg:mt-[51px] ${showBackground ? "border-coconut" : "border-decemberSky"}`}
+          className={`bg-rgba7 relative z-40 mt-12 hidden overflow-auto rounded-xl border-[0.5px] md:block lg:mt-[51px] ${showBackground ? "border-coconut" : "border-decemberSky"}`}
         >
           <CompareTable
             compareFeatures={kindAdorable?.features}

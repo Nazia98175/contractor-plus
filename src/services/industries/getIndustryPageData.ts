@@ -74,7 +74,7 @@ export const getIndustryPageData = async (
       locale,
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
-    getCommonData(),
+    getCommonData(locale),
     getBlogsByCategory(locale, slug)
   ]);
 

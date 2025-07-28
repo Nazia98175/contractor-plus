@@ -4,10 +4,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { TickIcon } from "./Icons";
+import { PropWayToWin } from "./WayToWin";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Dashboard = () => {
+const Dashboard:React.FC<PropWayToWin> = ({connectedSystem}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -147,12 +148,7 @@ const Dashboard = () => {
         </video>
       </div>
       <div className="z-10 mx-auto grid w-full max-w-[1100px] grid-cols-1 justify-between px-3 max-md:mt-10 max-md:gap-24 md:absolute md:top-[12%] md:left-1/2 md:translate-x-[-50%] md:grid-cols-2 lg:h-[300px] xl:h-[400px]">
-        {[
-          "One dashboard for office and field",
-          "One source of truth",
-          "One solution that needs no workarounds",
-          "One mobile app your team actually uses",
-        ].map((text, i) => (
+        {connectedSystem?.systemList?.map((item:any, i:number) => (
           <div
             key={i}
             ref={(el) => {
@@ -162,7 +158,7 @@ const Dashboard = () => {
             className={`dashboard-item relative flex h-fit flex-col items-center justify-center gap-[18px] px-3 text-center max-sm:py-3 sm:gap-3 md:mx-auto md:max-w-[280px] lg:max-w-[327px] xl:mt-[72px] ${i === 1 ? "md:-translate-y-10 xl:-translate-y-20" : i === 2 ? "md:translate-y-10 xl:translate-y-20" : ""}`}
           >
             <p className="dashboard-title text-lg font-semibold text-white opacity-60 duration-300 md:text-base lg:text-lg">
-              {text}
+              {item.title}
             </p>
             <span className="relative flex items-center justify-center py-10 md:py-0">
               <svg

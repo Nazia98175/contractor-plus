@@ -3,12 +3,16 @@ import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
-import { HeroAppStoreIcon, HeroPlayStoreIcon } from "../common/Icons";
+import {
+  HeroAppStoreIcon,
+  HeroPlayStoreIcon,
+  LocationIcon,
+} from "../common/Icons";
 import FieldServiceMap from "./FieldServiceMap";
 
 interface GeolocationData {
@@ -17,6 +21,13 @@ interface GeolocationData {
   city?: string;
   country?: string;
 }
+
+const DEFAULT_LOCATION: GeolocationData = {
+  latitude: 40.7128,
+  longitude: 74.0060,
+  city: "New York",
+  country: "US",
+};
 interface heroProps {
   heroTitle: string;
   heroDescription: string;
@@ -24,15 +35,18 @@ interface heroProps {
 interface Props {
   hero: heroProps;
   commonData?: any;
+  solutionTag?: string;
+  geoLocation?: any | null;
+  locale?: string | undefined;
 }
 
-const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
-
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
+const FieldServicesHero: React.FC<Props> = ({
+  hero,
+  commonData,
+  solutionTag,
+  geoLocation,
+  locale,
+}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -50,43 +64,73 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
       });
     }, 700);
   }, []);
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
+  const [location, setLocation] = useState<GeolocationData | null>(null);
+  const [mapKey, setMapKey] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (geoLocation) {
+      setLocation({
+        latitude: geoLocation?.location?.latitude,
+        longitude: geoLocation?.location?.longitude,
+        city: geoLocation?.city?.names[locale || "en"],
+        country: geoLocation?.country?.iso_code?.toUpperCase() || "",
+      });
+      setMapKey((prev) => prev + 1);
+      return;
+    } 
+    else {
+      setLocation(DEFAULT_LOCATION);
+      setMapKey((prev) => prev + 1);
+    }
+  }, [geoLocation]);
+
+  const processedLocation = useMemo(() => {
+    if (!location) return null;
+    return {
+      latitude: location.latitude,
+      longitude: location.longitude,
+      city: location.city,
+      country: location.country,
+    };
+  }, [location]);
 
   return (
     <section className="relative overflow-visible">
-      <Image
-        className="3xl:right-[13%] absolute top-[29%] right-[11%] z-20 w-full max-w-[355px] object-cover min-[2500px]:right-[15%]"
-        src="/images/webp/group-with-location.webp"
-        width={355}
-        height={355}
-        alt="location"
-        sizes="(max-width: 768px) 100vw, 355px"
-        unoptimized
+      <div className="bg-black-fade-new lg:border-kuroiBlack pointer-events-none absolute top-0 left-0 z-10 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
+
+      <FieldServiceMap
+        location={processedLocation}
+        // isLoading={isLoading}
+        mapKey={mapKey}
+        onMapLoad={() => setIsLoading(false)}
+        onMapError={(e) => {
+          console.error("Map error:", e);
+          setIsLoading(false);
+        }}
       />
-      <div className="bg-black-fade-new lg:border-kuroiBlack absolute top-0 left-0 z-10 h-full w-full bg-cover lg:top-1/2 lg:left-1/2 lg:h-[150%] lg:w-[120%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[1631px] lg:border-[236px] lg:bg-none lg:blur-[25px]"></div>
-
-      <FieldServiceMap />
-      {/* Gradient overlay for better text readability */}
-      <div className="pointer-events-none absolute inset-0"></div>
-
+      {/* <div className="pointer-events-none absolute inset-0"></div> */}
       {/* Content overlay */}
-      <div className="main-container z-20 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:flex-row lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
-        <div className="w-full lg:max-w-[732px]">
+      <div className="main-container 900:flex-row z-30 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
+        <div className="relative z-20 w-full lg:max-w-[732px]">
           <Copy animateOnScroll={false} delay={0}>
             <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
-              {/* {hero?.heroTitle1} */} Field Service Management
+              {solutionTag}
             </div>
           </Copy>
           <Copy animateOnScroll={false} delay={0.2}>
-            <h3 className="main-heading gradient-text mt-1.5 sm:max-w-[470px] lg:hidden">
+            <h3 className="main-heading gradient-text 900:max-w-[470px] 900:hidden mt-1.5">
               {hero?.heroTitle}
             </h3>
           </Copy>
           <Copy animateOnScroll={false} delay={0.3}>
-            <h3 className="main-heading hidden text-white lg:block">
+            <h3 className="main-heading 900:block hidden text-white">
               {hero?.heroTitle}
             </h3>
           </Copy>
-          <p className="hero-description !text-secondary md:!text-decemberSky mt-[6px] mb-4 sm:my-[26px] sm:max-w-[470px] lg:max-w-[532px]">
+          <p className="hero-description !text-secondary md:!text-decemberSky 900:max-w-[470px] mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
             {hero?.heroDescription}
           </p>
           <CardReveal
@@ -94,7 +138,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
             delay={0.6}
             className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5"
           >
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2 lg:gap-2.5">
               <button>
                 <HeroPlayStoreIcon />
               </button>
@@ -107,7 +151,7 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
                 className="!hidden sm:!flex"
                 text={commonData?.getStartedFreeBtn}
                 showIcon={true}
-                onClick={handleClick}
+                onClick={() => handleRedirect({ pathname })}
                 loading={loading}
                 disabled={loading}
               />
@@ -115,9 +159,9 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
                 showIcon={false}
                 className="!flex w-full sm:!hidden"
                 text={commonData?.mobileBtn}
-                onClick={handleClick}
                 loading={loading}
                 disabled={loading}
+                onClick={() => handleRedirect({ pathname })}
               />
               <CardRequiredButton
                 text={commonData?.nccTxt}
@@ -125,6 +169,29 @@ const FieldServicesHero: React.FC<Props> = ({ hero, commonData }) => {
               />
             </div>
           </CardReveal>
+        </div>
+        <div className="relative z-20 h-full w-full sm:max-w-[270px] xl:max-w-[355px]">
+          <Image
+            className="z-20 h-full max-h-[301px] w-full object-contain sm:max-h-[355px] sm:object-cover"
+            src="/images/webp/group-with-location.webp"
+            width={355}
+            height={355}
+            alt="location"
+            sizes="(max-width: 768px) 100vw, 355px"
+            unoptimized
+          />
+          {processedLocation?.city && (
+            <div className="absolute top-[60%] left-[38%] z-20 sm:left-[30%]">
+              <div className="flex items-center gap-2.5 rounded-lg bg-[#ffffff1a] p-1.5 text-white backdrop-blur-[3px]">
+                <LocationIcon />
+                <b className="text-sm leading-normal text-white lg:text-base">
+                  {processedLocation.city}
+                  {processedLocation.country &&
+                    `, ${processedLocation.country}`}
+                </b>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

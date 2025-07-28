@@ -38,15 +38,11 @@ const Hero = ({
         opacity: 1,
         duration: 1,
       });
-    },1000);
+    }, 1000);
   }, []);
-
 
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
-
-  
-
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
@@ -74,7 +70,7 @@ const Hero = ({
                 <FreeAccountButton
                   showIcon={false}
                   text={commonData?.getStartedFreeBtn}
-                 onClick={() => handleRedirect({ pathname })}
+                  onClick={() => handleRedirect({ pathname })}
                   loading={loading}
                   disabled={loading}
                 />

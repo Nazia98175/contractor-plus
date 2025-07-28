@@ -24,9 +24,6 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
 
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
   return (
     <>
       <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 pt-7 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-[48px] lg:pb-[54px]">
@@ -78,9 +75,8 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
         <FreeAccountButton
           className="gap-1.5"
           text={trackProperties?.btnText}
-          onClick={handleClick}
+          onClick={() => handleRedirect({ pathname })}
           loading={loading}
-          disabled={loading}
         />
 
         <CardRequiredButton className="text-wallStreet" text={ncc} />

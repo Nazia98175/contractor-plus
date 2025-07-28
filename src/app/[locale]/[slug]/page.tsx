@@ -108,12 +108,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             heroImg={heroImg}
             featureTag={pageData?.featureTag}
           />
+
+          <TrustedService reviews={reviews} slug={useParams?.slug} />
+
+          <SwitchingTool switchingTool={pageData?.switchingTool} />
         </div>
-
-        <TrustedService reviews={reviews} slug={useParams?.slug} />
-
-        <SwitchingTool switchingTool={pageData?.switchingTool} />
-
         <FieldService
           slug={pageData.slug}
           fieldService={pageData.fieldServiceData}

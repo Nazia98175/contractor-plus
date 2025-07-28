@@ -67,15 +67,22 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
           {plan.featuresHeading}
         </h5>
         <ul className="space-y-4">
-          {plan.features.map((feature, idx) => (
-            <li
-              key={idx}
-              className="text-wallStreet flex items-center gap-3 text-sm"
-            >
-              <ListIcon />
-              {feature}
-            </li>
-          ))}
+          {plan.features.map((feature, idx) => {
+            const isAdditionalUser = feature === "additionalUser";
+            const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
+
+            return (
+              <li
+                key={idx}
+                className="text-wallStreet flex items-center gap-3 text-sm"
+              >
+                <ListIcon />
+                {isAdditionalUser
+                  ? `$${userPrice}/month per additional user`
+                  : feature}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </article>

@@ -4,7 +4,15 @@ import { operatingSystemList } from "../common/Helper";
 import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 
-const OperatingSystem = () => {
+interface PropOperatingSystem {
+  image: any;
+  featuresPlatform: any;
+}
+
+const OperatingSystem: React.FC<PropOperatingSystem> = ({
+  image,
+  featuresPlatform,
+}) => {
   return (
     <div className="bg-kuroiBlack relative z-10 overflow-hidden">
       <div className="bg-athenaBlue absolute top-[0px] left-0 hidden h-[500px] w-[60px] rotate-45 opacity-25 blur-[40px] md:block"></div>
@@ -24,7 +32,7 @@ const OperatingSystem = () => {
           }}
           className="section-heading max-sm:!text-custom-4xl bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-9 text-center !font-normal text-transparent sm:pt-4"
         >
-          The only operating system for build and service contractors
+          {featuresPlatform?.title}
         </h2>
         <p
           style={{
@@ -32,7 +40,7 @@ const OperatingSystem = () => {
           }}
           className="bg-clip-text pt-2 pb-[1px] text-center text-sm leading-[110%] text-transparent sm:text-base xl:text-lg"
         >
-          Contractor+ is where friction goes to die
+          {featuresPlatform?.subTitle}
         </p>
       </div>
       <div className="mx-auto w-full max-w-[974px] pt-23 pb-20.5 max-xl:px-4 max-lg:pt-15 max-lg:pb-15 max-md:px-3 max-md:pt-12.5 max-md:pb-13">
@@ -43,12 +51,10 @@ const OperatingSystem = () => {
           }}
           className="bg-clip-text pb-11.5 text-center text-[26px] !leading-[100%] font-light tracking-tight text-transparent max-lg:text-xl max-md:text-base max-sm:!font-semibold"
         >
-          Rebuild the stack of tools and apps you’ve been duct-taping together
-          with a single platform to replace them all. No complexity, no sticker
-          shock.
+          {featuresPlatform?.description}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-y-[18px]">
-          {operatingSystemList.map((obj, i) => {
+          {featuresPlatform?.features?.map((obj: any, i: number) => {
             const isSecondLast = i === operatingSystemList.length - 2;
             const isLast = i === operatingSystemList.length - 1;
             const isNotFirstInRowDesktop = i % 3 !== 0;
@@ -64,7 +70,14 @@ const OperatingSystem = () => {
                   distance={50}
                   className="flex flex-col items-center justify-center gap-2.5 p-2.5 max-md:mx-auto max-md:max-w-32.5"
                 >
-                  <span>{obj.icon}</span>
+                  <span>
+                    {obj?.icon !== null && <Image
+                      width={obj?.icon?.width}
+                      height={obj?.icon?.height}
+                      alt={obj?.icon?.alternativeText || obj?.icon?.name}
+                      src={obj?.icon?.url}
+                    ></Image>}
+                  </span>
                   <p
                     style={{
                       backgroundImage:

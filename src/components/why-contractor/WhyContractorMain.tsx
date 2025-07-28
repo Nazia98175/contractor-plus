@@ -17,7 +17,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const WhyContractorMain = () => {
+interface WhyContractorMainProps {
+  data: {
+    commonData: any;
+    pageContent: any;
+    industryShiftHighlights: any;
+    narrativeFlow: any;
+    seperateSolution: any;
+    connectedSystem: any;
+    featuresPlatform: any;
+    emailSign: any;
+  };
+}
+
+const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
   const redDotRef = useRef<HTMLElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -45,26 +58,25 @@ const WhyContractorMain = () => {
       },
     });
 
+    gsap.to("#why-contractor-hero-section", {
+      opacity: 1,
+      duration: 1,
+    });
 
-      gsap.to("#why-contractor-hero-section", {
-            opacity: 1,
-            duration: 1,
-          });
+    gsap.to("#home-page-header-view-port-screen", {
+      opacity: 1,
+      duration: 1,
+    });
 
-      gsap.to("#home-page-header-view-port-screen", {
-            opacity: 1,
-            duration: 1,
-          });
+    gsap.to("#industry-shifted-section", {
+      opacity: 1,
+      duration: 1,
+    });
 
-      gsap.to("#industry-shifted-section", {
-            opacity: 1,
-            duration: 1,
-          });
-
-            gsap.to("#home-page-footer-view-port-screen", {
-            opacity: 1,
-            duration: 1,
-          });
+    gsap.to("#home-page-footer-view-port-screen", {
+      opacity: 1,
+      duration: 1,
+    });
 
     return () => {
       // Cleanup
@@ -88,9 +100,9 @@ const WhyContractorMain = () => {
               alt="WhyContractorHeroImg"
               unoptimized
             />
-            <WhyContractorHero />
-            <IndustryShifted />
-            <AnimationHeader />
+            <WhyContractorHero pageContent={data?.pageContent} />
+            <IndustryShifted industry={data?.industryShiftHighlights} />
+            <AnimationHeader animationHeader={data?.narrativeFlow?.animationHeader} />
           </div>
         </div>
         <main
@@ -105,14 +117,14 @@ const WhyContractorMain = () => {
             ref={redDotRef}
             className="absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115] sm:top-[-300px]"
           ></span>
-          <BloodEnough />
-          <SeperateSolution />
-          <ReverseVideo />
-          <VideoBottomPart />
-          <WayToWin />
-          <Dashboard />
+          <BloodEnough bloodEnough={data?.narrativeFlow?.animationHeader?.[1]} />
+          <SeperateSolution seperateSolution={data?.seperateSolution} />
+          <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
+          <VideoBottomPart list={data?.narrativeFlow?.list} />
+          <WayToWin connectedSystem={data?.connectedSystem} />
+          <Dashboard connectedSystem={data?.connectedSystem}  />
         </main>
-        <OperatingSystem />
+        <OperatingSystem image={data?.connectedSystem?.image} featuresPlatform={data?.featuresPlatform} />
         {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
@@ -135,18 +147,20 @@ const WhyContractorMain = () => {
         <div className="pb-14">
           <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
             <CommonFormField
-              title={"All unified. All in sync. All in one place."}
+
+              title={data?.emailSign?.title}
               subTitle={
-                "This is what it feels like to finally run your business, not be run by it."
+                data?.emailSign?.subTitle
               }
-              placeholder={"Your Email"}
-              createBtn={"Get Started Free"}
-              mobileBtn={"Download FREE App"}
-              ncc={"No credit card required"}
+              placeholder={data?.emailSign?.placeholder}
+              createBtn={data?.commonData?.getStartedFreeBtn}
+              mobileBtn={data?.commonData?.mobileBtn}
+              ncc={data?.commonData?.nccTxt}
               variant={"tertiary"}
+             
             />
           </div>
-          <TrustBar showTrustedSection={false} platforms={platforms} />
+          {/* <TrustBar  trustBarImages={data?.commonData?.trustedCompaniesWhiteBG} showTrustedSection={false} platforms={platforms} /> */}
         </div>
       </div>
     </>

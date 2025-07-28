@@ -9,6 +9,7 @@ import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
 import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
 import Field_Updates from "../../../public/lotties/Field-Updates.json";
 import Crew_efficiency from "../../../public/lotties/Crew-efficiency.json";
+import tab_animation from "../../../public/lotties/tab-animation.json";
 interface SliderItem {
   title: string;
   description: string;
@@ -38,10 +39,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6000,
+        //   disableOnInteraction: false,
+        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
@@ -128,16 +129,11 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         <SwiperSlide className="relative pt-6 sm:pt-10 md:h-[625px]">
           <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-full max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] lg:top-[58%] lg:bottom-[74px] lg:h-[281px] lg:blur-[40px]"></div>
           <div className="px-2">
-            <div className="mx-auto rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:w-fit xl:rounded-[55px]">
-              <Image
-                unoptimized
-                sizes="(max-width: 768px) 871px, (min-width: 769px) 871px"
-                width={871}
-                height={432}
-                priority
-                src={"/images/webp/real-slider-card-8.webp"}
-                alt="Slide Image"
-                className="shadow-c3 mx-auto w-full max-w-[871px] rounded-3xl object-cover xl:rounded-[45px]"
+            <div className="mx-auto">
+              <LottieAnimation
+                className="mx-auto h-full w-full max-w-[900px]"
+                loop={true}
+                animationData={tab_animation}
               />
             </div>
           </div>

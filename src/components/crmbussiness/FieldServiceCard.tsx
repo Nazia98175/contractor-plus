@@ -165,7 +165,7 @@ const FieldServiceCard: React.FC<Props> = ({
             unoptimized
             priority
             sizes="(max-width: 768px) 300px, min(768px, 300px)"
-            className="h-auto w-full max-w-[290px] object-cover md:block lg:max-w-[370px] xl:max-w-[518px]"
+            className="!hidden h-auto w-full max-w-[290px] object-cover md:!block lg:max-w-[370px] xl:max-w-[518px]"
           />
         </>
       )}

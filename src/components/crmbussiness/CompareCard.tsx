@@ -30,8 +30,8 @@ const CompareCard: React.FC<CompareCardProps> = ({ feature, slug }) => {
             // <CheckIcon width={24} height={24} className="max-w-6 min-w-6" />
             <p>{feature?.competitorsNote}</p>
           ) : (
-            <span className="max-w-6 min-w-6">
-              <CloseIcon />
+            <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
+              <CloseIcon width={24} height={24} />
             </span>
           )}
         </button>

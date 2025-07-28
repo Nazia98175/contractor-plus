@@ -91,11 +91,11 @@ const BlogPosts: React.FC<Props> = ({
               </p>
               <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
                 {data?.[0]?.blogTitle ||
-                  "How to create compelling presentations?"}
+                  "Discover The Member Benefits Of USA Contracting!"}
               </h3>
               <p className="text-superSilver font-jakarta mt-2 text-base">
                 {data?.[0]?.blogDescription ||
-                  "Learn how to create compelling presentations that captivate your audience and effectively communicate your message."}
+                  "How do you create compelling presentations that wow your colleagues and impress your managers?"}
               </p>
             </div>
           </div>

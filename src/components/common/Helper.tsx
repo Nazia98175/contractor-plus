@@ -3794,6 +3794,7 @@ export const propertyCardData = {
         username: "John Doe",
       },
       cardImg: "/images/webp/property-record.webp",
+      lottieJson: null,
     },
     {
       title: " Smart Workflows & Tracking",
@@ -3812,6 +3813,7 @@ export const propertyCardData = {
         },
       ],
       cardImg: "/images/webp/smart-workflow-tracking.webp",
+      lottieJson: null,
     },
   ],
 };

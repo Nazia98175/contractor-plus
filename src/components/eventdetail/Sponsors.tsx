@@ -72,7 +72,7 @@ const Sponsors = () => {
         <div className="mx-auto w-full overflow-hidden py-10">
           <CardReveal delay={0.4} distance={50}>
             <Swiper
-              className="w-full border border-[#1C2731]"
+              className="border-lightBlack w-full border"
               modules={[Pagination, Navigation]}
               pagination={{
                 el: ".swiper-pagination-sponsor",

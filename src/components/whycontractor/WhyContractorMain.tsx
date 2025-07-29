@@ -115,7 +115,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
           {/* Animated red dot that moves on scroll - starts at top of gray line */}
           <span
             ref={redDotRef}
-            className="absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115] sm:top-[-300px]"
+            className="from-redPigment to-netherworld absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
           ></span>
           <BloodEnough
             bloodEnough={data?.narrativeFlow?.animationHeader?.[1]}

@@ -109,7 +109,7 @@ export default function CalculatorsPage() {
               <BreadcrumbLink asChild>
                 <Link
                   href="/"
-                  className="hover:text-foreground flex items-center text-[#71717a]"
+                  className="hover:text-foreground text-prediction flex items-center"
                 >
                   <ArrowLeft className="mr-1 h-4 w-4" />
                   Back to Resources
@@ -130,7 +130,7 @@ export default function CalculatorsPage() {
               Construction Calculators
             </h1>
           </div>
-          <p className="text-[#71717a]">
+          <p className="text-prediction">
             Free calculators for contractors and construction professionals.
           </p>
         </div>

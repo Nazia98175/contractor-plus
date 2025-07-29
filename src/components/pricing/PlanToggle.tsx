@@ -29,11 +29,11 @@ const PlanToggle: React.FC<PlanToggleProps> = ({ isAnnual, setIsAnnual }) => {
       >
         Annual Plan
       </button>
-      <p className="hidden items-center gap-2 text-base text-[#4F5357] sm:flex lg:text-lg">
+      <p className="text-lumpOfCoal hidden items-center gap-2 text-base sm:flex lg:text-lg">
         <MoveLeftIcon color="#5ED5A8" />
         Save up to 40%
       </p>
-      <p className="xs:text-base text-sm leading-[120%] font-semibold text-[#B9B9B9] sm:hidden">
+      <p className="xs:text-base text-baba text-sm leading-[120%] font-semibold sm:hidden">
         Save up to 40% On Annual Plan
       </p>
     </div>

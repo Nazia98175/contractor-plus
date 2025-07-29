@@ -15,7 +15,7 @@ const SpeakerCard = ({ member }: { member: any }) => {
             alt={member.name}
           />
           <div className="absolute bottom-0 left-0 z-10 w-full bg-[rgba(0,0,0,0.32)] p-3 backdrop-blur-[16px]">
-            <p className="font-sm font-semibold text-[#ADB1B5]">
+            <p className="font-sm text-secondary font-semibold">
               CEO Of Gracias Restorations
             </p>
             <div className="flex items-center justify-between gap-3 pt-3">

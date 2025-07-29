@@ -49,7 +49,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
           <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[60%]"></div>
           <div className="h-full px-2">
-            <div className="mx-auto w-full max-w-[871px] rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
+            <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
                 unoptimized
                 width={871}
@@ -74,7 +74,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
           <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[60%]"></div>
           <div className="h-full px-2">
-            <div className="mx-auto w-full max-w-[871px] rounded-4xl border-4 border-[#D7D7D7] bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
+            <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
                 priority
                 sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"

@@ -50,7 +50,7 @@ const ContractorStartMain = () => {
       {/* Red dot */}
       <span
         ref={redDotRef}
-        className="absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115]"
+        className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br"
       ></span>
 
       <ContractorStart />

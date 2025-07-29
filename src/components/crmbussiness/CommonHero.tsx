@@ -176,20 +176,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
         <CardReveal distance={50} delay={0.9}>
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
-              {/* <div className="w-full max-w-[329px]">
-                <Image
-                  className="h-full w-full object-cover"
-                  src={""}
-                  width={329}
-                  height={666}
-                  alt="crm-hero"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 329px"
-                  priority
-                />
-                <div className="bg-kuroiBlack absolute bottom-0 h-[10%] blur-[20px]"></div>
-              </div> */}
               {apiData ? (
-                <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
+                <div className="border-silverMedal z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4">
                   {heroImg?.url && (
                     <Image
                       className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
@@ -204,7 +192,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   <AnimatedShape />
                 </div>
               ) : (
-                <div className="z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 border-[#D7D7D7] p-1 md:rounded-[55px] md:p-4">
+                <div className="border-silverMedal z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4">
                   {heroImg && (
                     <Image
                       className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"

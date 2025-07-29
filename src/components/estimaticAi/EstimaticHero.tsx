@@ -154,7 +154,7 @@ const EstimaticHero = () => {
           delay={1.2}
           className="1xl:-mr-40 hidden flex-col xl:-mr-24 xl:flex"
         >
-          <div className="1xl:text-base mb-6 ml-4 flex w-full max-w-[615px] items-center gap-2.5 rounded-full border border-[#686868] bg-[#272727] px-5 py-1.5 text-sm font-medium">
+          <div className="1xl:text-base border-dimGray bg-direWolf mb-6 ml-4 flex w-full max-w-[615px] items-center gap-2.5 rounded-full border px-5 py-1.5 text-sm font-medium">
             <Image
               width={19}
               height={19}

@@ -16,7 +16,7 @@ const PostCard = () => {
       <div className="space-y-2.5">
         <h5 className="font-inter md:ext-2xl text-xl font-medium tracking-[0.1px]">
           <span className="text-lightBlack">Justin Smith</span> -
-          <span className="text-[#B4B4B4]"> CEO, Contractor+</span>
+          <span className="text-pantone3"> CEO, Contractor+</span>
         </h5>
         <p className="text-wallStreet text-sm font-medium tracking-[0.1px] md:text-base">
           Finally, don't forget to capture memories of your journey. Whether

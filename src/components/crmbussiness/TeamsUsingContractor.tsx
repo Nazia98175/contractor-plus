@@ -28,7 +28,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
   console.log(data, "data in teams using contractor");
 
   const icons = [
-    <EstimateIcon2 key="estimate" className="fill-[#3F464B]" />,
+    <EstimateIcon2 key="estimate" className="fill-winterWay" />,
     <ClockIcon key="clock" />,
     <MoreIcon key="more" />,
   ];

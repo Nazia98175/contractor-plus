@@ -22,11 +22,11 @@ export function ResourceCard({
     <Card className="hover-lift flex h-full flex-col">
       <CardHeader className="flex-grow">
         <div className="flex flex-col gap-4">
-          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#dc2626]/10">
+          <div className="bg-whero/10 mx-auto flex h-20 w-20 items-center justify-center rounded-full">
             {icon}
           </div>
           <h3 className="text-center text-xl font-semibold">{title}</h3>
-          <p className="text-center text-[#71717a]">{description}</p>
+          <p className="text-prediction text-center">{description}</p>
         </div>
       </CardHeader>
       <CardFooter>

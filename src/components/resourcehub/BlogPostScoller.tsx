@@ -262,13 +262,13 @@ export function BlogPostScroller() {
                           "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d";
                       }}
                     />
-                    <div className="absolute top-2 right-2 rounded bg-[#dc2626] px-2 py-1 text-xs text-white">
+                    <div className="bg-whero absolute top-2 right-2 rounded px-2 py-1 text-xs text-white">
                       {post.category}
                     </div>
                   </div>
 
                   <CardHeader className="flex-grow">
-                    <div className="mb-2 flex items-center text-sm text-[#71717a]">
+                    <div className="text-prediction mb-2 flex items-center text-sm">
                       <CalendarDays className="mr-1 h-4 w-4" />
                       {post.date}
                     </div>

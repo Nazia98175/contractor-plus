@@ -28,11 +28,11 @@ const BlogDetailHero = () => {
           <h3 className="font-work max-w-[818px] text-2xl leading-tight font-semibold md:text-3xl md:text-[34px]">
             10 Reasons Starting B2B SaaS For Contractors Is A Death Sentence
           </h3>
-          <p className="text-sm font-medium text-[#C2C2C2] sm:max-w-[80%] md:text-base">
+          <p className="text-stonewall text-sm font-medium sm:max-w-[80%] md:text-base">
             How do you create compelling presentations that wow your colleagues
             and impress your managers?
           </p>
-          <div className="flex items-center gap-2.5 text-sm font-medium text-[#C2C2C2] md:text-base">
+          <div className="text-stonewall flex items-center gap-2.5 text-sm font-medium md:text-base">
             <Image
               width={24}
               height={24}

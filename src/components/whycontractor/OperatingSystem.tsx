@@ -28,9 +28,9 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
         <h2
           style={{
             backgroundImage:
-              "linear-gradient(95.5deg, #FFFFFF, #FFFFFF, #BE0C0C)",
+              "linear-gradient(95.5deg, #FFFFFF, #FFFFFF,furiousTomato",
           }}
-          className="section-heading max-sm:!text-custom-4xl bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-9 text-center !font-normal text-transparent sm:pt-4"
+          className="section-heading max-sm:!text-custom-4xl bg-gradient-to-95 to-furiousTomato from-white bg-clip-text pt-9 text-center !font-normal text-transparent sm:pt-4"
         >
           {featuresPlatform?.title}
         </h2>

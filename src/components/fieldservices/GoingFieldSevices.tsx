@@ -83,7 +83,7 @@ const GoingFieldSevices: React.FC<
       </h3>
       <div className="relative mx-auto flex max-w-[1100px] grid-cols-1 flex-wrap justify-center gap-6 px-0.5 pt-9 lg:grid lg:grid-cols-3 lg:gap-0">
         {/* Dashed line */}
-        <div className="absolute top-11 left-1/2 z-0 hidden w-[66%] -translate-x-1/2 transform bg-[#F8F8F8] py-2 lg:block">
+        <div className="bg-doctor2 absolute top-11 left-1/2 z-0 hidden w-[66%] -translate-x-1/2 transform py-2 lg:block">
           <DashedLineIcon />
         </div>
 

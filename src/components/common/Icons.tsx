@@ -361,7 +361,7 @@ interface ServiceIconProps {
 }
 
 export const ServiceIcon: React.FC<ServiceIconProps> = ({ className }) => {
-  const defaultClass = "text-[#1C2731]";
+  const defaultClass = "text-lightBlack";
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -1066,7 +1066,7 @@ export const FinancingIcon = () => (
     viewBox="0 0 24 24"
     fill=""
     xmlns="http://www.w3.org/2000/svg"
-    className="group-hover:fill-kuroiBlack fill-[#07C0CA]"
+    className="group-hover:fill-kuroiBlack fill-antiguaBlue"
   >
     <path
       fillRule="evenodd"

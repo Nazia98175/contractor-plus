@@ -22,9 +22,9 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ContractorWork from "@/components/dealflowtracker/ContractorWork";
 import FinallyConnectsField from "@/components/dealflowtracker/FinallyConnectsField";
-import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
-import NeverLookBack from "@/components/field-services/NeverLookBack";
-import RunWithContractor from "@/components/field-services/RunWithContractor";
+import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
+import NeverLookBack from "@/components/fieldservices/NeverLookBack";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 export const metadata = {
   title:

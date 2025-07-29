@@ -23,7 +23,7 @@ import {
   stepSixAnimation,
   stepThreeAnimation,
   stepTwoAnimation,
-} from "../field-services/dealflowanimation";
+} from "../fieldservices/dealflowanimation";
 import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import FreeAccountButton from "../common/FreeAccountButton";

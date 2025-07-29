@@ -22,7 +22,7 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
-import RunWithContractor from "@/components/field-services/RunWithContractor";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import { getEstimaticPageData } from "@/services/estimatic-ai/getestimaticData";
 import Image from "next/image";

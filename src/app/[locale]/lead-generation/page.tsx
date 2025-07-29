@@ -13,8 +13,8 @@ import {
 } from "@/components/common/Utils";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
-import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
-import RunWithContractor from "@/components/field-services/RunWithContractor";
+import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import AlwaysTransparentAccessible from "@/components/lead-generation/AlwaysTransparentAccessible";
 import CombinesPowerfulAi from "@/components/lead-generation/CombinesPowerfulAi";
 import LeadGenerationHero from "@/components/lead-generation/LeadGenerationHero";

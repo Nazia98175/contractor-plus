@@ -63,7 +63,6 @@ const page = async ({ params }: PageProps) => {
     trackProperties,
     teamsUsingContractor,
     faqs,
-    blogsList,
     thousandReviews,
     commonData,
     blogsByCategory,

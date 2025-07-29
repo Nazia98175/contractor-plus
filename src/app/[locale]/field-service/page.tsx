@@ -5,13 +5,13 @@ import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
-import FieldServicesHero from "@/components/field-services/FieldServicesHero";
-import GoingFieldSevices from "@/components/field-services/GoingFieldSevices";
-import NeverLookBack from "@/components/field-services/NeverLookBack";
-import RealTimeServiceConnector from "@/components/field-services/RealTimeServiceConnector";
-import RunWithContractor from "@/components/field-services/RunWithContractor";
-import ServiceContractorsMarquee from "@/components/field-services/ServiceContractorsMarquee";
-import TimmingEffect from "@/components/field-services/TimmingEffect";
+import FieldServicesHero from "@/components/fieldservices/FieldServicesHero";
+import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
+import NeverLookBack from "@/components/fieldservices/NeverLookBack";
+import RealTimeServiceConnector from "@/components/fieldservices/RealTimeServiceConnector";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
+import ServiceContractorsMarquee from "@/components/fieldservices/ServiceContractorsMarquee";
+import TimmingEffect from "@/components/fieldservices/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
@@ -74,7 +74,6 @@ const FieldServicesPage = async ({ params }: Params) => {
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);
-
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">

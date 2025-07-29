@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { LazyWrapper } from "@/components/LazyWrapper";
+import { LazyWrapper } from "@/components/common/LazyWrapper";
 import { Platform } from "@/types";
 import Image from "next/image";
 

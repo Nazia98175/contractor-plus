@@ -46,7 +46,7 @@ export async function generateMetadata({
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
-const page = async ({ params }: PageProps) => {
+const IndustryPage = async ({ params }: PageProps) => {
   const useParams = await params;
 
   if (!useParams?.slug) {
@@ -184,4 +184,4 @@ const page = async ({ params }: PageProps) => {
   );
 };
 
-export default page;
+export default IndustryPage;

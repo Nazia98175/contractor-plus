@@ -3,7 +3,6 @@ import {
   Castle,
   Flower,
   Hammer,
-  icons,
   Paintbrush2,
   Plug,
   ThermometerSun,
@@ -13,11 +12,11 @@ import mobile from "../../../public/lotties/11-mobile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
 import animationData from "../../../public/lotties/crm.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import lead_icon_black from "../../../public/lotties/lead-icon-black.json";
 import live_scheduling from "../../../public/lotties/live-scheduling.json";
 import property_profile from "../../../public/lotties/property-profile.json";
-import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
-import lead_icon_black from "../../../public/lotties/lead-icon-black.json";
 import sale_productivity from "../../../public/lotties/sale-productivity.json";
+import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
   ClientPortalIcon,
@@ -32,31 +31,7 @@ import {
   SubManagementIcon,
   TaskManagementIcon,
 } from "../whycontractor/Icons";
-import {
-  AssetIcon,
-  BigChiefAIIcon,
-  BookkeepingIcon,
-  ClientIcon,
-  ClockIcon,
-  ContractorToolsIcon,
-  EstimatesIcon,
-  EstimaticIcon,
-  FieldServiceIcon,
-  InvoicingIcon,
-  LeadGenerationIcon,
-  PaymentsIcon,
-  PROIcon,
-  ProjectIcon,
-  PropertyIcon,
-  ReportingIcon,
-  SchedulingIcon,
-  ServiceIcon,
-  TelephoneIcon,
-  TimeIcon,
-  TrackingIcon,
-  TrophyIcon,
-  UpArrowIcon,
-} from "./Icons";
+import { ClockIcon, ContractorToolsIcon, UpArrowIcon } from "./Icons";
 
 export const awards = [
   {

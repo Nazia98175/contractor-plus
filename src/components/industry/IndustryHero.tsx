@@ -127,7 +127,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
             src="/images/webp/hero-video-ovelay.webp"
             alt="hero-video-ovelay"
           />
-          <div className="3xl:block absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] bg-[rgba(13,14,18)] blur-[11px]"></div>
+          <div className="3xl:block bg-rgba16 absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] blur-[11px]"></div>
         </div>
       </div>
       <CloudsAnimation

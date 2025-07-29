@@ -52,14 +52,14 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
         </Copy>
         <div className="relative z-40 mt-8 flex w-full md:hidden">
           <button
-            className={`border-decemberSky flex w-1/2 items-center justify-center rounded-l-sm border-r p-3 ${showBackground ? "bg-[rgba(255,255,255,0.80)]" : "bg-doctor"}`}
+            className={`border-decemberSky flex w-1/2 items-center justify-center rounded-l-sm border-r p-3 ${showBackground ? "bg-rgba7" : "bg-doctor"}`}
           >
             <span className="max-w-[122px]">
               <BlackLogo />
             </span>
           </button>
           <button
-            className={`font-myriad text-secondary w-1/2 rounded-r-sm p-3 text-center font-semibold tracking-[0.5px] ${showBackground ? "bg-[rgba(255,255,255,0.80)]" : "bg-doctor"}`}
+            className={`font-myriad text-secondary w-1/2 rounded-r-sm p-3 text-center font-semibold tracking-[0.5px] ${showBackground ? "bg-rgba7" : "bg-doctor"}`}
           >
             {kindAdorable?.headerRight}
           </button>

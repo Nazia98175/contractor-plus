@@ -14,7 +14,7 @@ const SpeakerCard = ({ member }: { member: any }) => {
             src={member.image}
             alt={member.name}
           />
-          <div className="absolute bottom-0 left-0 z-10 w-full bg-[rgba(0,0,0,0.32)] p-3 backdrop-blur-[16px]">
+          <div className="bg-rgba14 absolute bottom-0 left-0 z-10 w-full p-3 backdrop-blur-[16px]">
             <p className="font-sm text-secondary font-semibold">
               CEO Of Gracias Restorations
             </p>

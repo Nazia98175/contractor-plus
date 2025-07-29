@@ -10,6 +10,7 @@ import {
 import { EstimateForm } from "./EstimateForm";
 import { PageHeader } from "./PageHeader";
 import { TemplateSelector } from "./TemplateSelector";
+import { SeoFileContent } from "./SeoFileContent";
 
 interface FreeEstimateMakerProps {
   initialItems: EstimateItem[];
@@ -87,6 +88,7 @@ export default function FreeEstimateMaker({
           </TabsContent>
         </Tabs>
       </div>
+      <SeoFileContent />
     </div>
   );
 }

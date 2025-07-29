@@ -18,9 +18,9 @@ import {
   billingVsthWayYouCouldData,
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmHero from "@/components/crmbussiness/CrmHero";
-import CrmSercive from "@/components/crmbussiness/CrmSercive";
+import CommonHero from "@/components/crmbussiness/CommonHero";
 import Faq from "@/components/crmbussiness/Faq";
+import IndustryService from "@/components/crmbussiness/IndustryService";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
@@ -36,7 +36,7 @@ export const metadata = {
 const BillingPage = () => {
   return (
     <main className="relative z-10">
-      <CrmHero
+      <CommonHero
         hero={{
           featureTag: "Contractor Invoicing Software",
           heroTitle: "Living invoices that instantly reflect every change",
@@ -79,7 +79,7 @@ const BillingPage = () => {
         variant="secondary"
         apiData={false}
       />
-      <CrmSercive
+      <IndustryService
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
         ncc={"No credit card required"}

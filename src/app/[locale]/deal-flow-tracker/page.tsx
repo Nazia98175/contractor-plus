@@ -7,7 +7,6 @@ import {
   dealReviews,
   dealReviews2,
   fieldcarddetail,
-  formData,
   neverLookBackData,
   platforms,
   realTimeServiceSliderData,
@@ -15,9 +14,9 @@ import {
 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmHero from "@/components/crmbussiness/CrmHero";
-import CrmSercive from "@/components/crmbussiness/CrmSercive";
+import CommonHero from "@/components/crmbussiness/CommonHero";
 import Faq from "@/components/crmbussiness/Faq";
+import IndustryService from "@/components/crmbussiness/IndustryService";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ContractorWork from "@/components/dealflowtracker/ContractorWork";
@@ -35,7 +34,7 @@ export const metadata = {
 const DealFlowTracker = () => {
   return (
     <div>
-      <CrmHero
+      <CommonHero
         hero={{
           heroTitle:
             "The one board that shows every deal, dollar value, and what to do next",
@@ -79,7 +78,7 @@ const DealFlowTracker = () => {
           apiData={false}
         />
       </div>
-      <CrmSercive
+      <IndustryService
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
         ncc={"No credit card required"}

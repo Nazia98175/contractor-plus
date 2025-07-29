@@ -2,8 +2,8 @@ import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
+import IndustryService from "@/components/crmbussiness/IndustryService";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/fieldservices/FieldServicesHero";
 import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
@@ -14,11 +14,11 @@ import ServiceContractorsMarquee from "@/components/fieldservices/ServiceContrac
 import TimmingEffect from "@/components/fieldservices/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getSeoData } from "@/services/common/seoMeta";
+import { getMaxMindLocation } from "@/services/map";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
-import { getMaxMindLocation } from "@/services/map";
+import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
@@ -107,7 +107,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       />
       <div className="relative overflow-visible">
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-        <CrmSercive
+        <IndustryService
           createBtn={commonData?.getStartedFreeBtn}
           mobileBtn={commonData?.mobileBtn}
           ncc={commonData?.nccTxt}

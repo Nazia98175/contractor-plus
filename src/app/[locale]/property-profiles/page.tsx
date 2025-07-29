@@ -20,10 +20,10 @@ import {
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmHero from "@/components/crmbussiness/CrmHero";
-import CrmService from "@/components/crmbussiness/CrmSercive";
+import CommonHero from "@/components/crmbussiness/CommonHero";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
@@ -42,7 +42,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <CrmHero
+      <CommonHero
         hero={{
           heroTitle:
             "Know the full story on every property you manage or service — instantly.",

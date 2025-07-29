@@ -2,7 +2,7 @@
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import FreeAccountButton from "@/components/common/FreeAccountButton";
-import { TheHeroProps } from "@/components/crmbussiness/CrmHero";
+import { TheHeroProps } from "@/components/crmbussiness/CommonHero";
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";

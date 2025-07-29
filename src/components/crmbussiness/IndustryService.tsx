@@ -11,7 +11,7 @@ interface Props {
   variantBtn?: "default" | "primary" | "light" | "dark" | "muted";
 }
 
-const CrmSercive: React.FC<Props> = ({
+const IndustryService: React.FC<Props> = ({
   data,
   ncc,
   createBtn,
@@ -49,4 +49,4 @@ const CrmSercive: React.FC<Props> = ({
   );
 };
 
-export default CrmSercive;
+export default IndustryService;

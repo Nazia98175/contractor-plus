@@ -21,7 +21,7 @@ import {
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmService from "@/components/crmbussiness/CrmSercive";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";

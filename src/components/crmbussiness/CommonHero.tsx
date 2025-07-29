@@ -25,7 +25,7 @@ export interface TheHeroProps {
   featureTag?: string;
   apiData?: boolean;
 }
-const CrmHero: React.FC<TheHeroProps> = ({
+const CommonHero: React.FC<TheHeroProps> = ({
   hero,
   slug,
   heroImg,
@@ -226,4 +226,4 @@ const CrmHero: React.FC<TheHeroProps> = ({
     </section>
   );
 };
-export default CrmHero;
+export default CommonHero;

@@ -15,10 +15,10 @@ import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
-import AlwaysTransparentAccessible from "@/components/lead-generation/AlwaysTransparentAccessible";
-import CombinesPowerfulAi from "@/components/lead-generation/CombinesPowerfulAi";
-import LeadGenerationHero from "@/components/lead-generation/LeadGenerationHero";
-import LottieStat from "@/components/lead-generation/LottieStat";
+import AlwaysTransparentAccessible from "@/components/leadgeneration/AlwaysTransparentAccessible";
+import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
+import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
+import LottieStat from "@/components/leadgeneration/LottieStat";
 
 const LeadGeneration = () => {
   return (

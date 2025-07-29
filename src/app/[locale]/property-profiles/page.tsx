@@ -1,48 +1,37 @@
 import {
   blogList,
-  dealFlowBlogHeadingData,
-  dealflowFaq,
-  dealflowformData,
   dealflowhero,
   dealReviews,
   dealReviews2,
-  estimaticCardData,
-  estimaticControlData,
-  neverLookBackData,
   neverLookBackData2,
   platforms,
-  property_profiles_comparisonData,
   property_profiles_comparisonData2,
   property_profiles_ControlData,
   propertyaddressContractorData,
   propertyCardData,
   propertyFaq,
   propertyFeatureData,
-  propertyprofilesformData,
   propertyprofilesformData2,
   propertyprofilesHeadingData,
-  runWithContractorData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CrmHero from "@/components/crmbussiness/CrmHero";
+import CrmService from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
-import TrackProfiles from "@/components/property-profiles/TrackProfiles";
+import TrackProfiles from "@/components/propertyprofiles/TrackProfiles";
 import Image from "next/image";
-import React from "react";
-import CrmService from "@/components/crmbussiness/CrmSercive";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import KindAdorable from "@/components/crmbussiness/KindAdorable";
 
 export const metadata = {
   title:

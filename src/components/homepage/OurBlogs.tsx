@@ -5,6 +5,7 @@ import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import OurBlogCard from "./OurBlogCard";
+import Copy from "../common/Copy";
 
 interface Blogs {
   blogTitle: string;
@@ -58,11 +59,11 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     <section className="relative z-10 overflow-hidden bg-white px-2 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
       <div className="mx-auto w-full max-w-[1294px]">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
-          {/* <PrimaryAnimatedText delay={3000}> */}
-          <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
-            {blogHeading?.title}
-          </h2>
-          {/* </PrimaryAnimatedText> */}
+          <Copy delay={0.3}>
+            <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
+              {blogHeading?.title}
+            </h2>
+          </Copy>
           <Link href={blogHeading?.btnUrl} className="hidden md:block">
             <Button className="bg-red-linear primary-btn h-10 gap-2">
               {blogHeading?.btnTxt}

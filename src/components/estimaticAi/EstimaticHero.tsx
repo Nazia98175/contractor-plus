@@ -101,7 +101,7 @@ const EstimaticHero = () => {
             {/* Play Store Button */}
             <CardReveal distance={50} delay={1.4} className="hidden xl:block">
               <Link
-                href=""
+                href="https://contractorplus.app/"
                 className="mt-4flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
               >
                 <Image

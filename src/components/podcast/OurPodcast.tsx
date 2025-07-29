@@ -21,7 +21,7 @@ const OurPodcast = () => {
       subHeading:
         "Join us as we dive into the latest advancements in AI and what they mean for our future.",
       icon: [<YoutubeIcon />],
-      listed: "Live Now Listen On >",
+      listed: "Live Now >",
     },
     {
       id: 2,
@@ -135,7 +135,7 @@ const OurPodcast = () => {
 
       <div className="relative mx-auto flex w-fit items-center gap-2 py-10">
         <CardReveal delay={0.1} distance={50}>
-          <button className="sponsor-button-next relative flex h-6 w-6 rotate-180 items-center justify-center opacity-100 disabled:opacity-40">
+          <button className="sponsor-button-prev relative flex h-6 w-6 rotate-180 items-center justify-center opacity-100 disabled:opacity-40">
             <CustomSliderIcon />
           </button>
         </CardReveal>
@@ -143,7 +143,7 @@ const OurPodcast = () => {
           <div className="swiper-pagination-speaker-2 swiper-pagination-real-time-4 !relative left-0 flex items-center justify-center gap-1" />
         </CardReveal>
         <CardReveal delay={0.3} distance={50}>
-          <button className="sponsor-button-prev relative flex h-6 w-6 items-center justify-center opacity-100 disabled:opacity-40">
+          <button className="sponsor-button-next relative flex h-6 w-6 items-center justify-center opacity-100 disabled:opacity-40">
             <CustomSliderIcon />
           </button>
         </CardReveal>

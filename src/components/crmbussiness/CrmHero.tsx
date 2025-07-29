@@ -105,7 +105,7 @@ const CrmHero: React.FC<TheHeroProps> = ({
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             <CardReveal distance={50} delay={0.5}>
               <Link
-                href="#"
+                href="https://contractorplus.app/"
                 className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
               >
                 <Image

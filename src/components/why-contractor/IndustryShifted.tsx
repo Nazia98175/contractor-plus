@@ -1,19 +1,17 @@
-import React, { JSX } from "react";
-import { CustomerDemandIcon, GlassIcon, GrowthIcon } from "../common/Icons";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
-import Copy from "../common/Copy";
 import Image from "next/image";
-import { image } from "html2canvas/dist/types/css/types/image";
+import React from "react";
+import Copy from "../common/Copy";
 
 interface IndustryItem {
   industry: any;
 }
 
-const IndustryShifted: React.FC<IndustryItem>= ({industry}) => {
- 
-
+const IndustryShifted: React.FC<IndustryItem> = ({ industry }) => {
   return (
-    <section className="pb-20 sm:pb-[35px] opacity-0" id="industry-shifted-section">
+    <section
+      className="pb-20 opacity-0 sm:pb-[35px]"
+      id="industry-shifted-section"
+    >
       <div className="mx-auto max-w-[1340px] px-4">
         <Copy animateOnScroll={true} delay={0}>
           <h3 className="sub-heading mb-[34px] text-center !font-light text-gray-300 max-sm:!text-lg sm:mb-[37px]">
@@ -21,8 +19,8 @@ const IndustryShifted: React.FC<IndustryItem>= ({industry}) => {
           </h3>
         </Copy>
         <div className="flex flex-col gap-1 sm:flex-row">
-          {industry?.insightCards?.map((item:any, index:number) => (
-            <PrimaryAnimatedText key={index} className="w-full" delay={1000}>
+          {industry?.insightCards?.map((item: any, index: number) => (
+            <Copy key={index} className="w-full" delay={1000}>
               <div
                 className={`flex w-full flex-col items-center justify-center p-2.5 ${
                   index === 2
@@ -31,7 +29,12 @@ const IndustryShifted: React.FC<IndustryItem>= ({industry}) => {
                 }`}
               >
                 <div className="mb-2.5">
-                  <Image width={item?.image?.width} height={item?.image?.height} alt={item?.image?.alternativeText || item?.image?.name} src={item?.image?.url}></Image>
+                  <Image
+                    width={item?.image?.width}
+                    height={item?.image?.height}
+                    alt={item?.image?.alternativeText || item?.image?.name}
+                    src={item?.image?.url}
+                  ></Image>
                 </div>
                 <p
                   className="bg-clip-text text-center text-lg font-bold text-transparent xl:text-2xl"
@@ -43,7 +46,7 @@ const IndustryShifted: React.FC<IndustryItem>= ({industry}) => {
                   {item.title}
                 </p>
               </div>
-            </PrimaryAnimatedText>
+            </Copy>
           ))}
         </div>
       </div>

@@ -33,7 +33,7 @@ const AdvertisementCard = () => {
       </button>
 
       <Link
-        href=""
+        href="https://contractorplus.app/"
         className="hover:bg-kuroiBlack/50 mt-2.5 flex h-[42px] w-full items-center justify-center rounded-md border border-[#FFCBCD] backdrop-blur-[9px] duration-300 hover:border-transparent"
       >
         <Image

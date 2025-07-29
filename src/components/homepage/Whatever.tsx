@@ -289,7 +289,6 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           </div>
         </div>
 
-        {/* <PrimaryAnimatedText delay={3000}> */}
         <p className="text-granite mx-auto flex w-fit items-center gap-2 text-center text-lg capitalize opacity-90">
           <Copy animateOnScroll={true}>
             <span className="pr-2 !text-white">5000+</span>
@@ -299,7 +298,6 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
           </Copy>
           <WhatEverIcon className="h-5 w-5" />
         </p>
-        {/* </PrimaryAnimatedText> */}
       </div>
     </section>
   );

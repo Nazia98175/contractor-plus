@@ -16,7 +16,7 @@ interface OurPodcastCardProps {
 
 const OurPodcastCard: React.FC<OurPodcastCardProps> = ({ Item }) => {
   return (
-    <article className="bg-lightBlack p-3 md:p-5">
+    <article className="bg-lightBlack card-shine-2 p-3 md:p-5">
       <div className="relative flex h-fit max-h-[180px] items-center justify-center overflow-hidden md:max-h-[260px]">
         <Image
           className="absolute z-10 max-h-[180px] w-full object-cover blur-sm md:max-h-[260px]"
@@ -50,12 +50,12 @@ const OurPodcastCard: React.FC<OurPodcastCardProps> = ({ Item }) => {
           {Item.subHeading}
         </h5>
         {Item.listed && (
-          <button className="text-redPigment mt-4 flex items-center gap-2.5 rounded bg-white px-3 py-1.5 text-xs leading-[160%] font-semibold">
+          <button className="text-redPigment mt-4 flex items-center gap-2.5 rounded bg-white px-3 py-1.5 text-xs leading-[160%] font-semibold duration-300 hover:scale-95">
             <HotspotIcon /> {Item.listed}
           </button>
         )}
         {Item.calander && (
-          <button className="border-wallStreet text-decemberSky mt-4 rounded border px-3 py-1.5 text-xs leading-[160%]">
+          <button className="border-wallStreet text-decemberSky mt-4 rounded border px-3 py-1.5 text-xs leading-[160%] duration-300 hover:scale-95">
             {Item.calander}
           </button>
         )}

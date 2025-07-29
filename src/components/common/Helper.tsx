@@ -31,7 +31,7 @@ import {
   ScheludingIcon,
   SubManagementIcon,
   TaskManagementIcon,
-} from "../why-contractor/Icons";
+} from "../whycontractor/Icons";
 import {
   AssetIcon,
   BigChiefAIIcon,

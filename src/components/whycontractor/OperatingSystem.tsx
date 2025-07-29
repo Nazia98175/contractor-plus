@@ -1,8 +1,8 @@
-import React from "react";
-import { FooterLogoIcon, WhyContractorGradientIcon } from "../common/Icons";
-import { operatingSystemList } from "../common/Helper";
 import Image from "next/image";
+import React from "react";
 import CardReveal from "../common/CardReveal";
+import { operatingSystemList } from "../common/Helper";
+import { FooterLogoIcon, WhyContractorGradientIcon } from "../common/Icons";
 
 interface PropOperatingSystem {
   image: any;
@@ -71,12 +71,14 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
                   className="flex flex-col items-center justify-center gap-2.5 p-2.5 max-md:mx-auto max-md:max-w-32.5"
                 >
                   <span>
-                    {obj?.icon !== null && <Image
-                      width={obj?.icon?.width}
-                      height={obj?.icon?.height}
-                      alt={obj?.icon?.alternativeText || obj?.icon?.name}
-                      src={obj?.icon?.url}
-                    ></Image>}
+                    {obj?.icon !== null && (
+                      <Image
+                        width={obj?.icon?.width}
+                        height={obj?.icon?.height}
+                        alt={obj?.icon?.alternativeText || obj?.icon?.name}
+                        src={obj?.icon?.url}
+                      ></Image>
+                    )}
                   </span>
                   <p
                     style={{

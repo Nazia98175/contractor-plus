@@ -1,17 +1,15 @@
 "use client";
-import { platforms } from "@/components/common/Helper";
 import CommonFormField from "@/components/common/CommonFormField";
-import TrustBar from "@/components/common/TrustBar";
-import AnimationHeader from "@/components/why-contractor/AnimationHeader";
-import BloodEnough from "@/components/why-contractor/BloodEnough";
-import Dashboard from "@/components/why-contractor/Dashboard";
-import IndustryShifted from "@/components/why-contractor/IndustryShifted";
-import OperatingSystem from "@/components/why-contractor/OperatingSystem";
-import ReverseVideo from "@/components/why-contractor/ReverseVideo";
-import SeperateSolution from "@/components/why-contractor/SeperateSolution";
-import VideoBottomPart from "@/components/why-contractor/VideoBottomPart";
-import WayToWin from "@/components/why-contractor/WayToWin";
-import WhyContractorHero from "@/components/why-contractor/WhyContractorHero";
+import AnimationHeader from "@/components/whycontractor/AnimationHeader";
+import BloodEnough from "@/components/whycontractor/BloodEnough";
+import Dashboard from "@/components/whycontractor/Dashboard";
+import IndustryShifted from "@/components/whycontractor/IndustryShifted";
+import OperatingSystem from "@/components/whycontractor/OperatingSystem";
+import ReverseVideo from "@/components/whycontractor/ReverseVideo";
+import SeperateSolution from "@/components/whycontractor/SeperateSolution";
+import VideoBottomPart from "@/components/whycontractor/VideoBottomPart";
+import WayToWin from "@/components/whycontractor/WayToWin";
+import WhyContractorHero from "@/components/whycontractor/WhyContractorHero";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -30,7 +28,7 @@ interface WhyContractorMainProps {
   };
 }
 
-const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
+const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
   const redDotRef = useRef<HTMLElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -102,7 +100,9 @@ const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
             />
             <WhyContractorHero pageContent={data?.pageContent} />
             <IndustryShifted industry={data?.industryShiftHighlights} />
-            <AnimationHeader animationHeader={data?.narrativeFlow?.animationHeader} />
+            <AnimationHeader
+              animationHeader={data?.narrativeFlow?.animationHeader}
+            />
           </div>
         </div>
         <main
@@ -117,14 +117,19 @@ const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
             ref={redDotRef}
             className="absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br from-[#EE1E25] to-[#881115] sm:top-[-300px]"
           ></span>
-          <BloodEnough bloodEnough={data?.narrativeFlow?.animationHeader?.[1]} />
+          <BloodEnough
+            bloodEnough={data?.narrativeFlow?.animationHeader?.[1]}
+          />
           <SeperateSolution seperateSolution={data?.seperateSolution} />
           <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
           <VideoBottomPart list={data?.narrativeFlow?.list} />
           <WayToWin connectedSystem={data?.connectedSystem} />
-          <Dashboard connectedSystem={data?.connectedSystem}  />
+          <Dashboard connectedSystem={data?.connectedSystem} />
         </main>
-        <OperatingSystem image={data?.connectedSystem?.image} featuresPlatform={data?.featuresPlatform} />
+        <OperatingSystem
+          image={data?.connectedSystem?.image}
+          featuresPlatform={data?.featuresPlatform}
+        />
         {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
@@ -147,17 +152,13 @@ const WhyContractorMain:React.FC<WhyContractorMainProps> = ({data}) => {
         <div className="pb-14">
           <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
             <CommonFormField
-
               title={data?.emailSign?.title}
-              subTitle={
-                data?.emailSign?.subTitle
-              }
+              subTitle={data?.emailSign?.subTitle}
               placeholder={data?.emailSign?.placeholder}
               createBtn={data?.commonData?.getStartedFreeBtn}
               mobileBtn={data?.commonData?.mobileBtn}
               ncc={data?.commonData?.nccTxt}
               variant={"tertiary"}
-             
             />
           </div>
           {/* <TrustBar  trustBarImages={data?.commonData?.trustedCompaniesWhiteBG} showTrustedSection={false} platforms={platforms} /> */}

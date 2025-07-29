@@ -1,4 +1,4 @@
-import WhyContractorMain from "@/components/why-contractor/WhyContractorMain";
+import WhyContractorMain from "@/components/whycontractor/WhyContractorMain";
 import { getWhyContractorData } from "@/services/whyContractor/getWhyContractorData";
 
 export const metadata = {

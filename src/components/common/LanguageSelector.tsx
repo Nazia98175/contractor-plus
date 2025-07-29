@@ -1,8 +1,8 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState, useRef, useCallback, memo } from "react";
-import { DropdownIcon } from "./common/Icons";
 import Image from "next/image";
+import { DropdownIcon } from "./Icons";
 
 interface LanguageOption {
   code: string;

@@ -29,7 +29,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
                       alt={award.alt || "Award Image"}
                       width={135}
                       height={130}
-                      className={`drop-shadow-img-shadow aspect-square h-full w-full transform cursor-pointer object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
+                      className={`drop-shadow-img-shadow aspect-square h-full w-full transform object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
                         indexMtMap[index] || ""
                       }`}
                     />
@@ -46,7 +46,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
                       alt={award.alt}
                       width={135}
                       height={130}
-                      className={`drop-shadow-img-shadow aspect-square h-full w-full transform cursor-pointer object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
+                      className={`drop-shadow-img-shadow aspect-square h-full w-full transform object-contain transition-transform duration-300 ease-in-out hover:rotate-6 ${
                         indexMtMap[index] || ""
                       }`}
                     />
@@ -76,7 +76,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
                   alt={award.alt || "Award Image"}
                   width={award.width}
                   height={97}
-                  className={`drop-shadow-img-shadow hover:rotate-6 ${award.mt} transform cursor-pointer object-center transition-transform duration-300 ease-in-out`}
+                  className={`drop-shadow-img-shadow hover:rotate-6 ${award.mt} transform object-center transition-transform duration-300 ease-in-out`}
                 />
               </div>
             ))
@@ -90,7 +90,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
                   alt={award.alt}
                   width={award.width}
                   height={97}
-                  className={`drop-shadow-img-shadow hover:rotate-6 ${award.mt} transform cursor-pointer object-center transition-transform duration-300 ease-in-out`}
+                  className={`drop-shadow-img-shadow hover:rotate-6 ${award.mt} transform object-center transition-transform duration-300 ease-in-out`}
                 />
               </div>
             ))}

@@ -103,7 +103,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
         src="/images/png/blur.png"
         alt="hero-blur"
       />
-      <div className="hero-video-overlay absolute inset-0 lg:hidden"></div>
+      <div className="hero-video-overlay absolute inset-0 z-0 lg:hidden"></div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
     >
       <div className="bg-lightBlack border-winterWay relative h-auto w-full rounded-xl border p-2.5 ease-in-out">
         <Copy>
-          <h2 className="mb-2.5 text-center text-sm font-bold text-white sm:text-base">
+          <h2 className="mb-4 text-center text-sm font-extrabold text-white sm:text-base">
             {show.title}
           </h2>
         </Copy>
@@ -22,7 +22,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
           height={205}
           src={show.image}
           alt={show.title}
-          className="relative h-full max-h-[230px] min-h-[230px] w-full rounded-md object-cover"
+          className="relative h-full max-h-[260px] min-h-[260px] w-full rounded-md object-cover"
           unoptimized
           sizes="(max-width: 768px) 205px, (max-width: 1200px) 205px"
         />

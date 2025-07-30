@@ -2014,3 +2014,28 @@ button {
 .hero-video-overlay {
   background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
 }
+.card-shine-blog {
+  @apply relative overflow-hidden;
+}
+.card-shine-blog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(173, 177, 181, 0) 0%,
+    rgba(173, 177, 181, 0.1) 25%,
+    rgba(173, 177, 181, 0.18) 50%,
+    rgba(173, 177, 181, 0.25) 75%
+  );
+  z-index: 10;
+  transform: translateX(-100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.card-shine-blog:hover::before {
+  animation: shine 0.55s linear forwards;
+}

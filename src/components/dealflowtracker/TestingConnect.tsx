@@ -18,7 +18,7 @@ import {
   stepSixAnimation,
   stepThreeAnimation,
   stepTwoAnimation,
-} from "../field-services/dealflowanimation";
+} from "../fieldservices/dealflowanimation";
 import LottieAnimation from "../common/LottieAnimation";
 import Lead_Captured from "../../../public/lotties/Lead-Captured.json";
 import Initial_Contact from "../../../public/lotties/Initial-Contact.json";

@@ -12,7 +12,7 @@ export function CalculatorSearch({
 }: CalculatorSearchProps) {
   return (
     <div className="relative w-full sm:max-w-md">
-      <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#71717a]" />
+      <Search className="text-prediction absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
       <Input
         type="search"
         placeholder="Search calculators..."

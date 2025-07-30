@@ -42,7 +42,7 @@ const EventDetailHero = () => {
       <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between sm:px-4 xl:px-0">
         <EventdetailHeroCard item={eventdetailitem[0]} />
       </div>
-      <h3 className="mx-auto mt-[52px] max-w-[1147px] px-4 text-center text-base text-[#8D8D8D] md:mt-[100px] md:text-lg">
+      <h3 className="text-than mx-auto mt-[52px] max-w-[1147px] px-4 text-center text-base md:mt-[100px] md:text-lg">
         Autodesk’s 2025 construction conference will bring together over 10,000
         professionals from industries such as construction, manufacturing,
         architecture, product design, engineering, and media and entertainment.

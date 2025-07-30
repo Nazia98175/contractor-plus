@@ -3,9 +3,8 @@ import ContractorArticles from "@/components/blogdetails/ContractorArticles";
 import TravelBlog from "@/components/blogdetails/TravelBlog";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
-import CrmSercive from "@/components/crmbussiness/CrmSercive";
-import TrustBarHvca from "@/components/common/TrustBar";
 import TrustBar from "@/components/common/TrustBar";
+import IndustryService from "@/components/crmbussiness/IndustryService";
 
 export const metadata = {
   title: "Contractor Plus - Blogs Details",
@@ -20,7 +19,7 @@ const BlogDetails = () => {
         <TravelBlog />
       </div>
       <div className="relative overflow-hidden">
-        <CrmSercive
+        <IndustryService
           data={{
             title: "The only OS for build and service contractors.",
             placeholder: "Enter your email",

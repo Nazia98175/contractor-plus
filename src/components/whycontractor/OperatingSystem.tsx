@@ -1,8 +1,8 @@
-import React from "react";
-import { FooterLogoIcon, WhyContractorGradientIcon } from "../common/Icons";
-import { operatingSystemList } from "../common/Helper";
 import Image from "next/image";
+import React from "react";
 import CardReveal from "../common/CardReveal";
+import { operatingSystemList } from "../common/Helper";
+import { FooterLogoIcon, WhyContractorGradientIcon } from "../common/Icons";
 
 interface PropOperatingSystem {
   image: any;
@@ -13,6 +13,8 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
   image,
   featuresPlatform,
 }) => {
+  console.log(featuresPlatform, "image");
+
   return (
     <div className="bg-kuroiBlack relative z-10 overflow-hidden">
       <div className="bg-athenaBlue absolute top-[0px] left-0 hidden h-[500px] w-[60px] rotate-45 opacity-25 blur-[40px] md:block"></div>
@@ -25,32 +27,15 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
           {" "}
           <FooterLogoIcon />
         </div>
-        <h2
-          style={{
-            backgroundImage:
-              "linear-gradient(95.5deg, #FFFFFF, #FFFFFF, #BE0C0C)",
-          }}
-          className="section-heading max-sm:!text-custom-4xl bg-gradient-to-95 from-[#FFFFFF] to-[#BE0C0C] bg-clip-text pt-9 text-center !font-normal text-transparent sm:pt-4"
-        >
+        <h2 className="section-heading service-text max-sm:!text-custom-4xl pt-9 text-center !font-normal sm:pt-4">
           {featuresPlatform?.title}
         </h2>
-        <p
-          style={{
-            backgroundImage: "linear-gradient(0deg, #ADB1B5, #00000033)",
-          }}
-          className="bg-clip-text pt-2 pb-[1px] text-center text-sm leading-[110%] text-transparent sm:text-base xl:text-lg"
-        >
+        <p className="industry-shift-text pt-2 pb-[1px] text-center text-sm leading-[110%] sm:text-base xl:text-lg">
           {featuresPlatform?.subTitle}
         </p>
       </div>
       <div className="mx-auto w-full max-w-[974px] pt-23 pb-20.5 max-xl:px-4 max-lg:pt-15 max-lg:pb-15 max-md:px-3 max-md:pt-12.5 max-md:pb-13">
-        <p
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",
-          }}
-          className="bg-clip-text pb-11.5 text-center text-[26px] !leading-[100%] font-light tracking-tight text-transparent max-lg:text-xl max-md:text-base max-sm:!font-semibold"
-        >
+        <p className="industry-shift-text pb-11.5 text-center text-[26px] !leading-[100%] font-light max-lg:text-xl max-md:text-base max-sm:!font-semibold">
           {featuresPlatform?.description}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-y-[18px]">
@@ -71,20 +56,16 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
                   className="flex flex-col items-center justify-center gap-2.5 p-2.5 max-md:mx-auto max-md:max-w-32.5"
                 >
                   <span>
-                    {obj?.icon !== null && <Image
-                      width={obj?.icon?.width}
-                      height={obj?.icon?.height}
-                      alt={obj?.icon?.alternativeText || obj?.icon?.name}
-                      src={obj?.icon?.url}
-                    ></Image>}
+                    {obj?.icon !== null && (
+                      <Image
+                        width={obj?.icon?.width}
+                        height={obj?.icon?.height}
+                        alt={obj?.icon?.alternativeText || obj?.icon?.name}
+                        src={obj?.icon?.url}
+                      ></Image>
+                    )}
                   </span>
-                  <p
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",
-                    }}
-                    className="bg-clip-text text-lg leading-[100%] font-bold text-transparent opacity-80 max-lg:text-center max-lg:text-base max-md:text-sm max-sm:text-xs"
-                  >
+                  <p className="industry-shift-text text-lg leading-[100%] font-bold opacity-80 max-lg:text-center max-lg:text-base max-md:text-sm max-sm:text-xs">
                     {obj.title}
                   </p>
                 </CardReveal>

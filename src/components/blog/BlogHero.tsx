@@ -32,7 +32,7 @@ const BlogHero = () => {
         </h1>
         <h1 className="gradient-text-shadow relative z-10">Contractor+ HQ</h1>
       </div>
-      <div className="font-myriad relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg bg-[rgba(12,13,17,0.42)] p-2.5 backdrop-blur-[42px] sm:flex-row">
+      <div className="font-myriad bg-rgba15 relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg p-2.5 backdrop-blur-[42px] sm:flex-row">
         <CustomSelect
           options={contractorTypes}
           value={selectedValue}

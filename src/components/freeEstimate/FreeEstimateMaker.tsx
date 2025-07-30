@@ -10,7 +10,7 @@ import {
 import { EstimateForm } from "./EstimateForm";
 import { PageHeader } from "./PageHeader";
 import { TemplateSelector } from "./TemplateSelector";
-import { SEOContent } from "./SEOContent";
+import { SeoFileContent } from "./SeoFileContent";
 
 interface FreeEstimateMakerProps {
   initialItems: EstimateItem[];
@@ -49,7 +49,6 @@ export default function FreeEstimateMaker({
 
   const handleExport = async () => {
     // This is now handled directly in the EstimatePreview component
-   
   };
 
   const handleTemplateSelected = () => {
@@ -59,7 +58,6 @@ export default function FreeEstimateMaker({
   return (
     <div className="main-container px-4 pt-28 pb-6 md:px-6">
       <PageHeader />
-
       <div className="mx-auto max-w-5xl">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">
           <TabsList className="mb-4 grid w-full grid-cols-2">
@@ -90,8 +88,7 @@ export default function FreeEstimateMaker({
           </TabsContent>
         </Tabs>
       </div>
-
-      <SEOContent />
+      <SeoFileContent />
     </div>
   );
 }

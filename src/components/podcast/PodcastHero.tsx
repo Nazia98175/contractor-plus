@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { YouTubeIcon } from "../common/AppIcons";
 import Copy from "../common/Copy";
+import { YouTubeIcon2 } from "../common/Icons";
 
 const PodcastHero = () => {
   return (
@@ -24,7 +24,7 @@ const PodcastHero = () => {
         className="bg-red-linear primary-btn mx-auto flex h-10 !w-full max-w-[265px] items-center gap-1.5"
         type="button"
       >
-        Subscribe on YouTube <YouTubeIcon />
+        Subscribe on YouTube <YouTubeIcon2 />
       </button>
       <div className="relative mx-auto mb-[-100px] hidden w-full max-w-[1316px] sm:-mb-[160px] sm:block lg:-mb-[200px]">
         {/* <div className="relative translate-x-[200px] text-center">

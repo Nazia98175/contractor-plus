@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { LazyWrapper } from "@/components/LazyWrapper";
+import { LazyWrapper } from "@/components/common/LazyWrapper";
 import { Platform } from "@/types";
 import Image from "next/image";
 
@@ -145,7 +145,7 @@ const SlugPageClientOptimized = ({
           />
 
           <LazyWrapper
-            importFn={() => import("../crmbussiness/CrmSercive")}
+            importFn={() => import("../crmbussiness/IndustryService")}
             props={{
               createBtn: createBtn,
               mobileBtn: mobileBtn,

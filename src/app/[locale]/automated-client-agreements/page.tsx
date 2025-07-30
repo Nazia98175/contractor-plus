@@ -1,4 +1,5 @@
-import AutmateDoContacts from "@/components/automated-client-agreements/AutmateDoContacts";
+import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
+import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
 import {
   automate_comparisonData,
   automate_ControlData,
@@ -11,16 +12,8 @@ import {
   dealflowhero,
   dealReviews,
   dealReviews2,
-  neverLookBackData,
   platforms,
-  property_profiles_comparisonData,
-  property_profiles_ControlData,
-  propertyCardData,
   propertyCRMSection,
-  propertyFaq,
-  propertyFeatureData,
-  propertyprofilesformData,
-  propertyprofilesHeadingData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -28,7 +21,7 @@ import {
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmHero from "@/components/crmbussiness/CrmHero";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
@@ -37,14 +30,11 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import CrmService from "@/components/crmbussiness/CrmSercive";
 import Image from "next/image";
-import React from "react";
-import AutomatedClientHero from "@/components/automated-client-agreements/AutomatedClientHero";
 
 const page = () => {
   return (
-    <div>
+    <>
       <AutomatedClientHero
         hero={{
           heroTitle:
@@ -137,7 +127,7 @@ const page = () => {
         className="mt-7 mb-20 md:mt-9"
         classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
       />
-    </div>
+    </>
   );
 };
 

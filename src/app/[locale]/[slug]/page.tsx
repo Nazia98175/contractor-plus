@@ -1,27 +1,27 @@
-import { getSeoData } from "@/services/common/seoMeta";
-import { getFeaturesPageData } from "@/services/features/getCrmPageData";
-import { notFound } from "next/navigation";
-import CrmHero from "@/components/crmbussiness/CrmHero";
-import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
-import TrustedService from "@/components/crmbussiness/TrustedService";
-import { generateSeoMetadata } from "@/utils/getSeoMeta";
-import FieldService from "@/components/crmbussiness/FieldService";
-import TrackProperties from "@/components/crmbussiness/TrackProperties";
-import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
-import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
-import KindAdorable from "@/components/crmbussiness/KindAdorable";
-import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
-import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
-import CrmService from "@/components/crmbussiness/CrmSercive";
-import TrustBar from "@/components/common/TrustBar";
-import Faq from "@/components/crmbussiness/Faq";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
-import { platforms } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CommonHero from "@/components/crmbussiness/CommonHero";
+import Faq from "@/components/crmbussiness/Faq";
+import FieldService from "@/components/crmbussiness/FieldService";
+import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
+import CrmService from "@/components/crmbussiness/IndustryService";
+import KindAdorable from "@/components/crmbussiness/KindAdorable";
+import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
+import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
+import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
+import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
+import TrackProperties from "@/components/crmbussiness/TrackProperties";
+import TrustedService from "@/components/crmbussiness/TrustedService";
+import { getSeoData } from "@/services/common/seoMeta";
+import { getFeaturesPageData } from "@/services/features/getCrmPageData";
+import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -101,7 +101,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           id="home-page-view-port-screen-fetures"
           className="relative opacity-0"
         >
-          <CrmHero
+          <CommonHero
             commonData={commonData}
             hero={pageData?.hero}
             slug={useParams?.slug}

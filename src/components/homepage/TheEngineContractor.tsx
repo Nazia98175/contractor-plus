@@ -40,7 +40,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
         className="sm:border-secondary/10 relative z-30 mx-auto mt-10 w-full max-w-[98%] overflow-hidden rounded-[22px] bg-none bg-[100%_100%] bg-no-repeat min-[1440px]:max-w-[1364px] sm:mt-[40px] sm:border lg:bg-[url('/images/webp/engine-bg.webp')] lg:bg-cover"
       >
         <div className="bg-athenaBlue pointer-events-none absolute bottom-[-40px] left-[50%] hidden h-[200px] w-full max-w-[60px] -rotate-45 rounded-[10px] opacity-10 blur-[30px] lg:block"></div>
-        <div className="pointer-events-none absolute right-[0px] bottom-[-40px] hidden h-[200px] w-full max-w-[300px] rounded-[10px] bg-[#EE1E25] opacity-75 blur-[30px] md:block"></div>
+        <div className="bg-redPigment pointer-events-none absolute right-[0px] bottom-[-40px] hidden h-[200px] w-full max-w-[300px] rounded-[10px] opacity-75 blur-[30px] md:block"></div>
         <div className="flex flex-col items-center justify-center gap-2 sm:gap-8 md:flex-row md:justify-between md:!px-[30px]">
           <div className="flex w-full flex-col gap-1.5">
             <h2 className="section-heading gradient-engine-text text-center md:text-left">

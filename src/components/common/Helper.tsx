@@ -12,11 +12,11 @@ import mobile from "../../../public/lotties/11-mobile.json";
 import big_chief_ai from "../../../public/lotties/big-chief-ai.json";
 import animationData from "../../../public/lotties/crm.json";
 import estimate_builder from "../../../public/lotties/estimate-builder.json";
+import lead_icon_black from "../../../public/lotties/lead-icon-black.json";
 import live_scheduling from "../../../public/lotties/live-scheduling.json";
 import property_profile from "../../../public/lotties/property-profile.json";
-import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
-import lead_icon_black from "../../../public/lotties/lead-icon-black.json";
 import sale_productivity from "../../../public/lotties/sale-productivity.json";
+import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
   ClientPortalIcon,
@@ -30,30 +30,8 @@ import {
   ScheludingIcon,
   SubManagementIcon,
   TaskManagementIcon,
-} from "../why-contractor/Icons";
-import {
-  AssetIcon,
-  BigChiefAIIcon,
-  BookkeepingIcon,
-  ClientIcon,
-  ContractorToolsIcon,
-  EstimatesIcon,
-  EstimaticIcon,
-  FieldServiceIcon,
-  InvoicingIcon,
-  LeadGenerationIcon,
-  PaymentsIcon,
-  PROIcon,
-  ProjectIcon,
-  PropertyIcon,
-  ReportingIcon,
-  SchedulingIcon,
-  ServiceIcon,
-  TelephoneIcon,
-  TimeIcon,
-  TrackingIcon,
-  TrophyIcon,
-} from "./Icons";
+} from "../whycontractor/Icons";
+import { ClockIcon, ContractorToolsIcon, UpArrowIcon } from "./Icons";
 
 export const awards = [
   {
@@ -3162,7 +3140,7 @@ export const neverLookBackData = {
       start: 0,
       end: 9,
       suffix: null,
-      denominator: 10, // This enables "9 in 10" display
+      denominator: 10,
       prefix: null,
       value: null,
       lottieJson: sale_productivity,
@@ -3186,7 +3164,59 @@ export const neverLookBackData = {
     },
   ],
 };
-
+export const neverLookBackData2 = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle:
+        "Saved in admin work weekly from easily accessible property data",
+      start: 0,
+      end: 5,
+      suffix: "hours",
+      prefix: null,
+      value: null,
+      lottieJson: up_arrow_black,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: "Boost",
+      subTitle: "In proposal win rate with property managers",
+      start: 0,
+      end: 20,
+      suffix: "%",
+      denominator: null,
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: null,
+      },
+      icons: <ClockIcon />,
+    },
+    {
+      id: 3,
+      title: "Faster",
+      subTitle:
+        "Resolution of client disputes with every detail instantly accessible.",
+      start: 0,
+      end: 90,
+      suffix: "%",
+      denominator: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: null,
+      },
+      icons: <UpArrowIcon />,
+    },
+  ],
+};
 export const billingNeverLookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   sub_title: "We help you get ahead, not just get by.",
@@ -3843,6 +3873,10 @@ export const propertyaddressContractorData = {
             "Job photos and permits are lost in different text threads and folders",
         },
         {
+          details:
+            "Confusion over who to contact: the tenant, the owner, or the manager?",
+        },
+        {
           details: "Complex workarounds for getting property information",
         },
       ],
@@ -3943,7 +3977,11 @@ export const propertyprofilesformData = {
   subTitle: "This is what a property management CRM should have been all along",
   title: "Start using Contractor+ free. Upgrade for the full operating system.",
 };
-
+export const propertyprofilesformData2 = {
+  placeholder: "Your Email",
+  subTitle: "This is what a property management CRM should have been all along",
+  title: "This is what a property management CRM should have been all along",
+};
 export const propertyprofilesHeadingData = {
   id: 1,
   title: "Property management topics in Contractor+ HQ",
@@ -3964,6 +4002,48 @@ export const property_profiles_comparisonData = {
       featureName: "Dedicated Property/Location Record",
       ourProduct: "available",
       competitorsNote: null,
+    },
+    {
+      featureName: "Consolidated Property Timeline",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+
+    {
+      featureName: "Unique Email for Auto-Logging",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Photo/Doc Storage",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Property-Specific Contact List",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "CRM Profile View for Properties",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+  ],
+};
+export const property_profiles_comparisonData2 = {
+  id: 1,
+  title: "One of these is not like the other (thank goodness)",
+  subTitle: "Contractor+ makes the choice clear",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Dedicated Property/Location Record",
+      ourProduct: "available",
+      competitorsNote: "Limited",
     },
     {
       featureName: "Consolidated Property Timeline",

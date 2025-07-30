@@ -1,6 +1,6 @@
 "use client";
 
-import Resource from "@/components/resource-hub/Resource";
+import Resource from "@/components/resourcehub/Resource";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useRef } from "react";
 

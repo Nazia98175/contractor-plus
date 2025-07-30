@@ -78,7 +78,7 @@ const CombinesPowerfulAiSlider = () => {
   ];
 
   return (
-    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
+    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1920px] px-2">
       {/* Top Image Slider */}
       <Swiper
         centeredSlides={true}
@@ -176,9 +176,17 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="!h-auto w-full">
-          <div className="relative h-full max-w-[79px] overflow-hidden">
-            <div className="flex h-full w-full items-center justify-center border">
+        <SwiperSlide className="relative !h-auto w-full overflow-hidden">
+          <div className="absolute top-[-20%] z-10 h-[30%] w-full bg-white blur-[20px]"></div>
+          <Image
+            className="absolute top-0 left-0 h-full w-full object-fill"
+            src={"/images/webp/sync-weather.webp"}
+            width={1920}
+            height={1200}
+            alt="sync-weather"
+          />
+          <div className="relative z-30 h-full w-full overflow-hidden">
+            <div className="mx-auto flex h-full w-full max-w-[79px] items-center justify-center">
               <Image
                 unoptimized
                 sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
@@ -193,7 +201,7 @@ const CombinesPowerfulAiSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="overflow-hiddent relative mx-auto w-full max-w-[536px]">
+          <div className="relative mx-auto w-full max-w-[536px] overflow-hidden">
             <Image
               unoptimized
               sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
@@ -202,9 +210,9 @@ const CombinesPowerfulAiSlider = () => {
               priority
               src={"/images/webp/ranking-heatmaps.webp"}
               alt="Slide Image"
-              className="mx-auto w-full max-w-[780px] object-cover"
+              className="mx-auto w-full object-cover"
             />
-            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
+            <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
           </div>
         </SwiperSlide>
         <SwiperSlide>

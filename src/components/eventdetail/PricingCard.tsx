@@ -17,10 +17,10 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
       </CardReveal>
       <CardReveal delay={0.5} distance={50}>
         <div className="pt-4">
-          <h3 className="font-2xl font-semibold text-[#B4B4B4]">
+          <h3 className="font-2xl text-pantone3 font-semibold">
             {pricing.seatname}
           </h3>
-          <p className="pt-2 pb-4 text-base text-[#667085]">
+          <p className="text-flintstone pt-2 pb-4 text-base">
             {pricing.Description}
           </p>
           <div className="flex items-center justify-between p-2">

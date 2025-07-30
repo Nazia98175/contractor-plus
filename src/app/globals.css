@@ -93,12 +93,48 @@
   --color-lightGray: #a3a3a3;
   --color-cyberspace: #44474b;
   --color-codexGrey: #9c9c9c;
+  --color-stonewall: #c2c2c2;
+  --color-prediction: #71717a;
+  --color-whero: #dc2626;
+  --color-netherworld: #881115;
+  --color-brightGrey: #eaecf0;
+  --color-jagdwurst: #ffcbcd;
+  --color-liquidNitrogen: #f4f4f5;
+  --color-antiguaBlue: #07c0ca;
+  --color-silverMedal: #d7d7d7;
+  --color-masterpiece: #a3a5ad;
+  --color-palladium: #b2b2b2;
+  --color-dimGray: #686868;
+  --color-direWolf: #272727;
+  --color-bovine: #51585c;
+  --color-dull: #717171;
+  --color-light: #d2d2d2;
+  --color-ravenBlackColor: #3d3d3d;
+  --color-milacMist: #e4e4e7;
+  --color-lumpOfCoal: #4f5357;
+  --color-baba: #b9b9b9;
+  --color-ruined: #09090b;
+  --color-murmur: #e7e8ec;
+  --color-smores: #090a0c;
+  --color-strawberry: #ffe4e4;
+  --color-faluRed: #7e1616;
+  --color-final: #f4f5f7;
+  --color-furiousTomato: #be0c0c;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
   --color-rgba5: #f2131466;
   --color-rgba6: #ffffff4d;
   --color-rgba7: #ffffffcc;
+  --color-rgba8: #e5e6ebe6;
+  --color-rgba9: #fafafae6;
+  --color-rgba10: #db2424e6;
+  --color-rgba11: #ffffff1a;
+  --color-rgba12: #00000033;
+  --color-rgba13: #ffffff1f;
+  --color-rgba14: #00000052;
+  --color-rgba15: #0c0d116b;
+  --color-rgba16: #0d0e1218;
 
   /* BREAKPOINTS */
 
@@ -107,7 +143,6 @@
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
@@ -838,6 +873,14 @@ html::-webkit-scrollbar {
 }
 
 .service-text .line {
+  background:
+    linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.service-text {
   background:
     linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
   -webkit-background-clip: text;
@@ -1931,4 +1974,43 @@ button {
 }
 .white-gradient-img-overlay {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 97.66%);
+}
+.animated-gradient-line {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    #ff0000 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  animation: gradientShift 3s linear infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.industry-shift-text .line {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.industry-shift-text {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-video-overlay {
+  background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
 }

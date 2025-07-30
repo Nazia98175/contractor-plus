@@ -79,7 +79,7 @@ export function LineItemRow({
 
             <div className="col-span-2">
               <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-[#71717a]">
+                <span className="text-prediction absolute inset-y-0 left-0 flex items-center pl-3">
                   $
                 </span>
                 <Input
@@ -96,7 +96,7 @@ export function LineItemRow({
             </div>
 
             <div className="col-span-2 flex items-center gap-1">
-              <div className="bg-background flex h-10 w-full items-center overflow-hidden rounded-md border border-[#E4E4E7] px-3">
+              <div className="bg-background border-milacMist flex h-10 w-full items-center overflow-hidden rounded-md border px-3">
                 ${(item.quantity * item.rate).toFixed(2)}
               </div>
             </div>
@@ -108,7 +108,7 @@ export function LineItemRow({
       {isMobile && (
         <div className="grid grid-cols-12 gap-2">
           <div className="col-span-4">
-            <label className="mb-1 block text-xs text-[#71717a]">Qty</label>
+            <label className="text-prediction mb-1 block text-xs">Qty</label>
             <Input
               type="number"
               min="0"
@@ -121,11 +121,11 @@ export function LineItemRow({
           </div>
 
           <div className="col-span-4">
-            <label className="mb-1 block text-xs text-[#71717a]">
+            <label className="text-prediction mb-1 block text-xs">
               Rate ($)
             </label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-2 text-xs text-[#71717a]">
+              <span className="text-prediction absolute inset-y-0 left-0 flex items-center pl-2 text-xs">
                 $
               </span>
               <Input
@@ -142,7 +142,7 @@ export function LineItemRow({
           </div>
 
           <div className="col-span-4">
-            <label className="mb-1 block text-xs text-[#71717a]">Amount</label>
+            <label className="text-prediction mb-1 block text-xs">Amount</label>
             <div className="bg-background flex h-10 w-full items-center overflow-hidden rounded-md border px-2">
               <span className="truncate text-sm">
                 ${(item.quantity * item.rate).toFixed(2)}
@@ -156,7 +156,7 @@ export function LineItemRow({
       {isMobile && (
         <div className="grid grid-cols-12 gap-2">
           <div className="col-span-4">
-            <label className="mb-1 block text-xs text-[#71717a]">Unit</label>
+            <label className="text-prediction mb-1 block text-xs">Unit</label>
             <Select
               value={item.unit}
               onValueChange={(value) => onUpdate({ unit: value })}

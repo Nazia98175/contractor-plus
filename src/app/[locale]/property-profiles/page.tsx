@@ -1,45 +1,37 @@
 import {
   blogList,
-  dealFlowBlogHeadingData,
-  dealflowFaq,
-  dealflowformData,
   dealflowhero,
   dealReviews,
   dealReviews2,
-  estimaticCardData,
-  estimaticControlData,
-  neverLookBackData,
+  neverLookBackData2,
   platforms,
-  property_profiles_comparisonData,
+  property_profiles_comparisonData2,
   property_profiles_ControlData,
   propertyaddressContractorData,
   propertyCardData,
   propertyFaq,
   propertyFeatureData,
-  propertyprofilesformData,
+  propertyprofilesformData2,
   propertyprofilesHeadingData,
-  runWithContractorData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
-import CrmHero from "@/components/crmbussiness/CrmHero";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import CommonHero from "@/components/crmbussiness/CommonHero";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import CrmService from "@/components/crmbussiness/IndustryService";
+import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import NeverLookBack from "@/components/field-services/NeverLookBack";
-import RunWithContractor from "@/components/field-services/RunWithContractor";
-import TrackProfiles from "@/components/property-profiles/TrackProfiles";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
+import TrackProfiles from "@/components/propertyprofiles/TrackProfiles";
 import Image from "next/image";
-import React from "react";
-import CrmService from "@/components/crmbussiness/CrmSercive";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import KindAdorable from "@/components/crmbussiness/KindAdorable";
 
 export const metadata = {
   title:
@@ -50,7 +42,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <CrmHero
+      <CommonHero
         hero={{
           heroTitle:
             "Know the full story on every property you manage or service — instantly.",
@@ -77,15 +69,14 @@ const page = () => {
       <div className="bg-white">
         <TrackProfiles ncc="" trackProperties={propertyFeatureData} />
         <RunWithContractor kindAdorable={propertyaddressContractorData} />
-
         <KindAdorable
           slug={"estimate"}
-          kindAdorable={property_profiles_comparisonData}
+          kindAdorable={property_profiles_comparisonData2}
         />
-        <TeamsUsingContractor data={neverLookBackData} slug={""} />
+        <TeamsUsingContractor data={neverLookBackData2} slug={""} />
         <ThousandsReviews
           data={dealReviews2}
-          reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+          reviews={dealReviews2.reviews}
           variant="primary"
           apiData={false}
         />
@@ -93,9 +84,7 @@ const page = () => {
       <div className="relative overflow-hidden">
         {/* Background Icons */}
         <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
         <div className="relative">
           <Image
             width={800}
@@ -110,7 +99,7 @@ const page = () => {
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            data={propertyprofilesformData}
+            data={propertyprofilesformData2}
             variant="primary"
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="light"

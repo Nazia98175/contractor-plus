@@ -9,7 +9,7 @@ interface ViewToggleProps {
 export function ViewToggle({ viewMode, onViewChange }: ViewToggleProps) {
   return (
     <div className="flex items-center space-x-2">
-      <span className="mr-2 text-sm text-[#71717a]">View:</span>
+      <span className="text-prediction mr-2 text-sm">View:</span>
       <Button
         size="sm"
         className="font-extrabold"

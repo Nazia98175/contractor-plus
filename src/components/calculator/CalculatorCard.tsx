@@ -34,13 +34,13 @@ export function CalculatorCard({
       <CardHeader className="pb-3">
         <CardTitle className="text-lg">{calculator.name}</CardTitle>
         {showCategory && calculator.category && (
-          <CardDescription className="text-xs text-[#71717a]">
+          <CardDescription className="text-prediction text-xs">
             {calculator.category}
           </CardDescription>
         )}
       </CardHeader>
       <CardContent className="flex-1 pb-2">
-        <p className="text-sm text-[#71717a]">{calculator.description}</p>
+        <p className="text-prediction text-sm">{calculator.description}</p>
       </CardContent>
       <CardFooter>
         {calculator.isAvailable ? (

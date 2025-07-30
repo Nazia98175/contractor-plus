@@ -12,8 +12,8 @@ const CombinesPowerfulAi = () => {
         <p className="paragraph-text text-codexGrey mt-4 mb-5 text-center">
           The only contractor platform with done-for-you local SEO built in.
         </p>
-        <CombinesPowerfulAiSlider />
       </div>
+      <CombinesPowerfulAiSlider />
     </section>
   );
 };

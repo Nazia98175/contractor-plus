@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 import CardReveal from "../common/CardReveal";
 import { GroupStartIcon } from "../common/Icons";
-import PrimaryAnimatedText from "../common/PrimaryAnimatedText";
 import ReviewCard from "../common/ReviewCard";
 import ReviewModal from "../common/ReviewModal";
 import Copy from "../common/Copy";

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
-import TimeAnimation from "../field-services/TimeAnimation";
+import TimeAnimation from "../fieldservices/TimeAnimation";
 import request_change from "../../../public/lotties/request-change.json";
 import img1 from "../../../public/lotties/billing-animation-1.json";
 import img2 from "../../../public/lotties/billing-animation-2.json";

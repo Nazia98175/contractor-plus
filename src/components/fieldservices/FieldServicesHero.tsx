@@ -24,7 +24,7 @@ interface GeolocationData {
 
 const DEFAULT_LOCATION: GeolocationData = {
   latitude: 40.7128,
-  longitude: 74.0060,
+  longitude: 74.006,
   city: "New York",
   country: "US",
 };
@@ -80,8 +80,7 @@ const FieldServicesHero: React.FC<Props> = ({
       });
       setMapKey((prev) => prev + 1);
       return;
-    } 
-    else {
+    } else {
       setLocation(DEFAULT_LOCATION);
       setMapKey((prev) => prev + 1);
     }
@@ -182,7 +181,7 @@ const FieldServicesHero: React.FC<Props> = ({
           />
           {processedLocation?.city && (
             <div className="absolute top-[60%] left-[38%] z-20 sm:left-[30%]">
-              <div className="flex items-center gap-2.5 rounded-lg bg-[#ffffff1a] p-1.5 text-white backdrop-blur-[3px]">
+              <div className="bg-rgba11 flex items-center gap-2.5 rounded-lg p-1.5 text-white backdrop-blur-[3px]">
                 <LocationIcon />
                 <b className="text-sm leading-normal text-white lg:text-base">
                   {processedLocation.city}

@@ -12,7 +12,7 @@ interface RecentEpisodesCardsProps {
 
 const RecentEpisodesCards: React.FC<RecentEpisodesCardsProps> = ({ Item }) => {
   return (
-    <article className="bg-lightBlack p-3 md:p-5">
+    <article className="bg-lightBlack card-shine-2 p-3 md:p-5">
       <div className="relative mb-[35px] flex h-fit max-h-[180px] items-center justify-center overflow-hidden md:max-h-[260px]">
         <Image
           className="absolute z-10 max-h-[150px] w-full object-cover blur-sm md:max-h-[204px]"
@@ -35,7 +35,7 @@ const RecentEpisodesCards: React.FC<RecentEpisodesCardsProps> = ({ Item }) => {
         <b className="mt-[6px] flex w-full text-base tracking-[-0.4px] text-white sm:text-lg md:text-lg lg:text-xl">
           {Item.heading}
         </b>
-        <button className="border-wallStreet text-decemberSky mt-4 rounded border px-3 py-1.5 text-xs leading-[160%]">
+        <button className="border-wallStreet text-decemberSky mt-4 rounded border px-3 py-1.5 text-xs leading-[160%] transition-all duration-200 ease-in-out hover:scale-95">
           {Item.calander}
         </button>
       </div>

@@ -6,7 +6,7 @@ export interface PropWayToWin {
   connectedSystem: any;
 }
 
-const WayToWin:React.FC<PropWayToWin> = ({connectedSystem}) => {
+const WayToWin: React.FC<PropWayToWin> = ({ connectedSystem }) => {
   const [windowLights, setWindowLights] = useState<boolean[]>([]);
   const [pulsingWindows, setPulsingWindows] = useState<number[]>([]);
 
@@ -68,7 +68,7 @@ const WayToWin:React.FC<PropWayToWin> = ({connectedSystem}) => {
         <Copy animateOnScroll={true} delay={0}>
           <h2 className="main-heading text-center !font-semibold max-sm:!text-lg">
             <span className="text-white">{connectedSystem?.title}</span>
-            <span className="mx-auto block bg-gradient-to-b from-[#FFFFFF] to-[#BE0C0C] bg-clip-text text-transparent max-sm:max-w-[80%]">
+            <span className="to-furiousTomato mx-auto block bg-gradient-to-b from-white bg-clip-text text-transparent max-sm:max-w-[80%]">
               {connectedSystem?.subTitle}
             </span>{" "}
           </h2>

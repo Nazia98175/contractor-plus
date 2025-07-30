@@ -1,6 +1,6 @@
 import CommonFormField from "@/components/common/CommonFormField";
-import AllEventCard from "@/components/events-directory/AllEventCard";
-import EventsDirectoryHero from "@/components/events-directory/EventsDirectoryHero";
+import AllEventCard from "@/components/eventsdirectory/AllEventCard";
+import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHero";
 import React from "react";
 
 const EventsDirectoryPage = () => {

@@ -14,7 +14,7 @@ const SponsorCard = ({
   isLastCard,
 }: SponsorCardProps) => {
   const borderClasses = `
-    ${!isLastCard ? "border-r border-[#1C2731]" : ""}
+    ${!isLastCard ? "border-r border-lightBlack" : ""}
     ${isFirstVisible ? "border-l-0" : ""}
     ${isLastVisible ? "border-r-0" : ""}
   `;

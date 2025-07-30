@@ -12,11 +12,9 @@ interface PropReverseVideo {
   reverseVideo: any;
 }
 
-const ReverseFrames:React.FC<PropReverseVideo>= ({reverseVideo}) => {
-  
-
+const ReverseFrames: React.FC<PropReverseVideo> = ({ reverseVideo }) => {
   return (
-    <section  className="relative z-[0] bg-[#000] px-2.5">
+    <section className="relative z-[0] bg-black px-2.5">
       {/* <Image
         sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
         width={1440}

@@ -14,15 +14,15 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmSercive from "@/components/crmbussiness/CrmSercive";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import IndustryService from "@/components/crmbussiness/IndustryService";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
-import RunWithContractor from "@/components/field-services/RunWithContractor";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
 import { getEstimaticPageData } from "@/services/estimatic-ai/getestimaticData";
 import Image from "next/image";
@@ -119,7 +119,7 @@ const EstimaticAiPage = async ({
         variant="secondary"
         apiData={false}
       />
-      <CrmSercive
+      <IndustryService
         createBtn={"Get started FREE"}
         mobileBtn={"Download FREE App"}
         ncc={"No credit card required"}

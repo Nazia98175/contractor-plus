@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import LanguageSelector from "../LanguageSelector";
 import HeaderLiItems from "./HeaderLiItems";
 import { HamburgerIcon, LogoIcon } from "./Icons";
 import SideBar from "./SideBar";
 import { usePathname } from "next/navigation";
+import LanguageSelector from "./LanguageSelector";
 
 export interface HeaderProps {
   header?: any;

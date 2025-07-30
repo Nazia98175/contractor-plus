@@ -12,7 +12,7 @@ const CommonLogos = () => {
             width={121}
             height={90}
             src="/images/webp/software-advice.webp"
-            className="max-w-[116px] cursor-pointer object-cover duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
+            className="max-w-[116px] object-cover duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
             sizes="(max-width: 768px) 40vw, 121px"
             alt="Software Advice"
           />
@@ -22,7 +22,7 @@ const CommonLogos = () => {
             width={121}
             height={90}
             src="/images/webp/leader.webp"
-            className="max-w-[93px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
+            className="max-w-[93px] duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[103px]"
             alt="Leader"
           />
 
@@ -31,7 +31,7 @@ const CommonLogos = () => {
             width={121}
             height={90}
             src="/images/webp/get-app.webp"
-            className="max-w-[111px] cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
+            className="max-w-[111px] duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
             sizes="(max-width: 768px) 40vw, 121px"
           />
@@ -41,7 +41,7 @@ const CommonLogos = () => {
             width={121}
             height={90}
             src="/images/svg/capterra.svg"
-            className="cursor-pointer duration-300 hover:!scale-105 hover:!rotate-6"
+            className="duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
             sizes="(max-width: 768px) 40vw, 121px"
           />

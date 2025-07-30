@@ -48,7 +48,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         <div className="mx-auto flex w-fit flex-wrap-reverse items-center justify-center gap-4 sm:gap-5 lg:mx-0 lg:w-full lg:justify-start">
           <CardReveal distance={50} delay={0.5}>
             <Link
-              href="#"
+              href="https://contractorplus.app/"
               className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
             >
               <Image

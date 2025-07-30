@@ -1,4 +1,4 @@
-import TimmingEffect from "@/components/field-services/TimmingEffect";
+import TimmingEffect from "@/components/fieldservices/TimmingEffect";
 import React from "react";
 
 const page = () => {

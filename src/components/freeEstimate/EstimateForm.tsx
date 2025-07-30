@@ -192,22 +192,20 @@ export function EstimateForm({
         </div>
 
         <div className="mb-6">
-          <table className="border-[#E5E6EBE6]-collapse w-full border">
+          <table className="border-rgba8-collapse w-full border">
             <thead>
               <tr className="bg-gray-100 text-left">
-                <th className="border border-[#E5E6EBE6] px-4 py-2">
-                  Description
-                </th>
-                <th className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                <th className="border-rgba8 border px-4 py-2">Description</th>
+                <th className="border-rgba8 border px-4 py-2 text-right">
                   Qty
                 </th>
-                <th className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                <th className="border-rgba8 border px-4 py-2 text-right">
                   Unit
                 </th>
-                <th className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                <th className="border-rgba8 border px-4 py-2 text-right">
                   Rate
                 </th>
-                <th className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                <th className="border-rgba8 border px-4 py-2 text-right">
                   Amount
                 </th>
               </tr>
@@ -220,19 +218,19 @@ export function EstimateForm({
                     key={item.id}
                     className={index % 2 === 0 ? "" : "bg-gray-50"}
                   >
-                    <td className="border border-[#E5E6EBE6] px-4 py-2">
+                    <td className="border-rgba8 border px-4 py-2">
                       {item.description || "—"}
                     </td>
-                    <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                    <td className="border-rgba8 border px-4 py-2 text-right">
                       {item.quantity}
                     </td>
-                    <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                    <td className="border-rgba8 border px-4 py-2 text-right">
                       {item.unit}
                     </td>
-                    <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                    <td className="border-rgba8 border px-4 py-2 text-right">
                       ${item.rate.toFixed(2)}
                     </td>
-                    <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                    <td className="border-rgba8 border px-4 py-2 text-right">
                       ${(item.quantity * item.rate).toFixed(2)}
                     </td>
                   </tr>
@@ -241,7 +239,7 @@ export function EstimateForm({
                 <tr>
                   <td
                     colSpan={5}
-                    className="border border-[#E5E6EBE6] py-4 text-center text-gray-500"
+                    className="border-rgba8 border py-4 text-center text-gray-500"
                   >
                     No items added yet
                   </td>
@@ -250,14 +248,14 @@ export function EstimateForm({
             </tbody>
 
             <tfoot>
-              <tr className="border-t-2 border-[#E5E6EBE6]">
+              <tr className="border-rgba8 border-t-2">
                 <td
                   colSpan={4}
-                  className="border border-[#E5E6EBE6] px-4 py-2 text-right font-semibold"
+                  className="border-rgba8 border px-4 py-2 text-right font-semibold"
                 >
                   Subtotal
                 </td>
-                <td className="border border-[#E5E6EBE6] px-4 py-2 text-right font-semibold">
+                <td className="border-rgba8 border px-4 py-2 text-right font-semibold">
                   ${calculatedTotals.subtotal.toFixed(2)}
                 </td>
               </tr>
@@ -265,11 +263,11 @@ export function EstimateForm({
                 <tr>
                   <td
                     colSpan={4}
-                    className="border border-[#E5E6EBE6] px-4 py-2 text-right"
+                    className="border-rgba8 border px-4 py-2 text-right"
                   >
                     Markup ({estimateInfo.markup}%)
                   </td>
-                  <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                  <td className="border-rgba8 border px-4 py-2 text-right">
                     ${calculatedTotals.markupAmount.toFixed(2)}
                   </td>
                 </tr>
@@ -277,11 +275,11 @@ export function EstimateForm({
               <tr>
                 <td
                   colSpan={4}
-                  className="border border-[#E5E6EBE6] px-4 py-2 text-right"
+                  className="border-rgba8 border px-4 py-2 text-right"
                 >
                   Total before tax
                 </td>
-                <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                <td className="border-rgba8 border px-4 py-2 text-right">
                   ${calculatedTotals.totalBeforeTax.toFixed(2)}
                 </td>
               </tr>
@@ -289,23 +287,23 @@ export function EstimateForm({
                 <tr>
                   <td
                     colSpan={4}
-                    className="border border-[#E5E6EBE6] px-4 py-2 text-right"
+                    className="border-rgba8 border px-4 py-2 text-right"
                   >
                     Sales Tax ({estimateInfo.salesTax}%)
                   </td>
-                  <td className="border border-[#E5E6EBE6] px-4 py-2 text-right">
+                  <td className="border-rgba8 border px-4 py-2 text-right">
                     ${calculatedTotals.taxAmount.toFixed(2)}
                   </td>
                 </tr>
               )}
-              <tr className="border-t-2 border-[#E5E6EBE6]">
+              <tr className="border-rgba8 border-t-2">
                 <td
                   colSpan={4}
-                  className="border border-[#E5E6EBE6] px-4 py-2 text-right font-bold"
+                  className="border-rgba8 border px-4 py-2 text-right font-bold"
                 >
                   Total
                 </td>
-                <td className="border border-[#E5E6EBE6] px-4 py-2 text-right font-bold">
+                <td className="border-rgba8 border px-4 py-2 text-right font-bold">
                   ${calculatedTotals.total.toFixed(2)}
                 </td>
               </tr>
@@ -320,7 +318,7 @@ export function EstimateForm({
           </div>
         )}
 
-        <div className="border-[#E5E6EBE6]-t mt-8 border pt-4 text-center text-sm text-gray-500">
+        <div className="border-rgba8-t mt-8 border pt-4 text-center text-sm text-gray-500">
           This estimate was created with Contractor+ Free Estimate Maker
         </div>
       </div>
@@ -360,7 +358,7 @@ export function EstimateForm({
 
             <TabsContent value="items" className="space-y-4">
               <div className="space-y-2">
-                <div className="grid grid-cols-12 gap-2 px-2 text-sm font-medium text-[#A3A5AD]">
+                <div className="text-masterpiece grid grid-cols-12 gap-2 px-2 text-sm font-medium">
                   <div className="col-span-6 sm:col-span-5">Description</div>
                   <div className="col-span-2 sm:col-span-2">Qty</div>
                   <div className="hidden sm:col-span-1 sm:block">Unit</div>
@@ -384,12 +382,12 @@ export function EstimateForm({
                     ))}
                   </div>
                 ) : (
-                  <div className="py-8 text-center text-[#A3A5AD]">
+                  <div className="text-masterpiece py-8 text-center">
                     No line items yet. Click "Add Item" to get started.
                   </div>
                 )}
 
-                <div className="flex justify-between border-t border-[#E5E6EBE6] pt-4">
+                <div className="border-rgba8 flex justify-between border-t pt-4">
                   <Button onClick={onAddItem} className="!w-fit gap-1">
                     <Plus className="h-4 w-4" />
                     Add Item
@@ -409,7 +407,7 @@ export function EstimateForm({
               </div>
 
               {/* Totals Section */}
-              <div className="mt-6 space-y-2 border-t border-[#E5E6EBE6] pt-4">
+              <div className="border-rgba8 mt-6 space-y-2 border-t pt-4">
                 <div className="flex justify-between text-sm">
                   <span>Subtotal:</span>
                   <span>${calculatedTotals.subtotal.toFixed(2)}</span>
@@ -432,7 +430,7 @@ export function EstimateForm({
                         }
                         className="h-7 pr-6 text-right text-sm"
                       />
-                      <span className="absolute top-1/2 right-2 -translate-y-1/2 transform text-xs text-[#A3A5AD]">
+                      <span className="text-masterpiece absolute top-1/2 right-2 -translate-y-1/2 transform text-xs">
                         %
                       </span>
                     </div>
@@ -464,7 +462,7 @@ export function EstimateForm({
                         }
                         className="h-7 pr-6 text-right text-sm"
                       />
-                      <span className="absolute top-1/2 right-2 -translate-y-1/2 transform text-xs text-[#A3A5AD]">
+                      <span className="text-masterpiece absolute top-1/2 right-2 -translate-y-1/2 transform text-xs">
                         %
                       </span>
                     </div>
@@ -474,7 +472,7 @@ export function EstimateForm({
                   </span>
                 </div>
 
-                <div className="flex justify-between border-t border-[#E5E6EBE6] pt-2 text-lg font-medium">
+                <div className="border-rgba8 flex justify-between border-t pt-2 text-lg font-medium">
                   <span>Total:</span>
                   <span>${calculatedTotals.total.toFixed(2)}</span>
                 </div>
@@ -484,7 +482,7 @@ export function EstimateForm({
             <TabsContent value="details">
               <div className="space-y-6">
                 {/* Estimate Information Section with 3 fields */}
-                <Card className="overflow-hidden border border-[#E5E6EBE6] shadow-sm">
+                <Card className="border-rgba8 overflow-hidden border shadow-sm">
                   <CardContent className="p-6">
                     <div className="mb-4 flex items-center gap-3">
                       <div className="bg-romanRed/10 text-romanRed rounded-full p-2">
@@ -568,7 +566,7 @@ export function EstimateForm({
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   {/* Your Information Section */}
-                  <Card className="overflow-hidden border border-[#E5E6EBE6] shadow-sm">
+                  <Card className="border-rgba8 overflow-hidden border shadow-sm">
                     <CardContent className="p-6">
                       <div className="mb-4 flex items-center gap-3">
                         <div className="bg-romanRed/10 text-romanRed rounded-full p-2">
@@ -587,7 +585,7 @@ export function EstimateForm({
                           </Label>
                           <div className="flex flex-col gap-2">
                             {estimateInfo.companyLogo ? (
-                              <div className="relative w-full max-w-[180px] overflow-hidden rounded-md border border-[#E5E6EBE6]">
+                              <div className="border-rgba8 relative w-full max-w-[180px] overflow-hidden rounded-md border">
                                 <AspectRatio
                                   ratio={3 / 2}
                                   className="bg-muted/30"
@@ -608,10 +606,10 @@ export function EstimateForm({
                                 </Button>
                               </div>
                             ) : (
-                              <label className="hover:bg-muted/50 border-[#E5E6EBE6]-dashed flex h-28 w-full max-w-[180px] cursor-pointer flex-col items-center justify-center rounded-md border border-[#E5E6EBE6] transition-colors">
+                              <label className="hover:bg-muted/50 border-rgba8-dashed border-rgba8 flex h-28 w-full max-w-[180px] cursor-pointer flex-col items-center justify-center rounded-md border transition-colors">
                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                  <Image className="mb-1 h-8 w-8 text-[#A3A5AD]" />
-                                  <p className="text-xs text-[#A3A5AD]">
+                                  <Image className="text-masterpiece mb-1 h-8 w-8" />
+                                  <p className="text-masterpiece text-xs">
                                     Upload logo
                                   </p>
                                 </div>
@@ -703,7 +701,7 @@ export function EstimateForm({
                   </Card>
 
                   {/* Client Information Section */}
-                  <Card className="overflow-hidden border border-[#E5E6EBE6] shadow-sm">
+                  <Card className="border-rgba8 overflow-hidden border shadow-sm">
                     <CardContent className="p-6">
                       <div className="mb-4 flex items-center gap-3">
                         <div className="bg-romanRed/10 text-romanRed rounded-full p-2">
@@ -790,7 +788,7 @@ export function EstimateForm({
                 </div>
 
                 {/* Notes Section */}
-                <Card className="overflow-hidden border border-[#E5E6EBE6] shadow-sm">
+                <Card className="border-rgba8 overflow-hidden border shadow-sm">
                   <CardContent className="p-6">
                     <div className="mb-4 flex items-center gap-3">
                       <div className="bg-romanRed/10 text-romanRed rounded-full p-2">

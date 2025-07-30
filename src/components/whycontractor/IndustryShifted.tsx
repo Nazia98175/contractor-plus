@@ -7,8 +7,6 @@ interface IndustryItem {
 }
 
 const IndustryShifted: React.FC<IndustryItem> = ({ industry }) => {
-  console.log(industry, "industy");
-
   return (
     <section
       className="pb-20 opacity-0 sm:pb-[35px]"

@@ -880,6 +880,14 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+.service-text {
+  background:
+    linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 @keyframes bubbling {
   0%,
@@ -1991,6 +1999,13 @@ button {
   }
 }
 .industry-shift-text .line {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.industry-shift-text {
   background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
   background-clip: text;
   -webkit-background-clip: text;

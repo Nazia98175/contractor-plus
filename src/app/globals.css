@@ -880,6 +880,14 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+.service-text {
+  background:
+    linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 @keyframes bubbling {
   0%,
@@ -1990,6 +1998,21 @@ button {
     background-position: 100% 50%;
   }
 }
+<<<<<<< HEAD
 .hero-video-overlay {
   background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
+=======
+.industry-shift-text .line {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.industry-shift-text {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+>>>>>>> adbcd46112c66f3e1f11973a8c9e26e03c951ca9
 }

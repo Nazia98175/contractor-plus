@@ -20,14 +20,15 @@ const IndustryShifted: React.FC<IndustryItem> = ({ industry }) => {
         </Copy>
         <div className="flex flex-col gap-1 sm:flex-row">
           {industry?.insightCards?.map((item: any, index: number) => (
-            <Copy key={index} className="w-full" delay={1000}>
-              <div
-                className={`flex w-full flex-col items-center justify-center p-2.5 ${
-                  index === 2
-                    ? ""
-                    : "[border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)] max-sm:border-b"
-                }`}
-              >
+            <div
+              key={index}
+              className={`flex w-full flex-col items-center justify-center p-2.5 ${
+                index === 2
+                  ? ""
+                  : "[border-image-slice:1] [border-image-source:radial-gradient(44.41%_273.82%_at_52.96%_98.33%,_#505050_0%,_#0F0C11_100%)] max-sm:border-b"
+              }`}
+            >
+              <Copy animateOnScroll={true} delay={0.2}>
                 <div className="mb-2.5">
                   <Image
                     width={item?.image?.width}
@@ -36,17 +37,13 @@ const IndustryShifted: React.FC<IndustryItem> = ({ industry }) => {
                     src={item?.image?.url}
                   ></Image>
                 </div>
-                <p
-                  className="bg-clip-text text-center text-lg font-bold text-transparent xl:text-2xl"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, #A9A9A9 25%, #0C1711 177.29%)",
-                  }}
-                >
+              </Copy>
+              <Copy animateOnScroll={true} delay={0.3}>
+                <span className="industry-shift-text text-center text-lg font-bold xl:text-2xl">
                   {item.title}
-                </p>
-              </div>
-            </Copy>
+                </span>
+              </Copy>
+            </div>
           ))}
         </div>
       </div>

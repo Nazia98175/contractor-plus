@@ -1990,3 +1990,9 @@ button {
     background-position: 100% 50%;
   }
 }
+.industry-shift-text .line {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

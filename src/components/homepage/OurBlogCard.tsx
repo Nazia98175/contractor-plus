@@ -1,13 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 
 const OurBlogCard = ({
   blogListMobile,
   article,
   index,
 }: {
-  blogListMobile: any;
+  blogListMobile?: any;
   article: any;
   index: number;
 }) => {

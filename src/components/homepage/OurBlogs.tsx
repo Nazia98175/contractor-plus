@@ -5,6 +5,7 @@ import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import OurBlogCard from "./OurBlogCard";
 import Copy from "../common/Copy";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 interface Blogs {
   blogTitle: string;
@@ -52,25 +53,8 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageWidth: "305px",
       backgroundImage: "/images/svg/blog-3.svg",
     },
-    {
-      id: 4,
-      title: "FREE Tools & Templates",
-      description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-3.webp",
-      imageWidth: "305px",
-      backgroundImage: "/images/svg/blog-3.svg",
-    },
-    {
-      id: 5,
-      title: "FREE Tools & Templates",
-      description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-3.webp",
-      imageWidth: "305px",
-      backgroundImage: "/images/svg/blog-3.svg",
-    },
   ];
+  console.log("qwvqwjh", blogs);
 
   return (
     <section className="relative z-10 overflow-hidden bg-white px-2 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
@@ -99,42 +83,28 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             </Button>
           </div>
         </div>
-        {/* 
-        <CardReveal
-          distance={50}
-          className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid xl:gap-7"
-        >
-          {blogs.map((article, index) => (
-            <OurBlogCard
-              article={article}
-              key={index}
-              blogListMobile={blogListMobile}
-              index={index}
-            />
-          ))}
-        </CardReveal> */}
+
         <div className="blog-post">
-          <SliderLayout
-            autoplay
-            pagination
+          <Swiper
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
               520: { slidesPerView: 1.5, spaceBetween: 12 },
               640: { slidesPerView: 2, spaceBetween: 12 },
               768: { slidesPerView: 2, spaceBetween: 16 },
-              900: { slidesPerView: 2.3, spaceBetween: 16 },
-              1024: { slidesPerView: 5, spaceBetween: 16 },
+              1024: { slidesPerView: 4, spaceBetween: 16 },
             }}
           >
             {blogs.map((article, index) => (
-              <OurBlogCard
-                article={article}
-                key={index}
-                blogListMobile={blogListMobile}
-                index={index}
-              />
+              <SwiperSlide>
+                <OurBlogCard
+                  article={article}
+                  key={index}
+                  blogListMobile={blogListMobile}
+                  index={index}
+                />
+              </SwiperSlide>
             ))}
-          </SliderLayout>
+          </Swiper>
         </div>
         <Link
           href={blogHeading.btnUrl}

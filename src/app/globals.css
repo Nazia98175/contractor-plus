@@ -1990,3 +1990,6 @@ button {
     background-position: 100% 50%;
   }
 }
+.hero-video-overlay {
+  background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
+}

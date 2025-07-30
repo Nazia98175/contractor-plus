@@ -83,7 +83,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             playsInline
             poster={poster || "/images/webp/hero-video-poster.webp"}
             onError={(e) => console.error("Video load error:", e)}
-            className="h-full min-h-[500px] w-full object-cover lg:object-right"
+            className="h-full w-full object-cover lg:object-right"
           >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.
@@ -103,6 +103,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
         src="/images/png/blur.png"
         alt="hero-blur"
       />
+      <div className="hero-video-overlay absolute inset-0 lg:hidden"></div>
     </div>
   );
 };

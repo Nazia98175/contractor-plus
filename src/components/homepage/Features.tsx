@@ -23,7 +23,6 @@ const Features = ({ features }: { features: any }) => {
             <SliderLayout
               autoplay
               pagination
-              navigation
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 12 },
                 520: { slidesPerView: 1.5, spaceBetween: 12 },

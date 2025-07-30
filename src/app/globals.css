@@ -1998,10 +1998,6 @@ button {
     background-position: 100% 50%;
   }
 }
-<<<<<<< HEAD
-.hero-video-overlay {
-  background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
-=======
 .industry-shift-text .line {
   background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
   background-clip: text;
@@ -2014,5 +2010,7 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
->>>>>>> adbcd46112c66f3e1f11973a8c9e26e03c951ca9
+}
+.hero-video-overlay {
+  background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
 }

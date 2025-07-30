@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Button from "../common/Button";
-import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
 import SliderLayout from "../common/SliderLayout";
 import OurBlogCard from "./OurBlogCard";
@@ -53,11 +52,29 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageWidth: "305px",
       backgroundImage: "/images/svg/blog-3.svg",
     },
+    {
+      id: 4,
+      title: "FREE Tools & Templates",
+      description:
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
+      imageSrc: "/images/webp/blog-image-3.webp",
+      imageWidth: "305px",
+      backgroundImage: "/images/svg/blog-3.svg",
+    },
+    {
+      id: 5,
+      title: "FREE Tools & Templates",
+      description:
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
+      imageSrc: "/images/webp/blog-image-3.webp",
+      imageWidth: "305px",
+      backgroundImage: "/images/svg/blog-3.svg",
+    },
   ];
 
   return (
     <section className="relative z-10 overflow-hidden bg-white px-2 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
-      <div className="mx-auto w-full max-w-[1294px]">
+      <div className="mx-auto w-full">
         <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
           <Copy delay={0.3}>
             <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
@@ -82,7 +99,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             </Button>
           </div>
         </div>
-
+        {/* 
         <CardReveal
           distance={50}
           className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid xl:gap-7"
@@ -95,8 +112,8 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
               index={index}
             />
           ))}
-        </CardReveal>
-        <div className="blog-post block xl:hidden">
+        </CardReveal> */}
+        <div className="blog-post">
           <SliderLayout
             autoplay
             pagination
@@ -106,6 +123,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
               640: { slidesPerView: 2, spaceBetween: 12 },
               768: { slidesPerView: 2, spaceBetween: 16 },
               900: { slidesPerView: 2.3, spaceBetween: 16 },
+              1024: { slidesPerView: 5, spaceBetween: 16 },
             }}
           >
             {blogs.map((article, index) => (

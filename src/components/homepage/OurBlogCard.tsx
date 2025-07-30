@@ -12,10 +12,9 @@ const OurBlogCard = ({
   index: number;
 }) => {
   return (
-    <Link
-      href={"/blog"}
+    <div
       key={blogListMobile?.[index]?.id}
-      className="group card-shine-2 relative h-fit w-full max-w-[406px] cursor-pointer rounded-2xl"
+      className="group relative z-20 h-fit w-full cursor-pointer overflow-hidden rounded-2xl"
     >
       <Image
         sizes="(max-width: 768px) 160px, min(768px, 160px)"
@@ -55,7 +54,7 @@ const OurBlogCard = ({
           {article.blogDescription}
         </p>
       </div>
-    </Link>
+    </div>
   );
 };
 

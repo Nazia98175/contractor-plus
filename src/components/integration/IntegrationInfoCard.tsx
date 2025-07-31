@@ -1,6 +1,7 @@
 import { IntegrationItem } from "@/types";
 import Image from "next/image";
 import { RightLinkIcon } from "../common/Icons";
+import Link from "next/link";
 
 interface IntegrationInfoCardProps {
   obj: IntegrationItem;
@@ -27,7 +28,10 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
     }
   };
   return (
-    <article className="bg-charcoalBlue rounded-lg p-5 md:p-2.5">
+    <Link
+      href={`/integration/${obj.id}`}
+      className="bg-charcoalBlue rounded-lg p-5 md:p-2.5"
+    >
       <div className="flex items-center gap-4">
         <Image
           src={obj.logo}
@@ -54,7 +58,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         </button>
       </div>
       <p className="text-flintstone">{obj.description}</p>
-    </article>
+    </Link>
   );
 };
 

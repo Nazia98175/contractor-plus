@@ -21,17 +21,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj, index }) => {
           </h4>
         </Copy>
         <Copy animateOnScroll={true} delay={0.13 * (index + 1)}>
-          <p className="text-wallStreet mt-4 mb-5 text-center text-sm font-semibold sm:font-normal md:text-base xl:text-lg">
+          <p className="text-wallStreet xs:text-sm mt-4 mb-5 max-w-[261px] text-center text-xs leading-normal sm:max-w-full md:text-base xl:text-lg">
             {obj.subTitle}
           </p>
         </Copy>
       </div>
-      <div className="relative h-[187px] w-full">
+      <div className="relative h-[184px] w-full">
         <Image
           src={obj.img}
           alt={obj.title}
           fill
-          className="object-center"
+          className="xs:object-center object-auto"
           sizes="(min-width: 768px) 360px, 320px"
         />
       </div>

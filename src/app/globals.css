@@ -137,7 +137,7 @@
   --color-rgba16: #0d0e1218;
 
   /* BREAKPOINTS */
-
+  --breakpoint-xxs: 320px;
   --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;

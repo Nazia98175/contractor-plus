@@ -28,7 +28,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
   const blogListMobile = [
     {
       id: 1,
-      title: "Contractor+ Blog",
+      title: "Contractor+ Blogss",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-1.webp",
@@ -46,6 +46,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
     },
     {
       id: 3,
+      title: "FREE Tools & Templates",
+      description:
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
+      imageSrc: "/images/webp/blog-image-3.webp",
+      imageWidth: "305px",
+      backgroundImage: "/images/svg/blog-3.svg",
+    },
+    {
+      id: 4,
       title: "FREE Tools & Templates",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
@@ -84,8 +93,9 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </div>
         </div>
 
-        <div className="blog-post">
-          <Swiper
+        <div className="blog-post mx-auto w-full max-w-[1440px]">
+          <SliderLayout
+            pagination
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
               520: { slidesPerView: 1.5, spaceBetween: 12 },
@@ -95,16 +105,14 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             }}
           >
             {blogs.map((article, index) => (
-              <SwiperSlide>
-                <OurBlogCard
-                  article={article}
-                  key={index}
-                  blogListMobile={blogListMobile}
-                  index={index}
-                />
-              </SwiperSlide>
+              <OurBlogCard
+                article={article}
+                key={index}
+                blogListMobile={blogListMobile}
+                index={index}
+              />
             ))}
-          </Swiper>
+          </SliderLayout>
         </div>
         <Link
           href={blogHeading.btnUrl}

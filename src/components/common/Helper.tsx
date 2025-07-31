@@ -1788,6 +1788,48 @@ export const contractorTypes: OptionType[] = [
     icon: <Flower color="white" />,
   },
 ];
+export const integrationTypes: OptionType[] = [
+  {
+    value: "contractor",
+    label: "Zapier",
+    icon: <ContractorToolsIcon />,
+  },
+  {
+    value: "electrician",
+    label: "Simply Business",
+    icon: <Plug color="white" />,
+  },
+  {
+    value: "plumber",
+    label: "Venmo",
+    icon: <Wrench color="white" />,
+  },
+  {
+    value: "carpenter",
+    label: "Carpenter",
+    icon: <Hammer color="white" />,
+  },
+  {
+    value: "painter",
+    label: "Painter",
+    icon: <Paintbrush2 color="white" />,
+  },
+  {
+    value: "hvac",
+    label: "HVAC Technician",
+    icon: <ThermometerSun color="white" />,
+  },
+  {
+    value: "roofer",
+    label: "Roofer",
+    icon: <Castle color="white" />,
+  },
+  {
+    value: "landscaper",
+    label: "Landscaper",
+    icon: <Flower color="white" />,
+  },
+];
 export const plans: Plan[] = [
   { name: "Freedom", cta: "Start for free", variant: "default" },
   { name: "PRO", cta: "Get started", variant: "pro" },

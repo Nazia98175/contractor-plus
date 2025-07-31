@@ -125,3 +125,13 @@ export interface SimpleLink {
   link: string;
   title: string;
 }
+
+// types.ts
+export interface IntegrationItem {
+  id: string;
+  name: string;
+  logo: string;
+  categories: string[];
+  description: string;
+  link: string;
+}

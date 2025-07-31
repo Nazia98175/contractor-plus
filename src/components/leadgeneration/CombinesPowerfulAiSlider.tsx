@@ -92,8 +92,8 @@ const CombinesPowerfulAiSlider = () => {
         slidesPerView={1}
         className="!h-auto"
       >
-        <SwiperSlide className="!h-auto">
-          <div className="mx-auto h-fit max-h-[313px] w-full max-w-[441px]">
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
+          <div className="mx-auto flex h-fit max-h-[313px] w-full max-w-[441px]">
             <Image
               unoptimized
               width={871}
@@ -105,7 +105,7 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="mx-auto w-full max-w-[305px]">
             <Image
               unoptimized
@@ -119,7 +119,7 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <div className="mx-auto w-full max-w-[596px]">
             <Image
               priority
@@ -132,8 +132,8 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative mx-auto w-full max-w-[730px] overflow-hidden">
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
+          <div className="relative mx-auto w-full max-w-[730px] overflow-hidden pb-[57px]">
             <Image
               unoptimized
               sizes="(max-width: 768px) 730px, (min-width: 769px) 50vw"
@@ -200,7 +200,7 @@ const CombinesPowerfulAiSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="relative mx-auto w-full max-w-[536px] overflow-hidden">
             <Image
               unoptimized
@@ -215,7 +215,7 @@ const CombinesPowerfulAiSlider = () => {
             <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -227,7 +227,7 @@ const CombinesPowerfulAiSlider = () => {
             className="mx-auto w-full max-w-[365px] object-cover"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -239,7 +239,7 @@ const CombinesPowerfulAiSlider = () => {
             className="mx-auto w-full max-w-[634px] object-cover"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -252,16 +252,20 @@ const CombinesPowerfulAiSlider = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <Image
-            unoptimized
-            sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
-            width={900}
-            height={382}
-            priority
-            src={"/images/webp/your-system.webp"}
-            alt="Slide Image"
-            className="mx-auto w-full max-w-[635px] object-cover"
-          />
+          <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[60%]"></div>
+          <div className="h-full px-2">
+            <div className="border-silverMedal mx-auto w-full max-w-[600px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
+              <Image
+                unoptimized
+                width={871}
+                height={625}
+                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                src={"/images/webp/real-slider-card-1.webp"}
+                alt="Slide Image"
+                className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
+              />
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image

@@ -146,8 +146,8 @@ const SwitchingToolDesktop = ({
           <div className="flex w-full justify-center">
             <Image
               src={
-                switchingTool?.cardsDetail?.cardImg?.url ||
-                "/images/webp/switch-card-6.webp"
+                switchingTool?.cardsDetail?.[2]?.cardImg?.url ||
+                "/images/webp/switch-card-5.webp"
               }
               width={switchingTool?.cardsDetail?.[2]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[2]?.imgHeight || 99}

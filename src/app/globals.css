@@ -17,10 +17,13 @@
   --color-superSilver: #f0f0f0;
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
+  --color-jetBlack: #252525;
   --color-pantone3: #b4b4b4;
   --color-darkness: #a2a2a2;
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
+  --color-amberOrange: #e88a00;
+  --color-softAzure: #7cabf9;
   --color-whiteSmoke: #f3f3f3;
   --color-offWhite: #f5f5f5;
   --color-thickRed: #ac0d0e;
@@ -40,6 +43,7 @@
   --color-wash: #f8f9fc;
   --color-sugar: #f9f5ff;
   --color-alice: #f0f9ff;
+  --color-charcoalBlue: #1c2731;
   --color-sambucus: #181a2a;
   --color-led: #026aa2;
   --color-sinopia: #c4320a;
@@ -2040,4 +2044,33 @@ button {
 }
 .hero-video-overlay {
   background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
+}
+.video-section-wrapper h3 {
+  color: #adb1b5;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active h3 {
+  color: #0c0d11 !important;
+}
+.video-section-wrapper p {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active p {
+  color: #656c73 !important;
+}
+.video-section-wrapper svg path {
+  fill: #cdcdcd;
+  stroke: #cdcdcd;
+  transition: all 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active svg path {
+  fill: #f21314 !important;
+  stroke: #f21314 !important;
+}
+.video-section-wrapper .icon-span {
+  transition: transform 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active .icon-span {
+  transform: rotate(45deg);
 }

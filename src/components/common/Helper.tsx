@@ -159,8 +159,8 @@ export const planData = [
   {
     title: "PRO Team",
     subtitle: "Minimum of 5 users",
-    monthlyPrice: 29,
-    annuallyPrice: 19,
+    monthlyPrice: 98,
+    annuallyPrice: 58,
     note: "For Teams",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",

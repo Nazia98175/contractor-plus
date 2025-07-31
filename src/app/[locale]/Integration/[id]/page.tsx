@@ -25,7 +25,6 @@ const IntegrationDetails = async ({ params }: IntegrationDetailsProps) => {
   if (!user) {
     return notFound();
   }
-  console.log(user);
 
   return (
     <div className="text-4xl text-white">

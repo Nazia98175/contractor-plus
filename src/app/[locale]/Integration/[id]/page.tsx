@@ -7,7 +7,11 @@ async function getById(id: string) {
   return integrations.find((item) => item.id === id);
 }
 
-console.log("Integrations:", integrations);
+export async function generateStaticParams() {
+  return integrations.map((item) => ({
+    id: item.id,
+  }));
+}
 
 interface IntegrationDetailsProps {
   params: {

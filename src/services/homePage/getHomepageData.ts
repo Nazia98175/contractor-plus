@@ -24,7 +24,7 @@ export const getHomepageData = async (
   const populateProblemSolutions = "&populate[problemSolutionSection][populate]=solutionsList";
   const featurHighlights = "&populate[featureHighlightSection][populate]=features";
   const resultStats = "&populate[resultsStatsSection][populate]=cards";
-  const blogQuery = "&sort=publishedAt:desc&pagination[limit]=3";
+  const blogQuery = "&sort=publishedAt:desc&pagination[limit]=4";
 
   const [
     homePageContent,

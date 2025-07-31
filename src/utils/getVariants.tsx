@@ -2,7 +2,6 @@ export const themeClassMap: Record<string, string> = {
   light: "wanting-more-bg",
   dark: "field-service-card",
   estimateTheme: "estimate-overlap-card",
-  goldTheme: "gold-overlap-card",
 };
 
 export const variantsForm = {

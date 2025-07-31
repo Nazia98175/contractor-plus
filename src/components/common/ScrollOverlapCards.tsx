@@ -10,7 +10,6 @@ interface ScrollOverlapCardsProps {
   theme: "light" | "dark" | "estimateTheme";
   curved?: boolean;
   apiData?: boolean;
-  getHeadingClass?: () => string;
 }
 
 const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
@@ -18,7 +17,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   slug,
   theme,
   apiData = true,
-  getHeadingClass,
 }) => {
   const { gsapInstance, isLoaded, registerCleanup } = useGSAPDynamic();
   const [animationReady, setAnimationReady] = useState(false);

@@ -77,7 +77,6 @@ const EstimaticAiPage = async ({
       <FieldService
         fieldService={estimaticCardData}
         theme="dark"
-        slug="estimateTheme"
         apiData={false}
         mainClassName="text-center "
       />

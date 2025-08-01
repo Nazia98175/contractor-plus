@@ -11,6 +11,7 @@ gsap.registerPlugin(SplitText);
 interface AdaptiveHeroTitleProps {
   title: string;
   className?: string;
+  textAnimation?: string;
   maxFontSize?: number;
   minFontSize?: number;
   fontSizeStep?: number;
@@ -28,6 +29,7 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
   maxLines = 3,
   animateOnComplete = true,
   animationDelay = 0.5,
+  textAnimation,
 }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [isAdjusted, setIsAdjusted] = useState(false);
@@ -69,10 +71,13 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
         // Font size adjustment complete
         setFinalFontSize(currentFontSize);
         setIsAdjusted(true);
-        gsap.to("#home-page-view-port-screen-fetures", {
-          opacity: 1,
-          duration: 1,
-        });
+        if (textAnimation) {
+          gsap.to(textAnimation, {
+            opacity: 1,
+            duration: 1,
+          });
+        }
+
         gsap.to("#home-page-header-view-port-screen", {
           opacity: 1,
           duration: 1,

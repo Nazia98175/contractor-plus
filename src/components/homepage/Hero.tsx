@@ -9,6 +9,7 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -50,9 +51,17 @@ const Hero = ({
         <div className="main-container relative z-10 flex items-end">
           <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
             <Copy animateOnScroll={false} delay={1.1}>
-              <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
+              {/* <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
                 {heroTitle}
-              </h1>
+              </h1> */}
+              <AdaptiveHeroTitle
+                title={heroTitle}
+                className="gradient-text xs:w-full w-full leading-[127%] font-extrabold"
+                minFontSize={28}
+                maxLines={3}
+                maxFontSize={52}
+                textAnimation="home-page-view-port-screen"
+              />
             </Copy>
 
             <Copy animateOnScroll={false} delay={1.2}>

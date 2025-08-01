@@ -1,19 +1,17 @@
 "use client";
-import dynamic from "next/dynamic";
-import { getMediaUrl } from "@/utils/getMediaUrl";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
+import FreeAccountButton from "../common/FreeAccountButton";
+import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { usePathname } from "next/navigation";
-import AppsRating from "../common/AppsRating";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -45,24 +43,21 @@ const CommonHero: React.FC<TheHeroProps> = ({
     });
   }, []);
 
-  console.log(heroImg, "crm hero");
-  // const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
-      // gsap.to("#home-page-view-port-screen-fetures", {
-      //   opacity: 1,
-      //   duration: 1,
-      // });
-      // gsap.to("#home-page-header-view-port-screen", {
-      //   opacity: 1,
-      //   duration: 1,
-      // });
-      // gsap.to("#home-page-footer-view-port-screen", {
-      //   opacity: 1,
-      //   duration: 1,
-      // });
+      gsap.to("#home-page-view-port-screen-fetures", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
     }, 700);
   }, []);
   const pathname = usePathname();
@@ -94,7 +89,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
               className="gradient-2 mb-2 w-fit text-start leading-[127%] font-extrabold sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]"
               minFontSize={16}
               maxLines={2}
-              maxFontSize={150}
+              maxFontSize={48}
+              textAnimation="home-page-view-port-screen-fetures"
             />
             {/* </Copy> */}
             <Copy delay={0.4} animateOnScroll={false}>

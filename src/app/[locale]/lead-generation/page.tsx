@@ -19,6 +19,7 @@ import AlwaysTransparentAccessible from "@/components/leadgeneration/AlwaysTrans
 import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
 import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
+import PossibleWithContractor from "@/components/leadgeneration/PossibleWithContractor";
 
 const LeadGeneration = () => {
   return (
@@ -49,6 +50,7 @@ const LeadGeneration = () => {
 
       <div className="overflow-hidden bg-white">
         <CombinesPowerfulAi />
+        <PossibleWithContractor />
         <AlwaysTransparentAccessible
           imgPath="/images/webp/always-transparent.webp"
           headingPrimary="Always transparent,"

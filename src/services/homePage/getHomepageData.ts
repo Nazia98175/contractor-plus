@@ -12,19 +12,23 @@ export interface HomepageDataResponse {
   featurHighlight: HomePageResponse | null;
   resultStatsSection: HomePageResponse | null;
   blogs: any | null;
-  commonData: any | null; 
+  commonData: any | null;
 }
 
 export const getHomepageData = async (
   locale: string,
 ): Promise<HomepageDataResponse> => {
   const populateDefault = "&populate=*";
-  const populatePlatforms = "&populate[commonProblems][populate][cardsDetail][populate]=*";
-  const populateReviews = "&populate[reviews][populate][reviews][populate]=profileImg";
-  const populateProblemSolutions = "&populate[problemSolutionSection][populate]=solutionsList";
-  const featurHighlights = "&populate[featureHighlightSection][populate]=features";
+  const populatePlatforms =
+    "&populate[commonProblems][populate][cardsDetail][populate]=*";
+  const populateReviews =
+    "&populate[reviews][populate][reviews][populate]=profileImg";
+  const populateProblemSolutions =
+    "&populate[problemSolutionSection][populate]=solutionsList";
+  const featurHighlights =
+    "&populate[featureHighlightSection][populate]=features";
   const resultStats = "&populate[resultsStatsSection][populate]=cards";
-  const blogQuery = "&sort=publishedAt:desc&pagination[limit]=3";
+  const blogQuery = "&sort=publishedAt:desc&pagination[limit]=4";
 
   const [
     homePageContent,
@@ -54,6 +58,6 @@ export const getHomepageData = async (
     reviewsList,
     resultStatsSection,
     blogs,
-    commonData
+    commonData,
   };
 };

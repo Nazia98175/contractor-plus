@@ -75,7 +75,6 @@ const BlogPosts: React.FC<Props> = ({
             ))}
           </div>
 
-          {/* Right column (Featured Blog) */}
           <div className="card-shine relative flex w-full cursor-pointer flex-col justify-end overflow-hidden pb-3 sm:pb-6 xl:max-w-[700px]">
             <Image
               width={684}
@@ -108,7 +107,7 @@ const BlogPosts: React.FC<Props> = ({
               320: { slidesPerView: 1, spaceBetween: 12 },
               520: { slidesPerView: 1.5, spaceBetween: 12 },
               640: { slidesPerView: 2, spaceBetween: 14 },
-              768: { slidesPerView: 2, spaceBetween: 14 },
+              768: { slidesPerView: 4, spaceBetween: 14 },
             }}
           >
             {blogData.map((blog) => (

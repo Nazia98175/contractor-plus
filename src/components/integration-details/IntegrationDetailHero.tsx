@@ -10,7 +10,7 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
 }) => {
   return (
     <section className="pb-[117px ] relative flex h-full flex-col items-center justify-center pt-[144px]">
-      <div className="mb-6 flex items-center justify-center gap-5 sm:gap-7 md:gap-12">
+      <div className="mb-6 flex items-center justify-center gap-5 px-2 sm:gap-7 md:gap-12">
         <div className="integration-logo-bg rounded-full bg-center p-3 md:p-[18px]">
           <Image
             className="h-14 w-auto object-center sm:h-[72px]"

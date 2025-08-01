@@ -7,6 +7,7 @@ import AdvertisementCard from "./AdvertisementCard";
 import VideoSection from "./VideoSection";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { businessBenefits } from "../common/Utils";
 
 gsap.registerPlugin(ScrollTrigger);
 

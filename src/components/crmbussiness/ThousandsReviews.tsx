@@ -50,6 +50,7 @@ const ThousandsReviews: React.FC<Props> = ({
             1024: { slidesPerView: 2.5, spaceBetween: 20 },
             1280: { slidesPerView: 3, spaceBetween: 35 },
           }}
+          speed={600}
           loop={false}
         >
           {(data?.hasOwnProperty("reviews") ? data?.reviews : reviews)?.map(

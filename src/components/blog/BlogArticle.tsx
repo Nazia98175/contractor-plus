@@ -112,7 +112,7 @@ const BlogArticle: React.FC<handleClickProps> = ({ handleClick }) => {
         }
         slidesPerView={1}
         slidesPerGroup={1}
-        speed={500}
+        speed={600}
         grid={{
           rows: 2,
           fill: "row",

@@ -39,10 +39,6 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        // autoplay={{
-        //   delay: 6000,
-        //   disableOnInteraction: false,
-        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >

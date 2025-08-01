@@ -59,6 +59,7 @@ const EventsDirectoryHero = () => {
             nextEl: `.event-hero-navigation-next`,
             prevEl: `.event-hero-navigation-prev`,
           }}
+          speed={600}
           modules={[EffectFade, Navigation, Pagination]}
           className="mySwiper"
         >

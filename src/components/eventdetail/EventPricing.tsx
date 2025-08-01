@@ -57,6 +57,7 @@ const EventPricing = () => {
               nextEl: ".pricing-button-prev",
               prevEl: ".pricing-button-next",
             }}
+            speed={600}
             spaceBetween={10}
             slidesPerView={1}
             breakpoints={{

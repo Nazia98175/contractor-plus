@@ -79,6 +79,7 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
             768: { slidesPerView: 4, spaceBetween: 20 },
             1024: { slidesPerView: 5, spaceBetween: 20 },
           }}
+          speed={600}
           autoplay={true}
         >
           {trustBarImages?.length > 0

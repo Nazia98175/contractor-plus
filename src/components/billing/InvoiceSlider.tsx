@@ -41,13 +41,13 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
       <Swiper
         centeredSlides={true}
         modules={[Controller, Autoplay]}
-        speed={100}
         autoplay={{
           delay: 6000,
           disableOnInteraction: false,
         }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
+        speed={600}
       >
         <SwiperSlide className="pt-12 sm:!min-h-[400px] md:pt-[72px]">
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">

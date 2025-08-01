@@ -99,6 +99,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
               clickable: true,
               dynamicBullets: true,
             }}
+            speed={600}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
               520: { slidesPerView: 1.5, spaceBetween: 12 },

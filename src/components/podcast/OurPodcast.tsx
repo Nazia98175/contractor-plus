@@ -112,6 +112,7 @@ const OurPodcast = () => {
           clickable: true,
           dynamicBullets: true,
         }}
+        speed={600}
         modules={[Pagination, Navigation]}
         navigation={{
           nextEl: ".sponsor-button-next",

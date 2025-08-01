@@ -1,15 +1,15 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Autoplay, Controller, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { DownloadIcon, Slidericon } from "../common/Icons";
-import Image from "next/image";
-import LottieAnimation from "../common/LottieAnimation";
 import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
-import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
-import Field_Updates from "../../../public/lotties/Field-Updates.json";
 import Crew_efficiency from "../../../public/lotties/Crew-efficiency.json";
+import Field_Updates from "../../../public/lotties/Field-Updates.json";
+import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
 import tab_animation from "../../../public/lotties/tab-animation.json";
+import { Slidericon } from "../common/Icons";
+import LottieAnimation from "../common/LottieAnimation";
 interface SliderItem {
   title: string;
   description: string;
@@ -39,6 +39,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false,
+        }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
@@ -176,10 +180,10 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          // autoplay={{
-          //   delay: 6000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

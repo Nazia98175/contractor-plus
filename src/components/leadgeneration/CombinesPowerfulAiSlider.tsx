@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
 import { Navigation, Pagination, Controller, Autoplay } from "swiper/modules";
+import { Description } from "@headlessui/react";
 
 const CombinesPowerfulAiSlider = () => {
   const [topSwiper, setTopSwiper] = useState<any>(null);
@@ -36,10 +37,16 @@ const CombinesPowerfulAiSlider = () => {
         "Upload your images once, then Contractor+ Local geotags, renames, and schedules them to post at the right time.",
     },
     {
+      title: "Review Requests",
+      description:
+        "Automatically request reviews from happy customers via text or email. No manual follow-up needed.",
+    },
+    {
       title: "Q&A Management",
       description:
         "Post and answer common questions on your Google profile to rank for more keywords and build trust.",
     },
+
     {
       title: "Citation Sync",
       description:
@@ -92,8 +99,8 @@ const CombinesPowerfulAiSlider = () => {
         slidesPerView={1}
         className="!h-auto"
       >
-        <SwiperSlide className="!h-auto">
-          <div className="mx-auto h-fit max-h-[313px] w-full max-w-[441px]">
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
+          <div className="mx-auto flex h-fit max-h-[313px] w-full max-w-[441px]">
             <Image
               unoptimized
               width={871}
@@ -105,7 +112,7 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="mx-auto w-full max-w-[305px]">
             <Image
               unoptimized
@@ -119,7 +126,7 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <div className="mx-auto w-full max-w-[596px]">
             <Image
               priority
@@ -132,8 +139,8 @@ const CombinesPowerfulAiSlider = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative mx-auto w-full max-w-[730px] overflow-hidden">
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
+          <div className="relative mx-auto w-full max-w-[730px] overflow-hidden pb-[57px]">
             <Image
               unoptimized
               sizes="(max-width: 768px) 730px, (min-width: 769px) 50vw"
@@ -200,7 +207,7 @@ const CombinesPowerfulAiSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="relative mx-auto w-full max-w-[536px] overflow-hidden">
             <Image
               unoptimized
@@ -215,7 +222,7 @@ const CombinesPowerfulAiSlider = () => {
             <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -227,7 +234,7 @@ const CombinesPowerfulAiSlider = () => {
             className="mx-auto w-full max-w-[365px] object-cover"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -239,7 +246,7 @@ const CombinesPowerfulAiSlider = () => {
             className="mx-auto w-full max-w-[634px] object-cover"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -251,19 +258,24 @@ const CombinesPowerfulAiSlider = () => {
             className="mx-auto w-full max-w-[515px] object-cover"
           />
         </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            unoptimized
-            sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
-            width={900}
-            height={382}
-            priority
-            src={"/images/webp/your-system.webp"}
-            alt="Slide Image"
-            className="mx-auto w-full max-w-[635px] object-cover"
-          />
+        <SwiperSlide className="relative !flex flex-col items-center justify-end bg-white">
+          <div className="xs:top-[82%] xs:h-[100px] absolute top-[70%] h-[100px] w-[140%] max-w-full bg-white blur-[7px] sm:w-full md:top-[67%] md:h-[250px] lg:top-[70%] lg:h-[281px] lg:blur-[40px]"></div>
+          <div className="h-full px-2">
+            <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
+              <Image
+                unoptimized
+                width={871}
+                height={625}
+                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                src={"/images/webp/build-you-system.webp"}
+                alt="Slide Image"
+                className="rounded-3xl object-cover xl:rounded-[45px]"
+              />
+            </div>
+          </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="relative !flex !h-auto flex-col items-center justify-center">
+          <div className="absolute top-[60%] h-[100px] w-[140%] max-w-full bg-white blur-[47px] sm:w-full md:top-[67%] md:h-[250px] md:blur-[100px] lg:top-[70%] lg:h-[281px]"></div>
           <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
@@ -301,10 +313,10 @@ const CombinesPowerfulAiSlider = () => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          //   autoplay={{
-          //     delay: 6000,
-          //     disableOnInteraction: false,
-          //   }}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

@@ -91,10 +91,10 @@ const CommonHero: React.FC<TheHeroProps> = ({
           <div className="px-2 pt-8 md:pt-0">
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
-              className="gradient-2 xs:text-[28px] mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
+              className="gradient-2 mb-2 w-fit text-start leading-[127%] font-extrabold sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]"
               minFontSize={16}
-              maxLines={3}
-              maxFontSize={48}
+              maxLines={2}
+              maxFontSize={150}
             />
             {/* </Copy> */}
             <Copy delay={0.4} animateOnScroll={false}>

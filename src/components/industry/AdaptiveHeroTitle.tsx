@@ -69,7 +69,18 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
         // Font size adjustment complete
         setFinalFontSize(currentFontSize);
         setIsAdjusted(true);
-
+        gsap.to("#home-page-view-port-screen-fetures", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-header-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-footer-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
         // Animate lines if enabled
         if (animateOnComplete && splitTextRef.current) {
           animateLines();

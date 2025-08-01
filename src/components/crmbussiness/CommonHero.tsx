@@ -51,18 +51,18 @@ const CommonHero: React.FC<TheHeroProps> = ({
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-fetures", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
+      // gsap.to("#home-page-view-port-screen-fetures", {
+      //   opacity: 1,
+      //   duration: 1,
+      // });
+      // gsap.to("#home-page-header-view-port-screen", {
+      //   opacity: 1,
+      //   duration: 1,
+      // });
+      // gsap.to("#home-page-footer-view-port-screen", {
+      //   opacity: 1,
+      //   duration: 1,
+      // });
     }, 700);
   }, []);
   const pathname = usePathname();

@@ -4925,33 +4925,6 @@ export const YouTubeIcon2 = () => (
     </defs>
   </svg>
 );
-<<<<<<< HEAD
-export const UnionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="92"
-    height="92"
-    viewBox="0 0 92 92"
-    fill="none"
-  >
-    <path
-      d="M46.8548 45.005L90.8592 1.0039L91.8535 1.99818L47.8491 45.9993L91.8535 90.0018L90.8592 90.9961L46.8548 46.9936L1.84784 92L0.853516 91.0057L45.8605 45.9993L0.853516 0.994283L1.84784 0L46.8548 45.005Z"
-      fill="url(#paint0_radial_5543_6527)"
-    />
-    <defs>
-      <radialGradient
-        id="paint0_radial_5543_6527"
-        cx="0"
-        cy="0"
-        r="1"
-        gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(46.3535 46) scale(64.8976 64.1867)"
-      >
-        <stop stop-color="#FFC9CB" />
-        <stop offset="1" stop-opacity="0" />
-      </radialGradient>
-    </defs>
-=======
 export const PlusIconAnimation = () => (
   <svg
     width="31"
@@ -4966,6 +4939,5 @@ export const PlusIconAnimation = () => (
       stroke="#"
       strokeWidth="2"
     />
->>>>>>> c1738ac61e7f4afaf984dfc5f19fee691b785f8c
   </svg>
 );

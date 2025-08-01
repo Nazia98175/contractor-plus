@@ -1,6 +1,6 @@
 import { IntegrationItem } from "@/types";
 import Image from "next/image";
-import { UnionIcon } from "../common/Icons";
+
 interface IntegrationDetailHeroProps {
   user: IntegrationItem;
 }
@@ -19,7 +19,7 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
             className="h-[72px] w-[72px]"
           />
         </div>
-        <UnionIcon />
+        {/* <UnionIcon /> */}
         <div className="integration-logo-bg rounded-full bg-center p-[18px]">
           <Image
             src={user.logo}

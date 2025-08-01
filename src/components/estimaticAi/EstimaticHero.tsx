@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import AppsRating from "../common/AppsRating";
 
 const EstimaticHero = () => {
   useEffect(() => {
@@ -97,54 +98,12 @@ const EstimaticHero = () => {
                 />
               </div>
             </CardReveal>
-
-            {/* Play Store Button */}
-            <CardReveal distance={50} delay={1.4} className="hidden xl:block">
-              <Link
-                href="https://contractorplus.app/"
-                className="mt-4flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/webp/play-google.webp"
-                  alt="Download on Google Play"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
-
-            {/* Apple Store Button */}
-            <CardReveal distance={50} delay={1.5} className="hidden xl:block">
-              <Link
-                href=""
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/svg/Apple-Icon.svg"
-                  alt="Download on Apple App Store"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
+            <AppsRating
+              className="hidden xl:block"
+              className2="hidden xl:block"
+              delayGoogle={1.4}
+              delayApple={1.5}
+            />
           </div>
         </div>
 

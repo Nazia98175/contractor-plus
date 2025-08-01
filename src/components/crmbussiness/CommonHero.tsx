@@ -13,6 +13,7 @@ import Copy from "../common/Copy";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import { usePathname } from "next/navigation";
+import AppsRating from "../common/AppsRating";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -103,50 +104,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
             </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <CardReveal distance={50} delay={0.5}>
-              <Link
-                href="https://contractorplus.app/"
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/webp/play-google.webp"
-                  alt="google icon"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon key={i} />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
-            <CardReveal distance={50} delay={0.6} className="">
-              <Link
-                href=""
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/svg/Apple-Icon.svg"
-                  alt="google icon"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
+            <AppsRating />
             <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
                 <FreeAccountButton

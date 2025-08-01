@@ -45,6 +45,7 @@ const BillingPage = () => {
         }}
         heroImg="/images/webp/invoicing-billing.webp"
         slug="crm"
+        apiData={false}
         commonData={dealflowhero}
       />
       <TrustedService

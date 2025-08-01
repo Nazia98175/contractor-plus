@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
+import { DividerIcon, WhiteArrowIcon } from "../common/Icons";
 
 const PossibleWithContractor = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -95,8 +96,8 @@ const PossibleWithContractor = () => {
   }, [sliderPosition]);
 
   return (
-    <div className="relative mx-auto h-[90vh] w-full max-w-[1920px] py-20">
-      <h2 className="mb-8 text-center text-3xl font-bold text-gray-800">
+    <div className="relative mx-auto my-52 w-full max-w-[1920px]">
+      <h2 className="mb-8 px-2 text-center text-3xl font-bold text-gray-800">
         Before & After Comparison
       </h2>
 
@@ -108,13 +109,13 @@ const PossibleWithContractor = () => {
           unoptimized
           fill
         />
-        <div className="relative flex h-full w-full items-center justify-between">
-          <div className="relative mt-4 flex h-full w-full items-center justify-between px-4">
+        <div className="relative flex h-full w-full items-center justify-between px-2 py-20 sm:py-24 md:py-28 lg:py-36 xl:py-[180px]">
+          <div className="relative mt-4 flex h-full w-full items-center justify-between">
             <div className="mx-auto flex h-full w-full max-w-[936px] justify-between">
               {/* LEFT SIDE */}
-              <div className="flex h-full w-full max-w-[464px] flex-col items-center justify-center">
+              <div className="flex h-full w-full max-w-[464px] flex-col items-center justify-center text-lg font-semibold tracking-[-0.56px] md:text-xl lg:text-2xl lg:text-[28px]">
                 <div
-                  className={`relative ml-[69px] flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                  className={`xs:text-base relative ml-[16%] flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
                     sliderPosition < 50
                       ? "bg-customgreen text-white"
                       : "bg-customYellow text-white"
@@ -123,37 +124,37 @@ const PossibleWithContractor = () => {
                   6
                 </div>
                 <div
-                  className={`relative mt-12 mr-[107px] mb-[70px] flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                  className={`xs:text-base relative mt-12 mr-[23%] mb-[70px] flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
                     sliderPosition < 50
-                      ? "bg-green-900 text-red-900"
+                      ? "bg-customgreen text-white"
                       : "bg-customRed text-white"
                   }`}
                 >
                   32
                 </div>
                 <div
-                  className={`relative flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                  className={`xs:text-base relative flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
                     sliderPosition < 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                      ? "bg-customgreen text-white"
+                      : "bg-customYellow text-white"
                   }`}
                 >
                   8
                 </div>
                 <div
-                  className={`-mt-5 mr-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                  className={`xs:text-base -mt-5 mr-auto mb-6 flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
                     sliderPosition < 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                      ? "bg-customgreen text-white"
+                      : "bg-customRed text-white"
                   }`}
                 >
                   36
                 </div>
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                  className={`xs:text-base flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
                     sliderPosition < 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                      ? "bg-customgreen text-white"
+                      : "bg-customRed text-white"
                   }`}
                 >
                   29
@@ -161,48 +162,48 @@ const PossibleWithContractor = () => {
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="flex h-full w-full max-w-[318px] flex-col items-center justify-center">
+              <div className="flex h-full w-full max-w-[318px] -translate-y-12 flex-col items-center justify-center">
                 <div
-                  className={`-mr-[127px] flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
-                    sliderPosition >= 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                  className={`xs:text-base -mr-[40%] flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
+                    sliderPosition > 50
+                      ? "bg-customRed text-white"
+                      : "bg-customgreen text-white"
                   }`}
                 >
                   4
                 </div>
                 <div
-                  className={`mt-[33px] mb-1 ml-auto flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
-                    sliderPosition >= 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                  className={`xs:text-base mt-[33px] mb-1 ml-auto flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
+                    sliderPosition > 50
+                      ? "bg-customYellow text-white"
+                      : "bg-customgreen text-white"
                   }`}
                 >
                   2
                 </div>
                 <div
-                  className={`mr-auto flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
-                    sliderPosition >= 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                  className={`xs:text-base -mr-[10%] flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:h-10 sm:w-10 sm:text-lg md:mr-auto md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
+                    sliderPosition > 50
+                      ? "bg-customYellow text-white"
+                      : "bg-customgreen text-white"
                   }`}
                 >
                   1
                 </div>
                 <div
-                  className={`mt-[63px] mr-[161px] mb-[67px] flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
-                    sliderPosition >= 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                  className={`-semibold xs:text-base mt-[63px] mr-[20%] mb-[67px] flex h-8 w-8 items-center justify-center rounded-full text-sm tracking-[-0.56px] transition-colors sm:mr-[50%] sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
+                    sliderPosition > 50
+                      ? "bg-customRed text-white"
+                      : "bg-customgreen text-white"
                   }`}
                 >
                   3
                 </div>
                 <div
-                  className={`mr-auto flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
-                    sliderPosition >= 50
-                      ? "bg-green-900 text-red-900"
-                      : "bg-yellow-900 text-yellow-100"
+                  className={`xs:text-base mr-[30%] flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold tracking-[-0.56px] transition-colors sm:mr-auto sm:h-10 sm:w-10 sm:text-lg md:text-xl lg:h-12 lg:w-12 lg:text-2xl xl:text-[28px] ${
+                    sliderPosition > 50
+                      ? "bg-customYellow text-white"
+                      : "bg-customgreen text-white"
                   }`}
                 >
                   2
@@ -217,46 +218,47 @@ const PossibleWithContractor = () => {
           onMouseMove={handleMouseMove}
         >
           <div
-            className="border-color absolute top-0 bottom-0 z-50 w-1 cursor-col-resize"
+            className="absolute top-0 bottom-0 z-50 w-1 cursor-col-resize"
             style={{
               left: `${sliderPosition}%`,
               transform: "translateX(-50%)",
             }}
           >
+            <DividerIcon className="w-[3px] sm:w-[5px]" />
             <div
               onMouseDown={handleMouseDown}
               onTouchStart={handleTouchStart}
               className="absolute top-1/2 left-1/2 flex h-8 -translate-x-1/2 -translate-y-1/2 transform cursor-col-resize items-center justify-center overflow-hidden rounded-full transition-transform hover:scale-110"
             >
-              <div className="bg-redPigment h-9 w-[61px] rounded-[50px]"></div>
+              <div className="bg-customRed flex h-6 w-10 items-center justify-center gap-2 rounded-[50px] sm:h-7 sm:w-[50px] lg:h-9 lg:w-[61px]">
+                <WhiteArrowIcon className="h-3 w-[9px] rotate-180 sm:h-[17px]" />
+                <WhiteArrowIcon className="h-3 w-[9px] sm:h-[17px]" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-6 flex items-center justify-between px-4">
+      <div className="mx-auto mt-6 flex w-full max-w-[805px] items-center justify-between">
         <div
-          ref={beforeRef}
-          className={`w-fit px-3 py-1 text-sm font-medium transition-colors ${
-            activeLabel === "before" ? "text-red-600" : "text-green-900"
+          className={`w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl ${
+            sliderPosition < 50 ? "custom-icon-color" : "text-customGrey"
           }`}
         >
           Before
         </div>
 
         <div
-          ref={contractorRef}
-          className={`w-fit px-3 py-1 text-sm font-medium transition-colors ${
-            activeLabel === "contractor" ? "text-red-600" : "text-green-900"
+          className={`w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl ${
+            sliderPosition === 50 ? "custom-icon-color" : "text-customGrey"
           }`}
         >
           HVAC Contractor
         </div>
 
         <div
-          ref={afterRef}
-          className={`w-fit px-3 py-1 text-sm font-medium transition-colors ${
-            activeLabel === "after" ? "text-red-600" : "text-green-900"
+          className={`w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl ${
+            sliderPosition > 50 ? "custom-icon-color" : "text-customGrey"
           }`}
         >
           After

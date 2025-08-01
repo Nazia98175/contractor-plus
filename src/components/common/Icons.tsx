@@ -4987,3 +4987,52 @@ export const PlusIconAnimation = () => (
     />
   </svg>
 );
+export const WhiteArrowIcon = ({ className = "" }) => (
+  <svg
+    className={`${className}`}
+    width="100%"
+    height="100%"
+    viewBox="0 0 9 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0.696668 0.530774C0.958892 0.233232 1.38404 0.233232 1.64627 0.530774L8.5 8.30762L1.64627 16.0845C1.38404 16.382 0.958893 16.382 0.696669 16.0845C0.434445 15.7869 0.434445 15.3045 0.696669 15.007L6.6008 8.30762L0.696668 1.60827C0.434444 1.31073 0.434444 0.828316 0.696668 0.530774Z"
+      fill="white"
+    />
+  </svg>
+);
+export const DividerIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 5 690"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className}`}
+  >
+    <line
+      x1="2.5"
+      y1="0.533692"
+      x2="2.49997"
+      y2="689.197"
+      stroke="url(#paint0_radial_5410_2865)"
+      stroke-width="5"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_5410_2865"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(-3.29903e-05 344.865) scale(65.6843 459.08)"
+      >
+        <stop stop-color="#EE1E25" />
+        <stop offset="1" stop-color="white" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+);

@@ -10,8 +10,8 @@ const IntegrationPage = () => {
     <main>
       <IntegrationHero />
       <IntegrationCards />
-      <div className="relative overflow-x-hidden">
-        <div className="no-scrollbar mt-[71px] px-2 pb-12 lg:pb-9 xl:pb-12">
+      <div className="no-scrollbar relative overflow-x-hidden">
+        <div className="mt-[71px] px-2 pb-12 lg:pb-9 xl:pb-12">
           <CommonFormField
             variantBtn="primary"
             variant="default"

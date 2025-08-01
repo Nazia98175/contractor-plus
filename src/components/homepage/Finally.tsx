@@ -147,13 +147,13 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
-              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="flex w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:max-w-24 lg:max-w-[88px]">
                 <Image
-                  width={96}
+                  width={100}
                   height={104}
                   src="/images/png/get-app-homepage.png"
                   alt="Get App"
-                  className="w-full object-cover"
+                  className="h-full w-full object-cover"
                   sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>

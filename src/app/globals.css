@@ -20,7 +20,7 @@
   --color-jetBlack: #252525;
   --color-pantone3: #b4b4b4;
   --color-darkness: #a2a2a2;
-  --color-: #565656;
+  --color-staleGray: #565656;
   --color-brownish: #e8e9ea;
   --color-doctor: #fafafa;
   --color-amberOrange: #e88a00;
@@ -109,6 +109,7 @@
   --color-liquidNitrogen: #f4f4f5;
   --color-antiguaBlue: #07c0ca;
   --color-silverMedal: #d7d7d7;
+  --color-platinum: #e5e7eb;
   --color-masterpiece: #a3a5ad;
   --color-palladium: #b2b2b2;
   --color-dimGray: #686868;
@@ -351,7 +352,7 @@ body {
   @apply absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 rounded-full bg-white transition-all duration-300 group-hover:w-full;
 }
 .blog-detail-heading {
-  @apply text-sambucus 1xl:mt-8 mt-5 text-2xl font-semibold;
+  @apply 1xl:mt-8 mt-5 text-2xl font-semibold;
 }
 .no-scrollbar {
   -ms-overflow-style: none;

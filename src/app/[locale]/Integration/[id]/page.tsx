@@ -30,8 +30,8 @@ const IntegrationDetails = async ({ params }: IntegrationDetailsProps) => {
     <div className="text-4xl text-white">
       <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover">
         <IntegrationDetailHero user={user} />
-        <IntegrationDetail />
       </div>
+      <IntegrationDetail />
     </div>
   );
 };

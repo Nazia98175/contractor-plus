@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { DividerIcon, WhiteArrowIcon } from "../common/Icons";
+import Copy from "../common/Copy";
 
 const PossibleWithContractor = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -96,12 +97,18 @@ const PossibleWithContractor = () => {
   }, [sliderPosition]);
 
   return (
-    <div className="relative mx-auto my-52 w-full max-w-[1920px]">
-      <h2 className="mb-8 px-2 text-center text-3xl font-bold text-gray-800">
-        Before & After Comparison
-      </h2>
+    <div className="relative mx-auto mt-[45px] mb-[59px] w-full max-w-[1920px]">
+      <Copy>
+        <h2 className="gradient-custom-2 section-heading-2 relative z-30 -mb-12 px-2 text-center">
+          See what’s possible with Contractor+ Local
+        </h2>
+      </Copy>
 
       <div className="relative h-full overflow-hidden">
+        <div className="pointer-events-none absolute -top-[15%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>{" "}
+        <div className="pointer-events-none absolute -bottom-[15%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>
+        <div className="pointer-events-none absolute -top-[20%] bottom-0 left-[-4%] z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
+        <div className="pointer-events-none absolute -top-[20%] right-[-4%] bottom-0 z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
         <Image
           className="absolute inset-0 object-cover"
           src="/images/webp/double-map.webp"
@@ -109,7 +116,7 @@ const PossibleWithContractor = () => {
           unoptimized
           fill
         />
-        <div className="relative flex h-full w-full items-center justify-between px-2 py-20 sm:py-24 md:py-28 lg:py-36 xl:py-[180px]">
+        <div className="relative flex h-full w-full items-center justify-between px-2 py-40 xl:py-[180px]">
           <div className="relative mt-4 flex h-full w-full items-center justify-between">
             <div className="mx-auto flex h-full w-full max-w-[936px] justify-between">
               {/* LEFT SIDE */}
@@ -238,7 +245,6 @@ const PossibleWithContractor = () => {
           </div>
         </div>
       </div>
-
       <div className="mx-auto mt-6 flex w-full max-w-[805px] items-center justify-between">
         <div
           className={`w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl ${

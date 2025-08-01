@@ -7,6 +7,7 @@ import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeTrialButton from "../common/FreeTrialButton";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -27,7 +28,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   imgUrl,
 }) => {
   return (
-    <section className="main-container flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-4">
+    <section className="main-container flex flex-col items-center justify-between gap-8 pt-20 sm:pt-[100px] md:pt-[140px] lg:flex-row lg:gap-4 lg:pt-[164px]">
       <div className="w-full max-w-[650px] xl:max-w-[732px]">
         <CardReveal distance={30} delay={0.1}>
           <div className="hidden items-center justify-center pb-1 md:flex lg:justify-start">
@@ -36,9 +37,17 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
             </span>
           </div>
         </CardReveal>
-        <h2 className="xs:text-[28px] w-fit text-center text-[26px] font-extrabold text-white sm:mx-auto sm:text-4xl lg:text-start lg:text-5xl">
+        {/* <h2 className="xs:text-[28px] w-fit text-center text-[26px] font-extrabold text-white sm:mx-auto sm:text-4xl lg:text-start lg:text-5xl">
           {heading}
-        </h2>
+        </h2> */}
+        <AdaptiveHeroTitle
+          title={heading || ""}
+          className="text-center font-extrabold text-white sm:mx-auto lg:text-start"
+          minFontSize={16}
+          maxLines={2}
+          maxFontSize={48}
+          textAnimation="home-page-view-port-screen-fetures"
+        />
         <p className="text-decemberSky mt-4 w-full text-center text-xs font-medium sm:text-sm md:my-[26px] md:text-base lg:text-start lg:text-lg xl:max-w-[75%]">
           {description}
         </p>

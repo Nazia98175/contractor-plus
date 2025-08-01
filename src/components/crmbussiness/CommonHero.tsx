@@ -1,18 +1,15 @@
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import FreeAccountButton from "../common/FreeAccountButton";
+import FreeTrialButton from "../common/FreeTrialButton";
 import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
-import FreeTrialButton from "../common/FreeTrialButton";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -61,8 +58,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
+
   return (
     <section
       ref={wrapperRef}

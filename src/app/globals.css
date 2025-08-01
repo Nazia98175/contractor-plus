@@ -287,7 +287,7 @@ body {
   @apply xs:font-semibold xs:text-[28px] text-2xl leading-[138%] font-bold tracking-[-0.84px] sm:text-[32px] lg:text-[40px] xl:text-[42px];
 }
 .section-heading-2 {
-  @apply xs:text-2xl text-xl leading-[138%] font-bold sm:text-[30px] md:font-semibold md:tracking-[-0.84px] lg:text-4xl xl:text-[42px];
+  @apply xs:text-2xl text-xl leading-[138%] font-semibold sm:text-[30px] md:tracking-[-0.84px] lg:text-4xl xl:text-[42px];
 }
 .section-heading-3 {
   @apply xs:text-2xl text-kuroiBlack text-xl leading-[138%] font-semibold sm:text-[30px] md:tracking-[-0.84px] lg:text-4xl xl:text-[42px];
@@ -2108,4 +2108,36 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.gradient-custom-2 {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(238, 30, 37, 0.4) 7.61%,
+      rgba(0, 0, 0, 0) 99.65%
+    ),
+    #0c0d11;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.gradient-custom-2 .line {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(238, 30, 37, 0.4) 7.61%,
+      rgba(0, 0, 0, 0) 99.65%
+    ),
+    #0c0d11;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.ccc {
+  border-radius: 1733px;
+  background-color: rgba(12, 13, 17, 0.02);
+  filter: blur(40.04999923706055px);
+  backdrop-filter: blur(25.399999618530273px);
 }

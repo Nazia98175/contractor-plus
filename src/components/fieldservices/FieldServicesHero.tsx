@@ -14,6 +14,7 @@ import {
   LocationIcon,
 } from "../common/Icons";
 import FieldServiceMap from "./FieldServiceMap";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 interface GeolocationData {
   latitude: number;
@@ -119,16 +120,32 @@ const FieldServicesHero: React.FC<Props> = ({
               {solutionTag}
             </div>
           </Copy>
-          <Copy animateOnScroll={false} delay={0.2}>
+          {/* <Copy animateOnScroll={false} delay={0.2}>
             <h3 className="main-heading gradient-text 900:max-w-[470px] 900:hidden mt-1.5">
               {hero?.heroTitle}
             </h3>
-          </Copy>
-          <Copy animateOnScroll={false} delay={0.3}>
+          </Copy> */}
+          <AdaptiveHeroTitle
+            title={hero?.heroTitle || ""}
+            className="gradient-text 900:max-w-[470px] 900:hidden mt-1.5 font-extrabold"
+            minFontSize={25}
+            maxLines={3}
+            maxFontSize={52}
+            textAnimation="home-page-view-port-screen-field-service"
+          />
+          <AdaptiveHeroTitle
+            title={hero?.heroTitle || ""}
+            className="900:block hidden font-extrabold text-white"
+            minFontSize={25}
+            maxLines={3}
+            maxFontSize={52}
+            textAnimation="home-page-view-port-screen-field-service"
+          />
+          {/* <Copy animateOnScroll={false} delay={0.3}>
             <h3 className="main-heading 900:block hidden text-white">
               {hero?.heroTitle}
             </h3>
-          </Copy>
+          </Copy> */}
           <p className="hero-description !text-secondary md:!text-decemberSky 900:max-w-[470px] mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
             {hero?.heroDescription}
           </p>

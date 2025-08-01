@@ -36,7 +36,7 @@ const LeadGeneration = () => {
         />
         <LottieStat className="mt-8 gap-[55px]" />
       </div>
-      <div className="bg-white pt-8 pb-[42px] sm:pt-12 sm:pb-[50px] md:pt-[76px] lg:pb-[85px]">
+      <div className="bg-white pt-8 sm:pt-12 sm:pb-[50px] md:pt-[76px] lg:pb-[85px]">
         <GoingFieldSevices
           isImageshow={false}
           switchingTool={{

@@ -7,9 +7,14 @@ import IntegrationHero from "@/components/integration/IntegrationHero";
 
 const IntegrationPage = () => {
   return (
-    <main>
-      <IntegrationHero />
-      <IntegrationCards />
+    <main id="home-page-wrapper-2">
+      <div
+        id="home-page-view-port-screen-fetures"
+        className="relative opacity-0"
+      >
+        <IntegrationHero />
+        <IntegrationCards />
+      </div>
       <div className="no-scrollbar relative overflow-x-hidden">
         <div className="mt-[71px] px-2 pb-12 lg:pb-9 xl:pb-12">
           <CommonFormField

@@ -7,7 +7,6 @@ import IntegrationDetail from "@/components/integration-details/IntegrationDetai
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
 
 const IntegrationDetails = () => {
-  // Use first integration as static data
   const user = integrations[0];
 
   return (

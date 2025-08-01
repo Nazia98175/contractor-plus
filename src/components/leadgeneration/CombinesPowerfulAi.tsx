@@ -1,13 +1,11 @@
-import React from "react";
 import CombinesPowerfulAiSlider from "./CombinesPowerfulAiSlider";
-import { RealTimeServiceConnectorIcon } from "../common/Icons";
 
 const CombinesPowerfulAi = () => {
   return (
     <section className="relative overflow-visible bg-white">
       {/* <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] z-50 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" /> */}
       <div className="mx-auto w-full max-w-[1036px] px-2">
-        <h4 className="section-heading-3 gradient-text-2 text-center">
+        <h4 className="section-heading-2 gradient-custom-2 text-center">
           Contractor+ Local combines powerful AI with a human-in-the loop
           approach
         </h4>

@@ -2062,3 +2062,32 @@ button {
 .hero-video-overlay {
   background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
 }
+.video-section-wrapper h3 {
+  color: #adb1b5;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active h3 {
+  color: #0c0d11 !important;
+}
+.video-section-wrapper p {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active p {
+  color: #656c73 !important;
+}
+.video-section-wrapper svg path {
+  fill: #cdcdcd;
+  stroke: #cdcdcd;
+  transition: all 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active svg path {
+  fill: #f21314 !important;
+  stroke: #f21314 !important;
+}
+.video-section-wrapper .icon-span {
+  transition: transform 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active .icon-span {
+  transform: rotate(45deg);
+}

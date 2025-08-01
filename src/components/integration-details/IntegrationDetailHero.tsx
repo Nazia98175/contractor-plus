@@ -9,8 +9,8 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
 }) => {
   return (
     <section className="pb-[117px ] relative flex h-full flex-col items-center justify-center pt-[144px]">
-      <div className="flex items-center justify-center gap-12">
-        <div className="integration-logo-bg relative rounded-full p-[18px]">
+      <div className="mb-6 flex items-center justify-center gap-12">
+        <div className="integration-logo-bg rounded-full bg-center p-[18px]">
           <Image
             src={user.logo}
             width={72}
@@ -20,7 +20,7 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
           />
         </div>
         <UnionIcon />
-        <div className="integration-logo-bg relative rounded-full p-[18px]">
+        <div className="integration-logo-bg rounded-full bg-center p-[18px]">
           <Image
             src={user.logo}
             width={72}

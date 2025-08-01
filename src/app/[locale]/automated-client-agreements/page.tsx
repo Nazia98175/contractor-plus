@@ -31,6 +31,7 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import Image from "next/image";
+import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 
 const page = () => {
   return (
@@ -51,14 +52,17 @@ const page = () => {
         <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
-      <FieldService
-        fieldService={automatedCardData}
-        theme="dark"
-        slug="estimateTheme"
-        apiData={false}
-        mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
-      />
-      <div className="bg-white">
+
+      <div className="relative overflow-hidden">
+        <FieldService
+          fieldService={automatedCardData}
+          theme="dark"
+          slug="estimateTheme"
+          apiData={false}
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
+      <div className="mt-16 bg-white sm:mt-0">
         <TrackProperties
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}
@@ -68,7 +72,7 @@ const page = () => {
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}
         />
-        {/* <ContractorStartMain /> */}
+        <ContractorStartMain />
         <KindAdorable
           slug={"estimate"}
           kindAdorable={automate_comparisonData}

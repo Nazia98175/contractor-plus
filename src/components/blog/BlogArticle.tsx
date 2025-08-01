@@ -101,7 +101,7 @@ const BlogArticle: React.FC<handleClickProps> = ({ handleClick }) => {
   };
 
   return (
-    <div className="relative z-20 mx-auto mt-8 w-full max-w-[1224px] px-2 pb-6 sm:mt-10 lg:mt-12 xl:mt-14">
+    <div className="custom-pagination relative z-20 mx-auto mt-8 w-full max-w-[1224px] px-2 pb-6 sm:mt-10 lg:mt-12 xl:mt-14">
       <h2 className="text-eerieBlack pb-4 text-2xl font-semibold lg:pb-6 xl:pb-8">
         Most popular articles
       </h2>

@@ -14,6 +14,7 @@ import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import AppsRating from "../common/AppsRating";
 import FreeTrialButton from "../common/FreeTrialButton";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 const EstimaticHero = () => {
   useEffect(() => {
@@ -58,12 +59,19 @@ const EstimaticHero = () => {
             </h5>
           </Copy>
 
-          <Copy animateOnScroll={false} delay={1.1}>
+          {/* <Copy animateOnScroll={false} delay={1.1}>
             <h2 className="gradient-text main-heading text-center xl:text-left">
               The first AI estimator worth trusting
             </h2>
-          </Copy>
-
+          </Copy> */}
+          <AdaptiveHeroTitle
+            title={"The first AI estimator worth trusting"}
+            className="gradient-2 text-center font-extrabold xl:text-left"
+            minFontSize={25}
+            maxLines={2}
+            maxFontSize={52}
+            textAnimation="home-page-view-port-screen-estimatic-ai"
+          />
           <Copy animateOnScroll={false} delay={1.2}>
             <p className="text-secondary sm:text-decemberSky mx-auto mt-2.5 mb-4 text-center text-xs font-semibold sm:my-4 sm:text-sm md:text-base md:font-medium lg:my-[26px] lg:text-lg xl:text-left">
               Estimatic references your costbook, live supplier pricing, and

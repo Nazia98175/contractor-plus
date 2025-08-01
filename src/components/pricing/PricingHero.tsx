@@ -6,6 +6,7 @@ import CommonFormField from "../common/CommonFormField";
 import Copy from "../common/Copy";
 import { DownScrollIcon } from "../common/Icons";
 import gsap from "gsap";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
   useEffect(() => {
@@ -46,9 +47,17 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
       <div className="relative mx-auto w-full max-w-[740px]">
         <Copy delay={0.2}>
           <h2 className="xs:text-[28px] gradient-white font-jakarta mb-4 text-center text-[26px] leading-[127%] font-extralight text-transparent sm:text-4xl lg:text-5xl xl:text-[52px]">
-            Free to start, free to stay. <br /> Level up when you’re ready.
+            Free to start, free to stay. Level up when you’re ready.
           </h2>
         </Copy>
+        {/* <AdaptiveHeroTitle
+          title={"Free to start, free to stay. Level up when you’re ready."}
+          className="gradient-white mb-4 text-center font-extralight text-transparent"
+          minFontSize={16}
+          maxLines={2}
+          maxFontSize={48}
+          textAnimation="pricing-page-view-port-screen"
+        /> */}
 
         <Copy delay={0.3}>
           <p className="hero-description !text-trolleyGrey text-center">

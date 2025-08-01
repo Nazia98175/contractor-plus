@@ -7,6 +7,7 @@ import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeTrialButton from "../common/FreeTrialButton";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -36,9 +37,17 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
             </span>
           </div>
         </CardReveal>
-        <h2 className="xs:text-[28px] w-fit text-center text-[26px] font-extrabold text-white sm:mx-auto sm:text-4xl lg:text-start lg:text-5xl">
+        {/* <h2 className="xs:text-[28px] w-fit text-center text-[26px] font-extrabold text-white sm:mx-auto sm:text-4xl lg:text-start lg:text-5xl">
           {heading}
-        </h2>
+        </h2> */}
+        <AdaptiveHeroTitle
+          title={heading || ""}
+          className="text-center font-extrabold text-white sm:mx-auto lg:text-start"
+          minFontSize={16}
+          maxLines={2}
+          maxFontSize={48}
+          textAnimation="home-page-view-port-screen-fetures"
+        />
         <p className="text-decemberSky mt-4 w-full text-center text-xs font-medium sm:text-sm md:my-[26px] md:text-base lg:text-start lg:text-lg xl:max-w-[75%]">
           {description}
         </p>

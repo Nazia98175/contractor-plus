@@ -1,14 +1,11 @@
 "use client";
-import React from "react";
-import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import CardRequiredButton from "../common/CardRequiredButton";
-import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Image from "next/image";
-import { StartIcon } from "../common/Icons";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
 import AppsRating from "../common/AppsRating";
+import CardRequiredButton from "../common/CardRequiredButton";
+import CardReveal from "../common/CardReveal";
 import FreeTrialButton from "../common/FreeTrialButton";
 interface LeadGenerationHeroProps {
   tag: string;
@@ -29,8 +26,6 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   nccTxt,
   imgUrl,
 }) => {
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="main-container flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-4">
       <div className="w-full max-w-[650px] xl:max-w-[732px]">

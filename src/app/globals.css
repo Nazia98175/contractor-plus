@@ -128,6 +128,9 @@
   --color-faluRed: #7e1616;
   --color-final: #f4f5f7;
   --color-furiousTomato: #be0c0c;
+  --color-customYellow: #f5a421;
+  --color-customgreen: #2b840c;
+  --color-customRed: #f36266;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
@@ -2090,4 +2093,24 @@ button {
 }
 .video-section-wrapper.scroll-active .icon-span {
   transform: rotate(45deg);
+}
+.border-color {
+  background: radial-gradient(
+    66.66% 6568.43% at 50% 0%,
+    #ee1e25 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.custom-icon-color {
+  background:
+    linear-gradient(
+      275.84deg,
+      rgba(238, 30, 37, 0.4) 7.61%,
+      rgba(0, 0, 0, 0) 99.65%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

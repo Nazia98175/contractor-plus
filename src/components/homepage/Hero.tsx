@@ -9,6 +9,7 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import HerosectionBackground from "./HerosectionBackground";
+import FreeTrialButton from "../common/FreeTrialButton";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -67,12 +68,9 @@ const Hero = ({
                 delay={1.3}
                 animateOnMount={true}
               >
-                <FreeAccountButton
+                <FreeTrialButton
                   showIcon={false}
                   text={commonData?.getStartedFreeBtn}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
               </CardReveal>
               {/* mobile */}
@@ -82,13 +80,10 @@ const Hero = ({
                 delay={1.4}
                 animateOnMount={true}
               >
-                <FreeAccountButton
+                <FreeTrialButton
                   showIcon={false}
                   text={commonData?.mobileBtn}
                   className="!w-full"
-                  onClick={() => handleRedirect({ pathname, email: "" })}
-                  loading={loading}
-                  disabled={loading}
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1.5}>

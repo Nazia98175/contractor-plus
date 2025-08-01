@@ -14,6 +14,7 @@ import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import { usePathname } from "next/navigation";
 import AppsRating from "../common/AppsRating";
+import FreeTrialButton from "../common/FreeTrialButton";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -107,21 +108,16 @@ const CommonHero: React.FC<TheHeroProps> = ({
             <AppsRating />
             <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
-                <FreeAccountButton
+                <FreeTrialButton
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
-                <FreeAccountButton
+
+                <FreeTrialButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

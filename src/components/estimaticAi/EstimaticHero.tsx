@@ -13,6 +13,7 @@ import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import AppsRating from "../common/AppsRating";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 const EstimaticHero = () => {
   useEffect(() => {
@@ -76,21 +77,15 @@ const EstimaticHero = () => {
             {/* Free Account Buttons */}
             <CardReveal distance={50} className="w-full xl:w-fit" delay={1.3}>
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 xl:w-fit">
-                <FreeAccountButton
+                <FreeTrialButton
                   className="!hidden sm:!flex"
                   text="Get started FREE"
                   showIcon={false}
-                  onClick={handleClick}
-                  loading={loading}
-                  disabled={loading}
                 />
-                <FreeAccountButton
+                <FreeTrialButton
                   className="!flex w-full sm:!hidden"
                   text="Download FREE App"
                   showIcon={false}
-                  onClick={handleClick}
-                  loading={loading}
-                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

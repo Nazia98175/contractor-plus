@@ -9,6 +9,7 @@ import Image from "next/image";
 import { StartIcon } from "../common/Icons";
 import Link from "next/link";
 import AppsRating from "../common/AppsRating";
+import FreeTrialButton from "../common/FreeTrialButton";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -50,21 +51,15 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
           <AppsRating delayApple={0.5} delayGoogle={0.6} />
           <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
             <div className="flex w-full flex-col items-center gap-1.5 px-2 sm:w-fit">
-              <FreeAccountButton
+              <FreeTrialButton
                 className="!hidden sm:!flex"
                 text={getStartedFreeBtn}
                 showIcon={false}
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
-              <FreeAccountButton
+              <FreeTrialButton
                 showIcon={false}
                 className="mt-4 !flex w-full sm:!hidden"
                 text={mobileBtn}
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"

@@ -94,6 +94,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         <div className="blog-post mx-auto flex w-full max-w-[1920px] flex-col items-center justify-center gap-4">
           <Swiper
             modules={[Pagination]}
+            loop={true}
             pagination={{
               el: ".swiper-pagination-pricing",
               clickable: true,
@@ -106,7 +107,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
               640: { slidesPerView: 2, spaceBetween: 12 },
               768: { slidesPerView: 2, spaceBetween: 16 },
               1024: { slidesPerView: 3, spaceBetween: 20 },
-              1280: { slidesPerView: 4, spaceBetween: 34 },
+              1280: { slidesPerView: 3.5, spaceBetween: 34 },
             }}
           >
             {blogs.map((article, index) => (

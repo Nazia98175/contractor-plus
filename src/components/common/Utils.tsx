@@ -280,6 +280,13 @@ export const billingFaqData = {
     },
   ],
 };
+export const businessBenefits = [
+  "Effortlessly Manage Your Business",
+  "Team Collaboration",
+  "Simple Scheduling",
+  "Estimating & Invoicing",
+  "Access from PC, Android and iOS!",
+];
 export const integrations = [
   {
     id: "1",

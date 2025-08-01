@@ -42,7 +42,7 @@ const IntegrationContent = () => {
       <Image
         height={296}
         width={913}
-        src="/images/webp/travel.webp"
+        src="/images/webp/paypal.webp"
         alt="Travel "
         className="mt-8 max-h-[310px] rounded-lg object-cover object-top"
       />

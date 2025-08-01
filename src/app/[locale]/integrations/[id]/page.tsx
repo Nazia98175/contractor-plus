@@ -7,7 +7,6 @@ import IntegrationDetail from "@/components/integration-details/IntegrationDetai
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
 
 const IntegrationDetails = () => {
-  // Use first integration as static data
   const user = integrations[0];
 
   return (
@@ -33,14 +32,13 @@ const IntegrationDetails = () => {
           <CommonFormField
             variantBtn="primary"
             variant="default"
-            title={"Are you ready to level up your business?"}
-            subTitle={
+            title="Are you ready to level up your business?"
+            subTitle=
               "Start for free. Stay for free. Upgrade to get the full operating system."
-            }
-            placeholder={"Your Email"}
-            createBtn={"Get Started Free"}
-            mobileBtn={"Download FREE App"}
-            ncc={"No credit card required"}
+            placeholder="Your Email"
+            createBtn="Get Started Free"
+            mobileBtn="Download FREE App"
+            ncc="No credit card required"
           />
         </div>
         <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />

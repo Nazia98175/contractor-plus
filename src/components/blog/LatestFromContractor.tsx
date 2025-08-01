@@ -38,6 +38,7 @@ const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
           el: ".swiper-pagination-real-time-3",
           clickable: true,
         }}
+        speed={600}
         modules={[Pagination, Navigation]}
         className="mySwiper"
         breakpoints={{

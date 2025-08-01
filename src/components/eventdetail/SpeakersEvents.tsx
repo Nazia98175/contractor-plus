@@ -55,6 +55,7 @@ const SpeakersEvents = () => {
               nextEl: ".speaker-button-prev",
               prevEl: ".speaker-button-next",
             }}
+            speed={600}
             spaceBetween={10}
             slidesPerView={1}
             breakpoints={{

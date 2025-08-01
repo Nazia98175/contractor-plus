@@ -25,7 +25,6 @@ interface IndustryHeroSliderProps {
 const IndustryHeroSlider: React.FC<IndustryHeroSliderProps> = ({
   features,
 }) => {
-  
   return (
     <Swiper
       effect="fade"
@@ -35,7 +34,7 @@ const IndustryHeroSlider: React.FC<IndustryHeroSliderProps> = ({
       spaceBetween={16}
       slidesPerView={2.7}
       centeredSlides={true}
-      speed={700}
+      speed={600}
       loop={true}
       className="custom-active-slider relative"
     >

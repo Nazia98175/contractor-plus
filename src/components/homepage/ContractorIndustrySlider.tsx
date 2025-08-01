@@ -223,7 +223,7 @@ const ContractorIndustrySlider: React.FC = () => {
           delay: 3000,
         }}
         freeMode={true}
-        speed={700}
+        speed={600}
         centeredSlides={true}
         slidesPerView={4}
         loop={true}

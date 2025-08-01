@@ -29,6 +29,7 @@ const Features = ({ features }: { features: any }) => {
                 640: { slidesPerView: 2, spaceBetween: 14 },
                 768: { slidesPerView: 2.6, spaceBetween: 16 },
               }}
+              speed={600}
             >
               {featureData.map((obj, index) => (
                 <FeatureCard obj={obj} index={index} key={index} />

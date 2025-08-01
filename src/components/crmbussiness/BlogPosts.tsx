@@ -109,6 +109,7 @@ const BlogPosts: React.FC<Props> = ({
               640: { slidesPerView: 2, spaceBetween: 14 },
               768: { slidesPerView: 4, spaceBetween: 14 },
             }}
+            speed={600}
           >
             {blogData.map((blog) => (
               <BlogArticle

@@ -28,6 +28,7 @@ const TimmingEffectSlider: React.FC<TimmingEffectSliderProps> = ({
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
+        speed={600}
         pagination={{
           el: ".swiper-pagination-timming-section",
           clickable: true,

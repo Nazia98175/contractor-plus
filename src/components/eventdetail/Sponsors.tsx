@@ -79,6 +79,7 @@ const Sponsors = () => {
                 clickable: true,
                 dynamicBullets: true,
               }}
+              speed={600}
               navigation={{
                 nextEl: ".sponsor-button-next",
                 prevEl: ".sponsor-button-prev",

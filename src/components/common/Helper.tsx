@@ -159,8 +159,8 @@ export const planData = [
   {
     title: "PRO Team",
     subtitle: "Minimum of 5 users",
-    monthlyPrice: 29,
-    annuallyPrice: 19,
+    monthlyPrice: 98,
+    annuallyPrice: 58,
     note: "For Teams",
     cta: "Get started",
     featuresHeading: "Everything in PRO +",
@@ -1788,6 +1788,48 @@ export const contractorTypes: OptionType[] = [
     icon: <Flower color="white" />,
   },
 ];
+export const integrationTypes: OptionType[] = [
+  {
+    value: "contractor",
+    label: "Zapier",
+    icon: <ContractorToolsIcon />,
+  },
+  {
+    value: "electrician",
+    label: "Simply Business",
+    icon: <Plug color="white" />,
+  },
+  {
+    value: "plumber",
+    label: "Venmo",
+    icon: <Wrench color="white" />,
+  },
+  {
+    value: "carpenter",
+    label: "Carpenter",
+    icon: <Hammer color="white" />,
+  },
+  {
+    value: "painter",
+    label: "Painter",
+    icon: <Paintbrush2 color="white" />,
+  },
+  {
+    value: "hvac",
+    label: "HVAC Technician",
+    icon: <ThermometerSun color="white" />,
+  },
+  {
+    value: "roofer",
+    label: "Roofer",
+    icon: <Castle color="white" />,
+  },
+  {
+    value: "landscaper",
+    label: "Landscaper",
+    icon: <Flower color="white" />,
+  },
+];
 export const plans: Plan[] = [
   { name: "Freedom", cta: "Start for free", variant: "default" },
   { name: "PRO", cta: "Get started", variant: "pro" },
@@ -2437,6 +2479,64 @@ export const pricingfaqitems = [
     question: "What is your cancellation & refund policy?",
     answer:
       "You can cancel at any time. It’s self-service, so you can upgrade, downgrade and cancel your account on your own in the click of a button. We offer a free for life version of our software and 14 day trials of most premium features (such as the job schedule and the team chat). During this period you should determine for yourself if upgrading to PRO or ULTIMATE is the best option for your business. You should not upgrade until you’ve properly evaluated the software, learned how to use everything and know that it’s the best choice for you. As such, Contractor+  is a digital, intangible good, and all sales are final. We will not honor any refunds for any reason, under any circumstances. We have thousands of users using our software successfully.  If you need help setting anything up or have questions, our Customer Success team is very accessible.",
+  },
+];
+export const integrationfaqitems = [
+  {
+    id: 1,
+    question:
+      "How can I use PayPal for my small business or contracting needs?",
+    answer:
+      "It offers various options for small businesses and contractors to send and receive payments, manage transactions, and access financial resources. You can integrate it with Contractor+ for streamlined financial management. Contractors using this integration can easily accept payments from Visa, Mastercard and major cards from leading banks.",
+  },
+  {
+    id: 2,
+    question:
+      "Are there any fees associated with using PayPal for business purposes?",
+    answer:
+      "They may charge fees for certain transactions, such as receiving payments for goods and services. It’s essential to review their fee structure on their official website. It offers a fee-free service option for sending money to family and friends within the same country. If you’re sending money internationally or using a credit card, fees may apply.",
+  },
+  {
+    id: 3,
+    question:
+      "Can I use PayPal to purchase goods and services online and in physical stores?",
+    answer:
+      "Yes, PayPal & their Wallet is widely accepted by online retailers, e-commerce, online banking and some physical stores. Look for the PayPal logo or the option to choose PayPal at checkout. They also offer the option to purchase gift cards and send digital receipts to recipients. You can link your bank account or debit card to your Pay Pal account for seamless transfers and purchases.",
+  },
+  {
+    id: 4,
+    question:
+      "How does PayPal’s support for cryptocurrencies like Bitcoin and Ethereum work?",
+    answer:
+      "It allows users to buy, hold, and sell cryptocurrencies within their accounts. You can use supported cryptocurrencies for purchases where PayPal is accepted. Not just crytocurrencies using their wallet you can accept not just dollar but other world markets currencies as well.",
+  },
+  {
+    id: 5,
+    question:
+      "What are the risks associated with using PayPal for financial transactions?",
+    answer:
+      "Like any financial platform, there are security risks associated with PayPal. It’s crucial to use strong passwords, enable two-factor authentication, and stay vigilant against phishing attempts.",
+  },
+  {
+    id: 6,
+    question:
+      "How can I access my PayPal account from various devices, including Android, iPhone, and computer?",
+    answer:
+      "It provides a user-friendly app for Android and iPhone users, and you can also access your account through their website on your computer or other internet-enabled devices.",
+  },
+  {
+    id: 7,
+    question:
+      "What are some of the most notable brands and retailers that accept PayPal payments?",
+    answer:
+      "It is widely accepted by major brands, retailers, and online marketplaces, including eBay, Honey, Happy Returns, and many others.",
+  },
+  {
+    id: 8,
+    question:
+      "Can I use Pay Pal account for international money transfers and currency exchanges?",
+    answer:
+      "Yes, It offers services for international money transfers and currency exchanges, making it a versatile choice for global transactions. It’s available in many countries like U.S. , India, Europe, Canada etc and supports multiple each country currencies. You can choose your preferred currency when making transactions.     PayPal provides a wealth of information, articles, and resources available for individuals and businesses looking to learn more about using their service effectively, on their official website to help users make the most of their platform. Their continuous updates and growth initiatives reflect an unwavering dedication to seizing new opportunities. The latest versions of their app, available in app stores, are a testament to their user-centric approach. With a strong community, secure deposits, and millions of readers,      PayPal’s impact on the financial world is profound. As a company, they’re not just an owner of technology; they’re pioneers shaping the future through research and development, one successful launch and community-driven initiative at a time.",
   },
 ];
 

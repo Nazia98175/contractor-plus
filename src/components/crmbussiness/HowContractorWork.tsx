@@ -6,6 +6,7 @@ import FreeAccountButton from "../common/FreeAccountButton";
 import { CheckIcon } from "../common/Icons";
 import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import FreeTrialButton from "../common/FreeTrialButton";
 interface Content {
   title: string;
 }
@@ -21,9 +22,6 @@ interface Props {
   trackProperties: any;
 }
 const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
-
   return (
     <>
       <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 pt-7 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-[48px] lg:pb-[54px]">
@@ -72,12 +70,7 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
         </div>
       </section>
       <div className="relative z-20 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
-        <FreeAccountButton
-          className="gap-1.5"
-          text={trackProperties?.btnText}
-          onClick={() => handleRedirect({ pathname })}
-          loading={loading}
-        />
+        <FreeTrialButton className="gap-1.5" text={trackProperties?.btnText} />
 
         <CardRequiredButton className="text-wallStreet" text={ncc} />
       </div>

@@ -280,6 +280,177 @@ export const billingFaqData = {
     },
   ],
 };
+export const businessBenefits = [
+  "Effortlessly Manage Your Business",
+  "Team Collaboration",
+  "Simple Scheduling",
+  "Estimating & Invoicing",
+  "Access from PC, Android and iOS!",
+];
+export const integrations = [
+  {
+    id: "1",
+    name: "Zapier",
+    logo: "/images/svg/zapier.svg",
+    categories: ["Productivity", "Payments"],
+    description:
+      "Experience a new level of efficiency through the collaboration of Contractor+ and Zapier.",
+    link: "#",
+  },
+  {
+    id: "2",
+    name: "Simply Business",
+    logo: "/images/svg/simple-business.svg",
+    categories: ["other"],
+    description:
+      "Discover a new era of business protection and growth. Safeguard your journey, simplify your ambitions.",
+    link: "#",
+  },
+  {
+    id: "3",
+    name: "Venmo",
+    logo: "/images/svg/venmo.svg",
+    categories: ["Payments"],
+    description:
+      "Integrating Venmo's versatile payment solution through Contractor+ is as simple as a few clicks, streamlining your experience.",
+    link: "#",
+  },
+  {
+    id: "4",
+    name: "CashApp",
+    logo: "/images/svg/cash-app.svg",
+    categories: ["Payments"],
+    description:
+      "Contractor+ partners with CashApp for seamless financial management. Users can handle payments and invoices within the app.",
+    link: "#",
+  },
+  {
+    id: "5",
+    name: "PayPal",
+    logo: "/images/svg/paypal.svg",
+    categories: ["Payments"],
+    description:
+      "In a strategic stride towards redefining financial transactions, Contractor+ proudly announces its collaboration with PayPal.",
+    link: "#",
+  },
+  {
+    id: "6",
+    name: "Authorize.net",
+    logo: "/images/svg/authorize.svg",
+    categories: ["Payments"],
+    description:
+      "Authorize.net seamlessly integrates with Contractor+ to streamline your payments experience.",
+    link: "#",
+  },
+  {
+    id: "7",
+    name: "Square",
+    logo: "/images/svg/square.svg",
+    categories: ["Payments"],
+    description:
+      "Contractor+ and Square's partnership brings together sophisticated solutions and simple payment processing.",
+    link: "#",
+  },
+  {
+    id: "8",
+    name: "Stripe",
+    logo: "/images/svg/strapi.svg",
+    categories: ["Payments"],
+    description:
+      "With just a few clicks, you can blend Stripe's powerful payment processing with Contractor+’s Experience Case study.",
+    link: "#",
+  },
+  {
+    id: "9",
+    name: "Gmail",
+    logo: "/images/svg/gmail.svg",
+    categories: ["Productivity"],
+    description:
+      "In pursuit of enhancing client communication, Contractor+ has chosen to integrate with Gmail, a widely adopted platform.",
+    link: "#",
+  },
+  {
+    id: "10",
+    name: "Outlook Calendar",
+    logo: "/images/svg/outlook.svg",
+    categories: ["Calendar"],
+    description:
+      "Unlock enhanced collaboration and seamless schedule syncing with Contractor+ and Outlook Calendar.",
+    link: "#",
+  },
+  {
+    id: "11",
+    name: "iCal",
+    logo: "/images/svg/calender.svg",
+    categories: ["Calendar"],
+    description:
+      "Contractor+ and iCal bring a smart way to manage your schedules. With quick and easy integration.",
+    link: "#",
+  },
+  {
+    id: "12",
+    name: "Office 365 Calendar",
+    logo: "/images/svg/office-365.svg",
+    categories: ["Calendar"],
+    description:
+      "Unlock the potential of efficient scheduling with Contractor+ and the Office 365 Calendar.",
+    link: "#",
+  },
+  {
+    id: "13",
+    name: "Google Calendar",
+    logo: "/images/svg/google-calender.svg",
+    categories: ["Calendar"],
+    description:
+      "Contractor+ and Google Calendar integration offer tremendous opportunities for contractors helping them synchronize tasks.",
+    link: "#",
+  },
+  {
+    id: "14",
+    name: "Quickbooks Online",
+    logo: "/images/svg/quickbooks.svg",
+    categories: ["Accounting"],
+    description:
+      "Contractor+ integrates with QuickBooks to simplify your accounting tasks, allowing contractors to focus on growth.",
+    link: "#",
+  },
+  {
+    id: "15",
+    name: "Thumbtack",
+    logo: "/images/svg/thumbtach.svg",
+    categories: ["Leads"],
+    description:
+      "This collaboration empowers home service professionals to efficiently connect with potential clients.",
+    link: "#",
+  },
+  {
+    id: "16",
+    name: "EarthCam",
+    logo: "/images/svg/earthcam.svg",
+    categories: ["Productivity"],
+    description:
+      "Embark on a transformative journey in project management as EarthCam and Contractor+ join hands.",
+    link: "#",
+  },
+  {
+    id: "17",
+    name: "Wisetack",
+    logo: "/images/svg/wisetack.svg",
+    categories: ["Payments"],
+    description:
+      "Stress-free. Thanks to Contractor+ and Wisetack, financing dream services for your clients has never been easier.",
+    link: "#",
+  },
+  {
+    id: "18",
+    name: "CompanyCam",
+    logo: "/images/svg/companycom.svg",
+    categories: ["Productivity"],
+    description:
+      "Say goodbye to chaos—Contractor+ and CompanyCam sync your client info for effortless project photo and document management.",
+    link: "#",
+  },
+];
 export const leadGenerationData = {
   title:
     "Sure, you could hire an SEO agency or contractor… if you like playing roulette",

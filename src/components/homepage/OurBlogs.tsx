@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import Button from "../common/Button";
-import CardReveal from "../common/CardReveal";
 import { BlogBtnIcon } from "../common/Icons";
-import SliderLayout from "../common/SliderLayout";
 import OurBlogCard from "./OurBlogCard";
 import Copy from "../common/Copy";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
 interface Blogs {
   blogTitle: string;
@@ -28,7 +28,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
   const blogListMobile = [
     {
       id: 1,
-      title: "Contractor+ Blog",
+      title: "Contractor+ Blogss",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
       imageSrc: "/images/webp/blog-image-1.webp",
@@ -53,12 +53,21 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageWidth: "305px",
       backgroundImage: "/images/svg/blog-3.svg",
     },
+    {
+      id: 4,
+      title: "FREE Tools & Templates",
+      description:
+        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
+      imageSrc: "/images/webp/blog-image-3.webp",
+      imageWidth: "305px",
+      backgroundImage: "/images/svg/blog-3.svg",
+    },
   ];
 
   return (
-    <section className="relative z-10 overflow-hidden bg-white px-2 pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
-      <div className="mx-auto w-full max-w-[1294px]">
-        <div className="mb-6 hidden flex-col items-center justify-between md:flex-row lg:flex">
+    <section className="relative z-10 overflow-hidden bg-white pt-[18px] pb-[38px] md:pt-12 md:pb-[82px]">
+      <div className="mx-auto w-full">
+        <div className="main-container mb-6 hidden flex-col items-center justify-between px-2 md:flex-row lg:flex">
           <Copy delay={0.3}>
             <h2 className="gradient-text-2 text-[26px] font-semibold text-black md:text-[35px] lg:text-[42px]">
               {blogHeading?.title}
@@ -71,7 +80,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             </Button>
           </Link>
         </div>
-        <div className="mb-6 flex flex-col items-center justify-between md:mb-8 md:flex-row lg:hidden">
+        <div className="main-container mb-6 flex flex-col items-center justify-between px-2 md:mb-8 md:flex-row lg:hidden">
           <h2 className="gradient-text-2 text-center text-[26px] font-semibold text-black md:text-start md:text-[35px] lg:text-[42px]">
             {blogHeading?.title}
           </h2>
@@ -82,41 +91,37 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             </Button>
           </div>
         </div>
-
-        <CardReveal
-          distance={50}
-          className="hidden grid-cols-1 place-items-center gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid xl:gap-7"
-        >
-          {blogs.map((article, index) => (
-            <OurBlogCard
-              article={article}
-              key={index}
-              blogListMobile={blogListMobile}
-              index={index}
-            />
-          ))}
-        </CardReveal>
-        <div className="blog-post block xl:hidden">
-          <SliderLayout
-            autoplay
-            pagination
+        <div className="blog-post mx-auto flex w-full max-w-[1920px] flex-col items-center justify-center gap-4">
+          <Swiper
+            modules={[Pagination]}
+            loop={true}
+            pagination={{
+              el: ".swiper-pagination-pricing",
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            speed={600}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
               520: { slidesPerView: 1.5, spaceBetween: 12 },
               640: { slidesPerView: 2, spaceBetween: 12 },
               768: { slidesPerView: 2, spaceBetween: 16 },
-              900: { slidesPerView: 2.3, spaceBetween: 16 },
+              1024: { slidesPerView: 3, spaceBetween: 20 },
+              1280: { slidesPerView: 3.5, spaceBetween: 34 },
             }}
           >
             {blogs.map((article, index) => (
-              <OurBlogCard
-                article={article}
-                key={index}
-                blogListMobile={blogListMobile}
-                index={index}
-              />
+              <SwiperSlide>
+                <OurBlogCard
+                  article={article}
+                  key={index}
+                  blogListMobile={blogListMobile}
+                  index={index}
+                />
+              </SwiperSlide>
             ))}
-          </SliderLayout>
+          </Swiper>
+          <div className="swiper-pagination-pricing swiper-pagination-real-time-4 relative !left-0 flex !translate-x-0 items-center justify-center gap-1" />
         </div>
         <Link
           href={blogHeading.btnUrl}

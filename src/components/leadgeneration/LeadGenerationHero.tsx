@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
-import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import CardRequiredButton from "../common/CardRequiredButton";
-import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Image from "next/image";
-import { StartIcon } from "../common/Icons";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
+import AppsRating from "../common/AppsRating";
+import CardRequiredButton from "../common/CardRequiredButton";
+import CardReveal from "../common/CardReveal";
+import FreeTrialButton from "../common/FreeTrialButton";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -27,8 +26,6 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   nccTxt,
   imgUrl,
 }) => {
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="main-container flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-4">
       <div className="w-full max-w-[650px] xl:max-w-[732px]">
@@ -46,67 +43,18 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
           {description}
         </p>
         <div className="mx-auto flex w-fit flex-wrap-reverse items-center justify-center gap-4 sm:gap-5 lg:mx-0 lg:w-full lg:justify-start">
-          <CardReveal distance={50} delay={0.5}>
-            <Link
-              href="https://contractorplus.app/"
-              className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-            >
-              <Image
-                src="/images/webp/play-google.webp"
-                alt="google icon"
-                width={144}
-                height={36}
-                sizes="(max-width: 768px) 100px, 144px"
-                priority
-              />
-              <div className="flex items-center justify-center">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="max-w-7 md:max-w-5">
-                    <StartIcon key={i} />
-                  </span>
-                ))}
-              </div>
-            </Link>
-          </CardReveal>
-          <CardReveal distance={50} delay={0.6}>
-            <Link
-              href=""
-              className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-            >
-              <Image
-                src="/images/svg/Apple-Icon.svg"
-                alt="google icon"
-                width={144}
-                height={36}
-                sizes="(max-width: 768px) 100px, 144px"
-                priority
-              />
-              <div className="flex items-center justify-center">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="max-w-7 md:max-w-5">
-                    <StartIcon />
-                  </span>
-                ))}
-              </div>
-            </Link>
-          </CardReveal>
+          <AppsRating delayApple={0.5} delayGoogle={0.6} />
           <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
             <div className="flex w-full flex-col items-center gap-1.5 px-2 sm:w-fit">
-              <FreeAccountButton
+              <FreeTrialButton
                 className="!hidden sm:!flex"
                 text={getStartedFreeBtn}
                 showIcon={false}
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
-              <FreeAccountButton
+              <FreeTrialButton
                 showIcon={false}
                 className="mt-4 !flex w-full sm:!hidden"
                 text={mobileBtn}
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"

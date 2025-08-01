@@ -6,6 +6,7 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
 import CardRequiredButton from "../common/CardRequiredButton";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 interface Props {
   ncc: string;
@@ -75,18 +76,16 @@ const TrackProfiles: React.FC<Props> = ({ trackProperties }) => {
         </Copy>
 
         <div className="relative z-20 flex flex-col items-center justify-center gap-2.5 px-2">
-          <FreeAccountButton
+          <FreeTrialButton
             className="mt-3 !hidden gap-1.5 sm:!flex"
             text={trackProperties?.btnText}
-            onClick={() => handleRedirect({ pathname })}
-            loading={loading}
           />
-          <FreeAccountButton
+
+          <FreeTrialButton
             className="mt-3 !flex gap-1.5 sm:!hidden"
             text={trackProperties?.mobileBtn}
-            onClick={() => handleRedirect({ pathname })}
-            loading={loading}
           />
+
           <CardRequiredButton
             className="text-wallStreet"
             text={"No Credit Card Required"}

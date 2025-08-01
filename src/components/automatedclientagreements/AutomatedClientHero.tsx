@@ -13,6 +13,8 @@ import Copy from "../common/Copy";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import { usePathname } from "next/navigation";
+import AppsRating from "../common/AppsRating";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 export interface TheHeroProps {
   hero: any;
@@ -59,8 +61,7 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
       });
     }, 700);
   }, []);
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
+
   return (
     <section
       ref={wrapperRef}
@@ -85,7 +86,7 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
           <div className="px-2 pt-8 md:pt-0">
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
-              className="gradient-2 xs:text-[28px] mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
+              className="gradient-2 mb-2 w-fit text-start leading-[127%] font-extrabold sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]"
               minFontSize={16}
               maxLines={3}
               maxFontSize={48}
@@ -98,67 +99,18 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
             </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <CardReveal distance={50} delay={0.5}>
-              <Link
-                href="https://contractorplus.app/"
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/webp/play-google.webp"
-                  alt="google icon"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon key={i} />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
-            <CardReveal distance={50} delay={0.6} className="">
-              <Link
-                href=""
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/svg/Apple-Icon.svg"
-                  alt="google icon"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
+            <AppsRating />
             <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
-                <FreeAccountButton
+                <FreeTrialButton
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
-                <FreeAccountButton
+                <FreeTrialButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

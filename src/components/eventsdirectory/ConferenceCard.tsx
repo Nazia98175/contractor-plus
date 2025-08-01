@@ -76,6 +76,7 @@ const ConferenceCard = ({
               clickable: true,
               dynamicBullets: true,
             }}
+            speed={600}
             navigation={{
               nextEl: `.swiper-button-next-${swiperId}`,
               prevEl: `.swiper-button-prev-${swiperId}`,

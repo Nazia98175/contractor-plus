@@ -1,18 +1,18 @@
 "use client";
-import dynamic from "next/dynamic";
-import { getMediaUrl } from "@/utils/getMediaUrl";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
+import FreeAccountButton from "../common/FreeAccountButton";
+import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { usePathname } from "next/navigation";
+import FreeTrialButton from "../common/FreeTrialButton";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -43,9 +43,6 @@ const CommonHero: React.FC<TheHeroProps> = ({
       once: true,
     });
   }, []);
-
-  console.log(heroImg, "crm hero");
-  // const imageUrl = typeof heroImg === "string" ? heroImg : getMediaUrl(heroImg);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -90,10 +87,11 @@ const CommonHero: React.FC<TheHeroProps> = ({
           <div className="px-2 pt-8 md:pt-0">
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
-              className="gradient-2 xs:text-[28px] mb-2 w-fit text-start text-[26px] leading-[127%] font-extrabold sm:mx-auto sm:text-4xl md:mb-4 md:text-center lg:mb-[26px] lg:text-5xl"
+              className="gradient-2 mb-2 w-fit text-start leading-[127%] font-extrabold sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]"
               minFontSize={16}
-              maxLines={3}
+              maxLines={2}
               maxFontSize={48}
+              textAnimation="home-page-view-port-screen-fetures"
             />
             {/* </Copy> */}
             <Copy delay={0.4} animateOnScroll={false}>
@@ -103,67 +101,19 @@ const CommonHero: React.FC<TheHeroProps> = ({
             </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <CardReveal distance={50} delay={0.5}>
-              <Link
-                href="https://contractorplus.app/"
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/webp/play-google.webp"
-                  alt="google icon"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon key={i} />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
-            <CardReveal distance={50} delay={0.6} className="">
-              <Link
-                href=""
-                className="mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0"
-              >
-                <Image
-                  src="/images/svg/Apple-Icon.svg"
-                  alt="google icon"
-                  width={144}
-                  height={36}
-                  sizes="(max-width: 768px) 100px, 144px"
-                  priority
-                />
-                <div className="flex items-center justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="max-w-7 md:max-w-5">
-                      <StartIcon />
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </CardReveal>
+            <AppsRating />
             <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
-                <FreeAccountButton
+                <FreeTrialButton
                   className="!hidden sm:!flex"
                   text={commonData?.getStartedFreeBtn}
                   showIcon={false}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
-                <FreeAccountButton
+
+                <FreeTrialButton
                   showIcon={false}
                   className="!flex w-full sm:!hidden"
                   text={commonData?.mobileBtn}
-                  onClick={() => handleRedirect({ pathname })}
-                  loading={loading}
-                  disabled={loading}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"

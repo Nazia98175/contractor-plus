@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeAccountButton from "../common/FreeAccountButton";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 interface Props {
   ncc: string;
@@ -72,11 +73,10 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
             {trackProperties?.subTitle}
           </p>
         </Copy>
-        <FreeAccountButton
+
+        <FreeTrialButton
           className="mt-3 !flex gap-1.5 sm:!hidden"
           text={trackProperties?.mobileBtn}
-          onClick={() => handleRedirect({ pathname })}
-          loading={loading}
         />
       </div>
     </section>

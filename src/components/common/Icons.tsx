@@ -90,7 +90,26 @@ export const LogoIcon = () => (
     </defs>
   </svg>
 );
-
+export const ResizeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+  >
+    <path
+      d="M10.7006 19.621L9.0498 21.2707L14 26.2208L18.9501 21.2707L17.2993 19.621L14 22.9215L10.7006 19.621ZM17.2993 8.37901L18.9501 6.72934L14 1.77917L9.0498 6.72934L10.7006 8.37901L14 5.07968L17.2993 8.37901Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M14 10.5C14.9283 10.5 15.8185 10.8687 16.4749 11.5251C17.1313 12.1815 17.5 13.0717 17.5 14C17.5 14.9283 17.1313 15.8185 16.4749 16.4749C15.8185 17.1313 14.9283 17.5 14 17.5C13.0717 17.5 12.1815 17.1313 11.5251 16.4749C10.8687 15.8185 10.5 14.9283 10.5 14C10.5 13.0717 10.8687 12.1815 11.5251 11.5251C12.1815 10.8687 13.0717 10.5 14 10.5ZM14 12.8333C14.3094 12.8333 14.6062 12.9562 14.825 13.175C15.0437 13.3938 15.1667 13.6906 15.1667 14C15.1667 14.3094 15.0437 14.6062 14.825 14.825C14.6062 15.0437 14.3094 15.1667 14 15.1667C13.6906 15.1667 13.3938 15.0437 13.175 14.825C12.9562 14.6062 12.8333 14.3094 12.8333 14C12.8333 13.6906 12.9562 13.3938 13.175 13.175C13.3938 12.9562 13.6906 12.8333 14 12.8333Z"
+      fill="currentColor"
+    />
+  </svg>
+);
 export const TwitterIcon = ({
   width = 18,
   height = 18,
@@ -4387,6 +4406,23 @@ export const GrowthIcon = () => (
     </defs>
   </svg>
 );
+export const RightLinkIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M7 17L17 7M17 7H7M17 7V17"
+      stroke="#8D8D8D"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export const CustomerDemandIcon = () => (
   <svg
@@ -4906,5 +4942,48 @@ export const YouTubeIcon2 = () => (
         />
       </clipPath>
     </defs>
+  </svg>
+);
+export const UnionIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 92 92"
+    fill="none"
+  >
+    <path
+      d="M46.8548 45.005L90.8592 1.0039L91.8535 1.99818L47.8491 45.9993L91.8535 90.0018L90.8592 90.9961L46.8548 46.9936L1.84784 92L0.853516 91.0057L45.8605 45.9993L0.853516 0.994283L1.84784 0L46.8548 45.005Z"
+      fill="url(#paint0_radial_5543_6527)"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_5543_6527"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(46.3535 46) scale(64.8976 64.1867)"
+      >
+        <stop stopColor="#FFC9CB" />
+        <stop offset="1" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+export const PlusIconAnimation = () => (
+  <svg
+    width="31"
+    height="31"
+    viewBox="0 0 31 31"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M29.4149 12.9151L29.4122 18.1976L29.4115 19.1968H19.1405L19.1391 28.4735L19.1398 29.4741L18.1385 29.4727L12.8546 29.4685L11.8554 29.4678L11.8561 28.4686L11.8574 19.1962L2.58632 19.1989H1.58643V18.199L1.58367 12.9164V11.9165L2.58425 11.9159L11.8561 11.9138L11.8581 2.64198V1.64209L12.8573 1.64278L18.1399 1.64002H19.1398L19.1405 2.6406V11.9145L28.4151 11.9152H29.4149V12.9151Z"
+      fill="#"
+      stroke="#"
+      strokeWidth="2"
+    />
   </svg>
 );

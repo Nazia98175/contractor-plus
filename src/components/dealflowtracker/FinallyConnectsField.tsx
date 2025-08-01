@@ -28,6 +28,7 @@ import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import FreeAccountButton from "../common/FreeAccountButton";
 import CardReveal from "../common/CardReveal";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -360,21 +361,15 @@ const FinallyConnectsField = () => {
           <ArrowIcon fill="white" />
         </Button> */}
         <CardReveal className="hidden md:block">
-          <FreeAccountButton
+          <FreeTrialButton
             className="mx-auto mt-3 mb-1.5 !w-fit"
             text={"Get started FREE"}
-            onClick={() => handleRedirect({ pathname })}
-            loading={loading}
-            disabled={loading}
           />
         </CardReveal>
         <CardReveal className="block md:hidden">
-          <FreeAccountButton
+          <FreeTrialButton
             className="mx-auto mt-3 mb-1.5 !w-fit"
             text={"Download FREE App"}
-            onClick={() => handleRedirect({ pathname })}
-            loading={loading}
-            disabled={loading}
           />
         </CardReveal>
         <CardRequiredButton text="No credit card required" />

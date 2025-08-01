@@ -64,6 +64,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
           500: { slidesPerView: 3, spaceBetween: 8 },
           640: { slidesPerView: 5, spaceBetween: 20 },
         }}
+        speed={600}
       >
         {images?.length > 0
           ? images.map((award: any, index: number) => (

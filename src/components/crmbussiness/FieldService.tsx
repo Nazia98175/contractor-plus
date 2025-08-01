@@ -18,23 +18,6 @@ const FieldService: React.FC<TheServiceProps> = ({
   apiData = true,
   mainClassName,
 }) => {
-  const getHeadingClass = () => {
-    switch (slug) {
-      case "general-contractor":
-        return "heading-text-2";
-      case "crm":
-        return "crm-overlap-car-heading";
-      case "hvac":
-        return "gradient-text-2";
-      case "plumbing-contractor":
-        return "plumbing-text font-bold";
-      case "estimatic-ai":
-        return "heading-text-2";
-      default:
-        return "gradient-text-version-v2 max-w-[813px]";
-    }
-  };
-
   return (
     <section className="relative z-30 px-2 pt-14 sm:pt-20 lg:pt-2">
       <Copy animateOnScroll={true}>
@@ -45,7 +28,6 @@ const FieldService: React.FC<TheServiceProps> = ({
         </h2>
       </Copy>
       <ScrollOverlapCards
-        getHeadingClass={getHeadingClass}
         theme={theme}
         slug={slug || ""}
         fieldService={fieldService}

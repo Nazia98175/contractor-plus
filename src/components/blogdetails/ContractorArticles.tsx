@@ -37,7 +37,7 @@ const ContractorArticles = () => {
         <Swiper
           slidesPerView={1}
           slidesPerGroup={1}
-          speed={500}
+          speed={600}
           navigation={{
             nextEl: ".swiper-button-next1",
             prevEl: ".swiper-button-prev1",

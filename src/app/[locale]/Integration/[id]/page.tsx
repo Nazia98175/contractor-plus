@@ -1,4 +1,3 @@
-import NotFound from "@/app/not-found";
 import CommonFormField from "@/components/common/CommonFormField";
 import { integrationfaqitems, platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
@@ -7,24 +6,9 @@ import Faq from "@/components/crmbussiness/Faq";
 import IntegrationDetail from "@/components/integration-details/IntegrationDetail";
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
 
-async function getById(id: string) {
-  return integrations.find((item) => item.id === id);
-}
-
-export async function generateStaticParams() {
-  return integrations.map((item) => ({
-    id: item.id,
-  }));
-}
-
-const IntegrationDetails = async ({
-  params,
-}: {
-  params: { id: string; locale: string };
-}) => {
-  const { id } = params;
-  const user = await getById(id);
-  if (!user) return NotFound();
+const IntegrationDetails = () => {
+  // Use first integration as static data
+  const user = integrations[0];
 
   return (
     <main>

@@ -5,38 +5,32 @@ import Marquee from "react-fast-marquee";
 
 const IntegrationHero = () => {
   const marqueeItem = [
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
-    { id: 1, icon: "/images/png/paypall-icon.png" },
+    { id: 1, icon: "/images/png/zapier.png" },
+    { id: 2, icon: "/images/png/simple-bussines.png" },
+    { id: 3, icon: "/images/png/companycam.png" },
+    { id: 4, icon: "/images/png/thumbtack.png" },
+    { id: 5, icon: "/images/png/angi.png" },
+    { id: 6, icon: "/images/png/wisetack.png" },
+    { id: 7, icon: "/images/png/abc-supply.png" },
+    { id: 8, icon: "/images/png/lowes.png" },
+    { id: 9, icon: "/images/png/bird.png" },
+    { id: 10, icon: "/images/png/camera.png" },
+    { id: 11, icon: "/images/png/gmail.png" },
+    { id: 12, icon: "/images/png/outlook.png" },
+  ];
+  const marqueeItem2 = [
+    { id: 1, icon: "/images/png/calander.png" },
+    { id: 2, icon: "/images/png/ace-hardware.png" },
+    { id: 3, icon: "/images/png/ferguson.png" },
+    { id: 4, icon: "/images/png/quickbooks.png" },
+    { id: 5, icon: "/images/png/earthcam.png" },
+    { id: 6, icon: "/images/png/tesla.png" },
+    { id: 7, icon: "/images/png/abc.png" },
+    { id: 8, icon: "/images/png/lowe.png" },
+    { id: 9, icon: "/images/png/menared.png" },
+    { id: 10, icon: "/images/png/ace.png" },
+    { id: 11, icon: "/images/png/build.png" },
+    { id: 12, icon: "/images/png/victory.png" },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -72,7 +66,7 @@ const IntegrationHero = () => {
           without the hassle.
         </p>
       </div>
-      {/* <div className="relative">
+      <div className="relative">
         <Marquee direction="right" speed={200}>
           {marqueeItem.map((item, index) => (
             <div className="mr-14 w-full max-w-[88px] min-w-[88px] border">
@@ -81,14 +75,14 @@ const IntegrationHero = () => {
           ))}
         </Marquee>
         <Marquee direction="left" speed={200}>
-          {marqueeItem.map((item, index) => (
+          {marqueeItem2.map((item, index) => (
             <div className="mr-14 w-full max-w-[88px] min-w-[88px] border">
               <img src={item.icon} key={index} alt="" />
             </div>
           ))}
         </Marquee>
-        <div className="ccc absolute top-[-20%] w-full"></div>
-      </div> */}
+        {/* <div className="ccc absolute top-0 left-0 z-20 h-full w-full"></div> */}
+      </div>
     </section>
   );
 };

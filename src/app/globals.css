@@ -2136,8 +2136,8 @@ button {
   text-fill-color: transparent;
 }
 .ccc {
-  border-radius: 1733px;
-  background-color: rgba(12, 13, 17, 0.02);
-  filter: blur(40.04999923706055px);
-  backdrop-filter: blur(25.399999618530273px);
+  border: 350px solid rgba(12, 13, 17, 0.02);
+  filter: blur(40.05px);
+  backdrop-filter: blur(25.4px);
+  transform: rotate(-90deg);
 }

@@ -53,7 +53,7 @@ const page = () => {
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
 
-      <div className="relative overflow-hidden">
+      {/* <div className="relative overflow-hidden">
         <FieldService
           fieldService={automatedCardData}
           theme="dark"
@@ -61,7 +61,7 @@ const page = () => {
           apiData={false}
           mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
         />
-      </div>
+      </div> */}
       <div className="mt-16 bg-white sm:mt-0">
         <TrackProperties
           ncc={"No credit card required"}

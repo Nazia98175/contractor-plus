@@ -48,6 +48,9 @@ const page = () => {
             "Know the full story on every property you manage or service — instantly.",
           heroDescription:
             "Contractor+ is the first to offer a living, breathing history for each property that self-updates with every job, document, & email.",
+          border: true,
+          overlay: true,
+          imageMaxWidth: 900,
         }}
         featureTag="Property Management CRM"
         heroImg="/images/webp/property-profiles.webp"

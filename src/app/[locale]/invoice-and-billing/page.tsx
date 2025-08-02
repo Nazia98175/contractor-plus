@@ -42,6 +42,9 @@ const BillingPage = () => {
           heroTitle: "Living invoices that instantly reflect every change",
           heroDescription:
             "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
+          border: true,
+          overlay: true,
+          imageMaxWidth: 900,
         }}
         heroImg="/images/webp/invoicing-billing.webp"
         slug="crm"

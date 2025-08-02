@@ -40,6 +40,9 @@ const DealFlowTracker = () => {
             "The one board that shows every deal, dollar value, and what to do next",
           heroDescription:
             "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
+          border: true,
+          overlay: true,
+          imageMaxWidth: 900,
         }}
         featureTag="Opportunity Tracker"
         heroImg="/images/webp/deal-flow-hero.webp"

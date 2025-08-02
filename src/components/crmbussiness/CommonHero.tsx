@@ -30,6 +30,10 @@ const CommonHero: React.FC<TheHeroProps> = ({
   featureTag,
   apiData = true,
 }) => {
+  console.log(heroImg, "crm image");
+  console.log(hero, "crm hero");
+  console.log(commonData, "crm common");
+  console.log(featureTag, "crm feature");
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     gsap.to(wrapperRef.current, {
@@ -123,7 +127,9 @@ const CommonHero: React.FC<TheHeroProps> = ({
           <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
             <div className="relative overflow-hidden">
               {apiData ? (
-                <div className="border-silverMedal z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4">
+                <div
+                  className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                >
                   {heroImg?.url && (
                     <Image
                       className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
@@ -135,10 +141,12 @@ const CommonHero: React.FC<TheHeroProps> = ({
                       priority
                     />
                   )}
-                  <AnimatedShape />
+                  {hero?.overlay && <AnimatedShape />}
                 </div>
               ) : (
-                <div className="border-silverMedal z-30 mx-auto mt-9 block max-w-[900px] overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4">
+                <div
+                  className={`${hero?.border ? "border-silverMedal overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                >
                   {heroImg && (
                     <Image
                       className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
@@ -150,7 +158,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                       priority
                     />
                   )}
-                  <AnimatedShape />
+                  {hero?.overlay && <AnimatedShape />}
                 </div>
               )}
             </div>

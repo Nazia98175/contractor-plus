@@ -5036,3 +5036,53 @@ export const DividerIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+export const BlurIcon2 = () => (
+  <svg
+    width="100%"
+    height="601"
+    viewBox="0 0 1440 601"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <foreignObject x="-226.1" y="-286.1" width="1893.2" height="1174.2">
+      <div
+        style={{
+          backdropFilter: "blur(25.4px)",
+          height: "100%",
+          width: "100%",
+        }}
+      ></div>
+    </foreignObject>
+    <g filter="url(#filter0_f_5543_4065)" data-figma-bg-blur-radius="50.8">
+      <path
+        d="M1412 301C1412 353.19 1374.61 432.525 1244.83 508.459C1119.26 581.933 934.272 633 720.5 633C506.728 633 321.743 581.933 196.17 508.459C66.3932 432.525 29 353.19 29 301C29 248.81 66.3932 169.475 196.17 93.541C321.743 20.0668 506.728 -31 720.5 -31C934.272 -31 1119.26 20.0668 1244.83 93.5411C1374.61 169.475 1412 248.81 1412 301Z"
+        stroke="#0C0D11"
+        stroke-opacity="0.02"
+        stroke-width="350"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_5543_4065"
+        x="-226.1"
+        y="-286.1"
+        width="1893.2"
+        height="1174.2"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="40.05"
+          result="effect1_foregroundBlur_5543_4065"
+        />
+      </filter>
+    </defs>
+  </svg>
+);

@@ -4253,7 +4253,11 @@ export const automate_ControlData = {
     },
   ],
 };
-
+import Agree_Creation from "../../../public/lotties/agreement-creation.json";
+import Signature_Approval from "../../../public/lotties/signature-approval.json";
+import Change_Management from "../../../public/lotties/change-management.json";
+import Storage_Access from "../../../public/lotties/storage-access.json";
+import Recurring_Docs from "../../../public/lotties/recurring-docs.json";
 export const automatedCardData = {
   id: 1,
   title:
@@ -4285,6 +4289,7 @@ export const automatedCardData = {
         username: "John Doe",
       },
       cardImg: "/images/webp/agree-creation.webp",
+      lottieJson: Agree_Creation,
     },
     {
       id: 2,
@@ -4308,6 +4313,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/signature-approved.webp",
+      lottieJson: Signature_Approval,
     },
     {
       id: 3,
@@ -4331,6 +4337,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/change-management.webp",
+      lottieJson: Change_Management,
     },
     {
       id: 4,
@@ -4354,6 +4361,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/storage-access.webp",
+      lottieJson: Storage_Access,
     },
     {
       id: 5,
@@ -4381,6 +4389,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/requeere-doc.webp",
+      lottieJson: Recurring_Docs,
     },
   ],
 };

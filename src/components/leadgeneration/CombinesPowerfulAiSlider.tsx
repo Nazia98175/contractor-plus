@@ -5,6 +5,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
 import { Navigation, Pagination, Controller, Autoplay } from "swiper/modules";
 import { Description } from "@headlessui/react";
+import Social_cross from "../../../public/lotties/social-cross-posting.json";
+import Review_reply from "../../../public/lotties/review-replies.json";
+import Review_Request from "../../../public/lotties/review-requests.json";
+import Crush_local from "../../../public/lotties/Crush-local-search.json";
+import Auto_position from "../../../public/lotties/Auto-Posting.json";
+import citation_sync from "../../../public/lotties/Citation-Sync.json";
+import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
+import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
+import LottieAnimation from "../homepage/LottieAnimation";
 
 const CombinesPowerfulAiSlider = () => {
   const [topSwiper, setTopSwiper] = useState<any>(null);
@@ -91,17 +100,17 @@ const CombinesPowerfulAiSlider = () => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6000,
+        //   disableOnInteraction: false,
+        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
         className="!h-auto"
       >
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <div className="mx-auto flex h-fit max-h-[313px] w-full max-w-[441px]">
-            <Image
+          <div className="mx-auto flex h-fit w-full max-w-[800px]">
+            {/* <Image
               unoptimized
               width={871}
               height={625}
@@ -109,12 +118,17 @@ const CombinesPowerfulAiSlider = () => {
               src={"/images/webp/ai-learning-engine.webp"}
               alt="Slide Image"
               className="w-full object-cover"
+            /> */}
+            <LottieAnimation
+              className="mx-auto h-full w-full"
+              loop={true}
+              animationData={citation_sync_logo}
             />
           </div>
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="mx-auto w-full max-w-[305px]">
-            <Image
+            {/* <Image
               unoptimized
               sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
               width={305}
@@ -123,12 +137,17 @@ const CombinesPowerfulAiSlider = () => {
               src={"/images/webp/auto-posting.webp"}
               alt="Slide Image"
               className="mx-auto w-full object-center"
+            /> */}
+            <LottieAnimation
+              className="mx-auto h-full w-full"
+              loop={true}
+              animationData={Auto_position}
             />
           </div>
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <div className="mx-auto w-full max-w-[596px]">
-            <Image
+            {/* <Image
               priority
               sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
               width={596}
@@ -136,6 +155,11 @@ const CombinesPowerfulAiSlider = () => {
               src={"/images/webp/review-replies.webp"}
               alt="Slide Image"
               className="object-cover"
+            /> */}
+            <LottieAnimation
+              className="mx-auto h-full w-full"
+              loop={true}
+              animationData={Review_reply}
             />
           </div>
         </SwiperSlide>
@@ -158,7 +182,7 @@ const CombinesPowerfulAiSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="!h-auto">
           <div className="relative mx-auto flex h-full w-full max-w-[452px] items-end pb-[98px]">
-            <Image
+            {/* <Image
               unoptimized
               sizes="(max-width: 768px) 571px, (min-width: 769px) 571px"
               width={571}
@@ -167,6 +191,11 @@ const CombinesPowerfulAiSlider = () => {
               src={"/images/webp/review-requests.webp"}
               alt="Slide Image"
               className="mx-auto w-full object-cover"
+            /> */}
+            <LottieAnimation
+              className="mx-auto h-full w-full"
+              loop={true}
+              animationData={Review_Request}
             />
           </div>
         </SwiperSlide>
@@ -192,6 +221,7 @@ const CombinesPowerfulAiSlider = () => {
             height={1200}
             alt="sync-weather"
           />
+
           <div className="relative z-30 h-full w-full overflow-hidden">
             <div className="mx-auto flex h-full w-full max-w-[79px] items-center justify-center">
               <Image
@@ -222,8 +252,8 @@ const CombinesPowerfulAiSlider = () => {
             <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <Image
+        <SwiperSlide className="mx-auto !flex !h-auto flex-col items-center justify-center">
+          {/* <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
             width={900}
@@ -232,10 +262,15 @@ const CombinesPowerfulAiSlider = () => {
             src={"/images/webp/profile-optimization.webp"}
             alt="Slide Image"
             className="mx-auto w-full max-w-[365px] object-cover"
+          /> */}
+          <LottieAnimation
+            className="mx-auto h-full w-full max-w-[500px]"
+            loop={true}
+            animationData={Profile_optimization}
           />
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <Image
+          {/* <Image
             unoptimized
             sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
             width={900}
@@ -244,6 +279,11 @@ const CombinesPowerfulAiSlider = () => {
             src={"/images/webp/social-cross-posting.webp"}
             alt="Slide Image"
             className="mx-auto w-full max-w-[634px] object-cover"
+          /> */}
+          <LottieAnimation
+            className="mx-auto h-full w-full max-w-[600px] object-cover"
+            loop={true}
+            animationData={Social_cross}
           />
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
@@ -313,10 +353,10 @@ const CombinesPowerfulAiSlider = () => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 6000,
+          //   disableOnInteraction: false,
+          // }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

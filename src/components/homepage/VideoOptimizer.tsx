@@ -93,7 +93,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
       <div className="3xl:bottom-[-8.5%] bg-rgba16 absolute bottom-[-5%] z-10 h-[10%] w-[102%] blur-[8px]"></div>
 
       <img
-        className="absolute right-[-10px] bottom-[-2%] z-10 h-[30%] w-[102%]"
+        className="3xl:bottom-[2%] absolute right-[-10px] bottom-[-2%] z-10 h-[30%] w-[102%]"
         src="/images/png/hero-blur-2.png"
         alt="hero-blur"
       />

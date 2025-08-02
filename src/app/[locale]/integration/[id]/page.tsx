@@ -1,3 +1,4 @@
+import NotFound from "@/app/not-found";
 import CommonFormField from "@/components/common/CommonFormField";
 import { integrationfaqitems, platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
@@ -5,10 +6,22 @@ import { integrations } from "@/components/common/Utils";
 import Faq from "@/components/crmbussiness/Faq";
 import IntegrationDetail from "@/components/integration-details/IntegrationDetail";
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
-
-const IntegrationDetails = () => {
-  const user = integrations[0];
-
+async function getById(id: string) {
+  return integrations.find((item) => item.id === id);
+}
+export async function generateStaticParams() {
+  return integrations.map((item) => ({
+    id: item.id,
+  }));
+}
+const IntegrationDetails = async ({
+  params,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+}) => {
+  const { id } = await params;
+  const user = await getById(id);
+  if (!user) return NotFound();
   return (
     <main>
       <div className="relative bg-[url('/images/webp/integration-detail-bg.webp')] bg-contain bg-no-repeat sm:bg-cover">
@@ -47,5 +60,4 @@ const IntegrationDetails = () => {
     </main>
   );
 };
-
 export default IntegrationDetails;

@@ -53,7 +53,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     pathname.toLowerCase().includes("why-contractor");
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
-  const t = useTranslations("footer");
   const styles = footerVariantClasses[variant];
   const toggleSection = (title: string) => {
     setOpenSection(openSection === title ? null : title);

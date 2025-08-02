@@ -8,6 +8,8 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import Crush_local from "../../../public/lotties/Crush-local-search.json";
+import LottieAnimation from "../common/LottieAnimation";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -73,13 +75,18 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
           </CardReveal>
         </div>
       </div>
-      <div className="relative h-full max-h-[436px] w-full max-w-[650px] lg:max-w-[450px]">
-        <Image
+      <div className="relative h-full max-h-[436px] w-full max-w-[650px] rounded-[12px] bg-white lg:max-w-[450px]">
+        {/* <Image
           className="h-full max-h-[436px] w-full rounded-xl object-cover"
           src={imgUrl}
           alt={heading}
           width={450}
           height={436}
+        /> */}
+        <LottieAnimation
+          className="mx-auto h-full w-full"
+          loop={false}
+          animationData={Crush_local}
         />
         <div className="lead-generation-img-overlay pointer-events-none absolute top-0 left-0 z-0 h-full w-full"></div>
       </div>

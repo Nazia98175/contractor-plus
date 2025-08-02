@@ -58,7 +58,6 @@ const page = () => {
           fieldService={automatedCardData}
           theme="dark"
           slug="estimateTheme"
-          apiData={false}
           mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
         />
       </div> */}

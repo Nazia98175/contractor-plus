@@ -2964,6 +2964,10 @@ export const contractorIndustry = {
   url: "",
   btnText: "",
 };
+import needed_Approve from "../../../public/lotties/needed-approve.json";
+import your_Estimate from "../../../public/lotties/your-estimate.json";
+import describe_Estimate from "../../../public/lotties/Describe-estimate.json";
+import send_Your_Estimate from "../../../public/lotties/Send-your-estimate.json";
 export const estimaticCardData = {
   id: 1,
   title: "How to create a winning AI estimate ",
@@ -2981,6 +2985,7 @@ export const estimaticCardData = {
         username: "John Doe",
       },
       cardImg: "/images/webp/describe-estimate.webp",
+      lottieJson: describe_Estimate,
     },
     {
       title: "Step 2",
@@ -2991,6 +2996,7 @@ export const estimaticCardData = {
         },
       ],
       cardImg: "/images/webp/estimatic-builds.webp",
+      lottieJson: your_Estimate,
     },
     {
       title: "Step 3",
@@ -3001,6 +3007,7 @@ export const estimaticCardData = {
         },
       ],
       cardImg: "/images/webp/you-tweak.webp",
+      lottieJson: needed_Approve,
     },
     {
       title: "STEP 4",
@@ -3011,6 +3018,7 @@ export const estimaticCardData = {
         },
       ],
       cardImg: "/images/webp/send-your-estimate.webp",
+      lottieJson: send_Your_Estimate,
     },
   ],
 };
@@ -4253,7 +4261,11 @@ export const automate_ControlData = {
     },
   ],
 };
-
+import Agree_Creation from "../../../public/lotties/agreement-creation.json";
+import Signature_Approval from "../../../public/lotties/signature-approval.json";
+import Change_Management from "../../../public/lotties/change-management.json";
+import Storage_Access from "../../../public/lotties/storage-access.json";
+import Recurring_Docs from "../../../public/lotties/recurring-docs.json";
 export const automatedCardData = {
   id: 1,
   title:
@@ -4285,6 +4297,7 @@ export const automatedCardData = {
         username: "John Doe",
       },
       cardImg: "/images/webp/agree-creation.webp",
+      lottieJson: Agree_Creation,
     },
     {
       id: 2,
@@ -4308,6 +4321,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/signature-approved.webp",
+      lottieJson: Signature_Approval,
     },
     {
       id: 3,
@@ -4331,6 +4345,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/change-management.webp",
+      lottieJson: Change_Management,
     },
     {
       id: 4,
@@ -4354,6 +4369,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/storage-access.webp",
+      lottieJson: Storage_Access,
     },
     {
       id: 5,
@@ -4381,6 +4397,7 @@ export const automatedCardData = {
         },
       ],
       cardImg: "/images/webp/requeere-doc.webp",
+      lottieJson: Recurring_Docs,
     },
   ],
 };

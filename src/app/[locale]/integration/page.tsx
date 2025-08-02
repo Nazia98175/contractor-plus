@@ -12,8 +12,10 @@ const IntegrationPage = () => {
         id="home-page-view-port-screen-fetures"
         className="relative opacity-0"
       >
-        <IntegrationHero />
-        <IntegrationCards />
+        <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden px-2">
+          <IntegrationHero />
+          <IntegrationCards />
+        </div>
       </div>
       <div className="no-scrollbar relative overflow-x-hidden">
         <div className="mt-[71px] px-2 pb-12 lg:pb-9 xl:pb-12">

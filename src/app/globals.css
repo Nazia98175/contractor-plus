@@ -2135,9 +2135,3 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.ccc {
-  border: 350px solid rgba(12, 13, 17, 0.02);
-  filter: blur(40.05px);
-  backdrop-filter: blur(25.4px);
-  transform: rotate(-90deg);
-}

@@ -77,7 +77,6 @@ const EstimaticAiPage = async ({
       <FieldService
         fieldService={estimaticCardData}
         theme="dark"
-        apiData={false}
         mainClassName="text-center "
       />
       <div className="relative overflow-hidden">

@@ -2964,6 +2964,10 @@ export const contractorIndustry = {
   url: "",
   btnText: "",
 };
+import needed_Approve from "../../../public/lotties/needed-approve.json";
+import your_Estimate from "../../../public/lotties/your-estimate.json";
+import describe_Estimate from "../../../public/lotties/Describe-estimate.json";
+import send_Your_Estimate from "../../../public/lotties/Send-your-estimate.json";
 export const estimaticCardData = {
   id: 1,
   title: "How to create a winning AI estimate ",
@@ -2981,6 +2985,7 @@ export const estimaticCardData = {
         username: "John Doe",
       },
       cardImg: "/images/webp/describe-estimate.webp",
+      lottieJson: describe_Estimate,
     },
     {
       title: "Step 2",
@@ -2991,6 +2996,7 @@ export const estimaticCardData = {
         },
       ],
       cardImg: "/images/webp/estimatic-builds.webp",
+      lottieJson: your_Estimate,
     },
     {
       title: "Step 3",
@@ -3001,6 +3007,7 @@ export const estimaticCardData = {
         },
       ],
       cardImg: "/images/webp/you-tweak.webp",
+      lottieJson: needed_Approve,
     },
     {
       title: "STEP 4",
@@ -3011,6 +3018,7 @@ export const estimaticCardData = {
         },
       ],
       cardImg: "/images/webp/send-your-estimate.webp",
+      lottieJson: send_Your_Estimate,
     },
   ],
 };

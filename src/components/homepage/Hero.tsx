@@ -1,16 +1,13 @@
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import FreeAccountButton from "../common/FreeAccountButton";
-import HerosectionBackground from "./HerosectionBackground";
-import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import FreeTrialButton from "../common/FreeTrialButton";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import HerosectionBackground from "./HerosectionBackground";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,
 });
@@ -43,18 +40,13 @@ const Hero = ({
     }, 1000);
   }, []);
 
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="lg:bg-kuroiBlack relative z-20 w-full overflow-hidden">
       <HerosectionBackground />
-      <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[140px] lg:pb-[140px] xl:pb-[163px]">
+      <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[100px] lg:pb-[140px] xl:pt-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
-          <div className="relative z-30 flex w-full flex-col gap-[6px] sm:gap-6 lg:max-w-[628px]">
+          <div className="relative z-30 flex w-full flex-col gap-[6px] md:max-w-[628px] lg:gap-3 xl:gap-6">
             <Copy animateOnScroll={false} delay={1.1}>
-              {/* <h1 className="main-heading gradient-text xs:w-full w-full max-w-[85%]">
-                {heroTitle}
-              </h1> */}
               <AdaptiveHeroTitle
                 title={heroTitle}
                 className="gradient-text xs:w-full w-full leading-[127%] font-extrabold"
@@ -66,7 +58,7 @@ const Hero = ({
             </Copy>
 
             <Copy animateOnScroll={false} delay={1.2}>
-              <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium lg:text-lg">
+              <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium xl:text-lg">
                 {heroDescription}
               </p>
             </Copy>
@@ -104,7 +96,7 @@ const Hero = ({
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom lg:w-[70%]">
+        <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom xl:w-[70%]">
           <div className="relative -z-10 h-full w-full">
             <VideoOptimizer
               highResUrl={"/video/hero-video-higher.mp4"}

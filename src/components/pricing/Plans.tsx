@@ -16,7 +16,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll }) => {
 
       <div className="flex w-full flex-wrap justify-center gap-5 lg:flex-nowrap">
         {planData.map((plan, index) => (
-          <CardReveal distance={100} delay={2} key={index}>
+          <CardReveal distance={50} delay={0.2} key={index}>
             <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
           </CardReveal>
         ))}

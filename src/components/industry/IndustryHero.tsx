@@ -10,6 +10,7 @@ import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import IndustryHeroSlider from "./IndustryHeroSlider";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import { usePathname } from "next/navigation";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,
@@ -35,8 +36,6 @@ const IndustryHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -73,19 +72,13 @@ const IndustryHero: React.FC<TheHeroProps> = ({
             </p>
 
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
-              <FreeAccountButton
+              <FreeTrialButton
                 text={commonData?.getStartedFreeBtn}
                 className="!hidden sm:!flex"
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
-              <FreeAccountButton
+              <FreeTrialButton
                 text={commonData?.mobileBtn}
                 className="flex sm:!hidden"
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"

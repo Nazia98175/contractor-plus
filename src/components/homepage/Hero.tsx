@@ -19,8 +19,7 @@ const Hero = ({
   homePageContent: any;
   commonData: any;
 }) => {
-  const { heroTitle, heroDescription, createBtn, nccTxt, mobileBtn } =
-    homePageContent ?? {};
+  const { heroTitle, heroDescription } = homePageContent ?? {};
 
   useEffect(() => {
     window.scrollTo(0, 0);

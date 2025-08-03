@@ -10,7 +10,7 @@ import React, {
 interface Props {
   children: ReactNode;
   className?: string;
-  delay?: number;
+  delay?: any;
   distance?: number;
   animateOnMount?: boolean; // New prop to force animation on mount
 }

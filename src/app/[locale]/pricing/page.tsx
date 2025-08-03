@@ -7,9 +7,14 @@ import ComparisonTable from "@/components/pricing/ComparisonTable";
 import CompleteFeatureList from "@/components/pricing/CompleteFeatureList";
 import Plans from "@/components/pricing/Plans";
 import PricingHero from "@/components/pricing/PricingHero";
+import { getPricingData } from "@/services/pricing/getPricingData";
 import { useRef } from "react";
 
-const PricingPage = () => {
+const PricingPage =  ({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}) => {
   const compariosnTableRef = useRef<HTMLDivElement>(null);
   const plansRef = useRef<HTMLDivElement>(null);
   const scrollToTable = () => {
@@ -19,7 +24,19 @@ const PricingPage = () => {
   const scrollToPlans = () => {
     plansRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
+  //  const useParams = await params;
+   console.log("pricing rendering")
+   
+    //  const {
+    //    commonData,
+    //    pageContent,
+    //   //  industryShiftHighlights,
+    //   //  narrativeFlow,
+    //   //  seperateSolution,
+    //   //  connectedSystem,
+    //   //  featuresPlatform,
+    //   //  emailSign,
+    //  } = await getPricingData(useParams?.locale);
   return (
     <main className="font-myriad overflow-hidden">
       <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover">

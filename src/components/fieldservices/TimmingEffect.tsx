@@ -1,12 +1,11 @@
 "use client";
 import CardRequiredButton from "../common/CardRequiredButton";
 
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { useRef } from "react";
 import Ai_Call from "../../../public/lotties/AI-Call-Attendant.json";
 import checked_back from "../../../public/lotties/checked-back.json";
@@ -14,10 +13,9 @@ import dispatch_board from "../../../public/lotties/dispatch-board.json";
 import drag_drop from "../../../public/lotties/drag-and-drop.json";
 import Field_Updates from "../../../public/lotties/Field-Updates.json";
 import job_closed from "../../../public/lotties/job-closed.json";
-import Live_dispatch from "../../../public/lotties/Live-dispatch.json";
-import payment_sign from "../../../public/lotties/playement-sign.json";
 import location from "../../../public/lotties/location.json";
-import FreeAccountButton from "../common/FreeAccountButton";
+import payment_sign from "../../../public/lotties/playement-sign.json";
+import FreeTrialButton from "../common/FreeTrialButton";
 import LottieAnimation from "../common/LottieAnimation";
 import {
   stepFiveAnimation,
@@ -29,7 +27,6 @@ import {
   stepTwoAnimation,
 } from "./animations";
 import TimeAnimation from "./TimeAnimation";
-import Image from "next/image";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -123,9 +120,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-  console.log(timingEff, "timingEff");
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
+
   return (
     <div className="timing-text-style relative bg-white">
       <h2
@@ -430,13 +425,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        <FreeAccountButton
-          text={commonData?.getStartedFreeBtn}
-          showIcon={true}
-          loading={loading}
-          disabled={loading}
-          onClick={() => handleRedirect({ pathname })}
-        />
+        <FreeTrialButton text={commonData?.getStartedFreeBtn} showIcon={true} />
         <CardRequiredButton text={commonData?.nccTxt} />
       </div>
     </div>

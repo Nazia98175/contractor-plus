@@ -1,20 +1,15 @@
 "use client";
+import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect } from "react";
+import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { StartIcon } from "../common/Icons";
-import StatisticCard from "./StatisticCard";
 import Copy from "../common/Copy";
-import { estimateHeroData } from "../common/Utils";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { usePathname } from "next/navigation";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import AppsRating from "../common/AppsRating";
 import FreeTrialButton from "../common/FreeTrialButton";
+import { estimateHeroData } from "../common/Utils";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import StatisticCard from "./StatisticCard";
 
 const EstimaticHero = () => {
   useEffect(() => {
@@ -34,12 +29,7 @@ const EstimaticHero = () => {
       });
     }, 700);
   }, []);
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
 
-  const handleClick = () => {
-    handleRedirect({ pathname, email: "user@example.com" });
-  };
   return (
     <section className="bg-cover pb-8 text-white md:pb-14 xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">
       <div className="main-container flex justify-center pt-[126px] pb-1.5 xl:justify-between">

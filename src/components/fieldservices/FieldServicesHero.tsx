@@ -1,20 +1,18 @@
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import gsap from "gsap";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import React, { useEffect, useMemo, useState } from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import FreeAccountButton from "../common/FreeAccountButton";
+import FreeTrialButton from "../common/FreeTrialButton";
 import {
   HeroAppStoreIcon,
   HeroPlayStoreIcon,
   LocationIcon,
 } from "../common/Icons";
-import FieldServiceMap from "./FieldServiceMap";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import FieldServiceMap from "./FieldServiceMap";
 
 interface GeolocationData {
   latitude: number;
@@ -65,8 +63,7 @@ const FieldServicesHero: React.FC<Props> = ({
       });
     }, 700);
   }, []);
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
+
   const [location, setLocation] = useState<GeolocationData | null>(null);
   const [mapKey, setMapKey] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -163,21 +160,15 @@ const FieldServicesHero: React.FC<Props> = ({
               </button>
             </div>
             <div className="flex w-full flex-col items-center justify-center gap-[6px] sm:w-fit">
-              <FreeAccountButton
+              <FreeTrialButton
                 className="!hidden sm:!flex"
                 text={commonData?.getStartedFreeBtn}
                 showIcon={true}
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
-              <FreeAccountButton
+              <FreeTrialButton
                 showIcon={false}
                 className="!flex w-full sm:!hidden"
                 text={commonData?.mobileBtn}
-                loading={loading}
-                disabled={loading}
-                onClick={() => handleRedirect({ pathname })}
               />
               <CardRequiredButton
                 text={commonData?.nccTxt}

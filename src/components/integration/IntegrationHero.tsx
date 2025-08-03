@@ -1,9 +1,8 @@
 "use client";
 import gsap from "gsap";
-import React, { useEffect } from "react";
-import Marquee from "react-fast-marquee";
-import { BlurIcon2 } from "../common/Icons";
 import Image from "next/image";
+import { useEffect } from "react";
+import Marquee from "react-fast-marquee";
 
 const IntegrationHero = () => {
   const marqueeItem = [
@@ -53,7 +52,7 @@ const IntegrationHero = () => {
   }, []);
   return (
     <section id="home-page-view-port-screen-fetures" className="pt-[115px]">
-      <div className="z-50 mx-auto flex max-w-[575px] flex-col items-center justify-center">
+      <div className="z-40 mx-auto flex max-w-[575px] flex-col items-center justify-center">
         <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
           Integrations
         </h4>
@@ -66,28 +65,44 @@ const IntegrationHero = () => {
         </p>
       </div>
       <div className="mt-4">
-        <Marquee direction="right" speed={200}>
+        <Marquee direction="right" speed={50}>
           {marqueeItem.map((item, index) => (
-            <div className="mr-10 w-[60px] rounded-full border bg-red-900 p-2 lg:p-3 xl:mr-14 xl:w-[88px] xl:p-4">
-              <img src={item.icon} key={index} alt="" />
+            <div className="bg-blackRussian mr-6 w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:p-4">
+              <Image
+                className="w-full object-cover"
+                width={52}
+                height={52}
+                unoptimized
+                src={item.icon}
+                key={index}
+                alt={item.icon}
+              />
             </div>
           ))}
         </Marquee>
-        <Marquee direction="left" speed={200}>
+        <Marquee direction="left" speed={50}>
           {marqueeItem2.map((item, index) => (
-            <div className="mr-10 w-[60px] rounded-full border bg-red-900 p-2 lg:p-3 xl:mr-14 xl:w-[88px] xl:p-4">
-              <img src={item.icon} key={index} alt="" />
+            <div className="bg-blackRussian mr-6 w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:p-4">
+              <Image
+                className="w-full object-cover"
+                width={52}
+                height={52}
+                unoptimized
+                src={item.icon}
+                key={index}
+                alt={item.icon}
+              />
             </div>
           ))}
         </Marquee>
-        <div className="ccc bg-kuroiBlack absolute top-0 left-[-80px] z-50 h-full w-full max-w-[120px] blur-[20px]"></div>
-        <div className="ccc bg-kuroiBlack absolute top-0 right-[-80px] z-50 h-full w-full max-w-[120px] blur-[20px]"></div>
+        <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
+        <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <Image
           width={3000}
           height={1440}
-          className="1xl:max-w-[113%] 1xl:left-[-5%] 3xl:top-[-5%] absolute top-[-1%] left-[-15%] z-40 max-w-[131%] object-cover blur-[14.05px] 2xl:top-[-0.5%]"
+          className="1xl:max-w-[113%] 1xl:left-[-5%] 3xl:top-[-5%] 900:top-[2%] pointer-events-none absolute top-[4%] left-[-15%] z-10 max-w-[131%] object-cover blur-[14.05px] lg:top-[1%] 2xl:top-[-0.5%]"
           src="/images/webp/blur.webp"
-          alt=""
+          alt="blur-ellipse"
         />
       </div>
     </section>

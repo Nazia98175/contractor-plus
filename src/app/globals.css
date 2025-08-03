@@ -57,7 +57,7 @@
   --color-kikorangi: #3538cd;
   --color-aliceBlue: #eef4ff;
   --color-darkKnight: #101b25;
-  --color-kuroiBlack: rgba(13, 14, 18);
+  --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
   --color-reflection: #cbd5e1;
   --color-romanRed: #f21314;
@@ -67,6 +67,7 @@
   --color-tomato: #c01a06;
   --color-decemberSky: #d2d4d6;
   --color-darkBlack: #2a2a2e;
+  --color-lightGrey: #505050;
   --color-monstrousGreen: #21c912;
   --color-lightBlackGrey: #999;
   --color-expressionismGreen: #56c299;
@@ -129,6 +130,7 @@
   --color-final: #f4f5f7;
   --color-furiousTomato: #be0c0c;
   --color-customYellow: #f5a421;
+  --color-blackRussian: #222327;
   --color-customgreen: #2b840c;
   --color-customRed: #f36266;
   --color-customGrey: #8f8f8f;
@@ -155,6 +157,7 @@
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
   --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
@@ -221,6 +224,11 @@
     180deg,
     #0c0d1100 18.46%,
     #0c0d11 69.34%
+  );
+  --background-image-custom-2: radial-gradient(
+    349.94% 349.94% at 50% 50%,
+    #0d0e12 4.81%,
+    rgba(255, 255, 255, 0) 100%
   );
 
   /* SHADOW */
@@ -306,7 +314,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply 1xl:text-[22px] text-lg xl:text-xl;
+  @apply 1xl:text-[22px] text-base lg:text-lg xl:text-xl;
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;

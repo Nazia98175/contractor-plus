@@ -1,6 +1,9 @@
+"use client";
 import { IntegrationItem } from "@/types";
 import Image from "next/image";
 import { ResizeIcon, UnionIcon } from "../common/Icons";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 interface IntegrationDetailHeroProps {
   user: IntegrationItem;
@@ -8,8 +11,28 @@ interface IntegrationDetailHeroProps {
 const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
   user,
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-fetures", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
   return (
-    <section className="pb-[117px] relative flex h-full flex-col items-center justify-center pt-[144px]">
+    <section
+      id="home-page-view-port-screen-fetures"
+      className="relative flex h-full flex-col items-center justify-center pt-[144px] pb-[117px]"
+    >
       <div className="mb-6 flex items-center justify-center gap-5 px-2 sm:gap-7 md:gap-12">
         <div className="integration-logo-bg rounded-full bg-center p-3 md:p-[18px]">
           <Image
@@ -48,7 +71,7 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
         </p>
       </div>
 
-      <button className="my-5 text-[#505050] duration-300 hover:text-white sm:my-8 md:my-12">
+      <button className="text-lightGrey my-5 duration-300 hover:text-white sm:my-8 md:my-12">
         <ResizeIcon />
       </button>
     </section>

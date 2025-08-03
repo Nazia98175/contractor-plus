@@ -134,6 +134,7 @@
   --color-customgreen: #2b840c;
   --color-customRed: #f36266;
   --color-customGrey: #8f8f8f;
+  --color-tinColor: #919191;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
@@ -162,7 +163,7 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
 
-  /* FONT-SIZE */
+  /* TEXT-SHADOW */
   --text-custom-4xl: 32px;
 
   /* BACKGROUNG_IMG */
@@ -247,10 +248,12 @@
     -11.759px 10.583px 13.825px 0 rgba(0, 0, 0, 0.14),
     -4.878px 4.39px 8.267px 0 rgba(0, 0, 0, 0.17),
     -1.132px 1.019px 4.385px 0 rgba(0, 0, 0, 0.21);
+  --shadow-c6: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   /* DROP-SHADOW */
   --drop-shadow-custom-shadow-img: 24px 18px 22px #00000078;
   --drop-shadow-img-shadow: -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105);
+  --drop-shadow-c5: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
   --drop-shadow-c5: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
 }
 

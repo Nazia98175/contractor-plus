@@ -2,14 +2,16 @@ import { ServiceData } from "@/types";
 import Image from "next/image";
 import React from "react";
 import { TickIcon } from "../common/Icons";
-import LottieAnimation from "../common/LottieAnimation";
+// import LottieAnimation from "../common/LottieAnimation";
 import { themeColors } from "@/utils/getVariants";
+import LottieAnimation from "../homepage/LottieAnimation";
 interface Props {
   service: ServiceData;
   slug: string;
   idx: any;
   theme: "light" | "dark" | "estimateTheme";
   apiData: boolean;
+  setLottieRef: any;
 }
 
 const FieldServiceCard: React.FC<Props> = ({
@@ -18,6 +20,7 @@ const FieldServiceCard: React.FC<Props> = ({
   idx,
   theme,
   apiData = true,
+  setLottieRef,
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
@@ -57,6 +60,9 @@ const FieldServiceCard: React.FC<Props> = ({
                 />
               ) : service?.lottieJson ? (
                 <LottieAnimation
+                  ref={setLottieRef(idx)}
+                  loop={false} // Changed to false since we'll control playback
+                  autoplay={false} // Changed to false since we'll control playback
                   animationData={service?.lottieJson}
                   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
                 />
@@ -124,7 +130,15 @@ const FieldServiceCard: React.FC<Props> = ({
       {apiData ? (
         <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
           {service?.lottieJson ? (
-            <LottieAnimation animationData={service?.lottieJson} />
+            // <LottieAnimation animationData={service?.lottieJson} />
+            <LottieAnimation
+              ref={setLottieRef(idx)}
+              loop={false} // Changed to false since we'll control playback
+              autoplay={false} // Changed to false since we'll control playback
+              animationData={service?.lottieJson}
+
+              // className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
+            />
           ) : service?.cardImg &&
             typeof service?.cardImg === "object" &&
             "url" in service?.cardImg ? (

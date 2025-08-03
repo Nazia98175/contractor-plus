@@ -2,7 +2,7 @@
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
-import LottieAnimation from "../common/LottieAnimation";
+import LottieAnimation from "./LottieAnimation";
 
 interface EngineContractor {
   title: string;
@@ -28,6 +28,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
   const before = match[1];
   const number = match[2];
   const after = match[3];
+
   return (
     <section className="relative overflow-hidden pb-10 sm:pb-0">
       <div className="bg-athenaBlue pointer-events-none absolute bottom-0 left-[-10px] block h-[150px] w-full max-w-[150px] rounded-[10px] opacity-10 blur-[45px] sm:hidden"></div>
@@ -60,6 +61,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
           </div>
           <div className="flex w-full max-w-[450px] flex-col items-center -space-y-2">
             <LottieAnimation animationData={animationData} />
+
             {/* <Image
               src="/images/webp/engine.webp"
               alt="engine contractor"

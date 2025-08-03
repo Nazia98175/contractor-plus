@@ -8,6 +8,8 @@ import make_operations_3 from "../../../public/lotties/make-operations-3.json";
 import CardReveal from "../common/CardReveal";
 import MakeOperationCard from "./MakeOperationCard";
 import Copy from "../common/Copy";
+import { useCallback, useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 interface Whatever {
   title: string;
   subTitle: string;
@@ -19,14 +21,55 @@ interface Whatever {
 interface TheWhateverProps {
   resultStats?: any;
 }
+type LottieAnimationRef = {
+  play: () => void;
+  stop: () => void;
+  pause: () => void;
+  // Add other methods your Lottie component might have
+};
 const MakeOperation: React.FC<TheWhateverProps> = ({ resultStats }) => {
+  const lottieRefs = useRef<(LottieAnimationRef | null)[]>([]);
+
+  // Function to set lottie ref
+  const setLottieRef = useCallback(
+    (index: number) => (el: LottieAnimationRef | null) => {
+      lottieRefs.current[index] = el;
+    },
+    [],
+  );
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   });
 
   const icons = [make_operations_1, make_operations_2, make_operations_3];
-
+  useEffect(() => {
+    resultStats?.cards?.length > 0 &&
+      resultStats?.cards?.forEach((_: any, index: any) => {
+        const element = `#make-operation-card-${index}`;
+        if (element) {
+          ScrollTrigger.create({
+            trigger: element,
+            start: "bottom 100%", // Animation starts when top of element is 80% down the viewport
+            end: "top 0%", // Animation area ends when bottom of element is 20% down the viewport
+            onEnter: () => {
+              // Play animation when entering viewport
+              if (lottieRefs.current[index]) {
+                lottieRefs.current[index]?.play();
+              }
+            },
+            onEnterBack: () => {
+              // Play animation when scrolling back into viewport
+              if (lottieRefs.current[index]) {
+                lottieRefs.current[index]?.play();
+              }
+            },
+            markers: true,
+          });
+        }
+      });
+  }, [resultStats]);
   return (
     <section ref={ref} className="relative z-10 sm:pt-16">
       <div className="color-animation-1 bg-athenaBlue pointer-events-none absolute bottom-0 left-0 hidden h-[500px] w-full max-w-[40px] rotate-[-45deg] rounded-[10px] opacity-20 blur-[34px] lg:block"></div>
@@ -69,6 +112,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ resultStats }) => {
                 key={index}
                 inView={inView}
                 icons={icons}
+                setLottieRef={setLottieRef}
               />
             ))}
         </div>

@@ -65,6 +65,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
               title={hero?.heroTitle || ""}
               className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl"
               minFontSize={16}
+              maxLines={2}
               maxFontSize={48}
             />
 

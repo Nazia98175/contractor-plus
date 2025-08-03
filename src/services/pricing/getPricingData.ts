@@ -1,17 +1,16 @@
-import { get } from "http";
+
 import { getCommonData } from "../common/commonData";
 import { getPricingPage } from "./pricing";
 
-
 export interface whyContractorDataResponse {
   pageContent: any | null;
-//   industryShiftHighlights: any;
-//   narrativeFlow: any;
-//   seperateSolution: any | null;
-//    connectedSystem: any | null;
-//   featuresPlatform: any | null;
+  reviews: any;
+    pricingPlans: any;
+    pricingComparison: any | null;
+
+  faqs: any | null;
   commonData: any | null;
-//   emailSign: any | null;
+  emailSign: any | null;
 }
 
 export const getPricingData = async (
@@ -20,36 +19,33 @@ export const getPricingData = async (
   const [
     commonData,
     pageContentRes,
-    // industryShiftHighlightsRes,
-    // narrativeFlowRes,
-    // seperateSolutionRes,
-    // connectedSystemRes,
-    // featuresPlatformOverviewRes,
-    // emailSignRes
+    reviewsRes,
+    pricingPlansRes,
+    pricingPlanComparisonRes,
+    faqRes,
+    emailSignRes,
   ] = await Promise.all([
     getCommonData(locale),
     getPricingPage(locale, "&populate[hero][populate]=heroImg"),
-    // getContractorPage(
-    //   locale,
-    //   "&populate[industryShiftHighlights][populate][insightCards][populate]=image",
-    // ),
-    // getContractorPage(locale , "&populate[narrativeFlowSection][populate]=*"),
-    // getContractorPage(locale , "&populate[narrativeFlowSection][populate][separateSolution][populate][list][populate]=image"),
-    // getContractorPage(locale , "&populate[connectedSystemSection][populate][image]=true&populate[connectedSystemSection][populate][systemList]=true"),
-    // getContractorPage(locale , "&populate[featuresPlatformOverview][populate][features][populate]=icon"),
-    // getContractorPage(locale , "&populate[emailSignupSection]=*")
+    getPricingPage(
+      locale,
+      "&populate[reviews][populate][reviews][populate]=profileImg",
+    ),
+    getPricingPage(locale , "&populate[plans][populate][plans][populate][monthlyFeatures][populate]=*&populate[plans][populate][plans][populate][annualFeatures][populate]=*"),
+    
+    getPricingPage(locale , "&populate[pricingPlanComparison][populate][plans]=*&populate[pricingPlanComparison][populate][comparisonTable][populate][features][populate]=avilability"),
+    
+    getPricingPage(locale, "&populate[Faqs][populate]=faq"),
+    getPricingPage(locale, "&populate[emailSignupSection]=*"),
   ]);
-  console.log(pageContentRes , "pricing page")
+
   return {
     commonData: commonData || null,
     pageContent: pageContentRes?.data || null,
-    // industryShiftHighlights:
-    //   industryShiftHighlightsRes?.data?.industryShiftHighlights || null,
-    // narrativeFlow : narrativeFlowRes?.data?.narrativeFlowSection || null,
-    // seperateSolution : seperateSolutionRes?.data?.narrativeFlowSection?.separateSolution,
-    // connectedSystem : connectedSystemRes?.data?.connectedSystemSection,
-    // featuresPlatform:   featuresPlatformOverviewRes?.data?.featuresPlatformOverview,
-    // emailSign: emailSignRes?.data?.emailSignupSection
-    
+    reviews : reviewsRes?.data?.reviews || null ,
+    pricingPlans : pricingPlansRes?.data?.plans || null ,
+    pricingComparison : pricingPlanComparisonRes?.data?.pricingPlanComparison || null,
+    faqs: faqRes?.data?.Faqs,
+    emailSign: emailSignRes?.data?.emailSignupSection,
   };
 };

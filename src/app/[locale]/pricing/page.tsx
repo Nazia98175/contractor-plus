@@ -4,8 +4,27 @@ import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import GroupOfComponets from "@/components/pricing/GroupOfComponets";
+import { getPricingData } from "@/services/pricing/getPricingData";
 
-const PricingPage = () => {
+const PricingPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}) => {
+  const useParams = await params;
+  
+    const {
+      commonData,
+      pageContent,
+      reviews,
+      pricingPlans ,
+      pricingComparison,
+      faqs,
+      emailSign,
+    } = await getPricingData(useParams?.locale);
+
+    console.log(commonData , pageContent , pricingPlans , reviews  , emailSign , faqs , "Pricing")
+    console.log(pricingComparison , "ppppp")
   return (
     <main className="font-myriad overflow-hidden">
       <GroupOfComponets />

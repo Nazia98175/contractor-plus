@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import LottieAnimation from "./LottieAnimation";
+import LottieAnimation from "../homepage/LottieAnimation";
+// import LottieAnimation from "./LottieAnimation";
 
 interface SoftwareItem {
   icon: React.ReactNode;
@@ -29,6 +30,7 @@ interface SoftwareUsedProps {
   titleColor?: string;
   paragraphColor?: string;
   icon?: any;
+  setLottieRef?: any;
 }
 
 const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
@@ -38,6 +40,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   titleColor = "md:text-winterWay text-white",
   paragraphColor = "md:text-winterWay text-decemberSky",
   icon,
+  setLottieRef,
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -53,9 +56,11 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     >
       {item.lottieJson ? (
         <LottieAnimation
-          className="h-9 w-8 fill-white"
-          loop={true}
+          ref={setLottieRef(index)}
+          loop={false} // Changed to false since we'll control playback
+          autoplay={false} // Changed to false since we'll control playback
           animationData={item.lottieJson}
+          className="h-9 w-8 fill-white"
         />
       ) : item.cardImage?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
@@ -99,6 +104,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
             {item.suffix && (
               <span className="ml-1 whitespace-pre-wrap">{item.suffix}</span>
             )}
+
             {item.denominator && (
               <span className="ml-1 !font-semibold">
                 in <span className="countup-title"> {item.denominator}</span>

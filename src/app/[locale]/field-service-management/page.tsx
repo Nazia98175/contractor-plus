@@ -28,7 +28,7 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "field-service",
+    "field-service-management",
   );
 
   if (!page) notFound();
@@ -67,10 +67,9 @@ const FieldServicesPage = async ({ params }: Params) => {
     blogs,
     thousandReviews,
     commonData,
-  } = await getSolutionPageData("field-service", useParams?.locale);
+  } = await getSolutionPageData("field-service-management", useParams?.locale);
 
   const ip = (await cookies()).get("user-ip")?.value;
-  console.log("User IP:", ip);
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);

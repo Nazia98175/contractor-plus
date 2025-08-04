@@ -63,7 +63,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       id="home-page-footer-view-port-screen"
       className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 opacity-0 md:py-[62px] ${styles.background}`}
     >
-      <div
+      {/* <div
         className={`flex flex-wrap justify-center gap-4 text-xs leading-[200%]`}
       >
         {footer?.bottomLinks?.map((item, idx) => (
@@ -75,7 +75,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             {item?.urlText}
           </Link>
         ))}
-      </div>
+      </div> */}
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (

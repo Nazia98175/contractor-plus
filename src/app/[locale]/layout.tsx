@@ -31,7 +31,7 @@ export default async function RootLayout({
     ),
     getFooter(useParams?.locale, "&populate[sections][populate]=*&populate[bottomLinks][populate]=*"),
   ]);
-console.log("footer" , footer)
+
   return (
     <>
       <SmoothScrollSetup />

@@ -24,7 +24,6 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
       scrollTrigger: {
         trigger: "#plateform-box-wrapper",
         start: "top 90%",
-        markers: false,
         once: true,
       },
     });

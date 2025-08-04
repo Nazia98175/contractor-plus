@@ -45,12 +45,8 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
     },
     [],
   );
-
+  console.log(lottieRefs.current);
   useEffect(() => {
-    // Clear previous ScrollTriggers
-    // ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-    // Create ScrollTrigger for each Lottie animation
     featureContents
       ?.slice(0, featureContents?.length - 1)
       ?.forEach((_, index) => {
@@ -72,15 +68,9 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
                 lottieRefs.current[index]?.play();
               }
             },
-            markers: false,
           });
         }
       });
-
-    // Cleanup function
-    // return () => {
-    //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    // };
   }, [featureContents, contentRefs]);
 
   return (

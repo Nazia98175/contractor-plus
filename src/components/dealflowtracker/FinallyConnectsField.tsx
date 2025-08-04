@@ -105,7 +105,6 @@ const FinallyConnectsField = () => {
     };
   }, []);
 
-
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">
       <h2
@@ -288,7 +287,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Lead_Captured}
                 />
               </div>
@@ -299,7 +298,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Estimate_Scheduled}
                 />
               </div>
@@ -309,7 +308,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Estimate_Sent}
                 />
               </div>
@@ -320,7 +319,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Job_Scheduled}
                 />
               </div>
@@ -330,7 +329,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Revenue_Forecast_Updated}
                 />
               </div>
@@ -340,7 +339,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Initial_Contact}
                 />
               </div>

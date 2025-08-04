@@ -173,6 +173,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         trigger.kill();
       }
     });
+
     scrollTriggersRef.current = [];
 
     fieldService.cardsDetail.forEach((_: any, index: number) => {

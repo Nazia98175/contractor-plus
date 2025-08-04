@@ -68,7 +68,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
                 lottieRefs.current[index]?.play();
               }
             },
-            markers: false,
+            markers: true,
           });
         }
       });

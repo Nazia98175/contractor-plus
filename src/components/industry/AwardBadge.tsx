@@ -7,18 +7,90 @@ import SoftwareUsed from "@/components/common/SoftwareUsed";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 interface AwardBadgesProps {
   buttonInfo: any;
   teamsUsingContractor: any;
   customIconsMap: any;
 }
-
+// Define the LottieAnimationRef type
+type LottieAnimationRef = {
+  play: () => void;
+  stop: () => void;
+  pause: () => void;
+  // Add other methods your Lottie component might have
+};
 export default function AwardBadges({
   buttonInfo,
   teamsUsingContractor,
   customIconsMap,
 }: AwardBadgesProps) {
   const pathname = usePathname();
+  const lottieRefs = useRef<(LottieAnimationRef | null)[]>([]);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollTriggersRef = useRef<any[]>([]);
+  // Memoize setLottieRef to prevent recreating on every render
+  const setLottieRef = useCallback(
+    (index: number) => (el: LottieAnimationRef | null) => {
+      if (lottieRefs.current) {
+        lottieRefs.current[index] = el;
+      }
+    },
+    [],
+  );
+
+  useEffect(() => {
+    if (teamsUsingContractor?.cards) return;
+
+    // Clean up existing lottie triggers
+    scrollTriggersRef.current.forEach((trigger) => {
+      if (trigger && typeof trigger.kill === "function") {
+        trigger.kill();
+      }
+    });
+
+    scrollTriggersRef.current = [];
+
+    teamsUsingContractor?.cards.forEach((_: any, index: number) => {
+      const element = contentRefs.current[index];
+
+      if (element) {
+        const trigger = ScrollTrigger.create({
+          trigger: element,
+          start: `bottom 100%`,
+          end: `top 0%`,
+          onEnter: () => {
+            if (lottieRefs.current[index]) {
+              lottieRefs.current[index]?.play();
+            }
+          },
+          onEnterBack: () => {
+            if (lottieRefs.current[index]) {
+              lottieRefs.current[index]?.play();
+            }
+          },
+          markers: false,
+          id: `items-awards`,
+        });
+
+        scrollTriggersRef.current.push(trigger);
+      }
+    });
+
+    return () => {
+      scrollTriggersRef.current.forEach((trigger) => {
+        if (trigger && typeof trigger.kill === "function") {
+          trigger.kill();
+        }
+      });
+      scrollTriggersRef.current = [];
+    };
+  }, [teamsUsingContractor?.cards]);
   const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="no-scrollbar relative w-full">
@@ -43,7 +115,20 @@ export default function AwardBadges({
       />
       <div className="main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-0 xl:grid xl:grid-cols-3">
         {teamsUsingContractor?.cards?.map((item: any, index: number) => (
-          <SoftwareUsed key={index} item={item} icon={customIconsMap[index]} />
+          <div
+            ref={(el) => {
+              if (contentRefs.current) {
+                contentRefs.current[index] = el;
+              }
+            }}
+          >
+            <SoftwareUsed
+              key={index}
+              item={item}
+              icon={customIconsMap[index]}
+              setLottieRef={setLottieRef}
+            />
+          </div>
         ))}
       </div>
       <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">

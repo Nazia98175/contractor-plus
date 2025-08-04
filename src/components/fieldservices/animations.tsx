@@ -10,7 +10,6 @@ const seventhStepUpperMin = 34400; // 5:30PM
 export const stepOneAnimation = () => {
   const tl = gsap.timeline();
   return tl
-
     .to(
       ".middle-minute-time",
       {

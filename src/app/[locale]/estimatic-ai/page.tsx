@@ -51,7 +51,7 @@ const EstimaticAiPage = async ({
     faqs,
     commonData,
   } = await getEstimaticPageData(useParams?.locale);
-  console.log(thousandReviews, "aiiii");
+  
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div

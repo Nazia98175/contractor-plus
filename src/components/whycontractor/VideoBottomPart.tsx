@@ -6,10 +6,10 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 
 interface PropList {
-  list :any;
+  list: any;
 }
 
-const VideoBottomPart:React.FC<PropList> = ({list}) => {
+const VideoBottomPart: React.FC<PropList> = ({ list }) => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
   const sectionRef2 = useRef<HTMLDivElement>(null);
   const sectionRef3 = useRef<HTMLDivElement>(null);
@@ -37,7 +37,6 @@ const VideoBottomPart:React.FC<PropList> = ({list}) => {
           trigger: ref.current,
           start: "top 60%",
           end: "bottom 20%",
-          markers: false,
           once: window.innerWidth < 768, // only once on mobile
           onEnter: () => {
             console.log(`Section ${index} entered`);
@@ -99,7 +98,7 @@ const VideoBottomPart:React.FC<PropList> = ({list}) => {
           >
             <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">
-               {list?.[0]?.text}
+                {list?.[0]?.text}
               </h3>
             </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -126,7 +125,7 @@ const VideoBottomPart:React.FC<PropList> = ({list}) => {
           >
             <Copy animateOnScroll={true} delay={0}>
               <h3 className="sub-heading mb-1 text-center font-semibold duration-300 xl:px-44">
-               {list?.[1]?.text}
+                {list?.[1]?.text}
               </h3>
             </Copy>
             <span className="icon-span mt-[18px] flex justify-center duration-300">

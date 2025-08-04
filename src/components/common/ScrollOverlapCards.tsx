@@ -194,7 +194,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
               lottieRefs.current[index]?.play();
             }
           },
-          markers: false,
           id: `animation-${index + 1}`,
         });
 

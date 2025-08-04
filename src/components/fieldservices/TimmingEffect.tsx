@@ -51,7 +51,6 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
           end: `+=${window.innerHeight * 6}`,
           pin: true,
           scrub: 1,
-          markers: false,
         },
       });
       const timingImage = document.querySelectorAll(".timing-imgs");

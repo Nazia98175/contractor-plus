@@ -65,7 +65,6 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ resultStats }) => {
                 lottieRefs.current[index]?.play();
               }
             },
-            markers: true,
           });
         }
       });

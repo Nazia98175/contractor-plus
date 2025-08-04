@@ -74,7 +74,6 @@ const WantingMore: React.FC<WantingMoreProps> = ({
         pin: headingRef.current,
         pinSpacing: false, // Prevents extra spacing
         scrub: false,
-        markers: false,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           const progress = self.progress;

@@ -265,7 +265,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         pinSpacing: false,
         invalidateOnRefresh: true,
         // Optional: Add some debugging
-        markers: false, // Set to true for debugging
         onUpdate: (self) => {
           // Optional: Handle any updates during scroll
           // console.log("Pin progress:", self.progress);

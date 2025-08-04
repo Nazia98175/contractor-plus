@@ -34,7 +34,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
       scrollTrigger: {
         trigger: "#finally-icon-wrapper",
         start: "top 90%",
-        markers: false,
         once: true,
       },
     });
@@ -55,13 +54,12 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
       scrollTrigger: {
         trigger: "#ipad-mobile-wrapper",
         start: "top 90%",
-        markers: false,
         once: true,
       },
     });
   }, []);
   return (
-    <section className="no-scrollbar 1xl:pt-[238px] relative overflow-hidden bg-white pt-9 sm:pt-16 md:pt-20 xl:pt-[186px]">
+    <section className="no-scrollbar 1xl:pt-[238px] relative overflow-visible bg-white pt-9 sm:pt-16 md:pt-20 lg:overflow-hidden xl:pt-[186px]">
       <>
         <Image
           className="absolute -top-[24%] left-0 z-20 hidden h-full w-full md:block"
@@ -127,7 +125,39 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               id="finally-icon-wrapper"
               className="flex flex-row items-center gap-4 lg:flex-col"
             >
-              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:w-full md:max-w-20 lg:max-w-[88px]">
+              {/* mobile view  */}
+              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
+                <Image
+                  width={96}
+                  height={104}
+                  src="/images/webp/software-advice.webp"
+                  alt="Software Advice"
+                  className="finally-custom-drop-img w-full object-cover"
+                  sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+                />
+              </div>
+              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
+                <Image
+                  width={96}
+                  height={104}
+                  src="/images/webp/leader.webp"
+                  alt="Leader"
+                  className="finally-custom-drop-img w-full object-cover"
+                  sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+                />
+              </div>
+              <div className="flex w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:hidden md:max-w-24 lg:max-w-[88px]">
+                <Image
+                  width={100}
+                  height={104}
+                  src="/images/png/get-app-homepage.png"
+                  alt="Get App"
+                  className="finally-custom-drop-img h-full w-full object-cover"
+                  sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
+                />
+              </div>
+              {/* desktop  */}
+              <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -137,7 +167,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
-              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -147,7 +177,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
-              <div className="flex w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:max-w-24 lg:max-w-[88px]">
+              <div className="hidden w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:max-w-24 lg:max-w-[88px]">
                 <Image
                   width={100}
                   height={104}
@@ -185,7 +215,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 width={715}
                 src="/images/png/ipad-mobile-view.png"
                 alt="Ipad Design"
-                className="finaly-shadow block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
+                className="finaly-shadow finally-custom-box-shadow block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
                 unoptimized
                 sizes="(min-width: 1024px) 715px, 100vw"
               />
@@ -194,7 +224,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 width={300}
                 src="/images/png/mobile-view.png"
                 alt="Mobile Design"
-                className="absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
+                className="finally-custom-box-shadow absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
                 sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
                 unoptimized
               />

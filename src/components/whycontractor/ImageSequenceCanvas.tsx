@@ -177,7 +177,7 @@ const ImageSequenceCanvas: React.FC<ImageSequenceProps> = ({
       start: "50% 90%",
       end: "50% 70%",
       scrub: 2,
-      markers: false,
+
       onUpdate: (self) => {
         tl.progress(self.progress);
       },
@@ -194,10 +194,7 @@ const ImageSequenceCanvas: React.FC<ImageSequenceProps> = ({
   const showLoading = !isInitialized || isMobile === null || !isLoaded;
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative h-screen w-full ${className}`}
-    >
+    <div ref={containerRef} className={`relative h-screen w-full ${className}`}>
       <canvas
         ref={canvasRef}
         className="sticky top-0 h-screen w-full object-contain"

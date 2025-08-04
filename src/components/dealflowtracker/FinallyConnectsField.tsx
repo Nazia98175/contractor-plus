@@ -1,7 +1,5 @@
 "use client";
-import Button from "../common/Button";
 import CardRequiredButton from "../common/CardRequiredButton";
-import { ArrowIcon } from "../common/Icons";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -15,6 +13,8 @@ import Initial_Contact from "../../../public/lotties/Initial-Contact.json";
 import Job_Scheduled from "../../../public/lotties/Job-Scheduled.json";
 import Lead_Captured from "../../../public/lotties/Lead-Captured.json";
 import Revenue_Forecast_Updated from "../../../public/lotties/Revenue-Forecast-Updated.json";
+import CardReveal from "../common/CardReveal";
+import FreeTrialButton from "../common/FreeTrialButton";
 import LottieAnimation from "../common/LottieAnimation";
 import {
   stepFiveAnimation,
@@ -24,11 +24,6 @@ import {
   stepThreeAnimation,
   stepTwoAnimation,
 } from "../fieldservices/dealflowanimation";
-import { usePathname } from "next/navigation";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import FreeAccountButton from "../common/FreeAccountButton";
-import CardReveal from "../common/CardReveal";
-import FreeTrialButton from "../common/FreeTrialButton";
 
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -110,8 +105,6 @@ const FinallyConnectsField = () => {
     };
   }, []);
 
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">
       <h2
@@ -294,7 +287,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Lead_Captured}
                 />
               </div>
@@ -305,7 +298,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Estimate_Scheduled}
                 />
               </div>
@@ -315,7 +308,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Estimate_Sent}
                 />
               </div>
@@ -326,7 +319,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Job_Scheduled}
                 />
               </div>
@@ -336,7 +329,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Revenue_Forecast_Updated}
                 />
               </div>
@@ -346,7 +339,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  loop={true}
+                  // loop={true}
                   animationData={Initial_Contact}
                 />
               </div>

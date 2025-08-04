@@ -21,6 +21,7 @@ export interface TheHeroProps {
   commonData?: any;
   featureTag?: string;
   apiData?: boolean;
+  isShowHeroImg?: boolean;
 }
 const CommonHero: React.FC<TheHeroProps> = ({
   hero,
@@ -29,11 +30,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
   commonData,
   featureTag,
   apiData = true,
+  isShowHeroImg = true,
 }) => {
-  console.log(heroImg, "crm image");
-  console.log(hero, "crm hero");
-  console.log(commonData, "crm common");
-  console.log(featureTag, "crm feature");
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     gsap.to(wrapperRef.current, {
@@ -68,7 +66,10 @@ const CommonHero: React.FC<TheHeroProps> = ({
       ref={wrapperRef}
       className="relative z-10 pt-[46px] pb-10 opacity-0 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]"
     >
-      <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
+      {isShowHeroImg && (
+        <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
+      )}
+
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
@@ -81,7 +82,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
       </CardReveal>
       <div
         id="hero"
-        className="mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
+        className="relative z-50 mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
           <div className="px-2 pt-8 md:pt-0">
@@ -123,47 +124,49 @@ const CommonHero: React.FC<TheHeroProps> = ({
             </CardReveal>
           </div>
         </div>
-        <CardReveal distance={50} delay={0.9}>
-          <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
-            <div className="relative overflow-hidden">
-              {apiData ? (
-                <div
-                  className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
-                >
-                  {heroImg?.url && (
-                    <Image
-                      className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                      src={heroImg?.url}
-                      width={900}
-                      height={616}
-                      alt="crm-hero"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                      priority
-                    />
-                  )}
-                  {hero?.overlay && <AnimatedShape />}
-                </div>
-              ) : (
-                <div
-                  className={`${hero?.border ? "border-silverMedal overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block max-w-[${hero?.imageMaxWidth || "900"}px] `}
-                >
-                  {heroImg && (
-                    <Image
-                      className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                      src={heroImg}
-                      width={900}
-                      height={616}
-                      alt="crm-hero"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                      priority
-                    />
-                  )}
-                  {hero?.overlay && <AnimatedShape />}
-                </div>
-              )}
+        {isShowHeroImg && (
+          <CardReveal distance={50} delay={0.9}>
+            <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
+              <div className="relative overflow-hidden">
+                {apiData ? (
+                  <div
+                    className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                  >
+                    {heroImg?.url && (
+                      <Image
+                        className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                        src={heroImg?.url}
+                        width={900}
+                        height={616}
+                        alt="crm-hero"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                        priority
+                      />
+                    )}
+                    {hero?.overlay && <AnimatedShape />}
+                  </div>
+                ) : (
+                  <div
+                    className={`${hero?.border ? "border-silverMedal overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                  >
+                    {heroImg && (
+                      <Image
+                        className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                        src={heroImg}
+                        width={900}
+                        height={616}
+                        alt="crm-hero"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                        priority
+                      />
+                    )}
+                    {hero?.overlay && <AnimatedShape />}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </CardReveal>
+          </CardReveal>
+        )}
       </div>
     </section>
   );

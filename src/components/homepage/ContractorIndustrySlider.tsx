@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
+import Link from "next/link";
 
 interface Show {
   title: string;
@@ -248,9 +249,9 @@ const ContractorIndustrySlider: React.FC = () => {
         className="relative h-full w-full !pt-10 !pb-16"
       >
         {showInfo.map((show, index) => (
-          <div key={index}>
+          <Link href={""} key={index}>
             <ContractorIndustrySliderCard show={show} />
-          </div>
+          </Link>
         ))}
       </SliderLayout>
     </div>

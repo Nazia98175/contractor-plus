@@ -1,15 +1,13 @@
 "use client";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import CloudsAnimation from "@/components/common/CloudsAnimation";
-import FreeAccountButton from "@/components/common/FreeAccountButton";
 import { TheHeroProps } from "@/components/crmbussiness/CommonHero";
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
+import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import IndustryHeroSlider from "./IndustryHeroSlider";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { usePathname } from "next/navigation";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,
@@ -35,8 +33,6 @@ const IndustryHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -74,19 +70,13 @@ const IndustryHero: React.FC<TheHeroProps> = ({
             </p>
 
             <div className="flex w-full flex-col items-center gap-3 sm:w-fit md:gap-2">
-              <FreeAccountButton
+              <FreeTrialButton
                 text={commonData?.getStartedFreeBtn}
                 className="!hidden sm:!flex"
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
-              <FreeAccountButton
+              <FreeTrialButton
                 text={commonData?.mobileBtn}
                 className="flex sm:!hidden"
-                onClick={() => handleRedirect({ pathname })}
-                loading={loading}
-                disabled={loading}
               />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"

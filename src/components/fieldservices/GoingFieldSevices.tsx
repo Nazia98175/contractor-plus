@@ -42,7 +42,6 @@ const GoingFieldSevices: React.FC<
         start: "top 50%",
         endTrigger: "#parallex-img-wrapper",
         end: `bottom 100px`,
-        markers: false,
         scrub: 2,
       },
     });

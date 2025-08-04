@@ -1,8 +1,6 @@
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
-import FreeAccountButton from "@/components/common/FreeAccountButton";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 
 import Image from "next/image";
@@ -10,6 +8,8 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import FreeTrialButton from "../common/FreeTrialButton";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -132,12 +132,7 @@ export default function AwardBadges({
         ))}
       </div>
       <div className="mt-8 hidden flex-col items-center gap-2 px-2 text-center md:flex">
-        <FreeAccountButton
-          text={buttonInfo?.getStartedFreeBtn}
-          onClick={() => handleRedirect({ pathname })}
-          loading={loading}
-          disabled={loading}
-        />
+        <FreeTrialButton text={buttonInfo?.getStartedFreeBtn} />
         <CardRequiredButton
           className="text-winterWay"
           text={buttonInfo?.nccTxt}

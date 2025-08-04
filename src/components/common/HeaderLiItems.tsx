@@ -10,8 +10,9 @@ import ResourcesDropdown from "./ResourcesDropdown";
 
 interface Props {
   headerList: any;
+  setIsShow?: (val: boolean) => void;
 }
-const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
+const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
   const t = useTranslations("menu");
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [prevMenu, setPrevMenu] = useState<string | null>(null);
@@ -135,6 +136,11 @@ const HeaderLiItems: React.FC<Props> = ({ headerList }) => {
             return (
               <span key={index} className="group relative">
                 <Link
+                  onClick={() => {
+                    if (typeof setIsShow === "function") {
+                      setIsShow(false); // close sidebar
+                    }
+                  }}
                   href={menuItem?.link || "#"}
                   onMouseEnter={handleMouseLeave}
                   className="header-li group hover:text-superSilver text-kuroiBlack flex cursor-pointer items-center gap-1 px-1 py-0.5 whitespace-nowrap transition-colors duration-300 xl:px-[6px]"

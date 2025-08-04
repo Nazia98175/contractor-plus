@@ -100,7 +100,6 @@ function Copy({
             scrollTrigger: {
               trigger: containerRef.current,
               start: "top 85%",
-              markers: false,
               once: true,
             },
           });

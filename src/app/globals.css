@@ -57,7 +57,7 @@
   --color-kikorangi: #3538cd;
   --color-aliceBlue: #eef4ff;
   --color-darkKnight: #101b25;
-  --color-kuroiBlack: rgba(13, 14, 18);
+  --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
   --color-reflection: #cbd5e1;
   --color-romanRed: #f21314;
@@ -67,6 +67,7 @@
   --color-tomato: #c01a06;
   --color-decemberSky: #d2d4d6;
   --color-darkBlack: #2a2a2e;
+  --color-lightGrey: #505050;
   --color-monstrousGreen: #21c912;
   --color-lightBlackGrey: #999;
   --color-expressionismGreen: #56c299;
@@ -129,9 +130,11 @@
   --color-final: #f4f5f7;
   --color-furiousTomato: #be0c0c;
   --color-customYellow: #f5a421;
+  --color-blackRussian: #222327;
   --color-customgreen: #2b840c;
   --color-customRed: #f36266;
   --color-customGrey: #8f8f8f;
+  --color-tinColor: #919191;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
@@ -155,11 +158,12 @@
   --breakpoint-md: 768px;
   --breakpoint-900: 900px;
   --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
 
-  /* FONT-SIZE */
+  /* TEXT-SHADOW */
   --text-custom-4xl: 32px;
 
   /* BACKGROUNG_IMG */
@@ -222,6 +226,11 @@
     #0c0d1100 18.46%,
     #0c0d11 69.34%
   );
+  --background-image-custom-2: radial-gradient(
+    349.94% 349.94% at 50% 50%,
+    #0d0e12 4.81%,
+    rgba(255, 255, 255, 0) 100%
+  );
 
   /* SHADOW */
   --shadow-c1:
@@ -239,10 +248,12 @@
     -11.759px 10.583px 13.825px 0 rgba(0, 0, 0, 0.14),
     -4.878px 4.39px 8.267px 0 rgba(0, 0, 0, 0.17),
     -1.132px 1.019px 4.385px 0 rgba(0, 0, 0, 0.21);
+  --shadow-c6: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   /* DROP-SHADOW */
   --drop-shadow-custom-shadow-img: 24px 18px 22px #00000078;
   --drop-shadow-img-shadow: -37.0195px 33.3176px 38.6826px rgba(0, 0, 0, 0.105);
+  --drop-shadow-c5: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
   --drop-shadow-c5: -111.494px 100.345px 143px 0px rgba(0, 0, 0, 0.04);
 }
 
@@ -306,7 +317,7 @@ body {
   @apply text-center text-2xl font-semibold -tracking-[0.56px] md:text-[28px];
 }
 .xs-heading {
-  @apply 1xl:text-[22px] text-lg xl:text-xl;
+  @apply 1xl:text-[22px] text-base lg:text-lg xl:text-xl;
 }
 .heading {
   @apply text-xl !leading-[130%] font-semibold tracking-[-0.72px] sm:text-2xl md:text-3xl xl:text-4xl;
@@ -2135,9 +2146,11 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.ccc {
-  border: 350px solid rgba(12, 13, 17, 0.02);
-  filter: blur(40.05px);
-  backdrop-filter: blur(25.4px);
-  transform: rotate(-90deg);
+
+.finally-custom-box-shadow {
+  filter: drop-shadow(-13px 14px 26px #000000b9);
+}
+
+.finally-custom-drop-img {
+  filter: drop-shadow(-13px 16px 24 #000000);
 }

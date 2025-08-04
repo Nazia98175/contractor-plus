@@ -8,7 +8,7 @@ const HerosectionBackground = () => {
         width={800}
         height={1000}
         sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-        className="absolute top-0 left-0 hidden max-h-[800px] w-full max-w-[800px] object-center sm:block"
+        className="absolute top-0 left-0 hidden max-h-[800px] w-full max-w-[800px] object-center lg:block"
         src={"/images/webp/hero-red-line.webp"}
         alt="hero-red-line"
       />
@@ -16,7 +16,7 @@ const HerosectionBackground = () => {
         width={800}
         height={2000}
         sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-        className="pointer-events-none absolute top-[20%] z-50 flex h-[135%] w-[110%] object-center sm:hidden"
+        className="pointer-events-none absolute top-[20%] z-50 flex h-[135%] w-[110%] object-center lg:hidden"
         src={"/images/webp/hero-red-line-mobile.webp"}
         alt="hero-red-line"
       />

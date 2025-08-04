@@ -1,12 +1,12 @@
 "use client";
+import { generateOneLinkUrl } from "@/app/lib/generateOneLinkUrl";
 import { variantsForm } from "@/utils/getVariants";
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import React, { ChangeEvent, FormEvent, useState } from "react";
+import ButtonLoader from "./ButtonLoader";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
-import { usePathname } from "next/navigation";
-import { generateOneLinkUrl } from "@/app/lib/generateOneLinkUrl";
-import ButtonLoader from "./ButtonLoader";
 
 interface CommonFormFieldProps {
   title?: string;
@@ -30,7 +30,6 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   mobileBtn,
   ncc,
   showTitle = true,
-  showDescription = true,
   variant = "default",
   variantBtn = "default",
   className,

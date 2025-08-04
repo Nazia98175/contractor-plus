@@ -38,43 +38,41 @@ interface Props {
   headerSubList: any;
   isVisible: boolean;
 }
- export const featureIcons: Record<string, React.ReactNode> = {
-    crm: <CrmIcon />,
-    estimates: <EstimatesIcon />,
-    mileage: <MilageIcon />,
-    fieldService: <FieldServiceIcon />,
-    dealFlow: <TrophyIcon />,
-    timeClock: <TimeIcon />,
-    projectManagement: <ProjectIcon />,
-    scheduling: <SchedulingIcon />,
-    LeadGeneration: <LeadGenerationIcon />,
-    payments: <PaymentsIcon />,
-    clientPortal: <ClientIcon />,
-    proWebsite: <PROIcon />,
-    estimaticAI: <EstimaticIcon />,
-    invoicing: <InvoicingIcon />,
-    propertyProfiles: <PropertyIcon />,
-    communication: <TelephoneIcon />,
-    service: <BellIcon />,
-    bigChiefAI: <BigChiefAIIcon />,
-    OfferClientFinancing: <FinancingIcon />,
-    Agreements: <AgreementIcon />,
-    Tracking: <TrackingIcon />,
-    EstimaticAI: <EstimatesAiIcon />,
-    MileageTracking: <MileageIcon />,
-    ProWebsite: <WebsiteIncludedIcon />,
-    PropertyProfiles: <PropertyProfilesIcon />,
-    ServiceRequests: <ServiceRequestsIcon />,
-    BigChief: <BigChiefIcon />,
-    BookPing: <BookPingIcon />,
-  };
+export const featureIcons: Record<string, React.ReactNode> = {
+  crm: <CrmIcon />,
+  estimates: <EstimatesIcon />,
+  mileage: <MilageIcon />,
+  fieldService: <FieldServiceIcon />,
+  dealFlow: <TrophyIcon />,
+  timeClock: <TimeIcon />,
+  projectManagement: <ProjectIcon />,
+  scheduling: <SchedulingIcon />,
+  LeadGeneration: <LeadGenerationIcon />,
+  payments: <PaymentsIcon />,
+  clientPortal: <ClientIcon />,
+  proWebsite: <PROIcon />,
+  estimaticAI: <EstimaticIcon />,
+  invoicing: <InvoicingIcon />,
+  propertyProfiles: <PropertyIcon />,
+  communication: <TelephoneIcon />,
+  service: <BellIcon />,
+  bigChiefAI: <BigChiefAIIcon />,
+  OfferClientFinancing: <FinancingIcon />,
+  Agreements: <AgreementIcon />,
+  Tracking: <TrackingIcon />,
+  EstimaticAI: <EstimatesAiIcon />,
+  MileageTracking: <MileageIcon />,
+  ProWebsite: <WebsiteIncludedIcon />,
+  PropertyProfiles: <PropertyProfilesIcon />,
+  ServiceRequests: <ServiceRequestsIcon />,
+  BigChief: <BigChiefIcon />,
+  BookPing: <BookPingIcon />,
+};
 const FeaturesDropdown: React.FC<Props> = ({
   isVisible = true,
   headerSubList,
 }) => {
   const t = useTranslations("features");
-
-
 
   if (!isVisible) {
     return null;

@@ -1,11 +1,8 @@
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import FreeAccountButton from "../common/FreeAccountButton";
-import CardRequiredButton from "../common/CardRequiredButton";
 import FreeTrialButton from "../common/FreeTrialButton";
 
 interface Props {
@@ -14,8 +11,6 @@ interface Props {
 }
 
 const TrackProfiles: React.FC<Props> = ({ trackProperties }) => {
-  const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <section className="relative pt-28 lg:pt-5">
       {/* Desktop background image */}

@@ -12,7 +12,7 @@ const businessBenefits = [
 ];
 const AdvertisementCard = () => {
   return (
-    <article className="flex w-full flex-col justify-center rounded-xl bg-[url('/images/webp/table-content-bg.webp')] bg-cover px-6 pt-[42px] pb-[30px]">
+    <article className="flex w-full flex-col justify-center rounded-xl bg-[url('/images/webp/table-content-bg.webp')] bg-cover px-4 pt-8 pb-6 md:pb-[30px] lg:px-6 lg:pt-[42px]">
       <span className="relative mx-auto max-w-[168px]">
         <span className="absolute left-0 blur-[20px]">
           <FooterLogoIcon />

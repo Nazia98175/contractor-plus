@@ -53,16 +53,29 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     pathname.toLowerCase().includes("why-contractor");
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
-  const t = useTranslations("footer");
   const styles = footerVariantClasses[variant];
   const toggleSection = (title: string) => {
     setOpenSection(openSection === title ? null : title);
   };
+
   return (
     <footer
       id="home-page-footer-view-port-screen"
       className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 opacity-0 md:py-[62px] ${styles.background}`}
     >
+      <div
+        className={`flex flex-wrap justify-center gap-4 text-xs leading-[200%]`}
+      >
+        {footer?.bottomLinks?.map((item, idx) => (
+          <Link
+            key={idx}
+            href={item?.url}
+            className={`transition-all duration-300 ${styles.bottomlink}`}
+          >
+            {item?.urlText}
+          </Link>
+        ))}
+      </div>
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (

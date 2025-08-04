@@ -1,12 +1,11 @@
 import { PlansProps } from "@/types";
+import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFormField from "../common/CommonFormField";
 import Copy from "../common/Copy";
 import { DownScrollIcon } from "../common/Icons";
-import gsap from "gsap";
-import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
   useEffect(() => {

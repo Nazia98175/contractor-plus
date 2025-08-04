@@ -129,7 +129,7 @@ const YouNeedFeatures = () => {
     <section className="relative z-30 mx-auto mt-8 w-full max-w-[1920px] overflow-hidden sm:mt-16 md:mt-[98px]">
       <div className="main-container">
         <Copy delay={0.2}>
-          <h4 className="shadow-c6 text-tinColor text-center text-2xl font-extrabold md:text-3xl lg:text-[32px]">
+          <h4 className="text-tinColor text-center text-2xl font-extrabold md:text-3xl lg:text-[32px]">
             The features you need
           </h4>
         </Copy>
@@ -143,7 +143,7 @@ const YouNeedFeatures = () => {
           ))}
         </div>
         <Copy delay={0.2}>
-          <h4 className="shadow-c6 text-tinColor text-center text-2xl font-extrabold md:text-3xl lg:text-[32px]">
+          <h4 className="text-tinColor text-center text-2xl font-extrabold md:text-3xl lg:text-[32px]">
             The industries we serve
           </h4>
         </Copy>

@@ -17,18 +17,18 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
   }[];
 
   const resourceItems = [
-    { image: "/images/webp/contractor+HQ.webp" },
-    { image: "/images/webp/industry-events.webp" },
+    { image: "/images/webp/contractor-hq.webp" },
+    { image: "/images/webp/local-construction-costs.webp" },
     { image: "/images/webp/podcasts.webp" },
-    { image: "/images/webp/Affiliates.webp" },
+    { image: "/images/webp/Industry-sEvents.webp" },
     { image: "/images/webp/calculators.webp" },
-    { image: "/images/webp/supplier-partner-program.webp" },
+    { image: "/images/webp/Affiliates.webp" },
     { image: "/images/webp/free-estimate-templates.webp" },
-    { image: "/images/webp/Roadmap.webp" },
+    { image: "/images/webp/Supply-Partner-Program.webp" },
     { image: "/images/webp/material-comparison-search.webp" },
-    { image: "/images/webp/Contact-us.webp" },
-    { image: "/images/webp/usa-labor-pricing.webp" },
-    { image: "/images/webp/developers-aPI.webp" },
+    { image: "/images/webp/Support-Center.webp" },
+    { image: "/images/webp/USA-Labor-Rate.webp" },
+    { image: "/images/webp/Developers-API.webp" },
   ];
   const fallbackImage = "/images/webp/developers-aPI.webp";
   console.log("headerSubList", headerSubList);

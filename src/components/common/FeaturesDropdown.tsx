@@ -34,6 +34,7 @@ import {
   WebsiteIncludedIcon,
 } from "./Icons";
 import { CrmIcon } from "./MainIcon";
+import Image from "next/image";
 interface Props {
   headerSubList: any;
   isVisible: boolean;
@@ -77,6 +78,7 @@ const FeaturesDropdown: React.FC<Props> = ({
   if (!isVisible) {
     return null;
   }
+  console.log("testing", headerSubList);
 
   return (
     <div className="flex grow flex-col overflow-hidden">
@@ -96,7 +98,15 @@ const FeaturesDropdown: React.FC<Props> = ({
                   >
                     <Link href={featureId?.linkUrl ?? "/"} className="group">
                       <div className="flex items-start gap-2.5">
-                        <span>{featureIcons?.[featureId.icon]}</span>
+                        <span>
+                          <Image
+                            className="group-hover:fill-red-900"
+                            src={featureId?.icon?.url}
+                            alt="icons"
+                            width={30}
+                            height={30}
+                          />
+                        </span>
                         <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">
                           {featureId?.linkTxt}
                           {featureId?.new && (

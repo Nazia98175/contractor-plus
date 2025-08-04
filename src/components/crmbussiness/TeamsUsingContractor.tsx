@@ -75,7 +75,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
               <span
                 className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[68px]"}`}
               >
-                {inView && (
+                {inView  && item.start !== null && (
                   <CountUp
                     start={item.start}
                     end={item.end}
@@ -83,7 +83,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                     delay={0.2}
                     useEasing={true}
                     separator=","
-                    suffix={item.suffix ?? ""}
+                    suffix={item.suffix || ""}
                     preserveValue={true}
                     prefix={item.prefix ?? ""}
                   />

@@ -24,17 +24,14 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages({ locale });
   const useParams = await params;
-
-
-  // &populate[btnText]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][icon]=true
   const [header, footer] = await Promise.all([
     getHeader(
       useParams?.locale,
-      "&populate[btnText]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true",
+      "&populate[btnText]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][icon]=true",
     ),
-    getFooter(useParams?.locale, "&populate[sections][populate]=*"),
+    getFooter(useParams?.locale, "&populate[sections][populate]=*&populate[bottomLinks][populate]=*"),
   ]);
-
+console.log("footer" , footer)
   return (
     <>
       <SmoothScrollSetup />

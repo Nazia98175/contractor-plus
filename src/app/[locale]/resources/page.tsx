@@ -1,20 +1,12 @@
-"use client";
+import FreeEstimateTemplates from "@/components/resourcehub/FreeEstimateTemplates";
+import React from "react";
 
-import Resource from "@/components/resourcehub/Resource";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useRef } from "react";
-
-const Page = () => {
-  // useRef ensures the QueryClient is only created once per render
-  const queryClientRef = useRef(new QueryClient());
-
+const FreeEstimateTemplatesPage = () => {
   return (
-    <QueryClientProvider client={queryClientRef.current}>
-      <main className="bg-white">
-        <Resource />
-      </main>
-    </QueryClientProvider>
+    <>
+      <FreeEstimateTemplates />
+    </>
   );
 };
 
-export default Page;
+export default FreeEstimateTemplatesPage;

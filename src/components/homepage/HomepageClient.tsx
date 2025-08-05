@@ -28,6 +28,7 @@ const HomepageClient = ({
   resultStats,
   blogs,
   commonData,
+  industriesData,
 }: any) => {
   return (
     <>
@@ -36,9 +37,7 @@ const HomepageClient = ({
       <CoreFeatures coreFeatures={featurHighlight} />
       <Features features={homePageContent?.data?.serviceList} />
       <div className="relative overflow-hidden">
-        <ContractorIndustry
-          contractorIndustry={homePageContent?.data?.Industries}
-        />
+        <ContractorIndustry contractorIndustry={industriesData} />
         <Image
           className="animated-image pointer-events-none absolute top-0 left-0 z-20 hidden h-full w-full max-w-[900px] object-center md:block"
           src="/images/webp/contractor-left-bg.webp"

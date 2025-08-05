@@ -38,6 +38,7 @@ export default async function Home({
     resultStatsSection,
     blogs,
     commonData,
+    industriesData,
   } = await getHomepageData(useParams?.locale);
   return (
     <div id="home-page-wrapper" className="">
@@ -66,6 +67,7 @@ export default async function Home({
         resultStats={resultStatsSection?.data?.resultsStatsSection}
         blogs={blogs}
         commonData={commonData}
+        industriesData={industriesData?.data?.Industries}
       />
     </div>
   );

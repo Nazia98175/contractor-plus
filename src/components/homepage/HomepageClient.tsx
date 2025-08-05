@@ -30,6 +30,8 @@ const HomepageClient = ({
   commonData,
   industriesData,
 }: any) => {
+  console.log("slider", homePageContent.data);
+
   return (
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />

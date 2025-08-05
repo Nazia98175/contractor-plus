@@ -1,14 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Marquee from "react-fast-marquee";
-import TrustedServiceCard from "../crmbussiness/TrustedServiceCard";
 import { Review } from "@/types";
-import ReviewModal from "../common/ReviewModal";
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { log } from "node:console";
+import { SplitText } from "gsap/SplitText";
+import React, { useState } from "react";
+import Marquee from "react-fast-marquee";
 import Copy from "../common/Copy";
+import ReviewModal from "../common/ReviewModal";
+import TrustedServiceCard from "../crmbussiness/TrustedServiceCard";
 // import { textSplit } from "../common/TextSplit";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 interface TheReviewProps {

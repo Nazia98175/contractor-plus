@@ -1,8 +1,10 @@
+"use client";
 import FreeEstimateMaker from "@/components/freeEstimate/FreeEstimateMaker";
 import { EstimateInfo, EstimateItem } from "@/components/hooks/use-estimate";
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect } from "react";
 
-const page = () => {
+const FreeEstimateTemplates = () => {
   const initialEstimateInfo: EstimateInfo = {
     title: "New Estimate",
     companyName: "",
@@ -25,6 +27,24 @@ const page = () => {
   };
 
   const initialItems: EstimateItem[] = [];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 1000);
+  }, []);
+
   return (
     <div className="bg-white">
       <FreeEstimateMaker
@@ -35,4 +55,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default FreeEstimateTemplates;

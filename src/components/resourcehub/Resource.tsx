@@ -10,7 +10,10 @@ import { ResourceCard } from "./ResourceCard";
 
 const Resource = () => {
   return (
-    <div className="text-ruined flex flex-col gap-12 pt-32 pb-10">
+    <div
+      id="home-page-header-view-port-screen"
+      className="text-ruined flex flex-col gap-12 pt-32 pb-10"
+    >
       {/* Hero Section */}
       <section className="main-container px-4 md:px-6">
         <div className="space-y-4 text-center">

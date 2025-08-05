@@ -1,7 +1,7 @@
 import FreeEstimateTemplates from "@/components/resourcehub/FreeEstimateTemplates";
 import React from "react";
 
-const FreeEstimateTemplatesPage = () => {
+const page = () => {
   return (
     <>
       <FreeEstimateTemplates />
@@ -9,4 +9,4 @@ const FreeEstimateTemplatesPage = () => {
   );
 };
 
-export default FreeEstimateTemplatesPage;
+export default page;

@@ -31,14 +31,13 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
     { image: "/images/webp/Developers-API.webp" },
   ];
   const fallbackImage = "/images/webp/developers-aPI.webp";
-  console.log("headerSubList", headerSubList);
   return (
     <div className="flex grow flex-col overflow-hidden">
       <div className="relative z-[9999] flex grow gap-8 overflow-auto">
         <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
           {headerSubList?.[0]?.links?.map((link: any, index: any) => (
             <Link
-              href={link?.linkUrl ?? "#"}
+              href={link?.linkUrl ?? "no"}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               key={index}

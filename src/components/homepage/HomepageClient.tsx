@@ -29,6 +29,8 @@ const HomepageClient = ({
   blogs,
   commonData,
 }: any) => {
+  console.log("slider", homePageContent.data);
+
   return (
     <>
       <ContractorPlatforms contractPlatformsData={contractPlatformsData} />

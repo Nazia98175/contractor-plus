@@ -2,7 +2,6 @@ import CommonFormField from "@/components/common/CommonFormField";
 import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import IntegrationCards from "@/components/integration/IntegrationCards";
-
 import IntegrationHero from "@/components/integration/IntegrationHero";
 
 const IntegrationPage = () => {

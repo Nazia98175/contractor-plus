@@ -70,7 +70,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   } = await getSolutionPageData("field-service", useParams?.locale);
 
   const ip = (await cookies()).get("user-ip")?.value;
-  console.log("User IP:", ip);
+
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);

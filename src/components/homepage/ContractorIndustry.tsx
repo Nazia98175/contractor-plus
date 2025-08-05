@@ -7,6 +7,7 @@ interface Industry {
   subTitle: string;
   url: string | null;
   btnText: string | null;
+  imageCard?: any;
 }
 
 interface TheIndustryProps {
@@ -17,7 +18,6 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
   contractorIndustry,
 }) => {
   const t = useTranslations("industry");
-
   return (
     <section className="relative overflow-hidden">
       <span className="absolute top-0 left-0 block h-full w-full md:hidden">
@@ -38,7 +38,7 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
             </h6>
           </Copy>
         </div>
-        <ContractorIndustrySlider />
+        <ContractorIndustrySlider imageCard={contractorIndustry?.imageCard} />
       </div>
     </section>
   );

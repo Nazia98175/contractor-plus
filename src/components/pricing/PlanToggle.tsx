@@ -5,15 +5,24 @@ import { MoveLeftIcon } from "lucide-react";
 interface PlanToggleProps {
   isAnnual: boolean;
   setIsAnnual: (value: boolean) => void;
+  title?: string;
+  toggleLabel?: string;
+  toggleNote?: string;
 }
 
-const PlanToggle: React.FC<PlanToggleProps> = ({ isAnnual, setIsAnnual }) => {
+const PlanToggle: React.FC<PlanToggleProps> = ({
+  isAnnual,
+  setIsAnnual,
+  title,
+  toggleLabel,
+  toggleNote,
+}) => {
   return (
     <div className="flex max-w-[400px] flex-wrap items-center justify-center gap-3 py-3 sm:max-w-[500px]">
       <button
         className={`text-wallStreet text-base sm:text-lg ${!isAnnual ? "opacity-90" : "opacity-100"}`}
       >
-        Monthly Plan
+        {title ?? ""}
       </button>
       <label className="inline-flex cursor-pointer items-center">
         <input
@@ -27,14 +36,14 @@ const PlanToggle: React.FC<PlanToggleProps> = ({ isAnnual, setIsAnnual }) => {
       <button
         className={`text-winterWay text-base font-bold sm:text-lg ${isAnnual ? "opacity-100" : "opacity-90"}`}
       >
-        Annual Plan
+        {toggleLabel ?? ""}
       </button>
       <p className="text-lumpOfCoal hidden items-center gap-2 text-base sm:flex lg:text-lg">
         <MoveLeftIcon color="#5ED5A8" />
-        Save up to 40%
+        {toggleNote ?? ""}
       </p>
       <p className="xs:text-base text-baba text-sm leading-[120%] font-semibold sm:hidden">
-        Save up to 40% On Annual Plan
+        {toggleNote ?? ""} On Annual Plan
       </p>
     </div>
   );

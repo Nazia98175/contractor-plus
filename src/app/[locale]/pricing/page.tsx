@@ -1,4 +1,3 @@
-
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
@@ -12,22 +11,26 @@ const PricingPage = async ({
   params: Promise<{ slug: string; locale: string }>;
 }) => {
   const useParams = await params;
-  
-    const {
-      commonData,
-      pageContent,
-      reviews,
-      pricingPlans ,
-      pricingComparison,
-      faqs,
-      emailSign,
-    } = await getPricingData(useParams?.locale);
 
-    console.log(commonData , pageContent , pricingPlans , reviews  , emailSign , faqs , "Pricing")
-    console.log(pricingComparison , "ppppp")
+  const {
+    commonData,
+    pageContent,
+    reviews,
+    pricingPlans,
+    pricingComparison,
+    faqs,
+    emailSign,
+  } = await getPricingData(useParams?.locale);
+
   return (
     <main className="font-myriad overflow-hidden">
-      <GroupOfComponets />
+      <GroupOfComponets
+        pageContent={pageContent}
+        commonData={commonData}
+        pricingPlans={pricingPlans}
+        pricingComparison={pricingComparison}
+        reviews={reviews}
+      />
       <div className="bg-white">
         <Faq
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[134px] z-20 px-2"

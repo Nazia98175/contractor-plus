@@ -7,7 +7,11 @@ import CommonFormField from "../common/CommonFormField";
 import Copy from "../common/Copy";
 import { DownScrollIcon } from "../common/Icons";
 
-const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
+const PricingHero: React.FC<PlansProps> = ({
+  onScroll,
+  pageContent,
+  commonData,
+}) => {
   useEffect(() => {
     setTimeout(() => {
       gsap.to("#pricing-page-view-port-screen", {
@@ -41,12 +45,12 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
         className="absolute top-0 right-0 -z-10 hidden h-full w-full max-w-[200px] object-contain xl:block"
       />
       <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
-        Plans and Pricing
+        {pageContent?.pricingTag && pageContent?.pricingTag}
       </h4>
       <div className="relative mx-auto w-full max-w-[740px]">
         <Copy delay={0.2}>
           <h2 className="xs:text-[28px] gradient-white font-jakarta mb-4 text-center text-[26px] leading-[127%] font-extralight text-transparent sm:text-4xl lg:text-5xl xl:text-[52px]">
-            Free to start, free to stay. Level up when you’re ready.
+            {pageContent?.hero?.title && pageContent?.hero?.title}
           </h2>
         </Copy>
         {/* <AdaptiveHeroTitle
@@ -60,18 +64,19 @@ const PricingHero: React.FC<PlansProps> = ({ onScroll }) => {
 
         <Copy delay={0.3}>
           <p className="hero-description !text-trolleyGrey text-center">
-            What the other guys charge extra for, Contractor+ offers without
-            hidden charges. Upgrade when you need more firepower to grow.
+            {pageContent?.hero?.subTitle && pageContent?.hero?.subTitle}
           </p>
         </Copy>
         <div className="pt-5 xl:pt-7">
           <CommonFormField
             title=""
             subTitle=""
-            ncc="No credit card required"
+            ncc={commonData?.nccTxt && commonData?.nccTxt}
             placeholder="Your email"
-            createBtn="Get started FREE"
-            mobileBtn="Download FREE App"
+            createBtn={
+              commonData?.getStartedFreeBtn && commonData?.getStartedFreeBtn
+            }
+            mobileBtn={commonData?.mobileBtn && commonData?.mobileBtn}
             showTitle={false}
             variant="secondary"
             showDescription={false}

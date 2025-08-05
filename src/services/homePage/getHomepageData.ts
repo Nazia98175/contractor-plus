@@ -13,6 +13,7 @@ export interface HomepageDataResponse {
   resultStatsSection: HomePageResponse | null;
   blogs: any | null;
   commonData: any | null;
+  industriesData: any | null;
 }
 
 export const getHomepageData = async (
@@ -29,7 +30,8 @@ export const getHomepageData = async (
     "&populate[featureHighlightSection][populate]=features";
   const resultStats = "&populate[resultsStatsSection][populate]=cards";
   const blogQuery = "&sort=publishedAt:desc&pagination[limit]=4";
-
+  const industriesQuery =
+    "&populate[Industries][populate][imageCard][populate]=image";
   const [
     homePageContent,
     contractPlatformsData,
@@ -39,6 +41,7 @@ export const getHomepageData = async (
     resultStatsSection,
     blogs,
     commonData,
+    industriesData,
   ] = await Promise.all([
     getHomePage(locale, populateDefault),
     getHomePage(locale, populatePlatforms),
@@ -48,6 +51,7 @@ export const getHomepageData = async (
     getHomePage(locale, resultStats),
     getBlogs(locale, blogQuery),
     getCommonData(locale),
+    getHomePage(locale, industriesQuery),
   ]);
 
   return {
@@ -59,5 +63,6 @@ export const getHomepageData = async (
     resultStatsSection,
     blogs,
     commonData,
+    industriesData,
   };
 };

@@ -56,6 +56,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
               <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start !font-extrabold group-hover:!text-white">
                 {link.linkTxt}
               </span>
+              <span>{link.subTitle}</span>
             </Link>
           ))}
         </div>

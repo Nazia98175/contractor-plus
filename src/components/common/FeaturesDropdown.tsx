@@ -105,6 +105,7 @@ const FeaturesDropdown: React.FC<Props> = ({
                             alt="icons"
                             width={25}
                             height={25}
+                            priority
                           />
                         </span>
                         <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">

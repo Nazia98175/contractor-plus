@@ -50,6 +50,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
                   alt="icons"
                   width={25}
                   height={25}
+                  priority
                 />
               </span>
               <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start !font-extrabold group-hover:!text-white">

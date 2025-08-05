@@ -37,7 +37,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
         <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
           {headerSubList?.[0]?.links?.map((link: any, index: any) => (
             <Link
-              href={link?.linkUrl ?? "no"}
+              href={link?.linkUrl ?? ""}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               key={index}

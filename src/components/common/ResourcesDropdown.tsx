@@ -43,20 +43,24 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
               key={index}
               className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
             >
-              <span>
-                <Image
-                  className="group-hover:fill-red-900"
-                  src={link?.icon?.url}
-                  alt="icons"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </span>
-              <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start !font-extrabold group-hover:!text-white">
-                {link.linkTxt}
-              </span>
-              <span>{link.subTitle}</span>
+              <div className="flex items-start gap-2.5">
+                <span>
+                  <Image
+                    className="group-hover:fill-red-900"
+                    src={link?.icon?.url}
+                    alt="icons"
+                    width={25}
+                    height={25}
+                    priority
+                  />
+                </span>
+                <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start !font-extrabold group-hover:!text-white">
+                  {link.linkTxt}
+                </span>
+              </div>
+              <p className="font-inter text-lightBlack text-sm">
+                {link.subTitle}
+              </p>
             </Link>
           ))}
         </div>

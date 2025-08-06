@@ -118,10 +118,10 @@ const BlogArticle: React.FC<handleClickProps> = ({ handleClick }) => {
           fill: "row",
         }}
         spaceBetween={32}
-        navigation={{
-          nextEl: ".swiper-button-next2",
-          prevEl: ".swiper-button-prev2",
-        }}
+        // navigation={{
+        //   nextEl: ".swiper-button-next2",
+        //   prevEl: ".swiper-button-prev2",
+        // }}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -162,15 +162,15 @@ const BlogArticle: React.FC<handleClickProps> = ({ handleClick }) => {
       </Swiper>
 
       <div className="border-brightGrey relative mt-6 flex w-full items-center justify-center gap-3 border-t pt-5 md:justify-between">
-        <div className="text-flintstone swiper-button-prev2 flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden">
+        {/* <div className="text-flintstone swiper-button-prev2 flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden">
           <ArrowLeft height={20} width={20} color="#667085" /> Previous
-        </div>
-        <div className="relative flex items-center justify-center gap-1">
+        </div> */}
+        <div className="relative mx-auto flex items-center justify-center gap-1">
           {renderPagination()}
         </div>
-        <div className="text-flintstone swiper-button-next2 flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden">
+        {/* <div className="text-flintstone swiper-button-next2 flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden">
           Next <ArrowRight height={20} width={20} color="#667085" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

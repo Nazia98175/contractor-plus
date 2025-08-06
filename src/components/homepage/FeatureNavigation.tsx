@@ -1,6 +1,7 @@
 "use client";
 import React, { RefObject, useEffect, useRef } from "react";
 import { ExternalLink, Pathbg } from "../common/Icons";
+import Link from "next/link";
 
 type Props = {
   features: string[];
@@ -101,12 +102,15 @@ const FeatureNavigation = ({
             {feature}
           </button>
         ))}
-        <button className="group feature-btn text-lightishBlue flex w-full cursor-pointer items-center gap-1 whitespace-nowrap">
+        <Link
+          href={"/all-features"}
+          className="group feature-btn text-lightishBlue flex w-full cursor-pointer items-center gap-1 whitespace-nowrap"
+        >
           {featureBtn}
           <span className="flex w-5 duration-300 group-hover:-translate-y-1">
             <ExternalLink />
           </span>
-        </button>
+        </Link>
       </div>
     </div>
   );

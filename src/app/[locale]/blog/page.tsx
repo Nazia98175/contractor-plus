@@ -1,7 +1,7 @@
 import BlogPage from "@/components/blog/BlogPage";
 import React from "react";
 export const metadata = {
-  title: "Contractor Plus - Blogs",
+  title: "Contractor Plus - Blog",
   description:
     "Contractor+ connects every function of your business so it finally all works in sync.",
 };

@@ -17,7 +17,7 @@ const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
     <section className="relative z-20 bg-white">
       <div className="mx-auto w-full max-w-[985px] pt-12 text-center md:text-start">
         <Copy delay={0.2}>
-          <h4 className="sub-heading text-lightBlack w-full font-semibold md:w-fit">
+          <h4 className="sub-heading text-lightBlack w-full px-2 font-semibold md:w-fit">
             {coreFeatures?.title}
           </h4>
         </Copy>

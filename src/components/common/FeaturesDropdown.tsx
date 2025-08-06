@@ -128,12 +128,12 @@ const FeaturesDropdown: React.FC<Props> = ({
           ))}
       </div>
       <div className="font-inter bg-doctor2 sticky bottom-0 left-0 flex w-full items-center justify-between gap-6">
-        <Link className="all-features-button group" href={"/"}>
+        <Link className="all-features-button group" href={"/all-features"}>
           {headerSubList[headerSubList?.length - 1]?.links?.[0]?.linkTxt}
           <ArrowIcon />
         </Link>
         <div className="flex items-center gap-10">
-          <Link className="all-features-button group" href="/">
+          <Link className="all-features-button group" href="/integrations">
             {headerSubList[headerSubList?.length - 1]?.links?.[1]?.linkTxt}
             <ArrowIcon />
           </Link>

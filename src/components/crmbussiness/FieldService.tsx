@@ -75,7 +75,7 @@ const FieldService: React.FC<TheServiceProps> = ({
         pinSpacing: false, // Prevents extra spacing
         scrub: false,
         invalidateOnRefresh: true,
-        markers: true,
+        markers: false,
         onUpdate: (self) => {
           const progress = self.progress;
           gsap.to(headingRef.current, {

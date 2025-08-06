@@ -125,12 +125,10 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
         <Link
           href={blogHeading.btnUrl}
-          className="flex justify-center pt-4 md:hidden"
+          className="bg-red-linear primary-btn mt-4 flex h-10 items-center justify-center gap-2 md:hidden"
         >
-          <Button className="bg-red-linear primary-btn h-10 gap-2">
-            {blogHeading?.btnTxt}
-            <BlogBtnIcon />
-          </Button>
+          {blogHeading?.btnTxt}
+          <BlogBtnIcon />
         </Link>
       </div>
     </section>

@@ -4,6 +4,12 @@ import TrustBar from "@/components/common/TrustBar";
 import CommonHero from "@/components/crmbussiness/CommonHero";
 import YouNeedFeatures from "@/components/seeallfeatures/YouNeedFeatures";
 
+export const metadata = {
+  title: "Everything you need, in a single operating system.",
+  description:
+    "We believe you shouldn’t have to pay for 10 different softwares and connect them together. We also don’t believe in “gate keeping” our best features for Enterprise level customers.",
+};
+
 const SeeAllFeaturesPage = () => {
   return (
     <main className="relative">

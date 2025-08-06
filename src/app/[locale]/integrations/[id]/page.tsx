@@ -11,7 +11,8 @@ async function getById(id: string) {
 }
 export async function generateStaticParams() {
   return integrations.map((item) => ({
-    id: item.id,
+    id: item.id.toString(),
+    locale: "en",
   }));
 }
 const IntegrationDetails = async ({

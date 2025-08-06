@@ -2592,7 +2592,7 @@ export const blogData = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-post-1.webp",
-    href: "/",
+    href: "/blog",
   },
   {
     id: 2,
@@ -2602,7 +2602,7 @@ export const blogData = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-post-2.webp",
-    href: "/",
+    href: "/blog",
   },
   {
     id: 3,
@@ -2612,7 +2612,7 @@ export const blogData = [
     descrition:
       "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
     image: "/images/webp/blog-post-3.webp",
-    href: "/",
+    href: "/blog",
   },
 ];
 
@@ -4558,5 +4558,5 @@ export const automatedHeadingData = {
   id: 1,
   title: "Auto Agreement topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
-  btnUrl: "/",
+  btnUrl: "/blog",
 };

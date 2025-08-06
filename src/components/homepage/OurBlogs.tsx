@@ -125,7 +125,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
         <Link
           href={blogHeading.btnUrl}
-          className="flex justify-center pt-4 md:hidden"
+          className="flex justify-center px-2 pt-4 md:hidden"
         >
           <Button className="bg-red-linear primary-btn h-10 gap-2">
             {blogHeading?.btnTxt}

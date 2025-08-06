@@ -3394,7 +3394,8 @@ export const dealReviews2 = {
         '"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."',
       rating: 5,
       profileImg: "/images/webp/juan-gracia.webp",
-      videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+      videoLink:
+        "https://www.youtube.com/embed/KpYSsQhP_J0?si=AzXAksGGa9cRi6L2",
     },
     {
       id: 2,
@@ -3405,7 +3406,8 @@ export const dealReviews2 = {
         '"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"',
       rating: 5,
       profileImg: "/images/webp/rushville.webp",
-      videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+      videoLink:
+        "https://www.youtube.com/embed/ODjGhYILJKE?si=lcdtM7DNcQ6_JGd8",
     },
     {
       id: 3,
@@ -3416,7 +3418,8 @@ export const dealReviews2 = {
         '"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."',
       rating: 5,
       profileImg: "/images/webp/rands.webp",
-      videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+      videoLink:
+        "https://www.youtube.com/embed/CllT0U-CtGc?si=dAxaKG8w04fLCQHr",
     },
   ],
 };

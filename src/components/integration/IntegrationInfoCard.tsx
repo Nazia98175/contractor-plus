@@ -30,7 +30,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
   return (
     <Link
       href={`/integrations/${obj.id}`}
-      className="bg-charcoalBlue rounded-lg p-5 md:p-2.5"
+      className="bg-charcoalBlue card-shine rounded-lg p-5 md:p-2.5"
     >
       <div className="flex items-center gap-4">
         <Image

@@ -79,8 +79,8 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           sizes="(100vw)"
         />
         {/* <FinallyBackground /> */}
-        <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
-        <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
+        {/* <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
+        <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div> */}
         <div className="relative z-30 space-y-4">
           <Copy animateOnScroll={true}>
             <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">
@@ -163,7 +163,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   height={104}
                   src="/images/webp/software-advice.webp"
                   alt="Software Advice"
-                  className="w-full object-cover"
+                  className="w-full object-cover drop-shadow-2xl md:drop-shadow-none"
                   sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
@@ -173,7 +173,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   height={104}
                   src="/images/webp/leader.webp"
                   alt="Leader"
-                  className="w-full object-cover"
+                  className="w-full object-cover drop-shadow-2xl md:drop-shadow-none"
                   sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
@@ -183,21 +183,21 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   height={104}
                   src="/images/png/get-app-homepage.png"
                   alt="Get App"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover drop-shadow-2xl md:drop-shadow-none"
                   sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
             </div>
             <div
               id="ipad-mobile-wrapper"
-              className="relative md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40"
+              className="relative drop-shadow-2xl md:pr-20 lg:overflow-hidden lg:pr-32 xl:pr-40"
             >
               <Image
                 height={600}
                 width={715}
                 src="/images/webp/ipad.webp"
                 alt="Ipad Design"
-                className="finaly-shadow hidden max-h-full w-full object-center md:block lg:max-w-[715px]"
+                className="hidden max-h-full w-full object-center md:block lg:max-w-[715px]"
                 priority
                 sizes="(min-width: 1024px) 715px, 100vw"
               />
@@ -215,7 +215,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 width={715}
                 src="/images/png/ipad-mobile-view.png"
                 alt="Ipad Design"
-                className="finaly-shadow finally-custom-box-shadow block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
+                className="block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
                 unoptimized
                 sizes="(min-width: 1024px) 715px, 100vw"
               />
@@ -224,7 +224,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 width={300}
                 src="/images/png/mobile-view.png"
                 alt="Mobile Design"
-                className="finally-custom-box-shadow absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
+                className="absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
                 sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
                 unoptimized
               />

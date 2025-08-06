@@ -123,13 +123,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </Swiper>
           <div className="swiper-pagination-pricing swiper-pagination-real-time-4 relative !left-0 flex !translate-x-0 items-center justify-center gap-1" />
         </div>
-        <Link
-          href={blogHeading.btnUrl}
-          className="bg-red-linear primary-btn mt-4 flex h-10 items-center justify-center gap-2 md:hidden"
-        >
-          {blogHeading?.btnTxt}
-          <BlogBtnIcon />
-        </Link>
+        <div className="mx-auto flex w-full items-center justify-center px-2 pt-4 md:hidden">
+          <Link
+            href={blogHeading.btnUrl}
+            className="bg-red-linear primary-btn h-10 justify-center gap-2"
+          >
+            {blogHeading?.btnTxt}
+            <BlogBtnIcon />
+          </Link>
+        </div>
       </div>
     </section>
   );

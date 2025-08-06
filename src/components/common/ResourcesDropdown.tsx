@@ -65,7 +65,7 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
           ))}
         </div>
 
-        <div className="relative w-full max-w-[480px] overflow-hidden rounded-md">
+        <div className="relative min-h-[520px] w-full max-w-[480px] overflow-hidden rounded-md">
           {resourceItems.map((item, index) => (
             <Image
               key={index}

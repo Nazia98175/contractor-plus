@@ -24,6 +24,10 @@ interface PlanData {
     id: Number;
     label: string;
   }[];
+  annualFeatures?: {
+    id: Number;
+    label: string;
+  }[];
 }
 
 interface PlanCardProps {
@@ -83,8 +87,28 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
           {plan?.featuresTitle && plan?.featuresTitle}
         </h5>
         <ul className="space-y-4">
-          {plan?.monthlyFeatures &&
+          {!isAnnual &&
+            plan?.monthlyFeatures &&
             plan?.monthlyFeatures.map((feature: any, idx: number) => {
+              // const isAdditionalUser = feature === "additionalUser";
+              // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
+
+              return (
+                <li
+                  key={idx}
+                  className="text-wallStreet flex items-center gap-3 text-sm"
+                >
+                  <ListIcon />
+                  {feature.label}
+                  {/* {isAdditionalUser
+                    ? `$${userPrice}/month per additional user`
+                    : feature} */}
+                </li>
+              );
+            })}
+          {isAnnual &&
+            plan?.annualFeatures &&
+            plan?.annualFeatures.map((feature: any, idx: number) => {
               // const isAdditionalUser = feature === "additionalUser";
               // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
 

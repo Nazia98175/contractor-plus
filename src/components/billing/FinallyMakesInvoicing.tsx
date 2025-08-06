@@ -13,6 +13,12 @@ import img4 from "../../../public/lotties/billing-animation-4.json";
 import img5 from "../../../public/lotties/billing-animation-5.json";
 import img6 from "../../../public/lotties/billing-animation-6.json";
 import img7 from "../../../public/lotties/billing-animation-7.json";
+import ClockAutomatically from "../../../public/lotties/clock-autmatically.json";
+import Invoice_Draft from "../../../public/lotties/invoice-draft.json";
+import Stamp_signature from "../../../public/lotties/stamp-signature.json";
+import Add_Invoice from "../../../public/lotties/add-invoice.json";
+import Job_Record from "../../../public/lotties/job-record.json";
+import Manual_Information from "../../../public/lotties/manual-information.json";
 import {
   stepFiveAnimation,
   stepFourAnimation,
@@ -104,7 +110,7 @@ const FinallyMakesInvoicing = () => {
   }, []);
 
   return (
-    <div className="timing-text-style relative bg-white">
+    <div className="timing-text-style relative overflow-hidden bg-white">
       <h2
         style={{
           background:
@@ -294,15 +300,12 @@ const FinallyMakesInvoicing = () => {
               a thing or re-enter any information.
             </p>{" "}
           </div>
-          <div className="relative flex items-center justify-center overflow-hidden">
-            <div
-              id="timing-img-1"
-              className="timing-imgs relative h-[245px] max-w-[611px]"
-            >
+          <div className="relative mt-5 flex w-full items-center justify-center overflow-hidden">
+            <div id="timing-img-1" className="timing-imgs relative h-[245px]">
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={img1}
+                animationData={ClockAutomatically}
               />
             </div>
 
@@ -313,7 +316,7 @@ const FinallyMakesInvoicing = () => {
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={img2}
+                animationData={Invoice_Draft}
               />
             </div>
             <div
@@ -328,12 +331,12 @@ const FinallyMakesInvoicing = () => {
             </div>
             <div
               id="timing-img-4"
-              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+              className="timing-imgs absolute top-0 mt-8 h-[245px] max-w-[611px]"
             >
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={img4}
+                animationData={Stamp_signature}
               />
             </div>
             <div
@@ -343,27 +346,27 @@ const FinallyMakesInvoicing = () => {
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={img5}
+                animationData={Add_Invoice}
               />
             </div>
             <div
               id="timing-img-6"
-              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+              className="timing-imgs absolute top-0 h-[245px] max-w-[611px]"
             >
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={img6}
+                animationData={Job_Record}
               />
             </div>
             <div
               id="timing-img-7"
-              className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
+              className="timing-imgs absolute top-0 h-[245px] max-w-[611px]"
             >
               <LottieAnimation
                 className="h-full w-full"
                 loop={true}
-                animationData={img7}
+                animationData={Manual_Information}
               />
             </div>
           </div>

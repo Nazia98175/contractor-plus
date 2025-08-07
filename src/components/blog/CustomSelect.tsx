@@ -7,6 +7,7 @@ export interface OptionType {
   value: string;
   label: string;
   icon?: React.ReactNode;
+  logo?: string;
 }
 export interface CustomSelectProps {
   options: OptionType[];
@@ -58,11 +59,20 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       >
         <span className="h-5 w-5 min-w-5 [&>*]:h-full [&>*]:w-full">
           {selectedOption ? (
-            selectedOption.icon
+            selectedOption.logo ? (
+              <img
+                src={selectedOption.logo}
+                alt={selectedOption.label}
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              selectedOption.icon
+            )
           ) : (
             <ConstructionIcon color="white" />
           )}
         </span>
+
         <span className="text-decemberSky w-full text-start tracking-[0.1px]">
           {selectedOption ? selectedOption.label : placeholder}
         </span>
@@ -88,7 +98,15 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                 className="hover:bg-wallStreet flex w-full items-center gap-3 px-3 py-2 text-left"
               >
                 <span className="h-5 w-5 [&>*]:h-full [&>*]:w-full">
-                  {option.icon}
+                  {option.logo ? (
+                    <img
+                      src={option.logo}
+                      alt={option.label}
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    option.icon
+                  )}
                 </span>
                 <span
                   className={` ${selectedOption?.value === option.value ? "" : ""}`}

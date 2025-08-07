@@ -4,6 +4,11 @@ import TrustBar from "@/components/common/TrustBar";
 import IntegrationCards from "@/components/integration/IntegrationCards";
 import IntegrationHero from "@/components/integration/IntegrationHero";
 
+export const metadata = {
+  title: "Material Trends: Track Prices & Shortages of Different Industries",
+  description:
+    "Get updates on material trends, pricing shifts, and supply chain alerts affecting contractors this year.",
+};
 const IntegrationPage = () => {
   return (
     <main id="home-page-wrapper-2">

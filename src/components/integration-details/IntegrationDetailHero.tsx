@@ -64,11 +64,11 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
           Contractor + {user.name}
         </h4>
         <h1 className="main-heading text-gradient-effect max-w-[840px] text-center">
-          Unlocking Financial Simplicity With Paypal
+          Unlocking Financial Simplicity With {user.name}
         </h1>
         <p className="hero-description !text-ashGray mx-auto mt-3 max-w-[739px] text-center">
-          Contractor+ proudly announces its collaboration with PayPal, a global
-          icon in digital payments.
+          Contractor+ proudly announces its collaboration with {user.name}, a
+          global icon in digital payments.
         </p>
       </div>
 

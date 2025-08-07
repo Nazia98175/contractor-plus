@@ -1792,44 +1792,95 @@ export const integrationTypes: OptionType[] = [
   {
     value: "contractor",
     label: "Zapier",
-    icon: <ContractorToolsIcon />,
+    logo: "/images/svg/zapier.svg",
   },
   {
     value: "electrician",
     label: "Simply Business",
-    icon: <Plug color="white" />,
+    logo: "/images/svg/simple-business.svg",
   },
   {
     value: "plumber",
     label: "Venmo",
-    icon: <Wrench color="white" />,
+    logo: "/images/svg/venmo.svg",
   },
   {
-    value: "carpenter",
-    label: "Carpenter",
-    icon: <Hammer color="white" />,
+    value: "cashapp",
+    label: "CashApp",
+    logo: "/images/svg/cash-app.svg",
   },
   {
-    value: "painter",
-    label: "Painter",
-    icon: <Paintbrush2 color="white" />,
+    value: "paypal",
+    label: "PayPal",
+    logo: "/images/svg/paypal.svg",
   },
   {
-    value: "hvac",
-    label: "HVAC Technician",
-    icon: <ThermometerSun color="white" />,
+    value: "authorize",
+    label: "Authorize.net",
+    logo: "/images/svg/authorize.svg",
   },
   {
-    value: "roofer",
-    label: "Roofer",
-    icon: <Castle color="white" />,
+    value: "square",
+    label: "Square",
+    logo: "/images/svg/square.svg",
   },
   {
-    value: "landscaper",
-    label: "Landscaper",
-    icon: <Flower color="white" />,
+    value: "stripe",
+    label: "Stripe",
+    logo: "/images/svg/strapi.svg",
+  },
+  {
+    value: "gmail",
+    label: "Gmail",
+    logo: "/images/svg/gmail.svg",
+  },
+  {
+    value: "outlook",
+    label: "Outlook Calendar",
+    logo: "/images/svg/outlook.svg",
+  },
+  {
+    value: "ical",
+    label: "iCal",
+    logo: "/images/svg/calender.svg",
+  },
+  {
+    value: "office365",
+    label: "Office 365 Calendar",
+    logo: "/images/svg/office-365.svg",
+  },
+  {
+    value: "googlecal",
+    label: "Google Calendar",
+    logo: "/images/svg/google-calender.svg",
+  },
+  {
+    value: "quickbooks",
+    label: "Quickbooks Online",
+    logo: "/images/svg/quickbooks.svg",
+  },
+  {
+    value: "thumbtack",
+    label: "Thumbtack",
+    logo: "/images/svg/thumbtach.svg",
+  },
+  {
+    value: "earthcam",
+    label: "EarthCam",
+    logo: "/images/svg/earthcam.svg",
+  },
+  {
+    value: "wisetack",
+    label: "Wisetack",
+    logo: "/images/svg/wisetack.svg",
+  },
+  {
+    value: "companycam",
+    label: "CompanyCam",
+    logo: "/images/svg/companycom.svg",
   },
 ];
+
 export const plans: Plan[] = [
   { name: "Freedom", cta: "Start for free", variant: "default" },
   { name: "PRO", cta: "Get started", variant: "pro" },
@@ -4560,10 +4611,4 @@ export const automatedFaq = {
     },
   ],
 };
-
-export const automatedHeadingData = {
-  id: 1,
-  title: "Auto Agreement topics in Contractor+ HQ",
-  btnText: "Contractor+ HQ",
-  btnUrl: "/blog",
-};
+export const industriesData = [{ id: 1 }];

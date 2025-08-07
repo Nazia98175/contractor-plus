@@ -12,7 +12,7 @@ const IntegrationCards = () => {
     <section className="relative z-40 space-y-12 pt-20 md:space-y-14 xl:space-y-[62px]">
       <div className="font-myriad bg-rgba15 relative z-30 mx-auto flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg p-2.5 backdrop-blur-[42px] sm:flex-row">
         <div className="flex w-full items-center gap-1.5">
-          <div className="border-secondary flex h-10 w-full items-center rounded-lg border pl-3.5">
+          <div className="border-cyanBlue flex h-10 w-full items-center rounded-lg border pl-3.5">
             <SearchIcon />
             <input
               type="text"

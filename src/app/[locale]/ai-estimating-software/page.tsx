@@ -46,12 +46,11 @@ const EstimaticAiPage = async ({
     comaprisonList,
     problemSolution,
     commonProblem,
-    industry,
+    industriesData,
     thousandReviews,
     faqs,
     commonData,
   } = await getEstimaticPageData(useParams?.locale);
-
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div
@@ -83,14 +82,9 @@ const EstimaticAiPage = async ({
           className="pb-[113px]"
           switchingTool={estimaticControlData}
         />
-        {/* <ContractorIndustry
-          contractorIndustry={{
-            ...contractorIndustry,
-            url: contractorIndustry.url ?? "",
-            btnText: contractorIndustry.btnText ?? "",
-          }}
-        /> */}
-        {/* <ContractorIndustry contractorIndustry={industriesData} /> */}
+        <ContractorIndustry
+          contractorIndustry={industriesData?.data?.Industries}
+        />
         <Image
           className="pointer-events-none absolute bottom-0 left-0 z-20 hidden h-[90%] w-full max-w-[900px] object-center md:block"
           src="/images/webp/josh-lesson-left-background.webp"

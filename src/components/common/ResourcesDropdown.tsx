@@ -6,8 +6,12 @@ import { ArrowIcon } from "./Icons";
 import Image from "next/image";
 interface Props {
   headerSubList: any;
+  closeDropdown?: () => void;
 }
-const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
+const ResourcesDropdown: React.FC<Props> = ({
+  headerSubList,
+  closeDropdown,
+}) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
   const t = useTranslations("resources");
 
@@ -37,6 +41,10 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
         <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
           {headerSubList?.[0]?.links?.map((link: any, index: any) => (
             <Link
+              onClick={() => {
+                closeDropdown?.(); // closes dropdown
+                // Do not use preventDefault here!
+              }}
               href={link?.linkUrl ?? ""}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}

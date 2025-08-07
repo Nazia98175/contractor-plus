@@ -124,7 +124,10 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
     setPrevMenu(activeMenu);
     setActiveMenu(null);
   };
-
+  const closeDropdown = () => {
+    setPrevMenu(activeMenu);
+    setActiveMenu(null);
+  };
   return (
     <div onMouseLeave={handleMouseLeave}>
       <div className="flex w-full items-center gap-2">
@@ -203,6 +206,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
+                closeDropdown={closeDropdown}
               />
             )}
             {activeMenu === "industries" && (
@@ -211,6 +215,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
+                closeDropdown={closeDropdown}
               />
             )}
             {activeMenu === "resources" && (
@@ -219,6 +224,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
+                closeDropdown={closeDropdown}
               />
             )}
           </div>

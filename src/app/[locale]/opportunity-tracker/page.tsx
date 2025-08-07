@@ -33,7 +33,7 @@ export const metadata = {
 const DealFlowTracker = () => {
   return (
     <div>
-      {/* <CommonHero
+      <CommonHero
         hero={{
           heroTitle:
             "The one board that shows every deal, dollar value, and what to do next",
@@ -48,7 +48,7 @@ const DealFlowTracker = () => {
         slug="crm"
         commonData={dealflowhero}
         apiData={false}
-      /> */}
+      />
       <div className="pb-6">
         <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
       </div>

@@ -101,7 +101,7 @@ const SwitchingToolDesktop = ({
           ref={cardRef1}
           className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
         >
-          <div className="flex w-full justify-center">
+          <div className="mx-auto flex w-full max-w-[66px] items-center justify-center">
             <Image
               src={
                 switchingTool?.cardsDetail?.[0]?.cardImg?.url ||
@@ -122,7 +122,7 @@ const SwitchingToolDesktop = ({
           ref={cardRef2}
           className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
         >
-          <div className="flex w-full justify-center">
+          <div className="mx-auto flex w-full max-w-[66px] items-center justify-center">
             <Image
               src={
                 switchingTool?.cardsDetail?.[1]?.cardImg?.url ||
@@ -143,7 +143,7 @@ const SwitchingToolDesktop = ({
           ref={cardRef3}
           className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
         >
-          <div className="flex w-full justify-center">
+          <div className="mx-auto flex w-full max-w-[66px] items-center justify-center">
             <Image
               src={
                 switchingTool?.cardsDetail?.[2]?.cardImg?.url ||

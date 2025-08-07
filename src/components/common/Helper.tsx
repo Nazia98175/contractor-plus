@@ -4611,4 +4611,146 @@ export const automatedFaq = {
     },
   ],
 };
-export const industriesData = [{ id: 1 }];
+export const estimaticReviewsAi = {
+  data: [
+    {
+      reviews: {
+        title: null,
+        subTitle: null,
+        reviews: [
+          {
+            id: 1,
+            userName: "Richard Tooley",
+            profileImg: null,
+            rating: 5,
+            videoLink: null,
+            isModal: false,
+            companyLogo: null,
+            review: `I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage.`,
+            userRole: "Focus Handyman",
+          },
+
+          {
+            id: 2,
+            userName: "Scott Azure",
+            profileImg: "/images/png/scott.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/CllT0U-CtGc?si=dAxaKG8w04fLCQHr",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
+            userRole: "CEO at Rands Mechanical",
+          },
+
+          {
+            id: 3,
+            userName: "Madison Campbell",
+            profileImg: "",
+            rating: 5,
+            videoLink: "",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `Managing warranty requests used to clutter my spreadsheets, but Contractor+ service requests logs each issue with photos and descriptions. time tracking then logs repair hours against each warranty ticket, so I can submit accurate reports. That organized approach has cut repair cycles by days and boosted client confidence in my follow-through.`,
+            userRole: "WeatherShield Roofing LLC",
+          },
+          {
+            id: 4,
+            userName: "Brandon Geiger",
+            profileImg: "/images/png/brandon-ginger.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/ODjGhYILJKE?si=lcdtM7DNcQ6_JGd8",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!""`,
+            userRole: "Co-Owner, Rushville Restorations",
+          },
+          {
+            id: 5,
+            userName: "Justin Mcnichols",
+            profileImg: "/images/png/justin-mcnichols.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/R5Q47lOKtdI?si=dXIwPzPW1zbYgeD8",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"I love being able to keep track of my entire business in one app. And the leads we've been getting from Contractor+ are so much better than the leads we've got from other places. The app is easy to use and is making my life a lot easier."`,
+            userRole: "President, TPB Construction",
+          },
+          {
+            id: 6,
+            userName: "Chad Cranfill",
+            profileImg: "/images/png/chad-cranfill.png",
+            rating: 5,
+            videoLink: "https://youtu.be/eANJwuWMDpM?si=ZAW_hPRZTp_1xrY-",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."`,
+            userRole: "Owner, Cranfill Construction",
+          },
+          {
+            id: 7,
+            userName: "Juan Garcia",
+            profileImg: "/images/png/juan-garcia.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/KpYSsQhP_J0?si=AzXAksGGa9cRi6L2",
+            isModal: true,
+            companyLogo: "/images/png/juan-garcia.png",
+            review: `"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 9,
+            userName: "Josh T.",
+            profileImg: "/images/png/josh.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/8ts4jsNZtgM?si=qiCj5doq9gsEocRn",
+            isModal: true,
+            companyLogo: "/images/png/josh.png",
+            review: `"Contractor+ covers nearly every part of our business. Now, we’re not just working - we’re busy handling new leads every day."`,
+            userRole: "Owner, Hermano's Home Improvements",
+          },
+          {
+            id: 10,
+            userName: "John Croy",
+            profileImg: "/images/png/john-croy.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/L49D7VE_Usw?si=3I-iy97Au__yyywp",
+            isModal: true,
+            companyLogo: "/images/png/john-croy.png",
+            review: `"Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."`,
+            userRole: "Co-Owner, Ross Co. Home Pro's",
+          },
+          {
+            id: 11,
+            userName: "Josh Leeson",
+            profileImg: "/images/png/josh-lesson.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/r-Fg4MymoXI?si=6I7brppBiJh4HGUc",
+            isModal: true,
+            companyLogo: "/images/png/john-croy.png",
+            review: `"We've got two crews working 5 to 6 days a week now. A year ago, it was just me. We would have never been able to grow like we have if it wasn't for Contractor+. The scheduling and client agreements makes my life a lot easier. Contractor+ ROCKS!"`,
+            userRole: " Owner, iCare Lawn Care & Landscaping",
+          },
+          {
+            id: 12,
+            userName: "Scott Azure",
+            profileImg: "/images/png/josh-lesson.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/CllT0U-CtGc?si=dAxaKG8w04fLCQHr",
+            isModal: true,
+            companyLogo: "/images/png/john-croy.png",
+            review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
+            userRole: " CEO at Rands Mechanical",
+          },
+        ],
+      },
+    },
+  ],
+};

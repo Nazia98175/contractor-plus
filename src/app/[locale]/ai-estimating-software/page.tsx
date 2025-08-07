@@ -1,14 +1,13 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import {
   blogList,
-  contractorIndustry,
   dealReviews2,
   estimateFaq,
   estimateFormData,
   estimaticBlogHeadingData,
   estimaticCardData,
   estimaticControlData,
-  estimaticReviews,
+  estimaticReviewsAi,
   platforms,
 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
@@ -59,7 +58,7 @@ const EstimaticAiPage = async ({
       >
         <EstimaticHero />
         <TrustedService
-          reviews={estimaticReviews}
+          reviews={estimaticReviewsAi}
           slug="crm"
           className="pb-6 lg:pt-6 lg:pb-3.5"
           apiData={false}
@@ -102,8 +101,7 @@ const EstimaticAiPage = async ({
           sizes="700px"
         />
       </div>
-
-      <AwardsTagsImg className="sm:mt-24 xl:mt-[133px]" />
+      <AwardsTagsImg className="sm:mt-14" />
       <ThousandsReviews
         data={dealReviews2}
         reviews={dealReviews2.reviews}

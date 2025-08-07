@@ -17,6 +17,7 @@ import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import AlwaysTransparentAccessible from "@/components/leadgeneration/AlwaysTransparentAccessible";
 import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
+import DragAnimaiton from "@/components/leadgeneration/DragAnimaiton";
 import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
 import PossibleWithContractor from "@/components/leadgeneration/PossibleWithContractor";
@@ -55,7 +56,8 @@ const LeadGeneration = () => {
 
       <div className="overflow-hidden bg-white">
         <CombinesPowerfulAi />
-        <PossibleWithContractor />
+        <DragAnimaiton />
+        {/* <PossibleWithContractor /> */}
         <AlwaysTransparentAccessible
           imgPath="/images/webp/always-transparent.webp"
           headingPrimary="Always transparent,"

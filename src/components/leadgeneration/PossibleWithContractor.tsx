@@ -3,7 +3,8 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { DividerIcon, WhiteArrowIcon } from "../common/Icons";
 import Copy from "../common/Copy";
-
+import LottieAnimation from "../common/LottieAnimation";
+import drag from "../../../public/lotties/drag.json";
 const PossibleWithContractor = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -103,7 +104,11 @@ const PossibleWithContractor = () => {
           See what’s possible with Contractor+ Local
         </h2>
       </Copy>
-
+      <LottieAnimation
+        className="mx-auto h-full w-full"
+        loop={true}
+        animationData={drag}
+      />
       <div className="relative h-full overflow-hidden">
         <div className="pointer-events-none absolute -top-[15%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>{" "}
         <div className="pointer-events-none absolute -bottom-[15%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>

@@ -3272,6 +3272,7 @@ export const neverLookBackData = {
     },
   ],
 };
+import productivity from "../../../public/lotties/productivity.json";
 export const neverLookBackData2 = {
   title: "Teams that switch to Contractor+ never look back",
   subTitle: "We help you get ahead, not just get by.",
@@ -3286,7 +3287,7 @@ export const neverLookBackData2 = {
       suffix: "hours",
       prefix: null,
       value: null,
-      lottieJson: up_arrow_black,
+      lottieJson: clock,
       cardImage: {
         url: null,
       },
@@ -3301,7 +3302,7 @@ export const neverLookBackData2 = {
       denominator: null,
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: up_arrow_black,
       cardImage: {
         url: null,
       },
@@ -3317,7 +3318,7 @@ export const neverLookBackData2 = {
       suffix: "%",
       denominator: null,
       value: null,
-      lottieJson: null,
+      lottieJson: productivity,
       cardImage: {
         url: null,
       },
@@ -4452,7 +4453,7 @@ export const automate_comparisonData = {
     },
   ],
 };
-
+import clock from "../../../public/lotties/Clock-2.json";
 export const automateneverlookBackData = {
   title: "Teams that switch to Contractor+ never look back",
   subTitle: "We help you get ahead, not just get by.",
@@ -4481,7 +4482,7 @@ export const automateneverlookBackData = {
       denominator: 10, // This enables "9 in 10" display
       prefix: null,
       value: null,
-      lottieJson: sale_productivity,
+      lottieJson: lead_icon_black,
       cardImage: {
         url: null,
       },
@@ -4495,7 +4496,7 @@ export const automateneverlookBackData = {
       suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: lead_icon_black,
+      lottieJson: clock,
       cardImage: {
         url: null,
       },

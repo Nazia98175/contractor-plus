@@ -28,9 +28,9 @@ import { getEstimaticPageData } from "@/services/estimatic-ai/getestimaticData";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Contractor Plus - The first AI estimator worth trusting",
+  title: "Estimatic AI Estimating Software | Contractor+",
   description:
-    "Estimatic references your costbook, live supplier pricing, and local labor rates to build estimates the same way you do. Just 100x faster.",
+    "Create accurate estimates in minutes with Estimatic AI. Automate material takeoffs, pricing, and proposals with AI estimating that wins jobs.",
 };
 const EstimaticAiPage = async ({
   params,

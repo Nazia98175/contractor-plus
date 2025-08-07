@@ -77,6 +77,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       };
     }, 700);
   }, [data?.cards]);
+
   return (
     <section className="no-scrollbar relative z-10 w-full bg-white pt-[50px] sm:pt-14 md:pt-[70px]">
       <div className="pointer-events-none absolute top-[-86px] left-[-20%] z-50 h-[150px] w-[140%] bg-white blur-[34px]"></div>
@@ -115,6 +116,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
       <div className="main-container relative z-20 flex flex-wrap justify-center gap-3.5 pt-7 pb-10 sm:gap-6 sm:pt-10 md:pt-8 xl:grid xl:grid-cols-3">
         {data?.cards?.map((item: any, index: any) => (
           <div
+            key={index}
             ref={(el) => {
               if (contentRefs.current) {
                 contentRefs.current[index] = el;

@@ -4,11 +4,32 @@ import { contractorTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
 import CustomSelect from "./CustomSelect";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const BlogHero = () => {
   const [selectedValue, setSelectedValue] = useState("contractor");
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = () => {
+    if (!searchText.trim()) return;
+    console.log("Searching for:", searchText);
+    setSearchText("");
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+      setSearchText("");
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Initial fade-in animations
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen-blog", {
         opacity: 1,
@@ -23,10 +44,36 @@ const BlogHero = () => {
         duration: 1,
       });
     }, 700);
+    // Create timeline for parallax
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".parallax-container",
+        start: "top top",
+        end: "bottom 30%",
+        scrub: 1,
+        markers: false,
+      },
+    });
+
+    // Add mountains to timeline with different speeds
+    tl.to("#mountain-1", { y: -90, ease: "none", scaleY: 1.2 }, 0)
+      .to("#mountain-2", { y: -120, ease: "none", scaleY: 1.4 }, 0)
+      .to("#mountain-3", { y: -250, ease: "none" }, 0)
+      .to("#mountain-4", { y: -340, ease: "none" }, 0)
+      .to("#mountain-5", { y: -150, ease: "none" }, 0);
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
+
   return (
-    <div className="relative bg-[url('/images/webp/parallax.webp')] bg-cover bg-fixed bg-center pt-44 pb-[400px] 2xl:pt-52">
-      <div className="relative -z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
+    <div
+      id="blog-parallax-container"
+      className="relative pt-44 pb-[460px] 2xl:pt-52"
+    >
+      <div className="relative z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
         <h1 className="gradient-text-shadow absolute bottom-0 left-1/2 z-0 -translate-x-1/2 blur-[26px]">
           Contractor+ HQ
         </h1>
@@ -46,13 +93,52 @@ const BlogHero = () => {
               type="text"
               autoFocus
               placeholder="Select Contractor + HQ"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={handleKeyDown}
               className="text-decemberSky placeholder:text-decemberSky w-full px-3 tracking-[0.1px] focus:outline-none"
             />
           </div>
-          <button className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80">
+          <button
+            onClick={handleSearch}
+            className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80"
+          >
             <SearchIcon color="#fff" />
           </button>
         </div>
+      </div>
+      {/* PARALLAX IMAGES CONTAINER */}
+      <div className="parallax-container absolute top-0 bottom-0 left-0 h-screen w-full">
+        <img
+          id="mountain-1"
+          src="/images/mountain/mountain-1.png"
+          className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full"
+          alt="Foreground mountain layer"
+        />
+        <img
+          id="mountain-2"
+          src="/images/mountain/mountain-2.png"
+          className="absolute bottom-0 left-0 z-[14] h-[23vw] w-full"
+          alt="Second mountain layer"
+        />
+        <img
+          id="mountain-3"
+          src="/images/mountain/mountain-3.png"
+          className="absolute bottom-0 left-0 z-[13] h-[28vw] w-full"
+          alt="Middle mountain layer"
+        />
+        <img
+          id="mountain-4"
+          src="/images/mountain/mountain-4.png"
+          className="absolute bottom-0 left-0 z-[12] h-[40vw] w-full"
+          alt="Background mountain layer"
+        />
+        <img
+          id="mountain-5"
+          src="/images/mountain/mountain-5.png"
+          className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
+          alt="Furthest mountain layer"
+        />
       </div>
     </div>
   );

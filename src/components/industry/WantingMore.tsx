@@ -23,8 +23,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
 
   const updateMaxHeight = () => {
     setTimeout(() => {
-      const cards = document.querySelectorAll(".crm-cards .wanting-more-bg");
-      console.log(cards, "cards===========>");
+      const cards = document.querySelectorAll(".crm-cards .crm-cards-inner");
       let currentMaxHeight = 0;
 
       cards.forEach((card) => {
@@ -43,12 +42,8 @@ const WantingMore: React.FC<WantingMoreProps> = ({
     if (headingRef.current) {
       const height = headingRef.current.getBoundingClientRect().height;
       setHeadingHeight(height);
-      console.log("Heading height:", height);
     }
   };
-
-  console.log(maxHeight);
-  console.log("Current heading height:", headingHeight);
 
   useEffect(() => {
     if (!sectionRef.current || !headingRef.current) return;
@@ -63,18 +58,18 @@ const WantingMore: React.FC<WantingMoreProps> = ({
       const startScreen = (window.innerHeight - maxHeight) / 2 - 60 + "px";
       const isVisible =
         (window.innerHeight - maxHeight) / 2 - 60 > headingHeight;
-      console.log((window.innerHeight - maxHeight) / 2 - 70);
-      console.log(isVisible, "isVisible=================>");
+
       if (!isVisible) return;
       // ScrollTrigger.getAll().forEach((st) => st.kill());
       const pinTrigger = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: `top ${startScreen}`, // Start pinning when section top reaches 90px from viewport top
-        end: `+=${(window.innerHeight / 100) * 90 * 4.2}`,
+        end: `+=${window.innerHeight * (totalCards * 1.034)}`,
         pin: headingRef.current,
         pinSpacing: false, // Prevents extra spacing
         scrub: false,
         invalidateOnRefresh: true,
+        markers: false,
         onUpdate: (self) => {
           const progress = self.progress;
           gsap.to(headingRef.current, {
@@ -109,7 +104,6 @@ const WantingMore: React.FC<WantingMoreProps> = ({
 
       <div
         ref={headingRef}
-        className="sticky-heading-wrapper"
         style={{
           position: "relative",
           zIndex: 20,

@@ -6,6 +6,7 @@ import { HamburgerIcon, LogoIcon } from "./Icons";
 import SideBar from "./SideBar";
 import { usePathname } from "next/navigation";
 import LanguageSelector from "./LanguageSelector";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 
 export interface HeaderProps {
   header?: any;
@@ -53,6 +54,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
     };
   }, [scrolled]);
 
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <header
       className="fixed top-4 z-[99] w-full rounded px-2 opacity-0"
@@ -86,7 +88,11 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
             <button className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm">
               {header?.loginText}
             </button>
-            <button className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex">
+            <button
+              onClick={() => handleRedirect({ pathname })}
+              disabled={loading}
+              className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
+            >
               {header?.btnText?.btnText}
             </button>
             <button className="lg:hidden" onClick={() => setIsShow(true)}>

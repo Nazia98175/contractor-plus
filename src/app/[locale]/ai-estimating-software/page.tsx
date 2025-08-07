@@ -72,7 +72,6 @@ const EstimaticAiPage = async ({
           issubHeadingShow={true}
         />
       </div>
-
       <OneGetsSet />
       <FieldService
         fieldService={estimaticCardData}
@@ -84,14 +83,14 @@ const EstimaticAiPage = async ({
           className="pb-[113px]"
           switchingTool={estimaticControlData}
         />
-
-        <ContractorIndustry
+        {/* <ContractorIndustry
           contractorIndustry={{
             ...contractorIndustry,
             url: contractorIndustry.url ?? "",
             btnText: contractorIndustry.btnText ?? "",
           }}
-        />
+        /> */}
+        {/* <ContractorIndustry contractorIndustry={industriesData} /> */}
         <Image
           className="pointer-events-none absolute bottom-0 left-0 z-20 hidden h-[90%] w-full max-w-[900px] object-center md:block"
           src="/images/webp/josh-lesson-left-background.webp"

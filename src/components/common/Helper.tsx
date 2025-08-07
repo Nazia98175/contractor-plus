@@ -3442,7 +3442,9 @@ export const estimaticControlData = {
           AI isn’t replacing <br /> your judgment
         </>
       ),
-      img: "/images/svg/green-tick.svg",
+      cardImg: {
+        url: "/images/svg/green-tick.svg",
+      },
       imgWidth: 66,
       imgHeight: 34,
     },
@@ -3453,7 +3455,9 @@ export const estimaticControlData = {
           You can tweak, edit, or <br /> override any line
         </>
       ),
-      img: "/images/svg/green-tick.svg",
+      cardImg: {
+        url: "/images/svg/green-tick.svg",
+      },
       imgWidth: 66,
       imgHeight: 34,
     },
@@ -3464,7 +3468,9 @@ export const estimaticControlData = {
           "Estimatic shows its work <br /> (no black box)"
         </>
       ),
-      img: "/images/svg/green-tick.svg",
+      cardImg: {
+        url: "/images/svg/green-tick.svg",
+      },
       imgWidth: 66,
       imgHeight: 34,
     },

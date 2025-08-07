@@ -34,7 +34,7 @@ const PricingHero: React.FC<PlansProps> = ({
       id="pricing-page-view-port-screen"
       className="font-jakarta relative px-2 pt-[110px] pb-[150px] sm:pt-[137px] xl:pb-24"
     >
-      <div className="xs:-bottom-[12%] absolute -bottom-[10%] left-1/2 z-10 h-16 w-[110%] -translate-x-1/2 bg-white blur-lg md:-bottom-[11%]"></div>
+      <div className="absolute -bottom-[10%] left-1/2 z-10 h-20 w-[110%] -translate-x-1/2 bg-white blur-sm md:-bottom-[11%] md:blur-[16px]"></div>
       <CloudsAnimation className="-bottom-[4%] !-z-0" />
       <Image
         src="/images/webp/pricing.webp"
@@ -53,14 +53,6 @@ const PricingHero: React.FC<PlansProps> = ({
             {pageContent?.hero?.title && pageContent?.hero?.title}
           </h2>
         </Copy>
-        {/* <AdaptiveHeroTitle
-          title={"Free to start, free to stay. Level up when you’re ready."}
-          className="gradient-white mb-4 text-center font-extralight text-transparent"
-          minFontSize={16}
-          maxLines={2}
-          maxFontSize={48}
-          textAnimation="pricing-page-view-port-screen"
-        /> */}
 
         <Copy delay={0.3}>
           <p className="hero-description !text-trolleyGrey text-center">

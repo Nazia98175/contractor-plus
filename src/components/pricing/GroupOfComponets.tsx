@@ -4,6 +4,7 @@ import Plans from "./Plans";
 import CompleteFeatureList from "./CompleteFeatureList";
 import ComparisonTable from "./ComparisonTable";
 import PricingHero from "./PricingHero";
+import gsap from "gsap";
 
 const GroupOfComponets = ({
   pageContent,

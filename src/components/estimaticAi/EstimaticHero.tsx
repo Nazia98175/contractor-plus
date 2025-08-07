@@ -48,15 +48,9 @@ const EstimaticHero = () => {
               AI Estimating Software
             </h5>
           </Copy>
-
-          {/* <Copy animateOnScroll={false} delay={1.1}>
-            <h2 className="gradient-text main-heading text-center xl:text-left">
-              The first AI estimator worth trusting
-            </h2>
-          </Copy> */}
           <AdaptiveHeroTitle
             title={"The first AI estimator worth trusting"}
-            className="gradient-2 text-center font-extrabold xl:text-left"
+            className="gradient-2 text-center leading-[128%] font-extrabold xl:text-left"
             minFontSize={25}
             maxLines={2}
             maxFontSize={52}
@@ -129,7 +123,7 @@ const EstimaticHero = () => {
       {/* Stats Cards */}
       <div className="main-container relative z-30 mt-8 grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-4 xl:gap-8">
         {estimateHeroData.map((obj, index) => (
-          <CardReveal key={index} distance={150} delay={1 + index * 0.1}>
+          <CardReveal key={index} distance={50} delay={1 + index * 0.1}>
             <StatisticCard obj={obj} />
           </CardReveal>
         ))}

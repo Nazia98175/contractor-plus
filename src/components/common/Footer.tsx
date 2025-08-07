@@ -43,7 +43,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     pathname.toLowerCase().includes("general-contractor") ||
     pathname.toLowerCase().includes("plumbing-business-software") ||
     pathname.toLowerCase().includes("remodeling-contractor-software") ||
-    pathname.toLowerCase().includes("construction-management-software")
+    pathname.toLowerCase().includes("construction-management-software") ||
+    pathname.toLowerCase().includes("local-seo-for-contractors")
       ? "light"
       : "dark";
   const isCrmRoute =

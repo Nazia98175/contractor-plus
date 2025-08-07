@@ -34,7 +34,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
       <div className="w-full max-w-[650px] xl:max-w-[732px]">
         <CardReveal distance={30} delay={0.1}>
           <div className="hidden items-center justify-center pb-1 md:flex lg:justify-start">
-            <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+            <span className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
               {tag}
             </span>
           </div>
@@ -60,10 +60,10 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
               <FreeTrialButton
                 className="!hidden sm:!flex"
                 text={getStartedFreeBtn}
-                showIcon={false}
+                showIcon={true}
               />
               <FreeTrialButton
-                showIcon={false}
+                showIcon={true}
                 className="mt-4 !flex w-full sm:!hidden"
                 text={mobileBtn}
               />

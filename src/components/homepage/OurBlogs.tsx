@@ -94,7 +94,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         <div className="blog-post mx-auto flex w-full max-w-[1920px] flex-col items-center justify-center gap-4">
           <Swiper
             modules={[Pagination]}
-            loop={true}
+            loop={false}
             pagination={{
               el: ".swiper-pagination-pricing",
               clickable: true,
@@ -123,15 +123,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </Swiper>
           <div className="swiper-pagination-pricing swiper-pagination-real-time-4 relative !left-0 flex !translate-x-0 items-center justify-center gap-1" />
         </div>
-        <Link
-          href={blogHeading.btnUrl}
-          className="flex justify-center pt-4 md:hidden"
-        >
-          <Button className="bg-red-linear primary-btn h-10 gap-2">
+        <div className="px-2 pt-4 md:hidden">
+          <Link
+            href={blogHeading.btnUrl}
+            className="bg-red-linear primary-btn flex h-10 justify-center gap-2 px-2"
+          >
             {blogHeading?.btnTxt}
             <BlogBtnIcon />
-          </Button>
-        </Link>
+          </Link>
+        </div>
       </div>
     </section>
   );

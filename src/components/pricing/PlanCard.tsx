@@ -24,6 +24,10 @@ interface PlanData {
     id: Number;
     label: string;
   }[];
+  annualFeatures?: {
+    id: Number;
+    label: string;
+  }[];
 }
 
 interface PlanCardProps {
@@ -40,7 +44,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
 
   return (
     <article
-      className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
+      className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-xl duration-100 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
@@ -83,8 +87,28 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
           {plan?.featuresTitle && plan?.featuresTitle}
         </h5>
         <ul className="space-y-4">
-          {plan?.monthlyFeatures &&
+          {!isAnnual &&
+            plan?.monthlyFeatures &&
             plan?.monthlyFeatures.map((feature: any, idx: number) => {
+              // const isAdditionalUser = feature === "additionalUser";
+              // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
+
+              return (
+                <li
+                  key={idx}
+                  className="text-wallStreet flex items-center gap-3 text-sm"
+                >
+                  <ListIcon />
+                  {feature.label}
+                  {/* {isAdditionalUser
+                    ? `$${userPrice}/month per additional user`
+                    : feature} */}
+                </li>
+              );
+            })}
+          {isAnnual &&
+            plan?.annualFeatures &&
+            plan?.annualFeatures.map((feature: any, idx: number) => {
               // const isAdditionalUser = feature === "additionalUser";
               // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
 

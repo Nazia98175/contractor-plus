@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { featureIcons } from "./FeaturesDropdown";
 import { CrossIcon, LogoIcon, SidebarArrowIcon } from "./Icons";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { usePathname } from "next/navigation";
 
 interface DropdownItemProps {
   title: string;
@@ -110,7 +112,8 @@ const SideBar = ({
       ...(items.length > 0 && { items }),
     };
   });
-
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <>
       {isshow && (
@@ -172,7 +175,11 @@ const SideBar = ({
               <button className="text-lightBlack font-myriad px-2 py-1 text-xs font-bold tracking-[0.1px]">
                 {header?.loginText || "Login"}
               </button>
-              <button className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white">
+              <button
+                onClick={() => handleRedirect({ pathname })}
+                disabled={loading}
+                className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white"
+              >
                 {header?.btnText?.btnText || "Get Started"}
               </button>
             </div>

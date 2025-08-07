@@ -34,26 +34,25 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
       className="relative flex h-full flex-col items-center justify-center pt-[144px] pb-[117px]"
     >
       <div className="mb-6 flex items-center justify-center gap-5 px-2 sm:gap-7 md:gap-12">
-        <div className="integration-logo-bg rounded-full bg-center p-3 md:p-[18px]">
+        <div className="bg-pianoBlack rounded-full bg-center md:p-[28px]">
           <Image
-            className="h-14 w-auto object-center sm:h-[72px]"
+            className="h-16 w-16 object-center p-3 sm:w-[60px] sm:p-0 md:h-[60px]"
             src="/images/png/center-icon.png"
             width={72}
             height={72}
             alt={user.name}
-            sizes={"51px"}
           />
         </div>
         <span className="h-16 w-16 sm:h-[92px] sm:w-[92px]">
           <UnionIcon />
         </span>
-        <div className="integration-logo-bg rounded-full bg-center p-3 md:p-[18px]">
+        <div className="bg-pianoBlack rounded-full bg-center md:p-[28px]">
           <Image
             src={user.logo}
             width={72}
             height={72}
             alt={user.name}
-            className="h-14 w-14 object-center sm:h-[72px] sm:w-[72px]"
+            className="h-14 w-14 object-center p-3 sm:h-[72px] sm:w-[72px] md:p-0"
           />
         </div>
       </div>

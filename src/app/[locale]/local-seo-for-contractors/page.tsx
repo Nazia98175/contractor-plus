@@ -21,6 +21,11 @@ import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
 import PossibleWithContractor from "@/components/leadgeneration/PossibleWithContractor";
 
+export const metadata = {
+  title: "Crush local search for less than the cost of one bad lead",
+  description:
+    "Contractor+ Local manages your online reputation, reviews, photos, citations, and Google posts—so you get more local leads while staying focused on the job",
+};
 const LeadGeneration = () => {
   return (
     <>

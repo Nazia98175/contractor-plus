@@ -5,30 +5,24 @@ import { SearchIcon } from "../common/Icons";
 import CustomSelect from "./CustomSelect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-
 const BlogHero = () => {
   const [selectedValue, setSelectedValue] = useState("contractor");
   const [searchText, setSearchText] = useState("");
-
   const handleSearch = () => {
     if (!searchText.trim()) return;
     console.log("Searching for:", searchText);
     setSearchText("");
   };
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleSearch();
       setSearchText("");
     }
   };
-
   useEffect(() => {
     window.scrollTo(0, 0);
-
     // Initial fade-in animations
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen-blog", {
@@ -54,20 +48,17 @@ const BlogHero = () => {
         markers: false,
       },
     });
-
     // Add mountains to timeline with different speeds
     tl.to("#mountain-1", { y: -90, ease: "none", scaleY: 1.2 }, 0)
       .to("#mountain-2", { y: -120, ease: "none", scaleY: 1.4 }, 0)
       .to("#mountain-3", { y: -250, ease: "none" }, 0)
       .to("#mountain-4", { y: -340, ease: "none" }, 0)
       .to("#mountain-5", { y: -150, ease: "none" }, 0);
-
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-
   return (
     <div
       id="blog-parallax-container"
@@ -143,5 +134,4 @@ const BlogHero = () => {
     </div>
   );
 };
-
 export default BlogHero;

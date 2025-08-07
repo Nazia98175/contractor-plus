@@ -196,14 +196,6 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
       >
         <div ref={contentRef} className="flex grow flex-col overflow-hidden">
           <div className="main-container flex grow flex-col overflow-hidden">
-            {/* {activeMenu === "whycontractordesktop" && (
-              <WhyContractorDropdown
-                headerSubList={
-                  headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
-                    ?.headerSubList
-                }
-              />
-            )} */}
             {activeMenu === "features" && (
               <FeaturesDropdown
                 isVisible

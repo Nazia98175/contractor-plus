@@ -116,7 +116,7 @@ const FeaturesDropdown: React.FC<Props> = ({
                           )}
                         </div>
                       </div>
-                      <p className="font-inter text-lightBlack text-sm">
+                      <p className="font-inter text-lightBlack mt-1.5 text-sm">
                         {featureId?.subTitle}
                       </p>
                     </Link>

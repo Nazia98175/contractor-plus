@@ -11,6 +11,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlogHero = () => {
   const [selectedValue, setSelectedValue] = useState("contractor");
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = () => {
+    if (!searchText.trim()) return;
+    console.log("Searching for:", searchText);
+    setSearchText("");
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+      setSearchText("");
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -79,10 +93,16 @@ const BlogHero = () => {
               type="text"
               autoFocus
               placeholder="Select Contractor + HQ"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={handleKeyDown}
               className="text-decemberSky placeholder:text-decemberSky w-full px-3 tracking-[0.1px] focus:outline-none"
             />
           </div>
-          <button className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80">
+          <button
+            onClick={handleSearch}
+            className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80"
+          >
             <SearchIcon color="#fff" />
           </button>
         </div>
@@ -93,31 +113,31 @@ const BlogHero = () => {
           id="mountain-1"
           src="/images/mountain/mountain-1.png"
           className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full"
-          alt=""
+          alt="Foreground mountain layer"
         />
         <img
           id="mountain-2"
           src="/images/mountain/mountain-2.png"
           className="absolute bottom-0 left-0 z-[14] h-[23vw] w-full"
-          alt=""
+          alt="Second mountain layer"
         />
         <img
           id="mountain-3"
           src="/images/mountain/mountain-3.png"
           className="absolute bottom-0 left-0 z-[13] h-[28vw] w-full"
-          alt=""
+          alt="Middle mountain layer"
         />
         <img
           id="mountain-4"
           src="/images/mountain/mountain-4.png"
           className="absolute bottom-0 left-0 z-[12] h-[40vw] w-full"
-          alt=""
+          alt="Background mountain layer"
         />
         <img
           id="mountain-5"
           src="/images/mountain/mountain-5.png"
           className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
-          alt=""
+          alt="Furthest mountain layer"
         />
       </div>
     </div>

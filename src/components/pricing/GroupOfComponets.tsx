@@ -56,7 +56,11 @@ const GroupOfComponets = ({
         <div ref={plansRef}>
           <Plans onScroll={scrollToTable} pricingPlans={pricingPlans} />
         </div>
+      </div>
+      <div className="bg-white">
         <CompleteFeatureList onScroll={scrollToTable} reviews={reviews} />
+      </div>
+      <div className="bg-white">
         <ComparisonTable ref={compariosnTableRef} />
       </div>
     </>

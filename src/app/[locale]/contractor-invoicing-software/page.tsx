@@ -29,9 +29,9 @@ import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 
 export const metadata = {
-  title: "Living invoices that instantly reflect every change",
+  title: "Auto-Update Contractor Invoicing Software | Contractor+",
   description:
-    "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
+    "Living invoices that reflect every signed, time-stamped change order. Capture uninvoiced billables automatically for more revenue.",
 };
 const BillingPage = () => {
   return (

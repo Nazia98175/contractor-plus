@@ -44,7 +44,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual }) => {
 
   return (
     <article
-      className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-[0px_17px_33px_-2px_rgba(28,39,49,0.08)] duration-300 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
+      className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-xl duration-100 hover:-translate-y-2 ${plan.cardClass ?? ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Plans from "./Plans";
 import CompleteFeatureList from "./CompleteFeatureList";
 import ComparisonTable from "./ComparisonTable";
@@ -10,7 +10,6 @@ const GroupOfComponets = ({
   commonData,
   pricingPlans,
   reviews,
-  pricingComparison,
 }: any) => {
   const compariosnTableRef = useRef<HTMLDivElement>(null);
   const plansRef = useRef<HTMLDivElement>(null);
@@ -23,9 +22,29 @@ const GroupOfComponets = ({
   const scrollToPlans = () => {
     plansRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 1000);
+  }, []);
   return (
     <>
-      <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover">
+      <div
+        id="home-page-view-port-screen"
+        className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover"
+      >
         <PricingHero
           onScroll={scrollToPlans}
           pageContent={pageContent}

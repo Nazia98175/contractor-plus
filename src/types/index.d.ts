@@ -64,7 +64,7 @@ export interface HomePageResponse {
   meta?: any;
 }
 export type PlansProps = {
-  onScroll: () => void;
+  onScroll?: () => void;
   pageContent?: any;
   commonData?: any;
   pricingPlans?: any;

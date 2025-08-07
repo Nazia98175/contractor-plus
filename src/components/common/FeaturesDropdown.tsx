@@ -78,7 +78,6 @@ const FeaturesDropdown: React.FC<Props> = ({
   if (!isVisible) {
     return null;
   }
-  console.log("testing", headerSubList);
 
   return (
     <div className="flex grow flex-col overflow-hidden">

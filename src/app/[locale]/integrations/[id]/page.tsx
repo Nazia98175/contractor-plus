@@ -31,7 +31,7 @@ const IntegrationDetails = async ({
       >
         <IntegrationDetailHero user={user} />
       </div>
-      <IntegrationDetail />
+      <IntegrationDetail user={user} />
       <div className="relative overflow-hidden">
         <Faq
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[118px] z-20 px-2"

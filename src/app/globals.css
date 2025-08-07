@@ -333,7 +333,9 @@ body {
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
-
+.integration-detail-bg {
+  @apply relative flex h-20 w-20 items-center justify-center rounded-full bg-center p-4 md:h-[108px] md:w-[108px] md:p-[18px];
+}
 .feature-btn {
   @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[110%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
@@ -412,7 +414,7 @@ html::-webkit-scrollbar {
   background: radial-gradient(
     349.94% 349.94% at 50% 50%,
     #0d0e12 4.81%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.6) 100%
   );
 }
 
@@ -2147,11 +2149,3 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-
-/* .finally-custom-box-shadow {
-  filter: drop-shadow(-13px 14px 26px #000000b9);
-}
-
-.finally-custom-drop-img {
-  filter: drop-shadow(-13px 16px 24 #000000);
-} */

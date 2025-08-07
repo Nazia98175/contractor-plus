@@ -31,28 +31,30 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
   return (
     <section
       id="home-page-view-port-screen-fetures"
-      className="relative flex h-full flex-col items-center justify-center pt-[144px] pb-[117px]"
+      className="relative flex h-full flex-col items-center justify-center pt-28 md:pt-[144px] md:pb-8 2xl:pt-[178px]"
     >
       <div className="mb-6 flex items-center justify-center gap-5 px-2 sm:gap-7 md:gap-12">
-        <div className="bg-pianoBlack rounded-full bg-center md:p-[28px]">
+        <div className="integration-detail-bg integration-logo-bg">
+          <div className="absolute -top-2 left-1/2 z-10 h-full w-[110%] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent blur-[30px]"></div>
           <Image
-            className="h-16 w-16 object-center p-3 sm:w-[60px] sm:p-0 md:h-[60px]"
+            className="h-12 w-auto object-center md:h-[72px]"
             src="/images/png/center-icon.png"
             width={72}
             height={72}
             alt={user.name}
           />
         </div>
-        <span className="h-16 w-16 sm:h-[92px] sm:w-[92px]">
+        <span className="h-16 w-16 md:h-[92px] md:w-[92px]">
           <UnionIcon />
         </span>
-        <div className="bg-pianoBlack rounded-full bg-center md:p-[28px]">
+        <div className="integration-detail-bg integration-logo-bg">
+          <div className="absolute -top-2 left-1/2 z-10 h-full w-[110%] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent blur-[30px]"></div>
           <Image
             src={user.logo}
             width={72}
             height={72}
             alt={user.name}
-            className="h-14 w-14 object-center p-3 sm:h-[72px] sm:w-[72px] md:p-0"
+            className="h-12 w-auto object-center md:h-[72px]"
           />
         </div>
       </div>

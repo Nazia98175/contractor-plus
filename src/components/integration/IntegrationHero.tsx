@@ -52,7 +52,7 @@ const IntegrationHero = () => {
   }, []);
   return (
     <section id="home-page-view-port-screen-fetures" className="pt-[115px]">
-      <div className="z-40 mx-auto flex max-w-[575px] flex-col items-center justify-center">
+      <div className="relative z-40 mx-auto flex max-w-[575px] flex-col items-center justify-center">
         <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
           Integrations
         </h4>

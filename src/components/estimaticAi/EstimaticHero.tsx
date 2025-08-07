@@ -111,17 +111,21 @@ const EstimaticHero = () => {
             labor and materials, with 2 gates & solar fence post caps as an
             optional add on
           </div>
-          <Image
-            width={730}
-            height={410}
-            src="/images/webp/estimatic-hero.webp"
-            alt="Estimatic AI software interface mockup"
-          />
+          <div className="relative overflow-hidden pb-10">
+            <Image
+              width={730}
+              height={410}
+              className="object-cover"
+              src="/images/webp/estimatic-hero.webp"
+              alt="Estimatic AI software interface mockup"
+            />
+            <div className="ai-blur absolute bottom-[-20%] left-0 h-[50%] w-full"></div>
+          </div>
         </CardReveal>
       </div>
 
       {/* Stats Cards */}
-      <div className="main-container relative z-30 mt-8 grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-4 xl:gap-8">
+      <div className="main-container relative z-30 grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
         {estimateHeroData.map((obj, index) => (
           <CardReveal key={index} distance={50} delay={1 + index * 0.1}>
             <StatisticCard obj={obj} />

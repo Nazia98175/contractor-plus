@@ -2152,3 +2152,6 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
+.ai-blur {
+  background: linear-gradient(180deg, #0d0c1000 0%, #0d0c10 66.82%);
+}

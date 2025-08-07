@@ -3,7 +3,6 @@ interface Props {
   headerSubList: any;
   closeDropdown?: () => void;
 }
-
 const IndustriesDropdown: React.FC<Props> = ({
   headerSubList,
   closeDropdown,

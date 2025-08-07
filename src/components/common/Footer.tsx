@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { footerVariantClasses } from "@/utils/getVariants";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,7 +13,6 @@ import {
   LinkdinIcon,
   TwitterIcon,
 } from "./Icons";
-import { footerVariantClasses } from "@/utils/getVariants";
 interface FooterLink {
   url: string;
   urlText: string;

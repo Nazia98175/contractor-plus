@@ -1,6 +1,5 @@
 "use client";
 import { ChevronDown } from "lucide-react";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useMemo, useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
@@ -13,7 +12,6 @@ interface Props {
   setIsShow?: (val: boolean) => void;
 }
 const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
-  const t = useTranslations("menu");
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [prevMenu, setPrevMenu] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -32,7 +30,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
       { id: "pricing", label: "pricing", link: "/pricing" },
       { id: "resources", label: "resources" },
     ],
-    [t],
+    [],
   );
 
   // Get menu index for animation direction

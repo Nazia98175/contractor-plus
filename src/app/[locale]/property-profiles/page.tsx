@@ -34,10 +34,9 @@ import TrackProfiles from "@/components/propertyprofiles/TrackProfiles";
 import Image from "next/image";
 
 export const metadata = {
-  title:
-    "Know the full story on every property you manage or service — instantly.",
+  title: "Property Management CRM & Property Profiles | Contractor+",
   description:
-    "Contractor+ is the first to offer a living, breathing history for each property that self-updates with every job, document, & email.",
+    "Finally, contractor software with property workflows. See the full history of any property, including all communication, jobs, notes, and more.",
 };
 const page = () => {
   return (

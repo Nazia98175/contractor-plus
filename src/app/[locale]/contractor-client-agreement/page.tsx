@@ -33,6 +33,11 @@ import TrustedService from "@/components/crmbussiness/TrustedService";
 import Image from "next/image";
 import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 
+export const metadata = {
+  title: "Contractor Client Agreement Made Simple | Contractor+",
+  description:
+    "One automated system to create, sign, amend, and store every client contract. We manage every contract from start to finish.",
+};
 const page = () => {
   return (
     <>

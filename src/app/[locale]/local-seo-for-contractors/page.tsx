@@ -23,9 +23,9 @@ import LottieStat from "@/components/leadgeneration/LottieStat";
 import PossibleWithContractor from "@/components/leadgeneration/PossibleWithContractor";
 
 export const metadata = {
-  title: "Crush local search for less than the cost of one bad lead",
+  title: "Local SEO for Contractors Just $247 | Contractor+",
   description:
-    "Contractor+ Local manages your online reputation, reviews, photos, citations, and Google posts—so you get more local leads while staying focused on the job",
+    "A fully managed local SEO & reputation management solution for less than the cost of a bad lead. Generate more local leads now.",
 };
 const LeadGeneration = () => {
   return (

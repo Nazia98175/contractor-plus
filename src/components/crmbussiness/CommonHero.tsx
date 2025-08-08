@@ -102,26 +102,39 @@ const CommonHero: React.FC<TheHeroProps> = ({
             </Copy>
           </div>
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <AppsRating />
-            <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
-              <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
-                <FreeTrialButton
-                  className="!hidden sm:!flex"
-                  text={commonData?.getStartedFreeBtn}
-                  showIcon={false}
-                />
-
-                <FreeTrialButton
-                  showIcon={false}
-                  className="!flex w-full sm:!hidden"
-                  text={commonData?.mobileBtn}
-                />
-                <CardRequiredButton
-                  className="text-wallStreet sm:text-secondary"
-                  text={commonData?.nccTxt}
-                />
-              </div>
-            </CardReveal>
+            {slug === "construction-bookkeeping-services" ? (
+              <FreeTrialButton
+                showIcon={false}
+                className=""
+                text={commonData?.mobileBtn}
+              />
+            ) : (
+              <>
+                <AppsRating />
+                <CardReveal
+                  distance={50}
+                  delay={0.8}
+                  className="w-full sm:w-fit"
+                >
+                  <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
+                    <FreeTrialButton
+                      className="!hidden sm:!flex"
+                      text={commonData?.getStartedFreeBtn}
+                      showIcon={false}
+                    />
+                    <FreeTrialButton
+                      showIcon={false}
+                      className="!flex w-full sm:!hidden"
+                      text={commonData?.mobileBtn}
+                    />
+                    <CardRequiredButton
+                      className="text-wallStreet sm:text-secondary"
+                      text={commonData?.nccTxt}
+                    />
+                  </div>
+                </CardReveal>
+              </>
+            )}
           </div>
         </div>
         {isShowHeroImg && (

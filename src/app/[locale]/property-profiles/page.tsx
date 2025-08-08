@@ -1,7 +1,7 @@
 import {
   blogList,
+  clientReviews,
   dealflowhero,
-  dealReviews,
   dealReviews2,
   neverLookBackData2,
   platforms,
@@ -58,7 +58,7 @@ const page = () => {
         apiData={false}
       />
       <div className="pb-6">
-        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+        <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={property_profiles_ControlData} />
       <FieldService

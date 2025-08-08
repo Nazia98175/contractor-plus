@@ -71,9 +71,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             </span>
 
             <h3 className="text-winterWay countup-title flex items-center justify-center">
-              <span
-                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[68px]"}`}
-              >
+              <span className={`flex justify-center`}>
                 {inView && item.start !== null && (
                   <CountUp
                     start={item.start}
@@ -93,7 +91,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                     : `${item.end}${item.suffix ?? ""}`)}
               </span>
 
-              <span className="inline-block px-2">
+              <span className="inline-block">
                 {item.title !== "n/a" && item.title}
               </span>
             </h3>

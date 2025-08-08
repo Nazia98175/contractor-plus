@@ -105,7 +105,7 @@ const SwitchingToolDesktop = ({
             <Image
               src={
                 switchingTool?.cardsDetail?.[0]?.cardImg?.url ||
-                "/images/webp/switch-card-4.webp"
+                "/images/svg/cross.svg"
               }
               width={switchingTool?.cardsDetail?.[0]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[0]?.imgHeight || 99}
@@ -126,7 +126,7 @@ const SwitchingToolDesktop = ({
             <Image
               src={
                 switchingTool?.cardsDetail?.[1]?.cardImg?.url ||
-                "/images/webp/switch-card-5.webp"
+                "/images/svg/cross.svg"
               }
               width={switchingTool?.cardsDetail?.[1]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[1]?.imgHeight || 99}
@@ -147,7 +147,7 @@ const SwitchingToolDesktop = ({
             <Image
               src={
                 switchingTool?.cardsDetail?.[2]?.cardImg?.url ||
-                "/images/webp/switch-card-5.webp"
+                "/images/svg/cross.svg"
               }
               width={switchingTool?.cardsDetail?.[2]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[2]?.imgHeight || 99}

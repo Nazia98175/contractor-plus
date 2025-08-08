@@ -38,7 +38,7 @@ export const metadata = {
   description:
     "One automated system to create, sign, amend, and store every client contract. We manage every contract from start to finish.",
 };
-const page = () => {
+const ContractorClientAgreementPage = () => {
   return (
     <>
       <AutomatedClientHero
@@ -139,4 +139,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContractorClientAgreementPage;

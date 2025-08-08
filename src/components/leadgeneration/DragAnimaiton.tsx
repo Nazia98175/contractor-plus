@@ -1,10 +1,11 @@
 "use client";
-import Image from "next/image";
-import React, { useState, useRef, useEffect } from "react";
-import { DividerIcon, WhiteArrowIcon } from "../common/Icons";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
+
 import Copy from "../common/Copy";
-import LottieAnimation from "../common/LottieAnimation";
-import drag from "../../../public/lotties/drag.json";
+// import ImageReveal from "./ImageReveal";
 const DragAnimaiton = () => {
   return (
     <div className="relative mx-auto mt-[45px] mb-[59px] w-full max-w-[1920px]">
@@ -15,24 +16,40 @@ const DragAnimaiton = () => {
       </Copy>
 
       <div className="relative h-full overflow-hidden">
-        <div className="pointer-events-none absolute -top-[15%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>{" "}
-        <div className="pointer-events-none absolute -bottom-[15%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>
+        <div className="pointer-events-none absolute -top-[12%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>{" "}
+        <div className="pointer-events-none absolute -bottom-[4%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>
         <div className="pointer-events-none absolute -top-[20%] bottom-0 left-[-4%] z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
         <div className="pointer-events-none absolute -top-[20%] right-[-4%] bottom-0 z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
-        <Image
-          className="absolute inset-0 object-cover"
-          src="/images/webp/double-map.webp"
-          alt="double-map"
-          unoptimized
-          fill
-        />
         <div className="relative flex h-full w-full items-center justify-between px-2">
           <div className="relative mt-4 flex h-full w-full items-center justify-between">
-            <div className="mx-auto flex h-full w-full max-w-[1100px] justify-between">
-              <LottieAnimation
-                className="mx-auto h-full w-full"
-                loop={false}
-                animationData={drag}
+            <div className="mx-auto flex h-full w-full justify-between">
+              <ReactCompareSlider
+                className="w-full"
+                keyboardIncrement={2}
+                defaultValue={70}
+                itemOne={
+                  <ReactCompareSliderImage
+                    src="/images/png/possible-top.png"
+                    srcSet="/images/png/possible-top.png"
+                    alt="Image one"
+                    className="w-full"
+                  />
+                }
+                handle={
+                  <>
+                    <img
+                      className="h-full max-w-[62px] min-w-[61px] object-contain"
+                      src="/images/png/drag-element.png"
+                    />
+                  </>
+                }
+                itemTwo={
+                  <ReactCompareSliderImage
+                    src="/images/png/possible-bottom.png"
+                    srcSet="/images/png/possible-bottom.png"
+                    alt="Image two"
+                  />
+                }
               />
             </div>
           </div>

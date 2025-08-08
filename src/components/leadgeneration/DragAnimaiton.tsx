@@ -1,14 +1,10 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { DividerIcon, WhiteArrowIcon } from "../common/Icons";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
 
 import Copy from "../common/Copy";
-import LottieAnimation from "../common/LottieAnimation";
-import drag from "../../../public/lotties/drag.json";
 // import ImageReveal from "./ImageReveal";
 const DragAnimaiton = () => {
   return (

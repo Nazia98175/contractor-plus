@@ -28,39 +28,38 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
   const blogListMobile = [
     {
       id: 1,
-      title: "Contractor+ Blogss",
+      title: "USA Labor Rate Index",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-1.webp",
+      imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "266px",
-      backgroundImage: "/images/svg/blog-1.svg",
+      backgroundImage: "/images/svg/blog-3.svg",
     },
     {
       id: 2,
-      title: "Podcasts",
+      title: "Local Construction Cost",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-2.webp",
+        "Get accurate construction cost estimates for any project. Compare material and labor pricing across major US cities.",
+      imageSrc: "/images/png/local-construction.png",
       imageWidth: "315px",
-      backgroundImage: "/images/svg/blog-2.svg",
+      backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
     },
     {
       id: 3,
-      title: "FREE Tools & Templates",
+      title: "Podcasts",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-3.webp",
+        "Listen to The Owners Perspective, Mindset Monday, and Hard Hat Chat.",
+      imageSrc: "/images/webp/blog-image-2.webp",
       imageWidth: "305px",
-      backgroundImage: "/images/svg/blog-3.svg",
+      backgroundImage: "/images/svg/blog-2.svg",
     },
     {
       id: 4,
-      title: "FREE Tools & Templates",
-      description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-3.webp",
+      title: "Contractor+ HQ",
+      description: "How-To Tutorials, Growth Tips, Industry News and more.",
+      imageSrc: "/images/webp/blog-image-1.webp",
       imageWidth: "305px",
-      backgroundImage: "/images/svg/blog-3.svg",
+      backgroundImage: "/images/svg/blog-1.svg",
     },
   ];
 

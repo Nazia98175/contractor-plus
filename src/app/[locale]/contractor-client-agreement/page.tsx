@@ -6,7 +6,7 @@ import {
   automatedCardData,
   automatedFaq,
   automatedformData,
-  // automatedHeadingData,
+  automatedHeadingData,
   automateneverlookBackData,
   blogList,
   dealflowhero,
@@ -131,7 +131,7 @@ const ContractorClientAgreementPage = () => {
 
       <BlogPosts
         data={blogList}
-        // blogs={automatedHeadingData}
+        blogs={automatedHeadingData}
         className="mt-7 mb-20 md:mt-9"
         classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
       />

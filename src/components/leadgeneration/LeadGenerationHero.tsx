@@ -79,13 +79,6 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         </div>
       </div>
       <div className="relative h-full max-h-[436px] w-full max-w-[650px] rounded-[12px] bg-white lg:max-w-[450px]">
-        {/* <Image
-          className="h-full max-h-[436px] w-full rounded-xl object-cover"
-          src={imgUrl}
-          alt={heading}
-          width={450}
-          height={436}
-        /> */}
         <LottieAnimation
           className="mx-auto h-full w-full"
           loop={false}

@@ -12,7 +12,7 @@ const OurBlogCard = ({
 }) => {
   return (
     <Link
-      href={"/blog"}
+      href={`${blogListMobile?.[index]?.blogUrl}`}
       key={blogListMobile?.[index]?.id}
       className="group relative z-20 h-fit w-full cursor-pointer overflow-hidden rounded-2xl"
     >

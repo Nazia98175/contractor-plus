@@ -5,7 +5,7 @@ import { BlogBtnIcon } from "../common/Icons";
 import OurBlogCard from "./OurBlogCard";
 import Copy from "../common/Copy";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Mousewheel, Pagination } from "swiper/modules";
 
 interface Blogs {
   blogTitle: string;
@@ -34,6 +34,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "266px",
       backgroundImage: "/images/svg/blog-3.svg",
+      blogUrl: "/blog",
     },
     {
       id: 2,
@@ -43,6 +44,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/png/local-construction.png",
       imageWidth: "315px",
       backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
+      blogUrl: "/blog",
     },
     {
       id: 3,
@@ -52,6 +54,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/webp/blog-image-2.webp",
       imageWidth: "305px",
       backgroundImage: "/images/svg/blog-2.svg",
+      blogUrl: "/podcasts",
     },
     {
       id: 4,
@@ -60,6 +63,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/webp/blog-image-1.webp",
       imageWidth: "305px",
       backgroundImage: "/images/svg/blog-1.svg",
+      blogUrl: "/contractor-hq",
     },
   ];
 
@@ -92,13 +96,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
         <div className="blog-post mx-auto flex w-full max-w-[1920px] flex-col items-center justify-center gap-4">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Mousewheel]}
             loop={false}
             pagination={{
               el: ".swiper-pagination-pricing",
               clickable: true,
               dynamicBullets: true,
             }}
+            mousewheel={{ forceToAxis: true, sensitivity: 1 }}
+            freeMode={true}
             speed={600}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },

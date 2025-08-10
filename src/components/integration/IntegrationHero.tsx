@@ -21,7 +21,6 @@ const IntegrationHero = () => {
     { id: 13, icon: "/images/png/abc-2.png" },
     { id: 14, icon: "/images/png/lowes-2.png" },
     { id: 15, icon: "/images/png/mernards.png" },
-    { id: 16, icon: "/images/png/earth.png" },
   ];
   const marqueeItem2 = [
     { id: 1, icon: "/images/png/calander.png" },
@@ -34,7 +33,7 @@ const IntegrationHero = () => {
     { id: 8, icon: "/images/png/lowe.png" },
     { id: 9, icon: "/images/png/menared.png" },
     { id: 10, icon: "/images/png/ace.png" },
-    { id: 11, icon: "/images/png/build.png" },
+    { id: 11, icon: "/images/png/earth.png" },
     { id: 12, icon: "/images/png/victory.png" },
     { id: 13, icon: "/images/png/ace-hardware.png" },
     { id: 14, icon: "/images/png/home.png" },

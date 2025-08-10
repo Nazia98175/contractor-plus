@@ -4,6 +4,7 @@ import ContractorStartMain from "@/components/automatedclientagreements/Contract
 import {
   automate_comparisonData,
   automate_ControlData,
+  automatedCardData,
   automatedFaq,
   automatedformData,
   automatedHeadingData,
@@ -22,6 +23,7 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
+import FieldService from "@/components/crmbussiness/FieldService";
 import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";

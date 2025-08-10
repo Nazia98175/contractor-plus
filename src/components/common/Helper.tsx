@@ -3106,20 +3106,6 @@ export const dealReviews = {
             userRole: "CEO at Rands Mechanical",
           },
 
-<<<<<<< HEAD
-          {
-            id: 3,
-            userName: "Madison Campbell",
-            profileImg: "",
-            rating: 5,
-            videoLink: "",
-            isModal: true,
-            companyLogo: "/images/svg/randsIcon.svg",
-            review: `Managing warranty requests used to clutter my spreadsheets, but Contractor+ service requests logs each issue with photos and descriptions. time tracking then logs repair hours against each warranty ticket, so I can submit accurate reports. That organized approach has cut repair cycles by days and boosted client confidence in my follow-through.`,
-            userRole: "WeatherShield Roofing LLC",
-          },
-=======
->>>>>>> d29dac9e68209b42a6d92a6ffc17b2165a0d3403
           {
             id: 5,
             userName: "Justin Mcnichols",
@@ -3182,15 +3168,9 @@ export const clientReviews = {
             userRole: "Co-Owner, Rushville Restorations",
           },
           {
-<<<<<<< HEAD
-            id: 5,
-            userName: "Justin Mcnichols",
-            profileImg: "/images/png/justin-mcnichols.png",
-=======
             id: 2,
             userName: "Juan Garcia",
             profileImg: "/images/webp/juan-gracia.webp",
->>>>>>> d29dac9e68209b42a6d92a6ffc17b2165a0d3403
             rating: 5,
             videoLink:
               "https://www.youtube.com/embed/R5Q47lOKtdI?si=mKWjfvWmiFwEbkTv",
@@ -3200,29 +3180,17 @@ export const clientReviews = {
             userRole: "President, TPB Construction",
           },
           {
-<<<<<<< HEAD
-            id: 6,
-            userName: "Chad Cranfill",
-            profileImg: "/images/png/chad-cranfill.png",
-=======
             id: 18,
-            userName: "Emily Moore",
-            rating: 5,
-            isModal: false,
-            review: `Managing multiple job sites felt like spinning plates until Contractor+ gantt charts laid out each phase visually. I sync timelines with subcontractors instantly, and the deal flow tracker keeps new project leads organized so none vanish. Between clear scheduling and systematic lead management, I’m hitting deadlines and won’t miss an opportunity this quarter.`,
-            userRole: "Apex Construction Works",
           },
           {
             id: 3,
             userName: "Scott Azure",
             profileImg: "/images/webp/rands.webp",
->>>>>>> d29dac9e68209b42a6d92a6ffc17b2165a0d3403
             rating: 5,
             videoLink: "https://youtu.be/eANJwuWMDpM?si=ZAW_hPRZTp_1xrY-",
             isModal: true,
             companyLogo: "/images/png/brandon-ginger.png",
             review: `"I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."`,
-            userRole: "Owner, Cranfill Construction",
           },
           {
             id: 7,

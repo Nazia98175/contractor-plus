@@ -7,7 +7,6 @@ import {
 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import {
-  billingFaqData,
   leadGenerationData,
   leadHGenerationFaqData,
 } from "@/components/common/Utils";
@@ -20,7 +19,6 @@ import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
 import DragAnimaiton from "@/components/leadgeneration/DragAnimaiton";
 import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
-import PossibleWithContractor from "@/components/leadgeneration/PossibleWithContractor";
 
 export const metadata = {
   title: "Local SEO for Contractors Just $247 | Contractor+",

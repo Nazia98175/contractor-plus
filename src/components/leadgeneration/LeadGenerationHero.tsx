@@ -11,6 +11,7 @@ import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import Crush_local from "../../../public/lotties/Crush-local-search.json";
 import LottieAnimation from "../common/LottieAnimation";
 import Copy from "../common/Copy";
+import GooglePoster from "./GooglePoster";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -79,12 +80,13 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         </div>
       </div>
       <div className="relative h-full max-h-[436px] w-full max-w-[650px] rounded-[12px] bg-white lg:max-w-[450px]">
-        <LottieAnimation
+        {/* <LottieAnimation
           className="mx-auto h-full w-full"
           loop={false}
           animationData={Crush_local}
-        />
-        <div className="lead-generation-img-overlay pointer-events-none absolute top-0 left-0 z-0 h-full w-full"></div>
+        /> */}
+        <GooglePoster />
+        {/* <div className="lead-generation-img-overlay pointer-events-none absolute top-0 left-0 z-0 h-full w-full"></div> */}
       </div>
     </section>
   );

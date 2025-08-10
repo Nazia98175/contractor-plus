@@ -1,16 +1,16 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
+import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 import {
   automate_comparisonData,
   automate_ControlData,
-  automatedCardData,
   automatedFaq,
   automatedformData,
   automatedHeadingData,
   automateneverlookBackData,
   blogList,
+  clientReviews,
   dealflowhero,
-  dealReviews,
   dealReviews2,
   platforms,
   propertyCRMSection,
@@ -21,9 +21,8 @@ import {
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmService from "@/components/crmbussiness/IndustryService";
 import Faq from "@/components/crmbussiness/Faq";
-import FieldService from "@/components/crmbussiness/FieldService";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
@@ -31,7 +30,6 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import Image from "next/image";
-import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 
 export const metadata = {
   title: "Contractor Client Agreement Made Simple | Contractor+",
@@ -54,7 +52,7 @@ const ContractorClientAgreementPage = () => {
         commonData={dealflowhero}
       />
       <div className="pb-6">
-        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+        <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
 

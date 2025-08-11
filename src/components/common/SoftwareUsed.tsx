@@ -50,10 +50,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   });
 
   return (
-    <article
-      ref={ref}
-      className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full"
-    >
+    <article className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full">
       {item.lottieJson ? (
         <LottieAnimation
           ref={setLottieRef(index)}

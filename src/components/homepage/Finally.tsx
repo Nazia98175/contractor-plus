@@ -216,7 +216,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 src="/images/png/ipad-mobile-view.png"
                 alt="Ipad Design"
                 className="block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
-                unoptimized
+                priority
                 sizes="(min-width: 1024px) 715px, 100vw"
               />
               <Image
@@ -226,7 +226,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 alt="Mobile Design"
                 className="absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
                 sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
-                unoptimized
+                priority
               />
             </div>
           </div>

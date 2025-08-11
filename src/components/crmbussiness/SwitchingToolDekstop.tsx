@@ -101,11 +101,11 @@ const SwitchingToolDesktop = ({
           ref={cardRef1}
           className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
         >
-          <div className="flex w-full justify-center">
+          <div className="mx-auto flex w-full max-w-[66px] items-center justify-center">
             <Image
               src={
                 switchingTool?.cardsDetail?.[0]?.cardImg?.url ||
-                "/images/webp/switch-card-4.webp"
+                "/images/svg/cross.svg"
               }
               width={switchingTool?.cardsDetail?.[0]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[0]?.imgHeight || 99}
@@ -122,11 +122,11 @@ const SwitchingToolDesktop = ({
           ref={cardRef2}
           className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
         >
-          <div className="flex w-full justify-center">
+          <div className="mx-auto flex w-full max-w-[66px] items-center justify-center">
             <Image
               src={
                 switchingTool?.cardsDetail?.[1]?.cardImg?.url ||
-                "/images/webp/switch-card-5.webp"
+                "/images/svg/cross.svg"
               }
               width={switchingTool?.cardsDetail?.[1]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[1]?.imgHeight || 99}
@@ -143,11 +143,11 @@ const SwitchingToolDesktop = ({
           ref={cardRef3}
           className="border-iron switch-tool-card w-full max-w-[410px] rounded-[40px] p-5"
         >
-          <div className="flex w-full justify-center">
+          <div className="mx-auto flex w-full max-w-[66px] items-center justify-center">
             <Image
               src={
                 switchingTool?.cardsDetail?.[2]?.cardImg?.url ||
-                "/images/webp/switch-card-5.webp"
+                "/images/svg/cross.svg"
               }
               width={switchingTool?.cardsDetail?.[2]?.imgWidth || 370}
               height={switchingTool?.cardsDetail?.[2]?.imgHeight || 99}

@@ -1,7 +1,6 @@
 "use client";
 import { PlansProps } from "@/types";
 import React, { useState } from "react";
-import CardReveal from "../common/CardReveal";
 import { ScrollDownIcon } from "../common/Icons";
 import PlanCard from "./PlanCard";
 import PlanToggle from "./PlanToggle";
@@ -21,14 +20,8 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
 
       <div className="flex w-full flex-wrap justify-center gap-5 lg:flex-nowrap">
         {pricingPlans?.plans &&
-          // pricingPlans?.plans.map((plan: any, index: number) => (
-          //   <CardReveal distance={50} delay={0.2} key={index}>
-          //     <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
-          //   </CardReveal>
           pricingPlans?.plans?.map((plan: any, index: number) => (
-            <CardReveal distance={50} delay={0.2} key={index}>
-              <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
-            </CardReveal>
+            <PlanCard plan={plan} isAnnual={isAnnual} key={index} />
           ))}
       </div>
 

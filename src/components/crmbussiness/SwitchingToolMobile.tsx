@@ -105,11 +105,14 @@ const SwitchingToolMobile = ({
         >
           <div className="flex w-full justify-center">
             <Image
-              src="/images/webp/switch-card-4.webp"
+              src={
+                switchingTool?.cardsDetail?.[0]?.cardImg?.url ||
+                "/images/svg/cross.svg"
+              }
               width={370}
               height={99}
               alt="card 1"
-              className="h-full w-full object-cover"
+              className="mx-auto h-full w-full max-w-[66px] object-cover"
             />
           </div>
           <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
@@ -123,11 +126,14 @@ const SwitchingToolMobile = ({
         >
           <div className="flex w-full justify-center">
             <Image
-              src="/images/webp/switch-card-5.webp"
+              src={
+                switchingTool?.cardsDetail?.[1]?.cardImg?.url ||
+                "/images/svg/cross.svg"
+              }
               width={370}
               height={99}
               alt="card 2"
-              className="h-full w-full object-cover"
+              className="mx-auto h-full w-full max-w-[66px] object-cover"
             />
           </div>
           <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">
@@ -141,11 +147,14 @@ const SwitchingToolMobile = ({
         >
           <div className="flex w-full justify-center">
             <Image
-              src="/images/webp/switch-card-6.webp"
+              src={
+                switchingTool?.cardsDetail?.[2]?.cardImg?.url ||
+                "/images/svg/cross.svg"
+              }
               width={370}
               height={99}
               alt="card 3"
-              className="h-full w-full object-cover"
+              className="mx-auto h-full w-full max-w-[66px] object-cover"
             />
           </div>
           <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium xl:pt-6 xl:text-xl">

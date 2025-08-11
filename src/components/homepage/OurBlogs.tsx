@@ -5,7 +5,7 @@ import { BlogBtnIcon } from "../common/Icons";
 import OurBlogCard from "./OurBlogCard";
 import Copy from "../common/Copy";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Mousewheel, Pagination } from "swiper/modules";
 
 interface Blogs {
   blogTitle: string;
@@ -28,39 +28,42 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
   const blogListMobile = [
     {
       id: 1,
-      title: "Contractor+ Blogss",
+      title: "USA Labor Rate Index",
       description:
         "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-1.webp",
+      imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "266px",
-      backgroundImage: "/images/svg/blog-1.svg",
+      backgroundImage: "/images/svg/blog-3.svg",
+      blogUrl: "/blog",
     },
     {
       id: 2,
-      title: "Podcasts",
+      title: "Local Construction Cost",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-2.webp",
+        "Get accurate construction cost estimates for any project. Compare material and labor pricing across major US cities.",
+      imageSrc: "/images/png/local-construction.png",
       imageWidth: "315px",
-      backgroundImage: "/images/svg/blog-2.svg",
+      backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
+      blogUrl: "/blog",
     },
     {
       id: 3,
-      title: "FREE Tools & Templates",
+      title: "Podcasts",
       description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-3.webp",
+        "Listen to The Owners Perspective, Mindset Monday, and Hard Hat Chat.",
+      imageSrc: "/images/webp/blog-image-2.webp",
       imageWidth: "305px",
-      backgroundImage: "/images/svg/blog-3.svg",
+      backgroundImage: "/images/svg/blog-2.svg",
+      blogUrl: "/podcasts",
     },
     {
       id: 4,
-      title: "FREE Tools & Templates",
-      description:
-        "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya...",
-      imageSrc: "/images/webp/blog-image-3.webp",
+      title: "Contractor+ HQ",
+      description: "How-To Tutorials, Growth Tips, Industry News and more.",
+      imageSrc: "/images/webp/blog-image-1.webp",
       imageWidth: "305px",
-      backgroundImage: "/images/svg/blog-3.svg",
+      backgroundImage: "/images/svg/blog-1.svg",
+      blogUrl: "/contractor-hq",
     },
   ];
 
@@ -93,13 +96,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
         </div>
         <div className="blog-post mx-auto flex w-full max-w-[1920px] flex-col items-center justify-center gap-4">
           <Swiper
-            modules={[Pagination]}
-            loop={true}
+            modules={[Pagination, Mousewheel]}
+            loop={false}
             pagination={{
               el: ".swiper-pagination-pricing",
               clickable: true,
               dynamicBullets: true,
             }}
+            mousewheel={{ forceToAxis: true, sensitivity: 1 }}
+            freeMode={true}
             speed={600}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
@@ -123,15 +128,15 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
           </Swiper>
           <div className="swiper-pagination-pricing swiper-pagination-real-time-4 relative !left-0 flex !translate-x-0 items-center justify-center gap-1" />
         </div>
-        <Link
-          href={blogHeading.btnUrl}
-          className="flex justify-center px-2 pt-4 md:hidden"
-        >
-          <Button className="bg-red-linear primary-btn h-10 gap-2">
+        <div className="px-2 pt-4 md:hidden">
+          <Link
+            href={blogHeading.btnUrl}
+            className="bg-red-linear primary-btn flex h-10 justify-center gap-2 px-2"
+          >
             {blogHeading?.btnTxt}
             <BlogBtnIcon />
-          </Button>
-        </Link>
+          </Link>
+        </div>
       </div>
     </section>
   );

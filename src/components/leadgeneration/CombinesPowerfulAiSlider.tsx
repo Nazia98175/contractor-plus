@@ -100,10 +100,10 @@ const CombinesPowerfulAiSlider = () => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        // autoplay={{
-        //   delay: 6000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false,
+        }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
         className="!h-auto"
@@ -353,10 +353,10 @@ const CombinesPowerfulAiSlider = () => {
             el: ".swiper-pagination-real-time",
             clickable: true,
           }}
-          // autoplay={{
-          //   delay: 6000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
           className="real-time-active-slider"
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 16 },

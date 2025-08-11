@@ -26,10 +26,9 @@ import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 export const metadata = {
-  title:
-    " The one board that shows every deal, dollar value, and what to do next",
+  title: "Opportunity Tracker for Contractors | Contractor+",
   description:
-    "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
+    "One board that shows every deal, dollar value, and next steps so you can win more opportunities. Convert won leads to jobs in one click. ",
 };
 const DealFlowTracker = () => {
   return (

@@ -36,7 +36,13 @@ const FieldServiceCard: React.FC<Props> = ({
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
-          <h4 className={`${titleColor}`}>{service?.title}</h4>
+          {slug === "construction-bookkeeping-services" ? (
+            <h4 className="card-overlap-secondary-heading text-base">
+              Construction Bookkeeping Service
+            </h4>
+          ) : (
+            <h4 className={`${titleColor}`}>{service?.title}</h4>
+          )}
 
           {apiData ? (
             <>
@@ -96,11 +102,14 @@ const FieldServiceCard: React.FC<Props> = ({
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  {!isEstimate && (
-                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                      <TickIcon />
-                    </span>
-                  )}
+                  <>
+                    {slug !== "construction-bookkeeping-services" &&
+                      !isEstimate && (
+                        <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                          <TickIcon />
+                        </span>
+                      )}
+                  </>
                   <div className="flex flex-col gap-2 xl:gap-3">
                     <h5 className={`card-heading ${featureTitleColor}`}>
                       {feature?.title}

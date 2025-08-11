@@ -35,16 +35,16 @@ const BlogHero = () => {
       scrollTrigger: {
         trigger: ".parallax-container",
         start: "top top",
-        end: "bottom 30%",
+        end: "bottom 50%",
         scrub: 1,
         markers: false,
       },
     });
 
     // Add mountains to timeline with different speeds
-    tl.to("#mountain-1", { y: -90, ease: "none", scaleY: 1.2 }, 0)
-      .to("#mountain-2", { y: -120, ease: "none", scaleY: 1.4 }, 0)
-      .to("#mountain-3", { y: -250, ease: "none" }, 0)
+    tl.to("#mountain-1", { y: -130, ease: "none", scaleY: 1.2 }, 0)
+      .to("#mountain-2", { y: -80, ease: "none", scaleY: 1.4 }, 0)
+      .to("#mountain-3", { y: -250, ease: "none", scaleY: 1.4 }, 0)
       .to("#mountain-4", { y: -340, ease: "none" }, 0)
       .to("#mountain-5", { y: -150, ease: "none" }, 0);
 
@@ -92,7 +92,7 @@ const BlogHero = () => {
         <img
           id="mountain-1"
           src="/images/mountain/mountain-1.png"
-          className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full"
+          className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full translate-y-[0px]"
           alt=""
         />
         <img
@@ -119,6 +119,8 @@ const BlogHero = () => {
           className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
           alt=""
         />
+
+        <div className="absolute bottom-0 z-[11] h-[10vw] w-full bg-white"></div>
       </div>
     </div>
   );

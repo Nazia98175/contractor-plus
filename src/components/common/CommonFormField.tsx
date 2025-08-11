@@ -67,21 +67,23 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   return (
     <>
       {showTitle && (
-        <Copy animateOnScroll={true}>
-          <h3
-            className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
-          >
-            {title}
-          </h3>
-        </Copy>
+        // <Copy delay={0.2}>
+        <h3
+          className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
+        >
+          {title}
+        </h3>
+        // </Copy>
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">
-        <Copy animateOnScroll={true}>
-          <p className={`paragraph-text text-center ${variantStyles.subtitle}`}>
-            {subTitle}
-          </p>
-        </Copy>
+        {/* <Copy delay={0.2}> */}
+        <p
+          className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
+        >
+          {subTitle}
+        </p>
+        {/* </Copy> */}
         <CardReveal distance={50}>
           {/* Desktop Form - Hidden on Mobile */}
           <form

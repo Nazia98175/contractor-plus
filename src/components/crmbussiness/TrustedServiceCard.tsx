@@ -34,7 +34,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
   return (
     <div className="mr-5 !h-auto">
       <article
-        className={`trusted-service flex h-full w-full max-w-[350px] flex-col overflow-hidden rounded-[10px] sm:max-w-[419px] ${slug === "crm" ? "bg-shutter sm:bg-transparent" : "bg-transparent"} ${styles.container}`}
+        className={`trusted-service flex h-full w-full max-w-[350px] flex-col overflow-hidden rounded-[10px] p-3 sm:max-w-[419px] ${slug === "crm" ? "bg-shutter sm:bg-transparent" : "bg-transparent"} ${styles.container}`}
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex gap-3">

@@ -6,8 +6,12 @@ import { ArrowIcon } from "./Icons";
 import Image from "next/image";
 interface Props {
   headerSubList: any;
+  closeDropdown?: () => void;
 }
-const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
+const ResourcesDropdown: React.FC<Props> = ({
+  headerSubList,
+  closeDropdown,
+}) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
   const t = useTranslations("resources");
 
@@ -33,10 +37,14 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
   const fallbackImage = "/images/webp/developers-aPI.webp";
   return (
     <div className="flex grow flex-col overflow-hidden">
-      <div className="relative z-[9999] flex grow gap-8 overflow-auto">
+      <div className="relative z-[9999] flex grow items-start gap-8 overflow-auto">
         <div className="no-scrollbar grid w-full grid-cols-2 gap-3 overflow-auto">
           {headerSubList?.[0]?.links?.map((link: any, index: any) => (
             <Link
+              onClick={() => {
+                closeDropdown?.(); // closes dropdown
+                // Do not use preventDefault here!
+              }}
               href={link?.linkUrl ?? ""}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -44,21 +52,19 @@ const ResourcesDropdown: React.FC<Props> = ({ headerSubList }) => {
               className="group hover:bg-superSilver w-full cursor-pointer list-none p-[6px] text-start"
             >
               <div className="flex items-start gap-2.5">
-                <span>
-                  <Image
-                    className="group-hover:fill-red-900"
-                    src={link?.icon?.url}
-                    alt="icons"
-                    width={25}
-                    height={25}
-                    priority
-                  />
-                </span>
+                <Image
+                  className="group-hover:fill-red-900"
+                  src={link?.icon?.url}
+                  alt="icons"
+                  width={25}
+                  height={25}
+                  priority
+                />
                 <span className="header-li-dropdown group-hover:!bg-lightBlack flex w-fit px-1 text-start !font-extrabold group-hover:!text-white">
                   {link.linkTxt}
                 </span>
               </div>
-              <p className="font-inter text-lightBlack text-sm">
+              <p className="font-inter text-lightBlack mt-1.5 text-sm">
                 {link.subTitle}
               </p>
             </Link>

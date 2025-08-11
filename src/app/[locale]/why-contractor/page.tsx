@@ -2,9 +2,9 @@ import WhyContractorMain from "@/components/whycontractor/WhyContractorMain";
 import { getWhyContractorData } from "@/services/whyContractor/getWhyContractorData";
 
 export const metadata = {
-  title: "You can't scale a contracting business built on bottlenecks",
+  title: "Why Contractor+ | The Only Contractor Operating System",
   description:
-    "Hard work got you here. But it's not enough to get you where you want to go.",
+    "FSM software helps you keep up. An operating system helps you scale up. Contractor+ is affordable & powerful. No complexity. Start free.",
 };
 const WhyContractorPage = async ({
   params,

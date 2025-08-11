@@ -106,7 +106,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 </Copy>
 
                 <Copy animateOnScroll={true} delay={0.09 * index}>
-                  <span className="">{feature?.text}</span>
+                  <span>{feature?.text}</span>
                 </Copy>
               </div>
             ))}

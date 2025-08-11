@@ -1,6 +1,5 @@
 "use client";
 import { ChevronDown } from "lucide-react";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useMemo, useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
@@ -13,7 +12,6 @@ interface Props {
   setIsShow?: (val: boolean) => void;
 }
 const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
-  const t = useTranslations("menu");
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [prevMenu, setPrevMenu] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -32,7 +30,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
       { id: "pricing", label: "pricing", link: "/pricing" },
       { id: "resources", label: "resources" },
     ],
-    [t],
+    [],
   );
 
   // Get menu index for animation direction
@@ -124,7 +122,10 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
     setPrevMenu(activeMenu);
     setActiveMenu(null);
   };
-
+  const closeDropdown = () => {
+    setPrevMenu(activeMenu);
+    setActiveMenu(null);
+  };
   return (
     <div onMouseLeave={handleMouseLeave}>
       <div className="flex w-full items-center gap-2">
@@ -196,14 +197,6 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
       >
         <div ref={contentRef} className="flex grow flex-col overflow-hidden">
           <div className="main-container flex grow flex-col overflow-hidden">
-            {/* {activeMenu === "whycontractordesktop" && (
-              <WhyContractorDropdown
-                headerSubList={
-                  headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
-                    ?.headerSubList
-                }
-              />
-            )} */}
             {activeMenu === "features" && (
               <FeaturesDropdown
                 isVisible
@@ -211,6 +204,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
+                closeDropdown={closeDropdown}
               />
             )}
             {activeMenu === "industries" && (
@@ -219,6 +213,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
+                closeDropdown={closeDropdown}
               />
             )}
             {activeMenu === "resources" && (
@@ -227,6 +222,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
                   headerList?.[menuItems.findIndex((i) => i.id === activeMenu)]
                     ?.headerSubList
                 }
+                closeDropdown={closeDropdown}
               />
             )}
           </div>

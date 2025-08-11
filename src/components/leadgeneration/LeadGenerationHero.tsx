@@ -10,6 +10,8 @@ import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import Crush_local from "../../../public/lotties/Crush-local-search.json";
 import LottieAnimation from "../common/LottieAnimation";
+import Copy from "../common/Copy";
+import GooglePoster from "./GooglePoster";
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -34,7 +36,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
       <div className="w-full max-w-[650px] xl:max-w-[732px]">
         <CardReveal distance={30} delay={0.1}>
           <div className="hidden items-center justify-center pb-1 md:flex lg:justify-start">
-            <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+            <span className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
               {tag}
             </span>
           </div>
@@ -50,20 +52,22 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
           maxFontSize={48}
           textAnimation="home-page-view-port-screen-fetures"
         />
-        <p className="text-decemberSky mt-4 w-full text-center text-xs font-medium sm:text-sm md:my-[26px] md:text-base lg:text-start lg:text-lg xl:max-w-[75%]">
-          {description}
-        </p>
+        <Copy animateOnScroll={false} delay={0.2}>
+          <p className="text-decemberSky mt-4 w-full text-center text-xs font-medium sm:text-sm md:my-[26px] md:text-base lg:text-start lg:text-lg xl:max-w-[75%]">
+            {description}
+          </p>
+        </Copy>
         <div className="mx-auto flex w-fit flex-wrap-reverse items-center justify-center gap-4 sm:gap-5 lg:mx-0 lg:w-full lg:justify-start">
-          <AppsRating delayApple={0.5} delayGoogle={0.6} />
-          <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
+          <AppsRating delayApple={0.3} delayGoogle={0.4} />
+          <CardReveal distance={50} delay={0.6} className="w-full sm:w-fit">
             <div className="flex w-full flex-col items-center gap-1.5 px-2 sm:w-fit">
               <FreeTrialButton
                 className="!hidden sm:!flex"
                 text={getStartedFreeBtn}
-                showIcon={false}
+                showIcon={true}
               />
               <FreeTrialButton
-                showIcon={false}
+                showIcon={true}
                 className="mt-4 !flex w-full sm:!hidden"
                 text={mobileBtn}
               />
@@ -76,19 +80,13 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         </div>
       </div>
       <div className="relative h-full max-h-[436px] w-full max-w-[650px] rounded-[12px] bg-white lg:max-w-[450px]">
-        {/* <Image
-          className="h-full max-h-[436px] w-full rounded-xl object-cover"
-          src={imgUrl}
-          alt={heading}
-          width={450}
-          height={436}
-        /> */}
-        <LottieAnimation
+        {/* <LottieAnimation
           className="mx-auto h-full w-full"
           loop={false}
           animationData={Crush_local}
-        />
-        <div className="lead-generation-img-overlay pointer-events-none absolute top-0 left-0 z-0 h-full w-full"></div>
+        /> */}
+        <GooglePoster />
+        {/* <div className="lead-generation-img-overlay pointer-events-none absolute top-0 left-0 z-0 h-full w-full"></div> */}
       </div>
     </section>
   );

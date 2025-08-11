@@ -17,6 +17,12 @@
   --color-superSilver: #f0f0f0;
   --color-wallStreet: #656c73;
   --color-winterWay: #3f464b;
+  --color-mana: #838383;
+  --color-boogie: #0f9d4e;
+  --color-silver: #efefef;
+  --color-nyanza: #e9ffd5;
+  --color-pestering: #0d921c;
+  --color-palatinate: #234fe1;
   --color-jetBlack: #252525;
   --color-pantone3: #b4b4b4;
   --color-darkness: #a2a2a2;
@@ -55,12 +61,19 @@
   --color-bramble: #c11574;
   --color-placebo: #fdf2fa;
   --color-kikorangi: #3538cd;
+  --color-bluetiful: #365fe4;
   --color-aliceBlue: #eef4ff;
   --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
   --color-reflection: #cbd5e1;
   --color-romanRed: #f21314;
+  --color-vivaldi: #ef3a3f;
+  --color-gold: #e8ad2e;
+  --color-fuel: #1ec466;
+  --color-mist: #f8f9fa;
+  --color-revolution: #737373;
+  --color-bellflower: #e2e8ef;
   --color-pleasure: #dc1112;
   --color-glowing: #ef4444;
   --color-redPigment: #ee1e25;
@@ -333,7 +346,9 @@ body {
 .header-li {
   @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
 }
-
+.integration-detail-bg {
+  @apply relative flex h-20 w-20 items-center justify-center rounded-full bg-center p-4 md:h-[108px] md:w-[108px] md:p-[18px];
+}
 .feature-btn {
   @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[110%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
 }
@@ -412,7 +427,7 @@ html::-webkit-scrollbar {
   background: radial-gradient(
     349.94% 349.94% at 50% 50%,
     #0d0e12 4.81%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.6) 100%
   );
 }
 
@@ -2058,8 +2073,11 @@ button {
   0% {
     background-position: 0% 50%;
   }
-  100% {
+  50% {
     background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 .industry-shift-text .line {
@@ -2147,11 +2165,19 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-
-/* .finally-custom-box-shadow {
-  filter: drop-shadow(-13px 14px 26px #000000b9);
+.ai-blur {
+  background: linear-gradient(180deg, #0d0c1000 0%, #0d0c10 66.82%);
 }
-
-.finally-custom-drop-img {
-  filter: drop-shadow(-13px 16px 24 #000000);
-} */
+.card-overlap-secondary-heading {
+  background:
+    linear-gradient(
+      275.49deg,
+      rgba(0, 0, 0, 0) 75.83%,
+      rgba(238, 30, 37, 0.4) 91.89%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

@@ -9,6 +9,12 @@ import IntegrationDetailHero from "@/components/integration-details/IntegrationD
 async function getById(id: string) {
   return integrations.find((item) => item.id === id);
 }
+
+export const metadata = {
+  title: "Material Trends: Track Prices & Shortages of Different Industries",
+  description:
+    "Get updates on material trends, pricing shifts, and supply chain alerts affecting contractors this year.",
+};
 export async function generateStaticParams() {
   return integrations.map((item) => ({
     id: item.id.toString(),
@@ -31,7 +37,7 @@ const IntegrationDetails = async ({
       >
         <IntegrationDetailHero user={user} />
       </div>
-      <IntegrationDetail />
+      <IntegrationDetail user={user} />
       <div className="relative overflow-hidden">
         <Faq
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[118px] z-20 px-2"

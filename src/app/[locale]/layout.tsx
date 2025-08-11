@@ -29,7 +29,10 @@ export default async function RootLayout({
       useParams?.locale,
       "&populate[btnText]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][image]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][bottomLinks]=true&populate[headerMain][on][layout.main-title][populate][headerSubList][populate][links][populate][icon]=true",
     ),
-    getFooter(useParams?.locale, "&populate[sections][populate]=*&populate[bottomLinks][populate]=*"),
+    getFooter(
+      useParams?.locale,
+      "&populate[sections][populate]=*&populate[bottomLinks][populate]=*",
+    ),
   ]);
 
   return (

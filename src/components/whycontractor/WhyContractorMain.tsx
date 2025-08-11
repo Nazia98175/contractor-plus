@@ -84,7 +84,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
 
   return (
     <>
-      <div id="home-page-wrapper-2" className="">
+      <div id="home-page-wrapper-2">
         <div
           id="home-page-view-port-screen-why-contractor"
           className="relative opacity-0"
@@ -150,7 +150,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       </main> */}
         <div className="pb-14">
-          <div className="px-2 pt-12 pb-8 md:pb-12 xl:pt-[11px]">
+          <div className="mt-12 mb-8 px-2 md:mb-12 xl:mt-[11px]">
             <CommonFormField
               title={data?.emailSign?.title}
               subTitle={data?.emailSign?.subTitle}

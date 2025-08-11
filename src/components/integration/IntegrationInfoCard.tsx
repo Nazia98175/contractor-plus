@@ -45,14 +45,16 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         </h4>
       </div>
       <div className="mt-[15px] mb-3 flex items-center justify-between">
-        {obj.categories.map((category, idx) => (
-          <p
-            key={idx}
-            className={`${getCategoryColor(category)} bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize`}
-          >
-            {category}
-          </p>
-        ))}
+        <div className="flex items-center gap-1">
+          {obj.categories.map((category, idx) => (
+            <p
+              key={idx}
+              className={`${getCategoryColor(category)} bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize`}
+            >
+              {category}
+            </p>
+          ))}
+        </div>
         <button>
           <RightLinkIcon />
         </button>

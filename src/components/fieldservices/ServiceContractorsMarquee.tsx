@@ -32,7 +32,6 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({
   //     textSplit("#review-title");
   //   }, 3000);
   // }, []);
-  console.log(reviews, "review seciton");
 
   return (
     <section

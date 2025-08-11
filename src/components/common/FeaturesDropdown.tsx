@@ -1,6 +1,6 @@
 // FeaturesDropdown.tsx
 "use client";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import {
   AgreementIcon,
@@ -25,7 +25,6 @@ import {
   PropertyIcon,
   PropertyProfilesIcon,
   SchedulingIcon,
-  ServiceIcon,
   ServiceRequestsIcon,
   TelephoneIcon,
   TimeIcon,
@@ -34,10 +33,10 @@ import {
   WebsiteIncludedIcon,
 } from "./Icons";
 import { CrmIcon } from "./MainIcon";
-import Image from "next/image";
 interface Props {
   headerSubList: any;
   isVisible: boolean;
+  closeDropdown?: () => void;
 }
 export const featureIcons: Record<string, React.ReactNode> = {
   crm: <CrmIcon />,
@@ -72,13 +71,11 @@ export const featureIcons: Record<string, React.ReactNode> = {
 const FeaturesDropdown: React.FC<Props> = ({
   isVisible = true,
   headerSubList,
+  closeDropdown,
 }) => {
-  const t = useTranslations("features");
-
   if (!isVisible) {
     return null;
   }
-  console.log("testing", headerSubList);
 
   return (
     <div className="flex grow flex-col overflow-hidden">
@@ -96,7 +93,14 @@ const FeaturesDropdown: React.FC<Props> = ({
                     className="group hover:bg-superSilver p-[6px] duration-200 ease-linear"
                     key={featureId?.id}
                   >
-                    <Link href={featureId?.linkUrl ?? "/"} className="group">
+                    <Link
+                      onClick={() => {
+                        closeDropdown?.(); // closes dropdown
+                        // Do not use preventDefault here!
+                      }}
+                      href={featureId?.linkUrl ?? "/"}
+                      className="group"
+                    >
                       <div className="flex items-start gap-2.5">
                         <span>
                           <Image
@@ -117,7 +121,7 @@ const FeaturesDropdown: React.FC<Props> = ({
                           )}
                         </div>
                       </div>
-                      <p className="font-inter text-lightBlack text-sm">
+                      <p className="font-inter text-lightBlack mt-1.5 text-sm">
                         {featureId?.subTitle}
                       </p>
                     </Link>

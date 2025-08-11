@@ -41,7 +41,7 @@ export default async function Home({
     industriesData,
   } = await getHomepageData(useParams?.locale);
   return (
-    <div id="home-page-wrapper" className="">
+    <div id="home-page-wrapper" >
       <div id="home-page-view-port-screen" className="relative opacity-0">
         <div className="relative overflow-hidden">
           <Hero

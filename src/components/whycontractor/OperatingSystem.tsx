@@ -13,8 +13,6 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
   image,
   featuresPlatform,
 }) => {
-  console.log(featuresPlatform, "image");
-
   return (
     <div className="bg-kuroiBlack relative z-10 overflow-hidden">
       <div className="bg-athenaBlue absolute top-[0px] left-0 hidden h-[500px] w-[60px] rotate-45 opacity-25 blur-[40px] md:block"></div>

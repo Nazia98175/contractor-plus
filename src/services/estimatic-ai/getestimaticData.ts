@@ -1,6 +1,7 @@
 import { getBlogs, getBlogsByCategory } from "@/services/blogs";
 import { getCommonData } from "../common/commonData";
 import { getEstimaticPage } from "./estimatic";
+import { getHomePage } from "../homePage/homepage";
 
 export interface EstimaticPageData {
   pageContent: any | null;
@@ -14,11 +15,14 @@ export interface EstimaticPageData {
   commonData: any | null;
   faqs: any | null;
   //   blogsByCategory?: any | null;
+  industriesData: any;
 }
 
 export const getEstimaticPageData = async (
   locale: string,
 ): Promise<EstimaticPageData> => {
+  const industriesQuery =
+    "&populate[Industries][populate][imageCard][populate]=image";
   const [
     pageContentRes,
     heroImg,
@@ -29,8 +33,8 @@ export const getEstimaticPageData = async (
     industriesRes,
     thousandReviewsRes,
     faqsRes,
-
     commonData,
+    industriesData,
     // blogsByCategoryRes
   ] = await Promise.all([
     getEstimaticPage(locale, "&populate=*"),
@@ -63,8 +67,8 @@ export const getEstimaticPageData = async (
 
     getCommonData(locale),
     // getBlogsByCategory(locale, slug)
+    getHomePage(locale, industriesQuery),
   ]);
-
   return {
     pageContent: pageContentRes?.data || null,
     heroImg: heroImg?.data?.hero?.heroImg || null,
@@ -79,5 +83,6 @@ export const getEstimaticPageData = async (
     thousandReviews: thousandReviewsRes?.data?.reviewTrustSection || null,
     commonData: commonData || null,
     // blogsByCategory: blogsByCategoryRes?.data || null,
+    industriesData,
   };
 };

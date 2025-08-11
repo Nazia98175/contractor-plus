@@ -1,5 +1,6 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
+import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 import {
   automate_comparisonData,
   automate_ControlData,
@@ -9,8 +10,8 @@ import {
   automatedHeadingData,
   automateneverlookBackData,
   blogList,
+  clientReviews,
   dealflowhero,
-  dealReviews,
   dealReviews2,
   platforms,
   propertyCRMSection,
@@ -21,9 +22,9 @@ import {
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import CrmService from "@/components/crmbussiness/IndustryService";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
@@ -31,9 +32,13 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import Image from "next/image";
-import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 
-const page = () => {
+export const metadata = {
+  title: "Contractor Client Agreement Made Simple | Contractor+",
+  description:
+    "One automated system to create, sign, amend, and store every client contract. We manage every contract from start to finish.",
+};
+const ContractorClientAgreementPage = () => {
   return (
     <>
       <AutomatedClientHero
@@ -49,18 +54,18 @@ const page = () => {
         commonData={dealflowhero}
       />
       <div className="pb-6">
-        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+        <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
 
-      {/* <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden">
         <FieldService
           fieldService={automatedCardData}
           theme="dark"
           slug="estimateTheme"
           mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
         />
-      </div> */}
+      </div>
       <div className="mt-16 bg-white sm:mt-0">
         <TrackProperties
           ncc={"No credit card required"}
@@ -134,4 +139,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContractorClientAgreementPage;

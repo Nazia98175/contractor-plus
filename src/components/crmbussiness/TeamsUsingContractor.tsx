@@ -25,7 +25,6 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
     rootMargin: "50px 0px",
     fallbackInView: true,
   });
-  console.log(data, "data in teams using contractor");
 
   const icons = [
     <EstimateIcon2 key="estimate" className="fill-winterWay" />,
@@ -72,10 +71,8 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
             </span>
 
             <h3 className="text-winterWay countup-title flex items-center justify-center">
-              <span
-                className={`flex justify-center ${slug === "estimate" ? "sm:w-[158px]" : "w-[68px]"}`}
-              >
-                {inView  && item.start !== null && (
+              <span className={`flex justify-center`}>
+                {inView && item.start !== null && (
                   <CountUp
                     start={item.start}
                     end={item.end}
@@ -94,7 +91,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
                     : `${item.end}${item.suffix ?? ""}`)}
               </span>
 
-              <span className="inline-block px-2">
+              <span className="inline-block">
                 {item.title !== "n/a" && item.title}
               </span>
             </h3>

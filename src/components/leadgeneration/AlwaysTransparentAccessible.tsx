@@ -13,7 +13,7 @@ const AlwaysTransparentAccessible = ({
   description,
 }: AlwaysTransparentAccessibleProps) => {
   return (
-    <section className="mx-auto flex w-full max-w-[1053px] flex-col items-center justify-between gap-6 px-2 sm:flex-row sm:gap-10">
+    <section className="mx-auto flex w-full max-w-[1053px] flex-col items-center justify-between gap-6 px-2 py-6 sm:flex-row sm:gap-10 md:py-10">
       <div className="relative w-full max-w-[429px] overflow-hidden">
         <Image
           className="object-cover"

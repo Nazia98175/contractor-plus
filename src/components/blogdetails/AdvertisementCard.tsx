@@ -28,9 +28,12 @@ const AdvertisementCard = () => {
         ))}
       </ul>
 
-      <button className="font-myriad mt-5 flex h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-white px-3 font-extrabold tracking-[0.1px] whitespace-nowrap italic duration-300 hover:scale-95">
+      <Link
+        href="https://my.contractorplus.app/authentication/register?af_xp=custom&lang=en&source_caller=ui&pid=web_homepage_buttons&shortlink=homebuttons&deep_link_value=industries%2Fdrywall-contractor-software&c=web_homepages"
+        className="font-myriad mt-5 flex h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-white px-3 font-extrabold tracking-[0.1px] whitespace-nowrap italic duration-300 hover:scale-95"
+      >
         <span className="red-linear-bg w-full text-base">Get started FREE</span>
-      </button>
+      </Link>
 
       <Link
         href="https://contractorplus.app/"

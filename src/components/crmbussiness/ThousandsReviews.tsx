@@ -21,7 +21,7 @@ const ThousandsReviews: React.FC<Props> = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
-  console.log("ThousandsReviews Data:", data, reviews);
+
   const openModal = (videoUrl: string) => {
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);

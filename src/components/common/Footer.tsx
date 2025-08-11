@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { footerVariantClasses } from "@/utils/getVariants";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,7 +13,6 @@ import {
   LinkdinIcon,
   TwitterIcon,
 } from "./Icons";
-import { footerVariantClasses } from "@/utils/getVariants";
 interface FooterLink {
   url: string;
   urlText: string;
@@ -43,7 +42,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     pathname.toLowerCase().includes("general-contractor") ||
     pathname.toLowerCase().includes("plumbing-business-software") ||
     pathname.toLowerCase().includes("remodeling-contractor-software") ||
-    pathname.toLowerCase().includes("construction-management-software")
+    pathname.toLowerCase().includes("construction-management-software") ||
+    pathname.toLowerCase().includes("local-seo-for-contractors")
       ? "light"
       : "dark";
   const isCrmRoute =
@@ -63,19 +63,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       id="home-page-footer-view-port-screen"
       className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 opacity-0 md:py-[62px] ${styles.background}`}
     >
-      {/* <div
-        className={`flex flex-wrap justify-center gap-4 text-xs leading-[200%]`}
-      >
-        {footer?.bottomLinks?.map((item, idx) => (
-          <Link
-            key={idx}
-            href={item?.url}
-            className={`transition-all duration-300 ${styles.bottomlink}`}
-          >
-            {item?.urlText}
-          </Link>
-        ))}
-      </div> */}
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (

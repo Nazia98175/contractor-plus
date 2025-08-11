@@ -101,71 +101,103 @@ const CommonHero: React.FC<TheHeroProps> = ({
               </p>
             </Copy>
           </div>
-          <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            <AppsRating />
-            <CardReveal distance={50} delay={0.8} className="w-full sm:w-fit">
-              <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
-                <FreeTrialButton
-                  className="!hidden sm:!flex"
-                  text={commonData?.getStartedFreeBtn}
-                  showIcon={false}
-                />
 
+          <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
+            {slug === "construction-bookkeeping-services" ? (
+              <div className="flex flex-col items-center justify-center">
                 <FreeTrialButton
-                  showIcon={false}
-                  className="!flex w-full sm:!hidden"
-                  text={commonData?.mobileBtn}
-                />
-                <CardRequiredButton
-                  className="text-wallStreet sm:text-secondary"
-                  text={commonData?.nccTxt}
+                  showIcon={true}
+                  text={"Get a bookkeeping quote"}
                 />
               </div>
-            </CardReveal>
+            ) : (
+              <>
+                <AppsRating />
+                <CardReveal
+                  distance={50}
+                  delay={0.8}
+                  className="w-full sm:w-fit"
+                >
+                  <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
+                    <FreeTrialButton
+                      className="!hidden sm:!flex"
+                      text={commonData?.getStartedFreeBtn}
+                      showIcon={false}
+                    />
+                    <FreeTrialButton
+                      showIcon={false}
+                      className="!flex w-full sm:!hidden"
+                      text={commonData?.mobileBtn}
+                    />
+                    <CardRequiredButton
+                      className="text-wallStreet sm:text-secondary"
+                      text={commonData?.nccTxt}
+                    />
+                  </div>
+                </CardReveal>
+              </>
+            )}
           </div>
         </div>
-        {isShowHeroImg && (
-          <CardReveal distance={50} delay={0.9}>
-            <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
-              <div className="relative overflow-hidden">
-                {apiData ? (
-                  <div
-                    className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
-                  >
-                    {heroImg?.url && (
-                      <Image
-                        className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                        src={heroImg?.url}
-                        width={900}
-                        height={616}
-                        alt="crm-hero"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                        priority
-                      />
+        {slug === "construction-bookkeeping-services" ? (
+          <div className="relative mt-12 mb-16 sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
+            <Image
+              className="mx-auto h-full w-full max-w-[389px] object-cover"
+              src={"/images/svg/construction-bookkeeping-services-hero.svg"}
+              width={389}
+              height={616}
+              alt="crm-hero"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+              priority
+            />
+            <div className="bg-kuroiBlack absolute bottom-0 left-0 z-30 h-[10%] w-full blur-[15px]"></div>
+          </div>
+        ) : (
+          <>
+            {isShowHeroImg && (
+              <CardReveal distance={50} delay={0.9}>
+                <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
+                  <div className="relative overflow-hidden">
+                    {apiData ? (
+                      <div
+                        className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                      >
+                        {heroImg?.url && (
+                          <Image
+                            className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                            src={heroImg?.url}
+                            width={900}
+                            height={616}
+                            alt="crm-hero"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                            priority
+                          />
+                        )}
+                        {hero?.overlay && <AnimatedShape />}
+                      </div>
+                    ) : (
+                      <div
+                        className={`${hero?.border ? "border-silverMedal overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                      >
+                        {heroImg && (
+                          <Image
+                            className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                            src={heroImg}
+                            width={900}
+                            height={616}
+                            alt="crm-hero"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                            priority
+                          />
+                        )}
+                        {hero?.overlay && <AnimatedShape />}
+                      </div>
                     )}
-                    {hero?.overlay && <AnimatedShape />}
                   </div>
-                ) : (
-                  <div
-                    className={`${hero?.border ? "border-silverMedal overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block max-w-[${hero?.imageMaxWidth || "900"}px] `}
-                  >
-                    {heroImg && (
-                      <Image
-                        className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                        src={heroImg}
-                        width={900}
-                        height={616}
-                        alt="crm-hero"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                        priority
-                      />
-                    )}
-                    {hero?.overlay && <AnimatedShape />}
-                  </div>
-                )}
-              </div>
-            </div>
-          </CardReveal>
+                </div>
+              </CardReveal>
+            )}
+          </>
         )}
       </div>
     </section>

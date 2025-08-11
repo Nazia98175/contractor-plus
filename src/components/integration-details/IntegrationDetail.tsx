@@ -3,10 +3,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import AdvertisementCard from "../blogdetails/AdvertisementCard";
 import IntegrationContent from "./IntegrationContent";
+import { IntegrationItem } from "@/types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const IntegrationDetail = () => {
+interface IntegrationDetailProps {
+  user: IntegrationItem;
+}
+
+const IntegrationDetail: React.FC<IntegrationDetailProps> = ({ user }) => {
   const tableLinks = [
     {
       link: "",
@@ -29,7 +34,7 @@ const IntegrationDetail = () => {
             <div className="flex flex-col justify-between gap-8">
               <div className="basis-[40%] space-y-2.5 xl:space-y-3.5">
                 <h4 className="mb-2 text-xl font-bold text-white">
-                  PayPal Key Benefits
+                  {user.name} Key Benefits
                 </h4>
                 <ul className="list-disc space-y-2 pl-6 xl:pl-10">
                   {tableLinks.map((obj, index) => (

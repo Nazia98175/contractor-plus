@@ -1,7 +1,7 @@
 import {
   blogList,
+  clientReviews,
   dealflowhero,
-  dealReviews,
   dealReviews2,
   neverLookBackData2,
   platforms,
@@ -34,10 +34,9 @@ import TrackProfiles from "@/components/propertyprofiles/TrackProfiles";
 import Image from "next/image";
 
 export const metadata = {
-  title:
-    "Know the full story on every property you manage or service — instantly.",
+  title: "Property Management CRM & Property Profiles | Contractor+",
   description:
-    "Contractor+ is the first to offer a living, breathing history for each property that self-updates with every job, document, & email.",
+    "Finally, contractor software with property workflows. See the full history of any property, including all communication, jobs, notes, and more.",
 };
 const page = () => {
   return (
@@ -59,7 +58,7 @@ const page = () => {
         apiData={false}
       />
       <div className="pb-6">
-        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
+        <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={property_profiles_ControlData} />
       <FieldService

@@ -1,5 +1,4 @@
 import { Review } from "@/types";
-import Copy from "./Copy";
 import { PlayIcon, StartIcon } from "./Icons";
 import ImageProxy from "./ImageProxy";
 import Image from "next/image";
@@ -80,11 +79,9 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {renderStars(review.rating)}
           </div>
         </div>
-        <Copy animateOnScroll={true}>
-          <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
-            {review.review}
-          </p>
-        </Copy>
+        <p className="text-winterWay mt-3 line-clamp-4 px-2 text-sm font-semibold tracking-[0.1px]">
+          {review.review}
+        </p>
       </article>
     </div>
   );

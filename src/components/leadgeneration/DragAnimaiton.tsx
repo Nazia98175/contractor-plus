@@ -30,7 +30,7 @@ const DragAnimaiton = () => {
                 itemOne={
                   <ReactCompareSliderImage
                     src="/images/png/possible-top.png"
-                    srcSet="/images/png/possible-top.png"
+                    // srcSet="/images/png/possible-top.png"
                     alt="Image one"
                     className="w-full"
                   />
@@ -46,7 +46,8 @@ const DragAnimaiton = () => {
                 itemTwo={
                   <ReactCompareSliderImage
                     src="/images/png/possible-bottom.png"
-                    srcSet="/images/png/possible-bottom.png"
+                    className="w-full"
+                    // srcSet="/images/png/possible-bottom.png"
                     alt="Image two"
                   />
                 }

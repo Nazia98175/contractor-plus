@@ -1,7 +1,7 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { SmallStarIcon } from "../common/Icons";
-import { duration } from "html2canvas/dist/types/css/property-descriptors/duration";
 
 const GooglePosterCard: React.FC = () => {
   const [cardHeights, setCardHeights] = useState<{
@@ -26,8 +26,9 @@ const GooglePosterCard: React.FC = () => {
   const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
-  const duration = 2.2;
+  const duration = 1.5;
   const ease = "power4.inOut";
+
   useEffect(() => {
     const updateHeights = () => {
       const heights = {
@@ -81,7 +82,6 @@ const GooglePosterCard: React.FC = () => {
           },
           0,
         )
-
         .to(
           card1Ref.current,
           {
@@ -138,9 +138,6 @@ const GooglePosterCard: React.FC = () => {
     };
   }, []);
 
-  // Optional: Log heights for debugging
-  console.log("Card Heights:", cardHeights);
-
   return (
     <div className="space-y-[10px]">
       {/* FIRST-CARD */}
@@ -194,37 +191,39 @@ const GooglePosterCard: React.FC = () => {
       </div>
 
       {/* THIRD-CARD */}
-      <div
-        ref={card3Ref}
-        style={{ willChange: "transform" }}
-        className="flex flex-col gap-1 rounded-xl bg-white p-2.5"
-      >
-        <div className="flex items-center justify-between gap-2">
-          <h3 className="font-inter text-palatinate mb-0.5 text-xs font-semibold">
-            Your Contracting Biz
-          </h3>
-          <div
-            id="seo-card-3"
-            className="bg-silver text-pantone3 flex h-5 min-h-5 w-5 min-w-5 items-center justify-center rounded-full text-[10px] font-extrabold tracking-[-0.2px]"
-          >
-            {cardRanking.card3}
+      <div id="card3-wrapper" style={{ willChange: "transform" }}>
+        <div
+          ref={card3Ref}
+          style={{ willChange: "transform" }}
+          className="flex flex-col gap-1 rounded-xl bg-white p-2.5"
+        >
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="font-inter text-palatinate mb-0.5 text-xs font-semibold">
+              Your Contracting Biz
+            </h3>
+            <div
+              id="seo-card-3"
+              className="bg-silver text-pantone3 flex h-5 min-h-5 w-5 min-w-5 items-center justify-center rounded-full text-[10px] font-extrabold tracking-[-0.2px]"
+            >
+              {cardRanking.card3}
+            </div>
           </div>
-        </div>
-        <p className="font-inter text-boogie text-[10px] font-semibold">
-          www.yourbusiness.com
-        </p>
-        <span className="font-inter text-mana text-[10px] font-semibold">
-          Top-rated general contractor serving Indianapolis and surrounding
-          areas. Licensed, insured, and trusted by homeowners for quality
-          renovations and custom builds.
-        </span>
-        <div className="font-inter text-mana flex items-center text-[10px] font-semibold">
-          <SmallStarIcon />
-          <SmallStarIcon />
-          <SmallStarIcon />
-          <SmallStarIcon />
-          <SmallStarIcon />
-          (1,415)
+          <p className="font-inter text-boogie text-[10px] font-semibold">
+            www.yourbusiness.com
+          </p>
+          <span className="font-inter text-mana text-[10px] font-semibold">
+            Top-rated general contractor serving CityName Indianapolis and
+            surrounding areas. Licensed, insured, and trusted by homeowners for
+            quality renovations and custom builds.
+          </span>
+          <div className="font-inter text-mana flex items-center text-[10px] font-semibold">
+            <SmallStarIcon />
+            <SmallStarIcon />
+            <SmallStarIcon />
+            <SmallStarIcon />
+            <SmallStarIcon />
+            (1,415)
+          </div>
         </div>
       </div>
     </div>

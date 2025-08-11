@@ -2,12 +2,9 @@
 import Image from "next/image";
 import React from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { CheckIcon } from "../common/Icons";
-import { usePathname } from "next/navigation";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
+import { CheckIcon } from "../common/Icons";
 interface Content {
   title: string;
 }

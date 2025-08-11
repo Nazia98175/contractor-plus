@@ -10,6 +10,7 @@ import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import LottieAnimation from "../homepage/LottieAnimation";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";

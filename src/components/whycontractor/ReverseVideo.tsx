@@ -45,7 +45,7 @@ const ReverseFrames: React.FC<PropReverseVideo> = ({ reverseVideo }) => {
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
             {reverseVideo?.description}
           </h2>
-          <p>{reverseVideo?.subDescription}</p>
+          <p className="text-red-900">{reverseVideo?.subDescription}</p>
           <StrokeText />
         </div>
       </Copy>

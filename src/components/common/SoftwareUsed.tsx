@@ -1,9 +1,8 @@
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import LottieAnimation from "../homepage/LottieAnimation";
-// import LottieAnimation from "./LottieAnimation";
 
 interface SoftwareItem {
   icon: React.ReactNode;
@@ -15,7 +14,7 @@ interface SoftwareItem {
   isRange?: boolean;
   subTitle?: string;
   prefix?: string;
-  denominator?: number; // Optional: for "in 10" style
+  denominator?: number;
   lottieJson: unknown;
   cardImage?: {
     url?: string;
@@ -42,6 +41,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   icon,
   setLottieRef,
 }) => {
+  const lottieRef = useRef(null);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -49,13 +49,29 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     fallbackInView: true,
   });
 
+  useEffect(() => {
+    if (inView && lottieRef.current) {
+      // @ts-ignore
+      lottieRef.current.play();
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    if (setLottieRef && index !== undefined) {
+      setLottieRef(index)(lottieRef);
+    }
+  }, [setLottieRef, index]);
+
   return (
-    <article className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition md:w-[48%] xl:w-full">
+    <article
+      ref={ref}
+      className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition"
+    >
       {item.lottieJson ? (
         <LottieAnimation
-          ref={setLottieRef(index)}
-          loop={false} // Changed to false since we'll control playback
-          autoplay={false} // Changed to false since we'll control playback
+          ref={lottieRef}
+          loop={true}
+          autoplay={false}
           animationData={item.lottieJson}
           className="h-9 w-8 fill-white"
         />

@@ -64,7 +64,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
           >
             <span className="mb-1 flex h-[40px] w-[40px] items-center justify-center">
               {lottieIndexes.includes(index) ? (
-                <LottieAnimation loop={true} animationData={item.lottieJson} />
+                <LottieAnimation loop={false} animationData={item.lottieJson} />
               ) : (
                 icons[index % icons.length]
               )}

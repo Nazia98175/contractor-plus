@@ -114,9 +114,7 @@ const IndustryPage = async ({ params }: PageProps) => {
         <AwardBadges
           teamsUsingContractor={teamsUsingContractor}
           buttonInfo={commonData}
-          customIconsMap={
-            useParams.slug === "hvac" ? customIconsMap : customIconsMap2
-          }
+          customIconsMap={teamsUsingContractor}
         />
       </div>
       {/* <ThousandsReviews

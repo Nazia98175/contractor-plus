@@ -39,7 +39,10 @@ const FieldServiceCard: React.FC<Props> = ({
           <h4 className="card-overlap-secondary-heading text-base">
             {service?.heading}
           </h4>
-          <h4 className={`${titleColor}`}>{service?.title}</h4>
+          {slug !== "construction-bookkeeping-services" &&
+            slug !== "field-service-scheduling-software" && (
+              <h4 className={`${titleColor}`}>{service?.title}</h4>
+            )}
           {apiData ? (
             <>
               {!service?.lottieJson &&

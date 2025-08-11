@@ -3179,9 +3179,7 @@ export const clientReviews = {
             review: `"I love being able to keep track of my entire business in one app. And the leads we've been getting from Contractor+ are so much better than the leads we've got from other places. The app is easy to use and is making my life a lot easier."`,
             userRole: "President, TPB Construction",
           },
-          {
-            id: 18,
-          },
+
           {
             id: 3,
             userName: "Scott Azure",
@@ -3193,7 +3191,7 @@ export const clientReviews = {
             review: `"I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."`,
           },
           {
-            id: 7,
+            id: 4,
             userName: "Juan Garcia",
             profileImg: "/images/png/juan-garcia.png",
             rating: 5,
@@ -3205,7 +3203,7 @@ export const clientReviews = {
             userRole: "Owner, Nailed It Miami",
           },
           {
-            id: 9,
+            id: 5,
             userName: "Josh T.",
             profileImg: "/images/png/josh.png",
             rating: 5,
@@ -3217,7 +3215,7 @@ export const clientReviews = {
             userRole: "Owner, Hermano's Home Improvements",
           },
           {
-            id: 10,
+            id: 6,
             userName: "John Croy",
             profileImg: "/images/png/john-croy.png",
             rating: 5,
@@ -3229,7 +3227,7 @@ export const clientReviews = {
             userRole: "Co-Owner, Ross Co. Home Pro's",
           },
           {
-            id: 11,
+            id: 7,
             userName: "Josh Leeson",
             profileImg: "/images/png/josh-lesson.png",
             rating: 5,
@@ -3241,7 +3239,7 @@ export const clientReviews = {
             userRole: " Owner, iCare Lawn Care & Landscaping",
           },
           {
-            id: 12,
+            id: 8,
             userName: "Brandon Geiger",
             profileImg: "/images/png/josh-lesson.png",
             rating: 5,
@@ -3253,7 +3251,7 @@ export const clientReviews = {
             userRole: " CEO at Rands Mechanical",
           },
           {
-            id: 14,
+            id: 9,
             userName: "Brandon Geiger",
             profileImg: "/images/png/josh-lesson.png",
             rating: 5,
@@ -3265,7 +3263,7 @@ export const clientReviews = {
             userRole: " CEO at Rands Mechanical",
           },
           {
-            id: 4,
+            id: 10,
             userName: "Chad Cranfill",
             profileImg: "/images/webp/chad-cranified.webp",
             rating: 5,
@@ -3275,7 +3273,7 @@ export const clientReviews = {
             userRole: "Owner, Cranfill Construction",
           },
           {
-            id: 5,
+            id: 11,
             userName: "Justin Mcnichols",
             profileImg: "/images/png/justin-mcnichols.png",
             rating: 5,
@@ -3303,7 +3301,7 @@ export const clientReviews = {
             userRole: "Summit General Contractors",
           },
           {
-            id: 6,
+            id: 14,
             userName: "Josh T.",
             profileImg: "/images/png/josh.png",
             rating: 5,
@@ -3323,7 +3321,7 @@ export const clientReviews = {
             userRole: "ProBuild Construction Co.",
           },
           {
-            id: 7,
+            id: 16,
             userName: "John Croy",
             profileImg: "/images/png/john-croy.png",
             rating: 5,
@@ -3335,7 +3333,7 @@ export const clientReviews = {
             userRole: "Co-Owner, Ross Co. Home Pro's",
           },
           {
-            id: 8,
+            id: 17,
             userName: "Josh Leeson",
             profileImg: "/images/webp/josh-lesson.webp",
             rating: 5,
@@ -3347,7 +3345,7 @@ export const clientReviews = {
             userRole: " Owner, iCare Lawn Care & Landscaping",
           },
           {
-            id: 9,
+            id: 18,
             userName: "Joshua Michael Brooks Lee Jones",
             profileImg: "/images/webp/rands.webp",
             rating: 5,
@@ -3358,7 +3356,7 @@ export const clientReviews = {
             userRole: "Owner, Pressure Pug LLC",
           },
           {
-            id: 10,
+            id: 19,
             userName: "Ethan Miller",
             rating: 5,
             isModal: false,
@@ -3366,7 +3364,7 @@ export const clientReviews = {
             userRole: "Landmark Builders Group",
           },
           {
-            id: 11,
+            id: 20,
             userName: "Sophia Lee",
             rating: 5,
             isModal: false,
@@ -3375,7 +3373,7 @@ export const clientReviews = {
           },
 
           {
-            id: 14,
+            id: 21,
             userName: "Ava Martinez",
             rating: 5,
             isModal: false,
@@ -3384,7 +3382,7 @@ export const clientReviews = {
           },
 
           {
-            id: 16,
+            id: 22,
             userName: "Noah Brown",
             rating: 5,
             isModal: false,
@@ -3392,7 +3390,7 @@ export const clientReviews = {
             userRole: "Horizon Contracting LLC",
           },
           {
-            id: 17,
+            id: 23,
             userName: "Jacob Wilson",
             rating: 5,
             isModal: false,
@@ -4242,7 +4240,7 @@ export const propertyCardData = {
         user: "Excellent field tracking!",
         username: "John Doe",
       },
-      cardImg: "/images/webp/property-record.webp",
+      cardImg: "/images/png/reacord.png",
       lottieJson: null,
     },
     {

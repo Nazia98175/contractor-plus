@@ -32,9 +32,9 @@ const ResourcesDropdown: React.FC<Props> = ({
     { image: "/images/webp/material-comparison-search.webp" },
     { image: "/images/webp/Support-Center.webp" },
     { image: "/images/webp/USA-Labor-Rate.webp" },
-    { image: "/images/webp/Developers-API.webp" },
+    { image: "/images/webp/developers-api.webp" },
   ];
-  const fallbackImage = "/images/webp/developers-aPI.webp";
+  const fallbackImage = "/images/webp/developers-api.webp";
   return (
     <div className="flex grow flex-col overflow-hidden">
       <div className="relative z-[9999] flex grow items-start gap-8 overflow-auto">

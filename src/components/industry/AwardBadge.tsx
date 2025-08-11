@@ -3,12 +3,11 @@ import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import FreeTrialButton from "../common/FreeTrialButton";
 
 // Register ScrollTrigger plugin
@@ -91,7 +90,7 @@ export default function AwardBadges({
       scrollTriggersRef.current = [];
     };
   }, [teamsUsingContractor?.cards]);
-  const { loading, handleRedirect } = useOneLinkRedirect();
+
   return (
     <section className="no-scrollbar relative w-full">
       <div className="absolute -top-0.5 left-0 h-1.5 w-full bg-white"></div>
@@ -113,9 +112,10 @@ export default function AwardBadges({
         alt="Red Lineaar background"
         priority
       />
-      <div className="main-container relative z-20 flex grid-cols-1 flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:pt-0 xl:grid xl:grid-cols-3">
+      <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:gap-6 md:justify-between md:pt-0">
         {teamsUsingContractor?.cards?.map((item: any, index: number) => (
           <div
+            className="w-[48%] md:w-fit"
             key={index}
             ref={(el) => {
               if (contentRefs.current) {

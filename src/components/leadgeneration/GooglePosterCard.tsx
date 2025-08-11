@@ -35,7 +35,7 @@ const GooglePosterCard = () => {
       <div className="flex flex-col gap-1 rounded-xl bg-white p-2.5">
         <div className="flex items-center justify-between gap-2">
           <h3 className="font-inter text-palatinate mb-0.5 text-xs font-semibold">
-            Your Contracting Biz
+            Competitor Business
           </h3>
           <div className="bg-silver text-pantone3 flex h-5 min-h-5 w-5 min-w-5 items-center justify-center rounded-full text-[10px] font-extrabold tracking-[-0.2px]">
             2
@@ -52,7 +52,7 @@ const GooglePosterCard = () => {
       <div className="flex flex-col gap-1 rounded-xl bg-white p-2.5">
         <div className="flex items-center justify-between gap-2">
           <h3 className="font-inter text-palatinate mb-0.5 text-xs font-semibold">
-            Your Contracting Biz
+            Competitor Business
           </h3>
           <div className="bg-silver text-pantone3 flex h-5 min-h-5 w-5 min-w-5 items-center justify-center rounded-full text-[10px] font-extrabold tracking-[-0.2px]">
             3

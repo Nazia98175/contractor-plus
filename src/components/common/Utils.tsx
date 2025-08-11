@@ -326,15 +326,6 @@ export const integrations = [
   },
   {
     id: "5",
-    name: "PayPal",
-    logo: "/images/svg/paypal.svg",
-    categories: ["Payments"],
-    description:
-      "In a strategic stride towards redefining financial transactions, Contractor+ proudly announces its collaboration with PayPal.",
-    link: "#",
-  },
-  {
-    id: "6",
     name: "Authorize.net",
     logo: "/images/svg/authorize.svg",
     categories: ["Payments"],
@@ -343,7 +334,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "7",
+    id: "6",
     name: "Square",
     logo: "/images/svg/square.svg",
     categories: ["Payments"],
@@ -352,16 +343,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "8",
-    name: "Stripe",
-    logo: "/images/svg/strapi.svg",
-    categories: ["Payments"],
-    description:
-      "With just a few clicks, you can blend Stripe's powerful payment processing with Contractor+’s Experience Case study.",
-    link: "#",
-  },
-  {
-    id: "9",
+    id: "7",
     name: "Gmail",
     logo: "/images/svg/gmail.svg",
     categories: ["Productivity"],
@@ -370,7 +352,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "10",
+    id: "8",
     name: "Outlook Calendar",
     logo: "/images/svg/outlook.svg",
     categories: ["Calendar"],
@@ -379,7 +361,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "11",
+    id: "9",
     name: "iCal",
     logo: "/images/svg/calender.svg",
     categories: ["Calendar"],
@@ -388,7 +370,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "12",
+    id: "10",
     name: "Office 365 Calendar",
     logo: "/images/svg/office-365.svg",
     categories: ["Calendar"],
@@ -397,7 +379,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "13",
+    id: "11",
     name: "Google Calendar",
     logo: "/images/svg/google-calender.svg",
     categories: ["Calendar"],
@@ -406,7 +388,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "14",
+    id: "12",
     name: "Quickbooks Online",
     logo: "/images/svg/quickbooks.svg",
     categories: ["Accounting"],
@@ -415,7 +397,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "15",
+    id: "13",
     name: "Thumbtack",
     logo: "/images/svg/thumbtach.svg",
     categories: ["Leads"],
@@ -424,7 +406,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "16",
+    id: "14",
     name: "EarthCam",
     logo: "/images/svg/earthcam.svg",
     categories: ["Productivity"],
@@ -433,7 +415,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "17",
+    id: "15",
     name: "Wisetack",
     logo: "/images/svg/wisetack.svg",
     categories: ["Payments"],
@@ -442,7 +424,7 @@ export const integrations = [
     link: "#",
   },
   {
-    id: "18",
+    id: "16",
     name: "CompanyCam",
     logo: "/images/svg/companycom.svg",
     categories: ["Productivity"],

@@ -36,14 +36,10 @@ const FieldServiceCard: React.FC<Props> = ({
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
         <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
-          {slug === "construction-bookkeeping-services" ? (
-            <h4 className="card-overlap-secondary-heading text-base">
-              Construction Bookkeeping Service
-            </h4>
-          ) : (
-            <h4 className={`${titleColor}`}>{service?.title}</h4>
-          )}
-
+          <h4 className="card-overlap-secondary-heading text-base">
+            {service?.heading}
+          </h4>
+          <h4 className={`${titleColor}`}>{service?.title}</h4>
           {apiData ? (
             <>
               {!service?.lottieJson &&

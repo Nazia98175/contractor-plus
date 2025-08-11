@@ -3,12 +3,11 @@ import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import SoftwareUsed from "@/components/common/SoftwareUsed";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import FreeTrialButton from "../common/FreeTrialButton";
 
 // Register ScrollTrigger plugin
@@ -91,7 +90,8 @@ export default function AwardBadges({
       scrollTriggersRef.current = [];
     };
   }, [teamsUsingContractor?.cards]);
-  const { loading, handleRedirect } = useOneLinkRedirect();
+
+  console.log(teamsUsingContractor, "teamsUsingContractor");
   return (
     <section className="no-scrollbar relative w-full">
       <div className="absolute -top-0.5 left-0 h-1.5 w-full bg-white"></div>

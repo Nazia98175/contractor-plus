@@ -1,9 +1,8 @@
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import LottieAnimation from "../homepage/LottieAnimation";
-// import LottieAnimation from "./LottieAnimation";
 
 interface SoftwareItem {
   icon: React.ReactNode;
@@ -15,7 +14,7 @@ interface SoftwareItem {
   isRange?: boolean;
   subTitle?: string;
   prefix?: string;
-  denominator?: number; // Optional: for "in 10" style
+  denominator?: number;
   lottieJson: unknown;
   cardImage?: {
     url?: string;
@@ -42,12 +41,26 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   icon,
   setLottieRef,
 }) => {
+  const lottieRef = useRef(null);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
     rootMargin: "50px 0px",
     fallbackInView: true,
   });
+
+  useEffect(() => {
+    if (inView && lottieRef.current) {
+      // @ts-ignore
+      lottieRef.current.play();
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    if (setLottieRef && index !== undefined) {
+      setLottieRef(index)(lottieRef);
+    }
+  }, [setLottieRef, index]);
 
   return (
     <article
@@ -56,9 +69,9 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     >
       {item.lottieJson ? (
         <LottieAnimation
-          ref={setLottieRef(index)}
-          loop={false} // Changed to false since we'll control playback
-          autoplay={false} // Changed to false since we'll control playback
+          ref={lottieRef}
+          loop={false}
+          autoplay={false}
           animationData={item.lottieJson}
           className="h-9 w-8 fill-white"
         />

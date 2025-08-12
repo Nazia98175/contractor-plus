@@ -2,11 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import CardRequiredButton from "../common/CardRequiredButton";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { CheckIcon } from "../common/Icons";
-import { usePathname } from "next/navigation";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import FreeTrialButton from "../common/FreeTrialButton";
+import { CheckIcon } from "../common/Icons";
 interface Content {
   title: string;
 }
@@ -19,7 +16,7 @@ interface LikeYouDo {
 interface Props {
   data?: LikeYouDo;
   ncc: string;
-  trackProperties: any;
+  trackProperties?: any;
 }
 const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
   return (
@@ -28,7 +25,7 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
         {/* Left: Image */}
         <div className="flex w-full max-w-[480px] items-center justify-center">
           <Image
-            src="/images/webp/how-to-works.webp"
+            src={trackProperties?.featuresList?.[1]?.cardImg.url}
             alt="Illustration showing contractor workflow"
             width={480}
             height={600}
@@ -71,7 +68,6 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
       </section>
       <div className="relative z-20 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
         <FreeTrialButton className="gap-1.5" text={trackProperties?.btnText} />
-
         <CardRequiredButton className="text-wallStreet" text={ncc} />
       </div>
     </>

@@ -34,11 +34,11 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
       )}
 
       <div
-        className={`mx-auto max-w-[1092px] overflow-x-auto px-2 pt-[53px] md:pt-16 lg:pt-[70px]`}
+        className={`mx-auto max-w-[1200px] overflow-x-auto px-2 pt-[53px] md:pt-16 lg:pt-[70px]`}
       >
         <Copy animateOnScroll={true} delay={0.2}>
           <h2
-            className={`${showBackground ? "gradient-text" : "gradient-text-2"} section-heading xs:max-w-[84%] relative z-40 mx-auto w-fit max-w-[88%] text-center !font-black sm:max-w-full lg:!font-semibold`}
+            className={`${showBackground ? "gradient-text" : "gradient-text-2"} section-heading relative z-40 mx-auto w-fit text-center !font-black sm:max-w-full lg:!font-semibold`}
           >
             {kindAdorable?.title}
           </h2>

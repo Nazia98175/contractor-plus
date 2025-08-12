@@ -3,22 +3,12 @@ import React from "react";
 import { CheckIcon } from "../common/Icons";
 import Copy from "../common/Copy";
 
-interface Content {
-  title: string;
-}
-
-interface LikeYouDo {
-  featuresList: {
-    title: string;
-    content: Content[];
-  }[];
-}
-
 interface Props {
-  trackProperties: LikeYouDo;
+  trackProperties?: any;
 }
 
 const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
+  console.log("recdsx", trackProperties);
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-0">
       <div className="w-full space-y-4 md:max-w-[522px] lg:space-y-5">
@@ -52,12 +42,13 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
 
       <div className="flex w-full items-center justify-center md:max-w-[480px]">
         <Image
-          src="/images/webp/like-contacts.webp"
+          src={trackProperties?.featuresList?.[0]?.cardImg.url}
           alt="Illustration showing contractor workflow"
           width={480}
           height={600}
           className="h-auto w-full object-contain"
           sizes="(max-width: 767px) 480px"
+          priority
         />
       </div>
     </section>

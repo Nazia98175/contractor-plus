@@ -93,7 +93,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-  console.log(teamsUsingContractor, "teams using contractor");
+  console.log(trackProperties, "teams using contractor");
   return (
     <>
       <div id="home-page-wrapper-2">
@@ -128,8 +128,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               <TrackProperties
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties}
-                desktopImgUrl={"/images/webp/mix-screens.webp"}
-                mobileImgUrl={"/images/webp/mix-screens-mobile.webp"}
+                // desktopImgUrl={mainImgDesktop}
+                // mobileImgUrl={mainImgMobile}
               />
 
               <LikeYouDoContacts trackProperties={pageData.trackProperties} />

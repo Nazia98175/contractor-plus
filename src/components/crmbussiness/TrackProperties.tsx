@@ -6,16 +6,10 @@ import FreeTrialButton from "../common/FreeTrialButton";
 
 interface Props {
   ncc: string;
-  desktopImgUrl: string;
   trackProperties: any;
-  mobileImgUrl: string;
 }
 
-const TrackProperties: React.FC<Props> = ({
-  trackProperties,
-  desktopImgUrl,
-  mobileImgUrl,
-}) => {
+const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
   return (
     <section className="relative sm:pt-28 lg:pt-5">
       {/* Desktop background image */}
@@ -42,7 +36,7 @@ const TrackProperties: React.FC<Props> = ({
         <div className="relative z-10 flex items-center justify-center px-2">
           <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full blur-[21px] md:block"></div>
           <Image
-            src={desktopImgUrl}
+            src={trackProperties?.mainImgDesktop.url}
             className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"
             alt="Mobile"
             width={1098}
@@ -51,7 +45,7 @@ const TrackProperties: React.FC<Props> = ({
           />
 
           <Image
-            src={mobileImgUrl}
+            src={trackProperties?.mainImgMobile.url}
             className="drop-shadow-img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
             alt="Mobile"
             width={1098}

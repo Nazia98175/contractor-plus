@@ -5,24 +5,53 @@ import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import IndustryService from "@/components/crmbussiness/IndustryService";
+import {
+  getAllBlogs,
+  getBlogDataBySlug,
+  getBlogsDetails,
+} from "@/services/blog/getBlogData";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Contractor Plus - Blogs Details",
   description:
     "Contractor+ connects every function of your business so it finally all works in sync.",
 };
-const BlogDetails = () => {
+
+export const generateStaticParams = async () => {
+  const blogs = await getAllBlogs("en");
+  return blogs.map((blog: { id: number; blogUrl: string }) => ({
+    locale: "en",
+    slug: blog.blogUrl.toString(),
+  }));
+};
+
+const BlogDetails = async ({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) => {
+  const { locale, slug } = await params;
+  const [blogData, blogsList, allBlogs] = await Promise.all([
+    getBlogDataBySlug(locale, slug),
+    getBlogsDetails(locale),
+    getAllBlogs(locale),
+  ]);
+
+  if (!blogData) {
+    notFound();
+  }
   return (
     <main className="overflow-hidden">
       <div className="bg-white">
-        <BlogDetailHero />
-        <TravelBlog />
+        <BlogDetailHero blogData={blogData} />
+        <TravelBlog blogData={blogData} blogsList={blogsList} />
       </div>
       <div className="relative overflow-hidden">
         <IndustryService
           data={{
-            title: "The only OS for build and service contractors.",
-            placeholder: "Enter your email",
+            title: `${blogsList?.emailSignupSection?.title}`,
+            placeholder: `${blogsList?.emailSignupSection?.placeholder}`,
           }}
           ncc="No credit card required"
           createBtn="Get started FREE"
@@ -36,7 +65,7 @@ const BlogDetails = () => {
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] z-0 block max-h-[994px] w-full max-w-[840px]" />
       </div>
 
-      <ContractorArticles />
+      <ContractorArticles blogList={blogsList} blogData={allBlogs} />
     </main>
   );
 };

@@ -7,7 +7,9 @@ import BlogCard from "./BlogCard";
 import SwiperNavWithPagination from "./SwiperNavWithPagination";
 import { handleClickProps } from "@/types";
 
-const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
+const LatestFromContractor: React.FC<
+  handleClickProps & { blogsList: any; blogsData: any[] }
+> = ({ handleClick, blogsList, blogsData }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -17,16 +19,42 @@ const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Flatten Data for mobile
-  const allArticles = latestContractorData.flatMap((group) => [
-    { ...group, variant: "large" as "large" },
-    ...group.second.map((item) => ({ ...item, variant: "small" as "small" })),
+  const transformBlogsData = (blogs: any[]) => {
+    const grouped: any[] = [];
+    for (let i = 0; i < blogs.length; i += 3) {
+      const large = blogs[i];
+      const small = blogs.slice(i + 1, i + 3);
+
+      if (!large) continue;
+
+      grouped.push({
+        ...large,
+        second: small.map((s) => ({
+          ...s,
+        })),
+      });
+    }
+    return grouped;
+  };
+
+  const displayData =
+    blogsData && blogsData.length > 0
+      ? transformBlogsData(blogsData)
+      : latestContractorData;
+
+  const allArticles = displayData.flatMap((group) => [
+    { ...group, variant: "large" as const },
+    ...group.second.map((item: any) => ({
+      ...item,
+      variant: "small" as const,
+    })),
   ]);
 
+  console.log(allArticles, "aallll");
   return (
     <section className="custom-pagination relative z-20 mx-auto w-full max-w-[1224px] px-2 pt-8">
       <h2 className="text-eerieBlack pb-4 text-2xl font-semibold xl:pb-6">
-        Latest from Contractor+ HQ
+        {blogsList?.latestBlogTitle ?? ""}
       </h2>
       <Swiper
         slidesPerView={1}
@@ -70,7 +98,7 @@ const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
                 <BlogCard article={article} variant={article.variant} />
               </SwiperSlide>
             ))
-          : latestContractorData.map((group) => (
+          : allArticles.map((group) => (
               <SwiperSlide
                 key={group.id}
                 className="!grid w-full gap-5 lg:!grid-cols-2 xl:gap-8"
@@ -79,19 +107,21 @@ const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
                   <BlogCard
                     article={group}
                     variant="large"
-                    onClick={() => handleClick(group.title)}
+                    onClick={() => handleClick(group.blogUrl)}
                   />
                 </div>
-                <div className="flex h-full w-full flex-col gap-6 sm:flex-row lg:w-fit lg:flex-col">
-                  {group.second.map((article) => (
-                    <BlogCard
-                      key={article.id}
-                      article={article}
-                      variant="small"
-                      onClick={() => handleClick(article.title)}
-                    />
-                  ))}
-                </div>
+                {group.second && (
+                  <div className="flex h-full w-full flex-col gap-6 sm:flex-row lg:w-fit lg:flex-col">
+                    {group.second.map((article: any) => (
+                      <BlogCard
+                        key={article.id}
+                        article={article}
+                        variant="small"
+                        onClick={() => handleClick(article.blogUrl)}
+                      />
+                    ))}
+                  </div>
+                )}
               </SwiperSlide>
             ))}
       </Swiper>
@@ -100,6 +130,8 @@ const LatestFromContractor: React.FC<handleClickProps> = ({ handleClick }) => {
         prevClass="swiper-button-prev3"
         nextClass="swiper-button-next3"
         paginationClass="swiper-pagination-real-time-3"
+        nextText={blogsList?.nextBtnText ?? ""}
+        previousText={blogsList?.previousBtnText ?? ""}
       />
     </section>
   );

@@ -128,8 +128,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               <TrackProperties
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties}
-                // desktopImgUrl={mainImgDesktop}
-                // mobileImgUrl={mainImgMobile}
               />
 
               <LikeYouDoContacts trackProperties={pageData.trackProperties} />

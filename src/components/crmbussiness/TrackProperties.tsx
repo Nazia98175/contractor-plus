@@ -35,7 +35,7 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
       <CardReveal distance={50}>
         <div className="relative z-10 flex items-center justify-center px-2">
           <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full blur-[21px] md:block"></div>
-          <Image
+          {/* <Image
             src={trackProperties?.mainImgDesktop.url}
             className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"
             alt="Mobile"
@@ -51,7 +51,7 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
             width={1098}
             height={578}
             sizes="(max-width: 767px) 100vw"
-          />
+          /> */}
         </div>
       </CardReveal>
 

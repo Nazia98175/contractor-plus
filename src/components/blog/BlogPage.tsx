@@ -3,23 +3,29 @@ import BlogArticle from "@/components/blog/BlogArticle";
 import BlogHero from "@/components/blog/BlogHero";
 import LatestFromContractor from "@/components/blog/LatestFromContractor";
 import { useRouter } from "next/navigation";
-import React from "react";
 
-const BlogPage = () => {
+type BlogPageProps = {
+  blogsData: any;
+  blogsFields: any;
+  blogsList: any;
+};
+const BlogPage = ({ blogsData, blogsFields, blogsList }: BlogPageProps) => {
   const router = useRouter();
   const handleClick = (name: string) => {
-    const slug = name.toLowerCase().replace(/\s+/g, "-");
-    router.push(`/blog/${slug}`);
+    router.push(`/blog/${name}`);
   };
-
   return (
     <main id="home-page-wrapper-2">
       <div id="home-page-view-port-screen-blog" className="relative opacity-0">
-        <BlogHero />
+        <BlogHero blogsList={blogsList} blogsData={blogsData} />
       </div>
       <div className="relative z-20 bg-white">
-        <LatestFromContractor handleClick={handleClick} />
-        <BlogArticle handleClick={handleClick} />
+        <LatestFromContractor
+          blogsList={blogsList}
+          blogsData={blogsData}
+          handleClick={handleClick}
+        />
+        <BlogArticle blogsList={blogsList} blogsData={blogsData} />
       </div>
     </main>
   );

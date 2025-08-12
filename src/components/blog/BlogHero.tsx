@@ -1,26 +1,38 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { contractorTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
 import CustomSelect from "./CustomSelect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const BlogHero = () => {
+type BlogHeroProps = {
+  blogsList: any;
+  blogsData: any[];
+  onSearchChange?: (value: string) => void;
+  onTypeChange?: (value: string) => void;
+};
+
+const BlogHero = ({
+  blogsList,
+  blogsData,
+  onSearchChange,
+  onTypeChange,
+}: BlogHeroProps) => {
+  const router = useRouter();
   const [selectedValue, setSelectedValue] = useState("contractor");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredBlogs, setFilteredBlogs] = useState<any[]>([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Initial fade-in animations
     setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-blog", {
-        opacity: 1,
-        duration: 1,
-      });
+      gsap.to("#home-page-view-port-screen-blog", { opacity: 1, duration: 1 });
       gsap.to("#home-page-header-view-port-screen", {
         opacity: 1,
         duration: 1,
@@ -30,7 +42,7 @@ const BlogHero = () => {
         duration: 1,
       });
     }, 700);
-    // Create timeline for parallax
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".parallax-container",
@@ -41,19 +53,56 @@ const BlogHero = () => {
       },
     });
 
-    // Add mountains to timeline with different speeds
     tl.to("#mountain-1", { y: -130, ease: "none", scaleY: 1.2 }, 0)
       .to("#mountain-2", { y: -80, ease: "none", scaleY: 1.4 }, 0)
       .to("#mountain-3", { y: -250, ease: "none", scaleY: 1.4 }, 0)
       .to("#mountain-4", { y: -340, ease: "none" }, 0)
       .to("#mountain-5", { y: -150, ease: "none" }, 0);
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
+  function handleSearch() {
+    if (searchTerm.trim().length > 0) {
+      const results = blogsData.filter((blog) =>
+        blog.blogTitle?.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+      setFilteredBlogs(results);
+    } else {
+      setFilteredBlogs([]);
+    }
+
+    if (onSearchChange) onSearchChange(searchTerm);
+    if (onTypeChange) onTypeChange(selectedValue);
+  }
+
+  const handleBlogClick = (slug: string) => {
+    router.push(`/blog/${slug}`);
+    setSearchTerm("");
+    setFilteredBlogs([]);
+  };
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setFilteredBlogs([]);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  console.log(filteredBlogs);
   return (
     <div
       id="blog-parallax-container"
@@ -61,10 +110,13 @@ const BlogHero = () => {
     >
       <div className="relative z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
         <h1 className="gradient-text-shadow absolute bottom-0 left-1/2 z-0 -translate-x-1/2 blur-[26px]">
-          Contractor+ HQ
+          {blogsList?.title ?? ""}
         </h1>
-        <h1 className="gradient-text-shadow relative z-10">Contractor+ HQ</h1>
+        <h1 className="gradient-text-shadow relative z-10">
+          {blogsList?.title ?? ""}
+        </h1>
       </div>
+
       <div className="font-myriad bg-rgba15 relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg p-2.5 backdrop-blur-[42px] sm:flex-row">
         <CustomSelect
           options={contractorTypes}
@@ -72,27 +124,62 @@ const BlogHero = () => {
           onChange={(option) => setSelectedValue(option?.value || "")}
           className="sm:max-w-[294px]"
         />
-        <div className="flex w-full items-center gap-2.5">
-          <div className="border-secondary flex h-10 w-full items-center rounded-lg border pl-3.5">
+
+        <div
+          ref={dropdownRef}
+          className="relative flex w-full items-center gap-2.5"
+        >
+          <div className="border-secondary relative flex h-10 w-full items-center rounded-lg border pl-3.5">
             <SearchIcon />
             <input
               type="text"
-              autoFocus
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Select Contractor + HQ"
               className="text-decemberSky placeholder:text-decemberSky w-full px-3 tracking-[0.1px] focus:outline-none"
             />
           </div>
-          <button className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80">
+          <button
+            onClick={handleSearch}
+            type="button"
+            className="bg-romanRed flex h-10 w-10 max-w-10 min-w-10 items-center justify-center rounded-lg duration-300 hover:opacity-80"
+          >
             <SearchIcon color="#fff" />
           </button>
+
+          {/* Search Dropdown */}
+          {filteredBlogs.length > 0 && (
+            <div className="absolute top-full z-50 mt-3 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-300 bg-white shadow-lg">
+              {filteredBlogs.map((blog) => (
+                <div
+                  key={blog.id}
+                  className="flex cursor-pointer items-start px-3 py-2 hover:bg-gray-300"
+                  onClick={() => handleBlogClick(blog.blogUrl || blog.id)}
+                >
+                  <div className="relative aspect-square w-[60px]">
+                    <Image src={blog.blogImg[0].url} fill alt="blog image" />
+                  </div>
+                  <div className="ml-2 w-full">
+                    <h5 className="text-sm capitalize">
+                      {blog?.blogTitle ?? ""}
+                    </h5>
+                    <p className="text-xs text-gray-500 capitalize">
+                      {blog?.blogShortDescription ?? ""}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
-      {/* PARALLAX IMAGES CONTAINER */}
+
+      {/* PARALLAX IMAGES */}
       <div className="parallax-container absolute top-0 bottom-0 left-0 h-screen w-full">
         <img
           id="mountain-1"
           src="/images/mountain/mountain-1.png"
-          className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full translate-y-[0px]"
+          className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full"
           alt=""
         />
         <img
@@ -119,7 +206,6 @@ const BlogHero = () => {
           className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
           alt=""
         />
-
         <div className="absolute bottom-0 z-[11] h-[10vw] w-full bg-white"></div>
       </div>
     </div>

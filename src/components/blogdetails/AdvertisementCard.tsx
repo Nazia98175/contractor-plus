@@ -10,7 +10,11 @@ const businessBenefits = [
   "Estimating & Invoicing",
   "Access from PC, Android and iOS!",
 ];
-const AdvertisementCard = () => {
+const AdvertisementCard = ({
+  blogsList,
+}: {
+  blogsList?: { bannerFeatures: { id: number; label: string }[] };
+}) => {
   return (
     <article className="flex w-full flex-col justify-center rounded-xl bg-[url('/images/webp/table-content-bg.webp')] bg-cover px-4 pt-8 pb-6 md:pb-[30px] lg:px-6 lg:pt-[42px]">
       <span className="relative mx-auto max-w-[168px]">
@@ -20,12 +24,23 @@ const AdvertisementCard = () => {
         <FooterLogoIcon />
       </span>
       <ul className="mt-10 space-y-3 px-2.5 text-white">
-        {businessBenefits.map((benefit, index) => (
-          <li key={index} className="flex items-center gap-2.5 text-xs">
-            <CheckIcon />
-            {benefit}
-          </li>
-        ))}
+        {blogsList
+          ? blogsList?.bannerFeatures?.length > 0 &&
+            blogsList?.bannerFeatures?.map((benefit) => (
+              <li
+                key={benefit.id}
+                className="flex items-center gap-2.5 text-xs"
+              >
+                <CheckIcon />
+                {benefit.label}
+              </li>
+            ))
+          : businessBenefits.map((benefit) => (
+              <li key={benefit} className="flex items-center gap-2.5 text-xs">
+                <CheckIcon />
+                {benefit}
+              </li>
+            ))}
       </ul>
 
       <Link

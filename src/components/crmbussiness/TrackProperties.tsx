@@ -7,6 +7,8 @@ import FreeTrialButton from "../common/FreeTrialButton";
 interface Props {
   ncc: string;
   trackProperties: any;
+  desktopImgUrl?: string;
+  mobileImgUrl?: string;
 }
 
 const TrackProperties: React.FC<Props> = ({ trackProperties }) => {

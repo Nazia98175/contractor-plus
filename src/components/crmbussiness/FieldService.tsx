@@ -119,7 +119,7 @@ const FieldService: React.FC<TheServiceProps> = ({
       >
         <Copy animateOnScroll={true}>
           <h2
-            className={`gradient-text mx-auto block px-1 pb-10 text-center text-xl font-semibold -tracking-[0.72px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] ${mainClassName || "max-w-[813px]"}`}
+            className={`gradient-text mx-auto block px-1 pb-10 text-center text-xl leading-relaxed font-semibold -tracking-[0.72px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] ${mainClassName || "max-w-[813px]"}`}
           >
             {fieldService?.title}
           </h2>

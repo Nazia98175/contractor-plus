@@ -4811,9 +4811,8 @@ export const automateneverlookBackData = {
 
 export const automatedformData = {
   placeholder: "Your Email",
-  subTitle:
-    "What contractor client agreement software should have been all along",
-  title: "Get started with Contractor+ today.",
+  subTitle: "Get started with Contractor+ today.",
+  title: "What contractor client agreement software should have been all along",
 };
 
 export const automatedFaq = {

@@ -57,7 +57,6 @@ const ContractorClientAgreementPage = () => {
         <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
-
       <div className="relative overflow-hidden">
         <FieldService
           fieldService={automatedCardData}
@@ -70,8 +69,9 @@ const ContractorClientAgreementPage = () => {
         <TrackProperties
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}
+          desktopImgUrl="/images/webp/client-agriment.webp"
+          mobileImgUrl="/images/png/client-agriment-mobile.png"
         />
-
         <AutmateDoContacts
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}

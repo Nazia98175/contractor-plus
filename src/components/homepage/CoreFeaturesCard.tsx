@@ -24,23 +24,37 @@ interface FeatureItem {
 interface Props {
   featuresList: FeatureItem[];
 }
-
+const navItems = [
+  { id: "crm", label: "CRM", href: "#crm" },
+  { id: "live_scheduling", label: "Live scheduling", href: "#live_scheduling" },
+  {
+    id: "internal_job_chat",
+    label: "Internal job chat",
+    href: "#internal_job_chat",
+  },
+  {
+    id: "ai_estimate_builder",
+    label: "AI estimate builder",
+    href: "#ai_estimate_builder",
+  },
+  { id: "testimonials", label: "Testimonials", href: "#testimonials" },
+  {
+    id: "property_profiles",
+    label: "Property Profiles",
+    href: "#property_profiles",
+  },
+  { id: "pricing", label: "Pricing", href: "#pricing" },
+  { id: "big_chief_ai", label: "Big Chief AI", href: "#big_chief_ai" },
+];
 const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
-  const [activeFeature, setActiveFeature] = useState(0);
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  const activeLinkRef = useRef<HTMLAnchorElement>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
 
   const contentRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const featuresRef = useRef<HTMLDivElement | null>(null);
-  const navContainerRef = useRef<HTMLDivElement | null>(null);
+
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const indicatorRef = useRef<HTMLButtonElement | null>(null);
-  const featureButtonsRef = useRef<(HTMLButtonElement | null)[]>([]);
-  const navHeightRef = useRef<number>(0);
-  const isScrollingProgrammatically = useRef(false);
-  const lastActiveFeature = useRef(0);
-  const rafId = useRef<number | null>(null);
 
   const t = useTranslations("corefeature");
   const features: string[] = t.raw("features") || [];
@@ -55,251 +69,56 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
-  // Update nav height
-  useEffect(() => {
-    if (navContainerRef.current) {
-      navHeightRef.current = navContainerRef.current.offsetHeight;
-    }
-  }, [isMobile]);
-
-  // Update progress value and scroll active button into view
-  useEffect(() => {
-    if (isMobile && featureButtonsRef.current[activeFeature]) {
-      featureButtonsRef.current[activeFeature]?.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
-    }
-  }, [activeFeature, features.length]);
-
-  // Optimized scroll handling
-  useEffect(() => {
-    let ticking = false;
-
-    const processScroll = () => {
-      if (isScrollingProgrammatically.current) {
-        ticking = false;
-        return;
-      }
-
-      const containerEl = containerRef.current;
-      const navEl = navContainerRef.current;
-
-      if (!containerEl || !navEl) {
-        ticking = false;
-        return;
-      }
-
-      const scrollY = window.scrollY;
-      const containerTop = containerEl.offsetTop;
-
-      // Check if navigation should be sticky (mobile only)
-      if (isMobile) {
-        const shouldBeSticky = scrollY > containerTop - 40;
-        if (isSticky !== shouldBeSticky) {
-          setIsSticky(shouldBeSticky);
-        }
-      }
-
-      // Find active feature based on scroll position
-      const windowHeight = window.innerHeight;
-      const offset = isMobile ? navHeightRef.current : 0;
-      let newActiveFeature = lastActiveFeature.current;
-
-      for (let i = contentRefs.current.length - 1; i >= 0; i--) {
-        const ref = contentRefs.current[i];
-        if (!ref) continue;
-
-        const rect = ref.getBoundingClientRect();
-        const elementTop = rect.top - offset;
-        const center = windowHeight / 2;
-
-        if (elementTop < center) {
-          newActiveFeature = i;
-          break;
-        }
-      }
-
-      // Only update if changed and not during programmatic scroll
-      if (
-        newActiveFeature !== lastActiveFeature.current &&
-        !isScrollingProgrammatically.current
-      ) {
-        lastActiveFeature.current = newActiveFeature;
-        setActiveFeature(newActiveFeature);
-      }
-
-      ticking = false;
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        if (rafId.current) {
-          cancelAnimationFrame(rafId.current);
-        }
-        rafId.current = requestAnimationFrame(processScroll);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Remove the initial handleScroll call to prevent auto-scrolling on mount
-    // handleScroll(); // Initial check
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-      }
-    };
-  }, [isSticky, isMobile]);
-
-  // Move indicator - debounced to prevent shaking
-  const moveIndicator = useCallback(
-    (index: number) => {
-      if (!indicatorRef.current || !featuresRef.current) return;
-
-      requestAnimationFrame(() => {
-        const buttons =
-          featuresRef.current?.querySelectorAll("button.feature-btn");
-        if (!buttons || buttons.length === 0) return;
-
-        const firstButton = buttons[0] as HTMLElement;
-        const targetButton = buttons[index] as HTMLElement;
-
-        if (!firstButton || !targetButton) return;
-
-        const firstRect = firstButton.getBoundingClientRect();
-        const targetRect = targetButton.getBoundingClientRect();
-
-        const offset = !isMobile
-          ? targetRect.top - firstRect.top
-          : targetRect.left - firstRect.left;
-
-        if (indicatorRef.current) {
-          indicatorRef.current.style.transform = !isMobile
-            ? `translate(-50%, ${offset + 6}px)`
-            : `translate(${offset + 6}px, -50%)`;
-        }
-      });
-    },
-    [isMobile],
-  );
-
-  // Update indicator position when active feature changes
-  useEffect(() => {
-    moveIndicator(activeFeature);
-  }, [activeFeature, moveIndicator]);
-
-  // Handle feature click - FIXED SCROLL OFFSET
-  const handleFeatureClick = useCallback(
-    (index: number) => {
-      setActiveFeature(index);
-      lastActiveFeature.current = index;
-
-      if (contentRefs.current[index]) {
-        const element = contentRefs.current[index];
-
-        // Calculate the proper offset
-        let yOffset = 0;
-
-        if (isMobile) {
-          // For mobile: account for sticky nav (80px from top-20) plus some padding
-          yOffset = -80 - navHeightRef.current - 20;
-        } else {
-          // For desktop: account for sticky nav (112px from top-28) plus some padding
-          yOffset = -112 - 20;
-        }
-
-        // Get element position
-        const elementRect = element.getBoundingClientRect();
-        const absoluteElementTop = elementRect.top + window.pageYOffset;
-
-        // Calculate final scroll position
-        const scrollTo = absoluteElementTop + yOffset;
-
-        isScrollingProgrammatically.current = true;
-        window.scrollTo({
-          top: scrollTo,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          isScrollingProgrammatically.current = false;
-        }, 800); // Slightly longer timeout for smoother experience
-      }
-
-      if (isMobile && featureButtonsRef.current[index]) {
-        featureButtonsRef.current[index]?.scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-          block: "nearest",
-        });
-      }
-    },
-    [isMobile],
-  );
-
   const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
-  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
-
+  function toCamelCase(str: string): string {
+    return str
+      .trim() // Remove leading/trailing whitespace
+      .toLowerCase() // Convert to lowercase
+      .replace(/[^a-zA-Z0-9\s]/g, "") // Remove special characters except spaces
+      .replace(/\s+(.)/g, (_, char) => char.toUpperCase()) // Convert first letter after space to uppercase
+      .replace(/\s+/g, ""); // Remove all spaces
+  }
   useEffect(() => {
-    // Remove the setTimeout delay and create ScrollTrigger immediately
-    const container = containerRef.current;
-    const navContainer = navContainerRef.current;
-    const content = contentRef.current;
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px", // Trigger when section is 20% visible from top
+      threshold: 0.1,
+    };
 
-    if (!container || !navContainer || !content) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
 
-    // Create ScrollTrigger for pinning the navigation
-    const pinTrigger = ScrollTrigger.create({
-      trigger: container,
-      start: "top 90px",
-      end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
-      pin: navContainer,
-      pinSpacing: false,
-      invalidateOnRefresh: true,
-      // Add markers for debugging if needed
-      // markers: true,
+    // Observe all sections
+    titles.forEach((item) => {
+      const element = document.getElementById(toCamelCase(item));
+      if (element) {
+        observer.observe(element);
+      }
     });
 
-    // Cleanup function
-    return () => {
-      pinTrigger.kill();
-    };
-  }, []); // Remove the dependency array to ensure it only runs once
+    return () => observer.disconnect();
+  }, [titles]);
 
-  // Optional: Refresh ScrollTrigger on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
+  const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <section
-      ref={containerRef}
-      className="relative mt-7 flex flex-col gap-9 overflow-visible lg:flex-row lg:px-3 xl:p-6"
+      // ref={containerRef}
+      className="relative mt-7 flex flex-col gap-9 lg:flex-row lg:px-3 xl:p-6"
     >
-      <div className="relative z-20 h-full lg:w-fit">
-        <div
-          ref={navContainerRef}
-          className={`z-20 w-full lg:w-fit lg:self-start`}
-        >
+      <div className="!sticky top-[54px] z-20 h-full sm:top-[70px] lg:top-[100px] lg:w-fit">
+        <div className={`relative z-20 w-full lg:w-fit lg:self-start`}>
           <FeatureNavigation
+            isMobile={isMobile}
             features={titles}
             featureBtn={[featureBtnC]}
-            activeFeature={activeFeature}
-            onFeatureClick={handleFeatureClick}
-            indicatorRef={indicatorRef}
-            featuresRef={featuresRef}
-            featureButtonsRef={featureButtonsRef}
-            isMobile={isMobile}
+            activeLinkRef={activeLinkRef}
+            activeSection={activeSection}
           />
         </div>
       </div>

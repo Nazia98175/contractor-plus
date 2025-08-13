@@ -127,7 +127,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <>
               <TrackProperties
                 ncc={pageData.ncc}
-                trackProperties={pageData.trackProperties}
+                trackProperties={trackProperties}
               />
 
               <LikeYouDoContacts trackProperties={pageData.trackProperties} />

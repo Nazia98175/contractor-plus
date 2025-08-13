@@ -56,7 +56,7 @@ export const getFeaturesPageData = async (
     getCrmPage(
       slug,
       locale,
-      "&populate[featureHighlightSection][populate][featuresList][populate]=*",
+      "&populate[featureHighlightSection][populate][featuresList][populate]=*&populate[featureHighlightSection][populate][mainImgDesktop][populate]=*&populate[featureHighlightSection][populate][mainImgMobile][populate]=*",
     ),
     getCrmPage(
       slug,

@@ -138,4 +138,12 @@ export interface IntegrationItem {
   categories: string[];
   description: string;
   link: string;
+  integrationName?: string;
+  integrationSubTitle?: string;
+  image?: {
+    url?: string;
+  };
+  thumbnailImage?: {
+    url?: string;
+  };
 }

@@ -17,7 +17,10 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
       {/* Desktop background image */}
       <Image
         className="absolute -top-[35%] left-0 z-0 hidden h-[83%] w-[100%] object-center md:flex lg:h-[100%] 2xl:h-[120%]"
-        src="/images/webp/finally-desktop-bg.webp"
+        src={
+          trackProperties?.mainImgDesktop?.url ??
+          "/images/webp/finally-desktop-bg.webp"
+        }
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
@@ -27,7 +30,10 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
       {/* Mobile background image */}
       <Image
         className="absolute top-0 left-0 z-0 flex h-[110%] w-[100%] object-center md:hidden"
-        src="/images/webp/finally-mobile-bg.webp"
+        src={
+          trackProperties?.mainImgMobile?.url ??
+          "/images/webp/finally-mobile-bg.webp"
+        }
         alt="finally-desktop-bg"
         width={1920}
         height={1920}

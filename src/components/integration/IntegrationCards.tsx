@@ -1,15 +1,20 @@
 "use client";
 import { useState } from "react";
-import CustomSelect from "../blog/CustomSelect";
-import { integrationTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
-import { integrations } from "../common/Utils";
 import IntegrationInfoCard from "./IntegrationInfoCard";
 
-const IntegrationCards = () => {
+const IntegrationCards = ({
+  integrationList,
+  integrations,
+}: {
+  integrationList: any;
+  integrations: any[];
+}) => {
   const [searchTerms, setSearchTerms] = useState<string>("");
   const filteredIntegrations = integrations.filter((integration) =>
-    integration.name.toLowerCase().includes(searchTerms.toLowerCase()),
+    integration.integrationName
+      .toLowerCase()
+      .includes(searchTerms.toLowerCase()),
   );
 
   return (
@@ -21,7 +26,7 @@ const IntegrationCards = () => {
             <input
               type="text"
               autoFocus
-              placeholder="Search Integrations"
+              placeholder={integrationList?.hero?.searchText ?? ""}
               className="text-decemberSky placeholder:text-staleGray w-full px-3 tracking-[0.1px] focus:outline-none"
               value={searchTerms}
               onChange={(e) => setSearchTerms(e.target.value)}

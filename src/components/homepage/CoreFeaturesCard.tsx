@@ -72,7 +72,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         block: "nearest",
       });
     }
-  }, [activeFeature, features.length, isMobile]);
+  }, [activeFeature, features.length]);
 
   // Optimized scroll handling
   useEffect(() => {
@@ -122,17 +122,13 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
         }
       }
 
-      // Only update if changed
-      if (newActiveFeature !== lastActiveFeature.current) {
+      // Only update if changed and not during programmatic scroll
+      if (
+        newActiveFeature !== lastActiveFeature.current &&
+        !isScrollingProgrammatically.current
+      ) {
         lastActiveFeature.current = newActiveFeature;
         setActiveFeature(newActiveFeature);
-      }
-
-      // Update progress for mobile
-      if (isMobile && containerEl) {
-        const totalScroll = containerEl.offsetHeight - windowHeight;
-        const currentScroll = scrollY - containerTop;
-        const progress = Math.max(0, Math.min(1, currentScroll / totalScroll));
       }
 
       ticking = false;
@@ -149,7 +145,9 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+
+    // Remove the initial handleScroll call to prevent auto-scrolling on mount
+    // handleScroll(); // Initial check
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -249,34 +247,30 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   useEffect(() => {
-    setTimeout(() => {
-      const container = containerRef.current;
-      const navContainer = navContainerRef.current;
-      const content = contentRef.current;
+    // Remove the setTimeout delay and create ScrollTrigger immediately
+    const container = containerRef.current;
+    const navContainer = navContainerRef.current;
+    const content = contentRef.current;
 
-      if (!container || !navContainer || !content) return;
+    if (!container || !navContainer || !content) return;
 
-      // Create ScrollTrigger for pinning the navigation
-      const pinTrigger = ScrollTrigger.create({
-        trigger: container,
-        start: "top 90px",
-        end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
-        pin: navContainer,
-        pinSpacing: false,
-        invalidateOnRefresh: true,
-        // Optional: Add some debugging
-        onUpdate: (self) => {
-          // Optional: Handle any updates during scroll
-          // console.log("Pin progress:", self.progress);
-        },
-      });
+    // Create ScrollTrigger for pinning the navigation
+    const pinTrigger = ScrollTrigger.create({
+      trigger: container,
+      start: "top 90px",
+      end: () => `+=${content.offsetHeight - navContainer.offsetHeight}`,
+      pin: navContainer,
+      pinSpacing: false,
+      invalidateOnRefresh: true,
+      // Add markers for debugging if needed
+      // markers: true,
+    });
 
-      // Cleanup function
-      return () => {
-        pinTrigger.kill();
-      };
-    }, 2500);
-  }, []);
+    // Cleanup function
+    return () => {
+      pinTrigger.kill();
+    };
+  }, []); // Remove the dependency array to ensure it only runs once
 
   // Optional: Refresh ScrollTrigger on window resize
   useEffect(() => {

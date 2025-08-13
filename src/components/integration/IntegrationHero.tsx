@@ -8,19 +8,17 @@ const IntegrationHero = () => {
   const marqueeItem = [
     { id: 1, icon: "/images/png/zapier.png" },
     { id: 2, icon: "/images/png/simple-bussines.png" },
-    { id: 3, icon: "/images/png/companycam.png" },
-    { id: 4, icon: "/images/png/thumbtack.png" },
-    { id: 5, icon: "/images/png/hover.png" },
-    { id: 6, icon: "/images/png/wisetack.png" },
-    { id: 7, icon: "/images/png/abc-supply.png" },
-    { id: 8, icon: "/images/png/angi-2.png" },
-    { id: 9, icon: "/images/png/bird.png" },
-    { id: 10, icon: "/images/png/camera.png" },
-    { id: 11, icon: "/images/png/gmail.png" },
-    { id: 12, icon: "/images/png/outlook.png" },
-    { id: 13, icon: "/images/png/abc-2.png" },
-    { id: 14, icon: "/images/png/lowes-2.png" },
-    { id: 15, icon: "/images/png/mernards.png" },
+    { id: 3, icon: "/images/png/thumbtack.png" },
+    { id: 4, icon: "/images/png/hover.png" },
+    { id: 5, icon: "/images/png/wisetack.png" },
+    { id: 6, icon: "/images/png/abc-supply.png" },
+    { id: 7, icon: "/images/png/angi-2.png" },
+    { id: 8, icon: "/images/png/bird.png" },
+    { id: 9, icon: "/images/png/camera.png" },
+    { id: 10, icon: "/images/png/gmail.png" },
+    { id: 11, icon: "/images/png/outlook.png" },
+    { id: 12, icon: "/images/png/abc-2.png" },
+    { id: 13, icon: "/images/png/lowes-2.png" },
   ];
   const marqueeItem2 = [
     { id: 1, icon: "/images/png/calander.png" },
@@ -29,15 +27,13 @@ const IntegrationHero = () => {
     { id: 4, icon: "/images/png/quickbooks.png" },
     { id: 5, icon: "/images/png/earthcam.png" },
     { id: 6, icon: "/images/png/tesla.png" },
-    { id: 7, icon: "/images/png/abc.png" },
-    { id: 8, icon: "/images/png/lowe.png" },
-    { id: 9, icon: "/images/png/menared.png" },
-    { id: 10, icon: "/images/png/ace.png" },
-    { id: 11, icon: "/images/png/earth.png" },
-    { id: 12, icon: "/images/png/victory.png" },
-    { id: 13, icon: "/images/png/ace-hardware.png" },
-    { id: 14, icon: "/images/png/home.png" },
-    { id: 15, icon: "/images/png/eagle-view.png" },
+    { id: 7, icon: "/images/png/menared.png" },
+    { id: 8, icon: "/images/png/ace.png" },
+    { id: 9, icon: "/images/png/earth.png" },
+    { id: 10, icon: "/images/png/victory.png" },
+    { id: 11, icon: "/images/png/ace-hardware.png" },
+    { id: 12, icon: "/images/png/home.png" },
+    { id: 13, icon: "/images/png/eagle-view.png" },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,7 +67,7 @@ const IntegrationHero = () => {
         </p>
       </div>
       <div className="mt-4">
-        <Marquee direction="right" speed={50}>
+        <Marquee direction="right" speed={100} pauseOnHover>
           {marqueeItem.map((item, index) => (
             <div className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4">
               <Image
@@ -86,7 +82,7 @@ const IntegrationHero = () => {
             </div>
           ))}
         </Marquee>
-        <Marquee direction="left" speed={50}>
+        <Marquee direction="left" speed={100} pauseOnHover>
           {marqueeItem2.map((item, index) => (
             <div className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4">
               <Image

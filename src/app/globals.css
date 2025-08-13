@@ -350,7 +350,7 @@ body {
   @apply relative flex h-20 w-20 items-center justify-center rounded-full bg-center p-4 md:h-[108px] md:w-[108px] md:p-[18px];
 }
 .feature-btn {
-  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[110%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[165px] lg:truncate;
+  @apply w-fit cursor-pointer px-0.5 py-1 text-start text-sm leading-[110%] transition-colors duration-300 sm:text-base md:text-xl lg:min-w-[180px] lg:truncate;
 }
 .header-li-dropdown {
   @apply font-inter text-lightBlack px-1 text-xs font-extrabold duration-300 ease-linear lg:text-sm xl:text-base;
@@ -2093,7 +2093,7 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.hero-video-overlay {
+.hero-video-overlay-2 {
   background: linear-gradient(180deg, #0c0d1100 18.46%, #0c0d11 69.34%);
 }
 .video-section-wrapper h3 {

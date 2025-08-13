@@ -91,7 +91,7 @@ const FeatureNavigation = ({
             }}
             onClick={() => onFeatureClick(index)}
             key={`${feature}-${index}`} // More stable key
-            className={`feature-btn w-full lg:w-[180px] lg:truncate ${
+            className={`feature-btn w-full lg:w-[190px] lg:truncate ${
               isMobile ? "text-sm" : ""
             } cursor-pointer transition-colors duration-200 ${
               index === activeFeature

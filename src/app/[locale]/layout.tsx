@@ -41,12 +41,10 @@ export default async function RootLayout({
       <BackToTop />
       <NextIntlClientProvider messages={messages}>
         <Header header={header?.data} />
-        <div id="smooth-wrapper">
-          <div id="smooth-content">
-            {children}
-            <Footer footer={footer?.data} />
-          </div>
-        </div>
+
+        {children}
+        <Footer footer={footer?.data} />
+
         <ParticlesComponent id="star-particles" />
       </NextIntlClientProvider>
     </>

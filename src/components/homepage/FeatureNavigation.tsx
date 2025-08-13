@@ -1,74 +1,76 @@
 "use client";
-import React, { RefObject, useEffect, useRef } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 import { ExternalLink, Pathbg } from "../common/Icons";
 import Link from "next/link";
 
 type Props = {
   features: string[];
   featureBtn: string[];
-  activeFeature: number;
-  onFeatureClick: (index: number) => void;
-  featuresRef: React.RefObject<HTMLDivElement | null>;
-  indicatorRef: React.RefObject<HTMLButtonElement | null>;
-  isMobile?: boolean;
-  featureButtonsRef: RefObject<(HTMLButtonElement | null)[]>;
+  activeSection: string;
+  activeLinkRef: any;
+  isMobile: any;
 };
 
 const FeatureNavigation = ({
   features,
   featureBtn,
-  activeFeature,
-  onFeatureClick,
-  featuresRef,
-  indicatorRef,
-  isMobile = false,
-  featureButtonsRef,
+  activeSection,
+  activeLinkRef,
+  isMobile,
 }: Props) => {
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (isMobile && featureButtonsRef.current[activeFeature]) {
-      // Clear any existing timeout
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-
-      // Add delay to ensure DOM is ready and avoid conflicts
-      scrollTimeoutRef.current = setTimeout(() => {
-        const activeButton = featureButtonsRef.current[activeFeature];
-        if (activeButton) {
-          activeButton.scrollIntoView({
-            behavior: "smooth",
-            inline: "center",
-            block: "nearest",
-          });
-        }
-      }, 150);
+  const navRef = useRef<HTMLDivElement>(null);
+  const [top, setTop] = useState(0);
+  function toCamelCase(str: string): string {
+    return str
+      .trim() // Remove leading/trailing whitespace
+      .toLowerCase() // Convert to lowercase
+      .replace(/[^a-zA-Z0-9\s]/g, "") // Remove special characters except spaces
+      .replace(/\s+(.)/g, (_, char) => char.toUpperCase()) // Convert first letter after space to uppercase
+      .replace(/\s+/g, ""); // Remove all spaces
+  }
+  const handleLinkClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
+  };
 
-    return () => {
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
+  // Center the active link when it changes
+  useEffect(() => {
+    if (activeLinkRef.current && navRef.current) {
+      const activeLink = activeLinkRef.current;
+      const nav = navRef.current;
+
+      const scrollLeft =
+        activeLink.offsetLeft -
+        nav.offsetWidth / 2 +
+        activeLink.offsetWidth / 2;
+      console.log(scrollLeft);
+      nav.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+
+      for (let index = 0; index < features.length; index++) {
+        if (activeSection === toCamelCase(features[index])) {
+          setTop(index * 53);
+        }
       }
-    };
-  }, [activeFeature, isMobile, featureButtonsRef]);
+    }
+  }, [activeSection]);
 
   return (
-    <div
-      className="relative flex w-full gap-1.5 overflow-auto bg-white px-2 lg:self-start"
-      ref={featuresRef}
-      style={{
-        contain: "layout",
-      }}
-    >
+    <div className="flex w-full gap-1.5 overflow-auto bg-white px-2 lg:relative lg:self-start">
       <div className="relative hidden w-fit min-w-[9px] items-center justify-center px-1 lg:flex">
         <button
-          ref={indicatorRef}
-          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black duration-200"
+          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black transition-all duration-200"
           style={{
-            transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             transform: "translate(-50%, 6px)",
-            willChange: "transform",
+            willChange: "transform top",
+            top: top + "px",
           }}
         />
         <Pathbg />
@@ -81,20 +83,18 @@ const FeatureNavigation = ({
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
+        ref={navRef}
       >
         {features?.map((feature, index) => (
           <button
-            ref={(el) => {
-              if (featureButtonsRef.current) {
-                featureButtonsRef.current[index] = el;
-              }
-            }}
-            onClick={() => onFeatureClick(index)}
+            style={{ willChange: "color, font-weight" }}
             key={`${feature}-${index}`} // More stable key
+            ref={activeSection === toCamelCase(feature) ? activeLinkRef : null}
+            onClick={() => handleLinkClick(toCamelCase(feature))}
             className={`feature-btn w-full lg:w-[180px] lg:truncate ${
               isMobile ? "text-sm" : ""
             } cursor-pointer transition-colors duration-200 ${
-              index === activeFeature
+              activeSection === toCamelCase(feature)
                 ? "text-winterWay font-bold"
                 : "text-secondary"
             }`}

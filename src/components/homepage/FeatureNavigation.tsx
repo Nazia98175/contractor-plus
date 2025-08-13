@@ -1,5 +1,5 @@
 "use client";
-import React, { RefObject, useEffect, useRef } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 import { ExternalLink, Pathbg } from "../common/Icons";
 import Link from "next/link";
 
@@ -19,6 +19,7 @@ const FeatureNavigation = ({
   isMobile,
 }: Props) => {
   const navRef = useRef<HTMLDivElement>(null);
+  const [top, setTop] = useState(0);
   function toCamelCase(str: string): string {
     return str
       .trim() // Remove leading/trailing whitespace
@@ -52,17 +53,24 @@ const FeatureNavigation = ({
         left: scrollLeft,
         behavior: "smooth",
       });
+
+      for (let index = 0; index < features.length; index++) {
+        if (activeSection === toCamelCase(features[index])) {
+          setTop(index * 53);
+        }
+      }
     }
   }, [activeSection]);
+
   return (
     <div className="flex w-full gap-1.5 overflow-auto bg-white px-2 lg:relative lg:self-start">
       <div className="relative hidden w-fit min-w-[9px] items-center justify-center px-1 lg:flex">
         <button
-          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black duration-200"
+          className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black transition-all duration-200"
           style={{
-            transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             transform: "translate(-50%, 6px)",
-            willChange: "transform",
+            willChange: "transform top",
+            top: top + "px",
           }}
         />
         <Pathbg />

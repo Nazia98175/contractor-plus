@@ -3,6 +3,7 @@ import ScrollOverlapCards from "@/components/common/ScrollOverlapCards";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -111,13 +112,27 @@ const WantingMore: React.FC<WantingMoreProps> = ({
         }}
       >
         {slug === "general-contractor" ? (
-          <h2 className="section-heading-2 heading-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold">
-            {fieldServiceData?.title}
-          </h2>
+          // <h2 className="section-heading-2 heading-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold">
+          //   {fieldServiceData?.title}
+          // </h2>
+          <AdaptiveHeroTitle
+            title={fieldServiceData?.title}
+            className="section-heading-2 heading-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold"
+            minFontSize={24}
+            maxLines={2}
+            maxFontSize={42}
+          />
         ) : (
-          <h2 className="section-heading-2 gradient-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold">
-            {fieldServiceData?.title}
-          </h2>
+          // <h2 className="section-heading-2 gradient-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold">
+          //   {fieldServiceData?.title}
+          // </h2>
+          <AdaptiveHeroTitle
+            title={fieldServiceData?.title}
+            className="section-heading-2 gradient-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold"
+            minFontSize={24}
+            maxLines={2}
+            maxFontSize={42}
+          />
         )}
       </div>
       {/* </Copy> */}

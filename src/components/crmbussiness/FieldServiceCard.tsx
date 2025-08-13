@@ -5,6 +5,7 @@ import { TickIcon } from "../common/Icons";
 // import LottieAnimation from "../common/LottieAnimation";
 import { themeColors } from "@/utils/getVariants";
 import LottieAnimation from "../homepage/LottieAnimation";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 interface Props {
   service: ServiceData;
   slug: string;

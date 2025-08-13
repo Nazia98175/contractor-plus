@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 
-const IntegrationHero = () => {
+const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
   const marqueeItem = [
     { id: 1, icon: "/images/png/zapier.png" },
     { id: 2, icon: "/images/png/simple-bussines.png" },
@@ -56,46 +56,55 @@ const IntegrationHero = () => {
     <section id="home-page-view-port-screen-fetures" className="pt-[115px]">
       <div className="relative z-40 mx-auto flex max-w-[575px] flex-col items-center justify-center">
         <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
-          Integrations
+          {integrationList?.integrationTag ?? ""}
         </h4>
         <h1 className="main-heading text-gradient-effect text-center">
-          Connect your favorite <br /> tools in one place
+          {integrationList?.hero?.title ?? ""}
         </h1>
         <p className="hero-description !text-ashGray mt-3 text-center">
-          Streamline your workflow, sync your data, and keep everything in sync
-          without the hassle.
+          {integrationList?.hero?.subTitle ?? ""}
         </p>
       </div>
       <div className="mt-4">
-        <Marquee direction="right" speed={100} pauseOnHover>
-          {marqueeItem.map((item, index) => (
-            <div className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4">
-              <Image
-                className="w-full rounded-lg object-cover"
-                width={52}
-                height={52}
-                unoptimized
-                src={item.icon}
-                key={index}
-                alt={item.icon}
-              />
-            </div>
-          ))}
+        <Marquee direction="right" speed={50}>
+          {integrationList?.hero?.images &&
+            integrationList?.hero?.images.map(
+              (item: { id: number; url: string }) => (
+                <div
+                  key={item.id}
+                  className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4"
+                >
+                  <Image
+                    className="w-full rounded-lg object-cover"
+                    width={52}
+                    height={52}
+                    unoptimized
+                    src={item.url}
+                    alt={item.url}
+                  />
+                </div>
+              ),
+            )}
         </Marquee>
-        <Marquee direction="left" speed={100} pauseOnHover>
-          {marqueeItem2.map((item, index) => (
-            <div className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4">
-              <Image
-                className="w-full rounded-lg object-cover"
-                width={52}
-                height={52}
-                unoptimized
-                src={item.icon}
-                key={index}
-                alt={item.icon}
-              />
-            </div>
-          ))}
+        <Marquee direction="left" speed={50}>
+          {integrationList?.hero?.images &&
+            integrationList?.hero?.images.map(
+              (item: { id: number; url: string }) => (
+                <div
+                  key={item.id}
+                  className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4"
+                >
+                  <Image
+                    className="w-full rounded-lg object-cover"
+                    width={52}
+                    height={52}
+                    unoptimized
+                    src={item.url}
+                    alt={item.url}
+                  />
+                </div>
+              ),
+            )}
         </Marquee>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>

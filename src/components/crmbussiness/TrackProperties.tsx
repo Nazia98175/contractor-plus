@@ -27,7 +27,7 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
       {/* Mobile background image */}
       <Image
         className="absolute top-0 left-0 z-0 flex h-[110%] w-[100%] object-center md:hidden"
-        src="/images/webp/finally-mobile-bg.webp"
+        src="/images/webp/finally-desktop-bg.webp"
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
@@ -37,8 +37,11 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
       <CardReveal distance={50}>
         <div className="relative z-10 flex items-center justify-center px-2">
           <div className="bg-white-linear absolute -bottom-[59px] left-0 z-10 hidden h-[300px] w-full blur-[21px] md:block"></div>
-          {/* <Image
-            src={trackProperties?.mainImgDesktop.url}
+          <Image
+            src={
+              trackProperties?.mainImgMobile?.url ??
+              "/images/webp/finally-mobile-bg.webp"
+            }
             className="drop-shadow-img-shadow hidden w-full max-w-[1098px] object-cover md:block"
             alt="Mobile"
             width={1098}
@@ -47,13 +50,16 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
           />
 
           <Image
-            src={trackProperties?.mainImgMobile.url}
+            src={
+              trackProperties?.mainImgMobile?.url ??
+              "/images/webp/finally-mobile-bg.webp"
+            }
             className="drop-shadow-img-shadow mb-10 block w-full max-w-[1098px] object-cover md:mb-0 md:hidden"
             alt="Mobile"
             width={1098}
             height={578}
             sizes="(max-width: 767px) 100vw"
-          /> */}
+          />
         </div>
       </CardReveal>
 

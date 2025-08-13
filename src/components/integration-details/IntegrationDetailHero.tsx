@@ -6,10 +6,10 @@ import { useEffect } from "react";
 import gsap from "gsap";
 
 interface IntegrationDetailHeroProps {
-  user: IntegrationItem;
+  integration: IntegrationItem;
 }
 const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
-  user,
+  integration,
 }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,10 +38,10 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
           <div className="absolute -top-2 left-1/2 z-10 h-full w-[110%] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent blur-[30px]"></div>
           <Image
             className="h-12 w-auto object-center md:h-[72px]"
-            src="/images/png/center-icon.png"
+            src={`${integration?.thumbnailImage?.url}`}
             width={72}
             height={72}
-            alt={user.name}
+            alt={integration?.integrationName ?? "Integration image"}
           />
         </div>
         <span className="h-16 w-16 md:h-[92px] md:w-[92px]">
@@ -50,10 +50,10 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
         <div className="integration-detail-bg integration-logo-bg">
           <div className="absolute -top-2 left-1/2 z-10 h-full w-[110%] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent blur-[30px]"></div>
           <Image
-            src={user.logo}
+            src={`${integration?.thumbnailImage?.url}`}
             width={72}
             height={72}
-            alt={user.name}
+            alt={integration?.integrationName ?? ""}
             className="h-12 w-auto object-center md:h-[72px]"
           />
         </div>
@@ -61,14 +61,16 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
 
       <div className="relative mx-auto flex w-full flex-col items-center justify-center px-4">
         <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
-          Contractor + {user.name}
+          Contractor + {integration?.integrationName ?? ""}
         </h4>
         <h1 className="main-heading text-gradient-effect max-w-[840px] text-center">
-          Unlocking Financial Simplicity With {user.name}
+          Unlocking Financial Simplicity With{" "}
+          {integration?.integrationName ?? ""}
         </h1>
         <p className="hero-description !text-ashGray mx-auto mt-3 max-w-[739px] text-center">
-          Contractor+ proudly announces its collaboration with {user.name}, a
-          global icon in digital payments.
+          Contractor+ proudly announces its collaboration with{" "}
+          {integration?.integrationName ?? ""}, a global icon in digital
+          payments.
         </p>
       </div>
 

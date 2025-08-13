@@ -89,13 +89,9 @@ const FeatureNavigation = ({
           <button
             style={{ willChange: "color, font-weight" }}
             key={`${feature}-${index}`} // More stable key
-<<<<<<< HEAD
-            className={`feature-btn w-full lg:w-[190px] lg:truncate ${
-=======
             ref={activeSection === toCamelCase(feature) ? activeLinkRef : null}
             onClick={() => handleLinkClick(toCamelCase(feature))}
-            className={`feature-btn w-full lg:w-[180px] lg:truncate ${
->>>>>>> 41ac8320ed4bd7030edcd733e653532215356905
+            className={`feature-btn w-full lg:w-[190px] lg:truncate ${
               isMobile ? "text-sm" : ""
             } cursor-pointer transition-colors duration-200 ${
               activeSection === toCamelCase(feature)

@@ -750,7 +750,7 @@ html::-webkit-scrollbar {
     text-fill-color: transparent;
   }
 }
-.gradient-text-2 .line {
+.gradient-text-2 {
   background:
     linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
   -webkit-background-clip: text;

@@ -1,7 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-
 const Whatever = dynamic(() => import("./Whatever"), { ssr: false });
 const MakeOperation = dynamic(() => import("./MakeOperation"), { ssr: false });
 type WhatEverClientProps = {
@@ -17,7 +15,6 @@ const WhatEverClient = ({
   issection = true,
   className,
 }: WhatEverClientProps) => {
-
   return (
     <div className={`bg-kuroiBlack relative ${className}`}>
       <Whatever whateverOperation={data} />

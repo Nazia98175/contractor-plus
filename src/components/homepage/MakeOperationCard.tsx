@@ -24,7 +24,7 @@ const MakeOperationCard = ({
       <LottieAnimation
         ref={setLottieRef(index)}
         loop={false} // Changed to false since we'll control playback
-        autoplay={false} // Changed to false since we'll control playback
+        autoplay={true} // Changed to false since we'll control playback
         className="h-8 w-8 fill-white text-white"
         animationData={icons[index]}
       />

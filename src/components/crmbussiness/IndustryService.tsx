@@ -37,13 +37,16 @@ const IndustryService: React.FC<Props> = ({
         />
       </div>
       {showClouds !== false && (
-        <CloudsAnimation
-          className="pointer-events-none absolute top-[-13%] -bottom-[11%] left-0 z-50 flex h-[67%] w-full rotate-180 blur-[2px] sm:top-[-11%] lg:blur-[0]"
-          imageClass="h-[50%] z-20 !bottom-[-30px]"
-          imageClassMobile="h-[50%] z-20 !bottom-[30px]"
-          cloud1Class="md:bottom-0 !bottom-[47px] sm:bottom-[65px] h-[84px]"
-          cloud2Class="bottom-0"
-        />
+        <div>
+          <div className="absolute top-[-2%] left-0 h-[4%] w-full bg-white"></div>
+          <CloudsAnimation
+            className="pointer-events-none absolute top-[-13%] -bottom-[11%] left-0 z-50 flex h-[67%] w-full rotate-180 blur-[2px] sm:top-[-11%] lg:blur-[0]"
+            imageClass="h-[50%] z-20 !bottom-[-30px]"
+            imageClassMobile="h-[50%] z-20 !bottom-[30px]"
+            cloud1Class="md:bottom-0 !bottom-[47px] sm:bottom-[65px] h-[84px]"
+            cloud2Class="bottom-0"
+          />
+        </div>
       )}
     </section>
   );

@@ -118,20 +118,18 @@ const FieldService: React.FC<TheServiceProps> = ({
           top: 0,
         }}
       >
-        <Copy animateOnScroll={true}>
-          {/* <h2
+        {/* <h2
             className={`gradient-text mx-auto block px-1 pb-10 text-center text-xl leading-relaxed font-semibold -tracking-[0.72px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] ${mainClassName || "max-w-[813px]"}`}
           >
             {fieldService?.title}
           </h2> */}
-          <AdaptiveHeroTitle
-            title={fieldService?.title}
-            className={`gradient-text mx-auto block px-1 pb-10 text-center text-xl leading-relaxed font-semibold -tracking-[0.72px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] ${mainClassName || "max-w-[813px]"}`}
-            minFontSize={24}
-            maxLines={2}
-            maxFontSize={42}
-          />
-        </Copy>
+        <AdaptiveHeroTitle
+          title={fieldService?.title}
+          className={`gradient-text mx-auto block pb-10 text-center leading-relaxed font-semibold -tracking-[0.72px] ${mainClassName || "max-w-[813px]"}`}
+          minFontSize={24}
+          maxLines={2}
+          maxFontSize={42}
+        />
       </div>
       <ScrollOverlapCards
         theme={theme}

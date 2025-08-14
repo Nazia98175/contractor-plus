@@ -1,7 +1,7 @@
 "use client";
-import React, { RefObject, useEffect, useRef, useState } from "react";
-import { ExternalLink, Pathbg } from "../common/Icons";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { ExternalLink, Pathbg } from "../common/Icons";
 
 type Props = {
   features: string[];

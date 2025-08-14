@@ -31,18 +31,16 @@ const FieldServiceCard: React.FC<Props> = ({
   const featureDescColor = currentColors.desc;
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
+  console.log(service, "featuresss");
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
       <div className="w-full xl:max-w-[650px]">
-        <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-5">
+        <div className="flex flex-col gap-3 md:gap-4 xl:p-6 2xl:gap-4">
           <h4 className="card-overlap-secondary-heading text-base">
             {service?.heading}
           </h4>
-          {slug !== "construction-bookkeeping-services" &&
-            slug !== "field-service-scheduling-software" && (
-              <h4 className={`${titleColor}`}>{service?.title}</h4>
-            )}
+          <h4 className={`${titleColor}`}>{service?.title}</h4>
           {apiData ? (
             <>
               {!service?.lottieJson &&
@@ -101,18 +99,20 @@ const FieldServiceCard: React.FC<Props> = ({
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  <>
-                    {slug !== "construction-bookkeeping-services" &&
-                      !isEstimate && (
-                        <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                          <TickIcon />
-                        </span>
-                      )}
-                  </>
-                  <div className="flex flex-col gap-2 xl:gap-3">
-                    <h5 className={`card-heading ${featureTitleColor}`}>
-                      {feature?.title}
-                    </h5>
+                  {service?.isIcon && true && (
+                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                      <TickIcon />
+                    </span>
+                  )}
+                  <div>
+                    {feature?.title && (
+                      <h5
+                        className={`card-heading mb-2 xl:mb-3 ${featureTitleColor}`}
+                      >
+                        {feature?.title}
+                      </h5>
+                    )}
+
                     <p className={`card-desc ${featureDescColor}`}>
                       {feature?.desc}
                     </p>
@@ -144,7 +144,6 @@ const FieldServiceCard: React.FC<Props> = ({
               loop={false} // Changed to false since we'll control playback
               autoplay={false} // Changed to false since we'll control playback
               animationData={service?.lottieJson}
-
               // className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             />
           ) : service?.cardImg &&

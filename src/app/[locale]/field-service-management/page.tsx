@@ -74,6 +74,8 @@ const FieldServicesPage = async ({ params }: Params) => {
 
   geoLocation = await getMaxMindLocation(ip);
 
+  
+
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
       <div

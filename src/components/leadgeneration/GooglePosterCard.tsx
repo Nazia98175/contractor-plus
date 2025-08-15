@@ -1,9 +1,14 @@
+// GooglePosterCard.tsx
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { SmallStarIcon } from "../common/Icons";
 
-const GooglePosterCard: React.FC = () => {
+interface GooglePosterCardProps {
+  cityName?: string;
+}
+
+const GooglePosterCard: React.FC<GooglePosterCardProps> = ({ cityName = "Your City" }) => {
   const [cardHeights, setCardHeights] = useState<{
     card1: number;
     card2: number;
@@ -211,7 +216,7 @@ const GooglePosterCard: React.FC = () => {
           www.yourbusiness.com
         </p>
         <span className="font-inter text-mana text-[10px] font-semibold">
-          Top-rated general contractor serving CityName Indianapolis and
+          Top-rated general contractor serving {cityName} and
           surrounding areas. Licensed, insured, and trusted by homeowners for
           quality renovations and custom builds.
         </span>

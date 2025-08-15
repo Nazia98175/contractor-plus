@@ -41,14 +41,14 @@ export default async function Home({
     industriesData,
   } = await getHomepageData(useParams?.locale);
   return (
-    <div id="home-page-wrapper" >
+    <div id="home-page-wrapper">
       <div id="home-page-view-port-screen" className="relative opacity-0">
         <div className="relative overflow-hidden">
           <Hero
             commonData={commonData}
             homePageContent={homePageContent?.data?.hero}
           />
-          <div className="bg-kuroiBlack absolute bottom-[-3%] z-30 h-[10%] w-[120%] blur-[20px]"></div>
+          <div className="bg-kuroiBlack absolute bottom-[-6%] left-[-10%] z-30 h-[10%] w-[120%] blur-[7px] md:bottom-[-3%] md:blur-[20px]"></div>
         </div>
         <TrustBar
           platforms={platforms}

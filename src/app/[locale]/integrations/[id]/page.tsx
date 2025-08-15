@@ -1,50 +1,62 @@
-import NotFound from "@/app/not-found";
 import CommonFormField from "@/components/common/CommonFormField";
-import { integrationfaqitems, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
-import { integrations } from "@/components/common/Utils";
 import Faq from "@/components/crmbussiness/Faq";
 import IntegrationDetail from "@/components/integration-details/IntegrationDetail";
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
-async function getById(id: string) {
-  return integrations.find((item) => item.id === id);
-}
+import {
+  getAllIntegration,
+  getIntegrationDataById,
+  getIntegrationDetails,
+  getIntegrationList,
+} from "@/services/integation/getIntegrationData";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Material Trends: Track Prices & Shortages of Different Industries",
   description:
     "Get updates on material trends, pricing shifts, and supply chain alerts affecting contractors this year.",
 };
-export async function generateStaticParams() {
-  return integrations.map((item) => ({
-    id: item.id.toString(),
+export const generateStaticParams = async () => {
+  const integrations = await getAllIntegration("en");
+  return integrations.map((data: { id: number }) => ({
     locale: "en",
+    slug: data.id.toString(),
   }));
-}
+};
 const IntegrationDetails = async ({
   params,
 }: {
   params: Promise<{ id: string; locale: string }>;
 }) => {
-  const { id } = await params;
-  const user = await getById(id);
-  if (!user) return NotFound();
+  const { id, locale } = await params;
+  const [integrationData, integrationList, integrationDetails] =
+    await Promise.all([
+      getIntegrationDataById(locale, id),
+      getIntegrationList(locale),
+      getIntegrationDetails(locale),
+    ]);
+  if (!integrationData) return notFound();
+
   return (
     <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-fetures"
         className="relative bg-[url('/images/webp/integration-detail-bg.webp')] bg-contain bg-no-repeat sm:bg-cover"
       >
-        <IntegrationDetailHero user={user} />
+        <IntegrationDetailHero integration={integrationData} />
       </div>
-      <IntegrationDetail user={user} />
+      <IntegrationDetail
+        integration={integrationData}
+        integrationDetail={integrationDetails}
+      />
       <div className="relative overflow-hidden">
         <Faq
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[118px] z-20 px-2"
           faq={{
-            title: "What you may want to know ",
-            subTitle: "Frequently asked questions",
-            faq: integrationfaqitems,
+            title: `${integrationData?.Faqs?.title ?? ""}`,
+            subTitle: `${integrationData?.Faqs?.subTitle ?? ""}`,
+            faq: integrationData?.Faqs?.faq ?? [],
           }}
           classNameAnswer="pt-1"
           TittleClassName="w-fit mx-auto opacity-90 sm:opacity-100 !leading-[130%]"
@@ -57,11 +69,9 @@ const IntegrationDetails = async ({
           <CommonFormField
             variantBtn="primary"
             variant="default"
-            title={"Are you ready to level up your business?"}
-            subTitle={
-              "Start for free. Stay for free. Upgrade to get the full operating system."
-            }
-            placeholder={"Your Email"}
+            title={integrationList?.emailSignupSection?.title ?? ""}
+            subTitle={integrationList?.emailSignupSection?.subTitle ?? ""}
+            placeholder={integrationList?.emailSignupSection?.placeholder ?? ""}
             createBtn={"Get Started Free"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}

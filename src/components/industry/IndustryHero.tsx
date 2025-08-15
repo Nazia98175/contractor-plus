@@ -50,21 +50,26 @@ const IndustryHero: React.FC<TheHeroProps> = ({
             width={1920}
             height={100}
             priority
-            className="pointer-events-none absolute top-0 left-0 z-10 w-full max-w-[320px] object-cover sm:max-w-[400px] lg:hidden xl:left-[13%]"
+            className="pointer-events-none absolute top-0 left-0 z-10 w-full object-cover sm:max-w-[400px] lg:hidden xl:left-[13%]"
             src="/images/webp/hvac-hero-gradient-mobile.webp"
             alt="hvac gradient"
           />
           <div className="relative z-30 w-full sm:space-y-6 md:max-w-[70%]">
             {/* Replace the original h1 with AdaptiveHeroTitle */}
             <AdaptiveHeroTitle
-              // title={`Property Maintenance`}
               title={hero?.heroTitle || ""}
-              className="xs:text-[28px] gradient-white text-[26px] leading-[127%] font-extrabold sm:text-4xl lg:text-5xl"
+              className="gradient-white hidden leading-[127%] font-extrabold sm:block"
               minFontSize={16}
               maxLines={2}
               maxFontSize={48}
             />
-
+            <AdaptiveHeroTitle
+              title={hero?.heroTitle || ""}
+              className="gradient-white block leading-[127%] font-extrabold sm:hidden"
+              minFontSize={16}
+              maxLines={3}
+              maxFontSize={48}
+            />
             <p className="text-decemberSky xs:text-sm mt-2 mb-4 max-w-[300px] text-xs font-semibold sm:max-w-[514px] md:text-base md:font-medium lg:my-[26px] lg:text-lg">
               {hero?.heroDescription}
             </p>
@@ -120,12 +125,14 @@ const IndustryHero: React.FC<TheHeroProps> = ({
           />
           <div className="3xl:block bg-rgba16 absolute top-[-4%] right-[-64px] hidden h-[104%] w-[10%] blur-[11px]"></div>
         </div>
+        <div className="bg-kuroiBlack 3xl:block pointer-events-none absolute top-[-10%] -right-[3%] z-30 hidden h-full w-[5%] blur-[15px]"></div>
       </div>
       <CloudsAnimation
-        className="!-bottom-[7%] lg:-bottom-[4%]"
+        className="!-bottom-[7%] !z-50 lg:-bottom-[4%]"
         imageClassMobile="hidden"
       />
       <div className="cloud-layer-bottom absolute bottom-[-2%] z-50 block h-[48px] w-full sm:bottom-[-2%] sm:h-[56px] md:bottom-[-2%] xl:bottom-[-5%]"></div>
+      <div className="hero-video-overlay-2 absolute inset-0 z-0 lg:hidden"></div>
     </section>
   );
 };

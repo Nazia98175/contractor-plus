@@ -10,6 +10,8 @@ import { OnIcon, OnIconw, WhatEverIcon } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import WhateverBackground from "./WhateverBackground";
 import Copy from "../common/Copy";
+import Link from "next/link";
+import CardReveal from "../common/CardReveal";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -288,16 +290,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
             </div>
           </div>
         </div>
-
-        <p className="text-granite mx-auto flex w-fit items-center gap-2 text-center text-lg capitalize opacity-90">
-          <Copy animateOnScroll={true}>
+        <CardReveal distance={50}>
+          <Link
+            href={"/integrations"}
+            className="text-granite mx-auto flex w-fit items-center gap-2 text-center text-lg capitalize opacity-90"
+          >
             <span className="pr-2 !text-white">5000+</span>
-          </Copy>
-          <Copy animateOnScroll={true}>
             <span> {whateverOperation?.subTitle?.split("5000+")?.[1]}</span>
-          </Copy>
-          <WhatEverIcon className="h-5 w-5" />
-        </p>
+            <WhatEverIcon className="h-5 w-5" />{" "}
+          </Link>
+        </CardReveal>
       </div>
     </section>
   );

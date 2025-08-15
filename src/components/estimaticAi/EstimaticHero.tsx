@@ -116,7 +116,7 @@ const EstimaticHero = () => {
               width={730}
               height={410}
               className="object-cover"
-              src="/images/webp/estimatic-hero.webp"
+              src="/images/webp/estimatic-ai-hero.webp"
               alt="Estimatic AI software interface mockup"
             />
             <div className="ai-blur absolute bottom-[-20%] left-0 h-[50%] w-full"></div>

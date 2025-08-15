@@ -34,32 +34,34 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
     >
       <div className="flex items-center gap-4">
         <Image
-          src={obj.logo}
+          src={`${obj?.thumbnailImage?.url}`}
           width={60}
           height={60}
           className="h-auto w-12 object-center xl:w-[60px]"
-          alt={`${obj.name}' logo`}
+          alt={`${obj?.integrationName}' logo`}
         />
-        <h4 className="text-xl font-semibold text-white xl:text-2xl">
-          {obj.name}
+        <h4 className="text-xl font-semibold text-white capitalize xl:text-2xl">
+          {obj?.integrationName}
         </h4>
       </div>
       <div className="mt-[15px] mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-1">
-          {obj.categories.map((category, idx) => (
-            <p
-              key={idx}
-              className={`${getCategoryColor(category)} bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize`}
-            >
-              {category}
-            </p>
-          ))}
-        </div>
+        {obj.categories && (
+          <div className="flex items-center gap-1">
+            {obj.categories.map((category, idx) => (
+              <p
+                key={idx}
+                className={`${getCategoryColor(category)} bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize`}
+              >
+                {category}
+              </p>
+            ))}
+          </div>
+        )}
         <button>
           <RightLinkIcon />
         </button>
       </div>
-      <p className="text-flintstone">{obj.description}</p>
+      <p className="text-flintstone">{obj?.integrationSubTitle}</p>
     </Link>
   );
 };

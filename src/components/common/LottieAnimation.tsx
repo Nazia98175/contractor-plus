@@ -46,10 +46,10 @@ const LottieAnimation = ({
 
     if (lottieInstance && typeof lottieInstance.play === "function") {
       if (isVisible) {
-        console.log("Lottie: IN viewport - goToAndPlay(0, true)");
+        // console.log("Lottie: IN viewport - goToAndPlay(0, true)");
         lottieInstance.goToAndPlay(0, true);
       } else {
-        console.log("Lottie: OUT of viewport - stop()");
+        // console.log("Lottie: OUT of viewport - stop()");
         lottieInstance.stop();
       }
     }

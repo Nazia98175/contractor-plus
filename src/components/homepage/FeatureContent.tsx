@@ -74,6 +74,15 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
       });
   }, [featureContents, contentRefs]);
 
+  function toCamelCase(str: string): string {
+    return str
+      .trim() // Remove leading/trailing whitespace
+      .toLowerCase() // Convert to lowercase
+      .replace(/[^a-zA-Z0-9\s]/g, "") // Remove special characters except spaces
+      .replace(/\s+(.)/g, (_, char) => char.toUpperCase()) // Convert first letter after space to uppercase
+      .replace(/\s+/g, ""); // Remove all spaces
+  }
+  console.log(featureContents);
   return (
     <>
       {featureContents
@@ -81,6 +90,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
         ?.map((content: any, index: any) => (
           <div
             key={index}
+            id={`${toCamelCase(content?.title)}`}
             ref={(el) => {
               contentRefs.current[index] = el;
             }}

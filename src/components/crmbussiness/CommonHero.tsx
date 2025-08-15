@@ -86,13 +86,21 @@ const CommonHero: React.FC<TheHeroProps> = ({
         className="relative z-50 mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
-          <div className="px-2 pt-8 md:pt-0">
+          <div className="mx-auto px-2 pt-8 sm:max-w-[90%] md:pt-0">
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
-              className="gradient-2 mb-2 w-fit text-start leading-[127%] font-extrabold sm:mx-auto md:mb-4 md:text-center lg:mb-[26px]"
+              className="gradient-2 mb-2 hidden w-fit text-start leading-[140%] font-extrabold sm:mx-auto md:mb-4 md:block md:text-center lg:mb-[26px]"
               minFontSize={16}
               maxLines={2}
               maxFontSize={48}
+              textAnimation="home-page-view-port-screen-fetures"
+            />
+            <AdaptiveHeroTitle
+              title={hero?.heroTitle || ""}
+              className="gradient-2 mb-2 block w-fit text-start leading-[140%] font-extrabold sm:mx-auto md:mb-4 md:hidden md:text-center lg:mb-[26px]"
+              minFontSize={16}
+              maxLines={3}
+              maxFontSize={40}
               textAnimation="home-page-view-port-screen-fetures"
             />
             {/* </Copy> */}

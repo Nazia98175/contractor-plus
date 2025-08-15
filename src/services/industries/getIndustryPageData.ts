@@ -17,7 +17,6 @@ export interface CrmLikePageDataResponse {
   thousandReviews: any | null;
   commonData: any | null;
   blogsByCategory?: any | null;
- 
 }
 
 export const getIndustryPageData = async (
@@ -37,16 +36,12 @@ export const getIndustryPageData = async (
     blogs,
     thousandReviewsRes,
     commonData,
-    blogsByCategoryRes
+    // blogsByCategoryRes,
   ] = await Promise.all([
     getIndustryPage(slug, locale, "&populate=*"),
     getIndustryPage(slug, locale, "&populate[hero][populate]=heroImg"),
     getIndustryPage(slug, locale, "&populate[hero][populate]=cards"),
-    getIndustryPage(
-      slug,
-      locale,
-      "&populate[trustedCompanies]=*",
-    ),
+    getIndustryPage(slug, locale, "&populate[trustedCompanies]=*"),
     getIndustryPage(
       slug,
       locale,
@@ -75,7 +70,7 @@ export const getIndustryPageData = async (
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
     getCommonData(locale),
-    getBlogsByCategory(locale, slug)
+    // getBlogsByCategory(locale, slug)
   ]);
 
   return {
@@ -94,6 +89,6 @@ export const getIndustryPageData = async (
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
     commonData: commonData || null,
-    blogsByCategory: blogsByCategoryRes?.data || null,
+    // blogsByCategory: blogsByCategoryRes?.data || null,
   };
 };

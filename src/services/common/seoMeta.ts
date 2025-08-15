@@ -27,15 +27,17 @@ interface SeoDataItem {
 export const getSeoData = async (
   collectionType: string,
   locale: string,
-  slug?: string
+  slug?: string,
 ): Promise<SeoDataItem | null> => {
   const queryString = "&populate[seoMetaData]=true&populate[hero]=true";
   const url =
-    collectionType === "homepage" 
-      ? `${collectionType}?locale=${locale}${queryString}` : `${collectionType}?filters[pageName][$eq]=${slug}&locale=${locale}${queryString}`;
-  
+    collectionType === "homepage"
+      ? `${collectionType}?locale=${locale}${queryString}`
+      : `${collectionType}?filters[pageName][$eq]=${slug}&locale=${locale}${queryString}`;
+
   try {
-    const res: AxiosResponse<{ data?: SeoDataItem | SeoDataItem[] }> = await axiosInstance.get(url);
+    const res: AxiosResponse<{ data?: SeoDataItem | SeoDataItem[] }> =
+      await axiosInstance.get(url);
     const { data } = res.data;
 
     if (!data) return null;
@@ -47,7 +49,10 @@ export const getSeoData = async (
 
     return data;
   } catch (error: any) {
-    console.error(`Failed to fetch SEO data for ${slug} from ${collectionType}:`, error);
+    console.error(
+      `Failed to fetch SEO data for ${slug} from ${collectionType}:`,
+      error,
+    );
     if (error.response?.status === 404) {
       return notFound();
     }
@@ -55,4 +60,35 @@ export const getSeoData = async (
   }
 };
 
+export const getSeoDataBlogs = async (
+  collectionType: string,
+  locale: string,
+  slug?: string,
+): Promise<SeoDataItem | null> => {
+  const queryString = "&populate[SeoMetaData]=true";
+  const url = `${collectionType}?locale=${locale}${queryString}`;
 
+  try {
+    const res: AxiosResponse<{ data?: SeoDataItem | SeoDataItem[] }> =
+      await axiosInstance.get(url);
+    const { data } = res.data;
+
+    if (!data) return null;
+
+    // ✅ Normalize: Always return a single object
+    if (Array.isArray(data)) {
+      return data?.[0] ?? null;
+    }
+
+    return data;
+  } catch (error: any) {
+    console.error(
+      `Failed to fetch SEO data for ${slug} from ${collectionType}:`,
+      error,
+    );
+    if (error.response?.status === 404) {
+      return notFound();
+    }
+    throw new Error(error);
+  }
+};

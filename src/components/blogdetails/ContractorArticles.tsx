@@ -8,7 +8,13 @@ import { CardArrowIcon } from "../common/MainIcon";
 import CloudsAnimation from "../common/CloudsAnimation";
 import Link from "next/link";
 
-const ContractorArticles = () => {
+const ContractorArticles = ({
+  blogList,
+  blogData,
+}: {
+  blogList: any;
+  blogData: any[];
+}) => {
   return (
     <div className="relative bg-white">
       <div className="pointer-events-none absolute -top-[5%] -left-5 z-30 h-28 w-[110%] bg-white blur-[12px] md:-top-[4%] md:h-[130px]"></div>
@@ -22,13 +28,13 @@ const ContractorArticles = () => {
       <div className="1xl:pb-12 relative z-30 mx-auto w-full max-w-[1224px] px-2 pt-8 pb-6">
         <div className="flex items-center justify-between pb-4 md:pb-6 lg:pb-8">
           <h2 className="text-eerieBlack text-lg font-semibold sm:text-xl md:text-2xl">
-            Related articles from Contractor+ HQ
+            {blogList?.relatedBlogsTitle ?? ""}
           </h2>
           <Link
             href="/blog"
             className="group hidden items-center gap-1 text-sm font-medium sm:flex"
           >
-            View All
+            {blogList?.viewAllBtn ?? ""}
             <span>
               <CardArrowIcon className="stroke-eerieBlack h-6 w-6 max-w-6 min-w-6 transition-all duration-200 ease-in group-hover:translate-x-1.5" />
             </span>
@@ -76,17 +82,20 @@ const ContractorArticles = () => {
             },
           }}
         >
-          {contractorArticles.map((article, index) => (
-            <SwiperSlide key={index}>
-              <BlogCard article={article} />
-            </SwiperSlide>
-          ))}
+          {blogData.length > 0 &&
+            blogData.map((article) => (
+              <SwiperSlide key={article.id}>
+                <BlogCard article={article} />
+              </SwiperSlide>
+            ))}
         </Swiper>
 
         <SwiperNavWithPagination
           prevClass="swiper-button-prev1"
           nextClass="swiper-button-next1"
           paginationClass="swiper-pagination-real-time-1"
+          nextText={blogList?.nextBtnText ?? ""}
+          previousText={blogList?.previousBtnText ?? ""}
         />
       </div>
     </div>

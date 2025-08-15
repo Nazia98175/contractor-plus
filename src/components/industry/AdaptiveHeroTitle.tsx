@@ -153,7 +153,7 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
         className={`${className} ${!isAdjusted ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
         style={{
           fontSize: `${maxFontSize}px`,
-          lineHeight: "1.2",
+          // lineHeight: "1.2",
         }}
       >
         {title}

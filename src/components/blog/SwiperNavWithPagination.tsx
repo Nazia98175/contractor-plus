@@ -8,11 +8,15 @@ interface SwiperNavWithPaginationProps {
   prevClass: string;
   nextClass: string;
   paginationClass: string;
+  nextText: string;
+  previousText: string;
 }
 
 const SwiperNavWithPagination: React.FC<SwiperNavWithPaginationProps> = ({
   prevClass,
   nextClass,
+  nextText,
+  previousText,
   paginationClass,
 }) => {
   return (
@@ -20,7 +24,8 @@ const SwiperNavWithPagination: React.FC<SwiperNavWithPaginationProps> = ({
       <div
         className={`${prevClass} text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden`}
       >
-        <ArrowLeft height={20} width={20} color="#667085" /> Previous
+        <ArrowLeft height={20} width={20} color="#667085" />{" "}
+        {previousText ?? ""}
       </div>
       <div
         className={`${paginationClass} hidden items-center justify-center !gap-1 md:flex`}
@@ -28,7 +33,7 @@ const SwiperNavWithPagination: React.FC<SwiperNavWithPaginationProps> = ({
       <div
         className={`${nextClass} text-flintstone flex cursor-pointer items-center gap-2 text-sm font-medium after:hidden`}
       >
-        Next <ArrowRight height={20} width={20} color="#667085" />
+        {nextText ?? ""} <ArrowRight height={20} width={20} color="#667085" />
       </div>
     </div>
   );

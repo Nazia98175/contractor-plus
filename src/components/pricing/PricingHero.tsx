@@ -35,7 +35,11 @@ const PricingHero: React.FC<PlansProps> = ({
       className="font-jakarta relative px-2 pt-[110px] pb-[150px] opacity-0 sm:pt-[137px] xl:pb-24"
     >
       <div className="absolute -bottom-[10%] left-1/2 z-10 h-20 w-[110%] -translate-x-1/2 bg-white blur-sm md:-bottom-[11%] md:blur-[16px]"></div>
-      <CloudsAnimation className="-bottom-[4%] !-z-0" />
+      <CloudsAnimation
+        cloud1Class="!bottom-[57px] h-20 sm:h-24"
+        className="-bottom-[6%] !-z-0 lg:-bottom-[9%]"
+        imageClassMobile="hidden"
+      />
       <Image
         src="/images/webp/pricing.webp"
         alt="Pricing Hero"

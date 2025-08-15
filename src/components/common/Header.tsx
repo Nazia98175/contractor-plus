@@ -55,6 +55,11 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   }, [scrolled]);
 
   const { loading, handleRedirect } = useOneLinkRedirect();
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header
       className="fixed top-4 z-[99] w-full rounded px-2 opacity-0"
@@ -66,12 +71,12 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
         }`}
       >
         <div className="main-container flex items-center justify-between py-1.5 lg:gap-3 xl:gap-[54px]">
-          <Link
+          <button
+            onClick={handleClick}
             className="w-full max-w-[100px] min-w-24 lg:max-w-[137px]"
-            href={"/"}
           >
             <LogoIcon />
-          </Link>
+          </button>
           <div className="hidden grow lg:flex">
             <HeaderLiItems headerList={header?.headerMain} />
           </div>

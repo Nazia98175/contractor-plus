@@ -33,7 +33,7 @@ export const getWhyContractorData = async (
       "&populate[industryShiftHighlights][populate][insightCards][populate]=image",
     ),
     getContractorPage(locale , "&populate[narrativeFlowSection][populate]=*"),
-    getContractorPage(locale , "&populate[narrativeFlowSection][populate][separateSolution][populate][list][populate]=image"),
+    getContractorPage(locale , "&populate[narrativeFlowSection][populate][separateSolution][populate][list][populate]=*"),
     getContractorPage(locale , "&populate[connectedSystemSection][populate][image]=true&populate[connectedSystemSection][populate][systemList]=true"),
     getContractorPage(locale , "&populate[featuresPlatformOverview][populate][features][populate]=icon"),
     getContractorPage(locale , "&populate[emailSignupSection]=*")

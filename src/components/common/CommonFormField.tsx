@@ -7,6 +7,7 @@ import ButtonLoader from "./ButtonLoader";
 import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 interface CommonFormFieldProps {
   title?: string;
@@ -67,13 +68,22 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   return (
     <>
       {showTitle && (
-        // <Copy delay={0.2}>
-        <h3
-          className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
-        >
-          {title}
-        </h3>
-        // </Copy>
+        <>
+          <AdaptiveHeroTitle
+            title={title || ""}
+            className={`mx-auto hidden pb-2 text-center sm:block ${variantStyles.title} ${className || "max-w-[780px]"}`}
+            minFontSize={24}
+            maxLines={2}
+            maxFontSize={40}
+          />
+          <AdaptiveHeroTitle
+            title={title || ""}
+            className={`mx-auto hidden pb-2 text-center sm:hidden ${variantStyles.title} ${className || "max-w-[780px]"}`}
+            minFontSize={24}
+            maxLines={3}
+            maxFontSize={48}
+          />
+        </>
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">

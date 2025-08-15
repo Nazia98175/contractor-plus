@@ -47,7 +47,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
       className="main-container relative z-30 flex flex-col items-center justify-center px-2 py-[52px] md:py-16 xl:py-[93px]"
     >
       <Copy animateOnScroll={true} delay={0.2}>
-        <h2 className="crm-gradient section-heading xs:max-w-[95%] mx-auto max-w-[92%] text-center !font-black sm:max-w-[951px] lg:!font-semibold">
+        <h2 className="crm-gradient section-heading mx-auto text-center !font-black lg:!font-semibold">
           {data?.title}
         </h2>
       </Copy>

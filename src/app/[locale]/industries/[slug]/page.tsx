@@ -65,19 +65,8 @@ const IndustryPage = async ({ params }: PageProps) => {
     faqs,
     thousandReviews,
     commonData,
-    blogsByCategory,
+    // blogsByCategory,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
-
-  const customIconsMap: Record<number, React.ReactNode> = {
-    0: <FasterIcon1 />,
-    1: <FasterIcon2 />,
-    2: <FasterIcon3 />,
-  };
-  const customIconsMap2: Record<number, React.ReactNode> = {
-    0: <FasterIcon4 />,
-    1: <FasterIcon5 />,
-    2: <FasterIcon6 />,
-  };
 
   return (
     <main className="home-page-wrapper-2 overflow-hidden">
@@ -170,13 +159,13 @@ const IndustryPage = async ({ params }: PageProps) => {
         <div className="cloud-layer-bottom absolute bottom-[-1%] z-50 h-[68px] w-full sm:bottom-[-2%] sm:h-[64px] md:-bottom-[2%]"></div>
       </div>
       <div className="relative">
-        <BlogPosts
+        {/* <BlogPosts
           data={blogsByCategory || []}
           blogs={crmPageContent?.blogs}
           className="relative z-20 bg-white pb-8"
           variant="secondary"
           headingVariant="tertiary"
-        />
+        /> */}
       </div>
     </main>
   );

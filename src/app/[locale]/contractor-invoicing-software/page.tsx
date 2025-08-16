@@ -35,7 +35,7 @@ export const metadata = {
 };
 const BillingPage = () => {
   return (
-    <main className="relative z-10">
+    <main className="relative z-10 overflow-hidden">
       <CommonHero
         hero={{
           featureTag: "Contractor Invoicing Software",
@@ -55,7 +55,7 @@ const BillingPage = () => {
         reviews={dealReviews}
         slug="crm"
         apiData={false}
-        className="shadow-c5"
+        className="shadow-c5 pb-10"
       />
       <div className="overflow-hidden bg-white">
         <div className="pt-8 sm:pt-12">

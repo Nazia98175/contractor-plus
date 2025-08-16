@@ -44,7 +44,7 @@ const RunWithContractorMobile: React.FC<RunWithContractorMobileProps> = ({
             <div className="mx-auto mt-11 grid w-fit grid-cols-1 items-center gap-[22px] text-center">
               {/* Their Way */}
               <div>
-                <p className="font-myriad text-secondary pb-2 text-center text-sm font-semibold sm:text-lg md:text-xl">
+                <p className="font-myriad text-secondary pb-2 text-center text-base font-semibold sm:text-lg md:text-xl">
                   {their}
                 </p>
                 <div

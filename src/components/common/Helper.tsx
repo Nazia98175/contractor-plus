@@ -4570,6 +4570,40 @@ export const automate_ControlData = {
     },
   ],
 };
+export const toolManagingData = {
+  id: 320,
+  title: "Managing client agreements is more complicated than it should be",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: <>You’re juggling clipboards, spreadsheets, and text threads.</>,
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: <>No check-in/check-out, no permissions, no history.</>,
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          When tools “grow legs,” there’s no accountability—and you eat the
+          cost.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
+
 import Agree_Creation from "../../../public/lotties/agreement-creation.json";
 import Signature_Approval from "../../../public/lotties/signature-approval.json";
 import Change_Management from "../../../public/lotties/change-management.json";

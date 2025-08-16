@@ -18,6 +18,8 @@ export interface TheHeroProps {
   homeCard?: any;
   commonData?: any;
   featureTag?: string;
+  isBlurBg?: boolean;
+  imgClass?: string;
 }
 const AutomatedClientHero: React.FC<TheHeroProps> = ({
   hero,
@@ -25,6 +27,8 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
   featureTag,
+  isBlurBg = true,
+  imgClass = "mt-9 max-w-[700px]",
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -62,7 +66,9 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
       ref={wrapperRef}
       className="relative z-10 pt-[46px] pb-10 opacity-0 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]"
     >
-      <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
+      {isBlurBg && (
+        <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
+      )}
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
@@ -130,7 +136,7 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
                 />
                 <div className="bg-kuroiBlack absolute bottom-0 h-[10%] blur-[20px]"></div>
               </div> */}
-              <div className="z-30 mx-auto mt-9 max-w-[700px]">
+              <div className={`z-30 mx-auto ${imgClass}`}>
                 {heroImg && (
                   <Image
                     className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"

@@ -1,20 +1,15 @@
 "use client";
-import dynamic from "next/dynamic";
 import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
-import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { usePathname } from "next/navigation";
-import AppsRating from "../common/AppsRating";
 import FreeTrialButton from "../common/FreeTrialButton";
+import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 export interface TheHeroProps {
   hero: any;

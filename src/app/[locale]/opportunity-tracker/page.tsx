@@ -49,9 +49,12 @@ const DealFlowTracker = () => {
         commonData={dealflowhero}
         apiData={false}
       />
-      <div className="pb-6">
-        <TrustedService reviews={dealReviews} slug="crm" apiData={false} />
-      </div>
+      <TrustedService
+        reviews={dealReviews}
+        slug="crm"
+        apiData={false}
+        className="shadow-c5 pb-6"
+      />
       <div className="overflow-hidden bg-white">
         <div className="pt-8 sm:pt-12">
           <GoingFieldSevices

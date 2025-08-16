@@ -31,10 +31,10 @@ const problems = [
         viewBox="0 0 32 32"
         fill="none"
       >
-        <g clip-path="url(#clip0_6727_9880)">
+        <g clipPath="url(#clip0_6727_9880)">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M2.43905 0.418474C2.1711 0.15053 1.80769 0 1.42876 0C1.04983 0 0.686418 0.15053 0.418474 0.418474C0.15053 0.686418 0 1.04983 0 1.42876C0 1.80769 0.15053 2.1711 0.418474 2.43905L29.5613 31.5819C29.694 31.7146 29.8515 31.8198 30.0249 31.8916C30.1982 31.9634 30.384 32.0004 30.5716 32.0004C30.7592 32.0004 30.945 31.9634 31.1184 31.8916C31.2917 31.8198 31.4492 31.7146 31.5819 31.5819C31.7146 31.4492 31.8198 31.2917 31.8916 31.1184C31.9634 30.945 32.0004 30.7592 32.0004 30.5716C32.0004 30.384 31.9634 30.1982 31.8916 30.0249C31.8198 29.8515 31.7146 29.694 31.5819 29.5613L29.5248 27.5042C30.2482 27.2465 30.8743 26.7715 31.3174 26.1442C31.7606 25.517 31.999 24.7682 32.0002 24.0002V8.2859C32.0002 6.23562 30.3385 4.57162 28.2859 4.57162H6.59219L2.43905 0.418474ZM13.0973 11.0768L20.9236 18.903C21.5683 17.8116 21.8318 16.5367 21.6726 15.2791C21.5134 14.0215 20.9405 12.8526 20.0442 11.9562C19.1478 11.0598 17.9789 10.487 16.7212 10.3278C15.4636 10.1686 14.1888 10.432 13.0973 11.0768ZM1.42876 7.71447C2.21733 7.71447 2.85733 8.35447 2.85733 9.14305V23.7145C2.85733 24.1876 3.24133 24.5716 3.71447 24.5716H18.0002C18.3791 24.5716 18.7424 24.7221 19.0103 24.99C19.2782 25.2579 19.4288 25.6213 19.4288 26.0002C19.4288 26.3791 19.2782 26.7424 19.0103 27.0103C18.7424 27.2782 18.3791 27.4288 18.0002 27.4288H3.71447C2.72938 27.4288 1.78464 27.0374 1.08808 26.3409C0.391514 25.6443 0.00018833 24.6996 0.00018833 23.7145V9.14305C0.00018833 8.35447 0.640188 7.71447 1.42876 7.71447Z"
             fill="#8A2B32"
           />
@@ -71,7 +71,7 @@ const problems = [
 
 const TheProblem = () => {
   return (
-    <section className="mx-auto max-w-[1218px]">
+    <section className="mx-auto max-w-[1218px] px-4">
       <h4 className="main-heading text-mana text-center">The problem</h4>
       <p className="py-3 text-center text-sm font-semibold text-[#5C5C5C] md:text-2xl">
         Contractors are still running modern businesses on outdated, overpriced,
@@ -93,7 +93,7 @@ const TheProblem = () => {
             </p>
 
             {problem.hasDivider && (
-              <span className="absolute top-[20%] right-0 lg:top-0">
+              <span className="absolute top-[46%] right-[50%] rotate-90 lg:top-0 lg:right-0 lg:rotate-none">
                 <svg
                   width="1"
                   height="122"
@@ -127,6 +127,12 @@ const TheProblem = () => {
           </article>
         ))}
       </div>
+      <p className="pt-4 text-center text-lg font-medium text-[#5C5C5C]">
+        *The industry incumbents aren’t fixing it{" "}
+        <span className="font-semibold text-white">
+          — they ARE the problem.
+        </span>
+      </p>
     </section>
   );
 };

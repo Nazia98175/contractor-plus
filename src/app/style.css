@@ -37,3 +37,12 @@
 .chevron-3 {
   animation-delay: 6s;
 }
+.problem-text {
+  background: linear-gradient(91deg, #8a2b32 0%, #fff 107.81%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.problem-gradient-line {
+  background: radial-gradient(50% 8050% at 50% 50%, #999 0%, #0c0d11 100%);
+}

@@ -1,7 +1,6 @@
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import CommonFormField from "@/components/common/CommonFormField";
 import { blackPlatforms, platforms } from "@/components/common/Helper";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/AwardBadge";
@@ -11,14 +10,6 @@ import SecondaryReview from "@/components/industry/SecondaryReview";
 import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContractor";
 import WantingMore from "@/components/industry/WantingMore";
 
-import {
-  FasterIcon1,
-  FasterIcon2,
-  FasterIcon3,
-  FasterIcon4,
-  FasterIcon5,
-  FasterIcon6,
-} from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import MovingSoftware from "@/components/industry/MovingSoftware";
 import { getSeoData } from "@/services/common/seoMeta";
@@ -65,7 +56,6 @@ const IndustryPage = async ({ params }: PageProps) => {
     faqs,
     thousandReviews,
     commonData,
-    // blogsByCategory,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
 
   return (
@@ -106,11 +96,7 @@ const IndustryPage = async ({ params }: PageProps) => {
           customIconsMap={teamsUsingContractor}
         />
       </div>
-      {/* <ThousandsReviews
-        data={{ title: "4.7 ★ across thousands of reviews" }}
-        reviews={reviews}
-        variant="secondary"
-      /> */}
+   
       <SecondaryReview
         data={{ title: thousandReviews?.title }}
         reviews={thousandReviews?.reviews}

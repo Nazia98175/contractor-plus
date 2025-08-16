@@ -18,6 +18,7 @@ interface AdaptiveHeroTitleProps {
   maxLines?: number;
   animateOnComplete?: boolean;
   animationDelay?: number;
+  splitAtPeriod?: boolean; // New prop to enable/disable period splitting
 }
 
 const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
@@ -30,14 +31,36 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
   animateOnComplete = true,
   animationDelay = 0.5,
   textAnimation,
+  splitAtPeriod = false, // Default to false
 }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [isAdjusted, setIsAdjusted] = useState(false);
   const [finalFontSize, setFinalFontSize] = useState(maxFontSize);
   const splitTextRef = useRef<SplitText | null>(null);
+  const [processedTitle, setProcessedTitle] = useState(title);
+
+  // Process title to handle period splitting
+  useEffect(() => {
+    if (splitAtPeriod && title.includes('.')) {
+      // Split at the first period and add line breaks
+      const parts = title.split('.');
+      if (parts.length >= 2) {
+        // Take first part before period, and everything after period
+        const firstPart = parts[0].trim();
+        const secondPart = parts.slice(1).join('.').trim();
+        
+        // Set the processed title with line break
+        setProcessedTitle(`${firstPart}.\n${secondPart}`);
+      } else {
+        setProcessedTitle(title);
+      }
+    } else {
+      setProcessedTitle(title);
+    }
+  }, [title, splitAtPeriod]);
 
   const adjustFontSize = () => {
-    if (!titleRef.current || !title) return;
+    if (!titleRef.current || !processedTitle) return;
 
     let currentFontSize = maxFontSize;
     let lineCount = 0;
@@ -118,7 +141,7 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
   };
 
   useEffect(() => {
-    if (title && titleRef.current) {
+    if (processedTitle && titleRef.current) {
       // Reset state
       setIsAdjusted(false);
       setFinalFontSize(maxFontSize);
@@ -135,7 +158,7 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
         }
       };
     }
-  }, [title, maxFontSize, minFontSize, maxLines]);
+  }, [processedTitle, maxFontSize, minFontSize, maxLines]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -146,6 +169,19 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
     };
   }, []);
 
+  // Render with line breaks if splitAtPeriod is enabled
+  const renderTitle = () => {
+    if (splitAtPeriod && processedTitle.includes('\n')) {
+      return processedTitle.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index < processedTitle.split('\n').length - 1 && <br />}
+        </React.Fragment>
+      ));
+    }
+    return processedTitle;
+  };
+
   return (
     <>
       <h1
@@ -153,16 +189,17 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
         className={`${className} ${!isAdjusted ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
         style={{
           fontSize: `${maxFontSize}px`,
+          whiteSpace: splitAtPeriod ? 'pre-line' : 'normal', // Preserve line breaks when split is enabled
           // lineHeight: "1.2",
         }}
       >
-        {title}
+        {renderTitle()}
       </h1>
 
       {/* Debug info - remove in production */}
       {/* {process.env.NODE_ENV === "development" && isAdjusted && (
         <div className="mt-2 text-xs text-gray-500">
-          Final font size: {finalFontSize}px
+          Final font size: {finalFontSize}px | Split at period: {splitAtPeriod ? 'Yes' : 'No'}
         </div>
       )} */}
     </>

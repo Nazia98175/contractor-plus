@@ -33,6 +33,8 @@ const IndustryHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
+  console.log(hero?.heroTitle,"hero?.heroTitle");
+  
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -62,6 +64,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
               minFontSize={16}
               maxLines={2}
               maxFontSize={48}
+                splitAtPeriod={true} // Enable period splitting for desktop
             />
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}

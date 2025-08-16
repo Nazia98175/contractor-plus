@@ -4903,7 +4903,18 @@ export const estimaticReviewsAi = {
           },
           {
             id: 4,
-            userName: "Brandon Geiger",
+            userName: "Juan Garcia",
+            profileImg: "/images/png/juan-garcia.png",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `""I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.""`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 5,
+            userName: "Joshua Michael Brooks Lee Jones",
             profileImg: "/images/png/brandon-ginger.png",
             rating: 5,
             videoLink:

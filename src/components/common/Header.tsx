@@ -7,6 +7,7 @@ import SideBar from "./SideBar";
 import { usePathname } from "next/navigation";
 import LanguageSelector from "./LanguageSelector";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { useRouter } from "next/navigation";
 
 export interface HeaderProps {
   header?: any;
@@ -21,6 +22,7 @@ const headerVariantClasses = {
 };
 
 const Header: React.FC<HeaderProps> = ({ header }) => {
+  const router = useRouter();
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -57,6 +59,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const { loading, handleRedirect } = useOneLinkRedirect();
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    router.push("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

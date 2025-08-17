@@ -71,7 +71,7 @@ const problems = [
 
 const TheProblem = () => {
   return (
-    <section className="mx-auto max-w-[1218px]">
+    <section className="mx-auto max-w-[1218px] px-4">
       <h4 className="main-heading text-mana text-center">The problem</h4>
       <p className="py-3 text-center text-sm font-semibold text-[#5C5C5C] md:text-2xl">
         Contractors are still running modern businesses on outdated, overpriced,
@@ -93,7 +93,7 @@ const TheProblem = () => {
             </p>
 
             {problem.hasDivider && (
-              <span className="absolute top-[20%] right-0 lg:top-0">
+              <span className="absolute top-[46%] right-[50%] rotate-90 lg:top-0 lg:right-0 lg:rotate-none">
                 <svg
                   width="1"
                   height="122"

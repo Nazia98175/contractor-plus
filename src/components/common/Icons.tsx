@@ -5525,3 +5525,177 @@ export const GreenArrorwIcon = () => (
     />
   </svg>
 );
+
+export const ProofIcon1 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="157"
+    height="23"
+    viewBox="0 0 157 23"
+    fill="none"
+  >
+    <path
+      d="M0.5 22.1268H82.6057L103.127 1H156"
+      stroke="url(#paint0_radial_6727_10779)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_6727_10779"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(-2.5 6) rotate(11.6376) scale(205.729 289.425)"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+
+export const ProofIcon2 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="157"
+    height="23"
+    viewBox="0 0 157 23"
+    fill="none"
+  >
+    <path
+      d="M156.5 22.1268H74.3943L53.8733 1H1"
+      stroke="url(#paint0_radial_6727_10780)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_6727_10780"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(159.5 6) rotate(168.362) scale(205.729 289.425)"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+
+export const ProofIcon3 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="157"
+    height="8"
+    viewBox="0 0 157 8"
+    fill="none"
+  >
+    <path
+      d="M1 7H82.8417L103.297 1H156"
+      stroke="url(#paint0_radial_6727_10781)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_6727_10781"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(-1.99035 2.42) rotate(3.35827) scale(201.198 83.7779)"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+
+export const ProofIcon4 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="157"
+    height="8"
+    viewBox="0 0 157 8"
+    fill="none"
+  >
+    <path
+      d="M156 7H74.1583L53.7033 1H1"
+      stroke="url(#paint0_radial_6727_10782)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_6727_10782"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(158.99 2.42) rotate(176.642) scale(201.198 83.7779)"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+
+export const ProofIcon5 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="157"
+    height="18"
+    viewBox="0 0 157 18"
+    fill="none"
+  >
+    <path
+      d="M1 1H82.8417L103.297 17H156"
+      stroke="url(#paint0_radial_6727_10783)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_6727_10783"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(-1.99035 13.2133) rotate(-8.89352) scale(203.296 221.101)"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+
+export const ProofIcon6 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="157"
+    height="18"
+    viewBox="0 0 157 18"
+    fill="none"
+  >
+    <path
+      d="M156 1H74.1583L53.7033 17H1"
+      stroke="url(#paint0_radial_6727_10784)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_6727_10784"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(158.99 13.2133) rotate(-171.106) scale(203.296 221.101)"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);

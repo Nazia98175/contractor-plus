@@ -35,7 +35,7 @@ interface Params {
 
 const LeadGeneration = async ({ params }: Params) => {
   const useParams = await params;
-  
+
   // Get IP from cookies and fetch geolocation on the server
   const ip = (await cookies()).get("user-ip")?.value;
   let geoLocation = null;
@@ -43,15 +43,18 @@ const LeadGeneration = async ({ params }: Params) => {
   geoLocation = await getMaxMindLocation(ip);
 
   // Process location data on the server
-  const processedLocation = geoLocation ? {
-    city: geoLocation?.city?.names?.[useParams?.locale || "en"] || 
-          geoLocation?.city?.names?.["en"] || 
+  const processedLocation = geoLocation
+    ? {
+        city:
+          geoLocation?.city?.names?.[useParams?.locale || "en"] ||
+          geoLocation?.city?.names?.["en"] ||
           "New York",
-    country: geoLocation?.country?.iso_code?.toUpperCase() || "US",
-  } : {
-    city: "New York",
-    country: "US"
-  };
+        country: geoLocation?.country?.iso_code?.toUpperCase() || "US",
+      }
+    : {
+        city: "New York",
+        country: "US",
+      };
 
   console.log(processedLocation, "processedLocation");
 

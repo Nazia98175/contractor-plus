@@ -94,6 +94,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     ncc: commonData?.nccTxt,
   };
   console.log(pageData, "teams using contractor");
+  console.log(trackProperties, "trackproperties  dcsdfdfgdfg");
   return (
     <>
       <div id="home-page-wrapper-2">

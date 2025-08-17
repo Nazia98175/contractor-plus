@@ -11,6 +11,7 @@ import FreeTrialButton from "../common/FreeTrialButton";
 import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
+import heroLottie from "../../../public/lotties/real-time.json";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -172,15 +173,35 @@ const CommonHero: React.FC<TheHeroProps> = ({
                         className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
                       >
                         {heroImg?.url && (
-                          <Image
-                            className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                            src={heroImg?.url}
-                            width={900}
-                            height={616}
-                            alt="crm-hero"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                            priority
-                          />
+                          <>
+                            {/* {slug === "contractor-time-tracking-software" ? (
+                              <>
+                                <LottieAnimation
+                                  animationData={heroLottie}
+                                  loop={false}
+                                />
+                              </>
+                            ) : (
+                              <Image
+                                className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                                src={heroImg?.url}
+                                width={900}
+                                height={616}
+                                alt="crm-hero"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                                priority
+                              />
+                            )} */}
+                            <Image
+                              className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                              src={heroImg?.url}
+                              width={900}
+                              height={616}
+                              alt="crm-hero"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                              priority
+                            />
+                          </>
                         )}
                         {hero?.overlay && <AnimatedShape />}
                       </div>

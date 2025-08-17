@@ -11,7 +11,11 @@ interface Props {
   mobileImgUrl?: string;
 }
 
-const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
+const TrackProperties: React.FC<Props> = ({
+  trackProperties,
+  desktopImgUrl,
+  mobileImgUrl,
+}) => {
   return (
     <section className="relative sm:pt-28 lg:pt-5">
       {/* Desktop background image */}
@@ -40,6 +44,7 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
           <picture>
             <source
               srcSet={
+                desktopImgUrl ??
                 trackProperties?.mainImgDesktop?.url ??
                 "/images/webp/finally-desktop-bg.webp"
               }
@@ -47,6 +52,7 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
             />
             <source
               srcSet={
+                mobileImgUrl ??
                 trackProperties?.mainImgMobile?.url ??
                 "/images/webp/finally-mobile-bg.webp"
               }
@@ -54,10 +60,11 @@ const TrackProperties: React.FC<Props> = ({ trackProperties }) => {
             />
             <img
               src={
+                mobileImgUrl ??
                 trackProperties?.mainImgMobile?.url ??
                 "/images/webp/finally-mobile-bg.webp"
               }
-              alt="Mobile"
+              alt={trackProperties?.title ?? "Contractor+"}
               width={1098}
               height={578}
               className="w-full max-w-[1098px] object-cover"

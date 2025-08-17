@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import ScrollOverlapCards from "../common/ScrollOverlapCards";
-import Copy from "../common/Copy";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef, useState } from "react";
+import ScrollOverlapCards from "../common/ScrollOverlapCards";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 // Register the ScrollTrigger plugin

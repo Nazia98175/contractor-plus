@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import gsap from "gsap";
+import React, { useEffect } from "react";
 
 const problems = [
   {
@@ -70,8 +72,26 @@ const problems = [
 ];
 
 const TheProblem = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 1000);
+  }, []);
+
   return (
-    <section className="mx-auto max-w-[1218px]">
+    <section className="mx-auto max-w-[1218px] pt-24">
       <h4 className="main-heading text-mana text-center">The problem</h4>
       <p className="py-3 text-center text-sm font-semibold text-[#5C5C5C] md:text-2xl">
         Contractors are still running modern businesses on outdated, overpriced,

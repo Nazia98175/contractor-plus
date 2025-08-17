@@ -27,6 +27,7 @@ import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
+import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import RealTimeServiceConnector from "@/components/fieldservices/RealTimeServiceConnector";
 
@@ -99,6 +100,23 @@ const hello = {
     },
   ],
 };
+
+const trackProperties = {
+  btnText: "Get started FREE",
+  btnUrl: null,
+  featureHighlightSectionVisible: true,
+
+  mainImgDesktop: {
+    url: "/images/webp/tool-tracking.webp",
+  },
+  mainImgMobile: {
+    url: "/images/webp/tool-tracking.webp",
+  },
+  mobileBtn: "Download FREE App",
+  subTitle:
+    "Contractor+ is the first CRM to offer property profiles — so you can see what’s been done, what’s next, and who did it.",
+  title: "View every property like you do your customers",
+};
 const ToolAndTipEquipmentPage = () => {
   return (
     <main className="overflow-hidden">
@@ -114,24 +132,21 @@ const ToolAndTipEquipmentPage = () => {
         slug="crm"
         commonData={dealflowhero}
         isBlurBg={false}
-        imgClass="-mt-1 max-w-[800px]"
+        imgClass="-mb-16 mt-10 md:mb-0 md:-mt-1 max-w-[800px]"
       />
       <TrustedService
         reviews={clientReviews}
         slug="crm"
         apiData={false}
-        className="-mt-24"
+        className="lg:-mt-24"
       />
       <SwitchingTool switchingTool={toolManagingData} />
-      <RealTimeServiceConnector theme="dark" fieldService={hello} />
+      {/* <RealTimeServiceConnector theme="dark" fieldService={hello} /> */}
       <div className="bg-white">
-        {" "}
-        {/* <TrackProperties
-        ncc={"No credit card required"}
-        trackProperties={propertyCRMSection}
-        desktopImgUrl="/images/webp/client-agriment.webp"
-        mobileImgUrl="/images/png/client-agriment-mobile.png"
-      /> */}
+        <TrackProperties
+          ncc={"No credit card required"}
+          trackProperties={trackProperties}
+        />
         <AutmateDoContacts
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}

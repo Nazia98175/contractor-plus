@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import { PlusIconAnimation } from "../common/Icons";
 
-const ContractorStart = () => {
+const ContractorStart = (cardsData: any) => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
   const sectionRef2 = useRef<HTMLDivElement>(null);
   const sectionRef3 = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ const ContractorStart = () => {
   const sectionRef5 = useRef<HTMLDivElement>(null);
   const sectionRef6 = useRef<HTMLDivElement>(null);
   const sectionRef7 = useRef<HTMLDivElement>(null);
-
+  console.log(cardsData, "===================>>>>>>>>>>>>>>>>>>>>>>>>");
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -27,17 +27,29 @@ const ContractorStart = () => {
       sectionRef7,
     ];
 
+    if (!cardsData) return;
+
+    const total_card = cardsData.cardsData.cardsData.length;
+    const extra_height = total_card * window.innerHeight;
+    let ref_section_height_start = 0;
+    let ref_section_height_end = 0;
     const timeout = setTimeout(() => {
+      // alert("run");
       refs.forEach((ref, index) => {
         if (!ref.current) {
           return;
         }
-
+        const refHeight = ref.current.getBoundingClientRect().height;
+        ref_section_height_start =
+          ref_section_height_start + refHeight - refHeight;
+        ref_section_height_end = ref_section_height_start + refHeight;
         ScrollTrigger.create({
           trigger: ref.current,
-          start: "center center",
-          end: "bottom center",
-          scrub: false,
+          start: `-200px 40%`,
+          end: `bottom center`,
+          scrub: 2,
+          markers: false,
+          id: "boxes",
           onEnter: () => {
             ref.current?.classList.add("scroll-active");
           },
@@ -50,13 +62,13 @@ const ContractorStart = () => {
       });
 
       ScrollTrigger.refresh();
-    }, 120);
+    }, 2600);
 
     return () => {
       clearTimeout(timeout);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [cardsData]);
 
   return (
     <>

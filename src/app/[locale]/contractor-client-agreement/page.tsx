@@ -76,7 +76,7 @@ const ContractorClientAgreementPage = () => {
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}
         />
-        <ContractorStartMain />
+        <ContractorStartMain cardsData={automatedCardData.cardsDetail} />
         <KindAdorable
           slug={"estimate"}
           kindAdorable={automate_comparisonData}

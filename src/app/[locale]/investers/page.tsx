@@ -6,11 +6,13 @@ import React from "react";
 
 const InversterPage = () => {
   return (
-    <div>
-      <TheProblem />
-      <ProofWorking />
-      <MarketOpportunity />
-      <WinTeam />
+    <div id="home-page-wrapper">
+      <div id="home-page-view-port-screen">
+        <TheProblem />
+        <ProofWorking />
+        <MarketOpportunity />
+        <WinTeam />
+      </div>
     </div>
   );
 };

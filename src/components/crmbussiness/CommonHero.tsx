@@ -174,7 +174,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                       >
                         {heroImg?.url && (
                           <>
-                            {/* {slug === "contractor-time-tracking-software" ? (
+                            {slug === "contractor-time-tracking-software" ? (
                               <>
                                 <LottieAnimation
                                   animationData={heroLottie}
@@ -191,8 +191,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
                                 priority
                               />
-                            )} */}
-                            <Image
+                            )}
+                            {/* <Image
                               className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
                               src={heroImg?.url}
                               width={900}
@@ -200,7 +200,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                               alt="crm-hero"
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
                               priority
-                            />
+                            /> */}
                           </>
                         )}
                         {hero?.overlay && <AnimatedShape />}

@@ -1,8 +1,10 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
 import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
+import DualSlider from "@/components/common/DualSlider";
 import {
   automate_comparisonData,
+  automatedCardData,
   automatedFaq,
   automatedformData,
   automatedHeadingData,
@@ -20,6 +22,7 @@ import {
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
+import { toolEquipmentTracking } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import CrmService from "@/components/crmbussiness/IndustryService";
@@ -119,7 +122,7 @@ const trackProperties = {
 };
 const ToolAndTipEquipmentPage = () => {
   return (
-    <main className="overflow-hidden">
+    <main className="relative">
       <AutomatedClientHero
         hero={{
           heroTitle:
@@ -134,15 +137,11 @@ const ToolAndTipEquipmentPage = () => {
         isBlurBg={false}
         imgClass="-mb-16 mt-10 md:mb-0 md:-mt-1 max-w-[800px]"
       />
-      <TrustedService
-        reviews={clientReviews}
-        slug="crm"
-        apiData={false}
-        className="lg:-mt-24"
-      />
+      <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       <SwitchingTool switchingTool={toolManagingData} />
+      <DualSlider sliderData={toolEquipmentTracking.solutionCards} />
       {/* <RealTimeServiceConnector theme="dark" fieldService={hello} /> */}
-      <div className="bg-white">
+      <div className="relative bg-white">
         <TrackProperties
           ncc={"No credit card required"}
           trackProperties={trackProperties}
@@ -151,7 +150,7 @@ const ToolAndTipEquipmentPage = () => {
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}
         />
-        <ContractorStartMain />
+        <ContractorStartMain cardsData={automatedCardData.cardsDetail} />
         <KindAdorable
           slug={"estimate"}
           kindAdorable={automate_comparisonData}
@@ -167,9 +166,7 @@ const ToolAndTipEquipmentPage = () => {
       <div className="relative overflow-hidden">
         {/* Background Icons */}
         <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
         <div className="relative">
           <Image
             width={800}
@@ -190,12 +187,10 @@ const ToolAndTipEquipmentPage = () => {
             variantBtn="light"
           />
         </div>
-
         <TrustBar
           platforms={platforms}
           className="mx-auto w-full max-w-[889px]"
         />
-
         <Faq
           faq={automatedFaq}
           classNameAnswer="pt-1"

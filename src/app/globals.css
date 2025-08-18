@@ -2181,3 +2181,10 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
+.slider-layer {
+  background: linear-gradient(0deg, rgba(12, 13, 17, 0) 9.91%, #0c0d11 73.59%);
+}
+.slider-layer-2 {
+  background: linear-gradient(270deg, rgba(12, 13, 17, 0) 0%, #0c0d11 79.73%);
+  transform: rotate(-180deg);
+}

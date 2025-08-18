@@ -24,6 +24,7 @@ const FieldServiceCard: React.FC<Props> = ({
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
+  const isIcon = service?.isIcon;
 
   const currentColors = themeColors[theme] || themeColors["light"];
   const titleColor = currentColors.titleColor;
@@ -114,7 +115,7 @@ const FieldServiceCard: React.FC<Props> = ({
                       <TickIcon />
                     </span>
                   )} */}
-                  {feature?.isIcon && (
+                  {isIcon && (
                     <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
                       <TickIcon />
                     </span>

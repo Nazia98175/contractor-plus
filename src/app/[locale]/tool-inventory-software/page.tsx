@@ -32,78 +32,14 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import RealTimeServiceConnector from "@/components/fieldservices/RealTimeServiceConnector";
 
 import Image from "next/image";
 
-const hello = {
-  title: "A tool tracking system that syncs with the rest of your operation",
-  solutionCards: [
-    {
-      title: "Smart Schedule",
-      description:
-        "See every crew, job, and asset in one screen. Drag and drop booking makes scheduling simple.",
-      image: null,
-    },
-    {
-      id: 292,
-      title: "Live Dispatch",
-      description:
-        "See who’s available and closest to a job in real time so you assign the right work to the right person. Crews get notified instantly.",
-      image: null,
-    },
-    {
-      id: 293,
-      title: "Job Details",
-      description:
-        "No more digging for details. Everything tied to the job is in one place, from tasks to work orders and billing.",
-      image: null,
-    },
-    {
-      id: 294,
-      title: "Field Updates",
-      description:
-        "Crews can upload photos, notes, and task changes straight from the field. Everything lives in one central hub.",
-      image: null,
-    },
-    {
-      id: 295,
-      title: "Crew Efficiency",
-      description:
-        "Track time, mileage, and task completion with zero paper. Know who’s doing what, where, and when.",
-      image: null,
-    },
-    {
-      id: 296,
-      title: "AI Call Attendant",
-      description:
-        "Big Chief answers your calls 24/7, captures lead details, and books jobs while you focus on the field.",
-      image: null,
-    },
-    {
-      id: 297,
-      title: "Onsite Payments",
-      description:
-        "Collect payment the moment the job’s done. Accept cards or ACH in the field and mark the invoice as paid.",
-      image: null,
-    },
-    {
-      id: 298,
-      title: "CRM",
-      description:
-        "Track customers, properties, and communication history in one CRM that’s built for the way contractors work.",
-      image: null,
-    },
-    {
-      id: 299,
-      title: "Mobile App",
-      description:
-        "Run your business from anywhere. The intuitive ContractorOS puts scheduling, dispatch, and updates in your pocket.",
-      image: null,
-    },
-  ],
+export const metadata = {
+  title: "Tool Inventory Software to Track Equipment | Contractor+",
+  description:
+    "Log tools, assign gear to jobs, and reduce loss. Contractor+ keeps your inventory organized and up to date.",
 };
-
 const trackProperties = {
   btnText: "Get started FREE",
   btnUrl: null,

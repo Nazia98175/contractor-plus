@@ -64,8 +64,8 @@ const WhatNext = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(776 3) rotate(65.9261) scale(339.532 1098.32)"
               >
-                <stop stop-color="#BBBBBB" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
+                <stop stopColor="#BBBBBB" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
               </radialGradient>
             </defs>
           </svg>
@@ -93,7 +93,7 @@ const WhatNext = () => {
                   cy="111"
                   r="16"
                   fill="#0B902B"
-                  fill-opacity="0.12"
+                  fillOpacity="0.12"
                 />
                 <circle cx="16" cy="111" r="8" fill="#0B902B" />
                 <defs>
@@ -105,8 +105,8 @@ const WhatNext = () => {
                     y2="104"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0B902B" stop-opacity="0" />
-                    <stop offset="1" stop-color="#0B902B" />
+                    <stop stopColor="#0B902B" stopOpacity="0" />
+                    <stop offset="1" stopColor="#0B902B" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -140,7 +140,7 @@ const WhatNext = () => {
                   cy="111"
                   r="16"
                   fill="#0B902B"
-                  fill-opacity="0.12"
+                  fillOpacity="0.12"
                 />
                 <circle cx="16" cy="111" r="8" fill="#0B902B" />
                 <defs>
@@ -152,8 +152,8 @@ const WhatNext = () => {
                     y2="104"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0B902B" stop-opacity="0" />
-                    <stop offset="1" stop-color="#0B902B" />
+                    <stop stopColor="#0B902B" stopOpacity="0" />
+                    <stop offset="1" stopColor="#0B902B" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -186,7 +186,7 @@ const WhatNext = () => {
                   cy="111"
                   r="16"
                   fill="#0B902B"
-                  fill-opacity="0.12"
+                  fillOpacity="0.12"
                 />
                 <circle cx="16" cy="111" r="8" fill="#0B902B" />
                 <defs>
@@ -198,8 +198,8 @@ const WhatNext = () => {
                     y2="104"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0B902B" stop-opacity="0" />
-                    <stop offset="1" stop-color="#0B902B" />
+                    <stop stopColor="#0B902B" stopOpacity="0" />
+                    <stop offset="1" stopColor="#0B902B" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -235,7 +235,7 @@ const WhatNext = () => {
                   cy="111"
                   r="16"
                   fill="#0B902B"
-                  fill-opacity="0.12"
+                  fillOpacity="0.12"
                 />
                 <circle cx="16" cy="111" r="8" fill="#0B902B" />
                 <defs>
@@ -247,8 +247,8 @@ const WhatNext = () => {
                     y2="104"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0B902B" stop-opacity="0" />
-                    <stop offset="1" stop-color="#0B902B" />
+                    <stop stopColor="#0B902B" stopOpacity="0" />
+                    <stop offset="1" stopColor="#0B902B" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -281,7 +281,7 @@ const WhatNext = () => {
                   cy="111"
                   r="16"
                   fill="#0B902B"
-                  fill-opacity="0.12"
+                  fillOpacity="0.12"
                 />
                 <circle cx="16" cy="111" r="8" fill="#0B902B" />
                 <defs>
@@ -293,8 +293,8 @@ const WhatNext = () => {
                     y2="104"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0B902B" stop-opacity="0" />
-                    <stop offset="1" stop-color="#0B902B" />
+                    <stop stopColor="#0B902B" stopOpacity="0" />
+                    <stop offset="1" stopColor="#0B902B" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -327,7 +327,7 @@ const WhatNext = () => {
                   cy="111"
                   r="16"
                   fill="#0B902B"
-                  fill-opacity="0.12"
+                  fillOpacity="0.12"
                 />
                 <circle cx="16" cy="111" r="8" fill="#0B902B" />
                 <defs>
@@ -339,8 +339,8 @@ const WhatNext = () => {
                     y2="104"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0B902B" stop-opacity="0" />
-                    <stop offset="1" stop-color="#0B902B" />
+                    <stop stopColor="#0B902B" stopOpacity="0" />
+                    <stop offset="1" stopColor="#0B902B" />
                   </linearGradient>
                 </defs>
               </svg>

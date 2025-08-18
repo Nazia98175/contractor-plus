@@ -6,17 +6,22 @@ const InvestorHero = () => {
   return (
     <section className="relative overflow-hidden">
       <img
-        className="absolute top-0 left-0 z-[-2] h-full w-full object-cover"
+        className="absolute top-0 left-0 z-[-2] block object-cover md:hidden"
+        src="/images/webp/invester-mobile-bg.webp"
+        alt=""
+      />
+      <img
+        className="absolute top-0 left-0 z-[-2] hidden h-full w-full object-cover md:block"
         src="/images/webp/Grid-layers.png"
         alt=""
       />
       <img
-        className="absolute top-0 left-0 h-full w-full object-cover"
+        className="absolute top-0 left-0 hidden h-full w-full object-cover md:block"
         src="/images/webp/invers-hero-bg.webp"
         alt=""
       />
-      <div className="relative mx-auto max-w-[958px] px-3 pt-[240px] pb-[120px]">
-        <span className="absolute top-[5%] left-1/2 z-[-1] -translate-x-1/2 transform">
+      <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px]">
+        <span className="absolute top-[5%] left-1/2 z-[-1] hidden -translate-x-1/2 transform md:block">
           <svg
             width="600"
             height="600"
@@ -30,15 +35,15 @@ const InvestorHero = () => {
                 cy="353"
                 r="323"
                 fill="url(#paint0_linear_6766_496)"
-                fill-opacity="0.4"
+                fillOpacity="0.4"
               />
               <circle
                 cx="353"
                 cy="353"
                 r="308.107"
                 stroke="url(#paint1_linear_6766_496)"
-                stroke-opacity="0.2"
-                stroke-width="29.7857"
+                fillOpacity="0.2"
+                strokeWidth="29.7857"
               />
             </g>
             <circle
@@ -53,7 +58,7 @@ const InvestorHero = () => {
               cy="353"
               r="143.957"
               stroke="#696969"
-              stroke-width="2.12755"
+              strokeWidth="2.12755"
             />
             <defs>
               <filter
@@ -63,9 +68,9 @@ const InvestorHero = () => {
                 width="705.4"
                 height="705.4"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -85,8 +90,8 @@ const InvestorHero = () => {
                 y2="676"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#313131" />
-                <stop offset="1" stop-color="#333333" stop-opacity="0" />
+                <stop stopColor="#313131" />
+                <stop offset="1" stopColor="#333333" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_6766_496"
@@ -96,8 +101,8 @@ const InvestorHero = () => {
                 y2="626.5"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#EE1E25" />
-                <stop offset="1" stop-color="#0C0D11" />
+                <stop stopColor="#EE1E25" />
+                <stop offset="1" stopColor="#0C0D11" />
               </linearGradient>
               <radialGradient
                 id="paint2_radial_6766_496"
@@ -107,8 +112,8 @@ const InvestorHero = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(353 353) scale(162)"
               >
-                <stop stop-color="#460002" />
-                <stop offset="1" stop-color="#250001" />
+                <stop stopColor="#460002" />
+                <stop offset="1" stopColor="#250001" />
               </radialGradient>
             </defs>
           </svg>
@@ -131,7 +136,7 @@ const InvestorHero = () => {
           <Button className="w-full max-w-[204px]">Book investor call</Button>
         </div>
         <div className="relative flex w-full items-center justify-center pt-[150px]">
-          <div className="invester-image-gradient absolute bottom-[-15%] z-10 h-[300px] w-[90%] object-cover sm:-bottom-[15%]"></div>
+          <div className="invester-image-gradient absolute bottom-[-15%] z-10 h-[300px] w-full object-cover sm:-bottom-[15%] lg:w-[90%]"></div>
           <div className="relative mx-auto max-w-[500px]">
             <img
               className="absolute top-[20%] right-[-80%] z-[-1] w-full max-w-[272px] rotate-[15deg]"

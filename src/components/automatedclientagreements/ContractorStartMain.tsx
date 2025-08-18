@@ -1,7 +1,7 @@
 "use client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import ContractorStart from "./ContractorStart";
 
@@ -9,15 +9,16 @@ const ContractorStartMain = (cardsData: any) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const redDotRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
+    if (!cardsData) return;
+    // alert("this is run now");
     const ctx = gsap.context(() => {
       if (!sectionRef.current || !redDotRef.current) return;
       setTimeout(() => {
-        ScrollTrigger.refresh();
+        // ScrollTrigger.refresh();
         const total_crm_cards = cardsData.cardsData.length;
-        const crm_cards_height = total_crm_cards * window.innerHeight - 160;
+        const crm_cards_height = total_crm_cards * window.innerHeight;
 
         const sectionEl = sectionRef.current;
         const redDotEl = redDotRef.current;
@@ -30,9 +31,9 @@ const ContractorStartMain = (cardsData: any) => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionEl,
-            start: `${crm_cards_height} 40%`,
-            end: `${crm_cards_height + sectionElHeight} center`,
-            scrub: 2,
+            start: `-12% 40%`,
+            end: `bottom center`,
+            scrub: 1,
             markers: false,
             id: "main",
           },
@@ -41,12 +42,12 @@ const ContractorStartMain = (cardsData: any) => {
         // Animate red dot down the full height of the section
         tl.set(redDotEl, { opacity: 1 });
         tl.to(redDotEl, {
-          y: sectionElHeight - 110, // Use the variable directly, not in arrow function
+          y: sectionElHeight, // Use the variable directly, not in arrow function
           ease: "none",
         });
 
         ScrollTrigger.refresh();
-      }, 2000);
+      }, 2600);
     }, sectionRef);
 
     return () => ctx.revert();
@@ -64,7 +65,11 @@ const ContractorStartMain = (cardsData: any) => {
           The features they hide behind paywalls come standard here.
         </p>
       </Copy>
-      <div ref={sectionRef} className="relative mt-10 sm:mt-[51px]">
+      <div
+        id="contractor-section"
+        ref={sectionRef}
+        className="relative mt-10 sm:mt-[51px]"
+      >
         {/* Gray line */}
         <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
         {/* Red dot */}

@@ -26,11 +26,15 @@ const ContractorStart = (cardsData: any) => {
       sectionRef6,
       sectionRef7,
     ];
+
+    if (!cardsData) return;
+
     const total_card = cardsData.cardsData.cardsData.length;
     const extra_height = total_card * window.innerHeight;
     let ref_section_height_start = 0;
     let ref_section_height_end = 0;
     const timeout = setTimeout(() => {
+      // alert("run");
       refs.forEach((ref, index) => {
         if (!ref.current) {
           return;
@@ -39,12 +43,11 @@ const ContractorStart = (cardsData: any) => {
         ref_section_height_start =
           ref_section_height_start + refHeight - refHeight;
         ref_section_height_end = ref_section_height_start + refHeight;
-        console.log(refHeight, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         ScrollTrigger.create({
           trigger: ref.current,
-          start: `${extra_height + ref_section_height_start} center`,
-          end: `${extra_height + ref_section_height_end} center`,
-          scrub: false,
+          start: `-200px 40%`,
+          end: `bottom center`,
+          scrub: 2,
           markers: false,
           id: "boxes",
           onEnter: () => {
@@ -59,7 +62,7 @@ const ContractorStart = (cardsData: any) => {
       });
 
       ScrollTrigger.refresh();
-    }, 1500);
+    }, 2600);
 
     return () => {
       clearTimeout(timeout);
@@ -72,7 +75,7 @@ const ContractorStart = (cardsData: any) => {
       <section className="relative flex flex-col gap-20 overflow-hidden pt-[67px] sm:gap-[100px] sm:pt-[94px] md:gap-[154px]">
         <div
           ref={sectionRef1}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] border px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-44">

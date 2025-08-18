@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import LottieAnimation from "../homepage/LottieAnimation";
+import LottieAnimation from "./LottieAnimation";
 
 interface SoftwareItem {
   icon: React.ReactNode;
@@ -69,9 +69,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     >
       {item.lottieJson ? (
         <LottieAnimation
-          ref={lottieRef}
-          loop={true}
-          autoplay={false}
+          loop={false}
           animationData={item.lottieJson}
           className="h-9 w-8 fill-white"
         />

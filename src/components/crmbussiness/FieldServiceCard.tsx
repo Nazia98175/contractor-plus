@@ -105,11 +105,16 @@ const FieldServiceCard: React.FC<Props> = ({
                     </span>
                   )} */}
 
-                  {!(
+                  {/* {!(
                     slug === "field-service-payments" ||
                     slug === "field-service-scheduling-software" ||
                     "ai-estimating-software"
                   ) && (
+                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                      <TickIcon />
+                    </span>
+                  )} */}
+                  {feature?.isIcon && (
                     <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
                       <TickIcon />
                     </span>

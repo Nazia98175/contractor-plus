@@ -1,7 +1,7 @@
 "use client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import ContractorStart from "./ContractorStart";
 

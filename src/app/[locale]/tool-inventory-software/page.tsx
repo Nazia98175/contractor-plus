@@ -1,7 +1,7 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
-import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
 import DualSlider from "@/components/common/DualSlider";
+import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import {
   automate_comparisonData,
   automatedCardData,
@@ -86,7 +86,7 @@ const ToolAndTipEquipmentPage = () => {
           ncc={"No credit card required"}
           trackProperties={propertyCRMSection}
         />
-        <ContractorStartMain cardsData={automatedCardData.cardsDetail} />
+        <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
         <KindAdorable
           slug={"estimate"}
           kindAdorable={automate_comparisonData}

@@ -553,3 +553,53 @@ export const leadHGenerationFaqData = {
     },
   ],
 };
+export const toolEquipmentTracking = {
+  title:
+    "Turn the full job history into one clean invoice, without manual re-entry.",
+  slug: "field-service",
+  solutionCards: [
+    {
+      id: 1,
+      title: "Estimate-to-Invoice",
+      description:
+        "Approved estimates become invoices instantly. No double-entry or manual document creation.",
+    },
+
+    {
+      id: 2,
+      title: "Uninvoiced Items Aggregator",
+      description:
+        "Contractor+ automatically pulls in unbilled labor, materials, mileage, and expenses. Add to the invoice in one click.",
+    },
+    {
+      id: 3,
+      title: "Smart Change Orders",
+      description:
+        "Positive or negative change orders are captured as they happen and updated on the invoice instantly. ",
+    },
+    {
+      id: 4,
+      title: "Recurring Billing",
+      description:
+        "Set up automatic invoices for repeat jobs and maintenance plans. Store cards and charge them after recurring visits.",
+    },
+    {
+      id: 5,
+      title: "Progress Billing",
+      description:
+        "Invoice in phases or milestones as work is completed during long-term projects.",
+    },
+    {
+      id: 6,
+      title: "Online Payments",
+      description:
+        "Get payment faster by letting clients pay by card or ACH directly from the invoice.",
+    },
+    {
+      id: 7,
+      title: "Late Fees & Auto-Reminder",
+      description:
+        "Set invoice terms and late fees. Contractor+ sends auto-reminders so you don’t have to follow up.",
+    },
+  ],
+};

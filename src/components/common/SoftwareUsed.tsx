@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import LottieAnimation from "../homepage/LottieAnimation";
@@ -16,6 +16,7 @@ interface SoftwareItem {
   prefix?: string;
   denominator?: number;
   lottieJson: unknown;
+  mobileLottieJson: unknown;
   cardImage?: {
     url?: string;
   };
@@ -25,6 +26,7 @@ interface SoftwareUsedProps {
   item: SoftwareItem;
   icons?: { url: string }[];
   lottieJson?: object;
+  mobileLottieJson?: object;
   index?: number;
   titleColor?: string;
   paragraphColor?: string;
@@ -61,20 +63,35 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       setLottieRef(index)(lottieRef);
     }
   }, [setLottieRef, index]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateDeviceType = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    updateDeviceType();
+    window.addEventListener("resize", updateDeviceType);
+    return () => window.removeEventListener("resize", updateDeviceType);
+  }, []);
+
+  const animationData =
+    isMobile && item.mobileLottieJson ? item.mobileLottieJson : item.lottieJson;
 
   return (
     <article
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition"
     >
-      {item.lottieJson ? (
-        <LottieAnimation
-          ref={lottieRef}
-          loop={true}
-          autoplay={false}
-          animationData={item.lottieJson}
-          className="h-9 w-8 fill-white"
-        />
+      {item.lottieJson && item.mobileLottieJson ? (
+        <>
+          <div className="h-9 w-8">
+            <LottieAnimation
+              ref={lottieRef}
+              autoplay={false}
+              animationData={animationData}
+            />
+          </div>
+        </>
       ) : item.cardImage?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <Image

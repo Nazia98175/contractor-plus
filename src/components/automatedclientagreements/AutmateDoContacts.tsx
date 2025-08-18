@@ -50,12 +50,20 @@ const AutmateDoContacts: React.FC<Props> = ({ ncc, trackProperties }) => {
               ),
             )}
           </ul>
+
+          <Copy animateOnScroll={true} delay={0.3}>
+            <h5 className="text-wallStreet w-full text-base font-semibold">
+              {trackProperties?.featuresList?.[0]?.conclusion}
+            </h5>
+          </Copy>
         </div>
 
         <div className="flex w-full items-center justify-center md:max-w-[480px]">
           <Image
-            src="/images/webp/automate-contact.webp"
-            alt="Illustration showing contractor workflow"
+            src={trackProperties?.featuresList?.[0]?.cardImg?.src}
+            alt={
+              trackProperties?.featuresList?.[0]?.cardImg?.alt || "Illustration"
+            }
             width={480}
             height={600}
             className="h-auto w-full object-contain"

@@ -1,14 +1,11 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
 import DualSlider from "@/components/common/DualSlider";
-import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import {
-  automate_comparisonData,
   automatedCardData,
   automatedFaq,
   automatedformData,
   automatedHeadingData,
-  automateneverlookBackData,
   blogList,
   clientReviews,
   dealflowhero,
@@ -22,7 +19,13 @@ import {
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
-import { toolEquipmentTracking } from "@/components/common/Utils";
+import {
+  neverLookBackToolData,
+  stopToolsData,
+  tool_comparisonData,
+  toolEquipmentTracking,
+  tooltrackingData,
+} from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import CrmService from "@/components/crmbussiness/IndustryService";
@@ -32,6 +35,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 
 import Image from "next/image";
 
@@ -40,22 +44,7 @@ export const metadata = {
   description:
     "Log tools, assign gear to jobs, and reduce loss. Contractor+ keeps your inventory organized and up to date.",
 };
-const trackProperties = {
-  btnText: "Get started FREE",
-  btnUrl: null,
-  featureHighlightSectionVisible: true,
 
-  mainImgDesktop: {
-    url: "/images/webp/tool-tracking.webp",
-  },
-  mainImgMobile: {
-    url: "/images/webp/tool-tracking.webp",
-  },
-  mobileBtn: "Download FREE App",
-  subTitle:
-    "Contractor+ is the first CRM to offer property profiles — so you can see what’s been done, what’s next, and who did it.",
-  title: "View every property like you do your customers",
-};
 const ToolAndTipEquipmentPage = () => {
   return (
     <main className="relative">
@@ -80,18 +69,15 @@ const ToolAndTipEquipmentPage = () => {
       <div className="relative bg-white">
         <TrackProperties
           ncc={"No credit card required"}
-          trackProperties={trackProperties}
+          trackProperties={tooltrackingData}
         />
         <AutmateDoContacts
           ncc={"No credit card required"}
-          trackProperties={propertyCRMSection}
+          trackProperties={stopToolsData}
         />
         <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
-        <KindAdorable
-          slug={"estimate"}
-          kindAdorable={automate_comparisonData}
-        />
-        <TeamsUsingContractor data={automateneverlookBackData} slug={""} />
+        <KindAdorable slug={"estimate"} kindAdorable={tool_comparisonData} />
+        <TeamsUsingContractor data={neverLookBackToolData} slug={""} />
         <ThousandsReviews
           data={dealReviews2}
           reviews={dealReviews2.reviews}

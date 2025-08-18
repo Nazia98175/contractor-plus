@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import ContractorStart from "./ContractorStart";
 
-const ContractorStartMain = () => {
+const ContractorStartMain = (cardsData: any) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const redDotRef = useRef<HTMLSpanElement>(null);
 
@@ -14,32 +14,43 @@ const ContractorStartMain = () => {
 
     const ctx = gsap.context(() => {
       if (!sectionRef.current || !redDotRef.current) return;
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+        const total_crm_cards = cardsData.cardsData.length;
+        const crm_cards_height = total_crm_cards * window.innerHeight - 160;
 
-      const sectionEl = sectionRef.current;
-      const redDotEl = redDotRef.current;
+        const sectionEl = sectionRef.current;
+        const redDotEl = redDotRef.current;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionEl,
-          start: "top 40%",
-          end: "bottom center",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      });
+        if (!sectionEl || !redDotEl) return;
 
-      // Animate red dot down the full height of the section
-      tl.set(redDotEl, { opacity: 1 });
-      tl.to(redDotEl, {
-        y: () => sectionEl.offsetHeight - 110, // Adjust value as needed
-        ease: "none",
-      });
+        // Fix: Use sectionEl.offsetHeight directly since we already checked it exists
+        const sectionElHeight = sectionEl.getBoundingClientRect().height;
 
-      ScrollTrigger.refresh();
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionEl,
+            start: `${crm_cards_height} 40%`,
+            end: `${crm_cards_height + sectionElHeight} center`,
+            scrub: 2,
+            markers: false,
+            id: "main",
+          },
+        });
+
+        // Animate red dot down the full height of the section
+        tl.set(redDotEl, { opacity: 1 });
+        tl.to(redDotEl, {
+          y: sectionElHeight - 110, // Use the variable directly, not in arrow function
+          ease: "none",
+        });
+
+        ScrollTrigger.refresh();
+      }, 2000);
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [cardsData]);
 
   return (
     <section className="main-container mt-[90px]">
@@ -59,10 +70,10 @@ const ContractorStartMain = () => {
         {/* Red dot */}
         <span
           ref={redDotRef}
-          className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-0 will-change-transform"
+          className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
         />
 
-        <ContractorStart />
+        <ContractorStart cardsData={cardsData} />
       </div>
     </section>
   );

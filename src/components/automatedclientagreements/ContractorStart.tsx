@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import { PlusIconAnimation } from "../common/Icons";
 
-const ContractorStart = () => {
+const ContractorStart = (cardsData: any) => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
   const sectionRef2 = useRef<HTMLDivElement>(null);
   const sectionRef3 = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ const ContractorStart = () => {
   const sectionRef5 = useRef<HTMLDivElement>(null);
   const sectionRef6 = useRef<HTMLDivElement>(null);
   const sectionRef7 = useRef<HTMLDivElement>(null);
-
+  console.log(cardsData, "===================>>>>>>>>>>>>>>>>>>>>>>>>");
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -26,18 +26,27 @@ const ContractorStart = () => {
       sectionRef6,
       sectionRef7,
     ];
-
+    const total_card = cardsData.cardsData.cardsData.length;
+    const extra_height = total_card * window.innerHeight;
+    let ref_section_height_start = 0;
+    let ref_section_height_end = 0;
     const timeout = setTimeout(() => {
       refs.forEach((ref, index) => {
         if (!ref.current) {
           return;
         }
-
+        const refHeight = ref.current.getBoundingClientRect().height;
+        ref_section_height_start =
+          ref_section_height_start + refHeight - refHeight;
+        ref_section_height_end = ref_section_height_start + refHeight;
+        console.log(refHeight, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         ScrollTrigger.create({
           trigger: ref.current,
-          start: "center center",
-          end: "bottom center",
+          start: `${extra_height + ref_section_height_start} center`,
+          end: `${extra_height + ref_section_height_end} center`,
           scrub: false,
+          markers: false,
+          id: "boxes",
           onEnter: () => {
             ref.current?.classList.add("scroll-active");
           },
@@ -50,20 +59,20 @@ const ContractorStart = () => {
       });
 
       ScrollTrigger.refresh();
-    }, 120);
+    }, 1500);
 
     return () => {
       clearTimeout(timeout);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [cardsData]);
 
   return (
     <>
       <section className="relative flex flex-col gap-20 overflow-hidden pt-[67px] sm:gap-[100px] sm:pt-[94px] md:gap-[154px]">
         <div
           ref={sectionRef1}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] border px-3 backdrop-blur-[2px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-44">

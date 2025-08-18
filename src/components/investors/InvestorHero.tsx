@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import AnimatedShape from "../crmbussiness/AnimatedShape";
 import Button from "../common/Button";
 
-const InvestersHero = () => {
+const InvestorHero = () => {
   return (
     <section className="relative overflow-hidden">
       <img
@@ -156,4 +155,4 @@ const InvestersHero = () => {
   );
 };
 
-export default InvestersHero;
+export default InvestorHero;

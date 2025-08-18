@@ -1,3 +1,8 @@
+import clock from "../../../public/lotties/Clock-2.json";
+import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
+import productivity from "../../../public/lotties/productivity.json";
+import { ClockIcon, UpArrowIcon } from "./Icons";
+
 export const estimateHeroData = [
   { title: "<9", desc: "Minutes spent on an estimate" },
   { title: "$100k+", desc: "More in annual profit from fewer underbids" },
@@ -277,6 +282,111 @@ export const billingFaqData = {
       question: "Do you support recurring billing for repeat clients?",
       answer:
         "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+  ],
+};
+export const neverLookBackToolData = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Average reduction in missing tools",
+      start: 0,
+      end: 90,
+      suffix: "%",
+      prefix: "~",
+      value: null,
+
+      lottieJson: up_arrow_black,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Admin time saved on tracking & audits",
+      start: 0,
+      end: 8,
+      suffix: "hours/mo",
+      denominator: null,
+      prefix: null,
+      value: null,
+      lottieJson: productivity,
+      cardImage: {
+        url: null,
+      },
+      icons: <ClockIcon />,
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Typical savings from recovered/avoided loss",
+      start: 0,
+      end: 1500,
+      suffix: "/yr",
+      prefix: "$",
+      denominator: null,
+      value: null,
+      lottieJson: clock,
+      cardImage: {
+        url: null,
+      },
+      icons: <UpArrowIcon />,
+    },
+  ],
+};
+export const tool_comparisonData = {
+  id: 1,
+  title: "What they call a “premium” feature, we call standard",
+  subTitle: "The features they hide behind paywalls come standard here.",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Built-In Check-In/Out & Transfers ",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Role-Based Permissions",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+
+    {
+      featureName: "Full Assignment History & Audit Log |",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "QR + Bluetooth Scanning",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Truck Scan Mode (missing-item check) ",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Central Asset Dashboard & Search",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Asset Value Tracking & Usage Billing",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Use Our Tags or Yours",
+      ourProduct: "available",
+      competitorsNote: null,
     },
   ],
 };

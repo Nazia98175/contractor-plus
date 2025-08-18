@@ -1,14 +1,11 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
 import DualSlider from "@/components/common/DualSlider";
-import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import {
-  automate_comparisonData,
   automatedCardData,
   automatedFaq,
   automatedformData,
   automatedHeadingData,
-  automateneverlookBackData,
   blogList,
   clientReviews,
   dealflowhero,
@@ -22,7 +19,11 @@ import {
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
-import { toolEquipmentTracking } from "@/components/common/Utils";
+import {
+  neverLookBackToolData,
+  tool_comparisonData,
+  toolEquipmentTracking,
+} from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import CrmService from "@/components/crmbussiness/IndustryService";
@@ -32,6 +33,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 
 import Image from "next/image";
 
@@ -87,11 +89,8 @@ const ToolAndTipEquipmentPage = () => {
           trackProperties={propertyCRMSection}
         />
         <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
-        <KindAdorable
-          slug={"estimate"}
-          kindAdorable={automate_comparisonData}
-        />
-        <TeamsUsingContractor data={automateneverlookBackData} slug={""} />
+        <KindAdorable slug={"estimate"} kindAdorable={tool_comparisonData} />
+        <TeamsUsingContractor data={neverLookBackToolData} slug={""} />
         <ThousandsReviews
           data={dealReviews2}
           reviews={dealReviews2.reviews}

@@ -139,16 +139,16 @@ const MidMarketTable: React.FC = () => {
   return (
     <div className="px-4 py-10">
       {/* Mobile View */}
-      <div className="shadow-3xl relative z-40 mt-2 block overflow-hidden rounded-[6px] border border-[#3F464B] md:hidden">
+      <div className="shadow-3xl border-winterWay relative z-40 mt-2 block overflow-hidden rounded-[6px] border md:hidden">
         <div className="grid grid-cols-3 pb-3">
           <div className="flex items-center justify-center p-2 font-semibold text-white">
             Contractor+
           </div>
-          <div className="border-x border-[#3F464B] p-2 text-xs font-semibold text-[#656C73]">
+          <div className="border-winterWay text-wallStreet border-x p-2 text-xs font-semibold">
             <h3 className="pb-1">Mid-Market</h3>
             <p>(Jobber, HCP, Joist)</p>
           </div>
-          <div className="p-2 text-xs font-semibold text-[#656C73]">
+          <div className="text-wallStreet p-2 text-xs font-semibold">
             <h3 className="pb-1">Enterprise</h3>
             <p>ServiceTitan, Procore, etc.</p>
           </div>
@@ -163,20 +163,20 @@ const MidMarketTable: React.FC = () => {
       </div>
 
       {/* Desktop View */}
-      <div className="relative z-40 mx-auto mt-12 hidden max-w-[1029px] overflow-x-auto rounded-xl border border-[#3F464B] md:block lg:mt-[51px]">
+      <div className="border-winterWay relative z-40 mx-auto mt-12 hidden max-w-[1029px] overflow-x-auto rounded-xl border md:block lg:mt-[51px]">
         <table className="min-w-full text-left">
           <thead>
-            <tr className="font-myriad divide-x divide-[#3F464B] text-white md:text-lg lg:text-xl">
-              <th className="w-1/3 p-5 text-center text-[28px] font-semibold text-[#D2D4D6]">
+            <tr className="font-myriad divide-winterWay divide-x text-white md:text-lg lg:text-xl">
+              <th className="text-decemberSky w-1/3 p-5 text-center text-[28px] font-semibold">
                 Contractor+
               </th>
-              <th className="w-1/3 p-5 text-center text-[28px] font-bold text-[#656C73]">
+              <th className="text-wallStreet w-1/3 p-5 text-center text-[28px] font-bold">
                 <span>Mid-Market</span>
                 <p className="pt-3 text-base font-semibold">
                   (Jobber, HCP, Joist)
                 </p>
               </th>
-              <th className="w-1/3 p-5 text-center text-[28px] font-bold text-[#656C73]">
+              <th className="text-wallStreet w-1/3 p-5 text-center text-[28px] font-bold">
                 <span>Enterprise</span>
                 <p className="pt-3 text-base font-semibold">
                   ServiceTitan, Procore, etc.

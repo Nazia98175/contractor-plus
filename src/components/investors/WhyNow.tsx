@@ -10,7 +10,7 @@ const WhyNow = () => {
           alt="now bg"
         />
         <div className="mx-auto w-full max-w-[600px] pt-[26px] pb-[32px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]">
-          <h3 className="text-center text-2xl font-semibold text-[#838383] sm:text-4xl lg:text-5xl xl:text-[52px]">
+          <h3 className="text-mana text-center text-2xl font-semibold sm:text-4xl lg:text-5xl xl:text-[52px]">
             Why now?
           </h3>
           <p className="pt-3 text-center text-sm font-semibold text-[#5C5C5C] sm:text-lg md:text-xl lg:text-2xl">

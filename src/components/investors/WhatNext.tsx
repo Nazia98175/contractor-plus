@@ -32,15 +32,15 @@ const WhatNext = () => {
     },
   ];
   return (
-    <section className="mx-auto max-w-[1400px] px-4 py-20">
+    <section className="mx-auto max-w-[1400px] px-4 pb-14">
       <h3 className="text-center text-2xl font-semibold text-[#838383] sm:text-[28px] md:text-[38px]">
         What’s next (GTM + fund use)
       </h3>
       <p className="text-cente pt-3 pb-[59px] text-center text-sm font-bold text-[#5C5C5C] sm:text-base md:pb-[60px] md:text-lg lg:pb-[72px]">
         We’ve proven product-market fit. Now it’s time to dominate.
         <br className="hidden lg:block" /> We’re raising{" "}
-        <span className="text-[#999]"> $10M+ </span> to launch a go-to-market
-        blitz that floods the category
+        <span className="text-lightBlackGrey"> $10M+ </span> to launch a
+        go-to-market blitz that floods the category
       </p>
       <div className="relative mx-auto hidden xl:block">
         <span className="absolute top-1/2 bottom-0 -left-1/2 w-full translate-x-1/2 -translate-y-1/2 transform">
@@ -111,7 +111,7 @@ const WhatNext = () => {
                 </defs>
               </svg>
             </span>
-            <h3 className="text-end text-lg font-bold text-[#999]">
+            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Tradeshow saturation
             </h3>
             <p className="pt-3 text-end text-base font-semibold text-[#878C95]">
@@ -158,7 +158,7 @@ const WhatNext = () => {
                 </defs>
               </svg>
             </span>
-            <h3 className="text-lg font-bold text-[#999]">
+            <h3 className="text-lightBlackGrey text-lg font-bold">
               10x our investment into sales & support
             </h3>
             <p className="pt-3 text-base font-semibold text-[#878C95]">
@@ -204,7 +204,7 @@ const WhatNext = () => {
                 </defs>
               </svg>
             </span>
-            <h3 className="text-lg font-bold text-[#999]">
+            <h3 className="text-lightBlackGrey text-lg font-bold">
               ASO + SEO + Lead Gen acceleration
             </h3>
             <p className="pt-3 text-base font-semibold text-[#878C95]">
@@ -253,7 +253,7 @@ const WhatNext = () => {
                 </defs>
               </svg>
             </span>
-            <h3 className="text-end text-lg font-bold text-[#999]">
+            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Full-funnel paid media
             </h3>
             <p className="pt-3 text-end text-base font-semibold text-[#878C95]">
@@ -299,7 +299,7 @@ const WhatNext = () => {
                 </defs>
               </svg>
             </span>
-            <h3 className="text-end text-lg font-bold text-[#999]">
+            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Customer-led content engine
             </h3>
             <p className="pt-3 text-end text-base font-semibold text-[#878C95]">
@@ -345,7 +345,7 @@ const WhatNext = () => {
                 </defs>
               </svg>
             </span>
-            <h3 className="text-end text-lg font-bold text-[#999]">
+            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Ambassadors, associations & integration partners
             </h3>
             <p className="pt-3 text-end text-base font-semibold text-[#878C95]">

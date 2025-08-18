@@ -10,7 +10,20 @@ import {
 
 const ProofWorking = () => {
   return (
-    <div className="mx-auto w-full max-w-[1224px] px-4 py-20">
+    <div className="mx-auto w-full max-w-[1224px] px-4 pt-20 md:py-20">
+      <div className="py-5 md:py-10">
+        <h2 className="text-center text-2xl font-semibold text-[#838383] sm:text-3xl md:text-[40px] lg:text-[52px]">
+          Why Contractor+?{" "}
+        </h2>
+        <p className="text-center text-sm font-semibold text-[#5C5C5C] sm:text-lg md:text-xl lg:text-2xl">
+          We’re the first and only OS for contractors. A connected system that
+          moves as one cohesive engine to run the entire business. Contractor+
+          removes every point of friction in the operation by automating the
+          tasks, handoffs, and updates that usually slip through the cracks.
+          It’s not a collection of point solutions, but one solution synced
+          between each module.{" "}
+        </p>
+      </div>
       <h3 className="text-mana pb-3 text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
         Proof it’s working
       </h3>
@@ -42,7 +55,7 @@ const ProofWorking = () => {
                 $1M+ ARR
               </h3>
             </div>
-            <p className="pt-2 text-start text-xs font-semibold text-[#999] sm:text-end">
+            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold sm:text-end">
               With zero institutional capital
             </p>
           </div>
@@ -55,7 +68,7 @@ const ProofWorking = () => {
                 ~6%
               </h3>
             </div>
-            <p className="pt-2 text-start text-xs font-semibold text-[#999]">
+            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
               of freemium users organically convert to a paid plan
             </p>
           </div>
@@ -70,7 +83,7 @@ const ProofWorking = () => {
                 4.7★
               </h3>
             </div>
-            <p className="pt-2 text-end text-xs font-semibold text-[#999]">
+            <p className="text-lightBlackGrey pt-2 text-end text-xs font-semibold">
               Avg rating across Capterra, G2, Apple, and Google Play
             </p>
           </div>
@@ -83,7 +96,7 @@ const ProofWorking = () => {
                 94%
               </h3>
             </div>
-            <p className="pt-2 text-start text-xs font-semibold text-[#999]">
+            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
               Gross retention
             </p>
           </div>
@@ -98,7 +111,7 @@ const ProofWorking = () => {
                 ~150%
               </h3>
             </div>
-            <p className="pt-2 text-end text-xs font-semibold text-[#999]">
+            <p className="text-lightBlackGrey pt-2 text-end text-xs font-semibold">
               YoY growth
             </p>
           </div>
@@ -111,7 +124,7 @@ const ProofWorking = () => {
                 $700K
               </h3>
             </div>
-            <p className="pt-2 text-start text-xs font-semibold text-[#999]">
+            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
               All built with just $700K from angels and Reg CF
             </p>
           </div>
@@ -128,7 +141,7 @@ const ProofWorking = () => {
                   94%
                 </h3>
               </div>
-              <p className="pt-2 text-start text-xs font-semibold text-[#999]">
+              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
                 Gross retention
               </p>
             </div>
@@ -144,7 +157,7 @@ const ProofWorking = () => {
                   4.7★
                 </h3>
               </div>
-              <p className="pt-2 text-start text-xs font-semibold text-[#999] sm:text-end">
+              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold sm:text-end">
                 Avg rating across Capterra, G2, Apple, and Google Play
               </p>
             </div>
@@ -160,7 +173,7 @@ const ProofWorking = () => {
                   $700K
                 </h3>
               </div>
-              <p className="pt-2 text-start text-xs font-semibold text-[#999]">
+              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
                 All built with just $700K from angels and Reg CF
               </p>
             </div>
@@ -175,7 +188,7 @@ const ProofWorking = () => {
                   ~150%
                 </h3>
               </div>
-              <p className="pt-2 pr-[61px] text-end text-xs font-semibold text-[#999] sm:pl-0">
+              <p className="text-lightBlackGrey pt-2 pr-[61px] text-end text-xs font-semibold sm:pl-0">
                 YoY growth
               </p>
             </div>

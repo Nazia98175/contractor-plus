@@ -1,6 +1,4 @@
 "use client";
-import gsap from "gsap";
-import React, { useEffect } from "react";
 
 const problems = [
   {
@@ -72,24 +70,6 @@ const problems = [
 ];
 
 const TheProblem = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 1000);
-  }, []);
-
   return (
     <section className="mx-auto max-w-[1218px] px-4">
       <h4 className="main-heading text-mana text-center">The problem</h4>
@@ -147,6 +127,13 @@ const TheProblem = () => {
           </article>
         ))}
       </div>
+      <p className="pt-4 text-center text-lg font-medium text-[#5C5C5C]">
+        *The industry incumbents aren’t fixing it{" "}
+        <span className="font-semibold text-white">
+          {" "}
+          — they ARE the problem.
+        </span>
+      </p>
     </section>
   );
 };

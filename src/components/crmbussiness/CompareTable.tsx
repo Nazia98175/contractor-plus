@@ -57,7 +57,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
               </div>
             </td>
             <td className="w-full px-5 py-3">
-              <div className="flex items-center justify-center">
+              <div className="text-master flex items-center justify-center">
                 {feature.competitorsNote !== null ? (
                   <i>{feature?.competitorsNote}</i>
                 ) : (

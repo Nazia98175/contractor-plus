@@ -2,7 +2,7 @@ import React from "react";
 
 const MarketOpportunity = () => {
   return (
-    <div className="overflow-hidden py-20">
+    <div className="overflow-hidden pt-10 pb-[57px] sm:py-10">
       {/* card 1 */}
       <div>
         <div className="px-4">

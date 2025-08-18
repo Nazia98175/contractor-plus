@@ -37,7 +37,7 @@ const WinTeam = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-[990px] px-4 py-20">
+    <div className="mx-auto max-w-[990px] px-4">
       <h3 className="text-mana pb-[101px] text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
         Why this team wins
       </h3>
@@ -79,7 +79,7 @@ const WinTeam = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center pt-[169px]">
+      <div className="flex flex-col items-center justify-center pt-[134px] sm:pt-[169px]">
         <h4 className="text-decemberSky pb-4 text-center text-[22px] font-extrabold sm:text-[28px] md:text-[38px]">
           Smart money sees what’s coming
         </h4>

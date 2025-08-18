@@ -21,8 +21,10 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import {
   neverLookBackToolData,
+  stopToolsData,
   tool_comparisonData,
   toolEquipmentTracking,
+  tooltrackingData,
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
@@ -42,22 +44,7 @@ export const metadata = {
   description:
     "Log tools, assign gear to jobs, and reduce loss. Contractor+ keeps your inventory organized and up to date.",
 };
-const trackProperties = {
-  btnText: "Get started FREE",
-  btnUrl: null,
-  featureHighlightSectionVisible: true,
 
-  mainImgDesktop: {
-    url: "/images/webp/tool-tracking.webp",
-  },
-  mainImgMobile: {
-    url: "/images/webp/tool-tracking.webp",
-  },
-  mobileBtn: "Download FREE App",
-  subTitle:
-    "Contractor+ is the first CRM to offer property profiles — so you can see what’s been done, what’s next, and who did it.",
-  title: "View every property like you do your customers",
-};
 const ToolAndTipEquipmentPage = () => {
   return (
     <main className="relative">
@@ -82,11 +69,11 @@ const ToolAndTipEquipmentPage = () => {
       <div className="relative bg-white">
         <TrackProperties
           ncc={"No credit card required"}
-          trackProperties={trackProperties}
+          trackProperties={tooltrackingData}
         />
         <AutmateDoContacts
           ncc={"No credit card required"}
-          trackProperties={propertyCRMSection}
+          trackProperties={stopToolsData}
         />
         <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
         <KindAdorable slug={"estimate"} kindAdorable={tool_comparisonData} />

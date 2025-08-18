@@ -285,6 +285,57 @@ export const billingFaqData = {
     },
   ],
 };
+export const tooltrackingData = {
+  btnText: "Get started FREE",
+  btnUrl: null,
+  featureHighlightSectionVisible: true,
+
+  mainImgDesktop: {
+    url: "/images/webp/tool-tracking.webp",
+  },
+  mainImgMobile: {
+    url: "/images/webp/tool-tracking.webp",
+  },
+  mobileBtn: "Download FREE App",
+  subTitle: null,
+  title: "A tool tracking system that syncs with the rest of your operation",
+};
+export const stopToolsData = {
+  id: 324,
+  title: null,
+  subTitle: null,
+  btnText: "Get started FREE",
+
+  btnUrl: null, // can be replaced with a link like "/signup" if needed
+  mobileBtn: "Download FREE App",
+  featureHighlightSectionVisible: true,
+  featuresList: [
+    {
+      id: 408,
+      title: "The log that stops tools from “growing legs”",
+      conclusion:
+        "With Contractor+, every asset has a clear chain of custody—so you keep more of what you buy.",
+      content: [
+        {
+          title: "Time-stamped check-in/out receipts and transfers",
+          text: "Time-stamped check-in/out receipts and transfers",
+        },
+        {
+          title: "Truck-level Bluetooth scans before leaving a site",
+          text: "Truck-level Bluetooth scans before leaving a site",
+        },
+        {
+          title: "Searchable history by tool, job, person, or truck",
+          text: "Searchable history by tool, job, person, or truck",
+        },
+      ],
+      cardImg: {
+        src: "/images/webp/tool-tracking-system.webp",
+        alt: "Track properties",
+      },
+    },
+  ],
+};
 export const neverLookBackToolData = {
   title: "Teams that switch to Contractor+ never look back",
   subTitle: "We help you get ahead, not just get by.",

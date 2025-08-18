@@ -116,7 +116,7 @@ const ResourcesDropdown: React.FC<Props> = ({
                 <Link
                   key={`${link?.linkTxt}-${index}`}
                   className="all-features-button group"
-                  href="/"
+                  href={`${link?.linkUrl}`}
                 >
                   {link?.linkTxt}
                   <ArrowIcon />

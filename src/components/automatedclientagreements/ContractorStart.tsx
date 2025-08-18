@@ -90,7 +90,6 @@ const ContractorStart = (cardsData: any) => {
             <PlusIconAnimation />
           </span>
         </div>
-
         <div
           ref={sectionRef2}
           className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"

@@ -107,7 +107,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
                 required
                 value={email}
                 onChange={handleEmailChange}
-                className={`h-[40px] w-full rounded-[6px] px-2 outline-none ${variantStyles.input}`}
+                className={`h-10 w-full rounded-[6px] px-2 outline-none ${variantStyles.input}`}
               />
             </div>
             <div className="flex w-full flex-col items-center justify-center md:w-fit">

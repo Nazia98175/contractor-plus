@@ -32,7 +32,7 @@ export const metadata = {
 };
 const DealFlowTracker = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <CommonHero
         hero={{
           heroTitle:
@@ -70,7 +70,6 @@ const DealFlowTracker = () => {
           fieldService={realTimeServiceSliderData}
         />
         <RunWithContractor kindAdorable={runWithContractorData} />
-        {/* <TestingConnect /> */}
         <FinallyConnectsField />
         <NeverLookBack data={neverLookBackData} />
       </div>

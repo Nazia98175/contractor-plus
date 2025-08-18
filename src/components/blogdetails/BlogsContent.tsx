@@ -12,7 +12,7 @@ import VideoSection from "./VideoSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TravelBlog = ({
+const BlogsContent = ({
   blogData,
   blogsList,
 }: {
@@ -95,4 +95,4 @@ const TravelBlog = ({
   );
 };
 
-export default TravelBlog;
+export default BlogsContent;

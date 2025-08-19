@@ -282,7 +282,7 @@ const CombinesPowerfulAiSlider = () => {
             width={900}
             height={382}
             priority
-            src={"/images/webp/account-manager.webp"}
+            src={"/images/webp/account-manager-ai.webp"}
             alt="Slide Image"
             className="mx-auto w-full max-w-[713px] object-cover"
           />

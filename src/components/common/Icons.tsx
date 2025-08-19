@@ -1619,8 +1619,8 @@ export const RedClipIcon = ({ className = "" }) => (
 export const RedClipIconMobile = ({ className = "" }) => (
   <svg
     width="100%"
-    height="1044"
-    viewBox="0 0 320 1044"
+    height="100%"
+    viewBox="0 0 320 "
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
@@ -1641,8 +1641,8 @@ export const RedClipIconMobile = ({ className = "" }) => (
         id="filter0_f_2110_17575"
         x="-411.174"
         y="0.623535"
-        width="1431.22"
-        height="1042.42"
+        width="1920.22"
+        height="1920.42"
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
@@ -1668,7 +1668,7 @@ export const RedClipIconMobile = ({ className = "" }) => (
       >
         <stop offset="0.0622667" stopOpacity="0" />
         <stop offset="0.996954" stopColor="#EE1E25" />
-        <stop offset="1" stopColor="white" />
+        <stop offset="1" stopColor="" />
       </linearGradient>
     </defs>
   </svg>

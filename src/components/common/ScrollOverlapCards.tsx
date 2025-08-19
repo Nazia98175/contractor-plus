@@ -247,8 +247,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     );
   }
 
-  console.log(fieldService, "fieldService");
-
   return (
     <div
       ref={containerRef}

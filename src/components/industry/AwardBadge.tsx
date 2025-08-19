@@ -115,7 +115,7 @@ export default function AwardBadges({
       <div className="main-container relative z-20 flex flex-wrap items-center justify-center gap-3.5 pt-[100px] sm:gap-6 md:justify-between md:pt-0">
         {teamsUsingContractor?.cards?.map((item: any, index: number) => (
           <div
-            className="w-[48%] md:w-fit"
+            className="sm:w-[48%] md:w-fit"
             key={index}
             ref={(el) => {
               if (contentRefs.current) {

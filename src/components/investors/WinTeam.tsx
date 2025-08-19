@@ -25,7 +25,7 @@ const WinTeam = () => {
     },
     {
       id: 4,
-      img: "/images/webp/win-team-4.webp",
+      img: "/images/webp/win-team-6.webp",
       text: "We’re not here to coast. We’re here to eat the legacy players’ lunch.",
       imgWidth: "max-w-[313px]",
     },

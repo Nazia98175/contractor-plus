@@ -7,30 +7,39 @@ import {
   ProofIcon5,
   ProofIcon6,
 } from "../common/Icons";
+import Copy from "../common/Copy";
 
 const ProofWorking = () => {
   return (
     <div className="mx-auto w-full max-w-[1224px] px-4 pt-20 md:py-20">
       <div className="py-5 md:py-10">
-        <h2 className="text-center text-2xl font-semibold text-[#838383] sm:text-3xl md:text-[40px] lg:text-[52px]">
-          Why Contractor+?{" "}
-        </h2>
-        <p className="text-center text-sm font-semibold text-[#5C5C5C] sm:text-lg md:text-xl lg:text-2xl">
-          We’re the first and only OS for contractors. A connected system that
-          moves as one cohesive engine to run the entire business. Contractor+
-          removes every point of friction in the operation by automating the
-          tasks, handoffs, and updates that usually slip through the cracks.
-          It’s not a collection of point solutions, but one solution synced
-          between each module.{" "}
-        </p>
+        <Copy animateOnScroll={true}>
+          <h2 className="text-mana text-center text-2xl font-semibold sm:text-3xl md:text-[40px] lg:text-[52px]">
+            Why Contractor+?{" "}
+          </h2>
+        </Copy>
+        <Copy animateOnScroll={true}>
+          <p className="text-ironFixture pt-3 text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+            We’re the first and only OS for contractors. A connected system that
+            moves as one cohesive engine to run the entire business. Contractor+
+            removes every point of friction in the operation by automating the
+            tasks, handoffs, and updates that usually slip through the cracks.
+            It’s not a collection of point solutions, but one solution synced
+            between each module.{" "}
+          </p>
+        </Copy>
       </div>
-      <h3 className="text-mana pb-3 text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-        Proof it’s working
-      </h3>
-      <p className="pt-3 pb-[71px] text-center text-lg font-bold text-[#5C5C5C]">
-        This isn’t another FSM software. We built something contractors use,
-        love, and stick with.
-      </p>
+      <Copy animateOnScroll={true}>
+        <h3 className="text-mana pb-3 text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+          Proof it’s working
+        </h3>
+      </Copy>
+      <Copy animateOnScroll={true}>
+        <p className="text-ironFixture pt-3 pb-[71px] text-center text-lg font-bold">
+          This isn’t another FSM software. We built something contractors use,
+          love, and stick with.
+        </p>
+      </Copy>
       <div className="relative">
         <div className="flex items-center justify-center pb-8">
           <img
@@ -51,6 +60,7 @@ const ProofWorking = () => {
               <span className="absolute -right-[9%] bottom-0 sm:-right-20">
                 <ProofIcon1 />
               </span>
+
               <h3 className="py-1 text-end text-base font-semibold text-white">
                 $1M+ ARR
               </h3>

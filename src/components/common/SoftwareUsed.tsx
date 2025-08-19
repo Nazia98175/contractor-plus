@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import LottieAnimation from "../homepage/LottieAnimation";
@@ -16,7 +16,7 @@ interface SoftwareItem {
   prefix?: string;
   denominator?: number;
   lottieJson: unknown;
-  mobileLottieJson: unknown;
+  mobileLottieJson?: unknown;
   cardImage?: {
     url?: string;
   };
@@ -26,7 +26,6 @@ interface SoftwareUsedProps {
   item: SoftwareItem;
   icons?: { url: string }[];
   lottieJson?: object;
-  mobileLottieJson?: object;
   index?: number;
   titleColor?: string;
   paragraphColor?: string;
@@ -44,6 +43,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   setLottieRef,
 }) => {
   const lottieRef = useRef(null);
+  const mobileLottieRef = useRef(null);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -51,10 +51,18 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     fallbackInView: true,
   });
 
+  
+
   useEffect(() => {
-    if (inView && lottieRef.current) {
-      // @ts-ignore
-      lottieRef.current.play();
+    if (inView) {
+      if (lottieRef.current) {
+        // @ts-ignore
+        lottieRef.current.play();
+      }
+      if (mobileLottieRef.current) {
+        // @ts-ignore
+        mobileLottieRef.current.play();
+      }
     }
   }, [inView]);
 
@@ -63,36 +71,44 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       setLottieRef(index)(lottieRef);
     }
   }, [setLottieRef, index]);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const updateDeviceType = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    updateDeviceType();
-    window.addEventListener("resize", updateDeviceType);
-    return () => window.removeEventListener("resize", updateDeviceType);
-  }, []);
-
-  const animationData =
-    isMobile && item.mobileLottieJson ? item.mobileLottieJson : item.lottieJson;
 
   return (
     <article
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition"
     >
-      {item.lottieJson && item.mobileLottieJson ? (
+      {
+      // item.lottieJson ? (
+      //   <LottieAnimation
+      //     ref={lottieRef}
+      //     autoplay={false}
+      //     animationData={item.lottieJson}
+      //     className="h-9 w-8 fill-white"
+      //   />
+      // ) 
+      item.lottieJson ? (
         <>
-          <div className="h-9 w-8">
+          <span className="hidden md:block">
             <LottieAnimation
               ref={lottieRef}
               autoplay={false}
-              animationData={animationData}
+              animationData={item.lottieJson}
+              className="h-9 w-8 fill-white"
             />
-          </div>
+          </span>
+
+          {/* ✅ Show mobile lottie (fallback to desktop if mobile one is missing) */}
+          <span className="block md:hidden">
+            <LottieAnimation
+              ref={mobileLottieRef}
+              autoplay={false}
+              animationData={item.mobileLottieJson ?? item.lottieJson}
+              className="h-9 w-8 fill-white"
+            />
+          </span>
         </>
-      ) : item.cardImage?.url ? (
+      )
+      : item.cardImage?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <Image
             src={item.cardImage.url}

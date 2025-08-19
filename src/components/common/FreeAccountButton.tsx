@@ -24,7 +24,7 @@ const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
         type={type}
         disabled={disabled}
         onClick={onClick}
-        className={`secondary-btn bg-red-linear h-[40px] gap-2 ${className}`}
+        className={`secondary-btn bg-red-linear h-10 gap-2 ${className}`}
       >
         {loading ? (
           <ButtonLoader />

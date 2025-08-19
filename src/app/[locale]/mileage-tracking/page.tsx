@@ -2,9 +2,6 @@ import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoC
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
 import {
   automatedCardData,
-  automatedFaq,
-  automatedformData,
-  automatedHeadingData,
   blogList,
   clientReviews,
   dealflowhero,
@@ -21,7 +18,7 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import {
   mileage_comparisonData,
-  mileageActuallyWorkata,
+  mileageActuallyWorkdata,
   mileageListData,
   mileageManagingData,
   mileageTrackingData,
@@ -70,7 +67,7 @@ const MileageTrackingPage = () => {
       <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
       <div className="relative overflow-hidden">
         <FieldService
-          fieldService={mileageActuallyWorkata}
+          fieldService={mileageActuallyWorkdata}
           theme="dark"
           slug="estimateTheme"
           mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"

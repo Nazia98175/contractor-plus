@@ -336,6 +336,58 @@ export const stopToolsData = {
     },
   ],
 };
+export const toolformData = {
+  placeholder: "Your Email",
+  subTitle: "Get started with Contractor+ today.",
+  title: "What tool inventory software should have been all along",
+};
+export const toolBlogData = {
+  title: "Asset Management topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+};
+
+export const toolsFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question: "Can my crew check tools in and out from their phones?",
+      answer:
+        "Yes. They just scan the QR label or use Bluetooth detection in the Contractor+ mobile app. It’s fast and foolproof.",
+    },
+    {
+      id: 2,
+      question: "Do I have to buy special tags from you?",
+      answer:
+        "No. You can choose from our Bluetooth Tool Tags (multiple options) or use your own compatible tags and QR labels—your call.",
+    },
+    {
+      id: 3,
+      question: "How does Truck Scan work? ",
+      answer:
+        "Before you leave a site—or when you roll out in the morning—run a Truck Scan to detect tagged tools in range. Anything missing gets flagged instantly.",
+    },
+    {
+      id: 4,
+      question: "Can I control who is allowed to assign or edit tool records? ",
+      answer:
+        "Absolutely. Set role-based permissions so only authorized users can add, assign, transfer, or retire assets.",
+    },
+    {
+      id: 5,
+      question: "Can I see where a tool is right now?",
+      answer:
+        "Yes. The central dashboard shows current assignee (person, job, or truck) and the full time-stamped history, so you always know who had what, when.",
+    },
+    {
+      id: 6,
+      question: "Can I bill clients for equipment usage?",
+      answer:
+        "Yep. Track asset value and usage rates (hour, day, or per-job) and add equipment charges to estimates and invoices in a couple clicks.",
+    },
+  ],
+};
 export const neverLookBackToolData = {
   title: "Teams that switch to Contractor+ never look back",
   subTitle: "We help you get ahead, not just get by.",

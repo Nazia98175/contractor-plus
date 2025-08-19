@@ -1,9 +1,21 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "../common/Button";
 import gsap from "gsap";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 
 const InvestorHero = () => {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "elastic.in",
+      once: true,
+    });
+  }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -22,7 +34,7 @@ const InvestorHero = () => {
     }, 1000);
   }, []);
   return (
-    <section className="relative overflow-hidden">
+    <section ref={wrapperRef} className="relative overflow-hidden">
       <img
         className="absolute -top-13 left-0 z-[-2] block object-cover md:hidden"
         src="/images/webp/invester-mobile-bg.webp"
@@ -137,23 +149,33 @@ const InvestorHero = () => {
           </svg>
         </span>
         <div className="flex flex-col items-center justify-center px-2">
-          <p className="w-full rounded-[6px] bg-[rgba(63,70,75,0.10)] py-1 text-center text-sm font-bold text-[#808080] md:bg-transparent">
-            Investment Opportunity{" "}
-          </p>
-          <h2 className="invester-gradient-text main-heading pt-2 text-center sm:pt-4 md:pt-6">
-            The first Operating System for build & service contractors
-          </h2>
-          <p className="pt-2 text-center text-xs font-medium text-[#808080] sm:pt-4 sm:text-base md:pt-6 md:text-lg">
-            Contractor+ is the category disruptor the $1T field service market
-            has needed. We’ve built what Jobber, Housecall Pro, and ServiceTitan
-            couldn’t: a platform contractors actually love.{" "}
-          </p>
-          <p className="py-2 text-center text-xs font-extrabold text-[#808080] sm:pt-4 sm:text-base md:py-6 md:text-lg">
-            And we’ve done it without a cent from VC’s.
-          </p>
-          <Button className="w-full sm:max-w-[204px]">
-            Book investor call
-          </Button>
+          <CardReveal distance={30} delay={0.1}>
+            <p className="text-darkGray w-full rounded-[6px] bg-[rgba(63,70,75,0.10)] py-1 text-center text-sm font-bold md:bg-transparent">
+              Investment Opportunity{" "}
+            </p>
+          </CardReveal>
+          <Copy delay={0.2} animateOnScroll={false}>
+            <h2 className="invester-gradient-text main-heading pt-2 text-center sm:pt-4 md:pt-6">
+              The first Operating System for build & service contractors
+            </h2>
+          </Copy>
+          <Copy delay={0.3} animateOnScroll={false}>
+            <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg">
+              Contractor+ is the category disruptor the $1T field service market
+              has needed. We’ve built what Jobber, Housecall Pro, and
+              ServiceTitan couldn’t: a platform contractors actually love.{" "}
+            </p>
+          </Copy>
+          <Copy delay={0.5} animateOnScroll={false}>
+            <p className="text-darkGray py-2 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
+              And we’ve done it without a cent from VC’s.
+            </p>
+          </Copy>
+          <CardReveal distance={30} delay={0.6}>
+            <Button className="w-full sm:max-w-[204px]">
+              Book investor call
+            </Button>
+          </CardReveal>
         </div>
         <div className="relative flex w-full items-center justify-center pt-[124px] md:pt-[150px]">
           <div className="invester-image-gradient absolute bottom-[-15%] z-10 h-[300px] w-full object-cover sm:-bottom-[8%] lg:w-[90%]"></div>

@@ -21,6 +21,7 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import {
   mileage_comparisonData,
+  mileageActuallyWorkata,
   mileageListData,
   mileageManagingData,
   mileageTrackingData,
@@ -28,6 +29,7 @@ import {
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
+import FieldService from "@/components/crmbussiness/FieldService";
 import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
@@ -66,6 +68,14 @@ const MileageTrackingPage = () => {
         className="-mt-5"
       />
       <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
+      <div className="relative overflow-hidden">
+        <FieldService
+          fieldService={mileageActuallyWorkata}
+          theme="dark"
+          slug="estimateTheme"
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
       <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}

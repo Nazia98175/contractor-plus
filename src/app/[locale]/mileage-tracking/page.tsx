@@ -1,8 +1,11 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
-import DualSlider from "@/components/common/DualSlider";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import {
   automatedCardData,
+  automatedFaq,
+  automatedformData,
+  automatedHeadingData,
   blogList,
   clientReviews,
   dealflowhero,
@@ -19,15 +22,10 @@ import {
   neverLookBackToolData,
   stopToolsData,
   tool_comparisonData,
-  toolBlogData,
-  toolEquipmentTracking,
-  toolformData,
-  toolsFaq,
   tooltrackingData,
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
-import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
@@ -35,41 +33,32 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
-
 import Image from "next/image";
+import React from "react";
 
-export const metadata = {
-  title: "Tool Inventory Software to Track Equipment | Contractor+",
-  description:
-    "Log tools, assign gear to jobs, and reduce loss. Contractor+ keeps your inventory organized and up to date.",
-};
-
-const ToolAndTipEquipmentPage = () => {
+const MileageTrackingPage = () => {
   return (
-    <main className="relative">
+    <main className="overflow-hidden">
       <AutomatedClientHero
         hero={{
-          heroTitle:
-            "Finally, a way to track and audit every tool across every job",
+          heroTitle: "Tap once to track every mile. Reimburse with confidence.",
           heroDescription:
-            "One system to tag, assign, scan and recover every asset.",
+            "Stupidly simple trips, IRS-friendly reports, and zero hardware.",
         }}
-        featureTag="Tool Inventory Software"
-        heroImg="/images/png/tool-and-equipment.png"
+        featureTag="Mileage Tracking Software For Contractors"
+        heroImg="/images/webp/mileage-tracking-hero.webp"
         slug="crm"
         commonData={dealflowhero}
         isBlurBg={false}
-        imgClass="-mb-10 sm:-mb-16 mt-10 md:mb-0 md:-mt-5 xl:mr-20 max-w-[800px]"
+        imgClass="max-w-[700px] w-full mt-16 xl:-mt-14"
       />
       <TrustedService
         reviews={clientReviews}
         slug="crm"
         apiData={false}
-        className="xl:-mt-28"
+        className="-mt-5"
       />
       <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
-      <DualSlider sliderData={toolEquipmentTracking.solutionCards} />
-      {/* <RealTimeServiceConnector theme="dark" fieldService={hello} /> */}
       <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}
@@ -107,7 +96,7 @@ const ToolAndTipEquipmentPage = () => {
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            data={toolformData}
+            data={automatedformData}
             variant="primary"
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="light"
@@ -118,7 +107,7 @@ const ToolAndTipEquipmentPage = () => {
           className="mx-auto w-full max-w-[889px]"
         />
         <Faq
-          faq={toolsFaq}
+          faq={automatedFaq}
           classNameAnswer="pt-1"
           mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
@@ -127,7 +116,7 @@ const ToolAndTipEquipmentPage = () => {
 
       <BlogPosts
         data={blogList}
-        blogs={toolBlogData}
+        blogs={automatedHeadingData}
         className="mt-7 mb-20 md:mt-9"
         classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
       />
@@ -135,4 +124,4 @@ const ToolAndTipEquipmentPage = () => {
   );
 };
 
-export default ToolAndTipEquipmentPage;
+export default MileageTrackingPage;

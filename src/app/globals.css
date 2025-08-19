@@ -2188,3 +2188,13 @@ button {
   background: linear-gradient(270deg, rgba(12, 13, 17, 0) 0%, #0c0d11 79.73%);
   transform: rotate(-180deg);
 }
+/* large-comet */
+.ggg {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 6%,
+    #ee1e25 100%,
+    #ffffff 100%
+  );
+  filter: blur(40px);
+}

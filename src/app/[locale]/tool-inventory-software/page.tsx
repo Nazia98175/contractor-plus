@@ -60,13 +60,18 @@ const ToolAndTipEquipmentPage = () => {
         slug="crm"
         commonData={dealflowhero}
         isBlurBg={false}
-        imgClass="-mb-16 mt-10 md:mb-0 md:-mt-1 max-w-[800px]"
+        imgClass="-mb-10 sm:-mb-16 mt-10 md:mb-0 md:-mt-5 xl:mr-20 max-w-[800px]"
       />
-      <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
-      <SwitchingTool switchingTool={toolManagingData} />
+      <TrustedService
+        reviews={clientReviews}
+        slug="crm"
+        apiData={false}
+        className="xl:-mt-28"
+      />
+      <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
       <DualSlider sliderData={toolEquipmentTracking.solutionCards} />
       {/* <RealTimeServiceConnector theme="dark" fieldService={hello} /> */}
-      <div className="relative bg-white">
+      <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}
           trackProperties={tooltrackingData}

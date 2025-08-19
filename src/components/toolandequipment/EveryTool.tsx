@@ -95,6 +95,24 @@ const EveryTool = (cardsData: any) => {
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
+              Pick Up / Checkout
+            </h3>
+          </Copy>
+          <Copy animateOnScroll={true} delay={0.1}>
+            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
+              Scan QR or detect via Bluetooth; capture timestamp
+            </p>
+          </Copy>
+          <span className="icon-span mt-[18px] flex justify-center duration-300">
+            <PlusIconAnimation />
+          </span>
+        </div>
+        <div
+          ref={sectionRef3}
+          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+        >
+          <Copy animateOnScroll={true} delay={0}>
+            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
               On-Site Use
             </h3>
           </Copy>
@@ -107,8 +125,9 @@ const EveryTool = (cardsData: any) => {
             <PlusIconAnimation />
           </span>
         </div>
+
         <div
-          ref={sectionRef3}
+          ref={sectionRef4}
           className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
@@ -126,7 +145,7 @@ const EveryTool = (cardsData: any) => {
           </span>
         </div>
         <div
-          ref={sectionRef4}
+          ref={sectionRef5}
           className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
@@ -144,8 +163,8 @@ const EveryTool = (cardsData: any) => {
           </span>
         </div>
         <div
-          ref={sectionRef5}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[927px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          ref={sectionRef6}
+          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">

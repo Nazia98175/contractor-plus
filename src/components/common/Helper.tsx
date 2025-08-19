@@ -4527,12 +4527,14 @@ export const automate_ControlData = {
 };
 export const toolManagingData = {
   id: 320,
-  title: "Managing client agreements is more complicated than it should be",
+  title: "Mileage shouldn’t be a guessing game",
   sub_title: null,
   cardsDetail: [
     {
       id: 1671,
-      text: <>You’re juggling clipboards, spreadsheets, and text threads.</>,
+      text: (
+        <> Reconstructing trips from memory or text threads at payroll time.</>
+      ),
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,
@@ -4803,6 +4805,11 @@ export const automatedformData = {
   subTitle: "Get started with Contractor+ today.",
   title: "What contractor client agreement software should have been all along",
 };
+export const mileageformData = {
+  placeholder: "Your Email",
+  subTitle: "Get started with Contractor+ today.",
+  title: "Mileage tracking software for contractors, the way it should be",
+};
 
 export const automatedFaq = {
   title: "What contractors want to know ",
@@ -4844,6 +4851,48 @@ export const automatedFaq = {
       question: "Will this work on mobile for field teams?",
       answer:
         "Yes. Your crews can create and sign agreements right from the Contractor+ mobile app. It’s super simple and intuitive.",
+    },
+  ],
+};
+export const mileageFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question: "Do I need OBD devices or a wired GPS system?",
+      answer:
+        "No. Contractor+ uses your phone’s location services—no extra hardware, installs, or third‑party subscriptions.",
+    },
+    {
+      id: 2,
+      question: "What if someone forgets to start or stop a trip?",
+      answer:
+        "No problem. You (or a manager) can manually add or edit a log with a note so your records stay accurate.",
+    },
+    {
+      id: 3,
+      question: "Can my bookkeeper run reports without bugging me?",
+      answer:
+        "Yes. Generate a “Mileage Report” for any date range with totals by driver and team, including decimal mileage. Export to CSV or PDF for payroll.",
+    },
+    {
+      id: 4,
+      question: "How do reimbursements work? ",
+      answer:
+        "Use the report totals and multiply by the current IRS mileage rate (or a company rate) to reimburse fairly—covering fuel, wear, and tear. The report makes the math straightforward.",
+    },
+    {
+      id: 5,
+      question: "Does this work on both iOS and Android?",
+      answer:
+        "Yep. Contractor+ is mobile‑first with apps for both platforms—so crews can log miles in the field without extra tools.  ",
+    },
+    {
+      id: 6,
+      question: "Is this part of the broader Contractor+ platform?",
+      answer:
+        "Yes. It’s built into the same operating system contractors use for estimates, jobs, and communication—so your processes live in one place.   ",
     },
   ],
 };
@@ -4920,5 +4969,9 @@ export const estimaticReviewsAi = {
 };
 export const automatedHeadingData = {
   title: "Auto Agreement topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+};
+export const mileageHeadingData = {
+  title: "Mileage topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
 };

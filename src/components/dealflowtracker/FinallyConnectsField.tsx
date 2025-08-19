@@ -40,7 +40,8 @@ const FinallyConnectsField = () => {
           end: `+=${window.innerHeight * 6}`,
           pin: true,
           scrub: 1,
-          pinType: "transform",
+          markers: false,
+          // pinType: "transform",
         },
       });
       const timingImage = document.querySelectorAll(".timing-imgs");
@@ -148,7 +149,7 @@ const FinallyConnectsField = () => {
           <img
             src="/images/png/initial-cloud.png"
             id="initial-cloud"
-            className="absolute top-0 z-[21] h-full w-full"
+            className="absolute top-0 z-[21] h-full w-full object-cover"
             alt="Initial background cloud graphic"
           />
 
@@ -156,7 +157,7 @@ const FinallyConnectsField = () => {
           <img
             src="/images/png/step-1-cloud.png"
             id="step-1-cloud"
-            className="absolute top-0 z-[21] h-full w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 1 transition"
           />
 
@@ -164,7 +165,7 @@ const FinallyConnectsField = () => {
           <img
             src="/images/png/step-2-cloud.png"
             id="step-2-cloud"
-            className="absolute top-0 z-[21] h-full w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 2 transition"
           />
 
@@ -172,7 +173,7 @@ const FinallyConnectsField = () => {
           <img
             src="/images/png/step-3-cloud.png"
             id="step-3-cloud"
-            className="absolute top-0 z-[21] h-full w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 3 transition"
           />
 
@@ -180,7 +181,7 @@ const FinallyConnectsField = () => {
           <img
             src="/images/png/step-6-cloud.png"
             id="step-4-cloud"
-            className="absolute top-0 z-[21] h-full w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 6 transition"
           />
 
@@ -188,7 +189,7 @@ const FinallyConnectsField = () => {
           <img
             src="/images/png/step-7-cloud.png"
             id="step-5-cloud"
-            className="absolute top-0 z-[21] h-full w-full opacity-0"
+            className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 7 transition"
           />
 

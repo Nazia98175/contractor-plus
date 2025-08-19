@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../common/Button";
 import Image from "next/image";
+import Copy from "../common/Copy";
 
 const WinTeam = () => {
   const teamCards = [
@@ -24,7 +25,7 @@ const WinTeam = () => {
     },
     {
       id: 4,
-      img: "/images/webp/win-team-4.webp",
+      img: "/images/webp/win-team-6.webp",
       text: "We’re not here to coast. We’re here to eat the legacy players’ lunch.",
       imgWidth: "max-w-[313px]",
     },
@@ -38,9 +39,11 @@ const WinTeam = () => {
 
   return (
     <div className="mx-auto max-w-[990px] px-4">
-      <h3 className="text-mana pb-[101px] text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-        Why this team wins
-      </h3>
+      <Copy animateOnScroll={true}>
+        <h3 className="text-mana pb-[101px] text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+          Why this team wins
+        </h3>
+      </Copy>
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {/* First 3 cards */}
@@ -80,13 +83,17 @@ const WinTeam = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center pt-[134px] sm:pt-[169px]">
-        <h4 className="text-decemberSky pb-4 text-center text-[22px] font-extrabold sm:text-[28px] md:text-[38px]">
-          Smart money sees what’s coming
-        </h4>
-        <p className="text-secondary pb-8 text-center text-sm font-medium sm:text-lg md:text-xl">
-          And it’s going to be big. If anything you’ve read resonates, let’s
-          talk.
-        </p>
+        <Copy animateOnScroll={true}>
+          <h4 className="text-decemberSky pb-4 text-center text-[22px] font-extrabold sm:text-[28px] md:text-[38px]">
+            Smart money sees what’s coming
+          </h4>
+        </Copy>
+        <Copy animateOnScroll={true}>
+          <p className="text-secondary pb-8 text-center text-sm font-medium sm:text-lg md:text-xl">
+            And it’s going to be big. If anything you’ve read resonates, let’s
+            talk.
+          </p>
+        </Copy>
         <Button className="w-full max-w-[204px]">Book investor call</Button>
       </div>
     </div>

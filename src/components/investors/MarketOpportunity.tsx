@@ -1,4 +1,5 @@
 import React from "react";
+import Copy from "../common/Copy";
 
 const MarketOpportunity = () => {
   return (
@@ -6,12 +7,16 @@ const MarketOpportunity = () => {
       {/* card 1 */}
       <div>
         <div className="px-4">
-          <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-            Market opportunity
-          </h3>
-          <p className="pt-3 text-center text-sm font-semibold text-[#5C5C5C] md:text-lg">
-            The U.S. contractor software market is MASSIVE, and underserved.
-          </p>
+          <Copy animateOnScroll={true}>
+            <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+              Market opportunity
+            </h3>
+          </Copy>
+          <Copy animateOnScroll={true}>
+            <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
+              The U.S. contractor software market is MASSIVE, and underserved.
+            </p>
+          </Copy>
         </div>
 
         <div className="relative mx-auto flex max-w-[1920px] flex-col items-center justify-between gap-4 px-2 pt-[40px] sm:px-[60px] md:gap-6 md:pt-[95px] lg:px-[100px] xl:flex-row 2xl:px-[128px]">
@@ -35,7 +40,7 @@ const MarketOpportunity = () => {
               → ServiceTitan just IPO’d at $101/share. Housecall Pro and Jobber
               are sitting on $100M+ ARR.
             </h3>
-            <p className="pt-4 text-sm font-extralight text-[#797979] md:text-lg lg:text-[22px]">
+            <p className="text-steel pt-4 text-sm font-extralight md:text-lg lg:text-[22px]">
               And yet, contractors{" "}
               <i className="text-lightBlackGrey font-extrabold">
                 {" "}
@@ -52,12 +57,16 @@ const MarketOpportunity = () => {
       {/* card 2 */}
       <div className="pt-10">
         <div className="px-4">
-          <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-            Market opportunity
-          </h3>
-          <p className="pt-3 text-center text-sm font-semibold text-[#5C5C5C] md:text-lg">
-            The U.S. contractor software market is MASSIVE, and underserved.
-          </p>
+          <Copy animateOnScroll={true}>
+            <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+              Market opportunity
+            </h3>
+          </Copy>
+          <Copy animateOnScroll={true}>
+            <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
+              The U.S. contractor software market is MASSIVE, and underserved.
+            </p>
+          </Copy>
         </div>
 
         <div className="relative mx-auto flex max-w-[1920px] flex-col-reverse items-center justify-between gap-4 px-2 pt-[40px] sm:px-[60px] md:gap-6 md:pt-[95px] lg:px-[100px] xl:flex-row 2xl:px-[128px]">
@@ -66,7 +75,7 @@ const MarketOpportunity = () => {
               Our Serviceable Available Market focuses on the countries where
               Contractor+ can realistically operate today.
             </h3>
-            <p className="pt-4 text-sm font-extralight text-[#797979] md:text-lg lg:text-[22px]">
+            <p className="text-steel pt-4 text-sm font-extralight md:text-lg lg:text-[22px]">
               And yet, contractors{" "}
               <i className="text-lightBlackGrey font-extrabold">
                 {" "}
@@ -104,12 +113,16 @@ const MarketOpportunity = () => {
       {/* card 3 */}
       <div className="pt-10">
         <div className="px-4">
-          <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-            Market opportunity
-          </h3>
-          <p className="text-center text-sm font-semibold text-[#5C5C5C] md:text-lg">
-            The U.S. contractor software market is MASSIVE, and underserved.
-          </p>
+          <Copy animateOnScroll={true}>
+            <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+              Market opportunity
+            </h3>
+          </Copy>
+          <Copy animateOnScroll={true}>
+            <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
+              The U.S. contractor software market is MASSIVE, and underserved.
+            </p>
+          </Copy>
         </div>
 
         <div className="relative mx-auto flex max-w-[1920px] flex-col items-center justify-between gap-4 px-2 pt-[40px] sm:px-[60px] md:gap-6 md:pt-[95px] lg:px-[100px] xl:flex-row 2xl:px-[128px]">
@@ -133,7 +146,7 @@ const MarketOpportunity = () => {
               These developed markets represent a very large subset of the
               global TAM.
             </h3>
-            <p className="pt-4 text-sm font-extralight text-[#797979] md:text-lg lg:text-[22px]">
+            <p className="text-steel pt-4 text-sm font-extralight md:text-lg lg:text-[22px]">
               And yet, contractors{" "}
               <i className="text-lightBlackGrey font-extrabold">
                 {" "}
@@ -152,12 +165,16 @@ const MarketOpportunity = () => {
       {/* card 4 */}
       <div className="pt-10">
         <div className="px-4">
-          <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-            Market opportunity
-          </h3>
-          <p className="pt-3 text-center text-sm font-semibold text-[#5C5C5C] md:text-lg">
-            The U.S. contractor software market is MASSIVE, and underserved.
-          </p>
+          <Copy animateOnScroll={true}>
+            <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+              Market opportunity
+            </h3>
+          </Copy>
+          <Copy animateOnScroll={true}>
+            <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
+              The U.S. contractor software market is MASSIVE, and underserved.
+            </p>
+          </Copy>
         </div>
 
         <div className="relative mx-auto flex max-w-[1920px] flex-col-reverse items-center justify-between gap-4 px-2 pt-[40px] sm:px-[60px] md:gap-6 md:pt-[95px] lg:px-[100px] xl:flex-row 2xl:px-[128px]">
@@ -166,7 +183,7 @@ const MarketOpportunity = () => {
               Our Serviceable Obtainable Market is the subset of contractors
               most likely to see value in our platform in the near term
             </h3>
-            <p className="pt-4 text-sm font-extralight text-[#797979] md:text-lg lg:text-[22px]">
+            <p className="text-steel pt-4 text-sm font-extralight md:text-lg lg:text-[22px]">
               And yet, contractors{" "}
               <i className="text-lightBlackGrey font-extrabold">
                 {" "}

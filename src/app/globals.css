@@ -112,6 +112,7 @@
   --color-tealBlue: #585a5e;
   --color-coconut: #e6e9f5;
   --color-lightGray: #a3a3a3;
+  --color-darkGray: #808080;
   --color-cyberspace: #44474b;
   --color-codexGrey: #9c9c9c;
   --color-stonewall: #c2c2c2;
@@ -131,6 +132,7 @@
   --color-bovine: #51585c;
   --color-dull: #717171;
   --color-light: #d2d2d2;
+  --color-steel: #797979;
   --color-ravenBlackColor: #3d3d3d;
   --color-milacMist: #e4e4e7;
   --color-lumpOfCoal: #4f5357;
@@ -149,6 +151,8 @@
   --color-customRed: #f36266;
   --color-customGrey: #8f8f8f;
   --color-tinColor: #919191;
+  --color-ironFixture: #5c5c5c;
+  --color-sealGrey: #878c95;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;

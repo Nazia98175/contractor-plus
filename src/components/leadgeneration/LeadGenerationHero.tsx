@@ -1,3 +1,4 @@
+// LeadGenerationHero.tsx
 "use client";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Image from "next/image";
@@ -12,6 +13,12 @@ import Crush_local from "../../../public/lotties/Crush-local-search.json";
 import LottieAnimation from "../common/LottieAnimation";
 import Copy from "../common/Copy";
 import GooglePoster from "./GooglePoster";
+
+interface ProcessedLocation {
+  city?: string;
+  country?: string;
+}
+
 interface LeadGenerationHeroProps {
   tag: string;
   heading: string;
@@ -20,6 +27,7 @@ interface LeadGenerationHeroProps {
   mobileBtn: string;
   nccTxt: string;
   imgUrl: string;
+  location?: ProcessedLocation | null; // Already processed location from server
 }
 
 const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
@@ -30,6 +38,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   mobileBtn,
   nccTxt,
   imgUrl,
+  location, // Now receiving processed location directly from server
 }) => {
   return (
     <section className="main-container flex flex-col items-center justify-between gap-8 pt-20 sm:pt-[100px] md:pt-[140px] lg:flex-row lg:gap-4 lg:pt-[164px]">
@@ -41,9 +50,6 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
             </span>
           </div>
         </CardReveal>
-        {/* <h2 className="xs:text-[28px] w-fit text-center text-[26px] font-extrabold text-white sm:mx-auto sm:text-4xl lg:text-start lg:text-5xl">
-          {heading}
-        </h2> */}
         <AdaptiveHeroTitle
           title={heading || ""}
           className="text-center font-extrabold text-white sm:mx-auto lg:text-start"
@@ -80,13 +86,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         </div>
       </div>
       <div className="relative h-full max-h-[436px] w-full max-w-[650px] rounded-[12px] bg-white lg:max-w-[450px]">
-        {/* <LottieAnimation
-          className="mx-auto h-full w-full"
-          loop={false}
-          animationData={Crush_local}
-        /> */}
-        <GooglePoster />
-        {/* <div className="lead-generation-img-overlay pointer-events-none absolute top-0 left-0 z-0 h-full w-full"></div> */}
+        <GooglePoster location={location} />
       </div>
     </section>
   );

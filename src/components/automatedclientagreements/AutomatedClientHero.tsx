@@ -1,20 +1,15 @@
 "use client";
-import dynamic from "next/dynamic";
 import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
-import FreeAccountButton from "../common/FreeAccountButton";
-import { RedClipIcon, RedClipIconMobile, StartIcon } from "../common/Icons";
 import Copy from "../common/Copy";
-import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { usePathname } from "next/navigation";
-import AppsRating from "../common/AppsRating";
 import FreeTrialButton from "../common/FreeTrialButton";
+import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 export interface TheHeroProps {
   hero: any;
@@ -23,6 +18,8 @@ export interface TheHeroProps {
   homeCard?: any;
   commonData?: any;
   featureTag?: string;
+  isBlurBg?: boolean;
+  imgClass?: string;
 }
 const AutomatedClientHero: React.FC<TheHeroProps> = ({
   hero,
@@ -30,6 +27,8 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
   featureTag,
+  isBlurBg = true,
+  imgClass = "mt-9 max-w-[700px]",
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -67,7 +66,9 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
       ref={wrapperRef}
       className="relative z-10 pt-[46px] pb-10 opacity-0 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]"
     >
-      <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
+      {isBlurBg && (
+        <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
+      )}
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 block w-full md:hidden" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
@@ -121,34 +122,18 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
           </div>
         </div>
         <CardReveal distance={50} delay={0.9}>
-          <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
-            <div className="relative overflow-hidden">
-              {/* <div className="w-full max-w-[329px]">
-                <Image
-                  className="h-full w-full object-cover"
-                  src={""}
-                  width={329}
-                  height={666}
-                  alt="crm-hero"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 329px"
-                  priority
-                />
-                <div className="bg-kuroiBlack absolute bottom-0 h-[10%] blur-[20px]"></div>
-              </div> */}
-              <div className="z-30 mx-auto mt-9 max-w-[700px]">
-                {heroImg && (
-                  <Image
-                    className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                    src={heroImg}
-                    width={900}
-                    height={616}
-                    alt="crm-hero"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                    priority
-                  />
-                )}
-              </div>
-            </div>
+          <div className={`z-30 mx-auto ${imgClass}`}>
+            {heroImg && (
+              <Image
+                className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                src={heroImg}
+                width={900}
+                height={616}
+                alt="crm-hero"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                priority
+              />
+            )}
           </div>
         </CardReveal>
       </div>

@@ -42,7 +42,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         autoplay={{
-          delay: 6000,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         onSwiper={setTopSwiper}
@@ -68,8 +68,8 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="h-full px-2">
             <LottieAnimation
               className="mx-auto h-full w-full max-w-[450px]"
-              loop={true}
               animationData={unnotice_item}
+              loop={false}
             />
           </div>
         </SwiperSlide>
@@ -77,7 +77,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="flex h-full items-center justify-center px-2 sm:min-h-[450px]">
             <LottieAnimation
               className="mx-auto w-full max-w-[485px]"
-              loop={true}
+              loop={false}
               animationData={smart_change}
             />
           </div>
@@ -86,7 +86,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="flex h-full items-center justify-center px-2 sm:min-h-[450px]">
             <LottieAnimation
               className="mx-auto w-full max-w-[485px]"
-              loop={true}
+              loop={false}
               animationData={recurring_bill}
             />
           </div>
@@ -95,7 +95,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="flex h-full items-center justify-center px-2 sm:min-h-[450px]">
             <LottieAnimation
               className="mx-auto w-full max-w-[685px]"
-              loop={true}
+              loop={false}
               animationData={progress_billing}
             />
           </div>
@@ -104,7 +104,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="flex h-full items-center justify-center pt-16 sm:pt-12 lg:min-h-[500px] lg:pt-0">
             <LottieAnimation
               className="mx-auto w-full max-w-[1285px]"
-              loop={true}
+              loop={false}
               animationData={online_payment}
             />
           </div>
@@ -113,7 +113,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="flex h-full items-center justify-center px-2 sm:min-h-[400px]">
             <LottieAnimation
               className="mx-auto w-full max-w-[500px]"
-              loop={true}
+              loop={false}
               animationData={late_fees}
             />
           </div>
@@ -122,7 +122,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="h-full px-2 sm:min-h-[300px]">
             <LottieAnimation
               className="mx-auto w-full max-w-[500px]"
-              loop={true}
+              loop={false}
               animationData={esign_change}
             />
           </div>

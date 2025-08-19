@@ -1,3 +1,4 @@
+// LeadGeneration.tsx (page component)
 import CommonFormField from "@/components/common/CommonFormField";
 import CommonLogos from "@/components/common/CommonLogos";
 import {
@@ -19,13 +20,44 @@ import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
 import DragAnimaiton from "@/components/leadgeneration/DragAnimaiton";
 import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
+import { getMaxMindLocation } from "@/services/map";
+import { cookies } from "next/headers";
 
 export const metadata = {
   title: "Local SEO for Contractors Just $247 | Contractor+",
   description:
     "A fully managed local SEO & reputation management solution for less than the cost of a bad lead. Generate more local leads now.",
 };
-const LeadGeneration = () => {
+
+interface Params {
+  params: Promise<{ locale: string }>;
+}
+
+const LeadGeneration = async ({ params }: Params) => {
+  const useParams = await params;
+
+  // Get IP from cookies and fetch geolocation on the server
+  const ip = (await cookies()).get("user-ip")?.value;
+  let geoLocation = null;
+
+  geoLocation = await getMaxMindLocation(ip);
+
+  // Process location data on the server
+  const processedLocation = geoLocation
+    ? {
+        city:
+          geoLocation?.city?.names?.[useParams?.locale || "en"] ||
+          geoLocation?.city?.names?.["en"] ||
+          "New York",
+        country: geoLocation?.country?.iso_code?.toUpperCase() || "US",
+      }
+    : {
+        city: "New York",
+        country: "US",
+      };
+
+  console.log(processedLocation, "processedLocation");
+
   return (
     <>
       <div className="shadow-c5 relative z-20 pb-[35px]">
@@ -37,6 +69,7 @@ const LeadGeneration = () => {
           mobileBtn="Download FREE App"
           nccTxt="No credit card required"
           imgUrl="/images/png/lead-generation-hero.png"
+          location={processedLocation} // Pass processed location directly
         />
         <LottieStat className="mt-8 gap-[55px]" />
       </div>
@@ -45,7 +78,7 @@ const LeadGeneration = () => {
           isImageshow={false}
           switchingTool={{
             title:
-              "Every search you don’t show up for means your competitor does",
+              "Every search you don't show up for means your competitor does",
             cardsDetail: competitordoes,
           }}
         />
@@ -60,7 +93,7 @@ const LeadGeneration = () => {
           imgPath="/images/webp/always-transparent.webp"
           headingPrimary="Always transparent,"
           headingSecondary="Always accessible"
-          description="See what’s going on 24/7 and access reports in your own personal local SEO portal. You’ll never wonder what’s been done or how your rankings look. Access your dashboard anytime. "
+          description="See what's going on 24/7 and access reports in your own personal local SEO portal. You'll never wonder what's been done or how your rankings look. Access your dashboard anytime. "
         />
         <div className="pt-9 pb-[84px]">
           <CommonLogos />

@@ -1,6 +1,6 @@
 import BlogDetailHero from "@/components/blogdetails/BlogDetailHero";
+import BlogsContent from "@/components/blogdetails/BlogsContent";
 import ContractorArticles from "@/components/blogdetails/ContractorArticles";
-import TravelBlog from "@/components/blogdetails/TravelBlog";
 import { platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
@@ -45,7 +45,7 @@ const BlogDetails = async ({
     <main className="overflow-hidden">
       <div className="bg-white">
         <BlogDetailHero blogData={blogData} />
-        <TravelBlog blogData={blogData} blogsList={blogsList} />
+        <BlogsContent blogData={blogData} blogsList={blogsList} />
       </div>
       <div className="relative overflow-hidden">
         <IndustryService

@@ -68,13 +68,22 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   return (
     <>
       {showTitle && (
-        <AdaptiveHeroTitle
-          title={title || ""}
-          className={`mx-auto pb-2 text-center ${variantStyles.title} ${className || "max-w-[780px]"}`}
-          minFontSize={16}
-          maxLines={2}
-          maxFontSize={48}
-        />
+        <>
+          <AdaptiveHeroTitle
+            title={title || ""}
+            className={`mx-auto hidden pb-2 text-center sm:block ${variantStyles.title} ${className || "max-w-[780px]"}`}
+            minFontSize={24}
+            maxLines={2}
+            maxFontSize={40}
+          />
+          <AdaptiveHeroTitle
+            title={title || ""}
+            className={`mx-auto hidden pb-2 text-center sm:hidden ${variantStyles.title} ${className || "max-w-[780px]"}`}
+            minFontSize={24}
+            maxLines={3}
+            maxFontSize={48}
+          />
+        </>
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">
@@ -98,7 +107,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
                 required
                 value={email}
                 onChange={handleEmailChange}
-                className={`h-[40px] w-full rounded-[6px] px-2 outline-none ${variantStyles.input}`}
+                className={`h-10 w-full rounded-[6px] px-2 outline-none ${variantStyles.input}`}
               />
             </div>
             <div className="flex w-full flex-col items-center justify-center md:w-fit">

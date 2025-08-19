@@ -16,6 +16,7 @@ interface SoftwareItem {
   prefix?: string;
   denominator?: number;
   lottieJson: unknown;
+  mobileLottieJson?: unknown;
   cardImage?: {
     url?: string;
   };
@@ -42,6 +43,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
   setLottieRef,
 }) => {
   const lottieRef = useRef(null);
+  const mobileLottieRef = useRef(null);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -49,10 +51,18 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
     fallbackInView: true,
   });
 
+  
+
   useEffect(() => {
-    if (inView && lottieRef.current) {
-      // @ts-ignore
-      lottieRef.current.play();
+    if (inView) {
+      if (lottieRef.current) {
+        // @ts-ignore
+        lottieRef.current.play();
+      }
+      if (mobileLottieRef.current) {
+        // @ts-ignore
+        mobileLottieRef.current.play();
+      }
     }
   }, [inView]);
 
@@ -67,15 +77,38 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition"
     >
-      {item.lottieJson ? (
-        <LottieAnimation
-          ref={lottieRef}
-          loop={true}
-          autoplay={false}
-          animationData={item.lottieJson}
-          className="h-9 w-8 fill-white"
-        />
-      ) : item.cardImage?.url ? (
+      {
+      // item.lottieJson ? (
+      //   <LottieAnimation
+      //     ref={lottieRef}
+      //     autoplay={false}
+      //     animationData={item.lottieJson}
+      //     className="h-9 w-8 fill-white"
+      //   />
+      // ) 
+      item.lottieJson ? (
+        <>
+          <span className="hidden md:block">
+            <LottieAnimation
+              ref={lottieRef}
+              autoplay={false}
+              animationData={item.lottieJson}
+              className="h-9 w-8 fill-white"
+            />
+          </span>
+
+          {/* ✅ Show mobile lottie (fallback to desktop if mobile one is missing) */}
+          <span className="block md:hidden">
+            <LottieAnimation
+              ref={mobileLottieRef}
+              autoplay={false}
+              animationData={item.mobileLottieJson ?? item.lottieJson}
+              className="h-9 w-8 fill-white"
+            />
+          </span>
+        </>
+      )
+      : item.cardImage?.url ? (
         <div className="relative aspect-[1/1] size-7 sm:size-8">
           <Image
             src={item.cardImage.url}

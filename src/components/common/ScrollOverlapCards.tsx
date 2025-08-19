@@ -262,9 +262,8 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
               contentRefs.current[index] = el;
             }
           }}
-          className={`z-${
-            index + 1
-          } crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-10 sm:h-[90vh] xl:top-0 xl:h-screen`}
+          style={{ zIndex: index + 1 }}
+          className={`crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-10 sm:h-[90vh] xl:top-0 xl:h-screen`}
         >
           <div
             className={`${className} crm-cards-inner h-fit w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-6 xl:rounded-[40px] xl:p-8`}

@@ -37,3 +37,26 @@
 .chevron-3 {
   animation-delay: 6s;
 }
+.problem-text {
+  background: linear-gradient(91deg, #8a2b32 0%, #fff 107.81%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.problem-gradient-line .line {
+  background: radial-gradient(50% 8050% at 50% 50%, #999 0%, #0c0d11 100%);
+}
+.gradient-line {
+  background: linear-gradient(90deg, #0b902b 7.69%, rgba(11, 144, 43, 0) 100%);
+}
+
+.invester-gradient-text .line {
+  background: linear-gradient(269deg, #fff0f1 6.49%, #6c6c6c 99.48%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.invester-image-gradient {
+  background: linear-gradient(1deg, #0a0b0e 34.47%, rgba(10, 11, 14, 0) 90.83%);
+}

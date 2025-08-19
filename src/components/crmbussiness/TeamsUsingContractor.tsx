@@ -60,9 +60,9 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
         {data?.cards?.map((item: any, index: number) => (
           <article
             key={index}
-            className="bg-doctor flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
+            className="bg-doctor flex cursor-pointer flex-col items-center justify-start gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
           >
-            <span className="mb-1 flex h-[40px] w-[40px] items-center justify-center">
+            <span className="mb-1 flex h-10 w-[40px] items-center justify-center">
               {lottieIndexes.includes(index) ? (
                 <LottieAnimation loop={false} animationData={item.lottieJson} />
               ) : (

@@ -1,3 +1,8 @@
+import clock from "../../../public/lotties/Clock-2.json";
+import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
+import productivity from "../../../public/lotties/productivity.json";
+import { ClockIcon, UpArrowIcon } from "./Icons";
+
 export const estimateHeroData = [
   { title: "<9", desc: "Minutes spent on an estimate" },
   { title: "$100k+", desc: "More in annual profit from fewer underbids" },
@@ -280,6 +285,162 @@ export const billingFaqData = {
     },
   ],
 };
+export const tooltrackingData = {
+  btnText: "Get started FREE",
+  btnUrl: null,
+  featureHighlightSectionVisible: true,
+
+  mainImgDesktop: {
+    url: "/images/webp/tool-tracking.webp",
+  },
+  mainImgMobile: {
+    url: "/images/webp/tool-tracking.webp",
+  },
+  mobileBtn: "Download FREE App",
+  subTitle: null,
+  title: "A tool tracking system that syncs with the rest of your operation",
+};
+export const stopToolsData = {
+  id: 324,
+  title: null,
+  subTitle: null,
+  btnText: "Get started FREE",
+
+  btnUrl: null, // can be replaced with a link like "/signup" if needed
+  mobileBtn: "Download FREE App",
+  featureHighlightSectionVisible: true,
+  featuresList: [
+    {
+      id: 408,
+      title: "The log that stops tools from “growing legs”",
+      conclusion:
+        "With Contractor+, every asset has a clear chain of custody—so you keep more of what you buy.",
+      content: [
+        {
+          title: "Time-stamped check-in/out receipts and transfers",
+          text: "Time-stamped check-in/out receipts and transfers",
+        },
+        {
+          title: "Truck-level Bluetooth scans before leaving a site",
+          text: "Truck-level Bluetooth scans before leaving a site",
+        },
+        {
+          title: "Searchable history by tool, job, person, or truck",
+          text: "Searchable history by tool, job, person, or truck",
+        },
+      ],
+      cardImg: {
+        src: "/images/webp/tool-tracking-system.webp",
+        alt: "Track properties",
+      },
+    },
+  ],
+};
+export const neverLookBackToolData = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Average reduction in missing tools",
+      start: 0,
+      end: 90,
+      suffix: "%",
+      prefix: "~",
+      value: null,
+
+      lottieJson: up_arrow_black,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Admin time saved on tracking & audits",
+      start: 0,
+      end: 8,
+      suffix: "hours/mo",
+      denominator: null,
+      prefix: null,
+      value: null,
+      lottieJson: productivity,
+      cardImage: {
+        url: null,
+      },
+      icons: <ClockIcon />,
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Typical savings from recovered/avoided loss",
+      start: 0,
+      end: 1500,
+      suffix: "/yr",
+      prefix: "$",
+      denominator: null,
+      value: null,
+      lottieJson: clock,
+      cardImage: {
+        url: null,
+      },
+      icons: <UpArrowIcon />,
+    },
+  ],
+};
+export const tool_comparisonData = {
+  id: 1,
+  title: "What they call a “premium” feature, we call standard",
+  subTitle: "The features they hide behind paywalls come standard here.",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Built-In Check-In/Out & Transfers ",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Role-Based Permissions",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+
+    {
+      featureName: "Full Assignment History & Audit Log |",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "QR + Bluetooth Scanning",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Truck Scan Mode (missing-item check) ",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Central Asset Dashboard & Search",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Asset Value Tracking & Usage Billing",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Use Our Tags or Yours",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+  ],
+};
 export const businessBenefits = [
   "Effortlessly Manage Your Business",
   "Team Collaboration",
@@ -550,6 +711,68 @@ export const leadHGenerationFaqData = {
       question: "Can I subscribe to this service on the free plan?",
       answer:
         "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
+    },
+  ],
+};
+export const toolEquipmentTracking = {
+  title:
+    "Turn the full job history into one clean invoice, without manual re-entry.",
+  slug: "field-service",
+  solutionCards: [
+    {
+      id: 2,
+      title: "Library-Style Checkouts",
+      description:
+        "Assign tools like library books—check out, transfer, and return with a tap. Self-assign or assign to others (with permission).",
+    },
+
+    {
+      id: 4,
+      title: "Fast Scan Workflows",
+      description:
+        "Check in/out by scanning a QR label or via Bluetooth presence. No typing. No guesswork.",
+    },
+    {
+      id: 5,
+      title: "Role-Based Controls",
+      description:
+        "Decide exactly who can view, add, edit, assign, transfer, or retire assets.",
+    },
+    {
+      id: 6,
+      title: "Full Chain of Custody",
+      description:
+        "Every assignment, transfer, and return is time and date stamped. You’ll know who had what, when, and where.",
+    },
+    {
+      id: 7,
+      title: "Bluetooth Tool Tags",
+      description:
+        "Use Contractor+ tags (multiple options) or bring your own. Hop in the truck, run a Truck Scan, and instantly see what’s on board—and what’s missing.",
+    },
+    {
+      id: 8,
+      title: "Central Dashboard",
+      description:
+        "See every tool and piece of equipment in real time—by job, person, crew, or truck. Find what you need in a couple clicks.",
+    },
+    {
+      id: 9,
+      title: "Job & People Linking",
+      description:
+        "Tie each asset to a job or team member for instant context.",
+    },
+    {
+      id: 1,
+      title: "Asset Value & Billing",
+      description:
+        "Track purchase price and current value. Add equipment usage to invoices (hourly, daily, or per job) without hunting for numbers.",
+    },
+    {
+      id: 3,
+      title: "Bulk Actions",
+      description:
+        "Bulk-assign, bulk-return, and bulk-retire tools after a shift or phase wrap.",
     },
   ],
 };

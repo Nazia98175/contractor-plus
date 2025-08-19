@@ -9,6 +9,8 @@ import "./globals.css";
 import "./style.css";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
+import CookieBanner from "@/components/common/CookieBanner";
+import AccessibilityWidget from "@/components/common/AccessibilityWidget";
 
 type Props = {
   children: ReactNode;
@@ -27,7 +29,11 @@ export default function RootLayout({ children }: Props) {
           async={true}
         ></script>
       </Head>
-      <body className="font-jakarta">{children}</body>
+      <body className="font-jakarta">
+        {children}
+        <CookieBanner />
+        <AccessibilityWidget lang="en" position="bottom-left" />
+      </body>
     </html>
   );
 }

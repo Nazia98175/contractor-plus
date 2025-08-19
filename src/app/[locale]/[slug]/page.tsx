@@ -93,7 +93,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-  console.log(trackProperties, "teams using contractor");
+  console.log(pageData, "teams using contractor");
+  console.log(trackProperties, "trackproperties  dcsdfdfgdfg");
   return (
     <>
       <div id="home-page-wrapper-2">
@@ -112,15 +113,15 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <TrustedService reviews={reviews} slug={useParams?.slug} />
 
           <SwitchingTool switchingTool={pageData?.switchingTool} />
-        </div>
-        <FieldService
-          slug={pageData.slug}
-          fieldService={pageData.fieldServiceData}
-          theme={pageData.theme as "light" | "dark" | "estimateTheme"}
-          apiData={true}
-          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
-        />
 
+          <FieldService
+            slug={pageData.slug}
+            fieldService={pageData.fieldServiceData}
+            theme={pageData.theme as "light" | "dark" | "estimateTheme"}
+            apiData={true}
+            mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
+          />
+        </div>
         {/* Direct component rendering without lazy loading */}
         <div className="bg-white">
           {Boolean(trackProperties?.featureHighlightSectionVisible) && (

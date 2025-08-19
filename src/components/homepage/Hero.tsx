@@ -96,10 +96,17 @@ const Hero = ({
           </div>
         </div>
         <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom xl:w-[70%]">
-          <div className="relative -z-10 h-full w-full">
+          <div className="relative -z-10 hidden h-full w-full md:block">
             <VideoOptimizer
               highResUrl={"/video/hero-video-higher.mp4"}
               lowResUrl={"/video/hero-video.mp4"}
+              videoUrl={homePageContent?.hero_image?.url}
+            />
+          </div>
+          <div className="relative -z-10 block h-full w-full md:hidden">
+            <VideoOptimizer
+              highResUrl={"/video/hero-mobile.mp4"}
+              lowResUrl={"/video/hero-mobile.webm"}
               videoUrl={homePageContent?.hero_image?.url}
             />
           </div>

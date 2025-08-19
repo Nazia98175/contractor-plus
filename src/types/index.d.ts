@@ -38,6 +38,7 @@ export interface ServiceData {
   userName: string;
   cardImg?: { url?: string };
   lottieJson?: object;
+  isIcon?: boolean;
 }
 
 export type ContractorPlatformsProps = {

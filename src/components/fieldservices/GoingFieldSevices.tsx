@@ -58,7 +58,7 @@ const GoingFieldSevices: React.FC<
       className="relative z-20 overflow-hidden pb-[52px] sm:pb-[60px] lg:pb-[95px]"
     >
       {isImageshow && (
-        <div id="parallex-img-wrapper">
+        <div id="parallex-img-wrapper"> 
           <Image
             width={1440}
             height={150}
@@ -71,6 +71,7 @@ const GoingFieldSevices: React.FC<
           />
         </div>
       )}
+
       {/* <Copy animateOnScroll={true} delay={0.2}> */}
       <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[1068px]">
         <span>{switchingTool?.title}</span>

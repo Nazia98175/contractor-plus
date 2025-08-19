@@ -5,11 +5,6 @@ import SliderLayout from "../common/SliderLayout";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
 import Link from "next/link";
 
-interface Show {
-  title: string;
-  image: string;
-  itemPath: string;
-}
 type Props = {
   imageCard: any;
 };
@@ -46,11 +41,11 @@ const ContractorIndustrySlider: FC<Props> = ({ imageCard }) => {
         onSlideChange={(swiper: { realIndex: React.SetStateAction<number> }) =>
           setActiveIndex(swiper.realIndex)
         }
-        className="relative h-full w-full !pt-10 !pb-16"
+        className="relative h-full w-full !px-2.5 !pt-10 !pb-16"
       >
         {imageCard &&
           imageCard?.map((show: any, index: number) => (
-            <Link href={show?.linkUrl} key={index}>
+            <Link className="" href={show?.linkUrl} key={index}>
               <ContractorIndustrySliderCard show={show} />
             </Link>
           ))}

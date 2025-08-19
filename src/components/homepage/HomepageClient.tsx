@@ -54,7 +54,7 @@ const HomepageClient = ({
           height={300}
           sizes="700px"
         />
-      </div>{" "}
+      </div>
       <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />
       <WhatEverClient
         data={commonData?.contractorConnects}

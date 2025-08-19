@@ -1,7 +1,7 @@
 "use client";
-import React, { RefObject, useEffect, useRef, useState } from "react";
-import { ExternalLink, Pathbg } from "../common/Icons";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { ExternalLink, Pathbg } from "../common/Icons";
 
 type Props = {
   features: string[];
@@ -91,7 +91,7 @@ const FeatureNavigation = ({
             key={`${feature}-${index}`} // More stable key
             ref={activeSection === toCamelCase(feature) ? activeLinkRef : null}
             onClick={() => handleLinkClick(toCamelCase(feature))}
-            className={`feature-btn w-full lg:w-[180px] lg:truncate ${
+            className={`feature-btn w-full lg:w-[190px] lg:truncate ${
               isMobile ? "text-sm" : ""
             } cursor-pointer transition-colors duration-200 ${
               activeSection === toCamelCase(feature)

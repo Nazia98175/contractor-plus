@@ -1,61 +1,137 @@
 "use client";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderImage,
-} from "react-compare-slider";
-
+import React, { useState, useRef, useEffect } from 'react';
 import Copy from "../common/Copy";
-// import ImageReveal from "./ImageReveal";
-const DragAnimaiton = () => {
+
+const DragAnimation: React.FC = () => {
+  const [sliderPosition, setSliderPosition] = useState<number>(70);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMove = (clientX: number): void => {
+    if (!containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percentage = (x / rect.width) * 100;
+    setSliderPosition(percentage);
+  };
+
+  const handleMouseDown = (): void => {
+    setIsDragging(true);
+  };
+
+  const handleMouseUp = (): void => {
+    setIsDragging(false);
+  };
+  
+  const handleMouseMove = (e: MouseEvent): void => {
+    if (!isDragging) return;
+    handleMove(e.clientX);
+  };
+
+  const handleTouchMove = (e: TouchEvent): void => {
+    if (!isDragging) return;
+    handleMove(e.touches[0].clientX);
+  };
+
+  useEffect(() => {
+    if (isDragging) {
+      const handleDocumentMouseMove = (e: MouseEvent) => handleMouseMove(e);
+      const handleDocumentMouseUp = () => handleMouseUp();
+      const handleDocumentTouchMove = (e: TouchEvent) => handleTouchMove(e);
+      const handleDocumentTouchEnd = () => handleMouseUp();
+
+      document.addEventListener('mousemove', handleDocumentMouseMove);
+      document.addEventListener('mouseup', handleDocumentMouseUp);
+      document.addEventListener('touchmove', handleDocumentTouchMove);
+      document.addEventListener('touchend', handleDocumentTouchEnd);
+      
+      return () => {
+        document.removeEventListener('mousemove', handleDocumentMouseMove);
+        document.removeEventListener('mouseup', handleDocumentMouseUp);
+        document.removeEventListener('touchmove', handleDocumentTouchMove);
+        document.removeEventListener('touchend', handleDocumentTouchEnd);
+      };
+    }
+  }, [isDragging]);
+
   return (
     <div className="relative mx-auto mt-[45px] mb-[59px] w-full max-w-[1920px]">
       <Copy>
         <h2 className="gradient-custom-2 section-heading-2 relative z-30 -mb-12 px-2 text-center">
-          See what’s possible with Contractor+ Local
+          See what's possible with Contractor+ Local
         </h2>
       </Copy>
 
       <div className="relative h-full overflow-hidden">
-        <div className="pointer-events-none absolute -top-[12%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>{" "}
-        <div className="pointer-events-none absolute -bottom-[4%] z-20 h-full max-h-[188px] w-full bg-white blur-[50px]"></div>
+        <div className="pointer-events-none absolute top-0 sm:-top-[12%] z-20 h-full max-h-[70px] sm:max-h-[188px] w-full bg-white blur-sm sm:blur-[50px]"></div>
+        <div className="pointer-events-none absolute bottom-0 sm:-bottom-[4%] z-20 h-full max-h-[70px] sm:max-h-[188px] w-full bg-white blur-sm sm:blur-[50px]"></div>
         <div className="pointer-events-none absolute -top-[20%] bottom-0 left-[-4%] z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
         <div className="pointer-events-none absolute -top-[20%] right-[-4%] bottom-0 z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
-        <div className="relative flex h-full w-full items-center justify-between px-2">
+        
+        <div className="relative flex h-full w-full items-center justify-between sm:px-2">
           <div className="relative mt-4 flex h-full w-full items-center justify-between">
             <div className="mx-auto flex h-full w-full justify-between">
-              <ReactCompareSlider
-                className="w-full"
-                keyboardIncrement={2}
-                defaultValue={70}
-                itemOne={
-                  <ReactCompareSliderImage
-                    src="/images/png/possible-top.png"
-                    // srcSet="/images/png/possible-top.png"
-                    alt="Image one"
-                    className="w-full"
-                  />
-                }
-                handle={
-                  <>
-                    <img
-                      className="h-full max-w-[62px] min-w-[61px] object-contain"
-                      src="/images/png/drag-element.png"
-                    />
-                  </>
-                }
-                itemTwo={
-                  <ReactCompareSliderImage
+              
+              {/* Custom Compare Slider Container */}
+              <div 
+                ref={containerRef}
+                className="w-full relative overflow-hidden cursor-ew-resize select-none"
+              >
+                {/* Before Image (Bottom Layer) */}
+                <div className="relative w-full bg-white">
+                  <img
                     src="/images/png/possible-bottom.png"
-                    className="w-full"
-                    // srcSet="/images/png/possible-bottom.png"
                     alt="Image two"
+                    className="w-full"
+                    draggable={false}
                   />
-                }
-              />
+                </div>
+
+                {/* After Image (Top Layer with Clip) */}
+                <div 
+                  className="absolute inset-0 w-full h-full bg-white"
+                  style={{ 
+                    clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` 
+                  }}
+                >
+                  <img
+                    src="/images/png/possible-top.png"
+                    alt="Image one"
+                    className="w-full h-full object-cover"
+                    draggable={false}
+                  />
+                </div>
+
+                {/* Slider Line and Handle */}
+                <div 
+                  className="absolute top-0 bottom-0 w-[2px] bg-white/80"
+                  style={{ 
+                    left: `${sliderPosition}%`, 
+                    transform: 'translateX(-50%)' 
+                  }}
+                >
+                  {/* Drag Handle */}
+                  <div 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    onMouseDown={handleMouseDown}
+                    onTouchStart={handleMouseDown}
+                  >
+                    <img
+                      className="h-full max-w-7 min-w-7 lg:max-w-[62px] lg:min-w-[62px] object-contain cursor-ew-resize"
+                      src="/images/png/drag-element.png"
+                      alt="Drag handle"
+                      draggable={false}
+                    />
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-        <div className="relative z-20 mx-auto mt-6 flex w-full max-w-[805px] items-center justify-between">
+        
+        <div className="relative z-20 mx-auto mt-2 sm:mt-6 flex w-full max-w-[805px] items-center justify-between px-2">
           <div className="text-customGrey w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             Before
           </div>
@@ -73,4 +149,4 @@ const DragAnimaiton = () => {
   );
 };
 
-export default DragAnimaiton;
+export default DragAnimation;

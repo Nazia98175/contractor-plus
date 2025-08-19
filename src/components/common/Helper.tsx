@@ -3238,6 +3238,7 @@ export const clientReviews = {
             review: `"We've got two crews working 5 to 6 days a week now. A year ago, it was just me. We would have never been able to grow like we have if it wasn't for Contractor+. The scheduling and client agreements makes my life a lot easier. Contractor+ ROCKS!"`,
             userRole: " Owner, iCare Lawn Care & Landscaping",
           },
+
           {
             id: 8,
             userName: "Brandon Geiger",
@@ -3246,24 +3247,12 @@ export const clientReviews = {
             videoLink:
               "https://www.youtube.com/embed/CllT0U-CtGc?si=IR_GlvuvFK5Q8XqP",
             isModal: true,
-            companyLogo: "/images/png/john-croy.png",
+            companyLogo: "/images/png/brandon-ginger.png",
             review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
             userRole: " CEO at Rands Mechanical",
           },
           {
             id: 9,
-            userName: "Brandon Geiger",
-            profileImg: "/images/png/josh-lesson.png",
-            rating: 5,
-            videoLink:
-              "https://www.youtube.com/embed/CllT0U-CtGc?si=IR_GlvuvFK5Q8XqP",
-            isModal: true,
-            companyLogo: "/images/png/john-croy.png",
-            review: `"I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."`,
-            userRole: " CEO at Rands Mechanical",
-          },
-          {
-            id: 10,
             userName: "Chad Cranfill",
             profileImg: "/images/webp/chad-cranified.webp",
             rating: 5,
@@ -3273,7 +3262,7 @@ export const clientReviews = {
             userRole: "Owner, Cranfill Construction",
           },
           {
-            id: 11,
+            id: 10,
             userName: "Justin Mcnichols",
             profileImg: "/images/png/justin-mcnichols.png",
             rating: 5,
@@ -3285,7 +3274,7 @@ export const clientReviews = {
             userRole: "President, TPB Construction",
           },
           {
-            id: 12,
+            id: 11,
             userName: "Olivia Johnson",
             rating: 5,
             isModal: false,
@@ -3293,25 +3282,14 @@ export const clientReviews = {
             userRole: "Keystone Contracting Solutions",
           },
           {
-            id: 13,
+            id: 12,
             userName: "Liam Davis",
             rating: 5,
             isModal: false,
             review: `Balancing budgets across multiple projects always felt risky until Contractor+ handled it for me. I record hours in time tracking, tag every expense during site work, and generate invoices straight away through invoicing & billing. The deal flow tracker keeps tabs on new leads and maps progress from first inquiry to signed contract. That clarity has helped me win repeat clients and avoid weekend catch-up sessions, making my workweek more predictable and productive.`,
             userRole: "Summit General Contractors",
           },
-          {
-            id: 14,
-            userName: "Josh T.",
-            profileImg: "/images/png/josh.png",
-            rating: 5,
-            videoLink:
-              "https://www.youtube.com/embed/8ts4jsNZtgM?si=qiCj5doq9gsEocRn",
-            isModal: true,
-            companyLogo: "/images/svg/randsIcon.svg",
-            review: `"Contractor+ covers nearly every part of our business. Now, we’re not just working - we’re busy handling new leads every day."`,
-            userRole: "Hermano's",
-          },
+
           {
             id: 15,
             userName: "Mia Jackson",
@@ -3320,32 +3298,9 @@ export const clientReviews = {
             review: `Tight turnarounds between projects once left me scrambling, but Contractor+ scheduling fills in gaps and sends reminders via business phone & sms, while automated client agreements secure approvals before I arrive. Now I show up confident that every homeowner is ready, and my calendar flows smoothly. That dependable rhythm has cut my admin time in half, so I can start work faster.`,
             userRole: "ProBuild Construction Co.",
           },
+          ,
           {
             id: 16,
-            userName: "John Croy",
-            profileImg: "/images/png/john-croy.png",
-            rating: 5,
-            videoLink:
-              "https://www.youtube.com/embed/L49D7VE_Usw?si=3I-iy97Au__yyywp ",
-            isModal: true,
-            companyLogo: "/images/svg/randsIcon.svg",
-            review: `"Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."`,
-            userRole: "Co-Owner, Ross Co. Home Pro's",
-          },
-          {
-            id: 17,
-            userName: "Josh Leeson",
-            profileImg: "/images/webp/josh-lesson.webp",
-            rating: 5,
-            videoLink:
-              "https://www.youtube.com/embed/r-Fg4MymoXI?si=6I7brppBiJh4HGUc",
-            isModal: true,
-            companyLogo: "/images/svg/randsIcon.svg",
-            review: ` "We've got two crews working 5 to 6 days a week now. A year ago, it was just me. We would have never been able to grow like we have if it wasn't for Contractor+. The scheduling and client agreements makes my life a lot easier. Contractor+ ROCKS!"`,
-            userRole: " Owner, iCare Lawn Care & Landscaping",
-          },
-          {
-            id: 18,
             userName: "Joshua Michael Brooks Lee Jones",
             profileImg: "/images/webp/rands.webp",
             rating: 5,
@@ -3356,7 +3311,7 @@ export const clientReviews = {
             userRole: "Owner, Pressure Pug LLC",
           },
           {
-            id: 19,
+            id: 17,
             userName: "Ethan Miller",
             rating: 5,
             isModal: false,
@@ -3364,7 +3319,7 @@ export const clientReviews = {
             userRole: "Landmark Builders Group",
           },
           {
-            id: 20,
+            id: 18,
             userName: "Sophia Lee",
             rating: 5,
             isModal: false,
@@ -3373,7 +3328,7 @@ export const clientReviews = {
           },
 
           {
-            id: 21,
+            id: 19,
             userName: "Ava Martinez",
             rating: 5,
             isModal: false,
@@ -3382,7 +3337,7 @@ export const clientReviews = {
           },
 
           {
-            id: 22,
+            id: 20,
             userName: "Noah Brown",
             rating: 5,
             isModal: false,
@@ -3390,7 +3345,7 @@ export const clientReviews = {
             userRole: "Horizon Contracting LLC",
           },
           {
-            id: 23,
+            id: 21,
             userName: "Jacob Wilson",
             rating: 5,
             isModal: false,
@@ -4570,6 +4525,40 @@ export const automate_ControlData = {
     },
   ],
 };
+export const toolManagingData = {
+  id: 320,
+  title: "Managing client agreements is more complicated than it should be",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: <>You’re juggling clipboards, spreadsheets, and text threads.</>,
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: <>No check-in/check-out, no permissions, no history.</>,
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          When tools “grow legs,” there’s no accountability—and you eat the
+          cost.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
+
 import Agree_Creation from "../../../public/lotties/agreement-creation.json";
 import Signature_Approval from "../../../public/lotties/signature-approval.json";
 import Change_Management from "../../../public/lotties/change-management.json";
@@ -4903,7 +4892,18 @@ export const estimaticReviewsAi = {
           },
           {
             id: 4,
-            userName: "Brandon Geiger",
+            userName: "Juan Garcia",
+            profileImg: "/images/png/juan-garcia.png",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=KpYSsQhP_J0",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `""I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined.""`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 5,
+            userName: "Joshua Michael Brooks Lee Jones",
             profileImg: "/images/png/brandon-ginger.png",
             rating: 5,
             videoLink:

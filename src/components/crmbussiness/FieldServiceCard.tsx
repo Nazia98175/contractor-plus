@@ -100,11 +100,31 @@ const FieldServiceCard: React.FC<Props> = ({
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  {isIcon && (
+                  {/* {service?.isIcon && true && (
+                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                      <TickIcon />
+                    </span>
+                  )} */}
+
+                  {/* {!(
+                    slug === "field-service-payments" ||
+                    slug === "field-service-scheduling-software" ||
+                    "ai-estimating-software"
+                  ) && (
+                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
+                      <TickIcon />
+                    </span>
+                  )} */}
+                  {!(
+                    slug === "field-service-payments" ||
+                    slug === "field-service-scheduling-software" ||
+                    slug === "ai-estimating-software"
+                  ) && (
                     <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
                       <TickIcon />
                     </span>
                   )}
+
                   <div>
                     {feature?.title && (
                       <h5

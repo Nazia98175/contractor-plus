@@ -15,6 +15,7 @@ import {
   dealReviews2,
   platforms,
   propertyCRMSection,
+  propertyCRMSection2,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -74,7 +75,7 @@ const ContractorClientAgreementPage = () => {
         />
         <AutmateDoContacts
           ncc={"No credit card required"}
-          trackProperties={propertyCRMSection}
+          trackProperties={propertyCRMSection2}
         />
         <ContractorStartMain cardsData={automatedCardData.cardsDetail} />
         <KindAdorable

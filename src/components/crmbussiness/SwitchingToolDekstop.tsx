@@ -22,75 +22,78 @@ const SwitchingToolDesktop = ({
 
   useGSAP(
     () => {
-      // Initial positioning
-      gsap.set(cardRef1.current, {
-        x: "110%",
-        y: "12%",
-        rotation: 0,
-        scale: 1,
-        opacity: 1,
-        filter: "blur(2.5px)",
-      });
-      gsap.set(cardRef2.current, {
-        x: "15%",
-        y: "20%",
-        rotation: 0,
-        scale: 0.97,
-        opacity: 0.95,
-        filter: "blur(2.5px)",
-      });
-      gsap.set(cardRef3.current, {
-        x: "-80%",
-        y: "27%",
-        rotation: 0,
-        scale: 0.94,
-        opacity: 0.9,
-        filter: "blur(2.5px)",
-      });
-
-      // Scroll animation timeline
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-          end: "bottom 80%",
-          scrub: 1,
-        },
-      });
-
-      scrollTl.to(
-        cardRef1.current,
-        {
-          x: "0%",
-          y: "15%",
-          rotation: -15,
-          scale: 0.9,
-          filter: "blur(0px)",
-        },
-        0,
-      );
-      scrollTl.to(
-        cardRef2.current,
-        {
-          x: "0%",
-          y: "0%",
+      setTimeout(() => {
+        // Initial positioning
+        gsap.set(cardRef1.current, {
+          x: "110%",
+          y: "12%",
+          rotation: 0,
           scale: 1,
           opacity: 1,
-          filter: "blur(0px)",
-        },
-        0,
-      );
-      scrollTl.to(
-        cardRef3.current,
-        {
-          x: "0%",
-          y: "15%",
-          rotation: 15,
-          scale: 0.9,
-          filter: "blur(0px)",
-        },
-        0,
-      );
+          filter: "blur(2.5px)",
+        });
+        gsap.set(cardRef2.current, {
+          x: "15%",
+          y: "20%",
+          rotation: 0,
+          scale: 0.97,
+          opacity: 0.95,
+          filter: "blur(2.5px)",
+        });
+        gsap.set(cardRef3.current, {
+          x: "-80%",
+          y: "27%",
+          rotation: 0,
+          scale: 0.94,
+          opacity: 0.9,
+          filter: "blur(2.5px)",
+        });
+
+        // Scroll animation timeline
+        const scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            end: "bottom 80%",
+            scrub: 1,
+            markers: true,
+          },
+        });
+
+        scrollTl.to(
+          cardRef1.current,
+          {
+            x: "0%",
+            y: "15%",
+            rotation: -15,
+            scale: 0.9,
+            filter: "blur(0px)",
+          },
+          0,
+        );
+        scrollTl.to(
+          cardRef2.current,
+          {
+            x: "0%",
+            y: "0%",
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+          },
+          0,
+        );
+        scrollTl.to(
+          cardRef3.current,
+          {
+            x: "0%",
+            y: "15%",
+            rotation: 15,
+            scale: 0.9,
+            filter: "blur(0px)",
+          },
+          0,
+        );
+      }, 2500);
     },
     { dependencies: [sectionRef], scope: sectionRef },
   );

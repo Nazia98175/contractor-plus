@@ -2202,3 +2202,25 @@ button {
   );
   filter: blur(40px);
 }
+.investor-text-shadow {
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 11px rgba(255, 255, 255, 0.5);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  align-self: stretch;
+}
+.ccc {
+  background: radial-gradient(
+      108.34% 2197.76% at 86.81% 50%,
+      #ee1e25 0%,
+      #bebebe 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

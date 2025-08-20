@@ -205,7 +205,7 @@ const ProofWorking = () => {
           </div>
         </div>
       </div>
-      <p className="problem-text pt-[65px] text-center text-base font-bold">
+      <p className="ccc mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
         Now imagine what we’ll do with real capital.
       </p>
     </div>

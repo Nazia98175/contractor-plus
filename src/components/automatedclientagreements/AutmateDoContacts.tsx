@@ -52,9 +52,9 @@ const AutmateDoContacts: React.FC<Props> = ({ ncc, trackProperties }) => {
           </ul>
 
           <Copy animateOnScroll={true} delay={0.3}>
-            <h5 className="text-wallStreet w-full text-sm font-semibold md:text-base">
+            <h6 className="text-wallStreet w-full text-sm font-semibold md:text-base">
               {trackProperties?.featuresList?.[0]?.conclusion}
-            </h5>
+            </h6>
           </Copy>
         </div>
 

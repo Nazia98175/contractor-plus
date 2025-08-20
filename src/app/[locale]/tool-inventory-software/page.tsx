@@ -3,15 +3,11 @@ import AutomatedClientHero from "@/components/automatedclientagreements/Automate
 import DualSlider from "@/components/common/DualSlider";
 import {
   automatedCardData,
-  automatedFaq,
-  automatedformData,
-  automatedHeadingData,
   blogList,
   clientReviews,
   dealflowhero,
   dealReviews2,
   platforms,
-  propertyCRMSection,
   toolManagingData,
 } from "@/components/common/Helper";
 import {
@@ -23,7 +19,10 @@ import {
   neverLookBackToolData,
   stopToolsData,
   tool_comparisonData,
+  toolBlogData,
   toolEquipmentTracking,
+  toolformData,
+  toolsFaq,
   tooltrackingData,
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -108,7 +107,7 @@ const ToolAndTipEquipmentPage = () => {
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            data={automatedformData}
+            data={toolformData}
             variant="primary"
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="light"
@@ -119,7 +118,7 @@ const ToolAndTipEquipmentPage = () => {
           className="mx-auto w-full max-w-[889px]"
         />
         <Faq
-          faq={automatedFaq}
+          faq={toolsFaq}
           classNameAnswer="pt-1"
           mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
@@ -128,7 +127,7 @@ const ToolAndTipEquipmentPage = () => {
 
       <BlogPosts
         data={blogList}
-        blogs={automatedHeadingData}
+        blogs={toolBlogData}
         className="mt-7 mb-20 md:mt-9"
         classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
       />

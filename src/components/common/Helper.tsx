@@ -4455,31 +4455,26 @@ export const propertyCRMSection = {
   btnUrl: null, // can be replaced with a link like "/signup" if needed
   mobileBtn: "Download FREE App",
   featureHighlightSectionVisible: true,
+};
+export const propertyCRMSection2 = {
   featuresList: [
     {
-      id: 408,
+      id: 1,
       title:
         "With Contractor+, every agreement is airtight, time stamped, and stored for exactly this moment.",
       content: [
-        {
-          title: "Signed scope changes with cost breakdowns",
-          text: "Signed scope changes with cost breakdowns",
-        },
-        {
-          title: "Timestamped approvals and communication logs",
-          text: "Timestamped approvals and communication logs",
-        },
-        {
-          title: "Stored and searchable records tied to each job",
-          text: "Stored and searchable records tied to each job",
-        },
+        { title: "Signed scope changes with cost breakdowns" },
+        { title: "Timestamped approvals and communication logs" },
+        { title: "Stored and searchable records tied to each job" },
       ],
+      conclusion: "Your contracts are always enforceable and traceable.", // optional if you want a footer text
       cardImg: {
-        src: "/images/property-tracking.png",
-        alt: "Track properties",
+        src: "/images/png/property-tracking.png",
+        alt: "Property tracking illustration",
       },
     },
   ],
+  btnText: "Get started FREE",
 };
 
 export const automate_ControlData = {

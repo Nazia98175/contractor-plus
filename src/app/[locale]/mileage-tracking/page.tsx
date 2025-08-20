@@ -1,88 +1,76 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
-import ContractorStartMain from "@/components/automatedclientagreements/ContractorStartMain";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import {
-  automate_comparisonData,
-  automate_ControlData,
   automatedCardData,
   automatedFaq,
   automatedformData,
   automatedHeadingData,
-  automateneverlookBackData,
   blogList,
   clientReviews,
   dealflowhero,
   dealReviews2,
   platforms,
-  propertyCRMSection,
-  propertyCRMSection2,
+  toolManagingData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
+import {
+  neverLookBackToolData,
+  stopToolsData,
+  tool_comparisonData,
+  tooltrackingData,
+} from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
-import FieldService from "@/components/crmbussiness/FieldService";
-import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
+import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import Image from "next/image";
+import React from "react";
 
-export const metadata = {
-  title: "Contractor Client Agreement Made Simple | Contractor+",
-  description:
-    "One automated system to create, sign, amend, and store every client contract. We manage every contract from start to finish.",
-};
-const ContractorClientAgreementPage = () => {
+const MileageTrackingPage = () => {
   return (
-    <>
+    <main className="overflow-hidden">
       <AutomatedClientHero
         hero={{
-          heroTitle:
-            "Finally, a way to track and automate each stage of client agreements",
+          heroTitle: "Tap once to track every mile. Reimburse with confidence.",
           heroDescription:
-            "One automated system to create, sign, amend, and store every client contract.",
+            "Stupidly simple trips, IRS-friendly reports, and zero hardware.",
         }}
-        featureTag="Automated Client Agreements"
-        heroImg="/images/webp/automated-client-hero.webp"
+        featureTag="Mileage Tracking Software For Contractors"
+        heroImg="/images/webp/mileage-tracking-hero.webp"
         slug="crm"
         commonData={dealflowhero}
+        isBlurBg={false}
+        imgClass="max-w-[700px] w-full mt-16 xl:-mt-14"
       />
-      <div className="pb-6">
-        <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
-      </div>
-      <SwitchingTool switchingTool={automate_ControlData} />
-      <div className="relative overflow-hidden">
-        <FieldService
-          fieldService={automatedCardData}
-          theme="dark"
-          slug="estimateTheme"
-          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
-        />
-      </div>
-      <div className="mt-16 bg-white sm:mt-0">
+      <TrustedService
+        reviews={clientReviews}
+        slug="crm"
+        apiData={false}
+        className="-mt-5"
+      />
+      <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
+      <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}
-          trackProperties={propertyCRMSection}
-          desktopImgUrl="/images/webp/client-agriment.webp"
-          mobileImgUrl="/images/png/client-agriment-mobile.png"
+          trackProperties={tooltrackingData}
         />
         <AutmateDoContacts
           ncc={"No credit card required"}
-          trackProperties={propertyCRMSection2}
+          trackProperties={stopToolsData}
         />
-        <ContractorStartMain cardsData={automatedCardData.cardsDetail} />
-        <KindAdorable
-          slug={"estimate"}
-          kindAdorable={automate_comparisonData}
-        />
-        <TeamsUsingContractor data={automateneverlookBackData} slug={""} />
+        <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
+        <KindAdorable slug={"estimate"} kindAdorable={tool_comparisonData} />
+        <TeamsUsingContractor data={neverLookBackToolData} slug={""} />
         <ThousandsReviews
           data={dealReviews2}
           reviews={dealReviews2.reviews}
@@ -93,9 +81,7 @@ const ContractorClientAgreementPage = () => {
       <div className="relative overflow-hidden">
         {/* Background Icons */}
         <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
         <div className="relative">
           <Image
             width={800}
@@ -116,12 +102,10 @@ const ContractorClientAgreementPage = () => {
             variantBtn="light"
           />
         </div>
-
         <TrustBar
           platforms={platforms}
           className="mx-auto w-full max-w-[889px]"
         />
-
         <Faq
           faq={automatedFaq}
           classNameAnswer="pt-1"
@@ -136,8 +120,8 @@ const ContractorClientAgreementPage = () => {
         className="mt-7 mb-20 md:mt-9"
         classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
       />
-    </>
+    </main>
   );
 };
 
-export default ContractorClientAgreementPage;
+export default MileageTrackingPage;

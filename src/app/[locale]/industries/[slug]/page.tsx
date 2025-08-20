@@ -96,7 +96,7 @@ const IndustryPage = async ({ params }: PageProps) => {
           customIconsMap={teamsUsingContractor}
         />
       </div>
-   
+
       <SecondaryReview
         data={{ title: thousandReviews?.title }}
         reviews={thousandReviews?.reviews}

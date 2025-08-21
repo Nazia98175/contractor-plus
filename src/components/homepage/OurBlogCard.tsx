@@ -47,7 +47,7 @@ const OurBlogCard = ({
           src="/images/webp/blog-angle2.webp"
           alt="blog angle"
         />
-        <h3 className="text-winterWay relative z-10 pb-2 text-base leading-none font-extrabold transition-all duration-300 ease-in-out md:text-lg">
+        <h3 className="text-winterWay relative z-10 bg-white pb-2 text-base leading-none font-extrabold transition-all duration-300 ease-in-out md:text-lg">
           {article?.blogTitle ?? ""}
         </h3>
         <p className="text-secondary relative z-10 max-w-[255px] text-xs font-medium">

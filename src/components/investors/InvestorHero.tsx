@@ -74,7 +74,7 @@ const InvestorHero = () => {
             </p>
           </Copy>
           <Copy delay={0.5} animateOnScroll={false}>
-            <p className="text-darkGray py-2 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
+            <p className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
               And we’ve done it without a cent from VC’s.
             </p>
           </Copy>

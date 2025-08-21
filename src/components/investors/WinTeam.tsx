@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Button from "../common/Button";
 import Image from "next/image";
@@ -57,7 +58,7 @@ const WinTeam = () => {
               src={card.img}
               alt="win team"
             />
-            <p className="text-lightBlackGrey pt-4 text-center text-lg font-bold">
+            <p className="text-lightBlackGrey mx-auto pt-4 text-center text-lg font-bold lg:max-w-[268px]">
               {card.text}
             </p>
           </article>
@@ -75,7 +76,9 @@ const WinTeam = () => {
                 src={card.img}
                 alt="win team"
               />
-              <p className="text-lightBlackGrey pt-4 text-center text-lg font-bold">
+              <p
+                className={`text-lightBlackGrey mx-auto pt-4 text-center text-lg font-bold ${card.imgWidth}`}
+              >
                 {card.text}
               </p>
             </article>

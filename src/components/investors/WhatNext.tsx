@@ -65,7 +65,7 @@ const WhatNext = () => {
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Tradeshow saturation
             </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
               The biggest booth. The loudest keynote. The best closers on the
               floor.
             </p>
@@ -77,7 +77,7 @@ const WhatNext = () => {
             <h3 className="text-lightBlackGrey text-lg font-bold">
               10x our investment into sales & support
             </h3>
-            <p className="text-sealGrey pt-3 text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-base font-semibold">
               Build the team who knows how to get the bag and keep it.
             </p>
           </div>
@@ -88,7 +88,7 @@ const WhatNext = () => {
             <h3 className="text-lightBlackGrey text-lg font-bold">
               ASO + SEO + Lead Gen acceleration
             </h3>
-            <p className="text-sealGrey pt-3 text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-base font-semibold">
               We already rank. Now we’ll scale it.
             </p>
           </div>
@@ -113,7 +113,7 @@ const WhatNext = () => {
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Customer-led content engine
             </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
               Podcast, testimonials, UGC, success stories weekly.
             </p>
           </div>
@@ -124,7 +124,7 @@ const WhatNext = () => {
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Ambassadors, associations & integration partners
             </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
               CAC drops, reach explodes.
             </p>
           </div>

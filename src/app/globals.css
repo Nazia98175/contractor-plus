@@ -381,7 +381,7 @@ body {
   @apply text-pantone3 text-base font-semibold md:text-lg lg:text-xl xl:text-2xl;
 }
 .card-review {
-  @apply font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm;
+  @apply font-montserrat text-[10px] font-medium sm:text-xs lg:text-sm;
 }
 .footer-li-hover {
   @apply absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 rounded-full bg-white transition-all duration-300 group-hover:w-full;

@@ -100,26 +100,7 @@ const FieldServiceCard: React.FC<Props> = ({
             {(isEstimate ? features.slice(0, 2) : features.slice(0, 5)).map(
               (feature: any, index: number) => (
                 <div key={index} className="flex gap-3">
-                  {/* {service?.isIcon && true && (
-                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                      <TickIcon />
-                    </span>
-                  )} */}
-
-                  {/* {!(
-                    slug === "field-service-payments" ||
-                    slug === "field-service-scheduling-software" ||
-                    "ai-estimating-software"
-                  ) && (
-                    <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
-                      <TickIcon />
-                    </span>
-                  )} */}
-                  {!(
-                    slug === "field-service-payments" ||
-                    slug === "field-service-scheduling-software" ||
-                    slug === "ai-estimating-software"
-                  ) && (
+                  {isIcon && (
                     <span className="h-fit max-w-[14px] sm:max-w-5 md:min-w-5">
                       <TickIcon />
                     </span>
@@ -133,7 +114,6 @@ const FieldServiceCard: React.FC<Props> = ({
                         {feature?.title}
                       </h5>
                     )}
-
                     <p className={`card-desc ${featureDescColor}`}>
                       {feature?.desc}
                     </p>
@@ -145,27 +125,21 @@ const FieldServiceCard: React.FC<Props> = ({
         </div>
 
         {/* Estimate testimonial */}
-        {isEstimate && (
-          <p className={`card-review ${isEstimateTextColor}`}>
-            {service?.cardQuote} <br /> <br />
-            <span className={`${isEstimateTextColor2}`}>
-              {service?.userName}
-            </span>
-          </p>
-        )}
+        <p className={`card-review ${isEstimateTextColor}`}>
+          {service?.cardQuote} <br /> <br />
+          <b className={`${isEstimateTextColor2}`}>{service?.userName}</b>
+        </p>
       </div>
 
       {/* Desktop image */}
       {apiData ? (
         <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
           {service?.lottieJson ? (
-            // <LottieAnimation animationData={service?.lottieJson} />
             <LottieAnimation
               ref={setLottieRef(idx)}
               loop={false} // Changed to false since we'll control playback
               autoplay={false} // Changed to false since we'll control playback
               animationData={service?.lottieJson}
-              // className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             />
           ) : service?.cardImg &&
             typeof service?.cardImg === "object" &&

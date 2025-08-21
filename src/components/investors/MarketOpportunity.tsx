@@ -19,7 +19,7 @@ const MarketOpportunity = () => {
           </Copy>
         </div>
 
-        <div className="relative mx-auto flex max-w-[1920px] flex-col items-center justify-between gap-4 px-2 pt-[40px] sm:px-[60px] md:gap-6 md:pt-[95px] lg:px-[100px] xl:flex-row 2xl:px-[128px]">
+        <div className="relative mx-auto flex max-w-[1322px] flex-col items-center justify-between gap-4 px-2 pt-[40px] sm:px-[60px] md:gap-6 md:pt-[95px] lg:px-[100px] xl:flex-row 2xl:px-[128px]">
           <img
             className="absolute top-[-25%] left-0 z-[-1] hidden w-full max-w-[330px] opacity-60 xl:block"
             src="/images/webp/market-opportunity-5.webp"

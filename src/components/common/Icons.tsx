@@ -5931,3 +5931,93 @@ export const RoadMapCircleIcon = () => (
     <circle cx="16" cy="16" r="8" fill="#0B902B" />
   </svg>
 );
+export const InvestorHeroIcon = () => (
+  <svg
+    width="600"
+    height="600"
+    viewBox="0 0 706 706"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="opacity-40"
+  >
+    <g filter="url(#filter0_f)">
+      <circle
+        cx="353"
+        cy="353"
+        r="323"
+        fill="url(#paint0_linear)"
+        fillOpacity="0.4"
+      />
+      <circle
+        cx="353"
+        cy="353"
+        r="308.107"
+        stroke="url(#paint1_linear)"
+        fillOpacity="0.2"
+        strokeWidth="29.7857"
+      />
+    </g>
+    <circle cx="353" cy="353" r="161.5" fill="url(#paint2_radial)" />
+    <circle
+      opacity="0.2"
+      cx="353"
+      cy="353"
+      r="143.957"
+      stroke="#696969"
+      strokeWidth="2.12755"
+    />
+    <defs>
+      <filter
+        id="filter0_f"
+        x="0.299999"
+        y="0.299999"
+        width="705.4"
+        height="705.4"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur stdDeviation="14.85" result="effect1_foregroundBlur" />
+      </filter>
+      <linearGradient
+        id="paint0_linear"
+        x1="353"
+        y1="30"
+        x2="353"
+        y2="676"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#313131" />
+        <stop offset="1" stopColor="#333333" stopOpacity="0" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear"
+        x1="353"
+        y1="30"
+        x2="353"
+        y2="626.5"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </linearGradient>
+      <radialGradient
+        id="paint2_radial"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(353 353) scale(162)"
+      >
+        <stop stopColor="#460002" />
+        <stop offset="1" stopColor="#250001" />
+      </radialGradient>
+    </defs>
+  </svg>
+);

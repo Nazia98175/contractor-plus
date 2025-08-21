@@ -175,7 +175,7 @@ const BlogHero = ({
       </div>
 
       {/* PARALLAX IMAGES */}
-      <div className="parallax-container absolute top-0 bottom-0 left-0 h-screen w-full">
+      <div className="parallax-container absolute top-0 bottom-0 left-0 h-full w-full">
         <img
           id="mountain-1"
           src="/images/mountain/mountain-1.png"
@@ -185,7 +185,7 @@ const BlogHero = ({
         <img
           id="mountain-2"
           src="/images/mountain/mountain-2.png"
-          className="absolute bottom-0 left-0 z-[14] h-[23vw] w-full"
+          className="absolute bottom-0 left-0 z-[14] h-[23vw] w-full origin-bottom"
           alt=""
         />
         <img
@@ -206,7 +206,7 @@ const BlogHero = ({
           className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
           alt=""
         />
-        <div className="absolute bottom-0 z-[11] h-[10vw] w-full bg-white"></div>
+        <div className="absolute bottom-0 z-[11] h-[25vh] w-full bg-white"></div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const WhyNow = () => {
     <section className="mx-auto max-w-[1920px] px-3 lg:px-0">
       <div className="relative">
         <img
-          className="absolute top-0 left-0 hidden h-full w-full lg:block"
+          className="absolute top-0 left-0 hidden h-full w-full object-contain lg:block"
           src="/images/webp/why-now-bg.webp"
           alt="now bg"
         />

@@ -30,11 +30,11 @@ const problems = [
 
 const TheProblem = () => {
   return (
-    <section className="mx-auto max-w-[1218px] px-4">
+    <section className="relative z-20 mx-auto -mt-[230px] max-w-[1234px] px-4 sm:-mt-[393px]">
       <Copy animateOnScroll={true}>
         <h4 className="main-heading text-mana text-center">The problem</h4>
       </Copy>
-      <Copy animateOnScroll={true}>
+      <Copy className="w-full" animateOnScroll={true}>
         <p className="text-ironFixture py-3 text-center text-sm font-semibold md:text-2xl">
           Contractors are still running modern businesses on outdated,
           overpriced, and fragmented software stacks. They’re duct-taping
@@ -54,9 +54,11 @@ const TheProblem = () => {
             className="relative flex flex-col items-center justify-center gap-3 p-5"
           >
             <span>{problem.icon}</span>
-            <p className="problem-text text-base font-medium md:text-[22px]">
-              {problem.title}
-            </p>
+            <div className="investor-text-shadow">
+              <p className="problem-text text-base leading-normal font-medium md:text-[22px]">
+                {problem.title}
+              </p>
+            </div>
 
             {problem.hasDivider && (
               <span className="absolute top-[46%] right-[50%] rotate-90 lg:top-0 lg:right-0 lg:rotate-none">

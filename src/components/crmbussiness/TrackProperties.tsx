@@ -25,7 +25,7 @@ const TrackProperties: React.FC<Props> = ({
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
-        sizes="100vw"
+        // sizes="100vw"
       />
 
       {/* Mobile background image */}
@@ -35,7 +35,7 @@ const TrackProperties: React.FC<Props> = ({
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
-        sizes="100vw"
+        // sizes="100vw"
       />
       {/* Device Images */}
       <CardReveal distance={50}>

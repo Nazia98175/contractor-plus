@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Button from "../common/Button";
 import Image from "next/image";
@@ -19,13 +20,13 @@ const WinTeam = () => {
     },
     {
       id: 3,
-      img: "/images/webp/win-team-3.webp",
+      img: "/images/webp/win-team-7.webp",
       text: "Board includes operators with two $100M+ software exits.",
       imgWidth: "max-w-[313px]",
     },
     {
       id: 4,
-      img: "/images/webp/win-team-6.webp",
+      img: "/images/webp/win-team-8.webp",
       text: "We’re not here to coast. We’re here to eat the legacy players’ lunch.",
       imgWidth: "max-w-[313px]",
     },
@@ -40,7 +41,7 @@ const WinTeam = () => {
   return (
     <div className="mx-auto max-w-[990px] px-4">
       <Copy animateOnScroll={true}>
-        <h3 className="text-mana pb-[101px] text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+        <h3 className="text-mana pb-[73px] text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
           Why this team wins
         </h3>
       </Copy>
@@ -57,7 +58,7 @@ const WinTeam = () => {
               src={card.img}
               alt="win team"
             />
-            <p className="text-lightBlackGrey pt-4 text-center text-lg font-bold">
+            <p className="text-lightBlackGrey mx-auto max-w-[268px] pt-4 text-center text-lg font-bold">
               {card.text}
             </p>
           </article>
@@ -75,7 +76,9 @@ const WinTeam = () => {
                 src={card.img}
                 alt="win team"
               />
-              <p className="text-lightBlackGrey pt-4 text-center text-lg font-bold">
+              <p
+                className={`text-lightBlackGrey mx-auto max-w-[300px] pt-4 text-center text-lg font-bold lg:${card.imgWidth}`}
+              >
                 {card.text}
               </p>
             </article>

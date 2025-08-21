@@ -108,18 +108,21 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             speed={600}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 12 },
-              520: { slidesPerView: 1.5, spaceBetween: 12 },
-              640: { slidesPerView: 2, spaceBetween: 12 },
-              768: { slidesPerView: 2, spaceBetween: 16 },
+              400: { slidesPerView: 1.5, spaceBetween: 12 },
+              520: { slidesPerView: 2, spaceBetween: 12 },
+              768: { slidesPerView: 2.2, spaceBetween: 12 },
+              800: { slidesPerView: 2.5, spaceBetween: 12 },
+              900: { slidesPerView: 3, spaceBetween: 16 },
               1024: { slidesPerView: 3, spaceBetween: 20 },
               1280: { slidesPerView: 3.5, spaceBetween: 34 },
+              1440: { slidesPerView: 4.5, spaceBetween: 34 },
+              1536: { slidesPerView: 5.5, spaceBetween: 34 },
             }}
           >
             {blogs.map((article, index) => (
-              <SwiperSlide>
+              <SwiperSlide className="mx-auto">
                 <OurBlogCard
                   article={article}
-                  key={index}
                   blogListMobile={blogListMobile}
                   index={index}
                 />

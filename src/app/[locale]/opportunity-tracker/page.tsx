@@ -77,7 +77,7 @@ const DealFlowTracker = () => {
         <div className="bg-kuroiBlack pointer-events-none absolute -top-1 z-20 h-2 w-full"></div>
         <ThousandsReviews
           data={dealReviews2}
-          reviews={dealReviews2.reviews} // Optional; only needed if used elsewhere
+          reviews={dealReviews2.reviews}
           variant="secondary"
           apiData={false}
         />

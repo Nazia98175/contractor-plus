@@ -30,7 +30,7 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
             width={480}
             height={600}
             className="h-auto w-full object-contain"
-            sizes="(max-width: 767px) 480px"
+            // sizes="(max-width: 767px) 480px"
           />
         </div>
 

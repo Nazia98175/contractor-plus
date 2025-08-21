@@ -8,7 +8,7 @@ import { PropWayToWin } from "./WayToWin";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Dashboard:React.FC<PropWayToWin> = ({connectedSystem}) => {
+const Dashboard: React.FC<PropWayToWin> = ({ connectedSystem }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -40,8 +40,9 @@ const Dashboard:React.FC<PropWayToWin> = ({connectedSystem}) => {
 
       ScrollTrigger.create({
         trigger: ref,
-        start: window.innerWidth < 768 ? "top 10%" : "top 140%", // Earlier trigger on mobile, later on desktop
-        end: "bottom center",
+        start: window.innerWidth < 768 ? "top 10%" : "top center", // Earlier trigger on mobile, later on desktop
+        end: "bottom 40%",
+        markers: false,
         onEnter: () => {
           const tickPath = ref.querySelector(".tick-icon path");
           const tickWrapper = ref.querySelector(".tick-icon");
@@ -141,14 +142,14 @@ const Dashboard:React.FC<PropWayToWin> = ({connectedSystem}) => {
         <source src="/video/dashboard-mobile.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="mx-auto w-full max-w-[1440px] mix-blend-screen max-md:hidden xl:h-[1300px] rela overflow-hidden">
-        <video className="w-full h-full" autoPlay loop muted playsInline>
+      <div className="rela mx-auto w-full max-w-[1440px] overflow-hidden mix-blend-screen max-md:hidden xl:h-[1300px]">
+        <video className="h-full w-full" autoPlay loop muted playsInline>
           <source src="/video/dashboard-desktop.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
       <div className="z-10 mx-auto grid w-full max-w-[1100px] grid-cols-1 justify-between px-3 max-md:mt-10 max-md:gap-24 md:absolute md:top-[12%] md:left-1/2 md:translate-x-[-50%] md:grid-cols-2 lg:h-[300px] xl:h-[400px]">
-        {connectedSystem?.systemList?.map((item:any, i:number) => (
+        {connectedSystem?.systemList?.map((item: any, i: number) => (
           <div
             key={i}
             ref={(el) => {

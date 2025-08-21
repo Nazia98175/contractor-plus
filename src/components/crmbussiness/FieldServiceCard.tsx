@@ -105,6 +105,7 @@ const FieldServiceCard: React.FC<Props> = ({
                       <TickIcon />
                     </span>
                   )}
+
                   <div>
                     {feature?.title && (
                       <h5
@@ -113,7 +114,6 @@ const FieldServiceCard: React.FC<Props> = ({
                         {feature?.title}
                       </h5>
                     )}
-
                     <p className={`card-desc ${featureDescColor}`}>
                       {feature?.desc}
                     </p>
@@ -125,27 +125,21 @@ const FieldServiceCard: React.FC<Props> = ({
         </div>
 
         {/* Estimate testimonial */}
-        {isEstimate && (
-          <p className={`card-review ${isEstimateTextColor}`}>
-            {service?.cardQuote} <br /> <br />
-            <span className={`${isEstimateTextColor2}`}>
-              {service?.userName}
-            </span>
-          </p>
-        )}
+        <p className={`card-review ${isEstimateTextColor}`}>
+          {service?.cardQuote} <br /> <br />
+          <b className={`${isEstimateTextColor2}`}>{service?.userName}</b>
+        </p>
       </div>
 
       {/* Desktop image */}
       {apiData ? (
         <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
           {service?.lottieJson ? (
-            // <LottieAnimation animationData={service?.lottieJson} />
             <LottieAnimation
               ref={setLottieRef(idx)}
               loop={false} // Changed to false since we'll control playback
               autoplay={false} // Changed to false since we'll control playback
               animationData={service?.lottieJson}
-              // className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
             />
           ) : service?.cardImg &&
             typeof service?.cardImg === "object" &&

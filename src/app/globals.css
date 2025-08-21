@@ -381,7 +381,7 @@ body {
   @apply text-pantone3 text-base font-semibold md:text-lg lg:text-xl xl:text-2xl;
 }
 .card-review {
-  @apply font-montserrat p-3 text-[10px] font-medium sm:text-xs lg:text-sm;
+  @apply font-montserrat text-[10px] font-medium sm:text-xs lg:text-sm;
 }
 .footer-li-hover {
   @apply absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 rounded-full bg-white transition-all duration-300 group-hover:w-full;
@@ -2201,4 +2201,26 @@ button {
     #ffffff 100%
   );
   filter: blur(40px);
+}
+.investor-text-shadow {
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 11px rgba(255, 255, 255, 0.5);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  align-self: stretch;
+}
+.ccc {
+  background: radial-gradient(
+      108.34% 2197.76% at 86.81% 50%,
+      #ee1e25 0%,
+      #bebebe 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

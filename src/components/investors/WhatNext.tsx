@@ -59,36 +59,38 @@ const WhatNext = () => {
         {/* first  */}
         <div className="flex items-start gap-20 2xl:gap-29">
           <div className="relative w-full max-w-[300px]">
-            <span className="absolute right-[-20%] -bottom-13">
+            <span className="absolute right-[-20%] -bottom-11">
               <RoadMapIcon />
             </span>
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Tradeshow saturation
             </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
               The biggest booth. The loudest keynote. The best closers on the
+              <br className="hidden lg:block" />
               floor.
             </p>
           </div>
           <div className="relative w-full max-w-[347px]">
-            <span className="absolute right-[-10%] -bottom-13">
+            <span className="absolute right-[-10%] -bottom-16">
               <RoadMapIcon />
             </span>
             <h3 className="text-lightBlackGrey text-lg font-bold">
               10x our investment into sales & support
             </h3>
-            <p className="text-sealGrey pt-3 text-base font-semibold">
-              Build the team who knows how to get the bag and keep it.
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+              Build the team who knows how to get the{" "}
+              <br className="hidden lg:block" /> bag and keep it.
             </p>
           </div>
           <div className="relative w-full max-w-[369px]">
-            <span className="absolute right-[0%] -bottom-19">
+            <span className="absolute right-[-14%] -bottom-22">
               <RoadMapIcon />
             </span>
-            <h3 className="text-lightBlackGrey text-lg font-bold">
+            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               ASO + SEO + Lead Gen acceleration
             </h3>
-            <p className="text-sealGrey pt-3 text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
               We already rank. Now we’ll scale it.
             </p>
           </div>
@@ -96,35 +98,37 @@ const WhatNext = () => {
         {/* second  */}
         <div className="flex items-start justify-end gap-20 pt-[72px] 2xl:gap-29">
           <div className="relative w-full max-w-[350px]">
-            <span className="absolute -top-13 right-[-20%] rotate-180">
+            <span className="absolute -top-15 right-[-20%] rotate-180">
               <RoadMapIcon />
             </span>
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Full-funnel paid media
             </h3>
             <p className="text-sealGrey pt-3 text-end text-base font-semibold">
-              Retargeting, YouTube, Meta, Google, TikTok, influencer UGC.
+              Retargeting, YouTube, Meta, Google,{" "}
+              <br className="hidden lg:block" /> TikTok, influencer UGC.
             </p>
           </div>
           <div className="relative w-full max-w-[347px]">
-            <span className="absolute -top-13 right-[-10%] rotate-180">
+            <span className="absolute -top-15 right-[-10%] rotate-180">
               <RoadMapIcon />
             </span>
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Customer-led content engine
             </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
-              Podcast, testimonials, UGC, success stories weekly.
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+              Podcast, testimonials, UGC, success{" "}
+              <br className="hidden lg:block" /> stories weekly.
             </p>
           </div>
           <div className="relative w-full max-w-[369px] pr-[20px]">
-            <span className="absolute -top-13 right-[-5%] rotate-180">
+            <span className="absolute -top-15 right-[-5%] rotate-180">
               <RoadMapIcon />
             </span>
             <h3 className="text-lightBlackGrey text-end text-lg font-bold">
               Ambassadors, associations & integration partners
             </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
+            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
               CAC drops, reach explodes.
             </p>
           </div>

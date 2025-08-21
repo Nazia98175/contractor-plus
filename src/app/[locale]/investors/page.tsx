@@ -25,7 +25,7 @@ const InvestorsPage = () => {
       <MarketOpportunity />
       <WhatNext />
       <WinTeam />
-      <div className="mx-auto w-full max-w-[1296px] px-2 pt-[74px] pb-[80px] md:pt-[100px] lg:pt-[190px]">
+      <div className="mx-auto w-full max-w-[1296px] px-4 pt-[74px] pb-[80px] md:pt-[100px] lg:pt-[190px]">
         <Copy animateOnScroll={true}>
           <p className="text-secondary text-center text-xs font-medium">
             <span className="font-bold">Disclaimer:</span> This offering is made

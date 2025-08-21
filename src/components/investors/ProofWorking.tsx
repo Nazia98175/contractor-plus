@@ -12,7 +12,7 @@ import Copy from "../common/Copy";
 const ProofWorking = () => {
   return (
     <div className="mx-auto w-full max-w-[1224px] px-4 pt-20 md:py-20">
-      <div className="py-5 md:py-10">
+      <div className="pt-5 pb-[57px] md:py-10">
         <Copy animateOnScroll={true}>
           <h2 className="text-mana text-center text-2xl font-semibold sm:text-3xl md:text-[40px] lg:text-[52px]">
             Why Contractor+?{" "}
@@ -206,7 +206,8 @@ const ProofWorking = () => {
         </div>
       </div>
       <p className="ccc mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
-        Now imagine what we’ll do with real capital.
+        Now imagine what we’ll do with <br className="block sm:hidden" /> real
+        capital.
       </p>
     </div>
   );

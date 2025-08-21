@@ -37,8 +37,8 @@ const InvestorHero = () => {
   return (
     <section ref={wrapperRef} className="relative overflow-hidden">
       <img
-        className="absolute -top-13 left-0 z-[-2] block object-cover md:hidden"
-        src="/images/webp/invester-mobile-bg.webp"
+        className="absolute -top-9 left-0 z-[-2] block object-cover md:hidden"
+        src="/images/webp/invester-mobile-bg2.png"
         alt="mobile bg"
       />
       <img
@@ -84,7 +84,7 @@ const InvestorHero = () => {
             </Button>
           </CardReveal>
         </div>
-        <div className="relative mx-auto flex w-full max-w-[768px] items-center justify-between pt-[124px] md:pt-[180px] xl:max-w-[1013px]">
+        <div className="relative mx-auto flex w-full max-w-[768px] items-center justify-between pt-[93px] md:pt-[180px] xl:max-w-[1013px]">
           <div className="relative z-10 sm:ml-14">
             <img
               className="relative w-full max-w-[329px] -rotate-[15deg]"

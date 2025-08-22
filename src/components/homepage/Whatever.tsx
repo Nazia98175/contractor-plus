@@ -13,6 +13,26 @@ import Copy from "../common/Copy";
 import Link from "next/link";
 import CardReveal from "../common/CardReveal";
 
+const logos = [
+  "/images/webp/outlook.webp",
+  "/images/png/contractor-1.png",
+  "/images/svg/contractor-3.svg",
+  "/images/png/contractor-4.png",
+  "/images/png/contractor-5.png",
+  "/images/png/contractor-6.png",
+  "/images/png/zapier.png",
+  "/images/png/wisetack.png",
+  "/images/png/victory.png",
+  "/images/png/quickbooks.png",
+  "/images/png/paypall-icon.png",
+  "/images/png/outlook.png",
+  "/images/png/lowes.png",
+  "/images/png/earthcam.png",
+  "/images/png/earth.png",
+  "/images/png/mernards.png",
+  "/images/png/companycam.png",
+  "/images/png/lowes-2.png",
+];
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }

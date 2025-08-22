@@ -644,8 +644,7 @@ export const tool_comparisonData = {
 };
 export const mileageActuallyWorkdata = {
   id: 1,
-  title:
-    "A contract system that automatically writes, tracks, and stores agreements",
+  title: "Contractor financing that meets homeowners where they are",
   cardsDetail: [
     {
       id: 1,

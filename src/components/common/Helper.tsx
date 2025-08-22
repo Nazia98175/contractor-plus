@@ -4964,7 +4964,3 @@ export const automatedHeadingData = {
   title: "Auto Agreement topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
 };
-export const mileageHeadingData = {
-  title: "Mileage topics in Contractor+ HQ",
-  btnText: "Contractor+ HQ",
-};

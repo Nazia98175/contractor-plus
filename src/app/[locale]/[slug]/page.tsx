@@ -1,4 +1,7 @@
-import { platforms } from "@/components/common/Helper";
+import {
+  constructionBookkeepingServices,
+  platforms,
+} from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
@@ -6,6 +9,7 @@ import {
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CommonHero from "@/components/crmbussiness/CommonHero";
+import ConstructionBookkeepingCard from "@/components/constructionbookkeeping/ConstructionBookkeepingCard";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
 import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
@@ -93,8 +97,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-  console.log(pageData, "teams using contractor");
-  console.log(trackProperties, "trackproperties  dcsdfdfgdfg");
+
   return (
     <>
       <div id="home-page-wrapper-2">
@@ -110,7 +113,17 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             featureTag={pageData?.featureTag}
           />
 
-          <TrustedService reviews={reviews} slug={useParams?.slug} />
+          {useParams.slug === "construction-bookkeeping-services" ? (
+            <>
+              <ConstructionBookkeepingCard
+                constructionBookkeepingServices={
+                  constructionBookkeepingServices
+                }
+              />
+            </>
+          ) : (
+            <TrustedService reviews={reviews} slug={useParams?.slug} />
+          )}
 
           <SwitchingTool switchingTool={pageData?.switchingTool} />
 

@@ -39,8 +39,13 @@ export interface ServiceData {
   cardImg?: { url?: string };
   lottieJson?: object;
   isIcon?: boolean;
+  cardQuote?: string;
+  userName?: string;
 }
-
+export interface Testimonial {
+  quote: string;
+  author: string;
+}
 export type ContractorPlatformsProps = {
   params: Promise<{
     locale: string;

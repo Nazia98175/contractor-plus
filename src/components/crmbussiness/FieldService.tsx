@@ -61,7 +61,7 @@ const FieldService: React.FC<TheServiceProps> = ({
     const totalCards = cards.length;
 
     if (maxHeight > 0 && headingHeight > 0) {
-      const startScreen = (window.innerHeight - maxHeight) / 2 - 60 + "px";
+      const startScreen = (window.innerHeight - maxHeight) / 2 - 100 + "px";
       const isVisible =
         (window.innerHeight - maxHeight) / 2 - 60 > headingHeight;
 
@@ -70,12 +70,12 @@ const FieldService: React.FC<TheServiceProps> = ({
       const pinTrigger = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: `top ${startScreen}`, // Start pinning when section top reaches 90px from viewport top
-        end: `+=${window.innerHeight * (totalCards * 1.034)}`,
+        end: `+=${window.innerHeight * (totalCards * 1.034) + 80}`,
         pin: headingRef.current,
         pinSpacing: false, // Prevents extra spacing
         scrub: false,
         invalidateOnRefresh: true,
-        markers: false,
+        markers: true,
         onUpdate: (self) => {
           const progress = self.progress;
           gsap.to(headingRef.current, {

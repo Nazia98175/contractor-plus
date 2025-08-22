@@ -3082,18 +3082,6 @@ export const dealReviews = {
         subTitle: null,
         reviews: [
           {
-            id: 1,
-            userName: "Richard Tooley",
-            profileImg: null,
-            rating: 5,
-            videoLink: null,
-            isModal: false,
-            companyLogo: null,
-            review: `I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage.`,
-            userRole: "Focus Handyman",
-          },
-
-          {
             id: 2,
             userName: "Scott Azure",
             profileImg: "/images/png/scott.png",
@@ -3142,6 +3130,18 @@ export const dealReviews = {
             companyLogo: "/images/svg/randsIcon.svg",
             review: `"Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."`,
             userRole: "Co-Owner, Ross Co. Home Pro's",
+          },
+          {
+            id: 1,
+            userName: "Brandon Geiger",
+            profileUrl: "/images/webp/rushville.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `Since I started sending all my estimates using Contractor+, I have
+           stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+            userRole: "Co-Owner, Rushville Restorations",
           },
         ],
       },
@@ -4522,14 +4522,12 @@ export const automate_ControlData = {
 };
 export const toolManagingData = {
   id: 320,
-  title: "Mileage shouldn’t be a guessing game",
+  title: "Managing tools shouldn’t feel like a scavenger hunt",
   sub_title: null,
   cardsDetail: [
     {
       id: 1671,
-      text: (
-        <> Reconstructing trips from memory or text threads at payroll time.</>
-      ),
+      text: <> You’re juggling clipboards, spreadsheets, and text threads.</>,
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,

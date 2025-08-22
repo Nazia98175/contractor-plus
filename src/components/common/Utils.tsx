@@ -410,7 +410,9 @@ export const mileageManagingData = {
   cardsDetail: [
     {
       id: 1671,
-      text: <>You’re juggling clipboards, spreadsheets, and text threads.</>,
+      text: (
+        <> Reconstructing trips from memory or text threads at payroll time.</>
+      ),
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,
@@ -481,7 +483,7 @@ export const toolsFaq = {
   ],
 };
 export const neverLookBackToolData = {
-  title: "Teams that switch to Contractor+ never look back",
+  title: "Teams using Contractor+ never look back",
   subTitle: "We help you get ahead, not just get by.",
   cards: [
     {
@@ -648,8 +650,7 @@ export const mileageActuallyWorkdata = {
     {
       id: 1,
       title: "Agreement Creation",
-      cardQuote: "Excellent field tracking!",
-      userName: "John Doe",
+
       content: [
         {
           title: "Estimate-to-Contract Merge",
@@ -692,10 +693,7 @@ export const mileageActuallyWorkdata = {
           desc: "Automated follow-ups ensure no agreement gets stuck waiting.",
         },
       ],
-      cardQuote: {
-        user: "Excellent field tracking!",
-        username: "John Doe",
-      },
+
       cardImg: "/images/webp/signature-approved.webp",
     },
     {
@@ -711,10 +709,7 @@ export const mileageActuallyWorkdata = {
           desc: "Pre-configured language makes it easy to spell out what’s changing and what it costs.",
         },
       ],
-      cardQuote: {
-        user: "Excellent field tracking!",
-        username: "John Doe",
-      },
+
       cardImg: "/images/webp/change-management.webp",
     },
     {
@@ -726,10 +721,7 @@ export const mileageActuallyWorkdata = {
           desc: "Organize your quotes with groups that separate labor, materials, and optional add-ons. Line items are easy to edit, reuse, and drag into place. Your grandma could build an estimate.",
         },
       ],
-      cardQuote: {
-        user: "Excellent field tracking!",
-        username: "John Doe",
-      },
+
       cardImg: "/images/webp/storage-access.webp",
     },
     {
@@ -741,10 +733,7 @@ export const mileageActuallyWorkdata = {
           desc: "A stupidly simple interface anyone can use. Start, drive, arrive. The miles are logged—accurately.",
         },
       ],
-      cardQuote: {
-        user: "Excellent field tracking!",
-        username: "John Doe",
-      },
+
       cardImg: "/images/webp/requeere-doc.webp",
     },
   ],

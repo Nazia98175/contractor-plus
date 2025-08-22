@@ -300,6 +300,22 @@ export const tooltrackingData = {
   subTitle: null,
   title: "A tool tracking system that syncs with the rest of your operation",
 };
+
+export const mileageTrackingData = {
+  btnText: "Get started FREE",
+  btnUrl: null,
+  featureHighlightSectionVisible: true,
+
+  mainImgDesktop: {
+    url: "/images/webp/mileage-tracking.webp",
+  },
+  mainImgMobile: {
+    url: "/images/webp/mileage-tracking.webp",
+  },
+  mobileBtn: "Download FREE App",
+  subTitle: null,
+  title: null,
+};
 export const stopToolsData = {
   id: 324,
   title: null,
@@ -336,6 +352,48 @@ export const stopToolsData = {
     },
   ],
 };
+
+export const mileageListData = {
+  id: 324,
+  title: null,
+  subTitle: null,
+  btnText: "Get started FREE",
+
+  btnUrl: null, // can be replaced with a link like "/signup" if needed
+  mobileBtn: "Download FREE App",
+  featureHighlightSectionVisible: true,
+  featuresList: [
+    {
+      id: 408,
+      title: null,
+      conclusion:
+        "With Contractor+, every asset has a clear chain of custody—so you keep more of what you buy.",
+      content: [
+        {
+          title: "0% APR options up to 24 months available",
+          text: "0% APR options up to 24 months available",
+        },
+        {
+          title: "No hard credit check to get pre‑approved",
+          text: "No hard credit check to get pre‑approved",
+        },
+        {
+          title: "Applies to residential projects from $500–$25,000",
+          text: "Applies to residential projects from $500–$25,000",
+        },
+        {
+          title:
+            "Financing callout lives on your estimates & quotes to boost conversions ",
+          text: "Financing callout lives on your estimates & quotes to boost conversions ",
+        },
+      ],
+      cardImg: {
+        src: "/images/webp/mileage-tracking-system.webp",
+        alt: "Track properties",
+      },
+    },
+  ],
+};
 export const toolformData = {
   placeholder: "Your Email",
   subTitle: "Get started with Contractor+ today.",
@@ -345,7 +403,43 @@ export const toolBlogData = {
   title: "Asset Management topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
 };
-
+export const mileageManagingData = {
+  id: 320,
+  title: "Mileage shouldn’t be a guessing game",
+  sub_title: null,
+  cardsDetail: [
+    {
+      id: 1671,
+      text: (
+        <> Reconstructing trips from memory or text threads at payroll time.</>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1672,
+      text: (
+        <>Paying for OBD dongles or wired GPS that add fees and headaches.</>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+    {
+      id: 1673,
+      text: (
+        <>
+          Reports that your bookkeeper has to rebuild in spreadsheets—every
+          single month.
+        </>
+      ),
+      img: "/images/svg/green-tick.svg",
+      imgWidth: 66,
+      imgHeight: 34,
+    },
+  ],
+};
 export const toolsFaq = {
   title: "What contractors want to know ",
   subTitle: "Frequently asked questions",
@@ -389,7 +483,7 @@ export const toolsFaq = {
   ],
 };
 export const neverLookBackToolData = {
-  title: "Teams that switch to Contractor+ never look back",
+  title: "Teams using Contractor+ never look back",
   subTitle: "We help you get ahead, not just get by.",
   cards: [
     {
@@ -434,6 +528,61 @@ export const neverLookBackToolData = {
       denominator: null,
       value: null,
       lottieJson: clock,
+      cardImage: {
+        url: null,
+      },
+      icons: <UpArrowIcon />,
+    },
+  ],
+};
+export const neverLookBackMileageData = {
+  title:
+    "Teams using our mileage tracking software for contractors never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Saved on mileage admin and payroll prep",
+      start: 0,
+      end: 8,
+      suffix: "hours/mo",
+      prefix: "~",
+      value: null,
+
+      lottieJson: clock,
+
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "No dongles, installs or wiring",
+      start: 0,
+      end: 0,
+      suffix: "hardware",
+      denominator: null,
+      prefix: "$",
+      value: null,
+      lottieJson: productivity,
+      cardImage: {
+        url: null,
+      },
+      icons: <ClockIcon />,
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Per driver—train once and roll",
+      start: 0,
+      end: 1,
+      suffix: "-minute setup",
+      prefix: null,
+      denominator: null,
+      value: null,
+      lottieJson: up_arrow_black,
       cardImage: {
         url: null,
       },
@@ -493,6 +642,107 @@ export const tool_comparisonData = {
     },
   ],
 };
+export const mileageHeadingData = {
+  title: "Mileage topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+};
+
+export const mileageActuallyWorkdata = {
+  id: 1,
+  title: "Contractor financing that meets homeowners where they are",
+  cardsDetail: [
+    {
+      id: 1,
+      title: "Agreement Creation",
+
+      content: [
+        {
+          title: "Estimate-to-Contract Merge",
+          desc: "Automatically generate contracts using data from approved estimates, without any copy & paste.",
+        },
+        {
+          title: "Lawyer-Crafted Templates",
+          desc: "Pre-built, legally sound templates tailored for construction and service jobs.",
+        },
+        {
+          title: "Custom Clause Library",
+          desc: "Add your own clauses once, then reuse them across all agreements.",
+        },
+        {
+          title: "Smart Field Detection",
+          desc: "Auto-fills job info like scope, pricing, dates, and location from your project data.",
+        },
+      ],
+
+      cardImg: "/images/webp/agree-creation.webp",
+    },
+    {
+      id: 2,
+      title: "Signature & Approval",
+      content: [
+        {
+          title: "Built-In E-Signatures",
+          desc: "Collect signatures in-person or digitally. No third-party software needed.",
+        },
+        {
+          title: "Audit Trail",
+          desc: "Each signed doc includes timestamp, IP address, and device info for protection.",
+        },
+        {
+          title: "Client Review Portal",
+          desc: "Clients can review, comment, and sign contracts from any device.",
+        },
+        {
+          title: "Approval Reminder",
+          desc: "Automated follow-ups ensure no agreement gets stuck waiting.",
+        },
+      ],
+
+      cardImg: "/images/webp/signature-approved.webp",
+    },
+    {
+      id: 3,
+      title: "Change Management",
+      content: [
+        {
+          title: "Instant Change Orders",
+          desc: "Modify job scope on the fly and generate a new agreement in seconds.",
+        },
+        {
+          title: "Editable Scope Change Templates",
+          desc: "Pre-configured language makes it easy to spell out what’s changing and what it costs.",
+        },
+      ],
+
+      cardImg: "/images/webp/change-management.webp",
+    },
+    {
+      id: 4,
+      title: "Keep your estimates clean, clear, and easy to follow",
+      content: [
+        {
+          title: "",
+          desc: "Organize your quotes with groups that separate labor, materials, and optional add-ons. Line items are easy to edit, reuse, and drag into place. Your grandma could build an estimate.",
+        },
+      ],
+
+      cardImg: "/images/webp/storage-access.webp",
+    },
+    {
+      id: 5,
+      title: "Tap “Start Trip,” tap “End Trip.” Done.",
+      content: [
+        {
+          title: "",
+          desc: "A stupidly simple interface anyone can use. Start, drive, arrive. The miles are logged—accurately.",
+        },
+      ],
+
+      cardImg: "/images/webp/requeere-doc.webp",
+    },
+  ],
+};
+
 export const businessBenefits = [
   "Effortlessly Manage Your Business",
   "Team Collaboration",
@@ -500,6 +750,59 @@ export const businessBenefits = [
   "Estimating & Invoicing",
   "Access from PC, Android and iOS!",
 ];
+
+export const mileage_comparisonData = {
+  id: 1,
+  title: "What they call a “premium” feature, we call standard",
+  subTitle: "The features they hide behind paywalls come standard here.",
+  headerLeft: "Feature",
+  headerCenter: "Contractor Plus",
+  headerRight: "Others",
+  showBackground: null,
+  features: [
+    {
+      featureName: "Tap‑to‑Track (Start/End)",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "Manual Trip Entry & Edits",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+
+    {
+      featureName: "No OBD/Wired Hardware",
+      ourProduct: "available",
+      competitorsNote: null,
+    },
+    {
+      featureName: "Team Mileage Reports (any range)",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "Decimal Miles for IRS Reimbursement",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "CSV & PDF Export",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "Built‑In Mobile Apps",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+    {
+      featureName: "Use Our Tags or Yours",
+      ourProduct: "available",
+      competitorsNote: "Limited",
+    },
+  ],
+};
 export const integrations = [
   {
     id: "1",

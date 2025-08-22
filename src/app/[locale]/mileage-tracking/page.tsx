@@ -1,17 +1,14 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
-import CrmService from "@/components/crmbussiness/IndustryService";
 import {
   automatedCardData,
-  automatedFaq,
-  automatedformData,
-  automatedHeadingData,
   blogList,
   clientReviews,
   dealflowhero,
   dealReviews2,
+  mileageFaq,
+  mileageformData,
   platforms,
-  toolManagingData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -19,13 +16,18 @@ import {
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import {
-  neverLookBackToolData,
-  stopToolsData,
-  tool_comparisonData,
-  tooltrackingData,
+  mileage_comparisonData,
+  mileageActuallyWorkdata,
+  mileageHeadingData,
+  mileageListData,
+  mileageManagingData,
+  mileageTrackingData,
+  neverLookBackMileageData,
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
+import FieldService from "@/components/crmbussiness/FieldService";
+import CrmService from "@/components/crmbussiness/IndustryService";
 import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
@@ -34,8 +36,12 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import Image from "next/image";
-import React from "react";
 
+export const metadata = {
+  title: "Mileage Tracking Software for Contractors | Contractor+",
+  description:
+    "Track miles while working in the field. Contractor+ logs your travel automatically so you can manage costs and records easily.",
+};
 const MileageTrackingPage = () => {
   return (
     <main className="overflow-hidden">
@@ -58,19 +64,27 @@ const MileageTrackingPage = () => {
         apiData={false}
         className="-mt-5"
       />
-      <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
+      <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
+      <div className="relative overflow-hidden">
+        <FieldService
+          fieldService={mileageActuallyWorkdata}
+          theme="dark"
+          slug="estimateTheme"
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
       <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}
-          trackProperties={tooltrackingData}
+          trackProperties={mileageTrackingData}
         />
         <AutmateDoContacts
           ncc={"No credit card required"}
-          trackProperties={stopToolsData}
+          trackProperties={mileageListData}
         />
         <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
-        <KindAdorable slug={"estimate"} kindAdorable={tool_comparisonData} />
-        <TeamsUsingContractor data={neverLookBackToolData} slug={""} />
+        <KindAdorable slug={"estimate"} kindAdorable={mileage_comparisonData} />
+        <TeamsUsingContractor data={neverLookBackMileageData} slug={""} />
         <ThousandsReviews
           data={dealReviews2}
           reviews={dealReviews2.reviews}
@@ -96,7 +110,7 @@ const MileageTrackingPage = () => {
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
-            data={automatedformData}
+            data={mileageformData}
             variant="primary"
             className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
             variantBtn="light"
@@ -107,7 +121,7 @@ const MileageTrackingPage = () => {
           className="mx-auto w-full max-w-[889px]"
         />
         <Faq
-          faq={automatedFaq}
+          faq={mileageFaq}
           classNameAnswer="pt-1"
           mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
@@ -116,7 +130,7 @@ const MileageTrackingPage = () => {
 
       <BlogPosts
         data={blogList}
-        blogs={automatedHeadingData}
+        blogs={mileageHeadingData}
         className="mt-7 mb-20 md:mt-9"
         classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
       />

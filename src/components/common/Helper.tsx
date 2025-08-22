@@ -3082,18 +3082,6 @@ export const dealReviews = {
         subTitle: null,
         reviews: [
           {
-            id: 1,
-            userName: "Richard Tooley",
-            profileImg: null,
-            rating: 5,
-            videoLink: null,
-            isModal: false,
-            companyLogo: null,
-            review: `I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage.`,
-            userRole: "Focus Handyman",
-          },
-
-          {
             id: 2,
             userName: "Scott Azure",
             profileImg: "/images/png/scott.png",
@@ -3142,6 +3130,18 @@ export const dealReviews = {
             companyLogo: "/images/svg/randsIcon.svg",
             review: `"Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."`,
             userRole: "Co-Owner, Ross Co. Home Pro's",
+          },
+          {
+            id: 1,
+            userName: "Brandon Geiger",
+            profileUrl: "/images/webp/rushville.webp",
+            rating: 5,
+            videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `Since I started sending all my estimates using Contractor+, I have
+           stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!`,
+            userRole: "Co-Owner, Rushville Restorations",
           },
         ],
       },
@@ -4522,12 +4522,12 @@ export const automate_ControlData = {
 };
 export const toolManagingData = {
   id: 320,
-  title: "Managing client agreements is more complicated than it should be",
+  title: "Managing tools shouldn’t feel like a scavenger hunt",
   sub_title: null,
   cardsDetail: [
     {
       id: 1671,
-      text: <>You’re juggling clipboards, spreadsheets, and text threads.</>,
+      text: <> You’re juggling clipboards, spreadsheets, and text threads.</>,
       img: "/images/svg/green-tick.svg",
       imgWidth: 66,
       imgHeight: 34,
@@ -4798,6 +4798,11 @@ export const automatedformData = {
   subTitle: "Get started with Contractor+ today.",
   title: "What contractor client agreement software should have been all along",
 };
+export const mileageformData = {
+  placeholder: "Your Email",
+  subTitle: "Get started with Contractor+ today.",
+  title: "Mileage tracking software for contractors, the way it should be",
+};
 
 export const automatedFaq = {
   title: "What contractors want to know ",
@@ -4839,6 +4844,48 @@ export const automatedFaq = {
       question: "Will this work on mobile for field teams?",
       answer:
         "Yes. Your crews can create and sign agreements right from the Contractor+ mobile app. It’s super simple and intuitive.",
+    },
+  ],
+};
+export const mileageFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question: "Do I need OBD devices or a wired GPS system?",
+      answer:
+        "No. Contractor+ uses your phone’s location services—no extra hardware, installs, or third‑party subscriptions.",
+    },
+    {
+      id: 2,
+      question: "What if someone forgets to start or stop a trip?",
+      answer:
+        "No problem. You (or a manager) can manually add or edit a log with a note so your records stay accurate.",
+    },
+    {
+      id: 3,
+      question: "Can my bookkeeper run reports without bugging me?",
+      answer:
+        "Yes. Generate a “Mileage Report” for any date range with totals by driver and team, including decimal mileage. Export to CSV or PDF for payroll.",
+    },
+    {
+      id: 4,
+      question: "How do reimbursements work? ",
+      answer:
+        "Use the report totals and multiply by the current IRS mileage rate (or a company rate) to reimburse fairly—covering fuel, wear, and tear. The report makes the math straightforward.",
+    },
+    {
+      id: 5,
+      question: "Does this work on both iOS and Android?",
+      answer:
+        "Yep. Contractor+ is mobile‑first with apps for both platforms—so crews can log miles in the field without extra tools.  ",
+    },
+    {
+      id: 6,
+      question: "Is this part of the broader Contractor+ platform?",
+      answer:
+        "Yes. It’s built into the same operating system contractors use for estimates, jobs, and communication—so your processes live in one place.   ",
     },
   ],
 };
@@ -4917,7 +4964,6 @@ export const automatedHeadingData = {
   title: "Auto Agreement topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
 };
-
 export const constructionBookkeepingServices = [
   {
     userName: "Brandon Schlichter",

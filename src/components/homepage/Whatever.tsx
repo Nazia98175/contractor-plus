@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { OnIcon, OnIconw, WhatEverIcon } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
@@ -12,6 +12,27 @@ import WhateverBackground from "./WhateverBackground";
 import Copy from "../common/Copy";
 import Link from "next/link";
 import CardReveal from "../common/CardReveal";
+
+const logos = [
+  "/images/webp/outlook.webp",
+  "/images/png/contractor-1.png",
+  "/images/svg/contractor-3.svg",
+  "/images/png/contractor-4.png",
+  "/images/png/contractor-5.png",
+  "/images/png/contractor-6.png",
+  "/images/png/zapier.png",
+  "/images/png/wisetack.png",
+  "/images/png/victory.png",
+  "/images/png/quickbooks.png",
+  "/images/png/paypall-icon.png",
+  "/images/png/outlook.png",
+  "/images/png/lowes.png",
+  "/images/png/earthcam.png",
+  "/images/png/earth.png",
+  "/images/png/mernards.png",
+  "/images/png/companycam.png",
+  "/images/png/lowes-2.png",
+];
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -27,6 +48,10 @@ interface TheWhateverProps {
 
 const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const t = useTranslations();
+
+  // State for logo rotation
+  const [currentSet, setCurrentSet] = useState(0);
+  const [fadeOpacity, setFadeOpacity] = useState(1);
 
   // Media queries for responsive behavior
   const isMobile = useMediaQuery("(max-width: 767px)");
@@ -44,6 +69,29 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   const right1Ref = useRef<HTMLDivElement | null>(null);
   const right2Ref = useRef<HTMLDivElement | null>(null);
   const right3Ref = useRef<HTMLDivElement | null>(null);
+
+  // Get current set of 6 logos
+  const getCurrentLogos = () => {
+    const startIndex = currentSet * 6;
+    return logos.slice(startIndex, startIndex + 6);
+  };
+
+  // Logo rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Start fade out
+      setFadeOpacity(0);
+
+      // After fade completes, change to next set and fade in
+      setTimeout(() => {
+        setCurrentSet((prev) => (prev + 1) % 3); // 3 sets total (18/6=3)
+        setFadeOpacity(1);
+      }, 500); // 500ms fade duration
+    }, 5000); // Every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const waitUntilFullyLoaded = (): Promise<void> => {
     return new Promise((resolve) => {
       if (document.readyState === "complete") {
@@ -55,6 +103,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
       }
     });
   };
+
   useEffect(() => {
     const setupAnimation = () => {
       if (
@@ -123,9 +172,8 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         gsap.to(el, {
           x: 0,
           y: 0,
-          opacity: 1,
+          opacity: fadeOpacity, // Use fadeOpacity for rotation effect
           scale: 1,
-
           ease: "power2.out",
           scrollTrigger,
         });
@@ -160,7 +208,9 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
         if (t.trigger === sectionRef.current) t.kill();
       });
     };
-  }, [isMobile, isTablet, isDesktop]);
+  }, [isMobile, isTablet, isDesktop, fadeOpacity]);
+
+  const currentLogos = getCurrentLogos();
 
   return (
     <section ref={sectionRef} className="relative z-10 w-full px-2">
@@ -182,12 +232,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               <div
                 ref={left1Ref}
                 className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-20 lg:w-20"
+                style={{
+                  opacity: fadeOpacity,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[30px] object-cover lg:max-w-[40px]"
-                  src="/images/webp/outlook.webp"
+                  src={currentLogos[0] || "/images/webp/outlook.webp"}
                   width={40}
                   height={40}
                   alt="contractor"
@@ -198,12 +252,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               <div
                 ref={left2Ref}
                 className="flex h-[58px] w-[58px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
+                style={{
+                  opacity: fadeOpacity,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[26px] object-cover lg:max-w-[38px]"
-                  src="/images/png/contractor-1.png"
+                  src={currentLogos[1] || "/images/png/contractor-1.png"}
                   width={38}
                   height={38}
                   alt="contractor"
@@ -214,12 +272,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               <div
                 ref={left3Ref}
                 className="flex h-[62px] w-[62px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px] xl:h-[93px] xl:w-[93px]"
+                style={{
+                  opacity: fadeOpacity,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[45px] object-cover lg:max-w-[66px]"
-                  src="/images/svg/contractor-3.svg"
+                  src={currentLogos[2] || "/images/svg/contractor-3.svg"}
                   width={66}
                   height={17}
                   alt="contractor"
@@ -242,12 +304,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               <div
                 ref={right1Ref}
                 className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px] xl:h-[93px] xl:w-[93px]"
+                style={{
+                  opacity: fadeOpacity,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[29px] object-cover lg:max-w-[38px]"
-                  src="/images/png/contractor-4.png"
+                  src={currentLogos[3] || "/images/png/contractor-4.png"}
                   width={38}
                   height={38}
                   alt="contractor"
@@ -258,12 +324,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               <div
                 ref={right2Ref}
                 className="flex h-[46px] w-[46px] items-center justify-center p-2 will-change-transform lg:h-[72px] lg:w-[72px]"
+                style={{
+                  opacity: fadeOpacity,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[25px] object-cover lg:max-w-[38px]"
-                  src="/images/png/contractor-5.png"
+                  src={currentLogos[4] || "/images/png/contractor-5.png"}
                   width={38}
                   height={38}
                   alt="contractor"
@@ -274,12 +344,16 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
               <div
                 ref={right3Ref}
                 className="flex h-10 w-10 items-center justify-center p-2 will-change-transform lg:h-[61px] lg:w-[61px]"
+                style={{
+                  opacity: fadeOpacity,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
                   className="relative z-20 max-w-[21px] object-cover lg:max-w-[33px]"
-                  src="/images/png/contractor-6.png"
+                  src={currentLogos[5] || "/images/png/contractor-6.png"}
                   width={33}
                   height={33}
                   alt="contractor"

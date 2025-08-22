@@ -20,13 +20,13 @@ const WinTeam = () => {
     },
     {
       id: 3,
-      img: "/images/webp/win-team-3.webp",
+      img: "/images/webp/win-team-7.webp",
       text: "Board includes operators with two $100M+ software exits.",
       imgWidth: "max-w-[313px]",
     },
     {
       id: 4,
-      img: "/images/webp/win-team-6.webp",
+      img: "/images/webp/win-team-8.webp",
       text: "We’re not here to coast. We’re here to eat the legacy players’ lunch.",
       imgWidth: "max-w-[313px]",
     },

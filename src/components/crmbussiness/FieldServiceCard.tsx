@@ -24,7 +24,7 @@ const FieldServiceCard: React.FC<Props> = ({
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
-  const isIcon = service?.isIcon;
+  const isIcon = service.isIcon ?? true;
 
   const currentColors = themeColors[theme] || themeColors["light"];
   const titleColor = currentColors.titleColor;
@@ -32,7 +32,6 @@ const FieldServiceCard: React.FC<Props> = ({
   const featureDescColor = currentColors.desc;
   const isEstimateTextColor = currentColors.desc;
   const isEstimateTextColor2 = currentColors.desc;
-  console.log(service, "featuresss");
 
   return (
     <article className="relative z-30 flex flex-col items-start justify-between gap-4 md:flex-row md:gap-7">
@@ -123,12 +122,12 @@ const FieldServiceCard: React.FC<Props> = ({
             )}
           </div>
         </div>
-
-        {/* Estimate testimonial */}
-        <p className={`card-review ${isEstimateTextColor}`}>
-          {service?.cardQuote} <br /> <br />
-          <b className={`${isEstimateTextColor2}`}>{service?.userName}</b>
-        </p>
+        {service.testimonial && (
+          <p className={`card-review ${isEstimateTextColor}`}>
+            {service?.cardQuote} <br /> <br />
+            <b className={`${isEstimateTextColor2}`}>{service?.userName}</b>
+          </p>
+        )}
       </div>
 
       {/* Desktop image */}

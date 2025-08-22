@@ -80,7 +80,7 @@ const BlogsContent = ({
         {/* RIGHT SIDE CONTENT  */}
         <div className="relative w-full lg:min-w-[336px]">
           <div ref={rightRef} className="w-full space-y-8">
-            <VideoSection />
+            <VideoSection blogData={blogData} />
             <div className="flex flex-col justify-between gap-8 sm:flex-row-reverse lg:flex-col">
               <TableOfContent markdown={blogData?.blogDescription ?? ""} />
               <div className="top-0 basis-[60%] lg:sticky">

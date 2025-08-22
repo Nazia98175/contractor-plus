@@ -1,9 +1,26 @@
 import CommonFormField from "@/components/common/CommonFormField";
 import AllEventCard from "@/components/eventsdirectory/AllEventCard";
 import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHero";
+import {
+  getAllEvents,
+  getEventDetails,
+  getEventList,
+} from "@/services/events/getEventData";
 import React from "react";
 
-const EventsDirectoryPage = () => {
+const EventsDirectoryPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  const [events, eventDetail, eventList] = await Promise.all([
+    getAllEvents(locale),
+    getEventDetails(locale),
+    getEventList(locale),
+  ]);
+
+  console.log(eventList, "events");
   return (
     <main id="home-page-wrapper-2">
       <EventsDirectoryHero />

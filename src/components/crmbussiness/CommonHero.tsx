@@ -12,6 +12,7 @@ import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
 import heroLottie from "../../../public/lotties/real-time.json";
+import bookping from "../../../public/lotties/bookping.json";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -164,15 +165,13 @@ const CommonHero: React.FC<TheHeroProps> = ({
         </div>
         {slug === "construction-bookkeeping-services" ? (
           <div className="relative mt-12 mb-16 sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
-            <Image
-              className="mx-auto h-full w-full max-w-[389px] object-cover"
-              src={"/images/svg/construction-bookkeeping-services-hero.svg"}
-              width={389}
-              height={616}
-              alt="crm-hero"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-              priority
-            />
+            <>
+              <LottieAnimation
+                animationData={bookping}
+                loop={true}
+                className="mx-auto w-full max-w-[550px]"
+              />
+            </>
             <div className="bg-kuroiBlack absolute bottom-0 left-0 z-30 h-[10%] w-full blur-[15px]"></div>
           </div>
         ) : (

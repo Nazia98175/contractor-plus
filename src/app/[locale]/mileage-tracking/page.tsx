@@ -8,7 +8,6 @@ import {
   dealReviews2,
   mileageFaq,
   mileageformData,
-  mileageHeadingData,
   platforms,
 } from "@/components/common/Helper";
 import {
@@ -19,6 +18,7 @@ import TrustBar from "@/components/common/TrustBar";
 import {
   mileage_comparisonData,
   mileageActuallyWorkdata,
+  mileageHeadingData,
   mileageListData,
   mileageManagingData,
   mileageTrackingData,

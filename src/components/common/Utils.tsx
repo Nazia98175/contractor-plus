@@ -642,6 +642,11 @@ export const tool_comparisonData = {
     },
   ],
 };
+export const mileageHeadingData = {
+  title: "Mileage topics in Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+};
+
 export const mileageActuallyWorkdata = {
   id: 1,
   title: "Contractor financing that meets homeowners where they are",

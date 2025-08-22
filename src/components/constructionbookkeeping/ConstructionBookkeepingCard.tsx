@@ -53,7 +53,7 @@ const ConstructionBookkeepingCard: React.FC<ReviewCardProps> = ({
         <ReviewCots2Icon />
       </span>
 
-      {constructionBookkeepingServices.map((review, index) => (
+      {constructionBookkeepingServices.slice(0, 1).map((review, index) => (
         <article
           key={index}
           className="item-start relative flex h-full w-full flex-col justify-between gap-6 overflow-hidden px-2 md:flex-row lg:px-20 lg:py-10"

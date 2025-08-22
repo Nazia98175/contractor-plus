@@ -120,7 +120,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             }}
           >
             {blogs.map((article, index) => (
-              <SwiperSlide className="mx-auto">
+              <SwiperSlide className="card-shine relative mx-auto overflow-hidden">
                 <OurBlogCard
                   article={article}
                   blogListMobile={blogListMobile}

@@ -195,7 +195,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                               </>
                             ) : (
                               <Image
-                                className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
+                                className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "rounded-none" : "rounded-t-[20px] md:rounded-[45px]"}`}
                                 src={heroImg?.url}
                                 width={900}
                                 height={616}

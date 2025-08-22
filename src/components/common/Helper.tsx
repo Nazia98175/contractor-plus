@@ -4929,23 +4929,4 @@ export const constructionBookkeepingServices = [
     isModal: true,
     videoLink: "https://dummyvideo.com/123",
   },
-  {
-    userName: "Sarah Johnson",
-    userRole: "Finance Manager",
-    profileImg: "https://i.pravatar.cc/150?img=32",
-    rating: 4,
-    review:
-      "Great bookkeeping service! They saved us a lot of time and made our reporting process so much easier.",
-    isModal: false,
-  },
-  {
-    userName: "Michael Lee",
-    userRole: "General Contractor",
-    profileImg: "https://i.pravatar.cc/150?img=56",
-    rating: 5,
-    review:
-      "Outstanding support and service. I highly recommend Contractor+ Books to any contractor looking for reliable bookkeeping.",
-    isModal: true,
-    videoLink: "https://dummyvideo.com/456",
-  },
 ];

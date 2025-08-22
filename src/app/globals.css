@@ -399,6 +399,9 @@ body {
 .countup-desc {
   @apply font-montserrat text-lg leading-[128%] font-medium;
 }
+.opportunity-card {
+  @apply text-phantom text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px];
+}
 @keyframes bounce {
   0%,
   100% {

@@ -75,60 +75,50 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
       ref={ref}
       className="flex w-full flex-col items-center gap-2.5 rounded-xl p-2.5 text-center transition"
     >
-      {
-        // item.lottieJson ? (
-        //   <LottieAnimation
-        //     ref={lottieRef}
-        //     autoplay={false}
-        //     animationData={item.lottieJson}
-        //     className="h-9 w-8 fill-white"
-        //   />
-        // )
-        item.lottieJson ? (
-          <>
-            <span className="hidden md:block">
-              <LottieAnimation
-                autoplay={false}
-                loop={false}
-                animationData={item.lottieJson}
-                className="h-9 w-8 fill-white"
-              />
-            </span>
+      {item.lottieJson ? (
+        <>
+          <span className="hidden md:block">
+            <LottieAnimation
+              autoplay={false}
+              loop={false}
+              animationData={item.lottieJson}
+              className="h-9 w-8 fill-white"
+            />
+          </span>
 
-            {/* ✅ Show mobile lottie (fallback to desktop if mobile one is missing) */}
-            <span className="block md:hidden">
-              <LottieAnimation
-                autoplay={false}
-                loop={false}
-                animationData={item.mobileLottieJson ?? item.lottieJson}
-                className="h-9 w-8 fill-white"
-              />
-            </span>
-          </>
-        ) : item.cardImage?.url ? (
-          <div className="relative aspect-[1/1] size-7 sm:size-8">
-            <Image
-              src={item.cardImage.url}
-              fill
-              className="brightness-0 invert filter sm:filter-none"
-              alt={`${item.title ?? "icon"}`}
+          {/* ✅ Show mobile lottie (fallback to desktop if mobile one is missing) */}
+          <span className="block md:hidden">
+            <LottieAnimation
+              autoplay={false}
+              loop={false}
+              animationData={item.mobileLottieJson ?? item.lottieJson}
+              className="h-9 w-8 fill-white"
             />
-          </div>
-        ) : icon ? (
-          <span className="size-7 sm:size-8">{icon}</span>
-        ) : icons && index !== undefined && icons[index]?.url ? (
-          <div className="relative aspect-[1/1] size-7 sm:size-8">
-            <Image
-              src={icons[index].url}
-              fill
-              className="brightness-0 invert filter sm:filter-none"
-              alt={`${item.title ?? "icon"}`}
-            />
-          </div>
-        ) : (
-          <span className="size-7 sm:size-8">{item.icon}</span>
-        )
-      }
+          </span>
+        </>
+      ) : item.cardImage?.url ? (
+        <div className="relative aspect-[1/1] size-7 sm:size-8">
+          <Image
+            src={item.cardImage.url}
+            fill
+            className="brightness-0 invert filter sm:filter-none"
+            alt={`${item.title ?? "icon"}`}
+          />
+        </div>
+      ) : icon ? (
+        <span className="size-7 sm:size-8">{icon}</span>
+      ) : icons && index !== undefined && icons[index]?.url ? (
+        <div className="relative aspect-[1/1] size-7 sm:size-8">
+          <Image
+            src={icons[index].url}
+            fill
+            className="brightness-0 invert filter sm:filter-none"
+            alt={`${item.title ?? "icon"}`}
+          />
+        </div>
+      ) : (
+        <span className="size-7 sm:size-8">{item.icon}</span>
+      )}
 
       <h3 className={`countup-title ${titleColor}`}>
         {item.isRange ? (

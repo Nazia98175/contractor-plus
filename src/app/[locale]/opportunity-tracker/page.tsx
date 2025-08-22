@@ -7,7 +7,7 @@ import {
   dealReviews,
   dealReviews2,
   fieldcarddetail,
-  neverLookBackData,
+  opportunityTracker,
   platforms,
   realTimeServiceSliderData,
   runWithContractorData,
@@ -44,7 +44,7 @@ const DealFlowTracker = () => {
           imageMaxWidth: 900,
         }}
         featureTag="Opportunity Tracker"
-        heroImg="/images/webp/deal-flow-hero.webp"
+        heroImg="/images/webp/opportunity-tracker-hero.webp"
         slug="crm"
         commonData={dealflowhero}
         apiData={false}
@@ -71,7 +71,7 @@ const DealFlowTracker = () => {
         />
         <RunWithContractor kindAdorable={runWithContractorData} />
         <FinallyConnectsField />
-        <NeverLookBack data={neverLookBackData} />
+        <NeverLookBack data={opportunityTracker} />
       </div>
       <div className="relative">
         <div className="bg-kuroiBlack pointer-events-none absolute -top-1 z-20 h-2 w-full"></div>

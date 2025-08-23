@@ -1,6 +1,10 @@
 import CloudsAnimation from "@/components/common/CloudsAnimation";
 import CommonFormField from "@/components/common/CommonFormField";
-import { blackPlatforms, platforms } from "@/components/common/Helper";
+import {
+  blackPlatforms,
+  integrationLogos,
+  platforms,
+} from "@/components/common/Helper";
 import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/AwardBadge";
@@ -56,6 +60,7 @@ const IndustryPage = async ({ params }: PageProps) => {
     faqs,
     thousandReviews,
     commonData,
+    integrationList,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
 
   return (
@@ -127,7 +132,15 @@ const IndustryPage = async ({ params }: PageProps) => {
           className="pb-[148px] xl:pb-20"
         />
       </div>
-      <WhatEverClient data={commonData?.contractorConnects} issection={false} />
+      <WhatEverClient
+        data={commonData?.contractorConnects}
+        issection={false}
+        images={
+          integrationList?.images
+            ? integrationList?.images?.map((item: any) => item?.url)
+            : integrationLogos
+        }
+      />
       <div className="relative">
         <Faq
           mainContainerclassName="pt-9 pb-36 z-20 px-2"

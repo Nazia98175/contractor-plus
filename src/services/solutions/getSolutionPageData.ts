@@ -1,6 +1,7 @@
 import { getBlogs } from "@/services/blogs";
 import { getSolutionPage } from "./solution";
 import { getCommonData } from "../common/commonData";
+import { getIntegrationList } from "../integation/getIntegrationData";
 
 export interface CrmLikePageDataResponse {
   solutionPageContent: any | null;
@@ -15,6 +16,7 @@ export interface CrmLikePageDataResponse {
   blogs?: any | null;
   thousandReviews: any | null;
   commonData?: any | null;
+  integrationList?: any | null;
 }
 
 export const getSolutionPageData = async (
@@ -33,6 +35,7 @@ export const getSolutionPageData = async (
     blogs,
     thousandReviewsRes,
     commonData,
+    integrationList,
   ] = await Promise.all([
     getSolutionPage(slug, locale, "&populate=*"),
     getSolutionPage(
@@ -69,6 +72,7 @@ export const getSolutionPageData = async (
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
     getCommonData(locale),
+    getIntegrationList(locale),
   ]);
   return {
     solutionPageContent: pageContentRes || null,
@@ -85,5 +89,6 @@ export const getSolutionPageData = async (
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
     commonData: commonData || null,
+    integrationList: integrationList?.hero || null,
   };
 };

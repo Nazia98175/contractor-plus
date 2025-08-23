@@ -4,35 +4,15 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
+import { integrationLogos } from "../common/Helper";
 import { OnIcon, OnIconw, WhatEverIcon } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import WhateverBackground from "./WhateverBackground";
-import Copy from "../common/Copy";
-import Link from "next/link";
-import CardReveal from "../common/CardReveal";
-
-const logos = [
-  "/images/webp/outlook.webp",
-  "/images/png/contractor-1.png",
-  "/images/svg/contractor-3.svg",
-  "/images/png/contractor-4.png",
-  "/images/png/contractor-5.png",
-  "/images/png/contractor-6.png",
-  "/images/png/zapier.png",
-  "/images/png/wisetack.png",
-  "/images/png/victory.png",
-  "/images/png/quickbooks.png",
-  "/images/png/paypall-icon.png",
-  "/images/png/outlook.png",
-  "/images/png/lowes.png",
-  "/images/png/earthcam.png",
-  "/images/png/earth.png",
-  "/images/png/mernards.png",
-  "/images/png/companycam.png",
-  "/images/png/lowes-2.png",
-];
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -44,9 +24,14 @@ interface Whatever {
 }
 interface TheWhateverProps {
   whateverOperation: Whatever;
+  images?: string[];
 }
 
-const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
+const Whatever: React.FC<TheWhateverProps> = ({
+  whateverOperation,
+  images,
+}) => {
+  const logosArray = images ? images : integrationLogos;
   const t = useTranslations();
 
   // State for logo rotation
@@ -73,7 +58,7 @@ const Whatever: React.FC<TheWhateverProps> = ({ whateverOperation }) => {
   // Get current set of 6 logos
   const getCurrentLogos = () => {
     const startIndex = currentSet * 6;
-    return logos.slice(startIndex, startIndex + 6);
+    return logosArray.slice(startIndex, startIndex + 6);
   };
 
   // Logo rotation effect

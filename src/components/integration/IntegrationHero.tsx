@@ -52,6 +52,9 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
       });
     }, 700);
   }, []);
+  const images = integrationList?.hero?.images || [];
+  const halfIndex = Math.ceil(images.length / 2);
+
   return (
     <section id="home-page-view-port-screen-fetures" className="pt-[115px]">
       <div className="relative z-40 mx-auto flex max-w-[575px] flex-col items-center justify-center">
@@ -68,8 +71,9 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
       <div className="mx-auto mt-4 w-full max-w-[1440px]">
         <Marquee direction="right" speed={50}>
           {integrationList?.hero?.images &&
-            integrationList?.hero?.images.map(
-              (item: { id: number; url: string }) => (
+            integrationList?.hero?.images
+              .slice(0, halfIndex)
+              .map((item: { id: number; url: string }) => (
                 <div
                   key={item.id}
                   className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4"
@@ -83,13 +87,13 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
                     alt={item.url}
                   />
                 </div>
-              ),
-            )}
+              ))}
         </Marquee>
         <Marquee direction="left" speed={50}>
           {integrationList?.hero?.images &&
-            integrationList?.hero?.images.map(
-              (item: { id: number; url: string }) => (
+            integrationList?.hero?.images
+              .slice(halfIndex)
+              .map((item: { id: number; url: string }) => (
                 <div
                   key={item.id}
                   className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4"
@@ -103,8 +107,7 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
                     alt={item.url}
                   />
                 </div>
-              ),
-            )}
+              ))}
         </Marquee>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>

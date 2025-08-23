@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "./Button";
 import { EventDetailIcon } from "./Icons";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface DirectoryItem {
   imgUrl: string;

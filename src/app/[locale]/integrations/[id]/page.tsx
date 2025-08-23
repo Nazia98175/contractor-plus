@@ -21,7 +21,7 @@ export const generateStaticParams = async () => {
   const integrations = await getAllIntegration("en");
   return integrations.map((data: { id: number }) => ({
     locale: "en",
-    slug: data.id.toString(),
+    id: data.id.toString(),
   }));
 };
 const IntegrationDetails = async ({

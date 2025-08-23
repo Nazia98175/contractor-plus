@@ -5,8 +5,9 @@ import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Directory from "../common/Directory";
 import { CustomSliderIcon } from "../common/Icons";
+import { formatDateRange } from "@/lib/date";
 
-const EventsDirectoryHero = () => {
+const EventsDirectoryHero = ({ events }: any) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -24,6 +25,7 @@ const EventsDirectoryHero = () => {
       });
     }, 700);
   }, []);
+
   const mainItem = [
     {
       id: 1,
@@ -42,15 +44,31 @@ const EventsDirectoryHero = () => {
       button: "Event Details",
     },
   ];
+
+  const heroItems =
+    events && events.length > 0
+      ? events.map((item: any) => ({
+          id: item?.id,
+          url: item?.eventUrl ?? "",
+          imgUrl: item?.eventImages[0]?.url ?? "",
+          heading: item?.eventName ?? "",
+          place: `${formatDateRange(item?.startDate, item?.endDate) + " • " + item?.location}`,
+          description: item?.location ?? "",
+          button: item?.eventBtn ?? "",
+        }))
+      : mainItem;
+
   return (
     <section
       id="home-page-view-port-screen-events"
       className="relative mt-[90px] opacity-0"
     >
       <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between sm:px-4 xl:px-0">
-        <button className="event-hero-navigation-prev hidden rotate-180 sm:flex">
-          <CustomSliderIcon />
-        </button>
+        {events && events.length > 1 && (
+          <button className="event-hero-navigation-prev hidden rotate-180 sm:flex">
+            <CustomSliderIcon />
+          </button>
+        )}
         <Swiper
           slidesPerView={2}
           spaceBetween={30}
@@ -63,15 +81,17 @@ const EventsDirectoryHero = () => {
           modules={[EffectFade, Navigation, Pagination]}
           className="mySwiper"
         >
-          {mainItem.map((item, index) => (
+          {heroItems.map((item: any) => (
             <SwiperSlide className="pb-[30px]">
-              <Directory item={item} key={index} />
+              <Directory item={item} key={item.id} />
             </SwiperSlide>
           ))}
         </Swiper>
-        <button className="event-hero-navigation-next hidden sm:flex">
-          <CustomSliderIcon />
-        </button>
+        {events && events.length > 1 && (
+          <button className="event-hero-navigation-next hidden sm:flex">
+            <CustomSliderIcon />
+          </button>
+        )}
       </div>
     </section>
   );

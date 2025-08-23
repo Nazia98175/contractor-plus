@@ -26,6 +26,7 @@ import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -97,7 +98,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-
+  console.log(reviews, "review features");
   return (
     <>
       <div id="home-page-wrapper-2">
@@ -133,6 +134,13 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             theme={pageData.theme as "light" | "dark" | "estimateTheme"}
             apiData={true}
             mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
+          />
+          <OverlapCardMobileViewChild
+            slug={pageData.slug}
+            fieldService={pageData.fieldServiceData}
+            theme={pageData.theme as "light" | "dark" | "estimateTheme"}
+            apiData={true}
+            mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
           />
         </div>
         {/* Direct component rendering without lazy loading */}

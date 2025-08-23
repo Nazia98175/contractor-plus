@@ -17,6 +17,9 @@ import live_scheduling from "../../../public/lotties/live-scheduling.json";
 import property_profile from "../../../public/lotties/property-profile.json";
 import sale_productivity from "../../../public/lotties/sale-productivity.json";
 import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
+import up_arrow_White from "../../../public/lotties/whiteAnimated.json";
+import down_arrow_White from "../../../public/lotties/white-arrow.json";
+import whiteCar from "../../../public/lotties/white-car.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
   ClientPortalIcon,
@@ -3024,10 +3027,10 @@ export const estimaticCardData = {
   title: "How to create a winning AI estimate ",
   cardsDetail: [
     {
-      title: "Step 1",
+      heading: "Step 1",
+      title: "Describe the estimate to Estimatic",
       content: [
         {
-          title: "Describe the estimate to Estimatic",
           desc: "It’s simple. Just tell Estimatic what you need an estimate for and give it as much context as you want. You can upload photos, blueprints, drawings, or even a competing quote.",
         },
       ],
@@ -3037,39 +3040,43 @@ export const estimaticCardData = {
       },
       cardImg: "/images/webp/describe-estimate.webp",
       lottieJson: describe_Estimate,
+      isIcon: false,
     },
     {
-      title: "Step 2",
+      heading: "Step 2",
+      title: "Estimatic builds your estimate",
       content: [
         {
-          title: "Estimatic builds your estimate",
           desc: "Using your cost book, real-time pricing from suppliers, and live local labor rates, Estimatic builds a detailed, accurate estimate, 100x faster than any human.",
         },
       ],
       cardImg: "/images/webp/estimatic-builds.webp",
       lottieJson: your_Estimate,
+      isIcon: false,
     },
     {
-      title: "Step 3",
+      heading: "Step 3",
+      title: "You tweak (if needed) + approve",
       content: [
         {
-          title: "You tweak (if needed) + approve",
           desc: "Estimatic shows its work so you feel confident in yours. Tweak any details like margins or materials, and add markup before approving",
         },
       ],
       cardImg: "/images/webp/you-tweak.webp",
       lottieJson: needed_Approve,
+      isIcon: false,
     },
     {
-      title: "STEP 4",
+      heading: "STEP 4",
+      title: "Send your estimate",
       content: [
         {
-          title: "Send your estimate",
           desc: "Whether you’re at the office or at your customer’s kitchen table, send your estimate faster than anyone else, and let them eSign without extra software. ",
         },
       ],
       cardImg: "/images/webp/send-your-estimate.webp",
       lottieJson: send_Your_Estimate,
+      isIcon: false,
     },
   ],
 };
@@ -3364,66 +3371,66 @@ export const realTimeServiceSliderData = {
   slug: "field-service",
   solutionCards: [
     {
-      id: 57,
+      id: 1,
       title: "Visual Pipeline",
       description:
         "Track every deal in a drag-and-drop Kanban board that shows exactly where things stand—and what they’re worth.",
       image: null,
     },
     {
-      id: 58,
+      id: 2,
       title: "Dollar Value Visibility",
       description:
         "See how much revenue is sitting in each stage of your pipeline. Forecast with real numbers instead of rough guesses.",
       image: null,
     },
     {
-      id: 59,
+      id: 3,
       title: "One-Click Conversion",
       description:
         "Turn any opportunity into an estimate or job instantly without retyping or  duplicate entry.",
       image: null,
     },
     {
-      id: 60,
+      id: 4,
       title: "Lost Deal Tracking",
       description:
         "Log why a deal was lost so you can spot patterns, refine your sales process, and improve your close rate.",
       image: null,
     },
     {
-      id: 61,
+      id: 5,
       title: "Conversion Metrics",
       description:
         "See how many deals your team is winning and who’s winning them. Spot top performers and coach the rest.",
       image: null,
     },
     {
-      id: 62,
+      id: 6,
+      title: "Mobile Updates",
+      description:
+        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
+      image: null,
+    },
+    {
+      id: 7,
       title: "Job-Linked Deals",
       description:
         "Every deal is tied to a property or project and not just a contact. Sales always stay connected to the job site.",
       image: null,
     },
     {
-      id: 63,
+      id: 8,
       title: "Full Integrated",
       description:
         "Deal Flow Tracker is deeply integrated with Contractor+ estimates, CRM, and job workflows.",
       image: null,
     },
     {
-      id: 64,
+      id: 9,
       title: "Lead Assignment",
       description:
         "Assign leads to specific team members for accountability and visibility across the sales team.",
-      image: null,
-    },
-    {
-      id: 65,
-      title: "Mobile App",
-      description:
-        "Move deals across stages right from your phone. Field teams and office staff stay in sync, wherever they are.",
       image: null,
     },
   ],
@@ -4898,14 +4905,14 @@ export const estimaticReviewsAi = {
         reviews: [
           {
             id: 1,
-            userName: "Richard Tooley",
-            profileImg: null,
+            userName: "Ava Martinez",
+            profileImg: "/images/webp/rands.webp",
             rating: 5,
-            videoLink: null,
-            isModal: false,
-            companyLogo: null,
-            review: `I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage.`,
-            userRole: "Focus Handyman",
+            videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+            isModal: true,
+            companyLogo: "/images/svg/randsIcon.svg",
+            review: `"Coordinating subcontractors and paperwork would leave me hunting for approvals every morning. Once I adopted Contractor+, I send tasks and instructions through business phone & sms, and automated client agreements capture signatures in seconds. Now I drop on site without chase calls, and I know every subcontractor has what they need before I arrive. It’s taken the stress out of prep work and freed me to focus on quality rather than admin."`,
+            userRole: "Cornerstone Construction Co.",
           },
 
           {
@@ -4994,4 +5001,135 @@ export const constructionBookkeepingServices = [
     isModal: true,
     videoLink: "https://dummyvideo.com/456",
   },
+];
+export const opportunityTracker = {
+  title: "Teams that switch to Contractor+ never look back",
+  subTitle: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: "Boost in revenue with visual pipeline tracking",
+      start: 0,
+      end: 28,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: up_arrow_black,
+      mobileLottieJson: up_arrow_White,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: "Contractors see higher sales productivity",
+      start: 0,
+      end: 9,
+      suffix: null,
+      denominator: 10,
+      prefix: null,
+      value: null,
+      lottieJson: sale_productivity,
+      mobileLottieJson: whiteCar,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Of leads weren’t fully tracked before using Contractor+",
+      start: 0,
+      end: 80,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: lead_icon_black,
+      mobileLottieJson: down_arrow_White,
+      cardImage: {
+        url: null,
+      },
+    },
+  ],
+};
+export const invoicingSoftware = {
+  title: "Teams that switch to Contractor+ never look back",
+  sub_title: "We help you get ahead, not just get by.",
+  cards: [
+    {
+      id: 1,
+      title: null,
+      subTitle: (
+        <>
+          Revenue increase from capturing <br /> unbilled items
+        </>
+      ),
+      start: 5,
+      end: 10,
+      suffix: "%",
+      prefix: "5-",
+      value: 5,
+      lottieJson: up_arrow_black,
+      mobileLottieJson: up_arrow_White,
+      cardImage: {
+        url: null,
+      },
+    },
+    {
+      id: 2,
+      title: null,
+      subTitle: (
+        <>
+          Savings in billing admin <br /> time{" "}
+        </>
+      ),
+      start: 0,
+      end: 50,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: null,
+      cardImage: {
+        url: "/images/svg/saving-bill.svg",
+      },
+    },
+    {
+      id: 3,
+      title: null,
+      subTitle: "Average fewer disputes from real-time documentation",
+      start: 0,
+      end: 40,
+      suffix: "%",
+      prefix: null,
+      value: null,
+      lottieJson: lead_icon_black,
+      mobileLottieJson: down_arrow_White,
+      cardImage: {
+        url: null,
+      },
+    },
+  ],
+};
+
+export const integrationLogos = [
+  "/images/webp/outlook.webp",
+  "/images/png/contractor-1.png",
+  "/images/svg/contractor-3.svg",
+  "/images/png/contractor-4.png",
+  "/images/png/contractor-5.png",
+  "/images/png/contractor-6.png",
+  "/images/png/zapier.png",
+  "/images/png/wisetack.png",
+  "/images/png/victory.png",
+  "/images/png/quickbooks.png",
+  "/images/png/paypall-icon.png",
+  "/images/png/outlook.png",
+  "/images/png/lowes.png",
+  "/images/png/earthcam.png",
+  "/images/png/earth.png",
+  "/images/png/mernards.png",
+  "/images/png/companycam.png",
+  "/images/png/lowes-2.png",
 ];

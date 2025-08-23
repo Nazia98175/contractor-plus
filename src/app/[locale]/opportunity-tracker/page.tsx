@@ -7,7 +7,8 @@ import {
   dealReviews,
   dealReviews2,
   fieldcarddetail,
-  neverLookBackData,
+  integrationLogos,
+  opportunityTracker,
   platforms,
   realTimeServiceSliderData,
   runWithContractorData,
@@ -25,12 +26,20 @@ import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
 import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
+import { getIntegrationList } from "@/services/integation/getIntegrationData";
 export const metadata = {
   title: "Opportunity Tracker for Contractors | Contractor+",
   description:
     "One board that shows every deal, dollar value, and next steps so you can win more opportunities. Convert won leads to jobs in one click. ",
 };
-const DealFlowTracker = () => {
+const DealFlowTracker = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  const [integrationList] = await Promise.all([getIntegrationList(locale)]);
+
   return (
     <div className="overflow-x-hidden">
       <CommonHero
@@ -44,7 +53,7 @@ const DealFlowTracker = () => {
           imageMaxWidth: 900,
         }}
         featureTag="Opportunity Tracker"
-        heroImg="/images/webp/deal-flow-hero.webp"
+        heroImg="/images/webp/opportunity-tracker-hero.webp"
         slug="crm"
         commonData={dealflowhero}
         apiData={false}
@@ -71,7 +80,7 @@ const DealFlowTracker = () => {
         />
         <RunWithContractor kindAdorable={runWithContractorData} />
         <FinallyConnectsField />
-        <NeverLookBack data={neverLookBackData} />
+        <NeverLookBack data={opportunityTracker} />
       </div>
       <div className="relative">
         <div className="bg-kuroiBlack pointer-events-none absolute -top-1 z-20 h-2 w-full"></div>
@@ -103,6 +112,11 @@ const DealFlowTracker = () => {
           title: "Whatever you use, Contractor+ connects",
           subTitle: "5000+ Potential Integrations",
         }}
+        images={
+          integrationList?.hero
+            ? integrationList?.hero?.images?.map((item: any) => item?.url)
+            : integrationLogos
+        }
         issection={false}
       />
       <BlogPosts

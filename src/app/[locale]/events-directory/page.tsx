@@ -20,17 +20,16 @@ const EventsDirectoryPage = async ({
     getEventList(locale),
   ]);
 
-  console.log(eventList, "events");
   return (
     <main id="home-page-wrapper-2">
-      <EventsDirectoryHero />
-      <AllEventCard />
+      <EventsDirectoryHero events={events} />
+      <AllEventCard eventList={eventList} />
       <div className="mx-auto w-full max-w-[898px]">
         <CommonFormField
           className="mt-[79px]"
-          title="Are you looking for a better way to operate your contracting business?"
-          subTitle="Start using Contractor+ free. You won’t look back."
-          placeholder="Your Email"
+          title={`${eventList?.emailSignupSection?.title ?? ""}`}
+          subTitle={`${eventList?.emailSignupSection?.subTitle ?? ""}`}
+          placeholder={`${eventList?.emailSignupSection?.placeholder ?? ""}`}
           createBtn="Get started FREE"
           ncc="No credit card required"
           showTitle={true}

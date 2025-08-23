@@ -110,15 +110,6 @@ const CombinesPowerfulAiSlider = () => {
       >
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <div className="mx-auto flex h-fit w-full max-w-[800px]">
-            {/* <Image
-              unoptimized
-              width={871}
-              height={625}
-              sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
-              src={"/images/webp/ai-learning-engine.webp"}
-              alt="Slide Image"
-              className="w-full object-cover"
-            /> */}
             <LottieAnimation
               className="mx-auto h-full w-full"
               loop={false}
@@ -128,16 +119,6 @@ const CombinesPowerfulAiSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="mx-auto w-full max-w-[305px]">
-            {/* <Image
-              unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
-              width={305}
-              height={300}
-              priority
-              src={"/images/webp/auto-posting.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full object-center"
-            /> */}
             <LottieAnimation
               className="mx-auto h-full w-full"
               loop={false}
@@ -147,15 +128,6 @@ const CombinesPowerfulAiSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <div className="mx-auto w-full max-w-[596px]">
-            {/* <Image
-              priority
-              sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
-              width={596}
-              height={268}
-              src={"/images/webp/review-replies.webp"}
-              alt="Slide Image"
-              className="object-cover"
-            /> */}
             <LottieAnimation
               className="mx-auto h-full w-full"
               loop={false}
@@ -291,7 +263,7 @@ const CombinesPowerfulAiSlider = () => {
 
       <div className="slider-img-gradient relative z-20">
         <Swiper
-          modules={[Navigation, Pagination, Controller, Autoplay]}
+          modules={[Navigation, Pagination, Controller]}
           onSwiper={setBottomSwiper}
           slidesPerView={3}
           speed={600}
@@ -304,10 +276,6 @@ const CombinesPowerfulAiSlider = () => {
           pagination={{
             el: ".swiper-pagination-real-time",
             clickable: true,
-          }}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
           }}
           className="real-time-active-slider"
           breakpoints={{

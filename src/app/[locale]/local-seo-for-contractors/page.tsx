@@ -56,8 +56,6 @@ const LeadGeneration = async ({ params }: Params) => {
         country: "US",
       };
 
-  console.log(processedLocation, "processedLocation");
-
   return (
     <>
       <div className="shadow-c5 relative z-20 pb-[35px]">

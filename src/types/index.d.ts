@@ -141,6 +141,10 @@ export interface IntegrationItem {
   id: string;
   name: string;
   logo: string;
+  tags?: {
+    id: number;
+    title: string;
+  }[];
   categories: string[];
   description: string;
   link: string;

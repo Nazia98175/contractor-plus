@@ -2,7 +2,7 @@ import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
 import OneClearInvoice from "@/components/billing/OneClearInvoice";
 import {
   billingformData,
-  billingNeverLookBackData,
+  invoicingSoftware,
   blogList,
   dealflowhero,
   dealReviews,
@@ -75,7 +75,7 @@ const BillingPage = () => {
         />
         <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
         <FinallyMakesInvoicing />
-        <NeverLookBack data={billingNeverLookBackData} />
+        <NeverLookBack data={invoicingSoftware} />
       </div>
       <ThousandsReviews
         data={dealReviews2}

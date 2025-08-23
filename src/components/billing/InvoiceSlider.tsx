@@ -139,7 +139,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           className="absolute right-0 bottom-0 hidden h-24 w-[406px] xl:block"
         ></div>
         <Swiper
-          modules={[Navigation, Pagination, Controller, Autoplay]}
+          modules={[Navigation, Pagination, Controller]}
           onSwiper={setBottomSwiper}
           slidesPerView={3}
           speed={600}
@@ -152,10 +152,6 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
           pagination={{
             el: ".swiper-pagination-real-time",
             clickable: true,
-          }}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
           }}
           className="real-time-active-slider"
           breakpoints={{

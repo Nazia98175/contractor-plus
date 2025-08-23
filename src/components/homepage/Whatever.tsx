@@ -34,9 +34,10 @@ const Whatever: React.FC<TheWhateverProps> = ({
   const logosArray = images ? images : integrationLogos;
   const t = useTranslations();
 
-  // State for logo rotation
-  const [currentSet, setCurrentSet] = useState(0);
-  const [fadeOpacity, setFadeOpacity] = useState(1);
+  // State for individual logo positions
+  const [currentLogos, setCurrentLogos] = useState<string[]>([]);
+  const [fadingIndex, setFadingIndex] = useState<number | null>(null);
+  const [lastChangedIndex, setLastChangedIndex] = useState<number | null>(null);
 
   // Media queries for responsive behavior
   const isMobile = useMediaQuery("(max-width: 767px)");
@@ -55,27 +56,56 @@ const Whatever: React.FC<TheWhateverProps> = ({
   const right2Ref = useRef<HTMLDivElement | null>(null);
   const right3Ref = useRef<HTMLDivElement | null>(null);
 
-  // Get current set of 6 logos
-  const getCurrentLogos = () => {
-    const startIndex = currentSet * 6;
-    return logosArray.slice(startIndex, startIndex + 6);
+  // Initialize with first 6 unique logos
+  useEffect(() => {
+    if (logosArray.length >= 6) {
+      setCurrentLogos(logosArray.slice(0, 6));
+    }
+  }, [logosArray]);
+
+  // Get a random logo that's not currently being used
+  const getRandomUnusedLogo = (excludeLogos: string[]) => {
+    const availableLogos = logosArray.filter(
+      (logo) => !excludeLogos.includes(logo),
+    );
+    if (availableLogos.length === 0) return logosArray[0]; // Fallback
+    return availableLogos[Math.floor(Math.random() * availableLogos.length)];
   };
 
-  // Logo rotation effect
+  // Random logo rotation effect
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Start fade out
-      setFadeOpacity(0);
+    if (currentLogos.length !== 6) return;
 
-      // After fade completes, change to next set and fade in
+    const interval = setInterval(() => {
+      // Get available positions (exclude the last changed one)
+      const availablePositions = [0, 1, 2, 3, 4, 5].filter(
+        (index) => index !== lastChangedIndex,
+      );
+
+      // Pick a random position from available ones
+      const randomIndex =
+        availablePositions[
+          Math.floor(Math.random() * availablePositions.length)
+        ];
+
+      // Start fade out for this position
+      setFadingIndex(randomIndex);
+
+      // After fade completes, change the logo and fade in
       setTimeout(() => {
-        setCurrentSet((prev) => (prev + 1) % 3); // 3 sets total (18/6=3)
-        setFadeOpacity(1);
-      }, 500); // 500ms fade duration
-    }, 5000); // Every 5 seconds
+        setCurrentLogos((prev) => {
+          const newLogos = [...prev];
+          const otherLogos = prev.filter((_, index) => index !== randomIndex);
+          newLogos[randomIndex] = getRandomUnusedLogo(otherLogos);
+          return newLogos;
+        });
+        setFadingIndex(null);
+        setLastChangedIndex(randomIndex); // Remember this position
+      }, 450); // 300ms fade duration
+    }, 3500); // Every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentLogos, logosArray, lastChangedIndex]);
 
   const waitUntilFullyLoaded = (): Promise<void> => {
     return new Promise((resolve) => {
@@ -157,7 +187,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
         gsap.to(el, {
           x: 0,
           y: 0,
-          opacity: fadeOpacity, // Use fadeOpacity for rotation effect
+          opacity: 1, // Always fade to full opacity for boxes
           scale: 1,
           ease: "power2.out",
           scrollTrigger,
@@ -180,7 +210,6 @@ const Whatever: React.FC<TheWhateverProps> = ({
         y: 0,
         scale: 1,
         opacity: 1,
-
         ease: "power2.out",
         scrollTrigger,
       });
@@ -193,9 +222,12 @@ const Whatever: React.FC<TheWhateverProps> = ({
         if (t.trigger === sectionRef.current) t.kill();
       });
     };
-  }, [isMobile, isTablet, isDesktop, fadeOpacity]);
+  }, [isMobile, isTablet, isDesktop]);
 
-  const currentLogos = getCurrentLogos();
+  // Helper function to get image opacity
+  const getImageOpacity = (index: number) => {
+    return fadingIndex === index ? 0 : 1;
+  };
 
   return (
     <section ref={sectionRef} className="relative z-10 w-full px-2">
@@ -217,10 +249,6 @@ const Whatever: React.FC<TheWhateverProps> = ({
               <div
                 ref={left1Ref}
                 className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-20 lg:w-20"
-                style={{
-                  opacity: fadeOpacity,
-                  transition: "opacity 0.5s ease-in-out",
-                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -232,15 +260,15 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   alt="contractor"
                   priority
                   sizes="(min-width: 1024px) 40px, 30px"
+                  style={{
+                    opacity: getImageOpacity(0),
+                    transition: "opacity 0.45s ease-in-out",
+                  }}
                 />
               </div>
               <div
                 ref={left2Ref}
                 className="flex h-[58px] w-[58px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px]"
-                style={{
-                  opacity: fadeOpacity,
-                  transition: "opacity 0.5s ease-in-out",
-                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -252,15 +280,15 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   alt="contractor"
                   priority
                   sizes="(min-width: 1024px) 38px, 26px"
+                  style={{
+                    opacity: getImageOpacity(1),
+                    transition: "opacity 0.45s ease-in-out",
+                  }}
                 />
               </div>
               <div
                 ref={left3Ref}
                 className="flex h-[62px] w-[62px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px] xl:h-[93px] xl:w-[93px]"
-                style={{
-                  opacity: fadeOpacity,
-                  transition: "opacity 0.5s ease-in-out",
-                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -272,6 +300,10 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   alt="contractor"
                   priority
                   sizes="(min-width: 1024px) 66px, 45px"
+                  style={{
+                    opacity: getImageOpacity(2),
+                    transition: "opacity 0.45s ease-in-out",
+                  }}
                 />
               </div>
             </div>
@@ -289,10 +321,6 @@ const Whatever: React.FC<TheWhateverProps> = ({
               <div
                 ref={right1Ref}
                 className="flex h-[55px] w-[55px] items-center justify-center p-2 will-change-transform lg:h-[85px] lg:w-[85px] xl:h-[93px] xl:w-[93px]"
-                style={{
-                  opacity: fadeOpacity,
-                  transition: "opacity 0.5s ease-in-out",
-                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -304,15 +332,15 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   alt="contractor"
                   priority
                   sizes="(min-width: 1024px) 38px, 29px"
+                  style={{
+                    opacity: getImageOpacity(3),
+                    transition: "opacity 0.45s ease-in-out",
+                  }}
                 />
               </div>
               <div
                 ref={right2Ref}
                 className="flex h-[46px] w-[46px] items-center justify-center p-2 will-change-transform lg:h-[72px] lg:w-[72px]"
-                style={{
-                  opacity: fadeOpacity,
-                  transition: "opacity 0.5s ease-in-out",
-                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -324,15 +352,15 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   alt="contractor"
                   priority
                   sizes="(min-width: 1024px) 38px, 29px"
+                  style={{
+                    opacity: getImageOpacity(4),
+                    transition: "opacity 0.45s ease-in-out",
+                  }}
                 />
               </div>
               <div
                 ref={right3Ref}
                 className="flex h-10 w-10 items-center justify-center p-2 will-change-transform lg:h-[61px] lg:w-[61px]"
-                style={{
-                  opacity: fadeOpacity,
-                  transition: "opacity 0.5s ease-in-out",
-                }}
               >
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
@@ -344,6 +372,10 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   alt="contractor"
                   priority
                   sizes="(min-width: 1024px) 33px, 21px"
+                  style={{
+                    opacity: getImageOpacity(5),
+                    transition: "opacity 0.45s ease-in-out",
+                  }}
                 />
               </div>
             </div>

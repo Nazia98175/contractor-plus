@@ -2,6 +2,7 @@ import { getBlogs } from "@/services/blogs";
 import { HomePageResponse } from "@/types";
 import { getHomePage } from "./homepage";
 import { getCommonData } from "../common/commonData";
+import { getIntegrationList } from "../integation/getIntegrationData";
 
 // Optional: Define return type if you're using TypeScript strongly
 export interface HomepageDataResponse {
@@ -14,6 +15,7 @@ export interface HomepageDataResponse {
   blogs: any | null;
   commonData: any | null;
   industriesData: any | null;
+  integrationList: any | null;
 }
 
 export const getHomepageData = async (
@@ -42,6 +44,7 @@ export const getHomepageData = async (
     blogs,
     commonData,
     industriesData,
+    integrationList,
   ] = await Promise.all([
     getHomePage(locale, populateDefault),
     getHomePage(locale, populatePlatforms),
@@ -52,6 +55,7 @@ export const getHomepageData = async (
     getBlogs(locale, blogQuery),
     getCommonData(locale),
     getHomePage(locale, industriesQuery),
+    getIntegrationList(locale),
   ]);
 
   return {
@@ -64,5 +68,6 @@ export const getHomepageData = async (
     blogs,
     commonData,
     industriesData,
+    integrationList,
   };
 };

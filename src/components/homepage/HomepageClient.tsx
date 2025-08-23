@@ -1,6 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { integrationLogos } from "../common/Helper";
 const ContractorPlatforms = dynamic(() => import("./ContractorPlatforms"), {
   ssr: false,
 });
@@ -29,6 +30,7 @@ const HomepageClient = ({
   blogs,
   commonData,
   industriesData,
+  integrationList,
 }: any) => {
   return (
     <>
@@ -60,6 +62,11 @@ const HomepageClient = ({
         data={commonData?.contractorConnects}
         resultStats={resultStats}
         className="overflow-hidden"
+        images={
+          integrationList?.images
+            ? integrationList?.images?.map((item: any) => item?.url)
+            : integrationLogos
+        }
       />
       <OurBlogs
         blogs={blogs?.data}

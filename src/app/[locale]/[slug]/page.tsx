@@ -97,7 +97,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-
+  console.log(reviews, "review features");
   return (
     <>
       <div id="home-page-wrapper-2">

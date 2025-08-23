@@ -7,6 +7,7 @@ type WhatEverClientProps = {
   issection?: boolean;
   className?: string;
   resultStats?: any;
+  images?: string[];
 };
 
 const WhatEverClient = ({
@@ -14,10 +15,11 @@ const WhatEverClient = ({
   resultStats,
   issection = true,
   className,
+  images,
 }: WhatEverClientProps) => {
   return (
     <div className={`bg-kuroiBlack relative ${className}`}>
-      <Whatever whateverOperation={data} />
+      <Whatever whateverOperation={data} images={images} />
       {issection && <MakeOperation resultStats={resultStats} />}
     </div>
   );

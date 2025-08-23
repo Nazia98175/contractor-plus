@@ -2,7 +2,6 @@ import { ServiceData } from "@/types";
 import Image from "next/image";
 import React from "react";
 import { TickIcon } from "../common/Icons";
-// import LottieAnimation from "../common/LottieAnimation";
 import { themeColors } from "@/utils/getVariants";
 import LottieAnimation from "../homepage/LottieAnimation";
 interface Props {

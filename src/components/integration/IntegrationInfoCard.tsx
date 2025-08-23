@@ -33,7 +33,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
   };
   return (
     <Link
-      href={`/integrations/${obj.id}`}
+      href={`/integrations/${obj.slug}`}
       className="bg-charcoalBlue card-shine rounded-lg p-5 md:p-2.5"
     >
       <div className="flex items-center gap-4">
@@ -61,7 +61,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
             ))}
           </div>
         ) : (
-          <p className="bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm text-coralRed font-semibold capitalize">
+          <p className="bg-jetBlack text-coralRed flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize">
             No tags Found
           </p>
         )}

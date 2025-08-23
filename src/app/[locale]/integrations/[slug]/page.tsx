@@ -6,7 +6,7 @@ import IntegrationDetail from "@/components/integration-details/IntegrationDetai
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
 import {
   getAllIntegration,
-  getIntegrationDataById,
+  getIntegrationDataBySlug,
   getIntegrationDetails,
   getIntegrationList,
 } from "@/services/integation/getIntegrationData";
@@ -19,20 +19,20 @@ export const metadata = {
 };
 export const generateStaticParams = async () => {
   const integrations = await getAllIntegration("en");
-  return integrations.map((data: { id: number }) => ({
+  return integrations.map((data: { slug: string }) => ({
     locale: "en",
-    id: data.id.toString(),
+    slug: data?.slug?.toString(),
   }));
 };
 const IntegrationDetails = async ({
   params,
 }: {
-  params: Promise<{ id: string; locale: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) => {
-  const { id, locale } = await params;
+  const { slug, locale } = await params;
   const [integrationData, integrationList, integrationDetails] =
     await Promise.all([
-      getIntegrationDataById(locale, id),
+      getIntegrationDataBySlug(locale, slug),
       getIntegrationList(locale),
       getIntegrationDetails(locale),
     ]);

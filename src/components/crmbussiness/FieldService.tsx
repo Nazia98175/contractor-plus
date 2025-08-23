@@ -39,7 +39,6 @@ const FieldService: React.FC<TheServiceProps> = ({
           currentMaxHeight = cardHeight;
         }
       });
-      console.log(currentMaxHeight);
       setMaxHeight(currentMaxHeight);
     }, 1000);
   };
@@ -56,41 +55,7 @@ const FieldService: React.FC<TheServiceProps> = ({
 
     updateMaxHeight();
     updateHeadingHeight();
-
-    const cards = document.querySelectorAll(".crm-cards");
-    const totalCards = cards.length;
-
-    if (maxHeight > 0 && headingHeight > 0) {
-      const startScreen = (window.innerHeight - maxHeight) / 2 - 60 + "px";
-      const isVisible =
-        (window.innerHeight - maxHeight) / 2 - 60 > headingHeight;
-
-      if (!isVisible) return;
-      // ScrollTrigger.getAll().forEach((st) => st.kill());
-      const pinTrigger = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: `top ${startScreen}`, // Start pinning when section top reaches 90px from viewport top
-        end: `+=${window.innerHeight * (totalCards * 1.034)}`,
-        pin: headingRef.current,
-        pinSpacing: false, // Prevents extra spacing
-        scrub: false,
-        invalidateOnRefresh: true,
-        markers: false,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          gsap.to(headingRef.current, {
-            opacity: 1 - progress * 0.3,
-            duration: 0.1,
-          });
-        },
-      });
-
-      // Cleanup function
-      return () => {
-        pinTrigger.kill();
-      };
-    }
-  }, [maxHeight, headingHeight]);
+  }, [sectionRef.current, headingRef.current]);
 
   // Update heading height on window resize
   useEffect(() => {
@@ -103,7 +68,34 @@ const FieldService: React.FC<TheServiceProps> = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  useEffect(() => {
+    if (maxHeight && headingHeight) {
+      const isSticky =
+        window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight;
+      const headingFromTop = window.innerHeight / 2 - maxHeight / 2 - 90;
+      const bottomVal =
+        100 - (headingFromTop + headingHeight) / (window.innerHeight / 100);
+      if (!isSticky) return;
+      setTimeout(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "bottom bottom",
+            end: `bottom ${bottomVal}%`,
+            scrub: 2,
+            markers: false,
+            id: "field-service-heading",
+            invalidateOnRefresh: true,
+          },
+        });
 
+        tl.to(headingRef.current, {
+          y: -(headingFromTop + headingHeight),
+          ease: "none",
+        });
+      }, 2000);
+    }
+  }, [headingHeight, maxHeight]);
   return (
     <section
       ref={sectionRef}
@@ -112,14 +104,20 @@ const FieldService: React.FC<TheServiceProps> = ({
       <div
         ref={headingRef}
         style={{
-          position: "relative",
-          zIndex: 20,
-          top: 0,
+          top:
+            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
+              ? window.innerHeight / 2 - maxHeight / 2 - 90 + "px"
+              : "unset",
+          position:
+            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
+              ? "sticky"
+              : "relative",
         }}
+        className="w-full justify-center"
       >
         <AdaptiveHeroTitle
           title={fieldService?.title}
-          className={`gradient-text mx-auto block pb-10 text-center leading-relaxed font-semibold -tracking-[0.72px] ${mainClassName || "max-w-[813px]"}`}
+          className={`gradient-text mx-auto block text-center leading-relaxed font-semibold -tracking-[0.72px] ${mainClassName || "max-w-[813px]"}`}
           minFontSize={24}
           maxLines={2}
           maxFontSize={42}

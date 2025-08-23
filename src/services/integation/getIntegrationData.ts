@@ -48,10 +48,10 @@ export const getAllIntegration = async (locale: string) => {
   }
 };
 
-export const getIntegrationDataById = async (locale: string, id: string) => {
+export const getIntegrationDataBySlug = async (locale: string, slug: string) => {
   try {
     const response = await axiosInstance.get(
-      `integrations?locale=${locale}&filters[id][$eq]=${id}&populate[Faqs][populate]=*&populate[image][populate]=*&populate[thumbnailImage][populate]=*`,
+      `integrations?locale=${locale}&filters[slug][$eq]=${slug}&populate[Faqs][populate]=*&populate[image][populate]=*&populate[thumbnailImage][populate]=*`,
     );
     const { data } = response.data;
     if (!data) {

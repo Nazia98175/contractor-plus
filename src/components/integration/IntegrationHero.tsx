@@ -65,7 +65,7 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
           {integrationList?.hero?.subTitle ?? ""}
         </p>
       </div>
-      <div className="mt-4">
+      <div className="mx-auto mt-4 w-full max-w-[1440px]">
         <Marquee direction="right" speed={50}>
           {integrationList?.hero?.images &&
             integrationList?.hero?.images.map(
@@ -109,9 +109,8 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <Image
-          width={3000}
-          height={1440}
-          className="1xl:max-w-[113%] 1xl:left-[-5%] 3xl:top-[-5%] 900:top-[2%] pointer-events-none absolute top-[4%] left-[-15%] z-10 max-w-[131%] object-cover blur-[14.05px] lg:top-[1%] 2xl:top-[-0.5%]"
+          fill
+          className="3xl:top-[-5%] 900:top-[2%] mix-b pointer-events-none absolute top-[4%] left-[0%] z-10 object-cover blur-[14.05px] lg:top-[1%] 2xl:top-[-0.5%]"
           src="/images/webp/blur.webp"
           alt="blur-ellipse"
         />

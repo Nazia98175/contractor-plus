@@ -12,7 +12,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
     return "Not Found";
   }
   const getCategoryColor = (category: string) => {
-    switch (category.toLowerCase()) {
+    switch (category.toLowerCase().trim()) {
       case "productivity":
         return "text-expressionismGreen";
       case "payments":
@@ -25,6 +25,10 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         return "text-coralRed";
       case "other":
         return "text-expressionismGreen";
+      case "faster payments":
+        return "text-expressionismGreen";
+      case "safer payments":
+        return "text-amberOrange";
     }
   };
   return (
@@ -45,17 +49,21 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         </h4>
       </div>
       <div className="mt-[15px] mb-3 flex items-center justify-between">
-        {obj.categories && (
+        {obj?.tags && obj?.tags?.length > 0 ? (
           <div className="flex items-center gap-1">
-            {obj.categories.map((category, idx) => (
+            {obj?.tags?.map((category) => (
               <p
-                key={idx}
-                className={`${getCategoryColor(category)} bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize`}
+                key={category.id}
+                className={`${getCategoryColor(category.title)} bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize`}
               >
-                {category}
+                {category.title}
               </p>
             ))}
           </div>
+        ) : (
+          <p className="bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm text-coralRed font-semibold capitalize">
+            No tags Found
+          </p>
         )}
         <button>
           <RightLinkIcon />

@@ -9,6 +9,7 @@ import {
   dealReviews2,
   platforms,
   simpleWayToBill,
+  integrationLogos,
 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import {
@@ -27,13 +28,21 @@ import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
 import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
+import { getIntegrationList } from "@/services/integation/getIntegrationData";
 
 export const metadata = {
   title: "Auto-Update Contractor Invoicing Software | Contractor+",
   description:
     "Living invoices that reflect every signed, time-stamped change order. Capture uninvoiced billables automatically for more revenue.",
 };
-const BillingPage = () => {
+const BillingPage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  const [integrationList] = await Promise.all([getIntegrationList(locale)]);
+
   return (
     <main className="relative z-10 overflow-hidden">
       <CommonHero
@@ -105,6 +114,11 @@ const BillingPage = () => {
           subTitle: "5000+ Potential Integrations",
         }}
         issection={false}
+        images={
+          integrationList?.hero
+            ? integrationList?.hero?.images?.map((item: any) => item?.url)
+            : integrationLogos
+        }
       />
 
       <BlogPosts

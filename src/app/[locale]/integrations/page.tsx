@@ -23,9 +23,7 @@ const IntegrationPage = async ({
     getAllIntegration(locale),
     getIntegrationList(locale),
   ]);
-
-  console.log(integrationList, "integrations");
-
+  console.log(integrations, "integrations data");
   return (
     <main id="home-page-wrapper-2">
       <div

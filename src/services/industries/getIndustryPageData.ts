@@ -1,6 +1,7 @@
 import { getBlogs, getBlogsByCategory } from "@/services/blogs";
 import { getCommonData } from "../common/commonData";
 import { getIndustryPage } from "./industry";
+import { getIntegrationList } from "../integation/getIntegrationData";
 
 export interface CrmLikePageDataResponse {
   crmPageContent: any | null;
@@ -17,6 +18,7 @@ export interface CrmLikePageDataResponse {
   thousandReviews: any | null;
   commonData: any | null;
   blogsByCategory?: any | null;
+  integrationList?: any | null;
 }
 
 export const getIndustryPageData = async (
@@ -36,6 +38,7 @@ export const getIndustryPageData = async (
     blogs,
     thousandReviewsRes,
     commonData,
+    integrationList,
     // blogsByCategoryRes,
   ] = await Promise.all([
     getIndustryPage(slug, locale, "&populate=*"),
@@ -70,6 +73,8 @@ export const getIndustryPageData = async (
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
     getCommonData(locale),
+    getIntegrationList(locale),
+
     // getBlogsByCategory(locale, slug)
   ]);
 
@@ -89,6 +94,7 @@ export const getIndustryPageData = async (
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
     commonData: commonData || null,
+    integrationList: integrationList?.hero || null,
     // blogsByCategory: blogsByCategoryRes?.data || null,
   };
 };

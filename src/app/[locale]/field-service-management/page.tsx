@@ -1,4 +1,4 @@
-import { platforms } from "@/components/common/Helper";
+import { integrationLogos, platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -67,6 +67,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     blogs,
     thousandReviews,
     commonData,
+    integrationList,
   } = await getSolutionPageData("field-service-management", useParams?.locale);
 
   const ip = (await cookies()).get("user-ip")?.value;
@@ -127,7 +128,15 @@ const FieldServicesPage = async ({ params }: Params) => {
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
         />
       </div>
-      <WhatEverClient data={commonData?.contractorConnects} issection={false} />
+      <WhatEverClient
+        data={commonData?.contractorConnects}
+        issection={false}
+        images={
+          integrationList?.images
+            ? integrationList?.images?.map((item: any) => item?.url)
+            : integrationLogos
+        }
+      />
       <BlogPosts
         data={blogs}
         blogs={solutionPageContent?.data?.[0]?.blogs}

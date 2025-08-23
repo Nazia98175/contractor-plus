@@ -13,9 +13,9 @@ interface GooglePosterProps {
 const GooglePoster: React.FC<GooglePosterProps> = ({ location }) => {
   // Extract city name with fallback
   const cityName = location?.city || "Your City";
-  
+
   return (
-    <div className="rounded-xl bg-white p-2.5">
+    <div className="relative overflow-hidden rounded-xl bg-white p-2.5">
       <div className="flex items-center justify-between gap-2">
         <div className="text-bluetiful flex items-center gap-1 text-sm font-semibold tracking-[-0.26px]">
           <GoogleIcon />
@@ -50,6 +50,7 @@ const GooglePoster: React.FC<GooglePosterProps> = ({ location }) => {
           <GreenArrorwIcon />
         </div>
       </div>
+      <div className="invester-image-gradient pointer-events-none absolute bottom-[-40%] left-0 z-20 h-full w-full rounded-xl"></div>
     </div>
   );
 };

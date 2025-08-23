@@ -12,17 +12,19 @@ import Estimate_Sent from "../../../public/lotties/Estimate-Sent.json";
 import Initial_Contact from "../../../public/lotties/Initial-Contact.json";
 import Job_Scheduled from "../../../public/lotties/Job-Scheduled.json";
 import Lead_Captured from "../../../public/lotties/Lead-Captured.json";
+import dealApproved from "../../../public/lotties/Deal-Approved.json";
 import Revenue_Forecast_Updated from "../../../public/lotties/Revenue-Forecast-Updated.json";
 import CardReveal from "../common/CardReveal";
 import FreeTrialButton from "../common/FreeTrialButton";
 import LottieAnimation from "../common/LottieAnimation";
 import {
-  stepFiveAnimation,
-  stepFourAnimation,
   stepOneAnimation,
-  stepSixAnimation,
-  stepThreeAnimation,
   stepTwoAnimation,
+  stepThreeAnimation,
+  stepFourAnimation,
+  stepFiveAnimation,
+  stepSixAnimation,
+  stepSevenAnimation,
 } from "../fieldservices/dealflowanimation";
 
 // Register the SplitText plugin
@@ -97,6 +99,7 @@ const FinallyConnectsField = () => {
       scrollTimeline.add(stepFourAnimation());
       scrollTimeline.add(stepFiveAnimation());
       scrollTimeline.add(stepSixAnimation());
+      scrollTimeline.add(stepSevenAnimation());
       gsap.set("#timeline-wrapper-finally", {
         opacity: 1,
       });
@@ -188,48 +191,54 @@ const FinallyConnectsField = () => {
           {/* STEP 7 CLOUD */}
           <img
             src="/images/png/step-7-cloud.png"
-            id="step-5-cloud"
+            id="step-7-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 7 transition"
           />
 
-          <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
+          <div className="relative z-[9999] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
             {/* Heading  */}
-            <div className="relative">
+            <div className="relative w-full">
               <h2
                 id="timing-text-heading-1"
-                className="timing-text-heading text-phantom relative mt-6 text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px]"
+                className="timing-text-heading opportunity-card relative mt-6 text-center"
               >
                 Lead Captured
               </h2>
               <h2
                 id="timing-text-heading-2"
-                className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
+                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
+              >
+                Initial Contact
+              </h2>
+              <h2
+                id="timing-text-heading-3"
+                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
               >
                 Estimate Scheduled
               </h2>
               <h2
-                id="timing-text-heading-3"
-                className="timing-text-heading text-phantom absolute top-0 left-0 w-full text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px]"
+                id="timing-text-heading-4"
+                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
               >
                 Estimate Sent
               </h2>
 
               <h2
-                id="timing-text-heading-4"
-                className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
+                id="timing-text-heading-5"
+                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
+              >
+                Deal Approved
+              </h2>
+              <h2
+                id="timing-text-heading-6"
+                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
               >
                 Job Scheduled
               </h2>
               <h2
-                id="timing-text-heading-5"
-                className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
-              >
-                Revenue Forecast Updated
-              </h2>
-              <h2
-                id="timing-text-heading-6"
-                className="timing-text-heading text-phantom absolute top-0 left-1/2 min-w-[400px] -translate-x-1/2 transform text-center text-[22px] leading-[120%] font-semibold whitespace-nowrap md:text-[28px] lg:text-[35px] xl:text-[42px]"
+                id="timing-text-heading-7"
+                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
               >
                 Initial Contact
               </h2>
@@ -248,36 +257,43 @@ const FinallyConnectsField = () => {
                 id="timing-text-2"
                 className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
               >
-                You schedule a walkthrough or site visit directly from the
-                opportunity without switching tools.
+                You or your team follows up, logs notes, and assigns a dollar
+                value to the opportunity.
               </p>
               <p
                 id="timing-text-3"
                 className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
               >
-                The estimate is generated and linked directly to the deal card.
+                You schedule a walkthrough or site visit directly from the
+                opportunity without switching tools.
               </p>
 
               <p
                 id="timing-text-4"
                 className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
               >
-                The new job is created and scheduled, with the original deal,
-                estimate, and client details fully synced across Contractor+.
+                The estimate is generated and linked directly to the deal card.
               </p>
               <p
                 id="timing-text-5"
                 className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
               >
-                Your pipeline now reflects the converted value, updating your
-                projected revenue and helping you prioritize what’s next.
+                You move the card to “Approved” and convert it to a job
+                instantly.
               </p>
               <p
                 id="timing-text-6"
                 className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
               >
-                You or your team follows up, logs notes, and assigns a dollar
-                value to the opportunity.
+                The new job is created and scheduled, with the original deal,
+                estimate, and client details fully synced across Contractor+.
+              </p>
+              <p
+                id="timing-text-7"
+                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
+              >
+                Your pipeline now reflects the converted value, updating your
+                projected revenue and helping you prioritize what’s next.
               </p>
             </div>
             {/* Images  */}
@@ -288,7 +304,6 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  // loop={true}
                   animationData={Lead_Captured}
                 />
               </div>
@@ -299,8 +314,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  // loop={true}
-                  animationData={Estimate_Scheduled}
+                  animationData={Initial_Contact}
                 />
               </div>
               <div
@@ -309,8 +323,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  // loop={true}
-                  animationData={Estimate_Sent}
+                  animationData={Estimate_Scheduled}
                 />
               </div>
 
@@ -320,8 +333,7 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  // loop={true}
-                  animationData={Job_Scheduled}
+                  animationData={Estimate_Sent}
                 />
               </div>
               <div
@@ -330,18 +342,25 @@ const FinallyConnectsField = () => {
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  // loop={true}
-                  animationData={Revenue_Forecast_Updated}
+                  animationData={dealApproved}
                 />
               </div>
               <div
                 id="timing-img-6"
+                className="timing-imgs absolute top-0 left-0 h-[345px] max-w-[611px]"
+              >
+                <LottieAnimation
+                  className="h-full w-full"
+                  animationData={Job_Scheduled}
+                />
+              </div>
+              <div
+                id="timing-img-7"
                 className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
               >
                 <LottieAnimation
                   className="h-full w-full"
-                  // loop={true}
-                  animationData={Initial_Contact}
+                  animationData={Revenue_Forecast_Updated}
                 />
               </div>
             </div>
@@ -350,10 +369,6 @@ const FinallyConnectsField = () => {
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        {/* <Button variant="primary" className="mx-auto mt-3 mb-1.5 !w-fit">
-          Get started FREE
-          <ArrowIcon fill="white" />
-        </Button> */}
         <CardReveal className="hidden md:block">
           <FreeTrialButton
             className="mx-auto mt-3 mb-1.5 !w-fit"

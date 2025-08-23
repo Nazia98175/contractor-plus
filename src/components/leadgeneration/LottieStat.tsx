@@ -1,7 +1,7 @@
 import React from "react";
 import LottieStatCard from "./LottieStatCard";
 import StartIcon from "../../../public/images/svg/start-icon.svg";
-import UpwardIcon from "../../../public/images/svg/upward-icon.svg";
+import UpwardIcon from "../../../public/lotties/white-upward.json";
 import DollarIcon from "../../../public/images/svg/dollar-icon.svg";
 const LottieStat = ({ className = "" }) => {
   const stats = [
@@ -18,8 +18,8 @@ const LottieStat = ({ className = "" }) => {
       end: 33,
       suffix: ":1",
       subTitle: "Average return for every $1 spent with Contractor+ Local",
-      lottiejson: null,
-      icon: UpwardIcon,
+      lottiejson: UpwardIcon,
+      icon: null,
     },
     {
       start: 0,

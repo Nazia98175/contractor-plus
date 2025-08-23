@@ -1,10 +1,10 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Autoplay, Controller, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { DownloadIcon, Slidericon } from "../common/Icons";
-import Image from "next/image";
-
+import { Slidericon } from "../common/Icons";
+import LottieAnimation from "../common/LottieAnimation";
 interface SliderItem {
   title: string;
   description: string;
@@ -34,15 +34,15 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6000,
+        //   disableOnInteraction: false,
+        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
         <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
-          <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[60%]"></div>
+          <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px]"></div>
           <div className="h-full px-2">
             <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
@@ -50,7 +50,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
                 width={871}
                 height={625}
                 sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
-                src={"/images/webp/real-slider-card-1.webp"}
+                src={"/images/webp/deal-flow-hero.webp"}
                 alt="Slide Image"
                 className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
               />
@@ -73,7 +73,6 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
-          {/* <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[80px] lg:h-[180px] lg:blur-[40px] xl:top-[99%]"></div> */}
           <div className="h-full px-2">
             <div className="mx-auto w-full max-w-[670px]">
               <Image
@@ -121,19 +120,31 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative pt-8 sm:h-[625px] sm:pt-14 md:pt-16 xl:pt-[72px]">
-          <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-[120%] max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] sm:w-full lg:bottom-[74px] lg:h-[281px] lg:blur-[40px] xl:top-[70%]"></div>
-          <div className="h-full px-2">
-            <div className="mx-auto w-full max-w-[600px]">
-              <Image
-                unoptimized
-                width={871}
-                height={625}
-                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
-                src={"/images/webp/job-linked.webp"}
-                alt="Slide Image"
-                className="h-full w-full rounded-3xl object-cover xl:rounded-[45px]"
-              />
-            </div>
+          <div className="absolute top-0 h-[15%] w-full max-w-full bg-white blur-[9px]"></div>
+          <div className="mx-auto w-full max-w-[600px]">
+            <Image
+              width={871}
+              height={625}
+              sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+              src={"/images/webp/real-slider-card-11.webp"}
+              alt="Slide Image"
+              className="h-full w-full rounded-3xl object-cover xl:rounded-[45px]"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="pt-[100px] sm:!min-h-[400px]">
+          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
+            <Image
+              unoptimized
+              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              width={668}
+              height={300}
+              priority
+              src={"/images/webp/job-linked.webp"}
+              alt="Slide Image"
+              className="mx-auto w-full max-w-[780px] object-cover"
+            />
+            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="pt-[100px] sm:!min-h-[400px]">
@@ -151,21 +162,6 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="pt-[100px] sm:!min-h-[400px]">
-          <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
-              width={668}
-              height={300}
-              priority
-              src={"/images/webp/lead-assignment.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full max-w-[780px] object-cover"
-            />
-            <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
-          </div>
-        </SwiperSlide>
         <SwiperSlide className="relative pt-12 sm:pt-10 md:!h-[660px]">
           <div className="relative mx-auto">
             <div className="absolute top-[-87px] right-[20%] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:top-[-149px] sm:right-[32%] sm:max-w-[400px] md:h-[200px] lg:h-[250px]"></div>
@@ -176,7 +172,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
               width={900}
               height={382}
               priority
-              src={"/images/webp/real-slider-card-11.webp"}
+              src={"/images/webp/real-lead-assignment.webp"}
               alt="Slide Image"
               className="mx-auto w-full max-w-[850px] object-cover xl:max-w-[900px]"
             />
@@ -194,7 +190,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           className="absolute right-0 bottom-0 hidden h-24 w-[406px] xl:block"
         ></div>
         <Swiper
-          modules={[Navigation, Pagination, Controller, Autoplay]}
+          modules={[Navigation, Pagination, Controller]}
           onSwiper={setBottomSwiper}
           slidesPerView={3}
           speed={600}
@@ -207,10 +203,6 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           pagination={{
             el: ".swiper-pagination-real-time",
             clickable: true,
-          }}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
           }}
           className="real-time-active-slider"
           breakpoints={{

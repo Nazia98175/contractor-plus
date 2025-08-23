@@ -33,7 +33,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
 }) => {
   // Always call hooks in the same order
   const { gsapInstance, isLoaded, registerCleanup } = useGSAPDynamic();
-  const [animationReady, setAnimationReady] = useState(false);
   const lottieRefs = useRef<(LottieAnimationRef | null)[]>([]);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -50,40 +49,9 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     [],
   );
 
-  // Cleanup function
-  const cleanup = useCallback(() => {
-    // Clean up lottie scroll triggers
-    scrollTriggersRef.current.forEach((trigger) => {
-      if (trigger && typeof trigger.kill === "function") {
-        trigger.kill();
-      }
-    });
-    scrollTriggersRef.current = [];
-
-    // Clean up main timeline and scroll triggers
-    ScrollTrigger.getAll().forEach((st: any) => {
-      if (st.trigger && st.trigger.id === "crm-cards-wrapper") {
-        st.kill();
-      }
-    });
-
-    if (timelineRef.current) {
-      timelineRef.current.kill();
-      timelineRef.current = null;
-    }
-  }, []);
-
   // Initialize main GSAP animations
   useEffect(() => {
-    if (
-      !isLoaded ||
-      !gsapInstance ||
-      animationReady ||
-      !fieldService?.cardsDetail
-    )
-      return;
-
-    const { gsap, ScrollTrigger } = gsapInstance;
+    if (!isLoaded || !fieldService?.cardsDetail) return;
 
     const timer = setTimeout(() => {
       if (typeof window === "undefined") return;
@@ -92,9 +60,6 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       const totalCards = cards.length;
 
       if (totalCards === 0) return;
-
-      // Clear existing triggers
-      cleanup();
 
       // Initialize card positions
       gsap.set(cards[0], { y: "0%", scale: 1, rotate: 0 });
@@ -107,13 +72,13 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       }
 
       // Create scroll timeline
-      timelineRef.current = gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#crm-cards-wrapper",
           start: "top 5%",
-          end: `+=${window.innerHeight * totalCards}`,
-          pin: true,
-          scrub: 1,
+          end: `bottom bottom`,
+          scrub: 2,
+          markers: false,
           id: "field-service-cards",
         },
       });
@@ -125,7 +90,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         const position = i;
         const rotation = i % 2 ? -5 : 5;
 
-        timelineRef.current.to(
+        tl.to(
           currentCard,
           {
             scale: 0.8,
@@ -137,7 +102,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         );
 
         if (nextCard) {
-          timelineRef.current.to(
+          tl.to(
             nextCard,
             {
               y: "0%",
@@ -149,42 +114,46 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         }
       }
 
-      setAnimationReady(true);
-      registerCleanup(cleanup);
-    }, 1000);
+      timelineRef.current = tl;
+    }, 2000);
 
-    return () => clearTimeout(timer);
-  }, [
-    isLoaded,
-    gsapInstance,
-    animationReady,
-    fieldService?.cardsDetail,
-    registerCleanup,
-    cleanup,
-  ]);
+    return () => {
+      clearTimeout(timer);
+      // Clean up main timeline on unmount
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+        timelineRef.current = null;
+      }
+    };
+  }, [isLoaded, fieldService?.cardsDetail, registerCleanup]);
 
   // Setup lottie animations
   useEffect(() => {
-    if (!fieldService?.cardsDetail || !animationReady) return;
+    if (!fieldService?.cardsDetail) return;
 
-    // Clean up existing lottie triggers
-    scrollTriggersRef.current.forEach((trigger) => {
-      if (trigger && typeof trigger.kill === "function") {
-        trigger.kill();
-      }
-    });
+    const lottieTimer = setTimeout(() => {
+      // Clean up existing lottie triggers
+      scrollTriggersRef.current.forEach((trigger) => {
+        if (trigger && typeof trigger.kill === "function") {
+          trigger.kill();
+        }
+      });
 
-    scrollTriggersRef.current = [];
+      scrollTriggersRef.current = [];
 
-    fieldService.cardsDetail.forEach((_: any, index: number) => {
-      const element = contentRefs.current[index];
-      const top = window.innerHeight * index;
-      const bottom = window.innerHeight * (index + 1);
-      if (element) {
+      fieldService.cardsDetail.forEach((_: any, index: number) => {
+        const minusIndex = fieldService.cardsDetail.length - index;
+        const top =
+          window.innerHeight * index -
+          minusIndex * ((window.innerHeight / 100) * 4);
+        const bottom = window.innerHeight * (index + 1);
+
         const trigger = ScrollTrigger.create({
-          trigger: `#crm-cards-${index}`,
-          start: `${top} 100%`,
-          end: `${top} 0%`,
+          trigger: `#crm-cards-wrapper`,
+          start: `${top} top`,
+          end: `${bottom} bottom`,
+          markers: false,
+          invalidateOnRefresh: true,
           onEnter: () => {
             if (lottieRefs.current[index]) {
               lottieRefs.current[index]?.play();
@@ -199,10 +168,12 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
         });
 
         scrollTriggersRef.current.push(trigger);
-      }
-    });
+      });
+    }, 3000);
 
     return () => {
+      clearTimeout(lottieTimer);
+      // Clean up lottie ScrollTriggers on unmount
       scrollTriggersRef.current.forEach((trigger) => {
         if (trigger && typeof trigger.kill === "function") {
           trigger.kill();
@@ -210,12 +181,34 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
       });
       scrollTriggersRef.current = [];
     };
-  }, [fieldService?.cardsDetail, animationReady]);
+  }, [fieldService?.cardsDetail]);
 
-  // Cleanup on unmount
+  // Component unmount cleanup
   useEffect(() => {
-    return cleanup;
-  }, [cleanup]);
+    return () => {
+      // Kill all ScrollTriggers created by this component
+      ScrollTrigger.getById("field-service-cards")?.kill();
+
+      // Kill animation-specific triggers
+      if (fieldService?.cardsDetail) {
+        fieldService.cardsDetail.forEach((_: any, index: number) => {
+          ScrollTrigger.getById(`animation-${index + 1}`)?.kill();
+        });
+      }
+
+      // Clean up timeline
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+
+      // Clean up any remaining ScrollTriggers
+      scrollTriggersRef.current.forEach((trigger) => {
+        if (trigger && typeof trigger.kill === "function") {
+          trigger.kill();
+        }
+      });
+    };
+  }, [fieldService?.cardsDetail]);
 
   const className = themeClassMap?.[theme] || "wanting-more-bg";
 
@@ -251,34 +244,37 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     <div
       ref={containerRef}
       id="crm-cards-wrapper"
-      className="relative z-10 min-h-[100vh] overflow-hidden sm:min-h-dvh lg:px-2 xl:h-fit"
+      style={{ height: 100 * fieldService?.cardsDetail?.length + "vh" }}
+      className="relative z-10 lg:px-2 xl:h-fit"
     >
-      {fieldService.cardsDetail.map((service: any, index: number) => (
-        <div
-          key={index}
-          id={`crm-cards-${index}`}
-          ref={(el) => {
-            if (contentRefs.current) {
-              contentRefs.current[index] = el;
-            }
-          }}
-          style={{ zIndex: index + 1 }}
-          className={`crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center sm:top-10 sm:h-[90vh] xl:top-0 xl:h-screen`}
-        >
+      <div className="sticky top-0 left-0 h-screen w-full">
+        {fieldService.cardsDetail.map((service: any, index: number) => (
           <div
-            className={`${className} crm-cards-inner h-fit w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-6 xl:rounded-[40px] xl:p-8`}
+            key={index}
+            id={`crm-cards-${index}`}
+            ref={(el) => {
+              if (contentRefs.current) {
+                contentRefs.current[index] = el;
+              }
+            }}
+            style={{ zIndex: index + 1 }}
+            className={`crm-cards absolute top-10 left-[50%] flex w-full translate-x-[-50%] items-center justify-center pt-[5%] sm:top-10 sm:h-[90vh] xl:top-0 xl:h-screen`}
           >
-            <FieldServiceCard
-              slug={slug}
-              idx={index}
-              setLottieRef={setLottieRef}
-              service={service}
-              theme={theme}
-              apiData={apiData}
-            />
+            <div
+              className={`${className} crm-cards-inner h-fit w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-6 xl:rounded-[40px] xl:p-8`}
+            >
+              <FieldServiceCard
+                slug={slug}
+                idx={index}
+                setLottieRef={setLottieRef}
+                service={service}
+                theme={theme}
+                apiData={apiData}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

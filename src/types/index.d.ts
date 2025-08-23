@@ -156,4 +156,5 @@ export interface IntegrationItem {
   thumbnailImage?: {
     url?: string;
   };
+  slug?: string;
 }

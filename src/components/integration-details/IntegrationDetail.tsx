@@ -36,10 +36,9 @@ const IntegrationDetail: React.FC<IntegrationDetailProps> = ({
       <div className="flex flex-col justify-between gap-4 md:flex-row xl:gap-[30px]">
         <div className="grow">
           <IntegrationContent integration={integration} />
-
         </div>
         {/* RIGHT SIDE CONTENT  */}
-        <div className="relative top-18 mb-12 w-full min-w-[300px] md:sticky md:mb-0 md:h-fit lg:top-24 lg:min-w-[336px]">
+        <div className="relative top-18 mb-12 w-full min-w-[300px] md:sticky md:mb-0 md:h-fit lg:top-24 lg:max-w-[336px] lg:min-w-[336px]">
           <div className="w-full space-y-8">
             <div className="flex flex-col justify-between gap-8">
               <div className="basis-[40%] space-y-2.5 xl:space-y-3.5">

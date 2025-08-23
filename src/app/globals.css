@@ -1138,6 +1138,7 @@ html::-webkit-scrollbar {
   );
   z-index: 5;
   transform: skewX(-20deg);
+  pointer-events: none;
 }
 
 .card-shine:hover::before {

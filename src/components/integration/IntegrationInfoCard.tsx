@@ -29,6 +29,8 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         return "text-expressionismGreen";
       case "safer payments":
         return "text-amberOrange";
+      default:
+        return "text-expressionismGreen";
     }
   };
   return (
@@ -41,7 +43,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
           src={`${obj?.thumbnailImage?.url}`}
           width={60}
           height={60}
-          className="h-auto w-12 object-center xl:w-[60px]"
+          className="h-auto w-12 rounded-lg object-center xl:w-[60px]"
           alt={`${obj?.integrationName}' logo`}
         />
         <h4 className="text-xl font-semibold text-white capitalize xl:text-2xl">

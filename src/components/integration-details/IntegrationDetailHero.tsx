@@ -37,8 +37,8 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
         <div className="integration-detail-bg integration-logo-bg">
           <div className="absolute -top-2 left-1/2 z-10 h-full w-[110%] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent blur-[30px]"></div>
           <Image
-            className="h-12 w-auto object-center md:h-[72px]"
-            src={`${integration?.thumbnailImage?.url}`}
+            className="h-12 w-auto rounded-lg object-center md:h-[72px]"
+            src={`${integration?.image?.url}`}
             width={72}
             height={72}
             alt={integration?.integrationName ?? "Integration image"}
@@ -54,7 +54,7 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
             width={72}
             height={72}
             alt={integration?.integrationName ?? ""}
-            className="h-12 w-auto object-center md:h-[72px]"
+            className="h-12 w-auto rounded-lg object-center md:h-[72px]"
           />
         </div>
       </div>

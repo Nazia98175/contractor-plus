@@ -5,36 +5,6 @@ import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 
 const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
-  const marqueeItem = [
-    { id: 1, icon: "/images/png/zapier.png" },
-    { id: 2, icon: "/images/png/simple-bussines.png" },
-    { id: 3, icon: "/images/png/thumbtack.png" },
-    { id: 4, icon: "/images/png/hover.png" },
-    { id: 5, icon: "/images/png/wisetack.png" },
-    { id: 6, icon: "/images/png/abc-supply.png" },
-    { id: 7, icon: "/images/png/angi-2.png" },
-    { id: 8, icon: "/images/png/bird.png" },
-    { id: 9, icon: "/images/png/camera.png" },
-    { id: 10, icon: "/images/png/gmail.png" },
-    { id: 11, icon: "/images/png/outlook.png" },
-    { id: 12, icon: "/images/png/abc-2.png" },
-    { id: 13, icon: "/images/png/lowes-2.png" },
-  ];
-  const marqueeItem2 = [
-    { id: 1, icon: "/images/png/calander.png" },
-    { id: 2, icon: "/images/png/ace-hardware.png" },
-    { id: 3, icon: "/images/png/ferguson.png" },
-    { id: 4, icon: "/images/png/quickbooks.png" },
-    { id: 5, icon: "/images/png/earthcam.png" },
-    { id: 6, icon: "/images/png/tesla.png" },
-    { id: 7, icon: "/images/png/menared.png" },
-    { id: 8, icon: "/images/png/ace.png" },
-    { id: 9, icon: "/images/png/earth.png" },
-    { id: 10, icon: "/images/png/victory.png" },
-    { id: 11, icon: "/images/png/ace-hardware.png" },
-    { id: 12, icon: "/images/png/home.png" },
-    { id: 13, icon: "/images/png/eagle-view.png" },
-  ];
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {

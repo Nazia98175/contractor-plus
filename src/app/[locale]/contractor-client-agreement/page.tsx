@@ -58,7 +58,7 @@ const ContractorClientAgreementPage = () => {
         <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <FieldService
           fieldService={automatedCardData}
           theme="dark"

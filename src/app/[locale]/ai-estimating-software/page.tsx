@@ -51,7 +51,7 @@ const EstimaticAiPage = async ({
     commonData,
   } = await getEstimaticPageData(useParams?.locale);
   return (
-    <main id="home-page-wrapper-2" className="overflow-hidden">
+    <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-estimatic-ai"
         className="relative opacity-0"
@@ -71,11 +71,13 @@ const EstimaticAiPage = async ({
         />
       </div>
       <OneGetsSet />
-      <FieldService
-        fieldService={estimaticCardData}
-        theme="dark"
-        mainClassName="text-center "
-      />
+      <div className="relative">
+        <FieldService
+          fieldService={estimaticCardData}
+          theme="dark"
+          mainClassName="text-center "
+        />
+      </div>
       <div className="relative overflow-hidden">
         <SwitchingTool
           className="pb-[113px]"

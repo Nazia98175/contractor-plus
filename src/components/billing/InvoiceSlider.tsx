@@ -10,6 +10,7 @@ import progress_billing from "../../../public/lotties/progress-billing.json";
 import recurring_bill from "../../../public/lotties/recurring-bill.json";
 import smart_change from "../../../public/lotties/smart-changes.json";
 import unnotice_item from "../../../public/lotties/uninvoiced-items.json";
+import invoice from "../../../public/lotties/estimate-and-invoice.json";
 import { Slidericon } from "../common/Icons";
 import LottieAnimation from "../common/LottieAnimation";
 
@@ -51,7 +52,7 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
       >
         <SwiperSlide className="pt-12 sm:!min-h-[400px] md:pt-[72px]">
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
-            <Image
+            {/* <Image
               unoptimized
               sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
               width={668}
@@ -60,6 +61,11 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
               src={"/images/webp/invoice-slider-1.webp"}
               alt="Slide Image"
               className="mx-auto w-full max-w-[780px] object-cover"
+            /> */}
+            <LottieAnimation
+              className="mx-auto w-full max-w-[485px]"
+              loop={false}
+              animationData={invoice}
             />
             <div className="slider-cutom-gradient absolute top-0 right-[0px] h-full w-full max-w-[119px]"></div>
           </div>

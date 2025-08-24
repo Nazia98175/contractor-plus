@@ -2140,7 +2140,7 @@ button {
   transition: transform 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active .icon-span {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 
 .custom-icon-color {

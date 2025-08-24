@@ -20,6 +20,8 @@ import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
 import up_arrow_White from "../../../public/lotties/whiteAnimated.json";
 import down_arrow_White from "../../../public/lotties/white-arrow.json";
 import whiteCar from "../../../public/lotties/white-car.json";
+import propertyRecord from "../../../public/lotties/property-record.json";
+import smartWork from "../../../public/lotties/smart-work.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
   ClientPortalIcon,
@@ -4174,11 +4176,11 @@ export const eventPricingDetail = [
 ];
 
 export const propertyCardData = {
-  id: 1,
   title:
     "A job management solution for multi-phase projects, work orders, and recurring jobs",
   cardsDetail: [
     {
+      id: 1,
       title: " Property Record",
       content: [
         {
@@ -4202,10 +4204,11 @@ export const propertyCardData = {
         user: "Excellent field tracking!",
         username: "John Doe",
       },
-      cardImg: "/images/png/reacord.png",
-      lottieJson: null,
+      cardImg: null,
+      lottieJson: propertyRecord,
     },
     {
+      id: 2,
       title: " Smart Workflows & Tracking",
       content: [
         {
@@ -4222,7 +4225,7 @@ export const propertyCardData = {
         },
       ],
       cardImg: "/images/webp/smart-workflow-tracking.webp",
-      lottieJson: null,
+      lottieJson: smartWork,
     },
   ],
 };
@@ -4356,11 +4359,13 @@ export const propertyprofilesformData = {
   subTitle: "This is what a property management CRM should have been all along",
   title: "Start using Contractor+ free. Upgrade for the full operating system.",
 };
+
 export const propertyprofilesformData2 = {
   placeholder: "Your Email",
   subTitle: "This is what a property management CRM should have been all along",
   title: "This is what a property management CRM should have been all along",
 };
+
 export const propertyprofilesHeadingData = {
   id: 1,
   title: "Property management topics in Contractor+ HQ",
@@ -4410,6 +4415,7 @@ export const property_profiles_comparisonData = {
     },
   ],
 };
+
 export const property_profiles_comparisonData2 = {
   id: 1,
   title: "One of these is not like the other (thank goodness)",
@@ -4463,6 +4469,7 @@ export const propertyCRMSection = {
   mobileBtn: "Download FREE App",
   featureHighlightSectionVisible: true,
 };
+
 export const propertyCRMSection2 = {
   featuresList: [
     {
@@ -4527,6 +4534,7 @@ export const automate_ControlData = {
     },
   ],
 };
+
 export const toolManagingData = {
   id: 320,
   title: "Managing tools shouldn’t feel like a scavenger hunt",
@@ -4566,6 +4574,7 @@ import Signature_Approval from "../../../public/lotties/signature-approval.json"
 import Change_Management from "../../../public/lotties/change-management.json";
 import Storage_Access from "../../../public/lotties/storage-access.json";
 import Recurring_Docs from "../../../public/lotties/recurring-docs.json";
+
 export const automatedCardData = {
   id: 1,
   title:

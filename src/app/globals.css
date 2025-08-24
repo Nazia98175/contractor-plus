@@ -1101,24 +1101,6 @@ html::-webkit-scrollbar {
   }
 }
 
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 .card-shine {
   @apply relative overflow-hidden;
 }
@@ -1155,7 +1137,7 @@ html::-webkit-scrollbar {
 }
 
 .card-shine-2 {
-  @apply relative overflow-hidden;
+  @apply bg-charcoalBlue relative overflow-hidden;
 }
 .card-shine-2::before {
   content: "";

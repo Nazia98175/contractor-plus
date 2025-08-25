@@ -36,7 +36,6 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import Image from "next/image";
-
 export const metadata = {
   title: "Mileage Tracking Software for Contractors | Contractor+",
   description:
@@ -44,7 +43,7 @@ export const metadata = {
 };
 const MileageTrackingPage = () => {
   return (
-    <main className="overflow-hidden">
+    <main className="">
       <AutomatedClientHero
         hero={{
           heroTitle: "Tap once to track every mile. Reimburse with confidence.",
@@ -65,7 +64,7 @@ const MileageTrackingPage = () => {
         className="-mt-5"
       />
       <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <FieldService
           fieldService={mileageActuallyWorkdata}
           theme="dark"
@@ -126,7 +125,6 @@ const MileageTrackingPage = () => {
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
         />
       </div>
-
       <BlogPosts
         data={blogList}
         blogs={mileageHeadingData}
@@ -136,5 +134,4 @@ const MileageTrackingPage = () => {
     </main>
   );
 };
-
 export default MileageTrackingPage;

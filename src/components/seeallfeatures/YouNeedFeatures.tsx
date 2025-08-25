@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { CrmIcon } from "../common/MainIcon";
-import YouNeedFeaturesCard from "./YouNeedFeaturesCard";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import {
   AssetTrackingIcon,
   BigChiefGrayIcon,
-  BookPingIcon,
   ClientIcon,
   EstimateGrayIcon,
   EstimatesIcon,
@@ -21,8 +20,8 @@ import {
   TimeIcon,
   TrophyIcon,
 } from "../common/Icons";
-import CardReveal from "../common/CardReveal";
-import Copy from "../common/Copy";
+import { CrmIcon } from "../common/MainIcon";
+import YouNeedFeaturesCard from "./YouNeedFeaturesCard";
 
 const YouNeedFeatures = () => {
   const featuresItems = [

@@ -3,7 +3,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BlogCard from "../blog/BlogCard";
 import SwiperNavWithPagination from "../blog/SwiperNavWithPagination";
-import { contractorArticles } from "../common/Helper";
 import { CardArrowIcon } from "../common/MainIcon";
 import CloudsAnimation from "../common/CloudsAnimation";
 import Link from "next/link";

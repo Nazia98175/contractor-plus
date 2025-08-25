@@ -76,9 +76,10 @@ const CommonHero: React.FC<TheHeroProps> = ({
       <Image
         className="pointer-events-none absolute right-0 bottom-[-34%] z-[80] h-[81%] w-full object-cover opacity-30 sm:bottom-[-27%] sm:hidden"
         src="/images/webp/final-large.webp"
-        alt=""
+        alt="final-large"
         width={1920}
         height={1000}
+        unoptimized
       />
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>

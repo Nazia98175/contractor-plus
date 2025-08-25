@@ -79,7 +79,7 @@ const EstimaticAiPage = async ({
           mainClassName="text-center "
         />
       </div>
-      <div className="block md:hidden">
+      <div className="mb-12 block md:hidden">
         <OverlapCardMobileViewChild
           fieldService={estimaticCardData}
           theme="dark"

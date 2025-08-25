@@ -68,6 +68,7 @@ const FieldService: React.FC<TheServiceProps> = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  console.log(fieldService, "data");
   useEffect(() => {
     if (maxHeight && headingHeight) {
       const isSticky =

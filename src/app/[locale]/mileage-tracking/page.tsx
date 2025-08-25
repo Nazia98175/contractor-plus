@@ -105,7 +105,6 @@ const MileageTrackingPage = () => {
             src={"/images/webp/hero-red-line.webp"}
             alt="hero-red-line"
           />
-
           <CrmService
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}

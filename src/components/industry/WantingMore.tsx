@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
+import Copy from "../common/Copy";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -34,7 +35,6 @@ const WantingMore: React.FC<WantingMoreProps> = ({
           currentMaxHeight = cardHeight;
         }
       });
-      console.log(currentMaxHeight);
       setMaxHeight(currentMaxHeight);
     }, 1000);
   };
@@ -51,41 +51,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
 
     updateMaxHeight();
     updateHeadingHeight();
-
-    const cards = document.querySelectorAll(".crm-cards");
-    const totalCards = cards.length;
-
-    if (maxHeight > 0 && headingHeight > 0) {
-      const startScreen = (window.innerHeight - maxHeight) / 2 - 60 + "px";
-      const isVisible =
-        (window.innerHeight - maxHeight) / 2 - 60 > headingHeight;
-
-      if (!isVisible) return;
-      // ScrollTrigger.getAll().forEach((st) => st.kill());
-      const pinTrigger = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: `top ${startScreen}`, // Start pinning when section top reaches 90px from viewport top
-        end: `+=${window.innerHeight * (totalCards * 1.034)}`,
-        pin: headingRef.current,
-        pinSpacing: false, // Prevents extra spacing
-        scrub: false,
-        invalidateOnRefresh: true,
-        markers: false,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          gsap.to(headingRef.current, {
-            opacity: 1 - progress * 0.3,
-            duration: 0.1,
-          });
-        },
-      });
-
-      // Cleanup function
-      return () => {
-        pinTrigger.kill();
-      };
-    }
-  }, [maxHeight, headingHeight]);
+  }, [sectionRef.current, headingRef.current]);
 
   // Update heading height on window resize
   useEffect(() => {
@@ -99,33 +65,52 @@ const WantingMore: React.FC<WantingMoreProps> = ({
     };
   }, []);
 
-  return (
-    <section ref={sectionRef} className="relative overflow-hidden px-2 pb-16">
-      {/* <Copy animateOnScroll={true} delay={0.1}> */}
+  useEffect(() => {
+    if (maxHeight && headingHeight) {
+      const isSticky =
+        window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight;
+      const headingFromTop = window.innerHeight / 2 - maxHeight / 2 - 90;
+      const bottomVal =
+        100 - (headingFromTop + headingHeight) / (window.innerHeight / 100);
+      if (!isSticky) return;
+      setTimeout(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "bottom bottom",
+            end: `bottom ${bottomVal}%`,
+            scrub: 2,
+            markers: false,
+            id: "field-service-heading",
+            invalidateOnRefresh: true,
+          },
+        });
 
+        tl.to(headingRef.current, {
+          y: -(headingFromTop + headingHeight),
+          ease: "none",
+        });
+      }, 2000);
+    }
+  }, [headingHeight, maxHeight]);
+
+  return (
+    <section ref={sectionRef} className="relative px-2 pb-16">
       <div
         ref={headingRef}
         style={{
-          position: "relative",
-          zIndex: 20,
-          top: 0,
+          top:
+            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
+              ? window.innerHeight / 2 - maxHeight / 2 - 90 + "px"
+              : "unset",
+          position:
+            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
+              ? "sticky"
+              : "relative",
         }}
+        className="w-full justify-center"
       >
-        {slug === "general-contractor" ? (
-          // <h2 className="section-heading-2 heading-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold">
-          //   {fieldServiceData?.title}
-          // </h2>
-          <AdaptiveHeroTitle
-            title={fieldServiceData?.title}
-            className="section-heading-2 heading-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold"
-            minFontSize={24}
-            maxLines={2}
-            maxFontSize={42}
-          />
-        ) : (
-          // <h2 className="section-heading-2 gradient-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold">
-          //   {fieldServiceData?.title}
-          // </h2>
+        <Copy animateOnScroll={true} delay={0.1}>
           <AdaptiveHeroTitle
             title={fieldServiceData?.title}
             className="section-heading-2 gradient-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold"
@@ -133,9 +118,8 @@ const WantingMore: React.FC<WantingMoreProps> = ({
             maxLines={2}
             maxFontSize={42}
           />
-        )}
+        </Copy>
       </div>
-      {/* </Copy> */}
 
       <ScrollOverlapCards
         theme="light"

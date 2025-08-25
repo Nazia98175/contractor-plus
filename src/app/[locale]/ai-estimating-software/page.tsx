@@ -10,6 +10,7 @@ import {
   estimaticReviewsAi,
   platforms,
 } from "@/components/common/Helper";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -71,10 +72,18 @@ const EstimaticAiPage = async ({
         />
       </div>
       <OneGetsSet />
-      <div className="relative">
+      <div className="relative hidden md:block">
         <FieldService
           fieldService={estimaticCardData}
           theme="dark"
+          mainClassName="text-center "
+        />
+      </div>
+      <div className="block md:hidden">
+        <OverlapCardMobileViewChild
+          fieldService={estimaticCardData}
+          theme="dark"
+          apiData={true}
           mainClassName="text-center "
         />
       </div>

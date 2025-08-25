@@ -14,6 +14,7 @@ import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import {
   mileage_comparisonData,
@@ -65,8 +66,17 @@ const MileageTrackingPage = () => {
         className="-mt-5"
       />
       <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
-      <div className="relative">
+      <div className="relative hidden md:block">
         <FieldService
+          fieldService={mileageActuallyWorkdata}
+          theme="dark"
+          slug="estimateTheme"
+          apiData={true}
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
+      <div className="block md:hidden">
+        <OverlapCardMobileViewChild
           fieldService={mileageActuallyWorkdata}
           theme="dark"
           slug="estimateTheme"

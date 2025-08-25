@@ -712,7 +712,7 @@ export const mileageActuallyWorkdata = {
           desc: "Use it on iOS and Android, right inside Contractor+. No extra apps to juggle.  ",
         },
       ],
-      cardImg: "/images/webp/all-in-one-solution.webp",
+      cardImg: { url: "/images/webp/all-in-one-solution.webp" },
       isIcon: false,
       lottieJson: null,
     },

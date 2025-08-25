@@ -12,16 +12,16 @@ type LottieAnimationRef = {
   pause: () => void;
 };
 
-interface OverlapCardMobileViewProps {
-  fieldService: any;
+interface WantingMoreMobileProps {
+  fieldServiceData: any;
   slug: string;
   theme: "light" | "dark" | "estimateTheme";
   curved?: boolean;
   apiData?: boolean;
 }
 
-const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
-  fieldService,
+const WantingMoreMobile: React.FC<WantingMoreMobileProps> = ({
+  fieldServiceData,
   slug,
   theme,
   apiData = true,
@@ -39,7 +39,10 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
 
   const className = themeClassMap?.[theme] || "wanting-more-bg";
 
-  if (!fieldService?.cardsDetail || !Array.isArray(fieldService.cardsDetail)) {
+  if (
+    !fieldServiceData?.cardsDetail ||
+    !Array.isArray(fieldServiceData.cardsDetail)
+  ) {
     return (
       <div className="flex min-h-[100vh] items-center justify-center">
         <div className="text-center">
@@ -54,10 +57,14 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
     if (typeof window === "undefined") return;
 
     setTimeout(() => {
-      if (fieldService.cardsDetail.length > 0) {
+      if (fieldServiceData.cardsDetail.length > 0) {
         const scrollTriggers: any = []; // Array to store ScrollTrigger instances for cleanup
 
-        for (let index = 0; index < fieldService.cardsDetail.length; index++) {
+        for (
+          let index = 0;
+          index < fieldServiceData.cardsDetail.length;
+          index++
+        ) {
           const trigger_element = document.querySelector(
             `#field-service-mobile-card-${index}`,
           );
@@ -140,7 +147,7 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
           // Kill any remaining tweens on all animated elements
           for (
             let index = 0;
-            index < fieldService.cardsDetail.length;
+            index < fieldServiceData.cardsDetail.length;
             index++
           ) {
             const anim_element = document.querySelector(
@@ -153,11 +160,11 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
         };
       }
     }, 500);
-  }, [fieldService.cardsDetail]);
+  }, [fieldServiceData.cardsDetail]);
 
   return (
     <div className="relative z-10 space-y-6 lg:px-2">
-      {fieldService.cardsDetail.map((service: any, index: number) => (
+      {fieldServiceData.cardsDetail.map((service: any, index: number) => (
         <div
           key={index}
           id={`field-service-mobile-card-${index}`}
@@ -182,4 +189,4 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
   );
 };
 
-export default OverlapCardMobileView;
+export default WantingMoreMobile;

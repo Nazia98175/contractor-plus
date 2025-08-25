@@ -650,7 +650,6 @@ import manual_logs from "../../../public/lotties/manual-logs.json";
 import extra_hardware from "../../../public/lotties/extra-hardware.json";
 import team_reports from "../../../public/lotties/team-reports.json";
 import start_trip from "../../../public/lotties/start-trip.json";
-import SubHeading from "./SubHeading";
 
 export const mileageActuallyWorkdata = {
   id: 1,

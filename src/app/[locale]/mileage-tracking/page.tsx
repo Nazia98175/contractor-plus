@@ -44,7 +44,7 @@ export const metadata = {
 };
 const MileageTrackingPage = () => {
   return (
-    <main className="overflow-hidden">
+    <main className="">
       <AutomatedClientHero
         hero={{
           heroTitle: "Tap once to track every mile. Reimburse with confidence.",
@@ -65,7 +65,7 @@ const MileageTrackingPage = () => {
         className="-mt-5"
       />
       <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <FieldService
           fieldService={mileageActuallyWorkdata}
           theme="dark"

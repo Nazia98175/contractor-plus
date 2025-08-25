@@ -359,7 +359,7 @@ export const mileageListData = {
   subTitle: null,
   btnText: "Get started FREE",
 
-  btnUrl: null, // can be replaced with a link like "/signup" if needed
+  btnUrl: null,
   mobileBtn: "Download FREE App",
   featureHighlightSectionVisible: true,
   featuresList: [
@@ -646,6 +646,11 @@ export const mileageHeadingData = {
   title: "Mileage topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
 };
+import manual_logs from "../../../public/lotties/manual-logs.json";
+import extra_hardware from "../../../public/lotties/extra-hardware.json";
+import team_reports from "../../../public/lotties/team-reports.json";
+import start_trip from "../../../public/lotties/start-trip.json";
+import SubHeading from "./SubHeading";
 
 export const mileageActuallyWorkdata = {
   id: 1,
@@ -653,92 +658,64 @@ export const mileageActuallyWorkdata = {
   cardsDetail: [
     {
       id: 1,
-      title: "Agreement Creation",
-
-      content: [
-        {
-          title: "Estimate-to-Contract Merge",
-          desc: "Automatically generate contracts using data from approved estimates, without any copy & paste.",
-        },
-        {
-          title: "Lawyer-Crafted Templates",
-          desc: "Pre-built, legally sound templates tailored for construction and service jobs.",
-        },
-        {
-          title: "Custom Clause Library",
-          desc: "Add your own clauses once, then reuse them across all agreements.",
-        },
-        {
-          title: "Smart Field Detection",
-          desc: "Auto-fills job info like scope, pricing, dates, and location from your project data.",
-        },
-      ],
-
-      cardImg: "/images/webp/agree-creation.webp",
-    },
-    {
-      id: 2,
-      title: "Signature & Approval",
-      content: [
-        {
-          title: "Built-In E-Signatures",
-          desc: "Collect signatures in-person or digitally. No third-party software needed.",
-        },
-        {
-          title: "Audit Trail",
-          desc: "Each signed doc includes timestamp, IP address, and device info for protection.",
-        },
-        {
-          title: "Client Review Portal",
-          desc: "Clients can review, comment, and sign contracts from any device.",
-        },
-        {
-          title: "Approval Reminder",
-          desc: "Automated follow-ups ensure no agreement gets stuck waiting.",
-        },
-      ],
-
-      cardImg: "/images/webp/signature-approved.webp",
-    },
-    {
-      id: 3,
-      title: "Change Management",
-      content: [
-        {
-          title: "Instant Change Orders",
-          desc: "Modify job scope on the fly and generate a new agreement in seconds.",
-        },
-        {
-          title: "Editable Scope Change Templates",
-          desc: "Pre-configured language makes it easy to spell out what’s changing and what it costs.",
-        },
-      ],
-
-      cardImg: "/images/webp/change-management.webp",
-    },
-    {
-      id: 4,
-      title: "Keep your estimates clean, clear, and easy to follow",
-      content: [
-        {
-          title: "",
-          desc: "Organize your quotes with groups that separate labor, materials, and optional add-ons. Line items are easy to edit, reuse, and drag into place. Your grandma could build an estimate.",
-        },
-      ],
-
-      cardImg: "/images/webp/storage-access.webp",
-    },
-    {
-      id: 5,
+      heading: "Start/End Trip",
       title: "Tap “Start Trip,” tap “End Trip.” Done.",
+      isIcon: false,
+      lottieJson: start_trip,
       content: [
         {
-          title: "",
           desc: "A stupidly simple interface anyone can use. Start, drive, arrive. The miles are logged—accurately.",
         },
       ],
-
-      cardImg: "/images/webp/requeere-doc.webp",
+    },
+    {
+      id: 2,
+      subheading: "Manual Logs  ",
+      title: "Backfill when you forget",
+      lottieJson: manual_logs,
+      isIcon: false,
+      content: [
+        {
+          desc: "Missed a trip? Manually add or edit a log in seconds so you never lose reimbursable miles.",
+        },
+      ],
+    },
+    {
+      id: 3,
+      heading: "No Extra Hardware",
+      title: "No OBD or wired GPS required",
+      isIcon: false,
+      lottieJson: extra_hardware,
+      content: [
+        {
+          desc: "Competitors push FleetSharp and other third‑party systems. Contractor+ uses your device location—no dongles, no vehicles to wire, no surprise subscriptions",
+        },
+      ],
+    },
+    {
+      id: 4,
+      heading: "Team Reports",
+      title: "Teamwide mileage reports",
+      isIcon: false,
+      lottieJson: team_reports,
+      content: [
+        {
+          desc: "Pick any date range and see miles by driver and team, including decimal mileage for clean reimbursement math.",
+        },
+      ],
+    },
+    {
+      id: 5,
+      heading: "All-In-One Solution",
+      title: "Built into your operating system",
+      content: [
+        {
+          desc: "Use it on iOS and Android, right inside Contractor+. No extra apps to juggle.  ",
+        },
+      ],
+      cardImg: "/images/webp/all-in-one-solution.webp",
+      isIcon: false,
+      lottieJson: null,
     },
   ],
 };

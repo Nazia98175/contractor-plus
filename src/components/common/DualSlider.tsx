@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Autoplay, Controller, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
+import scanning_json from "../../../public/lotties/scanning.json";
+import LottieAnimation from "./LottieAnimation";
 
 interface SliderItem {
   id: number;
@@ -56,15 +58,17 @@ const DualSlider: React.FC<Props> = ({ sliderData }) => {
               width={885}
               height={260}
             />
+            {/* <LottieAnimation
+              className="mx-auto h-full w-full max-w-[660px]"
+              loop={true}
+              animationData={Field_Updates}
+            /> */}
           </SwiperSlide>
           <SwiperSlide className="relative !flex !h-auto !items-center !justify-center">
-            <Image
-              unoptimized
+            <LottieAnimation
               className="mx-auto w-full max-w-[258px] object-cover"
-              src={"/images/webp/library-2.webp"}
-              alt="library"
-              width={258}
-              height={318}
+              loop={true}
+              animationData={scanning_json}
             />
           </SwiperSlide>
           <SwiperSlide className="relative !flex !h-auto !items-center !justify-center">

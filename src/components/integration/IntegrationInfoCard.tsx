@@ -29,19 +29,21 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         return "text-expressionismGreen";
       case "safer payments":
         return "text-amberOrange";
+      default:
+        return "text-expressionismGreen";
     }
   };
   return (
     <Link
-      href={`/integrations/${obj.id}`}
-      className="bg-charcoalBlue card-shine rounded-lg p-5 md:p-2.5"
+      href={`/integrations/${obj.slug}`}
+      className="bg-charcoalBlue rounded-lg p-5 transition-all duration-300 hover:-translate-y-1.5 hover:rounded-sm md:p-2.5"
     >
       <div className="flex items-center gap-4">
         <Image
-          src={`${obj?.thumbnailImage?.url}`}
+          src={obj?.thumbnailImage?.url || "/placeholder.png"}
           width={60}
           height={60}
-          className="h-auto w-12 object-center xl:w-[60px]"
+          className="h-auto w-12 rounded-lg object-center xl:w-[60px]"
           alt={`${obj?.integrationName}' logo`}
         />
         <h4 className="text-xl font-semibold text-white capitalize xl:text-2xl">
@@ -61,7 +63,7 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
             ))}
           </div>
         ) : (
-          <p className="bg-jetBlack flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm text-coralRed font-semibold capitalize">
+          <p className="bg-jetBlack text-coralRed flex h-[30px] items-center justify-center rounded-full px-2 py-1.5 text-sm font-semibold capitalize">
             No tags Found
           </p>
         )}

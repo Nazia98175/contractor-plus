@@ -1101,24 +1101,6 @@ html::-webkit-scrollbar {
   }
 }
 
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 .card-shine {
   @apply relative overflow-hidden;
 }
@@ -1138,6 +1120,7 @@ html::-webkit-scrollbar {
   );
   z-index: 5;
   transform: skewX(-20deg);
+  pointer-events: none;
 }
 
 .card-shine:hover::before {
@@ -1154,7 +1137,7 @@ html::-webkit-scrollbar {
 }
 
 .card-shine-2 {
-  @apply relative overflow-hidden;
+  @apply bg-charcoalBlue relative overflow-hidden;
 }
 .card-shine-2::before {
   content: "";
@@ -1673,8 +1656,8 @@ button {
 .rectangle-shape {
   background: linear-gradient(
     11.21deg,
-    #0a0b0e 45.56%,
-    rgba(10, 11, 14, 0) 84.42%
+    #0c0d11 45.56%,
+    rgba(12, 13, 17, 0) 84.42%
   );
 }
 .pin-shape {
@@ -2140,7 +2123,7 @@ button {
   transition: transform 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active .icon-span {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 
 .custom-icon-color {
@@ -2236,4 +2219,11 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.sunil {
+  background: linear-gradient(
+    11.21deg,
+    #0c0d11 45.56%,
+    rgba(12, 13, 17, 0) 84.42%
+  );
 }

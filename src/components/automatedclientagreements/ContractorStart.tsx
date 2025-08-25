@@ -86,7 +86,7 @@ const ContractorStart = (cardsData: any) => {
               from estimates
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="icon-span mt-[18px] flex rotate-45 justify-center duration-300">
             <PlusIconAnimation />
           </span>
         </div>
@@ -105,7 +105,7 @@ const ContractorStart = (cardsData: any) => {
               acceptance
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="icon-span mt-[18px] flex rotate-45 justify-center duration-300">
             <PlusIconAnimation />
           </span>
         </div>
@@ -123,7 +123,7 @@ const ContractorStart = (cardsData: any) => {
               Secure, legally-binding electronic signatures
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="icon-span mt-[18px] flex rotate-45 justify-center duration-300">
             <PlusIconAnimation />
           </span>
         </div>
@@ -142,7 +142,7 @@ const ContractorStart = (cardsData: any) => {
               agreements
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="icon-span mt-[18px] flex rotate-45 justify-center duration-300">
             <PlusIconAnimation />
           </span>
         </div>
@@ -161,7 +161,7 @@ const ContractorStart = (cardsData: any) => {
               orders
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="icon-span mt-[18px] flex rotate-45 justify-center duration-300">
             <PlusIconAnimation />
           </span>
         </div>
@@ -180,7 +180,7 @@ const ContractorStart = (cardsData: any) => {
               memberships
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="icon-span mt-[18px] flex rotate-45 justify-center duration-300">
             <PlusIconAnimation />
           </span>
         </div>

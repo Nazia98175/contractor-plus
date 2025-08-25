@@ -18,3 +18,23 @@ export function formatDateWithOrdinal(date = new Date(), locale = "en-US") {
 
   return `${month} ${day}${getOrdinal(day)}, ${year}`;
 }
+
+export function formatDateRange(startDate: string, endDate: string) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const sameMonth = start.getMonth() === end.getMonth();
+  const sameYear = start.getFullYear() === end.getFullYear();
+
+  const monthFormatter = new Intl.DateTimeFormat("en-US", { month: "long" });
+  const dayFormatter = new Intl.DateTimeFormat("en-US", { day: "numeric" });
+  const yearFormatter = new Intl.DateTimeFormat("en-US", { year: "numeric" });
+
+  if (sameMonth && sameYear) {
+    return `${monthFormatter.format(start)} ${dayFormatter.format(start)} – ${dayFormatter.format(end)}, ${yearFormatter.format(start)}`;
+  } else if (sameYear) {
+    return `${monthFormatter.format(start)} ${dayFormatter.format(start)} – ${monthFormatter.format(end)} ${dayFormatter.format(end)}, ${yearFormatter.format(start)}`;
+  } else {
+    return `${monthFormatter.format(start)} ${dayFormatter.format(start)}, ${yearFormatter.format(start)} – ${monthFormatter.format(end)} ${dayFormatter.format(end)}, ${yearFormatter.format(end)}`;
+  }
+}

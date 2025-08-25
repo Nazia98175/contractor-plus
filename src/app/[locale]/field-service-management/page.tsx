@@ -89,6 +89,7 @@ const FieldServicesPage = async ({ params }: Params) => {
           locale={useParams?.locale}
         />
       </div>
+
       <ServiceContractorsMarquee reviews={reviews} />
       <div className="bg-white">
         <GoingFieldSevices switchingTool={switchingTool?.commonProblems} />

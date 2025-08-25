@@ -5,36 +5,6 @@ import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 
 const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
-  const marqueeItem = [
-    { id: 1, icon: "/images/png/zapier.png" },
-    { id: 2, icon: "/images/png/simple-bussines.png" },
-    { id: 3, icon: "/images/png/thumbtack.png" },
-    { id: 4, icon: "/images/png/hover.png" },
-    { id: 5, icon: "/images/png/wisetack.png" },
-    { id: 6, icon: "/images/png/abc-supply.png" },
-    { id: 7, icon: "/images/png/angi-2.png" },
-    { id: 8, icon: "/images/png/bird.png" },
-    { id: 9, icon: "/images/png/camera.png" },
-    { id: 10, icon: "/images/png/gmail.png" },
-    { id: 11, icon: "/images/png/outlook.png" },
-    { id: 12, icon: "/images/png/abc-2.png" },
-    { id: 13, icon: "/images/png/lowes-2.png" },
-  ];
-  const marqueeItem2 = [
-    { id: 1, icon: "/images/png/calander.png" },
-    { id: 2, icon: "/images/png/ace-hardware.png" },
-    { id: 3, icon: "/images/png/ferguson.png" },
-    { id: 4, icon: "/images/png/quickbooks.png" },
-    { id: 5, icon: "/images/png/earthcam.png" },
-    { id: 6, icon: "/images/png/tesla.png" },
-    { id: 7, icon: "/images/png/menared.png" },
-    { id: 8, icon: "/images/png/ace.png" },
-    { id: 9, icon: "/images/png/earth.png" },
-    { id: 10, icon: "/images/png/victory.png" },
-    { id: 11, icon: "/images/png/ace-hardware.png" },
-    { id: 12, icon: "/images/png/home.png" },
-    { id: 13, icon: "/images/png/eagle-view.png" },
-  ];
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -52,6 +22,9 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
       });
     }, 700);
   }, []);
+  const images = integrationList?.hero?.images || [];
+  const halfIndex = Math.ceil(images.length / 2);
+
   return (
     <section id="home-page-view-port-screen-fetures" className="pt-[115px]">
       <div className="relative z-40 mx-auto flex max-w-[575px] flex-col items-center justify-center">
@@ -65,11 +38,12 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
           {integrationList?.hero?.subTitle ?? ""}
         </p>
       </div>
-      <div className="mt-4">
+      <div className="mx-auto mt-4 w-full max-w-[1440px]">
         <Marquee direction="right" speed={50}>
           {integrationList?.hero?.images &&
-            integrationList?.hero?.images.map(
-              (item: { id: number; url: string }) => (
+            integrationList?.hero?.images
+              .slice(0, halfIndex)
+              .map((item: { id: number; url: string }) => (
                 <div
                   key={item.id}
                   className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4"
@@ -83,13 +57,13 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
                     alt={item.url}
                   />
                 </div>
-              ),
-            )}
+              ))}
         </Marquee>
         <Marquee direction="left" speed={50}>
           {integrationList?.hero?.images &&
-            integrationList?.hero?.images.map(
-              (item: { id: number; url: string }) => (
+            integrationList?.hero?.images
+              .slice(halfIndex)
+              .map((item: { id: number; url: string }) => (
                 <div
                   key={item.id}
                   className="bg-blackRussian mr-6 w-10 min-w-10 rounded-full p-2 sm:mr-10 sm:w-[60px] sm:min-w-[60px] lg:p-3 xl:mr-14 xl:w-[88px] xl:min-w-[88px] xl:p-4"
@@ -103,15 +77,13 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
                     alt={item.url}
                   />
                 </div>
-              ),
-            )}
+              ))}
         </Marquee>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <Image
-          width={3000}
-          height={1440}
-          className="1xl:max-w-[113%] 1xl:left-[-5%] 3xl:top-[-5%] 900:top-[2%] pointer-events-none absolute top-[4%] left-[-15%] z-10 max-w-[131%] object-cover blur-[14.05px] lg:top-[1%] 2xl:top-[-0.5%]"
+          fill
+          className="3xl:top-[-5%] 900:top-[2%] mix-b pointer-events-none absolute top-[4%] left-[0%] z-10 object-cover blur-[14.05px] lg:top-[1%] 2xl:top-[-0.5%]"
           src="/images/webp/blur.webp"
           alt="blur-ellipse"
         />

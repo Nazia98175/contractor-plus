@@ -30,7 +30,7 @@ const IntegrationPage = async ({
         id="home-page-view-port-screen-fetures"
         className="relative opacity-0"
       >
-        <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden px-2">
+        <div className="relative mx-auto w-full overflow-hidden px-2">
           <IntegrationHero integrationList={integrationList} />
           <IntegrationCards
             integrationList={integrationList}

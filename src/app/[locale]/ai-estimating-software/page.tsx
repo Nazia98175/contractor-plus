@@ -10,6 +10,7 @@ import {
   estimaticReviewsAi,
   platforms,
 } from "@/components/common/Helper";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -51,7 +52,7 @@ const EstimaticAiPage = async ({
     commonData,
   } = await getEstimaticPageData(useParams?.locale);
   return (
-    <main id="home-page-wrapper-2" className="overflow-hidden">
+    <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-estimatic-ai"
         className="relative opacity-0"
@@ -71,11 +72,21 @@ const EstimaticAiPage = async ({
         />
       </div>
       <OneGetsSet />
-      <FieldService
-        fieldService={estimaticCardData}
-        theme="dark"
-        mainClassName="text-center "
-      />
+      <div className="relative hidden md:block">
+        <FieldService
+          fieldService={estimaticCardData}
+          theme="dark"
+          mainClassName="text-center "
+        />
+      </div>
+      <div className="block md:hidden">
+        <OverlapCardMobileViewChild
+          fieldService={estimaticCardData}
+          theme="dark"
+          apiData={true}
+          mainClassName="text-center "
+        />
+      </div>
       <div className="relative overflow-hidden">
         <SwitchingTool
           className="pb-[113px]"

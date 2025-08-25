@@ -21,6 +21,8 @@ import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import WantingMoreMobile from "@/components/industry/WantingMoreMobile";
+import OverlapCardMobileViewChild from "@/components/industry/IndustryOverlapCardMobileViewChild";
 
 export async function generateMetadata({
   params,
@@ -64,7 +66,7 @@ const IndustryPage = async ({ params }: PageProps) => {
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
 
   return (
-    <main className="home-page-wrapper-2 overflow-hidden">
+    <main className="home-page-wrapper-2">
       <div id="home-page-view-port-screen-hvac" className="relative opacity-0">
         <div className="relative bg-white">
           <div className="relative">
@@ -86,10 +88,19 @@ const IndustryPage = async ({ params }: PageProps) => {
             />
           </div>
           <MovingSoftware switchingTool={switchingTool} />
-          <WantingMore
-            fieldServiceData={fieldServiceData}
-            slug={crmPageContent?.pageName}
-          />
+          <div className="relative hidden md:block">
+            <WantingMore
+              fieldServiceData={fieldServiceData}
+              slug={crmPageContent?.pageName}
+            />
+          </div>
+          <div className="relative block md:hidden">
+            <OverlapCardMobileViewChild
+              fieldServiceData={fieldServiceData}
+              slug={crmPageContent?.pageName}
+              theme={"light"}
+            />
+          </div>
           <EraOfSoftware
             trackProperties={trackProperties}
             slug={crmPageContent?.pageName}

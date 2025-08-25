@@ -27,13 +27,13 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
       <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
 
       <Image
-        className="w-full rounded-lg object-cover"
+        className="min-h-[300px] w-full rounded-lg object-cover"
         src={item.imgUrl}
         alt={item.heading}
         width={811}
         height={449}
       />
-      <div className="absolute -bottom-[30px] z-30 flex w-full flex-col items-center justify-center">
+      <div className="absolute -bottom-[0px] z-30 flex w-full flex-col items-center justify-center">
         <Image
           className="mb-2 w-full max-w-[73px] rounded-lg object-cover md:mb-4 md:max-w-[150px]"
           src={item.logoUrl}
@@ -53,7 +53,7 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
         <p className="text-decemberSky my-3 text-center text-sm sm:text-base lg:text-lg">
           {item.description}
         </p>
-        <Button className="w-full max-w-[189px]">
+        <Button className="relative z-20 w-full max-w-[189px]">
           {item.button} <EventDetailIcon />
         </Button>
       </div>

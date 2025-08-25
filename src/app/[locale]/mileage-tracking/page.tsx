@@ -14,6 +14,7 @@ import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import {
   mileage_comparisonData,
@@ -36,7 +37,6 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import Image from "next/image";
-
 export const metadata = {
   title: "Mileage Tracking Software for Contractors | Contractor+",
   description:
@@ -44,7 +44,7 @@ export const metadata = {
 };
 const MileageTrackingPage = () => {
   return (
-    <main className="overflow-hidden">
+    <main className="">
       <AutomatedClientHero
         hero={{
           heroTitle: "Tap once to track every mile. Reimburse with confidence.",
@@ -65,8 +65,17 @@ const MileageTrackingPage = () => {
         className="-mt-5"
       />
       <SwitchingTool switchingTool={mileageManagingData} className="mb-16" />
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <FieldService
+          fieldService={mileageActuallyWorkdata}
+          theme="dark"
+          slug="estimateTheme"
+          apiData={true}
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
+      <div className="block md:hidden">
+        <OverlapCardMobileViewChild
           fieldService={mileageActuallyWorkdata}
           theme="dark"
           slug="estimateTheme"
@@ -105,7 +114,6 @@ const MileageTrackingPage = () => {
             src={"/images/webp/hero-red-line.webp"}
             alt="hero-red-line"
           />
-
           <CrmService
             createBtn={"Get started FREE"}
             mobileBtn={"Download FREE App"}
@@ -127,7 +135,6 @@ const MileageTrackingPage = () => {
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
         />
       </div>
-
       <BlogPosts
         data={blogList}
         blogs={mileageHeadingData}
@@ -137,5 +144,4 @@ const MileageTrackingPage = () => {
     </main>
   );
 };
-
 export default MileageTrackingPage;

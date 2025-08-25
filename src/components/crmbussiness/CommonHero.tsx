@@ -8,7 +8,7 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
-import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
+import { RedClipIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
 import heroLottie from "../../../public/lotties/real-time.json";
@@ -72,22 +72,15 @@ const CommonHero: React.FC<TheHeroProps> = ({
       {isShowHeroImg && (
         <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>
       )}
-      {/* <Image
-        className="pointer-events-none absolute right-0 bottom-[-66%] z-[80] hidden h-[80%] w-full md:block"
-        src="/images/webp/large-comet-common-hero-test-2-desktop.webp"
-        alt=""
-        width={1920}
-        height={1000}
-      /> */}
+
       <Image
-        className="absolute right-0 bottom-[-20%] z-[80] h-[91%] w-full sm:bottom-[-27%] md:hidden"
-        src="/images/webp/large-comet-common-hero-test-2-desktop.webp"
+        className="pointer-events-none absolute right-0 bottom-[-34%] z-[80] h-[81%] w-full object-cover opacity-30 sm:bottom-[-27%] sm:hidden"
+        src="/images/webp/final-large.webp"
         alt=""
         width={1920}
         height={1000}
       />
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
-      {/* <RedClipIconMobile className="pointer-events-none absolute top-0 right-0 z-[999] block h-[80%] w-full opacity-80 md:hidden" /> */}
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
       <CardReveal distance={30} delay={0.1}>
         <div className="hidden items-center justify-center pb-1 md:flex">
@@ -101,7 +94,14 @@ const CommonHero: React.FC<TheHeroProps> = ({
         className="relative z-50 mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
-          <div className="mx-auto px-2 pt-8 sm:max-w-[90%] md:pt-0">
+          <div className="relative z-[90] mx-auto px-2 pt-8 sm:max-w-[90%] md:pt-0">
+            <CardReveal distance={30} delay={0.1}>
+              <div className="flex items-center justify-center pb-1 md:hidden">
+                <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+                  {featureTag || "Feature Highlight"}
+                </span>
+              </div>
+            </CardReveal>
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
               className="gradient-2 mb-2 hidden w-fit text-start leading-[140%] font-extrabold sm:mx-auto md:mb-4 md:block md:text-center lg:mb-[26px]"
@@ -128,7 +128,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
 
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
             {slug === "construction-bookkeeping-services" ? (
-              <div className="flex flex-col items-center justify-center">
+              <div className="relative z-[90] flex flex-col items-center justify-center">
                 <FreeTrialButton
                   showIcon={true}
                   text={"Get a bookkeeping quote"}

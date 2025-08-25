@@ -43,8 +43,8 @@ export interface ServiceData {
   userName?: string;
 }
 export interface Testimonial {
-  quote: string;
-  author: string;
+  quote?: string;
+  author?: string;
 }
 export type ContractorPlatformsProps = {
   params: Promise<{
@@ -156,4 +156,5 @@ export interface IntegrationItem {
   thumbnailImage?: {
     url?: string;
   };
+  slug?: string;
 }

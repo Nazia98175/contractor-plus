@@ -13,7 +13,7 @@ import Auto_position from "../../../public/lotties/Auto-Posting.json";
 import citation_sync from "../../../public/lotties/citation_sync-2.json";
 import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
 import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
-import LottieAnimation from "../homepage/LottieAnimation";
+import LottieAnimation from "../common/LottieAnimation";
 
 const CombinesPowerfulAiSlider = () => {
   const [topSwiper, setTopSwiper] = useState<any>(null);
@@ -100,10 +100,10 @@ const CombinesPowerfulAiSlider = () => {
         centeredSlides={true}
         modules={[Controller, Autoplay]}
         speed={600}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6000,
+        //   disableOnInteraction: false,
+        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
         className="!h-auto"
@@ -153,12 +153,14 @@ const CombinesPowerfulAiSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="!h-auto">
-          <div className="relative mx-auto flex h-full w-full max-w-[452px] items-end pb-[98px]">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={false}
-              animationData={Review_Request}
-            />
+          <div className="relative mx-auto flex h-full w-full max-w-[452px] items-end justify-center pb-[98px]">
+            <div className="h-fit w-full">
+              <LottieAnimation
+                className="mx-auto h-full w-full"
+                loop={false}
+                animationData={Review_Request}
+              />
+            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="!h-auto py-8">
@@ -183,11 +185,13 @@ const CombinesPowerfulAiSlider = () => {
             height={1200}
             alt="sync-weather"
           />
-          <LottieAnimation
-            className="mx-auto h-full w-full max-w-[200px]"
-            loop={true}
-            animationData={citation_sync}
-          />
+          <div className="flex h-full items-center justify-center">
+            <LottieAnimation
+              className="relative z-[999] mx-auto h-fit w-full max-w-[200px]"
+              loop={true}
+              animationData={citation_sync}
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="relative mx-auto w-full max-w-[536px] overflow-hidden">
@@ -205,18 +209,22 @@ const CombinesPowerfulAiSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="mx-auto !flex !h-auto flex-col items-center justify-center">
-          <LottieAnimation
-            className="mx-auto h-full w-full max-w-[500px]"
-            loop={false}
-            animationData={Profile_optimization}
-          />
+          <div className="flex w-full max-w-[500px] items-center justify-center">
+            <LottieAnimation
+              className="mx-auto h-full w-full max-w-[500px]"
+              loop={false}
+              animationData={Profile_optimization}
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <LottieAnimation
-            className="mx-auto h-full w-full max-w-[600px] object-cover"
-            loop={false}
-            animationData={Social_cross}
-          />
+          <div className="flex items-center justify-center">
+            <LottieAnimation
+              className="mx-auto h-full w-full max-w-[600px] object-cover"
+              loop={false}
+              animationData={Social_cross}
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
           <Image
@@ -260,7 +268,6 @@ const CombinesPowerfulAiSlider = () => {
           />
         </SwiperSlide>
       </Swiper>
-
       <div className="slider-img-gradient relative z-20">
         <Swiper
           modules={[Navigation, Pagination, Controller]}

@@ -21,6 +21,7 @@ import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
@@ -58,12 +59,20 @@ const ContractorClientAgreementPage = () => {
         <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       </div>
       <SwitchingTool switchingTool={automate_ControlData} />
-      <div className="relative overflow-hidden">
+      <div className="relative hidden md:block">
         <FieldService
           fieldService={automatedCardData}
           theme="dark"
           slug="estimateTheme"
           mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
+      <div className="block md:hidden">
+        <OverlapCardMobileViewChild
+          fieldService={automatedCardData}
+          theme="dark"
+          slug="estimateTheme"
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
         />
       </div>
       <div className="mt-16 bg-white sm:mt-0">

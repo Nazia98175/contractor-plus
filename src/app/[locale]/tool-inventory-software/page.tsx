@@ -56,7 +56,6 @@ const ToolAndTipEquipmentPage = () => {
             "One system to tag, assign, scan and recover every asset.",
         }}
         featureTag="Tool Inventory Software"
-        // heroImg="/images/png/tool-and-equipment.png"
         slug="crm"
         commonData={dealflowhero}
         isBlurBg={false}
@@ -66,7 +65,7 @@ const ToolAndTipEquipmentPage = () => {
       <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
       <DualSlider sliderData={toolEquipmentTracking.solutionCards} />
-      {/* <RealTimeServiceConnector theme="dark" fieldService={hello} /> */}
+
       <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}

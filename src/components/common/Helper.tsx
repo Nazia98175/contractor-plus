@@ -4350,7 +4350,7 @@ export const integrationLogos = [
   "/images/png/wisetack.png",
   "/images/png/victory.png",
   "/images/png/quickbooks.png",
-  "/images/png/paypall-icon.png",
+  "/images/svg/paypal.svg",
   "/images/png/outlook.png",
   "/images/png/lowes.png",
   "/images/png/earthcam.png",

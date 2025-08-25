@@ -67,7 +67,7 @@ const ContractorClientAgreementPage = () => {
           mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
         />
       </div>
-      <div className="block md:hidden">
+      <div className="mb-12 block md:hidden">
         <OverlapCardMobileViewChild
           fieldService={automatedCardData}
           theme="dark"

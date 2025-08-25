@@ -62,7 +62,7 @@ const LanguageItem = memo(
     >
       <div className="flex w-full items-center justify-start gap-1 sm:gap-2">
         <Image
-          className="w-3 rounded-full object-cover sm:w-5 sm:min-w-5"
+          className="w-5 rounded-full object-cover sm:w-5 sm:min-w-5"
           src={language.imgPath}
           width={16}
           height={16}
@@ -184,7 +184,7 @@ const LanguageSelector = () => {
         onClick={toggleDropdown}
       >
         <Image
-          className="w-3 rounded-full object-cover sm:w-5"
+          className="w-5 rounded-full object-cover"
           src={currentLanguage.imgPath}
           width={20}
           height={20}

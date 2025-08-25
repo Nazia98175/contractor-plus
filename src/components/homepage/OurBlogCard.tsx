@@ -29,7 +29,7 @@ const OurBlogCard = ({
         alt="blog images"
         unoptimized
       />
-      <div className="polygon-bg relative flex h-[207px] w-[207px] flex-col justify-between overflow-hidden rounded-2xl py-6">
+      <div className="polygon-bg relative flex min-h-[207px] flex-col justify-between overflow-hidden rounded-2xl py-6">
         <Image
           width={160}
           height={126}
@@ -39,7 +39,7 @@ const OurBlogCard = ({
           sizes="(max-width: 768px) 160px, min(768px, 160px)"
         />
       </div>
-      <div className="relative mt-2 w-[346px] overflow-hidden px-2.5 py-6">
+      <div className="relative mt-2 overflow-hidden px-2.5 py-6">
         <Image
           fill
           sizes="(max-width: 768px) 346px, min(768px, 346px)"

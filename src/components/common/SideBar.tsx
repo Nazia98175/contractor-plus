@@ -16,6 +16,7 @@ interface DropdownItemProps {
     title?: string;
   }>;
   isOpen: boolean;
+  setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
   onToggle: () => void;
   id: string;
 }
@@ -25,7 +26,7 @@ const DropdownItem = ({
   items,
   isOpen,
   onToggle,
-  id,
+  setIsShow,
 }: DropdownItemProps) => {
   return (
     <div className="flex flex-col">
@@ -53,6 +54,7 @@ const DropdownItem = ({
                     <Link
                       href={item?.href || "#"}
                       className="header-li block p-1"
+                      onClick={() => setIsShow(false)}
                     >
                       <div className="flex items-center gap-2">
                         {item.icon && <span>{item.icon}</span>}
@@ -152,6 +154,7 @@ const SideBar = ({
                   </Link>
                 ) : (
                   <DropdownItem
+                    setIsShow={setIsShow}
                     key={item.id}
                     id={item.id}
                     title={item.label}

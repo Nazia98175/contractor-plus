@@ -1656,8 +1656,8 @@ button {
 .rectangle-shape {
   background: linear-gradient(
     11.21deg,
-    #0a0b0e 45.56%,
-    rgba(10, 11, 14, 0) 84.42%
+    #0c0d11 45.56%,
+    rgba(12, 13, 17, 0) 84.42%
   );
 }
 .pin-shape {
@@ -2219,4 +2219,11 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.sunil {
+  background: linear-gradient(
+    11.21deg,
+    #0c0d11 45.56%,
+    rgba(12, 13, 17, 0) 84.42%
+  );
 }

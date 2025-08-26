@@ -33,6 +33,10 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
         return "text-expressionismGreen";
     }
   };
+
+
+  console.log(obj?.thumbnailImage?.url,"obj?.thumbnailImage?.url");
+  
   return (
     <Link
       href={`/integrations/${obj.slug}`}
@@ -40,10 +44,11 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
     >
       <div className="flex items-center gap-4">
         <Image
-          src={obj?.thumbnailImage?.url || "/placeholder.png"}
+          className="h-auto w-12 rounded-lg object-center xl:w-[60px]"
           width={60}
           height={60}
-          className="h-auto w-12 rounded-lg object-center xl:w-[60px]"
+          unoptimized
+          src={obj?.thumbnailImage?.url || "/placeholder.png"}
           alt={`${obj?.integrationName}' logo`}
         />
         <h4 className="text-xl font-semibold text-white capitalize xl:text-2xl">

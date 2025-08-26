@@ -69,35 +69,31 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
     <>
       {showTitle && (
         <>
-          <div className="mx-auto hidden pb-2 text-center sm:block">
-            <AdaptiveHeroTitle
-              title={title || ""}
-              className={` ${variantStyles.title} ${className || "max-w-[780px]"}`}
-              minFontSize={24}
-              maxLines={2}
-              maxFontSize={40}
-            />
-          </div>
-          <div className="mx-auto flex items-center justify-center pb-2 text-center sm:hidden">
-            <AdaptiveHeroTitle
-              title={title || ""}
-              className={` ${variantStyles.title} ${className || "max-w-[780px]"}`}
-              minFontSize={24}
-              maxLines={3}
-              maxFontSize={48}
-            />
-          </div>
+          <AdaptiveHeroTitle
+            title={title || ""}
+            className={`mx-auto hidden pb-2 text-center sm:block ${variantStyles.title} ${className || "max-w-[780px]"}`}
+            minFontSize={24}
+            maxLines={2}
+            maxFontSize={40}
+          />
+          <AdaptiveHeroTitle
+            title={title || ""}
+            className={`mx-auto block pb-2 text-center sm:hidden ${variantStyles.title} ${className || "max-w-[780px]"}`}
+            minFontSize={24}
+            maxLines={3}
+            maxFontSize={30}
+          />
         </>
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">
-        <Copy delay={0.2}>
-          <p
-            className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
-          >
-            {subTitle}
-          </p>
-        </Copy>
+        {/* <Copy delay={0.2}> */}
+        <p
+          className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
+        >
+          {subTitle}
+        </p>
+        {/* </Copy> */}
         <CardReveal distance={50}>
           {/* Desktop Form - Hidden on Mobile */}
           <form

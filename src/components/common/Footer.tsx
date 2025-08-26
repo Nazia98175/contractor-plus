@@ -185,25 +185,33 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="Powered by Logo"
             />
           </div>
-          <div className="flex flex-col items-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center gap-3 sm:flex-row">
             <div
-              className={`flex flex-wrap justify-center gap-4 text-xs leading-[200%]`}
+              className={`flex flex-wrap justify-center gap-3 text-xs leading-[200%]`}
             >
               {footer?.bottomLinks?.map((item, idx) => (
                 <Link
                   key={idx}
                   href={item?.url}
-                  className={`transition-all duration-300 ${styles.bottomlink}`}
+                  className={`transition-all duration-300 flex items-center ${styles.bottomlink}`}
                 >
                   {item?.urlText}
                 </Link>
               ))}
+               <a
+                href="#"
+                className={`termly-display-preferences flex items-center gap-1 transition-all duration-300 ${styles.bottomlink}`}
+                aria-label="Cookie consent preferences"
+              >
+                <span>Consent Preferences</span>
+                      <img className="max-w-7 ml-1" src="/images/png/privacychoicesicon.png" alt="privacychoicesicon" />
+              </a>
             </div>
             <div className="hidden gap-3 py-1 sm:flex sm:py-0">
               <Link href="https://x.com/">
                 <TwitterIcon />
               </Link>
-              <Link href="https://www.linkedin.com/">
+              <Link href="https://www.linkedin.com">
                 <LinkdinIcon />
               </Link>
             </div>

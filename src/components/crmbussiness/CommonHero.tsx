@@ -12,7 +12,6 @@ import { RedClipIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
 import heroLottie from "../../../public/lotties/real-time.json";
-import bookping from "../../../public/lotties/bookping.json";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -164,11 +163,11 @@ const CommonHero: React.FC<TheHeroProps> = ({
             )}
           </div>
         </div>
-        {slug === "construction-bookkeeping-services" ? (
+        {hero?.isLottieView ? (
           <div className="relative mt-12 mb-16 sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
             <>
               <LottieAnimation
-                animationData={bookping}
+                animationData={hero?.lottieJson}
                 loop={true}
                 className="mx-auto w-full max-w-[550px]"
               />
@@ -177,7 +176,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
           </div>
         ) : (
           <>
-            {isShowHeroImg && (
+            {hero?.isImage && (
               <CardReveal distance={50} delay={0.9}>
                 <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
                   <div className="relative overflow-hidden">
@@ -190,7 +189,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                             {slug === "contractor-time-tracking-software" ? (
                               <>
                                 <LottieAnimation
-                                  animationData={heroLottie}
+                                  animationData={heroImg?.lottieJson}
                                   loop={false}
                                 />
                               </>

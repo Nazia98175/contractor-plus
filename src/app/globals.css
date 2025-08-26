@@ -664,6 +664,14 @@ line {
   background-clip: text;
   text-fill-color: transparent;
 }
+.gradient-white {
+  background:
+    linear-gradient(276.25deg, #ee1e2566 -11.28%, #00000000 99.63%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 .grey-gradient .line {
   background: linear-gradient(180deg, #ffffff -10.35%, #0c0d11 166.92%);
   -webkit-background-clip: text;

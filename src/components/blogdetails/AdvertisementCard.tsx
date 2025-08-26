@@ -13,7 +13,9 @@ const businessBenefits = [
 const AdvertisementCard = ({
   blogsList,
 }: {
-  blogsList?: { bannerFeatures: { id: number; label: string }[] };
+  blogsList?: {
+    bannerFeatures: { id: number; label?: string; text?: string }[];
+  };
 }) => {
   return (
     <article className="flex w-full flex-col justify-center rounded-xl bg-[url('/images/webp/table-content-bg.webp')] bg-cover px-4 pt-8 pb-6 md:pb-[30px] lg:px-6 lg:pt-[42px]">
@@ -25,16 +27,26 @@ const AdvertisementCard = ({
       </span>
       <ul className="mt-10 space-y-3 px-2.5 text-white">
         {blogsList
-          ? blogsList?.bannerFeatures?.length > 0 &&
-            blogsList?.bannerFeatures?.map((benefit) => (
-              <li
-                key={benefit.id}
-                className="flex items-center gap-2.5 text-xs"
-              >
-                <CheckIcon />
-                {benefit.label}
-              </li>
-            ))
+          ? blogsList?.bannerFeatures?.length > 0
+            ? blogsList?.bannerFeatures?.map((benefit) => (
+                <li
+                  key={benefit.id}
+                  className="flex items-center gap-2.5 text-xs"
+                >
+                  <CheckIcon />
+                  {benefit.label || benefit.text}
+                </li>
+              ))
+            : // @ts-ignore
+              blogsList?.map((benefit) => (
+                <li
+                  key={benefit.id}
+                  className="flex items-center gap-2.5 text-xs"
+                >
+                  <CheckIcon />
+                  {benefit.text}
+                </li>
+              ))
           : businessBenefits.map((benefit) => (
               <li key={benefit} className="flex items-center gap-2.5 text-xs">
                 <CheckIcon />

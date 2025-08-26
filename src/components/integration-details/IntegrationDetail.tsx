@@ -52,7 +52,7 @@ const IntegrationDetail: React.FC<IntegrationDetailProps> = ({
               </div>
 
               <div className="top-0 basis-[60%] md:sticky">
-                <AdvertisementCard />
+                <AdvertisementCard blogsList={integration?.keyBenefits?.benefitList} />
               </div>
             </div>
           </div>

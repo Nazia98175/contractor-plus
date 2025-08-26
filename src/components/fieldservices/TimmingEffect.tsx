@@ -130,7 +130,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
           backgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
-        className="section-heading relative z-[4] hidden px-2 text-center sm:block"
+        className="section-heading relative z-[4] hidden px-2 !text-center sm:block"
       >
         {timingEff?.title}
       </h2>
@@ -142,12 +142,12 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
           backgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
-        className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
+        className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 !text-center text-[19px] font-bold sm:hidden"
       >
         {timingEff?.title}
       </h2>
 
-      <p className="text-darkness xs:text-sm relative z-[4] my-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
+      <p className="text-darkness xs:text-sm relative z-[4] my-3 !text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
         {timingEff?.subTitle}
       </p>
       <div
@@ -273,66 +273,66 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
           <div className="flex items-center">
             <TimeAnimation />
-            <div className="text-phantom relative flex h-[50px] flex-col items-center overflow-hidden text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
+            <div className="text-phantom relative flex h-[50px] flex-col items-center overflow-hidden !text-center text-[28px] font-semibold -tracking-[0.84px] sm:text-3xl md:text-[42px]">
               <div id="am-pm-wrapper" className="flex flex-col">
                 <span className="h-[50px]">AM</span>
                 <span className="h-[50px]">PM</span>
               </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="fle relative flex-col items-center justify-center !text-center">
             <p
               id="timing-text-1"
-              className="timing-text relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text relative mx-auto mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               You check the live crew map, see who's already moving, drag
               unassigned jobs onto the calendar & assign based on proximity.
             </p>
             <p
               id="timing-text-2"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               Big Chief AI call attendant answers two calls while you’re in a
               meeting, books a walkthrough, and adds the leads to your CRM.
             </p>
             <p
               id="timing-text-3"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               A technician updates task status and uploads job photos without
               needing a check-in.
             </p>
             <p
               id="timing-text-4"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               One tech’s stuck in traffic. You reassign their next visit to a
               nearby available team with a single drag and drop.
             </p>
             <p
               id="timing-text-5"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               A tech completes a work order, gets the docs signed via mobile,
               and takes payment on-site.
             </p>
             <p
               id="timing-text-6"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               A recurring client submits a service request through the portal—it
               drops straight into your dispatch board.
             </p>
             <p
               id="timing-text-7"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               You get an alert that a tool hasn’t been checked back in. You
               follow up immediately.
             </p>{" "}
             <p
               id="timing-text-8"
-              className="timing-text absolute top-0 left-0 mt-6 mb-2 text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
+              className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               All crews are clocked out, all jobs are closed, and you didn’t
               once need to chase down an update.

@@ -74,7 +74,13 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
         </p>
       </div>
 
-      <button className="text-lightGrey my-5 duration-300 hover:text-white sm:my-8 md:my-12">
+      <button
+        onClick={() => {
+          const section = document.getElementById("integration-detail-section");
+          section?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="text-lightGrey my-5 duration-300 hover:text-white sm:my-8 md:my-12"
+      >
         <ResizeIcon />
       </button>
     </section>

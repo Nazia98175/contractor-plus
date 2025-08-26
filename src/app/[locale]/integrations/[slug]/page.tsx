@@ -4,6 +4,7 @@ import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import IntegrationDetail from "@/components/integration-details/IntegrationDetail";
 import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
+import IntegrationParent from "@/components/integration-details/IntegrationParent";
 import {
   getAllIntegration,
   getIntegrationDataBySlug,
@@ -40,15 +41,9 @@ const IntegrationDetails = async ({
 
   return (
     <main id="home-page-wrapper-2">
-      <div
-        id="home-page-view-port-screen-fetures"
-        className="relative bg-[url('/images/webp/integration-detail-bg.webp')] bg-contain bg-no-repeat sm:bg-cover"
-      >
-        <IntegrationDetailHero integration={integrationData} />
-      </div>
-      <IntegrationDetail
-        integration={integrationData}
-        integrationDetail={integrationDetails}
+      <IntegrationParent
+        integrationData={integrationData}
+        integrationDetails={integrationDetails}
       />
       <div className="relative overflow-hidden">
         <Faq

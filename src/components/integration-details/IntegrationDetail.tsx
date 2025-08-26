@@ -21,18 +21,11 @@ const IntegrationDetail: React.FC<IntegrationDetailProps> = ({
   integration,
   integrationDetail,
 }) => {
-  // const tableLinks = [
-  //   {
-  //     link: "",
-  //     label: "Faster payments",
-  //   },
-  //   {
-  //     link: "",
-  //     label: "Safer payments ",
-  //   },
-  // ];
   return (
-    <section className="main-container 1xl:space-y-20 space-y-12 pt-8 pb-20 sm:pb-24 md:space-y-12 lg:space-y-14 xl:pb-[114px]">
+    <section
+      id="integration-detail-section"
+      className="main-container 1xl:space-y-20 space-y-12 pt-8 pb-20 sm:pb-24 md:space-y-12 lg:space-y-14 xl:pb-[114px]"
+    >
       <div className="flex flex-col justify-between gap-4 md:flex-row xl:gap-[30px]">
         <div className="grow">
           <IntegrationContent integration={integration} />

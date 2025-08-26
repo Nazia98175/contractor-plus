@@ -13,7 +13,7 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
       <div className="bg-romanRed absolute top-1/2 -left-[77px] z-0 hidden h-5 w-full max-w-[300px] -translate-y-[60%] rotate-45 rounded-full blur-[44px] md:block"></div>
 
       <h2
-        className={`section-heading-2 text-gradient-black mx-auto w-full px-2 text-center ${
+        className={`section-heading-2 gradient-text-2 mx-auto w-full px-2 text-center ${
           slug === "general-contractor" ? "max-w-[1029px]" : "max-w-[730px]"
         }`}
       >

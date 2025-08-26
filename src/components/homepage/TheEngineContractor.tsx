@@ -42,7 +42,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
         <div className="bg-redPigment pointer-events-none absolute right-[0px] bottom-[-40px] hidden h-[200px] w-full max-w-[300px] rounded-[10px] opacity-75 blur-[30px] md:block"></div>
         <div className="flex flex-col items-center justify-center gap-2 sm:gap-8 md:flex-row md:justify-between md:!px-[30px]">
           <div className="flex w-full flex-col gap-1.5">
-            <h2 className="section-heading md:gradient-engine-text gradient-engine-text-mobile text-center md:text-left">
+            <h2 className="section-heading gradient-engine-text-mobile text-center md:text-left">
               {before}&nbsp;
               {inView ? (
                 <CountUp

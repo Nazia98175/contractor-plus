@@ -633,13 +633,6 @@ line {
   text-fill-color: transparent;
 }
 
-.gradient-engine-text {
-  background: linear-gradient(to right, white, #ee1e2566 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-}
-
 .gradient-engine-text-mobile {
   background:
     linear-gradient(

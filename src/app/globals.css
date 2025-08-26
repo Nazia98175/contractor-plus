@@ -440,7 +440,7 @@ html::-webkit-scrollbar {
     ),
     #f8f8f8;
 }
-.text-gradient-effect {
+.text-gradient-effect .line {
   background: linear-gradient(180deg, #fff -12.5%, #5c171a 134.17%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -624,11 +624,8 @@ html::-webkit-scrollbar {
   }
 }
 
-.line {
-  will-change: transform;
-}
-
-.white-gray-gradient .line {
+.white-gray-gradient,
+line {
   background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -636,23 +633,10 @@ html::-webkit-scrollbar {
   text-fill-color: transparent;
 }
 
-.gradient-engine-text {
+.gradient-engine-text .line {
   background: linear-gradient(to right, white, #ee1e2566 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.gradient-engine-text-mobile {
-  background:
-    linear-gradient(
-      93.06deg,
-      rgba(0, 0, 0, 0) -6.06%,
-      rgba(238, 30, 37, 0.4) 81.92%
-    ),
-    linear-gradient(0deg, #ffffff, #ffffff), #f8f8f8;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }
 .gradient-engine-text-mobile .line {
   background:
@@ -685,15 +669,7 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
-.gradient-white {
-  background:
-    linear-gradient(276.25deg, #ee1e2566 -11.28%, #00000000 99.63%), #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.grey-gradient {
+.grey-gradient .line {
   background: linear-gradient(180deg, #ffffff -10.35%, #0c0d11 166.92%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -725,14 +701,6 @@ html::-webkit-scrollbar {
     text-fill-color: transparent;
   }
 }
-.gradient-text-2 {
-  background:
-    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 
 .gradient-text-2 .line {
   background:
@@ -742,15 +710,8 @@ html::-webkit-scrollbar {
   background-clip: text;
   text-fill-color: transparent;
 }
+
 .crm-gradient .line {
-  background:
-    linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.crm-gradient {
   background:
     linear-gradient(270.38deg, #ee1e2566 35.56%, #00000000 99.98%), #000;
   -webkit-background-clip: text;
@@ -864,14 +825,6 @@ html::-webkit-scrollbar {
   @apply translate-y-100 transition-transform duration-300 ease-out;
 }
 
-.text-gradient-black {
-  background:
-    linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 .text-gradient-light {
   background:
     linear-gradient(
@@ -887,14 +840,6 @@ html::-webkit-scrollbar {
 }
 
 .service-text .line {
-  background:
-    linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.service-text {
   background:
     linear-gradient(93.06deg, #00000000 -6.06%, #ee1e2566 81.92%), #ffffff;
   -webkit-background-clip: text;
@@ -1061,18 +1006,6 @@ html::-webkit-scrollbar {
   animation: shine 0.55s linear forwards;
 }
 
-@keyframes pulse-stroke {
-  0% {
-    stroke-width: 432px;
-  }
-  50% {
-    stroke-width: 350px;
-  }
-  100% {
-    stroke-width: 432px;
-  }
-}
-
 @keyframes pulse-aura {
   0% {
     stroke-width: 500px;
@@ -1178,11 +1111,6 @@ html::-webkit-scrollbar {
   @apply left-[125%] opacity-100;
 }
 
-.mobile-path {
-  animation: pulse-mobile-stroke 5s ease-in-out infinite;
-  transform-origin: center center;
-}
-
 @keyframes pulse-mobile-stroke {
   0%,
   100% {
@@ -1275,14 +1203,6 @@ html::-webkit-scrollbar {
   isolation: isolate;
 }
 
-.faq-heading-text {
-  background:
-    linear-gradient(270.38deg, #00000000 35.56%, #ee1e2566 99.98%), #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 .faq-heading-text .line {
   background:
     linear-gradient(270.38deg, #00000000 35.56%, #ee1e2566 99.98%), #ffffff;
@@ -1483,19 +1403,6 @@ button {
 .trusted-gradient {
   background: linear-gradient(89deg, #0c0d11 31% 54%, #0c0d1100 108%);
 }
-.half-rouded-clip-path {
-  clip-path: ellipse(50% 15% at 50% 53%);
-  background-color: #ee1e25;
-  opacity: 90;
-  filter: blur(32px);
-}
-.half-rouded-clip-path-2 {
-  clip-path: ellipse(50% 15% at 50% 53%);
-  background-color: #000000;
-  opacity: 90;
-  filter: blur(87.5px);
-  filter: drop-shadow(20px 30px 20px rgba(0, 0, 0, 0.5));
-}
 
 .rectangle-shape {
   background: linear-gradient(
@@ -1666,7 +1573,7 @@ button {
     transform: translateY(-400px);
   }
 }
-.estimate-text {
+.estimate-text .text {
   background:
     linear-gradient(
       275.49deg,
@@ -1678,24 +1585,6 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-}
-.estimate-text .line {
-  background:
-    linear-gradient(
-      275.49deg,
-      rgba(0, 0, 0, 0) 75.83%,
-      rgba(238, 30, 37, 0.4) 91.89%
-    ),
-    #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.compare-table-bg {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid #e6e9f5;
-  backdrop-filter: blur(31px);
 }
 
 .hero-video-overlay::before {
@@ -1738,73 +1627,11 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.hvac-blog-card-heading .line {
-  background:
-    linear-gradient(
-      270.38deg,
-      rgba(0, 0, 0, 0) 35.56%,
-      rgba(238, 30, 37, 0.4) 99.98%
-    ),
-    #000000;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 
-.gradient-text-404 {
-  background: linear-gradient(180deg, #fff 0%, #777 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.gradient-text-404 .line {
-  background: linear-gradient(180deg, #fff 0%, #777 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-/* Contractor+ puts your entire operation under one roof */
-
-.heading-text-2 {
-  background:
-    linear-gradient(92.96deg, #ee1e2566 18.56%, #00000000 81.93%), #0c0d11;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 .cloud-layer-bottom {
   background: linear-gradient(#fff0 6%, #fff 65.94%);
 }
-.why-contractor-hero {
-  background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.why-contractor-hero .line {
-  background: linear-gradient(180deg, #ffffff 25%, #0c1711 177.29%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 
-.crm-overlap-car-heading {
-  background:
-    linear-gradient(
-      276.94deg,
-      rgba(0, 0, 0, 0) -8.06%,
-      rgba(238, 30, 37, 0.4) 83.81%
-    ),
-    #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 .swiper-pagination-real-time-4 {
   @apply relative w-[93px] max-w-[93px] min-w-[93px] overflow-hidden;
 }
@@ -1827,20 +1654,6 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.event-hero-text-color .line {
-  background: linear-gradient(180deg, #fff -12.5%, #0c0d11 134.17%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.event-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(12, 13, 17, 0) 10.78%,
-    #0c0d11 84.74%
-  );
 }
 
 .img-overlay::after {
@@ -1868,24 +1681,14 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.podcast-gradient-text .line {
-  background: linear-gradient(91deg, #fff 50.11%, #be0c0c 75.25%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 .podcast-hero-user {
   background: linear-gradient(180deg, #919191 25%, #0c1711 177.29%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.podcast-hero-user .line {
-  background: linear-gradient(180deg, #919191 25%, #0c1711 177.29%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 .lead-generation-img-overlay {
   background: linear-gradient(180deg, #0c0d1100 0%, #0c0d11 100%);
 }
@@ -1917,12 +1720,6 @@ button {
   100% {
     background-position: 0% 50%;
   }
-}
-.industry-shift-text .line {
-  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .industry-shift-text {
@@ -1964,19 +1761,6 @@ button {
   transform: rotate(-45deg);
 }
 
-.custom-icon-color {
-  background:
-    linear-gradient(
-      275.84deg,
-      rgba(238, 30, 37, 0.4) 7.61%,
-      rgba(0, 0, 0, 0) 99.65%
-    ),
-    #0c0d11;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 .gradient-custom-2 {
   background:
     linear-gradient(
@@ -1990,19 +1774,7 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.gradient-custom-2 .line {
-  background:
-    linear-gradient(
-      275.84deg,
-      rgba(238, 30, 37, 0.4) 7.61%,
-      rgba(0, 0, 0, 0) 99.65%
-    ),
-    #0c0d11;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
+
 .ai-blur {
   background: linear-gradient(180deg, #0d0c1000 0%, #0d0c10 66.82%);
 }

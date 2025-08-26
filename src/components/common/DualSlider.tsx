@@ -32,9 +32,7 @@ const DualSlider: React.FC<Props> = ({ sliderData }) => {
   return (
     <section>
       <h3 className="gradient-text xs:max-w-[75%] mx-auto max-w-[99%] text-center text-xl font-semibold tracking-[-0.72px] sm:max-w-[813px] sm:text-2xl md:text-3xl lg:text-4xl">
-        <span className="line">
-          A tool tracking system that syncs with the rest of your operation
-        </span>
+        A tool tracking system that syncs with the rest of your operation
       </h3>
       <div className="custom-pagination custom-active-slider relative mx-auto w-full max-w-[1414px]">
         {/* Top Image Slider */}

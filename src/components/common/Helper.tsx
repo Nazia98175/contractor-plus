@@ -4182,7 +4182,7 @@ export const estimaticReviewsAi = {
           {
             id: 5,
             userName: "Joshua Michael Brooks Lee Jones",
-            profileImg: "/images/png/joshua.png",
+            profileImg: "/images/webp/joshua.webp",
             rating: 5,
             videoLink:
               "https://www.youtube.com/embed/ODjGhYILJKE?si=lcdtM7DNcQ6_JGd8",

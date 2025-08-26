@@ -20,11 +20,11 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
         <Image
           width={205}
           height={205}
-          src={show?.image?.url ?? ""}
+          src={show?.image?.formats?.medium?.url ?? show?.image?.url ?? ""}
           alt={show?.imageTitle ?? ""}
           className="relative h-full max-h-[260px] min-h-[260px] w-full rounded-md object-cover"
-          unoptimized
-          sizes="(max-width: 768px) 205px, (max-width: 1200px) 205px"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 205px"
         />
       </div>
     </TiltedCardEffect>

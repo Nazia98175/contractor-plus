@@ -23,7 +23,6 @@ const SeeAllFeaturesPage = () => {
         slug="crm"
         apiData={false}
         commonData={dealflowhero}
-        isShowHeroImg={false}
       />
       <YouNeedFeatures />
       <div className="main-container relative z-50 -mt-[70px] md:-mt-[133px] lg:-mt-[193px]">

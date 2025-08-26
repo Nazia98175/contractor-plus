@@ -60,17 +60,14 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
       </div>
 
       <div className="relative mx-auto flex w-full flex-col items-center justify-center px-4">
-        <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
+        <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] capitalize backdrop-blur-lg sm:text-xs">
           Contractor + {integration?.integrationName ?? ""}
         </h4>
-        <h1 className="main-heading text-gradient-effect max-w-[840px] text-center">
-          Unlocking Financial Simplicity With{" "}
-          {integration?.integrationName ?? ""}
+        <h1 className="main-heading text-gradient-effect max-w-[840px] text-center capitalize">
+          {integration?.integrationTitle ?? ""}
         </h1>
         <p className="hero-description !text-ashGray mx-auto mt-3 max-w-[739px] text-center">
-          Contractor+ proudly announces its collaboration with{" "}
-          {integration?.integrationName ?? ""}, a global icon in digital
-          payments.
+          {integration?.subDescription ?? ""}
         </p>
       </div>
 

@@ -139,6 +139,8 @@ export interface SimpleLink {
 // types.ts
 export interface IntegrationItem {
   id: string;
+  integrationTitle: string;
+  subDescription: string;
   name: string;
   logo: string;
   tags?: {

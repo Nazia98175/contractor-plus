@@ -29,7 +29,7 @@ const Resource = () => {
 
       {/* Free Tools & Templates Section - Moved to the top */}
       <section className="main-container">
-        <div className="bg-liquidNitrogen flex flex-col gap-8 px-4 py-10 md:px-6">
+        <div className="bg-muted flex flex-col gap-8 px-4 py-10 md:px-6">
           <div className="text-center">
             <h2 className="mb-3 text-3xl font-bold tracking-tight">
               Free Tools & Templates
@@ -45,7 +45,7 @@ const Resource = () => {
               title="Free Estimate Maker"
               description="Generate quick professional estimates on the fly and save them as PDF to share with clients."
               icon={<FileText className="text-whero h-10 w-10" />}
-              link="/free-estimate-maker"
+              link="resources/free-estimate-templates"
               buttonText="Create Estimates"
             />
 

@@ -47,7 +47,7 @@ export default function FreeEstimateMaker() {
   };
 
   return (
-    <div className="main-container px-4 py-6 md:px-6">
+    <div className="main-container !px-4 py-6 pt-24 md:!px-6">
       <PageHeader />
 
       <div className="mx-auto max-w-5xl">

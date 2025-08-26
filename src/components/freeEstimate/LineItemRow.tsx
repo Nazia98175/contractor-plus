@@ -213,17 +213,14 @@ export function LineItemRow({
       {/* Desktop-only actions */}
       {!isMobile && (
         <div className="hidden sm:flex sm:justify-end sm:gap-1">
-          <Button
-            // variant="ghost" size="icon"
-            onClick={onRemove}
-          >
+          <Button size="icon" variant="outline" onClick={onRemove}>
             <Trash2 className="h-4 w-4" />
             <span className="sr-only">Remove</span>
           </Button>
 
           <Button
-            // variant="ghost"
-            // size="icon"
+            size="icon"
+            variant="outline"
             onClick={onMoveUp}
             disabled={isFirst}
           >
@@ -232,8 +229,8 @@ export function LineItemRow({
           </Button>
 
           <Button
-            // variant="ghost"
-            // size="icon"
+            size="icon"
+            variant="outline"
             onClick={onMoveDown}
             disabled={isLast}
           >

@@ -95,9 +95,9 @@ const CommonHero: React.FC<TheHeroProps> = ({
         className="relative z-50 mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
-          <div className="relative z-[90] mx-auto px-2 pt-8 sm:max-w-[90%] md:pt-0">
+          <div className="relative z-[90] mx-auto px-2 pt-8 md:max-w-[90%] md:pt-0">
             <CardReveal distance={30} delay={0.1}>
-              <div className="flex items-center justify-center pb-1 md:hidden">
+              <div className="block pb-1 md:hidden">
                 <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
                   {featureTag || "Feature Highlight"}
                 </span>
@@ -113,7 +113,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
             />
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
-              className="gradient-2 mb-2 block w-fit text-start leading-[140%] font-extrabold sm:mx-auto md:mb-4 md:hidden md:text-center lg:mb-[26px]"
+              className="gradient-2 mb-2 block w-full text-start leading-[140%] font-extrabold sm:mx-auto md:mb-4 md:hidden md:text-center lg:mb-[26px]"
               minFontSize={16}
               maxLines={3}
               maxFontSize={40}
@@ -121,7 +121,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
             />
             {/* </Copy> */}
             <Copy delay={0.4} animateOnScroll={false}>
-              <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-start text-xs font-semibold sm:text-center sm:text-sm md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
+              <p className="text-decemberSky mx-auto mb-4 max-w-[826px] text-start text-xs font-semibold sm:text-sm md:text-center md:text-base md:font-medium lg:mb-[26px] lg:text-lg">
                 {hero?.heroDescription}
               </p>
             </Copy>

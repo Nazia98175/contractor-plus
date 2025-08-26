@@ -18,6 +18,7 @@ const IntegrationContent = ({
     }[];
   };
 }) => {
+  console.log(integration, "integration");
   return (
     <section className="w-full">
       {integration?.description.map((block, i) => {

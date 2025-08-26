@@ -440,7 +440,7 @@ html::-webkit-scrollbar {
     ),
     #f8f8f8;
 }
-.text-gradient-effect .line {
+.text-gradient-effect {
   background: linear-gradient(180deg, #fff -12.5%, #5c171a 134.17%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -633,12 +633,7 @@ line {
   text-fill-color: transparent;
 }
 
-.gradient-engine-text .line {
-  background: linear-gradient(to right, white, #ee1e2566 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.gradient-engine-text-mobile .line {
+.gradient-engine-text-mobile {
   background:
     linear-gradient(
       93.06deg,

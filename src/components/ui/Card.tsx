@@ -1,5 +1,7 @@
+"use client";
+
+import { cn } from "@/app/lib/utils";
 import * as React from "react";
-import { cn } from "../../app/lib/utils";
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -29,7 +31,7 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader";
 
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
+  HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
   <h3

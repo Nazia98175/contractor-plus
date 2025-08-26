@@ -1,25 +1,15 @@
 "use client";
+
 import { useState } from "react";
+import { useEstimateItems } from "../hooks/use-estimate";
 import { useMetaTags } from "../hooks/use-meta-tags";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import {
-  EstimateInfo,
-  EstimateItem,
-  useEstimateItems,
-} from "../hooks/use-estimate";
-import { EstimateForm } from "./EstimateForm";
 import { PageHeader } from "./PageHeader";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+import { EstimateForm } from "./EstimateForm";
 import { TemplateSelector } from "./TemplateSelector";
 import { SeoFileContent } from "./SeoFileContent";
 
-interface FreeEstimateMakerProps {
-  initialItems: EstimateItem[];
-  initialEstimateInfo: EstimateInfo;
-}
-export default function FreeEstimateMaker({
-  initialItems,
-  initialEstimateInfo,
-}: FreeEstimateMakerProps) {
+export default function FreeEstimateMaker() {
   const {
     items,
     addItem,
@@ -31,7 +21,7 @@ export default function FreeEstimateMaker({
     estimateInfo,
     updateEstimateInfo,
     calculateTotal,
-  } = useEstimateItems(initialItems, initialEstimateInfo);
+  } = useEstimateItems();
 
   const [activeTab, setActiveTab] = useState("create");
 
@@ -49,6 +39,7 @@ export default function FreeEstimateMaker({
 
   const handleExport = async () => {
     // This is now handled directly in the EstimatePreview component
+    console.log("Export functionality moved to EstimatePreview component");
   };
 
   const handleTemplateSelected = () => {
@@ -56,8 +47,9 @@ export default function FreeEstimateMaker({
   };
 
   return (
-    <div className="main-container px-4 pt-28 pb-6 md:px-6">
+    <div className="main-container px-4 py-6 md:px-6">
       <PageHeader />
+
       <div className="mx-auto max-w-5xl">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">
           <TabsList className="mb-4 grid w-full grid-cols-2">
@@ -88,6 +80,7 @@ export default function FreeEstimateMaker({
           </TabsContent>
         </Tabs>
       </div>
+
       <SeoFileContent />
     </div>
   );

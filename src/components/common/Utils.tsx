@@ -997,7 +997,7 @@ export const leadHGenerationFaqData = {
   faq: [
     {
       id: 1,
-      question: "s this really only $249/monthly? ",
+      question: "this really only $249/monthly? ",
       answer:
         "Yes! Contractor+ Local literally has the functionality of 10+ platforms and an agency in one solution. It’s the cost of a bad lead or two you might pay for elsewhere. With a 33:1 return for every dollar spent, it’s like an unfair advantage. ",
     },

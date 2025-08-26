@@ -4134,14 +4134,14 @@ export const estimaticReviewsAi = {
         reviews: [
           {
             id: 1,
-            userName: "Ava Martinez",
-            profileImg: "/images/webp/rands.webp",
+            userName: "Brandon Geiger",
+            profileImg: "/images/png/brandon-ginger.png",
             rating: 5,
-            videoLink: "https://www.youtube.com/watch?v=CllT0U-CtGc",
+            videoLink: "https://www.youtube.com/watch?v=ODjGhYILJKE",
             isModal: true,
             companyLogo: "/images/svg/randsIcon.svg",
-            review: `"Coordinating subcontractors and paperwork would leave me hunting for approvals every morning. Once I adopted Contractor+, I send tasks and instructions through business phone & sms, and automated client agreements capture signatures in seconds. Now I drop on site without chase calls, and I know every subcontractor has what they need before I arrive. It’s taken the stress out of prep work and freed me to focus on quality rather than admin."`,
-            userRole: "Cornerstone Construction Co.",
+            review: `"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"`,
+            userRole: "Co-Owner, Rushville Restorations",
           },
 
           {
@@ -4182,7 +4182,7 @@ export const estimaticReviewsAi = {
           {
             id: 5,
             userName: "Joshua Michael Brooks Lee Jones",
-            profileImg: "/images/png/brandon-ginger.png",
+            profileImg: "/images/png/joshua.png",
             rating: 5,
             videoLink:
               "https://www.youtube.com/embed/ODjGhYILJKE?si=lcdtM7DNcQ6_JGd8",

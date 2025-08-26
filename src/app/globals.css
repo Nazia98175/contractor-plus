@@ -697,6 +697,13 @@ line {
   }
 }
 
+.gradient-text-404 {
+  background: linear-gradient(180deg, #fff 0%, #777 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .gradient-text-2 .line {
   background:
     linear-gradient(275.84deg, #00000000 7.61%, #ee1e2566 99.65%), #000000;

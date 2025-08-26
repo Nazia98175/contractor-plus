@@ -115,12 +115,11 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
               900: { slidesPerView: 3, spaceBetween: 16 },
               1024: { slidesPerView: 3, spaceBetween: 20 },
               1280: { slidesPerView: 3.5, spaceBetween: 34 },
-              1440: { slidesPerView: 4.5, spaceBetween: 34 },
-              1536: { slidesPerView: 5.5, spaceBetween: 34 },
             }}
+            className="!h-full"
           >
             {blogs.map((article, index) => (
-              <SwiperSlide className="card-shine relative mx-auto overflow-hidden">
+              <SwiperSlide className="card-shine relative mx-auto !h-auto overflow-hidden">
                 <OurBlogCard
                   article={article}
                   blogListMobile={blogListMobile}

@@ -10,6 +10,7 @@ import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import { RedClipIcon, RedClipIconMobile } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import LottieAnimation from "../common/LottieAnimation";
 
 export interface TheHeroProps {
   hero: any;
@@ -18,6 +19,7 @@ export interface TheHeroProps {
   homeCard?: any;
   commonData?: any;
   featureTag?: string;
+  isLottie?: object;
   isBlurBg?: boolean;
   imgClass?: string;
 }
@@ -28,6 +30,7 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
   commonData,
   featureTag,
   isBlurBg = true,
+  isLottie,
   imgClass = "mt-9 max-w-[700px]",
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -132,6 +135,13 @@ const AutomatedClientHero: React.FC<TheHeroProps> = ({
                 alt="crm-hero"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
                 priority
+              />
+            )}
+            {isLottie && (
+              <LottieAnimation
+                className="mx-auto w-full object-cover"
+                loop={true}
+                animationData={isLottie}
               />
             )}
           </div>

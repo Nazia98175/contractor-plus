@@ -35,6 +35,7 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
+import heroImg from "../../../../public/lotties/tool-hero.json";
 
 import Image from "next/image";
 
@@ -55,21 +56,16 @@ const ToolAndTipEquipmentPage = () => {
             "One system to tag, assign, scan and recover every asset.",
         }}
         featureTag="Tool Inventory Software"
-        heroImg="/images/png/tool-and-equipment.png"
         slug="crm"
         commonData={dealflowhero}
         isBlurBg={false}
+        isLottie={heroImg}
         imgClass="-mb-10 sm:-mb-16 mt-10 md:mb-0 md:-mt-5 xl:mr-20 max-w-[800px]"
       />
-      <TrustedService
-        reviews={clientReviews}
-        slug="crm"
-        apiData={false}
-        className="xl:-mt-28"
-      />
+      <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
       <DualSlider sliderData={toolEquipmentTracking.solutionCards} />
-      {/* <RealTimeServiceConnector theme="dark" fieldService={hello} /> */}
+
       <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}

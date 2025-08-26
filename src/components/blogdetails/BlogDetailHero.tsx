@@ -43,7 +43,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
             <Image
               width={24}
               height={24}
-              src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/webp/review-profile-2.webp"}`}
+              src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/png/justin-mcnicholas.png"}`}
               className="rounded-full"
               alt={`Profile Photo of ${blogData?.authorName}`}
             />

@@ -94,7 +94,7 @@ const IndustryPage = async ({ params }: PageProps) => {
               slug={crmPageContent?.pageName}
             />
           </div>
-          <div className="relative block md:hidden">
+          <div className="relative mb-12 block md:hidden">
             <OverlapCardMobileViewChild
               fieldServiceData={fieldServiceData}
               slug={crmPageContent?.pageName}

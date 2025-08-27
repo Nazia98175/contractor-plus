@@ -20,7 +20,7 @@ const HerosectionBackground = () => {
         src={"/images/webp/hero-red-line-mobile.webp"}
         alt="hero-red-line"
       />
-      <div className="bg-kuroiBlack 3xl:block pointer-events-none absolute -bottom-[10%] -left-[0px] z-0 hidden h-[16%] w-[139%] blur-[8px]"></div>
+      <div className="bg-kuroiBlack 3xl:block pointer-events-none absolute -bottom-[15%] -left-[0px] z-0 h-[16%] w-[139%] blur-[8px]"></div>
     </>
   );
 };

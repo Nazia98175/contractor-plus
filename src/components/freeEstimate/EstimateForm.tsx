@@ -396,7 +396,7 @@ export function EstimateForm({
                     <Button
                       variant="outline"
                       onClick={onClearItems}
-                      className="w-fit gap-1"
+                      className="!w-fit gap-1"
                     >
                       <Trash2 className="h-4 w-4" />
                       Clear All

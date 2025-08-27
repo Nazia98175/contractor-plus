@@ -64,15 +64,16 @@ const DragAnimation: React.FC = () => {
       </Copy>
 
       <div className="relative h-full overflow-hidden">
+        {/* Top & bottom fade edges */}
         <div className="pointer-events-none absolute top-0 z-20 h-full max-h-[70px] w-full bg-white blur-sm sm:-top-[12%] sm:max-h-[188px] sm:blur-[50px]"></div>
         <div className="pointer-events-none absolute bottom-0 z-20 h-full max-h-[70px] w-full bg-white blur-sm sm:-bottom-[4%] sm:max-h-[188px] sm:blur-[50px]"></div>
         <div className="pointer-events-none absolute -top-[20%] bottom-0 left-[-4%] z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
         <div className="pointer-events-none absolute -top-[20%] right-[-4%] bottom-0 z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
 
+        {/* Image Compare Container */}
         <div className="relative flex h-full w-full items-center justify-between sm:px-2">
           <div className="relative mt-4 flex h-full w-full items-center justify-between">
             <div className="mx-auto flex h-full w-full justify-between">
-              {/* Custom Compare Slider Container */}
               <div
                 ref={containerRef}
                 className="relative w-full cursor-ew-resize overflow-hidden select-none"
@@ -102,7 +103,7 @@ const DragAnimation: React.FC = () => {
                   />
                 </div>
 
-                {/* Slider Line and Handle */}
+                {/* Slider Line + Handle */}
                 <div
                   className="absolute top-0 bottom-0 w-[2px] bg-white/80"
                   style={{
@@ -110,7 +111,6 @@ const DragAnimation: React.FC = () => {
                     transform: "translateX(-50%)",
                   }}
                 >
-                  {/* Drag Handle */}
                   <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     onMouseDown={handleMouseDown}
@@ -129,17 +129,10 @@ const DragAnimation: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative z-20 mx-auto mt-2 flex w-full max-w-[805px] items-center justify-between px-2 sm:mt-6">
-          <div className="text-customGrey w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-            Before
-          </div>
-
+        {/* Centered BEFORE/AFTER Text */}
+        <div className="relative z-20 mx-auto mt-2 flex w-full max-w-[805px] items-center justify-center px-2 sm:mt-6">
           <div className="gradient-custom-2 w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-            HVAC Contractor
-          </div>
-
-          <div className="text-customGrey w-fit py-1 text-sm font-semibold tracking-[-0.48px] sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-            After
+            {sliderPosition < 50 ? "BEFORE" : "AFTER"}
           </div>
         </div>
       </div>

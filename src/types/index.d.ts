@@ -12,7 +12,55 @@ export interface Testimonial {
   user: string;
   username: string;
 }
-
+export interface Industry {
+  id: number;
+  name: string;
+  description?: string;
+}
+export type Period = "Monthly" | "Quarterly";
+export interface FilterState {
+  industries: number[];
+  // industry: string;
+  states: string[];
+  uom: UnitOfMeasurement;
+  dataSources: DataSource[];
+  period: Period;
+  dateRange?: DateRange;
+  locationMode?: "region" | "zipcode";
+  zipCode?: string;
+}
+export interface DateRange {
+  from: Date | undefined;
+  to: Date | undefined;
+  preset?: DateRangePreset;
+}
+export type UnitOfMeasurement = "Hour" | "Square Foot" | "Linear Foot" | "Unit";
+export interface State {
+  id: number;
+  name: string;
+  abbreviation: string;
+  region: string;
+}
+export interface ZipCodeLaborRate extends Omit<LaborRate, "stateId"> {
+  zipCode: string;
+  distance: number;
+}
+export interface ZipCodeDataTableProps extends BaseDataTableProps {
+  viewType: "zipcode";
+  states?: never; // This ensures state props can't be used in zipcode view
+  laborRates: ZipCodeLaborRate[];
+  searchedZipCode: string;
+}
+export interface LaborRate {
+  industryId: number;
+  stateId: number;
+  uom: UnitOfMeasurement;
+  contractorPlusRate: number | null;
+  blsRate: number | null;
+  averageRate: number | null;
+  year: number;
+  quarter: number;
+}
 export interface ReviewCardProps {
   review: Review;
   openModal: () => void;

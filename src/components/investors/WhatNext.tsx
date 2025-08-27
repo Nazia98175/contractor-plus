@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   RoadMapCenterLine,
   RoadMapCircleIcon,
@@ -6,7 +9,13 @@ import {
 } from "../common/Icons";
 import Copy from "../common/Copy";
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 const WhatNext = () => {
+  const horizontalScrollRef = useRef(null);
+  const sectionWrapperRef = useRef(null);
+
   const items = [
     {
       title: "Tradeshow saturation",
@@ -30,140 +39,178 @@ const WhatNext = () => {
     },
     {
       title: "ASO + SEO + Lead Gen acceleration",
-      desc: "We already rank. Now we’ll scale it.",
+      desc: "We already rank. Now we'll scale it.",
     },
     {
       title: "Ambassadors, associations & integration partners",
       desc: "CAC drops, reach explodes.",
     },
   ];
+
+  useEffect(() => {
+    const element = horizontalScrollRef.current;
+
+    if (element) {
+      // Create ScrollTrigger animation
+      gsap.fromTo(
+        element,
+        {
+          x: "60vw", // Starting position (matches the translate-x-[50vw] class)
+        },
+        {
+          x: 0, // End position
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionWrapperRef.current,
+            start: "top 100px", // Animation starts when top of element hits 80% of viewport
+            end: "bottom 100%", // Animation ends when bottom of element hits 20% of viewport
+            scrub: 2, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+            markers: false,
+          },
+        },
+      );
+    }
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section className="mx-auto max-w-[1400px] px-4 pb-14">
-      <Copy animateOnScroll={true}>
-        <h3 className="text-mana text-center text-2xl font-semibold sm:text-[28px] md:text-[38px]">
-          What’s next (GTM + fund use)
-        </h3>
-      </Copy>
-      <Copy animateOnScroll={true}>
-        <p className="text-cente text-ironFixture pt-3 pb-[59px] text-center text-sm font-bold sm:text-base md:pb-[60px] md:text-lg lg:pb-[72px]">
-          We’ve proven product-market fit. Now it’s time to dominate.
-          <br className="hidden lg:block" /> We’re raising{" "}
-          <span className="text-lightBlackGrey"> $10M+ </span> to launch a
-          go-to-market blitz that floods the category
-        </p>
-      </Copy>
-      <div className="relative mx-auto hidden xl:block">
-        <span className="absolute top-1/2 bottom-0 -left-1/2 w-full translate-x-1/2 -translate-y-1/2 transform">
-          <RoadMapCenterLine />
-        </span>
-        {/* first  */}
-        <div className="flex items-start gap-20 2xl:gap-29">
-          <div className="relative w-full max-w-[300px]">
-            <span className="absolute right-[-20%] -bottom-11">
-              <RoadMapIcon />
-            </span>
-            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
-              Tradeshow saturation
-            </h3>
-            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
-              The biggest booth. The loudest keynote. The best closers on the
-              <br className="hidden lg:block" />
-              floor.
-            </p>
-          </div>
-          <div className="relative w-full max-w-[347px]">
-            <span className="absolute right-[-10%] -bottom-16">
-              <RoadMapIcon />
-            </span>
-            <h3 className="text-lightBlackGrey text-lg font-bold">
-              10x our investment into sales & support
-            </h3>
-            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
-              Build the team who knows how to get the{" "}
-              <br className="hidden lg:block" /> bag and keep it.
-            </p>
-          </div>
-          <div className="relative w-full max-w-[369px]">
-            <span className="absolute right-[-14%] -bottom-22">
-              <RoadMapIcon />
-            </span>
-            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
-              ASO + SEO + Lead Gen acceleration
-            </h3>
-            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
-              We already rank. Now we’ll scale it.
-            </p>
-          </div>
-        </div>
-        {/* second  */}
-        <div className="flex items-start justify-end gap-20 pt-[72px] 2xl:gap-29">
-          <div className="relative w-full max-w-[350px]">
-            <span className="absolute -top-15 right-[-20%] rotate-180">
-              <RoadMapIcon />
-            </span>
-            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
-              Full-funnel paid media
-            </h3>
-            <p className="text-sealGrey pt-3 text-end text-base font-semibold">
-              Retargeting, YouTube, Meta, Google,{" "}
-              <br className="hidden lg:block" /> TikTok, influencer UGC.
-            </p>
-          </div>
-          <div className="relative w-full max-w-[347px]">
-            <span className="absolute -top-15 right-[-10%] rotate-180">
-              <RoadMapIcon />
-            </span>
-            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
-              Customer-led content engine
-            </h3>
-            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
-              Podcast, testimonials, UGC, success{" "}
-              <br className="hidden lg:block" /> stories weekly.
-            </p>
-          </div>
-          <div className="relative w-full max-w-[369px] pr-[20px]">
-            <span className="absolute -top-15 right-[-5%] rotate-180">
-              <RoadMapIcon />
-            </span>
-            <h3 className="text-lightBlackGrey text-end text-lg font-bold">
-              Ambassadors, associations & integration partners
-            </h3>
-            <p className="text-sealGrey pt-2 text-end text-base font-semibold">
-              CAC drops, reach explodes.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="block w-full max-w-[700px] xl:hidden">
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="relative flex items-start gap-5 pl-[26px] sm:pl-[40px] md:pl-[64px]"
-          >
-            {/* Line */}
-            <span
-              className={`gradient-line absolute top-[31%] left-[15px] h-full w-[1px]`}
-            ></span>
-
-            {/* Icon */}
-            <span className="absolute top-[10px] left-0 rotate-180">
-              <RoadMapCircleIcon />
-            </span>
-
-            {/* Content */}
-            <div className="p-4">
-              <h3 className="text-sm font-bold text-white sm:text-base">
-                {item.title}
+    <section ref={sectionWrapperRef} className="relative w-full xl:h-[170vh]">
+      <div className="xl:will-change-position mx-auto max-w-[1400px] px-4 pb-14 xl:sticky xl:top-[100px]">
+        <Copy animateOnScroll={true}>
+          <h3 className="text-mana text-center text-2xl font-semibold sm:text-[28px] md:text-[38px]">
+            What's next (GTM + fund use)
+          </h3>
+        </Copy>
+        <Copy animateOnScroll={true}>
+          <p className="text-cente text-ironFixture pt-3 pb-[59px] text-center text-sm font-bold sm:text-base md:pb-[60px] md:text-lg lg:pb-[72px]">
+            We've proven product-market fit. Now it's time to dominate.
+            <br className="hidden lg:block" /> We're raising{" "}
+            <span className="text-lightBlackGrey"> $10M+ </span> to launch a
+            go-to-market blitz that floods the category
+          </p>
+        </Copy>
+        <div
+          ref={horizontalScrollRef}
+          id="horizontal-scroll"
+          className="relative mx-auto hidden w-full will-change-transform xl:block"
+          // Remove translate-x-[50vw] class since GSAP will handle the positioning
+        >
+          <span className="absolute top-1/2 bottom-0 -left-1/2 w-full translate-x-1/2 -translate-y-1/2 transform">
+            <RoadMapCenterLine />
+          </span>
+          {/* first  */}
+          <div className="flex items-start gap-20 2xl:gap-29">
+            <div className="relative w-full max-w-[300px]">
+              <span className="absolute right-[-20%] -bottom-11">
+                <RoadMapIcon />
+              </span>
+              <h3 className="text-lightBlackGrey text-end text-lg font-bold">
+                Tradeshow saturation
               </h3>
-              <p className="text-sealGrey font-semibold">{item.desc}</p>
+              <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+                The biggest booth. The loudest keynote. The best closers on the
+                <br className="hidden lg:block" />
+                floor.
+              </p>
+            </div>
+            <div className="relative w-full max-w-[347px]">
+              <span className="absolute right-[-10%] -bottom-16">
+                <RoadMapIcon />
+              </span>
+              <h3 className="text-lightBlackGrey text-lg font-bold">
+                10x our investment into sales & support
+              </h3>
+              <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+                Build the team who knows how to get the{" "}
+                <br className="hidden lg:block" /> bag and keep it.
+              </p>
+            </div>
+            <div className="relative w-full max-w-[369px]">
+              <span className="absolute right-[-14%] -bottom-22">
+                <RoadMapIcon />
+              </span>
+              <h3 className="text-lightBlackGrey text-end text-lg font-bold">
+                ASO + SEO + Lead Gen acceleration
+              </h3>
+              <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+                We already rank. Now we'll scale it.
+              </p>
             </div>
           </div>
-        ))}
+          {/* second  */}
+          <div className="flex items-start justify-end gap-20 pt-[72px] 2xl:gap-29">
+            <div className="relative w-full max-w-[350px]">
+              <span className="absolute -top-15 right-[-20%] rotate-180">
+                <RoadMapIcon />
+              </span>
+              <h3 className="text-lightBlackGrey text-end text-lg font-bold">
+                Full-funnel paid media
+              </h3>
+              <p className="text-sealGrey pt-3 text-end text-base font-semibold">
+                Retargeting, YouTube, Meta, Google,{" "}
+                <br className="hidden lg:block" /> TikTok, influencer UGC.
+              </p>
+            </div>
+            <div className="relative w-full max-w-[347px]">
+              <span className="absolute -top-15 right-[-10%] rotate-180">
+                <RoadMapIcon />
+              </span>
+              <h3 className="text-lightBlackGrey text-end text-lg font-bold">
+                Customer-led content engine
+              </h3>
+              <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+                Podcast, testimonials, UGC, success{" "}
+                <br className="hidden lg:block" /> stories weekly.
+              </p>
+            </div>
+            <div className="relative w-full max-w-[369px] pr-[20px]">
+              <span className="absolute -top-15 right-[-5%] rotate-180">
+                <RoadMapIcon />
+              </span>
+              <h3 className="text-lightBlackGrey text-end text-lg font-bold">
+                Ambassadors, associations & integration partners
+              </h3>
+              <p className="text-sealGrey pt-2 text-end text-base font-semibold">
+                CAC drops, reach explodes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="block w-full max-w-[700px] xl:hidden">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="relative flex items-start gap-5 pl-[26px] sm:pl-[40px] md:pl-[64px]"
+            >
+              {/* Line */}
+              <span
+                className={`gradient-line absolute top-[31%] left-[15px] h-full w-[1px]`}
+              ></span>
+
+              {/* Icon */}
+              <span className="absolute top-[10px] left-0 rotate-180">
+                <RoadMapCircleIcon />
+              </span>
+
+              {/* Content */}
+              <div className="p-4">
+                <h3 className="text-sm font-bold text-white sm:text-base">
+                  {item.title}
+                </h3>
+                <p className="text-sealGrey font-semibold">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-ironFixture hidden pt-[55px] text-center text-sm font-semibold xl:block">
+          Our operational model makes the most of every dollar. But we need the
+          firepower to break through.
+        </p>
       </div>
-      <p className="text-ironFixture hidden pt-[55px] text-center text-sm font-semibold xl:block">
-        Our operational model makes the most of every dollar. But we need the
-        firepower to break through.
-      </p>
     </section>
   );
 };

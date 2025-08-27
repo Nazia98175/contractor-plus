@@ -74,15 +74,15 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
             gsap.set(anim_element, {
               y: 40,
               // opacity: 0,
-              filter: "blur(4px)",
+              filter: "blur(10px)",
               scale: 0.9,
             });
 
             // Create ScrollTrigger animation
             const st = ScrollTrigger.create({
               trigger: trigger_element,
-              start: "top 85%",
-              end: "bottom 10%",
+              start: "top 75%",
+              end: "bottom 15%",
               invalidateOnRefresh: true,
               markers: false,
               onEnter: () => {
@@ -98,9 +98,8 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
               onLeave: () => {
                 gsap.to(anim_element, {
                   y: -40,
-                  // opacity: 0,
                   scale: 0.95,
-                  filter: "blur(4px)",
+                  filter: "blur(10px)",
                   duration: 0.5,
                   ease: "power2.in",
                 });
@@ -108,7 +107,6 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
               onEnterBack: () => {
                 gsap.to(anim_element, {
                   y: 0,
-                  // opacity: 1,
                   scale: 1,
                   filter: "blur(0px)",
                   duration: 0.6,
@@ -118,9 +116,8 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
               onLeaveBack: () => {
                 gsap.to(anim_element, {
                   y: 40,
-                  // opacity: 0,
                   scale: 0.9,
-                  filter: "blur(4px)",
+                  filter: "blur(10px)",
                   duration: 0.5,
                   ease: "power2.in",
                 });
@@ -152,7 +149,7 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
           }
         };
       }
-    }, 500);
+    }, 20);
   }, [fieldService.cardsDetail]);
 
   return (
@@ -165,7 +162,7 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
         >
           <div
             id={`field-service-mobile-inner-card-${index}`}
-            className={`${className} w-full max-w-[1272px] rounded-[14px] p-2.5 lg:p-6 xl:rounded-[40px] xl:p-8`}
+            className={`${className} w-full max-w-[1272px] rounded-[14px] p-2.5 will-change-transform lg:p-6 xl:rounded-[40px] xl:p-8`}
           >
             <FieldServiceCard
               slug={slug}

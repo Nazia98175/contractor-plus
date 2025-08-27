@@ -79,7 +79,7 @@ const WhatNext = () => {
 
   return (
     <section ref={sectionWrapperRef} className="relative w-full xl:h-[170vh]">
-      <div className="mx-auto max-w-[1400px] px-4 pb-14 xl:sticky xl:top-[100px]">
+      <div className="xl:will-change-position mx-auto max-w-[1400px] px-4 pb-14 xl:sticky xl:top-[100px]">
         <Copy animateOnScroll={true}>
           <h3 className="text-mana text-center text-2xl font-semibold sm:text-[28px] md:text-[38px]">
             What's next (GTM + fund use)
@@ -96,7 +96,7 @@ const WhatNext = () => {
         <div
           ref={horizontalScrollRef}
           id="horizontal-scroll"
-          className="relative mx-auto hidden w-full xl:block"
+          className="relative mx-auto hidden w-full will-change-transform xl:block"
           // Remove translate-x-[50vw] class since GSAP will handle the positioning
         >
           <span className="absolute top-1/2 bottom-0 -left-1/2 w-full translate-x-1/2 -translate-y-1/2 transform">

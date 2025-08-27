@@ -5,9 +5,13 @@ import gsap from "gsap";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import { InvestorHeroIcon } from "../common/Icons";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 const InvestorHero = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const redBgRef = useRef<HTMLImageElement | null>(null);
   useEffect(() => {
     gsap.to(wrapperRef.current, {
       opacity: 1,
@@ -19,6 +23,18 @@ const InvestorHero = () => {
   }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
+    gsap.set("#left-mobile", {
+      x: "50%",
+      rotate: -10,
+      opacity: 0,
+    });
+    gsap.set("#right-mobile", {
+      y: 10,
+      x: "-50%",
+      scale: 0.7,
+      rotate: -370,
+      opacity: 0,
+    });
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen", {
         opacity: 1,
@@ -31,6 +47,30 @@ const InvestorHero = () => {
       gsap.to("#home-page-footer-view-port-screen", {
         opacity: 1,
         duration: 1,
+      });
+      if (redBgRef.current) {
+        gsap.to(redBgRef.current, {
+          scale: 1,
+          duration: 2.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
+
+      const section3Timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#mobile-cards-wrapper",
+          start: "top 40%",
+          once: true,
+        },
+      });
+
+      section3Timeline.to("#left-mobile", {
+        y: 0,
+        x: 0,
+        rotate: 0,
+        opacity: 1,
       });
     }, 1000);
   }, []);
@@ -52,7 +92,10 @@ const InvestorHero = () => {
         alt="invers hero bg"
       />
       <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px]">
-        <span className="absolute top-[5%] left-1/2 z-[-1] hidden -translate-x-1/2 transform md:block">
+        <span
+          ref={redBgRef}
+          className="absolute top-[5%] left-1/2 z-[-1] hidden -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
+        >
           <InvestorHeroIcon />
         </span>
         <div className="flex flex-col items-center justify-center px-2">
@@ -84,8 +127,11 @@ const InvestorHero = () => {
             </Button>
           </CardReveal>
         </div>
-        <div className="relative mx-auto flex w-full max-w-[768px] items-center justify-between pt-[93px] md:pt-[180px] xl:max-w-[1013px]">
-          <div className="relative z-10 sm:ml-14">
+        <div
+          id="mobile-cards-wrapper"
+          className="relative mx-auto flex w-full max-w-[768px] items-center justify-between pt-[93px] md:pt-[180px] xl:max-w-[1013px]"
+        >
+          <div id="left-mobile" className="relative z-0 origin-bottom sm:ml-14">
             <img
               className="relative w-full max-w-[329px] -rotate-[15deg]"
               src="/images/webp/mobile-card-1.webp"
@@ -93,7 +139,7 @@ const InvestorHero = () => {
             />
             <div className="invester-image-gradient absolute bottom-[-2%] left-[-15%] z-10 h-[150%] w-[102%] -rotate-[15deg]"></div>
           </div>
-          <div className="relative -z-0">
+          <div className="relative z-10">
             <img
               className="z-20 -mt-[30%] h-full w-full max-w-[329px]"
               src="/images/webp/mobile-card-2.webp"
@@ -102,7 +148,7 @@ const InvestorHero = () => {
             <div className="invester-image-gradient absolute bottom-[-2%] h-[150%] w-[105%]"></div>
           </div>
 
-          <div className="relative -z-0 sm:mr-14">
+          <div id="right-mobile" className="relative -z-0 sm:mr-14">
             <img
               className="relative top-[20%] z-[-1] w-full max-w-[329px] rotate-[15deg]"
               src="/images/webp/mobile-card-3.webp"

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useEstimateItems } from "../hooks/use-estimate";
-import { useMetaTags } from "../hooks/use-meta-tags";
+import { useEstimateItems } from "../../hooks/use-estimate";
+import { useMetaTags } from "../../hooks/use-meta-tags";
 import { PageHeader } from "./PageHeader";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/Tabs";
 import { EstimateForm } from "./EstimateForm";
 import { TemplateSelector } from "./TemplateSelector";
 import { SeoFileContent } from "./SeoFileContent";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Tabs, TabsList, TabsTrigger } from "../ui/Tabs";
+import { Tabs, TabsList, TabsTrigger } from "../../ui/Tabs";
 import {
   Card,
   CardContent,
@@ -7,11 +7,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/Card";
-import Button from "../common/Button";
+} from "../../ui/Card";
+import Button from "../../common/Button";
 import { Zap } from "lucide-react";
-import { estimateTemplates } from "../common/Helper";
-import { Badge } from "../ui/Badge";
+import { estimateTemplates } from "../../common/Helper";
+import { Badge } from "../../ui/Badge";
 
 interface TemplateSelectorProps {
   onLoadTemplate: (templateId: string) => void;

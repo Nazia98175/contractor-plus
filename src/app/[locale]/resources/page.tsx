@@ -1,4 +1,4 @@
-import FreeEstimateTemplates from "@/components/resourcehub/FreeEstimateTemplates";
+import FreeEstimateTemplates from "@/components/resourcehub/ResourceHubPage";
 import React from "react";
 
 const FreeEstimateTemplatesPage = () => {

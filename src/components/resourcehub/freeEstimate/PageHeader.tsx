@@ -6,7 +6,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../ui/Breadcrumbs";
+} from "../../ui/Breadcrumbs";
 
 export function PageHeader() {
   return (

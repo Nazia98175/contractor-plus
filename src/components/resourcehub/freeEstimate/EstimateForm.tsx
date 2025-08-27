@@ -14,17 +14,17 @@ import { LineItemRow } from "./LineItemRow";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import Button from "../common/Button";
-import { EstimateInfo, EstimateItem } from "../hooks/use-estimate";
-import { useFileUpload } from "../hooks/useFileUpload";
-import { useIsMobile } from "../hooks/useIsMobile";
-import { useToast } from "../hooks/useToast";
-import { AspectRatio } from "../ui/Aspectratio";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Input } from "../ui/Input";
-import { Label } from "../ui/Label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import { Textarea } from "../ui/Textarea";
+import Button from "../../common/Button";
+import { EstimateInfo, EstimateItem } from "../../hooks/use-estimate";
+import { useFileUpload } from "../../hooks/useFileUpload";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { useToast } from "../../hooks/useToast";
+import { AspectRatio } from "../../ui/Aspectratio";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/Card";
+import { Input } from "../../ui/Input";
+import { Label } from "../../ui/Label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/Tabs";
+import { Textarea } from "../../ui/Textarea";
 
 interface EstimateFormProps {
   items: EstimateItem[];

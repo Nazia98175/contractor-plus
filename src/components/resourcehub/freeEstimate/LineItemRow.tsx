@@ -1,15 +1,15 @@
 import { ArrowDown, ArrowUp, Trash2 } from "lucide-react";
-import { useIsMobile } from "../hooks/useIsMobile";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
-import Button from "../common/Button";
-import { EstimateItem } from "../hooks/use-estimate";
-import { Input } from "../ui/Input";
+} from "../../ui/Select";
+import Button from "../../common/Button";
+import { EstimateItem } from "../../hooks/use-estimate";
+import { Input } from "../../ui/Input";
 
 interface LineItemRowProps {
   item: EstimateItem;

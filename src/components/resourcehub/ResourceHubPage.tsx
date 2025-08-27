@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
-const FreeEstimateTemplates = () => {
+const ResourceHubPage = () => {
   const queryClientRef = useRef(new QueryClient());
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,4 +33,4 @@ const FreeEstimateTemplates = () => {
   );
 };
 
-export default FreeEstimateTemplates;
+export default ResourceHubPage;

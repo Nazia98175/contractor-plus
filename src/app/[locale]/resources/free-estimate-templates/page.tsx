@@ -1,4 +1,4 @@
-import FreeEstimateMaker from "@/components/freeEstimate/FreeEstimateMaker";
+import FreeEstimateMaker from "@/components/resourcehub/freeEstimate/FreeEstimateMaker";
 
 const page = () => {
   return (

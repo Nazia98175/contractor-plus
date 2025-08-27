@@ -1,10 +1,4 @@
 // import React from "react";
-
-// import { isAfter } from "date-fns";
-// import { cn } from "@/app/lib/utils";
-
-// import { useZipCodeTableData } from "./useZipCodeTableData";
-// import { useZipCodeTableSort } from "./DataTable/useZipCodeTableSort";
 // import {
 //   Table,
 //   TableBody,
@@ -12,9 +6,13 @@
 //   TableHeader,
 //   TableRow,
 // } from "@/components/ui/table";
-// import ZipCodeTableHeaders from "./DataTable/ZipCodeTableHeaders";
-// import ZipCodeTableRow from "./DataTable/ZipCodeTableRow";
-// import { ZipCodeDataTableProps } from "./DataTable/types";
+// import { cn } from "@/lib/utils";
+// import { ZipCodeDataTableProps } from "./types";
+// import { useZipCodeTableData } from "./useZipCodeTableData";
+// import { useZipCodeTableSort } from "./useZipCodeTableSort";
+// import ZipCodeTableHeaders from "./ZipCodeTableHeaders";
+// import ZipCodeTableRow from "./ZipCodeTableRow";
+// import { isAfter } from "date-fns";
 
 // const ZipCodeView = ({
 //   industries,
@@ -31,7 +29,7 @@
 //   const sortedData = deduplicateAndSortData(tableData);
 
 //   return (
-//     <div className={cn("glass-panel overflow-hidden rounded-lg", className)}>
+//     <div className={cn("glass-panel rounded-lg overflow-hidden", className)}>
 //       <div className="overflow-x-auto">
 //         <Table>
 //           <TableHeader>

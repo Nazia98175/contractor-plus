@@ -1,6 +1,6 @@
 // import { useState, useEffect } from "react";
 // import { format, addMonths, isAfter } from "date-fns";
-// import { ZipCodeDataTableProps } from "@/types";
+// import { ZipCodeDataTableProps } from "./types";
 
 // export const useZipCodeTableData = ({
 //   industries,
@@ -17,14 +17,14 @@
 
 //     const filteredIndustries = industries.filter(
 //       (i) =>
-//         filters.industries.length === 0 || filters.industries.includes(i.id),
+//         filters.industries.length === 0 || filters.industries.includes(i.id)
 //     );
 
 //     const data: any[] = [];
 
 //     filteredIndustries.forEach((industry) => {
 //       const relevantRates = laborRates.filter(
-//         (r) => r.industryId === industry.id && r.uom === filters.uom,
+//         (r) => r.industryId === industry.id && r.uom === filters.uom
 //       );
 
 //       if (relevantRates.length === 0) {
@@ -54,7 +54,7 @@
 //               const currentQuarter = Math.floor(currentMonth / 3) + 1;
 
 //               const rateForQuarter = relevantRates.find(
-//                 (r) => r.year === currentYear && r.quarter === currentQuarter,
+//                 (r) => r.year === currentYear && r.quarter === currentQuarter
 //               );
 
 //               data.push({

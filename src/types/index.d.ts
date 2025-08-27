@@ -41,16 +41,7 @@ export interface State {
   abbreviation: string;
   region: string;
 }
-export interface ZipCodeLaborRate extends Omit<LaborRate, "stateId"> {
-  zipCode: string;
-  distance: number;
-}
-export interface ZipCodeDataTableProps extends BaseDataTableProps {
-  viewType: "zipcode";
-  states?: never; // This ensures state props can't be used in zipcode view
-  laborRates: ZipCodeLaborRate[];
-  searchedZipCode: string;
-}
+
 export interface LaborRate {
   industryId: number;
   stateId: number;

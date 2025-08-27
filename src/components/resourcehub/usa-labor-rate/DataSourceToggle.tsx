@@ -1,7 +1,7 @@
 import React from "react";
 import { ALL_DATA_SOURCES, DataSourceKey } from "./DataSourceConfig";
-import { useDataSourceToggle } from "./useDataSourceToggle";
 import DataSourceToggleList from "./DataSourceToggleList";
+import { useDataSourceToggle } from "./useDataSourceToggle";
 
 interface DataSourceToggleProps {
   value?: DataSourceKey[];

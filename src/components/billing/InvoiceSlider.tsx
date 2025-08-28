@@ -52,16 +52,6 @@ const InvoiceSlider: React.FC<Props> = ({ sliderData }) => {
       >
         <SwiperSlide className="pt-12 sm:!min-h-[400px] md:pt-[72px]">
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
-            {/* <Image
-              unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
-              width={668}
-              height={300}
-              priority
-              src={"/images/webp/invoice-slider-1.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full max-w-[780px] object-cover"
-            /> */}
             <LottieAnimation
               className="mx-auto w-full max-w-[485px]"
               loop={false}

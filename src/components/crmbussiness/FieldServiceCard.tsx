@@ -63,7 +63,7 @@ const FieldServiceCard: React.FC<Props> = ({
               ) : service?.lottieJson ? (
                 <LottieAnimation
                   ref={setLottieRef(idx)}
-                  loop={true} // Changed to false since we'll control playback
+                  loop={service?.isLoop ?? false} // Changed to false since we'll control playback
                   autoplay={false} // Changed to false since we'll control playback
                   animationData={service?.lottieJson}
                   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
@@ -135,7 +135,7 @@ const FieldServiceCard: React.FC<Props> = ({
           {service?.lottieJson ? (
             <LottieAnimation
               ref={setLottieRef(idx)}
-              loop={false} // Changed to false since we'll control playback
+              loop={service?.isLoop ?? false} // Changed to false since we'll control playback
               autoplay={false} // Changed to false since we'll control playback
               animationData={service?.lottieJson}
             />

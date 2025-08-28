@@ -67,6 +67,7 @@ export interface TheServiceProps {
   issubHeadingShow?: boolean;
 }
 export interface ServiceData {
+  isLoop: boolean | undefined;
   heading: string;
   features: Feature[];
   testimonial?: Testimonial;

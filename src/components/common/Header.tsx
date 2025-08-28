@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const pathname = usePathname();
   const resolvedVariant: "light" | "dark" =    pathname.includes("resources") ||
     pathname.includes("events") ||
-    pathname.includes("resources/free-estimate-templates") || pathname.includes("cookie-policy")
+    pathname.includes("resources/free-estimate-templates") || pathname.includes("cookie-policy") || pathname.includes("terms-of-service") || pathname.includes("privacy-policy") || pathname.includes("gdpr") || pathname.includes("accessibility")
       ? "light"
       : "dark";
 

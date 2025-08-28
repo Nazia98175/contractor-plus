@@ -1,6 +1,28 @@
 "use client";
 
+import gsap from "gsap";
+import { useEffect } from "react";
+
 const GDPRPage = () => {
+
+      useEffect(() => {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        gsap.to("#home-page-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-header-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-footer-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+      }, 1000);
+    }, []);
+
   return (
     <div className="min-h-screen bg-white py-20">
       <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">

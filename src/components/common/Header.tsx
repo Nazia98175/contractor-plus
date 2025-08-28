@@ -26,10 +26,9 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const resolvedVariant: "light" | "dark" =
-    pathname.includes("resources") ||
+  const resolvedVariant: "light" | "dark" =    pathname.includes("resources") ||
     pathname.includes("events") ||
-    pathname.includes("resources/free-estimate-templates")
+    pathname.includes("resources/free-estimate-templates") || pathname.includes("cookie-policy")
       ? "light"
       : "dark";
 

@@ -1,6 +1,7 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Script from 'next/script';
+import gsap from 'gsap';
 
 interface TermlyEmbedProps extends React.HTMLAttributes<HTMLDivElement> {
   name?: string;
@@ -9,6 +10,26 @@ interface TermlyEmbedProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const CookiePolicyPage = () => {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        gsap.to("#home-page-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-header-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+        gsap.to("#home-page-footer-view-port-screen", {
+          opacity: 1,
+          duration: 1,
+        });
+      }, 1000);
+    }, []);
+
+
 
   return (
     <div className="min-h-screen bg-white py-20">

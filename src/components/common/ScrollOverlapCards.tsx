@@ -32,7 +32,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   apiData = true,
 }) => {
   // Always call hooks in the same order
-  const { gsapInstance, isLoaded, registerCleanup } = useGSAPDynamic();
+  const { isLoaded, registerCleanup } = useGSAPDynamic();
   const lottieRefs = useRef<(LottieAnimationRef | null)[]>([]);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -132,6 +132,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
     if (!fieldService?.cardsDetail) return;
 
     const lottieTimer = setTimeout(() => {
+      console.log(lottieRefs);
       // Clean up existing lottie triggers
       scrollTriggersRef.current.forEach((trigger) => {
         if (trigger && typeof trigger.kill === "function") {

@@ -56,11 +56,12 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
     setTimeout(() => {
       if (fieldService.cardsDetail.length > 0) {
         const scrollTriggers: any = []; // Array to store ScrollTrigger instances for cleanup
-
+        console.log(lottieRefs);
         for (let index = 0; index < fieldService.cardsDetail.length; index++) {
           const trigger_element = document.querySelector(
             `#field-service-mobile-card-${index}`,
           );
+
           const anim_element = document.querySelector(
             `#field-service-mobile-inner-card-${index}`,
           );
@@ -88,7 +89,6 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
               onEnter: () => {
                 gsap.to(anim_element, {
                   y: 0,
-                  // opacity: 1,
                   scale: 1,
                   filter: "blur(0px)",
                   duration: 0.8,
@@ -123,8 +123,27 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
                 });
               },
             });
+            const st2 = ScrollTrigger.create({
+              trigger: trigger_element,
+              start: "top 65%",
+              end: "bottom 15%",
+              invalidateOnRefresh: true,
+              markers: true,
+              onEnter: () => {
+                if (lottieRefs.current[index]) {
+                  lottieRefs.current[index]?.play();
+                }
+              },
 
+              onEnterBack: () => {
+                if (lottieRefs.current[index]) {
+                  lottieRefs.current[index]?.play();
+                }
+              },
+            });
             // Store ScrollTrigger instance for cleanup
+
+            scrollTriggers.push(st2);
             scrollTriggers.push(st);
           }
         }

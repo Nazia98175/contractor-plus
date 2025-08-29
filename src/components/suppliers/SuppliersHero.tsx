@@ -110,7 +110,7 @@ const SuppliersHero = () => {
       id="home-page-view-port-screen-fetures"
       className="relative pt-[115px]"
     >
-      <div className="relative z-40 mx-auto flex max-w-[892px] flex-col items-center justify-center px-4">
+      <div className="relative z-40 mx-auto flex max-w-[933px] flex-col items-center justify-center px-4">
         <h4 className="sm:bg-darkKnight text-secondary sm:text-wallStreet mx-auto w-fit rounded-md px-3 py-1 text-sm font-semibold tracking-[-0.24px] backdrop-blur-lg sm:text-xs">
           Supply Partners
         </h4>

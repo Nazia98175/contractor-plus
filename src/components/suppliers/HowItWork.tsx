@@ -3,9 +3,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import Copy from "../common/Copy";
-import SupplierBenefitList from "./SupplierBenefitList";
+import HowItWorkLIst from "./HowItWorkLIst";
 
-const SupplierBenefit = (cardsData: any) => {
+const HowItWork = (cardsData: any) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const redDotRef = useRef<HTMLSpanElement>(null);
 
@@ -57,7 +57,7 @@ const SupplierBenefit = (cardsData: any) => {
     <section className="main-container mt-[90px]">
       <Copy delay={0.1}>
         <h4 className="section-heading gradient-text text-center">
-          How suppliers benefit
+          How it works
         </h4>
       </Copy>
 
@@ -74,10 +74,10 @@ const SupplierBenefit = (cardsData: any) => {
           className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
         />
 
-        <SupplierBenefitList cardsData={cardsData} />
+        <HowItWorkLIst cardsData={cardsData} />
       </div>
     </section>
   );
 };
 
-export default SupplierBenefit;
+export default HowItWork;

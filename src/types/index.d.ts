@@ -200,3 +200,5 @@ export interface IntegrationItem {
   };
   slug?: string;
 }
+
+type PromiseParams = Promise<{ slug?: string; locale: string }>;

@@ -10,19 +10,22 @@ import { eventPricingDetail } from "../common/Helper";
 import { CustomSliderIcon } from "../common/Icons";
 import PricingCard from "./PricingCard";
 
-const EventPricing = () => {
+const EventPricing = ({ eventDetail, eventList }: any) => {
   return (
     <section className="px-2 py-10">
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
-          <h4 className="event-card-tittle"> {`{EventName} Pricing`}</h4>
+          <h4 className="event-card-tittle">
+            {" "}
+            {`${eventList?.pricingTitle ?? ""}`}
+          </h4>
         </Copy>
       </div>
       <div className="main-container flex flex-col-reverse gap-6 sm:flex-col sm:gap-0">
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-              {`{EventName} Pricing`}
+              {`${eventList?.pricingTitle ?? ""}`}
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">
@@ -75,11 +78,23 @@ const EventPricing = () => {
               },
             }}
           >
-            {eventPricingDetail.map((pricing, index) => (
-              <SwiperSlide key={index}>
-                <PricingCard pricing={pricing} />
-              </SwiperSlide>
-            ))}
+            {eventDetail?.pricing &&
+              eventDetail?.pricing?.map(
+                (pricing: {
+                  id: number;
+                  title: string;
+                  subTitle: string;
+                  image: {
+                    url: string;
+                  };
+                  currency: string;
+                  price: string;
+                }) => (
+                  <SwiperSlide key={pricing.id}>
+                    <PricingCard pricing={pricing} />
+                  </SwiperSlide>
+                ),
+              )}
           </Swiper>
         </div>
       </div>

@@ -4,12 +4,11 @@ import EventsCard from "@/components/common/EventsCard";
 import { allEventSections } from "@/components/common/Helper";
 import { CustomSliderIcon } from "@/components/common/Icons";
 import gsap from "gsap";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo } from "react";
 
-const SectionEvents = () => {
-  const params = useParams();
-  const sectionId = params.sectionId as string;
+const SectionEvents = ({ params }: { params: string }) => {
+  const sectionId = params as string;
   const router = useRouter();
 
   const sectionHeading = useMemo(() => {

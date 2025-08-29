@@ -1,7 +1,13 @@
+import { automatedCardData } from "@/components/common/Helper";
 import AtGlance from "@/components/suppliers/AtGlance";
+import HowItWork from "@/components/suppliers/HowItWork";
 import IntegrationModels from "@/components/suppliers/IntegrationModels";
+import MakeDifferent from "@/components/suppliers/MakeDifferent";
 import PartnerContractor from "@/components/suppliers/PartnerContractor";
+import SupplierBenefit from "@/components/suppliers/SupplierBenefit";
 import SuppliersHero from "@/components/suppliers/SuppliersHero";
+import WhatAsk from "@/components/suppliers/WhatAsk";
+import WorkToday from "@/components/suppliers/WorkToday";
 import React from "react";
 
 export const metadata = {
@@ -17,6 +23,11 @@ const Supplierspage = () => {
       <PartnerContractor />
       <AtGlance />
       <IntegrationModels />
+      <SupplierBenefit cardsData={automatedCardData.cardsDetail} />
+      <WorkToday />
+      <HowItWork cardsData={automatedCardData.cardsDetail} />
+      <WhatAsk />
+      <MakeDifferent />
     </div>
   );
 };

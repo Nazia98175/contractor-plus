@@ -5,13 +5,12 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import { PlusIconAnimation } from "../common/Icons";
 
-const SupplierBenefitList = (cardsData: any) => {
+const HowItWorkLIst = (cardsData: any) => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
   const sectionRef2 = useRef<HTMLDivElement>(null);
   const sectionRef3 = useRef<HTMLDivElement>(null);
   const sectionRef4 = useRef<HTMLDivElement>(null);
   const sectionRef5 = useRef<HTMLDivElement>(null);
-  const sectionRef6 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +21,6 @@ const SupplierBenefitList = (cardsData: any) => {
       sectionRef3,
       sectionRef4,
       sectionRef5,
-      sectionRef6,
     ];
 
     if (!cardsData) return;
@@ -77,13 +75,12 @@ const SupplierBenefitList = (cardsData: any) => {
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30">
-              In‑flow product placement
+              Connect your catalog
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Your SKUs appear where contractors are specifying materials—not in
-              a separate marketplace tab.
+              via API, feed, or EDI.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -96,12 +93,12 @@ const SupplierBenefitList = (cardsData: any) => {
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Higher conversion, lower friction
+              Map locations & pricing
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Higher conversion, lower friction
+              attach SKUs to stores/regions, set promos and pack sizes.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -114,13 +111,12 @@ const SupplierBenefitList = (cardsData: any) => {
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Local wins
+              Choose order route(s)
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Map catalog to stores and show region‑specific pricing &
-              availability to drive pickup or delivery.
+              cart transfer, PO, or both.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -134,13 +130,12 @@ const SupplierBenefitList = (cardsData: any) => {
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Demand insights
+              Launch in‑flow placement
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              See which SKUs get spec’d, how often they make final lists, and
-              where to stock deeper.
+              SKUs appear in Estimates, Material Lists, and Job templates.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -153,32 +148,13 @@ const SupplierBenefitList = (cardsData: any) => {
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Co‑marketing & preferencing
+              Fulfill & measure
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Featured placements, curated lists by trade, and seasonal promos
-              tied to job templates.
-            </p>
-          </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
-            <PlusIconAnimation />
-          </span>
-        </div>
-        <div
-          ref={sectionRef6}
-          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
-        >
-          <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Mobile‑first experience
-            </h3>
-          </Copy>
-          <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Specs and ordering that run smoothly in the field, not just at a
-              desk.
+              pickup/delivery as usual, with SKU‑level reporting and co‑op
+              opportunities.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -190,4 +166,4 @@ const SupplierBenefitList = (cardsData: any) => {
   );
 };
 
-export default SupplierBenefitList;
+export default HowItWorkLIst;

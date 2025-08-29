@@ -1,11 +1,11 @@
 "use client";
+import { formatDateRange } from "@/lib/date";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Directory from "../common/Directory";
 import { CustomSliderIcon } from "../common/Icons";
-import { formatDateRange } from "@/lib/date";
 
 const EventsDirectoryHero = ({ events }: any) => {
   useEffect(() => {

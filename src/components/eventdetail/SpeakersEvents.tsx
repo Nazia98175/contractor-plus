@@ -10,19 +10,23 @@ import Copy from "../common/Copy";
 import SpeakerCard from "./SpeakerCard";
 import { speakerEventsItems } from "../common/Helper";
 
-const SpeakersEvents = () => {
+const SpeakersEvents = ({ eventDetail, eventList }: any) => {
+  console.log(eventDetail, "event deails");
   return (
     <section className="px-2 py-8">
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
-          <h4 className="event-card-tittle"> {`Speakers at {EventName}`}</h4>
+          <h4 className="event-card-tittle">
+            {" "}
+            {`${eventList?.speakersTitle}`}
+          </h4>
         </Copy>
       </div>
       <div className="main-container flex flex-col-reverse gap-6 sm:flex-col sm:gap-0">
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-              {`Speakers at {EventName}`}
+              {`${eventList?.speakersTitle}`}
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">
@@ -73,11 +77,14 @@ const SpeakersEvents = () => {
               },
             }}
           >
-            {speakerEventsItems.map((member, index) => (
-              <SwiperSlide key={index}>
-                <SpeakerCard member={member} />
-              </SwiperSlide>
-            ))}
+            {eventDetail?.speakers &&
+              eventDetail?.speakers?.map(
+                (member: { id: string; name: string; jobTitle: string }) => (
+                  <SwiperSlide key={member?.id}>
+                    <SpeakerCard member={member} />
+                  </SwiperSlide>
+                ),
+              )}
           </Swiper>
         </div>
       </div>

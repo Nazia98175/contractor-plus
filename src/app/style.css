@@ -60,3 +60,33 @@
 .invester-image-gradient {
   background: linear-gradient(1deg, #0a0b0e 34.47%, rgba(10, 11, 14, 0) 90.83%);
 }
+
+.video-section-wrapper.scroll-active-2 h3 {
+  color: #fff !important;
+}
+.video-section-wrapper h3 {
+  color: #adb1b5 !important;
+}
+.video-section-wrapper p {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active-2 p {
+  color: #fff !important;
+}
+.video-section-wrapper svg path {
+  fill: #3a3c43;
+  stroke: #3a3c43;
+  transition: all 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active-2 svg path {
+  fill: #f21314 !important;
+  stroke: #f21314 !important;
+}
+.video-section-wrapper .icon-span {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(45deg);
+}
+.video-section-wrapper.scroll-active-2 .icon-span {
+  transform: rotate(90deg);
+}

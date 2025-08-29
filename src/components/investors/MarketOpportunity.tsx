@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Copy from "../common/Copy";
+// import Copy from "../common/Copy";
 
 const MarketOpportunity = () => {
   return (

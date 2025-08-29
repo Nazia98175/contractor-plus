@@ -1,6 +1,8 @@
+import { automatedCardData } from "@/components/common/Helper";
 import AtGlance from "@/components/suppliers/AtGlance";
 import IntegrationModels from "@/components/suppliers/IntegrationModels";
 import PartnerContractor from "@/components/suppliers/PartnerContractor";
+import SupplierBenefit from "@/components/suppliers/SupplierBenefit";
 import SuppliersHero from "@/components/suppliers/SuppliersHero";
 import React from "react";
 
@@ -17,6 +19,7 @@ const Supplierspage = () => {
       <PartnerContractor />
       <AtGlance />
       <IntegrationModels />
+      <SupplierBenefit cardsData={automatedCardData.cardsDetail} />
     </div>
   );
 };

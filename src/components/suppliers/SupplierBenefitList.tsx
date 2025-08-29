@@ -49,11 +49,11 @@ const SupplierBenefitList = (cardsData: any) => {
           markers: false,
           id: "boxes",
           onEnter: () => {
-            ref.current?.classList.add("scroll-active");
+            ref.current?.classList.add("scroll-active-2");
           },
           onLeaveBack: () => {
             if (window.innerWidth >= 768) {
-              ref.current?.classList.remove("scroll-active");
+              ref.current?.classList.remove("scroll-active-2");
             }
           },
         });
@@ -73,16 +73,17 @@ const SupplierBenefitList = (cardsData: any) => {
       <section className="relative flex flex-col gap-20 overflow-hidden pt-[67px] sm:gap-[100px] sm:pt-[94px] md:gap-[154px]">
         <div
           ref={sectionRef1}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30">
-              Assign
+              In‑flow product placement
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Send a tool to a person, job, or truck—instantly logged
+              Your SKUs appear where contractors are specifying materials—not in
+              a separate marketplace tab.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -91,16 +92,16 @@ const SupplierBenefitList = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef2}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Pick Up / Checkout
+              Higher conversion, lower friction
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Scan QR or detect via Bluetooth; capture timestamp
+              Higher conversion, lower friction
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -109,16 +110,17 @@ const SupplierBenefitList = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef3}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              On-Site Use
+              Local wins
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              See who has it while it’s in the field
+              Map catalog to stores and show region‑specific pricing &
+              availability to drive pickup or delivery.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -128,16 +130,17 @@ const SupplierBenefitList = (cardsData: any) => {
 
         <div
           ref={sectionRef4}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Transfer
+              Demand insights
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Hand off mid-job with a clean chain of custody
+              See which SKUs get spec’d, how often they make final lists, and
+              where to stock deeper.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -146,16 +149,17 @@ const SupplierBenefitList = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef5}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Return / Check-In
+              Co‑marketing & preferencing
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Scan once—done (and fully logged)
+              Featured placements, curated lists by trade, and seasonal promos
+              tied to job templates.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">
@@ -164,17 +168,17 @@ const SupplierBenefitList = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef6}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Audit & Billing
+              Mobile‑first experience
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Run a truck scan, reconcile discrepancies, bill for equipment
-              usage
+              Specs and ordering that run smoothly in the field, not just at a
+              desk.
             </p>
           </Copy>
           <span className="icon-span mt-[18px] flex justify-center duration-300">

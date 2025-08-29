@@ -56,8 +56,8 @@ const SupplierBenefit = (cardsData: any) => {
   return (
     <section className="main-container mt-[90px]">
       <Copy delay={0.1}>
-        <h4 className="section-heading gradient-text-2 text-center">
-          (We) Manage every tool from request to return
+        <h4 className="section-heading gradient-text text-center">
+          How suppliers benefit
         </h4>
       </Copy>
 

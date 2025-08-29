@@ -120,7 +120,7 @@ export const invoiceFaqData = {
 
 export const estimateSoftwareData = {
   title: "Not all AI estimate software makes your life easier",
-  subTitle: "Some AI estimators get “close”. Estimatic gets it right.",
+  subTitle: "Some AI estimators get “close.” Estimatic gets it right.",
   comaprisons: [
     {
       title: "Other Options",

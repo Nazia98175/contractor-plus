@@ -21,6 +21,8 @@ import up_arrow_White from "../../../public/lotties/whiteAnimated.json";
 import down_arrow_White from "../../../public/lotties/white-arrow.json";
 import whiteCar from "../../../public/lotties/white-car.json";
 import propertyRecord from "../../../public/lotties/property-record.json";
+import saving_bill from "../../../public/lotties/saving-bill.json";
+import saving_bill_white from "../../../public/lotties/saving-bill-white.json";
 import smartWork from "../../../public/lotties/smart-work.json";
 import { OptionType } from "../blog/CustomSelect";
 import {
@@ -4290,11 +4292,7 @@ export const invoicingSoftware = {
     {
       id: 1,
       title: null,
-      subTitle: (
-        <>
-          Revenue increase from capturing <br /> unbilled items
-        </>
-      ),
+      subTitle: "Revenue increase from capturing unbilled items",
       start: 5,
       end: 10,
       suffix: "%",
@@ -4309,19 +4307,16 @@ export const invoicingSoftware = {
     {
       id: 2,
       title: null,
-      subTitle: (
-        <>
-          Savings in billing admin <br /> time{" "}
-        </>
-      ),
+      subTitle: " Savings in billing admin time",
       start: 0,
       end: 50,
       suffix: "%",
       prefix: null,
       value: null,
-      lottieJson: null,
+      lottieJson: saving_bill,
+      mobileLottieJson: saving_bill_white,
       cardImage: {
-        url: "/images/svg/saving-bill.svg",
+        url: null,
       },
     },
     {

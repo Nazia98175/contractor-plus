@@ -36,7 +36,7 @@ interface TheFooterProps {
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const pathname = usePathname();
   const variant =
-    pathname.toLowerCase().includes("hvac") ||
+    pathname.toLowerCase().includes("industries") ||
     pathname.toLowerCase().includes("pricing") ||
     pathname.toLowerCase().includes("blog") ||
     pathname.toLowerCase().includes("general-contractor") ||
@@ -193,18 +193,22 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                 <Link
                   key={idx}
                   href={item?.url}
-                  className={`transition-all duration-300 flex items-center ${styles.bottomlink}`}
+                  className={`flex items-center transition-all duration-300 ${styles.bottomlink}`}
                 >
                   {item?.urlText}
                 </Link>
               ))}
-               <a
+              <a
                 href="#"
                 className={`termly-display-preferences flex items-center gap-1 transition-all duration-300 ${styles.bottomlink}`}
                 aria-label="Cookie consent preferences"
               >
                 <span>Consent Preferences</span>
-                      <img className="max-w-7 ml-1" src="/images/png/privacychoicesicon.png" alt="privacychoicesicon" />
+                <img
+                  className="ml-1 max-w-7"
+                  src="/images/png/privacychoicesicon.png"
+                  alt="privacychoicesicon"
+                />
               </a>
             </div>
             <div className="hidden gap-3 py-1 sm:flex sm:py-0">

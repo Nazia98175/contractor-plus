@@ -11,7 +11,6 @@ import FreeTrialButton from "../common/FreeTrialButton";
 import { RedClipIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
-import heroLottie from "../../../public/lotties/real-time.json";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -164,72 +163,41 @@ const CommonHero: React.FC<TheHeroProps> = ({
           </div>
         </div>
         {hero?.isLottieView ? (
-          <div className="relative mt-12 mb-16 sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
-            <>
-              <LottieAnimation
-                animationData={hero?.lottieJson}
-                loop={true}
-                className="mx-auto w-full max-w-[550px]"
-              />
-            </>
-            <div className="bg-kuroiBlack absolute bottom-0 left-0 z-30 h-[10%] w-full blur-[15px]"></div>
-          </div>
+          <CardReveal distance={50} delay={0.9}>
+            <div className="relative mt-12 mb-16 overflow-hidden sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
+              <>
+                <LottieAnimation
+                  animationData={hero?.lottieJson}
+                  loop={true}
+                  className="mx-auto w-full max-w-[550px]"
+                />
+                <AnimatedShape className="top-[-1%]" />
+              </>
+            </div>
+          </CardReveal>
         ) : (
           <>
-            {hero?.isImage && (
-              <CardReveal distance={50} delay={0.9}>
-                <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
-                  <div className="relative overflow-hidden">
-                    {apiData ? (
-                      <div
-                        className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
-                      >
-                        {heroImg?.url && (
-                          <>
-                            {slug === "contractor-time-tracking-software" ? (
-                              <>
-                                <LottieAnimation
-                                  animationData={heroImg?.lottieJson}
-                                  loop={false}
-                                />
-                              </>
-                            ) : (
-                              <Image
-                                className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "rounded-none" : "rounded-t-[20px] md:rounded-[45px]"}`}
-                                src={heroImg?.url}
-                                width={900}
-                                height={616}
-                                alt="crm-hero"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                                priority
-                              />
-                            )}
-                          </>
-                        )}
-                        {hero?.overlay && <AnimatedShape />}
-                      </div>
-                    ) : (
-                      <div
-                        className={`${hero?.border ? "border-silverMedal overflow-hidden rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block max-w-[${hero?.imageMaxWidth || "900"}px] `}
-                      >
-                        {heroImg && (
-                          <Image
-                            className="h-full w-full rounded-t-[20px] object-cover md:rounded-[45px]"
-                            src={heroImg}
-                            width={900}
-                            height={616}
-                            alt="crm-hero"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                            priority
-                          />
-                        )}
-                        {hero?.overlay && <AnimatedShape />}
-                      </div>
-                    )}
+            <CardReveal distance={50} delay={0.9}>
+              <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
+                <div className="relative overflow-hidden">
+                  <div
+                    className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
+                  >
+                    <Image
+                      className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
+                      src={heroImg?.url || heroImg}
+                      width={900}
+                      height={616}
+                      alt="crm-hero"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                      priority
+                    />
+                    {hero?.overlay && <AnimatedShape />}
                   </div>
                 </div>
-              </CardReveal>
-            )}
+              </div>
+              xs
+            </CardReveal>
           </>
         )}
       </div>

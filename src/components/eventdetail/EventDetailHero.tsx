@@ -2,8 +2,9 @@
 import gsap from "gsap";
 import { useEffect } from "react";
 import EventdetailHeroCard from "./EventdetailHeroCard";
+import { formatDateRange } from "@/lib/date";
 
-const EventDetailHero = () => {
+const EventDetailHero = ({ eventDetail }: any) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -23,15 +24,17 @@ const EventDetailHero = () => {
   }, []);
   const eventdetailitem = [
     {
-      id: 1,
+      id: eventDetail?.id ?? 1,
       logoUrl: "/images/svg/car-brand-logo.svg",
-      imgUrl: "/images/webp/event-detail-hero.webp",
-      heading: "Autodesk University 2025",
-      place: "September 15 – 18, 2025 • Nashville, TN",
-      description: "Autodesk University 2025",
+      imgUrl:
+        eventDetail?.eventImages[0]?.url ??
+        "/images/webp/event-detail-hero.webp",
+      heading: eventDetail?.eventName ?? "",
+      place: `${formatDateRange(eventDetail?.startDate, eventDetail?.endDate) + " • " + eventDetail?.location}`,
+      description: `${eventDetail?.location}`,
       button: "Event Details",
-      tag: "Must Attend",
-      label: "• Nashville, TN •",
+      tag: eventDetail?.mustAttend ? "Must Attend" : "",
+      label: `• ${eventDetail?.location} •`,
     },
   ];
   return (
@@ -43,11 +46,7 @@ const EventDetailHero = () => {
         <EventdetailHeroCard item={eventdetailitem[0]} />
       </div>
       <h3 className="text-than mx-auto mt-[52px] max-w-[1147px] px-4 text-center text-base md:mt-[100px] md:text-lg">
-        Autodesk’s 2025 construction conference will bring together over 10,000
-        professionals from industries such as construction, manufacturing,
-        architecture, product design, engineering, and media and entertainment.
-        This four-day event offers opportunities for learning, networking, and
-        knowledge sharing.
+        {eventDetail?.description ?? ""}
       </h3>
     </section>
   );

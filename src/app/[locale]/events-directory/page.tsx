@@ -3,10 +3,8 @@ import AllEventCard from "@/components/eventsdirectory/AllEventCard";
 import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHero";
 import {
   getAllEvents,
-  getEventDetails,
-  getEventList,
+  getEventList
 } from "@/services/events/getEventData";
-import React from "react";
 
 const EventsDirectoryPage = async ({
   params,
@@ -14,16 +12,15 @@ const EventsDirectoryPage = async ({
   params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
-  const [events, eventDetail, eventList] = await Promise.all([
+  const [events, eventList] = await Promise.all([
     getAllEvents(locale),
-    getEventDetails(locale),
     getEventList(locale),
   ]);
 
   return (
     <main id="home-page-wrapper-2">
       <EventsDirectoryHero events={events} />
-      <AllEventCard eventList={eventList} />
+      <AllEventCard eventList={eventList} events={events} />
       <div className="mx-auto w-full max-w-[898px]">
         <CommonFormField
           className="mt-[79px]"

@@ -50,7 +50,7 @@ export const getEventList = async (locale: string) => {
 export const getSingleEvent = async (locale: string, slug: string) => {
   try {
     const response = await axiosInstance.get(
-      `events-directories?locale=${locale}&filters[eventUrl][$eq]=${slug}&populate=*`,
+      `events-directories?locale=${locale}&filters[eventUrl][$eq]=${slug}&populate[speakers][populate]=avatar&populate=eventImages&populate[sponsors][populate]=image&populate[pricing][populate]=*&populate[Faqs][populate]=*`,
     );
     const { data } = response.data;
     if (Array.isArray(data)) {

@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import Button from "./Button";
 import { EventDetailIcon } from "./Icons";
-import { useRouter } from "next/navigation";
 
 interface DirectoryItem {
   imgUrl: string;
@@ -21,7 +21,7 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
   const router = useRouter();
   const handleRedirect = (link: string | undefined) => {
     if (!link) return;
-    router.push(`/events-directory/${link}`);
+    router.push(`/events-directory/events-detail/${link}`);
   };
   return (
     <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">

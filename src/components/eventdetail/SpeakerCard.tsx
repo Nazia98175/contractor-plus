@@ -7,20 +7,23 @@ const SpeakerCard = ({ member }: { member: any }) => {
     <>
       <CardReveal delay={0.1} distance={50}>
         <article className="group relative h-full w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300">
-          <Image
-            height={500}
-            width={500}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            src={member.image}
-            alt={member.name}
-          />
+          {member?.avatar && (
+            <Image
+              height={500}
+              width={500}
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              src={member.avatar.url}
+              alt={member.name}
+            />
+          )}
+
           <div className="bg-rgba14 absolute bottom-0 left-0 z-10 w-full p-3 backdrop-blur-[16px]">
             <p className="font-sm text-secondary font-semibold">
-              CEO Of Gracias Restorations
+              {member?.jobTitle ?? ""}
             </p>
             <div className="flex items-center justify-between gap-3 pt-3">
               <h4 className="text-xl font-semibold text-white md:text-2xl">
-                Mark Jerry
+                {member?.name ?? ""}
               </h4>
               <span>
                 <svg

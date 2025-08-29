@@ -19,6 +19,7 @@ const ConferenceCard = ({
   EventCardItem,
   swiperId,
 }: ConferenceCardProps) => {
+  console.log(EventCardItem, "EventCardItem");
   const router = useRouter();
   return (
     <>
@@ -102,7 +103,9 @@ const ConferenceCard = ({
               <SwiperSlide key={index}>
                 <EventsCard
                   Item={Item}
-                  onClick={() => router.push(`/events-directory/${swiperId}`)}
+                  onClick={() =>
+                    router.push(`/events-directory/events-detail/${Item?.slug}`)
+                  }
                 />
               </SwiperSlide>
             ))}

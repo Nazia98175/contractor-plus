@@ -18,14 +18,14 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
         </CardReveal>
       )}
       <CardReveal delay={0.5} distance={50}>
-        <div className="pt-4">
+        <div className="p-3">
           <h3 className="font-2xl text-pantone3 font-semibold">
             {pricing?.title ?? ""}
           </h3>
           <p className="text-flintstone pt-2 pb-4 text-base">
             {pricing?.subTitle ?? ""}
           </p>
-          <div className="flex items-center justify-between p-2">
+          <div className="flex items-center justify-between">
             <h3 className="text-sm font-extrabold text-white">
               {pricing?.currency ?? ""} {pricing?.price ?? ""}
             </h3>

@@ -20,7 +20,11 @@ const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {
     getEventDetails(locale),
   ]);
 
+  console.log(eventDetail,"eventDetail");
+  
+
   if (!eventDetail) redirect("/events-directory");
+
   return (
     <main id="home-page-wrapper-2">
       <EventDetailHero eventDetail={eventDetail} />

@@ -1,25 +1,21 @@
 "use client";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { CustomSliderIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import SponsorCard from "./SponsorsCard";
 import { sponsorLogo } from "../common/Helper";
+import { CustomSliderIcon } from "../common/Icons";
+import SponsorCard from "./SponsorsCard";
 
-interface SponsorItem {
-  images: string;
-}
-
-const Sponsors = () => {
+const Sponsors = ({ eventDetail, eventList }: any) => {
   const [firstVisible, setFirstVisible] = useState<number>(0);
   const [lastVisible, setLastVisible] = useState<number>(0);
   const swiperRef = useRef<SwiperType | null>(null);
@@ -40,14 +36,16 @@ const Sponsors = () => {
     <section className="px-2 py-8">
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
-          <h4 className="event-card-tittle">{`{EventName} Sponsors`}</h4>
+          <h4 className="event-card-tittle">
+            {`${eventList?.sponsorsTitle ?? ""}`}
+          </h4>
         </Copy>
       </div>
       <div className="main-container flex flex-col-reverse gap-6 sm:flex-col sm:gap-0">
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-              {`{EventName} Sponsors`}
+              {`${eventList?.sponsorsTitle ?? ""}`}
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">
@@ -100,17 +98,27 @@ const Sponsors = () => {
                 1124: { slidesPerView: 7, spaceBetween: 15 },
               }}
             >
-              {sponsorLogo.map((member, index) => (
-                <SwiperSlide key={index}>
-                  <SponsorCard
-                    image={member.images}
-                    index={index}
-                    isFirstVisible={index === firstVisible}
-                    isLastVisible={index === lastVisible}
-                    isLastCard={index === sponsorLogo.length - 1}
-                  />
-                </SwiperSlide>
-              ))}
+              {eventDetail?.sponsors &&
+                eventDetail?.sponsors.map(
+                  (
+                    member: {
+                      id: number;
+                      name: string;
+                      image: { url: string };
+                    },
+                    index: number,
+                  ) => (
+                    <SwiperSlide key={member.id}>
+                      <SponsorCard
+                        image={member.image?.url ?? ""}
+                        index={index}
+                        isFirstVisible={index === firstVisible}
+                        isLastVisible={index === lastVisible}
+                        isLastCard={index === sponsorLogo.length - 1}
+                      />
+                    </SwiperSlide>
+                  ),
+                )}
             </Swiper>
           </CardReveal>
         </div>

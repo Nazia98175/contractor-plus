@@ -1,133 +1,65 @@
+import { formatDateRange } from "@/lib/date";
 import Copy from "../common/Copy";
 import ConferenceCard from "./ConferenceCard";
 
-const AllEventCard = ({ eventList }: any) => {
+const AllEventCard = ({ eventList, events }: any) => {
   const allEventSections = [
     {
       sectionId: "conference-events",
       sectionHeading: `${eventList?.mostAttendTitle ?? ""}`,
-      events: [
-        {
-          id: 1,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "Bill Walsh leadership lessons",
-          description:
-            "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
-          linkPath: "Event Details",
-        },
-        {
-          id: 2,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "PM mental models",
-          description:
-            "Mental models are simple expressions of complex processes or relationships.",
-          linkPath: "Event Details",
-        },
-        {
-          id: 3,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "What is Wireframing?",
-          description:
-            "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-          linkPath: "Event Details",
-        },
-        {
-          id: 4,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "What is Wireframing?",
-          description:
-            "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-          linkPath: "Event Details",
-        },
-      ],
+      events: events
+        ? events.map((itm: any) => {
+            return {
+              id: itm.id,
+              imgPath: itm?.eventImages
+                ? itm?.eventImages[0].url
+                : "/images/webp/snow.webp",
+              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+              heading: `${itm?.eventName ?? ""}`,
+              description: `${itm?.shortDescription ?? ""}`,
+              linkPath: `${itm?.eventBtn ?? ""}`,
+              slug: `${itm?.eventUrl ?? ""}`,
+            };
+          })
+        : [],
     },
     {
       sectionId: "upcoming-events",
       sectionHeading: `${eventList?.upcomingEventTitle ?? ""}`,
-      events: [
-        {
-          id: 5,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "PM mental models",
-          description:
-            "Mental models are simple expressions of complex processes or relationships.",
-          linkPath: "Event Details",
-        },
-        {
-          id: 6,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "What is Wireframing?",
-          description:
-            "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-          linkPath: "Event Details",
-        },
-        {
-          id: 7,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "Bill Walsh leadership lessons",
-          description:
-            "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
-          linkPath: "Event Details",
-        },
-        {
-          id: 8,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "Bill Walsh leadership lessons",
-          description:
-            "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
-          linkPath: "Event Details",
-        },
-      ],
+      events: events
+        ? events.map((itm: any) => {
+            return {
+              id: itm.id,
+              imgPath: itm?.eventImages
+                ? itm?.eventImages[0].url
+                : "/images/webp/snow.webp",
+              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+              heading: `${itm?.eventName ?? ""}`,
+              description: `${itm?.shortDescription ?? ""}`,
+              linkPath: `${itm?.eventBtn ?? ""}`,
+              slug: `${itm?.eventUrl ?? ""}`,
+            };
+          })
+        : [],
     },
     {
       sectionId: "all-events",
       sectionHeading: `${eventList?.pastEventTitle ?? ""}`,
-      events: [
-        {
-          id: 9,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "PM mental models",
-          description:
-            "Mental models are simple expressions of complex processes or relationships.",
-          linkPath: "Event Details",
-        },
-        {
-          id: 10,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "What is Wireframing?",
-          description:
-            "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-          linkPath: "Event Details",
-        },
-        {
-          id: 11,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "Bill Walsh leadership lessons",
-          description:
-            "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
-          linkPath: "Event Details",
-        },
-        {
-          id: 12,
-          imgPath: "/images/webp/snow.webp",
-          role: "September 15 – 18, 2025 • Nashville, TN",
-          heading: "Bill Walsh leadership lessons",
-          description:
-            "Like to know the secrets of transforming a 2–14 team into a 3× Super Bowl winning Dynasty?",
-          linkPath: "Event Details",
-        },
-      ],
+      events: events
+        ? events.map((itm: any) => {
+            return {
+              id: itm.id,
+              imgPath: itm?.eventImages
+                ? itm?.eventImages[0].url
+                : "/images/webp/snow.webp",
+              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+              heading: `${itm?.eventName ?? ""}`,
+              description: `${itm?.shortDescription ?? ""}`,
+              linkPath: `${itm?.eventBtn ?? ""}`,
+              slug: `${itm?.eventUrl ?? ""}`,
+            };
+          })
+        : [],
     },
   ];
   return (

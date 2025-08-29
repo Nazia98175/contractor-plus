@@ -21,10 +21,10 @@ interface DirectoryProps {
 const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
   return (
     <div className="img-overlay relative mx-auto flex w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
-      <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
-      <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-22%] h-[110%] w-[115px] blur-[9px] sm:left-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
-      <div className="bg-kuroiBlack xs:bottom-[-15%] pointer-events-none absolute right-0 bottom-[-22%] h-[77px] w-[110%] blur-[9px] sm:bottom-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
-      <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
+      <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"/>
+      <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-22%] h-[110%] w-[115px] blur-[9px] sm:left-[-13%] sm:block sm:blur-[15px] md:w-[130px]"/>
+      <div className="bg-kuroiBlack xs:bottom-[-15%] pointer-events-none absolute right-0 bottom-[-22%] h-[77px] w-[110%] blur-[9px] sm:bottom-[-13%] sm:block sm:blur-[15px] md:h-[90px]"/>
+      <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"/>
 
       <Image
         className="min-h-[300px] w-full rounded-lg object-cover"
@@ -43,9 +43,11 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
         />
         <b className="text-master text-center text-sm font-normal sm:text-base">
           {item.label}
-          <span className="text-decemberSky bg-ravenBlackColor ml-2 rounded-3xl px-2 py-1">
+          {item.tag &&(
+            <span className="text-decemberSky bg-ravenBlackColor ml-2 rounded-3xl px-2 py-1">
             {item.tag}
           </span>
+          )}
         </b>
         <h2 className="event-hero-text-color mt-1 text-center text-2xl font-extrabold sm:text-3xl lg:text-4xl xl:text-5xl">
           {item.heading}

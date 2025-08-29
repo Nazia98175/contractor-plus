@@ -24,6 +24,108 @@ const ProofWorking = () => {
   const leftStatsRef = useRef<(HTMLDivElement | null)[]>([]);
   const rightStatsRef = useRef<(HTMLDivElement | null)[]>([]);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    const logoDesktop = logoDesktopRef.current;
+
+    // Set initial state for desktop logo
+    if (logoDesktop) {
+      gsap.set(logoDesktop, {
+        y: "50vh",
+        scale: 1.4,
+        opacity: 0,
+      });
+    }
+
+    // Create timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 2,
+        invalidateOnRefresh: true,
+        // Uncomment below for debugging
+        // markers: true,
+        onUpdate: (self) => {
+          console.log("Proof Working scroll progress:", self.progress);
+        },
+      },
+    });
+
+    // Desktop logo animation
+    if (logoDesktop) {
+      tl.to(
+        logoDesktop,
+        {
+          y: "-50%",
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        0,
+      ); // Start at the beginning of the timeline
+    }
+
+    // Optional: Add stagger animations for left stats
+    leftStatsRef.current.forEach((stat, index) => {
+      if (stat) {
+        gsap.set(stat, {
+          y: 150,
+          opacity: 0,
+        });
+
+        tl.to(
+          stat,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          0.1 + index * 0.1,
+        ).to(
+          logoDesktop,
+          {
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          0.1 + index * 0.1,
+        ); // Stagger the animations
+      }
+    });
+
+    // Optional: Add stagger animations for right stats
+    rightStatsRef.current.forEach((stat, index) => {
+      if (stat) {
+        gsap.set(stat, {
+          y: 150,
+          opacity: 0,
+        });
+
+        tl.to(
+          stat,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          0.15 + index * 0.1,
+        ); // Stagger the animations
+      }
+    });
+
+    // Store timeline reference for external access
+    timelineRef.current = tl;
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <div className="mx-auto w-full max-w-[1224px] px-4 pt-20 md:py-20">
       <div className="pt-5 pb-[57px] md:py-10">

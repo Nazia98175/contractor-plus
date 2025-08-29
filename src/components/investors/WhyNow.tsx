@@ -40,7 +40,7 @@ const WhyNow = () => {
     tl.to(
       bgImageRef.current,
       {
-        scale: 3.5, // Scale up to 150%
+        scale: 4.5, // Scale up to 450%
         rotation: 720, // Full rotation
         duration: 6, // Total duration (matches your 6 sections * 1.2 timing)
         ease: "none", // Linear animation for smooth scroll

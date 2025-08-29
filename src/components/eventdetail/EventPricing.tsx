@@ -1,12 +1,8 @@
 "use client";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import { eventPricingDetail } from "../common/Helper";
 import { CustomSliderIcon } from "../common/Icons";
 import PricingCard from "./PricingCard";
 
@@ -16,8 +12,7 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">
-            {" "}
-            {`${eventList?.pricingTitle ?? ""}`}
+             {`${eventDetail?.eventName}`} Pricing
           </h4>
         </Copy>
       </div>
@@ -25,7 +20,8 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-              {`${eventList?.pricingTitle ?? ""}`}
+                         {`${eventDetail?.eventName}`} Pricing
+
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">

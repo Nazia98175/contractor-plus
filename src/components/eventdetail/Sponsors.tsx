@@ -1,9 +1,4 @@
 "use client";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
@@ -37,7 +32,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">
-            {`${eventList?.sponsorsTitle ?? ""}`}
+             {`${eventDetail?.eventName}`} Sponsors
           </h4>
         </Copy>
       </div>
@@ -45,7 +40,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-              {`${eventList?.sponsorsTitle ?? ""}`}
+              {`${eventDetail?.eventName}`} Sponsors
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">

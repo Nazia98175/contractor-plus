@@ -47,7 +47,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
             width={135}
             height={40}
             priority
-            sizes="(max-width: 768px) 135px"
+            // sizes="(max-width: 768px) 135px"
           />
 
           <div className="flex items-center gap-2">
@@ -58,7 +58,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               width={62}
               height={48}
               priority
-              sizes="(min-width: 768px) 62px"
+              // sizes="(min-width: 768px) 62px"
             />
             <Image
               className="hidden h-auto max-h-[60px] w-full md:block md:max-w-20"
@@ -67,7 +67,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
               width={80}
               height={60}
               priority
-              sizes="(min-width: 768px) 80px"
+              // sizes="(min-width: 768px) 80px"
             />
           </div>
           <div>
@@ -94,7 +94,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
           alt="layers"
           width={370}
           height={300}
-          sizes="(min-width: 1024px) 370px"
+          // sizes="(min-width: 1024px) 370px"
         />
         <Image
           className="pointer-events-none absolute top-0 right-[-1%] z-40 hidden h-full max-w-[370px] object-cover blur-sm lg:block"

@@ -73,7 +73,7 @@ const AdvertisementCard = ({
           alt="google icon"
           width={112}
           height={26}
-          sizes="(max-width: 768px) 100px, 144px"
+          // sizes="(max-width: 768px) 100px, 144px"
           priority
         />
       </Link>
@@ -87,7 +87,7 @@ const AdvertisementCard = ({
           alt="google icon"
           width={112}
           height={26}
-          sizes="(max-width: 768px) 100px, 144px"
+          // sizes="(max-width: 768px) 100px, 144px"
           priority
         />
       </Link>

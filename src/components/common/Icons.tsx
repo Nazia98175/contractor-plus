@@ -2865,64 +2865,7 @@ export const ClaudIcon = () => (
     </defs>
   </svg>
 );
-export const HvacGlowHeroMobileIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="320"
-    height="1139"
-    viewBox="0 0 320 1139"
-    fill="none"
-    className="pointer-events-none absolute top-0 left-0 z-10 lg:hidden xl:left-[13%]"
-  >
-    <g
-      style={{ mixBlendMode: "plus-lighter" }}
-      filter="url(#filter0_f_1465_35504)"
-    >
-      <path
-        className="glowing-path"
-        d="M133.485 176.792L-195.564 505.842L-524.614 834.891"
-        stroke="url(#paint0_linear_1465_35504)"
-        strokeWidth="432"
-        strokeLinecap="round"
-      />
-    </g>
-    <defs>
-      <filter
-        id="filter0_f_1465_35504"
-        x="-828.614"
-        y="-127.208"
-        width="1266.1"
-        height="1266.1"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feGaussianBlur
-          stdDeviation="44"
-          result="effect1_foregroundBlur_1465_35504"
-        />
-      </filter>
-      <linearGradient
-        id="paint0_linear_1465_35504"
-        x1="-498.24"
-        y1="429.5"
-        x2="-378.239"
-        y2="785.01"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.0622667" stopOpacity="0" />
-        <stop offset="0.996954" stopColor="#EE1E25" />
-        <stop offset="1" stopColor="white" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+
 export const HeroSliderIcon1 = ({ className = "" }) => (
   <svg
     width="104"

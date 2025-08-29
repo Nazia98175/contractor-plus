@@ -101,7 +101,6 @@ const EstimaticAiPage = async ({
           alt="webp bg"
           width={900}
           height={700}
-          sizes="900px"
         />
         <Image
           className="svgTwinkle absolute right-0 bottom-0 z-0 hidden h-[50%] w-full max-w-[700px] object-center lg:block"
@@ -109,7 +108,6 @@ const EstimaticAiPage = async ({
           alt="webp bg"
           width={700}
           height={300}
-          sizes="700px"
         />
       </div>
       <AwardsTagsImg className="sm:mt-14" />

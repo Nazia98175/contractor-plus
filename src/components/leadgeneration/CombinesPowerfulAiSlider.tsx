@@ -144,16 +144,7 @@ const CombinesPowerfulAiSlider = () => {
               loop={false}
               animationData={optimization}
             />
-            {/* <Image
-              unoptimized
-              sizes="(max-width: 768px) 730px, (min-width: 769px) 50vw"
-              width={730}
-              height={273}
-              priority
-              src={"/images/webp/photo-optimization.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full object-cover"
-            /> */}
+
             <div className="absolute top-[-13%] left-[-10%] h-[30%] w-[120%] bg-white blur-[20px]"></div>
             <div className="absolute top-0 right-[-10%] h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
             <div className="absolute top-0 left-[-10%] h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
@@ -250,7 +241,7 @@ const CombinesPowerfulAiSlider = () => {
           <div className="absolute top-[60%] h-[100px] w-[140%] max-w-full bg-white blur-[47px] sm:w-full md:top-[67%] md:h-[250px] md:blur-[100px] lg:top-[70%] lg:h-[281px]"></div>
           <Image
             unoptimized
-            sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
+            // sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
             width={900}
             height={382}
             priority

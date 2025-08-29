@@ -32,7 +32,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj, index }) => {
           alt={obj.title}
           fill
           className="xs:object-center object-auto"
-          sizes="(min-width: 768px) 360px, 320px"
+          // sizes="(min-width: 768px) 360px, 320px"
         />
       </div>
     </article>

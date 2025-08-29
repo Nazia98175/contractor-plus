@@ -77,7 +77,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
                 priority
-                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                // sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
                 width={835}
                 height={624}
                 src={"/images/webp/real-slider-card-3.webp"}
@@ -116,7 +116,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="relative mx-auto w-fit max-w-[400px] overflow-hidden lg:max-w-[500px]">
             <Image
               unoptimized
-              sizes="(max-width: 768px) 500px, (min-width: 769px) 500px"
+              // sizes="(max-width: 768px) 500px, (min-width: 769px) 500px"
               width={500}
               height={432}
               priority
@@ -144,7 +144,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="absolute right-[18%] bottom-[-50px] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:right-[35%] sm:h-[200px] sm:max-w-[400px] md:bottom-[-149px] lg:h-[251px]"></div>
             <Image
               unoptimized
-              sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
+              // sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
               width={900}
               height={382}
               priority

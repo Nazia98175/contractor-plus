@@ -26,7 +26,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
       <Image
         width={155}
         height={94}
-        sizes="(max-width: 768px) 155px, (min-width: 769px) 155px"
+        // sizes="(max-width: 768px) 155px, (min-width: 769px) 155px"
         src={(platform.url as string) || platform.logo}
         alt={`${platform.name} rating`}
         className={`${className} max-w-[140px] object-contain sm:max-w-[155px]`}

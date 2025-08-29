@@ -72,7 +72,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           fill
           alt="poster"
           priority
-          sizes="(max-width: 1024px) 100vw, 1008px"
+          // sizes="(max-width: 1024px) 100vw, 1008px"
         />
       ) : (
         <>

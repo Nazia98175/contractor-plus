@@ -114,7 +114,7 @@ const CombinesPowerfulAiSlider = () => {
           <div className="mx-auto flex h-fit w-full max-w-[800px]">
             <LottieAnimation
               className="mx-auto h-full w-full"
-              loop={false}
+              loop={true}
               animationData={citation_sync_logo}
             />
           </div>
@@ -244,6 +244,7 @@ const CombinesPowerfulAiSlider = () => {
               animationData={high_end}
             />
           </div>
+          <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
         </SwiperSlide>
         <SwiperSlide className="relative !flex !h-auto flex-col items-center justify-center">
           <div className="absolute top-[60%] h-[100px] w-[140%] max-w-full bg-white blur-[47px] sm:w-full md:top-[67%] md:h-[250px] md:blur-[100px] lg:top-[70%] lg:h-[281px]"></div>

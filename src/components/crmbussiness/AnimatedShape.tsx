@@ -1,8 +1,11 @@
 import gsap from "gsap";
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
-const AnimatedShape = () => {
+interface AnimatedShapeProps {
+  className?: string;
+}
+
+const AnimatedShape: React.FC<AnimatedShapeProps> = ({ className }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -27,7 +30,7 @@ const AnimatedShape = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute top-[-7%] -left-[25%] h-[130%] w-[150%]"
+      className={`absolute top-[-7%] -left-[25%] h-[130%] w-[150%] ${className}`}
     >
       <div className="rectangle-shape absolute bottom-[-15%] h-full w-full object-cover sm:-bottom-0"></div>
     </div>

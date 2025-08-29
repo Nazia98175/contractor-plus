@@ -80,7 +80,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
           <span className="hidden md:block">
             <LottieAnimation
               autoplay={false}
-              loop={false}
+              loop={true}
               animationData={item.lottieJson}
               className="h-9 w-8 fill-white"
             />
@@ -90,7 +90,7 @@ const SoftwareUsed: React.FC<SoftwareUsedProps> = ({
           <span className="block md:hidden">
             <LottieAnimation
               autoplay={false}
-              loop={false}
+              loop={true}
               animationData={item.mobileLottieJson ?? item.lottieJson}
               className="h-9 w-8 fill-white"
             />

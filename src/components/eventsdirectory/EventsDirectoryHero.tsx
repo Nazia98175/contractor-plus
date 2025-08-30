@@ -50,7 +50,9 @@ const EventsDirectoryHero = ({ events }: any) => {
       ? events.map((item: any) => ({
           id: item?.id,
           url: item?.eventUrl ?? "",
-          imgUrl: item?.eventImages[0]?.url ?? "",
+          imgUrl: item?.eventImages
+            ? item?.eventImages[0]?.url
+            : "/images/webp/snow.webp",
           heading: item?.eventName ?? "",
           place: `${formatDateRange(item?.startDate, item?.endDate) + " • " + item?.location}`,
           description: item?.location ?? "",

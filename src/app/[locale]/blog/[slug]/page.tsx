@@ -10,13 +10,25 @@ import {
   getBlogDataBySlug,
   getBlogsDetails,
 } from "@/services/blog/getBlogData";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Contractor Plus - Blogs Details",
-  description:
-    "Contractor+ connects every function of your business so it finally all works in sync.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `blogs?locale=${resolvedParams.locale}&populate=*&filters[blogUrl][$eq]=${resolvedParams.slug}`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+}
 
 export const generateStaticParams = async () => {
   const blogs = await getAllBlogs("en");

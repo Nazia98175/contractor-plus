@@ -30,7 +30,7 @@ interface EventsCardProps {
 const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
   return (
     <article onClick={onClick} className="card-shine-2 group cursor-pointer">
-      {Item?.eventImages?.[0]?.url ? (
+      {Item?.eventImages ? (
         <CardReveal delay={0.1} distance={50}>
           <Image
             className="h-full max-h-[240px] w-full rounded-lg object-cover"
@@ -40,7 +40,7 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
             height={240}
           />
         </CardReveal>
-      ) : (
+      ) : Item?.imgPath ? (
         <CardReveal delay={0.1} distance={50}>
           <Image
             className="h-full max-h-[240px] w-full rounded-lg object-cover"
@@ -50,7 +50,7 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
             height={240}
           />
         </CardReveal>
-      )}
+      ) : null}
       <Copy delay={0.2}>
         <p className="text-secondary mt-4 px-3 text-xs font-semibold duration-200 ease-in-out lg:mt-6 lg:text-sm xl:mt-8">
           {Item?.role ??

@@ -4,8 +4,10 @@ import {
   getBlogsDetails,
   getBlogsList,
 } from "@/services/blog/getBlogData";
-import { getSeoDataBlogs } from "@/services/common/seoMeta";
-import { generateSeoMetadataBlogs } from "@/utils/getSeoMeta";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import {
+  generateSeoMetadataEvent
+} from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -15,11 +17,13 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
-  const page = await getSeoDataBlogs("blog-list", resolvedParams?.locale);
+  const page = await getSeoDataCommon(
+    `blog-list?locale=${resolvedParams.locale}&populate=*`,
+  );
 
   if (!page) notFound();
 
-  return generateSeoMetadataBlogs({ page });
+  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
 }
 const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = await params;

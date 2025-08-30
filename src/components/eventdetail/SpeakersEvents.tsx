@@ -7,13 +7,12 @@ import { CustomSliderIcon } from "../common/Icons";
 import SpeakerCard from "./SpeakerCard";
 
 const SpeakersEvents = ({ eventDetail, eventList }: any) => {
-  console.log(eventDetail, "event deails");
   return (
     <section className="px-2 py-8">
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">
-          Speakers at {`${eventDetail?.eventName}`}
+            Speakers at {`${eventDetail?.eventName}`}
           </h4>
         </Copy>
       </div>
@@ -21,7 +20,7 @@ const SpeakersEvents = ({ eventDetail, eventList }: any) => {
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-             Speakers at {`${eventDetail?.eventName}`}
+              Speakers at {`${eventDetail?.eventName}`}
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">

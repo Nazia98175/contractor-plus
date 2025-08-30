@@ -1,9 +1,8 @@
-"use client";
 import PrivacyPolicy from "@/components/privacy-policy/PrivacyPolicy";
 
 export const metadata = {
   title: "privacy-policy",
-  description: "privacy-policy ",
+  description: "privacy-policy",
   keywords: ["privacy-policy | Contractor+"],
   // openGraph: {
   //   images: [

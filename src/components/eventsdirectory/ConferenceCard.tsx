@@ -30,7 +30,7 @@ const ConferenceCard = ({
         <Copy delay={0.1}>
           <button
             className="font-montserrat text-sm leading-[142.857%] font-medium tracking-[0.1px] whitespace-nowrap text-white"
-            onClick={() => router.push(`/events-directory/${swiperId}`)}
+            onClick={() => router.push(`/events/events-detail/${swiperId}`)}
           >
             View All
           </button>
@@ -61,7 +61,9 @@ const ConferenceCard = ({
                 </button>
                 <button
                   className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
-                  onClick={() => router.push(`/events-directory/${swiperId}`)}
+                  onClick={() =>
+                    router.push(`/events/events-detail/${swiperId}`)
+                  }
                 >
                   View All
                 </button>
@@ -99,16 +101,21 @@ const ConferenceCard = ({
               },
             }}
           >
-            {EventCardItem.map((Item: any, index: Key | null | undefined) => (
-              <SwiperSlide key={index}>
-                <EventsCard
-                  Item={Item}
-                  onClick={() =>
-                    router.push(`/events-directory/events-detail/${Item?.slug}`)
-                  }
-                />
+            {EventCardItem ? (
+              EventCardItem.length > 0 &&
+              EventCardItem.map((Item: any, index: Key | null | undefined) => (
+                <SwiperSlide key={index}>
+                  <EventsCard
+                    Item={Item}
+                    onClick={() => router.push(`/events/${Item?.slug}`)}
+                  />
+                </SwiperSlide>
+              ))
+            ) : (
+              <SwiperSlide>
+                <p className="text-white">No Event</p>
               </SwiperSlide>
-            ))}
+            )}
           </Swiper>
         </div>
       </section>

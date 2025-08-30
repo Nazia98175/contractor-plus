@@ -15,14 +15,14 @@ import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContract
 import WantingMore from "@/components/industry/WantingMore";
 
 import TrustBar from "@/components/common/TrustBar";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import OverlapCardMobileViewChild from "@/components/industry/IndustryOverlapCardMobileViewChild";
 import MovingSoftware from "@/components/industry/MovingSoftware";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import WantingMoreMobile from "@/components/industry/WantingMoreMobile";
-import OverlapCardMobileViewChild from "@/components/industry/IndustryOverlapCardMobileViewChild";
 
 export async function generateMetadata({
   params,
@@ -51,7 +51,7 @@ const IndustryPage = async ({ params }: PageProps) => {
   }
 
   const {
-    crmPageContent,
+    pageContentRes,
     heroImg,
     homeCards,
     trustedCompanies,
@@ -63,6 +63,7 @@ const IndustryPage = async ({ params }: PageProps) => {
     thousandReviews,
     commonData,
     integrationList,
+    blogsByCategory,
   } = await getIndustryPageData(useParams?.slug, useParams?.locale);
 
   return (
@@ -72,7 +73,7 @@ const IndustryPage = async ({ params }: PageProps) => {
           <div className="relative">
             <div className="relative">
               <IndustryHero
-                hero={crmPageContent?.hero}
+                hero={pageContentRes?.hero}
                 homeCard={homeCards}
                 heroImg={heroImg}
                 commonData={commonData}
@@ -91,19 +92,19 @@ const IndustryPage = async ({ params }: PageProps) => {
           <div className="relative hidden md:block">
             <WantingMore
               fieldServiceData={fieldServiceData}
-              slug={crmPageContent?.pageName}
+              slug={pageContentRes?.pageName}
             />
           </div>
           <div className="relative mb-12 block md:hidden">
             <OverlapCardMobileViewChild
               fieldServiceData={fieldServiceData}
-              slug={crmPageContent?.pageName}
+              slug={pageContentRes?.pageName}
               theme={"light"}
             />
           </div>
           <EraOfSoftware
             trackProperties={trackProperties}
-            slug={crmPageContent?.pageName}
+            slug={pageContentRes?.pageName}
           />
         </div>
         <AwardBadges
@@ -128,9 +129,9 @@ const IndustryPage = async ({ params }: PageProps) => {
         <div className="px-2 pt-[57px] pb-12 lg:pt-[90px] lg:pb-[65px] xl:pt-[113px]">
           <CommonFormField
             variant="tertiary"
-            title={crmPageContent?.emailSignupSection?.title}
-            subTitle={crmPageContent?.emailSignupSection?.subTitle}
-            placeholder={crmPageContent?.emailSignupSection?.placeholder}
+            title={pageContentRes?.emailSignupSection?.title}
+            subTitle={pageContentRes?.emailSignupSection?.subTitle}
+            placeholder={pageContentRes?.emailSignupSection?.placeholder}
             createBtn={commonData?.getStartedFreeBtn}
             mobileBtn={commonData?.mobileBtn}
             ncc={commonData?.nccTxt}
@@ -169,13 +170,13 @@ const IndustryPage = async ({ params }: PageProps) => {
         <div className="cloud-layer-bottom absolute bottom-[-1%] z-50 h-[68px] w-full sm:bottom-[-2%] sm:h-[64px] md:-bottom-[2%]"></div>
       </div>
       <div className="relative">
-        {/* <BlogPosts
+        <BlogPosts
           data={blogsByCategory || []}
-          blogs={crmPageContent?.blogs}
+          blogs={pageContentRes?.blogs}
           className="relative z-20 bg-white pb-8"
           variant="secondary"
           headingVariant="tertiary"
-        /> */}
+        />
       </div>
     </main>
   );

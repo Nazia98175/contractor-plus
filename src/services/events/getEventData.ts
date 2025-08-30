@@ -3,7 +3,7 @@ import axiosInstance from "@/lib/axios";
 export const getAllEvents = async (locale: string) => {
   try {
     const response = await axiosInstance.get(
-      `events-directories?locale=${locale}&populate=*`,
+      `events-directories?locale=${locale}&populate=*&sort=publishedAt:desc`,
     );
     const { data } = response.data;
     if (!data) {

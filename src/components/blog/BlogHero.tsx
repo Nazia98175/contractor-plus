@@ -24,13 +24,17 @@ const BlogHero = ({
   onTypeChange,
 }: BlogHeroProps) => {
   const router = useRouter();
-  const [selectedValue, setSelectedValue] = useState("contractor");
+  const [selectedValue, setSelectedValue] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState<any[]>([]);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    onTypeChange?.(selectedValue);
+  }, [selectedValue, onTypeChange]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen-blog", { opacity: 1, duration: 1 });
       gsap.to("#home-page-header-view-port-screen", {
@@ -64,18 +68,52 @@ const BlogHero = ({
     };
   }, []);
 
+  const normalize = (s?: string) =>
+    (s ?? "").toString().trim().toLowerCase().replace(/\s+/g, "-");
+
+  const getBlogCategories = (blog: any) => {
+    const out: string[] = [];
+
+    if (typeof blog?.category === "string") out.push(normalize(blog.category));
+    else if (Array.isArray(blog?.category)) {
+      for (const c of blog.category) {
+        if (typeof c === "string") out.push(normalize(c));
+        else if (c?.text) out.push(normalize(c.text));
+        else if (c?.name) out.push(normalize(c.name));
+      }
+    }
+
+    if (Array.isArray(blog?.tags)) {
+      for (const t of blog.tags) {
+        if (typeof t === "string") out.push(normalize(t));
+        else if (t?.text) out.push(normalize(t.text));
+      }
+    }
+
+    return Array.from(new Set(out));
+  };
+
   function handleSearch() {
-    if (searchTerm.trim().length > 0) {
-      const results = blogsData.filter((blog) =>
-        blog.blogTitle?.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
+    onSearchChange?.(searchTerm);
+
+    const q = searchTerm.trim().toLowerCase();
+    const wanted = normalize(selectedValue);
+
+    if (q.length > 0) {
+      const results = (blogsData ?? []).filter((blog: any) => {
+        const hay =
+          `${blog.blogTitle ?? ""} ${blog.title ?? ""} ${blog.blogShortDescription ?? ""}`.toLowerCase();
+        const matchSearch = hay.includes(q);
+
+        const catTokens = getBlogCategories(blog);
+        const matchCat = wanted === "all" || catTokens.includes(wanted);
+
+        return matchSearch && matchCat;
+      });
       setFilteredBlogs(results);
     } else {
       setFilteredBlogs([]);
     }
-
-    if (onSearchChange) onSearchChange(searchTerm);
-    if (onTypeChange) onTypeChange(selectedValue);
   }
 
   const handleBlogClick = (slug: string) => {
@@ -83,8 +121,6 @@ const BlogHero = ({
     setSearchTerm("");
     setFilteredBlogs([]);
   };
-
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -95,33 +131,31 @@ const BlogHero = ({
         setFilteredBlogs([]);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  console.log(filteredBlogs);
   return (
     <div
       id="blog-parallax-container"
       className="relative pt-44 pb-[460px] 2xl:pt-52"
     >
       <div className="relative z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
+        {" "}
         <h1 className="gradient-text-shadow absolute bottom-0 left-1/2 z-0 -translate-x-1/2 blur-[26px]">
-          {blogsList?.title ?? ""}
-        </h1>
+          {" "}
+          {blogsList?.title ?? ""}{" "}
+        </h1>{" "}
         <h1 className="gradient-text-shadow relative z-10">
-          {blogsList?.title ?? ""}
-        </h1>
+          {" "}
+          {blogsList?.title ?? ""}{" "}
+        </h1>{" "}
       </div>
-
       <div className="font-myriad bg-rgba15 relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg p-2.5 backdrop-blur-[42px] sm:flex-row">
         <CustomSelect
           options={contractorTypes}
           value={selectedValue}
-          onChange={(option) => setSelectedValue(option?.value || "")}
+          onChange={(option) => setSelectedValue(option?.value || "all")}
           className="sm:max-w-[294px]"
         />
 
@@ -135,6 +169,7 @@ const BlogHero = ({
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               placeholder="Select Contractor + HQ"
               className="text-decemberSky placeholder:text-decemberSky w-full px-3 tracking-[0.1px] focus:outline-none"
             />
@@ -150,18 +185,22 @@ const BlogHero = ({
           {/* Search Dropdown */}
           {filteredBlogs.length > 0 && (
             <div className="absolute top-full z-50 mt-3 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-300 bg-white shadow-lg">
-              {filteredBlogs.map((blog) => (
+              {filteredBlogs.map((blog: any) => (
                 <div
-                  key={blog.id}
+                  key={blog.id ?? blog.documentId ?? blog.blogUrl}
                   className="flex cursor-pointer items-start px-3 py-2 hover:bg-gray-300"
                   onClick={() => handleBlogClick(blog.blogUrl || blog.id)}
                 >
                   <div className="relative aspect-square w-[60px]">
-                    <Image src={blog.blogImg[0].url} fill alt="blog image" />
+                    <Image
+                      src={blog?.blogImg?.[0]?.url ?? "/images/placeholder.png"}
+                      fill
+                      alt="blog image"
+                    />
                   </div>
                   <div className="ml-2 w-full">
                     <h5 className="text-sm capitalize">
-                      {blog?.blogTitle ?? ""}
+                      {blog?.blogTitle ?? blog?.title ?? ""}
                     </h5>
                     <p className="text-xs text-gray-500 capitalize">
                       {blog?.blogShortDescription ?? ""}

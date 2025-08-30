@@ -49,6 +49,7 @@ export default async function Home({
             commonData={commonData}
             homePageContent={homePageContent?.data?.hero}
           />
+          <div className="bg-kuroiBlack absolute bottom-[-6%] left-[-10%] z-30 h-[10%] w-[120%] blur-[7px] md:bottom-[-3%] md:blur-[20px]"></div>
         </div>
         <TrustBar
           platforms={platforms}

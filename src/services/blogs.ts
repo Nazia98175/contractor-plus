@@ -22,7 +22,7 @@ export const getBlogsByCategory = async (
   locale: string,
   categoryText: string
 ): Promise<HomePageResponse | null> => {
-  const url = `blogs?filters[categoryListForFilter][list][text][$eq]=${categoryText}&locale=${locale}&publicationState=live&populate[category][populate][list]=*&populate[categoryListForFilter][populate][list]=*`;
+  const url = `blogs?filters[categoryListForFilter][list][text][$eq]=${categoryText}&locale=${locale}&publicationState=live&populate[category][populate][list]=*&populate[categoryListForFilter][populate][list]=*&populate[blogImg][populate]=*`;
 
   try {
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);

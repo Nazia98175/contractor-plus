@@ -21,7 +21,7 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
   const router = useRouter();
   const handleRedirect = (link: string | undefined) => {
     if (!link) return;
-    router.push(`/events-directory/events-detail/${link}`);
+    router.push(`/events/${link}`);
   };
   return (
     <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">

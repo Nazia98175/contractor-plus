@@ -31,15 +31,6 @@ const PostCard = ({ blogData }: { blogData: any }) => {
                 />
               </Link>
             ))}
-            {/* <Link href="" className="block">
-              <LinkdinIcon width={24} height={24} />
-            </Link>
-            <Link href="" className="block">
-              <WikipediaIcon />
-            </Link>
-            <Link href="https://www.linkedin.com/">
-              <TwitterIcon width={24} height={24} />
-            </Link> */}
           </div>
         )}
       </div>

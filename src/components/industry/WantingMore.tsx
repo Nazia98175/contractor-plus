@@ -1,116 +1,151 @@
 "use client";
-import ScrollOverlapCards from "@/components/common/ScrollOverlapCards";
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import Copy from "../common/Copy";
-
-// Register the ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+import ScrollOverlapCards from "@/components/common/ScrollOverlapCards";
 
 interface WantingMoreProps {
   fieldServiceData: any;
   slug: string;
 }
 
-const WantingMore: React.FC<WantingMoreProps> = ({
-  fieldServiceData,
-  slug,
-}) => {
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+const WantingMore: React.FC<WantingMoreProps> = ({ fieldServiceData, slug }) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+
   const [maxHeight, setMaxHeight] = useState<number>(0);
   const [headingHeight, setHeadingHeight] = useState<number>(0);
+  const [stickyTop, setStickyTop] = useState<number | null>(null);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
 
-  const updateMaxHeight = () => {
-    setTimeout(() => {
-      const cards = document.querySelectorAll(".crm-cards .crm-cards-inner");
-      let currentMaxHeight = 0;
+  const gsapRef = useRef<any>(null);
+  const tlRef = useRef<any>(null);
 
-      cards.forEach((card) => {
-        const cardElement = card as HTMLElement;
-        const cardHeight = cardElement.getBoundingClientRect().height;
-        if (cardHeight > currentMaxHeight) {
-          currentMaxHeight = cardHeight;
-        }
+  useIsomorphicLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const measure = () => {
+      const cards = document.querySelectorAll<HTMLElement>(
+        ".crm-cards .crm-cards-inner"
+      );
+      let currentMax = 0;
+      cards.forEach((el) => {
+        const h = el.getBoundingClientRect().height;
+        if (h > currentMax) currentMax = h;
       });
-      setMaxHeight(currentMaxHeight);
-    }, 1000);
-  };
+      setMaxHeight(currentMax);
 
-  const updateHeadingHeight = () => {
-    if (headingRef.current) {
-      const height = headingRef.current.getBoundingClientRect().height;
-      setHeadingHeight(height);
-    }
-  };
+      if (headingRef.current) {
+        const h = headingRef.current.getBoundingClientRect().height;
+        setHeadingHeight(h);
+      }
 
-  useEffect(() => {
-    if (!sectionRef.current || !headingRef.current) return;
-
-    updateMaxHeight();
-    updateHeadingHeight();
-  }, [sectionRef.current, headingRef.current]);
-
-  // Update heading height on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      updateHeadingHeight();
+      // compute sticky logic only when we have sizes
+      if (currentMax && headingRef.current) {
+        const viewportH = window.innerHeight;
+        const topCandidate = viewportH / 2 - currentMax / 2 - 90;
+        const sticky = topCandidate > headingRef.current.getBoundingClientRect().height;
+        setIsSticky(sticky);
+        setStickyTop(sticky ? topCandidate : null);
+      }
     };
 
-    window.addEventListener("resize", handleResize);
+    const raf = requestAnimationFrame(measure);
+
+    const onResize = () => measure();
+    window.addEventListener("resize", onResize);
+
+    const ro =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(() => measure())
+        : null;
+    if (headingRef.current && ro) ro.observe(headingRef.current);
+
     return () => {
-      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
+      if (ro && headingRef.current) ro.unobserve(headingRef.current);
     };
   }, []);
 
   useEffect(() => {
-    if (maxHeight && headingHeight) {
-      const isSticky =
-        window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight;
-      const headingFromTop = window.innerHeight / 2 - maxHeight / 2 - 90;
-      const bottomVal =
-        100 - (headingFromTop + headingHeight) / (window.innerHeight / 100);
-      if (!isSticky) return;
-      setTimeout(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "bottom bottom",
-            end: `bottom ${bottomVal}%`,
-            scrub: 2,
-            markers: false,
-            id: "field-service-heading",
-            invalidateOnRefresh: true,
-          },
-        });
+    if (typeof window === "undefined") return;
+    if (!sectionRef.current || !headingRef.current) return;
+    if (!maxHeight || !headingHeight || !isSticky) return;
 
-        tl.to(headingRef.current, {
-          y: -(headingFromTop + headingHeight),
-          ease: "none",
-        });
-      }, 2000);
-    }
-  }, [headingHeight, maxHeight]);
+    let isCancelled = false;
+
+    (async () => {
+      const gsapMod = await import("gsap");
+      const stMod = await import("gsap/ScrollTrigger");
+      const gsap = gsapMod.gsap || (gsapMod as any).default || gsapMod;
+      const ScrollTrigger = (stMod as any).ScrollTrigger;
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsapRef.current = gsap;
+
+      if (isCancelled) return;
+
+      const viewportH = window.innerHeight;
+      const headingFromTop = stickyTop ?? 0;
+      const bottomVal =
+        100 - (headingFromTop + headingHeight) / (viewportH / 100);
+
+      if (tlRef.current) {
+        tlRef.current.kill();
+        tlRef.current = null;
+      }
+
+      tlRef.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "bottom bottom",
+          end: `bottom ${bottomVal}%`,
+          scrub: 2,
+          markers: false,
+          id: "field-service-heading",
+          invalidateOnRefresh: true,
+        },
+      });
+
+      tlRef.current.to(headingRef.current, {
+        y: -(headingFromTop + headingHeight),
+        ease: "none",
+      });
+    })();
+
+    return () => {
+      isCancelled = true;
+      try {
+        if (tlRef.current) {
+          tlRef.current.kill();
+          tlRef.current = null;
+        }
+        // also clear all triggers tied to this id
+        const st = (window as any).ScrollTrigger;
+        if (st && st.getById) {
+          const trig = st.getById("field-service-heading");
+          trig && trig.kill();
+        }
+      } catch {}
+    };
+  }, [maxHeight, headingHeight, isSticky, stickyTop]);
 
   return (
     <section ref={sectionRef} className="relative px-2 pb-16">
       <div
         ref={headingRef}
-        style={{
-          top:
-            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
-              ? window.innerHeight / 2 - maxHeight / 2 - 90 + "px"
-              : "unset",
-          position:
-            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
-              ? "sticky"
-              : "relative",
-        }}
+        style={
+          isSticky && stickyTop !== null
+            ? { position: "sticky", top: `${stickyTop}px` }
+            : { position: "relative" }
+        }
         className="w-full justify-center"
       >
-        <Copy animateOnScroll={true} delay={0.1}>
+        <Copy animateOnScroll delay={0.1}>
           <AdaptiveHeroTitle
             title={fieldServiceData?.title}
             className="section-heading-2 gradient-text-2 relative z-20 mx-auto block w-fit max-w-[1044px] text-center font-bold lg:font-semibold"
@@ -121,11 +156,7 @@ const WantingMore: React.FC<WantingMoreProps> = ({
         </Copy>
       </div>
 
-      <ScrollOverlapCards
-        theme="light"
-        fieldService={fieldServiceData}
-        slug={slug}
-      />
+      <ScrollOverlapCards theme="light" fieldService={fieldServiceData} slug={slug} />
     </section>
   );
 };

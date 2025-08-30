@@ -27,17 +27,21 @@ const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
       </h2>
 
       {/* Articles */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {paginatedBlogs.length > 0 ? (
-          paginatedBlogs.map((article, index) => (
-            <div key={index}>
+      {paginatedBlogs.length > 0 ? (
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {paginatedBlogs.map((article) => (
+            <div key={article.id ?? article.documentId ?? article.blogUrl}>
               <BlogCard article={article} />
             </div>
-          ))
-        ) : (
-          <p>No blogs found</p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-10 text-center">
+          <p className="text-sm text-gray-600">
+            No blogs found. Try a different search or category.
+          </p>
+        </div>
+      )}
 
       {/* Pagination */}
       {totalPages > 1 && (

@@ -1,10 +1,25 @@
 import CommonFormField from "@/components/common/CommonFormField";
 import AllEventCard from "@/components/eventsdirectory/AllEventCard";
 import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHero";
-import {
-  getAllEvents,
-  getEventList
-} from "@/services/events/getEventData";
+import { getCommonData } from "@/services/common/commonData";
+import { getAllEvents, getEventList } from "@/services/events/getEventData";
+
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: Promise<{ locale: string; slug: string }>;
+// }) {
+//   const resolvedParams = await params;
+//   const page = await getSeoData(
+//     "event-detail",
+//     resolvedParams.locale,
+//     resolvedParams.slug,
+//   );
+
+//   if (!page) notFound();
+
+//   return generateSeoMetadata({ page, slug: resolvedParams.slug });
+// }
 
 const EventsDirectoryPage = async ({
   params,
@@ -12,9 +27,10 @@ const EventsDirectoryPage = async ({
   params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
-  const [events, eventList] = await Promise.all([
+  const [events, eventList, commonData] = await Promise.all([
     getAllEvents(locale),
     getEventList(locale),
+    getCommonData(locale),
   ]);
 
   return (
@@ -27,8 +43,9 @@ const EventsDirectoryPage = async ({
           title={`${eventList?.emailSignupSection?.title ?? ""}`}
           subTitle={`${eventList?.emailSignupSection?.subTitle ?? ""}`}
           placeholder={`${eventList?.emailSignupSection?.placeholder ?? ""}`}
-          createBtn="Get started FREE"
-          ncc="No credit card required"
+          createBtn={commonData?.getStartedFreeBtn}
+          mobileBtn={commonData?.mobileBtn}
+          ncc={commonData?.nccTxt}
           showTitle={true}
           variant="tertiary"
         />

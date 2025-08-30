@@ -1,13 +1,12 @@
 "use client";
 import CardReveal from "@/components/common/CardReveal";
 import EventsCard from "@/components/common/EventsCard";
-import { allEventSections } from "@/components/common/Helper";
 import { CustomSliderIcon } from "@/components/common/Icons";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo } from "react";
 
-const SectionEvents = ({ params }: { params: string }) => {
+const SectionEvents = ({ params, events }: { params: string; events: any }) => {
   const sectionId = params as string;
   const router = useRouter();
 
@@ -17,7 +16,7 @@ const SectionEvents = ({ params }: { params: string }) => {
         return "Must-Attend Conference & Expo’s";
       case "upcoming-events":
         return "All Upcoming Events";
-      case "all-events":
+      case "past-events":
         return "All Past Events";
       default:
         return "Events";
@@ -25,12 +24,19 @@ const SectionEvents = ({ params }: { params: string }) => {
   }, [sectionId]);
 
   const filteredEvents = useMemo(() => {
-    if (sectionId === "all-events") {
-      return allEventSections.flatMap((section) => section.events);
+    if (sectionId === "past-events") {
+      return events.filter(
+        (event: any) => new Date(event.startDate) < new Date(),
+      );
+    } else if (sectionId === "upcoming-events") {
+      return events.filter(
+        (event: any) => new Date(event.startDate) > new Date(),
+      );
+    } else if (sectionId === "conference-events") {
+      return events.filter((event: any) => event.isFeatured === true);
+    } else {
+      return events;
     }
-
-    const section = allEventSections.find((s) => s.sectionId === sectionId);
-    return section?.events || [];
   }, [sectionId]);
 
   useEffect(() => {
@@ -50,6 +56,10 @@ const SectionEvents = ({ params }: { params: string }) => {
       });
     }, 700);
   }, []);
+
+  function handleEvent(slug: string) {
+    router.push(`/events/${slug}`);
+  }
   return (
     <section id="home-page-wrapper-2">
       <div
@@ -71,9 +81,19 @@ const SectionEvents = ({ params }: { params: string }) => {
             </CardReveal>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredEvents.map((event) => (
-              <EventsCard key={event.id} Item={event} />
-            ))}
+            {filteredEvents.length > 0 ? (
+              filteredEvents.map((event: any) => (
+                <EventsCard
+                  key={event.id}
+                  Item={event}
+                  onClick={() => handleEvent(event.eventUrl)}
+                />
+              ))
+            ) : (
+              <div className="flex items-center justify-center">
+                <p className="text-lightBlackGrey">No events found</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -29,7 +29,13 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
       <div className="main-container h-full">
         <article
           style={{
-            backgroundImage: `url(${blogData?.blogImg ? blogData?.blogImg[0]?.url : "/images/webp/blog-detail-hero.webp"})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${
+              blogData?.blogImg
+                ? blogData?.blogImg[0]?.url
+                : "/images/webp/blog-detail-hero.webp"
+            })`,
           }}
           className="blog-detail-hero-shadow max-h-[560px]w-full flex h-full min-h-[500px] flex-col justify-start gap-3 rounded-xl bg-cover bg-right p-4 py-10 text-white md:rounded-[20px] md:p-6 lg:max-h-[460px] lg:min-h-[460px] lg:justify-end lg:p-10 xl:bg-center xl:p-[42px]"
         >
@@ -43,7 +49,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
             <Image
               width={24}
               height={24}
-              src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/png/justin-mcnicholas.png"}`}
+              src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/webp/review-profile-7.webp"}`}
               className="rounded-full"
               alt={`Profile Photo of ${blogData?.authorName}`}
             />

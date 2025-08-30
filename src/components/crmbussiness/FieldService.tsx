@@ -7,6 +7,7 @@ import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
 export interface TheServiceProps {
   fieldService: any;
   slug?: string;
@@ -26,32 +27,65 @@ const FieldService: React.FC<TheServiceProps> = ({
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [maxHeight, setMaxHeight] = useState<number>(0);
   const [headingHeight, setHeadingHeight] = useState<number>(0);
+  const [windowHeight, setWindowHeight] = useState<number>(0);
+
+  // Initialize window height on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
 
   const updateMaxHeight = () => {
-    setTimeout(() => {
-      const cards = document.querySelectorAll(".crm-cards .crm-cards-inner");
-      let currentMaxHeight = 0;
+    // Check if document is available
+    if (typeof document === "undefined") return;
 
-      cards.forEach((card) => {
-        const cardElement = card as HTMLElement;
-        const cardHeight = cardElement.getBoundingClientRect().height;
-        if (cardHeight > currentMaxHeight) {
-          currentMaxHeight = cardHeight;
+    setTimeout(() => {
+      try {
+        const cards = document.querySelectorAll(".crm-cards .crm-cards-inner");
+        
+        // Check if cards exist
+        if (!cards || cards.length === 0) {
+          console.warn("No cards found for height calculation");
+          return;
         }
-      });
-      setMaxHeight(currentMaxHeight);
+
+        let currentMaxHeight = 0;
+
+        cards.forEach((card) => {
+          const cardElement = card as HTMLElement;
+          if (cardElement) {
+            const cardHeight = cardElement.getBoundingClientRect()?.height || 0;
+            if (cardHeight > currentMaxHeight) {
+              currentMaxHeight = cardHeight;
+            }
+          }
+        });
+        
+        setMaxHeight(currentMaxHeight);
+      } catch (error) {
+        console.error("Error updating max height:", error);
+      }
     }, 1000);
   };
 
   const updateHeadingHeight = () => {
     if (headingRef.current) {
-      const height = headingRef.current.getBoundingClientRect().height;
-      setHeadingHeight(height);
+      try {
+        const height = headingRef.current.getBoundingClientRect()?.height || 0;
+        setHeadingHeight(height);
+      } catch (error) {
+        console.error("Error updating heading height:", error);
+      }
     }
   };
 
   useEffect(() => {
-    if (!sectionRef.current || !headingRef.current) return;
+    // Check refs exist before proceeding
+    if (!sectionRef.current || !headingRef.current) {
+      console.warn("Refs not ready, skipping height calculations");
+      return;
+    }
 
     updateMaxHeight();
     updateHeadingHeight();
@@ -59,7 +93,11 @@ const FieldService: React.FC<TheServiceProps> = ({
 
   // Update heading height on window resize
   useEffect(() => {
+    // Check if window is available
+    if (typeof window === "undefined") return;
+
     const handleResize = () => {
+      setWindowHeight(window.innerHeight);
       updateHeadingHeight();
     };
 
@@ -68,16 +106,59 @@ const FieldService: React.FC<TheServiceProps> = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log(fieldService, "data");
+
+  // Debug logging with null check
   useEffect(() => {
-    if (maxHeight && headingHeight) {
-      const isSticky =
-        window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight;
-      const headingFromTop = window.innerHeight / 2 - maxHeight / 2 - 90;
-      const bottomVal =
-        100 - (headingFromTop + headingHeight) / (window.innerHeight / 100);
-      if (!isSticky) return;
-      setTimeout(() => {
+    if (fieldService) {
+      console.log("Field service data:", fieldService);
+    } else {
+      console.warn("No field service data provided");
+    }
+  }, [fieldService]);
+
+  useEffect(() => {
+    // Check all required values exist
+    if (!maxHeight || !headingHeight || !windowHeight) {
+      console.log("Waiting for measurements:", { maxHeight, headingHeight, windowHeight });
+      return;
+    }
+
+    // Check if refs are still valid
+    if (!sectionRef.current || !headingRef.current) {
+      console.warn("Refs lost during animation setup");
+      return;
+    }
+
+    const headingFromTop = windowHeight / 2 - maxHeight / 2 - 90;
+    const isSticky = headingFromTop > headingHeight;
+    
+    if (!isSticky) {
+      console.log("Not sticky, skipping animation");
+      return;
+    }
+
+    const bottomVal = 100 - (headingFromTop + headingHeight) / (windowHeight / 100);
+
+    // Validate bottomVal
+    if (isNaN(bottomVal) || !isFinite(bottomVal)) {
+      console.error("Invalid bottomVal calculation:", bottomVal);
+      return;
+    }
+
+    setTimeout(() => {
+      try {
+        // Check if GSAP and ScrollTrigger are available
+        if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+          console.error("GSAP or ScrollTrigger not available");
+          return;
+        }
+
+        // Final check that refs still exist
+        if (!sectionRef.current || !headingRef.current) {
+          console.warn("Refs lost before animation creation");
+          return;
+        }
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -94,9 +175,53 @@ const FieldService: React.FC<TheServiceProps> = ({
           y: -(headingFromTop + headingHeight),
           ease: "none",
         });
-      }, 2000);
+      } catch (error) {
+        console.error("Error setting up GSAP animation:", error);
+      }
+    }, 2000);
+
+    // Cleanup function
+    return () => {
+      // Kill specific ScrollTrigger instance if it exists
+      try {
+        ScrollTrigger.getById("field-service-heading")?.kill();
+      } catch (error) {
+        console.error("Error cleaning up ScrollTrigger:", error);
+      }
+    };
+  }, [headingHeight, maxHeight, windowHeight]);
+
+  // Calculate sticky position with safety checks
+  const calculateStickyPosition = () => {
+    if (!windowHeight || !maxHeight || !headingHeight) {
+      return { top: "unset", position: "relative" as const };
     }
-  }, [headingHeight, maxHeight]);
+
+    const headingFromTop = windowHeight / 2 - maxHeight / 2 - 90;
+    const isSticky = headingFromTop > headingHeight;
+
+    return {
+      top: isSticky ? `${headingFromTop}px` : "unset",
+      position: isSticky ? ("sticky" as const) : ("relative" as const),
+    };
+  };
+
+  // Check if required props exist
+  if (!fieldService) {
+    console.error("FieldService component: fieldService prop is required");
+    return (
+      <div className="text-center py-10">
+        <p>No service data available</p>
+      </div>
+    );
+  }
+
+  if (!theme) {
+    console.warn("FieldService component: theme prop is missing, defaulting to 'light'");
+  }
+
+  const stickyStyles = calculateStickyPosition();
+
   return (
     <section
       ref={sectionRef}
@@ -104,28 +229,27 @@ const FieldService: React.FC<TheServiceProps> = ({
     >
       <div
         ref={headingRef}
-        style={{
-          top:
-            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
-              ? window.innerHeight / 2 - maxHeight / 2 - 90 + "px"
-              : "unset",
-          position:
-            window.innerHeight / 2 - maxHeight / 2 - 90 > headingHeight
-              ? "sticky"
-              : "relative",
-        }}
+        style={stickyStyles}
         className="w-full justify-center"
       >
-        <AdaptiveHeroTitle
-          title={fieldService?.title}
-          className={`gradient-text mx-auto block text-center leading-relaxed font-semibold -tracking-[0.72px] ${mainClassName || "max-w-[813px]"}`}
-          minFontSize={24}
-          maxLines={2}
-          maxFontSize={42}
-        />
+        {fieldService?.title ? (
+          <AdaptiveHeroTitle
+            title={fieldService.title}
+            className={`gradient-text mx-auto block text-center leading-relaxed font-semibold -tracking-[0.72px] ${
+              mainClassName || "max-w-[813px]"
+            }`}
+            minFontSize={24}
+            maxLines={2}
+            maxFontSize={42}
+          />
+        ) : (
+          <div className="text-center py-4">
+            <p>No title available</p>
+          </div>
+        )}
       </div>
       <ScrollOverlapCards
-        theme={theme}
+        theme={theme || "light"}
         slug={slug || ""}
         fieldService={fieldService}
         apiData={apiData}

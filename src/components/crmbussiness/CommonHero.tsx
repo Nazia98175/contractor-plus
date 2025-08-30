@@ -62,6 +62,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
+  console.log(heroImg ,"heroImg");
   console.log(heroImg?.url ,"heroImg?.url ");
   
   return (

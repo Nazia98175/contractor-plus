@@ -58,7 +58,11 @@
 }
 
 .invester-image-gradient {
-  background: linear-gradient(1deg, #0a0b0e 34.47%, rgba(10, 11, 14, 0) 90.83%);
+  background: linear-gradient(
+    0.59deg,
+    #0c0d11 34.47%,
+    rgba(12, 13, 17, 0) 90.83%
+  );
 }
 
 .video-section-wrapper.scroll-active-2 h3 {

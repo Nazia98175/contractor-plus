@@ -1,9 +1,10 @@
 import CookiePolicy from "@/components/cookie-policy/CookiePolicy";
 import React from "react";
 export const metadata = {
-  title: "Cookie policy | Contractor+",
-  description: "Cookie policy.",
-  keywords: ["Cookie policy"],
+  title: "Cookie Policy: How Contractor+ Uses Cookies",
+  description:
+    "Learn how Contractor+ uses cookies for analytics, preferences, and site performance.",
+  keywords: ["Cookie Policy"],
   // openGraph: {
   //   images: [
   //     {

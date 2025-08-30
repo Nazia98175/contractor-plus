@@ -74,12 +74,12 @@ const HowItWorkLIst = (cardsData: any) => {
           className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30">
+            <h3 className="mb-1 text-center text-lg font-semibold tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30">
               Connect your catalog
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
+            <p className="mb-1 text-center text-sm duration-300 sm:text-base xl:px-30">
               via API, feed, or EDI.
             </p>
           </Copy>
@@ -92,12 +92,12 @@ const HowItWorkLIst = (cardsData: any) => {
           className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
+            <h3 className="mb-1 text-center text-2xl font-semibold tracking-[-0.48px] duration-300 xl:px-30">
               Map locations & pricing
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
+            <p className="mb-1 text-center text-sm duration-300 sm:text-base xl:px-30">
               attach SKUs to stores/regions, set promos and pack sizes.
             </p>
           </Copy>
@@ -110,12 +110,12 @@ const HowItWorkLIst = (cardsData: any) => {
           className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
+            <h3 className="mb-1 text-center text-2xl font-semibold tracking-[-0.48px] duration-300 xl:px-30">
               Choose order route(s)
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
+            <p className="mb-1 text-center text-sm duration-300 sm:text-base xl:px-30">
               cart transfer, PO, or both.
             </p>
           </Copy>
@@ -129,12 +129,12 @@ const HowItWorkLIst = (cardsData: any) => {
           className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
+            <h3 className="mb-1 text-center text-2xl font-semibold tracking-[-0.48px] duration-300 xl:px-30">
               Launch in‑flow placement
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
+            <p className="mb-1 text-center text-sm duration-300 sm:text-base xl:px-30">
               SKUs appear in Estimates, Material Lists, and Job templates.
             </p>
           </Copy>
@@ -147,12 +147,12 @@ const HowItWorkLIst = (cardsData: any) => {
           className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
+            <h3 className="mb-1 text-center text-2xl font-semibold tracking-[-0.48px] duration-300 xl:px-30">
               Fulfill & measure
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
+            <p className="mb-1 text-center text-sm duration-300 sm:text-base xl:px-30">
               pickup/delivery as usual, with SKU‑level reporting and co‑op
               opportunities.
             </p>

@@ -23,7 +23,7 @@ const IndustryService: React.FC<Props> = ({
 }) => {
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
-      <div className=" pb-10 pt-20 sm:pb-[75px] lg:pt-[110px] xl:pt-[120px]">
+      <div className="pt-20 pb-10 sm:pb-[75px] lg:pt-[110px] xl:pt-[120px]">
         <CommonFormField
           title={data?.title}
           subTitle={data?.subTitle}
@@ -38,7 +38,7 @@ const IndustryService: React.FC<Props> = ({
       </div>
       {showClouds !== false && (
         <>
-          <div className="absolute top-[-2%] left-0 h-[6%] w-[120%] blur-[2px] bg-white z-[99]"></div>
+          <div className="absolute top-[-2%] left-0 z-[99] h-[6%] w-[120%] bg-white blur-[2px]"></div>
           <CloudsAnimation
             className="pointer-events-none absolute top-[-13%] -bottom-[11%] left-0 z-50 flex h-[67%] w-full rotate-180 blur-[2px] sm:top-[-11%] lg:blur-[0]"
             imageClass="h-[50%] z-20 !bottom-[-30px]"

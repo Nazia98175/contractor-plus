@@ -38,7 +38,20 @@ import {
   SubManagementIcon,
   TaskManagementIcon,
 } from "../whycontractor/Icons";
-import { ClockIcon, ContractorToolsIcon, UpArrowIcon } from "./Icons";
+import {
+  AppearIcon,
+  AudienceReachIcon,
+  BuildFieldIcon,
+  ClockIcon,
+  ContractorToolsIcon,
+  DataIcon,
+  OneSystemIcon,
+  OrderRouteIcon,
+  RegionsIcon,
+  ReportIcon2,
+  SingleFlowIcon,
+  UpArrowIcon,
+} from "./Icons";
 
 export const awards = [
   {
@@ -4357,3 +4370,273 @@ export const integrationLogos = [
   "/images/png/companycam.png",
   "/images/png/lowes-2.png",
 ];
+
+export const glanceList = [
+  {
+    id: 1,
+    title: "Audience & Reach",
+    description:
+      "50,000+ build & service contractors across residential trades.",
+    icon: <AudienceReachIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 2,
+    title: "Regions",
+    description:
+      "United States, Canada, United Kingdom, Ireland, Australia, Japan, United Arab Emirates.",
+    icon: <RegionsIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 3,
+    title: "Where you appear",
+    description:
+      "In Estimates (live pricing), Material Lists, Purchase Orders, and Checkout flows",
+    icon: <AppearIcon />,
+    hasDivider: false,
+  },
+  {
+    id: 4,
+    title: "Data we support",
+    description:
+      "Catalog, images, specs, unit/packaging, local store availability, regional pricing, promos.",
+    icon: <DataIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 5,
+    title: "Order routes",
+    description:
+      "Direct PO, cart transfer to your ecommerce, or hybrid—your choice.",
+    icon: <OrderRouteIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 6,
+    title: "Reporting",
+    description:
+      "SKU‑level conversion and demand signals by geo, trade, and job type.",
+    icon: <ReportIcon2 />,
+    hasDivider: false,
+  },
+];
+
+export const integrationData = [
+  {
+    img: "/images/webp/live-product.webp",
+    alt: "live product",
+    title: "Live Product Catalog",
+    description:
+      "We surface live pricing/lookups from partners and third-party aggregators—used today with Ace Hardware, Menards, Ferguson Home and others—then route the buyer per program.",
+  },
+  {
+    img: "/images/webp/cart-transfer.webp",
+    alt: "cart transfer",
+    title: (
+      <>
+        Cart Transfer
+        <span className="flex justify-center text-center text-[11px] md:justify-start md:text-start">
+          (ecommerce checkout)
+        </span>
+      </>
+    ),
+    description:
+      "Contractor+ assembles the basket, then passes the cart to your site for instant checkout—like we do with Lowe’s. (Contractors see local store pricing, build lists fast, and tap to buy on Lowes.com.)",
+  },
+  {
+    img: "/images/webp/direct-project.webp",
+    alt: "direct purchase orders",
+    title: "Direct Purchase Orders (PO)",
+    description:
+      "We send a structured PO straight to your system with job/site info—like our ABC Supply integration for roofing. Great for trade-specific workflows and account customers.",
+  },
+];
+
+export const workList = [
+  {
+    img: "/images/svg/lowes-logo.svg",
+    alt: "Lowe's logo",
+    title: "Lowe’s",
+    description:
+      "Local pricing, rapid material lists, and cart transfer for instant online checkout.",
+    imgClass: "w-full max-w-[52px]",
+  },
+  {
+    img: "/images/svg/abp-logo.svg",
+    alt: "ABC Supply logo",
+    title: "ABC Supply",
+    description:
+      "Direct PO for roofing materials, sourcing, and order tracking.",
+    imgClass: "w-full max-w-[52px]",
+  },
+  {
+    img: "/images/svg/qxo-logo.svg",
+    alt: "QXO logo",
+    title: (
+      <>
+        QXO <span className="text-sm">(Formerly Beacon)</span>
+      </>
+    ),
+    description: "Coming up next!.",
+    imgClass: "w-full max-w-[52px]",
+  },
+  {
+    img: "/images/svg/Group-logo.svg",
+    alt: "Ace Hardware & others logo",
+    title: "Ace Hardware, Menards, Ferguson Home & others",
+    description:
+      "Indirect integrations that surface pricing and selection within our estimate workflow.",
+    imgClass: "w-full max-w-[80px]",
+  },
+];
+
+export const meke_Different = [
+  {
+    id: 1,
+    title: "It’s all one system",
+    description:
+      "The same platform that handles estimates, eSign, scheduling, comms, and POs also powers material selection—no duct tape required.  ",
+    icon: <OneSystemIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 2,
+    title: "Spec → Order in a single flow",
+    description: "Contractors don’t retype SKUs; they confirm and buy.",
+    icon: <SingleFlowIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 3,
+    title: "Built for the field",
+    description: "The UI is fast on mobile, where most orders actually start. ",
+    icon: <BuildFieldIcon />,
+    hasDivider: false,
+  },
+];
+
+export const supplierslogo = [
+  {
+    Url: "/images/svg/sb-logo.svg",
+  },
+  {
+    Url: "/images/svg/ferguson-logo.svg",
+  },
+  {
+    Url: "/images/svg/abp-logo.svg",
+  },
+  {
+    Url: "/images/svg/qxo-logo.svg",
+  },
+  {
+    Url: "/images/svg/menarads-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+  {
+    Url: "/images/svg/sb-logo.svg",
+  },
+  {
+    Url: "/images/svg/ferguson-logo.svg",
+  },
+  {
+    Url: "/images/svg/abp-logo.svg",
+  },
+  {
+    Url: "/images/svg/qxo-logo.svg",
+  },
+  {
+    Url: "/images/svg/menarads-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+];
+
+export const supplietFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "Do you support both national chains and local specialty suppliers?",
+      answer:
+        "Yes. We’re actively onboarding supply house partners across the U.S., Canada, U.K., Ireland, Australia, Japan, and the UAE.",
+    },
+    {
+      id: 2,
+      question: "Can you show local store pricing and inventory?",
+      answer:
+        "Yep—if you provide the data feeds or API access. We can scope by store, region, or customer account.",
+    },
+    {
+      id: 3,
+      question: "How do orders flow? ",
+      answer:
+        "Either via cart transfer to your ecommerce (basket pre‑built) or direct PO into your ERP/OMS. Whichever you prefer.",
+    },
+    {
+      id: 4,
+      question: "Where do contractors see our products?",
+      answer:
+        "Inside the estimates & quote builder, in the job manager, when adding materials to work orders, when building material lists, and purchase workflows—exactly where they’re selecting and approving scope.  ",
+    },
+    {
+      id: 5,
+      question: "What does it cost to partner?",
+      answer:
+        "There’s no upfront cost to partner. We do this to benefit our mutual customers, the contractors. Many partners offer us a 1-2% override/commission on purchases, which is always appreciated, but not expected. We also offer very attractive affiliate commissions for referring customers to Contractor+! ",
+    },
+    {
+      id: 6,
+      question: "How long does integration take?",
+      answer:
+        "Typical pilot: 2–6 weeks once data feeds or API endpoints are shared with required access.",
+    },
+  ],
+};

@@ -24,7 +24,7 @@ import { getMaxMindLocation } from "@/services/map";
 import { cookies } from "next/headers";
 
 export const metadata = {
-  title: "Local SEO for Contractors Just $247 | Contractor+",
+  title: "Local SEO for Contractors Just $249 | Contractor+",
   description:
     "A fully managed local SEO & reputation management solution for less than the cost of a bad lead. Generate more local leads now.",
 };

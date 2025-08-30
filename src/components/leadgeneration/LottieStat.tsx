@@ -1,8 +1,8 @@
 import React from "react";
 import LottieStatCard from "./LottieStatCard";
-import StartIcon from "../../../public/images/svg/start-icon.svg";
 import UpwardIcon from "../../../public/lotties/white-upward.json";
-import DollarIcon from "../../../public/images/svg/dollar-icon.svg";
+import DollarLottie from "../../../public/lotties/dolar-lottie.json";
+import StartIcon from "../../../public/lotties/star-icon.json";
 const LottieStat = ({ className = "" }) => {
   const stats = [
     {
@@ -10,7 +10,7 @@ const LottieStat = ({ className = "" }) => {
       end: 92,
       suffix: "%",
       subTitle: "Of contractors see top 3 local rankings within 6 months",
-      lottiejson: null,
+      lottiejson: StartIcon,
       icon: StartIcon,
     },
     {
@@ -26,8 +26,8 @@ const LottieStat = ({ className = "" }) => {
       end: 890,
       prifix: "$",
       subTitle: "Average monthly savings vs hiring for local SEO",
-      lottiejson: null,
-      icon: DollarIcon,
+      lottiejson: DollarLottie,
+      icon: null,
     },
   ];
   return (

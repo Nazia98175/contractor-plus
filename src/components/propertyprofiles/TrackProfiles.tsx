@@ -20,7 +20,7 @@ const TrackProfiles: React.FC<Props> = ({ trackProperties }) => {
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
-        sizes="100vw"
+        // sizes="100vw"
       />
 
       {/* Mobile background image */}
@@ -30,7 +30,7 @@ const TrackProfiles: React.FC<Props> = ({ trackProperties }) => {
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
-        sizes="100vw"
+        // sizes="100vw"
       />
       {/* Device Images */}
       <CardReveal distance={50}>
@@ -42,7 +42,7 @@ const TrackProfiles: React.FC<Props> = ({ trackProperties }) => {
             alt="Mobile"
             width={820}
             height={578}
-            sizes="(min-width: 768px) 100vw"
+            // sizes="(min-width: 768px) 100vw"
           />
 
           <Image
@@ -51,7 +51,7 @@ const TrackProfiles: React.FC<Props> = ({ trackProperties }) => {
             alt="Mobile"
             width={780}
             height={578}
-            sizes="(max-width: 767px) 100vw"
+            // sizes="(max-width: 767px) 100vw"
           />
         </div>
       </CardReveal>

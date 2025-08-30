@@ -31,7 +31,7 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
 
         {/* Desktop Image */}
         <Image
-          sizes="(max-width: 768px) 100vw, 768px"
+          // sizes="(max-width: 768px) 100vw, 768px"
           width={1920}
           height={500}
           priority
@@ -46,7 +46,7 @@ const EraOfSoftware: React.FC<TrackProperties> = ({
 
         {/* Mobile Image */}
         <Image
-          sizes="(max-width: 768px) 100vw, 768px"
+          // sizes="(max-width: 768px) 100vw, 768px"
           width={1920}
           height={500}
           priority

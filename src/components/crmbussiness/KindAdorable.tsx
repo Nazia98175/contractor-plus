@@ -14,7 +14,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
       {showBackground && (
         <div>
           <Image
-            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            // sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
             width={1920}
             height={100}
             className="absolute top-[-152px] left-0 z-10 hidden h-full w-full md:block"
@@ -23,7 +23,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
           />
 
           <Image
-            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            // sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
             width={1920}
             height={100}
             className="absolute top-[-195px] left-0 z-10 block h-full w-full md:hidden"

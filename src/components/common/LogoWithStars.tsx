@@ -139,7 +139,7 @@ const FooterLogoWithStars: React.FC = () => {
               width={51}
               height={68}
               alt="center-icon"
-              sizes={"51px"}
+              // sizes={"51px"}
             />
           </div>
         </div>

@@ -49,7 +49,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
                 unoptimized
                 width={871}
                 height={625}
-                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                // sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
                 src={"/images/webp/deal-flow-hero.webp"}
                 alt="Slide Image"
                 className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
@@ -61,7 +61,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
             <Image
               unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              // sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
               width={668}
               height={300}
               priority
@@ -77,7 +77,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="mx-auto w-full max-w-[670px]">
               <Image
                 priority
-                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+                // sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
                 width={835}
                 height={624}
                 src={"/images/webp/deal-approved.webp"}
@@ -91,7 +91,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
             <Image
               unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              // sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
               width={668}
               height={300}
               priority
@@ -125,7 +125,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
             <Image
               width={871}
               height={625}
-              sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
+              // sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
               src={"/images/webp/real-slider-card-11.webp"}
               alt="Slide Image"
               className="h-full w-full rounded-3xl object-cover xl:rounded-[45px]"
@@ -136,7 +136,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
             <Image
               unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              // sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
               width={668}
               height={300}
               priority
@@ -151,7 +151,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="relative mx-auto min-h-full w-full overflow-hidden sm:w-fit">
             <Image
               unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
+              // sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
               width={668}
               height={300}
               priority
@@ -168,7 +168,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="absolute right-[18%] bottom-[-50px] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:right-[35%] sm:h-[200px] sm:max-w-[400px] md:bottom-[-149px] lg:h-[251px]"></div>
             <Image
               unoptimized
-              sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
+              // sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
               width={900}
               height={382}
               priority

@@ -71,7 +71,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="footer gradient"
               width={1440}
               height={457}
-              sizes="100vw"
+              // sizes="100vw"
               unoptimized
               className="h-auto w-full"
             />
@@ -81,7 +81,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="footer gradient"
               width={1440}
               height={200}
-              sizes="100vw"
+              // sizes="100vw"
               unoptimized
               className="h-auto w-full"
             />
@@ -94,7 +94,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             height={457}
             width={300}
             unoptimized
-            sizes="100vw"
+            // sizes="100vw"
             className="h-full w-full object-cover"
             src="/images/webp/footer-gradient-right.webp"
             alt="footer gradient"
@@ -179,7 +179,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               priority
-              sizes="72px"
+              // sizes="72px"
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"
@@ -243,7 +243,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               height={72}
               width={72}
               unoptimized
-              sizes="72px"
+              // sizes="72px"
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"

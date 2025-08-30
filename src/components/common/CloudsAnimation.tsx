@@ -37,7 +37,7 @@ const CloudsAnimation = ({
         className={`${imageClass} absolute -bottom-1 left-0 hidden h-28 w-full object-left-bottom md:block`}
         src="/images/png/cloud-layer.png"
         alt="cloud-layer"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+        // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         width={1920}
         height={200}
         priority
@@ -46,7 +46,7 @@ const CloudsAnimation = ({
         className={`${imageClassMobile} absolute bottom-4 left-0 h-full w-full object-left-bottom`}
         src="/images/png/cloud-layer-mobile.png"
         alt="cloud-layer"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+        // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         width={1920}
         height={200}
         priority

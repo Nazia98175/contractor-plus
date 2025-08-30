@@ -34,22 +34,13 @@ const IntegrationModels = () => {
     <section className="relative md:pb-[200px] lg:pb-[273px]">
       <div>
         <Image
-          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+          // sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
           width={1920}
           height={100}
           className="absolute bottom-[-152px] left-0 z-10 hidden h-full w-full md:block"
           src="/images/webp/finally-desktop-bg.webp"
           alt="finally bg"
         />
-
-        {/* <Image
-          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-          width={1920}
-          height={100}
-          className="absolute bottom-[-195px] left-0 z-10 block h-full w-full md:hidden"
-          src="/images/webp/finally-mobile-bg.webp"
-          alt="Finally Mobile Background"
-        /> */}
       </div>
       <section className="relative z-20 mx-auto w-full max-w-[1224px] px-4 py-8">
         <h3 className="text-mana section-heading text-center">

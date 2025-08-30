@@ -95,7 +95,7 @@ export default function AwardBadges({
     <section className="no-scrollbar relative w-full">
       <div className="absolute -top-0.5 left-0 h-1.5 w-full bg-white"></div>
       <Image
-        sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+        // sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
         width={1920}
         height={500}
         src="/images/webp/red-linear-bg.webp"
@@ -104,7 +104,7 @@ export default function AwardBadges({
         priority
       />
       <Image
-        sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
+        // sizes="(max-width: 768px) 100vw, min(768px, 100vw)"
         width={1920}
         height={500}
         src="/images/webp/red-linear-mobile.webp"

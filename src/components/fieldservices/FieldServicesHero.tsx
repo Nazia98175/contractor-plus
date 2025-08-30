@@ -184,7 +184,7 @@ const FieldServicesHero: React.FC<Props> = ({
             width={355}
             height={355}
             alt="location"
-            sizes="(max-width: 768px) 100vw, 355px"
+            // sizes="(max-width: 768px) 100vw, 355px"
             unoptimized
           />
           {processedLocation?.city && (

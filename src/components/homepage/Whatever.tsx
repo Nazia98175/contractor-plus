@@ -259,7 +259,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   height={40}
                   alt="contractor"
                   priority
-                  sizes="(min-width: 1024px) 40px, 30px"
+                  // sizes="(min-width: 1024px) 40px, 30px"
                   style={{
                     opacity: getImageOpacity(0),
                     transition: "opacity 0.45s ease-in-out",
@@ -279,7 +279,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   height={38}
                   alt="contractor"
                   priority
-                  sizes="(min-width: 1024px) 38px, 26px"
+                  // sizes="(min-width: 1024px) 38px, 26px"
                   style={{
                     opacity: getImageOpacity(1),
                     transition: "opacity 0.45s ease-in-out",
@@ -299,7 +299,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   height={17}
                   alt="contractor"
                   priority
-                  sizes="(min-width: 1024px) 66px, 45px"
+                  // sizes="(min-width: 1024px) 66px, 45px"
                   style={{
                     opacity: getImageOpacity(2),
                     transition: "opacity 0.45s ease-in-out",
@@ -331,7 +331,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   height={38}
                   alt="contractor"
                   priority
-                  sizes="(min-width: 1024px) 38px, 29px"
+                  // sizes="(min-width: 1024px) 38px, 29px"
                   style={{
                     opacity: getImageOpacity(3),
                     transition: "opacity 0.45s ease-in-out",
@@ -351,7 +351,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   height={38}
                   alt="contractor"
                   priority
-                  sizes="(min-width: 1024px) 38px, 29px"
+                  // sizes="(min-width: 1024px) 38px, 29px"
                   style={{
                     opacity: getImageOpacity(4),
                     transition: "opacity 0.45s ease-in-out",
@@ -371,7 +371,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                   height={33}
                   alt="contractor"
                   priority
-                  sizes="(min-width: 1024px) 33px, 21px"
+                  // sizes="(min-width: 1024px) 33px, 21px"
                   style={{
                     opacity: getImageOpacity(5),
                     transition: "opacity 0.45s ease-in-out",

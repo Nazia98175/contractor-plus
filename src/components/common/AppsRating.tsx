@@ -30,7 +30,7 @@ const AppsRating: React.FC<AppsRatingProps> = ({
             alt="google icon"
             width={144}
             height={36}
-            sizes="(max-width: 768px) 100px, 144px"
+            // sizes="(max-width: 768px) 100px, 144px"
             priority
           />
           <div className="flex items-center justify-center">
@@ -54,7 +54,7 @@ const AppsRating: React.FC<AppsRatingProps> = ({
             alt="apple icon"
             width={144}
             height={36}
-            sizes="(max-width: 768px) 100px, 144px"
+            // sizes="(max-width: 768px) 100px, 144px"
             priority
           />
           <div className="flex items-center justify-center">

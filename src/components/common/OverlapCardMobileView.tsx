@@ -128,7 +128,7 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
               start: "top 65%",
               end: "bottom 15%",
               invalidateOnRefresh: true,
-              markers: true,
+              markers: false,
               onEnter: () => {
                 if (lottieRefs.current[index]) {
                   lottieRefs.current[index]?.play();

@@ -13,7 +13,7 @@ const CommonLogos = () => {
             height={90}
             src="/images/webp/software-advice.webp"
             className="max-w-[116px] object-cover duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[121px]"
-            sizes="(max-width: 768px) 40vw, 121px"
+            // sizes="(max-width: 768px) 40vw, 121px"
             alt="Software Advice"
           />
 
@@ -33,7 +33,7 @@ const CommonLogos = () => {
             src="/images/webp/get-app.webp"
             className="max-w-[111px] duration-300 hover:!scale-105 hover:!rotate-6 sm:max-w-[137px]"
             alt="Get App"
-            sizes="(max-width: 768px) 40vw, 121px"
+            // sizes="(max-width: 768px) 40vw, 121px"
           />
 
           <Image
@@ -43,7 +43,7 @@ const CommonLogos = () => {
             src="/images/svg/capterra.svg"
             className="duration-300 hover:!scale-105 hover:!rotate-6"
             alt="Capterra"
-            sizes="(max-width: 768px) 40vw, 121px"
+            // sizes="(max-width: 768px) 40vw, 121px"
           />
         </div>
       </CardReveal>

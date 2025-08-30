@@ -78,7 +78,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ resultStats }) => {
         fill
         alt="gradient background"
         priority
-        sizes="(max-width: 1023px) 700px"
+        // sizes="(max-width: 1023px) 700px"
       />
       <Image
         className="pointer-events-none absolute -top-[50%] right-0 z-0 hidden w-full max-w-[800px] lg:block"
@@ -87,7 +87,7 @@ const MakeOperation: React.FC<TheWhateverProps> = ({ resultStats }) => {
         height={1200}
         alt="gradient background"
         priority
-        sizes="(min-width: 1024px) 800px"
+        // sizes="(min-width: 1024px) 800px"
       />
 
       <div className="main-container relative pb-10">

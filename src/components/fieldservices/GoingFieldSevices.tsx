@@ -58,11 +58,11 @@ const GoingFieldSevices: React.FC<
       className="relative z-20 overflow-hidden pb-[52px] sm:pb-[60px] lg:pb-[95px]"
     >
       {isImageshow && (
-        <div id="parallex-img-wrapper"> 
+        <div id="parallex-img-wrapper">
           <Image
             width={1440}
             height={150}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
+            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
             unoptimized
             className="h-[150px] w-full object-cover sm:h-[180px]"
             id="parallex-img"

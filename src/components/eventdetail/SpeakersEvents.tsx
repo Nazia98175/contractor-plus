@@ -1,14 +1,10 @@
 "use client";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CustomSliderIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
+import { CustomSliderIcon } from "../common/Icons";
 import SpeakerCard from "./SpeakerCard";
-import { speakerEventsItems } from "../common/Helper";
 
 const SpeakersEvents = ({ eventDetail, eventList }: any) => {
   console.log(eventDetail, "event deails");
@@ -17,8 +13,7 @@ const SpeakersEvents = ({ eventDetail, eventList }: any) => {
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">
-            {" "}
-            {`${eventList?.speakersTitle}`}
+          Speakers at {`${eventDetail?.eventName}`}
           </h4>
         </Copy>
       </div>
@@ -26,7 +21,7 @@ const SpeakersEvents = ({ eventDetail, eventList }: any) => {
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-              {`${eventList?.speakersTitle}`}
+             Speakers at {`${eventDetail?.eventName}`}
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">

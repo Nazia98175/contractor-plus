@@ -234,7 +234,7 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         width={1440}
         height={200}
         priority
-        sizes="(max-width: 768px) 1440px, min-width:(768px, 1440px)"
+        // sizes="(max-width: 768px) 1440px, min-width:(768px, 1440px)"
         src="/images/webp/red-linear-bg.webp"
         className="-z- absolute -top-0 left-0 hidden h-[124%] w-full bg-cover sm:block"
         alt="Red Linear background"
@@ -243,9 +243,9 @@ const NeverLookBack: React.FC<Props> = ({ data }) => {
         width={1440}
         height={200}
         priority
-        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
+        // sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
         src="/images/webp/red-linear-mobile.webp"
-        className="-z- absolute top-0 left-0 block h-[110%] w-full bg-top sm:hidden"
+        className="absolute top-0 left-0 block h-[110%] w-full bg-top sm:hidden"
         alt="Red Linear background"
       />
 

@@ -1,16 +1,16 @@
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
+import AccessibilityWidget from "@/components/common/AccessibilityWidget";
+import CookieBanner from "@/components/common/CookieBanner";
 import Head from "next/head";
 import { ReactNode } from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import "swiper/css/effect-creative";
 import "swiper/css/grid";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./globals.css";
 import "./style.css";
-import "swiper/css/navigation";
-import "swiper/css/effect-creative";
-import CookieBanner from "@/components/common/CookieBanner";
-import AccessibilityWidget from "@/components/common/AccessibilityWidget";
 
 type Props = {
   children: ReactNode;

@@ -46,7 +46,7 @@ const HomepageClient = ({
           alt="webp bg"
           width={900}
           height={700}
-          sizes="900px"
+          // sizes="900px"
         />
         <Image
           className="bubbling-animation svgTwinkle absolute top-0 right-0 z-0 hidden h-full w-full max-w-[700px] object-center lg:block"
@@ -54,7 +54,7 @@ const HomepageClient = ({
           alt="webp bg"
           width={700}
           height={300}
-          sizes="700px"
+          // sizes="700px"
         />
       </div>
       <OurReviews reviewsList={reviewsList?.reviews} reviews={reviewsList} />

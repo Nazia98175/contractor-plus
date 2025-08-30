@@ -33,8 +33,8 @@ const IndustryHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
-  console.log(hero?.heroTitle,"hero?.heroTitle");
-  
+  console.log(hero?.heroTitle, "hero?.heroTitle");
+
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden">
@@ -44,11 +44,11 @@ const IndustryHero: React.FC<TheHeroProps> = ({
           src="/images/webp/hero-video-ovelay.webp"
           alt="Red Circle For designing"
           className="pointer-events-none absolute top-0 left-0 block h-full w-full object-cover lg:hidden"
-          sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+          // sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
         />
         <div className="main-container relative flex items-end pt-[300px] pb-[100px] md:pt-[168px] md:pb-[150px] xl:pb-[195px]">
           <Image
-            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            // sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
             width={1920}
             height={100}
             priority
@@ -64,7 +64,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
               minFontSize={16}
               maxLines={2}
               maxFontSize={48}
-                splitAtPeriod={true} // Enable period splitting for desktop
+              splitAtPeriod={true} // Enable period splitting for desktop
             />
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
@@ -101,7 +101,7 @@ const IndustryHero: React.FC<TheHeroProps> = ({
         <div className="absolute top-0 right-0 h-full w-full lg:max-w-[945px]">
           <span className="pointer-events-none absolute top-0 -left-[30%] z-10 hidden h-full w-full lg:block">
             <Image
-              sizes="(max-width: 768px) 300px, (min-width: 769px) 300px"
+              // sizes="(max-width: 768px) 300px, (min-width: 769px) 300px"
               width={300}
               height={1000}
               priority

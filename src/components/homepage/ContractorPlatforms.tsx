@@ -52,7 +52,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                   <Image
                     width={389}
                     height={187}
-                    sizes="(max-width: 768px) 289px, 389px"
+                    // sizes="(max-width: 768px) 289px, 389px"
                     src={obj.cardImg.url || "/fallback.jpg"}
                     alt={`${obj.text}`}
                     priority

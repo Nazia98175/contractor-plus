@@ -98,6 +98,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
+
+
+  console.log(heroImg,"heroImg");
+  
   return (
     <>
       <div id="home-page-wrapper-2">

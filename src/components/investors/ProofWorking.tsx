@@ -370,7 +370,7 @@ const ProofWorking = () => {
           </div>
         </div>
       </div>
-      <p className="ccc mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
+      <p className="proof-working mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
         Now imagine what we'll do with <br className="block sm:hidden" /> real
         capital.
       </p>

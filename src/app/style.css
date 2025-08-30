@@ -94,3 +94,25 @@
 .video-section-wrapper.scroll-active-2 .icon-span {
   transform: rotate(90deg);
 }
+.proof-working {
+  background: radial-gradient(
+    108.34% 2197.76% at 86.81% 50%,
+    #ee1e25 0%,
+    #bebebe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.proof-working .line {
+  background: radial-gradient(
+    108.34% 2197.76% at 86.81% 50%,
+    #ee1e25 0%,
+    #bebebe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

@@ -34,6 +34,21 @@ export const metadata = {
   title: "Auto-Update Contractor Invoicing Software | Contractor+",
   description:
     "Living invoices that reflect every signed, time-stamped change order. Capture uninvoiced billables automatically for more revenue.",
+  keywords: ["contractor invoicing software"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/contractor-invoicing-software.webp",
+        width: 1920,
+        height: 630,
+        alt: "contractor-invoicing-software",
+      },
+    ],
+  },
+  alternates: {
+    canonical:
+      "https://v2site.contractorplus.app/contractor-invoicing-software",
+  },
 };
 const BillingPage = async ({
   params,

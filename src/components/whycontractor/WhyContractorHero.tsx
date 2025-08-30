@@ -118,15 +118,6 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
             {pageContent?.hero?.title}
           </h2>
         </Copy>
-        {/* <AdaptiveHeroTitle
-          title={pageContent?.hero?.title || ""}
-          className="main-heading why-contractor-hero white-gray-gradient mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4"
-          minFontSize={25}
-          maxLines={2}
-          maxFontSize={52}
-          textAnimation="home-page-view-port-screen-why-contractor"
-        /> */}
-
         <Copy animateOnScroll={false} delay={0.4}>
           <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
             {pageContent?.hero?.subTitle}{" "}

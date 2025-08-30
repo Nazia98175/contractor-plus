@@ -27,10 +27,25 @@ import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getIntegrationList } from "@/services/integation/getIntegrationData";
+
 export const metadata = {
   title: "Opportunity Tracker for Contractors | Contractor+",
   description:
     "One board that shows every deal, dollar value, and next steps so you can win more opportunities. Convert won leads to jobs in one click. ",
+  keywords: ["Opportunity Tracker for Contractors | Contractor+"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/opportunity-tracker-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "opportunity-tracker-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/opportunity-tracker",
+  },
 };
 const DealFlowTracker = async ({
   params,

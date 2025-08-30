@@ -4,12 +4,31 @@ import EventDetailHero from "@/components/eventdetail/EventDetailHero";
 import EventPricing from "@/components/eventdetail/EventPricing";
 import SpeakersEvents from "@/components/eventdetail/SpeakersEvents";
 import Sponsors from "@/components/eventdetail/Sponsors";
+import { getSeoDataEvent } from "@/services/common/seoMeta";
 import {
   getEventDetails,
   getSingleEvent,
 } from "@/services/events/getEventData";
 import { PromiseParams } from "@/types";
-import { redirect } from "next/navigation";
+import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import { notFound, redirect } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const page = await getSeoDataEvent(
+    "events-directories",
+    resolvedParams.locale,
+    resolvedParams.slug,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+}
 
 const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {
   const { locale, slug } = await params;
@@ -19,9 +38,6 @@ const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {
     getSingleEvent(locale, slug),
     getEventDetails(locale),
   ]);
-
-  console.log(eventDetail,"eventDetail");
-  
 
   if (!eventDetail) redirect("/events-directory");
 

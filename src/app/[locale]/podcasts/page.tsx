@@ -1,38 +1,26 @@
-"use client";
-import OurPodcast from "@/components/podcast/OurPodcast";
-import PodcastHero from "@/components/podcast/PodcastHero";
-import gsap from "gsap";
-import React, { useEffect } from "react";
-
-const PodcastPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-podcast", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
-  }, []);
-  return (
-    <main id="home-page-wrapper-2">
-      <div
-        id="home-page-view-port-screen-podcast"
-        className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-top bg-no-repeat pt-20 opacity-0 sm:bg-cover md:pt-[100px] lg:pt-[140px] xl:pt-[193px]"
-      >
-        <PodcastHero />
-        <OurPodcast />
-      </div>
-    </main>
-  );
+import PodcastMain from "@/components/podcast/PodcastsMain";
+import React from "react";
+export const metadata = {
+  title: "Contractor+ Podcasts: Real Contractor Stories & Advice",
+  description:
+    "Listen to industry experts, business owners, and field leaders discuss practical tips for contractors.",
+  keywords: ["Contractor+ Podcasts"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/podcast-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "opportunity-tracker-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/podcasts",
+  },
+};
+const Podcastpage = () => {
+  return <PodcastMain />;
 };
 
-export default PodcastPage;
+export default Podcastpage;

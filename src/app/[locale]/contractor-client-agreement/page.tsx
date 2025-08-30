@@ -39,7 +39,22 @@ export const metadata = {
   title: "Contractor Client Agreement Made Simple | Contractor+",
   description:
     "One automated system to create, sign, amend, and store every client contract. We manage every contract from start to finish.",
+  keywords: ["contractor client agreement"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/contractor-client-agreement-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "contractor-client-agreement-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/contractor-client-agreement",
+  },
 };
+
 const ContractorClientAgreementPage = () => {
   return (
     <>

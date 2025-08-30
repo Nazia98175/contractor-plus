@@ -8,60 +8,70 @@ const AllEventCard = ({ eventList, events }: any) => {
       sectionId: "conference-events",
       sectionHeading: `${eventList?.mostAttendTitle ?? ""}`,
       events: events
-        ? events.map((itm: any) => {
-            return {
-              id: itm.id,
-              imgPath: itm?.eventImages
-                ? itm?.eventImages[0].url
-                : "/images/webp/snow.webp",
-              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
-              heading: `${itm?.eventName ?? ""}`,
-              description: `${itm?.shortDescription ?? ""}`,
-              linkPath: `${itm?.eventBtn ?? ""}`,
-              slug: `${itm?.eventUrl ?? ""}`,
-            };
-          })
+        ? events
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                isFeatured: itm?.isFeatured ?? false,
+              };
+            })
+            .filter((event: any) => event.isFeatured === true)
         : [],
     },
     {
       sectionId: "upcoming-events",
       sectionHeading: `${eventList?.upcomingEventTitle ?? ""}`,
       events: events
-        ? events.map((itm: any) => {
-            return {
-              id: itm.id,
-              imgPath: itm?.eventImages
-                ? itm?.eventImages[0].url
-                : "/images/webp/snow.webp",
-              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
-              heading: `${itm?.eventName ?? ""}`,
-              description: `${itm?.shortDescription ?? ""}`,
-              linkPath: `${itm?.eventBtn ?? ""}`,
-              slug: `${itm?.eventUrl ?? ""}`,
-            };
-          })
+        ? events
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .filter((event: any) => new Date(event?.sDate) > new Date())
         : [],
     },
     {
-      sectionId: "all-events",
+      sectionId: "past-events",
       sectionHeading: `${eventList?.pastEventTitle ?? ""}`,
       events: events
-        ? events.map((itm: any) => {
-            return {
-              id: itm.id,
-              imgPath: itm?.eventImages
-                ? itm?.eventImages[0].url
-                : "/images/webp/snow.webp",
-              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
-              heading: `${itm?.eventName ?? ""}`,
-              description: `${itm?.shortDescription ?? ""}`,
-              linkPath: `${itm?.eventBtn ?? ""}`,
-              slug: `${itm?.eventUrl ?? ""}`,
-            };
-          })
+        ? events
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .filter((event: any) => new Date(event?.sDate) < new Date())
         : [],
     },
   ];
+
   return (
     <section className="main-container">
       <div className="mt-8 flex flex-col gap-8 md:mt-10 md:gap-10 lg:mt-16 lg:gap-16 xl:mt-[85px] xl:gap-[87px]">

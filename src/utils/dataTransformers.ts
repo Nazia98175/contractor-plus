@@ -206,3 +206,31 @@
 
 //   return result;
 // }
+
+export function getTimeAgo(dateString: string): string {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffInSeconds = Math.floor((date.getTime() - now.getTime()) / 1000);
+
+  const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+
+  const divisions: { amount: number; name: Intl.RelativeTimeFormatUnit }[] = [
+    { amount: 60, name: "second" },
+    { amount: 60, name: "minute" },
+    { amount: 24, name: "hour" },
+    { amount: 7, name: "day" },
+    { amount: 4.34524, name: "week" },
+    { amount: 12, name: "month" },
+    { amount: Number.POSITIVE_INFINITY, name: "year" },
+  ];
+
+  let duration = diffInSeconds;
+  for (const division of divisions) {
+    if (Math.abs(duration) < division.amount) {
+      return rtf.format(Math.round(duration), division.name);
+    }
+    duration /= division.amount;
+  }
+
+  return "just now";
+}

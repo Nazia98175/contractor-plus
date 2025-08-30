@@ -72,7 +72,6 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           fill
           alt="poster"
           priority
-          // sizes="(max-width: 1024px) 100vw, 1008px"
         />
       ) : (
         <>
@@ -90,9 +89,8 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
           </video>
         </>
       )}
-      <div className="3xl:bottom-[-8.5%] bg-rgba16 absolute bottom-[-5%] z-10 h-[10%] w-[102%] blur-[8px]"></div>
 
-      <img
+      {/* <img
         className="3xl:bottom-[2%] absolute right-[-10px] bottom-[-2%] z-10 h-[30%] w-[102%]"
         src="/images/png/hero-blur-2.png"
         alt="hero-blur"
@@ -102,8 +100,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
         className="3xl:flex absolute top-[-4%] right-[-104px] hidden h-[104%] w-[32%]"
         src="/images/png/blur.png"
         alt="hero-blur"
-      />
-      <div className="hero-video-overlay-2 absolute inset-0 z-0 lg:hidden"></div>
+      /> */}
     </div>
   );
 };

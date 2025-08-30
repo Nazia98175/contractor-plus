@@ -62,6 +62,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
+  console.log(heroImg?.url ,"heroImg?.url ");
+  
   return (
     <section
       ref={wrapperRef}
@@ -185,7 +187,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   >
                     <Image
                       className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
-                      src={heroImg?.url || heroImg}
+                      src={heroImg?.url}
                       width={900}
                       height={616}
                       alt="crm-hero"

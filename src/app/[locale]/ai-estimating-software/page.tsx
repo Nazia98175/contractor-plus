@@ -31,7 +31,22 @@ export const metadata = {
   title: "Estimatic AI Estimating Software | Contractor+",
   description:
     "Create accurate estimates in minutes with Estimatic AI. Automate material takeoffs, pricing, and proposals with AI estimating that wins jobs.",
+  keywords: ["ai estimating software"],
+  // openGraph: {
+  //   images: [
+  //     {
+  //       url: "/images/webp/local-seo-og.webp",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Local SEO for Contractors",
+  //     },
+  //   ],
+  // },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/ai-estimating-software",
+  },
 };
+
 const EstimaticAiPage = async ({
   params,
 }: {

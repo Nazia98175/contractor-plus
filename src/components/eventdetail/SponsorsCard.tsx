@@ -18,7 +18,9 @@ const SponsorCard = ({
     ${isFirstVisible ? "border-l-0" : ""}
     ${isLastVisible ? "border-r-0" : ""}
   `;
-
+  if (!image) {
+    return null;
+  }
   return (
     <div className={`w-full py-3 sm:py-5 ${borderClasses}`}>
       <img

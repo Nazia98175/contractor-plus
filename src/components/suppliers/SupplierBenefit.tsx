@@ -54,7 +54,7 @@ const SupplierBenefit = (cardsData: any) => {
   }, [cardsData]);
 
   return (
-    <section className="main-container mt-[90px]">
+    <section className="main-container mt-[65px] md:mt-[90px]">
       <Copy delay={0.1}>
         <h4 className="section-heading gradient-text text-center">
           How suppliers benefit

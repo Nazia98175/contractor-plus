@@ -6,7 +6,7 @@ const PartnerContractor = () => {
       <h3 className="text-mana section-heading text-center">
         Why partner with Contractor+?
       </h3>
-      <p className="text-center text-base font-semibold text-[#5C5C5C] md:text-lg lg:text-xl xl:text-2xl">
+      <p className="pt-3 text-center text-base font-semibold text-[#5C5C5C] md:text-lg lg:text-xl xl:text-2xl">
         Contractors build estimates, generate material lists, and move straight
         to ordering without leaving Contractor+. That means your products show
         up at the exact moment a buyer is specifying quantities and approving

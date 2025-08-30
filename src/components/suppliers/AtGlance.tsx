@@ -168,14 +168,14 @@ const AtGlance = () => {
         {problems.map((problem) => (
           <article
             key={problem.id}
-            className="relative flex flex-col items-center justify-center gap-3 p-5"
+            className="relative flex flex-col items-center justify-center gap-3 p-2 md:p-5"
           >
             <span>{problem.icon}</span>
             <h3 className="problem-text text-base leading-normal font-bold md:text-[22px] lg:text-3xl">
               {problem.title}
             </h3>
 
-            <p className="text-center text-base font-semibold text-[#606060]">
+            <p className="w-full max-w-[324px] text-center text-base font-semibold text-[#606060]">
               {problem.description}
             </p>
             {problem.hasDivider && (

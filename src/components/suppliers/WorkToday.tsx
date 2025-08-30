@@ -40,7 +40,7 @@ const workData = [
 
 const WorkToday = () => {
   return (
-    <section className="mx-auto w-full max-w-[1224px] px-2 py-8">
+    <section className="mx-auto w-full max-w-[1224px] px-2 pt-[82px] pb-8 lg:pt-[92px]">
       <h3 className="text-mana section-heading text-center">
         Who we work with today
       </h3>

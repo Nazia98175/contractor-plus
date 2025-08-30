@@ -81,7 +81,7 @@ const MakeDifferent = () => {
     },
   ];
   return (
-    <section className="mx-auto max-w-[1224px] px-2 py-8">
+    <section className="mx-auto max-w-[1224px] px-2 pb-6 md:py-8">
       <h3 className="text-mana section-heading text-center">
         What makes Contractor+ different
       </h3>
@@ -89,7 +89,7 @@ const MakeDifferent = () => {
         {problems.map((problem) => (
           <article
             key={problem.id}
-            className="relative flex flex-col items-center justify-center gap-3 p-5"
+            className="relative flex flex-col items-center justify-center gap-3 p-2 md:p-5"
           >
             <span>{problem.icon}</span>
             <h3 className="problem-text text-center text-base leading-normal font-bold md:text-[22px] lg:text-3xl">

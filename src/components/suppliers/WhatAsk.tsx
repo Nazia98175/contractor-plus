@@ -2,7 +2,7 @@ import React from "react";
 
 const WhatAsk = () => {
   return (
-    <section className="mx-auto w-full max-w-[1090px] px-2 pt-[65px] pb-10">
+    <section className="mx-auto w-full max-w-[1090px] px-2 pt-[86px] pb-10">
       <h3 className="text-mana section-heading text-center">
         What we’ll ask from you
       </h3>
@@ -58,7 +58,7 @@ const WhatAsk = () => {
             </defs>
           </svg>
         </span>
-        <p className="pt-2 text-center text-xl font-bold text-[#A9A9A9] md:text-2xl">
+        <p className="pt-2 text-center text-base font-bold text-[#A9A9A9] sm:text-xl md:text-2xl">
           Up‑to‑date product data (SKUs, images, specs, units/packaging), by
           data feed, API or SFTP.
         </p>

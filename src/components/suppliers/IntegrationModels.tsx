@@ -16,7 +16,9 @@ const IntegrationModels = () => {
       title: (
         <>
           Cart Transfer
-          <span className="flex text-[11px]">(ecommerce checkout)</span>
+          <span className="flex text-center text-[11px] md:text-start">
+            (ecommerce checkout)
+          </span>
         </>
       ),
       description:
@@ -31,7 +33,7 @@ const IntegrationModels = () => {
     },
   ];
   return (
-    <section className="relative md:pb-[200px] lg:pb-[273px]">
+    <section className="relative pt-5 md:pt-10 md:pb-[200px] lg:pb-[273px]">
       <div>
         <Image
           sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
@@ -51,18 +53,18 @@ const IntegrationModels = () => {
           alt="Finally Mobile Background"
         /> */}
       </div>
-      <section className="relative z-20 mx-auto w-full max-w-[1224px] px-4 py-8">
+      <section className="relative z-20 mx-auto w-full max-w-[1224px] px-4 pb-8">
         <h3 className="text-mana section-heading text-center">
           Integration Models
         </h3>
-        <div className="grid grid-cols-1 gap-4 pt-[78px] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 pt-[51px] sm:grid-cols-2 md:pt-[78px] lg:grid-cols-3">
           {integrationData.map((item, index) => (
             <article key={index}>
               <img src={item.img} alt={item.alt} />
-              <h3 className="pt-2 text-[25px] font-bold text-white">
+              <h3 className="pt-2 text-center text-xl font-bold text-white md:text-start md:text-[25px]">
                 {item.title}
               </h3>
-              <p className="pt-3 text-base font-semibold text-[#A9A9A9]">
+              <p className="pt-3 text-center text-base font-semibold text-[#A9A9A9] md:text-start">
                 {item.description}
               </p>
             </article>

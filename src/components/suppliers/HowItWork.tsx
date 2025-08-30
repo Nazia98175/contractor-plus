@@ -54,27 +54,30 @@ const HowItWork = (cardsData: any) => {
   }, [cardsData]);
 
   return (
-    <section className="main-container mt-[60px] sm:mt-[80px] md:mt-[90px]">
-      <Copy delay={0.1}>
-        <h4 className="section-heading gradient-text text-center">
-          How it works
-        </h4>
-      </Copy>
+    <section className="relative mt-[60px] sm:mt-[80px] md:mt-[90px]">
+      <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
+      <div className="main-container">
+        <Copy delay={0.1}>
+          <h4 className="section-heading gradient-text text-center">
+            How it works
+          </h4>
+        </Copy>
 
-      <div
-        id="contractor-section"
-        ref={sectionRef}
-        className="relative mt-10 sm:mt-[51px]"
-      >
-        {/* Gray line */}
-        <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
-        {/* Red dot */}
-        <span
-          ref={redDotRef}
-          className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
-        />
+        <div
+          id="contractor-section"
+          ref={sectionRef}
+          className="relative mt-10 sm:mt-[51px]"
+        >
+          {/* Gray line */}
+          <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
+          {/* Red dot */}
+          <span
+            ref={redDotRef}
+            className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
+          />
 
-        <HowItWorkLIst cardsData={cardsData} />
+          <HowItWorkLIst cardsData={cardsData} />
+        </div>
       </div>
     </section>
   );

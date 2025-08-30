@@ -50,7 +50,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
     pathname.toLowerCase().includes("crm") ||
     pathname.toLowerCase().includes("estimate") ||
     pathname.toLowerCase().includes("field-service") ||
-    pathname.toLowerCase().includes("why-contractor");
+    pathname.toLowerCase().includes("why-contractor") ||
+    pathname.toLowerCase().includes("suppliers");
   const currentYear = new Date().getFullYear();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const styles = footerVariantClasses[variant];

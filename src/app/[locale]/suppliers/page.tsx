@@ -1,10 +1,13 @@
-import { automatedCardData, platforms } from "@/components/common/Helper";
+import {
+  automatedCardData,
+  platforms,
+  supplietFaq,
+} from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
-import { supplietFaq, toolformData, toolsFaq } from "@/components/common/Utils";
 import Faq from "@/components/crmbussiness/Faq";
 import AtGlance from "@/components/suppliers/AtGlance";
 import HowItWork from "@/components/suppliers/HowItWork";
@@ -17,7 +20,6 @@ import WhatAsk from "@/components/suppliers/WhatAsk";
 import WorkToday from "@/components/suppliers/WorkToday";
 import Image from "next/image";
 import React from "react";
-import CrmService from "@/components/crmbussiness/IndustryService";
 import MakeOrder from "@/components/investors/MakeOrder";
 
 export const metadata = {

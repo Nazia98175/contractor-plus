@@ -10,9 +10,24 @@ import WinTeam from "@/components/investors/WinTeam";
 import React from "react";
 
 export const metadata = {
-  title: "Learn About Contractor+ Investment Opportunities Discover investment",
+  title:
+    "Learn About Contractor+ Investment Opportunities Discover investment.",
   description:
     "opportunities, growth highlights, and business potential with Contractor+.",
+  keywords: ["Investors"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/investors-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "investors-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/investors",
+  },
 };
 const InvestorsPage = () => {
   return (

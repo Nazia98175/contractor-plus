@@ -8,9 +8,22 @@ import { getPricingData } from "@/services/pricing/getPricingData";
 export const metadata = {
   title: "Plans & Pricing | Start With Contractor+ Free",
   description:
-    "Pricing our competitors hate, but our contractors love. $0 forever for free plan. $29/month solopreneur. $19/person for team of 5. Start here",
+    "Pricing our competitors hate, but our contractors love. $0 forever for free plan. $29/month solopreneur. $19/person for team of 5. Start here.",
+  keywords: ["Contractor Plus Pricing"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/pricing-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "pricing-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/pricing",
+  },
 };
-
 const PricingPage = async ({
   params,
 }: {

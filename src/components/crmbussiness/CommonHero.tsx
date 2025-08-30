@@ -189,14 +189,12 @@ const CommonHero: React.FC<TheHeroProps> = ({
                       width={900}
                       height={616}
                       alt="crm-hero"
-                      // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
                       priority
                     />
                     {hero?.overlay && <AnimatedShape />}
                   </div>
                 </div>
               </div>
-              xs
             </CardReveal>
           </>
         )}

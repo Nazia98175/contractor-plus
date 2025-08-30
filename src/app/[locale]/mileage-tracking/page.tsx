@@ -37,10 +37,25 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import Image from "next/image";
+
 export const metadata = {
   title: "Mileage Tracking Software for Contractors | Contractor+",
   description:
     "Track miles while working in the field. Contractor+ logs your travel automatically so you can manage costs and records easily.",
+  keywords: ["mileage tracking software for contractors"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/mileage-tracking-software-for-contractors-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "mileage tracking software for contractors",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/mileage-tracking",
+  },
 };
 const MileageTrackingPage = () => {
   return (

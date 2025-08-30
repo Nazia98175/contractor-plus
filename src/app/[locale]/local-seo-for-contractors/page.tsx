@@ -27,6 +27,20 @@ export const metadata = {
   title: "Local SEO for Contractors Just $249 | Contractor+",
   description:
     "A fully managed local SEO & reputation management solution for less than the cost of a bad lead. Generate more local leads now.",
+  keywords: ["contractor invoicing software"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/local-seo-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Local SEO for Contractors",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/local-seo-for-contractors",
+  },
 };
 
 interface Params {

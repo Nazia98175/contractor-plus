@@ -36,15 +36,27 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import heroImg from "../../../../public/lotties/tool-hero.json";
-
 import Image from "next/image";
 
 export const metadata = {
   title: "Tool Inventory Software to Track Equipment | Contractor+",
   description:
     "Log tools, assign gear to jobs, and reduce loss. Contractor+ keeps your inventory organized and up to date.",
+  keywords: ["Opportunity Tracker for Contractors | Contractor+"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/terms-of-service-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "tool-inventory-software",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/tool-inventory-software",
+  },
 };
-
 const ToolAndTipEquipmentPage = () => {
   return (
     <main className="relative">

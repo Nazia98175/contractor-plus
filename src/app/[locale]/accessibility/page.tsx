@@ -1,5 +1,3 @@
-"use client";
-
 import Accessibility from "@/components/accessibility/Accessibility";
 export const metadata = {
   title: "accessibility | Contractor+",

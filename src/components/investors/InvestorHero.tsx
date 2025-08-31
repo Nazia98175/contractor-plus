@@ -74,6 +74,41 @@ const InvestorHero = () => {
       });
     }, 1000);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 1000);
+  }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-estimatic-ai", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
   return (
     <section ref={wrapperRef} className="relative overflow-hidden">
       <img
@@ -99,29 +134,29 @@ const InvestorHero = () => {
           <InvestorHeroIcon />
         </span>
         <div className="flex flex-col items-center justify-center px-2">
-          <CardReveal distance={30} delay={0.1}>
+          <Copy delay={0.1}>
             <p className="text-darkGray w-full rounded-[6px] bg-[rgba(63,70,75,0.10)] py-1 text-center text-sm font-bold md:bg-transparent">
               Investment Opportunity{" "}
             </p>
-          </CardReveal>
-          <Copy delay={0.2} animateOnScroll={false}>
+          </Copy>
+          <Copy delay={0.2}>
             <h2 className="invester-gradient-text main-heading pt-2 text-center sm:pt-4 md:pt-6">
               The first Operating System for build & service contractors
             </h2>
           </Copy>
-          <Copy delay={0.3} animateOnScroll={false}>
+          <Copy delay={0.3}>
             <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg">
               Contractor+ is the category disruptor the $1T field service market
               has needed. We’ve built what Jobber, Housecall Pro, and
               ServiceTitan couldn’t: a platform contractors actually love.{" "}
             </p>
           </Copy>
-          <Copy delay={0.5} animateOnScroll={false}>
+          <Copy delay={0.5}>
             <p className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
               And we’ve done it without a cent from VC’s.
             </p>
           </Copy>
-          <CardReveal distance={30} delay={0.6}>
+          <CardReveal delay={0.6}>
             <Button className="w-full sm:max-w-[204px]">
               Book investor call
             </Button>

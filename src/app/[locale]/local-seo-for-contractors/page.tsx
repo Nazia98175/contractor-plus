@@ -96,7 +96,6 @@ const LeadGeneration = async ({ params }: Params) => {
         />
       </div>
       <RunWithContractor kindAdorable={leadGenerationData} />
-
       <div className="overflow-hidden bg-white">
         <CombinesPowerfulAi />
         <DragAnimaiton />

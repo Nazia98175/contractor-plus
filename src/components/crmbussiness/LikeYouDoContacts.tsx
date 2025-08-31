@@ -41,13 +41,10 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
       </div>
 
       <div className="flex w-full items-center justify-center md:max-w-[480px]">
-        <Image
+        <img
           src={trackProperties?.featuresList?.[0]?.cardImg.url}
           alt="Illustration showing contractor workflow"
-          width={480}
-          height={600}
           className="h-auto w-full object-contain"
-          priority
         />
       </div>
     </section>

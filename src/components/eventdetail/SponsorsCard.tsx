@@ -24,7 +24,7 @@ const SponsorCard = ({
   return (
     <div className={`w-full py-3 sm:py-5 ${borderClasses}`}>
       <img
-        className="h-full w-full"
+        className="h-full max-h-[74px] min-h-[74px] w-full"
         src={image}
         alt={`sponsor-logo-${index}`}
       />

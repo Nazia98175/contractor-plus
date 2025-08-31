@@ -72,7 +72,7 @@ const EventsDirectoryHero = ({ events }: any) => {
           </button>
         )}
         <Swiper
-            slidesPerView={1}
+          slidesPerView={1}
           spaceBetween={30}
           navigation={{
             nextEl: `.event-hero-navigation-next`,

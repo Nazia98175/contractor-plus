@@ -6,12 +6,12 @@ const SpeakerCard = ({ member }: { member: any }) => {
   return (
     <>
       <CardReveal delay={0.1} distance={50}>
-        <article className="group relative h-full w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300">
+        <article className="group relative h-full max-h-[400px] min-h-[400px] w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300 md:max-h-[445px] md:min-h-[445px]">
           {member?.avatar && (
             <Image
               height={500}
               width={500}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="h-full max-h-[400px] min-h-[400px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:max-h-[445px] md:min-h-[445px]"
               src={member.avatar.url}
               alt={member.name}
             />

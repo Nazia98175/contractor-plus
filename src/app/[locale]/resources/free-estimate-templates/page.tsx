@@ -1,10 +1,11 @@
-import FreeEstimateMaker from "@/components/resourcehub/freeEstimate/FreeEstimateMaker";
+import FreeEstimateMaker from "@/components/resourcehub/pages/FreeEstimateMaker";
+import React from "react";
 
 const page = () => {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <FreeEstimateMaker />
-    </main>
+    </div>
   );
 };
 

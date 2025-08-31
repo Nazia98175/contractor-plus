@@ -12,46 +12,7 @@ export interface Testimonial {
   user: string;
   username: string;
 }
-export interface Industry {
-  id: number;
-  name: string;
-  description?: string;
-}
-export type Period = "Monthly" | "Quarterly";
-export interface FilterState {
-  industries: number[];
-  // industry: string;
-  states: string[];
-  uom: UnitOfMeasurement;
-  dataSources: DataSource[];
-  period: Period;
-  dateRange?: DateRange;
-  locationMode?: "region" | "zipcode";
-  zipCode?: string;
-}
-export interface DateRange {
-  from: Date | undefined;
-  to: Date | undefined;
-  preset?: DateRangePreset;
-}
-export type UnitOfMeasurement = "Hour" | "Square Foot" | "Linear Foot" | "Unit";
-export interface State {
-  id: number;
-  name: string;
-  abbreviation: string;
-  region: string;
-}
 
-export interface LaborRate {
-  industryId: number;
-  stateId: number;
-  uom: UnitOfMeasurement;
-  contractorPlusRate: number | null;
-  blsRate: number | null;
-  averageRate: number | null;
-  year: number;
-  quarter: number;
-}
 export interface ReviewCardProps {
   review: Review;
   openModal: () => void;
@@ -66,22 +27,7 @@ export interface TheServiceProps {
   icon?: boolean;
   issubHeadingShow?: boolean;
 }
-export interface ServiceData {
-  isLoop: boolean | undefined;
-  heading: string;
-  features: Feature[];
-  testimonial?: Testimonial;
-  img?: string;
-  title: string;
-  content: any;
-  cardQuote: string;
-  userName: string;
-  cardImg?: { url?: string };
-  lottieJson?: object;
-  isIcon?: boolean;
-  cardQuote?: string;
-  userName?: string;
-}
+
 export interface Testimonial {
   quote?: string;
   author?: string;
@@ -122,11 +68,7 @@ export interface Plan {
   cta: string;
   variant: "default" | "pro" | "proTeam";
 }
-export interface tableFeature {
-  name: string;
-  description: any;
-  available: Availability[];
-}
+
 export interface Review {
   id: string | number;
   profileImg: {
@@ -200,5 +142,3 @@ export interface IntegrationItem {
   };
   slug?: string;
 }
-
-type PromiseParams = Promise<{ slug?: string; locale: string }>;

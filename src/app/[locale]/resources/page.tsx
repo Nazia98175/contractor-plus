@@ -1,11 +1,11 @@
-import FreeEstimateTemplates from "@/components/resourcehub/ResourceHubPage";
+import Resource from "@/components/resourcehub/pages/Resource";
 import React from "react";
 
 const FreeEstimateTemplatesPage = () => {
   return (
-    <>
-      <FreeEstimateTemplates />
-    </>
+    <div className="bg-white">
+      <Resource />
+    </div>
   );
 };
 

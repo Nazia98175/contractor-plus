@@ -1,0 +1,68 @@
+import { useRouter } from "next/navigation";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "../../ui/breadcrumb";
+import { Zap } from "lucide-react";
+
+export function PageHeader() {
+  const router = useRouter();
+
+  return (
+    <>
+      {/* Breadcrumb Navigation */}
+      <div className="mb-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink
+                href="/resources"
+                className="hover:text-primary text-sm font-medium text-gray-700"
+              >
+                Resources
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink
+                href="/resources/cost-calculator"
+                className="hover:text-primary text-sm font-medium text-gray-700"
+                onClick={(e) => {
+                  e.preventDefault();
+                  router.push("/resources/cost-calculator");
+                }}
+              >
+                Construction Calculators
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="text-sm font-medium text-gray-500">
+                Electrician Cost Calculator
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+
+      <div className="mb-3 flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+          <Zap className="h-5 w-5 text-red-600" />
+        </div>
+        <h1 className="text-3xl font-bold tracking-tight">
+          Electrician Cost Per Hour Calculator
+        </h1>
+      </div>
+
+      <p className="text-muted-foreground mb-8 max-w-3xl text-lg">
+        Calculate accurate electrician billing rates based on wages, overhead,
+        and profit markup to ensure your electrical contracting business remains
+        profitable.
+      </p>
+    </>
+  );
+}

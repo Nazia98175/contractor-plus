@@ -1,0 +1,115 @@
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { CheckCircle2, DollarSign, AlertCircle } from "lucide-react";
+
+interface CalculationResultProps {
+  calculationResult: ElectricianCostResult | null;
+}
+
+export interface ElectricianCostResult {
+  burdenedWage: number;
+  costPerHour: number;
+  profitPerHour: number;
+  billableRate: number;
+}
+
+export function CalculationResult({
+  calculationResult,
+}: CalculationResultProps) {
+  if (!calculationResult) {
+    return (
+      <Card className="mb-6 border border-gray-200 bg-white shadow-sm">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-lg font-medium">
+            Calculation Results
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-col items-center justify-center py-6 text-center">
+            <AlertCircle className="text-muted-foreground mb-2 h-10 w-10" />
+            <p className="mb-2 text-lg font-medium">No calculation yet</p>
+            <p className="text-muted-foreground text-sm">
+              Fill out the form and click Calculate to see results
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const { burdenedWage, costPerHour, profitPerHour, billableRate } =
+    calculationResult;
+
+  return (
+    <Card className="mb-6 border-2 border-green-100 bg-gradient-to-br from-white to-green-50 shadow-sm">
+      <CardHeader className="border-b border-green-100 bg-green-50/50 pb-2">
+        <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-800">
+          <CheckCircle2 className="h-5 w-5 text-green-600" /> Calculation
+          Results
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="pt-4">
+        <div className="space-y-4">
+          {/* Burdened Wage */}
+          <div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-600">
+                Burdened Wage:
+              </span>
+              <span className="font-medium">
+                ${burdenedWage.toFixed(2)}/hour
+              </span>
+            </div>
+            <p className="text-xs text-gray-500">
+              Hourly wage including labor burden
+            </p>
+          </div>
+
+          {/* Break-even Cost */}
+          <div className="border-t border-dashed border-gray-200 pt-2">
+            <div className="flex items-center justify-between">
+              <span className="text-base font-semibold text-gray-700">
+                Break-even Cost per Hour:
+              </span>
+              <span className="text-lg font-semibold text-gray-700">
+                ${costPerHour.toFixed(2)}
+              </span>
+            </div>
+            <p className="text-xs text-gray-500">
+              Total cost including burdened wage and overhead
+            </p>
+          </div>
+
+          {/* Profit Per Hour */}
+          <div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-600">
+                Profit per Hour:
+              </span>
+              <span className="font-medium">${profitPerHour.toFixed(2)}</span>
+            </div>
+            <p className="text-xs text-gray-500">
+              Added profit based on your markup percentage
+            </p>
+          </div>
+
+          {/* Billable Rate */}
+          <div className="mt-2 border-t-2 border-green-100 pt-3">
+            <div className="flex items-center justify-between">
+              <span className="text-lg font-bold text-green-800">
+                Suggested Billable Rate:
+              </span>
+              <span className="flex items-center text-xl font-bold text-green-800">
+                <DollarSign className="mr-1 h-5 w-5" />
+                {billableRate.toFixed(2)}/hour
+              </span>
+            </div>
+            <p className="text-sm text-gray-600">
+              The recommended hourly rate to charge clients
+            </p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}

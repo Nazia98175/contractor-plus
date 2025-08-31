@@ -1,27 +1,27 @@
-import { 
-  AlertTriangle, 
-  Calculator, 
-  CloudCog, 
-  Columns, 
-  DollarSign, 
-  LayoutPanelTop, 
-  Paintbrush, 
-  Ruler, 
-  ScanLine, 
-  Droplet, 
-  Building, 
-  ClipboardList, 
-  Square, 
-  Zap, 
-  Fence, 
-  Flower, 
+import {
+  AlertTriangle,
+  Calculator,
+  CloudCog,
+  Columns,
+  DollarSign,
+  LayoutPanelTop,
+  Paintbrush,
+  Ruler,
+  ScanLine,
+  Droplet,
+  Building,
+  ClipboardList,
+  Square,
+  Zap,
+  Fence,
+  Flower,
   Snowflake,
   Grid3X3,
   Brush,
   Hammer,
   ArrowUp,
   Shovel,
-  Clipboard
+  Clipboard,
 } from "lucide-react";
 
 export interface Calculator {
@@ -54,7 +54,7 @@ export const calculators: CalculatorCategory[] = [
         name: "Margin Calculator",
         description: "Calculate the selling price for desired profit margin",
         isAvailable: true,
-        path: "/calculators/margin",
+        path: "/resources/cost-calculator/margin",
         category: "pricing",
         icon: <Calculator />,
       },
@@ -63,7 +63,7 @@ export const calculators: CalculatorCategory[] = [
         name: "HVAC Markup Calculator",
         description: "Calculate HVAC part price with markup and sales tax",
         isAvailable: true,
-        path: "/calculators/hvac-markup",
+        path: "/resources/cost-calculator/hvac-markup",
         category: "pricing",
         icon: <Calculator />,
       },
@@ -72,7 +72,7 @@ export const calculators: CalculatorCategory[] = [
         name: "Profit Margin Calculator",
         description: "Calculate profit margin based on revenue and cost",
         isAvailable: true,
-        path: "/calculators/profit-margin",
+        path: "/resources/cost-calculator/profit-margin",
         category: "pricing",
         icon: <Calculator />,
       },
@@ -81,16 +81,17 @@ export const calculators: CalculatorCategory[] = [
         name: "Plumbing Bid Calculator",
         description: "Calculate plumbing bid with labor, materials, and profit",
         isAvailable: true,
-        path: "/calculators/plumbing-bid",
+        path: "/resources/cost-calculator/plumbing-bid",
         category: "pricing",
         icon: <Calculator />,
       },
       {
         id: "electrician-cost-calculator",
         name: "Electrician Cost Calculator",
-        description: "Calculate hourly rates for electricians with overhead and profit",
+        description:
+          "Calculate hourly rates for electricians with overhead and profit",
         isAvailable: true,
-        path: "/calculators/electrician-cost",
+        path: "/resources/cost-calculator/electrician-cost",
         category: "pricing",
         icon: <Zap />,
       },
@@ -99,7 +100,7 @@ export const calculators: CalculatorCategory[] = [
         name: "Landscape Design Cost Calculator",
         description: "Calculate landscape design and installation costs",
         isAvailable: true,
-        path: "/calculators/landscape-design",
+        path: "/resources/cost-calculator/landscape-design",
         category: "pricing",
         icon: <Flower />,
       },
@@ -108,38 +109,41 @@ export const calculators: CalculatorCategory[] = [
         name: "Snow Removal Pricing Calculator",
         description: "Calculate snow removal charges based on snowfall depth",
         isAvailable: true,
-        path: "/calculators/snow-removal",
+        path: "/resources/cost-calculator/snow-removal",
         category: "pricing",
         icon: <Snowflake />,
       },
       {
         id: "custom-woodwork-calculator",
         name: "Custom Woodwork Pricing Calculator",
-        description: "Calculate custom woodworking project costs with materials, labor, and profit",
+        description:
+          "Calculate custom woodworking project costs with materials, labor, and profit",
         isAvailable: true,
-        path: "/calculators/custom-woodwork",
+        path: "/resources/cost-calculator/custom-woodwork",
         category: "pricing",
         icon: <Hammer />,
       },
       {
         id: "elevator-maintenance-calculator",
         name: "Elevator Maintenance Cost Calculator",
-        description: "Calculate annual elevator maintenance costs based on service frequency",
+        description:
+          "Calculate annual elevator maintenance costs based on service frequency",
         isAvailable: true,
-        path: "/calculators/elevator-maintenance",
+        path: "/resources/cost-calculator/elevator-maintenance",
         category: "pricing",
         icon: <ArrowUp />,
       },
       {
         id: "multi-service-job-estimator",
         name: "Multi-Service Job Estimator",
-        description: "Create accurate estimates for multi-service projects with combined costs",
+        description:
+          "Create accurate estimates for multi-service projects with combined costs",
         isAvailable: true,
-        path: "/calculators/multi-service-job-estimator",
+        path: "/resources/cost-calculator/multi-service-job-estimator",
         category: "pricing",
         icon: <Clipboard />,
       },
-    ]
+    ],
   },
   {
     id: "hvac",
@@ -156,7 +160,7 @@ export const calculators: CalculatorCategory[] = [
         category: "hvac",
         icon: <Calculator />,
       },
-    ]
+    ],
   },
   {
     id: "service",
@@ -167,7 +171,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "house-cleaning-calculator",
         name: "House Cleaning Calculator",
-        description: "Estimate house cleaning costs based on square footage and rooms",
+        description:
+          "Estimate house cleaning costs based on square footage and rooms",
         isAvailable: true,
         path: "/calculators/house-cleaning",
         category: "service",
@@ -176,7 +181,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "carpet-cleaning-calculator",
         name: "Carpet Cleaning Calculator",
-        description: "Calculate carpet cleaning costs based on area and services",
+        description:
+          "Calculate carpet cleaning costs based on area and services",
         isAvailable: true,
         path: "/calculators/carpet-cleaning",
         category: "service",
@@ -185,13 +191,14 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "commercial-space-cleaning-calculator",
         name: "Commercial Space Cleaning Calculator",
-        description: "Calculate cleaning costs for commercial facilities and offices",
+        description:
+          "Calculate cleaning costs for commercial facilities and offices",
         isAvailable: true,
         path: "/calculators/commercial-space-cleaning",
         category: "service",
         icon: <Building />,
       },
-    ]
+    ],
   },
   {
     id: "construction",
@@ -202,7 +209,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "drywall-calculator",
         name: "Drywall Materials Calculator",
-        description: "Calculate drywall sheets needed for your project based on dimensions",
+        description:
+          "Calculate drywall sheets needed for your project based on dimensions",
         isAvailable: true,
         path: "/calculators/drywall",
         category: "construction",
@@ -211,7 +219,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "fence-cost-calculator",
         name: "Fence Cost Calculator",
-        description: "Calculate fence costs based on length, materials, and gates",
+        description:
+          "Calculate fence costs based on length, materials, and gates",
         isAvailable: true,
         path: "/calculators/fence-cost",
         category: "construction",
@@ -220,7 +229,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "flooring-estimator-calculator",
         name: "Flooring Estimator Calculator",
-        description: "Calculate flooring costs based on area, materials, labor, and waste factor",
+        description:
+          "Calculate flooring costs based on area, materials, labor, and waste factor",
         isAvailable: true,
         path: "/calculators/flooring-estimator",
         category: "construction",
@@ -229,7 +239,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "construction-cost-calculator",
         name: "Construction Cost Calculator",
-        description: "Estimate construction project costs based on materials and labor",
+        description:
+          "Estimate construction project costs based on materials and labor",
         isAvailable: true,
         path: "/calculators/construction-cost",
         category: "construction",
@@ -238,7 +249,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "renovation-calculator",
         name: "Renovation Calculator",
-        description: "Calculate renovation costs based on materials, labor, and scope",
+        description:
+          "Calculate renovation costs based on materials, labor, and scope",
         isAvailable: true,
         path: "/calculators/renovation",
         category: "construction",
@@ -247,7 +259,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "painting-calculator",
         name: "Painting Calculator",
-        description: "Estimate painting costs based on area, materials, and labor",
+        description:
+          "Estimate painting costs based on area, materials, and labor",
         isAvailable: true,
         path: "/calculators/painting",
         category: "construction",
@@ -256,7 +269,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "roof-square-footage-calculator",
         name: "Roof Square Footage Calculator",
-        description: "Calculate roof square footage based on building dimensions and pitch",
+        description:
+          "Calculate roof square footage based on building dimensions and pitch",
         isAvailable: true,
         path: "/calculators/roof-square-footage",
         category: "construction",
@@ -274,7 +288,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "pipe-water-volume-calculator",
         name: "Pipe Water Volume Calculator",
-        description: "Calculate how much water a pipe can hold based on its dimensions",
+        description:
+          "Calculate how much water a pipe can hold based on its dimensions",
         isAvailable: true,
         path: "/calculators/pipe-water-volume",
         category: "construction",
@@ -283,7 +298,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "paver-calculator",
         name: "Paver Calculator & Price Estimator",
-        description: "Calculate how many pavers you need and estimate material costs",
+        description:
+          "Calculate how many pavers you need and estimate material costs",
         isAvailable: true,
         path: "/calculators/paver",
         category: "construction",
@@ -292,7 +308,8 @@ export const calculators: CalculatorCategory[] = [
       {
         id: "irrigation-system-calculator",
         name: "Irrigation System Material Calculator",
-        description: "Calculate irrigation system material costs for sprinklers, pipes, and valves",
+        description:
+          "Calculate irrigation system material costs for sprinklers, pipes, and valves",
         isAvailable: true,
         path: "/calculators/irrigation-system",
         category: "construction",
@@ -307,6 +324,6 @@ export const calculators: CalculatorCategory[] = [
         category: "construction",
         icon: <Shovel />,
       },
-    ]
-  }
+    ],
+  },
 ];

@@ -175,7 +175,7 @@ export default function HouseCleaningCalculator() {
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => router.push("/resouces/calculators")}
+        onClick={() => router.push("/resources/cost-calculator")}
         className="mb-6 flex items-center gap-1 text-gray-700 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />

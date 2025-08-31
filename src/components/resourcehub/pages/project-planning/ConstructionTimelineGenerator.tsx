@@ -15,7 +15,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../ui/select";
 import { Badge } from "@/components/ui/badge";
 import {
   Calendar,

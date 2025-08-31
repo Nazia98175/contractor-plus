@@ -156,7 +156,7 @@ export const calculators: CalculatorCategory[] = [
         name: "HVAC CFM Calculator",
         description: "Calculate CFM (Cubic Feet per Minute) for HVAC systems",
         isAvailable: true,
-        path: "/resouces/calculators/hvac-cfm",
+        path: "/resources/cost-calculator/hvac-cfm",
         category: "hvac",
         icon: <Calculator />,
       },
@@ -174,7 +174,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Estimate house cleaning costs based on square footage and rooms",
         isAvailable: true,
-        path: "/resouces/calculators/house-cleaning",
+        path: "/resources/cost-calculator/house-cleaning",
         category: "service",
         icon: <Brush />,
       },
@@ -184,7 +184,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate carpet cleaning costs based on area and services",
         isAvailable: true,
-        path: "/resouces/calculators/carpet-cleaning",
+        path: "/resources/cost-calculator/carpet-cleaning",
         category: "service",
         icon: <Calculator />,
       },
@@ -194,7 +194,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate cleaning costs for commercial facilities and offices",
         isAvailable: true,
-        path: "/resouces/calculators/commercial-space-cleaning",
+        path: "/resources/cost-calculator/commercial-space-cleaning",
         category: "service",
         icon: <Building />,
       },
@@ -212,7 +212,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate drywall sheets needed for your project based on dimensions",
         isAvailable: true,
-        path: "/resouces/calculators/drywall",
+        path: "/resources/cost-calculator/drywall",
         category: "construction",
         icon: <Square />,
       },
@@ -222,7 +222,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate fence costs based on length, materials, and gates",
         isAvailable: true,
-        path: "/resouces/calculators/fence-cost",
+        path: "/resources/cost-calculator/fence-cost",
         category: "construction",
         icon: <Fence />,
       },
@@ -232,7 +232,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate flooring costs based on area, materials, labor, and waste factor",
         isAvailable: true,
-        path: "/resouces/calculators/flooring-estimator",
+        path: "/resources/cost-calculator/flooring-estimator",
         category: "construction",
         icon: <Ruler />,
       },
@@ -242,7 +242,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Estimate construction project costs based on materials and labor",
         isAvailable: true,
-        path: "/resouces/calculators/construction-cost",
+        path: "/resources/cost-calculator/construction-cost",
         category: "construction",
         icon: <Calculator />,
       },
@@ -252,7 +252,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate renovation costs based on materials, labor, and scope",
         isAvailable: true,
-        path: "/resouces/calculators/renovation",
+        path: "/resources/cost-calculator/renovation",
         category: "construction",
         icon: <Calculator />,
       },
@@ -262,7 +262,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Estimate painting costs based on area, materials, and labor",
         isAvailable: true,
-        path: "/resouces/calculators/painting",
+        path: "/resources/cost-calculator/painting",
         category: "construction",
         icon: <Paintbrush />,
       },
@@ -272,7 +272,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate roof square footage based on building dimensions and pitch",
         isAvailable: true,
-        path: "/resouces/calculators/roof-square-footage",
+        path: "/resources/cost-calculator/roof-square-footage",
         category: "construction",
         icon: <Ruler />,
       },
@@ -281,7 +281,7 @@ export const calculators: CalculatorCategory[] = [
         name: "Labor Calculator",
         description: "Calculate labor costs based on hours and wage",
         isAvailable: true,
-        path: "/resouces/calculators/labor",
+        path: "/resources/cost-calculator/labor",
         category: "construction",
         icon: <Calculator />,
       },
@@ -291,7 +291,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate how much water a pipe can hold based on its dimensions",
         isAvailable: true,
-        path: "/resouces/calculators/pipe-water-volume",
+        path: "/resources/cost-calculator/pipe-water-volume",
         category: "construction",
         icon: <Droplet />,
       },
@@ -301,7 +301,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate how many pavers you need and estimate material costs",
         isAvailable: true,
-        path: "/resouces/calculators/paver",
+        path: "/resources/cost-calculator/paver",
         category: "construction",
         icon: <Grid3X3 />,
       },
@@ -311,7 +311,7 @@ export const calculators: CalculatorCategory[] = [
         description:
           "Calculate irrigation system material costs for sprinklers, pipes, and valves",
         isAvailable: true,
-        path: "/resouces/calculators/irrigation-system",
+        path: "/resources/cost-calculator/irrigation-system",
         category: "construction",
         icon: <Droplet />,
       },
@@ -320,7 +320,7 @@ export const calculators: CalculatorCategory[] = [
         name: "Excavation Volume and Cost Calculator",
         description: "Calculate excavation volume and cost based on dimensions",
         isAvailable: true,
-        path: "/resouces/calculators/excavation",
+        path: "/resources/cost-calculator/excavation",
         category: "construction",
         icon: <Shovel />,
       },

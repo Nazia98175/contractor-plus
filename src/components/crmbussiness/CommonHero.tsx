@@ -186,26 +186,20 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   <div
                     className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
                   >
-                    {/* <Image
+                    <Image
                       className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
                       src={heroImg?.url}
                       width={900}
                       height={616}
                       alt="crm-hero"
                       priority
-                    /> */}
-                    {/* <Image
-                      className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
-                      src={heroImg?.url}
-                      width={900}
-                      height={616}
-                      alt="crm-hero"
-                    /> */}
+                    />
+                    {/* 
                     <img
                       className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
                       src={heroImg?.url}
                       alt="crm-hero"
-                    />
+                    /> */}
                     {hero?.overlay && <AnimatedShape />}
                   </div>
                 </div>

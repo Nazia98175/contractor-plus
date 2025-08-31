@@ -30,7 +30,7 @@ const ConferenceCard = ({
         <Copy delay={0.1}>
           <button
             className="font-montserrat text-sm leading-[142.857%] font-medium tracking-[0.1px] whitespace-nowrap text-white"
-            onClick={() => router.push(`/events/events-detail/${swiperId}`)}
+            onClick={() => router.push(`/events/all/${swiperId}`)}
           >
             View All
           </button>
@@ -61,9 +61,7 @@ const ConferenceCard = ({
                 </button>
                 <button
                   className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
-                  onClick={() =>
-                    router.push(`/events/events-detail/${swiperId}`)
-                  }
+                  onClick={() => router.push(`/events/all/${swiperId}`)}
                 >
                   View All
                 </button>

@@ -72,9 +72,8 @@ const EventsDirectoryHero = ({ events }: any) => {
           </button>
         )}
         <Swiper
-          slidesPerView={2}
+            slidesPerView={1}
           spaceBetween={30}
-          effect={"fade"}
           navigation={{
             nextEl: `.event-hero-navigation-next`,
             prevEl: `.event-hero-navigation-prev`,

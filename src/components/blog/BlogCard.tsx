@@ -63,11 +63,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
       onClick={onClick}
     >
       <div className={`${styles.imageWrapper}`}>
-        <Image
+        <img
           src={imgSrc}
           alt={title || "blog cover"}
-          width={400}
-          height={240}
           className="h-full max-h-[240px] min-h-[240px] w-full rounded-lg object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[240px]"
         />
       </div>
@@ -121,11 +119,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
       className={`${styles.wrapper} card-shine group relative overflow-hidden`}
     >
       <div className={`${styles.imageWrapper}`}>
-        <Image
+        <img
           src={imgSrc}
           alt={title || "blog cover"}
-          width={400}
-          height={240}
           className="h-full min-h-[240px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[150px]"
         />
       </div>

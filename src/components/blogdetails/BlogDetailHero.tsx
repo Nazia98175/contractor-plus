@@ -46,11 +46,9 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
             {blogData?.blogShortDescription ?? ""}
           </p>
           <div className="text-stonewall flex items-center gap-2.5 rounded-full text-sm font-medium md:text-base">
-            <Image
-              width={24}
-              height={24}
+            <img
               src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/webp/review-profile-7.webp"}`}
-              className="rounded-full"
+              className="min-h-[24px] max-w-[24px] min-w-[24px] rounded-full object-cover"
               alt={`Profile Photo of ${blogData?.authorName}`}
             />
             {blogData?.authorName ?? ""} •{" "}

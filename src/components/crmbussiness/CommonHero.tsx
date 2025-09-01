@@ -194,12 +194,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                       alt="crm-hero"
                       priority
                     />
-                    {/* 
-                    <img
-                      className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
-                      src={heroImg?.url}
-                      alt="crm-hero"
-                    /> */}
+
                     {hero?.overlay && <AnimatedShape />}
                   </div>
                 </div>

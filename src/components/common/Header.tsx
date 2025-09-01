@@ -26,9 +26,15 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const resolvedVariant: "light" | "dark" =    pathname.includes("resources") ||
+  const resolvedVariant: "light" | "dark" =
+    pathname.includes("resources") ||
     pathname.includes("events") ||
-    pathname.includes("resources/free-estimate-templates") || pathname.includes("cookie-policy") || pathname.includes("terms-of-service") || pathname.includes("privacy-policy") || pathname.includes("gdpr") || pathname.includes("accessibility")
+    pathname.includes("resources/free-estimate-templates") ||
+    pathname.includes("cookie-policy") ||
+    pathname.includes("terms-of-service") ||
+    pathname.includes("privacy-policy") ||
+    pathname.includes("gdpr") ||
+    pathname.includes("accessibility")
       ? "light"
       : "dark";
 
@@ -72,10 +78,10 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
           scrolled ? "bg-kuroiBlack shadow-c2" : styles.background
         }`}
       >
-        <div className="main-container flex items-center justify-between py-1.5 lg:gap-3 xl:gap-[54px]">
+        <div className="main-container flex items-center justify-between py-2 lg:gap-3 xl:gap-[54px]">
           <button
             onClick={handleClick}
-            className="w-full max-w-[100px] min-w-24 lg:max-w-[137px]"
+            className="w-full max-w-[130px] min-w-24 lg:max-w-[137px]"
           >
             <LogoIcon />
           </button>
@@ -86,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
             <div className="flex items-center gap-1 xl:gap-3">
               <LanguageSelector />
               <Link
-                className="font-inter text-doctor2 hover:text-romanRed text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300 xl:text-sm"
+                className="font-inter text-doctor2 hover:text-romanRed text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300"
                 href={"tel:(855) 392-8803"}
               >
                 {header?.contact}

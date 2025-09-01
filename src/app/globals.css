@@ -343,7 +343,7 @@ body {
   @apply font-montserrat w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:flex sm:w-fit sm:py-2.5;
 }
 .header-li {
-  @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
+  @apply font-montserrat lg:text-superSilver text-lightBlack text-sm font-semibold 2xl:text-base;
 }
 .integration-detail-bg {
   @apply relative flex h-20 w-20 items-center justify-center rounded-full bg-center p-4 md:h-[108px] md:w-[108px] md:p-[18px];
@@ -2011,4 +2011,7 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.asw-menu-btn .asw-widget-normal {
+  z-index: 99;
 }

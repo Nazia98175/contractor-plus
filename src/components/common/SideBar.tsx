@@ -53,16 +53,13 @@ const DropdownItem = ({
                   <li key={item.href || index}>
                     <Link
                       href={item?.href || "#"}
-                      className="header-li block p-1"
+                      className="header-li block p-0.5"
                       onClick={() => setIsShow(false)}
                     >
                       <div className="flex items-center gap-2">
                         {item.icon && <span>{item.icon}</span>}
                         <span>{item.label}</span>
                       </div>
-                      {item.description && (
-                        <p className="hidden">{item.description}</p>
-                      )}
                     </Link>
                   </li>
                 </div>
@@ -126,13 +123,13 @@ const SideBar = ({
       )}
 
       <div
-        className={`bg-brownish fixed inset-0 z-50 flex h-dvh w-full transform flex-col overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:hidden ${
-          isshow ? "translate-x-0" : "translate-x-full"
+        className={`bg-brownish fixed inset-0 !z-[9999] flex h-dvh w-full transform flex-col overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:hidden ${
+          isshow ? "!z-[9999] translate-x-0" : "!z-[9999] translate-x-full"
         }`}
       >
         <div className="flex grow flex-col overflow-hidden p-2">
-          <div className="bg-lightBlack shadow-c1 mb-2 flex items-center justify-between rounded px-3 py-1.5">
-            <Link className="h-[18px] w-24" href={""}>
+          <div className="bg-lightBlack shadow-c1 mb-2 flex items-center justify-between rounded px-3 py-2">
+            <Link className="h-6 w-[130px]" href={""}>
               <LogoIcon />
             </Link>
             <button onClick={() => setIsShow(false)}>

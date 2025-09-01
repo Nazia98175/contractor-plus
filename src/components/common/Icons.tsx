@@ -6207,3 +6207,20 @@ export const BuildFieldIcon = () => (
     />
   </svg>
 );
+export const NoBlogIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-8 w-8 text-gray-400"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19.5 12c0 3.59-2.91 6.5-6.5 6.5S6.5 15.59 6.5 12 9.41 5.5 13 5.5 19.5 8.41 19.5 12z"
+    />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5" />
+  </svg>
+);

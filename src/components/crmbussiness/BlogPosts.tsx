@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Button from "../common/Button";
 import { blogData } from "../common/Helper";
-import { BlogBtnIcon } from "../common/Icons";
+import { BlogBtnIcon, NoBlogIcon } from "../common/Icons";
 import BlogArticle from "./BlogArticle";
 import SliderLayout from "../common/SliderLayout";
 import { headingVariantMap } from "@/utils/getVariants";
@@ -136,11 +136,15 @@ const BlogPosts: React.FC<Props> = ({
             </div>
           </>
         ) : (
-          <Copy animateOnScroll={true}>
-            <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-10 text-center">
-              <p className="text-sm text-gray-600">No blogs found</p>
+          <div className="flex flex-col items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 p-12 text-center shadow-sm">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+              <NoBlogIcon />
             </div>
-          </Copy>
+            <p className="x text-base font-medium">No blogs found</p>
+            <p className="mt-1 text-sm text-gray-500">
+              Check back later for new content.
+            </p>
+          </div>
         )}
         <div className="block pt-4 md:hidden">
           <button className="bg-red-linear primary-btn h-10 gap-2">

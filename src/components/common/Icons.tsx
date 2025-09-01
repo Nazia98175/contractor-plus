@@ -1122,8 +1122,8 @@ export const TimeIcon = () => (
 );
 export const HamburgerIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 18 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -1138,8 +1138,8 @@ export const HamburgerIcon = () => (
 );
 export const CrossIcon = () => (
   <svg
-    width="22"
-    height="22"
+    width="24"
+    height="24"
     viewBox="0 0 22 22"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

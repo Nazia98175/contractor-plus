@@ -45,7 +45,7 @@ const BackToTop = () => {
     <button
       onClick={scrollTopHandler}
       aria-label="Scroll to top"
-      className={`bg-romanRed scroll-to-top-btn fixed right-[2%] bottom-[2%] z-[20000] flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 sm:h-10 sm:w-10 ${
+      className={`bg-romanRed scroll-to-top-btn back-to-top fixed right-[2%] bottom-[2%] z-[20000] flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 sm:h-10 sm:w-10 ${
         showScrollTop ? "scale-100" : "scale-0"
       }`}
     >

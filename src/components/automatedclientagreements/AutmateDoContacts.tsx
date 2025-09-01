@@ -59,15 +59,12 @@ const AutmateDoContacts: React.FC<Props> = ({ ncc, trackProperties }) => {
         </div>
 
         <div className="flex w-full items-center justify-center md:max-w-[480px]">
-          <Image
+          <img
             src={trackProperties?.featuresList?.[0]?.cardImg?.src}
             alt={
               trackProperties?.featuresList?.[0]?.cardImg?.alt || "Illustration"
             }
-            width={480}
-            height={600}
             className="h-auto w-full object-contain"
-            // sizes="(max-width: 767px) 480px"
           />
         </div>
       </section>

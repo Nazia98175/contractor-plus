@@ -1,9 +1,7 @@
 import { Review } from "@/types";
 import { VARIANT_CLASSES } from "@/utils/getVariants";
-import Image from "next/image";
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
-import ImageProxy from "../common/ImageProxy";
 import { getInitials } from "../common/ReviewCard";
 
 interface ReviewCardProps {
@@ -43,13 +41,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 {review?.profileImg &&
                 typeof review.profileImg === "object" &&
                 "url" in review.profileImg ? (
-                  <Image
+                  <img
                     src={review.profileImg?.url}
                     alt="avatar"
-                    width={42}
-                    height={42}
-                    priority
-                    unoptimized
                     className="h-fit max-w-[42px] rounded-full object-contain"
                   />
                 ) : (
@@ -61,13 +55,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             ) : (
               <div>
                 {review?.profileImg ? (
-                  <Image
+                  <img
                     src={`${review.profileImg}`}
                     alt="avatar"
-                    width={42}
-                    height={42}
-                    priority
-                    unoptimized
                     className="h-fit max-w-[42px] rounded-full object-contain"
                   />
                 ) : (

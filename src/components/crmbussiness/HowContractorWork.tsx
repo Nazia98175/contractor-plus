@@ -25,11 +25,9 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
       <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 pt-7 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-[48px] lg:pb-[54px]">
         {/* Left: Image */}
         <div className="flex w-full max-w-[480px] items-center justify-center">
-          <Image
+          <img
             src={trackProperties?.featuresList?.[1]?.cardImg.url}
             alt="Illustration showing contractor workflow"
-            width={480}
-            height={600}
             className="h-auto w-full object-contain"
           />
         </div>

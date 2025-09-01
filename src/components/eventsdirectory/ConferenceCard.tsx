@@ -111,7 +111,7 @@ const ConferenceCard = ({
               ))
             ) : (
               <SwiperSlide>
-                <p className="text-white">No Event</p>
+                <p className="text-white">No Events</p>
               </SwiperSlide>
             )}
           </Swiper>

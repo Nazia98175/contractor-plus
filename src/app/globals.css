@@ -2012,6 +2012,9 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
-.asw-menu-btn .asw-widget-normal {
-  z-index: 99;
+body.menu-open .asw-menu-btn {
+  display: none !important;
+}
+body.menu-open .back-to-top {
+  display: none !important;
 }

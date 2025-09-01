@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { featureIcons } from "./FeaturesDropdown";
 import { CrossIcon, LogoIcon, SidebarArrowIcon } from "./Icons";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
@@ -89,6 +89,13 @@ const SideBar = ({
       setOpenDropdown(dropdownName);
     }
   };
+  useEffect(() => {
+    if (isshow) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  }, [isshow]);
 
   const menuItemss = header?.headerMain?.map((item: any, index: number) => {
     const items =

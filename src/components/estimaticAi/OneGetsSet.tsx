@@ -76,7 +76,7 @@ const OneGetsSet = () => {
             height={420}
             src="/images/webp/redone-estimatic.webp"
             alt="Other AI estimating software"
-            className="z-0 object-cover xl:-mt-1"
+            className="z-0 mx-auto object-cover xl:-mt-1"
           />
         </div>
       </div>

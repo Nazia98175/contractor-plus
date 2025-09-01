@@ -62,9 +62,7 @@ const CrmReviewCard: React.FC<Props> = ({
             {review?.profileImg &&
             typeof review.profileImg === "object" &&
             "url" in review.profileImg ? (
-              <Image
-                width={90}
-                height={90}
+              <img
                 src={review.profileImg?.url}
                 alt="User"
                 className="max-w-[90px] min-w-[90px] rounded"
@@ -89,9 +87,7 @@ const CrmReviewCard: React.FC<Props> = ({
         ) : (
           <div className="relative w-fit">
             {review?.profileImg ? (
-              <Image
-                width={90}
-                height={90}
+              <img
                 src={`${review.profileImg}`}
                 alt="User"
                 className="max-w-[90px] min-w-[90px] rounded"

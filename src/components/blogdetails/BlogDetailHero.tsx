@@ -45,7 +45,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
           <p className="text-stonewall text-sm font-medium capitalize sm:max-w-[80%] md:text-base">
             {blogData?.blogShortDescription ?? ""}
           </p>
-          <div className="text-stonewall flex items-center gap-2.5 text-sm font-medium md:text-base">
+          <div className="text-stonewall flex items-center gap-2.5 rounded-full text-sm font-medium md:text-base">
             <Image
               width={24}
               height={24}

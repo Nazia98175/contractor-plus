@@ -183,13 +183,12 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
                   {pageContent?.hero?.userName}
                 </h3>
                 <div className="hidden items-center gap-2 text-xs tracking-normal text-white sm:flex sm:text-sm">
-                  <span className="font-myriad opacity-[32%]">
+                  {/* <span className="font-myriad opacity-[32%]">
                     {pageContent?.hero?.switchFrom}
-                  </span>
+                  </span> */}
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold">→</span>
                     <span className="max-w-20">
-                      {" "}
                       <LogoIcon />
                     </span>
                   </div>

@@ -79,18 +79,18 @@ const BlogPosts: React.FC<Props> = ({
                 ))}
               </div>
 
-              <div className="card-shine relative flex w-full cursor-pointer flex-col justify-end overflow-hidden rounded-xl pb-3 sm:pb-6 xl:max-w-[700px]">
+              <div className="card-shine relative flex min-h-[366px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-xl pb-3 sm:pb-6 xl:max-w-[700px]">
                 {data[0]?.blogImg ? (
                   <img
                     src={`${data[0]?.blogImg[0]?.url}`}
                     alt="Featured Blog"
-                    className="absolute top-0 h-full max-h-[300px] w-full rounded-xl object-cover brightness-50"
+                    className="absolute top-0 h-full w-full rounded-xl object-cover brightness-50"
                   />
                 ) : (
                   <img
                     src="/images/webp/blog-right-side.webp"
                     alt="Featured Blog"
-                    className="absolute top-0 h-full max-h-[300px] w-full rounded-xl object-cover"
+                    className="absolute top-0 h-full w-full rounded-xl object-cover"
                   />
                 )}
                 <div className="relative z-10 px-3 pt-20 xl:px-6">

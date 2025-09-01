@@ -34,7 +34,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Paint Needed</span>
+            <span className="text-aliceBlue">Paint Needed</span>
             <span className="font-medium text-gray-700">
               {result.gallonsNeeded.toLocaleString()}{" "}
               {result.gallonsNeeded === 1 ? "gallon" : "gallons"}
@@ -42,7 +42,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Paint Cost</span>
+            <span className="text-aliceBlue">Paint Cost</span>
             <span className="font-medium text-gray-700">
               $
               {result.paintCost.toLocaleString("en-US", {
@@ -53,7 +53,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Labor Hours</span>
+            <span className="text-aliceBlue">Labor Hours</span>
             <span className="font-medium text-gray-700">
               {result.laborHours.toLocaleString("en-US", {
                 minimumFractionDigits: 1,
@@ -64,7 +64,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Labor Cost</span>
+            <span className="text-aliceBlue">Labor Cost</span>
             <span className="font-medium text-gray-700">
               $
               {result.laborCost.toLocaleString("en-US", {

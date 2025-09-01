@@ -106,7 +106,7 @@ export default function HvacCfmCalculator() {
             HVAC CFM Calculator
           </h1>
         </div>
-        <p className="text-muted-foreground max-w-3xl">
+        <p className="text-aliceBlue max-w-3xl">
           Calculate the required Cubic Feet per Minute (CFM) for proper
           ventilation in any room based on room dimensions and air change
           requirements.
@@ -126,7 +126,7 @@ export default function HvacCfmCalculator() {
           )}
           {!calculationResult && (
             <div className="bg-muted/30 mb-6 rounded-lg border p-6 text-center">
-              <p className="text-muted-foreground">
+              <p className="text-aliceBlue">
                 Enter room dimensions and air change requirements to calculate
                 needed CFM
               </p>

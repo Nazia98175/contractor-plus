@@ -90,11 +90,11 @@ export function PodcastScroller() {
                   </span>
                 </div>
                 <CardTitle className="line-clamp-2">{podcast.title}</CardTitle>
-                <div className="text-muted-foreground mt-2 flex items-center text-sm">
+                <div className="text-aliceBlue mt-2 flex items-center text-sm">
                   <Clock className="mr-1 h-4 w-4" />
                   {podcast.duration}
                 </div>
-                <div className="text-muted-foreground mt-2 line-clamp-2 text-sm">
+                <div className="text-aliceBlue mt-2 line-clamp-2 text-sm">
                   {podcast.description}
                 </div>
               </CardHeader>

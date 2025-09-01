@@ -28,7 +28,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
               maximumFractionDigits: 0,
             })}
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-aliceBlue text-sm">
             Total Annual Maintenance Contract
           </p>
         </div>
@@ -39,23 +39,21 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Elevators</span>
+            <span className="text-aliceBlue">Elevators</span>
             <span className="font-medium text-gray-700">
               {result.numberOfElevators}
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">
-              Service Visits per Year
-            </span>
+            <span className="text-aliceBlue">Service Visits per Year</span>
             <span className="font-medium text-gray-700">
               {result.serviceVisitsPerYear}
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Cost per Visit</span>
+            <span className="text-aliceBlue">Cost per Visit</span>
             <span className="font-medium text-gray-700">
               $
               {result.costPerVisit.toLocaleString("en-US", {
@@ -67,9 +65,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           {result.additionalAnnualCost > 0 && (
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">
-                Additional Annual Cost
-              </span>
+              <span className="text-aliceBlue">Additional Annual Cost</span>
               <span className="font-medium text-gray-700">
                 $
                 {result.additionalAnnualCost.toLocaleString("en-US", {

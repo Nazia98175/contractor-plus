@@ -68,7 +68,7 @@ export function SignupForm() {
     <div className="bg-card w-full max-w-md space-y-6 rounded-lg border p-6 shadow-sm">
       <div className="space-y-2 text-center">
         <h1 className="text-2xl font-bold">Create a free account</h1>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-aliceBlue text-sm">
           Sign up to get unlimited searches and save your material lists
         </p>
       </div>
@@ -146,7 +146,7 @@ export function SignupForm() {
 
       <div className="flex items-center gap-2 py-2">
         <Separator className="flex-grow" />
-        <span className="text-muted-foreground text-xs">OR</span>
+        <span className="text-aliceBlue text-xs">OR</span>
         <Separator className="flex-grow" />
       </div>
 

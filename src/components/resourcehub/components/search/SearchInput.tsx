@@ -23,7 +23,7 @@ export function SearchInput({ control }: SearchInputProps) {
                 {...field}
               />
             </FormControl>
-            <Search className="text-muted-foreground absolute top-2.5 left-3 h-5 w-5" />
+            <Search className="text-aliceBlue absolute top-2.5 left-3 h-5 w-5" />
           </div>
           <FormMessage />
         </FormItem>

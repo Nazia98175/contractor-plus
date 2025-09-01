@@ -41,7 +41,7 @@ export function PageHeader() {
       <h1 className="mb-2 text-3xl font-bold tracking-tight">
         Renovation Cost Calculator
       </h1>
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Estimate the cost of your renovation project based on the size of the
         area, cost per square foot, and a contingency budget for unexpected
         expenses.

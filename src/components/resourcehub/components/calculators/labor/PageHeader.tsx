@@ -52,7 +52,7 @@ export function PageHeader() {
         <h1 className="mb-3 text-3xl font-bold tracking-tight">
           Labor Calculator
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Calculate labor costs and recommended client charges. Account for crew
           size, hourly rates, labor burden, and markup for accurate job pricing.
         </p>

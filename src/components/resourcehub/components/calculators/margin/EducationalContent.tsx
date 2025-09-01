@@ -2,7 +2,7 @@ export function EducationalContent() {
   return (
     <div className="prose mt-16 max-w-none">
       <h2 className="mb-4 text-2xl font-bold">Profit Margin Pricing Guide</h2>
-      <p className="text-muted-foreground mb-8">
+      <p className="text-aliceBlue mb-8">
         Understanding profit margins is crucial for running a successful
         contracting business. This guide will explain how to use margins
         effectively.
@@ -18,7 +18,7 @@ export function EducationalContent() {
           </p>
           <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
             <p className="mb-1 font-medium">Margin Formula</p>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Margin = (Price - Cost) / Price × 100%
             </p>
           </div>
@@ -35,7 +35,7 @@ export function EducationalContent() {
           </p>
           <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
             <p className="mb-1 font-medium">Markup Formula</p>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Markup = (Price - Cost) / Cost × 100%
             </p>
           </div>
@@ -48,7 +48,7 @@ export function EducationalContent() {
           <h4 className="mb-2 text-lg font-medium">
             What's an ideal profit margin for contractors?
           </h4>
-          <p className="text-muted-foreground">
+          <p className="text-aliceBlue">
             Most successful contractors aim for margins between 20-40%,
             depending on their specialty, local competition, and overhead costs.
           </p>
@@ -58,7 +58,7 @@ export function EducationalContent() {
           <h4 className="mb-2 text-lg font-medium">
             Why is the difference between margin and markup important?
           </h4>
-          <p className="text-muted-foreground">
+          <p className="text-aliceBlue">
             Confusing margin with markup can lead to underpricing. For example,
             a 20% margin is equivalent to a 25% markup, which means you could be
             pricing jobs lower than intended.
@@ -69,7 +69,7 @@ export function EducationalContent() {
           <h4 className="mb-2 text-lg font-medium">
             How can I increase my profit margin?
           </h4>
-          <p className="text-muted-foreground">
+          <p className="text-aliceBlue">
             Focus on efficiency, reduce waste, negotiate better supplier rates,
             and regularly review your pricing strategy. Specializing in
             higher-value services can also command better margins.

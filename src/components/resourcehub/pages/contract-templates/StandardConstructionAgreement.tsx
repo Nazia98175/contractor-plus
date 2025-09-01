@@ -167,7 +167,7 @@ Date: ${formData.date}`;
         <h1 className="mb-2 text-3xl font-bold md:text-4xl">
           Standard Construction Agreement (Fixed Price)
         </h1>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-aliceBlue text-lg">
           Create a professional fixed-price construction contract with clear
           terms and payment schedule.
         </p>
@@ -520,7 +520,7 @@ Date: ${formData.date}`;
                   </ul>
                 </div>
 
-                <div className="text-muted-foreground mt-4 text-xs">
+                <div className="text-aliceBlue mt-4 text-xs">
                   ... (Additional contract sections will appear in the full
                   document)
                 </div>

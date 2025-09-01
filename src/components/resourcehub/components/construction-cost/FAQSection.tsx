@@ -2,7 +2,7 @@ import React from "react";
 
 import { HelpCircle } from "lucide-react";
 import { getPermitCostText, formatLocationName } from "@/data/faq-data";
-import { ProjectDetail } from "@/types/projectDetail";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import {
   Accordion,
@@ -57,7 +57,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
               <AccordionTrigger className="text-left hover:no-underline">
                 {processText(faq.question)}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-aliceBlue">
                 {processText(faq.answer)}
               </AccordionContent>
             </AccordionItem>

@@ -56,7 +56,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate accurate roof square footage based on building dimensions and
         pitch to determine material requirements for your roofing projects.
       </p>

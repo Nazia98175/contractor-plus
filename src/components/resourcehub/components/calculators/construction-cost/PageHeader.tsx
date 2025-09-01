@@ -52,7 +52,7 @@ export function PageHeader() {
         <h1 className="mb-3 text-3xl font-bold tracking-tight">
           Construction Cost Estimator
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Get quick estimates for construction projects based on square footage.
           Perfect for contractors and project managers planning budgets.
         </p>

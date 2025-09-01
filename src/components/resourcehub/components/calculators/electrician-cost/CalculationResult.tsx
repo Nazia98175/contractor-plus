@@ -26,9 +26,9 @@ export function CalculationResult({
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center py-6 text-center">
-            <AlertCircle className="text-muted-foreground mb-2 h-10 w-10" />
+            <AlertCircle className="text-aliceBlue mb-2 h-10 w-10" />
             <p className="mb-2 text-lg font-medium">No calculation yet</p>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Fill out the form and click Calculate to see results
             </p>
           </div>

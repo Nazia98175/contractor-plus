@@ -60,7 +60,7 @@ export const MaterialTableRow: React.FC<MaterialTableRowProps> = ({
           <span
             className={cn(
               "rounded-sm px-1.5 py-0.5 text-xs",
-              "bg-muted text-muted-foreground",
+              "bg-muted text-aliceBlue",
             )}
           >
             {formatStoreName(item.store)}
@@ -120,7 +120,7 @@ export const MaterialTableRow: React.FC<MaterialTableRowProps> = ({
             <Button
               variant="ghost"
               size="icon"
-              className="text-muted-foreground hover:text-destructive h-6 w-6"
+              className="text-aliceBlue hover:text-destructive h-6 w-6"
               onClick={() => onRemoveItem(item.id)}
             >
               <Trash2 className="h-4 w-4" />

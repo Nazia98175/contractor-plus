@@ -88,7 +88,7 @@ export default function RoofSquareFootageCalculator() {
                 <h3 className="mb-2 text-lg font-medium text-gray-700">
                   Enter roof details to calculate square footage
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-aliceBlue mb-4">
                   Complete the form on the left and click "Calculate Roof Area"
                   to see your roof area estimation here.
                 </p>

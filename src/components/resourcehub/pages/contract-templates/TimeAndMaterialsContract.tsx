@@ -239,7 +239,7 @@ Witness: ___________________________ Date: ___________
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             Time and Materials Contract
           </h1>
-          <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
+          <p className="text-aliceBlue mx-auto max-w-3xl text-xl">
             Professional contract template for flexible construction projects
             with hourly billing and material costs. Perfect for renovation,
             repair, and variable-scope projects.
@@ -753,7 +753,7 @@ Witness: ___________________________ Date: ___________
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <h4 className="font-semibold">When to Use This Contract:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Projects with uncertain scope or duration</li>
                   <li>Renovation and repair work</li>
                   <li>Emergency or urgent projects</li>
@@ -762,7 +762,7 @@ Witness: ___________________________ Date: ___________
                 </ul>
 
                 <h4 className="font-semibold">Key Features:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Hourly labor billing with defined rates</li>
                   <li>Material costs plus markup structure</li>
                   <li>Not-to-exceed clauses for budget protection</li>
@@ -772,7 +772,7 @@ Witness: ___________________________ Date: ___________
                 </ul>
 
                 <h4 className="font-semibold">Best Practices:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Set clear maximum budget limits when possible</li>
                   <li>Define detailed scope even if flexible</li>
                   <li>Establish regular communication schedules</li>
@@ -790,7 +790,7 @@ Witness: ___________________________ Date: ___________
         <h2 className="mb-4 text-2xl font-bold">
           Time and Materials Contract Template Guide
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           A time and materials contract is ideal for construction projects where
           the exact scope or duration is uncertain. This flexible contract
           structure allows billing based on actual time worked and materials
@@ -802,7 +802,7 @@ Witness: ___________________________ Date: ___________
             <h3 className="mb-3 text-xl font-semibold">
               Advantages for Contractors
             </h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Fair compensation for all work performed</li>
               <li>Flexibility to adapt to project changes</li>
               <li>Protection from cost overruns on materials</li>
@@ -815,7 +815,7 @@ Witness: ___________________________ Date: ___________
             <h3 className="mb-3 text-xl font-semibold">
               Protection for Clients
             </h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Transparency in all charges and expenses</li>
               <li>Not-to-exceed clauses for budget control</li>
               <li>Detailed documentation of all work</li>
@@ -826,7 +826,7 @@ Witness: ___________________________ Date: ___________
         </div>
 
         <h3 className="mb-3 text-xl font-semibold">Important Considerations</h3>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-aliceBlue mb-4">
           Time and materials contracts require more administrative oversight
           than fixed-price contracts. Both parties should establish clear
           procedures for tracking time, approving material purchases, and
@@ -835,7 +835,7 @@ Witness: ___________________________ Date: ___________
         </p>
 
         <div className="rounded border-l-4 border-yellow-500 bg-yellow-50 p-4">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-aliceBlue text-sm">
             <strong>Disclaimer:</strong> This template is provided for
             informational purposes and should not be considered legal advice.
             For complex projects or specific legal situations, consult with a

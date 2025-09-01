@@ -9,7 +9,7 @@ export function EducationalContent() {
         <h2 className="mb-4 text-2xl font-semibold">
           Guide to Planning an Irrigation System
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           Understanding the basics of irrigation systems can help you plan more
           effectively and budget accurately.
         </p>

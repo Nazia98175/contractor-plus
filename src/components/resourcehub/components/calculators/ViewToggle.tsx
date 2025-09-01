@@ -9,7 +9,7 @@ interface ViewToggleProps {
 export function ViewToggle({ viewMode, onViewChange }: ViewToggleProps) {
   return (
     <div className="flex items-center space-x-2">
-      <span className="text-muted-foreground mr-2 text-sm">View:</span>
+      <span className="text-aliceBlue mr-2 text-sm">View:</span>
       <Button
         variant={viewMode === "categories" ? "default" : "outline"}
         size="sm"

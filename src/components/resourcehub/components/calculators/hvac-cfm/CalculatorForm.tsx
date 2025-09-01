@@ -91,7 +91,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -134,7 +134,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -177,7 +177,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -220,7 +220,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -247,7 +247,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
             {/* Unit Toggle */}
             <div className="mt-6 flex items-center justify-between border-t pt-4">
-              <div className="text-muted-foreground text-sm">
+              <div className="text-aliceBlue text-sm">
                 {isMetric
                   ? "Using metric units (meters)"
                   : "Using imperial units (feet)"}

@@ -395,7 +395,7 @@ export default function ConstructionCashFlowForecaster() {
         <h1 className="mb-4 text-4xl font-bold">
           Construction Cash Flow Forecasting Tool
         </h1>
-        <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
+        <p className="text-aliceBlue mx-auto max-w-3xl text-lg">
           Plan and visualize your construction project's cash flow. Track
           payments versus expenses by phase, identify cash gaps, and create
           professional payment schedules.
@@ -629,7 +629,7 @@ export default function ConstructionCashFlowForecaster() {
             </CardHeader>
             <CardContent>
               {!showChart ? (
-                <div className="text-muted-foreground py-8 text-center">
+                <div className="text-aliceBlue py-8 text-center">
                   <DollarSign className="mx-auto mb-4 h-12 w-12 opacity-50" />
                   <p>Generate forecast to see cash flow summary</p>
                 </div>
@@ -775,7 +775,7 @@ export default function ConstructionCashFlowForecaster() {
             <h2 className="mb-4 text-3xl font-bold">
               Master Construction Financial Management
             </h2>
-            <p className="text-muted-foreground mx-auto mb-6 max-w-3xl text-lg">
+            <p className="text-aliceBlue mx-auto mb-6 max-w-3xl text-lg">
               Take control of your construction projects with Contractor+. Our
               comprehensive platform combines cash flow management, project
               scheduling, and client relationship tools.
@@ -786,7 +786,7 @@ export default function ConstructionCashFlowForecaster() {
                   <BarChart3 className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Financial Planning</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Advanced cash flow forecasting and budget management
                 </p>
               </div>
@@ -795,7 +795,7 @@ export default function ConstructionCashFlowForecaster() {
                   <Users className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Project Collaboration</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Seamless team coordination and client communication
                 </p>
               </div>
@@ -804,7 +804,7 @@ export default function ConstructionCashFlowForecaster() {
                   <Calendar className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Complete Integration</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   All-in-one platform for modern contractors
                 </p>
               </div>
@@ -841,7 +841,7 @@ export default function ConstructionCashFlowForecaster() {
                   <span className="text-primary text-lg font-bold">1</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Setup Project</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Enter project details, contract value, and timeline
                 </p>
               </CardContent>
@@ -853,7 +853,7 @@ export default function ConstructionCashFlowForecaster() {
                   <span className="text-primary text-lg font-bold">2</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Add Cash Flow Items</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Input payments and expenses by construction phase
                 </p>
               </CardContent>
@@ -865,7 +865,7 @@ export default function ConstructionCashFlowForecaster() {
                   <span className="text-primary text-lg font-bold">3</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Analyze Forecast</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Review charts to identify cash gaps and opportunities
                 </p>
               </CardContent>
@@ -877,7 +877,7 @@ export default function ConstructionCashFlowForecaster() {
                   <span className="text-primary text-lg font-bold">4</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Export & Share</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Download professional reports for clients and lenders
                 </p>
               </CardContent>
@@ -984,14 +984,14 @@ export default function ConstructionCashFlowForecaster() {
             <div className="grid gap-6 text-center md:grid-cols-3">
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">82%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   of construction business failures are due to poor cash flow
                   management
                 </p>
               </div>
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">45</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   days average payment delay in construction industry
                 </p>
               </div>
@@ -999,7 +999,7 @@ export default function ConstructionCashFlowForecaster() {
                 <div className="text-primary mb-2 text-2xl font-bold">
                   15-25%
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   typical cash flow variation range in construction projects
                 </p>
               </div>

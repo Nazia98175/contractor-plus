@@ -51,9 +51,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-2 text-sm">
           <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">
-              Base construction cost
-            </span>
+            <span className="text-aliceBlue">Base construction cost</span>
             <span className="font-medium text-gray-700">
               $
               {result.baseCost.toLocaleString("en-US", {
@@ -64,7 +62,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
           {result.hasContingency && (
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">
+              <span className="text-aliceBlue">
                 Contingency/overhead amount
               </span>
               <span className="font-medium text-gray-700">

@@ -42,7 +42,7 @@ const DataVisualizer = ({
           variant="ghost"
           size="sm"
           onClick={toggleChartVisibility}
-          className="text-muted-foreground hover:text-foreground flex items-center gap-1"
+          className="text-aliceBlue hover:text-foreground flex items-center gap-1"
         >
           {isChartVisible ? (
             <>

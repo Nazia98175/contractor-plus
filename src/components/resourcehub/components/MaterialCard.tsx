@@ -66,7 +66,7 @@ export const MaterialCard = ({
             </>
           ) : (
             <div className="bg-muted/10 absolute inset-0 flex items-center justify-center">
-              <ShoppingCart className="text-muted-foreground h-12 w-12 opacity-20" />
+              <ShoppingCart className="text-aliceBlue h-12 w-12 opacity-20" />
             </div>
           )}
         </AspectRatio>
@@ -88,9 +88,7 @@ export const MaterialCard = ({
       {/* Product details section */}
       <CardContent className="flex flex-grow flex-col p-4 pb-0">
         <div className="flex items-center justify-between">
-          <span className="text-muted-foreground text-xs font-medium">
-            {store}
-          </span>
+          <span className="text-aliceBlue text-xs font-medium">{store}</span>
         </div>
 
         <h3

@@ -14,7 +14,7 @@ export function CalculationResult({
   if (!calculationResult) {
     return (
       <div className="py-6 text-center">
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Enter values and calculate to see results
         </p>
       </div>
@@ -33,14 +33,14 @@ export function CalculationResult({
 
       {/* Price */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">Required Selling Price</p>
+        <p className="text-aliceBlue text-sm">Required Selling Price</p>
         <p className="text-3xl font-bold text-red-500">
           $
           {calculationResult.price >= Number.MAX_SAFE_INTEGER
             ? "∞"
             : calculationResult.price.toFixed(2)}
         </p>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-aliceBlue text-sm">
           To achieve {margin}% profit margin
         </p>
       </div>
@@ -49,7 +49,7 @@ export function CalculationResult({
 
       {/* Profit */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">Profit at this Price</p>
+        <p className="text-aliceBlue text-sm">Profit at this Price</p>
         <p className="text-2xl font-semibold text-green-600">
           $
           {calculationResult.profit >= Number.MAX_SAFE_INTEGER
@@ -87,7 +87,7 @@ export function ResultsPanel({
           <h3 className="mb-2 text-lg font-semibold">
             Ready to grow your business?
           </h3>
-          <p className="text-muted-foreground mb-4 text-sm">
+          <p className="text-aliceBlue mb-4 text-sm">
             Get more features with Contractor Plus - your all-in-one solution
             for construction business management
           </p>

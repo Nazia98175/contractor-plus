@@ -145,7 +145,7 @@ const ForecastChart = ({
             <span className="font-mono">${data.rate.toFixed(2)}</span>
           </p>
           {data.predicted && (
-            <p className="text-muted-foreground mt-1 text-xs italic">
+            <p className="text-aliceBlue mt-1 text-xs italic">
               Predicted value
             </p>
           )}
@@ -172,7 +172,7 @@ const ForecastChart = ({
             <div className="max-w-lg space-y-4 text-center">
               <TrendingUp className="text-primary/70 mx-auto h-10 w-10" />
               <h3 className="text-xl font-medium">Predict Labor Rates</h3>
-              <p className="text-muted-foreground">
+              <p className="text-aliceBlue">
                 Forecast labor rates for {getIndustryName()} over the next 5
                 years based on historical data and economic indicators.
               </p>
@@ -299,7 +299,7 @@ const ForecastChart = ({
                 </AreaChart>
               </ResponsiveContainer>
             </div>
-            <p className="text-muted-foreground text-center text-xs italic">
+            <p className="text-aliceBlue text-center text-xs italic">
               {summary}
               {/* Forecasted rates are based on historical trends, economic
               indicators, and statistical modeling. Actual results may vary

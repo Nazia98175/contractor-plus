@@ -59,9 +59,7 @@ const FilterCTAs = () => {
       {/* Pricing Index Updates CTA */}
       <Card className="border-blue-100 bg-blue-50/60 p-4">
         <h3 className="mb-1 text-sm font-medium">Pricing Index Updates</h3>
-        <p className="text-muted-foreground mb-3 text-xs">
-          Want updated weekly?
-        </p>
+        <p className="text-aliceBlue mb-3 text-xs">Want updated weekly?</p>
 
         <Dialog>
           <DialogTrigger asChild>

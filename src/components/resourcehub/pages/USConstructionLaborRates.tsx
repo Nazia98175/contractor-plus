@@ -273,7 +273,7 @@ const USConstructionLaborRates = () => {
         <h1 className="mb-2 text-3xl font-bold md:text-4xl">
           US Construction Labor Rates
         </h1>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-aliceBlue text-lg">
           Track trends in construction labor costs across different sectors and
           regions in the United States.
         </p>
@@ -296,11 +296,11 @@ const USConstructionLaborRates = () => {
           {!hasAppliedFilters ? (
             <div
               className={cn(
-                "text-muted-foreground animate-slide-up flex min-h-[300px] w-full flex-col items-center justify-center rounded-lg border bg-white/70 text-xl shadow",
+                "text-aliceBlue animate-slide-up flex min-h-[300px] w-full flex-col items-center justify-center rounded-lg border bg-white/70 text-xl shadow",
               )}
             >
               <span className="mb-2 font-medium">Define your criteria</span>
-              <span className="text-muted-foreground text-base">
+              <span className="text-aliceBlue text-base">
                 Select industry, location, and time period above and click{" "}
                 <span className="bg-muted inline-block rounded px-2 py-1 font-semibold">
                   Apply Filters

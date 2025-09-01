@@ -7,7 +7,7 @@ export function EducationalContent() {
         <h2 className="mb-4 text-2xl font-bold">
           Understanding Profit Margins
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           Profit margin is a crucial metric for contractors and construction
           businesses to track the profitability of their projects and services.
         </p>

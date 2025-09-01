@@ -56,7 +56,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
                 <h4 className="text-sm font-medium">
                   Create a free Contractor+ account
                 </h4>
-                <p className="text-muted-foreground text-xs">
+                <p className="text-aliceBlue text-xs">
                   Sign up in seconds for increased limits
                 </p>
                 <Button
@@ -79,7 +79,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
                 <h4 className="text-sm font-medium">
                   Save and export material lists
                 </h4>
-                <p className="text-muted-foreground text-xs">
+                <p className="text-aliceBlue text-xs">
                   Save lists or export in various formats
                 </p>
                 <Button
@@ -100,7 +100,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
                 <h4 className="text-sm font-medium">
                   Get unlimited searches with PRO
                 </h4>
-                <p className="text-muted-foreground text-xs">
+                <p className="text-aliceBlue text-xs">
                   Upgrade for full access and features
                 </p>
                 <Button

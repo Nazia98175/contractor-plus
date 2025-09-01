@@ -74,27 +74,25 @@ export function CalculationResult({
         <div className="space-y-2 text-sm">
           <h4 className="font-medium text-gray-700">Calculation Breakdown</h4>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Sheet Area</span>
+            <span className="text-aliceBlue">Sheet Area</span>
             <span className="font-medium">
               {sheetArea.toFixed(2)} sq ft/sheet
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">
-              Effective Area (with waste)
-            </span>
+            <span className="text-aliceBlue">Effective Area (with waste)</span>
             <span className="font-medium">
               {effectiveArea.toFixed(2)} sq ft
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Raw Sheet Count</span>
+            <span className="text-aliceBlue">Raw Sheet Count</span>
             <span className="font-medium">
               {(effectiveArea / sheetArea).toFixed(2)} sheets
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">
+            <span className="text-aliceBlue">
               Final Sheet Count (rounded up)
             </span>
             <span className="font-medium">{sheetsNeeded} sheets</span>

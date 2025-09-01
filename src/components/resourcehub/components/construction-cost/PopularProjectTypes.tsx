@@ -460,7 +460,7 @@ export const PopularProjectTypes: React.FC<PopularProjectTypesProps> = ({
           <TrendingUp className="h-5 w-5" />
           Popular Project Types in {cityName}
         </CardTitle>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-aliceBlue text-sm">
           Explore other popular construction and renovation projects in{" "}
           {cityName}. Get instant cost estimates for these commonly requested
           services.
@@ -505,7 +505,7 @@ export const PopularProjectTypes: React.FC<PopularProjectTypesProps> = ({
 
         {/* Additional CTA */}
         <div className="border-border mt-6 border-t pt-4">
-          <p className="text-muted-foreground text-center text-sm">
+          <p className="text-aliceBlue text-center text-sm">
             Need help with a different project in {cityName}?{" "}
             <Link
               href="/resources/construction-costs"

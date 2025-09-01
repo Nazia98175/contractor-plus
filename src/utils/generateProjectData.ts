@@ -1,4 +1,4 @@
-import { ProjectDetail } from "@/types/projectDetail";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 
 interface Material {
   name: string;
@@ -31,7 +31,7 @@ interface ProjectData {
 export const generateProjectData = (
   slug: string,
   projectValues?: ProjectDetail,
-  location: string = "your location"
+  location: string = "your location",
 ): ProjectData | null => {
   if (!projectValues || !projectValues.estimate) return null;
 

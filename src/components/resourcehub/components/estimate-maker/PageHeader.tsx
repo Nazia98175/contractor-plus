@@ -38,7 +38,7 @@ export function PageHeader() {
           <h1 className="text-3xl font-bold tracking-tight">
             Free Estimate Templates
           </h1>
-          <p className="text-muted-foreground max-w-3xl">
+          <p className="text-aliceBlue max-w-3xl">
             Use our professional estimate templates to create customized
             estimates for any project. Add line items, adjust quantities and
             rates, and export to PDF for free.

@@ -23,13 +23,13 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Excavation volume is calculated by multiplying the length, width,
               and depth of the area to be excavated. The result is initially in
               cubic feet, which is then converted to cubic yards (the industry
               standard for pricing).
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               <span className="font-semibold">Conversion Formula:</span> 1 cubic
               yard = 27 cubic feet
             </p>
@@ -44,11 +44,11 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Excavation costs vary based on soil type, accessibility, and
               disposal requirements. The cost per cubic yard typically includes:
             </p>
-            <ul className="text-muted-foreground ml-5 list-disc space-y-2">
+            <ul className="text-aliceBlue ml-5 list-disc space-y-2">
               <li>Labor for excavation work</li>
               <li>Equipment usage (excavators, backhoes, etc.)</li>
               <li>Material hauling and disposal</li>
@@ -65,10 +65,10 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               When planning excavation work, consider these important factors:
             </p>
-            <ul className="text-muted-foreground ml-5 list-disc space-y-2">
+            <ul className="text-aliceBlue ml-5 list-disc space-y-2">
               <li>
                 <span className="font-semibold">Soil Swell:</span> Excavated
                 soil expands in volume by 10-40% depending on soil type
@@ -94,10 +94,10 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               For accurate excavation estimates, keep in mind:
             </p>
-            <ul className="text-muted-foreground ml-5 list-disc space-y-2">
+            <ul className="text-aliceBlue ml-5 list-disc space-y-2">
               <li>Always check for underground utilities before excavating</li>
               <li>Account for proper sloping on deep excavations for safety</li>
               <li>Consider groundwater management needs in your costs</li>
@@ -112,7 +112,7 @@ export function EducationalContent() {
         <h3 className="mb-3 text-xl font-semibold">
           Estimate digs with confidence
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Contractor+ helps excavation contractors quickly calculate volumes and
           costs, so you can bid jobs accurately. Move the earth without moving
           your budget – use Contractor+ to manage estimates, equipment

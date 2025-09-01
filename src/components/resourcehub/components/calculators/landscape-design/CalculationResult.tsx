@@ -34,14 +34,14 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
-              <p className="text-muted-foreground text-sm">Installation Cost</p>
+              <p className="text-aliceBlue text-sm">Installation Cost</p>
               <p className="text-lg font-medium">
                 {formatCurrency(result.installationCost)}
               </p>
             </div>
             {result.designFee > 0 && (
               <div className="space-y-1">
-                <p className="text-muted-foreground text-sm">Design Fee</p>
+                <p className="text-aliceBlue text-sm">Design Fee</p>
                 <p className="text-lg font-medium">
                   {formatCurrency(result.designFee)}
                 </p>
@@ -49,9 +49,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             )}
             {result.additionalCosts > 0 && (
               <div className="space-y-1">
-                <p className="text-muted-foreground text-sm">
-                  Additional Features
-                </p>
+                <p className="text-aliceBlue text-sm">Additional Features</p>
                 <p className="text-lg font-medium">
                   {formatCurrency(result.additionalCosts)}
                 </p>
@@ -62,7 +60,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <Separator className="my-4" />
 
           <div className="space-y-1 text-center">
-            <p className="text-muted-foreground text-sm font-medium">
+            <p className="text-aliceBlue text-sm font-medium">
               Total Landscape Project Cost
             </p>
             <p className="text-primary text-3xl font-bold">
@@ -70,7 +68,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </p>
           </div>
 
-          <div className="text-muted-foreground mt-4 text-sm">
+          <div className="text-aliceBlue mt-4 text-sm">
             <p>
               This estimate includes the installation costs based on square
               footage, design fees, and any additional costs for features like

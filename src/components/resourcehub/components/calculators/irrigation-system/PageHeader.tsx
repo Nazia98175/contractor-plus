@@ -48,7 +48,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate the materials and costs for irrigation systems with our
         easy-to-use calculator. Get accurate estimates for sprinklers, pipes,
         valves, and more.

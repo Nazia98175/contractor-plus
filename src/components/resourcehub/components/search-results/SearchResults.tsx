@@ -104,7 +104,7 @@ export const SearchResults = ({
             selectedStoreIds.some(
               (id) =>
                 id.split("-")[0].toLowerCase() ===
-                variation.storeName.toLowerCase()
+                variation.storeName.toLowerCase(),
             )
           ) {
             if (!storeMap[storeName]) {
@@ -135,7 +135,7 @@ export const SearchResults = ({
   if (isSearching) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <Loader2 className="text-primary h-8 w-8 animate-spin" />
         <span className="ml-2 text-lg font-medium">Searching materials...</span>
       </div>
     );
@@ -153,8 +153,8 @@ export const SearchResults = ({
     !selectedStoreIds?.length
   ) {
     return (
-      <div className="text-center py-20 border rounded-lg bg-muted/20">
-        <p className="text-muted-foreground">
+      <div className="bg-muted/20 rounded-lg border py-20 text-center">
+        <p className="text-aliceBlue">
           Please select at least one store to search for materials.
         </p>
       </div>
@@ -164,8 +164,8 @@ export const SearchResults = ({
   // If we have no selected stores, prompt the user to select some
   if (!selectedStoreIds || selectedStoreIds.length === 0) {
     return (
-      <div className="text-center py-20 border rounded-lg bg-muted/20">
-        <p className="text-muted-foreground">
+      <div className="bg-muted/20 rounded-lg border py-20 text-center">
+        <p className="text-aliceBlue">
           Please select at least one store to search for materials.
         </p>
       </div>
@@ -175,8 +175,8 @@ export const SearchResults = ({
   const storeNames = Object.keys(storeColumns);
   if (storeNames.length === 0) {
     return (
-      <div className="text-center py-20 border rounded-lg bg-muted/20">
-        <p className="text-muted-foreground">
+      <div className="bg-muted/20 rounded-lg border py-20 text-center">
+        <p className="text-aliceBlue">
           No materials found from the selected stores.
         </p>
       </div>
@@ -186,7 +186,7 @@ export const SearchResults = ({
   // Render a carousel for a store's products
   const renderStoreCarousel = (
     storeName: string,
-    products: MaterialVariationWithMeta[]
+    products: MaterialVariationWithMeta[],
   ) => {
     // Check if this is a "coming soon" store
     const storeId = selectedStoreIds.find((id) => {
@@ -199,14 +199,14 @@ export const SearchResults = ({
     return (
       <div
         key={storeName}
-        className="flex flex-col border rounded-lg overflow-hidden h-full"
+        className="flex h-full flex-col overflow-hidden rounded-lg border"
       >
-        <h2 className="text-lg font-semibold mb-2 bg-muted/30 p-3 sticky top-0 backdrop-blur-sm flex justify-between items-center">
+        <h2 className="bg-muted/30 sticky top-0 mb-2 flex items-center justify-between p-3 text-lg font-semibold backdrop-blur-sm">
           <span>{storeName}</span>
           {isComingSoon && (
             <Badge
               variant="outline"
-              className="bg-yellow-50 text-yellow-800 border-yellow-300"
+              className="border-yellow-300 bg-yellow-50 text-yellow-800"
             >
               Coming Soon
             </Badge>
@@ -214,18 +214,18 @@ export const SearchResults = ({
         </h2>
 
         {isComingSoon ? (
-          <div className="flex-grow flex items-center justify-center p-8 text-center">
+          <div className="flex flex-grow items-center justify-center p-8 text-center">
             <div className="max-w-xs">
-              <p className="text-muted-foreground mb-2">
+              <p className="text-aliceBlue mb-2">
                 {storeName} integration is coming soon.
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-aliceBlue text-xs">
                 We're working hard to bring you products from this retailer.
               </p>
             </div>
           </div>
         ) : products.length > 0 ? (
-          <div className="p-3 flex-grow">
+          <div className="flex-grow p-3">
             <Carousel className="w-full">
               <CarouselContent>
                 {products.slice(0, 10).map((item) => {
@@ -252,13 +252,13 @@ export const SearchResults = ({
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="left-2 bg-red-600 text-white hover:bg-red-700 border-none" />
-              <CarouselNext className="right-2 bg-red-600 text-white hover:bg-red-700 border-none" />
+              <CarouselPrevious className="left-2 border-none bg-red-600 text-white hover:bg-red-700" />
+              <CarouselNext className="right-2 border-none bg-red-600 text-white hover:bg-red-700" />
             </Carousel>
           </div>
         ) : (
-          <div className="text-center py-10 border-t p-3 flex-grow">
-            <p className="text-muted-foreground">
+          <div className="flex-grow border-t p-3 py-10 text-center">
+            <p className="text-aliceBlue">
               No materials found for {storeName}.
             </p>
           </div>
@@ -271,16 +271,16 @@ export const SearchResults = ({
   if (isMobile) {
     return (
       <div className="w-full space-y-6">
-        <div className="flex justify-between items-center mb-2">
+        <div className="mb-2 flex items-center justify-between">
           <h2 className="text-xl font-semibold">Search Results</h2>
         </div>
 
-        <div className="flex overflow-x-auto pb-2 gap-2 scrollbar-none">
+        <div className="scrollbar-none flex gap-2 overflow-x-auto pb-2">
           {storeNames.map((store) => (
             <button
               key={store}
               onClick={() => setActiveStoreTab(store)}
-              className={`px-4 py-2 rounded-md whitespace-nowrap ${
+              className={`rounded-md px-4 py-2 whitespace-nowrap ${
                 activeStoreTab === store
                   ? "bg-primary text-primary-foreground"
                   : "bg-muted hover:bg-muted/80"
@@ -300,13 +300,13 @@ export const SearchResults = ({
   // Desktop and tablet view
   return (
     <div className="w-full space-y-4">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold">Search Results</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {storeNames.map((store) =>
-          renderStoreCarousel(store, storeColumns[store])
+          renderStoreCarousel(store, storeColumns[store]),
         )}
       </div>
     </div>

@@ -104,7 +104,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -122,7 +122,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                   <FormControl>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Square className="text-muted-foreground h-4 w-4" />
+                        <Square className="text-aliceBlue h-4 w-4" />
                       </div>
                       <Input
                         type="number"
@@ -152,7 +152,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -169,7 +169,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                   <FormControl>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Ruler className="text-muted-foreground h-4 w-4" />
+                        <Ruler className="text-aliceBlue h-4 w-4" />
                       </div>
                       <Input
                         type="number"
@@ -199,7 +199,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -216,7 +216,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                   <FormControl>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Ruler className="text-muted-foreground h-4 w-4" />
+                        <Ruler className="text-aliceBlue h-4 w-4" />
                       </div>
                       <Input
                         type="number"
@@ -246,7 +246,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -265,7 +265,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                   <FormControl>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Percent className="text-muted-foreground h-4 w-4" />
+                        <Percent className="text-aliceBlue h-4 w-4" />
                       </div>
                       <Input
                         type="number"
@@ -295,7 +295,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -314,7 +314,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
                   <FormControl>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-3 flex items-center">
-                        <DollarSign className="text-muted-foreground h-4 w-4" />
+                        <DollarSign className="text-aliceBlue h-4 w-4" />
                       </div>
                       <Input
                         type="number"

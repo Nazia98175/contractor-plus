@@ -53,7 +53,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Create accurate estimates for multi-service projects by calculating
         combined costs with a customizable profit markup.
       </p>

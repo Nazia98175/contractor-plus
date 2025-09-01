@@ -10,7 +10,7 @@ import {
   Loader2,
 } from "lucide-react";
 
-import { ProjectDetail } from "@/types/projectDetail";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -270,7 +270,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             <h3 className="text-foreground text-lg font-semibold">
               Need a contractor to {projectName?.toLowerCase()}?
             </h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Get a free quote from quality, vetted PRO's
             </p>
 
@@ -297,7 +297,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
               </div>
 
               <div className="relative">
-                <MapPin className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform" />
+                <MapPin className="text-aliceBlue absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform" />
                 <Input
                   type="text"
                   value={zipCodeValue}
@@ -334,9 +334,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                   </div>
                   <div>
                     <div className="text-foreground font-semibold">4.5M+</div>
-                    <div className="text-muted-foreground text-xs">
-                      Trusted Users
-                    </div>
+                    <div className="text-aliceBlue text-xs">Trusted Users</div>
                   </div>
                 </div>
 
@@ -347,9 +345,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                   </div>
                   <div>
                     <div className="text-foreground font-semibold">4.9/5</div>
-                    <div className="text-muted-foreground text-xs">
-                      Star Rating
-                    </div>
+                    <div className="text-aliceBlue text-xs">Star Rating</div>
                   </div>
                 </div>
 
@@ -360,13 +356,13 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                   </div>
                   <div>
                     <div className="text-foreground font-semibold">300k+</div>
-                    <div className="text-muted-foreground text-xs">Reviews</div>
+                    <div className="text-aliceBlue text-xs">Reviews</div>
                   </div>
                 </div>
               </div>
 
               {/* Trust Badge */}
-              <div className="text-muted-foreground mt-4 flex items-center justify-center gap-2 text-xs">
+              <div className="text-aliceBlue mt-4 flex items-center justify-center gap-2 text-xs">
                 <Shield className="h-4 w-4 text-blue-600" />
                 <span>Verified & background-checked professionals</span>
               </div>
@@ -395,7 +391,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                 <div className="absolute inset-0 flex items-center justify-center rounded-md bg-gray-50">
                   <div className="flex flex-col items-center gap-3">
                     <Loader2 className="text-primary h-8 w-8 animate-spin" />
-                    <span className="text-muted-foreground text-sm">
+                    <span className="text-aliceBlue text-sm">
                       Loading Thumbtack...
                     </span>
                   </div>

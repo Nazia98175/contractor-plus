@@ -57,7 +57,7 @@ import {
   fetchProjects,
   Project,
 } from "@/services/resource/costCalculatorService";
-import { ProjectDetail } from "@/types/projectDetail";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 import { getUserIp } from "@/services/resource/thumbtackService";
 import ThumbTackWidget from "../../components/ThumbTackWidget";
 import { estimaticDataApi } from "@/services/resource/constructionCostService";
@@ -710,7 +710,7 @@ const ProjectCostCalculator = ({
                   <Calculator className="h-5 w-5" />
                   Estimate Breakdown
                 </CardTitle>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Add all required items to calculate the estimated cost for the
                   completed work.
                 </p>
@@ -791,7 +791,7 @@ const ProjectCostCalculator = ({
                                   </p>
                                 </div>
                               ) : (
-                                <p className="text-muted-foreground text-sm">
+                                <p className="text-aliceBlue text-sm">
                                   {formatCurrency(material.lowPrice)} -{" "}
                                   {formatCurrency(material.highPrice)}{" "}
                                   {material.unit}
@@ -849,7 +849,7 @@ const ProjectCostCalculator = ({
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <Info className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <Info className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             <p>
@@ -885,7 +885,7 @@ const ProjectCostCalculator = ({
                             <p className="font-medium">
                               Labor to {projectData?.name}
                             </p>
-                            <p className="text-muted-foreground text-sm">
+                            <p className="text-aliceBlue text-sm">
                               {/* {formatCurrency(projectData?.laborRate || 0)}/hr ×{" "} */}
                               {formatCurrency(dataLaborRates || 0)}/hr ×{" "}
                               {(
@@ -965,7 +965,7 @@ const ProjectCostCalculator = ({
                         {projectData?.inputField.unit}
                       </div>
                     </div>
-                    <p className="text-muted-foreground mt-1 text-xs">
+                    <p className="text-aliceBlue mt-1 text-xs">
                       Minimum: {projectData?.inputField.defaultValue}{" "}
                       {projectData?.inputField.unit}
                     </p>
@@ -1012,7 +1012,7 @@ const ProjectCostCalculator = ({
                       <div className="mb-2 text-3xl font-bold text-red-600">
                         {formatCurrency(totalCost)}
                       </div>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-aliceBlue text-sm">
                         Avg. cost per {projectData?.inputField.unit}:{" "}
                         {formatCurrency(totalCost / inputValue)}
                       </p>
@@ -1078,7 +1078,7 @@ const ProjectCostCalculator = ({
           {/* Main Overview */}
           <Card>
             <CardContent className="pt-6">
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-aliceBlue leading-relaxed">
                 The cost to {projectData?.name.toLowerCase()} in{" "}
                 {displayLocationName} typically ranges from $
                 {(totalCost * 0.7).toFixed(2)} to $

@@ -58,7 +58,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground mb-8 max-w-3xl text-lg">
+      <p className="text-aliceBlue mb-8 max-w-3xl text-lg">
         Calculate accurate fence costs based on length, materials, gates, and
         additional factors. Perfect for fence contractors and property owners
         planning a new fence.

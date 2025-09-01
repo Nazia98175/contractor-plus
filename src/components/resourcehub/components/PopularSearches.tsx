@@ -84,7 +84,7 @@ export const PopularSearches = ({ className }: PopularSearchesProps) => {
                 </div>
                 <div>
                   <div className="font-medium">{item.name}</div>
-                  <div className="text-muted-foreground text-sm">
+                  <div className="text-aliceBlue text-sm">
                     {item.count.toLocaleString()} searches
                   </div>
                 </div>

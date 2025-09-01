@@ -338,7 +338,7 @@ export function EstimateForm({
 
             <TabsContent value="items" className="space-y-4">
               <div className="space-y-2">
-                <div className="text-muted-foreground grid grid-cols-12 gap-2 px-2 text-sm font-medium">
+                <div className="text-aliceBlue grid grid-cols-12 gap-2 px-2 text-sm font-medium">
                   <div className="col-span-6 sm:col-span-5">Description</div>
                   <div className="col-span-2 sm:col-span-2">Qty</div>
                   <div className="hidden sm:col-span-1 sm:block">Unit</div>
@@ -362,7 +362,7 @@ export function EstimateForm({
                     ))}
                   </div>
                 ) : (
-                  <div className="text-muted-foreground py-8 text-center">
+                  <div className="text-aliceBlue py-8 text-center">
                     No line items yet. Click "Add Item" to get started.
                   </div>
                 )}
@@ -410,7 +410,7 @@ export function EstimateForm({
                         }
                         className="h-7 pr-6 text-right text-sm"
                       />
-                      <span className="text-muted-foreground absolute top-1/2 right-2 -translate-y-1/2 transform text-xs">
+                      <span className="text-aliceBlue absolute top-1/2 right-2 -translate-y-1/2 transform text-xs">
                         %
                       </span>
                     </div>
@@ -442,7 +442,7 @@ export function EstimateForm({
                         }
                         className="h-7 pr-6 text-right text-sm"
                       />
-                      <span className="text-muted-foreground absolute top-1/2 right-2 -translate-y-1/2 transform text-xs">
+                      <span className="text-aliceBlue absolute top-1/2 right-2 -translate-y-1/2 transform text-xs">
                         %
                       </span>
                     </div>
@@ -588,8 +588,8 @@ export function EstimateForm({
                             ) : (
                               <label className="hover:bg-muted/50 flex h-28 w-full max-w-[180px] cursor-pointer flex-col items-center justify-center rounded-md border border-dashed transition-colors">
                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                  <Image className="text-muted-foreground mb-1 h-8 w-8" />
-                                  <p className="text-muted-foreground text-xs">
+                                  <Image className="text-aliceBlue mb-1 h-8 w-8" />
+                                  <p className="text-aliceBlue text-xs">
                                     Upload logo
                                   </p>
                                 </div>

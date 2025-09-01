@@ -34,7 +34,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             ${result.totalCost.toFixed(2)}
           </p>
           {result.minimumChargeApplied && (
-            <p className="text-muted-foreground mt-1 text-xs">
+            <p className="text-aliceBlue mt-1 text-xs">
               (Minimum charge applied)
             </p>
           )}
@@ -45,14 +45,12 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-2 text-sm">
           <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Cost by area</span>
+            <span className="text-aliceBlue">Cost by area</span>
             <span className="font-medium">${result.costByArea.toFixed(2)}</span>
           </div>
           {result.minimumChargeApplied && (
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">
-                Minimum charge applied
-              </span>
+              <span className="text-aliceBlue">Minimum charge applied</span>
               <span className="font-medium">Yes</span>
             </div>
           )}
@@ -62,7 +60,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
               : result.costByArea) >
             0 && (
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">Additional services</span>
+              <span className="text-aliceBlue">Additional services</span>
               <span className="font-medium">
                 $
                 {(

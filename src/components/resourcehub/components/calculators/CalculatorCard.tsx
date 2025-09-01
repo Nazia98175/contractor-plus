@@ -34,15 +34,13 @@ export function CalculatorCard({
       <CardHeader className="pb-3">
         <CardTitle className="text-lg">{calculator.name}</CardTitle>
         {showCategory && calculator.category && (
-          <CardDescription className="text-muted-foreground text-xs">
+          <CardDescription className="text-aliceBlue text-xs">
             {calculator.category}
           </CardDescription>
         )}
       </CardHeader>
       <CardContent className="pb-2">
-        <p className="text-muted-foreground text-sm">
-          {calculator.description}
-        </p>
+        <p className="text-aliceBlue text-sm">{calculator.description}</p>
       </CardContent>
       <CardFooter>
         {calculator.isAvailable ? (

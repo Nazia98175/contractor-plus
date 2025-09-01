@@ -49,7 +49,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-2 text-sm">
           <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Labor Cost</span>
+            <span className="text-aliceBlue">Labor Cost</span>
             <span className="font-medium text-gray-700">
               $
               {result.laborCost.toLocaleString("en-US", {
@@ -59,7 +59,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Total Cost (Subtotal)</span>
+            <span className="text-aliceBlue">Total Cost (Subtotal)</span>
             <span className="font-medium text-gray-700">
               $
               {result.subtotalCost.toLocaleString("en-US", {
@@ -69,7 +69,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Profit Added</span>
+            <span className="text-aliceBlue">Profit Added</span>
             <span className="font-medium text-green-600">
               $
               {result.profitAmount.toLocaleString("en-US", {

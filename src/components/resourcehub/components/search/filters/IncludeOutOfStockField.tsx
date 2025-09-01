@@ -20,7 +20,7 @@ export function IncludeOutOfStockField({
             <FormLabel className="text-sm font-medium">
               Include Out of Stock
             </FormLabel>
-            <p className="text-muted-foreground text-xs">
+            <p className="text-aliceBlue text-xs">
               Show materials that are currently unavailable
             </p>
           </div>

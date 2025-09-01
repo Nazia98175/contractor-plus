@@ -52,7 +52,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate accurate commercial cleaning estimates based on facility size,
         restrooms, and additional services to provide professional quotes to
         your clients.

@@ -192,7 +192,7 @@ export default function HouseCleaningCalculator() {
             House Cleaning Calculator
           </h1>
         </div>
-        <p className="text-muted-foreground max-w-3xl">
+        <p className="text-aliceBlue max-w-3xl">
           Calculate house cleaning costs quickly and accurately. Perfect for
           cleaning businesses, independent contractors, and homeowners planning
           their budget for cleaning services.
@@ -229,7 +229,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -271,7 +271,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -306,7 +306,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -341,7 +341,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -384,7 +384,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -427,7 +427,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -470,7 +470,7 @@ export default function HouseCleaningCalculator() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className="inline-flex cursor-help">
-                                  <HelpCircle className="text-muted-foreground h-4 w-4" />
+                                  <HelpCircle className="text-aliceBlue h-4 w-4" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent side="top" className="max-w-xs">
@@ -543,31 +543,25 @@ export default function HouseCleaningCalculator() {
                       Cost Breakdown
                     </h4>
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">
-                        Base Cleaning Cost
-                      </span>
+                      <span className="text-aliceBlue">Base Cleaning Cost</span>
                       <span className="font-medium">
                         ${breakdown.baseCleaningCost?.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">
-                        Bedroom Cost
-                      </span>
+                      <span className="text-aliceBlue">Bedroom Cost</span>
                       <span className="font-medium">
                         ${breakdown.bedroomCost?.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">
-                        Bathroom Cost
-                      </span>
+                      <span className="text-aliceBlue">Bathroom Cost</span>
                       <span className="font-medium">
                         ${breakdown.bathroomCost?.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">
+                      <span className="text-aliceBlue">
                         Additional Flat Fee
                       </span>
                       <span className="font-medium">

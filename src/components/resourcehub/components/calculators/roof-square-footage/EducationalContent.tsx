@@ -17,7 +17,7 @@ export function EducationalContent() {
             <h2 className="mb-3 text-xl font-semibold">
               Measure twice, cut once – and estimate accurately
             </h2>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Contractor+ helps roofing contractors calculate roof areas,
               estimate materials, and generate quick quotes. Spend less time on
               paperwork and more time roofing by leveraging our app for your

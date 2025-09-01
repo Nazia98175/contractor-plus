@@ -105,7 +105,7 @@ export const ComparePageLayout = ({
                 Material Price Comparison Tool
               </h1>
             </div>
-            <p className="text-muted-foreground ml-[60px] max-w-3xl">
+            <p className="text-aliceBlue ml-[60px] max-w-3xl">
               Find and compare construction materials, building supplies and
               home improvement products across major suppliers like Lowe's, Home
               Depot, Build.com, and more to get the best prices for your
@@ -147,7 +147,7 @@ export const ComparePageLayout = ({
                 How Our Material Price Comparison Tool Works
               </h2>
 
-              <div className="text-muted-foreground mb-8 space-y-4">
+              <div className="text-aliceBlue mb-8 space-y-4">
                 <p>
                   The Material Price Comparison Tool helps contractors,
                   builders, and DIY enthusiasts find the best prices on

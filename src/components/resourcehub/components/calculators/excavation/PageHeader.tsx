@@ -52,7 +52,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate accurate excavation volume and costs based on dimensions and
         rates to provide professional quotes for your excavation projects.
       </p>

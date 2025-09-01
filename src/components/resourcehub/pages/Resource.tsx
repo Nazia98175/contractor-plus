@@ -2,26 +2,43 @@
 import {
   ArrowRight,
   BarChart3,
-  Headphones,
-  BookOpen,
-  FileText,
   Calculator,
+  FileText,
   Wrench,
 } from "lucide-react";
-import { ResourceCard } from "../components/resource-hub/ResourceCard";
 import Link from "next/link";
 import { BlogPostScroller } from "../components/resource-hub/BlogPostScroller";
+import { ResourceCard } from "../components/resource-hub/ResourceCard";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 const Resource = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-podcast", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 700);
+  }, []);
   return (
     <div className="flex flex-col gap-12 py-10">
       {/* Hero Section */}
       <section className="main-main-container md:px-6">
         <div className="space-y-4 text-center">
-          <h1 className="animate-fade-in text-4xl font-bold tracking-tighter md:text-5xl">
+          <h1 className="animate-fade-in grey-gradient text-4xl font-bold tracking-tighter md:text-5xl">
             Contractor+ Resource Hub
           </h1>
-          <p className="text-muted-foreground animate-slide-in mx-auto max-w-[800px] text-lg md:text-xl">
+          <p className="text-aliceBlue animate-slide-in mx-auto max-w-[800px] text-lg md:text-xl">
             Access our collection of free tools, templates, blog posts, and
             podcasts designed to help contractors build better businesses.
           </p>
@@ -29,13 +46,13 @@ const Resource = () => {
       </section>
 
       {/* Free Tools & Templates Section - Moved to the top */}
-      <section className="bg-muted main-container py-10">
-        <div className="flex flex-col gap-8 px-4 md:px-6">
+      <section className="main-container">
+        <div className="resource-bg flex flex-col gap-8 px-4 py-10 md:px-6">
           <div className="text-center">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight">
+            <h2 className="text-alice mb-3 text-3xl font-bold tracking-tight">
               Free Tools & Templates
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-[800px] text-lg">
+            <p className="text-aliceBlue mx-auto max-w-[800px] text-lg">
               Everything you need to streamline your construction business—no
               strings attached.
             </p>
@@ -45,7 +62,7 @@ const Resource = () => {
             <ResourceCard
               title="Free Estimate Templates"
               description="Generate quick professional estimates on the fly and save them as PDF to share with clients."
-              icon={<FileText className="text-primary h-10 w-10" />}
+              icon={<FileText className="text-coralRed h-10 w-10" />}
               link="/resources/free-estimate-templates"
               buttonText="Create Estimates"
             />

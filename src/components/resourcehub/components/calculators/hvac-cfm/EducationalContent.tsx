@@ -122,13 +122,13 @@ export function EducationalContent() {
                 </CardHeader>
                 <AccordionContent>
                   <CardContent className="pt-0">
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-aliceBlue mb-4">
                       The formula used by this calculator is:
                     </p>
                     <div className="bg-muted mb-4 rounded-md p-4 text-center font-mono">
                       CFM = (Room Volume × Air Changes per Hour) ÷ 60
                     </div>
-                    <p className="text-muted-foreground">
+                    <p className="text-aliceBlue">
                       First, we calculate the room volume by multiplying length
                       × width × height. Then, we multiply by how many air
                       changes per hour are desired. Finally, we divide by 60
@@ -151,13 +151,13 @@ export function EducationalContent() {
                 </CardHeader>
                 <AccordionContent>
                   <CardContent className="pt-0">
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-aliceBlue mb-4">
                       When sizing HVAC systems, a common rule of thumb is that
                       you need approximately 400 CFM per 12,000 BTU (1 ton) of
                       air conditioning capacity. This means that a 3-ton system
                       would need to move about 1,200 CFM.
                     </p>
-                    <p className="text-muted-foreground">
+                    <p className="text-aliceBlue">
                       However, this is just a starting point - specific
                       conditions like climate, insulation quality, ceiling
                       height, and other factors can all affect the final
@@ -180,11 +180,11 @@ export function EducationalContent() {
                 </CardHeader>
                 <AccordionContent>
                   <CardContent className="pt-0">
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-aliceBlue mb-4">
                       Improper CFM can lead to several issues in your HVAC
                       system:
                     </p>
-                    <ul className="text-muted-foreground list-disc space-y-2 pl-6 text-sm">
+                    <ul className="text-aliceBlue list-disc space-y-2 pl-6 text-sm">
                       <li>
                         <strong>Insufficient CFM:</strong> Poor temperature
                         control, inadequate ventilation, air quality problems,
@@ -199,7 +199,7 @@ export function EducationalContent() {
                         inconsistencies between rooms and pressure imbalances
                       </li>
                     </ul>
-                    <p className="text-muted-foreground mt-4">
+                    <p className="text-aliceBlue mt-4">
                       Regular maintenance of filters, ductwork, and vents helps
                       maintain proper CFM throughout your system.
                     </p>
@@ -219,12 +219,12 @@ export function EducationalContent() {
                 </CardHeader>
                 <AccordionContent>
                   <CardContent className="pt-0">
-                    <p className="text-muted-foreground">
+                    <p className="text-aliceBlue">
                       While this calculator provides a good estimate for basic
                       ventilation requirements, professional HVAC contractors
                       should be consulted for:
                     </p>
-                    <ul className="text-muted-foreground mt-4 list-disc space-y-2 pl-6 text-sm">
+                    <ul className="text-aliceBlue mt-4 list-disc space-y-2 pl-6 text-sm">
                       <li>New HVAC system installations or replacements</li>
                       <li>Complex multi-zone systems</li>
                       <li>Commercial or industrial applications</li>
@@ -295,7 +295,7 @@ export function EducationalContent() {
           <h3 className="mb-2 text-xl font-semibold">
             Ensure Every Room is Comfortable and Well-Ventilated
           </h3>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-aliceBlue mb-4">
             Explore Contractor+ – the platform that helps HVAC pros calculate
             loads/CFM, schedule maintenance, and manage client jobs with ease.
           </p>

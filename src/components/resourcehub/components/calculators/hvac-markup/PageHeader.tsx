@@ -52,7 +52,7 @@ export function PageHeader() {
         <h1 className="mb-3 text-3xl font-bold tracking-tight">
           HVAC Parts Markup Calculator
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Calculate accurate selling prices for HVAC parts with custom markup
           and tax rates. Optimize pricing for both profitability and
           competitiveness.

@@ -183,7 +183,7 @@ const AdminPage = () => {
       <main className="container flex-grow px-4 py-8 md:px-6">
         <div className="flex flex-col items-start space-y-4 pb-6">
           <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-          <p className="text-muted-foreground">
+          <p className="text-aliceBlue">
             Monitor searches, track affiliate links, and manage your material
             comparison tool.
           </p>
@@ -202,7 +202,7 @@ const AdminPage = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-muted-foreground text-sm font-medium">
+                  <CardTitle className="text-aliceBlue text-sm font-medium">
                     Total Searches
                   </CardTitle>
                 </CardHeader>
@@ -215,19 +215,19 @@ const AdminPage = () => {
                       <BarChart className="text-primary h-5 w-5" />
                     </div>
                   </div>
-                  <div className="text-muted-foreground mt-1 text-xs">
+                  <div className="text-aliceBlue mt-1 text-xs">
                     <span className="font-medium text-green-500">+5.2%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
                     <div>
-                      <div className="text-muted-foreground">This Week</div>
+                      <div className="text-aliceBlue">This Week</div>
                       <div className="font-medium">
                         {statsData.searches.weekly.toLocaleString()}
                       </div>
                     </div>
                     <div>
-                      <div className="text-muted-foreground">This Month</div>
+                      <div className="text-aliceBlue">This Month</div>
                       <div className="font-medium">
                         {statsData.searches.monthly.toLocaleString()}
                       </div>
@@ -238,7 +238,7 @@ const AdminPage = () => {
 
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-muted-foreground text-sm font-medium">
+                  <CardTitle className="text-aliceBlue text-sm font-medium">
                     Affiliate Clicks
                   </CardTitle>
                 </CardHeader>
@@ -251,19 +251,19 @@ const AdminPage = () => {
                       <LinkIcon className="text-primary h-5 w-5" />
                     </div>
                   </div>
-                  <div className="text-muted-foreground mt-1 text-xs">
+                  <div className="text-aliceBlue mt-1 text-xs">
                     <span className="font-medium text-green-500">+3.8%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
                     <div>
-                      <div className="text-muted-foreground">This Week</div>
+                      <div className="text-aliceBlue">This Week</div>
                       <div className="font-medium">
                         {statsData.clicks.weekly.toLocaleString()}
                       </div>
                     </div>
                     <div>
-                      <div className="text-muted-foreground">This Month</div>
+                      <div className="text-aliceBlue">This Month</div>
                       <div className="font-medium">
                         {statsData.clicks.monthly.toLocaleString()}
                       </div>
@@ -274,7 +274,7 @@ const AdminPage = () => {
 
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-muted-foreground text-sm font-medium">
+                  <CardTitle className="text-aliceBlue text-sm font-medium">
                     New Signups
                   </CardTitle>
                 </CardHeader>
@@ -287,19 +287,19 @@ const AdminPage = () => {
                       <Users className="text-primary h-5 w-5" />
                     </div>
                   </div>
-                  <div className="text-muted-foreground mt-1 text-xs">
+                  <div className="text-aliceBlue mt-1 text-xs">
                     <span className="font-medium text-green-500">+7.1%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
                     <div>
-                      <div className="text-muted-foreground">This Week</div>
+                      <div className="text-aliceBlue">This Week</div>
                       <div className="font-medium">
                         {statsData.signups.weekly.toLocaleString()}
                       </div>
                     </div>
                     <div>
-                      <div className="text-muted-foreground">This Month</div>
+                      <div className="text-aliceBlue">This Month</div>
                       <div className="font-medium">
                         {statsData.signups.monthly.toLocaleString()}
                       </div>
@@ -310,7 +310,7 @@ const AdminPage = () => {
 
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-muted-foreground text-sm font-medium">
+                  <CardTitle className="text-aliceBlue text-sm font-medium">
                     Affiliate Revenue
                   </CardTitle>
                 </CardHeader>
@@ -323,19 +323,19 @@ const AdminPage = () => {
                       <TrendingUp className="text-primary h-5 w-5" />
                     </div>
                   </div>
-                  <div className="text-muted-foreground mt-1 text-xs">
+                  <div className="text-aliceBlue mt-1 text-xs">
                     <span className="font-medium text-green-500">+4.5%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
                     <div>
-                      <div className="text-muted-foreground">This Week</div>
+                      <div className="text-aliceBlue">This Week</div>
                       <div className="font-medium">
                         ${statsData.revenue.weekly.toLocaleString()}
                       </div>
                     </div>
                     <div>
-                      <div className="text-muted-foreground">This Month</div>
+                      <div className="text-aliceBlue">This Month</div>
                       <div className="font-medium">
                         ${statsData.revenue.monthly.toLocaleString()}
                       </div>
@@ -384,7 +384,7 @@ const AdminPage = () => {
                                   {activity.userId}
                                 </Badge>
                               ) : (
-                                <span className="text-muted-foreground">
+                                <span className="text-aliceBlue">
                                   Anonymous
                                 </span>
                               )}
@@ -424,7 +424,7 @@ const AdminPage = () => {
                                   {activity.userId}
                                 </Badge>
                               ) : (
-                                <span className="text-muted-foreground">
+                                <span className="text-aliceBlue">
                                   Anonymous
                                 </span>
                               )}
@@ -471,9 +471,7 @@ const AdminPage = () => {
                           {activity.userId ? (
                             <Badge variant="outline">{activity.userId}</Badge>
                           ) : (
-                            <span className="text-muted-foreground">
-                              Anonymous
-                            </span>
+                            <span className="text-aliceBlue">Anonymous</span>
                           )}
                         </TableCell>
                       </TableRow>
@@ -516,9 +514,7 @@ const AdminPage = () => {
                           {activity.userId ? (
                             <Badge variant="outline">{activity.userId}</Badge>
                           ) : (
-                            <span className="text-muted-foreground">
-                              Anonymous
-                            </span>
+                            <span className="text-aliceBlue">Anonymous</span>
                           )}
                         </TableCell>
                       </TableRow>

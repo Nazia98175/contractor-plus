@@ -54,7 +54,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-2 text-sm">
           <h4 className="font-medium text-gray-700">Profit Analysis</h4>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Profit Amount</span>
+            <span className="text-aliceBlue">Profit Amount</span>
             <span
               className={`font-medium ${result.isLoss ? "text-red-600" : "text-green-600"}`}
             >
@@ -66,7 +66,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Profit Margin</span>
+            <span className="text-aliceBlue">Profit Margin</span>
             <span
               className={`font-medium ${result.isLoss ? "text-red-600" : "text-green-600"}`}
             >

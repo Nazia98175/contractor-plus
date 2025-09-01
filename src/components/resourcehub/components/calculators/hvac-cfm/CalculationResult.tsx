@@ -26,7 +26,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <p className="text-primary my-2 text-4xl font-bold">
             {result.cfm.toFixed(2)} CFM
           </p>
-          <p className="text-muted-foreground mt-2 text-sm">
+          <p className="text-aliceBlue mt-2 text-sm">
             (~{result.cubicMetersPerHour.toFixed(2)} m³/hour)
           </p>
         </div>
@@ -35,12 +35,12 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
         <div className="space-y-2 text-sm">
           <h4 className="font-medium text-gray-700">What This Means</h4>
-          <p className="text-muted-foreground">
+          <p className="text-aliceBlue">
             You need an HVAC system or ventilation fan that can supply
             approximately {result.cfm.toFixed(0)} CFM to properly ventilate this
             room.
           </p>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-aliceBlue mt-2">
             This calculation is based on standard air changes per hour for your
             room size.
           </p>

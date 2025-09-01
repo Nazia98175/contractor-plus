@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { useQuery } from "@tanstack/react-query";
-import { ProjectDetail } from "@/types/projectDetail";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 import {
@@ -287,7 +287,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                 <h3 className="text-foreground mb-1 text-lg font-semibold">
                   Recommended pros
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   These pros are highly rated and have upcoming availability in{" "}
                   {zipCode || "your area"}.
                 </p>
@@ -300,7 +300,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                   <div className="flex items-center justify-center py-8">
                     <div className="flex items-center gap-3">
                       <Loader2 className="text-primary h-6 w-6 animate-spin" />
-                      <span className="text-muted-foreground text-sm">
+                      <span className="text-aliceBlue text-sm">
                         Finding the best contractors in your area...
                       </span>
                     </div>
@@ -359,13 +359,13 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                             <div className="flex items-center">
                               {renderStars(contractor?.rating)}
                             </div>
-                            <span className="text-muted-foreground text-sm">
+                            <span className="text-aliceBlue text-sm">
                               ({contractor?.numberOfReviews} reviews)
                             </span>
                           </div>
 
                           {/* Experience Info */}
-                          <div className="text-muted-foreground mb-3 flex flex-wrap items-center gap-4 text-sm">
+                          <div className="text-aliceBlue mb-3 flex flex-wrap items-center gap-4 text-sm">
                             <span className="flex items-center gap-1">
                               <Calendar className="h-3 w-3" />
                               {contractor?.yearsInBusiness}
@@ -377,7 +377,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                           </div>
 
                           {/* Description */}
-                          <p className="text-muted-foreground text-sm leading-relaxed">
+                          <p className="text-aliceBlue text-sm leading-relaxed">
                             "{contractor?.businessIntroduction}"
                           </p>
                         </div>
@@ -406,7 +406,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
 
               {/* Footer */}
               <div className="border-border border-t pt-6">
-                <div className="text-muted-foreground flex flex-col items-center justify-between gap-4 text-xs sm:flex-row">
+                <div className="text-aliceBlue flex flex-col items-center justify-between gap-4 text-xs sm:flex-row">
                   <div className="flex items-center gap-2">
                     <img
                       src="/lovable-uploads/1bd58006-0f6d-40fe-bd6a-5fcd57aec5ce.png"
@@ -420,11 +420,11 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                     <span>Verified & background-checked professionals</span>
                   </div>
                 </div>
-                <div className="text-muted-foreground mt-2 text-center text-xs sm:text-left">
+                <div className="text-aliceBlue mt-2 text-center text-xs sm:text-left">
                   {/* By clicking "Get a quote", you agree to Contractor+'s Terms and
                 Conditions and Privacy Policy as well as Thumbtack's Terms and
                 Conditions and Privacy Policy */}
-                  <div className="text-muted-foreground mt-2 text-center text-xs sm:text-left">
+                  <div className="text-aliceBlue mt-2 text-center text-xs sm:text-left">
                     By clicking "Get a quote", you agree to Contractor+'s Terms
                     and Conditions and Privacy Policy as well as{" "}
                     <a
@@ -474,7 +474,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                   <div className="absolute inset-0 flex items-center justify-center rounded-md bg-gray-50">
                     <div className="flex flex-col items-center gap-3">
                       <Loader2 className="text-primary h-8 w-8 animate-spin" />
-                      <span className="text-muted-foreground text-sm">
+                      <span className="text-aliceBlue text-sm">
                         Loading Thumbtack...
                       </span>
                     </div>

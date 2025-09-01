@@ -56,7 +56,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button variant="ghost" className="h-auto px-0 py-0">
-                          <HelpCircle className="text-muted-foreground h-4 w-4" />
+                          <HelpCircle className="text-aliceBlue h-4 w-4" />
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
@@ -89,7 +89,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button variant="ghost" className="h-auto px-0 py-0">
-                          <HelpCircle className="text-muted-foreground h-4 w-4" />
+                          <HelpCircle className="text-aliceBlue h-4 w-4" />
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
@@ -122,7 +122,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button variant="ghost" className="h-auto px-0 py-0">
-                          <HelpCircle className="text-muted-foreground h-4 w-4" />
+                          <HelpCircle className="text-aliceBlue h-4 w-4" />
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
@@ -154,7 +154,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button variant="ghost" className="h-auto px-0 py-0">
-                          <HelpCircle className="text-muted-foreground h-4 w-4" />
+                          <HelpCircle className="text-aliceBlue h-4 w-4" />
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">

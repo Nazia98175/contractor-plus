@@ -70,7 +70,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
     <Card className="border border-gray-200 bg-white shadow-sm">
       <CardHeader className="border-b border-gray-200 bg-white pb-4">
         <h2 className="text-lg font-medium">Calculate Painting Cost</h2>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-aliceBlue text-sm">
           Enter painting details and pricing information
         </p>
       </CardHeader>
@@ -89,7 +89,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <HelpCircle className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className="w-80">
@@ -113,7 +113,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                           }
                           className="pr-16"
                         />
-                        <div className="text-muted-foreground pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                        <div className="text-aliceBlue pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                           sq ft
                         </div>
                       </div>
@@ -136,7 +136,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <HelpCircle className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className="w-80">
@@ -175,7 +175,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <HelpCircle className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className="w-80">
@@ -215,7 +215,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <HelpCircle className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className="w-80">
@@ -227,7 +227,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     </div>
                     <FormControl>
                       <div className="relative">
-                        <div className="text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <div className="text-aliceBlue pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                           $
                         </div>
                         <Input
@@ -259,7 +259,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <HelpCircle className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className="w-80">
@@ -272,7 +272,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     </div>
                     <FormControl>
                       <div className="relative">
-                        <div className="text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <div className="text-aliceBlue pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                           $
                         </div>
                         <Input
@@ -304,7 +304,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <HelpCircle className="text-muted-foreground h-4 w-4 cursor-help" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4 cursor-help" />
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className="w-80">

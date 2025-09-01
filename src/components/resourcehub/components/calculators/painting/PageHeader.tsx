@@ -48,7 +48,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate accurate painting estimates based on surface area, paint cost,
         and labor rates to provide professional quotes to your clients.
       </p>

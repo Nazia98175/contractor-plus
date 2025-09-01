@@ -58,7 +58,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground mb-8 max-w-3xl text-lg">
+      <p className="text-aliceBlue mb-8 max-w-3xl text-lg">
         Calculate accurate flooring costs based on area, materials, labor, and
         waste factor. Perfect for flooring contractors and DIY homeowners
         planning a flooring project.

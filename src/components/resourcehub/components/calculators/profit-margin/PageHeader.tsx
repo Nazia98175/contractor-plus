@@ -52,7 +52,7 @@ export function PageHeader() {
         <h1 className="mb-3 text-3xl font-bold tracking-tight">
           Profit Margin Calculator
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Calculate your profit margin accurately to ensure your jobs are
           profitable. Perfect for contractors managing project finances.
         </p>

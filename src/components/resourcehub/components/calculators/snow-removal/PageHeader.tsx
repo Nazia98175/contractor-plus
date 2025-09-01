@@ -52,7 +52,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate fair pricing for snow removal services based on snowfall depth
         and your base pricing structure.
       </p>

@@ -33,14 +33,14 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h4 className="font-medium text-gray-700">Calculation Details</h4>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Building Footprint</span>
+            <span className="text-aliceBlue">Building Footprint</span>
             <span className="font-medium text-gray-700">
               {result.footprintArea.toLocaleString()} sq ft
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Pitch Factor</span>
+            <span className="text-aliceBlue">Pitch Factor</span>
             <span className="font-medium text-gray-700">
               {result.pitchFactor.toFixed(3)}
             </span>

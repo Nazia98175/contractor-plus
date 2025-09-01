@@ -84,7 +84,7 @@ export default function LandscapeDesignCalculator() {
                   <p className="text-lg font-medium">
                     Enter your project details
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-aliceBlue">
                     Fill out the form to calculate your landscape design costs
                   </p>
                 </div>

@@ -7,7 +7,7 @@ export function EducationalContent() {
         <h2 className="mb-4 text-2xl font-bold">
           Creating Accurate Plumbing Bids
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           Accurate bidding is essential for plumbing contractors to win jobs
           while maintaining profitability. Understanding how to calculate and
           present your bids can make the difference between a thriving business

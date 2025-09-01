@@ -64,7 +64,7 @@ export default function PipeWaterVolumeCalculator() {
           <div className="overflow-hidden rounded-xl border bg-white dark:border-gray-800 dark:bg-gray-950">
             <div className="border-b border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-800 dark:bg-gray-900">
               <h2 className="font-medium">Enter Pipe Dimensions</h2>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-aliceBlue text-sm">
                 Fill in the form to calculate water volume
               </p>
             </div>

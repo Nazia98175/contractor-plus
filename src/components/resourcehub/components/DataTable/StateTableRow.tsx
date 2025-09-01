@@ -74,7 +74,7 @@ const StateTableRow = ({ row, dataSources }: StateTableRowProps) => {
           "N/A"
         )}
       </td>
-      <td className="text-muted-foreground text-center">{row.period}</td>
+      <td className="text-aliceBlue text-center">{row.period}</td>
     </tr>
   );
 };

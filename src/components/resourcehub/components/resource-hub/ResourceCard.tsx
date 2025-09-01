@@ -19,14 +19,14 @@ export function ResourceCard({
   buttonText,
 }: ResourceCardProps) {
   return (
-    <Card className="hover-lift flex h-full flex-col">
+    <Card className="flex h-full flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
       <CardHeader className="flex-grow">
         <div className="flex flex-col gap-4">
-          <div className="bg-primary/10 mx-auto flex h-20 w-20 items-center justify-center rounded-full">
+          <div className="bg-coldGrey/10 mx-auto flex h-20 w-20 items-center justify-center rounded-full">
             {icon}
           </div>
           <h3 className="text-center text-xl font-semibold">{title}</h3>
-          <p className="text-muted-foreground text-center">{description}</p>
+          <p className="text-aliceBlue text-center">{description}</p>
         </div>
       </CardHeader>
       <CardFooter>

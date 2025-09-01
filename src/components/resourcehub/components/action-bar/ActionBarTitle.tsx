@@ -27,7 +27,7 @@ export const ActionBarTitle = ({
 
       {availableStores.length > 0 && (
         <div className="flex items-center gap-2">
-          <Filter className="text-muted-foreground h-4 w-4" />
+          <Filter className="text-aliceBlue h-4 w-4" />
           <Select
             value={storeFilter || "all"}
             onValueChange={(value) =>

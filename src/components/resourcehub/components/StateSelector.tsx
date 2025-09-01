@@ -155,7 +155,7 @@ const StateSelector = ({
               </CommandItem>
             </CommandGroup>
             <div className="px-2 py-2">
-              <div className="text-muted-foreground mb-2 text-xs font-semibold">
+              <div className="text-aliceBlue mb-2 text-xs font-semibold">
                 Regions
               </div>
               <div className="flex flex-wrap gap-1">
@@ -221,7 +221,7 @@ const StateSelector = ({
                       )}
                     </div>
                     <span>{state.name}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">
+                    <span className="text-aliceBlue ml-auto text-xs">
                       {state.abbreviation}
                     </span>
                   </CommandItem>

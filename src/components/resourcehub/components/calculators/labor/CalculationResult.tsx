@@ -20,7 +20,7 @@ export function CalculationResult({
   if (!calculationResult) {
     return (
       <div className="py-6 text-center">
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Enter values and calculate to see results
         </p>
       </div>
@@ -41,7 +41,7 @@ export function CalculationResult({
     <div className="space-y-4">
       {/* Hours */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">Total Labor Hours</p>
+        <p className="text-aliceBlue text-sm">Total Labor Hours</p>
         <p className="text-2xl font-semibold">
           {totalLaborHours.toFixed(1)} hours
         </p>
@@ -51,21 +51,19 @@ export function CalculationResult({
 
       {/* Labor Cost */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">
-          Direct Labor Cost (Wages)
-        </p>
+        <p className="text-aliceBlue text-sm">Direct Labor Cost (Wages)</p>
         <p className="text-xl font-medium">${laborCost.toFixed(2)}</p>
       </div>
 
       {/* Burden Cost */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">Labor Burden Cost</p>
+        <p className="text-aliceBlue text-sm">Labor Burden Cost</p>
         <p className="text-xl font-medium">${burdenCost.toFixed(2)}</p>
       </div>
 
       {/* Total Labor Cost */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">Total Labor Cost</p>
+        <p className="text-aliceBlue text-sm">Total Labor Cost</p>
         <p className="text-2xl font-bold text-blue-600">
           ${totalLaborCost.toFixed(2)}
         </p>
@@ -76,7 +74,7 @@ export function CalculationResult({
       {/* Profit Amount (if applicable) */}
       {hasMarkup && (
         <div className="space-y-1">
-          <p className="text-muted-foreground text-sm">Profit Amount</p>
+          <p className="text-aliceBlue text-sm">Profit Amount</p>
           <p className="text-xl font-medium text-green-600">
             ${profitAmount.toFixed(2)}
           </p>
@@ -85,14 +83,14 @@ export function CalculationResult({
 
       {/* Price to Client */}
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">
+        <p className="text-aliceBlue text-sm">
           {hasMarkup ? "Recommended Labor Charge" : "Labor Cost (No Markup)"}
         </p>
         <p className="text-3xl font-bold text-red-500">
           ${priceToClient.toFixed(2)}
         </p>
         {!hasMarkup && (
-          <p className="text-muted-foreground mt-1 text-xs italic">
+          <p className="text-aliceBlue mt-1 text-xs italic">
             (Charge this amount to break even)
           </p>
         )}
@@ -119,7 +117,7 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
           <h3 className="mb-2 text-lg font-semibold">
             Ready to track labor costs?
           </h3>
-          <p className="text-muted-foreground mb-4 text-sm">
+          <p className="text-aliceBlue mb-4 text-sm">
             Track your crew's time and costs effortlessly with Contractor Plus.
             Make sure every hour you pay for is accounted for in your estimates.
           </p>

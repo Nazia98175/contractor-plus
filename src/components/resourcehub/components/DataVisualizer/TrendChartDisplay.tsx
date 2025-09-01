@@ -26,7 +26,7 @@ const TrendChartDisplay = ({
 }: TrendChartDisplayProps) => {
   if (chartData.length === 0) {
     return (
-      <div className="h-[400px] w-full flex items-center justify-center text-muted-foreground">
+      <div className="text-aliceBlue flex h-[400px] w-full items-center justify-center">
         No data available for the selected filters.
       </div>
     );

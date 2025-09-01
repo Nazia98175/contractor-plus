@@ -188,7 +188,7 @@ export default function ContractTemplatesPage() {
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
           Free Construction Contract Templates
         </h1>
-        <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-xl">
+        <p className="text-aliceBlue mx-auto mb-8 max-w-3xl text-xl">
           Professional, legally-sound contract templates for contractors. Each
           template includes interactive forms to customize with your project
           details and generate ready-to-use contracts.
@@ -196,7 +196,7 @@ export default function ContractTemplatesPage() {
 
         {/* Search Bar */}
         <div className="relative mx-auto max-w-md">
-          <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform" />
+          <Search className="text-aliceBlue absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform" />
           <Input
             placeholder="Search contract templates..."
             value={searchTerm}
@@ -214,7 +214,7 @@ export default function ContractTemplatesPage() {
             <CardTitle className="text-lg">Interactive Forms</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               Fill in your project details and watch the contract populate
               automatically
             </p>
@@ -227,7 +227,7 @@ export default function ContractTemplatesPage() {
             <CardTitle className="text-lg">Legally Sound</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               Templates drafted by legal professionals for common construction
               scenarios
             </p>
@@ -240,7 +240,7 @@ export default function ContractTemplatesPage() {
             <CardTitle className="text-lg">Instant Download</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               Generate and download your customized contract as a PDF
               immediately
             </p>
@@ -257,7 +257,7 @@ export default function ContractTemplatesPage() {
                 <span className="text-primary bg-primary/10 rounded px-2 py-1 text-sm font-medium">
                   {template.popularity}
                 </span>
-                <span className="text-muted-foreground text-sm">
+                <span className="text-aliceBlue text-sm">
                   {template.category}
                 </span>
               </div>
@@ -270,7 +270,7 @@ export default function ContractTemplatesPage() {
               <div className="space-y-4">
                 <div>
                   <h4 className="mb-2 text-sm font-medium">Key Features:</h4>
-                  <ul className="text-muted-foreground space-y-1 text-sm">
+                  <ul className="text-aliceBlue space-y-1 text-sm">
                     {template.features.map((feature, index) => (
                       <li key={index} className="flex items-center">
                         <div className="bg-primary mr-2 h-1.5 w-1.5 rounded-full"></div>
@@ -299,7 +299,7 @@ export default function ContractTemplatesPage() {
         <h2 className="mb-4 text-2xl font-bold">
           Why Use Professional Construction Contract Templates?
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           Professional construction contracts protect both contractors and
           clients by clearly defining project scope, payment terms, timelines,
           and responsibilities. Our templates are designed to cover the most
@@ -312,7 +312,7 @@ export default function ContractTemplatesPage() {
             <h3 className="mb-3 text-xl font-semibold">
               Benefits for Contractors
             </h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Clear payment terms and schedules</li>
               <li>Protection against scope creep</li>
               <li>Defined change order processes</li>
@@ -323,7 +323,7 @@ export default function ContractTemplatesPage() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Benefits for Clients</h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Clear project deliverables and timelines</li>
               <li>Defined quality standards</li>
               <li>Warranty and guarantee terms</li>
@@ -336,7 +336,7 @@ export default function ContractTemplatesPage() {
         <h3 className="mb-3 text-xl font-semibold">
           How to Use These Templates
         </h3>
-        <ol className="text-muted-foreground mb-6 list-decimal space-y-2 pl-6">
+        <ol className="text-aliceBlue mb-6 list-decimal space-y-2 pl-6">
           <li>Choose the contract type that best fits your project</li>
           <li>Fill out the interactive form with your project details</li>
           <li>Review the generated contract for accuracy</li>
@@ -344,7 +344,7 @@ export default function ContractTemplatesPage() {
           <li>Consider having a lawyer review for large or complex projects</li>
         </ol>
 
-        <p className="text-muted-foreground rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-aliceBlue rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Disclaimer:</strong> These templates are provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

@@ -52,7 +52,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate exactly how many pavers you need and estimate total material
         costs for your patio, walkway, or driveway project.
       </p>

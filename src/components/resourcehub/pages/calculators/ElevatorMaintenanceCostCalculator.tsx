@@ -42,7 +42,7 @@ export default function ElevatorMaintenanceCostCalculator() {
               <h2 className="font-medium">
                 Enter Elevator Maintenance Details
               </h2>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-aliceBlue text-sm">
                 Fill in the form to calculate annual maintenance costs
               </p>
             </div>

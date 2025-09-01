@@ -38,7 +38,7 @@ export function PageHeader() {
         <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight">
           Custom Woodwork Pricing Calculator
         </h1>
-        <p className="text-muted-foreground mx-auto mt-2 max-w-2xl text-lg">
+        <p className="text-aliceBlue mx-auto mt-2 max-w-2xl text-lg">
           Calculate accurate price quotes for custom woodworking and furniture
           projects with material costs, labor, and profit margins.
         </p>

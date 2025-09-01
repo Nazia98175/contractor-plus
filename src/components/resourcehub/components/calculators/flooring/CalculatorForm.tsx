@@ -80,7 +80,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Info className="text-muted-foreground ml-2 h-4 w-4" />
+                        <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
                         The total area of the floor(s) to be covered. Measure
@@ -110,7 +110,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Info className="text-muted-foreground ml-2 h-4 w-4" />
+                        <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
                         The cost of the flooring material per square foot. For
@@ -147,7 +147,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Info className="text-muted-foreground ml-2 h-4 w-4" />
+                        <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
                         The cost of installation labor per square foot. This
@@ -183,7 +183,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Info className="text-muted-foreground ml-2 h-4 w-4" />
+                        <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
                         Extra percentage of material to account for waste (cuts,
@@ -218,7 +218,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Info className="text-muted-foreground ml-2 h-4 w-4" />
+                        <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
                         Any other project costs not included in the per sq ft

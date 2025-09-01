@@ -76,7 +76,7 @@ export default function CustomWoodworkCalculator() {
               <h3 className="mb-2 text-lg font-medium text-gray-700">
                 Enter project details to calculate your price
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-aliceBlue mb-4">
                 Complete the form on the left and click "Calculate" to see your
                 estimated woodworking project pricing here.
               </p>

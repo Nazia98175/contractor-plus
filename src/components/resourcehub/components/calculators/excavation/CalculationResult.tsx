@@ -26,18 +26,18 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <h3 className="text-muted-foreground mb-1 text-sm font-medium">
+              <h3 className="text-aliceBlue mb-1 text-sm font-medium">
                 Excavation Volume:
               </h3>
               <p className="text-2xl font-semibold">
                 {formattedVolumeCubicYards} cubic yards
               </p>
-              <p className="text-muted-foreground mt-1 text-sm">
+              <p className="text-aliceBlue mt-1 text-sm">
                 ({volumeCubicFeet.toFixed(1)} cubic feet)
               </p>
             </div>
             <div>
-              <h3 className="text-muted-foreground mb-1 text-sm font-medium">
+              <h3 className="text-aliceBlue mb-1 text-sm font-medium">
                 Estimated Excavation Cost:
               </h3>
               <p className="text-2xl font-semibold">

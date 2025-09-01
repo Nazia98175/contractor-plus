@@ -19,7 +19,7 @@ export function EducationalContent() {
           Understanding Fence Costs
         </h2>
         <Separator className="my-3" />
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Fence installation costs vary widely based on materials, design,
           terrain, and regional labor rates. This calculator helps you estimate
           the total project cost by factoring in the fence length, gates, and
@@ -122,7 +122,7 @@ export function EducationalContent() {
               placed 6-8 feet apart depending on fence type.
             </li>
           </ol>
-          <p className="text-muted-foreground mt-4">
+          <p className="text-aliceBlue mt-4">
             Remember that precise measurements help ensure you order the correct
             amount of material and get an accurate quote from your contractor.
           </p>

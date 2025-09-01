@@ -128,7 +128,7 @@ export default function ProjectPlanningPage() {
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
           Free Construction Project Planning Tools
         </h1>
-        <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-xl">
+        <p className="text-aliceBlue mx-auto mb-8 max-w-3xl text-xl">
           Professional project planning tools to help contractors schedule,
           plan, and manage construction projects efficiently. Generate
           timelines, create RFIs, forecast cash flow, track milestones, and
@@ -137,7 +137,7 @@ export default function ProjectPlanningPage() {
 
         {/* Search Bar */}
         <div className="relative mx-auto max-w-md">
-          <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform" />
+          <Search className="text-aliceBlue absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform" />
           <Input
             placeholder="Search planning tools..."
             value={searchTerm}
@@ -155,7 +155,7 @@ export default function ProjectPlanningPage() {
             <CardTitle className="text-lg">Visual Timelines</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               Create professional Gantt-style timelines with drag-and-drop
               editing
             </p>
@@ -168,7 +168,7 @@ export default function ProjectPlanningPage() {
             <CardTitle className="text-lg">Professional RFIs</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               Generate Request for Information documents with proper formatting
               and tracking
             </p>
@@ -181,7 +181,7 @@ export default function ProjectPlanningPage() {
             <CardTitle className="text-lg">Cash Flow Planning</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
+            <p className="text-aliceBlue">
               Forecast project cash flow, track payments, and identify potential
               gaps
             </p>
@@ -198,9 +198,7 @@ export default function ProjectPlanningPage() {
                 <span className="text-primary bg-primary/10 rounded px-2 py-1 text-sm font-medium">
                   {tool.popularity}
                 </span>
-                <span className="text-muted-foreground text-sm">
-                  {tool.category}
-                </span>
+                <span className="text-aliceBlue text-sm">{tool.category}</span>
               </div>
               <CardTitle className="mb-2 text-xl">{tool.title}</CardTitle>
               <CardDescription className="text-base">
@@ -211,7 +209,7 @@ export default function ProjectPlanningPage() {
               <div className="space-y-4">
                 <div>
                   <h4 className="mb-2 text-sm font-medium">Key Features:</h4>
-                  <ul className="text-muted-foreground space-y-1 text-sm">
+                  <ul className="text-aliceBlue space-y-1 text-sm">
                     {tool.features.map((feature, index) => (
                       <li key={index} className="flex items-center">
                         <div className="bg-primary mr-2 h-1.5 w-1.5 rounded-full"></div>
@@ -254,7 +252,7 @@ export default function ProjectPlanningPage() {
         <h2 className="mb-4 text-2xl font-bold">
           Why Use Construction Project Planning Tools?
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           Effective project planning is crucial for construction success. Our
           tools help contractors create realistic timelines, manage resources
           efficiently, generate professional RFIs, forecast cash flow, and
@@ -266,7 +264,7 @@ export default function ProjectPlanningPage() {
             <h3 className="mb-3 text-xl font-semibold">
               Benefits for Contractors
             </h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Better project organization and scheduling</li>
               <li>Improved resource allocation and planning</li>
               <li>Professional client presentations</li>
@@ -279,7 +277,7 @@ export default function ProjectPlanningPage() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Benefits for Clients</h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Clear project timeline visibility</li>
               <li>Better understanding of project phases</li>
               <li>Realistic completion expectations</li>

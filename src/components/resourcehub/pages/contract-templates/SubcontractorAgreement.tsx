@@ -219,7 +219,7 @@ export default function SubcontractorAgreement() {
           <h1 className="text-3xl font-bold tracking-tight">
             Subcontractor Agreement Template
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-aliceBlue">
             Create a professional subcontractor agreement with customizable
             terms
           </p>
@@ -1156,7 +1156,7 @@ export default function SubcontractorAgreement() {
           </p>
         </div>
 
-        <p className="text-muted-foreground rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-aliceBlue rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Legal Disclaimer:</strong> This template is provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

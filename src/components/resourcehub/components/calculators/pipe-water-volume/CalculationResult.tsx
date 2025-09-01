@@ -44,14 +44,14 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h4 className="font-medium text-gray-700">Calculation Details</h4>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Pipe Inner Diameter</span>
+            <span className="text-aliceBlue">Pipe Inner Diameter</span>
             <span className="font-medium text-gray-700">
               {result.diameter} {result.diameterUnit}
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Pipe Length</span>
+            <span className="text-aliceBlue">Pipe Length</span>
             <span className="font-medium text-gray-700">
               {result.length} {result.lengthUnit}
             </span>
@@ -78,7 +78,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Volume (Cubic Inches)</span>
+            <span className="text-aliceBlue">Volume (Cubic Inches)</span>
             <span className="font-medium text-gray-700">
               {result.volumeCubicInches.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
@@ -88,7 +88,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Volume (Cubic Feet)</span>
+            <span className="text-aliceBlue">Volume (Cubic Feet)</span>
             <span className="font-medium text-gray-700">
               {result.volumeCubicFeet.toLocaleString("en-US", {
                 minimumFractionDigits: 4,

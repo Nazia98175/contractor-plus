@@ -63,9 +63,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
               >
                 {field.value?.length || 0}/{MAX_STORES}
               </Badge>
-              <span className="text-muted-foreground text-xs">
-                Max 3 stores
-              </span>
+              <span className="text-aliceBlue text-xs">Max 3 stores</span>
             </div>
           </div>
           <FormControl>

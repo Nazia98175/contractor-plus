@@ -9,7 +9,7 @@ export function EducationalContent() {
           <CardContent className="p-6">
             <Hammer className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Material Selection</h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Carefully consider wood type, grade, and dimensions when
               calculating material costs. Premium hardwoods like walnut or
               cherry will significantly increase your material budget compared
@@ -22,7 +22,7 @@ export function EducationalContent() {
           <CardContent className="p-6">
             <Calculator className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Labor Estimation</h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Track your time on similar projects to improve future estimates.
               Include time for design work, material preparation, assembly,
               finishing, and installation if applicable.
@@ -34,7 +34,7 @@ export function EducationalContent() {
           <CardContent className="p-6">
             <CreditCard className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Pricing Strategy</h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Consider your market position when setting profit margins. Custom,
               high-end woodwork typically commands 25-35% margins, while
               production or semi-custom work might be 15-20%.
@@ -46,7 +46,7 @@ export function EducationalContent() {
           <CardContent className="p-6">
             <Ruler className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Project Complexity</h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Account for complexity in your pricing. Intricate joinery, curved
               elements, or detailed inlays require more time and skill, and
               should be factored into both labor hours and hourly rates.
@@ -130,7 +130,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-base font-medium">
               Every custom piece should be priced for profit
             </h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Contractor+ helps woodworkers and custom furniture makers tally up
               materials, labor, and desired profit easily. Spend more time in
               the shop and less time calculating quotes – let Contractor+

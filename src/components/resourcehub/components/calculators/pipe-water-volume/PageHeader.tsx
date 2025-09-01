@@ -48,7 +48,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate the exact volume of water a pipe can hold based on its
         dimensions. Perfect for plumbing, irrigation, and fluid system design.
       </p>

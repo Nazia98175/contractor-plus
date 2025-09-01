@@ -69,7 +69,7 @@ export const FlatSearchResults = ({
   if (filteredStores.length === 0) {
     return (
       <div className="bg-muted/20 rounded-lg border px-2 py-20 text-center">
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           No materials found for the selected filters.
         </p>
       </div>
@@ -116,7 +116,7 @@ export const FlatSearchResults = ({
               </div>
             ) : (
               <div className="border-t p-3 py-10 text-center">
-                <p className="text-muted-foreground">
+                <p className="text-aliceBlue">
                   No products available for {formatStoreName(storeKey)}.
                 </p>
               </div>

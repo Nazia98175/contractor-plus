@@ -81,7 +81,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger type="button">
-                            <Info className="text-muted-foreground ml-1 h-4 w-4" />
+                            <Info className="text-aliceBlue ml-1 h-4 w-4" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             The amount you paid for the HVAC part or equipment.
@@ -124,7 +124,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger type="button">
-                            <Info className="text-muted-foreground ml-1 h-4 w-4" />
+                            <Info className="text-aliceBlue ml-1 h-4 w-4" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             How much above your cost you plan to charge the
@@ -168,7 +168,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger type="button">
-                            <Info className="text-muted-foreground ml-1 h-4 w-4" />
+                            <Info className="text-aliceBlue ml-1 h-4 w-4" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             If you need to charge sales tax on parts, enter the

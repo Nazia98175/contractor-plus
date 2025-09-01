@@ -39,7 +39,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
       <CardContent className="pt-6 pb-6">
         <div className="space-y-6">
           <div>
-            <h3 className="text-muted-foreground mb-4 text-sm font-medium">
+            <h3 className="text-aliceBlue mb-4 text-sm font-medium">
               MATERIAL COST BREAKDOWN
             </h3>
             <ul className="space-y-3">

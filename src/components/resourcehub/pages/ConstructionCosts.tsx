@@ -407,7 +407,7 @@ const ConstructionCosts = () => {
               <CardHeader>
                 <CardTitle className="text-lg">Categories</CardTitle>
                 <div className="relative">
-                  <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+                  <Search className="text-aliceBlue absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
                   <Input
                     placeholder="Search projects..."
                     value={searchTerm}
@@ -444,7 +444,7 @@ const ConstructionCosts = () => {
           <div className="lg:col-span-3">
             <div className="mb-6">
               <h2 className="mb-2 text-2xl font-bold">Popular Projects</h2>
-              <p className="text-muted-foreground">
+              <p className="text-aliceBlue">
                 Select a project to get detailed cost estimates for your area
               </p>
             </div>
@@ -455,7 +455,7 @@ const ConstructionCosts = () => {
             ) : filteredCategoryData?.length === 0 ? (
               <Card className="py-12 text-center">
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-aliceBlue">
                     No projects found matching your search criteria.
                   </p>
                 </CardContent>
@@ -481,7 +481,7 @@ const ConstructionCosts = () => {
                         >
                           {project?.estimateCategory}
                         </Badge>
-                        <ArrowRight className="text-muted-foreground h-4 w-4" />
+                        <ArrowRight className="text-aliceBlue h-4 w-4" />
                       </div>
                     </CardContent>
                   </Card>
@@ -498,7 +498,7 @@ const ConstructionCosts = () => {
               <h2 className="mb-4 text-2xl font-bold">
                 The only OS for build and service contractors
               </h2>
-              <p className="text-muted-foreground mx-auto mb-6 max-w-2xl">
+              <p className="text-aliceBlue mx-auto mb-6 max-w-2xl">
                 Join thousands of contractors using Contractor+ to create
                 professional estimates, manage projects, and grow their
                 business. Start your free trial today.

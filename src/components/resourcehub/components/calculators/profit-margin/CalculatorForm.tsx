@@ -90,7 +90,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">
@@ -136,7 +136,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-muted-foreground h-4 w-4" />
+                            <HelpCircle className="text-aliceBlue h-4 w-4" />
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-xs">

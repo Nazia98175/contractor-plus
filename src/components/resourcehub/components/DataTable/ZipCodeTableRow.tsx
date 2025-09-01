@@ -58,7 +58,7 @@ const ZipCodeTableRow: React.FC<ZipCodeTableRowProps> = ({
           )}
         </TableCell>
       )}
-      <TableCell className="text-muted-foreground">{row.period}</TableCell>
+      <TableCell className="text-aliceBlue">{row.period}</TableCell>
     </TableRow>
   );
 };

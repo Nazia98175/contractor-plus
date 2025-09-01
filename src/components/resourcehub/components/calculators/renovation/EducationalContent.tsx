@@ -59,7 +59,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-xl font-medium">
               Renovation Scope Cost Impact
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Different levels of renovation have significantly different costs
               per square foot:
             </p>
@@ -112,7 +112,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-xl font-medium">
               Why Renovation Contingency Matters
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Renovations are notorious for uncovering unexpected issues once
               work begins. A proper contingency fund helps manage these
               surprises without derailing your project.
@@ -120,31 +120,31 @@ export function EducationalContent() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
-                <span className="text-muted-foreground">
+                <span className="text-aliceBlue">
                   Hidden damage (water damage, rot, mold)
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
-                <span className="text-muted-foreground">
+                <span className="text-aliceBlue">
                   Electrical or plumbing issues behind walls
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
-                <span className="text-muted-foreground">
+                <span className="text-aliceBlue">
                   Structural problems discovered during demolition
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
-                <span className="text-muted-foreground">
+                <span className="text-aliceBlue">
                   Design changes and upgrades during the project
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
-                <span className="text-muted-foreground">
+                <span className="text-aliceBlue">
                   Permit complications or code compliance issues
                 </span>
               </li>
@@ -267,7 +267,7 @@ export function EducationalContent() {
             Renovations can be unpredictable – but your estimates don't have to
             be
           </h3>
-          <p className="text-muted-foreground mx-auto max-w-2xl">
+          <p className="text-aliceBlue mx-auto max-w-2xl">
             Contractor+ gives remodeling contractors the tools to quickly
             estimate costs (with contingency!), manage change orders, and keep
             projects on track. Start using it to make your renovation projects

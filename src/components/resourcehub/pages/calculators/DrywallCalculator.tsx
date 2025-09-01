@@ -132,7 +132,7 @@ export default function DrywallCalculator() {
             Drywall Materials Calculator
           </h1>
         </div>
-        <p className="text-muted-foreground max-w-3xl">
+        <p className="text-aliceBlue max-w-3xl">
           Calculate how many drywall sheets you need for your project. Perfect
           for contractors and DIY homeowners to estimate material quantities and
           costs.

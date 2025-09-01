@@ -267,7 +267,7 @@ export function BlogPostScroller() {
                   </div>
 
                   <CardHeader className="flex-grow">
-                    <div className="text-muted-foreground mb-2 flex items-center text-sm">
+                    <div className="text-aliceBlue mb-2 flex items-center text-sm">
                       <CalendarDays className="mr-1 h-4 w-4" />
                       {post.date}
                     </div>

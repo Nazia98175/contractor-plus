@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import { Clock, Video } from "lucide-react";
 import { getPermitCostText, formatLocationName } from "@/data/faq-data";
-import { ProjectDetail } from "@/types/projectDetail";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 import { videoUrlData } from "@/data/videoUrlData";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
@@ -191,7 +191,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
   //           </CardTitle>
   //         </CardHeader>
   //         <CardContent>
-  //           <p className="text-muted-foreground mb-4">
+  //           <p className="text-aliceBlue mb-4">
   //             A typical {projectName.toLowerCase()} project in {locationName}{" "}
   //             follows these phases:
   //           </p>
@@ -200,7 +200,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
   //               <h4 className="font-semibold text-foreground">
   //                 Planning & Preparation (1-2 days)
   //               </h4>
-  //               <p className="text-sm text-muted-foreground">
+  //               <p className="text-sm text-aliceBlue">
   //                 Site assessment, material ordering, and permit acquisition in{" "}
   //                 {locationName}. This phase ensures all requirements are met
   //                 before work begins.
@@ -210,7 +210,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
   //               <h4 className="font-semibold text-foreground">
   //                 Installation Phase (1-3 days)
   //               </h4>
-  //               <p className="text-sm text-muted-foreground">
+  //               <p className="text-sm text-aliceBlue">
   //                 Professional installation by qualified {locationName}{" "}
   //                 contractors, including any necessary preparation work and
   //                 final connections.
@@ -220,7 +220,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
   //               <h4 className="font-semibold text-foreground">
   //                 Completion & Cleanup (1 day)
   //               </h4>
-  //               <p className="text-sm text-muted-foreground">
+  //               <p className="text-sm text-aliceBlue">
   //                 Final inspections, testing, cleanup, and walk-through to
   //                 ensure work meets {locationName} standards and your
   //                 expectations.
@@ -278,7 +278,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-aliceBlue mb-6">
             A typical project to {projectName.toLowerCase()} in {locationName}{" "}
             follows these key phases:
           </p>
@@ -299,7 +299,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
                         {step.duration}
                       </Badge>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-aliceBlue text-sm leading-relaxed">
                       {processText(step.description)}
                     </p>
                   </div>

@@ -68,7 +68,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger type="button">
-                          <Info className="text-muted-foreground h-4 w-4" />
+                          <Info className="text-aliceBlue h-4 w-4" />
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">
                           The surface area that will be paved. Measure the
@@ -102,7 +102,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger type="button">
-                            <Info className="text-muted-foreground h-4 w-4" />
+                            <Info className="text-aliceBlue h-4 w-4" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             The length of one paver unit. For rectangular
@@ -134,7 +134,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger type="button">
-                            <Info className="text-muted-foreground h-4 w-4" />
+                            <Info className="text-aliceBlue h-4 w-4" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             The width of one paver unit. For rectangular pavers,
@@ -167,7 +167,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger type="button">
-                          <Info className="text-muted-foreground h-4 w-4" />
+                          <Info className="text-aliceBlue h-4 w-4" />
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">
                           Extra percentage of pavers to account for cutting
@@ -200,7 +200,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger type="button">
-                          <Info className="text-muted-foreground h-4 w-4" />
+                          <Info className="text-aliceBlue h-4 w-4" />
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">
                           The price for one paver unit. If a single paver costs

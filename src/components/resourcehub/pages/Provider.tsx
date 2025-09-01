@@ -18,7 +18,7 @@ export default function Providers({ children }: { children: ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className="bg-white pt-20"> {children}</main>
+      <main className="text-alice pt-20 lg:pt-24"> {children}</main>
       <Toaster />
     </QueryClientProvider>
   );

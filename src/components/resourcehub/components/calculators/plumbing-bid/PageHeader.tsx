@@ -52,7 +52,7 @@ export function PageHeader() {
         <h1 className="mb-3 text-3xl font-bold tracking-tight">
           Plumbing Bid Calculator
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Create accurate plumbing bids by calculating materials, labor, and
           profit. Perfect for plumbing contractors preparing estimates.
         </p>

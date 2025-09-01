@@ -61,7 +61,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-xl font-medium">
               Regional Cost Variations
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Construction costs can vary significantly by region due to
               differences in labor rates, material availability, and local
               regulations.
@@ -111,12 +111,12 @@ export function EducationalContent() {
             <h3 className="mb-2 text-xl font-medium">
               Why Include Contingency?
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-aliceBlue mb-4">
               Construction projects often encounter unexpected challenges that
               can impact the budget. A contingency fund helps manage these risks
               without derailing the project.
             </p>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-5">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-5">
               <li>Accounts for unforeseen site conditions</li>
               <li>Covers unexpected material price increases</li>
               <li>Allows for minor design changes during construction</li>
@@ -232,7 +232,7 @@ export function EducationalContent() {
           <h3 className="text-xl font-bold text-gray-900">
             Turn rough estimates into winning bids
           </h3>
-          <p className="text-muted-foreground mx-auto max-w-2xl">
+          <p className="text-aliceBlue mx-auto max-w-2xl">
             Contractor+ helps general contractors quickly estimate costs per
             square foot, adjust for overhead, and generate professional
             proposals. Get started today and manage your projects from estimate

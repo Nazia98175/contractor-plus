@@ -1,4 +1,3 @@
-
 import SortableTableHeader, { SortDirection } from "./SortableTableHeader";
 import { DataSource } from "@/types";
 
@@ -19,10 +18,10 @@ const StateTableHeaders = ({
 }: StateTableHeadersProps) => (
   <>
     <tr>
-      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">
+      <th className="text-aliceBlue h-12 px-4 text-left align-middle font-medium">
         Industry
       </th>
-      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">
+      <th className="text-aliceBlue h-12 px-4 text-left align-middle font-medium">
         {showRegion ? "Region" : "State"}
       </th>
       {dataSources.includes("Contractor+") && (

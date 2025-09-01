@@ -76,7 +76,7 @@ export function CountryAndLocationFields({
                   value={field.value || ""}
                 />
               </FormControl>
-              <MapPin className="text-muted-foreground absolute top-2.5 left-3 h-5 w-5" />
+              <MapPin className="text-aliceBlue absolute top-2.5 left-3 h-5 w-5" />
             </div>
             <FormMessage />
           </FormItem>

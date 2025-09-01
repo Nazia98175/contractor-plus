@@ -260,7 +260,7 @@ Witness: ___________________________ Date: ___________
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             Cost Plus Contract
           </h1>
-          <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
+          <p className="text-aliceBlue mx-auto max-w-3xl text-xl">
             Professional contract template for transparent cost-based
             construction projects. Perfect for large projects where cost
             transparency and detailed documentation are essential.
@@ -784,7 +784,7 @@ Witness: ___________________________ Date: ___________
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <h4 className="font-semibold">When to Use This Contract:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Large, complex projects with uncertain scope</li>
                   <li>Projects requiring transparency in cost management</li>
                   <li>Emergency or disaster recovery work</li>
@@ -793,7 +793,7 @@ Witness: ___________________________ Date: ___________
                 </ul>
 
                 <h4 className="font-semibold">Key Features:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Complete cost transparency with documentation</li>
                   <li>Contractor fee based on percentage or fixed amount</li>
                   <li>Maximum cost limits for budget protection</li>
@@ -803,7 +803,7 @@ Witness: ___________________________ Date: ___________
                 </ul>
 
                 <h4 className="font-semibold">Best Practices:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Establish clear maximum cost limits</li>
                   <li>Define detailed cost documentation requirements</li>
                   <li>Set up regular cost review meetings</li>
@@ -822,7 +822,7 @@ Witness: ___________________________ Date: ___________
         <h2 className="mb-4 text-2xl font-bold">
           Cost Plus Contract Template Guide
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           A cost plus contract provides complete transparency in project costs
           by reimbursing the contractor for all actual project expenses plus a
           predetermined fee. This contract structure is ideal for complex
@@ -835,7 +835,7 @@ Witness: ___________________________ Date: ___________
             <h3 className="mb-3 text-xl font-semibold">
               Advantages for Contractors
             </h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Guaranteed reimbursement for all legitimate costs</li>
               <li>Reduced financial risk on uncertain projects</li>
               <li>Ability to focus on quality over cost cutting</li>
@@ -846,7 +846,7 @@ Witness: ___________________________ Date: ___________
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Benefits for Clients</h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Complete transparency in all project costs</li>
               <li>Detailed documentation of every expense</li>
               <li>Audit rights to verify all charges</li>
@@ -857,7 +857,7 @@ Witness: ___________________________ Date: ___________
         </div>
 
         <h3 className="mb-3 text-xl font-semibold">Important Considerations</h3>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-aliceBlue mb-4">
           Cost plus contracts require rigorous documentation and administrative
           processes. Both parties must commit to transparent communication and
           detailed record keeping. Regular cost reviews and monitoring are
@@ -866,7 +866,7 @@ Witness: ___________________________ Date: ___________
         </p>
 
         <div className="rounded border-l-4 border-yellow-500 bg-yellow-50 p-4">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-aliceBlue text-sm">
             <strong>Disclaimer:</strong> This template is provided for
             informational purposes and should not be considered legal advice.
             For complex projects or specific legal situations, consult with a

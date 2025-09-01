@@ -1,10 +1,9 @@
-
-import React from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import React from "react";
+import { ChevronUp, ChevronDown } from "lucide-react";
 
 interface TableHeaderProps {
   sortField: string | null;
-  sortDirection: 'asc' | 'desc';
+  sortDirection: "asc" | "desc";
   onSort: (field: string) => void;
 }
 
@@ -15,7 +14,7 @@ export const ComparisonTableHeader: React.FC<TableHeaderProps> = ({
 }) => {
   const renderSortIcon = (field: string) => {
     if (sortField !== field) return null;
-    return sortDirection === 'asc' ? (
+    return sortDirection === "asc" ? (
       <ChevronUp className="h-4 w-4" />
     ) : (
       <ChevronDown className="h-4 w-4" />
@@ -23,20 +22,20 @@ export const ComparisonTableHeader: React.FC<TableHeaderProps> = ({
   };
 
   return (
-    <div className="grid grid-cols-12 gap-3 px-4 py-2 bg-muted/20 border-b text-muted-foreground text-sm">
+    <div className="bg-muted/20 text-aliceBlue grid grid-cols-12 gap-3 border-b px-4 py-2 text-sm">
       <div className="col-span-2 lg:col-span-1"></div>
-      <div 
-        className="col-span-5 md:col-span-6 lg:col-span-7 cursor-pointer hover:text-primary flex items-center gap-1"
-        onClick={() => onSort('name')}
+      <div
+        className="hover:text-primary col-span-5 flex cursor-pointer items-center gap-1 md:col-span-6 lg:col-span-7"
+        onClick={() => onSort("name")}
       >
-        Item {renderSortIcon('name')}
+        Item {renderSortIcon("name")}
       </div>
       <div className="col-span-2 text-center">Qty</div>
-      <div 
-        className="col-span-3 lg:col-span-2 text-right cursor-pointer hover:text-primary flex items-center justify-end gap-1"
-        onClick={() => onSort('price')}
+      <div
+        className="hover:text-primary col-span-3 flex cursor-pointer items-center justify-end gap-1 text-right lg:col-span-2"
+        onClick={() => onSort("price")}
       >
-        Price {renderSortIcon('price')}
+        Price {renderSortIcon("price")}
       </div>
     </div>
   );

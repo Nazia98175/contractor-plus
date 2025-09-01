@@ -33,7 +33,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             {result.paversNeeded.toLocaleString()} pavers
           </p>
           <p className="text-lg font-medium text-gray-600">{formattedCost}</p>
-          <p className="text-muted-foreground mt-1 text-xs">
+          <p className="text-aliceBlue mt-1 text-xs">
             (Always buy a few extra)
           </p>
         </div>
@@ -44,21 +44,21 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h4 className="font-medium text-gray-700">Calculation Details</h4>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Single Paver Area</span>
+            <span className="text-aliceBlue">Single Paver Area</span>
             <span className="font-medium text-gray-700">
               {formattedPaverArea} sq ft
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Waste Factor</span>
+            <span className="text-aliceBlue">Waste Factor</span>
             <span className="font-medium text-gray-700">
               {result.wastePercentage}%
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Cost per Paver</span>
+            <span className="text-aliceBlue">Cost per Paver</span>
             <span className="font-medium text-gray-700">
               ${result.costPerPaver.toFixed(2)}
             </span>

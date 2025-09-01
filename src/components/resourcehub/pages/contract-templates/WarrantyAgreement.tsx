@@ -217,7 +217,7 @@ ${formData.clientName || "[CLIENT NAME]"}
             Warranty Agreement Template
           </h1>
         </div>
-        <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
+        <p className="text-aliceBlue mx-auto max-w-2xl text-xl">
           Create a comprehensive warranty agreement that protects both
           contractor and client with clear warranty terms and coverage details.
         </p>
@@ -640,7 +640,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   <br />• Transferability: {formData.transferability}
                 </div>
 
-                <div className="text-muted-foreground mt-4 text-xs">
+                <div className="text-aliceBlue mt-4 text-xs">
                   Complete form to see full contract preview...
                 </div>
               </div>

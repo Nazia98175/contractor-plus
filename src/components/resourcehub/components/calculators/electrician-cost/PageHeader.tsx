@@ -58,7 +58,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground mb-8 max-w-3xl text-lg">
+      <p className="text-aliceBlue mb-8 max-w-3xl text-lg">
         Calculate accurate electrician billing rates based on wages, overhead,
         and profit markup to ensure your electrical contracting business remains
         profitable.

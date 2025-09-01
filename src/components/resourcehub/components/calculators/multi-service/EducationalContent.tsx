@@ -15,7 +15,7 @@ export function EducationalContent() {
         <h2 className="mb-4 text-2xl font-bold tracking-tight">
           About Multi-Service Job Estimating
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Combining multiple services or trades into one accurate estimate is
           essential for general contractors and project managers. This
           calculator helps you create professional multi-service quotes with
@@ -32,7 +32,7 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Breaking down each service separately allows for transparency with
               clients and helps identify where costs are concentrated in complex
               projects.
@@ -48,7 +48,7 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Apply a consistent profit markup across all services to ensure
               your management fee is properly accounted for. Most contractors
               use a 10-20% markup on multi-service jobs.
@@ -64,7 +64,7 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Ensure each service cost is accurately estimated, including
               materials, labor, and subcontractor fees. More precise inputs lead
               to more reliable final estimates.
@@ -80,7 +80,7 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               A well-organized estimate with clear itemization and transparent
               markup helps build client trust and positions you as a
               professional service provider.
@@ -99,7 +99,7 @@ export function EducationalContent() {
               <h3 className="mb-2 text-xl font-semibold">
                 Take the headache out of managing multiple trades
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-aliceBlue">
                 Contractor+ allows you to estimate multi-service projects in one
                 place – add up different trades, include your markup, and
                 generate one clean proposal. Simplify complex jobs and present
@@ -115,7 +115,7 @@ export function EducationalContent() {
         <h3 className="text-xl font-semibold">
           Tips for Multi-Service Job Estimating
         </h3>
-        <ul className="text-muted-foreground list-disc space-y-2 pl-5">
+        <ul className="text-aliceBlue list-disc space-y-2 pl-5">
           <li>
             Include a contingency fund for unexpected issues that might arise
             between different trades

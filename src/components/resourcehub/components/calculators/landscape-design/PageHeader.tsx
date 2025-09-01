@@ -53,7 +53,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate accurate landscape design and installation cost estimates
         based on area, material costs, and additional features to provide
         professional quotes to your clients.

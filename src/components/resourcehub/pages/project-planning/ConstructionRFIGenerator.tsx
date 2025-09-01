@@ -396,7 +396,7 @@ export default function ConstructionRFIGenerator() {
       {/* Header */}
       <div className="mb-8 text-center">
         <h1 className="mb-4 text-4xl font-bold">Construction RFI Generator</h1>
-        <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+        <p className="text-aliceBlue mx-auto max-w-2xl text-lg">
           Generate professional Request for Information documents to get
           clarification from architects, engineers, and project owners
         </p>
@@ -635,7 +635,7 @@ export default function ConstructionRFIGenerator() {
             </CardHeader>
             <CardContent>
               {!showPreview ? (
-                <div className="text-muted-foreground py-12 text-center">
+                <div className="text-aliceBlue py-12 text-center">
                   <HelpCircle className="mx-auto mb-4 h-12 w-12 opacity-50" />
                   <p>
                     Fill out the RFI form and click "Generate RFI" to see the
@@ -681,15 +681,13 @@ export default function ConstructionRFIGenerator() {
 
                   <div className="text-sm">
                     <strong>Description:</strong>
-                    <p className="text-muted-foreground mt-1">
-                      {rfiData.description}
-                    </p>
+                    <p className="text-aliceBlue mt-1">{rfiData.description}</p>
                   </div>
 
                   {(rfiData.drawings || rfiData.specifications) && (
                     <div className="text-sm">
                       <strong>References:</strong>
-                      <ul className="text-muted-foreground mt-1 space-y-1 text-xs">
+                      <ul className="text-aliceBlue mt-1 space-y-1 text-xs">
                         {rfiData.drawings && (
                           <li>Drawings: {rfiData.drawings}</li>
                         )}
@@ -719,7 +717,7 @@ export default function ConstructionRFIGenerator() {
             <h2 className="mb-4 text-3xl font-bold">
               Streamline Your Project Management
             </h2>
-            <p className="text-muted-foreground mx-auto mb-6 max-w-3xl text-lg">
+            <p className="text-aliceBlue mx-auto mb-6 max-w-3xl text-lg">
               Contractor+ is the ultimate solution that combines the best in
               construction project management and relationship management into
               the perfect operating system for build and service contractors.
@@ -730,7 +728,7 @@ export default function ConstructionRFIGenerator() {
                   <BarChart3 className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Project Management</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Advanced scheduling, resource allocation, and progress
                   tracking
                 </p>
@@ -740,7 +738,7 @@ export default function ConstructionRFIGenerator() {
                   <Users className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Client Relationships</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Streamlined communication and client management tools
                 </p>
               </div>
@@ -749,7 +747,7 @@ export default function ConstructionRFIGenerator() {
                   <FileText className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Complete Integration</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Everything you need in one powerful platform
                 </p>
               </div>
@@ -786,7 +784,7 @@ export default function ConstructionRFIGenerator() {
                   <span className="text-primary text-lg font-bold">1</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Fill Project Details</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Enter project information and assign RFI numbers for tracking
                 </p>
               </CardContent>
@@ -798,7 +796,7 @@ export default function ConstructionRFIGenerator() {
                   <span className="text-primary text-lg font-bold">2</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Define the Question</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Clearly describe what clarification you need from the design
                   team
                 </p>
@@ -811,7 +809,7 @@ export default function ConstructionRFIGenerator() {
                   <span className="text-primary text-lg font-bold">3</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Add References</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Include drawing numbers and specification sections for context
                 </p>
               </CardContent>
@@ -823,7 +821,7 @@ export default function ConstructionRFIGenerator() {
                   <span className="text-primary text-lg font-bold">4</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Download PDF</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Generate professional PDF documents ready for distribution
                 </p>
               </CardContent>
@@ -930,20 +928,20 @@ export default function ConstructionRFIGenerator() {
             <div className="grid gap-6 text-center md:grid-cols-3">
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">78%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   of project delays stem from poor communication and unclear
                   documentation
                 </p>
               </div>
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">12</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   average number of RFIs per $1M of construction project value
                 </p>
               </div>
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">3-7</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   days typical response time for standard RFI requests
                 </p>
               </div>

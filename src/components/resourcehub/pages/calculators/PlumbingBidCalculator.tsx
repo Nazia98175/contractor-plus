@@ -76,7 +76,7 @@ export default function PlumbingBidCalculator() {
             <CalculationResult result={calculationResult} />
           ) : (
             <div className="rounded-lg border-2 border-red-100 bg-white py-6 text-center shadow-sm">
-              <p className="text-muted-foreground">
+              <p className="text-aliceBlue">
                 Enter values and calculate to see results
               </p>
             </div>

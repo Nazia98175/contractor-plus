@@ -88,7 +88,7 @@ export default function IrrigationSystemCalculator() {
                 <h3 className="mb-2 text-lg font-medium text-gray-700">
                   Enter irrigation system details to calculate your estimate
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-aliceBlue mb-4">
                   Complete the form on the left and click "Calculate" to see
                   your estimated irrigation material costs here.
                 </p>

@@ -28,9 +28,9 @@ export function CalculationResult({
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center py-6 text-center">
-            <AlertCircle className="text-muted-foreground mb-2 h-10 w-10" />
+            <AlertCircle className="text-aliceBlue mb-2 h-10 w-10" />
             <p className="mb-2 text-lg font-medium">No calculation yet</p>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-aliceBlue text-sm">
               Fill out the form and click Calculate to see results
             </p>
           </div>
@@ -77,7 +77,7 @@ export function CalculationResult({
 
           {/* Base Fence Cost */}
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Base Fence Cost:</span>
+            <span className="text-aliceBlue">Base Fence Cost:</span>
             <span className="font-medium">
               $
               {baseFenceCost.toLocaleString("en-US", {
@@ -88,7 +88,7 @@ export function CalculationResult({
 
           {/* Gate Cost */}
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">
+            <span className="text-aliceBlue">
               Gate Cost ({numberOfGates > 0 ? gatesText : "none"}):
             </span>
             <span className="font-medium">
@@ -101,7 +101,7 @@ export function CalculationResult({
 
           {/* Additional Costs */}
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Additional Costs:</span>
+            <span className="text-aliceBlue">Additional Costs:</span>
             <span className="font-medium">
               $
               {additionalCosts.toLocaleString("en-US", {

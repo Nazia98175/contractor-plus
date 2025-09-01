@@ -33,7 +33,7 @@ const DataSourcesPage = () => {
           {/* {t("data_sources")} */}
           Data Sources
         </h1>
-        <p className="text-muted-foreground mb-8 text-lg">
+        <p className="text-aliceBlue mb-8 text-lg">
           Information about how we collect and use product data.
         </p>
 

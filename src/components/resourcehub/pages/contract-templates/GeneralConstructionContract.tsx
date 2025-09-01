@@ -220,7 +220,7 @@ Witness: ___________________________ Date: ___________
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             General Construction Contract
           </h1>
-          <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
+          <p className="text-aliceBlue mx-auto max-w-3xl text-xl">
             Professional contract template for general construction projects
             including new builds, remodels, and additions. Fill out the form to
             generate your customized contract instantly.
@@ -675,7 +675,7 @@ Witness: ___________________________ Date: ___________
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <h4 className="font-semibold">When to Use This Contract:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>New construction projects</li>
                   <li>Major home remodels and additions</li>
                   <li>Commercial construction projects</li>
@@ -684,7 +684,7 @@ Witness: ___________________________ Date: ___________
                 </ul>
 
                 <h4 className="font-semibold">Key Features:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Comprehensive scope of work definition</li>
                   <li>Clear payment schedules and terms</li>
                   <li>Timeline and milestone tracking</li>
@@ -694,7 +694,7 @@ Witness: ___________________________ Date: ___________
                 </ul>
 
                 <h4 className="font-semibold">Best Practices:</h4>
-                <ul className="text-muted-foreground list-disc space-y-1 pl-6 text-sm">
+                <ul className="text-aliceBlue list-disc space-y-1 pl-6 text-sm">
                   <li>Be specific about materials and workmanship standards</li>
                   <li>Include detailed project drawings and specifications</li>
                   <li>
@@ -719,7 +719,7 @@ Witness: ___________________________ Date: ___________
         <h2 className="mb-4 text-2xl font-bold">
           General Construction Contract Template Guide
         </h2>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-aliceBlue mb-6">
           A general construction contract is a legally binding agreement between
           a contractor and client that outlines all aspects of a construction
           project. This comprehensive template covers everything from project
@@ -729,7 +729,7 @@ Witness: ___________________________ Date: ___________
         <div className="mb-8 grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="mb-3 text-xl font-semibold">Essential Elements</h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Detailed project description and specifications</li>
               <li>Clear timeline with start and completion dates</li>
               <li>Total contract price and payment schedule</li>
@@ -743,7 +743,7 @@ Witness: ___________________________ Date: ___________
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Legal Considerations</h3>
-            <ul className="text-muted-foreground list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
               <li>Compliance with local building codes</li>
               <li>Proper contractor licensing and insurance</li>
               <li>Lien waiver and release provisions</li>
@@ -755,7 +755,7 @@ Witness: ___________________________ Date: ___________
         </div>
 
         <h3 className="mb-3 text-xl font-semibold">Tips for Contractors</h3>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-aliceBlue mb-4">
           When using this general construction contract template, make sure to
           customize it for your specific project and local requirements. Always
           include detailed specifications, clear payment terms, and
@@ -764,7 +764,7 @@ Witness: ___________________________ Date: ___________
         </p>
 
         <div className="rounded border-l-4 border-yellow-500 bg-yellow-50 p-4">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-aliceBlue text-sm">
             <strong>Disclaimer:</strong> This template is provided for
             informational purposes and should not be considered legal advice.
             For complex projects or specific legal situations, consult with a

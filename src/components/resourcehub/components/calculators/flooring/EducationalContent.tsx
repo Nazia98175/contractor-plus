@@ -18,7 +18,7 @@ export function EducationalContent() {
           Understanding Flooring Estimates
         </h2>
         <Separator className="my-3" />
-        <p className="text-muted-foreground">
+        <p className="text-aliceBlue">
           Accurate flooring estimates are essential for both contractors and
           homeowners. This calculator helps you factor in all the important
           costs associated with a flooring project, from materials to labor and
@@ -126,7 +126,7 @@ export function EducationalContent() {
               flooring won't go underneath.
             </li>
           </ol>
-          <p className="text-muted-foreground mt-4">
+          <p className="text-aliceBlue mt-4">
             Remember that the waste factor is crucial – even with perfect
             measurements, you'll need extra material for cuts, mistakes, and
             future repairs.

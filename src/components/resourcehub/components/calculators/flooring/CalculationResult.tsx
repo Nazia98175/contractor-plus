@@ -33,7 +33,7 @@ export function CalculationResult({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground text-sm italic">
+          <p className="text-aliceBlue text-sm italic">
             Enter your flooring details to get an accurate cost breakdown.
           </p>
         </CardContent>

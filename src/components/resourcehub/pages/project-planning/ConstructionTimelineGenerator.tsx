@@ -1817,7 +1817,7 @@ export default function ConstructionTimelineGenerator() {
         <h1 className="mb-4 text-4xl font-bold">
           Construction Timeline Generator
         </h1>
-        <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+        <p className="text-aliceBlue mx-auto max-w-2xl text-lg">
           Create professional construction project timelines with customizable
           Gantt-style visualization
         </p>
@@ -2029,7 +2029,7 @@ export default function ConstructionTimelineGenerator() {
             </CardHeader>
             <CardContent>
               {timeline.length === 0 ? (
-                <div className="text-muted-foreground py-12 text-center">
+                <div className="text-aliceBlue py-12 text-center">
                   <Calendar className="mx-auto mb-4 h-12 w-12 opacity-50" />
                   <p>
                     Fill out the project details and click "Generate Timeline"
@@ -2055,7 +2055,7 @@ export default function ConstructionTimelineGenerator() {
                             <div className="h-0 w-0 border-r-4 border-b-4 border-l-4 border-transparent border-b-gray-600"></div>
                           </div>
                         </Button>
-                        <GripVertical className="text-muted-foreground h-4 w-4 cursor-move" />
+                        <GripVertical className="text-aliceBlue h-4 w-4 cursor-move" />
                         <Button
                           variant="ghost"
                           size="sm"
@@ -2115,7 +2115,7 @@ export default function ConstructionTimelineGenerator() {
                           />
                         </div>
 
-                        <div className="text-muted-foreground mt-1 flex justify-between text-xs">
+                        <div className="text-aliceBlue mt-1 flex justify-between text-xs">
                           <span>Day {phase.startDay}</span>
                           <span>Day {phase.endDay}</span>
                         </div>
@@ -2137,9 +2137,7 @@ export default function ConstructionTimelineGenerator() {
                                 }
                               }}
                             />
-                            <span className="text-muted-foreground text-xs">
-                              days
-                            </span>
+                            <span className="text-aliceBlue text-xs">days</span>
                             <Button
                               size="sm"
                               variant="outline"
@@ -2174,7 +2172,7 @@ export default function ConstructionTimelineGenerator() {
             <h2 className="mb-4 text-3xl font-bold">
               Streamline Your Project Management
             </h2>
-            <p className="text-muted-foreground mx-auto mb-6 max-w-3xl text-lg">
+            <p className="text-aliceBlue mx-auto mb-6 max-w-3xl text-lg">
               Contractor+ is the ultimate solution that combines the best in
               construction project management and relationship management into
               the perfect operating system for build and service contractors.
@@ -2185,7 +2183,7 @@ export default function ConstructionTimelineGenerator() {
                   <BarChart3 className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Project Management</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Advanced scheduling, resource allocation, and progress
                   tracking
                 </p>
@@ -2195,7 +2193,7 @@ export default function ConstructionTimelineGenerator() {
                   <Users className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Client Relationships</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Streamlined communication and client management tools
                 </p>
               </div>
@@ -2204,7 +2202,7 @@ export default function ConstructionTimelineGenerator() {
                   <Calendar className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Complete Integration</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Everything you need in one powerful platform
                 </p>
               </div>
@@ -2240,7 +2238,7 @@ export default function ConstructionTimelineGenerator() {
                   <span className="text-primary text-lg font-bold">1</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Project Setup</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Define project category, type, and complexity to get accurate
                   estimates
                 </p>
@@ -2253,7 +2251,7 @@ export default function ConstructionTimelineGenerator() {
                   <span className="text-primary text-lg font-bold">2</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Generate Timeline</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Our AI analyzes your inputs to create industry-standard
                   timelines
                 </p>
@@ -2266,7 +2264,7 @@ export default function ConstructionTimelineGenerator() {
                   <span className="text-primary text-lg font-bold">3</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Customize Phases</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Edit durations, delete unnecessary phases, and adjust to your
                   needs
                 </p>
@@ -2279,7 +2277,7 @@ export default function ConstructionTimelineGenerator() {
                   <span className="text-primary text-lg font-bold">4</span>
                 </div>
                 <h3 className="mb-2 font-semibold">Export PDF</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   Generate professional PDF timelines for client presentations
                 </p>
               </CardContent>
@@ -2386,21 +2384,21 @@ export default function ConstructionTimelineGenerator() {
             <div className="grid gap-6 text-center md:grid-cols-3">
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">73%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   of projects finish within 2 weeks of planned completion when
                   using detailed timelines
                 </p>
               </div>
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">45%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   reduction in client complaints when timelines are shared
                   upfront
                 </p>
               </div>
               <div>
                 <div className="text-primary mb-2 text-2xl font-bold">60%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-aliceBlue text-sm">
                   of contractors report better resource planning with visual
                   timelines
                 </p>

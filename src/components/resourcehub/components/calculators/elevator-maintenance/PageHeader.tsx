@@ -48,7 +48,7 @@ export function PageHeader() {
         </h1>
       </div>
 
-      <p className="text-muted-foreground max-w-3xl text-lg">
+      <p className="text-aliceBlue max-w-3xl text-lg">
         Calculate annual elevator maintenance costs based on service frequency
         and additional requirements to help plan budgets or prepare service
         contracts.

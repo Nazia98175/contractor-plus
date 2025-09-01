@@ -112,7 +112,7 @@ export default function CarpetCleaningCalculator() {
             Carpet Cleaning Estimate Calculator
           </h1>
         </div>
-        <p className="text-muted-foreground max-w-3xl">
+        <p className="text-aliceBlue max-w-3xl">
           Calculate accurate carpet cleaning estimates based on area size,
           pricing, minimum charges, and additional services to provide
           professional quotes to your clients.
@@ -132,7 +132,7 @@ export default function CarpetCleaningCalculator() {
           )}
           {!calculationResult && (
             <div className="bg-muted/30 mb-6 rounded-lg border p-6 text-center">
-              <p className="text-muted-foreground">
+              <p className="text-aliceBlue">
                 Enter carpet area and pricing details to calculate your cleaning
                 estimate
               </p>

@@ -186,7 +186,7 @@ export function EstimatePreview({ items, estimateInfo }: EstimatePreviewProps) {
                     <tr>
                       <td
                         colSpan={5}
-                        className="text-muted-foreground py-4 text-center"
+                        className="text-aliceBlue py-4 text-center"
                       >
                         No items added yet
                       </td>
@@ -219,7 +219,7 @@ export function EstimatePreview({ items, estimateInfo }: EstimatePreviewProps) {
               </div>
             )}
 
-            <div className="text-muted-foreground mt-8 border-t pt-4 text-center text-sm">
+            <div className="text-aliceBlue mt-8 border-t pt-4 text-center text-sm">
               This estimate was created with Contractor+ Free Estimate Maker
             </div>
 

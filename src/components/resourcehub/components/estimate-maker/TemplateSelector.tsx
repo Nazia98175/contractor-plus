@@ -56,12 +56,14 @@ export function TemplateSelector({
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {filteredTemplates.map((template) => (
-          <Card key={template.id} className="overflow-hidden">
+          <Card key={template.id} className="flex flex-col overflow-hidden">
             <CardHeader className="pb-2">
               <div className="flex items-start justify-between">
                 <div>
                   <CardTitle>{template.title}</CardTitle>
-                  <CardDescription>{template.description}</CardDescription>
+                  <CardDescription className="mt-1 text-xs font-light">
+                    {template.description}
+                  </CardDescription>
                 </div>
                 <Badge variant="secondary">{template.category}</Badge>
               </div>
@@ -71,7 +73,7 @@ export function TemplateSelector({
               <p>{template.items.length} line items included</p>
             </CardContent>
 
-            <CardFooter className="bg-muted/20 pt-2">
+            <CardFooter className="mt-auto pt-2">
               <Button
                 className="w-full"
                 variant="default"
@@ -102,7 +104,7 @@ export function TemplateSelector({
             </p>
           </CardContent>
 
-          <CardFooter className="bg-muted/20 pt-2">
+          <CardFooter className="pt-2">
             <Button className="w-full" variant="default" asChild>
               <a href="https://my.contractorplus.app/register">
                 Create Account

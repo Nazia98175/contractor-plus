@@ -18,21 +18,15 @@ export function PageHeader() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources"
-                className="hover:text-primary text-sm font-medium text-gray-700"
-              >
-                Resources
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink
-                href="/resources/calculators"
-                className="hover:text-primary text-sm font-medium text-gray-700"
+                href="/resources/cost-calculator"
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push("/resources/calculators");
+                  router.push("/resources/cost-calculator");
                 }}
               >
                 Construction Calculators
@@ -40,7 +34,7 @@ export function PageHeader() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-sm font-medium text-gray-500">
+              <BreadcrumbPage className="text-master text-sm">
                 Margin Calculator
               </BreadcrumbPage>
             </BreadcrumbItem>

@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "../../ui/card";
 import { Separator } from "../../ui/separator";
-import { DrywallCalculationResult } from "@/pages/calculators/DrywallCalculator";
+import { DrywallCalculationResult } from "@/components/resourcehub/pages/calculators/DrywallCalculator";
 
 interface CalculationResultProps {
   calculationResult: DrywallCalculationResult | null;
@@ -18,7 +18,7 @@ export function CalculationResult({
 }: CalculationResultProps) {
   if (!calculationResult) {
     return (
-      <Card className="mb-8 border-2 border-red-100 bg-white shadow-md">
+      <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
         <CardHeader className="border-b border-red-100 bg-red-50">
           <CardTitle className="text-xl text-red-800">
             Calculation Results
@@ -36,7 +36,7 @@ export function CalculationResult({
   const sheetWidthLength = `${(calculationResult.sheetArea / calculationResult.sheetArea) * 4}x${calculationResult.sheetArea / 4}`;
 
   return (
-    <Card className="mb-8 border-2 border-red-100 bg-white shadow-md">
+    <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
       <CardHeader className="border-b border-red-100 bg-red-50">
         <CardTitle className="text-xl text-red-800">
           Calculation Results
@@ -44,7 +44,7 @@ export function CalculationResult({
       </CardHeader>
       <CardContent className="pt-6">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-600">
+          <h3 className="text-alice text-lg font-medium">
             Drywall Sheets Needed
           </h3>
           <p className="my-2 text-4xl font-bold text-red-600">
@@ -59,7 +59,7 @@ export function CalculationResult({
           <>
             <Separator className="my-4" />
             <div className="mb-6 text-center">
-              <h3 className="text-lg font-medium text-gray-600">
+              <h3 className="text-alice text-lg font-medium">
                 Total Material Cost
               </h3>
               <p className="my-2 text-4xl font-bold text-red-600">

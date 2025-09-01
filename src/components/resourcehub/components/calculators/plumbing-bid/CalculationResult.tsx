@@ -20,7 +20,7 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="mb-6 border-2 border-red-100 bg-white shadow-md">
+    <Card className="border-stiletto bg-shutter mb-6 border-2 shadow-md">
       <CardHeader className="border-b border-red-100 bg-red-50">
         <CardTitle className="flex items-center text-lg text-red-800">
           <Receipt className="mr-2 h-5 w-5 text-red-600" />
@@ -29,7 +29,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
       </CardHeader>
       <CardContent className="pt-6">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-600">
+          <h3 className="text-alice text-lg font-medium">
             Suggested Bid Price
           </h3>
           <p className="my-2 text-4xl font-bold text-green-600">

@@ -61,7 +61,7 @@ export function EducationalContent() {
                   How Roof Square Footage is Calculated
                 </h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-alice">
                 The calculation takes into account both the building's footprint
                 (length × width) and the pitch of the roof. The steeper the
                 pitch, the more surface area the roof has compared to the
@@ -80,7 +80,7 @@ export function EducationalContent() {
                   Why Accurate Measurements Matter
                 </h3>
               </div>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="text-alice space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
                   <span>
@@ -172,27 +172,27 @@ export function EducationalContent() {
             Pro Tips for Roofing Contractors
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm">
               <h4 className="mb-2 font-medium text-red-600">
                 Add Waste Factor
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-alice text-sm">
                 Always add 10-15% to your square footage calculation to account
                 for waste during installation.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm">
               <h4 className="mb-2 font-medium text-red-600">Complex Roofs</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-alice text-sm">
                 For roofs with multiple sections, calculate each part separately
                 and add them together.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm">
               <h4 className="mb-2 font-medium text-red-600">
                 Consider Accessories
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-alice text-sm">
                 Don't forget to account for ridge caps, starter strips, and
                 other accessories in your estimate.
               </p>

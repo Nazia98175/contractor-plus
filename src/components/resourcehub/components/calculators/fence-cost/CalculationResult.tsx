@@ -20,7 +20,7 @@ export function CalculationResult({
 }: CalculationResultProps) {
   if (!calculationResult) {
     return (
-      <Card className="mb-6 border border-gray-200 bg-white shadow-sm">
+      <Card className="border-stiletto bg-shutter mb-6 border shadow-sm">
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium">
             Calculation Results
@@ -58,7 +58,7 @@ export function CalculationResult({
       </CardHeader>
       <CardContent className="pt-4">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-600">
+          <h3 className="text-alice text-lg font-medium">
             Estimated Fence Cost
           </h3>
           <p className="my-2 flex items-center justify-center text-4xl font-bold text-green-700">

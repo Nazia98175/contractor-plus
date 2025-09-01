@@ -62,8 +62,8 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   }
 
   return (
-    <Card className="border border-gray-200 bg-white shadow-sm">
-      <CardHeader className="border-b border-gray-200 bg-white pb-4">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
+      <CardHeader className="border-stiletto border-b pb-4">
         <h2 className="text-lg font-medium">
           Calculate Electrician Hourly Rate
         </h2>
@@ -71,7 +71,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter labor costs and pricing information
         </p>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="h-auto pt-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             {/* Base Hourly Wage Field */}

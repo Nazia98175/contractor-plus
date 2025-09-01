@@ -26,7 +26,7 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-gray-600">
+            <p className="text-alice text-sm">
               Understanding your true hourly costs is critical for electrical
               contractors. Setting your rates too low can lead to unprofitable
               work, while setting them too high might price you out of the
@@ -44,7 +44,7 @@ export function EducationalContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-gray-600">
+            <p className="text-alice text-sm">
               Many electrical contractors mistakenly base their rates solely on
               what competitors charge or by simply doubling wages. This
               overlooks crucial costs like insurance, tools, vehicles, and
@@ -102,12 +102,12 @@ export function EducationalContent() {
         </TableBody>
       </Table>
 
-      <div className="mb-10 rounded-lg border border-gray-100 bg-gray-50 p-6">
+      <div className="bg-shutter mb-10 rounded-lg p-6">
         <h3 className="mb-3 flex items-center text-lg font-medium">
           <Calculator className="mr-2 h-5 w-5 text-red-600" /> Common
           Electrician Rate Mistakes
         </h3>
-        <ul className="space-y-2 text-sm text-gray-700">
+        <ul className="space-y-2 text-sm">
           <li className="flex gap-2">
             <span className="font-bold text-red-500">•</span>
             <span>Only counting direct wages when setting rates</span>
@@ -140,12 +140,12 @@ export function EducationalContent() {
         </ul>
       </div>
 
-      <div className="rounded-lg border border-blue-100 bg-blue-50 p-6">
+      <div className="border-stiletto bg-shutter rounded-lg border p-6">
         <h3 className="mb-3 flex items-center text-lg font-medium">
           <Settings className="mr-2 h-5 w-5 text-blue-600" /> Tips for
           Implementing Your Rate
         </h3>
-        <div className="space-y-4 text-sm text-gray-700">
+        <div className="space-y-4 text-sm">
           <p>
             <strong>Market Adjustment:</strong> Once you calculate your minimum
             viable rate, compare it with local market rates. If you're

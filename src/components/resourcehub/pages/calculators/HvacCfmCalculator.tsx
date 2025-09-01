@@ -69,7 +69,7 @@ export default function HvacCfmCalculator() {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink
-                href="/resources/calculators"
+                href="/resources/cost-calculator"
                 className="hover:text-primary text-sm text-gray-700"
               >
                 Calculators
@@ -134,17 +134,17 @@ export default function HvacCfmCalculator() {
           )}
 
           {/* Call to Action Card */}
-          <div className="from-primary/5 border-primary/20 rounded-lg border bg-gradient-to-br to-gray-50 p-6 shadow-sm">
+          <div className="from-primary/5 border-shutter rounded-lg border bg-gradient-to-br to-gray-50 p-6 shadow-sm">
             <h3 className="mb-2 text-xl font-semibold text-gray-800">
               Precision HVAC Calculations
             </h3>
-            <p className="mb-4 text-gray-600">
+            <p className="text-alice mb-4">
               Get access to more advanced HVAC calculators, client management
               tools, and job scheduling with Contractor+.
             </p>
             <Button
               variant="outline"
-              className="border-primary/20 hover:bg-primary/5 hover:border-primary/30 text-primary w-full bg-white"
+              className="border-shutter hover:bg-primary/5 hover:border-primary/30 text-primary w-full bg-white"
             >
               Try Contractor+ Free
             </Button>

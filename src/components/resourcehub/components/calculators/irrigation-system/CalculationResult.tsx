@@ -29,8 +29,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
   } = result;
 
   return (
-    <Card className="h-full border border-gray-200 bg-white shadow-sm">
-      <CardHeader className="border-b border-gray-200 bg-white pt-6 pb-2">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
+      <CardHeader className="border-stiletto border-b pt-6 pb-2">
         <h2 className="flex items-center gap-2 text-lg font-medium">
           <Droplet className="h-5 w-5 text-red-600" />
           <span>Irrigation Material Cost Estimate</span>

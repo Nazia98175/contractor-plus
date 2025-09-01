@@ -16,14 +16,14 @@ export function PageHeader() {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/resources"
-              className="hover:text-primary text-sm font-medium text-gray-700"
+              className="hover:text-primary text-aliceBlue text-sm font-medium"
             >
               Resources
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-sm font-medium text-gray-500">
+            <BreadcrumbPage className="text-master text-sm">
               Free Estimate Templates
             </BreadcrumbPage>
           </BreadcrumbItem>

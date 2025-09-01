@@ -1,4 +1,4 @@
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Snowflake } from "lucide-react";
 
 export function EducationalContent() {
@@ -22,15 +22,15 @@ export function EducationalContent() {
                 <Snowflake className="h-5 w-5 text-blue-500" />
                 Setting Your Base Rate
               </h3>
-              <p className="mb-3 text-gray-600">Your base rate should cover:</p>
-              <ul className="list-disc space-y-1 pl-5 text-gray-600">
+              <p className="text-alice mb-3">Your base rate should cover:</p>
+              <ul className="text-alice list-disc space-y-1 pl-5">
                 <li>Equipment costs and depreciation</li>
                 <li>Fuel expenses</li>
                 <li>Labor for standard service times</li>
                 <li>Insurance and overhead</li>
                 <li>Reasonable profit margin</li>
               </ul>
-              <p className="mt-3 text-gray-600">
+              <p className="text-alice mt-3">
                 Consider the property size, accessibility, and typical
                 conditions when setting your base rate. Most contractors
                 establish tiers based on driveway/lot size.
@@ -44,14 +44,14 @@ export function EducationalContent() {
                 <Snowflake className="h-5 w-5 text-blue-500" />
                 Understanding Extra Charges
               </h3>
-              <p className="mb-3 text-gray-600">Heavy snowfalls require:</p>
-              <ul className="list-disc space-y-1 pl-5 text-gray-600">
+              <p className="text-alice mb-3">Heavy snowfalls require:</p>
+              <ul className="text-alice list-disc space-y-1 pl-5">
                 <li>Additional time and effort</li>
                 <li>More equipment strain and fuel</li>
                 <li>Multiple passes to clear effectively</li>
                 <li>Snow relocation for larger accumulations</li>
               </ul>
-              <p className="mt-3 text-gray-600">
+              <p className="text-alice mt-3">
                 Extra charges should reflect the increased resources needed to
                 handle deeper snow. Most pros charge 25-50% more for each
                 additional 2-4 inches of snow depth.
@@ -69,7 +69,7 @@ export function EducationalContent() {
           <Card className="border border-gray-200">
             <CardContent className="pt-6">
               <h3 className="mb-2 text-lg font-medium">Per-Visit Pricing</h3>
-              <p className="text-gray-600">
+              <p className="text-alice">
                 Charge each time you clear snow, with additional fees for deeper
                 accumulations. Best for occasional service or when snowfall
                 varies significantly throughout the season.
@@ -80,7 +80,7 @@ export function EducationalContent() {
           <Card className="border border-gray-200">
             <CardContent className="pt-6">
               <h3 className="mb-2 text-lg font-medium">Seasonal Contract</h3>
-              <p className="text-gray-600">
+              <p className="text-alice">
                 Fixed price for the entire winter season regardless of snowfall
                 amount. Provides clients budget certainty and guarantees your
                 revenue regardless of weather.
@@ -91,7 +91,7 @@ export function EducationalContent() {
           <Card className="border border-gray-200">
             <CardContent className="pt-6">
               <h3 className="mb-2 text-lg font-medium">Monthly Retainer</h3>
-              <p className="text-gray-600">
+              <p className="text-alice">
                 Client pays a set monthly fee during winter months for priority
                 service. Often combined with per-visit charges at reduced rates
                 when service is needed.
@@ -101,7 +101,7 @@ export function EducationalContent() {
         </div>
       </div>
 
-      <div className="rounded-lg border border-blue-100 bg-blue-50 p-6">
+      <div className="border-stiletto bg-shutter rounded-lg border p-6">
         <div className="flex gap-3">
           <Snowflake className="h-8 w-8 flex-shrink-0 text-blue-600" />
           <div>

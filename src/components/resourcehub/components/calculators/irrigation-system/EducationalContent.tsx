@@ -125,7 +125,7 @@ export function EducationalContent() {
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 shadow-sm">
             <h3 className="mb-2 text-lg font-medium">Spray Heads</h3>
-            <p className="mb-3 text-sm text-gray-600">
+            <p className="text-alice mb-3 text-sm">
               Fixed spray pattern, typically covering 5-15 feet radius. Good for
               smaller, regularly shaped areas.
             </p>
@@ -147,7 +147,7 @@ export function EducationalContent() {
 
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 shadow-sm">
             <h3 className="mb-2 text-lg font-medium">Rotor Heads</h3>
-            <p className="mb-3 text-sm text-gray-600">
+            <p className="text-alice mb-3 text-sm">
               Rotating stream that covers 15-50 feet radius. More efficient for
               larger areas.
             </p>
@@ -169,7 +169,7 @@ export function EducationalContent() {
 
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 shadow-sm">
             <h3 className="mb-2 text-lg font-medium">Drip Irrigation</h3>
-            <p className="mb-3 text-sm text-gray-600">
+            <p className="text-alice mb-3 text-sm">
               Slow delivery directly to plant roots. Most water-efficient
               option.
             </p>
@@ -193,12 +193,12 @@ export function EducationalContent() {
 
       <Separator />
 
-      <section className="rounded-lg border border-red-100 bg-red-50 p-6">
+      <section className="border-stiletto bg-shutter borderp-6 rounded-lg">
         <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold">
           <Droplet className="h-5 w-5 text-red-600" />
           <span>Plan out every sprinkler and save money on parts</span>
         </h2>
-        <p className="mb-4 text-gray-700">
+        <p className="text-decemberSky mb-4">
           Contractor+ helps irrigation specialists estimate all necessary
           materials and costs easily. From heads and valves to controllers, get
           it right on paper and then use Contractor+ to schedule installs and

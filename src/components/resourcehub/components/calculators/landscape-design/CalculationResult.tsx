@@ -23,8 +23,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
   };
 
   return (
-    <Card className="border-primary/20 border-2 bg-white shadow-md">
-      <CardHeader className="bg-primary/5 border-primary/20 border-b">
+    <Card className="border-shutter border-2 bg-white shadow-md">
+      <CardHeader className="bg-primary/5 border-shutter border-b">
         <CardTitle className="text-primary/90 flex items-center text-lg">
           <Flower className="text-primary mr-2 h-5 w-5" />
           Landscape Cost Estimate

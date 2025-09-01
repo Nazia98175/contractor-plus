@@ -28,7 +28,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
   };
 
   return (
-    <Card className="h-full border border-gray-200 bg-white shadow-sm">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardHeader className="pb-2">
         <CardTitle className="flex items-center gap-2 text-xl">
           <Snowflake className="h-5 w-5 text-blue-500" />
@@ -38,14 +38,14 @@ export function CalculationResult({ result }: CalculationResultProps) {
       <CardContent className="pt-4">
         <div className="space-y-6">
           <div className="grid gap-4">
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
-              <div className="mb-1 flex items-center justify-between text-sm text-gray-600">
+            <div className="bg-shutter rounded-lg p-4">
+              <div className="text-alice mb-1 flex items-center justify-between text-sm">
                 <span>Base Rate:</span>
                 <span className="font-medium">{formatCurrency(baseRate)}</span>
               </div>
 
               {extraCost > 0 && (
-                <div className="mb-1 flex items-center justify-between text-sm text-gray-600">
+                <div className="text-alice mb-1 flex items-center justify-between text-sm">
                   <span>
                     Extra Cost ({overageInches.toFixed(1)} inches over{" "}
                     {includedDepth} inches):
@@ -67,7 +67,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </div>
           </div>
 
-          <div className="rounded-lg border border-blue-100 bg-blue-50 p-4">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4">
             <h4 className="mb-2 font-medium text-blue-800">
               Pricing Breakdown
             </h4>
@@ -92,7 +92,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </ul>
           </div>
 
-          <div className="rounded-lg border border-red-100 bg-red-50 p-4">
+          <div className="border-stiletto bg-shutter borderp-4 rounded-lg">
             <div className="flex items-start gap-2">
               <Snowflake className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
               <p className="text-sm text-gray-700">

@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "../../ui/breadcrumb";
+import Link from "next/link";
 
 export function PageHeader() {
   return (
@@ -17,7 +18,7 @@ export function PageHeader() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources"
-                className="text-sm font-medium text-gray-700 hover:text-red-600"
+                className="text-sm font-medium hover:text-red-600"
               >
                 Resources
               </Link>
@@ -27,8 +28,8 @@ export function PageHeader() {
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
               <Link
-                href="/resources/calculators"
-                className="text-sm font-medium text-gray-700 hover:text-red-600"
+                href="/resources/cost-calculator"
+                className="text-sm font-medium hover:text-red-600"
               >
                 Calculators
               </Link>
@@ -36,7 +37,7 @@ export function PageHeader() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-sm font-medium text-gray-500">
+            <BreadcrumbPage className="text-master text-sm">
               Snow Removal Pricing Calculator
             </BreadcrumbPage>
           </BreadcrumbItem>

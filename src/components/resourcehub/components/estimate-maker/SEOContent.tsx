@@ -56,21 +56,21 @@ export function SEOContent() {
             Benefits of Using Our Free Estimate Templates
           </h3>
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="bg-muted space-y-2 rounded-lg p-6">
+            <div className="bg-shutter space-y-2 rounded-lg p-6">
               <h4 className="font-medium">Save Time</h4>
               <p className="text-aliceBlue text-sm">
                 Start with pre-built templates rather than creating estimates
                 from scratch. Simply customize to your needs.
               </p>
             </div>
-            <div className="bg-muted space-y-2 rounded-lg p-6">
+            <div className="bg-shutter space-y-2 rounded-lg p-6">
               <h4 className="font-medium">Look Professional</h4>
               <p className="text-aliceBlue text-sm">
                 Create polished, detailed estimates that instill confidence in
                 your clients and win more business.
               </p>
             </div>
-            <div className="bg-muted space-y-2 rounded-lg p-6">
+            <div className="bg-shutter space-y-2 rounded-lg p-6">
               <h4 className="font-medium">Accurate Pricing</h4>
               <p className="text-aliceBlue text-sm">
                 Calculate totals, markups, and taxes automatically to ensure
@@ -80,7 +80,7 @@ export function SEOContent() {
           </div>
         </section>
 
-        <section className="bg-muted rounded-lg p-8 text-center">
+        <section className="bg-shutter rounded-lg p-8 text-center">
           <h3 className="mb-4 text-2xl font-bold">
             Over 50,000 Professionals Use Contractor+ for Estimates
           </h3>

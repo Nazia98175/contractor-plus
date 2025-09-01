@@ -22,7 +22,7 @@ export const PopularItemCard = ({ item, index }: PopularItemCardProps) => {
       to={`/compare?query=${encodeURIComponent(item.name)}&stores=3&includeOutOfStock=true&comparisonMode=true`}
       className="block"
     >
-      <div className="hover:bg-muted/50 hover:border-primary/20 flex items-center justify-between rounded-md border p-4 transition-colors">
+      <div className="hover:bg-muted/50 hover:border-shutter flex items-center justify-between rounded-md border p-4 transition-colors">
         <div className="flex items-center gap-4">
           <div className="bg-primary/10 text-primary flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold">
             {index + 1}

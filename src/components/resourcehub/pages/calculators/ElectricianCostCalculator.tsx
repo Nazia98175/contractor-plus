@@ -70,7 +70,7 @@ export default function ElectricianCostCalculator() {
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/calculators")}
-        className="mb-6 flex items-center gap-1 text-gray-700 hover:text-red-600"
+        className="mb-6 flex items-center gap-1 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -91,24 +91,21 @@ export default function ElectricianCostCalculator() {
           <CalculationResult calculationResult={calculationResult} />
 
           {/* Call to Action Card */}
-          <Card className="border-red-100 bg-gradient-to-br from-red-50 to-gray-50">
+          <Card className="border-stiletto bg-shutter border">
             <CardHeader>
-              <CardTitle className="text-xl text-red-800">
+              <CardTitle className="text-xl">
                 Work smarter, charge smarter.
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-gray-600">
+              <p className="text-alice mb-4">
                 With Contractor+, electricians can easily calculate true hourly
                 costs, set profitable rates, and track every job. Know what you
                 should charge, and use Contractor+ to manage scheduling,
                 quoting, and invoicing—keeping your electrical business grounded
                 and profitable.
               </p>
-              <Button
-                variant="outline"
-                className="w-full border-red-200 bg-white text-red-700 hover:border-red-300 hover:bg-red-50"
-              >
+              <Button className="w-full" variant="outline">
                 Try Contractor Plus
               </Button>
             </CardContent>

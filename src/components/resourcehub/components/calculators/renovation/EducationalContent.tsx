@@ -205,7 +205,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               Should I include my appliances in the renovation cost?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               It depends on your budgeting approach. For kitchen renovations,
               major appliances often represent 15-20% of the total budget. You
               can either include them in your per-square-foot cost calculation
@@ -219,7 +219,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               How accurate is a square foot estimate for renovations?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               Square foot estimates provide a useful starting point but are less
               precise for renovations than for new construction. Renovation
               complexity varies widely based on existing conditions. Use this
@@ -233,7 +233,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               Should I budget differently for DIY vs. contractor renovations?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               Yes. DIY renovations can save on labor costs (typically 30-50% of
               a renovation budget), but only if you have the necessary skills.
               For DIY projects, budget more for materials waste and potential
@@ -248,7 +248,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               What costs are often forgotten in renovation budgets?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               Common oversights include: permits and inspection fees, temporary
               housing if you can't live in the space during work, design and
               architectural fees, furniture and decor for the renovated space,
@@ -261,7 +261,7 @@ export function EducationalContent() {
       </section>
 
       {/* CTA Section */}
-      <Card className="bg-primary/5 border-primary/20 border p-6">
+      <Card className="bg-primary/5 border-shutter border p-6">
         <div className="space-y-4 text-center">
           <h3 className="text-xl font-bold text-gray-900">
             Renovations can be unpredictable – but your estimates don't have to

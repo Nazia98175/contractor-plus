@@ -93,14 +93,14 @@ export default function FlooringEstimatorCalculator() {
           <CalculationResult calculationResult={calculationResult} />
 
           {/* Call to Action Card */}
-          <Card className="border-red-100 bg-gradient-to-br from-red-50 to-gray-50">
+          <Card className="border-stiletto bg-shutter border">
             <CardHeader>
               <CardTitle className="text-xl text-red-800">
                 Lay down flooring estimates with confidence.
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-gray-600">
+              <p className="text-alice mb-4">
                 Contractor+ empowers flooring contractors to calculate materials
                 (including waste) and labor costs in a snap. Create
                 comprehensive flooring quotes, order the right amount of

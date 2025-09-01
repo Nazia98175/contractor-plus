@@ -14,7 +14,7 @@ export function EducationalContent() {
         Painting Pricing Guide
       </h2>
 
-      <p className="mb-8 text-gray-600">
+      <p className="text-alice mb-8">
         Setting the right price for painting services is essential for
         maintaining profitability while remaining competitive. Our painting cost
         calculator helps you determine accurate estimates based on industry
@@ -22,7 +22,7 @@ export function EducationalContent() {
       </p>
 
       <div className="my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+        <Card className="border-stiletto bg-shutter border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
           <CardContent className="pt-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
@@ -32,14 +32,14 @@ export function EducationalContent() {
                 Material Calculations
               </h3>
             </div>
-            <p className="text-gray-600">
+            <p className="text-alice">
               Determine exactly how much paint you'll need for your project
               based on square footage and coats required.
             </p>
           </CardContent>
         </Card>
 
-        <Card className="border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+        <Card className="border-stiletto bg-shutter border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
           <CardContent className="pt-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
@@ -49,14 +49,14 @@ export function EducationalContent() {
                 Labor Estimation
               </h3>
             </div>
-            <p className="text-gray-600">
+            <p className="text-alice">
               Accurately estimate labor hours based on surface area, complexity,
               and your team's work rate.
             </p>
           </CardContent>
         </Card>
 
-        <Card className="border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+        <Card className="border-stiletto bg-shutter border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
           <CardContent className="pt-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
@@ -66,7 +66,7 @@ export function EducationalContent() {
                 Precise Quotes
               </h3>
             </div>
-            <p className="text-gray-600">
+            <p className="text-alice">
               Create professional, accurate quotes that account for all aspects
               of your painting project.
             </p>
@@ -79,7 +79,7 @@ export function EducationalContent() {
           <h2 className="mb-4 text-xl font-semibold text-gray-800">
             Factors Affecting Painting Costs
           </h2>
-          <ul className="list-none space-y-3 text-gray-600">
+          <ul className="text-alice list-none space-y-3">
             {[
               "Surface type and condition (drywall, wood, masonry, etc.)",
               "Color changes, especially when going from dark to light",
@@ -102,10 +102,10 @@ export function EducationalContent() {
           <h2 className="mb-4 text-xl font-semibold text-gray-800">
             Using This Calculator Effectively
           </h2>
-          <p className="mb-3 text-gray-600">
+          <p className="text-alice mb-3">
             For accurate estimates, follow these guidelines:
           </p>
-          <ul className="mb-4 space-y-2 text-gray-600">
+          <ul className="text-alice mb-4 space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                 <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
@@ -163,7 +163,10 @@ export function EducationalContent() {
               a: "Professional painters typically charge $40-$60 per hour. A skilled painter can cover about 150-200 square feet of wall space per hour with one coat. Multiply the total hours by your hourly rate to get your labor cost estimate.",
             },
           ].map((faq, i) => (
-            <Card key={i} className="border border-gray-200 bg-white shadow-sm">
+            <Card
+              key={i}
+              className="border-stiletto bg-shutter border shadow-sm"
+            >
               <CardContent className="p-6">
                 <h3 className="mb-2 text-lg font-medium text-red-600">
                   {faq.q}
@@ -175,7 +178,7 @@ export function EducationalContent() {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col items-center justify-between gap-6 rounded-lg border border-red-100 bg-red-50 p-6 md:flex-row">
+      <div className="border-stiletto bg-shutter borderp-6 mb-8 flex flex-col items-center justify-between gap-6 rounded-lg md:flex-row">
         <div className="text-left">
           <h3 className="mb-2 text-xl font-semibold text-red-600">
             Create professional painting estimates in minutes

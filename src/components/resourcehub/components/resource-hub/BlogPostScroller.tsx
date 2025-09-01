@@ -261,7 +261,7 @@ export function BlogPostScroller() {
                           "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d";
                       }}
                     />
-                    <div className="bg-primary text-primary-foreground absolute top-2 right-2 rounded px-2 py-1 text-xs">
+                    <div className="bg-romanRed font-myriad absolute top-2 right-2 rounded px-2 py-1 text-xs text-white">
                       {post.category}
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export function BlogPostScroller() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="mt-4 flex justify-end gap-2">
+          <div className="mt-14 flex justify-end gap-2">
             <CarouselPrevious className="static" />
             <CarouselNext className="static" />
           </div>

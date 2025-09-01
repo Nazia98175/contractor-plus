@@ -138,7 +138,7 @@ const BlogPosts: React.FC<Props> = ({
         ) : (
           <Copy animateOnScroll={true}>
             <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-10 text-center">
-              <p className="text-sm text-gray-600">No blogs found</p>
+              <p className="text-alice text-sm">No blogs found</p>
             </div>
           </Copy>
         )}

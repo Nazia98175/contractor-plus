@@ -18,7 +18,7 @@ export function CalculationResult({
 }: CalculationResultProps) {
   if (!calculationResult) {
     return (
-      <Card className="mb-6 border border-gray-200 bg-white shadow-sm">
+      <Card className="border-stiletto bg-shutter mb-6 border shadow-sm">
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium">
             Calculation Results
@@ -53,7 +53,7 @@ export function CalculationResult({
           {/* Burdened Wage */}
           <div>
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-600">
+              <span className="text-alice text-sm font-medium">
                 Burdened Wage:
               </span>
               <span className="font-medium">
@@ -83,7 +83,7 @@ export function CalculationResult({
           {/* Profit Per Hour */}
           <div>
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-600">
+              <span className="text-alice text-sm font-medium">
                 Profit per Hour:
               </span>
               <span className="font-medium">${profitPerHour.toFixed(2)}</span>
@@ -104,7 +104,7 @@ export function CalculationResult({
                 {billableRate.toFixed(2)}/hour
               </span>
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="text-alice text-sm">
               The recommended hourly rate to charge clients
             </p>
           </div>

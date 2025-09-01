@@ -515,7 +515,7 @@ export const PopularProjectTypes: React.FC<PopularProjectTypesProps> = ({
             </Link>{" "}
             or use our{" "}
             <Link
-              href="/resources/calculators"
+              href="/resources/cost-calculator"
               className="text-primary font-medium hover:underline"
             >
               construction calculators

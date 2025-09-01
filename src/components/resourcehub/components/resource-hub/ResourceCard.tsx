@@ -19,7 +19,7 @@ export function ResourceCard({
   buttonText,
 }: ResourceCardProps) {
   return (
-    <Card className="flex h-full flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
+    <Card className="group flex h-full flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
       <CardHeader className="flex-grow">
         <div className="flex flex-col gap-4">
           <div className="bg-coldGrey/10 mx-auto flex h-20 w-20 items-center justify-center rounded-full">

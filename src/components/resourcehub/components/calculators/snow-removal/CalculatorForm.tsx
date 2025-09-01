@@ -12,7 +12,7 @@ import {
 } from "../../ui/form";
 import { Input } from "../../ui/input";
 import { Button } from "../../ui/button";
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Snowflake } from "lucide-react";
 import {
   Tooltip,
@@ -63,7 +63,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   );
 
   return (
-    <Card className="border border-gray-200 bg-white shadow-sm">
+    <Card className="border-stiletto bg-shutter border shadow-sm">
       <CardContent className="pt-6">
         <Form {...form}>
           <form

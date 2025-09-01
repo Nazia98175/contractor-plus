@@ -9,27 +9,8 @@ import {
 import Link from "next/link";
 import { BlogPostScroller } from "../components/resource-hub/BlogPostScroller";
 import { ResourceCard } from "../components/resource-hub/ResourceCard";
-import { useEffect } from "react";
-import gsap from "gsap";
 
 const Resource = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-podcast", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
-  }, []);
   return (
     <div className="flex flex-col gap-12 py-10">
       {/* Hero Section */}
@@ -47,7 +28,7 @@ const Resource = () => {
 
       {/* Free Tools & Templates Section - Moved to the top */}
       <section className="main-container">
-        <div className="resource-bg flex flex-col gap-8 px-4 py-10 md:px-6">
+        <div className="estimate-overlap-card flex flex-col gap-8 rounded-lg px-4 py-10 md:px-6">
           <div className="text-center">
             <h2 className="text-alice mb-3 text-3xl font-bold tracking-tight">
               Free Tools & Templates
@@ -62,7 +43,9 @@ const Resource = () => {
             <ResourceCard
               title="Free Estimate Templates"
               description="Generate quick professional estimates on the fly and save them as PDF to share with clients."
-              icon={<FileText className="text-coralRed h-10 w-10" />}
+              icon={
+                <FileText className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="/resources/free-estimate-templates"
               buttonText="Create Estimates"
             />
@@ -70,7 +53,9 @@ const Resource = () => {
             <ResourceCard
               title="Construction Calculators"
               description="Quick access calculators for common construction measurements, material needs, and cost estimation."
-              icon={<Calculator className="text-primary h-10 w-10" />}
+              icon={
+                <Calculator className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="resources/cost-calculator"
               buttonText="Open Calculators"
             />
@@ -78,7 +63,9 @@ const Resource = () => {
             <ResourceCard
               title="Material Price Comparison"
               description="Find the best prices on construction materials from multiple suppliers and create segmented shopping lists."
-              icon={<BarChart3 className="text-primary h-10 w-10" />}
+              icon={
+                <BarChart3 className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="/resources/material-price-comparison"
               buttonText="Compare Prices Now"
             />
@@ -86,7 +73,9 @@ const Resource = () => {
             <ResourceCard
               title="US Construction Labor Rates"
               description="Track and predict trends in construction labor rates across the United States based on proprietary data."
-              icon={<BarChart3 className="text-primary h-10 w-10" />}
+              icon={
+                <BarChart3 className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="/resources/USA-labor-rates"
               buttonText="View Labor Rates"
             />
@@ -94,7 +83,9 @@ const Resource = () => {
             <ResourceCard
               title="Construction Cost Estimator"
               description="Get detailed cost estimates for various construction projects with regional pricing data and material breakdowns."
-              icon={<Calculator className="text-primary h-10 w-10" />}
+              icon={
+                <Calculator className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="/resources/construction-costs"
               buttonText="Estimate Costs"
             />
@@ -102,7 +93,9 @@ const Resource = () => {
             <ResourceCard
               title="Contract Templates"
               description="Professionally drafted contract templates for various construction projects and services."
-              icon={<FileText className="text-primary h-10 w-10" />}
+              icon={
+                <FileText className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="/resources/contract-templates"
               buttonText="Download Templates"
             />
@@ -110,7 +103,9 @@ const Resource = () => {
             <ResourceCard
               title="Project Planning Tools"
               description="Interactive tools to help plan, schedule, and manage your construction projects efficiently."
-              icon={<Wrench className="text-primary h-10 w-10" />}
+              icon={
+                <Wrench className="group-hover:text-coralRed h-10 w-10 duration-300" />
+              }
               link="/resources/project-planning-tools"
               buttonText="Start Planning"
             />

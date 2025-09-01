@@ -151,14 +151,14 @@ export default function DrywallCalculator() {
           <CalculationResult calculationResult={calculationResult} />
 
           {/* Call to Action Card */}
-          <Card className="border-red-100 bg-gradient-to-br from-red-50 to-gray-50">
+          <Card className="border-stiletto bg-shutter border">
             <CardHeader>
               <CardTitle className="text-xl text-red-800">
                 Ready to Streamline Your Drywall Business?
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-gray-600">
+              <p className="text-alice mb-4">
                 From takeoff to hanging board, accuracy matters. Contractor+
                 helps drywall contractors calculate materials, track costs, and
                 manage projects with ease. Estimate your drywall, order the

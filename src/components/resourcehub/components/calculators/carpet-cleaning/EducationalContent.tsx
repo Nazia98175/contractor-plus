@@ -4,12 +4,12 @@ export function EducationalContent() {
   return (
     <div className="mt-16 max-w-none">
       <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
-        <h2 className="mb-6 text-2xl font-bold text-gray-800">
+        <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           Carpet Cleaning Pricing Guide
         </h2>
 
         <div className="prose prose-gray max-w-none">
-          <p className="mb-8 leading-relaxed text-gray-600">
+          <p className="text-alice mb-8 leading-relaxed">
             Setting the right price for carpet cleaning services is essential
             for maintaining profitability while remaining competitive. This
             calculator helps you determine accurate estimates based on industry
@@ -17,11 +17,11 @@ export function EducationalContent() {
           </p>
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
+            <div className="bg-shutter rounded-lg p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-800">
                 Factors Affecting Carpet Cleaning Costs
               </h3>
-              <p className="leading-relaxed text-gray-600">
+              <p className="text-alice leading-relaxed">
                 Several factors impact the final cost of a carpet cleaning job,
                 including carpet type, condition, level of soiling,
                 accessibility, and special treatments needed. Our calculator
@@ -30,11 +30,11 @@ export function EducationalContent() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
+            <div className="bg-shutter rounded-lg p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-800">
                 Using This Calculator Effectively
               </h3>
-              <p className="leading-relaxed text-gray-600">
+              <p className="text-alice leading-relaxed">
                 For the most accurate estimates, measure the actual carpet area
                 rather than the room size, account for furniture that won't be
                 moved, and be clear about which services are included in your
@@ -47,13 +47,13 @@ export function EducationalContent() {
             <h3 className="mb-4 text-xl font-semibold text-gray-800">
               Pricing Strategies for Carpet Cleaners
             </h3>
-            <p className="mb-4 leading-relaxed text-gray-600">
+            <p className="text-alice mb-4 leading-relaxed">
               Professional carpet cleaners typically use one or more of these
               pricing strategies. Many companies combine approaches for the most
               accurate and competitive pricing.
             </p>
-            <div className="rounded-lg border border-gray-200 bg-white p-4">
-              <ul className="grid gap-3 text-gray-600">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4">
+              <ul className="text-alice grid gap-3">
                 <li className="flex items-start">
                   <div className="mt-1 mr-3 rounded-full bg-red-100 p-1">
                     <div className="h-2 w-2 rounded-full bg-red-600"></div>
@@ -111,7 +111,7 @@ export function EducationalContent() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
+          <div className="bg-shutter rounded-lg p-6">
             <h3 className="mb-4 text-xl font-semibold text-gray-800">
               Frequently Asked Questions
             </h3>
@@ -121,7 +121,7 @@ export function EducationalContent() {
                 <p className="mb-2 font-semibold text-gray-800">
                   How often should carpets be professionally cleaned?
                 </p>
-                <p className="leading-relaxed text-gray-600">
+                <p className="text-alice leading-relaxed">
                   For residential carpets, professional cleaning is typically
                   recommended every 12-18 months, depending on traffic.
                   Commercial spaces, especially high-traffic areas, may require
@@ -134,7 +134,7 @@ export function EducationalContent() {
                 <p className="mb-2 font-semibold text-gray-800">
                   How do I determine my price per square foot?
                 </p>
-                <p className="leading-relaxed text-gray-600">
+                <p className="text-alice leading-relaxed">
                   Start by calculating your costs (labor, equipment, supplies,
                   travel, overhead) and desired profit margin. Most professional
                   carpet cleaners charge between $0.20 and $0.40 per square foot
@@ -148,7 +148,7 @@ export function EducationalContent() {
                 <p className="mb-2 font-semibold text-gray-800">
                   Should I include furniture moving in my base price?
                 </p>
-                <p className="leading-relaxed text-gray-600">
+                <p className="text-alice leading-relaxed">
                   Most professional cleaners either charge extra for furniture
                   moving or have a policy of only moving lighter pieces. Heavy
                   furniture moving creates liability and requires additional
@@ -159,11 +159,11 @@ export function EducationalContent() {
             </div>
           </div>
 
-          <div className="mt-8 rounded-lg border border-red-100 bg-red-50 p-6">
+          <div className="border-stiletto bg-shutter borderp-6 mt-8 rounded-lg">
             <h3 className="mb-3 text-xl font-semibold text-gray-800">
               Ready to Grow Your Carpet Cleaning Business?
             </h3>
-            <p className="mb-4 text-gray-700">
+            <p className="text-decemberSky mb-4">
               Take your carpet cleaning business to the next level with
               Contractor+. Our all-in-one platform helps you manage estimates,
               schedule jobs, track inventory, and invoice clients

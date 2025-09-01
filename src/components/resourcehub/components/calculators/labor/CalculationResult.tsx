@@ -102,7 +102,7 @@ export function CalculationResult({
 export function ResultsPanel({ calculationResult }: CalculationResultProps) {
   return (
     <div>
-      <Card className="border-primary/20 shadow-md">
+      <Card className="border-shutter overflow-hidden shadow-md">
         <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 text-white">
           <CardTitle className="text-lg">Labor Cost Results</CardTitle>
         </CardHeader>
@@ -112,7 +112,7 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
       </Card>
 
       {/* CTA */}
-      <Card className="border-primary/10 mt-4 border bg-gray-50">
+      <Card className="border-shutter mt-4 border">
         <CardContent className="p-4">
           <h3 className="mb-2 text-lg font-semibold">
             Ready to track labor costs?

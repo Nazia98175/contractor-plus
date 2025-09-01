@@ -177,7 +177,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               What's included in the cost per square foot?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               Typically, cost per square foot includes direct construction costs
               (materials, labor, equipment), contractor overhead and profit, and
               sometimes basic finishes. It usually doesn't include land costs,
@@ -190,7 +190,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               How accurate is a square foot estimate?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               Square foot estimates are considered rough order of magnitude
               (ROM) estimates with typical accuracy of ±15-25%. They're useful
               for initial budgeting but should be refined with more detailed
@@ -202,7 +202,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               Does building height affect the cost per square foot?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               Yes, taller buildings generally cost more per square foot than
               single-story structures. Multi-story buildings require stronger
               foundations, additional structural elements, stairs/elevators, and
@@ -215,7 +215,7 @@ export function EducationalContent() {
             <p className="text-lg font-medium text-gray-900">
               Should I include basement area in my square footage calculation?
             </p>
-            <p className="leading-relaxed text-gray-600">
+            <p className="text-alice leading-relaxed">
               It depends on how you're applying the cost per square foot.
               Basements typically cost less per square foot than above-grade
               space. For a more accurate estimate, either use a lower cost per
@@ -227,7 +227,7 @@ export function EducationalContent() {
       </section>
 
       {/* CTA Section */}
-      <Card className="bg-primary/5 border-primary/20 border p-6">
+      <Card className="bg-primary/5 border-shutter border p-6">
         <div className="space-y-4 text-center">
           <h3 className="text-xl font-bold text-gray-900">
             Turn rough estimates into winning bids

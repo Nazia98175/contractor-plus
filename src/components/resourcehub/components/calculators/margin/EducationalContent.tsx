@@ -16,7 +16,7 @@ export function EducationalContent() {
             after all costs are accounted for. It measures how much of each
             dollar in sales is retained as profit.
           </p>
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
+          <div className="bg-shutter rounded-lg p-4">
             <p className="mb-1 font-medium">Margin Formula</p>
             <p className="text-aliceBlue text-sm">
               Margin = (Price - Cost) / Price × 100%
@@ -33,7 +33,7 @@ export function EducationalContent() {
             calculated based on costs. This difference can lead to confusion
             when pricing jobs.
           </p>
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
+          <div className="bg-shutter rounded-lg p-4">
             <p className="mb-1 font-medium">Markup Formula</p>
             <p className="text-aliceBlue text-sm">
               Markup = (Price - Cost) / Cost × 100%

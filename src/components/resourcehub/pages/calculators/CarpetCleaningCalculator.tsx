@@ -75,7 +75,7 @@ export default function CarpetCleaningCalculator() {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink
-                href="/resources/calculators"
+                href="/resources/cost-calculator"
                 className="text-sm text-gray-700 hover:text-red-600"
               >
                 Calculators
@@ -140,11 +140,11 @@ export default function CarpetCleaningCalculator() {
           )}
 
           {/* Call to Action Card */}
-          <div className="rounded-lg border border-red-100 bg-gradient-to-br from-red-50 to-gray-50 p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <h3 className="mb-2 text-xl font-semibold text-gray-800">
               Wow Your Clients with Fast, Accurate Quotes
             </h3>
-            <p className="mb-4 text-gray-600">
+            <p className="text-alice mb-4">
               Try Contractor+ to create carpet cleaning estimates, schedule
               jobs, and send invoices – all in one app. Make your carpet
               cleaning business shine (just like those freshly cleaned carpets)!

@@ -16,7 +16,7 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border border-gray-200 bg-white shadow-sm">
+    <Card className="border-stiletto bg-shutter border shadow-sm">
       <CardContent className="p-6">
         <div className="mb-6 text-center">
           <h3 className="text-lg font-medium text-gray-700">
@@ -29,7 +29,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             })}{" "}
             gallons
           </p>
-          <p className="text-lg font-medium text-gray-600">
+          <p className="text-alice text-lg font-medium">
             {result.volumeLiters.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,

@@ -57,7 +57,7 @@ const PopularPage = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-sm font-medium text-gray-500">
+              <BreadcrumbPage className="text-master text-sm">
                 Popular Searches
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -76,7 +76,7 @@ const PopularPage = () => {
           <h3 className="font-medium">
             Find the best pricing on your construction materials!
           </h3>
-          <p className="text-sm text-gray-600">
+          <p className="text-alice text-sm">
             Compare up to 3 suppliers at a time.
           </p>
         </div>

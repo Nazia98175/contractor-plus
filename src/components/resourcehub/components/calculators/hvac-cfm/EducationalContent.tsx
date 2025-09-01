@@ -12,12 +12,12 @@ export function EducationalContent() {
   return (
     <div className="mt-16">
       <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
-        <h2 className="mb-6 text-2xl font-bold text-gray-800">
+        <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           HVAC CFM Calculation Guide
         </h2>
 
         <div className="prose prose-gray max-w-none">
-          <p className="mb-8 leading-relaxed text-gray-600">
+          <p className="text-alice mb-8 leading-relaxed">
             Cubic Feet per Minute (CFM) is a crucial measurement in HVAC systems
             that determines how much air flows through your ventilation system.
             Proper CFM calculations ensure optimal indoor air quality, efficient
@@ -26,11 +26,11 @@ export function EducationalContent() {
           </p>
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
+            <div className="bg-shutter rounded-lg p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-800">
                 Understanding CFM
               </h3>
-              <p className="leading-relaxed text-gray-600">
+              <p className="text-alice leading-relaxed">
                 CFM represents the volume of air that moves through your HVAC
                 system in one minute. It's calculated based on room volume and
                 required air changes per hour (ACH). Different room types
@@ -39,11 +39,11 @@ export function EducationalContent() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
+            <div className="bg-shutter rounded-lg p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-800">
                 Why CFM Matters
               </h3>
-              <p className="leading-relaxed text-gray-600">
+              <p className="text-alice leading-relaxed">
                 The right CFM ensures that your HVAC system can effectively
                 heat, cool, and ventilate spaces. Undersized systems won't
                 provide adequate comfort or air quality, while oversized systems
@@ -57,8 +57,8 @@ export function EducationalContent() {
             <h3 className="mb-4 text-xl font-semibold text-gray-800">
               Air Changes Per Hour (ACH) Guidelines
             </h3>
-            <div className="rounded-lg border border-gray-200 bg-white p-4">
-              <ul className="grid gap-3 text-gray-600">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4">
+              <ul className="text-alice grid gap-3">
                 <li className="flex items-start">
                   <div className="bg-primary/10 mt-1 mr-3 rounded-full p-1">
                     <div className="bg-primary h-2 w-2 rounded-full"></div>
@@ -242,7 +242,7 @@ export function EducationalContent() {
             </Card>
           </Accordion>
 
-          <div className="mt-8 rounded-lg border border-gray-100 bg-gray-50 p-6">
+          <div className="bg-shutter mt-8 rounded-lg p-6">
             <h3 className="mb-4 text-xl font-semibold text-gray-800">
               Frequently Asked Questions
             </h3>
@@ -252,7 +252,7 @@ export function EducationalContent() {
                 <p className="mb-2 font-semibold text-gray-800">
                   How accurate is the CFM calculator?
                 </p>
-                <p className="leading-relaxed text-gray-600">
+                <p className="text-alice leading-relaxed">
                   This calculator provides a good starting point based on
                   industry standards for air changes per hour. For precise
                   calculations considering all variables like climate,
@@ -264,7 +264,7 @@ export function EducationalContent() {
                 <p className="mb-2 font-semibold text-gray-800">
                   How do I convert CFM to tons of AC capacity?
                 </p>
-                <p className="leading-relaxed text-gray-600">
+                <p className="text-alice leading-relaxed">
                   As a rule of thumb, 1 ton of air conditioning (12,000 BTU)
                   requires approximately 400 CFM. To convert CFM to tons, divide
                   the CFM by 400. For example, 1,200 CFM would be equivalent to
@@ -276,7 +276,7 @@ export function EducationalContent() {
                 <p className="mb-2 font-semibold text-gray-800">
                   Can I use the same CFM calculation for heating and cooling?
                 </p>
-                <p className="leading-relaxed text-gray-600">
+                <p className="text-alice leading-relaxed">
                   Yes, the basic CFM calculation for ventilation requirements
                   remains the same whether you're heating or cooling a space.
                   However, specific heating or cooling equipment might have
@@ -290,7 +290,7 @@ export function EducationalContent() {
       </div>
 
       {/* CTA Section */}
-      <Card className="bg-primary/5 border-primary/20 mt-8 border">
+      <Card className="bg-primary/5 border-shutter mt-8 border">
         <CardContent className="p-6">
           <h3 className="mb-2 text-xl font-semibold">
             Ensure Every Room is Comfortable and Well-Ventilated

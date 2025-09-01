@@ -66,7 +66,7 @@ export default function SnowRemovalCalculator() {
           {calculationResult ? (
             <CalculationResult result={calculationResult} />
           ) : (
-            <Card className="h-full border border-gray-200 bg-white shadow-sm">
+            <Card className="border-stiletto bg-shutter h-full border shadow-sm">
               <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
                 <h3 className="mb-2 text-lg font-medium text-gray-700">
                   Enter snow removal details to calculate your price
@@ -76,7 +76,7 @@ export default function SnowRemovalCalculator() {
                   your fair pricing estimate.
                 </p>
                 <div className="mb-4 w-full rounded-md border border-gray-200 bg-gray-50 px-6 py-4">
-                  <ul className="space-y-2 text-left text-sm text-gray-600">
+                  <ul className="text-alice space-y-2 text-left text-sm">
                     <li className="flex items-center gap-2">
                       <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                         <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>

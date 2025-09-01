@@ -68,9 +68,9 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   };
 
   return (
-    <Card className="border border-gray-200 shadow-sm">
-      <CardHeader className="border-b border-gray-200 bg-gray-50">
-        <CardTitle className="text-xl text-gray-800">
+    <Card className="border-shutter overflow-hidden border shadow-sm">
+      <CardHeader className="bg-shutter border-stiletto border-b">
+        <CardTitle className="text-aliceBlue text-xl">
           Calculate Renovation Cost
         </CardTitle>
         <CardDescription>

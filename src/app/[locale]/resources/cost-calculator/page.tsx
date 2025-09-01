@@ -1,10 +1,9 @@
-import CalculatorsPage from "@/components/resourcehub/pages/CalculatorsPage";
-import React from "react";
+import SnowRemovalCalculator from "@/components/resourcehub/pages/calculators/SnowRemovalCalculator";
 
 const page = () => {
   return (
-    <div className="bg-white">
-      <CalculatorsPage />
+    <div>
+      <SnowRemovalCalculator />
     </div>
   );
 };

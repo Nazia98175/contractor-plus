@@ -66,9 +66,9 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   };
 
   return (
-    <Card className="border border-gray-200 shadow-sm">
-      <CardHeader className="border-b border-gray-200 bg-gray-50">
-        <CardTitle className="flex items-center text-xl text-gray-800">
+    <Card className="border-shutter overflow-hidden border shadow-sm">
+      <CardHeader className="bg-shutter border-stiletto border-b">
+        <CardTitle className="text-aliceBlue flex items-center text-xl">
           <AirVent className="text-primary mr-2 h-5 w-5" />
           Calculate Required CFM
         </CardTitle>

@@ -91,14 +91,14 @@ export default function FenceCostCalculator() {
           <CalculationResult calculationResult={calculationResult} />
 
           {/* Call to Action Card */}
-          <Card className="border-red-100 bg-gradient-to-br from-red-50 to-gray-50">
+          <Card className="border-stiletto bg-shutter border">
             <CardHeader>
               <CardTitle className="text-xl text-red-800">
                 Build your fencing bids faster.
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-gray-600">
+              <p className="text-alice mb-4">
                 Contractor+ gives fencing contractors an edge with quick
                 calculators for linear footage, gates, and more. Create detailed
                 estimates, schedule your crew, and manage projects all in one

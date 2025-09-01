@@ -184,7 +184,7 @@ export default function SubcontractorAgreement() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources"
-                className="text-sm font-medium text-gray-700 hover:text-red-600"
+                className="text-sm font-medium hover:text-red-600"
               >
                 Resources
               </Link>
@@ -195,7 +195,7 @@ export default function SubcontractorAgreement() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources/contract-templates"
-                className="text-sm font-medium text-gray-700 hover:text-red-600"
+                className="text-sm font-medium hover:text-red-600"
               >
                 Contract Templates
               </Link>
@@ -203,7 +203,7 @@ export default function SubcontractorAgreement() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-sm font-medium text-gray-500">
+            <BreadcrumbPage className="text-master text-sm">
               Subcontractor Agreement
             </BreadcrumbPage>
           </BreadcrumbItem>
@@ -1144,7 +1144,7 @@ export default function SubcontractorAgreement() {
           </div>
         </div>
 
-        <div className="my-8 rounded-lg border border-red-100 bg-red-50 p-6">
+        <div className="border-stiletto bg-shutter borderp-6 my-8 rounded-lg">
           <h3 className="mb-2 text-xl font-semibold text-gray-800">
             Protect your construction business relationships
           </h3>

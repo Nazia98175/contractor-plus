@@ -59,8 +59,8 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   }
 
   return (
-    <Card className="border border-gray-200 bg-white shadow-sm">
-      <CardHeader className="border-b border-gray-200 bg-white pb-4">
+    <Card className="border-stiletto bg-shutter border shadow-sm">
+      <CardHeader className="border-stiletto border-b pb-4">
         <h2 className="text-lg font-medium">Calculate Landscape Design Cost</h2>
         <p className="text-aliceBlue text-sm">
           Enter project details and pricing information

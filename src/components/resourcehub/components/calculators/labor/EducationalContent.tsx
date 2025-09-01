@@ -20,7 +20,7 @@ export function EducationalContent() {
             contractors make the mistake of only accounting for hourly wages
             when estimating jobs, which can lead to unprofitable projects.
           </p>
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
+          <div className="bg-shutter rounded-lg p-4">
             <p className="mb-1 font-medium">Labor Cost Formula</p>
             <p className="text-aliceBlue text-sm">
               Total Labor Cost = Direct Wages + Labor Burden
@@ -36,7 +36,7 @@ export function EducationalContent() {
             insurance, retirement benefits, paid time off, and other
             employee-related expenses.
           </p>
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
+          <div className="bg-shutter rounded-lg p-4">
             <p className="mb-1 font-medium">Typical Labor Burden Range</p>
             <p className="text-aliceBlue text-sm">
               For most construction businesses, labor burden ranges from 20% to

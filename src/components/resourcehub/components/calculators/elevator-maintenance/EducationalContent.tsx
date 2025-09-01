@@ -31,7 +31,7 @@ export function EducationalContent() {
 
       <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         <Card className="border border-gray-200 dark:border-gray-800">
-          <CardHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+          <CardHeader className="bg-shutter border-stiletto border-b dark:border-gray-800 dark:bg-gray-900">
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-red-100 p-2 dark:bg-red-900/20">
                 <Check className="h-5 w-5 text-red-600 dark:text-red-500" />
@@ -45,13 +45,13 @@ export function EducationalContent() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Clock className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Clock className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">
                     Routine maintenance visits:
                   </strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Regular scheduled service calls where technicians inspect,
                     test, clean, lubricate, and adjust elevator components.
                   </p>
@@ -59,11 +59,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <AlertCircle className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <AlertCircle className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Safety testing:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Annual or semi-annual tests required by code to verify
                     proper operation of safety systems, including emergency
                     communication, door sensors, and mechanical safeties.
@@ -72,11 +72,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <ArrowUp className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <ArrowUp className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Minor repairs:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Some contracts include basic parts replacement and minor
                     repairs as part of the maintenance fee.
                   </p>
@@ -84,11 +84,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Building className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Building className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">On-call service:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Availability for emergency repairs outside of scheduled
                     maintenance (may be included or charged separately).
                   </p>
@@ -99,7 +99,7 @@ export function EducationalContent() {
         </Card>
 
         <Card className="border border-gray-200 dark:border-gray-800">
-          <CardHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+          <CardHeader className="bg-shutter border-stiletto border-b dark:border-gray-800 dark:bg-gray-900">
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-red-100 p-2 dark:bg-red-900/20">
                 <DollarSign className="h-5 w-5 text-red-600 dark:text-red-500" />
@@ -113,13 +113,13 @@ export function EducationalContent() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <ArrowUp className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <ArrowUp className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">
                     Elevator type and complexity:
                   </strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Hydraulic elevators are typically less expensive to maintain
                     than traction elevators. High-speed or high-rise elevators
                     cost more to service.
@@ -128,11 +128,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Clock className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Clock className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Age and condition:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Older elevators generally require more maintenance and may
                     have obsolete parts that are expensive to source.
                   </p>
@@ -140,11 +140,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Building className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Building className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Usage level:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Elevators in high-traffic buildings require more frequent
                     maintenance and experience more wear and tear.
                   </p>
@@ -152,11 +152,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <DollarSign className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <DollarSign className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Contract type:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Full-service contracts (including parts and repairs) cost
                     more initially but provide budget certainty. Oil and grease
                     contracts (basic maintenance only) cost less but don't cover
@@ -170,7 +170,7 @@ export function EducationalContent() {
       </div>
 
       <Card className="mb-10 border border-gray-200 dark:border-gray-800">
-        <CardHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+        <CardHeader className="bg-shutter border-stiletto border-b dark:border-gray-800 dark:bg-gray-900">
           <div className="flex items-center gap-3">
             <div className="rounded-full bg-red-100 p-2 dark:bg-red-900/20">
               <Check className="h-5 w-5 text-red-600 dark:text-red-500" />
@@ -186,11 +186,11 @@ export function EducationalContent() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Building className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Building className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Group contracts:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     If managing multiple buildings, negotiate a group rate for
                     all elevators across your properties.
                   </p>
@@ -198,11 +198,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Clock className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Clock className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Extended terms:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Some service providers offer discounts for longer contract
                     terms (3-5 years versus annual).
                   </p>
@@ -212,11 +212,11 @@ export function EducationalContent() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <Check className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <Check className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Preventative focus:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     Regular maintenance prevents costly emergency repairs. Don't
                     skimp on routine service.
                   </p>
@@ -224,11 +224,11 @@ export function EducationalContent() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
-                  <ArrowUp className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                  <ArrowUp className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
                   <strong className="font-medium">Modernization:</strong>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-alice mt-1 text-sm dark:text-gray-400">
                     For older systems, an upfront investment in modernizing
                     components can reduce long-term maintenance costs.
                   </p>

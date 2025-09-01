@@ -38,7 +38,7 @@ export default function ElevatorMaintenanceCostCalculator() {
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <div className="overflow-hidden rounded-xl border bg-white dark:border-gray-800 dark:bg-gray-950">
-            <div className="border-b border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-800 dark:bg-gray-900">
+            <div className="bg-shutter border-stiletto border-b px-4 py-3 dark:border-gray-800 dark:bg-gray-900">
               <h2 className="font-medium">
                 Enter Elevator Maintenance Details
               </h2>

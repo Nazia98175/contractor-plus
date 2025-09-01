@@ -88,7 +88,7 @@ export function EstimateForm({
         scale: 2,
         useCORS: true,
         logging: false,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#000",
       });
 
       const imgData = canvas.toDataURL("image/png");
@@ -139,7 +139,7 @@ export function EstimateForm({
       {/* Hidden preview content for PDF generation */}
       <div
         ref={previewRef}
-        className="absolute -left-[9999px] bg-white p-6"
+        className="absolute -left-[9999px] p-6"
         style={{ width: "210mm" }} // A4 width
       >
         <div className="mb-6 text-center">
@@ -309,10 +309,9 @@ export function EstimateForm({
             <span>Create Estimate</span>
             <div className="flex gap-2">
               <Button
-                variant="outline"
                 size="sm"
                 onClick={exportToPdf}
-                className="hidden items-center gap-1 bg-red-600 font-medium text-white hover:bg-red-700 hover:text-white sm:flex"
+                className="hidden sm:flex"
               >
                 <FileText className="h-4 w-4" />
                 <span>Save as PDF</span>
@@ -484,7 +483,7 @@ export function EstimateForm({
                           onChange={(e) =>
                             onUpdateEstimateInfo({ title: e.target.value })
                           }
-                          className="mt-1"
+                          className="mt-2"
                           placeholder="Project Estimate"
                         />
                       </div>
@@ -502,7 +501,7 @@ export function EstimateForm({
                                 estimateNumber: e.target.value,
                               })
                             }
-                            className="mt-1"
+                            className="mt-2"
                           />
                         </div>
 
@@ -519,7 +518,7 @@ export function EstimateForm({
                                 estimateDate: e.target.value,
                               })
                             }
-                            className="mt-1"
+                            className="mt-2"
                           />
                         </div>
 
@@ -536,7 +535,7 @@ export function EstimateForm({
                                 expiryDate: e.target.value,
                               })
                             }
-                            className="mt-1"
+                            className="mt-2"
                           />
                         </div>
                       </div>
@@ -560,16 +559,13 @@ export function EstimateForm({
                       <div className="space-y-6">
                         {/* Company Logo Upload */}
                         <div>
-                          <Label className="mb-1 block text-sm">
+                          <Label className="mb-2 block text-sm">
                             Company Logo
                           </Label>
                           <div className="flex flex-col gap-2">
                             {estimateInfo.companyLogo ? (
-                              <div className="relative w-full max-w-[180px] overflow-hidden rounded-md border">
-                                <AspectRatio
-                                  ratio={3 / 2}
-                                  className="bg-muted/30"
-                                >
+                              <div className="border-shutter relative w-full max-w-[180px] overflow-hidden rounded-md border">
+                                <AspectRatio ratio={3 / 2}>
                                   <img
                                     src={estimateInfo.companyLogo}
                                     alt="Company Logo"
@@ -579,14 +575,14 @@ export function EstimateForm({
                                 <Button
                                   size="icon"
                                   variant="ghost"
-                                  className="bg-background/80 absolute top-1 right-1 h-6 w-6 rounded-full"
+                                  className="absolute top-1 right-1 h-6 w-6 rounded-full"
                                   onClick={handleClearLogo}
                                 >
                                   <X className="h-3 w-3" />
                                 </Button>
                               </div>
                             ) : (
-                              <label className="hover:bg-muted/50 flex h-28 w-full max-w-[180px] cursor-pointer flex-col items-center justify-center rounded-md border border-dashed transition-colors">
+                              <label className="hover:bg-shutter border-stiletto flex h-28 w-full max-w-[180px] cursor-pointer flex-col items-center justify-center rounded-md border border-dashed transition-colors focus:outline-none">
                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                                   <Image className="text-aliceBlue mb-1 h-8 w-8" />
                                   <p className="text-aliceBlue text-xs">
@@ -618,7 +614,7 @@ export function EstimateForm({
                                   companyName: e.target.value,
                                 })
                               }
-                              className="mt-1"
+                              className="mt-2"
                               placeholder="Your Company LLC"
                             />
                           </div>
@@ -635,7 +631,7 @@ export function EstimateForm({
                                   companyAddress: e.target.value,
                                 })
                               }
-                              className="mt-1"
+                              className="mt-2"
                               placeholder="123 Your Street, City, State, ZIP"
                             />
                           </div>
@@ -653,7 +649,7 @@ export function EstimateForm({
                                     companyPhone: e.target.value,
                                   })
                                 }
-                                className="mt-1"
+                                className="mt-2"
                                 placeholder="(555) 123-4567"
                               />
                             </div>
@@ -670,7 +666,7 @@ export function EstimateForm({
                                     companyEmail: e.target.value,
                                   })
                                 }
-                                className="mt-1"
+                                className="mt-2"
                                 placeholder="you@example.com"
                               />
                             </div>
@@ -705,7 +701,7 @@ export function EstimateForm({
                                 clientName: e.target.value,
                               })
                             }
-                            className="mt-1"
+                            className="mt-2"
                             placeholder="Client Name"
                           />
                         </div>
@@ -722,7 +718,7 @@ export function EstimateForm({
                                 clientAddress: e.target.value,
                               })
                             }
-                            className="mt-1"
+                            className="mt-2"
                             placeholder="123 Client Street, City, State, ZIP"
                           />
                         </div>
@@ -740,7 +736,7 @@ export function EstimateForm({
                                   clientPhone: e.target.value,
                                 })
                               }
-                              className="mt-1"
+                              className="mt-2"
                               placeholder="(555) 987-6543"
                             />
                           </div>
@@ -757,7 +753,7 @@ export function EstimateForm({
                                   clientEmail: e.target.value,
                                 })
                               }
-                              className="mt-1"
+                              className="mt-2"
                               placeholder="client@example.com"
                             />
                           </div>
@@ -789,7 +785,7 @@ export function EstimateForm({
                         onChange={(e) =>
                           onUpdateEstimateInfo({ notes: e.target.value })
                         }
-                        className="mt-1"
+                        className="mt-2"
                         placeholder="Terms, conditions, or additional information..."
                         rows={4}
                       />

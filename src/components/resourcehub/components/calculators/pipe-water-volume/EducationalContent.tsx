@@ -15,7 +15,7 @@ export function EducationalContent() {
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
                 <Droplet className="h-4 w-4 text-red-600" />
@@ -31,7 +31,7 @@ export function EducationalContent() {
             </p>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
                 <Ruler className="h-4 w-4 text-red-600" />
@@ -45,7 +45,7 @@ export function EducationalContent() {
             </p>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
                 <Calculator className="h-4 w-4 text-red-600" />
@@ -61,7 +61,7 @@ export function EducationalContent() {
         </div>
       </div>
 
-      <div className="rounded-lg border border-red-100 bg-red-50 p-6">
+      <div className="border-stiletto bg-shutter borderp-6 rounded-lg">
         <div className="flex gap-3">
           <div className="flex-shrink-0">
             <Info className="h-6 w-6 text-red-600" />
@@ -75,7 +75,7 @@ export function EducationalContent() {
               pipe, fitting, and volume – so you always know what you need and
               can provide accurate quotes and maintenance plans.
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-alice text-sm">
               This calculator uses the standard formula for cylindrical volume
               (πr²h) and converts between common units for practical
               applications.

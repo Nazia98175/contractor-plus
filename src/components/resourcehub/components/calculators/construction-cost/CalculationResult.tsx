@@ -20,8 +20,8 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border-primary/20 mb-6 border-2 bg-white shadow-md">
-      <CardHeader className="bg-primary/5 border-primary/20 border-b">
+    <Card className="border-shutter mb-6 border-2 bg-white shadow-md">
+      <CardHeader className="bg-primary/5 border-shutter border-b">
         <CardTitle className="text-primary/90 flex items-center text-lg">
           <Building className="text-primary mr-2 h-5 w-5" />
           Construction Cost Estimate
@@ -29,7 +29,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
       </CardHeader>
       <CardContent className="pt-6">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-600">
+          <h3 className="text-alice text-lg font-medium">
             Estimated Project Cost
           </h3>
           <p className="my-2 text-4xl font-bold text-green-600">
@@ -86,7 +86,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="bg-primary/5 border-primary/20 flex justify-center border-t">
+      <CardFooter className="bg-primary/5 border-shutter flex justify-center border-t">
         <p className="text-center text-xs text-gray-500">
           This estimate is based on the provided inputs and industry averages.
           Actual costs may vary based on specific materials, labor rates, and

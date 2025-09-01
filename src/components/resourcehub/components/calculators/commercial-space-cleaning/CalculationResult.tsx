@@ -22,7 +22,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
   };
 
   return (
-    <Card className="h-full border border-gray-200 bg-white shadow-sm">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardContent className="p-6">
         <div className="mb-4 flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
@@ -36,7 +36,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="space-y-4">
           <div className="flex flex-col rounded-md border border-gray-200 bg-gray-50 p-4">
             <div className="mb-3 flex justify-between border-b border-gray-200 pb-2">
-              <span className="font-medium text-gray-600">
+              <span className="text-alice font-medium">
                 Base Cleaning Cost:
               </span>
               <span className="font-semibold text-gray-800">
@@ -46,7 +46,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
             {result.restroomCost > 0 && (
               <div className="mb-3 flex justify-between border-b border-gray-200 pb-2">
-                <span className="font-medium text-gray-600">
+                <span className="text-alice font-medium">
                   Restroom Services:
                 </span>
                 <span className="font-semibold text-gray-800">
@@ -57,7 +57,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
             {result.additionalServicesCost > 0 && (
               <div className="mb-3 flex justify-between border-b border-gray-200 pb-2">
-                <span className="font-medium text-gray-600">
+                <span className="text-alice font-medium">
                   Additional Services:
                 </span>
                 <span className="font-semibold text-gray-800">

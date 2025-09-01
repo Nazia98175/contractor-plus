@@ -1,11 +1,11 @@
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Hammer, CreditCard, Calculator, Ruler } from "lucide-react";
 
 export function EducationalContent() {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="border border-gray-200 bg-white shadow-sm">
+        <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="p-6">
             <Hammer className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Material Selection</h3>
@@ -18,7 +18,7 @@ export function EducationalContent() {
           </CardContent>
         </Card>
 
-        <Card className="border border-gray-200 bg-white shadow-sm">
+        <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="p-6">
             <Calculator className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Labor Estimation</h3>
@@ -30,7 +30,7 @@ export function EducationalContent() {
           </CardContent>
         </Card>
 
-        <Card className="border border-gray-200 bg-white shadow-sm">
+        <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="p-6">
             <CreditCard className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Pricing Strategy</h3>
@@ -42,7 +42,7 @@ export function EducationalContent() {
           </CardContent>
         </Card>
 
-        <Card className="border border-gray-200 bg-white shadow-sm">
+        <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="p-6">
             <Ruler className="mb-4 h-6 w-6 text-red-600" />
             <h3 className="mb-2 text-lg font-medium">Project Complexity</h3>
@@ -55,7 +55,7 @@ export function EducationalContent() {
         </Card>
       </div>
 
-      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+      <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
         <h2 className="mb-4 text-xl font-semibold">
           Custom Woodworking Pricing Guide
         </h2>

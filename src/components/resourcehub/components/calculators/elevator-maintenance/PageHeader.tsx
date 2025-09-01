@@ -16,7 +16,7 @@ export function PageHeader() {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/"
-              className="text-sm font-medium text-gray-700 hover:text-red-600"
+              className="text-sm font-medium hover:text-red-600"
             >
               Resources
             </BreadcrumbLink>
@@ -25,14 +25,14 @@ export function PageHeader() {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/resources/cost-calculator"
-              className="text-sm font-medium text-gray-700 hover:text-red-600"
+              className="text-sm font-medium hover:text-red-600"
             >
               Calculators
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-sm font-medium text-gray-500">
+            <BreadcrumbPage className="text-master text-sm">
               Elevator Maintenance Cost Calculator
             </BreadcrumbPage>
           </BreadcrumbItem>

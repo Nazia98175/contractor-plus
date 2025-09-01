@@ -66,7 +66,7 @@ export function EducationalContent() {
           <h3 className="mb-3 text-xl font-medium text-gray-800">
             Don't get caught a few pavers short
           </h3>
-          <p className="mb-4 text-gray-700">
+          <p className="text-decemberSky mb-4">
             Use Contractor+ to plan your paver projects accurately – calculate
             materials, costs, and even schedule your crew. From patios to
             driveways, Contractor+ helps hardscaping pros save time and money by

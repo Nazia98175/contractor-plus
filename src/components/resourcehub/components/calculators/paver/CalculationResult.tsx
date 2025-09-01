@@ -25,14 +25,14 @@ export function CalculationResult({ result }: CalculationResultProps) {
   }).format(result.paverAreaSqFt);
 
   return (
-    <Card className="h-full border border-gray-200 bg-white shadow-sm">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardContent className="p-6">
         <div className="mb-6 text-center">
           <h3 className="text-lg font-medium text-gray-700">Paver Estimate</h3>
           <p className="my-2 text-4xl font-bold text-red-600">
             {result.paversNeeded.toLocaleString()} pavers
           </p>
-          <p className="text-lg font-medium text-gray-600">{formattedCost}</p>
+          <p className="text-alice text-lg font-medium">{formattedCost}</p>
           <p className="text-aliceBlue mt-1 text-xs">
             (Always buy a few extra)
           </p>

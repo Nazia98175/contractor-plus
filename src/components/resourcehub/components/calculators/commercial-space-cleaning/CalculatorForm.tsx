@@ -58,7 +58,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   };
 
   return (
-    <Card className="border border-gray-200 bg-white shadow-sm">
+    <Card className="border-stiletto bg-shutter border shadow-sm">
       <CardContent className="p-6">
         <form onSubmit={handleSubmit}>
           <div className="space-y-4">

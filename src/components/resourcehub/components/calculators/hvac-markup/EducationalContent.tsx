@@ -15,7 +15,7 @@ export function EducationalContent() {
             margin. Markup is calculated based on your cost, while margin is
             calculated on the selling price.
           </p>
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-4">
+          <div className="bg-shutter rounded-lg p-4">
             <p className="mb-1 font-medium">Markup Formula</p>
             <p className="text-aliceBlue text-sm">
               Markup = (Selling Price - Cost) / Cost × 100%

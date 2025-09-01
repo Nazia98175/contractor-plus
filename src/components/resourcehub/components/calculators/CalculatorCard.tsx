@@ -29,7 +29,7 @@ export function CalculatorCard({
   return (
     <Card
       key={calculator.id}
-      className="h-full transition-shadow hover:shadow-md"
+      className="flex h-full flex-col transition-shadow hover:shadow-md"
     >
       <CardHeader className="pb-3">
         <CardTitle className="text-lg">{calculator.name}</CardTitle>

@@ -69,7 +69,7 @@ const BlogPosts: React.FC<Props> = ({
           <>
             <div className="hidden flex-col-reverse items-stretch justify-between gap-6 sm:gap-4 md:flex md:flex-row xl:gap-6">
               <div className="mx-auto flex w-full max-w-[600px] flex-col gap-4 xl:mx-0 xl:max-w-[450px]">
-                {data.map((blog) => (
+                {data.slice(0, 3).map((blog) => (
                   <BlogArticle
                     key={blog.id}
                     blog={blog}
@@ -101,11 +101,11 @@ const BlogPosts: React.FC<Props> = ({
                   <p className="text-decemberSky font-jakarta text-base font-medium">
                     Contractor+ | {getTimeAgo(data[0]?.publishedAt)}
                   </p>
-                  <h3 className="font-jakarta text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
+                  <h3 className="font-jakarta line-clamp-1 text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
                     {data[0]?.blogTitle ||
                       "Discover The Member Benefits Of USA Contracting!"}
                   </h3>
-                  <p className="text-superSilver font-jakarta mt-2 text-base">
+                  <p className="text-superSilver font-jakarta mt-2 line-clamp-3 text-base">
                     {data[0]?.shortDescription ||
                       "How do you create compelling presentations that wow your colleagues and impress your managers?"}
                   </p>

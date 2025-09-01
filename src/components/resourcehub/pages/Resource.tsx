@@ -33,7 +33,7 @@ const Resource = () => {
   return (
     <div className="flex flex-col gap-12 py-10">
       {/* Hero Section */}
-      <section className="main-main-container md:px-6">
+      <section className="main-container md:px-6">
         <div className="space-y-4 text-center">
           <h1 className="animate-fade-in grey-gradient text-4xl font-bold tracking-tighter md:text-5xl">
             Contractor+ Resource Hub

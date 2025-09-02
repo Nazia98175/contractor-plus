@@ -127,7 +127,7 @@ const ProofWorking = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-full max-w-[1224px] px-4 pt-20 md:py-20">
+    <div className="mx-auto w-full max-w-[1240px] px-4 pt-20 md:py-20">
       <div className="pt-5 pb-[57px] md:py-10">
         <Copy animateOnScroll={true}>
           <h2 className="text-mana text-center text-2xl font-semibold sm:text-3xl md:text-[40px] lg:text-[52px]">
@@ -151,7 +151,7 @@ const ProofWorking = () => {
       >
         <div
           style={{ willChange: "position" }}
-          className="sticky top-[100px] h-[100vh] w-full"
+          className="sticky top-[100px] h-dvh w-full"
         >
           <Copy animateOnScroll={true}>
             <h3 className="text-mana pb-3 text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">

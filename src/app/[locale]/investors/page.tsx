@@ -31,9 +31,9 @@ export const metadata = {
 };
 const InvestorsPage = () => {
   return (
-    <main id="home-page-wrapper-2">
+    <main id="home-page-view-port-screen">
       <div
-        id="home-page-view-port-screen-estimatic-ai"
+        id="home-page-header-view-port-screen"
         className="relative opacity-0"
       >
         <InvestorHero />

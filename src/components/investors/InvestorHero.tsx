@@ -75,40 +75,6 @@ const InvestorHero = () => {
     }, 1000);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 1000);
-  }, []);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-estimatic-ai", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
-  }, []);
   return (
     <section ref={wrapperRef} className="relative overflow-hidden">
       <img
@@ -135,12 +101,12 @@ const InvestorHero = () => {
         </span>
         <div className="flex flex-col items-center justify-center px-2">
           <Copy delay={0.1}>
-            <p className="text-darkGray w-full rounded-[6px] bg-[rgba(63,70,75,0.10)] py-1 text-center text-sm font-bold md:bg-transparent">
-              Investment Opportunity{" "}
+            <p className="text-darkGray bg-rgba17 mx-auto w-full rounded-[6px] px-2 py-1 text-center text-sm font-bold sm:w-fit md:bg-transparent">
+              Investment Opportunit
             </p>
           </Copy>
           <Copy delay={0.2}>
-            <h2 className="invester-gradient-text main-heading pt-2 text-center sm:pt-4 md:pt-6">
+            <h2 className="invester-gradient-text main-heading max-w-[324px] pt-2 text-center sm:w-full sm:max-w-full sm:pt-4 md:pt-6">
               The first Operating System for build & service contractors
             </h2>
           </Copy>
@@ -156,8 +122,8 @@ const InvestorHero = () => {
               And we’ve done it without a cent from VC’s.
             </p>
           </Copy>
-          <CardReveal delay={0.6}>
-            <Button className="w-full sm:max-w-[204px]">
+          <CardReveal className="w-full sm:w-fit" delay={0.6}>
+            <Button className="w-full max-w-full sm:max-w-[204px]">
               Book investor call
             </Button>
           </CardReveal>
@@ -172,7 +138,7 @@ const InvestorHero = () => {
               src="/images/webp/mobile-card-1.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] left-[-15%] z-10 h-[150%] w-[102%] -rotate-[15deg]"></div>
+            <div className="invester-image-gradient absolute bottom-[-2%] left-[-13%] z-10 h-[150%] w-full -rotate-[15deg]"></div>
           </div>
           <div className="relative z-10">
             <img
@@ -180,16 +146,15 @@ const InvestorHero = () => {
               src="/images/webp/mobile-card-2.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] h-[150%] w-[105%]"></div>
+            <div className="invester-image-gradient absolute bottom-[-2%] h-[150%] w-full"></div>
           </div>
-
           <div id="right-mobile" className="relative -z-0 sm:mr-14">
             <img
               className="relative top-[20%] z-[-1] w-full max-w-[329px] rotate-[15deg]"
               src="/images/webp/mobile-card-3.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] left-[10%] h-[150%] w-[102%] rotate-[15deg]"></div>
+            <div className="invester-image-gradient absolute bottom-[-2%] left-[10%] h-[150%] w-full rotate-[15deg]"></div>
           </div>
         </div>
       </div>

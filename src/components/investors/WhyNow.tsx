@@ -119,7 +119,7 @@ const WhyNow = () => {
                 </h3>
               </Copy>
               <Copy animateOnScroll={true}>
-                <p className="text-ironFixture pt-3 text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                <p className="text-lightBlackGrey pt-3 text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
                   Field service is in the middle of a generational software
                   shift.
                 </p>
@@ -136,7 +136,7 @@ const WhyNow = () => {
             >
               <UpArrowRedIcon />
               <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
                   Labor and material costs are rising, businesses need to run as
                   efficiently and effectively as possible
                 </p>
@@ -153,7 +153,7 @@ const WhyNow = () => {
             >
               <RedClockIcon />
               <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
                   Customers demand speed in work and communication from
                   contractors
                 </p>
@@ -170,7 +170,7 @@ const WhyNow = () => {
             >
               <CommunicateRedIcon />
               <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
                   AI is changing how contractors communicate, quote, schedule,
                   and manage jobs
                 </p>
@@ -187,7 +187,7 @@ const WhyNow = () => {
             >
               <SmartPhoneIcon />
               <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
                   Smartphone-first crews are demanding tools that actually work
                   in the field
                 </p>
@@ -204,7 +204,7 @@ const WhyNow = () => {
             >
               <KeepUpIcon />
               <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
                   The industry's dominant players have gotten too big, slow, and
                   expensive to keep up.
                 </p>

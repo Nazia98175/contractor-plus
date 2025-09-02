@@ -167,6 +167,7 @@
   --color-rgba14: #00000052;
   --color-rgba15: #0c0d116b;
   --color-rgba16: #0d0e1218;
+  --color-rgba17: #3f464b1a;
 
   /* BREAKPOINTS */
   --breakpoint-xxs: 320px;
@@ -232,6 +233,7 @@
     rgba(243, 243, 243, 0) 33.34%,
     rgba(238, 30, 37, 0.4) 138.08%
   );
+
   --background-image-faq-bg-2: linear-gradient(
     89deg,
     #ed6b6b3b 0%,

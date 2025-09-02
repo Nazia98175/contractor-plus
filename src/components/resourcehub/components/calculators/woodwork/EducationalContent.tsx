@@ -100,11 +100,11 @@ export function EducationalContent() {
             </li>
           </ul>
 
-          <div className="mt-6 rounded-md bg-red-50 p-4">
-            <h3 className="mb-2 text-lg font-medium text-red-800">
+          <div className="border-stiletto mt-6 rounded-md border-2 p-4">
+            <h3 className="mb-2 text-lg font-medium text-red-500">
               Why Custom Woodwork Commands Premium Pricing
             </h3>
-            <p className="text-gray-700">
+            <p>
               Custom woodwork is valuable because it's tailored precisely to
               client specifications, uses high-quality materials, and showcases
               craftsmanship that mass-produced furniture cannot match. Don't
@@ -126,7 +126,7 @@ export function EducationalContent() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-md bg-gray-50 p-4">
+          <div className="border-stiletto mt-4 rounded-md border-2 p-4">
             <h3 className="mb-2 text-base font-medium">
               Every custom piece should be priced for profit
             </h3>

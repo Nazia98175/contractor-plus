@@ -32,7 +32,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h3 className="text-alice text-lg font-medium">
             Estimated Project Cost
           </h3>
-          <p className="my-2 text-4xl font-bold text-green-600">
+          <p className="my-2 text-4xl font-bold text-green-500">
             $
             {result.totalCost.toLocaleString("en-US", {
               minimumFractionDigits: 0,
@@ -76,7 +76,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           )}
           <div className="flex items-center justify-between border-t border-gray-100 pt-2">
             <span className="font-medium">Total estimated cost</span>
-            <span className="font-bold text-green-600">
+            <span className="font-bold text-green-500">
               $
               {result.totalCost.toLocaleString("en-US", {
                 minimumFractionDigits: 0,

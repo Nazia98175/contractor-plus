@@ -61,7 +61,7 @@ export function EducationalContent() {
         </div>
       </div>
 
-      <div className="border-stiletto bg-shutter borderp-6 rounded-lg">
+      <div className="border-stiletto bg-shutter rounded-lg border p-6">
         <div className="flex gap-3">
           <div className="flex-shrink-0">
             <Info className="h-6 w-6 text-red-600" />

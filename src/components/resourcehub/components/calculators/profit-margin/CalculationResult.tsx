@@ -29,7 +29,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">Profit Overview</h3>
           <p
-            className={`my-2 text-4xl font-bold ${result.isLoss ? "text-red-600" : "text-green-600"}`}
+            className={`my-2 text-4xl font-bold ${result.isLoss ? "text-red-600" : "text-green-500"}`}
           >
             $
             {result.profit.toLocaleString("en-US", {
@@ -38,7 +38,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             })}
           </p>
           <p
-            className={`mt-1 text-xl font-medium ${result.isLoss ? "text-red-600" : "text-green-600"}`}
+            className={`mt-1 text-xl font-medium ${result.isLoss ? "text-red-600" : "text-green-500"}`}
           >
             {result.marginPercent.toFixed(1)}% Margin
           </p>
@@ -56,7 +56,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Profit Amount</span>
             <span
-              className={`font-medium ${result.isLoss ? "text-red-600" : "text-green-600"}`}
+              className={`font-medium ${result.isLoss ? "text-red-600" : "text-green-500"}`}
             >
               $
               {result.profit.toLocaleString("en-US", {
@@ -68,7 +68,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Profit Margin</span>
             <span
-              className={`font-medium ${result.isLoss ? "text-red-600" : "text-green-600"}`}
+              className={`font-medium ${result.isLoss ? "text-red-600" : "text-green-500"}`}
             >
               {result.marginPercent.toFixed(1)}%
             </span>

@@ -40,7 +40,7 @@ export const SearchForm = ({
   };
 
   return (
-    <div className="w-full p-4 sm:p-6 bg-card border rounded-lg shadow-sm">
+    <div className="border-stiletto w-full rounded-lg border p-4 shadow-sm sm:p-6">
       <SearchFormHeader searchCount={0} searchLimit={25} />
 
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">

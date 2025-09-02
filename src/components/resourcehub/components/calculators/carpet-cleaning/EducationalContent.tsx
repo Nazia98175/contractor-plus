@@ -3,7 +3,7 @@ import { Button } from "../../ui/button";
 export function EducationalContent() {
   return (
     <div className="mt-16 max-w-none">
-      <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
+      <div className="border-stiletto rounded-lg border p-8 shadow-sm">
         <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           Carpet Cleaning Pricing Guide
         </h2>
@@ -18,10 +18,10 @@ export function EducationalContent() {
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
             <div className="bg-shutter rounded-lg p-6">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+              <h3 className="mb-4 text-xl font-semibold">
                 Factors Affecting Carpet Cleaning Costs
               </h3>
-              <p className="text-alice leading-relaxed">
+              <p className="text-discoBall leading-relaxed">
                 Several factors impact the final cost of a carpet cleaning job,
                 including carpet type, condition, level of soiling,
                 accessibility, and special treatments needed. Our calculator
@@ -31,10 +31,10 @@ export function EducationalContent() {
             </div>
 
             <div className="bg-shutter rounded-lg p-6">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+              <h3 className="mb-4 text-xl font-semibold">
                 Using This Calculator Effectively
               </h3>
-              <p className="text-alice leading-relaxed">
+              <p className="text-discoBall leading-relaxed">
                 For the most accurate estimates, measure the actual carpet area
                 rather than the room size, account for furniture that won't be
                 moved, and be clear about which services are included in your
@@ -44,7 +44,7 @@ export function EducationalContent() {
           </div>
 
           <div className="mb-8">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">
               Pricing Strategies for Carpet Cleaners
             </h3>
             <p className="text-alice mb-4 leading-relaxed">
@@ -112,16 +112,16 @@ export function EducationalContent() {
           </div>
 
           <div className="bg-shutter rounded-lg p-6">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">
               Frequently Asked Questions
             </h3>
 
             <div className="space-y-6">
-              <div className="border-b border-gray-200 pb-4">
-                <p className="mb-2 font-semibold text-gray-800">
+              <div className="border-stiletto border-b pb-4">
+                <p className="mb-2 font-semibold">
                   How often should carpets be professionally cleaned?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   For residential carpets, professional cleaning is typically
                   recommended every 12-18 months, depending on traffic.
                   Commercial spaces, especially high-traffic areas, may require
@@ -130,11 +130,11 @@ export function EducationalContent() {
                 </p>
               </div>
 
-              <div className="border-b border-gray-200 pb-4">
-                <p className="mb-2 font-semibold text-gray-800">
+              <div className="border-stiletto border-b pb-4">
+                <p className="mb-2 font-semibold">
                   How do I determine my price per square foot?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   Start by calculating your costs (labor, equipment, supplies,
                   travel, overhead) and desired profit margin. Most professional
                   carpet cleaners charge between $0.20 and $0.40 per square foot
@@ -145,10 +145,10 @@ export function EducationalContent() {
               </div>
 
               <div>
-                <p className="mb-2 font-semibold text-gray-800">
+                <p className="mb-2 font-semibold">
                   Should I include furniture moving in my base price?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   Most professional cleaners either charge extra for furniture
                   moving or have a policy of only moving lighter pieces. Heavy
                   furniture moving creates liability and requires additional
@@ -159,8 +159,8 @@ export function EducationalContent() {
             </div>
           </div>
 
-          <div className="border-stiletto bg-shutter borderp-6 mt-8 rounded-lg">
-            <h3 className="mb-3 text-xl font-semibold text-gray-800">
+          <div className="border-stiletto bg-shutter mt-8 rounded-lg border p-6">
+            <h3 className="mb-3 text-xl font-semibold">
               Ready to Grow Your Carpet Cleaning Business?
             </h3>
             <p className="text-decemberSky mb-4">

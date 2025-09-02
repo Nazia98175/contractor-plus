@@ -15,7 +15,7 @@ export function IncludeOutOfStockField({
       control={control}
       name="includeOutOfStock"
       render={({ field }) => (
-        <FormItem className="flex h-full w-full flex-row items-center justify-between space-x-2 rounded-lg border p-3">
+        <FormItem className="border-stiletto flex h-full w-full flex-row items-center justify-between space-x-2 rounded-lg border p-3">
           <div className="space-y-0.5">
             <FormLabel className="text-sm font-medium">
               Include Out of Stock

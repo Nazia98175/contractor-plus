@@ -1,4 +1,4 @@
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 
 export function EducationalContent() {
   return (
@@ -61,9 +61,9 @@ export function EducationalContent() {
         </ul>
       </div>
 
-      <Card className="border-red-100 bg-red-50">
+      <Card className="border-stiletto border">
         <CardContent className="p-6">
-          <h3 className="mb-3 text-xl font-medium text-gray-800">
+          <h3 className="mb-3 text-xl font-medium">
             Don't get caught a few pavers short
           </h3>
           <p className="text-decemberSky mb-4">
@@ -72,7 +72,7 @@ export function EducationalContent() {
             driveways, Contractor+ helps hardscaping pros save time and money by
             getting estimates right from the start.
           </p>
-          <p className="font-medium text-gray-700">
+          <p className="text-dancingJewel font-medium">
             Try it on your next project!
           </p>
         </CardContent>

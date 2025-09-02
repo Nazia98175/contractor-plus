@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { Button } from "../../ui/button";
-import { Label } from "@/components/ui/label";
+import { Label } from "../../ui/label";
 import {
   Tooltip,
   TooltipContent,
@@ -64,10 +64,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           <div className="space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <Label
-                  htmlFor="facilitySize"
-                  className="text-base font-medium text-gray-700"
-                >
+                <Label htmlFor="facilitySize" className="text-base font-medium">
                   Facility Size (sq ft)
                 </Label>
                 <TooltipProvider>
@@ -108,10 +105,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <Label
-                  htmlFor="ratePerSqFt"
-                  className="text-base font-medium text-gray-700"
-                >
+                <Label htmlFor="ratePerSqFt" className="text-base font-medium">
                   Rate per sq ft ($)
                 </Label>
                 <TooltipProvider>
@@ -154,7 +148,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               <div className="flex items-center justify-between">
                 <Label
                   htmlFor="numberOfRestrooms"
-                  className="text-base font-medium text-gray-700"
+                  className="text-base font-medium"
                 >
                   Number of Restrooms
                 </Label>
@@ -195,7 +189,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               <div className="flex items-center justify-between">
                 <Label
                   htmlFor="extraCostPerRestroom"
-                  className="text-base font-medium text-gray-700"
+                  className="text-base font-medium"
                 >
                   Extra Cost per Restroom ($)
                 </Label>
@@ -240,7 +234,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               <div className="flex items-center justify-between">
                 <Label
                   htmlFor="additionalServices"
-                  className="text-base font-medium text-gray-700"
+                  className="text-base font-medium"
                 >
                   Additional Services ($)
                 </Label>
@@ -281,7 +275,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             </div>
 
             {validationError && (
-              <div className="rounded-md border border-red-200 bg-red-50 p-3">
+              <div className="border-stiletto bg-shutter rounded-md border p-3">
                 <p className="text-sm text-red-600">{validationError}</p>
               </div>
             )}

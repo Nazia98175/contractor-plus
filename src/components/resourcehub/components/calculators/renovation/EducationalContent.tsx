@@ -18,37 +18,61 @@ export function EducationalContent() {
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-2 text-left">Room Type</th>
-                    <th className="border px-4 py-2 text-left">
+                  <tr className="bg-shutter">
+                    <th className="border-stiletto border px-4 py-2 text-left">
+                      Room Type
+                    </th>
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Typical Cost Range ($/sq ft)
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">Kitchen</td>
-                    <td className="border px-4 py-2">$150 - $350</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Bathroom</td>
-                    <td className="border px-4 py-2">$125 - $275</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-2">Bedroom</td>
-                    <td className="border px-4 py-2">$50 - $150</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Living Room</td>
-                    <td className="border px-4 py-2">$60 - $180</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Kitchen
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $150 - $350
+                    </td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Basement</td>
-                    <td className="border px-4 py-2">$75 - $200</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Bathroom
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $125 - $275
+                    </td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Attic</td>
-                    <td className="border px-4 py-2">$100 - $250</td>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Bedroom
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $50 - $150
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Living Room
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $60 - $180
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Basement
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $75 - $200
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">Attic</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $100 - $250
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -66,33 +90,47 @@ export function EducationalContent() {
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-2 text-left">
+                  <tr className="bg-shutter">
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Renovation Level
                     </th>
-                    <th className="border px-4 py-2 text-left">
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Cost Multiplier
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">Cosmetic Updates</td>
-                    <td className="border px-4 py-2">0.5x - 0.8x</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Mid-Range Remodel</td>
-                    <td className="border px-4 py-2">1.0x (baseline)</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Cosmetic Updates
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      0.5x - 0.8x
+                    </td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Full Gut Renovation</td>
-                    <td className="border px-4 py-2">1.5x - 2.0x</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Mid-Range Remodel
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      1.0x (baseline)
+                    </td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Full Gut Renovation
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      1.5x - 2.0x
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
                       High-End/Luxury Finishes
                     </td>
-                    <td className="border px-4 py-2">2.0x - 3.5x+</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      2.0x - 3.5x+
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -158,35 +196,47 @@ export function EducationalContent() {
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-2 text-left">Project Type</th>
-                    <th className="border px-4 py-2 text-left">
+                  <tr className="bg-shutter">
+                    <th className="border-stiletto border px-4 py-2 text-left">
+                      Project Type
+                    </th>
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Typical Contingency
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">New Build (Less Risk)</td>
-                    <td className="border px-4 py-2">5-10%</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Cosmetic Renovation</td>
-                    <td className="border px-4 py-2">10-15%</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      New Build (Less Risk)
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">5-10%</td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Standard Renovation</td>
-                    <td className="border px-4 py-2">15-20%</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Major Gut Renovation</td>
-                    <td className="border px-4 py-2">20-30%</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Cosmetic Renovation
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">10-15%</td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">
+                    <td className="border-stiletto border px-4 py-2">
+                      Standard Renovation
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">15-20%</td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Major Gut Renovation
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">20-30%</td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
                       Historic Building Renovation
                     </td>
-                    <td className="border px-4 py-2">25-35%+</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      25-35%+
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -202,10 +252,10 @@ export function EducationalContent() {
 
         <div className="space-y-4">
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               Should I include my appliances in the renovation cost?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               It depends on your budgeting approach. For kitchen renovations,
               major appliances often represent 15-20% of the total budget. You
               can either include them in your per-square-foot cost calculation
@@ -216,10 +266,10 @@ export function EducationalContent() {
           </div>
 
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               How accurate is a square foot estimate for renovations?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               Square foot estimates provide a useful starting point but are less
               precise for renovations than for new construction. Renovation
               complexity varies widely based on existing conditions. Use this
@@ -230,10 +280,10 @@ export function EducationalContent() {
           </div>
 
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               Should I budget differently for DIY vs. contractor renovations?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               Yes. DIY renovations can save on labor costs (typically 30-50% of
               a renovation budget), but only if you have the necessary skills.
               For DIY projects, budget more for materials waste and potential
@@ -245,10 +295,10 @@ export function EducationalContent() {
           </div>
 
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               What costs are often forgotten in renovation budgets?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               Common oversights include: permits and inspection fees, temporary
               housing if you can't live in the space during work, design and
               architectural fees, furniture and decor for the renovated space,
@@ -263,17 +313,17 @@ export function EducationalContent() {
       {/* CTA Section */}
       <Card className="bg-primary/5 border-shutter border p-6">
         <div className="space-y-4 text-center">
-          <h3 className="text-xl font-bold text-gray-900">
+          <h3 className="text-xl font-bold">
             Renovations can be unpredictable – but your estimates don't have to
             be
           </h3>
-          <p className="text-aliceBlue mx-auto max-w-2xl">
+          <p className="text-decemberSky mx-auto max-w-2xl">
             Contractor+ gives remodeling contractors the tools to quickly
             estimate costs (with contingency!), manage change orders, and keep
             projects on track. Start using it to make your renovation projects
             smoother and more profitable.
           </p>
-          <Button className="bg-primary hover:bg-primary/90">
+          <Button>
             Try Contractor+ Today <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

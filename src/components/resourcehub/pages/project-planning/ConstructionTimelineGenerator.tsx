@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Card,
@@ -5,18 +6,18 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../ui/card";
-import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
-import { Label } from "@/components/ui/label";
+} from "../../components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../ui/select";
-import { Badge } from "@/components/ui/badge";
+} from "../../components/ui/select";
+import { Badge } from "../../components/ui/badge";
 import {
   Calendar,
   Home,
@@ -32,7 +33,6 @@ import {
   Plus,
   GripVertical,
 } from "lucide-react";
-
 import { useMetaTags } from "@/hooks/use-meta-tags";
 import {
   Breadcrumb,
@@ -41,7 +41,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../../ui/breadcrumb";
+} from "../../components/ui/breadcrumb";
 import {
   Dialog,
   DialogContent,
@@ -49,9 +49,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import jsPDF from "jspdf";
+import Link from "next/link";
 
 interface ProjectPhase {
   id: string;
@@ -1792,7 +1793,7 @@ export default function ConstructionTimelineGenerator() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/" className="flex items-center">
+                <Link href="/resources" className="flex items-center">
                   <Home className="mr-1 h-4 w-4" />
                   Home
                 </Link>
@@ -1801,7 +1802,9 @@ export default function ConstructionTimelineGenerator() {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/project-planning">Project Planning</Link>
+                <Link href="/resources/project-planning-tools">
+                  Project Planning
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -1817,7 +1820,7 @@ export default function ConstructionTimelineGenerator() {
         <h1 className="mb-4 text-4xl font-bold">
           Construction Timeline Generator
         </h1>
-        <p className="text-aliceBlue mx-auto max-w-2xl text-lg">
+        <p className="text-decemberSky mx-auto max-w-2xl text-lg">
           Create professional construction project timelines with customizable
           Gantt-style visualization
         </p>
@@ -2179,7 +2182,7 @@ export default function ConstructionTimelineGenerator() {
             </p>
             <div className="mb-8 grid gap-6 md:grid-cols-3">
               <div className="text-center">
-                <div className="mb-3 rounded-lg bg-white/50 p-4">
+                <div className="bg-shutter mb-3 rounded-lg p-4">
                   <BarChart3 className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Project Management</h3>
@@ -2189,7 +2192,7 @@ export default function ConstructionTimelineGenerator() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="mb-3 rounded-lg bg-white/50 p-4">
+                <div className="bg-shutter mb-3 rounded-lg p-4">
                   <Users className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Client Relationships</h3>
@@ -2198,7 +2201,7 @@ export default function ConstructionTimelineGenerator() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="mb-3 rounded-lg bg-white/50 p-4">
+                <div className="bg-shutter mb-3 rounded-lg p-4">
                   <Calendar className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Complete Integration</h3>
@@ -2207,11 +2210,7 @@ export default function ConstructionTimelineGenerator() {
                 </p>
               </div>
             </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-            >
+            <Button asChild size="lg">
               <a
                 href="https://contractorplus.app/project-management-software-for-contractors"
                 target="_blank"
@@ -2226,13 +2225,13 @@ export default function ConstructionTimelineGenerator() {
         </div>
 
         {/* How-to Guide */}
-        <div className="bg-muted/30 rounded-xl p-8">
+        <div className="border-stiletto rounded-xl border p-8">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Master Construction Timeline Planning
           </h2>
 
           <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">1</span>
@@ -2245,7 +2244,7 @@ export default function ConstructionTimelineGenerator() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">2</span>
@@ -2258,7 +2257,7 @@ export default function ConstructionTimelineGenerator() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">3</span>
@@ -2271,7 +2270,7 @@ export default function ConstructionTimelineGenerator() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">4</span>
@@ -2371,7 +2370,7 @@ export default function ConstructionTimelineGenerator() {
         </div>
 
         {/* Industry Insights */}
-        <Card className="from-muted/50 to-muted/20 bg-gradient-to-br">
+        <Card className="bg-shutter">
           <CardHeader>
             <CardTitle className="text-center">
               Industry Timeline Insights

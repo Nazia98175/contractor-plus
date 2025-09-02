@@ -85,25 +85,17 @@ export default function DrywallCalculator() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/"
-                className="text-sm text-gray-700 hover:text-red-600"
-              >
-                Resources
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/">Resources</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources/cost-calculator"
-                className="text-sm text-gray-700 hover:text-red-600"
-              >
+              <BreadcrumbLink href="/resources/cost-calculator">
                 Calculators
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-sm text-gray-500">
+              <BreadcrumbPage className="text-decemberSky text-sm">
                 Drywall Materials Calculator
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -115,8 +107,8 @@ export default function DrywallCalculator() {
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => router.push("/resources/calculators")}
-        className="mb-6 flex items-center gap-1 text-gray-700 hover:text-red-600"
+        onClick={() => router.push("/resources/cost-calculator")}
+        className="mb-6 flex items-center gap-1 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -128,9 +120,7 @@ export default function DrywallCalculator() {
           <div className="rounded-full bg-red-100 p-2">
             <Square className="h-6 w-6 text-red-600" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">
-            Drywall Materials Calculator
-          </h1>
+          <h1 className="text-3xl font-bold">Drywall Materials Calculator</h1>
         </div>
         <p className="text-aliceBlue max-w-3xl">
           Calculate how many drywall sheets you need for your project. Perfect
@@ -153,7 +143,7 @@ export default function DrywallCalculator() {
           {/* Call to Action Card */}
           <Card className="border-stiletto bg-shutter border">
             <CardHeader>
-              <CardTitle className="text-xl text-red-800">
+              <CardTitle className="text-xl text-red-500">
                 Ready to Streamline Your Drywall Business?
               </CardTitle>
             </CardHeader>
@@ -164,10 +154,7 @@ export default function DrywallCalculator() {
                 manage projects with ease. Estimate your drywall, order the
                 right amount, and keep your projects on schedule and on budget.
               </p>
-              <Button
-                variant="outline"
-                className="w-full border-red-200 bg-white text-red-700 hover:border-red-300 hover:bg-red-50"
-              >
+              <Button variant="outline" className="w-full">
                 Try Contractor Plus
               </Button>
             </CardContent>

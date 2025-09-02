@@ -20,7 +20,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../../ui/tooltip";
-import { FenceCostValues } from "@/pages/calculators/FenceCostCalculator";
+import { FenceCostValues } from "@/components/resourcehub/pages/calculators/FenceCostCalculator";
 
 // Define schema for form validation
 const formSchema = z.object({

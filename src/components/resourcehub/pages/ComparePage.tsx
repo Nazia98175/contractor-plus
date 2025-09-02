@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { useComparePage } from "@/hooks/use-compare-page";
 import { useMetaTags } from "@/hooks/use-meta-tags";

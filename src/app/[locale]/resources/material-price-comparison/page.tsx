@@ -1,13 +1,11 @@
-"use client";
 import ComparePage from "@/components/resourcehub/pages/ComparePage";
-import React from "react";
 
-const page = () => {
+const MaterialComparePage = () => {
   return (
-    <div className="bg-white">
+    <div>
       <ComparePage />
     </div>
   );
 };
 
-export default page;
+export default MaterialComparePage;

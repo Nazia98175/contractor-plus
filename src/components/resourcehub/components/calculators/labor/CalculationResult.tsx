@@ -75,7 +75,7 @@ export function CalculationResult({
       {hasMarkup && (
         <div className="space-y-1">
           <p className="text-aliceBlue text-sm">Profit Amount</p>
-          <p className="text-xl font-medium text-green-600">
+          <p className="text-xl font-medium text-green-500">
             ${profitAmount.toFixed(2)}
           </p>
         </div>

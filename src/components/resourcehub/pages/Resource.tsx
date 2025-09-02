@@ -56,7 +56,7 @@ const Resource = () => {
               icon={
                 <Calculator className="group-hover:text-coralRed h-10 w-10 duration-300" />
               }
-              link="resources/cost-calculator"
+              link="/resources/cost-calculator"
               buttonText="Open Calculators"
             />
 

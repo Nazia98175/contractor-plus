@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Snowflake } from "lucide-react";
+import { Card, CardContent } from "../../ui/card";
 
 export function EducationalContent() {
   return (
@@ -8,7 +8,7 @@ export function EducationalContent() {
         <h2 className="mb-4 text-2xl font-semibold">
           How to Price Snow Removal Services
         </h2>
-        <p className="mb-6 text-gray-700">
+        <p className="mb-6">
           Pricing snow removal services effectively ensures your business
           remains profitable while providing fair rates to clients. This
           calculator helps you determine appropriate pricing based on snowfall
@@ -16,7 +16,7 @@ export function EducationalContent() {
         </p>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <Card className="border border-gray-200">
+          <Card className="border-stiletto border">
             <CardContent className="pt-6">
               <h3 className="mb-3 flex items-center gap-2 text-lg font-medium">
                 <Snowflake className="h-5 w-5 text-blue-500" />
@@ -38,7 +38,7 @@ export function EducationalContent() {
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-200">
+          <Card className="border-stiletto border">
             <CardContent className="pt-6">
               <h3 className="mb-3 flex items-center gap-2 text-lg font-medium">
                 <Snowflake className="h-5 w-5 text-blue-500" />
@@ -66,7 +66,7 @@ export function EducationalContent() {
           Snow Removal Pricing Models
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
-          <Card className="border border-gray-200">
+          <Card className="border-stiletto border">
             <CardContent className="pt-6">
               <h3 className="mb-2 text-lg font-medium">Per-Visit Pricing</h3>
               <p className="text-alice">
@@ -77,7 +77,7 @@ export function EducationalContent() {
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-200">
+          <Card className="border-stiletto border">
             <CardContent className="pt-6">
               <h3 className="mb-2 text-lg font-medium">Seasonal Contract</h3>
               <p className="text-alice">
@@ -88,7 +88,7 @@ export function EducationalContent() {
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-200">
+          <Card className="border-stiletto border">
             <CardContent className="pt-6">
               <h3 className="mb-2 text-lg font-medium">Monthly Retainer</h3>
               <p className="text-alice">
@@ -103,12 +103,12 @@ export function EducationalContent() {
 
       <div className="border-stiletto bg-shutter rounded-lg border p-6">
         <div className="flex gap-3">
-          <Snowflake className="h-8 w-8 flex-shrink-0 text-blue-600" />
+          <Snowflake className="h-8 w-8 flex-shrink-0 text-blue-400" />
           <div>
-            <h3 className="mb-2 text-lg font-semibold text-blue-800">
+            <h3 className="mb-2 text-lg font-semibold text-blue-300">
               Professional Tip
             </h3>
-            <p className="text-gray-700">
+            <p>
               Consider offering discounts for early-season sign-ups or
               multi-year contracts to secure clients before winter begins. Many
               successful snow removal contractors also offer tiered service

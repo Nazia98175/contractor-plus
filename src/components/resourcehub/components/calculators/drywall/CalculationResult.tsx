@@ -19,8 +19,8 @@ export function CalculationResult({
   if (!calculationResult) {
     return (
       <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
-        <CardHeader className="border-b border-red-100 bg-red-50">
-          <CardTitle className="text-xl text-red-800">
+        <CardHeader className="border-stiletto border-b">
+          <CardTitle className="text-xl text-red-400">
             Calculation Results
           </CardTitle>
         </CardHeader>
@@ -37,8 +37,8 @@ export function CalculationResult({
 
   return (
     <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
-      <CardHeader className="border-b border-red-100 bg-red-50">
-        <CardTitle className="text-xl text-red-800">
+      <CardHeader className="border-stiletto border-b">
+        <CardTitle className="text-xl text-red-500">
           Calculation Results
         </CardTitle>
       </CardHeader>
@@ -50,9 +50,7 @@ export function CalculationResult({
           <p className="my-2 text-4xl font-bold text-red-600">
             {sheetsNeeded} sheets
           </p>
-          <p className="text-sm text-gray-500">
-            {`${sheetWidthLength} ft sheets`}
-          </p>
+          <p className="text-sm">{`${sheetWidthLength} ft sheets`}</p>
         </div>
 
         {totalCost > 0 && (
@@ -72,7 +70,7 @@ export function CalculationResult({
         <Separator className="my-4" />
 
         <div className="space-y-2 text-sm">
-          <h4 className="font-medium text-gray-700">Calculation Breakdown</h4>
+          <h4 className="font-medium">Calculation Breakdown</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Sheet Area</span>
             <span className="font-medium">
@@ -99,8 +97,8 @@ export function CalculationResult({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-center border-t border-red-100 bg-red-50">
-        <p className="text-center text-xs text-gray-500">
+      <CardFooter className="border-stiletto flex justify-center border-t">
+        <p className="pt-2 text-center text-xs">
           Note: Always verify measurements before purchasing materials. Actual
           needs may vary based on specific project requirements.
         </p>

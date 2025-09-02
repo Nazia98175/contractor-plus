@@ -275,7 +275,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             </p>
 
             {/* Thumbtack Logo */}
-            <div className="mb-4 flex items-center justify-center gap-2">
+            <div className="mb-4 flex items-center justify-center gap-2 invert">
               <img
                 src="/lovable-uploads/1bd58006-0f6d-40fe-bd6a-5fcd57aec5ce.png"
                 alt="Thumbtack"
@@ -352,7 +352,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                 {/* Reviews */}
                 <div className="flex flex-col items-center space-y-2">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
-                    <MessageCircle className="h-5 w-5 text-green-600" />
+                    <MessageCircle className="h-5 w-5 text-green-500" />
                   </div>
                   <div>
                     <div className="text-foreground font-semibold">300k+</div>

@@ -57,7 +57,7 @@ export function CalculationResult({
       {/* Profit */}
       <div className="space-y-1">
         <p className="text-aliceBlue text-sm">Your Profit</p>
-        <p className="text-2xl font-semibold text-green-600">
+        <p className="text-2xl font-semibold text-green-500">
           ${profit.toFixed(2)}
         </p>
       </div>

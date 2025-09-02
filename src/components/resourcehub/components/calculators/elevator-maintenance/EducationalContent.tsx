@@ -30,7 +30,7 @@ export function EducationalContent() {
       </p>
 
       <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-        <Card className="border border-gray-200 dark:border-gray-800">
+        <Card className="border-stiletto border dark:border-gray-800">
           <CardHeader className="bg-shutter border-stiletto border-b dark:border-gray-800 dark:bg-gray-900">
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-red-100 p-2 dark:bg-red-900/20">
@@ -44,7 +44,7 @@ export function EducationalContent() {
           <CardContent className="pt-6">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Clock className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <AlertCircle className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <ArrowUp className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -83,7 +83,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Building className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export function EducationalContent() {
           </CardContent>
         </Card>
 
-        <Card className="border border-gray-200 dark:border-gray-800">
+        <Card className="border-stiletto border dark:border-gray-800">
           <CardHeader className="bg-shutter border-stiletto border-b dark:border-gray-800 dark:bg-gray-900">
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-red-100 p-2 dark:bg-red-900/20">
@@ -112,7 +112,7 @@ export function EducationalContent() {
           <CardContent className="pt-6">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <ArrowUp className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -127,7 +127,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Clock className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -139,7 +139,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Building className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -151,7 +151,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <DollarSign className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -169,7 +169,7 @@ export function EducationalContent() {
         </Card>
       </div>
 
-      <Card className="mb-10 border border-gray-200 dark:border-gray-800">
+      <Card className="border-stiletto mb-10 border dark:border-gray-800">
         <CardHeader className="bg-shutter border-stiletto border-b dark:border-gray-800 dark:bg-gray-900">
           <div className="flex items-center gap-3">
             <div className="rounded-full bg-red-100 p-2 dark:bg-red-900/20">
@@ -185,7 +185,7 @@ export function EducationalContent() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Building className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -197,7 +197,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Clock className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -211,7 +211,7 @@ export function EducationalContent() {
             </ul>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <Check className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>
@@ -223,7 +223,7 @@ export function EducationalContent() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="mt-1 rounded-full bg-gray-100 p-1 dark:bg-gray-800">
+                <div className="bg-shutter mt-1 rounded-full p-1 dark:bg-gray-800">
                   <ArrowUp className="text-alice h-4 w-4 dark:text-gray-400" />
                 </div>
                 <div>

@@ -84,15 +84,15 @@ export default function RoofSquareFootageCalculator() {
             <CalculationResult result={calculationResult} />
           ) : (
             <Card className="border-stiletto bg-shutter h-full border shadow-sm">
-              <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
-                <h3 className="mb-2 text-lg font-medium text-gray-700">
+              <CardContent className="flex h-full flex-col p-6">
+                <h3 className="mb-2 text-lg font-medium">
                   Enter roof details to calculate square footage
                 </h3>
                 <p className="text-aliceBlue mb-4">
                   Complete the form on the left and click "Calculate Roof Area"
                   to see your roof area estimation here.
                 </p>
-                <div className="mb-4 w-full rounded-md border border-gray-200 bg-gray-50 px-6 py-4">
+                <div className="border-stiletto mb-4 w-full rounded-md border px-6 py-4">
                   <ul className="text-alice space-y-2 text-left text-sm">
                     <li className="flex items-center gap-2">
                       <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
@@ -121,10 +121,10 @@ export default function RoofSquareFootageCalculator() {
                   </ul>
                 </div>
 
-                <div className="w-full rounded-md border border-red-100 bg-red-50 p-4">
+                <div className="border-stiletto w-full rounded-md border p-4">
                   <div className="flex gap-2">
                     <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
-                    <p className="text-sm text-gray-700">
+                    <p className="text-discoBall text-sm">
                       This calculator works best for simple gable roofs. For
                       complex roofs with multiple sections, calculate each
                       section separately and add them together.

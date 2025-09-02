@@ -34,8 +34,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
         </div>
 
         <div className="space-y-4">
-          <div className="flex flex-col rounded-md border border-gray-200 bg-gray-50 p-4">
-            <div className="mb-3 flex justify-between border-b border-gray-200 pb-2">
+          <div className="border-stiletto flex flex-col rounded-md border bg-gray-50 p-4">
+            <div className="border-stiletto mb-3 flex justify-between border-b pb-2">
               <span className="text-alice font-medium">
                 Base Cleaning Cost:
               </span>
@@ -45,7 +45,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </div>
 
             {result.restroomCost > 0 && (
-              <div className="mb-3 flex justify-between border-b border-gray-200 pb-2">
+              <div className="border-stiletto mb-3 flex justify-between border-b pb-2">
                 <span className="text-alice font-medium">
                   Restroom Services:
                 </span>
@@ -56,7 +56,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             )}
 
             {result.additionalServicesCost > 0 && (
-              <div className="mb-3 flex justify-between border-b border-gray-200 pb-2">
+              <div className="border-stiletto mb-3 flex justify-between border-b pb-2">
                 <span className="text-alice font-medium">
                   Additional Services:
                 </span>
@@ -74,7 +74,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </div>
           </div>
 
-          <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
+          <div className="border-stiletto rounded-md border bg-gray-50 p-4">
             <h4 className="mb-2 font-medium text-gray-700">Details</h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2">

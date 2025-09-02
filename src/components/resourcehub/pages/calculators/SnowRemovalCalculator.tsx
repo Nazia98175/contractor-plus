@@ -68,46 +68,42 @@ export default function SnowRemovalCalculator() {
           ) : (
             <Card className="border-stiletto bg-shutter h-full border shadow-sm">
               <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
-                <h3 className="mb-2 text-lg font-medium text-gray-700">
+                <h3 className="mb-2 text-lg font-medium">
                   Enter snow removal details to calculate your price
                 </h3>
                 <p className="text-aliceBlue mb-4">
                   Complete the form on the left and click "Calculate" to see
                   your fair pricing estimate.
                 </p>
-                <div className="mb-4 w-full rounded-md border border-gray-200 bg-gray-50 px-6 py-4">
+                <div className="bg-stiletto/50 mb-4 w-full rounded-md px-6 py-4">
                   <ul className="text-alice space-y-2 text-left text-sm">
                     <li className="flex items-center gap-2">
-                      <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                        <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                      </div>
+                      <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                       <span>Base rate calculation</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                        <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                      </div>
+                      <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                       <span>Additional charges for excess snow</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                        <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                      </div>
+                      <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                       <span>Total service charge</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                        <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                      </div>
+                      <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                       <span>Detailed pricing breakdown</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="w-full rounded-md border border-red-100 bg-red-50 p-4">
+                <div className="bg-stiletto/50 w-full rounded-md p-4">
                   <div className="flex gap-2">
                     <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm">
                       Professional snow removal pricing should account for
                       equipment costs, labor, risk, and the extra time required
                       for deeper snow.

@@ -8,26 +8,20 @@ import {
   BreadcrumbSeparator,
 } from "../../ui/breadcrumb";
 import { Button } from "../../ui/button";
+import { useRouter } from "next/navigation";
 
 export function PageHeader() {
+  const router = useRouter();
   return (
     <div className="mb-8">
       <Breadcrumb className="mb-4">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink
-              href="/"
-              className="text-sm font-medium hover:text-red-600"
-            >
-              Resources
-            </BreadcrumbLink>
+            <BreadcrumbLink href="/">Resources</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink
-              href="/resources/cost-calculator"
-              className="text-sm font-medium hover:text-red-600"
-            >
+            <BreadcrumbLink href="/resources/cost-calculator">
               Calculators
             </BreadcrumbLink>
           </BreadcrumbItem>
@@ -40,11 +34,14 @@ export function PageHeader() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Button variant="outline" size="sm" className="mb-6" asChild>
-        <Link to="/calculators" className="flex items-center gap-2">
-          <ArrowLeft className="h-4 w-4" />
-          Back to Calculators
-        </Link>
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={() => router.push("/resources/cost-calculator")}
+        className="mb-6 flex items-center gap-1 hover:text-red-600"
+      >
+        <ArrowLeft className="mr-1 h-4 w-4" />
+        Back to Calculators
       </Button>
 
       <div className="mb-3 flex items-center gap-3">

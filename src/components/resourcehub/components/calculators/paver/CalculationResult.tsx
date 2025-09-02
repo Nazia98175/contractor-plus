@@ -1,4 +1,4 @@
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Separator } from "../../ui/separator";
 
 interface CalculationResultProps {

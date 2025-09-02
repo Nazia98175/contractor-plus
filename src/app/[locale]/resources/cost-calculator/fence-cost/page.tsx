@@ -1,10 +1,9 @@
-import PipeWaterVolumeCalculator from "@/components/resourcehub/pages/calculators/PipeWaterVolumeCalculator";
-import React from "react";
+import FenceCostCalculator from "@/components/resourcehub/pages/calculators/FenceCostCalculator";
 
 const page = () => {
   return (
     <div>
-      <PipeWaterVolumeCalculator />
+      <FenceCostCalculator />
     </div>
   );
 };

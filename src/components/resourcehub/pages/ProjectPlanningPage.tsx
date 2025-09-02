@@ -125,10 +125,10 @@ export default function ProjectPlanningPage() {
 
       {/* Header Section */}
       <div className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+        <h1 className="grey-gradient mb-4 font-bold md:text-5xl">
           Free Construction Project Planning Tools
         </h1>
-        <p className="text-aliceBlue mx-auto mb-8 max-w-3xl text-xl">
+        <p className="text-decemberSky mx-auto mb-8 max-w-3xl text-xl">
           Professional project planning tools to help contractors schedule,
           plan, and manage construction projects efficiently. Generate
           timelines, create RFIs, forecast cash flow, track milestones, and
@@ -221,7 +221,7 @@ export default function ProjectPlanningPage() {
 
                 <div className="flex gap-2">
                   <Button asChild className="flex-1">
-                    <Link href={`/project-planning/${tool.id}`}>
+                    <Link href={`/resources/project-planning-tools/${tool.id}`}>
                       {tool.id === "construction-rfi-generator" ? (
                         <>
                           <FileText className="mr-2 h-4 w-4" />

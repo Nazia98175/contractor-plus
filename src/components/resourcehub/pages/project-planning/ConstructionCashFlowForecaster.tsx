@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Card,
@@ -5,18 +6,17 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../ui/card";
-import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
-import { Label } from "@/components/ui/label";
+} from "../../components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../ui/select";
-import { Badge } from "@/components/ui/badge";
+} from "../../components/ui/select";
 import {
   TrendingUp,
   Download,
@@ -41,7 +41,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../../ui/breadcrumb";
+} from "../../components/ui/breadcrumb";
 import { useToast } from "@/hooks/use-toast";
 import {
   LineChart,
@@ -57,6 +57,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import jsPDF from "jspdf";
+import Link from "next/link";
 
 interface CashFlowItem {
   id: string;
@@ -370,7 +371,7 @@ export default function ConstructionCashFlowForecaster() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/" className="flex items-center">
+                <Link href="/resources" className="flex items-center">
                   <Home className="mr-1 h-4 w-4" />
                   Home
                 </Link>
@@ -379,7 +380,9 @@ export default function ConstructionCashFlowForecaster() {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/project-planning">Project Planning</Link>
+                <Link href="/resources/project-planning-tools">
+                  Project Planning
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -637,7 +640,7 @@ export default function ConstructionCashFlowForecaster() {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-lg bg-green-50 p-3">
-                      <div className="text-sm font-medium text-green-600">
+                      <div className="text-sm font-medium text-green-500">
                         Total Income
                       </div>
                       <div className="text-lg font-bold text-green-700">
@@ -809,11 +812,7 @@ export default function ConstructionCashFlowForecaster() {
                 </p>
               </div>
             </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-            >
+            <Button asChild size="lg">
               <a
                 href="https://contractorplus.app/project-management-software-for-contractors"
                 target="_blank"
@@ -829,13 +828,13 @@ export default function ConstructionCashFlowForecaster() {
         </div>
 
         {/* How-to Guide */}
-        <div className="bg-muted/30 rounded-xl p-8">
+        <div className="border-stiletto rounded-xl border p-8">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Master Construction Cash Flow Management
           </h2>
 
           <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">1</span>
@@ -847,7 +846,7 @@ export default function ConstructionCashFlowForecaster() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">2</span>
@@ -859,7 +858,7 @@ export default function ConstructionCashFlowForecaster() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">3</span>
@@ -871,7 +870,7 @@ export default function ConstructionCashFlowForecaster() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">4</span>
@@ -971,7 +970,7 @@ export default function ConstructionCashFlowForecaster() {
         </div>
 
         {/* Industry Statistics */}
-        <Card className="from-muted/50 to-muted/20 bg-gradient-to-br">
+        <Card className="bg-shutter">
           <CardHeader>
             <CardTitle className="text-center">
               Construction Cash Flow Statistics

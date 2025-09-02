@@ -6,12 +6,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../../ui/table";
 
 export function EducationalContent() {
   return (
     <div className="mt-16 max-w-none">
-      <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
+      <div className="border-stiletto bg-shutter rounded-lg border p-8 shadow-sm">
         <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           Drywall Materials Guide
         </h2>
@@ -24,11 +24,11 @@ export function EducationalContent() {
           </p>
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <div className="border-stiletto bg-shutter rounded-lg border p-6">
+              <h3 className="mb-4 text-xl font-semibold">
                 Choosing the Right Drywall
               </h3>
-              <p className="text-alice leading-relaxed">
+              <p className="text-discoBall leading-relaxed">
                 Different projects require different types of drywall. Standard
                 ½-inch drywall is common for interior walls, while
                 moisture-resistant (green board) is better for bathrooms.
@@ -37,11 +37,11 @@ export function EducationalContent() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <div className="border-stiletto bg-shutter rounded-lg border p-6">
+              <h3 className="mb-4 text-xl font-semibold">
                 Understanding Sheet Sizes
               </h3>
-              <p className="text-alice leading-relaxed">
+              <p className="text-discoBall leading-relaxed">
                 Drywall typically comes in 4-foot widths with varying lengths
                 (8, 10, 12 feet). Larger sheets mean fewer seams but are heavier
                 and harder to maneuver. For ceilings, consider using lighter
@@ -52,7 +52,7 @@ export function EducationalContent() {
           </div>
 
           <div className="mb-8">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">
               Calculating Area Properly
             </h3>
             <p className="text-alice mb-4 leading-relaxed">
@@ -63,7 +63,7 @@ export function EducationalContent() {
               doors and windows - measure their dimensions and subtract their
               area from your total.
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               When measuring for drywall, it's better to be precise. Take
               detailed measurements of each wall segment, accounting for
               irregularities, and create a comprehensive list before calculating
@@ -73,12 +73,12 @@ export function EducationalContent() {
           </div>
 
           <div className="mb-8">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">
               Common Drywall Sheet Sizes and Their Coverage
             </h3>
 
             <Table className="mb-6 w-full border-collapse">
-              <TableHeader className="bg-gray-50">
+              <TableHeader>
                 <TableRow>
                   <TableHead className="font-semibold">Sheet Size</TableHead>
                   <TableHead className="font-semibold">Coverage Area</TableHead>
@@ -120,17 +120,17 @@ export function EducationalContent() {
             </Table>
           </div>
 
-          <div className="mb-8 rounded-lg border border-gray-100 bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+          <div className="border-stiletto bg-shutter mb-8 rounded-lg border p-6">
+            <h3 className="mb-4 text-xl font-semibold">
               Waste Factor Considerations
             </h3>
 
             <div className="space-y-6">
               <div>
-                <p className="mb-2 font-semibold text-gray-800">
+                <p className="mb-2 font-semibold">
                   Why include a waste factor?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   Drywall installation always involves cutting, trimming, and
                   occasional mistakes. A waste factor accounts for this
                   inevitable material loss. For simple rectangular rooms with
@@ -141,10 +141,8 @@ export function EducationalContent() {
               </div>
 
               <div>
-                <p className="mb-2 font-semibold text-gray-800">
-                  Planning cuts efficiently
-                </p>
-                <p className="text-alice leading-relaxed">
+                <p className="mb-2 font-semibold">Planning cuts efficiently</p>
+                <p className="text-discoBall leading-relaxed">
                   Experienced contractors know that planning your cuts can
                   significantly reduce waste. Try to lay out your sheets so
                   offcuts from one area can be used in another. For example,
@@ -156,7 +154,7 @@ export function EducationalContent() {
           </div>
 
           <div className="mb-8">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">
               Additional Materials to Consider
             </h3>
             <p className="text-alice mb-4 leading-relaxed">
@@ -165,7 +163,7 @@ export function EducationalContent() {
             </p>
 
             <Table className="mb-4 w-full border-collapse">
-              <TableHeader className="bg-gray-50">
+              <TableHeader>
                 <TableRow>
                   <TableHead className="font-semibold">Material</TableHead>
                   <TableHead className="font-semibold">
@@ -202,24 +200,24 @@ export function EducationalContent() {
               </TableBody>
             </Table>
 
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               For a complete project estimate, consider calculating these
               additional materials separately or adding 15-25% to your drywall
               cost to cover these accessories.
             </p>
           </div>
 
-          <div className="rounded-lg border border-gray-100 bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-semibold text-gray-800">
+          <div className="border-stiletto bg-shutter rounded-lg border p-6">
+            <h3 className="mb-4 text-xl font-semibold">
               Frequently Asked Questions
             </h3>
 
             <div className="space-y-6">
-              <div className="border-b border-gray-200 pb-4">
-                <p className="mb-2 font-semibold text-gray-800">
+              <div className="border-stiletto border-b pb-4">
+                <p className="mb-2 font-semibold">
                   Should I buy extra sheets beyond what the calculator suggests?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   It's generally a good practice to purchase 1-2 extra sheets
                   beyond what the calculator recommends, especially for larger
                   jobs. This provides a buffer for unexpected damage or
@@ -228,11 +226,11 @@ export function EducationalContent() {
                 </p>
               </div>
 
-              <div className="border-b border-gray-200 pb-4">
-                <p className="mb-2 font-semibold text-gray-800">
+              <div className="border-stiletto border-b pb-4">
+                <p className="mb-2 font-semibold">
                   How do I account for different ceiling heights?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   If your room has varying ceiling heights, calculate each wall
                   section separately. For example, if half your room has an 8'
                   ceiling and half has a 10' ceiling, calculate the area for
@@ -241,10 +239,10 @@ export function EducationalContent() {
               </div>
 
               <div>
-                <p className="mb-2 font-semibold text-gray-800">
+                <p className="mb-2 font-semibold">
                   What's the best approach for complex room layouts?
                 </p>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   For rooms with complex layouts, break the space into simpler
                   rectangular sections. Calculate each section separately, then
                   add them together. For particularly complex spaces with many

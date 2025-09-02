@@ -222,11 +222,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               )}
             />
 
-            <Button
-              type="submit"
-              size="lg"
-              className="bg-primary hover:bg-primary/90 mt-4 w-full text-white"
-            >
+            <Button type="submit" size="lg" className="mt-4 w-full">
               <Calculator className="mr-2 h-5 w-5" />
               Calculate Cost
             </Button>

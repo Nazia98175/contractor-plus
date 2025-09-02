@@ -108,7 +108,7 @@ export function EducationalContent() {
         </Card>
       </div>
 
-      <div className="border-stiletto bg-shutter borderp-6 mt-8 rounded-lg">
+      <div className="border-stiletto bg-shutter mt-8 rounded-lg border p-6">
         <h3 className="mb-3 text-xl font-semibold">
           Estimate digs with confidence
         </h3>

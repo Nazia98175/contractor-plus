@@ -1,5 +1,5 @@
 import { Button } from "../../ui/button";
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent } from "../../ui/card";
 import {
   PaintBucket,
   Paintbrush,
@@ -10,9 +10,7 @@ import {
 export function EducationalContent() {
   return (
     <div className="prose prose-gray mt-16 max-w-none">
-      <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-        Painting Pricing Guide
-      </h2>
+      <h2 className="mb-6 text-2xl font-semibold">Painting Pricing Guide</h2>
 
       <p className="text-alice mb-8">
         Setting the right price for painting services is essential for
@@ -22,15 +20,13 @@ export function EducationalContent() {
       </p>
 
       <div className="my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="border-stiletto bg-shutter border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+        <Card className="bg-shutter shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
           <CardContent className="pt-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                <PaintBucket className="h-5 w-5 text-red-600" />
+                <PaintBucket className="h-5 w-5 text-red-500" />
               </div>
-              <h3 className="text-lg font-medium text-gray-800">
-                Material Calculations
-              </h3>
+              <h3 className="text-lg font-medium">Material Calculations</h3>
             </div>
             <p className="text-alice">
               Determine exactly how much paint you'll need for your project
@@ -39,15 +35,13 @@ export function EducationalContent() {
           </CardContent>
         </Card>
 
-        <Card className="border-stiletto bg-shutter border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+        <Card className="bg-shutter shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
           <CardContent className="pt-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                <Paintbrush className="h-5 w-5 text-red-600" />
+                <Paintbrush className="h-5 w-5 text-red-500" />
               </div>
-              <h3 className="text-lg font-medium text-gray-800">
-                Labor Estimation
-              </h3>
+              <h3 className="text-lg font-medium">Labor Estimation</h3>
             </div>
             <p className="text-alice">
               Accurately estimate labor hours based on surface area, complexity,
@@ -56,15 +50,13 @@ export function EducationalContent() {
           </CardContent>
         </Card>
 
-        <Card className="border-stiletto bg-shutter border shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+        <Card className="bg-shutter shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
           <CardContent className="pt-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                <CircleChevronRight className="h-5 w-5 text-red-600" />
+                <CircleChevronRight className="h-5 w-5 text-red-500" />
               </div>
-              <h3 className="text-lg font-medium text-gray-800">
-                Precise Quotes
-              </h3>
+              <h3 className="text-lg font-medium">Precise Quotes</h3>
             </div>
             <p className="text-alice">
               Create professional, accurate quotes that account for all aspects
@@ -76,7 +68,7 @@ export function EducationalContent() {
 
       <div className="mb-12 grid gap-8 md:grid-cols-2">
         <div>
-          <h2 className="mb-4 text-xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-xl font-semibold">
             Factors Affecting Painting Costs
           </h2>
           <ul className="text-alice list-none space-y-3">
@@ -90,7 +82,7 @@ export function EducationalContent() {
             ].map((tip, i) => (
               <li key={i} className="flex items-start gap-2">
                 <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                  <Info className="h-3 w-3 text-red-600" />
+                  <Info className="h-3 w-3 text-red-500" />
                 </div>
                 <span>{tip}</span>
               </li>
@@ -98,8 +90,8 @@ export function EducationalContent() {
           </ul>
         </div>
 
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
-          <h2 className="mb-4 text-xl font-semibold text-gray-800">
+        <div className="bg-shutter border-stiletto rounded-lg border p-6">
+          <h2 className="mb-4 text-xl font-semibold">
             Using This Calculator Effectively
           </h2>
           <p className="text-alice mb-3">
@@ -144,7 +136,7 @@ export function EducationalContent() {
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-6 text-2xl font-semibold text-gray-800">
+        <h2 className="mb-6 text-2xl font-semibold">
           Frequently Asked Questions
         </h2>
 
@@ -168,22 +160,22 @@ export function EducationalContent() {
               className="border-stiletto bg-shutter border shadow-sm"
             >
               <CardContent className="p-6">
-                <h3 className="mb-2 text-lg font-medium text-red-600">
+                <h3 className="mb-2 text-lg font-medium text-red-500">
                   {faq.q}
                 </h3>
-                <p className="text-gray-700">{faq.a}</p>
+                <p className="text-decemberSky">{faq.a}</p>
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
 
-      <div className="border-stiletto bg-shutter borderp-6 mb-8 flex flex-col items-center justify-between gap-6 rounded-lg md:flex-row">
+      <div className="border-stiletto mb-8 flex flex-col items-center justify-between gap-6 rounded-lg border p-6 md:flex-row">
         <div className="text-left">
-          <h3 className="mb-2 text-xl font-semibold text-red-600">
+          <h3 className="mb-2 text-xl font-semibold text-red-500">
             Create professional painting estimates in minutes
           </h3>
-          <p className="text-gray-700">
+          <p className="text-decemberSky">
             Use Contractor+ to calculate material costs, labor hours, and total
             pricing. Create accurate quotes that win more jobs and maximize your
             profits.

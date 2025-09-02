@@ -20,8 +20,8 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border-shutter mb-6 border-2 bg-white shadow-md">
-      <CardHeader className="bg-primary/5 border-shutter border-b">
+    <Card className="border-stiletto bg-shutter mb-6 border-2 shadow-md">
+      <CardHeader className="border-stiletto border-b">
         <CardTitle className="text-primary/90 flex items-center text-lg">
           <Building className="text-primary mr-2 h-5 w-5" />
           Renovation Cost Estimate
@@ -32,7 +32,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h3 className="text-alice text-lg font-medium">
             Estimated Renovation Cost
           </h3>
-          <p className="my-2 text-4xl font-bold text-green-600">
+          <p className="my-2 text-4xl font-bold text-green-500">
             $
             {result.totalRenovationCost.toLocaleString("en-US", {
               minimumFractionDigits: 0,
@@ -49,10 +49,10 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <Separator className="my-4" />
 
         <div className="space-y-2 text-sm">
-          <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
+          <h4 className="font-medium">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Base renovation cost</span>
-            <span className="font-medium text-gray-700">
+            <span className="font-medium">
               $
               {result.baseRenovationCost.toLocaleString("en-US", {
                 minimumFractionDigits: 0,
@@ -63,7 +63,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           {result.hasContingency && (
             <div className="flex items-center justify-between">
               <span className="text-aliceBlue">Contingency amount</span>
-              <span className="font-medium text-gray-700">
+              <span className="font-medium">
                 $
                 {result.contingencyAmount.toLocaleString("en-US", {
                   minimumFractionDigits: 0,
@@ -72,9 +72,9 @@ export function CalculationResult({ result }: CalculationResultProps) {
               </span>
             </div>
           )}
-          <div className="flex items-center justify-between border-t border-gray-100 pt-2">
+          <div className="border-stiletto flex items-center justify-between border-t pt-2">
             <span className="font-medium">Total estimated cost</span>
-            <span className="font-bold text-green-600">
+            <span className="font-bold text-green-500">
               $
               {result.totalRenovationCost.toLocaleString("en-US", {
                 minimumFractionDigits: 0,

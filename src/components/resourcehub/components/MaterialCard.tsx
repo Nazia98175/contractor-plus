@@ -77,7 +77,7 @@ export const MaterialCard = ({
           className={cn(
             "absolute top-2 right-2 shadow-sm",
             isInStock
-              ? "bg-background/90 border-green-500 text-green-600 backdrop-blur-sm"
+              ? "bg-background/90 border-green-500 text-green-500 backdrop-blur-sm"
               : "bg-background/90 backdrop-blur-sm",
           )}
         >

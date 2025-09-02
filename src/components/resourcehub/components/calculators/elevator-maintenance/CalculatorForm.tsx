@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
-import { Label } from "@/components/ui/label";
+import { Label } from "../../ui/label";
 import {
   Tooltip,
   TooltipContent,
@@ -92,7 +92,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     What's this?
                   </span>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="top" className="max-w-xs">
                   <p>
                     How many elevators are you maintaining under this plan or
                     contract. For example, if a building has 2 elevators, enter
@@ -127,7 +127,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     What's this?
                   </span>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="top" className="max-w-xs">
                   <p>
                     How many times per year each elevator will receive routine
                     maintenance service. Commonly monthly (12) or quarterly (4).
@@ -162,7 +162,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     What's this?
                   </span>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="top" className="max-w-xs">
                   <p>
                     How much you charge for one maintenance visit for one
                     elevator. For instance, if each monthly visit per elevator
@@ -198,7 +198,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                     What's this?
                   </span>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="top" className="max-w-xs">
                   <p>
                     Any other annual charges per elevator outside the per-visit
                     fee. This could include annual safety inspections, testing,

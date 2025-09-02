@@ -18,7 +18,7 @@ export function CategoryTabs({
       className="space-y-6"
       onValueChange={onValueChange}
     >
-      <TabsList className="bg-muted/50 flex h-auto flex-wrap gap-2 p-1">
+      <TabsList className="bg-stiletto flex h-auto flex-wrap gap-2 p-1">
         {categories.map((category) => (
           <TabsTrigger
             key={category.id}

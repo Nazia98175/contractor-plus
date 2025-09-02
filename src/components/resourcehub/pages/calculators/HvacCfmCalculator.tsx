@@ -59,25 +59,17 @@ export default function HvacCfmCalculator() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources"
-                className="hover:text-primary text-sm text-gray-700"
-              >
-                Resources
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources/cost-calculator"
-                className="hover:text-primary text-sm text-gray-700"
-              >
+              <BreadcrumbLink href="/resources/cost-calculator">
                 Calculators
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-sm text-gray-500">
+              <BreadcrumbPage className="text-decemberSky text-sm">
                 HVAC CFM Calculator
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -89,8 +81,8 @@ export default function HvacCfmCalculator() {
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => router.push("/calculators")}
-        className="hover:text-primary mb-6 flex items-center gap-1 text-gray-700"
+        onClick={() => router.push("/resources/cost-calculator")}
+        className="hover:text-glowing mb-6 flex items-center gap-1"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -102,9 +94,7 @@ export default function HvacCfmCalculator() {
           <div className="bg-primary/10 rounded-full p-2">
             <AirVent className="text-primary h-6 w-6" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">
-            HVAC CFM Calculator
-          </h1>
+          <h1 className="text-3xl font-bold">HVAC CFM Calculator</h1>
         </div>
         <p className="text-aliceBlue max-w-3xl">
           Calculate the required Cubic Feet per Minute (CFM) for proper
@@ -125,7 +115,7 @@ export default function HvacCfmCalculator() {
             <CalculationResult result={calculationResult} />
           )}
           {!calculationResult && (
-            <div className="bg-muted/30 mb-6 rounded-lg border p-6 text-center">
+            <div className="border-stiletto mb-6 rounded-lg border p-6 text-center">
               <p className="text-aliceBlue">
                 Enter room dimensions and air change requirements to calculate
                 needed CFM
@@ -134,18 +124,15 @@ export default function HvacCfmCalculator() {
           )}
 
           {/* Call to Action Card */}
-          <div className="from-primary/5 border-shutter rounded-lg border bg-gradient-to-br to-gray-50 p-6 shadow-sm">
-            <h3 className="mb-2 text-xl font-semibold text-gray-800">
+          <div className="from-primary/5 border-shutter rounded-lg border bg-gradient-to-br from-black via-gray-900 to-black p-6 shadow-sm">
+            <h3 className="mb-2 text-xl font-semibold">
               Precision HVAC Calculations
             </h3>
             <p className="text-alice mb-4">
               Get access to more advanced HVAC calculators, client management
               tools, and job scheduling with Contractor+.
             </p>
-            <Button
-              variant="outline"
-              className="border-shutter hover:bg-primary/5 hover:border-primary/30 text-primary w-full bg-white"
-            >
+            <Button variant="outline" className="w-full">
               Try Contractor+ Free
             </Button>
           </div>

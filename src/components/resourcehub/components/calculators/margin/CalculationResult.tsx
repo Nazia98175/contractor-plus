@@ -50,7 +50,7 @@ export function CalculationResult({
       {/* Profit */}
       <div className="space-y-1">
         <p className="text-aliceBlue text-sm">Profit at this Price</p>
-        <p className="text-2xl font-semibold text-green-600">
+        <p className="text-2xl font-semibold text-green-500">
           $
           {calculationResult.profit >= Number.MAX_SAFE_INTEGER
             ? "∞"

@@ -65,25 +65,17 @@ export default function CarpetCleaningCalculator() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources"
-                className="text-sm text-gray-700 hover:text-red-600"
-              >
-                Resources
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources/cost-calculator"
-                className="text-sm text-gray-700 hover:text-red-600"
-              >
+              <BreadcrumbLink href="/resources/cost-calculator">
                 Calculators
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-sm text-gray-500">
+              <BreadcrumbPage className="text-decemberSky text-sm">
                 Carpet Cleaning Estimate Calculator
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -95,8 +87,8 @@ export default function CarpetCleaningCalculator() {
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => router.push("/resources/calculators")}
-        className="mb-6 flex items-center gap-1 text-gray-700 hover:text-red-600"
+        onClick={() => router.push("/resources/cost-calculator")}
+        className="mb-6 flex items-center gap-1 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -108,7 +100,7 @@ export default function CarpetCleaningCalculator() {
           <div className="rounded-full bg-red-100 p-2">
             <Brush className="h-6 w-6 text-red-600" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">
+          <h1 className="text-3xl font-bold">
             Carpet Cleaning Estimate Calculator
           </h1>
         </div>
@@ -131,7 +123,7 @@ export default function CarpetCleaningCalculator() {
             <CalculationResult result={calculationResult} />
           )}
           {!calculationResult && (
-            <div className="bg-muted/30 mb-6 rounded-lg border p-6 text-center">
+            <div className="border-stiletto mb-6 rounded-lg border p-6 text-center">
               <p className="text-aliceBlue">
                 Enter carpet area and pricing details to calculate your cleaning
                 estimate
@@ -141,7 +133,7 @@ export default function CarpetCleaningCalculator() {
 
           {/* Call to Action Card */}
           <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
-            <h3 className="mb-2 text-xl font-semibold text-gray-800">
+            <h3 className="mb-2 text-xl font-semibold">
               Wow Your Clients with Fast, Accurate Quotes
             </h3>
             <p className="text-alice mb-4">
@@ -149,10 +141,7 @@ export default function CarpetCleaningCalculator() {
               jobs, and send invoices – all in one app. Make your carpet
               cleaning business shine (just like those freshly cleaned carpets)!
             </p>
-            <Button
-              variant="outline"
-              className="w-full border-red-200 bg-white text-red-700 hover:border-red-300 hover:bg-red-50"
-            >
+            <Button variant="outline" className="w-full">
               Try Contractor+ Free
             </Button>
           </div>

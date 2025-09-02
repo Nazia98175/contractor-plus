@@ -72,38 +72,34 @@ export default function CustomWoodworkCalculator() {
           {calculationResult ? (
             <CalculationResult result={calculationResult} />
           ) : (
-            <div className="flex h-full flex-col items-center justify-center rounded-md border border-gray-200 bg-white p-6 text-center shadow-sm">
-              <h3 className="mb-2 text-lg font-medium text-gray-700">
+            <div className="border-stiletto bg-shutter flex h-full flex-col items-center rounded-md border p-6 shadow-sm">
+              <h3 className="mb-2 w-full text-lg font-medium">
                 Enter project details to calculate your price
               </h3>
               <p className="text-aliceBlue mb-4">
                 Complete the form on the left and click "Calculate" to see your
                 estimated woodworking project pricing here.
               </p>
-              <div className="mb-4 w-full rounded-md border border-gray-200 bg-gray-50 px-6 py-4">
+              <div className="mb-4 w-full rounded-md px-6 py-4">
                 <ul className="text-alice space-y-2 text-left text-sm">
                   <li className="flex items-center gap-2">
-                    <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                      <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                    </div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                     <span>Materials breakdown</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                      <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                    </div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                     <span>Labor costs</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                      <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                    </div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                     <span>Profit margin</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
-                      <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                    </div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
+
                     <span>Total project price</span>
                   </li>
                 </ul>

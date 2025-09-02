@@ -401,7 +401,7 @@ const ProjectCostCalculator = ({
   const handleUpdate = () => {
     if (selectedProjectSlug && selectedLocation) {
       navigate(
-        `/construction-costs/${selectedProjectSlug}/${selectedLocation}`,
+        `/resources/construction-costs/${selectedProjectSlug}/${selectedLocation}`,
       );
     }
   };
@@ -482,12 +482,12 @@ const ProjectCostCalculator = ({
 
   if (!projectData) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="main-container py-8">
         <Card>
           <CardContent className="py-12 text-center">
             <p>Project not found</p>
             <Button
-              onClick={() => navigate("/construction-costs")}
+              onClick={() => navigate("/resources/construction-costs")}
               className="mt-4 bg-red-600 hover:bg-red-700"
             >
               Back to Construction Costs
@@ -522,7 +522,7 @@ const ProjectCostCalculator = ({
   const totalCost = subtotal + markupAmount;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* <Helmet>
         <meta
           property="og:image"
@@ -538,12 +538,12 @@ const ProjectCostCalculator = ({
       </Helmet> */}
       {/* Header */}
       <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white">
-        <div className="container mx-auto px-4 py-8">
+        <div className="main-container mx-auto px-4 py-8">
           <div className="mb-4 flex items-center gap-2">
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate("/construction-costs")}
+              onClick={() => navigate("/resources/construction-costs")}
               className="text-white hover:bg-white/10"
             >
               <ArrowLeft className="mr-1 h-4 w-4" />
@@ -571,9 +571,9 @@ const ProjectCostCalculator = ({
       </div>
 
       {/* Search Bar */}
-      <div className="border-b bg-gray-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex max-w-2xl flex-col gap-4 md:flex-row">
+      <div className="border-stiletto border-b">
+        <div className="main-container py-4">
+          <div className="flex max-w-2xl flex-col gap-4 px-4 md:flex-row">
             <div className="flex-1">
               <Popover open={projectOpen} onOpenChange={setProjectOpen}>
                 <PopoverTrigger asChild>
@@ -676,7 +676,7 @@ const ProjectCostCalculator = ({
                               )}
                             />
                             <div className="flex items-center gap-2">
-                              <MapPin className="h-4 w-4" />
+                              <MapPin className="w- h-4" />
                               {locationItem.label}
                             </div>
                           </CommandItem>
@@ -700,8 +700,8 @@ const ProjectCostCalculator = ({
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="main-container py-8">
+        <div className="grid grid-cols-1 gap-8 px-4 lg:grid-cols-3">
           {/* Calculator */}
           <div className="lg:col-span-2">
             <Card>
@@ -744,7 +744,7 @@ const ProjectCostCalculator = ({
                       return (
                         <div
                           key={material.name}
-                          className="flex items-center justify-between rounded-lg bg-gray-50 p-3"
+                          className="bg-shutter flex items-center justify-between rounded-lg p-3"
                         >
                           <div className="flex items-center gap-3">
                             <Checkbox
@@ -785,7 +785,7 @@ const ProjectCostCalculator = ({
                               </div>
                               {swappedMaterial ? (
                                 <div className="space-y-2">
-                                  <p className="text-sm font-medium text-green-600">
+                                  <p className="text-sm font-medium text-green-500">
                                     ${swappedMaterial.price.toFixed(2)}{" "}
                                     {material.unit} (from Lowe's)
                                   </p>
@@ -821,7 +821,7 @@ const ProjectCostCalculator = ({
                                       "_blank",
                                     )
                                   }
-                                  className="h-7 border-blue-200 bg-blue-50 px-3 text-xs hover:bg-blue-100"
+                                  className="bg-pestering border-pestering h-7 px-3 text-xs hover:scale-95"
                                 >
                                   <ShoppingCart className="mr-1 h-3 w-3" />
                                   Buy at Lowe's
@@ -849,7 +849,7 @@ const ProjectCostCalculator = ({
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <Info className="text-aliceBlue h-4 w-4 cursor-help" />
+                            <Info className="h-4 w-4 cursor-help text-red-500" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             <p>
@@ -877,9 +877,9 @@ const ProjectCostCalculator = ({
                       <Loader2 className="text-primary h-8 w-8 animate-spin" />
                     </div>
                   ) : (
-                    <div className="rounded-lg bg-gray-50 p-3">
+                    <div className="bg-shutter rounded-lg p-3">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
+                        <div className="text-aliceBlue flex items-center gap-3">
                           <Checkbox checked={true} disabled />
                           <div>
                             <p className="font-medium">
@@ -908,7 +908,7 @@ const ProjectCostCalculator = ({
                 </div>
 
                 {/* Totals */}
-                <div className="space-y-2 border-t pt-4">
+                <div className="border-stiletto space-y-2 border-t pt-4">
                   <div className="flex justify-between">
                     <span>Costs:</span>
                     <span className="font-semibold">
@@ -924,7 +924,7 @@ const ProjectCostCalculator = ({
                 </div>
 
                 {/* Controls */}
-                <div className="grid grid-cols-1 gap-4 border-t pt-4 md:grid-cols-2">
+                <div className="border-stiletto grid grid-cols-1 gap-4 border-t pt-4 md:grid-cols-2">
                   <div>
                     <Label htmlFor="project-size">
                       {projectData?.inputField.name}
@@ -961,7 +961,7 @@ const ProjectCostCalculator = ({
                         }}
                         className="rounded-r-none"
                       />
-                      <div className="bg-muted rounded-l-none rounded-r-md border border-l-0 px-3 py-2 text-sm">
+                      <div className="rounded-l-none rounded-r-md border-l-0 border-red-500 bg-red-500 px-3 py-2 text-sm">
                         {projectData?.inputField.unit}
                       </div>
                     </div>
@@ -985,7 +985,7 @@ const ProjectCostCalculator = ({
                         }
                         className="rounded-r-none"
                       />
-                      <div className="bg-muted rounded-l-none rounded-r-md border border-l-0 px-3 py-2 text-sm">
+                      <div className="rounded-l-none rounded-r-md border-l-0 border-red-500 bg-red-500 px-3 py-2 text-sm">
                         %
                       </div>
                     </div>

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Card,
@@ -5,19 +6,19 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../ui/card";
-import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
-import { Label } from "@/components/ui/label";
+} from "../../components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+} from "../../components/ui/select";
+import { Textarea } from "../../components/ui/textarea";
+import { Badge } from "../../components/ui/badge";
 import {
   FileText,
   Download,
@@ -38,9 +39,10 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../../ui/breadcrumb";
+} from "../../components/ui/breadcrumb";
 import { useToast } from "@/hooks/use-toast";
 import jsPDF from "jspdf";
+import Link from "next/link";
 
 interface RFIData {
   projectName: string;
@@ -373,7 +375,7 @@ export default function ConstructionRFIGenerator() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/" className="flex items-center">
+                <Link href="/resources" className="flex items-center">
                   <Home className="mr-1 h-4 w-4" />
                   Home
                 </Link>
@@ -382,7 +384,9 @@ export default function ConstructionRFIGenerator() {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/project-planning">Project Planning</Link>
+                <Link href="/resources/project-planning-tools">
+                  Project Planning
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -396,7 +400,7 @@ export default function ConstructionRFIGenerator() {
       {/* Header */}
       <div className="mb-8 text-center">
         <h1 className="mb-4 text-4xl font-bold">Construction RFI Generator</h1>
-        <p className="text-aliceBlue mx-auto max-w-2xl text-lg">
+        <p className="text-decemberSky mx-auto max-w-2xl text-lg">
           Generate professional Request for Information documents to get
           clarification from architects, engineers, and project owners
         </p>
@@ -707,7 +711,7 @@ export default function ConstructionRFIGenerator() {
       {/* Enhanced Educational Content */}
       <div className="mt-16 space-y-12">
         {/* CTA Section */}
-        <div className="from-primary/10 via-primary/5 to-primary/10 rounded-2xl bg-gradient-to-r p-8 text-center">
+        <div className="border-stiletto border p-8 text-center">
           <div className="mx-auto max-w-4xl">
             <div className="mb-6 flex justify-center">
               <div className="bg-primary/20 rounded-full p-3">
@@ -724,7 +728,7 @@ export default function ConstructionRFIGenerator() {
             </p>
             <div className="mb-8 grid gap-6 md:grid-cols-3">
               <div className="text-center">
-                <div className="mb-3 rounded-lg bg-white/50 p-4">
+                <div className="bg-shutter mb-3 rounded-lg p-4">
                   <BarChart3 className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Project Management</h3>
@@ -734,7 +738,7 @@ export default function ConstructionRFIGenerator() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="mb-3 rounded-lg bg-white/50 p-4">
+                <div className="bg-shutter mb-3 rounded-lg p-4">
                   <Users className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Client Relationships</h3>
@@ -743,7 +747,7 @@ export default function ConstructionRFIGenerator() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="mb-3 rounded-lg bg-white/50 p-4">
+                <div className="bg-shutter mb-3 rounded-lg p-4">
                   <FileText className="text-primary mx-auto h-6 w-6" />
                 </div>
                 <h3 className="mb-2 font-semibold">Complete Integration</h3>
@@ -752,11 +756,7 @@ export default function ConstructionRFIGenerator() {
                 </p>
               </div>
             </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-            >
+            <Button asChild size="lg">
               <a
                 href="https://contractorplus.app/project-management-software-for-contractors"
                 target="_blank"
@@ -772,13 +772,13 @@ export default function ConstructionRFIGenerator() {
         </div>
 
         {/* How-to Guide */}
-        <div className="bg-muted/30 rounded-xl p-8">
+        <div className="border-stiletto rounded-xl border p-8">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Master Construction RFI Management
           </h2>
 
           <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">1</span>
@@ -790,7 +790,7 @@ export default function ConstructionRFIGenerator() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">2</span>
@@ -803,7 +803,7 @@ export default function ConstructionRFIGenerator() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">3</span>
@@ -815,7 +815,7 @@ export default function ConstructionRFIGenerator() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-white/50 text-center">
+            <Card className="bg-shutter text-center">
               <CardContent className="pt-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">4</span>
@@ -915,7 +915,7 @@ export default function ConstructionRFIGenerator() {
         </div>
 
         {/* Industry Insights */}
-        <Card className="from-muted/50 to-muted/20 bg-gradient-to-br">
+        <Card className="bg-shutter">
           <CardHeader>
             <CardTitle className="text-center">
               RFI Process Statistics

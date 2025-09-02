@@ -478,8 +478,8 @@ export const PopularProjectTypes: React.FC<PopularProjectTypesProps> = ({
                 href={`/resources/construction-costs/${project.slug}/${currentLocation}`}
                 className="group block"
               >
-                <div className="border-border hover:border-primary/50 hover:bg-accent/50 flex items-center gap-3 rounded-lg border p-3 transition-all duration-200 group-hover:shadow-sm">
-                  <div className="bg-primary/10 text-primary group-hover:bg-primary/20 flex h-8 w-8 items-center justify-center rounded-md transition-colors">
+                <div className="border-stiletto hover:bg-shutter flex items-center gap-3 rounded-lg border p-3 transition-all duration-200 group-hover:shadow-sm">
+                  <div className="text-primary flex h-8 w-8 items-center justify-center rounded-md bg-red-400/10 transition-colors group-hover:bg-red-400/20">
                     <IconComponent className="h-4 w-4" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -487,13 +487,11 @@ export const PopularProjectTypes: React.FC<PopularProjectTypesProps> = ({
                       {project.projectName}
                     </p>
                     <div className="mt-1 flex items-center gap-2">
-                      <Badge variant="secondary" className="text-xs capitalize">
+                      <Badge variant="secondary" className="capitalize">
                         {project.estimateCategory}
                       </Badge>
                       {/* {project.popular && ( */}
-                      <Badge variant="outline" className="text-xs">
-                        Popular
-                      </Badge>
+                      <Badge variant="outline">Popular</Badge>
                       {/* )} */}
                     </div>
                   </div>
@@ -504,26 +502,26 @@ export const PopularProjectTypes: React.FC<PopularProjectTypesProps> = ({
         </div>
 
         {/* Additional CTA */}
-        <div className="border-border mt-6 border-t pt-4">
+        <div className="border-border border-stiletto mt-6 border-t pt-4">
           <p className="text-aliceBlue text-center text-sm">
             Need help with a different project in {cityName}?{" "}
             <Link
               href="/resources/construction-costs"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-red-500 hover:underline"
             >
               Browse all project types
             </Link>{" "}
             or use our{" "}
             <Link
               href="/resources/cost-calculator"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-red-500 hover:underline"
             >
               construction calculators
             </Link>{" "}
             or{" "}
             <Link
               href="/resources/free-estimate-maker"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-red-500 hover:underline"
             >
               free estimate templates
             </Link>{" "}

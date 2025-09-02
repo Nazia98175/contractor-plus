@@ -21,21 +21,21 @@ export function EducationalContent() {
             </h3>
             <ul className="space-y-2">
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
                   <strong>Controller:</strong> The "brain" of your system that
                   runs programs and tells valves when to open and close.
                 </span>
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
                   <strong>Valves:</strong> These control water flow to specific
                   zones in your irrigation system.
                 </span>
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
                   <strong>Sprinkler Heads:</strong> Devices that distribute
                   water to the landscape, available in various types (rotors,
@@ -43,21 +43,21 @@ export function EducationalContent() {
                 </span>
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
                   <strong>Mainline Pipe:</strong> The primary water supply line
                   running from your water source to the valves.
                 </span>
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
                   <strong>Lateral Lines:</strong> Pipes running from valves to
                   the sprinkler heads in each zone.
                 </span>
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
                   <strong>Backflow Preventer:</strong> A safety device that
                   prevents irrigation water from flowing back into your drinking
@@ -123,7 +123,7 @@ export function EducationalContent() {
         </h2>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 shadow-sm">
+          <div className="border-stiletto rounded-lg border p-5 shadow-sm">
             <h3 className="mb-2 text-lg font-medium">Spray Heads</h3>
             <p className="text-alice mb-3 text-sm">
               Fixed spray pattern, typically covering 5-15 feet radius. Good for
@@ -131,21 +131,21 @@ export function EducationalContent() {
             </p>
             <ul className="space-y-1 text-sm">
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Cost: $2-$10 each</span>
               </li>
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Water usage: Higher rate</span>
               </li>
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Best for: Lawns, flower beds</span>
               </li>
             </ul>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 shadow-sm">
+          <div className="border-stiletto rounded-lg border p-5 shadow-sm">
             <h3 className="mb-2 text-lg font-medium">Rotor Heads</h3>
             <p className="text-alice mb-3 text-sm">
               Rotating stream that covers 15-50 feet radius. More efficient for
@@ -153,21 +153,21 @@ export function EducationalContent() {
             </p>
             <ul className="space-y-1 text-sm">
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Cost: $10-$20 each</span>
               </li>
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Water usage: Lower rate</span>
               </li>
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Best for: Larger lawns, fields</span>
               </li>
             </ul>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 shadow-sm">
+          <div className="border-stiletto rounded-lg border p-5 shadow-sm">
             <h3 className="mb-2 text-lg font-medium">Drip Irrigation</h3>
             <p className="text-alice mb-3 text-sm">
               Slow delivery directly to plant roots. Most water-efficient
@@ -175,15 +175,15 @@ export function EducationalContent() {
             </p>
             <ul className="space-y-1 text-sm">
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Cost: $0.10-$0.50 per foot</span>
               </li>
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Water usage: Very low</span>
               </li>
               <li className="flex items-center gap-1">
-                <HelpCircle className="h-3 w-3 text-gray-500" />
+                <HelpCircle className="h-3 w-3" />
                 <span>Best for: Gardens, shrubs, trees</span>
               </li>
             </ul>
@@ -193,7 +193,7 @@ export function EducationalContent() {
 
       <Separator />
 
-      <section className="border-stiletto bg-shutter borderp-6 rounded-lg">
+      <section className="border-stiletto bg-shutter rounded-lg border p-6">
         <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold">
           <Droplet className="h-5 w-5 text-red-600" />
           <span>Plan out every sprinkler and save money on parts</span>

@@ -145,25 +145,17 @@ export default function HouseCleaningCalculator() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources"
-                className="text-sm text-gray-700 hover:text-red-600"
-              >
-                Resources
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources/cost-calculator"
-                className="text-sm text-gray-700 hover:text-red-600"
-              >
+              <BreadcrumbLink href="/resources/cost-calculator">
                 Calculators
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-sm text-gray-500">
+              <BreadcrumbPage className="text-decemberSky text-sm">
                 House Cleaning Cost Calculator
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -176,7 +168,7 @@ export default function HouseCleaningCalculator() {
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
-        className="mb-6 flex items-center gap-1 text-gray-700 hover:text-red-600"
+        className="mb-6 flex items-center gap-1 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -188,9 +180,7 @@ export default function HouseCleaningCalculator() {
           <div className="rounded-full bg-red-100 p-2">
             <Brush className="h-6 w-6 text-red-600" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">
-            House Cleaning Calculator
-          </h1>
+          <h1 className="text-3xl font-bold">House Cleaning Calculator</h1>
         </div>
         <p className="text-aliceBlue max-w-3xl">
           Calculate house cleaning costs quickly and accurately. Perfect for
@@ -519,8 +509,8 @@ export default function HouseCleaningCalculator() {
         <div className="lg:col-span-5">
           {/* Results Card */}
           <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
-            <CardHeader className="border-b border-red-100 bg-red-50">
-              <CardTitle className="text-xl text-red-800">
+            <CardHeader className="border-stiletto border-b">
+              <CardTitle className="text-xl text-red-500">
                 Calculation Results
               </CardTitle>
             </CardHeader>
@@ -531,7 +521,7 @@ export default function HouseCleaningCalculator() {
                     <h3 className="text-alice text-lg font-medium">
                       Estimated Cleaning Cost
                     </h3>
-                    <p className="my-2 text-4xl font-bold text-red-600">
+                    <p className="my-2 text-4xl font-bold text-red-500">
                       ${calculationResult.toFixed(2)}
                     </p>
                   </div>
@@ -539,9 +529,7 @@ export default function HouseCleaningCalculator() {
                   <Separator className="my-4" />
 
                   <div className="space-y-2 text-sm">
-                    <h4 className="font-medium text-gray-700">
-                      Cost Breakdown
-                    </h4>
+                    <h4 className="font-medium">Cost Breakdown</h4>
                     <div className="flex items-center justify-between">
                       <span className="text-aliceBlue">Base Cleaning Cost</span>
                       <span className="font-medium">
@@ -572,7 +560,7 @@ export default function HouseCleaningCalculator() {
                 </>
               )}
             </CardContent>
-            <CardFooter className="flex justify-center border-t border-red-100 bg-red-50">
+            <CardFooter className="border-stiletto flex justify-center border-t pt-2">
               <p className="text-center text-xs text-gray-500">
                 Note: All estimates are approximate and may vary based on
                 specific cleaning requirements.
@@ -583,7 +571,7 @@ export default function HouseCleaningCalculator() {
           {/* Call to Action Card */}
           <Card className="border-stiletto bg-shutter border">
             <CardHeader>
-              <CardTitle className="text-xl text-red-800">
+              <CardTitle className="text-xl text-red-500">
                 Ready to Grow Your Business?
               </CardTitle>
             </CardHeader>
@@ -593,10 +581,7 @@ export default function HouseCleaningCalculator() {
                 invoicing, and client management. Create detailed proposals that
                 win you more jobs.
               </p>
-              <Button
-                variant="outline"
-                className="w-full border-red-200 bg-white text-red-700 hover:border-red-300 hover:bg-red-50"
-              >
+              <Button variant="outline" className="w-full">
                 Try Contractor Plus
               </Button>
             </CardContent>
@@ -606,7 +591,7 @@ export default function HouseCleaningCalculator() {
 
       {/* SEO Content Section - Improved formatting */}
       <div className="mt-16 max-w-none">
-        <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
+        <div className="border-stiletto bg-shutter rounded-lg border p-8 shadow-sm">
           <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
             House Cleaning Pricing Guide
           </h2>
@@ -621,10 +606,10 @@ export default function HouseCleaningCalculator() {
 
             <div className="mb-8 grid gap-8 md:grid-cols-2">
               <div className="bg-shutter rounded-lg p-6">
-                <h3 className="mb-4 text-xl font-semibold text-gray-800">
+                <h3 className="mb-4 text-xl font-semibold">
                   What Factors Affect Cleaning Cost?
                 </h3>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   House size is the primary factor, but other considerations
                   include number of bedrooms and bathrooms, cleaning frequency,
                   geographical location, and specific services required (deep
@@ -633,10 +618,10 @@ export default function HouseCleaningCalculator() {
               </div>
 
               <div className="bg-shutter rounded-lg p-6">
-                <h3 className="mb-4 text-xl font-semibold text-gray-800">
+                <h3 className="mb-4 text-xl font-semibold">
                   How to Use This Calculator
                 </h3>
-                <p className="text-alice leading-relaxed">
+                <p className="text-discoBall leading-relaxed">
                   Enter your home's details, including square footage, number of
                   bedrooms and bathrooms. Then input your pricing structure,
                   including your rate per square foot and any additional
@@ -646,10 +631,10 @@ export default function HouseCleaningCalculator() {
             </div>
 
             <div className="mb-8">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+              <h3 className="mb-4 text-xl font-semibold">
                 Pricing Strategies for Cleaning Businesses
               </h3>
-              <p className="text-alice leading-relaxed">
+              <p className="text-discoBall leading-relaxed">
                 Many professional cleaners use a hybrid pricing approach,
                 combining square footage rates with room-specific charges. This
                 allows for more accurate pricing that reflects the actual work
@@ -659,23 +644,21 @@ export default function HouseCleaningCalculator() {
             </div>
 
             <div className="mb-8">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+              <h3 className="mb-4 text-xl font-semibold">
                 Common Ways to Charge for Cleaning Services
               </h3>
 
               {/* Replacing the previous list with a proper table */}
               <Table className="w-full border-collapse">
                 <TableBody>
-                  <TableRow className="border-b border-gray-200">
+                  <TableRow className="border-stiletto border-b">
                     <TableCell className="py-3 pr-4 pl-0 align-top">
                       <div className="flex items-start">
                         <div className="mt-1.5 mr-3 rounded-full bg-red-100 p-1">
                           <div className="h-2 w-2 rounded-full bg-red-600"></div>
                         </div>
                         <div>
-                          <span className="font-semibold text-gray-800">
-                            Flat Rate:
-                          </span>
+                          <span className="font-semibold">Flat Rate:</span>
                         </div>
                       </div>
                     </TableCell>
@@ -686,16 +669,14 @@ export default function HouseCleaningCalculator() {
                     </TableCell>
                   </TableRow>
 
-                  <TableRow className="border-b border-gray-200">
+                  <TableRow className="border-stiletto border-b">
                     <TableCell className="py-3 pr-4 pl-0 align-top">
                       <div className="flex items-start">
                         <div className="mt-1.5 mr-3 rounded-full bg-red-100 p-1">
                           <div className="h-2 w-2 rounded-full bg-red-600"></div>
                         </div>
                         <div>
-                          <span className="font-semibold text-gray-800">
-                            Hourly Rate:
-                          </span>
+                          <span className="font-semibold">Hourly Rate:</span>
                         </div>
                       </div>
                     </TableCell>
@@ -706,16 +687,14 @@ export default function HouseCleaningCalculator() {
                     </TableCell>
                   </TableRow>
 
-                  <TableRow className="border-b border-gray-200">
+                  <TableRow className="border-stiletto border-b">
                     <TableCell className="py-3 pr-4 pl-0 align-top">
                       <div className="flex items-start">
                         <div className="mt-1.5 mr-3 rounded-full bg-red-100 p-1">
                           <div className="h-2 w-2 rounded-full bg-red-600"></div>
                         </div>
                         <div>
-                          <span className="font-semibold text-gray-800">
-                            Square Footage:
-                          </span>
+                          <span className="font-semibold">Square Footage:</span>
                         </div>
                       </div>
                     </TableCell>
@@ -726,16 +705,14 @@ export default function HouseCleaningCalculator() {
                     </TableCell>
                   </TableRow>
 
-                  <TableRow className="border-b border-gray-200">
+                  <TableRow className="border-stiletto border-b">
                     <TableCell className="py-3 pr-4 pl-0 align-top">
                       <div className="flex items-start">
                         <div className="mt-1.5 mr-3 rounded-full bg-red-100 p-1">
                           <div className="h-2 w-2 rounded-full bg-red-600"></div>
                         </div>
                         <div>
-                          <span className="font-semibold text-gray-800">
-                            Room-Based:
-                          </span>
+                          <span className="font-semibold">Room-Based:</span>
                         </div>
                       </div>
                     </TableCell>
@@ -753,7 +730,7 @@ export default function HouseCleaningCalculator() {
                           <div className="h-2 w-2 rounded-full bg-red-600"></div>
                         </div>
                         <div>
-                          <span className="font-semibold text-gray-800">
+                          <span className="font-semibold">
                             Combined Method:
                           </span>
                         </div>
@@ -769,16 +746,16 @@ export default function HouseCleaningCalculator() {
             </div>
 
             <div className="bg-shutter rounded-lg p-6">
-              <h3 className="mb-4 text-xl font-semibold text-gray-800">
+              <h3 className="mb-4 text-xl font-semibold">
                 Frequently Asked Questions
               </h3>
 
               <div className="space-y-6">
-                <div className="border-b border-gray-200 pb-4">
-                  <p className="mb-2 font-semibold text-gray-800">
+                <div className="border-stiletto border-b pb-4">
+                  <p className="mb-2 font-semibold">
                     What should my rate per square foot be?
                   </p>
-                  <p className="text-alice leading-relaxed">
+                  <p className="text-discoBall leading-relaxed">
                     Most residential cleaning services charge between $0.05 and
                     $0.15 per square foot. For standard cleaning of
                     average-soiled homes, around $0.10 per square foot is
@@ -787,11 +764,11 @@ export default function HouseCleaningCalculator() {
                   </p>
                 </div>
 
-                <div className="border-b border-gray-200 pb-4">
-                  <p className="mb-2 font-semibold text-gray-800">
+                <div className="border-stiletto border-b pb-4">
+                  <p className="mb-2 font-semibold">
                     Should I charge more for first-time cleanings?
                   </p>
-                  <p className="text-alice leading-relaxed">
+                  <p className="text-discoBall leading-relaxed">
                     Yes, initial cleanings typically take 1.5-2x longer than
                     maintenance cleanings. Many professionals charge 50-100%
                     more for the first visit, or add a one-time setup fee of
@@ -807,10 +784,10 @@ export default function HouseCleaningCalculator() {
                 </div>
 
                 <div>
-                  <p className="mb-2 font-semibold text-gray-800">
+                  <p className="mb-2 font-semibold">
                     Should I include cleaning supplies in my pricing?
                   </p>
-                  <p className="text-alice leading-relaxed">
+                  <p className="text-discoBall leading-relaxed">
                     Most professional cleaners include basic supplies in their
                     rates, adding 5-10% to cover costs. For specialty cleaning
                     products or eco-friendly supplies, you might add a specific

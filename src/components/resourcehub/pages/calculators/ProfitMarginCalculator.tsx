@@ -63,7 +63,7 @@ export default function ProfitMarginCalculator() {
           {calculationResult ? (
             <CalculationResult result={calculationResult} />
           ) : (
-            <div className="border-stiletto bg-shutter rounded-lg border-2 px-4 py-6 text-center text-sm shadow-sm">
+            <div className="border-shutter rounded-lg border-2 px-4 py-6 text-center text-sm shadow-sm">
               <p className="text-aliceBlue">
                 Enter values and calculate to see results
               </p>

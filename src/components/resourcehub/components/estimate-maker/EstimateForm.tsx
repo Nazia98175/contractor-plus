@@ -193,7 +193,7 @@ export function EstimateForm({
         <div className="mb-6">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="bg-gray-100 text-left">
+              <tr className="bg-shutter text-left">
                 <th className="border px-4 py-2">Description</th>
                 <th className="border px-4 py-2 text-right">Qty</th>
                 <th className="border px-4 py-2 text-right">Unit</th>

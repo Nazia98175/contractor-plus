@@ -15,10 +15,12 @@ export default function MultiServiceJobEstimator() {
   });
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <PageHeader />
-      <CalculatorForm />
-      <EducationalContent />
-    </div>
+    <main className="main-container py-8">
+      <div className="px-2">
+        <PageHeader />
+        <CalculatorForm />
+        <EducationalContent />
+      </div>
+    </main>
   );
 }

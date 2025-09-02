@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../../ui/table";
 import { Fence } from "lucide-react";
 
 export function EducationalContent() {

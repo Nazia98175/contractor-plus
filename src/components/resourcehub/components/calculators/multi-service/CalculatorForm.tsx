@@ -83,7 +83,7 @@ export function CalculatorForm({}: CalculatorFormProps) {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="grid grid-cols-1 items-end gap-4 md:grid-cols-[1fr,auto,auto]"
+                className="grid grid-cols-1 items-end gap-4 md:grid-cols-[1fr_auto_auto]"
               >
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">

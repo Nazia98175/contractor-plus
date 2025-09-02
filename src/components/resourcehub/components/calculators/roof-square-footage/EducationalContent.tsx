@@ -3,15 +3,15 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "../../ui/accordion";
 import { Button } from "../../ui/button";
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Ruler, Calculator, Home, HardHat, Check } from "lucide-react";
 
 export function EducationalContent() {
   return (
     <div className="space-y-8">
-      <Card className="overflow-hidden border border-red-100 bg-red-50">
+      <Card className="border-stiletto overflow-hidden border">
         <div className="flex flex-col md:flex-row">
           <div className="flex-1 p-6">
             <h2 className="mb-3 text-xl font-semibold">
@@ -27,7 +27,7 @@ export function EducationalContent() {
               Create Free Account
             </Button>
           </div>
-          <div className="flex items-center justify-center bg-red-100 p-6 md:w-1/3">
+          <div className="border-stiletto flex items-center justify-center border-l p-6 md:w-1/3">
             <div className="flex flex-col items-center text-red-800">
               <Calculator className="mb-2 h-12 w-12" />
               <span className="text-sm font-medium">
@@ -43,7 +43,7 @@ export function EducationalContent() {
           <Ruler className="h-6 w-6 text-red-600" />
           About Roof Square Footage Calculations
         </h2>
-        <p className="text-gray-700">
+        <p className="text-decemberSky">
           Calculating the correct roof area is essential for accurate material
           ordering and project estimating. Our roof square footage calculator
           helps roofing professionals and DIY enthusiasts determine the exact
@@ -51,7 +51,7 @@ export function EducationalContent() {
         </p>
 
         <div className="my-8 grid gap-6 md:grid-cols-2">
-          <Card className="border border-gray-200 shadow-sm transition-shadow hover:shadow-md">
+          <Card className="border-stiletto border shadow-sm transition-shadow hover:shadow-md">
             <CardContent className="p-6">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
@@ -70,7 +70,7 @@ export function EducationalContent() {
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-200 shadow-sm transition-shadow hover:shadow-md">
+          <Card className="border-stiletto border shadow-sm transition-shadow hover:shadow-md">
             <CardContent className="p-6">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
@@ -100,14 +100,14 @@ export function EducationalContent() {
           </Card>
         </div>
 
-        <div className="my-8 rounded-lg border border-gray-200 bg-gray-50 p-6">
+        <div className="border-stiletto my-8 rounded-lg border p-6">
           <h3 className="mb-4 text-xl font-medium">Commonly Asked Questions</h3>
           <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="border-b border-gray-200">
+            <AccordionItem value="item-1" className="border-stiletto border-b">
               <AccordionTrigger className="text-lg font-medium hover:text-red-600">
                 Understanding Roof Pitch
               </AccordionTrigger>
-              <AccordionContent className="text-gray-700">
+              <AccordionContent className="text-decemberSky">
                 <p className="mt-2">
                   Roof pitch is expressed as the ratio of vertical rise to
                   horizontal run, typically measured as X/12, where X is the
@@ -124,11 +124,11 @@ export function EducationalContent() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="border-b border-gray-200">
+            <AccordionItem value="item-2" className="border-stiletto border-b">
               <AccordionTrigger className="text-lg font-medium hover:text-red-600">
                 What is a Roofing Square?
               </AccordionTrigger>
-              <AccordionContent className="text-gray-700">
+              <AccordionContent className="text-decemberSky">
                 <p className="mt-2">
                   A "square" is the standard unit of measurement in the roofing
                   industry. One square equals 100 square feet of roof area.
@@ -143,11 +143,11 @@ export function EducationalContent() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="border-b border-gray-200">
+            <AccordionItem value="item-3" className="border-stiletto border-b">
               <AccordionTrigger className="text-lg font-medium hover:text-red-600">
                 Tips for More Accurate Measurements
               </AccordionTrigger>
-              <AccordionContent className="text-gray-700">
+              <AccordionContent className="text-decemberSky">
                 <p className="mt-2">For more complex roof designs:</p>
                 <ul className="mt-2 list-disc space-y-1 pl-5">
                   <li>Divide the roof into sections (rectangles)</li>

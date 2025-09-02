@@ -26,7 +26,7 @@ const GDPRPage = () => {
     <div className="min-h-screen bg-white py-20">
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <article className="prose prose-gray max-w-none">
-          <h1 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+          <h1 className="mb-4 text-3xl font-bold md:text-4xl">
             GDPR & Data Processing
           </h1>
           <p className="text-alice mb-8 text-sm">
@@ -86,7 +86,7 @@ const GDPRPage = () => {
               before regulators and data subjects.
             </p>
             <div className="border-l-4 border-yellow-400 bg-yellow-50 p-4">
-              <p className="text-gray-700">
+              <p className="text-decemberSky">
                 <strong>Status today:</strong> No EU/UK Representative
                 appointed. If/when our activities trigger Article 27, we'll
                 designate one and publish full details here.
@@ -312,7 +312,7 @@ const GDPRPage = () => {
                 Not Sub‑Processors (Customer‑Directed Integrations / Independent
                 Controllers)
               </h3>
-              <p className="text-gray-700">
+              <p className="text-decemberSky">
                 When you connect or sync with these, you act as Controller
                 directing data flows; their own policies apply: QuickBooks
                 Online (Intuit), Lowe's (for SKU pricing and ordering), Zapier,

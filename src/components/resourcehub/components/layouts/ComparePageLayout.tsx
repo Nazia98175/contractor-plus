@@ -72,8 +72,8 @@ export const ComparePageLayout = ({
 }: ComparePageLayoutProps) => {
   return (
     <>
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8">
+      <div className="main-container">
+        <div className="grid grid-cols-1 gap-8 px-4 py-8">
           {/* Breadcrumbs */}
           <Breadcrumb className="mb-2">
             <BreadcrumbList>
@@ -141,8 +141,8 @@ export const ComparePageLayout = ({
           </div>
 
           {/* SEO-optimized informational content at the bottom */}
-          <div className="mx-auto mt-16 max-w-[1200px]">
-            <div className="bg-card rounded-lg border p-6 shadow-sm">
+          <div className="main-conatiner mt-16">
+            <div className="border-stiletto rounded-lg border p-6 shadow-sm">
               <h2 className="mb-4 text-2xl font-bold">
                 How Our Material Price Comparison Tool Works
               </h2>
@@ -199,7 +199,7 @@ export const ComparePageLayout = ({
                 </p>
               </div>
 
-              <div className="bg-accent border-accent-foreground/10 rounded-lg border p-6">
+              <div className="bg-shutter rounded-lg p-6">
                 <h3 className="mb-2 text-xl font-bold">
                   Take Your Material Management to the Next Level
                 </h3>
@@ -229,7 +229,7 @@ export const ComparePageLayout = ({
                 <div className="mt-6 flex justify-center">
                   <Link
                     href="/free-estimate-maker"
-                    className="ring-offset-background focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-6 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="hover:text-glowing text-pestering text-sm duration-300 disabled:pointer-events-none disabled:opacity-50"
                   >
                     Learn More About Contractor+ Estimates & Quotes
                   </Link>
@@ -241,8 +241,8 @@ export const ComparePageLayout = ({
       </div>
 
       {/* Legal Disclaimer - moved here to display above the global footer */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-6 rounded-md border border-gray-800 bg-gray-900 p-4 text-xs text-gray-400">
+      <div className="main-container mx-auto">
+        <div className="mx-4 mb-6 rounded-md border border-gray-800 bg-gray-900 px-4 py-8 text-xs text-gray-400">
           <p className="mb-4 font-medium">Legal Disclaimer:</p>
           <p className="mb-2">
             The material comparison pricing search tool provided by Contractor+

@@ -146,7 +146,7 @@ export const LowesMaterialSwap = ({
           <img
             src="/lovable-uploads/7355b1e0-ad1d-460c-969a-a67fe17a4bb9.png"
             alt="Swap"
-            className="pointer-events-none h-6 w-6 object-contain"
+            className="pointer-events-none h-6 w-6 object-contain invert"
           />
         </Button>
       </DialogTrigger>
@@ -257,7 +257,7 @@ export const LowesMaterialSwap = ({
                   <p className="truncate font-medium text-gray-900">
                     {swappedMaterial.name}
                   </p>
-                  <p className="text-lg font-bold text-green-600">
+                  <p className="text-lg font-bold text-green-500">
                     ${swappedMaterial.price.toFixed(2)}
                   </p>
                 </div>
@@ -375,7 +375,7 @@ export const LowesMaterialSwap = ({
           {/* No Results */}
           {searchResults.length === 0 && !isSearching && searchQuery && (
             <div className="py-12 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+              <div className="bg-shutter mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
                 <Search className="h-8 w-8 text-gray-400" />
               </div>
               <h3 className="mb-2 text-lg font-medium text-gray-900">

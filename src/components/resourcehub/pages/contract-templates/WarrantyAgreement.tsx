@@ -217,7 +217,7 @@ ${formData.clientName || "[CLIENT NAME]"}
             Warranty Agreement Template
           </h1>
         </div>
-        <p className="text-aliceBlue mx-auto max-w-2xl text-xl">
+        <p className="text-decemberSky mx-auto max-w-2xl text-xl">
           Create a comprehensive warranty agreement that protects both
           contractor and client with clear warranty terms and coverage details.
         </p>

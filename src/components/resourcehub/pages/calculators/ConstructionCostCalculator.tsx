@@ -66,7 +66,7 @@ export default function ConstructionCostCalculator() {
           {calculationResult ? (
             <CalculationResult result={calculationResult} />
           ) : (
-            <div className="border-shutter rounded-lg border-2 bg-white py-6 text-center shadow-sm">
+            <div className="border-shutter rounded-lg border-2 px-4 py-6 text-center text-sm shadow-sm">
               <p className="text-aliceBlue">
                 Enter values and calculate to see results
               </p>

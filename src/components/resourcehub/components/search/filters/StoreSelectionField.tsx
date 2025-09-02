@@ -58,7 +58,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
                 variant={maxReached ? "destructive" : "outline"}
                 className={cn(
                   "mr-1 text-xs",
-                  maxReached ? "border-red-300 bg-red-100 text-red-800" : "",
+                  maxReached ? "border-stiletto text-red-500" : "",
                 )}
               >
                 {field.value?.length || 0}/{MAX_STORES}
@@ -71,7 +71,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
               name="storeIds"
               control={form.control}
               render={({ field: { onChange, value = [] } }) => (
-                <ScrollArea className="h-[150px] rounded-md border p-2">
+                <ScrollArea className="border-stiletto h-[150px] rounded-md border p-2">
                   <div className="space-y-2">
                     {stores.map((store) => {
                       const isSelected = value.includes(store.id);
@@ -87,7 +87,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
                             "flex items-center space-x-2 rounded-md p-1",
                             isDisabled && !isSelected
                               ? "opacity-70"
-                              : "hover:bg-muted/50",
+                              : "hover:bg-shutter/50",
                           )}
                         >
                           <Checkbox
@@ -119,7 +119,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
                             {store.comingSoon && (
                               <Badge
                                 variant="outline"
-                                className="border-yellow-300 bg-yellow-50 text-xs text-yellow-800"
+                                className="border-yellow-300 bg-yellow-50 text-xs text-yellow-600"
                               >
                                 Coming Soon
                               </Badge>
@@ -134,7 +134,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
             />
           </FormControl>
           {maxReached && (
-            <div className="mt-1 flex items-center text-xs text-red-600">
+            <div className="mt-1 flex items-center text-xs text-red-500">
               <AlertCircle className="mr-1 h-3 w-3" />
               <span>Maximum of {MAX_STORES} stores can be selected</span>
             </div>

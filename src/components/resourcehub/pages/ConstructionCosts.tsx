@@ -227,17 +227,19 @@ const ConstructionCosts = () => {
 
   const handleSearch = () => {
     if (selectedProject) {
-      router.push(`/construction-costs/${selectedProject}/${selectedLocation}`);
+      router.push(
+        `/resources/construction-costs/${selectedProject}/${selectedLocation}`,
+      );
     }
   };
 
   const handleProjectClick = (slug: string) => {
     // Default to national-average when clicking on project cards
-    router.push(`/construction-costs/${slug}/national-average`);
+    router.push(`/resources/construction-costs/${slug}/national-average`);
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-4 py-16">
@@ -268,11 +270,11 @@ const ConstructionCosts = () => {
           </div>
 
           {/* Search Form */}
-          <Card className="mx-auto max-w-4xl bg-white shadow-2xl">
+          <Card className="mx-auto max-w-4xl shadow-2xl">
             <CardContent className="p-8">
               <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-whiteSmoke text-sm font-medium">
                     Project Type
                   </label>
                   <Popover open={projectOpen} onOpenChange={setProjectOpen}>
@@ -281,7 +283,7 @@ const ConstructionCosts = () => {
                         variant="outline"
                         role="combobox"
                         aria-expanded={projectOpen}
-                        className="h-12 w-full justify-between"
+                        className="text-aliceBlue border-decemberSky mt-3 h-12 w-full justify-between border"
                       >
                         {selectedProject
                           ? projectData?.find(
@@ -325,7 +327,7 @@ const ConstructionCosts = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-whiteSmoke text-sm font-medium">
                     Location
                   </label>
                   <Popover open={locationOpen} onOpenChange={setLocationOpen}>
@@ -334,7 +336,7 @@ const ConstructionCosts = () => {
                         variant="outline"
                         role="combobox"
                         aria-expanded={locationOpen}
-                        className="h-12 w-full justify-between"
+                        className="text-aliceBlue border-decemberSky mt-3 h-12 w-full justify-between border"
                       >
                         <div className="flex items-center gap-2">
                           <MapPin className="h-4 w-4" />
@@ -399,8 +401,8 @@ const ConstructionCosts = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+      <div className="main-container mx-auto py-12">
+        <div className="grid grid-cols-1 gap-8 px-2 lg:grid-cols-4">
           {/* Categories Sidebar */}
           <div className="lg:col-span-1">
             <Card className="sticky top-6">

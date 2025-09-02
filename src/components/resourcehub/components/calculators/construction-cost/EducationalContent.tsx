@@ -15,42 +15,66 @@ export function EducationalContent() {
             <h3 className="mb-2 text-xl font-medium">
               Cost Factors by Construction Type
             </h3>
-            <div className="overflow-x-auto">
+            <div className="text-decemberSky overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-2 text-left">
+                  <tr>
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Construction Type
                     </th>
-                    <th className="border px-4 py-2 text-left">
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Typical Cost Range ($/sq ft)
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">Basic/Economy Home</td>
-                    <td className="border px-4 py-2">$100 - $150</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Mid-Range Home</td>
-                    <td className="border px-4 py-2">$150 - $250</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-2">Luxury/Custom Home</td>
-                    <td className="border px-4 py-2">$250 - $500+</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Basic Commercial</td>
-                    <td className="border px-4 py-2">$150 - $300</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Basic/Economy Home
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $100 - $150
+                    </td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Mid-Range Commercial</td>
-                    <td className="border px-4 py-2">$300 - $500</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Mid-Range Home
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $150 - $250
+                    </td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">High-End Commercial</td>
-                    <td className="border px-4 py-2">$500 - $1,000+</td>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Luxury/Custom Home
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $250 - $500+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Basic Commercial
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $150 - $300
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Mid-Range Commercial
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $300 - $500
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      High-End Commercial
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      $500 - $1,000+
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -66,34 +90,50 @@ export function EducationalContent() {
               differences in labor rates, material availability, and local
               regulations.
             </p>
-            <div className="overflow-x-auto">
+            <div className="text-decemberSky overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-2 text-left">
+                  <tr>
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Location Type
                     </th>
-                    <th className="border px-4 py-2 text-left">
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Cost Multiplier
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">Rural Areas</td>
-                    <td className="border px-4 py-2">0.7x - 0.9x</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Suburban Areas</td>
-                    <td className="border px-4 py-2">0.9x - 1.1x</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Rural Areas
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      0.7x - 0.9x
+                    </td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Urban Centers</td>
-                    <td className="border px-4 py-2">1.1x - 1.4x</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      Suburban Areas
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      0.9x - 1.1x
+                    </td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">High-Cost Cities</td>
-                    <td className="border px-4 py-2">1.4x - 2.0x+</td>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Urban Centers
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      1.1x - 1.4x
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      High-Cost Cities
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">
+                      1.4x - 2.0x+
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -129,36 +169,42 @@ export function EducationalContent() {
             <h3 className="mb-2 text-xl font-medium">
               Recommended Contingency Percentages
             </h3>
-            <div className="overflow-x-auto">
+            <div className="text-decemberSky overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-2 text-left">Project Type</th>
-                    <th className="border px-4 py-2 text-left">
+                  <tr>
+                    <th className="border-stiletto border px-4 py-2 text-left">
+                      Project Type
+                    </th>
+                    <th className="border-stiletto border px-4 py-2 text-left">
                       Typical Contingency
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">
+                    <td className="border-stiletto border px-4 py-2">
                       New Construction (Standard)
                     </td>
-                    <td className="border px-4 py-2">5-10%</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">
-                      New Construction (Complex)
-                    </td>
-                    <td className="border px-4 py-2">10-15%</td>
+                    <td className="border-stiletto border px-4 py-2">5-10%</td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Renovation/Remodel</td>
-                    <td className="border px-4 py-2">15-20%</td>
+                    <td className="border-stiletto border px-4 py-2">
+                      New Construction (Complex)
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">10-15%</td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border px-4 py-2">Historic Renovation</td>
-                    <td className="border px-4 py-2">20-30%</td>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Renovation/Remodel
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">15-20%</td>
+                  </tr>
+                  <tr>
+                    <td className="border-stiletto border px-4 py-2">
+                      Historic Renovation
+                    </td>
+                    <td className="border-stiletto border px-4 py-2">20-30%</td>
                   </tr>
                 </tbody>
               </table>
@@ -174,10 +220,10 @@ export function EducationalContent() {
 
         <div className="space-y-4">
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               What's included in the cost per square foot?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               Typically, cost per square foot includes direct construction costs
               (materials, labor, equipment), contractor overhead and profit, and
               sometimes basic finishes. It usually doesn't include land costs,
@@ -187,10 +233,10 @@ export function EducationalContent() {
           </div>
 
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               How accurate is a square foot estimate?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               Square foot estimates are considered rough order of magnitude
               (ROM) estimates with typical accuracy of ±15-25%. They're useful
               for initial budgeting but should be refined with more detailed
@@ -199,10 +245,10 @@ export function EducationalContent() {
           </div>
 
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               Does building height affect the cost per square foot?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               Yes, taller buildings generally cost more per square foot than
               single-story structures. Multi-story buildings require stronger
               foundations, additional structural elements, stairs/elevators, and
@@ -212,10 +258,10 @@ export function EducationalContent() {
           </div>
 
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-lg font-medium">
               Should I include basement area in my square footage calculation?
             </p>
-            <p className="text-alice leading-relaxed">
+            <p className="text-discoBall leading-relaxed">
               It depends on how you're applying the cost per square foot.
               Basements typically cost less per square foot than above-grade
               space. For a more accurate estimate, either use a lower cost per
@@ -229,16 +275,16 @@ export function EducationalContent() {
       {/* CTA Section */}
       <Card className="bg-primary/5 border-shutter border p-6">
         <div className="space-y-4 text-center">
-          <h3 className="text-xl font-bold text-gray-900">
+          <h3 className="text-xl font-bold">
             Turn rough estimates into winning bids
           </h3>
-          <p className="text-aliceBlue mx-auto max-w-2xl">
+          <p className="text-decemberSky mx-auto max-w-2xl">
             Contractor+ helps general contractors quickly estimate costs per
             square foot, adjust for overhead, and generate professional
             proposals. Get started today and manage your projects from estimate
             to completion in one place!
           </p>
-          <Button className="bg-primary hover:bg-primary/90">
+          <Button>
             Get Started <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

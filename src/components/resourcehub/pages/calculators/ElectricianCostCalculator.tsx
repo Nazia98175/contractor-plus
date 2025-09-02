@@ -69,7 +69,7 @@ export default function ElectricianCostCalculator() {
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => router.push("/resources/calculators")}
+        onClick={() => router.push("/resources/cost-calculator")}
         className="mb-6 flex items-center gap-1 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />

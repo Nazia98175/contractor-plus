@@ -6,7 +6,8 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "../../ui/breadcrumb";
+import Link from "next/link";
 
 export function PageHeader() {
   return (
@@ -16,13 +17,13 @@ export function PageHeader() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/calculators">Calculators</Link>
+                <Link href="/resources/cost-calculator">Calculators</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/calculators/custom-woodwork">
+                <Link href="/resources/cost-calculator/custom-woodwork">
                   Custom Woodwork Pricing
                 </Link>
               </BreadcrumbLink>

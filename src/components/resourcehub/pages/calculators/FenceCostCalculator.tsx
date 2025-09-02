@@ -64,13 +64,13 @@ export default function FenceCostCalculator() {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-6 md:px-6">
+    <div className="main-container mx-auto max-w-5xl px-4 py-6 md:px-6">
       {/* Back button */}
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => router.push("/calculators")}
-        className="mb-6 flex items-center gap-1 text-gray-700 hover:text-red-600"
+        onClick={() => router.push("/resources/cost-calculator")}
+        className="mb-6 flex items-center gap-1 hover:text-red-600"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -93,7 +93,7 @@ export default function FenceCostCalculator() {
           {/* Call to Action Card */}
           <Card className="border-stiletto bg-shutter border">
             <CardHeader>
-              <CardTitle className="text-xl text-red-800">
+              <CardTitle className="text-xl text-red-500">
                 Build your fencing bids faster.
               </CardTitle>
             </CardHeader>
@@ -105,10 +105,7 @@ export default function FenceCostCalculator() {
                 place – fence projects (and your business) run smoother with
                 Contractor+.
               </p>
-              <Button
-                variant="outline"
-                className="w-full border-red-200 bg-white text-red-700 hover:border-red-300 hover:bg-red-50"
-              >
+              <Button variant="outline" className="w-full">
                 Try Contractor Plus
               </Button>
             </CardContent>

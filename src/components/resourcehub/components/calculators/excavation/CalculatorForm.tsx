@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Input } from "../../ui/input";
-import { Label } from "@/components/ui/label";
+import { Label } from "../../ui/label";
 import { Button } from "../../ui/button";
 import {
   Tooltip,

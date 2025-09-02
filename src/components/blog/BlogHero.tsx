@@ -140,15 +140,15 @@ const BlogHero = ({
       id="blog-parallax-container"
       className="relative pt-44 pb-[460px] 2xl:pt-52"
     >
-      <div className="relative z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
+      <div className="relative z-50 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
         {" "}
         <h1 className="gradient-text-shadow absolute bottom-0 left-1/2 z-0 -translate-x-1/2 blur-[26px]">
           {" "}
           {blogsList?.title ?? ""}{" "}
         </h1>{" "}
-        <h1 className="gradient-text-shadow relative z-10">
+        <h1 className="gradient-text-shadow relative">
           {" "}
-          {blogsList?.title ?? ""}{" "}
+          {blogsList?.title ?? ""}
         </h1>{" "}
       </div>
       <div className="font-myriad bg-rgba15 relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg p-2.5 backdrop-blur-[42px] sm:flex-row">

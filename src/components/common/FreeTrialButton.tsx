@@ -1,3 +1,4 @@
+"use client";
 import { usePathname } from "next/navigation";
 import ButtonLoader from "./ButtonLoader";
 import { SideIcon } from "./Icons";

@@ -1,5 +1,5 @@
 import CommonFormField from "@/components/common/CommonFormField";
-import { platforms } from "@/components/common/Helper";
+import { integrationFaq, platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import IntegrationDetail from "@/components/integration-details/IntegrationDetail";
@@ -49,9 +49,11 @@ const IntegrationDetails = async ({
         <Faq
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[118px] z-20 px-2"
           faq={{
-            title: `${integrationData?.Faqs?.title ?? ""}`,
-            subTitle: `${integrationData?.Faqs?.subTitle ?? ""}`,
-            faq: integrationData?.Faqs?.faq ?? [],
+            title: `${integrationData?.Faqs?.title ?? " What you may want to know"}`,
+            subTitle: `${integrationData?.Faqs?.subTitle ?? "Frequently asked questions"}`,
+            faq: integrationData?.Faqs?.faq?.length
+              ? integrationData.Faqs.faq
+              : integrationFaq.faq,
           }}
           classNameAnswer="pt-1"
           TittleClassName="w-fit mx-auto opacity-90 sm:opacity-100 !leading-[130%]"
@@ -72,6 +74,7 @@ const IntegrationDetails = async ({
             ncc={"No credit card required"}
           />
         </div>
+
         <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
       </div>
     </main>

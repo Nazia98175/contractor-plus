@@ -81,9 +81,8 @@ const IntegrationHero = ({ integrationList }: { integrationList: any }) => {
         </Marquee>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
-        <Image
-          fill
-          className="3xl:top-[-5%] 900:top-[2%] mix-b pointer-events-none absolute top-[4%] left-[0%] z-10 object-cover blur-[14.05px] lg:top-[1%] 2xl:top-[-0.5%]"
+        <img
+          className="3xl:top-0 900:top-[2%] pointer-events-none absolute top-[5%] left-[0%] z-10 object-cover blur-[14.05px] lg:top-[7%] 2xl:top-[3.5%]"
           src="/images/webp/blur.webp"
           alt="blur-ellipse"
         />

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import BlogCard from "./BlogCard";
+import NoBlogFound from "../common/NoBlogFound";
 
 const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
   blogsList,
@@ -36,11 +37,7 @@ const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
           ))}
         </div>
       ) : (
-        <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-10 text-center">
-          <p className="text-sm text-gray-600">
-            No blogs found. Try a different search or category.
-          </p>
-        </div>
+        <NoBlogFound />
       )}
 
       {/* Pagination */}

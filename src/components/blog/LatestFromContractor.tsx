@@ -6,6 +6,7 @@ import { latestContractorData } from "../common/Helper";
 import BlogCard from "./BlogCard";
 import SwiperNavWithPagination from "./SwiperNavWithPagination";
 import { handleClickProps } from "@/types";
+import NoBlogFound from "../common/NoBlogFound";
 
 type Blog = {
   id?: string | number;
@@ -73,11 +74,7 @@ const LatestFromContractor: React.FC<
       </h2>
 
       {isEmpty ? (
-        <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-10 text-center">
-          <p className="text-sm text-gray-600">
-            No blogs found. Try a different search or category.
-          </p>
-        </div>
+        <NoBlogFound />
       ) : (
         <>
           <Swiper

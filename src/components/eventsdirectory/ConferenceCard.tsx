@@ -69,7 +69,7 @@ const ConferenceCard = ({
             </CardReveal>
           </div>
         </div>
-        <div className="gap-8">
+        <div className="!h-full">
           <Swiper
             modules={[Pagination, Navigation]}
             pagination={{
@@ -98,11 +98,12 @@ const ConferenceCard = ({
                 spaceBetween: 32,
               },
             }}
+            className="!h-full"
           >
             {EventCardItem ? (
               EventCardItem.length > 0 &&
               EventCardItem.map((Item: any, index: Key | null | undefined) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide className="!h-auto" key={index}>
                   <EventsCard
                     Item={Item}
                     onClick={() => router.push(`/events/${Item?.slug}`)}

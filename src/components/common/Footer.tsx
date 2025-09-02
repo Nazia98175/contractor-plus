@@ -34,6 +34,18 @@ interface TheFooterProps {
 }
 
 const Footer: React.FC<TheFooterProps> = ({ footer }) => {
+  const handleClick = () => {
+    // Termly का global modal trigger function
+    if (
+      typeof window !== "undefined" &&
+      (window as any).displayPreferenceCenter
+    ) {
+      (window as any).displayPreferenceCenter();
+    } else {
+      console.warn("⚠️ Termly modal function not available yet!");
+    }
+  };
+
   const pathname = usePathname();
   const variant =
     pathname.toLowerCase().includes("industries") ||
@@ -199,8 +211,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                   {item?.urlText}
                 </Link>
               ))}
-              <a
-                href="#"
+              <button
+                onClick={handleClick}
                 className={`termly-display-preferences flex items-center gap-1 transition-all duration-300 ${styles.bottomlink}`}
                 aria-label="Cookie consent preferences"
               >
@@ -210,7 +222,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                   src="/images/png/privacychoicesicon.png"
                   alt="privacychoicesicon"
                 />
-              </a>
+              </button>
             </div>
             <div className="hidden gap-3 py-1 sm:flex sm:py-0">
               <Link href="https://x.com/">

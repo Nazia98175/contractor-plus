@@ -9,6 +9,7 @@ import { headingVariantMap } from "@/utils/getVariants";
 import Copy from "../common/Copy";
 import { useRouter } from "next/navigation";
 import { getTimeAgo } from "@/utils/dataTransformers";
+import NoBlogFound from "../common/NoBlogFound";
 
 interface Props {
   data?: any[];
@@ -132,15 +133,7 @@ const BlogPosts: React.FC<Props> = ({
             </div>
           </>
         ) : (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 p-12 text-center shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-              <NoBlogIcon />
-            </div>
-            <p className="x text-base font-medium">No blogs found</p>
-            <p className="mt-1 text-sm text-gray-500">
-              Check back later for new content.
-            </p>
-          </div>
+          <NoBlogFound />
         )}
         <div className="block pt-4 md:hidden">
           <button className="bg-red-linear primary-btn h-10 gap-2">

@@ -31,7 +31,7 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
   return (
     <article
       onClick={onClick}
-      className="card-shine-2 group flex max-h-[366px] min-h-[366px] cursor-pointer flex-col justify-between md:max-h-[446px] md:min-h-[446px]"
+      className="card-shine-2 group flex h-full cursor-pointer flex-col justify-between"
     >
       <div>
         {Item?.eventImages ? (

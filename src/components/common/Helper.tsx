@@ -4640,3 +4640,65 @@ export const supplietFaq = {
     },
   ],
 };
+export const integrationFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "How can I use PayPal for my small business or contracting needs?",
+      answer:
+        "It offers various options for small businesses and contractors to send and receive payments, manage transactions, and access financial resources. You can integrate it with Contractor+ for streamlined financial management. Contractors using this integration can easily accept payments from Visa, Mastercard and major cards from leading banks.",
+    },
+    {
+      id: 2,
+      question:
+        "Are there any fees associated with using PayPal for business purposes?",
+      answer:
+        "They may charge fees for certain transactions, such as receiving payments for goods and services. It’s essential to review their fee structure on their official website. It offers a fee-free service option for sending money to family and friends within the same country. If you’re sending money internationally or using a credit card, fees may apply.",
+    },
+    {
+      id: 3,
+      question:
+        "Can I use PayPal to purchase goods and services online and in physical stores?",
+      answer:
+        "Yes, PayPal & their Wallet is widely accepted by online retailers, e-commerce, online banking and some physical stores. Look for the PayPal logo or the option to choose PayPal at checkout. They also offer the option to purchase gift cards and send digital receipts to recipients. You can link your bank account or debit card to your PayPal account for seamless transfers and purchases.",
+    },
+    {
+      id: 4,
+      question:
+        "How does PayPal’s support for cryptocurrencies like Bitcoin and Ethereum work?",
+      answer:
+        "It allows users to buy, hold, and sell cryptocurrencies within their accounts. You can use supported cryptocurrencies for purchases where PayPal is accepted. Not just cryptocurrencies using their wallet you can accept not just dollar but other world markets currencies as well.",
+    },
+    {
+      id: 5,
+      question:
+        "What are the risks associated with using PayPal for financial transactions?",
+      answer:
+        "Like any financial platform, there are security risks associated with PayPal. It’s crucial to use strong passwords, enable two-factor authentication, and stay vigilant against phishing attempts.",
+    },
+    {
+      id: 6,
+      question:
+        "How can I access my PayPal account from various devices, including Android, iPhone, and computer?",
+      answer:
+        "It provides a user-friendly app for Android and iPhone users, and you can also access your account through their website on your computer or other internet-enabled devices.",
+    },
+    {
+      id: 7,
+      question:
+        "What are some of the most notable brands and retailers that accept PayPal payments?",
+      answer:
+        "It is widely accepted by major brands, retailers, and online marketplaces, including eBay, Honey, Happy Returns, and many others.",
+    },
+    {
+      id: 8,
+      question:
+        "Can I use PayPal account for international money transfers and currency exchanges?",
+      answer:
+        "Yes, it offers services for international money transfers and currency exchanges, making it a versatile choice for global transactions. It’s available in many countries like U.S., India, Europe, Canada etc and supports multiple each country currencies. You can choose your preferred currency when making transactions.\n\nPayPal provides a wealth of information, articles, and resources available for individuals and businesses looking to learn more about using their service effectively, on their official website to help users make the most of their platform. Their continuous updates and growth initiatives reflect unwavering dedication to seizing new opportunities.\n\nWith free versions of their app available on app stores, they are a testament to their user-centric approach. With a strong community, secure deposits, and layers of rewards, PayPal is impactful in the world market. As a company, they’re not just an advocate of technology, they’re pioneers shaping the future through research and development, open successful launch and community-driven initiative at a time.",
+    },
+  ],
+};

@@ -332,7 +332,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Client Information */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Client Information
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -387,7 +387,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Project Information */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Project Information
                 </h3>
                 <div>
@@ -453,7 +453,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Rates and Pricing */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Rates and Pricing
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -505,7 +505,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Timeline */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Timeline
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -538,7 +538,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Payment Terms */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Payment Terms
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -614,7 +614,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Contract Terms */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Contract Terms
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -737,7 +737,7 @@ Witness: ___________________________ Date: ___________
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="prose max-h-96 max-w-none overflow-y-auto rounded-lg bg-gray-50 p-6 text-sm print:max-h-none print:overflow-visible print:bg-white print:p-0">
+              <div className="prose bg-shutter max-h-96 max-w-none overflow-y-auto rounded-lg p-6 text-sm print:max-h-none print:overflow-visible print:bg-white print:p-0">
                 <pre className="font-mono text-xs leading-relaxed whitespace-pre-wrap">
                   {generateContractText()}
                 </pre>
@@ -835,7 +835,7 @@ Witness: ___________________________ Date: ___________
         </p>
 
         <div className="rounded border-l-4 border-yellow-500 bg-yellow-50 p-4">
-          <p className="text-aliceBlue text-sm">
+          <p className="text-darkKnight text-sm">
             <strong>Disclaimer:</strong> This template is provided for
             informational purposes and should not be considered legal advice.
             For complex projects or specific legal situations, consult with a

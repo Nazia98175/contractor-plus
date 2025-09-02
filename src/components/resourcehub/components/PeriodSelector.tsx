@@ -15,7 +15,7 @@ const PeriodSelector = ({ value, onChange }: PeriodSelectorProps) => {
       onValueChange={(newValue) => onChange(newValue as Period)}
       className="w-full"
     >
-      <TabsList className="grid w-full grid-cols-2 gap-2 p-1">
+      <TabsList className="mt-3 grid w-full grid-cols-2 gap-2 p-1">
         <TabsTrigger
           value="Monthly"
           className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"

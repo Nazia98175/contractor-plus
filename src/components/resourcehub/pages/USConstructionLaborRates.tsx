@@ -264,7 +264,7 @@ const USConstructionLaborRates = () => {
     <div className="container mx-auto max-w-6xl px-4 py-8 md:px-6">
       <div className="mb-6">
         <Link
-          href="/"
+          href="/resources"
           className="text-primary mb-4 flex items-center gap-1 hover:underline"
         >
           <ArrowLeft className="h-4 w-4" /> Back to Resource Hub
@@ -286,7 +286,7 @@ const USConstructionLaborRates = () => {
             states={states}
             filters={filters}
             onChange={handleFiltersChange}
-            className="animate-slide-up max-h-[calc(100vh-120px)] overflow-y-auto lg:sticky lg:top-24"
+            className="animate-slide-up max-h-[calc(100vh-120px)] overflow-y-auto rounded-lg lg:sticky lg:top-24"
           />
 
           {/* <FilterCTAs /> */}
@@ -296,13 +296,13 @@ const USConstructionLaborRates = () => {
           {!hasAppliedFilters ? (
             <div
               className={cn(
-                "text-aliceBlue animate-slide-up flex min-h-[300px] w-full flex-col items-center justify-center rounded-lg border bg-white/70 text-xl shadow",
+                "text-aliceBlue animate-slide-up bg-shutter border-stiletto flex min-h-[300px] w-full flex-col items-center justify-center rounded-lg border text-xl shadow",
               )}
             >
               <span className="mb-2 font-medium">Define your criteria</span>
               <span className="text-aliceBlue text-base">
                 Select industry, location, and time period above and click{" "}
-                <span className="bg-muted inline-block rounded px-2 py-1 font-semibold">
+                <span className="bg-darkBlack inline-block rounded px-2 py-1 font-semibold">
                   Apply Filters
                 </span>{" "}
                 to see results.

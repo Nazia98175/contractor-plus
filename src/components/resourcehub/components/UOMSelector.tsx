@@ -38,7 +38,7 @@ const UOMSelector = ({ value, onChange }: UOMSelectorProps) => {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="flex h-10 w-full justify-between md:w-full"
+          className="border-stiletto mt-3 flex h-10 w-full justify-between md:w-full"
         >
           <span>
             {UNITS.find((unit) => unit.value === value)?.label || "Select unit"}

@@ -36,7 +36,7 @@ const DataVisualizer = ({
   });
 
   return (
-    <div className={cn("glass-panel p-5", className)}>
+    <div className={cn("p-5", className)}>
       <div className="mb-4 flex items-center justify-between">
         <Button
           variant="ghost"

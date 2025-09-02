@@ -352,7 +352,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Client Information */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Client Information
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -407,7 +407,7 @@ Witness: ___________________________ Date: ___________
 
               {/* Project Information */}
               <div className="space-y-4">
-                <h3 className="border-b pb-2 text-lg font-semibold">
+                <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Project Information
                 </h3>
                 <div>
@@ -768,7 +768,7 @@ Witness: ___________________________ Date: ___________
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="prose max-h-96 max-w-none overflow-y-auto rounded-lg bg-gray-50 p-6 text-sm print:max-h-none print:overflow-visible print:bg-white print:p-0">
+              <div className="prose bg-shutter max-h-96 max-w-none overflow-y-auto rounded-lg p-6 text-sm print:max-h-none print:overflow-visible print:bg-white print:p-0">
                 <pre className="font-mono text-xs leading-relaxed whitespace-pre-wrap">
                   {generateContractText()}
                 </pre>

@@ -77,16 +77,16 @@ const LocationFilter = ({
         onValueChange={handleTabChange}
         className="w-full"
       >
-        <TabsList className="grid w-full grid-cols-2 gap-2 p-1">
+        <TabsList className="mt-3 grid w-full grid-cols-2 gap-2 p-1">
           <TabsTrigger
             value="region"
-            className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:shadow-none px-4 py-1.5 h-8"
+            className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"
           >
             State
           </TabsTrigger>
           <TabsTrigger
             value="zipcode"
-            className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:shadow-none px-4 py-1.5 h-8"
+            className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"
           >
             Zip Code
           </TabsTrigger>

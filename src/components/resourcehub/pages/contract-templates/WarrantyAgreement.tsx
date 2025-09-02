@@ -582,7 +582,7 @@ ${formData.clientName || "[CLIENT NAME]"}
               </div>
             </CardHeader>
             <CardContent>
-              <div className="bg-muted max-h-96 overflow-y-auto rounded-lg p-4 text-sm">
+              <div className="bg-shutter max-h-96 overflow-y-auto rounded-lg p-4 text-sm">
                 <div className="mb-4 text-center font-bold">
                   WARRANTY AGREEMENT
                 </div>

@@ -1280,8 +1280,8 @@ export default function MaintenanceServiceContract() {
           <li>Include termination clauses and notice requirements</li>
         </ul>
 
-        <div className="border-stiletto bg-shutter borderp-6 my-8 rounded-lg">
-          <h3 className="mb-2 text-xl font-semibold text-gray-800">
+        <div className="border-stiletto bg-shutter my-8 rounded-lg border p-6">
+          <h3 className="mb-2 text-xl font-semibold">
             Build lasting service relationships
           </h3>
           <p className="mb-0">
@@ -1293,7 +1293,7 @@ export default function MaintenanceServiceContract() {
           </p>
         </div>
 
-        <p className="text-aliceBlue rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Legal Disclaimer:</strong> This template is provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

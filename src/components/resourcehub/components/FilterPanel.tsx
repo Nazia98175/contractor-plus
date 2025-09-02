@@ -146,7 +146,7 @@ const FilterPanel = ({
   return (
     <div
       className={cn(
-        "glass-panel p-4 shadow-sm transition-all duration-300",
+        "border-stiletto border p-4 shadow-sm transition-all duration-300",
         className,
       )}
     >

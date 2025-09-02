@@ -69,7 +69,7 @@ const IndustrySelector = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="flex h-9 w-full justify-between"
+          className="border-stiletto mt-3 flex h-9 w-full justify-between"
         >
           <span className="truncate">{getButtonText()}</span>
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />

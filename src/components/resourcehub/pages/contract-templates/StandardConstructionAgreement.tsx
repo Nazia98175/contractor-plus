@@ -425,30 +425,30 @@ Date: ${formData.date}`;
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="max-h-96 overflow-y-auto rounded-lg bg-gray-50 p-4 font-mono text-sm">
+              <div className="bg-shutter max-h-96 overflow-y-auto rounded-lg p-4 font-mono text-sm">
                 <div className="mb-4 text-center font-bold">
                   STANDARD CONSTRUCTION AGREEMENT (FIXED PRICE / LUMP SUM)
                 </div>
 
                 <p className="mb-4">
                   THIS AGREEMENT ("Agreement") is made and entered into as of{" "}
-                  <span className="bg-yellow-200">
+                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
                     {formData.date || "[DATE]"}
                   </span>
                   , by and between{" "}
-                  <span className="bg-yellow-200">
+                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
                     {formData.clientName || "[CLIENT NAME]"}
                   </span>
                   , with a principal place of business at{" "}
-                  <span className="bg-yellow-200">
+                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
                     {formData.clientAddress || "[CLIENT ADDRESS]"}
                   </span>{" "}
                   ("Client"), and{" "}
-                  <span className="bg-yellow-200">
+                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
                     {formData.contractorName || "[CONTRACTOR NAME]"}
                   </span>
                   , with a principal place of business at{" "}
-                  <span className="bg-yellow-200">
+                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
                     {formData.contractorAddress || "[CONTRACTOR ADDRESS]"}
                   </span>{" "}
                   ("Contractor").
@@ -460,7 +460,7 @@ Date: ${formData.date}`;
                     Contractor agrees to perform the following services
                     ("Work"):
                     <br />
-                    <span className="bg-yellow-200">
+                    <span className="text-darkKnight bg-yellow-200">
                       {formData.workDescription ||
                         "[Detailed description of the work to be completed]"}
                     </span>
@@ -471,7 +471,7 @@ Date: ${formData.date}`;
                   <strong>2. Contract Price</strong>
                   <p className="mt-1">
                     The total fixed price for the Work shall be $
-                    <span className="bg-yellow-200">
+                    <span className="text-darkKnight bg-yellow-200">
                       {formData.totalFixedPrice || "[TOTAL FIXED PRICE AMOUNT]"}
                     </span>{" "}
                     (the "Contract Price").
@@ -486,32 +486,32 @@ Date: ${formData.date}`;
                   </p>
                   <ul className="mt-1 ml-6 list-disc">
                     <li>
-                      <span className="bg-yellow-200">
+                      <span className="text-darkKnight bg-yellow-200">
                         {formData.paymentSchedule.signing ||
                           "[Percentage or amount]"}
                       </span>{" "}
                       due upon signing
                     </li>
                     <li>
-                      <span className="bg-yellow-200">
+                      <span className="text-darkKnight bg-yellow-200">
                         {formData.paymentSchedule.milestone ||
                           "[Percentage or amount]"}
                       </span>{" "}
                       due upon{" "}
-                      <span className="bg-yellow-200">
+                      <span className="text-darkKnight bg-yellow-200">
                         {formData.paymentSchedule.milestoneDescription ||
                           "[milestone or date]"}
                       </span>
                     </li>
                     <li>
-                      <span className="bg-yellow-200">
+                      <span className="text-darkKnight bg-yellow-200">
                         {formData.paymentSchedule.substantial ||
                           "[Percentage or amount]"}
                       </span>{" "}
                       due upon substantial completion
                     </li>
                     <li>
-                      <span className="bg-yellow-200">
+                      <span className="text-darkKnight bg-yellow-200">
                         {formData.paymentSchedule.final ||
                           "[Balance or final payment]"}
                       </span>{" "}
@@ -548,7 +548,7 @@ Date: ${formData.date}`;
                 detailed and complete. Fixed-price contracts require careful
                 planning to avoid scope creep.
               </p>
-              <div className="mt-4 rounded border border-amber-200 bg-amber-50 p-3">
+              <div className="text-darkKnight bg-amber-2resources/contract-templates/time-and-materials-contract00 mt-4 rounded border border-amber-300 p-3">
                 <p className="text-xs">
                   <strong>Legal Disclaimer:</strong> This template is for
                   informational purposes only and does not constitute legal

@@ -30,7 +30,7 @@ const ZipCodeView = ({
   const sortedData = deduplicateAndSortData(tableData);
 
   return (
-    <div className={cn("glass-panel overflow-hidden rounded-lg", className)}>
+    <div className={cn("overflow-hidden rounded-lg", className)}>
       <div className="overflow-x-auto">
         <Table>
           <TableHeader>

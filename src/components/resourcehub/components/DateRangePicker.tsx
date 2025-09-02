@@ -174,7 +174,7 @@ const DateRangePicker = ({
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="w-full justify-start text-left text-sm font-normal"
+          className="border-stiletto mt-3 w-full justify-start text-left text-sm font-normal"
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
           <span>{getDisplayValue()}</span>

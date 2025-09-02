@@ -41,9 +41,9 @@ export function CalculationResult({
     calculationResult;
 
   return (
-    <Card className="mb-6 border-2 border-green-100 bg-gradient-to-br from-white to-green-50 shadow-sm">
-      <CardHeader className="border-b border-green-100 bg-green-50/50 pb-2">
-        <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-800">
+    <Card className="bg-shutter border-stiletto mb-6 overflow-hidden border-2 shadow-sm">
+      <CardHeader className="border-b border-green-500 pb-2">
+        <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-500">
           <CheckCircle2 className="h-5 w-5 text-green-500" /> Calculation
           Results
         </CardTitle>
@@ -60,7 +60,7 @@ export function CalculationResult({
                 ${burdenedWage.toFixed(2)}/hour
               </span>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-decemberSky text-xs">
               Hourly wage including labor burden
             </p>
           </div>
@@ -68,14 +68,14 @@ export function CalculationResult({
           {/* Break-even Cost */}
           <div className="border-t border-dashed border-gray-200 pt-2">
             <div className="flex items-center justify-between">
-              <span className="text-base font-semibold text-gray-700">
+              <span className="text-base font-semibold">
                 Break-even Cost per Hour:
               </span>
-              <span className="text-lg font-semibold text-gray-700">
+              <span className="text-lg font-semibold">
                 ${costPerHour.toFixed(2)}
               </span>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-decemberSky text-xs">
               Total cost including burdened wage and overhead
             </p>
           </div>
@@ -88,18 +88,18 @@ export function CalculationResult({
               </span>
               <span className="font-medium">${profitPerHour.toFixed(2)}</span>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-decemberSky text-xs">
               Added profit based on your markup percentage
             </p>
           </div>
 
           {/* Billable Rate */}
           <div className="mt-2 border-t-2 border-green-100 pt-3">
-            <div className="flex items-center justify-between">
-              <span className="text-lg font-bold text-green-800">
+            <div className="flex items-start justify-between">
+              <span className="text-lg font-bold text-green-500">
                 Suggested Billable Rate:
               </span>
-              <span className="flex items-center text-xl font-bold text-green-800">
+              <span className="flex items-center text-xl font-bold text-green-500">
                 <DollarSign className="mr-1 h-5 w-5" />
                 {billableRate.toFixed(2)}/hour
               </span>

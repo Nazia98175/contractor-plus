@@ -228,7 +228,7 @@ export const ComparePageLayout = ({
 
                 <div className="mt-6 flex justify-center">
                   <Link
-                    href="/free-estimate-maker"
+                    href="/resources/free-estimate-templates"
                     className="hover:text-glowing text-pestering text-sm duration-300 disabled:pointer-events-none disabled:opacity-50"
                   >
                     Learn More About Contractor+ Estimates & Quotes

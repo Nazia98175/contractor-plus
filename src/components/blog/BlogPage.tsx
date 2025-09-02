@@ -21,6 +21,11 @@ type BlogPageProps = {
   blogsData: Blog[];
   blogsFields: any;
   blogsList: any;
+  industries: {
+    id: number;
+    slug: string;
+    name: string;
+  }[];
 };
 
 const normalize = (s?: string) =>
@@ -49,7 +54,12 @@ const getBlogCategories = (blog: Blog) => {
   return Array.from(new Set(cats));
 };
 
-const BlogPage = ({ blogsData, blogsFields, blogsList }: BlogPageProps) => {
+const BlogPage = ({
+  blogsData,
+  blogsFields,
+  blogsList,
+  industries,
+}: BlogPageProps) => {
   const router = useRouter();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -73,7 +83,6 @@ const BlogPage = ({ blogsData, blogsFields, blogsList }: BlogPageProps) => {
 
   const handleClick = (name: string) => router.push(`/blog/${name}`);
 
-  console.log(filtered, "filtered");
   return (
     <main id="home-page-wrapper-2">
       <div id="home-page-view-port-screen-blog" className="relative opacity-0">

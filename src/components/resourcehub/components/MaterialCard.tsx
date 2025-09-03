@@ -42,10 +42,10 @@ export const MaterialCard = ({
   };
 
   return (
-    <Card className="border-muted/60 group flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-md">
+    <Card className="border-stiletto group flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-md">
       {/* Product image section with improved aspect ratio */}
       <div className="relative">
-        <AspectRatio ratio={4 / 3} className="bg-muted/10 overflow-hidden">
+        <AspectRatio ratio={4 / 3} className="overflow-hidden bg-white">
           {image && !imageError ? (
             <>
               {!imageLoaded && (
@@ -65,7 +65,7 @@ export const MaterialCard = ({
               />
             </>
           ) : (
-            <div className="bg-muted/10 absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center">
               <ShoppingCart className="text-aliceBlue h-12 w-12 opacity-20" />
             </div>
           )}

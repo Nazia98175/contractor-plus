@@ -21,18 +21,18 @@ const ToggleButton = ({
   switch (color) {
     case "blue":
       colorClasses = isActive
-        ? "bg-blue-500/10 text-blue-700 border-blue-500 hover:bg-blue-500/20"
-        : "hover:bg-blue-500/5 hover:text-blue-700 hover:border-blue-300";
+        ? "bg-blue-500/10 text-blue-500 border-blue-500 hover:bg-blue-500/20"
+        : "hover:bg-blue-500/5 hover:text-blue-500 hover:border-blue-300";
       break;
     case "amber":
       colorClasses = isActive
-        ? "bg-amber-500/10 text-amber-700 border-amber-500 hover:bg-amber-500/20"
+        ? "bg-amber-500/10 text-amber-500 border-amber-500 hover:bg-amber-500/20"
         : "hover:bg-amber-500/5 hover:text-amber-700 hover:border-amber-300";
       break;
     case "green":
       colorClasses = isActive
-        ? "bg-green-500/10 text-green-700 border-green-500 hover:bg-green-500/20"
-        : "hover:bg-green-500/5 hover:text-green-700 hover:border-green-300";
+        ? "bg-green-500/10 text-green-500 border-green-500 hover:bg-green-500/20"
+        : "hover:bg-green-500/5 hover:text-green-500 hover:border-green-300";
       break;
     default:
       colorClasses = isActive

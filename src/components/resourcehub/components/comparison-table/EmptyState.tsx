@@ -2,7 +2,7 @@ import React from "react";
 
 export const EmptyState: React.FC = () => {
   return (
-    <div className="bg-muted/20 rounded-lg border px-4 py-10 text-center">
+    <div className="border-stiletto rounded-lg border px-4 py-10 text-center">
       <div className="mb-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"

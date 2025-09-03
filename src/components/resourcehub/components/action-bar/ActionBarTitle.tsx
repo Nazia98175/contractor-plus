@@ -23,7 +23,7 @@ export const ActionBarTitle = ({
 }: ActionBarTitleProps) => {
   return (
     <div className="flex w-full items-center justify-between gap-4">
-      <h2 className="text-2xl font-bold">Your Material List</h2>
+      <h2 className="text-2xl font-bold text-white">Your Material List</h2>
 
       {availableStores.length > 0 && (
         <div className="flex items-center gap-2">

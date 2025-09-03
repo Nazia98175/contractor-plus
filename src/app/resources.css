@@ -1,0 +1,22 @@
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-decemberSky;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-shutter/30 hover:bg-shutter/50 rounded-full transition-colors;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -84,9 +84,9 @@ export const FlatSearchResults = ({
         {filteredStores.map(([storeKey, materials]) => (
           <div
             key={storeKey}
-            className="flex h-full flex-col overflow-hidden rounded-lg border"
+            className="border-stiletto flex h-full flex-col overflow-hidden rounded-lg border"
           >
-            <h3 className="bg-muted/30 sticky top-0 p-3 text-lg font-semibold">
+            <h3 className="bg-shutter sticky top-0 p-3 text-lg font-semibold">
               {formatStoreName(storeKey)}
             </h3>
 
@@ -115,7 +115,7 @@ export const FlatSearchResults = ({
                 </Carousel>
               </div>
             ) : (
-              <div className="border-t p-3 py-10 text-center">
+              <div className="border-stiletto border-t p-3 py-10 text-center">
                 <p className="text-aliceBlue">
                   No products available for {formatStoreName(storeKey)}.
                 </p>

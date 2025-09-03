@@ -25,12 +25,12 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
 
   return (
     <Card className={`${className} overflow-hidden border-none shadow-lg`}>
-      <div className="from-primary/10 via-primary/5 bg-gradient-to-r to-transparent">
+      <div className="bg-gradient-to-br from-black via-gray-900 to-black">
         <CardHeader className="pb-2">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
               <CardTitle className="flex items-center gap-2 text-xl">
-                <Gift className="text-primary h-5 w-5" />
+                <Gift className="h-5 w-5" />
                 Free Search Limit
               </CardTitle>
               <CardDescription>
@@ -48,8 +48,8 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
               isMobile ? "" : "md:grid-cols-3"
             } gap-4 md:gap-6`}
           >
-            <div className="group hover:bg-primary/5 flex items-start gap-3 rounded-md p-3 transition-colors">
-              <div className="bg-primary/10 text-primary group-hover:bg-primary/20 flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors">
+            <div className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-white/5">
+              <div className="text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
                 <User className="h-4 w-4" />
               </div>
               <div>
@@ -71,8 +71,8 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
               </div>
             </div>
 
-            <div className="group hover:bg-primary/5 flex items-start gap-3 rounded-md p-3 transition-colors">
-              <div className="bg-primary/10 text-primary group-hover:bg-primary/20 flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors">
+            <div className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-white/5">
+              <div className="text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
                 <Lock className="h-4 w-4" />
               </div>
               <div>
@@ -92,8 +92,8 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
               </div>
             </div>
 
-            <div className="group hover:bg-primary/5 flex items-start gap-3 rounded-md p-3 transition-colors">
-              <div className="bg-primary/10 text-primary group-hover:bg-primary/20 flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors">
+            <div className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-white/5">
+              <div className="text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
                 <Zap className="h-4 w-4" />
               </div>
               <div>

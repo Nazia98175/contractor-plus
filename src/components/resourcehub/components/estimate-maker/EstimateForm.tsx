@@ -366,7 +366,7 @@ export function EstimateForm({
                   </div>
                 )}
 
-                <div className="flex justify-between border-t pt-4">
+                <div className="border-darkGray flex justify-between border-t pt-4">
                   <Button onClick={onAddItem} className="gap-1">
                     <Plus className="h-4 w-4" />
                     Add Item
@@ -386,7 +386,7 @@ export function EstimateForm({
               </div>
 
               {/* Totals Section */}
-              <div className="mt-6 space-y-2 border-t pt-4">
+              <div className="border-darkGray mt-6 space-y-2 border-t pt-4">
                 <div className="flex justify-between text-sm">
                   <span>Subtotal:</span>
                   <span>${calculatedTotals.subtotal.toFixed(2)}</span>
@@ -451,7 +451,7 @@ export function EstimateForm({
                   </span>
                 </div>
 
-                <div className="flex justify-between border-t pt-2 text-lg font-medium">
+                <div className="border-darkGray flex justify-between border-t pt-2 text-lg font-medium">
                   <span>Total:</span>
                   <span>${calculatedTotals.total.toFixed(2)}</span>
                 </div>

@@ -49,7 +49,7 @@ export function CalculationResult({
   const gatesText = numberOfGates === 1 ? "1 gate" : `${numberOfGates} gates`;
 
   return (
-    <Card className="mb-6 border-2 border-green-100 bg-gradient-to-br from-white to-green-50 shadow-sm">
+    <Card className="mb-6 border-2 shadow-sm">
       <CardHeader className="border-b border-green-100 bg-green-50/50 pb-2">
         <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-800">
           <CheckCircle2 className="h-5 w-5 text-green-500" /> Fence Cost

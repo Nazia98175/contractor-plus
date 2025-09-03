@@ -12,7 +12,7 @@ import { ResourceCard } from "../components/resource-hub/ResourceCard";
 
 const Resource = () => {
   return (
-    <div className="flex flex-col gap-12 py-10">
+    <section className="flex flex-col gap-12 px-2 py-10">
       {/* Hero Section */}
       <section className="main-container md:px-6">
         <div className="space-y-4 text-center">
@@ -116,13 +116,13 @@ const Resource = () => {
       {/* Blog Posts Section */}
       <section className="main-container">
         <div className="flex flex-col gap-6">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-5">
             <h2 className="text-3xl font-bold tracking-tight">
               Latest from Contractor+ HQ
             </h2>
             <Link
               href="/blog"
-              className="text-primary flex items-center gap-1 hover:underline"
+              className="text-glowing flex items-center gap-1 hover:text-red-500"
             >
               Go to Contractor+ HQ <ArrowRight className="h-4 w-4" />
             </Link>
@@ -148,7 +148,7 @@ const Resource = () => {
           <PodcastScroller />
         </div>
       </section> */}
-    </div>
+    </section>
   );
 };
 

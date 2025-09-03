@@ -21,7 +21,7 @@ interface CalculationResultProps {
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
     <Card className="border-shutter mb-6 border-2 bg-white shadow-md">
-      <CardHeader className="bg-primary/5 border-shutter border-b">
+      <CardHeader className="border-shutter border-b">
         <CardTitle className="text-primary/90 flex items-center text-lg">
           <Building className="text-primary mr-2 h-5 w-5" />
           Construction Cost Estimate

@@ -120,7 +120,7 @@ const StateSelector = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="flex h-9 w-full justify-between"
+          className="border-stiletto flex h-9 w-full justify-between"
         >
           <span className="truncate">{getButtonText()}</span>
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -142,9 +142,7 @@ const StateSelector = ({
                 <div
                   className={cn(
                     "mr-2 flex h-4 w-4 items-center justify-center rounded border",
-                    selectedStates.length === states.length
-                      ? "bg-primary border-primary"
-                      : "border-input",
+                    selectedStates.length === states.length ? "bg-primary" : "",
                   )}
                 >
                   {selectedStates.length === states.length && (
@@ -211,9 +209,7 @@ const StateSelector = ({
                     <div
                       className={cn(
                         "mr-2 flex h-4 w-4 items-center justify-center rounded border",
-                        selectedStates.includes(state.id)
-                          ? "bg-primary border-primary"
-                          : "border-input",
+                        selectedStates.includes(state.id) ? "bg-primary" : "",
                       )}
                     >
                       {selectedStates.includes(state.id) && (

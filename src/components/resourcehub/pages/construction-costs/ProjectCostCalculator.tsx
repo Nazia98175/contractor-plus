@@ -797,7 +797,7 @@ const ProjectCostCalculator = ({
                                   {material.unit}
                                 </p>
                               )}
-                              <p className="text-xs text-blue-600">
+                              <p className="text-xs text-blue-400">
                                 Total needed:{" "}
                                 {totalQuantity % 1 === 0
                                   ? totalQuantity.toFixed(0)
@@ -1029,7 +1029,7 @@ const ProjectCostCalculator = ({
                 )}
 
                 {/* CTA */}
-                <div className="rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 p-4 text-center">
+                <div className="rounded-lg bg-gradient-to-br from-black via-gray-900 to-black p-4 text-center">
                   <h4 className="mb-2 font-semibold">
                     Contractor+ is the OS for build and service contractors
                   </h4>

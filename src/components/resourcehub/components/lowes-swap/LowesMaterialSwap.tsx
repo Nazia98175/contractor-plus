@@ -140,7 +140,7 @@ export const LowesMaterialSwap = ({
         <Button
           variant="ghost"
           size="sm"
-          className="h-8 w-8 cursor-pointer p-1 transition-colors hover:bg-blue-50"
+          className="h-8 w-8 cursor-pointer p-1 transition-colors hover:bg-blue-500/50"
           title={`Swap ${materialName} with real materials from Lowe's`}
         >
           <img
@@ -151,7 +151,7 @@ export const LowesMaterialSwap = ({
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden p-0">
+      <DialogContent className="bg-shutter max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden p-0">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-6 pb-5 text-white">
           <div className="flex items-center justify-between">
@@ -374,8 +374,8 @@ export const LowesMaterialSwap = ({
 
           {/* No Results */}
           {searchResults.length === 0 && !isSearching && searchQuery && (
-            <div className="py-12 text-center">
-              <div className="bg-shutter mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+            <div className="rounded-lg bg-gray-50 py-12 text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-300/30">
                 <Search className="h-8 w-8 text-gray-400" />
               </div>
               <h3 className="mb-2 text-lg font-medium text-gray-900">
@@ -389,8 +389,8 @@ export const LowesMaterialSwap = ({
 
           {/* Initial State */}
           {searchResults.length === 0 && !isSearching && !searchQuery && (
-            <div className="py-12 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+            <div className="rounded-lg bg-gray-50 py-12 text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-300/30">
                 <Package className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="mb-2 text-lg font-medium text-gray-900">

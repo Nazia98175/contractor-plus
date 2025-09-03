@@ -21,6 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./ui/dialog";
+import { searchThumbtackBusinesses } from "@/services/resource/thumbtackService";
 
 type ThumbtackResponse = Awaited<
   ReturnType<typeof searchThumbtackBusinesses>
@@ -325,7 +326,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             </div>
 
             {/* Reviews Information */}
-            <div className="border-border/20 border-t pt-6">
+            <div className="border-stiletto border-t pt-6">
               <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
                 {/* Trusted Users */}
                 <div className="flex flex-col items-center space-y-2">

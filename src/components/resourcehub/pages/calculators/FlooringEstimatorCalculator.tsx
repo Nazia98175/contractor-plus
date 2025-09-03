@@ -1,6 +1,7 @@
 "use client";
+
 import React, { useState } from "react";
-import { ArrowLeft, Ruler } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useMetaTags } from "@/hooks/use-meta-tags";
 import {
   CalculationResult,
@@ -9,7 +10,10 @@ import {
 import { useRouter } from "next/navigation";
 import { Button } from "../../components/ui/button";
 import { PageHeader } from "../../components/calculators/flooring/PageHeader";
-import { CalculatorForm } from "../../components/calculators/flooring/CalculatorForm";
+import {
+  CalculatorForm,
+  type FlooringCalculationValues,
+} from "../../components/calculators/flooring/CalculatorForm";
 import {
   Card,
   CardContent,
@@ -18,22 +22,12 @@ import {
 } from "../../components/ui/card";
 import { EducationalContent } from "../../components/calculators/flooring/EducationalContent";
 
-// Define the calculation values type
-export interface FlooringCalculationValues {
-  floorArea: number;
-  materialCostPerSqFt: number;
-  laborCostPerSqFt: number;
-  wasteFactor: number;
-  additionalCosts: number;
-}
-
 export default function FlooringEstimatorCalculator() {
   const router = useRouter();
 
   const [calculationResult, setCalculationResult] =
     useState<FlooringCalculationResult | null>(null);
 
-  // Add SEO meta tags
   useMetaTags({
     title: "Flooring Estimator Calculator | Free Tool for Flooring Contractors",
     description:
@@ -41,21 +35,12 @@ export default function FlooringEstimatorCalculator() {
     canonicalUrl: "https://contractorplus.app/calculators/flooring-estimator",
   });
 
-  // Calculate results when form values change
   const calculateResults = (values: FlooringCalculationValues) => {
-    // Step 1: Apply the waste factor to the floor area
     const effectiveArea = values.floorArea * (1 + values.wasteFactor / 100);
-
-    // Step 2: Calculate material cost
     const materialCost = effectiveArea * values.materialCostPerSqFt;
-
-    // Step 3: Calculate labor cost (on actual area, not including waste)
     const laborCost = values.floorArea * values.laborCostPerSqFt;
-
-    // Step 4: Calculate total cost
     const totalCost = materialCost + laborCost + values.additionalCosts;
 
-    // Update state with the results
     setCalculationResult({
       effectiveArea,
       materialCost,

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+"use client";
+
+import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
@@ -20,7 +22,6 @@ import {
   TooltipTrigger,
 } from "../../ui/tooltip";
 
-// Define our schema
 const formSchema = z.object({
   floorArea: z.coerce
     .number()
@@ -41,16 +42,21 @@ const formSchema = z.object({
     .default(0),
 });
 
-export type FlooringCalculationValues = z.infer<typeof formSchema>;
+// Output (post-parse) values — what your app uses
+export type FlooringCalculationValues = z.output<typeof formSchema>;
+
+// Input (pre-parse) values — what form fields emit
+type FlooringFormInput = z.input<typeof formSchema>;
+
+// ---- Component ------------------------------------------------------------
 
 interface CalculatorFormProps {
   onCalculate: (values: FlooringCalculationValues) => void;
 }
 
-export const CalculatorForm: React.FC<CalculatorFormProps> = ({
-  onCalculate,
-}) => {
-  const form = useForm<FlooringCalculationValues>({
+export const CalculatorForm: React.FC<CalculatorFormProps> = ({ onCalculate }) => {
+  // IMPORTANT: Tell RHF both the input and transformed output types
+  const form = useForm<FlooringFormInput, any, FlooringCalculationValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       floorArea: undefined,
@@ -61,7 +67,8 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
     },
   });
 
-  const handleSubmit = (values: FlooringCalculationValues) => {
+  const handleSubmit: SubmitHandler<FlooringCalculationValues> = (values) => {
+    // `values` are guaranteed numbers here
     onCalculate(values);
   };
 
@@ -83,7 +90,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                         <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
-                        The total area of the floor(s) to be covered. Measure
+                          The total area of the floor(s) to be covered. Measure
                         each room's length × width and sum them up. If you have
                         area in a different unit (like sq yards for carpet),
                         convert it (1 sq yd = 9 sq ft).
@@ -92,7 +99,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   </TooltipProvider>
                 </FormLabel>
                 <FormControl>
-                  <Input type="number" placeholder="e.g. 500" {...field} />
+                  <Input type="number" placeholder="e.g. 500" {...field} value={field.value?.toString() || ''} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -118,18 +125,12 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                         4.00. If you're using tile, maybe enter the cost of tile
                         + grout per sq ft. If material is sold per box, you can
                         derive a per sq ft price by dividing box price by
-                        coverage.
-                      </TooltipContent>
+                        coverage.                      </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    type="number"
-                    step="0.01"
-                    placeholder="e.g. 4.00"
-                    {...field}
-                  />
+                  <Input type="number" step="0.01" placeholder="e.g. 4.00" {...field} value={field.value?.toString() || ''} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -150,22 +151,17 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                         <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
-                        The cost of installation labor per square foot. This
+               The cost of installation labor per square foot. This
                         might be what you pay installers or what you charge for
                         labor. E.g., if installers cost $2.50 per sq ft for
                         installation, enter 2.50. If you intend this calc for
-                        client price, use what you charge the client for labor.
+                        client price, use what you charge the client for labor.q ft.
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    type="number"
-                    step="0.01"
-                    placeholder="e.g. 2.50"
-                    {...field}
-                  />
+                  <Input type="number" step="0.01" placeholder="e.g. 2.50" {...field} value={field.value?.toString() || ''} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -186,7 +182,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                         <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
-                        Extra percentage of material to account for waste (cuts,
+                         Extra percentage of material to account for waste (cuts,
                         breakage, patterns). Commonly 5-10%. For example, 10%
                         waste on 500 sq ft means plan for 550 sq ft of material.
                         Enter 0 if you plan to use exact (not recommended).
@@ -195,12 +191,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   </TooltipProvider>
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    type="number"
-                    step="1"
-                    placeholder="e.g. 10"
-                    {...field}
-                  />
+                  <Input type="number" step="1" placeholder="e.g. 10" {...field} value={field.value?.toString() || ''} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -221,7 +212,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                         <Info className="text-aliceBlue ml-2 h-4 w-4" />
                       </TooltipTrigger>
                       <TooltipContent className="max-w-sm">
-                        Any other project costs not included in the per sq ft
+                       Any other project costs not included in the per sq ft
                         rates. This could include subfloor repair, floor
                         leveling compound, removing old flooring, baseboards or
                         trim, thresholds, delivery fees, etc. Enter the total of
@@ -231,12 +222,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
                   </TooltipProvider>
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    type="number"
-                    step="1"
-                    placeholder="e.g. 150"
-                    {...field}
-                  />
+                  <Input type="number" step="1" placeholder="e.g. 150" {...field} value={field.value?.toString() || ''} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

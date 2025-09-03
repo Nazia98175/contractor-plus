@@ -1,17 +1,17 @@
-import { MaterialCard } from "@/components/MaterialCard";
 import { Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { Badge } from "@/components/ui/badge";
+import { getStoreById } from "@/services/resource/storeService";
+import { Badge } from "../ui/badge";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
-} from "@/components/ui/carousel";
-import { getStoreById } from "@/services/storeService";
+  CarouselPrevious,
+} from "../ui/carousel";
+import { MaterialCard } from "../MaterialCard";
 
 interface Material {
   id: string;

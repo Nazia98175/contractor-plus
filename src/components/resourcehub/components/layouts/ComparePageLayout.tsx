@@ -8,9 +8,12 @@ import {
   BreadcrumbSeparator,
 } from "../ui/breadcrumb";
 import { LoginPrompt } from "../LoginPrompt";
-import { FlatSearchResults } from "../flat-search-results/FlatSearchResults";
+// import { FlatSearchResults } from "../flat-search-results/FlatSearchResults";
 import Link from "next/link";
-import { FormValues, SearchForm } from "../search";
+import { SearchForm } from "../search";
+import { FormValues } from "../search/searchFormSchema";
+import { FlatSearchResults } from "../flat-search-results/FlatSearchResults";
+import { FlatMaterial } from "@/types/resources";
 
 interface SelectedItem {
   id: string;
@@ -24,17 +27,6 @@ interface SelectedItem {
   image: string;
   discount: number;
   productUrl?: string;
-}
-
-interface FlatMaterial {
-  id: string;
-  name: string;
-  source: string;
-  category: string;
-  price: number;
-  image: string;
-  url: string;
-  in_stock: boolean;
 }
 
 interface ComparePageLayoutProps {
@@ -129,14 +121,14 @@ export const ComparePageLayout = ({
               materials={materials || {}}
               hasSearchQuery={hasSearchQuery}
               onAddToList={onAddToList}
-              selectedStoreIds={selectedStoreIds}
+              selectedStoreIds={selectedStoreIds ?? []}
             />
             {/* <SearchResults
               isSearching={isSearching}
               materials={materials}
               hasSearchQuery={hasSearchQuery}
               onAddToList={onAddToList}
-              selectedStoreIds={selectedStoreIds}
+             selectedStoreIds={selectedStoreIds ?? []}
             /> */}
           </div>
 

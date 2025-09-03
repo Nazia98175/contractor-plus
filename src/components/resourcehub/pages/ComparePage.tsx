@@ -63,7 +63,7 @@ const ComparePage = () => {
         onSaveToAccount={handleSave}
         onExport={handleExport}
         defaultSearchValues={searchParams}
-        selectedStoreIds={selectedStoreIds}
+        selectedStoreIds={selectedStoreIds ?? []}
       />
 
       {/* Cart/Comparison Drawer */}

@@ -11,6 +11,16 @@ export interface State {
   region: string;
 }
 
+export interface FlatMaterial {
+  id: string;
+  name: string;
+  source: string;
+  category: string;
+  price: number;
+  image: string;
+  url: string;
+  in_stock: boolean;
+}
 export type UnitOfMeasurement = "Hour" | "Square Foot" | "Linear Foot" | "Unit";
 export type DataSource = "Contractor+" | "BLS.gov" | "Average";
 export type Period = "Monthly" | "Quarterly";

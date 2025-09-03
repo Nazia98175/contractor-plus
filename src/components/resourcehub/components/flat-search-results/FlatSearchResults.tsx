@@ -1,5 +1,4 @@
 import { Loader2 } from "lucide-react";
-
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Carousel,
@@ -9,15 +8,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { MaterialCard } from "../MaterialCard";
-
-interface FlatMaterial {
-  source: string;
-  name: string;
-  price: number;
-  image: string;
-  url: string;
-  in_stock: boolean;
-}
+import { FlatMaterial } from "@/types/resources";
 
 interface FlatSearchResultsProps {
   isSearching: boolean;
@@ -68,7 +59,7 @@ export const FlatSearchResults = ({
 
   if (filteredStores.length === 0) {
     return (
-      <div className="bg-muted/20 rounded-lg border px-2 py-20 text-center">
+      <div className="bg-shutter rounded-lg border px-2 py-20 text-center">
         <p className="text-aliceBlue">
           No materials found for the selected filters.
         </p>

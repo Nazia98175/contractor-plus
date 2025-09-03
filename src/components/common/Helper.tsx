@@ -4702,3 +4702,87 @@ export const integrationFaq = {
     },
   ],
 };
+export const afflitatesClientReviews = {
+  data: [
+    {
+      reviews: {
+        title: "Trusted by over 50,000 build and service contractors",
+        subTitle: null,
+        reviews: [
+          {
+            id: 1,
+            userName: "Brandon Geiger",
+            profileImg: "/images/png/brandon-ginger.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/ODjGhYILJKE?si=lcdtM7DNcQ6_JGd8",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!""`,
+            userRole: "Co-Owner, Rushville Restorations",
+          },
+          {
+            id: 2,
+            userName: "Juan Garcia",
+            profileImg: "/images/webp/juan-gracia.webp",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/R5Q47lOKtdI?si=mKWjfvWmiFwEbkTv",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"I love being able to keep track of my entire business in one app. And the leads we've been getting from Contractor+ are so much better than the leads we've got from other places. The app is easy to use and is making my life a lot easier."`,
+            userRole: "President, TPB Construction",
+          },
+
+          {
+            id: 3,
+            userName: "Scott Azure",
+            profileImg: "/images/webp/rands.webp",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/CllT0U-CtGc?si=dAxaKG8w04fLCQHr",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."`,
+          },
+          {
+            id: 4,
+            userName: "Juan Garcia",
+            profileImg: "/images/png/juan-garcia.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/KpYSsQhP_J0?si=AzXAksGGa9cRi6L2",
+            isModal: true,
+            companyLogo: "/images/png/juan-garcia.png",
+            review: `"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 5,
+            userName: "Josh T.",
+            profileImg: "/images/png/josh.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/8ts4jsNZtgM?si=qiCj5doq9gsEocRn",
+            isModal: true,
+            companyLogo: "/images/png/josh.png",
+            review: `"Contractor+ covers nearly every part of our business. Now, we’re not just working - we’re busy handling new leads every day."`,
+            userRole: "Owner, Hermano's Home Improvements",
+          },
+          {
+            id: 6,
+            userName: "John Croy",
+            profileImg: "/images/png/john-croy.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/L49D7VE_Usw?si=3I-iy97Au__yyywp",
+            isModal: true,
+            companyLogo: "/images/png/john-croy.png",
+            review: `"Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."`,
+            userRole: "Co-Owner, Ross Co. Home Pro's",
+          },
+        ],
+      },
+    },
+  ],
+};

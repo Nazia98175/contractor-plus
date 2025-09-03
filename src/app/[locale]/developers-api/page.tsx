@@ -35,7 +35,15 @@ const developersApiPage = () => {
           src={"/images/webp/large-combat.webp"}
           alt="large-combat"
         />
-        <PublicEndPoints />
+        <PublicEndPoints
+          title="Go beyond the public end points"
+          description="Need something bespoke? We have 400+ endpoints available to expose for enterprise customers and strategic integration partners. Tell us what you’re building and we’ll open the right doors."
+          freeTrialButtonText="View API Reference"
+          slackButtonText="Join us on Slack"
+          slackLinkText="Need help integrating?"
+          slackLinkHref="/"
+        />
+
         <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
       </div>
     </>

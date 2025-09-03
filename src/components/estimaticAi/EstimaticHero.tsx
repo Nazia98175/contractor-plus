@@ -119,7 +119,7 @@ const EstimaticHero = () => {
               src="/images/webp/estimatic-ai-hero.webp"
               alt="Estimatic AI software interface mockup"
             />
-            <div className="ai-blur absolute bottom-[-20%] left-0 h-[50%] w-full"></div>
+            <div className="ai-blur absolute bottom-[-30%] left-0 h-[80%] w-full"></div>
           </div>
         </CardReveal>
       </div>

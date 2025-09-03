@@ -7,6 +7,7 @@
   --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
   --font-work: "Work Sans", sans-serif;
+  --font-portar: "portar", sans-serif;
 
   /* COLORS */
   --color-secondary: #adb1b5;
@@ -298,6 +299,12 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: "Portar";
+  src: url("/fonts/porter-sans-inline-block.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 body {
   @apply bg-kuroiBlack font-jakarta relative isolate;
@@ -2048,4 +2055,42 @@ body.menu-open .back-to-top {
 }
 .gradient-line {
   background: radial-gradient(50% 8050% at 50% 50%, #999 0%, #0c0d11 100%);
+}
+.AffiliatesHero {
+  background: linear-gradient(
+    181deg,
+    rgba(238, 30, 37, 0.4) 38.31%,
+    rgba(238, 30, 37, 0) 134.59%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+.AffiliatesHeroBackground {
+  background: linear-gradient(
+    181deg,
+    rgba(238, 30, 37, 0.4) 38.31%,
+    rgba(238, 30, 37, 0) 134.59%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(40.5px);
+}
+.AffiliatesHero-subheading {
+  background: linear-gradient(
+    181deg,
+    rgba(238, 30, 37, 0.4) 38.31%,
+    rgba(238, 30, 37, 0) 134.59%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+}
+.AffiliatesHero-layers {
+  background: linear-gradient(270deg, rgba(12, 13, 17, 0) 0%, #0c0d11 100%);
 }

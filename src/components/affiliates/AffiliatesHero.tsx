@@ -1,0 +1,62 @@
+"use client";
+import Image from "next/image";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
+import FreeTrialButton from "../common/FreeTrialButton";
+import { RedClipIcon } from "../common/Icons";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+
+const AffiliatesHero = () => {
+  return (
+    <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
+      <div className="relative mx-auto flex w-full max-w-[876px] flex-col items-center justify-center px-2 pt-8 md:pt-0">
+        <CardReveal distance={30} delay={0.1}>
+          <div className="items-center justify-center">
+            <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+              Affiliate Program
+            </span>
+          </div>
+        </CardReveal>
+        <AdaptiveHeroTitle
+          title="You set ’em up. We knock ’em down.We split the bag."
+          className="developer-api-hero mb-4 w-full text-center leading-[140%] font-extrabold"
+          minFontSize={16}
+          maxLines={2}
+          maxFontSize={48}
+          textAnimation="home-page-view-port-screen-fetures"
+        />
+        <Copy delay={0.4} animateOnScroll={false}>
+          <p className="text-ashGray mx-auto mb-3 max-w-[826px] text-center text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
+            50% recurring revenue share for the life of every subscription. Fair
+            is 50/50.
+          </p>
+        </Copy>
+        <FreeTrialButton showIcon={true} text={"Apply to join"} />
+        <div className="relative pb-10">
+          <div className="relative text-[29px]">
+            <h4 className="font-portar AffiliatesHero mt-[70px] mb-1 text-center text-[65px]">
+              50/50
+              <p className="AffiliatesHeroBackground AffiliatesHeroBackground pointer-events-none absolute top-0 left-0 z-50 h-full w-full">
+                50/50
+              </p>
+            </h4>
+            <h5 className="AffiliatesHero-subheading font-portar text-center text-[29px]">
+              PARTNERSHIP
+            </h5>
+          </div>
+          <Image
+            src={"/images/webp/partnership-cash-hero.webp"}
+            alt="partnership-cash-hero"
+            width={600}
+            height={300}
+          />
+          <div className="AffiliatesHero-layers pointer-events-none absolute top-0 left-0 h-full w-[40%]"></div>
+          <div className="AffiliatesHero-layers pointer-events-none absolute top-0 right-0 h-full w-[40%] rotate-180"></div>
+          {/* <div className="AffiliatesHero-layers pointer-events-none absolute right-0 bottom-0 h-[40%] w-full"></div> */}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AffiliatesHero;

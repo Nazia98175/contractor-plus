@@ -121,20 +121,15 @@ const BuildRightNow = () => {
         maxFontSize={42}
         textAnimation="home-page-view-port-screen-fetures"
       />
-      <div className="grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:gap-x-4 lg:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-x-3 gap-y-6 md:gap-x-4">
         {buildCards.map((card, index) => {
-          const isLastSingle =
-            index === buildCards.length - 1 && buildCards.length % 3 === 1;
-
           return (
             <div
               key={index}
-              className={`flex w-full justify-between ${
-                isLastSingle ? "justify-center lg:col-span-3" : ""
-              }`}
+              className="900:w-[32%] flex w-full justify-between sm:w-[48%]"
             >
               {card?.leftLine && (
-                <div className="hidden lg:block">
+                <div className="900:block hidden">
                   <GradientLineIcon />
                 </div>
               )}
@@ -144,7 +139,7 @@ const BuildRightNow = () => {
                 features={card.features}
               />
               {card?.rightLine && (
-                <div className="hidden lg:block">
+                <div className="900:block hidden">
                   <GradientLineIcon />
                 </div>
               )}

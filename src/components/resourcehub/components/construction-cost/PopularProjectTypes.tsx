@@ -65,7 +65,7 @@ interface PopularProjectTypesProps {
   currentProjectSlug: string;
   cityName: string;
   currentLocation: string;
-  projectList: Project[];
+  projectList?: Project[];
 }
 
 // Project data with categories for better organization

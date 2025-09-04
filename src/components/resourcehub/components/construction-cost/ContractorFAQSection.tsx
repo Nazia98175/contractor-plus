@@ -32,7 +32,7 @@ interface ContractorFAQSectionProps {
   location: string;
   projectType: string;
   zipCode?: string;
-  projectValues: ProjectDetail;
+  projectValues?: ProjectDetail;
   response?: ThumbtackResponse;
   thumbtackLoading: boolean;
 }

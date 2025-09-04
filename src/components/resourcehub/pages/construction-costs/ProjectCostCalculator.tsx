@@ -58,7 +58,10 @@ import {
   Project,
 } from "@/services/resource/costCalculatorService";
 import { ProjectDetail } from "@/types/resources/projectDetail";
-import { getUserIp } from "@/services/resource/thumbtackService";
+import {
+  getUserIp,
+  searchThumbtackBusinesses,
+} from "@/services/resource/thumbtackService";
 import ThumbTackWidget from "../../components/ThumbTackWidget";
 import { estimaticDataApi } from "@/services/resource/constructionCostService";
 
@@ -158,7 +161,7 @@ const PROJECT_DATA: Record<string, ProjectData> = {};
 // }));
 
 // Configuration from the provided logic
-const DIRECT_MAP = {
+const DIRECT_MAP: Record<string, string> = {
   plumbing: "Plumbing",
   appliances: "Appliances",
   drywall: "Drywall",
@@ -201,7 +204,7 @@ const DIRECT_MAP = {
   gutter: "Roofing",
 };
 
-const REGEX_FALLBACK = [
+const REGEX_FALLBACK: [RegExp, string][] = [
   [/roof|gutter/i, "Roofing"],
   [/plumb/i, "Plumbing"],
   [/electrical?|outlet/i, "Electrical"],
@@ -226,7 +229,7 @@ const REGEX_FALLBACK = [
 ];
 
 // Function to map category to labor-category
-function mapLaborCategory(project) {
+function mapLaborCategory(project: any) {
   // const estimateKey = Object.keys(project.estimate)[0];
   //     const rawCategory = project.estimate[estimateKey]?.category || "";
   const src = project.laborRateIndexCategory?.toLowerCase().trim();
@@ -367,7 +370,7 @@ const ProjectCostCalculator = ({
       userQuery: matchedThumbtack.projectName,
     };
 
-    if (isZipCodeManuallyChanged && zipCodeValue.length === 5) {
+    if (isZipCodeManuallyChanged && zipCodeValue?.length === 5) {
       return { ...basePayload, zipCode: zipCodeValue };
     }
 
@@ -386,6 +389,7 @@ const ProjectCostCalculator = ({
   } = useQuery({
     queryKey: ["thumbtackGetQuote", payload, location],
     queryFn: async () => {
+      if (!payload) return;
       const data = await searchThumbtackBusinesses(payload);
       return {
         data: data?.data,

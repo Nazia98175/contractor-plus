@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { CalendarDays, TrendingUp, LineChart } from "lucide-react";
-import { Industry, FilterState, State } from "@/types";
 
 import {
   Area,
@@ -19,9 +18,11 @@ import { laborForecastApi } from "@/services/resource/laborService";
 import { cn } from "@/app/lib/utils";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
+import { FilterState, Industry } from "@/types/resources";
+import { State } from "@/types";
 
 interface ForecastChartProps {
-  forecastData: any[];
+  forecastData?: any[];
   className?: string;
   filters?: FilterState;
   industries?: Industry[];
@@ -293,7 +294,15 @@ const ForecastChart = ({
                           </svg>
                         );
                       }
-                      return null;
+                      return (
+                        <circle
+                          cx={cx}
+                          cy={cy}
+                          r={0}
+                          fill="transparent"
+                          stroke="transparent"
+                        />
+                      );
                     }}
                   />
                 </AreaChart>

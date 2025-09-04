@@ -1,12 +1,11 @@
 import ConstructionCashFlowForecaster from "@/components/resourcehub/pages/project-planning/ConstructionCashFlowForecaster";
-import React from "react";
 
-const page = () => {
+const ConstructionCashFlowForecasterPage = () => {
   return (
-    <div>
+    <>
       <ConstructionCashFlowForecaster />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ConstructionCashFlowForecasterPage;

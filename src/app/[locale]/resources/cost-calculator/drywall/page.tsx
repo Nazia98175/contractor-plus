@@ -1,12 +1,11 @@
 import DrywallCalculator from "@/components/resourcehub/pages/calculators/DrywallCalculator";
-import React from "react";
 
-const page = () => {
+const DrywallCalculatorPage = () => {
   return (
-    <div>
+    <>
       <DrywallCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default DrywallCalculatorPage;

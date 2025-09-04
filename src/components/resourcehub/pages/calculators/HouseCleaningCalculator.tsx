@@ -168,7 +168,7 @@ export default function HouseCleaningCalculator() {
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
-        className="mb-6 flex items-center gap-1 hover:text-red-600"
+        className="mb-6 flex items-center gap-1 hover:text-red-500"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -178,7 +178,7 @@ export default function HouseCleaningCalculator() {
       <div className="mb-8">
         <div className="mb-2 flex items-center gap-3">
           <div className="rounded-full bg-red-100 p-2">
-            <Brush className="h-6 w-6 text-red-600" />
+            <Brush className="h-6 w-6 text-red-500" />
           </div>
           <h1 className="text-3xl font-bold">House Cleaning Calculator</h1>
         </div>
@@ -508,11 +508,9 @@ export default function HouseCleaningCalculator() {
         {/* Right side - Results & Information */}
         <div className="lg:col-span-5">
           {/* Results Card */}
-          <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
-            <CardHeader className="border-stiletto border-b">
-              <CardTitle className="text-xl text-red-500">
-                Calculation Results
-              </CardTitle>
+          <Card className="border-stiletto bg-shutter mb-8 overflow-hidden border-2 shadow-md">
+            <CardHeader className="bo bg-red-500">
+              <CardTitle className="text-xl">Calculation Results</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               {calculationResult !== null && (
@@ -561,7 +559,7 @@ export default function HouseCleaningCalculator() {
               )}
             </CardContent>
             <CardFooter className="border-stiletto flex justify-center border-t pt-2">
-              <p className="text-center text-xs text-gray-500">
+              <p className="text-decemberSky text-center text-xs">
                 Note: All estimates are approximate and may vary based on
                 specific cleaning requirements.
               </p>
@@ -576,7 +574,7 @@ export default function HouseCleaningCalculator() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-alice mb-4">
+              <p className="text-decemberSky mb-4">
                 Streamline your cleaning business with professional scheduling,
                 invoicing, and client management. Create detailed proposals that
                 win you more jobs.

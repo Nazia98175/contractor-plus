@@ -40,7 +40,7 @@ export function EducationalContent() {
 
       <div className="prose max-w-none">
         <h2 className="mb-4 flex items-center gap-2 text-2xl font-semibold">
-          <Ruler className="h-6 w-6 text-red-600" />
+          <Ruler className="h-6 w-6 text-red-500" />
           About Roof Square Footage Calculations
         </h2>
         <p className="text-decemberSky">
@@ -55,7 +55,7 @@ export function EducationalContent() {
             <CardContent className="p-6">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-                  <Home className="h-5 w-5 text-red-600" />
+                  <Home className="h-5 w-5 text-red-500" />
                 </div>
                 <h3 className="text-lg font-medium">
                   How Roof Square Footage is Calculated
@@ -74,7 +74,7 @@ export function EducationalContent() {
             <CardContent className="p-6">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-                  <HardHat className="h-5 w-5 text-red-600" />
+                  <HardHat className="h-5 w-5 text-red-500" />
                 </div>
                 <h3 className="text-lg font-medium">
                   Why Accurate Measurements Matter
@@ -82,17 +82,17 @@ export function EducationalContent() {
               </div>
               <ul className="text-alice space-y-2">
                 <li className="flex items-start gap-2">
-                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                   <span>
                     Order the right amount of materials, reducing waste
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                   <span>Provide precise estimates to clients</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                   <span>Plan labor requirements more effectively</span>
                 </li>
               </ul>
@@ -104,7 +104,7 @@ export function EducationalContent() {
           <h3 className="mb-4 text-xl font-medium">Commonly Asked Questions</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-stiletto border-b">
-              <AccordionTrigger className="text-lg font-medium hover:text-red-600">
+              <AccordionTrigger className="text-lg font-medium hover:text-red-500">
                 Understanding Roof Pitch
               </AccordionTrigger>
               <AccordionContent className="text-decemberSky">
@@ -125,7 +125,7 @@ export function EducationalContent() {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border-stiletto border-b">
-              <AccordionTrigger className="text-lg font-medium hover:text-red-600">
+              <AccordionTrigger className="text-lg font-medium hover:text-red-500">
                 What is a Roofing Square?
               </AccordionTrigger>
               <AccordionContent className="text-decemberSky">
@@ -144,7 +144,7 @@ export function EducationalContent() {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border-stiletto border-b">
-              <AccordionTrigger className="text-lg font-medium hover:text-red-600">
+              <AccordionTrigger className="text-lg font-medium hover:text-red-500">
                 Tips for More Accurate Measurements
               </AccordionTrigger>
               <AccordionContent className="text-decemberSky">
@@ -173,7 +173,7 @@ export function EducationalContent() {
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm">
-              <h4 className="mb-2 font-medium text-red-600">
+              <h4 className="mb-2 font-medium text-red-500">
                 Add Waste Factor
               </h4>
               <p className="text-alice text-sm">
@@ -182,14 +182,14 @@ export function EducationalContent() {
               </p>
             </div>
             <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm">
-              <h4 className="mb-2 font-medium text-red-600">Complex Roofs</h4>
+              <h4 className="mb-2 font-medium text-red-500">Complex Roofs</h4>
               <p className="text-alice text-sm">
                 For roofs with multiple sections, calculate each part separately
                 and add them together.
               </p>
             </div>
             <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm">
-              <h4 className="mb-2 font-medium text-red-600">
+              <h4 className="mb-2 font-medium text-red-500">
                 Consider Accessories
               </h4>
               <p className="text-alice text-sm">

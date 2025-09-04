@@ -53,7 +53,7 @@ export function CalculationResult({
 
   return (
     <Card className="mb-6">
-      <CardHeader className="rounded-t-lg border-b border-red-100 bg-red-50">
+      <CardHeader className="rounded-t-lg bg-red-500">
         <CardTitle>Flooring Estimate Results</CardTitle>
         <CardDescription>
           Detailed breakdown of your flooring project costs
@@ -83,9 +83,9 @@ export function CalculationResult({
             <span>{formatCurrency(calculationResult.additionalCosts)}</span>
           </div>
 
-          <div className="mt-4 flex justify-between rounded bg-red-50 p-2 py-2">
+          <div className="mt-4 flex justify-between gap-5 rounded p-2 py-2">
             <span className="font-semibold">Total Flooring Project Cost:</span>
-            <span className="text-xl font-bold">
+            <span className="text-xl font-bold text-red-500">
               {formatCurrency(calculationResult.totalCost)}
             </span>
           </div>

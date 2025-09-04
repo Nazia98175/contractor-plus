@@ -1,12 +1,11 @@
 import SubcontractorAgreement from "@/components/resourcehub/pages/contract-templates/SubcontractorAgreement";
-import React from "react";
 
-const page = () => {
+const SubcontractorAgreementPage = () => {
   return (
-    <div>
+    <>
       <SubcontractorAgreement />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default SubcontractorAgreementPage;

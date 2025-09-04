@@ -422,14 +422,17 @@ const ConstructionCosts = () => {
                 <div className="space-y-1">
                   {CATEGORIES.map((category) => {
                     const Icon = category.icon;
+                    const isActive = selectedCategory === category.name;
+
                     return (
                       <button
                         key={category.id}
                         onClick={() => setSelectedCategory(category.name)}
                         className={cn(
-                          "hover:bg-muted/50 flex w-full items-center gap-3 px-4 py-3 text-left transition-colors",
-                          selectedCategory === category.name &&
-                            "border-r-2 border-red-600 bg-red-50 text-red-700",
+                          "flex w-full items-center gap-3 px-4 py-3 text-left transition-colors",
+                          isActive
+                            ? "border-r-2 border-red-600 bg-red-50 text-red-700"
+                            : "hover:bg-red-500",
                         )}
                       >
                         <Icon className="h-4 w-4" />
@@ -495,7 +498,7 @@ const ConstructionCosts = () => {
 
         {/* Bottom CTA Section */}
         <div className="mt-16 text-center">
-          <Card className="border-red-100 bg-gradient-to-r from-red-50 to-orange-50">
+          <Card className="bg-shutter border-stiletto border">
             <CardContent className="p-8">
               <h2 className="mb-4 text-2xl font-bold">
                 The only OS for build and service contractors
@@ -508,7 +511,6 @@ const ConstructionCosts = () => {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Button
                   size="lg"
-                  className="bg-red-600 hover:bg-red-700"
                   onClick={() =>
                     window.open(
                       "https://contractorplus.onelink.me/ekwH/homebuttons?pid=web&utm_source=web&utm_medium=resources&utm_campaign=constructioncosts&utm_content=main-page&deep_link_value=construction-costs",
@@ -522,7 +524,7 @@ const ConstructionCosts = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-red-300 text-red-600 hover:bg-red-50"
+                  className="border-red-500 text-red-400 hover:bg-red-500 hover:text-white"
                   onClick={() =>
                     window.open("https://contractorplus.app", "_blank")
                   }

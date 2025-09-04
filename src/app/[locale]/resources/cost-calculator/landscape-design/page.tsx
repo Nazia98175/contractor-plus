@@ -1,12 +1,11 @@
 import LandscapeDesignCalculator from "@/components/resourcehub/pages/calculators/LandscapeDesignCalculator";
-import React from "react";
 
-const page = () => {
+const LandscapeDesignCalculatorPage = () => {
   return (
-    <div>
+    <>
       <LandscapeDesignCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default LandscapeDesignCalculatorPage;

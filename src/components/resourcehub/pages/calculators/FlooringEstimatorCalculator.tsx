@@ -72,7 +72,7 @@ export default function FlooringEstimatorCalculator() {
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
-        className="mb-6 flex items-center gap-1 hover:text-red-600"
+        className="mb-6 flex items-center gap-1 hover:text-red-500"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -100,7 +100,7 @@ export default function FlooringEstimatorCalculator() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-alice mb-4">
+              <p className="text-decemberSky mb-4">
                 Contractor+ empowers flooring contractors to calculate materials
                 (including waste) and labor costs in a snap. Create
                 comprehensive flooring quotes, order the right amount of

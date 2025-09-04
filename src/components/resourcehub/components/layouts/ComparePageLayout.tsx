@@ -91,7 +91,7 @@ export const ComparePageLayout = ({
           <div className="text-left">
             <div className="mb-2 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 shadow-sm">
-                <CirclePercent className="h-6 w-6 text-red-600" />
+                <CirclePercent className="h-6 w-6 text-red-500" />
               </div>
               <h1 className="text-3xl font-bold">
                 Material Price Comparison Tool

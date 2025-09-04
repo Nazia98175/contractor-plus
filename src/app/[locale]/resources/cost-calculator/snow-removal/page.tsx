@@ -1,12 +1,11 @@
 import SnowRemovalCalculator from "@/components/resourcehub/pages/calculators/SnowRemovalCalculator";
-import React from "react";
 
-const page = () => {
+const SnowRemovalCalculatorPage = () => {
   return (
-    <div>
+    <>
       <SnowRemovalCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default SnowRemovalCalculatorPage;

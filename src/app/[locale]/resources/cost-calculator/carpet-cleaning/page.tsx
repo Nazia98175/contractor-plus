@@ -1,11 +1,11 @@
 import CarpetCleaningCalculator from "@/components/resourcehub/pages/calculators/CarpetCleaningCalculator";
 
-const page = () => {
+const CarpetCleaningCalculatorPage = () => {
   return (
-    <div>
+    <>
       <CarpetCleaningCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default CarpetCleaningCalculatorPage;

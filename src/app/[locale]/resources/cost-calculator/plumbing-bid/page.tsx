@@ -1,12 +1,11 @@
 import PlumbingBidCalculator from "@/components/resourcehub/pages/calculators/PlumbingBidCalculator";
-import React from "react";
 
-const page = () => {
+const PlumbingBidCalculatorPage = () => {
   return (
-    <div>
+    <>
       <PlumbingBidCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default PlumbingBidCalculatorPage;

@@ -1,12 +1,11 @@
 import StandardConstructionAgreement from "@/components/resourcehub/pages/contract-templates/StandardConstructionAgreement";
-import React from "react";
 
-const page = () => {
+const StandardConstructionAgreementPage = () => {
   return (
-    <div>
+    <>
       <StandardConstructionAgreement />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default StandardConstructionAgreementPage;

@@ -104,7 +104,7 @@ export function EducationalContent() {
 
       <div className="bg-shutter mb-10 rounded-lg p-6">
         <h3 className="mb-3 flex items-center text-lg font-medium">
-          <Calculator className="mr-2 h-5 w-5 text-red-600" /> Common
+          <Calculator className="mr-2 h-5 w-5 text-red-500" /> Common
           Electrician Rate Mistakes
         </h3>
         <ul className="space-y-2 text-sm">

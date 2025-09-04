@@ -97,7 +97,7 @@ export function EducationalContent() {
           <p className="text-alice mb-3">
             For accurate estimates, follow these guidelines:
           </p>
-          <ul className="text-alice mb-4 space-y-2">
+          <ul className="text-decemberSky mb-4 space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                 <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>

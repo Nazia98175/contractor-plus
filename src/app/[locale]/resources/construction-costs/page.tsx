@@ -1,12 +1,11 @@
 import ConstructionCosts from "@/components/resourcehub/pages/ConstructionCosts";
-import React from "react";
 
-const page = () => {
+const ContsructionCost = () => {
   return (
-    <div>
+    <>
       <ConstructionCosts />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ContsructionCost;

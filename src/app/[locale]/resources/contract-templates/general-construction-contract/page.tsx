@@ -1,12 +1,11 @@
 import GeneralConstructionContract from "@/components/resourcehub/pages/contract-templates/GeneralConstructionContract";
-import React from "react";
 
-const page = () => {
+const GeneralConstructionContractPage = () => {
   return (
-    <div>
+    <>
       <GeneralConstructionContract />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default GeneralConstructionContractPage;

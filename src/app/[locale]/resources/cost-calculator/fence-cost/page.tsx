@@ -1,11 +1,11 @@
 import FenceCostCalculator from "@/components/resourcehub/pages/calculators/FenceCostCalculator";
 
-const page = () => {
+const FenceCostCalculatorPage = () => {
   return (
-    <div>
+    <>
       <FenceCostCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default FenceCostCalculatorPage;

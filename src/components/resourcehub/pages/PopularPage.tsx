@@ -41,7 +41,7 @@ const PopularPage = () => {
             <BreadcrumbItem>
               <BreadcrumbLink
                 href="/"
-                className="text-sm font-medium text-gray-700 hover:text-red-500"
+                className="text-alice text-sm font-medium hover:text-red-500"
               >
                 Resources
               </BreadcrumbLink>
@@ -50,7 +50,7 @@ const PopularPage = () => {
             <BreadcrumbItem>
               <BreadcrumbLink
                 href="/compare"
-                className="text-sm font-medium text-gray-700 hover:text-red-500"
+                className="text-alice text-sm font-medium hover:text-red-500"
               >
                 Material Comparison Search
               </BreadcrumbLink>

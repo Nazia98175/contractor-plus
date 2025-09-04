@@ -47,7 +47,7 @@ export function CalculationResult({
           <h3 className="text-alice text-lg font-medium">
             Drywall Sheets Needed
           </h3>
-          <p className="my-2 text-4xl font-bold text-red-600">
+          <p className="my-2 text-4xl font-bold text-red-500">
             {sheetsNeeded} sheets
           </p>
           <p className="text-sm">{`${sheetWidthLength} ft sheets`}</p>
@@ -60,7 +60,7 @@ export function CalculationResult({
               <h3 className="text-alice text-lg font-medium">
                 Total Material Cost
               </h3>
-              <p className="my-2 text-4xl font-bold text-red-600">
+              <p className="my-2 text-4xl font-bold text-red-500">
                 ${totalCost.toFixed(2)}
               </p>
             </div>

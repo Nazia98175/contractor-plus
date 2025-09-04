@@ -1,12 +1,11 @@
 import ExcavationCalculator from "@/components/resourcehub/pages/calculators/ExcavationCalculator";
-import React from "react";
 
-const page = () => {
+const ExcavationCalculatorPage = () => {
   return (
-    <div>
+    <>
       <ExcavationCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ExcavationCalculatorPage;

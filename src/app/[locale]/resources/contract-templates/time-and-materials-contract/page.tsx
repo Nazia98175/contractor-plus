@@ -1,12 +1,11 @@
 import TimeAndMaterialsContract from "@/components/resourcehub/pages/contract-templates/TimeAndMaterialsContract";
-import React from "react";
 
-const page = () => {
+const TimeAndMaterialsContractPage = () => {
   return (
-    <div>
+    <>
       <TimeAndMaterialsContract />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default TimeAndMaterialsContractPage;

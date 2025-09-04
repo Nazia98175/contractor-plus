@@ -719,7 +719,7 @@ const ProjectCostCalculator = ({
                 {/* Materials Section */}
                 <div>
                   <div className="mb-4 flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-red-600">
+                    <h3 className="text-lg font-semibold text-red-500">
                       ✓ Materials
                     </h3>
                     <span className="font-semibold">
@@ -843,7 +843,7 @@ const ProjectCostCalculator = ({
                 <div>
                   <div className="mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-semibold text-red-600">
+                      <h3 className="text-lg font-semibold text-red-500">
                         ✓ Labor
                       </h3>
                       <TooltipProvider>
@@ -1009,7 +1009,7 @@ const ProjectCostCalculator = ({
                 ) : (
                   <>
                     <div className="mb-6 text-center">
-                      <div className="mb-2 text-3xl font-bold text-red-600">
+                      <div className="mb-2 text-3xl font-bold text-red-500">
                         {formatCurrency(totalCost)}
                       </div>
                       <p className="text-aliceBlue text-sm">

@@ -1,12 +1,11 @@
 import PunchListCompletionAgreement from "@/components/resourcehub/pages/contract-templates/PunchListCompletionAgreement";
-import React from "react";
 
-const page = () => {
+const PunchListCompletionAgreementPage = () => {
   return (
-    <div>
+    <>
       <PunchListCompletionAgreement />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default PunchListCompletionAgreementPage;

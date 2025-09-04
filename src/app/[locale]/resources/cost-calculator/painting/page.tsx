@@ -1,12 +1,11 @@
 import PaintingCalculator from "@/components/resourcehub/pages/calculators/PaintingCalculator";
-import React from "react";
 
-const page = () => {
+const PaintingCalculatorPage = () => {
   return (
-    <div>
+    <>
       <PaintingCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default PaintingCalculatorPage;

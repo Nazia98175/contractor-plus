@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 const CostCalculatorPage = () => {
   return (
-    <div>
+    <>
       <CalculatorsPage />
-    </div>
+    </>
   );
 };
 

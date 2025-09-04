@@ -23,7 +23,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
     <Card className="border-stiletto bg-shutter mb-6 border-2 shadow-md">
       <CardHeader className="border-b border-red-100 bg-red-50">
         <CardTitle className="flex items-center text-lg text-red-800">
-          <Receipt className="mr-2 h-5 w-5 text-red-600" />
+          <Receipt className="mr-2 h-5 w-5 text-red-500" />
           Bid Results
         </CardTitle>
       </CardHeader>
@@ -47,10 +47,10 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <Separator className="my-4" />
 
         <div className="space-y-2 text-sm">
-          <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
+          <h4 className="text-alice font-medium">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Labor Cost</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               $
               {result.laborCost.toLocaleString("en-US", {
                 minimumFractionDigits: 0,
@@ -60,7 +60,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Total Cost (Subtotal)</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               $
               {result.subtotalCost.toLocaleString("en-US", {
                 minimumFractionDigits: 0,
@@ -81,7 +81,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         </div>
       </CardContent>
       <CardFooter className="flex justify-center border-t border-red-100 bg-red-50">
-        <p className="text-center text-xs text-gray-500">
+        <p className="text-decemberSky text-center text-xs">
           This is an estimate based on your inputs. Verify all costs before
           submitting your final bid.
         </p>

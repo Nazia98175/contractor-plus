@@ -128,7 +128,7 @@ export default function HvacCfmCalculator() {
             <h3 className="mb-2 text-xl font-semibold">
               Precision HVAC Calculations
             </h3>
-            <p className="text-alice mb-4">
+            <p className="text-decemberSky mb-4">
               Get access to more advanced HVAC calculators, client management
               tools, and job scheduling with Contractor+.
             </p>

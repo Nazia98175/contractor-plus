@@ -55,7 +55,7 @@ export function EducationalContent() {
             <h3 className="mb-4 text-xl font-semibold">
               Calculating Area Properly
             </h3>
-            <p className="text-alice mb-4 leading-relaxed">
+            <p className="text-decemberSky mb-4 leading-relaxed">
               To accurately calculate the total area, measure each wall's height
               and width, then multiply to get the square footage. For a 10' x
               10' room with 8' ceilings, the wall area would be: (10' + 10' +
@@ -157,7 +157,7 @@ export function EducationalContent() {
             <h3 className="mb-4 text-xl font-semibold">
               Additional Materials to Consider
             </h3>
-            <p className="text-alice mb-4 leading-relaxed">
+            <p className="text-decemberSky mb-4 leading-relaxed">
               While this calculator focuses on drywall sheets, don't forget
               these other essential materials:
             </p>

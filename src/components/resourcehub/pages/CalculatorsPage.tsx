@@ -124,7 +124,7 @@ export default function CalculatorsPage() {
         <div>
           <div className="mb-2 flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-              <Calculator className="h-5 w-5 text-red-600" />
+              <Calculator className="h-5 w-5 text-red-500" />
             </div>
             <h1 className="text-3xl font-bold tracking-tight">
               Construction Calculators

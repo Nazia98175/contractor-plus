@@ -18,7 +18,7 @@ export function PageHeader() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources"
-                className="text-sm font-medium hover:text-red-600"
+                className="text-sm font-medium hover:text-red-500"
               >
                 Resources
               </Link>
@@ -29,7 +29,7 @@ export function PageHeader() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources/cost-calculator"
-                className="text-sm font-medium hover:text-red-600"
+                className="text-sm font-medium hover:text-red-500"
               >
                 Calculators
               </Link>
@@ -46,7 +46,7 @@ export function PageHeader() {
 
       <div className="mb-3 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-          <Building className="h-5 w-5 text-red-600" />
+          <Building className="h-5 w-5 text-red-500" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight">
           Commercial Space Cleaning Calculator

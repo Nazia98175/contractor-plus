@@ -61,10 +61,10 @@ export default function LandscapeDesignCalculator() {
           <CalculatorForm onCalculate={handleCalculate} />
 
           <div className="border-stiletto bg-shutter/60 mt-8 rounded-lg border p-4">
-            <h3 className="mb-2 text-base font-medium text-red-600">
+            <h3 className="mb-2 text-base font-medium text-red-500">
               Design, build, and impress – and let us handle the math.
             </h3>
-            <p className="text-sm text-red-500">
+            <p className="text-decemberSky text-sm">
               Contractor+ helps landscape designers and contractors estimate
               both design and installation costs effortlessly. Create beautiful
               outdoor spaces with the confidence that you've priced them right.

@@ -70,7 +70,7 @@ export default function RoofSquareFootageCalculator() {
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
-                  <Calculator className="h-4 w-4 text-red-600" />
+                  <Calculator className="h-4 w-4 text-red-500" />
                 </div>
                 <h2 className="text-lg font-semibold">Calculate Roof Area</h2>
               </div>
@@ -123,7 +123,7 @@ export default function RoofSquareFootageCalculator() {
 
                 <div className="border-stiletto w-full rounded-md border p-4">
                   <div className="flex gap-2">
-                    <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+                    <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                     <p className="text-discoBall text-sm">
                       This calculator works best for simple gable roofs. For
                       complex roofs with multiple sections, calculate each

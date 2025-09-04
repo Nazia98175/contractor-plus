@@ -1,12 +1,11 @@
 import MultiServiceJobEstimator from "@/components/resourcehub/pages/calculators/MultiServiceJobEstimator";
-import React from "react";
 
-const page = () => {
+const MultiServiceJobEstimatorPage = () => {
   return (
-    <div>
+    <>
       <MultiServiceJobEstimator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default MultiServiceJobEstimatorPage;

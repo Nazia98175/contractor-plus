@@ -1,12 +1,11 @@
 import ContractTemplatesPage from "@/components/resourcehub/pages/ContractTemplatesPage";
-import React from "react";
 
-const page = () => {
+const ContractTemplates = () => {
   return (
-    <div>
+    <>
       <ContractTemplatesPage />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ContractTemplates;

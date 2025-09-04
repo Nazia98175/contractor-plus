@@ -1,12 +1,11 @@
 import MarginCalculator from "@/components/resourcehub/pages/calculators/MarginCalculator";
-import React from "react";
 
-const page = () => {
+const MarginCalculatorPage = () => {
   return (
-    <div>
+    <>
       <MarginCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default MarginCalculatorPage;

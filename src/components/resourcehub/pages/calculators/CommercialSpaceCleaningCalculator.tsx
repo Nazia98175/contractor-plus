@@ -117,7 +117,7 @@ export default function CommercialSpaceCleaningCalculator() {
 
                 <div className="border-stiletto w-full rounded-md border p-4">
                   <div className="flex gap-2">
-                    <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+                    <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                     <p className="text-sm">
                       Accurate estimates require detailed measurements and
                       specific rates for your cleaning services.

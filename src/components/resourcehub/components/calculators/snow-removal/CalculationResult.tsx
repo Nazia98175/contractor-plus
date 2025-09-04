@@ -56,11 +56,11 @@ export function CalculationResult({ result }: CalculationResultProps) {
                 </div>
               )}
 
-              <div className="my-2 border-t border-gray-200"></div>
+              <div className="border-decemberSky my-2 border-t"></div>
 
               <div className="text-md mt-2 flex items-center justify-between font-semibold">
                 <span>Total Charge:</span>
-                <span className="text-xl font-bold text-red-600">
+                <span className="text-xl font-bold text-red-500">
                   {formatCurrency(totalCharge)}
                 </span>
               </div>
@@ -68,10 +68,10 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
 
           <div className="border-stiletto bg-shutter rounded-lg border p-4">
-            <h4 className="mb-2 font-medium text-blue-800">
+            <h4 className="mb-2 font-medium text-blue-500">
               Pricing Breakdown
             </h4>
-            <ul className="space-y-1 text-sm text-gray-700">
+            <ul className="space-y-1 text-sm">
               <li className="flex justify-between">
                 <span>Base Snow Removal Up To {includedDepth} inches:</span>
                 <span>{formatCurrency(baseRate)}</span>
@@ -94,8 +94,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="border-stiletto bg-shutter borderp-4 rounded-lg">
             <div className="flex items-start gap-2">
-              <Snowflake className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
-              <p className="text-sm text-gray-700">
+              <Snowflake className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
+              <p className="text-sm">
                 Keep your winter income predictable. Use Contractor+ to manage
                 your snow removal contracts – from calculating fair prices for
                 monster snowfalls to scheduling recurring plow routes.

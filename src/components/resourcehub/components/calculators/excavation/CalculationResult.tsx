@@ -18,7 +18,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
   const formattedCost = cost.toFixed(0);
 
   return (
-    <Card className="border-red-100 bg-red-50">
+    <Card className="border-stiletto">
       <CardHeader className="pb-2">
         <CardTitle className="text-lg">Excavation Result</CardTitle>
       </CardHeader>

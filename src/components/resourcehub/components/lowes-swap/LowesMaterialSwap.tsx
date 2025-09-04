@@ -229,7 +229,7 @@ export const LowesMaterialSwap = ({
 
           {/* Current Selection */}
           {swappedMaterial && (
-            <div className="mb-6 rounded-xl border border-green-200 bg-green-50 p-4">
+            <div className="mb-6 rounded-xl border p-4">
               <div className="mb-3 flex items-center justify-between">
                 <h3 className="flex items-center gap-2 font-semibold text-green-800">
                   <div className="h-2 w-2 rounded-full bg-green-500"></div>

@@ -58,232 +58,255 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   };
 
   return (
-    <Card className="border-stiletto bg-shutter border shadow-sm">
-      <CardContent className="p-6">
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="facilitySize" className="text-base font-medium">
-                  Facility Size (sq ft)
-                </Label>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
-                        <Info className="h-4 w-4 text-gray-500" />
-                        <span className="sr-only">Info</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p>
-                        The total area of the commercial space that needs
-                        cleaning. This might be an office, retail store, or
-                        other commercial facility. Use the total square footage
-                        that will be cleaned (including hallways, office space,
-                        etc.).
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
+      <CardContent className="h-full p-6">
+        <form onSubmit={handleSubmit} className="h-full">
+          <div className="flex h-full flex-col space-y-4">
+            <div className="flex flex-grow flex-col">
+              {" "}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label
+                    htmlFor="facilitySize"
+                    className="text-base font-medium"
+                  >
+                    Facility Size (sq ft)
+                  </Label>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 w-7 p-0"
+                        >
+                          <Info className="h-4 w-4 text-gray-500" />
+                          <span className="sr-only">Info</span>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p>
+                          The total area of the commercial space that needs
+                          cleaning. This might be an office, retail store, or
+                          other commercial facility. Use the total square
+                          footage that will be cleaned (including hallways,
+                          office space, etc.).
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <Input
+                  id="facilitySize"
+                  type="number"
+                  placeholder="e.g. 5000"
+                  min={0}
+                  step="any"
+                  value={facilitySize || ""}
+                  onChange={(e) =>
+                    setFacilitySize(
+                      e.target.value ? parseFloat(e.target.value) : undefined,
+                    )
+                  }
+                  className="w-full"
+                />
               </div>
-              <Input
-                id="facilitySize"
-                type="number"
-                placeholder="e.g. 5000"
-                min={0}
-                step="any"
-                value={facilitySize || ""}
-                onChange={(e) =>
-                  setFacilitySize(
-                    e.target.value ? parseFloat(e.target.value) : undefined,
-                  )
-                }
-                className="w-full"
-              />
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label
+                    htmlFor="ratePerSqFt"
+                    className="text-base font-medium"
+                  >
+                    Rate per sq ft ($)
+                  </Label>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 w-7 p-0"
+                        >
+                          <Info className="h-4 w-4 text-gray-500" />
+                          <span className="sr-only">Info</span>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p>
+                          Your base cleaning charge per square foot for a
+                          one-time service. Commercial cleaning often is priced
+                          in cents per sq ft. For example, $0.10/ft² means 10
+                          cents per sq ft. Use a rate reflective of the service
+                          (light cleaning might be $0.05, deep cleaning might be
+                          $0.15, etc.).
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <Input
+                  id="ratePerSqFt"
+                  type="number"
+                  placeholder="e.g. 0.10"
+                  min={0}
+                  step="0.01"
+                  value={ratePerSqFt || ""}
+                  onChange={(e) =>
+                    setRatePerSqFt(
+                      e.target.value ? parseFloat(e.target.value) : undefined,
+                    )
+                  }
+                  className="w-full"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label
+                    htmlFor="numberOfRestrooms"
+                    className="text-base font-medium"
+                  >
+                    Number of Restrooms
+                  </Label>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 w-7 p-0"
+                        >
+                          <Info className="h-4 w-4 text-gray-500" />
+                          <span className="sr-only">Info</span>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p>
+                          How many restrooms are being cleaned. Bathrooms
+                          usually require extra work (toilets, mirrors,
+                          replenishing soap/paper).
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <Input
+                  id="numberOfRestrooms"
+                  type="number"
+                  placeholder="e.g. 3"
+                  min={0}
+                  value={numberOfRestrooms || ""}
+                  onChange={(e) =>
+                    setNumberOfRestrooms(
+                      e.target.value ? parseInt(e.target.value) : undefined,
+                    )
+                  }
+                  className="w-full"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label
+                    htmlFor="extraCostPerRestroom"
+                    className="text-base font-medium"
+                  >
+                    Extra Cost per Restroom ($)
+                  </Label>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 w-7 p-0"
+                        >
+                          <Info className="h-4 w-4 text-gray-500" />
+                          <span className="sr-only">Info</span>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p>
+                          An additional charge per restroom to account for the
+                          extra time and supplies (cleaning toilets, urinals,
+                          sinks, stocking toilet paper, etc.). For instance, you
+                          might add $15 for each restroom on top of the base sq
+                          ft price. If your sq ft rate already factors
+                          bathrooms, you can leave this 0.
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <Input
+                  id="extraCostPerRestroom"
+                  type="number"
+                  placeholder="e.g. 15"
+                  min={0}
+                  step="0.01"
+                  value={extraCostPerRestroom || ""}
+                  onChange={(e) =>
+                    setExtraCostPerRestroom(
+                      e.target.value ? parseFloat(e.target.value) : undefined,
+                    )
+                  }
+                  className="w-full"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label
+                    htmlFor="additionalServices"
+                    className="text-base font-medium"
+                  >
+                    Additional Services ($)
+                  </Label>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 w-7 p-0"
+                        >
+                          <Info className="h-4 w-4 text-gray-500" />
+                          <span className="sr-only">Info</span>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p>
+                          Any extra tasks or services not covered by the
+                          standard floor-space rate. For example, if you're also
+                          cleaning interior windows, doing a one-time deep
+                          disinfection, or shampooing carpets, include the
+                          charge for those here. If none, enter 0.
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <Input
+                  id="additionalServices"
+                  type="number"
+                  placeholder="e.g. 50"
+                  min={0}
+                  step="0.01"
+                  value={additionalServices || ""}
+                  onChange={(e) =>
+                    setAdditionalServices(
+                      e.target.value ? parseFloat(e.target.value) : undefined,
+                    )
+                  }
+                  className="w-full"
+                />
+              </div>
+              {validationError && (
+                <p className="text-sm text-red-500">{validationError}</p>
+              )}
             </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="ratePerSqFt" className="text-base font-medium">
-                  Rate per sq ft ($)
-                </Label>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
-                        <Info className="h-4 w-4 text-gray-500" />
-                        <span className="sr-only">Info</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p>
-                        Your base cleaning charge per square foot for a one-time
-                        service. Commercial cleaning often is priced in cents
-                        per sq ft. For example, $0.10/ft² means 10 cents per sq
-                        ft. Use a rate reflective of the service (light cleaning
-                        might be $0.05, deep cleaning might be $0.15, etc.).
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-              <Input
-                id="ratePerSqFt"
-                type="number"
-                placeholder="e.g. 0.10"
-                min={0}
-                step="0.01"
-                value={ratePerSqFt || ""}
-                onChange={(e) =>
-                  setRatePerSqFt(
-                    e.target.value ? parseFloat(e.target.value) : undefined,
-                  )
-                }
-                className="w-full"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label
-                  htmlFor="numberOfRestrooms"
-                  className="text-base font-medium"
-                >
-                  Number of Restrooms
-                </Label>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
-                        <Info className="h-4 w-4 text-gray-500" />
-                        <span className="sr-only">Info</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p>
-                        How many restrooms are being cleaned. Bathrooms usually
-                        require extra work (toilets, mirrors, replenishing
-                        soap/paper).
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-              <Input
-                id="numberOfRestrooms"
-                type="number"
-                placeholder="e.g. 3"
-                min={0}
-                value={numberOfRestrooms || ""}
-                onChange={(e) =>
-                  setNumberOfRestrooms(
-                    e.target.value ? parseInt(e.target.value) : undefined,
-                  )
-                }
-                className="w-full"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label
-                  htmlFor="extraCostPerRestroom"
-                  className="text-base font-medium"
-                >
-                  Extra Cost per Restroom ($)
-                </Label>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
-                        <Info className="h-4 w-4 text-gray-500" />
-                        <span className="sr-only">Info</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p>
-                        An additional charge per restroom to account for the
-                        extra time and supplies (cleaning toilets, urinals,
-                        sinks, stocking toilet paper, etc.). For instance, you
-                        might add $15 for each restroom on top of the base sq ft
-                        price. If your sq ft rate already factors bathrooms, you
-                        can leave this 0.
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-              <Input
-                id="extraCostPerRestroom"
-                type="number"
-                placeholder="e.g. 15"
-                min={0}
-                step="0.01"
-                value={extraCostPerRestroom || ""}
-                onChange={(e) =>
-                  setExtraCostPerRestroom(
-                    e.target.value ? parseFloat(e.target.value) : undefined,
-                  )
-                }
-                className="w-full"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label
-                  htmlFor="additionalServices"
-                  className="text-base font-medium"
-                >
-                  Additional Services ($)
-                </Label>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" className="h-7 w-7 p-0">
-                        <Info className="h-4 w-4 text-gray-500" />
-                        <span className="sr-only">Info</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p>
-                        Any extra tasks or services not covered by the standard
-                        floor-space rate. For example, if you're also cleaning
-                        interior windows, doing a one-time deep disinfection, or
-                        shampooing carpets, include the charge for those here.
-                        If none, enter 0.
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-              <Input
-                id="additionalServices"
-                type="number"
-                placeholder="e.g. 50"
-                min={0}
-                step="0.01"
-                value={additionalServices || ""}
-                onChange={(e) =>
-                  setAdditionalServices(
-                    e.target.value ? parseFloat(e.target.value) : undefined,
-                  )
-                }
-                className="w-full"
-              />
-            </div>
-
-            {validationError && (
-              <div className="border-stiletto bg-shutter rounded-md border p-3">
-                <p className="text-sm text-red-600">{validationError}</p>
-              </div>
-            )}
 
             <Button
               type="submit"
               size="lg"
-              className="flex w-full items-center gap-2 text-base font-medium"
+              className="mt-auto flex w-full items-center gap-2 text-base font-medium"
             >
               <Building className="h-5 w-5" />
               Calculate

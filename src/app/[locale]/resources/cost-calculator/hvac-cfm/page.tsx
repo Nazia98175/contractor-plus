@@ -1,12 +1,11 @@
 import HvacCfmCalculator from "@/components/resourcehub/pages/calculators/HvacCfmCalculator";
-import React from "react";
 
-const page = () => {
+const HvacCfmCalculatorPage = () => {
   return (
-    <div>
+    <>
       <HvacCfmCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default HvacCfmCalculatorPage;

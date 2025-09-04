@@ -1,12 +1,11 @@
 import IrrigationSystemCalculator from "@/components/resourcehub/pages/calculators/IrrigationSystemCalculator";
-import React from "react";
 
-const page = () => {
+const IrrigationSystemCalculatorPage = () => {
   return (
-    <div>
+    <>
       <IrrigationSystemCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default IrrigationSystemCalculatorPage;

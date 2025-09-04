@@ -340,20 +340,32 @@ const USConstructionLaborRates = () => {
                     Data Table
                   </h2>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       Format: {filters.period}
                     </Badge>
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       {getDateRangeDisplay()}
                     </Badge>
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       {filters.industries.length === 0
                         ? "All Industries"
                         : filters.industries.length === 1
                           ? "1 Industry"
                           : `${filters.industries.length} Industries`}
                     </Badge>
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       {filters.locationMode === "zipcode"
                         ? `Zip: ${filters.zipCode || "None"}`
                         : filters.states.length === 0

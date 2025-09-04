@@ -2,9 +2,9 @@ import CostPlusContract from "@/components/resourcehub/pages/contract-templates/
 
 const CostPlusContractPage = () => {
   return (
-    <div>
+    <>
       <CostPlusContract />
-    </div>
+    </>
   );
 };
 

@@ -168,7 +168,7 @@ const ForecastChart = ({
       </CardHeader>
       <CardContent className="pt-0">
         {!showChart ? (
-          <div className="bg-muted/30 border-border/50 flex flex-col items-center justify-center rounded-lg border px-4 py-10">
+          <div className="bg-shutter border-stiletto flex flex-col items-center justify-center rounded-lg border px-4 py-10">
             <div className="max-w-lg space-y-4 text-center">
               <TrendingUp className="text-primary/70 mx-auto h-10 w-10" />
               <h3 className="text-xl font-medium">Predict Labor Rates</h3>
@@ -202,7 +202,7 @@ const ForecastChart = ({
                 5-Year Labor Rate Projection
               </h3>
             </div>
-            <div className="h-[350px] w-full rounded-lg bg-white/50 p-4">
+            <div className="bg-shutter h-[350px] w-full rounded-lg p-4">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                   data={chartData}

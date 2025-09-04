@@ -1,72 +1,55 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { cn } from "@/app/lib/utils";
+import { LOCATIONS } from "@/data/locationsData";
 import { useMetaTags } from "@/hooks/use-meta-tags";
-
-import {
-  Search,
-  MapPin,
-  Calculator,
-  ArrowRight,
-  Home,
-  Wrench,
-  Paintbrush,
-  Zap,
-  Hammer,
-  Trees,
-  Check,
-  ChevronsUpDown,
-  ChefHat,
-  Grid2X2,
-  Sparkles,
-  Building2,
-  ShoppingCart,
-  Pickaxe,
-  Layers,
-  DoorOpen,
-  FileText,
-  AirVent,
-  ShieldCheck,
-  Shovel,
-  Settings,
-  Palette,
-  Wrench as PipeWrench,
-  Building,
-  Fence,
-  Flower2,
-  Square,
-  Ruler,
-  RectangleHorizontal,
-  Loader2,
-  Video,
-  Bath,
-  HardHat,
-  Utensils,
-  ShieldAlert,
-  Cpu,
-} from "lucide-react";
-
-import { tasks } from "@/utils/data";
-
-import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 import {
   fetchFilteredProjects,
   fetchProjects,
   Project,
 } from "@/services/resource/costCalculatorService";
+import { useQuery } from "@tanstack/react-query";
+import {
+  AirVent,
+  ArrowRight,
+  Bath,
+  Building,
+  Building2,
+  Calculator,
+  Check,
+  ChefHat,
+  ChevronsUpDown,
+  Cpu,
+  DoorOpen,
+  Fence,
+  FileText,
+  Hammer,
+  HardHat,
+  Home,
+  Layers,
+  Loader2,
+  MapPin,
+  Paintbrush,
+  Wrench as PipeWrench,
+  RectangleHorizontal,
+  Search,
+  ShieldAlert,
+  Square,
+  Trees,
+  Utensils,
+  Video,
+  Wrench,
+  Zap,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../components/ui/popover";
-import { Button } from "../components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -75,9 +58,12 @@ import {
   CommandItem,
   CommandList,
 } from "../components/ui/command";
-import { cn } from "@/app/lib/utils";
-import { LOCATIONS } from "@/data/locationsData";
 import { Input } from "../components/ui/input";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../components/ui/popover";
 
 // const CATEGORIES = [
 //   { id: "all", name: "All", icon: Home },
@@ -525,9 +511,7 @@ const ConstructionCosts = () => {
                   variant="outline"
                   size="lg"
                   className="border-red-500 text-red-400 hover:bg-red-500 hover:text-white"
-                  onClick={() =>
-                    window.open("https://contractorplus.app", "_blank")
-                  }
+                  onClick={() => window.open("/", "_blank")}
                 >
                   Learn More
                 </Button>

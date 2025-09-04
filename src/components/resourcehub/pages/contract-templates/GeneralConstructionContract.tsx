@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-
 import { FileText, Download, Printer, ArrowLeft } from "lucide-react";
-
 import { useMetaTags } from "@/hooks/use-meta-tags";
 import jsPDF from "jspdf";
 import {

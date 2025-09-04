@@ -961,7 +961,7 @@ const ProjectCostCalculator = ({
                         }}
                         className="rounded-r-none"
                       />
-                      <div className="rounded-l-none rounded-r-md border-l-0 border-red-500 bg-red-500 px-3 py-2 text-sm">
+                      <div className="rounded-l-none rounded-r-md border-l-0 border-red-500 bg-red-500 px-3 py-2 text-sm text-nowrap">
                         {projectData?.inputField.unit}
                       </div>
                     </div>

@@ -432,23 +432,23 @@ Date: ${formData.date}`;
 
                 <p className="mb-4">
                   THIS AGREEMENT ("Agreement") is made and entered into as of{" "}
-                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
+                  <span className="text-darkKnight bg-yellow-200">
                     {formData.date || "[DATE]"}
                   </span>
                   , by and between{" "}
-                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
+                  <span className="text-darkKnight bg-yellow-200">
                     {formData.clientName || "[CLIENT NAME]"}
                   </span>
                   , with a principal place of business at{" "}
-                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
+                  <span className="text-darkKnight bg-yellow-200">
                     {formData.clientAddress || "[CLIENT ADDRESS]"}
                   </span>{" "}
                   ("Client"), and{" "}
-                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
+                  <span className="text-darkKnight bg-yellow-200">
                     {formData.contractorName || "[CONTRACTOR NAME]"}
                   </span>
                   , with a principal place of business at{" "}
-                  <span className="text-darkKnight text-darkKnight bg-yellow-200">
+                  <span className="text-darkKnight bg-yellow-200">
                     {formData.contractorAddress || "[CONTRACTOR ADDRESS]"}
                   </span>{" "}
                   ("Contractor").

@@ -5,13 +5,12 @@ import { useEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import { PlusIconAnimation } from "../common/Icons";
 
-const EveryTool = (cardsData: any) => {
+const HowItWorkCard = (cardsData: any) => {
   const sectionRef1 = useRef<HTMLDivElement>(null);
   const sectionRef2 = useRef<HTMLDivElement>(null);
   const sectionRef3 = useRef<HTMLDivElement>(null);
   const sectionRef4 = useRef<HTMLDivElement>(null);
   const sectionRef5 = useRef<HTMLDivElement>(null);
-  const sectionRef6 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +21,6 @@ const EveryTool = (cardsData: any) => {
       sectionRef3,
       sectionRef4,
       sectionRef5,
-      sectionRef6,
     ];
 
     if (!cardsData) return;
@@ -73,16 +71,14 @@ const EveryTool = (cardsData: any) => {
       <section className="relative flex flex-col gap-20 overflow-hidden pt-[67px] sm:gap-[100px] sm:pt-[94px] md:gap-[154px]">
         <div
           ref={sectionRef1}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper bg-rgba18 relative z-10 mx-auto w-full max-w-[873px] p-3 backdrop-blur-[.52px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30">
-              Assign
-            </h3>
+            <h4 className="how-it-work-aff">Apply & get approved</h4>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Send a tool to a person, job, or truck—instantly logged
+            <p className="how-it-work-description">
+              Tell us about your audience and angle.
             </p>
           </Copy>
           <span className="how-it-work-icon icon-span">
@@ -91,16 +87,14 @@ const EveryTool = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef2}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper bg-rgba18 relative z-10 mx-auto w-full max-w-[873px] p-3 backdrop-blur-[2.5px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Pick Up / Checkout
-            </h3>
+            <h4 className="how-it-work-aff">Get your partner kit</h4>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Scan QR or detect via Bluetooth; capture timestamp
+            <p className="how-it-work-description">
+              Messaging, creative, examples, and your referral link.
             </p>
           </Copy>
           <span className="how-it-work-icon icon-span">
@@ -109,35 +103,30 @@ const EveryTool = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef3}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper bg-rgba18 relative z-10 mx-auto w-full max-w-[873px] p-3 backdrop-blur-[2.5px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              On-Site Use
-            </h3>
+            <h4 className="how-it-work-aff">Send traffic or introductions</h4>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              See who has it while it’s in the field
+            <p className="how-it-work-description">
+              Content, webinars, email drops, events—your call.
             </p>
           </Copy>
           <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
-
         <div
           ref={sectionRef4}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper bg-rgba18 relative z-10 mx-auto w-full max-w-[873px] p-3 backdrop-blur-[2.5px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Transfer
-            </h3>
+            <h4 className="how-it-work-aff">We onboard & support</h4>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Hand off mid-job with a clean chain of custody
+            <p className="how-it-work-description">
+              Our team converts, activates, and retains.
             </p>
           </Copy>
           <span className="how-it-work-icon icon-span">
@@ -146,35 +135,14 @@ const EveryTool = (cardsData: any) => {
         </div>
         <div
           ref={sectionRef5}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
+          className="video-section-wrapper bg-rgba18 relative z-10 mx-auto w-full max-w-[873px] p-3 backdrop-blur-[.52px] sm:p-[22px]"
         >
           <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Return / Check-In
-            </h3>
+            <h4 className="how-it-work-aff">Get paid monthly</h4>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Scan once—done (and fully logged)
-            </p>
-          </Copy>
-          <span className="how-it-work-icon icon-span">
-            <PlusIconAnimation />
-          </span>
-        </div>
-        <div
-          ref={sectionRef6}
-          className="video-section-wrapper relative z-10 mx-auto max-w-[873px] px-3 backdrop-blur-[2px] sm:p-[22px]"
-        >
-          <Copy animateOnScroll={true} delay={0}>
-            <h3 className="mb-1 text-center text-2xl font-medium tracking-[-0.48px] duration-300 xl:px-30">
-              Audit & Billing
-            </h3>
-          </Copy>
-          <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30">
-              Run a truck scan, reconcile discrepancies, bill for equipment
-              usage
+            <p className="how-it-work-description">
+              Recurring shares for as long as the customer stays active.
             </p>
           </Copy>
           <span className="how-it-work-icon icon-span">
@@ -186,4 +154,4 @@ const EveryTool = (cardsData: any) => {
   );
 };
 
-export default EveryTool;
+export default HowItWorkCard;

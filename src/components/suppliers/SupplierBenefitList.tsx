@@ -86,7 +86,7 @@ const SupplierBenefitList = (cardsData: any) => {
               a separate marketplace tab.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -105,7 +105,7 @@ const SupplierBenefitList = (cardsData: any) => {
               copy/paste, fewer abandoned carts.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -124,7 +124,7 @@ const SupplierBenefitList = (cardsData: any) => {
               availability to drive pickup or delivery.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -144,7 +144,7 @@ const SupplierBenefitList = (cardsData: any) => {
               where to stock deeper.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -163,7 +163,7 @@ const SupplierBenefitList = (cardsData: any) => {
               tied to job templates.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -182,7 +182,7 @@ const SupplierBenefitList = (cardsData: any) => {
               desk.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>

@@ -16,6 +16,7 @@
   --color-winterWay: #3f464b;
   --color-mana: #838383;
   --color-boogie: #0f9d4e;
+  --color-blackCat: #3b3b3b;
   --color-silver: #efefef;
   --color-nyanza: #e9ffd5;
   --color-pestering: #0d921c;
@@ -63,6 +64,7 @@
   --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
+  --color-fuscous: #4e4e4e;
   --color-reflection: #cbd5e1;
   --color-romanRed: #f21314;
   --color-vivaldi: #ef3a3f;
@@ -76,6 +78,7 @@
   --color-redPigment: #ee1e25;
   --color-tomato: #c01a06;
   --color-decemberSky: #d2d4d6;
+  --color-ironsideGrey: #656565;
   --color-darkBlack: #2a2a2e;
   --color-lightGrey: #505050;
   --color-monstrousGreen: #21c912;
@@ -171,6 +174,7 @@
   --color-rgba15: #0c0d116b;
   --color-rgba16: #0d0e1218;
   --color-rgba17: #3f464b1a;
+  --color-rgba18: #ffffff03;
 
   /* BREAKPOINTS */
   --breakpoint-xxs: 320px;
@@ -407,6 +411,15 @@ body {
 }
 .opportunity-card {
   @apply text-phantom text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px];
+}
+.how-it-work-aff {
+  @apply text-secondary mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30;
+}
+.how-it-work-description {
+  @apply text-wallStreet mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30;
+}
+.how-it-work-icon {
+  @apply mt-[18px] flex rotate-45 justify-center duration-300;
 }
 @keyframes bounce {
   0%,
@@ -1912,12 +1925,18 @@ button {
 .video-section-wrapper.scroll-active h3 {
   color: #0c0d11 !important;
 }
+.video-section-wrapper.scroll-active .how-it-work-aff {
+  color: white !important;
+}
 .video-section-wrapper p {
   color: #656c73;
   transition: color 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active p {
   color: #656c73 !important;
+}
+.video-section-wrapper.scroll-active .how-it-work-description {
+  color: white !important;
 }
 .video-section-wrapper svg path {
   fill: #cdcdcd;
@@ -1932,7 +1951,7 @@ button {
   transition: transform 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active .icon-span {
-  transform: rotate(-45deg);
+  transform: rotate(90deg);
 }
 
 .gradient-custom-2 {
@@ -2093,4 +2112,42 @@ body.menu-open .back-to-top {
 }
 .AffiliatesHero-layers {
   background: linear-gradient(270deg, rgba(12, 13, 17, 0) 0%, #0c0d11 100%);
+}
+.how-it-work-affiliates {
+  background:
+    linear-gradient(
+      276.94deg,
+      rgba(0, 0, 0, 0) -8.06%,
+      rgba(238, 30, 37, 0.4) 83.81%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.how-it-work-affiliates .line {
+  background:
+    linear-gradient(
+      276.94deg,
+      rgba(0, 0, 0, 0) -8.06%,
+      rgba(238, 30, 37, 0.4) 83.81%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.story-section {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.story-section .line {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

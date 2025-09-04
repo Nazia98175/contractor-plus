@@ -1,16 +1,38 @@
 import AffiliatesHero from "@/components/affiliates/AffiliatesHero";
 import WhyPartner from "@/components/affiliates/WhyPartner";
-import React from "react";
-import AtAGlance from "./AtAGlance";
-import WaysYouEarn from "./WaysYouEarn";
-import WhoThisPerfect from "./WhoThisPerfect";
-import Faq from "@/components/crmbussiness/Faq";
-import { leadHGenerationFaqData } from "@/components/common/Utils";
-import PublicEndPoints from "@/components/developersapi/PublicEndPoints";
+import {
+  afflitatesClientReviews,
+  automatedCardData,
+  platforms,
+} from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
-import { afflitatesClientReviews, platforms } from "@/components/common/Helper";
+import Faq from "@/components/crmbussiness/Faq";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-
+import PublicEndPoints from "@/components/developersapi/PublicEndPoints";
+import AtAGlance from "../../../components/affiliates/AtAGlance";
+import HowItWork from "../../../components/affiliates/HowItWork";
+import WaysYouEarn from "../../../components/affiliates/WaysYouEarn";
+import WhoThisPerfect from "../../../components/affiliates/WhoThisPerfect";
+import StorySection from "@/components/affiliates/StorySection";
+export const metadata = {
+  title: "Contractor+ Affiliates: Earn for Every Referral",
+  description:
+    "Join our affiliate program and earn commission by referring new users to Contractor+.",
+  keywords: ["Affiliate Program"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/affiliates-page-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "affiliates-page-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/affiliates",
+  },
+};
 const AffiliatesPage = () => {
   const affiliatesFaq = {
     title: "What contractors want to know",
@@ -55,7 +77,9 @@ const AffiliatesPage = () => {
       <TrustedService reviews={afflitatesClientReviews} apiData={false} />
       <WhyPartner />
       <AtAGlance />
+      <HowItWork cardsData={automatedCardData.cardsDetail} />
       <WaysYouEarn />
+      <StorySection />
       <WhoThisPerfect />
       <PublicEndPoints
         title="Apply to join "

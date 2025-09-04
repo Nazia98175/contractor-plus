@@ -4786,3 +4786,139 @@ export const afflitatesClientReviews = {
     },
   ],
 };
+
+// export const automatedCardData = {
+//   id: 1,
+//   title:
+//     "A contract system that automatically writes, tracks, and stores agreements",
+//   cardsDetail: [
+//     {
+//       id: 1,
+//       title: " Agreement Creation",
+//       content: [
+//         {
+//           title: "Estimate-to-Contract Merge",
+//           desc: "Automatically generate contracts using data from approved estimates, without any copy & paste.",
+//         },
+//         {
+//           title: "Lawyer-Crafted Templates",
+//           desc: "Pre-built, legally sound templates tailored for construction and service jobs.",
+//         },
+//         {
+//           title: "Custom Clause Library",
+//           desc: "Add your own clauses once, then reuse them across all agreements.",
+//         },
+//         {
+//           title: "Smart Field Detection",
+//           desc: "Auto-fills job info like scope, pricing, dates, and location from your project data.",
+//         },
+//       ],
+//       cardQuote: {
+//         user: "Excellent field tracking!",
+//         username: "John Doe",
+//       },
+//       cardImg: "/images/webp/agree-creation.webp",
+//       lottieJson: Agree_Creation,
+//     },
+//     {
+//       id: 2,
+//       title: "  Signature & Approval ",
+//       content: [
+//         {
+//           title: "Built-In E-Signatures",
+//           desc: "Collect signatures in-person or digitally.  No third-party software needed.",
+//         },
+//         {
+//           title: "Audit Trail",
+//           desc: "Each signed doc includes timestamp, IP address, and device info for protection.",
+//         },
+//         {
+//           title: "Client Review Portal",
+//           desc: "Clients can review, comment, and sign contracts from any device.",
+//         },
+//         {
+//           title: "Approval Reminder",
+//           desc: "Automated follow-ups ensure no agreement gets stuck waiting.",
+//         },
+//       ],
+//       cardImg: "/images/webp/signature-approved.webp",
+//       lottieJson: Signature_Approval,
+//     },
+//     {
+//       id: 3,
+//       title: "Change Management",
+//       content: [
+//         {
+//           title: " Instant Change Orders",
+//           desc: "Modify job scope on the fly and generate a new agreement in seconds.",
+//         },
+//         {
+//           title: "Editable Scope Change Templates",
+//           desc: "Pre-configured language makes it easy to spell out what’s changing and what it costs.",
+//         },
+//         {
+//           title: "Amendment Tracking",
+//           desc: "Every version of every contract is tracked and time-stamped.",
+//         },
+//         {
+//           title: "Digital Re-Approval",
+//           desc: "Clients can re-sign updated contracts without downloading anything.",
+//         },
+//       ],
+//       cardImg: "/images/webp/change-management.webp",
+//       lottieJson: Change_Management,
+//     },
+//     {
+//       id: 4,
+//       title: "Storage & Access",
+//       content: [
+//         {
+//           title: "Automatic Document Storage",
+//           desc: "Signed agreements are tied to the job record and stored in the cloud.",
+//         },
+//         {
+//           title: "Searchable Archive",
+//           desc: "Find any past contract, change order, or completion cert by job, client, or keyword.",
+//         },
+//         {
+//           title: "Access Control",
+//           desc: "Control who on your team can view, edit, or send legal docs.",
+//         },
+//         {
+//           title: "Downloadable Backups",
+//           desc: "Export signed documents anytime for offline recordkeeping.",
+//         },
+//       ],
+//       cardImg: "/images/webp/storage-access.webp",
+//       lottieJson: Storage_Access,
+//     },
+//     {
+//       id: 5,
+//       title: "Recurring Docs",
+//       content: [
+//         {
+//           title: "Recurring Service Agreements",
+//           desc: "Set terms once for weekly/monthly/seasonal jobs and automate renewals.",
+//         },
+//         {
+//           title: "Auto-Renewal Alerts",
+//           desc: "Get notified when contracts are expiring so nothing slips through.",
+//         },
+//         {
+//           title: "Completion Certificates",
+//           desc: "Auto-generate signed certificates when work wraps up.",
+//         },
+//         {
+//           title: "Client-Triggered Renewals",
+//           desc: "Invoice in phases or partials based on completed work.",
+//         },
+//         {
+//           title: "Cash Flow & Profitability Visibility",
+//           desc: "Let clients renew service terms directly via the portal. No manual follow-up needed.",
+//         },
+//       ],
+//       cardImg: "/images/webp/requeere-doc.webp",
+//       lottieJson: Recurring_Docs,
+//     },
+//   ],
+// };

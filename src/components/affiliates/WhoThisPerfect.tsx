@@ -1,55 +1,47 @@
 import {
+  ContractorTradeIcon,
   GradientLineIcon,
-  MoneyBagIcon,
-  PerfectIcon,
-  RequiringIcon,
-  RevanueIcon,
+  InfluencersIcon,
+  IntegrationPartnersIcon,
 } from "@/components/common/Icons";
 import BuildRightNowCard from "@/components/developersapi/BuildRightNowCard";
 import AdaptiveHeroTitle from "@/components/industry/AdaptiveHeroTitle";
 
-const AtAGlance = () => {
-  const glanceCards = [
+const WhoThisPerfect = () => {
+  const buildCards = [
     {
-      icon: <RevanueIcon />,
-      title: "50% recurring revenue",
+      icon: <IntegrationPartnersIcon />,
+      title: "Integration partners",
       description:
-        "Share on the base subscription for the life of the account.",
+        "who can bundle, embed, or co-market. This is your incentive to feature Contractor+ front and center. Want to integrate?",
     },
     {
-      icon: <RequiringIcon />,
-      title: "20% recurring",
-      description: "on Contractor+ Books add-ons.",
+      icon: <ContractorTradeIcon />,
+      title: "Contractor & trade associations",
+      description:
+        "serving members at scale. Give your association members a nice discount and generate some revenue.",
       rightLine: true,
       leftLine: true,
     },
-
     {
-      icon: <MoneyBagIcon />,
-      title: "Monthly commissions",
-      description: "paid out like clockwork.",
-    },
-    {
-      icon: <PerfectIcon />,
-      title: "Perfect for",
+      icon: <InfluencersIcon />,
+      title: "Influencers / ambassadors",
       description:
-        "integration partners, contractor/trade associations, social media influencers / creators, and brand ambassadors.",
+        "on YouTube, TikTok, Instagram, LinkedIn, podcasts, or newsletters. If you have a contractor/trade focused audience, this is perfect for you.",
     },
   ];
-
   return (
-    <section className="mx-auto mt-14 w-full max-w-[1222px] px-2 sm:mt-20 md:mt-[100px] lg:mt-[128px]">
+    <section className="mx-auto mt-14 w-full max-w-[1222px] px-2 sm:mt-20 md:mt-[91px]">
       <AdaptiveHeroTitle
-        title="At-a-glance"
+        title="Who this is perfect for"
         className="text-mana mb-[59px] w-full text-center leading-[140%] font-extrabold"
         minFontSize={16}
         maxLines={1}
         maxFontSize={42}
         textAnimation="home-page-view-port-screen-fetures"
       />
-
       <div className="flex flex-wrap justify-center gap-x-3 gap-y-6 md:gap-x-4">
-        {glanceCards.map((card, index) => {
+        {buildCards.map((card, index) => {
           return (
             <div
               key={index}
@@ -78,4 +70,4 @@ const AtAGlance = () => {
   );
 };
 
-export default AtAGlance;
+export default WhoThisPerfect;

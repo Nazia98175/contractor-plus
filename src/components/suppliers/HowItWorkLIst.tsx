@@ -83,7 +83,7 @@ const HowItWorkLIst = (cardsData: any) => {
               via API, feed, or EDI.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -101,7 +101,7 @@ const HowItWorkLIst = (cardsData: any) => {
               attach SKUs to stores/regions, set promos and pack sizes.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -119,7 +119,7 @@ const HowItWorkLIst = (cardsData: any) => {
               cart transfer, PO, or both.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -138,7 +138,7 @@ const HowItWorkLIst = (cardsData: any) => {
               SKUs appear in Estimates, Material Lists, and Job templates.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -157,7 +157,7 @@ const HowItWorkLIst = (cardsData: any) => {
               opportunities.
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>

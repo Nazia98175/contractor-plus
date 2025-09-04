@@ -1,51 +1,55 @@
 import {
-  BuildLocationIcon,
   GradientLineIcon,
-  JobIcon,
-  ContactIcon,
-  IntegrationPartnersIcon,
-  ContractorTradeIcon,
-  InfluencersIcon,
+  MoneyBagIcon,
+  PerfectIcon,
+  RequiringIcon,
+  RevanueIcon,
 } from "@/components/common/Icons";
 import BuildRightNowCard from "@/components/developersapi/BuildRightNowCard";
 import AdaptiveHeroTitle from "@/components/industry/AdaptiveHeroTitle";
-import React from "react";
 
-const WhoThisPerfect = () => {
-  const buildCards = [
+const AtAGlance = () => {
+  const glanceCards = [
     {
-      icon: <IntegrationPartnersIcon />,
-      title: "Integration partners",
+      icon: <RevanueIcon />,
+      title: "50% recurring revenue",
       description:
-        "who can bundle, embed, or co-market. This is your incentive to feature Contractor+ front and center. Want to integrate?",
+        "Share on the base subscription for the life of the account.",
     },
     {
-      icon: <ContractorTradeIcon />,
-      title: "Contractor & trade associations",
-      description:
-        "serving members at scale. Give your association members a nice discount and generate some revenue.",
+      icon: <RequiringIcon />,
+      title: "20% recurring",
+      description: "on Contractor+ Books add-ons.",
       rightLine: true,
       leftLine: true,
     },
+
     {
-      icon: <InfluencersIcon />,
-      title: "Influencers / ambassadors",
+      icon: <MoneyBagIcon />,
+      title: "Monthly commissions",
+      description: "paid out like clockwork.",
+    },
+    {
+      icon: <PerfectIcon />,
+      title: "Perfect for",
       description:
-        "on YouTube, TikTok, Instagram, LinkedIn, podcasts, or newsletters. If you have a contractor/trade focused audience, this is perfect for you.",
+        "integration partners, contractor/trade associations, social media influencers / creators, and brand ambassadors.",
     },
   ];
+
   return (
-    <section className="mx-auto mt-20 w-full max-w-[1222px] px-2 sm:mt-[120px] md:mt-[150px] lg:mt-[197px]">
+    <section className="relative z-20 mx-auto mt-14 w-full max-w-[1222px] px-2 sm:mt-20 md:mt-[100px] lg:mt-[128px]">
       <AdaptiveHeroTitle
-        title="Who this is perfect for"
+        title="At-a-glance"
         className="text-mana mb-[59px] w-full text-center leading-[140%] font-extrabold"
         minFontSize={16}
         maxLines={1}
         maxFontSize={42}
         textAnimation="home-page-view-port-screen-fetures"
       />
+
       <div className="flex flex-wrap justify-center gap-x-3 gap-y-6 md:gap-x-4">
-        {buildCards.map((card, index) => {
+        {glanceCards.map((card, index) => {
           return (
             <div
               key={index}
@@ -74,4 +78,4 @@ const WhoThisPerfect = () => {
   );
 };
 
-export default WhoThisPerfect;
+export default AtAGlance;

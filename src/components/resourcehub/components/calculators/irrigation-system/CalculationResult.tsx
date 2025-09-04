@@ -32,7 +32,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardHeader className="border-stiletto border-b pt-6 pb-2">
         <h2 className="flex items-center gap-2 text-lg font-medium">
-          <Droplet className="h-5 w-5 text-red-600" />
+          <Droplet className="h-5 w-5 text-red-500" />
           <span>Irrigation Material Cost Estimate</span>
         </h2>
       </CardHeader>
@@ -72,14 +72,12 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <Separator className="my-4" />
 
-          <div className="rounded-md border border-red-100 bg-red-50 p-4">
+          <div className="rounded-md bg-blue-600 p-4">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-semibold">
                 Total Irrigation Materials Cost:
               </h3>
-              <span className="text-xl font-bold text-red-600">
-                ${totalCost.toFixed(0)}
-              </span>
+              <span className="text-xl font-bold">${totalCost.toFixed(0)}</span>
             </div>
           </div>
 
@@ -87,7 +85,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             <div className="flex gap-2">
               <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600" />
               <div>
-                <h4 className="mb-1 text-sm font-semibold text-blue-700">
+                <h4 className="mb-1 text-sm font-semibold text-blue-600">
                   Note:
                 </h4>
                 <p className="text-sm text-gray-700">

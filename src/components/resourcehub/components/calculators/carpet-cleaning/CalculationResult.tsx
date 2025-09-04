@@ -18,10 +18,10 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border-stiletto bg-shutter mb-6 border-2 shadow-md">
-      <CardHeader className="border-b border-red-100 bg-red-50">
-        <CardTitle className="flex items-center text-lg text-red-800">
-          <Brush className="mr-2 h-5 w-5 text-red-600" />
+    <Card className="border-stiletto bg-shutter mb-6 overflow-hidden border-2 shadow-md">
+      <CardHeader className="bg-red-500">
+        <CardTitle className="flex items-center text-lg text-white">
+          <Brush className="mr-2 h-5 w-5" />
           Calculation Results
         </CardTitle>
       </CardHeader>
@@ -30,7 +30,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           <h3 className="text-alice text-lg font-medium">
             Estimated Carpet Cleaning Cost
           </h3>
-          <p className="my-2 text-4xl font-bold text-red-600">
+          <p className="my-2 text-4xl font-bold text-red-500">
             ${result.totalCost.toFixed(2)}
           </p>
           {result.minimumChargeApplied && (
@@ -43,7 +43,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <Separator className="my-4" />
 
         <div className="space-y-2 text-sm">
-          <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
+          <h4 className="text-alice font-medium">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Cost by area</span>
             <span className="font-medium">${result.costByArea.toFixed(2)}</span>
@@ -74,8 +74,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
           )}
         </div>
       </CardContent>
-      <CardFooter className="flex justify-center border-t border-red-100 bg-red-50">
-        <p className="text-center text-xs text-gray-500">
+      <CardFooter className="border-stiletto flex justify-center border-t pt-3">
+        <p className="text-decemberSky text-center text-xs">
           This is an estimate based on the information provided. Actual costs
           may vary.
         </p>

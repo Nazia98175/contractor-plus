@@ -1,6 +1,5 @@
 import { Filter } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
-
 import { SearchFilters } from "../SearchFilters";
 import { FormValues } from "../searchFormSchema";
 import {

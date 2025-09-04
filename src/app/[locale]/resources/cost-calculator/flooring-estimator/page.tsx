@@ -1,12 +1,11 @@
 import FlooringEstimatorCalculator from "@/components/resourcehub/pages/calculators/FlooringEstimatorCalculator";
-import React from "react";
 
-const page = () => {
+const FlooringEstimatorCalculatorPage = () => {
   return (
-    <div>
+    <>
       <FlooringEstimatorCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default FlooringEstimatorCalculatorPage;

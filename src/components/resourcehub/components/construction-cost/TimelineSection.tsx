@@ -11,7 +11,7 @@ interface TimelineSectionProps {
   projectSlug: string;
   location: string;
   projectName: string;
-  projectValues: ProjectDetail;
+  projectValues?: ProjectDetail;
 }
 
 // Helper function to extract YouTube video ID from URL

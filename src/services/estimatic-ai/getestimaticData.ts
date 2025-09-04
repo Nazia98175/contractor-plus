@@ -1,7 +1,6 @@
-import { getBlogs, getBlogsByCategory } from "@/services/blogs";
 import { getCommonData } from "../common/commonData";
-import { getEstimaticPage } from "./estimatic";
 import { getHomePage } from "../homePage/homepage";
+import { getEstimaticPage } from "./estimatic";
 
 export interface EstimaticPageData {
   pageContent: any | null;

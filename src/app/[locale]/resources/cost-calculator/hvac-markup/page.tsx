@@ -1,7 +1,6 @@
 import HvacMarkupCalculator from "@/components/resourcehub/pages/calculators/HvacMarkupCalculator";
-import React from "react";
 
-const page = () => {
+const HvacMarkupCalculatorPage = () => {
   return (
     <div>
       <HvacMarkupCalculator />
@@ -9,4 +8,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default HvacMarkupCalculatorPage;

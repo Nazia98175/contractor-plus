@@ -28,8 +28,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardContent className="p-6">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-700">Paver Estimate</h3>
-          <p className="my-2 text-4xl font-bold text-red-600">
+          <h3 className="text-alice text-lg font-medium">Paver Estimate</h3>
+          <p className="my-2 text-4xl font-bold text-red-500">
             {result.paversNeeded.toLocaleString()} pavers
           </p>
           <p className="text-alice text-lg font-medium">{formattedCost}</p>
@@ -41,32 +41,32 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <Separator className="my-4" />
 
         <div className="space-y-3 text-sm">
-          <h4 className="font-medium text-gray-700">Calculation Details</h4>
+          <h4 className="text-alice font-medium">Calculation Details</h4>
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Single Paver Area</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {formattedPaverArea} sq ft
             </span>
           </div>
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Waste Factor</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.wastePercentage}%
             </span>
           </div>
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Cost per Paver</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               ${result.costPerPaver.toFixed(2)}
             </span>
           </div>
 
-          <div className="flex items-center justify-between border-t border-gray-100 pt-2">
+          <div className="border-decemberSky flex items-center justify-between border-t pt-2">
             <span className="font-medium">Pavers Required</span>
-            <span className="font-bold text-red-600">
+            <span className="font-bold text-red-500">
               {result.paversNeeded.toLocaleString()} pieces
             </span>
           </div>
@@ -74,7 +74,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           {result.costPerPaver > 0 && (
             <div className="flex items-center justify-between">
               <span className="font-medium">Total Paver Cost</span>
-              <span className="font-bold text-red-600">{formattedCost}</span>
+              <span className="font-bold text-red-500">{formattedCost}</span>
             </div>
           )}
         </div>

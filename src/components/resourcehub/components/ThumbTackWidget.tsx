@@ -21,6 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./ui/dialog";
+import { searchThumbtackBusinesses } from "@/services/resource/thumbtackService";
 
 type ThumbtackResponse = Awaited<
   ReturnType<typeof searchThumbtackBusinesses>
@@ -28,11 +29,11 @@ type ThumbtackResponse = Awaited<
 
 interface ThumbTackWidgetProps {
   projectName: string;
-  zipCode: string;
+  zipCode?: string;
   projectType: string;
-  projectValues: ProjectDetail;
+  projectValues?: ProjectDetail;
   location: string;
-  zipCodeValue: string;
+  zipCodeValue?: string;
   setZipCodeValue: (zip: string) => void;
   isZipCodeManuallyChanged: boolean;
   setIsZipCodeManuallyChanged: (changed: boolean) => void;
@@ -96,7 +97,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
   useEffect(() => {}, [location]);
 
   useEffect(() => {
-    const handleMessage = (event) => {
+    const handleMessage = (event: any) => {
       // More generic approach - listen for any close-related messages
       const message = event.data;
 
@@ -122,82 +123,6 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (
-  //     location &&
-  //     (isInitialMount.current || prevLocationRef.current !== location)
-  //   ) {
-  //     setIsZipCodeManuallyChanged(false);
-  //     setIsIpReady(false);
-  //     setIp(""); // Reset IP to ensure fresh fetch
-
-  //     getUserIp()
-  //       .then((ipAddress) => {
-  //         setIp(ipAddress);
-  //         setIsIpReady(true);
-  //       })
-  //       .catch((error) => {
-  //         setIsIpReady(true);
-  //       });
-
-  //     prevLocationRef.current = location;
-  //     isInitialMount.current = false;
-  //   }
-  // }, [location]);
-
-  // const matchedThumbtack =
-  //   projectValues && projectValues.slug === projectType
-  //     ? projectValues
-  //     : undefined;
-
-  // const payload = React.useMemo(() => {
-  //   if (!matchedThumbtack?.category_pk) return null;
-
-  //   const basePayload = {
-  //     categoryID: matchedThumbtack.category_pk,
-  //     userQuery: matchedThumbtack.projectName,
-  //   };
-
-  //   if (isZipCodeManuallyChanged && zipCodeValue.length === 5) {
-  //     return { ...basePayload, zipCode: zipCodeValue };
-  //   }
-
-  //   // If IP is available and ready, use IP
-  //   if (ip && isIpReady) {
-  //     return { ...basePayload, ip: ip };
-  //   }
-
-  //   return null;
-  // }, [
-  //   matchedThumbtack?.category_pk,
-  //   matchedThumbtack?.projectName,
-  //   isZipCodeManuallyChanged,
-  //   zipCodeValue,
-  //   ip,
-  //   isIpReady,
-  // ]);
-
-  // const {
-  //   data: response,
-  //   isLoading,
-  //   isError,
-  //   refetch,
-  // } = useQuery({
-  //   queryKey: ["thumbtackGetQuote", payload, location], // Add location to query key
-  //   queryFn: async () => {
-  //     const data = await searchThumbtackBusinesses(payload);
-  //     return {
-  //       data: data?.data?.[0],
-  //       metadata: data?.metadata,
-  //     }; // return just the first business
-  //   },
-  //   enabled: !!payload, // Only enable when we have a valid payload
-  //   refetchOnMount: false, // Prevent automatic refetch on mount
-  //   refetchOnWindowFocus: false,
-  //   staleTime: 5 * 60 * 1000, // Consider data fresh for 5 minutes
-  // });
-
-  // Update zipCode from API response metadata (only when using IP-based search)
   useEffect(() => {
     // Check multiple possible locations for zip code in response
     const zipCodeFromResponse =
@@ -210,13 +135,6 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
     }
   }, [response, isZipCodeManuallyChanged, ip]);
 
-  // useEffect(() => {
-  //   if (isIpReady && ip && !isZipCodeManuallyChanged) {
-  //     // thumbtackRefresh();
-  //   }
-  // }, [isIpReady, ip, isZipCodeManuallyChanged]);
-
-  // Update state when props change (e.g., when user navigates to different project/location)
   useEffect(() => {
     setSearchTerm(projectName);
   }, [projectName]);
@@ -224,7 +142,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
   // Update zipCodeValue when zipCode prop changes (but don't trigger manual flag)
   useEffect(() => {
     if (!isZipCodeManuallyChanged) {
-      setZipCodeValue(zipCode);
+      setZipCodeValue(zipCode ?? "");
     }
   }, [zipCode, isZipCodeManuallyChanged]);
 
@@ -325,7 +243,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             </div>
 
             {/* Reviews Information */}
-            <div className="border-border/20 border-t pt-6">
+            <div className="border-stiletto border-t pt-6">
               <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
                 {/* Trusted Users */}
                 <div className="flex flex-col items-center space-y-2">

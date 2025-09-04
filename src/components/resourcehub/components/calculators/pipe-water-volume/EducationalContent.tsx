@@ -18,7 +18,7 @@ export function EducationalContent() {
           <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
-                <Droplet className="h-4 w-4 text-red-600" />
+                <Droplet className="h-4 w-4 text-red-500" />
               </div>
               <h3 className="text-lg font-semibold">
                 Why Calculate Pipe Volume?
@@ -34,7 +34,7 @@ export function EducationalContent() {
           <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
-                <Ruler className="h-4 w-4 text-red-600" />
+                <Ruler className="h-4 w-4 text-red-500" />
               </div>
               <h3 className="text-lg font-semibold">Measurement Tips</h3>
             </div>
@@ -48,7 +48,7 @@ export function EducationalContent() {
           <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
-                <Calculator className="h-4 w-4 text-red-600" />
+                <Calculator className="h-4 w-4 text-red-500" />
               </div>
               <h3 className="text-lg font-semibold">Common Pipe Volumes</h3>
             </div>
@@ -64,7 +64,7 @@ export function EducationalContent() {
       <div className="border-stiletto bg-shutter rounded-lg border p-6">
         <div className="flex gap-3">
           <div className="flex-shrink-0">
-            <Info className="h-6 w-6 text-red-600" />
+            <Info className="h-6 w-6 text-red-500" />
           </div>
           <div>
             <h3 className="mb-2 text-lg font-semibold">

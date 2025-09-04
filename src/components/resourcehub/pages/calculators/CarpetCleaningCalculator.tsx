@@ -88,7 +88,7 @@ export default function CarpetCleaningCalculator() {
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
-        className="mb-6 flex items-center gap-1 hover:text-red-600"
+        className="mb-6 flex items-center gap-1 hover:text-red-500"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -98,7 +98,7 @@ export default function CarpetCleaningCalculator() {
       <div className="mb-8">
         <div className="mb-2 flex items-center gap-3">
           <div className="rounded-full bg-red-100 p-2">
-            <Brush className="h-6 w-6 text-red-600" />
+            <Brush className="h-6 w-6 text-red-500" />
           </div>
           <h1 className="text-3xl font-bold">
             Carpet Cleaning Estimate Calculator
@@ -136,7 +136,7 @@ export default function CarpetCleaningCalculator() {
             <h3 className="mb-2 text-xl font-semibold">
               Wow Your Clients with Fast, Accurate Quotes
             </h3>
-            <p className="text-alice mb-4">
+            <p className="text-decemberSky mb-4">
               Try Contractor+ to create carpet cleaning estimates, schedule
               jobs, and send invoices – all in one app. Make your carpet
               cleaning business shine (just like those freshly cleaned carpets)!

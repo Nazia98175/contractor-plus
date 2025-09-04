@@ -1,12 +1,11 @@
 import ConstructionRFIGenerator from "@/components/resourcehub/pages/project-planning/ConstructionRFIGenerator";
-import React from "react";
 
-const page = () => {
+const ConstructionRFIGeneratorPage = () => {
   return (
-    <div>
+    <>
       <ConstructionRFIGenerator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ConstructionRFIGeneratorPage;

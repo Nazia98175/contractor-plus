@@ -91,7 +91,7 @@ export const ComparePageLayout = ({
           <div className="text-left">
             <div className="mb-2 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 shadow-sm">
-                <CirclePercent className="h-6 w-6 text-red-600" />
+                <CirclePercent className="h-6 w-6 text-red-500" />
               </div>
               <h1 className="text-3xl font-bold">
                 Material Price Comparison Tool
@@ -221,7 +221,7 @@ export const ComparePageLayout = ({
                 <div className="mt-6 flex justify-center">
                   <Link
                     href="/resources/free-estimate-templates"
-                    className="hover:text-glowing text-pestering text-sm duration-300 disabled:pointer-events-none disabled:opacity-50"
+                    className="primary-btn bg-red-linear !w-fit px-5 py-3"
                   >
                     Learn More About Contractor+ Estimates & Quotes
                   </Link>

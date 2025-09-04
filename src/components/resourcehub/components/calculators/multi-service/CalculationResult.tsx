@@ -27,17 +27,17 @@ export function CalculationResult({ results }: CalculationResultProps) {
   };
 
   return (
-    <Card className="border-green-200 bg-green-50">
+    <Card className="border-green-600 bg-white">
       <CardHeader className="pb-2">
-        <CardTitle className="text-xl text-green-800">
+        <CardTitle className="text-xl text-green-600">
           Multi-Service Job Estimate
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           <div className="space-y-2">
-            <h3 className="font-medium text-green-700">Itemized Services:</h3>
-            <div className="rounded-md bg-white p-4 shadow-sm">
+            <h3 className="font-medium text-green-600">Itemized Services:</h3>
+            <div className="text-darkBlack rounded-md shadow-sm">
               <div className="space-y-2">
                 {results.services.map((service, index) =>
                   service.description || service.cost > 0 ? (
@@ -53,7 +53,7 @@ export function CalculationResult({ results }: CalculationResultProps) {
                 )}
               </div>
 
-              <div className="mt-4 border-t border-gray-200 pt-4">
+              <div className="border-decemberSky mt-4 border-t pt-4">
                 <div className="flex justify-between font-medium">
                   <span>Subtotal:</span>
                   <span>{formatCurrency(results.subtotal)}</span>
@@ -71,7 +71,7 @@ export function CalculationResult({ results }: CalculationResultProps) {
                 </div>
               )}
 
-              <div className="mt-4 border-t border-gray-200 pt-4">
+              <div className="border-decemberSky mt-4 border-t pt-4">
                 <div className="flex justify-between text-lg font-bold">
                   <span>Total Multi-Service Job Cost:</span>
                   <span className="text-green-700">

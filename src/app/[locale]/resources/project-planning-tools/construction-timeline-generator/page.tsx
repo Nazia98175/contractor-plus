@@ -1,12 +1,11 @@
 import ConstructionTimelineGenerator from "@/components/resourcehub/pages/project-planning/ConstructionTimelineGenerator";
-import React from "react";
 
-const page = () => {
+const ConstructionTimelineGeneratorPage = () => {
   return (
-    <div>
+    <>
       <ConstructionTimelineGenerator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ConstructionTimelineGeneratorPage;

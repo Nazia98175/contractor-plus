@@ -1,12 +1,11 @@
 import PaverCalculator from "@/components/resourcehub/pages/calculators/PaverCalculator";
-import React from "react";
 
-const page = () => {
+const PaverCalculatorPage = () => {
   return (
-    <div>
+    <>
       <PaverCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default PaverCalculatorPage;

@@ -1,72 +1,55 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { cn } from "@/app/lib/utils";
+import { LOCATIONS } from "@/data/locationsData";
 import { useMetaTags } from "@/hooks/use-meta-tags";
-
-import {
-  Search,
-  MapPin,
-  Calculator,
-  ArrowRight,
-  Home,
-  Wrench,
-  Paintbrush,
-  Zap,
-  Hammer,
-  Trees,
-  Check,
-  ChevronsUpDown,
-  ChefHat,
-  Grid2X2,
-  Sparkles,
-  Building2,
-  ShoppingCart,
-  Pickaxe,
-  Layers,
-  DoorOpen,
-  FileText,
-  AirVent,
-  ShieldCheck,
-  Shovel,
-  Settings,
-  Palette,
-  Wrench as PipeWrench,
-  Building,
-  Fence,
-  Flower2,
-  Square,
-  Ruler,
-  RectangleHorizontal,
-  Loader2,
-  Video,
-  Bath,
-  HardHat,
-  Utensils,
-  ShieldAlert,
-  Cpu,
-} from "lucide-react";
-
-import { tasks } from "@/utils/data";
-
-import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 import {
   fetchFilteredProjects,
   fetchProjects,
   Project,
 } from "@/services/resource/costCalculatorService";
+import { useQuery } from "@tanstack/react-query";
+import {
+  AirVent,
+  ArrowRight,
+  Bath,
+  Building,
+  Building2,
+  Calculator,
+  Check,
+  ChefHat,
+  ChevronsUpDown,
+  Cpu,
+  DoorOpen,
+  Fence,
+  FileText,
+  Hammer,
+  HardHat,
+  Home,
+  Layers,
+  Loader2,
+  MapPin,
+  Paintbrush,
+  Wrench as PipeWrench,
+  RectangleHorizontal,
+  Search,
+  ShieldAlert,
+  Square,
+  Trees,
+  Utensils,
+  Video,
+  Wrench,
+  Zap,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../components/ui/popover";
-import { Button } from "../components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -75,9 +58,12 @@ import {
   CommandItem,
   CommandList,
 } from "../components/ui/command";
-import { cn } from "@/app/lib/utils";
-import { LOCATIONS } from "@/data/locationsData";
 import { Input } from "../components/ui/input";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../components/ui/popover";
 
 // const CATEGORIES = [
 //   { id: "all", name: "All", icon: Home },
@@ -422,14 +408,17 @@ const ConstructionCosts = () => {
                 <div className="space-y-1">
                   {CATEGORIES.map((category) => {
                     const Icon = category.icon;
+                    const isActive = selectedCategory === category.name;
+
                     return (
                       <button
                         key={category.id}
                         onClick={() => setSelectedCategory(category.name)}
                         className={cn(
-                          "hover:bg-muted/50 flex w-full items-center gap-3 px-4 py-3 text-left transition-colors",
-                          selectedCategory === category.name &&
-                            "border-r-2 border-red-600 bg-red-50 text-red-700",
+                          "flex w-full items-center gap-3 px-4 py-3 text-left transition-colors",
+                          isActive
+                            ? "border-r-2 border-red-600 bg-red-50 text-red-700"
+                            : "hover:bg-red-500",
                         )}
                       >
                         <Icon className="h-4 w-4" />
@@ -495,7 +484,7 @@ const ConstructionCosts = () => {
 
         {/* Bottom CTA Section */}
         <div className="mt-16 text-center">
-          <Card className="border-red-100 bg-gradient-to-r from-red-50 to-orange-50">
+          <Card className="bg-shutter border-stiletto border">
             <CardContent className="p-8">
               <h2 className="mb-4 text-2xl font-bold">
                 The only OS for build and service contractors
@@ -508,7 +497,6 @@ const ConstructionCosts = () => {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Button
                   size="lg"
-                  className="bg-red-600 hover:bg-red-700"
                   onClick={() =>
                     window.open(
                       "https://contractorplus.onelink.me/ekwH/homebuttons?pid=web&utm_source=web&utm_medium=resources&utm_campaign=constructioncosts&utm_content=main-page&deep_link_value=construction-costs",
@@ -522,10 +510,8 @@ const ConstructionCosts = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-red-300 text-red-600 hover:bg-red-50"
-                  onClick={() =>
-                    window.open("https://contractorplus.app", "_blank")
-                  }
+                  className="border-red-500 text-red-400 hover:bg-red-500 hover:text-white"
+                  onClick={() => window.open("/", "_blank")}
                 >
                   Learn More
                 </Button>

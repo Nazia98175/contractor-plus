@@ -27,7 +27,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <List className="mr-2 h-5 w-5 text-red-600" />
+              <List className="mr-2 h-5 w-5 text-red-500" />
               Itemization
             </CardTitle>
           </CardHeader>
@@ -43,7 +43,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <DollarSign className="mr-2 h-5 w-5 text-red-600" />
+              <DollarSign className="mr-2 h-5 w-5 text-red-500" />
               Markup Strategy
             </CardTitle>
           </CardHeader>
@@ -59,7 +59,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <Calculator className="mr-2 h-5 w-5 text-red-600" />
+              <Calculator className="mr-2 h-5 w-5 text-red-500" />
               Accurate Costing
             </CardTitle>
           </CardHeader>
@@ -75,7 +75,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <CheckSquare className="mr-2 h-5 w-5 text-red-600" />
+              <CheckSquare className="mr-2 h-5 w-5 text-red-500" />
               Professional Presentation
             </CardTitle>
           </CardHeader>
@@ -89,17 +89,17 @@ export function EducationalContent() {
         </Card>
       </div>
 
-      <Card className="border-red-100 bg-red-50">
+      <Card className="text-darkKnight border-red-100 bg-red-50">
         <CardContent className="pt-6">
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <div className="rounded-full bg-red-100 p-3">
-              <Clipboard className="h-6 w-6 text-red-600" />
+              <Clipboard className="h-6 w-6 text-red-500" />
             </div>
             <div>
               <h3 className="mb-2 text-xl font-semibold">
                 Take the headache out of managing multiple trades
               </h3>
-              <p className="text-aliceBlue">
+              <p>
                 Contractor+ allows you to estimate multi-service projects in one
                 place – add up different trades, include your markup, and
                 generate one clean proposal. Simplify complex jobs and present

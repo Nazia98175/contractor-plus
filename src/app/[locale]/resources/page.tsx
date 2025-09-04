@@ -1,6 +1,5 @@
 import Resource from "@/components/resourcehub/pages/Resource";
 import { Metadata } from "next";
-import React from "react";
 
 export const metadata: Metadata = {
   title: "Contractor plus - Resources",
@@ -10,9 +9,9 @@ export const metadata: Metadata = {
 
 const ResourcePage = () => {
   return (
-    <div>
+    <>
       <Resource />
-    </div>
+    </>
   );
 };
 

@@ -7,8 +7,7 @@ import {
   industries,
   states,
 } from "@/data/mockData";
-
-import { LaborRate, ZipCodeLaborRate } from "@/types";
+import { LaborRate } from "@/types";
 import { transformData, transformZipCodeData } from "@/utils/dataTransformers";
 import { format } from "date-fns";
 import { ALL_DATA_SOURCES } from "../components/DataSourceConfig";
@@ -20,6 +19,7 @@ import DataVisualizer from "../components/DataVisualizer";
 import { Badge } from "../components/ui/badge";
 import DataTable from "../components/DataTable";
 import ForecastChart from "../components/ForecastChart";
+import { ZipCodeLaborRate } from "@/types/resources";
 
 // Sample data for demonstration - you'll want to replace this with actual data from your other project
 const SAMPLE_DATA = {
@@ -265,7 +265,7 @@ const USConstructionLaborRates = () => {
       <div className="mb-6">
         <Link
           href="/resources"
-          className="text-primary mb-4 flex items-center gap-1 hover:underline"
+          className="mb-4 flex items-center gap-1 hover:text-red-500"
         >
           <ArrowLeft className="h-4 w-4" /> Back to Resource Hub
         </Link>
@@ -340,20 +340,32 @@ const USConstructionLaborRates = () => {
                     Data Table
                   </h2>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       Format: {filters.period}
                     </Badge>
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       {getDateRangeDisplay()}
                     </Badge>
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       {filters.industries.length === 0
                         ? "All Industries"
                         : filters.industries.length === 1
                           ? "1 Industry"
                           : `${filters.industries.length} Industries`}
                     </Badge>
-                    <Badge variant="outline" className="bg-white/50">
+                    <Badge
+                      variant="outline"
+                      className="bg-shutter border-stiletto"
+                    >
                       {filters.locationMode === "zipcode"
                         ? `Zip: ${filters.zipCode || "None"}`
                         : filters.states.length === 0

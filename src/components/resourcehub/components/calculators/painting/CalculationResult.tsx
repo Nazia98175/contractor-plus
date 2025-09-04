@@ -1,4 +1,4 @@
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Separator } from "../../ui/separator";
 
 interface CalculationResultProps {
@@ -16,10 +16,10 @@ export function CalculationResult({ result }: CalculationResultProps) {
     <Card className="border-stiletto bg-shutter border shadow-sm">
       <CardContent className="p-6">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-700">
+          <h3 className="text-alice text-lg font-medium">
             Estimated Painting Cost
           </h3>
-          <p className="my-2 text-4xl font-bold text-red-600">
+          <p className="my-2 text-4xl font-bold text-red-500">
             $
             {result.totalCost.toLocaleString("en-US", {
               minimumFractionDigits: 2,
@@ -31,11 +31,11 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <Separator className="my-4" />
 
         <div className="space-y-3 text-sm">
-          <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
+          <h4 className="text-alice font-medium">Cost Breakdown</h4>
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Paint Needed</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.gallonsNeeded.toLocaleString()}{" "}
               {result.gallonsNeeded === 1 ? "gallon" : "gallons"}
             </span>
@@ -43,7 +43,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Paint Cost</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               $
               {result.paintCost.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
@@ -54,7 +54,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Labor Hours</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.laborHours.toLocaleString("en-US", {
                 minimumFractionDigits: 1,
                 maximumFractionDigits: 1,
@@ -65,7 +65,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Labor Cost</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               $
               {result.laborCost.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
@@ -74,9 +74,9 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </span>
           </div>
 
-          <div className="flex items-center justify-between border-t border-gray-100 pt-2">
+          <div className="border-decemberSky flex items-center justify-between border-t pt-2">
             <span className="font-medium">Total Cost</span>
-            <span className="font-bold text-red-600">
+            <span className="font-bold text-red-500">
               $
               {result.totalCost.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
@@ -86,8 +86,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
         </div>
 
-        <div className="mt-4 border-t border-gray-200 pt-4">
-          <p className="text-center text-xs text-gray-500">
+        <div className="border-decemberSky mt-4 border-t pt-4">
+          <p className="text-decemberSky text-center text-xs">
             This estimate is based on the provided inputs. Actual costs may vary
             based on surface condition, preparation work, and specific paint
             products used.

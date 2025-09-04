@@ -1,12 +1,11 @@
 import WarrantyAgreement from "@/components/resourcehub/pages/contract-templates/WarrantyAgreement";
-import React from "react";
 
-const page = () => {
+const WarrantyAgreementPage = () => {
   return (
-    <div>
+    <>
       <WarrantyAgreement />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default WarrantyAgreementPage;

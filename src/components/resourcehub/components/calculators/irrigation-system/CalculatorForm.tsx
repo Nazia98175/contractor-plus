@@ -414,7 +414,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               size="lg"
               className="mt-4 w-full bg-red-600 hover:bg-red-700"
             >
-              <Droplet className="mr-2 h-4 w-4" />
+              <Droplet className="h-4 w-4" />
               Calculate
             </Button>
           </form>

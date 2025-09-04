@@ -1,12 +1,11 @@
 import CommercialSpaceCleaningCalculator from "@/components/resourcehub/pages/calculators/CommercialSpaceCleaningCalculator";
-import React from "react";
 
-const page = () => {
+const CommercialSpaceCleaningCalculatorPage = () => {
   return (
-    <div>
+    <>
       <CommercialSpaceCleaningCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default CommercialSpaceCleaningCalculatorPage;

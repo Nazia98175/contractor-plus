@@ -195,7 +195,7 @@ export function EducationalContent() {
 
       <section className="border-stiletto bg-shutter rounded-lg border p-6">
         <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold">
-          <Droplet className="h-5 w-5 text-red-600" />
+          <Droplet className="h-5 w-5 text-red-500" />
           <span>Plan out every sprinkler and save money on parts</span>
         </h2>
         <p className="text-decemberSky mb-4">

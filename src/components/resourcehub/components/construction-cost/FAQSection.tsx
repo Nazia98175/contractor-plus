@@ -15,7 +15,7 @@ interface FAQSectionProps {
   projectSlug: string;
   location: string;
   projectName: string;
-  projectValues: ProjectDetail;
+  projectValues?: ProjectDetail;
 }
 
 export const FAQSection: React.FC<FAQSectionProps> = ({

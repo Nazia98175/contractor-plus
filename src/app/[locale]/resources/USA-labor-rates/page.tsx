@@ -1,12 +1,17 @@
 import USConstructionLaborRates from "@/components/resourcehub/pages/USConstructionLaborRates";
-import React from "react";
+import { Metadata } from "next";
 
-const page = () => {
+export const metadata: Metadata = {
+  title: "USA Labor Rates: Up-To-Date Contractor Pay Guide",
+  description:
+    "Compare average contractor labor rates across states and job types to make informed hiring decisions.",
+};
+const UsaLaborRatePage = () => {
   return (
-    <div>
+    <>
       <USConstructionLaborRates />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default UsaLaborRatePage;

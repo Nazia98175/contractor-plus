@@ -80,13 +80,13 @@ const LocationFilter = ({
         <TabsList className="mt-3 grid w-full grid-cols-2 gap-2 p-1">
           <TabsTrigger
             value="region"
-            className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"
+            className="h-8 px-4 py-1.5 data-[state=active]:bg-red-500/10 data-[state=active]:text-red-500 data-[state=active]:shadow-none"
           >
             State
           </TabsTrigger>
           <TabsTrigger
             value="zipcode"
-            className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"
+            className="h-8 px-4 py-1.5 data-[state=active]:bg-red-500/10 data-[state=active]:text-red-500 data-[state=active]:shadow-none"
           >
             Zip Code
           </TabsTrigger>

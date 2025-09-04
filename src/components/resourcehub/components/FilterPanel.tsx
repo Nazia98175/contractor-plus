@@ -1,13 +1,5 @@
 import { useToast } from "@/hooks/use-toast";
-
-import {
-  DateRange,
-  FilterState,
-  Industry,
-  Period,
-  State,
-  UnitOfMeasurement,
-} from "@/types";
+import { Industry, Period, State, UnitOfMeasurement } from "@/types";
 import { RefreshCw } from "lucide-react";
 import { useCallback, useState } from "react";
 import { ALL_DATA_SOURCES } from "./DataSourceConfig";
@@ -19,6 +11,7 @@ import PeriodSelector from "./PeriodSelector";
 import UOMSelector from "./UOMSelector";
 import { cn } from "@/app/lib/utils";
 import { Button } from "./ui/button";
+import { DateRange, FilterState } from "@/types/resources";
 
 interface FilterPanelProps {
   industries: Industry[];

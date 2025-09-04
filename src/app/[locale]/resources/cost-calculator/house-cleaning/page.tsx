@@ -1,12 +1,11 @@
 import HouseCleaningCalculator from "@/components/resourcehub/pages/calculators/HouseCleaningCalculator";
-import React from "react";
 
-const page = () => {
+const HouseCleaningCalculatorPage = () => {
   return (
-    <div>
+    <>
       <HouseCleaningCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default HouseCleaningCalculatorPage;

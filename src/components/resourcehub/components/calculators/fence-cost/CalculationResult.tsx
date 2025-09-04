@@ -73,7 +73,7 @@ export function CalculationResult({
         <Separator className="my-4" />
 
         <div className="space-y-3">
-          <h4 className="font-medium text-gray-700">Cost Breakdown</h4>
+          <h4 className="text-alice font-medium">Cost Breakdown</h4>
 
           {/* Base Fence Cost */}
           <div className="flex items-center justify-between">
@@ -111,7 +111,7 @@ export function CalculationResult({
           </div>
 
           {/* Total Cost */}
-          <div className="border-t border-gray-200 pt-2">
+          <div className="border-decemberSky border-t pt-2">
             <div className="flex items-center justify-between">
               <span className="text-base font-semibold text-gray-700">
                 Total Project Cost:

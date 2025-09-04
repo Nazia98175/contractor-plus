@@ -9,11 +9,11 @@ interface LaborSearchParams {
   timePeriod: string;
   includeSources: string[];
   uom: "Hour" | "Square Foot" | "Linear Foot" | "Unit";
-  zipCode: string;
+  zipCode?: string;
 }
 
 interface LaborForecastParams {
-  industry: string;
+  industry?: string;
   state: string[];
   uom: "Hour" | "Square Foot" | "Linear Foot" | "Unit";
   zipCode?: string;
@@ -65,7 +65,7 @@ export const getExternalIndustryName = (internalIndustry: string): string => {
   const cleaned = internalIndustry.trim().toLowerCase();
 
   const entry = Object.entries(externalToInternalIndustryMap).find(
-    ([, value]) => value.toLowerCase() === cleaned
+    ([, value]) => value.toLowerCase() === cleaned,
   );
 
   return entry ? entry[0] : internalIndustry;
@@ -123,7 +123,7 @@ export const laborSearchApi = async (params: LaborSearchParams) => {
 export const laborForecastApi = async (params: LaborForecastParams) => {
   const url = new URL(`${LABOR_API_BASE_URL}/forcast`);
 
-  const normalizedIndustry = getExternalIndustryName(params.industry);
+  const normalizedIndustry = getExternalIndustryName(params?.industry ?? "");
   url.searchParams.append("industry", normalizedIndustry);
 
   // Handle state (if it's an array)

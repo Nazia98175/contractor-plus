@@ -102,7 +102,7 @@ export default function SnowRemovalCalculator() {
 
                 <div className="bg-stiletto/50 w-full rounded-md p-4">
                   <div className="flex gap-2">
-                    <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+                    <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                     <p className="text-sm">
                       Professional snow removal pricing should account for
                       equipment costs, labor, risk, and the extra time required

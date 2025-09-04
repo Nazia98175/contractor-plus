@@ -18,13 +18,13 @@ const PeriodSelector = ({ value, onChange }: PeriodSelectorProps) => {
       <TabsList className="mt-3 grid w-full grid-cols-2 gap-2 p-1">
         <TabsTrigger
           value="Monthly"
-          className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"
+          className="h-8 px-4 py-1.5 data-[state=active]:bg-red-500/10 data-[state=active]:text-red-500 data-[state=active]:shadow-none"
         >
           Monthly
         </TabsTrigger>
         <TabsTrigger
           value="Quarterly"
-          className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary h-8 px-4 py-1.5 data-[state=active]:shadow-none"
+          className="h-8 px-4 py-1.5 data-[state=active]:data-[state=active]:bg-red-500/10 data-[state=active]:text-red-500 data-[state=active]:shadow-none"
         >
           Quarterly
         </TabsTrigger>

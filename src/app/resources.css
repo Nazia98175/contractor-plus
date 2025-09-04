@@ -4,11 +4,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-decemberSky;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-shutter/30 hover:bg-shutter/50 rounded-full transition-colors;
+  background: #cccccc40;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc80;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

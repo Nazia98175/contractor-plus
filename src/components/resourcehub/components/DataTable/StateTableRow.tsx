@@ -1,6 +1,6 @@
+import { DataSource } from "@/types/resources";
 import AnimatedNumber from "../AnimatedNumber";
 import { StateTableDataRow } from "./processStateTableData";
-import { DataSource } from "@/types";
 
 interface StateTableRowProps {
   row: StateTableDataRow;
@@ -9,7 +9,7 @@ interface StateTableRowProps {
 
 const StateTableRow = ({ row, dataSources }: StateTableRowProps) => {
   return (
-    <tr className="hover:bg-muted/20 h-16 transition-colors">
+    <tr className="h-16 px-2 transition-colors">
       <td className="font-medium">{row.industryName}</td>
       <td className="text-center">
         {row.stateName === "Region" ? (

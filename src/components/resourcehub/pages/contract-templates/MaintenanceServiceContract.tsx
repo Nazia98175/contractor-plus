@@ -192,7 +192,7 @@ export default function MaintenanceServiceContract() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources"
-                className="text-sm font-medium hover:text-red-600"
+                className="text-sm font-medium hover:text-red-500"
               >
                 Resources
               </Link>
@@ -203,7 +203,7 @@ export default function MaintenanceServiceContract() {
             <BreadcrumbLink asChild>
               <Link
                 href="/resources/contract-templates"
-                className="text-sm font-medium hover:text-red-600"
+                className="text-sm font-medium hover:text-red-500"
               >
                 Contract Templates
               </Link>
@@ -221,7 +221,7 @@ export default function MaintenanceServiceContract() {
       {/* Header */}
       <div className="mb-6 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-          <Wrench className="h-5 w-5 text-red-600" />
+          <Wrench className="h-5 w-5 text-red-500" />
         </div>
         <div>
           <h1 className="text-3xl font-bold tracking-tight">

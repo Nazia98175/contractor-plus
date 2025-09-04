@@ -9,7 +9,15 @@ import {
 import Link from "next/link";
 import { BlogPostScroller } from "../components/resource-hub/BlogPostScroller";
 import { ResourceCard } from "../components/resource-hub/ResourceCard";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
+import { blogList } from "@/components/common/Helper";
 
+export const blogHeadingData = {
+  id: 1,
+  title: "Latest from Contractor+ HQ",
+  btnText: "Contractor+ HQ",
+  btnUrl: "/",
+};
 const Resource = () => {
   return (
     <section className="flex flex-col gap-12 px-2 py-10">
@@ -114,7 +122,7 @@ const Resource = () => {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="main-container">
+      {/* <section className="main-container">
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-between gap-5">
             <h2 className="text-3xl font-bold tracking-tight">
@@ -129,7 +137,12 @@ const Resource = () => {
           </div>
           <BlogPostScroller />
         </div>
-      </section>
+      </section> */}
+      <BlogPosts
+        data={blogList}
+        blogs={blogHeadingData}
+        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
+      />
 
       {/* Podcasts Section */}
       {/* <section className="bg-muted main-container py-10 md:px-6">

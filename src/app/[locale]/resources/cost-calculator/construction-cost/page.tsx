@@ -1,12 +1,11 @@
 import ConstructionCostCalculator from "@/components/resourcehub/pages/calculators/ConstructionCostCalculator";
-import React from "react";
 
-const page = () => {
+const ConstructionCostCalculatorPage = () => {
   return (
-    <div>
+    <>
       <ConstructionCostCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ConstructionCostCalculatorPage;

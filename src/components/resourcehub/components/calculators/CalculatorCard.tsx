@@ -46,13 +46,13 @@ export function CalculatorCard({
         {calculator.isAvailable ? (
           <Button variant="default" size="sm" className="w-full" asChild>
             <Link href={calculator.path ?? "#"}>
-              <Calculator className="mr-2 h-4 w-4" />
+              <Calculator className="h-4 w-4" />
               View
             </Link>
           </Button>
         ) : (
           <Button variant="secondary" size="sm" className="w-full" disabled>
-            <Calculator className="mr-2 h-4 w-4" />
+            <Calculator className="h-4 w-4" />
             Coming Soon
           </Button>
         )}

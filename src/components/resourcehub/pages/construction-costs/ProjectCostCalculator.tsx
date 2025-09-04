@@ -58,7 +58,10 @@ import {
   Project,
 } from "@/services/resource/costCalculatorService";
 import { ProjectDetail } from "@/types/resources/projectDetail";
-import { getUserIp } from "@/services/resource/thumbtackService";
+import {
+  getUserIp,
+  searchThumbtackBusinesses,
+} from "@/services/resource/thumbtackService";
 import ThumbTackWidget from "../../components/ThumbTackWidget";
 import { estimaticDataApi } from "@/services/resource/constructionCostService";
 
@@ -158,7 +161,7 @@ const PROJECT_DATA: Record<string, ProjectData> = {};
 // }));
 
 // Configuration from the provided logic
-const DIRECT_MAP = {
+const DIRECT_MAP: Record<string, string> = {
   plumbing: "Plumbing",
   appliances: "Appliances",
   drywall: "Drywall",
@@ -201,7 +204,7 @@ const DIRECT_MAP = {
   gutter: "Roofing",
 };
 
-const REGEX_FALLBACK = [
+const REGEX_FALLBACK: [RegExp, string][] = [
   [/roof|gutter/i, "Roofing"],
   [/plumb/i, "Plumbing"],
   [/electrical?|outlet/i, "Electrical"],
@@ -226,7 +229,7 @@ const REGEX_FALLBACK = [
 ];
 
 // Function to map category to labor-category
-function mapLaborCategory(project) {
+function mapLaborCategory(project: any) {
   // const estimateKey = Object.keys(project.estimate)[0];
   //     const rawCategory = project.estimate[estimateKey]?.category || "";
   const src = project.laborRateIndexCategory?.toLowerCase().trim();
@@ -367,7 +370,7 @@ const ProjectCostCalculator = ({
       userQuery: matchedThumbtack.projectName,
     };
 
-    if (isZipCodeManuallyChanged && zipCodeValue.length === 5) {
+    if (isZipCodeManuallyChanged && zipCodeValue?.length === 5) {
       return { ...basePayload, zipCode: zipCodeValue };
     }
 
@@ -386,6 +389,7 @@ const ProjectCostCalculator = ({
   } = useQuery({
     queryKey: ["thumbtackGetQuote", payload, location],
     queryFn: async () => {
+      if (!payload) return;
       const data = await searchThumbtackBusinesses(payload);
       return {
         data: data?.data,
@@ -719,7 +723,7 @@ const ProjectCostCalculator = ({
                 {/* Materials Section */}
                 <div>
                   <div className="mb-4 flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-red-600">
+                    <h3 className="text-lg font-semibold text-red-500">
                       ✓ Materials
                     </h3>
                     <span className="font-semibold">
@@ -797,7 +801,7 @@ const ProjectCostCalculator = ({
                                   {material.unit}
                                 </p>
                               )}
-                              <p className="text-xs text-blue-600">
+                              <p className="text-xs text-blue-400">
                                 Total needed:{" "}
                                 {totalQuantity % 1 === 0
                                   ? totalQuantity.toFixed(0)
@@ -843,7 +847,7 @@ const ProjectCostCalculator = ({
                 <div>
                   <div className="mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-semibold text-red-600">
+                      <h3 className="text-lg font-semibold text-red-500">
                         ✓ Labor
                       </h3>
                       <TooltipProvider>
@@ -961,7 +965,7 @@ const ProjectCostCalculator = ({
                         }}
                         className="rounded-r-none"
                       />
-                      <div className="rounded-l-none rounded-r-md border-l-0 border-red-500 bg-red-500 px-3 py-2 text-sm">
+                      <div className="rounded-l-none rounded-r-md border-l-0 border-red-500 bg-red-500 px-3 py-2 text-sm text-nowrap">
                         {projectData?.inputField.unit}
                       </div>
                     </div>
@@ -1009,7 +1013,7 @@ const ProjectCostCalculator = ({
                 ) : (
                   <>
                     <div className="mb-6 text-center">
-                      <div className="mb-2 text-3xl font-bold text-red-600">
+                      <div className="mb-2 text-3xl font-bold text-red-500">
                         {formatCurrency(totalCost)}
                       </div>
                       <p className="text-aliceBlue text-sm">
@@ -1029,7 +1033,7 @@ const ProjectCostCalculator = ({
                 )}
 
                 {/* CTA */}
-                <div className="rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 p-4 text-center">
+                <div className="rounded-lg bg-gradient-to-br from-black via-gray-900 to-black p-4 text-center">
                   <h4 className="mb-2 font-semibold">
                     Contractor+ is the OS for build and service contractors
                   </h4>

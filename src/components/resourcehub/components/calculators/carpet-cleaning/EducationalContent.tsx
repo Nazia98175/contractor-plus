@@ -47,7 +47,7 @@ export function EducationalContent() {
             <h3 className="mb-4 text-xl font-semibold">
               Pricing Strategies for Carpet Cleaners
             </h3>
-            <p className="text-alice mb-4 leading-relaxed">
+            <p className="text-decemberSky mb-4 leading-relaxed">
               Professional carpet cleaners typically use one or more of these
               pricing strategies. Many companies combine approaches for the most
               accurate and competitive pricing.

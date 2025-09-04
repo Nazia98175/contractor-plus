@@ -1,12 +1,12 @@
 import CustomWoodworkCalculator from "@/components/resourcehub/pages/calculators/CustomWoodworkCalculator";
 import React from "react";
 
-const page = () => {
+const CustomWoodworkPage = () => {
   return (
-    <div>
+    <>
       <CustomWoodworkCalculator />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default CustomWoodworkPage;

@@ -251,7 +251,10 @@ export default function ContractTemplatesPage() {
       {/* Contract Templates Grid */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {filteredTemplates.map((template) => (
-          <Card key={template.id} className="transition-shadow hover:shadow-lg">
+          <Card
+            key={template.id}
+            className="flex h-full flex-col transition-shadow hover:shadow-lg"
+          >
             <CardHeader>
               <div className="mb-2 flex items-start justify-between">
                 <span className="text-primary bg-primary/10 rounded px-2 py-1 text-sm font-medium">
@@ -266,28 +269,28 @@ export default function ContractTemplatesPage() {
                 {template.description}
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="mb-2 text-sm font-medium">Key Features:</h4>
-                  <ul className="text-aliceBlue space-y-1 text-sm">
-                    {template.features.map((feature, index) => (
-                      <li key={index} className="flex items-center">
-                        <div className="bg-primary mr-2 h-1.5 w-1.5 rounded-full"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
-                <div className="flex gap-2">
-                  <Button asChild className="flex-1">
-                    <Link href={`/resources/contract-templates/${template.id}`}>
-                      <Edit className="mr-2 h-4 w-4" />
-                      Customize Template
-                    </Link>
-                  </Button>
-                </div>
+            <CardContent className="flex flex-1 flex-col">
+              <div>
+                <h4 className="mb-2 text-sm font-medium">Key Features:</h4>
+                <ul className="text-aliceBlue space-y-1 text-sm">
+                  {template.features.map((feature, index) => (
+                    <li key={index} className="flex items-center">
+                      <div className="bg-primary mr-2 h-1.5 w-1.5 rounded-full"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Push button to bottom */}
+              <div className="mt-auto flex gap-2 pt-4">
+                <Button asChild className="flex-1">
+                  <Link href={`/resources/contract-templates/${template.id}`}>
+                    <Edit className="mr-2 h-4 w-4" />
+                    Customize Template
+                  </Link>
+                </Button>
               </div>
             </CardContent>
           </Card>

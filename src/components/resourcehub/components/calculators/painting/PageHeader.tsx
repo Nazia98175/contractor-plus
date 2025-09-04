@@ -16,7 +16,7 @@ export function PageHeader() {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/"
-              className="text-sm font-medium hover:text-red-600"
+              className="text-sm font-medium hover:text-red-500"
             >
               Resources
             </BreadcrumbLink>
@@ -25,7 +25,7 @@ export function PageHeader() {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/resources/cost-calculator"
-              className="text-sm font-medium hover:text-red-600"
+              className="text-sm font-medium hover:text-red-500"
             >
               Calculators
             </BreadcrumbLink>
@@ -41,7 +41,7 @@ export function PageHeader() {
 
       <div className="mb-3 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-          <Paintbrush className="h-5 w-5 text-red-600" />
+          <Paintbrush className="h-5 w-5 text-red-500" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight">
           Painting Cost Estimator

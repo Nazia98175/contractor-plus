@@ -38,8 +38,8 @@ export const MaterialTableRow: React.FC<MaterialTableRowProps> = ({
 
   return (
     <div className="grid grid-cols-12 items-center gap-2 border-b py-3 last:border-b-0 md:gap-3">
-      <div className="col-span-2 px-1 lg:col-span-1">
-        <div className="bg-muted relative h-10 w-10 overflow-hidden rounded-md border">
+      <div className="col-span-2 flex items-center justify-center px-1 lg:col-span-1">
+        <div className="border-stiletto relative h-10 w-10 overflow-hidden rounded-md border">
           {item.image ? (
             <img
               src={item.image}
@@ -47,7 +47,7 @@ export const MaterialTableRow: React.FC<MaterialTableRowProps> = ({
               className="h-full w-full object-cover"
             />
           ) : (
-            <div className="bg-muted-foreground/20 flex h-full w-full items-center justify-center">
+            <div className="flex h-full w-full items-center justify-center">
               {item.name.charAt(0)}
             </div>
           )}
@@ -59,8 +59,7 @@ export const MaterialTableRow: React.FC<MaterialTableRowProps> = ({
         <div className="mt-0.5 flex items-center gap-1">
           <span
             className={cn(
-              "rounded-sm px-1.5 py-0.5 text-xs",
-              "bg-muted text-aliceBlue",
+              "text-faluRed bg-strawberry rounded-sm px-1.5 py-0.5 text-xs",
             )}
           >
             {formatStoreName(item.store)}
@@ -109,7 +108,7 @@ export const MaterialTableRow: React.FC<MaterialTableRowProps> = ({
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="h-8 text-xs whitespace-nowrap"
+                  className="text-alice h-8 text-xs whitespace-nowrap"
                   onClick={() => window.open(item.productUrl, "_blank")}
                 >
                   <ShoppingCart className="mr-1 h-3 w-3" />

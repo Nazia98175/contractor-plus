@@ -82,7 +82,7 @@ const ComparePage = () => {
       {selectedItems && selectedItems.length > 0 && (
         <button
           onClick={() => setDrawerOpen(true)}
-          className={`hover:bg-primary/90 bg-primary text-primary-foreground fixed bottom-6 z-50 flex items-center justify-center gap-2 rounded-full p-4 shadow-lg transition-all duration-200 ${
+          className={`text-primary-foreground fixed bottom-6 z-50 flex items-center justify-center gap-2 rounded-full bg-red-600 p-4 shadow-lg transition-all duration-200 hover:bg-red-500 ${
             isTabletOrSmaller ? "right-4" : "right-6"
           }`}
         >

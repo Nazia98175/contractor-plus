@@ -1,4 +1,4 @@
-import { Card, CardDescription } from "../../ui/card";
+import { Card, CardContent, CardDescription } from "../../ui/card";
 import { Separator } from "../../ui/separator";
 
 interface CalculationResultProps {
@@ -19,10 +19,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
     <Card className="border-stiletto bg-shutter border shadow-sm">
       <CardContent className="p-6">
         <div className="mb-6 text-center">
-          <h3 className="text-lg font-medium text-gray-700">
-            Pipe Water Volume
-          </h3>
-          <p className="my-2 text-4xl font-bold text-red-600">
+          <h3 className="text-alice text-lg font-medium">Pipe Water Volume</h3>
+          <p className="my-2 text-4xl font-bold text-red-500">
             {result.volumeGallons.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
@@ -41,25 +39,25 @@ export function CalculationResult({ result }: CalculationResultProps) {
         <Separator className="my-4" />
 
         <div className="space-y-3 text-sm">
-          <h4 className="font-medium text-gray-700">Calculation Details</h4>
+          <h4 className="text-alice font-medium">Calculation Details</h4>
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Pipe Inner Diameter</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.diameter} {result.diameterUnit}
             </span>
           </div>
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Pipe Length</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.length} {result.lengthUnit}
             </span>
           </div>
 
-          <div className="flex items-center justify-between border-t border-gray-100 pt-2">
+          <div className="border-decemberSky flex items-center justify-between border-t pt-2">
             <span className="font-medium">Volume (US Gallons)</span>
-            <span className="font-bold text-red-600">
+            <span className="font-bold text-red-500">
               {result.volumeGallons.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
@@ -69,7 +67,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="flex items-center justify-between">
             <span className="font-medium">Volume (Liters)</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.volumeLiters.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
@@ -79,7 +77,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Volume (Cubic Inches)</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.volumeCubicInches.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
@@ -89,7 +87,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Volume (Cubic Feet)</span>
-            <span className="font-medium text-gray-700">
+            <span className="text-alice font-medium">
               {result.volumeCubicFeet.toLocaleString("en-US", {
                 minimumFractionDigits: 4,
                 maximumFractionDigits: 4,
@@ -98,8 +96,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
         </div>
 
-        <div className="mt-4 border-t border-gray-200 pt-4">
-          <p className="text-center text-xs text-gray-500">
+        <div className="border-decemberSky mt-4 border-t pt-4">
+          <p className="text-decemberSky text-center text-xs">
             This calculation represents the volume of water the pipe can hold
             when completely full. Actual capacity may vary based on fittings,
             valves, and other factors.

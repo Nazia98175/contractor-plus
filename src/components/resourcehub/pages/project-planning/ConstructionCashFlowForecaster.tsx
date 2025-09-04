@@ -648,7 +648,7 @@ export default function ConstructionCashFlowForecaster() {
                       </div>
                     </div>
                     <div className="rounded-lg bg-red-50 p-3">
-                      <div className="text-sm font-medium text-red-600">
+                      <div className="text-sm font-medium text-red-500">
                         Total Expenses
                       </div>
                       <div className="text-lg font-bold text-red-700">

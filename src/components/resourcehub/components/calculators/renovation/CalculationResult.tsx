@@ -85,7 +85,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         </div>
       </CardContent>
       <CardFooter className="bg-primary/5 border-shutter flex justify-center border-t">
-        <p className="text-center text-xs text-gray-500">
+        <p className="text-decemberSky text-center text-xs">
           This estimate is based on the provided inputs and industry averages.
           Actual costs may vary based on specific materials, labor rates, and
           unforeseen conditions.

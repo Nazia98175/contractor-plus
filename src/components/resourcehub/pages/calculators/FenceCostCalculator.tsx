@@ -70,7 +70,7 @@ export default function FenceCostCalculator() {
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
-        className="mb-6 flex items-center gap-1 hover:text-red-600"
+        className="mb-6 flex items-center gap-1 hover:text-red-500"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
@@ -98,7 +98,7 @@ export default function FenceCostCalculator() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-alice mb-4">
+              <p className="text-decemberSky mb-4">
                 Contractor+ gives fencing contractors an edge with quick
                 calculators for linear footage, gates, and more. Create detailed
                 estimates, schedule your crew, and manage projects all in one

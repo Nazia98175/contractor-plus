@@ -58,7 +58,7 @@ export const ComparisonDrawer: React.FC<ComparisonDrawerProps> = ({
         <DrawerContent
           className={`max-h-[85vh] ${isTabletOrSmaller ? "h-[550px]" : "h-[700px]"} overflow-hidden`}
         >
-          <DrawerHeader className="bg-background sticky top-0 z-10 border-b">
+          <DrawerHeader className="border-stiletto sticky top-0 z-10 border-b">
             <div className="flex items-center justify-between">
               <ActionBarTitle
                 storeFilter={storeFilter}
@@ -84,8 +84,8 @@ export const ComparisonDrawer: React.FC<ComparisonDrawerProps> = ({
               <EmptyState />
             ) : (
               <div className="h-full space-y-4">
-                <div className="bg-background flex h-full flex-col overflow-hidden rounded-lg border">
-                  <div className="max-h-[calc(100%-120px)] overflow-x-hidden overflow-y-auto">
+                <div className="border-stiletto flex h-full flex-col overflow-hidden rounded-lg border p-4">
+                  <div className="max-h-[calc(100%-120px)] overflow-x-hidden overflow-y-auto text-white">
                     {filteredItems.map((item) => (
                       <MaterialTableRow
                         key={`${item.id}-${item.storeId}`}
@@ -110,11 +110,11 @@ export const ComparisonDrawer: React.FC<ComparisonDrawerProps> = ({
           <DrawerFooter className="border-t">
             <Button
               className="flex-1"
+              size="lg"
               onClick={() => setShowExportDialog(true)}
               disabled={items.length === 0}
-              variant="outline"
             >
-              <Share className="mr-2 h-4 w-4" />
+              <Share className="h-4 w-4" />
               Export List
             </Button>
           </DrawerFooter>

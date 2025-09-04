@@ -1,12 +1,17 @@
 import ProjectPlanningPage from "@/components/resourcehub/pages/ProjectPlanningPage";
-import React from "react";
+import { Metadata } from "next";
 
-const page = () => {
+export const metadata: Metadata = {
+  title: "Contractor plus - Project Planning",
+  description:
+    "Access our collection of free tools, templates, blog posts, and podcasts designed to help contractors build better businesses.",
+};
+const ProjectPlanning = () => {
   return (
-    <div>
+    <>
       <ProjectPlanningPage />
-    </div>
+    </>
   );
 };
 
-export default page;
+export default ProjectPlanning;

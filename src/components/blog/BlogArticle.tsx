@@ -8,7 +8,7 @@ const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
   blogsData,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 3; // Blogs to show in each page
+  const pageSize = 6; // Blogs to show in each page
 
   const totalPages = Math.ceil(blogsData.length / pageSize);
 

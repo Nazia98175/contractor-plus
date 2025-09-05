@@ -2151,3 +2151,12 @@ body.menu-open .back-to-top {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.cc {
+  @apply shadow-c1 relative flex items-center justify-between rounded-xl bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:bg-orange-400 sm:p-[30px] md:p-[40px] lg:px-[52px] lg:py-[70px];
+}
+.sk:hover .sunil {
+  color: green;
+}
+.sk:hover .suniel {
+  stroke: green;
+}

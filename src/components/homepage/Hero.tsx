@@ -95,7 +95,7 @@ const Hero = ({
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-0 -z-10 flex aspect-video h-full object-bottom xl:w-[70%]">
+        <div className="absolute top-0 right-0 -z-10 flex aspect-video h-1/2 md:h-full xl:w-[70%]">
           <div className="relative -z-10 hidden h-full w-full md:block">
             <VideoOptimizer
               highResUrl={"/video/hero-video-higher.mp4"}

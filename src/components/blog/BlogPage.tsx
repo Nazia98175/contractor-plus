@@ -14,6 +14,9 @@ type Blog = {
   shortDescription?: string;
   category?: string | Array<{ text?: string; name?: string } | string>;
   tags?: Array<{ text?: string } | string>;
+  categoryListForFilter?: {
+    list?: Array<{ id?: string | number; text?: string }>;
+  };
   [k: string]: any;
 };
 
@@ -32,26 +35,31 @@ const normalize = (s?: string) =>
   (s ?? "").toString().trim().toLowerCase().replace(/\s+/g, "-");
 
 const getBlogCategories = (blog: Blog) => {
-  const cats: string[] = [];
+  const cats = new Set<string>();
+
+  const list = blog?.categoryListForFilter?.list ?? [];
+  for (const item of list) {
+    if (item?.text) cats.add(normalize(item.text));
+  }
 
   if (typeof blog?.category === "string") {
-    cats.push(normalize(blog.category));
+    cats.add(normalize(blog.category));
   } else if (Array.isArray(blog?.category)) {
     for (const c of blog.category) {
-      if (typeof c === "string") cats.push(normalize(c));
-      else if (c?.text) cats.push(normalize(c.text));
-      else if ((c as any)?.name) cats.push(normalize((c as any).name));
+      if (typeof c === "string") cats.add(normalize(c));
+      else if ((c as any)?.text) cats.add(normalize((c as any).text));
+      else if ((c as any)?.name) cats.add(normalize((c as any).name));
     }
   }
 
   if (Array.isArray(blog?.tags)) {
     for (const t of blog.tags) {
-      if (typeof t === "string") cats.push(normalize(t));
-      else if (t?.text) cats.push(normalize(t.text));
+      if (typeof t === "string") cats.add(normalize(t));
+      else if ((t as any)?.text) cats.add(normalize((t as any).text));
     }
   }
 
-  return Array.from(new Set(cats));
+  return Array.from(cats);
 };
 
 const BlogPage = ({
@@ -69,12 +77,13 @@ const BlogPage = ({
     const q = searchTerm.trim().toLowerCase();
 
     return (blogsData ?? []).filter((b) => {
-      const hay =
-        `${b.blogTitle ?? ""} ${b.shortDescription ?? ""}`.toLowerCase();
+      const hay = `${b.blogTitle ?? ""} ${b.title ?? ""} ${
+        b.shortDescription ?? ""
+      }`.toLowerCase();
       const matchesSearch = q.length === 0 || hay.includes(q);
 
       const catTokens = getBlogCategories(b);
-      const wanted = normalize(selectedCategory);
+      const wanted = selectedCategory;
       const matchesCategory = wanted === "all" || catTokens.includes(wanted);
 
       return matchesSearch && matchesCategory;
@@ -91,6 +100,7 @@ const BlogPage = ({
           blogsData={blogsData}
           onSearchChange={setSearchTerm}
           onTypeChange={setSelectedCategory}
+          industries={industries}
         />
       </div>
 

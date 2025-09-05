@@ -33,7 +33,6 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
     getAllIndustries(locale),
   ]);
 
-  console.log(industries);
   return (
     <BlogPage
       blogsData={blogsData}

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { contractorTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
 import CustomSelect from "./CustomSelect";
@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { ConstructionIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,11 @@ type BlogHeroProps = {
   blogsData: any[];
   onSearchChange?: (value: string) => void;
   onTypeChange?: (value: string) => void;
+  industries: {
+    id: number;
+    slug: string;
+    name: string;
+  }[];
 };
 
 const BlogHero = ({
@@ -22,12 +28,45 @@ const BlogHero = ({
   blogsData,
   onSearchChange,
   onTypeChange,
+  industries,
 }: BlogHeroProps) => {
   const router = useRouter();
   const [selectedValue, setSelectedValue] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState<any[]>([]);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Function to format slug: remove dashes and capitalize
+  const formatSlugToLabel = (slug: string) => {
+    return slug
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  // Function to get random icon from contractorTypes
+  const getRandomIcon = () => {
+    if (!contractorTypes || contractorTypes.length === 0) return null;
+    const randomIndex = Math.floor(Math.random() * contractorTypes.length);
+    return contractorTypes[randomIndex]?.icon || null;
+  };
+
+  // Transform industries to CustomSelect options format
+  const industriesOptions = useMemo(
+    () => [
+      {
+        value: "all",
+        label: "All Industries",
+        icon: <ConstructionIcon color="white" />,
+      },
+      ...industries.map((industry) => ({
+        value: industry.slug,
+        label: formatSlugToLabel(industry.slug),
+        icon: getRandomIcon(),
+      })),
+    ],
+    [industries],
+  );
 
   useEffect(() => {
     onTypeChange?.(selectedValue);
@@ -141,19 +180,18 @@ const BlogHero = ({
       className="relative pt-44 pb-[460px] 2xl:pt-52"
     >
       <div className="relative z-10 -mt-8 pr-3 text-center text-4xl font-extrabold sm:pr-6 sm:text-5xl lg:pr-10 lg:text-6xl xl:text-[72px]">
-        {" "}
         <h1 className="gradient-text-shadow absolute bottom-0 left-1/2 z-0 -translate-x-1/2 blur-[26px]">
           {" "}
           {blogsList?.title ?? ""}{" "}
-        </h1>{" "}
+        </h1>
         <h1 className="gradient-text-shadow relative z-10">
           {" "}
           {blogsList?.title ?? ""}{" "}
-        </h1>{" "}
+        </h1>
       </div>
       <div className="font-myriad bg-rgba15 relative z-30 mx-auto mt-16 flex w-full max-w-[788px] flex-col-reverse items-center justify-center gap-2 rounded-lg p-2.5 backdrop-blur-[42px] sm:flex-row">
         <CustomSelect
-          options={contractorTypes}
+          options={industriesOptions}
           value={selectedValue}
           onChange={(option) => setSelectedValue(option?.value || "all")}
           className="sm:max-w-[294px]"

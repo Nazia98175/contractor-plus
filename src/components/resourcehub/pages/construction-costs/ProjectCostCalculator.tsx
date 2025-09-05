@@ -788,8 +788,8 @@ const ProjectCostCalculator = ({
                                 />
                               </div>
                               {swappedMaterial ? (
-                                <div className="space-y-2">
-                                  <p className="text-sm font-medium text-green-500">
+                                <div className="space-y-3">
+                                  <p className="text-sm font-medium text-green-400">
                                     ${swappedMaterial.price.toFixed(2)}{" "}
                                     {material.unit} (from Lowe's)
                                   </p>
@@ -912,7 +912,7 @@ const ProjectCostCalculator = ({
                 </div>
 
                 {/* Totals */}
-                <div className="border-stiletto space-y-2 border-t pt-4">
+                <div className="border-stiletto space-y-3 border-t pt-4">
                   <div className="flex justify-between">
                     <span>Costs:</span>
                     <span className="font-semibold">
@@ -1081,7 +1081,7 @@ const ProjectCostCalculator = ({
         <div className="mt-12 space-y-8">
           {/* Main Overview */}
           <Card>
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <p className="text-aliceBlue leading-relaxed">
                 The cost to {projectData?.name.toLowerCase()} in{" "}
                 {displayLocationName} typically ranges from $

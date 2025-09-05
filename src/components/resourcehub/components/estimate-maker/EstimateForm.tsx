@@ -336,7 +336,7 @@ export function EstimateForm({
             </TabsList>
 
             <TabsContent value="items" className="space-y-4">
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="text-aliceBlue grid grid-cols-12 gap-2 px-2 text-sm font-medium">
                   <div className="col-span-6 sm:col-span-5">Description</div>
                   <div className="col-span-2 sm:col-span-2">Qty</div>
@@ -346,7 +346,7 @@ export function EstimateForm({
                 </div>
 
                 {items.length > 0 ? (
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {items.map((item, index) => (
                       <LineItemRow
                         key={item.id}
@@ -386,7 +386,7 @@ export function EstimateForm({
               </div>
 
               {/* Totals Section */}
-              <div className="border-darkGray mt-6 space-y-2 border-t pt-4">
+              <div className="border-darkGray mt-6 space-y-3 border-t pt-4">
                 <div className="flex justify-between text-sm">
                   <span>Subtotal:</span>
                   <span>${calculatedTotals.subtotal.toFixed(2)}</span>
@@ -462,7 +462,7 @@ export function EstimateForm({
               <div className="space-y-6">
                 {/* Estimate Information Section with 3 fields */}
                 <Card className="overflow-hidden border shadow-sm">
-                  <CardContent className="p-6">
+                  <CardContent className="py-6">
                     <div className="mb-4 flex items-center gap-3">
                       <div className="bg-primary/10 text-primary rounded-full p-2">
                         <FileEdit className="h-5 w-5" />
@@ -546,7 +546,7 @@ export function EstimateForm({
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   {/* Your Information Section */}
                   <Card className="overflow-hidden border shadow-sm">
-                    <CardContent className="p-6">
+                    <CardContent className="py-6">
                       <div className="mb-4 flex items-center gap-3">
                         <div className="bg-primary/10 text-primary rounded-full p-2">
                           <Building className="h-5 w-5" />
@@ -678,7 +678,7 @@ export function EstimateForm({
 
                   {/* Client Information Section */}
                   <Card className="overflow-hidden border shadow-sm">
-                    <CardContent className="p-6">
+                    <CardContent className="py-6">
                       <div className="mb-4 flex items-center gap-3">
                         <div className="bg-primary/10 text-primary rounded-full p-2">
                           <User className="h-5 w-5" />
@@ -765,7 +765,7 @@ export function EstimateForm({
 
                 {/* Notes Section */}
                 <Card className="overflow-hidden border shadow-sm">
-                  <CardContent className="p-6">
+                  <CardContent className="py-6">
                     <div className="mb-4 flex items-center gap-3">
                       <div className="bg-primary/10 text-primary rounded-full p-2">
                         <FileText className="h-5 w-5" />

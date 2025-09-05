@@ -52,7 +52,7 @@ export function EducationalContent() {
 
         <div className="my-8 grid gap-6 md:grid-cols-2">
           <Card className="border-stiletto border shadow-sm transition-shadow hover:shadow-md">
-            <CardContent className="p-6">
+            <CardContent className="py-6">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
                   <Home className="h-5 w-5 text-red-500" />
@@ -71,7 +71,7 @@ export function EducationalContent() {
           </Card>
 
           <Card className="border-stiletto border shadow-sm transition-shadow hover:shadow-md">
-            <CardContent className="p-6">
+            <CardContent className="py-6">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
                   <HardHat className="h-5 w-5 text-red-500" />
@@ -80,7 +80,7 @@ export function EducationalContent() {
                   Why Accurate Measurements Matter
                 </h3>
               </div>
-              <ul className="text-alice space-y-2">
+              <ul className="text-alice space-y-3">
                 <li className="flex items-start gap-2">
                   <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                   <span>

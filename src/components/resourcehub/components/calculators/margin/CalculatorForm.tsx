@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Calculator, DollarSign, Percent } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, Resolver } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "../../ui/button";
 import {
@@ -39,7 +39,7 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
   const form = useForm<CalculatorValues>({
-    resolver: zodResolver(calculatorSchema),
+    resolver: zodResolver(calculatorSchema) as Resolver<CalculatorValues>,
     defaultValues: {
       cost: 500,
       margin: 30,
@@ -57,10 +57,13 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter your cost and desired margin to calculate the selling price
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="py-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onCalculate)} className="space-y-6">
-            <div className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(onCalculate)}
+            className="flex h-full flex-col"
+          >
+            <div className="flex flex-grow flex-col space-y-5">
               {/* Cost Input */}
               <FormField
                 control={form.control}

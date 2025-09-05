@@ -67,7 +67,7 @@ export default function RoofSquareFootageCalculator() {
       <div className="mb-12 grid gap-6 md:grid-cols-2 lg:gap-8">
         <div>
           <Card className="border-stiletto bg-shutter h-full border shadow-sm">
-            <CardContent className="p-6">
+            <CardContent className="py-6">
               <div className="mb-4 flex items-center gap-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
                   <Calculator className="h-4 w-4 text-red-500" />
@@ -93,7 +93,7 @@ export default function RoofSquareFootageCalculator() {
                   to see your roof area estimation here.
                 </p>
                 <div className="border-stiletto mb-4 w-full rounded-md border px-6 py-4">
-                  <ul className="text-alice space-y-2 text-left text-sm">
+                  <ul className="text-alice space-y-3 text-left text-sm">
                     <li className="flex items-center gap-2">
                       <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                         <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>

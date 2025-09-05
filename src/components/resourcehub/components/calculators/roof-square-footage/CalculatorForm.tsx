@@ -59,7 +59,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
   return (
     <Card className="border-stiletto bg-shutter border shadow-sm">
-      <CardContent className="p-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}

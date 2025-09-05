@@ -40,18 +40,22 @@ export function TemplateSelector({
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-5">
         <h2 className="text-2xl font-bold">Estimate Templates</h2>
-        <Tabs value={category} onValueChange={setCategory}>
-          <TabsList>
-            <TabsTrigger value="all">All</TabsTrigger>
-            {categories.map((cat) => (
-              <TabsTrigger key={cat} value={cat}>
-                {cat}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
+
+        <div className="overflow-hidden">
+          {" "}
+          <Tabs value={category} onValueChange={setCategory}>
+            <TabsList>
+              <TabsTrigger value="all">All</TabsTrigger>
+              {categories.map((cat) => (
+                <TabsTrigger key={cat} value={cat}>
+                  {cat}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

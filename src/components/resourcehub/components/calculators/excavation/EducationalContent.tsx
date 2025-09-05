@@ -48,7 +48,7 @@ export function EducationalContent() {
               Excavation costs vary based on soil type, accessibility, and
               disposal requirements. The cost per cubic yard typically includes:
             </p>
-            <ul className="text-aliceBlue ml-5 list-disc space-y-2">
+            <ul className="text-aliceBlue ml-5 list-disc space-y-3">
               <li>Labor for excavation work</li>
               <li>Equipment usage (excavators, backhoes, etc.)</li>
               <li>Material hauling and disposal</li>
@@ -68,7 +68,7 @@ export function EducationalContent() {
             <p className="text-aliceBlue mb-4">
               When planning excavation work, consider these important factors:
             </p>
-            <ul className="text-aliceBlue ml-5 list-disc space-y-2">
+            <ul className="text-aliceBlue ml-5 list-disc space-y-3">
               <li>
                 <span className="font-semibold">Soil Swell:</span> Excavated
                 soil expands in volume by 10-40% depending on soil type
@@ -97,7 +97,7 @@ export function EducationalContent() {
             <p className="text-aliceBlue mb-4">
               For accurate excavation estimates, keep in mind:
             </p>
-            <ul className="text-aliceBlue ml-5 list-disc space-y-2">
+            <ul className="text-aliceBlue ml-5 list-disc space-y-3">
               <li>Always check for underground utilities before excavating</li>
               <li>Account for proper sloping on deep excavations for safety</li>
               <li>Consider groundwater management needs in your costs</li>

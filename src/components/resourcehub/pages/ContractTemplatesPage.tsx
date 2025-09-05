@@ -315,7 +315,7 @@ export default function ContractTemplatesPage() {
             <h3 className="mb-3 text-xl font-semibold">
               Benefits for Contractors
             </h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Clear payment terms and schedules</li>
               <li>Protection against scope creep</li>
               <li>Defined change order processes</li>
@@ -326,7 +326,7 @@ export default function ContractTemplatesPage() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Benefits for Clients</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Clear project deliverables and timelines</li>
               <li>Defined quality standards</li>
               <li>Warranty and guarantee terms</li>
@@ -339,7 +339,7 @@ export default function ContractTemplatesPage() {
         <h3 className="mb-3 text-xl font-semibold">
           How to Use These Templates
         </h3>
-        <ol className="text-aliceBlue mb-6 list-decimal space-y-2 pl-6">
+        <ol className="text-aliceBlue mb-6 list-decimal space-y-3 pl-6">
           <li>Choose the contract type that best fits your project</li>
           <li>Fill out the interactive form with your project details</li>
           <li>Review the generated contract for accuracy</li>

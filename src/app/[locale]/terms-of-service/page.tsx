@@ -72,7 +72,7 @@ const TermsOfServicePage = () => {
             <h2 className="mt-8 mb-4 text-2xl font-semibold text-gray-800">
               3. Eligibility & Account Security
             </h2>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 You must be at least 18 years old and legally able to enter
                 contracts.
@@ -92,7 +92,7 @@ const TermsOfServicePage = () => {
             <h2 className="mt-8 mb-4 text-2xl font-semibold text-gray-800">
               4. Subscriptions, Fees & Billing
             </h2>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>Plans:</strong> Freedom, Pro, Pro Team, Additional
                 Seats, usage‑based add‑ons (e.g., Voice minutes).
@@ -118,7 +118,7 @@ const TermsOfServicePage = () => {
             <h2 className="mt-8 mb-4 text-2xl font-semibold text-gray-800">
               5. Contractor+ Voice & Telephony Services
             </h2>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>E911:</strong> Voice is an "over‑the‑top" VoIP service.
                 Emergency calling may be unavailable or limited; keep

@@ -156,7 +156,7 @@ export function EducationalContent() {
               can impact the budget. A contingency fund helps manage these risks
               without derailing the project.
             </p>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-5">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-5">
               <li>Accounts for unforeseen site conditions</li>
               <li>Covers unexpected material price increases</li>
               <li>Allows for minor design changes during construction</li>

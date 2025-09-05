@@ -38,7 +38,7 @@ export function CalculationResult({
   } = calculationResult;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Hours */}
       <div className="space-y-1">
         <p className="text-aliceBlue text-sm">Total Labor Hours</p>
@@ -75,7 +75,7 @@ export function CalculationResult({
       {hasMarkup && (
         <div className="space-y-1">
           <p className="text-aliceBlue text-sm">Profit Amount</p>
-          <p className="text-xl font-medium text-green-500">
+          <p className="text-xl font-medium text-green-400">
             ${profitAmount.toFixed(2)}
           </p>
         </div>
@@ -106,7 +106,7 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
         <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 text-white">
           <CardTitle className="text-lg">Labor Cost Results</CardTitle>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="py-6">
           <CalculationResult calculationResult={calculationResult} />
         </CardContent>
       </Card>

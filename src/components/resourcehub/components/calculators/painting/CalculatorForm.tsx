@@ -74,7 +74,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter painting details and pricing information
         </p>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <div className="space-y-4">

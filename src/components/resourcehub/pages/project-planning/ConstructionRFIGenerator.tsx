@@ -779,7 +779,7 @@ export default function ConstructionRFIGenerator() {
 
           <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card className="bg-shutter text-center">
-              <CardContent className="pt-6">
+              <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">1</span>
                 </div>
@@ -791,7 +791,7 @@ export default function ConstructionRFIGenerator() {
             </Card>
 
             <Card className="bg-shutter text-center">
-              <CardContent className="pt-6">
+              <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">2</span>
                 </div>
@@ -804,7 +804,7 @@ export default function ConstructionRFIGenerator() {
             </Card>
 
             <Card className="bg-shutter text-center">
-              <CardContent className="pt-6">
+              <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">3</span>
                 </div>
@@ -816,7 +816,7 @@ export default function ConstructionRFIGenerator() {
             </Card>
 
             <Card className="bg-shutter text-center">
-              <CardContent className="pt-6">
+              <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
                   <span className="text-primary text-lg font-bold">4</span>
                 </div>

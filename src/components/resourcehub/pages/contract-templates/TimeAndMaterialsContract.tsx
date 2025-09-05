@@ -677,7 +677,7 @@ Witness: ___________________________ Date: ___________
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center space-x-2">
                     <Checkbox
                       id="changeOrderProcess"
@@ -802,7 +802,7 @@ Witness: ___________________________ Date: ___________
             <h3 className="mb-3 text-xl font-semibold">
               Advantages for Contractors
             </h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Fair compensation for all work performed</li>
               <li>Flexibility to adapt to project changes</li>
               <li>Protection from cost overruns on materials</li>
@@ -815,7 +815,7 @@ Witness: ___________________________ Date: ___________
             <h3 className="mb-3 text-xl font-semibold">
               Protection for Clients
             </h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Transparency in all charges and expenses</li>
               <li>Not-to-exceed clauses for budget control</li>
               <li>Detailed documentation of all work</li>

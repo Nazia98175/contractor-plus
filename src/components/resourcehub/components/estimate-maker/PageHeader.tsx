@@ -30,8 +30,8 @@ export function PageHeader() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="flex items-center gap-3">
-        <div className="flex-shrink-0 rounded-md bg-red-600 p-2">
+      <div className="flex items-start gap-3">
+        <div className="mt-1.5 flex-shrink-0 rounded-md bg-red-600 p-2">
           <FileText className="h-6 w-6 text-white" />
         </div>
         <div>

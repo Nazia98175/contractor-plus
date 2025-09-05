@@ -80,7 +80,7 @@ export default function LandscapeDesignCalculator() {
               <CalculationResult result={calculationResult} />
             ) : (
               <div className="border-stiletto bg-shutter flex h-full items-center justify-center rounded-lg border border-dashed p-8 text-center">
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <p className="text-lg font-medium">
                     Enter your project details
                   </p>

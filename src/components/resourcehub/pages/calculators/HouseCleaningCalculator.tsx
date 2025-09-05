@@ -201,7 +201,7 @@ export default function HouseCleaningCalculator() {
                 Enter property details and your pricing structure below
               </CardDescription>
             </CardHeader>
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
@@ -512,7 +512,7 @@ export default function HouseCleaningCalculator() {
             <CardHeader className="bo bg-red-500">
               <CardTitle className="text-xl">Calculation Results</CardTitle>
             </CardHeader>
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               {calculationResult !== null && (
                 <>
                   <div className="mb-6 text-center">
@@ -526,7 +526,7 @@ export default function HouseCleaningCalculator() {
 
                   <Separator className="my-4" />
 
-                  <div className="space-y-2 text-sm">
+                  <div className="space-y-3 text-sm">
                     <h4 className="font-medium">Cost Breakdown</h4>
                     <div className="flex items-center justify-between">
                       <span className="text-aliceBlue">Base Cleaning Cost</span>

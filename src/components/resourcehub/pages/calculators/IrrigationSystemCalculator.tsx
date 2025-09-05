@@ -93,7 +93,7 @@ export default function IrrigationSystemCalculator() {
                   your estimated irrigation material costs here.
                 </p>
                 <div className="border-stiletto mb-4 w-full rounded-md border px-6 py-4">
-                  <ul className="text-alice space-y-2 text-left text-sm">
+                  <ul className="text-alice space-y-3 text-left text-sm">
                     <li className="flex items-center gap-2">
                       <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                         <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>

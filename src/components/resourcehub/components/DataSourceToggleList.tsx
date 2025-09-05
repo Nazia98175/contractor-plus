@@ -36,7 +36,7 @@ const DataSourceToggleList = ({
   };
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-3">
       {DATA_SOURCE_CONFIGS.map((config) => {
         const disabled = config.key === "Average" && isAverageDisabled;
 

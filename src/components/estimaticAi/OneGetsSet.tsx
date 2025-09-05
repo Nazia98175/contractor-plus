@@ -24,7 +24,7 @@ const OneGetsSet = () => {
           <TripleChevronIcon />
         </span>
       </CardReveal>
-      <div className="border-bovine flex flex-col items-center justify-between gap-2 rounded-3xl pt-5 sm:pt-6 lg:flex-row lg:border">
+      <div className="border-bovine flex flex-col items-center justify-between gap-2 rounded-3xl pt-5 sm:py-6 lg:flex-row lg:border">
         <div className="lg:w- flex flex-col items-center justify-center lg:w-[44%] xl:w-[46%]">
           <div className="text-secondary font-myriad mb-5 flex items-center gap-4 text-center text-sm font-semibold sm:text-base md:text-xl">
             <h4>Other AI estimating software</h4>

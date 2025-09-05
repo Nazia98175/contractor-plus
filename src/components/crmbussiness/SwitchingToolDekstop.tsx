@@ -116,7 +116,7 @@ const SwitchingToolDesktop = ({
               className="h-auto w-full object-center"
             />
           </div>
-          <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:py-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
@@ -137,7 +137,7 @@ const SwitchingToolDesktop = ({
               className="h-auto w-full object-center"
             />
           </div>
-          <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="1xl:text-[22px] pt-[18px] text-center text-lg font-medium text-white xl:py-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
@@ -158,7 +158,7 @@ const SwitchingToolDesktop = ({
               className="h-auto w-full object-center"
             />
           </div>
-          <h4 className="1xl:text-[22px] max-w-[90%] pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="1xl:text-[22px] max-w-[90%] pt-[18px] text-center text-lg font-medium text-white xl:py-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>

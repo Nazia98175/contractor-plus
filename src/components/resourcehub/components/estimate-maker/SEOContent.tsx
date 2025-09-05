@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 
 export function SEOContent() {
@@ -19,7 +20,7 @@ export function SEOContent() {
         <section className="grid gap-10 md:grid-cols-2">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">How It Works</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-5">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-5">
               <li>
                 Browse our library of pre-built estimate templates for various
                 project types
@@ -37,7 +38,7 @@ export function SEOContent() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Available Templates</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-5">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-5">
               <li>
                 Residential remodeling projects (kitchen, bathroom, basement)
               </li>
@@ -56,21 +57,21 @@ export function SEOContent() {
             Benefits of Using Our Free Estimate Templates
           </h3>
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="bg-shutter space-y-2 rounded-lg p-6">
+            <div className="bg-shutter space-y-3 rounded-lg p-6">
               <h4 className="font-medium">Save Time</h4>
               <p className="text-aliceBlue text-sm">
                 Start with pre-built templates rather than creating estimates
                 from scratch. Simply customize to your needs.
               </p>
             </div>
-            <div className="bg-shutter space-y-2 rounded-lg p-6">
+            <div className="bg-shutter space-y-3 rounded-lg p-6">
               <h4 className="font-medium">Look Professional</h4>
               <p className="text-aliceBlue text-sm">
                 Create polished, detailed estimates that instill confidence in
                 your clients and win more business.
               </p>
             </div>
-            <div className="bg-shutter space-y-2 rounded-lg p-6">
+            <div className="bg-shutter space-y-3 rounded-lg p-6">
               <h4 className="font-medium">Accurate Pricing</h4>
               <p className="text-aliceBlue text-sm">
                 Calculate totals, markups, and taxes automatically to ensure
@@ -90,19 +91,16 @@ export function SEOContent() {
             projects, and grow their businesses.
           </p>
           <Button size="lg" asChild>
-            <a
-              href="https://contractorplus.app/estimates"
-              className="no-underline"
-            >
+            <Link href="/ai-estimating-software" className="no-underline">
               Learn More
-            </a>
+            </Link>
           </Button>
         </section>
 
         <section className="grid gap-10 md:grid-cols-2">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Perfect For</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-5">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-5">
               <li>General contractors and builders</li>
               <li>Remodeling companies</li>
               <li>HVAC contractors and technicians</li>
@@ -118,7 +116,7 @@ export function SEOContent() {
             <h3 className="text-xl font-semibold">
               Why Choose Our Estimate Templates
             </h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-5">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-5">
               <li>Completely free to use with no limits</li>
               <li>No account creation or signup required</li>
               <li>Easy-to-use interface with no learning curve</li>

@@ -19,7 +19,7 @@ const DateRangePresets = ({
   onSelectPreset,
 }: DateRangePresetsProps) => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <h4 className="text-sm font-medium">Select Range</h4>
       <RadioGroup
         value={selectedPreset}

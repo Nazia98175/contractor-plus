@@ -70,7 +70,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
         <h2 className="text-lg font-medium">Calculate Fence Cost</h2>
         <p className="text-aliceBlue text-sm">Enter fence details and costs</p>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             {/* Fence Length Field */}

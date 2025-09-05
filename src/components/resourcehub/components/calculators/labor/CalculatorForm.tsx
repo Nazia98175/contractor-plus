@@ -79,10 +79,10 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter your labor details to calculate costs and recommended charges
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onCalculate)} className="space-y-6">
-            <div className="space-y-4">
+            <div className="space-y-5">
               {/* Number of Workers */}
               <FormField
                 control={form.control}

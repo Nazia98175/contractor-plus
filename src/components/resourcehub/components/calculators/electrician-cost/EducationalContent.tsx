@@ -107,7 +107,7 @@ export function EducationalContent() {
           <Calculator className="mr-2 h-5 w-5 text-red-500" /> Common
           Electrician Rate Mistakes
         </h3>
-        <ul className="space-y-2 text-sm">
+        <ul className="space-y-3 text-sm">
           <li className="flex gap-2">
             <span className="font-bold text-red-500">•</span>
             <span>Only counting direct wages when setting rates</span>

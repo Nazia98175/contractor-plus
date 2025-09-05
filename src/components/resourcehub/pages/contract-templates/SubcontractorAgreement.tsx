@@ -838,7 +838,7 @@ export default function SubcontractorAgreement() {
 
           {showPreview && (
             <Card>
-              <CardContent className="p-6">
+              <CardContent className="py-6">
                 <div
                   id="contract-preview"
                   className="prose prose-sm max-w-none"
@@ -1078,7 +1078,7 @@ export default function SubcontractorAgreement() {
         <h2 className="mt-8 text-2xl font-semibold">
           Key Components of a Subcontractor Agreement
         </h2>
-        <ul className="list-disc space-y-2 pl-5">
+        <ul className="list-disc space-y-3 pl-5">
           <li>
             <strong>Scope of Work:</strong> Detailed description of work to be
             performed by the subcontractor
@@ -1119,7 +1119,7 @@ export default function SubcontractorAgreement() {
             <h3 className="mb-3 text-xl font-semibold">
               For General Contractors
             </h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>Clearly define the scope of work to avoid disputes</li>
               <li>
                 Verify subcontractor licensing and insurance before signing
@@ -1133,7 +1133,7 @@ export default function SubcontractorAgreement() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">For Subcontractors</h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>Review the scope of work carefully before bidding</li>
               <li>Understand payment terms and retainage provisions</li>
               <li>Ensure your insurance meets the requirements</li>

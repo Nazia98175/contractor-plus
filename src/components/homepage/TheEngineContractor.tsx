@@ -59,7 +59,7 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
               {after}
             </h2>
           </div>
-          <div className="flex w-full max-w-[450px] flex-col items-center -space-y-2">
+          <div className="flex w-full max-w-[450px] flex-col items-center -space-y-3">
             <LottieAnimation animationData={animationData} />
 
             {/* <Image

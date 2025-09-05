@@ -25,7 +25,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           Calculation Results
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">Profit Overview</h3>
           <p
@@ -51,7 +51,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
         <Separator className="my-4" />
 
-        <div className="space-y-2 text-sm">
+        <div className="space-y-3 text-sm">
           <h4 className="text-alice font-medium">Profit Analysis</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Profit Amount</span>
@@ -75,7 +75,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-center border-t border-red-100 bg-red-50">
+      <CardFooter className="border-stiletto flex justify-center border-t">
         <p className="text-decemberSky text-center text-xs">
           {result.isLoss
             ? "This job will result in a loss. Consider adjusting your pricing or reducing costs."

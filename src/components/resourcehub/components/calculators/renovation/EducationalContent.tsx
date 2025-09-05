@@ -155,7 +155,7 @@ export function EducationalContent() {
               work begins. A proper contingency fund helps manage these
               surprises without derailing your project.
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
                 <span className="text-aliceBlue">

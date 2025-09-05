@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "bg-ruinedSmores text-aliceBlue inline-flex h-10 items-center justify-center rounded-md p-1",
+      "bg-ruinedSmores text-aliceBlue no-scrollbar h-10 overflow-x-auto rounded-md p-1 whitespace-nowrap",
       className,
     )}
     {...props}

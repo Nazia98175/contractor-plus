@@ -71,7 +71,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter pipe dimensions to calculate water volume
         </p>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-4">

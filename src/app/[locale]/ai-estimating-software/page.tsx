@@ -61,7 +61,7 @@ const EstimaticAiPage = async ({
         <TrustedService
           reviews={estimaticReviewsAi}
           slug="crm"
-          className="pb-6 lg:pt-6 lg:pb-3.5"
+          className="pb-6 lg:py-6 lg:pb-3.5"
           apiData={false}
         />
         <RunWithContractor

@@ -72,7 +72,7 @@ export const StoreSelectionField = ({ form, disabled = false }) => {
               control={form.control}
               render={({ field: { onChange, value = [] } }) => (
                 <ScrollArea className="border-stiletto h-[150px] rounded-md border p-2">
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {stores.map((store) => {
                       const isSelected = value.includes(store.id);
                       const isDisabled =

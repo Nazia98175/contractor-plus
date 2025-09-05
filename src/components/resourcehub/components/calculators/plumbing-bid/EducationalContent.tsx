@@ -49,7 +49,7 @@ export function EducationalContent() {
             <h3 className="mb-3 text-lg font-semibold">
               Components of a Plumbing Bid
             </h3>
-            <ul className="text-alice space-y-2">
+            <ul className="text-alice space-y-3">
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
                 <span>
@@ -149,7 +149,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-lg font-semibold">
               Tips for Better Plumbing Bids
             </h3>
-            <ol className="text-alice space-y-2">
+            <ol className="text-alice space-y-3">
               <li className="flex items-start">
                 <span className="mt-1 mr-2 flex h-5 w-5 flex-shrink-0 items-center justify-center">
                   <span className="flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-medium text-white">
@@ -225,7 +225,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-lg font-semibold">
               Common Bidding Mistakes to Avoid
             </h3>
-            <ul className="text-alice space-y-2">
+            <ul className="text-alice space-y-3">
               <li className="flex items-start">
                 <span className="mt-1.5 mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-red-500"></span>
                 <span>

@@ -14,7 +14,7 @@ interface CalculationResultProps {
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
     <Card className="border-stiletto bg-shutter border shadow-sm">
-      <CardContent className="p-6">
+      <CardContent className="py-6">
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">
             Roof Area Estimation

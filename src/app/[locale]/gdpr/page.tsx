@@ -42,7 +42,7 @@ const GDPRPage = () => {
               service management software, Contractor+ Voice (telephony), and
               related services.
             </p>
-            <ul className="mb-4 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-4 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>Controller</strong> for account, billing, usage,
                 marketing, and website analytics data.
@@ -98,7 +98,7 @@ const GDPRPage = () => {
             <h2 className="mt-8 mb-4 text-2xl font-semibold text-gray-800">
               3) Legal Bases (GDPR Art. 6)
             </h2>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>Contract</strong> – to provide the Services you request
                 (accounts, core app features, integrations).
@@ -134,7 +134,7 @@ const GDPRPage = () => {
               </a>{" "}
               to exercise your rights:
             </p>
-            <ul className="mb-4 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-4 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>Access/Portability (Art. 15/20)</li>
               <li>Rectification (Art. 16)</li>
               <li>Erasure (Art. 17)</li>
@@ -342,7 +342,7 @@ const GDPRPage = () => {
               We implement technical and organizational measures appropriate to
               risk, including:
             </p>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Encryption in transit (TLS 1.2+) and at rest (e.g., AES‑256)
               </li>

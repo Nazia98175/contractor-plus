@@ -21,7 +21,7 @@ export function EducationalContent() {
 
       <div className="my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card className="bg-shutter shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                 <PaintBucket className="h-5 w-5 text-red-500" />
@@ -36,7 +36,7 @@ export function EducationalContent() {
         </Card>
 
         <Card className="bg-shutter shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                 <Paintbrush className="h-5 w-5 text-red-500" />
@@ -51,7 +51,7 @@ export function EducationalContent() {
         </Card>
 
         <Card className="bg-shutter shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                 <CircleChevronRight className="h-5 w-5 text-red-500" />
@@ -97,7 +97,7 @@ export function EducationalContent() {
           <p className="text-alice mb-3">
             For accurate estimates, follow these guidelines:
           </p>
-          <ul className="text-decemberSky mb-4 space-y-2">
+          <ul className="text-decemberSky mb-4 space-y-3">
             <li className="flex items-start gap-2">
               <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
                 <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
@@ -159,7 +159,7 @@ export function EducationalContent() {
               key={i}
               className="border-stiletto bg-shutter border shadow-sm"
             >
-              <CardContent className="p-6">
+              <CardContent className="py-6">
                 <h3 className="mb-2 text-lg font-medium text-red-500">
                   {faq.q}
                 </h3>

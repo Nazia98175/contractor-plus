@@ -77,7 +77,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter project details to estimate renovation costs
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}

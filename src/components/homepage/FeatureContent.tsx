@@ -94,7 +94,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             ref={(el) => {
               contentRefs.current[index] = el;
             }}
-            className="bg-doctor w-full scroll-mt-8 space-y-2.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
+            className="bg-doctor w-full scroll-mt-8 space-y-3.5 rounded-2xl p-3.5 md:scroll-mt-12 md:space-y-3 lg:scroll-mt-16 lg:space-y-[18px] xl:scroll-mt-24"
           >
             <Copy delay={0.2}>
               <h4 className="text-wallStreet text-start text-lg font-bold sm:text-xl md:text-2xl">
@@ -110,7 +110,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
               />
             </div>
             <Copy delay={0.2}>
-              <p className="text-wallStreet space-y-2 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
+              <p className="text-wallStreet space-y-3 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
                 {content.description}
               </p>
             </Copy>

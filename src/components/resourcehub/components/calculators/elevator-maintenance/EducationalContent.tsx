@@ -41,7 +41,7 @@ export function EducationalContent() {
               </CardTitle>
             </div>
           </CardHeader>
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="bg-shutter mt-1 rounded-full p-1">
@@ -109,7 +109,7 @@ export function EducationalContent() {
               </CardTitle>
             </div>
           </CardHeader>
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="bg-shutter mt-1 rounded-full p-1">
@@ -181,7 +181,7 @@ export function EducationalContent() {
             Strategic approaches to manage elevator maintenance expenses
           </CardDescription>
         </CardHeader>
-        <CardContent className="pt-6">
+        <CardContent className="py-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">

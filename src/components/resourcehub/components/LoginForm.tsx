@@ -58,7 +58,7 @@ export function LoginForm() {
 
   return (
     <div className="bg-card w-full max-w-md space-y-6 rounded-lg border p-6 shadow-sm">
-      <div className="space-y-2 text-center">
+      <div className="space-y-3 text-center">
         <h1 className="text-2xl font-bold">Login to your account</h1>
         <p className="text-aliceBlue text-sm">
           Enter your credentials to continue using MaterialCompare
@@ -115,7 +115,7 @@ export function LoginForm() {
         <Separator className="flex-grow" />
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-3">
         <Button
           variant="outline"
           className="w-full"

@@ -89,7 +89,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter project details and sheet information below
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
             {/* Total Drywall Area Field */}

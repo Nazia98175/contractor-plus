@@ -97,7 +97,7 @@ export default function ElectricianCostCalculator() {
                 Work smarter, charge smarter.
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex-none py-4">
               <p className="text-decemberSky mb-4">
                 With Contractor+, electricians can easily calculate true hourly
                 costs, set profitable rates, and track every job. Know what you

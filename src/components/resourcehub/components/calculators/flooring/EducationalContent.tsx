@@ -103,7 +103,7 @@ export function EducationalContent() {
             Accurate measurements are crucial for a proper flooring estimate.
             Here's how to ensure you get it right:
           </p>
-          <ol className="list-decimal space-y-2 pl-5">
+          <ol className="list-decimal space-y-3 pl-5">
             <li>
               <strong>Draw a floor plan:</strong> Sketch each room and divide
               complex shapes into rectangles.

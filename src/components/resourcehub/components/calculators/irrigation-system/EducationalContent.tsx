@@ -19,7 +19,7 @@ export function EducationalContent() {
             <h3 className="text-xl font-medium">
               Components of an Irrigation System
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li className="flex gap-2">
                 <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
                 <span>
@@ -69,7 +69,7 @@ export function EducationalContent() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-medium">Planning Tips</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li className="flex gap-2">
                 <Droplet className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600" />
                 <span>

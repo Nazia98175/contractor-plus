@@ -66,7 +66,7 @@ export function SignupForm() {
 
   return (
     <div className="bg-card w-full max-w-md space-y-6 rounded-lg border p-6 shadow-sm">
-      <div className="space-y-2 text-center">
+      <div className="space-y-3 text-center">
         <h1 className="text-2xl font-bold">Create a free account</h1>
         <p className="text-aliceBlue text-sm">
           Sign up to get unlimited searches and save your material lists
@@ -150,7 +150,7 @@ export function SignupForm() {
         <Separator className="flex-grow" />
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-3">
         <Button
           variant="outline"
           className="w-full"

@@ -183,7 +183,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
   return (
     <>
       <Card className="mt-6">
-        <CardContent className="p-6">
+        <CardContent className="py-6">
           <div className="space-y-4 text-center">
             <h3 className="text-foreground text-lg font-semibold">
               Need a contractor to {projectName?.toLowerCase()}?
@@ -243,10 +243,10 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             </div>
 
             {/* Reviews Information */}
-            <div className="border-stiletto border-t pt-6">
+            <div className="border-stiletto border-t py-6">
               <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
                 {/* Trusted Users */}
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
                     <Users className="h-5 w-5 text-blue-600" />
                   </div>
@@ -257,7 +257,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                 </div>
 
                 {/* Star Rating */}
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-100">
                     <Star className="h-5 w-5 fill-yellow-500 text-yellow-500" />
                   </div>
@@ -268,7 +268,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
                 </div>
 
                 {/* Reviews */}
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
                     <MessageCircle className="h-5 w-5 text-green-500" />
                   </div>
@@ -302,7 +302,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
               </DialogDescription>
             </DialogHeader>
           </VisuallyHidden>
-          <div className="flex-1 p-6 pt-0">
+          <div className="flex-1 p-4 pt-0 lg:p-6">
             <div className="relative h-full min-h-[600px] w-full">
               {/* Loading state */}
               {iframeLoading && (

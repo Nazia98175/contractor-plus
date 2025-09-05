@@ -20,14 +20,14 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border-stiletto bg-shutter mb-6 border-2 shadow-md">
-      <CardHeader className="border-b border-red-100 bg-red-50">
-        <CardTitle className="flex items-center text-lg text-red-800">
-          <Receipt className="mr-2 h-5 w-5 text-red-500" />
+    <Card className="border-stiletto mb-6 border shadow-md">
+      <CardHeader className="bg-gradient-to-r from-red-500 to-red-600">
+        <CardTitle className="flex items-center text-lg text-white">
+          <Receipt className="mr-2 h-5 w-5" />
           Bid Results
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">
             Suggested Bid Price
@@ -39,14 +39,14 @@ export function CalculationResult({ result }: CalculationResultProps) {
               maximumFractionDigits: 0,
             })}
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-300">
             With {result.profitMargin.toFixed(1)}% profit margin
           </p>
         </div>
 
         <Separator className="my-4" />
 
-        <div className="space-y-2 text-sm">
+        <div className="space-y-3 text-sm">
           <h4 className="text-alice font-medium">Cost Breakdown</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Labor Cost</span>
@@ -70,7 +70,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Profit Added</span>
-            <span className="font-medium text-green-500">
+            <span className="font-medium text-green-400">
               $
               {result.profitAmount.toLocaleString("en-US", {
                 minimumFractionDigits: 0,
@@ -80,7 +80,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-center border-t border-red-100 bg-red-50">
+      <CardFooter className="border-stiletto flex justify-center border-t">
         <p className="text-decemberSky text-center text-xs">
           This is an estimate based on your inputs. Verify all costs before
           submitting your final bid.

@@ -793,7 +793,7 @@ export default function PunchListCompletionAgreement() {
 
           {showPreview && (
             <Card>
-              <CardContent className="p-6">
+              <CardContent className="py-6">
                 <div
                   id="contract-preview"
                   className="prose prose-sm max-w-none"
@@ -1128,7 +1128,7 @@ export default function PunchListCompletionAgreement() {
         <h2 className="mt-8 text-2xl font-semibold">
           Key Components of Punch List Agreements
         </h2>
-        <ul className="list-disc space-y-2 pl-5">
+        <ul className="list-disc space-y-3 pl-5">
           <li>
             <strong>Item Documentation:</strong> Detailed list of all items
             requiring completion or correction
@@ -1165,7 +1165,7 @@ export default function PunchListCompletionAgreement() {
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="mb-3 text-xl font-semibold">For Contractors</h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>
                 Conduct thorough pre-inspection to minimize punch list items
               </li>
@@ -1179,7 +1179,7 @@ export default function PunchListCompletionAgreement() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">For Clients</h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>Participate in thorough project walkthrough</li>
               <li>Document all items clearly and specifically</li>
               <li>Provide reasonable timelines for completion</li>
@@ -1233,7 +1233,7 @@ export default function PunchListCompletionAgreement() {
           retainage (typically 5-10% of the contract value) held by the client
           throughout the project. The agreement should clearly specify:
         </p>
-        <ul className="list-disc space-y-2 pl-5 text-sm">
+        <ul className="list-disc space-y-3 pl-5 text-sm">
           <li>The amount of retainage to be released</li>
           <li>Conditions for retainage release</li>
           <li>Timeline for payment after completion</li>

@@ -18,7 +18,7 @@ export function EducationalContent() {
         Commercial cleaning rates typically range from $0.05 to $0.20 per square
         foot depending on:
       </p>
-      <ul className="list-disc space-y-2 pl-5">
+      <ul className="list-disc space-y-3 pl-5">
         <li>
           <strong>Cleaning frequency</strong> - Daily, weekly, bi-weekly or
           monthly services
@@ -46,7 +46,7 @@ export function EducationalContent() {
       <h2 className="mt-8 text-2xl font-semibold">
         Tips for Accurate Commercial Cleaning Estimates
       </h2>
-      <ul className="list-disc space-y-2 pl-5">
+      <ul className="list-disc space-y-3 pl-5">
         <li>Always inspect the facility before providing a final quote</li>
         <li>
           Consider factors like furniture density, flooring types, and traffic
@@ -72,7 +72,7 @@ export function EducationalContent() {
       <h2 className="mt-8 text-2xl font-semibold">
         Benefits of Proper Commercial Cleaning Pricing
       </h2>
-      <ul className="list-disc space-y-2 pl-5">
+      <ul className="list-disc space-y-3 pl-5">
         <li>Ensures profitability while remaining competitive</li>
         <li>Provides transparency to clients about what they're paying for</li>
         <li>Allows for proper staffing and resource allocation</li>

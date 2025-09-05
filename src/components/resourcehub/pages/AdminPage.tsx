@@ -216,7 +216,7 @@ const AdminPage = () => {
                     </div>
                   </div>
                   <div className="text-aliceBlue mt-1 text-xs">
-                    <span className="font-medium text-green-500">+5.2%</span>{" "}
+                    <span className="font-medium text-green-400">+5.2%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
@@ -252,7 +252,7 @@ const AdminPage = () => {
                     </div>
                   </div>
                   <div className="text-aliceBlue mt-1 text-xs">
-                    <span className="font-medium text-green-500">+3.8%</span>{" "}
+                    <span className="font-medium text-green-400">+3.8%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
@@ -288,7 +288,7 @@ const AdminPage = () => {
                     </div>
                   </div>
                   <div className="text-aliceBlue mt-1 text-xs">
-                    <span className="font-medium text-green-500">+7.1%</span>{" "}
+                    <span className="font-medium text-green-400">+7.1%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
@@ -324,7 +324,7 @@ const AdminPage = () => {
                     </div>
                   </div>
                   <div className="text-aliceBlue mt-1 text-xs">
-                    <span className="font-medium text-green-500">+4.5%</span>{" "}
+                    <span className="font-medium text-green-400">+4.5%</span>{" "}
                     from yesterday
                   </div>
                   <div className="mt-4 flex items-center justify-between text-xs">
@@ -567,7 +567,7 @@ const AdminPage = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <label htmlFor="ip" className="text-sm font-medium">
                         IP Address
                       </label>
@@ -578,7 +578,7 @@ const AdminPage = () => {
                         onChange={(e) => setBlacklistIP(e.target.value)}
                       />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <label htmlFor="reason" className="text-sm font-medium">
                         Reason
                       </label>

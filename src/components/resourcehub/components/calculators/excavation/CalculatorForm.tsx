@@ -45,11 +45,11 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
   return (
     <Card>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Label htmlFor="length">Excavation Length (ft)</Label>
                   <TooltipProvider>
@@ -82,7 +82,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Label htmlFor="width">Excavation Width (ft)</Label>
                   <TooltipProvider>
@@ -115,7 +115,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Label htmlFor="depth">Excavation Depth (ft)</Label>
                   <TooltipProvider>
@@ -147,7 +147,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Label htmlFor="costPerYard">Cost per Cubic Yard ($)</Label>
                   <TooltipProvider>

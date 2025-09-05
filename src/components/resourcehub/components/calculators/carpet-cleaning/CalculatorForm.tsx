@@ -78,7 +78,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter carpet details and pricing information
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}

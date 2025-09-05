@@ -15,8 +15,8 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border-stiletto bg-shutter border shadow-sm">
-      <CardContent className="p-6">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
+      <CardContent className="py-6">
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">
             Woodwork Project Pricing
@@ -68,7 +68,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </span>
           </div>
 
-          <div className="border-decemberSky flex items-center justify-between border-t pt-1">
+          <div className="border-prediction flex items-center justify-between border-t pt-3">
             <span className="font-medium">Subtotal</span>
             <span className="font-medium">
               $
@@ -92,7 +92,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             </span>
           </div>
 
-          <div className="border-decemberSky flex items-center justify-between border-t pt-2">
+          <div className="border-prediction flex items-center justify-between border-t pt-2">
             <span className="font-medium">Total Price</span>
             <span className="font-bold text-red-500">
               $
@@ -104,8 +104,8 @@ export function CalculationResult({ result }: CalculationResultProps) {
           </div>
         </div>
 
-        <div className="border-decemberSky mt-4 border-t pt-4">
-          <p className="text-decemberSky text-center text-xs">
+        <div className="border-prediction mt-4 border-t pt-4">
+          <p className="text-preborder-prediction text-center text-xs">
             This estimate is based on the provided inputs. Make sure to account
             for any unique project requirements that might affect final pricing.
           </p>

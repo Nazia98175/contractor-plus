@@ -124,7 +124,7 @@ const ContractorCardSkeleton = () => (
         </div>
 
         {/* Description skeleton */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="h-4 w-full rounded bg-gray-200"></div>
           <div className="h-4 w-3/4 rounded bg-gray-200"></div>
         </div>
@@ -216,7 +216,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
   }, [location]);
 
   useEffect(() => {
-    const handleMessage = (event) => {
+    const handleMessage = (event: any) => {
       // More generic approach - listen for any close-related messages
       const message = event.data;
 
@@ -313,7 +313,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                 </div>
               ) : (
                 <div className="space-y-6">
-                  {businessData?.map((contractor) => (
+                  {businessData?.map((contractor: any) => (
                     <div
                       key={contractor?.businessID}
                       className="border-border hover:bg-muted/20 flex flex-col gap-4 rounded-lg border p-4 transition-colors sm:flex-row"
@@ -405,7 +405,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
               )}
 
               {/* Footer */}
-              <div className="border-border border-t pt-6">
+              <div className="border-border border-t py-6">
                 <div className="text-aliceBlue flex flex-col items-center justify-between gap-4 text-xs sm:flex-row">
                   <div className="flex items-center gap-2">
                     <img
@@ -466,7 +466,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
               </DialogDescription>
             </DialogHeader>
           </VisuallyHidden>
-          <div className="flex-1 p-6 pt-0">
+          <div className="flex-1 p-4 pt-0 lg:p-6">
             {selectedContractorUrl && (
               <div className="relative h-full min-h-[600px] w-full">
                 {/* Loading state */}

@@ -30,7 +30,7 @@ export function CalculationResult({
     calculationResult;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Marked-up Price */}
       <div className="space-y-1">
         <p className="text-aliceBlue text-sm">Selling Price (before tax)</p>
@@ -72,7 +72,7 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
         <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 text-white">
           <CardTitle className="text-lg">Calculation Results</CardTitle>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="py-6">
           <CalculationResult calculationResult={calculationResult} />
         </CardContent>
       </Card>

@@ -64,7 +64,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           <div className="flex h-full flex-col space-y-4">
             <div className="flex flex-grow flex-col">
               {" "}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label
                     htmlFor="facilitySize"
@@ -111,7 +111,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                   className="w-full"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label
                     htmlFor="ratePerSqFt"
@@ -159,7 +159,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                   className="w-full"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label
                     htmlFor="numberOfRestrooms"
@@ -203,7 +203,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                   className="w-full"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label
                     htmlFor="extraCostPerRestroom"
@@ -251,7 +251,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                   className="w-full"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label
                     htmlFor="additionalServices"

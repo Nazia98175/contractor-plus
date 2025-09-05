@@ -22,7 +22,7 @@ export function CalculationResult({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* High Margin Warning */}
       {isHighMargin && (
         <div className="mb-4 rounded-md border border-yellow-200 bg-yellow-50 p-3 text-sm text-yellow-800">
@@ -72,7 +72,7 @@ export function ResultsPanel({
         <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 text-white">
           <CardTitle className="text-lg">Calculation Results</CardTitle>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="py-6">
           <CalculationResult
             calculationResult={calculationResult}
             margin={margin}

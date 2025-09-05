@@ -69,7 +69,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
   return (
     <Card className="border-shutter overflow-hidden border shadow-sm">
-      <CardHeader className="bg-shutter border-stiletto border-b">
+      <CardHeader className="border-stiletto border-b bg-gradient-to-r from-red-500 to-red-600">
         <CardTitle className="text-aliceBlue text-xl">
           Calculate Plumbing Bid
         </CardTitle>
@@ -77,7 +77,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter your costs and pricing information
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}

@@ -264,7 +264,7 @@ export default function ProjectPlanningPage() {
             <h3 className="mb-3 text-xl font-semibold">
               Benefits for Contractors
             </h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Better project organization and scheduling</li>
               <li>Improved resource allocation and planning</li>
               <li>Professional client presentations</li>
@@ -277,7 +277,7 @@ export default function ProjectPlanningPage() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Benefits for Clients</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Clear project timeline visibility</li>
               <li>Better understanding of project phases</li>
               <li>Realistic completion expectations</li>

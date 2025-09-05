@@ -42,7 +42,7 @@ export function CalculationResult({
           Calculation Results
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">
             Drywall Sheets Needed
@@ -69,7 +69,7 @@ export function CalculationResult({
 
         <Separator className="my-4" />
 
-        <div className="space-y-2 text-sm">
+        <div className="space-y-3 text-sm">
           <h4 className="font-medium">Calculation Breakdown</h4>
           <div className="flex items-center justify-between">
             <span className="text-aliceBlue">Sheet Area</span>

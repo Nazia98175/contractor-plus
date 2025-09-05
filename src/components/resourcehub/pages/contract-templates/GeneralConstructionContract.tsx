@@ -600,7 +600,7 @@ Witness: ___________________________ Date: ___________
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center space-x-2">
                     <Checkbox
                       id="changeOrderProcess"
@@ -727,7 +727,7 @@ Witness: ___________________________ Date: ___________
         <div className="mb-8 grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="mb-3 text-xl font-semibold">Essential Elements</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Detailed project description and specifications</li>
               <li>Clear timeline with start and completion dates</li>
               <li>Total contract price and payment schedule</li>
@@ -741,7 +741,7 @@ Witness: ___________________________ Date: ___________
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Legal Considerations</h3>
-            <ul className="text-aliceBlue list-disc space-y-2 pl-6">
+            <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Compliance with local building codes</li>
               <li>Proper contractor licensing and insurance</li>
               <li>Lien waiver and release provisions</li>

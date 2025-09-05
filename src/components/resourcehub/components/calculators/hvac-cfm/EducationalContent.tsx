@@ -180,7 +180,7 @@ export function EducationalContent() {
                       Improper CFM can lead to several issues in your HVAC
                       system:
                     </p>
-                    <ul className="text-aliceBlue list-disc space-y-2 pl-6 text-sm">
+                    <ul className="text-aliceBlue list-disc space-y-3 pl-6 text-sm">
                       <li>
                         <strong>Insufficient CFM:</strong> Poor temperature
                         control, inadequate ventilation, air quality problems,
@@ -220,7 +220,7 @@ export function EducationalContent() {
                       ventilation requirements, professional HVAC contractors
                       should be consulted for:
                     </p>
-                    <ul className="text-aliceBlue mt-4 list-disc space-y-2 pl-6 text-sm">
+                    <ul className="text-aliceBlue mt-4 list-disc space-y-3 pl-6 text-sm">
                       <li>New HVAC system installations or replacements</li>
                       <li>Complex multi-zone systems</li>
                       <li>Commercial or industrial applications</li>
@@ -287,7 +287,7 @@ export function EducationalContent() {
 
       {/* CTA Section */}
       <Card className="bg-primary/5 border-shutter mt-8 border">
-        <CardContent className="p-6">
+        <CardContent className="py-6">
           <h3 className="mb-2 text-xl font-semibold">
             Ensure Every Room is Comfortable and Well-Ventilated
           </h3>

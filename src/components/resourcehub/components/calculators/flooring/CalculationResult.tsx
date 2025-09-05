@@ -59,8 +59,8 @@ export function CalculationResult({
           Detailed breakdown of your flooring project costs
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-6">
-        <div className="space-y-2">
+      <CardContent className="py-6">
+        <div className="space-y-3">
           <div className="flex justify-between border-b py-2">
             <span className="font-medium">Materials Needed (with waste):</span>
             <span className="font-bold">

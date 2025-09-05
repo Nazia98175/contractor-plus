@@ -14,7 +14,7 @@ export function EducationalContent() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="text-lg font-medium">Cost Factors to Consider</h3>
           <ul className="text-aliceBlue list-disc space-y-1 pl-5">
             <li>Size of the area to be landscaped</li>
@@ -27,7 +27,7 @@ export function EducationalContent() {
           </ul>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="text-lg font-medium">Average Cost Ranges</h3>
           <ul className="text-aliceBlue list-disc space-y-1 pl-5">
             <li>

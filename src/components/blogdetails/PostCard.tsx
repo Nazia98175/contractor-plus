@@ -11,7 +11,7 @@ const PostCard = ({ blogData }: { blogData: any }) => {
         height={90}
         className="h-[90px] w-[90] rounded-sm sm:rounded-full"
       />
-      <div className="space-y-2.5">
+      <div className="space-y-3.5">
         <h5 className="font-inter md:ext-2xl text-xl font-medium tracking-[0.1px]">
           <span className="text-lightBlack">{blogData?.authorName ?? ""}</span>{" "}
           -<span className="text-pantone3"> {blogData?.authorRole ?? ""}</span>

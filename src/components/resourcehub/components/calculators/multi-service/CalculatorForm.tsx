@@ -78,14 +78,14 @@ export function CalculatorForm({}: CalculatorFormProps) {
   return (
     <div className="space-y-8">
       <Card>
-        <CardContent className="pt-6">
+        <CardContent className="py-6">
           <div className="space-y-4">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="grid grid-cols-1 items-end gap-4 md:grid-cols-[1fr_auto_auto]"
               >
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Label htmlFor={`service-description-${index}`}>
                       {`Service ${index + 1} Description`}
@@ -120,7 +120,7 @@ export function CalculatorForm({}: CalculatorFormProps) {
                     }
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Label htmlFor={`service-cost-${index}`}>
                       {`Service ${index + 1} Cost ($)`}
@@ -183,7 +183,7 @@ export function CalculatorForm({}: CalculatorFormProps) {
             </div>
 
             <div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Label htmlFor="markup">Profit Markup (%)</Label>
                   <TooltipProvider>

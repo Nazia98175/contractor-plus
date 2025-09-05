@@ -35,7 +35,7 @@ export function LineItemRow({
   const isMobile = useIsMobile();
 
   return (
-    <div className="border-stiletto animate-in fade-in space-y-2 rounded-md border p-2">
+    <div className="border-stiletto animate-in fade-in space-y-3 rounded-md border p-2">
       {/* Description row */}
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12 sm:col-span-6">
@@ -144,7 +144,7 @@ export function LineItemRow({
 
           <div className="col-span-4">
             <label className="text-aliceBlue mb-1 block text-xs">Amount</label>
-            <div className="bg-background flex h-10 w-full items-center overflow-hidden rounded-md border px-2">
+            <div className="border-prediction flex h-10 w-full items-center overflow-hidden rounded-md border px-2">
               <span className="truncate text-sm">
                 ${(item.quantity * item.rate).toFixed(2)}
               </span>

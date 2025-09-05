@@ -12,13 +12,13 @@ interface CalculationResultProps {
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
     <Card className="border-shutter mb-6 border-2 shadow-md">
-      <CardHeader className="bg-primary/5 border-shutter border-b">
-        <CardTitle className="text-primary/90 flex items-center text-lg">
+      <CardHeader className="bg-gradient-to-r from-red-500 to-red-600">
+        <CardTitle className="flex items-center text-lg text-white">
           <Fan className="text-primary mr-2 h-5 w-5" />
           Calculation Results
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <div className="mb-6 text-center">
           <h3 className="text-alice text-lg font-medium">Required Airflow</h3>
           <p className="text-primary my-2 text-4xl font-bold">
@@ -31,7 +31,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
         <Separator className="my-4" />
 
-        <div className="space-y-2 text-sm">
+        <div className="space-y-3 text-sm">
           <h4 className="text-alice font-medium">What This Means</h4>
           <p className="text-aliceBlue">
             You need an HVAC system or ventilation fan that can supply

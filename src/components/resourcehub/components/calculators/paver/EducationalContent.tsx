@@ -13,7 +13,7 @@ export function EducationalContent() {
           material cost. Follow these steps for an accurate estimate:
         </p>
 
-        <ol className="list-decimal space-y-2 pl-5">
+        <ol className="list-decimal space-y-3 pl-5">
           <li>Measure the total area to be paved in square feet</li>
           <li>Measure the length and width of your chosen paver in inches</li>
           <li>Determine an appropriate waste factor (typically 5-10%)</li>
@@ -32,7 +32,7 @@ export function EducationalContent() {
           and design. Here are some professional tips:
         </p>
 
-        <ul className="list-disc space-y-2 pl-5">
+        <ul className="list-disc space-y-3 pl-5">
           <li>
             <strong>Choose the right paver:</strong> Consider the intended use -
             walkways and patios can use decorative pavers, while driveways need
@@ -62,7 +62,7 @@ export function EducationalContent() {
       </div>
 
       <Card className="border-stiletto border">
-        <CardContent className="p-6">
+        <CardContent className="py-6">
           <h3 className="mb-3 text-xl font-medium">
             Don't get caught a few pavers short
           </h3>

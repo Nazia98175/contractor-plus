@@ -8,7 +8,7 @@ interface Props {
 
 const MidMarketMobileCard: React.FC<Props> = ({ item, renderIcon }) => {
   return (
-    <article className="space-y-2 py-2">
+    <article className="space-y-3 py-2">
       <h3 className="text-lightBlackGrey text-center text-base">
         {item.contractor.title}
       </h3>

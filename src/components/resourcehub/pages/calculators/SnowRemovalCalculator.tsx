@@ -76,7 +76,7 @@ export default function SnowRemovalCalculator() {
                   your fair pricing estimate.
                 </p>
                 <div className="bg-stiletto/50 mb-4 w-full rounded-md px-6 py-4">
-                  <ul className="text-alice space-y-2 text-left text-sm">
+                  <ul className="text-alice space-y-3 text-left text-sm">
                     <li className="flex items-center gap-2">
                       <div className="h-2.5 w-2.5 rounded-full bg-red-600"></div>
 

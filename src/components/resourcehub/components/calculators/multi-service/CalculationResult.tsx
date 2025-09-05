@@ -35,10 +35,10 @@ export function CalculationResult({ results }: CalculationResultProps) {
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          <div className="space-y-2">
+          <div className="space-y-3">
             <h3 className="font-medium text-green-600">Itemized Services:</h3>
             <div className="text-darkBlack rounded-md shadow-sm">
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {results.services.map((service, index) =>
                   service.description || service.cost > 0 ? (
                     <div key={index} className="flex justify-between">

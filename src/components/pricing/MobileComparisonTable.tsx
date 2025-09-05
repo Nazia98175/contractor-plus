@@ -16,7 +16,7 @@ const MobileComparisonTable: React.FC<Props> = ({
   toggleCollapse,
 }) => {
   return (
-    <div className="space-y-2.5">
+    <div className="space-y-3.5">
       {comparisonTableData.map((group) => {
         const isOpen = openKey === group.key;
 

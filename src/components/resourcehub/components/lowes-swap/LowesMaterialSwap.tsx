@@ -181,7 +181,7 @@ export const LowesMaterialSwap = ({
           <div className="mb-6">
             <div className="rounded-xl border bg-gray-50 p-4">
               <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <Label
                     htmlFor="search-query"
                     className="flex items-center gap-2 text-sm font-medium"
@@ -197,7 +197,7 @@ export const LowesMaterialSwap = ({
                     className="border-gray-200 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <Label
                     htmlFor="zip-code"
                     className="flex items-center gap-2 text-sm font-medium"

@@ -15,7 +15,7 @@ const DataSourceToggle = ({
   const handleToggle = useDataSourceToggle(value, onChange);
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-3">
       <div className="text-sm font-medium">Data Source</div>
       <DataSourceToggleList selected={value} onToggle={handleToggle} />
     </div>

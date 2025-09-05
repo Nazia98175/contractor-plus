@@ -259,7 +259,7 @@ const ConstructionCosts = () => {
           <Card className="mx-auto max-w-4xl shadow-2xl">
             <CardContent className="p-8">
               <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <label className="text-whiteSmoke text-sm font-medium">
                     Project Type
                   </label>
@@ -312,7 +312,7 @@ const ConstructionCosts = () => {
                   </Popover>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <label className="text-whiteSmoke text-sm font-medium">
                     Location
                   </label>

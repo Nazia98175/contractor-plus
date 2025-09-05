@@ -76,7 +76,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           Enter room dimensions and required air changes per hour
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
             {/* Room Length Field */}

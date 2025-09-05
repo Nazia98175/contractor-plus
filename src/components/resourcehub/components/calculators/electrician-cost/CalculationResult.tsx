@@ -24,7 +24,7 @@ export function CalculationResult({
             Calculation Results
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex-none">
           <div className="flex flex-col items-center justify-center py-6 text-center">
             <AlertCircle className="text-aliceBlue mb-2 h-10 w-10" />
             <p className="mb-2 text-lg font-medium">No calculation yet</p>
@@ -43,12 +43,12 @@ export function CalculationResult({
   return (
     <Card className="bg-shutter border-stiletto mb-6 overflow-hidden border-2 shadow-sm">
       <CardHeader className="border-b border-green-500 pb-2">
-        <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-500">
+        <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-400">
           <CheckCircle2 className="h-5 w-5 text-green-500" /> Calculation
           Results
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-4">
+      <CardContent className="flex-none py-4">
         <div className="space-y-4">
           {/* Burdened Wage */}
           <div>

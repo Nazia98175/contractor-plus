@@ -119,7 +119,7 @@ const LeadGeneration = async ({ params }: Params) => {
         />
         <TrustBar
           platforms={blackPlatforms}
-          className="pt-6 pb-8 md:pb-10 lg:pb-12 xl:pb-[66px]"
+          className="py-6 pb-8 md:pb-10 lg:pb-12 xl:pb-[66px]"
         />
         <Faq
           headingVariant="primary"

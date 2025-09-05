@@ -115,7 +115,7 @@ export function EducationalContent() {
             <h3 className="mb-2 text-lg font-semibold">
               Tips to Improve Your Profit Margins
             </h3>
-            <ol className="text-alice list-decimal space-y-2 pl-5">
+            <ol className="text-alice list-decimal space-y-3 pl-5">
               <li>
                 <strong>Track all costs accurately</strong> - Include materials,
                 labor, equipment, permits, and overhead.

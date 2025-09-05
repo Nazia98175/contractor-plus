@@ -899,7 +899,7 @@ export default function MaintenanceServiceContract() {
 
           {showPreview && (
             <Card>
-              <CardContent className="p-6">
+              <CardContent className="py-6">
                 <div
                   id="contract-preview"
                   className="prose prose-sm max-w-none"
@@ -1177,7 +1177,7 @@ export default function MaintenanceServiceContract() {
         <h2 className="mt-8 text-2xl font-semibold">
           Key Components of Maintenance Contracts
         </h2>
-        <ul className="list-disc space-y-2 pl-5">
+        <ul className="list-disc space-y-3 pl-5">
           <li>
             <strong>Service Scope:</strong> Detailed description of equipment
             and services covered
@@ -1216,7 +1216,7 @@ export default function MaintenanceServiceContract() {
             <h3 className="mb-3 text-xl font-semibold">
               For Service Providers
             </h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>Predictable recurring revenue stream</li>
               <li>Long-term client relationships</li>
               <li>Efficient scheduling and resource allocation</li>
@@ -1228,7 +1228,7 @@ export default function MaintenanceServiceContract() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">For Clients</h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>Predictable maintenance costs</li>
               <li>Reduced equipment downtime</li>
               <li>Extended equipment lifespan</li>
@@ -1247,7 +1247,7 @@ export default function MaintenanceServiceContract() {
             <h3 className="mb-3 text-xl font-semibold">
               Comprehensive Contracts
             </h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>All parts and labor included</li>
               <li>Preventive and corrective maintenance</li>
               <li>Emergency service coverage</li>
@@ -1257,7 +1257,7 @@ export default function MaintenanceServiceContract() {
 
           <div>
             <h3 className="mb-3 text-xl font-semibold">Labor-Only Contracts</h3>
-            <ul className="list-disc space-y-2 pl-5 text-sm">
+            <ul className="list-disc space-y-3 pl-5 text-sm">
               <li>Labor and service calls covered</li>
               <li>Parts charged separately</li>
               <li>Lower monthly cost</li>
@@ -1269,7 +1269,7 @@ export default function MaintenanceServiceContract() {
         <h2 className="mt-8 text-2xl font-semibold">
           Best Practices for Maintenance Contracts
         </h2>
-        <ul className="list-disc space-y-2 pl-5 text-sm">
+        <ul className="list-disc space-y-3 pl-5 text-sm">
           <li>Clearly define all covered equipment and systems</li>
           <li>Specify response times for different types of service calls</li>
           <li>Include detailed maintenance schedules and procedures</li>

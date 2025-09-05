@@ -100,7 +100,7 @@ export function EducationalContent() {
             Accurate measurements are essential for a proper fence estimate.
             Here are some tips to ensure you get it right:
           </p>
-          <ol className="list-decimal space-y-2 pl-5">
+          <ol className="list-decimal space-y-3 pl-5">
             <li>
               <strong>Walk the perimeter:</strong> Walk the entire fence line,
               noting any obstacles or terrain changes.

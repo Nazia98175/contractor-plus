@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Calculator, DollarSign, Info, Percent } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "../../ui/button";
-import { DollarSign, Percent, Calculator } from "lucide-react";
-import { Info } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -21,13 +19,13 @@ import {
   FormLabel,
   FormMessage,
 } from "../../ui/form";
+import { Input } from "../../ui/input";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../../ui/tooltip";
-import { Input } from "../../ui/input";
 
 // Define the form validation schema
 const calculatorSchema = z.object({
@@ -65,10 +63,13 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           selling price
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="py-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onCalculate)} className="space-y-6">
-            <div className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(onCalculate)}
+            className="flex h-full flex-col space-y-6"
+          >
+            <div className="flex flex-grow flex-col space-y-5">
               {/* Part Cost Input */}
               <FormField
                 control={form.control}

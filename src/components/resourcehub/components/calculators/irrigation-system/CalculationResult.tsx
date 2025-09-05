@@ -30,13 +30,13 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
   return (
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
-      <CardHeader className="border-stiletto border-b pt-6 pb-2">
+      <CardHeader className="border-stiletto border-b py-6 pb-2">
         <h2 className="flex items-center gap-2 text-lg font-medium">
           <Droplet className="h-5 w-5 text-red-500" />
           <span>Irrigation Material Cost Estimate</span>
         </h2>
       </CardHeader>
-      <CardContent className="pt-6 pb-6">
+      <CardContent className="py-6 pb-6">
         <div className="space-y-6">
           <div>
             <h3 className="text-aliceBlue mb-4 text-sm font-medium">

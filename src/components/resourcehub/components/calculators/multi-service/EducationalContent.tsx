@@ -90,7 +90,7 @@ export function EducationalContent() {
       </div>
 
       <Card className="text-darkKnight border-red-100 bg-red-50">
-        <CardContent className="pt-6">
+        <CardContent className="py-6">
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <div className="rounded-full bg-red-100 p-3">
               <Clipboard className="h-6 w-6 text-red-500" />
@@ -115,7 +115,7 @@ export function EducationalContent() {
         <h3 className="text-xl font-semibold">
           Tips for Multi-Service Job Estimating
         </h3>
-        <ul className="text-aliceBlue list-disc space-y-2 pl-5">
+        <ul className="text-aliceBlue list-disc space-y-3 pl-5">
           <li>
             Include a contingency fund for unexpected issues that might arise
             between different trades

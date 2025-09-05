@@ -145,7 +145,7 @@ const FilterPanel = ({
     >
       <div className="flex flex-col space-y-5">
         <div className="space-y-4">
-          <div className="space-y-2">
+          <div className="space-y-3">
             <label className="text-destructive text-sm font-medium">
               Industry (Required)
             </label>
@@ -168,7 +168,7 @@ const FilterPanel = ({
             currentZipCode={zipCode}
           />
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <label className="text-sm font-medium">Unit of Measurement</label>
             <UOMSelector
               value={safeFilters.uom}
@@ -176,7 +176,7 @@ const FilterPanel = ({
             />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <label className="text-sm font-medium">Format</label>
             <PeriodSelector
               value={safeFilters.period}
@@ -184,7 +184,7 @@ const FilterPanel = ({
             />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <label className="text-sm font-medium">Time Period</label>
             <DateRangePicker
               value={safeFilters.dateRange}

@@ -105,12 +105,12 @@ const InvestorHero = () => {
             </p>
           </CardReveal>
           <Copy delay={0.2} animateOnScroll={false}>
-            <h2 className="invester-gradient-text main-heading pt-2 text-center sm:pt-4 md:pt-6">
+            <h2 className="invester-gradient-text main-heading pt-2 text-center sm:pt-4 md:py-6">
               The first Operating System for build & service contractors
             </h2>
           </Copy>
           <Copy delay={0.3} animateOnScroll={false}>
-            <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg">
+            <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:py-6 md:text-lg">
               Contractor+ is the category disruptor the $1T field service market
               has needed. We’ve built what Jobber, Housecall Pro, and
               ServiceTitan couldn’t: a platform contractors actually love.{" "}

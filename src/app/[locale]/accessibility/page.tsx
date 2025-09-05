@@ -71,7 +71,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Organizational Measures
             </h3>
-            <ul className="mb-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-6 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Include accessibility as part of our mission statement and core
                 values
@@ -105,7 +105,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Technical Measures
             </h3>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Regular accessibility audits using automated and manual testing
                 tools
@@ -145,7 +145,7 @@ const AccessibilityPage = () => {
             <p className="mb-2 leading-relaxed text-gray-700">
               This website also complies with:
             </p>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>Section 508 of the Rehabilitation Act</li>
               <li>Americans with Disabilities Act (ADA)</li>
               <li>EN 301 549 European Standard</li>
@@ -161,7 +161,7 @@ const AccessibilityPage = () => {
               work with the particular combination of web browser and any
               assistive technologies or plugins installed on your computer:
             </p>
-            <ul className="mb-4 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-4 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>HTML5:</strong> Semantic markup for proper document
                 structure
@@ -199,7 +199,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Automated Testing
             </h3>
-            <ul className="mb-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-6 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Regular automated accessibility scanning using Contractor+'s
                 accessibility testing platform
@@ -214,7 +214,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Manual Testing
             </h3>
-            <ul className="mb-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-6 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Expert accessibility reviews by certified accessibility
                 professionals
@@ -231,7 +231,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               User Testing
             </h3>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>Usability testing with people with disabilities</li>
               <li>Feedback collection from users of assistive technologies</li>
               <li>Regular accessibility user experience studies</li>
@@ -255,7 +255,7 @@ const AccessibilityPage = () => {
               Our accessibility widget includes specialized profiles designed
               for different types of disabilities:
             </p>
-            <ul className="mb-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-6 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>Seizure Safe Profile:</strong> Eliminates flashes and
                 reduces color that could trigger seizures
@@ -288,7 +288,7 @@ const AccessibilityPage = () => {
             <p className="mb-3 leading-relaxed text-gray-700">
               Additional accessibility features available through our widget:
             </p>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 <strong>Text Adjustments:</strong> Font size increases up to
                 200%, font family changes to readable fonts
@@ -329,7 +329,7 @@ const AccessibilityPage = () => {
               <h3 className="mb-3 font-semibold text-gray-800">
                 Accessibility Contact Information:
               </h3>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Phone:</strong>{" "}
                   <a
@@ -373,7 +373,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Screen Readers
             </h3>
-            <ul className="mb-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-6 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>NVDA (Windows) - Fully supported with regular testing</li>
               <li>
                 JAWS (Windows) - Comprehensive compatibility and optimization
@@ -391,7 +391,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Browsers
             </h3>
-            <ul className="mb-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="mb-6 list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Recent versions of major browsers including Chrome, Firefox,
                 Safari, and Edge
@@ -404,7 +404,7 @@ const AccessibilityPage = () => {
             <h3 className="mt-6 mb-3 text-xl font-semibold text-gray-800">
               Other Assistive Technology
             </h3>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Voice recognition software (Dragon, Windows Speech Recognition)
               </li>
@@ -449,7 +449,7 @@ const AccessibilityPage = () => {
             <p className="mb-3 leading-relaxed text-gray-700">
               <strong>What we're doing:</strong>
             </p>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>Continuous accessibility improvements and updates</li>
               <li>Regular third-party vendor accessibility reviews</li>
               <li>
@@ -467,7 +467,7 @@ const AccessibilityPage = () => {
             <p className="mb-3 leading-relaxed text-gray-700">
               For more information about web accessibility, please visit:
             </p>
-            <ul className="list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+            <ul className="list-disc space-y-3 pl-6 leading-relaxed text-gray-700">
               <li>
                 Web Accessibility Initiative (WAI) -{" "}
                 <a
@@ -510,7 +510,7 @@ const AccessibilityPage = () => {
               <h3 className="mb-3 font-semibold text-gray-800">
                 Accessibility Standards Compliance:
               </h3>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>WCAG 2.1 AA: ✅ Fully Compliant</li>
                 <li>Section 508: ✅ Compliant</li>
                 <li>ADA Title III: ✅ Compliant</li>

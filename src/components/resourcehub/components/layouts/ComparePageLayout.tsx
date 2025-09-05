@@ -153,7 +153,7 @@ export const ComparePageLayout = ({
                   How to Use This Tool:
                 </h3>
 
-                <ol className="list-decimal space-y-2 pl-5">
+                <ol className="list-decimal space-y-3 pl-5">
                   <li>
                     Enter your search term in the search box (e.g., "drywall",
                     "lumber", "tile")
@@ -202,7 +202,7 @@ export const ComparePageLayout = ({
                   our advanced Estimates & Quotes platform, you can:
                 </p>
 
-                <ul className="mb-6 list-disc space-y-2 pl-5">
+                <ul className="mb-6 list-disc space-y-3 pl-5">
                   <li>
                     Create professional estimates with live pricing from your
                     favorite suppliers

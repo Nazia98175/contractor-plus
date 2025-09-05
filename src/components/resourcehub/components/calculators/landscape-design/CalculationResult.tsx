@@ -24,13 +24,13 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
   return (
     <Card className="border-shutter border-2 shadow-md">
-      <CardHeader className="bg-primary/5 border-shutter border-b">
-        <CardTitle className="text-primary/90 flex items-center text-lg">
+      <CardHeader className="bg-gradient-to-r from-red-500 to-red-600">
+        <CardTitle className="flex items-center text-lg text-white">
           <Flower className="text-primary mr-2 h-5 w-5" />
           Landscape Cost Estimate
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-6">
+      <CardContent className="py-6">
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
@@ -63,7 +63,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             <p className="text-aliceBlue text-sm font-medium">
               Total Landscape Project Cost
             </p>
-            <p className="text-primary text-3xl font-bold">
+            <p className="text-3xl font-bold text-red-500">
               {formatCurrency(result.totalCost)}
             </p>
           </div>

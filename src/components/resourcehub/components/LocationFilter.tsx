@@ -69,7 +69,7 @@ const LocationFilter = ({
   };
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <Label className="text-sm font-medium">Location</Label>
       <Tabs
         defaultValue={activeTab}
@@ -102,7 +102,7 @@ const LocationFilter = ({
         </TabsContent>
 
         <TabsContent value="zipcode" className="mt-3">
-          <div className="space-y-2">
+          <div className="space-y-3">
             <Label htmlFor="zipcode">Zip Code</Label>
             <Input
               id="zipcode"

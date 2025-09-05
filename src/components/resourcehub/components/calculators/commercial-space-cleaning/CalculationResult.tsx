@@ -23,7 +23,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
   return (
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
-      <CardContent className="p-6">
+      <CardContent className="py-6">
         <div className="mb-4 flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
             <Building className="h-5 w-5 text-red-500" />
@@ -74,7 +74,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
 
           <div className="border-stiletto rounded-md border p-4">
             <h4 className="text-alice mb-2 font-medium">Details</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Circle
                   className="mt-1 h-4 w-4 flex-shrink-0 text-red-500"

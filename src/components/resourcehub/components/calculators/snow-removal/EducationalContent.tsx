@@ -17,7 +17,7 @@ export function EducationalContent() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="border-stiletto border">
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <h3 className="mb-3 flex items-center gap-2 text-lg font-medium">
                 <Snowflake className="h-5 w-5 text-blue-500" />
                 Setting Your Base Rate
@@ -39,7 +39,7 @@ export function EducationalContent() {
           </Card>
 
           <Card className="border-stiletto border">
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <h3 className="mb-3 flex items-center gap-2 text-lg font-medium">
                 <Snowflake className="h-5 w-5 text-blue-500" />
                 Understanding Extra Charges
@@ -67,7 +67,7 @@ export function EducationalContent() {
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="border-stiletto border">
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <h3 className="mb-2 text-lg font-medium">Per-Visit Pricing</h3>
               <p className="text-alice">
                 Charge each time you clear snow, with additional fees for deeper
@@ -78,7 +78,7 @@ export function EducationalContent() {
           </Card>
 
           <Card className="border-stiletto border">
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <h3 className="mb-2 text-lg font-medium">Seasonal Contract</h3>
               <p className="text-alice">
                 Fixed price for the entire winter season regardless of snowfall
@@ -89,7 +89,7 @@ export function EducationalContent() {
           </Card>
 
           <Card className="border-stiletto border">
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <h3 className="mb-2 text-lg font-medium">Monthly Retainer</h3>
               <p className="text-alice">
                 Client pays a set monthly fee during winter months for priority

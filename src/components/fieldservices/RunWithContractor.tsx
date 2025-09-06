@@ -62,7 +62,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       <div className="mx-auto mt-8 hidden w-full max-w-[1213px] space-y-5 px-4 md:mt-[44px] md:block xl:mt-[58px]">
         <div className="grid grid-cols-2">
           <p className="font-myriad text-secondary text-center text-sm font-semibold sm:text-lg md:text-xl md:leading-[127%]">
-            {kindAdorable?.comaprisons?.[0]?.title}
+            {kindAdorable?.comparisons?.[0]?.title}
           </p>
           {icon ? (
             <Image
@@ -74,11 +74,11 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
             />
           ) : (
             <p className="font-myriad text-oldMoney text-center text-sm font-bold sm:text-lg md:text-xl md:leading-[127%]">
-              {kindAdorable?.comaprisons?.[1]?.title}
+              {kindAdorable?.comparisons?.[1]?.title}
             </p>
           )}
         </div>
-        {kindAdorable?.comaprisons?.[0]?.comparisonList?.map(
+        {kindAdorable?.comparisons?.[0]?.comparisonList?.map(
           (item: any, index: number) => (
             <CardReveal
               distance={50}
@@ -110,7 +110,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
                   </span>
                   <p className="text-majorelleGardens text-start text-sm leading-[130%] font-bold lg:text-[17.5px]">
                     {
-                      kindAdorable?.comaprisons?.[1]?.comparisonList[index]
+                      kindAdorable?.comparisons?.[1]?.comparisonList[index]
                         ?.details
                     }
                   </p>
@@ -123,9 +123,9 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
       {/* Mobile View */}
       <div className="1xl:px-0 custom-pagination relative z-50 mx-auto block w-full max-w-[1181px] px-2 md:hidden">
         <RunWithContractorMobile
-          their={kindAdorable?.comaprisons?.[0]?.title}
-          your={kindAdorable?.comaprisons?.[1]?.title}
-          run_contractor={kindAdorable?.comaprisons}
+          their={kindAdorable?.comparisons?.[0]?.title}
+          your={kindAdorable?.comparisons?.[1]?.title}
+          run_contractor={kindAdorable?.comparisons}
           style={styles}
           icon={icon}
         />

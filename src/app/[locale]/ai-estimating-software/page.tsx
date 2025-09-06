@@ -1,18 +1,15 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
+import CommonFormField from "@/components/common/CommonFormField";
 import {
   blogList,
-  dealReviews2,
   estimateFaq,
   estimateFormData,
   estimaticBlogHeadingData,
-  estimaticCardData,
-  estimaticControlData,
   estimaticReviewsAi,
   platforms,
 } from "@/components/common/Helper";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
-import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
@@ -58,15 +55,17 @@ const EstimaticAiPage = async ({
     pageContent,
     heroImg,
     reviews,
-    comaprisonList,
+    comparisonList,
     problemSolution,
     commonProblem,
     industriesData,
     thousandReviews,
+    emailSignupSection,
     faqs,
     commonData,
+    blogs,
   } = await getEstimaticPageData(useParams?.locale);
-  console.log("sunile", pageContent);
+  console.log("sunile", faqs);
   return (
     <main id="home-page-wrapper-2">
       <div
@@ -80,34 +79,32 @@ const EstimaticAiPage = async ({
           className="pb-6 lg:pt-6 lg:pb-3.5"
           apiData={false}
         />
+
         <RunWithContractor
-          kindAdorable={estimateSoftwareData}
+          kindAdorable={comparisonList}
           variant="dark"
           icon={true}
           issubHeadingShow={true}
         />
       </div>
-      <OneGetsSet />
+      <OneGetsSet content={comparisonList?.comparison} />
       <div className="relative hidden md:block">
         <FieldService
-          fieldService={estimaticCardData}
+          fieldService={problemSolution}
           theme="dark"
           mainClassName="text-center "
         />
       </div>
       <div className="mb-12 block md:hidden">
         <OverlapCardMobileViewChild
-          fieldService={estimaticCardData}
+          fieldService={problemSolution}
           theme="dark"
           apiData={true}
           mainClassName="text-center "
         />
       </div>
       <div className="relative overflow-hidden">
-        <SwitchingTool
-          className="pb-[113px]"
-          switchingTool={estimaticControlData}
-        />
+        <SwitchingTool className="pb-[113px]" switchingTool={commonProblem} />
         <ContractorIndustry
           contractorIndustry={industriesData?.data?.Industries}
         />
@@ -128,33 +125,42 @@ const EstimaticAiPage = async ({
       </div>
       <AwardsTagsImg className="sm:mt-14" />
       <ThousandsReviews
-        data={dealReviews2}
-        reviews={dealReviews2.reviews}
+        data={thousandReviews}
+        reviews={thousandReviews?.reviews}
         variant="secondary"
-        apiData={false}
       />
-      <IndustryService
-        createBtn={"Get started FREE"}
-        mobileBtn={"Download FREE App"}
-        ncc={"No credit card required"}
-        data={estimateFormData}
-        showClouds={false}
-        className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
-        variantBtn="dark"
-      />
+      <div className="pt-20 pb-10 sm:pb-[75px] lg:pt-[110px] xl:pt-[120px]">
+        <CommonFormField
+          variantBtn="primary"
+          variant="default"
+          title={
+            emailSignupSection?.title ||
+            "The AI estimate generator that will change your business forever"
+          }
+          subTitle={
+            emailSignupSection?.subTitle ||
+            "Get started with Estimatic AI in Contractor+ today."
+          }
+          placeholder={emailSignupSection?.placeholder || "Your Email"}
+          createBtn={"Get Started Free"}
+          mobileBtn={"Download FREE App"}
+          ncc={"No credit card required"}
+        />
+      </div>
+
       <TrustBar
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"
       />
       <Faq
-        faq={estimateFaq}
+        faq={faqs}
         classNameAnswer="pt-1"
         mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-5 sm:pb-10"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
       />
       <BlogPosts
-        data={blogList}
-        blogs={estimaticBlogHeadingData}
+        data={blogs?.data || []}
+        blogs={blogs}
         className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>

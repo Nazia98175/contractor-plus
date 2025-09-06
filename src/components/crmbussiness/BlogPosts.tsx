@@ -38,7 +38,6 @@ const BlogPosts: React.FC<Props> = ({
     router.push("/blog");
   };
 
-  console.log("blogs", data);
   return (
     <section
       className={`relative z-20 px-2 pt-4 sm:px-4 xl:px-20 ${className || ""}`}

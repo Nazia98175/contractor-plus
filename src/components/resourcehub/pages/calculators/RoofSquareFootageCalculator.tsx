@@ -61,7 +61,7 @@ export default function RoofSquareFootageCalculator() {
   };
 
   return (
-    <div className="animate-fade-in main-container py-8 md:px-6">
+    <div className="animate-fade-in mx-auto max-w-6xl px-4 py-8 md:px-6">
       <PageHeader />
 
       <div className="mb-12 grid gap-6 md:grid-cols-2 lg:gap-8">
@@ -69,7 +69,7 @@ export default function RoofSquareFootageCalculator() {
           <Card className="border-stiletto bg-shutter h-full border shadow-sm">
             <CardContent className="py-6">
               <div className="mb-4 flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100">
                   <Calculator className="h-4 w-4 text-red-500" />
                 </div>
                 <h2 className="text-lg font-semibold">Calculate Roof Area</h2>
@@ -137,7 +137,7 @@ export default function RoofSquareFootageCalculator() {
         </div>
       </div>
 
-      <div className="border-stiletto bg-shutter mb-12 rounded-lg border p-6 shadow-sm">
+      <div className="border-stiletto bg-shutter mb-12 rounded-lg border p-4 shadow-sm lg:p-6">
         <EducationalContent />
       </div>
     </div>

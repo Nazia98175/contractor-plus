@@ -76,7 +76,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <div className="cursor-help">
-                            <Info className="h-4 w-4 text-gray-500" />
+                            <Info className="h-4 w-4 text-gray-300" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">
@@ -109,7 +109,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <div className="cursor-help">
-                            <Info className="h-4 w-4 text-gray-500" />
+                            <Info className="h-4 w-4 text-gray-300" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">
@@ -142,7 +142,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <div className="cursor-help">
-                            <Info className="h-4 w-4 text-gray-500" />
+                            <Info className="h-4 w-4 text-gray-300" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">

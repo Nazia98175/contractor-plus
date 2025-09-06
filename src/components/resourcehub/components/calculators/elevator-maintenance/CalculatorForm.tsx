@@ -88,7 +88,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="cursor-help text-xs text-gray-500 underline">
+                  <span className="cursor-help text-xs text-gray-300 underline">
                     What's this?
                   </span>
                 </TooltipTrigger>
@@ -123,7 +123,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="cursor-help text-xs text-gray-500 underline">
+                  <span className="cursor-help text-xs text-gray-300 underline">
                     What's this?
                   </span>
                 </TooltipTrigger>
@@ -158,7 +158,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="cursor-help text-xs text-gray-500 underline">
+                  <span className="cursor-help text-xs text-gray-300 underline">
                     What's this?
                   </span>
                 </TooltipTrigger>
@@ -194,7 +194,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="cursor-help text-xs text-gray-500 underline">
+                  <span className="cursor-help text-xs text-gray-300 underline">
                     What's this?
                   </span>
                 </TooltipTrigger>

@@ -26,7 +26,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">Profit Overview</h3>
           <p
             className={`my-2 text-4xl font-bold ${result.isLoss ? "text-red-500" : "text-green-500"}`}

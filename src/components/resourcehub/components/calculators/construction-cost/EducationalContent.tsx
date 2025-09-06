@@ -2,6 +2,7 @@ import { Card } from "../../ui/card";
 import { Separator } from "../../ui/separator";
 import { Button } from "../../ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function EducationalContent() {
   return (
@@ -284,8 +285,14 @@ export function EducationalContent() {
             proposals. Get started today and manage your projects from estimate
             to completion in one place!
           </p>
-          <Button>
-            Get Started <ArrowRight className="ml-2 h-4 w-4" />
+          <Button asChild>
+            <Link
+              href="https://my.contractorplus.app/authentication/register?af_xp=custom&lang=en&source_caller=ui&pid=web_homepage_buttons&shortlink=homebuttons&deep_link_value=resources%2Fcost-calculator%2Fconstruction-cost&c=web_homepagehttps://my.contractorplus.app/authentication/register?af_xp=custom&lang=en&source_caller=ui&pid=web_homepage_buttons&shortlink=homebuttons&deep_link_value=resources%2Fcost-calculator%2Fconstruction-cost&c=web_homepage"
+              target="_blank"
+            >
+              {" "}
+              Get Started <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </Card>

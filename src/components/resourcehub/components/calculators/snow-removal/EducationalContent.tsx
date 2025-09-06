@@ -101,7 +101,7 @@ export function EducationalContent() {
         </div>
       </div>
 
-      <div className="border-stiletto bg-shutter rounded-lg border p-6">
+      <div className="border-stiletto bg-shutter rounded-lg border p-4 lg:p-6">
         <div className="flex gap-3">
           <Snowflake className="h-8 w-8 flex-shrink-0 text-blue-400" />
           <div>

@@ -64,9 +64,9 @@ export default function FenceCostCalculator() {
   };
 
   return (
-    <div className="main-container mx-auto max-w-5xl px-4 py-6 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 md:px-6">
       {/* Back button */}
-      <Button
+      {/* <Button
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
@@ -74,7 +74,7 @@ export default function FenceCostCalculator() {
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
-      </Button>
+      </Button> */}
 
       {/* Main header */}
       <PageHeader />

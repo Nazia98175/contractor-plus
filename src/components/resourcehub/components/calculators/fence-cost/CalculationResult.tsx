@@ -50,22 +50,21 @@ export function CalculationResult({
 
   return (
     <Card className="mb-6 border-2 shadow-sm">
-      <CardHeader className="border-b border-green-100 bg-green-50/50 pb-2">
-        <CardTitle className="flex items-center gap-2 text-lg font-medium text-green-800">
-          <CheckCircle2 className="h-5 w-5 text-green-500" /> Fence Cost
-          Estimate
+      <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 pb-2 text-white">
+        <CardTitle className="flex items-center gap-2 text-lg font-medium">
+          <CheckCircle2 className="h-5 w-5" /> Fence Cost Estimate
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-4">
-        <div className="mb-6 text-center">
+      <CardContent className="py-4">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">
             Estimated Fence Cost
           </h3>
-          <p className="my-2 flex items-center justify-center text-4xl font-bold text-green-700">
+          <p className="my-2 flex items-center justify-center text-4xl font-bold text-red-500">
             <DollarSign className="mr-1 h-5 w-5" />
             {totalCost.toLocaleString("en-US", { maximumFractionDigits: 0 })}
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-300">
             {numberOfGates > 0 ? `Including ${gatesText}` : "No gates included"}
           </p>
         </div>
@@ -113,10 +112,10 @@ export function CalculationResult({
           {/* Total Cost */}
           <div className="border-decemberSky border-t pt-2">
             <div className="flex items-center justify-between">
-              <span className="text-base font-semibold text-gray-700">
+              <span className="text-base font-semibold text-gray-300">
                 Total Project Cost:
               </span>
-              <span className="text-lg font-bold text-green-700">
+              <span className="text-lg font-bold text-red-500">
                 $
                 {totalCost.toLocaleString("en-US", {
                   maximumFractionDigits: 0,

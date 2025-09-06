@@ -112,7 +112,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         value={field.value || ""}
                         className="pr-12 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         {isMetric ? "m" : "ft"}
                       </div>
                     </div>
@@ -155,7 +155,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         value={field.value || ""}
                         className="pr-12 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         {isMetric ? "m" : "ft"}
                       </div>
                     </div>
@@ -198,7 +198,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         value={field.value || ""}
                         className="pr-12 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         {isMetric ? "m" : "ft"}
                       </div>
                     </div>
@@ -246,7 +246,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             />
 
             {/* Unit Toggle */}
-            <div className="mt-6 flex items-center justify-between border-t pt-4">
+            <div className="border-prediction mt-6 flex items-center justify-between border-t pt-4">
               <div className="text-aliceBlue text-sm">
                 {isMetric
                   ? "Using metric units (meters)"
@@ -266,7 +266,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <Button
               type="submit"
               size="lg"
-              className="bg-primary hover:bg-primary/90 mt-4 w-full text-white"
+              className="mt-4 w-full bg-gradient-to-r from-red-500 to-red-600 text-white hover:opacity-90"
             >
               <Calculator className="mr-2 h-5 w-5" />
               Calculate CFM Required

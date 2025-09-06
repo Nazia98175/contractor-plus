@@ -78,7 +78,7 @@ export default function CommercialSpaceCleaningCalculator() {
             <CalculationResult result={calculationResult} />
           ) : (
             <Card className="border-stiletto bg-shutter h-full border shadow-sm">
-              <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
+              <CardContent className="flex h-full flex-col py-6">
                 <h3 className="mb-2 text-lg font-medium">
                   Enter commercial cleaning details to calculate your estimate
                 </h3>

@@ -1,26 +1,24 @@
 "use client";
-
-import React, { useState } from "react";
-import { ArrowLeft } from "lucide-react";
 import { useMetaTags } from "@/hooks/use-meta-tags";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import {
   CalculationResult,
   FlooringCalculationResult,
 } from "../../components/calculators/flooring/CalculationResult";
-import { useRouter } from "next/navigation";
-import { Button } from "../../components/ui/button";
-import { PageHeader } from "../../components/calculators/flooring/PageHeader";
 import {
   CalculatorForm,
   type FlooringCalculationValues,
 } from "../../components/calculators/flooring/CalculatorForm";
+import { EducationalContent } from "../../components/calculators/flooring/EducationalContent";
+import { PageHeader } from "../../components/calculators/flooring/PageHeader";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import { EducationalContent } from "../../components/calculators/flooring/EducationalContent";
 
 export default function FlooringEstimatorCalculator() {
   const router = useRouter();
@@ -51,9 +49,9 @@ export default function FlooringEstimatorCalculator() {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-6 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 md:px-6">
       {/* Back button */}
-      <Button
+      {/* <Button
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
@@ -61,7 +59,7 @@ export default function FlooringEstimatorCalculator() {
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
-      </Button>
+      </Button> */}
 
       {/* Main header */}
       <PageHeader />
@@ -78,7 +76,7 @@ export default function FlooringEstimatorCalculator() {
           <CalculationResult calculationResult={calculationResult} />
 
           {/* Call to Action Card */}
-          <Card className="border-stiletto bg-shutter border">
+          <Card className="border-stiletto border">
             <CardHeader>
               <CardTitle className="text-xl text-red-500">
                 Lay down flooring estimates with confidence.

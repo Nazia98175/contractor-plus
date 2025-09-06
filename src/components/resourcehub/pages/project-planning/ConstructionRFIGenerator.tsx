@@ -773,7 +773,7 @@ export default function ConstructionRFIGenerator() {
 
         {/* How-to Guide */}
         <div className="border-stiletto rounded-xl border p-8">
-          <h2 className="mb-6 text-center text-2xl font-bold">
+          <h2 className="text-center text-2xl font-bold">
             Master Construction RFI Management
           </h2>
 

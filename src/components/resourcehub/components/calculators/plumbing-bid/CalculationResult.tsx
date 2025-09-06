@@ -28,7 +28,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">
             Suggested Bid Price
           </h3>

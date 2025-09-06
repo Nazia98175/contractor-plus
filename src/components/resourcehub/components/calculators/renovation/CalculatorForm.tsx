@@ -118,7 +118,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         {...field}
                         className="pr-12 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         sq ft
                       </div>
                     </div>
@@ -212,7 +212,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         {...field}
                         className="pr-6 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         %
                       </div>
                     </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -7,14 +6,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
 import { TrendingUp, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { PageHeader } from "@/components/popular/PageHeader";
-import { CategorySelector } from "@/components/popular/CategorySelector";
-import { PopularItemsList } from "@/components/popular/PopularItemsList";
-import { mockPopularItems } from "@/components/popular/MockData";
+import { Button } from "../components/ui/button";
+import { CategorySelector } from "../components/popular/CategorySelector";
+import { PopularItemsList } from "../components/popular/PopularItemsList";
+import { mockPopularItems } from "../components/popular/MockData";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -22,7 +21,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "../components/ui/breadcrumb";
+import { PageHeader } from "../components/popular/PageHeader";
+import Link from "next/link";
 
 const PopularPage = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -35,35 +36,34 @@ const PopularPage = () => {
   return (
     <div className="main-container py-8 md:px-6">
       {/* Breadcrumb Navigation */}
-      <div className="mb-4">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/"
-                className="text-alice text-sm font-medium hover:text-red-500"
-              >
-                Resources
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/compare"
-                className="text-alice text-sm font-medium hover:text-red-500"
-              >
-                Material Comparison Search
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-master text-sm">
-                Popular Searches
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink
+              href="/"
+              className="text-alice text-sm font-medium hover:text-red-500"
+            >
+              Resources
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink
+              href="/compare"
+              className="text-alice text-sm font-medium hover:text-red-500"
+            >
+              Material Comparison Search
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="text-master text-sm">
+              Popular Searches
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       <PageHeader
         title="Most Popular Material Searches"
@@ -80,7 +80,7 @@ const PopularPage = () => {
             Compare up to 3 suppliers at a time.
           </p>
         </div>
-        <Link to="/compare">
+        <Link href="/compare">
           <Button className="gap-2">
             <Search className="h-4 w-4" />
             <span>Compare Materials</span>

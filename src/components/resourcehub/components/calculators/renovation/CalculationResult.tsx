@@ -20,19 +20,19 @@ interface CalculationResultProps {
 
 export function CalculationResult({ result }: CalculationResultProps) {
   return (
-    <Card className="border-stiletto bg-shutter mb-6 border-2 shadow-md">
-      <CardHeader className="border-stiletto border-b">
-        <CardTitle className="text-primary/90 flex items-center text-lg">
+    <Card className="border-stiletto mb-6 border-2 shadow-md">
+      <CardHeader className="bg-gradient-to-r from-red-500 to-red-600">
+        <CardTitle className="flex items-center text-lg">
           <Building className="text-primary mr-2 h-5 w-5" />
           Renovation Cost Estimate
         </CardTitle>
       </CardHeader>
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">
             Estimated Renovation Cost
           </h3>
-          <p className="my-2 text-4xl font-bold text-green-500">
+          <p className="my-2 text-4xl font-bold text-red-500">
             $
             {result.totalRenovationCost.toLocaleString("en-US", {
               minimumFractionDigits: 0,
@@ -40,7 +40,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
             })}
           </p>
           {result.hasContingency && (
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-300">
               (including {result.contingencyPercentage}% contingency)
             </p>
           )}
@@ -74,7 +74,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
           )}
           <div className="border-stiletto flex items-center justify-between border-t pt-2">
             <span className="font-medium">Total estimated cost</span>
-            <span className="font-bold text-green-500">
+            <span className="font-bold text-red-500">
               $
               {result.totalRenovationCost.toLocaleString("en-US", {
                 minimumFractionDigits: 0,

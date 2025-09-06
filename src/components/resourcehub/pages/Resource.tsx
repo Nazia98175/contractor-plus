@@ -38,7 +38,7 @@ const Resource = () => {
       <section className="main-container">
         <div className="estimate-overlap-card flex flex-col gap-8 rounded-lg px-4 py-10 md:px-6">
           <div className="text-center">
-            <h2 className="text-alice mb-3 text-3xl font-bold tracking-tight">
+            <h2 className="text-alice mb-3 text-2xl font-bold sm:text-3xl">
               Free Tools & Templates
             </h2>
             <p className="text-aliceBlue mx-auto max-w-[800px] text-lg">
@@ -125,7 +125,7 @@ const Resource = () => {
       {/* <section className="main-container">
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-between gap-5">
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 className="text-2xl font-bold sm:text-3xl">
               Latest from Contractor+ HQ
             </h2>
             <Link
@@ -148,7 +148,7 @@ const Resource = () => {
       {/* <section className="bg-muted main-container py-10 md:px-6">
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 className="text-2xl font-bold sm:text-3xl">
               Latest Podcasts
             </h2>
             <Link

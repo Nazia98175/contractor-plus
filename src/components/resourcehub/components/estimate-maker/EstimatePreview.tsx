@@ -111,7 +111,7 @@ export function EstimatePreview({ items, estimateInfo }: EstimatePreviewProps) {
             className="overflow-y-auto bg-white p-6"
             style={{ maxHeight: "60vh" }}
           >
-            <div className="mb-6 text-center">
+            <div className="text-center">
               <h1 className="text-2xl font-bold">{estimateInfo.title}</h1>
             </div>
 

@@ -10,7 +10,7 @@ import {
 export function PageHeader() {
   return (
     <div className="mb-8">
-      <Breadcrumb className="mb-4">
+      <Breadcrumb className="mb-6">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
@@ -30,7 +30,7 @@ export function PageHeader() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <h1 className="mb-2 text-3xl font-bold tracking-tight">
+      <h1 className="mb-2 text-2xl font-bold sm:text-3xl">
         Renovation Cost Calculator
       </h1>
       <p className="text-aliceBlue max-w-3xl text-lg">

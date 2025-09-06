@@ -59,32 +59,31 @@ export default function CarpetCleaningCalculator() {
   };
   const router = useRouter();
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-6 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 md:px-6">
       {/* Breadcrumb Navigation */}
-      <div className="mb-4">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources/cost-calculator">
-                Calculators
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-decemberSky text-sm">
-                Carpet Cleaning Estimate Calculator
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources/cost-calculator">
+              Calculators
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="text-decemberSky text-sm">
+              Carpet Cleaning Estimate Calculator
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       {/* Back button */}
-      <Button
+      {/* <Button
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
@@ -92,15 +91,15 @@ export default function CarpetCleaningCalculator() {
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
-      </Button>
+      </Button> */}
 
       {/* Main header */}
       <div className="mb-8">
-        <div className="mb-2 flex items-center gap-3">
-          <div className="rounded-full bg-red-100 p-2">
-            <Brush className="h-6 w-6 text-red-500" />
+        <div className="mb-2 flex items-start gap-3">
+          <div className="mt-1 rounded-full bg-red-100 p-2">
+            <Brush className="h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
           </div>
-          <h1 className="text-3xl font-bold">
+          <h1 className="text-2xl font-bold sm:text-3xl">
             Carpet Cleaning Estimate Calculator
           </h1>
         </div>
@@ -132,7 +131,7 @@ export default function CarpetCleaningCalculator() {
           )}
 
           {/* Call to Action Card */}
-          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
             <h3 className="mb-2 text-xl font-semibold">
               Wow Your Clients with Fast, Accurate Quotes
             </h3>

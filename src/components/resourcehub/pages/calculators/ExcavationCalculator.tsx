@@ -49,7 +49,7 @@ export default function ExcavationCalculator() {
     <div className="main-container py-8 md:px-6">
       <PageHeader />
 
-      <div className="mt-8 grid gap-8">
+      <div className="mt-8">
         <CalculatorForm onCalculate={handleCalculate} />
 
         {result && <CalculationResult result={result} />}

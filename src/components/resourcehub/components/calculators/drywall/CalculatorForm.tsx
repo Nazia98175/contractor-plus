@@ -80,7 +80,7 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
   }, []);
 
   return (
-    <Card className="border-shutter overflow-hidden border shadow-sm">
+    <Card className="border-shutter h-full overflow-hidden border shadow-sm">
       <CardHeader className="bg-shutter border-stiletto border-b">
         <CardTitle className="text-aliceBlue text-xl">
           Calculate Drywall Materials
@@ -91,249 +91,253 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
       </CardHeader>
       <CardContent className="py-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-            {/* Total Drywall Area Field */}
-            <FormField
-              control={form.control}
-              name="totalArea"
-              render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center justify-between">
-                    <FormLabel>Total Drywall Area</FormLabel>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-aliceBlue h-4 w-4" />
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-xs">
-                          <p className="text-sm">
-                            The total area you need to cover with drywall.
-                            Calculate wall areas (length × height for each wall)
-                            plus any ceilings or other surfaces. For multiple
-                            rooms, add all areas. If you have area in square
-                            meters, convert it (for example, 100 m² ≈ 1076 ft²).
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <FormControl>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Square className="text-aliceBlue h-4 w-4" />
-                      </div>
-                      <Input
-                        type="number"
-                        placeholder="e.g. 1000"
-                        {...field}
-                        className="pr-12 pl-10"
-                      />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
-                        sq ft
-                      </div>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex h-full flex-col gap-5"
+          >
+            <div className="flex flex-grow flex-col gap-3">
+              {" "}
+              {/* Total Drywall Area Field */}
+              <FormField
+                control={form.control}
+                name="totalArea"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="flex items-center justify-between">
+                      <FormLabel>Total Drywall Area</FormLabel>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="inline-flex cursor-help">
+                              <HelpCircle className="text-aliceBlue h-4 w-4" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="top" className="max-w-xs">
+                            <p className="text-sm">
+                              The total area you need to cover with drywall.
+                              Calculate wall areas (length × height for each
+                              wall) plus any ceilings or other surfaces. For
+                              multiple rooms, add all areas. If you have area in
+                              square meters, convert it (for example, 100 m² ≈
+                              1076 ft²).
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Sheet Length Field */}
-            <FormField
-              control={form.control}
-              name="sheetLength"
-              render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center justify-between">
-                    <FormLabel>Sheet Length</FormLabel>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-aliceBlue h-4 w-4" />
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-xs">
-                          <p className="text-sm">
-                            The length of the drywall panels you'll use.
-                            Standard drywall comes in 8 ft, 10 ft, 12 ft lengths
-                            (and others). Using larger sheets can reduce joints.
-                            Enter the length in feet.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <FormControl>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Ruler className="text-aliceBlue h-4 w-4" />
+                    <FormControl>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-3 flex items-center">
+                          <Square className="text-aliceBlue h-4 w-4" />
+                        </div>
+                        <Input
+                          type="number"
+                          placeholder="e.g. 1000"
+                          {...field}
+                          className="pr-12 pl-10"
+                        />
+                        <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
+                          sq ft
+                        </div>
                       </div>
-                      <Input
-                        type="number"
-                        placeholder="e.g. 8"
-                        {...field}
-                        className="pr-8 pl-10"
-                      />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
-                        ft
-                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* Sheet Length Field */}
+              <FormField
+                control={form.control}
+                name="sheetLength"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="flex items-center justify-between">
+                      <FormLabel>Sheet Length</FormLabel>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="inline-flex cursor-help">
+                              <HelpCircle className="text-aliceBlue h-4 w-4" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="top" className="max-w-xs">
+                            <p className="text-sm">
+                              The length of the drywall panels you'll use.
+                              Standard drywall comes in 8 ft, 10 ft, 12 ft
+                              lengths (and others). Using larger sheets can
+                              reduce joints. Enter the length in feet.
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Sheet Width Field */}
-            <FormField
-              control={form.control}
-              name="sheetWidth"
-              render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center justify-between">
-                    <FormLabel>Sheet Width</FormLabel>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-aliceBlue h-4 w-4" />
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-xs">
-                          <p className="text-sm">
-                            The width of the drywall panels. Most drywall sheets
-                            are 4 feet wide (which is standard). If you're using
-                            a different width panel (rare), enter that.
-                            Typically, you'll put 4.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <FormControl>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Ruler className="text-aliceBlue h-4 w-4" />
+                    <FormControl>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-3 flex items-center">
+                          <Ruler className="text-aliceBlue h-4 w-4" />
+                        </div>
+                        <Input
+                          type="number"
+                          placeholder="e.g. 8"
+                          {...field}
+                          className="pr-8 pl-10"
+                        />
+                        <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
+                          ft
+                        </div>
                       </div>
-                      <Input
-                        type="number"
-                        placeholder="e.g. 4"
-                        {...field}
-                        className="pr-8 pl-10"
-                      />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
-                        ft
-                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* Sheet Width Field */}
+              <FormField
+                control={form.control}
+                name="sheetWidth"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="flex items-center justify-between">
+                      <FormLabel>Sheet Width</FormLabel>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="inline-flex cursor-help">
+                              <HelpCircle className="text-aliceBlue h-4 w-4" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="top" className="max-w-xs">
+                            <p className="text-sm">
+                              The width of the drywall panels. Most drywall
+                              sheets are 4 feet wide (which is standard). If
+                              you're using a different width panel (rare), enter
+                              that. Typically, you'll put 4.
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Waste Factor Field */}
-            <FormField
-              control={form.control}
-              name="wasteFactor"
-              render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center justify-between">
-                    <FormLabel>Waste Factor</FormLabel>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-aliceBlue h-4 w-4" />
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-xs">
-                          <p className="text-sm">
-                            Extra material percentage to account for waste from
-                            cuts, mistakes, or damaged pieces. 10% is a typical
-                            allowance. If you want to be precise and you plan
-                            well, maybe 5%. If you know you have a lot of odd
-                            cuts, maybe more. Enter the percentage as a number
-                            (10 for 10%).
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <FormControl>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3 flex items-center">
-                        <Percent className="text-aliceBlue h-4 w-4" />
+                    <FormControl>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-3 flex items-center">
+                          <Ruler className="text-aliceBlue h-4 w-4" />
+                        </div>
+                        <Input
+                          type="number"
+                          placeholder="e.g. 4"
+                          {...field}
+                          className="pr-8 pl-10"
+                        />
+                        <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
+                          ft
+                        </div>
                       </div>
-                      <Input
-                        type="number"
-                        placeholder="e.g. 10"
-                        {...field}
-                        className="pr-8 pl-10"
-                      />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
-                        %
-                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* Waste Factor Field */}
+              <FormField
+                control={form.control}
+                name="wasteFactor"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="flex items-center justify-between">
+                      <FormLabel>Waste Factor</FormLabel>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="inline-flex cursor-help">
+                              <HelpCircle className="text-aliceBlue h-4 w-4" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="top" className="max-w-xs">
+                            <p className="text-sm">
+                              Extra material percentage to account for waste
+                              from cuts, mistakes, or damaged pieces. 10% is a
+                              typical allowance. If you want to be precise and
+                              you plan well, maybe 5%. If you know you have a
+                              lot of odd cuts, maybe more. Enter the percentage
+                              as a number (10 for 10%).
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Cost per Sheet Field */}
-            <FormField
-              control={form.control}
-              name="costPerSheet"
-              render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center justify-between">
-                    <FormLabel>Cost per Sheet</FormLabel>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="inline-flex cursor-help">
-                            <HelpCircle className="text-aliceBlue h-4 w-4" />
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-xs">
-                          <p className="text-sm">
-                            The price for one drywall sheet of the size
-                            specified. If a 4x8 sheet costs $12, enter 12. If
-                            using multiple sizes or thicknesses with different
-                            costs, either use an average or do separate
-                            calculations per size. If you don't want a cost
-                            calculation, you can leave this field at 0 or blank.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <FormControl>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3 flex items-center">
-                        <DollarSign className="text-aliceBlue h-4 w-4" />
+                    <FormControl>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-3 flex items-center">
+                          <Percent className="text-aliceBlue h-4 w-4" />
+                        </div>
+                        <Input
+                          type="number"
+                          placeholder="e.g. 10"
+                          {...field}
+                          className="pr-8 pl-10"
+                        />
+                        <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
+                          %
+                        </div>
                       </div>
-                      <Input
-                        type="number"
-                        step="0.01"
-                        placeholder="e.g. 12"
-                        {...field}
-                        className="pl-10"
-                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* Cost per Sheet Field */}
+              <FormField
+                control={form.control}
+                name="costPerSheet"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="flex items-center justify-between">
+                      <FormLabel>Cost per Sheet</FormLabel>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="inline-flex cursor-help">
+                              <HelpCircle className="text-aliceBlue h-4 w-4" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="top" className="max-w-xs">
+                            <p className="text-sm">
+                              The price for one drywall sheet of the size
+                              specified. If a 4x8 sheet costs $12, enter 12. If
+                              using multiple sizes or thicknesses with different
+                              costs, either use an average or do separate
+                              calculations per size. If you don't want a cost
+                              calculation, you can leave this field at 0 or
+                              blank.
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                    <FormControl>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-3 flex items-center">
+                          <DollarSign className="text-aliceBlue h-4 w-4" />
+                        </div>
+                        <Input
+                          type="number"
+                          step="0.01"
+                          placeholder="e.g. 12"
+                          {...field}
+                          className="pl-10"
+                        />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
             <Button
               type="submit"
               size="lg"
-              className="mt-4 w-full bg-red-600 text-white hover:bg-red-700"
+              className="w-full bg-red-600 text-white hover:bg-red-700"
             >
               <Calculator className="mr-2 h-5 w-5" />
               Calculate

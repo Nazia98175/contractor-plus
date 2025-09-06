@@ -2,8 +2,8 @@ import { Button } from "../../ui/button";
 
 export function EducationalContent() {
   return (
-    <div className="mt-16 max-w-none">
-      <div className="border-stiletto rounded-lg border p-8 shadow-sm">
+    <div className="mt-10 max-w-none lg:mt-16">
+      <div className="border-stiletto rounded-lg border p-4 shadow-sm md:p-6 lg:p-8">
         <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           Carpet Cleaning Pricing Guide
         </h2>
@@ -17,7 +17,7 @@ export function EducationalContent() {
           </p>
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
-            <div className="bg-shutter rounded-lg p-6">
+            <div className="bg-shutter rounded-lg p-4 md:p-6">
               <h3 className="mb-4 text-xl font-semibold">
                 Factors Affecting Carpet Cleaning Costs
               </h3>
@@ -30,7 +30,7 @@ export function EducationalContent() {
               </p>
             </div>
 
-            <div className="bg-shutter rounded-lg p-6">
+            <div className="bg-shutter rounded-lg p-4 md:p-6">
               <h3 className="mb-4 text-xl font-semibold">
                 Using This Calculator Effectively
               </h3>
@@ -111,7 +111,7 @@ export function EducationalContent() {
             </div>
           </div>
 
-          <div className="bg-shutter rounded-lg p-6">
+          <div className="bg-shutter rounded-lg p-4 md:p-6">
             <h3 className="mb-4 text-xl font-semibold">
               Frequently Asked Questions
             </h3>
@@ -159,7 +159,7 @@ export function EducationalContent() {
             </div>
           </div>
 
-          <div className="border-stiletto bg-shutter mt-8 rounded-lg border p-6">
+          <div className="border-stiletto bg-shutter mt-8 rounded-lg border p-4 md:p-6">
             <h3 className="mb-3 text-xl font-semibold">
               Ready to Grow Your Carpet Cleaning Business?
             </h3>

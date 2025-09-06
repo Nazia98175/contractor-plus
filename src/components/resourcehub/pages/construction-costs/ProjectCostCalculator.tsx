@@ -1012,7 +1012,7 @@ const ProjectCostCalculator = ({
                   </div>
                 ) : (
                   <>
-                    <div className="mb-6 text-center">
+                    <div className="text-center">
                       <div className="mb-2 text-3xl font-bold text-red-500">
                         {formatCurrency(totalCost)}
                       </div>

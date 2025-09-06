@@ -10,8 +10,8 @@ import {
 
 export function EducationalContent() {
   return (
-    <div className="mt-16 max-w-none">
-      <div className="border-stiletto bg-shutter rounded-lg border p-8 shadow-sm">
+    <div className="mt-10 max-w-none lg:mt-16">
+      <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm md:p-6 lg:p-8">
         <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           Drywall Materials Guide
         </h2>
@@ -24,7 +24,7 @@ export function EducationalContent() {
           </p>
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
-            <div className="border-stiletto bg-shutter rounded-lg border p-6">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4 lg:p-6">
               <h3 className="mb-4 text-xl font-semibold">
                 Choosing the Right Drywall
               </h3>
@@ -37,7 +37,7 @@ export function EducationalContent() {
               </p>
             </div>
 
-            <div className="border-stiletto bg-shutter rounded-lg border p-6">
+            <div className="border-stiletto bg-shutter rounded-lg border p-4 lg:p-6">
               <h3 className="mb-4 text-xl font-semibold">
                 Understanding Sheet Sizes
               </h3>
@@ -207,7 +207,7 @@ export function EducationalContent() {
             </p>
           </div>
 
-          <div className="border-stiletto bg-shutter rounded-lg border p-6">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 lg:p-6">
             <h3 className="mb-4 text-xl font-semibold">
               Frequently Asked Questions
             </h3>

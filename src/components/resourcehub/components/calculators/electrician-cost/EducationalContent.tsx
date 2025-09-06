@@ -104,7 +104,7 @@ export function EducationalContent() {
 
       <div className="bg-shutter mb-10 rounded-lg p-6">
         <h3 className="mb-3 flex items-center text-lg font-medium">
-          <Calculator className="mr-2 h-5 w-5 text-red-500" /> Common
+          <Calculator className="mt-1 mr-2 h-5 w-5 text-red-500" /> Common
           Electrician Rate Mistakes
         </h3>
         <ul className="space-y-3 text-sm">
@@ -140,7 +140,7 @@ export function EducationalContent() {
         </ul>
       </div>
 
-      <div className="border-stiletto bg-shutter rounded-lg border p-6">
+      <div className="border-stiletto bg-shutter rounded-lg border p-4 lg:p-6">
         <h3 className="mb-3 flex items-center text-lg font-medium">
           <Settings className="mr-2 h-5 w-5 text-blue-600" /> Tips for
           Implementing Your Rate

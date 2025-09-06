@@ -7,7 +7,7 @@ export function EducationalContent() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="py-6">
-            <Hammer className="mb-4 h-6 w-6 text-red-500" />
+            <Hammer className="mb-4 h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
             <h3 className="mb-2 text-lg font-medium">Material Selection</h3>
             <p className="text-aliceBlue text-sm">
               Carefully consider wood type, grade, and dimensions when
@@ -20,7 +20,7 @@ export function EducationalContent() {
 
         <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="py-6">
-            <Calculator className="mb-4 h-6 w-6 text-red-500" />
+            <Calculator className="mb-4 h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
             <h3 className="mb-2 text-lg font-medium">Labor Estimation</h3>
             <p className="text-aliceBlue text-sm">
               Track your time on similar projects to improve future estimates.
@@ -32,7 +32,7 @@ export function EducationalContent() {
 
         <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="py-6">
-            <CreditCard className="mb-4 h-6 w-6 text-red-500" />
+            <CreditCard className="mb-4 h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
             <h3 className="mb-2 text-lg font-medium">Pricing Strategy</h3>
             <p className="text-aliceBlue text-sm">
               Consider your market position when setting profit margins. Custom,
@@ -44,7 +44,7 @@ export function EducationalContent() {
 
         <Card className="border-stiletto bg-shutter border shadow-sm">
           <CardContent className="py-6">
-            <Ruler className="mb-4 h-6 w-6 text-red-500" />
+            <Ruler className="mb-4 h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
             <h3 className="mb-2 text-lg font-medium">Project Complexity</h3>
             <p className="text-aliceBlue text-sm">
               Account for complexity in your pricing. Intricate joinery, curved
@@ -55,7 +55,7 @@ export function EducationalContent() {
         </Card>
       </div>
 
-      <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
+      <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
         <h2 className="mb-4 text-xl font-semibold">
           Custom Woodworking Pricing Guide
         </h2>

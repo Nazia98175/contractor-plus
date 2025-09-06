@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../ui/button";
 
 export function EducationalContent() {
@@ -15,7 +16,7 @@ export function EducationalContent() {
         </p>
 
         <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
             <h3 className="mb-3 text-lg font-semibold">
               Why Proper Bidding Matters
             </h3>
@@ -45,7 +46,7 @@ export function EducationalContent() {
             </ul>
           </div>
 
-          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
             <h3 className="mb-3 text-lg font-semibold">
               Components of a Plumbing Bid
             </h3>
@@ -277,8 +278,10 @@ export function EducationalContent() {
           win you more jobs. Try it free and see the difference in your bidding
           process!
         </p>
-        <Button className="bg-red-600 text-white hover:bg-red-700">
-          Try Contractor+ Today
+        <Button asChild>
+          <Link href="https://my.contractorplus.app/authentication/register">
+            Try Contractor+ Today
+          </Link>
         </Button>
       </div>
     </div>

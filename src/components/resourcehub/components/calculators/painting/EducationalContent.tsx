@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
 import {
@@ -9,7 +10,7 @@ import {
 
 export function EducationalContent() {
   return (
-    <div className="prose prose-gray mt-16 max-w-none">
+    <div className="prose prose-gray mt-10 max-w-none lg:mt-16">
       <h2 className="mb-6 text-2xl font-semibold">Painting Pricing Guide</h2>
 
       <p className="text-alice mb-8">
@@ -181,9 +182,15 @@ export function EducationalContent() {
             profits.
           </p>
         </div>
-        <Button className="bg-red-600 px-6 whitespace-nowrap text-white hover:bg-red-700">
-          Try Contractor+ Free
-          <CircleChevronRight className="ml-2 h-5 w-5" />
+
+        <Button asChild>
+          <Link
+            href="https://my.contractorplus.app/authentication/register"
+            target="_blank"
+          >
+            Try Contractor+ Free
+            <CircleChevronRight className="ml-2 h-5 w-5" />
+          </Link>
         </Button>
       </div>
     </div>

@@ -25,7 +25,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardContent className="py-6">
         <div className="mb-4 flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+          <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
             <Building className="h-5 w-5 text-red-500" />
           </div>
           <h3 className="text-xl font-semibold">Cleaning Cost Estimate</h3>

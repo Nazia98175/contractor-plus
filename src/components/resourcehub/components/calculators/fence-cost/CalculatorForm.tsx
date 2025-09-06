@@ -65,14 +65,17 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   }
 
   return (
-    <Card className="border-stiletto bg-shutter border shadow-sm">
+    <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardHeader className="border-stiletto border-b pb-4">
         <h2 className="text-lg font-medium">Calculate Fence Cost</h2>
         <p className="text-aliceBlue text-sm">Enter fence details and costs</p>
       </CardHeader>
       <CardContent className="py-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-grow flex-col space-y-4"
+          >
             {/* Fence Length Field */}
             <FormField
               control={form.control}
@@ -302,7 +305,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <Button
               type="submit"
               size="lg"
-              className="mt-6 w-full bg-red-600 hover:bg-red-700"
+              className="mt-auto w-full bg-red-600 hover:bg-red-700"
             >
               <Fence className="mr-2 h-4 w-4" />
               Calculate

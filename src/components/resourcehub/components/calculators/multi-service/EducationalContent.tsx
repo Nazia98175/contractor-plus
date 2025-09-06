@@ -27,7 +27,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <List className="mr-2 h-5 w-5 text-red-500" />
+              <List className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Itemization
             </CardTitle>
           </CardHeader>
@@ -43,7 +43,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <DollarSign className="mr-2 h-5 w-5 text-red-500" />
+              <DollarSign className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Markup Strategy
             </CardTitle>
           </CardHeader>
@@ -59,7 +59,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <Calculator className="mr-2 h-5 w-5 text-red-500" />
+              <Calculator className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Accurate Costing
             </CardTitle>
           </CardHeader>
@@ -75,7 +75,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center text-lg">
-              <CheckSquare className="mr-2 h-5 w-5 text-red-500" />
+              <CheckSquare className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Professional Presentation
             </CardTitle>
           </CardHeader>
@@ -91,9 +91,9 @@ export function EducationalContent() {
 
       <Card className="text-darkKnight border-red-100 bg-red-50">
         <CardContent className="py-6">
-          <div className="flex flex-col items-center gap-4 md:flex-row">
-            <div className="rounded-full bg-red-100 p-3">
-              <Clipboard className="h-6 w-6 text-red-500" />
+          <div className="flex flex-col gap-4 md:flex-row">
+            <div className="h-fit w-fit rounded-full bg-red-100 p-3">
+              <Clipboard className="h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
             </div>
             <div>
               <h3 className="mb-2 text-xl font-semibold">

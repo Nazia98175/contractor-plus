@@ -11,7 +11,7 @@ import {
 export function PageHeader() {
   return (
     <div className="mb-8">
-      <Breadcrumb className="mb-4">
+      <Breadcrumb className="mb-6">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink
@@ -35,7 +35,7 @@ export function PageHeader() {
           <FileText className="h-6 w-6 text-white" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">
+          <h1 className="text-2xl font-bold sm:text-3xl">
             Free Estimate Templates
           </h1>
           <p className="text-aliceBlue max-w-3xl">

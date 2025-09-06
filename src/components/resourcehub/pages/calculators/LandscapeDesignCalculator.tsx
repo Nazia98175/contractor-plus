@@ -53,7 +53,7 @@ export default function LandscapeDesignCalculator() {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-8 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 md:px-6">
       <PageHeader />
 
       <div className="grid gap-8 md:grid-cols-2">

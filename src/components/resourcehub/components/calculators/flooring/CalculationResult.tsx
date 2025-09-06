@@ -61,24 +61,24 @@ export function CalculationResult({
       </CardHeader>
       <CardContent className="py-6">
         <div className="space-y-3">
-          <div className="flex justify-between border-b py-2">
+          <div className="border-prediction flex justify-between border-b py-2">
             <span className="font-medium">Materials Needed (with waste):</span>
             <span className="font-bold">
               {Math.ceil(calculationResult.effectiveArea)} sq ft
             </span>
           </div>
 
-          <div className="flex justify-between border-b py-2">
+          <div className="border-prediction flex justify-between border-b py-2">
             <span className="font-medium">Material Cost:</span>
             <span>{formatCurrency(calculationResult.materialCost)}</span>
           </div>
 
-          <div className="flex justify-between border-b py-2">
+          <div className="border-prediction flex justify-between border-b py-2">
             <span className="font-medium">Labor Cost:</span>
             <span>{formatCurrency(calculationResult.laborCost)}</span>
           </div>
 
-          <div className="flex justify-between border-b py-2">
+          <div className="border-prediction flex justify-between border-b py-2">
             <span className="font-medium">Additional Costs:</span>
             <span>{formatCurrency(calculationResult.additionalCosts)}</span>
           </div>

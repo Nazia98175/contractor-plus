@@ -17,7 +17,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
   return (
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">
             Woodwork Project Pricing
           </h3>

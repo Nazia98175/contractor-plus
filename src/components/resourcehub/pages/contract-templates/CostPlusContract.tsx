@@ -818,7 +818,7 @@ Witness: ___________________________ Date: ___________
       </div>
 
       {/* SEO Content */}
-      <div className="prose mt-16 max-w-none">
+      <div className="prose mt-10 max-w-none lg:mt-16">
         <h2 className="mb-4 text-2xl font-bold">
           Cost Plus Contract Template Guide
         </h2>

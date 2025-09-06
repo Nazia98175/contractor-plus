@@ -6,7 +6,7 @@ export function SEOContent() {
     <div className="mx-auto mt-24 mb-12 max-w-5xl">
       <div className="space-y-10">
         <section className="space-y-4">
-          <h2 className="text-3xl font-bold tracking-tight">
+          <h2 className="text-2xl font-bold sm:text-3xl">
             Free Estimate Templates for Contractors
           </h2>
           <p className="text-aliceBlue">

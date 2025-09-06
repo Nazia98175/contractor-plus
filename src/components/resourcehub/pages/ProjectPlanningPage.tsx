@@ -248,7 +248,7 @@ export default function ProjectPlanningPage() {
       </div>
 
       {/* SEO Content Section */}
-      <div className="prose mt-16 max-w-none">
+      <div className="prose mt-10 max-w-none lg:mt-16">
         <h2 className="mb-4 text-2xl font-bold">
           Why Use Construction Project Planning Tools?
         </h2>

@@ -151,9 +151,7 @@ export function EducationalContent() {
           projects – so you know your margins before you even start. Don't work
           for free; use Contractor+ to stay on top of your bottom line!
         </p>
-        <Button className="bg-red-600 text-white hover:bg-red-700">
-          Try Contractor+ Today
-        </Button>
+        <Button> Try Contractor+ Today</Button>
       </div>
     </div>
   );

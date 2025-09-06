@@ -139,32 +139,31 @@ export default function HouseCleaningCalculator() {
   }, []);
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-6 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 md:px-6">
       {/* Breadcrumb Navigation */}
-      <div className="mb-4">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources/cost-calculator">
-                Calculators
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-decemberSky text-sm">
-                House Cleaning Cost Calculator
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources/cost-calculator">
+              Calculators
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="text-decemberSky text-sm">
+              House Cleaning Cost Calculator
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       {/* Back button */}
-      <Button
+      {/* <Button
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
@@ -172,15 +171,17 @@ export default function HouseCleaningCalculator() {
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
-      </Button>
+      </Button> */}
 
       {/* Main header */}
       <div className="mb-8">
-        <div className="mb-2 flex items-center gap-3">
+        <div className="mb-2 flex items-start gap-3">
           <div className="rounded-full bg-red-100 p-2">
-            <Brush className="h-6 w-6 text-red-500" />
+            <Brush className="h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
           </div>
-          <h1 className="text-3xl font-bold">House Cleaning Calculator</h1>
+          <h1 className="text-2xl font-bold md:text-3xl">
+            House Cleaning Calculator
+          </h1>
         </div>
         <p className="text-aliceBlue max-w-3xl">
           Calculate house cleaning costs quickly and accurately. Perfect for
@@ -239,7 +240,7 @@ export default function HouseCleaningCalculator() {
                               {...field}
                               className="pr-12 pl-3"
                             />
-                            <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                            <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                               sq ft
                             </div>
                           </div>
@@ -506,7 +507,7 @@ export default function HouseCleaningCalculator() {
         </div>
 
         {/* Right side - Results & Information */}
-        <div className="lg:col-span-5">
+        <div className="h-full lg:col-span-5">
           {/* Results Card */}
           <Card className="border-stiletto bg-shutter mb-8 overflow-hidden border-2 shadow-md">
             <CardHeader className="bo bg-red-500">
@@ -515,7 +516,7 @@ export default function HouseCleaningCalculator() {
             <CardContent className="py-6">
               {calculationResult !== null && (
                 <>
-                  <div className="mb-6 text-center">
+                  <div className="text-center">
                     <h3 className="text-alice text-lg font-medium">
                       Estimated Cleaning Cost
                     </h3>
@@ -573,7 +574,7 @@ export default function HouseCleaningCalculator() {
                 Ready to Grow Your Business?
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="py-6">
               <p className="text-decemberSky mb-4">
                 Streamline your cleaning business with professional scheduling,
                 invoicing, and client management. Create detailed proposals that
@@ -588,8 +589,8 @@ export default function HouseCleaningCalculator() {
       </div>
 
       {/* SEO Content Section - Improved formatting */}
-      <div className="mt-16 max-w-none">
-        <div className="border-stiletto bg-shutter rounded-lg border p-8 shadow-sm">
+      <div className="mt-10 max-w-none lg:mt-16">
+        <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm md:p-6 lg:p-8">
           <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
             House Cleaning Pricing Guide
           </h2>

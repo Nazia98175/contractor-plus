@@ -19,7 +19,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">Required Airflow</h3>
           <p className="text-primary my-2 text-4xl font-bold">
             {result.cfm.toFixed(2)} CFM

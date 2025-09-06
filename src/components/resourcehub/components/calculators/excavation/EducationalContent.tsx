@@ -18,7 +18,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center text-lg">
-              <Shovel className="mr-2 h-5 w-5 text-red-500" />
+              <Shovel className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Understanding Excavation Volume
             </CardTitle>
           </CardHeader>
@@ -39,7 +39,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center text-lg">
-              <Calculator className="mr-2 h-5 w-5 text-red-500" />
+              <Calculator className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Estimating Excavation Costs
             </CardTitle>
           </CardHeader>
@@ -60,7 +60,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center text-lg">
-              <Truck className="mr-2 h-5 w-5 text-red-500" />
+              <Truck className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Excavation Material Considerations
             </CardTitle>
           </CardHeader>
@@ -89,7 +89,7 @@ export function EducationalContent() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center text-lg">
-              <AlertTriangle className="mr-2 h-5 w-5 text-red-500" />
+              <AlertTriangle className="mt-1 mr-2 h-5 w-5 text-red-500" />
               Important Considerations
             </CardTitle>
           </CardHeader>

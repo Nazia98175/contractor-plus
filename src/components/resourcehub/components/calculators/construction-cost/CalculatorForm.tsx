@@ -68,8 +68,8 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   };
 
   return (
-    <Card className="border-shutter overflow-hidden border shadow-sm">
-      <CardHeader className="bg-shutter border-stiletto border-b">
+    <Card className="border-shutter h-full overflow-hidden border shadow-sm">
+      <CardHeader className="border-stiletto border-b">
         <CardTitle className="text-aliceBlue text-xl">
           Calculate Construction Cost
         </CardTitle>
@@ -81,7 +81,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
-            className="space-y-5"
+            className="h-full space-y-5"
           >
             {/* Project Size Field */}
             <FormField
@@ -119,7 +119,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         {...field}
                         className="pr-12 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         sq ft
                       </div>
                     </div>
@@ -213,7 +213,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                         {...field}
                         className="pr-6 pl-3"
                       />
-                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500">
+                      <div className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-300">
                         %
                       </div>
                     </div>
@@ -223,12 +223,8 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               )}
             />
 
-            <Button
-              type="submit"
-              size="lg"
-              className="bg-primary hover:bg-primary/90 mt-4 w-full text-white"
-            >
-              <Calculator className="mr-2 h-5 w-5" />
+            <Button type="submit" size="lg" className="w-full">
+              <Calculator className="h-5 w-5" />
               Calculate Cost
             </Button>
           </form>

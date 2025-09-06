@@ -142,7 +142,7 @@ export function EstimateForm({
         className="absolute -left-[9999px] p-6"
         style={{ width: "210mm" }} // A4 width
       >
-        <div className="mb-6 text-center">
+        <div className="text-center">
           {estimateInfo.companyLogo && (
             <div className="mb-4 flex justify-center">
               <img

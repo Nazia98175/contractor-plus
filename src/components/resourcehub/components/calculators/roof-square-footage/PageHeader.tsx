@@ -14,7 +14,7 @@ export function PageHeader() {
   const router = useRouter();
   return (
     <div className="mb-8">
-      <Breadcrumb className="mb-4">
+      <Breadcrumb className="mb-6">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Resources</BreadcrumbLink>
@@ -34,7 +34,7 @@ export function PageHeader() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Button
+      {/* <Button
         variant="ghost"
         size="sm"
         onClick={() => router.push("/resources/cost-calculator")}
@@ -42,13 +42,13 @@ export function PageHeader() {
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
         Back to Calculators
-      </Button>
+      </Button> */}
 
-      <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+      <div className="mb-3 flex items-start gap-3">
+        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
           <Ruler className="h-5 w-5 text-red-500" />
         </div>
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="text-2xl font-bold sm:text-3xl">
           Roof Square Footage Calculator
         </h1>
       </div>

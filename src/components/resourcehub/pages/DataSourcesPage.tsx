@@ -29,7 +29,7 @@ const DataSourcesPage = () => {
           </Link>
         </div>
 
-        <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+        <h1 className="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
           {/* {t("data_sources")} */}
           Data Sources
         </h1>

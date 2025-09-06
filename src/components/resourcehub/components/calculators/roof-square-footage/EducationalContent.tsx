@@ -1,3 +1,4 @@
+import { Calculator, Check, HardHat, Home, Ruler } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -5,8 +6,7 @@ import {
   AccordionTrigger,
 } from "../../ui/accordion";
 import { Button } from "../../ui/button";
-import { Card, CardContent, CardDescription } from "../../ui/card";
-import { Ruler, Calculator, Home, HardHat, Check } from "lucide-react";
+import { Card, CardContent } from "../../ui/card";
 
 export function EducationalContent() {
   return (
@@ -28,7 +28,7 @@ export function EducationalContent() {
             </Button>
           </div>
           <div className="border-stiletto flex items-center justify-center border-l p-6 md:w-1/3">
-            <div className="flex flex-col items-center text-red-800">
+            <div className="flex flex-col items-center text-red-500">
               <Calculator className="mb-2 h-12 w-12" />
               <span className="text-sm font-medium">
                 Simplify Your Estimating
@@ -39,8 +39,8 @@ export function EducationalContent() {
       </Card>
 
       <div className="prose max-w-none">
-        <h2 className="mb-4 flex items-center gap-2 text-2xl font-semibold">
-          <Ruler className="h-6 w-6 text-red-500" />
+        <h2 className="mb-4 flex items-start gap-2 text-2xl font-semibold">
+          <Ruler className="mt-2 h-5 w-5 shrink-0 text-red-500 sm:h-6 sm:w-6" />
           About Roof Square Footage Calculations
         </h2>
         <p className="text-decemberSky">
@@ -53,8 +53,8 @@ export function EducationalContent() {
         <div className="my-8 grid gap-6 md:grid-cols-2">
           <Card className="border-stiletto border shadow-sm transition-shadow hover:shadow-md">
             <CardContent className="py-6">
-              <div className="mb-3 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+              <div className="mb-3 flex items-start gap-3">
+                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
                   <Home className="h-5 w-5 text-red-500" />
                 </div>
                 <h3 className="text-lg font-medium">
@@ -72,8 +72,8 @@ export function EducationalContent() {
 
           <Card className="border-stiletto border shadow-sm transition-shadow hover:shadow-md">
             <CardContent className="py-6">
-              <div className="mb-3 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+              <div className="mb-3 flex items-start gap-3">
+                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
                   <HardHat className="h-5 w-5 text-red-500" />
                 </div>
                 <h3 className="text-lg font-medium">
@@ -104,7 +104,7 @@ export function EducationalContent() {
           <h3 className="mb-4 text-xl font-medium">Commonly Asked Questions</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-stiletto border-b">
-              <AccordionTrigger className="text-lg font-medium hover:text-red-500">
+              <AccordionTrigger className="py-4 text-lg font-medium hover:text-red-500">
                 Understanding Roof Pitch
               </AccordionTrigger>
               <AccordionContent className="text-decemberSky">
@@ -125,7 +125,7 @@ export function EducationalContent() {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border-stiletto border-b">
-              <AccordionTrigger className="text-lg font-medium hover:text-red-500">
+              <AccordionTrigger className="py-4 text-lg font-medium hover:text-red-500">
                 What is a Roofing Square?
               </AccordionTrigger>
               <AccordionContent className="text-decemberSky">
@@ -144,7 +144,7 @@ export function EducationalContent() {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border-stiletto border-b">
-              <AccordionTrigger className="text-lg font-medium hover:text-red-500">
+              <AccordionTrigger className="py-4 text-lg font-medium hover:text-red-500">
                 Tips for More Accurate Measurements
               </AccordionTrigger>
               <AccordionContent className="text-decemberSky">

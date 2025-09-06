@@ -15,6 +15,7 @@ import { Button } from "../../components/ui/button";
 import { CalculatorForm } from "../../components/calculators/hvac-cfm/CalculatorForm";
 import { CalculationResult } from "../../components/calculators/hvac-cfm/CalculationResult";
 import { EducationalContent } from "../../components/calculators/hvac-cfm/EducationalContent";
+import Link from "next/link";
 
 export default function HvacCfmCalculator() {
   const router = useRouter();
@@ -53,29 +54,28 @@ export default function HvacCfmCalculator() {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-6 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 md:px-6">
       {/* Breadcrumb Navigation */}
-      <div className="mb-4">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources/cost-calculator">
-                Calculators
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-decemberSky text-sm">
-                HVAC CFM Calculator
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources/cost-calculator">
+              Calculators
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="text-decemberSky text-sm">
+              HVAC CFM Calculator
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       {/* Back button */}
       <Button
@@ -133,7 +133,13 @@ export default function HvacCfmCalculator() {
               tools, and job scheduling with Contractor+.
             </p>
             <Button variant="outline" className="w-full">
-              Try Contractor+ Free
+              <Link
+                href="https://my.contractorplus.app/authentication/register"
+                target="_blank"
+                rel="noopener"
+              >
+                Try Contractor+ Free
+              </Link>
             </Button>
           </div>
         </div>

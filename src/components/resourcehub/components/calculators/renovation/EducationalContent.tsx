@@ -2,6 +2,7 @@ import { Card } from "../../ui/card";
 import { Separator } from "../../ui/separator";
 import { Button } from "../../ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function EducationalContent() {
   return (
@@ -323,8 +324,14 @@ export function EducationalContent() {
             projects on track. Start using it to make your renovation projects
             smoother and more profitable.
           </p>
-          <Button>
-            Try Contractor+ Today <ArrowRight className="ml-2 h-4 w-4" />
+
+          <Button asChild>
+            <Link
+              href="https://my.contractorplus.app/authentication/register"
+              target="_blank"
+            >
+              Try Contractor+ Today <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </Card>

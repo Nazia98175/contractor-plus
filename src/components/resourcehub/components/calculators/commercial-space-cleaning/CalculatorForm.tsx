@@ -59,10 +59,10 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
   return (
     <Card className="border-stiletto bg-shutter h-full border shadow-sm">
-      <CardContent className="h-full p-6">
+      <CardContent className="h-full py-6">
         <form onSubmit={handleSubmit} className="h-full">
-          <div className="flex h-full flex-col space-y-4">
-            <div className="flex flex-grow flex-col">
+          <div className="flex h-full flex-col gap-5">
+            <div className="flex flex-grow flex-col gap-3">
               {" "}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -80,7 +80,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                           size="sm"
                           className="h-7 w-7 p-0"
                         >
-                          <Info className="h-4 w-4 text-gray-500" />
+                          <Info className="h-4 w-4 text-gray-300" />
                           <span className="sr-only">Info</span>
                         </Button>
                       </TooltipTrigger>
@@ -127,7 +127,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                           size="sm"
                           className="h-7 w-7 p-0"
                         >
-                          <Info className="h-4 w-4 text-gray-500" />
+                          <Info className="h-4 w-4 text-gray-300" />
                           <span className="sr-only">Info</span>
                         </Button>
                       </TooltipTrigger>
@@ -175,7 +175,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                           size="sm"
                           className="h-7 w-7 p-0"
                         >
-                          <Info className="h-4 w-4 text-gray-500" />
+                          <Info className="h-4 w-4 text-gray-300" />
                           <span className="sr-only">Info</span>
                         </Button>
                       </TooltipTrigger>
@@ -219,7 +219,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                           size="sm"
                           className="h-7 w-7 p-0"
                         >
-                          <Info className="h-4 w-4 text-gray-500" />
+                          <Info className="h-4 w-4 text-gray-300" />
                           <span className="sr-only">Info</span>
                         </Button>
                       </TooltipTrigger>
@@ -267,7 +267,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
                           size="sm"
                           className="h-7 w-7 p-0"
                         >
-                          <Info className="h-4 w-4 text-gray-500" />
+                          <Info className="h-4 w-4 text-gray-300" />
                           <span className="sr-only">Info</span>
                         </Button>
                       </TooltipTrigger>
@@ -306,7 +306,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <Button
               type="submit"
               size="lg"
-              className="mt-auto flex w-full items-center gap-2 text-base font-medium"
+              className="flex w-full items-center gap-2 text-base font-medium"
             >
               <Building className="h-5 w-5" />
               Calculate

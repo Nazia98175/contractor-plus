@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
 import { useMetaTags } from "@/hooks/use-meta-tags";
-import { Paintbrush, Info } from "lucide-react";
-import { PageHeader } from "../../components/calculators/painting/PageHeader";
-import { CalculatorForm } from "../../components/calculators/painting/CalculatorForm";
+import { Info } from "lucide-react";
+import { useState } from "react";
 import { CalculationResult } from "../../components/calculators/painting/CalculationResult";
-import { Card, CardContent } from "../../components/ui/card";
+import { CalculatorForm } from "../../components/calculators/painting/CalculatorForm";
 import { EducationalContent } from "../../components/calculators/painting/EducationalContent";
+import { PageHeader } from "../../components/calculators/painting/PageHeader";
+import { Card, CardContent } from "../../components/ui/card";
 
 interface CalculationData {
   gallonsNeeded: number;
@@ -70,7 +70,7 @@ export default function PaintingCalculator() {
   };
 
   return (
-    <div className="main-container py-8 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 md:px-6">
       <PageHeader />
 
       <div className="mb-8 grid gap-6 md:grid-cols-2 lg:gap-8">

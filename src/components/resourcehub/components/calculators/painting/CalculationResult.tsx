@@ -15,7 +15,7 @@ export function CalculationResult({ result }: CalculationResultProps) {
   return (
     <Card className="border-stiletto bg-shutter border shadow-sm">
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">
             Estimated Painting Cost
           </h3>

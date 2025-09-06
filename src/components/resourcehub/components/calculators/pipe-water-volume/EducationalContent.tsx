@@ -15,9 +15,9 @@ export function EducationalContent() {
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
-            <div className="mb-3 flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
+            <div className="mb-3 flex items-start gap-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100">
                 <Droplet className="h-4 w-4 text-red-500" />
               </div>
               <h3 className="text-lg font-semibold">
@@ -31,9 +31,9 @@ export function EducationalContent() {
             </p>
           </div>
 
-          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
-            <div className="mb-3 flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
+            <div className="mb-3 flex items-start gap-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100">
                 <Ruler className="h-4 w-4 text-red-500" />
               </div>
               <h3 className="text-lg font-semibold">Measurement Tips</h3>
@@ -45,9 +45,9 @@ export function EducationalContent() {
             </p>
           </div>
 
-          <div className="border-stiletto bg-shutter rounded-lg border p-6 shadow-sm">
-            <div className="mb-3 flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
+          <div className="border-stiletto bg-shutter rounded-lg border p-4 shadow-sm lg:p-5">
+            <div className="mb-3 flex items-start gap-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100">
                 <Calculator className="h-4 w-4 text-red-500" />
               </div>
               <h3 className="text-lg font-semibold">Common Pipe Volumes</h3>
@@ -61,10 +61,10 @@ export function EducationalContent() {
         </div>
       </div>
 
-      <div className="border-stiletto bg-shutter rounded-lg border p-6">
+      <div className="border-stiletto bg-shutter rounded-lg border p-4 lg:p-6">
         <div className="flex gap-3">
           <div className="flex-shrink-0">
-            <Info className="h-6 w-6 text-red-500" />
+            <Info className="h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
           </div>
           <div>
             <h3 className="mb-2 text-lg font-semibold">

@@ -72,7 +72,7 @@ export default function IrrigationSystemCalculator() {
   };
 
   return (
-    <div className="main-container py-8 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 md:px-6">
       <PageHeader />
 
       <div className="mb-8 grid gap-6 md:grid-cols-2 lg:gap-8">

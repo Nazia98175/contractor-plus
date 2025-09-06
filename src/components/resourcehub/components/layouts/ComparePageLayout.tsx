@@ -91,7 +91,7 @@ export const ComparePageLayout = ({
           <div className="text-left">
             <div className="mb-2 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 shadow-sm">
-                <CirclePercent className="h-6 w-6 text-red-500" />
+                <CirclePercent className="h-5 w-5 text-red-500 sm:h-6 sm:w-6" />
               </div>
               <h1 className="text-3xl font-bold">
                 Material Price Comparison Tool
@@ -133,7 +133,7 @@ export const ComparePageLayout = ({
           </div>
 
           {/* SEO-optimized informational content at the bottom */}
-          <div className="main-conatiner mt-16">
+          <div className="mx-auto mt-10 max-w-6xl px-4">
             <div className="border-stiletto rounded-lg border p-6 shadow-sm">
               <h2 className="mb-4 text-2xl font-bold">
                 How Our Material Price Comparison Tool Works

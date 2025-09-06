@@ -15,39 +15,37 @@ export function PageHeader() {
   return (
     <>
       {/* Breadcrumb Navigation */}
-      <div className="mb-4">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/resources/cost-calculator"
-                onClick={(e) => {
-                  e.preventDefault();
-                  router.push("/resources/cost-calculator");
-                }}
-              >
-                Construction Calculators
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-master text-sm">
-                Fence Cost Calculator
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink
+              href="/resources/cost-calculator"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/resources/cost-calculator");
+              }}
+            >
+              Construction Calculators
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="text-master text-sm">
+              Fence Cost Calculator
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
-      <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+      <div className="mb-3 flex items-start gap-3">
+        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
           <Fence className="h-5 w-5 text-red-500" />
         </div>
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="text-2xl font-bold sm:text-3xl">
           Fence Cost Calculator
         </h1>
       </div>

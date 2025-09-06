@@ -7,11 +7,12 @@ import {
 } from "../../ui/accordion";
 import { Button } from "../../ui/button";
 import { Separator } from "../../ui/separator";
+import Link from "next/link";
 
 export function EducationalContent() {
   return (
     <div className="mt-16">
-      <div className="border-stiletto rounded-lg border p-8 shadow-sm">
+      <div className="border-stiletto rounded-lg border p-4 shadow-sm md:p-6 lg:p-8">
         <h2 className="text-aliceBlue mb-6 text-2xl font-bold">
           HVAC CFM Calculation Guide
         </h2>
@@ -56,7 +57,7 @@ export function EducationalContent() {
             <div className="border-stiletto bg-shutter rounded-lg border p-4">
               <ul className="text-alice grid gap-3">
                 <li className="flex items-start">
-                  <div className="bg-primary/10 mt-1 mr-3 rounded-full p-1">
+                  <div className="mt-1 mr-3 rounded-full bg-red-500 p-1">
                     <div className="bg-primary h-2 w-2 rounded-full"></div>
                   </div>
                   <span>
@@ -65,7 +66,7 @@ export function EducationalContent() {
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-primary/10 mt-1 mr-3 rounded-full p-1">
+                  <div className="mt-1 mr-3 rounded-full bg-red-500 p-1">
                     <div className="bg-primary h-2 w-2 rounded-full"></div>
                   </div>
                   <span>
@@ -74,7 +75,7 @@ export function EducationalContent() {
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-primary/10 mt-1 mr-3 rounded-full p-1">
+                  <div className="mt-1 mr-3 rounded-full bg-red-500 p-1">
                     <div className="bg-primary h-2 w-2 rounded-full"></div>
                   </div>
                   <span>
@@ -83,7 +84,7 @@ export function EducationalContent() {
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-primary/10 mt-1 mr-3 rounded-full p-1">
+                  <div className="mt-1 mr-3 rounded-full bg-red-500 p-1">
                     <div className="bg-primary h-2 w-2 rounded-full"></div>
                   </div>
                   <span>
@@ -92,7 +93,7 @@ export function EducationalContent() {
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-primary/10 mt-1 mr-3 rounded-full p-1">
+                  <div className="mt-1 mr-3 rounded-full bg-red-500 p-1">
                     <div className="bg-primary h-2 w-2 rounded-full"></div>
                   </div>
                   <span>
@@ -109,19 +110,18 @@ export function EducationalContent() {
           <Accordion type="single" collapsible className="space-y-4">
             <Card>
               <AccordionItem value="formula">
-                <CardHeader className="p-0">
-                  <AccordionTrigger className="px-6 py-4">
-                    <CardTitle className="text-base">
-                      The CFM Calculation Formula Explained
-                    </CardTitle>
-                  </AccordionTrigger>
-                </CardHeader>
+                <AccordionTrigger>
+                  <CardTitle className="px-6 py-4 text-base">
+                    The CFM Calculation Formula Explained
+                  </CardTitle>
+                </AccordionTrigger>
+
                 <AccordionContent>
                   <CardContent className="pt-0">
                     <p className="text-aliceBlue mb-4">
                       The formula used by this calculator is:
                     </p>
-                    <div className="bg-kuroiBlack mb-4 rounded-md p-4 text-center font-mono">
+                    <div className="bg-shutter mb-4 rounded-md p-4 text-center font-mono">
                       CFM = (Room Volume × Air Changes per Hour) ÷ 60
                     </div>
                     <p className="text-aliceBlue">
@@ -138,13 +138,12 @@ export function EducationalContent() {
 
             <Card>
               <AccordionItem value="sizing">
-                <CardHeader className="p-0">
-                  <AccordionTrigger className="px-6 py-4">
-                    <CardTitle className="text-base">
-                      HVAC System Sizing and CFM
-                    </CardTitle>
-                  </AccordionTrigger>
-                </CardHeader>
+                <AccordionTrigger>
+                  <CardTitle className="px-6 py-4 text-base">
+                    HVAC System Sizing and CFM
+                  </CardTitle>
+                </AccordionTrigger>
+
                 <AccordionContent>
                   <CardContent className="pt-0">
                     <p className="text-aliceBlue mb-4">
@@ -167,13 +166,12 @@ export function EducationalContent() {
 
             <Card>
               <AccordionItem value="common-issues">
-                <CardHeader className="p-0">
-                  <AccordionTrigger className="px-6 py-4">
-                    <CardTitle className="text-base">
-                      Common HVAC Airflow Issues
-                    </CardTitle>
-                  </AccordionTrigger>
-                </CardHeader>
+                <AccordionTrigger>
+                  <CardTitle className="px-6 py-4 text-base">
+                    Common HVAC Airflow Issues
+                  </CardTitle>
+                </AccordionTrigger>
+
                 <AccordionContent>
                   <CardContent className="pt-0">
                     <p className="text-aliceBlue mb-4">
@@ -206,13 +204,12 @@ export function EducationalContent() {
 
             <Card>
               <AccordionItem value="professional-help">
-                <CardHeader className="p-0">
-                  <AccordionTrigger className="px-6 py-4">
-                    <CardTitle className="text-base">
-                      When to Consult a Professional
-                    </CardTitle>
-                  </AccordionTrigger>
-                </CardHeader>
+                <AccordionTrigger>
+                  <CardTitle className="px-6 py-4 text-base">
+                    When to Consult a Professional
+                  </CardTitle>
+                </AccordionTrigger>
+
                 <AccordionContent>
                   <CardContent className="pt-0">
                     <p className="text-aliceBlue">
@@ -244,7 +241,7 @@ export function EducationalContent() {
             </h3>
 
             <div className="space-y-6">
-              <div className="border-stiletto border-b pb-4">
+              <div className="border-prediction border-b pb-4">
                 <p className="mb-2 font-semibold">
                   How accurate is the CFM calculator?
                 </p>
@@ -256,7 +253,7 @@ export function EducationalContent() {
                 </p>
               </div>
 
-              <div className="border-stiletto border-b pb-4">
+              <div className="border-prediction border-b pb-4">
                 <p className="mb-2 font-semibold">
                   How do I convert CFM to tons of AC capacity?
                 </p>
@@ -296,13 +293,15 @@ export function EducationalContent() {
             loads/CFM, schedule maintenance, and manage client jobs with ease.
           </p>
           <div className="flex justify-center">
-            <a
-              href="https://contractorplus.app/signup"
-              target="_blank"
-              rel="noopener"
-            >
-              <Button>Try Contractor+ Free</Button>
-            </a>
+            <Button asChild>
+              <Link
+                href="https://my.contractorplus.app/authentication/register"
+                target="_blank"
+                rel="noopener"
+              >
+                Try Contractor+ Free
+              </Link>
+            </Button>
           </div>
         </CardContent>
       </Card>

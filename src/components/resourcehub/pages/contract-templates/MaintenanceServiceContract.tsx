@@ -220,11 +220,11 @@ export default function MaintenanceServiceContract() {
 
       {/* Header */}
       <div className="mb-6 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
           <Wrench className="h-5 w-5 text-red-500" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">
+          <h1 className="text-2xl font-bold sm:text-3xl">
             Maintenance & Service Contract Template
           </h1>
           <p className="text-aliceBlue">
@@ -1162,7 +1162,7 @@ export default function MaintenanceServiceContract() {
       </div>
 
       {/* Educational Content */}
-      <div className="prose prose-gray mt-16 max-w-none">
+      <div className="prose prose-gray mt-10 max-w-none lg:mt-16">
         <h2 className="text-2xl font-semibold">
           Understanding Maintenance & Service Contracts
         </h2>

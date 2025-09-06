@@ -1,6 +1,6 @@
 export function EducationalContent() {
   return (
-    <div className="prose mt-16 max-w-none">
+    <div className="prose mt-10 max-w-none lg:mt-16">
       <h2 className="mb-4 text-2xl font-bold">HVAC Parts Pricing Guide</h2>
       <p className="text-aliceBlue mb-8">
         Understanding how to price HVAC parts correctly is essential for

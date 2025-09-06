@@ -1,6 +1,6 @@
 export function EducationalContent() {
   return (
-    <div className="prose prose-gray mt-16 max-w-none">
+    <div className="prose prose-gray mt-10 max-w-none lg:mt-16">
       <h2 className="text-2xl font-semibold">
         Commercial Cleaning Pricing Guide
       </h2>

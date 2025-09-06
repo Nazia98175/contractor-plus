@@ -29,7 +29,7 @@ export function SearchFormFields({
       <div className="flex gap-2">
         <Button
           type="submit"
-          className="w-full flex-shrink-0 sm:w-auto"
+          className="w-auto flex-shrink-0"
           disabled={isLoading}
         >
           {isLoading ? "Searching..." : "Search"}

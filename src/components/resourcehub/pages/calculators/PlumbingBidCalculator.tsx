@@ -61,7 +61,7 @@ export default function PlumbingBidCalculator() {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-8">
       <PageHeader />
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">

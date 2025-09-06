@@ -19,12 +19,12 @@ export function CalculationResult({
   if (!calculationResult) {
     return (
       <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
-        <CardHeader className="border-stiletto border-b">
-          <CardTitle className="text-xl text-red-400">
+        <CardHeader className="border-stiletto border-b bg-gradient-to-r from-red-500 to-red-600">
+          <CardTitle className="text-xl text-white">
             Calculation Results
           </CardTitle>
         </CardHeader>
-        <CardContent className="py-8 text-center text-gray-500">
+        <CardContent className="py-8 text-center text-gray-300">
           Enter your project details to see the calculation results.
         </CardContent>
       </Card>
@@ -37,13 +37,13 @@ export function CalculationResult({
 
   return (
     <Card className="border-stiletto bg-shutter mb-8 border-2 shadow-md">
-      <CardHeader className="border-stiletto border-b">
-        <CardTitle className="text-xl text-red-500">
+      <CardHeader className="bg-gradient-to-r from-red-500 to-red-600">
+        <CardTitle className="text-xl text-white">
           Calculation Results
         </CardTitle>
       </CardHeader>
       <CardContent className="py-6">
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h3 className="text-alice text-lg font-medium">
             Drywall Sheets Needed
           </h3>
@@ -56,7 +56,7 @@ export function CalculationResult({
         {totalCost > 0 && (
           <>
             <Separator className="my-4" />
-            <div className="mb-6 text-center">
+            <div className="text-center">
               <h3 className="text-alice text-lg font-medium">
                 Total Material Cost
               </h3>

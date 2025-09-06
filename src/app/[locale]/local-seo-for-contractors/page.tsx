@@ -115,21 +115,23 @@ const LeadGeneration = async ({ params }: Params) => {
           variant="primary"
           apiData={false}
         />
-        <CommonFormField
-          className="pt-12 sm:pt-16"
-          variantBtn="light"
-          variant="white"
-          title={
-            "This is what local SEO for contractors should have been all along"
-          }
-          subTitle={
-            "Start using Contractor+ free. Upgrade to get the full operating system."
-          }
-          placeholder={"Your Email"}
-          createBtn={"Get Started Free"}
-          mobileBtn={"Download FREE App"}
-          ncc={"No credit card required"}
-        />
+        <div className="px-2">
+          <CommonFormField
+            className="pt-12 sm:pt-16"
+            variantBtn="light"
+            variant="white"
+            title={
+              "This is what local SEO for contractors should have been all along"
+            }
+            subTitle={
+              "Start using Contractor+ free. Upgrade to get the full operating system."
+            }
+            placeholder={"Your Email"}
+            createBtn={"Get free audit"}
+            mobileBtn={"Download FREE App"}
+            ncc={"No credit card required"}
+          />
+        </div>
         <TrustBar
           platforms={blackPlatforms}
           className="pt-6 pb-8 md:pb-10 lg:pb-12 xl:pb-[66px]"

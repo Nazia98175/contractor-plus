@@ -30,9 +30,12 @@ const SeeAllFeaturesPage = () => {
         hero={{
           featureTag: "The Field Service OS",
           heroTitle: "Everything you need, in a single operating system.",
+
           heroDescription:
             "We believe you shouldn’t have to pay for 10 different softwares and connect them together. We also don’t believe in “gate keeping” our best features for Enterprise level customers.",
         }}
+        heroImg={null}
+        isShowHeroImg={false}
         slug="crm"
         apiData={false}
         commonData={dealflowhero}

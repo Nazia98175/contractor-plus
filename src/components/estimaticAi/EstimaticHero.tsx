@@ -10,8 +10,24 @@ import FreeTrialButton from "../common/FreeTrialButton";
 import { estimateHeroData } from "../common/Utils";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import StatisticCard from "./StatisticCard";
+interface EstimaticHeroProps {
+  hero: {
+    estimaticTag?: string;
+    estimaticTagTitle?: string;
+    subTitle?: string;
+    heroImg?: any;
+    hero?: { subTitle?: string; title?: string };
+  };
+}
 
-const EstimaticHero = () => {
+const EstimaticHero: React.FC<EstimaticHeroProps> = ({ hero }) => {
+  const {
+    estimaticTag,
+    estimaticTagTitle,
+    heroImg,
+    hero: heroSection,
+  } = hero || {};
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -45,11 +61,12 @@ const EstimaticHero = () => {
 
           <Copy animateOnScroll={false} delay={1}>
             <h5 className="text-wallStreet mb-[10px] text-center text-xs font-semibold tracking-[-0.24px] lg:mb-0 xl:text-left">
-              AI Estimating Software
+              {/* AI Estimating Software */}
+              {estimaticTag}
             </h5>
           </Copy>
           <AdaptiveHeroTitle
-            title={"The first AI estimator worth trusting"}
+            title={heroSection?.title || ""}
             className="gradient-2 text-center leading-[128%] font-extrabold xl:text-left"
             minFontSize={25}
             maxLines={2}
@@ -58,9 +75,10 @@ const EstimaticHero = () => {
           />
           <Copy animateOnScroll={false} delay={1.2}>
             <p className="text-secondary sm:text-decemberSky mx-auto mt-2.5 mb-4 text-center text-xs font-semibold sm:my-4 sm:text-sm md:text-base md:font-medium lg:my-[26px] lg:text-lg xl:text-left">
-              Estimatic references your costbook, live supplier pricing, and
+              {/* Estimatic references your costbook, live supplier pricing, and
               local labor rates to build estimates the same way you do. Just
-              100x faster.
+              100x faster. */}
+              {heroSection?.subTitle || ""}
             </p>
           </Copy>
 
@@ -107,16 +125,14 @@ const EstimaticHero = () => {
               src="/images/webp/estimatic-ai.webp"
               alt="AI Assistant Icon"
             />
-            I need a quote for a 140' x 5' black metal fence install including
-            labor and materials, with 2 gates & solar fence post caps as an
-            optional add on
+            {estimaticTagTitle}
           </div>
           <div className="relative overflow-hidden pb-10">
             <Image
               width={730}
               height={410}
               className="object-cover"
-              src="/images/webp/estimatic-ai-hero.webp"
+              src={heroImg || "/images/webp/estimatic-ai-hero.webp"}
               alt="Estimatic AI software interface mockup"
             />
             <div className="ai-blur absolute bottom-[-30%] left-0 h-[80%] w-full"></div>

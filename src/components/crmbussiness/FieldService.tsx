@@ -43,7 +43,7 @@ const FieldService: React.FC<TheServiceProps> = ({
     setTimeout(() => {
       try {
         const cards = document.querySelectorAll(".crm-cards .crm-cards-inner");
-        
+
         // Check if cards exist
         if (!cards || cards.length === 0) {
           console.warn("No cards found for height calculation");
@@ -61,7 +61,7 @@ const FieldService: React.FC<TheServiceProps> = ({
             }
           }
         });
-        
+
         setMaxHeight(currentMaxHeight);
       } catch (error) {
         console.error("Error updating max height:", error);
@@ -110,7 +110,7 @@ const FieldService: React.FC<TheServiceProps> = ({
   // Debug logging with null check
   useEffect(() => {
     if (fieldService) {
-      console.log("Field service data:", fieldService);
+      // console.log("Field service data:", fieldService);
     } else {
       console.warn("No field service data provided");
     }
@@ -119,7 +119,11 @@ const FieldService: React.FC<TheServiceProps> = ({
   useEffect(() => {
     // Check all required values exist
     if (!maxHeight || !headingHeight || !windowHeight) {
-      console.log("Waiting for measurements:", { maxHeight, headingHeight, windowHeight });
+      console.log("Waiting for measurements:", {
+        maxHeight,
+        headingHeight,
+        windowHeight,
+      });
       return;
     }
 
@@ -131,13 +135,14 @@ const FieldService: React.FC<TheServiceProps> = ({
 
     const headingFromTop = windowHeight / 2 - maxHeight / 2 - 90;
     const isSticky = headingFromTop > headingHeight;
-    
+
     if (!isSticky) {
       console.log("Not sticky, skipping animation");
       return;
     }
 
-    const bottomVal = 100 - (headingFromTop + headingHeight) / (windowHeight / 100);
+    const bottomVal =
+      100 - (headingFromTop + headingHeight) / (windowHeight / 100);
 
     // Validate bottomVal
     if (isNaN(bottomVal) || !isFinite(bottomVal)) {
@@ -148,7 +153,10 @@ const FieldService: React.FC<TheServiceProps> = ({
     setTimeout(() => {
       try {
         // Check if GSAP and ScrollTrigger are available
-        if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+        if (
+          typeof gsap === "undefined" ||
+          typeof ScrollTrigger === "undefined"
+        ) {
           console.error("GSAP or ScrollTrigger not available");
           return;
         }
@@ -210,14 +218,16 @@ const FieldService: React.FC<TheServiceProps> = ({
   if (!fieldService) {
     console.error("FieldService component: fieldService prop is required");
     return (
-      <div className="text-center py-10">
+      <div className="py-10 text-center">
         <p>No service data available</p>
       </div>
     );
   }
 
   if (!theme) {
-    console.warn("FieldService component: theme prop is missing, defaulting to 'light'");
+    console.warn(
+      "FieldService component: theme prop is missing, defaulting to 'light'",
+    );
   }
 
   const stickyStyles = calculateStickyPosition();
@@ -243,7 +253,7 @@ const FieldService: React.FC<TheServiceProps> = ({
             maxFontSize={42}
           />
         ) : (
-          <div className="text-center py-4">
+          <div className="py-4 text-center">
             <p>No title available</p>
           </div>
         )}

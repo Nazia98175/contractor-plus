@@ -66,13 +66,14 @@ const EstimaticAiPage = async ({
     faqs,
     commonData,
   } = await getEstimaticPageData(useParams?.locale);
+  console.log("sunile", pageContent);
   return (
     <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-estimatic-ai"
         className="relative opacity-0"
       >
-        <EstimaticHero />
+        <EstimaticHero hero={pageContent} />
         <TrustedService
           reviews={estimaticReviewsAi}
           slug="crm"

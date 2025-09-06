@@ -99,8 +99,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     ncc: commonData?.nccTxt,
   };
 
-  console.log(heroImg, "heroImg");
-
   return (
     <>
       <div id="home-page-wrapper-2">

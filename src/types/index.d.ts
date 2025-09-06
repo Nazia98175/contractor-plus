@@ -202,3 +202,16 @@ export interface IntegrationItem {
 }
 
 type PromiseParams = Promise<{ slug?: string; locale: string }>;
+declare interface StatisticCardProps {
+  id: number;
+  title: string;
+  subTitle: string;
+}
+
+declare interface Review {
+  id: string | number;
+  profileImg: { url: string };
+  userName?: string;
+  rating: number;
+  review: string;
+}

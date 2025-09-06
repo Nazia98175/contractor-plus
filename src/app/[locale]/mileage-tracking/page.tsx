@@ -35,7 +35,7 @@ import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
-import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
+import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
 import Image from "next/image";
 
 export const metadata = {
@@ -106,7 +106,7 @@ const MileageTrackingPage = () => {
           ncc={"No credit card required"}
           trackProperties={mileageListData}
         />
-        <ManageEveryTool cardsData={automatedCardData.cardsDetail} />
+        <ManageEveryMile cardsData={automatedCardData.cardsDetail} />
         <KindAdorable slug={"estimate"} kindAdorable={mileage_comparisonData} />
         <TeamsUsingContractor data={neverLookBackMileageData} slug={""} />
         <ThousandsReviews

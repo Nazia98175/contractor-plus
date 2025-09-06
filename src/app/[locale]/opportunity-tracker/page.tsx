@@ -27,6 +27,7 @@ import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getIntegrationList } from "@/services/integation/getIntegrationData";
+import { url } from "inspector/promises";
 
 export const metadata = {
   title: "Opportunity Tracker for Contractors | Contractor+",
@@ -54,7 +55,9 @@ const DealFlowTracker = async ({
 }) => {
   const { locale } = await params;
   const [integrationList] = await Promise.all([getIntegrationList(locale)]);
-
+  const hero = {
+    url: "/images/webp/opportunity-tracker-hero.webp",
+  };
   return (
     <div className="overflow-x-hidden">
       <CommonHero
@@ -68,7 +71,7 @@ const DealFlowTracker = async ({
           imageMaxWidth: 900,
         }}
         featureTag="Opportunity Tracker"
-        heroImg="/images/webp/opportunity-tracker-hero.webp"
+        heroImg={hero}
         slug="crm"
         commonData={dealflowhero}
         apiData={false}

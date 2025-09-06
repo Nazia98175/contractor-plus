@@ -57,7 +57,9 @@ const BillingPage = async ({
 }) => {
   const { locale } = await params;
   const [integrationList] = await Promise.all([getIntegrationList(locale)]);
-
+  const hero = {
+    url: "/images/webp/invoicing-billing.webp",
+  };
   return (
     <main className="relative z-10 overflow-hidden">
       <CommonHero
@@ -70,7 +72,7 @@ const BillingPage = async ({
           overlay: true,
           imageMaxWidth: 900,
         }}
-        heroImg="/images/webp/invoicing-billing.webp"
+        heroImg={hero}
         slug="crm"
         apiData={false}
         commonData={dealflowhero}

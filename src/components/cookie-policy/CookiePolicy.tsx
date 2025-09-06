@@ -30,7 +30,7 @@ const CookiePolicy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white py-20">
+    <div className="min-h-screen bg-white pt-12 pb-12 md:pt-22">
       <div className="main-container mx-auto max-w-4xl px-4">
         {/* Termly Privacy Policy Embed Container */}
         <div

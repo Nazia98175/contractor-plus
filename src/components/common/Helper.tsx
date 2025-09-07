@@ -1828,49 +1828,6 @@ export const pricingfaqitems = [
   },
 ];
 
-export const estimateFaq = {
-  title: "What contractors want to know ",
-  subTitle: "Frequently asked questions",
-  faq: [
-    {
-      id: 1,
-      question:
-        "How is Estimatic different from tools like ChatGPT or other AI estimate generators?",
-      answer:
-        "Our AI estimate software actually pulls from your real cost book, current supplier pricing, and local labor rates. While other tools give you generic estimates, Estimatic builds accurate, client-ready bids that match how you quote jobs.",
-    },
-    {
-      id: 2,
-      question: "Can I still control or edit the estimate?",
-      answer:
-        "Absolutely. Estimatic gives you a complete draft in a couple minutes, but you’ll always have the final say. Review, adjust, and approve line items just like you would normally (but WAY faster!)",
-    },
-    {
-      id: 3,
-      question: "Can Estimatic read job photos and blueprints? ",
-      answer:
-        "Yes — upload jobsite photos, blueprints, and/or drawings when you create your estimate for the AI to use. ",
-    },
-    {
-      id: 4,
-      question: "Will it match my usual estimate format?",
-      answer:
-        "Yes. Use your saved templates and upload your cost book so the final output looks like your usual estimates. No reformatting or manual entry necessary. We don’t force you into a rigid layout. ",
-    },
-    {
-      id: 5,
-      question: "What data is used for pricing? ",
-      answer:
-        "Estimatic searches to find  real-time pricing from vendors like Lowe’s, Home Depot, Menards, Ace Hardware, Build.com, and ABC Supply. It also uses a proprietary labor rate index based on over 500,000 approved estimates and official BLS data. ",
-    },
-    {
-      id: 6,
-      question: "Is Estimatic part of Contractor+ or a separate tool?",
-      answer:
-        "It’s fully built into Contractor+. That means your estimates automatically connect to your CRM, service requests, job schedule, and invoicing. It’s included with your regular subscription and each estimate created costs a minimal dollar amount (just to cover the cost of using AI). ",
-    },
-  ],
-};
 export const blogData = [
   {
     id: 1,
@@ -2860,12 +2817,6 @@ export const dealReviews2 = {
     },
   ],
 };
-export const estimaticBlogHeadingData = {
-  id: 1,
-  title: "AI related topics in Contractor+ HQ",
-  btnText: "Contractor+ HQ",
-  btnUrl: "/",
-};
 
 export const property_profiles_ControlData = {
   id: 320,
@@ -2923,12 +2874,6 @@ export const billingformData = {
     "Start using Contractor+ free. Upgrade for the full operating system.",
   title:
     "This is what field service invoicing software should have been all along",
-};
-export const estimateFormData = {
-  id: 282,
-  placeholder: "Your Email",
-  title: "The AI estimate generator that will change your business forever",
-  subTitle: "Get started with Estimatic AI in Contractor+ today.",
 };
 
 export const dealflowformData = {

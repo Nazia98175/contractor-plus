@@ -1,7 +1,7 @@
-import { getBlogs, getBlogsByCategory } from "@/services/blogs";
+import { getBlogsByCategory } from "@/services/blogs";
 import { getCommonData } from "../common/commonData";
-import { getEstimaticPage } from "./estimatic";
 import { getHomePage } from "../homePage/homepage";
+import { getEstimaticPage } from "./estimatic";
 
 export interface EstimaticPageData {
   pageContent: any | null;
@@ -35,9 +35,9 @@ export const getEstimaticPageData = async (
     thousandReviewsRes,
     faqsRes,
     commonData,
+    blogsRes,
     industriesData,
     emailSignupRes,
-    blogsRes,
   ] = await Promise.all([
     getEstimaticPage(locale, "&populate=*"),
     getEstimaticPage(locale, "&populate[hero][populate]=heroImg"),
@@ -68,7 +68,7 @@ export const getEstimaticPageData = async (
     getEstimaticPage(locale, "&populate[faqs][populate]=faq"),
 
     getCommonData(locale),
-    getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
+    getBlogsByCategory(locale, "ai-estimating-software", true),
     getHomePage(locale, industriesQuery),
     getEstimaticPage(locale, "&populate[emailSignupSection]=*"),
   ]);

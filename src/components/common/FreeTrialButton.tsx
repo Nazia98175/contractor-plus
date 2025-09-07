@@ -5,7 +5,7 @@ import { SideIcon } from "./Icons";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 interface FreeAccountButtonProps {
   className?: string;
-  text: string;
+  text?: any;
   showIcon?: boolean;
   type?: "button" | "submit" | "reset";
 }

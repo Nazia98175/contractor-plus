@@ -3,13 +3,6 @@ import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
 import productivity from "../../../public/lotties/productivity.json";
 import { ClockIcon, UpArrowIcon } from "./Icons";
 
-export const estimateHeroData = [
-  { title: "<9", desc: "Minutes spent on an estimate" },
-  { title: "$100k+", desc: "More in annual profit from fewer underbids" },
-  { title: "2x", desc: "Higher close rate for estimates sent same-day" },
-  { title: "30%", desc: "Reduction in material cost errors" },
-];
-
 export const billingBlogPost = {
   id: 1,
   title: "Business Phone & SMS topics in Contractor+ HQ",

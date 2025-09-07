@@ -7,9 +7,12 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
-import { estimateHeroData } from "../common/Utils";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import StatisticCard from "./StatisticCard";
+export interface EstimateHeroItem {
+  title: string;
+  subTitle: string;
+}
 interface EstimaticHeroProps {
   hero: {
     estimaticTag?: string;
@@ -18,9 +21,19 @@ interface EstimaticHeroProps {
     heroImg?: any;
     hero?: { subTitle?: string; title?: string };
   };
+  createBtn?: string;
+  createMobileBtn?: string;
+  nccTxt?: string;
+  estimateHeroData?: EstimateHeroItem[];
 }
 
-const EstimaticHero: React.FC<EstimaticHeroProps> = ({ hero }) => {
+const EstimaticHero: React.FC<EstimaticHeroProps> = ({
+  hero,
+  createBtn = "Get started FREE",
+  createMobileBtn = "Download FREE App",
+  nccTxt = "No credit card required",
+  estimateHeroData = [],
+}) => {
   const {
     estimaticTag,
     estimaticTagTitle,
@@ -61,12 +74,13 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({ hero }) => {
 
           <Copy animateOnScroll={false} delay={1}>
             <h5 className="text-wallStreet mb-[10px] text-center text-xs font-semibold tracking-[-0.24px] lg:mb-0 xl:text-left">
-              {/* AI Estimating Software */}
-              {estimaticTag}
+              {estimaticTag || "AI Estimating Software"}
             </h5>
           </Copy>
           <AdaptiveHeroTitle
-            title={heroSection?.title || ""}
+            title={
+              heroSection?.title || "The first AI estimator worth trusting"
+            }
             className="gradient-2 text-center leading-[128%] font-extrabold xl:text-left"
             minFontSize={25}
             maxLines={2}
@@ -75,10 +89,8 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({ hero }) => {
           />
           <Copy animateOnScroll={false} delay={1.2}>
             <p className="text-secondary sm:text-decemberSky mx-auto mt-2.5 mb-4 text-center text-xs font-semibold sm:my-4 sm:text-sm md:text-base md:font-medium lg:my-[26px] lg:text-lg xl:text-left">
-              {/* Estimatic references your costbook, live supplier pricing, and
-              local labor rates to build estimates the same way you do. Just
-              100x faster. */}
-              {heroSection?.subTitle || ""}
+              {heroSection?.subTitle ||
+                "Estimatic references your costbook, live supplier pricing, and local labor rates to build estimates the same way you do. Just 100x faster."}
             </p>
           </Copy>
 
@@ -89,17 +101,17 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({ hero }) => {
               <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 xl:w-fit">
                 <FreeTrialButton
                   className="!hidden sm:!flex"
-                  text="Get started FREE"
+                  text={createBtn}
                   showIcon={false}
                 />
                 <FreeTrialButton
                   className="!flex w-full sm:!hidden"
-                  text="Download FREE App"
+                  text={createMobileBtn}
                   showIcon={false}
                 />
                 <CardRequiredButton
                   className="text-wallStreet sm:text-secondary"
-                  text="No credit card required"
+                  text={nccTxt}
                 />
               </div>
             </CardReveal>

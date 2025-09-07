@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import Button from "../common/Button";
-import { blogData } from "../common/Helper";
 import { BlogBtnIcon, NoBlogIcon } from "../common/Icons";
 import BlogArticle from "./BlogArticle";
 import SliderLayout from "../common/SliderLayout";

@@ -1,19 +1,11 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CommonFormField from "@/components/common/CommonFormField";
-import {
-  blogList,
-  estimateFaq,
-  estimateFormData,
-  estimaticBlogHeadingData,
-  estimaticReviewsAi,
-  platforms,
-} from "@/components/common/Helper";
+import { estimaticReviewsAi, platforms } from "@/components/common/Helper";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
-import IndustryService from "@/components/crmbussiness/IndustryService";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
@@ -53,7 +45,6 @@ const EstimaticAiPage = async ({
 
   const {
     pageContent,
-    heroImg,
     reviews,
     comparisonList,
     problemSolution,
@@ -65,21 +56,24 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
-  console.log("sunile", faqs);
+  console.log("reviews array", reviews);
   return (
     <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-estimatic-ai"
         className="relative opacity-0"
       >
-        <EstimaticHero hero={pageContent} />
-        <TrustedService
-          reviews={estimaticReviewsAi}
-          slug="crm"
-          className="pb-6 lg:pt-6 lg:pb-3.5"
-          apiData={false}
+        <EstimaticHero
+          hero={pageContent}
+          createBtn={commonData?.getStartedFreeBtn}
+          createMobileBtn={commonData?.mobileBtn}
+          nccTxt={commonData?.nccTxt}
+          estimateHeroData={pageContent?.resultStatsEstimatic || []}
         />
-
+        <TrustedService
+          reviews={reviews?.reviews || []}
+          className="pb-6 lg:pt-6 lg:pb-3.5"
+        />
         <RunWithContractor
           kindAdorable={comparisonList}
           variant="dark"
@@ -152,15 +146,17 @@ const EstimaticAiPage = async ({
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"
       />
-      <Faq
-        faq={faqs}
-        classNameAnswer="pt-1"
-        mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-5 sm:pb-10"
-        TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
-      />
+      <div className="relative overflow-hidden">
+        <Faq
+          faq={faqs}
+          classNameAnswer="pt-1"
+          mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-5 sm:pb-10"
+          TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+        />
+      </div>
       <BlogPosts
         data={blogs?.data || []}
-        blogs={blogs}
+        blogs={pageContent?.blogs}
         className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>

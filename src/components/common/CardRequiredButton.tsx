@@ -6,7 +6,7 @@ type VariantType = "default" | "primary" | "light" | "dark" | "muted";
 
 interface CardRequiredButtonProps {
   className?: string;
-  text: string;
+  text?: any;
   showIcon?: boolean;
   variantBtn?: VariantType;
 }

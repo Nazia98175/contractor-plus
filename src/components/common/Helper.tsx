@@ -3305,19 +3305,16 @@ export const propertyCardData = {
 export const propertyaddressContractorData = {
   title: "There’s finally one source of truth for every property address",
   subTitle: null,
-  comaprisons: [
+  comparisons: [
+    // fixed typo here
     {
       title: "The old way",
       comparisonList: [
-        {
-          details: "Software that only gives client & job-level views",
-        },
+        { details: "Software that only gives client & job-level views" },
         {
           details: "Hunting for info in emails, spreadsheets, and camera rolls",
         },
-        {
-          details: "Manually saving emails or hoping you can find them again",
-        },
+        { details: "Manually saving emails or hoping you can find them again" },
         {
           details:
             "Property info is just an address field under a client's name.",
@@ -3330,17 +3327,13 @@ export const propertyaddressContractorData = {
           details:
             "Confusion over who to contact: the tenant, the owner, or the manager?",
         },
-        {
-          details: "Complex workarounds for getting property information",
-        },
+        { details: "Complex workarounds for getting property information" },
       ],
     },
     {
       title: "Your way",
       comparisonList: [
-        {
-          details: "Option for property-level workflows in one tap",
-        },
+        { details: "Option for property-level workflows in one tap" },
         {
           details:
             "Finding any document, photo, or note in one central property hub",

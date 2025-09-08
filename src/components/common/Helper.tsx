@@ -3306,7 +3306,6 @@ export const propertyaddressContractorData = {
   title: "There’s finally one source of truth for every property address",
   subTitle: null,
   comparisons: [
-    // fixed typo here
     {
       title: "The old way",
       comparisonList: [

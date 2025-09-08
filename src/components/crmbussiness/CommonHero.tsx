@@ -62,7 +62,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
-  console.log(heroImg, "all");
+  console.log(featureTag, "all");
 
   return (
     <section

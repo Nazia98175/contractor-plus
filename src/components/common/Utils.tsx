@@ -114,7 +114,7 @@ export const invoiceFaqData = {
 export const billingVsthWayYouCouldData = {
   title: "How you’ve been billing vs. the way you could be",
 
-  comaprisons: [
+  comparisons: [
     {
       title: "The old way",
       comparisonList: [

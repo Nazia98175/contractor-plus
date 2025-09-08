@@ -1,16 +1,14 @@
-import { z } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../ui/form";
-import { Input } from "../../ui/input";
+  Calculator,
+  Clock,
+  DollarSign,
+  Info,
+  Percent,
+  Users,
+} from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "../../ui/button";
 import {
   Card,
@@ -20,13 +18,14 @@ import {
   CardTitle,
 } from "../../ui/card";
 import {
-  Calculator,
-  Info,
-  Users,
-  Clock,
-  DollarSign,
-  Percent,
-} from "lucide-react";
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../../ui/form";
+import { Input } from "../../ui/input";
 import {
   Tooltip,
   TooltipContent,
@@ -58,7 +57,7 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
   const form = useForm<z.infer<typeof calculatorSchema>>({
-    resolver: zodResolver(calculatorSchema),
+    resolver: zodResolver(calculatorSchema) as any,
     defaultValues: {
       workers: 3,
       hoursPerWorker: 8,

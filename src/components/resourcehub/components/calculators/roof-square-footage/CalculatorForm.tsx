@@ -45,7 +45,7 @@ interface CalculatorFormProps {
 
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       length: 0,
       width: 0,

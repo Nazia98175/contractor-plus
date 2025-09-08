@@ -50,7 +50,7 @@ interface CalculatorFormProps {
 
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   const form = useForm<PipeCalculatorValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       diameter: 2,
       diameterUnit: "inches",

@@ -50,7 +50,7 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
   const form = useForm<FenceCostValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       fenceLength: 150,
       costPerFoot: 25,

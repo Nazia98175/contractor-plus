@@ -34,7 +34,7 @@ import { toast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { DrywallCalculationValues } from "@/pages/calculators/DrywallCalculator";
+import { DrywallCalculationValues } from "@/components/resourcehub/pages/calculators/DrywallCalculator";
 
 // Define the form validation schema
 const calculatorSchema = z.object({
@@ -52,7 +52,7 @@ type CalculatorFormProps = {
 export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
   const form = useForm<DrywallCalculationValues>({
-    resolver: zodResolver(calculatorSchema),
+    resolver: zodResolver(calculatorSchema) as any,
     defaultValues: {
       totalArea: 1000,
       sheetLength: 8,

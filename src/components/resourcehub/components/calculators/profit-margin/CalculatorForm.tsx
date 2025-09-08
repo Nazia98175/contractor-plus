@@ -45,7 +45,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
   // Initialize form with default values
   const form = useForm<CalculatorValues>({
-    resolver: zodResolver(calculatorSchema),
+    resolver: zodResolver(calculatorSchema) as any,
     defaultValues: {
       totalCost: 4500,
       priceToClient: 6000,

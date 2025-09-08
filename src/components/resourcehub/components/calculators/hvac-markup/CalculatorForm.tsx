@@ -43,7 +43,7 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
   const form = useForm<CalculatorValues>({
-    resolver: zodResolver(calculatorSchema),
+    resolver: zodResolver(calculatorSchema) as any,
     defaultValues: {
       partCost: 85,
       markup: 30,

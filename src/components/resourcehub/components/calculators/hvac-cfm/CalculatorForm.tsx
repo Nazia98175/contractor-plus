@@ -37,6 +37,7 @@ const formSchema = z.object({
 });
 
 type FormValues = z.infer<typeof formSchema>;
+type FormInputs = z.input<typeof formSchema>;
 
 interface CalculatorFormProps {
   onCalculate: (values: FormValues) => void;
@@ -45,13 +46,13 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   const [isMetric, setIsMetric] = useState(false);
 
-  const form = useForm<FormValues>({
+  const form = useForm<FormInputs>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       roomLength: undefined,
       roomWidth: undefined,
       ceilingHeight: undefined,
-      airChangesPerHour: 5, // Default to 5 ACH as a reasonable starting point
+      airChangesPerHour: 5,
     },
   });
 

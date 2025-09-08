@@ -330,7 +330,7 @@ export function EducationalContent() {
               href="https://my.contractorplus.app/authentication/register"
               target="_blank"
             >
-              Try Contractor+ Today <ArrowRight className="ml-2 h-4 w-4" />
+              Try Contractor+ Today <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>

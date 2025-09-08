@@ -91,8 +91,13 @@ export function ResultsPanel({
             Get more features with Contractor Plus - your all-in-one solution
             for construction business management
           </p>
-          <Button className="w-full bg-red-500 text-white hover:bg-red-600">
-            Try Contractor Plus
+          <Button asChild>
+            <Link
+              target="_blank"
+              href="https://my.contractorplus.app/authentication/register"
+            >
+              Try Contractor Plus
+            </Link>
           </Button>
         </CardContent>
       </Card>
@@ -102,3 +107,4 @@ export function ResultsPanel({
 
 // Import Button from UI components to avoid circular dependency
 import { Button } from "../../ui/button";
+import Link from "next/link";

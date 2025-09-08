@@ -17,6 +17,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import { EducationalContent } from "../../components/calculators/electrician-cost/EducationalContent";
+import Link from "next/link";
 // Define the calculation values type
 export interface ElectricianCostValues {
   baseWage: number;
@@ -105,8 +106,13 @@ export default function ElectricianCostCalculator() {
                 quoting, and invoicing—keeping your electrical business grounded
                 and profitable.
               </p>
-              <Button className="w-full" variant="outline">
-                Try Contractor Plus
+              <Button variant="outline" className="w-full" asChild>
+                <Link
+                  target="_blank"
+                  href="https://my.contractorplus.app/authentication/register"
+                >
+                  Try Contractor Plus
+                </Link>
               </Button>
             </CardContent>
           </Card>

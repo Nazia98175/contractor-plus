@@ -57,7 +57,7 @@ interface CalculatorFormProps {
 
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   // Initialize form with default values
-  const form = useForm<CalculatorValues>({
+  const form = useForm<z.infer<typeof calculatorSchema>>({
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
       workers: 3,
@@ -84,7 +84,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           <form onSubmit={form.handleSubmit(onCalculate)} className="space-y-6">
             <div className="space-y-5">
               {/* Number of Workers */}
-              <FormField
+              <FormField<CalculatorValues>
                 control={form.control}
                 name="workers"
                 render={({ field }) => (
@@ -129,7 +129,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               />
 
               {/* Hours per Worker */}
-              <FormField
+              <FormField<CalculatorValues>
                 control={form.control}
                 name="hoursPerWorker"
                 render={({ field }) => (
@@ -175,7 +175,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               />
 
               {/* Hourly Wage */}
-              <FormField
+              <FormField<CalculatorValues>
                 control={form.control}
                 name="hourlyWage"
                 render={({ field }) => (
@@ -221,7 +221,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               />
 
               {/* Labor Burden */}
-              <FormField
+              <FormField<CalculatorValues>
                 control={form.control}
                 name="laborBurden"
                 render={({ field }) => (
@@ -268,7 +268,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               />
 
               {/* Markup on Labor */}
-              <FormField
+              <FormField<CalculatorValues>
                 control={form.control}
                 name="markup"
                 render={({ field }) => (

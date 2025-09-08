@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../ui/button";
 
 export function EducationalContent() {
@@ -151,7 +152,14 @@ export function EducationalContent() {
           projects – so you know your margins before you even start. Don't work
           for free; use Contractor+ to stay on top of your bottom line!
         </p>
-        <Button> Try Contractor+ Today</Button>
+        <Button asChild>
+          <Link
+            target="_blank"
+            href="https://my.contractorplus.app/authentication/register"
+          >
+            Try Contractor+ Today
+          </Link>
+        </Button>
       </div>
     </div>
   );

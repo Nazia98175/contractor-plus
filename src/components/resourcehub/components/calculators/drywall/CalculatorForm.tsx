@@ -96,7 +96,6 @@ export function DrywallCalculatorForm({ onCalculate }: CalculatorFormProps) {
             className="flex h-full flex-col gap-5"
           >
             <div className="flex flex-grow flex-col gap-3">
-              {" "}
               {/* Total Drywall Area Field */}
               <FormField
                 control={form.control}

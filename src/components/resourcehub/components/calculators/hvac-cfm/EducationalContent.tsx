@@ -292,17 +292,16 @@ export function EducationalContent() {
             Explore Contractor+ – the platform that helps HVAC pros calculate
             loads/CFM, schedule maintenance, and manage client jobs with ease.
           </p>
-          <div className="flex justify-center">
-            <Button asChild>
-              <Link
-                href="https://my.contractorplus.app/authentication/register"
-                target="_blank"
-                rel="noopener"
-              >
-                Try Contractor+ Free
-              </Link>
-            </Button>
-          </div>
+
+          <Button asChild className="w-fit">
+            <Link
+              href="https://my.contractorplus.app/authentication/register"
+              target="_blank"
+              rel="noopener"
+            >
+              Try Contractor+ Free
+            </Link>
+          </Button>
         </CardContent>
       </Card>
     </div>

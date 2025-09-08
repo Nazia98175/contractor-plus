@@ -52,7 +52,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   });
 
   return (
-    <Card className="border-shutter overflow-hidden shadow-md">
+    <Card className="border-shutter h-full overflow-hidden shadow-md">
       <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 text-white">
         <CardTitle className="flex items-center gap-2">
           <Calculator className="h-5 w-5" />

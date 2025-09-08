@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { CalculatorForm } from "../../components/calculators/carpet-cleaning/CalculatorForm";
 import { CalculationResult } from "../../components/calculators/carpet-cleaning/CalculationResult";
 import { EducationalContent } from "../../components/calculators/carpet-cleaning/EducationalContent";
+import Link from "next/link";
 
 export default function CarpetCleaningCalculator() {
   const [calculationResult, setCalculationResult] = useState<{
@@ -141,7 +142,13 @@ export default function CarpetCleaningCalculator() {
               cleaning business shine (just like those freshly cleaned carpets)!
             </p>
             <Button variant="outline" className="w-full">
-              Try Contractor+ Free
+              <Link
+                href="https://my.contractorplus.app/authentication/register"
+                target="_blank"
+                rel="noopener"
+              >
+                Try Contractor+ Free
+              </Link>
             </Button>
           </div>
         </div>

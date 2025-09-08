@@ -2,9 +2,9 @@ import HvacMarkupCalculator from "@/components/resourcehub/pages/calculators/Hva
 
 const HvacMarkupCalculatorPage = () => {
   return (
-    <div>
+    <>
       <HvacMarkupCalculator />
-    </div>
+    </>
   );
 };
 

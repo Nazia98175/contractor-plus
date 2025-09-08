@@ -64,7 +64,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   };
 
   return (
-    <Card className="border-shutter overflow-hidden border shadow-sm">
+    <Card className="border-shutter h-full overflow-hidden border shadow-sm">
       <CardHeader className="bg-shutter border-stiletto border-b">
         <CardTitle className="text-aliceBlue text-xl">
           Calculate Profit Margin
@@ -77,10 +77,10 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
-            className="flex h-full flex-col"
+            className="flex h-full flex-col gap-6"
           >
             {/* Total Cost Field */}
-            <div className="flex flex-grow flex-col">
+            <div className="flex flex-grow flex-col gap-3">
               <FormField
                 control={form.control}
                 name="totalCost"
@@ -173,9 +173,9 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             <Button
               type="submit"
               size="lg"
-              className="mt-4 w-full bg-red-600 text-white hover:bg-red-700"
+              className="w-full bg-red-600 text-white hover:bg-red-700"
             >
-              <Calculator className="mr-2 h-5 w-5" />
+              <Calculator className="h-5 w-5" />
               Calculate
             </Button>
           </form>

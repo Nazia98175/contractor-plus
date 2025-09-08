@@ -21,6 +21,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import { EducationalContent } from "../../components/calculators/drywall/EducationalContent";
+import Link from "next/link";
 
 // Define the calculation values type
 export interface DrywallCalculationValues {
@@ -155,8 +156,14 @@ export default function DrywallCalculator() {
                 manage projects with ease. Estimate your drywall, order the
                 right amount, and keep your projects on schedule and on budget.
               </p>
-              <Button variant="outline" className="w-full">
-                Try Contractor Plus
+
+              <Button variant="outline" className="w-full" asChild>
+                <Link
+                  target="_blank"
+                  href="https://my.contractorplus.app/authentication/register"
+                >
+                  Try Contractor Plus
+                </Link>
               </Button>
             </CardContent>
           </Card>

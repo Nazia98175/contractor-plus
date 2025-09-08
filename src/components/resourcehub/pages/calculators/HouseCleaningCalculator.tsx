@@ -46,6 +46,7 @@ import {
   TableCell,
   TableRow,
 } from "../../components/ui/table";
+import Link from "next/link";
 
 // Define the form validation schema
 const calculatorSchema = z.object({
@@ -580,8 +581,13 @@ export default function HouseCleaningCalculator() {
                 invoicing, and client management. Create detailed proposals that
                 win you more jobs.
               </p>
-              <Button variant="outline" className="w-full">
-                Try Contractor Plus
+              <Button variant="outline" className="w-full" asChild>
+                <Link
+                  target="_blank"
+                  href="https://my.contractorplus.app/authentication/register"
+                >
+                  Try Contractor Plus
+                </Link>
               </Button>
             </CardContent>
           </Card>

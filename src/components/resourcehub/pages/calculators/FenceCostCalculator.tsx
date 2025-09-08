@@ -18,6 +18,7 @@ import { PageHeader } from "../../components/calculators/fence-cost/PageHeader";
 import { Button } from "../../components/ui/button";
 import { CalculatorForm } from "../../components/calculators/fence-cost/CalculatorForm";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 // Define the calculation values type
 export interface FenceCostValues {
@@ -105,8 +106,13 @@ export default function FenceCostCalculator() {
                 place – fence projects (and your business) run smoother with
                 Contractor+.
               </p>
-              <Button variant="outline" className="w-full">
-                Try Contractor Plus
+              <Button variant="outline" className="w-full" asChild>
+                <Link
+                  target="_blank"
+                  href="https://my.contractorplus.app/authentication/register"
+                >
+                  Try Contractor Plus
+                </Link>
               </Button>
             </CardContent>
           </Card>

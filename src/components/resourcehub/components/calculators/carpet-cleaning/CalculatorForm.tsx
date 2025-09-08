@@ -85,7 +85,6 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
             className="flex h-full flex-col space-y-5"
           >
             <div className="flex flex-grow flex-col gap-4">
-              {" "}
               {/* Carpeted Area Field */}
               <FormField
                 control={form.control}

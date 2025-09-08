@@ -287,7 +287,7 @@ export function EducationalContent() {
           </p>
           <Button asChild>
             <Link
-              href="https://my.contractorplus.app/authentication/register?af_xp=custom&lang=en&source_caller=ui&pid=web_homepage_buttons&shortlink=homebuttons&deep_link_value=resources%2Fcost-calculator%2Fconstruction-cost&c=web_homepagehttps://my.contractorplus.app/authentication/register?af_xp=custom&lang=en&source_caller=ui&pid=web_homepage_buttons&shortlink=homebuttons&deep_link_value=resources%2Fcost-calculator%2Fconstruction-cost&c=web_homepage"
+              href="https://my.contractorplus.app/authentication/register"
               target="_blank"
             >
               {" "}

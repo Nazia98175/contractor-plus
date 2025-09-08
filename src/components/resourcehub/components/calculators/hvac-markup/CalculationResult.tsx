@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import { Separator } from "../../ui/separator";
 import { Button } from "../../ui/button";
+import Link from "next/link";
 
 interface CalculationResultProps {
   calculationResult: {
@@ -89,8 +90,13 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
             generate professional quotes and invoices that keep your margins
             healthy.
           </p>
-          <Button className="w-full bg-red-500 text-white hover:bg-red-600">
-            Try Contractor Plus
+          <Button asChild>
+            <Link
+              target="_blank"
+              href="https://my.contractorplus.app/authentication/register"
+            >
+              Try Contractor Plus
+            </Link>
           </Button>
         </CardContent>
       </Card>

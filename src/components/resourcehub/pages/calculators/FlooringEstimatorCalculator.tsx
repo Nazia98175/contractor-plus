@@ -19,6 +19,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
+import Link from "next/link";
 
 export default function FlooringEstimatorCalculator() {
   const router = useRouter();
@@ -90,8 +91,13 @@ export default function FlooringEstimatorCalculator() {
                 product, and keep your projects profitable with our easy-to-use
                 platform.
               </p>
-              <Button variant="outline" className="w-full">
-                Try Contractor Plus
+              <Button variant="outline" className="w-full" asChild>
+                <Link
+                  target="_blank"
+                  href="https://my.contractorplus.app/authentication/register"
+                >
+                  Try Contractor Plus
+                </Link>
               </Button>
             </CardContent>
           </Card>

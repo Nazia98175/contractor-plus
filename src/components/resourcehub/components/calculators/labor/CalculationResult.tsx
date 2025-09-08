@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import { Separator } from "../../ui/separator";
@@ -121,8 +122,13 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
             Track your crew's time and costs effortlessly with Contractor Plus.
             Make sure every hour you pay for is accounted for in your estimates.
           </p>
-          <Button className="w-full bg-red-500 text-white hover:bg-red-600">
-            Try Contractor Plus
+          <Button asChild>
+            <Link
+              target="_blank"
+              href="https://my.contractorplus.app/authentication/register"
+            >
+              Try Contractor Plus
+            </Link>
           </Button>
         </CardContent>
       </Card>

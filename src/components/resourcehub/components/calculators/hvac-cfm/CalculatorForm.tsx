@@ -268,7 +268,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               size="lg"
               className="mt-4 w-full bg-gradient-to-r from-red-500 to-red-600 text-white hover:opacity-90"
             >
-              <Calculator className="mr-2 h-5 w-5" />
+              <Calculator className="h-5 w-5" />
               Calculate CFM Required
             </Button>
           </form>

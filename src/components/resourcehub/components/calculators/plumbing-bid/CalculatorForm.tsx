@@ -307,7 +307,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               size="lg"
               className="mt-4 w-full bg-red-600 text-white hover:bg-red-700"
             >
-              <Wrench className="mr-2 h-5 w-5" />
+              <Wrench className="h-5 w-5" />
               Calculate Bid
             </Button>
           </form>

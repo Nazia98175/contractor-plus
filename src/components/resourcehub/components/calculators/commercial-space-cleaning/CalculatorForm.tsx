@@ -63,7 +63,6 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
         <form onSubmit={handleSubmit} className="h-full">
           <div className="flex h-full flex-col gap-5">
             <div className="flex flex-grow flex-col gap-3">
-              {" "}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label

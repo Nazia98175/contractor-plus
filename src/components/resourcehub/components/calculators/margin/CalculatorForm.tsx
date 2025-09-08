@@ -47,7 +47,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   });
 
   return (
-    <Card className="border-shutter overflow-hidden shadow-md">
+    <Card className="border-shutter h-full overflow-hidden shadow-md">
       <CardHeader className="bg-gradient-to-r from-red-500 to-red-600 text-white">
         <CardTitle className="flex items-center gap-2">
           <Calculator className="h-5 w-5" />
@@ -136,7 +136,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
 
             <Button
               type="submit"
-              className="w-full bg-red-500 text-white hover:bg-red-600"
+              className="mt-3 w-full bg-red-500 text-white hover:bg-red-600"
             >
               Calculate
             </Button>

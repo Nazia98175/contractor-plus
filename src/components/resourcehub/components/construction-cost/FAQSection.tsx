@@ -53,10 +53,15 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
       <CardContent>
         <Accordion type="single" collapsible className="w-full">
           {faqs?.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left hover:no-underline">
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="border-stiletto border-b"
+            >
+              <AccordionTrigger className="py-4 text-left hover:no-underline">
                 {processText(faq.question)}
               </AccordionTrigger>
+
               <AccordionContent className="text-aliceBlue">
                 {processText(faq.answer)}
               </AccordionContent>

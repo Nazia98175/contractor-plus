@@ -1,6 +1,6 @@
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -8,10 +8,15 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "./ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { ScrollArea } from "./ui/scroll-area";
-import { Industry } from "@/types/resources";
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Industry } from "@/types";
+import { toast } from "@/hooks/use-toast";
 
 interface IndustrySelectorProps {
   industries: Industry[];
@@ -68,7 +73,7 @@ const IndustrySelector = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="border-stiletto mt-3 flex h-9 w-full justify-between"
+          className="flex h-9 w-full justify-between"
         >
           <span className="truncate">{getButtonText()}</span>
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />

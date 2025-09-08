@@ -604,7 +604,7 @@ export default function HouseCleaningCalculator() {
             </p>
 
             <div className="mb-8 grid gap-8 md:grid-cols-2">
-              <div className="bg-shutter rounded-lg p-6">
+              <div className="bg-shutter rounded-lg p-4 md:p-6">
                 <h3 className="mb-4 text-xl font-semibold">
                   What Factors Affect Cleaning Cost?
                 </h3>
@@ -616,7 +616,7 @@ export default function HouseCleaningCalculator() {
                 </p>
               </div>
 
-              <div className="bg-shutter rounded-lg p-6">
+              <div className="bg-shutter rounded-lg p-4 md:p-6">
                 <h3 className="mb-4 text-xl font-semibold">
                   How to Use This Calculator
                 </h3>
@@ -744,7 +744,7 @@ export default function HouseCleaningCalculator() {
               </Table>
             </div>
 
-            <div className="bg-shutter rounded-lg p-6">
+            <div className="bg-shutter rounded-lg p-4 md:p-6">
               <h3 className="mb-4 text-xl font-semibold">
                 Frequently Asked Questions
               </h3>

@@ -46,7 +46,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
           <div
             className={`grid grid-cols-1 ${
               isMobile ? "" : "md:grid-cols-3"
-            } gap-4 md:gap-6`}
+            } xl:gap-6`}
           >
             <div className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-white/5">
               <div className="text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
@@ -61,7 +61,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
                 </p>
                 <Button
                   variant="link"
-                  className="text-primary h-7 px-0 text-xs"
+                  className="h-7 px-0 text-xs text-red-500"
                   asChild
                 >
                   <a href="https://my.contractorplus.app/register">
@@ -84,7 +84,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
                 </p>
                 <Button
                   variant="link"
-                  className="text-primary h-7 px-0 text-xs"
+                  className="h-7 px-0 text-xs text-red-500"
                   asChild
                 >
                   <a href="https://my.contractorplus.app">Log in to save</a>
@@ -105,7 +105,7 @@ export function LoginPrompt({ searchCount = 0, className }: LoginPromptProps) {
                 </p>
                 <Button
                   variant="link"
-                  className="text-primary h-7 px-0 text-xs"
+                  className="h-7 px-0 text-xs text-red-500"
                   asChild
                 >
                   <a href="https://contractorplus.app/pricing">View pricing</a>

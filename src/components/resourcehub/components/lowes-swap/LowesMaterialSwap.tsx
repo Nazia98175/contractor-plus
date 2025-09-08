@@ -140,7 +140,7 @@ export const LowesMaterialSwap = ({
         <Button
           variant="ghost"
           size="sm"
-          className="h-8 w-8 cursor-pointer p-1 transition-colors hover:bg-blue-500/50"
+          className="h-8 w-8 shrink-0 cursor-pointer bg-blue-500/20 p-1 transition-colors hover:bg-blue-500/50"
           title={`Swap ${materialName} with real materials from Lowe's`}
         >
           <img
@@ -156,7 +156,7 @@ export const LowesMaterialSwap = ({
         <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-6 pb-5 text-white">
           <div className="flex items-center justify-between">
             <DialogTitle className="flex items-center gap-4 text-xl font-semibold">
-              <div className="rounded-xl bg-white/10 p-3 backdrop-blur-sm">
+              <div className="shrink\\ rounded-xl bg-white/10 p-3 backdrop-blur-sm">
                 <img
                   src="/lovable-uploads/4695cb87-519d-4377-ac06-58e67a3b8c09.png"
                   alt="Lowe's"

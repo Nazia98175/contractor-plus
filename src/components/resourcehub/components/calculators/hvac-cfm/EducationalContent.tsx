@@ -27,7 +27,7 @@ export function EducationalContent() {
           </p>
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
-            <div className="bg-shutter rounded-lg p-6">
+            <div className="bg-shutter rounded-lg p-4 md:p-6">
               <h3 className="mb-4 text-xl font-semibold">Understanding CFM</h3>
               <p className="text-discoBall leading-relaxed">
                 CFM represents the volume of air that moves through your HVAC
@@ -38,7 +38,7 @@ export function EducationalContent() {
               </p>
             </div>
 
-            <div className="bg-shutter rounded-lg p-6">
+            <div className="bg-shutter rounded-lg p-4 md:p-6">
               <h3 className="mb-4 text-xl font-semibold">Why CFM Matters</h3>
               <p className="text-discoBall leading-relaxed">
                 The right CFM ensures that your HVAC system can effectively

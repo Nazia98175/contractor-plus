@@ -542,7 +542,7 @@ const ProjectCostCalculator = ({
       </Helmet> */}
       {/* Header */}
       <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white">
-        <div className="main-container mx-auto px-4 py-8">
+        <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="mb-4 flex items-center gap-2">
             <Button
               variant="ghost"
@@ -562,7 +562,7 @@ const ProjectCostCalculator = ({
           </h1>
           <Badge
             variant="secondary"
-            className="border-red-500 bg-red-600 text-white"
+            className="border-red-500 bg-red-600 py-1.5 text-white"
           >
             Updated{" "}
             {new Date().toLocaleDateString("en-US", {
@@ -575,136 +575,133 @@ const ProjectCostCalculator = ({
       </div>
 
       {/* Search Bar */}
-      <div className="border-stiletto border-b">
-        <div className="main-container py-4">
-          <div className="flex max-w-2xl flex-col gap-4 px-4 md:flex-row">
-            <div className="flex-1">
-              <Popover open={projectOpen} onOpenChange={setProjectOpen}>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    role="combobox"
-                    aria-expanded={projectOpen}
-                    className="bg-background w-full justify-between"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Calculator className="h-4 w-4" />
-                      {selectedProjectSlug
-                        ? projectList?.find(
-                            (proj) => proj.slug === selectedProjectSlug,
-                          )?.projectName || projectData?.name
-                        : "Select project type"}
-                    </div>
-                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent
-                  className="bg-background z-50 w-full border p-0"
-                  align="start"
+      <div className="border-stiletto mx-auto max-w-7xl border-b">
+        <div className="flex max-w-2xl flex-col gap-4 px-4 py-4 md:flex-row">
+          <div className="flex-1">
+            <Popover open={projectOpen} onOpenChange={setProjectOpen}>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  role="combobox"
+                  aria-expanded={projectOpen}
+                  className="bg-background w-full justify-between"
                 >
-                  <Command>
-                    <CommandInput placeholder="Search project types..." />
-                    <CommandList>
-                      <CommandEmpty>No project type found.</CommandEmpty>
-                      <CommandGroup>
-                        {projectList?.map((projectType) => (
-                          <CommandItem
-                            key={projectType.slug}
-                            value={projectType.projectName}
-                            onSelect={() => {
-                              setSelectedProjectSlug(projectType.slug);
-                              setProjectOpen(false);
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                selectedProjectSlug === projectType.slug
-                                  ? "opacity-100"
-                                  : "opacity-0",
-                              )}
-                            />
-                            <div className="flex items-center gap-2">
-                              <Calculator className="h-4 w-4" />
-                              {projectType.projectName}
-                            </div>
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </CommandList>
-                  </Command>
-                </PopoverContent>
-              </Popover>
-            </div>
-            <div className="flex-1">
-              <Popover open={locationOpen} onOpenChange={setLocationOpen}>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    role="combobox"
-                    aria-expanded={locationOpen}
-                    className="w-full justify-between"
-                  >
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      {selectedLocation
-                        ? LOCATIONS.find(
-                            (loc) => loc.value === selectedLocation,
-                          )?.label || locationName
-                        : "Select location"}
-                    </div>
-                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-full p-0" align="start">
-                  <Command>
-                    <CommandInput placeholder="Search locations..." />
-                    <CommandList>
-                      <CommandEmpty>No location found.</CommandEmpty>
-                      <CommandGroup>
-                        {LOCATIONS.map((locationItem) => (
-                          <CommandItem
-                            key={locationItem.value}
-                            value={locationItem.label}
-                            onSelect={() => {
-                              setSelectedLocation(locationItem.value);
-                              setLocationOpen(false);
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                selectedLocation === locationItem.value
-                                  ? "opacity-100"
-                                  : "opacity-0",
-                              )}
-                            />
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w- h-4" />
-                              {locationItem.label}
-                            </div>
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </CommandList>
-                  </Command>
-                </PopoverContent>
-              </Popover>
-            </div>
-            <Button
-              className="bg-red-600 hover:bg-red-700"
-              onClick={handleUpdate}
-              disabled={!selectedProjectSlug || !selectedLocation}
-            >
-              <Calculator className="mr-2 h-4 w-4" />
-              Update
-            </Button>
+                  <div className="flex items-center gap-2">
+                    <Calculator className="h-4 w-4" />
+                    {selectedProjectSlug
+                      ? projectList?.find(
+                          (proj) => proj.slug === selectedProjectSlug,
+                        )?.projectName || projectData?.name
+                      : "Select project type"}
+                  </div>
+                  <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent
+                className="bg-background z-50 w-full border p-0"
+                align="start"
+              >
+                <Command>
+                  <CommandInput placeholder="Search project types..." />
+                  <CommandList>
+                    <CommandEmpty>No project type found.</CommandEmpty>
+                    <CommandGroup>
+                      {projectList?.map((projectType) => (
+                        <CommandItem
+                          key={projectType.slug}
+                          value={projectType.projectName}
+                          onSelect={() => {
+                            setSelectedProjectSlug(projectType.slug);
+                            setProjectOpen(false);
+                          }}
+                        >
+                          <Check
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              selectedProjectSlug === projectType.slug
+                                ? "opacity-100"
+                                : "opacity-0",
+                            )}
+                          />
+                          <div className="flex items-center gap-2">
+                            <Calculator className="h-4 w-4" />
+                            {projectType.projectName}
+                          </div>
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </CommandList>
+                </Command>
+              </PopoverContent>
+            </Popover>
           </div>
+          <div className="flex-1">
+            <Popover open={locationOpen} onOpenChange={setLocationOpen}>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  role="combobox"
+                  aria-expanded={locationOpen}
+                  className="w-full justify-between"
+                >
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4" />
+                    {selectedLocation
+                      ? LOCATIONS.find((loc) => loc.value === selectedLocation)
+                          ?.label || locationName
+                      : "Select location"}
+                  </div>
+                  <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-full p-0" align="start">
+                <Command>
+                  <CommandInput placeholder="Search locations..." />
+                  <CommandList>
+                    <CommandEmpty>No location found.</CommandEmpty>
+                    <CommandGroup>
+                      {LOCATIONS.map((locationItem) => (
+                        <CommandItem
+                          key={locationItem.value}
+                          value={locationItem.label}
+                          onSelect={() => {
+                            setSelectedLocation(locationItem.value);
+                            setLocationOpen(false);
+                          }}
+                        >
+                          <Check
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              selectedLocation === locationItem.value
+                                ? "opacity-100"
+                                : "opacity-0",
+                            )}
+                          />
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w- h-4" />
+                            {locationItem.label}
+                          </div>
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </CommandList>
+                </Command>
+              </PopoverContent>
+            </Popover>
+          </div>
+          <Button
+            className="bg-red-600 hover:bg-red-700"
+            onClick={handleUpdate}
+            disabled={!selectedProjectSlug || !selectedLocation}
+          >
+            <Calculator className="mr-2 h-4 w-4" />
+            Update
+          </Button>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="main-container py-8">
+      <div className="mx-auto max-w-7xl py-8">
         <div className="grid grid-cols-1 gap-8 px-4 lg:grid-cols-3">
           {/* Calculator */}
           <div className="lg:col-span-2">
@@ -750,7 +747,7 @@ const ProjectCostCalculator = ({
                           key={material.name}
                           className="bg-shutter flex items-center justify-between rounded-lg p-3"
                         >
-                          <div className="flex items-center gap-3">
+                          <div className="flex gap-3">
                             <Checkbox
                               checked={materialStates[material.name] || false}
                               onCheckedChange={(checked) =>
@@ -761,7 +758,7 @@ const ProjectCostCalculator = ({
                               }
                             />
                             <div className="flex-1">
-                              <div className="flex items-center gap-2">
+                              <div className="flex gap-2">
                                 <p className="font-medium">
                                   {swappedMaterial
                                     ? swappedMaterial.name
@@ -811,7 +808,7 @@ const ProjectCostCalculator = ({
                           </div>
                           <div className="flex items-center gap-3">
                             {swappedMaterial || material?.lowesUrl ? (
-                              <div className="flex min-w-[120px] flex-col items-center gap-2">
+                              <div className="flex min-w-[120px] flex-col gap-2">
                                 <span className="text-right font-medium">
                                   {formatCurrency(materialCost)}
                                 </span>
@@ -929,7 +926,7 @@ const ProjectCostCalculator = ({
 
                 {/* Controls */}
                 <div className="border-stiletto grid grid-cols-1 gap-4 border-t pt-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="project-size">
                       {projectData?.inputField.name}
                     </Label>
@@ -975,7 +972,7 @@ const ProjectCostCalculator = ({
                     </p>
                   </div>
 
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="markup">Contractor Markup</Label>
                     <div className="flex">
                       <Input
@@ -1078,7 +1075,7 @@ const ProjectCostCalculator = ({
         </div>
 
         {/* Educational Content */}
-        <div className="mt-12 space-y-8">
+        <div className="mx-auto mt-12 max-w-7xl space-y-8 px-4">
           {/* Main Overview */}
           <Card>
             <CardContent className="py-6">

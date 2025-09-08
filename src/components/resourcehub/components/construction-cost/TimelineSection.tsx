@@ -287,15 +287,15 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({
             <div className="space-y-6">
               {steps.map((step, index) => (
                 <div key={index} className="relative flex items-start gap-4">
-                  <div className="bg-primary text-primary-foreground relative z-10 flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold">
+                  <div className="text-alice relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-sm font-semibold xl:h-12 xl:w-12">
                     {index + 1}
                   </div>
                   <div className="min-w-0 flex-1 pb-4">
-                    <div className="mb-2 flex items-center gap-2">
+                    <div className="mb-2 flex items-start gap-2">
                       <h4 className="text-foreground font-semibold">
                         {step.title}
                       </h4>
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-xs text-nowrap">
                         {step.duration}
                       </Badge>
                     </div>

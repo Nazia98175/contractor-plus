@@ -176,7 +176,7 @@ export default function SubcontractorAgreement() {
   };
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       {/* Breadcrumb */}
       <Breadcrumb className="mb-6">
         <BreadcrumbList>
@@ -226,7 +226,7 @@ export default function SubcontractorAgreement() {
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 xl:gap-8">
         {/* Form Section */}
         <div className="space-y-6">
           <Card>
@@ -1156,7 +1156,7 @@ export default function SubcontractorAgreement() {
           </p>
         </div>
 
-        <p className="text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-darkKnight text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Legal Disclaimer:</strong> This template is provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

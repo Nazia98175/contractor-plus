@@ -257,7 +257,7 @@ export default function ContractTemplatesPage() {
           >
             <CardHeader>
               <div className="mb-2 flex items-start justify-between">
-                <span className="text-primary bg-primary/10 rounded px-2 py-1 text-sm font-medium">
+                <span className="rounded bg-red-500/15 px-2 py-1 text-sm font-medium text-red-500">
                   {template.popularity}
                 </span>
                 <span className="text-aliceBlue text-sm">
@@ -276,7 +276,7 @@ export default function ContractTemplatesPage() {
                 <ul className="text-aliceBlue space-y-1 text-sm">
                   {template.features.map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <div className="bg-primary mr-2 h-1.5 w-1.5 rounded-full"></div>
+                      <div className="mr-2 h-1.5 w-1.5 rounded-full bg-red-500"></div>
                       {feature}
                     </li>
                   ))}
@@ -347,7 +347,7 @@ export default function ContractTemplatesPage() {
           <li>Consider having a lawyer review for large or complex projects</li>
         </ol>
 
-        <p className="text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-darkKnight text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Disclaimer:</strong> These templates are provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

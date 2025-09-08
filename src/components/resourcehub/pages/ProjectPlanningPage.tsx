@@ -195,7 +195,7 @@ export default function ProjectPlanningPage() {
           <Card key={tool.id} className="transition-shadow hover:shadow-lg">
             <CardHeader>
               <div className="mb-2 flex items-start justify-between">
-                <span className="text-primary bg-primary/10 rounded px-2 py-1 text-sm font-medium">
+                <span className="rounded bg-red-500/15 px-2 py-1 text-sm font-medium text-red-500">
                   {tool.popularity}
                 </span>
                 <span className="text-aliceBlue text-sm">{tool.category}</span>
@@ -212,7 +212,7 @@ export default function ProjectPlanningPage() {
                   <ul className="text-aliceBlue space-y-1 text-sm">
                     {tool.features.map((feature, index) => (
                       <li key={index} className="flex items-center">
-                        <div className="bg-primary mr-2 h-1.5 w-1.5 rounded-full"></div>
+                        <div className="mr-2 h-1.5 w-1.5 rounded-full bg-red-500"></div>
                         {feature}
                       </li>
                     ))}

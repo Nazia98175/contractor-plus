@@ -180,7 +180,7 @@ ${formData.clientName || "[CLIENT NAME]"}
   };
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       {/* Breadcrumb Navigation */}
       <div className="mb-6">
         <Breadcrumb>
@@ -211,8 +211,8 @@ ${formData.clientName || "[CLIENT NAME]"}
 
       {/* Header */}
       <div className="mb-8 text-center">
-        <div className="mb-4 flex items-center justify-center">
-          <Shield className="text-primary mr-3 h-8 w-8" />
+        <div className="mb-4 flex items-start justify-center gap-3">
+          <Shield className="mt-0.5 h-8 w-8 text-red-500 sm:mt-1" />
           <h1 className="text-3xl font-bold md:text-4xl">
             Warranty Agreement Template
           </h1>
@@ -223,7 +223,7 @@ ${formData.clientName || "[CLIENT NAME]"}
         </p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 xl:gap-8">
         {/* Form Section */}
         <div className="space-y-6">
           <Card>
@@ -232,7 +232,7 @@ ${formData.clientName || "[CLIENT NAME]"}
               <CardDescription>Enter your business details</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="contractorName">Contractor Name</Label>
                 <Input
                   id="contractorName"
@@ -243,7 +243,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   placeholder="Your Company Name"
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="contractorAddress">Address</Label>
                 <Textarea
                   id="contractorAddress"
@@ -256,7 +256,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="contractorPhone">Phone</Label>
                   <Input
                     id="contractorPhone"
@@ -267,7 +267,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                     placeholder="(555) 123-4567"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="contractorEmail">Email</Label>
                   <Input
                     id="contractorEmail"
@@ -280,7 +280,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   />
                 </div>
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="contractorLicense">License Number</Label>
                 <Input
                   id="contractorLicense"
@@ -300,7 +300,7 @@ ${formData.clientName || "[CLIENT NAME]"}
               <CardDescription>Enter client details</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="clientName">Client Name</Label>
                 <Input
                   id="clientName"
@@ -311,7 +311,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   placeholder="Client full name"
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="clientAddress">Address</Label>
                 <Textarea
                   id="clientAddress"
@@ -324,7 +324,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="clientPhone">Phone</Label>
                   <Input
                     id="clientPhone"
@@ -335,7 +335,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                     placeholder="(555) 123-4567"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="clientEmail">Email</Label>
                   <Input
                     id="clientEmail"
@@ -357,7 +357,7 @@ ${formData.clientName || "[CLIENT NAME]"}
               <CardDescription>Describe the warranted work</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="projectAddress">Project Address</Label>
                 <Textarea
                   id="projectAddress"
@@ -369,7 +369,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   rows={2}
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="projectDescription">Project Description</Label>
                 <Textarea
                   id="projectDescription"
@@ -393,7 +393,7 @@ ${formData.clientName || "[CLIENT NAME]"}
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="workmanshipWarrantyPeriod">
                     Workmanship Warranty (months)
                   </Label>
@@ -415,7 +415,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                     </SelectContent>
                   </Select>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="materialsWarrantyPeriod">
                     Materials Warranty (months)
                   </Label>
@@ -438,7 +438,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   </Select>
                 </div>
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="warrantyStartDate">Warranty Start Date</Label>
                 <Input
                   id="warrantyStartDate"
@@ -449,7 +449,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   }
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="transferability">
                   Warranty Transferability
                 </Label>
@@ -475,7 +475,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   </SelectContent>
                 </Select>
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="signatureDate">Agreement Date</Label>
                 <Input
                   id="signatureDate"
@@ -497,7 +497,7 @@ ${formData.clientName || "[CLIENT NAME]"}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="laborWarrantyDetails">
                   Labor Warranty Details (Optional)
                 </Label>
@@ -511,7 +511,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   rows={2}
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="materialsWarrantyDetails">
                   Materials Warranty Details (Optional)
                 </Label>
@@ -528,7 +528,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   rows={2}
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="warrantyExclusions">Warranty Exclusions</Label>
                 <Textarea
                   id="warrantyExclusions"
@@ -540,7 +540,7 @@ ${formData.clientName || "[CLIENT NAME]"}
                   rows={3}
                 />
               </div>
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="maintenanceRequirements">
                   Maintenance Requirements
                 </Label>
@@ -563,7 +563,7 @@ ${formData.clientName || "[CLIENT NAME]"}
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <div>
+                <div className="space-y-3">
                   <CardTitle className="flex items-center">
                     <FileText className="mr-2 h-5 w-5" />
                     Contract Preview

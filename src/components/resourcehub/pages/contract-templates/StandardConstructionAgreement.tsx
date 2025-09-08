@@ -154,7 +154,7 @@ Date: ${formData.date}`;
   };
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       {/* Header */}
       <div className="mb-8">
         <Link
@@ -173,7 +173,7 @@ Date: ${formData.date}`;
         </p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 xl:gap-8">
         {/* Form Section */}
         <div className="space-y-6">
           <Card>
@@ -190,7 +190,7 @@ Date: ${formData.date}`;
             <CardContent className="space-y-4">
               {/* Basic Information */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="contractorName">Contractor Name</Label>
                   <Input
                     id="contractorName"
@@ -201,7 +201,7 @@ Date: ${formData.date}`;
                     placeholder="Your business name"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="clientName">Client Name</Label>
                   <Input
                     id="clientName"
@@ -214,7 +214,7 @@ Date: ${formData.date}`;
                 </div>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="contractorAddress">Contractor Address</Label>
                 <Textarea
                   id="contractorAddress"
@@ -227,7 +227,7 @@ Date: ${formData.date}`;
                 />
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="clientAddress">Client Address</Label>
                 <Textarea
                   id="clientAddress"
@@ -241,7 +241,7 @@ Date: ${formData.date}`;
               </div>
 
               {/* Project Details */}
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="workDescription">Scope of Work</Label>
                 <Textarea
                   id="workDescription"
@@ -254,7 +254,7 @@ Date: ${formData.date}`;
                 />
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="totalFixedPrice">Total Fixed Price ($)</Label>
                 <Input
                   id="totalFixedPrice"
@@ -269,7 +269,7 @@ Date: ${formData.date}`;
 
               {/* Timeline */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="startDate">Start Date</Label>
                   <Input
                     id="startDate"
@@ -280,7 +280,7 @@ Date: ${formData.date}`;
                     }
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="completionDate">Completion Date</Label>
                   <Input
                     id="completionDate"
@@ -299,7 +299,7 @@ Date: ${formData.date}`;
                   Payment Schedule
                 </Label>
                 <div className="grid gap-3 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="signing" className="text-sm">
                       Upon Signing
                     </Label>
@@ -315,7 +315,7 @@ Date: ${formData.date}`;
                       placeholder="25% or $5,000"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="milestone" className="text-sm">
                       At Milestone
                     </Label>
@@ -332,7 +332,7 @@ Date: ${formData.date}`;
                     />
                   </div>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="milestoneDescription" className="text-sm">
                     Milestone Description
                   </Label>
@@ -349,7 +349,7 @@ Date: ${formData.date}`;
                   />
                 </div>
                 <div className="grid gap-3 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="substantial" className="text-sm">
                       Substantial Completion
                     </Label>
@@ -365,7 +365,7 @@ Date: ${formData.date}`;
                       placeholder="30% or $7,500"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="final" className="text-sm">
                       Final Payment
                     </Label>
@@ -383,7 +383,7 @@ Date: ${formData.date}`;
 
               {/* Additional Terms */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="warrantyPeriod">Warranty Period</Label>
                   <Input
                     id="warrantyPeriod"
@@ -394,7 +394,7 @@ Date: ${formData.date}`;
                     placeholder="1 year"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="jurisdiction">State/Jurisdiction</Label>
                   <Input
                     id="jurisdiction"
@@ -548,7 +548,7 @@ Date: ${formData.date}`;
                 detailed and complete. Fixed-price contracts require careful
                 planning to avoid scope creep.
               </p>
-              <div className="text-darkKnight bg-amber-2resources/contract-templates/time-and-materials-contract00 mt-4 rounded border border-amber-300 p-3">
+              <div className="text-darkKnight bg-amber-2 mt-4 rounded border border-amber-300 bg-yellow-50 p-3">
                 <p className="text-xs">
                   <strong>Legal Disclaimer:</strong> This template is for
                   informational purposes only and does not constitute legal

@@ -6,7 +6,7 @@ interface LaborSearchParams {
   industry: string;
   state: string[];
   format: "Quarterly" | "Monthly";
-  timePeriod: string;
+  timePeriod?: string;
   includeSources: string[];
   uom: "Hour" | "Square Foot" | "Linear Foot" | "Unit";
   zipCode?: string;
@@ -94,7 +94,7 @@ export const laborSearchApi = async (params: LaborSearchParams) => {
   }
   // url.searchParams.append("under_miles", "100");
   url.searchParams.append("format", params.format.toLowerCase());
-  url.searchParams.append("time_period", params.timePeriod);
+  url.searchParams.append("time_period", params.timePeriod ?? "");
 
   // Include multiple sources
   params.includeSources?.forEach((source) => {

@@ -364,7 +364,7 @@ export default function ConstructionCashFlowForecaster() {
       : 0;
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       {/* Breadcrumb Navigation */}
       <div className="mb-6">
         <Breadcrumb>

@@ -203,7 +203,7 @@ Witness: ___________________________ Date: ___________
   };
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       {/* Back Button and Header */}
       <div className="mb-8">
         <Link
@@ -226,7 +226,7 @@ Witness: ___________________________ Date: ___________
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 xl:gap-8">
         {/* Form Section */}
         <div className="space-y-6">
           <Card>
@@ -247,7 +247,7 @@ Witness: ___________________________ Date: ___________
                   Contractor Information
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="contractorName">Company/Name *</Label>
                     <Input
                       id="contractorName"
@@ -258,7 +258,7 @@ Witness: ___________________________ Date: ___________
                       placeholder="ABC Construction LLC"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="contractorLicense">License Number *</Label>
                     <Input
                       id="contractorLicense"
@@ -270,7 +270,7 @@ Witness: ___________________________ Date: ___________
                     />
                   </div>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="contractorAddress">Address *</Label>
                   <Textarea
                     id="contractorAddress"
@@ -283,7 +283,7 @@ Witness: ___________________________ Date: ___________
                   />
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="contractorPhone">Phone *</Label>
                     <Input
                       id="contractorPhone"
@@ -294,7 +294,7 @@ Witness: ___________________________ Date: ___________
                       placeholder="(555) 123-4567"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="contractorEmail">Email *</Label>
                     <Input
                       id="contractorEmail"
@@ -315,7 +315,7 @@ Witness: ___________________________ Date: ___________
                   Client Information
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="clientName">Client Name *</Label>
                     <Input
                       id="clientName"
@@ -326,7 +326,7 @@ Witness: ___________________________ Date: ___________
                       placeholder="John & Jane Smith"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="clientPhone">Phone</Label>
                     <Input
                       id="clientPhone"
@@ -338,7 +338,7 @@ Witness: ___________________________ Date: ___________
                     />
                   </div>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="clientAddress">Address *</Label>
                   <Textarea
                     id="clientAddress"
@@ -350,7 +350,7 @@ Witness: ___________________________ Date: ___________
                     rows={2}
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="clientEmail">Email</Label>
                   <Input
                     id="clientEmail"
@@ -369,7 +369,7 @@ Witness: ___________________________ Date: ___________
                 <h3 className="border-stiletto border-b pb-2 text-lg font-semibold">
                   Project Information
                 </h3>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="projectAddress">Project Address *</Label>
                   <Textarea
                     id="projectAddress"
@@ -382,7 +382,7 @@ Witness: ___________________________ Date: ___________
                   />
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="projectType">Project Type *</Label>
                     <Select
                       value={contractData.projectType}
@@ -406,7 +406,7 @@ Witness: ___________________________ Date: ___________
                       </SelectContent>
                     </Select>
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="contractPrice">Contract Price *</Label>
                     <Input
                       id="contractPrice"
@@ -418,7 +418,7 @@ Witness: ___________________________ Date: ___________
                     />
                   </div>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="projectDescription">
                     Project Description *
                   </Label>
@@ -440,7 +440,7 @@ Witness: ___________________________ Date: ___________
                   Project Timeline
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="startDate">Start Date *</Label>
                     <Input
                       id="startDate"
@@ -451,7 +451,7 @@ Witness: ___________________________ Date: ___________
                       }
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="completionDate">Completion Date *</Label>
                     <Input
                       id="completionDate"
@@ -471,7 +471,7 @@ Witness: ___________________________ Date: ___________
                   Payment Terms
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="downPayment">Down Payment</Label>
                     <Input
                       id="downPayment"
@@ -482,7 +482,7 @@ Witness: ___________________________ Date: ___________
                       placeholder="15,000"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="paymentSchedule">Payment Schedule</Label>
                     <Select
                       value={contractData.paymentSchedule}
@@ -507,7 +507,7 @@ Witness: ___________________________ Date: ___________
                   </div>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="retentionAmount">Retention Amount</Label>
                     <Input
                       id="retentionAmount"
@@ -518,7 +518,7 @@ Witness: ___________________________ Date: ___________
                       placeholder="10%"
                     />
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="insuranceCoverage">
                       Insurance Coverage
                     </Label>
@@ -540,7 +540,7 @@ Witness: ___________________________ Date: ___________
                   Contract Terms
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="warrantyPeriod">Warranty Period</Label>
                     <Select
                       value={contractData.warrantyPeriod}
@@ -559,7 +559,7 @@ Witness: ___________________________ Date: ___________
                       </SelectContent>
                     </Select>
                   </div>
-                  <div>
+                  <div className="space-y-3">
                     <Label htmlFor="permitResponsibility">
                       Permit Responsibility
                     </Label>
@@ -580,7 +580,7 @@ Witness: ___________________________ Date: ___________
                     </Select>
                   </div>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="disputeResolution">Dispute Resolution</Label>
                   <Select
                     value={contractData.disputeResolution}
@@ -725,7 +725,7 @@ Witness: ___________________________ Date: ___________
         </p>
 
         <div className="mb-8 grid gap-8 md:grid-cols-2">
-          <div>
+          <div className="space-y-3">
             <h3 className="mb-3 text-xl font-semibold">Essential Elements</h3>
             <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Detailed project description and specifications</li>
@@ -739,7 +739,7 @@ Witness: ___________________________ Date: ___________
             </ul>
           </div>
 
-          <div>
+          <div className="space-y-3">
             <h3 className="mb-3 text-xl font-semibold">Legal Considerations</h3>
             <ul className="text-aliceBlue list-disc space-y-3 pl-6">
               <li>Compliance with local building codes</li>

@@ -3305,7 +3305,7 @@ export const propertyCardData = {
 export const propertyaddressContractorData = {
   title: "There’s finally one source of truth for every property address",
   subTitle: null,
-  comaprisons: [
+  comparisons: [
     {
       title: "The old way",
       comparisonList: [

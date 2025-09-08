@@ -61,7 +61,11 @@ const ManageEveryMile = (cardsData: any) => {
           We manage every mile from drive to reimbursement
         </h4>
       </Copy>
-
+      <Copy animateOnScroll={false} delay={0.2}>
+        <p className="paragraph-style mx-auto max-w-[950px] text-center">
+          A simplified mileage tracking workflow
+        </p>
+      </Copy>
       <div
         id="contractor-section"
         ref={sectionRef}

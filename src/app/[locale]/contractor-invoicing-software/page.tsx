@@ -64,7 +64,6 @@ const BillingPage = async ({
     <main className="relative z-10 overflow-hidden">
       <CommonHero
         hero={{
-          featureTag: "Contractor Invoicing Software",
           heroTitle: "Living invoices that instantly reflect every change",
           heroDescription:
             "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
@@ -72,11 +71,13 @@ const BillingPage = async ({
           overlay: true,
           imageMaxWidth: 900,
         }}
+        featureTag={"Contractor Invoicing Software"}
         heroImg={hero}
         slug="crm"
         apiData={false}
         commonData={dealflowhero}
       />
+
       <TrustedService
         reviews={dealReviews}
         slug="crm"
@@ -137,7 +138,6 @@ const BillingPage = async ({
             : integrationLogos
         }
       />
-
       <BlogPosts
         data={blogList}
         blogs={billingBlogPost}

@@ -239,7 +239,7 @@ export const mileageTrackingData = {
   },
   mobileBtn: "Download FREE App",
   subTitle: null,
-  title: null,
+  title: "Make price a conversation, not a roadblock",
 };
 export const stopToolsData = {
   id: 324,
@@ -472,7 +472,7 @@ export const neverLookBackMileageData = {
       start: 0,
       end: 8,
       suffix: "hours/mo",
-      prefix: "~",
+      prefix: "",
       value: null,
 
       lottieJson: clock,
@@ -854,7 +854,7 @@ export const leadGenerationData = {
   title:
     "Sure, you could hire an SEO agency or contractor… if you like playing roulette",
 
-  comaprisons: [
+  comparisons: [
     {
       title: "Local SEO Agency",
       comparisonList: [

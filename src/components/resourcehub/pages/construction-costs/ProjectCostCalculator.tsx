@@ -598,7 +598,7 @@ const ProjectCostCalculator = ({
                 </Button>
               </PopoverTrigger>
               <PopoverContent
-                className="bg-background z-50 w-full border p-0"
+                className="bg-shutter z-50 w-full border p-0"
                 align="start"
               >
                 <Command>
@@ -690,11 +690,10 @@ const ProjectCostCalculator = ({
             </Popover>
           </div>
           <Button
-            className="bg-red-600 hover:bg-red-700"
             onClick={handleUpdate}
             disabled={!selectedProjectSlug || !selectedLocation}
           >
-            <Calculator className="mr-2 h-4 w-4" />
+            <Calculator className="h-4 w-4" />
             Update
           </Button>
         </div>

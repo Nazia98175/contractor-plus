@@ -419,7 +419,7 @@ export default function ConstructionCashFlowForecaster() {
             <CardContent className="space-y-6">
               {/* Project Information */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="projectName">Project Name *</Label>
                   <Input
                     id="projectName"
@@ -433,7 +433,7 @@ export default function ConstructionCashFlowForecaster() {
                     placeholder="Enter project name"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="projectValue">Total Project Value</Label>
                   <Input
                     id="projectValue"
@@ -451,7 +451,7 @@ export default function ConstructionCashFlowForecaster() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="startDate">Project Start Date</Label>
                   <Input
                     id="startDate"
@@ -465,7 +465,7 @@ export default function ConstructionCashFlowForecaster() {
                     }
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="endDate">Project End Date</Label>
                   <Input
                     id="endDate"
@@ -482,7 +482,7 @@ export default function ConstructionCashFlowForecaster() {
               </div>
 
               {/* Cash Flow Items */}
-              <div>
+              <div className="space-y-3">
                 <div className="mb-4 flex items-center justify-between">
                   <h3 className="text-lg font-semibold">Cash Flow Items</h3>
                   <Button onClick={addCashFlowItem} size="sm">
@@ -495,7 +495,7 @@ export default function ConstructionCashFlowForecaster() {
                   {cashFlowData.items.map((item) => (
                     <Card key={item.id} className="p-4">
                       <div className="grid items-end gap-3 md:grid-cols-6">
-                        <div>
+                        <div className="space-y-3">
                           <Label>Type</Label>
                           <Select
                             value={item.type}
@@ -512,7 +512,7 @@ export default function ConstructionCashFlowForecaster() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <div>
+                        <div className="space-y-3">
                           <Label>Phase</Label>
                           <Select
                             value={item.phase}
@@ -547,7 +547,7 @@ export default function ConstructionCashFlowForecaster() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <div>
+                        <div className="space-y-3">
                           <Label>Description</Label>
                           <Input
                             value={item.description}
@@ -561,7 +561,7 @@ export default function ConstructionCashFlowForecaster() {
                             placeholder="Description"
                           />
                         </div>
-                        <div>
+                        <div className="space-y-3">
                           <Label>Amount ($)</Label>
                           <Input
                             type="number"
@@ -576,7 +576,7 @@ export default function ConstructionCashFlowForecaster() {
                             placeholder="0"
                           />
                         </div>
-                        <div>
+                        <div className="space-y-3">
                           <Label>Date</Label>
                           <Input
                             type="date"
@@ -590,7 +590,7 @@ export default function ConstructionCashFlowForecaster() {
                             }
                           />
                         </div>
-                        <div>
+                        <div className="space-y-3">
                           <Button
                             variant="outline"
                             size="sm"
@@ -618,7 +618,7 @@ export default function ConstructionCashFlowForecaster() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <div>
+                <div className="space-y-3">
                   <CardTitle>Cash Flow Summary</CardTitle>
                   <CardDescription>Overview and export options</CardDescription>
                 </div>
@@ -768,7 +768,7 @@ export default function ConstructionCashFlowForecaster() {
       {/* Enhanced Educational Content */}
       <div className="mt-16 space-y-12">
         {/* CTA Section */}
-        <div className="from-primary/10 via-primary/5 to-primary/10 rounded-2xl bg-gradient-to-r p-8 text-center">
+        <div className="x-4 rounded-2xl bg-gradient-to-r from-black via-gray-900 to-black py-6 text-center lg:p-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-6 flex justify-center">
               <div className="bg-primary/20 rounded-full p-3">
@@ -813,8 +813,8 @@ export default function ConstructionCashFlowForecaster() {
               </div>
             </div>
             <Button asChild size="lg">
-              <a
-                href="https://contractorplus.app/project-management-software-for-contractors"
+              <Link
+                href="/project-management-software-for-contractors"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
@@ -822,18 +822,18 @@ export default function ConstructionCashFlowForecaster() {
                 Explore Contractor+ Platform
                 <ArrowRight className="ml-2 h-4 w-4" />
                 <ExternalLink className="ml-1 h-3 w-3" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
 
         {/* How-to Guide */}
-        <div className="border-stiletto rounded-xl border p-8">
+        <div className="rounded-xl bg-gradient-to-br from-black via-gray-900 to-black px-4 py-6 lg:p-8">
           <h2 className="text-center text-2xl font-bold">
             Master Construction Cash Flow Management
           </h2>
 
-          <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card className="bg-shutter text-center">
               <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
@@ -970,7 +970,7 @@ export default function ConstructionCashFlowForecaster() {
         </div>
 
         {/* Industry Statistics */}
-        <Card className="bg-shutter">
+        <Card className="bg-gradient-to-br from-black via-gray-900 to-black px-4 py-6 lg:p-8">
           <CardHeader>
             <CardTitle className="text-center">
               Construction Cash Flow Statistics
@@ -981,20 +981,20 @@ export default function ConstructionCashFlowForecaster() {
           </CardHeader>
           <CardContent>
             <div className="grid gap-6 text-center md:grid-cols-3">
-              <div>
+              <div className="space-y-3">
                 <div className="text-primary mb-2 text-2xl font-bold">82%</div>
                 <p className="text-aliceBlue text-sm">
                   of construction business failures are due to poor cash flow
                   management
                 </p>
               </div>
-              <div>
+              <div className="space-y-3">
                 <div className="text-primary mb-2 text-2xl font-bold">45</div>
                 <p className="text-aliceBlue text-sm">
                   days average payment delay in construction industry
                 </p>
               </div>
-              <div>
+              <div className="space-y-3">
                 <div className="text-primary mb-2 text-2xl font-bold">
                   15-25%
                 </div>

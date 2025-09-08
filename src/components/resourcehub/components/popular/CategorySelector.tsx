@@ -1,22 +1,5 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowDownUp } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../ui/select";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "../ui/button";
+import { ArrowDownUp } from "lucide-react";
 
 // Category data
 export const categories = [{ value: "all", label: "All Categories" }];

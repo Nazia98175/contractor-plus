@@ -83,7 +83,7 @@ const IndustrySelector = ({
           <CommandList>
             <CommandEmpty>No industries found.</CommandEmpty>
             <CommandGroup>
-              <ScrollArea className="h-[300px]">
+              <ScrollArea className="lenis-ignore h-[300px]">
                 {industries.map((industry) => (
                   <CommandItem
                     key={industry.id}

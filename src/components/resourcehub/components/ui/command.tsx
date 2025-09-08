@@ -38,7 +38,10 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+  <div
+    className="border-prediction flex items-center border-b px-3"
+    cmdk-input-wrapper=""
+  >
     <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
@@ -56,16 +59,37 @@ CommandInput.displayName = CommandPrimitive.Input.displayName;
 const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
-    ref={ref}
-    className={cn(
-      "no-scrollbar max-h-[300px] overflow-x-hidden overflow-y-auto",
-      className,
-    )}
-    {...props}
-  />
-));
+>(({ className, ...props }, ref) => {
+  const listRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+
+    // ✅ Stop wheel events from propagating to Lenis
+    const handler = (e: WheelEvent) => e.stopPropagation();
+    el.addEventListener("wheel", handler, { passive: false });
+
+    return () => {
+      el.removeEventListener("wheel", handler);
+    };
+  }, []);
+
+  return (
+    <CommandPrimitive.List
+      ref={(node) => {
+        listRef.current = node;
+        if (typeof ref === "function") ref(node);
+        else if (ref) ref.current = node;
+      }}
+      className={cn(
+        "no-scrollbar max-h-[300px] overflow-x-hidden overflow-y-auto",
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 
 CommandList.displayName = CommandPrimitive.List.displayName;
 
@@ -117,7 +141,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
+      "data-[selected=true]:text-accent-foreground relative flex cursor-pointer items-center rounded-md px-2 py-1.5 text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 data-[selected='true']:bg-red-500",
       className,
     )}
     {...props}

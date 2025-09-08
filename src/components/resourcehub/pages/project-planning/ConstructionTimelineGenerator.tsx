@@ -1837,7 +1837,7 @@ export default function ConstructionTimelineGenerator() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="projectName">Project Name</Label>
                 <Input
                   id="projectName"
@@ -1853,7 +1853,7 @@ export default function ConstructionTimelineGenerator() {
                 />
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="projectCategory">Project Category</Label>
                 <Select
                   value={projectData.projectCategory}
@@ -1875,7 +1875,7 @@ export default function ConstructionTimelineGenerator() {
                 </Select>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="projectType">Project Type</Label>
                 <Select
                   value={projectData.projectType}
@@ -1903,7 +1903,7 @@ export default function ConstructionTimelineGenerator() {
                 </Select>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="complexity">Project Complexity</Label>
                 <Select
                   value={projectData.complexity}
@@ -1922,7 +1922,7 @@ export default function ConstructionTimelineGenerator() {
                 </Select>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="permitRequired">Permits Required?</Label>
                 <Select
                   value={projectData.permitRequired}
@@ -1945,7 +1945,7 @@ export default function ConstructionTimelineGenerator() {
 
               <Button
                 onClick={generateTimeline}
-                className="w-full"
+                className="mt-6 w-full"
                 tabIndex={6}
               >
                 <Calendar className="mr-2 h-4 w-4" />
@@ -2033,8 +2033,8 @@ export default function ConstructionTimelineGenerator() {
             <CardContent>
               {timeline.length === 0 ? (
                 <div className="text-aliceBlue py-12 text-center">
-                  <Calendar className="mx-auto mb-4 h-12 w-12 opacity-50" />
-                  <p>
+                  <Calendar className="mx-auto mb-4 h-12 w-12 opacity-30" />
+                  <p className="opacity-80">
                     Fill out the project details and click "Generate Timeline"
                     to see your construction schedule
                   </p>
@@ -2165,7 +2165,7 @@ export default function ConstructionTimelineGenerator() {
       {/* Enhanced Educational Content */}
       <div className="mt-16 space-y-12">
         {/* CTA Section */}
-        <div className="from-primary/10 via-primary/5 to-primary/10 rounded-2xl bg-gradient-to-r p-8 text-center">
+        <div className="rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black p-8 text-center">
           <div className="mx-auto max-w-4xl">
             <div className="mb-6 flex justify-center">
               <div className="bg-primary/20 rounded-full p-3">
@@ -2211,26 +2211,26 @@ export default function ConstructionTimelineGenerator() {
               </div>
             </div>
             <Button asChild size="lg">
-              <a
-                href="https://contractorplus.app/project-management-software-for-contractors"
+              <Link
+                href="/project-management-software-for-contractors"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
               >
                 Learn More About Contractor+
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
 
         {/* How-to Guide */}
         <div className="border-stiletto rounded-xl border p-8">
-          <h2 className="text-center text-2xl font-bold">
+          <h2 className="mb-8 text-center text-2xl font-bold">
             Master Construction Timeline Planning
           </h2>
 
-          <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card className="bg-shutter text-center">
               <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">

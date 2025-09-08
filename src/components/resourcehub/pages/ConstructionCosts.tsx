@@ -240,7 +240,7 @@ const ConstructionCosts = () => {
             </div>
             <Badge
               variant="secondary"
-              className="mb-6 border-red-500 bg-red-600 text-white"
+              className="mb-6 border-red-500 bg-red-600 py-1.5 text-white"
             >
               Updated{" "}
               {new Date().toLocaleDateString("en-US", {
@@ -404,7 +404,7 @@ const ConstructionCosts = () => {
                   />
                 </div>
               </CardHeader>
-              <CardContent className="p-0">
+              <CardContent>
                 <div className="space-y-1">
                   {CATEGORIES.map((category) => {
                     const Icon = category.icon;
@@ -415,7 +415,7 @@ const ConstructionCosts = () => {
                         key={category.id}
                         onClick={() => setSelectedCategory(category.name)}
                         className={cn(
-                          "flex w-full items-center gap-3 px-4 py-3 text-left transition-colors",
+                          "flex w-full items-center gap-3 rounded-md px-4 py-3 text-left transition-colors",
                           isActive
                             ? "border-r-2 border-red-600 bg-red-50 text-red-700"
                             : "hover:bg-red-500",
@@ -456,7 +456,7 @@ const ConstructionCosts = () => {
                 {filteredCategoryData?.map((project) => (
                   <Card
                     key={project.slug}
-                    className="cursor-pointer border-gray-200 transition-shadow hover:border-red-300 hover:shadow-lg"
+                    className="border-prediction cursor-pointer transition-shadow hover:border-red-400 hover:shadow-lg"
                     onClick={() => handleProjectClick(project.slug)}
                   >
                     <CardHeader className="pb-3">

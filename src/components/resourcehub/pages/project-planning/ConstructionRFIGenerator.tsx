@@ -419,7 +419,7 @@ export default function ConstructionRFIGenerator() {
             <CardContent className="space-y-6">
               {/* Project Information */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="projectName">Project Name *</Label>
                   <Input
                     id="projectName"
@@ -428,7 +428,7 @@ export default function ConstructionRFIGenerator() {
                     placeholder="Enter project name"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="projectNumber">Project Number</Label>
                   <Input
                     id="projectNumber"
@@ -442,7 +442,7 @@ export default function ConstructionRFIGenerator() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-3">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="rfiNumber">RFI Number</Label>
                   <Input
                     id="rfiNumber"
@@ -451,7 +451,7 @@ export default function ConstructionRFIGenerator() {
                     placeholder="RFI-001"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="date">Date</Label>
                   <Input
                     id="date"
@@ -460,7 +460,7 @@ export default function ConstructionRFIGenerator() {
                     onChange={(e) => updateField("date", e.target.value)}
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="responseRequiredBy">
                     Response Required By
                   </Label>
@@ -477,7 +477,7 @@ export default function ConstructionRFIGenerator() {
 
               {/* Communication Details */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="to">To (Recipient)</Label>
                   <Input
                     id="to"
@@ -486,7 +486,7 @@ export default function ConstructionRFIGenerator() {
                     placeholder="Architect/Engineer/Owner"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="from">From (Your Company)</Label>
                   <Input
                     id="from"
@@ -497,7 +497,7 @@ export default function ConstructionRFIGenerator() {
                 </div>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="requestedBy">Requested By</Label>
                 <Input
                   id="requestedBy"
@@ -508,7 +508,7 @@ export default function ConstructionRFIGenerator() {
               </div>
 
               {/* RFI Details */}
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="subject">Subject *</Label>
                 <Input
                   id="subject"
@@ -519,7 +519,7 @@ export default function ConstructionRFIGenerator() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="priority">Priority Level</Label>
                   <Select
                     value={rfiData.priority}
@@ -536,7 +536,7 @@ export default function ConstructionRFIGenerator() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="category">Category</Label>
                   <Select
                     value={rfiData.category}
@@ -560,7 +560,7 @@ export default function ConstructionRFIGenerator() {
                 </div>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="description">Description/Question *</Label>
                 <Textarea
                   id="description"
@@ -573,7 +573,7 @@ export default function ConstructionRFIGenerator() {
 
               {/* Reference Documents */}
               <div className="grid gap-4 md:grid-cols-2">
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="drawings">Referenced Drawings</Label>
                   <Input
                     id="drawings"
@@ -582,7 +582,7 @@ export default function ConstructionRFIGenerator() {
                     placeholder="Drawing numbers/names"
                   />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Label htmlFor="specifications">
                     Referenced Specifications
                   </Label>
@@ -597,7 +597,7 @@ export default function ConstructionRFIGenerator() {
                 </div>
               </div>
 
-              <div>
+              <div className="space-y-3">
                 <Label htmlFor="additionalNotes">Additional Notes</Label>
                 <Textarea
                   id="additionalNotes"
@@ -623,7 +623,7 @@ export default function ConstructionRFIGenerator() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <div>
+                <div className="space-y-3">
                   <CardTitle>RFI Preview</CardTitle>
                   <CardDescription>
                     Review your RFI before downloading
@@ -653,10 +653,10 @@ export default function ConstructionRFIGenerator() {
                       Project: {rfiData.projectName}
                     </h4>
                     <div className="space-y-1 text-sm">
-                      <div>
+                      <div className="space-y-3">
                         <strong>RFI #:</strong> {rfiData.rfiNumber || "Draft"}
                       </div>
-                      <div>
+                      <div className="space-y-3">
                         <strong>Subject:</strong> {rfiData.subject}
                       </div>
                       {rfiData.priority && (
@@ -676,7 +676,7 @@ export default function ConstructionRFIGenerator() {
                         </div>
                       )}
                       {rfiData.category && (
-                        <div>
+                        <div className="space-y-3">
                           <strong>Category:</strong> {rfiData.category}
                         </div>
                       )}
@@ -711,7 +711,7 @@ export default function ConstructionRFIGenerator() {
       {/* Enhanced Educational Content */}
       <div className="mt-16 space-y-12">
         {/* CTA Section */}
-        <div className="border-stiletto border p-8 text-center">
+        <div className="border-stiletto border px-4 py-6 text-center lg:p-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-6 flex justify-center">
               <div className="bg-primary/20 rounded-full p-3">
@@ -757,27 +757,26 @@ export default function ConstructionRFIGenerator() {
               </div>
             </div>
             <Button asChild size="lg">
-              <a
-                href="https://contractorplus.app/project-management-software-for-contractors"
+              <Link
+                href="/project-management-software-for-contractors"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
               >
                 Learn More About Contractor+
-                <ArrowRight className="ml-2 h-4 w-4" />
                 <ExternalLink className="ml-1 h-3 w-3" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
 
         {/* How-to Guide */}
-        <div className="border-stiletto rounded-xl border p-8">
+        <div className="border-stiletto rounded-xl border bg-gradient-to-br from-black via-gray-900 to-black px-4 py-6 lg:p-8">
           <h2 className="text-center text-2xl font-bold">
             Master Construction RFI Management
           </h2>
 
-          <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card className="bg-shutter text-center">
               <CardContent className="py-6">
                 <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
@@ -915,7 +914,7 @@ export default function ConstructionRFIGenerator() {
         </div>
 
         {/* Industry Insights */}
-        <Card className="bg-shutter">
+        <Card className="bg-gradient-to-br from-black via-gray-900 to-black">
           <CardHeader>
             <CardTitle className="text-center">
               RFI Process Statistics

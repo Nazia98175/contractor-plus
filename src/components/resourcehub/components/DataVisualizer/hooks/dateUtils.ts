@@ -1,8 +1,8 @@
-import { FilterState } from "@/types";
+import { FilterState } from "@/types/resources";
 import { addMonths, subMonths, format, isAfter } from "date-fns";
 
 export const getDateRange = (
-  filters: FilterState
+  filters: FilterState,
 ): { startDate?: Date; endDate: Date } => {
   let startDate: Date | undefined;
   let endDate = new Date();
@@ -37,7 +37,7 @@ export const getDateRange = (
 export const generatePeriodPlaceholders = (
   startDate: Date,
   endDate: Date,
-  isPeriodMonthly: boolean
+  isPeriodMonthly: boolean,
 ): Map<string, any> => {
   const ratesMap = new Map();
   const currentDate = new Date(startDate);
@@ -52,7 +52,7 @@ export const generatePeriodPlaceholders = (
         const displayPeriod = format(currentDate, "MMM yyyy");
         ratesMap.set(
           monthPeriod,
-          createEmptyPeriodData(displayPeriod, monthPeriod, year, month)
+          createEmptyPeriodData(displayPeriod, monthPeriod, year, month),
         );
       }
       currentDate.setMonth(currentDate.getMonth() + 1);
@@ -67,8 +67,8 @@ export const generatePeriodPlaceholders = (
             period,
             year,
             undefined,
-            quarter
-          )
+            quarter,
+          ),
         );
       }
       currentDate.setMonth(currentDate.getMonth() + 3);
@@ -83,7 +83,7 @@ const createEmptyPeriodData = (
   rawPeriod: string,
   year: number,
   month?: number,
-  quarter?: number
+  quarter?: number,
 ) => ({
   period: displayPeriod,
   rawPeriod,

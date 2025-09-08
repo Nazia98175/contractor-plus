@@ -1,4 +1,4 @@
-import { DateRangePreset } from "@/types";
+import { DateRangePreset } from "@/types/resources";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
 

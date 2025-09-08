@@ -14,7 +14,7 @@ import {
   getYear,
   getMonth,
 } from "date-fns";
-import { DateRange, DateRangePreset } from "@/types";
+import { DateRange, DateRangePreset } from "@/types/resources";
 import DateRangePresets from "./DateRangePresets";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";

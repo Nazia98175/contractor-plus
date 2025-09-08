@@ -1,5 +1,9 @@
 import { industries, states } from "@/data/mockData";
-import { UnitOfMeasurement, LaborRate, ZipCodeLaborRate } from "@/types";
+import {
+  UnitOfMeasurement,
+  LaborRate,
+  ZipCodeLaborRate,
+} from "@/types/resources";
 
 type RawForecastAPIResponse = {
   forcast?: { year: number; value: number }[];
@@ -115,10 +119,14 @@ export function transformData(
         (typeof cpappRaw === "object" && cpappRaw !== null) ||
         (typeof blsRaw === "object" && blsRaw !== null)
       ) {
-        const cpappMap =
-          typeof cpappRaw === "object" && cpappRaw !== null ? cpappRaw : {};
-        const blsMap =
-          typeof blsRaw === "object" && blsRaw !== null ? blsRaw : {};
+        const cpappMap: Record<string, any> =
+          typeof cpappRaw === "object" && cpappRaw !== null
+            ? (cpappRaw as Record<string, any>)
+            : {};
+        const blsMap: Record<string, any> =
+          typeof blsRaw === "object" && blsRaw !== null
+            ? (blsRaw as Record<string, any>)
+            : {};
 
         const allQuarters = new Set([
           ...Object.keys(cpappMap),
@@ -127,7 +135,7 @@ export function transformData(
 
         for (const quarterStr of allQuarters) {
           const contractorPlusRate = Number(cpappMap[quarterStr] ?? 0);
-          const blsRate = blsMap[quarterStr] ?? 0;
+          const blsRate = Number(blsMap[quarterStr] ?? 0);
 
           const [yearStr, qStr] = quarterStr.split("-Q");
           const year = parseInt(yearStr, 10);

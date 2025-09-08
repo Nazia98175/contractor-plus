@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "../../ui/card";
-import { Input } from "@/components/ui/input";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
+
 import { Bell, Mail, Rss, Slack, Copy } from "lucide-react";
 import {
   Dialog,
@@ -10,9 +10,10 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "@/components/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "./ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { toast } from "@/hooks/use-toast";
+import { Input } from "./ui/input";
 
 const FilterCTAs = () => {
   const [email, setEmail] = useState("");

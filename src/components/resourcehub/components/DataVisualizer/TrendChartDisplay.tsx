@@ -8,8 +8,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { Industry, State, FilterState } from "@/types";
+import { Industry, State } from "@/types";
 import { renderTooltip } from "./utils";
+import { FilterState } from "@/types/resources";
 
 interface TrendChartDisplayProps {
   chartData: any[];

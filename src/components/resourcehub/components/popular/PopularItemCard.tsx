@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
 import { TrendingUp } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
+import Link from "next/link";
+import { Badge } from "../ui/badge";
 
 export interface PopularItem {
   id: string;
@@ -19,7 +19,7 @@ interface PopularItemCardProps {
 export const PopularItemCard = ({ item, index }: PopularItemCardProps) => {
   return (
     <Link
-      to={`/compare?query=${encodeURIComponent(item.name)}&stores=3&includeOutOfStock=true&comparisonMode=true`}
+      href={`/compare?query=${encodeURIComponent(item.name)}&stores=3&includeOutOfStock=true&comparisonMode=true`}
       className="block"
     >
       <div className="hover:bg-muted/50 hover:border-shutter flex items-center justify-between rounded-md border p-4 transition-colors">

@@ -107,7 +107,7 @@ export default function SubcontractorAgreement() {
   });
 
   const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       generalLiability: "$1,000,000",
       workersComp: true,
@@ -1156,7 +1156,7 @@ export default function SubcontractorAgreement() {
           </p>
         </div>
 
-        <p className="text-darkKnight text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Legal Disclaimer:</strong> This template is provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

@@ -3,8 +3,8 @@ import ProjectCostCalculator from "@/components/resourcehub/pages/construction-c
 export default async function Page({
   params,
 }: {
-  params: { projectSlug: string; location: string };
+  params: Promise<{ projectSlug: string; location: string }>;
 }) {
-  const result = await params;
+  const result = await params; // Wait for the promise to resolve
   return <ProjectCostCalculator params={result} />;
 }

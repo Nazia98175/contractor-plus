@@ -1,6 +1,3 @@
-
-import { Industry, State, LaborRate, FilterState } from '@/types';
-
 export interface ProcessedDataPoint {
   period: string;
   rawPeriod: string;

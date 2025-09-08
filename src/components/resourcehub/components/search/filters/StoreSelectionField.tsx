@@ -8,7 +8,18 @@ import { ScrollArea } from "../../ui/scroll-area";
 import { Checkbox } from "../../ui/checkbox";
 import { storesByCountry } from "@/services/resource/storeService";
 
-export const StoreSelectionField = ({ form, disabled = false }) => {
+import { UseFormReturn } from "react-hook-form";
+import { FormValues } from "../searchFormSchema";
+
+interface StoreSelectionFieldProps {
+  form: UseFormReturn<FormValues>;
+  disabled?: boolean;
+}
+
+export const StoreSelectionField = ({
+  form,
+  disabled = false,
+}: StoreSelectionFieldProps) => {
   const [maxReached, setMaxReached] = useState(false);
   const MAX_STORES = 3;
 

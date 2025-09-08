@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Industry, State, LaborRate, FilterState } from "@/types";
+import { Industry, State } from "@/types";
 import TrendChart from "./TrendChart";
 
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { cn } from "@/app/lib/utils";
 import { Button } from "../ui/button";
+import { FilterState, LaborRate } from "@/types/resources";
 
 interface DataVisualizerProps {
   industries: Industry[];

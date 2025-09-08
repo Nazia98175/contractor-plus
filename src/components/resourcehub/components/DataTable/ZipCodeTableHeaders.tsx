@@ -1,8 +1,7 @@
 import React from "react";
-
 import SortableTableHeader, { SortDirection } from "./SortableTableHeader";
-import { DataSource } from "@/types";
 import { TableHead, TableRow } from "../ui/table";
+import { DataSource } from "@/types/resources";
 
 interface ZipCodeTableHeadersProps {
   dataSources: DataSource[];

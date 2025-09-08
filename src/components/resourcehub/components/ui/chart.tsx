@@ -108,6 +108,15 @@ const ChartTooltipContent = React.forwardRef<
       indicator?: "line" | "dot" | "dashed";
       nameKey?: string;
       labelKey?: string;
+      label?: any;
+      labelFormatter?:
+        | ((label: any, payload?: any[]) => React.ReactNode)
+        | undefined;
+      labelClassName?: string;
+      formatter?: any;
+      color?: string;
+      // payload is provided by Recharts when rendering custom tooltip content
+      payload?: any[];
     }
 >(
   (
@@ -257,11 +266,14 @@ const ChartLegend = RechartsPrimitive.Legend;
 
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
-      hideIcon?: boolean;
-      nameKey?: string;
-    }
+  React.ComponentProps<"div"> & {
+    // Legend payload coming from Recharts; keep it loose to avoid strict coupling to Recharts types.
+    payload?: any[];
+    // Common vertical align values used by Recharts legend.
+    verticalAlign?: "top" | "bottom" | "middle";
+    hideIcon?: boolean;
+    nameKey?: string;
+  }
 >(
   (
     { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey },

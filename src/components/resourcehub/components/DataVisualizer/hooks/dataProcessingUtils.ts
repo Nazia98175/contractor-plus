@@ -1,9 +1,9 @@
-import { LaborRate, FilterState } from "@/types";
+import { FilterState, LaborRate } from "@/types/resources";
 import { PeriodData } from "./types";
 
 export const filterRates = (
   laborRates: LaborRate[],
-  filters: FilterState
+  filters: FilterState,
 ): LaborRate[] => {
   return laborRates.filter((rate) => {
     const matchesIndustry =
@@ -22,7 +22,7 @@ export const updatePeriodData = (
   rate: LaborRate,
   industryBreakdown: Record<string, Record<string, Record<string, number>>>,
   stateBreakdown: Record<string, Record<string, Record<string, number>>>,
-  periodKey: string
+  periodKey: string,
 ) => {
   console.log(rate, "rate in updatePeriodData");
   if (rate.contractorPlusRate !== null) {
@@ -32,7 +32,7 @@ export const updatePeriodData = (
       stateBreakdown,
       periodKey,
       "contractorPlusRate",
-      rate
+      rate,
     );
   }
 
@@ -43,7 +43,7 @@ export const updatePeriodData = (
       stateBreakdown,
       periodKey,
       "blsRate",
-      rate
+      rate,
     );
   }
 
@@ -54,7 +54,7 @@ export const updatePeriodData = (
       stateBreakdown,
       periodKey,
       "averageRate",
-      rate
+      rate,
     );
   }
 
@@ -66,7 +66,7 @@ const updateBreakdownData = (
   stateBreakdown: Record<string, Record<string, Record<string, number>>>,
   periodKey: string,
   rateType: string,
-  rate: LaborRate
+  rate: LaborRate,
 ) => {
   // Initialize periodKey object if it doesn't exist
   if (!industryBreakdown[periodKey]) {

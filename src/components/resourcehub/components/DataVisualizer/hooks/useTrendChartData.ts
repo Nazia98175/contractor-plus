@@ -1,10 +1,10 @@
+import { Industry, State } from "@/types";
+import { format } from "date-fns";
 import { useEffect, useState } from "react";
-import { Industry, State, LaborRate, FilterState } from "@/types";
-import { ProcessedDataPoint } from "./types";
-import { getDateRange, generatePeriodPlaceholders } from "./dateUtils";
 import { filterRates, updatePeriodData } from "./dataProcessingUtils";
-import { formatPeriodLabel } from "@/components/DataTable/dataFormatters";
-import { addMonths, getMonth, getYear, format } from "date-fns";
+import { getDateRange } from "./dateUtils";
+import { ProcessedDataPoint } from "./types";
+import { FilterState, LaborRate } from "@/types/resources";
 
 function getMonthsForQuarter(quarter: number): number[] {
   switch (quarter) {
@@ -154,7 +154,7 @@ export const useTrendChartData = (
   laborRates: LaborRate[],
   filters: FilterState,
   industries: Industry[],
-  states: State[]
+  states: State[],
 ): ProcessedDataPoint[] => {
   const [chartData, setChartData] = useState<ProcessedDataPoint[]>([]);
   useEffect(() => {
@@ -261,7 +261,7 @@ export const useTrendChartData = (
             rate,
             industryBreakdown,
             stateBreakdown,
-            periodKey
+            periodKey,
           );
         });
       } else {
@@ -274,7 +274,7 @@ export const useTrendChartData = (
           rate,
           industryBreakdown,
           stateBreakdown,
-          periodKey
+          periodKey,
         );
       }
     });
@@ -287,12 +287,12 @@ export const useTrendChartData = (
             ? new Date(
                 entry.year,
                 entry.month ? entry.month - 1 : 0,
-                1
+                1,
               ).getTime()
             : new Date(
                 entry.year,
                 entry.quarter ? (entry.quarter - 1) * 3 : 0,
-                1
+                1,
               ).getTime();
 
         return {

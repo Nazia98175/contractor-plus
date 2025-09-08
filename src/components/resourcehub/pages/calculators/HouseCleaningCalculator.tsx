@@ -87,7 +87,7 @@ export default function HouseCleaningCalculator() {
 
   // Initialize form with default values
   const form = useForm<CalculatorValues>({
-    resolver: zodResolver(calculatorSchema),
+    resolver: zodResolver(calculatorSchema) as any,
     defaultValues: {
       homeSize: 2000,
       bedrooms: 3,

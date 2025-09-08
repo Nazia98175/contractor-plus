@@ -111,7 +111,7 @@ export const ShareDialog = ({ disabled }: ShareDialogProps) => {
                 <Smartphone className="mr-2 h-4 w-4" />
                 SMS
               </Button>
-              {navigator.share && (
+              {typeof navigator.share === "function" && (
                 <Button
                   variant="outline"
                   className="w-full justify-start"

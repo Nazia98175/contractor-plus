@@ -7,7 +7,7 @@ import {
   industries,
   states,
 } from "@/data/mockData";
-import { LaborRate } from "@/types";
+import { LaborRate } from "@/types/resources";
 import { transformData, transformZipCodeData } from "@/utils/dataTransformers";
 import { format } from "date-fns";
 import { ALL_DATA_SOURCES } from "../components/DataSourceConfig";

@@ -1,5 +1,5 @@
+import { DataSource } from "@/types/resources";
 import SortableTableHeader, { SortDirection } from "./SortableTableHeader";
-import { DataSource } from "@/types";
 
 interface StateTableHeadersProps {
   showRegion: boolean;

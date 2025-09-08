@@ -1,11 +1,19 @@
+// import {
+//   Industry,
+//   State,
+//   LaborRate,
+//   FilterState,
+//   DataSource,
+//   ZipCodeLaborRate,
+// } from "@/types";
+
 import {
-  Industry,
-  State,
-  LaborRate,
   FilterState,
-  DataSource,
+  Industry,
+  LaborRate,
+  State,
   ZipCodeLaborRate,
-} from "@/types";
+} from "@/types/resources";
 
 export interface BaseDataTableProps {
   industries: Industry[];

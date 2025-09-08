@@ -1,14 +1,14 @@
-
-import { LaborRate, State as StateType, FilterState } from '@/types';
-import { formatPeriodLabel } from './dataFormatters';
-import { isAfter, isBefore, addMonths, getMonth, getYear } from 'date-fns';
-import { generateMonthlyStateData } from './monthlyTableUtils';
+import { State as StateType } from "@/types";
+import { formatPeriodLabel } from "./dataFormatters";
+import { isAfter, isBefore, addMonths, getMonth, getYear } from "date-fns";
+import { generateMonthlyStateData } from "./monthlyTableUtils";
+import { FilterState, LaborRate } from "@/types/resources";
 
 export function generateStateLevelData(
   industries: any[],
   states: StateType[],
   laborRates: LaborRate[],
-  filters: FilterState
+  filters: FilterState,
 ) {
   const fromDate = filters.dateRange?.from;
   const toDate = filters.dateRange?.to;
@@ -18,7 +18,9 @@ export function generateStateLevelData(
     states.forEach((state) => {
       let relevantRates = laborRates.filter(
         (r) =>
-          r.industryId === industry.id && r.stateId === state.id && r.uom === filters.uom
+          r.industryId === industry.id &&
+          r.stateId === state.id &&
+          r.uom === filters.uom,
       );
 
       if (fromDate) {
@@ -34,7 +36,7 @@ export function generateStateLevelData(
         });
       }
 
-      if (filters.period === 'Monthly' && fromDate && toDate) {
+      if (filters.period === "Monthly" && fromDate && toDate) {
         // Generate monthly data for the full date range
         data.push(
           ...generateMonthlyStateData({
@@ -45,19 +47,19 @@ export function generateStateLevelData(
             stateName: state.name,
             stateAbbr: state.abbreviation,
             uom: filters.uom,
-          })
+          }),
         );
-      } else if (filters.period === 'Quarterly') {
+      } else if (filters.period === "Quarterly") {
         // For quarterly view, process each quarter
         if (relevantRates.length === 0 && fromDate && toDate) {
           // No data available for this state/industry, generate empty entries for each quarter
           let currentDate = new Date(fromDate);
           currentDate.setDate(1); // First day of month
           currentDate.setMonth(Math.floor(currentDate.getMonth() / 3) * 3); // First month of quarter
-          
+
           while (!isAfter(currentDate, toDate)) {
             const currentQuarter = Math.floor(currentDate.getMonth() / 3) + 1;
-            
+
             data.push({
               industryName: industry.name,
               stateName: state.name,
@@ -69,7 +71,7 @@ export function generateStateLevelData(
               period: `Q${currentQuarter} ${currentDate.getFullYear()}`,
               timestamp: currentDate.getTime(),
             });
-            
+
             // Move to next quarter
             currentDate = addMonths(currentDate, 3);
           }
@@ -85,7 +87,7 @@ export function generateStateLevelData(
               contractorPlusRate: r.contractorPlusRate,
               blsRate: r.blsRate,
               averageRate: r.averageRate,
-              period: formatPeriodLabel(quarterDate, 'quarterly'),
+              period: formatPeriodLabel(quarterDate, "quarterly"),
               timestamp: quarterDate.getTime(),
             });
           });

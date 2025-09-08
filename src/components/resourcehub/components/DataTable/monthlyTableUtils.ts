@@ -8,8 +8,9 @@ import {
   startOfMonth,
   endOfMonth,
 } from "date-fns";
-import { LaborRate, UnitOfMeasurement } from "@/types";
+import { UnitOfMeasurement } from "@/types";
 import { formatPeriodLabel } from "./dataFormatters";
+import { LaborRate } from "@/types/resources";
 
 export function generateMonthlyRegionData({
   fromDate,
@@ -152,7 +153,7 @@ export function generateMonthlyStateData({
     const currentQuarter = Math.floor(currentMonth / 3) + 1;
     console.log(relevantRates, "relevantRates for month");
     const applicableRates = relevantRates.filter(
-      (r) => r.year === currentYear && r.quarter === currentQuarter
+      (r) => r.year === currentYear && r.quarter === currentQuarter,
     );
     console.log(applicableRates, "applicableRates");
     // Create data entry for this month

@@ -10,7 +10,7 @@ export function useStateTableSort(
   industries: StateDataTableProps["industries"],
   states: StateDataTableProps["states"],
   laborRates: StateDataTableProps["laborRates"],
-  filters: StateDataTableProps["filters"]
+  filters: StateDataTableProps["filters"],
 ) {
   const [sortColumn, setSortColumn] = useState<string>("period");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
@@ -49,7 +49,15 @@ export function useStateTableSort(
             comparison = a.averageRate * 0.15 - b.averageRate * 0.15;
             break;
           case "period":
-            comparison = a.timestamp - b.timestamp;
+            if (a.timestamp == null && b.timestamp == null) {
+              comparison = 0;
+            } else if (a.timestamp == null) {
+              comparison = sortDirection === "asc" ? -1 : 1;
+            } else if (b.timestamp == null) {
+              comparison = sortDirection === "asc" ? 1 : -1;
+            } else {
+              comparison = a.timestamp - b.timestamp;
+            }
             break;
           default:
             return 0;

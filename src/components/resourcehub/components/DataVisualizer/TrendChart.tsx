@@ -1,6 +1,7 @@
-import { Industry, State, LaborRate, FilterState } from "@/types";
+import { Industry, State } from "@/types";
 import { useTrendChartData } from "./hooks/useTrendChartData";
 import TrendChartDisplay from "./TrendChartDisplay";
+import { FilterState, LaborRate } from "@/types/resources";
 
 interface TrendChartProps {
   industries: Industry[];

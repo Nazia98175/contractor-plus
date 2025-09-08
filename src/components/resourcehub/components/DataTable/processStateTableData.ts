@@ -1,4 +1,9 @@
-import { LaborRate, State as StateType, FilterState, Industry } from "@/types";
+import {
+  LaborRate,
+  State as StateType,
+  FilterState,
+  Industry,
+} from "@/types/resources";
 import { isAfter, isBefore } from "date-fns";
 import { aggregateRegionData } from "./regionAggregation";
 import { generateMonthlyStateData } from "./monthlyTableUtils";
@@ -8,7 +13,7 @@ export function processStateTableData(
   industries: Industry[],
   states: StateType[],
   laborRates: LaborRate[],
-  filters: FilterState
+  filters: FilterState,
 ): StateTableDataRow[] {
   console.log("processStateTableData called with:", {
     industriesCount: industries.length,
@@ -25,7 +30,7 @@ export function processStateTableData(
 
   // Check if we should show regional data
   const uniqueRegions = new Set(
-    states.filter((s) => stateIds.includes(s.id)).map((s) => s.region)
+    states.filter((s) => stateIds.includes(s.id)).map((s) => s.region),
   );
   console.log(uniqueRegions, "uniqueRegions");
 
@@ -42,7 +47,7 @@ export function processStateTableData(
       const d = new Date(rate.year, (rate.quarter - 1) * 3, 1);
       return !min || d < min ? d : min;
     },
-    undefined
+    undefined,
   );
 
   const fromDate =
@@ -61,7 +66,7 @@ export function processStateTableData(
           (r) =>
             r.industryId === industry.id &&
             r.stateId === state.id &&
-            r.uom === filters.uom
+            r.uom === filters.uom,
         );
         console.log(relevantRates, "relevantRates");
         // Date range filter
@@ -87,7 +92,9 @@ export function processStateTableData(
         if (filters.dateRange?.to) {
           relevantRates = relevantRates.filter((r) => {
             const baseDate = new Date(r.year, (r.quarter - 1) * 3, 1);
-            return !isAfter(baseDate, filters.dateRange.to);
+            return filters.dateRange?.to
+              ? !isAfter(baseDate, filters.dateRange.to)
+              : true;
           });
         }
 
@@ -122,7 +129,7 @@ export function processStateTableData(
               timestamp: new Date(
                 rate.year,
                 (rate.quarter - 1) * 3,
-                1
+                1,
               ).getTime(),
             });
           });

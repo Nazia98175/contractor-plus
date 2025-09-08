@@ -114,7 +114,7 @@ export default function MaintenanceServiceContract() {
   });
 
   const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       responseTime: "24",
       emergencyResponseTime: "4",

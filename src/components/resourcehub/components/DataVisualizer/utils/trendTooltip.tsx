@@ -1,6 +1,7 @@
 import React from "react";
-import { DataSource, FilterState, Industry, State } from "@/types";
+import { Industry, State } from "@/types";
 import { getSourceColors, getSourceKey } from "./common";
+import { DataSource, FilterState } from "@/types/resources";
 
 export const renderTrendTooltip = (
   props: any,

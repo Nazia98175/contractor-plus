@@ -27,16 +27,6 @@ export interface State {
   region: string;
 }
 
-export interface LaborRate {
-  industryId: number;
-  stateId: number;
-  uom: UnitOfMeasurement;
-  contractorPlusRate: number | null;
-  blsRate: number | null;
-  averageRate: number | null;
-  year: number;
-  quarter: number;
-}
 export interface ReviewCardProps {
   review: Review;
   openModal: () => void;

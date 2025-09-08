@@ -37,7 +37,6 @@ const formSchema = z.object({
 });
 
 type FormValues = z.infer<typeof formSchema>;
-type FormInputs = z.input<typeof formSchema>;
 
 interface CalculatorFormProps {
   onCalculate: (values: FormValues) => void;
@@ -46,13 +45,13 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   const [isMetric, setIsMetric] = useState(false);
 
-  const form = useForm<FormInputs>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       roomLength: undefined,
       roomWidth: undefined,
       ceilingHeight: undefined,
-      airChangesPerHour: 5,
+      airChangesPerHour: 5, // Default to 5 ACH as a reasonable starting point
     },
   });
 
@@ -269,7 +268,7 @@ export function CalculatorForm({ onCalculate }: CalculatorFormProps) {
               size="lg"
               className="mt-4 w-full bg-gradient-to-r from-red-500 to-red-600 text-white hover:opacity-90"
             >
-              <Calculator className="h-5 w-5" />
+              <Calculator className="mr-2 h-5 w-5" />
               Calculate CFM Required
             </Button>
           </form>

@@ -5,7 +5,7 @@ import {
   ForecastDataPoint,
   ZipCodeLaborRate,
   UnitOfMeasurement,
-} from "@/types";
+} from "@/types/resources";
 
 export const industries: Industry[] = [
   {

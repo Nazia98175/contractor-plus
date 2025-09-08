@@ -8,8 +8,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { Industry, State, LaborRate, FilterState } from "@/types";
+import { Industry, State } from "@/types";
 import { renderTooltip } from "./utils";
+import { FilterState, LaborRate } from "@/types/resources";
 
 interface StateChartProps {
   industries: Industry[];

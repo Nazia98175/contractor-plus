@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DataSource } from "@/types";
+import { DataSource } from "@/types/resources";
 import { TableCell, TableRow } from "../ui/table";
 import AnimatedNumber from "../AnimatedNumber";
 

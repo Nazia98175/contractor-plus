@@ -1,12 +1,13 @@
-import { LaborRate, State as StateType, FilterState, Industry } from "@/types";
+import { State as StateType, Industry } from "@/types";
 import { isAfter, isBefore } from "date-fns";
 import { StateTableDataRow } from "./types";
+import { FilterState, LaborRate } from "@/types/resources";
 
 export function aggregateRegionData(
   industries: Industry[],
   states: StateType[],
   laborRates: LaborRate[],
-  filters: FilterState
+  filters: FilterState,
 ): StateTableDataRow[] {
   console.log("aggregateRegionData called with:", {
     industriesCount: industries.length,
@@ -27,7 +28,7 @@ export function aggregateRegionData(
       (r) =>
         r.industryId === industry.id &&
         stateIds.includes(r.stateId) &&
-        r.uom === filters.uom
+        r.uom === filters.uom,
     );
 
     // Date range filter
@@ -108,7 +109,7 @@ export function aggregateRegionData(
         timestamp: new Date(
           parseInt(year),
           (parseInt(quarter) - 1) * 3,
-          1
+          1,
         ).getTime(),
       });
     });

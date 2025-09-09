@@ -98,6 +98,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
+  console.log("edsa", blogsList);
 
   return (
     <>
@@ -225,7 +226,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         </div>
 
         <BlogPosts
-          data={pageData.blogsList}
+          data={pageData.blogsList || []}
           blogs={pageData.blogs}
           className="mt-7 mb-20 md:mt-9"
           classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"

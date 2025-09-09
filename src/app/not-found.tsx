@@ -39,7 +39,7 @@ export default function NotFound() {
           height={100}
         />
         <div className="main-container relative z-100 flex w-full flex-col items-center justify-center py-16 text-center sm:text-start md:items-start md:py-0">
-          <h2 className="gradient-text-404 mb-2 text-3xl font-extrabold md:text-4xl md:text-[52px] lg:text-[45px]">
+          <h2 className="gradient-text-404 mb-2 text-3xl leading-[150%] font-extrabold md:text-4xl md:text-[52px] lg:text-[45px]">
             Page Not Found
           </h2>
           <p className="text-discoBall mb-4 text-base font-semibold sm:text-lg md:text-xl lg:text-[22px]">
@@ -48,7 +48,7 @@ export default function NotFound() {
           <Button
             className="!w-fit"
             type="button"
-            onClick={() => router.push('/')}
+            onClick={() => router.push("/")}
           >
             Back To Homepage
           </Button>

@@ -1,9 +1,10 @@
 import React from "react";
 import { GreenTickIcon } from "../common/Icons";
+import Image from "next/image";
 
 interface BuildRightNowCardProps {
   title: string;
-  icon: React.ReactNode;
+  icon?: any;
   features?: string[];
   description?: string;
 }
@@ -16,7 +17,13 @@ const BuildRightNowCard: React.FC<BuildRightNowCardProps> = ({
 }) => {
   return (
     <article className="flex w-full flex-col items-center justify-between p-3 text-center lg:p-5 xl:p-10">
-      <div className="mx-auto w-fit">{icon}</div>
+      <Image
+        className="mx-auto h-8 w-8"
+        src={`${icon?.url}`}
+        alt="partnership-cash-hero"
+        width={600}
+        height={300}
+      />
       <div className="h-full">
         <h3 className="api-card-heading mt-4 mb-[14px] text-xl font-bold md:text-2xl lg:text-[30px]">
           {title}

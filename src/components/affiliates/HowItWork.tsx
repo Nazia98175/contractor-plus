@@ -4,29 +4,29 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import HowItWorkCard from "./HowItWorkCard";
-import Image from "next/image";
 
-const HowItWork = (cardsData: any) => {
+interface HowItWorkProps {
+  title?: string;
+  cardsData: {
+    text: string;
+    desc: string;
+  }[];
+}
+
+const HowItWork = ({ title, cardsData }: HowItWorkProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const redDotRef = useRef<HTMLSpanElement>(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    if (!cardsData) return;
-    // alert("this is run now");
+    if (!cardsData || cardsData.length === 0) return;
+
     const ctx = gsap.context(() => {
       if (!sectionRef.current || !redDotRef.current) return;
+
       setTimeout(() => {
-        // ScrollTrigger.refresh();
-        const total_crm_cards = cardsData.cardsData.length;
-        const crm_cards_height = total_crm_cards * window.innerHeight;
-
-        const sectionEl = sectionRef.current;
-        const redDotEl = redDotRef.current;
-
-        if (!sectionEl || !redDotEl) return;
-
-        // Fix: Use sectionEl.offsetHeight directly since we already checked it exists
+        const sectionEl = sectionRef.current!;
+        const redDotEl = redDotRef.current!;
         const sectionElHeight = sectionEl.getBoundingClientRect().height;
 
         const tl = gsap.timeline({
@@ -36,14 +36,12 @@ const HowItWork = (cardsData: any) => {
             end: `bottom center`,
             scrub: 1,
             markers: false,
-            id: "main",
           },
         });
 
-        // Animate red dot down the full height of the section
         tl.set(redDotEl, { opacity: 1 });
         tl.to(redDotEl, {
-          y: sectionElHeight, // Use the variable directly, not in arrow function
+          y: sectionElHeight,
           ease: "none",
         });
 
@@ -58,25 +56,24 @@ const HowItWork = (cardsData: any) => {
     <section className="relative">
       <img
         className="pointer-events-none absolute top-[-10%] z-0 w-full"
-        src={"/images/webp/how-it-work.webp"}
-        alt=""
+        src="/images/webp/how-it-work.webp"
+        alt="bg"
       />
       <div className="main-container pt-[400px]">
         <Copy delay={0.1}>
           <h4 className="section-heading how-it-work-affiliates text-center">
-            How it works
+            {title || "How it works"}
           </h4>
         </Copy>
 
-        <div id="contractor-section" ref={sectionRef} className="relative z-20">
+        <div ref={sectionRef} className="relative z-20">
           {/* Gray line */}
-          <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
+          <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] -translate-x-1/2"></span>
           {/* Red dot */}
           <span
             ref={redDotRef}
-            className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
+            className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] -translate-x-1/2 rounded-full bg-gradient-to-br opacity-100 will-change-transform"
           />
-
           <HowItWorkCard cardsData={cardsData} />
         </div>
       </div>

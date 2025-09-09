@@ -3,10 +3,22 @@ import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
-import { RedClipIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+export interface AffiliatesHeroProps {
+  heroTitle?: string;
+  heroDescription?: string;
+  heroImg?: any;
+  ctaButton?: {
+    text: string;
+    url: string;
+  } | null;
+}
 
-const AffiliatesHero = () => {
+const AffiliatesHero = ({
+  heroTitle,
+  heroDescription,
+  heroImg,
+}: AffiliatesHeroProps) => {
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <div className="relative mx-auto flex w-full max-w-[876px] flex-col items-center justify-center px-2 pt-8 md:pt-0">
@@ -18,7 +30,7 @@ const AffiliatesHero = () => {
           </div>
         </CardReveal>
         <AdaptiveHeroTitle
-          title="You set ’em up. We knock ’em down.We split the bag."
+          title={`${heroTitle}`}
           className="developer-api-hero mb-4 w-full text-center leading-[140%] font-extrabold"
           minFontSize={16}
           maxLines={2}
@@ -27,8 +39,7 @@ const AffiliatesHero = () => {
         />
         <Copy delay={0.4} animateOnScroll={false}>
           <p className="text-ashGray mx-auto mb-3 max-w-[826px] text-center text-xs font-semibold sm:text-sm md:text-base md:font-medium lg:text-lg">
-            50% recurring revenue share for the life of every subscription. Fair
-            is 50/50.
+            {heroDescription}
           </p>
         </Copy>
         <FreeTrialButton showIcon={true} text={"Apply to join"} />
@@ -45,14 +56,13 @@ const AffiliatesHero = () => {
             </h5>
           </div>
           <Image
-            src={"/images/webp/partnership-cash-hero.webp"}
+            src={heroImg?.url}
             alt="partnership-cash-hero"
             width={600}
             height={300}
           />
           <div className="AffiliatesHero-layers pointer-events-none absolute top-0 left-0 h-full w-[40%]"></div>
           <div className="AffiliatesHero-layers pointer-events-none absolute top-0 right-0 h-full w-[40%] rotate-180"></div>
-          {/* <div className="AffiliatesHero-layers pointer-events-none absolute right-0 bottom-0 h-[40%] w-full"></div> */}
         </div>
       </div>
     </section>

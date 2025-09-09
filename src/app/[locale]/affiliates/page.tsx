@@ -1,19 +1,16 @@
 import AffiliatesHero from "@/components/affiliates/AffiliatesHero";
+import StorySection from "@/components/affiliates/StorySection";
 import WhyPartner from "@/components/affiliates/WhyPartner";
-import {
-  afflitatesClientReviews,
-  automatedCardData,
-  platforms,
-} from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import PublicEndPoints from "@/components/developersapi/PublicEndPoints";
+import { getAffiliatesData } from "@/services/affiliates/getAffiliatesData";
 import AtAGlance from "../../../components/affiliates/AtAGlance";
 import HowItWork from "../../../components/affiliates/HowItWork";
 import WaysYouEarn from "../../../components/affiliates/WaysYouEarn";
 import WhoThisPerfect from "../../../components/affiliates/WhoThisPerfect";
-import StorySection from "@/components/affiliates/StorySection";
 export const metadata = {
   title: "Contractor+ Affiliates: Earn for Every Referral",
   description:
@@ -33,66 +30,70 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/affiliates",
   },
 };
-const AffiliatesPage = () => {
-  const affiliatesFaq = {
-    title: "What contractors want to know",
-    subTitle: "Frequently asked questions",
-    faq: [
-      {
-        id: 1,
-        question: "How much do I earn and for how long?",
-        answer:
-          "50% recurring on the base subscription for the life of the account, plus 20% recurring on Books and 20% on Local add-ons, which our onboarding team will always recommend to every customer, when it makes sense for them.",
-      },
-      {
-        id: 2,
-        question: "When do I get paid?",
-        answer:
-          "Monthly. Commissions are tallied each period and paid the following month.",
-      },
-      {
-        id: 3,
-        question: "What promotions work best?",
-        answer:
-          'Educational content + a clear CTA. Demos, side-by-side comparisons, and "how we run jobs in Contractor+" style content convert well.',
-      },
-      {
-        id: 4,
-        question: "What support do you provide?",
-        answer:
-          "Creative, messaging, product enablement, and co-marketing opportunities. We handle the demo, onboarding, and success.",
-      },
-      {
-        id: 5,
-        question: "Any limits or exclusions?",
-        answer:
-          "Standard stuff: commissions apply to eligible, active, paid subscriptions tied to your referral; refunds/chargebacks are netted out. Full terms in the partner agreement.",
-      },
-    ],
+interface AffiliatesPageProps {
+  params: {
+    locale: string;
   };
+}
+const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
+  const {
+    hero,
+    reviews,
+    whyContractor,
+    atGlance,
+    howItWorks,
+    whatYouGet,
+    whoPerfect,
+    applyJoin,
+    faqs,
+  } = await getAffiliatesData(params.locale);
+
+  console.log("sunil", whoPerfect);
 
   return (
     <main className="relative">
-      <AffiliatesHero />
-      <TrustedService reviews={afflitatesClientReviews} apiData={false} />
-      <WhyPartner />
-      <AtAGlance />
-      <HowItWork cardsData={automatedCardData.cardsDetail} />
-      <WaysYouEarn />
-      <StorySection />
-      <WhoThisPerfect />
+      <AffiliatesHero
+        heroTitle={hero?.heroTitle || ""}
+        heroDescription={hero?.heroDescription || ""}
+        heroImg={hero?.heroImg}
+        ctaButton={hero?.ctaButton}
+      />
+      <TrustedService reviews={reviews?.reviews || []} />
+      <WhyPartner title={whyContractor?.title} desc={whyContractor?.desc} />
+      <AtAGlance
+        glanceCards={atGlance?.arrayItems}
+        title={atGlance?.atGlanceRes}
+      />
+      <HowItWork
+        title={howItWorks?.title}
+        cardsData={howItWorks?.listTextDesc}
+      />
+      {/* <WaysYouEarn title={whatYouGet?.title} items={whatYouGet?.arrayItems} /> */}
+      <StorySection
+        title={whatYouGet?.title}
+        sections={whatYouGet?.arrayItems}
+      />
+      <WhoThisPerfect
+        title={whoPerfect?.title}
+        buildCards={whoPerfect?.arrayItems}
+      />
+
       <PublicEndPoints
-        title="Apply to join "
-        description="Have a big audience or unique distribution? Let’s talk campaign co‑funding and rev‑share accelerators."
-        freeTrialButtonText="Apply to join"
-        slackLinkHref="/"
+        title={applyJoin?.title || "Apply to join"}
+        description={
+          applyJoin?.desc ||
+          "Have a big audience or unique distribution? Let’s talk campaign co‑funding and rev‑share accelerators."
+        }
+        freeTrialButtonText={applyJoin?.btnText || "Apply to join"}
+        slackLinkHref={applyJoin?.btnUrl || applyJoin?.btnUrl}
         slack={false}
       />
+
       <div className="relative overflow-hidden">
         <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
         <Faq
           headingVariant="default"
-          faq={affiliatesFaq}
+          faq={faqs}
           classNameAnswer="pt-1"
           mainContainerclassName="px-2 md:pb-[76px]  md:pb-[83px] pb-10"
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"

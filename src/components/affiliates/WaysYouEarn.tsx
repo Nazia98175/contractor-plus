@@ -1,9 +1,10 @@
 import React from "react";
 import { GreenDollarIcon } from "../common/Icons";
 import Copy from "../common/Copy";
+
 interface Item {
-  text: string;
-  description?: string;
+  subTitle: string;
+  desc?: string;
 }
 
 interface Section {
@@ -11,40 +12,20 @@ interface Section {
   items: Item[];
 }
 
-const WaysYouEarn: React.FC = () => {
-  const sections: Section[] = [
-    {
-      title: "Base platform",
-      items: [
-        {
-          text: "50% recurring revenue share on the core Contractor+ subscription (lifetime of account)",
-          description:
-            "Or you can split this 50% with your audience in the form of a discount (they get 20% off, you get 30% commissions).",
-        },
-      ],
-    },
-    {
-      title: "Add-ons & upsells",
-      items: [
-        { text: "20% recurring on Contractor+ Books" },
-        { text: "20% recurring on Contractor+ Local" },
-      ],
-    },
-    {
-      title: "Momentum multipliers",
-      items: [
-        { text: "Launch promos & co-branded campaigns" },
-        { text: "Webinars / workshops for your community" },
-        { text: "Featured partner spotlights and case studies" },
-      ],
-    },
-  ];
+interface WaysYouEarnProps {
+  title?: string;
+  sections: Section[];
+}
 
+const WaysYouEarn: React.FC<WaysYouEarnProps> = ({
+  title = "Ways you earn",
+  sections,
+}) => {
   return (
     <section className="mx-auto mt-[130px] w-full max-w-[1100px] px-2">
       <Copy delay={0.1}>
         <h4 className="section-heading text-mana mb-[43px] text-center">
-          Ways you earn
+          {title}
         </h4>
       </Copy>
       <div className="no-scrollbar overflow-auto">
@@ -52,6 +33,7 @@ const WaysYouEarn: React.FC = () => {
           <div className="border-blackCat divide-blackCat no-scrollbar grid grid-cols-3 divide-x rounded-xl border">
             {sections.map((section, i) => (
               <div key={i} className="flex flex-col">
+                {/* Section Title */}
                 <h3 className="text-secondary font-myriad border-blackCat mb-3 border-b px-8 py-5 text-center text-lg font-semibold md:text-xl lg:text-2xl">
                   {section.title}
                 </h3>
@@ -69,15 +51,16 @@ const WaysYouEarn: React.FC = () => {
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-white">
-                            {item.text}
+                            {item.subTitle}
                           </p>
-                          {item.description && (
+                          {item.desc && (
                             <p className="text-ironsideGrey mt-2.5 pb-5 text-sm font-semibold">
-                              {item.description}
+                              {item.desc}
                             </p>
                           )}
                         </div>
                       </div>
+                      {/* Divider */}
                       {j < section.items.length - 1 && (
                         <div className="bg-blackCat h-[1px] w-full"></div>
                       )}

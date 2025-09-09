@@ -56,7 +56,6 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
-  // console.log("reviews array", reviews);
   return (
     <main id="home-page-wrapper-2">
       <div

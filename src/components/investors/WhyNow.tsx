@@ -25,24 +25,19 @@ const WhyNow = () => {
     
     // Get viewport dimensions
     const vw = window.innerWidth;
-    const vh = window.innerHeight;
     
-    // Calculate optimal scales based on viewport (especially for 1440px)
-    // Start scale should fit text nicely
+    // Calculate optimal scales based on viewport
     const startScale = vw <= 1440 ? 1.2 : 1.5;
-    
-    // Calculate max scale to ensure circle stays visible throughout
-    // For 1440px screens, we need smaller max scale
     let maxScale;
     if (vw <= 1440) {
-      maxScale = 2.2; // Smaller for 1440px
+      maxScale = 2.2;
     } else if (vw <= 1920) {
-      maxScale = 2.5; // Medium for 1920px
+      maxScale = 2.5;
     } else {
-      maxScale = 2.8; // Larger for bigger screens
+      maxScale = 2.8;
     }
 
-    // Set initial scale of background image
+    // Set initial state for background
     gsap.set(bgImageRef.current, { 
       scale: startScale,
       opacity: 1 
@@ -54,30 +49,42 @@ const WhyNow = () => {
         trigger: container,
         start: "top top",
         end: "bottom bottom",
-        scrub: 2.5, // Smoother scrubbing
+        scrub: 1, // Tighter scrub for pixel-perfect scroll
         pin: false,
         invalidateOnRefresh: true,
       },
     });
 
-    // Initial setup - first section visible
-    gsap.set(sections[0], { 
-      opacity: 1, 
-      y: 0,
-      filter: "blur(0px)"
+    // Set initial states for all sections
+    sections.forEach((section, index) => {
+      if (index === 0) {
+        // First section starts visible and centered
+        gsap.set(section, { 
+          opacity: 1, 
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)"
+        });
+      } else if (index === 1) {
+        // Second section starts below, slightly visible with blur
+        gsap.set(section, { 
+          opacity: 0.3, 
+          y: 200,
+          scale: 0.85,
+          filter: "blur(15px)"
+        });
+      } else {
+        // All other sections start hidden below
+        gsap.set(section, { 
+          opacity: 0, 
+          y: 300,
+          scale: 0.8,
+          filter: "blur(20px)"
+        });
+      }
     });
     
-    // Hide all other sections with proper positioning
-    sections.slice(1).forEach((section, i) => {
-      gsap.set(section, { 
-        opacity: 0, 
-        y: 100,
-        scale: 0.9,
-        filter: "blur(15px)"
-      });
-    });
-    
-    // Background circle animation - gradual scale and rotation
+    // Background circle animation
     tl.fromTo(
       bgImageRef.current,
       {
@@ -88,95 +95,103 @@ const WhyNow = () => {
       {
         scale: maxScale,
         rotation: 720,
-        opacity: 0.3, // Fade out gradually at the end
-        duration: sections.length * 1.2,
+        opacity: 0.2, // Fade gradually
+        duration: sections.length - 1, // Adjusted to match actual content
         ease: "none",
       },
       0
     );
     
-    // Text section animations with improved timing
-    const sectionDuration = 1.2;
+    // Text section animations - ladder style with consistent timing
+    const sectionDuration = 1.2; // Adjusted for better pacing
+    const spacing = 150; // Consistent spacing between elements
     
     sections.forEach((section, index) => {
       const startTime = index * sectionDuration;
       
       if (index === 0) {
-        // First section - "Why now?" 
+        // First section moves up uniformly
         tl.to(section, {
+          y: -spacing,
+          opacity: 0.4,
+          scale: 0.9,
+          filter: "blur(12px)",
+          duration: sectionDuration * 0.5,
+          ease: "none" // Linear for consistent speed
+        }, startTime);
+        
+        tl.to(section, {
+          y: -spacing * 1.5,
           opacity: 0,
-          y: -60,
-          scale: 0.95,
-          filter: "blur(10px)",
-          duration: sectionDuration * 0.7,
-          ease: "power1.in"
-        }, startTime + sectionDuration * 0.3);
+          scale: 0.85,
+          filter: "blur(18px)",
+          duration: sectionDuration * 0.5,
+          ease: "none"
+        }, startTime + sectionDuration * 0.5);
         
       } else {
-        // Show preview of upcoming section
-        if (index > 0) {
-          tl.fromTo(section,
-            {
-              opacity: 0,
-              y: 100,
-              scale: 0.85,
-              filter: "blur(20px)"
-            },
-            {
-              opacity: 0.3,
-              y: 60,
-              scale: 0.9,
-              filter: "blur(12px)",
-              duration: sectionDuration * 0.3,
-              ease: "power1.out"
-            },
-            startTime - sectionDuration * 0.8
-          );
-        }
+        // Uniform movement from bottom to center
+        tl.to(section, {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: sectionDuration * 0.5,
+          ease: "none" // Linear movement
+        }, startTime - sectionDuration * 0.5);
         
-        // Full entrance animation
-        tl.to(section,
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            filter: "blur(0px)",
-            duration: sectionDuration * 0.5,
-            ease: "power2.out"
-          },
-          startTime - 0.2
-        );
-        
-        // Exit animation (except for last section)
+        // Then move to top position uniformly (except last)
         if (index < sections.length - 1) {
-          // First fade to preview state
           tl.to(section, {
+            y: -spacing,
             opacity: 0.4,
-            y: -60,
-            scale: 0.95,
-            filter: "blur(10px)",
+            scale: 0.9,
+            filter: "blur(12px)",
             duration: sectionDuration * 0.5,
-            ease: "power1.in"
+            ease: "none"
           }, startTime + sectionDuration * 0.5);
           
-          // Then fully hide
+          // Finally fade out completely
           tl.to(section, {
+            y: -spacing * 1.5,
             opacity: 0,
-            y: -100,
-            filter: "blur(15px)",
-            duration: sectionDuration * 0.3,
+            filter: "blur(18px)",
+            duration: sectionDuration * 0.5,
+            ease: "none"
           }, startTime + sectionDuration);
+        }
+        
+        // Show next section preview uniformly
+        if (index < sections.length - 1 && sections[index + 1]) {
+          // Next section starts appearing from bottom
+          tl.fromTo(sections[index + 1],
+            {
+              y: spacing * 1.5,
+              opacity: 0,
+              scale: 0.85,
+              filter: "blur(18px)"
+            },
+            {
+              y: spacing,
+              opacity: 0.4,
+              scale: 0.9,
+              filter: "blur(12px)",
+              duration: sectionDuration * 0.5,
+              ease: "none" // Linear movement
+            },
+            startTime
+          );
         }
       }
       
-      // Special handling for last section - fade out circle completely
+      // Handle last section - fade out circle at the right time
       if (index === sections.length - 1) {
         tl.to(bgImageRef.current, {
           opacity: 0,
-          scale: maxScale * 1.2,
+          scale: maxScale * 1.1,
           duration: sectionDuration,
-          ease: "power1.in"
-        }, startTime + sectionDuration * 0.5);
+          ease: "power1.out"
+        }, startTime - sectionDuration * 0.5);
       }
     });
 
@@ -227,7 +242,7 @@ const WhyNow = () => {
 
   return (
     <section className="mx-auto max-w-[1920px] px-3 lg:px-0">
-      <div ref={containerRef} className="relative h-[700vh]">
+      <div ref={containerRef} className="relative h-[600vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Background circle image */}
           <div className="absolute inset-0 flex items-center justify-center">
@@ -257,17 +272,17 @@ const WhyNow = () => {
                 } w-full px-6`}
                 style={{ 
                   willChange: "transform, opacity, filter",
-                  zIndex: 10 - index // Ensure proper layering
+                  zIndex: 20 - index
                 }}
               >
                 {section.isTitle ? (
                   <>
-                    <Copy animateOnScroll={true}>
+                    <Copy animateOnScroll={false}>
                       <h3 className="text-white text-center text-2xl font-semibold sm:text-4xl lg:text-5xl xl:text-[52px]">
                         {section.title}
                       </h3>
                     </Copy>
-                    <Copy animateOnScroll={true}>
+                    <Copy animateOnScroll={false}>
                       <p className="text-gray-300 pt-3 text-center text-sm font-medium sm:text-lg md:text-xl lg:text-2xl">
                         {section.description}
                       </p>
@@ -278,7 +293,7 @@ const WhyNow = () => {
                     <div className="mb-4">
                       {section.icon}
                     </div>
-                    <Copy animateOnScroll={true}>
+                    <Copy animateOnScroll={false}>
                       <p className="text-gray-300 text-center text-sm font-medium sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
                         {section.description}
                       </p>

@@ -11,9 +11,9 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Learn About Contractor+ Investment Opportunities Discover investment.",
+    "The first Operating System for build & service contractors",
   description:
-    "opportunities, growth highlights, and business potential with Contractor+.",
+    " Contractor+ is the category disruptor the $1T field service market has needed. We've built what Jobber, Housecall Pro, and ServiceTitan couldn't: a platform contractors actually love.",
   keywords: ["Investors"],
   openGraph: {
     images: [

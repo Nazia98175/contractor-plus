@@ -11,7 +11,6 @@ import {
 } from "../common/Icons";
 import Copy from "../common/Copy";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const WhyNow = () => {

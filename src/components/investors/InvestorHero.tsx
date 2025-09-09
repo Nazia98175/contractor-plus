@@ -1,13 +1,12 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import Button from "../common/Button";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import Button from "../common/Button";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import { InvestorHeroIcon } from "../common/Icons";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const InvestorHero = () => {

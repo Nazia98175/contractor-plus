@@ -9,9 +9,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
 const InvestorHero = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const redBgRef = useRef<HTMLImageElement | null>(null);
+  
   useEffect(() => {
     gsap.to(wrapperRef.current, {
       opacity: 1,
@@ -21,20 +23,29 @@ const InvestorHero = () => {
       once: true,
     });
   }, []);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Initial state for left mobile card - starts at center
     gsap.set("#left-mobile", {
       x: "50%",
-      rotate: -10,
+      rotate: 0,
       opacity: 0,
     });
+    
+    // Initial state for right mobile card - starts at center
     gsap.set("#right-mobile", {
-      y: 10,
       x: "-50%",
-      scale: 0.7,
-      rotate: -370,
+      rotate: 0,
       opacity: 0,
     });
+    
+    // Initial state for center mobile card
+    gsap.set("#center-mobile", {
+      scale: 0.95,
+    });
+    
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen", {
         opacity: 1,
@@ -48,6 +59,7 @@ const InvestorHero = () => {
         opacity: 1,
         duration: 1,
       });
+      
       if (redBgRef.current) {
         gsap.to(redBgRef.current, {
           scale: 1,
@@ -58,21 +70,49 @@ const InvestorHero = () => {
         });
       }
 
-      const section3Timeline = gsap.timeline({
+      // Create scroll-triggered animation for mobile cards
+      // This will play forward on scroll down and reverse on scroll up
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#mobile-cards-wrapper",
-          start: "top 40%",
-          once: true,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: 1, // Smooth scrubbing tied to scroll
+          toggleActions: "play reverse play reverse", // Play on enter, reverse on leave
         },
       });
 
-      section3Timeline.to("#left-mobile", {
-        y: 0,
+      // Animate left card spreading to left with rotation
+      tl.to("#left-mobile", {
         x: 0,
-        rotate: 0,
+        rotate: -15,
         opacity: 1,
-      });
+        duration: 1,
+        ease: "power2.inOut",
+      }, 0);
+
+      // Animate right card spreading to right with rotation
+      tl.to("#right-mobile", {
+        x: 0,
+        rotate: 15,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.inOut",
+      }, 0);
+
+      // Animate center card - fade in and scale
+      tl.to("#center-mobile", {
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.inOut",
+      }, 0);
+
     }, 1000);
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
@@ -92,17 +132,17 @@ const InvestorHero = () => {
         src="/images/webp/invers-hero-bg.webp"
         alt="invers hero bg"
       />
-      <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px]">
+      <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px] xl:pt-[280px]">
         <span
           ref={redBgRef}
-          className="absolute top-[5%] left-1/2 z-[-1] hidden -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
+          className="absolute top-[6%] left-1/2 z-[-1] hidden -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
         >
           <InvestorHeroIcon />
         </span>
         <div className="flex flex-col items-center justify-center px-2">
           <Copy delay={0.1}>
             <p className="text-darkGray bg-rgba17 mx-auto w-full rounded-[6px] px-2 py-1 text-center text-sm font-bold sm:w-fit md:bg-transparent">
-              Investment Opportunit
+              Investment Opportunity
             </p>
           </Copy>
           <Copy delay={0.2}>
@@ -113,13 +153,13 @@ const InvestorHero = () => {
           <Copy delay={0.3}>
             <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg">
               Contractor+ is the category disruptor the $1T field service market
-              has needed. We’ve built what Jobber, Housecall Pro, and
-              ServiceTitan couldn’t: a platform contractors actually love.{" "}
+              has needed. We've built what Jobber, Housecall Pro, and
+              ServiceTitan couldn't: a platform contractors actually love.{" "}
             </p>
           </Copy>
           <Copy delay={0.5}>
             <p className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
-              And we’ve done it without a cent from VC’s.
+              And we've done it without a cent from VC's.
             </p>
           </Copy>
           <CardReveal className="w-full sm:w-fit" delay={0.6}>
@@ -132,29 +172,34 @@ const InvestorHero = () => {
           id="mobile-cards-wrapper"
           className="relative mx-auto flex w-full max-w-[768px] items-center justify-between pt-[93px] md:pt-[180px] xl:max-w-[1013px]"
         >
-          <div id="left-mobile" className="relative z-0 origin-bottom sm:ml-14">
+          {/* Left Mobile Card */}
+          <div id="left-mobile" className="relative z-0 sm:ml-14">
             <img
-              className="relative w-full max-w-[329px] -rotate-[15deg]"
+              className="relative w-full max-w-[329px]"
               src="/images/webp/mobile-card-1.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] left-[-13%] z-10 h-[150%] w-full -rotate-[15deg]"></div>
+            <div className="invester-image-gradient absolute bottom-[-2%] left-0 z-10 h-[150%] w-full pointer-events-none"></div>
           </div>
-          <div className="relative z-10">
+          
+          {/* Center Mobile Card */}
+          <div id="center-mobile" className="relative z-10">
             <img
               className="z-20 -mt-[30%] h-full w-full max-w-[329px]"
               src="/images/webp/mobile-card-2.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] h-[150%] w-full"></div>
+            <div className="invester-image-gradient absolute bottom-[-2%] h-[150%] w-full pointer-events-none"></div>
           </div>
-          <div id="right-mobile" className="relative -z-0 sm:mr-14">
+          
+          {/* Right Mobile Card */}
+          <div id="right-mobile" className="relative z-0 sm:mr-14">
             <img
-              className="relative top-[20%] z-[-1] w-full max-w-[329px] rotate-[15deg]"
+              className="relative top-[20%] w-full max-w-[329px]"
               src="/images/webp/mobile-card-3.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] left-[10%] h-[150%] w-full rotate-[15deg]"></div>
+            <div className="invester-image-gradient absolute bottom-[-2%] left-0 h-[150%] w-full pointer-events-none"></div>
           </div>
         </div>
       </div>

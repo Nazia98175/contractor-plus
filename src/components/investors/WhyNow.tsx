@@ -22,193 +22,271 @@ const WhyNow = () => {
   useEffect(() => {
     const container = containerRef.current;
     const sections = sectionsRef.current;
+    
+    // Get viewport dimensions
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    
+    // Calculate optimal scales based on viewport (especially for 1440px)
+    // Start scale should fit text nicely
+    const startScale = vw <= 1440 ? 1.2 : 1.5;
+    
+    // Calculate max scale to ensure circle stays visible throughout
+    // For 1440px screens, we need smaller max scale
+    let maxScale;
+    if (vw <= 1440) {
+      maxScale = 2.2; // Smaller for 1440px
+    } else if (vw <= 1920) {
+      maxScale = 2.5; // Medium for 1920px
+    } else {
+      maxScale = 2.8; // Larger for bigger screens
+    }
 
-    // Create timeline
+    // Set initial scale of background image
+    gsap.set(bgImageRef.current, { 
+      scale: startScale,
+      opacity: 1 
+    });
+
+    // Create main timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
         start: "top top",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: 2.5, // Smoother scrubbing
+        pin: false,
         invalidateOnRefresh: true,
       },
     });
 
-    // Initial setup - hide all sections except the first one
-    gsap.set(sections.slice(1), { opacity: 0, y: 100, scale: 0.97 });
-    tl.to(
+    // Initial setup - first section visible
+    gsap.set(sections[0], { 
+      opacity: 1, 
+      y: 0,
+      filter: "blur(0px)"
+    });
+    
+    // Hide all other sections with proper positioning
+    sections.slice(1).forEach((section, i) => {
+      gsap.set(section, { 
+        opacity: 0, 
+        y: 100,
+        scale: 0.9,
+        filter: "blur(15px)"
+      });
+    });
+    
+    // Background circle animation - gradual scale and rotation
+    tl.fromTo(
       bgImageRef.current,
       {
-        scale: 4.5, // Scale up to 450%
-        rotation: 720, // Full rotation
-        duration: 6, // Total duration (matches your 6 sections * 1.2 timing)
-        ease: "none", // Linear animation for smooth scroll
+        scale: startScale,
+        rotation: 0,
+        opacity: 1
       },
-      0,
+      {
+        scale: maxScale,
+        rotation: 720,
+        opacity: 0.3, // Fade out gradually at the end
+        duration: sections.length * 1.2,
+        ease: "none",
+      },
+      0
     );
-    // Create animations for each section
+    
+    // Text section animations with improved timing
+    const sectionDuration = 1.2;
+    
     sections.forEach((section, index) => {
+      const startTime = index * sectionDuration;
+      
       if (index === 0) {
-        // First section starts visible, then fades out
-        tl.to(
-          section,
-          {
-            opacity: 0,
-            y: -100,
-            scale: 0.97,
-            duration: 1,
-          },
-          index * 1.2,
-        );
-      } else if (index < sections.length) {
-        // Other sections animate in from bottom, then fade out (except last one)
-        tl.fromTo(
-          section,
-          { opacity: 0, y: 100 },
-          { opacity: 1, y: 0, scale: 1, duration: 1 },
-          index * 1.2,
-        );
-
-        // Fade out (except for the last section)
-        if (index < sections.length - 1) {
-          tl.to(
-            section,
+        // First section - "Why now?" 
+        tl.to(section, {
+          opacity: 0,
+          y: -60,
+          scale: 0.95,
+          filter: "blur(10px)",
+          duration: sectionDuration * 0.7,
+          ease: "power1.in"
+        }, startTime + sectionDuration * 0.3);
+        
+      } else {
+        // Show preview of upcoming section
+        if (index > 0) {
+          tl.fromTo(section,
             {
               opacity: 0,
-              y: -100,
-              scale: 0.97,
-              duration: 1,
+              y: 100,
+              scale: 0.85,
+              filter: "blur(20px)"
             },
-            (index + 1) * 1.2,
+            {
+              opacity: 0.3,
+              y: 60,
+              scale: 0.9,
+              filter: "blur(12px)",
+              duration: sectionDuration * 0.3,
+              ease: "power1.out"
+            },
+            startTime - sectionDuration * 0.8
           );
         }
+        
+        // Full entrance animation
+        tl.to(section,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: sectionDuration * 0.5,
+            ease: "power2.out"
+          },
+          startTime - 0.2
+        );
+        
+        // Exit animation (except for last section)
+        if (index < sections.length - 1) {
+          // First fade to preview state
+          tl.to(section, {
+            opacity: 0.4,
+            y: -60,
+            scale: 0.95,
+            filter: "blur(10px)",
+            duration: sectionDuration * 0.5,
+            ease: "power1.in"
+          }, startTime + sectionDuration * 0.5);
+          
+          // Then fully hide
+          tl.to(section, {
+            opacity: 0,
+            y: -100,
+            filter: "blur(15px)",
+            duration: sectionDuration * 0.3,
+          }, startTime + sectionDuration);
+        }
+      }
+      
+      // Special handling for last section - fade out circle completely
+      if (index === sections.length - 1) {
+        tl.to(bgImageRef.current, {
+          opacity: 0,
+          scale: maxScale * 1.2,
+          duration: sectionDuration,
+          ease: "power1.in"
+        }, startTime + sectionDuration * 0.5);
       }
     });
 
-    // Store timeline reference for external access
+    // Store timeline reference
     timelineRef.current = tl;
 
-    // Cleanup function
+    // Handle resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
     return () => {
+      window.removeEventListener('resize', handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
+  const sectionData = [
+    {
+      icon: null,
+      title: "Why now?",
+      description: "Field service is in the middle of a generational software shift.",
+      isTitle: true
+    },
+    {
+      icon: <UpArrowRedIcon />,
+      description: "Labor and material costs are rising, businesses need to run as efficiently and effectively as possible"
+    },
+    {
+      icon: <RedClockIcon />,
+      description: "Customers demand speed in work and communication from contractors"
+    },
+    {
+      icon: <CommunicateRedIcon />,
+      description: "AI is changing how contractors communicate, quote, schedule, and manage jobs"
+    },
+    {
+      icon: <SmartPhoneIcon />,
+      description: "Smartphone-first crews are demanding tools that actually work in the field"
+    },
+    {
+      icon: <KeepUpIcon />,
+      description: "The industry's dominant players have gotten too big, slow, and expensive to keep up."
+    }
+  ];
+
   return (
     <section className="mx-auto max-w-[1920px] px-3 lg:px-0">
-      <div ref={containerRef} className="relative h-[500vh]">
+      <div ref={containerRef} className="relative h-[700vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          <img
-            ref={bgImageRef}
-            className="absolute top-0 left-0 hidden h-full w-full object-contain lg:block"
-            src="/images/webp/vector.webp"
-            alt="now bg"
-          />
-          <div className="relative flex h-full w-full flex-col items-center justify-center">
-            {/* Initial Section - Why now? */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[0] = el;
+          {/* Background circle image */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              ref={bgImageRef}
+              className="h-full w-full object-contain lg:block"
+              src="/images/webp/vector.webp"
+              alt="now bg"
+              style={{ 
+                transformOrigin: "center center",
+                maxWidth: "min(90vw, 90vh)",
+                maxHeight: "90vh"
               }}
-              className="absolute mx-auto w-full max-w-[560px] pt-[26px] pb-[32px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <Copy animateOnScroll={true}>
-                <h3 className="text-mana text-center text-2xl font-semibold sm:text-4xl lg:text-5xl xl:text-[52px]">
-                  Why now?
-                </h3>
-              </Copy>
-              <Copy animateOnScroll={true}>
-                <p className="text-lightBlackGrey pt-3 text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Field service is in the middle of a generational software
-                  shift.
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 1 - Labor costs */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[1] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <UpArrowRedIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Labor and material costs are rising, businesses need to run as
-                  efficiently and effectively as possible
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 2 - Customer demands */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[2] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <RedClockIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Customers demand speed in work and communication from
-                  contractors
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 3 - AI changes */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[3] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <CommunicateRedIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  AI is changing how contractors communicate, quote, schedule,
-                  and manage jobs
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 4 - Smartphone crews */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[4] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <SmartPhoneIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Smartphone-first crews are demanding tools that actually work
-                  in the field
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 5 - Industry players */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[5] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <KeepUpIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-lightBlackGrey text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  The industry's dominant players have gotten too big, slow, and
-                  expensive to keep up.
-                </p>
-              </Copy>
-            </div>
+            />
+          </div>
+          
+          {/* Content sections */}
+          <div className="relative flex h-full w-full items-center justify-center">
+            {sectionData.map((section, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  sectionsRef.current[index] = el;
+                }}
+                className={`absolute flex flex-col items-center justify-center ${
+                  index === 0 ? 'max-w-[500px]' : 'max-w-[550px]'
+                } w-full px-6`}
+                style={{ 
+                  willChange: "transform, opacity, filter",
+                  zIndex: 10 - index // Ensure proper layering
+                }}
+              >
+                {section.isTitle ? (
+                  <>
+                    <Copy animateOnScroll={true}>
+                      <h3 className="text-white text-center text-2xl font-semibold sm:text-4xl lg:text-5xl xl:text-[52px]">
+                        {section.title}
+                      </h3>
+                    </Copy>
+                    <Copy animateOnScroll={true}>
+                      <p className="text-gray-300 pt-3 text-center text-sm font-medium sm:text-lg md:text-xl lg:text-2xl">
+                        {section.description}
+                      </p>
+                    </Copy>
+                  </>
+                ) : (
+                  <>
+                    <div className="mb-4">
+                      {section.icon}
+                    </div>
+                    <Copy animateOnScroll={true}>
+                      <p className="text-gray-300 text-center text-sm font-medium sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+                        {section.description}
+                      </p>
+                    </Copy>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

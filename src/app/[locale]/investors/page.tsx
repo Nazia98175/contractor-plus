@@ -11,7 +11,7 @@ import React from "react";
 
 export const metadata = {
   title:
-    "The First Operating System for build & service contractors",
+    "The first Operating System for build & service contractors",
   description:
     " Contractor+ is the category disruptor the $1T field service market has needed. We've built what Jobber, Housecall Pro, and ServiceTitan couldn't: a platform contractors actually love.",
   keywords: ["Investors"],

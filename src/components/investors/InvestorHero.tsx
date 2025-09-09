@@ -117,11 +117,11 @@ const InvestorHero = () => {
 
   return (
     <section ref={wrapperRef} className="relative overflow-hidden">
-      <img
-        className="absolute -top-9 left-0 z-[-2] block object-cover md:hidden"
-        src="/images/webp/invester-mobile-bg2.png"
+      {/* <img
+        className="absolute -top-9 left-0 z-[-2] block object-cover md:hidden w-full max-w-[400px]"
+        src="/images/webp/invester-hero-bg.webp"
         alt="mobile bg"
-      />
+      /> */}
       <img
         className="absolute top-0 left-0 z-[-2] hidden h-full w-full object-cover md:block"
         src="/images/webp/Grid-layers.png"
@@ -135,7 +135,7 @@ const InvestorHero = () => {
       <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px] xl:pt-[280px]">
         <span
           ref={redBgRef}
-          className="absolute top-[6%] left-1/2 z-[-1] hidden -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
+          className="absolute top-[6%] left-1/2 z-[-1]  -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
         >
           <InvestorHeroIcon />
         </span>

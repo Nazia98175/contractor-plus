@@ -5881,7 +5881,7 @@ export const InvestorHeroIcon = () => (
     viewBox="0 0 706 706"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="opacity-40"
+    className="opacity-40 w-[350px] h-[350px] md:w-[600px] md:h-[600px]"
   >
     <g filter="url(#filter0_f)">
       <circle

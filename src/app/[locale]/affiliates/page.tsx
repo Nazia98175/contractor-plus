@@ -49,8 +49,6 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
     faqs,
   } = await getAffiliatesData(params.locale);
 
-  console.log("sunil", waysYouEarn);
-
   return (
     <main className="relative">
       <AffiliatesHero

@@ -1,8 +1,10 @@
 import CommonFormField from "@/components/common/CommonFormField";
-import { dealflowhero, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import CommonHero from "@/components/crmbussiness/CommonHero";
 import YouNeedFeatures from "@/components/seeallfeatures/YouNeedFeatures";
+import { getAllFeaturesData } from "@/services/all-features/getAllFeaturesData";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Everything you need, in a single operating system.",
@@ -23,36 +25,34 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/all-features",
   },
 };
-const SeeAllFeaturesPage = () => {
+export default async function SeeAllFeaturesPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { hero, commonData, pageContent, featuresSection } =
+    await getAllFeaturesData(params.locale);
+
+  if (!pageContent) return notFound();
+  console.log("featuresSection", featuresSection);
+
   return (
     <main className="relative">
-      <CommonHero
-        hero={{
-          featureTag: "The Field Service OS",
-          heroTitle: "Everything you need, in a single operating system.",
-
-          heroDescription:
-            "We believe you shouldn’t have to pay for 10 different softwares and connect them together. We also don’t believe in “gate keeping” our best features for Enterprise level customers.",
-        }}
-        heroImg={null}
-        isShowHeroImg={false}
-        slug="crm"
-        apiData={false}
-        commonData={dealflowhero}
-      />
-      <YouNeedFeatures />
-      <div className="main-container relative z-50 -mt-[70px] md:-mt-[133px] lg:-mt-[193px]">
+      <CommonHero hero={hero} isShowHeroImg={false} commonData={commonData} />
+      <div className="relative z-30 mx-auto mt-8 w-full max-w-[1920px] overflow-hidden sm:mt-16 md:mt-[98px]">
+        {/* <YouNeedFeatures  featuresItems={featuresSection} /> */}
+        <YouNeedFeatures />
+      </div>
+      <div className="main-container relative z-50">
         <CommonFormField
-          variantBtn="primary"
           variant="default"
-          title={"This is what a field service management software"}
-          subTitle={
-            "Start using Contractor+ free. Upgrade for the full operating system."
-          }
-          placeholder={"Your Email"}
-          createBtn={"Get Started Free"}
-          mobileBtn={"Download FREE App"}
-          ncc={"No credit card required"}
+          title={pageContent?.emailSignUpSection?.title}
+          subTitle={pageContent?.emailSignUpSection?.subTitle}
+          placeholder={pageContent?.emailSignUpSection?.placeholder}
+          createBtn={commonData?.getStartedFreeBtn}
+          mobileBtn={commonData?.mobileBtn}
+          ncc={commonData?.nccTxt}
+          variantBtn="primary"
         />
         <div className="mt-12 md:mb-[50px]">
           <TrustBar
@@ -63,6 +63,4 @@ const SeeAllFeaturesPage = () => {
       </div>
     </main>
   );
-};
-
-export default SeeAllFeaturesPage;
+}

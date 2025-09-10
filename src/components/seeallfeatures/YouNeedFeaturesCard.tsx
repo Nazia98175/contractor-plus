@@ -3,9 +3,9 @@ import React from "react";
 import CardReveal from "../common/CardReveal";
 interface Props {
   features: {
-    path?: string;
+    slug?: string;
     icon?: React.ReactNode;
-    description?: string;
+    text?: string;
   };
   delay?: number;
 }
@@ -14,10 +14,10 @@ const YouNeedFeaturesCard: React.FC<Props> = ({ features, delay }) => {
     <CardReveal delay={delay}>
       <Link
         className="text-decemberSky bg-charcoalBlue hover:text-charcoalBlue group flex items-center gap-2.5 px-1.5 py-1 text-sm font-extrabold transition duration-300 ease-in-out hover:bg-white md:text-base lg:text-lg"
-        href={features.path ?? "#"}
+        href={features.slug ?? "#"}
       >
         {features.icon}
-        {features.description}
+        {features.text}
       </Link>
     </CardReveal>
   );

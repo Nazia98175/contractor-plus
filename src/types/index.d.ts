@@ -215,3 +215,14 @@ declare interface Review {
   rating: number;
   review: string;
 }
+
+export type AllFeaturesProps = {
+  id: number;
+  title: string;
+  featuresArray: {
+    id: number;
+    text: string;
+    slug: string;
+    icon: { url: string };
+  }[];
+};

@@ -28,19 +28,19 @@ export const metadata = {
 export default async function SeeAllFeaturesPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const { hero, commonData, pageContent, featuresSection } =
-    await getAllFeaturesData(params.locale);
+    await getAllFeaturesData(locale);
 
   if (!pageContent) return notFound();
-  console.log("featuresSection", featuresSection);
 
   return (
     <main className="relative">
       <CommonHero hero={hero} isShowHeroImg={false} commonData={commonData} />
       <div className="relative z-30 mx-auto mt-8 w-full max-w-[1920px] overflow-hidden sm:mt-16 md:mt-[98px]">
-        {/* <YouNeedFeatures  featuresItems={featuresSection} /> */}
+        <YouNeedFeatures featuresItems={featuresSection} />
         <YouNeedFeatures />
       </div>
       <div className="main-container relative z-50">

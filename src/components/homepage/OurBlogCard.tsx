@@ -17,7 +17,9 @@ const OurBlogCard = ({
       key={blogListMobile?.[index]?.id}
       className="card-shine group relative z-20 h-fit w-full cursor-pointer overflow-hidden rounded-2xl"
     >
-      <img
+      <Image
+        fill
+        unoptimized
         className="absolute top-16 w-full"
         style={{
           maxWidth: blogListMobile?.[index]?.imageWidth,

@@ -43,7 +43,11 @@ const PublicEndPoints: React.FC<PublicEndPointsProps> = ({
 
       <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
         {freeTrialButtonText && (
-          <FreeAccountButton showIcon={true} text={freeTrialButtonText} />
+          <FreeAccountButton
+            showIcon={true}
+            text={freeTrialButtonText}
+            className="flex"
+          />
         )}
 
         {slack && (slackButtonText || slackLinkText) && (

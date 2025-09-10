@@ -5,11 +5,11 @@ interface WhyPartnerProps {
 }
 const WhyPartner = ({ title, desc }: WhyPartnerProps) => {
   return (
-    <section className="mx-auto mt-20 w-full max-w-[1222px] px-2 text-center sm:mt-[110px] md:mt-[140px]">
+    <section className="mx-auto mt-4 w-full max-w-[1222px] px-2 text-center sm:mt-[110px] md:mt-[140px]">
       <h3 className="section-heading text-mana mb-3">
         {title || "Why partner with Contractor+?"}
       </h3>
-      <p className="text-ironFixture text-2xl font-semibold tracking-[-0.48px]">
+      <p className="text-ironFixture text-lg font-semibold tracking-[-0.48px] sm:text-xl md:text-2xl">
         {desc ||
           "Marketing is half the battle. Fulfillment is the other half. We handlethe product, onboarding, and support; you bring the audience and relationships. When your people win with Contractor+, you get paid—every month. Everybody wins."}
       </p>

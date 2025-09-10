@@ -55,11 +55,11 @@ const HowItWork = ({ title, cardsData }: HowItWorkProps) => {
   return (
     <section className="relative">
       <img
-        className="pointer-events-none absolute top-[-10%] z-0 w-full"
+        className="pointer-events-none absolute top-[-5%] z-0 w-full md:top-[-10%]"
         src="/images/webp/how-it-work.webp"
         alt="bg"
       />
-      <div className="main-container pt-[400px]">
+      <div className="main-container pt-[130px] sm:pt-[300px] md:pt-[400px]">
         <Copy delay={0.1}>
           <h4 className="section-heading how-it-work-affiliates text-center">
             {title || "How it works"}

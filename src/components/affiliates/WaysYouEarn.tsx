@@ -33,7 +33,6 @@ const WaysYouEarn: React.FC<WaysYouEarnProps> = ({
           <div className="border-blackCat divide-blackCat no-scrollbar grid grid-cols-3 divide-x rounded-xl border">
             {sections.map((section, i) => (
               <div key={i} className="flex flex-col">
-                {/* Section Title */}
                 <h3 className="text-secondary font-myriad border-blackCat mb-3 border-b px-8 py-5 text-center text-lg font-semibold md:text-xl lg:text-2xl">
                   {section.title}
                 </h3>

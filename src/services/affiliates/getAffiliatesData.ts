@@ -8,6 +8,7 @@ export interface AffiliatesPageData {
   whyContractor: any | null;
   atGlance: any | null;
   howItWorks: any | null;
+  waysYouEarn: any | null;
   whatYouGet: any | null;
   whoPerfect: any | null;
   applyJoin: any | null;
@@ -25,6 +26,7 @@ export const getAffiliatesData = async (
     whyContractorsRes,
     atGlanceRes,
     howItWorksRes,
+    waysYouEarnRes,
     whatYouGetRes,
     whoPerfectRes,
     applyJoinRes,
@@ -48,6 +50,10 @@ export const getAffiliatesData = async (
     ),
     getAffiliatePage(
       locale,
+      "&populate[waysYouEarn][populate][waysYouEarnItems][populate]=*",
+    ),
+    getAffiliatePage(
+      locale,
       "&populate[whatYouGet][populate][arrayItems][populate]=*",
     ),
     getAffiliatePage(
@@ -66,6 +72,7 @@ export const getAffiliatesData = async (
     whyContractor: whyContractorsRes?.data?.whyContractor || null,
     atGlance: atGlanceRes?.data?.atGlance || null,
     howItWorks: howItWorksRes?.data?.howItWorks || null,
+    waysYouEarn: waysYouEarnRes?.data?.waysYouEarn || null,
     whatYouGet: whatYouGetRes?.data?.whatYouGet || null,
     whoPerfect: whoPerfectRes?.data?.whoPerfect || null,
     applyJoin: applyJoinRes?.data?.applyJoin || null,

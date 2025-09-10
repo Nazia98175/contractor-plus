@@ -42,13 +42,14 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
     whyContractor,
     atGlance,
     howItWorks,
+    waysYouEarn,
     whatYouGet,
     whoPerfect,
     applyJoin,
     faqs,
   } = await getAffiliatesData(params.locale);
 
-  console.log("sunil", whoPerfect);
+  console.log("sunil", waysYouEarn);
 
   return (
     <main className="relative">
@@ -68,7 +69,16 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
         title={howItWorks?.title}
         cardsData={howItWorks?.listTextDesc}
       />
-      {/* <WaysYouEarn title={whatYouGet?.title} items={whatYouGet?.arrayItems} /> */}
+      <WaysYouEarn
+        title={waysYouEarn?.title}
+        sections={
+          waysYouEarn?.waysYouEarnItems?.map((item: any) => ({
+            title: item?.title || "",
+            items: item?.items || [{ subTitle: item?.title, desc: item?.desc }],
+          })) || []
+        }
+      />
+
       <StorySection
         title={whatYouGet?.title}
         sections={whatYouGet?.arrayItems}

@@ -1964,7 +1964,7 @@ export default function ConstructionTimelineGenerator() {
                   <CardTitle>Project Timeline</CardTitle>
                   <CardDescription>
                     {timeline.length > 0 && (
-                      <span className="flex items-center gap-2">
+                      <span className="mt-3 flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         Total Duration: {totalDuration} days
                       </span>
@@ -1991,7 +1991,7 @@ export default function ConstructionTimelineGenerator() {
                           </DialogDescription>
                         </DialogHeader>
                         <div className="space-y-4">
-                          <div>
+                          <div className="space-y-3">
                             <Label htmlFor="phaseName">Phase Name</Label>
                             <Input
                               id="phaseName"
@@ -2000,7 +2000,7 @@ export default function ConstructionTimelineGenerator() {
                               placeholder="Enter phase name"
                             />
                           </div>
-                          <div>
+                          <div className="space-y-3">
                             <Label htmlFor="phaseDuration">
                               Duration (Days)
                             </Label>
@@ -2044,7 +2044,7 @@ export default function ConstructionTimelineGenerator() {
                   {timeline.map((phase, index) => (
                     <div
                       key={phase.id}
-                      className="bg-muted/50 flex items-center gap-4 rounded-lg p-3"
+                      className="bg-shutter flex items-center gap-4 rounded-lg p-3"
                     >
                       <div className="flex flex-col gap-1">
                         <Button
@@ -2052,10 +2052,10 @@ export default function ConstructionTimelineGenerator() {
                           size="sm"
                           onClick={() => movePhaseUp(index)}
                           disabled={index === 0}
-                          className="h-4 p-0 hover:bg-transparent"
+                          className="h-4 p-0"
                         >
                           <div className="flex h-2 w-4 items-center justify-center">
-                            <div className="h-0 w-0 border-r-4 border-b-4 border-l-4 border-transparent border-b-gray-600"></div>
+                            <div className="h-0 w-0 border-r-4 border-b-4 border-l-4 border-transparent border-b-gray-200"></div>
                           </div>
                         </Button>
                         <GripVertical className="text-aliceBlue h-4 w-4 cursor-move" />
@@ -2064,10 +2064,10 @@ export default function ConstructionTimelineGenerator() {
                           size="sm"
                           onClick={() => movePhaseDown(index)}
                           disabled={index === timeline.length - 1}
-                          className="h-4 p-0 hover:bg-transparent"
+                          className="h-4 p-0"
                         >
                           <div className="flex h-2 w-4 items-center justify-center">
-                            <div className="h-0 w-0 border-t-4 border-r-4 border-l-4 border-transparent border-t-gray-600"></div>
+                            <div className="h-0 w-0 border-t-4 border-r-4 border-l-4 border-transparent border-t-gray-200"></div>
                           </div>
                         </Button>
                       </div>
@@ -2108,9 +2108,9 @@ export default function ConstructionTimelineGenerator() {
                         </div>
 
                         {/* Gantt Bar */}
-                        <div className="relative h-6 rounded bg-gray-200">
+                        <div className="border-prediction relative h-6 rounded border">
                           <div
-                            className="bg-primary absolute h-full rounded"
+                            className="absolute h-full rounded bg-red-500"
                             style={{
                               left: `${(phase.startDay / totalDuration) * 100}%`,
                               width: `${(phase.duration / totalDuration) * 100}%`,

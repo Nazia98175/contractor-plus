@@ -88,7 +88,7 @@ export function EstimateForm({
         scale: 2,
         useCORS: true,
         logging: false,
-        backgroundColor: "#000",
+        backgroundColor: "#ffffff",
       });
 
       const imgData = canvas.toDataURL("image/png");

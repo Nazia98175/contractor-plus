@@ -1,6 +1,5 @@
-import React from "react";
-import { Separator } from "../../ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { Separator } from "../../ui/separator";
 import {
   Table,
   TableBody,
@@ -9,7 +8,6 @@ import {
   TableHeader,
   TableRow,
 } from "../../ui/table";
-import { Fence } from "lucide-react";
 
 export function EducationalContent() {
   return (

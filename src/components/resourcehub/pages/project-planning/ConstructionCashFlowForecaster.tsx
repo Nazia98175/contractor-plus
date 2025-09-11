@@ -407,7 +407,7 @@ export default function ConstructionCashFlowForecaster() {
 
       <div className="grid gap-8 lg:grid-cols-3">
         {/* Input Form */}
-        <div className="lg:col-span-2">
+        <div className="lg:md:col-span-2">
           <Card>
             <CardHeader>
               <CardTitle>Project Cash Flow Setup</CardTitle>
@@ -494,8 +494,8 @@ export default function ConstructionCashFlowForecaster() {
                 <div className="space-y-4">
                   {cashFlowData.items.map((item) => (
                     <Card key={item.id} className="p-4">
-                      <div className="grid items-end gap-3 md:grid-cols-6">
-                        <div className="space-y-3">
+                      <div className="grid items-end gap-4 md:grid-cols-12">
+                        <div className="space-y-3 md:col-span-2">
                           <Label>Type</Label>
                           <Select
                             value={item.type}
@@ -512,7 +512,7 @@ export default function ConstructionCashFlowForecaster() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-3 md:col-span-2">
                           <Label>Phase</Label>
                           <Select
                             value={item.phase}
@@ -547,7 +547,7 @@ export default function ConstructionCashFlowForecaster() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-3 md:col-span-2">
                           <Label>Description</Label>
                           <Input
                             value={item.description}
@@ -561,7 +561,7 @@ export default function ConstructionCashFlowForecaster() {
                             placeholder="Description"
                           />
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-3 md:col-span-2">
                           <Label>Amount ($)</Label>
                           <Input
                             type="number"
@@ -576,7 +576,7 @@ export default function ConstructionCashFlowForecaster() {
                             placeholder="0"
                           />
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-3 md:col-span-3">
                           <Label>Date</Label>
                           <Input
                             type="date"

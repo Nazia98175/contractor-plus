@@ -11,7 +11,7 @@ const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
     <section
       className={`relative z-20 overflow-visible bg-white ${theme || ""}`}
     >
-      <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] -z-10 sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
+      <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] z-[999] sm:bottom-[15%] sm:left-0 lg:bottom-[18%]" />
 
       {/* <Copy animateOnScroll={true} delay={0.84}> */}
       <h3 className="xs:text-2xl crm-gradient xs:max-w-[90%] mx-auto px-2 text-center text-xl font-bold sm:hidden xl:px-0">

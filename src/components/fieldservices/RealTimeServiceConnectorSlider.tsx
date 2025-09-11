@@ -33,7 +33,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
   }, [topSwiper, bottomSwiper]);
 
   return (
-    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
+    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[3000px]">
       {/* Top Image Slider */}
       <Swiper
         centeredSlides={true}
@@ -156,7 +156,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="slider-img-gradient relative z-20 -mt-[200px] lg:-mt-[252px]">
+      <div className="slider-img-gradient relative z-20 mx-auto -mt-[200px] max-w-[1414px] lg:-mt-[252px]">
         <div className="absolute -bottom-[15%] left-1/2 h-[200px] w-[130%] -translate-x-1/2 rotate-180 bg-white blur-xl sm:-top-[40%] sm:h-[292px]"></div>
         <div
           style={{

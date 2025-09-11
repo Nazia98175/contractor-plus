@@ -59,6 +59,7 @@ const AwardsTagsImg: React.FC<AwardsTagsImgProps> = ({ className, images }) => {
         wrapperClassName="lg:mt-8 mt-12 md:hidden gap-5 px-4 lg:pb-[105px] pb-20 lg:gap-14 tags-award"
         spaceBetween={9}
         slidesPerView={2}
+        autoplay={true}
         breakpoints={{
           320: { slidesPerView: 2, spaceBetween: 8 },
           500: { slidesPerView: 3, spaceBetween: 8 },

@@ -22,7 +22,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
   apiData = false, // Default to false if not provided
 }) => {
   return (
-    <CardReveal className="plateform-cards relative z-20 flex flex-col items-center justify-between gap-2.5 sm:w-fit lg:w-[47%]">
+    <CardReveal className="plateform-cards relative z-20 flex flex-col items-center justify-center gap-2.5 sm:w-fit lg:w-[47%]">
       <Image
         width={155}
         height={94}

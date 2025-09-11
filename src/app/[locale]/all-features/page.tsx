@@ -39,10 +39,7 @@ export default async function SeeAllFeaturesPage({
   return (
     <main className="relative">
       <CommonHero hero={hero} isShowHeroImg={false} commonData={commonData} />
-      <div className="relative z-30 mx-auto mt-8 w-full max-w-[1920px] overflow-hidden sm:mt-16 md:mt-[98px]">
-        <YouNeedFeatures featuresItems={featuresSection} />
-        <YouNeedFeatures />
-      </div>
+      <YouNeedFeatures featuresItems={featuresSection} />
       <div className="main-container relative z-50">
         <CommonFormField
           variant="default"

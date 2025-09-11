@@ -33,7 +33,6 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
     },
   };
   const styles = variantClasses[variant];
-  console.log(kindAdorable, "kind adorable");
 
   return (
     <section

@@ -61,8 +61,6 @@ const CommonHero: React.FC<TheHeroProps> = ({
     }, 700);
   }, []);
 
-  console.log(featureTag, "all");
-
   return (
     <section
       ref={wrapperRef}

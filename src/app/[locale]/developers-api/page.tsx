@@ -3,6 +3,7 @@ import TrustBar from "@/components/common/TrustBar";
 import BuildRightNow from "@/components/developersapi/BuildRightNow";
 import DevelopersApiHero from "@/components/developersapi/DevelopersApiHero";
 import PublicEndPoints from "@/components/developersapi/PublicEndPoints";
+import { DevelopersApiData } from "@/services/developers-api/getDevelopersApi";
 import React from "react";
 export const metadata = {
   title: "The OS at the center of your stack—not just another app",
@@ -23,21 +24,35 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/developers-api",
   },
 };
+interface DevelopersApiProps {
+  params: {
+    locale: string;
+  };
+}
+export const developersApiPage = async ({ params }: DevelopersApiProps) => {
+  const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(
+    params.locale,
+  );
 
-const developersApiPage = () => {
   return (
     <>
-      <DevelopersApiHero />
+      <DevelopersApiHero mainItems={hero} />
       <div className="relative overflow-hidden">
-        <BuildRightNow />
+        <BuildRightNow
+          items={whatYouCanBuild?.items}
+          title={whatYouCanBuild?.title}
+        />
         <img
           className="pointer-events-none absolute bottom-[0%] h-[43%] w-[45%] object-cover"
           src={"/images/webp/large-combat.webp"}
           alt="large-combat"
         />
         <PublicEndPoints
-          title="Go beyond the public end points"
-          description="Need something bespoke? We have 400+ endpoints available to expose for enterprise customers and strategic integration partners. Tell us what you’re building and we’ll open the right doors."
+          title={goBeyond?.title || "Go beyond the public end points"}
+          description={
+            goBeyond?.desc ||
+            "Need something bespoke? We have 400+ endpoints available to expose for enterprise customers and strategic integration partners. Tell us what you’re building and we’ll open the right doors."
+          }
           freeTrialButtonText="View API Reference"
           slackButtonText="Join us on Slack"
           slackLinkText="Need help integrating?"

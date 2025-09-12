@@ -32,12 +32,14 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/suppliers",
   },
 };
-interface SupplierspageProps {
-  params: {
+interface SuppliersPageProps {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
-const Supplierspage = async ({ params }: SupplierspageProps) => {
+
+export default async function SuppliersPage({ params }: SuppliersPageProps) {
+  const { locale } = await params;
   const {
     hero,
     marqueeLTR,
@@ -51,8 +53,7 @@ const Supplierspage = async ({ params }: SupplierspageProps) => {
     whatWeAsk,
     whatMakeContractor,
     faqs,
-  } = await getSuppliersData(params.locale);
-  console.log("edsxz", whatMakeContractor);
+  } = await getSuppliersData(locale);
 
   return (
     <div className="overflow-hidden">
@@ -110,6 +111,4 @@ const Supplierspage = async ({ params }: SupplierspageProps) => {
       </div>
     </div>
   );
-};
-
-export default Supplierspage;
+}

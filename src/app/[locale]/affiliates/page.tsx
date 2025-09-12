@@ -31,11 +31,14 @@ export const metadata = {
   },
 };
 interface AffiliatesPageProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
-const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
+
+export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
+  const { locale } = await params;
+
   const {
     hero,
     reviews,
@@ -47,7 +50,7 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
     whoPerfect,
     applyJoin,
     faqs,
-  } = await getAffiliatesData(params.locale);
+  } = await getAffiliatesData(locale);
 
   return (
     <main className="relative">
@@ -108,6 +111,4 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
       </div>
     </main>
   );
-};
-
-export default AffiliatesPage;
+}

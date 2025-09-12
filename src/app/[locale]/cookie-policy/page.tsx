@@ -1,24 +1,24 @@
 import CookiePolicy from "@/components/cookie-policy/CookiePolicy";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React from "react";
-export const metadata = {
-  title: "Cookie Policy: How Contractor+ Uses Cookies",
-  description:
-    "Learn how Contractor+ uses cookies for analytics, preferences, and site performance.",
-  keywords: ["Cookie Policy"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/cookie-policy-og.webp",
-        width: 1200,
-        height: 630,
-        alt: "cookie-policy-og",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/cookie-policy",
-  },
-};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `cookie-policy-seo?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 const CookiePolicyPage = () => {
   return <CookiePolicy />;
 };

@@ -1,24 +1,23 @@
 import PrivacyPolicy from "@/components/privacy-policy/PrivacyPolicy";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Privacy Policy: Protecting Your Data at Contractor+ ",
-  description:
-    "See how your information is collected, used, and protected on the Contractor+ platform.",
-  keywords: ["privacy-policy | Contractor+"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/privacy-policy-og.webp",
-        width: 1920,
-        height: 630,
-        alt: "privacy-policy-og",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/privacy-policy",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `privacy-policy-seo?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 const PrivacyPolicyPage = () => {
   return <PrivacyPolicy />;
 };

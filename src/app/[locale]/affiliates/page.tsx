@@ -35,7 +35,7 @@ interface AffiliatesPageProps {
     locale: string;
   }>;
 }
-const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
+export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
   const { locale } = await params;
   const {
     hero,
@@ -109,6 +109,4 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
       </div>
     </main>
   );
-};
-
-export default AffiliatesPage;
+}

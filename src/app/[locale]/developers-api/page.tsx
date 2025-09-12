@@ -24,15 +24,20 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/developers-api",
   },
 };
+
 interface DevelopersApiProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
-export const developersApiPage = async ({ params }: DevelopersApiProps) => {
-  const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(
-    params.locale,
-  );
+export default async function DevelopersApiPage({
+  params,
+}: DevelopersApiProps) {
+  // Destructure locale directly after awaiting
+  const { locale } = await params;
+
+  // Use locale directly
+  const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(locale);
 
   return (
     <>
@@ -63,6 +68,4 @@ export const developersApiPage = async ({ params }: DevelopersApiProps) => {
       </div>
     </>
   );
-};
-
-export default developersApiPage;
+}

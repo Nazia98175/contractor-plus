@@ -226,3 +226,22 @@ export type AllFeaturesProps = {
     icon: { url: string };
   }[];
 };
+
+export namespace TermsServiceData {
+  export interface PageDescription {
+    type: string;
+    level: number;
+    children: {
+      text: string;
+      type: string;
+    }[];
+  }
+
+  export interface Data {
+    id: number;
+    pageDescription: PageDescription[];
+    updatedAt: string;
+    createdAt: string;
+    publishedAt: string;
+  }
+}

@@ -1,26 +1,23 @@
+import AtAGlance from "@/components/affiliates/AtAGlance";
 import {
   automatedCardData,
   platforms,
   supplietFaq,
 } from "@/components/common/Helper";
-import {
-  FooterRedLineIcon,
-  FooterRedLineMobileIcon,
-} from "@/components/common/Icons";
+import { FooterRedLineIcon } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
-import AtGlance from "@/components/suppliers/AtGlance";
+import MakeOrder from "@/components/investors/MakeOrder";
 import HowItWork from "@/components/suppliers/HowItWork";
 import IntegrationModels from "@/components/suppliers/IntegrationModels";
 import MakeDifferent from "@/components/suppliers/MakeDifferent";
 import PartnerContractor from "@/components/suppliers/PartnerContractor";
+import SupliersMarquee from "@/components/suppliers/SupliersMarquee";
 import SupplierBenefit from "@/components/suppliers/SupplierBenefit";
 import SuppliersHero from "@/components/suppliers/SuppliersHero";
 import WhatAsk from "@/components/suppliers/WhatAsk";
 import WorkToday from "@/components/suppliers/WorkToday";
-import Image from "next/image";
-import React from "react";
-import MakeOrder from "@/components/investors/MakeOrder";
+import { getSuppliersData } from "@/services/suppliers/getSuppliersData";
 
 export const metadata = {
   title: "Suppliers: Connect with Thousands of Contractors",
@@ -41,13 +38,42 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/suppliers",
   },
 };
-const Supplierspage = () => {
+interface SupplierspageProps {
+  params: {
+    locale: string;
+  };
+}
+const Supplierspage = async ({ params }: SupplierspageProps) => {
+  const {
+    hero,
+    marqueeLTR,
+    marqueeRTL,
+    whyPartner,
+    atGlance,
+    integrationModel,
+  } = await getSuppliersData(params.locale);
+
   return (
     <div className="overflow-hidden">
-      <SuppliersHero />
-      <PartnerContractor />
-      <AtGlance />
-      <IntegrationModels />
+      <div className="relative mx-auto max-w-[1920px] pt-[115px]">
+        <SuppliersHero
+          heroTitle={hero?.title}
+          heroDescription={hero?.heroDescription}
+          heroSubTitle={hero?.heroSubTitle}
+        />
+        <SupliersMarquee marqueeLTR={marqueeLTR} marqueeRTL={marqueeRTL} />
+      </div>
+      <PartnerContractor
+        title={whyPartner?.title}
+        desc1={whyPartner?.desc1}
+        desc2={whyPartner?.desc2}
+      />
+      {/* <BuildRightNow /> */}
+      <AtAGlance
+        glanceCards={atGlance?.arrayItems}
+        title={atGlance?.atGlanceRes}
+      />
+      <IntegrationModels integrationData={integrationModel} />
       <SupplierBenefit cardsData={automatedCardData.cardsDetail} />
       <WorkToday />
       <HowItWork cardsData={automatedCardData.cardsDetail} />

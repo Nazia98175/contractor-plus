@@ -98,7 +98,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
-  console.log("edsa", blogsList);
 
   return (
     <>

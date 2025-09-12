@@ -4253,28 +4253,21 @@ export const glanceList = [
 
 export const integrationData = [
   {
-    img: "/images/webp/live-product.webp",
+    image: "/images/webp/live-product.webp",
     alt: "live product",
     title: "Live Product Catalog",
     description:
       "We surface live pricing/lookups from partners and third-party aggregators—used today with Ace Hardware, Menards, Ferguson Home and others—then route the buyer per program.",
   },
   {
-    img: "/images/webp/cart-transfer.webp",
+    image: "/images/webp/cart-transfer.webp",
     alt: "cart transfer",
-    title: (
-      <>
-        Cart Transfer
-        <span className="flex justify-center text-center text-[11px] md:justify-start md:text-start">
-          (ecommerce checkout)
-        </span>
-      </>
-    ),
+    title: "Cart Transfer",
     description:
       "Contractor+ assembles the basket, then passes the cart to your site for instant checkout—like we do with Lowe’s. (Contractors see local store pricing, build lists fast, and tap to buy on Lowes.com.)",
   },
   {
-    img: "/images/webp/direct-project.webp",
+    image: "/images/webp/direct-project.webp",
     alt: "direct purchase orders",
     title: "Direct Purchase Orders (PO)",
     description:

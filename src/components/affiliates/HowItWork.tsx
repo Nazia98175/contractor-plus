@@ -1,7 +1,5 @@
 "use client";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useScrollDotAnimation } from "@/hooks/useScrollDotAnimation";
 import Copy from "../common/Copy";
 import HowItWorkCard from "./HowItWorkCard";
 
@@ -14,44 +12,9 @@ interface HowItWorkProps {
 }
 
 const HowItWork = ({ title, cardsData }: HowItWorkProps) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const redDotRef = useRef<HTMLSpanElement>(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (!cardsData || cardsData.length === 0) return;
-
-    const ctx = gsap.context(() => {
-      if (!sectionRef.current || !redDotRef.current) return;
-
-      setTimeout(() => {
-        const sectionEl = sectionRef.current!;
-        const redDotEl = redDotRef.current!;
-        const sectionElHeight = sectionEl.getBoundingClientRect().height;
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionEl,
-            start: `-12% 40%`,
-            end: `bottom center`,
-            scrub: 1,
-            markers: false,
-          },
-        });
-
-        tl.set(redDotEl, { opacity: 1 });
-        tl.to(redDotEl, {
-          y: sectionElHeight,
-          ease: "none",
-        });
-
-        ScrollTrigger.refresh();
-      }, 2600);
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [cardsData]);
-
+  const { sectionRef, dotRef } = useScrollDotAnimation({
+    delay: 2.6,
+  });
   return (
     <section className="relative">
       <img
@@ -71,7 +34,7 @@ const HowItWork = ({ title, cardsData }: HowItWorkProps) => {
           <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] -translate-x-1/2"></span>
           {/* Red dot */}
           <span
-            ref={redDotRef}
+            ref={dotRef}
             className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] -translate-x-1/2 rounded-full bg-gradient-to-br opacity-100 will-change-transform"
           />
           <HowItWorkCard cardsData={cardsData} />

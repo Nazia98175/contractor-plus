@@ -1,7 +1,6 @@
 "use client";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useScrollHighlight } from "@/hooks/useScrollHighlight";
+import { useRef } from "react";
 import Copy from "../common/Copy";
 import { PlusIconAnimation } from "../common/Icons";
 
@@ -13,53 +12,25 @@ interface HowItWorkCardProps {
 }
 
 const HowItWorkCard = ({ cardsData }: HowItWorkCardProps) => {
-  const refs = useRef<HTMLDivElement[]>([]);
+  const refs = cardsData.map(() => useRef<HTMLDivElement>(null));
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    if (!cardsData || cardsData.length === 0) return;
-
-    refs.current.forEach((ref) => {
-      if (!ref) return;
-
-      ScrollTrigger.create({
-        trigger: ref,
-        start: `-200px 40%`,
-        end: `bottom center`,
-        scrub: 2,
-        markers: false,
-        onEnter: () => {
-          ref.classList.add("scroll-active");
-        },
-        onLeaveBack: () => {
-          if (window.innerWidth >= 768) {
-            ref.classList.remove("scroll-active");
-          }
-        },
-      });
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, [cardsData]);
+  // hook call
+  useScrollHighlight({
+    refs,
+    delay: 2.6,
+  });
 
   return (
     <section className="relative flex flex-col gap-20 overflow-hidden pt-[67px] sm:gap-[100px] sm:pt-[94px] md:gap-[154px]">
       {cardsData.map((card, index) => (
         <div
           key={index}
-          ref={(el) => {
-            if (el) refs.current[index] = el;
-          }}
+          ref={refs[index]}
           className="video-section-wrapper bg-rgba18 relative z-10 mx-auto w-full max-w-[873px] p-3 backdrop-blur-[.52px] sm:p-[22px]"
         >
-          <Copy animateOnScroll={true} delay={0}>
-            <h4 className="how-it-work-aff">{card.text}</h4>
-          </Copy>
+          <h3 className="mb-1 text-center text-2xl font-semibold tracking-[-0.48px]">
+            {card.text}
+          </h3>
           <Copy animateOnScroll={true} delay={0.1}>
             <p className="how-it-work-description">{card.desc}</p>
           </Copy>

@@ -6,9 +6,9 @@ import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import PublicEndPoints from "@/components/developersapi/PublicEndPoints";
+import SupplierBenefit from "@/components/suppliers/SupplierBenefit";
 import { getAffiliatesData } from "@/services/affiliates/getAffiliatesData";
 import AtAGlance from "../../../components/affiliates/AtAGlance";
-import HowItWork from "../../../components/affiliates/HowItWork";
 import WaysYouEarn from "../../../components/affiliates/WaysYouEarn";
 import WhoThisPerfect from "../../../components/affiliates/WhoThisPerfect";
 export const metadata = {
@@ -64,7 +64,7 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
         glanceCards={atGlance?.arrayItems}
         title={atGlance?.atGlanceRes}
       />
-      <HowItWork
+      <SupplierBenefit
         title={howItWorks?.title}
         cardsData={howItWorks?.listTextDesc}
       />
@@ -77,7 +77,6 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
           })) || []
         }
       />
-
       <StorySection
         title={whatYouGet?.title}
         sections={whatYouGet?.arrayItems}
@@ -86,7 +85,6 @@ const AffiliatesPage = async ({ params }: AffiliatesPageProps) => {
         title={whoPerfect?.title}
         buildCards={whoPerfect?.arrayItems}
       />
-
       <PublicEndPoints
         title={applyJoin?.title || "Apply to join"}
         description={

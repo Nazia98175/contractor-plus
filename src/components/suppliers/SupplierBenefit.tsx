@@ -2,8 +2,17 @@
 import Copy from "../common/Copy";
 import SupplierBenefitList from "./SupplierBenefitList";
 import { useScrollDotAnimation } from "@/hooks/useScrollDotAnimation";
-
-const SupplierBenefit = (cardsData: any) => {
+interface SupplierBenefitProps {
+  title?: string;
+  cardsData: {
+    text: string;
+    desc: string;
+  }[];
+}
+const SupplierBenefit: React.FC<SupplierBenefitProps> = ({
+  title,
+  cardsData,
+}) => {
   const { sectionRef, dotRef } = useScrollDotAnimation({
     delay: 2.6,
   });
@@ -13,7 +22,7 @@ const SupplierBenefit = (cardsData: any) => {
       <div className="main-container">
         <Copy delay={0.1}>
           <h4 className="section-heading gradient-text text-center">
-            How suppliers benefit
+            {title || "How suppliers benefit"}
           </h4>
         </Copy>
 
@@ -25,7 +34,6 @@ const SupplierBenefit = (cardsData: any) => {
             ref={dotRef}
             className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-0 will-change-transform"
           />
-
           <SupplierBenefitList cardsData={cardsData} />
         </div>
       </div>

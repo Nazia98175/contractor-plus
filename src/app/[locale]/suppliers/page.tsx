@@ -1,16 +1,10 @@
 import AtAGlance from "@/components/affiliates/AtAGlance";
-import {
-  automatedCardData,
-  platforms,
-  supplietFaq,
-} from "@/components/common/Helper";
+import { platforms, supplietFaq } from "@/components/common/Helper";
 import { FooterRedLineIcon } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import MakeOrder from "@/components/investors/MakeOrder";
-import HowItWork from "@/components/suppliers/HowItWork";
 import IntegrationModels from "@/components/suppliers/IntegrationModels";
-import MakeDifferent from "@/components/suppliers/MakeDifferent";
 import PartnerContractor from "@/components/suppliers/PartnerContractor";
 import SupliersMarquee from "@/components/suppliers/SupliersMarquee";
 import SupplierBenefit from "@/components/suppliers/SupplierBenefit";
@@ -51,7 +45,14 @@ const Supplierspage = async ({ params }: SupplierspageProps) => {
     whyPartner,
     atGlance,
     integrationModel,
+    supplierBenefit,
+    whoWeWork,
+    howItWorks,
+    whatWeAsk,
+    whatMakeContractor,
+    faqs,
   } = await getSuppliersData(params.locale);
+  console.log("edsxz", whatMakeContractor);
 
   return (
     <div className="overflow-hidden">
@@ -68,24 +69,35 @@ const Supplierspage = async ({ params }: SupplierspageProps) => {
         desc1={whyPartner?.desc1}
         desc2={whyPartner?.desc2}
       />
-      {/* <BuildRightNow /> */}
       <AtAGlance
         glanceCards={atGlance?.arrayItems}
         title={atGlance?.atGlanceRes}
       />
       <IntegrationModels integrationData={integrationModel} />
-      <SupplierBenefit cardsData={automatedCardData.cardsDetail} />
-      <WorkToday />
-      <HowItWork cardsData={automatedCardData.cardsDetail} />
-      <WhatAsk />
-      <MakeDifferent />
-
+      <SupplierBenefit
+        title={supplierBenefit?.title}
+        cardsData={supplierBenefit?.listTextDesc}
+      />
+      <WorkToday
+        listTextDesc={whoWeWork?.arrayItems}
+        title={whoWeWork?.title}
+      />
+      <SupplierBenefit
+        title={howItWorks?.title}
+        cardsData={howItWorks?.listTextDesc}
+      />
+      <WhatAsk title={whatWeAsk?.title} desc={whatWeAsk?.dec} />
+      <AtAGlance
+        glanceCards={whatMakeContractor?.arrayItems}
+        title={whatMakeContractor?.atGlanceRes}
+      />
       <div className="relative pt-[40px] pb-16 md:pt-[70px] md:pb-24 lg:pt-[94px]">
         <Faq
-          faq={supplietFaq}
+          faq={faqs}
           classNameAnswer="pt-1"
           mainContainerclassName="px-2 md:pb-[80px] lg:pb-[120px] pb-0"
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+          variant="light"
         />
         <FooterRedLineIcon className="pointer-events-none absolute top-[33%] left-[-2%] max-h-[762px] w-full max-w-[803px]" />
         <div className="relative">

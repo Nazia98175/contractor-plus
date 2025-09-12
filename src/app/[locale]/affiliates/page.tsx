@@ -35,10 +35,8 @@ interface AffiliatesPageProps {
     locale: string;
   }>;
 }
-
 export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
   const { locale } = await params;
-
   const {
     hero,
     reviews,

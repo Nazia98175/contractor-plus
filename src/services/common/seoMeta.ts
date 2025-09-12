@@ -9,6 +9,12 @@ interface SeoDataItem {
     keywords?: string;
     canonicalUrl?: string;
   };
+  seoData: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string;
+    canonicalUrl?: string;
+  };
   hero?: {
     heroTitle?: string;
     subTitle?: string;
@@ -114,7 +120,9 @@ export const getSeoDataEvent = async (
   }
 };
 
-export const getSeoDataCommon = async (query: string) => {
+export const getSeoDataCommon = async (
+  query: string,
+): Promise<SeoDataItem | null> => {
   try {
     const response = await axiosInstance.get(`${query}`);
     const { data } = response.data;

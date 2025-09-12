@@ -93,3 +93,27 @@ export const generateSeoMetadataEvent = ({
     },
   };
 };
+
+export const generateSeoMetaData = ({
+  page,
+  slug,
+}: GenerateSeoMetadataOptions): Metadata => {
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const title = page?.seoData?.metaTitle || (slug ? `Contractor+ ${slug}` : "");
+
+  const description = page?.seoData?.metaDescription || "";
+
+  const keywords = page?.seoData?.keywords || "";
+
+  const canonical =
+    `${baseUrl}${page?.seoData?.canonicalUrl}` || `${baseUrl}/${slug || ""}`;
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical,
+    },
+  };
+};

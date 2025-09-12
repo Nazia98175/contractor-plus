@@ -56,7 +56,7 @@ const CookiePolicy = () => {
         {/* Fallback content while loading */}
         {!isScriptLoaded && (
           <div className="py-8 text-center">
-            <p className="text-gray-500">Loading privacy policy...</p>
+            <p className="text-gray-500">Loading Cookie Policy...</p>
           </div>
         )}
       </div>

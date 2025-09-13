@@ -12,11 +12,13 @@ interface InvestorHeroProps {
   heroSubTitle?: string;
   heroTitle?: string;
   heroDescription?: string;
+  heroSubDesc?: string;
 }
 const InvestorHero: React.FC<InvestorHeroProps> = ({
   heroSubTitle,
   heroTitle,
   heroDescription,
+  heroSubDesc,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const redBgRef = useRef<HTMLImageElement | null>(null);
@@ -172,7 +174,7 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
           </Copy>
           <Copy delay={0.5}>
             <p className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
-              And we've done it without a cent from VC's.
+              {heroSubDesc}
             </p>
           </Copy>
           <CardReveal className="w-full sm:w-fit" delay={0.6}>

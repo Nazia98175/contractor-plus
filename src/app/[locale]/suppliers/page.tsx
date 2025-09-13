@@ -11,27 +11,26 @@ import SupplierBenefit from "@/components/suppliers/SupplierBenefit";
 import SuppliersHero from "@/components/suppliers/SuppliersHero";
 import WhatAsk from "@/components/suppliers/WhatAsk";
 import WorkToday from "@/components/suppliers/WorkToday";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getSuppliersData } from "@/services/suppliers/getSuppliersData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Suppliers: Connect with Thousands of Contractors",
-  description:
-    "List your products or services and reach verified contractors using the Contractor+ network. ",
-  keywords: ["Opportunity Tracker for Contractors | Contractor+"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/supplier-og.webp",
-        width: 1920,
-        height: 630,
-        alt: "supplier-og-og",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/suppliers",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `supplier?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 interface SuppliersPageProps {
   params: Promise<{
     locale: string;

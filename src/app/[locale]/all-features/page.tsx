@@ -4,27 +4,24 @@ import TrustBar from "@/components/common/TrustBar";
 import CommonHero from "@/components/crmbussiness/CommonHero";
 import YouNeedFeatures from "@/components/seeallfeatures/YouNeedFeatures";
 import { getAllFeaturesData } from "@/services/all-features/getAllFeaturesData";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `all-feature?locale=${resolvedParams.locale}&populate=*`,
+  );
 
-export const metadata = {
-  title: "Everything you need, in a single operating system.",
-  description:
-    "We believe you shouldn’t have to pay for 10 different softwares and connect them together. We also don’t believe in “gate keeping” our best features for Enterprise level customers.",
-  keywords: ["The Field Service OS"],
-  // openGraph: {
-  //   images: [
-  //     {
-  //       url: "/images/webp/contractor-invoicing-software.webp",
-  //       width: 1920,
-  //       height: 630,
-  //       alt: "contractor-invoicing-software",
-  //     },
-  //   ],
-  // },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/all-features",
-  },
-};
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 export default async function SeeAllFeaturesPage({
   params,
 }: {

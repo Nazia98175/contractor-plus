@@ -20,28 +20,27 @@ import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
 import DragAnimaiton from "@/components/leadgeneration/DragAnimaiton";
 import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getMaxMindLocation } from "@/services/map";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import { cookies } from "next/headers";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Local SEO for Contractors Just $249 | Contractor+",
-  description:
-    "A fully managed local SEO & reputation management solution for less than the cost of a bad lead. Generate more local leads now.",
-  keywords: ["contractor invoicing software"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/local-seo-og.webp",
-        width: 1200,
-        height: 630,
-        alt: "Local SEO for Contractors",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/local-seo-for-contractors",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `local-seo-of-contractor?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 
 interface Params {
   params: Promise<{ locale: string }>;

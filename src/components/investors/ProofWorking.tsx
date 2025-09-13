@@ -202,7 +202,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
         >
           {/* Bottom Gradient Overlay */}
           <div 
-            className="absolute bottom-0 left-0 right-0 h-[200px] pointer-events-none z-20"
+            className="absolute -bottom-[10vh] left-0 right-0 h-[500px] pointer-events-none z-20"
             style={{
               background: 'linear-gradient(180deg, rgba(12, 13, 17, 0) 0%, #0C0D11 100%)'
             }}
@@ -226,61 +226,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
 
             {/* Desktop Layout with Logo in Center and Stats on Sides */}
             <div className="relative hidden lg:block">
-              {/* SVG for connecting lines */}
-              <svg
-                ref={connectingLinesRef}
-                className="absolute inset-0 w-full h-full pointer-events-none z-0"
-                style={{ willChange: "opacity" }}
-                viewBox="0 0 1100 400"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Left side lines */}
-                <path
-                  d="M 320 100 L 480 140"
-                  stroke="#0066FF"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.5"
-                />
-                <path
-                  d="M 320 200 L 480 180"
-                  stroke="#0066FF"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.5"
-                />
-                <path
-                  d="M 320 300 L 480 220"
-                  stroke="#0066FF"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.5"
-                />
-                
-                {/* Right side lines */}
-                <path
-                  d="M 620 140 L 780 100"
-                  stroke="#0066FF"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.5"
-                />
-                <path
-                  d="M 620 180 L 780 200"
-                  stroke="#0066FF"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.5"
-                />
-                <path
-                  d="M 620 220 L 780 300"
-                  stroke="#0066FF"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.5"
-                />
-              </svg>
+            
 
               {/* Center Logo */}
               <div className="relative flex items-center justify-center py-12">
@@ -304,7 +250,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                       style={{ willChange: "transform, opacity" }}
                     >
                       <div className="relative">
-                        <span className="absolute -right-16 bottom-0">
+                        <span className="absolute -right-20 bottom-0">
                           <ProofIcon1 />
                         </span>
                         <h3 className="py-1 text-end text-xl font-semibold text-white">
@@ -322,7 +268,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                       style={{ willChange: "transform, opacity" }}
                     >
                       <div className="relative">
-                        <span className="absolute -right-16 bottom-0">
+                        <span className="absolute -right-20 bottom-0">
                           <ProofIcon3 />
                         </span>
                         <h3 className="py-1 text-end text-xl font-semibold text-white">
@@ -340,7 +286,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                       style={{ willChange: "transform, opacity" }}
                     >
                       <div className="relative">
-                        <span className="absolute -right-16 -bottom-4">
+                        <span className="absolute -right-20 -bottom-4">
                           <ProofIcon5 />
                         </span>
                         <h3 className="py-1 text-end text-xl font-semibold text-white">
@@ -361,7 +307,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                       style={{ willChange: "transform, opacity" }}
                     >
                       <div className="relative">
-                        <span className="absolute bottom-0 -left-16">
+                        <span className="absolute -bottom-[2px] -left-20">
                           <ProofIcon2 />
                         </span>
                         <h3 className="py-1 text-start text-xl font-semibold text-white">
@@ -379,7 +325,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                       style={{ willChange: "transform, opacity" }}
                     >
                       <div className="relative">
-                        <span className="absolute bottom-0 -left-16">
+                        <span className="absolute -bottom-[2px] -left-20">
                           <ProofIcon4 />
                         </span>
                         <h3 className="py-1 text-start text-xl font-semibold text-white">
@@ -397,7 +343,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                       style={{ willChange: "transform, opacity" }}
                     >
                       <div className="relative">
-                        <span className="absolute -bottom-4 -left-16">
+                        <span className="absolute -bottom-4.5 -left-20">
                           <ProofIcon6 />
                         </span>
                         <h3 className="py-1 text-start text-xl font-semibold text-white">

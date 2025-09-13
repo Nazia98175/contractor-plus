@@ -165,7 +165,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                   duration={500}
                   height={openSection === section.title ? "auto" : 0}
                 >
-                  <div className="flex flex-col gap-2 pt-4 sm:pt-6">
+                  <div className="flex flex-col gap-2 pt-4 sm:py-6">
                     {section.footerLink.map((link, i) => (
                       <FooterLinkItem
                         key={i}

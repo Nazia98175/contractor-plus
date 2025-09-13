@@ -8,11 +8,16 @@ import WhatNext from "@/components/investors/WhatNext";
 import WhyNow from "@/components/investors/WhyNow";
 import WinTeam from "@/components/investors/WinTeam";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { getInvestorsData } from "@/services/investors/getInvestorsData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
-
+interface InvestorsPageProps {
+  params: Promise<{
+    locale: string;
+  }>;
+}
 export async function generateMetadata({
   params,
 }: {
@@ -27,18 +32,45 @@ export async function generateMetadata({
 
   return generateSeoMetaData({ page, slug: resolvedParams.slug });
 }
-const InvestorsPage = () => {
+
+export default async function InvestorsPage({ params }: InvestorsPageProps) {
+  const { locale } = await params;
+  const {
+    hero,
+    problemSection,
+    whyNowSection,
+    whyContractorSection,
+    proofSection,
+    marketOpportunity,
+    whatNext,
+    whyThisTeam,
+  } = await getInvestorsData(locale);
+
   return (
     <main id="home-page-view-port-screen">
       <div
         id="home-page-header-view-port-screen"
         className="relative opacity-0"
       >
-        <InvestorHero />
-        <TheProblem />
+        <InvestorHero
+          heroDescription={hero?.heroDescription}
+          heroSubTitle={hero?.heroSubTitle}
+          heroTitle={hero?.heroTitle}
+        />
+        <TheProblem
+          items={problemSection?.items}
+          desc={problemSection?.desc}
+          subBoldDesc={problemSection?.subBoldDesc}
+          subBoldTitle={problemSection?.subBoldTitle}
+          title={problemSection?.title}
+        />
         <MidMarketTable />
-        <WhyNow />
-        <ProofWorking />
+        <WhyNow items={whyNowSection?.items} />
+        <ProofWorking
+          title={whyContractorSection?.title}
+          desc={whyContractorSection?.desc}
+          buttomText={proofSection?.buttomText}
+        />
         <MarketOpportunity />
         <WhatNext />
         <WinTeam />
@@ -61,6 +93,4 @@ const InvestorsPage = () => {
       </div>
     </main>
   );
-};
-
-export default InvestorsPage;
+}

@@ -41,7 +41,7 @@ const BlogsContent = ({
   }, []);
 
   return (
-    <section className="main-container 1xl:space-y-20 1xl:pb-20 space-y-12 pt-8 pb-12 md:space-y-12 md:pb-14 lg:space-y-14 lg:pb-16">
+    <section className="main-container 1xl:space-y-30 1xl:pb-20 space-y-12 pt-8 pb-12 md:space-y-12 md:pb-14 lg:space-y-14 lg:pb-16">
       <div className="flex flex-col justify-between gap-4 lg:flex-row">
         <div className="grow">
           {/* <BlogDetailContent /> */}

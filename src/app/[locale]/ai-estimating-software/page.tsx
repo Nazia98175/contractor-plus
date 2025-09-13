@@ -69,6 +69,8 @@ const EstimaticAiPage = async ({
           estimateHeroData={pageContent?.resultStatsEstimatic || []}
         />
         <TrustedService
+          slug="crm"
+          apiData={false}
           reviews={reviews?.reviews || []}
           className="pb-6 lg:pt-6 lg:pb-3.5"
         />

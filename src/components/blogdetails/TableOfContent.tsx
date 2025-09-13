@@ -65,7 +65,7 @@ const TableOfContent = ({ markdown }: { markdown: string }) => {
   if (!headings.length) return null;
 
   return (
-    <div className="basis-[40%] space-y-2.5 xl:space-y-3.5">
+    <div className="basis-[40%] space-y-3.5 xl:space-y-3.5">
       <h4 className="text-sambucus text-xl font-bold">Table of Contents</h4>
       <ul className="space-y-1">
         {headings.map((h) => (

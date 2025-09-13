@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./globals.css";
 import "./style.css";
+import "./resources.css";
 
 type Props = {
   children: ReactNode;

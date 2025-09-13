@@ -1,6 +1,6 @@
 import React from "react";
 import MidMarketDesktopCard from "./MidMarketDesktopCard";
-import MidMarketMobileCard from "./MidMarketMobileCard";
+import MidMarketMobile from "./MidMarketMobileCard";
 import {
   CheckIcon,
   CloseIcon,
@@ -130,62 +130,10 @@ const MidMarketTable: React.FC = () => {
   return (
     <div className="px-4 py-10">
       {/* Mobile View */}
-      <div className="shadow-3xl border-winterWay relative z-40 mt-2 block overflow-hidden rounded-[6px] border md:hidden">
-        <div className="grid grid-cols-3 pb-3">
-          <div className="flex items-center justify-center p-2 font-semibold text-white">
-            Contractor+
-          </div>
-          <div className="border-winterWay text-wallStreet border-x p-2 text-xs font-semibold">
-            <h3 className="pb-1">Mid-Market</h3>
-            <p>(Jobber, HCP, Joist)</p>
-          </div>
-          <div className="text-wallStreet p-2 text-xs font-semibold">
-            <h3 className="pb-1">Enterprise</h3>
-            <p>ServiceTitan, Procore, etc.</p>
-          </div>
-        </div>
-        {features.map((item) => (
-          <MidMarketMobileCard
-            key={item.contractor.title}
-            item={item}
-            renderIcon={renderIcon}
-          />
-        ))}
-      </div>
+      <MidMarketMobile features={features} renderIcon={renderIcon} />
 
       {/* Desktop View */}
-      <div className="border-winterWay relative z-40 mx-auto mt-12 hidden max-w-[1029px] overflow-x-auto rounded-xl border md:block lg:mt-[51px]">
-        <table className="min-w-full text-left">
-          <thead>
-            <tr className="font-myriad divide-winterWay divide-x text-white md:text-lg lg:text-xl">
-              <th className="text-decemberSky w-1/3 p-5 text-center text-[28px] font-semibold">
-                Contractor+
-              </th>
-              <th className="text-wallStreet w-1/3 p-5 text-center text-[28px] font-bold">
-                <span>Mid-Market</span>
-                <p className="pt-3 text-base font-semibold">
-                  (Jobber, HCP, Joist)
-                </p>
-              </th>
-              <th className="text-wallStreet w-1/3 p-5 text-center text-[28px] font-bold">
-                <span>Enterprise</span>
-                <p className="pt-3 text-base font-semibold">
-                  ServiceTitan, Procore, etc.
-                </p>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {features.map((item) => (
-              <MidMarketDesktopCard
-                key={item.contractor.title}
-                item={item}
-                renderIcon={renderIcon}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <MidMarketDesktopCard />
     </div>
   );
 };

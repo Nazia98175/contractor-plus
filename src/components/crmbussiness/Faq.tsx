@@ -2,8 +2,9 @@
 import { headingStyles } from "@/utils/getVariants";
 import React from "react";
 import Copy from "../common/Copy";
-import UseFaqToggle from "../hooks/UseFaqToggle";
+// import UseFaqToggle from "../hooks/UseFaqToggle";
 import FaqList from "./FaqList";
+import UseFaqToggle from "@/hooks/UseFaqToggle";
 
 type VariantType = "default" | "light" | "dark" | "accent" | "muted";
 type HeadingVariant = "default" | "primary" | "white" | "accent";

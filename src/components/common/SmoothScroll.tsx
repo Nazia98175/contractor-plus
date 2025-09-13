@@ -30,7 +30,6 @@ export default function SmoothScrollSetup() {
     // 👇 Sync ScrollTrigger with Lenis
     lenis.on("scroll", ScrollTrigger.update);
 
-    // Optional: handle resize or destroy
     return () => {
       lenis.destroy();
       lenisRef.current = null;
@@ -40,15 +39,12 @@ export default function SmoothScrollSetup() {
   // Handle pathname changes
   useEffect(() => {
     if (lenisRef.current) {
-      // Stop scrolling when pathname changes
       lenisRef.current.stop();
 
-      // Clear any existing timeout
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
 
-      // Start scrolling again after 3 seconds
       timeoutRef.current = setTimeout(() => {
         if (lenisRef.current) {
           lenisRef.current.start();
@@ -56,7 +52,6 @@ export default function SmoothScrollSetup() {
       }, 4000);
     }
 
-    // Cleanup timeout on unmount or pathname change
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);

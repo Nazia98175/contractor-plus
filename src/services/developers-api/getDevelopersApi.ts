@@ -11,7 +11,7 @@ export interface DevelopersApiPageData {
 export const DevelopersApiData = async (
   locale: string,
 ): Promise<DevelopersApiPageData> => {
-  const [, heroRes, whatYouCanBuildRes, goBeyondRes, commonData] =
+  const [heroRes, whatYouCanBuildRes, goBeyondRes, commonData] =
     await Promise.all([
       DevelopersApiDataPage(locale, "&populate=*"),
       DevelopersApiDataPage(locale, "&populate[hero][populate]=heroImg"),

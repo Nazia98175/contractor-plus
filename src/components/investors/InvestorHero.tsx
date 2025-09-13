@@ -1,18 +1,28 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "../common/Button";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import { InvestorHeroIcon } from "../common/Icons";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const InvestorHero = () => {
+interface InvestorHeroProps {
+  heroSubTitle?: string;
+  heroTitle?: string;
+  heroDescription?: string;
+  heroSubDesc?: string;
+}
+const InvestorHero: React.FC<InvestorHeroProps> = ({
+  heroSubTitle,
+  heroTitle,
+  heroDescription,
+  heroSubDesc,
+}) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const redBgRef = useRef<HTMLImageElement | null>(null);
-  
+
   useEffect(() => {
     gsap.to(wrapperRef.current, {
       opacity: 1,
@@ -22,29 +32,29 @@ const InvestorHero = () => {
       once: true,
     });
   }, []);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Initial state for left mobile card - starts at center
     gsap.set("#left-mobile", {
       x: "50%",
       rotate: 0,
       opacity: 0,
     });
-    
+
     // Initial state for right mobile card - starts at center
     gsap.set("#right-mobile", {
       x: "-50%",
       rotate: 0,
       opacity: 0,
     });
-    
+
     // Initial state for center mobile card
     gsap.set("#center-mobile", {
       scale: 0.95,
     });
-    
+
     setTimeout(() => {
       gsap.to("#home-page-view-port-screen", {
         opacity: 1,
@@ -58,7 +68,7 @@ const InvestorHero = () => {
         opacity: 1,
         duration: 1,
       });
-      
+
       if (redBgRef.current) {
         gsap.to(redBgRef.current, {
           scale: 1,
@@ -82,45 +92,51 @@ const InvestorHero = () => {
       });
 
       // Animate left card spreading to left with rotation
-      tl.to("#left-mobile", {
-        x: 0,
-        rotate: -15,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.inOut",
-      }, 0);
+      tl.to(
+        "#left-mobile",
+        {
+          x: 0,
+          rotate: -15,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        0,
+      );
 
       // Animate right card spreading to right with rotation
-      tl.to("#right-mobile", {
-        x: 0,
-        rotate: 15,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.inOut",
-      }, 0);
+      tl.to(
+        "#right-mobile",
+        {
+          x: 0,
+          rotate: 15,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        0,
+      );
 
       // Animate center card - fade in and scale
-      tl.to("#center-mobile", {
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.inOut",
-      }, 0);
-
+      tl.to(
+        "#center-mobile",
+        {
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.inOut",
+        },
+        0,
+      );
     }, 1000);
 
     // Cleanup
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
     <section ref={wrapperRef} className="relative overflow-hidden">
-      {/* <img
-        className="absolute -top-9 left-0 z-[-2] block object-cover md:hidden w-full max-w-[400px]"
-        src="/images/webp/invester-hero-bg.webp"
-        alt="mobile bg"
-      /> */}
       <img
         className="absolute top-0 left-0 z-[-2] hidden h-full w-full object-cover md:block"
         src="/images/webp/Grid-layers.png"
@@ -134,31 +150,31 @@ const InvestorHero = () => {
       <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px] xl:pt-[280px]">
         <span
           ref={redBgRef}
-          className="absolute top-[6%] left-1/2 z-[-1]  -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
+          className="absolute top-[6%] left-1/2 z-[-1] -translate-x-1/2 scale-[0.9] transform will-change-transform md:block"
         >
           <InvestorHeroIcon />
         </span>
         <div className="flex flex-col items-center justify-center px-2">
           <Copy delay={0.1}>
             <p className="text-darkGray bg-rgba17 mx-auto w-full rounded-[6px] px-2 py-1 text-center text-sm font-bold sm:w-fit md:bg-transparent">
-              Investment Opportunity
+              {heroSubTitle || "Investment Opportunity"}
             </p>
           </Copy>
           <Copy delay={0.2}>
             <h2 className="invester-gradient-text main-heading max-w-[324px] pt-2 text-center sm:w-full sm:max-w-full sm:pt-4 md:pt-6">
-              The first Operating System for build & service contractors
+              {heroTitle ||
+                "The first Operating System for build & service contractors"}
             </h2>
           </Copy>
           <Copy delay={0.3}>
             <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg">
-              Contractor+ is the category disruptor the $1T field service market
-              has needed. We've built what Jobber, Housecall Pro, and
-              ServiceTitan couldn't: a platform contractors actually love.{" "}
+              {heroDescription ||
+                "Contractor+ is the category disruptor the $1T field service market has needed. We've built what Jobber, Housecall Pro, and ServiceTitan couldn't: a platform contractors actually love."}
             </p>
           </Copy>
           <Copy delay={0.5}>
             <p className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
-              And we've done it without a cent from VC's.
+              {heroSubDesc}
             </p>
           </Copy>
           <CardReveal className="w-full sm:w-fit" delay={0.6}>
@@ -178,9 +194,9 @@ const InvestorHero = () => {
               src="/images/webp/mobile-card-1.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] left-0 z-10 h-[150%] w-full pointer-events-none"></div>
+            <div className="invester-image-gradient pointer-events-none absolute bottom-[-2%] left-0 z-10 h-[150%] w-full"></div>
           </div>
-          
+
           {/* Center Mobile Card */}
           <div id="center-mobile" className="relative z-10">
             <img
@@ -188,9 +204,9 @@ const InvestorHero = () => {
               src="/images/webp/mobile-card-2.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] h-[150%] w-full pointer-events-none"></div>
+            <div className="invester-image-gradient pointer-events-none absolute bottom-[-2%] h-[150%] w-full"></div>
           </div>
-          
+
           {/* Right Mobile Card */}
           <div id="right-mobile" className="relative z-0 sm:mr-14">
             <img
@@ -198,7 +214,7 @@ const InvestorHero = () => {
               src="/images/webp/mobile-card-3.webp"
               alt="iphone"
             />
-            <div className="invester-image-gradient absolute bottom-[-2%] left-0 h-[150%] w-full pointer-events-none"></div>
+            <div className="invester-image-gradient pointer-events-none absolute bottom-[-2%] left-0 h-[150%] w-full"></div>
           </div>
         </div>
       </div>

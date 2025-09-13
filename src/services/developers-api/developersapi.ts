@@ -7,9 +7,7 @@ export const DevelopersApiDataPage = async (
   query: string = "",
 ) => {
   try {
-    const res = await axiosInstance.get(
-      `/developer-api?locale=${locale}${query}`,
-    );
+    const res = await axiosInstance.get(`/investor?locale=${locale}${query}`);
     return res.data;
   } catch (error: any) {
     console.error(

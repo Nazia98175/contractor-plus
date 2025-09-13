@@ -45,7 +45,7 @@ const DropdownItem = ({
           isOpen ? "max-h-[calc(100vh-245px)] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="h-full space-y-2.5 bg-white p-2">
+        <ul className="h-full space-y-3.5 bg-white p-2">
           {items.map(
             (item, index) =>
               item?.label !== "" && (

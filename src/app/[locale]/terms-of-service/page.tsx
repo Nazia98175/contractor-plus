@@ -1,25 +1,36 @@
 import TermsOfService from "@/components/terms-of-service/TermsOfService";
-export const metadata = {
-  title: "Terms of Service: Contractor+ User Agreement",
-  description:
-    "Review the official terms, conditions, and user responsibilities for the Contractor+ platform.",
-  keywords: ["Opportunity Tracker for Contractors | Contractor+"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/terms-of-service-og.webp",
-        width: 1920,
-        height: 630,
-        alt: "terms-of-service-og",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/terms-of-service",
-  },
-};
-const TermsOfServicePage = () => {
-  return <TermsOfService />;
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { getTermsOfServiceData } from "@/services/terms-of-service/getData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `terms-of-service?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
+
+const TermsOfServicePage = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  const pageData = await getTermsOfServiceData(locale);
+  if (!pageData) {
+    return notFound();
+  }
+  return <TermsOfService data={pageData} />;
 };
 
 export default TermsOfServicePage;

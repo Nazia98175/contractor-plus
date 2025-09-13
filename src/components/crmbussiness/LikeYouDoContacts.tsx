@@ -5,9 +5,10 @@ import Copy from "../common/Copy";
 
 interface Props {
   trackProperties?: any;
+  slug?: string;
 }
 
-const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
+const LikeYouDoContacts: React.FC<Props> = ({ trackProperties, slug }) => {
   console.log("recdsx", trackProperties);
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-0">

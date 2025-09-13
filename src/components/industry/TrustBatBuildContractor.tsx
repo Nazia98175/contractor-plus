@@ -38,6 +38,7 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
       return part;
     });
   };
+  console.log(trustBarImages, "trustt");
 
   return (
     <section className={`relative mx-auto w-full max-w-[889px] ${className}`}>
@@ -52,19 +53,24 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
       >
         {trustBarImages?.length > 0
           ? trustBarImages?.map((platform: any, index: number) => (
-              <PlatformCard
-                platform={platform}
+              <div
                 key={index}
-                apiData={true}
-                className={`${className}`}
-              />
+                className="flex !h-[70px] items-center justify-center"
+              >
+                <PlatformCard
+                  platform={platform}
+                  apiData={true}
+                  className={`h-28 md:h-36`}
+                />
+              </div>
             ))
           : platforms.map((platform, index) => (
-              <PlatformCard
-                platform={platform}
+              <div
                 key={index}
-                className={`${className}`}
-              />
+                className="flex !h-[70px] items-center justify-center"
+              >
+                <PlatformCard platform={platform} className={""} />
+              </div>
             ))}
       </CardReveal>
 
@@ -84,20 +90,23 @@ const TrustBatBuildContractor: React.FC<TrustBarProps> = ({
         >
           {trustBarImages?.length > 0
             ? trustBarImages?.map((platform: any, index: number) => (
-                <div key={index} className="flex items-center justify-center">
+                <div
+                  key={index}
+                  className="flex !h-[70px] items-center justify-center"
+                >
                   <PlatformCard
                     platform={platform}
                     apiData={true}
-                    className={`${className}`}
+                    className="h-28 md:h-36"
                   />
                 </div>
               ))
             : platforms?.map((platform, index) => (
-                <div key={index} className="flex items-center justify-center">
-                  <PlatformCard
-                    platform={platform}
-                    className={`${className}`}
-                  />
+                <div
+                  key={index}
+                  className="flex !h-[70px] items-center justify-center"
+                >
+                  <PlatformCard platform={platform} />
                 </div>
               ))}
         </SliderLayout>

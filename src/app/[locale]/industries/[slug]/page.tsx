@@ -140,7 +140,7 @@ const IndustryPage = async ({ params }: PageProps) => {
         </div>
         <TrustBar
           platforms={platforms}
-          trustBarImages={commonData?.trustedCompaniesWhiteBG}
+          // trustBarImages={commonData?.trustedCompaniesWhiteBG}
           className="pb-[148px] xl:pb-20"
         />
       </div>

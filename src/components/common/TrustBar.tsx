@@ -65,7 +65,10 @@ const TrustBar: React.FC<TrustBarProps> = ({
         >
           {trustBarImages && trustBarImages.length > 0
             ? trustBarImages?.map((item: any, index: number) => (
-                <div key={index} className="flex items-center justify-center">
+                <div
+                  key={index}
+                  className="flex !h-[70px] items-center justify-center"
+                >
                   <PlatformCard
                     apiData={true}
                     platform={item}
@@ -74,7 +77,10 @@ const TrustBar: React.FC<TrustBarProps> = ({
                 </div>
               ))
             : platforms.map((platform, index) => (
-                <div key={index} className="flex items-center justify-center">
+                <div
+                  key={index}
+                  className="flex !h-[70px] items-center justify-center"
+                >
                   <PlatformCard platform={platform} />
                 </div>
               ))}

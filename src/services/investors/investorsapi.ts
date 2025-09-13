@@ -1,8 +1,8 @@
-// services/affiliates/affiliate.ts
+// services/investorsapi/investorsapi.ts
 
 import axiosInstance from "@/lib/axios";
 
-export const DevelopersApiDataPage = async (
+export const InvestorsapiDataPage = async (
   locale: string,
   query: string = "",
 ) => {
@@ -11,7 +11,7 @@ export const DevelopersApiDataPage = async (
     return res.data;
   } catch (error: any) {
     console.error(
-      "Error fetching developers-api page:",
+      "Error fetching investor page:",
       error?.response?.data || error,
     );
     return null;

@@ -7,11 +7,11 @@ import TheProblem from "@/components/investors/TheProblem";
 import WhatNext from "@/components/investors/WhatNext";
 import WhyNow from "@/components/investors/WhyNow";
 import WinTeam from "@/components/investors/WinTeam";
+import { getInvestorsData } from "@/services/investors/getInvestorsData";
 import React from "react";
 
 export const metadata = {
-  title:
-    "The first Operating System for build & service contractors",
+  title: "The first Operating System for build & service contractors",
   description:
     " Contractor+ is the category disruptor the $1T field service market has needed. We've built what Jobber, Housecall Pro, and ServiceTitan couldn't: a platform contractors actually love.",
   keywords: ["Investors"],
@@ -29,18 +29,49 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/investors",
   },
 };
-const InvestorsPage = () => {
+interface InvestorsPageProps {
+  params: Promise<{
+    locale: string;
+  }>;
+}
+export default async function InvestorsPage({ params }: InvestorsPageProps) {
+  const { locale } = await params;
+  const {
+    hero,
+    problemSection,
+    whyNowSection,
+    whyContractorSection,
+    proofSection,
+    marketOpportunity,
+    whatNext,
+    whyThisTeam,
+  } = await getInvestorsData(locale);
+  console.log("edsx", whyThisTeam);
   return (
     <main id="home-page-view-port-screen">
       <div
         id="home-page-header-view-port-screen"
         className="relative opacity-0"
       >
-        <InvestorHero />
-        <TheProblem />
+        <InvestorHero
+          heroDescription={hero?.heroDescription}
+          heroSubTitle={hero?.heroSubTitle}
+          heroTitle={hero?.heroTitle}
+        />
+        <TheProblem
+          items={problemSection?.items}
+          desc={problemSection?.desc}
+          subBoldDesc={problemSection?.subBoldDesc}
+          subBoldTitle={problemSection?.subBoldTitle}
+          title={problemSection?.title}
+        />
         <MidMarketTable />
-        <WhyNow />
-        <ProofWorking />
+        <WhyNow items={whyNowSection?.items} />
+        <ProofWorking
+          title={whyContractorSection?.title}
+          desc={whyContractorSection?.desc}
+          buttomText={proofSection?.buttomText}
+        />
         <MarketOpportunity />
         <WhatNext />
         <WinTeam />
@@ -63,6 +94,4 @@ const InvestorsPage = () => {
       </div>
     </main>
   );
-};
-
-export default InvestorsPage;
+}

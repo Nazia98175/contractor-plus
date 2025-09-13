@@ -2,24 +2,25 @@ import CommonFormField from "@/components/common/CommonFormField";
 import AllEventCard from "@/components/eventsdirectory/AllEventCard";
 import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHero";
 import { getCommonData } from "@/services/common/commonData";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getAllEvents, getEventList } from "@/services/events/getEventData";
+import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import { notFound } from "next/navigation";
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: Promise<{ locale: string; slug: string }>;
-// }) {
-//   const resolvedParams = await params;
-//   const page = await getSeoData(
-//     "event-detail",
-//     resolvedParams.locale,
-//     resolvedParams.slug,
-//   );
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `event-list?locale=${resolvedParams.locale}&populate=*`,
+  );
 
-//   if (!page) notFound();
+  if (!page) notFound();
 
-//   return generateSeoMetadata({ page, slug: resolvedParams.slug });
-// }
+  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+}
 
 const EventsDirectoryPage = async ({
   params,

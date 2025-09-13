@@ -118,15 +118,6 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
             {pageContent?.hero?.title}
           </h2>
         </Copy>
-        {/* <AdaptiveHeroTitle
-          title={pageContent?.hero?.title || ""}
-          className="main-heading why-contractor-hero white-gray-gradient mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4"
-          minFontSize={25}
-          maxLines={2}
-          maxFontSize={52}
-          textAnimation="home-page-view-port-screen-why-contractor"
-        /> */}
-
         <Copy animateOnScroll={false} delay={0.4}>
           <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
             {pageContent?.hero?.subTitle}{" "}
@@ -192,13 +183,12 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
                   {pageContent?.hero?.userName}
                 </h3>
                 <div className="hidden items-center gap-2 text-xs tracking-normal text-white sm:flex sm:text-sm">
-                  <span className="font-myriad opacity-[32%]">
+                  {/* <span className="font-myriad opacity-[32%]">
                     {pageContent?.hero?.switchFrom}
-                  </span>
+                  </span> */}
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold">→</span>
                     <span className="max-w-20">
-                      {" "}
                       <LogoIcon />
                     </span>
                   </div>

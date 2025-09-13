@@ -111,7 +111,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
       // ref={containerRef}
       className="relative mt-7 flex flex-col gap-9 lg:flex-row lg:px-3 xl:p-6"
     >
-      <div className="!sticky top-[52px] z-20 h-full sm:top-[55px] lg:top-[100px] lg:w-fit">
+      <div className="!sticky top-[60px] z-20 h-full sm:top-[60px] lg:top-[100px] lg:w-fit">
         <div className={`relative z-20 w-full lg:w-fit lg:self-start`}>
           <FeatureNavigation
             isMobile={isMobile}

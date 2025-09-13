@@ -1,80 +1,41 @@
 "use client";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
 import Copy from "../common/Copy";
 import SupplierBenefitList from "./SupplierBenefitList";
-
-const SupplierBenefit = (cardsData: any) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const redDotRef = useRef<HTMLSpanElement>(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (!cardsData) return;
-    // alert("this is run now");
-    const ctx = gsap.context(() => {
-      if (!sectionRef.current || !redDotRef.current) return;
-      setTimeout(() => {
-        // ScrollTrigger.refresh();
-        const total_crm_cards = cardsData.cardsData.length;
-        const crm_cards_height = total_crm_cards * window.innerHeight;
-
-        const sectionEl = sectionRef.current;
-        const redDotEl = redDotRef.current;
-
-        if (!sectionEl || !redDotEl) return;
-
-        // Fix: Use sectionEl.offsetHeight directly since we already checked it exists
-        const sectionElHeight = sectionEl.getBoundingClientRect().height;
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionEl,
-            start: `-12% 40%`,
-            end: `bottom center`,
-            scrub: 1,
-            markers: false,
-            id: "main",
-          },
-        });
-
-        // Animate red dot down the full height of the section
-        tl.set(redDotEl, { opacity: 1 });
-        tl.to(redDotEl, {
-          y: sectionElHeight, // Use the variable directly, not in arrow function
-          ease: "none",
-        });
-
-        ScrollTrigger.refresh();
-      }, 2600);
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [cardsData]);
+import { useScrollDotAnimation } from "@/hooks/useScrollDotAnimation";
+interface SupplierBenefitProps {
+  title?: string;
+  cardsData: {
+    text: string;
+    desc: string;
+  }[];
+}
+const SupplierBenefit: React.FC<SupplierBenefitProps> = ({
+  title,
+  cardsData,
+}) => {
+  const { sectionRef, dotRef } = useScrollDotAnimation({
+    delay: 2.6,
+  });
 
   return (
-    <section className="main-container mt-[90px]">
-      <Copy delay={0.1}>
-        <h4 className="section-heading gradient-text text-center">
-          How suppliers benefit
-        </h4>
-      </Copy>
+    <section className="relative mt-[65px] md:mt-[90px]">
+      <div className="main-container">
+        <Copy delay={0.1}>
+          <h4 className="section-heading gradient-text text-center">
+            {title || "How suppliers benefit"}
+          </h4>
+        </Copy>
 
-      <div
-        id="contractor-section"
-        ref={sectionRef}
-        className="relative mt-10 sm:mt-[51px]"
-      >
-        {/* Gray line */}
-        <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
-        {/* Red dot */}
-        <span
-          ref={redDotRef}
-          className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
-        />
-
-        <SupplierBenefitList cardsData={cardsData} />
+        <div ref={sectionRef} className="relative mt-10 sm:mt-[51px]">
+          {/* Gray line */}
+          <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
+          {/* Red dot */}
+          <span
+            ref={dotRef}
+            className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-0 will-change-transform"
+          />
+          <SupplierBenefitList cardsData={cardsData} />
+        </div>
       </div>
     </section>
   );

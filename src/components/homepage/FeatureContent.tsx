@@ -110,7 +110,7 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
               />
             </div>
             <Copy delay={0.2}>
-              <p className="text-wallStreet space-y-3 text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
+              <p className="text-wallStreet space-y-2 text-start text-sm font-medium sm:text-base lg:max-w-[615px] lg:text-lg">
                 {content.description}
               </p>
             </Copy>

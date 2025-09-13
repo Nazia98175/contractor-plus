@@ -10,11 +10,21 @@ import {
   UpArrowRedIcon,
 } from "../common/Icons";
 import Copy from "../common/Copy";
+import Image from "next/image";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const WhyNow = () => {
+interface SectionItem {
+  isTitle?: boolean;
+  title?: string;
+  text?: string;
+  description: string;
+  image?: any;
+}
+interface WhyNowProps {
+  items: SectionItem[];
+}
+const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const bgImageRef = useRef<HTMLImageElement>(null);
   const timelineRef = useRef<gsap.core.Timeline>(null);
@@ -24,192 +34,309 @@ const WhyNow = () => {
     const container = containerRef.current;
     const sections = sectionsRef.current;
 
-    // Create timeline
+    // Get viewport dimensions
+    const vw = window.innerWidth;
+
+    // Calculate optimal scales based on viewport
+    const startScale = vw <= 1440 ? 1.2 : 1.5;
+    let maxScale;
+    if (vw <= 1440) {
+      maxScale = 2.2;
+    } else if (vw <= 1920) {
+      maxScale = 2.5;
+    } else {
+      maxScale = 2.8;
+    }
+
+    // Set initial state for background
+    gsap.set(bgImageRef.current, {
+      scale: startScale,
+      opacity: 1,
+    });
+
+    // Create main timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
         start: "top top",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: 1, // Tighter scrub for pixel-perfect scroll
+        pin: false,
         invalidateOnRefresh: true,
       },
     });
 
-    // Initial setup - hide all sections except the first one
-    gsap.set(sections.slice(1), { opacity: 0, y: 100, scale: 0.97 });
-    tl.to(
+    // Set initial states for all sections
+    sections.forEach((section, index) => {
+      if (index === 0) {
+        // First section starts visible and centered
+        gsap.set(section, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+        });
+      } else if (index === 1) {
+        // Second section starts below, slightly visible with blur
+        gsap.set(section, {
+          opacity: 0.3,
+          y: 200,
+          scale: 0.85,
+          filter: "blur(15px)",
+        });
+      } else {
+        // All other sections start hidden below
+        gsap.set(section, {
+          opacity: 0,
+          y: 300,
+          scale: 0.8,
+          filter: "blur(20px)",
+        });
+      }
+    });
+
+    // Background circle animation
+    tl.fromTo(
       bgImageRef.current,
       {
-        scale: 4.5, // Scale up to 450%
-        rotation: 720, // Full rotation
-        duration: 6, // Total duration (matches your 6 sections * 1.2 timing)
-        ease: "none", // Linear animation for smooth scroll
+        scale: startScale,
+        rotation: 0,
+        opacity: 1,
+      },
+      {
+        scale: maxScale,
+        rotation: 720,
+        opacity: 0.2, // Fade gradually
+        duration: sections.length - 1, // Adjusted to match actual content
+        ease: "none",
       },
       0,
     );
-    // Create animations for each section
+
+    // Text section animations - ladder style with consistent timing
+    const sectionDuration = 1.2; // Adjusted for better pacing
+    const spacing = 150; // Consistent spacing between elements
+
     sections.forEach((section, index) => {
+      const startTime = index * sectionDuration;
+
       if (index === 0) {
-        // First section starts visible, then fades out
+        // First section moves up uniformly
         tl.to(
           section,
           {
-            opacity: 0,
-            y: -100,
-            scale: 0.97,
-            duration: 1,
+            y: -spacing,
+            opacity: 0.4,
+            scale: 0.9,
+            filter: "blur(12px)",
+            duration: sectionDuration * 0.5,
+            ease: "none", // Linear for consistent speed
           },
-          index * 1.2,
-        );
-      } else if (index < sections.length) {
-        // Other sections animate in from bottom, then fade out (except last one)
-        tl.fromTo(
-          section,
-          { opacity: 0, y: 100 },
-          { opacity: 1, y: 0, scale: 1, duration: 1 },
-          index * 1.2,
+          startTime,
         );
 
-        // Fade out (except for the last section)
+        tl.to(
+          section,
+          {
+            y: -spacing * 1.5,
+            opacity: 0,
+            scale: 0.85,
+            filter: "blur(18px)",
+            duration: sectionDuration * 0.5,
+            ease: "none",
+          },
+          startTime + sectionDuration * 0.5,
+        );
+      } else {
+        // Uniform movement from bottom to center
+        tl.to(
+          section,
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: sectionDuration * 0.5,
+            ease: "none", // Linear movement
+          },
+          startTime - sectionDuration * 0.5,
+        );
+
+        // Then move to top position uniformly (except last)
         if (index < sections.length - 1) {
           tl.to(
             section,
             {
-              opacity: 0,
-              y: -100,
-              scale: 0.97,
-              duration: 1,
+              y: -spacing,
+              opacity: 0.4,
+              scale: 0.9,
+              filter: "blur(12px)",
+              duration: sectionDuration * 0.5,
+              ease: "none",
             },
-            (index + 1) * 1.2,
+            startTime + sectionDuration * 0.5,
+          );
+
+          // Finally fade out completely
+          tl.to(
+            section,
+            {
+              y: -spacing * 1.5,
+              opacity: 0,
+              filter: "blur(18px)",
+              duration: sectionDuration * 0.5,
+              ease: "none",
+            },
+            startTime + sectionDuration,
+          );
+        }
+
+        // Show next section preview uniformly
+        if (index < sections.length - 1 && sections[index + 1]) {
+          // Next section starts appearing from bottom
+          tl.fromTo(
+            sections[index + 1],
+            {
+              y: spacing * 1.5,
+              opacity: 0,
+              scale: 0.85,
+              filter: "blur(18px)",
+            },
+            {
+              y: spacing,
+              opacity: 0.4,
+              scale: 0.9,
+              filter: "blur(12px)",
+              duration: sectionDuration * 0.5,
+              ease: "none", // Linear movement
+            },
+            startTime,
           );
         }
       }
+
+      // Handle last section - fade out circle at the right time
+      if (index === sections.length - 1) {
+        tl.to(
+          bgImageRef.current,
+          {
+            opacity: 0,
+            scale: maxScale * 1.1,
+            duration: sectionDuration,
+            ease: "power1.out",
+          },
+          startTime - sectionDuration * 0.5,
+        );
+      }
     });
 
-    // Store timeline reference for external access
+    // Store timeline reference
     timelineRef.current = tl;
 
-    // Cleanup function
+    // Handle resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
     return () => {
+      window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
+  // const sectionData = [
+  //   {
+  //     icon: null,
+  //     title: "Why now?",
+  //     description:
+  //       "Field service is in the middle of a generational software shift.",
+  //     isTitle: true,
+  //   },
+  //   {
+  //     icon: <UpArrowRedIcon />,
+  //     description:
+  //       "Labor and material costs are rising, businesses need to run as efficiently and effectively as possible",
+  //   },
+  //   {
+  //     icon: <RedClockIcon />,
+  //     description:
+  //       "Customers demand speed in work and communication from contractors",
+  //   },
+  //   {
+  //     icon: <CommunicateRedIcon />,
+  //     description:
+  //       "AI is changing how contractors communicate, quote, schedule, and manage jobs",
+  //   },
+  //   {
+  //     icon: <SmartPhoneIcon />,
+  //     description:
+  //       "Smartphone-first crews are demanding tools that actually work in the field",
+  //   },
+  //   {
+  //     icon: <KeepUpIcon />,
+  //     description:
+  //       "The industry's dominant players have gotten too big, slow, and expensive to keep up.",
+  //   },
+  // ];
+
   return (
     <section className="mx-auto max-w-[1920px] px-3 lg:px-0">
-      <div ref={containerRef} className="relative h-[500vh]">
+      <div ref={containerRef} className="relative h-[600vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          <img
-            ref={bgImageRef}
-            className="absolute top-0 left-0 hidden h-full w-full object-contain lg:block"
-            src="/images/webp/vector.webp"
-            alt="now bg"
-          />
-          <div className="relative flex h-full w-full flex-col items-center justify-center">
-            {/* Initial Section - Why now? */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[0] = el;
+          {/* Background circle image */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              ref={bgImageRef}
+              className="h-full w-full object-contain lg:block"
+              src="/images/webp/vector.webp"
+              alt="now bg"
+              style={{
+                transformOrigin: "center center",
+                maxWidth: "min(90vw, 90vh)",
+                maxHeight: "90vh",
               }}
-              className="absolute mx-auto w-full max-w-[560px] pt-[26px] pb-[32px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <Copy animateOnScroll={true}>
-                <h3 className="text-mana text-center text-2xl font-semibold sm:text-4xl lg:text-5xl xl:text-[52px]">
-                  Why now?
-                </h3>
-              </Copy>
-              <Copy animateOnScroll={true}>
-                <p className="text-ironFixture pt-3 text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Field service is in the middle of a generational software
-                  shift.
-                </p>
-              </Copy>
-            </div>
+            />
+          </div>
 
-            {/* Section 1 - Labor costs */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[1] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <UpArrowRedIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Labor and material costs are rising, businesses need to run as
-                  efficiently and effectively as possible
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 2 - Customer demands */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[2] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <RedClockIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Customers demand speed in work and communication from
-                  contractors
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 3 - AI changes */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[3] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <CommunicateRedIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  AI is changing how contractors communicate, quote, schedule,
-                  and manage jobs
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 4 - Smartphone crews */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[4] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <SmartPhoneIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  Smartphone-first crews are demanding tools that actually work
-                  in the field
-                </p>
-              </Copy>
-            </div>
-
-            {/* Section 5 - Industry players */}
-            <div
-              ref={(el) => {
-                sectionsRef.current[5] = el;
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute mx-auto flex w-full max-w-[600px] flex-col items-center justify-center pt-[32px] pb-[41px] sm:py-[50px] md:py-[160px] lg:py-[180px] xl:py-[200px]"
-            >
-              <KeepUpIcon />
-              <Copy animateOnScroll={true}>
-                <p className="text-ironFixture text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-                  The industry's dominant players have gotten too big, slow, and
-                  expensive to keep up.
-                </p>
-              </Copy>
-            </div>
+          {/* Content sections */}
+          <div className="relative flex h-full w-full items-center justify-center">
+            {items.map((section, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  sectionsRef.current[index] = el;
+                }}
+                className={`absolute flex flex-col items-center justify-center ${
+                  index === 0 ? "max-w-[500px]" : "max-w-[550px]"
+                } w-full px-6`}
+                style={{
+                  willChange: "transform, opacity, filter",
+                  zIndex: 20 - index,
+                }}
+              >
+                <Copy animateOnScroll={false}>
+                  <h3 className="text-center text-2xl font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
+                    {section.title}
+                  </h3>
+                </Copy>
+                <div className="my-4">
+                  <Image
+                    className="h-8 w-8"
+                    src={section?.image.url}
+                    alt={"edsx"}
+                    width={24}
+                    height={24}
+                  />
+                </div>
+                <Copy animateOnScroll={false}>
+                  <p className="text-center text-sm font-medium text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
+                    {section.text}
+                  </p>
+                </Copy>
+              </div>
+            ))}
           </div>
         </div>
       </div>

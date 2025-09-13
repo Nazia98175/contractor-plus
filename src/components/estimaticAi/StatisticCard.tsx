@@ -4,24 +4,18 @@ import CountUp from "react-countup";
 interface StatisticCardProps {
   obj: {
     title: string;
-    desc: string;
+    subTitle: string;
   };
 }
 
 // Helper to separate number and suffix (like %, +, k, etc.)
 const getCountParts = (text: string) => {
-  const hasPrefix = text.startsWith("<") || text.startsWith(">");
-  const symbol = hasPrefix ? text.charAt(0) : "";
-  const clean = text.replace(/[^\d.]/g, "");
-  const number = parseFloat(clean);
-
-  const rawSuffix = !hasPrefix && text.replace(/[0-9.$]/g, "");
-  const suffix = rawSuffix ? String(rawSuffix) : undefined;
-
+  const [, prefix, num, suffix] =
+    text.match(/^([<>$])?(\d+(?:\.\d+)?)(.*)$/) || [];
   return {
-    number,
-    prefix: hasPrefix ? symbol : text.startsWith("$") ? "$" : undefined,
-    suffix,
+    number: parseFloat(num) || 0,
+    prefix,
+    suffix: suffix || undefined,
   };
 };
 
@@ -35,7 +29,7 @@ const StatisticCard: React.FC<StatisticCardProps> = ({ obj }) => {
         <CountUp end={number} duration={8} prefix={prefix} suffix={suffix} />
       </h4>
       <p className="text-light py-2.5 text-center text-xs font-medium md:text-white">
-        {obj.desc}
+        {obj.subTitle}
       </p>
     </article>
   );

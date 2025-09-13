@@ -58,7 +58,11 @@
 }
 
 .invester-image-gradient {
-  background: linear-gradient(1deg, #0a0b0e 34.47%, rgba(10, 11, 14, 0) 90.83%);
+  background: linear-gradient(
+    0.59deg,
+    #0c0d11 34.47%,
+    rgba(12, 13, 17, 0) 90.83%
+  );
 }
 
 .video-section-wrapper.scroll-active-2 h3 {
@@ -89,4 +93,26 @@
 }
 .video-section-wrapper.scroll-active-2 .icon-span {
   transform: rotate(90deg);
+}
+.proof-working {
+  background: radial-gradient(
+    108.34% 2197.76% at 86.81% 50%,
+    #ee1e25 0%,
+    #bebebe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.proof-working .line {
+  background: radial-gradient(
+    108.34% 2197.76% at 86.81% 50%,
+    #ee1e25 0%,
+    #bebebe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

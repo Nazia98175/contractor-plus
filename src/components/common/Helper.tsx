@@ -38,7 +38,20 @@ import {
   SubManagementIcon,
   TaskManagementIcon,
 } from "../whycontractor/Icons";
-import { ClockIcon, ContractorToolsIcon, UpArrowIcon } from "./Icons";
+import {
+  AppearIcon,
+  AudienceReachIcon,
+  BuildFieldIcon,
+  ClockIcon,
+  ContractorToolsIcon,
+  DataIcon,
+  OneSystemIcon,
+  OrderRouteIcon,
+  RegionsIcon,
+  ReportIcon2,
+  SingleFlowIcon,
+  UpArrowIcon,
+} from "./Icons";
 
 export const awards = [
   {
@@ -1815,49 +1828,6 @@ export const pricingfaqitems = [
   },
 ];
 
-export const estimateFaq = {
-  title: "What contractors want to know ",
-  subTitle: "Frequently asked questions",
-  faq: [
-    {
-      id: 1,
-      question:
-        "How is Estimatic different from tools like ChatGPT or other AI estimate generators?",
-      answer:
-        "Our AI estimate software actually pulls from your real cost book, current supplier pricing, and local labor rates. While other tools give you generic estimates, Estimatic builds accurate, client-ready bids that match how you quote jobs.",
-    },
-    {
-      id: 2,
-      question: "Can I still control or edit the estimate?",
-      answer:
-        "Absolutely. Estimatic gives you a complete draft in a couple minutes, but you’ll always have the final say. Review, adjust, and approve line items just like you would normally (but WAY faster!)",
-    },
-    {
-      id: 3,
-      question: "Can Estimatic read job photos and blueprints? ",
-      answer:
-        "Yes — upload jobsite photos, blueprints, and/or drawings when you create your estimate for the AI to use. ",
-    },
-    {
-      id: 4,
-      question: "Will it match my usual estimate format?",
-      answer:
-        "Yes. Use your saved templates and upload your cost book so the final output looks like your usual estimates. No reformatting or manual entry necessary. We don’t force you into a rigid layout. ",
-    },
-    {
-      id: 5,
-      question: "What data is used for pricing? ",
-      answer:
-        "Estimatic searches to find  real-time pricing from vendors like Lowe’s, Home Depot, Menards, Ace Hardware, Build.com, and ABC Supply. It also uses a proprietary labor rate index based on over 500,000 approved estimates and official BLS data. ",
-    },
-    {
-      id: 6,
-      question: "Is Estimatic part of Contractor+ or a separate tool?",
-      answer:
-        "It’s fully built into Contractor+. That means your estimates automatically connect to your CRM, service requests, job schedule, and invoicing. It’s included with your regular subscription and each estimate created costs a minimal dollar amount (just to cover the cost of using AI). ",
-    },
-  ],
-};
 export const blogData = [
   {
     id: 1,
@@ -2240,68 +2210,6 @@ export const contractorIndustry = {
   subTitle: "Contractor+ serves 30+ industries",
   url: "",
   btnText: "",
-};
-import needed_Approve from "../../../public/lotties/needed-approve.json";
-import your_Estimate from "../../../public/lotties/your-estimate.json";
-import describe_Estimate from "../../../public/lotties/Describe-estimate.json";
-import send_Your_Estimate from "../../../public/lotties/Send-your-estimate.json";
-export const estimaticCardData = {
-  id: 1,
-  title: "How to create a winning AI estimate ",
-  cardsDetail: [
-    {
-      heading: "Step 1",
-      title: "Describe the estimate to Estimatic",
-      content: [
-        {
-          desc: "It’s simple. Just tell Estimatic what you need an estimate for and give it as much context as you want. You can upload photos, blueprints, drawings, or even a competing quote.",
-        },
-      ],
-      cardQuote: {
-        user: "Excellent field tracking!",
-        username: "John Doe",
-      },
-      cardImg: "/images/webp/describe-estimate.webp",
-      lottieJson: describe_Estimate,
-      isIcon: false,
-    },
-    {
-      heading: "Step 2",
-      title: "Estimatic builds your estimate",
-      content: [
-        {
-          desc: "Using your cost book, real-time pricing from suppliers, and live local labor rates, Estimatic builds a detailed, accurate estimate, 100x faster than any human.",
-        },
-      ],
-      cardImg: "/images/webp/estimatic-builds.webp",
-      lottieJson: your_Estimate,
-      isIcon: false,
-    },
-    {
-      heading: "Step 3",
-      title: "You tweak (if needed) + approve",
-      content: [
-        {
-          desc: "Estimatic shows its work so you feel confident in yours. Tweak any details like margins or materials, and add markup before approving",
-        },
-      ],
-      cardImg: "/images/webp/you-tweak.webp",
-      lottieJson: needed_Approve,
-      isIcon: false,
-    },
-    {
-      heading: "STEP 4",
-      title: "Send your estimate",
-      content: [
-        {
-          desc: "Whether you’re at the office or at your customer’s kitchen table, send your estimate faster than anyone else, and let them eSign without extra software. ",
-        },
-      ],
-      cardImg: "/images/webp/send-your-estimate.webp",
-      lottieJson: send_Your_Estimate,
-      isIcon: false,
-    },
-  ],
 };
 
 export const dealReviews = {
@@ -2909,58 +2817,6 @@ export const dealReviews2 = {
     },
   ],
 };
-export const estimaticBlogHeadingData = {
-  id: 1,
-  title: "AI related topics in Contractor+ HQ",
-  btnText: "Contractor+ HQ",
-  btnUrl: "/",
-};
-export const estimaticControlData = {
-  id: 320,
-  title: "You’re still in control. Estimatic just gets you there faster.",
-  sub_title: "No gimmicks, just a damn good estimate.",
-  cardsDetail: [
-    {
-      id: 1671,
-      text: (
-        <>
-          AI isn’t replacing <br /> your judgment
-        </>
-      ),
-      cardImg: {
-        url: "/images/svg/green-tick.svg",
-      },
-      imgWidth: 66,
-      imgHeight: 34,
-    },
-    {
-      id: 1672,
-      text: (
-        <>
-          You can tweak, edit, or <br /> override any line
-        </>
-      ),
-      cardImg: {
-        url: "/images/svg/green-tick.svg",
-      },
-      imgWidth: 66,
-      imgHeight: 34,
-    },
-    {
-      id: 1673,
-      text: (
-        <>
-          "Estimatic shows its work <br /> (no black box)"
-        </>
-      ),
-      cardImg: {
-        url: "/images/svg/green-tick.svg",
-      },
-      imgWidth: 66,
-      imgHeight: 34,
-    },
-  ],
-};
 
 export const property_profiles_ControlData = {
   id: 320,
@@ -3018,12 +2874,6 @@ export const billingformData = {
     "Start using Contractor+ free. Upgrade for the full operating system.",
   title:
     "This is what field service invoicing software should have been all along",
-};
-export const estimateFormData = {
-  id: 282,
-  placeholder: "Your Email",
-  title: "The AI estimate generator that will change your business forever",
-  subTitle: "Get started with Estimatic AI in Contractor+ today.",
 };
 
 export const dealflowformData = {
@@ -3455,19 +3305,15 @@ export const propertyCardData = {
 export const propertyaddressContractorData = {
   title: "There’s finally one source of truth for every property address",
   subTitle: null,
-  comaprisons: [
+  comparisons: [
     {
       title: "The old way",
       comparisonList: [
-        {
-          details: "Software that only gives client & job-level views",
-        },
+        { details: "Software that only gives client & job-level views" },
         {
           details: "Hunting for info in emails, spreadsheets, and camera rolls",
         },
-        {
-          details: "Manually saving emails or hoping you can find them again",
-        },
+        { details: "Manually saving emails or hoping you can find them again" },
         {
           details:
             "Property info is just an address field under a client's name.",
@@ -3480,17 +3326,13 @@ export const propertyaddressContractorData = {
           details:
             "Confusion over who to contact: the tenant, the owner, or the manager?",
         },
-        {
-          details: "Complex workarounds for getting property information",
-        },
+        { details: "Complex workarounds for getting property information" },
       ],
     },
     {
       title: "Your way",
       comparisonList: [
-        {
-          details: "Option for property-level workflows in one tap",
-        },
+        { details: "Option for property-level workflows in one tap" },
         {
           details:
             "Finding any document, photo, or note in one central property hub",
@@ -4357,3 +4199,412 @@ export const integrationLogos = [
   "/images/png/companycam.png",
   "/images/png/lowes-2.png",
 ];
+
+export const glanceList = [
+  {
+    id: 1,
+    title: "Audience & Reach",
+    description:
+      "50,000+ build & service contractors across residential trades.",
+    icon: <AudienceReachIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 2,
+    title: "Regions",
+    description:
+      "United States, Canada, United Kingdom, Ireland, Australia, Japan, United Arab Emirates.",
+    icon: <RegionsIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 3,
+    title: "Where you appear",
+    description:
+      "In Estimates (live pricing), Material Lists, Purchase Orders, and Checkout flows",
+    icon: <AppearIcon />,
+    hasDivider: false,
+  },
+  {
+    id: 4,
+    title: "Data we support",
+    description:
+      "Catalog, images, specs, unit/packaging, local store availability, regional pricing, promos.",
+    icon: <DataIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 5,
+    title: "Order routes",
+    description:
+      "Direct PO, cart transfer to your ecommerce, or hybrid—your choice.",
+    icon: <OrderRouteIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 6,
+    title: "Reporting",
+    description:
+      "SKU‑level conversion and demand signals by geo, trade, and job type.",
+    icon: <ReportIcon2 />,
+    hasDivider: false,
+  },
+];
+
+export const integrationData = [
+  {
+    image: "/images/webp/live-product.webp",
+    alt: "live product",
+    title: "Live Product Catalog",
+    description:
+      "We surface live pricing/lookups from partners and third-party aggregators—used today with Ace Hardware, Menards, Ferguson Home and others—then route the buyer per program.",
+  },
+  {
+    image: "/images/webp/cart-transfer.webp",
+    alt: "cart transfer",
+    title: "Cart Transfer",
+    description:
+      "Contractor+ assembles the basket, then passes the cart to your site for instant checkout—like we do with Lowe’s. (Contractors see local store pricing, build lists fast, and tap to buy on Lowes.com.)",
+  },
+  {
+    image: "/images/webp/direct-project.webp",
+    alt: "direct purchase orders",
+    title: "Direct Purchase Orders (PO)",
+    description:
+      "We send a structured PO straight to your system with job/site info—like our ABC Supply integration for roofing. Great for trade-specific workflows and account customers.",
+  },
+];
+
+export const workList = [
+  {
+    img: "/images/svg/lowes-logo.svg",
+    alt: "Lowe's logo",
+    title: "Lowe’s",
+    description:
+      "Local pricing, rapid material lists, and cart transfer for instant online checkout.",
+    imgClass: "w-full max-w-[52px]",
+  },
+  {
+    img: "/images/svg/abp-logo.svg",
+    alt: "ABC Supply logo",
+    title: "ABC Supply",
+    description:
+      "Direct PO for roofing materials, sourcing, and order tracking.",
+    imgClass: "w-full max-w-[52px]",
+  },
+  {
+    img: "/images/svg/qxo-logo.svg",
+    alt: "QXO logo",
+    title: (
+      <>
+        QXO <span className="text-sm">(Formerly Beacon)</span>
+      </>
+    ),
+    description: "Coming up next!.",
+    imgClass: "w-full max-w-[52px]",
+  },
+  {
+    img: "/images/svg/Group-logo.svg",
+    alt: "Ace Hardware & others logo",
+    title: "Ace Hardware, Menards, Ferguson Home & others",
+    description:
+      "Indirect integrations that surface pricing and selection within our estimate workflow.",
+    imgClass: "w-full max-w-[80px]",
+  },
+];
+
+export const meke_Different = [
+  {
+    id: 1,
+    title: "It’s all one system",
+    description:
+      "The same platform that handles estimates, eSign, scheduling, comms, and POs also powers material selection—no duct tape required.  ",
+    icon: <OneSystemIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 2,
+    title: "Spec → Order in a single flow",
+    description: "Contractors don’t retype SKUs; they confirm and buy.",
+    icon: <SingleFlowIcon />,
+    hasDivider: true,
+  },
+  {
+    id: 3,
+    title: "Built for the field",
+    description: "The UI is fast on mobile, where most orders actually start. ",
+    icon: <BuildFieldIcon />,
+    hasDivider: false,
+  },
+];
+
+export const supplierslogo = [
+  {
+    Url: "/images/svg/sb-logo.svg",
+  },
+  {
+    Url: "/images/svg/ferguson-logo.svg",
+  },
+  {
+    Url: "/images/svg/abp-logo.svg",
+  },
+  {
+    Url: "/images/svg/qxo-logo.svg",
+  },
+  {
+    Url: "/images/svg/menarads-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+  {
+    Url: "/images/svg/sb-logo.svg",
+  },
+  {
+    Url: "/images/svg/ferguson-logo.svg",
+  },
+  {
+    Url: "/images/svg/abp-logo.svg",
+  },
+  {
+    Url: "/images/svg/qxo-logo.svg",
+  },
+  {
+    Url: "/images/svg/menarads-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+  {
+    Url: "/images/svg/ace-logo.svg",
+  },
+  {
+    Url: "/images/png/zapier.png",
+  },
+  {
+    Url: "/images/svg/local-depot.svg",
+  },
+  {
+    Url: "/images/svg/lowes-logo.svg",
+  },
+];
+
+export const supplietFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "Do you support both national chains and local specialty suppliers?",
+      answer:
+        "Yes. We’re actively onboarding supply house partners across the U.S., Canada, U.K., Ireland, Australia, Japan, and the UAE.",
+    },
+    {
+      id: 2,
+      question: "Can you show local store pricing and inventory?",
+      answer:
+        "Yep—if you provide the data feeds or API access. We can scope by store, region, or customer account.",
+    },
+    {
+      id: 3,
+      question: "How do orders flow? ",
+      answer:
+        "Either via cart transfer to your ecommerce (basket pre‑built) or direct PO into your ERP/OMS. Whichever you prefer.",
+    },
+    {
+      id: 4,
+      question: "Where do contractors see our products?",
+      answer:
+        "Inside the estimates & quote builder, in the job manager, when adding materials to work orders, when building material lists, and purchase workflows—exactly where they’re selecting and approving scope.  ",
+    },
+    {
+      id: 5,
+      question: "What does it cost to partner?",
+      answer:
+        "There’s no upfront cost to partner. We do this to benefit our mutual customers, the contractors. Many partners offer us a 1-2% override/commission on purchases, which is always appreciated, but not expected. We also offer very attractive affiliate commissions for referring customers to Contractor+! ",
+    },
+    {
+      id: 6,
+      question: "How long does integration take?",
+      answer:
+        "Typical pilot: 2–6 weeks once data feeds or API endpoints are shared with required access.",
+    },
+  ],
+};
+export const integrationFaq = {
+  title: "What contractors want to know ",
+  subTitle: "Frequently asked questions",
+  faq: [
+    {
+      id: 1,
+      question:
+        "How can I use PayPal for my small business or contracting needs?",
+      answer:
+        "It offers various options for small businesses and contractors to send and receive payments, manage transactions, and access financial resources. You can integrate it with Contractor+ for streamlined financial management. Contractors using this integration can easily accept payments from Visa, Mastercard and major cards from leading banks.",
+    },
+    {
+      id: 2,
+      question:
+        "Are there any fees associated with using PayPal for business purposes?",
+      answer:
+        "They may charge fees for certain transactions, such as receiving payments for goods and services. It’s essential to review their fee structure on their official website. It offers a fee-free service option for sending money to family and friends within the same country. If you’re sending money internationally or using a credit card, fees may apply.",
+    },
+    {
+      id: 3,
+      question:
+        "Can I use PayPal to purchase goods and services online and in physical stores?",
+      answer:
+        "Yes, PayPal & their Wallet is widely accepted by online retailers, e-commerce, online banking and some physical stores. Look for the PayPal logo or the option to choose PayPal at checkout. They also offer the option to purchase gift cards and send digital receipts to recipients. You can link your bank account or debit card to your PayPal account for seamless transfers and purchases.",
+    },
+    {
+      id: 4,
+      question:
+        "How does PayPal’s support for cryptocurrencies like Bitcoin and Ethereum work?",
+      answer:
+        "It allows users to buy, hold, and sell cryptocurrencies within their accounts. You can use supported cryptocurrencies for purchases where PayPal is accepted. Not just cryptocurrencies using their wallet you can accept not just dollar but other world markets currencies as well.",
+    },
+    {
+      id: 5,
+      question:
+        "What are the risks associated with using PayPal for financial transactions?",
+      answer:
+        "Like any financial platform, there are security risks associated with PayPal. It’s crucial to use strong passwords, enable two-factor authentication, and stay vigilant against phishing attempts.",
+    },
+    {
+      id: 6,
+      question:
+        "How can I access my PayPal account from various devices, including Android, iPhone, and computer?",
+      answer:
+        "It provides a user-friendly app for Android and iPhone users, and you can also access your account through their website on your computer or other internet-enabled devices.",
+    },
+    {
+      id: 7,
+      question:
+        "What are some of the most notable brands and retailers that accept PayPal payments?",
+      answer:
+        "It is widely accepted by major brands, retailers, and online marketplaces, including eBay, Honey, Happy Returns, and many others.",
+    },
+    {
+      id: 8,
+      question:
+        "Can I use PayPal account for international money transfers and currency exchanges?",
+      answer:
+        "Yes, it offers services for international money transfers and currency exchanges, making it a versatile choice for global transactions. It’s available in many countries like U.S., India, Europe, Canada etc and supports multiple each country currencies. You can choose your preferred currency when making transactions.\n\nPayPal provides a wealth of information, articles, and resources available for individuals and businesses looking to learn more about using their service effectively, on their official website to help users make the most of their platform. Their continuous updates and growth initiatives reflect unwavering dedication to seizing new opportunities.\n\nWith free versions of their app available on app stores, they are a testament to their user-centric approach. With a strong community, secure deposits, and layers of rewards, PayPal is impactful in the world market. As a company, they’re not just an advocate of technology, they’re pioneers shaping the future through research and development, open successful launch and community-driven initiative at a time.",
+    },
+  ],
+};
+export const afflitatesClientReviews = {
+  data: [
+    {
+      reviews: {
+        title: "Trusted by over 50,000 build and service contractors",
+        subTitle: null,
+        reviews: [
+          {
+            id: 1,
+            userName: "Brandon Geiger",
+            profileImg: "/images/png/brandon-ginger.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/ODjGhYILJKE?si=lcdtM7DNcQ6_JGd8",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!""`,
+            userRole: "Co-Owner, Rushville Restorations",
+          },
+          {
+            id: 2,
+            userName: "Juan Garcia",
+            profileImg: "/images/webp/juan-gracia.webp",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/R5Q47lOKtdI?si=mKWjfvWmiFwEbkTv",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"I love being able to keep track of my entire business in one app. And the leads we've been getting from Contractor+ are so much better than the leads we've got from other places. The app is easy to use and is making my life a lot easier."`,
+            userRole: "President, TPB Construction",
+          },
+
+          {
+            id: 3,
+            userName: "Scott Azure",
+            profileImg: "/images/webp/rands.webp",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/CllT0U-CtGc?si=dAxaKG8w04fLCQHr",
+            isModal: true,
+            companyLogo: "/images/png/brandon-ginger.png",
+            review: `"I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."`,
+          },
+          {
+            id: 4,
+            userName: "Juan Garcia",
+            profileImg: "/images/png/juan-garcia.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/KpYSsQhP_J0?si=AzXAksGGa9cRi6L2",
+            isModal: true,
+            companyLogo: "/images/png/juan-garcia.png",
+            review: `"I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."`,
+            userRole: "Owner, Nailed It Miami",
+          },
+          {
+            id: 5,
+            userName: "Josh T.",
+            profileImg: "/images/png/josh.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/8ts4jsNZtgM?si=qiCj5doq9gsEocRn",
+            isModal: true,
+            companyLogo: "/images/png/josh.png",
+            review: `"Contractor+ covers nearly every part of our business. Now, we’re not just working - we’re busy handling new leads every day."`,
+            userRole: "Owner, Hermano's Home Improvements",
+          },
+          {
+            id: 6,
+            userName: "John Croy",
+            profileImg: "/images/png/john-croy.png",
+            rating: 5,
+            videoLink:
+              "https://www.youtube.com/embed/L49D7VE_Usw?si=3I-iy97Au__yyywp",
+            isModal: true,
+            companyLogo: "/images/png/john-croy.png",
+            review: `"Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."`,
+            userRole: "Co-Owner, Ross Co. Home Pro's",
+          },
+        ],
+      },
+    },
+  ],
+};

@@ -1,42 +1,52 @@
 import CommonFormField from "@/components/common/CommonFormField";
-import { dealflowhero, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import CommonHero from "@/components/crmbussiness/CommonHero";
 import YouNeedFeatures from "@/components/seeallfeatures/YouNeedFeatures";
+import { getAllFeaturesData } from "@/services/all-features/getAllFeaturesData";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `all-feature?locale=${resolvedParams.locale}&populate=*`,
+  );
 
-export const metadata = {
-  title: "Everything you need, in a single operating system.",
-  description:
-    "We believe you shouldn’t have to pay for 10 different softwares and connect them together. We also don’t believe in “gate keeping” our best features for Enterprise level customers.",
-};
+  if (!page) notFound();
 
-const SeeAllFeaturesPage = () => {
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
+export default async function SeeAllFeaturesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const { hero, commonData, pageContent, featuresSection } =
+    await getAllFeaturesData(locale);
+
+  if (!pageContent) return notFound();
+
   return (
     <main className="relative">
-      <CommonHero
-        hero={{
-          featureTag: "The Field Service OS",
-          heroTitle: "Everything you need, in a single operating system.",
-          heroDescription:
-            "We believe you shouldn’t have to pay for 10 different softwares and connect them together. We also don’t believe in “gate keeping” our best features for Enterprise level customers.",
-        }}
-        slug="crm"
-        apiData={false}
-        commonData={dealflowhero}
-      />
-      <YouNeedFeatures />
-      <div className="main-container relative z-50 -mt-[70px] md:-mt-[133px] lg:-mt-[193px]">
+      <CommonHero hero={hero} isShowHeroImg={false} commonData={commonData} />
+      <YouNeedFeatures featuresItems={featuresSection} />
+      <div className="main-container relative z-50">
         <CommonFormField
-          variantBtn="primary"
           variant="default"
-          title={"This is what a field service management software"}
-          subTitle={
-            "Start using Contractor+ free. Upgrade for the full operating system."
-          }
-          placeholder={"Your Email"}
-          createBtn={"Get Started Free"}
-          mobileBtn={"Download FREE App"}
-          ncc={"No credit card required"}
+          title={pageContent?.emailSignUpSection?.title}
+          subTitle={pageContent?.emailSignUpSection?.subTitle}
+          placeholder={pageContent?.emailSignUpSection?.placeholder}
+          createBtn={commonData?.getStartedFreeBtn}
+          mobileBtn={commonData?.mobileBtn}
+          ncc={commonData?.nccTxt}
+          variantBtn="primary"
         />
         <div className="mt-12 md:mb-[50px]">
           <TrustBar
@@ -47,6 +57,4 @@ const SeeAllFeaturesPage = () => {
       </div>
     </main>
   );
-};
-
-export default SeeAllFeaturesPage;
+}

@@ -20,14 +20,27 @@ import CombinesPowerfulAi from "@/components/leadgeneration/CombinesPowerfulAi";
 import DragAnimaiton from "@/components/leadgeneration/DragAnimaiton";
 import LeadGenerationHero from "@/components/leadgeneration/LeadGenerationHero";
 import LottieStat from "@/components/leadgeneration/LottieStat";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getMaxMindLocation } from "@/services/map";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import { cookies } from "next/headers";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Local SEO for Contractors Just $249 | Contractor+",
-  description:
-    "A fully managed local SEO & reputation management solution for less than the cost of a bad lead. Generate more local leads now.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `local-seo-of-contractor?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 
 interface Params {
   params: Promise<{ locale: string }>;
@@ -82,7 +95,6 @@ const LeadGeneration = async ({ params }: Params) => {
         />
       </div>
       <RunWithContractor kindAdorable={leadGenerationData} />
-
       <div className="overflow-hidden bg-white">
         <CombinesPowerfulAi />
         <DragAnimaiton />
@@ -102,21 +114,23 @@ const LeadGeneration = async ({ params }: Params) => {
           variant="primary"
           apiData={false}
         />
-        <CommonFormField
-          className="pt-12 sm:pt-16"
-          variantBtn="light"
-          variant="white"
-          title={
-            "This is what local SEO for contractors should have been all along"
-          }
-          subTitle={
-            "Start using Contractor+ free. Upgrade to get the full operating system."
-          }
-          placeholder={"Your Email"}
-          createBtn={"Get Started Free"}
-          mobileBtn={"Download FREE App"}
-          ncc={"No credit card required"}
-        />
+        <div className="px-2">
+          <CommonFormField
+            className="pt-12 sm:pt-16"
+            variantBtn="light"
+            variant="white"
+            title={
+              "This is what local SEO for contractors should have been all along"
+            }
+            subTitle={
+              "Start using Contractor+ free. Upgrade to get the full operating system."
+            }
+            placeholder={"Your Email"}
+            createBtn={"Get free audit"}
+            mobileBtn={"Download FREE App"}
+            ncc={"No credit card required"}
+          />
+        </div>
         <TrustBar
           platforms={blackPlatforms}
           className="py-6 pb-8 md:pb-10 lg:pb-12 xl:pb-[66px]"

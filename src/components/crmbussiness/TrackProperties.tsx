@@ -3,18 +3,21 @@ import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
+import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 
 interface Props {
   ncc: string;
   trackProperties: any;
   desktopImgUrl?: string;
   mobileImgUrl?: string;
+  slug?: string;
 }
 
 const TrackProperties: React.FC<Props> = ({
   trackProperties,
   desktopImgUrl,
   mobileImgUrl,
+  slug,
 }) => {
   return (
     <section className="relative sm:pt-28 lg:pt-5">
@@ -67,7 +70,7 @@ const TrackProperties: React.FC<Props> = ({
               alt={trackProperties?.title ?? "Contractor+"}
               width={1098}
               height={578}
-              className="w-full max-w-[1098px] object-cover"
+              className={`${slug === "property-profile" ? "max-w-[860px]" : "max-w-[1098px]"} w-full object-cover`}
               loading="eager"
             />
           </picture>
@@ -76,12 +79,21 @@ const TrackProperties: React.FC<Props> = ({
 
       {/* Heading + Paragraph */}
       <div className="relative z-0 mt-10 px-2 md:-mt-3">
-        <Copy animateOnScroll={false} delay={0.1}>
-          <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
-            {trackProperties?.title}
-          </h2>
-        </Copy>
+        {slug !== "property-profile" && (
+          <CardReveal distance={50}>
+            <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
+              {trackProperties?.title}
+            </h2>
+          </CardReveal>
+        )}
 
+        {/* <AdaptiveHeroTitle
+          title={trackProperties?.title}
+          className="gradient-text-2 text-center !font-black lg:!font-semibold"
+          minFontSize={20}
+          maxLines={2}
+          maxFontSize={48}
+        /> */}
         <Copy animateOnScroll={false} delay={0.2}>
           <p className="paragraph-style mx-auto max-w-[950px] text-center">
             {trackProperties?.subTitle}

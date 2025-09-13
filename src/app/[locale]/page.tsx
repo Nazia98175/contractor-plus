@@ -41,6 +41,7 @@ export default async function Home({
     industriesData,
     integrationList,
   } = await getHomepageData(useParams?.locale);
+
   return (
     <div id="home-page-wrapper">
       <div id="home-page-view-port-screen" className="relative opacity-0">

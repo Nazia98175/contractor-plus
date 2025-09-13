@@ -26,9 +26,9 @@ const EventDetailHero = ({ eventDetail }: any) => {
     {
       id: eventDetail?.id ?? 1,
       logoUrl: "/images/svg/car-brand-logo.svg",
-      imgUrl:
-        eventDetail?.eventImages[0]?.url ??
-        "/images/webp/event-detail-hero.webp",
+      imgUrl: eventDetail?.eventImages
+        ? eventDetail?.eventImages[0]?.url
+        : "/images/webp/event-detail-hero.webp",
       heading: eventDetail?.eventName ?? "",
       place: `${formatDateRange(eventDetail?.startDate, eventDetail?.endDate) + " • " + eventDetail?.location}`,
       description: `${eventDetail?.location}`,

@@ -52,7 +52,7 @@ const OurReviews: React.FC<TheReviewsProps> = ({ reviews, reviewsList }) => {
 
           <div className="flex items-center gap-2">
             <Image
-              className="hidden w-full min-w-[58px] md:block"
+              className="hidden w-full min-w-[58px] md:block max-w-[58px]"
               src="/images/webp/g2Rating.webp"
               alt="capterra icon"
               width={62}

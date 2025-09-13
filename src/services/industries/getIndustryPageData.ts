@@ -2,6 +2,7 @@ import { getBlogs, getBlogsByCategory } from "@/services/blogs";
 import { getCommonData } from "../common/commonData";
 import { getIndustryPage } from "./industry";
 import { getIntegrationList } from "../integation/getIntegrationData";
+import axiosInstance from "@/lib/axios";
 
 export interface CrmLikePageDataResponse {
   pageContentRes: any | null;
@@ -97,4 +98,26 @@ export const getIndustryPageData = async (
     integrationList: integrationList?.hero || null,
     blogsByCategory: blogsByCategoryRes?.data || null,
   };
+};
+
+export const getAllIndustries = async (locale: string) => {
+  try {
+    const response = await axiosInstance.get(
+      `industries-pages?locale=${locale}&pagination[page]=1&pagination[pageSize]=100`,
+    );
+    if (
+      Array.isArray(response?.data?.data) &&
+      response?.data?.data?.length > 0
+    ) {
+      return response?.data?.data.map((item: any) => {
+        return {
+          id: item?.id,
+          slug: item?.slug,
+          name: item?.pageName,
+        };
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };

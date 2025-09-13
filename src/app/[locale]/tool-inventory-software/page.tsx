@@ -1,6 +1,5 @@
 import AutmateDoContacts from "@/components/automatedclientagreements/AutmateDoContacts";
 import AutomatedClientHero from "@/components/automatedclientagreements/AutomatedClientHero";
-import DualSlider from "@/components/common/DualSlider";
 import {
   automatedCardData,
   blogList,
@@ -20,7 +19,6 @@ import {
   stopToolsData,
   tool_comparisonData,
   toolBlogData,
-  toolEquipmentTracking,
   toolformData,
   toolsFaq,
   tooltrackingData,
@@ -36,16 +34,143 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import ManageEveryTool from "@/components/toolandequipment/ManageEveryTool";
 import heroImg from "../../../../public/lotties/tool-hero.json";
-
 import Image from "next/image";
+import FieldService from "@/components/crmbussiness/FieldService";
+import scanning_json from "../../../../public/lotties/scanning.json";
 
 export const metadata = {
   title: "Tool Inventory Software to Track Equipment | Contractor+",
   description:
     "Log tools, assign gear to jobs, and reduce loss. Contractor+ keeps your inventory organized and up to date.",
+  keywords: ["Opportunity Tracker for Contractors | Contractor+"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/terms-of-service-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "tool-inventory-software",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/tool-inventory-software",
+  },
 };
-
 const ToolAndTipEquipmentPage = () => {
+  const toolEqupment = {
+    id: 1,
+    title: "A tool tracking system that syncs with the rest of your operation",
+    cardsDetail: [
+      {
+        id: 1,
+        title: "Library-Style Checkouts",
+        isIcon: false,
+        cardImg: { url: "/images/webp/library-style.webp" },
+        content: [
+          {
+            desc: "Assign tools like library books—check out, transfer, and return with a tap. Self-assign or assign to others (with permission).",
+          },
+        ],
+      },
+      {
+        id: 2,
+        subheading: "Manual Logs  ",
+        title: "Fast Scan Workflows",
+        lottieJson: scanning_json,
+        isIcon: false,
+
+        content: [
+          {
+            desc: "Check in/out by scanning a QR label or via Bluetooth presence. No typing. No guesswork.",
+          },
+        ],
+      },
+
+      {
+        id: 3,
+        title: "Role-Based Controls",
+        isIcon: false,
+        cardImg: { url: "/images/webp/role-based.webp" },
+        content: [
+          {
+            desc: "Decide exactly who can view, add, edit, assign, transfer, or retire assets.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Full Chain of Custody",
+        isIcon: false,
+        cardImg: { url: "/images/webp/full-chain.webp" },
+        content: [
+          {
+            desc: "Every assignment, transfer, and return is time and date stamped. You’ll know who had what, when, and where.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Bluetooth Tool Tags",
+        content: [
+          {
+            desc: "Use Contractor+ tags (multiple options) or bring your own. Hop in the truck, run a Truck Scan, and instantly see what’s on board—and what’s missing.",
+          },
+        ],
+        cardImg: { url: "/images/webp/library-5.webp" },
+        isIcon: false,
+        lottieJson: null,
+      },
+      {
+        id: 6,
+        title: "Central Dashboard",
+        content: [
+          {
+            desc: "See every tool and piece of equipment in real time—by job, person, crew, or truck. Find what you need in a couple clicks.",
+          },
+        ],
+        cardImg: { url: "/images/webp/central-deshboard.webp" },
+        isIcon: false,
+        lottieJson: null,
+      },
+      {
+        id: 7,
+        title: "Job & People Linking",
+        content: [
+          {
+            desc: "Tie each asset to a job or team member for instant context.",
+          },
+        ],
+        cardImg: { url: "/images/webp/job-people.webp" },
+        isIcon: false,
+        lottieJson: null,
+      },
+      {
+        id: 8,
+        title: "Asset Value & Billing",
+        content: [
+          {
+            desc: "Track purchase price and current value. Add equipment usage to invoices (hourly, daily, or per job) without hunting for numbers.",
+          },
+        ],
+        cardImg: { url: "/images/webp/assest-value2.webp" },
+        isIcon: false,
+        lottieJson: null,
+      },
+      {
+        id: 9,
+        title: "Bulk Actions",
+        content: [
+          {
+            desc: "Bulk-assign, bulk-return, and bulk-retire tools after a shift or phase wrap.",
+          },
+        ],
+        cardImg: { url: "/images/webp/bulk-action.webp" },
+        isIcon: false,
+        lottieJson: null,
+      },
+    ],
+  };
   return (
     <main className="relative">
       <AutomatedClientHero
@@ -64,8 +189,15 @@ const ToolAndTipEquipmentPage = () => {
       />
       <TrustedService reviews={clientReviews} slug="crm" apiData={false} />
       <SwitchingTool switchingTool={toolManagingData} className="mb-16" />
-      <DualSlider sliderData={toolEquipmentTracking.solutionCards} />
-
+      <div className="relative">
+        <FieldService
+          fieldService={toolEqupment}
+          theme="dark"
+          slug="estimateTheme"
+          apiData={true}
+          mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
+        />
+      </div>
       <div className="relative bg-white pt-16 xl:pt-24">
         <TrackProperties
           ncc={"No credit card required"}

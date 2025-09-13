@@ -3,13 +3,6 @@ import up_arrow_black from "../../../public/lotties/up-arrow-black.json";
 import productivity from "../../../public/lotties/productivity.json";
 import { ClockIcon, UpArrowIcon } from "./Icons";
 
-export const estimateHeroData = [
-  { title: "<9", desc: "Minutes spent on an estimate" },
-  { title: "$100k+", desc: "More in annual profit from fewer underbids" },
-  { title: "2x", desc: "Higher close rate for estimates sent same-day" },
-  { title: "30%", desc: "Reduction in material cost errors" },
-];
-
 export const billingBlogPost = {
   id: 1,
   title: "Business Phone & SMS topics in Contractor+ HQ",
@@ -118,78 +111,10 @@ export const invoiceFaqData = {
   ],
 };
 
-export const estimateSoftwareData = {
-  title: "Not all AI estimate software makes your life easier",
-  subTitle: "Some AI estimators get “close.” Estimatic gets it right.",
-  comaprisons: [
-    {
-      title: "Other Options",
-      comparisonList: [
-        {
-          details:
-            "Uses AI that’s not much different than the free version of ChatGPT",
-        },
-        {
-          details: "Standalone tool with inadequate  add-on features",
-        },
-        {
-          details: "Generic line items that don’t match how you bid",
-        },
-        {
-          details: "Limited supply integrations",
-        },
-        { details: "AI guesses numbers based on who-knows-what" },
-        {
-          details: "Can only read text input",
-        },
-        { details: "Limited customizability" },
-        {
-          details:
-            "$120/mo. for 5 people to use a standalone estimating & invoice tool",
-        },
-      ],
-    },
-    {
-      title: "Your way",
-      comparisonList: [
-        {
-          details: "Built on advanced AI models fine-tuned for estimating	",
-        },
-        {
-          details:
-            "Estimates auto sync to contacts, jobs, and scheduling tools in Contractor+",
-        },
-        {
-          details:
-            "Labor, materials, assemblies, permits, and info-only lines built to your exact format",
-        },
-        {
-          details:
-            "Live pricing from Home Depot, Lowe’s, Menards, Ace, Build.com, ABC Supply",
-        },
-        {
-          details:
-            "Estimates are tied to your real labor rates, cost book, and local material prices",
-        },
-        {
-          details:
-            "Can read photos, blueprints, and drawings for more context about the job",
-        },
-        {
-          details: "Built-in options for labor and material markup",
-        },
-        {
-          details:
-            "$95/mo. for 5 people to use the entire Contractor+ operating system. Only pay for what you use",
-        },
-      ],
-    },
-  ],
-};
 export const billingVsthWayYouCouldData = {
   title: "How you’ve been billing vs. the way you could be",
 
-  comaprisons: [
+  comparisons: [
     {
       title: "The old way",
       comparisonList: [
@@ -314,7 +239,7 @@ export const mileageTrackingData = {
   },
   mobileBtn: "Download FREE App",
   subTitle: null,
-  title: null,
+  title: "Make price a conversation, not a roadblock",
 };
 export const stopToolsData = {
   id: 324,
@@ -547,7 +472,7 @@ export const neverLookBackMileageData = {
       start: 0,
       end: 8,
       suffix: "hours/mo",
-      prefix: "~",
+      prefix: "",
       value: null,
 
       lottieJson: clock,
@@ -929,7 +854,7 @@ export const leadGenerationData = {
   title:
     "Sure, you could hire an SEO agency or contractor… if you like playing roulette",
 
-  comaprisons: [
+  comparisons: [
     {
       title: "Local SEO Agency",
       comparisonList: [

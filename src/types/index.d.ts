@@ -177,3 +177,46 @@ export interface IntegrationItem {
 }
 
 type PromiseParams = Promise<{ slug?: string; locale: string }>;
+declare interface StatisticCardProps {
+  id: number;
+  title: string;
+  subTitle: string;
+}
+
+declare interface Review {
+  id: string | number;
+  profileImg: { url: string };
+  userName?: string;
+  rating: number;
+  review: string;
+}
+
+export type AllFeaturesProps = {
+  id: number;
+  title: string;
+  featuresArray: {
+    id: number;
+    text: string;
+    slug: string;
+    icon: { url: string };
+  }[];
+};
+
+export namespace TermsServiceData {
+  export interface PageDescription {
+    type: string;
+    level: number;
+    children: {
+      text: string;
+      type: string;
+    }[];
+  }
+
+  export interface Data {
+    id: number;
+    pageDescription: PageDescription[];
+    updatedAt: string;
+    createdAt: string;
+    publishedAt: string;
+  }
+}

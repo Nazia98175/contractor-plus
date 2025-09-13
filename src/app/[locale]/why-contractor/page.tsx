@@ -5,6 +5,20 @@ export const metadata = {
   title: "Why Contractor+ | The Only Contractor Operating System",
   description:
     "FSM software helps you keep up. An operating system helps you scale up. Contractor+ is affordable & powerful. No complexity. Start free.",
+  keywords: ["Why Contractor Plus?+"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/why-contractor-og.webp",
+        width: 1920,
+        height: 630,
+        alt: "why-contractor-og",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://v2site.contractorplus.app/why-contractor",
+  },
 };
 const WhyContractorPage = async ({
   params,

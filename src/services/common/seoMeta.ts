@@ -9,6 +9,12 @@ interface SeoDataItem {
     keywords?: string;
     canonicalUrl?: string;
   };
+  seoData: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string;
+    canonicalUrl?: string;
+  };
   hero?: {
     heroTitle?: string;
     subTitle?: string;
@@ -90,5 +96,42 @@ export const getSeoDataBlogs = async (
       return notFound();
     }
     throw new Error(error);
+  }
+};
+
+export const getSeoDataEvent = async (
+  type: string,
+  locale: string,
+  slug: string,
+) => {
+  try {
+    console.log(type, locale, slug);
+    const response = await axiosInstance.get(
+      `${type}?locale=${locale}&filters[eventUrl]=${slug}&populate[SeoMetaData][populate]=*`,
+    );
+    const { data } = response.data;
+    if (!data) {
+      return null;
+    }
+    return data[0];
+  } catch (error) {
+    console.error("Error fetching types", error);
+    throw new Error("Failed to fetch types");
+  }
+};
+
+export const getSeoDataCommon = async (
+  query: string,
+): Promise<SeoDataItem | null> => {
+  try {
+    const response = await axiosInstance.get(`${query}`);
+    const { data } = response.data;
+    if (Array.isArray(data)) {
+      return data[0];
+    }
+    return data;
+  } catch (error) {
+    console.error("Error fetching types", error);
+    throw new Error("Failed to fetch types");
   }
 };

@@ -67,3 +67,59 @@ export const generateSeoMetadataBlogs = ({
     },
   };
 };
+
+export const generateSeoMetadataEvent = ({
+  page,
+  slug,
+}: GenerateSeoMetadataOptions): Metadata => {
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const title =
+    page?.SeoMetaData?.metaTitle || (slug ? `Contractor+ ${slug}` : "");
+
+  const description = page?.SeoMetaData?.metaDescription || "";
+
+  const keywords = page?.SeoMetaData?.keywords || "";
+
+  const canonical =
+    `${baseUrl}${page?.SeoMetaData?.canonicalUrl}` ||
+    `${baseUrl}/${slug || ""}`;
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical,
+    },
+  };
+};
+
+export const generateSeoMetaData = ({
+  page,
+  slug,
+}: GenerateSeoMetadataOptions): Metadata => {
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const title =
+    page?.seoData?.metaTitle ||
+    page?.SeoMetaData?.metaTitle ||
+    (slug ? `Contractor+ ${slug}` : "");
+
+  const description =
+    page?.seoData?.metaDescription || page?.SeoMetaData?.metaDescription || "";
+
+  const keywords = page?.seoData?.keywords || page?.SeoMetaData?.keywords || "";
+
+  const canonical =
+    `${baseUrl}${page?.seoData?.canonicalUrl}` ||
+    `${baseUrl}${page?.SeoMetaData?.canonicalUrl}` ||
+    `${baseUrl}/${slug || ""}`;
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical,
+    },
+  };
+};

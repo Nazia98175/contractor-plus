@@ -15,7 +15,7 @@ const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
 export interface TheHeroProps {
-  hero: any;
+  hero?: any;
   slug?: string;
   heroImg?: any;
   homeCard?: any;
@@ -30,7 +30,6 @@ const CommonHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
   featureTag,
-  apiData = true,
   isShowHeroImg = true,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -81,26 +80,30 @@ const CommonHero: React.FC<TheHeroProps> = ({
       />
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>
-      <CardReveal distance={30} delay={0.1}>
-        <div className="hidden items-center justify-center pb-1 md:flex">
-          <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
-            {featureTag || "Feature Highlight"}
-          </span>
-        </div>
-      </CardReveal>
+      {featureTag && (
+        <CardReveal distance={30} delay={0.1}>
+          <div className="hidden items-center justify-center pb-1 md:flex">
+            <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+              {featureTag || "Feature Highlight"}
+            </span>
+          </div>
+        </CardReveal>
+      )}
       <div
         id="hero"
         className="relative z-50 mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
       >
         <div>
           <div className="relative z-[90] mx-auto px-2 pt-8 md:max-w-[90%] md:pt-0">
-            <CardReveal distance={30} delay={0.1}>
-              <div className="block pb-1 md:hidden">
-                <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
-                  {featureTag || "Feature Highlight"}
-                </span>
-              </div>
-            </CardReveal>
+            {featureTag && (
+              <CardReveal distance={30} delay={0.1}>
+                <div className="block pb-1 md:hidden">
+                  <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+                    {featureTag || "Feature Highlight"}
+                  </span>
+                </div>
+              </CardReveal>
+            )}
             <AdaptiveHeroTitle
               title={hero?.heroTitle || ""}
               className="gradient-2 mb-2 hidden w-fit text-start leading-[140%] font-extrabold sm:mx-auto md:mb-4 md:block md:text-center lg:mb-[26px]"
@@ -183,20 +186,18 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   <div
                     className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}
                   >
-                    <Image
-                      className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
-                      src={heroImg?.url || heroImg}
-                      width={900}
-                      height={616}
-                      alt="crm-hero"
-                      // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-                      priority
-                    />
+                    {heroImg && (
+                      <img
+                        className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
+                        src={heroImg?.url}
+                        alt="crm-hero"
+                      />
+                    )}
+
                     {hero?.overlay && <AnimatedShape />}
                   </div>
                 </div>
               </div>
-              xs
             </CardReveal>
           </>
         )}

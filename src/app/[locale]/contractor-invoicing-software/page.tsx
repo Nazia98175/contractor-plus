@@ -34,6 +34,21 @@ export const metadata = {
   title: "Auto-Update Contractor Invoicing Software | Contractor+",
   description:
     "Living invoices that reflect every signed, time-stamped change order. Capture uninvoiced billables automatically for more revenue.",
+  keywords: ["contractor invoicing software"],
+  openGraph: {
+    images: [
+      {
+        url: "/images/webp/contractor-invoicing-software.webp",
+        width: 1920,
+        height: 630,
+        alt: "contractor-invoicing-software",
+      },
+    ],
+  },
+  alternates: {
+    canonical:
+      "https://v2site.contractorplus.app/contractor-invoicing-software",
+  },
 };
 const BillingPage = async ({
   params,
@@ -42,12 +57,13 @@ const BillingPage = async ({
 }) => {
   const { locale } = await params;
   const [integrationList] = await Promise.all([getIntegrationList(locale)]);
-
+  const hero = {
+    url: "/images/webp/invoicing-billing.webp",
+  };
   return (
     <main className="relative z-10 overflow-hidden">
       <CommonHero
         hero={{
-          featureTag: "Contractor Invoicing Software",
           heroTitle: "Living invoices that instantly reflect every change",
           heroDescription:
             "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
@@ -55,11 +71,13 @@ const BillingPage = async ({
           overlay: true,
           imageMaxWidth: 900,
         }}
-        heroImg="/images/webp/invoicing-billing.webp"
+        featureTag={"Contractor Invoicing Software"}
+        heroImg={hero}
         slug="crm"
         apiData={false}
         commonData={dealflowhero}
       />
+
       <TrustedService
         reviews={dealReviews}
         slug="crm"
@@ -120,7 +138,6 @@ const BillingPage = async ({
             : integrationLogos
         }
       />
-
       <BlogPosts
         data={blogList}
         blogs={billingBlogPost}

@@ -40,10 +40,7 @@ const IndustryHeroSlider: React.FC<IndustryHeroSliderProps> = ({
     >
       {features?.map((feature, index) => (
         <SwiperSlide key={index}>
-          <div className="custom-gradient-border hero-slider overflow-hidden rounded-3xl p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
-            {/* <div className="pointer-events-none absolute right-0 -z-40">
-              {feature.backgroundIcon}
-            </div> */}
+          <div className="custom-gradient-border hero-slider mt-7 overflow-hidden rounded-3xl p-4 backdrop-blur-[26px] transition-opacity duration-500 xl:p-6">
             <div className="mb-6 flex items-center gap-2 xl:mt-2">
               {feature.icon}
               <p className="font-grotesk text-base text-white capitalize">

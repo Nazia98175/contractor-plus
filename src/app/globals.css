@@ -7,6 +7,7 @@
   --font-inter: "Inter", sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
   --font-work: "Work Sans", sans-serif;
+  --font-portar: "portar", sans-serif;
 
   /* COLORS */
   --color-secondary: #adb1b5;
@@ -15,6 +16,7 @@
   --color-winterWay: #3f464b;
   --color-mana: #838383;
   --color-boogie: #0f9d4e;
+  --color-blackCat: #3b3b3b;
   --color-silver: #efefef;
   --color-nyanza: #e9ffd5;
   --color-pestering: #0d921c;
@@ -62,6 +64,7 @@
   --color-darkKnight: #101b25;
   --color-kuroiBlack: #0c0d11;
   --color-shutter: #1f1f27;
+  --color-fuscous: #4e4e4e;
   --color-reflection: #cbd5e1;
   --color-romanRed: #f21314;
   --color-vivaldi: #ef3a3f;
@@ -75,6 +78,7 @@
   --color-redPigment: #ee1e25;
   --color-tomato: #c01a06;
   --color-decemberSky: #d2d4d6;
+  --color-ironsideGrey: #656565;
   --color-darkBlack: #2a2a2e;
   --color-lightGrey: #505050;
   --color-monstrousGreen: #21c912;
@@ -90,6 +94,7 @@
   --color-sweetGarden: #5ed5a8;
   --color-dancingJewel: #439777;
   --color-pantone2: #ff9800;
+  --color-demo: #777;
   --color-ancestral: #d0d0d0;
   --color-phantom: #e99c44;
   --color-heatherGrey: #9f9fa1;
@@ -100,6 +105,7 @@
   --color-fiftieth: #515151;
   --color-oldMoney: #275947;
   --color-stiletto: #303033;
+  --color-gray: #535353;
   --color-sangoPink: #f4ada5;
   --color-majorelleGardens: #34755c;
   --color-irisIce: #e3e6f0;
@@ -150,6 +156,8 @@
   --color-tinColor: #919191;
   --color-ironFixture: #5c5c5c;
   --color-sealGrey: #878c95;
+  --color-stratoSphere: #606060;
+  --color-lightGray: #a9a9a9;
   --color-rgba1: #ffffff99;
   --color-rgba3: #ffffff33;
   --color-rgba4: #f2131433;
@@ -165,6 +173,8 @@
   --color-rgba14: #00000052;
   --color-rgba15: #0c0d116b;
   --color-rgba16: #0d0e1218;
+  --color-rgba17: #3f464b1a;
+  --color-rgba18: #ffffff03;
 
   /* BREAKPOINTS */
   --breakpoint-xxs: 320px;
@@ -230,6 +240,7 @@
     rgba(243, 243, 243, 0) 33.34%,
     rgba(238, 30, 37, 0.4) 138.08%
   );
+
   --background-image-faq-bg-2: linear-gradient(
     89deg,
     #ed6b6b3b 0%,
@@ -293,6 +304,12 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Portar";
+  src: url("/fonts/porter-sans-inline-block.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   @apply bg-kuroiBlack font-jakarta relative isolate;
 }
@@ -341,7 +358,7 @@ body {
   @apply font-montserrat w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg px-6 py-2 font-extrabold tracking-[0.1px] text-white italic transition duration-300 ease-in-out hover:scale-95 sm:flex sm:w-fit sm:py-2.5;
 }
 .header-li {
-  @apply font-montserrat lg:text-superSilver text-lightBlack text-xs font-semibold xl:text-sm 2xl:text-base;
+  @apply font-montserrat lg:text-superSilver text-lightBlack text-sm font-semibold 2xl:text-base;
 }
 .integration-detail-bg {
   @apply relative flex h-20 w-20 items-center justify-center rounded-full bg-center p-4 md:h-[108px] md:w-[108px] md:p-[18px];
@@ -394,6 +411,15 @@ body {
 }
 .opportunity-card {
   @apply text-phantom text-center text-[22px] leading-[120%] font-semibold md:text-[28px] lg:text-[35px] xl:text-[42px];
+}
+.how-it-work-aff {
+  @apply text-secondary mb-1 text-center text-lg font-medium tracking-[-0.48px] duration-300 md:text-xl lg:text-2xl xl:px-30;
+}
+.how-it-work-description {
+  @apply text-wallStreet mb-1 text-center text-sm font-medium duration-300 sm:text-base xl:px-30;
+}
+.how-it-work-icon {
+  @apply mt-[18px] flex rotate-45 justify-center duration-300;
 }
 @keyframes bounce {
   0%,
@@ -1907,12 +1933,18 @@ button {
 .video-section-wrapper.scroll-active h3 {
   color: #0c0d11 !important;
 }
+.video-section-wrapper.scroll-active .how-it-work-aff {
+  color: white !important;
+}
 .video-section-wrapper p {
   color: #656c73;
   transition: color 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active p {
   color: #656c73 !important;
+}
+.video-section-wrapper.scroll-active .how-it-work-description {
+  color: white !important;
 }
 .video-section-wrapper svg path {
   fill: #cdcdcd;
@@ -1927,7 +1959,7 @@ button {
   transition: transform 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active .icon-span {
-  transform: rotate(-45deg);
+  transform: rotate(90deg);
 }
 
 .gradient-custom-2 {
@@ -2017,4 +2049,113 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+body.menu-open .asw-menu-btn {
+  display: none !important;
+}
+body.menu-open .back-to-top {
+  display: none !important;
+}
+.developer-api-hero {
+  background: linear-gradient(180deg, #fff -12.5%, #5c171a 134.17%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.developer-api-hero .line {
+  background: linear-gradient(180deg, #fff -12.5%, #5c171a 134.17%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.api-card-heading {
+  background: linear-gradient(91deg, #8a2b32 0%, #fff 107.81%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.api-card-heading .line {
+  background: linear-gradient(91deg, #8a2b32 0%, #fff 107.81%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-line {
+  background: radial-gradient(50% 8050% at 50% 50%, #999 0%, #0c0d11 100%);
+}
+.AffiliatesHero {
+  background: linear-gradient(
+    181deg,
+    rgba(238, 30, 37, 0.4) 38.31%,
+    rgba(238, 30, 37, 0) 134.59%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+.AffiliatesHeroBackground {
+  background: linear-gradient(
+    181deg,
+    rgba(238, 30, 37, 0.4) 38.31%,
+    rgba(238, 30, 37, 0) 134.59%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(40.5px);
+}
+.AffiliatesHero-subheading {
+  background: linear-gradient(
+    181deg,
+    rgba(238, 30, 37, 0.4) 38.31%,
+    rgba(238, 30, 37, 0) 134.59%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+}
+.AffiliatesHero-layers {
+  background: linear-gradient(270deg, rgba(12, 13, 17, 0) 0%, #0c0d11 100%);
+}
+.how-it-work-affiliates {
+  background:
+    linear-gradient(
+      276.94deg,
+      rgba(0, 0, 0, 0) -8.06%,
+      rgba(238, 30, 37, 0.4) 83.81%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.how-it-work-affiliates .line {
+  background:
+    linear-gradient(
+      276.94deg,
+      rgba(0, 0, 0, 0) -8.06%,
+      rgba(238, 30, 37, 0.4) 83.81%
+    ),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.story-section {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.story-section .line {
+  background: linear-gradient(180deg, #a9a9a9 25%, #0c1711 177.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

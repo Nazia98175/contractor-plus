@@ -74,6 +74,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);
+  console.log("edsz0", comparison);
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">

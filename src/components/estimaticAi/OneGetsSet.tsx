@@ -2,8 +2,17 @@ import Image from "next/image";
 import { EstimateDividerIcon, TripleChevronIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
+interface OneGetsSetContent {
+  title?: string;
+  subTitle?: string;
+  subTitleBold?: string;
+  subTitle2?: string;
+}
 
-const OneGetsSet = () => {
+interface OneGetsSetProps {
+  content?: OneGetsSetContent;
+}
+const OneGetsSet: React.FC<OneGetsSetProps> = ({ content }) => {
   return (
     <div className="main-container overflow-hidden sm:pb-8 md:pb-16 xl:mt-7 xl:pb-20">
       <CardReveal
@@ -14,12 +23,7 @@ const OneGetsSet = () => {
         <span className="hidden md:block">
           <TripleChevronIcon />
         </span>
-        <span className="hidden md:block">
-          One gets sent. The other gets redone.
-        </span>
-        <span className="mx-auto block max-w-[296px] !text-[26px] sm:!text-[30px] md:hidden">
-          Finished estimate <br /> output
-        </span>
+        {content?.title || "One gets sent. The other gets redone"}
         <span>
           <TripleChevronIcon />
         </span>
@@ -76,15 +80,19 @@ const OneGetsSet = () => {
             height={420}
             src="/images/webp/redone-estimatic.webp"
             alt="Other AI estimating software"
-            className="z-0 object-cover xl:-mt-1"
+            className="z-0 mx-auto object-cover xl:-mt-1"
           />
         </div>
       </div>
 
       <Copy animateOnScroll={true}>
         <h4 className="text-dull mx-auto mt-7 max-w-[742px] text-center text-sm md:text-xl lg:text-[32px]">
-          Don’t <span className="text-white">hand off</span> control of your
-          estimating process to a tool that can’t bid like you do
+          {content?.subTitle || "Don’t"}{" "}
+          <span className="text-white">
+            {content?.subTitleBold || "hand off"}
+          </span>{" "}
+          {content?.subTitle2 ||
+            "control of your estimating process to a tool that can’t bid like you do"}
         </h4>
       </Copy>
     </div>

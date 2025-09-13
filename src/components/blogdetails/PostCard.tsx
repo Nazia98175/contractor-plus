@@ -4,12 +4,10 @@ import Link from "next/link";
 const PostCard = ({ blogData }: { blogData: any }) => {
   return (
     <article className="relative z-30 mx-auto flex flex-col gap-5 sm:max-w-[90%] sm:flex-row md:max-w-[80%] xl:max-w-[967px]">
-      <Image
+      <img
         src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/webp/review-profile-7.webp"}`}
         alt="User Profile"
-        width={90}
-        height={90}
-        className="h-[90px] w-[90] rounded-sm sm:rounded-full"
+        className="h-[90px] w-[90] rounded-sm object-cover sm:rounded-full"
       />
       <div className="space-y-3.5">
         <h5 className="font-inter md:ext-2xl text-xl font-medium tracking-[0.1px]">

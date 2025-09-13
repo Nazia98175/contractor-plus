@@ -35,6 +35,9 @@ import TrackProfiles from "@/components/propertyprofiles/TrackProfiles";
 import Image from "next/image";
 
 const PropertyProfile = () => {
+  const hero = {
+    url: "/images/webp/property-profiles.webp",
+  };
   return (
     <div>
       <CommonHero
@@ -48,7 +51,7 @@ const PropertyProfile = () => {
           imageMaxWidth: 900,
         }}
         featureTag="Property Management CRM"
-        heroImg="/images/webp/property-profiles.webp"
+        heroImg={hero}
         slug="crm"
         commonData={dealflowhero}
         apiData={false}
@@ -62,6 +65,7 @@ const PropertyProfile = () => {
         theme="dark"
         mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto"
       />
+
       <div className="bg-white">
         <TrackProfiles ncc="" trackProperties={propertyFeatureData} />
         <RunWithContractor kindAdorable={propertyaddressContractorData} />

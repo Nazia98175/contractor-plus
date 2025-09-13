@@ -15,7 +15,10 @@ import high_end from "../../../public/lotties/high-end.json";
 import answer from "../../../public/lotties/answer.json";
 import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
 import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
+import account_manager from "../../../public/lotties/ai-account-manager.json";
+import ranking_heatmaps from "../../../public/lotties/ranking-heatmaps.json";
 import LottieAnimation from "../common/LottieAnimation";
+import FreeAccountButton from "../common/FreeAccountButton";
 
 const CombinesPowerfulAiSlider = () => {
   const [topSwiper, setTopSwiper] = useState<any>(null);
@@ -189,15 +192,10 @@ const CombinesPowerfulAiSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
           <div className="relative mx-auto w-full max-w-[536px] overflow-hidden">
-            <Image
-              unoptimized
-              sizes="(max-width: 768px) 668px, (min-width: 769px) 50vw"
-              width={668}
-              height={300}
-              priority
-              src={"/images/webp/ranking-heatmaps.webp"}
-              alt="Slide Image"
-              className="mx-auto w-full object-cover"
+            <LottieAnimation
+              className="mx-auto h-full w-full"
+              loop={false}
+              animationData={ranking_heatmaps}
             />
             <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
           </div>
@@ -239,15 +237,10 @@ const CombinesPowerfulAiSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="relative !flex !h-auto flex-col items-center justify-center">
           <div className="absolute top-[60%] h-[100px] w-[140%] max-w-full bg-white blur-[47px] sm:w-full md:top-[67%] md:h-[250px] md:blur-[100px] lg:top-[70%] lg:h-[281px]"></div>
-          <Image
-            unoptimized
-            // sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
-            width={900}
-            height={382}
-            priority
-            src={"/images/webp/account-manager-ai.webp"}
-            alt="Slide Image"
+          <LottieAnimation
             className="mx-auto w-full max-w-[713px] object-cover"
+            loop={false}
+            animationData={account_manager}
           />
         </SwiperSlide>
       </Swiper>

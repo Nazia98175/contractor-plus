@@ -1,6 +1,7 @@
 import {
   constructionBookkeepingServices,
   platforms,
+  propertyaddressContractorData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -27,6 +28,7 @@ import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -98,6 +100,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
+
   return (
     <>
       <div id="home-page-wrapper-2">
@@ -152,17 +155,26 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               <TrackProperties
                 ncc={pageData.ncc}
                 trackProperties={trackProperties}
+                slug={useParams.slug}
               />
 
-              <LikeYouDoContacts trackProperties={pageData.trackProperties} />
+              {useParams.slug !== "property-profile" && (
+                <LikeYouDoContacts
+                  trackProperties={pageData.trackProperties}
+                  slug={useParams.slug}
+                />
+              )}
 
               <HowContractorWork
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties}
+                slug={useParams.slug}
               />
             </>
           )}
-
+          {useParams.slug === "property-profile" && (
+            <RunWithContractor kindAdorable={propertyaddressContractorData} />
+          )}
           <KindAdorable
             slug={pageData.slug}
             kindAdorable={pageData.comparison}
@@ -224,7 +236,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         </div>
 
         <BlogPosts
-          data={pageData.blogsList}
+          data={pageData.blogsList || []}
           blogs={pageData.blogs}
           className="mt-7 mb-20 md:mt-9"
           classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"

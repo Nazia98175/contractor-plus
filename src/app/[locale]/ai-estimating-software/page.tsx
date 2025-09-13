@@ -1,22 +1,11 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
-import {
-  blogList,
-  dealReviews2,
-  estimateFaq,
-  estimateFormData,
-  estimaticBlogHeadingData,
-  estimaticCardData,
-  estimaticControlData,
-  estimaticReviewsAi,
-  platforms,
-} from "@/components/common/Helper";
+import CommonFormField from "@/components/common/CommonFormField";
+import { estimaticReviewsAi, platforms } from "@/components/common/Helper";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
-import { estimateSoftwareData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import FieldService from "@/components/crmbussiness/FieldService";
-import IndustryService from "@/components/crmbussiness/IndustryService";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import TrustedService from "@/components/crmbussiness/TrustedService";
@@ -24,14 +13,28 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getEstimaticPageData } from "@/services/estimatic-ai/getestimaticData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Estimatic AI Estimating Software | Contractor+",
-  description:
-    "Create accurate estimates in minutes with Estimatic AI. Automate material takeoffs, pricing, and proposals with AI estimating that wins jobs.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `estimatic-ai?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
+
 const EstimaticAiPage = async ({
   params,
 }: {
@@ -41,15 +44,16 @@ const EstimaticAiPage = async ({
 
   const {
     pageContent,
-    heroImg,
     reviews,
-    comaprisonList,
+    comparisonList,
     problemSolution,
     commonProblem,
     industriesData,
     thousandReviews,
+    emailSignupSection,
     faqs,
     commonData,
+    blogs,
   } = await getEstimaticPageData(useParams?.locale);
   return (
     <main id="home-page-wrapper-2">
@@ -57,41 +61,44 @@ const EstimaticAiPage = async ({
         id="home-page-view-port-screen-estimatic-ai"
         className="relative opacity-0"
       >
-        <EstimaticHero />
+        <EstimaticHero
+          hero={pageContent}
+          createBtn={commonData?.getStartedFreeBtn}
+          createMobileBtn={commonData?.mobileBtn}
+          nccTxt={commonData?.nccTxt}
+          estimateHeroData={pageContent?.resultStatsEstimatic || []}
+        />
         <TrustedService
-          reviews={estimaticReviewsAi}
           slug="crm"
-          className="pb-6 lg:py-6 lg:pb-3.5"
           apiData={false}
+          reviews={reviews?.reviews || []}
+          className="pb-6 lg:pt-6 lg:pb-3.5"
         />
         <RunWithContractor
-          kindAdorable={estimateSoftwareData}
+          kindAdorable={comparisonList}
           variant="dark"
           icon={true}
           issubHeadingShow={true}
         />
       </div>
-      <OneGetsSet />
+      <OneGetsSet content={comparisonList?.comparison} />
       <div className="relative hidden md:block">
         <FieldService
-          fieldService={estimaticCardData}
+          fieldService={problemSolution}
           theme="dark"
           mainClassName="text-center "
         />
       </div>
       <div className="mb-12 block md:hidden">
         <OverlapCardMobileViewChild
-          fieldService={estimaticCardData}
+          fieldService={problemSolution}
           theme="dark"
           apiData={true}
           mainClassName="text-center "
         />
       </div>
       <div className="relative overflow-hidden">
-        <SwitchingTool
-          className="pb-[113px]"
-          switchingTool={estimaticControlData}
-        />
+        <SwitchingTool className="pb-[113px]" switchingTool={commonProblem} />
         <ContractorIndustry
           contractorIndustry={industriesData?.data?.Industries}
         />
@@ -112,33 +119,44 @@ const EstimaticAiPage = async ({
       </div>
       <AwardsTagsImg className="sm:mt-14" />
       <ThousandsReviews
-        data={dealReviews2}
-        reviews={dealReviews2.reviews}
+        data={thousandReviews}
+        reviews={thousandReviews?.reviews}
         variant="secondary"
-        apiData={false}
       />
-      <IndustryService
-        createBtn={"Get started FREE"}
-        mobileBtn={"Download FREE App"}
-        ncc={"No credit card required"}
-        data={estimateFormData}
-        showClouds={false}
-        className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
-        variantBtn="dark"
-      />
+      <div className="pt-20 pb-10 sm:pb-[75px] lg:pt-[110px] xl:pt-[120px]">
+        <CommonFormField
+          variantBtn="primary"
+          variant="default"
+          title={
+            emailSignupSection?.title ||
+            "The AI estimate generator that will change your business forever"
+          }
+          subTitle={
+            emailSignupSection?.subTitle ||
+            "Get started with Estimatic AI in Contractor+ today."
+          }
+          placeholder={emailSignupSection?.placeholder || "Your Email"}
+          createBtn={"Get Started Free"}
+          mobileBtn={"Download FREE App"}
+          ncc={"No credit card required"}
+        />
+      </div>
+
       <TrustBar
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"
       />
-      <Faq
-        faq={estimateFaq}
-        classNameAnswer="pt-1"
-        mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-5 sm:pb-10"
-        TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
-      />
+      <div className="relative overflow-hidden">
+        <Faq
+          faq={faqs}
+          classNameAnswer="pt-1"
+          mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-5 sm:pb-10"
+          TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+        />
+      </div>
       <BlogPosts
-        data={blogList}
-        blogs={estimaticBlogHeadingData}
+        data={blogs?.data || []}
+        blogs={pageContent?.blogs}
         className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>

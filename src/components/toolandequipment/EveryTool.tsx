@@ -85,7 +85,7 @@ const EveryTool = (cardsData: any) => {
               Send a tool to a person, job, or truck—instantly logged
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -103,7 +103,7 @@ const EveryTool = (cardsData: any) => {
               Scan QR or detect via Bluetooth; capture timestamp
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -121,7 +121,7 @@ const EveryTool = (cardsData: any) => {
               See who has it while it’s in the field
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -140,7 +140,7 @@ const EveryTool = (cardsData: any) => {
               Hand off mid-job with a clean chain of custody
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -158,7 +158,7 @@ const EveryTool = (cardsData: any) => {
               Scan once—done (and fully logged)
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -177,7 +177,7 @@ const EveryTool = (cardsData: any) => {
               usage
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>

@@ -50,12 +50,10 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
       className={`${bgClass} card-shine relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 md:flex-row`}
     >
       {!!imgUrl && (
-        <Image
+        <img
           src={imgUrl}
           alt={blog?.blogTitle}
-          width={170}
-          height={170}
-          className="h-full w-full rounded-md object-cover md:max-w-[100px] lg:max-w-[170px]"
+          className="h-full max-h-[170px] min-h-[170px] w-full rounded-md object-cover md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
         />
       )}
 
@@ -66,12 +64,12 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
         </p>
 
         <h3
-          className={`${textClass} font-jakarta text-base font-medium md:text-sm lg:text-base`}
+          className={`${textClass} font-jakarta line-clamp-2 text-base font-medium md:text-sm lg:text-base`}
         >
           {blog?.blogTitle}
         </h3>
 
-        <p className="text-wallStreet max-w-[300px] truncate pt-1 text-xs sm:max-w-[240px]">
+        <p className="text-wallStreet line-clamp-1 max-w-[300px] truncate pt-1 text-xs sm:max-w-[240px]">
           {blog?.shortDescription}
         </p>
       </div>

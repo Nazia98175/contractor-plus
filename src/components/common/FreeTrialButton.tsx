@@ -1,10 +1,11 @@
+"use client";
 import { usePathname } from "next/navigation";
 import ButtonLoader from "./ButtonLoader";
 import { SideIcon } from "./Icons";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 interface FreeAccountButtonProps {
   className?: string;
-  text: string;
+  text?: any;
   showIcon?: boolean;
   type?: "button" | "submit" | "reset";
 }

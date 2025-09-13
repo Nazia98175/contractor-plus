@@ -50,7 +50,9 @@ const EventsDirectoryHero = ({ events }: any) => {
       ? events.map((item: any) => ({
           id: item?.id,
           url: item?.eventUrl ?? "",
-          imgUrl: item?.eventImages[0]?.url ?? "",
+          imgUrl: item?.eventImages
+            ? item?.eventImages[0]?.url
+            : "/images/webp/snow.webp",
           heading: item?.eventName ?? "",
           place: `${formatDateRange(item?.startDate, item?.endDate) + " • " + item?.location}`,
           description: item?.location ?? "",
@@ -70,9 +72,8 @@ const EventsDirectoryHero = ({ events }: any) => {
           </button>
         )}
         <Swiper
-          slidesPerView={2}
+          slidesPerView={1}
           spaceBetween={30}
-          effect={"fade"}
           navigation={{
             nextEl: `.event-hero-navigation-next`,
             prevEl: `.event-hero-navigation-prev`,

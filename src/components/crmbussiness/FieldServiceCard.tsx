@@ -135,8 +135,8 @@ const FieldServiceCard: React.FC<Props> = ({
           {service?.lottieJson ? (
             <LottieAnimation
               ref={setLottieRef(idx)}
-              loop={service?.isLoop ?? false} // Changed to false since we'll control playback
-              autoplay={false} // Changed to false since we'll control playback
+              loop={service?.isLoop ?? false}
+              autoplay={false}
               animationData={service?.lottieJson}
             />
           ) : service?.cardImg &&
@@ -154,7 +154,6 @@ const FieldServiceCard: React.FC<Props> = ({
               className="h-auto w-full rounded-lg object-cover"
               unoptimized
               priority
-              // sizes="(max-width: 768px) 300px, min(768px, 300px)"
             />
           ) : (
             <Image
@@ -165,7 +164,6 @@ const FieldServiceCard: React.FC<Props> = ({
               className="h-auto w-full rounded-lg object-cover"
               unoptimized
               priority
-              // sizes="(max-width: 768px) 300px, min(768px, 300px)"
             />
           )}
         </div>
@@ -178,7 +176,6 @@ const FieldServiceCard: React.FC<Props> = ({
             height={302}
             unoptimized
             priority
-            // sizes="(max-width: 768px) 300px, min(768px, 300px)"
             className="!hidden h-auto w-full max-w-[290px] object-cover md:!block lg:max-w-[370px] xl:max-w-[518px]"
           />
         </>

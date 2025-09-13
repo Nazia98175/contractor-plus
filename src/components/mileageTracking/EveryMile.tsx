@@ -84,7 +84,7 @@ const EveryMile = (cardsData: any) => {
               One tap to begin tracking on mobile
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -102,7 +102,7 @@ const EveryMile = (cardsData: any) => {
               Stop with a tap; auto‑logged in your history
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -120,7 +120,7 @@ const EveryMile = (cardsData: any) => {
               Fix a missed start/stop or add a note
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -139,7 +139,7 @@ const EveryMile = (cardsData: any) => {
               Choose a date range, get totals by person/team
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>
@@ -157,7 +157,7 @@ const EveryMile = (cardsData: any) => {
               CSV/PDF out, multiply by IRS rate, reimburse with confidence
             </p>
           </Copy>
-          <span className="icon-span mt-[18px] flex justify-center duration-300">
+          <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />
           </span>
         </div>

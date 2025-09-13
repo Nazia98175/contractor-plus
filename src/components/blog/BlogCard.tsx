@@ -63,12 +63,10 @@ const BlogCard: React.FC<BlogCardProps> = ({
       onClick={onClick}
     >
       <div className={`${styles.imageWrapper}`}>
-        <Image
+        <img
           src={imgSrc}
           alt={title || "blog cover"}
-          width={400}
-          height={240}
-          className="h-full min-h-[240px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[150px]"
+          className="h-full max-h-[240px] min-h-[240px] w-full rounded-lg object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[240px]"
         />
       </div>
 
@@ -83,7 +81,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </div>
 
         <div className="my-2 flex items-start justify-between sm:my-3">
-          <h3 className={`${styles.title} capitalize`}>{title}</h3>
+          <h3 className={`${styles.title} line-clamp-1 capitalize`}>{title}</h3>
           <CardArrowIcon className="stroke-eerieBlack h-6 w-6 max-w-6 min-w-6 transition-all duration-200 ease-in group-hover:-translate-y-1.5" />
         </div>
 
@@ -121,11 +119,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
       className={`${styles.wrapper} card-shine group relative overflow-hidden`}
     >
       <div className={`${styles.imageWrapper}`}>
-        <Image
+        <img
           src={imgSrc}
           alt={title || "blog cover"}
-          width={400}
-          height={240}
           className="h-full min-h-[240px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:min-h-[150px]"
         />
       </div>

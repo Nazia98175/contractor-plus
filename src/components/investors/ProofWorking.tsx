@@ -14,8 +14,16 @@ import Copy from "../common/Copy";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-
-const ProofWorking = () => {
+interface ProofWorkingProps {
+  title: string;
+  desc: string;
+  buttomText: string;
+}
+const ProofWorking: React.FC<ProofWorkingProps> = ({
+  title,
+  desc,
+  buttomText,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline>(null);
   // Add missing refs
@@ -127,21 +135,17 @@ const ProofWorking = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-full max-w-[1224px] px-4 pt-20 md:py-20">
+    <div className="mx-auto w-full max-w-[1240px] px-4 pt-20 md:py-20">
       <div className="pt-5 pb-[57px] md:py-10">
         <Copy animateOnScroll={true}>
           <h2 className="text-mana text-center text-2xl font-semibold sm:text-3xl md:text-[40px] lg:text-[52px]">
-            Why Contractor+?{" "}
+            {title || "Why Contractor+?"}
           </h2>
         </Copy>
         <Copy animateOnScroll={true}>
           <p className="text-ironFixture pt-3 text-center text-sm font-semibold sm:text-lg md:text-xl lg:text-2xl">
-            We're the first and only OS for contractors. A connected system that
-            moves as one cohesive engine to run the entire business. Contractor+
-            removes every point of friction in the operation by automating the
-            tasks, handoffs, and updates that usually slip through the cracks.
-            It's not a collection of point solutions, but one solution synced
-            between each module.{" "}
+            {desc ||
+              "We're the first and only OS for contractors. A connected system that moves as one cohesive engine to run the entire business. Contractor+ removes every point of friction in the operation by automating the tasks, handoffs, and updates that usually slip through the cracks. It's not a collection of point solutions, but one solution synced between each module."}
           </p>
         </Copy>
       </div>
@@ -151,7 +155,7 @@ const ProofWorking = () => {
       >
         <div
           style={{ willChange: "position" }}
-          className="sticky top-[100px] h-[100vh] w-full"
+          className="sticky top-[100px] h-dvh w-full"
         >
           <Copy animateOnScroll={true}>
             <h3 className="text-mana pb-3 text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
@@ -370,9 +374,8 @@ const ProofWorking = () => {
           </div>
         </div>
       </div>
-      <p className="ccc mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
-        Now imagine what we'll do with <br className="block sm:hidden" /> real
-        capital.
+      <p className="proof-working mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
+        {buttomText || "Now imagine what we'll do with real capital."}
       </p>
     </div>
   );

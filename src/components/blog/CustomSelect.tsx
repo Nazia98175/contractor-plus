@@ -73,7 +73,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           )}
         </span>
 
-        <span className="text-decemberSky w-full text-start tracking-[0.1px]">
+        <span className="text-decemberSky w-full truncate text-start tracking-[0.1px]">
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <span className="border-wallStreet flex h-full items-center justify-center border-l">

@@ -7,7 +7,7 @@ import TrustedServiceCard from "./TrustedServiceCard";
 import Copy from "../common/Copy";
 
 interface TheReviewProps {
-  reviews: any;
+  reviews?: any;
   slug?: string;
   className?: string;
   apiData?: boolean;

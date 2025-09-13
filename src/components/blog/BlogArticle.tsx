@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import BlogCard from "./BlogCard";
+import NoBlogFound from "../common/NoBlogFound";
 
 const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
   blogsList,
   blogsData,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 3; // Blogs to show in each page
+  const pageSize = 6; // Blogs to show in each page
 
   const totalPages = Math.ceil(blogsData.length / pageSize);
 
@@ -36,11 +37,7 @@ const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
           ))}
         </div>
       ) : (
-        <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-10 text-center">
-          <p className="text-alice text-sm">
-            No blogs found. Try a different search or category.
-          </p>
-        </div>
+        <NoBlogFound />
       )}
 
       {/* Pagination */}

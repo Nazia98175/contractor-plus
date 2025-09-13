@@ -7,33 +7,32 @@ import TheProblem from "@/components/investors/TheProblem";
 import WhatNext from "@/components/investors/WhatNext";
 import WhyNow from "@/components/investors/WhyNow";
 import WinTeam from "@/components/investors/WinTeam";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getInvestorsData } from "@/services/investors/getInvestorsData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React from "react";
-
-export const metadata = {
-  title: "The first Operating System for build & service contractors",
-  description:
-    " Contractor+ is the category disruptor the $1T field service market has needed. We've built what Jobber, Housecall Pro, and ServiceTitan couldn't: a platform contractors actually love.",
-  keywords: ["Investors"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/investors-og.webp",
-        width: 1920,
-        height: 630,
-        alt: "investors-og",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/investors",
-  },
-};
 interface InvestorsPageProps {
   params: Promise<{
     locale: string;
   }>;
 }
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `investor?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
+
 export default async function InvestorsPage({ params }: InvestorsPageProps) {
   const { locale } = await params;
   const {
@@ -46,7 +45,7 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     whatNext,
     whyThisTeam,
   } = await getInvestorsData(locale);
-  console.log("edsx", whyThisTeam);
+
   return (
     <main id="home-page-view-port-screen">
       <div

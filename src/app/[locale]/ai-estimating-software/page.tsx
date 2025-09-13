@@ -13,28 +13,27 @@ import EstimaticHero from "@/components/estimaticAi/EstimaticHero";
 import OneGetsSet from "@/components/estimaticAi/OneGetsSet";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ContractorIndustry from "@/components/homepage/ContractorIndustry";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getEstimaticPageData } from "@/services/estimatic-ai/getestimaticData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Estimatic AI Estimating Software | Contractor+",
-  description:
-    "Create accurate estimates in minutes with Estimatic AI. Automate material takeoffs, pricing, and proposals with AI estimating that wins jobs.",
-  keywords: ["ai estimating software"],
-  // openGraph: {
-  //   images: [
-  //     {
-  //       url: "/images/webp/local-seo-og.webp",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: "Local SEO for Contractors",
-  //     },
-  //   ],
-  // },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/ai-estimating-software",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `estimatic-ai?locale=${resolvedParams.locale}&populate=*`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+}
 
 const EstimaticAiPage = async ({
   params,

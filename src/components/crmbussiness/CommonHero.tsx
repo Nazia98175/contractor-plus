@@ -133,6 +133,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
               <div className="relative z-[90] flex flex-col items-center justify-center">
                 <FreeTrialButton
                   showIcon={true}
+                  className="!flex"
                   text={"Get a bookkeeping quote"}
                 />
               </div>
@@ -174,7 +175,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   loop={true}
                   className="mx-auto w-full max-w-[550px]"
                 />
-                <AnimatedShape className="top-[-1%]" />
+                {/* <AnimatedShape className="top-[-1%]" /> */}
               </>
             </div>
           </CardReveal>

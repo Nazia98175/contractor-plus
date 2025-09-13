@@ -17,13 +17,30 @@ gsap.registerPlugin(ScrollTrigger);
 interface ProofWorkingProps {
   title: string;
   desc: string;
-  buttomText: string;
+  title2: string;
+  desc2: string;
+  items: ProofItem[];
 }
+interface ProofItem {
+  title: string;
+  desc: string;
+}
+
 const ProofWorking: React.FC<ProofWorkingProps> = ({
   title,
   desc,
-  buttomText,
+  title2,
+  desc2,
+  items,
 }) => {
+  const icons = [
+    ProofIcon1,
+    ProofIcon2,
+    ProofIcon3,
+    ProofIcon4,
+    ProofIcon5,
+    ProofIcon6,
+  ];
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline>(null);
   // Add missing refs
@@ -133,9 +150,18 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+  const chunkArray = (arr: ProofItem[], size: number) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const rows = chunkArray(items, 2);
 
   return (
-    <div className="mx-auto w-full max-w-[1240px] px-4 pt-20 md:py-20">
+    <div className="mx-auto w-full max-w-[1240px] px-4 py-20">
       <div className="pt-5 pb-[57px] md:py-10">
         <Copy animateOnScroll={true}>
           <h2 className="text-mana text-center text-2xl font-semibold sm:text-3xl md:text-[40px] lg:text-[52px]">
@@ -159,13 +185,13 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
         >
           <Copy animateOnScroll={true}>
             <h3 className="text-mana pb-3 text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-              Proof it's working
+              {title2 || "Proof it's working"}
             </h3>
           </Copy>
           <Copy animateOnScroll={true}>
             <p className="text-ironFixture pt-3 pb-[71px] text-center text-lg font-bold">
-              This isn't another FSM software. We built something contractors
-              use, love, and stick with.
+              {desc2 ||
+                "This isn't another FSM software. We built something contractors use, love, and stick with."}
             </p>
           </Copy>
 
@@ -186,197 +212,90 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
             style={{ willChange: "transform, opacity" }}
           />
           {/* desktop-view  */}
-          <div className="flex flex-col-reverse items-center justify-between gap-10 sm:mb-8 sm:gap-4 lg:flex-row">
-            <div
-              ref={(el) => {
-                leftStatsRef.current[0] = el;
-              }}
-              className="lg:mix-w-[320px] w-full max-w-[228px] sm:max-w-[320px]"
-              style={{ willChange: "transform, opacity" }}
-            >
-              <div className="relative pr-[61px] sm:pr-0">
-                <span className="absolute -right-[9%] bottom-0 sm:-right-20">
-                  <ProofIcon1 />
-                </span>
+          {rows.map((pair, rowIndex) => {
+            const [left, right] = pair;
 
-                <h3 className="py-1 text-end text-base font-semibold text-white">
-                  $1M+ ARR
-                </h3>
+            return (
+              <div
+                key={rowIndex}
+                className="mb-8 flex flex-col-reverse items-center justify-between gap-10 sm:gap-4 lg:flex-row"
+              >
+                {/* Left */}
+                {left && (
+                  <div
+                    ref={(el) => {
+                      leftStatsRef.current[rowIndex] = el;
+                    }}
+                    className="w-full max-w-[228px] sm:max-w-[320px]"
+                    style={{ willChange: "transform, opacity" }}
+                  >
+                    <div className="relative pr-[61px] sm:pr-0">
+                      <span className="absolute -right-[9%] bottom-0 sm:-right-20">
+                        {icons[rowIndex * 2] &&
+                          React.createElement(icons[rowIndex * 2])}
+                      </span>
+                      <h3 className="py-1 text-end text-base font-semibold text-white">
+                        {left.title}
+                      </h3>
+                    </div>
+                    <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold sm:text-end">
+                      {left.desc}
+                    </p>
+                  </div>
+                )}
+
+                {/* Right */}
+                {right && (
+                  <div
+                    ref={(el) => {
+                      rightStatsRef.current[rowIndex] = el;
+                    }}
+                    className="w-full max-w-[228px] sm:max-w-[320px]"
+                    style={{ willChange: "transform, opacity" }}
+                  >
+                    <div className="relative pl-[32px] sm:pl-0">
+                      <span className="absolute bottom-0 left-[-19%] sm:-left-20">
+                        {icons[rowIndex * 2 + 1] &&
+                          React.createElement(icons[rowIndex * 2 + 1])}
+                      </span>
+                      <h3 className="py-1 text-start text-base font-semibold text-white">
+                        {right.title}
+                      </h3>
+                    </div>
+                    <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
+                      {right.desc}
+                    </p>
+                  </div>
+                )}
               </div>
-              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold sm:text-end">
-                With zero institutional capital
-              </p>
-            </div>
-            <div
-              ref={(el) => {
-                rightStatsRef.current[0] = el;
-              }}
-              className="lg:mix-w-[320px] w-full max-w-[228px] sm:max-w-[320px]"
-              style={{ willChange: "transform, opacity" }}
-            >
-              <div className="relative pl-[32px] sm:pl-0">
-                <span className="absolute bottom-0 left-[-19%] sm:-left-20">
-                  <ProofIcon2 />
-                </span>
-                <h3 className="py-1 text-start text-base font-semibold text-white">
-                  ~6%
-                </h3>
-              </div>
-              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
-                of freemium users organically convert to a paid plan
-              </p>
-            </div>
-          </div>
-          <div className="mb-8 hidden flex-col-reverse items-center justify-between gap-4 sm:flex lg:flex-row">
-            <div
-              ref={(el) => {
-                leftStatsRef.current[1] = el;
-              }}
-              className="mix-w-[320px] w-full max-w-[320px]"
-              style={{ willChange: "transform, opacity" }}
-            >
-              <div className="relative">
-                <span className="absolute -right-20 bottom-0">
-                  <ProofIcon3 />
-                </span>
-                <h3 className="py-1 text-end text-base font-semibold text-white">
-                  4.7★
-                </h3>
-              </div>
-              <p className="text-lightBlackGrey pt-2 text-end text-xs font-semibold">
-                Avg rating across Capterra, G2, Apple, and Google Play
-              </p>
-            </div>
-            <div
-              ref={(el) => {
-                rightStatsRef.current[1] = el;
-              }}
-              className="mix-w-[320px] w-full max-w-[320px]"
-              style={{ willChange: "transform, opacity" }}
-            >
-              <div className="relative">
-                <span className="absolute bottom-0 -left-20">
-                  <ProofIcon4 />
-                </span>
-                <h3 className="py-1 text-start text-base font-semibold text-white">
-                  94%
-                </h3>
-              </div>
-              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
-                Gross retention
-              </p>
-            </div>
-          </div>
-          <div className="mb-8 hidden flex-col-reverse items-center justify-between gap-4 sm:flex lg:flex-row">
-            <div
-              ref={(el) => {
-                leftStatsRef.current[2] = el;
-              }}
-              className="mix-w-[320px] w-full max-w-[320px]"
-              style={{ willChange: "transform, opacity" }}
-            >
-              <div className="relative">
-                <span className="absolute -right-20 -bottom-4">
-                  <ProofIcon5 />
-                </span>
-                <h3 className="py-1 text-end text-base font-semibold text-white">
-                  ~150%
-                </h3>
-              </div>
-              <p className="text-lightBlackGrey pt-2 text-end text-xs font-semibold">
-                YoY growth
-              </p>
-            </div>
-            <div
-              ref={(el) => {
-                rightStatsRef.current[2] = el;
-              }}
-              className="mix-w-[320px] w-full max-w-[320px]"
-              style={{ willChange: "transform, opacity" }}
-            >
-              <div className="relative">
-                <span className="absolute -bottom-4 -left-20">
-                  <ProofIcon6 />
-                </span>
-                <h3 className="py-1 text-start text-base font-semibold text-white">
-                  $700K
-                </h3>
-              </div>
-              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
-                All built with just $700K from angels and Reg CF
-              </p>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
+
       {/* mobile view */}
       <div className="block sm:hidden">
-        <div className="flex items-center justify-center pt-[42px]">
-          <div className="lg:mix-w-[320px] w-full max-w-[228px] sm:max-w-[320px]">
-            <div className="relative pl-[32px] sm:pl-0">
-              <span className="absolute bottom-0 left-[-19%] sm:-left-20">
-                <ProofIcon2 />
-              </span>
-              <h3 className="py-1 text-start text-base font-semibold text-white">
-                94%
-              </h3>
+        {items.map((stat, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-center pt-[42px]"
+          >
+            <div className="lg:mix-w-[320px] w-full max-w-[228px] sm:max-w-[320px]">
+              <div className="relative pl-[32px] sm:pl-0">
+                <span className="absolute bottom-0 left-[-19%] sm:-left-20">
+                  {/* {React.createElement(stat.icon)} */}
+                </span>
+                <h3 className="py-1 text-start text-base font-semibold text-white">
+                  {stat.title}
+                </h3>
+              </div>
+              <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
+                {stat.desc}
+              </p>
             </div>
-            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
-              Gross retention
-            </p>
           </div>
-        </div>
-
-        <div className="flex items-center justify-start pt-[42px]">
-          <div className="lg:mix-w-[320px] w-full max-w-[246px] sm:max-w-[320px]">
-            <div className="relative pr-[61px] sm:pr-0">
-              <span className="absolute -right-[9%] bottom-0 sm:-right-20">
-                <ProofIcon1 />
-              </span>
-              <h3 className="py-1 text-end text-base font-semibold text-white">
-                4.7★
-              </h3>
-            </div>
-            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold sm:text-end">
-              Avg rating across Capterra, G2, Apple, and Google Play
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-end pt-[42px]">
-          <div className="lg:mix-w-[320px] w-full max-w-[240px] sm:max-w-[320px]">
-            <div className="relative pl-[32px] sm:pl-0">
-              <span className="absolute bottom-0 left-[-19%] sm:-left-20">
-                <ProofIcon2 />
-              </span>
-              <h3 className="py-1 text-start text-base font-semibold text-white">
-                $700K
-              </h3>
-            </div>
-            <p className="text-lightBlackGrey pt-2 text-start text-xs font-semibold">
-              All built with just $700K from angels and Reg CF
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center justify-start pt-[42px]">
-          <div className="lg:mix-w-[320px] w-full max-w-[290px] sm:max-w-[320px]">
-            <div className="relative pr-[61px] sm:pl-0">
-              <span className="absolute -right-[9%] bottom-0 sm:-right-20">
-                <ProofIcon1 />
-              </span>
-              <h3 className="py-1 text-end text-base font-semibold text-white">
-                ~150%
-              </h3>
-            </div>
-            <p className="text-lightBlackGrey pt-2 pr-[61px] text-end text-xs font-semibold sm:pl-0">
-              YoY growth
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-      <p className="proof-working mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px] not-only:mt-[65px]">
-        {buttomText || "Now imagine what we'll do with real capital."}
-      </p>
     </div>
   );
 };

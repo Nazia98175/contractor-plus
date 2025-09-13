@@ -3,6 +3,7 @@ import { InvestorsapiDataPage } from "./investorsapi";
 
 export interface getInvestorsDataProps {
   commonData?: any | null;
+  pageContent: any | null;
   hero: any | null;
   problemSection: any | null;
   table: any | null;
@@ -11,7 +12,9 @@ export interface getInvestorsDataProps {
   proofSection: any | null;
   marketOpportunity: any | null;
   whatNext: any | null;
-  whyThisTeam: any | null;
+  smartMoney: any | null;
+  whyThisTeamSection: any | null;
+  disclaimerText: any | null;
 }
 
 export const getInvestorsData = async (
@@ -19,6 +22,7 @@ export const getInvestorsData = async (
 ): Promise<getInvestorsDataProps> => {
   const [
     commonData,
+    pageContentRes,
     heroRes,
     problemSectionRes,
     tableRes,
@@ -27,9 +31,12 @@ export const getInvestorsData = async (
     proofSectionRes,
     marketOpportunityRes,
     whatNextRes,
-    whyThisTeamRes,
+    smartMoneyRes,
+    disclaimerTextRes,
+    whyThisTeamSectionRes,
   ] = await Promise.all([
     getCommonData(locale),
+    InvestorsapiDataPage(locale, "&populate=*"),
     InvestorsapiDataPage(locale, "&populate[hero][populate]=heroImg"),
     InvestorsapiDataPage(
       locale,
@@ -42,12 +49,19 @@ export const getInvestorsData = async (
     ),
     InvestorsapiDataPage(locale, "&populate[whyContractorSection]=*"),
     InvestorsapiDataPage(locale, "&populate[proofSection][populate][items]=*"),
-    InvestorsapiDataPage(locale, "&populate[proofSection][populate][items]=*"),
+    InvestorsapiDataPage(
+      locale,
+      "&populate[marketOpportunity][populate]=image",
+    ),
     InvestorsapiDataPage(locale, "&populate[whatNext][populate][items]=*"),
-    InvestorsapiDataPage(locale, "&populate[whyThisTeam]=*"),
+    InvestorsapiDataPage(locale, "&populate[smartMoney][populate]=*"),
+
+    InvestorsapiDataPage(locale, "&fields=disclaimerText"),
+    InvestorsapiDataPage(locale, "&populate=whyThisTeamSection"),
   ]);
   return {
     commonData: commonData || null,
+    pageContent: pageContentRes?.data || null,
     hero: heroRes?.data?.hero || null,
     problemSection: problemSectionRes?.data?.problemSection || null,
     table: tableRes?.data?.table || null,
@@ -57,6 +71,9 @@ export const getInvestorsData = async (
     proofSection: proofSectionRes?.data?.proofSection || null,
     marketOpportunity: marketOpportunityRes?.data?.marketOpportunity || null,
     whatNext: whatNextRes?.data?.whatNext || null,
-    whyThisTeam: whyThisTeamRes?.data?.whyThisTeam || null,
+    smartMoney: smartMoneyRes?.data?.smartMoney || null,
+
+    disclaimerText: disclaimerTextRes?.data?.disclaimerText || null,
+    whyThisTeamSection: whyThisTeamSectionRes?.data?.whyThisTeamSection || null,
   };
 };

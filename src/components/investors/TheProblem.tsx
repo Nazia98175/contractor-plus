@@ -33,6 +33,7 @@ interface TheProblemProps {
   desc?: string | null;
   subBoldTitle?: string | null;
   subBoldDesc?: string | null;
+  subDesc?: string | null;
   items: ProblemItem[];
 }
 const TheProblem: React.FC<TheProblemProps> = ({
@@ -41,6 +42,7 @@ const TheProblem: React.FC<TheProblemProps> = ({
   desc,
   subBoldTitle,
   subBoldDesc,
+  subDesc,
 }) => {
   return (
     <section className="relative z-20 mx-auto -mt-[230px] max-w-[1234px] px-4 sm:-mt-[393px]">
@@ -78,7 +80,7 @@ const TheProblem: React.FC<TheProblemProps> = ({
         <p className="text-ironFixture pt-4 text-center text-lg font-medium">
           {subBoldDesc || "*The industry incumbents aren’t fixing it"}{" "}
           <span className="font-semibold text-white">
-            — they ARE the problem.
+            {subDesc || " — they ARE the problem."}
           </span>
         </p>
       </Copy>

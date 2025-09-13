@@ -13,12 +13,14 @@ interface InvestorHeroProps {
   heroTitle?: string;
   heroDescription?: string;
   heroSubDesc?: string;
+  btnText?: string;
 }
 const InvestorHero: React.FC<InvestorHeroProps> = ({
   heroSubTitle,
   heroTitle,
   heroDescription,
   heroSubDesc,
+  btnText,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const redBgRef = useRef<HTMLImageElement | null>(null);
@@ -179,7 +181,7 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
           </Copy>
           <CardReveal className="w-full sm:w-fit" delay={0.6}>
             <Button className="w-full max-w-full sm:max-w-[204px]">
-              Book investor call
+              {btnText || "Book investor call"}
             </Button>
           </CardReveal>
         </div>

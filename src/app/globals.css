@@ -2151,3 +2151,6 @@ body.menu-open .back-to-top {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.market-opportunity-bg {
+  background: linear-gradient(180deg, rgba(12, 13, 17, 0) 0%, #0c0d11 56.23%);
+}

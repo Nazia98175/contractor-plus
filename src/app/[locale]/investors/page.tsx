@@ -3,6 +3,9 @@ import InvestorHero from "@/components/investors/InvestorHero";
 import MarketOpportunity from "@/components/investors/MarketOpportunity";
 import MidMarketTable from "@/components/investors/MidMarketTable";
 import ProofWorking from "@/components/investors/ProofWorking";
+import SmartMoney from "@/components/investors/SmartMoney";
+import TeamList from "@/components/investors/TeamList";
+import TeamListMobile from "@/components/investors/TeamListMobile";
 import TheProblem from "@/components/investors/TheProblem";
 import WhatNext from "@/components/investors/WhatNext";
 import WhyNow from "@/components/investors/WhyNow";
@@ -38,13 +41,17 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
   const {
     hero,
     problemSection,
+    table,
     whyNowSection,
     whyContractorSection,
     proofSection,
     marketOpportunity,
     whatNext,
-    whyThisTeam,
+    smartMoney,
+    disclaimerText,
+    whyThisTeamSection,
   } = await getInvestorsData(locale);
+  console.log("wesx", table);
 
   return (
     <main id="home-page-view-port-screen">
@@ -56,6 +63,8 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           heroDescription={hero?.heroDescription}
           heroSubTitle={hero?.heroSubTitle}
           heroTitle={hero?.heroTitle}
+          heroSubDesc={hero?.heroSubDesc}
+          btnText={hero?.btnText}
         />
         <TheProblem
           items={problemSection?.items}
@@ -63,30 +72,44 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           subBoldDesc={problemSection?.subBoldDesc}
           subBoldTitle={problemSection?.subBoldTitle}
           title={problemSection?.title}
+          subDesc={problemSection?.subDesc}
         />
-        <MidMarketTable />
+        {/* <MidMarketTable tableData={table || []} /> */}
+        <TeamList teamData={table || []} />
+        <TeamListMobile teamData={table || []} />
         <WhyNow items={whyNowSection?.items} />
         <ProofWorking
           title={whyContractorSection?.title}
           desc={whyContractorSection?.desc}
-          buttomText={proofSection?.buttomText}
+          title2={proofSection?.title}
+          desc2={proofSection?.desc}
+          items={proofSection?.items}
         />
-        <MarketOpportunity />
-        <WhatNext />
-        <WinTeam />
+        <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
+          <p className="proof-working relative z-20 mx-auto mt-[100px] mb-16 w-fit text-center text-base font-semibold tracking-[-0.32px]">
+            {proofSection?.buttomText ||
+              "Now imagine what we'll do with real capital."}
+          </p>
+          <MarketOpportunity marketOpportunityData={marketOpportunity || []} />
+        </div>
+        <WhatNext
+          title={whatNext?.title}
+          desc={whatNext?.desc}
+          items={whatNext?.items}
+        />
+        <WinTeam
+          teamCards={whyThisTeamSection?.teamCards}
+          title={whyThisTeamSection?.title}
+        />
+        <SmartMoney
+          btnText={smartMoney?.btnText}
+          title={smartMoney?.title}
+          desc={smartMoney?.desc}
+        />
         <div className="mx-auto w-full max-w-[1296px] px-4 pt-[74px] pb-[80px] md:pt-[100px] lg:pt-[190px]">
           <Copy animateOnScroll={true}>
             <p className="text-secondary text-center text-xs font-medium">
-              <span className="font-bold">Disclaimer:</span> This offering is
-              made pursuant to exemptions under Regulation D and Regulation
-              Crowdfunding (Reg CF) of the U.S. Securities Act of 1933.
-              Securities are not registered, may be illiquid and involve risk.
-              For Reg D offerings, only accredited investors may participate (or
-              a limited number of sophisticated investors if under Rule 506(b)).
-              For Reg CF, investments are made through an SEC-registered
-              intermediary and are subject to contribution limits and resale
-              restrictions. Nothing herein constitutes legal, tax, or investment
-              advice. Please consult your own advisors before investing.
+              {disclaimerText}
             </p>
           </Copy>
         </div>

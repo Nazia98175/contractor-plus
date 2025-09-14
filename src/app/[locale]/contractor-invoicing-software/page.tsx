@@ -87,12 +87,9 @@ const BillingPage = async ({
       <div className="overflow-hidden bg-white">
         <div className="pt-8 sm:pt-12">
           <GoingFieldSevices
+            title="There’s no simple way to bill a job that doesn’t go exactly to plan"
+            cardsDetail={simpleWayToBill}
             isImageshow={false}
-            switchingTool={{
-              title:
-                "There’s no simple way to bill a job that doesn’t go exactly to plan",
-              cardsDetail: simpleWayToBill,
-            }}
           />
         </div>
 

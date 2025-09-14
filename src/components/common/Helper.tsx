@@ -41,6 +41,7 @@ import {
 import {
   AppearIcon,
   AudienceReachIcon,
+  BreakeIcon,
   BuildFieldIcon,
   ClockIcon,
   ContractorToolsIcon,
@@ -49,6 +50,8 @@ import {
   OrderRouteIcon,
   RegionsIcon,
   ReportIcon2,
+  RunningBehindIcon,
+  ScreenShotIcon,
   SingleFlowIcon,
   UpArrowIcon,
 } from "./Icons";
@@ -2082,27 +2085,29 @@ export const operatingSystemList = [
 export const fieldcarddetail = [
   {
     text: "You can’t see which leads need attention or how much they’re worth.",
+    icon: <RunningBehindIcon />,
   },
   {
     text: "There’s no easy way to manage follow-ups, reasons for lost jobs, or who’s handling what.",
+    icon: <BreakeIcon />,
   },
   {
     text: "Other solutions don’t really show you where revenue is getting stuck.",
+    icon: <ScreenShotIcon />,
   },
 ];
 export const simpleWayToBill = [
   {
     text: "You’re manually updating estimates every time something changes.",
+    icon: <RunningBehindIcon />,
   },
   {
-    text: (
-      <>
-        You’re sending multiple invoices just to reflect <br /> one job.
-      </>
-    ),
+    text: "You’re sending multiple invoices just to reflect job",
+    icon: <BreakeIcon />,
   },
   {
     text: "You’re losing money when labor, materials, or mileage go unbilled.",
+    icon: <ScreenShotIcon />,
   },
 ];
 

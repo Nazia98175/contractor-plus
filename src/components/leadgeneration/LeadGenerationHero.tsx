@@ -1,17 +1,12 @@
 // LeadGenerationHero.tsx
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
 import React from "react";
 import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
-import Crush_local from "../../../public/lotties/Crush-local-search.json";
-import LottieAnimation from "../common/LottieAnimation";
-import Copy from "../common/Copy";
 import GooglePoster from "./GooglePoster";
 
 interface ProcessedLocation {
@@ -24,9 +19,7 @@ interface LeadGenerationHeroProps {
   heading: string;
   description: string;
   getStartedFreeBtn: string;
-  mobileBtn: string;
   nccTxt: string;
-  imgUrl: string;
   location?: ProcessedLocation | null; // Already processed location from server
 }
 
@@ -35,9 +28,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   heading,
   description,
   getStartedFreeBtn,
-  mobileBtn,
   nccTxt,
-  imgUrl,
   location, // Now receiving processed location directly from server
 }) => {
   return (
@@ -67,16 +58,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
           <AppsRating delayApple={0.3} delayGoogle={0.4} />
           <CardReveal distance={50} delay={0.6} className="w-full sm:w-fit">
             <div className="flex w-full flex-col items-center gap-1.5 px-2 sm:w-fit">
-              <FreeTrialButton
-                className="!hidden sm:!flex"
-                text={getStartedFreeBtn}
-                showIcon={true}
-              />
-              <FreeTrialButton
-                showIcon={true}
-                className="mt-4 !flex w-full sm:!hidden"
-                text={mobileBtn}
-              />
+              <FreeTrialButton text={getStartedFreeBtn} showIcon={true} />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
                 text={nccTxt}

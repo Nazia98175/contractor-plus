@@ -4,37 +4,28 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import {
-  BreakeIcon,
-  DashedLineIcon,
-  RunningBehindIcon,
-  ScreenShotIcon,
-} from "../common/Icons";
-import { TheSwitchingToolProps } from "../crmbussiness/SwitchingTool";
-import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
-// Register the SplitText plugin
-gsap.registerPlugin(useGSAP, ScrollTrigger);
-const GoingFieldSevices: React.FC<
-  TheSwitchingToolProps & { isImageshow?: boolean }
-> = ({ switchingTool, isImageshow = true }) => {
-  const field_service = [
-    {
-      id: 1,
-      icon: <RunningBehindIcon />,
-      text: switchingTool?.cardsDetail?.[0]?.text,
-    },
-    {
-      id: 2,
-      icon: <BreakeIcon />,
-      text: switchingTool?.cardsDetail?.[1]?.text,
-    },
-    {
-      id: 3,
-      icon: <ScreenShotIcon />,
-      text: switchingTool?.cardsDetail?.[2]?.text,
-    },
-  ];
+import { DashedLineIcon, RunningBehindIcon } from "../common/Icons";
 
+import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
+import Copy from "../common/Copy";
+
+interface FieldService {
+  text?: string;
+  icon?: any;
+}
+
+interface GoingFieldSevicesProps {
+  title?: string;
+  isImageshow?: boolean;
+  cardsDetail?: FieldService[];
+}
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+const GoingFieldSevices: React.FC<GoingFieldSevicesProps> = ({
+  title,
+  cardsDetail = [],
+  isImageshow = true,
+}) => {
   useEffect(() => {
     const scrollTimeline = gsap.timeline({
       scrollTrigger: {
@@ -62,7 +53,7 @@ const GoingFieldSevices: React.FC<
           <Image
             width={1440}
             height={150}
-            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
             unoptimized
             className="h-[150px] w-full object-cover sm:h-[180px]"
             id="parallex-img"
@@ -72,14 +63,14 @@ const GoingFieldSevices: React.FC<
         </div>
       )}
 
-      {/* <Copy animateOnScroll={true} delay={0.2}> */}
-      <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[1068px]">
-        <span>{switchingTool?.title}</span>
-      </h3>
-      {/* </Copy> */}
+      <Copy animateOnScroll={true} delay={0.2}>
+        <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[1068px]">
+          <span>{title}</span>
+        </h3>
+      </Copy>
 
       <h3 className="sub-heading crm-gradient mx-auto w-full max-w-[350px] px-2 text-center font-bold sm:hidden">
-        {switchingTool?.title}
+        {title}
       </h3>
       <div className="relative mx-auto flex max-w-[1100px] grid-cols-1 flex-wrap justify-center gap-6 px-0.5 pt-9 lg:grid lg:grid-cols-3 lg:gap-0">
         {/* Dashed line */}
@@ -87,7 +78,7 @@ const GoingFieldSevices: React.FC<
           <DashedLineIcon />
         </div>
 
-        {field_service?.map((step: any, index: any) => (
+        {cardsDetail?.map((step, index) => (
           <GoingFieldSevicesCard step={step} key={index} />
         ))}
       </div>

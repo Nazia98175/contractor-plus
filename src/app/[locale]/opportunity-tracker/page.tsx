@@ -86,10 +86,8 @@ const DealFlowTracker = async ({
         <div className="pt-8 sm:pt-12">
           <GoingFieldSevices
             isImageshow={false}
-            switchingTool={{
-              title: "There’s no easy way to see what’s going on in the field",
-              cardsDetail: fieldcarddetail,
-            }}
+            title="There’s no easy way to see what’s going on in the field"
+            cardsDetail={fieldcarddetail}
           />
         </div>
         <ContractorWork

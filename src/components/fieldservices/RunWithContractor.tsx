@@ -7,10 +7,10 @@ import Copy from "../common/Copy";
 import { TheServiceProps } from "@/types";
 
 const RunWithContractor: React.FC<TheServiceProps> = ({
-  kindAdorable,
   variant = "light",
   icon = false,
   issubHeadingShow = false,
+  kindAdorable,
 }) => {
   const variantClasses = {
     light: {

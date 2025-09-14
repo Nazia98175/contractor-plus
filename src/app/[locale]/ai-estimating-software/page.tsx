@@ -55,6 +55,8 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
+  console.log("comparisonList", comparisonList);
+
   return (
     <main id="home-page-wrapper-2">
       <div
@@ -72,6 +74,7 @@ const EstimaticAiPage = async ({
           reviews={reviews?.reviews || []}
           className="pb-6 lg:pt-6 lg:pb-3.5"
         />
+
         <RunWithContractor
           kindAdorable={comparisonList}
           variant="dark"

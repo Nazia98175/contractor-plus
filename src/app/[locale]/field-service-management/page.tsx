@@ -58,7 +58,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   const {
     solutionPageContent,
     reviews,
-    switchingTool,
+    commonProblems,
     fieldServiceData,
     trackProperties,
     comparison,
@@ -74,7 +74,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);
-  console.log("edsz0", comparison);
+  console.log("switchingTool", commonProblems);
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
@@ -93,7 +93,10 @@ const FieldServicesPage = async ({ params }: Params) => {
 
       <ServiceContractorsMarquee reviews={reviews} />
       <div className="bg-white">
-        <GoingFieldSevices switchingTool={switchingTool?.commonProblems} />
+        <GoingFieldSevices
+          cardsDetail={commonProblems?.cardsDetail}
+          title={commonProblems?.title}
+        />
         <RealTimeServiceConnector
           theme="estimateTheme"
           fieldService={fieldServiceData}

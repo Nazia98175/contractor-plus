@@ -6,7 +6,7 @@ import { getIntegrationList } from "../integation/getIntegrationData";
 export interface CrmLikePageDataResponse {
   solutionPageContent: any | null;
   reviews: any | null;
-  switchingTool: any | null;
+  commonProblems: any | null;
   fieldServiceData: any | null;
   trackProperties: any | null;
   comparison: any | null;
@@ -26,7 +26,7 @@ export const getSolutionPageData = async (
   const [
     pageContentRes,
     reviewsRes,
-    switchingToolRes,
+    commonProblemsRes,
     fieldServiceRes,
     trackPropertiesRes,
     comparisonRes,
@@ -46,7 +46,7 @@ export const getSolutionPageData = async (
     getSolutionPage(
       slug,
       locale,
-      "&populate[commonProblems][populate]=cardsDetail",
+      "&populate[commonProblems][populate][cardsDetail][populate]=cardImg",
     ),
     getSolutionPage(
       slug,
@@ -77,7 +77,7 @@ export const getSolutionPageData = async (
   return {
     solutionPageContent: pageContentRes || null,
     reviews: reviewsRes || null,
-    switchingTool: switchingToolRes?.data?.[0] || null,
+    commonProblems: commonProblemsRes?.data?.[0]?.commonProblems || null,
     fieldServiceData:
       fieldServiceRes?.data?.[0]?.problemSolutionSection || null,
     trackProperties:

@@ -68,7 +68,7 @@ const PricingHero: React.FC<PlansProps> = ({
         </Copy>
 
         <Copy delay={0.3}>
-          <p className="hero-description !text-trolleyGrey text-center">
+          <p className="hero-description !text-trolleyGrey text-center max-w-[600px] w-full mx-auto">
             {pageContent?.hero?.subTitle && pageContent?.hero?.subTitle}
           </p>
         </Copy>

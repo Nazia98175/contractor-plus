@@ -1368,6 +1368,14 @@ line {
   text-fill-color: transparent;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: block;
+  position: absolute;
+  right: 0.75rem;
+  filter: invert(1);
+  cursor: pointer;
+}
+
 .clouds-1 {
   animation: clouds-loop-1 500s infinite linear;
   mask-image: linear-gradient(to top, #000000 40%, #00000000 100%);

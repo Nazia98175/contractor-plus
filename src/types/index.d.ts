@@ -18,22 +18,7 @@ export interface Industry {
   description?: string;
 }
 export type Period = "Monthly" | "Quarterly";
-export interface FilterState {
-  industries: number[];
-  // industry: string;
-  states: string[];
-  uom: UnitOfMeasurement;
-  dataSources: DataSource[];
-  period: Period;
-  dateRange?: DateRange;
-  locationMode?: "region" | "zipcode";
-  zipCode?: string;
-}
-export interface DateRange {
-  from: Date | undefined;
-  to: Date | undefined;
-  preset?: DateRangePreset;
-}
+
 export type UnitOfMeasurement = "Hour" | "Square Foot" | "Linear Foot" | "Unit";
 export interface State {
   id: number;
@@ -42,16 +27,6 @@ export interface State {
   region: string;
 }
 
-export interface LaborRate {
-  industryId: number;
-  stateId: number;
-  uom: UnitOfMeasurement;
-  contractorPlusRate: number | null;
-  blsRate: number | null;
-  averageRate: number | null;
-  year: number;
-  quarter: number;
-}
 export interface ReviewCardProps {
   review: Review;
   openModal: () => void;

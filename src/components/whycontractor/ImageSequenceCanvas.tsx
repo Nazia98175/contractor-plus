@@ -211,7 +211,7 @@ const ImageSequenceCanvas: React.FC<ImageSequenceProps> = ({
                 style={{ width: `${loadProgress}%` }}
               />
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="text-alice text-sm">
               {!isInitialized || isMobile === null
                 ? "Detecting device..."
                 : `Loading ${isMobile ? "Mobile" : "Desktop"} Images... ${Math.round(loadProgress)}%`}

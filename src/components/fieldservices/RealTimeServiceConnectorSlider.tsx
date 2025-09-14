@@ -126,7 +126,7 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="relative pt-6 sm:pt-10 md:h-[625px]">
+        <SwiperSlide className="relative py-6 sm:pt-10 md:h-[625px]">
           <div className="absolute top-[70%] bottom-[-36px] h-[100px] w-full max-w-full bg-white blur-[9px] sm:top-[67%] sm:h-[200px] lg:top-[58%] lg:bottom-[74px] lg:h-[281px] lg:blur-[40px]"></div>
           <div className="px-2">
             <div className="mx-auto">

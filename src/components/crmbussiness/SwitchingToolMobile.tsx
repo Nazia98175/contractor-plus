@@ -115,7 +115,7 @@ const SwitchingToolMobile = ({
               className="mx-auto h-full w-full max-w-[66px] object-cover"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:py-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[0]?.text}
           </h4>
         </article>
@@ -136,7 +136,7 @@ const SwitchingToolMobile = ({
               className="mx-auto h-full w-full max-w-[66px] object-cover"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:py-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[1]?.text}
           </h4>
         </article>
@@ -157,7 +157,7 @@ const SwitchingToolMobile = ({
               className="mx-auto h-full w-full max-w-[66px] object-cover"
             />
           </div>
-          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:pt-6 xl:text-xl">
+          <h4 className="switch-tool-text 1xl:text-[22px] font-jakarta pt-[18px] text-center text-lg font-medium text-white xl:py-6 xl:text-xl">
             {switchingTool?.cardsDetail?.[2]?.text}
           </h4>
         </article>

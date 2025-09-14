@@ -77,6 +77,9 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 opacity-0 md:py-[62px] ${styles.background}`}
     >
       {!isCrmRoute && (
+        <div className="pointer-events-none absolute bottom-0 left-10 block h-[197px] w-[90px] rotate-[40deg] bg-[#FD8287] opacity-35 blur-[20px] sm:block"></div>
+      )}
+      {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (
             <Image
@@ -162,7 +165,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
                   duration={500}
                   height={openSection === section.title ? "auto" : 0}
                 >
-                  <div className="flex flex-col gap-2 pt-4 sm:pt-6">
+                  <div className="flex flex-col gap-2 pt-4 sm:py-6">
                     {section.footerLink.map((link, i) => (
                       <FooterLinkItem
                         key={i}

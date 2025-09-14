@@ -12,7 +12,7 @@ const MobilePlansHeader: React.FC = () => {
       {mobilePlans.map((plan, index) => (
         <div
           key={plan.name}
-          className={`bg-doctor space-y-2 px-3 py-2 ${
+          className={`bg-doctor space-y-3 px-3 py-2 ${
             index !== 0 ? "border-decemberSky border-l" : ""
           }`}
         >

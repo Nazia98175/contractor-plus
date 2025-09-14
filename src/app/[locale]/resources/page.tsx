@@ -1,4 +1,4 @@
-import FreeEstimateTemplates from "@/components/resourcehub/ResourceHubPage";
+import Resource from "@/components/resourcehub/pages/Resource";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
@@ -20,7 +20,7 @@ export async function generateMetadata({
   return generateSeoMetaData({ page, slug: resolvedParams.slug });
 }
 const FreeEstimateTemplatesPage = async () => {
-  return <FreeEstimateTemplates />;
+  return <Resource />;
 };
 
 export default FreeEstimateTemplatesPage;

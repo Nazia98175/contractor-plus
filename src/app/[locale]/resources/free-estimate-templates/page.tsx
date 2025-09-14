@@ -1,11 +1,17 @@
-import FreeEstimateMaker from "@/components/resourcehub/freeEstimate/FreeEstimateMaker";
+import FreeEstimateMaker from "@/components/resourcehub/pages/FreeEstimateMaker";
+import { Metadata } from "next";
 
-const page = () => {
+export const metadata: Metadata = {
+  title: "Free Estimate Templates for Contractors",
+  description:
+    "Download customizable estimate templates for jobs, bids, and proposals, created for every type of contractor.",
+};
+const FreeEstimatePage = () => {
   return (
-    <main className="bg-white">
+    <>
       <FreeEstimateMaker />
-    </main>
+    </>
   );
 };
 
-export default page;
+export default FreeEstimatePage;

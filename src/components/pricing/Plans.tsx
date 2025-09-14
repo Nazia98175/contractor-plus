@@ -28,13 +28,13 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
       <p className="text-winterWay xs:max-w-[80%] mx-auto mt-6 text-center text-xs sm:mt-0">
         {pricingPlans?.disclaimer && pricingPlans?.disclaimer}
       </p>
-      <button
+      {/* <button
         onClick={onScroll}
         className="text-winterWay hover:bg-superSilver mb-6 flex h-8 items-center justify-center gap-1 rounded-md px-3 text-sm font-semibold tracking-[0.1px] duration-300 sm:mb-0"
       >
         {pricingPlans?.compareLabel && pricingPlans?.compareLabel}
         <ScrollDownIcon />
-      </button>
+      </button> */}
     </section>
   );
 };

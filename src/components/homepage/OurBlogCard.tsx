@@ -10,7 +10,6 @@ const OurBlogCard = ({
   article: any;
   index: number;
 }) => {
-  console.log("Image URL:", blogListMobile?.[index]?.imageSrc);
   return (
     <Link
       href={`${blogListMobile?.[index]?.blogUrl}`}

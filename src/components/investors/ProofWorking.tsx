@@ -432,7 +432,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
       </div>
 
       {/* Bottom Text with proper spacing - closer to animation */}
-      <div className="pt-8 pb-20">
+      <div className="pt-8 pb-20 relative">
         <p className="proof-working mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px]">
           Now imagine what we'll do with{" "}
           <span className="text-red-500">real capital</span>.

@@ -98,7 +98,7 @@ export interface Plan {
   variant: "default" | "pro" | "proTeam";
 }
 export interface tableFeature {
-  name: string;
+  title: string;
   description: any;
   available: Availability[];
 }

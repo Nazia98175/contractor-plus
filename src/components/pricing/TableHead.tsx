@@ -1,30 +1,53 @@
 import React from "react";
-import PlanButton from "./PlanButton";
-import { Plan } from "@/types";
 
-const TableHead: React.FC<{ plans: Plan[] }> = ({ plans }) => (
-  <thead>
-    <tr className="border-decemberSky border-b">
-      <th className="text-wallStreet w-1/4 px-3.5 py-5 text-center text-xl font-bold text-nowrap lg:text-2xl xl:px-8">
-        Compare plans
-      </th>
-      {plans.map((plan) => (
-        <th
-          key={plan.name}
-          className="group border-decemberSky w-1/4 border-l px-3 py-5 text-center xl:px-5"
-        >
-          <span className="text-winterWay text-2xl font-semibold lg:text-[28px]">
-            {plan.name}
-          </span>
-          <PlanButton
-            cta={plan.cta}
-            variant={plan.variant}
-            className="mt-3.5"
-          />
+interface TableHeadProps {
+  plans: any[];
+}
+
+const TableHead: React.FC<TableHeadProps> = ({ plans }) => {
+  const getButtonStyles = (variant?: string | null) => {
+    switch (variant) {
+      case "pro":
+        return "bg-offWhite border-winterWay text-winterWay";
+      case "proTeam":
+        return "bg-softBlush border-thickRed border-softBlush";
+      default:
+        return "text-wallStreet border-winterWay";
+    }
+  };
+
+  return (
+    <thead>
+      <tr className="border-decemberSky border-b">
+        <th className="border-r border-gray-300 px-5 py-6 text-left">
+          <h2 className="text-winterWay text-xl font-semibold">
+            Compare Plans
+          </h2>
         </th>
-      ))}
-    </tr>
-  </thead>
-);
+        {plans.map((plan, idx) => (
+          <th
+            key={plan.id || idx}
+            className={`px-5 py-6 text-center ${
+              idx !== plans.length - 1 ? "border-r border-gray-300" : ""
+            }`}
+          >
+            <div className="flex flex-col items-center gap-2">
+              <h3 className="text-winterWay text-lg font-semibold">
+                {plan.name}
+              </h3>
+              {plan.ctaText && (
+                <button
+                  className={`${getButtonStyles(plan.variant)} font-myriad mt-4 w-full min-w-[229px] rounded-md border px-6 py-2.5 text-base font-semibold tracking-[0.1px] transition-colors`}
+                >
+                  {plan.ctaText}
+                </button>
+              )}
+            </div>
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+};
 
 export default TableHead;

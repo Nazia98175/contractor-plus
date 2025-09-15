@@ -26,7 +26,7 @@ const TableFeatureRow: React.FC<TableFeatureRowProps> = ({
           onClick={toggle}
         >
           <span className="text-winterWay text-sm lg:text-base">
-            {feature.name}
+            {feature.title}
           </span>
           <span
             className={`transform ${

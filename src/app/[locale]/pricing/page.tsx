@@ -40,6 +40,7 @@ const PricingPage = async ({
     faqs,
     emailSign,
   } = await getPricingData(useParams?.locale);
+  console.log("frdsxz", pricingComparison);
 
   return (
     <main className="font-myriad overflow-hidden">
@@ -53,11 +54,7 @@ const PricingPage = async ({
       <div className="bg-white">
         <Faq
           mainContainerclassName="pb-16 lg:pb-24 xl:pb-[134px] z-20 px-2"
-          faq={{
-            title: "What contractors want to know ",
-            subTitle: "Frequently asked questions",
-            faq: pricingfaqitems,
-          }}
+          faq={faqs}
           classNameAnswer="pt-1"
           TittleClassName="w-fit mx-auto opacity-90 sm:opacity-100  !leading-[130%]"
           variant="muted"
@@ -68,12 +65,15 @@ const PricingPage = async ({
             <CommonFormField
               variantBtn="primary"
               variant="white"
-              title={"Start using Contractor+ for free"}
-              subTitle={"Try it out now. Upgrade when you're ready."}
-              placeholder={"Your Email"}
-              createBtn={"Get Started Free"}
-              mobileBtn={"Download FREE App"}
-              ncc={"No credit card required"}
+              title={emailSign?.title || "Start using Contractor+ for free"}
+              subTitle={
+                emailSign?.subTitle ||
+                "Try it out now. Upgrade when you're ready."
+              }
+              placeholder={emailSign?.emailSign || "Your Email"}
+              createBtn={commonData?.getStartedFreeBtn}
+              mobileBtn={commonData?.mobileBtn}
+              ncc={commonData?.nccTxt}
             />
           </div>
           <TrustBar platforms={blackPlatforms} className="pb-[91px] sm:pb-10" />

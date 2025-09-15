@@ -175,7 +175,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   loop={true}
                   className="mx-auto w-full max-w-[550px]"
                 />
-                {/* <AnimatedShape className="top-[-1%]" /> */}
+                {hero?.overlay && <AnimatedShape className="top-[-1%]" />}
               </>
             </div>
           </CardReveal>

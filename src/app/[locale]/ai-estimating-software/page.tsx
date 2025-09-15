@@ -61,7 +61,7 @@ const EstimaticAiPage = async ({
     <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-estimatic-ai"
-        className="relative opacity-0"
+        className="relative overflow-hidden opacity-0"
       >
         <EstimaticHero
           hero={pageContent}

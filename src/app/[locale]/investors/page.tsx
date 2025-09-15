@@ -80,10 +80,10 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
         <WhyNow items={whyNowSection?.items} />
         <ProofWorking />
         <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
-          <p className="proof-working relative z-20 mx-auto mt-[100px] mb-16 w-fit text-center text-base font-semibold tracking-[-0.32px]">
+          {/* <p className="proof-working relative z-20 mx-auto mt-[100px] mb-16 w-fit text-center text-base font-semibold tracking-[-0.32px]">
             {proofSection?.buttomText ||
               "Now imagine what we'll do with real capital."}
-          </p>
+          </p> */}
           <MarketOpportunity marketOpportunityData={marketOpportunity || []} />
         </div>
         <WhatNext

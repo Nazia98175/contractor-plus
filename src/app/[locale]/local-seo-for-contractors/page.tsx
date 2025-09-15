@@ -23,21 +23,24 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: { locale: string };
 }): Promise<Metadata | undefined> {
+  const resolvedParams = await params; // ✅ await before using
   const page = await getSeoDataCommon(
-    `local-seo-of-contractor?locale=${params.locale}&populate=*`,
+    `local-seo-of-contractor?locale=${resolvedParams.locale}&populate=*`,
   );
+
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: params.slug });
+  return generateSeoMetaData({ page });
 }
 interface Params {
   params: { locale: string };
 }
 
 export default async function LeadGeneration({ params }: Params) {
-  const { locale } = params;
+  const resolvedParams = await params; // ✅ await before using
+  const { locale } = resolvedParams;
 
   // Get IP from cookies and fetch geolocation on the server
   const ip = (await cookies()).get("user-ip")?.value;
@@ -73,7 +76,7 @@ export default async function LeadGeneration({ params }: Params) {
     emailSignupSection,
     faqs,
     commonData,
-  } = await getLocalSeoForContractorsData(useParams?.locale);
+  } = await getLocalSeoForContractorsData(locale);
   console.log("edsxzcsxz0", thousandReviews);
 
   return (

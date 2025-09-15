@@ -1,11 +1,30 @@
 import ConstructionTimelineGenerator from "@/components/resourcehub/pages/project-planning/ConstructionTimelineGenerator";
+import { Metadata } from "next";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { notFound } from "next/navigation";
 
-const ConstructionTimelineGeneratorPage = () => {
-  return (
-    <>
-      <ConstructionTimelineGenerator />
-    </>
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `resources?
+    filters[slug][$eq]=/resources/project-planning-tools/construction-timeline-generator&
+    locale=${resolvedParams.locale}&populate=*`,
   );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({
+    page,
+    slug: "/resources/project-planning-tools/construction-timeline-generator",
+  });
+}
+const ConstructionTimelineGeneratorPage = () => {
+  return <ConstructionTimelineGenerator />;
 };
 
 export default ConstructionTimelineGeneratorPage;

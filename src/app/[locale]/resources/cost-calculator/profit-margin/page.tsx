@@ -1,11 +1,30 @@
 import ProfitMarginCalculator from "@/components/resourcehub/pages/calculators/ProfitMarginCalculator";
+import { Metadata } from "next";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { notFound } from "next/navigation";
 
-const ProfitMarginPage = () => {
-  return (
-    <>
-      <ProfitMarginCalculator />
-    </>
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `resources?
+    filters[slug][$eq]=/resources/cost-calculator/profit-margin&
+    locale=${resolvedParams.locale}&populate=*`,
   );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({
+    page,
+    slug: "/resources/cost-calculator/profit-margin",
+  });
+}
+const ProfitMarginPage = () => {
+  return <ProfitMarginCalculator />;
 };
 
 export default ProfitMarginPage;

@@ -1,17 +1,30 @@
 import ProjectPlanningPage from "@/components/resourcehub/pages/ProjectPlanningPage";
 import { Metadata } from "next";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Contractor plus - Project Planning",
-  description:
-    "Access our collection of free tools, templates, blog posts, and podcasts designed to help contractors build better businesses.",
-};
-const ProjectPlanning = () => {
-  return (
-    <>
-      <ProjectPlanningPage />
-    </>
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoDataCommon(
+    `resources?
+    filters[slug][$eq]=/resources/project-planning-tools&
+    locale=${resolvedParams.locale}&populate=*`,
   );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({
+    page,
+    slug: "/resources/project-planning-tools",
+  });
+}
+const ProjectPlanning = () => {
+  return <ProjectPlanningPage />;
 };
 
 export default ProjectPlanning;

@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Copy from "../common/Copy";
-
-const DragAnimation: React.FC = () => {
+interface DragAnimation {
+  title: string;
+}
+const DragAnimation: React.FC<DragAnimation> = ({ title }) => {
   const [sliderPosition, setSliderPosition] = useState<number>(70);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +61,7 @@ const DragAnimation: React.FC = () => {
     <div className="relative mx-auto mt-[45px] mb-[59px] w-full max-w-[1920px]">
       <Copy>
         <h2 className="gradient-custom-2 section-heading-2 relative z-30 -mb-12 px-2 text-center">
-          See what's possible with Contractor+ Local
+          {title || "See what's possible with Contractor+ Local"}
         </h2>
       </Copy>
 

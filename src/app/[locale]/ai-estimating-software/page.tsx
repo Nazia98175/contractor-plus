@@ -55,7 +55,7 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
-  console.log("comparisonList", comparisonList);
+  console.log("comparisonList", thousandReviews);
 
   return (
     <main id="home-page-wrapper-2">

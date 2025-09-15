@@ -3,10 +3,6 @@ import CommonFormField from "@/components/common/CommonFormField";
 import CommonLogos from "@/components/common/CommonLogos";
 import { blackPlatforms, dealReviews2 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
-import {
-  leadGenerationData,
-  leadHGenerationFaqData,
-} from "@/components/common/Utils";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
@@ -64,9 +60,21 @@ export default async function LeadGeneration({ params }: Params) {
       };
   const useParams = await params;
 
-  const { commonData, hero, cardsWithLottie, commonProblems, comparisonList } =
-    await getLocalSeoForContractorsData(useParams?.locale);
-  console.log("edsxzcsxz0", comparisonList);
+  const {
+    pageContent,
+    hero,
+    cardsWithLottie,
+    commonProblems,
+    comparisonList,
+    problemSolutionSection,
+    seeWhatPossible,
+    alwaysTransparentAccessible,
+    thousandReviews,
+    emailSignupSection,
+    faqs,
+    commonData,
+  } = await getLocalSeoForContractorsData(useParams?.locale);
+  console.log("edsxzcsxz0", thousandReviews);
 
   return (
     <>
@@ -90,14 +98,21 @@ export default async function LeadGeneration({ params }: Params) {
       </div>
       <RunWithContractor kindAdorable={comparisonList} />
       <div className="overflow-hidden bg-white">
-        <CombinesPowerfulAi />
-        <DragAnimaiton />
-        {/* <PossibleWithContractor /> */}
+        <CombinesPowerfulAi
+          title={problemSolutionSection?.title}
+          subTitle={problemSolutionSection?.subTitle}
+        />
+        <DragAnimaiton title={seeWhatPossible.title} />
         <AlwaysTransparentAccessible
-          imgPath="/images/webp/always-transparent.webp"
-          headingPrimary="Always transparent,"
-          headingSecondary="Always accessible"
-          description="See what's going on 24/7 and access reports in your own personal local SEO portal. You'll never wonder what's been done or how your rankings look. Access your dashboard anytime. "
+          image={alwaysTransparentAccessible?.image}
+          title={
+            alwaysTransparentAccessible?.title ||
+            "Always transparent, Always accessible"
+          }
+          desc={
+            alwaysTransparentAccessible?.desc ||
+            "See what's going on 24/7 and access reports in your own personal local SEO portal. You'll never wonder what's been done or how your rankings look. Access your dashboard anytime. "
+          }
         />
         <div className="pt-9 pb-[84px]">
           <CommonLogos />
@@ -114,12 +129,14 @@ export default async function LeadGeneration({ params }: Params) {
             variantBtn="light"
             variant="white"
             title={
+              emailSignupSection?.title ||
               "This is what local SEO for contractors should have been all along"
             }
             subTitle={
-              "Start using Contractor+ free. Upgrade to get the full operating system."
+              emailSignupSection?.subTitle ||
+              "Start using Contractor+ free. Upgrade to get the full operating system"
             }
-            placeholder={"Your Email"}
+            placeholder={emailSignupSection?.placeholder || "Your Email"}
             createBtn={"Get free audit"}
             mobileBtn={"Download FREE App"}
             ncc={"No credit card required"}
@@ -131,7 +148,7 @@ export default async function LeadGeneration({ params }: Params) {
         />
         <Faq
           headingVariant="primary"
-          faq={leadHGenerationFaqData}
+          faq={faqs}
           classNameAnswer="pt-1"
           mainContainerclassName="px-2 md:pb-[76px]  md:pb-[83px] pb-10"
           TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"

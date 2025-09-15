@@ -1,23 +1,21 @@
 import Image from "next/image";
 import React from "react";
 type AlwaysTransparentAccessibleProps = {
-  imgPath: string;
-  headingPrimary: string;
-  headingSecondary: string;
-  description: string;
+  image?: any;
+  title?: string;
+  desc?: string;
 };
 const AlwaysTransparentAccessible = ({
-  imgPath,
-  headingPrimary,
-  headingSecondary,
-  description,
+  image,
+  title,
+  desc,
 }: AlwaysTransparentAccessibleProps) => {
   return (
     <section className="mx-auto flex w-full max-w-[1053px] flex-col items-center justify-between gap-6 px-2 py-6 sm:flex-row sm:gap-10 md:py-10">
       <div className="relative w-full max-w-[429px] overflow-hidden">
         <Image
           className="object-cover"
-          src={imgPath}
+          src={image.url || "images/webp/always-transparent.webp"}
           alt="always-transparent"
           width={429}
           height={290}
@@ -26,11 +24,10 @@ const AlwaysTransparentAccessible = ({
       </div>
       <div className="w-full max-w-[500px] space-y-5">
         <div className="heading text-winterWay text-center sm:text-start">
-          <h4>{headingPrimary}</h4>
-          <h5>{headingSecondary}</h5>
+          <h4>{title}</h4>
         </div>
         <p className="text-wallStreet text-center text-sm font-medium sm:text-start md:text-base lg:text-lg">
-          {description}
+          {desc}
         </p>
       </div>
     </section>

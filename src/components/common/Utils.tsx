@@ -916,60 +916,7 @@ export const leadGenerationData = {
     },
   ],
 };
-export const leadHGenerationFaqData = {
-  title: "What contractors want to know ",
-  subTitle: "Frequently asked questions",
-  faq: [
-    {
-      id: 1,
-      question: "this really only $249/monthly? ",
-      answer:
-        "Yes! Contractor+ Local literally has the functionality of 10+ platforms and an agency in one solution. It’s the cost of a bad lead or two you might pay for elsewhere. With a 33:1 return for every dollar spent, it’s like an unfair advantage. ",
-    },
-    {
-      id: 2,
-      question: "Do I need to manage the posts, photos, and reviews myself? ",
-      answer:
-        "No sweat. Just create a change order. More materials, added labor, a client request… it’s all built into the system when it happens. Everything stays tracked, approved, and visible.",
-    },
-    {
-      id: 3,
-      question: "What makes this better than hiring a local SEO agency? ",
-      answer:
-        "The system automatically pulls in any unbilled time, mileage, materials, or expenses tied to the job. You’ll see a running list of uninvoiced items. Add them in one click.  ",
-    },
-    {
-      id: 4,
-      question: "Will this help me get more reviews?",
-      answer:
-        "Absolutely. You can invoice by milestone, percentage, or scope completion. It’s perfect for multi-phase jobs or long-term projects that need progress billing. ",
-    },
-    {
-      id: 5,
-      question: "Is this the same thing as reputation management?",
-      answer:
-        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
-    },
-    {
-      id: 6,
-      question: "Is there a contract involved?",
-      answer:
-        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
-    },
-    {
-      id: 7,
-      question: "How do I start?",
-      answer:
-        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
-    },
-    {
-      id: 8,
-      question: "Can I subscribe to this service on the free plan?",
-      answer:
-        "Yes. For maintenance plans or recurring jobs, you can set up automated billing with a card on file. Invoices get sent and charged without any manual work.",
-    },
-  ],
-};
+
 export const toolEquipmentTracking = {
   title:
     "Turn the full job history into one clean invoice, without manual re-entry.",

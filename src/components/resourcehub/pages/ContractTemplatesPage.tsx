@@ -347,7 +347,7 @@ export default function ContractTemplatesPage() {
           <li>Consider having a lawyer review for large or complex projects</li>
         </ol>
 
-        <p className="text-darkKnight text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
+        <p className="text-darkKnight rounded border-l-4 border-yellow-500 bg-yellow-50 p-4 pl-4 text-sm">
           <strong>Disclaimer:</strong> These templates are provided for
           informational purposes and should not be considered legal advice. For
           complex projects or specific legal situations, consult with a

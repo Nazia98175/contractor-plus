@@ -1,12 +1,13 @@
 "use client";
+import { useRouter } from "next/navigation";
+import { Key } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import EventsCard from "../common/EventsCard";
-import { CustomSliderIcon } from "../common/Icons";
-import { Key } from "react";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import { useRouter } from "next/navigation";
+import EventsCard from "../common/EventsCard";
+import { CustomSliderIcon } from "../common/Icons";
+import NoEventFound from "../common/NoEventsFound";
 
 interface ConferenceCardProps {
   sectionHeading: string;
@@ -19,7 +20,6 @@ const ConferenceCard = ({
   EventCardItem,
   swiperId,
 }: ConferenceCardProps) => {
-  console.log(EventCardItem, "EventCardItem");
   const router = useRouter();
   return (
     <>
@@ -100,8 +100,7 @@ const ConferenceCard = ({
             }}
             className="!h-full"
           >
-            {EventCardItem ? (
-              EventCardItem.length > 0 &&
+            {EventCardItem.length > 0 ? (
               EventCardItem.map((Item: any, index: Key | null | undefined) => (
                 <SwiperSlide className="!h-auto" key={index}>
                   <EventsCard
@@ -111,9 +110,7 @@ const ConferenceCard = ({
                 </SwiperSlide>
               ))
             ) : (
-              <SwiperSlide>
-                <p className="text-white">No Events</p>
-              </SwiperSlide>
+              <NoEventFound />
             )}
           </Swiper>
         </div>

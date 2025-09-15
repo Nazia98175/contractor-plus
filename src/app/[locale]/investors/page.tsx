@@ -78,7 +78,14 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
         <TeamList teamData={table || []} />
         <TeamListMobile teamData={table || []} />
         <WhyNow items={whyNowSection?.items} />
-        <ProofWorking />
+        <ProofWorking
+          title={whyContractorSection?.title}
+          desc={whyContractorSection?.desc}
+          //@ts-ignore
+          title2={proofSection?.title}
+          desc2={proofSection?.desc}
+          items={proofSection?.items}
+        />
         <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
           <p className="proof-working relative z-20 mx-auto mt-[100px] mb-16 w-fit text-center text-base font-semibold tracking-[-0.32px]">
             {proofSection?.buttomText ||

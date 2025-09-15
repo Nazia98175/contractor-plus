@@ -16,7 +16,7 @@ export interface EstimaticPageData {
   commonData: any | null;
   faqs: any | null;
   industriesData: any;
-  blogs: any | null;
+  blogs?: any | null;
 }
 
 export const getEstimaticPageData = async (
@@ -35,7 +35,7 @@ export const getEstimaticPageData = async (
     thousandReviewsRes,
     faqsRes,
     commonData,
-    blogsRes,
+    // blogsRes,
     industriesData,
     emailSignupRes,
   ] = await Promise.all([
@@ -68,7 +68,7 @@ export const getEstimaticPageData = async (
     getEstimaticPage(locale, "&populate[faqs][populate]=faq"),
 
     getCommonData(locale),
-    getBlogsByCategory(locale, "ai-estimating-software", true),
+    // getBlogsByCategory(locale, "ai-estimating-software", true),
     getHomePage(locale, industriesQuery),
     getEstimaticPage(locale, "&populate[emailSignupSection]=*"),
   ]);
@@ -85,6 +85,6 @@ export const getEstimaticPageData = async (
     emailSignupSection: emailSignupRes?.data?.emailSignupSection || null,
     commonData: commonData || null,
     industriesData,
-    blogs: blogsRes || null,
+    // blogs: blogsRes || null,
   };
 };

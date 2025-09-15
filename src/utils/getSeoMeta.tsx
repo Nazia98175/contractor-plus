@@ -102,16 +102,25 @@ export const generateSeoMetaData = ({
   const title =
     page?.seoData?.metaTitle ||
     page?.SeoMetaData?.metaTitle ||
+    page?.SeoData?.metaTitle ||
     (slug ? `Contractor+ ${slug}` : "");
 
   const description =
-    page?.seoData?.metaDescription || page?.SeoMetaData?.metaDescription || "";
+    page?.seoData?.metaDescription ||
+    page?.SeoMetaData?.metaDescription ||
+    page?.SeoData?.metaDescription ||
+    "";
 
-  const keywords = page?.seoData?.keywords || page?.SeoMetaData?.keywords || "";
+  const keywords =
+    page?.seoData?.keywords ||
+    page?.SeoMetaData?.keywords ||
+    page?.SeoData?.keywords ||
+    "";
 
   const canonical =
     `${baseUrl}${page?.seoData?.canonicalUrl}` ||
     `${baseUrl}${page?.SeoMetaData?.canonicalUrl}` ||
+    `${baseUrl}${page?.SeoData?.canonicalUrl}` ||
     `${baseUrl}/${slug || ""}`;
 
   return {

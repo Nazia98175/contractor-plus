@@ -23,9 +23,9 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata | undefined> {
-  const resolvedParams = await params; // ✅ await before using
+  const resolvedParams = await params;
   const page = await getSeoDataCommon(
     `local-seo-of-contractor?locale=${resolvedParams.locale}&populate=*`,
   );
@@ -35,7 +35,7 @@ export async function generateMetadata({
   return generateSeoMetaData({ page });
 }
 interface Params {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function LeadGeneration({ params }: Params) {

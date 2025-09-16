@@ -77,7 +77,7 @@ export default async function LeadGeneration({ params }: Params) {
     faqs,
     commonData,
   } = await getLocalSeoForContractorsData(locale);
-  console.log("edsxzcsxz0", thousandReviews);
+  console.log("edsxzcsxz0", comparisonList);
 
   return (
     <>
@@ -124,7 +124,6 @@ export default async function LeadGeneration({ params }: Params) {
           data={dealReviews2}
           reviews={dealReviews2.reviews}
           variant="primary"
-          apiData={false}
         />
         <div className="px-2">
           <CommonFormField

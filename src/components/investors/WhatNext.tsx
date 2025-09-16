@@ -190,7 +190,6 @@ const WhatNext: React.FC<WhatNextProps> = ({
               </div>
             ))}
           </div>
-
           <p className="text-ironFixture hidden pt-[55px] text-center text-sm font-semibold xl:block">
             {bottomText}
           </p>

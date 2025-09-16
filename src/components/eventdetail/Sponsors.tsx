@@ -32,7 +32,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">
-             {`${eventDetail?.eventName}`} Sponsors
+            {`${eventDetail?.eventName}`} Sponsors
           </h4>
         </Copy>
       </div>
@@ -99,6 +99,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
                     member: {
                       id: number;
                       name: string;
+                      url: string;
                       image: { url: string };
                     },
                     index: number,
@@ -107,6 +108,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
                       <SponsorCard
                         image={member.image?.url ?? ""}
                         index={index}
+                        link={member?.url ?? "#"}
                         isFirstVisible={index === firstVisible}
                         isLastVisible={index === lastVisible}
                         isLastCard={index === sponsorLogo.length - 1}

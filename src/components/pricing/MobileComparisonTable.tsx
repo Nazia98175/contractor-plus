@@ -1,33 +1,41 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import { Tooltip } from "react-tooltip";
-import { comparisonTableData } from "../common/Helper";
 import { CheckIcon, CloseIcon, TooltipIcon } from "../common/Icons";
 import PlanButton from "./PlanButton";
 import AnimateHeight from "react-animate-height";
 
 interface Props {
+  pricingComparison: any;
   openKey: string | null;
   toggleCollapse: (key: string) => void;
 }
 
 const MobileComparisonTable: React.FC<Props> = ({
+  pricingComparison,
   openKey,
   toggleCollapse,
 }) => {
+  const comparisonTable = pricingComparison?.comparisonTable || [];
+  const plans = pricingComparison?.plans || [];
+
   return (
     <div className="space-y-3.5">
-      {comparisonTableData.map((group) => {
-        const isOpen = openKey === group.key;
+      {comparisonTable.map((section: any, sectionIdx: number) => {
+        const sectionKey = `section-${sectionIdx}`;
+        const isOpen = openKey === sectionKey;
 
         return (
-          <div key={group.key} className="overflow-hidden rounded-lg">
+          <div
+            key={section.id || sectionKey}
+            className="overflow-hidden rounded-lg"
+          >
             <div
-              onClick={() => toggleCollapse(group.key)} // ✅ Toggles this group
+              onClick={() => toggleCollapse(sectionKey)}
               className="bg-superSilver xs:px-4 flex cursor-pointer items-center justify-between gap-2 px-2 py-2.5"
             >
               <h4 className="text-winterWay text-base font-semibold tracking-[0.1px]">
-                {group.title}
+                {section.title}
               </h4>
               <span
                 className={`transform ${
@@ -39,18 +47,18 @@ const MobileComparisonTable: React.FC<Props> = ({
             </div>
 
             <AnimateHeight duration={300} height={isOpen ? "auto" : 0}>
-              {" "}
               <div>
-                {group.features.map((feature, fIndex) => {
-                  const tooltipId = `tooltip-${group.key}-${fIndex}`;
+                {section.features.map((feature: any, fIndex: number) => {
+                  const tooltipId = `tooltip-${sectionKey}-${fIndex}`;
+
                   return (
                     <div
-                      key={fIndex}
+                      key={feature.id || fIndex}
                       className="border-superSilver bg-doctor flex flex-col items-center justify-between gap-2 border-b p-2 text-base"
                     >
                       <div className="flex items-center justify-center gap-2">
                         <span className="text-winterWay font-medium tracking-[0.1px]">
-                          {feature.name}
+                          {feature.title}
                         </span>
                         <button
                           data-tooltip-id={tooltipId}
@@ -66,25 +74,23 @@ const MobileComparisonTable: React.FC<Props> = ({
                       </div>
 
                       <div className="grid w-full grid-cols-3 gap-4 rounded-sm bg-white py-[5px]">
-                        {feature.available.map((value, i) => (
+                        {feature.avilability.map((avail: any, i: number) => (
                           <div
-                            key={i}
+                            key={avail.id || i}
                             className={`flex items-center justify-center ${
-                              i !== feature.available.length - 1
+                              i !== feature.avilability.length - 1
                                 ? "border-superSilver border-r"
                                 : ""
                             }`}
                           >
-                            {typeof value === "boolean" ? (
-                              value ? (
-                                <CheckIcon width={22} height={22} />
-                              ) : (
-                                <CloseIcon width={22} height={22} />
-                              )
-                            ) : (
+                            {avail.availableText ? (
                               <span className="text-winterWay xs:text-xs text-center text-[10px]">
-                                {value}
+                                {avail.availableText}
                               </span>
+                            ) : avail.available ? (
+                              <CheckIcon width={22} height={22} />
+                            ) : (
+                              <CloseIcon width={22} height={22} />
                             )}
                           </div>
                         ))}
@@ -93,20 +99,29 @@ const MobileComparisonTable: React.FC<Props> = ({
                   );
                 })}
 
-                <div className="border-decemberSky bg-doctor xs:p-4 flex justify-center gap-2 border-t p-2">
-                  <PlanButton
-                    cta=" Upgrade To PRO"
-                    className="w-1/2"
-                    variant="proTeamSeconadry"
-                    size="small"
-                  />
-                  <PlanButton
-                    cta="Upgrade To PRO Team"
-                    className="w-1/2"
-                    variant="proTeam"
-                    size="small"
-                  />
-                </div>
+                {/* Only show upgrade buttons if we have PRO plans */}
+                {plans.length > 1 && (
+                  <div className="border-decemberSky bg-doctor xs:p-4 flex justify-center gap-2 border-t p-2">
+                    {/* Show button for PRO plan if it exists */}
+                    {plans[1] && (
+                      <PlanButton
+                        cta={`Upgrade To ${plans[1].name}`}
+                        className="w-1/2"
+                        variant="proTeamSeconadry"
+                        size="small"
+                      />
+                    )}
+                    {/* Show button for PRO Team plan if it exists */}
+                    {plans[2] && (
+                      <PlanButton
+                        cta={`Upgrade To ${plans[2].name}`}
+                        className="w-1/2"
+                        variant="proTeam"
+                        size="small"
+                      />
+                    )}
+                  </div>
+                )}
               </div>
             </AnimateHeight>
           </div>

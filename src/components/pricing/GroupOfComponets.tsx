@@ -6,23 +6,34 @@ import ComparisonTable from "./ComparisonTable";
 import PricingHero from "./PricingHero";
 import gsap from "gsap";
 
-const GroupOfComponets = ({
+interface GroupOfComponentsProps {
+  pageContent: any;
+  commonData: any;
+  pricingPlans: any;
+  reviews: any;
+  pricingData?: any; // Add this prop for CMS pricing data
+  pricingComparison?: any[]; // Add this prop for CMS pricing data
+}
+
+const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({
   pageContent,
   commonData,
   pricingPlans,
   reviews,
-}: any) => {
-  const compariosnTableRef = useRef<HTMLDivElement>(null);
+  pricingComparison,
+}) => {
+  const comparisonTableRef = useRef<HTMLDivElement>(null);
   const plansRef = useRef<HTMLDivElement>(null);
 
-  // console.log(pricingComparison, "pricingComparison"); //Has to integrate further
   const scrollToTable = () => {
-    if (!compariosnTableRef.current) return;
-    compariosnTableRef.current.scrollIntoView({ behavior: "smooth" });
+    if (!comparisonTableRef.current) return;
+    comparisonTableRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
   const scrollToPlans = () => {
     plansRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -40,6 +51,7 @@ const GroupOfComponets = ({
       });
     }, 1000);
   }, []);
+
   return (
     <>
       <div
@@ -60,11 +72,11 @@ const GroupOfComponets = ({
       <div className="bg-white">
         <CompleteFeatureList onScroll={scrollToTable} reviews={reviews} />
       </div>
-      <div className="bg-white">
-        <ComparisonTable ref={compariosnTableRef} />
+      <div className="bg-white" ref={comparisonTableRef}>
+        <ComparisonTable pricingComparison={pricingComparison} />
       </div>
     </>
   );
 };
 
-export default GroupOfComponets;
+export default GroupOfComponents;

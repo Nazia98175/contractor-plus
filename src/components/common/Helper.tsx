@@ -1195,86 +1195,86 @@ export const comparisonTableData: {
     key: "lead",
     features: [
       {
-        name: "Track Your Leads & Clients",
+        title: "Track Your Leads & Clients",
         description:
           "Track leads, clients, subs, vendors, tenants, and over 50+ 'contact types' so you maintain a comprehensive communication history with every point of contact that's relevant to your business.",
         available: [true, true, true],
       },
       {
-        name: "Opportunities Kanban",
+        title: "Opportunities Kanban",
         description:
           "Can track your deal flow using the Opportunities Kanban. This gives you a clear view of how your business is performing, and how much value each pipeline stage. Never let an opportunity slip through the cracks again.",
         available: [false, true, true],
       },
       {
-        name: "Booking & Request Forms",
+        title: "Booking & Request Forms",
         description:
           "You can allow your clients to schedule estimates, or book your services directly from your website, or social media, and have these events show up on the appropriate schedule inside Contractor+.",
         available: [false, true, true],
       },
       {
-        name: "Schedule Estimates",
+        title: "Schedule Estimates",
         description:
           "Have an upcoming assessment/estimate/quote (whatever you call it)? You can schedule these appointments and assign them to the appropriate team members based on their availability.",
         available: [false, true, true],
       },
       {
-        name: "Follow-Up Reminders",
+        title: "Follow-Up Reminders",
         description:
           "Need a reminder to follow up? You can quickly create reminders, and even automatically create reminders to follow up when certain conditions are met. This ensures your team is never dropping the ball.",
         available: [false, true, true],
       },
       {
-        name: "Residential & Commercial",
+        title: "Residential & Commercial",
         description: "Add both Residential & Commercial clients.",
         available: [false, true, true],
       },
       {
-        name: "Multiple Points of Contact",
+        title: "Multiple Points of Contact",
         description:
           "There's Contacts, Service Addresses, and Jobs. Each of these can have multiple points of contact. Each contact has their own communication timeline. Really convenient and easy to manage.",
         available: [true, true, true],
       },
       {
-        name: "Multiple Service Addresses",
+        title: "Multiple Service Addresses",
         description:
           "Each client can have multiple service addresses. Each service address has its own profile, schedule, photos & documents, etc.",
         available: [false, true, true],
       },
       {
-        name: "Tenant & Property Access",
+        title: "Tenant & Property Access",
         description:
-          "Every business is different. Track whatever additional information is important to you-like entry codes, PO Number, Tenant Name, Tenant Number etc.",
+          "Every business is different. Track whatever additional information is important to you-like entry codes, PO Number, Tenant title, Tenant Number etc.",
         available: [false, true, true],
       },
 
       {
-        name: "Custom Client Portal",
+        title: "Custom Client Portal",
         description:
           "A beautiful, sleek, secure & custom-branded client portal experience.",
         available: [false, true, true],
       },
       {
-        name: "On-The-Way Notifications",
+        title: "On-The-Way Notifications",
         description:
           "Notify your clients when you're on the way, or running late. Drop them an ETA and keep them updated. Proper communication builds trust and improves client satisfaction.",
         available: [false, true, true],
       },
       {
-        name: "Automatically Collect Client Reviews",
+        title: "Automatically Collect Client Reviews",
         description:
           "All you have to do is enter your links for Google My Business and/or Yelp, and configure when you'd like to ask your clients for reviews, the software will handle the rest for you! Now you can grow your client testimonials and increase your online visibility on auto-pilot!",
         available: [false, true, true],
       },
 
       {
-        name: "Automated Client Referrals",
+        title: "Automated Client Referrals",
         description:
           "Built-in automation settings that let you promote your referral program to your clients. You can specify how much you want to pay for client referrals, and Contractor+ will automatically promote your referral incentive to your clients. You can specify WHEN you want your clients to learn about your referral program, and we'll handle the rest.",
         available: [false, true, true],
       },
       {
-        name: "Contracts & eSignatures",
+        title: "Contracts & eSignatures",
         description: (
           <>
             Automatically attach a client contract to any estimate or invoice
@@ -1289,7 +1289,7 @@ export const comparisonTableData: {
         available: [false, true, true],
       },
       {
-        name: "W9 Form Automation",
+        title: "W9 Form Automation",
         description:
           "Generate a W9 form for any client in the click of a button, or automatically attach it to any outgoing invoice email.",
         available: [false, true, true],
@@ -1301,37 +1301,37 @@ export const comparisonTableData: {
     key: "comm",
     features: [
       {
-        name: "Contractor+ Voice",
+        title: "Contractor+ Voice",
         description:
           "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
         available: [true, true, true],
       },
       {
-        name: "Two-Way SMS",
+        title: "Two-Way SMS",
         description:
           "Contractor+ Voice is a business phone system for contractors. Buy or port in your numbers, setup your IVR and voicemail, make & receive calls. Available on both web and mobile versions!",
         available: [false, true, true],
       },
       {
-        name: "Two-Way Email",
+        title: "Two-Way Email",
         description:
           "Send & receive email to your connected Gmail, Outlook or IMAP accounts. If you receive an email from an existing contact, it will be added directly to that contact in your Contractor+ CRM.",
         available: [false, true, true],
       },
       {
-        name: "Call Recordings & Transcripts",
+        title: "Call Recordings & Transcripts",
         description:
           "Every call is recorded and transcribed, making each and every call fully searchable. ",
         available: [false, true, true],
       },
       {
-        name: "AI Sentiment Analysis",
+        title: "AI Sentiment Analysis",
         description:
           "All calls are analyzed for sentiment, and you can sort/filter by sentiment in the contacts list view, helping you identify clients that need a little extra TLC or outreach.",
         available: [false, true, true],
       },
       {
-        name: "Big Chief AI Assistant",
+        title: "Big Chief AI Assistant",
         description:
           'Big Chief can answer your phone calls, qualify and capture your leads, intake service requests and schedule appointments. 24/7/365, without ever needing a break or "being busy on the other line" again.',
         available: [false, true, true],
@@ -1343,62 +1343,62 @@ export const comparisonTableData: {
     key: "est",
     features: [
       {
-        name: "Call It What You Want",
+        title: "Call It What You Want",
         description:
-          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you rename the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
+          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you retitle the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
         available: [false, true, true],
       },
       {
-        name: "Optional Line Items & Add-Ons",
+        title: "Optional Line Items & Add-Ons",
         description:
           "You can add multiple optional line items per group, pre-select which options are recommended, and choose whether you want to allow the user to select multiple options per group or a single option per group. This can be used to dynamically populate the total based on the preference of each lead or client. Perfect for Good/Better/Best or upsells and addons.",
         available: [false, true, true],
       },
       {
-        name: "Local Material Pricing",
+        title: "Local Material Pricing",
         description:
           "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
         available: [false, true, true],
       },
       {
-        name: "Local Labor Rates",
+        title: "Local Labor Rates",
         description:
           "Our Local Labor Rate Index is populated from an aggregate of two sources, BLS.gov wages, and approved estimates/quotes in Contractor+, minus any outliers. Our USA construction labor rate index and forecast is accessible FREE in our resources hub, and is localized down to the zip code. Labor rates are also accessible by Estimatic AI for highly accurate base costs on your line items.",
         available: [false, true, true],
       },
       {
-        name: "Estimatic AI",
+        title: "Estimatic AI",
         description:
           "Estimatic allows you to create estimates using the latest, most advanced reasoning models. You can upload photos, a competitors estimate, and even blueprints or drawings, tell it what you need to create an estimate for, and it will produce a beautiful, accurate, fully itemized estimate in minutes.",
         available: [false, true, true],
       },
       {
-        name: "Line Item & Group Templates",
+        title: "Line Item & Group Templates",
         description:
           'Import or setup your cost book as "Line Item Templates" or "Group Templates" for instant recall when creating an estimate. Your templates are also accessible by Estimatic AI.',
         available: [false, true, true],
       },
       {
-        name: "Change Requests",
+        title: "Change Requests",
         description:
           "Your clients can request changes to an estimate or quote before approving it. This helps you work with your clients to get them a quote they're happy with before they sign your contract or you start your work.",
         available: [false, true, true],
       },
 
       {
-        name: "Markup",
+        title: "Markup",
         description:
           "Add your markup on a per line item basis or globally at the bottom of any estimate or quote. You put your costs on the line item, and then mark it up so you can track your profitability, with full attribution at every job.",
         available: [false, true, true],
       },
       {
-        name: "Adjustments",
+        title: "Adjustments",
         description:
           "Need to make a positive or negative adjustment at the bottom of an estimate or quote? No problem.",
         available: [false, true, true],
       },
       {
-        name: "Ratio Lock",
+        title: "Ratio Lock",
         description:
           "Ratio Lock automates calculating the materials you need to complete a task. Just configure the amount of materials you need for one standard unit of measurement, enable the ratio lock and then increase the labor quantity. The materials will scale proportionally. ",
         available: [false, true, true],
@@ -1410,50 +1410,50 @@ export const comparisonTableData: {
     key: "pay",
     features: [
       {
-        name: "Automated Invoicing",
+        title: "Automated Invoicing",
         description:
-          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you rename the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
+          "Do you send your clients Estimates? Or do you send your clients Quotes? Call it something else? We let you retitle the Estimates module with your own label. Call it whatever you want & we'll re-brand it everywhere.",
         available: [false, true, true],
       },
       {
-        name: "Upcoming Payment Notifications",
+        title: "Upcoming Payment Notifications",
         description:
           "Your clients will automatically be notified about upcoming payments. No need to communicate these things manually.",
         available: [false, true, true],
       },
       {
-        name: "Past Due Reminders",
+        title: "Past Due Reminders",
         description:
           "You can automatically notify your clients anytime there's a past due balance. One less thing you (or your bookkeeper) needs to keep tabs on.",
         available: [false, true, true],
       },
       {
-        name: "Change Orders",
+        title: "Change Orders",
         description:
           "Want to assess a Late Fee in the event a client is late on a payment? You can configure the late fee amount to be assessed and when to assess the fee. It's all automated so you don't have to think about it.",
         available: [false, true, true],
       },
       {
-        name: "Late Fees",
+        title: "Late Fees",
         description:
           "You can choose whether or not you'd like to assess a late fee when an invoice becomes past-due. If configured, the late fee will be automatically assessed.",
         available: [false, true, true],
       },
       {
-        name: "Import Expenses",
+        title: "Import Expenses",
         description:
           "If you've added expenses that are marked as billable, and they haven't been invoices yet, you can quickly import them to any invoice for collections.",
         available: [false, true, true],
       },
       {
-        name: "Batch/Bulk Payments",
+        title: "Batch/Bulk Payments",
         description:
           "If you have clients that have multiple projects going in parallel, they may cut you a check for more than one invoice/job. This allows you to record a single payment and attribute it to different invoices/jobs quickly and easily.",
         available: [false, true, true],
       },
 
       {
-        name: "Credit & Debit Payments",
+        title: "Credit & Debit Payments",
         description:
           "You can accept payments from all major debit and credit cards directly on your invoices, in your client portal and in-person.",
         available: [
@@ -1463,7 +1463,7 @@ export const comparisonTableData: {
         ],
       },
       {
-        name: "ACH Payments",
+        title: "ACH Payments",
         description:
           "Collecting a bank/ACH payment has never been easier. We've integrated with Plaid to facilitate fast, secure, frictionless ACH payments. Your clients can login to their bank, click pay, and the transaction is complete!",
         available: [
@@ -1473,49 +1473,49 @@ export const comparisonTableData: {
         ],
       },
       {
-        name: "Mobile Card Readers",
+        title: "Mobile Card Readers",
         description:
           "Order bluetooth Card Readers to accept payments in the field and on-the-go! We'll even send qualifying members a FREE card reader on the house.",
         available: [false, true, true],
       },
       {
-        name: "Pass Transaction Fees To Clients",
+        title: "Pass Transaction Fees To Clients",
         description:
           "Fees eat into every contractors margins. We allow you to pass the fees you'd normally have to eat, directly as a convenience fee for choosing to pay via card. This essentially means fee-free credit card processing for your business.",
         available: [false, true, true],
       },
       {
-        name: "Accept Gratuity",
+        title: "Accept Gratuity",
         description:
           "If enabled, you can give your customers the option to add a tip when making a payment. This is becoming more common in some areas and is a great way to reward your technicians for a job well done, that doesn't impact your margins.",
         available: [false, true, true],
       },
       {
-        name: "Deposits",
+        title: "Deposits",
         description:
           "You can specify your deposit requirements directly on an Estimate or Invoice and have it dynamically added to the contract. Your client will pay the deposit on a specified date or immediately upon approving the job.",
         available: [false, true, true],
       },
       {
-        name: "Payment Schedules",
+        title: "Payment Schedules",
         description:
           "You can define an entire date or milestone specific schedule of payments on any Estimate, Invoice or Job. This can be automatically added to your client agreement so your client is contractually agreeing to the specific schedule. ",
         available: [false, true, true],
       },
       {
-        name: "Wisetack Consumer Financing",
+        title: "Wisetack Consumer Financing",
         description: `Win more jobs and increase your average job size by offering "buy now pay later" style consumer financing to your customers directly on your estimates and invoices. By integrating this into your sales process, you'll sell more, and make more. `,
         available: [false, true, true],
       },
 
       {
-        name: "Next Day Funding",
+        title: "Next Day Funding",
         description:
           "Accept a card payment today, the funds hit your account the next business day. This is our standard turnaround for trusted merchants.",
         available: [false, true, true],
       },
       {
-        name: "Instant Payouts",
+        title: "Instant Payouts",
         description:
           "Want your funds faster? If you can't wait until the next day, you can get your funds as soon as 30 minutes with Instant Payouts for 1%.",
         available: [false, "1% Per Payout", "1% Per Payout"],
@@ -1527,42 +1527,42 @@ export const comparisonTableData: {
     key: "collab",
     features: [
       {
-        name: "Manage Team Membersg",
+        title: "Manage Team Membersg",
         description: "Add your Employees as Team Members.",
         available: [false, false, true],
       },
       {
-        name: "Roles & User Permissions",
+        title: "Roles & User Permissions",
         description:
           "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
         available: [false, false, true],
       },
       {
-        name: "Comprehensive Mobile App",
+        title: "Comprehensive Mobile App",
         description:
           "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
         available: [true, true, true],
       },
       {
-        name: "Chat",
+        title: "Chat",
         description:
           "Control each individual's level of access and control. Group them into groups to save time when configuring who needs to have access to what.",
         available: [false, true, true],
       },
       {
-        name: "Drag & Drop Scheduling",
+        title: "Drag & Drop Scheduling",
         description:
           "View the Schedule for your entire team. Send or Print any individual schedule, quickly assign Team Member's to individual visits, and keep track of unscheduled events that need to be scheduled.",
         available: [false, true, true],
       },
       {
-        name: "Real-Time Dispatching",
+        title: "Real-Time Dispatching",
         description:
           "You can schedule events without having anyone assigned. You can see your scheduled, unscheduled & unassigned jobs on the in-app Schedule and assign team members or groups of team members based on their individual availability.",
         available: [false, false, true],
       },
       {
-        name: "Live Map",
+        title: "Live Map",
         description:
           "Track your entire team's whereabouts white they're on the clock or tracking their mileage. See who's on the Job Site & see who's driving. Start a chat, delegate/assign a task, and more - right from the map view!",
         available: [false, false, true],
@@ -1574,67 +1574,67 @@ export const comparisonTableData: {
     key: "job",
     features: [
       {
-        name: "Tasks",
+        title: "Tasks",
         description:
           "Keep track of your Tasks & Sub-Tasks to maintain an accurate progress report on every Job Site.",
         available: [false, true, true],
       },
       {
-        name: "Subtasks",
+        title: "Subtasks",
         description:
           "Subtasks can be created under any task. Allowing you to break tasks into smaller steps, ensuring more accurate tracking & transparency across the board.",
         available: [false, false, true],
       },
       {
-        name: "Gantt",
+        title: "Gantt",
         description: "Easily manage multi-phase projects with Gantt.",
         available: [false, false, true],
       },
       {
-        name: "Import Phases & Tasks From Estimate",
+        title: "Import Phases & Tasks From Estimate",
         description:
           'Import "Groups" and "Line Items" as "Phases" and "Tasks" at the Job, to create a Job Template that can then be delegated and scheduled.',
         available: [false, true, true],
       },
       {
-        name: "Recurring Jobs",
+        title: "Recurring Jobs",
         description:
           "Have a job that reoccurs multiple times? A weekly visit? A monthly service call? You can quickly create recurring jobs in Contractor+. You can even attach a Service Agreement and configure automated billing to match the schedule of your recurring jobs!",
         available: [false, true, true],
       },
       {
-        name: "Work Orders",
+        title: "Work Orders",
         description:
           "Prefer to use Work Orders to keep track of your jobs/projects? Contractor+ has both Jobs & Work Orders, so you can use whatever makes the most sense for your business.",
         available: [false, true, true],
       },
       {
-        name: "Checklists",
+        title: "Checklists",
         description:
           "Create multiple checklists for any Job, specific Phase or specific Task. Mandate the completion of these checklists on a specific schedule. With multiple templates to choose from.",
         available: [false, false, true],
       },
 
       {
-        name: "Post-Inspections",
+        title: "Post-Inspections",
         description:
           "Post-Inspection reports allow you to review the work your crews have completed in the field, and optionally share the before and after results with your clients.",
         available: [false, true, true],
       },
       {
-        name: "Photos & Documents",
+        title: "Photos & Documents",
         description:
           "Attach Photos and Documents to any Client or Project. Additional storage can be purchased if your limit is reached.",
         available: [false, "250GB", "1TB"],
       },
       {
-        name: "Permits",
+        title: "Permits",
         description:
           "Track your permits for any job / project in a dedicated permits tab.",
         available: [false, true, true],
       },
       {
-        name: "Weather",
+        title: "Weather",
         description:
           "Automatically track the Weather Forecast for any Job Site",
         available: [false, true, true],
@@ -1646,91 +1646,91 @@ export const comparisonTableData: {
     key: "productivity",
     features: [
       {
-        name: "To Do's",
+        title: "To Do's",
         description: "Add your Employees as Team Members.",
         available: [true, true, "Coming Soon"],
       },
       {
-        name: "Reminders",
+        title: "Reminders",
         description:
           "Never let something slip through the cracks again. Schedule reminders so you'll be alerted when it's time to follow up. ",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Action Items",
+        title: "Action Items",
         description:
           "Never lose sight of anything that requires your attention again. Right on your dashboard, you can see any notification or alert that requires your input.",
         available: [true, true, "coming soon"],
       },
       {
-        name: "Notes",
+        title: "Notes",
         description:
           "Notes can be added under just about anything, are visible in your communication history, and can be searched.",
         available: [true, true, "coming soon"],
       },
       {
-        name: "Custom Reports",
+        title: "Custom Reports",
         description:
           "With over 15+ built-in reports, you’ll know exactly how your business is doing.",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Custom Fields",
+        title: "Custom Fields",
         description:
           "Need to track a specific variable on a per Lead, Client, Job, Estimate, Invoice (or whatever) basis? You can create all your Custom Fields to completely customize your Work Flow.",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Time Clock",
+        title: "Time Clock",
         description:
           "You can have your individual employees clock in and out against any task or job. You (or your managers) can optionally clock in and out on behalf of individual team members and even edit their past entry's. This will make your bookkeepers life a lot easier, while also giving you the ability to generate reports to know how efficient your employees are.",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Mileage Log",
+        title: "Mileage Log",
         description:
           "You can track the mileage of any team member, and see their GPS route data at any time. All without having to purchase any additional external hardware or devices. This makes mileage reimbursement a breeze for your accountant.",
         available: [false, true, "coming soon"],
       },
 
       {
-        name: "Tool & Equipment Tracking",
+        title: "Tool & Equipment Tracking",
         description:
           "A streamlined tool and asset management solution with optional low-cost Bluetooth Tool Tags™ or - COMING SOON - one of 3 GPS trackers (no contracts, $25/tracker/month). Stop your tools from growing legs, hold your team and subs accountable, and always know where everything is located.",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Expense Tracking",
+        title: "Expense Tracking",
         description:
           "Track your expenses, know which expenses are reimbursable or billable and even import expenses and receipts to your invoices for reimbursement.",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Shopping Lists",
+        title: "Shopping Lists",
         description:
           "Never forget what you need to pick up at the store, or send the list via email like a purchase order to your preferred vendor(s) and expedite the ordering process.",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Full Control Over Settings",
+        title: "Full Control Over Settings",
         description:
           "You'll get access to change all kinds of settings related to Branding, Estimates, Invoices, Post-Inspections, Payments and more. ",
         available: [false, true, "coming soon"],
       },
       {
-        name: "Email & SMS Templates",
+        title: "Email & SMS Templates",
         description:
           "Save a ton of time by configuring templates that you commonly send your clients and contacts. ",
         available: [false, true, "Coming Soon"],
       },
       {
-        name: "Multiple Workspaces",
+        title: "Multiple Workspaces",
         description:
           "Big Chief is Contractor+'s native AI assistant & is trained on over 300 knowledgebase articles, all past customer communication, hundreds of past QA test cases, and has read access to all your important account information. The ultimate 24/7/365 support assistant and business growth advisor.",
         available: [false, true, "Coming Soon"],
       },
       {
-        name: "Big Chief AI",
+        title: "Big Chief AI",
         description:
           "Big Chief is Contractor+'s native AI assistant & is trained on over 300 knowledgebase articles, all past customer communication, hundreds of past QA test cases, and has read access to all your important account information. The ultimate 24/7/365 support assistant and business growth advisor.",
         available: [false, true, "Coming Soon"],
@@ -1742,60 +1742,60 @@ export const comparisonTableData: {
     key: "integration",
     features: [
       {
-        name: "QuickBooks Online",
+        title: "QuickBooks Online",
         description:
           "Sync your clients, estimates, invoices, payments, expenses and products & services with QuickBooks Online. ",
         available: [false, false, true],
       },
       {
-        name: "CompanyCam",
+        title: "CompanyCam",
         description:
           "Sync all your photos and documents directly to CompanyCam & vice versa. ",
         available: [false, false, true],
       },
       {
-        name: "Thumbtack",
+        title: "Thumbtack",
         description:
           "We offer exclusive lead generation to our clients. But for those who prefer to use Thumbtack, we've made a simple integration that lets you access your Thumbtack leads right inside the leads panel of Contractor+.",
         available: [false, true, true],
       },
       {
-        name: "Angi",
+        title: "Angi",
         description:
           "Prefer Angi? We've made a simple integration that lets you access your Angi leads right inside the leads panel of Contractor+.",
         available: [false, true, true],
       },
       {
-        name: "EarthCam",
+        title: "EarthCam",
         description:
           "If you use EarthCam, you can add your Job Site Live Cams to any job, client or service address. This lets you see what's going on at every job site, right from your Contractor+ dashboard.",
         available: [false, true, true],
       },
 
       {
-        name: "iCal",
+        title: "iCal",
         description: "Two-way calendar sync with any iCal calendar.",
         available: [false, true, true],
       },
       {
-        name: "Google Calendar",
+        title: "Google Calendar",
         description: "Two-way calendar sync with any Google Calendar.",
         available: [false, true, true],
       },
 
       {
-        name: "Outlook Calendar",
+        title: "Outlook Calendar",
         description: "Two-way calendar sync with any Outlook calendar.",
         available: [false, true, true],
       },
       {
-        name: "Zapier",
+        title: "Zapier",
         description:
           "Over 5,000 possible integrations you can configure to work with Contractor+ through Zapier.",
         available: [false, false, true],
       },
       {
-        name: "Developers API",
+        title: "Developers API",
         description:
           "We have a full RESTful API, enabling you to build your own custom solutions that are in communication with Contractor+.",
         available: [false, false, true],

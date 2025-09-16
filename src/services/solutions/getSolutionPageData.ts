@@ -9,7 +9,7 @@ export interface CrmLikePageDataResponse {
   commonProblems: any | null;
   fieldServiceData: any | null;
   trackProperties: any | null;
-  comparison: any | null;
+  comparisonList: any | null;
   teamsUsingContractor: any | null;
   faqs: any | null;
   blogsList: any | null;
@@ -29,7 +29,7 @@ export const getSolutionPageData = async (
     commonProblemsRes,
     fieldServiceRes,
     trackPropertiesRes,
-    comparisonRes,
+    comparisonListRes,
     teamsUsingContractorRes,
     faqsRes,
     blogs,
@@ -61,7 +61,7 @@ export const getSolutionPageData = async (
     getSolutionPage(
       slug,
       locale,
-      "&populate[comparisonTable][populate][comaprisons][populate][comparisonList]=true",
+      "&populate[comparisonTable][populate][comparisons][populate][comparisonList]=*",
     ),
     getSolutionPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
     getSolutionPage(slug, locale, "&populate[faqs][populate]=faq"),
@@ -82,7 +82,7 @@ export const getSolutionPageData = async (
       fieldServiceRes?.data?.[0]?.problemSolutionSection || null,
     trackProperties:
       trackPropertiesRes?.data?.[0]?.featureHighlightSolutionSection || null,
-    comparison: comparisonRes?.data?.[0]?.comparisonTable || null,
+    comparisonList: comparisonListRes?.data?.[0]?.comparisonTable || null,
     teamsUsingContractor:
       teamsUsingContractorRes?.data?.[0]?.resultsStatsSection || null,
     faqs: faqsRes?.data?.[0] || null,

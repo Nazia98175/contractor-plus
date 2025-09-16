@@ -44,7 +44,7 @@ export const getLocalSeoForContractorsData = async (
     ),
     localSeoForContractorsPage(
       locale,
-      "&populate[comparisonTable][populate][comaprisons][populate]=comparisonList",
+      "&populate[comparisonTable][populate][comparisons][populate][comparisonList]=*",
     ),
     localSeoForContractorsPage(
       locale,
@@ -70,7 +70,7 @@ export const getLocalSeoForContractorsData = async (
     hero: heroRes?.data?.hero || null,
     cardsWithLottie: cardsWithLottieRes?.data?.cardsWithLottie || null,
     commonProblems: commonProblemsRes?.data?.commonProblems || null,
-    comparisonList: comparisonListRes?.data?.comparisonTableEstimatic || null,
+    comparisonList: comparisonListRes?.data?.comparisonTable || null,
     problemSolutionSection:
       problemSolutionSectionRes?.data?.problemSolutionSection || null,
     seeWhatPossible: seeWhatPossibleRes?.data?.seeWhatPossible || null,

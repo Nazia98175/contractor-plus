@@ -61,7 +61,7 @@ const FieldServicesPage = async ({ params }: Params) => {
     commonProblems,
     fieldServiceData,
     trackProperties,
-    comparison,
+    comparisonList,
     teamsUsingContractor,
     faqs,
     blogs,
@@ -74,7 +74,7 @@ const FieldServicesPage = async ({ params }: Params) => {
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);
-  console.log("switchingTool", commonProblems);
+  console.log("comparisonList", comparisonList);
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
@@ -90,7 +90,6 @@ const FieldServicesPage = async ({ params }: Params) => {
           locale={useParams?.locale}
         />
       </div>
-
       <ServiceContractorsMarquee reviews={reviews} />
       <div className="bg-white">
         <GoingFieldSevices
@@ -102,7 +101,7 @@ const FieldServicesPage = async ({ params }: Params) => {
           fieldService={fieldServiceData}
         />
       </div>
-      <RunWithContractor kindAdorable={comparison} />
+      <RunWithContractor kindAdorable={comparisonList} />
       <TimmingEffect timingEff={trackProperties} commonData={commonData} />
       <NeverLookBack data={teamsUsingContractor} />
       <ThousandsReviews

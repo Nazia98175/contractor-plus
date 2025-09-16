@@ -40,7 +40,6 @@ const PricingPage = async ({
     faqs,
     emailSign,
   } = await getPricingData(useParams?.locale);
-  console.log("frdsxz", pricingComparison);
 
   return (
     <main className="font-myriad overflow-hidden">

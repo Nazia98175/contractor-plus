@@ -30,7 +30,10 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    if (!sectionRef.current || marketOpportunityData.length === 0) return;
+    // Only run animations on desktop (lg and above)
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    
+    if (!isDesktop || !sectionRef.current || marketOpportunityData.length === 0) return;
 
     const ctx = gsap.context(() => {
       const cards = cardsRef.current.filter((card): card is HTMLDivElement => card !== null);
@@ -148,83 +151,134 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
 
   if (marketOpportunityData.length === 0) return null;
 
-  // Use the first item's title and desc for the fixed header
+  // Use the first item's title and desc for the header
   const headerData = marketOpportunityData[0];
 
   return (
-    <div ref={sectionRef} className="relative">
-      {/* Fixed Header - Now positioned below navbar */}
-      <div 
-        ref={headerRef}
-        className="absolute top-0 left-0 right-0 z-40 px-4 pt-[120px] pb-[40px]"
-      >
-        <div className="mx-auto max-w-[1200px]">
-          <Copy animateOnScroll={false}>
-            <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
-              {headerData.title || "Market opportunity"}
-            </h3>
-          </Copy>
-          <Copy animateOnScroll={false}>
-            <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
-              {headerData.desc || "The U.S. contractor software market is MASSIVE, and underserved."}
-            </p>
-          </Copy>
+    <>
+      {/* Mobile Layout - Static, no animations */}
+      <div className="block lg:hidden">
+        {/* Header */}
+        <div className="px-4 pt-[120px] pb-[40px]">
+          <div className="mx-auto max-w-[600px]">
+            <Copy animateOnScroll={true}>
+              <h3 className="text-mana text-center text-xl font-bold sm:text-2xl">
+                {headerData.title || "Market opportunity"}
+              </h3>
+            </Copy>
+            <Copy animateOnScroll={true}>
+              <p className="text-ironFixture pt-3 text-center text-xs font-semibold sm:text-sm">
+                {headerData.desc || "The U.S. contractor software market is MASSIVE, and underserved."}
+              </p>
+            </Copy>
+          </div>
         </div>
-      </div>
 
-      {/* Cards Container */}
-      <div 
-        ref={cardsWrapperRef}
-        className="relative h-screen w-full"
-      >
-        {/* Cards - Adjusted padding to account for navbar + header */}
-        <div className="relative h-full w-full pt-[240px]">
+        {/* Cards - Static vertical layout */}
+        <div className="space-y-12 px-4 pb-12">
           {marketOpportunityData.map((item, index) => (
             <div
               key={index}
-              ref={(el: HTMLDivElement | null): void => {
-                cardsRef.current[index] = el;
-              }}
-              className="absolute inset-0 flex items-center justify-center pt-[240px]"
+              className="flex flex-col items-center gap-6 max-w-[500px] mx-auto"
             >
-              <div
-                className={`mx-auto flex w-full max-w-[1441px] items-center justify-between gap-4 px-4 sm:px-[60px] md:gap-6 lg:px-[100px] 2xl:px-[128px] ${
-                  index % 2 === 0
-                    ? "flex-col md:flex-row"
-                    : "flex-col md:flex-row-reverse"
-                }`}
-              >
-                {/* Main Image with Background */}
-                <div className="relative flex-shrink-0">
-                  <img
-                    className="market-image relative z-10 w-full max-w-[299px]"
-                    src={item.image?.url || "/placeholder-image.png"}
-                    alt={`market-${index}`}
-                  />
-                  <img
-                    className={`market-bg-image absolute top-[-25%] z-[5] hidden w-full max-w-[330px] opacity-60 md:block ${
-                      index % 2 === 0 ? "left-[-30%]" : "right-[-30%]"
-                    }`}
-                    src={item.image?.url || "/placeholder-image.png"}
-                    alt={`market-bg-${index}`}
-                  />
-                </div>
+              {/* Image */}
+              <div className="relative">
+                <img
+                  className="relative z-10 w-full max-w-[200px]"
+                  src={item.image?.url || "/placeholder-image.png"}
+                  alt={`market-${index}`}
+                />
+              </div>
 
-                {/* Content */}
-                <div className="market-content relative z-20 w-full max-w-[746px]">
-                  <h3 className="industry-shift-text text-lg font-medium md:text-2xl lg:text-3xl">
-                    {item.subTitle}
-                  </h3>
-                  <p className="text-steel pt-4 text-sm font-extralight md:text-lg lg:text-[22px]">
-                    {item.subDesc}
-                  </p>
-                </div>
+              {/* Content */}
+              <div className="text-center">
+                <h3 className="industry-shift-text text-base font-medium mb-3">
+                  {item.subTitle}
+                </h3>
+                <p className="text-steel text-xs font-light">
+                  {item.subDesc}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+
+      {/* Desktop Layout - With animations */}
+      <div ref={sectionRef} className="relative hidden lg:block">
+        {/* Fixed Header - positioned below navbar */}
+        <div 
+          ref={headerRef}
+          className="absolute top-0 left-0 right-0 z-40 px-4 pt-[120px] pb-[40px]"
+        >
+          <div className="mx-auto max-w-[1200px]">
+            <Copy animateOnScroll={false}>
+              <h3 className="text-mana text-center text-2xl font-bold sm:text-[28px] md:text-[38px]">
+                {headerData.title || "Market opportunity"}
+              </h3>
+            </Copy>
+            <Copy animateOnScroll={false}>
+              <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
+                {headerData.desc || "The U.S. contractor software market is MASSIVE, and underserved."}
+              </p>
+            </Copy>
+          </div>
+        </div>
+
+        {/* Cards Container */}
+        <div 
+          ref={cardsWrapperRef}
+          className="relative h-screen w-full"
+        >
+          {/* Cards - Adjusted padding to account for navbar + header */}
+          <div className="relative h-full w-full pt-[240px]">
+            {marketOpportunityData.map((item, index) => (
+              <div
+                key={index}
+                ref={(el: HTMLDivElement | null): void => {
+                  cardsRef.current[index] = el;
+                }}
+                className="absolute inset-0 flex items-center justify-center pt-[240px]"
+              >
+                <div
+                  className={`mx-auto flex w-full max-w-[1441px] items-center justify-between gap-4 px-4 sm:px-[60px] md:gap-6 lg:px-[100px] 2xl:px-[128px] ${
+                    index % 2 === 0
+                      ? "flex-col md:flex-row"
+                      : "flex-col md:flex-row-reverse"
+                  }`}
+                >
+                  {/* Main Image with Background */}
+                  <div className="relative flex-shrink-0">
+                    <img
+                      className="market-image relative z-10 w-full max-w-[299px]"
+                      src={item.image?.url || "/placeholder-image.png"}
+                      alt={`market-${index}`}
+                    />
+                    <img
+                      className={`market-bg-image absolute top-[-25%] z-[5] hidden w-full max-w-[330px] opacity-60 md:block ${
+                        index % 2 === 0 ? "left-[-30%]" : "right-[-30%]"
+                      }`}
+                      src={item.image?.url || "/placeholder-image.png"}
+                      alt={`market-bg-${index}`}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="market-content relative z-20 w-full max-w-[746px]">
+                    <h3 className="industry-shift-text text-lg font-medium md:text-2xl lg:text-3xl">
+                      {item.subTitle}
+                    </h3>
+                    <p className="text-steel pt-4 text-sm font-extralight md:text-lg lg:text-[22px]">
+                      {item.subDesc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

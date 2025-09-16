@@ -38,102 +38,105 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
 
       // Calculate total scroll distance
       const cardCount = cards.length;
-      const scrollDistance = cardCount * 100; // 100vh per card
+      const scrollDistance = (cardCount - 1) * 100; // 100vh per transition
 
-      // Set initial states for all cards
+      // Set initial states for all cards - all stacked with only first visible
       cards.forEach((card, index) => {
         if (index === 0) {
           // First card starts visible
           gsap.set(card, {
+            zIndex: cardCount,
             opacity: 1,
-            y: 0,
-            scale: 1,
           });
         } else {
-          // Other cards start below
+          // Other cards start hidden
           gsap.set(card, {
+            zIndex: cardCount - index,
             opacity: 0,
-            y: "100%",
-            scale: 0.95,
           });
         }
       });
 
-      // Create ScrollTrigger for the pinned section
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: `+=${scrollDistance}%`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const currentCardIndex = Math.min(
-            Math.floor(progress * cardCount),
-            cardCount - 1
-          );
-          
-          cards.forEach((card, index) => {
-            const cardProgress = (progress * cardCount) - index;
-            
-            if (index === currentCardIndex) {
-              // Current active card
-              gsap.to(card, {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.3,
-                ease: "power2.out",
-                overwrite: "auto",
-              });
-            } else if (index < currentCardIndex) {
-              // Previous cards - move up and fade out
-              gsap.to(card, {
-                opacity: 0,
-                y: "-30%",
-                scale: 0.9,
-                duration: 0.3,
-                ease: "power2.out",
-                overwrite: "auto",
-              });
-            } else {
-              // Next cards - stay below
-              gsap.to(card, {
-                opacity: 0,
-                y: "100%",
-                scale: 0.95,
-                duration: 0.3,
-                ease: "power2.out",
-                overwrite: "auto",
-              });
-            }
-          });
-
-          // Update progress dots
-          const dots = document.querySelectorAll('.market-dot');
-          dots.forEach((dot, index) => {
-            if (index === currentCardIndex) {
-              gsap.to(dot, { scale: 1.5, opacity: 1, duration: 0.3 });
-            } else {
-              gsap.to(dot, { scale: 1, opacity: 0.3, duration: 0.3 });
-            }
-          });
-        },
+      // Create main timeline with ScrollTrigger
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: `+=${scrollDistance}%`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 1,
+          snap: {
+            snapTo: 1 / (cardCount - 1),
+            duration: { min: 0.4, max: 0.8 },
+            delay: 0.1,
+            ease: "power1.inOut"
+          }
+        }
       });
 
-      // Add parallax to background images
+      // Create transitions between cards
+      cards.forEach((card, index) => {
+        if (index < cards.length - 1) {
+          const nextCard = cards[index + 1];
+          const currentImage = card.querySelector('.market-image');
+          const currentBgImage = card.querySelector('.market-bg-image');
+          const currentContent = card.querySelector('.market-content');
+          
+          const nextImage = nextCard.querySelector('.market-image');
+          const nextBgImage = nextCard.querySelector('.market-bg-image');
+          const nextContent = nextCard.querySelector('.market-content');
+
+          // Fade out current card and fade in next card
+          tl.to(card, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.inOut"
+          })
+          .to(currentContent, {
+            y: -30,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.in"
+          }, "<")
+          .to([currentImage, currentBgImage], {
+            y: -50,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.in"
+          }, "<0.1")
+          .to(nextCard, {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.inOut"
+          }, "-=0.3")
+          .from(nextContent, {
+            y: 30,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.out"
+          }, "<")
+          .from([nextImage, nextBgImage], {
+            y: 50,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.out"
+          }, "<0.1");
+        }
+      });
+
+      // Add subtle parallax to background images
       cards.forEach((card) => {
         const bgImage = card.querySelector('.market-bg-image');
         if (bgImage) {
           gsap.to(bgImage, {
-            y: -50,
+            y: -30,
             ease: "none",
             scrollTrigger: {
               trigger: sectionRef.current,
               start: "top top",
               end: "bottom top",
-              scrub: 1,
+              scrub: 2,
             },
           });
         }
@@ -150,10 +153,10 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
 
   return (
     <div ref={sectionRef} className="relative">
-      {/* Fixed Header - Always visible */}
+      {/* Fixed Header - Now positioned below navbar */}
       <div 
         ref={headerRef}
-        className="absolute top-0 left-0 right-0 z-40 px-4 pt-[60px] pb-[40px]"
+        className="absolute top-0 left-0 right-0 z-40 px-4 pt-[120px] pb-[40px]"
       >
         <div className="mx-auto max-w-[1200px]">
           <Copy animateOnScroll={false}>
@@ -174,15 +177,15 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
         ref={cardsWrapperRef}
         className="relative h-screen w-full"
       >
-        {/* Cards */}
-        <div className="relative h-full w-full pt-[180px]">
+        {/* Cards - Adjusted padding to account for navbar + header */}
+        <div className="relative h-full w-full pt-[240px]">
           {marketOpportunityData.map((item, index) => (
             <div
               key={index}
               ref={(el: HTMLDivElement | null): void => {
                 cardsRef.current[index] = el;
               }}
-              className="absolute inset-0 flex items-center justify-center pt-[180px]"
+              className="absolute inset-0 flex items-center justify-center pt-[240px]"
             >
               <div
                 className={`mx-auto flex w-full max-w-[1441px] items-center justify-between gap-4 px-4 sm:px-[60px] md:gap-6 lg:px-[100px] 2xl:px-[128px] ${
@@ -194,7 +197,7 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
                 {/* Main Image with Background */}
                 <div className="relative flex-shrink-0">
                   <img
-                    className="relative z-10 w-full max-w-[299px]"
+                    className="market-image relative z-10 w-full max-w-[299px]"
                     src={item.image?.url || "/placeholder-image.png"}
                     alt={`market-${index}`}
                   />
@@ -208,7 +211,7 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
                 </div>
 
                 {/* Content */}
-                <div className="relative z-20 w-full max-w-[746px]">
+                <div className="market-content relative z-20 w-full max-w-[746px]">
                   <h3 className="industry-shift-text text-lg font-medium md:text-2xl lg:text-3xl">
                     {item.subTitle}
                   </h3>
@@ -220,17 +223,6 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Progress Indicator Dots */}
-      <div className="fixed bottom-10 left-1/2 z-50 flex -translate-x-1/2 gap-2">
-        {marketOpportunityData.map((_, index) => (
-          <div
-            key={index}
-            className="market-dot h-2 w-2 rounded-full bg-white/30 transition-all duration-300"
-            data-index={index}
-          />
-        ))}
       </div>
     </div>
   );

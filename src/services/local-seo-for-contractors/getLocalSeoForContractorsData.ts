@@ -48,7 +48,7 @@ export const getLocalSeoForContractorsData = async (
     ),
     localSeoForContractorsPage(
       locale,
-      "&populate[problemSolutionSection][populate][solutionsList]=*",
+      "&populate[problemSolutionSection][populate][solutionsList][populate]=*",
     ),
     localSeoForContractorsPage(locale, "&populate[seeWhatPossible]=*"),
     localSeoForContractorsPage(
@@ -64,6 +64,7 @@ export const getLocalSeoForContractorsData = async (
     getCommonData(locale),
   ]);
 
+  console.log(problemSolutionSectionRes, "problemSolutionSectionRes");
   return {
     pageContent: pageContentRes?.data || null,
     commonData: commonData || null,

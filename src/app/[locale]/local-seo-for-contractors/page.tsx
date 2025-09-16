@@ -77,7 +77,6 @@ export default async function LeadGeneration({ params }: Params) {
     faqs,
     commonData,
   } = await getLocalSeoForContractorsData(locale);
-  console.log("edsxzcsxz0", comparisonList);
 
   return (
     <>

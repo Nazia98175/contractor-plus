@@ -27,7 +27,13 @@ const AccessibilityPage = async ({
   const { locale } = await params;
   const pagedata = await getAccessibilityData(locale);
   if (!pagedata) return notFound();
-  return <Accessibility data={pagedata} />;
+  return (
+    <div id="common-homepage-wrapper">
+      <div id="home-page-view-port-screen" className="relative opacity-0">
+        <Accessibility data={pagedata} />
+      </div>
+    </div>
+  );
 };
 
 export default AccessibilityPage;

@@ -104,11 +104,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
   return (
     <>
-      <div id="home-page-wrapper-2">
-        <div
-          id="home-page-view-port-screen-fetures"
-          className="relative opacity-0"
-        >
+      <div id="common-homepage-wrapper">
+        <div id="home-page-view-port-screen" className="relative opacity-0">
           <CommonHero
             commonData={commonData}
             hero={pageData?.hero}
@@ -191,7 +188,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             reviews={pageData.reviewsData}
           />
         </div>
-
         <div className="relative overflow-hidden">
           {/* Background Icons */}
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
@@ -235,7 +231,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
           />
         </div>
-
         <BlogPosts
           data={pageData.blogsList || []}
           blogs={pageData.blogs}

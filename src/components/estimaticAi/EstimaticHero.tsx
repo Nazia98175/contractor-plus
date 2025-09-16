@@ -9,6 +9,7 @@ import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import StatisticCard from "./StatisticCard";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 export interface EstimateHeroItem {
   title: string;
   subTitle: string;
@@ -41,23 +42,7 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({
     hero: heroSection,
   } = hero || {};
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-estimatic-ai", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
-  }, []);
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
 
   return (
     <section className="bg-cover pb-8 text-white md:pb-14 xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">

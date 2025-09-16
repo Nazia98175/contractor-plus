@@ -55,12 +55,11 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
-  console.log("rfedsxzfed", reviews);
 
   return (
-    <main id="home-page-wrapper-2">
+    <main id="common-homepage-wrapper">
       <div
-        id="home-page-view-port-screen-estimatic-ai"
+        id="home-page-view-port-screen"
         className="relative overflow-hidden opacity-0"
       >
         <EstimaticHero
@@ -93,7 +92,6 @@ const EstimaticAiPage = async ({
         <OverlapCardMobileViewChild
           fieldService={problemSolution}
           theme="dark"
-          apiData={true}
           mainClassName="text-center "
         />
       </div>
@@ -136,12 +134,11 @@ const EstimaticAiPage = async ({
             "Get started with Estimatic AI in Contractor+ today."
           }
           placeholder={emailSignupSection?.placeholder || "Your Email"}
-          createBtn={"Get Started Free"}
-          mobileBtn={"Download FREE App"}
-          ncc={"No credit card required"}
+          createBtn={commonData?.getStartedFreeBtn || "Get Started Free"}
+          mobileBtn={commonData?.mobileBtn || "Download FREE App"}
+          ncc={commonData?.nccTxt || "No credit card required"}
         />
       </div>
-
       <TrustBar
         platforms={platforms}
         className="mx-auto w-full max-w-[889px]"

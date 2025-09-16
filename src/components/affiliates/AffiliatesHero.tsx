@@ -6,6 +6,7 @@ import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import { useEffect, useRef } from "react";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 export interface AffiliatesHeroProps {
   heroTitle?: string;
   heroDescription?: string;
@@ -31,27 +32,11 @@ const AffiliatesHero = ({
       once: true,
     });
   }, []);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-fetures", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
-  }, []);
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
 
   return (
-    <div id="home-page-view-port-screen-fetures" className="opacity-0">
-      <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
+    <main id="common-homepage-wrapper" className="opacity-0">
+      <div className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
         <div className="relative mx-auto flex w-full max-w-[876px] flex-col items-center justify-center px-2 pt-8 md:pt-0">
           <CardReveal distance={30} delay={0.1}>
             <div className="items-center justify-center pb-3">
@@ -104,8 +89,8 @@ const AffiliatesHero = ({
             </div>
           </CardReveal>
         </div>
-      </section>
-    </div>
+      </div>
+    </main>
   );
 };
 

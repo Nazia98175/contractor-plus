@@ -11,6 +11,7 @@ import FreeTrialButton from "../common/FreeTrialButton";
 import { RedClipIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -41,24 +42,6 @@ const CommonHero: React.FC<TheHeroProps> = ({
       ease: "elastic.in",
       once: true,
     });
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-fetures", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
   }, []);
 
   return (

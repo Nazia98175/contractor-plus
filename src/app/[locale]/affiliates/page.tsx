@@ -51,7 +51,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
   } = await getAffiliatesData(locale);
 
   return (
-    <main className="relative">
+    <main id="common-homepage-wrapper" className="relative">
       <AffiliatesHero
         heroTitle={hero?.heroTitle || ""}
         heroDescription={hero?.heroDescription || ""}

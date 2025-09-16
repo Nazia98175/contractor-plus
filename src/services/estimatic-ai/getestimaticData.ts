@@ -47,7 +47,7 @@ export const getEstimaticPageData = async (
     ),
     getEstimaticPage(
       locale,
-      "&populate[comparisonTableEstimatic][populate][comparisons][populate]=comparisonList",
+      "&populate[comparisonTable][populate][comparisons][populate]=comparisonList",
     ),
     getEstimaticPage(
       locale,
@@ -76,7 +76,7 @@ export const getEstimaticPageData = async (
     pageContent: pageContentRes?.data || null,
     heroImg: heroImg?.data?.hero?.heroImg || null,
     reviews: reviewsRes?.data?.reviews || null,
-    comparisonList: comparisonListRes?.data?.comparisonTableEstimatic || null,
+    comparisonList: comparisonListRes?.data?.comparisonTable || null,
     problemSolution: problemSolutionRes?.data?.problemSolutionSection || null,
     commonProblem: commonProblemsRes?.data?.commonProblems || null,
     industry: industriesRes?.data?.Industries || null,

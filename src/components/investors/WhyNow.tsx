@@ -34,6 +34,9 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
     const container = containerRef.current;
     const sections = sectionsRef.current;
 
+    // Check if mobile
+    const isMobile = window.matchMedia("(max-width: 1023px)").matches;
+
     // Get viewport dimensions
     const vw = window.innerWidth;
 
@@ -48,11 +51,13 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
       maxScale = 2.8;
     }
 
-    // Set initial state for background
-    gsap.set(bgImageRef.current, {
-      scale: startScale,
-      opacity: 1,
-    });
+    // Set initial state for background (desktop only)
+    if (!isMobile && bgImageRef.current) {
+      gsap.set(bgImageRef.current, {
+        scale: startScale,
+        opacity: 1,
+      });
+    }
 
     // Create main timeline
     const tl = gsap.timeline({
@@ -74,48 +79,50 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
           opacity: 1,
           y: 0,
           scale: 1,
-          filter: "blur(0px)",
+          filter: isMobile ? "none" : "blur(0px)",
         });
       } else if (index === 1) {
         // Second section starts below, slightly visible with blur
         gsap.set(section, {
-          opacity: 0.3,
-          y: 200,
-          scale: 0.85,
-          filter: "blur(15px)",
+          opacity: isMobile ? 0.2 : 0.3,
+          y: isMobile ? 100 : 200,
+          scale: isMobile ? 0.9 : 0.85,
+          filter: isMobile ? "none" : "blur(15px)",
         });
       } else {
         // All other sections start hidden below
         gsap.set(section, {
           opacity: 0,
-          y: 300,
-          scale: 0.8,
-          filter: "blur(20px)",
+          y: isMobile ? 150 : 300,
+          scale: isMobile ? 0.85 : 0.8,
+          filter: isMobile ? "none" : "blur(20px)",
         });
       }
     });
 
-    // Background circle animation
-    tl.fromTo(
-      bgImageRef.current,
-      {
-        scale: startScale,
-        rotation: 0,
-        opacity: 1,
-      },
-      {
-        scale: maxScale,
-        rotation: 720,
-        opacity: 0.2, // Fade gradually
-        duration: sections.length - 1, // Adjusted to match actual content
-        ease: "none",
-      },
-      0,
-    );
+    // Background circle animation (desktop only)
+    if (!isMobile && bgImageRef.current) {
+      tl.fromTo(
+        bgImageRef.current,
+        {
+          scale: startScale,
+          rotation: 0,
+          opacity: 1,
+        },
+        {
+          scale: maxScale,
+          rotation: 720,
+          opacity: 0.2, // Fade gradually
+          duration: sections.length - 1, // Adjusted to match actual content
+          ease: "none",
+        },
+        0,
+      );
+    }
 
     // Text section animations - ladder style with consistent timing
-    const sectionDuration = 1.2; // Adjusted for better pacing
-    const spacing = 150; // Consistent spacing between elements
+    const sectionDuration = isMobile ? 0.8 : 1.2; // Faster on mobile
+    const spacing = isMobile ? 80 : 150; // Less spacing on mobile
 
     sections.forEach((section, index) => {
       const startTime = index * sectionDuration;
@@ -126,9 +133,9 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
           section,
           {
             y: -spacing,
-            opacity: 0.4,
-            scale: 0.9,
-            filter: "blur(12px)",
+            opacity: isMobile ? 0.2 : 0.4,
+            scale: isMobile ? 0.9 : 0.9,
+            filter: isMobile ? "none" : "blur(12px)",
             duration: sectionDuration * 0.5,
             ease: "none", // Linear for consistent speed
           },
@@ -141,7 +148,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
             y: -spacing * 1.5,
             opacity: 0,
             scale: 0.85,
-            filter: "blur(18px)",
+            filter: isMobile ? "none" : "blur(18px)",
             duration: sectionDuration * 0.5,
             ease: "none",
           },
@@ -155,7 +162,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
             y: 0,
             opacity: 1,
             scale: 1,
-            filter: "blur(0px)",
+            filter: isMobile ? "none" : "blur(0px)",
             duration: sectionDuration * 0.5,
             ease: "none", // Linear movement
           },
@@ -168,9 +175,9 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
             section,
             {
               y: -spacing,
-              opacity: 0.4,
+              opacity: isMobile ? 0.2 : 0.4,
               scale: 0.9,
-              filter: "blur(12px)",
+              filter: isMobile ? "none" : "blur(12px)",
               duration: sectionDuration * 0.5,
               ease: "none",
             },
@@ -183,7 +190,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
             {
               y: -spacing * 1.5,
               opacity: 0,
-              filter: "blur(18px)",
+              filter: isMobile ? "none" : "blur(18px)",
               duration: sectionDuration * 0.5,
               ease: "none",
             },
@@ -199,14 +206,14 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
             {
               y: spacing * 1.5,
               opacity: 0,
-              scale: 0.85,
-              filter: "blur(18px)",
+              scale: isMobile ? 0.9 : 0.85,
+              filter: isMobile ? "none" : "blur(18px)",
             },
             {
               y: spacing,
-              opacity: 0.4,
-              scale: 0.9,
-              filter: "blur(12px)",
+              opacity: isMobile ? 0.3 : 0.4,
+              scale: isMobile ? 0.95 : 0.9,
+              filter: isMobile ? "none" : "blur(12px)",
               duration: sectionDuration * 0.5,
               ease: "none", // Linear movement
             },
@@ -215,8 +222,8 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
         }
       }
 
-      // Handle last section - fade out circle at the right time
-      if (index === sections.length - 1) {
+      // Handle last section - fade out circle at the right time (desktop only)
+      if (!isMobile && index === sections.length - 1 && bgImageRef.current) {
         tl.to(
           bgImageRef.current,
           {
@@ -246,50 +253,15 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
     };
   }, []);
 
-  // const sectionData = [
-  //   {
-  //     icon: null,
-  //     title: "Why now?",
-  //     description:
-  //       "Field service is in the middle of a generational software shift.",
-  //     isTitle: true,
-  //   },
-  //   {
-  //     icon: <UpArrowRedIcon />,
-  //     description:
-  //       "Labor and material costs are rising, businesses need to run as efficiently and effectively as possible",
-  //   },
-  //   {
-  //     icon: <RedClockIcon />,
-  //     description:
-  //       "Customers demand speed in work and communication from contractors",
-  //   },
-  //   {
-  //     icon: <CommunicateRedIcon />,
-  //     description:
-  //       "AI is changing how contractors communicate, quote, schedule, and manage jobs",
-  //   },
-  //   {
-  //     icon: <SmartPhoneIcon />,
-  //     description:
-  //       "Smartphone-first crews are demanding tools that actually work in the field",
-  //   },
-  //   {
-  //     icon: <KeepUpIcon />,
-  //     description:
-  //       "The industry's dominant players have gotten too big, slow, and expensive to keep up.",
-  //   },
-  // ];
-
   return (
     <section className="mx-auto max-w-[1920px] px-3 lg:px-0">
-      <div ref={containerRef} className="relative h-[600vh]">
+      <div ref={containerRef} className="relative h-[400vh] lg:h-[600vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          {/* Background circle image */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          {/* Background circle image - hidden on mobile */}
+          <div className="absolute inset-0 hidden lg:flex items-center justify-center">
             <img
               ref={bgImageRef}
-              className="h-full w-full object-contain lg:block"
+              className="h-full w-full object-contain"
               src="/images/webp/vector.webp"
               alt="now bg"
               style={{
@@ -309,7 +281,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                   sectionsRef.current[index] = el;
                 }}
                 className={`absolute flex flex-col items-center justify-center ${
-                  index === 0 ? "max-w-[500px]" : "max-w-[550px]"
+                  index === 0 ? "max-w-[300px] lg:max-w-[500px]" : "max-w-[350px] lg:max-w-[550px]"
                 } w-full px-6`}
                 style={{
                   willChange: "transform, opacity, filter",
@@ -317,21 +289,23 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                 }}
               >
                 <Copy animateOnScroll={false}>
-                  <h3 className="text-center text-2xl font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
+                  <h3 className="text-center text-xl font-semibold text-white sm:text-2xl lg:text-4xl xl:text-[52px]">
                     {section.title}
                   </h3>
                 </Copy>
-                <div className="my-4">
-                  <Image
-                    className="h-8 w-8"
-                    src={section?.image.url}
-                    alt={"edsx"}
-                    width={24}
-                    height={24}
-                  />
-                </div>
+                {section?.image && (
+                  <div className="my-3 lg:my-4">
+                    <Image
+                      className="h-6 w-6 lg:h-8 lg:w-8"
+                      src={section?.image.url}
+                      alt={"icon"}
+                      width={32}
+                      height={32}
+                    />
+                  </div>
+                )}
                 <Copy animateOnScroll={false}>
-                  <p className="text-center text-sm font-medium text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
+                  <p className="text-center font-medium text-gray-300 text-sm lg:text-xl">
                     {section.text}
                   </p>
                 </Copy>

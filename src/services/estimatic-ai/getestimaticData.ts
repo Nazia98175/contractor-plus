@@ -36,7 +36,7 @@ export const getEstimaticPageData = async (
     thousandReviewsRes,
     faqsRes,
     commonData,
-    // blogsRes,
+    blogsRes,
     industriesData,
     emailSignupRes,
     pageContentRes,
@@ -70,7 +70,7 @@ export const getEstimaticPageData = async (
     getEstimaticPage(locale, "&populate[faqs][populate]=faq"),
 
     getCommonData(locale),
-    // getBlogsByCategory(locale, "ai-estimating-software", true),
+    getBlogsByCategory(locale, "ai-estimating-software", true),
     getHomePage(locale, industriesQuery),
     getEstimaticPage(locale, "&populate[emailSignupSection]=*"),
     getEstimaticPage(locale, "&populate=*"),
@@ -79,7 +79,7 @@ export const getEstimaticPageData = async (
     heroImg: heroImg?.data?.hero?.heroImg || null,
     resultStatsEstimatic:
       resultStatsEstimaticRes?.data?.resultStatsEstimatic || null,
-    reviews: reviewsRes?.data?.reviews || null,
+    reviews: reviewsRes || null,
     comparisonList: comparisonListRes?.data?.comparisonTable || null,
     problemSolution: problemSolutionRes?.data?.problemSolutionSection || null,
     commonProblem: commonProblemsRes?.data?.commonProblems || null,
@@ -89,7 +89,7 @@ export const getEstimaticPageData = async (
     emailSignupSection: emailSignupRes?.data?.emailSignupSection || null,
     commonData: commonData || null,
     industriesData,
-    // blogs: blogsRes || null,
+    blogs: blogsRes || null,
     pageContent: pageContentRes?.data || null,
   };
 };

@@ -29,6 +29,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
+import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -179,7 +180,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             slug={pageData.slug}
             kindAdorable={pageData.comparison}
           />
-
+          {useParams.slug === "big-chief-ai" && <CalculateImpact />}
           <TeamsUsingContractor
             data={pageData.teamsUsingContractor}
             slug={pageData.slug}

@@ -34,7 +34,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "266px",
       backgroundImage: "/images/svg/blog-3.svg",
-      blogUrl: "/blog",
+      blogUrl: "/blogs",
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/png/local-construction.png",
       imageWidth: "315px",
       backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
-      blogUrl: "/blog",
+      blogUrl: "/blogs",
     },
     {
       id: 3,

@@ -90,7 +90,7 @@ const BlogPage = ({
     });
   }, [blogsData, searchTerm, selectedCategory]);
 
-  const handleClick = (name: string) => router.push(`/blog/${name}`);
+  const handleClick = (name: string) => router.push(`/blogs/${name}`);
 
   return (
     <main id="home-page-wrapper-2">

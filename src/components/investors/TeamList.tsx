@@ -24,7 +24,7 @@ const TeamList: React.FC<TeamListProps> = ({ teamData }) => {
   const maxItems = Math.max(...teamData.map((team) => team.items.length));
 
   return (
-    <section className="mx-auto hidden w-full max-w-[1029px] px-2 md:block">
+    <section className="mx-auto hidden w-full max-w-[1029px] px-2 sm:block">
       <div className="border-winterWay z-40 mt-[77px] overflow-hidden rounded-xl border text-white">
         <table className="w-full table-fixed overflow-auto">
           <thead>

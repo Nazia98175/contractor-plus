@@ -1,85 +1,43 @@
 "use client";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
 import Copy from "../common/Copy";
-import EveryTool from "./EveryTool";
+import { useScrollDotAnimation } from "@/hooks/useScrollDotAnimation";
 import EveryMile from "./EveryMile";
-
-const ManageEveryMile = (cardsData: any) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const redDotRef = useRef<HTMLSpanElement>(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (!cardsData) return;
-    // alert("this is run now");
-    const ctx = gsap.context(() => {
-      if (!sectionRef.current || !redDotRef.current) return;
-      setTimeout(() => {
-        // ScrollTrigger.refresh();
-        const total_crm_cards = cardsData.cardsData.length;
-        const crm_cards_height = total_crm_cards * window.innerHeight;
-
-        const sectionEl = sectionRef.current;
-        const redDotEl = redDotRef.current;
-
-        if (!sectionEl || !redDotEl) return;
-
-        // Fix: Use sectionEl.offsetHeight directly since we already checked it exists
-        const sectionElHeight = sectionEl.getBoundingClientRect().height;
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionEl,
-            start: `-12% 40%`,
-            end: `bottom center`,
-            scrub: 1,
-            markers: false,
-            id: "main",
-          },
-        });
-
-        // Animate red dot down the full height of the section
-        tl.set(redDotEl, { opacity: 1 });
-        tl.to(redDotEl, {
-          y: sectionElHeight, // Use the variable directly, not in arrow function
-          ease: "none",
-        });
-
-        ScrollTrigger.refresh();
-      }, 2600);
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [cardsData]);
+interface SupplierBenefitProps {
+  title?: string;
+  cardsData: {
+    text: string;
+    desc: string;
+  }[];
+}
+const ManageEveryMile: React.FC<SupplierBenefitProps> = ({
+  title,
+  cardsData,
+}) => {
+  const { sectionRef, dotRef } = useScrollDotAnimation({
+    delay: 2.6,
+  });
+  console.log(cardsData, "cardata");
+  console.log(title, "title");
 
   return (
-    <section className="main-container mt-[90px]">
-      <Copy delay={0.1}>
-        <h4 className="section-heading gradient-text-2 text-center">
-          We manage every mile from drive to reimbursement
-        </h4>
-      </Copy>
-      <Copy animateOnScroll={false} delay={0.2}>
-        <p className="paragraph-style mx-auto max-w-[950px] text-center">
-          A simplified mileage tracking workflow
-        </p>
-      </Copy>
-      <div
-        id="contractor-section"
-        ref={sectionRef}
-        className="relative mt-10 sm:mt-[51px]"
-      >
-        {/* Gray line */}
-        <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
-        {/* Red dot */}
-        <span
-          ref={redDotRef}
-          className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-100 will-change-transform"
-        />
+    <section className="relative mt-[65px] md:mt-[90px]">
+      <div className="main-container">
+        <Copy delay={0.1}>
+          <h4 className="section-heading gradient-text-2 text-center">
+            {title || "We manage every mile from drive to reimbursement"}
+          </h4>
+        </Copy>
 
-        <EveryMile cardsData={cardsData} />
+        <div ref={sectionRef} className="relative mt-10 sm:mt-[51px]">
+          {/* Gray line */}
+          <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>
+          {/* Red dot */}
+          <span
+            ref={dotRef}
+            className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-0 will-change-transform"
+          />
+          <EveryMile cardsData={cardsData} />
+        </div>
       </div>
     </section>
   );

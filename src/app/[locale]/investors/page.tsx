@@ -76,8 +76,12 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           subDesc={problemSection?.subDesc}
         />
         {/* <MidMarketTable tableData={table || []} /> */}
-        <TeamList teamData={table || []} />
-        <TeamListMobile />
+        <div className="hidden sm:block">
+          <TeamList teamData={table || []} />
+        </div>
+        <div className="block px-2 sm:hidden">
+          <TeamListMobile />
+        </div>
         <WhyNow items={whyNowSection?.items} />
         <ProofWorking
           title={whyContractorSection?.title}

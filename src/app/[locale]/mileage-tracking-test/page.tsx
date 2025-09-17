@@ -58,6 +58,33 @@ export const metadata = {
   },
 };
 const MileageTrackingPage = () => {
+  const FEATURES = [
+    {
+      id: 1,
+      text: "Start Trip",
+      desc: "One tap to begin tracking on mobile",
+    },
+    {
+      id: 2,
+      text: "End Trip",
+      desc: "Stop with a tap; auto‑logged in your history",
+    },
+    {
+      id: 3,
+      text: "Review & Edit",
+      desc: "Fix a missed start/stop or add a note",
+    },
+    {
+      id: 4,
+      text: "Generate Report",
+      desc: "Choose a date range, get totals by person/team",
+    },
+    {
+      id: 5,
+      text: "Export & Reimburse",
+      desc: "CSV/PDF out, multiply by IRS rate, reimburse with confidence",
+    },
+  ];
   return (
     <main className="">
       <AutomatedClientHero
@@ -106,7 +133,10 @@ const MileageTrackingPage = () => {
           ncc={"No credit card required"}
           trackProperties={mileageListData}
         />
-        <ManageEveryMile cardsData={automatedCardData.cardsDetail} />
+        <ManageEveryMile
+          title={"We manage every mile from drive to reimbursement"}
+          cardsData={FEATURES}
+        />
         <KindAdorable slug={"estimate"} kindAdorable={mileage_comparisonData} />
         <TeamsUsingContractor data={neverLookBackMileageData} slug={""} />
         <ThousandsReviews

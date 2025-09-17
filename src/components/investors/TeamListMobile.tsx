@@ -1,4 +1,5 @@
 import React from "react";
+import { CloseIcon, GreenCrossIcon } from "../common/Icons";
 
 type TeamColumn = {
   title: string;
@@ -6,7 +7,7 @@ type TeamColumn = {
 
 type Feature = {
   name: string;
-  values: string[]; // 3 values for 3 columns
+  values: { icon: boolean }[]; // 3 values for 3 columns
 };
 
 const TeamListMobile: React.FC = () => {
@@ -21,20 +22,41 @@ const TeamListMobile: React.FC = () => {
   const features: Feature[] = [
     {
       name: "One connected platform",
-      values: ["1", "2", "3"],
+      values: [{ icon: true }, { icon: false }, { icon: false }],
     },
     {
       name: "Built mobile-first",
-      values: ["1", "2", "3"],
+      values: [{ icon: true }, { icon: false }, { icon: false }],
+    },
+    {
+      name: "Onboard quickly",
+      values: [{ icon: true }, { icon: false }, { icon: false }],
+    },
+    {
+      name: "Instant Sync",
+      values: [{ icon: true }, { icon: false }, { icon: false }],
+    },
+    {
+      name: "Full access is $98/month",
+      values: [{ icon: true }, { icon: false }, { icon: false }],
     },
   ];
 
   return (
-    <div className="mx-auto w-full max-w-[900px] text-white">
+    <div className="border-winterWay mx-auto mt-[34px] w-full max-w-[900px] rounded-lg border text-white">
       {/* Header Row */}
-      <div className="grid grid-cols-3 text-center font-semibold">
+      <div className="grid grid-cols-3 pb-3 text-center font-semibold">
         {columns.map((col, index) => (
-          <div key={index}>{col.title}</div>
+          <div
+            key={index}
+            className={`flex items-center justify-center p-2 text-start text-xs font-semibold ${
+              index === 0
+                ? "font-semibold text-white"
+                : "text-wallStreet font-bold"
+            } ${index === 1 ? "border-winterWay border-x" : ""}`}
+          >
+            {col.title}
+          </div>
         ))}
       </div>
 
@@ -42,12 +64,23 @@ const TeamListMobile: React.FC = () => {
       {features.map((feature, featureIndex) => (
         <div key={featureIndex} className="text-center">
           {/* Feature Title */}
-          <h3 className="border">{feature.name}</h3>
+          <h3 className="text-lightBlackGrey text-base">{feature.name}</h3>
 
           {/* Feature Values */}
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 py-3">
             {feature.values.map((val, valIndex) => (
-              <div key={valIndex}>{val}</div>
+              <div
+                key={valIndex}
+                className={`flex items-center justify-center ${valIndex === 1 ? "border-winterWay border-x" : ""}`}
+              >
+                {val.icon ? (
+                  <span className="flex w-full max-w-[23px] sm:max-w-[14px]">
+                    <GreenCrossIcon />
+                  </span>
+                ) : (
+                  <CloseIcon width={24} height={24} />
+                )}
+              </div>
             ))}
           </div>
         </div>

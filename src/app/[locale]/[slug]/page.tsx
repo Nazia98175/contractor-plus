@@ -103,7 +103,108 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     mobileBtn: commonData?.mobileBtn,
     ncc: commonData?.nccTxt,
   };
+  const FEATURES = [
+    {
+      id: 1,
+      text: "Start Trip",
+      desc: "One tap to begin tracking on mobile",
+    },
+    {
+      id: 2,
+      text: "End Trip",
+      desc: "Stop with a tap; auto‑logged in your history",
+    },
+    {
+      id: 3,
+      text: "Review & Edit",
+      desc: "Fix a missed start/stop or add a note",
+    },
+    {
+      id: 4,
+      text: "Generate Report",
+      desc: "Choose a date range, get totals by person/team",
+    },
+    {
+      id: 5,
+      text: "Export & Reimburse",
+      desc: "CSV/PDF out, multiply by IRS rate, reimburse with confidence",
+    },
+  ];
 
+  const ManageEvery = [
+    {
+      id: 1,
+      text: "Creation",
+      desc: "Intelligent, customizable templates that dynamically pull data from estimates",
+    },
+    {
+      id: 2,
+      text: "Approval",
+      desc: "A clear, professional, client-facing portal for review and acceptance",
+    },
+    {
+      id: 3,
+      text: "Signature",
+      desc: "Secure, legally-binding electronic signatures",
+    },
+    {
+      id: 4,
+      text: "Storage & Retrieval",
+      desc: "A centralized, searchable database of all past and present agreements",
+    },
+    {
+      id: 5,
+      text: "Amendment",
+      desc: "A dedicated, integrated workflow for creating and signing change orders",
+    },
+    {
+      id: 6,
+      text: "Renewal",
+      desc: "Automation and tracking for recurring service agreements and memberships",
+    },
+  ];
+
+  const ToolEquipment = [
+    {
+      id: 1,
+      text: "Assign",
+      desc: "Send a tool to a person, job, or truck—instantly logged",
+    },
+    {
+      id: 2,
+      text: "Pick Up / Checkout",
+      desc: "Scan QR or detect via Bluetooth; capture timestamp",
+    },
+    {
+      id: 3,
+      text: "On-Site Use",
+      desc: "See who has it while it’s in the field",
+    },
+    {
+      id: 4,
+      text: "Transfer",
+      desc: "Hand off mid-job with a clean chain of custody",
+    },
+    {
+      id: 5,
+      text: "Return / Check-In",
+      desc: "Scan once—done (and fully logged)",
+    },
+    {
+      id: 6,
+      text: "Audit & Billing",
+      desc: "Run a truck scan, reconcile discrepancies, bill for equipment usage",
+    },
+  ];
+  let cardsData = null;
+
+  if (useParams.slug === "mileage-tracking") {
+    cardsData = FEATURES;
+  } else if (useParams.slug === "contractor-client-agreement") {
+    cardsData = ManageEvery;
+  } else if (useParams.slug === "tool-inventory-software") {
+    cardsData = ToolEquipment;
+  }
   return (
     <>
       <div id="common-homepage-wrapper">
@@ -178,7 +279,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           {(useParams.slug === "mileage-tracking" ||
             useParams.slug === "contractor-client-agreement" ||
             useParams.slug === "tool-inventory-software") && (
-            <ManageEveryMile cardsData={automatedCardData.cardsDetail} />
+            <ManageEveryMile
+              title={"We manage every mile from drive to reimbursement"}
+              cardsData={cardsData ?? []}
+            />
           )}
           {useParams.slug === "property-profiles" && (
             <RunWithContractor kindAdorable={propertyaddressContractorData} />

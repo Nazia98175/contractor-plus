@@ -33,7 +33,7 @@ const BlogPosts: React.FC<Props> = ({
   const router = useRouter();
 
   const goToNewPage = () => {
-    router.push("/blog");
+    router.push("/blogs");
   };
 
   return (

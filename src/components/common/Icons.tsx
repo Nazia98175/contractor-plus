@@ -5123,7 +5123,7 @@ export const CalanderIcon2 = () => (
       d="M5.5 3V8M8 5.5H3M8 16L6 18M6 18L4 20M6 18L8 20M6 18L4 16M20 6H16M20 18.5H16M20 15.5H16M22 12H2M12 22V2"
       stroke="#1C2731"
       stroke-width="1.5"
-      stroke-linecap="round"
+      strokeLinecap="round"
       stroke-linejoin="round"
     />
   </svg>
@@ -6830,5 +6830,63 @@ export const BigChiefEmailIcon = () => (
       fill="black"
       fillOpacity="0.2"
     />
+  </svg>
+);
+export const MobileLeftLineIcon = ({ className = "" }) => (
+  <svg
+    width="156"
+    height="23"
+    viewBox="0 0 156 23"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M155.5 22.1268H73.3943L52.8733 1H0"
+      stroke="url(#paint0_radial_7616_7015)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_7616_7015"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientTransform="matrix(-201.5 41.5 -398.92 377.66 158.5 6)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
+  </svg>
+);
+export const MobileRightLineIcon = ({ className = "" }) => (
+  <svg
+    width="157"
+    height="23"
+    viewBox="0 0 157 23"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M0.5 22.1268H82.6057L103.127 1H156"
+      stroke="url(#paint0_radial_7616_7028)"
+      strokeLinecap="round"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_7616_7028"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientTransform="matrix(201.5 41.5 398.92 377.66 -2.5 6)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#EE1E25" />
+        <stop offset="1" stopColor="#0C0D11" />
+      </radialGradient>
+    </defs>
   </svg>
 );

@@ -2,11 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  RoadMapCenterLine,
-  RoadMapCircleIcon,
-  RoadMapIcon,
-} from "../common/Icons";
+import { RoadMapCenterLine, RoadMapIcon } from "../common/Icons";
 import Copy from "../common/Copy";
 
 // Register ScrollTrigger plugin
@@ -32,13 +28,13 @@ const WhatNext: React.FC<WhatNextProps> = ({
 }) => {
   const horizontalScrollRef = useRef(null);
   const sectionWrapperRef = useRef(null);
-  
+
   useEffect(() => {
     // Only run animations on desktop (xl and above)
     const isDesktop = window.matchMedia("(min-width: 1280px)").matches;
-    
+
     if (!isDesktop) return; // Skip animations on mobile/tablet
-    
+
     const element = horizontalScrollRef.current;
     const wrapper = sectionWrapperRef.current;
 
@@ -78,7 +74,7 @@ const WhatNext: React.FC<WhatNextProps> = ({
   return (
     <>
       {/* Mobile Layout - Static, no animations */}
-      <section className="block xl:hidden px-4 py-12">
+      <section className="block px-4 py-12 xl:hidden">
         {/* Header */}
         <div className="mb-8">
           <div className="mx-auto max-w-[600px]">
@@ -96,7 +92,7 @@ const WhatNext: React.FC<WhatNextProps> = ({
         </div>
 
         {/* Static vertical timeline */}
-        <div className="w-full max-w-[600px] mx-auto mb-8">
+        <div className="mx-auto mb-8 w-full max-w-[600px]">
           {items.map((item, index) => (
             <div
               key={index}
@@ -104,26 +100,22 @@ const WhatNext: React.FC<WhatNextProps> = ({
             >
               {/* Vertical line */}
               {index < items.length - 1 && (
-                <span
-                  className="absolute top-[16px] left-[7px] h-[calc(100%+8px)] w-[1px] bg-gradient-to-b from-green-500 to-green-500/50"
-                />
+                <span className="absolute top-[16px] left-[7px] h-[calc(100%+8px)] w-[1px] bg-gradient-to-b from-green-500 to-green-500/50" />
               )}
               {/* Green dot */}
               <span className="absolute top-[10px] left-0 h-3.5 w-3.5 rounded-full bg-green-500" />
-              
+
               {/* Content */}
               <div className="pb-6 pl-2">
-                <h3 className="text-sm font-bold text-white mb-2">
+                <h3 className="mb-2 text-sm font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="text-sealGrey text-xs font-medium">
-                  {item.desc}
-                </p>
+                <p className="text-sealGrey text-xs font-medium">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
-        
+
         {/* Bottom text */}
         <p className="text-ironFixture text-center text-xs font-semibold">
           {bottomText}
@@ -131,9 +123,12 @@ const WhatNext: React.FC<WhatNextProps> = ({
       </section>
 
       {/* Desktop Layout - With animations and pinning */}
-      <section ref={sectionWrapperRef} className="relative min-h-screen hidden xl:block">
+      <section
+        ref={sectionWrapperRef}
+        className="relative hidden min-h-screen xl:block"
+      >
         {/* Fixed Header - positioned like MarketOpportunity */}
-        <div className="absolute top-0 left-0 right-0 z-40 px-4 pt-[120px] pb-[40px]">
+        <div className="absolute top-0 right-0 left-0 z-40 px-4 pt-[120px] pb-[40px]">
           <div className="mx-auto max-w-[1200px]">
             <Copy animateOnScroll={false}>
               <h3 className="text-mana text-center text-2xl font-semibold sm:text-[28px] md:text-[38px]">
@@ -177,10 +172,10 @@ const WhatNext: React.FC<WhatNextProps> = ({
                     <span
                       className={`absolute ${
                         index === 0
-                          ? "top-[13%] right-[-20%]"
+                          ? "top-[55%] right-[-20%]"
                           : index === 1
-                            ? "top-[12%] right-[-10%]"
-                            : "top-[18%] right-[-14%]"
+                            ? "top-[55%] right-[-10%]"
+                            : "top-[80%] right-[-14%]"
                       }`}
                     >
                       <RoadMapIcon />
@@ -213,7 +208,7 @@ const WhatNext: React.FC<WhatNextProps> = ({
                     }`}
                   >
                     <span
-                      className={`absolute -top-[60%] rotate-180 ${
+                      className={`absolute -top-[15%] rotate-180 ${
                         index === 0
                           ? "right-[-20%]"
                           : index === 1

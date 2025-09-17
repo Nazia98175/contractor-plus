@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
+  MobileLeftLineIcon,
+  MobileRightLineIcon,
   ProofIcon1,
   ProofIcon2,
   ProofIcon3,
@@ -32,9 +34,9 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
   useEffect(() => {
     // Only run animations on desktop (lg and above)
     const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-    
+
     if (!isDesktop) return; // Skip animations on mobile/tablet
-    
+
     const container = containerRef.current;
     const logoDesktop = logoDesktopRef.current;
     const stickyContainer = stickyContainerRef.current;
@@ -154,34 +156,69 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
   // Stats data for easier mobile rendering
   const statsData = [
     {
-      icon: ProofIcon1,
-      value: "$1M+ ARR",
-      description: "With zero institutional capital",
-    },
-    {
-      icon: ProofIcon2,
       value: "~6%",
       description: "of freemium users organically convert to a paid plan",
     },
     {
-      icon: ProofIcon3,
-      value: "4.7★",
-      description: "Avg rating across Capterra, G2, Apple, and Google Play",
+      value: "$1M+ ARR",
+      description: "With zero institutional capital",
     },
     {
-      icon: ProofIcon4,
       value: "94%",
       description: "Gross retention",
     },
     {
-      icon: ProofIcon5,
+      value: "4.7★",
+      description: "Avg rating across Capterra, G2, Apple, and Google Play",
+    },
+    {
+      value: "$700K",
+      description: "All built with just $700K from angels and Reg CF",
+    },
+    {
       value: "~150%",
       description: "YoY growth",
     },
+  ];
+  const leftStats = [
     {
-      icon: ProofIcon6,
+      value: "$1M+ ARR",
+      desc: "With zero institutional capital",
+      icon: <ProofIcon1 />,
+      iconClass: "absolute -right-20 bottom-0",
+    },
+    {
+      value: "4.7★",
+      desc: "Avg rating across Capterra, G2, Apple, and Google Play",
+      icon: <ProofIcon3 />,
+      iconClass: "absolute -right-20 bottom-0",
+    },
+    {
+      value: "~150%",
+      desc: "YoY growth",
+      icon: <ProofIcon5 />,
+      iconClass: "absolute -right-20 -bottom-4",
+    },
+  ];
+
+  const rightStats = [
+    {
+      value: "~6%",
+      desc: "of freemium users organically convert to a paid plan",
+      icon: <ProofIcon2 />,
+      iconClass: "absolute -bottom-[2px] -left-20",
+    },
+    {
+      value: "94%",
+      desc: "Gross retention",
+      icon: <ProofIcon4 />,
+      iconClass: "absolute -bottom-[2px] -left-20",
+    },
+    {
       value: "$700K",
-      description: "All built with just $700K from angels and Reg CF",
+      desc: "All built with just $700K from angels and Reg CF",
+      icon: <ProofIcon6 />,
+      iconClass: "absolute -bottom-4.5 -left-20",
     },
   ];
 
@@ -209,8 +246,9 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
           <h3 className="text-mana pb-3 text-2xl font-bold sm:text-[28px]">
             Proof it's working
           </h3>
-          <p className="text-ironFixture text-base font-bold px-4">
-            This isn't another FSM software. We built something contractors use, love, and stick with.
+          <p className="text-ironFixture px-4 text-base font-bold">
+            This isn't another FSM software. We built something contractors use,
+            love, and stick with.
           </p>
         </div>
 
@@ -226,11 +264,22 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
         {/* Stats List - Centered layout matching design */}
         <div className="space-y-8 text-center">
           {statsData.map((stat, index) => (
-            <div key={index} className="px-4">
-              <h3 className="text-white text-xl font-bold mb-1">
-                {stat.value}
-              </h3>
-              <p className="text-lightBlackGrey text-xs font-medium max-w-[280px] mx-auto">
+            <div key={index} className="mx-auto w-full max-w-[312px]">
+              <div
+                className={`relative mx-auto mb-1 w-full text-xl font-bold text-white ${index % 2 === 0 ? "text-left" : "text-right"}`}
+              >
+                <h3 className={`${index % 2 === 0 ? "ml-20" : "mr-20"}`}>
+                  {stat.value}
+                </h3>
+                {index % 2 === 0 ? (
+                  <MobileLeftLineIcon className="absolute top-2 left-0" />
+                ) : (
+                  <MobileRightLineIcon className="absolute top-2 right-0" />
+                )}
+              </div>
+              <p
+                className={`text-lightBlackGrey mx-auto max-w-[280px] text-xs font-medium ${index % 2 === 0 ? "ml-20 text-left" : "mr-20 text-right"}`}
+              >
                 {stat.description}
               </p>
             </div>
@@ -239,7 +288,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
 
         {/* Bottom Text - Mobile */}
         <div className="pt-10 pb-8">
-          <p className="text-center text-base font-semibold tracking-[-0.32px] px-4 text-white">
+          <p className="px-4 text-center text-base font-semibold tracking-[-0.32px] text-white">
             Now imagine what we'll do with{" "}
             <span className="text-white">real capital</span>.
           </p>
@@ -299,128 +348,59 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-full">
                     {/* Left Stats Column */}
-                    <div className="absolute top-1/2 left-0 -translate-y-1/2 space-y-12">
-                      <div
-                        ref={(el) => {
-                          leftStatsRef.current[0] = el;
-                        }}
-                        className="w-[320px] pl-4"
-                        style={{ willChange: "transform, opacity" }}
-                      >
-                        <div className="relative">
-                          <span className="absolute -right-20 bottom-0">
-                            <ProofIcon1 />
-                          </span>
-                          <h3 className="py-1 text-end text-xl font-semibold text-white">
-                            $1M+ ARR
-                          </h3>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative w-full">
+                        {/* Left Stats Column */}
+                        <div className="absolute top-1/2 left-0 -translate-y-1/2 space-y-12">
+                          {leftStats.map((stat, i) => (
+                            <div
+                              key={i}
+                              ref={(el) => {
+                                leftStatsRef.current[i] = el;
+                              }}
+                              className="w-[320px] pl-4"
+                              style={{ willChange: "transform, opacity" }}
+                            >
+                              <div className="relative">
+                                <span className={stat.iconClass}>
+                                  {stat.icon}
+                                </span>
+                                <h3 className="py-1 text-end text-xl font-semibold text-white">
+                                  {stat.value}
+                                </h3>
+                              </div>
+                              <p className="text-lightBlackGrey pt-2 pr-2 text-end text-xs font-semibold">
+                                {stat.desc}
+                              </p>
+                            </div>
+                          ))}
                         </div>
-                        <p className="text-lightBlackGrey pt-2 pr-2 text-end text-xs font-semibold">
-                          With zero institutional capital
-                        </p>
-                      </div>
 
-                      <div
-                        ref={(el) => {
-                          leftStatsRef.current[1] = el;
-                        }}
-                        className="w-[320px] pl-4"
-                        style={{ willChange: "transform, opacity" }}
-                      >
-                        <div className="relative">
-                          <span className="absolute -right-20 bottom-0">
-                            <ProofIcon3 />
-                          </span>
-                          <h3 className="py-1 text-end text-xl font-semibold text-white">
-                            4.7★
-                          </h3>
+                        {/* Right Stats Column */}
+                        <div className="absolute top-1/2 right-0 -translate-y-1/2 space-y-12">
+                          {rightStats.map((stat, i) => (
+                            <div
+                              key={i}
+                              ref={(el) => {
+                                rightStatsRef.current[i] = el;
+                              }}
+                              className="w-[320px] pr-4"
+                              style={{ willChange: "transform, opacity" }}
+                            >
+                              <div className="relative">
+                                <span className={stat.iconClass}>
+                                  {stat.icon}
+                                </span>
+                                <h3 className="py-1 text-start text-xl font-semibold text-white">
+                                  {stat.value}
+                                </h3>
+                              </div>
+                              <p className="text-lightBlackGrey pt-2 pl-2 text-start text-xs font-semibold">
+                                {stat.desc}
+                              </p>
+                            </div>
+                          ))}
                         </div>
-                        <p className="text-lightBlackGrey pt-2 pr-2 text-end text-xs font-semibold">
-                          Avg rating across Capterra, G2, Apple, and Google Play
-                        </p>
-                      </div>
-
-                      <div
-                        ref={(el) => {
-                          leftStatsRef.current[2] = el;
-                        }}
-                        className="w-[320px] pl-4"
-                        style={{ willChange: "transform, opacity" }}
-                      >
-                        <div className="relative">
-                          <span className="absolute -right-20 -bottom-4">
-                            <ProofIcon5 />
-                          </span>
-                          <h3 className="py-1 text-end text-xl font-semibold text-white">
-                            ~150%
-                          </h3>
-                        </div>
-                        <p className="text-lightBlackGrey pt-2 pr-2 text-end text-xs font-semibold">
-                          YoY growth
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right Stats Column */}
-                    <div className="absolute top-1/2 right-0 -translate-y-1/2 space-y-12">
-                      <div
-                        ref={(el) => {
-                          rightStatsRef.current[0] = el;
-                        }}
-                        className="w-[320px] pr-4"
-                        style={{ willChange: "transform, opacity" }}
-                      >
-                        <div className="relative">
-                          <span className="absolute -bottom-[2px] -left-20">
-                            <ProofIcon2 />
-                          </span>
-                          <h3 className="py-1 text-start text-xl font-semibold text-white">
-                            ~6%
-                          </h3>
-                        </div>
-                        <p className="text-lightBlackGrey pt-2 pl-2 text-start text-xs font-semibold">
-                          of freemium users organically convert to a paid plan
-                        </p>
-                      </div>
-
-                      <div
-                        ref={(el) => {
-                          rightStatsRef.current[1] = el;
-                        }}
-                        className="w-[320px] pr-4"
-                        style={{ willChange: "transform, opacity" }}
-                      >
-                        <div className="relative">
-                          <span className="absolute -bottom-[2px] -left-20">
-                            <ProofIcon4 />
-                          </span>
-                          <h3 className="py-1 text-start text-xl font-semibold text-white">
-                            94%
-                          </h3>
-                        </div>
-                        <p className="text-lightBlackGrey pt-2 pl-2 text-start text-xs font-semibold">
-                          Gross retention
-                        </p>
-                      </div>
-
-                      <div
-                        ref={(el) => {
-                          rightStatsRef.current[2] = el;
-                        }}
-                        className="w-[320px] pr-4"
-                        style={{ willChange: "transform, opacity" }}
-                      >
-                        <div className="relative">
-                          <span className="absolute -bottom-4.5 -left-20">
-                            <ProofIcon6 />
-                          </span>
-                          <h3 className="py-1 text-start text-xl font-semibold text-white">
-                            $700K
-                          </h3>
-                        </div>
-                        <p className="text-lightBlackGrey pt-2 pl-2 text-start text-xs font-semibold">
-                          All built with just $700K from angels and Reg CF
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -431,7 +411,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
         </div>
 
         {/* Bottom Text - Desktop */}
-        <div className="pt-8 pb-20 relative">
+        <div className="relative pt-8 pb-20">
           <p className="proof-working mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px]">
             Now imagine what we'll do with{" "}
             <span className="text-red-500">real capital</span>.

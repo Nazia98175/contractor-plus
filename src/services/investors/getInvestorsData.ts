@@ -32,8 +32,8 @@ export const getInvestorsData = async (
     marketOpportunityRes,
     whatNextRes,
     smartMoneyRes,
-    disclaimerTextRes,
     whyThisTeamSectionRes,
+    disclaimerTextRes,
   ] = await Promise.all([
     getCommonData(locale),
     InvestorsapiDataPage(locale, "&populate=*"),
@@ -55,9 +55,12 @@ export const getInvestorsData = async (
     ),
     InvestorsapiDataPage(locale, "&populate[whatNext][populate][items]=*"),
     InvestorsapiDataPage(locale, "&populate[smartMoney][populate]=*"),
+    InvestorsapiDataPage(
+      locale,
+      "&populate[whyThisTeamSection][populate][items][populate]=image",
+    ),
 
     InvestorsapiDataPage(locale, "&fields=disclaimerText"),
-    InvestorsapiDataPage(locale, "&populate=whyThisTeamSection"),
   ]);
   return {
     commonData: commonData || null,
@@ -72,8 +75,7 @@ export const getInvestorsData = async (
     marketOpportunity: marketOpportunityRes?.data?.marketOpportunity || null,
     whatNext: whatNextRes?.data?.whatNext || null,
     smartMoney: smartMoneyRes?.data?.smartMoney || null,
-
-    disclaimerText: disclaimerTextRes?.data?.disclaimerText || null,
     whyThisTeamSection: whyThisTeamSectionRes?.data?.whyThisTeamSection || null,
+    disclaimerText: disclaimerTextRes?.data?.disclaimerText || null,
   };
 };

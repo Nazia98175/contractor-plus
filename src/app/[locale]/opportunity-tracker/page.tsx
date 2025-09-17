@@ -27,7 +27,7 @@ import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getIntegrationList } from "@/services/integation/getIntegrationData";
-import { url } from "inspector/promises";
+import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 
 export const metadata = {
   title: "Opportunity Tracker for Contractors | Contractor+",
@@ -48,33 +48,36 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/opportunity-tracker",
   },
 };
-const DealFlowTracker = async ({
-  params,
-}: {
+interface Params {
   params: Promise<{ locale: string }>;
-}) => {
-  const { locale } = await params;
-  const [integrationList] = await Promise.all([getIntegrationList(locale)]);
-  const hero = {
-    url: "/images/webp/opportunity-tracker-hero.webp",
-  };
+}
+const DealFlowTracker = async ({ params }: Params) => {
+  const useParams = await params;
+  const {
+    solutionPageContent,
+    reviews,
+    commonProblems,
+    fieldServiceData,
+    trackProperties,
+    comparisonList,
+    teamsUsingContractor,
+    faqs,
+    blogs,
+    thousandReviews,
+    commonData,
+    integrationList,
+    hero,
+  } = await getSolutionPageData("opportunity-tracker", useParams?.locale);
+
+  console.log("frdsxz", solutionPageContent);
+
   return (
     <div className="overflow-x-hidden">
       <CommonHero
-        hero={{
-          heroTitle:
-            "The one board that shows every deal, dollar value, and what to do next",
-          heroDescription:
-            "Drag and drop every lead through a visual board. Track dollar values, follow-ups, and next steps. Convert leads to a job in one click.",
-          border: true,
-          overlay: true,
-          imageMaxWidth: 900,
-        }}
-        featureTag="Opportunity Tracker"
-        heroImg={hero}
-        slug="crm"
-        commonData={dealflowhero}
-        apiData={false}
+        commonData={commonData}
+        hero={hero}
+        heroImg={hero?.heroImg}
+        solutionTag="Opportunity Tracker"
       />
       <TrustedService
         reviews={dealReviews}
@@ -83,42 +86,44 @@ const DealFlowTracker = async ({
         className="shadow-c5 pb-6"
       />
       <div className="overflow-hidden bg-white">
-        <div className="pt-8 sm:pt-12">
+        <div className="">
           <GoingFieldSevices
-            isImageshow={false}
-            title="There’s no easy way to see what’s going on in the field"
-            cardsDetail={fieldcarddetail}
+            cardsDetail={commonProblems?.cardsDetail}
+            title={commonProblems?.title}
           />
         </div>
         <ContractorWork
           theme="estimateTheme"
           fieldService={realTimeServiceSliderData}
         />
-        <RunWithContractor kindAdorable={runWithContractorData} />
+        <RunWithContractor kindAdorable={comparisonList} />
         <FinallyConnectsField />
-        <NeverLookBack data={opportunityTracker} />
+        <NeverLookBack data={teamsUsingContractor} />
       </div>
       <div className="relative">
         <div className="bg-kuroiBlack pointer-events-none absolute -top-1 z-20 h-2 w-full"></div>
         <ThousandsReviews
-          data={dealReviews2}
-          reviews={dealReviews2.reviews}
+          data={solutionPageContent?.data?.[0]?.reviewTrustSection}
+          reviews={thousandReviews?.reviews}
           variant="secondary"
-          apiData={false}
         />
       </div>
       <IndustryService
-        createBtn={"Get started FREE"}
-        mobileBtn={"Download FREE App"}
-        ncc={"No credit card required"}
-        data={dealflowformData}
+        createBtn={commonData?.getStartedFreeBtn}
+        mobileBtn={commonData?.mobileBtn}
+        ncc={commonData?.nccTxt}
+        data={solutionPageContent?.data?.[0]?.emailSignupSection}
         showClouds={false}
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBar platforms={platforms} className="md:pb-[148px] xl:pb-20" />
+      <TrustBar
+        platforms={platforms}
+        trustBarImages={commonData?.trustedCompaniesWhiteBG}
+        className="md:pb-[148px] xl:pb-20"
+      />
       <Faq
-        faq={dealflowFaq}
+        faq={faqs?.faqs}
         classNameAnswer="pt-1"
         mainContainerclassName="px-2 md:pt-[76px] pt-[66px] md:pb-[83px] pb-0"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
@@ -136,8 +141,8 @@ const DealFlowTracker = async ({
         issection={false}
       />
       <BlogPosts
-        data={blogList}
-        blogs={dealFlowBlogHeadingData}
+        data={blogs}
+        blogs={solutionPageContent?.data?.[0]?.blogs}
         className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </div>

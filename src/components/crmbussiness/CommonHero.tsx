@@ -22,6 +22,7 @@ export interface TheHeroProps {
   homeCard?: any;
   commonData?: any;
   featureTag?: string;
+  solutionTag?: string;
   apiData?: boolean;
   isShowHeroImg?: boolean;
 }
@@ -31,6 +32,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
   featureTag,
+  solutionTag,
   isShowHeroImg = true,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -73,6 +75,15 @@ const CommonHero: React.FC<TheHeroProps> = ({
           </div>
         </CardReveal>
       )}
+      {solutionTag && (
+        <CardReveal distance={30} delay={0.1}>
+          <div className="hidden items-center justify-center pb-1 md:flex">
+            <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+              {solutionTag || "Feature Highlight"}
+            </span>
+          </div>
+        </CardReveal>
+      )}
       <div
         id="hero"
         className="relative z-50 mx-auto flex w-full max-w-[1050px] flex-col-reverse md:flex-col"
@@ -84,6 +95,15 @@ const CommonHero: React.FC<TheHeroProps> = ({
                 <div className="block pb-1 md:hidden">
                   <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
                     {featureTag || "Feature Highlight"}
+                  </span>
+                </div>
+              </CardReveal>
+            )}
+            {solutionTag && (
+              <CardReveal distance={30} delay={0.1}>
+                <div className="block pb-1 md:hidden">
+                  <span className="bg-darkKnight text-wallStreet rounded-[6px] px-3 py-1 text-xs font-semibold">
+                    {solutionTag || "Feature Highlight"}
                   </span>
                 </div>
               </CardReveal>

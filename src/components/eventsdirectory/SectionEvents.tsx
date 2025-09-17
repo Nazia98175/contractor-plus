@@ -5,6 +5,7 @@ import { CustomSliderIcon } from "@/components/common/Icons";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo } from "react";
+import NotFoundFallback from "../common/NotFoundFallback";
 
 const SectionEvents = ({ params, events }: { params: string; events: any }) => {
   const sectionId = params as string;
@@ -80,21 +81,19 @@ const SectionEvents = ({ params, events }: { params: string; events: any }) => {
               </button>
             </CardReveal>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredEvents.length > 0 ? (
-              filteredEvents.map((event: any) => (
+          {filteredEvents.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredEvents.map((event: any) => (
                 <EventsCard
                   key={event.id}
                   Item={event}
                   onClick={() => handleEvent(event.eventUrl)}
                 />
-              ))
-            ) : (
-              <div className="flex items-center justify-center">
-                <p className="text-lightBlackGrey">No events found</p>
-              </div>
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <NotFoundFallback type="events" />
+          )}
         </div>
       </div>
     </section>

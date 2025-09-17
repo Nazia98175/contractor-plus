@@ -1,13 +1,13 @@
 "use client";
-import Button from "../common/Button";
-import { BlogBtnIcon, NoBlogIcon } from "../common/Icons";
-import BlogArticle from "./BlogArticle";
-import SliderLayout from "../common/SliderLayout";
-import { headingVariantMap } from "@/utils/getVariants";
-import Copy from "../common/Copy";
-import { useRouter } from "next/navigation";
 import { getTimeAgo } from "@/utils/dataTransformers";
-import NoBlogFound from "../common/NoBlogFound";
+import { headingVariantMap } from "@/utils/getVariants";
+import { useRouter } from "next/navigation";
+import Button from "../common/Button";
+import Copy from "../common/Copy";
+import { BlogBtnIcon } from "../common/Icons";
+import NotFoundFallback from "../common/NotFoundFallback";
+import SliderLayout from "../common/SliderLayout";
+import BlogArticle from "./BlogArticle";
 
 interface Props {
   data?: any[];
@@ -130,7 +130,7 @@ const BlogPosts: React.FC<Props> = ({
             </div>
           </>
         ) : (
-          <NoBlogFound />
+          <NotFoundFallback type="blogs" />
         )}
         <div className="block pt-4 md:hidden">
           <button className="bg-red-linear primary-btn h-10 gap-2">

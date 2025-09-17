@@ -118,13 +118,12 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
             }}
             className="!h-full"
           >
-            {blogs.map((article, index) => (
-              <SwiperSlide className="card-shine relative mx-auto !h-auto overflow-hidden">
-                <OurBlogCard
-                  article={article}
-                  blogListMobile={blogListMobile}
-                  index={index}
-                />
+            {blogListMobile.map((article, index) => (
+              <SwiperSlide
+                key={index}
+                className="card-shine relative mx-auto !h-auto overflow-hidden"
+              >
+                <OurBlogCard article={article} />
               </SwiperSlide>
             ))}
           </Swiper>

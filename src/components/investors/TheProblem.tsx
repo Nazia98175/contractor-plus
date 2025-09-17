@@ -3,26 +3,6 @@
 import Copy from "../common/Copy";
 import TheProblemCard from "./TheProblemCard";
 
-// const problems = [
-//   {
-//     id: 1,
-//     title: "Wasted Time",
-//     icon: <WastedIcon />,
-//     hasDivider: true,
-//   },
-//   {
-//     id: 2,
-//     title: "Poor Communication",
-//     icon: <PoorCommunicationIcon />,
-//     hasDivider: true,
-//   },
-//   {
-//     id: 3,
-//     title: "High Costs",
-//     icon: <HighCostIcon />,
-//     hasDivider: false,
-//   },
-// ];
 interface ProblemItem {
   text: string;
   icon?: any;

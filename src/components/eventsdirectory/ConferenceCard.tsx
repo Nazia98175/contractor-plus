@@ -7,7 +7,7 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import EventsCard from "../common/EventsCard";
 import { CustomSliderIcon } from "../common/Icons";
-import NoEventFound from "../common/NoEventsFound";
+import NotFoundFallback from "../common/NotFoundFallback";
 
 interface ConferenceCardProps {
   sectionHeading: string;
@@ -110,7 +110,7 @@ const ConferenceCard = ({
                 </SwiperSlide>
               ))
             ) : (
-              <NoEventFound />
+              <NotFoundFallback type="events" />
             )}
           </Swiper>
         </div>

@@ -304,3 +304,13 @@ export namespace PodcastDataResponse {
     };
   };
 }
+
+export type ResourceHomepage = {
+  id: number;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageWidth: string;
+  backgroundImage: string;
+  blogUrl: string;
+};

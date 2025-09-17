@@ -1,90 +1,57 @@
 import React from "react";
-import {
-  GreenCrossIcon,
-  Red2CrossIcon,
-  Red2CrossMobileIcon,
-} from "../common/Icons";
 
-type TeamItem = {
-  items: {
-    title: string;
-    desc: string;
-  }[];
+type TeamColumn = {
   title: string;
-  subTitle: string;
-  isIcon: boolean;
 };
 
-type TeamListProps = {
-  teamData: TeamItem[];
+type Feature = {
+  name: string;
+  values: string[]; // 3 values for 3 columns
 };
 
-const TeamListMobile: React.FC<TeamListProps> = ({ teamData }) => {
-  if (!teamData || !teamData.length) return <div>No team data</div>;
+const TeamListMobile: React.FC = () => {
+  // Column headings
+  const columns: TeamColumn[] = [
+    { title: "Contractor+" },
+    { title: "Mid-Market (Jobber, HCP, Joist)" },
+    { title: "Enterprise ServiceTitan, Procore, etc." },
+  ];
 
-  const maxItems = Math.max(...teamData.map((team) => team.items.length));
+  // Features with values
+  const features: Feature[] = [
+    {
+      name: "One connected platform",
+      values: ["1", "2", "3"],
+    },
+    {
+      name: "Built mobile-first",
+      values: ["1", "2", "3"],
+    },
+  ];
 
   return (
-    <div className="border-winterWay font-myriad mx-auto mt-[77px] w-full max-w-sm overflow-hidden rounded-xl border text-white">
+    <div className="mx-auto w-full max-w-[900px] text-white">
       {/* Header Row */}
-      <div className="divide-winterWay grid grid-cols-3 divide-x">
-        {teamData.map((team, index) => (
-          <div
-            key={index}
-            className={`relative flex flex-col items-center justify-center p-4 text-center ${
-              index === 0
-                ? "font-semibold text-white"
-                : "text-wallStreet font-bold"
-            }`}
-          >
-            <h3 className="flex h-auto items-center justify-center text-sm leading-tight font-bold sm:text-sm md:text-base">
-              {team.title}
-            </h3>
-            {team.subTitle && (
-              <h4 className="text-wallStreet mt-2 text-xs leading-tight font-medium sm:text-sm md:text-base">
-                {team.subTitle}
-              </h4>
-            )}
-
-            {/* Blue Frame label for Enterprise column */}
-          </div>
+      <div className="grid grid-cols-3 text-center font-semibold">
+        {columns.map((col, index) => (
+          <div key={index}>{col.title}</div>
         ))}
       </div>
 
       {/* Feature Rows */}
-      {Array.from({ length: maxItems }).map((_, rowIndex) => {
-        const featureTitle = teamData[0]?.items[rowIndex]?.title;
+      {features.map((feature, featureIndex) => (
+        <div key={featureIndex} className="text-center">
+          {/* Feature Title */}
+          <h3 className="border">{feature.name}</h3>
 
-        return (
-          <div key={rowIndex}>
-            {/* Feature Name Row */}
-            <div className="px-4 py-3 text-center">
-              <h4 className="text-wallStreet font-myriad text-base tracking-[0.1px]">
-                {featureTitle}
-              </h4>
-            </div>
-
-            {/* Icons Row */}
-            <div className="divide-winterWay grid grid-cols-3 divide-x py-2">
-              {teamData.map((team, teamIndex) => (
-                <div key={teamIndex} className="flex justify-center">
-                  {team ? (
-                    <div className="h-6 w-6">
-                      {team.isIcon ? (
-                        <GreenCrossIcon />
-                      ) : (
-                        <Red2CrossMobileIcon />
-                      )}
-                    </div>
-                  ) : (
-                    <div className="h-6 w-6"></div>
-                  )}
-                </div>
-              ))}
-            </div>
+          {/* Feature Values */}
+          <div className="grid grid-cols-3">
+            {feature.values.map((val, valIndex) => (
+              <div key={valIndex}>{val}</div>
+            ))}
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 };

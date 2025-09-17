@@ -4,9 +4,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import {
-  CustomSliderIcon
-} from "../common/Icons";
+import { CustomSliderIcon } from "../common/Icons";
+import NotFoundFallback from "../common/NotFoundFallback";
 import OurPodcastCard from "./OurPodcastCard";
 import RecentEpisodesCards from "./RecentEpisodesCards";
 
@@ -14,7 +13,6 @@ const OurPodcast: FC<{
   data: PodcastData;
   transistorData: PodcastDataResponse.apiResponse | null;
 }> = ({ data, transistorData }) => {
-  console.log(transistorData, "transistorData");
   return (
     <section className="custom-pagination-2 w-full px-2">
       <Copy delay={0.1}>
@@ -23,11 +21,15 @@ const OurPodcast: FC<{
         </h2>
       </Copy>
       <div className="mx-auto grid w-full max-w-[1128px] grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 xl:gap-[42px]">
-        {transistorData?.data &&
-          transistorData?.data?.length > 0 &&
+        {transistorData?.data && transistorData?.data?.length > 0 ? (
           transistorData?.data.map((item, index) => (
             <OurPodcastCard key={index} Item={item} />
-          ))}
+          ))
+        ) : (
+          <div className="col-span-full">
+            <NotFoundFallback type="podcasts" />
+          </div>
+        )}
       </div>
       <Copy delay={0.1}>
         <h2 className="podcast-gradient-text sub-heading mt-12 mb-10 text-center font-semibold md:mt-16">
@@ -55,13 +57,15 @@ const OurPodcast: FC<{
         loop={false}
         className="mx-auto w-full max-w-[1354px]"
       >
-        {transistorData?.data &&
-          transistorData?.data?.length > 0 &&
+        {transistorData?.data && transistorData?.data?.length > 0 ? (
           transistorData?.data.map((item, index) => (
             <SwiperSlide>
               <RecentEpisodesCards key={index} Item={item} />
             </SwiperSlide>
-          ))}
+          ))
+        ) : (
+          <NotFoundFallback type="podcasts" />
+        )}
       </Swiper>
 
       <div className="relative mx-auto flex w-fit items-center gap-2 py-10">

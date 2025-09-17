@@ -187,7 +187,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
       {/* Dropdown Panel */}
       <div
         ref={dropdownRef}
-        className={`shadow-c3 bg-doctor2 absolute top-[calc(100%+0px)] right-0 left-0 z-50 mx-auto flex max-h-[85vh] w-full flex-col overflow-hidden ${
+        className={`shadow-c3 bg-doctor2 xx absolute top-[calc(100%+0px)] right-0 left-0 z-[999999] mx-auto flex max-h-[85vh] w-full flex-col overflow-hidden ${
           activeMenu ? "p-7" : ""
         }`}
         style={{

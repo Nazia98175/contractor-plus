@@ -38,6 +38,7 @@ export default async function DevelopersApiPage({
 
   // Use locale directly
   const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(locale);
+  console.log("34edsaxz", whatYouCanBuild);
 
   return (
     <>
@@ -63,7 +64,6 @@ export default async function DevelopersApiPage({
           slackLinkText="Need help integrating?"
           slackLinkHref="/"
         />
-
         <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
       </div>
     </>

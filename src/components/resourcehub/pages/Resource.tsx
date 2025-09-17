@@ -36,7 +36,7 @@ const Resource = () => {
 
       {/* Free Tools & Templates Section - Moved to the top */}
       <section className="main-container">
-        <div className="estimate-overlap-card flex flex-col gap-8 rounded-lg px-4 py-10 md:px-6">
+        <div className="Free-Tools flex flex-col gap-8 rounded-lg px-4 py-10 md:px-6">
           <div className="text-center">
             <h2 className="text-alice mb-3 text-2xl font-bold sm:text-3xl">
               Free Tools & Templates

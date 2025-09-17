@@ -1,109 +1,37 @@
+import { PodcastData, PodcastDataResponse } from "@/types";
+import { FC } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import {
-  CustomSliderIcon,
-  HotSpotIcon2,
-  SpotyfiIcon,
-  YoutubeIcon,
+  CustomSliderIcon
 } from "../common/Icons";
 import OurPodcastCard from "./OurPodcastCard";
 import RecentEpisodesCards from "./RecentEpisodesCards";
 
-const OurPodcast = () => {
-  const cardItems = [
-    {
-      id: 1,
-      cardImgUrl: "/images/png/card-logo.png",
-      update: "Monthly Updates",
-      heading: "Contractor+ Podcast",
-      subHeading:
-        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
-      icon: [<YoutubeIcon />],
-      listed: "Live Now >",
-    },
-    {
-      id: 2,
-      cardImgUrl: "/images/webp/groth-mind-set-log.webp",
-      update: "Every Monday .  1 PM EST",
-      heading: "Growth Mindset Monday",
-      subHeading:
-        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
-      icon: [<YoutubeIcon />],
-      calander: "Add to Calendar",
-    },
-    {
-      id: 3,
-      cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "Weekly",
-      heading: "The Owner’s Perspective",
-      subHeading:
-        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
-      icon: [<YoutubeIcon />],
-    },
-    {
-      id: 4,
-      cardImgUrl: "/images/webp/hard-chat-logo.webp",
-      update: "Monthly",
-      heading: "Hard Hat Chat",
-      subHeading:
-        "Join us as we dive into the latest advancements in AI and what they mean for our future.",
-      icon: [<HotSpotIcon2 />, <SpotyfiIcon />],
-    },
-  ];
-  const cardItemsRecents = [
-    {
-      id: 1,
-      cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "27th June 2025 . 12:24 PM",
-      heading: "The Owner’s Prespective",
-      calander: "Add to Calendar",
-    },
-    {
-      id: 2,
-      cardImgUrl: "/images/webp/hard-chat-logo.webp",
-      update: "27th June 2025 . 12:24 PM",
-      heading: "Hard Hat Chat",
-      calander: "Add to Calendar",
-    },
-    {
-      id: 3,
-      cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "27th June 2025 . 12:24 PM",
-      heading: "The Owner’s Prespective",
-      calander: "Add to Calendar",
-    },
-    {
-      id: 4,
-      cardImgUrl: "/images/webp/hard-chat-logo.webp",
-      update: "27th June 2025 . 12:24 PM",
-      heading: "Hard Hat Chat",
-      calander: "Add to Calendar",
-    },
-    {
-      id: 5,
-      cardImgUrl: "/images/webp/owner-prospective.webp",
-      update: "27th June 2025 . 12:24 PM",
-      heading: "The Owner’s Prespective",
-      calander: "Add to Calendar",
-    },
-  ];
+const OurPodcast: FC<{
+  data: PodcastData;
+  transistorData: PodcastDataResponse.apiResponse | null;
+}> = ({ data, transistorData }) => {
+  console.log(transistorData, "transistorData");
   return (
     <section className="custom-pagination-2 w-full px-2">
       <Copy delay={0.1}>
         <h2 className="podcast-gradient-text sub-heading mt-12 mb-10 text-center font-semibold md:mb-16">
-          Our Podcasts
+          {data?.ourPodcastTitle ?? ""}
         </h2>
       </Copy>
       <div className="mx-auto grid w-full max-w-[1128px] grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 xl:gap-[42px]">
-        {cardItems.map((item, index) => (
-          <OurPodcastCard key={index} Item={item} />
-        ))}
+        {transistorData?.data &&
+          transistorData?.data?.length > 0 &&
+          transistorData?.data.map((item, index) => (
+            <OurPodcastCard key={index} Item={item} />
+          ))}
       </div>
       <Copy delay={0.1}>
         <h2 className="podcast-gradient-text sub-heading mt-12 mb-10 text-center font-semibold md:mt-16">
-          Recent Episodes
+          {data?.recentPodcastTitle ?? ""}
         </h2>
       </Copy>
       <Swiper
@@ -127,11 +55,13 @@ const OurPodcast = () => {
         loop={false}
         className="mx-auto w-full max-w-[1354px]"
       >
-        {cardItemsRecents.map((item, index) => (
-          <SwiperSlide>
-            <RecentEpisodesCards key={index} Item={item} />
-          </SwiperSlide>
-        ))}
+        {transistorData?.data &&
+          transistorData?.data?.length > 0 &&
+          transistorData?.data.map((item, index) => (
+            <SwiperSlide>
+              <RecentEpisodesCards key={index} Item={item} />
+            </SwiperSlide>
+          ))}
       </Swiper>
 
       <div className="relative mx-auto flex w-fit items-center gap-2 py-10">

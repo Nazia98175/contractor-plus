@@ -1,5 +1,3 @@
-// services/affiliates/affiliate.ts
-
 import axiosInstance from "@/lib/axios";
 
 export const DevelopersApiDataPage = async (

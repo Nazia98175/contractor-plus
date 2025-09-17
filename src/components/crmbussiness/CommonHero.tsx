@@ -43,6 +43,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
       once: true,
     });
   }, []);
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
 
   return (
     <section

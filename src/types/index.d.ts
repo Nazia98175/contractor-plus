@@ -220,3 +220,87 @@ export namespace TermsServiceData {
     publishedAt: string;
   }
 }
+
+export type PagePromise = {
+  params: Promise<{
+    locale: string;
+    slug?: string;
+  }>;
+};
+
+export type PodcastData = {
+  id: number;
+  documentId: string;
+  podcastTag: string;
+  title: string;
+  subTitle: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  ctaText: string;
+  ctaUrl: string | null;
+  ourPodcastTitle: string;
+  recentPodcastTitle: string;
+  SeoMetaData: {
+    id: number;
+    metaTitle: string;
+    metaDescription: string;
+    canonicalUrl: string | null;
+    keywords: string;
+  };
+  image: {
+    id: number;
+    url: string;
+  };
+};
+
+export namespace PodcastDataResponse {
+  export type apiResponse = {
+    data: {
+      id: number;
+      type: string;
+      relationships: {
+        episodes: {
+          data: {
+            id: string;
+            type: string;
+          }[];
+        };
+      };
+      attributes: {
+        description: string;
+        image_url: string;
+        title: string;
+        created_at: string;
+        feed_url: string;
+        spotify: string;
+      };
+    }[];
+    meta: {
+      currentPage: number;
+      totalPages: number;
+      totalCount: number;
+    };
+  };
+  export type show = {
+    id: number;
+    type: string;
+    relationships: {
+      episodes: {
+        data: {
+          id: string;
+          type: string;
+        }[];
+      };
+    };
+    attributes: {
+      description: string;
+      image_url: string;
+      title: string;
+      created_at: string;
+      feed_url: string;
+      spotify: string;
+    };
+  };
+}

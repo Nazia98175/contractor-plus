@@ -19,6 +19,7 @@ const ResourcesDropdown: React.FC<Props> = ({
     label: string;
     href: string;
   }[];
+  console.log(headerSubList, "headl");
 
   const resourceItems = [
     { image: "/images/webp/contractor-hq.webp" },
@@ -115,6 +116,7 @@ const ResourcesDropdown: React.FC<Props> = ({
               ?.map((link: any, index: any) => (
                 <Link
                   key={`${link?.linkTxt}-${index}`}
+                  target={link?.linkTxt === "Get Demo" ? "_blank" : "_self"}
                   className="all-features-button group"
                   href={`${link?.linkUrl}`}
                 >

@@ -27,7 +27,6 @@ const Podcastpage = async ({ params }: PagePromise) => {
     getPodcastData(locale),
     getPodcastTransistorData(),
   ]);
-  console.log(podcastData, "data");
   if (!podcastData) notFound();
   return <PodcastMain data={podcastData} transistorData={transistorData} />;
 };

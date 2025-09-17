@@ -1,12 +1,12 @@
 "use client";
+import { handleClickProps } from "@/types";
 import { useEffect, useMemo, useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { latestContractorData } from "../common/Helper";
+import NotFoundFallback from "../common/NotFoundFallback";
 import BlogCard from "./BlogCard";
 import SwiperNavWithPagination from "./SwiperNavWithPagination";
-import { handleClickProps } from "@/types";
-import NoBlogFound from "../common/NoBlogFound";
 
 type Blog = {
   id?: string | number;
@@ -74,7 +74,7 @@ const LatestFromContractor: React.FC<
       </h2>
 
       {isEmpty ? (
-        <NoBlogFound />
+        <NotFoundFallback type="blogs" />
       ) : (
         <>
           <Swiper

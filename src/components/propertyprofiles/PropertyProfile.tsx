@@ -36,7 +36,7 @@ import Image from "next/image";
 
 const PropertyProfile = () => {
   const hero = {
-    url: "/images/webp/property-profiles.webp",
+    url: "/images/webp/property-profile.webp",
   };
   return (
     <div>

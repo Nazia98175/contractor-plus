@@ -57,10 +57,10 @@ export const metadata = {
     canonical: "https://v2site.contractorplus.app/tool-inventory-software",
   },
 };
-const ToolAndTipEquipmentPage = () => {
+const ToolAndTipEquipmentPage = () => {  
   const toolEqupment = {
     id: 1,
-    title: "A tool tracking system that syncs with the rest of your operation",
+    title: "A tool tracking system that syncs with the rest of ypp9999dour operation",
     cardsDetail: [
       {
         id: 1,

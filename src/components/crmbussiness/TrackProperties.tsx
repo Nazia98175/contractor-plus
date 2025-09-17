@@ -70,7 +70,7 @@ const TrackProperties: React.FC<Props> = ({
               alt={trackProperties?.title ?? "Contractor+"}
               width={1098}
               height={578}
-              className={`${slug === "property-profile" ? "max-w-[860px]" : "max-w-[1098px]"} w-full object-cover`}
+              className={`${slug === "property-profiles" ? "max-w-[860px]" : "max-w-[1098px]"} w-full object-cover`}
               loading="eager"
             />
           </picture>
@@ -79,7 +79,7 @@ const TrackProperties: React.FC<Props> = ({
 
       {/* Heading + Paragraph */}
       <div className="relative z-0 mt-10 px-2 md:-mt-3">
-        {slug !== "property-profile" && (
+        {slug !== "property-profiles" && (
           <CardReveal distance={50}>
             <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
               {trackProperties?.title}

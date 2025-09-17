@@ -157,26 +157,30 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 trackProperties={trackProperties}
                 slug={useParams.slug}
               />
-
-              {useParams.slug !== "property-profile" && (
+              z
+              {useParams.slug !== "property-profiles" && (
                 <LikeYouDoContacts
                   trackProperties={pageData.trackProperties}
                   slug={useParams.slug}
                 />
               )}
-              {useParams.slug !== "mileage-tracking" && (
-                <HowContractorWork
-                  ncc={pageData.ncc}
-                  trackProperties={pageData.trackProperties}
-                  slug={useParams.slug}
-                />
-              )}
+              {useParams.slug !== "mileage-tracking" &&
+                useParams.slug !== "contractor-client-agreement" &&
+                useParams.slug !== "tool-inventory-software" && (
+                  <HowContractorWork
+                    ncc={pageData.ncc}
+                    trackProperties={pageData.trackProperties}
+                    slug={useParams.slug}
+                  />
+                )}
             </>
-          )}{" "}
-          {useParams.slug === "mileage-tracking" && (
+          )}
+          {(useParams.slug === "mileage-tracking" ||
+            useParams.slug === "contractor-client-agreement" ||
+            useParams.slug === "tool-inventory-software") && (
             <ManageEveryMile cardsData={automatedCardData.cardsDetail} />
           )}
-          {useParams.slug === "property-profile" && (
+          {useParams.slug === "property-profiles" && (
             <RunWithContractor kindAdorable={propertyaddressContractorData} />
           )}
           <KindAdorable

@@ -25,6 +25,7 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
       </Copy>
       <Link
         href={data?.ctaUrl ?? "/#"}
+        target="_blank"
         className="bg-red-linear primary-btn mx-auto flex h-10 !w-full max-w-[265px] items-center gap-1.5"
         type="button"
       >

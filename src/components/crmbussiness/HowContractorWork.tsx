@@ -33,7 +33,6 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties, slug }) => {
               className="h-auto w-full object-contain"
             />
           </div>
-
           {/* Right: Content */}
           <div className="w-full max-w-[742px] space-y-4 lg:space-y-5">
             <Copy animateOnScroll={true} delay={0.3}>

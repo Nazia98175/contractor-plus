@@ -1,4 +1,5 @@
 import {
+  automatedCardData,
   constructionBookkeepingServices,
   platforms,
   propertyaddressContractorData,
@@ -30,6 +31,7 @@ import { notFound } from "next/navigation";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
+import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -162,13 +164,17 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                   slug={useParams.slug}
                 />
               )}
-
-              <HowContractorWork
-                ncc={pageData.ncc}
-                trackProperties={pageData.trackProperties}
-                slug={useParams.slug}
-              />
+              {useParams.slug !== "mileage-tracking" && (
+                <HowContractorWork
+                  ncc={pageData.ncc}
+                  trackProperties={pageData.trackProperties}
+                  slug={useParams.slug}
+                />
+              )}
             </>
+          )}{" "}
+          {useParams.slug === "mileage-tracking" && (
+            <ManageEveryMile cardsData={automatedCardData.cardsDetail} />
           )}
           {useParams.slug === "property-profile" && (
             <RunWithContractor kindAdorable={propertyaddressContractorData} />
@@ -182,7 +188,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             data={pageData.teamsUsingContractor}
             slug={pageData.slug}
           />
-
           <ThousandsReviews
             data={pageData.thousandReviews}
             reviews={pageData.reviewsData}
@@ -191,9 +196,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
         <div className="relative overflow-hidden">
           {/* Background Icons */}
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
-
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-
           <div className="relative">
             <Image
               width={800}

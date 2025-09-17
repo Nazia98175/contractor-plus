@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
+import NotFoundFallback from "../common/NotFoundFallback";
 import BlogCard from "./BlogCard";
-import NoBlogFound from "../common/NoBlogFound";
 
 const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
   blogsList,
@@ -37,7 +37,7 @@ const BlogArticle: React.FC<{ blogsList: any; blogsData: any[] }> = ({
           ))}
         </div>
       ) : (
-        <NoBlogFound />
+        <NotFoundFallback type="blogs" />
       )}
 
       {/* Pagination */}

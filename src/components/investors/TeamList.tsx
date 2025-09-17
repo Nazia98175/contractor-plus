@@ -5,6 +5,7 @@ type TeamItem = {
   items: {
     title: string;
     desc?: string;
+    primaryDesc?: string;
     isIcon?: boolean;
   }[];
   title: string;
@@ -64,25 +65,36 @@ const TeamList: React.FC<TeamListProps> = ({ teamData }) => {
                           <h3 className="text-decemberSky flex items-center justify-center gap-1 text-center text-base font-semibold">
                             {item.title && (
                               <>
-                                <span className="h-3 w-3">
-                                  <GreenCrossIcon />
-                                </span>
-                                <p>{item.title}</p>
+                                <div className="h-3 w-3">
+                                  {item.isIcon ? (
+                                    <GreenCrossIcon />
+                                  ) : (
+                                    <Red2CrossIcon />
+                                  )}
+                                </div>
+                                <p className="text-center">{item.title}</p>
                               </>
                             )}
                           </h3>
-                          {item.desc && (
-                            <div className="mt-1 flex items-center gap-1">
-                              <div
-                                className={`${teamIndex === 0 ? "mx-auto block h-3 w-3 md:mx-0" : "hidden"}`}
-                              >
-                                {item.isIcon ? <Red2CrossIcon /> : null}
-                              </div>
-                              <h3 className="text-wallStreet text-xs font-medium">
+                          <div className="mt-1 flex items-center gap-1 text-center">
+                            {item.desc && (
+                              <h3 className="text-wallStreet w-full text-center text-xs font-medium">
                                 {item.desc}
                               </h3>
-                            </div>
-                          )}
+                            )}
+                            {item.primaryDesc && (
+                              <div className="text-wallStreet flex flex-col items-center justify-center gap-1 text-xs font-medium">
+                                <div className="h-3 w-3">
+                                  {item.isIcon ? (
+                                    <Red2CrossIcon />
+                                  ) : (
+                                    <GreenCrossIcon />
+                                  )}
+                                </div>
+                                {item.primaryDesc}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       ) : (
                         // Empty cell with same height

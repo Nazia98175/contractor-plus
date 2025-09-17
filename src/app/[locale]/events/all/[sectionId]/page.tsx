@@ -15,11 +15,7 @@ const page = async ({
   }
   const events = await getAllEvents(locale);
 
-  return (
-    <>
-      <SectionEvents params={sectionId} events={events} />
-    </>
-  );
+  return <SectionEvents params={sectionId} events={events} />;
 };
 
 export default page;

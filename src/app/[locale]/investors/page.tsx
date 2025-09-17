@@ -50,8 +50,9 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     smartMoney,
     disclaimerText,
     whyThisTeamSection,
+    pageContent,
   } = await getInvestorsData(locale);
-  console.log("wesx", table);
+  console.log("wesx", whyThisTeamSection);
 
   return (
     <main id="home-page-view-port-screen">
@@ -76,7 +77,7 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
         />
         {/* <MidMarketTable tableData={table || []} /> */}
         <TeamList teamData={table || []} />
-        <TeamListMobile teamData={table || []} />
+        <TeamListMobile />
         <WhyNow items={whyNowSection?.items} />
         <ProofWorking
           title={whyContractorSection?.title}
@@ -87,10 +88,6 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           items={proofSection?.items}
         />
         <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
-          {/* <p className="proof-working relative z-20 mx-auto mt-[100px] mb-16 w-fit text-center text-base font-semibold tracking-[-0.32px]">
-            {proofSection?.buttomText ||
-              "Now imagine what we'll do with real capital."}
-          </p> */}
           <MarketOpportunity marketOpportunityData={marketOpportunity || []} />
         </div>
         <WhatNext
@@ -99,7 +96,7 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           items={whatNext?.items}
         />
         <WinTeam
-          teamCards={whyThisTeamSection?.teamCards}
+          items={whyThisTeamSection?.items}
           title={whyThisTeamSection?.title}
         />
         <SmartMoney

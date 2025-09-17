@@ -1,11 +1,9 @@
-"use client";
 import React from "react";
-import Button from "../common/Button";
 import Image from "next/image";
 import Copy from "../common/Copy";
 interface TeamCard {
   id: string | number;
-  img: string;
+  image?: any;
   imgWidth?: string; // Tailwind width classes
   text: string;
 }
@@ -13,9 +11,9 @@ interface TeamCard {
 // ✅ Props type
 interface WinTeamProps {
   title?: string;
-  teamCards: TeamCard[];
+  items: TeamCard[];
 }
-const WinTeam: React.FC<WinTeamProps> = ({ teamCards = [], title }) => {
+const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
   return (
     <div className="mx-auto max-w-[990px] px-4">
       <Copy animateOnScroll={true}>
@@ -26,14 +24,14 @@ const WinTeam: React.FC<WinTeamProps> = ({ teamCards = [], title }) => {
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {/* First 3 cards */}
-        {teamCards.slice(0, 3).map((card) => (
+        {items.slice(0, 3).map((card) => (
           <article key={card.id}>
             <Image
               height={300}
               width={300}
               unoptimized
               className={`mx-auto w-full ${card.imgWidth}`}
-              src={card.img}
+              src={card.image.url}
               alt="win team"
             />
             <p className="text-lightBlackGrey mx-auto max-w-[268px] pt-4 text-center text-lg font-bold">
@@ -44,14 +42,14 @@ const WinTeam: React.FC<WinTeamProps> = ({ teamCards = [], title }) => {
 
         {/* Last 2 cards (centered on desktop) */}
         <div className="flex flex-col justify-center gap-18 lg:col-span-3 lg:flex-row">
-          {teamCards.slice(3).map((card) => (
+          {items.slice(3).map((card) => (
             <article key={card.id} className="w-full lg:max-w-[368px]">
               <Image
                 height={300}
                 width={300}
                 unoptimized
                 className={`mx-auto w-full ${card.imgWidth}`}
-                src={card.img}
+                src={card.image.url}
                 alt="win team"
               />
               <p

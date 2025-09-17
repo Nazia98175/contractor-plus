@@ -116,3 +116,39 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.video-section-wrapper2 h3 {
+  color: #adb1b5;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 h3 {
+  color: #0c0d11 !important;
+}
+.video-section-wrapper2.scroll-active-2 .how-it-work-aff {
+  color: white !important;
+}
+.video-section-wrapper2 p {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 p {
+  color: #656c73 !important;
+}
+.video-section-wrapper2.scroll-active-2 .how-it-work-description {
+  color: white !important;
+}
+.video-section-wrapper2 svg path {
+  fill: #cdcdcd;
+  stroke: #cdcdcd;
+  transition: all 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 svg path {
+  fill: #f21314 !important;
+  stroke: #f21314 !important;
+}
+.video-section-wrapper2 .icon-span {
+  transition: transform 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 .icon-span {
+  transform: rotate(90deg);
+}

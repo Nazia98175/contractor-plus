@@ -16,6 +16,8 @@ const SupplierBenefit: React.FC<SupplierBenefitProps> = ({
   const { sectionRef, dotRef } = useScrollDotAnimation({
     delay: 2.6,
   });
+  console.log(cardsData, "cardata");
+  console.log(title, "title");
 
   return (
     <section className="relative mt-[65px] md:mt-[90px]">

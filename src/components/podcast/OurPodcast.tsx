@@ -59,7 +59,7 @@ const OurPodcast: FC<{
       >
         {transistorData?.data && transistorData?.data?.length > 0 ? (
           transistorData?.data.map((item, index) => (
-            <SwiperSlide>
+            <SwiperSlide className="!h-auto">
               <RecentEpisodesCards key={index} Item={item} />
             </SwiperSlide>
           ))

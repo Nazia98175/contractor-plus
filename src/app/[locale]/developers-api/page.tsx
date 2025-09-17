@@ -40,6 +40,7 @@ export default async function DevelopersApiPage({
   const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(locale);
   console.log("34edsaxz", whatYouCanBuild);
 
+  console.log(hero, whatYouCanBuild, goBeyond);
   return (
     <>
       <DevelopersApiHero mainItems={hero} />

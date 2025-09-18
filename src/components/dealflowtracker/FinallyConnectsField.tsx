@@ -117,6 +117,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
     };
   }, []);
   // Steps Array
+  console.log(cards, "card");
 
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">

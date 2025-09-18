@@ -135,12 +135,7 @@ const DealFlowTracker = async ({ params }: Params) => {
         heroImg={hero?.heroImg}
         solutionTag="Opportunity Tracker"
       />
-      <TrustedService
-        reviews={reviews}
-        slug="crm"
-        apiData={false}
-        className="shadow-c5 pb-6"
-      />
+      <TrustedService reviews={reviews} slug="crm" className="shadow-c5 pb-6" />
       <div className="overflow-hidden bg-white">
         <div className="">
           <GoingFieldSevices

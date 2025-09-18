@@ -29,6 +29,7 @@ import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getIntegrationList } from "@/services/integation/getIntegrationData";
+import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 
 export const metadata = {
   title: "Auto-Update Contractor Invoicing Software | Contractor+",
@@ -50,46 +51,53 @@ export const metadata = {
       "https://v2site.contractorplus.app/contractor-invoicing-software",
   },
 };
+interface Params {
+  params: Promise<{ locale: string }>;
+}
 const BillingPage = async ({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) => {
-  const { locale } = await params;
-  const [integrationList] = await Promise.all([getIntegrationList(locale)]);
-  const hero = {
-    url: "/images/webp/invoicing-billing.webp",
-  };
+  const useParams = await params;
+  const {
+    solutionPageContent,
+    reviews,
+    commonProblems,
+    fieldServiceData,
+    trackProperties,
+    comparisonList,
+    teamsUsingContractor,
+    faqs,
+    blogs,
+    thousandReviews,
+    commonData,
+    integrationList,
+    hero,
+  } = await getSolutionPageData(
+    "contractor-invoicing-software",
+    useParams?.locale,
+  );
+
   return (
     <main className="relative z-10 overflow-hidden">
       <CommonHero
-        hero={{
-          heroTitle: "Living invoices that instantly reflect every change",
-          heroDescription:
-            "Contractor+ automatically captures uninvoiced billables and updates your invoice with time stamped change orders.",
-          border: true,
-          overlay: true,
-          imageMaxWidth: 900,
-        }}
-        featureTag={"Contractor Invoicing Software"}
-        heroImg={hero}
-        slug="crm"
-        apiData={false}
-        commonData={dealflowhero}
+        commonData={commonData}
+        hero={hero}
+        heroImg={hero?.heroImg}
+        solutionTag="Opportunity Tracker"
       />
-
       <TrustedService
-        reviews={dealReviews}
+        reviews={reviews}
         slug="crm"
         apiData={false}
-        className="shadow-c5 pb-10"
+        className="shadow-c5 pb-6"
       />
       <div className="overflow-hidden bg-white">
         <div className="pt-8 sm:pt-12">
           <GoingFieldSevices
-            title="There’s no simple way to bill a job that doesn’t go exactly to plan"
-            cardsDetail={simpleWayToBill}
-            isImageshow={false}
+            cardsDetail={commonProblems?.cardsDetail}
+            title={commonProblems?.title}
           />
         </div>
 
@@ -97,37 +105,37 @@ const BillingPage = async ({
           theme="estimateTheme"
           fieldService={billingSliderData}
         />
-        <RunWithContractor kindAdorable={billingVsthWayYouCouldData} />
+        <RunWithContractor kindAdorable={comparisonList} />
         <FinallyMakesInvoicing />
-        <NeverLookBack data={invoicingSoftware} />
+        <NeverLookBack data={teamsUsingContractor} />
       </div>
       <ThousandsReviews
-        data={dealReviews2}
-        reviews={dealReviews2.reviews}
+        data={solutionPageContent?.data?.[0]?.reviewTrustSection}
+        reviews={thousandReviews?.reviews}
         variant="secondary"
-        apiData={false}
       />
       <IndustryService
-        createBtn={"Get started FREE"}
-        mobileBtn={"Download FREE App"}
-        ncc={"No credit card required"}
-        data={billingformData}
+        createBtn={commonData?.getStartedFreeBtn}
+        mobileBtn={commonData?.mobileBtn}
+        ncc={commonData?.nccTxt}
+        data={solutionPageContent?.data?.[0]?.emailSignupSection}
         showClouds={false}
         className="xs:max-w-[88%] max-w-[87%] sm:max-w-[780px]"
         variantBtn="dark"
       />
-      <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
+      <TrustBar
+        platforms={platforms}
+        trustBarImages={commonData?.trustedCompaniesWhiteBG}
+        className="pb-[148px] xl:pb-20"
+      />
       <Faq
-        faq={billingFaqData}
+        faq={faqs?.faqs}
         classNameAnswer="pt-1"
         mainContainerclassName="px-2 md:pb-[76px]  md:pb-[83px] pb-10"
         TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
       />
       <WhatEverClient
-        data={{
-          title: "Whatever you use, Contractor+ connects",
-          subTitle: "5000+ Potential Integrations",
-        }}
+        data={commonData?.contractorConnects}
         issection={false}
         images={
           integrationList?.hero
@@ -136,8 +144,8 @@ const BillingPage = async ({
         }
       />
       <BlogPosts
-        data={blogList}
-        blogs={billingBlogPost}
+        data={blogs}
+        blogs={solutionPageContent?.data?.[0]?.blogs}
         className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
       />
     </main>

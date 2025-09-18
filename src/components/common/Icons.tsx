@@ -6890,3 +6890,76 @@ export const MobileRightLineIcon = ({ className = "" }) => (
     </defs>
   </svg>
 );
+
+export const AnnualTimeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-clock h-5 w-5"
+  >
+    <circle cx="12" cy="12" r="10"></circle>
+    <polyline points="12 6 12 12 16 14"></polyline>
+  </svg>
+);
+
+export const AdditionalRevenueIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-dollar-sign h-5 w-5"
+  >
+    <line x1="12" x2="12" y1="2" y2="22"></line>
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+  </svg>
+);
+
+export const ImprovementIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="15"
+    viewBox="0 0 25 15"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M25 1.23877V6.25641C24.9999 6.50385 24.9266 6.74572 24.7891 6.95144C24.6517 7.15716 24.4564 7.3175 24.2278 7.41219C23.9993 7.50687 23.7479 7.53165 23.5053 7.48339C23.2627 7.43513 23.0399 7.316 22.8649 7.14106L21.2477 5.52316L14.6274 12.1462C14.3928 12.3808 14.0747 12.5125 13.7431 12.5125C13.4114 12.5125 13.0933 12.3808 12.8588 12.1462L8.74001 8.02572L2.11969 14.6487C1.88379 14.8767 1.56785 15.0028 1.2399 15C0.911952 14.9971 0.598244 14.8655 0.366342 14.6335C0.134439 14.4015 0.00289706 14.0877 4.72824e-05 13.7596C-0.00280249 13.4315 0.123268 13.1154 0.351105 12.8794L7.85572 5.37175C8.09027 5.13717 8.40835 5.00539 8.74001 5.00539C9.07167 5.00539 9.38975 5.13717 9.6243 5.37175L13.7431 9.49222L19.4791 3.75384L17.8619 2.13594C17.687 1.96094 17.5679 1.73801 17.5197 1.49532C17.4714 1.25263 17.4962 1.00108 17.5909 0.772472C17.6855 0.543863 17.8458 0.348459 18.0514 0.210963C18.257 0.0734673 18.4988 5.24521e-05 18.7462 -9.53674e-07H23.7492L23.8093 0.00125027C24.1286 0.0156794 24.4303 0.152268 24.6519 0.3828C24.8735 0.613333 24.9981 0.918947 25 1.23877Z"
+      fill="white"
+    />
+  </svg>
+);
+
+export const ImpactIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-chart-column-increasing mr-1 h-4 w-4"
+  >
+    <path d="M13 17V9"></path>
+    <path d="M18 17V5"></path>
+    <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+    <path d="M8 17v-3"></path>
+  </svg>
+);

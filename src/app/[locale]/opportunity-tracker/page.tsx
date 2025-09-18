@@ -142,7 +142,7 @@ const DealFlowTracker = async ({ params }: Params) => {
         className="shadow-c5 pb-6"
       />
       <div className="overflow-hidden bg-white">
-        <div className="">
+        <div>
           <GoingFieldSevices
             cardsDetail={commonProblems?.cardsDetail}
             title={commonProblems?.title}

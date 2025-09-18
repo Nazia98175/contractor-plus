@@ -1,15 +1,14 @@
+import React from "react";
 import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import BuildRightNow from "@/components/developersapi/BuildRightNow";
 import DevelopersApiHero from "@/components/developersapi/DevelopersApiHero";
 import PublicEndPoints from "@/components/developersapi/PublicEndPoints";
-import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { DevelopersApiData } from "@/services/developers-api/getDevelopersApi";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import React from "react";
-
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 export async function generateMetadata({
   params,
 }: {

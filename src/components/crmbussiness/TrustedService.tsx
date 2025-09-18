@@ -108,7 +108,7 @@ const TrustedService: React.FC<TheReviewProps> = ({
             >
               {reviews?.data?.[0]?.reviews?.reviews
                 ? reviews?.data?.[0]?.reviews?.reviews
-                    .slice(9)
+                    .slice(6)
                     .map((review: any) => (
                       <TrustedServiceCard
                         key={review.id}

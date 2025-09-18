@@ -116,7 +116,6 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-  // Steps Array
 
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">
@@ -142,7 +141,6 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
         }}
         className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
       >
-        A system that finally connects field and office
         {title || "A system that finally connects field and office"}
       </h2>
 
@@ -248,7 +246,23 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
                 <div
                   key={index}
                   id={`timing-img-${index + 1}`}
-                  className={`timing-imgs ${step.imgClass}`}
+                  className={`timing-imgs ${
+                    index === 0
+                      ? "relative h-[245px] max-w-[611px]"
+                      : index === 1
+                        ? "absolute top-0 left-0 h-[245px] max-w-[611px]"
+                        : index === 2
+                          ? "absolute top-0 left-0 h-[245px] max-w-[611px]"
+                          : index === 3
+                            ? "absolute top-0 left-0 h-[245px] max-w-[611px]"
+                            : index === 4
+                              ? "absolute top-0 left-0 h-[245px] max-w-[611px]"
+                              : index === 5
+                                ? "absolute top-0 left-0 h-[345px] max-w-[611px]"
+                                : index === 6
+                                  ? "absolute top-0 left-0 h-[245px] max-w-[611px]"
+                                  : ""
+                  }`}
                 >
                   <LottieAnimation
                     className="h-full w-full"

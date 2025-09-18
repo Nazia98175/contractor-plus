@@ -200,7 +200,6 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
       iconClass: "absolute -right-20 -bottom-4",
     },
   ];
-
   const rightStats = [
     {
       value: "~6%",

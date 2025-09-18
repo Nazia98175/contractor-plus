@@ -106,7 +106,11 @@ const BillingPage = async ({
           fieldService={billingSliderData}
         />
         <RunWithContractor kindAdorable={comparisonList} />
-        <FinallyMakesInvoicing />
+        <FinallyMakesInvoicing
+          steps={trackProperties?.cards}
+          subTitle={trackProperties?.subTitle}
+          title={trackProperties?.title}
+        />
         <NeverLookBack data={teamsUsingContractor} />
       </div>
       <ThousandsReviews

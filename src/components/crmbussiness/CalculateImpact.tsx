@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CalculateImpactSelect from "./CalculateImpactSelect";
 import CalculateImpactRange from "./CalculateImpactRange";
+import gsap from "gsap";
 import {
   BigChiefEmailIcon,
   BigChiefIcon2,
   HourDotterIcon,
   RatePercentIcon,
 } from "../common/Icons";
+import VersionOneResult from "./VersionOneResult";
 
 const CalculateImpact = () => {
   const [selectedValue, setSelectedValue] = useState("10 - 15");
@@ -34,6 +36,18 @@ const CalculateImpact = () => {
     { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
     { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
   ];
+  const [calculate, setCalculate] = useState(false);
+  const resultRef = useRef(null);
+
+  useEffect(() => {
+    if (calculate && resultRef.current) {
+      gsap.fromTo(
+        resultRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+      );
+    }
+  }, [calculate]);
   return (
     <div className="bg-white px-4 pt-12 md:pt-16">
       <div className="mx-auto w-full max-w-[690px]">
@@ -171,13 +185,22 @@ const CalculateImpact = () => {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <button className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white sm:max-w-[248px]">
+              <button
+                onClick={() => setCalculate(true)}
+                className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white sm:max-w-[248px]"
+              >
                 Calculate Impact
               </button>
             </div>
           </div>
         </div>
       </div>
+      {/* Fade-in VersionOneResult */}
+      {calculate && (
+        <div ref={resultRef}>
+          <VersionOneResult />
+        </div>
+      )}
     </div>
   );
 };

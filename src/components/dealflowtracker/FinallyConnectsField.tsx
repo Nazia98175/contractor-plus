@@ -1,19 +1,10 @@
 "use client";
 import CardRequiredButton from "../common/CardRequiredButton";
-
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-
 import { SplitText } from "gsap/SplitText";
-import Estimate_Scheduled from "../../../public/lotties/Estimate-Scheduled.json";
-import Estimate_Sent from "../../../public/lotties/Estimate-Sent.json";
-import Initial_Contact from "../../../public/lotties/Initial-Contact.json";
-import Job_Scheduled from "../../../public/lotties/Job-Scheduled.json";
-import Lead_Captured from "../../../public/lotties/Lead-Captured.json";
-import dealApproved from "../../../public/lotties/Deal-Approved.json";
-import Revenue_Forecast_Updated from "../../../public/lotties/Revenue-Forecast-Updated.json";
 import CardReveal from "../common/CardReveal";
 import FreeTrialButton from "../common/FreeTrialButton";
 import LottieAnimation from "../common/LottieAnimation";
@@ -30,7 +21,24 @@ import {
 // Register the SplitText plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
-const FinallyConnectsField = () => {
+export interface StepCard {
+  title: string;
+  description: string;
+  lottieJson: object;
+  imgClass: string;
+}
+
+interface FinallyConnectsFieldProps {
+  cards: StepCard[];
+  title?: string; // 🔹 optional title
+  subTitle?: string;
+}
+
+const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
+  cards,
+  title,
+  subTitle,
+}) => {
   const timelineWrapperRef = useRef(null);
 
   useGSAP(() => {
@@ -108,6 +116,7 @@ const FinallyConnectsField = () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
+  // Steps Array
 
   return (
     <div className="timing-text-style relative overflow-hidden bg-white">
@@ -121,7 +130,7 @@ const FinallyConnectsField = () => {
         }}
         className="section-heading relative z-[4] hidden px-2 text-center sm:block"
       >
-        A system that finally connects field and office
+        {title || "A system that finally connects field and office"}
       </h2>
       <h2
         style={{
@@ -134,10 +143,12 @@ const FinallyConnectsField = () => {
         className="xs:text-[22px] xs:max-w-[88%] relative z-[4] mx-auto px-2 text-center text-[19px] font-bold sm:hidden"
       >
         A system that finally connects field and office
+        {title || "A system that finally connects field and office"}
       </h2>
 
       <p className="text-darkness xs:text-sm relative z-[4] my-3 text-center text-xs font-semibold md:mt-5 md:text-base xl:text-lg">
-        A drag-and-drop Kanban view that simplifies opportunities
+        {subTitle ||
+          "A drag-and-drop Kanban view that simplifies opportunities"}
       </p>
       <div className="timeline-pin-wrapper relative">
         <div
@@ -197,172 +208,54 @@ const FinallyConnectsField = () => {
           />
 
           <div className="relative z-[9999] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
-            {/* Heading  */}
+            {/* Heading */}
             <div className="relative w-full">
-              <h2
-                id="timing-text-heading-1"
-                className="timing-text-heading opportunity-card relative mt-6 text-center"
-              >
-                Lead Captured
-              </h2>
-              <h2
-                id="timing-text-heading-2"
-                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
-              >
-                Initial Contact
-              </h2>
-              <h2
-                id="timing-text-heading-3"
-                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
-              >
-                Estimate Scheduled
-              </h2>
-              <h2
-                id="timing-text-heading-4"
-                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
-              >
-                Estimate Sent
-              </h2>
-
-              <h2
-                id="timing-text-heading-5"
-                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
-              >
-                Deal Approved
-              </h2>
-              <h2
-                id="timing-text-heading-6"
-                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
-              >
-                Job Scheduled
-              </h2>
-              <h2
-                id="timing-text-heading-7"
-                className="timing-text-heading opportunity-card absolute top-0 left-0 w-full text-center"
-              >
-                Initial Contact
-              </h2>
+              {cards.map((step, index) => (
+                <h2
+                  key={index}
+                  id={`timing-text-heading-${index + 1}`}
+                  className={`timing-text-heading opportunity-card ${
+                    index === 0
+                      ? "relative mt-6"
+                      : "absolute top-0 left-0 w-full"
+                  } text-center`}
+                >
+                  {step.title}
+                </h2>
+              ))}
             </div>
-            {/* Description  */}
+
+            {/* Description */}
             <div className="relative">
-              <p
-                id="timing-text-1"
-                className="timing-text text-secondary relative mt-6 mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                A new lead is captured by Big Chief AI or manually entered into
-                the CRM. It’s instantly added to your Deal Flow pipeline with
-                property, contact info, and project notes.
-              </p>
-              <p
-                id="timing-text-2"
-                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                You or your team follows up, logs notes, and assigns a dollar
-                value to the opportunity.
-              </p>
-              <p
-                id="timing-text-3"
-                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                You schedule a walkthrough or site visit directly from the
-                opportunity without switching tools.
-              </p>
-
-              <p
-                id="timing-text-4"
-                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                The estimate is generated and linked directly to the deal card.
-              </p>
-              <p
-                id="timing-text-5"
-                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                You move the card to “Approved” and convert it to a job
-                instantly.
-              </p>
-              <p
-                id="timing-text-6"
-                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                The new job is created and scheduled, with the original deal,
-                estimate, and client details fully synced across Contractor+.
-              </p>
-              <p
-                id="timing-text-7"
-                className="timing-text text-secondary absolute top-0 left-1/2 mb-2 w-full -translate-x-1/2 transform text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]"
-              >
-                Your pipeline now reflects the converted value, updating your
-                projected revenue and helping you prioritize what’s next.
-              </p>
+              {cards.map((step, index) => (
+                <p
+                  key={index}
+                  id={`timing-text-${index + 1}`}
+                  className={`timing-text text-secondary ${
+                    index === 0
+                      ? "relative mt-6"
+                      : "absolute top-0 left-1/2 w-full -translate-x-1/2 transform"
+                  } mb-2 text-center text-sm leading-[120%] font-medium md:text-lg lg:text-[22px]`}
+                >
+                  {step.description}
+                </p>
+              ))}
             </div>
-            {/* Images  */}
+
+            {/* Images */}
             <div className="relative mt-5 overflow-hidden">
-              <div
-                id="timing-img-1"
-                className="timing-imgs relative h-[245px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={Lead_Captured}
-                />
-              </div>
-
-              <div
-                id="timing-img-2"
-                className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={Initial_Contact}
-                />
-              </div>
-              <div
-                id="timing-img-3"
-                className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={Estimate_Scheduled}
-                />
-              </div>
-
-              <div
-                id="timing-img-4"
-                className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={Estimate_Sent}
-                />
-              </div>
-              <div
-                id="timing-img-5"
-                className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={dealApproved}
-                />
-              </div>
-              <div
-                id="timing-img-6"
-                className="timing-imgs absolute top-0 left-0 h-[345px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={Job_Scheduled}
-                />
-              </div>
-              <div
-                id="timing-img-7"
-                className="timing-imgs absolute top-0 left-0 h-[245px] max-w-[611px]"
-              >
-                <LottieAnimation
-                  className="h-full w-full"
-                  animationData={Revenue_Forecast_Updated}
-                />
-              </div>
+              {cards.map((step, index) => (
+                <div
+                  key={index}
+                  id={`timing-img-${index + 1}`}
+                  className={`timing-imgs ${step.imgClass}`}
+                >
+                  <LottieAnimation
+                    className="h-full w-full"
+                    animationData={step.lottieJson}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

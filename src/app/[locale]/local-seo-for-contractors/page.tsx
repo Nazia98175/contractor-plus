@@ -122,6 +122,7 @@ export default async function LeadGeneration({ params }: Params) {
         <ThousandsReviews
           data={dealReviews2}
           reviews={dealReviews2.reviews}
+          apiData={false}
           variant="primary"
         />
         <div className="px-2">

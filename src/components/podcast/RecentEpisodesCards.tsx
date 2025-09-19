@@ -19,7 +19,7 @@ const RecentEpisodesCards: React.FC<{ Item: PodcastDataResponse.show }> = ({
           />
           <div className="p-2.5">
             <Image
-              className="relative z-20 w-full max-w-[190px] object-cover"
+              className="ios-image relative z-20 w-full max-w-[190px] object-cover"
               src={Item?.attributes?.image_url}
               alt={Item?.attributes?.title}
               width={190}

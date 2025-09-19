@@ -2175,3 +2175,9 @@ body.menu-open .back-to-top {
   backdrop-filter: blur(20px);
   background-blend-mode: overlay;
 }
+.swiper-slide {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}

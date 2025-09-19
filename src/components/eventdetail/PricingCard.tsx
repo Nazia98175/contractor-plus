@@ -11,7 +11,7 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
           <Image
             width={500}
             height={500}
-            className="h-full max-h-[200px] min-h-[200px] w-full rounded-lg"
+            className="ios-image h-full max-h-[200px] min-h-[200px] w-full rounded-lg"
             src={pricing?.image?.url}
             alt={pricing?.title}
           />

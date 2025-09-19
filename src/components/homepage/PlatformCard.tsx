@@ -29,7 +29,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
         // sizes="(max-width: 768px) 155px, (min-width: 769px) 155px"
         src={(platform.url as string) || platform.logo}
         alt={`${platform.name} rating`}
-        className={`${className} max-h-[38px] max-w-[140px] object-contain sm:max-w-[155px]`}
+        className={`${className} ios-image max-h-[38px] max-w-[140px] object-contain sm:max-w-[155px]`}
       />
       <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (

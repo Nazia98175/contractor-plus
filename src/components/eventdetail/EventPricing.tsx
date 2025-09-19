@@ -12,7 +12,7 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
       <div className="flex justify-between sm:hidden">
         <Copy delay={0.1}>
           <h4 className="event-card-tittle">
-             {`${eventDetail?.eventName}`} Pricing
+            {`${eventDetail?.eventName}`} Pricing
           </h4>
         </Copy>
       </div>
@@ -20,8 +20,7 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
         <div className="custom-pagination-2 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Copy delay={0.1}>
             <h4 className="event-card-tittle !hidden sm:!block">
-                         {`${eventDetail?.eventName}`} Pricing
-
+              {`${eventDetail?.eventName}`} Pricing
             </h4>
           </Copy>
           <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">

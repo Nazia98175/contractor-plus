@@ -51,10 +51,11 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
     >
       {!!imgUrl && (
         <Image
+          width={170}
+          height={170}
           src={imgUrl}
           alt={blog?.blogTitle}
-          className="h-full max-h-[170px] min-h-[170px] w-full rounded-md object-contain md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
-          fill
+          className="ios-image h-full max-h-[170px] min-h-[170px] w-full rounded-md object-cover md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
         />
       )}
 

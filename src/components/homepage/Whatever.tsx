@@ -253,7 +253,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="relative z-20 max-w-[30px] object-cover lg:max-w-[40px]"
+                  className="ios-image relative z-20 max-w-[30px] object-cover lg:max-w-[40px]"
                   src={currentLogos[0] || "/images/webp/outlook.webp"}
                   width={40}
                   height={40}
@@ -273,7 +273,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="relative z-20 max-w-[26px] object-cover lg:max-w-[38px]"
+                  className="ios-image relative z-20 max-w-[26px] object-cover lg:max-w-[38px]"
                   src={currentLogos[1] || "/images/png/contractor-1.png"}
                   width={38}
                   height={38}
@@ -293,7 +293,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="relative z-20 max-w-[45px] object-cover lg:max-w-[66px]"
+                  className="ios-image relative z-20 max-w-[45px] object-cover lg:max-w-[66px]"
                   src={currentLogos[2] || "/images/svg/contractor-3.svg"}
                   width={66}
                   height={17}
@@ -325,7 +325,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="relative z-20 max-w-[29px] object-cover lg:max-w-[38px]"
+                  className="ios-image relative z-20 max-w-[29px] object-cover lg:max-w-[38px]"
                   src={currentLogos[3] || "/images/png/contractor-4.png"}
                   width={38}
                   height={38}
@@ -345,7 +345,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="relative z-20 max-w-[25px] object-cover lg:max-w-[38px]"
+                  className="ios-image relative z-20 max-w-[25px] object-cover lg:max-w-[38px]"
                   src={currentLogos[4] || "/images/png/contractor-5.png"}
                   width={38}
                   height={38}
@@ -365,7 +365,7 @@ const Whatever: React.FC<TheWhateverProps> = ({
                 <OnIcon className="pointer-events-none absolute -z-1 h-full w-full" />
                 <OnIconw className="pointer-events-none absolute h-[99%] w-[99%]" />
                 <Image
-                  className="relative z-20 max-w-[21px] object-cover lg:max-w-[33px]"
+                  className="ios-image relative z-20 max-w-[21px] object-cover lg:max-w-[33px]"
                   src={currentLogos[5] || "/images/png/contractor-6.png"}
                   width={33}
                   height={33}

@@ -49,7 +49,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
                 alt="avatar"
                 width={42}
                 height={42}
-                className="max-w-[42px] rounded-full object-contain"
+                className="ios-image max-w-[42px] rounded-full object-contain"
               />
             ) : (
               <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black text-base font-semibold text-white">

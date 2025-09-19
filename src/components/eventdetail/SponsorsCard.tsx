@@ -29,7 +29,7 @@ const SponsorCard = ({
     <div className={`w-full py-3 sm:py-5 ${borderClasses}`}>
       <Link href={`${image}`} target="_blank">
         <img
-          className="h-full max-h-[74px] min-h-[74px] w-full"
+          className="ios-image h-full max-h-[74px] min-h-[74px] w-full"
           src={image}
           alt={`sponsor-logo-${index}`}
         />

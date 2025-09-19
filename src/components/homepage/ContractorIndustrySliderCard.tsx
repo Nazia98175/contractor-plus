@@ -22,7 +22,7 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
           height={205}
           src={show?.image?.formats?.medium?.url ?? show?.image?.url ?? ""}
           alt={show?.imageTitle ?? ""}
-          className="relative block h-full max-h-[260px] min-h-[260px] w-full rounded-md object-cover"
+          className="ios-image relative block h-full max-h-[260px] min-h-[260px] w-full rounded-md object-cover"
           priority
           loading="eager"
           unoptimized

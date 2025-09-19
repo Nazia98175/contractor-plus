@@ -77,6 +77,7 @@ export default async function LeadGeneration({ params }: Params) {
     faqs,
     commonData,
   } = await getLocalSeoForContractorsData(locale);
+  console.log("erdsx", problemSolutionSection);
 
   return (
     <>
@@ -120,8 +121,8 @@ export default async function LeadGeneration({ params }: Params) {
           <CommonLogos />
         </div>
         <ThousandsReviews
-          data={dealReviews2}
-          reviews={dealReviews2.reviews}
+          data={thousandReviews}
+          reviews={thousandReviews?.reviews}
           variant="primary"
         />
         <div className="px-2">
@@ -138,9 +139,9 @@ export default async function LeadGeneration({ params }: Params) {
               "Start using Contractor+ free. Upgrade to get the full operating system"
             }
             placeholder={emailSignupSection?.placeholder || "Your Email"}
-            createBtn={"Get free audit"}
+            createBtn={emailSignupSection?.createBtn || "Get free audit"}
             mobileBtn={"Download FREE App"}
-            ncc={"No credit card required"}
+            ncc={commonData?.nccTxt}
           />
         </div>
         <TrustBar

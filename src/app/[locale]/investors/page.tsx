@@ -50,7 +50,6 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     smartMoney,
     disclaimerText,
     whyThisTeamSection,
-    pageContent,
     tableMobile,
     mobileProofSection,
   } = await getInvestorsData(locale);
@@ -106,7 +105,6 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
         <WinTeam
           items={whyThisTeamSection?.items}
           title={whyThisTeamSection?.title}
-          
         />
         <SmartMoney
           btnText={smartMoney?.btnText}

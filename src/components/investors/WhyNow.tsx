@@ -290,11 +290,13 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                   zIndex: 20 - index,
                 }}
               >
-                <Copy animateOnScroll={false}>
-                  <h3 className="text-center text-xl font-semibold text-white sm:text-2xl lg:text-4xl xl:text-[52px]">
-                    {section.title}
-                  </h3>
-                </Copy>
+                {section?.title && (
+                  <Copy animateOnScroll={false}>
+                    <h3 className="text-center text-xl font-semibold text-white sm:text-2xl lg:text-4xl xl:text-[52px]">
+                      {section.title}
+                    </h3>
+                  </Copy>
+                )}
                 {section?.image && (
                   <div className="my-3 lg:my-4">
                     <Image

@@ -5,19 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
 import { Navigation, Pagination, Controller, Autoplay } from "swiper/modules";
 import LottieAnimation from "../common/LottieAnimation";
-// import Social_cross from "../../../public/lotties/social-cross-posting.json";
-// import Review_reply from "../../../public/lotties/review-replies.json";
-// import Review_Request from "../../../public/lotties/review-requests.json";
-// import optimization from "../../../public/lotties/photo-optimization.json";
-// import Auto_position from "../../../public/lotties/Auto-Posting.json";
-// import citation_sync from "../../../public/lotties/citation_sync-2.json";
-// import auto_video from "../../../public/lotties/auto-video.json";
-// import high_end from "../../../public/lotties/high-end.json";
-// import answer from "../../../public/lotties/answer.json";
-// import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
-// import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
-// import account_manager from "../../../public/lotties/ai-account-manager.json";
-// import ranking_heatmaps from "../../../public/lotties/ranking-heatmaps.json";
+import Social_cross from "../../../public/lotties/social-cross-posting.json";
+import Review_reply from "../../../public/lotties/review-replies.json";
+import Review_Request from "../../../public/lotties/review-requests.json";
+import optimization from "../../../public/lotties/photo-optimization.json";
+import Auto_position from "../../../public/lotties/Auto-Posting.json";
+import citation_sync from "../../../public/lotties/citation_sync-2.json";
+import auto_video from "../../../public/lotties/auto-video.json";
+import high_end from "../../../public/lotties/high-end.json";
+import answer from "../../../public/lotties/answer.json";
+import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
+import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
+import account_manager from "../../../public/lotties/ai-account-manager.json";
+import ranking_heatmaps from "../../../public/lotties/ranking-heatmaps.json";
 interface SliderItem {
   text?: string;
   description?: string;
@@ -64,10 +64,10 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
         centeredSlides
         modules={[Controller, Autoplay]}
         speed={600}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6000,
+        //   disableOnInteraction: false,
+        // }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >
@@ -76,7 +76,10 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
             key={i}
             className="!flex !h-auto flex-col items-center justify-center"
           >
-            <div className={`mx-auto w-full ${slideClasses[i] || ""}`}>
+            <div className={`mx-auto w-full ${slideClasses[i] || ""} relative`}>
+              <div className="pointer-events-none absolute top-[-13%] left-[-10%] z-50 h-[30%] w-[120%] bg-white blur-[20px]"></div>
+              <div className="pointer-events-none absolute top-0 right-[-10%] z-50 h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
+              <div className="pointer-events-none absolute top-0 left-[-10%] z-50 h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
               {item.image && (
                 <Image
                   src={item.image}

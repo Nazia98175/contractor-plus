@@ -44,7 +44,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                   <img
                     src={review.profileImg?.url}
                     alt="avatar"
-                    className="ios-image h-fit max-w-[42px] rounded-full object-contain"
+                    className="h-fit max-w-[42px] rounded-full object-contain"
                   />
                 ) : (
                   <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
@@ -58,7 +58,7 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                   <img
                     src={`${review.profileImg}`}
                     alt="avatar"
-                    className="ios-image h-fit max-w-[42px] rounded-full object-contain"
+                    className="h-fit max-w-[42px] rounded-full object-contain"
                   />
                 ) : (
                   <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">

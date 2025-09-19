@@ -11,43 +11,60 @@ import {
 } from "../common/Icons";
 import VersionOneResult from "./VersionOneResult";
 
-const CalculateImpact = () => {
-  const [selectedValue, setSelectedValue] = useState("10 - 15");
-  const [Averagejob, setAveragejob] = useState("1K - 3K");
-  const [estimateTime, setestimateTime] = useState("1.0 - 1.5 hrs.");
+// ✅ Option type for dropdown
+interface Option {
+  label: string;
+  value: string;
+}
 
-  // ✅ Define options
-  const estimateweek = [
+const CalculateImpact: React.FC = () => {
+  const [selectedValue, setSelectedValue] = useState<string>("10 - 15");
+  const [Averagejob, setAveragejob] = useState<string>("1K - 3K");
+  const [estimateTime, setEstimateTime] = useState<string>("1.0 - 1.5 hrs.");
+  const [calculate, setCalculate] = useState<boolean>(false);
+
+  const resultRef = useRef<HTMLDivElement | null>(null);
+
+  // ✅ Dropdown options
+  const estimateweek: Option[] = [
     { label: "10 - 15", value: "10 - 15" },
     { label: "11 - 15", value: "11 - 15" },
     { label: "12 - 15", value: "12 - 15" },
     { label: "20 - 15", value: "20 - 15" },
   ];
-  const averagejob = [
+
+  const averagejob: Option[] = [
     { label: "1K - 3K", value: "1K - 3K" },
     { label: "1K - 4K", value: "1K - 4K" },
     { label: "2K - 3K", value: "2K - 3K" },
     { label: "4K - 3K", value: "4K - 3K" },
   ];
 
-  const estimatetime = [
+  const estimatetime: Option[] = [
     { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
     { label: "1.0 - 1.1 hrs.", value: "1.0 - 1.1 hrs." },
     { label: "1.2 - 1.5 hrs.", value: "1.2 - 1.5 hrs." },
     { label: "1.4 - 1.1 hrs.", value: "1.4 - 1.1 hrs." },
   ];
-  const [calculate, setCalculate] = useState(false);
-  const resultRef = useRef(null);
 
+  // ✅ Scroll + Animate result section when visible
   useEffect(() => {
     if (calculate && resultRef.current) {
+      // Smooth scroll
+      resultRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      // Fade-in animation
       gsap.fromTo(
         resultRef.current,
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 40 },
         { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
       );
     }
   }, [calculate]);
+
   return (
     <div className="bg-white px-4 pt-12 md:pt-16">
       <div className="mx-auto w-full max-w-[690px]">
@@ -63,7 +80,6 @@ const CalculateImpact = () => {
 
         {/* Main Form Card */}
         <div className="border-superSilver rounded-lg border bg-white p-4 sm:p-6 md:p-8">
-          {/* Header with Logo */}
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-wallStreet text-sm font-bold sm:text-lg">
               Potential Calculator
@@ -76,12 +92,8 @@ const CalculateImpact = () => {
           <div className="space-y-6">
             {/* First Row */}
             <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
-              {/* Custom Select */}
               <div className="space-y-2">
-                <label
-                  className="text-wallStreet text-base"
-                  htmlFor="estimates"
-                >
+                <label className="text-wallStreet text-base">
                   Estimates per week
                 </label>
                 <CalculateImpactSelect
@@ -94,10 +106,7 @@ const CalculateImpact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label
-                  className="text-wallStreet text-base"
-                  htmlFor="estimates"
-                >
+                <label className="text-wallStreet text-base">
                   Average job size ($)
                 </label>
                 <CalculateImpactSelect
@@ -105,35 +114,30 @@ const CalculateImpact = () => {
                   buttonIcon={<HourDotterIcon />}
                   value={Averagejob}
                   onChange={(option) =>
-                    setAveragejob(option?.value || "10 - 15")
+                    setAveragejob(option?.value || "1K - 3K")
                   }
                   className="w-full"
                 />
               </div>
             </div>
+
+            {/* Time & Pay */}
             <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
-              {/* Custom Select */}
               <div className="space-y-2">
-                <label
-                  className="text-wallStreet text-base"
-                  htmlFor="estimates"
-                >
+                <label className="text-wallStreet text-base">
                   Time per estimate (hrs)
                 </label>
                 <CalculateImpactSelect
                   options={estimatetime}
                   value={estimateTime}
                   onChange={(option) =>
-                    setestimateTime(option?.value || "10 - 15")
+                    setEstimateTime(option?.value || "1.0 - 1.5 hrs.")
                   }
                   className="w-full"
                 />
               </div>
               <div className="space-y-2">
-                <label
-                  className="text-wallStreet text-base"
-                  htmlFor="estimates"
-                >
+                <label className="text-wallStreet text-base">
                   Hourly pay for estimates ($)
                 </label>
                 <div className="border-wallStreet flex h-[40px] items-center justify-between gap-2 rounded-[5px] border px-3">
@@ -148,13 +152,12 @@ const CalculateImpact = () => {
                 </div>
               </div>
             </div>
+
+            {/* Range & Close Rate */}
             <div className="grid-col-1 grid gap-4 sm:gap-6 md:grid-cols-2">
               <CalculateImpactRange />
               <div className="space-y-2">
-                <label
-                  className="text-wallStreet text-base"
-                  htmlFor="estimates"
-                >
+                <label className="text-wallStreet text-base">
                   Close rate (%)
                 </label>
                 <div className="border-wallStreet flex h-[40px] items-center justify-between gap-2 rounded-[5px] border px-3">
@@ -169,10 +172,10 @@ const CalculateImpact = () => {
                 </div>
               </div>
             </div>
+
+            {/* Email */}
             <div className="space-y-2">
-              <label className="text-wallStreet text-base" htmlFor="estimates">
-                Your Email
-              </label>
+              <label className="text-wallStreet text-base">Your Email</label>
               <div className="border-wallStreet flex h-[40px] items-center justify-between gap-2 rounded-[5px] border px-3">
                 <span className="flex items-center justify-center">
                   <BigChiefEmailIcon />
@@ -184,6 +187,8 @@ const CalculateImpact = () => {
                 />
               </div>
             </div>
+
+            {/* Button */}
             <div className="flex items-center justify-center">
               <button
                 onClick={() => setCalculate(true)}
@@ -195,7 +200,8 @@ const CalculateImpact = () => {
           </div>
         </div>
       </div>
-      {/* Fade-in VersionOneResult */}
+
+      {/* Fade-in + Scroll to Result */}
       {calculate && (
         <div ref={resultRef}>
           <VersionOneResult />

@@ -112,7 +112,7 @@ const StorySection: React.FC<StorySectionProps> = ({
                 className="absolute mx-auto flex w-full flex-col items-center justify-center"
               >
                 <Image
-                  className="h-8 w-8 object-cover"
+                  className="ios-image h-8 w-8 object-cover"
                   src={item.icon.url}
                   alt={item.title || "icon"}
                   width={32}

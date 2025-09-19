@@ -238,3 +238,12 @@ export function getTimeAgo(dateString: string): string {
   }
   return "just now";
 }
+
+//This function sorts an array of objects by their 'published' date in descending order (most recent first)
+export function sortByPublishedDate(arr: Array<any>): Array<any> {
+  return arr.sort((a, b) => {
+    const dateA = new Date(a.published);
+    const dateB = new Date(b.published);
+    return dateB.getTime() - dateA.getTime();
+  });
+}

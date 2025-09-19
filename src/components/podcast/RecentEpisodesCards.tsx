@@ -7,21 +7,22 @@ import React from "react";
 const RecentEpisodesCards: React.FC<{ Item: PodcastDataResponse.show }> = ({
   Item,
 }) => {
+  console.log(Item?.published, "date");
   return (
     <article className="bg-lightBlack card-shine-2 flex h-full flex-col justify-between p-3 md:p-5">
       <div className="">
         <div className="relative mb-[35px] flex h-fit max-h-[180px] items-center justify-center overflow-hidden md:max-h-[260px]">
           <Image
             className="absolute z-10 max-h-[150px] w-full object-cover blur-sm md:max-h-[204px]"
-            src={Item?.attributes?.image_url}
-            alt={Item?.attributes?.title}
+            src={Item?.thumbnail}
+            alt={Item?.title}
             fill
           />
           <div className="p-2.5">
             <Image
-              className="ios-image relative z-20 w-full max-w-[190px] object-cover"
-              src={Item?.attributes?.image_url}
-              alt={Item?.attributes?.title}
+              className="relative z-20 h-[188px] w-full max-w-[190px] object-cover"
+              src={Item?.thumbnail}
+              alt={Item?.title}
               width={190}
               height={188}
             />
@@ -29,18 +30,15 @@ const RecentEpisodesCards: React.FC<{ Item: PodcastDataResponse.show }> = ({
         </div>
         <div>
           <p className="text-secondary text-sm font-semibold">
-            {format(
-              parseISO(Item?.attributes?.created_at),
-              "do MMM yyyy . hh:mm a",
-            )}
+            {format(new Date(Item?.published), "do MMM yyyy . hh:mm a")}
           </p>
           <Link
-            href={Item?.attributes?.feed_url ?? "/#"}
+            href={Item?.link ?? "/#"}
             target="_blank"
             rel="noopener noreferrer"
           >
             <b className="mt-[6px] line-clamp-1 flex w-full text-base tracking-[-0.4px] text-white sm:text-lg md:text-lg lg:text-xl">
-              {Item?.attributes?.title ?? ""}
+              {Item?.title ?? ""}
             </b>
           </Link>
         </div>

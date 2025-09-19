@@ -1,10 +1,12 @@
 import PodcastMain from "@/components/podcast/PodcastsMain";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import {
-  getPodcastData,
-  getPodcastTransistorData,
+  fetchYouTubeFeed,
+  getHardHatFeeds,
+  getPodcastData
 } from "@/services/podcast/getPodcast";
 import { PagePromise } from "@/types";
+import { sortByPublishedDate } from "@/utils/dataTransformers";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -23,12 +25,17 @@ export async function generateMetadata({
 }
 const Podcastpage = async ({ params }: PagePromise) => {
   const { locale } = await params;
-  const [podcastData, transistorData] = await Promise.all([
+  const [podcastData, filteredData, data] = await Promise.all([
     getPodcastData(locale),
-    getPodcastTransistorData(),
+    fetchYouTubeFeed(),
+    getHardHatFeeds(locale),
   ]);
   if (!podcastData) notFound();
-  return <PodcastMain data={podcastData} transistorData={transistorData} />;
+  let newArray = [];
+  if (filteredData) {
+    newArray = sortByPublishedDate([...filteredData, ...data]);
+  }
+  return <PodcastMain data={podcastData} transistorData={newArray} />;
 };
 
 export default Podcastpage;

@@ -21,8 +21,8 @@ const OurPodcast: FC<{
         </h2>
       </Copy>
       <div className="mx-auto grid w-full max-w-[1128px] grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 xl:gap-[42px]">
-        {transistorData?.data && transistorData?.data?.length > 0 ? (
-          transistorData?.data.map((item, index) => (
+        {transistorData && transistorData?.length > 0 ? (
+          transistorData.map((item, index) => (
             <OurPodcastCard key={index} Item={item} />
           ))
         ) : (
@@ -57,8 +57,8 @@ const OurPodcast: FC<{
         loop={false}
         className="mx-auto w-full max-w-[1354px]"
       >
-        {transistorData?.data && transistorData?.data?.length > 0 ? (
-          transistorData?.data.map((item, index) => (
+        {transistorData && transistorData?.length > 0 ? (
+          transistorData.map((item, index) => (
             <SwiperSlide className="!h-auto">
               <RecentEpisodesCards key={index} Item={item} />
             </SwiperSlide>

@@ -257,51 +257,30 @@ export type PodcastData = {
 
 export namespace PodcastDataResponse {
   export type apiResponse = {
-    data: {
-      id: number;
-      type: string;
-      relationships: {
-        episodes: {
-          data: {
-            id: string;
-            type: string;
-          }[];
-        };
-      };
-      attributes: {
-        description: string;
-        image_url: string;
-        title: string;
-        created_at: string;
-        feed_url: string;
-        spotify: string;
-      };
-    }[];
-    meta: {
-      currentPage: number;
-      totalPages: number;
-      totalCount: number;
-    };
-  };
+    id: number;
+    link: string;
+    thumbnail: string;
+    title: string;
+    description: string;
+    published: string;
+    isYoutube?: boolean;
+    update?: string;
+    calender?: boolean;
+    podcastLink?: string;
+    spotifyLink?: string;
+  }[];
   export type show = {
     id: number;
-    type: string;
-    relationships: {
-      episodes: {
-        data: {
-          id: string;
-          type: string;
-        }[];
-      };
-    };
-    attributes: {
-      description: string;
-      image_url: string;
-      title: string;
-      created_at: string;
-      feed_url: string;
-      spotify: string;
-    };
+    link: string;
+    thumbnail: string;
+    title: string;
+    description: string;
+    published: string;
+    isYoutube?: boolean;
+    podcastLink?: string;
+    update?: string;
+    calender?: boolean;
+    spotifyLink?: string;
   };
 }
 

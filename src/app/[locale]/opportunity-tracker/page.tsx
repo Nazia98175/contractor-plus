@@ -35,29 +35,67 @@ import Job_Scheduled from "../../../../public/lotties/Job-Scheduled.json";
 import Lead_Captured from "../../../../public/lotties/Lead-Captured.json";
 import dealApproved from "../../../../public/lotties/Deal-Approved.json";
 import Revenue_Forecast_Updated from "../../../../public/lotties/Revenue-Forecast-Updated.json";
-export const metadata = {
-  title: "Opportunity Tracker for Contractors | Contractor+",
-  description:
-    "One board that shows every deal, dollar value, and next steps so you can win more opportunities. Convert won leads to jobs in one click. ",
-  keywords: ["Opportunity Tracker for Contractors | Contractor+"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/opportunity-tracker-og.webp",
-        width: 1920,
-        height: 630,
-        alt: "opportunity-tracker-og",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://v2site.contractorplus.app/opportunity-tracker",
-  },
-};
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { notFound } from "next/navigation";
+import { getSeoData, getSeoDataCommon } from "@/services/common/seoMeta";
+import { Metadata } from "next";
+// export const metadata = {
+//   title: "Opportunity Tracker for Contractors | Contractor+",
+//   description:
+//     "One board that shows every deal, dollar value, and next steps so you can win more opportunities. Convert won leads to jobs in one click. ",
+//   keywords: ["Opportunity Tracker for Contractors | Contractor+"],
+//   openGraph: {
+//     images: [
+//       {
+//         url: "/images/webp/opportunity-tracker-og.webp",
+//         width: 1920,
+//         height: 630,
+//         alt: "opportunity-tracker-og",
+//       },
+//     ],
+//   },
+//   alternates: {
+//     canonical: "https://v2site.contractorplus.app/opportunity-tracker",
+//   },
+// };
+interface OpportunityTrackerProps {
+  params: Promise<{ locale: string }>;
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoData(
+    "solutions",
+    resolvedParams.locale,
+    "opportunity-tracker",
+  );
+
+  if (!page) notFound();
+
+  return {
+    title:
+      page.seoMetaData?.metaTitle ||
+      page.hero?.heroTitle ||
+      `Contractor+ field-service`,
+    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
+    keywords: page.seoMetaData?.keywords || "",
+    alternates: {
+      canonical:
+        page.seoMetaData?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/opportunity-tracker`,
+    },
+  };
+}
+
 interface Params {
   params: Promise<{ locale: string }>;
 }
-const DealFlowTracker = async ({ params }: Params) => {
+export default async function OpportunityTracker({
+  params,
+}: OpportunityTrackerProps) {
   const useParams = await params;
   const {
     solutionPageContent,
@@ -196,5 +234,4 @@ const DealFlowTracker = async ({ params }: Params) => {
       />
     </div>
   );
-};
-export default DealFlowTracker;
+}

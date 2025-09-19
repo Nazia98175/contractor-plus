@@ -65,7 +65,7 @@ const CrmReviewCard: React.FC<Props> = ({
               <img
                 src={review.profileImg?.url}
                 alt="User"
-                className="max-w-[90px] min-w-[90px] rounded"
+                className="ios-image max-w-[90px] min-w-[90px] rounded"
               />
             ) : (
               <div
@@ -90,7 +90,7 @@ const CrmReviewCard: React.FC<Props> = ({
               <img
                 src={`${review.profileImg}`}
                 alt="User"
-                className="max-w-[90px] min-w-[90px] rounded"
+                className="ios-image max-w-[90px] min-w-[90px] rounded"
               />
             ) : (
               <div

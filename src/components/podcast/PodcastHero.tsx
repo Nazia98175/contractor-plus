@@ -37,7 +37,7 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
           width={1050}
           height={579}
           alt="trader-group"
-          className="relative mx-auto max-h-[831px] w-full object-cover"
+          className="ios-image relative mx-auto max-h-[831px] w-full object-cover"
         />
       </div>
     </section>

@@ -31,7 +31,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj, index }) => {
           src={obj.img}
           alt={obj.title}
           fill
-          className="xs:object-center object-auto"
+          className="xs:object-center object-auto ios-image"
           // sizes="(min-width: 768px) 360px, 320px"
         />
       </div>

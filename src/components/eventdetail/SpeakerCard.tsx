@@ -11,7 +11,7 @@ const SpeakerCard = ({ member }: { member: any }) => {
             <Image
               height={500}
               width={500}
-              className="h-full max-h-[400px] min-h-[400px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:max-h-[445px] md:min-h-[445px]"
+              className="ios-image h-full max-h-[400px] min-h-[400px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:max-h-[445px] md:min-h-[445px]"
               src={member.avatar.url}
               alt={member.name}
             />

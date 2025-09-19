@@ -254,7 +254,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
         {/* Logo - Static at top */}
         <div className="flex items-center justify-center pb-8">
           <img
-            className="w-full max-w-[160px] sm:max-w-[180px]"
+            className="ios-image w-full max-w-[160px] sm:max-w-[180px]"
             src="/images/svg/Proof-working-logo.svg"
             alt="proof"
           />
@@ -336,7 +336,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({ title, desc }) => {
                 <div className="relative flex items-center justify-center py-12">
                   <img
                     ref={logoDesktopRef}
-                    className="relative z-10 w-full max-w-[200px] xl:max-w-[240px]"
+                    className="ios-image relative z-10 w-full max-w-[200px] xl:max-w-[240px]"
                     src="/images/svg/Proof-working-logo.svg"
                     alt="proof"
                     style={{ willChange: "transform, opacity" }}

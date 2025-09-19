@@ -30,7 +30,7 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
               height={300}
               width={300}
               unoptimized
-              className={`mx-auto w-full ${card.imgWidth}`}
+              className={`mx-auto w-full ${card.imgWidth} ios-image`}
               src={card.image.url}
               alt="win team"
             />
@@ -48,7 +48,7 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
                 height={300}
                 width={300}
                 unoptimized
-                className={`mx-auto w-full ${card.imgWidth}`}
+                className={`mx-auto w-full ${card.imgWidth} ios-image`}
                 src={card.image.url}
                 alt="win team"
               />

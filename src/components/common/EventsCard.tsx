@@ -37,7 +37,7 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
         {Item?.eventImages ? (
           <CardReveal delay={0.1} distance={50}>
             <Image
-              className="h-full max-h-[240px] w-full rounded-lg object-cover"
+              className="ios-image h-full max-h-[240px] w-full rounded-lg object-cover"
               src={`${Item?.eventImages?.[0]?.url}`}
               alt={Item?.eventName}
               width={384}
@@ -47,7 +47,7 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
         ) : Item?.imgPath ? (
           <CardReveal delay={0.1} distance={50}>
             <Image
-              className="h-full max-h-[240px] w-full rounded-lg object-cover"
+              className="ios-image h-full max-h-[240px] w-full rounded-lg object-cover"
               src={`${Item?.imgPath}`}
               alt={Item.heading}
               width={384}

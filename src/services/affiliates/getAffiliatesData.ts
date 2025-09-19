@@ -68,7 +68,7 @@ export const getAffiliatesData = async (
   return {
     pageContent: pageContentRes?.data || null,
     hero: heroRes?.data?.hero || null,
-    reviews: reviewsRes?.data?.reviews || null,
+    reviews: reviewsRes || null,
     whyContractor: whyContractorsRes?.data?.whyContractor || null,
     atGlance: atGlanceRes?.data?.atGlance || null,
     howItWorks: howItWorksRes?.data?.howItWorks || null,

@@ -66,6 +66,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
     applyJoin,
     faqs,
   } = await getAffiliatesData(locale);
+  console.log("edsxz", reviews);
 
   return (
     <main id="common-homepage-wrapper" className="relative">
@@ -75,7 +76,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
         heroImg={hero?.heroImg}
         ctaButton={hero?.ctaButton}
       />
-      <TrustedService reviews={reviews?.reviews || []} />
+      <TrustedService reviews={reviews || []} />
       <WhyPartner title={whyContractor?.title} desc={whyContractor?.desc} />
       <AtAGlance
         glanceCards={atGlance?.arrayItems}

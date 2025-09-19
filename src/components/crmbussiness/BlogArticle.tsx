@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { format, parseISO, isValid } from "date-fns";
-import CommonImageLayout from "../common/CommonImageLayout";
 
 interface Blog {
   id?: string | number;
@@ -51,10 +50,11 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
       className={`${bgClass} card-shine relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 md:flex-row`}
     >
       {!!imgUrl && (
-        <CommonImageLayout
+        <Image
           src={imgUrl}
           alt={blog?.blogTitle}
-          wrapperClassName="h-full max-h-[170px] min-h-[170px] w-full rounded-md object-cover md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
+          className="h-full max-h-[170px] min-h-[170px] w-full rounded-md object-cover md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
+          fill
         />
       )}
 

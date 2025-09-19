@@ -30,30 +30,68 @@ import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getIntegrationList } from "@/services/integation/getIntegrationData";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
-
-export const metadata = {
-  title: "Auto-Update Contractor Invoicing Software | Contractor+",
-  description:
-    "Living invoices that reflect every signed, time-stamped change order. Capture uninvoiced billables automatically for more revenue.",
-  keywords: ["contractor invoicing software"],
-  openGraph: {
-    images: [
-      {
-        url: "/images/webp/contractor-invoicing-software.webp",
-        width: 1920,
-        height: 630,
-        alt: "contractor-invoicing-software",
-      },
-    ],
-  },
-  alternates: {
-    canonical:
-      "https://v2site.contractorplus.app/contractor-invoicing-software",
-  },
-};
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getSeoData, getSeoDataCommon } from "@/services/common/seoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { getSolutionPage } from "@/services/solutions/solution";
 interface Params {
   params: Promise<{ locale: string }>;
 }
+
+// export const metadata = {
+//   title: "Auto-Update Contractor Invoicing Software | Contractor+",
+//   description:
+//     "Living invoices that reflect every signed, time-stamped change order. Capture uninvoiced billables automatically for more revenue.",
+//   keywords: ["contractor invoicing software"],
+//   openGraph: {
+//     images: [
+//       {
+//         url: "/images/webp/contractor-invoicing-software.webp",
+//         width: 1920,
+//         height: 630,
+//         alt: "contractor-invoicing-software",
+//       },
+//     ],
+//   },
+//   alternates: {
+//     canonical:
+//       "https://v2site.contractorplus.app/contractor-invoicing-software",
+//   },
+// };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
+  const page = await getSeoData(
+    "solutions",
+    resolvedParams.locale,
+    "contractor-invoicing-software",
+  );
+
+  if (!page) notFound();
+
+  return {
+    title:
+      page.seoMetaData?.metaTitle ||
+      page.hero?.heroTitle ||
+      `Contractor+ contractor-invoicing-software`,
+    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
+    keywords: page.seoMetaData?.keywords || "",
+    alternates: {
+      canonical:
+        page.seoMetaData?.canonicalUrl ??
+        `${process.env.NEXT_PUBLIC_DOMAIN}/contractor-invoicing-software`,
+    },
+  };
+}
+
+interface Params {
+  params: Promise<{ locale: string }>;
+}
+
 const BillingPage = async ({
   params,
 }: {

@@ -258,7 +258,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
       <div ref={containerRef} className="relative h-[400vh] lg:h-[600vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Background circle image - hidden on mobile */}
-          <div className="absolute inset-0 hidden lg:flex items-center justify-center">
+          <div className="absolute inset-0 hidden items-center justify-center lg:flex">
             <img
               ref={bgImageRef}
               className="h-full w-full object-contain"
@@ -281,7 +281,9 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                   sectionsRef.current[index] = el;
                 }}
                 className={`absolute flex flex-col items-center justify-center ${
-                  index === 0 ? "max-w-[300px] lg:max-w-[500px]" : "max-w-[350px] lg:max-w-[550px]"
+                  index === 0
+                    ? "max-w-[300px] lg:max-w-[500px]"
+                    : "max-w-[350px] lg:max-w-[550px]"
                 } w-full px-6`}
                 style={{
                   willChange: "transform, opacity, filter",
@@ -296,7 +298,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                 {section?.image && (
                   <div className="my-3 lg:my-4">
                     <Image
-                      className="h-6 w-6 lg:h-8 lg:w-8"
+                      className="ios-image h-6 w-6 lg:h-8 lg:w-8"
                       src={section?.image.url}
                       alt={"icon"}
                       width={32}
@@ -305,7 +307,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                   </div>
                 )}
                 <Copy animateOnScroll={false}>
-                  <p className="text-center font-medium text-gray-300 text-sm lg:text-xl">
+                  <p className="text-center text-sm font-medium text-gray-300 lg:text-xl">
                     {section.text}
                   </p>
                 </Copy>

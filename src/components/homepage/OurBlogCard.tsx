@@ -18,23 +18,17 @@ const OurBlogCard: FC<{ article: ResourceHomepage }> = ({ article }) => {
             alt={article.title || "blog image"}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="pointer-events-none z-20 object-contain select-none"
-            priority={false}
+            className="ios-image pointer-events-none z-20 object-contain"
+            priority
           />
           {/* Background decorative image */}
-          <Image
-            src={article.backgroundImage}
-            alt=""
-            fill
-            className="absolute bottom-0 left-0 z-0 max-h-[126px] object-bottom"
-            sizes="100vw"
-          />
-          {/* <img
-            src={article.backgroundImage}
-            alt=""
-            aria-hidden="true"
-            className="absolute bottom-0 left-0 z-0 h-full max-h-[126px] w-auto object-cover"
-          /> */}
+          <div className="absolute bottom-0 left-0 z-0 h-full max-h-[126px] w-auto object-cover">
+            <img
+              src={article.backgroundImage}
+              alt="bg"
+              className="h-full w-full"
+            />
+          </div>
         </div>
 
         <div className="relative mt-2 overflow-hidden px-2.5 py-6">

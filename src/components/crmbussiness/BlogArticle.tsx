@@ -53,7 +53,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
         <Image
           src={imgUrl}
           alt={blog?.blogTitle}
-          className="h-full max-h-[170px] min-h-[170px] w-full rounded-md object-cover md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
+          className="h-full max-h-[170px] min-h-[170px] w-full rounded-md object-contain md:max-h-[94px] md:min-h-[94px] md:max-w-[100px] lg:max-w-[170px]"
           fill
         />
       )}

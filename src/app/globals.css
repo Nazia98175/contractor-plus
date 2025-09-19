@@ -2181,3 +2181,8 @@ body.menu-open .back-to-top {
   will-change: transform;
   backface-visibility: hidden;
 }
+.ios-image {
+  transform: translateZ(0);
+  user-select: none;
+  -webkit-backface-visibility: hidden;
+}

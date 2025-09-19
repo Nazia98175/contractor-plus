@@ -104,6 +104,7 @@ export default async function LeadGeneration({ params }: Params) {
         <CombinesPowerfulAi
           title={problemSolutionSection?.title}
           subTitle={problemSolutionSection?.subTitle}
+          solutionsList={problemSolutionSection?.solutionsList}
         />
         <DragAnimaiton title={seeWhatPossible.title} />
         <AlwaysTransparentAccessible

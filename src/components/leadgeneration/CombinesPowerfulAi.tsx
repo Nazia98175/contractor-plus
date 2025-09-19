@@ -1,19 +1,21 @@
 import CombinesPowerfulAiSlider from "./CombinesPowerfulAiSlider";
 interface SliderItem {
-  title: string;
-  description: string;
+  text?: string;
+  description?: string;
+  lottieJson?: any;
+  image?: string;
 }
 
 interface CombinesPowerfulAiProps {
   title?: string;
   subTitle?: string;
-  sliderData?: SliderItem[];
+  solutionsList: SliderItem[];
 }
 
 const CombinesPowerfulAi: React.FC<CombinesPowerfulAiProps> = ({
   title,
   subTitle,
-  // sliderData = [],
+  solutionsList,
 }) => {
   return (
     <section className="relative overflow-visible bg-white">
@@ -28,7 +30,7 @@ const CombinesPowerfulAi: React.FC<CombinesPowerfulAiProps> = ({
             "The only contractor platform with done-for-you local SEO built in."}
         </p>
       </div>
-      <CombinesPowerfulAiSlider />
+      <CombinesPowerfulAiSlider solutionsList={solutionsList} />
     </section>
   );
 };

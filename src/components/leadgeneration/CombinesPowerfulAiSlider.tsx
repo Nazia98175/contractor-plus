@@ -4,105 +4,64 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
 import { Navigation, Pagination, Controller, Autoplay } from "swiper/modules";
-import Social_cross from "../../../public/lotties/social-cross-posting.json";
-import Review_reply from "../../../public/lotties/review-replies.json";
-import Review_Request from "../../../public/lotties/review-requests.json";
-import optimization from "../../../public/lotties/photo-optimization.json";
-import Auto_position from "../../../public/lotties/Auto-Posting.json";
-import citation_sync from "../../../public/lotties/citation_sync-2.json";
-import auto_video from "../../../public/lotties/auto-video.json";
-import high_end from "../../../public/lotties/high-end.json";
-import answer from "../../../public/lotties/answer.json";
-import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
-import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
-import account_manager from "../../../public/lotties/ai-account-manager.json";
-import ranking_heatmaps from "../../../public/lotties/ranking-heatmaps.json";
 import LottieAnimation from "../common/LottieAnimation";
-import FreeAccountButton from "../common/FreeAccountButton";
+// import Social_cross from "../../../public/lotties/social-cross-posting.json";
+// import Review_reply from "../../../public/lotties/review-replies.json";
+// import Review_Request from "../../../public/lotties/review-requests.json";
+// import optimization from "../../../public/lotties/photo-optimization.json";
+// import Auto_position from "../../../public/lotties/Auto-Posting.json";
+// import citation_sync from "../../../public/lotties/citation_sync-2.json";
+// import auto_video from "../../../public/lotties/auto-video.json";
+// import high_end from "../../../public/lotties/high-end.json";
+// import answer from "../../../public/lotties/answer.json";
+// import citation_sync_logo from "../../../public/lotties/Citation-Sync-logos.json";
+// import Profile_optimization from "../../../public/lotties/Profile-Optimization.json";
+// import account_manager from "../../../public/lotties/ai-account-manager.json";
+// import ranking_heatmaps from "../../../public/lotties/ranking-heatmaps.json";
+interface SliderItem {
+  text?: string;
+  description?: string;
+  lottieJson?: any;
+  image?: string;
+}
 
-const CombinesPowerfulAiSlider = () => {
+interface Props {
+  solutionsList: SliderItem[];
+}
+
+const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
   const [topSwiper, setTopSwiper] = useState<any>(null);
   const [bottomSwiper, setBottomSwiper] = useState<any>(null);
+
   useEffect(() => {
     if (topSwiper && bottomSwiper) {
       topSwiper.controller.control = bottomSwiper;
       bottomSwiper.controller.control = topSwiper;
     }
   }, [topSwiper, bottomSwiper]);
-  const sliderData = [
-    {
-      title: "AI Learning Engine",
-      description:
-        "Learns what works based on thousands of data points and keeps improving your local SEO every week.",
-    },
-    {
-      title: "Auto Posting",
-      description:
-        "Keep your Google Business Profile active with fresh, keyword-rich posts created and scheduled automatically.",
-    },
-    {
-      title: "Review Replies",
-      description:
-        "Reply to reviews in your brand voice, automatically. Approve replies or let the AI handle it for you.",
-    },
-    {
-      title: "Photo Optimization",
-      description:
-        "Upload your images once, then Contractor+ Local geotags, renames, and schedules them to post at the right time.",
-    },
-    {
-      title: "Review Requests",
-      description:
-        "Automatically request reviews from happy customers via text or email. No manual follow-up needed.",
-    },
-    {
-      title: "Q&A Management",
-      description:
-        "Post and answer common questions on your Google profile to rank for more keywords and build trust.",
-    },
 
-    {
-      title: "Citation Sync",
-      description:
-        "Sync your business info across 60+ directories in one click. No duplicate entry or dealing with 3rd party citation platforms.",
-    },
-    {
-      title: "Ranking Heatmaps",
-      description:
-        "See exactly where your business ranks across your service area with visual heatmaps.",
-    },
-    {
-      title: "Profile Optimization",
-      description:
-        "Contractor+ Local analyzes and optimizes your services, descriptions, and categories for better local visibility.",
-    },
-    {
-      title: "Social Cross-Posting",
-      description:
-        "Repurpose Google posts to your Facebook and Instagram accounts automatically.",
-    },
-    {
-      title: "Auto Video Creation",
-      description:
-        "Contractor+Local  turns your best photos into SEO-optimized videos to post on your Google profile and YouTube.",
-    },
-    {
-      title: "Built Into Your System",
-      description:
-        "No need for third-party logins—Contractor+ Local works inside the same system you already use to run your business.",
-    },
-    {
-      title: "AI Account Manager",
-      description:
-        "Get alerts whenever you need to know something, whether it’s a report or request for additional images.",
-    },
+  // 👇 Classes by index
+  const slideClasses: string[] = [
+    "max-w-[800px]",
+    "max-w-[305px]",
+    "max-w-[596px]",
+    "max-w-[730px] pb-[57px]",
+    "max-w-[452px] pb-[98px]",
+    "max-w-[596px]",
+    "max-w-[200px]",
+    "max-w-[536px]",
+    "max-w-[500px]",
+    "max-w-[600px]",
+    "max-w-[515px]",
+    "max-w-[871px]",
+    "max-w-[713px]",
   ];
 
   return (
     <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1920px] px-2">
-      {/* Top Image Slider */}
+      {/* Top Slider (Animations) */}
       <Swiper
-        centeredSlides={true}
+        centeredSlides
         modules={[Controller, Autoplay]}
         speed={600}
         autoplay={{
@@ -111,139 +70,33 @@ const CombinesPowerfulAiSlider = () => {
         }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
-        className="!h-auto"
       >
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <div className="mx-auto flex h-fit w-full max-w-[800px]">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={true}
-              animationData={citation_sync_logo}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
-          <div className="mx-auto w-full max-w-[305px]">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={false}
-              animationData={Auto_position}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <div className="mx-auto w-full max-w-[596px]">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={false}
-              animationData={Review_reply}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
-          <div className="relative mx-auto w-full max-w-[730px] overflow-hidden pb-[57px]">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={false}
-              animationData={optimization}
-            />
-
-            <div className="absolute top-[-13%] left-[-10%] h-[30%] w-[120%] bg-white blur-[20px]"></div>
-            <div className="absolute top-0 right-[-10%] h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
-            <div className="absolute top-0 left-[-10%] h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!h-auto">
-          <div className="relative mx-auto flex h-full w-full max-w-[452px] items-end justify-center pb-[98px]">
-            <div className="h-fit w-full">
+        {solutionsList?.map((item, i) => (
+          <SwiperSlide
+            key={i}
+            className="!flex !h-auto flex-col items-center justify-center"
+          >
+            <div className={`mx-auto w-full ${slideClasses[i] || ""}`}>
+              {item.image && (
+                <Image
+                  src={item.image}
+                  alt="bg"
+                  width={1920}
+                  height={1200}
+                  className="absolute top-0 left-0 h-full w-full object-fill"
+                />
+              )}
               <LottieAnimation
                 className="mx-auto h-full w-full"
-                loop={false}
-                animationData={Review_Request}
+                loop={true}
+                animationData={item.lottieJson}
               />
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!h-auto py-8">
-          <div className="mx-auto flex h-full w-full max-w-[596px] items-center justify-center">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={false}
-              animationData={answer}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="relative !h-auto w-full overflow-hidden">
-          <div className="absolute top-[-20%] z-10 h-[30%] w-full bg-white blur-[20px]"></div>
-          <Image
-            className="absolute top-0 left-0 h-full w-full object-fill"
-            src={"/images/webp/sync-weather.webp"}
-            width={1920}
-            height={1200}
-            alt="sync-weather"
-          />
-          <div className="flex h-full items-center justify-center">
-            <LottieAnimation
-              className="relative z-[999] mx-auto h-fit w-full max-w-[200px]"
-              loop={true}
-              animationData={citation_sync}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-end">
-          <div className="relative mx-auto w-full max-w-[536px] overflow-hidden">
-            <LottieAnimation
-              className="mx-auto h-full w-full"
-              loop={false}
-              animationData={ranking_heatmaps}
-            />
-            <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="mx-auto !flex !h-auto flex-col items-center justify-center">
-          <div className="flex w-full max-w-[500px] items-center justify-center">
-            <LottieAnimation
-              className="mx-auto h-full w-full max-w-[500px]"
-              loop={false}
-              animationData={Profile_optimization}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <div className="flex items-center justify-center">
-            <LottieAnimation
-              className="mx-auto h-full w-full max-w-[600px] object-cover"
-              loop={false}
-              animationData={Social_cross}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="!flex !h-auto flex-col items-center justify-center">
-          <LottieAnimation
-            className="mx-auto h-full w-full max-w-[515px] bg-white object-cover"
-            loop={false}
-            animationData={auto_video}
-          />
-        </SwiperSlide>
-        <SwiperSlide className="relative !flex flex-col items-center justify-end">
-          <div className="mx-auto w-full max-w-[871px]">
-            <LottieAnimation
-              className="mx-auto h-full w-full shadow-xl"
-              loop={false}
-              animationData={high_end}
-            />
-          </div>
-          <div className="absolute right-[0px] bottom-[-5%] h-[20%] w-full bg-white blur-[20px]"></div>
-        </SwiperSlide>
-        <SwiperSlide className="relative !flex !h-auto flex-col items-center justify-center">
-          <div className="absolute top-[60%] h-[100px] w-[140%] max-w-full bg-white blur-[47px] sm:w-full md:top-[67%] md:h-[250px] md:blur-[100px] lg:top-[70%] lg:h-[281px]"></div>
-          <LottieAnimation
-            className="mx-auto w-full max-w-[713px] object-cover"
-            loop={false}
-            animationData={account_manager}
-          />
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
+
+      {/* Bottom Slider (Text) */}
       <div className="slider-img-gradient relative z-20">
         <Swiper
           modules={[Navigation, Pagination, Controller]}
@@ -251,7 +104,7 @@ const CombinesPowerfulAiSlider = () => {
           slidesPerView={3}
           speed={600}
           spaceBetween={36}
-          centeredSlides={true}
+          centeredSlides
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -267,30 +120,28 @@ const CombinesPowerfulAiSlider = () => {
             1024: { slidesPerView: 3, spaceBetween: 36 },
           }}
         >
-          {sliderData?.map((item, index) => (
+          {solutionsList.map((item, i) => (
             <SwiperSlide
-              key={index}
+              key={i}
               className="bg-rgba1 relative z-30 p-[14px] text-center backdrop:blur-sm sm:backdrop-blur-[11px]"
             >
               <b className="text-lightBlack z-20 text-lg lg:text-xl">
-                {item.title}
+                {item.text}
               </b>
               <p className="text-secondary mt-3 text-sm font-medium">
-                {item?.description}
+                {item.description}
               </p>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Navigation + Pagination */}
+        {/* Nav + Pagination */}
         <div className="relative mx-auto flex w-fit items-center justify-between gap-3">
-          <div className="swiper-button-prev !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
+          <div className="swiper-button-prev h-6 w-6 after:hidden">
             <Slidericon />
           </div>
-
-          <div className="swiper-pagination-real-time relative left-0 flex translate-x-0 items-center justify-center gap-1" />
-
-          <div className="swiper-button-next !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
+          <div className="swiper-pagination-real-time flex items-center gap-1" />
+          <div className="swiper-button-next h-6 w-6 rotate-180 after:hidden">
             <Slidericon />
           </div>
         </div>

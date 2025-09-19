@@ -25,16 +25,16 @@ const CalculateImpact = () => {
   ];
   const averagejob = [
     { label: "1K - 3K", value: "1K - 3K" },
-    { label: "1K - 3K", value: "1K - 3K" },
-    { label: "1K - 3K", value: "1K - 3K" },
-    { label: "1K - 3K", value: "1K - 3K" },
+    { label: "1K - 4K", value: "1K - 4K" },
+    { label: "2K - 3K", value: "2K - 3K" },
+    { label: "4K - 3K", value: "4K - 3K" },
   ];
 
   const estimatetime = [
     { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
-    { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
-    { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
-    { label: "1.0 - 1.5 hrs.", value: "1.0 - 1.5 hrs." },
+    { label: "1.0 - 1.1 hrs.", value: "1.0 - 1.1 hrs." },
+    { label: "1.2 - 1.5 hrs.", value: "1.2 - 1.5 hrs." },
+    { label: "1.4 - 1.1 hrs.", value: "1.4 - 1.1 hrs." },
   ];
   const [calculate, setCalculate] = useState(false);
   const resultRef = useRef(null);
@@ -187,7 +187,7 @@ const CalculateImpact = () => {
             <div className="flex items-center justify-center">
               <button
                 onClick={() => setCalculate(true)}
-                className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white sm:max-w-[248px]"
+                className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:scale-95 sm:max-w-[248px]"
               >
                 Calculate Impact
               </button>

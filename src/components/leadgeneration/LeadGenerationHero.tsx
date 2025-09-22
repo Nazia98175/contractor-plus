@@ -43,7 +43,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         </CardReveal>
         <AdaptiveHeroTitle
           title={heading || ""}
-          className="text-center font-extrabold text-white sm:mx-auto lg:text-start"
+          className="text-center font-extrabold text-white lg:text-start"
           minFontSize={16}
           maxLines={2}
           maxFontSize={48}

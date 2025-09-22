@@ -170,8 +170,17 @@ const CommonHero: React.FC<TheHeroProps> = ({
             )}
           </div>
         </div>
+
         {hero?.isLottieView ? (
-          <CardReveal distance={50} delay={0.9}>
+          <CardReveal distance={50} delay={0.9} className="relative px-2">
+            {slug === "big-chief-ai" && (
+              <img
+                className={`animate-spin-revers absolute top-0 left-0 h-full w-full object-cover`}
+                src={"/images/webp/big-chief-leaf.webp"}
+                alt="crm-hero"
+              />
+            )}
+
             <div className="relative mt-12 mb-16 overflow-hidden sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
               <>
                 <LottieAnimation

@@ -40,6 +40,26 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
     ) : null,
   ].filter(Boolean);
 
+  const getUpdateLabel = (it: PodcastDataResponse.show): string => {
+    const t = (it?.title || "").toLowerCase();
+    const u = (it?.update || "").toLowerCase();
+    const link = (it?.link || "").toLowerCase();
+
+    if (u.includes("mindset monday") || t.includes("mindset monday")) {
+      return "Every Monday · 1 PM EST";
+    }
+
+    if (t.includes("hard hat chat") || link.includes("share.transistor.fm")) {
+      return "Monthly";
+    }
+
+    if (t.includes("owner’s perspective") || t.includes("owners perspective")) {
+      return "Weekly";
+    }
+
+    return "Monthly Updates";
+  };
+
   return (
     <article className="bg-lightBlack card-shine-2 p-3 md:p-5">
       {/* Thumbnail Section */}
@@ -64,7 +84,9 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
       {/* Info Section */}
       <div>
         <div className="mt-[35px] flex items-center justify-between gap-2">
-          <p className="text-secondary text-sm font-semibold">{Item.update}</p>
+          <p className="text-secondary text-sm font-semibold">
+            {getUpdateLabel(Item)}
+          </p>{" "}
           <span className="flex items-center gap-3">
             {iconsArray.map((Icon, index) => (
               <span key={index}>{Icon}</span>

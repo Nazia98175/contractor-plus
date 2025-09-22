@@ -50,7 +50,8 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     smartMoney,
     disclaimerText,
     whyThisTeamSection,
-    pageContent,
+    tableMobile,
+    mobileProofSection,
   } = await getInvestorsData(locale);
   console.log("wesx", whyThisTeamSection);
 
@@ -80,16 +81,18 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           <TeamList teamData={table || []} />
         </div>
         <div className="block px-2 sm:hidden">
-          <TeamListMobile />
+          <TeamListMobile data={tableMobile} />
         </div>
         <WhyNow items={whyNowSection?.items} />
         <ProofWorking
           title={whyContractorSection?.title}
           desc={whyContractorSection?.desc}
-          //@ts-ignore
-          title2={proofSection?.title}
-          desc2={proofSection?.desc}
-          items={proofSection?.items}
+          buttomText={proofSection?.buttomText}
+          proofSectionTitle={proofSection?.title}
+          proofSectionDec={proofSection?.proofSectionDec}
+          rightStats={proofSection?.rightStats || []}
+          leftStats={proofSection?.leftStats || []}
+          mobileProofSection={mobileProofSection || []}
         />
         <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
           <MarketOpportunity marketOpportunityData={marketOpportunity || []} />

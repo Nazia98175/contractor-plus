@@ -15,6 +15,8 @@ export interface getInvestorsDataProps {
   smartMoney: any | null;
   whyThisTeamSection: any | null;
   disclaimerText: any | null;
+  tableMobile: any | null;
+  mobileProofSection: any | null;
 }
 
 export const getInvestorsData = async (
@@ -34,6 +36,8 @@ export const getInvestorsData = async (
     smartMoneyRes,
     whyThisTeamSectionRes,
     disclaimerTextRes,
+    tableMobileRes,
+    mobileProofSectionRes,
   ] = await Promise.all([
     getCommonData(locale),
     InvestorsapiDataPage(locale, "&populate=*"),
@@ -48,7 +52,10 @@ export const getInvestorsData = async (
       "&populate[whyNowSection][populate][items][populate]=image",
     ),
     InvestorsapiDataPage(locale, "&populate[whyContractorSection]=*"),
-    InvestorsapiDataPage(locale, "&populate[proofSection][populate][items]=*"),
+    InvestorsapiDataPage(
+      locale,
+      "&populate[proofSection][populate][leftStats][populate]=icon&populate[proofSection][populate][rightStats][populate]=icon",
+    ),
     InvestorsapiDataPage(
       locale,
       "&populate[marketOpportunity][populate]=image",
@@ -61,6 +68,8 @@ export const getInvestorsData = async (
     ),
 
     InvestorsapiDataPage(locale, "&fields=disclaimerText"),
+    InvestorsapiDataPage(locale, "&populate[tableMobile][populate]=*"),
+    InvestorsapiDataPage(locale, "&populate[mobileProofSection][populate]=*"),
   ]);
   return {
     commonData: commonData || null,
@@ -77,5 +86,7 @@ export const getInvestorsData = async (
     smartMoney: smartMoneyRes?.data?.smartMoney || null,
     whyThisTeamSection: whyThisTeamSectionRes?.data?.whyThisTeamSection || null,
     disclaimerText: disclaimerTextRes?.data?.disclaimerText || null,
+    tableMobile: tableMobileRes?.data?.tableMobile || null,
+    mobileProofSection: mobileProofSectionRes?.data?.mobileProofSection || null,
   };
 };

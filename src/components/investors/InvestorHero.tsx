@@ -158,7 +158,7 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
         </span>
         <div className="flex flex-col items-center justify-center px-2">
           <Copy delay={0.1}>
-            <p className="text-darkGray bg-rgba17 mx-auto w-full rounded-[6px] px-2 py-1 text-center text-sm font-bold sm:w-fit md:bg-transparent">
+            <p className="text-darkGray bg-rgba17 mx-auto w-fit rounded-[6px] px-2 py-1 text-center text-sm font-bold md:bg-transparent">
               {heroSubTitle || "Investment Opportunity"}
             </p>
           </Copy>

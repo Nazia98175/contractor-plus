@@ -42,7 +42,7 @@ const RecentEpisodesCards: React.FC<{ Item: PodcastDataResponse.show }> = ({
         rel="noopener noreferrer"
         className="border-wallStreet text-decemberSky mt-4 w-fit rounded border px-3 py-1.5 text-xs leading-[160%] transition-all duration-200 ease-in-out hover:scale-95"
       >
-        Listen
+        Listen Now
       </Link>
     </article>
   );

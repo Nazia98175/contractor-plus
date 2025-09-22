@@ -4,8 +4,10 @@ import CalculateImpactSelect from "./CalculateImpactSelect";
 import CalculateImpactRange from "./CalculateImpactRange";
 import gsap from "gsap";
 import {
+  AnnualTimeIcon,
   BigChiefEmailIcon,
   BigChiefIcon2,
+  GrowGraph,
   HourDotterIcon,
   RatePercentIcon,
 } from "../common/Icons";
@@ -88,10 +90,56 @@ const CalculateImpact: React.FC = () => {
               <BigChiefIcon2 />
             </span>
           </div>
-
+          <div className="w-full">
+            <p className="text-wallStreet flex items-center gap-1 pt-1 text-lg leading-[110%]">
+              <GrowGraph />
+              If BigChief helps you close just 2 more jobs per month...
+            </p>
+            <div className="pt-5">
+              <span className="text-wallStreet inline-block pb-2">
+                What's your average job size?
+              </span>
+              <div className="border-wallStreet flex h-[40px] items-center justify-between gap-2 rounded-[5px] border px-2">
+                <span className="text-grey inline-block ps-2 text-xl sm:ps-4">
+                  <HourDotterIcon />
+                </span>
+                <input
+                  className="text-wallStreet h-full w-full rounded-md bg-transparent ps-1 pe-3 outline-none"
+                  type="number"
+                  placeholder="5000"
+                  defaultValue={5000}
+                />
+              </div>
+            </div>
+            <div className="pt-5">
+              <span className="text-wallStreet pb-2 leading-[110%]">
+                How many minutes do you spend talking to leads and clients every
+                month?
+              </span>
+              <div className="border-wallStreet flex h-[40px] items-center justify-between gap-2 rounded-[5px] border px-2">
+                <span className="text-wallStreet inline-block ps-2 text-xl sm:ps-4">
+                  <AnnualTimeIcon />
+                </span>
+                <input
+                  className="text-wallStreet h-full w-full rounded-md bg-transparent ps-1 pe-3 outline-none"
+                  type="number"
+                  placeholder="2"
+                  defaultValue={2}
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center pt-5">
+              <button
+                onClick={() => setCalculate(true)}
+                className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:scale-95 sm:max-w-[248px]"
+              >
+                Calculate Impact
+              </button>
+            </div>
+          </div>
           <div className="space-y-6">
             {/* First Row */}
-            <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+            {/* <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-wallStreet text-base">
                   Estimates per week
@@ -119,10 +167,10 @@ const CalculateImpact: React.FC = () => {
                   className="w-full"
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Time & Pay */}
-            <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+            {/* <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-wallStreet text-base">
                   Time per estimate (hrs)
@@ -151,10 +199,10 @@ const CalculateImpact: React.FC = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Range & Close Rate */}
-            <div className="grid-col-1 grid gap-4 sm:gap-6 md:grid-cols-2">
+            {/* <div className="grid-col-1 grid gap-4 sm:gap-6 md:grid-cols-2">
               <CalculateImpactRange />
               <div className="space-y-2">
                 <label className="text-wallStreet text-base">
@@ -171,10 +219,10 @@ const CalculateImpact: React.FC = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Email */}
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <label className="text-wallStreet text-base">Your Email</label>
               <div className="border-wallStreet flex h-[40px] items-center justify-between gap-2 rounded-[5px] border px-3">
                 <span className="flex items-center justify-center">
@@ -186,17 +234,17 @@ const CalculateImpact: React.FC = () => {
                   placeholder="example@mail.com"
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Button */}
-            <div className="flex items-center justify-center">
+            {/* <div className="flex items-center justify-center">
               <button
                 onClick={() => setCalculate(true)}
                 className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:scale-95 sm:max-w-[248px]"
               >
                 Calculate Impact
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

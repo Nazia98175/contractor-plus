@@ -2186,3 +2186,19 @@ body.menu-open .back-to-top {
   user-select: none;
   -webkit-backface-visibility: hidden;
 }
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg); /* reverse spin */
+  }
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 20s linear infinite;
+}
+.invert-custom {
+  filter: invert(80%);
+  transition: filter 0.3s;
+}

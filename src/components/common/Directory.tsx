@@ -36,11 +36,13 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
         width={811}
         height={449}
       />
+      {/* Overlay for better text visibility */}
+      <div className="absolute inset-0 rounded-lg bg-[#00000060]"></div>
       <div className="absolute bottom-[0px] z-30 flex w-full flex-col items-center justify-center">
         <b className="text-master line-clamp-1 text-center text-sm sm:text-base lg:text-lg">
           {item.place}
         </b>
-        <h2 className="event-hero-text-color mt-1 line-clamp-1 text-center text-2xl font-extrabold sm:text-3xl lg:text-4xl xl:text-5xl">
+        <h2 className="event-hero-text-color mt-1 line-clamp-1 text-center text-2xl leading-[120%] font-extrabold sm:text-3xl lg:text-4xl xl:text-5xl">
           {item.heading}
         </h2>
         <p className="text-decemberSky my-3 line-clamp-1 text-center text-sm sm:text-base lg:text-lg">

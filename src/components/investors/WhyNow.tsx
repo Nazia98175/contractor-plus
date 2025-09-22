@@ -261,14 +261,9 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
           <div className="absolute inset-0 hidden items-center justify-center lg:flex">
             <img
               ref={bgImageRef}
-              className="h-full w-full object-contain"
-              src="/images/webp/vector.webp"
+              src="/images/webp/rounded.webp"
               alt="now bg"
-              style={{
-                transformOrigin: "center center",
-                maxWidth: "min(90vw, 90vh)",
-                maxHeight: "90vh",
-              }}
+              className="h-full max-h-[90vh] w-full max-w-[min(90vw,90vh)] origin-center object-contain"
             />
           </div>
 

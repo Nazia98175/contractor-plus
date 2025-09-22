@@ -13,6 +13,52 @@ const OurPodcast: FC<{
   data: PodcastData;
   transistorData: PodcastDataResponse.apiResponse | null;
 }> = ({ data, transistorData }) => {
+  const asTime = (s?: string) => (s ? new Date(s).getTime() : 0);
+  const detectShow = (item: PodcastDataResponse.show) => {
+    const t = (item?.title || "").toLowerCase();
+    const u = (item?.update || "").toLowerCase();
+    const link = (item?.link || "").toLowerCase();
+
+    if (u.includes("mindset monday") || t.includes("mindset monday"))
+      return "Mindset Monday";
+    if (t.includes("hard hat chat") || link.includes("share.transistor.fm"))
+      return "Hard Hat Chat";
+    if (t.includes("owner’s perspective") || t.includes("owners perspective"))
+      return "The Owner’s Perspective";
+    if (
+      t.includes("contractor+ podcast") ||
+      t.includes("contractor + podcast") ||
+      t.includes("contractor podcast")
+    )
+      return "Contractor+ Podcast";
+    return "";
+  };
+
+  const sorted = (transistorData ?? [])
+    .slice()
+    .sort((a, b) => asTime(b.published) - asTime(a.published));
+
+  const newestByShow = new Map<string, PodcastDataResponse.show>();
+  for (const it of sorted) {
+    const key = detectShow(it);
+    if (!key) continue;
+    if (!newestByShow.has(key)) newestByShow.set(key, it);
+  }
+
+  const REQUIRED_ORDER: Array<{
+    show: string;
+    label: "Monthly Updates" | "Every Monday · 1 PM EST" | "Weekly" | "Monthly";
+  }> = [
+    { show: "Contractor+ Podcast", label: "Monthly Updates" },
+    { show: "Mindset Monday", label: "Every Monday · 1 PM EST" },
+    { show: "The Owner’s Perspective", label: "Weekly" },
+    { show: "Hard Hat Chat", label: "Monthly" },
+  ];
+
+  const displayItems = REQUIRED_ORDER.map(({ show }) =>
+    newestByShow.get(show),
+  ).filter(Boolean) as PodcastDataResponse.show[];
+
   return (
     <section className="custom-pagination-2 w-full px-2">
       <Copy delay={0.1}>
@@ -21,9 +67,9 @@ const OurPodcast: FC<{
         </h2>
       </Copy>
       <div className="mx-auto grid w-full max-w-[1128px] grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 xl:gap-[42px]">
-        {transistorData && transistorData?.length > 0 ? (
-          transistorData.map((item, index) => (
-            <OurPodcastCard key={index} Item={item} />
+        {displayItems.length ? (
+          displayItems.map((item) => (
+            <OurPodcastCard key={item.id} Item={item} />
           ))
         ) : (
           <div className="col-span-full">

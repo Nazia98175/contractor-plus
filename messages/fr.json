@@ -1,3 +1,544 @@
 {
-    "heading": "Bienvenue dans Next.js !"
+  "heading": "Bienvenue dans Next.js !",
+  "hero": {
+    "heading": "Le seul système d'exploitation pour les entrepreneurs en construction et services",
+    "desc": "Toute la puissance des grands logiciels, sans les tracas. Une seule plateforme —pas six— pour gérer les projets, les équipes, les clients et la croissance.",
+    "credit": "Aucune carte de crédit requise",
+    "cta": "Créer un compte gratuit",
+    "cta2": "Télécharger l'application",
+    "video": "Votre navigateur ne prend pas en charge la balise vidéo."
+  },
+  "menu": {
+    "why": "Pourquoi Contractor+ ?",
+    "features": "Fonctionnalités",
+    "industries": "Secteurs",
+    "pricing": "Tarifs",
+    "resources": "Ressources",
+    "login": "Se connecter",
+    "signup": "Essayez-le gratuitement"
+  },
+  "engine": {
+    "heading": "Le moteur utilisé par ",
+    "countup": "entrepreneurs",
+
+    "desc": "Toute la puissance d’un grand logiciel, sans les tracas. Une seule plateforme — pas six — pour gérer les chantiers, les équipes, les clients et la croissance.",
+    "super": "Estimations Super Simples",
+    "hourSave": "Heures Moyennes Économisées par Semaine"
+  },
+  "platformcatch": {
+    "platformcatch": "Il existe des dizaines de plateformes pour entrepreneurs, mais chacune a un piège.",
+    "card1": {
+      "heading": "Coûteux",
+      "desc": "Les “gros” facturent une petite fortune et leur logiciel est un cauchemar à apprendre."
+    },
+    "card2": {
+      "heading": "Compliqué",
+      "desc": "Les solutions populaires sont soit obsolètes, soit difficiles à utiliser sur mobile."
+    },
+    "card3": {
+      "heading": "Inadéquat",
+      "desc": "Il n'existe pas de véritable 'tout-en-un', donc vous vous retrouvez avec 6 plateformes différentes pour gérer votre entreprise."
+    }
+  },
+
+  "finally": {
+    "heading": "Enfin, une plateforme pour les remplacer toutes",
+    "desc": "Contractor+ est le premier système d’exploitation conçu pour gérer chaque partie de votre entreprise, du bureau au terrain—sans complexité.",
+    "features": [
+      "CRM",
+      "Service sur le terrain",
+      "Ventes",
+      "Offres",
+      "Facturation",
+      "Gestion de projet"
+    ]
+  },
+
+  "feature": {
+    "card1": {
+      "heading": "Application mobile conviviale",
+      "desc": "Contractor+ est facile à utiliser sur ordinateur et mobile, votre équipe l’utilisera vraiment."
+    },
+    "card2": {
+      "heading": "Boîte de communication",
+      "desc": "Appelez, envoyez des SMS, des e-mails, et écoutez les messages vocaux pour chaque prospect, client, locataire, fournisseur et sous-traitant — tout en un seul endroit."
+    },
+    "card3": {
+      "heading": "Espaces de travail multiples",
+      "desc": "Basculez entre les espaces de travail pour différents sites, équipes ou entreprises."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ dessert plus de 30 secteurs",
+    "desc": "La seule plateforme conçue pour les services sur le terrain, les métiers et les entrepreneurs généraux",
+    "cta": "Voir tous les secteurs"
+  },
+  "whatever": "Quel que soit ce que vous utilisez, Contractor+ se connecte",
+  "makeoperation": {
+    "heading": "Faites de vos opérations un avantage concurrentiel",
+    "desc": "Le retour sur investissement avec Contractor+ rend le choix évident"
+  },
+  "footer": {
+    "heading": "Aider les entrepreneurs à remporter 2 fois plus de contrats en un tiers du temps",
+    "cta": "Tous les services sont opérationnels",
+    "poweredBy": "Propulsé par",
+    "copyright": "Contractor+ Tous droits réservés.",
+    "legalLinks": [
+      "Conditions d'utilisation",
+      "Politique de confidentialité",
+      "Politique relative aux cookies",
+      "RGPD",
+      "Accessibilité"
+    ],
+    "links": [
+      "CRM",
+      "Gestion de Projet",
+      "Gestion des Services sur le Terrain",
+      "Planification",
+      "Devis",
+      "Paiements",
+      "Téléphone et SMS",
+      "Suivi des Offres",
+      "Big Chief AI",
+      "Toutes les Fonctionnalités",
+      "Entrepreneur Général",
+      "Charpenterie",
+      "Béton",
+      "Bricoleur",
+      "HVAC",
+      "Plomberie",
+      "Cloison Sèche",
+      "Peinture",
+      "Rénovation",
+      "Toiture",
+      "Toutes les Industries",
+
+      "Blog",
+      "Podcasts",
+      "Taux de Main-d’œuvre aux États-Unis",
+      "Tendances des Matériaux aux États-Unis",
+      "Tarification des Matériaux aux États-Unis",
+      "Tableau d'Idées",
+      "Affiliés",
+      "Fournisseurs",
+      "Centre d'Aide",
+      "Documentation API",
+      "Tarifs",
+      "Planifier une Démo",
+      "Commencer GRATUITEMENT",
+      "Tarifs",
+      "Planifier une Démo"
+    ],
+    "sections": ["Recursos", "Indústrias", "Soluções", "Explorar"]
+  },
+  "features": {
+    "solutionsHeading": "Solutions",
+    "featuresHeading": "Fonctionnalités",
+    "newBadge": "NOUVEAU",
+    "seeAllFeatures": "Voir toutes les fonctionnalités",
+    "integrations": "Intégrations",
+    "productUpdates": "Mises à jour produit",
+    "crm": {
+      "label": "CRM",
+      "description": "Maîtrisez toutes vos relations"
+    },
+    "estimates": {
+      "label": "Devis & Offres",
+      "description": "Gagnez du temps et remportez plus d'appels d'offres"
+    },
+    "mileage": {
+      "label": "Accords Client Automatisés",
+      "description": "Recueillez des signatures électroniques automatiquement"
+    },
+    "projectManagement": {
+      "label": "Gestion de Projet",
+      "description": "Visibilité complète de vos projets et travaux"
+    },
+    "dealFlow": {
+      "label": "Suivi du Flux de Ventes",
+      "description": "Visualisez tout votre pipeline de ventes"
+    },
+    "timeClock": {
+      "label": "Suivi du Temps",
+      "description": "Suivi vérifié par GPS pour toute l'équipe"
+    },
+    "fieldService": {
+      "label": "Gestion des Services sur le Terrain",
+      "description": "Permettez à votre équipe d’offrir un excellent service"
+    },
+    "scheduling": {
+      "label": "Planification",
+      "description": "Optimisez l'efficacité et les affectations"
+    },
+    "leadGeneration": {
+      "label": "Suivi du Kilométrage",
+      "description": "Suivi automatique et maximisation des déductions"
+    },
+    "payments": {
+      "label": "Contractor+ Pay",
+      "description": "Paiements en ligne, en personne, CB, virement + instantanés"
+    },
+    "clientPortal": {
+      "label": "Portail Client",
+      "description": "Accès simple et sécurisé pour les clients"
+    },
+    "proWebsite": {
+      "label": "Site PRO Inclus",
+      "description": "Présentez votre entreprise et attirez des clients"
+    },
+    "estimaticAI": {
+      "label": "Génération de leads",
+      "description": "Devis et estimations de projet rapides, précis et performants"
+    },
+    "bigChiefAI": {
+      "label": "Comptabilité",
+      "description": "Répondez à chaque appel, qualifiez les prospects, automatisez les tâches répétitives."
+    },
+    "invoicing": {
+      "label": "Facturation",
+      "description": "Automatisez la facturation et soyez payé plus rapidement"
+    },
+    "propertyProfiles": {
+      "label": "Profils de Propriété",
+      "description": "Simplifiez l’entretien de vos biens"
+    },
+
+    "communication": {
+      "label": "Téléphone & SMS Pro",
+      "description": "Conversations centralisées avec l'équipe et les clients"
+    },
+    "service": {
+      "label": "Demandes de Service",
+      "description": "Demandes directes de clients et locataires"
+    }
+  },
+
+  "crm": {
+    "heading": "Les équipes utilisant Contractor+ CRM ne reviennent jamais en arrière",
+    "desc": "Nous vous aidons à aller de l'avant, pas seulement à survivre",
+    "crmList": [
+      {
+        "title": "plus rapide",
+        "description": "Suivi client",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "heures",
+        "description": "Heures économisées par semaine",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "de plus",
+        "description": "Travaux créés",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
+
+  "industries": {
+    "heading": "Secteurs",
+    "imageAlt": "Groupe d'entrepreneurs travaillant sur un projet",
+    "links": [
+      { "label": "Entrepreneur Général", "href": "/" },
+      { "label": "Plomberie", "href": "/" },
+      { "label": "Construction", "href": "/" },
+      { "label": "CVC (Chauffage, Ventilation, Climatisation)", "href": "/" },
+      { "label": "Rénovation", "href": "/" },
+      { "label": "Peinture", "href": "/" },
+      { "label": "Toiture", "href": "/" },
+      { "label": "Enlèvement de Déchets", "href": "/" },
+      { "label": "Serrurier", "href": "/" },
+      { "label": "Carrelage", "href": "/" },
+      { "label": "Cloison Sèche", "href": "/" },
+      { "label": "Mécanique", "href": "/" },
+      { "label": "Nettoyage", "href": "/" },
+      { "label": "Restauration", "href": "/" },
+      { "label": "Électricien", "href": "/" },
+      { "label": "Clôture", "href": "/" },
+      { "label": "Revêtement de Sol", "href": "/" },
+      { "label": "Lutte Antiparasitaire", "href": "/" },
+      { "label": "Piscine & Spa", "href": "/" },
+      { "label": "Entretien des Arbres", "href": "/" },
+      { "label": "Aménagement Paysager", "href": "/" },
+      { "label": "Déneigement", "href": "/" },
+      { "label": "Entretien de Pelouse", "href": "/" },
+      { "label": "Pavage", "href": "/" },
+      { "label": "Solaire", "href": "/" },
+      { "label": "Conciergerie", "href": "/" },
+      { "label": "Irrigation", "href": "/" },
+      { "label": "Nettoyage à Pression", "href": "/" },
+      { "label": "Entretien de Propriété", "href": "/" },
+      { "label": "Nettoyage de Vitres", "href": "/" },
+      { "label": "Menuiserie", "href": "/" },
+      { "label": "Nettoyage de Tapis", "href": "/" },
+      { "label": "Ramonage de Cheminée", "href": "/" },
+      { "label": "Ascenseur", "href": "/" },
+      { "label": "Excavation", "href": "/" },
+      { "label": "Porte de Garage", "href": "/" },
+      { "label": "Bricoleur", "href": "/" },
+      { "label": "Fosse Septique & Pompe", "href": "/" },
+      { "label": "Réparation de Petit Moteur", "href": "/" }
+    ]
+  },
+  "pricing": {
+    "links": [
+      { "label": "Blog Contractor+", "href": "/" },
+      { "label": "Événements du Secteur", "href": "/" },
+      { "label": "Discussions Casque de Chantier", "href": "/" },
+      { "label": "Lundi État d'Esprit", "href": "/" },
+      { "label": "Programme de Partenaires Fournisseurs", "href": "/" },
+      { "label": "Perspective des Propriétaires", "href": "/" },
+      { "label": "Feuille de Route des Fonctionnalités", "href": "/" },
+      { "label": "Outils et Modèles Gratuits", "href": "/" },
+      { "label": "Centre d'Assistance", "href": "/" },
+      { "label": "Prix Régionaux de Main-d'œuvre", "href": "/" },
+      { "label": "Prix Régionaux des Matériaux", "href": "/" }
+    ]
+  },
+  "potentialIntegrations": "Intégrations potentielles",
+
+  "resources": {
+    "imageAlt": "Ressources et supports d'apprentissage pour les entrepreneurs",
+    "links": [
+      {
+        "label": "Blog de Contractor+",
+        "description": "Conseils et idées du secteur",
+        "href": "/"
+      },
+      {
+        "label": "Événements de l'industrie",
+        "description": "Conférences, ateliers et webinaires",
+        "href": "/"
+      },
+      {
+        "label": "Podcasts",
+        "description": "Écoutez les idées des entrepreneurs",
+        "href": "/"
+      },
+      {
+        "label": "Affiliés",
+        "description": "Opportunités de partenariat",
+        "href": "/"
+      },
+      {
+        "label": "Calculatrices",
+        "description": "Estimez les coûts de projet",
+        "href": "/"
+      },
+      {
+        "label": "Programme de Partenaires Fournisseurs",
+        "description": "Connectez-vous avec des fournisseurs",
+        "href": "/"
+      },
+      {
+        "label": "Créateur d'Estimations Gratuit",
+        "description": "Créez des estimations professionnelles",
+        "href": "/"
+      },
+      {
+        "label": "Feuille de Route des Fonctionnalités",
+        "description": "Futures versions de fonctionnalités",
+        "href": "/"
+      },
+      {
+        "label": "Recherche de Comparaison de Matériaux",
+        "description": "Comparez les matériaux de construction",
+        "href": "/"
+      },
+      {
+        "label": "Centre de Support",
+        "description": "Accédez à la documentation d'aide",
+        "href": "/"
+      },
+      {
+        "label": "Tarification Régionale des Matériaux",
+        "description": "Données sur les coûts de main-d'œuvre régionaux",
+        "href": "/"
+      },
+      {
+        "label": "Tarification de la Main-d'œuvre Locale aux États-Unis",
+        "description": "Intégrer avec notre plateforme",
+        "href": "/"
+      },
+      {
+        "label": "Documentation API",
+        "description": "Données sur les coûts régionaux des matériaux",
+        "href": "/"
+      }
+    ]
+  },
+  "blogs": {
+    "heading": "Nos Blogs",
+    "viewAllBlogs": "Voir Tous les Blogs",
+    "featuredBlogAlt": "Blog en Vedette",
+    "blogList": [
+      {
+        "id": 1,
+        "title": "Ryan Garcia se bat à nouveau, cette fois sur les réseaux sociaux",
+        "date": "03 Jan 2025",
+        "category": "Entrepreneur",
+        "description": "La star de la boxe Ryan Garcia et son promoteur, le combattant du Temple de la Renommée Oscar De La Hoya, ont ravivé leur guerre de mots via Twitter le",
+        "image": "/images/webp/blog-1.webp"
+      },
+      {
+        "id": 2,
+        "title": "Ryan Garcia se bat à nouveau, cette fois sur les réseaux sociaux",
+        "date": "03 Jan 2025",
+        "category": "Entrepreneur",
+        "description": "La star de la boxe Ryan Garcia et son promoteur, le combattant du Temple de la Renommée Oscar De La Hoya, ont ravivé leur guerre de mots via Twitter le",
+        "image": "/images/webp/blog-2.webp"
+      },
+      {
+        "id": 3,
+        "title": "Ryan Garcia se bat à nouveau, cette fois sur les réseaux sociaux",
+        "date": "03 Jan 2025",
+        "category": "Entrepreneur",
+        "description": "La star de la boxe Ryan Garcia et son promoteur, le combattant du Temple de la Renommée Oscar De La Hoya, ont ravivé leur guerre de mots via Twitter le",
+        "image": "/images/webp/blog-3.webp"
+      }
+    ],
+    "featuredBlog": {
+      "category": "Entrepreneur",
+      "timeAgo": "il y a 5 minutes",
+      "title": "Découvrez les Avantages des Membres de USA Contracting!",
+      "description": "Comment créer des présentations convaincantes qui impressionnent vos collègues et vos responsables?",
+      "image": "/images/webp/blog-right-side.webp"
+    }
+  },
+
+  "reviews": {
+    "heading": "Laissez nos clients parler pour nous...",
+    "excellent": "Excellent",
+    "basedOn": "Basé sur {count} avis",
+    "ourReviews": {
+      "1": {
+        "username": "Brandon Geiger",
+        "userRole": "Propriétaire, iCare Lawn Care & Landscaping",
+        "review": "Depuis que j'envoie tous mes devis avec Contractor+, je ne perds plus de contrats. L'image professionnelle que cette application me donne m'aide à décrocher plus de clients. Contractor+ change la donne !"
+      },
+      "2": {
+        "username": "Josh Leeson",
+        "userRole": "Copropriétaire, Rushville Restorations",
+        "review": "J'adore pouvoir gérer toute mon entreprise dans une seule application. Et les prospects que nous recevons grâce à Contractor+ sont bien meilleurs que ceux d'autres sources. L'application est facile à utiliser et me simplifie énormément la vie."
+      },
+      "3": {
+        "username": "Justin Mcnichols",
+        "userRole": "Président, TPB Construction",
+        "review": "Nous avons maintenant deux équipes qui travaillent 5 à 6 jours par semaine. Il y a un an, j'étais seul. On n'aurait jamais pu croître ainsi sans Contractor+. La planification et les accords clients me facilitent grandement la vie. Contractor+ DÉCHIRE !"
+      },
+      "4": {
+        "username": "John Croy",
+        "userRole": "Copropriétaire, Ross Co. Home Pro's",
+        "review": "Je suis passé de Jobber à Contractor+ car cela correspond mieux à ma façon de gérer mon entreprise. Communication claire, devis simples et planification de chantier m'aident à tout gérer. Contractor+ a rendu mon entreprise plus rentable et plus facile à gérer."
+      },
+      "5": {
+        "username": "Juan",
+        "userRole": "Propriétaire, Cranfield Construction",
+        "review": "J'ai commencé à utiliser Contractor+ il y a environ 6 mois, et cela a complètement transformé ma gestion de projet et ma communication avec les clients. Tout est désormais rationalisé. C'est le meilleur investissement que j'ai fait pour mon entreprise."
+      },
+      "6": {
+        "username": "Daniel Harris",
+        "userRole": "Fondateur, Harris Custom Remodeling",
+        "review": "Contractor+ m'a apporté la structure dont j'avais besoin. Des devis aux factures, tout est professionnel, et les clients adorent cette clarté. C'est devenu la base de mon entreprise."
+      },
+      "7": {
+        "username": "Ashley Monroe",
+        "userRole": "Cofondatrice, Greenway Outdoor Designs",
+        "review": "Je ne réalisais pas combien de temps je perdais jusqu'à ce que je commence à utiliser Contractor+. Cela a simplifié nos opérations et rendu la communication client fluide."
+      },
+      "8": {
+        "username": "Ethan Reynolds",
+        "userRole": "Responsable des opérations, Apex Roofing Solutions",
+        "review": "Gérer plusieurs chantiers était un vrai chaos. Maintenant, je suis organisé avec les plannings, les notes clients et les tâches, tout au même endroit. Contractor+ est un vrai sauveur !"
+      },
+      "9": {
+        "username": "Samantha Blake",
+        "userRole": "Propriétaire, Blake Interiors & Renovations",
+        "review": "Je dirige enfin mon entreprise au lieu de courir après elle. Contractor+ m'aide à suivre tous les projets, et mes clients apprécient les devis détaillés et les mises à jour régulières."
+      }
+    }
+  },
+  "corefeature": {
+    "heading": "Fonctionnalités Principales",
+    "desc": "Découvrez les outils puissants qui font de Contractor+ la solution ultime pour votre entreprise de contractation",
+    "visualization": "visualisation",
+    "featureBtn": "Voir Toutes les Fonctionnalités",
+    "features": [
+      "CRM",
+      "Planification en Direct",
+      "Chat de Chantier",
+      "Générateur de Devis",
+      "Profils Immobiliers",
+      "IA Big Chief"
+    ]
+  },
+  "entireBusiness": {
+    "heading": "Tout pour gérer l'ensemble de votre entreprise en un seul endroit",
+    "subheading": "Commencez à utiliser Contractor+ gratuitement (vraiment) !",
+    "emailPlaceholder": "Votre Email",
+    "noCreditCard": "Aucune Carte de Crédit Requise",
+    "createAccount": "Créer un Compte Gratuit"
+  },
+  "crmHero": {
+    "heading": "Un <highlight>CRM pour les services sur le terrain</highlight> qui gère votre entreprise, pas seulement vos contacts",
+    "description": "Téléphone et SMS intégrés. Réceptionniste IA. Profils de propriété. Historique complet des communications. Plus besoin de 6 outils séparés pour faire ce que Contractor+ CRM fait seul.",
+    "buttonDesktop": "Créer un compte gratuit",
+    "buttonMobile": "Télécharger l'application",
+    "note": "Aucune carte de crédit requise",
+    "altImage": "image crm",
+    "altGoogle": "icône google",
+    "altApple": "icône apple"
+  },
+  "whyContractorDesktop": {
+    "imageAlt": "Resources and learning materials for contractors",
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content"
+      }
+    ]
+  },
+  "whycontractordesktop": {
+    "seeAllResourse": "See All Resources",
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content",
+        "imageAlt": "Resources and learning materials for contractors"
+      }
+    ]
+  }
 }

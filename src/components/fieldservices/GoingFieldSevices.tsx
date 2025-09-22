@@ -1,0 +1,89 @@
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import { DashedLineIcon, RunningBehindIcon } from "../common/Icons";
+
+import GoingFieldSevicesCard from "./GoingFieldSevicesCard";
+import Copy from "../common/Copy";
+
+interface FieldService {
+  text?: string;
+  icon?: any;
+}
+
+interface GoingFieldSevicesProps {
+  title?: string;
+  isImageshow?: boolean;
+  cardsDetail?: FieldService[];
+}
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+const GoingFieldSevices: React.FC<GoingFieldSevicesProps> = ({
+  title,
+  cardsDetail = [],
+  isImageshow = true,
+}) => {
+  useEffect(() => {
+    const scrollTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#going-field-service",
+        start: "top 50%",
+        endTrigger: "#parallex-img-wrapper",
+        end: `bottom 100px`,
+        scrub: 2,
+      },
+    });
+
+    scrollTimeline.to("#parallex-img", {
+      y: -100,
+      ease: "none",
+    });
+  }, []);
+
+  return (
+    <section
+      id="going-field-service"
+      className="relative z-20 overflow-hidden pb-[52px] sm:pb-[60px] lg:pb-[95px]"
+    >
+      {isImageshow && (
+        <div id="parallex-img-wrapper">
+          <Image
+            width={1440}
+            height={150}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
+            unoptimized
+            className="h-[150px] w-full object-cover sm:h-[180px]"
+            id="parallex-img"
+            src="/images/webp/field-services.webp"
+            alt="Map Image"
+          />
+        </div>
+      )}
+
+      <Copy animateOnScroll={true} delay={0.2}>
+        <h3 className="sub-heading text-winterWay mx-auto hidden max-w-[500px] px-2 text-center font-semibold sm:block xl:max-w-[1068px]">
+          <span>{title}</span>
+        </h3>
+      </Copy>
+
+      <h3 className="sub-heading crm-gradient mx-auto w-full max-w-[350px] px-2 text-center font-bold sm:hidden">
+        {title}
+      </h3>
+      <div className="relative mx-auto flex max-w-[1100px] grid-cols-1 flex-wrap justify-center gap-6 px-0.5 pt-9 lg:grid lg:grid-cols-3 lg:gap-0">
+        {/* Dashed line */}
+        <div className="bg-doctor2 absolute top-11 left-1/2 z-0 hidden w-[66%] -translate-x-1/2 transform py-2 lg:block">
+          <DashedLineIcon />
+        </div>
+
+        {cardsDetail?.map((step, index) => (
+          <GoingFieldSevicesCard step={step} key={index} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default GoingFieldSevices;

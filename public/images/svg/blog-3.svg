@@ -1,0 +1,16 @@
+<svg width="114" height="148" viewBox="0 0 114 148" fill="none" xmlns="http://www.w3.org/2000/svg" style="">
+<g opacity="0.2">
+<g clip-path="url(#clip0_1906_14442)">
+<path d="M105 153L105 105.75C105 103.244 104.016 100.841 102.266 99.0683C100.516 97.2961 98.1418 96.3005 95.6664 96.3005L76.9998 96.3005C74.5244 96.3005 72.1504 97.2961 70.4001 99.0683C68.6498 100.841 67.6664 103.244 67.6664 105.75L67.6664 153L67.6664 45.9005C67.6664 36.9923 67.6664 32.5382 64.9286 29.7725C62.2033 27.0005 57.8042 27.0005 48.9998 27.0005C40.1953 27.0005 35.8024 27.0005 33.0709 29.7725C30.3331 32.5319 30.3331 36.986 30.3331 45.9005L30.3331 153L30.3331 74.2505C30.3331 71.7442 29.3498 69.3405 27.5994 67.5683C25.8491 65.7961 23.4751 64.8005 20.9998 64.8005L2.33309 64.8005C-0.142265 64.8005 -2.51623 65.7961 -4.26657 67.5683C-6.01691 69.3405 -7.00024 71.7442 -7.00024 74.2505L-7.00024 153" stroke="url(#paint0_linear_1906_14442)" stroke-width="1.25" class="JhxlytLi_0"></path>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1906_14442" x1="48.9998" y1="27.0005" x2="48.9998" y2="153" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA3A3"></stop>
+<stop offset="1" stop-color="#CC1010"></stop>
+</linearGradient>
+<clipPath id="clip0_1906_14442">
+<path d="M0.240234 0L113.871 0.185534L113.631 147.053L12.0004 146.887C5.37301 146.876 0.00920433 141.495 0.0200254 134.867L0.240234 0Z" fill="white" class="JhxlytLi_1"></path>
+</clipPath>
+</defs>
+<style data-made-with="vivus-instant">.JhxlytLi_0{stroke-dasharray:630 632;stroke-dashoffset:631;animation:JhxlytLi_draw_0 4300ms ease-in-out 0ms infinite,JhxlytLi_fade 4300ms linear 0ms infinite;}.JhxlytLi_1{stroke-dasharray:516 518;stroke-dashoffset:517;animation:JhxlytLi_draw_1 4300ms ease-in-out 0ms infinite,JhxlytLi_fade 4300ms linear 0ms infinite;}@keyframes JhxlytLi_draw{100%{stroke-dashoffset:0;}}@keyframes JhxlytLi_fade{0%{stroke-opacity:1;}90.69767441860465%{stroke-opacity:1;}100%{stroke-opacity:0;}}@keyframes JhxlytLi_draw_0{11.627906976744185%{stroke-dashoffset: 631}81.3953488372093%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes JhxlytLi_draw_1{11.627906976744185%{stroke-dashoffset: 517}81.3953488372093%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}</style></svg>

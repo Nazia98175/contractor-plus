@@ -1,0 +1,171 @@
+"use client";
+import CommonFormField from "@/components/common/CommonFormField";
+import AnimationHeader from "@/components/whycontractor/AnimationHeader";
+import BloodEnough from "@/components/whycontractor/BloodEnough";
+import Dashboard from "@/components/whycontractor/Dashboard";
+import IndustryShifted from "@/components/whycontractor/IndustryShifted";
+import OperatingSystem from "@/components/whycontractor/OperatingSystem";
+import ReverseVideo from "@/components/whycontractor/ReverseVideo";
+import SeperateSolution from "@/components/whycontractor/SeperateSolution";
+import VideoBottomPart from "@/components/whycontractor/VideoBottomPart";
+import WayToWin from "@/components/whycontractor/WayToWin";
+import WhyContractorHero from "@/components/whycontractor/WhyContractorHero";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+
+interface WhyContractorMainProps {
+  data: {
+    commonData: any;
+    pageContent: any;
+    industryShiftHighlights: any;
+    narrativeFlow: any;
+    seperateSolution: any;
+    connectedSystem: any;
+    featuresPlatform: any;
+    emailSign: any;
+  };
+}
+
+const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
+  const redDotRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Calculate the exact distance the dot should travel
+    const calculateDistance = () => {
+      if (!sectionRef.current) return 0;
+      const sectionHeight = sectionRef.current.offsetHeight;
+      return sectionHeight + sectionHeight * 0; // Add 10% extra
+    };
+
+    // Create the scroll animation for the red dot
+    gsap.to(redDotRef.current, {
+      y: calculateDistance, // Use calculated distance
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "bottom bottom", // Animate until the very bottom of the section
+        scrub: 1,
+        invalidateOnRefresh: true, // Recalculate on window resize
+      },
+    });
+
+    gsap.to("#why-contractor-hero-section", {
+      opacity: 1,
+      duration: 1,
+    });
+
+    gsap.to("#home-page-header-view-port-screen", {
+      opacity: 1,
+      duration: 1,
+    });
+
+    gsap.to("#industry-shifted-section", {
+      opacity: 1,
+      duration: 1,
+    });
+
+    gsap.to("#home-page-footer-view-port-screen", {
+      opacity: 1,
+      duration: 1,
+    });
+
+    return () => {
+      // Cleanup
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  return (
+    <>
+      <div id="home-page-wrapper-2">
+        <div
+          id="home-page-view-port-screen-why-contractor"
+          className="relative opacity-0"
+        >
+          <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-cover">
+            <Image
+              className="absolute top-0 left-0 z-[-1] h-auto w-full"
+              src={"/images/webp/why-contractor-hero-bg.webp"}
+              height={100}
+              width={100}
+              alt="WhyContractorHeroImg"
+              unoptimized
+            />
+            <WhyContractorHero pageContent={data?.pageContent} />
+            <IndustryShifted industry={data?.industryShiftHighlights} />
+            <AnimationHeader
+              animationHeader={data?.narrativeFlow?.animationHeader}
+            />
+          </div>
+        </div>
+        <main
+          ref={sectionRef}
+          className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
+        >
+          {/* Background line (gray/wallStreet color) */}
+          <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
+
+          {/* Animated red dot that moves on scroll - starts at top of gray line */}
+          <span
+            ref={redDotRef}
+            className="from-redPigment to-netherworld absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
+          ></span>
+          <BloodEnough
+            bloodEnough={data?.narrativeFlow?.animationHeader?.[1]}
+          />
+          <SeperateSolution seperateSolution={data?.seperateSolution} />
+          <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
+          <VideoBottomPart list={data?.narrativeFlow?.list} />
+          <WayToWin connectedSystem={data?.connectedSystem} />
+          <Dashboard connectedSystem={data?.connectedSystem} />
+        </main>
+        <OperatingSystem
+          image={data?.connectedSystem?.image}
+          featuresPlatform={data?.featuresPlatform}
+        />
+        {/* <ThousandsReviews
+          data={{
+            title: "All unified. All in sync. All in one place.",
+            sub_title:
+              "This is what it feels like to finally run your business, not be run by it.",
+            placeholder: "Your Email",
+          }}
+          createBtn="Get started FREE"
+          descColorClass="text-secondary max-sm:!text-sm sm:text-base md:text-!lg"
+          ncc="No credit card required"
+          mobileBtn="Download FREE App"
+          titleClass="max-sm:!text-2xl"
+          inputClass="max-sm:!hidden"
+          ccClass="max-sm:!hidden"
+          mobileBtnHref="https://contractorplus.app/"
+        /> */}
+        {/* <main className="pb-14">
+        <TrustBarHvca showTrustedSection={false} platforms={platforms} />
+      </main> */}
+        <div className="pb-14">
+          <div className="mt-12 mb-8 px-2 md:mb-12 xl:mt-[11px]">
+            <CommonFormField
+              title={data?.emailSign?.title}
+              subTitle={data?.emailSign?.subTitle}
+              placeholder={data?.emailSign?.placeholder}
+              createBtn={data?.commonData?.getStartedFreeBtn}
+              mobileBtn={data?.commonData?.mobileBtn}
+              ncc={data?.commonData?.nccTxt}
+              variant={"tertiary"}
+            />
+          </div>
+          {/* <TrustBar  trustBarImages={data?.commonData?.trustedCompaniesWhiteBG} showTrustedSection={false} platforms={platforms} /> */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default WhyContractorMain;

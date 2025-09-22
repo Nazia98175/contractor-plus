@@ -1,0 +1,122 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { Key } from "react";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
+import EventsCard from "../common/EventsCard";
+import { CustomSliderIcon } from "../common/Icons";
+import NotFoundFallback from "../common/NotFoundFallback";
+
+interface ConferenceCardProps {
+  sectionHeading: string;
+  EventCardItem: any;
+  swiperId: string;
+}
+
+const ConferenceCard = ({
+  sectionHeading,
+  EventCardItem,
+  swiperId,
+}: ConferenceCardProps) => {
+  const router = useRouter();
+  return (
+    <>
+      <div className="flex justify-between px-2 sm:hidden">
+        <Copy delay={0.1}>
+          <h4 className="event-card-tittle">{sectionHeading}</h4>
+        </Copy>
+        <Copy delay={0.1}>
+          <button
+            className="font-montserrat text-sm leading-[142.857%] font-medium tracking-[0.1px] whitespace-nowrap text-white"
+            onClick={() => router.push(`/events/all/${swiperId}`)}
+          >
+            View All
+          </button>
+        </Copy>
+      </div>
+      <section className="main-container flex flex-col-reverse gap-6 sm:flex-col sm:gap-0">
+        <div className="custom-pagination-2 mb-[33px] flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <Copy delay={0.1}>
+            <h4 className="event-card-tittle !hidden sm:!block">
+              {sectionHeading}
+            </h4>
+          </Copy>
+          <div className="mx-auto flex w-fit items-center justify-between gap-5 sm:mx-0">
+            <CardReveal delay={0.1} distance={50}>
+              <div className="relative flex items-center gap-2">
+                <button
+                  className={`swiper-button-prev-${swiperId} relative flex h-6 w-6 rotate-180 items-center justify-center opacity-100 disabled:opacity-40`}
+                >
+                  <CustomSliderIcon />
+                </button>
+                <div
+                  className={`swiper-pagination-${swiperId} swiper-pagination-real-time-4 relative left-0 flex items-center justify-center gap-1`}
+                />
+                <button
+                  className={`swiper-button-next-${swiperId} relative flex h-6 w-6 items-center justify-center opacity-100 disabled:opacity-40`}
+                >
+                  <CustomSliderIcon />
+                </button>
+                <button
+                  className="font-montserrat hidden text-sm leading-[142.857%] font-medium tracking-[0.1px] text-white sm:flex"
+                  onClick={() => router.push(`/events/all/${swiperId}`)}
+                >
+                  View All
+                </button>
+              </div>
+            </CardReveal>
+          </div>
+        </div>
+        <div className="!h-full">
+          <Swiper
+            modules={[Pagination, Navigation]}
+            pagination={{
+              el: `.swiper-pagination-${swiperId}`,
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            speed={600}
+            navigation={{
+              nextEl: `.swiper-button-next-${swiperId}`,
+              prevEl: `.swiper-button-prev-${swiperId}`,
+            }}
+            spaceBetween={10}
+            slidesPerView={1}
+            breakpoints={{
+              600: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              900: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+              },
+            }}
+            className="!h-full"
+          >
+            {EventCardItem.length > 0 ? (
+              EventCardItem.map((Item: any, index: Key | null | undefined) => (
+                <SwiperSlide className="!h-auto" key={index}>
+                  <EventsCard
+                    Item={Item}
+                    onClick={() => router.push(`/events/${Item?.slug}`)}
+                  />
+                </SwiperSlide>
+              ))
+            ) : (
+              <NotFoundFallback type="events" />
+            )}
+          </Swiper>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ConferenceCard;

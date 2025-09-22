@@ -1,3 +1,523 @@
 {
-    "heading": "Welcome to Next.js!"
+  "heading": "Welcome to Next.js!",
+  "hero": {
+    "heading": "The only operating system for build & service contractors",
+    "desc": "All the power of big software, none of the pain. One platform—not six— to manage jobs, crews, customers, and growth.",
+    "credit": "No Credit Card Required",
+    "cta": "Create free account",
+    "cta2": "Download App",
+    "video": "Your browser does not support the video tag."
+  },
+  "menu": {
+    "whycontractordesktop": "Why Contractor+?",
+    "features": "Features",
+    "industries": "Industries",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "login": "Login",
+    "signup": "Try It Free"
+  },
+  "engine": {
+    "heading": "The engine",
+    "countup": "contractors run on",
+    "desc": "All the power of big software, none of the pain. One platform—not six—to manage jobs, crews, customers, and growth.",
+    "super": "Super Easy Estimates",
+    "hourSave": "Hours Average Time Saved Per Week"
+  },
+  "platformcatch": {
+    "platformcatch": "There are dozens of contractor platforms , but each one has a catch.",
+    "card1": {
+      "heading": "Expensive",
+      "desc": "The “big guys” charge a small fortune, and their software is a nightmare to learn."
+    },
+    "card2": {
+      "heading": "Complicated",
+      "desc": "Popular solutions are either outdated or difficult to use as a mobile app."
+    },
+    "card3": {
+      "heading": "Inadequate",
+      "desc": "There’s no true “all in one”, so you end up with 6 different platforms to run your company."
+    }
+  },
+  "finally": {
+    "heading": "Finally, one platform to replace them all",
+    "desc": "Contractor+ is the first operating system built to run every part of your business, from the back office to the field—without complexity.",
+    "features": [
+      "CRM",
+      "Field Service",
+      "Sales",
+      "Bids",
+      "Billing",
+      "Project management"
+    ]
+  },
+
+  "feature": {
+    "card1": {
+      "heading": "User-friendly mobile app",
+      "desc": "Contractor+ is user-friendly on desktop and mobile, so your team will actually use it."
+    },
+    "card2": {
+      "heading": "Communication inbox",
+      "desc": "Call, text, email, and listen to voicemail for every lead, client, tenant, vendor, and sub—all in one spot."
+    },
+    "card3": {
+      "heading": "Multiple-workspaces",
+      "desc": "Toggle between workspaces for different locations, teams, or businesses."
+    }
+  },
+  "industry": {
+    "heading": "Contractor+ serves 30+ industries",
+    "desc": "The only platform made for field service, trades, and general contractors",
+    "cta": "View All Industries"
+  },
+  "whatever": "Whatever you use, Contractor+ connects",
+  "potentialIntegrations": "Potential Integrations",
+  "makeoperation": {
+    "heading": "Make operations your competitive edge",
+    "desc": "The ROI from Contractor+ makes the choice easy"
+  },
+
+  "crm": {
+    "heading": "Teams using Contractor+ CRM never look back",
+    "desc": "We help you get ahead, not just get by",
+    "crmList": [
+      {
+        "title": "faster",
+        "description": "Customer follow-up",
+        "start": 0,
+        "end": 38,
+        "suffix": "%"
+      },
+      {
+        "title": "hours",
+        "description": "Hours saved weekly",
+        "start": 0,
+        "end": 11,
+        "suffix": "+"
+      },
+      {
+        "title": "more",
+        "description": "Jobs created",
+        "start": 0,
+        "end": 20,
+        "suffix": "%"
+      }
+    ]
+  },
+
+  "reviews": {
+    "heading": "Let our customers do the talking...",
+    "excellent": "Excellent",
+    "basedOn": "Based on {count} reviews",
+    "ourReviews": {
+      "1": {
+        "username": "Brandon Geiger",
+        "userRole": "Co-Owner, Rushville Restorations",
+        "review": "Since I started sending all my estimates using Contractor+, I have stopped losing bids. The professional image I gain by using this app is helping me win more business. Contractor+ is a game changer!"
+      },
+      "2": {
+        "username": "Josh T.",
+        "userRole": "Owner, Hermano's Home Improvements",
+        "review": "Contractor+ covers nearly every part of our business. Now, we’re not just working - we’re busy handling new leads every day."
+      },
+      "3": {
+        "username": "Justin Mcnichols",
+        "userRole": "President, TPB Construction",
+        "review": "I love being able to keep track of my entire business in one app. And the leads we've been getting from Contractor+ are so much better than the leads we've got from other places. The app is easy to use and is making my life a lot easier."
+      },
+      "4": {
+        "username": "John Croy",
+        "userRole": "Co-Owner, Ross Co. Home Pro's",
+        "review": "Managing my clients, and estimates has always been time consuming. This app is saving me so much time. I could never going back to doing estimates on pen and paper. Contractor+ is the way to go for Ross Co. Home Pro's."
+      },
+      "5": {
+        "username": "Juan Garcia",
+        "userRole": "Owner, Nailed It Miami",
+        "review": "I started with just a few dollars left and took a chance on Contractor+. That one decision turned everything around. I went from barely getting work to having more leads than I could handle. Contractor+ helped me grow faster than I imagined."
+      },
+      "6": {
+        "username": "Scott Azure",
+        "userRole": "CEO at Rands Mechanical",
+        "review": "I have all my techs using Contractor+ now. We were using three different apps before finding Contractor Plus. Now everything we need is right here in one place, at a fraction of the price. The best I’ve seen."
+      },
+      "7": {
+        "username": "Josh Leeson",
+        "userRole": "Owner, iCare Lawn Care & Landscaping",
+        "review": "We've got two crews working 5 to 6 days a week now. A year ago, it was just me. We would have never been able to grow like we have if it wasn't for Contractor+. The scheduling and client agreements makes my life a lot easier. Contractor+ ROCKS!"
+      },
+      "8": {
+        "username": "Chad Cranfield",
+        "userRole": "Owner, Cranfield Construction",
+        "review": "I switched from Jobber to Contractor+ because it fits the way I run my business. Clear communication, easy estimates, and job scheduling help me stay on top of everything. Contractor+ made my business more profitable and easier to manage."
+      },
+
+      "9": {
+        "username": "Joshua Michael Brooks Lee Jones",
+        "userRole": "Owner, Pressure Pug LLC",
+        "review": "Contractor+ was the first app I got for my business, and it’s helped me stay organized from day one. Managing jobs, handling clients, and keeping things moving has never been easier. Contractor+ makes a big difference for small businesses like mine."
+      }
+    }
+  },
+
+  "footer": {
+    "heading": "Helping Contractors Win 2x More Jobs In 1/3rd The Time",
+    "cta": "All Services Operational",
+    "poweredBy": "Powered By",
+    "copyright": "Contractor+ All rights reserved.",
+    "legalLinks": [
+      "Terms of Service",
+      "Privacy Policy",
+      "Cookie Policy",
+      "GDPR",
+      "Accessibility"
+    ],
+    "links": [
+      "CRM",
+      "Project Management",
+      "Field Service Management",
+      "Scheduling",
+      "Estimates",
+      "Payments",
+      "Phone & SMS",
+      "Deal Flow Tracker",
+      "Big Chief AI",
+      "All Features",
+      "General Contractor",
+      "Carpentry",
+      "Concrete",
+      "Handyman",
+      "HVAC",
+      "Plumbing",
+      "Drywall",
+      "Painting",
+      "Remodeling",
+      "Roofing",
+      "All Industries",
+
+      "Blog",
+      "Podcasts",
+      "USA Labor Rates",
+      "USA Material Trends",
+      "USA Material Pricing",
+      "Idea Board",
+      "Affiliates",
+      "Suppliers",
+      "Support Center",
+      "API Docs",
+      "Pricing",
+      "Schedule A Demo",
+      "Get Started FREE",
+      "Pricing",
+      "Schedule A Demo"
+    ],
+    "sections": ["Features", "Industries", "Solutions", "It’s Go Time"]
+  },
+  "features": {
+    "solutionsHeading": "Solutions",
+    "featuresHeading": "Features",
+    "featuresHeading2": "",
+    "newBadge": "NEW",
+    "seeAllFeatures": "See All Features",
+    "integrations": "Integrations",
+    "productUpdates": "Product Updates",
+
+    "solutions": {
+      "crm": {
+        "label": "CRM",
+        "description": "Master all your relationships"
+      },
+      "projectManagement": {
+        "label": "Project Management",
+        "description": "Complete visibility into your projects and work"
+      },
+      "fieldService": {
+        "label": "Field Service Management",
+        "description": "Empower your team to deliver service excellence"
+      },
+      "payments": {
+        "label": "Contractor+ Pay",
+        "description": "Online, in-person, CC & ACH + Instant Payouts"
+      },
+      "LeadGeneration": {
+        "label": "Lead generation",
+        "description": "Fast, Accurate, Winning Project Estimates & Quotes"
+      },
+      "bigChiefAI": {
+        "label": "Bookkeeping ",
+        "description": "Answer every call, Qualify leads, Automate busy work."
+      },
+      "OfferClientFinancing": {
+        "label": "Offer Client Financing ",
+        "description": "Fast, accurate, winning project estimates & quotes"
+      }
+    },
+    "Features": {
+      "estimates": {
+        "label": "Estimates & Quotes",
+        "description": "Save Time & Win More Bids"
+      },
+      "dealFlow": {
+        "label": "Deal Flow Tracking",
+        "description": "Visualize Your Entire Sales Pipeline"
+      },
+      "scheduling": {
+        "label": "Scheduling",
+        "description": "Optimize Team Efficiency & Job Assignments"
+      },
+      "clientPortal": {
+        "label": "Client Portal",
+        "description": "Simple, Secure Project Access for Clients"
+      },
+      "invoicing": {
+        "label": "Invoicing & Billing",
+        "description": "Automate Invoicing & Get Paid Faster"
+      },
+      "communication": {
+        "label": "Business Phone & SMS",
+        "description": "Centralized Team & Client Conversations"
+      },
+      "EstimaticAI2": {
+        "label": "EstimaticAI",
+        "description": "Centralized Team & Client Conversations"
+      }
+    },
+    "Features2": {
+      "Agreements": {
+        "label": "Automated Client Agreements",
+        "description": "Collect eSignatures automatically"
+      },
+      "Tracking": {
+        "label": "Time Tracking",
+        "description": "GPS verified time tracking for the whole team"
+      },
+      "MileageTracking": {
+        "label": "Mileage Tracking",
+        "description": "Track & maximize mileage deductions"
+      },
+      "ProWebsite": {
+        "label": "PRO Website Included",
+        "description": "Showcase your business & attract customers"
+      },
+      "PropertyProfiles": {
+        "label": "Property Profiles",
+        "description": "Streamline your property maintenance"
+      },
+      "ServiceRequests": {
+        "label": "Service Requests",
+        "description": "Direct requests from clients & tenants"
+      },
+      "BigChief": {
+        "label": "Big Chief AI",
+        "description": "Answer every call. Qualify leads. Automate busy work."
+      }
+    }
+  },
+
+  "industries": {
+    "imageAlt": "Resources and learning materials for contractors",
+    "links": [
+      { "label": "General Contractor", "href": "/" },
+      { "label": "Plumbing", "href": "/" },
+      { "label": "Construction", "href": "/" },
+      { "label": "HVAC", "href": "/" },
+      { "label": "Remodeling", "href": "/" },
+      { "label": "Painting", "href": "/" },
+      { "label": "Roofing", "href": "/" },
+      { "label": "Junk Removal", "href": "/" },
+      { "label": "Locksmith", "href": "/" },
+      { "label": "Tiling", "href": "/" },
+      { "label": "Drywall", "href": "/" },
+      { "label": "Mechanical", "href": "/" },
+      { "label": "Cleaning", "href": "/" },
+      { "label": "Restoration", "href": "/" },
+      { "label": "Electrician", "href": "/" },
+      { "label": "Fence", "href": "/" },
+      { "label": "Flooring", "href": "/" },
+      { "label": "Pest Control", "href": "/" },
+      { "label": "Pool & Spa", "href": "/" },
+      { "label": "Tree Care", "href": "/" },
+      { "label": "Landscaping", "href": "/" },
+      { "label": "Snow Removal", "href": "/" },
+      { "label": "Lawn Care", "href": "/" },
+      { "label": "Paving", "href": "/" },
+      { "label": "Solar", "href": "/" },
+      { "label": "Janitorial", "href": "/" },
+      { "label": "Irrigation", "href": "/" },
+      { "label": "Pressure Washing", "href": "/" },
+      { "label": "Property Maintenance", "href": "/" },
+      { "label": "Window Cleaning", "href": "/" },
+      { "label": "Carpentry", "href": "/" },
+      { "label": "Carpet Cleaning", "href": "/" },
+      { "label": "Chimney Sweeping", "href": "/" },
+      { "label": "Elevator", "href": "/" },
+      { "label": "Excavation", "href": "/" },
+      { "label": "Garage Door", "href": "/" },
+      { "label": "Handyman", "href": "/" },
+      { "label": "Septic & Pump", "href": "/" },
+      { "label": "Small Engine Repair", "href": "/" },
+      { "label": "Hard Hat Chat", "href": "/" },
+      { "label": "The Owners Perspective", "href": "/" },
+      { "label": "Free Tools & Templates", "href": "/" },
+      { "label": "Regional Labor Pricing", "href": "/" },
+      { "label": "Regional Material Pricing", "href": "/" },
+      { "label": "Industry Events", "href": "/" },
+      { "label": "Brand Ambassadors Program", "href": "/" },
+      { "label": "Supply Partner Program", "href": "/" },
+      { "label": "Features Roadmap", "href": "/" },
+      { "label": "Support Center", "href": "/" }
+    ]
+  },
+
+  "pricing": {
+    "links": [
+      { "label": "Contractor+ Blog", "href": "/" },
+      { "label": "Industry Events", "href": "/" },
+      { "label": "Hard Hat Chat", "href": "/" },
+      { "label": "Mindset Monday", "href": "/" },
+      { "label": "Supply Partner Program", "href": "/" },
+      { "label": "The Owners Perspective", "href": "/" },
+      { "label": "Features Roadmap", "href": "/" },
+      { "label": "Free Tools & Templates", "href": "/" },
+      { "label": "Support Center", "href": "/" },
+      { "label": "Regional Labor Pricing", "href": "/" },
+      { "label": "Regional Material Pricing", "href": "/" }
+    ]
+  },
+  "resources": {
+    "imageAlt": "Resources and learning materials for contractors",
+    "links": [
+      {
+        "label": "Contractor+ Blog"
+      },
+      {
+        "label": "Industry Events"
+      },
+      {
+        "label": "Podcasts"
+      },
+      {
+        "label": "Affiliates"
+      },
+      {
+        "label": "Calculators"
+      },
+      {
+        "label": "Supply Partner Program"
+      },
+      {
+        "label": "Free Estimate Maker"
+      },
+      {
+        "label": "Features Roadmap"
+      },
+      {
+        "label": "Material Comparison Search"
+      },
+      {
+        "label": "Support Center"
+      },
+      {
+        "label": "Regional Material Pricing"
+      }
+    ]
+  },
+  "whycontractordesktop": {
+    "seeAllResourse": "See All Resources",
+    "links": [
+      {
+        "label": "Your Day With Contractor+",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Pricing",
+        "description": "Dollars & Bills Here",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Schedule A Demo",
+        "description": "A Free Demo Also If You Wish",
+        "imageAlt": "Resources and learning materials for contractors"
+      },
+      {
+        "label": "Support",
+        "description": "Need Content",
+        "imageAlt": "Resources and learning materials for contractors"
+      }
+    ]
+  },
+
+  "blogs": {
+    "heading": "Some Free Resources For You",
+    "viewAllBlogs": "View All Resources",
+    "featuredBlogAlt": "Featured Blog",
+    "blogList": [
+      {
+        "id": 1,
+        "title": "Contractor+ Blog",
+        "date": "03 Jan 2025",
+        "category": "Contractor",
+        "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "image": "/images/webp/blog-image-1.webp"
+      },
+      {
+        "id": 2,
+        "title": "Podcasts",
+        "date": "03 Jan 2025",
+        "category": "Contractor",
+        "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "image": "/images/webp/blog-image-2.webp"
+      },
+      {
+        "id": 3,
+        "title": "FREE Tools & Templates",
+        "date": "03 Jan 2025",
+        "category": "Contractor",
+        "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on",
+        "image": "/images/webp/blog-image-3.webp",
+        "hasBlurEffect": true
+      }
+    ],
+    "featuredBlog": {
+      "category": "Contractor",
+      "timeAgo": "5 minutes ago",
+      "title": "Discover The Member Benefits Of USA Contracting!",
+      "description": "How do you create compelling presentations that wow your colleagues and impress your managers?",
+      "image": "/images/webp/blog-right-side.webp"
+    }
+  },
+
+  "corefeature": {
+    "heading": "Core Features",
+    "desc": "Discover the powerful tools that make Contractor+ the ultimate solution for your contracting business",
+    "visualization": "visualization",
+    "featureBtn": "See All Features",
+    "features": [
+      "CRM",
+      "Live Scheduling",
+      "Internal job chat",
+      "Estimate Builder",
+      "Property Profiles",
+      "Big Chief AI"
+    ]
+  },
+  "entireBusiness": {
+    "heading": "Everything to run your entire business in one place",
+    "subheading": "Start using Contractor+ free (for real)!",
+    "emailPlaceholder": "Your Email",
+    "noCreditCard": "No Credit Card Required",
+    "createAccount": "Create Free Account"
+  },
+
+  "crmHero": {
+    "heading": "A <highlight>field service CRM</highlight> that runs your business, not just stores contacts",
+    "description": "Built-in phone and SMS. AI receptionist. Property profiles. Full communication history. You no longer need 6 separate tools to do what Contractor+ CRM does in one.",
+    "buttonDesktop": "Create Free Account",
+    "buttonMobile": "Download App",
+    "note": "No Credit Card Required",
+    "altImage": "crm hero",
+    "altGoogle": "google icon",
+    "altApple": "apple icon"
+  }
 }

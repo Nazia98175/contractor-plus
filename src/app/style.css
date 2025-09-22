@@ -1,0 +1,154 @@
+.timing-text-style .split-line {
+  text-align: center;
+}
+
+.bg-gradient-bar {
+  background: linear-gradient(180deg, white, transparent);
+}
+/* Add this to your globals.css or tailwind.css file */
+@keyframes whitePulse {
+  0% {
+    fill: white;
+  }
+  25% {
+    fill: #696a6d;
+  }
+  50% {
+    fill: #424244;
+  }
+  75% {
+    fill: #696a6d;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+.chevron {
+  animation: whitePulse 6s infinite ease-in-out;
+}
+
+.chevron-1 {
+  animation-delay: 0s;
+}
+.chevron-2 {
+  animation-delay: 3s;
+}
+.chevron-3 {
+  animation-delay: 6s;
+}
+.problem-text {
+  background: linear-gradient(91deg, #8a2b32 0%, #fff 107.81%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.problem-gradient-line .line {
+  background: radial-gradient(50% 8050% at 50% 50%, #999 0%, #0c0d11 100%);
+}
+.gradient-line {
+  background: linear-gradient(90deg, #0b902b 7.69%, rgba(11, 144, 43, 0) 100%);
+}
+
+.invester-gradient-text .line {
+  background: linear-gradient(269deg, #fff0f1 6.49%, #6c6c6c 99.48%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.invester-image-gradient {
+  background: linear-gradient(
+    0.59deg,
+    #0c0d11 34.47%,
+    rgba(12, 13, 17, 0) 90.83%
+  );
+}
+
+.video-section-wrapper.scroll-active-2 h3 {
+  color: #fff !important;
+}
+.video-section-wrapper h3 {
+  color: #adb1b5 !important;
+}
+.video-section-wrapper p {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active-2 p {
+  color: #fff !important;
+}
+.video-section-wrapper svg path {
+  fill: #3a3c43;
+  stroke: #3a3c43;
+  transition: all 0.3s ease-in-out;
+}
+.video-section-wrapper.scroll-active-2 svg path {
+  fill: #f21314 !important;
+  stroke: #f21314 !important;
+}
+.video-section-wrapper .icon-span {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(45deg);
+}
+.video-section-wrapper.scroll-active-2 .icon-span {
+  transform: rotate(90deg);
+}
+.proof-working {
+  background: radial-gradient(
+    108.34% 2197.76% at 86.81% 50%,
+    #ee1e25 0%,
+    #bebebe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.proof-working .line {
+  background: radial-gradient(
+    108.34% 2197.76% at 86.81% 50%,
+    #ee1e25 0%,
+    #bebebe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.video-section-wrapper2 h3 {
+  color: #adb1b5;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 h3 {
+  color: #0c0d11 !important;
+}
+.video-section-wrapper2.scroll-active-2 .how-it-work-aff {
+  color: white !important;
+}
+.video-section-wrapper2 p {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 p {
+  color: #656c73 !important;
+}
+.video-section-wrapper2.scroll-active-2 .how-it-work-description {
+  color: white !important;
+}
+.video-section-wrapper2 svg path {
+  fill: #cdcdcd;
+  stroke: #cdcdcd;
+  transition: all 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 svg path {
+  fill: #f21314 !important;
+  stroke: #f21314 !important;
+}
+.video-section-wrapper2 .icon-span {
+  transition: transform 0.3s ease-in-out;
+}
+.video-section-wrapper2.scroll-active-2 .icon-span {
+  transform: rotate(90deg);
+}

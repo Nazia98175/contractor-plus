@@ -1,0 +1,147 @@
+"use client";
+import { ReviewCardProps } from "@/types";
+import Image from "next/image";
+import { PlayIcon, StartIcon } from "../common/Icons";
+import { getInitials } from "../common/ReviewCard";
+import ImageProxy from "../common/ImageProxy";
+
+const VARIANT_CLASSES = {
+  primary: {
+    container: "bg-white",
+    nameText: "text-lightBlack",
+    roleText: "text-wallStreet",
+    reviewText: "text-winterWay",
+    userNameStyle: "text-white",
+    playBg: "text-pleasure group-hover:text-blackRussian bg-white",
+  },
+  secondary: {
+    container: "bg-rgba2 backdrop-blur-md",
+    nameText: "text-white",
+    roleText: "text-decemberSky",
+    reviewText: "text-secondary",
+    userNameStyle: "text-white",
+    playBg: "bg-white text-secondary group-hover:text-pleasure",
+  },
+};
+
+interface Props extends ReviewCardProps {
+  variant?: "primary" | "secondary";
+  apiData?: boolean;
+}
+
+const CrmReviewCard: React.FC<Props> = ({
+  review,
+  openModal,
+  variant = "primary",
+  apiData = true,
+}) => {
+  const styles = VARIANT_CLASSES[variant];
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }).map((_, index) => (
+      <span key={index} className="mt-1 h-5 w-5">
+        <StartIcon filled={index < Math.round(rating)} />
+      </span>
+    ));
+  };
+  const imageBaseUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL_STRAPI as string;
+  return (
+    <article
+      onClick={review.isModal ? openModal : undefined}
+      key={review.id}
+      className={`relative z-20 w-full duration-300 ${styles.container}`}
+    >
+      <div
+        className={`flex gap-3 md:gap-4 ${
+          variant === "primary"
+            ? "flex-row items-center"
+            : "flex-row sm:flex-col"
+        }`}
+      >
+        {apiData ? (
+          <div className="relative w-fit">
+            {review?.profileImg &&
+            typeof review.profileImg === "object" &&
+            "url" in review.profileImg ? (
+              <img
+                src={review.profileImg?.url}
+                alt="User"
+                className="ios-image max-w-[90px] min-w-[90px] rounded"
+              />
+            ) : (
+              <div
+                className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
+              >
+                {getInitials(review.userName ?? "")}
+              </div>
+            )}
+            {review.isModal && (
+              <div
+                className={`absolute -right-2 -bottom-2 z-20 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
+              >
+                <span className="hover:text-romanRed text-lightBlack cursor-pointer">
+                  <PlayIcon />
+                </span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="relative w-fit">
+            {review?.profileImg ? (
+              <img
+                src={`${review.profileImg}`}
+                alt="User"
+                className="ios-image max-w-[90px] min-w-[90px] rounded"
+              />
+            ) : (
+              <div
+                className={`bg-rgba3 flex h-10 max-h-[90px] min-h-[90px] w-10 max-w-[90px] min-w-[90px] items-center justify-center rounded font-medium xl:h-[90px] xl:w-[90px] ${styles.userNameStyle}`}
+              >
+                {getInitials(review.userName ?? "")}
+              </div>
+            )}
+            {review.isModal && (
+              <div
+                className={`absolute -right-2 -bottom-2 z-20 cursor-pointer rounded-full p-[5px] duration-300 ${styles.playBg}`}
+              >
+                <span className="hover:text-romanRed text-lightBlack cursor-pointer">
+                  <PlayIcon />
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="flex w-full flex-col gap-1.5">
+          <div className="flex w-full flex-col flex-wrap justify-between gap-1.5 sm:flex-row sm:flex-nowrap sm:gap-2">
+            <div
+              className={`${variant === "secondary" ? "max-w-[275px] text-left" : "max-w-[182px] text-left"}`}
+            >
+              <h5
+                className={`font-inter truncate text-xl font-medium tracking-[0.1px] text-nowrap lg:text-2xl ${styles.nameText}`}
+              >
+                {review.userName}
+              </h5>
+              <h6
+                className={`font-inter mt-1.5 text-sm leading-[120%] font-medium tracking-[0.1px] sm:mt-2.5 md:text-base ${styles.roleText}`}
+              >
+                {review.userRole}
+              </h6>
+            </div>
+            <div className="flex h-fit items-center gap-1">
+              {renderStars(review.rating)}
+            </div>
+          </div>
+        </div>
+      </div>
+      <p
+        className={`mt-3 text-left text-sm font-medium tracking-[0.1px] md:text-base xl:text-lg ${
+          variant === "primary" ? "p-2" : ""
+        } ${styles.reviewText}`}
+      >
+        {review?.review?.startsWith('"') ? review.review : `"${review.review}"`}
+      </p>
+    </article>
+  );
+};
+
+export default CrmReviewCard;

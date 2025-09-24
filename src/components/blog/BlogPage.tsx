@@ -1,10 +1,22 @@
 "use client";
-import BlogArticle from "@/components/blog/BlogArticle";
-import BlogHero from "@/components/blog/BlogHero";
-import LatestFromContractor from "@/components/blog/LatestFromContractor";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+const LatestFromContractor = dynamic(() => import("./LatestFromContractor"), {
+  ssr: false,
+});
+const BlogArticle = dynamic(() => import("./BlogArticle"), {
+  ssr: false,
+});
 
+const BlogHero = dynamic(() => import("./BlogHero"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex min-h-screen w-full items-center justify-center">
+      <p>Loading...</p>
+    </div>
+  ),
+});
 type Blog = {
   id?: string | number;
   documentId?: string;
@@ -22,7 +34,6 @@ type Blog = {
 
 type BlogPageProps = {
   blogsData: Blog[];
-  blogsFields: any;
   blogsList: any;
   industries: {
     id: number;
@@ -62,12 +73,7 @@ const getBlogCategories = (blog: Blog) => {
   return Array.from(cats);
 };
 
-const BlogPage = ({
-  blogsData,
-  blogsFields,
-  blogsList,
-  industries,
-}: BlogPageProps) => {
+const BlogPage = ({ blogsData, blogsList, industries }: BlogPageProps) => {
   const router = useRouter();
 
   const [searchTerm, setSearchTerm] = useState("");

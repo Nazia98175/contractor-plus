@@ -64,7 +64,8 @@ const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({
           commonData={commonData}
         />
       </div>
-      <div className="bg-white">
+      <div className="relative bg-white">
+        <div className="pointer-events-none absolute top-[-5%] left-1/2 z-10 h-20 w-[110%] -translate-x-1/2 bg-white blur-sm md:blur-[13px]"></div>
         <div ref={plansRef}>
           <Plans onScroll={scrollToTable} pricingPlans={pricingPlans} />
         </div>

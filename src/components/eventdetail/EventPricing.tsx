@@ -85,7 +85,7 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
                   currency: string;
                   price: string;
                 }) => (
-                  <SwiperSlide key={pricing.id}>
+                  <SwiperSlide className="!h-auto" key={pricing.id}>
                     <PricingCard pricing={pricing} />
                   </SwiperSlide>
                 ),

@@ -292,7 +292,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             slug={pageData.slug}
             kindAdorable={pageData.comparison}
           />
-          {useParams.slug === "big-chief-ai" && <CalculateImpact />}
+          {useParams.slug === "ai-call-answering-software" && (
+            <CalculateImpact />
+          )}
           <TeamsUsingContractor
             data={pageData.teamsUsingContractor}
             slug={pageData.slug}

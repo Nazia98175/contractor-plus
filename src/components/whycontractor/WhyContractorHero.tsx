@@ -157,14 +157,14 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
-              <div
+              {/* <div
                 className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
                   isPlaying ? "pointer-events-none opacity-0" : "opacity-100"
                 }`}
                 onClick={handlePlayPause}
-              ></div>
+              ></div> */}
             </div>
-            <div
+            {/* <div
               className={`absolute top-[50px] left-1/2 -translate-x-1/2 group-hover:!opacity-100 sm:top-1/2 sm:-translate-y-1/2 ${
                 isPlaying ? "opacity-0" : ""
               }`}
@@ -176,7 +176,7 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
               >
                 {isPlaying ? <VideoPauseIcon /> : <VideoPlayIcon />}
               </button>
-            </div>
+            </div> */}
             <div className="bg-rgba14 absolute right-0 bottom-0 left-0 p-2 backdrop-blur-[42px]">
               <div className="flex items-center justify-between">
                 <h3 className="font-myriad text-lg font-semibold tracking-normal text-white xl:text-xl">

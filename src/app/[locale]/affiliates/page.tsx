@@ -103,27 +103,27 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
         title={whoPerfect?.title}
         buildCards={whoPerfect?.arrayItems}
       />
-      <PublicEndPoints
-        title={applyJoin?.title || "Apply to join"}
-        description={
-          applyJoin?.desc ||
-          "Have a big audience or unique distribution? Let’s talk campaign co‑funding and rev‑share accelerators."
-        }
-        freeTrialButtonText={applyJoin?.btnText || "Apply to join"}
-        slackLinkHref={applyJoin?.btnUrl || applyJoin?.btnUrl}
-        slack={false}
+      <Faq
+        headingVariant="default"
+        faq={faqs}
+        classNameAnswer="pt-1"
+        mainContainerclassName="px-2 md:pt-[100px] pt-10"
+        TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+        variant="light"
       />
 
       <div className="relative overflow-hidden">
-        <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
-        <Faq
-          headingVariant="default"
-          faq={faqs}
-          classNameAnswer="pt-1"
-          mainContainerclassName="px-2 md:pb-[76px]  md:pb-[83px] pb-10"
-          TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
-          variant="light"
+        <PublicEndPoints
+          title={applyJoin?.title || "Apply to join"}
+          description={
+            applyJoin?.desc ||
+            "Have a big audience or unique distribution? Let’s talk campaign co‑funding and rev‑share accelerators."
+          }
+          freeTrialButtonText={applyJoin?.btnText || "Apply to join"}
+          slackLinkHref={applyJoin?.btnUrl || applyJoin?.btnUrl}
+          slack={false}
         />
+        <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
       </div>
     </main>
   );

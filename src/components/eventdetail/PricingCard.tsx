@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const PricingCard = ({ pricing }: { pricing: any }) => {
   return (
-    <article className="card-shine-2 w-full">
+    <article className="card-shine-2 h-full w-full">
       {pricing?.image && (
         <CardReveal delay={0.4} distance={50}>
           <Image

@@ -6,18 +6,18 @@ const SpeakerCard = ({ member }: { member: any }) => {
   return (
     <>
       <CardReveal delay={0.1} distance={50}>
-        <article className="group relative h-full max-h-[400px] min-h-[400px] w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300 md:max-h-[430px] md:min-h-[430px]">
+        <article className="group relative h-full max-h-[380px] min-h-[380px] w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300 md:max-h-[390px] md:min-h-[390px]">
           {member?.avatar && (
             <Image
               height={500}
               width={500}
-              className="ios-image h-full max-h-[400px] min-h-[400px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:max-h-[430px] md:min-h-[430px]"
+              className="ios-image h-full max-h-[380px] min-h-[380px] w-full object-cover transition-transform duration-300 group-hover:scale-105 md:max-h-[390px] md:min-h-[390px]"
               src={member.avatar.url}
               alt={member.name}
             />
           )}
 
-          <div className="bg-rgba14 absolute bottom-0 left-0 z-10 w-full p-3 backdrop-blur-[16px]">
+          <div className="bg-rgba14 absolute bottom-0 left-0 z-10 flex min-h-[115px] w-full flex-col justify-between p-3 backdrop-blur-[16px]">
             <p className="font-sm text-secondary font-semibold">
               {member?.jobTitle ?? ""}
             </p>

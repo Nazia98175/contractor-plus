@@ -3,7 +3,7 @@ import { GreenDollarIcon } from "../common/Icons";
 import Copy from "../common/Copy";
 
 interface Item {
-  subTitle: string;
+  title: string;
   desc?: string;
 }
 
@@ -21,6 +21,8 @@ const WaysYouEarn: React.FC<WaysYouEarnProps> = ({
   title = "Ways you earn",
   sections,
 }) => {
+  console.log(title, sections, "ways you earn");
+
   return (
     <section className="mx-auto mt-[130px] w-full max-w-[1100px] px-2">
       <Copy delay={0.1}>
@@ -33,13 +35,15 @@ const WaysYouEarn: React.FC<WaysYouEarnProps> = ({
           <div className="border-blackCat divide-blackCat no-scrollbar grid grid-cols-3 divide-x rounded-xl border">
             {sections.map((section, i) => (
               <div key={i} className="flex flex-col">
-                <h3 className="text-secondary font-myriad border-blackCat mb-3 border-b px-8 py-5 text-center text-lg font-semibold md:text-xl lg:text-2xl">
+                <h3
+                  className={`${i === 0 ? "mb-3" : ""} font-myriad border-blackCat text-wallStreet border-b px-8 py-5 text-center text-lg font-bold md:text-xl`}
+                >
                   {section.title}
                 </h3>
 
                 <div
                   className={`flex h-full flex-col ${
-                    section.items.length > 1 ? "justify-evenly" : "gap-2.5 px-5"
+                    section.items.length > 1 ? "justify-evenly" : "gap-2.5"
                   }`}
                 >
                   {section.items.map((item, j) => (
@@ -50,7 +54,7 @@ const WaysYouEarn: React.FC<WaysYouEarnProps> = ({
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-white">
-                            {item.subTitle}
+                            {item.title}
                           </p>
                           {item.desc && (
                             <p className="text-ironsideGrey mt-2.5 pb-5 text-sm font-semibold">

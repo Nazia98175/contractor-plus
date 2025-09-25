@@ -7,7 +7,7 @@ interface SponsorCardProps {
   isLastVisible: boolean;
   isLastCard: boolean;
   link: string;
-  invert: any;
+  invert: string;
 }
 
 const SponsorCard = ({
@@ -32,10 +32,10 @@ const SponsorCard = ({
   return (
     <div className={`w-full py-3 sm:py-5 ${borderClasses}`}>
       <Link href={`${link ? link : "#"}`} target="_blank">
-        <div className="aspect-[6/2] w-full">
+        <div className={`aspect-[4/3] w-full`}>
           <img
             className={`ios-image h-full w-full object-contain ${
-              invert?.classname === "invert" ? "invert-custom" : ""
+              invert === "invert" ? "invert-custom" : ""
             }`}
             src={image}
             alt={`sponsor-logo-${index}`}

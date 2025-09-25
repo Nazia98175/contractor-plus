@@ -172,10 +172,10 @@ const WhatNext: React.FC<WhatNextProps> = ({
                     <span
                       className={`absolute ${
                         index === 0
-                          ? "top-[55%] right-[-20%]"
+                          ? "top-[80%] right-[-20%]"
                           : index === 1
-                            ? "top-[55%] right-[-10%]"
-                            : "top-[80%] right-[-14%]"
+                            ? "top-[80%] right-[-10%]"
+                            : "top-[110%] right-[-14%]"
                       }`}
                     >
                       <RoadMapIcon />
@@ -199,7 +199,7 @@ const WhatNext: React.FC<WhatNextProps> = ({
                 {bottomRowItems.map((item, index) => (
                   <div
                     key={index}
-                    className={`relative w-full ${
+                    className={`relative w-full pt-[37px] ${
                       index === 0
                         ? "max-w-[350px]"
                         : index === 1
@@ -208,7 +208,7 @@ const WhatNext: React.FC<WhatNextProps> = ({
                     }`}
                   >
                     <span
-                      className={`absolute -top-[15%] rotate-180 ${
+                      className={`absolute top-[3%] rotate-180 ${
                         index === 0
                           ? "right-[-20%]"
                           : index === 1

@@ -19,6 +19,8 @@ interface DirectoryProps {
 }
 
 const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
+  console.log(item, "item");
+
   return (
     <div className="img-overlay relative mx-auto flex w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
       <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]" />
@@ -35,7 +37,7 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
           height={449}
         />
       )}
-      <div className="absolute inset-0 rounded-lg bg-[#00000060]"></div>
+      <div className="absolute inset-0 rounded-lg bg-[#00000075]"></div>
       <div className="absolute -bottom-[0px] z-30 flex w-full flex-col items-center justify-center">
         {item?.logoUrl && (
           <Image
@@ -47,15 +49,15 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
           />
         )}
 
-        <b className="text-master text-center text-sm font-normal sm:text-base">
+        <b className="text-decemberSky text-center text-sm font-normal sm:text-base">
           {item.label}
           {item.tag && (
-            <span className="text-decemberSky bg-ravenBlackColor ml-2 rounded-3xl px-2 py-1">
+            <span className="bg-ravenBlackColor text-decemberSky ml-2 rounded-3xl px-2 py-1">
               {item.tag}
             </span>
           )}
         </b>
-        <h2 className="event-hero-text-color mt-1 text-center text-2xl leading-[120%] font-extrabold sm:text-3xl lg:text-4xl xl:text-5xl">
+        <h2 className="mt-1 text-center text-2xl leading-[120%] font-extrabold text-white sm:text-3xl lg:text-4xl xl:text-5xl">
           {item.heading}
         </h2>
         <p className="text-decemberSky my-3 text-center text-sm sm:text-base lg:text-lg">

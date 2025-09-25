@@ -173,7 +173,7 @@ const BlogHero = ({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
+  console.log(blogsData);
   return (
     <div
       id="blog-parallax-container"
@@ -231,9 +231,15 @@ const BlogHero = ({
                 >
                   <div className="relative aspect-square w-[60px]">
                     <Image
-                      src={blog?.blogImg?.[0]?.url ?? "/images/placeholder.png"}
+                      src={
+                        blog?.blogImg?.[0]?.formats?.small?.url ??
+                        "/images/placeholder.png"
+                      }
                       fill
                       alt="blog image"
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      fetchPriority="high"
                     />
                   </div>
                   <div className="ml-2 w-full">
@@ -258,30 +264,35 @@ const BlogHero = ({
           src="/images/mountain/mountain-1.png"
           className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full"
           alt=""
+          fetchPriority="high"
         />
         <img
           id="mountain-2"
           src="/images/mountain/mountain-2.png"
           className="absolute bottom-0 left-0 z-[14] h-[23vw] w-full origin-bottom"
           alt=""
+          fetchPriority="high"
         />
         <img
           id="mountain-3"
           src="/images/mountain/mountain-3.png"
           className="absolute bottom-0 left-0 z-[13] h-[28vw] w-full"
           alt=""
+          fetchPriority="high"
         />
         <img
           id="mountain-4"
           src="/images/mountain/mountain-4.png"
           className="absolute bottom-0 left-0 z-[12] h-[40vw] w-full"
           alt=""
+          fetchPriority="high"
         />
         <img
           id="mountain-5"
           src="/images/mountain/mountain-5.png"
           className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
           alt=""
+          fetchPriority="high"
         />
         <div className="absolute bottom-0 z-[11] h-[25vh] w-full bg-white"></div>
       </div>

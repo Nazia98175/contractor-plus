@@ -17,7 +17,7 @@ const WhoThisPerfect: React.FC<WhoThisPerfectProps> = ({
     <section className="mx-auto mt-14 w-full max-w-[1222px] px-2 sm:mt-20 md:mt-[91px]">
       <AdaptiveHeroTitle
         title={title || "Who this is perfect for"}
-        className="text-mana mb-[59px] w-full text-center leading-[140%] font-extrabold"
+        className="text-mana mb-[59px] w-full text-center leading-[140%] font-semibold"
         minFontSize={16}
         maxLines={1}
         maxFontSize={42}

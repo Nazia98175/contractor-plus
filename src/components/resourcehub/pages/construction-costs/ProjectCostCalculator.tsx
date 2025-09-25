@@ -1,6 +1,17 @@
 "use client";
+import { cn } from "@/app/lib/utils";
 import { LOCATIONS } from "@/data/locationsData";
-import { useMetaTags } from "@/hooks/use-meta-tags";
+import { estimaticDataApi } from "@/services/resource/constructionCostService";
+import {
+  fetchProjectDetail,
+  fetchProjects,
+  Project,
+} from "@/services/resource/costCalculatorService";
+import {
+  getUserIp,
+  searchThumbtackBusinesses,
+} from "@/services/resource/thumbtackService";
+import { ProjectDetail } from "@/types/resources/projectDetail";
 import { generateProjectData } from "@/utils/generateProjectData";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -13,22 +24,24 @@ import {
   MapPin,
   ShoppingCart,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import ContractorFAQSection from "../../components/construction-cost/ContractorFAQSection";
+import FAQSection from "../../components/construction-cost/FAQSection";
+import { PopularProjectTypes } from "../../components/construction-cost/PopularProjectTypes";
+import TimelineSection from "../../components/construction-cost/TimelineSection";
+import { LowesMaterialSwap } from "../../components/lowes-swap/LowesMaterialSwap";
+import ThumbTackWidget from "../../components/ThumbTackWidget";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import { Button } from "../../components/ui/button";
-import { Badge } from "../../components/ui/badge";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../components/ui/popover";
+import { Checkbox } from "../../components/ui/checkbox";
 import {
   Command,
   CommandEmpty,
@@ -37,33 +50,19 @@ import {
   CommandItem,
   CommandList,
 } from "../../components/ui/command";
-import { cn } from "@/app/lib/utils";
-import { Checkbox } from "../../components/ui/checkbox";
-import { LowesMaterialSwap } from "../../components/lowes-swap/LowesMaterialSwap";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../../components/ui/popover";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../../components/ui/tooltip";
-import { Label } from "../../components/ui/label";
-import { Input } from "../../components/ui/input";
-import TimelineSection from "../../components/construction-cost/TimelineSection";
-import FAQSection from "../../components/construction-cost/FAQSection";
-import ContractorFAQSection from "../../components/construction-cost/ContractorFAQSection";
-import { PopularProjectTypes } from "../../components/construction-cost/PopularProjectTypes";
-import {
-  fetchProjectDetail,
-  fetchProjects,
-  Project,
-} from "@/services/resource/costCalculatorService";
-import { ProjectDetail } from "@/types/resources/projectDetail";
-import {
-  getUserIp,
-  searchThumbtackBusinesses,
-} from "@/services/resource/thumbtackService";
-import ThumbTackWidget from "../../components/ThumbTackWidget";
-import { estimaticDataApi } from "@/services/resource/constructionCostService";
 
 // Helper function to format currency with commas
 const formatCurrency = (amount: number) => {
@@ -143,22 +142,6 @@ interface ProjectTimeLineData {
   laborUnit: string;
   // Add timeline-related properties if needed
 }
-
-const PROJECT_DATA: Record<string, ProjectData> = {};
-
-// Import all project types from the main construction costs page
-
-// const thumstack = [
-//   {
-
-//   }
-// ]
-
-// Convert to match the format expected by the dropdown (value/label pairs)
-// const PROJECT_TYPES = costCalculatorData.map((project) => ({
-//   value: project.slug,
-//   label: project.projectName,
-// }));
 
 // Configuration from the provided logic
 const DIRECT_MAP: Record<string, string> = {
@@ -253,7 +236,6 @@ const ProjectCostCalculator = ({
 }: {
   params: { projectSlug: string; location: string };
 }) => {
-  console.log(params, "params");
   const { projectSlug, location } = params;
   const router = useRouter();
   const navigate = (url: string) => router.push(url);
@@ -322,10 +304,6 @@ const ProjectCostCalculator = ({
     refetchOnMount: true,
     refetchOnWindowFocus: false,
   });
-
-  // useEffect(() => {
-  //   refetch();
-  // }, [dataLaborRates, zip, category, refetch]);
 
   const [projectData, setProjectData] = useState<ProjectData | null>(null);
   const [inputValue, setInputValue] = useState(0);
@@ -462,19 +440,6 @@ const ProjectCostCalculator = ({
     "National Average";
   const displayLocationName =
     locationName === "National Average" ? "USA" : locationName;
-
-  // Use meta tags at the top level with dynamic values
-  useMetaTags({
-    title: projectData
-      ? `2025 Cost To ${projectData.name} in ${displayLocationName} | Contractor+`
-      : `2025 Construction Costs in ${displayLocationName} | Contractor+`,
-    description: projectData
-      ? `See real costs to ${projectData.name.toLowerCase()} in ${displayLocationName}. Compare labor and material pricing. Built for contractors. Get accurate ballpark pricing.`
-      : `See real construction costs in ${displayLocationName}. Compare labor and material pricing. Built for contractors. Get accurate ballpark pricing.`,
-    keywords: projectData
-      ? `${projectData.name.toLowerCase()}, construction costs, ${displayLocationName}, contractor pricing`
-      : `construction costs, ${displayLocationName}, contractor pricing`,
-  });
 
   if (projectLoader) {
     return (

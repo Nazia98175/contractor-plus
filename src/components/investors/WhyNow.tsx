@@ -287,7 +287,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
               >
                 {section?.title && (
                   <Copy animateOnScroll={false}>
-                    <h3 className="text-center text-xl font-semibold text-white sm:text-2xl lg:text-4xl xl:text-[52px]">
+                    <h3 className="text-mana text-center text-xl leading-[120%] font-semibold sm:text-2xl lg:text-4xl xl:text-[52px]">
                       {section.title}
                     </h3>
                   </Copy>
@@ -304,7 +304,7 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
                   </div>
                 )}
                 <Copy animateOnScroll={false}>
-                  <p className="text-center text-sm font-medium text-gray-300 lg:text-xl">
+                  <p className="text-lightBlackGrey pt-3 text-center text-sm font-medium lg:text-xl">
                     {section.text}
                   </p>
                 </Copy>

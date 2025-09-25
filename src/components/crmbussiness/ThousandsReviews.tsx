@@ -32,7 +32,7 @@ const ThousandsReviews: React.FC<Props> = ({
       <div className="main-container relative z-20 space-y-8 sm:space-y-9 xl:space-y-16">
         <Copy animateOnScroll={false}>
           <h2
-            className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-start sm:max-w-[951px] sm:text-center ${
+            className={`section-heading xs:max-w-[91%] mx-auto max-w-[90%] text-center sm:max-w-[951px] ${
               variant === "secondary" ? "gradient-white" : "crm-gradient"
             }`}
           >

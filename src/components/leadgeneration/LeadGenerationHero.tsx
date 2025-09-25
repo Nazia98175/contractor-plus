@@ -57,8 +57,12 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
         <div className="mx-auto flex w-fit flex-wrap-reverse items-center justify-center gap-4 sm:gap-5 lg:mx-0 lg:w-full lg:justify-start">
           <AppsRating delayApple={0.3} delayGoogle={0.4} />
           <CardReveal distance={50} delay={0.6} className="w-full sm:w-fit">
-            <div className="flex w-full flex-col items-center gap-1.5 px-2 sm:w-fit">
-              <FreeTrialButton text={getStartedFreeBtn} showIcon={true} />
+            <div className="flex w-full flex-col items-center gap-1.5 px-2 pt-5 sm:w-fit">
+              <FreeTrialButton
+                text={getStartedFreeBtn}
+                showIcon={true}
+                className="!flex"
+              />
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
                 text={nccTxt}

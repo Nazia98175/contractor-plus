@@ -44,7 +44,7 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
 
   // 👇 Classes by index
   const slideClasses: string[] = [
-    "max-w-[800px]",
+    "max-w-[1100px]",
     "max-w-[305px]",
     "max-w-[596px]",
     "max-w-[730px] pb-[57px]",

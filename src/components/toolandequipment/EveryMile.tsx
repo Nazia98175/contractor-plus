@@ -5,12 +5,12 @@ import { PlusIconAnimation } from "../common/Icons";
 import { useScrollHighlight } from "@/hooks/useScrollHighlight";
 
 interface SupplierBenefitListProps {
-  cardsData: {
+  list: {
     text: string;
     desc: string;
   }[];
 }
-const EveryMile: React.FC<SupplierBenefitListProps> = ({ cardsData }) => {
+const EveryMile: React.FC<SupplierBenefitListProps> = ({ list }) => {
   const refs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -28,7 +28,7 @@ const EveryMile: React.FC<SupplierBenefitListProps> = ({ cardsData }) => {
   return (
     <>
       <section className="relative flex flex-col gap-20 overflow-hidden pt-[67px] sm:gap-[100px] sm:pt-[94px] md:gap-[154px]">
-        {cardsData.map((item, i) => (
+        {list.map((item, i) => (
           <div
             key={i}
             ref={refs[i]}

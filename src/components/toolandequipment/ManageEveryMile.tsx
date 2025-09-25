@@ -4,15 +4,12 @@ import { useScrollDotAnimation } from "@/hooks/useScrollDotAnimation";
 import EveryMile from "./EveryMile";
 interface SupplierBenefitProps {
   title?: string;
-  cardsData: {
+  list: {
     text: string;
     desc: string;
   }[];
 }
-const ManageEveryMile: React.FC<SupplierBenefitProps> = ({
-  title,
-  cardsData,
-}) => {
+const ManageEveryMile: React.FC<SupplierBenefitProps> = ({ title, list }) => {
   const { sectionRef, dotRef } = useScrollDotAnimation({
     delay: 2.6,
   });
@@ -34,7 +31,7 @@ const ManageEveryMile: React.FC<SupplierBenefitProps> = ({
             ref={dotRef}
             className="from-redPigment to-netherworld absolute top-0 left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br opacity-0 will-change-transform"
           />
-          <EveryMile cardsData={cardsData} />
+          <EveryMile list={list} />
         </div>
       </div>
     </section>

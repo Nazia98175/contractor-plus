@@ -2196,7 +2196,7 @@ body.menu-open .back-to-top {
 }
 
 .animate-spin-reverse {
-  animation: spin-reverse 20s linear infinite;
+  animation: spin-reverse 40s linear infinite;
 }
 .invert-custom {
   filter: invert(80%);

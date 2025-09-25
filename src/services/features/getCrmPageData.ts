@@ -15,6 +15,7 @@ export interface CrmLikePageDataResponse {
   blogsList: any | null;
   blogs?: any | null;
   thousandReviews: any | null;
+  weManageContract: any | null;
   commonData?: any | null;
 }
 
@@ -34,6 +35,7 @@ export const getFeaturesPageData = async (
     faqsRes,
     blogs,
     thousandReviewsRes,
+    weManageContractRes,
     commonData,
   ] = await Promise.all([
     getCrmPage(slug, locale, "&populate=*"),
@@ -71,6 +73,7 @@ export const getFeaturesPageData = async (
       locale,
       "&populate[reviewTrustSection][populate][reviews][populate]=profileImg",
     ),
+    getCrmPage(slug, locale, "&populate[weManageContract][populate][list]=*"),
     getCommonData(locale),
   ]);
 
@@ -89,6 +92,7 @@ export const getFeaturesPageData = async (
     faqs: faqsRes?.data?.[0] || null,
     blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
+    weManageContract: weManageContractRes?.data?.[0] || null,
     commonData: commonData || null,
   };
 };

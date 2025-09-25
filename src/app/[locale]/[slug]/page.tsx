@@ -1,8 +1,6 @@
 import {
-  automatedCardData,
   constructionBookkeepingServices,
   platforms,
-  propertyaddressContractorData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -73,6 +71,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     blogsList,
     thousandReviews,
     weManageContract,
+    comparisonList,
     commonData,
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
 
@@ -103,6 +102,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     createBtn: commonData?.getStartedFreeBtn,
     mobileBtn: commonData?.mobileBtn,
     weManageContract: weManageContract?.weManageContract,
+    comparisonList: comparisonList,
     ncc: commonData?.nccTxt,
   };
 
@@ -162,12 +162,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
               <LikeYouDoContacts
                 trackProperties={pageData.trackProperties || null}
-                slug={useParams.slug}
               />
               <HowContractorWork
                 ncc={pageData.ncc}
-                trackProperties={pageData.trackProperties}
-                slug={useParams.slug}
+                trackProperties={pageData.trackProperties || null}
               />
             </>
           )}
@@ -180,9 +178,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               list={pageData?.weManageContract?.list ?? []}
             />
           )}
-          {useParams.slug === "property-profiles" && (
-            <RunWithContractor kindAdorable={propertyaddressContractorData} />
-          )}
+          {pageData?.comparisonList ? (
+            <RunWithContractor kindAdorable={comparisonList} />
+          ) : null}
           <KindAdorable
             slug={pageData.slug}
             kindAdorable={pageData.comparison}

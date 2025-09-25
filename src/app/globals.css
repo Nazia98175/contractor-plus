@@ -421,6 +421,10 @@ body {
 .how-it-work-icon {
   @apply mt-[18px] flex rotate-45 justify-center duration-300;
 }
+.video-section-wrapper2.scroll-active-2 .icon-span {
+  transform: rotate(45deg) !important;
+}
+
 @keyframes bounce {
   0%,
   100% {
@@ -1959,7 +1963,7 @@ button {
   transition: transform 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active .icon-span {
-  transform: rotate(90deg);
+  transform: rotate(0deg) !important;
 }
 
 .gradient-custom-2 {

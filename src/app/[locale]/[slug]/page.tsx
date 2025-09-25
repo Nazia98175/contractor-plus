@@ -267,8 +267,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               )}
               {useParams.slug !== "mileage-tracking" &&
                 useParams.slug !== "contractor-client-agreemenat" &&
-                useParams.slug !== "tool-inventory-software" &&
-                useParams.slug !== "contractor-financing" && (
+                useParams.slug !== "tool-inventory-software" && (
                   <HowContractorWork
                     ncc={pageData.ncc}
                     trackProperties={pageData.trackProperties}

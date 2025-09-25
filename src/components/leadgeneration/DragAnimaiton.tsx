@@ -67,7 +67,7 @@ const DragAnimation: React.FC<DragAnimation> = ({ title }) => {
 
       <div className="relative h-full overflow-hidden">
         {/* Top & bottom fade edges */}
-        <div className="pointer-events-none absolute top-0 z-20 h-full max-h-[70px] w-full bg-white blur-sm sm:-top-[12%] sm:max-h-[188px] sm:blur-[50px]"></div>
+        <div className="pointer-events-none absolute top-0 z-20 h-full max-h-[70px] w-full bg-white blur-sm sm:-top-[17%] sm:max-h-[188px] sm:blur-[50px]"></div>
         <div className="pointer-events-none absolute bottom-0 z-20 h-full max-h-[70px] w-full bg-white blur-sm sm:-bottom-[4%] sm:max-h-[188px] sm:blur-[50px]"></div>
         <div className="pointer-events-none absolute -top-[20%] bottom-0 left-[-4%] z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>
         <div className="pointer-events-none absolute -top-[20%] right-[-4%] bottom-0 z-20 hidden h-[140%] w-full max-w-[130px] bg-white blur-[50px] lg:block xl:max-w-[188px]"></div>

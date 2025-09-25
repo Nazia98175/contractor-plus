@@ -492,20 +492,6 @@ const ProjectCostCalculator = ({
 
   return (
     <div className="min-h-screen">
-      {/* <Helmet>
-        <meta
-          property="og:image"
-          content={
-            "https://templated-assets.s3.amazonaws.com/render/d2eaecb4-1ed4-4301-9858-49e8eebffbd9.jpg"
-          }
-        />
-        <meta
-          property="og:url"
-          content={`https://1a75660f4314.ngrok-free.app${window.location.pathname}`}
-        />
-        <meta property="og:type" content="website" />
-      </Helmet> */}
-      {/* Header */}
       <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="mb-4 flex items-center gap-2">

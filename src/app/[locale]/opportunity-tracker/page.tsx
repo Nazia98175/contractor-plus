@@ -113,7 +113,6 @@ export default async function OpportunityTracker({
     hero,
   } = await getSolutionPageData("opportunity-tracker", useParams?.locale);
 
-  console.log("frdsxz", trackProperties);
   // const cards = [
   //   {
   //     title: "Lead Captured",

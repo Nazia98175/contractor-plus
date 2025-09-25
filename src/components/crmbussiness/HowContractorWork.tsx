@@ -24,7 +24,7 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties, slug }) => {
   if (!trackProperties?.featuresList?.[0]) return null;
   return (
     <>
-      {slug !== "property-profiles" && (
+      {slug !== "property-profiles" && slug !== "contractor-financing" && (
         <section className="relative z-20 mx-auto flex w-full max-w-[1064px] flex-col items-center justify-between gap-5 px-2 pt-7 leading-0 sm:py-14 md:flex-row md:gap-10 lg:pt-[48px] lg:pb-[54px]">
           {/* Left: Image */}
           <div className="flex w-full max-w-[480px] items-center justify-center">

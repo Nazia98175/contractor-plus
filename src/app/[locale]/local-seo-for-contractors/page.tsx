@@ -126,7 +126,7 @@ export default async function LeadGeneration({ params }: Params) {
           reviews={thousandReviews?.reviews}
           variant="primary"
         />
-        <div className="px-2">
+        <div className="mx-auto max-w-[780px] px-2">
           <CommonFormField
             className="pt-12 sm:pt-16"
             variantBtn="light"

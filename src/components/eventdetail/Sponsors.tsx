@@ -100,6 +100,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
                       id: number;
                       name: string;
                       url: string;
+                      classname: string;
                       image: { url: string };
                     },
                     index: number,
@@ -112,6 +113,7 @@ const Sponsors = ({ eventDetail, eventList }: any) => {
                         isFirstVisible={index === firstVisible}
                         isLastVisible={index === lastVisible}
                         isLastCard={index === sponsorLogo.length - 1}
+                        invert={member?.classname}
                       />
                     </SwiperSlide>
                   ),

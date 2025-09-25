@@ -20,7 +20,7 @@ import account_manager from "../../../public/lotties/ai-account-manager.json";
 import ranking_heatmaps from "../../../public/lotties/ranking-heatmaps.json";
 interface SliderItem {
   text?: string;
-  description?: string;
+  desc?: string;
   lottieJson?: any;
   image?: string;
 }
@@ -33,6 +33,8 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
   const [topSwiper, setTopSwiper] = useState<any>(null);
   const [bottomSwiper, setBottomSwiper] = useState<any>(null);
 
+  console.log(solutionsList, "slider");
+
   useEffect(() => {
     if (topSwiper && bottomSwiper) {
       topSwiper.controller.control = bottomSwiper;
@@ -42,7 +44,7 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
 
   // 👇 Classes by index
   const slideClasses: string[] = [
-    "max-w-[800px]",
+    "max-w-[1100px]",
     "max-w-[305px]",
     "max-w-[596px]",
     "max-w-[730px] pb-[57px]",
@@ -74,20 +76,31 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
         {solutionsList?.map((item, i) => (
           <SwiperSlide
             key={i}
-            className="!flex !h-auto flex-col items-center justify-center"
+            className="relative !flex !h-auto flex-col items-center justify-center"
           >
+            {item.image && (
+              <div className="absolute top-[-20%] z-10 h-[30%] w-full bg-white blur-[20px]"></div>
+            )}
+
+            {item.image && (
+              <Image
+                src={"/images/webp/sync-weather.webp"}
+                alt="bg"
+                width={1920}
+                height={1200}
+                className="absolute top-0 left-0 h-full w-full object-fill"
+              />
+            )}
             <div className={`mx-auto w-full ${slideClasses[i] || ""} relative`}>
-              <div className="pointer-events-none absolute top-[-13%] left-[-10%] z-50 h-[30%] w-[120%] bg-white blur-[20px]"></div>
-              <div className="pointer-events-none absolute top-0 right-[-10%] z-50 h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
-              <div className="pointer-events-none absolute top-0 left-[-10%] z-50 h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
-              {item.image && (
-                <Image
-                  src={item.image}
-                  alt="bg"
-                  width={1920}
-                  height={1200}
-                  className="absolute top-0 left-0 h-full w-full object-fill"
-                />
+              {i === 3 && (
+                <>
+                  <div className="pointer-events-none absolute top-[-13%] left-[-10%] z-50 h-[30%] w-[120%] bg-white blur-[20px]"></div>
+                  <div className="pointer-events-none absolute top-0 right-[-10%] z-50 h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
+                  <div className="pointer-events-none absolute top-0 left-[-10%] z-50 h-full w-full max-w-[20%] bg-white blur-[20px]"></div>
+                </>
+              )}
+              {i === 11 && (
+                <div className="absolute right-[0px] bottom-[-5%] z-50 h-[20%] w-full bg-white blur-[4px]"></div>
               )}
               <LottieAnimation
                 className="mx-auto h-full w-full"
@@ -132,19 +145,21 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
                 {item.text}
               </b>
               <p className="text-secondary mt-3 text-sm font-medium">
-                {item.description}
+                {item.desc}
               </p>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Nav + Pagination */}
+        {/* Navigation + Pagination */}
         <div className="relative mx-auto flex w-fit items-center justify-between gap-3">
-          <div className="swiper-button-prev h-6 w-6 after:hidden">
+          <div className="swiper-button-prev !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 after:hidden">
             <Slidericon />
           </div>
-          <div className="swiper-pagination-real-time flex items-center gap-1" />
-          <div className="swiper-button-next h-6 w-6 rotate-180 after:hidden">
+
+          <div className="swiper-pagination-real-time relative left-0 flex translate-x-0 items-center justify-center gap-1" />
+
+          <div className="swiper-button-next !relative !right-0 !bottom-0 !left-0 !m-0 h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6 rotate-180 after:hidden">
             <Slidericon />
           </div>
         </div>

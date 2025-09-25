@@ -8,10 +8,11 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
-import { RedClipIcon } from "../common/Icons";
+import { EditToolsIcon, RedClipIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import LottieAnimation from "../homepage/LottieAnimation";
 import useGsapFadeIn from "@/hooks/useGsapFadeIn";
+import Button from "../common/Button";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
 // import AnimatedShape from "./AnimatedShape";
@@ -133,13 +134,22 @@ const CommonHero: React.FC<TheHeroProps> = ({
           </div>
 
           <div className="flex w-full flex-wrap-reverse items-center justify-center gap-4 sm:gap-5">
-            {slug === "construction-bookkeeping-services" ? (
+            {slug === "construction-bookkeeping-services" ||
+            slug === "ai-call-answering-software" ? (
               <div className="relative z-[90] flex flex-col items-center justify-center">
-                <FreeTrialButton
-                  showIcon={true}
-                  className="!flex"
-                  text={"Get a bookkeeping quote"}
-                />
+                {slug === "construction-bookkeeping-services" && (
+                  <FreeTrialButton
+                    showIcon={true}
+                    className="!flex"
+                    text={"Get a bookkeeping quote"}
+                  />
+                )}
+                {slug === "ai-call-answering-software" && (
+                  <Button className="flex w-full max-w-[290px] items-center justify-center gap-3">
+                    Available at Contractor+
+                    <EditToolsIcon />
+                  </Button>
+                )}
               </div>
             ) : (
               <>
@@ -170,8 +180,24 @@ const CommonHero: React.FC<TheHeroProps> = ({
             )}
           </div>
         </div>
+
         {hero?.isLottieView ? (
-          <CardReveal distance={50} delay={0.9}>
+          <CardReveal
+            distance={50}
+            delay={0.9}
+            className={`relative px-2 ${slug === "ai-call-answering-software" ? "overflow-hidden sm:h-[400px]" : ""}`}
+          >
+            {slug === "ai-call-answering-software" && (
+              <>
+                <img
+                  className={`animate-spin-reverse absolute top-0 left-1/2 h-full max-h-[350px] min-h-[350px] w-full max-w-[350px] min-w-[350px] -translate-x-1/2 transform sm:max-h-[650px] sm:min-h-[650px] sm:max-w-[650px] sm:min-w-[650px]`}
+                  src={"/images/webp/big-chief-ai-leaf-bg.webp"}
+                  alt="crm-hero"
+                />
+                <div className="bg-kuroiBlack absolute bottom-[-56px] left-0 z-40 h-[200px] w-full blur-[30px]"></div>
+              </>
+            )}
+
             <div className="relative mt-12 mb-16 overflow-hidden sm:mt-16 sm:mb-20 md:mt-20 md:mb-[100px] lg:mt-[127px] lg:mb-[140px]">
               <>
                 <LottieAnimation
@@ -186,7 +212,9 @@ const CommonHero: React.FC<TheHeroProps> = ({
         ) : (
           <>
             <CardReveal distance={50} delay={0.9}>
-              <div className="relative mx-auto w-fit overflow-hidden px-5 pt-5">
+              <div
+                className={`${slug === "contractor-financing" ? "md:pb-10" : ""} relative mx-auto w-fit overflow-hidden px-5 pt-5`}
+              >
                 <div className="relative overflow-hidden">
                   <div
                     className={`${hero?.border ? "border-silverMedal rounded-t-[25px] border-4 p-1 md:rounded-[55px] md:p-4" : ""} z-30 mx-auto mt-9 block overflow-hidden max-w-[${hero?.imageMaxWidth || "900"}px] `}

@@ -1,15 +1,12 @@
 import BlogPage from "@/components/blog/BlogPage";
-import {
-  getAllBlogs,
-  getBlogsDetails,
-  getBlogsList,
-} from "@/services/blog/getBlogData";
+import { getAllBlogs, getBlogsList } from "@/services/blog/getBlogData";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getAllIndustries } from "@/services/industries/getIndustryPageData";
-import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const revalidate = 60;
 export async function generateMetadata({
   params,
 }: {
@@ -17,18 +14,19 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `blog-list?locale=${resolvedParams.locale}&populate=*`,
+    `blog-list?locale=${resolvedParams.locale}&populate=SeoMetaData`,
   );
 
   if (!page) notFound();
 
-  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
 }
+
 const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = await params;
-  const [blogsData, blogsFields, blogsList, industries] = await Promise.all([
+
+  const [blogsData, blogsList, industries] = await Promise.all([
     getAllBlogs(locale),
-    getBlogsDetails(locale),
     getBlogsList(locale),
     getAllIndustries(locale),
   ]);
@@ -36,7 +34,6 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
   return (
     <BlogPage
       blogsData={blogsData}
-      blogsFields={blogsFields}
       blogsList={blogsList}
       industries={industries}
     />

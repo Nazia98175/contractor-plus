@@ -1,9 +1,8 @@
 import axiosInstance from "@/lib/axios";
 import { PodcastData, PodcastDataResponse } from "@/types";
 import axios from "axios";
-import Parser from "rss-parser";
 import { parseStringPromise } from "xml2js";
-const parser = new Parser();
+
 export const getPodcastData = async (
   locale: string,
 ): Promise<PodcastData | null> => {
@@ -35,12 +34,6 @@ export const getPodcastTransistorData =
       return null;
     }
   };
-
-export async function getRSSFeed(url: string) {
-  const feed = await parser.parseURL(url);
-  console.log(feed, "feed");
-  return feed.items || [];
-}
 
 export async function getHardHatFeeds(locale?: string) {
   if (locale === "es") {
@@ -80,24 +73,6 @@ export async function getHardHatFeeds(locale?: string) {
     }));
     return updatedVideos || [];
   }
-}
-
-export async function getYouTubeFilteredFeed() {
-  const videos = await getRSSFeed(
-    "https://www.youtube.com/feeds/videos.xml?channel_id=UC4KeHlORpKFJCk0Nhi_lnzg",
-  );
-
-  const mindsetMonday = videos.filter(
-    (v) =>
-      v.title?.includes("Mindset Monday") ||
-      new Date(v.pubDate || "").getUTCDay() === 1,
-  );
-
-  const ownersPerspective = videos.filter((v) =>
-    v.title?.includes("The Owners Perspective"),
-  );
-
-  return { mindsetMonday, ownersPerspective };
 }
 
 export async function fetchYouTubeFeed() {

@@ -32,7 +32,7 @@ const TeamList: React.FC<TeamListProps> = ({ teamData }) => {
               {teamData.map((team, index) => (
                 <th
                   key={index}
-                  className={`font-myriad p-2.5 text-center md:p-[22px] ${
+                  className={`font-myriad p-2.5 text-center md:p-[20px] ${
                     index === 0
                       ? "font-semibold text-white"
                       : "text-wallStreet font-bold"
@@ -61,7 +61,7 @@ const TeamList: React.FC<TeamListProps> = ({ teamData }) => {
                       className="border-winterWay h-full border-[0.2px]"
                     >
                       {item ? (
-                        <div className="h-full px-[22px] py-3 md:min-h-[80px]">
+                        <div className="h-full px-[22px] py-3">
                           <h3 className="text-decemberSky flex items-center justify-center gap-1 text-center text-base font-semibold">
                             {item.title && (
                               <>
@@ -76,7 +76,7 @@ const TeamList: React.FC<TeamListProps> = ({ teamData }) => {
                               </>
                             )}
                           </h3>
-                          <div className="mt-1 flex items-center gap-1 text-center">
+                          <div className="mt-[1px] flex items-center gap-1 text-center">
                             {item.desc && (
                               <h3 className="text-wallStreet w-full text-center text-xs font-medium">
                                 {item.desc}
@@ -98,7 +98,7 @@ const TeamList: React.FC<TeamListProps> = ({ teamData }) => {
                         </div>
                       ) : (
                         // Empty cell with same height
-                        <div className="h-full min-h-[20px] px-[22px] py-3" />
+                        <div className="h-full px-[22px] py-3" />
                       )}
                     </td>
                   );

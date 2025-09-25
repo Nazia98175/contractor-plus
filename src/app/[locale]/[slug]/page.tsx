@@ -187,7 +187,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             slug={pageData.slug}
             kindAdorable={pageData.comparison}
           />
-          {useParams.slug === "big-chief-ai" && <CalculateImpact />}
+          {useParams.slug === "ai-call-answering-software" && (
+            <CalculateImpact />
+          )}
           <TeamsUsingContractor
             data={pageData.teamsUsingContractor}
             slug={pageData.slug}
@@ -205,7 +207,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             <Image
               width={800}
               height={1000}
-              // sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
               className="absolute top-[10px] left-0 z-10 hidden max-h-[800px] w-full max-w-[800px] object-center sm:block"
               src={"/images/webp/hero-red-line.webp"}
               alt="hero-red-line"

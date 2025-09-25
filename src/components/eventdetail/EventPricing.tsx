@@ -68,8 +68,8 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
                 spaceBetween: 20,
               },
               1024: {
-                slidesPerView: 3,
-                spaceBetween: 32,
+                slidesPerView: 4,
+                spaceBetween: 28,
               },
             }}
           >
@@ -85,7 +85,7 @@ const EventPricing = ({ eventDetail, eventList }: any) => {
                   currency: string;
                   price: string;
                 }) => (
-                  <SwiperSlide key={pricing.id}>
+                  <SwiperSlide className="!h-auto" key={pricing.id}>
                     <PricingCard pricing={pricing} />
                   </SwiperSlide>
                 ),

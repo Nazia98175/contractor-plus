@@ -65,37 +65,6 @@ import {
   PopoverTrigger,
 } from "../components/ui/popover";
 
-// const CATEGORIES = [
-//   { id: "all", name: "All", icon: Home },
-//   { id: "appliances", name: "Appliances", icon: ChefHat },
-//   { id: "cabinets", name: "Cabinets", icon: Grid2X2 },
-//   { id: "ceiling", name: "Ceiling", icon: Layers },
-//   { id: "cleaning", name: "Cleaning", icon: Sparkles },
-//   { id: "concrete", name: "Concrete", icon: Building2 },
-//   { id: "countertops", name: "Countertops", icon: ShoppingCart },
-//   { id: "demolition", name: "Demolition", icon: Pickaxe },
-//   { id: "doors", name: "Doors", icon: DoorOpen },
-//   { id: "drywall", name: "Drywall", icon: FileText },
-//   { id: "electrical", name: "Electrical", icon: Zap },
-//   { id: "excavation", name: "Excavation", icon: Shovel },
-//   { id: "flooring", name: "Flooring", icon: Square },
-//   { id: "framing", name: "Framing", icon: Building },
-//   { id: "hvac", name: "HVAC", icon: AirVent },
-//   { id: "insulation", name: "Insulation", icon: ShieldCheck },
-//   { id: "landscaping", name: "Landscaping", icon: Trees },
-//   { id: "masonry", name: "Masonry", icon: Hammer },
-//   { id: "other", name: "Other", icon: Settings },
-//   { id: "painting", name: "Painting", icon: Paintbrush },
-//   { id: "plumbing", name: "Plumbing", icon: PipeWrench },
-//   { id: "roofing", name: "Roofing", icon: Home },
-//   { id: "siding", name: "Siding", icon: Fence },
-//   { id: "specialties", name: "Specialties", icon: Flower2 },
-//   { id: "tile", name: "Tile", icon: Grid2X2 },
-//   { id: "trim", name: "Trim", icon: Ruler },
-//   { id: "windows", name: "Windows", icon: RectangleHorizontal },
-//   { id: "handyman", name: "Handyman", icon: RectangleHorizontal },
-// ];
-
 const CATEGORIES = [
   { id: "all", name: "All", icon: Home },
   { id: "appliances", name: "Appliances", icon: ChefHat },
@@ -186,30 +155,6 @@ const ConstructionCosts = () => {
     keywords:
       "construction costs, project estimator, contractor pricing, building costs, home improvement costs, construction calculator",
   });
-
-  // const filteredProjects = costCalculatorData.filter((project) => {
-  //   const matchesCategory =
-  //     selectedCategory === "all" ||
-  //     project?.estimate?.category === selectedCategory;
-  //   const matchesSearch =
-  //     searchTerm === "" ||
-  //     project.projectName.toLowerCase().includes(searchTerm.toLowerCase());
-  //   return matchesCategory && matchesSearch;
-  // });
-
-  // const filteredProjects = costCalculatorData.filter((project) => {
-  //   const allowedCategories = getDataCategoriesForFilter(selectedCategory);
-
-  //   const matchesCategory =
-  //     selectedCategory === "all" ||
-  //     allowedCategories.includes(project.estimateCategory);
-
-  //   const matchesSearch =
-  //     searchTerm === "" ||
-  //     project.projectName.toLowerCase().includes(searchTerm.toLowerCase());
-
-  //   return matchesCategory && matchesSearch;
-  // });
 
   const handleSearch = () => {
     if (selectedProject) {

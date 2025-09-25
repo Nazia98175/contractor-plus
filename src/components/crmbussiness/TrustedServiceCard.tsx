@@ -3,6 +3,7 @@ import { VARIANT_CLASSES } from "@/utils/getVariants";
 import React from "react";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import { getInitials } from "../common/ReviewCard";
+import Image from "next/image";
 
 interface ReviewCardProps {
   review: Review;
@@ -41,10 +42,12 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
                 {review?.profileImg &&
                 typeof review.profileImg === "object" &&
                 "url" in review.profileImg ? (
-                  <img
+                  <Image
+                    width={42}
+                    height={42}
                     src={review.profileImg?.url}
                     alt="avatar"
-                    className="h-fit max-w-[42px] rounded-full object-contain"
+                    className="h-fit max-w-[42px] !rounded-full object-contain"
                   />
                 ) : (
                   <div className="bg-rgba3 flex h-10 w-10 items-center justify-center rounded-full font-medium text-white">
@@ -55,7 +58,9 @@ const TrustedServiceCard: React.FC<ReviewCardProps> = ({
             ) : (
               <div>
                 {review?.profileImg ? (
-                  <img
+                  <Image
+                    width={42}
+                    height={42}
                     src={`${review.profileImg}`}
                     alt="avatar"
                     className="h-fit max-w-[42px] rounded-full object-contain"

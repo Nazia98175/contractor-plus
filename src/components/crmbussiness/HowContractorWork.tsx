@@ -21,6 +21,7 @@ interface Props {
   slug?: string;
 }
 const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties, slug }) => {
+  if (!trackProperties?.featuresList?.[0]) return null;
   return (
     <>
       {slug !== "property-profiles" && slug !== "contractor-financing" && (

@@ -66,10 +66,10 @@ const CombinesPowerfulAiSlider = ({ solutionsList }: Props) => {
         centeredSlides
         modules={[Controller, Autoplay]}
         speed={600}
-        // autoplay={{
-        //   delay: 6000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false,
+        }}
         onSwiper={setTopSwiper}
         slidesPerView={1}
       >

@@ -234,10 +234,10 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               </button>
             </div>
             <div className="hidden gap-3 py-1 sm:flex sm:py-0">
-              <Link href="https://x.com/">
+              <Link href="https://x.com/cplusapp">
                 <TwitterIcon />
               </Link>
-              <Link href="https://www.linkedin.com">
+              <Link href="https://www.linkedin.com/company/contractorplus">
                 <LinkdinIcon />
               </Link>
             </div>
@@ -248,10 +248,10 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             © {currentYear} {footer?.copyrightTxt}
           </p>
           <div className="flex gap-3 py-1 sm:hidden sm:py-0">
-            <Link href="https://x.com/">
+            <Link href="https://x.com/cplusapp">
               <TwitterIcon />
             </Link>
-            <Link href="https://www.linkedin.com/">
+            <Link href="https://www.linkedin.com/company/contractorplus">
               <LinkdinIcon />
             </Link>
           </div>

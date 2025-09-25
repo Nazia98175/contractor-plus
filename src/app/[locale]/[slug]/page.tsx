@@ -226,12 +226,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               variantBtn="light"
             />
           </div>
-
           <TrustBar
             platforms={platforms}
             className="mx-auto w-full max-w-[889px]"
           />
-
           <Faq
             faq={pageData.faq}
             classNameAnswer="pt-1"

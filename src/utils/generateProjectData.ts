@@ -36,7 +36,9 @@ export const generateProjectData = (
   if (!projectValues || !projectValues.estimate) return null;
 
   const name = slug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
-
+  const locationFormatted = location
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase());
   const estimateKey = Object.keys(projectValues.estimate)[0];
   const estimate = projectValues.estimate[estimateKey];
 
@@ -45,8 +47,8 @@ export const generateProjectData = (
   return {
     name,
     slug,
-    metaTitle: `Cost to ${name} in ${location} in 2025 | Contractor+`,
-    metaDescription: `See real costs to ${name.toLowerCase()} in ${location}. Compare labor and material pricing. Built for contractors. One click cost estimates with local pricing. Get a free quote.`,
+    metaTitle: `Cost to ${name} in ${locationFormatted} in 2025 | Contractor+`,
+    metaDescription: `See real costs to ${name.toLowerCase()} in ${locationFormatted}. Compare labor and material pricing. Built for contractors. One click cost estimates with local pricing. Get a free quote.`,
     materials: estimate.materials,
     laborRate: 0,
     laborHours: estimate.laborHours,

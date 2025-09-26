@@ -69,6 +69,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     teamsUsingContractor,
     faqs,
     blogsList,
+    blogsByCategory,
     thousandReviews,
     weManageContract,
     comparisonList,
@@ -99,6 +100,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     faq: faqs?.faqs,
     blogsList,
     blogs: page?.blogs,
+    blogsByCategory,
     createBtn: commonData?.getStartedFreeBtn,
     mobileBtn: commonData?.mobileBtn,
     weManageContract: weManageContract?.weManageContract,
@@ -236,7 +238,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           />
         </div>
         <BlogPosts
-          data={pageData.blogsList || []}
+          data={pageData.blogsByCategory || []}
           blogs={pageData.blogs}
           className="mt-7 mb-20 md:mt-9"
           classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"

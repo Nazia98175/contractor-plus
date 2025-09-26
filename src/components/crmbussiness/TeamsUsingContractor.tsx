@@ -52,7 +52,7 @@ const TeamsUsingContractor: React.FC<Props> = ({ data, slug }) => {
         </h2>
       </Copy>
 
-      <Copy animateOnScroll={true} delay={0.2}>
+      <Copy animateOnScroll={true} delay={0.3}>
         <p className="paragraph-style text-center">{data?.subTitle}</p>
       </Copy>
 

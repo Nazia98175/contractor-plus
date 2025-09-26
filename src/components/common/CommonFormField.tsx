@@ -87,13 +87,13 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">
-        {/* <Copy delay={0.2}> */}
-        <p
-          className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
-        >
-          {subTitle}
-        </p>
-        {/* </Copy> */}
+        <Copy delay={0.2}>
+          <p
+            className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
+          >
+            {subTitle}
+          </p>
+        </Copy>
         <CardReveal distance={50}>
           {/* Desktop Form - Hidden on Mobile */}
           <form

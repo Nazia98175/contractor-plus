@@ -33,7 +33,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
 }) => {
   return (
     <section className="main-container flex flex-col items-center justify-between gap-8 pt-20 sm:pt-[100px] md:pt-[140px] lg:flex-row lg:gap-4 lg:pt-[164px]">
-      <div className="w-full max-w-[650px] xl:max-w-[732px]">
+      <div className="w-full max-w-[650px] xl:max-w-[725px]">
         <CardReveal distance={30} delay={0.1}>
           <div className="hidden items-center justify-center pb-1 md:flex lg:justify-start">
             <span className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">

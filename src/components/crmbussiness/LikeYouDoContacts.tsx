@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckIcon } from "../common/Icons";
 import Copy from "../common/Copy";
+import CardReveal from "../common/CardReveal";
 
 interface Props {
   trackProperties?: any;
@@ -23,24 +24,26 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
         <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
           {trackProperties?.featuresList?.[0]?.content?.map(
             (feature: any, index: number) => (
-              <div key={index}>
-                <li
-                  key={index}
-                  className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
-                >
-                  <CheckIcon
-                    className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
-                    width={25}
-                    height={25}
-                  />
-                  <span>{feature?.title}</span>
-                </li>
-                {feature?.desc && (
-                  <p className="font-semibild text-wallStreet mt-2.5 text-sm leading-[100%] md:text-lg lg:text-base">
-                    {feature?.desc}
-                  </p>
-                )}
-              </div>
+              <CardReveal delay={0.2 + index * 0.1} distance={20} key={index}>
+                <div key={index}>
+                  <li
+                    key={index}
+                    className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
+                  >
+                    <CheckIcon
+                      className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
+                      width={25}
+                      height={25}
+                    />
+                    <span>{feature?.title}</span>
+                  </li>
+                  {feature?.desc && (
+                    <p className="font-semibild text-wallStreet mt-2.5 text-sm leading-[100%] md:text-lg lg:text-base">
+                      {feature?.desc}
+                    </p>
+                  )}
+                </div>
+              </CardReveal>
             ),
           )}
         </ul>

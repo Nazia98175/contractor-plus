@@ -5,6 +5,7 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import { CheckIcon } from "../common/Icons";
+import CardReveal from "../common/CardReveal";
 interface Content {
   title: string;
 }
@@ -36,17 +37,19 @@ const AutmateDoContacts: React.FC<Props> = ({ ncc, trackProperties }) => {
           <ul className="space-y-[14px] sm:space-y-3 lg:space-y-5">
             {trackProperties?.featuresList?.[0]?.content?.map(
               (feature: any, index: number) => (
-                <li
-                  key={index}
-                  className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
-                >
-                  <CheckIcon
-                    className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
-                    width={25}
-                    height={25}
-                  />
-                  <span>{feature?.title}</span>
-                </li>
+                <CardReveal delay={0.2 + index * 0.1} distance={20} key={index}>
+                  <li
+                    key={index}
+                    className="text-lightBlack flex gap-2.5 text-xs font-medium sm:items-start sm:px-2 sm:text-sm sm:font-semibold md:px-3 md:py-2.5 md:text-base xl:text-lg"
+                  >
+                    <CheckIcon
+                      className="mt-0.5 h-full w-full max-w-4 min-w-4 md:max-w-6 md:min-w-5"
+                      width={25}
+                      height={25}
+                    />
+                    <span>{feature?.title}</span>
+                  </li>
+                </CardReveal>
               ),
             )}
           </ul>

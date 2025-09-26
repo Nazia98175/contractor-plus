@@ -5,9 +5,12 @@ import CardReveal from "../common/CardReveal";
 
 interface Props {
   trackProperties?: any;
+  slug: string;
 }
 
-const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
+const LikeYouDoContacts: React.FC<Props> = ({ trackProperties, slug }) => {
+  console.log(trackProperties, "trackPropertiestrackProperties");
+
   if (!trackProperties?.featuresList?.[0]?.content?.length) return null;
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-0">
@@ -47,6 +50,14 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties }) => {
             ),
           )}
         </ul>
+        <Copy animateOnScroll={true} delay={0.4}>
+          {slug === "contractor-financing" && (
+            <p className="font-semibild text-wallStreet mt-1 text-sm leading-[100%] md:text-lg lg:text-base">
+              With Contractor+, every asset has a clear chain of custody—so you
+              keep more of what you buy.
+            </p>
+          )}
+        </Copy>
       </div>
 
       <div className="flex w-full items-center justify-center md:max-w-[480px]">

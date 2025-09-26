@@ -30,6 +30,8 @@ import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileVie
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
 import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
+import FreeTrialButton from "@/components/common/FreeTrialButton";
+import CardRequiredButton from "@/components/common/CardRequiredButton";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -164,11 +166,24 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
 
               <LikeYouDoContacts
                 trackProperties={pageData.trackProperties || null}
+                slug={useParams.slug}
               />
               <HowContractorWork
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties || null}
               />
+              {useParams.slug === "contractor-financing" && (
+                <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
+                  <FreeTrialButton
+                    className="gap-1.5"
+                    text={trackProperties?.btnText}
+                  />
+                  <CardRequiredButton
+                    className="text-wallStreet"
+                    text={pageData.ncc}
+                  />
+                </div>
+              )}
             </>
           )}
           {pageData?.weManageContract?.isShowSection && (

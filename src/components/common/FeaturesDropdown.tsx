@@ -76,7 +76,6 @@ const FeaturesDropdown: React.FC<Props> = ({
   if (!isVisible) {
     return null;
   }
-  console.log("headerSubList in FeaturesDropdown:", headerSubList);
 
   return (
     <div className="flex grow flex-col overflow-hidden">
@@ -115,9 +114,11 @@ const FeaturesDropdown: React.FC<Props> = ({
                         </span>
                         <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">
                           {featureId?.linkTxt}
-                          {featureId?.new && (
-                            <div className="border-dancingJewel bg-softMint font-myriad text-dancingJewel flex h-5 items-center justify-center rounded-full border px-2 text-xs font-semibold tracking-[0.4px]">
-                              {"New"}
+                          {featureId?.newText && (
+                            <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">
+                              <div className="border-dancingJewel bg-softMint font-myriad text-dancingJewel flex h-5 items-center justify-center rounded-full border px-2 text-xs font-semibold tracking-[0.4px]">
+                                {featureId?.newText}
+                              </div>
                             </div>
                           )}
                         </div>

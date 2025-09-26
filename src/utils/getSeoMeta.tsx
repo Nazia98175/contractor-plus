@@ -117,16 +117,23 @@ export const generateSeoMetaData = ({
     page?.SeoData?.keywords ||
     "";
 
-  const canonical =
-    `${baseUrl}${page?.seoData?.canonicalUrl}` ||
-    `${baseUrl}${page?.SeoMetaData?.canonicalUrl}` ||
-    `${baseUrl}${page?.SeoData?.canonicalUrl}` ||
-    `${baseUrl}/${slug || ""}`;
+  const openGraph = page?.seoData?.ogImage
+    ? {
+        images: [
+          {
+            url: page?.seoData?.ogImage?.url,
+          },
+        ],
+      }
+    : undefined;
+
+  const canonical = `${baseUrl}${page?.seoData?.canonicalUrl || page?.SeoMetaData?.canonicalUrl || page?.SeoData?.canonicalUrl || `/${slug}`}`;
 
   return {
     title,
     description,
     keywords,
+    openGraph,
     alternates: {
       canonical,
     },

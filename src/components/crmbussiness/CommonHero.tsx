@@ -153,7 +153,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
               </div>
             ) : (
               <>
-                <AppsRating />
+                <AppsRating className2="!mt-0" className="!mt-0" />
                 <CardReveal
                   distance={50}
                   delay={0.8}

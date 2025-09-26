@@ -1,4 +1,4 @@
-import { getBlogs } from "@/services/blogs";
+import { getBlogs, getBlogsByCategory } from "@/services/blogs";
 import { getCrmPage } from "./crm";
 import { getCommonData } from "../common/commonData";
 
@@ -18,6 +18,7 @@ export interface CrmLikePageDataResponse {
   weManageContract: any | null;
   comparisonList: any | null;
   commonData?: any | null;
+  blogsByCategory?: any | null;
 }
 
 export const getFeaturesPageData = async (
@@ -39,6 +40,7 @@ export const getFeaturesPageData = async (
     weManageContractRes,
     comparisonListRes,
     commonData,
+    blogsByCategoryRes,
   ] = await Promise.all([
     getCrmPage(slug, locale, "&populate=*"),
     getCrmPage(slug, locale, "&populate[hero][populate]=heroImg"),
@@ -82,6 +84,7 @@ export const getFeaturesPageData = async (
       "&populate[comparisonTable][populate][comparisons][populate][comparisonList]=*",
     ),
     getCommonData(locale),
+    getBlogsByCategory(locale, slug),
   ]);
 
   return {
@@ -102,5 +105,6 @@ export const getFeaturesPageData = async (
     weManageContract: weManageContractRes?.data?.[0] || null,
     comparisonList: comparisonListRes?.data?.[0]?.comparisonTable || null,
     commonData: commonData || null,
+    blogsByCategory: blogsByCategoryRes?.data || null,
   };
 };

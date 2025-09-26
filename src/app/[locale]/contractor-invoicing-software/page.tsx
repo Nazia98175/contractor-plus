@@ -131,6 +131,7 @@ const BillingPage = async ({
           <GoingFieldSevices
             cardsDetail={commonProblems?.cardsDetail}
             title={commonProblems?.title}
+            isImageshow={false}
           />
         </div>
 

@@ -13,7 +13,7 @@ const CompareCard: React.FC<CompareCardProps> = ({ feature, slug }) => {
       className={`flex flex-col space-y-3 border-b p-2 ${slug === "estimate" ? "border-superSilver bg-rgba7" : "border-superSilver bg-transparent"}`}
     >
       <h5 className="text-winterWay font-myriad text-center leading-[19px] tracking-[0.1px]">
-        {feature.featureName}
+        {feature.featureName}exsz
       </h5>
       <div className="flex w-full p-1">
         <button className="border-decemberSky flex w-1/2 items-center justify-center border-r">
@@ -27,7 +27,6 @@ const CompareCard: React.FC<CompareCardProps> = ({ feature, slug }) => {
         </button>
         <button className="flex w-1/2 items-center justify-center">
           {feature.competitorsNote !== null ? (
-            // <CheckIcon width={24} height={24} className="max-w-6 min-w-6" />
             <p>{feature?.competitorsNote}</p>
           ) : (
             <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">

@@ -123,7 +123,7 @@ const BillingPage = async ({
         commonData={commonData}
         hero={hero}
         heroImg={hero?.heroImg}
-        solutionTag="Opportunity Tracker"
+        solutionTag="Contractor Invoicing Software"
       />
       <TrustedService reviews={reviews} slug="crm" className="shadow-c5 pb-6" />
       <div className="overflow-hidden bg-white">

@@ -32,6 +32,7 @@ import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
 import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
 import FreeTrialButton from "@/components/common/FreeTrialButton";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
+import AssistantContractor from "@/components/crmbussiness/AssistantContractor";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -226,20 +227,23 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               src={"/images/webp/hero-red-line.webp"}
               alt="hero-red-line"
             />
-
-            <CrmService
-              createBtn={pageData.createBtn}
-              mobileBtn={pageData.mobileBtn}
-              ncc={pageData.ncc}
-              data={pageData.crmService}
-              variant="primary"
-              className={`${
-                pageData.slug === "crm"
-                  ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
-                  : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
-              }`}
-              variantBtn="light"
-            />
+            {useParams.slug === "ai-call-answering-software" ? (
+              <AssistantContractor />
+            ) : (
+              <CrmService
+                createBtn={pageData.createBtn}
+                mobileBtn={pageData.mobileBtn}
+                ncc={pageData.ncc}
+                data={pageData.crmService}
+                variant="primary"
+                className={`${
+                  pageData.slug === "crm"
+                    ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
+                    : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
+                }`}
+                variantBtn="light"
+              />
+            )}
           </div>
           <TrustBar
             platforms={platforms}

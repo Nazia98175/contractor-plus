@@ -50,14 +50,14 @@ const LikeYouDoContacts: React.FC<Props> = ({ trackProperties, slug }) => {
             ),
           )}
         </ul>
-        <Copy animateOnScroll={true} delay={0.4}>
-          {slug === "contractor-financing" && (
+        {slug === "contractor-financing" && (
+          <Copy animateOnScroll={true} delay={0.4}>
             <p className="font-semibild text-wallStreet mt-1 text-sm leading-[100%] md:text-lg lg:text-base">
               With Contractor+, every asset has a clear chain of custody—so you
               keep more of what you buy.
             </p>
-          )}
-        </Copy>
+          </Copy>
+        )}
       </div>
 
       <div className="flex w-full items-center justify-center md:max-w-[480px]">

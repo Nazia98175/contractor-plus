@@ -1,12 +1,12 @@
 import React from "react";
-import { EventDetailIcon } from "../common/Icons";
+import { EventDetailIcon, SeatIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Image from "next/image";
 
 const PricingCard = ({ pricing }: { pricing: any }) => {
   return (
-    <article className="card-shine-2 h-full w-full">
-      {pricing?.image && (
+    <article className="card-shine-2 h-full w-full overflow-hidden rounded-xl !bg-[#1B1B1B]">
+      {/* {pricing?.image && (
         <CardReveal delay={0.4} distance={50}>
           <Image
             width={500}
@@ -16,12 +16,18 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
             alt={pricing?.title}
           />
         </CardReveal>
-      )}
+      )} */}
       <CardReveal delay={0.5} distance={50}>
         <div className="p-3">
-          <h3 className="font-2xl text-pantone3 font-semibold">
-            {pricing?.title ?? ""}
-          </h3>
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="font-2xl text-pantone3 font-semibold">
+              {pricing?.title ?? ""}
+            </h3>
+            <span>
+              <SeatIcon seatCount={2} />
+            </span>
+          </div>
+
           <p className="text-flintstone pt-2 pb-4 text-base">
             {pricing?.subTitle ?? ""}
           </p>

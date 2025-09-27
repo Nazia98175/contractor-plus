@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import {
   LineChart,
   Line,
@@ -7,6 +7,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  TooltipProps,
 } from "recharts";
 import { Industry, State } from "@/types";
 import { renderTooltip } from "./utils";
@@ -19,13 +20,32 @@ interface TrendChartDisplayProps {
   states: State[];
 }
 
-const TrendChartDisplay = ({
+const TrendChartDisplay: React.FC<TrendChartDisplayProps> = ({
   chartData,
   filters,
   industries,
   states,
-}: TrendChartDisplayProps) => {
-  if (chartData.length === 0) {
+}) => {
+  const [mousePos, setMousePos] = useState<
+    { x: number; y: number } | undefined
+  >(undefined);
+
+  const handleMouseMove = useCallback((e: any) => {
+    if (e && e.activeCoordinate) {
+      // activeCoordinate is an object with x and y properties, not an array
+      setMousePos({
+        x: e.activeCoordinate.x,
+        y: e.activeCoordinate.y - 30, // Offset above cursor
+      });
+    }
+  }, []);
+
+  // Reset mouse position when mouse leaves the chart
+  const handleMouseLeave = useCallback(() => {
+    setMousePos(undefined);
+  }, []);
+
+  if (!chartData || chartData.length === 0) {
     return (
       <div className="text-aliceBlue flex h-[400px] w-full items-center justify-center">
         No data available for the selected filters.
@@ -33,26 +53,20 @@ const TrendChartDisplay = ({
     );
   }
 
-  // Calculate the interval based on data length and period
   const getInterval = () => {
-    if (filters.period === "Quarterly") {
-      return 0; // Show all ticks for quarterly data
-    }
-
-    // For monthly data, calculate based on data length
+    if (filters.period === "Quarterly") return 0;
     const dataLength = chartData.length;
-    if (dataLength <= 12) {
-      return 0; // Show all ticks if 12 or fewer points
-    }
-    return Math.ceil(dataLength / 12); // Show approximately 12 ticks
+    return dataLength <= 12 ? 0 : Math.ceil(dataLength / 12);
   };
 
   return (
-    <div className="h-[400px] w-full">
+    <div className="relative h-[400px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={chartData}
           margin={{ top: 10, right: 30, left: 0, bottom: 10 }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
           <XAxis
@@ -69,12 +83,19 @@ const TrendChartDisplay = ({
             tick={{ fontSize: 12 }}
           />
           <Tooltip
-            content={(props) =>
+            content={(props: TooltipProps<number, string>) =>
               renderTooltip(props, "trend", filters, industries, states)
             }
             cursor={{ stroke: "#666", strokeWidth: 1 }}
             isAnimationActive={false}
+            position={mousePos}
+            allowEscapeViewBox={{ x: true, y: true }}
+            wrapperStyle={{
+              pointerEvents: "none",
+              zIndex: 1000,
+            }}
           />
+
           {filters.dataSources.includes("Contractor+") && (
             <Line
               type="monotone"

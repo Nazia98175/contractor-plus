@@ -143,7 +143,11 @@ const FeaturesDropdown: React.FC<Props> = ({
             {headerSubList[headerSubList?.length - 1]?.links?.[1]?.linkTxt}
             <ArrowIcon />
           </Link>
-          <Link className="all-features-button group" href="/">
+          <Link
+            className="all-features-button group"
+            target="_blank"
+            href="https://contractorplus.ideas.userback.io/p/H1EAt3G2PR/roadmap"
+          >
             {headerSubList[headerSubList?.length - 1]?.links?.[2]?.linkTxt}
             <ArrowIcon />
           </Link>

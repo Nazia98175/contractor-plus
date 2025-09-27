@@ -45,9 +45,9 @@ export const renderTrendTooltip = (
 
     // Use coordinate for positioning with correct typing
     const tooltipStyle: React.CSSProperties = {
-      left: coordinate ? coordinate.x + 10 : undefined,
-      top: coordinate ? coordinate.y - 10 : undefined,
-      position: "fixed",
+      left: coordinate ? coordinate.x + 50 : undefined,
+      top: coordinate ? coordinate.y - 5 : undefined,
+      position: "absolute",
       zIndex: 9999,
     };
 

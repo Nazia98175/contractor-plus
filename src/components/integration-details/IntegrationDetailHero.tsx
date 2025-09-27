@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ResizeIcon, UnionIcon } from "../common/Icons";
 import { useEffect } from "react";
 import gsap from "gsap";
+import { it } from "date-fns/locale";
 
 interface IntegrationDetailHeroProps {
   integration: IntegrationItem;
@@ -28,6 +29,8 @@ const IntegrationDetailHero: React.FC<IntegrationDetailHeroProps> = ({
       });
     }, 700);
   }, []);
+  console.log(integration?.image?.url, "integration in hero");
+
   return (
     <section
       id="home-page-view-port-screen-fetures"

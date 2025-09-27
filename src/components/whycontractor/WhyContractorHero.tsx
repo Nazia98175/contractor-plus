@@ -68,24 +68,6 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
     };
   }, []);
 
-  const handlePlayPause = () => {
-    if (iframeRef.current) {
-      if (isPlaying) {
-        // Pause YouTube video
-        iframeRef.current.contentWindow?.postMessage(
-          '{"event":"command","func":"pauseVideo","args":""}',
-          "*",
-        );
-      } else {
-        // Play YouTube video
-        iframeRef.current.contentWindow?.postMessage(
-          '{"event":"command","func":"playVideo","args":""}',
-          "*",
-        );
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -157,26 +139,8 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
-              {/* <div
-                className={`absolute inset-0 flex items-center justify-center bg-black/30 duration-300 ${
-                  isPlaying ? "pointer-events-none opacity-0" : "opacity-100"
-                }`}
-                onClick={handlePlayPause}
-              ></div> */}
             </div>
-            {/* <div
-              className={`absolute top-[50px] left-1/2 -translate-x-1/2 group-hover:!opacity-100 sm:top-1/2 sm:-translate-y-1/2 ${
-                isPlaying ? "opacity-0" : ""
-              }`}
-            >
-              <button
-                className="bg-rgba13 flex size-[60px] items-center justify-center rounded-full backdrop-blur-[24px] transition-transform hover:scale-110"
-                aria-label={isPlaying ? "Pause video" : "Play video"}
-                onClick={handlePlayPause}
-              >
-                {isPlaying ? <VideoPauseIcon /> : <VideoPlayIcon />}
-              </button>
-            </div> */}
+
             <div className="bg-rgba14 absolute right-0 bottom-0 left-0 p-2 backdrop-blur-[42px]">
               <div className="flex items-center justify-between">
                 <h3 className="font-myriad text-lg font-semibold tracking-normal text-white xl:text-xl">

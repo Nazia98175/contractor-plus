@@ -24,7 +24,7 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
               {pricing?.title ?? ""}
             </h3>
             <span>
-              <SeatIcon seatCount={2} />
+              <SeatIcon seatCount={1} />
             </span>
           </div>
 

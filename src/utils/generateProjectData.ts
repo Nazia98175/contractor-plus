@@ -37,16 +37,28 @@ export const generateProjectData = (
 
   const name = slug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
+  let locationFormatted: string;
+  if (location === "national-average") {
+    locationFormatted = "USA";
+  } else {
+    const parts = location.split("-");
+    const stateAbbr = parts.pop()?.toUpperCase() ?? "";
+    const city = parts
+      .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+      .join(" ");
+    locationFormatted =
+      city && stateAbbr ? `${city} ${stateAbbr}` : city || stateAbbr;
+  }
+
   const estimateKey = Object.keys(projectValues.estimate)[0];
   const estimate = projectValues.estimate[estimateKey];
-
   if (!estimate) return null;
 
   return {
     name,
     slug,
-    metaTitle: `Cost to ${name} in ${location} in 2025 | Contractor+`,
-    metaDescription: `See real costs to ${name.toLowerCase()} in ${location}. Compare labor and material pricing. Built for contractors. One click cost estimates with local pricing. Get a free quote.`,
+    metaTitle: `Cost to ${name} in ${locationFormatted} in ${new Date().getFullYear()} | Contractor+`,
+    metaDescription: `See real costs to ${name.toLowerCase()} in ${locationFormatted}. Compare labor and material pricing. Built for contractors. One click cost estimates with local pricing. Get a free quote.`,
     materials: estimate.materials,
     laborRate: 0,
     laborHours: estimate.laborHours,

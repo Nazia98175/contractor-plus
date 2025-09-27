@@ -1,8 +1,6 @@
 import {
-  automatedCardData,
   constructionBookkeepingServices,
   platforms,
-  propertyaddressContractorData,
 } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
@@ -32,6 +30,9 @@ import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileVie
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
 import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
+import FreeTrialButton from "@/components/common/FreeTrialButton";
+import CardRequiredButton from "@/components/common/CardRequiredButton";
+import AssistantContractor from "@/components/crmbussiness/AssistantContractor";
 
 type CrmBussinessPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -71,8 +72,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     teamsUsingContractor,
     faqs,
     blogsList,
+    blogsByCategory,
     thousandReviews,
     weManageContract,
+    comparisonList,
     commonData,
   } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
 
@@ -100,9 +103,11 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     faq: faqs?.faqs,
     blogsList,
     blogs: page?.blogs,
+    blogsByCategory,
     createBtn: commonData?.getStartedFreeBtn,
     mobileBtn: commonData?.mobileBtn,
     weManageContract: weManageContract?.weManageContract,
+    comparisonList: comparisonList,
     ncc: commonData?.nccTxt,
   };
 
@@ -137,7 +142,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               fieldService={pageData.fieldServiceData}
               theme={pageData.theme as "light" | "dark" | "estimateTheme"}
               apiData={true}
-              mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[813px] mx-auto "
+              mainClassName="max-w-[90%] xs:max-w-[84%] sm:max-w-[1080px] mx-auto "
             />
           </div>
           <div className="mb-12 block md:hidden">
@@ -166,9 +171,20 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               />
               <HowContractorWork
                 ncc={pageData.ncc}
-                trackProperties={pageData.trackProperties}
-                slug={useParams.slug}
+                trackProperties={pageData.trackProperties || null}
               />
+              {useParams.slug === "contractor-financing" && (
+                <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
+                  <FreeTrialButton
+                    className="gap-1.5"
+                    text={trackProperties?.btnText}
+                  />
+                  <CardRequiredButton
+                    className="text-wallStreet"
+                    text={pageData.ncc}
+                  />
+                </div>
+              )}
             </>
           )}
           {pageData?.weManageContract?.isShowSection && (
@@ -180,9 +196,9 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               list={pageData?.weManageContract?.list ?? []}
             />
           )}
-          {useParams.slug === "property-profiles" && (
-            <RunWithContractor kindAdorable={propertyaddressContractorData} />
-          )}
+          {pageData?.comparisonList ? (
+            <RunWithContractor kindAdorable={comparisonList} />
+          ) : null}
           <KindAdorable
             slug={pageData.slug}
             kindAdorable={pageData.comparison}
@@ -211,20 +227,23 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               src={"/images/webp/hero-red-line.webp"}
               alt="hero-red-line"
             />
-
-            <CrmService
-              createBtn={pageData.createBtn}
-              mobileBtn={pageData.mobileBtn}
-              ncc={pageData.ncc}
-              data={pageData.crmService}
-              variant="primary"
-              className={`${
-                pageData.slug === "crm"
-                  ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
-                  : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
-              }`}
-              variantBtn="light"
-            />
+            {useParams.slug === "ai-call-answering-software" ? (
+              <AssistantContractor />
+            ) : (
+              <CrmService
+                createBtn={pageData.createBtn}
+                mobileBtn={pageData.mobileBtn}
+                ncc={pageData.ncc}
+                data={pageData.crmService}
+                variant="primary"
+                className={`${
+                  pageData.slug === "crm"
+                    ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
+                    : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
+                }`}
+                variantBtn="light"
+              />
+            )}
           </div>
           <TrustBar
             platforms={platforms}
@@ -238,7 +257,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           />
         </div>
         <BlogPosts
-          data={pageData.blogsList || []}
+          data={pageData.blogsByCategory || []}
           blogs={pageData.blogs}
           className="mt-7 mb-20 md:mt-9"
           classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"

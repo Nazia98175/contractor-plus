@@ -235,7 +235,7 @@ const FinallyMakesInvoicing: React.FC<FinallyMakesInvoicingProps> = ({
                 className={`timing-imgs ${
                   index === 0
                     ? "relative h-[245px]"
-                    : "absolute top-0 left-0 h-[245px]"
+                    : "absolute top-0 left-1/2 h-[245px] max-w-[400px] -translate-x-1/2"
                 } ${step.imgClass}`}
               >
                 <LottieAnimation

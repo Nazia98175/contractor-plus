@@ -13,7 +13,6 @@ import IndustryHero from "@/components/industry/IndustryHero";
 import SecondaryReview from "@/components/industry/SecondaryReview";
 import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContractor";
 import WantingMore from "@/components/industry/WantingMore";
-
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import OverlapCardMobileViewChild from "@/components/industry/IndustryOverlapCardMobileViewChild";

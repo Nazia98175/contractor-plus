@@ -84,7 +84,7 @@ const Resource = () => {
               icon={
                 <BarChart3 className="group-hover:text-coralRed h-10 w-10 duration-300" />
               }
-              link="/resources/USA-labor-rates"
+              link="/resources/usa-labour-rate"
               buttonText="View Labor Rates"
             />
 

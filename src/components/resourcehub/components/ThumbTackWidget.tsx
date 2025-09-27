@@ -193,9 +193,9 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             </p>
 
             {/* Thumbtack Logo */}
-            <div className="mb-4 flex items-center justify-center gap-2 invert">
+            <div className="vert mb-4 flex items-center justify-center gap-2">
               <img
-                src="/lovable-uploads/1bd58006-0f6d-40fe-bd6a-5fcd57aec5ce.png"
+                src="/images/webp/thumbtack-white.png"
                 alt="Thumbtack"
                 className="h-8"
               />

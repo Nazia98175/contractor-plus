@@ -14,13 +14,13 @@ export async function generateMetadata({
     const projectValues = await fetchProjectDetail(projectSlug);
     const data = generateProjectData(projectSlug, projectValues, location);
     if (data) {
-      const { metaTitle, metaDescription, name } = data;
+      const { metaTitle, metaDescription, name, ogImage } = data;
 
       const title = metaTitle ?? "Construction Cost Calculator";
       const description =
         metaDescription ?? "Calculate construction costs for your projects";
 
-      const url = `https://v2site.contractorplus.app/resources/${location}/${projectSlug}`;
+      const url = `https://v2site.contractorplus.app/resources/${projectSlug}/${location}`;
 
       return {
         title,
@@ -35,7 +35,7 @@ export async function generateMetadata({
           type: "website",
           images: [
             {
-              url: "https://templated-assets.s3.amazonaws.com/render/d2eaecb4-1ed4-4301-9858-49e8eebffbd9.jpg",
+              url: `${ogImage ?? ""}`,
               width: 1200,
               height: 630,
               alt: title,
@@ -46,9 +46,7 @@ export async function generateMetadata({
           card: "summary_large_image",
           title,
           description,
-          images: [
-            "https://templated-assets.s3.amazonaws.com/render/d2eaecb4-1ed4-4301-9858-49e8eebffbd9.jpg",
-          ],
+          images: [`${ogImage ?? ""}`],
         },
       };
     }

@@ -151,7 +151,7 @@ export const LowesMaterialSwap = ({
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="bg-shutter max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden p-0">
+      <DialogContent className="bg-shutter z-[1000] max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden p-0">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-6 pb-5 text-white">
           <div className="flex items-center justify-between">
@@ -184,7 +184,7 @@ export const LowesMaterialSwap = ({
                 <div className="space-y-3">
                   <Label
                     htmlFor="search-query"
-                    className="flex items-center gap-2 text-sm font-medium"
+                    className="flex items-center gap-2 text-sm font-medium text-black"
                   >
                     <Package className="h-4 w-4 text-gray-500" />
                     Search for Material
@@ -194,13 +194,13 @@ export const LowesMaterialSwap = ({
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="e.g., toilet, faucet, pipe..."
-                    className="border-gray-200 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="border-gray-200 bg-white text-black focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
                 </div>
                 <div className="space-y-3">
                   <Label
                     htmlFor="zip-code"
-                    className="flex items-center gap-2 text-sm font-medium"
+                    className="flex items-center gap-2 text-sm font-medium text-black"
                   >
                     <MapPin className="h-4 w-4 text-gray-500" />
                     Zip Code
@@ -211,7 +211,7 @@ export const LowesMaterialSwap = ({
                     onChange={(e) => setZipCode(e.target.value)}
                     placeholder="90210"
                     maxLength={5}
-                    className="border-gray-200 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                    className="border-gray-200 bg-white text-black focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                   />
                 </div>
               </div>

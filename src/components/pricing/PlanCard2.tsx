@@ -36,7 +36,9 @@ interface PlanCardProps {
   activeTab: string;
 }
 
-const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
+const PlanCard2: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
+  console.log(plan, "plan details in plan card 2");
+
   const priceValue =
     isAnnual && plan.annualPrice !== undefined
       ? Number(plan.annualPrice)
@@ -150,4 +152,4 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
   );
 };
 
-export default PlanCard;
+export default PlanCard2;

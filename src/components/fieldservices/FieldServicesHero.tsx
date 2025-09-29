@@ -30,11 +30,11 @@ const DEFAULT_LOCATION: GeolocationData = {
 interface heroProps {
   heroTitle: string;
   heroDescription: string;
+  solutionTag: string;
 }
 interface Props {
   hero: heroProps;
   commonData?: any;
-  solutionTag?: string;
   geoLocation?: any | null;
   locale?: string | undefined;
 }
@@ -42,7 +42,6 @@ interface Props {
 const FieldServicesHero: React.FC<Props> = ({
   hero,
   commonData,
-  solutionTag,
   geoLocation,
   locale,
 }) => {
@@ -114,7 +113,7 @@ const FieldServicesHero: React.FC<Props> = ({
         <div className="relative z-20 w-full lg:max-w-[732px]">
           <Copy animateOnScroll={false} delay={0}>
             <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
-              {solutionTag}
+              {hero?.solutionTag}
             </div>
           </Copy>
           {/* <Copy animateOnScroll={false} delay={0.2}>

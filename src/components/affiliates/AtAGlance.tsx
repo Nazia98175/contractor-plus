@@ -12,6 +12,8 @@ interface AtAGlanceProps {
 }
 
 const AtAGlance = ({ title, glanceCards = [] }: AtAGlanceProps) => {
+  console.log(title, "title");
+
   return (
     <section className="relative z-20 mx-auto mt-14 w-full max-w-[1240px] px-2 sm:mt-20 md:mt-[100px] lg:mt-[128px]">
       <AdaptiveHeroTitle

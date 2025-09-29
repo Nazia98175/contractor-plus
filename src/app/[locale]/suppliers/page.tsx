@@ -89,7 +89,7 @@ export default async function SuppliersPage({ params }: SuppliersPageProps) {
       <WhatAsk title={whatWeAsk?.title} desc={whatWeAsk?.dec} />
       <AtAGlance
         glanceCards={whatMakeContractor?.arrayItems}
-        title={whatMakeContractor?.atGlanceRes}
+        title={whatMakeContractor?.title}
       />
       <div className="relative pt-[40px] pb-16 md:pt-[70px] md:pb-24 lg:pt-[94px]">
         <Faq

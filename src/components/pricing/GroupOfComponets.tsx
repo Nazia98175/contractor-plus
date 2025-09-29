@@ -65,7 +65,7 @@ const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({
         />
       </div>
       <div className="relative bg-white">
-        <div className="pointer-events-none absolute top-[-5%] left-1/2 z-10 h-20 w-[110%] -translate-x-1/2 bg-white blur-sm md:blur-[13px]"></div>
+        <div className="pointer-events-none absolute top-[-5%] left-1/2 z-10 hidden h-20 w-[110%] -translate-x-1/2 bg-white blur-sm sm:block md:blur-[13px]"></div>
         <div ref={plansRef}>
           <Plans onScroll={scrollToTable} pricingPlans={pricingPlans} />
         </div>

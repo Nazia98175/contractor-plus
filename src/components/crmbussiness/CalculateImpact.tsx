@@ -91,6 +91,7 @@ const CalculateImpact: React.FC = () => {
                   type="number"
                   placeholder="5000"
                   defaultValue={5000}
+                  readOnly
                 />
               </div>
             </div>
@@ -109,6 +110,7 @@ const CalculateImpact: React.FC = () => {
                   type="number"
                   placeholder="2"
                   defaultValue={2}
+                  readOnly
                 />
               </div>
             </div>

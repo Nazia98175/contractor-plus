@@ -49,7 +49,7 @@ export default function SmoothScrollSetup() {
         if (lenisRef.current) {
           lenisRef.current.start();
         }
-      }, 4000);
+      }, 2500);
     }
 
     return () => {

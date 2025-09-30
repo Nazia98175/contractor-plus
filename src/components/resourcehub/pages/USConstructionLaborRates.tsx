@@ -286,7 +286,7 @@ const USConstructionLaborRates = () => {
             states={states}
             filters={filters}
             onChange={handleFiltersChange}
-            className="animate-slide-up max-h-[calc(100vh-120px)] overflow-y-auto rounded-lg lg:sticky lg:top-24"
+            className="animate-slide-up overflow-y-auto rounded-lg lg:sticky lg:top-24"
           />
 
           {/* <FilterCTAs /> */}

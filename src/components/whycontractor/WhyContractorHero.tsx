@@ -132,7 +132,7 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
               <iframe
                 ref={iframeRef}
                 className="absolute inset-0 h-full w-full"
-                src={pageContent?.hero?.videoUrl}
+                src={`${pageContent?.hero?.videoUrl}${pageContent?.hero?.videoUrl.includes("?") ? "&" : "?"}rel=0&modestbranding=1&showinfo=0`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

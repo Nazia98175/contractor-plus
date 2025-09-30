@@ -8,10 +8,11 @@ interface WorkTodayProps {
     imgClass?: string;
     alt: string;
     title: string;
-    description: string;
+    desc: string;
   }[];
 }
 const WorkToday: React.FC<WorkTodayProps> = ({ title, listTextDesc }) => {
+  console.log(listTextDesc, "listTextDesc");
   return (
     <section className="mx-auto w-full max-w-[1224px] px-2 pt-[82px] pb-8 lg:pt-[92px]">
       <Copy animateOnScroll={true}>
@@ -29,9 +30,7 @@ const WorkToday: React.FC<WorkTodayProps> = ({ title, listTextDesc }) => {
             <h3 className="text-secondary pt-4 text-center text-2xl font-semibold">
               {item.title}
             </h3>
-            <p className="text-wallStreet text-center text-base">
-              {item.description}
-            </p>
+            <p className="text-wallStreet text-center text-base">{item.desc}</p>
           </article>
         ))}
       </div>

@@ -174,10 +174,11 @@ export default async function OpportunityTracker({
       />
       <TrustedService reviews={reviews} slug="crm" className="shadow-c5 pb-6" />
       <div className="overflow-hidden bg-white">
-        <div>
+        <div className="pt-8 sm:pt-12">
           <GoingFieldSevices
             cardsDetail={commonProblems?.cardsDetail}
             title={commonProblems?.title}
+            isImageshow={false}
           />
         </div>
         <ContractorWork theme="estimateTheme" fieldService={fieldServiceData} />

@@ -4,6 +4,8 @@ import CardReveal from "../common/CardReveal";
 import Image from "next/image";
 
 const PricingCard = ({ pricing }: { pricing: any }) => {
+  console.log(pricing, "pricing details");
+
   return (
     <article className="card-shine-2 !bg-jetBlack h-full w-full overflow-hidden rounded-xl">
       {/* {pricing?.image && (
@@ -17,20 +19,22 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
           />
         </CardReveal>
       )} */}
-      <CardReveal delay={0.5} distance={50}>
-        <div className="p-3">
-          <div className="flex items-center justify-between gap-2">
-            <h3 className="font-2xl text-pantone3 font-semibold">
-              {pricing?.title ?? ""}
-            </h3>
-            <span>
-              <SeatIcon seatCount={1} />
-            </span>
-          </div>
+      <CardReveal delay={0.5} distance={50} className="h-full">
+        <div className="flex h-full flex-col justify-between p-3">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="font-2xl text-pantone3 font-semibold">
+                {pricing?.title ?? ""}
+              </h3>
+              <span>
+                <SeatIcon seatCount={pricing?.seatCount ?? 0} />
+              </span>
+            </div>
 
-          <p className="text-flintstone pt-2 pb-4 text-base">
-            {pricing?.subTitle ?? ""}
-          </p>
+            <p className="text-flintstone pt-2 pb-4 text-base">
+              {pricing?.subTitle ?? ""}
+            </p>
+          </div>
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-extrabold text-white">
               {pricing?.currency ?? ""} {pricing?.price ?? ""}

@@ -47,6 +47,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
     });
   }, []);
   useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
+  console.log(hero, "hero");
 
   return (
     <section
@@ -141,12 +142,12 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   <FreeTrialButton
                     showIcon={true}
                     className="!flex"
-                    text={"Get a bookkeeping quote"}
+                    text={hero?.btnText}
                   />
                 )}
                 {slug === "ai-call-answering-software" && (
                   <Button className="flex w-full max-w-[290px] items-center justify-center gap-3">
-                    Available at Contractor+
+                    {hero?.btnText}
                     <EditToolsIcon />
                   </Button>
                 )}

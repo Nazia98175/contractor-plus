@@ -33,7 +33,7 @@ const BuildRightNowCard: React.FC<BuildRightNowCardProps> = ({
             {features.map((text, index) => (
               <div
                 key={index}
-                className="text-demo flex items-center gap-2.5 text-sm font-semibold text-ellipsis lg:text-base"
+                className="text-demo flex items-center gap-2.5 text-start text-sm font-semibold text-ellipsis lg:text-base"
               >
                 <GreenTickIcon />
                 <p>{text}</p>

@@ -84,7 +84,6 @@ const FieldServicesPage = async ({ params }: Params) => {
       >
         <FieldServicesHero
           hero={solutionPageContent?.data?.[0]?.hero}
-          solutionTag={solutionPageContent?.data?.[0]?.solutionTag}
           commonData={commonData}
           geoLocation={geoLocation}
           locale={useParams?.locale}

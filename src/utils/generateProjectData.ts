@@ -26,6 +26,7 @@ interface ProjectData {
     defaultValue: number;
   };
   category: string;
+  ogImage?: string;
 }
 
 export const generateProjectData = (
@@ -65,5 +66,6 @@ export const generateProjectData = (
     laborUnit: estimate.laborUnit,
     inputField: estimate.inputField,
     category: estimate.category,
+    ogImage: projectValues?.ogImage || "",
   };
 };

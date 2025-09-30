@@ -6,6 +6,7 @@ import GroupOfComponets from "@/components/pricing/GroupOfComponets";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getPricingData } from "@/services/pricing/getPricingData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { log } from "console";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -56,6 +57,7 @@ export default async function PricingPage({ params }: PricongParams) {
     faqs,
     emailSign,
   } = await getPricingData(locale);
+  console.log(pricingPlans, "prcignjdfnd");
 
   return (
     <main className="font-myriad overflow-hidden">

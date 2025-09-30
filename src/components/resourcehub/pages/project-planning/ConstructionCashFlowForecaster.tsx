@@ -494,7 +494,7 @@ export default function ConstructionCashFlowForecaster() {
                 <div className="space-y-4">
                   {cashFlowData.items.map((item) => (
                     <Card key={item.id} className="p-4">
-                      <div className="grid items-end gap-4 md:grid-cols-12">
+                      <div className="grid items-end gap-2 md:grid-cols-12">
                         <div className="space-y-3 md:col-span-2">
                           <Label>Type</Label>
                           <Select
@@ -590,7 +590,7 @@ export default function ConstructionCashFlowForecaster() {
                             }
                           />
                         </div>
-                        <div className="space-y-3">
+                        <div className="flex justify-end space-y-3">
                           <Button
                             variant="outline"
                             size="sm"
@@ -617,7 +617,7 @@ export default function ConstructionCashFlowForecaster() {
         <div className="lg:col-span-1">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex items-start justify-between">
                 <div className="space-y-3">
                   <CardTitle>Cash Flow Summary</CardTitle>
                   <CardDescription>Overview and export options</CardDescription>
@@ -639,26 +639,22 @@ export default function ConstructionCashFlowForecaster() {
               ) : (
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-lg bg-green-50 p-3">
-                      <div className="text-sm font-medium text-green-400">
-                        Total Income
-                      </div>
-                      <div className="text-lg font-bold text-green-700">
+                    <div className="rounded-lg bg-green-500 p-3">
+                      <div className="text-sm font-medium">Total Income</div>
+                      <div className="text-lg font-bold">
                         ${totalIncome.toLocaleString()}
                       </div>
                     </div>
-                    <div className="rounded-lg bg-red-50 p-3">
-                      <div className="text-sm font-medium text-red-500">
-                        Total Expenses
-                      </div>
-                      <div className="text-lg font-bold text-red-700">
+                    <div className="rounded-lg bg-red-500 p-3">
+                      <div className="text-sm font-medium">Total Expenses</div>
+                      <div className="text-lg font-bold">
                         ${totalExpenses.toLocaleString()}
                       </div>
                     </div>
                   </div>
 
-                  <div className="rounded-lg bg-blue-50 p-3">
-                    <div className="text-sm font-medium text-blue-600">
+                  <div className="bg-alice rounded-lg p-3">
+                    <div className="text-sm font-medium text-blue-700">
                       Net Cash Flow
                     </div>
                     <div

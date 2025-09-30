@@ -29,7 +29,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
               </span>
             </div>
           </th>
-          <th className="font-myriad text-secondary w-1/3 p-3 text-center text-lg font-semibold lg:p-5 xl:text-2xl">
+          <th className="font-myriad text-wallStreet w-1/3 p-3 text-center text-lg font-semibold lg:p-5 xl:text-2xl">
             {headerRight}
           </th>
         </tr>
@@ -57,7 +57,7 @@ const CompareTable: React.FC<CompareTableProps> = ({
               </div>
             </td>
             <td className="w-full px-5 py-3">
-              <div className="text-master flex items-center justify-center">
+              <div className="text-ashGray flex items-center justify-center">
                 {feature.competitorsNote !== null ? (
                   <i>{feature?.competitorsNote}</i>
                 ) : (

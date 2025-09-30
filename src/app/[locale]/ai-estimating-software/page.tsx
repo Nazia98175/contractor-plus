@@ -44,6 +44,7 @@ const EstimaticAiPage = async ({
 
   const {
     pageContent,
+    heroImg,
     reviews,
     comparisonList,
     problemSolution,
@@ -55,7 +56,8 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
-
+  console.log(pageContent, "esigjd");
+  console.log(heroImg, "hero image page ");
   return (
     <main id="common-homepage-wrapper">
       <div
@@ -64,6 +66,7 @@ const EstimaticAiPage = async ({
       >
         <EstimaticHero
           hero={pageContent}
+          heroImg={heroImg?.url}
           createBtn={commonData?.getStartedFreeBtn}
           createMobileBtn={commonData?.mobileBtn}
           nccTxt={commonData?.nccTxt}

@@ -19,12 +19,12 @@ interface EstimaticHeroProps {
     estimaticTag?: string;
     estimaticTagTitle?: string;
     subTitle?: string;
-    heroImg?: any;
     hero?: { subTitle?: string; title?: string };
   };
   createBtn?: string;
   createMobileBtn?: string;
   nccTxt?: string;
+  heroImg?: any;
   estimateHeroData?: EstimateHeroItem[];
 }
 
@@ -34,13 +34,9 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({
   createMobileBtn = "Download FREE App",
   nccTxt = "No credit card required",
   estimateHeroData = [],
+  heroImg,
 }) => {
-  const {
-    estimaticTag,
-    estimaticTagTitle,
-    heroImg,
-    hero: heroSection,
-  } = hero || {};
+  const { estimaticTag, estimaticTagTitle, hero: heroSection } = hero || {};
 
   useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
 

@@ -737,7 +737,7 @@ Witness: ___________________________ Date: ___________
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="prose bg-shutter max-h-96 max-w-none overflow-y-auto rounded-lg p-6 text-sm print:max-h-none print:overflow-visible print:bg-white print:p-0">
+              <div className="prose bg-shutter custom-scrollbar max-h-96 max-w-none overflow-y-auto rounded-lg p-6 text-sm print:max-h-none print:overflow-visible print:bg-white print:p-0">
                 <pre className="font-mono text-xs leading-relaxed whitespace-pre-wrap">
                   {generateContractText()}
                 </pre>

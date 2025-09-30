@@ -1,16 +1,10 @@
 "use client";
 
+import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import {
-  AnimatedLineIcon,
-  LogoIcon,
-  VideoPauseIcon,
-  VideoPlayIcon,
-} from "../common/Icons";
 import Copy from "../common/Copy";
-import gsap from "gsap";
-import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import { AnimatedLineIcon, LogoIcon } from "../common/Icons";
 
 interface WhyContractorHeroProps {
   pageContent: any;

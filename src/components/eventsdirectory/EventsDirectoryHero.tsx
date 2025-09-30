@@ -11,10 +11,6 @@ const EventsDirectoryHero = ({ events }: any) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-events", {
-        opacity: 1,
-        duration: 1,
-      });
       gsap.to("#home-page-header-view-port-screen", {
         opacity: 1,
         duration: 1,
@@ -24,6 +20,13 @@ const EventsDirectoryHero = ({ events }: any) => {
         duration: 1,
       });
     }, 700);
+
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen-events-list", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 0);
   }, []);
 
   const mainItem = [
@@ -62,8 +65,7 @@ const EventsDirectoryHero = ({ events }: any) => {
 
   return (
     <section
-      id="home-page-view-port-screen-events"
-      className="relative mt-[90px] opacity-0"
+      className="relative mt-[90px]"
     >
       <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between sm:px-4 xl:px-0">
         {events && events.length > 1 && (

@@ -7,6 +7,7 @@ interface PlanData {
   subtitle: string;
   monthlyPrice: number;
   annualPrice?: number;
+  lifetimePrice?: number;
   note: string;
   cta: string;
   cardClass?: string;
@@ -37,27 +38,26 @@ interface PlanCardProps {
 }
 
 const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
-  const priceValue =
-    isAnnual && plan.annualPrice !== undefined
-      ? Number(plan.annualPrice)
-      : Number(plan.monthlyPrice);
-  const formattedPrice = `$${priceValue.toFixed(0)}`;
+  // const priceValue =
+  //   isAnnual && plan.annualPrice !== undefined
+  //     ? Number(plan.annualPrice)
+  //     : Number(plan.monthlyPrice);
+  // const formattedPrice = `$${priceValue.toFixed(0)}`;
   console.log(plan, "plan details");
-
   let priceValue2 = 0;
 
   if (activeTab === "annual") {
     console.log(plan.annualPrice, "Annual tab is active");
-    priceValue2 = Number(plan.annualPrice ?? 0);
+    priceValue2 = Number(plan.annualPrice);
   } else if (activeTab === "monthly") {
     console.log(plan.monthlyPrice, "Monthly tab is active");
-    priceValue2 = Number(plan.monthlyPrice ?? 0);
+    priceValue2 = Number(plan.monthlyPrice);
   } else if (activeTab === "lifetime") {
-    console.log(plan.annualPrice, "Lifetime tab is active");
-    priceValue2 = Number(plan.annualPrice ?? 0);
+    console.log(plan.lifetimePrice, "Lifetime tab is active");
+    priceValue2 = Number(plan.lifetimePrice);
   }
 
-  const formattedPrice2 = `$${priceValue2.toFixed(0)}`;
+  const formattedPrice2 = `$${priceValue2.toLocaleString("en-US")}`;
 
   return (
     <article
@@ -106,9 +106,8 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
           {plan?.featuresTitle && plan?.featuresTitle}
         </h5>
         <ul className="space-y-4">
-          {!isAnnual &&
-            plan?.monthlyFeatures &&
-            plan?.monthlyFeatures.map((feature: any, idx: number) => {
+          {activeTab !== "monthly" &&
+            (plan?.monthlyFeatures ?? []).map((feature: any, idx: number) => {
               // const isAdditionalUser = feature === "additionalUser";
               // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
 

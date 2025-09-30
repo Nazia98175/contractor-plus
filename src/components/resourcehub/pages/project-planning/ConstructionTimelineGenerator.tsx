@@ -1462,6 +1462,29 @@ export default function ConstructionTimelineGenerator() {
     permitRequired: "",
     complexity: "",
   });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validateForm = () => {
+    let newErrors: Record<string, string> = {};
+
+    Object.entries(projectData).forEach(([key, value]) => {
+      if (!value) {
+        newErrors[key] = `${key.replace(/([A-Z])/g, " $1")} is required`;
+        // e.g. projectName -> "project Name is required"
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleGenerateTimeline = () => {
+    if (validateForm()) {
+      generateTimeline();
+    }
+  };
+
   const [timeline, setTimeline] = useState<ProjectPhase[]>([]);
   const [editingPhase, setEditingPhase] = useState<string | null>(null);
   const [editDuration, setEditDuration] = useState<number>(0);
@@ -1837,11 +1860,11 @@ export default function ConstructionTimelineGenerator() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="space-y-3">
+              {/* Project Name */}
+              <div className="space-y-2">
                 <Label htmlFor="projectName">Project Name</Label>
                 <Input
                   id="projectName"
-                  tabIndex={1}
                   value={projectData.projectName}
                   onChange={(e) =>
                     setProjectData((prev) => ({
@@ -1851,9 +1874,13 @@ export default function ConstructionTimelineGenerator() {
                   }
                   placeholder="Enter project name"
                 />
+                {errors.projectName && (
+                  <p className="text-sm text-red-500">{errors.projectName}</p>
+                )}
               </div>
 
-              <div className="space-y-3">
+              {/* Project Category */}
+              <div className="space-y-2">
                 <Label htmlFor="projectCategory">Project Category</Label>
                 <Select
                   value={projectData.projectCategory}
@@ -1861,11 +1888,11 @@ export default function ConstructionTimelineGenerator() {
                     setProjectData((prev) => ({
                       ...prev,
                       projectCategory: value,
-                      projectType: "", // Reset project type when category changes
+                      projectType: "", // reset when category changes
                     }))
                   }
                 >
-                  <SelectTrigger tabIndex={2}>
+                  <SelectTrigger>
                     <SelectValue placeholder="Select project category" />
                   </SelectTrigger>
                   <SelectContent>
@@ -1873,9 +1900,15 @@ export default function ConstructionTimelineGenerator() {
                     <SelectItem value="commercial">Commercial</SelectItem>
                   </SelectContent>
                 </Select>
+                {errors.projectCategory && (
+                  <p className="text-sm text-red-500">
+                    {errors.projectCategory}
+                  </p>
+                )}
               </div>
 
-              <div className="space-y-3">
+              {/* Project Type */}
+              <div className="space-y-2">
                 <Label htmlFor="projectType">Project Type</Label>
                 <Select
                   value={projectData.projectType}
@@ -1884,7 +1917,7 @@ export default function ConstructionTimelineGenerator() {
                   }
                   disabled={!projectData.projectCategory}
                 >
-                  <SelectTrigger tabIndex={3}>
+                  <SelectTrigger>
                     <SelectValue
                       placeholder={
                         projectData.projectCategory
@@ -1894,16 +1927,38 @@ export default function ConstructionTimelineGenerator() {
                     />
                   </SelectTrigger>
                   <SelectContent>
-                    {availableProjectTypes.map((type) => (
-                      <SelectItem key={type.value} value={type.value}>
-                        {type.label}
-                      </SelectItem>
-                    ))}
+                    {/* Example options – update based on your logic */}
+                    <SelectItem value="villa">Villa</SelectItem>
+                    <SelectItem value="apartment">Apartment</SelectItem>
+                    <SelectItem value="office">Office</SelectItem>
                   </SelectContent>
                 </Select>
+                {errors.projectType && (
+                  <p className="text-sm text-red-500">{errors.projectType}</p>
+                )}
               </div>
 
-              <div className="space-y-3">
+              {/* Project Size */}
+              <div className="space-y-2">
+                <Label htmlFor="projectSize">Project Size</Label>
+                <Input
+                  id="projectSize"
+                  value={projectData.projectSize}
+                  onChange={(e) =>
+                    setProjectData((prev) => ({
+                      ...prev,
+                      projectSize: e.target.value,
+                    }))
+                  }
+                  placeholder="Enter project size (e.g., 2000 sq ft)"
+                />
+                {errors.projectSize && (
+                  <p className="text-sm text-red-500">{errors.projectSize}</p>
+                )}
+              </div>
+
+              {/* Complexity */}
+              <div className="space-y-2">
                 <Label htmlFor="complexity">Project Complexity</Label>
                 <Select
                   value={projectData.complexity}
@@ -1911,7 +1966,7 @@ export default function ConstructionTimelineGenerator() {
                     setProjectData((prev) => ({ ...prev, complexity: value }))
                   }
                 >
-                  <SelectTrigger tabIndex={4}>
+                  <SelectTrigger>
                     <SelectValue placeholder="Select complexity" />
                   </SelectTrigger>
                   <SelectContent>
@@ -1920,9 +1975,13 @@ export default function ConstructionTimelineGenerator() {
                     <SelectItem value="high">High</SelectItem>
                   </SelectContent>
                 </Select>
+                {errors.complexity && (
+                  <p className="text-sm text-red-500">{errors.complexity}</p>
+                )}
               </div>
 
-              <div className="space-y-3">
+              {/* Permits Required */}
+              <div className="space-y-2">
                 <Label htmlFor="permitRequired">Permits Required?</Label>
                 <Select
                   value={projectData.permitRequired}
@@ -1933,7 +1992,7 @@ export default function ConstructionTimelineGenerator() {
                     }))
                   }
                 >
-                  <SelectTrigger tabIndex={5}>
+                  <SelectTrigger>
                     <SelectValue placeholder="Permits needed?" />
                   </SelectTrigger>
                   <SelectContent>
@@ -1941,13 +2000,15 @@ export default function ConstructionTimelineGenerator() {
                     <SelectItem value="no">No</SelectItem>
                   </SelectContent>
                 </Select>
+                {errors.permitRequired && (
+                  <p className="text-sm text-red-500">
+                    {errors.permitRequired}
+                  </p>
+                )}
               </div>
 
-              <Button
-                onClick={generateTimeline}
-                className="mt-6 w-full"
-                tabIndex={6}
-              >
+              {/* Submit Button */}
+              <Button onClick={handleGenerateTimeline} className="mt-6 w-full">
                 <Calendar className="mr-2 h-4 w-4" />
                 Generate Timeline
               </Button>

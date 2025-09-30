@@ -59,7 +59,7 @@ const KindAdorable: React.FC<TheServiceProps> = ({ slug, kindAdorable }) => {
             </span>
           </button>
           <button
-            className={`font-myriad text-secondary w-1/2 rounded-r-sm p-3 text-center font-semibold tracking-[0.5px] ${showBackground ? "bg-rgba7" : "bg-doctor"}`}
+            className={`font-myriad text-wallStreet w-1/2 rounded-r-sm p-3 text-center font-semibold tracking-[0.5px] ${showBackground ? "bg-rgba7" : "bg-doctor"}`}
           >
             {kindAdorable?.headerRight}
           </button>

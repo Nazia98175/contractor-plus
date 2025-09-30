@@ -10,7 +10,7 @@ interface CompareCardProps {
 const CompareCard: React.FC<CompareCardProps> = ({ feature, slug }) => {
   return (
     <article
-      className={`flex flex-col space-y-3 border-b p-2 ${slug === "estimate" ? "border-superSilver bg-rgba7" : "border-superSilver bg-transparent"}`}
+      className={`flex flex-col space-y-3 border-b p-2 ${slug === "estimate" ? "border-superSilver bg-rgba7" : "border-superSilver bg-white sm:bg-transparent"}`}
     >
       <h5 className="text-winterWay font-myriad text-center leading-[19px] tracking-[0.1px]">
         {feature.featureName}exsz

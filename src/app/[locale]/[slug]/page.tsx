@@ -110,6 +110,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
     comparisonList: comparisonList,
     ncc: commonData?.nccTxt,
   };
+  console.log(weManageContract, "dec");
 
   return (
     <>
@@ -173,18 +174,22 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties || null}
               />
-              {useParams.slug === "contractor-financing" && (
-                <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
-                  <FreeTrialButton
-                    className="gap-1.5"
-                    text={trackProperties?.btnText}
-                  />
-                  <CardRequiredButton
-                    className="text-wallStreet"
-                    text={pageData.ncc}
-                  />
-                </div>
-              )}
+              {useParams.slug === "contractor-financing" ||
+                useParams.slug === "mileage-tracking" ||
+                useParams.slug === "tool-inventory-software" ||
+                useParams.slug === "contractor-client-agreement" ||
+                (useParams.slug === "property-profiles" && (
+                  <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
+                    <FreeTrialButton
+                      className="gap-1.5"
+                      text={trackProperties?.btnText}
+                    />
+                    <CardRequiredButton
+                      className="text-wallStreet"
+                      text={pageData.ncc}
+                    />
+                  </div>
+                ))}
             </>
           )}
           {pageData?.weManageContract?.isShowSection && (
@@ -193,6 +198,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 pageData?.weManageContract?.title ||
                 "A smooth financing experience for contractors and their clients"
               }
+              decs={pageData?.weManageContract?.desc}
               list={pageData?.weManageContract?.list ?? []}
             />
           )}

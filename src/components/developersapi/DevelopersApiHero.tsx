@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { RedClipIcon, SlackIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import Link from "next/link";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
+import gsap from "gsap";
 interface mainItems {
   heroSubTitle?: string;
   heroTitle?: string;
@@ -16,6 +18,17 @@ interface DevelopersApiHeroProps {
 }
 const DevelopersApiHero: React.FC<DevelopersApiHeroProps> = ({ mainItems }) => {
   const { heroSubTitle, heroTitle, heroDescription } = mainItems;
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "elastic.in",
+      once: true,
+    });
+  }, []);
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
   return (
     <section className="relative z-10 pt-[46px] pb-10 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]">
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
@@ -45,20 +58,22 @@ const DevelopersApiHero: React.FC<DevelopersApiHeroProps> = ({ mainItems }) => {
               "Build custom flows, multi-location (or division) dashboards, automate the busywork, and wire Contractor+ into your stack so it fits like a glove. Trusted by 50,000+ contractors."}
           </p>
         </Copy>
-        <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
-          <FreeTrialButton showIcon={true} text={"View API Reference"} />
-          <div>
-            <button className="font-montserrat flex items-center gap-1.5 px-6 py-2.5 text-base font-bold tracking-[0.1px] text-white">
-              <SlackIcon /> Join us on Slack
-            </button>
-            <Link
-              className="font-myriad text-gray pl-10 text-base font-semibold"
-              href={"/"}
-            >
-              Need help integrating?
-            </Link>
+        <CardReveal distance={50} delay={0.5}>
+          <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
+            <FreeTrialButton showIcon={true} text={"View API Reference"} />
+            <div>
+              <button className="font-montserrat flex items-center gap-1.5 px-6 py-2.5 text-base font-bold tracking-[0.1px] text-white">
+                <SlackIcon /> Join us on Slack
+              </button>
+              <Link
+                className="font-myriad text-gray pl-10 text-base font-semibold"
+                href={"/"}
+              >
+                Need help integrating?
+              </Link>
+            </div>
           </div>
-        </div>
+        </CardReveal>
       </div>
     </section>
   );

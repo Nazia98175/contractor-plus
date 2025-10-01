@@ -4,10 +4,11 @@ import CloudsAnimation from "@/components/common/CloudsAnimation";
 import { TheHeroProps } from "@/components/crmbussiness/CommonHero";
 import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "./AdaptiveHeroTitle";
 import IndustryHeroSlider from "./IndustryHeroSlider";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 
 const IndustryHero: React.FC<TheHeroProps> = ({
   hero,
@@ -15,25 +16,17 @@ const IndustryHero: React.FC<TheHeroProps> = ({
   heroImg,
   commonData,
 }) => {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-hvac", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "elastic.in",
+      once: true,
+    });
   }, []);
-
-  console.log(hero?.heroTitle, "hero?.heroTitle");
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
 
   return (
     <section className="bg-kuroiBlack relative overflow-hidden">

@@ -67,7 +67,7 @@ const IndustryPage = async ({ params }: PageProps) => {
 
   return (
     <main className="home-page-wrapper-2">
-      <div id="home-page-view-port-screen-hvac" className="relative opacity-0">
+      <div id="home-page-view-port-screen" className="relative opacity-0">
         <div className="relative bg-white">
           <div className="relative">
             <div className="relative">

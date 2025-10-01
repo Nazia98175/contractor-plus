@@ -37,12 +37,13 @@ export default async function DevelopersApiPage({
 
   // Use locale directly
   const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(locale);
-  console.log("34edsaxz", whatYouCanBuild);
 
   console.log(hero, whatYouCanBuild, goBeyond);
   return (
     <>
-      <DevelopersApiHero mainItems={hero} />
+      <div id="home-page-view-port-screen" className="opacity-0">
+        <DevelopersApiHero mainItems={hero} />
+      </div>
       <div className="relative overflow-hidden">
         <BuildRightNow
           items={whatYouCanBuild?.items}

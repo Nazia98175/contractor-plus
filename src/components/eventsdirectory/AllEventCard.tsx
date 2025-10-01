@@ -73,7 +73,7 @@ const AllEventCard = ({ eventList, events }: any) => {
   ];
 
   return (
-    <section className="main-container">
+    <section className="main-container opacity-0" id="home-page-view-port-screen-events-list">
       <div className="mt-8 flex flex-col gap-8 md:mt-10 md:gap-10 lg:mt-16 lg:gap-16 xl:mt-[85px] xl:gap-[87px]">
         {allEventSections.map((section) => (
           <ConferenceCard

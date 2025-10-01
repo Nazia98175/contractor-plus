@@ -29,7 +29,7 @@ const TrustedService: React.FC<TheReviewProps> = ({
   return (
     <section className={`relative overflow-hidden ${className}`}>
       <Copy animateOnScroll={true}>
-        <h3 className="section-heading service-text xs:max-w-[80%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-full">
+        <h3 className="section-heading service-text xs:max-w-[98%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-full">
           {reviews?.data?.[0]?.reviews?.title || reviews?.data?.reviews?.title}
         </h3>
       </Copy>

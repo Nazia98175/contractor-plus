@@ -77,11 +77,13 @@ export default async function LeadGeneration({ params }: Params) {
     faqs,
     commonData,
   } = await getLocalSeoForContractorsData(locale);
-  console.log("erdsx", problemSolutionSection);
 
   return (
     <>
-      <div className="shadow-c5 relative z-20 pb-[35px]">
+      <div
+        id="home-page-view-port-screen"
+        className="shadow-c5 relative z-20 pb-[35px] opacity-0"
+      >
         <LeadGenerationHero
           tag={hero?.heroSubTitle}
           heading={hero?.heroTitle}

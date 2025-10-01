@@ -1,12 +1,13 @@
 "use client";
 import gsap from "gsap";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Marquee from "react-fast-marquee";
 import Button from "../common/Button";
 import { SideIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 
 export interface SupplierHeroProps {
   heroTitle?: string;
@@ -19,27 +20,21 @@ const SuppliersHero = ({
   heroDescription,
   heroSubTitle,
 }: SupplierHeroProps) => {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      gsap.to("#home-page-view-port-screen-fetures", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-header-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to("#home-page-footer-view-port-screen", {
-        opacity: 1,
-        duration: 1,
-      });
-    }, 700);
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "elastic.in",
+      once: true,
+    });
   }, []);
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
 
   return (
     <section
-      id="home-page-view-port-screen-fetures"
+      ref={wrapperRef}
       className="relative z-40 mx-auto flex max-w-[933px] flex-col items-center justify-center px-4"
     >
       <CardReveal distance={30} delay={0.1}>

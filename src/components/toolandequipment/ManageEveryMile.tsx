@@ -4,12 +4,17 @@ import { useScrollDotAnimation } from "@/hooks/useScrollDotAnimation";
 import EveryMile from "./EveryMile";
 interface SupplierBenefitProps {
   title?: string;
+  decs?: string;
   list: {
     text: string;
     desc: string;
   }[];
 }
-const ManageEveryMile: React.FC<SupplierBenefitProps> = ({ title, list }) => {
+const ManageEveryMile: React.FC<SupplierBenefitProps> = ({
+  title,
+  list,
+  decs,
+}) => {
   const { sectionRef, dotRef } = useScrollDotAnimation({
     delay: 2.6,
   });
@@ -22,7 +27,11 @@ const ManageEveryMile: React.FC<SupplierBenefitProps> = ({ title, list }) => {
             {title || "We manage every mile from drive to reimbursement"}
           </h4>
         </Copy>
-
+        <Copy delay={0.2}>
+          <p className="text-wallStreet pt-4 text-center text-base font-medium">
+            {decs}
+          </p>
+        </Copy>
         <div ref={sectionRef} className="relative mt-10 sm:mt-[51px]">
           {/* Gray line */}
           <span className="bg-wallStreet absolute top-0 left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%]"></span>

@@ -1,6 +1,6 @@
 // LeadGenerationHero.tsx
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
@@ -8,6 +8,8 @@ import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import GooglePoster from "./GooglePoster";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
+import gsap from "gsap";
 
 interface ProcessedLocation {
   city?: string;
@@ -31,8 +33,22 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   nccTxt,
   location, // Now receiving processed location directly from server
 }) => {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    gsap.to(wrapperRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      delay: 0.1,
+      ease: "elastic.in",
+      once: true,
+    });
+  }, []);
+  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
   return (
-    <section className="main-container flex flex-col items-center justify-between gap-8 pt-20 sm:pt-[100px] md:pt-[140px] lg:flex-row lg:gap-4 lg:pt-[164px]">
+    <section
+      ref={wrapperRef}
+      className="main-container flex flex-col items-center justify-between gap-8 pt-20 sm:pt-[100px] md:pt-[140px] lg:flex-row lg:gap-4 lg:pt-[164px]"
+    >
       <div className="w-full max-w-[650px] xl:max-w-[725px]">
         <CardReveal distance={30} delay={0.1}>
           <div className="hidden items-center justify-center pb-1 md:flex lg:justify-start">

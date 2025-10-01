@@ -41,7 +41,7 @@ const CommonLogos = () => {
             width={121}
             height={90}
             src="/images/svg/capterra.svg"
-            className="duration-300 hover:!scale-105 hover:!rotate-6"
+            className="hidden duration-300 hover:!scale-105 hover:!rotate-6 sm:block"
             alt="Capterra"
             // sizes="(max-width: 768px) 40vw, 121px"
           />

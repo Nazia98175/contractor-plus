@@ -173,7 +173,12 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties || null}
               />
-              {useParams.slug === "contractor-financing" && (
+              {(useParams.slug === "contractor-financing" ||
+                useParams.slug === "mileage-tracking" ||
+                useParams.slug === "tool-inventory-software" ||
+                useParams.slug === "contractor-client-agreement" ||
+                useParams.slug === "contractor-financing" ||
+                useParams.slug === "property-profiles") && (
                 <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
                   <FreeTrialButton
                     className="gap-1.5"
@@ -193,6 +198,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 pageData?.weManageContract?.title ||
                 "A smooth financing experience for contractors and their clients"
               }
+              decs={pageData?.weManageContract?.desc}
               list={pageData?.weManageContract?.list ?? []}
             />
           )}
@@ -220,6 +226,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
           <div className="relative">
+            {/* <div className="absolute top-[-8%] z-10 h-[30%] w-[120%] bg-white blur-[20px]"></div> */}
             <Image
               width={800}
               height={1000}

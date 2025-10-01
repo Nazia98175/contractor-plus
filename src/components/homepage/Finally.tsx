@@ -126,7 +126,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               className="flex flex-row items-center gap-4 lg:flex-col"
             >
               {/* mobile view  */}
-              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -136,7 +136,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   // sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
-              <div className="flex w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -146,7 +146,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   // sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
-              <div className="flex w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:hidden md:max-w-24 lg:max-w-[88px]">
+              <div className="flex w-full max-w-[73px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:max-w-[60px] md:hidden md:max-w-24 lg:max-w-[88px]">
                 <Image
                   width={100}
                   height={104}

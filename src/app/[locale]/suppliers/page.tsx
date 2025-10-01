@@ -55,7 +55,10 @@ export default async function SuppliersPage({ params }: SuppliersPageProps) {
   } = await getSuppliersData(locale);
 
   return (
-    <div className="overflow-hidden">
+    <div
+      id="home-page-view-port-screen"
+      className="relative overflow-hidden opacity-0"
+    >
       <div className="relative mx-auto max-w-[1920px] pt-[115px]">
         <SuppliersHero
           heroTitle={hero?.title}

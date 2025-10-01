@@ -57,7 +57,7 @@ const Hero = ({
             </Copy>
 
             <Copy animateOnScroll={false} delay={1.2}>
-              <p className="text-decemberSky max-w-[304px] text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium xl:text-lg">
+              <p className="text-decemberSky max-w-full text-xs font-semibold sm:max-w-[87%] sm:text-sm md:text-base md:font-medium xl:text-lg">
                 {heroDescription}
               </p>
             </Copy>

@@ -1,16 +1,13 @@
 "use client";
+import { blogList } from "@/components/common/Helper";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import {
-  ArrowRight,
   BarChart3,
   Calculator,
   FileText,
-  Wrench,
+  Wrench
 } from "lucide-react";
-import Link from "next/link";
-import { BlogPostScroller } from "../components/resource-hub/BlogPostScroller";
 import { ResourceCard } from "../components/resource-hub/ResourceCard";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import { blogList } from "@/components/common/Helper";
 
 export const blogHeadingData = {
   id: 1,

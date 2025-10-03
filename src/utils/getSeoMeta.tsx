@@ -126,14 +126,13 @@ export const generateSeoMetaData = ({
         ],
       }
     : undefined;
-
   const canonical = `${baseUrl}${page?.seoData?.canonicalUrl || page?.SeoMetaData?.canonicalUrl || page?.SeoData?.canonicalUrl || `/${slug}`}`;
 
   return {
     title,
     description,
     keywords,
-    openGraph,
+    openGraph: openGraph,
     alternates: {
       canonical,
     },

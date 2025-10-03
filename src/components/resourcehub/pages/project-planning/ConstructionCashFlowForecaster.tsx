@@ -395,7 +395,7 @@ export default function ConstructionCashFlowForecaster() {
 
       {/* Header */}
       <div className="mb-8 text-center">
-        <h1 className="mb-4 text-4xl font-bold">
+        <h1 className="mb-4 text-3xl font-bold sm:text-4xl">
           Construction Cash Flow Forecasting Tool
         </h1>
         <p className="text-aliceBlue mx-auto max-w-3xl text-lg">

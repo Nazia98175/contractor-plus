@@ -219,15 +219,15 @@ export default function MaintenanceServiceContract() {
       </Breadcrumb>
 
       {/* Header */}
-      <div className="mb-6 flex items-center gap-3">
-        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
+      <div className="mb-6 flex flex-col items-center gap-3 sm:flex-row">
+        <div className="mt-1 flex h-10 w-10 shrink-0 flex-col items-center justify-center rounded-full bg-red-100 sm:flex-row">
           <Wrench className="h-5 w-5 text-red-500" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold sm:text-3xl">
+          <h1 className="text-center text-2xl font-bold sm:text-start sm:text-3xl">
             Maintenance & Service Contract Template
           </h1>
-          <p className="text-aliceBlue">
+          <p className="text-aliceBlue text-center sm:text-start">
             Create a professional maintenance and service contract with
             customizable terms
           </p>
@@ -871,7 +871,7 @@ export default function MaintenanceServiceContract() {
 
         {/* Preview Section */}
         <div className="space-y-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <h2 className="text-xl font-semibold">Contract Preview</h2>
             <div className="flex gap-2">
               <Button

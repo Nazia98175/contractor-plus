@@ -151,9 +151,9 @@ export const LowesMaterialSwap = ({
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="bg-shutter z-[1000] max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden p-0">
+      <DialogContent className="bg-shutter sm!rounded-2xl z-[1000] max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden !rounded-lg p-0">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-6 pb-5 text-white">
+        <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-4 pb-5 text-white sm:p-6">
           <div className="flex items-center justify-between">
             <DialogTitle className="flex items-center gap-4 text-xl font-semibold">
               <div className="shrink\\ rounded-xl bg-white/10 p-3 backdrop-blur-sm">
@@ -176,7 +176,7 @@ export const LowesMaterialSwap = ({
         </div>
 
         {/* Content */}
-        <div className="max-h-[calc(90vh-120px)] overflow-auto p-6">
+        <div className="max-h-[calc(90vh-120px)] overflow-auto p-4 sm:p-6">
           {/* Search Section */}
           <div className="mb-6">
             <div className="rounded-xl border bg-gray-50 p-4">

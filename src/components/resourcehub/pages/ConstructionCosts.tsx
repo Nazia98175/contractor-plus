@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/app/lib/utils";
 import { LOCATIONS } from "@/data/locationsData";
-import { useMetaTags } from "@/hooks/use-meta-tags";
 import {
   fetchFilteredProjects,
   fetchProjects,
@@ -146,15 +145,6 @@ const ConstructionCosts = () => {
   );
 
   const loading = isLoading || filteredLoading;
-
-  useMetaTags({
-    title:
-      "Construction Costs Estimator 2025 | Real Project Pricing | Contractor+",
-    description:
-      "Get accurate construction cost estimates for 500+ project types. Compare material and labor pricing across major US cities. Built for contractors and homeowners.",
-    keywords:
-      "construction costs, project estimator, contractor pricing, building costs, home improvement costs, construction calculator",
-  });
 
   const handleSearch = () => {
     if (selectedProject) {

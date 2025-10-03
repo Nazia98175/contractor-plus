@@ -3,8 +3,11 @@ import Copy from "../common/Copy";
 import Button from "../common/Button";
 import { TrynowIcon, TrynowWhiteIcon } from "../common/Icons";
 import CloudsAnimation from "../common/CloudsAnimation";
-
-const AssistantContractor = () => {
+interface Props {
+  data: any;
+  createBtn: string;
+}
+const AssistantContractor: React.FC<Props> = ({ data, createBtn }) => {
   return (
     <section className="relative z-20 overflow-hidden px-2 xl:overflow-visible">
       <div className="absolute top-[-2%] left-0 z-[99] h-[6%] w-[120%] bg-white blur-[2px]"></div>
@@ -18,18 +21,16 @@ const AssistantContractor = () => {
       <div className="mx-auto flex max-w-[990px] flex-col items-center justify-center px-4 pt-[134px] pb-10 sm:pt-[169px]">
         <Copy animateOnScroll={true}>
           <h4 className="text-decemberSky pb-4 text-center text-[22px] font-extrabold sm:text-[28px] md:text-[38px]">
-            The Go-To AI Assistant For Contractors
+            {data?.title}
           </h4>
         </Copy>
         <Copy animateOnScroll={true}>
           <p className="text-secondary pb-8 text-center text-sm font-medium sm:text-lg md:text-xl">
-            Harness the power of BigChief & let the world’s most intuitive
-            construction AI assistant handle the hustle for you. Lower costs.
-            Less Hassle. Greater efficiency.
+            {data?.subTitle}
           </p>
         </Copy>
         <Button className="flex w-full max-w-[300px] items-center justify-center gap-3">
-          Only at Contractor+
+          {createBtn}
           <TrynowWhiteIcon />
         </Button>
       </div>

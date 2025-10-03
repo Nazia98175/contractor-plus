@@ -235,7 +235,10 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               alt="hero-red-line"
             />
             {useParams.slug === "ai-call-answering-software" ? (
-              <AssistantContractor />
+              <AssistantContractor
+                data={pageData.crmService}
+                createBtn={pageData.createBtn}
+              />
             ) : (
               <CrmService
                 createBtn={pageData.createBtn}

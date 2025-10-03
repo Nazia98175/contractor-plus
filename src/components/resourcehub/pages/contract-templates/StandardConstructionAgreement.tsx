@@ -425,7 +425,7 @@ Date: ${formData.date}`;
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-shutter max-h-96 overflow-y-auto rounded-lg p-4 font-mono text-sm">
+              <div className="bg-shutter custom-scrollbar max-h-96 overflow-y-auto rounded-lg p-4 font-mono text-sm">
                 <div className="mb-4 text-center font-bold">
                   STANDARD CONSTRUCTION AGREEMENT (FIXED PRICE / LUMP SUM)
                 </div>

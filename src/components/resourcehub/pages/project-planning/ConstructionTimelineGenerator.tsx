@@ -2020,7 +2020,7 @@ export default function ConstructionTimelineGenerator() {
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <CardTitle>Project Timeline</CardTitle>
                   <CardDescription>
@@ -2044,7 +2044,7 @@ export default function ConstructionTimelineGenerator() {
                           Add Phase
                         </Button>
                       </DialogTrigger>
-                      <DialogContent>
+                      <DialogContent className="w-[95%] rounded-lg">
                         <DialogHeader>
                           <DialogTitle>Add Custom Phase</DialogTitle>
                           <DialogDescription>

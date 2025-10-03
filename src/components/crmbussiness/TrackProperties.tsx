@@ -81,7 +81,7 @@ const TrackProperties: React.FC<Props> = ({
       <div className="relative z-0 mt-10 px-2 md:-mt-3">
         {slug !== "property-profiles" && (
           <CardReveal distance={50}>
-            <h2 className="section-heading gradient-text-2 xs:max-w-full z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
+            <h2 className="section-heading gradient-text-2 xs:max-w-[1280px] z-30 mx-auto w-fit max-w-[300px] text-center !font-black lg:!font-semibold">
               {trackProperties?.title}
             </h2>
           </CardReveal>

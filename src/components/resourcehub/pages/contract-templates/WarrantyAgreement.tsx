@@ -213,11 +213,11 @@ ${formData.clientName || "[CLIENT NAME]"}
       <div className="mb-8 text-center">
         <div className="mb-4 flex items-start justify-center gap-3">
           <Shield className="mt-0.5 h-8 w-8 text-red-500 sm:mt-1" />
-          <h1 className="text-3xl font-bold md:text-4xl">
+          <h1 className="text-[28px] font-bold sm:text-3xl md:text-4xl">
             Warranty Agreement Template
           </h1>
         </div>
-        <p className="text-decemberSky mx-auto max-w-2xl text-xl">
+        <p className="text-decemberSky mx-auto max-w-2xl text-lg sm:text-xl">
           Create a comprehensive warranty agreement that protects both
           contractor and client with clear warranty terms and coverage details.
         </p>
@@ -562,7 +562,7 @@ ${formData.clientName || "[CLIENT NAME]"}
         <div className="lg:sticky lg:top-4">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="space-y-3">
                   <CardTitle className="flex items-center">
                     <FileText className="mr-2 h-5 w-5" />
@@ -582,7 +582,7 @@ ${formData.clientName || "[CLIENT NAME]"}
               </div>
             </CardHeader>
             <CardContent>
-              <div className="bg-shutter max-h-96 overflow-y-auto rounded-lg p-4 text-sm">
+              <div className="bg-shutter custom-scrollbar max-h-96 overflow-y-auto rounded-lg p-4 text-sm">
                 <div className="mb-4 text-center font-bold">
                   WARRANTY AGREEMENT
                 </div>

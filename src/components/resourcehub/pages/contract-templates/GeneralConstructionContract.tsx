@@ -215,10 +215,10 @@ Witness: ___________________________ Date: ___________
         </Link>
 
         <div className="text-center">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+          <h1 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl">
             General Construction Contract
           </h1>
-          <p className="text-aliceBlue mx-auto max-w-3xl text-xl">
+          <p className="text-aliceBlue mx-auto max-w-3xl text-lg sm:text-xl">
             Professional contract template for general construction projects
             including new builds, remodels, and additions. Fill out the form to
             generate your customized contract instantly.
@@ -638,7 +638,7 @@ Witness: ___________________________ Date: ___________
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center justify-between">
+              <CardTitle className="flex flex-wrap items-center justify-between gap-4">
                 <span>Contract Preview</span>
                 <div className="flex gap-2">
                   <Button

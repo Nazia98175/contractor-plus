@@ -399,7 +399,9 @@ export default function ConstructionRFIGenerator() {
 
       {/* Header */}
       <div className="mb-8 text-center">
-        <h1 className="mb-4 text-4xl font-bold">Construction RFI Generator</h1>
+        <h1 className="mb-4 text-3xl font-bold sm:text-4xl">
+          Construction RFI Generator
+        </h1>
         <p className="text-decemberSky mx-auto max-w-2xl text-lg">
           Generate professional Request for Information documents to get
           clarification from architects, engineers, and project owners

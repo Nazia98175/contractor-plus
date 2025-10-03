@@ -185,7 +185,7 @@ export default function ContractTemplatesPage() {
 
       {/* Header Section */}
       <div className="mb-12 text-center">
-        <h1 className="grey-gradient mb-4 text-4xl font-bold md:text-5xl">
+        <h1 className="grey-gradient mb-4 text-3xl font-bold sm:text-4xl md:text-5xl">
           Free Construction Contract Templates
         </h1>
         <p className="text-aliceBlue mx-auto mb-8 max-w-3xl text-xl">

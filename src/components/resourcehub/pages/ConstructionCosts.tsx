@@ -175,7 +175,7 @@ const ConstructionCosts = () => {
       <div className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="mb-12 text-center">
-            <div className="mb-4 flex items-center justify-center gap-3">
+            <div className="mb-4 flex flex-wrap items-center justify-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600">
                 <Calculator className="h-6 w-6" />
               </div>

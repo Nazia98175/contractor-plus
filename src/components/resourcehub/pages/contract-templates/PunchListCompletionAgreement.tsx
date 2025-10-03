@@ -204,15 +204,15 @@ export default function PunchListCompletionAgreement() {
       </Breadcrumb>
 
       {/* Header */}
-      <div className="mb-6 flex items-center gap-3">
+      <div className="mb-6 flex flex-col items-center gap-3 sm:flex-row">
         <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
           <CheckSquare className="h-5 w-5 text-red-500" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold sm:text-3xl">
+          <h1 className="text-center text-2xl font-bold sm:text-start sm:text-3xl">
             Punch List Completion Agreement Template
           </h1>
-          <p className="text-aliceBlue">
+          <p className="text-aliceBlue text-center sm:text-start">
             Create a professional punch list completion agreement for project
             closeout
           </p>
@@ -765,7 +765,7 @@ export default function PunchListCompletionAgreement() {
 
         {/* Preview Section */}
         <div className="space-y-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <h2 className="text-xl font-semibold">Contract Preview</h2>
             <div className="flex gap-2">
               <Button

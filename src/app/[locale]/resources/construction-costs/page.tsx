@@ -4,6 +4,7 @@ import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
 }: {

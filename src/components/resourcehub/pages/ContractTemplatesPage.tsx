@@ -1,7 +1,7 @@
 "use client";
+import { Download, Edit, FileText, Home, Search } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
-import { FileText, Search, Download, Edit, Home } from "lucide-react";
-import { useMetaTags } from "@/hooks/use-meta-tags";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,7 +10,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "../components/ui/breadcrumb";
-import Link from "next/link";
+import { Button } from "../components/ui/button";
 import {
   Card,
   CardContent,
@@ -18,7 +18,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 
 const contractTemplates = [
@@ -145,14 +144,6 @@ const contractTemplates = [
 
 export default function ContractTemplatesPage() {
   const [searchTerm, setSearchTerm] = useState("");
-
-  useMetaTags({
-    title: "Free Construction Contract Templates - Professional & Legal",
-    description:
-      "Download free, professional construction contract templates. Includes general construction, fixed-price, time & materials, cost-plus, subcontractor, maintenance, and punch list completion contracts.",
-    keywords:
-      "construction contracts, contract templates, construction agreement, subcontractor agreement, fixed price contract, time and materials contract, general construction contract, cost plus contract, punch list completion agreement",
-  });
 
   const filteredTemplates = contractTemplates.filter(
     (template) =>

@@ -15,7 +15,6 @@ import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import Button from "../common/Button";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
-// import AnimatedShape from "./AnimatedShape";
 export interface TheHeroProps {
   hero?: any;
   slug?: string;

@@ -110,7 +110,6 @@ const FieldService: React.FC<TheServiceProps> = ({
   // Debug logging with null check
   useEffect(() => {
     if (fieldService) {
-      // console.log("Field service data:", fieldService);
     } else {
       console.warn("No field service data provided");
     }

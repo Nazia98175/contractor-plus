@@ -1,6 +1,6 @@
 import AwardsTagsImg from "@/components/common/AwardsTagsImg";
 import CommonFormField from "@/components/common/CommonFormField";
-import { estimaticReviewsAi, platforms } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";

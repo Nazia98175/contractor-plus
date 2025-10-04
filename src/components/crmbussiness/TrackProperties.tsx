@@ -87,13 +87,6 @@ const TrackProperties: React.FC<Props> = ({
           </CardReveal>
         )}
 
-        {/* <AdaptiveHeroTitle
-          title={trackProperties?.title}
-          className="gradient-text-2 text-center !font-black lg:!font-semibold"
-          minFontSize={20}
-          maxLines={2}
-          maxFontSize={48}
-        /> */}
         <Copy animateOnScroll={false} delay={0.2}>
           <p className="paragraph-style mx-auto max-w-[950px] text-center">
             {trackProperties?.subTitle}

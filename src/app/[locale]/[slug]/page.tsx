@@ -226,7 +226,6 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
           <div className="relative">
-            {/* <div className="absolute top-[-8%] z-10 h-[30%] w-[120%] bg-white blur-[20px]"></div> */}
             <Image
               width={800}
               height={1000}

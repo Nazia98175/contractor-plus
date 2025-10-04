@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
-import { FileText, Download, Printer, ArrowLeft } from "lucide-react";
-import { useMetaTags } from "@/hooks/use-meta-tags";
 import jsPDF from "jspdf";
+import { ArrowLeft, Download, FileText, Printer } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,9 +11,9 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import { Label } from "../../components/ui/label";
+import { Checkbox } from "../../components/ui/checkbox";
 import { Input } from "../../components/ui/input";
-import { Textarea } from "../../components/ui/textarea";
+import { Label } from "../../components/ui/label";
 import {
   Select,
   SelectContent,
@@ -21,8 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/ui/select";
-import { Checkbox } from "../../components/ui/checkbox";
-import { Button } from "../../components/ui/button";
+import { Textarea } from "../../components/ui/textarea";
 
 interface ContractData {
   contractorName: string;
@@ -86,14 +85,6 @@ const initialData: ContractData = {
 
 export default function TimeAndMaterialsContract() {
   const [contractData, setContractData] = useState<ContractData>(initialData);
-
-  useMetaTags({
-    title: "Time and Materials Contract Template - Free Interactive Form",
-    description:
-      "Create professional time and materials contracts with our free interactive template. Perfect for flexible projects with hourly billing and material costs with instant PDF download.",
-    keywords:
-      "time and materials contract, T&M contract, hourly billing contract, construction contract template, contractor agreement",
-  });
 
   const handleInputChange = (
     field: keyof ContractData,

@@ -1,5 +1,4 @@
 "use client";
-import { useMetaTags } from "@/hooks/use-meta-tags";
 import { ArrowLeft, Download, FileText } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -37,13 +36,6 @@ interface FormData {
 }
 
 export default function StandardConstructionAgreement() {
-  useMetaTags({
-    title: "Standard Construction Agreement Template - Fixed Price Contract",
-    description:
-      "Free customizable standard construction agreement template for fixed-price projects. Interactive form generates a professional contract ready for download.",
-    keywords:
-      "construction agreement, fixed price contract, lump sum contract, construction contract template",
-  });
 
   const [formData, setFormData] = useState<FormData>({
     date: new Date().toLocaleDateString(),

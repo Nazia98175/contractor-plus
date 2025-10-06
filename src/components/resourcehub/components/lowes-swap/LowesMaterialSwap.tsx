@@ -158,11 +158,11 @@ export const LowesMaterialSwap = ({
         <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-4 pb-5 text-white sm:p-6">
           <div className="flex items-center justify-between">
             <DialogTitle className="flex items-center gap-4 text-xl font-semibold">
-              <div className="shrink\\ rounded-xl bg-white/10 p-3 backdrop-blur-sm">
+              <div className="rounded-xl bg-white/10 p-3 backdrop-blur-sm">
                 <img
                   src="/lovable-uploads/4695cb87-519d-4377-ac06-58e67a3b8c09.png"
                   alt="Lowe's"
-                  className="h-12 w-12 object-contain"
+                  className="h-8 w-8 object-contain sm:h-12 sm:w-12"
                 />
               </div>
               <div>

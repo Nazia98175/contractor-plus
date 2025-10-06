@@ -695,7 +695,7 @@ const ProjectCostCalculator = ({
                       return (
                         <div
                           key={material.name}
-                          className="bg-shutter flex items-center justify-between rounded-lg p-3"
+                          className="bg-shutter flex flex-col items-center justify-between rounded-lg p-3 sm:flex-row"
                         >
                           <div className="flex gap-3">
                             <Checkbox
@@ -742,7 +742,7 @@ const ProjectCostCalculator = ({
                                   </p>
                                 </div>
                               ) : (
-                                <p className="text-aliceBlue text-sm">
+                                <p className="text-aliceBlue pt-2 text-sm">
                                   {formatCurrency(material.lowPrice)} -{" "}
                                   {formatCurrency(material.highPrice)}{" "}
                                   {material.unit}
@@ -759,7 +759,7 @@ const ProjectCostCalculator = ({
                           <div className="flex items-center gap-3">
                             {swappedMaterial || material?.lowesUrl ? (
                               <div className="flex min-w-[120px] flex-col gap-2">
-                                <span className="text-right font-medium">
+                                <span className="text-center font-medium sm:text-right">
                                   {formatCurrency(materialCost)}
                                 </span>
                                 <Button

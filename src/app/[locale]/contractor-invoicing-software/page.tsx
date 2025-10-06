@@ -1,22 +1,12 @@
 import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
 import OneClearInvoice from "@/components/billing/OneClearInvoice";
 import {
-  billingformData,
-  invoicingSoftware,
-  blogList,
-  dealflowhero,
-  dealReviews,
-  dealReviews2,
-  platforms,
-  simpleWayToBill,
   integrationLogos,
+  platforms
 } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import {
-  billingBlogPost,
-  billingFaqData,
-  billingSliderData,
-  billingVsthWayYouCouldData,
+  billingSliderData
 } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CommonHero from "@/components/crmbussiness/CommonHero";
@@ -28,16 +18,10 @@ import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
 import NeverLookBack from "@/components/fieldservices/NeverLookBack";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
-import { getIntegrationList } from "@/services/integation/getIntegrationData";
+import { getSeoData } from "@/services/common/seoMeta";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getSeoData, getSeoDataCommon } from "@/services/common/seoMeta";
-import { generateSeoMetaData } from "@/utils/getSeoMeta";
-import { getSolutionPage } from "@/services/solutions/solution";
-interface Params {
-  params: Promise<{ locale: string }>;
-}
 
 export async function generateMetadata({
   params,

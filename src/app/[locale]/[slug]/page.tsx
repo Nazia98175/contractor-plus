@@ -34,7 +34,7 @@ import FreeTrialButton from "@/components/common/FreeTrialButton";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import AssistantContractor from "@/components/crmbussiness/AssistantContractor";
 
-type CrmBussinessPageProps = {
+type FeaturesPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
@@ -55,7 +55,7 @@ export async function generateMetadata({
   return generateSeoMetadata({ page, slug: resolvedParams.slug });
 }
 
-const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
+const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
   const useParams = await params;
   if (!useParams?.slug) {
     return notFound();
@@ -276,4 +276,4 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
   );
 };
 
-export default CrmBussinessPage;
+export default FeaturesMainPage;

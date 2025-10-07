@@ -198,6 +198,7 @@ const CalculateImpact: React.FC = () => {
             {/* Button */}
             <div className="flex items-center justify-center pt-5">
               <button
+                aria-label="submit"
                 onClick={calculateImpact}
                 className="bg-romanRed h-[32px] w-full rounded-md text-center text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:scale-95 sm:max-w-[248px]"
               >

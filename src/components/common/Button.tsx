@@ -6,6 +6,7 @@ type ButtonSize = "sm" | "default" | "lg" | "icon";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  ariaLabel?: string;
 }
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
@@ -31,6 +32,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       size = "default",
       type = "button",
+      ariaLabel,
       ...props
     },
     ref,
@@ -43,6 +45,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
+        aria-label={
+          ariaLabel || (typeof children === "string" ? children : "button")
+        }
         type={type}
         onClick={onClick}
         className={combinedClasses}

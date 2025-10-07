@@ -32,8 +32,12 @@ import FreeTrialButton from "@/components/common/FreeTrialButton";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 
 // Lazy load only the bottom section components
-const CrmService = lazy(() => import("@/components/crmbussiness/IndustryService"));
-const AssistantContractor = lazy(() => import("@/components/crmbussiness/AssistantContractor"));
+const CrmService = lazy(
+  () => import("@/components/crmbussiness/IndustryService"),
+);
+const AssistantContractor = lazy(
+  () => import("@/components/crmbussiness/AssistantContractor"),
+);
 const Faq = lazy(() => import("@/components/crmbussiness/Faq"));
 const BlogPosts = lazy(() => import("@/components/crmbussiness/BlogPosts"));
 
@@ -165,7 +169,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
             />
           </div>
         </div>
-        
+
         {/* Middle section - loaded normally */}
         <div className="bg-white">
           {Boolean(trackProperties?.featureHighlightSectionVisible) && (
@@ -192,6 +196,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
                 useParams.slug === "property-profiles") && (
                 <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
                   <FreeTrialButton
+                    ariaLabel="freeTrial"
                     className="gap-1.5"
                     text={trackProperties?.btnText}
                   />
@@ -232,13 +237,13 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
             reviews={pageData.reviewsData}
           />
         </div>
-        
+
         {/* Bottom section - lazy loaded */}
         <div className="relative overflow-hidden">
           {/* Background Icons */}
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
-          
+
           <div className="relative">
             <Image
               width={800}
@@ -247,7 +252,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
               src={"/images/webp/hero-red-line.webp"}
               alt="hero-red-line"
             />
-            
+
             <Suspense fallback={<LoadingFallback />}>
               {useParams.slug === "ai-call-answering-software" ? (
                 <AssistantContractor
@@ -286,7 +291,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
             />
           </Suspense>
         </div>
-        
+
         <Suspense fallback={<LoadingFallback />}>
           <BlogPosts
             data={pageData.blogsByCategory || []}

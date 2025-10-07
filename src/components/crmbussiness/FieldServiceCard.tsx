@@ -121,7 +121,10 @@ const FieldServiceCard: React.FC<Props> = ({
             )}
           </div>
           {slug === "ai-call-answering-software" && (
-            <button className="bg-softBlush text-pleasure flex w-fit items-center justify-center gap-2 rounded-[6px] px-3 py-2 text-sm transition-all duration-300 ease-in-out hover:scale-95">
+            <button
+              aria-label="Try It Now"
+              className="bg-softBlush text-pleasure flex w-fit items-center justify-center gap-2 rounded-[6px] px-3 py-2 text-sm transition-all duration-300 ease-in-out hover:scale-95"
+            >
               Try It Now
               <TrynowIcon />
             </button>

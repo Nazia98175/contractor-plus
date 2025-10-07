@@ -195,7 +195,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
             {/* Thumbtack Logo */}
             <div className="mb-4 flex items-center justify-center gap-2">
               <img
-                src="/images/webp/Thumbtack-white.png"
+                src="/images/svg/new-thumbtack.svg"
                 alt="Thumbtack"
                 className="h-8"
               />
@@ -281,7 +281,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
 
               {/* Trust Badge */}
               <div className="text-aliceBlue mt-4 flex items-center justify-center gap-2 text-xs">
-                <Shield className="h-4 w-4 text-blue-600" />
+                <Shield className="text-shieldBlue h-4 w-4" />
                 <span>Verified & background-checked professionals</span>
               </div>
             </div>

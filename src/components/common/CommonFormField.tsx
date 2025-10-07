@@ -131,6 +131,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
           {/* Mobile Button - Direct to App Store */}
           <div className="flex flex-col items-center gap-3 sm:hidden">
             <button
+              aria-label="GetStarted"
               onClick={handleMobileClick}
               className="bg-red-linear primary-btn mx-auto h-10 !w-full max-w-[500px]"
               type="button"

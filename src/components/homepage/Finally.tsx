@@ -79,8 +79,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           // sizes="(100vw)"
         />
         {/* <FinallyBackground /> */}
-        {/* <div className="absolute bottom-14 left-[5%] z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div>
-        <div className="absolute right-[10%] bottom-14 z-10 hidden h-[300px] w-full max-w-[400px] rounded-full bg-gray-600 opacity-50 blur-[150px] md:block"></div> */}
+
         <div className="relative z-30 space-y-4">
           <Copy animateOnScroll={true}>
             <h2 className="section-heading gradient-text relative z-40 mx-auto w-full max-w-[304px] px-2 text-center sm:max-w-full">

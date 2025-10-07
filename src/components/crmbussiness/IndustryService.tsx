@@ -1,6 +1,5 @@
 import CloudsAnimation from "../common/CloudsAnimation";
 import CommonFormField from "../common/CommonFormField";
-import AssistantContractor from "./AssistantContractor";
 interface Props {
   data: any;
   ncc: string;

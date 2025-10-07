@@ -8,12 +8,14 @@ interface FreeAccountButtonProps {
   text?: any;
   showIcon?: boolean;
   type?: "button" | "submit" | "reset";
+  ariaLabel?: string;
 }
 const FreeTrialButton: React.FC<FreeAccountButtonProps> = ({
   text = "",
   className,
   showIcon = true,
   type,
+  ariaLabel,
 }) => {
   const pathname = usePathname();
   const { loading, handleRedirect } = useOneLinkRedirect();
@@ -22,6 +24,7 @@ const FreeTrialButton: React.FC<FreeAccountButtonProps> = ({
       <button
         type={type}
         onClick={() => handleRedirect({ pathname })}
+        aria-label={ariaLabel}
         disabled={loading}
         className={`secondary-btn bg-red-linear h-10 gap-2 ${className}`}
       >

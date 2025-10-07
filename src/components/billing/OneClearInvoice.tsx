@@ -13,7 +13,6 @@ const OneClearInvoice: React.FC<TheServiceProps> = ({
     >
       <RealTimeServiceConnectorIcon className="pointer-events-none absolute bottom-[48%] -left-[65%] z-10 hidden sm:bottom-[15%] sm:left-0 lg:bottom-[18%] xl:block" />
 
-      {/* <Copy animateOnScroll={true} delay={0.84}> */}
       <h3 className="xs:text-2xl crm-gradient xs:max-w-[90%] mx-auto px-2 text-center text-xl font-bold sm:hidden xl:px-0">
         {(() => {
           const title = fieldService?.title || "";
@@ -40,7 +39,6 @@ const OneClearInvoice: React.FC<TheServiceProps> = ({
           );
         })()}
       </h3>
-      {/* </Copy> */}
 
       <InvoiceSlider sliderData={fieldService?.solutionCards} />
     </section>

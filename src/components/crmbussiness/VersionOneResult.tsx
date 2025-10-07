@@ -7,91 +7,39 @@ import {
   ImprovementIcon,
 } from "../common/Icons";
 
-// Helper type for data items
-type DataItem = {
-  icon: React.ReactElement;
-  title: string;
-  value: number | string;
-  duration: string;
-  format: (val: number) => string | number;
-};
+interface ImpactResultsProps {
+  timeSaved: number;
+  additionalRevenue: number;
+  improvedConversionRate: number;
+  show: boolean;
+}
 
-// Animate function
-const animateValue = (
-  start: number,
-  end: number,
-  duration: number,
-  formatFn: (val: number) => string | number,
-  callback: (val: string | number) => void,
-) => {
-  const range = end - start;
-  let current = start;
-  const increment = range / (duration / 16.67); // assuming ~60fps
+const VersionOneResult: React.FC<ImpactResultsProps> = ({
+  timeSaved,
+  additionalRevenue,
+  improvedConversionRate,
+  show,
+}) => {
+  // Calculate estimated minutes per day usage based on time saved
+  // Assuming 260 working days per year (52 weeks × 5 days)
+  const dailyTimeSaved = timeSaved / 260; // hours per day
 
-  const step = () => {
-    current += increment;
-    if (
-      (increment > 0 && current >= end) ||
-      (increment < 0 && current <= end)
-    ) {
-      callback(formatFn(end));
-    } else {
-      callback(formatFn(Math.round(current)));
-      requestAnimationFrame(step);
-    }
-  };
+  // Convert to minutes per day (hourly rate × 60)
+  // Assuming 25% of saved time would be replaced by BigChief usage
+  const dailyMinutesUsage = dailyTimeSaved * 60 * 0.25;
 
-  requestAnimationFrame(step);
-};
+  // Calculate monthly minutes (assuming 22 business days per month)
+  const estimatedMonthlyUsage = Math.ceil(dailyMinutesUsage * 22);
 
-const VersionOneResult: React.FC = () => {
-  const data: DataItem[] = [
-    {
-      icon: <AnnualTimeIcon />,
-      title: "Annual Time Saved",
-      value: 817,
-      duration: "hours/year",
-      format: (val) => Math.round(val),
-    },
-    {
-      icon: <AdditionalRevenueIcon />,
-      title: "Additional Revenue",
-      value: "$1,055,000",
-      duration: "per year",
-      format: (val) => `$${Number(val).toLocaleString()}`,
-    },
-    {
-      icon: <ImprovementIcon />,
-      title: "Conversion Improvement",
-      value: "5.0%",
-      duration: "annual increase",
-      format: (val) => `${Math.round(val)}%`,
-    },
-  ];
+  // Calculate credit costs
+  const creditRate = 0.29; // $ per minute
+  const monthlyIncludedCredits = 50; // 50 included credits per month
+  const monthlyIncludedCost = monthlyIncludedCredits * creditRate;
+  const monthlyCreditCost = estimatedMonthlyUsage * creditRate;
+  const annualCreditCost = (monthlyCreditCost - monthlyIncludedCost) * 12;
 
-  const [animatedValues, setAnimatedValues] = useState<(string | number)[]>(
-    data.map(() => "0"),
-  );
-
-  useEffect(() => {
-    data.forEach((item, index) => {
-      const rawValue =
-        typeof item.value === "string"
-          ? parseFloat(item.value.replace(/[$,%]/g, "").replace(/,/g, ""))
-          : item.value;
-
-      let startValue = rawValue - 100;
-      if (startValue < 0) startValue = 0;
-
-      animateValue(startValue, rawValue, 3000, item.format, (val) => {
-        setAnimatedValues((prev) => {
-          const updated = [...prev];
-          updated[index] = val;
-          return updated;
-        });
-      });
-    });
-  }, []);
+  // Calculate ROI
+  const annualROI = (additionalRevenue / annualCreditCost - 1) * 100;
   return (
     <>
       <div className="implimenting_parent border-superSilver mx-auto mt-10 max-w-[1120px] rounded-lg border bg-white px-2 pt-3 pb-5 shadow-lg">
@@ -103,21 +51,42 @@ const VersionOneResult: React.FC = () => {
           Your Potential Impact with BigChief
         </h4>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-          {data.map((obj, i) => (
-            <div
-              key={i}
-              className="bg-doctor flex w-full cursor-pointer flex-col items-center justify-start gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm"
-            >
-              <span className="bg-opacity-20 mx-auto flex h-10 w-10 flex-col items-center justify-center rounded-full bg-black text-white">
-                {obj.icon}
-              </span>
-              <p className="text-wallStreet py-2 uppercase">{obj.title}</p>
-              <p className="min-w-[150px] text-2xl font-bold text-black">
-                {animatedValues[i]}
-              </p>
-              <p className="text-black">{obj.duration}</p>
-            </div>
-          ))}
+          <div className="bg-doctor flex w-full cursor-pointer flex-col items-center justify-start gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm">
+            <span className="bg-opacity-20 mx-auto flex h-10 w-10 flex-col items-center justify-center rounded-full bg-black text-white">
+              <AnnualTimeIcon />
+            </span>
+            <p className="text-wallStreet py-2 uppercase"> Annual Time Saved</p>
+            <p className="min-w-[150px] text-2xl font-bold text-black">
+              {timeSaved.toFixed(0)}
+            </p>
+            <p className="text-black">hours/year</p>
+          </div>
+          <div className="bg-doctor flex w-full cursor-pointer flex-col items-center justify-start gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm">
+            <span className="bg-opacity-20 mx-auto flex h-10 w-10 flex-col items-center justify-center rounded-full bg-black text-white">
+              <AdditionalRevenueIcon />
+            </span>
+            <p className="text-wallStreet py-2 uppercase">
+              {" "}
+              Additional Revenue
+            </p>
+            <p className="min-w-[150px] text-2xl font-bold text-black">
+              ${additionalRevenue.toLocaleString()}
+            </p>
+            <p className="text-black">per year</p>
+          </div>
+          <div className="bg-doctor flex w-full cursor-pointer flex-col items-center justify-start gap-2 rounded-xl p-2.5 text-center duration-300 hover:shadow-sm">
+            <span className="bg-opacity-20 mx-auto flex h-10 w-10 flex-col items-center justify-center rounded-full bg-black text-white">
+              <ImprovementIcon />
+            </span>
+            <p className="text-wallStreet py-2 uppercase">
+              {" "}
+              Conversion Improvement
+            </p>
+            <p className="min-w-[150px] text-2xl font-bold text-black">
+              {improvedConversionRate.toFixed(1)}%
+            </p>
+            <p className="text-black">annual increase</p>
+          </div>
         </div>
         <div className="border-superSilver mt-5 w-full overflow-hidden rounded-lg border">
           <h4 className="font-fold bg-opacity-10 border-superSilver border border-b py-3 text-center text-[22px]">
@@ -133,31 +102,37 @@ const VersionOneResult: React.FC = () => {
                   <p>Usage & Credits</p>
                 </div>
                 <p className="py-3 text-base leading-[110%] text-black">
-                  Based on 1037 minutes/month usage
+                  Based on {estimatedMonthlyUsage} minutes/month usage
                 </p>
                 <div className="flex justify-between gap-4">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
-                    Annual Revenue Gain
+                    Credit Rat
                   </p>
-                  <p className="font-bold">$1,055,000</p>
+                  <p className="font-bold">${creditRate.toFixed(2)}/minute</p>
                 </div>
                 <div className="flex justify-between gap-4 pt-2">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
-                    Annual Credit Cost
+                    Monthly Credit Cost
                   </p>
-                  <p className="font-bold">$3434.76</p>
+                  <p className="font-bold">
+                    ${monthlyCreditCost.toFixed(2)}/mo
+                  </p>
                 </div>
                 <div className="flex justify-between gap-4 pt-2 pb-3">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
-                    Net Annual Benefit
+                    Monthly Included Credits
                   </p>
-                  <p className="text-sweetGarden font-bold">$1,051,565.24</p>
+                  <p className="text-sweetGarden font-bold">
+                    -${monthlyIncludedCost.toFixed(2)}/mo
+                  </p>
                 </div>
                 <div className="border-opacity-20 border-superSilver flex justify-between gap-4 border-t pt-2">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
                     Annual Credit Cost
                   </p>
-                  <p className="text-sweetGarden font-bold">$3434.76</p>
+                  <p className="text-sweetGarden font-bold">
+                    ${annualCreditCost.toFixed(2)}
+                  </p>
                 </div>
               </div>
               <div className="border-opacity-20 bg-doctor border-superSilver w-full rounded-md border p-4 shadow-sm">
@@ -170,29 +145,45 @@ const VersionOneResult: React.FC = () => {
                   </p>
                 </div>
                 <p className="flex items-center gap-1 py-5 text-3xl font-bold text-black opacity-90">
-                  30615x <span className="text-sweetGarden"></span>
+                  {annualROI.toFixed(0)}x
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="26"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="#5ed5a8"
+                        d="M11 20V7.75L5.75 13L5 12.34l6.5-6.5l6.5 6.5l-.75.66L12 7.75V20z"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-sweetGarden"></span>
                 </p>
                 <div className="flex justify-between gap-4">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
-                    Credit Rate
+                    Annual Revenue Gain
                   </p>
                   <p className="font-bold text-black opacity-90">
-                    $0.29/minute
+                    ${additionalRevenue.toLocaleString()}
                   </p>
                 </div>
                 <div className="flex justify-between gap-4 pt-2 pb-3">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
-                    Monthly Credit Cost
+                    Annual Credit Cost
                   </p>
-                  <p className="font-bold text-black opacity-90">$300.73/mo</p>
+                  <p className="font-bold text-black opacity-90">
+                    ${annualCreditCost.toFixed(2)}
+                  </p>
                 </div>
 
                 <div className="border-opacity-20 border-superSilver flex justify-between gap-4 border-t pt-2">
                   <p className="text-sm font-normal text-black opacity-90 sm:text-base">
-                    Annual Credit Cost
+                    Net Annual Benefit
                   </p>
                   <p className="text-green text-sweetGarden font-bold">
-                    $3434.76
+                    ${(additionalRevenue - annualCreditCost).toLocaleString()}
                   </p>
                 </div>
               </div>

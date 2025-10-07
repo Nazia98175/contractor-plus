@@ -15,7 +15,6 @@ import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import Button from "../common/Button";
 const AnimatedShape = dynamic(() => import("./AnimatedShape"), { ssr: false });
 
-// import AnimatedShape from "./AnimatedShape";
 export interface TheHeroProps {
   hero?: any;
   slug?: string;
@@ -140,13 +139,17 @@ const CommonHero: React.FC<TheHeroProps> = ({
               <div className="relative z-[90] flex flex-col items-center justify-center">
                 {slug === "construction-bookkeeping-services" && (
                   <FreeTrialButton
+                    ariaLabel="FreeTrialButton"
                     showIcon={true}
                     className="!flex"
                     text={hero?.btnText}
                   />
                 )}
                 {slug === "ai-call-answering-software" && (
-                  <Button className="flex w-full max-w-[290px] items-center justify-center gap-3">
+                  <Button
+                    ariaLabel="button"
+                    className="flex w-full max-w-[290px] items-center justify-center gap-3"
+                  >
                     {hero?.btnText}
                     <EditToolsIcon />
                   </Button>
@@ -162,11 +165,13 @@ const CommonHero: React.FC<TheHeroProps> = ({
                 >
                   <div className="flex w-full flex-col items-center justify-center gap-1.5 px-2 sm:w-fit">
                     <FreeTrialButton
+                      ariaLabel="FreeTrialButton"
                       className="!hidden sm:!flex"
                       text={commonData?.getStartedFreeBtn}
                       showIcon={false}
                     />
                     <FreeTrialButton
+                      ariaLabel="FreeTrialButton"
                       showIcon={false}
                       className="!flex w-full sm:!hidden"
                       text={commonData?.mobileBtn}
@@ -222,6 +227,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
                   >
                     {heroImg && (
                       <img
+                        decoding="async"
+                        data-nimg="1"
                         className={`h-full w-full object-cover ${slug === "ai-call-answering-software" ? "xs" : "rounded-t-[20px] md:rounded-[45px]"}`}
                         src={heroImg?.url}
                         alt="crm-hero"

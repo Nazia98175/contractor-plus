@@ -55,6 +55,7 @@ const BlogPosts: React.FC<Props> = ({
             <div className="hidden md:block">
               <Button
                 onClick={goToNewPage}
+                ariaLabel="ShowMore"
                 className="bg-red-linear primary-btn mt-0.5 h-10 gap-2 lg:mt-0"
               >
                 {blogs?.btnText}
@@ -133,7 +134,10 @@ const BlogPosts: React.FC<Props> = ({
           <NotFoundFallback type="blogs" />
         )}
         <div className="block pt-4 md:hidden">
-          <button className="bg-red-linear primary-btn h-10 gap-2">
+          <button
+            aria-label="ShowMore"
+            className="bg-red-linear primary-btn h-10 gap-2"
+          >
             {blogs?.btnText}
             <BlogBtnIcon />
           </button>

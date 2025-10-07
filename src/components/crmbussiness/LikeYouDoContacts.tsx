@@ -9,8 +9,6 @@ interface Props {
 }
 
 const LikeYouDoContacts: React.FC<Props> = ({ trackProperties, slug }) => {
-  console.log(trackProperties, "trackPropertiestrackProperties");
-
   if (!trackProperties?.featuresList?.[0]?.content?.length) return null;
   return (
     <section className="relative z-10 mx-auto flex w-full max-w-[1080px] flex-col-reverse items-start justify-between gap-7 px-2 pt-[66px] sm:py-14 md:flex-row md:gap-10 lg:pt-16 lg:pb-0">

@@ -80,6 +80,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
       >
         <div className="main-container flex items-center justify-between py-2 lg:gap-3 xl:gap-[54px]">
           <button
+            aria-label="contractorplus logo"
             onClick={handleClick}
             className="w-full max-w-[130px] min-w-24 lg:max-w-[137px]"
           >

@@ -47,6 +47,8 @@ export const LowesMaterialSwap = ({
   swappedMaterial,
 }: LowesMaterialSwapProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen, "white");
+
   const [searchQuery, setSearchQuery] = useState(materialName);
   const [zipCode, setZipCode] = useState(userZipCode);
   const [searchResults, setSearchResults] = useState<LowesMaterial[]>([]);
@@ -156,11 +158,11 @@ export const LowesMaterialSwap = ({
         <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 p-4 pb-5 text-white sm:p-6">
           <div className="flex items-center justify-between">
             <DialogTitle className="flex items-center gap-4 text-xl font-semibold">
-              <div className="shrink\\ rounded-xl bg-white/10 p-3 backdrop-blur-sm">
+              <div className="rounded-xl bg-white/10 p-3 backdrop-blur-sm">
                 <img
                   src="/lovable-uploads/4695cb87-519d-4377-ac06-58e67a3b8c09.png"
                   alt="Lowe's"
-                  className="h-12 w-12 object-contain"
+                  className="h-8 w-8 object-contain sm:h-12 sm:w-12"
                 />
               </div>
               <div>
@@ -176,7 +178,7 @@ export const LowesMaterialSwap = ({
         </div>
 
         {/* Content */}
-        <div className="max-h-[calc(90vh-120px)] overflow-auto p-4 sm:p-6">
+        <div className="custom-scrollbar max-h-[calc(90vh-120px)] overflow-auto p-4 sm:p-6">
           {/* Search Section */}
           <div className="mb-6">
             <div className="rounded-xl border bg-gray-50 p-4">
@@ -279,7 +281,7 @@ export const LowesMaterialSwap = ({
           {searchResults.length > 0 && (
             <div>
               <div className="mb-4 flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-white">
                   Search Results
                 </h3>
                 <Badge
@@ -290,7 +292,7 @@ export const LowesMaterialSwap = ({
                 </Badge>
               </div>
 
-              <div className="max-h-96 space-y-3 overflow-y-auto pr-2">
+              <div className="custom-scrollbar max-h-96 space-y-3 overflow-y-auto pr-2">
                 {searchResults.map((material) => (
                   <Card
                     key={material.id}
@@ -323,7 +325,7 @@ export const LowesMaterialSwap = ({
                         {/* Product Info */}
                         <div className="min-w-0 flex-1">
                           <h4
-                            className="mb-1 line-clamp-2 text-sm leading-5 font-medium text-gray-900"
+                            className="mb-1 line-clamp-2 text-sm leading-5 font-medium text-white"
                             title={material.name}
                           >
                             {material.name}

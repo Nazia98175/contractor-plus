@@ -24,21 +24,23 @@ const TrackProperties: React.FC<Props> = ({
       {/* Desktop background image */}
       <Image
         className="absolute -top-[35%] left-0 z-0 hidden h-[83%] w-[100%] object-center md:flex lg:h-[100%] 2xl:h-[120%]"
-        src="/images/webp/finally-desktop-bg.webp"
+        src="/images/webp/finally-desktop-bg-2.webp"
+        decoding="async"
         alt="finally-desktop-bg"
         width={1920}
         height={1920}
-        // sizes="100vw"
+        sizes="100vw"
       />
 
       {/* Mobile background image */}
       <Image
         className="absolute top-[-38%] left-0 z-0 flex h-[110%] w-[100%] object-center md:hidden"
-        src="/images/webp/finally-desktop-bg.webp"
+        src="/images/webp/finally-desktop-bg-2.webp"
         alt="finally-desktop-bg"
+        decoding="async"
         width={1920}
         height={1920}
-        // sizes="100vw"
+        sizes="100vw"
       />
       {/* Device Images */}
       <CardReveal distance={50}>
@@ -49,7 +51,7 @@ const TrackProperties: React.FC<Props> = ({
               srcSet={
                 desktopImgUrl ??
                 trackProperties?.mainImgDesktop?.url ??
-                "/images/webp/finally-desktop-bg.webp"
+                "/images/webp/finally-desktop-bg-2.webp"
               }
               media="(min-width: 768px)"
             />
@@ -57,7 +59,7 @@ const TrackProperties: React.FC<Props> = ({
               srcSet={
                 mobileImgUrl ??
                 trackProperties?.mainImgMobile?.url ??
-                "/images/webp/finally-mobile-bg.webp"
+                "/images/webp/finally-mobile-bg-2.webp"
               }
               media="(max-width: 767px)"
             />
@@ -65,7 +67,7 @@ const TrackProperties: React.FC<Props> = ({
               src={
                 mobileImgUrl ??
                 trackProperties?.mainImgMobile?.url ??
-                "/images/webp/finally-mobile-bg.webp"
+                "/images/webp/finally-mobile-bg-2.webp"
               }
               alt={trackProperties?.title ?? "Contractor+"}
               width={1098}
@@ -87,13 +89,6 @@ const TrackProperties: React.FC<Props> = ({
           </CardReveal>
         )}
 
-        {/* <AdaptiveHeroTitle
-          title={trackProperties?.title}
-          className="gradient-text-2 text-center !font-black lg:!font-semibold"
-          minFontSize={20}
-          maxLines={2}
-          maxFontSize={48}
-        /> */}
         <Copy animateOnScroll={false} delay={0.2}>
           <p className="paragraph-style mx-auto max-w-[950px] text-center">
             {trackProperties?.subTitle}
@@ -101,6 +96,7 @@ const TrackProperties: React.FC<Props> = ({
         </Copy>
 
         <FreeTrialButton
+          ariaLabel="freeTrial"
           className="mt-3 !flex gap-1.5 sm:!hidden"
           text={trackProperties?.mobileBtn}
         />

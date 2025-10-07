@@ -337,7 +337,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                         <div className="min-w-0 flex-1">
                           <div className="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
                             <h4 className="text-foreground text-base font-semibold">
-                              {contractor?.businessName}
+                              {contractor?.businessName}dfdf
                             </h4>
                             <Button
                               onClick={() =>
@@ -408,12 +408,12 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
               <div className="border-border border-t py-6">
                 <div className="text-aliceBlue flex flex-col items-center justify-between gap-4 text-xs sm:flex-row">
                   <div className="flex items-center gap-2">
-                    <img
-                      src="/lovable-uploads/1bd58006-0f6d-40fe-bd6a-5fcd57aec5ce.png"
-                      alt="Thumbtack"
-                      className="h-4"
-                    />
                     <span>Powered by Thumbtack</span>
+                    <img
+                      src="/images/svg/thumbtach.svg"
+                      alt="Thumbtack"
+                      className="h-4 rounded-full"
+                    />
                   </div>
                   <div className="flex items-center gap-1">
                     <ShieldCheck className="h-3 w-3 text-blue-600" />

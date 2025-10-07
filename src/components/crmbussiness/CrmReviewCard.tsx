@@ -1,9 +1,7 @@
 "use client";
 import { ReviewCardProps } from "@/types";
-import Image from "next/image";
 import { PlayIcon, StartIcon } from "../common/Icons";
 import { getInitials } from "../common/ReviewCard";
-import ImageProxy from "../common/ImageProxy";
 
 const VARIANT_CLASSES = {
   primary: {

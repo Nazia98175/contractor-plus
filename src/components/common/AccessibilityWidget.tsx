@@ -12,6 +12,7 @@ export default function AccessibilityWidget({
 }: AccessibilityWidgetProps) {
   return (
     <Script
+      defer
       src="https://widget.webability.io/widget.min.js"
       strategy="afterInteractive"
       data-asw-lang={lang}

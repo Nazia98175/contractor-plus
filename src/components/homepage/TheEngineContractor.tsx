@@ -61,14 +61,6 @@ const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
           </div>
           <div className="-ml-[9%] flex w-full max-w-[450px] flex-col items-center -space-y-2 sm:-ml-[0%]">
             <LottieAnimation animationData={animationData} />
-
-            {/* <Image
-              src="/images/webp/engine.webp"
-              alt="engine contractor"
-              width={356}
-              className="object-cover sm:hidden"
-              height={192}
-            /> */}
           </div>
         </div>
       </div>

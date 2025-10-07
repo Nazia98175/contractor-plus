@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import {
   constructionBookkeepingServices,
   platforms,
@@ -7,34 +8,47 @@ import {
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
 import TrustBar from "@/components/common/TrustBar";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CommonHero from "@/components/crmbussiness/CommonHero";
 import ConstructionBookkeepingCard from "@/components/constructionbookkeeping/ConstructionBookkeepingCard";
-import Faq from "@/components/crmbussiness/Faq";
-import FieldService from "@/components/crmbussiness/FieldService";
-import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
-import CrmService from "@/components/crmbussiness/IndustryService";
-import KindAdorable from "@/components/crmbussiness/KindAdorable";
-import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
 import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
+import TrustedService from "@/components/crmbussiness/TrustedService";
+import FieldService from "@/components/crmbussiness/FieldService";
+import TrackProperties from "@/components/crmbussiness/TrackProperties";
+import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
+import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
+import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
+import KindAdorable from "@/components/crmbussiness/KindAdorable";
+import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
-import TrackProperties from "@/components/crmbussiness/TrackProperties";
-import TrustedService from "@/components/crmbussiness/TrustedService";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { generateSeoMetadata } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
-import RunWithContractor from "@/components/fieldservices/RunWithContractor";
-import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
-import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
 import FreeTrialButton from "@/components/common/FreeTrialButton";
 import CardRequiredButton from "@/components/common/CardRequiredButton";
-import AssistantContractor from "@/components/crmbussiness/AssistantContractor";
 
-type CrmBussinessPageProps = {
+// Lazy load only the bottom section components
+const CrmService = lazy(
+  () => import("@/components/crmbussiness/IndustryService"),
+);
+const AssistantContractor = lazy(
+  () => import("@/components/crmbussiness/AssistantContractor"),
+);
+const Faq = lazy(() => import("@/components/crmbussiness/Faq"));
+const BlogPosts = lazy(() => import("@/components/crmbussiness/BlogPosts"));
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="flex min-h-[200px] items-center justify-center">
+    <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
+  </div>
+);
+
+type FeaturesPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
@@ -55,7 +69,7 @@ export async function generateMetadata({
   return generateSeoMetadata({ page, slug: resolvedParams.slug });
 }
 
-const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
+const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
   const useParams = await params;
   if (!useParams?.slug) {
     return notFound();
@@ -155,7 +169,8 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             />
           </div>
         </div>
-        {/* Direct component rendering without lazy loading */}
+
+        {/* Middle section - loaded normally */}
         <div className="bg-white">
           {Boolean(trackProperties?.featureHighlightSectionVisible) && (
             <>
@@ -181,6 +196,7 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
                 useParams.slug === "property-profiles") && (
                 <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
                   <FreeTrialButton
+                    ariaLabel="freeTrial"
                     className="gap-1.5"
                     text={trackProperties?.btnText}
                   />
@@ -221,12 +237,14 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
             reviews={pageData.reviewsData}
           />
         </div>
+
+        {/* Bottom section - lazy loaded */}
         <div className="relative overflow-hidden">
           {/* Background Icons */}
           <FooterRedLineIcon className="pointer-events-none absolute top-[-20%] left-[-2%] hidden max-h-[994px] w-full max-w-[840px] sm:block" />
           <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] left-0 block max-h-[994px] w-full max-w-[840px] sm:hidden" />
+
           <div className="relative">
-            {/* <div className="absolute top-[-8%] z-10 h-[30%] w-[120%] bg-white blur-[20px]"></div> */}
             <Image
               width={800}
               height={1000}
@@ -234,47 +252,57 @@ const CrmBussinessPage = async ({ params }: CrmBussinessPageProps) => {
               src={"/images/webp/hero-red-line.webp"}
               alt="hero-red-line"
             />
-            {useParams.slug === "ai-call-answering-software" ? (
-              <AssistantContractor
-                data={pageData.crmService}
-                createBtn={pageData.createBtn}
-              />
-            ) : (
-              <CrmService
-                createBtn={pageData.createBtn}
-                mobileBtn={pageData.mobileBtn}
-                ncc={pageData.ncc}
-                data={pageData.crmService}
-                variant="primary"
-                className={`${
-                  pageData.slug === "crm"
-                    ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
-                    : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
-                }`}
-                variantBtn="light"
-              />
-            )}
+
+            <Suspense fallback={<LoadingFallback />}>
+              {useParams.slug === "ai-call-answering-software" ? (
+                <AssistantContractor
+                  data={pageData.crmService}
+                  createBtn={pageData.createBtn}
+                />
+              ) : (
+                <CrmService
+                  createBtn={pageData.createBtn}
+                  mobileBtn={pageData.mobileBtn}
+                  ncc={pageData.ncc}
+                  data={pageData.crmService}
+                  variant="primary"
+                  className={`${
+                    pageData.slug === "crm"
+                      ? "xs:max-w-[89%] max-w-[83%] pt-10 sm:max-w-[1120px] sm:pt-0"
+                      : "xs:max-w-[81%] max-w-[76%] pt-10 sm:max-w-[662px] sm:pt-0"
+                  }`}
+                  variantBtn="light"
+                />
+              )}
+            </Suspense>
           </div>
+
           <TrustBar
             platforms={platforms}
             className="mx-auto w-full max-w-[889px]"
           />
-          <Faq
-            faq={pageData.faq}
-            classNameAnswer="pt-1"
-            mainContainerclassName="px-2 pt-[66px] pb-0 md:pt-[76px] md:pb-[83px]"
-            TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
-          />
+
+          <Suspense fallback={<LoadingFallback />}>
+            <Faq
+              faq={pageData.faq}
+              classNameAnswer="pt-1"
+              mainContainerclassName="px-2 pt-[66px] pb-0 md:pt-[76px] md:pb-[83px]"
+              TittleClassName="max-w-[88%] xs:max-w-[98%] sm:max-w-full mx-auto"
+            />
+          </Suspense>
         </div>
-        <BlogPosts
-          data={pageData.blogsByCategory || []}
-          blogs={pageData.blogs}
-          className="mt-7 mb-20 md:mt-9"
-          classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
-        />
+
+        <Suspense fallback={<LoadingFallback />}>
+          <BlogPosts
+            data={pageData.blogsByCategory || []}
+            blogs={pageData.blogs}
+            className="mt-7 mb-20 md:mt-9"
+            classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
+          />
+        </Suspense>
       </div>
     </>
   );
 };
 
-export default CrmBussinessPage;
+export default FeaturesMainPage;

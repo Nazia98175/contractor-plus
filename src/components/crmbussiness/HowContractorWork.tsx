@@ -71,7 +71,11 @@ const HowContractorWork: React.FC<Props> = ({ ncc, trackProperties }) => {
       </section>
 
       <div className="relative z-20 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
-        <FreeTrialButton className="gap-1.5" text={trackProperties?.btnText} />
+        <FreeTrialButton
+          ariaLabel="freeTrial"
+          className="gap-1.5"
+          text={trackProperties?.btnText}
+        />
         <CardRequiredButton className="text-wallStreet" text={ncc} />
       </div>
     </>

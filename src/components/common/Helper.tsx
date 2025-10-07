@@ -3207,50 +3207,50 @@ export const sponsorLogo = [
   { images: "/images/webp/sponser-logo-3.webp" },
 ];
 
-export const eventPricingDetail = [
-  {
-    seatname: "Front Row Seat",
-    Description:
-      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-    image: "/images/webp/pricing-card-2.webp",
-    pricing: "$99.00",
-  },
-  {
-    seatname: "Front Row Seat",
-    Description:
-      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-    image: "/images/webp/pricing-card-1.webp",
-    pricing: "$99.00",
-  },
-  {
-    seatname: "Mid Row Seat",
-    Description:
-      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-    image: "/images/webp/pricing-card-3.webp",
-    pricing: "$69.00",
-  },
-  {
-    seatname: "Front Row Seat",
-    Description:
-      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-    image: "/images/webp/pricing-card-2.webp",
-    pricing: "$99.00",
-  },
-  {
-    seatname: "Front Row Seat",
-    Description:
-      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-    image: "/images/webp/pricing-card-1.webp",
-    pricing: "$99.00",
-  },
-  {
-    seatname: "Mid Row Seat",
-    Description:
-      "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
-    image: "/images/webp/pricing-card-3.webp",
-    pricing: "$69.00",
-  },
-];
+// export const eventPricingDetail = [
+//   {
+//     seatname: "Front Row Seat",
+//     Description:
+//       "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+//     image: "/images/webp/pricing-card-2.webp",
+//     pricing: "$99.00",
+//   },
+//   {
+//     seatname: "Front Row Seat",
+//     Description:
+//       "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+//     image: "/images/webp/pricing-card-1.webp",
+//     pricing: "$99.00",
+//   },
+//   {
+//     seatname: "Mid Row Seat",
+//     Description:
+//       "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+//     image: "/images/webp/pricing-card-3.webp",
+//     pricing: "$69.00",
+//   },
+//   {
+//     seatname: "Front Row Seat",
+//     Description:
+//       "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+//     image: "/images/webp/pricing-card-2.webp",
+//     pricing: "$99.00",
+//   },
+//   {
+//     seatname: "Front Row Seat",
+//     Description:
+//       "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+//     image: "/images/webp/pricing-card-1.webp",
+//     pricing: "$99.00",
+//   },
+//   {
+//     seatname: "Mid Row Seat",
+//     Description:
+//       "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+//     image: "/images/webp/pricing-card-3.webp",
+//     pricing: "$69.00",
+//   },
+// ];
 
 export const propertyCardData = {
   title:

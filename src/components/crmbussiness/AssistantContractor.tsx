@@ -29,7 +29,10 @@ const AssistantContractor: React.FC<Props> = ({ data, createBtn }) => {
             {data?.subTitle}
           </p>
         </Copy>
-        <Button className="flex w-full max-w-[300px] items-center justify-center gap-3">
+        <Button
+          ariaLabel="GetStarted"
+          className="flex w-full max-w-[300px] items-center justify-center gap-3"
+        >
           {createBtn}
           <TrynowWhiteIcon />
         </Button>

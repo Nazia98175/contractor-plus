@@ -67,7 +67,7 @@ const RunWithContractor: React.FC<TheServiceProps> = ({
           {icon ? (
             <Image
               src="/images/svg/estimatic.svg"
-              alt="Estimatic "
+              alt="Estimatic"
               className="mx-auto w-full max-w-24 object-center sm:max-w-[120px]"
               width={120}
               height={20}

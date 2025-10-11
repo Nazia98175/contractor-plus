@@ -27,7 +27,7 @@ const PlanButton: React.FC<PlanButtonProps> = ({
       "bg-softBlush text-thickRed group-hover:bg-thickRed group-hover:text-softBlush",
     proTeamSeconadry: "text-thickRed border border-thickRed",
     lifetime:
-      "text-[#008418]  bg-[#D7FFEB] group-hover:border-[#008418] border-transparent border",
+      "text-luchGarden  bg-[#D7FFEB] group-hover:border-luchGarden border-transparent border",
     default:
       "border-winterWay border text-wallStreet group-hover:bg-wallStreet group-hover:border-transparent group-hover:text-offWhite",
   };

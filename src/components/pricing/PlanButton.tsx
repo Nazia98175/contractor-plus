@@ -2,7 +2,7 @@ import React from "react";
 
 interface PlanButtonProps {
   cta: string;
-  variant?: "pro" | "proTeam" | "proTeamSeconadry" | "default";
+  variant?: "pro" | "proTeam" | "proTeamSeconadry" | "lifetime" | "default";
   size?: "small" | "default";
   className?: string;
 }
@@ -26,6 +26,8 @@ const PlanButton: React.FC<PlanButtonProps> = ({
     proTeam:
       "bg-softBlush text-thickRed group-hover:bg-thickRed group-hover:text-softBlush",
     proTeamSeconadry: "text-thickRed border border-thickRed",
+    lifetime:
+      "text-luchGarden  bg-[#D7FFEB] group-hover:border-luchGarden border-transparent border",
     default:
       "border-winterWay border text-wallStreet group-hover:bg-wallStreet group-hover:border-transparent group-hover:text-offWhite",
   };

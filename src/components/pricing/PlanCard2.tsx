@@ -75,7 +75,9 @@ const PlanCard2: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
               {plan?.userLimit ?? ""}
             </p>
           </div>
-          {plan?.ctaStyle === "proTeam" && <ActivationIcon />}
+          <span className="rounded-[0 8px] font-myriad bg-[#252525] px-2 py-1 text-lg font-semibold text-[#CD3E3F]">
+            Only 500 licenses available!
+          </span>
         </div>
 
         <h3 className="text-winterWay mt-5 text-[38px] !leading-[122%] font-bold md:mt-8">

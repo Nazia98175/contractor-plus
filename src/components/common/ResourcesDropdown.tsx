@@ -24,7 +24,7 @@ const ResourcesDropdown: React.FC<Props> = ({
   const resourceItems = [
     { image: "/images/webp/contractor-hq.webp" },
     { image: "/images/webp/local-construction-costs.webp" },
-    { image: "/images/webp/podcasts.webp" },
+    { image: "/images/webp/Podcasts.webp" },
     { image: "/images/webp/Industry-sEvents.webp" },
     { image: "/images/webp/calculators.webp" },
     { image: "/images/webp/Affiliates.webp" },

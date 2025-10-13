@@ -113,13 +113,14 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       {isCrmRoute && (
         <div className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           <Image
-            height={457}
-            width={300}
-            unoptimized
-            // sizes="100vw"
-            className="h-full w-full object-cover"
             src="/images/webp/footer-gradient-right.webp"
-            alt="footer gradient"
+            alt=""
+            role="presentation"
+            width={300}
+            height={457}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 300px"
+            className="h-full w-full object-cover"
           />
         </div>
       )}
@@ -234,10 +235,17 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               </button>
             </div>
             <div className="hidden gap-3 py-1 sm:flex sm:py-0">
-              <Link href="https://x.com/cplusapp">
+              <Link
+                aria-label="Visit Contractor Plus on X (Twitter)"
+                href="https://x.com/cplusapp"
+              >
                 <TwitterIcon />
               </Link>
-              <Link href="https://www.linkedin.com/company/contractorplus">
+
+              <Link
+                aria-label="Visit Contractor Plus on LinkedIn"
+                href="https://www.linkedin.com/company/contractorplus"
+              >
                 <LinkdinIcon />
               </Link>
             </div>
@@ -248,10 +256,16 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             © {currentYear} {footer?.copyrightTxt}
           </p>
           <div className="flex gap-3 py-1 sm:hidden sm:py-0">
-            <Link href="https://x.com/cplusapp">
+            <Link
+              aria-label="Visit Contractor Plus on X (Twitter)"
+              href="https://x.com/cplusapp"
+            >
               <TwitterIcon />
             </Link>
-            <Link href="https://www.linkedin.com/company/contractorplus">
+            <Link
+              aria-label="Visit Contractor Plus on LinkedIn"
+              href="https://www.linkedin.com/company/contractorplus"
+            >
               <LinkdinIcon />
             </Link>
           </div>

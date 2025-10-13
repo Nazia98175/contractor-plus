@@ -109,7 +109,11 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
             >
               {header?.btnText?.btnText}
             </button>
-            <button className="lg:hidden" onClick={() => setIsShow(true)}>
+            <button
+              aria-label="contractorplus close button"
+              className="lg:hidden"
+              onClick={() => setIsShow(true)}
+            >
               <HamburgerIcon />
             </button>
             <SideBar header={header} isshow={isshow} setIsShow={setIsShow} />

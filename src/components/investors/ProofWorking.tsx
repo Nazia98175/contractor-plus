@@ -13,6 +13,7 @@ import {
   ProofIcon6,
 } from "../common/Icons";
 import Copy from "../common/Copy";
+import Image from "next/image";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -209,7 +210,11 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
 
         {/* Logo - Static at top */}
         <div className="flex items-center justify-center pb-8">
-          <img
+          <Image
+            height={180}
+            width={180}
+            priority
+            fetchPriority="high"
             className="ios-image w-full max-w-[160px] sm:max-w-[180px]"
             src="/images/svg/Proof-working-logo.svg"
             alt="proof"

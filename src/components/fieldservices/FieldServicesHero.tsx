@@ -184,15 +184,17 @@ const FieldServicesHero: React.FC<Props> = ({
         </div>
         <div className="relative z-20 h-full w-full sm:max-w-[270px] xl:max-w-[355px]">
           <Image
-            className="z-20 h-full max-h-[301px] w-full object-contain sm:max-h-[355px] sm:object-cover"
             src="/images/webp/group-with-location.webp"
+            alt="location"
             width={355}
             height={355}
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 355px"
             priority
             fetchPriority="high"
             decoding="async"
-            alt="location"
-            sizes="(max-width: 768px) 100vw, 355px"
+            placeholder="blur"
+            blurDataURL="/images/webp/group-with-location-blur.webp"
+            className="z-20 h-full max-h-[301px] w-full object-contain sm:max-h-[355px] sm:object-cover"
           />
           {processedLocation?.city && (
             <div className="absolute top-[60%] left-[38%] z-20 sm:left-[30%]">

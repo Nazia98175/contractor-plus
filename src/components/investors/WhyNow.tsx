@@ -259,9 +259,20 @@ const WhyNow: React.FC<WhyNowProps> = ({ items }) => {
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Background circle image - hidden on mobile */}
           <div className="absolute inset-0 hidden items-center justify-center lg:flex">
+            {/* <Image
+              src="/images/webp/rounded.webp"
+              alt="now bg"
+              fill
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, (min-width: 769px) 90vh"
+              className="h-full max-h-[90vh] w-full max-w-[min(90vw,90vh)] origin-center object-contain"
+              ref={bgImageRef} // Note: `ref` works differently with Next.js Image
+            /> */}
             <img
               ref={bgImageRef}
               src="/images/webp/rounded.webp"
+              fetchPriority="high"
               alt="now bg"
               className="h-full max-h-[90vh] w-full max-w-[min(90vw,90vh)] origin-center object-contain"
             />

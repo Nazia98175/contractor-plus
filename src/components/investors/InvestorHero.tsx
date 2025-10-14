@@ -6,6 +6,7 @@ import Button from "../common/Button";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import { InvestorHeroIcon } from "../common/Icons";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 interface InvestorHeroProps {
@@ -139,16 +140,32 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
 
   return (
     <section ref={wrapperRef} className="relative overflow-hidden">
-      <img
-        className="absolute top-0 left-0 z-[-2] hidden h-full w-full object-cover md:block"
-        src="/images/webp/Grid-layers.png"
-        alt="grid layers"
-      />
-      <img
-        className="absolute top-0 left-0 hidden h-full w-full object-cover md:block"
-        src="/images/webp/invers-hero-bg.webp"
-        alt="invers hero bg"
-      />
+      <div className="absolute top-0 left-0 z-[-2] hidden h-full w-full md:block">
+        <Image
+          src="/images/webp/Grid-layers.png"
+          alt="Grid layers"
+          fill
+          sizes="100vw"
+          fetchPriority="high"
+          placeholder="blur"
+          blurDataURL="/images/webp/Grid-layers.png"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Invers hero background */}
+      <div className="absolute top-0 left-0 hidden h-full w-full md:block">
+        <Image
+          src="/images/webp/invers-hero-bg-2.webp"
+          alt="Invers hero bg"
+          fill
+          sizes="100vw"
+          fetchPriority="high"
+          placeholder="blur"
+          blurDataURL="/images/webp/invers-hero-bg-2.webp"
+          className="object-cover"
+        />
+      </div>
       <div className="relative mx-auto max-w-[958px] pt-[100px] pb-[120px] sm:pt-[150px] md:pt-[200px] lg:pt-[240px] xl:pt-[280px]">
         <span
           ref={redBgRef}
@@ -158,7 +175,10 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
         </span>
         <div className="flex flex-col items-center justify-center px-2">
           <Copy delay={0.1}>
-            <p className="text-darkGray mx-auto w-fit rounded-[6px] bg-[rgba(16,27,37,0.30)] px-2 py-1 text-center text-sm font-bold backdrop-blur-[16px]">
+            <p
+              aria-label="Investment Opportunity"
+              className="text-darkGray mx-auto w-fit rounded-[6px] bg-[rgba(16,27,37,0.30)] px-2 py-1 text-center text-sm font-bold backdrop-blur-[16px]"
+            >
               {heroSubTitle || "Investment Opportunity"}
             </p>
           </Copy>
@@ -169,18 +189,27 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
             </h2>
           </Copy>
           <Copy delay={0.3}>
-            <p className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg">
+            <p
+              aria-label="Contractor+ is the category disruptor the $1T field service"
+              className="text-darkGray pt-2 text-center text-xs font-medium sm:pt-4 sm:text-base md:pt-6 md:text-lg"
+            >
               {heroDescription ||
                 "Contractor+ is the category disruptor the $1T field service market has needed. We've built what Jobber, Housecall Pro, and ServiceTitan couldn't: a platform contractors actually love."}
             </p>
           </Copy>
           <Copy delay={0.5}>
-            <p className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg">
+            <p
+              aria-label="And we've done it without a cent from VC's."
+              className="text-darkGray pt-2 pb-4 text-center text-xs font-extrabold sm:pt-4 sm:text-base md:py-6 md:text-lg"
+            >
               {heroSubDesc}
             </p>
           </Copy>
           <CardReveal className="w-full sm:w-fit" delay={0.6}>
-            <Button className="w-full max-w-full sm:max-w-[204px]">
+            <Button
+              ariaLabel="book investor call"
+              className="w-full max-w-full sm:max-w-[204px]"
+            >
               {btnText || "Book investor call"}
             </Button>
           </CardReveal>
@@ -191,17 +220,27 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
         >
           {/* Left Mobile Card */}
           <div id="left-mobile" className="relative z-0 sm:ml-14">
-            <img
-              className="relative w-full max-w-[329px]"
-              src="/images/webp/mobile-card-1.webp"
-              alt="iphone"
+            <Image
+              src="/images/webp/mobile-card-1-1.webp"
+              alt="iPhone"
+              width={329}
+              height={329}
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, 329px"
+              className="w-full max-w-[329px] rounded-lg object-cover"
             />
             <div className="invester-image-gradient pointer-events-none absolute bottom-[-2%] left-0 z-10 h-[150%] w-full"></div>
           </div>
 
           {/* Center Mobile Card */}
           <div id="center-mobile" className="relative z-10">
-            <img
+            <Image
+              width={329}
+              height={329}
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, 329px"
               className="z-20 -mt-[30%] h-full w-full max-w-[329px]"
               src="/images/webp/mobile-card-2.webp"
               alt="iphone"
@@ -211,9 +250,14 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
 
           {/* Right Mobile Card */}
           <div id="right-mobile" className="relative z-0 sm:mr-14">
-            <img
+            <Image
+              width={329}
+              height={329}
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, 329px"
               className="relative top-[20%] w-full max-w-[329px]"
-              src="/images/webp/mobile-card-3.webp"
+              src="/images/webp/mobile-card-3-3.webp"
               alt="iphone"
             />
             <div className="invester-image-gradient pointer-events-none absolute bottom-[-2%] left-0 h-[150%] w-full"></div>

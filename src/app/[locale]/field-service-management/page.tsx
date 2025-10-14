@@ -8,10 +8,8 @@ import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
 import FieldServicesHero from "@/components/fieldservices/FieldServicesHero";
 import GoingFieldSevices from "@/components/fieldservices/GoingFieldSevices";
 import NeverLookBack from "@/components/fieldservices/NeverLookBack";
-import RealTimeServiceConnector from "@/components/fieldservices/RealTimeServiceConnector";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ServiceContractorsMarquee from "@/components/fieldservices/ServiceContractorsMarquee";
-import TimmingEffect from "@/components/fieldservices/TimmingEffect";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getMaxMindLocation } from "@/services/map";
@@ -20,8 +18,13 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
-
+import { lazy, Suspense } from "react";
+const RealTimeServiceConnector = lazy(
+  () => import("@/components/fieldservices/RealTimeServiceConnector"),
+);
+const TimmingEffect = dynamic(
+  () => import("@/components/fieldservices/TimmingEffect"),
+);
 export async function generateMetadata({
   params,
 }: {
@@ -113,9 +116,7 @@ const FieldServicesPage = async ({ params }: Params) => {
           />
         </Suspense>
       </div>
-      <Suspense fallback={<LoadingFallback />}>
-        <RunWithContractor kindAdorable={comparisonList} />
-      </Suspense>
+      <RunWithContractor kindAdorable={comparisonList} />
       <Suspense fallback={<LoadingFallback />}>
         <TimmingEffect timingEff={trackProperties} commonData={commonData} />
       </Suspense>

@@ -164,6 +164,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         {/* TOP WHITE BLUR LINE  */}
         <div className="absolute -top-[17%] left-1/2 z-[10000] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
         <img
+          aria-label="intial cloud"
           src="/images/webp/initial-cloud.webp"
           id="initial-cloud"
           className="absolute top-0 z-[21] h-full w-full"
@@ -175,8 +176,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
+          aria-label="cloud graphic step-1"
           loading="lazy"
-          unoptimized
           src="/images/webp/step-1-cloud.webp"
           id="step-1-cloud"
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
@@ -187,10 +188,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
+          aria-label="cloud graphic step-2"
           src="/images/webp/step-2-cloud.webp"
           id="step-2-cloud"
           loading="lazy"
-          unoptimized
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 2 transition"
         />
@@ -199,6 +200,7 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
+          aria-label="cloud graphic step-3"
           src="/images/webp/step-3-cloud.webp"
           id="step-3-cloud"
           loading="lazy"
@@ -211,10 +213,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
+          aria-label="cloud graphic step-4"
           src="/images/webp/step-4-cloud.webp"
           id="step-4-cloud"
           loading="lazy"
-          unoptimized
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 4 transition"
         />
@@ -223,10 +225,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
+          aria-label="cloud graphic step-6"
           src="/images/webp/step-6-cloud.webp"
           id="step-6-cloud"
           loading="lazy"
-          unoptimized
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 6 transition"
         />
@@ -235,10 +237,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
+          aria-label="cloud graphic step-7"
           src="/images/webp/step-7-cloud.webp"
           id="step-7-cloud"
           loading="lazy"
-          unoptimized
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 7 transition"
         />
@@ -248,48 +250,56 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
           src="/images/webp/initial-step-one.webp"
           loading="lazy"
           className="bg-gradient-initial absolute top-0 left-0 h-full w-full"
+          alt="intial step"
         />
         <img
           id="bg-step-1"
           src="/images/webp/bg-gradient-step-1.webp"
           loading="lazy"
           className="bg-gradient-step-1 absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 1"
         />
         <img
           id="bg-step-2"
           src="/images/webp/bg-gradient-step-2.webp"
           loading="lazy"
           className="bg-gradient-step-2 absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 2"
         />
         <img
           id="bg-step-3"
           src="/images/webp/bg-gradient-step-3.webp"
           loading="lazy"
           className="bg-gradient-step-3 absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 3"
         />
         <img
           id="bg-step-4"
           src="/images/webp/bg-gradient-step-4.webp"
           loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 4"
         />
         <img
           id="bg-step-5"
           src="/images/webp/bg-gradient-step-5.webp"
           loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 5"
         />
         <img
           id="bg-step-6"
           src="/images/webp/bg-gradient-step-6.webp"
           loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 6"
         />
         <img
           id="bg-step-7"
           src="/images/webp/bg-gradient-step-7.webp"
           loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 7"
         />
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
           <div className="flex items-center">

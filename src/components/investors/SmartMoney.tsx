@@ -20,7 +20,7 @@ const SmartMoney: React.FC<SmartMoneyProps> = ({ title, desc, btnText }) => {
             "And it’s going to be big. If anything you’ve read resonates, let’s talk."}
         </p>
       </Copy>
-      <Button className="w-full max-w-[204px]">
+      <Button ariaLabel="book investor call" className="w-full max-w-[204px]">
         {btnText || "Book investor call"}
       </Button>
     </div>

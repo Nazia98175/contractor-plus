@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Copy from "../common/Copy";
+import Image from "next/image";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -32,11 +33,14 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
   useEffect(() => {
     // Only run animations on desktop (lg and above)
     const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-    
-    if (!isDesktop || !sectionRef.current || marketOpportunityData.length === 0) return;
+
+    if (!isDesktop || !sectionRef.current || marketOpportunityData.length === 0)
+      return;
 
     const ctx = gsap.context(() => {
-      const cards = cardsRef.current.filter((card): card is HTMLDivElement => card !== null);
+      const cards = cardsRef.current.filter(
+        (card): card is HTMLDivElement => card !== null,
+      );
       if (cards.length === 0) return;
 
       // Calculate total scroll distance
@@ -73,64 +77,84 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
             snapTo: 1 / (cardCount - 1),
             duration: { min: 0.4, max: 0.8 },
             delay: 0.1,
-            ease: "power1.inOut"
-          }
-        }
+            ease: "power1.inOut",
+          },
+        },
       });
 
       // Create transitions between cards
       cards.forEach((card, index) => {
         if (index < cards.length - 1) {
           const nextCard = cards[index + 1];
-          const currentImage = card.querySelector('.market-image');
-          const currentBgImage = card.querySelector('.market-bg-image');
-          const currentContent = card.querySelector('.market-content');
-          
-          const nextImage = nextCard.querySelector('.market-image');
-          const nextBgImage = nextCard.querySelector('.market-bg-image');
-          const nextContent = nextCard.querySelector('.market-content');
+          const currentImage = card.querySelector(".market-image");
+          const currentBgImage = card.querySelector(".market-bg-image");
+          const currentContent = card.querySelector(".market-content");
+
+          const nextImage = nextCard.querySelector(".market-image");
+          const nextBgImage = nextCard.querySelector(".market-bg-image");
+          const nextContent = nextCard.querySelector(".market-content");
 
           // Fade out current card and fade in next card
           tl.to(card, {
             opacity: 0,
             duration: 0.5,
-            ease: "power2.inOut"
+            ease: "power2.inOut",
           })
-          .to(currentContent, {
-            y: -30,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.in"
-          }, "<")
-          .to([currentImage, currentBgImage], {
-            y: -50,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.in"
-          }, "<0.1")
-          .to(nextCard, {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.inOut"
-          }, "-=0.3")
-          .from(nextContent, {
-            y: 30,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.out"
-          }, "<")
-          .from([nextImage, nextBgImage], {
-            y: 50,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.out"
-          }, "<0.1");
+            .to(
+              currentContent,
+              {
+                y: -30,
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.in",
+              },
+              "<",
+            )
+            .to(
+              [currentImage, currentBgImage],
+              {
+                y: -50,
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.in",
+              },
+              "<0.1",
+            )
+            .to(
+              nextCard,
+              {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.inOut",
+              },
+              "-=0.3",
+            )
+            .from(
+              nextContent,
+              {
+                y: 30,
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.out",
+              },
+              "<",
+            )
+            .from(
+              [nextImage, nextBgImage],
+              {
+                y: 50,
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.out",
+              },
+              "<0.1",
+            );
         }
       });
 
       // Add subtle parallax to background images
       cards.forEach((card) => {
-        const bgImage = card.querySelector('.market-bg-image');
+        const bgImage = card.querySelector(".market-bg-image");
         if (bgImage) {
           gsap.to(bgImage, {
             y: -30,
@@ -168,7 +192,8 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
             </Copy>
             <Copy animateOnScroll={true}>
               <p className="text-ironFixture pt-3 text-center text-xs font-semibold sm:text-sm">
-                {headerData.desc || "The U.S. contractor software market is MASSIVE, and underserved."}
+                {headerData.desc ||
+                  "The U.S. contractor software market is MASSIVE, and underserved."}
               </p>
             </Copy>
           </div>
@@ -179,11 +204,16 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
           {marketOpportunityData.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center gap-6 max-w-[500px] mx-auto"
+              className="mx-auto flex max-w-[500px] flex-col items-center gap-6"
             >
               {/* Image */}
               <div className="relative">
-                <img
+                <Image
+                  height={200}
+                  width={200}
+                  fetchPriority="high"
+                  priority
+                  sizes="(max-width: 768px) 200px, (min-width: 769px) 200px"
                   className="relative z-10 w-full max-w-[200px]"
                   src={item.image?.url || "/placeholder-image.png"}
                   alt={`market-${index}`}
@@ -192,12 +222,10 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
 
               {/* Content */}
               <div className="text-center">
-                <h3 className="industry-shift-text text-base font-medium mb-3">
+                <h3 className="industry-shift-text mb-3 text-base font-medium">
                   {item.subTitle}
                 </h3>
-                <p className="text-steel text-xs font-light">
-                  {item.subDesc}
-                </p>
+                <p className="text-steel text-xs font-light">{item.subDesc}</p>
               </div>
             </div>
           ))}
@@ -207,9 +235,9 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
       {/* Desktop Layout - With animations */}
       <div ref={sectionRef} className="relative hidden lg:block">
         {/* Fixed Header - positioned below navbar */}
-        <div 
+        <div
           ref={headerRef}
-          className="absolute top-0 left-0 right-0 z-40 px-4 pt-[120px] pb-[40px]"
+          className="absolute top-0 right-0 left-0 z-40 px-4 pt-[120px] pb-[40px]"
         >
           <div className="mx-auto max-w-[1200px]">
             <Copy animateOnScroll={false}>
@@ -219,17 +247,15 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
             </Copy>
             <Copy animateOnScroll={false}>
               <p className="text-ironFixture pt-3 text-center text-sm font-semibold md:text-lg">
-                {headerData.desc || "The U.S. contractor software market is MASSIVE, and underserved."}
+                {headerData.desc ||
+                  "The U.S. contractor software market is MASSIVE, and underserved."}
               </p>
             </Copy>
           </div>
         </div>
 
         {/* Cards Container */}
-        <div 
-          ref={cardsWrapperRef}
-          className="relative h-screen w-full"
-        >
+        <div ref={cardsWrapperRef} className="relative h-screen w-full">
           {/* Cards - Adjusted padding to account for navbar + header */}
           <div className="relative h-full w-full pt-[240px]">
             {marketOpportunityData.map((item, index) => (
@@ -249,7 +275,12 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({
                 >
                   {/* Main Image with Background */}
                   <div className="relative flex-shrink-0">
-                    <img
+                    <Image
+                      height={299}
+                      width={299}
+                      priority
+                      fetchPriority="high"
+                      sizes="(max-width: 768px) 299px, (min-width: 769px) 299px"
                       className="market-image relative z-10 w-full max-w-[299px]"
                       src={item.image?.url || "/placeholder-image.png"}
                       alt={`market-${index}`}

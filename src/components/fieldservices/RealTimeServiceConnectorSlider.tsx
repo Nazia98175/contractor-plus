@@ -54,10 +54,12 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
                 aria-label="real slider card"
                 src="/images/webp/real-slider-card-1.webp"
                 alt="slide image"
-                role="presentation"
                 width={871}
                 height={625}
                 fetchPriority="high"
+                priority
+                placeholder="blur"
+                blurDataURL="/images/webp/real-slider-card-1.webp"
                 sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw, 871px"
                 className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
               />
@@ -81,10 +83,12 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
                 aria-label="real slider card"
                 src="/images/webp/real-slider-card-3.webp"
                 alt="slide image"
-                role="presentation"
                 width={871}
                 height={625}
                 fetchPriority="high"
+                priority
+                placeholder="blur"
+                blurDataURL="/images/webp/real-slider-card-3.webp"
                 sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw, 871px"
                 className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
               />
@@ -122,10 +126,12 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
               aria-label="real slider card"
               src="/images/webp/real-slider-card-7.webp"
               alt="real slider image"
-              role="presentation"
               width={500}
               height={432}
               fetchPriority="high"
+              priority
+              placeholder="blur"
+              blurDataURL="/images/webp/real-slider-card-7.webp"
               sizes="(max-width: 768px) 100vw, (min-width: 769px) 771px"
               className="mx-auto w-full max-w-[771px] object-cover"
             />
@@ -150,11 +156,13 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             <Image
               aria-label="real slider card"
               fetchPriority="high"
-              role="presentation"
+              priority
+              placeholder="blur"
               sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
               width={900}
               height={382}
               src={"/images/webp/real-slider-card-11.webp"}
+              blurDataURL="/images/webp/real-slider-card-11.webp"
               alt="Slide Image"
               className="mx-auto w-full max-w-[850px] object-cover xl:max-w-[900px]"
             />

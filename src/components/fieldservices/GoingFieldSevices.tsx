@@ -54,7 +54,6 @@ const GoingFieldSevices: React.FC<GoingFieldSevicesProps> = ({
             width={1440}
             height={150}
             fetchPriority="high"
-            role="presentation"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1440px"
             className="h-[150px] w-full object-cover sm:h-[180px]"
             id="parallex-img"

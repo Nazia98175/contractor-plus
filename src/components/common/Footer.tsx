@@ -76,15 +76,6 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
       id="home-page-footer-view-port-screen"
       className={`no-scrollbar relative z-20 w-full overflow-y-visible bg-transparent py-10 opacity-0 md:py-[62px] ${styles.background}`}
     >
-      {/* {!isCrmRoute && (
-        <span>
-          {variant === "light" ? (
-            <div className="pointer-events-none absolute bottom-0 left-10 block h-[197px] w-[90px] rotate-[40deg] bg-[#FD8287] opacity-35 blur-[20px] sm:block"></div>
-          ) : (
-            ""
-          )}
-        </span>
-      )} */}
       {!isCrmRoute && (
         <span className="pointer-events-none absolute !bottom-0 left-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           {variant === "dark" ? (
@@ -93,7 +84,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="footer gradient"
               width={1440}
               height={457}
-              // sizes="100vw"
+              sizes="100vw"
               unoptimized
               className="h-auto w-full"
             />
@@ -103,7 +94,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
               alt="footer gradient"
               width={1440}
               height={200}
-              // sizes="100vw"
+              sizes="100vw"
               unoptimized
               className="h-auto w-full"
             />
@@ -114,11 +105,12 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
         <div className="pointer-events-none absolute right-0 !bottom-0 hidden max-w-[300px] overflow-hidden lg:block xl:max-w-[457px]">
           <Image
             src="/images/webp/footer-gradient-right.webp"
-            alt=""
-            role="presentation"
+            alt="footer"
             width={300}
             height={457}
-            loading="lazy"
+            fetchPriority="high"
+            placeholder="blur"
+            blurDataURL="/images/webp/footer-gradient-right.webp"
             sizes="(max-width: 768px) 100vw, 300px"
             className="h-full w-full object-cover"
           />
@@ -201,8 +193,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
-              priority
-              // sizes="72px"
+              fetchPriority="high"
+              sizes="72px"
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"
               alt="Powered by Logo"

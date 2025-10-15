@@ -108,7 +108,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             alt="footer"
             width={300}
             height={457}
-            fetchPriority="high"
+            fetchPriority="auto"
+            quality={30}
             placeholder="blur"
             blurDataURL="/images/webp/footer-gradient-right.webp"
             sizes="(max-width: 768px) 100vw, 300px"
@@ -193,7 +194,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             <Image
               height={72}
               width={72}
-              fetchPriority="high"
+              fetchPriority="auto"
+              quality={30}
               sizes="72px"
               className="mx-auto h-auto w-full max-w-[72px]"
               src="/images/webp/footer-logo.webp"

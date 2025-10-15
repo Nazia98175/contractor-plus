@@ -53,7 +53,6 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     tableMobile,
     mobileProofSection,
   } = await getInvestorsData(locale);
-  console.log("wesx", whyThisTeamSection);
   // Loading fallback component
   const LoadingFallback = () => (
     <div className="flex min-h-[200px] items-center justify-center">
@@ -84,12 +83,14 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           />
         </Suspense>
         {/* <MidMarketTable tableData={table || []} /> */}
-        <div className="hidden sm:block">
-          <TeamList teamData={table || []} />
-        </div>
-        <div className="block px-2 sm:hidden">
-          <TeamListMobile data={tableMobile} />
-        </div>
+        <Suspense fallback={<LoadingFallback />}>
+          <div className="hidden sm:block">
+            <TeamList teamData={table || []} />
+          </div>
+          <div className="block px-2 sm:hidden">
+            <TeamListMobile data={tableMobile} />
+          </div>
+        </Suspense>
         <Suspense fallback={<LoadingFallback />}>
           <WhyNow items={whyNowSection?.items} />
         </Suspense>

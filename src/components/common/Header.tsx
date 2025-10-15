@@ -99,7 +99,10 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
                 {header?.contact}
               </Link>
             </div>
-            <button className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm">
+            <button
+              aria-label="contractorplus login button"
+              className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm"
+            >
               {header?.loginText}
             </button>
             <button

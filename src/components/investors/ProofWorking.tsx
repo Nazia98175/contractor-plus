@@ -214,10 +214,11 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
             height={180}
             width={180}
             priority
-            fetchPriority="high"
+            quality={50}
             className="ios-image w-full max-w-[160px] sm:max-w-[180px]"
             src="/images/svg/Proof-working-logo.svg"
             alt="proof"
+            sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
           />
         </div>
 
@@ -294,11 +295,16 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
               <div className="relative">
                 {/* Center Logo */}
                 <div className="relative flex items-center justify-center py-12">
-                  <img
+                  <Image
                     ref={logoDesktopRef}
-                    className="ios-image relative z-10 w-full max-w-[200px] xl:max-w-[240px]"
                     src="/images/svg/Proof-working-logo.svg"
                     alt="proof"
+                    width={240} // max width for desktop
+                    height={240} // maintain aspect ratio
+                    priority // high-priority LCP image
+                    quality={50}
+                    sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 240px"
+                    className="ios-image relative z-10 w-full max-w-[200px] xl:max-w-[240px]"
                     style={{ willChange: "transform, opacity" }}
                   />
                 </div>

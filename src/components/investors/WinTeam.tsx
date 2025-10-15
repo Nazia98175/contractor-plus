@@ -224,15 +224,18 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
             data-card-id={card.id}
           >
             <Image
-              height={300}
-              width={300}
-              fetchPriority="high"
-              priority
-              sizes="(max-width: 768px) 90vw, (min-width: 769px) 90vh"
-              className={`mx-auto w-full ${card.imgWidth || ""} ios-image`}
               src={card.image.url}
               alt="win team"
+              height={300}
+              width={300}
+              fetchPriority="auto"
+              loading="lazy" // useful for above-the-fold images
+              quality={75} // balance between size and quality
+              sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
+              className={`mx-auto w-full ${card.imgWidth || ""} ios-image`}
+              style={{ objectFit: "contain" }} // maintain aspect ratio
             />
+
             <p className="text-lightBlackGrey mx-auto max-w-[268px] pt-4 text-center text-lg font-bold">
               {card.text}
             </p>
@@ -250,8 +253,9 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
               <Image
                 height={300}
                 width={300}
-                fetchPriority="high"
-                priority
+                fetchPriority="auto"
+                loading="lazy" // useful for above-the-fold images
+                quality={75}
                 sizes="(max-width: 768px) 90vw, (min-width: 769px) 90vh"
                 className={`mx-auto w-full ${card.imgWidth || ""} ios-image`}
                 src={card.image.url}

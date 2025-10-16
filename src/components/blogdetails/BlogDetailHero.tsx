@@ -26,7 +26,8 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
   }, []);
   return (
     <section className="relative h-full bg-[url('/images/webp/blog-hero-detail-bg.webp')] bg-cover bg-center pt-24 lg:pt-[119px] 2xl:pt-[150px]">
-      <div className="main-container h-full">
+      <div className="absolute bottom-[-10%] z-0 h-[200px] w-full bg-white blur-[30px]"></div>
+      <div className="main-container relative z-10 h-full">
         <article
           style={{
             backgroundRepeat: "no-repeat",

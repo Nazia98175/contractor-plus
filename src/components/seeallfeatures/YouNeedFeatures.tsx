@@ -44,7 +44,10 @@ const YouNeedFeatures: FC<{ featuresItems?: AllFeaturesProps[] }> = ({
             alt="half-triangle"
             width={2500}
             height={500}
-            unoptimized
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            quality={85}
+            fetchPriority="low"
           />
         </CardReveal>
       </div>

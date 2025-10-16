@@ -26,8 +26,9 @@ const YouNeedFeaturesCard: FC<Props> = ({ features, delay }) => {
             alt="icon"
             width={24}
             height={24}
+            priority
+            sizes="(max-width: 640px) 24px, (max-width: 1024px) 24px, 24px"
             className="h-6 w-6 brightness-0 hue-rotate-180 invert saturate-100 sepia filter transition duration-300 ease-in-out group-hover:brightness-0 group-hover:hue-rotate-0 group-hover:invert-0 group-hover:saturate-0 group-hover:sepia-0"
-            loading="lazy"
           />
         )}
         {features?.text}

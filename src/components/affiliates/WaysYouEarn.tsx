@@ -21,8 +21,6 @@ const WaysYouEarn: React.FC<WaysYouEarnProps> = ({
   title = "Ways you earn",
   sections,
 }) => {
-  console.log(title, sections, "ways you earn");
-
   return (
     <section className="mx-auto mt-[130px] w-full max-w-[1100px] px-2">
       <Copy delay={0.1}>

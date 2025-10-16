@@ -15,6 +15,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Suspense } from "react";
 
 interface AffiliatesPageProps {
   params: Promise<{ locale: string; slug?: string }>;
@@ -47,65 +48,91 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
     applyJoin,
     faqs,
   } = await getAffiliatesData(locale);
-  console.log("edsxz", reviews);
-
+  // Loading fallback component
+  const LoadingFallback = () => (
+    <div className="flex min-h-[200px] items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
+    </div>
+  );
   return (
     <main id="common-homepage-wrapper" className="relative">
-      {/* <AffiliatesHero
+      <AffiliatesHero
         heroTitle={hero?.heroTitle || ""}
         heroDescription={hero?.heroDescription || ""}
         heroImg={hero?.heroImg}
         ctaButton={hero?.ctaButton}
       />
-      <TrustedService reviews={reviews || []} />
-      <WhyPartner title={whyContractor?.title} desc={whyContractor?.desc} />
-      <AtAGlance
-        glanceCards={atGlance?.arrayItems}
-        title={atGlance?.atGlanceRes}
-      />
-      <SupplierBenefit
-        title={howItWorks?.title}
-        cardsData={howItWorks?.listTextDesc}
-      />
-      <WaysYouEarn
-        title={waysYouEarn?.title}
-        sections={
-          waysYouEarn?.waysYouEarnItems?.map((item: any) => ({
-            title: item?.title || "",
-            items: item?.items || [{ subTitle: item?.title, desc: item?.desc }],
-          })) || []
-        }
-      />
-      <StorySection
-        title={whatYouGet?.title}
-        sections={whatYouGet?.arrayItems}
-      />
-      <WhoThisPerfect
-        title={whoPerfect?.title}
-        buildCards={whoPerfect?.arrayItems}
-      />
-      <Faq
-        headingVariant="default"
-        faq={faqs}
-        classNameAnswer="pt-1"
-        mainContainerclassName="px-2 md:pt-[100px] pt-10"
-        TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
-        variant="light"
-      />
+      <Suspense fallback={<LoadingFallback />}>
+        <TrustedService reviews={reviews || []} />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <WhyPartner title={whyContractor?.title} desc={whyContractor?.desc} />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <AtAGlance
+          glanceCards={atGlance?.arrayItems}
+          title={atGlance?.atGlanceRes}
+        />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <SupplierBenefit
+          title={howItWorks?.title}
+          cardsData={howItWorks?.listTextDesc}
+        />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <WaysYouEarn
+          title={waysYouEarn?.title}
+          sections={
+            waysYouEarn?.waysYouEarnItems?.map((item: any) => ({
+              title: item?.title || "",
+              items: item?.items || [
+                { subTitle: item?.title, desc: item?.desc },
+              ],
+            })) || []
+          }
+        />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <StorySection
+          title={whatYouGet?.title}
+          sections={whatYouGet?.arrayItems}
+        />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <WhoThisPerfect
+          title={whoPerfect?.title}
+          buildCards={whoPerfect?.arrayItems}
+        />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <Faq
+          headingVariant="default"
+          faq={faqs}
+          classNameAnswer="pt-1"
+          mainContainerclassName="px-2 md:pt-[100px] pt-10"
+          TittleClassName="max-w-[82%] xs:max-w-[81%] sm:max-w-full mx-auto"
+          variant="light"
+        />
+      </Suspense>
 
       <div className="relative overflow-hidden">
-        <PublicEndPoints
-          title={applyJoin?.title || "Apply to join"}
-          description={
-            applyJoin?.desc ||
-            "Have a big audience or unique distribution? Let’s talk campaign co‑funding and rev‑share accelerators."
-          }
-          freeTrialButtonText={applyJoin?.btnText || "Apply to join"}
-          slackLinkHref={applyJoin?.btnUrl || applyJoin?.btnUrl}
-          slack={false}
-        />
-        <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
-      </div> */}
+        <Suspense fallback={<LoadingFallback />}>
+          <PublicEndPoints
+            title={applyJoin?.title || "Apply to join"}
+            description={
+              applyJoin?.desc ||
+              "Have a big audience or unique distribution? Let’s talk campaign co‑funding and rev‑share accelerators."
+            }
+            freeTrialButtonText={applyJoin?.btnText || "Apply to join"}
+            slackLinkHref={applyJoin?.btnUrl || applyJoin?.btnUrl}
+            slack={false}
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
+        </Suspense>
+      </div>
     </main>
   );
 }

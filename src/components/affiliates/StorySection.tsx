@@ -117,6 +117,8 @@ const StorySection: React.FC<StorySectionProps> = ({
                   alt={item.title || "icon"}
                   width={32}
                   height={32}
+                  priority
+                  sizes="(max-width: 640px) 24px, (max-width: 1024px) 28px, 32px"
                 />
                 <h3 className="story-section font-myriad my-2.5 text-center text-lg font-semibold md:text-xl lg:text-2xl">
                   {item.title}

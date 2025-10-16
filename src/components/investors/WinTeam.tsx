@@ -31,7 +31,7 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
 
     // Check if mobile (you can adjust breakpoint as needed)
     const isMobile = window.innerWidth < 640; // sm breakpoint in Tailwind
-    
+
     // Skip animations on mobile
     if (isMobile) {
       // Remove opacity-0 class from all elements on mobile
@@ -39,7 +39,7 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
         titleRef.current.classList.remove("sm:opacity-0");
       }
       const cards = document.querySelectorAll(".win-team-card");
-      cards.forEach(card => card.classList.remove("sm:opacity-0"));
+      cards.forEach((card) => card.classList.remove("sm:opacity-0"));
       return;
     }
 
@@ -72,13 +72,13 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
                 toggleActions: "play none none reverse",
                 once: false,
               },
-            }
+            },
           );
         }
 
         // Select all cards using class selector
         const cards = gsap.utils.toArray(".win-team-card");
-        
+
         if (cards.length > 0) {
           // Set initial state
           gsap.set(cards, {
@@ -166,18 +166,18 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
   useEffect(() => {
     const handleResize = () => {
       const isMobile = window.innerWidth < 640;
-      
+
       if (isMobile) {
         // Kill all ScrollTriggers on mobile
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
         // Remove opacity classes
         if (titleRef.current) {
           titleRef.current.classList.remove("opacity-0");
           gsap.set(titleRef.current, { clearProps: "all" });
         }
         const cards = document.querySelectorAll(".win-team-card");
-        cards.forEach(card => {
+        cards.forEach((card) => {
           card.classList.remove("opacity-0");
           gsap.set(card, { clearProps: "all" });
         });
@@ -187,7 +187,7 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
     };
 
     window.addEventListener("resize", handleResize);
-    
+
     // Also refresh on load
     window.addEventListener("load", () => {
       if (window.innerWidth >= 640) {
@@ -203,10 +203,12 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
   return (
     <div ref={sectionRef} className="mx-auto max-w-[990px] px-4">
       <div>
-        <Copy animateOnScroll={false}> {/* Disable Copy's animation to avoid conflicts */}
-          <h3 
+        <Copy animateOnScroll={false}>
+          {" "}
+          {/* Disable Copy's animation to avoid conflicts */}
+          <h3
             ref={titleRef}
-            className="text-mana pb-[73px] text-center text-2xl font-bold sm:text-[28px] md:text-[38px] sm:opacity-0"
+            className="text-mana pb-[73px] text-center text-2xl font-bold sm:text-[28px] sm:opacity-0 md:text-[38px]"
           >
             {title || "Why this team wins"}
           </h3>
@@ -222,14 +224,18 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
             data-card-id={card.id}
           >
             <Image
-              height={300}
-              width={300}
-              unoptimized
-              className={`mx-auto w-full ${card.imgWidth || ""} ios-image`}
               src={card.image.url}
               alt="win team"
-              loading="lazy"
+              height={300}
+              width={300}
+              fetchPriority="auto"
+              loading="lazy" // useful for above-the-fold images
+              quality={75} // balance between size and quality
+              sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
+              className={`mx-auto w-full ${card.imgWidth || ""} ios-image`}
+              style={{ objectFit: "contain" }} // maintain aspect ratio
             />
+
             <p className="text-lightBlackGrey mx-auto max-w-[268px] pt-4 text-center text-lg font-bold">
               {card.text}
             </p>
@@ -247,11 +253,13 @@ const WinTeam: React.FC<WinTeamProps> = ({ items = [], title }) => {
               <Image
                 height={300}
                 width={300}
-                unoptimized
+                fetchPriority="auto"
+                loading="lazy" // useful for above-the-fold images
+                quality={75}
+                sizes="(max-width: 768px) 90vw, (min-width: 769px) 90vh"
                 className={`mx-auto w-full ${card.imgWidth || ""} ios-image`}
                 src={card.image.url}
                 alt="win team"
-                loading="lazy"
               />
               <p
                 className={`text-lightBlackGrey mx-auto max-w-[300px] pt-4 text-center text-lg font-bold`}

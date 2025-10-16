@@ -15,25 +15,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
-// export const metadata = {
-//   title: "Contractor+ Affiliates: Earn for Every Referral",
-//   description:
-//     "Join our affiliate program and earn commission by referring new users to Contractor+.",
-//   keywords: ["Affiliate Program"],
-//   openGraph: {
-//     images: [
-//       {
-//         url: "/images/webp/affiliates-page-og.webp",
-//         width: 1920,
-//         height: 630,
-//         alt: "affiliates-page-og",
-//       },
-//     ],
-//   },
-//   alternates: {
-//     canonical: "https://v2site.contractorplus.app/affiliates",
-//   },
-// };
 
 interface AffiliatesPageProps {
   params: Promise<{ locale: string; slug?: string }>;
@@ -70,7 +51,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
 
   return (
     <main id="common-homepage-wrapper" className="relative">
-      <AffiliatesHero
+      {/* <AffiliatesHero
         heroTitle={hero?.heroTitle || ""}
         heroDescription={hero?.heroDescription || ""}
         heroImg={hero?.heroImg}
@@ -124,7 +105,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
           slack={false}
         />
         <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
-      </div>
+      </div> */}
     </main>
   );
 }

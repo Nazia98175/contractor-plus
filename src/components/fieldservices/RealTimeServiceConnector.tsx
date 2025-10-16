@@ -1,8 +1,10 @@
 import React from "react";
 import { RealTimeServiceConnectorIcon } from "../common/Icons";
 import { TheServiceProps } from "../crmbussiness/FieldService";
-import RealTimeServiceConnectorSlider from "./RealTimeServiceConnectorSlider";
-
+import dynamic from "next/dynamic";
+const RealTimeServiceConnectorSlider = dynamic(
+  () => import("./RealTimeServiceConnectorSlider"),
+);
 const RealTimeServiceConnector: React.FC<TheServiceProps> = ({
   fieldService,
   theme,

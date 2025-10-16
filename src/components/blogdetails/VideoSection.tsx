@@ -1,19 +1,25 @@
 import React from "react";
 
 const VideoSection = ({ blogData }: { blogData: any }) => {
+  console.log(blogData, "inner video blog");
+
   return (
-    <div className="w-full overflow-hidden rounded-lg">
-      <video controls className="w-full rounded-lg">
-        <source
-          src={
-            blogData?.videoUrl
-              ? blogData?.videoUrl
-              : "/video/hero-video-higher.mp4"
-          }
-          type="video/mp4"
+    <div className="h-full max-h-[200px] min-h-[200px] w-full overflow-hidden rounded-lg sm:max-h-[230px] sm:min-h-[230px]">
+      {blogData?.videoUrl ? (
+        <video controls className="w-full rounded-lg">
+          <source src={blogData?.videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <iframe
+          className="h-full w-full rounded-lg"
+          src="https://www.youtube.com/embed/CGFp55WFk_U?rel=0"
+          title="Blog video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
         />
-        Your browser does not support the video tag.
-      </video>
+      )}
     </div>
   );
 };

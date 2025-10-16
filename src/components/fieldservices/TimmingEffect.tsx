@@ -164,9 +164,11 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         {/* TOP WHITE BLUR LINE  */}
         <div className="absolute -top-[17%] left-1/2 z-[10000] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
         <img
-          src="/images/png/initial-cloud.png"
+          aria-label="intial cloud"
+          src="/images/webp/initial-cloud.webp"
           id="initial-cloud"
           className="absolute top-0 z-[21] h-full w-full"
+          loading="lazy"
           alt="Initial background cloud graphic"
         />
 
@@ -174,7 +176,9 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
-          src="/images/png/step-1-cloud.png"
+          aria-label="cloud graphic step-1"
+          loading="lazy"
+          src="/images/webp/step-1-cloud.webp"
           id="step-1-cloud"
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 1 transition"
@@ -184,8 +188,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
-          src="/images/png/step-2-cloud.png"
+          aria-label="cloud graphic step-2"
+          src="/images/webp/step-2-cloud.webp"
           id="step-2-cloud"
+          loading="lazy"
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 2 transition"
         />
@@ -194,8 +200,11 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
-          src="/images/png/step-3-cloud.png"
+          aria-label="cloud graphic step-3"
+          src="/images/webp/step-3-cloud.webp"
           id="step-3-cloud"
+          loading="lazy"
+          unoptimized
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 3 transition"
         />
@@ -204,8 +213,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
-          src="/images/png/step-4-cloud.png"
+          aria-label="cloud graphic step-4"
+          src="/images/webp/step-4-cloud.webp"
           id="step-4-cloud"
+          loading="lazy"
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 4 transition"
         />
@@ -214,8 +225,10 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
-          src="/images/png/step-6-cloud.png"
+          aria-label="cloud graphic step-6"
+          src="/images/webp/step-6-cloud.webp"
           id="step-6-cloud"
+          loading="lazy"
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 6 transition"
         />
@@ -224,51 +237,69 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
         <Image
           width={1920}
           height={200}
-          src="/images/png/step-7-cloud.png"
+          aria-label="cloud graphic step-7"
+          src="/images/webp/step-7-cloud.webp"
           id="step-7-cloud"
+          loading="lazy"
           className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
           alt="Cloud graphic for step 7 transition"
         />
         {/* ENVIRONMENT BACKGROUND GRADIENT */}
         <img
           id="bg-initial"
-          src="/images/png/initial-step-one.png"
+          src="/images/webp/initial-step-one.webp"
+          loading="lazy"
           className="bg-gradient-initial absolute top-0 left-0 h-full w-full"
+          alt="intial step"
         />
         <img
           id="bg-step-1"
-          src="/images/png/bg-gradient-step-1.png"
+          src="/images/webp/bg-gradient-step-1.webp"
+          loading="lazy"
           className="bg-gradient-step-1 absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 1"
         />
         <img
           id="bg-step-2"
-          src="/images/png/bg-gradient-step-2.png"
+          src="/images/webp/bg-gradient-step-2.webp"
+          loading="lazy"
           className="bg-gradient-step-2 absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 2"
         />
         <img
           id="bg-step-3"
-          src="/images/png/bg-gradient-step-3.png"
+          src="/images/webp/bg-gradient-step-3.webp"
+          loading="lazy"
           className="bg-gradient-step-3 absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 3"
         />
         <img
           id="bg-step-4"
-          src="/images/png/bg-gradient-step-4.png"
+          src="/images/webp/bg-gradient-step-4.webp"
+          loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 4"
         />
         <img
           id="bg-step-5"
-          src="/images/png/bg-gradient-step-5.png"
+          src="/images/webp/bg-gradient-step-5.webp"
+          loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 5"
         />
         <img
           id="bg-step-6"
-          src="/images/png/bg-gradient-step-6.png"
+          src="/images/webp/bg-gradient-step-6.webp"
+          loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 6"
         />
         <img
           id="bg-step-7"
-          src="/images/png/bg-gradient-step-7.png"
+          src="/images/webp/bg-gradient-step-7.webp"
+          loading="lazy"
           className="absolute top-0 left-0 h-full w-full opacity-0"
+          alt="bg gradient step 7"
         />
         <div className="relative z-[2000] mx-auto flex w-full max-w-[702px] flex-col items-center justify-center px-2 md:px-0">
           <div className="flex items-center">
@@ -283,6 +314,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
           <div className="fle relative flex-col items-center justify-center !text-center">
             <p
               id="timing-text-1"
+              aria-label="You check the live crew map, see who's already moving, drag
+              unassigned jobs onto the calendar & assign based on proximity"
               className="timing-text relative mx-auto mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               You check the live crew map, see who's already moving, drag
@@ -290,6 +323,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>
             <p
               id="timing-text-2"
+              aria-label=" Big Chief AI call attendant answers two calls while you’re in a
+              meeting, books a walkthrough, and adds the leads to your CRM."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               Big Chief AI call attendant answers two calls while you’re in a
@@ -297,6 +332,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>
             <p
               id="timing-text-3"
+              aria-label="A technician updates task status and uploads job photos without
+              needing a check-in."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               A technician updates task status and uploads job photos without
@@ -304,6 +341,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>
             <p
               id="timing-text-4"
+              aria-label="One tech’s stuck in traffic. You reassign their next visit to a
+              nearby available team with a single drag and drop."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               One tech’s stuck in traffic. You reassign their next visit to a
@@ -311,6 +350,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>
             <p
               id="timing-text-5"
+              aria-label="A tech completes a work order, gets the docs signed via mobile,
+              and takes payment on-site."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               A tech completes a work order, gets the docs signed via mobile,
@@ -318,6 +359,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>
             <p
               id="timing-text-6"
+              aria-label="A recurring client submits a service request through the portal—it
+              drops straight into your dispatch board."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               A recurring client submits a service request through the portal—it
@@ -325,6 +368,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>
             <p
               id="timing-text-7"
+              aria-label="You get an alert that a tool hasn’t been checked back in. You
+              follow up immediately."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               You get an alert that a tool hasn’t been checked back in. You
@@ -332,6 +377,8 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
             </p>{" "}
             <p
               id="timing-text-8"
+              aria-label=" All crews are clocked out, all jobs are closed, and you didn’t
+              once need to chase down an update."
               className="timing-text absolute top-0 mt-6 mb-2 w-full max-w-[700px] !text-center text-sm leading-[120%] font-medium text-black md:text-lg lg:text-[22px]"
             >
               All crews are clocked out, all jobs are closed, and you didn’t
@@ -424,7 +471,11 @@ const TimmingEffect: React.FC<TimmingEffectProps> = ({
       </div>
 
       <div className="relative z-20 flex flex-col items-center justify-center px-2">
-        <FreeTrialButton text={commonData?.getStartedFreeBtn} showIcon={true} />
+        <FreeTrialButton
+          text={commonData?.getStartedFreeBtn}
+          showIcon={true}
+          ariaLabel="freeTrial"
+        />
         <CardRequiredButton text={commonData?.nccTxt} />
       </div>
     </div>

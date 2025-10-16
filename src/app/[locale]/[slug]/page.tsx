@@ -1,4 +1,5 @@
-import { Suspense, lazy } from "react";
+import CardRequiredButton from "@/components/common/CardRequiredButton";
+import FreeTrialButton from "@/components/common/FreeTrialButton";
 import {
   constructionBookkeepingServices,
   platforms,
@@ -7,29 +8,28 @@ import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
 } from "@/components/common/Icons";
+import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
 import TrustBar from "@/components/common/TrustBar";
-import CommonHero from "@/components/crmbussiness/CommonHero";
 import ConstructionBookkeepingCard from "@/components/constructionbookkeeping/ConstructionBookkeepingCard";
-import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
-import TrustedService from "@/components/crmbussiness/TrustedService";
-import FieldService from "@/components/crmbussiness/FieldService";
-import TrackProperties from "@/components/crmbussiness/TrackProperties";
-import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
-import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
-import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
-import RunWithContractor from "@/components/fieldservices/RunWithContractor";
-import KindAdorable from "@/components/crmbussiness/KindAdorable";
 import CalculateImpact from "@/components/crmbussiness/CalculateImpact";
+import CommonHero from "@/components/crmbussiness/CommonHero";
+import FieldService from "@/components/crmbussiness/FieldService";
+import HowContractorWork from "@/components/crmbussiness/HowContractorWork";
+import KindAdorable from "@/components/crmbussiness/KindAdorable";
+import LikeYouDoContacts from "@/components/crmbussiness/LikeYouDoContacts";
+import SwitchingTool from "@/components/crmbussiness/SwitchingTool";
 import TeamsUsingContractor from "@/components/crmbussiness/TeamsUsingContractor";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
+import TrackProperties from "@/components/crmbussiness/TrackProperties";
+import TrustedService from "@/components/crmbussiness/TrustedService";
+import RunWithContractor from "@/components/fieldservices/RunWithContractor";
+import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
-import { generateSeoMetadata } from "@/utils/getSeoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import OverlapCardMobileViewChild from "@/components/common/OverlapCardMobileViewChild";
-import FreeTrialButton from "@/components/common/FreeTrialButton";
-import CardRequiredButton from "@/components/common/CardRequiredButton";
+import { Suspense, lazy } from "react";
 
 // Lazy load only the bottom section components
 const CrmService = lazy(
@@ -63,10 +63,9 @@ export async function generateMetadata({
     resolvedParams.locale,
     resolvedParams.slug,
   );
-
   if (!page) notFound();
 
-  return generateSeoMetadata({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
 }
 
 const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {

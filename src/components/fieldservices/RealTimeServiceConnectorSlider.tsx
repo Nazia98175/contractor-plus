@@ -51,12 +51,16 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="h-full px-2">
             <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
-                unoptimized
+                aria-label="real slider card"
+                src="/images/webp/real-slider-card-1.webp"
+                alt="slide image"
                 width={871}
                 height={625}
-                sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
-                src={"/images/webp/real-slider-card-1.webp"}
-                alt="Slide Image"
+                fetchPriority="high"
+                priority
+                placeholder="blur"
+                blurDataURL="/images/webp/real-slider-card-1.webp"
+                sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw, 871px"
                 className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
               />
             </div>
@@ -76,13 +80,17 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
           <div className="h-full px-2">
             <div className="border-silverMedal mx-auto w-full max-w-[871px] rounded-4xl border-4 bg-black p-[8px] sm:w-[80%] md:p-[14px] xl:rounded-[55px]">
               <Image
+                aria-label="real slider card"
+                src="/images/webp/real-slider-card-3.webp"
+                alt="slide image"
+                width={871}
+                height={625}
+                fetchPriority="high"
                 priority
-                // sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
-                width={835}
-                height={624}
-                src={"/images/webp/real-slider-card-3.webp"}
-                alt="Slide Image"
-                className="shadow-c3 mx-auto rounded-3xl object-cover xl:rounded-[45px]"
+                placeholder="blur"
+                blurDataURL="/images/webp/real-slider-card-3.webp"
+                sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw, 871px"
+                className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
               />
             </div>
           </div>
@@ -115,13 +123,16 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
         <SwiperSlide className="!h-[448px]">
           <div className="relative mx-auto w-fit max-w-[400px] overflow-hidden lg:max-w-[500px]">
             <Image
-              unoptimized
-              // sizes="(max-width: 768px) 500px, (min-width: 769px) 500px"
+              aria-label="real slider card"
+              src="/images/webp/real-slider-card-7.webp"
+              alt="real slider image"
               width={500}
               height={432}
+              fetchPriority="high"
               priority
-              src={"/images/webp/real-slider-card-7.webp"}
-              alt="Slide Image"
+              placeholder="blur"
+              blurDataURL="/images/webp/real-slider-card-7.webp"
+              sizes="(max-width: 768px) 100vw, (min-width: 769px) 771px"
               className="mx-auto w-full max-w-[771px] object-cover"
             />
           </div>
@@ -143,12 +154,15 @@ const RealTimeServiceConnectorSlider: React.FC<Props> = ({ sliderData }) => {
             <div className="absolute top-[-87px] right-[20%] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:top-[-149px] sm:right-[32%] sm:max-w-[400px] md:h-[200px] lg:h-[250px]"></div>
             <div className="absolute right-[18%] bottom-[-50px] h-[120px] w-full max-w-[200px] bg-white blur-[40px] sm:right-[35%] sm:h-[200px] sm:max-w-[400px] md:bottom-[-149px] lg:h-[251px]"></div>
             <Image
-              unoptimized
-              // sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
+              aria-label="real slider card"
+              fetchPriority="high"
+              priority
+              placeholder="blur"
+              sizes="(max-width: 768px) 900px, (min-width: 769px) 900px"
               width={900}
               height={382}
-              priority
               src={"/images/webp/real-slider-card-11.webp"}
+              blurDataURL="/images/webp/real-slider-card-11.webp"
               alt="Slide Image"
               className="mx-auto w-full max-w-[850px] object-cover xl:max-w-[900px]"
             />

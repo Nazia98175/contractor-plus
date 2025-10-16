@@ -15,7 +15,7 @@ import { getInvestorsData } from "@/services/investors/getInvestorsData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 interface InvestorsPageProps {
   params: Promise<{
     locale: string;
@@ -53,8 +53,12 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     tableMobile,
     mobileProofSection,
   } = await getInvestorsData(locale);
-  console.log("wesx", whyThisTeamSection);
-
+  // Loading fallback component
+  const LoadingFallback = () => (
+    <div className="flex min-h-[200px] items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
+    </div>
+  );
   return (
     <main id="home-page-view-port-screen">
       <div
@@ -68,49 +72,67 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
           heroSubDesc={hero?.heroSubDesc}
           btnText={hero?.btnText}
         />
-        <TheProblem
-          items={problemSection?.items}
-          desc={problemSection?.desc}
-          subBoldDesc={problemSection?.subBoldDesc}
-          subBoldTitle={problemSection?.subBoldTitle}
-          title={problemSection?.title}
-          subDesc={problemSection?.subDesc}
-        />
+        <Suspense fallback={<LoadingFallback />}>
+          <TheProblem
+            items={problemSection?.items}
+            desc={problemSection?.desc}
+            subBoldDesc={problemSection?.subBoldDesc}
+            subBoldTitle={problemSection?.subBoldTitle}
+            title={problemSection?.title}
+            subDesc={problemSection?.subDesc}
+          />
+        </Suspense>
         {/* <MidMarketTable tableData={table || []} /> */}
-        <div className="hidden sm:block">
-          <TeamList teamData={table || []} />
-        </div>
-        <div className="block px-2 sm:hidden">
-          <TeamListMobile data={tableMobile} />
-        </div>
-        <WhyNow items={whyNowSection?.items} />
-        <ProofWorking
-          title={whyContractorSection?.title}
-          desc={whyContractorSection?.desc}
-          buttomText={proofSection?.buttomText}
-          proofSectionTitle={proofSection?.title}
-          proofSectionDec={proofSection?.proofSectionDec}
-          rightStats={proofSection?.rightStats || []}
-          leftStats={proofSection?.leftStats || []}
-          mobileProofSection={mobileProofSection || []}
-        />
-        <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
-          <MarketOpportunity marketOpportunityData={marketOpportunity || []} />
-        </div>
-        <WhatNext
-          title={whatNext?.title}
-          desc={whatNext?.desc}
-          items={whatNext?.items}
-        />
-        <WinTeam
-          items={whyThisTeamSection?.items}
-          title={whyThisTeamSection?.title}
-        />
-        <SmartMoney
-          btnText={smartMoney?.btnText}
-          title={smartMoney?.title}
-          desc={smartMoney?.desc}
-        />
+        <Suspense fallback={<LoadingFallback />}>
+          <div className="hidden sm:block">
+            <TeamList teamData={table || []} />
+          </div>
+          <div className="block px-2 sm:hidden">
+            <TeamListMobile data={tableMobile} />
+          </div>
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <WhyNow items={whyNowSection?.items} />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <ProofWorking
+            title={whyContractorSection?.title}
+            desc={whyContractorSection?.desc}
+            buttomText={proofSection?.buttomText}
+            proofSectionTitle={proofSection?.title}
+            proofSectionDec={proofSection?.proofSectionDec}
+            rightStats={proofSection?.rightStats || []}
+            leftStats={proofSection?.leftStats || []}
+            mobileProofSection={mobileProofSection || []}
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <div className="overflow-hidden pt-10 pb-[57px] sm:mt-16 sm:py-10 lg:mt-0">
+            <MarketOpportunity
+              marketOpportunityData={marketOpportunity || []}
+            />
+          </div>
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <WhatNext
+            title={whatNext?.title}
+            desc={whatNext?.desc}
+            items={whatNext?.items}
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <WinTeam
+            items={whyThisTeamSection?.items}
+            title={whyThisTeamSection?.title}
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <SmartMoney
+            btnText={smartMoney?.btnText}
+            title={smartMoney?.title}
+            desc={smartMoney?.desc}
+          />
+        </Suspense>
         <div className="mx-auto w-full max-w-[1296px] px-4 pt-[74px] pb-[80px] md:pt-[100px] lg:pt-[190px]">
           <Copy animateOnScroll={true}>
             <p className="text-secondary text-center text-xs font-medium">

@@ -94,7 +94,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         </div>
 
         <h3
-          className={`${index === 2 ? "text-[#127E64]" : "text-winterWay"} md:mt-8" mt-5 text-[38px] !leading-[122%] font-bold`}
+          className={`${index === 2 ? "text-blueGreen" : "text-winterWay"} md:mt-8" mt-5 text-[38px] !leading-[122%] font-bold`}
         >
           {formattedPrice2}
           <span className="text-secondary text-lg font-semibold">
@@ -183,10 +183,10 @@ const PlanCard: React.FC<PlanCardProps> = ({
             })}
           {index === 2 && (
             <div>
-              <h4 className="font-myriad text-center text-lg font-semibold text-[#ACACAC]">
-                <span className="text-[#2B840C]">$53,400</span> more revenue
+              <h4 className="font-myriad text-roboMaster text-center text-lg font-semibold">
+                <span className="text-customgreen">$53,400</span> more revenue
               </h4>
-              <p className="font-myriad text-center text-xs text-[#656C73]">
+              <p className="font-myriad text-wallStreet text-center text-xs">
                 (and this is just a conservative estimate)
               </p>
             </div>

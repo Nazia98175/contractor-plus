@@ -137,6 +137,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
             return (
               <span key={index} className="group relative">
                 <Link
+                  aria-label="header li"
                   onClick={() => {
                     if (typeof setIsShow === "function") {
                       setIsShow(false); // close sidebar

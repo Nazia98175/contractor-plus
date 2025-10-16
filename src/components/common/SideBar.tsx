@@ -139,7 +139,7 @@ const SideBar = ({
             <Link className="h-6 w-[130px]" href={""}>
               <LogoIcon />
             </Link>
-            <button onClick={() => setIsShow(false)}>
+            <button aria-label="cross button" onClick={() => setIsShow(false)}>
               <CrossIcon />
             </button>
           </div>

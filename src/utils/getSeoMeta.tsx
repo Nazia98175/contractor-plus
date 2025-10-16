@@ -101,18 +101,21 @@ export const generateSeoMetaData = ({
   const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
   const title =
     page?.seoData?.metaTitle ||
+    page?.seoMetaData?.metaTitle ||
     page?.SeoMetaData?.metaTitle ||
     page?.SeoData?.metaTitle ||
     (slug ? `Contractor+ ${slug}` : "");
 
   const description =
     page?.seoData?.metaDescription ||
+    page?.seoMetaData?.metaDescription ||
     page?.SeoMetaData?.metaDescription ||
     page?.SeoData?.metaDescription ||
     "";
 
   const keywords =
     page?.seoData?.keywords ||
+    page?.seoMetaData?.keywords ||
     page?.SeoMetaData?.keywords ||
     page?.SeoData?.keywords ||
     "";
@@ -125,7 +128,26 @@ export const generateSeoMetaData = ({
           },
         ],
       }
-    : undefined;
+    : page?.seoMetaData?.ogImage
+      ? {
+          images: [
+            {
+              url: page?.seoMetaData?.ogImage?.url,
+            },
+          ],
+        }
+      : page?.SeoMetaData?.ogImage
+        ? {
+            images: [
+              {
+                url: page?.SeoMetaData?.ogImage?.url,
+              },
+            ],
+          }
+        : page?.SeoData?.ogImage
+          ? { images: [{ url: page?.SeoData?.ogImage?.url }] }
+          : undefined;
+          
   const canonical = `${baseUrl}${page?.seoData?.canonicalUrl || page?.SeoMetaData?.canonicalUrl || page?.SeoData?.canonicalUrl || `${slug}`}`;
 
   return {

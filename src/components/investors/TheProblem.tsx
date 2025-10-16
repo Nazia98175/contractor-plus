@@ -1,5 +1,3 @@
-"use client";
-
 import Copy from "../common/Copy";
 import TheProblemCard from "./TheProblemCard";
 

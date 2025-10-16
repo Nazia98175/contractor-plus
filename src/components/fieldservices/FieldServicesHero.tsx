@@ -112,7 +112,10 @@ const FieldServicesHero: React.FC<Props> = ({
       <div className="main-container 900:flex-row z-30 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
         <div className="relative z-20 w-full lg:max-w-[732px]">
           <Copy animateOnScroll={false} delay={0}>
-            <div className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit">
+            <div
+              aria-label="Field Service Management Software"
+              className="field-service text-secondary flex w-full items-center justify-center rounded-md px-3 py-1 text-xs leading-[125%] font-semibold -tracking-[0.24px] sm:w-fit"
+            >
               {hero?.solutionTag}
             </div>
           </Copy>
@@ -151,10 +154,11 @@ const FieldServicesHero: React.FC<Props> = ({
             className="flex w-full flex-col-reverse items-center gap-5 sm:flex-row md:gap-2.5"
           >
             <div className="flex items-center gap-2 lg:gap-2.5">
-              <button>
+              <button aria-label="Download on Play Store">
                 <HeroPlayStoreIcon />
               </button>
-              <button>
+
+              <button aria-label="Download on App Store">
                 <HeroAppStoreIcon />
               </button>
             </div>
@@ -163,11 +167,13 @@ const FieldServicesHero: React.FC<Props> = ({
                 className="!hidden sm:!flex"
                 text={commonData?.getStartedFreeBtn}
                 showIcon={true}
+                ariaLabel="freeTrial"
               />
               <FreeTrialButton
                 showIcon={false}
                 className="!flex w-full sm:!hidden"
                 text={commonData?.mobileBtn}
+                ariaLabel="freeTrial"
               />
               <CardRequiredButton
                 text={commonData?.nccTxt}
@@ -178,13 +184,17 @@ const FieldServicesHero: React.FC<Props> = ({
         </div>
         <div className="relative z-20 h-full w-full sm:max-w-[270px] xl:max-w-[355px]">
           <Image
-            className="z-20 h-full max-h-[301px] w-full object-contain sm:max-h-[355px] sm:object-cover"
             src="/images/webp/group-with-location.webp"
+            alt="location"
             width={355}
             height={355}
-            alt="location"
-            // sizes="(max-width: 768px) 100vw, 355px"
-            unoptimized
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 355px"
+            priority
+            fetchPriority="high"
+            decoding="async"
+            placeholder="blur"
+            blurDataURL="/images/webp/group-with-location-blur.webp"
+            className="z-20 h-full max-h-[301px] w-full object-contain sm:max-h-[355px] sm:object-cover"
           />
           {processedLocation?.city && (
             <div className="absolute top-[60%] left-[38%] z-20 sm:left-[30%]">

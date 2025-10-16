@@ -80,7 +80,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
                   />
                 </svg>
                 <i className="!text-base !font-semibold text-[#CDF2E4]">
-                  Save up to $100/mo
+                  Save up to Save 40%
                 </i>
               </>
             )}

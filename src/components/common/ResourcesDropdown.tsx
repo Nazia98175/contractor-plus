@@ -33,7 +33,7 @@ const ResourcesDropdown: React.FC<Props> = ({
     { image: "/images/webp/material-comparison-search.webp" },
     { image: "/images/webp/Support-Center.webp" },
     { image: "/images/webp/USA-Labor-Rate.webp" },
-    { image: "/images/webp/developers-api.webp" },
+    { image: "/images/webp/developers-aPi.webp" },
   ];
   const fallbackImage = "/images/webp/developers-api.webp";
   return (
@@ -78,9 +78,11 @@ const ResourcesDropdown: React.FC<Props> = ({
               key={index}
               src={item.image}
               alt={industriesLinks[index]?.label || "Industry preview"}
-              unoptimized
+              priority
+              fetchPriority="auto"
               width={480}
               height={320}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 480px"
               className={`bg-kuroiBlack absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
                 hoveredIndex === index ? "z-10 opacity-100" : "z-0 opacity-0"
               }`}
@@ -89,7 +91,8 @@ const ResourcesDropdown: React.FC<Props> = ({
           <Image
             src={fallbackImage}
             alt="Select an industry"
-            unoptimized
+            priority
+            fetchPriority="auto"
             width={480}
             height={320}
             className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${

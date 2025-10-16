@@ -46,7 +46,6 @@ const CommonHero: React.FC<TheHeroProps> = ({
     });
   }, []);
   useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
-  console.log(hero, "hero");
 
   return (
     <section
@@ -63,7 +62,8 @@ const CommonHero: React.FC<TheHeroProps> = ({
         alt="final-large"
         width={1920}
         height={1000}
-        unoptimized
+        priority
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
       />
       <RedClipIcon className="pointer-events-none absolute top-[112px] right-[-194px] hidden w-full max-w-[993px] md:top-[-202px] md:right-0 md:block" />
       <div className="via-athenaBlue pointer-events-none absolute top-0 left-[70px] hidden h-[500px] w-full max-w-[90px] rotate-[-45deg] rounded-[10px] bg-gradient-to-r from-transparent to-transparent opacity-15 mix-blend-plus-lighter blur-[48px] lg:block"></div>

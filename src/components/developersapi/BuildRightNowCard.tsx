@@ -23,6 +23,8 @@ const BuildRightNowCard: React.FC<BuildRightNowCardProps> = ({
         alt="partnership-cash-hero"
         width={600}
         height={300}
+        priority
+        sizes="(max-width: 640px) 32px, (max-width: 1024px) 36px, 40px"
       />
       <div className="flex h-full flex-col">
         <h3 className="api-card-heading mt-4 mb-[14px] line-clamp-2 text-xl font-bold md:text-2xl lg:text-[30px]">

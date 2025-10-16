@@ -110,6 +110,7 @@ const FeaturesDropdown: React.FC<Props> = ({
                             width={25}
                             height={25}
                             priority
+                            sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
                           />
                         </span>
                         <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">

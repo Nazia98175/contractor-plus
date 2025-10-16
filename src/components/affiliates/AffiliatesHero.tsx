@@ -60,6 +60,7 @@ const AffiliatesHero = ({
           </Copy>
           <Copy delay={0.4} animateOnScroll={false}>
             <FreeTrialButton
+              ariaLabel="affilate free trial"
               showIcon={true}
               text={"Apply to join"}
               className="flex"
@@ -81,8 +82,10 @@ const AffiliatesHero = ({
               <Image
                 src={heroImg?.url}
                 alt="partnership-cash-hero"
+                fetchPriority="high"
                 width={600}
                 height={300}
+                sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
               />
               <div className="AffiliatesHero-layers pointer-events-none absolute top-0 left-0 h-full w-[40%]"></div>
               <div className="AffiliatesHero-layers pointer-events-none absolute top-0 right-0 h-full w-[40%] rotate-180"></div>

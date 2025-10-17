@@ -4,7 +4,7 @@ const VideoSection = ({ blogData }: { blogData: any }) => {
   console.log(blogData, "inner video blog");
 
   return (
-    <div className="h-full max-h-[200px] min-h-[200px] w-full overflow-hidden rounded-lg sm:max-h-[230px] sm:min-h-[230px]">
+    <div className="h-full max-h-[190px] min-h-[190px] w-full overflow-hidden rounded-lg">
       {blogData?.videoUrl ? (
         <video controls className="w-full rounded-lg">
           <source src={blogData?.videoUrl} type="video/mp4" />

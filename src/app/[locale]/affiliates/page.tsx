@@ -16,6 +16,7 @@ import { notFound } from "next/navigation";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Suspense } from "react";
+import LoadingFallback from "@/components/common/LoadingFallback";
 
 interface AffiliatesPageProps {
   params: Promise<{ locale: string; slug?: string }>;
@@ -48,12 +49,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
     applyJoin,
     faqs,
   } = await getAffiliatesData(locale);
-  // Loading fallback component
-  const LoadingFallback = () => (
-    <div className="flex min-h-[200px] items-center justify-center">
-      <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
-    </div>
-  );
+
   return (
     <main id="common-homepage-wrapper" className="relative">
       <AffiliatesHero

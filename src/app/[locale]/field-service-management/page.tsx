@@ -1,5 +1,6 @@
 import { integrationLogos, platforms } from "@/components/common/Helper";
 import { FooterRedLineMobileIcon } from "@/components/common/Icons";
+import LoadingFallback from "@/components/common/LoadingFallback";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
@@ -81,12 +82,6 @@ const FieldServicesPage = async ({ params }: Params) => {
 
   geoLocation = await getMaxMindLocation(ip);
   console.log("comparisonList", comparisonList);
-  // Loading fallback component
-  const LoadingFallback = () => (
-    <div className="flex min-h-[200px] items-center justify-center">
-      <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
-    </div>
-  );
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">

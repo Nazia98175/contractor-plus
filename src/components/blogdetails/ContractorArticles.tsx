@@ -30,7 +30,7 @@ const ContractorArticles = ({
             {blogList?.relatedBlogsTitle ?? ""}
           </h2>
           <Link
-            href="/blog"
+            href="/blogs"
             className="group hidden items-center gap-1 text-sm font-medium sm:flex"
           >
             {blogList?.viewAllBtn ?? ""}

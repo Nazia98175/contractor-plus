@@ -57,10 +57,16 @@ const BlogsContent = ({
                   <h2 className="mt-6 text-2xl font-semibold" {...props} />
                 ),
                 h3: ({ node, ...props }) => (
-                  <h3 className="mt-4 text-xl font-semibold" {...props} />
+                  <h3
+                    className="mt-4 text-xl font-bold md:text-2xl"
+                    {...props}
+                  />
                 ),
                 p: ({ node, ...props }) => (
-                  <p className="mt-3 leading-7" {...props} />
+                  <p
+                    className="mt-3 text-base leading-7 font-medium lg:text-lg"
+                    {...props}
+                  />
                 ),
                 ul: ({ node, ...props }) => (
                   <ul className="mt-3 ml-6 list-disc" {...props} />
@@ -69,7 +75,10 @@ const BlogsContent = ({
                   <ol className="mt-3 ml-6 list-decimal" {...props} />
                 ),
                 a: ({ node, ...props }) => (
-                  <a className="text-blue-600 underline" {...props} />
+                  <a
+                    className="font-medium text-black transition-all duration-300 ease-in-out hover:text-red-600"
+                    {...props}
+                  />
                 ),
               }}
             >
@@ -83,7 +92,7 @@ const BlogsContent = ({
             <VideoSection blogData={blogData} />
             <div className="flex flex-col justify-between gap-8 sm:flex-row-reverse lg:flex-col">
               <TableOfContent markdown={blogData?.blogDescription ?? ""} />
-              <div className="top-0 basis-[60%] lg:sticky">
+              <div className="top-0 lg:sticky">
                 <AdvertisementCard blogsList={blogsList} />
               </div>
             </div>

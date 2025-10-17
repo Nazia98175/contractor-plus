@@ -1,4 +1,5 @@
 import Copy from "@/components/common/Copy";
+import LoadingFallback from "@/components/common/LoadingFallback";
 import InvestorHero from "@/components/investors/InvestorHero";
 import MarketOpportunity from "@/components/investors/MarketOpportunity";
 import MidMarketTable from "@/components/investors/MidMarketTable";
@@ -53,12 +54,7 @@ export default async function InvestorsPage({ params }: InvestorsPageProps) {
     tableMobile,
     mobileProofSection,
   } = await getInvestorsData(locale);
-  // Loading fallback component
-  const LoadingFallback = () => (
-    <div className="flex min-h-[200px] items-center justify-center">
-      <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
-    </div>
-  );
+
   return (
     <main id="home-page-view-port-screen">
       <div

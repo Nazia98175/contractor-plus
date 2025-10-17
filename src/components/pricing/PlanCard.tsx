@@ -87,7 +87,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
             </p>
           </div>
           {plan?.ctaStyle === "proTeam" && (
-            <span className="font-myriad absolute top-0 right-0 rounded-[8px] bg-[#252525d9] px-2 py-1 text-[10px] font-semibold text-white">
+            <span className="font-myriad bg-luchGray absolute top-0 right-0 rounded-[8px] px-2 py-1 text-[10px] font-semibold text-white">
               Only 500 licenses available!
             </span>
           )}

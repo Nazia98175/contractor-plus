@@ -6,7 +6,7 @@ import SmoothScrollSetup from "@/components/common/SmoothScroll";
 import { getFooter, getHeader } from "@/services/layout";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-
+import NextTopLoader from "nextjs-toploader";
 // export const metadata: Metadata = {
 //   title: "Free to start, free to stay. Level up when you’re ready.",
 //   description:
@@ -38,6 +38,16 @@ export default async function RootLayout({
     <>
       <SmoothScrollSetup />
       <BackToTop />
+      <NextTopLoader
+        color="#ac0d0e"
+        initialPosition={0.1}
+        crawlSpeed={200}
+        height={3}
+        crawl={true}
+        showSpinner={true}
+        easing="ease"
+        speed={400}
+      />
       <NextIntlClientProvider messages={messages}>
         <Header header={header?.data} />
         {children}

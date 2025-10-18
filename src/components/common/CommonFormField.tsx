@@ -18,6 +18,7 @@ interface CommonFormFieldProps {
   ncc: string;
   showTitle?: boolean;
   showDescription?: boolean;
+  desktopbtn?: string;
   className?: string;
   variant?: "default" | "primary" | "secondary" | "tertiary" | "white";
   variantBtn?: "default" | "primary" | "light" | "dark" | "muted";
@@ -34,6 +35,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   variant = "default",
   variantBtn = "default",
   className,
+  desktopbtn,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -113,7 +115,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             <div className="flex w-full flex-col items-center justify-center md:w-fit">
               <button
                 type="submit"
-                className="bg-red-linear primary-btn hidden h-10 !w-full !min-w-[230px] items-center justify-center sm:flex md:mx-0 md:!w-auto"
+                className={`bg-red-linear primary-btn hidden h-10 !w-full min-w-[230px] items-center justify-center sm:flex md:mx-0 md:!w-auto ${desktopbtn}`}
                 disabled={loading}
               >
                 {loading ? <ButtonLoader /> : createBtn}

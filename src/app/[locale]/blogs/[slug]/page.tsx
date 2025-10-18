@@ -54,7 +54,7 @@ const BlogDetails = async ({
     notFound();
   }
   return (
-    <main className="overflow-hidden">
+    <main>
       <div className="bg-white">
         <BlogDetailHero blogData={blogData} />
         <BlogsContent blogData={blogData} blogsList={blogsList} />
@@ -75,9 +75,8 @@ const BlogDetails = async ({
         />
         <TrustBar platforms={platforms} className="z-20 pb-[104px] xl:pb-20" />
         <FooterRedLineMobileIcon className="pointer-events-none absolute top-[-20%] -left-[1%] z-0 block max-h-[994px] w-full max-w-[840px]" />
+        <ContractorArticles blogList={blogsList} blogData={allBlogs} />
       </div>
-
-      <ContractorArticles blogList={blogsList} blogData={allBlogs} />
     </main>
   );
 };

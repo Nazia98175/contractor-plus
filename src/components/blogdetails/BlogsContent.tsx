@@ -92,10 +92,13 @@ const BlogsContent = ({
             <VideoSection blogData={blogData} />
             <div className="flex flex-col justify-between gap-8 sm:flex-row-reverse lg:flex-col">
               <TableOfContent markdown={blogData?.blogDescription ?? ""} />
-              <div className="top-0 lg:sticky">
+              <div className="block lg:hidden">
                 <AdvertisementCard blogsList={blogsList} />
               </div>
             </div>
+          </div>
+          <div className="top-[15%] hidden lg:sticky lg:block">
+            <AdvertisementCard blogsList={blogsList} />
           </div>
         </div>
       </div>

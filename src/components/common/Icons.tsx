@@ -4817,9 +4817,9 @@ export const BlurIcon = ({ classNames = "" }) => (
         width="155.8"
         height="173.8"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -5024,9 +5024,9 @@ export const BlurIcon2 = () => (
         width="1893.2"
         height="1174.2"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -7096,6 +7096,196 @@ export const LifeTimeIcon = () => (
     />
     <path
       d="M21.0909 9.33333C21.593 9.33333 22 9.7313 22 10.2222C22 15.602 17.5021 20 12 20C11.4979 20 11.0909 19.602 11.0909 19.1111C11.0909 13.7313 15.5888 9.33333 21.0909 9.33333ZM20.1214 11.1693C16.3938 11.6052 13.4144 14.5184 12.9686 18.1632C16.6968 17.7276 19.6759 14.8147 20.1214 11.1693Z"
+      fill="white"
+    />
+  </svg>
+);
+
+export const PlayStoreIcon = () => (
+  <svg
+    width="25"
+    height="27"
+    viewBox="0 0 25 27"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g filter="url(#filter0_ii_4_4005)">
+      <path
+        d="M0.787557 0.411277C0.487445 0.730175 0.310058 1.22509 0.310058 1.86599L0.310058 24.7646C0.310058 25.4065 0.487445 25.9004 0.787557 26.2193L0.863874 26.2938L13.6408 13.4664V13.3153V13.1641L0.863874 0.335694L0.787557 0.411277Z"
+        fill="url(#paint0_linear_4_4005)"
+      />
+      <path
+        d="M17.897 17.7441L13.6387 13.4669V13.3157V13.1646L17.898 8.88843L17.9939 8.9433L23.0401 11.8217C24.4809 12.6438 24.4809 13.9887 23.0401 14.8119L17.9939 17.6902L17.897 17.7441Z"
+        fill="url(#paint1_linear_4_4005)"
+      />
+      <g filter="url(#filter1_i_4_4005)">
+        <path
+          d="M17.9956 17.6891L13.6393 13.3157L0.78711 26.2197C1.26151 26.7249 2.04634 26.7871 2.93018 26.2839L17.9956 17.6891Z"
+          fill="url(#paint2_linear_4_4005)"
+        />
+      </g>
+      <path
+        d="M17.9956 8.94166L2.93018 0.347967C2.04634 -0.156265 1.26151 -0.0931064 0.78711 0.412161L13.6404 13.3162L17.9956 8.94166Z"
+        fill="url(#paint3_linear_4_4005)"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_ii_4_4005"
+        x="0.310059"
+        y="0"
+        width="23.8105"
+        height="26.6313"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy="-0.795" />
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="shape"
+          result="effect1_innerShadow_4_4005"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy="0.795" />
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="effect1_innerShadow_4_4005"
+          result="effect2_innerShadow_4_4005"
+        />
+      </filter>
+      <filter
+        id="filter1_i_4_4005"
+        x="0.787109"
+        y="13.3157"
+        width="17.2085"
+        height="13.3157"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy="-0.795" />
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="shape"
+          result="effect1_innerShadow_4_4005"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_4_4005"
+        x1="12.5082"
+        y1="1.62371"
+        x2="-4.86746"
+        y2="18.9311"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#00A0FF" />
+        <stop offset="0.0066" stopColor="#00A1FF" />
+        <stop offset="0.2601" stopColor="#00BEFF" />
+        <stop offset="0.5122" stopColor="#00D2FF" />
+        <stop offset="0.7604" stopColor="#00DFFF" />
+        <stop offset="1" stopColor="#00E3FF" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_4_4005"
+        x1="24.9156"
+        y1="13.3157"
+        x2="-0.0379863"
+        y2="13.3157"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FFE000" />
+        <stop offset="0.4087" stopColor="#FFBD00" />
+        <stop offset="0.7754" stopColor="#FFA500" />
+        <stop offset="1" stopColor="#FF9C00" />
+      </linearGradient>
+      <linearGradient
+        id="paint2_linear_4_4005"
+        x1="15.6299"
+        y1="15.6907"
+        x2="-7.93374"
+        y2="39.1617"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FF3A44" />
+        <stop offset="1" stopColor="#C31162" />
+      </linearGradient>
+      <linearGradient
+        id="paint3_linear_4_4005"
+        x1="-2.44977"
+        y1="-7.21055"
+        x2="8.07204"
+        y2="3.26989"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#32A071" />
+        <stop offset="0.0685" stopColor="#2DA771" />
+        <stop offset="0.4762" stopColor="#15CF74" />
+        <stop offset="0.8009" stopColor="#06E775" />
+        <stop offset="1" stopColor="#00F076" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const AppleIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="27"
+    viewBox="0 0 22 27"
+    fill="none"
+  >
+    <path
+      d="M18.3949 14.3579C18.4216 12.2737 19.5365 10.3016 21.3052 9.20995C20.1894 7.61015 18.3205 6.59583 16.3762 6.53476C14.3024 6.31622 12.2919 7.78059 11.2351 7.78059C10.1579 7.78059 8.53081 6.55646 6.77872 6.59265C4.49495 6.66672 2.3659 7.97028 1.25479 9.97479C-1.13364 14.1263 0.647916 20.2277 2.93584 23.5834C4.08053 25.2267 5.41835 27.0622 7.16886 26.9971C8.88184 26.9258 9.52161 25.9005 11.5893 25.9005C13.6378 25.9005 14.2381 26.9971 16.0241 26.9557C17.8622 26.9258 19.0203 25.3052 20.1248 23.6464C20.9473 22.4755 21.5802 21.1815 22 19.8122C19.8399 18.8949 18.3974 16.7125 18.3949 14.3579Z"
+      fill="white"
+    />
+    <path
+      d="M15.0213 4.32783C16.0236 3.11996 16.5173 1.56745 16.3977 0C14.8666 0.161453 13.4522 0.896136 12.4365 2.05766C11.4432 3.19253 10.9263 4.71773 11.024 6.22527C12.5557 6.2411 14.0615 5.52634 15.0213 4.32783Z"
       fill="white"
     />
   </svg>

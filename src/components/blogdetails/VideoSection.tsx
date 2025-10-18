@@ -1,8 +1,6 @@
 import React from "react";
 
 const VideoSection = ({ blogData }: { blogData: any }) => {
-  console.log(blogData, "inner video blog");
-
   return (
     <div className="h-full max-h-[190px] min-h-[190px] w-full overflow-hidden rounded-lg">
       {blogData?.videoUrl ? (

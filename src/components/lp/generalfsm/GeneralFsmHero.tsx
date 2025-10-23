@@ -91,22 +91,24 @@ const GeneralFsmHero = () => {
                 />
               </div>
             </CardReveal>
-            <div className="hidden items-center justify-between gap-4 xl:flex">
-              <div className="flex items-center justify-between gap-2">
-                <PlayStoreIcon />
-                <p className="text-lg font-bold text-[#D2D4D6]">4.5</p>
-                <span className="max-w-[14px]">
-                  <StartIcon />
-                </span>
+            <CardReveal distance={50} className="w-full xl:w-fit" delay={1.3}>
+              <div className="hidden items-center justify-between gap-4 xl:flex">
+                <div className="flex items-center justify-between gap-2">
+                  <PlayStoreIcon />
+                  <p className="text-decemberSky text-lg font-bold">4.5</p>
+                  <span className="max-w-[14px]">
+                    <StartIcon />
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <AppleIcon />
+                  <p className="text-decemberSky text-lg font-bold">4.5</p>
+                  <span className="max-w-[14px]">
+                    <StartIcon />
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center justify-between gap-2">
-                <AppleIcon />
-                <p className="text-lg font-bold text-[#D2D4D6]">4.5</p>
-                <span className="max-w-[14px]">
-                  <StartIcon />
-                </span>
-              </div>
-            </div>
+            </CardReveal>
           </div>
         </div>
 

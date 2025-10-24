@@ -16,7 +16,10 @@ const WhatAsk: React.FC<WhatAskProps> = ({ title, desc }) => {
       <article className="flex flex-col items-center justify-center py-6">
         <BritenessIcon />
         <Copy animateOnScroll={true}>
-          <p className="text-lightGray pt-2 text-center text-base font-bold sm:text-xl md:text-2xl">
+          <p
+            role="paragraph"
+            className="text-lightGray pt-2 text-center text-base font-bold sm:text-xl md:text-2xl"
+          >
             {desc ||
               "Up‑to‑date product data (SKUs, images, specs, units/packaging), by data feed, API or SFTP."}
           </p>

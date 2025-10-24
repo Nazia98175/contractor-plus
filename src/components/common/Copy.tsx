@@ -12,6 +12,7 @@ interface CopyProps {
   animateOnScroll?: boolean;
   delay?: number;
   className?: string;
+  ariaLabel?: string;
 }
 
 function Copy({
@@ -19,6 +20,7 @@ function Copy({
   animateOnScroll = true,
   delay = 0,
   className,
+  ariaLabel,
 }: CopyProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const elementRefs = useRef<HTMLElement[]>([]);
@@ -128,7 +130,12 @@ function Copy({
   }
 
   return (
-    <div className={`${className}`} ref={containerRef} data-copy-wrapper="true">
+    <div
+      aria-label={ariaLabel}
+      className={`${className}`}
+      ref={containerRef}
+      data-copy-wrapper="true"
+    >
       {children}
     </div>
   );

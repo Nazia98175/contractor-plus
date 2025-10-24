@@ -28,7 +28,7 @@ const SupliersMarquee: React.FC<SupliersMarqueeProps> = ({
                 className="w-full rounded-lg object-cover"
                 width={52}
                 height={52}
-                unoptimized
+                priority
                 src={item.image.url}
                 alt={item.imageAlt}
               />
@@ -45,7 +45,7 @@ const SupliersMarquee: React.FC<SupliersMarqueeProps> = ({
                 className="w-full rounded-lg object-cover"
                 width={52}
                 height={52}
-                unoptimized
+                priority
                 src={item.image.url}
                 alt={item.imageAlt}
               />
@@ -54,11 +54,16 @@ const SupliersMarquee: React.FC<SupliersMarqueeProps> = ({
         </Marquee>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 left-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute top-0 right-[-80px] z-10 h-full w-full max-w-[120px] blur-[20px]"></div>
+
         <Image
-          fill
-          className="3xl:!top-[5%] 900:!top-[12%] mix-b pointer-events-none absolute !top-[8%] left-[0%] z-10 object-cover blur-[14.05px] sm:!top-[7%] lg:!top-[64px] 2xl:!top-[5%]"
-          src="/images/webp/blur.webp"
+          src="/images/webp/blur-3.webp"
           alt="blur-ellipse"
+          fill
+          priority
+          fetchPriority="high"
+          className="3xl:!top-[5%] 900:!top-[12%] pointer-events-none absolute inset-0 z-10 object-cover blur-[14.05px] sm:!top-[7%] lg:!top-[64px] 2xl:!top-[5%]"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={50} // Add this if not already optimized
         />
       </div>
     </>

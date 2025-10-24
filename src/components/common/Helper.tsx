@@ -4533,7 +4533,7 @@ export const afflitatesClientReviews = {
   data: [
     {
       reviews: {
-        title: "Trusted by over 50,000 build and service contractors",
+        title: null,
         subTitle: null,
         reviews: [
           {

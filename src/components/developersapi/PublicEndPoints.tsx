@@ -47,6 +47,7 @@ const PublicEndPoints: React.FC<PublicEndPointsProps> = ({
             showIcon={true}
             text={freeTrialButtonText}
             className="flex"
+            ariaLabel="View API Reference"
           />
         )}
 

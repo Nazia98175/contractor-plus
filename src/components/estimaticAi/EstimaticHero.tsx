@@ -39,6 +39,7 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({
   const { estimaticTag, estimaticTagTitle, hero: heroSection } = hero || {};
 
   useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
+  console.log(estimateHeroData, "stimate");
 
   return (
     <section className="bg-cover pb-8 text-white md:pb-14 xl:bg-[url('/images/webp/estimatic-hero-bg.webp')]">

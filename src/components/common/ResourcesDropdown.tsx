@@ -12,7 +12,7 @@ const ResourcesDropdown: React.FC<Props> = ({
   headerSubList,
   closeDropdown,
 }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const t = useTranslations("resources");
 
   const industriesLinks = t.raw("links") as {
@@ -33,9 +33,9 @@ const ResourcesDropdown: React.FC<Props> = ({
     { image: "/images/webp/material-comparison-search.webp" },
     { image: "/images/webp/Support-Center.webp" },
     { image: "/images/webp/USA-Labor-Rate.webp" },
-    { image: "/images/webp/developers-aPi.webp" },
+    { image: "/images/webp/developers-api.webp" },
   ];
-  const fallbackImage = "/images/webp/developers-api.webp";
+  // const fallbackImage = "/images/webp/developers-aPi.webp";
   return (
     <div className="flex grow flex-col overflow-hidden">
       <div className="relative z-[9999] flex grow items-start gap-8 overflow-auto">
@@ -89,10 +89,9 @@ const ResourcesDropdown: React.FC<Props> = ({
             />
           ))}
           <Image
-            src={fallbackImage}
+            src={"/images/webp/Affiliates.webp"}
             alt="Select an industry"
             priority
-            fetchPriority="auto"
             width={480}
             height={320}
             className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${

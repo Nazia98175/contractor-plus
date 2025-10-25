@@ -1,5 +1,4 @@
 import CountUp from "react-countup";
-// import LottieAnimation from "../common/LottieAnimation";
 import Copy from "../common/Copy";
 import LottieAnimation from "./LottieAnimation";
 

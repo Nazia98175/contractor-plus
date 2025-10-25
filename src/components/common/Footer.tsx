@@ -47,6 +47,12 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   };
 
   const pathname = usePathname();
+  // ✅ Safety check for pathname (in case it's undefined during SSR)
+  const safePath = pathname?.toLowerCase() || "";
+
+  // ✅ Hide footer on specific path
+  const hideFooter = safePath.includes("lp");
+
   const variant =
     pathname.toLowerCase().includes("industries") ||
     pathname.toLowerCase().includes("pricing") ||
@@ -70,7 +76,7 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const toggleSection = (title: string) => {
     setOpenSection(openSection === title ? null : title);
   };
-
+  if (hideFooter) return null;
   return (
     <footer
       id="home-page-footer-view-port-screen"

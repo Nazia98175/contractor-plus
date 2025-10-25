@@ -1,7 +1,6 @@
 "use client";
-import gsap from "gsap";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import Image from "next/image";
-import { useEffect } from "react";
 import AppsRating from "../common/AppsRating";
 import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
@@ -9,7 +8,6 @@ import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import StatisticCard from "./StatisticCard";
-import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 export interface EstimateHeroItem {
   title: string;
   subTitle: string;

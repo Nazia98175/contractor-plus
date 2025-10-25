@@ -40,7 +40,12 @@ const SupplierBenefitList: React.FC<SupplierBenefitListProps> = ({
             </h3>
           </Copy>
           <Copy animateOnScroll={true} delay={0.1}>
-            <p className="mb-1 text-center text-sm sm:text-base">{item.desc}</p>
+            <p
+              role="paragraph"
+              className="mb-1 text-center text-sm sm:text-base"
+            >
+              {item.desc}
+            </p>
           </Copy>
           <span className="how-it-work-icon icon-span">
             <PlusIconAnimation />

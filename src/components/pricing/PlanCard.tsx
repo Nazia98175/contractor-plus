@@ -2,6 +2,8 @@ import React from "react";
 import { ActivationIcon, LineIcon, ListIcon } from "../common/Icons";
 import PlanButton from "./PlanButton";
 import { Span } from "next/dist/trace";
+import { usePathname } from "next/navigation";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 
 interface PlanData {
   title: string;
@@ -71,7 +73,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
 
   const formattedPrice2 = `$${priceValue2.toLocaleString("en-US")}`;
   console.log(index, "number");
-
+  const pathname = usePathname();
+  const { loading, handleRedirect } = useOneLinkRedirect();
   return (
     <article
       className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-xl duration-100 hover:-translate-y-2 ${plan.cardClass ?? ""} relative`}
@@ -113,6 +116,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
 
         <PlanButton
           cta={`${plan?.ctaText && plan?.ctaText}`}
+          onClick={() => handleRedirect({ pathname })}
           className="my-6"
           variant={
             plan?.ctaStyle === "pro"

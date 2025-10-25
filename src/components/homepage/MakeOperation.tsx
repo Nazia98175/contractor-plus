@@ -1,15 +1,13 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import make_operations_1 from "../../../public/lotties/make-operations-1.json";
 import make_operations_2 from "../../../public/lotties/make-operations-2.json";
 import make_operations_3 from "../../../public/lotties/make-operations-3.json";
-import CardReveal from "../common/CardReveal";
-import MakeOperationCard from "./MakeOperationCard";
 import Copy from "../common/Copy";
-import { useCallback, useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MakeOperationCard from "./MakeOperationCard";
 interface Whatever {
   title: string;
   subTitle: string;

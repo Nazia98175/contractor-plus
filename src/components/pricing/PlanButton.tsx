@@ -5,6 +5,7 @@ interface PlanButtonProps {
   variant?: "pro" | "proTeam" | "proTeamSeconadry" | "lifetime" | "default";
   size?: "small" | "default";
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const PlanButton: React.FC<PlanButtonProps> = ({
@@ -12,6 +13,7 @@ const PlanButton: React.FC<PlanButtonProps> = ({
   variant = "default",
   size = "default",
   className = "",
+  onClick,
 }) => {
   const baseStyles: string =
     "w-full rounded-lg font-semibold tracking-[0.1px] duration-300 flex items-center justify-center";
@@ -34,6 +36,7 @@ const PlanButton: React.FC<PlanButtonProps> = ({
 
   return (
     <button
+      onClick={onClick}
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
     >
       {cta}

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { EstimateDividerIcon, TripleChevronIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
+import { EstimateDividerIcon, TripleChevronIcon } from "../common/Icons";
 interface OneGetsSetContent {
   title?: string;
   subTitle?: string;

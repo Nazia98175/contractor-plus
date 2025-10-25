@@ -26,7 +26,11 @@ const WorkToday: React.FC<WorkTodayProps> = ({ title, listTextDesc }) => {
             key={index}
             className="flex flex-col items-center justify-center bg-[rgba(255,255,255,0.01)] px-[22px] py-3"
           >
-            <img className={item.imgClass} src={item.icon.url} alt={item.alt} />
+            <img
+              className={item.imgClass}
+              src={item.icon.url}
+              alt={item.title}
+            />
             <h3 className="text-secondary pt-4 text-center text-2xl font-semibold">
               {item.title}
             </h3>

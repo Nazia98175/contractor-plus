@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Copy from "../common/Copy";
 import TiltedCardEffect from "../common/TiltedCardEffect";
-import Image from "next/image";
 
 const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
   return (

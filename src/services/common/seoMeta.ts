@@ -39,7 +39,7 @@ export const getSeoData = async (
   const url =
     collectionType === "homepage"
       ? `${collectionType}?locale=${locale}${queryString}`
-      : `${collectionType}?filters[pageName][$eq]=${slug}&locale=${locale}${queryString}`;
+      : `${collectionType}?filters[slug][$eq]=${slug}&locale=${locale}${queryString}`;
 
   try {
     const res: AxiosResponse<{ data?: SeoDataItem | SeoDataItem[] }> =

@@ -22,6 +22,8 @@ const OverlapCardMobileViewChild: React.FC<TheServiceProps> = ({
   apiData = true,
   mainClassName,
 }) => {
+  console.log(fieldService, "field service");
+
   return (
     <section className="relative z-30 px-2 pt-14 sm:pt-20 lg:pt-2">
       <div>

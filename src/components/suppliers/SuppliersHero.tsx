@@ -48,14 +48,24 @@ const SuppliersHero = ({
             "Put your catalog where purchasing decisions actually happen"}
         </h1>
       </Copy>
-      <Copy delay={0.3} animateOnScroll={false}>
-        <p className="hero-description !text-ashGray mt-3 text-center">
+      <Copy
+        ariaLabel="Get discovered by 50,000+ high‑intent contractors right inside the OS they use to estimate, order, and build."
+        delay={0.3}
+        animateOnScroll={false}
+      >
+        <p
+          aria-label="Get discovered by 50,000+ high‑intent contractors right inside the OS they"
+          className="hero-description !text-ashGray mt-3 text-center"
+        >
           {heroDescription ||
             "Get discovered by 50,000+ high‑intent contractors right inside the OS they use to estimate, order, and build."}
         </p>
       </Copy>
       <CardReveal distance={30} delay={0.6}>
-        <Button className="mt-4 w-full sm:max-w-[204px]">
+        <Button
+          ariaLabel="Get in touch"
+          className="mt-4 w-full sm:max-w-[204px]"
+        >
           Get in touch <SideIcon />
         </Button>
       </CardReveal>

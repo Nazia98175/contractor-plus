@@ -8,6 +8,7 @@ interface FreeAccountButtonProps {
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
   loading?: boolean;
+  ariaLabel?: string;
 }
 const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
   onClick,
@@ -15,6 +16,7 @@ const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
   className,
   showIcon = true,
   disabled,
+  ariaLabel,
   type,
   loading = false,
 }) => {
@@ -24,6 +26,7 @@ const FreeAccountButton: React.FC<FreeAccountButtonProps> = ({
         type={type}
         disabled={disabled}
         onClick={onClick}
+        aria-label={ariaLabel}
         className={`secondary-btn bg-red-linear h-10 gap-2 ${className}`}
       >
         {loading ? (

@@ -18,6 +18,7 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({
   className,
 }) => {
   const sectionRef = useRef(null);
+  console.log(switchingTool, "tool");
 
   return (
     <section

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import BuildRightNow from "@/components/developersapi/BuildRightNow";
@@ -9,6 +9,7 @@ import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
+import LoadingFallback from "@/components/common/LoadingFallback";
 export async function generateMetadata({
   params,
 }: {
@@ -45,27 +46,33 @@ export default async function DevelopersApiPage({
         <DevelopersApiHero mainItems={hero} />
       </div>
       <div className="relative overflow-hidden">
-        <BuildRightNow
-          items={whatYouCanBuild?.items}
-          title={whatYouCanBuild?.title}
-        />
+        <Suspense fallback={<LoadingFallback />}>
+          <BuildRightNow
+            items={whatYouCanBuild?.items}
+            title={whatYouCanBuild?.title}
+          />
+        </Suspense>
         <img
           className="pointer-events-none absolute bottom-[0%] h-[43%] w-[45%] object-cover"
           src={"/images/webp/large-combat.webp"}
           alt="large-combat"
         />
-        <PublicEndPoints
-          title={goBeyond?.title || "Go beyond the public end points"}
-          description={
-            goBeyond?.desc ||
-            "Need something bespoke? We have 400+ endpoints available to expose for enterprise customers and strategic integration partners. Tell us what you’re building and we’ll open the right doors."
-          }
-          freeTrialButtonText="View API Reference"
-          slackButtonText="Join us on Slack"
-          slackLinkText="Need help integrating?"
-          slackLinkHref="/"
-        />
-        <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
+        <Suspense fallback={<LoadingFallback />}>
+          <PublicEndPoints
+            title={goBeyond?.title || "Go beyond the public end points"}
+            description={
+              goBeyond?.desc ||
+              "Need something bespoke? We have 400+ endpoints available to expose for enterprise customers and strategic integration partners. Tell us what you’re building and we’ll open the right doors."
+            }
+            freeTrialButtonText="View API Reference"
+            slackButtonText="Join us on Slack"
+            slackLinkText="Need help integrating?"
+            slackLinkHref="/"
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <TrustBar platforms={platforms} className="pb-16 sm:pb-10" />
+        </Suspense>
       </div>
     </>
   );

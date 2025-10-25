@@ -13,6 +13,7 @@ interface Props {
 }
 const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+
   const [prevMenu, setPrevMenu] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);

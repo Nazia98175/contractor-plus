@@ -2,7 +2,6 @@
 import Image from "next/image";
 import CardReveal from "../common/CardReveal";
 import { GreenArrowIcon, GreenDotIcon2, RedCrossIcon } from "../common/Icons";
-import RunWithContractorMobile from "../fieldservices/RunWithContractorMobile";
 export interface TheServiceProps {
   runWithContractorData: any;
   slug?: string;

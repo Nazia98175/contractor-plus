@@ -17,13 +17,23 @@ const IntegrationModels: React.FC<IntegrationModelsProps> = ({
 }) => {
   return (
     <section className="relative pt-5 md:pt-10 md:pb-[200px] lg:pb-[273px]">
-      <Image
-        width={1920}
-        height={100}
-        className="pointer-events-none absolute bottom-[-152px] left-0 z-10 hidden h-full w-full md:block"
-        src="/images/webp/finally-desktop-bg.webp"
-        alt="finally bg"
-      />
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcSet="/images/webp/finally-mobile-bg4.webp"
+        />
+        <Image
+          width={1920}
+          height={100}
+          fetchPriority="auto"
+          quality={50}
+          className="pointer-events-none absolute bottom-[-152px] left-0 z-10 hidden h-full w-full md:block"
+          src="/images/webp/finally-desktop-bg4.webp"
+          alt="finally bg"
+          sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
+        />
+      </picture>
+
       <section className="relative z-20 mx-auto w-full max-w-[1224px] px-4 pb-8">
         <Copy animateOnScroll={true}>
           <h3 className="text-mana section-heading text-center">
@@ -38,6 +48,11 @@ const IntegrationModels: React.FC<IntegrationModelsProps> = ({
                 height={250}
                 src={item.image.url}
                 alt={item.title}
+                loading="lazy"
+                decoding="async"
+                quality={75}
+                sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 300px"
+                className="object-cover"
               />
               <Copy animateOnScroll={true}>
                 <h3 className="pt-2 text-center text-xl font-bold text-white md:text-start md:text-[25px]">
@@ -53,7 +68,10 @@ const IntegrationModels: React.FC<IntegrationModelsProps> = ({
               )}
 
               <Copy animateOnScroll={true}>
-                <p className="text-lightGray pt-3 text-center text-base font-semibold md:text-start">
+                <p
+                  role="paragraph"
+                  className="text-lightGray pt-3 text-center text-base font-semibold md:text-start"
+                >
                   {item.desc}
                 </p>
               </Copy>

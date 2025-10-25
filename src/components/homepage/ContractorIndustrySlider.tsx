@@ -1,9 +1,9 @@
 "use client";
+import Link from "next/link";
 import React, { FC, useState } from "react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import SliderLayout from "../common/SliderLayout";
 import ContractorIndustrySliderCard from "./ContractorIndustrySliderCard";
-import Link from "next/link";
 
 type Props = {
   imageCard: any;

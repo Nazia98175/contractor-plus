@@ -22,20 +22,40 @@ const BlogsContent = ({
   const rightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const rightEl = rightRef.current;
+    let triggerInstance: ScrollTrigger | null = null;
 
-    if (!rightEl || window.innerWidth < 1024) return;
+    const setupScrollTrigger = () => {
+      const rightEl = rightRef.current;
+      if (!rightEl) return;
 
-    ScrollTrigger.create({
-      trigger: rightEl,
-      start: "top 15%", // start when the top of the element hits the top of viewport
-      end: () => `+=${rightEl.scrollHeight}`, // adjust as needed
-      pin: true,
-      pinSpacing: true,
-      scrub: false,
-    });
+      // ✅ Only apply on desktop
+      if (window.innerWidth >= 1024) {
+        triggerInstance = ScrollTrigger.create({
+          trigger: rightEl,
+          start: "top 15%",
+          end: () => `+=${rightEl.scrollHeight}`,
+          pin: true,
+          pinSpacing: true,
+          scrub: false,
+        });
+      } else {
+        // Kill all ScrollTriggers if not on desktop
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      }
+    };
+
+    setupScrollTrigger();
+
+    // ✅ Handle screen resize
+    const handleResize = () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      setupScrollTrigger();
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
@@ -44,6 +64,10 @@ const BlogsContent = ({
     <section className="main-container 1xl:space-y-30 1xl:pb-20 space-y-12 pt-8 pb-12 md:space-y-12 md:pb-14 lg:space-y-14 lg:pb-16">
       <div className="flex flex-col justify-between gap-4 lg:flex-row">
         <div className="grow">
+          <div className="relative z-30 block space-y-5 md:hidden">
+            <VideoSection blogData={blogData} />
+            <TableOfContent markdown={blogData?.blogDescription ?? ""} />
+          </div>
           {/* <BlogDetailContent /> */}
           <section className="w-full">
             <ReactMarkdown
@@ -89,15 +113,19 @@ const BlogsContent = ({
         {/* RIGHT SIDE CONTENT  */}
         <div className="relative w-full lg:min-w-[336px]">
           <div ref={rightRef} className="w-full space-y-8">
-            <VideoSection blogData={blogData} />
+            <div className="hidden md:block">
+              <VideoSection blogData={blogData} />
+            </div>
             <div className="flex flex-col justify-between gap-8 sm:flex-row-reverse lg:flex-col">
-              <TableOfContent markdown={blogData?.blogDescription ?? ""} />
-              <div className="block lg:hidden">
+              <div className="hidden sm:block">
+                <TableOfContent markdown={blogData?.blogDescription ?? ""} />
+              </div>
+              <div className="block w-full sm:max-w-[300px] md:max-w-full lg:hidden">
                 <AdvertisementCard blogsList={blogsList} />
               </div>
             </div>
           </div>
-          <div className="top-[15%] hidden lg:sticky lg:block">
+          <div className="top-[15%] mt-6 hidden lg:sticky lg:block">
             <AdvertisementCard blogsList={blogsList} />
           </div>
         </div>

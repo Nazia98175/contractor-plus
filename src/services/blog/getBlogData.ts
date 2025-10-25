@@ -34,7 +34,7 @@ export const getBlogsList = async (locale: string) => {
 export const getAllBlogs = async (locale: string) => {
   try {
     const response = await axiosInstance.get(
-      `blogs?locale=${locale}&sort=publishedAt:desc&populate[blogImg][populate]=*&populate[categoryListForFilter][populate]=*`,
+      `blogs?locale=${locale}&sort=postedOn:desc&populate[blogImg][populate]=*&populate[tags][populate]=*`,
     );
     const { data } = response.data;
     if (!data) {

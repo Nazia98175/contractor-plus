@@ -80,14 +80,14 @@ const TableOfContent = ({ markdown }: { markdown: string }) => {
                   : "text-coldGrey hover:text-sambucus hover:border-sambucus/30 border-transparent pl-3 hover:border-l-2"
               } ${
                 h.level === 1
-                  ? "ml-0"
+                  ? "sm:ml-0"
                   : h.level === 2
-                    ? "ml-4"
+                    ? "sm:ml-4"
                     : h.level === 3
-                      ? "ml-8"
+                      ? "sm:ml-8"
                       : h.level === 4
-                        ? "ml-12"
-                        : "ml-16"
+                        ? "sm:ml-8"
+                        : "sm:ml-8"
               } rounded-r-md py-1`}
             >
               {h.text}

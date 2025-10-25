@@ -102,7 +102,7 @@ const GeneralFsmPage = () => {
       },
       {
         id: 2,
-        subheading: "Step 2",
+        heading: "Step 2",
         title: "Connect the team",
         lottieJson: connectTeam,
         isIcon: false,
@@ -198,7 +198,7 @@ const GeneralFsmPage = () => {
         imageTitle: "Carpenter",
         linkUrl: "/industries/carpenter-business-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/carpenter_business_software_f892ee9908.jpg",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/construction_management_software_52070e0fe7.jpg",
         },
       },
       {
@@ -206,7 +206,7 @@ const GeneralFsmPage = () => {
         imageTitle: "Construction",
         linkUrl: "/industries/construction-management-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/construction_management_software_52070e0fe7.jpg",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/drywall_contractor_software_394690d402.jpg",
         },
       },
       {
@@ -214,7 +214,7 @@ const GeneralFsmPage = () => {
         imageTitle: "Drywall",
         linkUrl: "/industries/drywall-contractor-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/drywall_contractor_software_394690d402.jpg",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/electrician_software_8fabd50a92.png",
         },
       },
       {
@@ -222,7 +222,7 @@ const GeneralFsmPage = () => {
         imageTitle: "Electrician",
         linkUrl: "/industries/electrician-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/electrician_software_8fabd50a92.png",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/Screenshot_2025_08_21_141725_b1bd011fd5.png",
         },
       },
       {
@@ -230,7 +230,7 @@ const GeneralFsmPage = () => {
         imageTitle: "Handyman",
         linkUrl: "/industries/handyman-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/Screenshot_2025_08_21_141725_b1bd011fd5.png",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/General_Contractor_4720246fab.webp",
         },
       },
       {
@@ -238,7 +238,7 @@ const GeneralFsmPage = () => {
         imageTitle: "General Contractor",
         linkUrl: "/industries/general-contractor-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/Screenshot_2025_08_21_141725_b1bd011fd5.png",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/HVAC_contractor_software_e10aeb220d.png",
         },
       },
       {
@@ -246,7 +246,7 @@ const GeneralFsmPage = () => {
         imageTitle: "HVAC",
         linkUrl: "/industries/hvac-contractor-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/General_Contractor_4720246fab.webp",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/plumbing_business_software_f6fd744ddd.jpg",
         },
       },
       {
@@ -270,7 +270,7 @@ const GeneralFsmPage = () => {
         imageTitle: "Remodeling",
         linkUrl: "/industries/remodeling-contractor-software",
         image: {
-          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/painting_contractor_software_7de327e2b9.jpg",
+          url: "https://contractor-plus-website.s3.us-east-2.amazonaws.com/remodeling_contractor_software_c3b9ddefd3.jpg",
         },
       },
       {

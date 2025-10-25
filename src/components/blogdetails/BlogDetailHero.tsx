@@ -38,7 +38,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
                 : "/images/webp/blog-detail-hero.webp"
             })`,
           }}
-          className="blog-detail-hero-shadow max-h-[560px]w-full flex h-full min-h-[500px] flex-col justify-start gap-3 rounded-xl bg-cover bg-right p-4 py-10 text-white md:rounded-[20px] md:p-6 lg:max-h-[460px] lg:min-h-[460px] lg:justify-end lg:p-10 xl:bg-center xl:p-[42px]"
+          className="blog-detail-hero-shadow flex h-full max-h-[560px] min-h-[324px] w-full flex-col justify-start gap-3 rounded-xl bg-cover bg-right p-4 py-10 text-white sm:min-h-[500px] md:rounded-[20px] md:p-6 lg:max-h-[460px] lg:min-h-[460px] lg:justify-end lg:p-10 xl:bg-center xl:p-[42px]"
         >
           <h3 className="font-work max-w-[818px] text-2xl leading-tight font-semibold capitalize md:text-3xl md:text-[34px]">
             {blogData?.blogTitle ?? ""}

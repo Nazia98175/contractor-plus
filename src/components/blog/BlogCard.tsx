@@ -13,6 +13,7 @@ interface Article {
   shortDescription?: string;
   publishedAt?: string;
   date?: string;
+  postedOn?: string;
   blogUrl?: string;
   category?: string;
   tags?: Tag[];
@@ -35,7 +36,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
   const styles = variantsBlogCard[variant];
   const router = useRouter();
 
-  const dateISO = article?.publishedAt || article?.date || "";
+  const dateISO =
+    article?.postedOn || article?.publishedAt || article?.date || "";
   const formattedDate = (() => {
     const d = dateISO ? new Date(dateISO) : null;
     return d && !Number.isNaN(d.getTime())

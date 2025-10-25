@@ -22,7 +22,7 @@ export const getBlogsByCategory = async (
   categoryText: string,
   isLimit?: boolean,
 ): Promise<HomePageResponse | null> => {
-  const url = `blogs?filters[categoryListForFilter][list][text][$eq]=${categoryText}&locale=${locale}&publicationState=live&populate[category][populate][list][populate]=*&populate[categoryListForFilter][populate][list][populate]=*&populate[blogImg][populate]=*${isLimit ? "&pagination[limit]=3" : ""}`;
+  const url = `blogs?filters[tags][list][text][$eq]=${categoryText}&locale=${locale}&publicationState=live&populate[category][populate][list][populate]=*&populate[tags][populate]=*${isLimit ? "&pagination[limit]=3" : ""}`;
 
   try {
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);

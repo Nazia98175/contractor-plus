@@ -68,6 +68,11 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // ✅ Safety check for pathname (in case it's undefined during SSR)
+  const safePath = pathname?.toLowerCase() || "";
+
+  // ✅ Hide footer on specific path
+  const hideHeader = safePath.includes("lp");
   return (
     <header
       className="fixed top-4 z-[99] w-full rounded px-2 opacity-0"
@@ -78,50 +83,69 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
           scrolled ? "bg-kuroiBlack shadow-c2" : styles.background
         }`}
       >
-        <div className="main-container flex items-center justify-between py-2 lg:gap-3 xl:gap-[54px]">
-          <button
-            aria-label="contractorplus logo"
-            onClick={handleClick}
-            className="w-full max-w-[130px] min-w-24 lg:max-w-[137px]"
-          >
-            <LogoIcon />
-          </button>
-          <div className="hidden grow lg:flex">
-            <HeaderLiItems headerList={header?.headerMain} />
-          </div>
-          <div className="3xl:gap-3 flex w-fit items-center gap-4">
-            <div className="flex items-center gap-1 xl:gap-3">
-              <LanguageSelector />
-              <Link
-                className="font-inter text-doctor2 hover:text-romanRed text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300"
-                href={"tel:(855) 392-8803"}
-              >
-                {header?.contact}
-              </Link>
-            </div>
+        {!hideHeader ? (
+          <div className="main-container flex items-center justify-between py-2 lg:gap-3 xl:gap-[54px]">
             <button
-              aria-label="contractorplus login button"
-              className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm"
+              aria-label="contractorplus logo"
+              onClick={handleClick}
+              className="w-full max-w-[130px] min-w-24 lg:max-w-[137px]"
             >
-              {header?.loginText}
+              <LogoIcon />
+            </button>
+            <div className="hidden grow lg:flex">
+              <HeaderLiItems headerList={header?.headerMain} />
+            </div>
+            <div className="3xl:gap-3 flex w-fit items-center gap-4">
+              <div className="flex items-center gap-1 xl:gap-3">
+                <LanguageSelector />
+                <Link
+                  className="font-inter text-doctor2 hover:text-romanRed text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300"
+                  href={"tel:(855) 392-8803"}
+                >
+                  {header?.contact}
+                </Link>
+              </div>
+              <button
+                aria-label="contractorplus login button"
+                className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm"
+              >
+                {header?.loginText}
+              </button>
+              <button
+                onClick={() => handleRedirect({ pathname })}
+                disabled={loading}
+                className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
+              >
+                {header?.btnText?.btnText}
+              </button>
+              <button
+                aria-label="contractorplus close button"
+                className="lg:hidden"
+                onClick={() => setIsShow(true)}
+              >
+                <HamburgerIcon />
+              </button>
+              <SideBar header={header} isshow={isshow} setIsShow={setIsShow} />
+            </div>
+          </div>
+        ) : (
+          <div className="main-container flex items-center justify-between py-2 lg:gap-3 xl:gap-[54px]">
+            <button
+              aria-label="contractorplus logo"
+              onClick={handleClick}
+              className="w-full max-w-[130px] min-w-24 lg:max-w-[137px]"
+            >
+              <LogoIcon />
             </button>
             <button
               onClick={() => handleRedirect({ pathname })}
               disabled={loading}
               className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
             >
-              {header?.btnText?.btnText}
+              Get started FREE
             </button>
-            <button
-              aria-label="contractorplus close button"
-              className="lg:hidden"
-              onClick={() => setIsShow(true)}
-            >
-              <HamburgerIcon />
-            </button>
-            <SideBar header={header} isshow={isshow} setIsShow={setIsShow} />
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

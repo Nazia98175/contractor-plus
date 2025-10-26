@@ -60,7 +60,7 @@ const GeneralFsmHero = () => {
             }
             className="gradient-2 text-center leading-[128%] font-extrabold xl:text-left"
             minFontSize={25}
-            maxLines={2}
+            maxLines={3}
             maxFontSize={52}
             textAnimation="home-page-view-port-screen-estimatic-ai"
           />
@@ -119,6 +119,17 @@ const GeneralFsmHero = () => {
           className="hidden flex-col xl:flex"
         >
           <div className="relative max-w-[560px] overflow-hidden pb-10">
+            {/* <div className="relative h-full w-full">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/CGFp55WFk_U?rel=0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div> */}
             <Image
               width={730}
               height={410}

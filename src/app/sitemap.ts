@@ -41,7 +41,10 @@ const getAllResources = async (locale: string) => {
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.SITE_URL || "https://yourwebsite.com";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_DOMAIN ||
+    process.env.DOMAIN_URL ||
+    "https://v2site.contractorplus.app";
   const locales = ["en", "fr", "es"];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];

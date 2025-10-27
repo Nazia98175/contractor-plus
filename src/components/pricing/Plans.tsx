@@ -27,6 +27,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
         {/* Monthly Plan */}
         <div className="sm:border-decemberSky flex w-fit justify-start gap-4 rounded-[500px] border border-transparent p-2 sm:justify-center">
           <button
+            aria-label="pricing tab monthly"
             onClick={() => setActiveTab("monthly")}
             className={`font-myriad min-w-fit rounded-[500px] px-4 py-1 text-base transition-colors duration-300 sm:px-6 sm:text-lg ${
               activeTab === "monthly"
@@ -39,6 +40,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
 
           {/* Annual Plan */}
           <button
+            aria-label="pricing tab annual"
             onClick={() => setActiveTab("annual")}
             className={`flex min-w-fit items-center justify-center gap-3 rounded-[500px] px-4 py-1 text-base transition-colors duration-300 sm:px-6 sm:text-lg ${
               activeTab === "annual"
@@ -59,6 +61,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
 
           {/* Lifetime Plan */}
           <button
+            aria-label="pricing tab lifetime"
             onClick={() => setActiveTab("lifetime")}
             className={`flex min-w-fit items-center justify-center gap-3 rounded-[500px] px-4 py-1 text-base transition-colors duration-300 sm:px-6 sm:text-lg ${
               activeTab === "lifetime"

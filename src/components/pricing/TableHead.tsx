@@ -37,6 +37,7 @@ const TableHead: React.FC<TableHeadProps> = ({ plans }) => {
               </h3>
               {plan.ctaText && (
                 <button
+                  aria-label="table plan"
                   className={`${getButtonStyles(plan.variant)} font-myriad mt-4 w-full min-w-[229px] rounded-md border px-6 py-2.5 text-base font-semibold tracking-[0.1px] transition-colors`}
                 >
                   {plan.ctaText}

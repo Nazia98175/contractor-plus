@@ -89,7 +89,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       )}
 
       <div className="flex flex-col gap-7 md:gap-[34px]">
-        <Copy delay={0.2}>
+        <Copy delay={0.2} ariaLabel="additional description">
           <p
             className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
           >

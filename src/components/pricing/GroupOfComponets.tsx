@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import Plans from "./Plans";
 import CompleteFeatureList from "./CompleteFeatureList";
 import ComparisonTable from "./ComparisonTable";
 import PricingHero from "./PricingHero";
 import gsap from "gsap";
+import Image from "next/image";
+import LoadingFallback from "../common/LoadingFallback";
 
 interface GroupOfComponentsProps {
   pageContent: any;
@@ -66,16 +68,22 @@ const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({
       </div>
       <div className="relative bg-white">
         <div className="pointer-events-none absolute top-[-5%] left-1/2 z-10 hidden h-20 w-[110%] -translate-x-1/2 bg-white blur-sm sm:block md:blur-[13px]"></div>
-        <div ref={plansRef}>
-          <Plans onScroll={scrollToTable} pricingPlans={pricingPlans} />
+        <Suspense fallback={<LoadingFallback />}>
+          <div ref={plansRef}>
+            <Plans onScroll={scrollToTable} pricingPlans={pricingPlans} />
+          </div>
+        </Suspense>
+      </div>
+      <Suspense fallback={<LoadingFallback />}>
+        <div className="bg-white">
+          <CompleteFeatureList onScroll={scrollToTable} reviews={reviews} />
         </div>
-      </div>
-      <div className="bg-white">
-        <CompleteFeatureList onScroll={scrollToTable} reviews={reviews} />
-      </div>
-      <div className="bg-white" ref={comparisonTableRef}>
-        <ComparisonTable pricingComparison={pricingComparison} />
-      </div>
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
+        <div className="bg-white" ref={comparisonTableRef}>
+          <ComparisonTable pricingComparison={pricingComparison} />
+        </div>
+      </Suspense>
     </>
   );
 };

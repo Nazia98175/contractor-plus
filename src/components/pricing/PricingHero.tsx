@@ -36,11 +36,13 @@ const PricingHero: React.FC<PlansProps> = ({
     >
       {/* Background Image */}
       <Image
-        src="/images/webp/pricing.webp"
+        src="/images/webp/pricing-1.webp"
         alt="Pricing Hero"
         height={1000}
         width={200}
         priority
+        fetchPriority="high"
+        sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
         className="absolute right-0 bottom-0 z-0 hidden h-full w-full max-w-[200px] object-fill xl:block"
         style={{ transform: "translateZ(0)" }}
       />
@@ -67,7 +69,7 @@ const PricingHero: React.FC<PlansProps> = ({
           </h2>
         </Copy>
 
-        <Copy delay={0.3}>
+        <Copy delay={0.3} ariaLabel="hero pricing description">
           <p className="hero-description !text-trolleyGrey mx-auto w-full max-w-[600px] text-center">
             {pageContent?.hero?.subTitle && pageContent?.hero?.subTitle}
           </p>

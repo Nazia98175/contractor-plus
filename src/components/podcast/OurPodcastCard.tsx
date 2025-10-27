@@ -11,6 +11,7 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
     Item?.isYoutube ? (
       <Link
         key="yt"
+        aria-label="Podcast YouTube link"
         href={Item?.link ?? "#"}
         target="_blank"
         rel="noopener noreferrer"
@@ -20,6 +21,7 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
     ) : null,
     Item?.podcastLink ? (
       <Link
+        aria-label="Podcast Link"
         key="pd"
         href={Item?.podcastLink ?? "#"}
         target="_blank"
@@ -30,6 +32,7 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
     ) : null,
     Item?.spotifyLink ? (
       <Link
+        aria-label="Podcast Spotify link"
         key="sp"
         href={Item?.spotifyLink ?? "#"}
         target="_blank"
@@ -69,6 +72,8 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
           src={Item?.thumbnail}
           alt={Item?.title}
           fill
+          priority
+          fetchPriority="high"
         />
         <div className="p-2.5">
           <Image
@@ -77,6 +82,8 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
             alt={Item?.title}
             width={240}
             height={240}
+            priority
+            fetchPriority="high"
           />
         </div>
       </div>

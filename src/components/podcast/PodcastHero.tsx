@@ -24,6 +24,7 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
         </p>
       </Copy>
       <Link
+        aria-label="subscribe link"
         href={data?.ctaUrl ?? "/#"}
         target="_blank"
         className="bg-red-linear primary-btn mx-auto flex h-10 !w-full max-w-[265px] items-center gap-1.5"
@@ -36,6 +37,8 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
           src={data?.image?.url ?? "/images/webp/trader-group.webp"}
           width={1050}
           height={579}
+          priority
+          fetchPriority="high"
           alt="trader-group"
           className="ios-image relative mx-auto max-h-[831px] w-full object-cover"
         />

@@ -90,6 +90,7 @@ const PricingHero: React.FC<PlansProps> = ({
 
         <button
           onClick={onScroll}
+          aria-label="Scroll down"
           className="text-pantone mx-auto mt-12 hidden w-fit duration-300 hover:text-white xl:flex"
         >
           <DownScrollIcon />

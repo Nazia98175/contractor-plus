@@ -7,11 +7,6 @@ import { getFooter, getHeader } from "@/services/layout";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
-// export const metadata: Metadata = {
-//   title: "Free to start, free to stay. Level up when you’re ready.",
-//   description:
-//     "What the other guys charge extra for, Contractor+ offers without hidden charges. Upgrade when you need more firepower to grow.",
-// };
 
 export default async function RootLayout({
   children,
@@ -44,7 +39,7 @@ export default async function RootLayout({
         crawlSpeed={200}
         height={3}
         crawl={true}
-        showSpinner={true}
+        showSpinner={false}
         easing="ease"
         speed={400}
       />

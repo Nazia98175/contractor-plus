@@ -1,10 +1,10 @@
+import { cn } from "@/app/lib/utils";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { ExternalLink, ShoppingCart, Trash2 } from "lucide-react";
 import React from "react";
-import { Trash2, ExternalLink, ShoppingCart } from "lucide-react";
+import { Button } from "../ui/button";
 import { QuantityControl } from "./QuantityControl";
 import { MaterialItem } from "./types";
-import { useMediaQuery } from "@/hooks/use-media-query";
-import { cn } from "@/app/lib/utils";
-import { Button } from "../ui/button";
 
 interface MaterialTableRowProps {
   item: MaterialItem;

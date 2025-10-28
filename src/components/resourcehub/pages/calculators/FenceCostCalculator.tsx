@@ -1,24 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import { useMetaTags } from "@/hooks/use-meta-tags";
+import { useState } from "react";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import { ArrowLeft, Fence } from "lucide-react";
-import { useMetaTags } from "@/hooks/use-meta-tags";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   CalculationResult,
   FenceCostResult,
 } from "../../components/calculators/fence-cost/CalculationResult";
+import { CalculatorForm } from "../../components/calculators/fence-cost/CalculatorForm";
 import { EducationalContent } from "../../components/calculators/fence-cost/EducationalContent";
 import { PageHeader } from "../../components/calculators/fence-cost/PageHeader";
 import { Button } from "../../components/ui/button";
-import { CalculatorForm } from "../../components/calculators/fence-cost/CalculatorForm";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 // Define the calculation values type
 export interface FenceCostValues {

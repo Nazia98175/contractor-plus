@@ -1,4 +1,4 @@
-import { VideoData, EmbedSettings } from "@/data/videoUrlData";
+import { EmbedSettings, VideoData } from "@/data/videoUrlData";
 
 export interface VideoMetadata {
   title: string;
@@ -72,7 +72,7 @@ export class VideoMetadataHandler {
       autoplay?: boolean;
       muted?: boolean;
       controls?: boolean;
-    } = {}
+    } = {},
   ): string {
     const {
       width = "100%",
@@ -135,7 +135,7 @@ export class VideoMetadataHandler {
             <div class="metadata-details">
               <span>Duration: ${metadata.duration}</span>
               <span>Uploaded: ${new Date(
-                metadata.uploadDate
+                metadata.uploadDate,
               ).toLocaleDateString()}</span>
               <span>Publisher: ${metadata.publisher.name}</span>
             </div>
@@ -155,7 +155,7 @@ export class VideoMetadataHandler {
    */
   static createEnhancedVideoPlayer(
     videoData: VideoData,
-    containerId: string
+    containerId: string,
   ): void {
     const metadata = this.extractMetadata(videoData);
     if (!metadata) return;
@@ -190,7 +190,7 @@ export class VideoMetadataHandler {
         <div class="metadata-details">
           <span>Duration: ${metadata.duration}</span>
           <span>Uploaded: ${new Date(
-            metadata.uploadDate
+            metadata.uploadDate,
           ).toLocaleDateString()}</span>
           <span>Publisher: ${metadata.publisher.name}</span>
         </div>
@@ -255,7 +255,7 @@ export class VideoMetadataHandler {
   static addVideoSchema(embedSettings: EmbedSettings): void {
     // Remove existing schema if any
     const existingSchema = document.querySelector(
-      'script[type="application/ld+json"]'
+      'script[type="application/ld+json"]',
     );
     if (existingSchema) {
       existingSchema.remove();
@@ -274,7 +274,7 @@ export class VideoMetadataHandler {
   static trackVideoEvent(
     event: string,
     videoData: VideoData,
-    additionalData?: Record<string, unknown>
+    additionalData?: Record<string, unknown>,
   ): void {
     const eventData = {
       event,
@@ -304,7 +304,7 @@ export class VideoMetadataHandler {
    */
   static getVideoThumbnail(
     videoData: VideoData,
-    size: "small" | "medium" | "large" = "medium"
+    size: "small" | "medium" | "large" = "medium",
   ): string {
     const thumbnailUrl = videoData.embedSettings?.thumbnailUrl;
     if (!thumbnailUrl) return "";

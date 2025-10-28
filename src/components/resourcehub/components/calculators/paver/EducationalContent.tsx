@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription } from "../../ui/card";
+import { Card, CardContent } from "../../ui/card";
 
 export function EducationalContent() {
   return (

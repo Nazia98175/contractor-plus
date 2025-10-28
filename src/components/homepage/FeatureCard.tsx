@@ -2,15 +2,6 @@ import Image from "next/image";
 import React from "react";
 import Copy from "../common/Copy";
 
-interface FeatureCardProps {
-  obj: {
-    title: string;
-    subTitle: string;
-    img: string;
-  };
-  index: number;
-}
-
 const FeatureCard: React.FC<FeatureCardProps> = ({ obj, index }) => {
   return (
     <article className="font-jakarta flex flex-col items-center justify-between rounded-lg bg-white p-3">
@@ -32,7 +23,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj, index }) => {
           alt={obj.title}
           fill
           className="xs:object-center object-auto ios-image"
-          // sizes="(min-width: 768px) 360px, 320px"
         />
       </div>
     </article>

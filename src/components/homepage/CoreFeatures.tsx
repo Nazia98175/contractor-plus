@@ -1,16 +1,5 @@
-"use client";
 import Copy from "../common/Copy";
 import CoreFeaturesCard from "./CoreFeaturesCard";
-
-interface CoreFeaturesData {
-  title: string;
-  subTitle: string;
-  features?: any;
-}
-
-interface CoreFeaturesProps {
-  coreFeatures: CoreFeaturesData;
-}
 
 const CoreFeatures: React.FC<CoreFeaturesProps> = ({ coreFeatures }) => {
   return (

@@ -1,51 +1,12 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
-import { useTranslations } from "next-intl";
-import FeatureNavigation from "./FeatureNavigation";
-import FeatureContent from "./FeatureContent";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef, useState } from "react";
+import FeatureContent from "./FeatureContent";
+import FeatureNavigation from "./FeatureNavigation";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-interface FeatureItem {
-  id: number;
-  title: string;
-  cardQuote: string | null;
-  userName: string | null;
-  cardImg: any | null;
-  content: {
-    id: number;
-    title: string;
-    desc: string;
-  }[];
-}
 
-interface Props {
-  featuresList: FeatureItem[];
-}
-const navItems = [
-  { id: "crm", label: "CRM", href: "#crm" },
-  { id: "live_scheduling", label: "Live scheduling", href: "#live_scheduling" },
-  {
-    id: "internal_job_chat",
-    label: "Internal job chat",
-    href: "#internal_job_chat",
-  },
-  {
-    id: "ai_estimate_builder",
-    label: "AI estimate builder",
-    href: "#ai_estimate_builder",
-  },
-  { id: "testimonials", label: "Testimonials", href: "#testimonials" },
-  {
-    id: "property_profiles",
-    label: "Property Profiles",
-    href: "#property_profiles",
-  },
-  { id: "pricing", label: "Pricing", href: "#pricing" },
-  { id: "big_chief_ai", label: "Big Chief AI", href: "#big_chief_ai" },
-];
 const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -56,10 +17,6 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
 
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const t = useTranslations("corefeature");
-  const features: string[] = t.raw("features") || [];
-
-  // Mobile detection with resize listener
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 1023);
@@ -72,16 +29,16 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const titles: string[] = featuresList?.slice(0, -1).map((item) => item.title);
   function toCamelCase(str: string): string {
     return str
-      .trim() // Remove leading/trailing whitespace
-      .toLowerCase() // Convert to lowercase
-      .replace(/[^a-zA-Z0-9\s]/g, "") // Remove special characters except spaces
-      .replace(/\s+(.)/g, (_, char) => char.toUpperCase()) // Convert first letter after space to uppercase
-      .replace(/\s+/g, ""); // Remove all spaces
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9\s]/g, "")
+      .replace(/\s+(.)/g, (_, char) => char.toUpperCase())
+      .replace(/\s+/g, "");
   }
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -60% 0px", // Trigger when section is 20% visible from top
+      rootMargin: "-20% 0px -60% 0px",
       threshold: 0.1,
     };
 
@@ -107,10 +64,7 @@ const CoreFeaturesCard: React.FC<Props> = ({ featuresList }) => {
   const featureBtnC = featuresList?.[featuresList?.length - 1]?.title ?? "";
 
   return (
-    <section
-      // ref={containerRef}
-      className="relative mt-7 flex flex-col gap-9 lg:flex-row lg:px-3 xl:p-6"
-    >
+    <section className="relative mt-7 flex flex-col gap-9 lg:flex-row lg:px-3 xl:p-6">
       <div className="!sticky top-[60px] z-20 h-full sm:top-[60px] lg:top-[100px] lg:w-fit">
         <div className={`relative z-20 w-full lg:w-fit lg:self-start`}>
           <FeatureNavigation

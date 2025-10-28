@@ -1,15 +1,14 @@
 import React from "react";
-
-import { HelpCircle } from "lucide-react";
-import { getPermitCostText, formatLocationName } from "@/data/faq-data";
+import { formatLocationName, getPermitCostText } from "@/data/faq-data";
 import { ProjectDetail } from "@/types/resources/projectDetail";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { HelpCircle } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 interface FAQSectionProps {
   projectSlug: string;

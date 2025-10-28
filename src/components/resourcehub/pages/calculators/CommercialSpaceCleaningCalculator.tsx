@@ -68,7 +68,6 @@ export default function CommercialSpaceCleaningCalculator() {
   return (
     <div className="main-container py-8 md:px-6">
       <PageHeader />
-
       <div className="mb-8 grid gap-6 md:grid-cols-2 lg:gap-8">
         <div>
           <CalculatorForm onCalculate={handleCalculate} />

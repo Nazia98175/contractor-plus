@@ -96,12 +96,12 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
             />
           ) : (
             <Image
-              src="/images/webp/footer-gradient.webp"
+              src="/images/webp/footer-gradient-1.webp"
               alt="footer gradient"
               width={1440}
               height={200}
               sizes="100vw"
-              unoptimized
+              loading="lazy"
               className="h-auto w-full"
             />
           )}

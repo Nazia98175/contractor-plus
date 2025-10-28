@@ -1,3 +1,4 @@
+import { Receipt } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -6,7 +7,6 @@ import {
   CardTitle,
 } from "../../ui/card";
 import { Separator } from "../../ui/separator";
-import { Receipt, DollarSign } from "lucide-react";
 
 interface CalculationResultProps {
   result: {

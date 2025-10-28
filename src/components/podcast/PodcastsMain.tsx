@@ -30,7 +30,7 @@ const PodcastMain: FC<{
     <main id="home-page-wrapper-2">
       <div
         id="home-page-view-port-screen-podcast"
-        className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-top bg-no-repeat pt-20 opacity-0 sm:bg-cover md:pt-[100px] lg:pt-[140px] xl:pt-[193px]"
+        className="relative bg-[url('/images/webp/why-contractor-hero-bg.webp')] bg-top bg-no-repeat pt-20 opacity-0 sm:bg-cover md:pt-[100px] lg:pt-[140px] xl:pt-[193px]"
       >
         <PodcastHero data={data} />
         <OurPodcast data={data} transistorData={transistorData} />

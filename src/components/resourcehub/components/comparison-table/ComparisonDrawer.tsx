@@ -1,13 +1,13 @@
+import { ChevronDown, Share } from "lucide-react";
 import React, { useState } from "react";
-import { Share, ChevronDown } from "lucide-react";
-import { MaterialItem } from "./types";
-import { MaterialTableRow } from "./TableRow";
 import { TableFooter } from "./TableFooter";
-import { ComparisonTableHeader } from "./TableHeader";
+import { MaterialTableRow } from "./TableRow";
+import { MaterialItem } from "./types";
 
-import { EmptyState } from "./EmptyState";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { ActionBarTitle } from "../action-bar";
 import { ExportDialog } from "../export/ExportDialog";
+import { Button } from "../ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -16,8 +16,7 @@ import {
   DrawerFooter,
   DrawerHeader,
 } from "../ui/drawer";
-import { ActionBarTitle } from "../action-bar";
-import { Button } from "../ui/button";
+import { EmptyState } from "./EmptyState";
 
 interface ComparisonDrawerProps {
   open: boolean;

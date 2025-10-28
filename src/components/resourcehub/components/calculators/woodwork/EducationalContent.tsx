@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription } from "../../ui/card";
-import { Hammer, CreditCard, Calculator, Ruler } from "lucide-react";
+import { Calculator, CreditCard, Hammer, Ruler } from "lucide-react";
+import { Card, CardContent } from "../../ui/card";
 
 export function EducationalContent() {
   return (

@@ -1,4 +1,4 @@
-import { storesByCountry, getStoreById } from "./storeService";
+import { getStoreById } from "./storeService";
 
 // Mock response formatting function to simulate the Unwrangle API structure
 type Variation = {

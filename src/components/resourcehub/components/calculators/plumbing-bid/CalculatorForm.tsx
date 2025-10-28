@@ -1,6 +1,9 @@
-import React from "react";
+import { toast } from "@/hooks/use-toast";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { HelpCircle, Wrench } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
 import {
   Card,
   CardContent,
@@ -8,13 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../../ui/card";
-import { PiggyBank, HelpCircle, Timer, DollarSign, Wrench } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../../ui/tooltip";
 import {
   Form,
   FormControl,
@@ -23,10 +19,13 @@ import {
   FormLabel,
   FormMessage,
 } from "../../ui/form";
-import { toast } from "@/hooks/use-toast";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { Input } from "../../ui/input";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../ui/tooltip";
 
 // Define the form validation schema
 const calculatorSchema = z.object({

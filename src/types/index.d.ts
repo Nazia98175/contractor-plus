@@ -1,3 +1,4 @@
+export {};
 type LanguageOption = {
   label: string;
   value: string;
@@ -66,11 +67,6 @@ export type ContractorPlatformsProps = {
     locale: string;
   }>;
 };
-export interface Platform {
-  name: string;
-  logo: string;
-  rating: number;
-}
 
 export interface PlatformItem {
   cardImg: any;
@@ -293,3 +289,83 @@ export type ResourceHomepage = {
   backgroundImage: string;
   blogUrl: string;
 };
+declare global {
+  interface Platform {
+    name: string;
+    logo: string;
+    rating: number;
+  }
+  interface TrustBarProps {
+    platforms: Platform[];
+    showTrustedSection?: boolean;
+    className?: string;
+    trustBarImages?: any;
+  }
+  interface EngineContractor {
+    title: string;
+    subTitle: string;
+    txt: string;
+  }
+
+  interface TheEngineContractorProps {
+    engineContractor: EngineContractor;
+  }
+  interface Finally {
+    title: string;
+    subTitle: string;
+    solutionsList: any;
+  }
+  interface TheFinallyProps {
+    finallyC: Finally;
+  }
+  interface CoreFeaturesData {
+    title: string;
+    subTitle: string;
+    features?: any;
+  }
+
+  interface CoreFeaturesProps {
+    coreFeatures: CoreFeaturesData;
+  }
+  interface FeatureItem {
+    id: number;
+    title: string;
+    cardQuote: string | null;
+    userName: string | null;
+    cardImg: any | null;
+    content: {
+      id: number;
+      title: string;
+      desc: string;
+    }[];
+  }
+
+  interface Props {
+    featuresList: FeatureItem[];
+  }
+  interface FeatureContent {
+    id: number;
+    title: string;
+    cardQuote: string | null;
+    userName: string | null;
+    cardImg: any | null;
+    content: {
+      id: number;
+      title: string;
+      desc: string;
+    }[];
+  }
+  interface LottieAnimationRef {
+    play: () => void;
+    stop: () => void;
+    pause: () => void;
+  }
+  interface FeatureCardProps {
+    obj: {
+      title: string;
+      subTitle: string;
+      img: string;
+    };
+    index: number;
+  }
+}

@@ -52,7 +52,7 @@ const Faq: React.FC<Props> = ({
           {faq?.title}
         </h3>
       </Copy>
-      <Copy delay={0.2}>
+      <Copy delay={0.2} ariaLabel="Faq Description">
         <p
           className={`paragraph-text pt-1.5 text-center sm:pt-4 ${currentHeading.sub_title}`}
         >

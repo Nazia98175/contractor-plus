@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
-  Star,
+  Loader2,
   MapPin,
-  Users,
   MessageCircle,
   Shield,
-  Loader2,
+  Star,
+  Users,
 } from "lucide-react";
 
+import { searchThumbtackBusinesses } from "@/services/resource/thumbtackService";
 import { ProjectDetail } from "@/types/resources/projectDetail";
-import { Card, CardContent } from "./ui/card";
-import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
 import {
   Dialog,
   DialogContent,
@@ -21,7 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./ui/dialog";
-import { searchThumbtackBusinesses } from "@/services/resource/thumbtackService";
+import { Input } from "./ui/input";
 
 type ThumbtackResponse = Awaited<
   ReturnType<typeof searchThumbtackBusinesses>
@@ -84,12 +84,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [iframeLoading, setIframeLoading] = useState(true);
   const [selectedContractorUrl, setSelectedContractorUrl] = useState("");
-  // const [ip, setIp] = useState<string | undefined>("");
-  // const [isZipCodeManuallyChanged, setIsZipCodeManuallyChanged] =
-  //   useState(false);
-  // const [isIpReady, setIsIpReady] = useState(false);
 
-  // Refs to track previous values and prevent unnecessary calls
   const prevLocationRef = useRef<string>("");
   const isInitialMount = useRef(true);
 

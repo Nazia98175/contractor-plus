@@ -110,7 +110,7 @@ const BlogPage = ({ blogsData, blogsList, industries }: BlogPageProps) => {
         />
       </div>
 
-      <div className="relative z-20 bg-white">
+      <div id="next-section" className="relative z-20 bg-white">
         <LatestFromContractor
           blogsList={blogsList}
           blogsData={filtered}

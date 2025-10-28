@@ -153,6 +153,11 @@ const BlogHero = ({
     } else {
       setFilteredBlogs([]);
     }
+    // 🔽 Scroll down to next section smoothly
+    const nextSection = document.querySelector("#next-section");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   const handleBlogClick = (slug: string) => {

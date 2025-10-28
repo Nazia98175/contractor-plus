@@ -88,7 +88,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </div>
 
         {article?.shortDescription && (
-          <p className="text-flintstone mb-4 line-clamp-3 text-sm leading-[112%] font-normal capitalize sm:mb-6 md:text-base">
+          <p className="text-flintstone mb-4 line-clamp-3 text-sm leading-[130%] font-normal capitalize sm:mb-6 md:text-base">
             {article.shortDescription}
           </p>
         )}

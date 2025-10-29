@@ -45,7 +45,7 @@ const ContractorIndustrySlider: FC<Props> = ({ imageCard }) => {
       >
         {imageCard &&
           imageCard?.map((show: any, index: number) => (
-            <Link className="" href={show?.linkUrl} key={index}>
+            <Link className="" href={show?.linkUrl ?? "#"} key={index}>
               <ContractorIndustrySliderCard show={show} />
             </Link>
           ))}

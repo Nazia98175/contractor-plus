@@ -52,19 +52,33 @@ const TrustedService: React.FC<TheReviewProps> = ({
                       apiData={apiData}
                     />
                   ))
-                : reviews?.data?.reviews?.reviews.map((review: any) => (
-                    <TrustedServiceCard
-                      key={review.id}
-                      slug={slug}
-                      review={review as Review}
-                      openModal={
-                        review.isModal
-                          ? () => openModal(review.videoLink || "")
-                          : () => {}
-                      }
-                      apiData={apiData}
-                    />
-                  ))}
+                : reviews?.data?.reviews?.reviews
+                  ? reviews?.data?.reviews?.reviews.map((review: any) => (
+                      <TrustedServiceCard
+                        key={review.id}
+                        slug={slug}
+                        review={review as Review}
+                        openModal={
+                          review.isModal
+                            ? () => openModal(review.videoLink || "")
+                            : () => {}
+                        }
+                        apiData={apiData}
+                      />
+                    ))
+                  : reviews?.map((review: any) => (
+                      <TrustedServiceCard
+                        key={review.id}
+                        slug={slug}
+                        review={review as Review}
+                        openModal={
+                          review.isModal
+                            ? () => openModal(review.videoLink || "")
+                            : () => {}
+                        }
+                        apiData={apiData}
+                      />
+                    ))}
             </Marquee>
           </div>
           <div className="hidden w-full md:block">
@@ -83,19 +97,33 @@ const TrustedService: React.FC<TheReviewProps> = ({
                       apiData={apiData}
                     />
                   ))
-                : reviews?.data?.reviews?.reviews.map((review: any) => (
-                    <TrustedServiceCard
-                      key={review.id}
-                      slug={slug}
-                      review={review as Review}
-                      openModal={
-                        review.isModal
-                          ? () => openModal(review.videoLink || "")
-                          : () => {}
-                      }
-                      apiData={apiData}
-                    />
-                  ))}
+                : reviews?.data?.reviews?.reviews
+                  ? reviews?.data?.reviews?.reviews.map((review: any) => (
+                      <TrustedServiceCard
+                        key={review.id}
+                        slug={slug}
+                        review={review as Review}
+                        openModal={
+                          review.isModal
+                            ? () => openModal(review.videoLink || "")
+                            : () => {}
+                        }
+                        apiData={apiData}
+                      />
+                    ))
+                  : reviews?.map((review: any) => (
+                      <TrustedServiceCard
+                        key={review.id}
+                        slug={slug}
+                        review={review as Review}
+                        openModal={
+                          review.isModal
+                            ? () => openModal(review.videoLink || "")
+                            : () => {}
+                        }
+                        apiData={apiData}
+                      />
+                    ))}
             </Marquee>
           </div>
           <div className="relative hidden w-full md:block">

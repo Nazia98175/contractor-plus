@@ -4,13 +4,7 @@ import Button from "@/components/common/Button";
 import Image from "next/image";
 import React from "react";
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+export default function Error({ error }: { error: Error }) {
   return (
     <section id="home-page-wrapper-2">
       <div

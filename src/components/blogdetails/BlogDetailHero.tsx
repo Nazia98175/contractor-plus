@@ -2,7 +2,6 @@
 import { formatDateWithOrdinal } from "@/lib/date";
 import { tagColors } from "@/utils/getVariants";
 import gsap from "gsap";
-import Image from "next/image";
 import { useEffect } from "react";
 const defaultColor = { bg: "bg-gray-500", text: "text-white" };
 
@@ -53,22 +52,28 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
               alt={`Profile Photo of ${blogData?.authorName}`}
             />
             {blogData?.authorName ?? ""} •{" "}
-            {formatDateWithOrdinal(blogData?.formatDateWithOrdinal)}
+            {formatDateWithOrdinal(
+              blogData?.postedOn
+                ? new Date(blogData?.postedOn)
+                : new Date(blogData?.publishedAt),
+            )}
           </div>
-          <div className="flex flex-wrap gap-2">
-            {blogData?.tags?.length > 0 &&
-              blogData.tags.map((tag: { id: number; text: string }) => {
-                const colorSet = tagColors[tag.text] || defaultColor;
-                return (
-                  <span
-                    key={tag.id}
-                    className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
-                  >
-                    {tag.text}
-                  </span>
-                );
-              })}
-          </div>
+          {blogData?.tags && (
+            <div className="flex flex-wrap gap-2">
+              {blogData?.tags?.length > 0 &&
+                blogData.tags.map((tag: { id: number; text: string }) => {
+                  const colorSet = tagColors[tag.text] || defaultColor;
+                  return (
+                    <span
+                      key={tag.id}
+                      className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
+                    >
+                      {tag.text}
+                    </span>
+                  );
+                })}
+            </div>
+          )}
         </article>
       </div>
     </section>

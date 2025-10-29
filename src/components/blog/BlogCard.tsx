@@ -51,7 +51,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
   const title = article?.blogTitle || article?.title || "";
   const imgSrc = article?.blogImg?.[0]?.url || "/images/webp/blog-card-1.webp";
-  const href = article?.blogUrl ? `/blogs/${article.blogUrl}` : undefined;
+  const href = article?.blogUrl ? `/blog/${article.blogUrl}` : undefined;
 
   const handleNavigate = () => {
     if (onClick) return onClick();

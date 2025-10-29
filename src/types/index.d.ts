@@ -172,7 +172,7 @@ export interface IntegrationItem {
   slug?: string;
 }
 
-type PromiseParams = Promise<{ slug?: string; locale: string }>;
+export type PromiseParams = Promise<{ slug?: string; locale: string }>;
 declare interface StatisticCardProps {
   id: number;
   title: string;
@@ -369,3 +369,5 @@ declare global {
     index: number;
   }
 }
+
+

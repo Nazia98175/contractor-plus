@@ -1,13 +1,8 @@
 import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
 import OneClearInvoice from "@/components/billing/OneClearInvoice";
-import {
-  integrationLogos,
-  platforms
-} from "@/components/common/Helper";
+import { integrationLogos, platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
-import {
-  billingSliderData
-} from "@/components/common/Utils";
+import { billingSliderData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CommonHero from "@/components/crmbussiness/CommonHero";
 import Faq from "@/components/crmbussiness/Faq";
@@ -52,10 +47,6 @@ export async function generateMetadata({
   };
 }
 
-interface Params {
-  params: Promise<{ locale: string }>;
-}
-
 const BillingPage = async ({
   params,
 }: {
@@ -66,7 +57,6 @@ const BillingPage = async ({
     solutionPageContent,
     reviews,
     commonProblems,
-    fieldServiceData,
     trackProperties,
     comparisonList,
     teamsUsingContractor,

@@ -63,3 +63,19 @@ export const getBlogDataBySlug = async (locale: string, blogUrl: string) => {
     throw new Error("Failed to fetch blogs fields");
   }
 };
+
+export const searchBlogs = async (locale: string, query: string) => {
+  try {
+    const response = await axiosInstance.get(
+      `blogs?filters[blogTitle][$containsi]=${query}&locale=${locale}&populate=*`,
+    );
+    const { data } = response.data;
+    if (!data) {
+      return null;
+    }
+    return data;
+  } catch (error) {
+    console.error("Error searching blogs:", error);
+    throw new Error("Failed to search blogs");
+  }
+};

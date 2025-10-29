@@ -1,7 +1,7 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 const LatestFromContractor = dynamic(() => import("./LatestFromContractor"), {
   ssr: false,
 });
@@ -40,6 +40,7 @@ type BlogPageProps = {
     slug: string;
     name: string;
   }[];
+  locale: string;
 };
 
 const normalize = (s?: string) =>
@@ -73,7 +74,12 @@ const getBlogCategories = (blog: Blog) => {
   return Array.from(cats);
 };
 
-const BlogPage = ({ blogsData, blogsList, industries }: BlogPageProps) => {
+const BlogPage = ({
+  blogsData,
+  blogsList,
+  industries,
+  locale,
+}: BlogPageProps) => {
   const router = useRouter();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -94,7 +100,7 @@ const BlogPage = ({ blogsData, blogsList, industries }: BlogPageProps) => {
 
       return matchesSearch && matchesCategory;
     });
-  }, [blogsData, searchTerm, selectedCategory]);
+  }, [blogsData, selectedCategory]);
 
   const handleClick = (name: string) => router.push(`/blogs/${name}`);
 
@@ -103,10 +109,10 @@ const BlogPage = ({ blogsData, blogsList, industries }: BlogPageProps) => {
       <div id="home-page-view-port-screen-blog" className="relative opacity-0">
         <BlogHero
           blogsList={blogsList}
-          blogsData={blogsData}
           onSearchChange={setSearchTerm}
           onTypeChange={setSelectedCategory}
           industries={industries}
+          locale={locale}
         />
       </div>
 

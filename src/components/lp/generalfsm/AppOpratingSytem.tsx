@@ -1,10 +1,9 @@
 import CardReveal from "@/components/common/CardReveal";
-import Copy from "@/components/common/Copy";
 import {
   EstimateDividerIcon,
-  LpContractorIcon,
   TripleChevronIcon,
 } from "@/components/common/Icons";
+import { LpPageType } from "@/types";
 import Image from "next/image";
 interface OneGetsSetContent {
   title?: string;
@@ -15,8 +14,12 @@ interface OneGetsSetContent {
 
 interface OneGetsSetProps {
   content?: OneGetsSetContent;
+  data: LpPageType;
 }
-const AppOpratingSytem: React.FC<OneGetsSetProps> = ({ content }) => {
+const AppOpratingSytem: React.FC<OneGetsSetProps> = ({ content, data }) => {
+  if (!data) {
+    return null;
+  }
   return (
     <div className="main-container overflow-hidden sm:pb-8 md:pb-16 xl:mt-7 xl:pb-20">
       <CardReveal
@@ -27,43 +30,63 @@ const AppOpratingSytem: React.FC<OneGetsSetProps> = ({ content }) => {
         <span className="hidden md:block">
           <TripleChevronIcon />
         </span>
-        {content?.title || "App vs. Operating System"}
+        {content?.title ||
+          data?.operatingSystem?.title ||
+          "App vs. Operating System"}
         <span>
           <TripleChevronIcon />
         </span>
       </CardReveal>
       <div className="border-bovine rounded-3xl pt-5 sm:pt-6 sm:pb-0 lg:border">
-        <div className="flex items-center justify-center">
-          <LpContractorIcon />
-        </div>
+        {data?.operatingSystem?.icon && (
+          <div className="flex items-center justify-center">
+            <Image
+              src={`${data?.operatingSystem?.icon?.url}`}
+              width={138}
+              height={27}
+              alt="Icon"
+            />
+            {/* <LpContractorIcon /> */}
+          </div>
+        )}
         <div className="flex flex-col items-center justify-between gap-2 rounded-3xl pt-4 lg:flex-row">
           <div className="lg:w- flex flex-col items-center justify-center lg:w-[44%] xl:w-[46%]">
-            <div className="relative max-w-[290px]">
-              <Image
-                width={290}
-                height={290}
-                src="/images/webp/app-oprating-1.webp"
-                alt="Other AI estimating software"
-                className="max-w-[290px]"
-              />
-              <div className="invester-image-gradient pointer-events-none absolute bottom-[0%] left-0 z-10 h-[100px] w-full"></div>
-            </div>
+            {data?.operatingSystem?.leftImg && (
+              <div className="relative max-w-[290px]">
+                <Image
+                  width={290}
+                  height={290}
+                  src={
+                    data?.operatingSystem?.leftImg?.url ||
+                    "/images/webp/app-oprating-1.webp"
+                  }
+                  alt="Other AI estimating software"
+                  className="max-w-[290px]"
+                />
+                <div className="invester-image-gradient pointer-events-none absolute bottom-[0%] left-0 z-10 h-[100px] w-full"></div>
+              </div>
+            )}
           </div>
           <span className="relative hidden lg:block">
             <EstimateDividerIcon />
           </span>
-          <div className="flex h-full w-full flex-col justify-between gap-3 overflow-hidden pr-0.5 lg:w-[55.5%] xl:w-[53.5%] xl:gap-0">
-            <div className="relative mx-auto max-w-[560px]">
-              <Image
-                width={500}
-                height={500}
-                src="/images/webp/app-oprating-2.webp"
-                alt="Other AI estimating software"
-                className="z-0 mx-auto w-full object-cover"
-              />
-              <div className="invester-image-gradient pointer-events-none absolute bottom-[0%] left-0 z-10 h-[100px] w-full"></div>
+          {data?.operatingSystem?.rightImg && (
+            <div className="flex h-full w-full flex-col justify-between gap-3 overflow-hidden pr-0.5 lg:w-[55.5%] xl:w-[53.5%] xl:gap-0">
+              <div className="relative mx-auto max-w-[560px]">
+                <Image
+                  width={500}
+                  height={500}
+                  src={
+                    data?.operatingSystem?.rightImg?.url ||
+                    "/images/webp/app-oprating-2.webp"
+                  }
+                  alt="Other AI estimating software"
+                  className="z-0 mx-auto w-full object-cover"
+                />
+                <div className="invester-image-gradient pointer-events-none absolute bottom-[0%] left-0 z-10 h-[100px] w-full"></div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

@@ -370,4 +370,121 @@ declare global {
   }
 }
 
-
+export type LpPageType = {
+  id: number;
+  ducumentId: string;
+  slug: string;
+  createdAt: string;
+  lpTag: string;
+  updatedAt: string;
+  publishedAt: string;
+  seoData: {
+    id: number;
+    metaTitle: string;
+    metaDescription: string;
+    canonicalUrl: string | null;
+    keywords: string;
+    ogImage: { id: number; url: string } | null;
+  };
+  hero: {
+    id: number;
+    title: string;
+    subTitle: string;
+    heroImg: { id: number; url: string }[];
+  };
+  resultStatsLp: {
+    id: number;
+    title: string;
+    subTitle: string;
+  }[];
+  reviews: {
+    id: number;
+    profileImg: { url: string };
+    userName?: string;
+    rating: number;
+    review: string;
+    isModal?: boolean;
+    videoLink?: string;
+    userRole?: string;
+  }[];
+  comparisonTable: {
+    id: number;
+    title: string;
+    subTitle: string;
+    comparisons: {
+      id: number;
+      title: string;
+    }[];
+  };
+  operatingSystem: {
+    id: number;
+    title: string;
+    icon: { id: number; url: string };
+    leftImg: { id: number; url: string };
+    rightImg: { id: number; url: string };
+  };
+  problemSolutionSection: {
+    id: number;
+    title: string;
+    subTitle: string;
+    theme: "light" | "dark";
+    cardsDetail: {
+      id: number;
+      title: string;
+      cardQuote: string | null;
+      cardImg: { id: number; url: string } | null;
+      userName: string | null;
+      lottieJson: object | null;
+      isIcon: boolean;
+      heading: string;
+      cardImgHeight: string | null;
+      cardImgWidth: string | null;
+      isDesktopWidth?: boolean;
+      isDesktopHeight?: boolean;
+      isMobileWidth?: boolean;
+      isMobileHeight?: boolean;
+      isLoop?: boolean;
+    };
+  };
+  commonProblems: {
+    id: number;
+    title: string;
+    subTitle: string;
+    cardsDetail: {
+      id: number;
+      text: string;
+      cardImg: { id: number; url: string };
+    }[];
+  };
+  industries: {
+    id: number;
+    title: string;
+    subTitle: string;
+    btnText: string | null;
+    images: { id: number; url: string }[];
+    imageCard: {
+      id: number;
+      imageTitle: string;
+      linkUrl: string | null;
+      image: { id: number; url: string };
+    }[];
+  };
+  emailSignupSection: {
+    id: number;
+    title: string;
+    subTitle: string;
+    placeHolder: string;
+    btnText: string;
+    btnMobile: string;
+  };
+  faqs: {
+    id: number;
+    title: string;
+    subTitle: string;
+    faq: {
+      id: number;
+      question: string;
+      answer: string;
+    }[];
+  };
+};

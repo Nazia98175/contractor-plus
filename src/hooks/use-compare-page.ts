@@ -1,8 +1,6 @@
-
-import { useState, useEffect } from "react";
-import { useMaterials } from "@/hooks/use-materials";
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import { generateDummyDrywallData } from "@/utils/dummyDataUtils";
+import { useMaterials } from "@/hooks/use-materials";
+import { useEffect, useState } from "react";
 
 // Define the search limit constant
 const SEARCH_LIMIT = 25;
@@ -22,16 +20,15 @@ export const useComparePage = () => {
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
   const [searchCount, setSearchCount] = useLocalStorage<number>(
     "searchCount",
-    0
+    0,
   );
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchParams, setSearchParams] = useState<any>(null);
   const [selectedStoreIds, setSelectedStoreIds] = useState<string[]>([]);
-  const [dummyMaterials, setDummyMaterials] = useState<any[]>([]);
   const [showExportDialog, setShowExportDialog] = useState(false);
   const [exportFormat, setExportFormat] = useState<"pdf" | "excel" | "csv">(
-    "pdf"
+    "pdf",
   );
 
   // Initialize data and check login status

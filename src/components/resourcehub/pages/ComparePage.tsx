@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
 import { useComparePage } from "@/hooks/use-compare-page";
 import { useMetaTags } from "@/hooks/use-meta-tags";
+import { useState } from "react";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 // import { LoginPrompt } from "@/components/LoginPrompt";
-import { ComparisonDrawer } from "../components/comparison-table";
 import { ExportDialogContainer } from "../components/compare/ExportDialogContainer";
+import { ComparisonDrawer } from "../components/comparison-table";
 import { ComparePageLayout } from "../components/layouts/ComparePageLayout";
 
 const ComparePage = () => {

@@ -1,11 +1,3 @@
-import React from "react";
-
-import { ZipCodeDataTableProps } from "./types";
-import { useZipCodeTableData } from "./useZipCodeTableData";
-import { useZipCodeTableSort } from "./useZipCodeTableSort";
-import ZipCodeTableHeaders from "./ZipCodeTableHeaders";
-import ZipCodeTableRow from "./ZipCodeTableRow";
-import { isAfter } from "date-fns";
 import { cn } from "@/app/lib/utils";
 import {
   Table,
@@ -14,6 +6,11 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
+import { ZipCodeDataTableProps } from "./types";
+import { useZipCodeTableData } from "./useZipCodeTableData";
+import { useZipCodeTableSort } from "./useZipCodeTableSort";
+import ZipCodeTableHeaders from "./ZipCodeTableHeaders";
+import ZipCodeTableRow from "./ZipCodeTableRow";
 
 const ZipCodeView = ({
   industries,

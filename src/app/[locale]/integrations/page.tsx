@@ -3,16 +3,29 @@ import { platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import IntegrationCards from "@/components/integration/IntegrationCards";
 import IntegrationHero from "@/components/integration/IntegrationHero";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import {
   getAllIntegration,
   getIntegrationList,
 } from "@/services/integation/getIntegrationData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Material Trends: Track Prices & Shortages of Different Industries",
-  description:
-    "Get updates on material trends, pricing shifts, and supply chain alerts affecting contractors this year.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata | undefined> {
+  const { locale } = await params;
+  const page = await getSeoDataCommon(
+    `integration-list?locale=${locale}&populate=SeoMetaData`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: "/integrations" });
+}
 const IntegrationPage = async ({
   params,
 }: {
@@ -23,6 +36,8 @@ const IntegrationPage = async ({
     getAllIntegration(locale),
     getIntegrationList(locale),
   ]);
+
+  console.log(integrationList, "data");
   return (
     <main id="home-page-wrapper-2">
       <div

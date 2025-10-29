@@ -1,25 +1,24 @@
 "use client";
-import { ArrowLeft } from "lucide-react";
-import { useEffect, useState } from "react";
+import { cn } from "@/app/lib/utils";
 import {
   getLaborRates,
   getZipCodeLaborRates,
   industries,
   states,
 } from "@/data/mockData";
-import { LaborRate } from "@/types/resources";
+import { laborSearchApi } from "@/services/resource/laborService";
+import { LaborRate, ZipCodeLaborRate } from "@/types/resources";
 import { transformData, transformZipCodeData } from "@/utils/dataTransformers";
 import { format } from "date-fns";
-import { ALL_DATA_SOURCES } from "../components/DataSourceConfig";
-import { laborSearchApi } from "@/services/resource/laborService";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import FilterPanel from "../components/FilterPanel";
-import { cn } from "@/app/lib/utils";
-import DataVisualizer from "../components/DataVisualizer";
-import { Badge } from "../components/ui/badge";
+import { useEffect, useState } from "react";
+import { ALL_DATA_SOURCES } from "../components/DataSourceConfig";
 import DataTable from "../components/DataTable";
+import DataVisualizer from "../components/DataVisualizer";
+import FilterPanel from "../components/FilterPanel";
 import ForecastChart from "../components/ForecastChart";
-import { ZipCodeLaborRate } from "@/types/resources";
+import { Badge } from "../components/ui/badge";
 
 // Sample data for demonstration - you'll want to replace this with actual data from your other project
 const SAMPLE_DATA = {
@@ -92,18 +91,7 @@ interface StateLaborRow {
   period: string;
   industryName: string;
   cost_avg: number;
-  // add other needed props here
 }
-
-// interface LaborRate {
-//   industryId: number;
-//   stateId: string;
-//   uom: UnitOfMeasurement;
-//   contractorPlusRate: number;
-//   blsGovRate?: number;
-//   averageRate?: number;
-//   period: string;
-// }
 
 type TransformedForecastEntry = {
   date: string;

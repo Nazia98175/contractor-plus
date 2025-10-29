@@ -1,6 +1,5 @@
 "use client";
 import { PlatformItem } from "@/types";
-import { getMediaUrl } from "@/utils/getMediaUrl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -52,7 +51,6 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
                   <Image
                     width={389}
                     height={187}
-                    // sizes="(max-width: 768px) 289px, 389px"
                     src={obj.cardImg.url || "/fallback.jpg"}
                     alt={`${obj.text}`}
                     priority

@@ -1,7 +1,12 @@
 "use client";
-import { useState } from "react";
 import { useMetaTags } from "@/hooks/use-meta-tags";
-import { ArrowLeft, Brush } from "lucide-react";
+import { Brush } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { CalculationResult } from "../../components/calculators/carpet-cleaning/CalculationResult";
+import { CalculatorForm } from "../../components/calculators/carpet-cleaning/CalculatorForm";
+import { EducationalContent } from "../../components/calculators/carpet-cleaning/EducationalContent";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,11 +16,6 @@ import {
   BreadcrumbSeparator,
 } from "../../components/ui/breadcrumb";
 import { Button } from "../../components/ui/button";
-import { useRouter } from "next/navigation";
-import { CalculatorForm } from "../../components/calculators/carpet-cleaning/CalculatorForm";
-import { CalculationResult } from "../../components/calculators/carpet-cleaning/CalculationResult";
-import { EducationalContent } from "../../components/calculators/carpet-cleaning/EducationalContent";
-import Link from "next/link";
 
 export default function CarpetCleaningCalculator() {
   const [calculationResult, setCalculationResult] = useState<{

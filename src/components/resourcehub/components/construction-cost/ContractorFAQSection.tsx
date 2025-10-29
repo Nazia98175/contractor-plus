@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import {
-  HelpCircle,
-  Star,
-  MapPin,
   Calendar,
-  Users,
-  ShieldCheck,
-  X,
+  HelpCircle,
   Loader2,
+  ShieldCheck,
+  Star,
+  Users,
 } from "lucide-react";
+import React, { useEffect, useState } from "react";
 
-import { useQuery } from "@tanstack/react-query";
+import { searchThumbtackBusinesses } from "@/services/resource/thumbtackService";
 import { ProjectDetail } from "@/types/resources/projectDetail";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import {
   Dialog,
   DialogContent,
@@ -22,7 +20,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "../ui/dialog";
-import { searchThumbtackBusinesses } from "@/services/resource/thumbtackService";
 
 type ThumbtackResponse = Awaited<
   ReturnType<typeof searchThumbtackBusinesses>
@@ -50,47 +47,9 @@ interface Business {
   widgets: {
     requestFlowURL: string;
   };
-  [key: string]: unknown; // to allow other properties
+  [key: string]: unknown;
 }
 
-// Mock contractor data based on the Thumbtack design
-// const mockContractors = [
-//   {
-//     id: 1,
-//     name: "Davies Landscaping & Lawn care",
-//     rating: 3.5,
-//     reviews: 35,
-//     experience: "6 years in business",
-//     hiredTimes: "Hired 70 times",
-//     description:
-//       "Davies did a great job for us. Our landscaping looks like night and day, and so fast! Very hard workers. Professional, and responsive. Reasonable costs as well.",
-//     avatar: "/lovable-uploads/359fc1d7-6334-4e11-b29b-10dcb3b1142e.png",
-//   },
-//   {
-//     id: 2,
-//     name: "Next Generation Property Maintenance",
-//     rating: 4.0,
-//     reviews: 8,
-//     experience: "2 years in business",
-//     hiredTimes: "Hired 16 times",
-//     description:
-//       "Austin and his team were extraordinarily responsive, they were able to come out the very same day and take care of what I needed done. I would highly recommend them to anyone needing professional landscaping services!",
-//     avatar: "/lovable-uploads/36f316a8-5e80-42e6-8d81-7fa9cbd115f2.png",
-//   },
-//   {
-//     id: 3,
-//     name: "Columbus Reclaimed - Build and Remodel",
-//     rating: 4.6,
-//     reviews: 38,
-//     experience: "10 years in business",
-//     hiredTimes: "Hired 32 times",
-//     description:
-//       "He was incredibly helpful, patient, and professional to work with. A great guy. Thanks for all your help Hiro!",
-//     avatar: "/lovable-uploads/4695cb87-519d-4377-ac06-58e67a3b8c09.png",
-//   },
-// ];
-
-// Shimmer loading component for contractor cards
 const ContractorCardSkeleton = () => (
   <div className="border-border flex animate-pulse flex-col gap-4 rounded-lg border p-4 sm:flex-row">
     <div className="flex flex-1 gap-4">

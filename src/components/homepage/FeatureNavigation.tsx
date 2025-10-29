@@ -22,11 +22,11 @@ const FeatureNavigation = ({
   const [top, setTop] = useState(0);
   function toCamelCase(str: string): string {
     return str
-      .trim() // Remove leading/trailing whitespace
-      .toLowerCase() // Convert to lowercase
-      .replace(/[^a-zA-Z0-9\s]/g, "") // Remove special characters except spaces
-      .replace(/\s+(.)/g, (_, char) => char.toUpperCase()) // Convert first letter after space to uppercase
-      .replace(/\s+/g, ""); // Remove all spaces
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9\s]/g, "")
+      .replace(/\s+(.)/g, (_, char) => char.toUpperCase())
+      .replace(/\s+/g, "");
   }
   const handleLinkClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -38,7 +38,6 @@ const FeatureNavigation = ({
     }
   };
 
-  // Center the active link when it changes
   useEffect(() => {
     if (activeLinkRef.current && navRef.current) {
       const activeLink = activeLinkRef.current;
@@ -88,7 +87,7 @@ const FeatureNavigation = ({
         {features?.map((feature, index) => (
           <button
             style={{ willChange: "color, font-weight" }}
-            key={`${feature}-${index}`} // More stable key
+            key={`${feature}-${index}`}
             ref={activeSection === toCamelCase(feature) ? activeLinkRef : null}
             onClick={() => handleLinkClick(toCamelCase(feature))}
             className={`feature-btn w-full lg:w-[190px] lg:truncate ${

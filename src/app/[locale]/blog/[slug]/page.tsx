@@ -15,6 +15,9 @@ import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const dynamicParams = false;
+
+export const revalidate = 600;
 export async function generateMetadata({
   params,
 }: {
@@ -53,6 +56,7 @@ const BlogDetails = async ({
   if (!blogData) {
     notFound();
   }
+
   return (
     <main>
       <div className="bg-white">

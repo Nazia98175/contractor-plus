@@ -1,17 +1,8 @@
 "use client";
-import CardReveal from "@/components/common/CardReveal";
 import SliderLayout from "@/components/common/SliderLayout";
 import PlatformCard from "@/components/homepage/PlatformCard";
-import { Platform } from "@/types";
 import React from "react";
 import Copy from "./Copy";
-
-interface TrustBarProps {
-  platforms: Platform[];
-  showTrustedSection?: boolean;
-  className?: string;
-  trustBarImages?: any;
-}
 
 const TrustBar: React.FC<TrustBarProps> = ({
   platforms,

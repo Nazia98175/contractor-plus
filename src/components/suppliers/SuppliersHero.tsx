@@ -1,13 +1,11 @@
 "use client";
+import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import gsap from "gsap";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
-import Marquee from "react-fast-marquee";
 import Button from "../common/Button";
-import { SideIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
-import useGsapFadeIn from "@/hooks/useGsapFadeIn";
+import { SideIcon } from "../common/Icons";
 
 export interface SupplierHeroProps {
   heroTitle?: string;

@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
 import { useMetaTags } from "@/hooks/use-meta-tags";
-import { Droplet, Info } from "lucide-react";
-import { PageHeader } from "../../components/calculators/irrigation-system/PageHeader";
-import { CalculatorForm } from "../../components/calculators/irrigation-system/CalculatorForm";
+import { Info } from "lucide-react";
+import { useState } from "react";
 import { CalculationResult } from "../../components/calculators/irrigation-system/CalculationResult";
-import { Card, CardContent } from "../../components/ui/card";
+import { CalculatorForm } from "../../components/calculators/irrigation-system/CalculatorForm";
 import { EducationalContent } from "../../components/calculators/irrigation-system/EducationalContent";
+import { PageHeader } from "../../components/calculators/irrigation-system/PageHeader";
+import { Card, CardContent } from "../../components/ui/card";
 
 interface CalculationData {
   sprinklerHeadCost: number;

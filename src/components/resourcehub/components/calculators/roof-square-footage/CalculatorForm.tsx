@@ -1,10 +1,9 @@
-import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Info } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "../../ui/button";
-import { Card, CardContent, CardDescription } from "../../ui/card";
-import { Input } from "../../ui/input";
+import { Card, CardContent } from "../../ui/card";
 import {
   Form,
   FormControl,
@@ -14,7 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../../ui/form";
-import { Info } from "lucide-react";
+import { Input } from "../../ui/input";
 import {
   Tooltip,
   TooltipContent,

@@ -8,14 +8,6 @@ import Copy from "../common/Copy";
 import { CheckIcon } from "../common/Icons";
 gsap.registerPlugin(ScrollTrigger);
 
-interface Finally {
-  title: string;
-  subTitle: string;
-  solutionsList: any;
-}
-interface TheFinallyProps {
-  finallyC: Finally;
-}
 const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
   useEffect(() => {
     gsap.set("#finally-icon-wrapper img", {
@@ -68,7 +60,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           priority
           height={700}
           width={3000}
-          // sizes="(100vw)"
         />
         <Image
           fill
@@ -76,9 +67,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
           priority
-          // sizes="(100vw)"
         />
-        {/* <FinallyBackground /> */}
 
         <div className="relative z-30 space-y-4">
           <Copy animateOnScroll={true}>
@@ -132,7 +121,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/software-advice.webp"
                   alt="Software Advice"
                   className="finally-custom-drop-img w-full object-cover"
-                  // sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
               <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
@@ -142,7 +130,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/leader.webp"
                   alt="Leader"
                   className="finally-custom-drop-img w-full object-cover"
-                  // sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
               <div className="flex w-full max-w-[73px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:max-w-[60px] md:hidden md:max-w-24 lg:max-w-[88px]">
@@ -152,7 +139,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/png/get-app-homepage.png"
                   alt="Get App"
                   className="finally-custom-drop-img h-full w-full object-cover"
-                  // sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
               {/* desktop  */}
@@ -163,7 +149,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/software-advice.webp"
                   alt="Software Advice"
                   className="w-full object-cover drop-shadow-2xl md:drop-shadow-none"
-                  // sizes="(min-width: 1024px) 88px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
               <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
@@ -173,7 +158,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/webp/leader.webp"
                   alt="Leader"
                   className="w-full object-cover drop-shadow-2xl md:drop-shadow-none"
-                  // sizes="(min-width: 1024px) 86px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
               <div className="hidden w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:max-w-24 lg:max-w-[88px]">
@@ -183,7 +167,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   src="/images/png/get-app-homepage.png"
                   alt="Get App"
                   className="h-full w-full object-cover drop-shadow-2xl md:drop-shadow-none"
-                  // sizes="(min-width: 1024px) 110px, (min-width: 768px) 80px, (min-width: 640px) 64px, 48px"
                 />
               </div>
             </div>
@@ -198,7 +181,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 alt="Ipad Design"
                 className="hidden max-h-full w-full object-center md:block lg:max-w-[715px]"
                 priority
-                // sizes="(min-width: 1024px) 715px, 100vw"
               />
               <Image
                 height={300}
@@ -206,7 +188,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 src="/images/webp/mobile.webp"
                 alt="Mobile Design"
                 className="absolute top-[20%] right-0 hidden max-w-[35%] object-contain md:top-[8%] md:block lg:max-w-[280px] xl:max-w-[300px]"
-                // sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
                 priority
               />
               <Image
@@ -216,7 +197,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 alt="Ipad Design"
                 className="block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
                 priority
-                // sizes="(min-width: 1024px) 715px, 100vw"
               />
               <Image
                 height={300}
@@ -224,7 +204,6 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 src="/images/png/mobile-view.png"
                 alt="Mobile Design"
                 className="absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
-                // sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, 35vw"
                 priority
               />
             </div>

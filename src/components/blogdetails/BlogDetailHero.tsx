@@ -2,7 +2,6 @@
 import { formatDateWithOrdinal } from "@/lib/date";
 import { tagColors } from "@/utils/getVariants";
 import gsap from "gsap";
-import Image from "next/image";
 import { useEffect } from "react";
 const defaultColor = { bg: "bg-gray-500", text: "text-white" };
 
@@ -26,7 +25,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
   }, []);
   return (
     <section className="relative h-full bg-[url('/images/webp/blog-hero-detail-bg.webp')] bg-cover bg-center pt-24 lg:pt-[119px] 2xl:pt-[150px]">
-      <div className="absolute bottom-[-10%] z-0 h-[200px] w-full bg-white blur-[30px]"></div>
+      <div className="absolute bottom-[-1%] z-0 h-[200px] w-full bg-white blur-[30px]"></div>
       <div className="main-container relative z-10 h-full">
         <article
           style={{
@@ -53,22 +52,28 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
               alt={`Profile Photo of ${blogData?.authorName}`}
             />
             {blogData?.authorName ?? ""} •{" "}
-            {formatDateWithOrdinal(blogData?.formatDateWithOrdinal)}
+            {formatDateWithOrdinal(
+              blogData?.postedOn
+                ? new Date(blogData?.postedOn)
+                : new Date(blogData?.publishedAt),
+            )}
           </div>
-          <div className="flex flex-wrap gap-2">
-            {blogData?.tags?.length > 0 &&
-              blogData.tags.map((tag: { id: number; text: string }) => {
-                const colorSet = tagColors[tag.text] || defaultColor;
-                return (
-                  <span
-                    key={tag.id}
-                    className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
-                  >
-                    {tag.text}
-                  </span>
-                );
-              })}
-          </div>
+          {blogData?.tags && (
+            <div className="flex flex-wrap gap-2">
+              {blogData?.tags?.length > 0 &&
+                blogData.tags.map((tag: { id: number; text: string }) => {
+                  const colorSet = tagColors[tag.text] || defaultColor;
+                  return (
+                    <span
+                      key={tag.id}
+                      className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
+                    >
+                      {tag.text}
+                    </span>
+                  );
+                })}
+            </div>
+          )}
         </article>
       </div>
     </section>

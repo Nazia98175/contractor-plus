@@ -1,12 +1,5 @@
 import { Metadata } from "next";
 
-interface SeoMeta {
-  metaTitle?: string;
-  metaDescription?: string;
-  canonicalUrl?: string;
-  keywords?: string;
-}
-
 interface GenerateSeoMetadataOptions {
   page: any;
   slug?: string;

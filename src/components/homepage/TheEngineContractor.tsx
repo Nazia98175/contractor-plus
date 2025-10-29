@@ -4,16 +4,6 @@ import { useInView } from "react-intersection-observer";
 import animationData from "../../../public/lotties/the-engine-contractor.json";
 import LottieAnimation from "./LottieAnimation";
 
-interface EngineContractor {
-  title: string;
-  subTitle: string;
-  txt: string;
-}
-
-interface TheEngineContractorProps {
-  engineContractor: EngineContractor;
-}
-
 const TheEngineContractor: React.FC<TheEngineContractorProps> = ({}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,

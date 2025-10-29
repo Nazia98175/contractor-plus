@@ -75,32 +75,44 @@ const BlogsContent = ({
               rehypePlugins={[rehypeSlug]}
               components={{
                 h1: ({ node, ...props }) => (
-                  <h1 className="mt-8 text-3xl font-bold" {...props} />
+                  <h1
+                    className="mt-5 text-2xl font-bold md:mt-6 md:text-[28px]"
+                    {...props}
+                  />
                 ),
                 h2: ({ node, ...props }) => (
-                  <h2 className="mt-6 text-2xl font-semibold" {...props} />
+                  <h2
+                    className="mt-5 text-lg font-semibold md:mt-6 md:text-2xl"
+                    {...props}
+                  />
                 ),
                 h3: ({ node, ...props }) => (
                   <h3
-                    className="mt-4 text-xl font-bold md:text-2xl"
+                    className="mt-4 text-base font-bold md:text-2xl"
                     {...props}
                   />
                 ),
                 p: ({ node, ...props }) => (
                   <p
-                    className="mt-3 text-base leading-7 font-medium lg:text-lg"
+                    className="mt-3 text-base leading-[160%] font-medium lg:text-lg"
                     {...props}
                   />
                 ),
                 ul: ({ node, ...props }) => (
-                  <ul className="mt-3 ml-6 list-disc" {...props} />
+                  <ul
+                    className="mt-3 ml-7 list-disc space-y-3 md:ml-12"
+                    {...props}
+                  />
                 ),
                 ol: ({ node, ...props }) => (
-                  <ol className="mt-3 ml-6 list-decimal" {...props} />
+                  <ol
+                    className="mt-3 ml-5 list-decimal space-y-3 md:ml-9"
+                    {...props}
+                  />
                 ),
                 a: ({ node, ...props }) => (
                   <a
-                    className="font-medium text-black transition-all duration-300 ease-in-out hover:text-red-600"
+                    className="w-full font-medium text-black transition-all duration-300 ease-in-out hover:text-red-600"
                     {...props}
                   />
                 ),

@@ -5,7 +5,7 @@ import ContractorIndustrySlider from "./ContractorIndustrySlider";
 interface Industry {
   title: string;
   subTitle: string;
-  url: string | null;
+  url?: string | null;
   btnText: string | null;
   imageCard?: any;
 }
@@ -17,9 +17,6 @@ interface TheIndustryProps {
 const ContractorIndustry: React.FC<TheIndustryProps> = ({
   contractorIndustry,
 }) => {
-  const t = useTranslations("industry");
-  console.log(contractorIndustry, "contractore");
-
   return (
     <section className="relative overflow-hidden">
       <span className="absolute top-0 left-0 block h-full w-full md:hidden">

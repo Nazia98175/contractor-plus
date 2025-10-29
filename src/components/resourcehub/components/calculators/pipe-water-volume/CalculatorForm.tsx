@@ -1,26 +1,18 @@
-import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Droplet, HelpCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { Button } from "../../ui/button";
 import { Card, CardContent, CardHeader } from "../../ui/card";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "../../ui/form";
 import { Input } from "../../ui/input";
-import { Button } from "../../ui/button";
-import { Droplet, HelpCircle } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../../ui/tooltip";
 import {
   Select,
   SelectContent,
@@ -28,6 +20,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../ui/select";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../ui/tooltip";
 
 const formSchema = z.object({
   diameter: z

@@ -16,6 +16,8 @@ const RecentEpisodesCards: React.FC<{ Item: PodcastDataResponse.show }> = ({
             src={Item?.thumbnail}
             alt={Item?.title}
             fill
+            priority
+            fetchPriority="high"
           />
           <div className="p-2.5">
             <Image
@@ -24,6 +26,8 @@ const RecentEpisodesCards: React.FC<{ Item: PodcastDataResponse.show }> = ({
               alt={Item?.title}
               width={190}
               height={188}
+              priority
+              fetchPriority="high"
             />
           </div>
         </div>

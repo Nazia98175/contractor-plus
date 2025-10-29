@@ -6,29 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LottieAnimation from "./LottieAnimation";
 import Copy from "../common/Copy";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-
-// Define the LottieAnimationRef type
-type LottieAnimationRef = {
-  play: () => void;
-  stop: () => void;
-  pause: () => void;
-  // Add other methods your Lottie component might have
-};
-
-type FeatureContent = {
-  id: number;
-  title: string;
-  cardQuote: string | null;
-  userName: string | null;
-  cardImg: any | null;
-  content: {
-    id: number;
-    title: string;
-    desc: string;
-  }[];
-};
 
 type Props = {
   featureContents: FeatureContent[];
@@ -45,7 +23,6 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
     },
     [],
   );
-  console.log(lottieRefs.current);
   useEffect(() => {
     featureContents
       ?.slice(0, featureContents?.length - 1)
@@ -54,8 +31,8 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
         if (element) {
           ScrollTrigger.create({
             trigger: element,
-            start: "bottom 100%", // Animation starts when top of element is 80% down the viewport
-            end: "top 0%", // Animation area ends when bottom of element is 20% down the viewport
+            start: "bottom 100%",
+            end: "top 0%",
             onEnter: () => {
               // Play animation when entering viewport
               if (lottieRefs.current[index]) {
@@ -76,11 +53,11 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
 
   function toCamelCase(str: string): string {
     return str
-      .trim() // Remove leading/trailing whitespace
-      .toLowerCase() // Convert to lowercase
-      .replace(/[^a-zA-Z0-9\s]/g, "") // Remove special characters except spaces
-      .replace(/\s+(.)/g, (_, char) => char.toUpperCase()) // Convert first letter after space to uppercase
-      .replace(/\s+/g, ""); // Remove all spaces
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9\s]/g, "")
+      .replace(/\s+(.)/g, (_, char) => char.toUpperCase())
+      .replace(/\s+/g, "");
   }
   console.log(featureContents);
   return (
@@ -104,8 +81,8 @@ const FeatureContent = ({ featureContents, contentRefs }: Props) => {
             <div className="relative w-full overflow-hidden">
               <LottieAnimation
                 ref={setLottieRef(index)}
-                loop={false} // Changed to false since we'll control playback
-                autoplay={false} // Changed to false since we'll control playback
+                loop={false}
+                autoplay={false}
                 animationData={featureContentss?.[index]?.titleImg}
               />
             </div>

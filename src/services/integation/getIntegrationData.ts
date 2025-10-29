@@ -18,7 +18,7 @@ export const getIntegrationDetails = async (locale: string) => {
 export const getIntegrationList = async (locale: string) => {
   try {
     const response = await axiosInstance.get(
-      `integration-list?locale=${locale}&populate[hero][populate]=*&populate[emailSignupSection][populate]=*`,
+      `integration-list?locale=${locale}&populate[hero][populate]=*&populate[emailSignupSection][populate]=*&populate[SeoMetaData][populate]=*`,
     );
     const { data } = response.data;
     if (!data) {
@@ -48,7 +48,10 @@ export const getAllIntegration = async (locale: string) => {
   }
 };
 
-export const getIntegrationDataBySlug = async (locale: string, slug: string) => {
+export const getIntegrationDataBySlug = async (
+  locale: string,
+  slug: string,
+) => {
   try {
     const response = await axiosInstance.get(
       `integrations?locale=${locale}&filters[slug][$eq]=${slug}&populate[Faqs][populate]=*&populate[image][populate]=*&populate[thumbnailImage][populate]=*&populate[keyBenefits][populate]=*`,

@@ -1,7 +1,7 @@
 // LeadGeneration.tsx (page component)
 import CommonFormField from "@/components/common/CommonFormField";
 import CommonLogos from "@/components/common/CommonLogos";
-import { blackPlatforms, dealReviews2 } from "@/components/common/Helper";
+import { blackPlatforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
 import ThousandsReviews from "@/components/crmbussiness/ThousandsReviews";
@@ -61,12 +61,9 @@ export default async function LeadGeneration({ params }: Params) {
         city: "New York",
         country: "US",
       };
-  const useParams = await params;
 
   const {
-    pageContent,
     hero,
-    cardsWithLottie,
     commonProblems,
     comparisonList,
     problemSolutionSection,

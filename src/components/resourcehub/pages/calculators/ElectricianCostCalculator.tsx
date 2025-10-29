@@ -1,23 +1,22 @@
 "use client";
-import React, { useState } from "react";
-import { ArrowLeft, Zap } from "lucide-react";
 import { useMetaTags } from "@/hooks/use-meta-tags";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import {
   CalculationResult,
   ElectricianCostResult,
 } from "../../components/calculators/electrician-cost/CalculationResult";
-import { Button } from "../../components/ui/button";
-import { PageHeader } from "../../components/calculators/electrician-cost/PageHeader";
 import { CalculatorForm } from "../../components/calculators/electrician-cost/CalculatorForm";
+import { EducationalContent } from "../../components/calculators/electrician-cost/EducationalContent";
+import { PageHeader } from "../../components/calculators/electrician-cost/PageHeader";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import { EducationalContent } from "../../components/calculators/electrician-cost/EducationalContent";
-import Link from "next/link";
 // Define the calculation values type
 export interface ElectricianCostValues {
   baseWage: number;

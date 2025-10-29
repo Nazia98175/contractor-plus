@@ -1,19 +1,19 @@
 "use client";
+import { searchBlogs } from "@/services/blog/getBlogData";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ConstructionIcon } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { contractorTypes } from "../common/Helper";
 import { SearchIcon } from "../common/Icons";
 import CustomSelect from "./CustomSelect";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { ConstructionIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type BlogHeroProps = {
   blogsList: any;
-  blogsData: any[];
   onSearchChange?: (value: string) => void;
   onTypeChange?: (value: string) => void;
   industries: {
@@ -21,22 +21,24 @@ type BlogHeroProps = {
     slug: string;
     name: string;
   }[];
+  locale: string;
 };
 
 const BlogHero = ({
   blogsList,
-  blogsData,
   onSearchChange,
   onTypeChange,
   industries,
+  locale,
 }: BlogHeroProps) => {
   const router = useRouter();
   const [selectedValue, setSelectedValue] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Function to format slug: remove dashes and capitalize
   const formatSlugToLabel = (slug: string) => {
     return slug
       .split("-")
@@ -44,14 +46,12 @@ const BlogHero = ({
       .join(" ");
   };
 
-  // Function to get random icon from contractorTypes
   const getRandomIcon = () => {
     if (!contractorTypes || contractorTypes.length === 0) return null;
     const randomIndex = Math.floor(Math.random() * contractorTypes.length);
     return contractorTypes[randomIndex]?.icon || null;
   };
 
-  // Transform industries to CustomSelect options format
   const industriesOptions = useMemo(
     () => [
       {
@@ -132,27 +132,33 @@ const BlogHero = ({
     return Array.from(new Set(out));
   };
 
-  function handleSearch() {
+  async function handleSearch() {
     onSearchChange?.(searchTerm);
+    setIsLoading(true);
+    setHasSearched(true);
 
-    const q = searchTerm.trim().toLowerCase();
-    const wanted = normalize(selectedValue);
-
-    if (q.length > 0) {
-      const results = (blogsData ?? []).filter((blog: any) => {
-        const hay =
-          `${blog.blogTitle ?? ""} ${blog.title ?? ""} ${blog.blogShortDescription ?? ""}`.toLowerCase();
-        const matchSearch = hay.includes(q);
-
-        const catTokens = getBlogCategories(blog);
-        const matchCat = wanted === "all" || catTokens.includes(wanted);
-
-        return matchSearch && matchCat;
-      });
-      setFilteredBlogs(results);
+    if (searchTerm.trim().length > 0) {
+      try {
+        const results = await searchBlogs(locale, searchTerm);
+        if (results) {
+          const wanted = normalize(selectedValue);
+          const filtered = results.filter((blog: any) => {
+            const catTokens = getBlogCategories(blog);
+            return wanted === "all" || catTokens.includes(wanted);
+          });
+          setFilteredBlogs(filtered);
+        } else {
+          setFilteredBlogs([]);
+        }
+      } catch (error) {
+        console.error("Error searching blogs:", error);
+        setFilteredBlogs([]);
+      }
     } else {
       setFilteredBlogs([]);
+      setHasSearched(false);
     }
+    setIsLoading(false);
   }
 
   const handleBlogClick = (slug: string) => {
@@ -167,13 +173,15 @@ const BlogHero = ({
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
       ) {
+         // Only clear results, keep the search term
         setFilteredBlogs([]);
+         setHasSearched(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  console.log(blogsData);
+
   return (
     <div
       id="blog-parallax-container"
@@ -221,37 +229,52 @@ const BlogHero = ({
           </button>
 
           {/* Search Dropdown */}
-          {filteredBlogs.length > 0 && (
+            {(isLoading || filteredBlogs.length > 0 || (hasSearched && searchTerm.trim().length > 0 && !isLoading)) && (
             <div className="absolute top-full z-50 mt-3 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-300 bg-white shadow-lg">
-              {filteredBlogs.map((blog: any) => (
-                <div
-                  key={blog.id ?? blog.documentId ?? blog.blogUrl}
-                  className="flex cursor-pointer items-start px-3 py-2 hover:bg-gray-300"
-                  onClick={() => handleBlogClick(blog.blogUrl || blog.id)}
-                >
-                  <div className="relative aspect-square w-[60px]">
-                    <Image
-                      src={
-                        blog?.blogImg?.[0]?.formats?.small?.url ??
-                        "/images/placeholder.png"
-                      }
-                      fill
-                      alt="blog image"
-                      priority
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      fetchPriority="high"
-                    />
-                  </div>
-                  <div className="ml-2 w-full">
-                    <h5 className="text-sm capitalize">
-                      {blog?.blogTitle ?? blog?.title ?? ""}
-                    </h5>
-                    <p className="text-xs text-gray-500 capitalize">
-                      {blog?.blogShortDescription ?? ""}
-                    </p>
-                  </div>
+              {isLoading ? (
+                <div className="flex items-center justify-center px-3 py-4">
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-gray-600"></div>
+                  <span className="ml-2 text-sm text-gray-600">Searching...</span>
                 </div>
-              ))}
+              ) : filteredBlogs.length > 0 ? (
+                <>
+                  {filteredBlogs.map((blog: any) => (
+                    <div
+                      key={blog.id ?? blog.documentId ?? blog.blogUrl}
+                      className="flex cursor-pointer items-start px-3 py-2 hover:bg-gray-100"
+                      onClick={() => handleBlogClick(blog.blogUrl || blog.id)}
+                    >
+                      <div className="relative aspect-square w-[60px]">
+                        <Image
+                          src={
+                            blog?.blogImg?.[0]?.formats?.small?.url ??
+                            "/images/placeholder.png"
+                          }
+                          fill
+                          alt="blog image"
+                          priority
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          fetchPriority="high"
+                        />
+                      </div>
+                      <div className="ml-2 w-full">
+                        <h5 className="text-sm font-medium capitalize">
+                          {blog?.blogTitle ?? blog?.title ?? ""}
+                        </h5>
+                        <p className="mt-0.5 text-xs text-gray-500 capitalize">
+                          {blog?.blogShortDescription ?? ""}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <div className="flex items-center justify-center px-3 py-4">
+                  <p className="text-sm text-gray-500">
+                    No results found for "{searchTerm}"
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>

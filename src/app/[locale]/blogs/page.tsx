@@ -36,6 +36,7 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
       blogsData={blogsData}
       blogsList={blogsList}
       industries={industries}
+      locale={locale}
     />
   );
 };

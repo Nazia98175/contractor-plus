@@ -1,5 +1,5 @@
 import CommonFormField from "@/components/common/CommonFormField";
-import { blackPlatforms, pricingfaqitems } from "@/components/common/Helper";
+import { blackPlatforms } from "@/components/common/Helper";
 import LoadingFallback from "@/components/common/LoadingFallback";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
@@ -7,30 +7,10 @@ import GroupOfComponets from "@/components/pricing/GroupOfComponets";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getPricingData } from "@/services/pricing/getPricingData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
-import { log } from "console";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
-// export const metadata = {
-//   title: "Plans & Pricing | Start With Contractor+ Free",
-//   description:
-//     "Pricing our competitors hate, but our contractors love. $0 forever for free plan. $29/month solopreneur. $19/person for team of 5. Start here.",
-//   keywords: ["Contractor Plus Pricing"],
-//   openGraph: {
-//     images: [
-//       {
-//         url: "/images/webp/pricing-og.webp",
-//         width: 1920,
-//         height: 630,
-//         alt: "pricing-og",
-//       },
-//     ],
-//   },
-//   alternates: {
-//     canonical: "https://v2site.contractorplus.app/pricing",
-//   },
-// };
 interface PricongParams {
   params: Promise<{ locale: string; slug?: string }>;
 }

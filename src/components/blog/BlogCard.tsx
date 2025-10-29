@@ -51,7 +51,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
   const title = article?.blogTitle || article?.title || "";
   const imgSrc = article?.blogImg?.[0]?.url || "/images/webp/blog-card-1.webp";
-  const href = article?.blogUrl ? `/blogs/${article.blogUrl}` : undefined;
+  const href = article?.blogUrl ? `/blog/${article.blogUrl}` : undefined;
 
   const handleNavigate = () => {
     if (onClick) return onClick();
@@ -88,7 +88,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </div>
 
         {article?.shortDescription && (
-          <p className="text-flintstone mb-4 line-clamp-3 text-sm leading-[112%] font-normal capitalize sm:mb-6 md:text-base">
+          <p className="text-flintstone mb-4 line-clamp-3 text-sm leading-[130%] font-normal capitalize sm:mb-6 md:text-base">
             {article.shortDescription}
           </p>
         )}

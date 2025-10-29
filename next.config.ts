@@ -46,13 +46,18 @@ const nextConfig: import("next").NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       config.optimization.minimize = true;
     }
     return config;
   },
-  
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({

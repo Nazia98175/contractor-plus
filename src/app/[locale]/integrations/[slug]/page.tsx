@@ -2,22 +2,32 @@ import CommonFormField from "@/components/common/CommonFormField";
 import { integrationFaq, platforms } from "@/components/common/Helper";
 import TrustBar from "@/components/common/TrustBar";
 import Faq from "@/components/crmbussiness/Faq";
-import IntegrationDetail from "@/components/integration-details/IntegrationDetail";
-import IntegrationDetailHero from "@/components/integration-details/IntegrationDetailHero";
 import IntegrationParent from "@/components/integration-details/IntegrationParent";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import {
   getAllIntegration,
   getIntegrationDataBySlug,
   getIntegrationDetails,
   getIntegrationList,
 } from "@/services/integation/getIntegrationData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Material Trends: Track Prices & Shortages of Different Industries",
-  description:
-    "Get updates on material trends, pricing shifts, and supply chain alerts affecting contractors this year.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata | undefined> {
+  const { slug, locale } = await params;
+  const page = await getSeoDataCommon(
+    `integrations?locale=${locale}&filters[slug][$eq]=${slug}&populate=SeoMetaData`,
+  );
+
+  if (!page) notFound();
+
+  return generateSeoMetaData({ page, slug: `/integrations/${slug}` });
+}
 export const generateStaticParams = async () => {
   const integrations = await getAllIntegration("en");
   return integrations.map((data: { slug: string }) => ({
@@ -39,6 +49,7 @@ const IntegrationDetails = async ({
     ]);
   if (!integrationData) return notFound();
 
+  console.log(integrationData, "intergation data");
   return (
     <main id="home-page-wrapper-2">
       <IntegrationParent

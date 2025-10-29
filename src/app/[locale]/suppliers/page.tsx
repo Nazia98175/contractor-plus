@@ -1,5 +1,5 @@
 import AtAGlance from "@/components/affiliates/AtAGlance";
-import { platforms, supplietFaq } from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import { FooterRedLineIcon } from "@/components/common/Icons";
 import LoadingFallback from "@/components/common/LoadingFallback";
 import TrustBar from "@/components/common/TrustBar";

@@ -2,7 +2,6 @@ import Copy from "@/components/common/Copy";
 import LoadingFallback from "@/components/common/LoadingFallback";
 import InvestorHero from "@/components/investors/InvestorHero";
 import MarketOpportunity from "@/components/investors/MarketOpportunity";
-import MidMarketTable from "@/components/investors/MidMarketTable";
 import ProofWorking from "@/components/investors/ProofWorking";
 import SmartMoney from "@/components/investors/SmartMoney";
 import TeamList from "@/components/investors/TeamList";
@@ -16,7 +15,7 @@ import { getInvestorsData } from "@/services/investors/getInvestorsData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 interface InvestorsPageProps {
   params: Promise<{
     locale: string;

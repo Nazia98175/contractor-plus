@@ -32,7 +32,7 @@ const SupplierBenefitList: React.FC<SupplierBenefitListProps> = ({
         <div
           key={i}
           ref={refs[i]}
-          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[rgba(255,255,255,0.01)] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
+          className="video-section-wrapper relative z-10 mx-auto w-full max-w-[873px] bg-[#0C0D11] p-3 backdrop-blur-[2px] sm:px-[22px] sm:py-3"
         >
           <Copy animateOnScroll={true} delay={0}>
             <h3 className="mb-1 text-center text-2xl font-semibold tracking-[-0.48px]">

@@ -24,7 +24,7 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
-import { getSeoData } from "@/services/common/seoMeta";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import Image from "next/image";
@@ -57,15 +57,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const resolvedParams = await params;
-  const page = await getSeoData(
-    "features-pages",
-    resolvedParams.locale,
-    resolvedParams.slug,
+  const { locale, slug } = await params;
+  const page = await getSeoDataCommon(
+    `features-pages?filters[slug][$eq]=${slug}&locale=${locale}&populate=seoMetaData`,
   );
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug });
 }
 
 const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {

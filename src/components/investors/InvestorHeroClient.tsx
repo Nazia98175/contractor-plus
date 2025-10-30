@@ -7,6 +7,7 @@ import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import { InvestorHeroIcon } from "../common/Icons";
 import Image from "next/image";
+import PrimaryLink from "../common/PrimaryLInk";
 
 gsap.registerPlugin(ScrollTrigger);
 interface InvestorHeroProps {
@@ -206,12 +207,12 @@ const InvestorHero: React.FC<InvestorHeroProps> = ({
             </p>
           </Copy>
           <CardReveal className="w-full sm:w-fit" delay={0.6}>
-            <Button
-              ariaLabel="book investor call"
+            <PrimaryLink
+              href="https://calendly.com/justinonsuccess/investor-relations?month=2025-10"
               className="w-full max-w-full sm:max-w-[204px]"
             >
               {btnText || "Book investor call"}
-            </Button>
+            </PrimaryLink>
           </CardReveal>
         </div>
         <div

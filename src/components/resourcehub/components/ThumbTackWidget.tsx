@@ -223,7 +223,7 @@ export const ThumbTackWidget: React.FC<ThumbTackWidgetProps> = ({
 
               <Button
                 onClick={() => handleGetQuote(response?.data?.[0])}
-                className="w-full bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700"
+                className="w-full bg-[#069ed9] py-3 font-semibold text-white hover:bg-[#069dd9a8]"
                 disabled={isLoading || !response}
               >
                 {isLoading ? (

@@ -30,12 +30,12 @@ const PrimaryLink: React.FC<ButtonProps> = ({
   href,
 }) => {
   const baseClasses =
-    "inline-flex items-center gap-2 px-4 py-2 rounded-md transition-all";
+    "inline-flex items-center gap-2 py-2.5 sm:py-1.5 md:px-6 px-4 py-2 lg:py-3 rounded-md transition-all";
   const combinedClasses =
     `${baseClasses} ${VARIANT_CLASSES[variant]} ${className}`.trim();
 
   return (
-    <Link href={href} className={combinedClasses}>
+    <Link href={href} className={combinedClasses} target="_blank">
       {children}
     </Link>
   );

@@ -11,7 +11,7 @@ const PartnerContractor: React.FC<PartnerContractorProps> = ({
   desc2,
 }) => {
   return (
-    <section className="mx-auto w-full max-w-[1224px] px-2 pt-5 pb-5 md:pt-16 md:pb-10">
+    <section className="mx-auto w-full max-w-[1224px] px-2 pt-25 pb-5 md:pt-16 md:pb-10">
       <Copy animateOnScroll={true}>
         <h3 className="text-mana section-heading text-center">
           {title || "Why partner with Contractor+?"}

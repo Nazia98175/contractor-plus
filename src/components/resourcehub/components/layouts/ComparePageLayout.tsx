@@ -220,7 +220,7 @@ export const ComparePageLayout = ({
 
               <div className="mt-6 flex justify-center">
                 <Link
-                  href="/resources/free-estimate-templates"
+                  href="/contractor-estimate-software"
                   className="primary-btn bg-red-linear !w-fit px-5 py-3"
                 >
                   Learn More About Contractor+ Estimates & Quotes

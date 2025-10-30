@@ -1,6 +1,6 @@
 import React from "react";
 import Copy from "../common/Copy";
-import Button from "../common/Button";
+import PrimaryLink from "../common/PrimaryLInk";
 interface SmartMoneyProps {
   title: string;
   desc: string;
@@ -20,9 +20,12 @@ const SmartMoney: React.FC<SmartMoneyProps> = ({ title, desc, btnText }) => {
             "And it’s going to be big. If anything you’ve read resonates, let’s talk."}
         </p>
       </Copy>
-      <Button ariaLabel="book investor call" className="w-full max-w-[204px]">
+      <PrimaryLink
+        href="https://calendly.com/justinonsuccess/investor-relations?month=2025-10"
+        className="w-full max-w-[204px]"
+      >
         {btnText || "Book investor call"}
-      </Button>
+      </PrimaryLink>
     </div>
   );
 };

@@ -105,10 +105,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
             />
           </div>
         </div>
-        <main
-          ref={sectionRef}
-          className="bg-kuroiBlack relative pt-[67px] sm:pt-[157px]"
-        >
+        <main ref={sectionRef} className="relative pt-[67px] sm:pt-[157px]">
           {/* Background line (gray/wallStreet color) */}
           <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
 

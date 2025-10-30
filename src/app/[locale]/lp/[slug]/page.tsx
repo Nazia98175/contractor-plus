@@ -80,7 +80,7 @@ const GeneralFsmPage = async ({ params }: { params: PromiseParams }) => {
         <FieldService
           fieldService={data?.problemSolutionSection}
           theme="dark"
-          mainClassName="text-center "
+          mainClassName="text-center"
         />
       </div>
       <div className="mb-12 block md:hidden">

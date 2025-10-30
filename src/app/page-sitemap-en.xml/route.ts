@@ -4,12 +4,11 @@ export const revalidate = 3600;
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  console.log("========== PAGE SITEMAP FR CALLED ==========");
-
   const baseUrl = "https://v2site.contractorplus.app";
-  const localePrefix = "/fr";
+  const localePrefix = "/en";
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   const addUrl = (

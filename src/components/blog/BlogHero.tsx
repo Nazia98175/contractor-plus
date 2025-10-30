@@ -1,4 +1,5 @@
 "use client";
+import { searchBlogs } from "@/services/blog/getBlogData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ConstructionIcon } from "lucide-react";
@@ -138,13 +139,10 @@ const BlogHero = ({
 
     if (searchTerm.trim().length > 0) {
       try {
-        const results = await fetch(`/api/blogs/search?query=${searchTerm}&locale=${locale}`, {
-          method: "GET",
-        });
-        const { data } = await results.json();
-        if (data) {
+        const results = await searchBlogs(locale, searchTerm);
+        if (results) {
           const wanted = normalize(selectedValue);
-          const filtered = data.filter((blog: any) => {
+          const filtered = results.filter((blog: any) => {
             const catTokens = getBlogCategories(blog);
             return wanted === "all" || catTokens.includes(wanted);
           });

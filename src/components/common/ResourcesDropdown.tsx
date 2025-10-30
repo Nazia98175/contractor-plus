@@ -33,7 +33,7 @@ const ResourcesDropdown: React.FC<Props> = ({
     { image: "/images/webp/material-comparison-search.webp" },
     { image: "/images/webp/Support-Center.webp" },
     { image: "/images/webp/USA-Labor-Rate.webp" },
-    { image: "/images/webp/developers-api.webp" },
+    { image: "/images/webp/developersapi.webp" },
   ];
   // const fallbackImage = "/images/webp/developers-aPi.webp";
   return (

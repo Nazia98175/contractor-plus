@@ -141,7 +141,7 @@ export const generateSeoMetaData = ({
           ? { images: [{ url: page?.SeoData?.ogImage?.url }] }
           : undefined;
           
-  const canonical = `${baseUrl}${page?.seoData?.canonicalUrl || page?.SeoMetaData?.canonicalUrl || page?.SeoData?.canonicalUrl || `${slug}`}`;
+  const canonical = `${baseUrl}${page?.seoData?.canonicalUrl || page?.SeoMetaData?.canonicalUrl || page?.SeoData?.canonicalUrl || `${slug || ""}`}`;
 
   return {
     title,

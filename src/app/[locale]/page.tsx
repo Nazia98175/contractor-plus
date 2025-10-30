@@ -1,12 +1,12 @@
 import { platforms } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
 import Hero from "@/components/homepage/Hero";
 import HomepageClient from "@/components/homepage/HomepageClient";
 import TheEngineContractor from "@/components/homepage/TheEngineContractor";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getHomepageData } from "@/services/homePage/getHomepageData";
-import { generateSeoMetadata } from "@/utils/getSeoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
-import TrustBar from "@/components/common/TrustBar";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({
@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   if (!page) notFound();
 
-  return generateSeoMetadata({ page });
+  return generateSeoMetaData({ page });
 }
 
 export default async function Home({

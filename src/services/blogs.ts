@@ -20,13 +20,25 @@ export const getBlogs = async (
 export const getBlogsByCategory = async (
   locale: string,
   categoryText: string,
-  isLimit?: boolean,
+  isLimit: boolean = true,
 ): Promise<HomePageResponse | null> => {
-  const url = `blogs?filters[tags][list][text][$eq]=${categoryText}&locale=${locale}&publicationState=live&populate[category][populate][list][populate]=*&populate[tags][populate]=*${isLimit ? "&pagination[limit]=3" : ""}`;
-
   try {
-    const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
-    return res.data;
+    const keywords = categoryText.split("-");
+    const allResults: any[] = [];
+
+    for (const kw of keywords) {
+      const url = `blogs?filters[tags][list][$containsi]=${kw}&locale=${locale}&publicationState=live&populate=*${isLimit ? "&pagination[limit]=3" : ""}`;
+      const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
+      if (res.data?.data?.length) {
+        allResults.push(...res.data.data);
+      }
+    }
+
+    const uniqueBlogs = Array.from(
+      new Map(allResults.map((b) => [b.id, b])).values(),
+    );
+
+    return { data: uniqueBlogs } as HomePageResponse;
   } catch (error: any) {
     console.log("Failed to fetch blogs by category:", error?.response?.data);
     return notFound();

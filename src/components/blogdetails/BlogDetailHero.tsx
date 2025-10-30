@@ -2,10 +2,12 @@
 import { formatDateWithOrdinal } from "@/lib/date";
 import { tagColors } from "@/utils/getVariants";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const defaultColor = { bg: "bg-gray-500", text: "text-white" };
 
 const BlogDetailHero = ({ blogData }: { blogData: any }) => {
+  const [showAllTags, setShowAllTags] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -61,17 +63,25 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
           {blogData?.tags && (
             <div className="flex flex-wrap gap-2">
               {blogData?.tags?.length > 0 &&
-                blogData.tags.map((tag: { id: number; text: string }) => {
-                  const colorSet = tagColors[tag.text] || defaultColor;
+                ((showAllTags ? blogData.tags : blogData.tags.slice(0, 5)) as { id: number; list: string }[]).map((tag) => {
+                  const colorSet = tagColors[tag.list] || defaultColor;
                   return (
                     <span
                       key={tag.id}
                       className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
                     >
-                      {tag.text}
+                      {tag.list}
                     </span>
                   );
                 })}
+              {!showAllTags && blogData.tags.length > 5 && (
+                <button
+                  onClick={() => setShowAllTags(true)}
+                  className="rounded-2xl bg-gray-200 px-2 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-300 transition-colors"
+                >
+                  +{blogData.tags.length - 5} more
+                </button>
+              )}
             </div>
           )}
         </article>

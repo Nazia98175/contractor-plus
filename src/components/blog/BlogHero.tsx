@@ -173,9 +173,9 @@ const BlogHero = ({
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
       ) {
-         // Only clear results, keep the search term
+        // Only clear results, keep the search term
         setFilteredBlogs([]);
-         setHasSearched(false);
+        setHasSearched(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -229,12 +229,16 @@ const BlogHero = ({
           </button>
 
           {/* Search Dropdown */}
-            {(isLoading || filteredBlogs.length > 0 || (hasSearched && searchTerm.trim().length > 0 && !isLoading)) && (
+          {(isLoading ||
+            filteredBlogs.length > 0 ||
+            (hasSearched && searchTerm.trim().length > 0 && !isLoading)) && (
             <div className="absolute top-full z-50 mt-3 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-300 bg-white shadow-lg">
               {isLoading ? (
                 <div className="flex items-center justify-center px-3 py-4">
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-gray-600"></div>
-                  <span className="ml-2 text-sm text-gray-600">Searching...</span>
+                  <span className="ml-2 text-sm text-gray-600">
+                    Searching...
+                  </span>
                 </div>
               ) : filteredBlogs.length > 0 ? (
                 <>

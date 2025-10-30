@@ -5,21 +5,21 @@ import {
   integrationLogos,
   platforms,
 } from "@/components/common/Helper";
+import TrustBar from "@/components/common/TrustBar";
+import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import Faq from "@/components/crmbussiness/Faq";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import AwardBadges from "@/components/industry/AwardBadge";
 import EraOfSoftware from "@/components/industry/EraOfSoftware";
 import IndustryHero from "@/components/industry/IndustryHero";
+import OverlapCardMobileViewChild from "@/components/industry/IndustryOverlapCardMobileViewChild";
+import MovingSoftware from "@/components/industry/MovingSoftware";
 import SecondaryReview from "@/components/industry/SecondaryReview";
 import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContractor";
 import WantingMore from "@/components/industry/WantingMore";
-import TrustBar from "@/components/common/TrustBar";
-import BlogPosts from "@/components/crmbussiness/BlogPosts";
-import OverlapCardMobileViewChild from "@/components/industry/IndustryOverlapCardMobileViewChild";
-import MovingSoftware from "@/components/industry/MovingSoftware";
-import { getSeoData } from "@/services/common/seoMeta";
+import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
-import { generateSeoMetadata } from "@/utils/getSeoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -28,16 +28,14 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const resolvedParams = await params;
-  const page = await getSeoData(
-    "industries-pages",
-    resolvedParams.locale,
-    resolvedParams.slug,
-  );
+  const { locale, slug } = await params;
 
+  const page = await getSeoDataCommon(
+    `industries-pages??filters[slug][$eq]=${slug}&locale=${locale}&populate=seoMetaData`,
+  );
   if (!page) notFound();
 
-  return generateSeoMetadata({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug });
 }
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;

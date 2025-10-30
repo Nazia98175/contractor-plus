@@ -1,4 +1,3 @@
-export const runtime = "edge";
 
 const STRAPI_BASE = process.env.STRAPI_BASE_URL as string;
 

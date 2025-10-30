@@ -296,7 +296,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                         <div className="min-w-0 flex-1">
                           <div className="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
                             <h4 className="text-foreground text-base font-semibold">
-                              {contractor?.businessName}dfdf
+                              {contractor?.businessName}
                             </h4>
                             <Button
                               onClick={() =>
@@ -304,7 +304,7 @@ export const ContractorFAQSection: React.FC<ContractorFAQSectionProps> = ({
                                   contractor?.widgets?.requestFlowURL,
                                 )
                               }
-                              className="self-start rounded-full bg-black px-6 py-2 text-white hover:bg-gray-800"
+                              className="self-start rounded-full bg-[#069ed9] px-6 py-2 text-white hover:bg-[#069dd9a8]"
                             >
                               Get a quote
                             </Button>

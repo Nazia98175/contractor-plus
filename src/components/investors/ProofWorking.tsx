@@ -45,8 +45,6 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
   leftStats = [],
   mobileProofSection = [],
 }) => {
-  console.log("rfewdsxz", leftStats);
-
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const logoDesktopRef = useRef<HTMLImageElement>(null);
@@ -399,7 +397,6 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
         <div className="relative pt-8 pb-20">
           <p className="proof-working mx-auto w-fit text-center text-base font-semibold tracking-[-0.32px]">
             {buttomText || "Now imagine what we’ll do with real capital."}
-            <span className="text-red-500">real capital</span>.
           </p>
         </div>
       </div>

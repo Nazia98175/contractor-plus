@@ -8,6 +8,7 @@ import { BlogBtnIcon } from "../common/Icons";
 import NotFoundFallback from "../common/NotFoundFallback";
 import SliderLayout from "../common/SliderLayout";
 import BlogArticle from "./BlogArticle";
+import Link from "next/link";
 
 interface Props {
   data?: any[];
@@ -78,7 +79,10 @@ const BlogPosts: React.FC<Props> = ({
                 ))}
               </div>
 
-              <div className="card-shine relative flex min-h-[366px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-xl pb-3 sm:pb-6 xl:max-w-[700px]">
+              <Link
+                href={`/blog/${data[0]?.blogUrl}`}
+                className="card-shine relative flex min-h-[366px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-xl pb-3 sm:pb-6 xl:max-w-[700px]"
+              >
                 {data[0]?.blogImg ? (
                   <img
                     src={`${data[0]?.blogImg[0]?.url}`}
@@ -105,7 +109,7 @@ const BlogPosts: React.FC<Props> = ({
                       "How do you create compelling presentations that wow your colleagues and impress your managers?"}
                   </p>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="blog-post block md:hidden">
               <SliderLayout

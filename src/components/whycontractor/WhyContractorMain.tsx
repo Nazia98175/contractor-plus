@@ -84,7 +84,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
 
   return (
     <>
-      <div id="home-page-wrapper-2">
+      <div id="home-page-wrapper-2" className="overflow-hidden">
         <div
           id="home-page-view-port-screen-why-contractor"
           className="relative opacity-0"

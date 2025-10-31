@@ -6,6 +6,7 @@ import SmoothScrollSetup from "@/components/common/SmoothScroll";
 import { getFooter, getHeader } from "@/services/layout";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { cookies } from "next/headers";
 import NextTopLoader from "nextjs-toploader";
 
 export default async function RootLayout({
@@ -15,6 +16,12 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
+  const cookiesStore = await cookies();
+  const profileData = cookiesStore.get("LOGGED_IN_USER_INFO")
+    ? JSON.parse(cookiesStore.get("LOGGED_IN_USER_INFO")?.value as string)
+    : null;
+
+  console.log(profileData, "profile data from layout");
   const locale = await getLocale();
   const messages = await getMessages({ locale });
   const useParams = await params;
@@ -44,7 +51,7 @@ export default async function RootLayout({
         speed={400}
       />
       <NextIntlClientProvider messages={messages}>
-        <Header header={header?.data} />
+        <Header header={header?.data} profileData={profileData} />
         {children}
         <Footer footer={footer?.data} />
         <ParticlesComponent id="star-particles" />

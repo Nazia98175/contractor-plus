@@ -105,22 +105,24 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
             />
           </div>
         </div>
-        <main ref={sectionRef} className="relative pt-[67px] sm:pt-[157px]">
+        <main className="relative pt-[67px] sm:pt-[157px]">
           {/* Background line (gray/wallStreet color) */}
-          <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[86%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
+          <main ref={sectionRef} className="relative">
+            <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
 
-          {/* Animated red dot that moves on scroll - starts at top of gray line */}
-          <span
-            ref={redDotRef}
-            className="from-redPigment to-netherworld absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
-          ></span>
-          <BloodEnough
-            bloodEnough={data?.narrativeFlow?.animationHeader?.[1]}
-          />
-          <SeperateSolution seperateSolution={data?.seperateSolution} />
-          <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
-          <VideoBottomPart list={data?.narrativeFlow?.list} />
-          <WayToWin connectedSystem={data?.connectedSystem} />
+            {/* Animated red dot that moves on scroll - starts at top of gray line */}
+            <span
+              ref={redDotRef}
+              className="from-redPigment to-netherworld absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
+            ></span>
+            <BloodEnough
+              bloodEnough={data?.narrativeFlow?.animationHeader?.[1]}
+            />
+            <SeperateSolution seperateSolution={data?.seperateSolution} />
+            <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
+            <VideoBottomPart list={data?.narrativeFlow?.list} />
+            <WayToWin connectedSystem={data?.connectedSystem} />
+          </main>
           <Dashboard connectedSystem={data?.connectedSystem} />
         </main>
         <OperatingSystem

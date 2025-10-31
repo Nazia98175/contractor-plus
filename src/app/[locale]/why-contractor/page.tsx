@@ -24,7 +24,6 @@ export async function generateMetadata({
 export default async function WhyContractorPage({
   params,
 }: WhyContractorPageProps) {
-  const { locale } = await params;
   const useParams = await params;
 
   const {

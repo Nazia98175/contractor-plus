@@ -130,7 +130,7 @@ const Dashboard: React.FC<PropWayToWin> = ({ connectedSystem }) => {
   return (
     <div
       ref={sectionRef}
-      className="bg-kuroiBlack relative z-[0] -mt-10 lg:-mt-16 xl:mt-[-97px]"
+      className="relative z-[0] -mt-10 bg-black lg:-mt-16 xl:mt-[-97px]"
     >
       <video
         className="w-full mix-blend-screen md:hidden"
@@ -142,7 +142,7 @@ const Dashboard: React.FC<PropWayToWin> = ({ connectedSystem }) => {
         <source src="/video/dashboard-mobile.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="rela mx-auto w-full max-w-[1440px] overflow-hidden mix-blend-screen max-md:hidden xl:h-[1300px]">
+      <div className="relative mx-auto w-full max-w-[1440px] overflow-hidden max-md:hidden xl:h-[1300px]">
         <video className="h-full w-full" autoPlay loop muted playsInline>
           <source src="/video/dashboard-desktop.mp4" type="video/mp4" />
           Your browser does not support the video tag.

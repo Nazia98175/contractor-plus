@@ -79,21 +79,21 @@ const WayToWin: React.FC<PropWayToWin> = ({ connectedSystem }) => {
           </p>
         </Copy>
       </div>
-      <div className="before:from-kuroiBlack after:from-kuroiBlack relative mx-auto max-w-[1440px] before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:to-transparent before:content-[''] after:absolute after:top-0 after:right-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:to-transparent after:content-['']">
-        <div className="relative">
+      <div className="relative mx-auto max-w-[1440px] before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:to-transparent before:content-[''] after:absolute after:top-0 after:right-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:to-transparent after:content-['']">
+        <div className="relative top-[-90px]">
           <Image
             unoptimized
             className="w-full max-sm:hidden xl:h-[707px] 2xl:h-[unset]"
             height={100}
             width={100}
-            src={"/images/png/way-to-win-bg.png"}
+            src={"/images/webp/way-to-win-bg-desktop.webp"}
             alt="way to win"
           />
 
           {/* Building Lights Overlay - Desktop */}
           <div className="pointer-events-none absolute inset-0 max-xl:hidden">
             {/* Left Building Group */}
-            <div className="absolute bottom-[22%] left-[7%] z-10 grid grid-cols-3 gap-1">
+            <div className="absolute bottom-[13%] left-[8%] z-10 grid grid-cols-3 gap-1">
               {[...Array(12)].map((_, i) => (
                 <div
                   key={`left-${i}`}
@@ -125,7 +125,7 @@ const WayToWin: React.FC<PropWayToWin> = ({ connectedSystem }) => {
             </div>
 
             {/* Center Building (Tallest) - Enhanced glow */}
-            <div className="absolute right-[36%] bottom-[17%] z-10 grid grid-cols-4 gap-1">
+            <div className="absolute right-[22%] bottom-[21%] z-10 grid grid-cols-4 gap-1">
               {[...Array(16)].map((_, i) => (
                 <div
                   key={`center-${i}`}
@@ -141,7 +141,7 @@ const WayToWin: React.FC<PropWayToWin> = ({ connectedSystem }) => {
             </div>
 
             {/* Right Building Group */}
-            <div className="absolute right-[12%] bottom-[30%] z-10 grid grid-cols-3 gap-1.5">
+            <div className="absolute right-[17%] bottom-[25%] z-10 grid grid-cols-3 gap-1.5">
               {[...Array(14)].map((_, i) => (
                 <div
                   key={`right-${i}`}
@@ -168,7 +168,7 @@ const WayToWin: React.FC<PropWayToWin> = ({ connectedSystem }) => {
           className="w-full"
           height={100}
           width={100}
-          src={"/images/png/way-to-win-bg-mobile.png"}
+          src={"/images/webp/way-to-win-bg-mobile.webp"}
           alt="way to win"
         />
       </div>

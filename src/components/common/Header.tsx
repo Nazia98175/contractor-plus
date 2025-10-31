@@ -8,10 +8,19 @@ import { usePathname } from "next/navigation";
 import LanguageSelector from "./LanguageSelector";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export interface HeaderProps {
   header?: any;
   variant?: "light" | "dark";
+  profileData?: {
+    first_name: string;
+    last_name: string;
+    api_token: string;
+    profile_img_url: string;
+    staff_id: string;
+    tenant_id: string;
+  };
 }
 
 const headerVariantClasses = {
@@ -21,7 +30,7 @@ const headerVariantClasses = {
   dark: { background: "bg-none" },
 };
 
-const Header: React.FC<HeaderProps> = ({ header }) => {
+const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
   const router = useRouter();
   const [isshow, setIsShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -39,6 +48,14 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
       : "dark";
 
   const styles = headerVariantClasses[resolvedVariant];
+
+  const getInitials = (name?: string) => {
+    if (!name) return "";
+    const parts = name.trim().split(/\s+/);
+    const first = parts[0] ? parts[0][0] : "";
+    const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
+    return (first + last).toUpperCase();
+  };
 
   // Add scroll event listener
   useEffect(() => {
@@ -106,19 +123,54 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
                   {header?.contact}
                 </Link>
               </div>
-              <button
-                aria-label="contractorplus login button"
-                className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm"
-              >
-                {header?.loginText}
-              </button>
-              <button
-                onClick={() => handleRedirect({ pathname })}
-                disabled={loading}
-                className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
-              >
-                {header?.btnText?.btnText}
-              </button>
+              {profileData ? (
+                <div className="flex items-center">
+                  <button
+                    aria-label="Open Contractorplus App"
+                    onClick={() => {
+                      const url = `https://my.contractorplus.app`;
+                      window.open(url, "_blank");
+                    }}
+                    className="flex items-center gap-2 rounded-full hover:opacity-90 focus:outline-none"
+                  >
+                    {profileData.profile_img_url ? (
+                      <Image
+                        src={profileData.profile_img_url}
+                        height={40}
+                        width={40}
+                        alt={profileData?.first_name ?? "avatar"}
+                        className="rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="bg-romanRed flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-white">
+                        {getInitials(
+                          `${profileData?.first_name ?? ""} ${profileData?.last_name ?? ""}`,
+                        )}
+                      </div>
+                    )}
+                    <span className="hidden truncate text-sm font-semibold text-white lg:inline-block">
+                      {profileData?.first_name ?? ""}
+                      {profileData?.last_name ?? ""}
+                    </span>
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <button
+                    aria-label="contractorplus login button"
+                    className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm"
+                  >
+                    {header?.loginText}
+                  </button>
+                  <button
+                    onClick={() => handleRedirect({ pathname })}
+                    disabled={loading}
+                    className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
+                  >
+                    {header?.btnText?.btnText}
+                  </button>
+                </>
+              )}
               <button
                 aria-label="contractorplus close button"
                 className="lg:hidden"
@@ -126,7 +178,12 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
               >
                 <HamburgerIcon />
               </button>
-              <SideBar header={header} isshow={isshow} setIsShow={setIsShow} />
+              <SideBar
+                header={header}
+                isshow={isshow}
+                setIsShow={setIsShow}
+                profileData={profileData}
+              />
             </div>
           </div>
         ) : (

@@ -75,10 +75,19 @@ const SideBar = ({
   setIsShow,
   isshow,
   header,
+  profileData,
 }: {
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
   isshow: boolean;
   header: any;
+  profileData?: {
+    first_name: string;
+    last_name: string;
+    api_token: string;
+    profile_img_url: string;
+    staff_id: string;
+    tenant_id: string;
+  };
 }) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -178,18 +187,20 @@ const SideBar = ({
             >
               {header?.contact}
             </Link>
-            <div className="flex items-center gap-2">
-              <button className="text-lightBlack font-myriad px-2 py-1 text-xs font-bold tracking-[0.1px]">
-                {header?.loginText || "Login"}
-              </button>
-              <button
-                onClick={() => handleRedirect({ pathname })}
-                disabled={loading}
-                className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white"
-              >
-                {header?.btnText?.btnText || "Get Started"}
-              </button>
-            </div>
+            {!profileData && (
+              <div className="flex items-center gap-2">
+                <button className="text-lightBlack font-myriad px-2 py-1 text-xs font-bold tracking-[0.1px]">
+                  {header?.loginText || "Login"}
+                </button>
+                <button
+                  onClick={() => handleRedirect({ pathname })}
+                  disabled={loading}
+                  className="font-myriad bg-romanRed rounded px-[14px] py-1 leading-[142.857%] font-semibold tracking-[0.1px] text-white"
+                >
+                  {header?.btnText?.btnText || "Get Started"}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -179,7 +179,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
 
       {/* Invisible gap-covering element */}
       <div
-        className="absolute top-[72%] left-0 z-[999] h-[34.88px] w-full !bg-none"
+        className="absolute top-[70%] left-0 z-[999] h-[34.88px] w-full !bg-none"
         style={{
           visibility: activeMenu ? "visible" : "hidden",
           opacity: activeMenu ? 1 : 0,

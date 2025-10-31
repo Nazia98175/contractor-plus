@@ -28,6 +28,7 @@ const FieldService: React.FC<TheServiceProps> = ({
   const [maxHeight, setMaxHeight] = useState<number>(0);
   const [headingHeight, setHeadingHeight] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
+  console.log(fieldService, "file");
 
   // Initialize window height on mount
   useEffect(() => {

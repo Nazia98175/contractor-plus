@@ -41,7 +41,7 @@ const IntegrationDetails = async ({
   params: Promise<{ slug: string; locale: string }>;
 }) => {
   const { slug, locale } = await params;
-  const [integrationData, integrationList, integrationDetails] =
+  const [integrationData, integrationList, appfeatures] =
     await Promise.all([
       getIntegrationDataBySlug(locale, slug),
       getIntegrationList(locale),
@@ -49,12 +49,11 @@ const IntegrationDetails = async ({
     ]);
   if (!integrationData) return notFound();
 
-  console.log(integrationData, "intergation data");
   return (
     <main id="home-page-wrapper-2">
       <IntegrationParent
         integrationData={integrationData}
-        integrationDetails={integrationDetails}
+        appfeatures={appfeatures}
       />
       <div className="relative overflow-hidden">
         <Faq
@@ -80,9 +79,9 @@ const IntegrationDetails = async ({
             title={integrationList?.emailSignupSection?.title ?? ""}
             subTitle={integrationList?.emailSignupSection?.subTitle ?? ""}
             placeholder={integrationList?.emailSignupSection?.placeholder ?? ""}
-            createBtn={"Get Started Free"}
-            mobileBtn={"Download FREE App"}
-            ncc={"No credit card required"}
+            createBtn="Get Started Free"
+            mobileBtn="Download FREE App"
+            ncc="No credit card required"
           />
         </div>
 

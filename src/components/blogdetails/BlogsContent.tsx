@@ -14,9 +14,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlogsContent = ({
   blogData,
+  appfeatures,
   blogsList,
 }: {
   blogData: any;
+  appfeatures: any;
   blogsList: any;
 }) => {
   const rightRef = useRef<HTMLDivElement>(null);
@@ -60,6 +62,8 @@ const BlogsContent = ({
     };
   }, []);
 
+  console.log(blogsList,"blogsList");
+  
   return (
     <section className="main-container 1xl:space-y-30 1xl:pb-20 space-y-12 pt-8 pb-12 md:space-y-12 md:pb-14 lg:space-y-14 lg:pb-16">
       <div className="flex flex-col justify-between gap-4 lg:flex-row">
@@ -133,12 +137,12 @@ const BlogsContent = ({
                 <TableOfContent markdown={blogData?.blogDescription ?? ""} />
               </div>
               <div className="block w-full sm:max-w-[300px] md:max-w-full lg:hidden">
-                <AdvertisementCard blogsList={blogsList} />
+                <AdvertisementCard appfeatures={appfeatures.features} />
               </div>
             </div>
           </div>
           <div className="top-[15%] mt-6 hidden lg:sticky lg:block">
-            <AdvertisementCard blogsList={blogsList} />
+            <AdvertisementCard appfeatures={appfeatures.features} />
           </div>
         </div>
       </div>

@@ -14,6 +14,8 @@ import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const revalidate = 300;
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,7 +23,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { slug, locale } = await params;
   const page = await getSeoDataCommon(
-    `integrations?locale=${locale}&filters[slug][$eq]=${slug}&populate=SeoMetaData`,
+    `integrations?locale=${locale}&filters[slug][$eq]=${slug}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();

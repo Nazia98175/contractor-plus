@@ -10,7 +10,9 @@ import {
   getSingleEvent,
 } from "@/services/events/getEventData";
 import { PromiseParams } from "@/types";
-import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import {
+  generateSeoMetaData
+} from "@/utils/getSeoMeta";
 import { notFound, redirect } from "next/navigation";
 
 export async function generateMetadata({
@@ -27,7 +29,7 @@ export async function generateMetadata({
 
   if (!page) notFound();
 
-  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
 }
 
 const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {

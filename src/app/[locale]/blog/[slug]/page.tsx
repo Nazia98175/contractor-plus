@@ -18,7 +18,7 @@ import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
-export const revalidate = 600;
+export const revalidate = 300;
 export async function generateMetadata({
   params,
 }: {
@@ -26,7 +26,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `blogs?locale=${resolvedParams.locale}&populate=*&filters[blogUrl][$eq]=${resolvedParams.slug}`,
+    `blogs?locale=${resolvedParams.locale}&filters[blogUrl][$eq]=${resolvedParams.slug}&populate[seoMetaData][populate]=*`,
   );
 
   if (!page) notFound();

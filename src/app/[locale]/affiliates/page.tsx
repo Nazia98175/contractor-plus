@@ -28,12 +28,12 @@ export async function generateMetadata({
   const resolvedParams = await params;
 
   const page = await getSeoDataCommon(
-    `affiliate?locale=${resolvedParams.locale}&populate=*`,
+    `affiliate?locale=${resolvedParams.locale}&populate[seoData][populate]=*`,
   );
 
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: "affiliates" });
+  return generateSeoMetaData({ page, slug: "/affiliates" });
 }
 export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
   const { locale } = await params;

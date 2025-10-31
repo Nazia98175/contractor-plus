@@ -3,7 +3,7 @@ import { getSeoDataCommon } from "@/services/common/seoMeta";
 import {
   fetchYouTubeFeed,
   getHardHatFeeds,
-  getPodcastData
+  getPodcastData,
 } from "@/services/podcast/getPodcast";
 import { PagePromise } from "@/types";
 import { sortByPublishedDate } from "@/utils/dataTransformers";
@@ -16,12 +16,12 @@ export async function generateMetadata({
 }: PagePromise): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `podcast?locale=${resolvedParams.locale}&populate=*`,
+    `podcast?locale=${resolvedParams.locale}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: "podcasts" });
+  return generateSeoMetaData({ page, slug: "/podcasts" });
 }
 const Podcastpage = async ({ params }: PagePromise) => {
   const { locale } = await params;

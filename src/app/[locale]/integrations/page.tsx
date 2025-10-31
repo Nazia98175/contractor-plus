@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { locale } = await params;
   const page = await getSeoDataCommon(
-    `integration-list?locale=${locale}&populate=SeoMetaData`,
+    `integration-list?locale=${locale}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();

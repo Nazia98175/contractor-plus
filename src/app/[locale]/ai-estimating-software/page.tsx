@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `estimatic-ai?locale=${resolvedParams.locale}&populate=*`,
+    `estimatic-ai?locale=${resolvedParams.locale}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();

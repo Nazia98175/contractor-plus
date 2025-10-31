@@ -14,7 +14,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
 
   const page = await getSeoDataCommon(
-    `affiliate?locale=${resolvedParams.locale}&populate=*`,
+    `why-contractor?locale=${resolvedParams.locale}&populate[seoMetaData][populate]=*`,
   );
 
   if (!page) notFound();

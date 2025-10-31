@@ -14,6 +14,7 @@ import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -29,24 +30,13 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "opportunity-tracker",
+    "opportunity-tracker&populate[seoMetaData][populate]=*",
   );
 
   if (!page) notFound();
 
-  return {
-    title:
-      page.seoMetaData?.metaTitle ||
-      page.hero?.heroTitle ||
-      `Contractor+ field-service`,
-    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
-    keywords: page.seoMetaData?.keywords || "",
-    alternates: {
-      canonical:
-        page.seoMetaData?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}/opportunity-tracker`,
-    },
-  };
+  return generateSeoMetaData({ page, slug: "/opportunity-tracker" });
+  
 }
 export default async function OpportunityTracker({
   params,

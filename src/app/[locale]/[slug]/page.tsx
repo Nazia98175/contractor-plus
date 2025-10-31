@@ -59,7 +59,7 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = await params;
   const page = await getSeoDataCommon(
-    `features-pages?filters[slug][$eq]=${slug}&locale=${locale}&populate=seoMetaData`,
+    `features-pages?filters[slug][$eq]=${slug}&locale=${locale}&populate[seoMetaData][populate]=*`,
   );
   if (!page) notFound();
 

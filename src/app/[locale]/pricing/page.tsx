@@ -21,7 +21,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
 
   const page = await getSeoDataCommon(
-    `pricing?locale=${resolvedParams.locale}&populate=*`,
+    `pricing?locale=${resolvedParams.locale}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();

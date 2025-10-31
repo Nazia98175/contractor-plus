@@ -7,7 +7,7 @@ import Copy from "../common/Copy";
 interface PropbloodEnough {
   bloodEnough: any;
 }
-const BloodEnough:React.FC<PropbloodEnough> = ({bloodEnough}) => {
+const BloodEnough: React.FC<PropbloodEnough> = ({ bloodEnough }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const hasAnimatedOnMobile = useRef(false);
@@ -136,7 +136,7 @@ const BloodEnough:React.FC<PropbloodEnough> = ({bloodEnough}) => {
           {bloodEnough?.subTitle1}
           <span className="highlighted-span font-medium italic duration-300">
             {" "}
-           {bloodEnough?.subTitleRed}
+            {bloodEnough?.subTitleRed}
           </span>
         </h6>
       </Copy>

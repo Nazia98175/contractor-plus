@@ -15,6 +15,7 @@ import WhatEverClient from "@/components/homepage/WhatEverClient";
 import { getSeoData } from "@/services/common/seoMeta";
 import { getMaxMindLocation } from "@/services/map";
 import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
@@ -35,24 +36,12 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "field-service-management",
+    "field-service-management&populate[seoMetaData][populate]=*",
   );
 
   if (!page) notFound();
 
-  return {
-    title:
-      page.seoMetaData?.metaTitle ||
-      page.hero?.heroTitle ||
-      `Contractor+ field-service`,
-    description: page.seoMetaData?.metaDescription || page.hero?.subTitle || "",
-    keywords: page.seoMetaData?.keywords || "",
-    alternates: {
-      canonical:
-        page.seoMetaData?.canonicalUrl ??
-        `${process.env.NEXT_PUBLIC_DOMAIN}/field-service`,
-    },
-  };
+  return generateSeoMetaData({ page, slug: "/field-service-management" });
 }
 
 interface Params {

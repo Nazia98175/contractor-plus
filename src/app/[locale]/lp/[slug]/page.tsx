@@ -39,7 +39,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { slug, locale } = await params;
   const page = await getSeoDataCommon(
-    `/lp-pages?locale=${locale}&filters[slug][$eq]=${slug}&populate=seoData`,
+    `/lp-pages?locale=${locale}&filters[slug][$eq]=${slug}&populate[seoData][populate]=*`,
   );
 
   if (!page) notFound();

@@ -11,13 +11,14 @@ import {
   getBlogsDetails,
 } from "@/services/blog/getBlogData";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
+import { getIntegrationDetails } from "@/services/integation/getIntegrationData";
 import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
-export const revalidate = 600;
+export const revalidate = 300;
 export async function generateMetadata({
   params,
 }: {
@@ -25,7 +26,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `blogs?locale=${resolvedParams.locale}&populate=*&filters[blogUrl][$eq]=${resolvedParams.slug}`,
+    `blogs?locale=${resolvedParams.locale}&filters[blogUrl][$eq]=${resolvedParams.slug}&populate[seoMetaData][populate]=*`,
   );
 
   if (!page) notFound();
@@ -47,10 +48,11 @@ const BlogDetails = async ({
   params: Promise<{ locale: string; slug: string }>;
 }) => {
   const { locale, slug } = await params;
-  const [blogData, blogsList, allBlogs] = await Promise.all([
+  const [blogData, blogsList, allBlogs,appfeatures] = await Promise.all([
     getBlogDataBySlug(locale, slug),
     getBlogsDetails(locale),
     getAllBlogs(locale),
+    getIntegrationDetails(locale),
   ]);
 
   if (!blogData) {
@@ -61,7 +63,7 @@ const BlogDetails = async ({
     <main>
       <div className="bg-white">
         <BlogDetailHero blogData={blogData} />
-        <BlogsContent blogData={blogData} blogsList={blogsList} />
+        <BlogsContent blogData={blogData} appfeatures={appfeatures} blogsList={blogsList} />
       </div>
       <div className="relative overflow-hidden">
         <IndustryService

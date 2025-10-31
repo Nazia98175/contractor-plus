@@ -6,7 +6,7 @@ import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const revalidate = 60;
+export const revalidate = 300;
 export async function generateMetadata({
   params,
 }: {
@@ -14,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `blog-list?locale=${resolvedParams.locale}&populate=SeoMetaData`,
+    `blog-list?locale=${resolvedParams.locale}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();
@@ -31,9 +31,9 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
     getAllIndustries(locale),
   ]);
 
-  console.log(blogsData,"blogsData");
-  console.log(blogsList,"blogsList");
-  
+  console.log(blogsData, "blogsData");
+  console.log(blogsList, "blogsList");
+
   return (
     <BlogPage
       blogsData={blogsData}

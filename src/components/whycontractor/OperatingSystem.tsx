@@ -14,15 +14,19 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
   featuresPlatform,
 }) => {
   return (
-    <div className="bg-kuroiBlack relative z-10 overflow-hidden">
+    <div className="bg-kuroiBlack relative z-10">
+      <img
+        className="absolute top-[-20px] left-0 h-[72px] w-full sm:h-[100px]"
+        src="/images/webp/blur-effect.webp"
+        alt="blur effect"
+      />
       <div className="bg-athenaBlue absolute top-[0px] left-0 hidden h-[500px] w-[60px] rotate-45 opacity-25 blur-[40px] md:block"></div>
       <span className="absolute top-[0px] right-0 hidden w-full max-w-[614px] overflow-hidden md:block">
         <WhyContractorGradientIcon />
       </span>
 
-      <div className="mx-auto max-w-[855px] pt-10 max-xl:px-4 sm:pt-20">
+      <div className="mx-auto max-w-[855px] pt-16 max-xl:px-4 sm:pt-20">
         <div className="mx-auto max-w-[222px]">
-          {" "}
           <FooterLogoIcon />
         </div>
         <h2 className="section-heading service-text max-sm:!text-custom-4xl pt-9 text-center !font-normal sm:pt-4">

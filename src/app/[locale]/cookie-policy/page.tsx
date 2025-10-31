@@ -12,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `cookie-policy-seo?locale=${resolvedParams.locale}&populate=*`,
+    `cookie-policy-seo?locale=${resolvedParams.locale}&populate[seoData][populate]=*`,
   );
 
   if (!page) notFound();

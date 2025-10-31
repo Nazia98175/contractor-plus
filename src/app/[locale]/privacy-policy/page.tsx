@@ -11,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `privacy-policy-seo?locale=${resolvedParams.locale}&populate=*`,
+    `privacy-policy-seo?locale=${resolvedParams.locale}&populate[seoData][populate]=*`,
   );
 
   if (!page) notFound();

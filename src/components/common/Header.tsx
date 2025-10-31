@@ -72,7 +72,8 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   const safePath = pathname?.toLowerCase() || "";
 
   // ✅ Hide footer on specific path
-  const hideHeader = safePath.includes("lp");
+  const hideHeader =
+    safePath.includes("lp") || safePath.includes("ai-estimating-ads");
   return (
     <header
       className="fixed top-4 z-[99] w-full rounded px-2 opacity-0"

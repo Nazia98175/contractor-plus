@@ -3,13 +3,13 @@ import IntegrationDetailHero from "./IntegrationDetailHero";
 import IntegrationDetail from "./IntegrationDetail";
 
 type IntegrationParentProps = {
-  integrationData: any; // Replace 'any' with the correct type if known
-  integrationDetails: any; // Replace 'any' with the correct type if known
+  integrationData: any; 
+  appfeatures: any; 
 };
 
 const IntegrationParent: React.FC<IntegrationParentProps> = ({
   integrationData,
-  integrationDetails,
+  appfeatures,
 }) => {
   return (
     <>
@@ -20,8 +20,8 @@ const IntegrationParent: React.FC<IntegrationParentProps> = ({
         <IntegrationDetailHero integration={integrationData} />
       </div>
       <IntegrationDetail
-        integration={integrationData}
-        integrationDetail={integrationDetails}
+        integrationData={integrationData}
+        appfeatures={appfeatures}
       />
     </>
   );

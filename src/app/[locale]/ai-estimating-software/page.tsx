@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `estimatic-ai?locale=${resolvedParams.locale}&populate=*`,
+    `estimatic-ai?locale=${resolvedParams.locale}&populate[SeoMetaData][populate]=*`,
   );
 
   if (!page) notFound();
@@ -56,8 +56,8 @@ const EstimaticAiPage = async ({
     commonData,
     blogs,
   } = await getEstimaticPageData(useParams?.locale);
-  console.log(pageContent, "esigjd");
-  console.log(heroImg, "hero image page ");
+  console.log(comparisonList);
+
   return (
     <main id="common-homepage-wrapper">
       <div

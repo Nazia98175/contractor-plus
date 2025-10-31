@@ -1,10 +1,9 @@
 "use client";
 import { IntegrationItem } from "@/types";
-import Image from "next/image";
-import { ResizeIcon, UnionIcon } from "../common/Icons";
-import { useEffect } from "react";
 import gsap from "gsap";
-import { it } from "date-fns/locale";
+import Image from "next/image";
+import { useEffect } from "react";
+import { ResizeIcon, UnionIcon } from "../common/Icons";
 
 interface IntegrationDetailHeroProps {
   integration: IntegrationItem;

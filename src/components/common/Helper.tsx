@@ -4046,7 +4046,7 @@ export const estimaticReviewsAi = {
   ],
 };
 export const automatedHeadingData = {
-  title: "Auto Agreement topics in Contractor+ HQ",
+  title: "AI related topics in Contractor+ HQ",
   btnText: "Contractor+ HQ",
 };
 export const constructionBookkeepingServices = [

@@ -149,7 +149,7 @@ const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
                       </div>
                     )}
                     <span className="hidden truncate text-sm font-semibold text-white lg:inline-block">
-                      {profileData?.first_name ?? ""}
+                      {profileData?.first_name ?? ""}{" "}
                       {profileData?.last_name ?? ""}
                     </span>
                   </button>

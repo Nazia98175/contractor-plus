@@ -21,7 +21,6 @@ export default async function RootLayout({
     ? JSON.parse(cookiesStore.get("LOGGED_IN_USER_INFO")?.value as string)
     : null;
 
-  console.log(profileData, "profile data from layout");
   const locale = await getLocale();
   const messages = await getMessages({ locale });
   const useParams = await params;

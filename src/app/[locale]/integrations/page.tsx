@@ -37,7 +37,6 @@ const IntegrationPage = async ({
     getIntegrationList(locale),
   ]);
 
-  console.log(integrationList, "data");
   return (
     <main id="home-page-wrapper-2">
       <div
@@ -60,9 +59,9 @@ const IntegrationPage = async ({
             title={integrationList?.emailSignupSection?.title ?? ""}
             subTitle={integrationList?.emailSignupSection?.subTitle ?? ""}
             placeholder={integrationList?.emailSignupSection?.placeholder ?? ""}
-            createBtn={"Get Started Free"}
-            mobileBtn={"Download FREE App"}
-            ncc={"No credit card required"}
+            createBtn="Get Started Free"
+            mobileBtn="Download FREE App"
+            ncc="No credit card required"
           />
         </div>
         <TrustBar platforms={platforms} className="pb-[91px] sm:pb-10" />

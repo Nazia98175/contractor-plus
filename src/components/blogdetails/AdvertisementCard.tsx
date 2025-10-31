@@ -3,20 +3,21 @@ import Link from "next/link";
 import React from "react";
 import { CheckIcon, FooterLogoIcon } from "../common/Icons";
 
-const businessBenefits = [
-  "Effortlessly Manage Your Business",
-  "Team Collaboration",
-  "Simple Scheduling",
-  "Estimating & Invoicing",
-  "Access from PC, Android and iOS!",
-];
-const AdvertisementCard = ({
-  blogsList,
-}: {
-  blogsList?: {
-    bannerFeatures: { id: number; label?: string; text?: string }[];
-  };
-}) => {
+
+
+interface BannerFeature {
+  id: number;
+  label?: string;
+  text?: string;
+}
+
+interface AdvertisementCardProps {
+  appfeatures?: BannerFeature[];
+}
+
+
+const AdvertisementCard: React.FC<AdvertisementCardProps> = ({ appfeatures }) => {
+
   return (
     <article className="flex w-full flex-col justify-center rounded-xl bg-[url('/images/webp/table-content-bg.webp')] bg-cover px-4 pt-8 pb-6 md:pb-[30px] lg:px-6 lg:pt-[42px]">
       <span className="relative mx-auto max-w-[168px]">
@@ -26,33 +27,15 @@ const AdvertisementCard = ({
         <FooterLogoIcon />
       </span>
       <ul className="mt-10 space-y-3 px-2.5 text-white">
-        {blogsList
-          ? blogsList?.bannerFeatures?.length > 0
-            ? blogsList?.bannerFeatures?.map((benefit) => (
-                <li
-                  key={benefit.id}
-                  className="flex items-center gap-2.5 text-xs"
-                >
-                  <CheckIcon />
-                  {benefit.label || benefit.text}
-                </li>
-              ))
-            : // @ts-ignore
-              blogsList?.map((benefit) => (
-                <li
-                  key={benefit.id}
-                  className="flex items-center gap-2.5 text-xs"
-                >
-                  <CheckIcon />
-                  {benefit.text}
-                </li>
-              ))
-          : businessBenefits.map((benefit) => (
-              <li key={benefit} className="flex items-center gap-2.5 text-xs">
-                <CheckIcon />
-                {benefit}
-              </li>
-            ))}
+        {appfeatures?.map((benefit: any) => (
+          <li
+            key={benefit.id}
+            className="flex items-center gap-2.5 text-xs"
+          >
+            <CheckIcon />
+            {benefit.label || benefit.text || ""}
+          </li>
+        ))}
       </ul>
 
       <Link
@@ -65,7 +48,7 @@ const AdvertisementCard = ({
       </Link>
 
       <Link
-        href="https://contractorplus.app/"
+        href="https://play.google.com/store/apps/details?id=contractorplus.app&hl=en_IN"
         className="hover:bg-kuroiBlack/50 border-jagdwurst mt-2.5 flex h-[42px] w-full items-center justify-center rounded-md border backdrop-blur-[9px] duration-300 hover:border-transparent"
       >
         <Image
@@ -73,21 +56,19 @@ const AdvertisementCard = ({
           alt="google icon"
           width={112}
           height={26}
-          // sizes="(max-width: 768px) 100px, 144px"
           priority
         />
       </Link>
 
       <Link
-        href=""
+        href="https://apps.apple.com/us/app/contractor/id1526947450"
         className="hover:bg-kuroiBlack/50 border-jagdwurst mt-2.5 flex h-[42px] w-full items-center justify-center rounded-md border backdrop-blur-[9px] duration-300 hover:border-transparent"
       >
         <Image
           src="/images/svg/Apple-Icon.svg"
-          alt="google icon"
+          alt="apple icon"
           width={112}
           height={26}
-          // sizes="(max-width: 768px) 100px, 144px"
           priority
         />
       </Link>

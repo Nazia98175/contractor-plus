@@ -6,30 +6,50 @@ import SpeakersEvents from "@/components/eventdetail/SpeakersEvents";
 import Sponsors from "@/components/eventdetail/Sponsors";
 import { getSeoDataEvent } from "@/services/common/seoMeta";
 import {
+  getAllEvents,
   getEventDetails,
   getSingleEvent,
 } from "@/services/events/getEventData";
-import { PromiseParams } from "@/types";
-import {
-  generateSeoMetaData
-} from "@/utils/getSeoMeta";
+import { PagePromise, PromiseParams } from "@/types";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { notFound, redirect } from "next/navigation";
+
+export const generateStaticParams = async () => {
+  try {
+    const events = await getAllEvents("en", true);
+
+    const locales = ["en", "fr", "es"];
+    const params = [];
+
+    if (Array.isArray(events) && events.length > 0) {
+      for (const locale of locales) {
+        for (const blog of events) {
+          params.push({
+            locale,
+            slug: blog.eventUrl.toString(),
+          });
+        }
+      }
+    }
+
+    return params;
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+};
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: PagePromise["params"];
 }) {
-  const resolvedParams = await params;
-  const page = await getSeoDataEvent(
-    "events-directories",
-    resolvedParams.locale,
-    resolvedParams.slug,
-  );
+  const { locale, slug } = await params;
+  const page = await getSeoDataEvent("events-directories", locale, slug!);
 
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: slug });
 }
 
 const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {

@@ -31,12 +31,28 @@ export const getIntegrationList = async (locale: string) => {
   }
 };
 
-export const getAllIntegration = async (locale: string) => {
+export const getAllIntegration = async (
+  locale: string,
+  isr: boolean = false,
+) => {
   try {
+    if (!isr) {
+      const response = await axiosInstance.get(
+        `integrations?locale=${locale}&populate=*`,
+      );
+      const data = response?.data?.data || response?.data;
+
+      if (!data) {
+        return null;
+      }
+      return data;
+    }
+
     const response = await axiosInstance.get(
-      `integrations?locale=${locale}&populate=*`,
+      `integrations?locale=${locale}&fields[0]=slug&fields[1]=integrationName&pagination[pageSize]=100`,
     );
-    const { data } = response.data;
+    const data = response?.data?.data || response?.data;
+    
     if (!data) {
       return null;
     }

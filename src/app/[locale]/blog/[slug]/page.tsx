@@ -19,6 +19,7 @@ import { notFound } from "next/navigation";
 export const dynamicParams = false;
 
 export const revalidate = 300;
+
 export async function generateMetadata({
   params,
 }: {
@@ -38,14 +39,21 @@ export const generateStaticParams = async () => {
   try {
     const blogs = await getAllBlogs("en", true);
 
+    const locales = ["en", "fr", "es"];
+    const params = [];
+
     if (Array.isArray(blogs) && blogs.length > 0) {
-      return blogs.map((blog) => ({
-        locale: "en",
-        slug: blog.blogUrl.toString(),
-      }));
+      for (const locale of locales) {
+        for (const blog of blogs) {
+          params.push({
+            locale,
+            slug: blog.blogUrl.toString(),
+          });
+        }
+      }
     }
 
-    return [];
+    return params;
   } catch (error) {
     console.error("Error generating static params:", error);
     return [];

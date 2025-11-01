@@ -24,8 +24,10 @@ import TrackProperties from "@/components/crmbussiness/TrackProperties";
 import TrustedService from "@/components/crmbussiness/TrustedService";
 import RunWithContractor from "@/components/fieldservices/RunWithContractor";
 import ManageEveryMile from "@/components/toolandequipment/ManageEveryMile";
+import { getAllFeaturesPages } from "@/services/all-features/allFeatures";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getFeaturesPageData } from "@/services/features/getCrmPageData";
+import { PagePromise } from "@/types";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -40,20 +42,48 @@ const AssistantContractor = lazy(
 const Faq = lazy(() => import("@/components/crmbussiness/Faq"));
 const BlogPosts = lazy(() => import("@/components/crmbussiness/BlogPosts"));
 
+export const dynamicParams = false;
+
+export const revalidate = 300;
+
 const LoadingFallback = () => (
   <div className="flex min-h-[200px] items-center justify-center">
     <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />
   </div>
 );
 
-type FeaturesPageProps = {
-  params: Promise<{ locale: string; slug: string }>;
+export const generateStaticParams = async () => {
+  try {
+    const pages = await getAllFeaturesPages(
+      "en",
+      "&fields[0]=pageName&fields[1]=slug&pagination[pageSize]=100",
+    );
+
+    const locales = ["en", "fr", "es"];
+    const params = [];
+
+    if (Array.isArray(pages) && pages.length > 0) {
+      for (const locale of locales) {
+        for (const page of pages) {
+          params.push({
+            locale,
+            slug: page.slug.toString(),
+          });
+        }
+      }
+    }
+
+    return params;
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
 };
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: PagePromise["params"];
 }) {
   const { locale, slug } = await params;
   const page = await getSeoDataCommon(
@@ -64,9 +94,14 @@ export async function generateMetadata({
   return generateSeoMetaData({ page, slug });
 }
 
-const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
-  const useParams = await params;
-  if (!useParams?.slug) {
+const FeaturesMainPage = async ({
+  params,
+}: {
+  params: PagePromise["params"];
+}) => {
+  const { locale, slug } = await params;
+
+  if (!slug) {
     return notFound();
   }
 
@@ -86,9 +121,9 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
     weManageContract,
     comparisonList,
     commonData,
-  } = await getFeaturesPageData(useParams?.slug, useParams?.locale);
+  } = await getFeaturesPageData(slug, locale);
 
-  const theme = useParams?.slug === "estimate" ? "estimateTheme" : "dark";
+  const theme = slug === "estimate" ? "estimateTheme" : "dark";
   const page = crmPageContent?.data?.[0];
 
   if (!crmPageContent?.data?.length) {
@@ -96,7 +131,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
   }
 
   const pageData = {
-    slug: useParams?.slug,
+    slug: slug,
     theme,
     hero: page?.hero,
     featureTag: page?.featureTag,
@@ -127,12 +162,12 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
           <CommonHero
             commonData={commonData}
             hero={pageData?.hero}
-            slug={useParams?.slug}
+            slug={slug}
             heroImg={heroImg}
             featureTag={pageData?.featureTag}
           />
 
-          {useParams.slug === "construction-bookkeeping-services" ? (
+          {slug === "construction-bookkeeping-services" ? (
             <>
               <ConstructionBookkeepingCard
                 constructionBookkeepingServices={
@@ -141,7 +176,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
               />
             </>
           ) : (
-            <TrustedService reviews={reviews} slug={useParams?.slug} />
+            <TrustedService reviews={reviews} slug={slug} />
           )}
 
           <SwitchingTool switchingTool={pageData?.switchingTool} />
@@ -172,23 +207,23 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
               <TrackProperties
                 ncc={pageData.ncc}
                 trackProperties={trackProperties}
-                slug={useParams.slug}
+                slug={slug}
               />
 
               <LikeYouDoContacts
                 trackProperties={pageData.trackProperties || null}
-                slug={useParams.slug}
+                slug={slug}
               />
               <HowContractorWork
                 ncc={pageData.ncc}
                 trackProperties={pageData.trackProperties || null}
               />
-              {(useParams.slug === "contractor-financing" ||
-                useParams.slug === "mileage-tracking" ||
-                useParams.slug === "tool-inventory-software" ||
-                useParams.slug === "contractor-client-agreement" ||
-                useParams.slug === "contractor-financing" ||
-                useParams.slug === "property-profiles") && (
+              {(slug === "contractor-financing" ||
+                slug === "mileage-tracking" ||
+                slug === "tool-inventory-software" ||
+                slug === "contractor-client-agreement" ||
+                slug === "contractor-financing" ||
+                slug === "property-profiles") && (
                 <div className="relative z-20 mt-10 hidden flex-col items-center justify-center gap-2.5 px-2 sm:flex">
                   <FreeTrialButton
                     ariaLabel="freeTrial"
@@ -220,9 +255,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
             slug={pageData.slug}
             kindAdorable={pageData.comparison}
           />
-          {useParams.slug === "ai-call-answering-software" && (
-            <CalculateImpact />
-          )}
+          {slug === "ai-call-answering-software" && <CalculateImpact />}
           <TeamsUsingContractor
             data={pageData.teamsUsingContractor}
             slug={pageData.slug}
@@ -249,7 +282,7 @@ const FeaturesMainPage = async ({ params }: FeaturesPageProps) => {
             />
 
             <Suspense fallback={<LoadingFallback />}>
-              {useParams.slug === "ai-call-answering-software" ? (
+              {slug === "ai-call-answering-software" ? (
                 <AssistantContractor
                   data={pageData.crmService}
                   createBtn={pageData.createBtn}

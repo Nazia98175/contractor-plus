@@ -19,9 +19,43 @@ import TrustBatBuildContractor from "@/components/industry/TrustBatBuildContract
 import WantingMore from "@/components/industry/WantingMore";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getIndustryPageData } from "@/services/industries/getIndustryPageData";
+import { getAllIndustriePages } from "@/services/industries/industry";
+import { PagePromise } from "@/types";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+export const dynamicParams = false;
+
+export const revalidate = 300;
+
+export const generateStaticParams = async () => {
+  try {
+    const pages = await getAllIndustriePages(
+      "en",
+      "&fields[0]=pageName&fields[1]=slug&pagination[pageSize]=100",
+    );
+
+    const locales = ["en", "fr", "es"];
+    const params = [];
+
+    if (Array.isArray(pages) && pages.length > 0) {
+      for (const locale of locales) {
+        for (const page of pages) {
+          params.push({
+            locale,
+            slug: page.slug.toString(),
+          });
+        }
+      }
+    }
+
+    return params;
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+};
 
 export async function generateMetadata({
   params,
@@ -37,13 +71,10 @@ export async function generateMetadata({
 
   return generateSeoMetaData({ page, slug });
 }
-type PageProps = {
-  params: Promise<{ locale: string; slug: string }>;
-};
-const IndustryPage = async ({ params }: PageProps) => {
-  const useParams = await params;
+const IndustryPage = async ({ params }: { params: PagePromise["params"] }) => {
+  const { locale, slug } = await params;
 
-  if (!useParams?.slug) {
+  if (!slug) {
     return notFound();
   }
 
@@ -61,7 +92,7 @@ const IndustryPage = async ({ params }: PageProps) => {
     commonData,
     integrationList,
     blogsByCategory,
-  } = await getIndustryPageData(useParams?.slug, useParams?.locale);
+  } = await getIndustryPageData(slug, locale);
 
   return (
     <main className="home-page-wrapper-2">
@@ -135,11 +166,7 @@ const IndustryPage = async ({ params }: PageProps) => {
             variantBtn="dark"
           />
         </div>
-        <TrustBar
-          platforms={platforms}
-          // trustBarImages={commonData?.trustedCompaniesWhiteBG}
-          className="pb-[148px] xl:pb-20"
-        />
+        <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />
       </div>
       <WhatEverClient
         data={commonData?.contractorConnects}

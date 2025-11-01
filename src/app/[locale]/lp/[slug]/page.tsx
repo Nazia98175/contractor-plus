@@ -21,15 +21,34 @@ import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
+export const revalidate = 300;
+
 export const generateStaticParams = async () => {
-  const data = await getAllLpPages("en");
-  if (!data) {
+  try {
+    const data = await getAllLpPages("en");
+    const locales = ["en", "fr", "es"];
+    const params = [];
+
+    if (!data) {
+      return [];
+    }
+
+    if (Array.isArray(data) && data.length > 0) {
+      for (const locale of locales) {
+        for (const page of data) {
+          params.push({
+            locale,
+            slug: page.slug.toString(),
+          });
+        }
+      }
+    }
+
+    return params;
+  } catch (error) {
+    console.error("Error generating static params:", error);
     return [];
   }
-  return data.map((itm: { id: number; slug: string }) => ({
-    locale: "en",
-    slug: itm.slug.toString(),
-  }));
 };
 
 export async function generateMetadata({

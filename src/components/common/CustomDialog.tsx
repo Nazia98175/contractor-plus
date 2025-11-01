@@ -25,16 +25,18 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
   nextStep,
   isSubmitting,
 }) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(open);
+  const [animate, setAnimate] = useState(false);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (open) {
       setVisible(true);
+      setTimeout(() => setAnimate(true), 10); // Trigger animation after mount
       document.body.style.overflow = "hidden";
     } else {
-      const timer = setTimeout(() => setVisible(false), 300); // wait for animation to finish
+      setAnimate(false); // Trigger closing animation
       document.body.style.overflow = "";
+      const timer = setTimeout(() => setVisible(false), 300); // Wait for transition to finish
       return () => clearTimeout(timer);
     }
   }, [open]);
@@ -44,13 +46,13 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
   return (
     <div
       className={`fixed inset-0 z-[10000] flex items-center justify-center transition-opacity duration-300 ${
-        open ? "visible opacity-100" : "invisible opacity-0"
+        animate ? "visible opacity-100" : "invisible opacity-0"
       }`}
     >
       {/* Overlay */}
       <div
-        className={`absolute inset-0 bg-[#000000aa] transition-opacity duration-300 ${
-          open ? "opacity-100" : "opacity-0"
+        className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
+          animate ? "opacity-100" : "opacity-0"
         }`}
         onClick={() => onOpenChange(false)}
       />
@@ -58,18 +60,20 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
       {/* Modal */}
       <div
         className={`custom-scrollbar relative z-[10001] max-h-[90vh] w-full max-w-[90%] transform overflow-y-auto rounded-lg bg-white shadow-2xl transition-all duration-300 ease-out sm:max-w-2xl ${
-          open
+          animate
             ? "translate-y-0 scale-100 opacity-100"
             : "translate-y-6 scale-95 opacity-0"
         }`}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close Button */}
         <button
           onClick={() => onOpenChange(false)}
-          className={`absolute top-[10px] right-[10px] w-fit cursor-pointer rounded-full p-2`}
+          className="absolute top-[10px] right-[10px] w-fit cursor-pointer rounded-full p-2"
         >
           <ModalCrossIcon />
         </button>
+
         {/* Header */}
         <div className="bg-white px-6 pt-6 pb-2">
           <h2 className="text-xl font-semibold">Get Your Bookkeeping Quote</h2>

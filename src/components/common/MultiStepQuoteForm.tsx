@@ -120,7 +120,6 @@ export const MultiStepQuoteForm = ({
     try {
       setIsSubmitting(true);
       const formData = form.getValues();
-      console.log(formData, "form");
 
       const leadData = {
         businessName: formData.companyName,

@@ -10,16 +10,37 @@ import {
   getIntegrationDetails,
   getIntegrationList,
 } from "@/services/integation/getIntegrationData";
+import { PagePromise } from "@/types";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const dynamicParams = false;
+
 export const revalidate = 300;
 
+export const generateStaticParams = async () => {
+  const integrations = await getAllIntegration("en", true);
+
+  const locales = ["en", "fr", "es"];
+  const params = [];
+
+  if (Array.isArray(integrations) && integrations.length > 0) {
+    for (const locale of locales) {
+      for (const page of integrations) {
+        params.push({
+          locale,
+          slug: page.slug.toString(),
+        });
+      }
+    }
+  }
+  return params;
+};
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string; locale: string }>;
+  params: PagePromise["params"];
 }): Promise<Metadata | undefined> {
   const { slug, locale } = await params;
   const page = await getSeoDataCommon(
@@ -30,25 +51,17 @@ export async function generateMetadata({
 
   return generateSeoMetaData({ page, slug: `/integrations/${slug}` });
 }
-export const generateStaticParams = async () => {
-  const integrations = await getAllIntegration("en");
-  return integrations.map((data: { slug: string }) => ({
-    locale: "en",
-    slug: data?.slug?.toString(),
-  }));
-};
 const IntegrationDetails = async ({
   params,
 }: {
-  params: Promise<{ slug: string; locale: string }>;
+  params: PagePromise["params"];
 }) => {
   const { slug, locale } = await params;
-  const [integrationData, integrationList, appfeatures] =
-    await Promise.all([
-      getIntegrationDataBySlug(locale, slug),
-      getIntegrationList(locale),
-      getIntegrationDetails(locale),
-    ]);
+  const [integrationData, integrationList, appfeatures] = await Promise.all([
+    getIntegrationDataBySlug(locale, slug!),
+    getIntegrationList(locale),
+    getIntegrationDetails(locale),
+  ]);
   if (!integrationData) return notFound();
 
   return (

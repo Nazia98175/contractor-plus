@@ -544,3 +544,47 @@ export type BlogPageProps = {
   }[];
   locale: string;
 };
+
+export type EventDirectory = {
+  id: number;
+  documentId: string;
+  eventName: string;
+  description: string;
+  locale: string;
+  eventUrl: string;
+  eventBtn: string;
+  mustAttend: boolean;
+  isFeatured: boolean;
+  eventImages: { url: string }[];
+  speakers: {
+    id: number;
+    name: string;
+    image: { url: string };
+    jobTitle: string;
+  }[];
+  sponsors: {
+    id: number;
+    name: string;
+    url: string;
+    classname: string;
+  }[];
+  pricing: {
+    id: number;
+    title: string;
+    subTitle: string;
+    price: number;
+    currency: string;
+    seatCount: number;
+  }[];
+  logoImg: { id: number; url: string };
+  Faqs: {
+    id: number;
+    title: string;
+    subTitle: string;
+    faq: {
+      id: number;
+      question: string;
+      answer: string;
+    }[];
+  }[];
+};

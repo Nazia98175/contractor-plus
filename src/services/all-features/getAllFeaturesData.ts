@@ -1,5 +1,5 @@
-import { getAllFeaturesPage } from "./allFeatures";
 import { getCommonData } from "../common/commonData";
+import { getAllFeatures } from "./allFeatures";
 
 export interface AllFeaturesPageData {
   pageContent: any | null;
@@ -20,16 +20,13 @@ export const getAllFeaturesData = async (
     emailSignUpSectionRes,
     commonData,
   ] = await Promise.all([
-    getAllFeaturesPage(locale, "&populate=*"),
-    getAllFeaturesPage(
-      locale,
-      "&populate[hero][fields]=heroTitle,heroDescription",
-    ),
-    getAllFeaturesPage(
+    getAllFeatures(locale, "&populate=*"),
+    getAllFeatures(locale, "&populate[hero][fields]=heroTitle,heroDescription"),
+    getAllFeatures(
       locale,
       "&populate[featuresSection][populate][featuresArray][populate]=*",
     ),
-    getAllFeaturesPage(locale, "&populate[emailSignUpSection][populate]=*"),
+    getAllFeatures(locale, "&populate[emailSignUpSection][populate]=*"),
     getCommonData(locale),
   ]);
 

@@ -1,6 +1,7 @@
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
-import AccessibilityWidget from "@/components/common/AccessibilityWidget";
-import CookieBanner from "@/components/common/CookieBanner";
+import AccessibilityWidget from "@/components/scripts/AccessibilityWidget";
+import CookieBanner from "@/components/scripts/CookieBanner";
+import PushLapScript from "@/components/scripts/PushLapScript";
 import Head from "next/head";
 import { ReactNode } from "react";
 import "swiper/css";
@@ -13,11 +14,7 @@ import "./globals.css";
 import "./resources.css";
 import "./style.css";
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
@@ -33,6 +30,7 @@ export default function RootLayout({ children }: Props) {
       </Head>
       <body className="font-jakarta">
         {children}
+        <PushLapScript />
         <CookieBanner />
         <AccessibilityWidget lang="en" position="bottom-left" />
       </body>

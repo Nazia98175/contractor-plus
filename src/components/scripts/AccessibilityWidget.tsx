@@ -17,7 +17,6 @@ export default function AccessibilityWidget({
       strategy="afterInteractive"
       data-asw-lang={lang}
       data-asw-position={position}
-      onLoad={() => console.log("Accessibility widget loaded!")}
     />
   );
 }

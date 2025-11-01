@@ -488,3 +488,59 @@ export type LpPageType = {
     }[];
   };
 };
+
+export type SearchBlogsResponse = {
+  id: number;
+  blogUrl: string;
+  blogTitle: string;
+  shortDescription: string;
+  blogImg: { url: string }[];
+  documentId: string;
+};
+
+export type BlogsList = {
+  id: number;
+  latestBlogTitle: string;
+  nextBtnText: string;
+  locale: string;
+  nextBtnText: string;
+  popularTitle: string;
+  previousBtnText: string;
+  title: string;
+  relatedBlogsTitle: string;
+  viewAllBtn: string;
+  SeoMetaData: {
+    canonicalUrl: string | null;
+    id: number;
+    keywords: string;
+    metaDescription: string;
+    metaTitle: string;
+    ogImage: { id: number; url: string } | null;
+  };
+};
+
+export type Blog = {
+  id?: string | number;
+  documentId?: string;
+  blogUrl: string;
+  blogTitle?: string;
+  title?: string;
+  shortDescription?: string;
+  category?: string | Array<{ text?: string; name?: string } | string>;
+  tags?: Array<{ list?: string; id: number }>;
+  categoryListForFilter?: {
+    list?: Array<{ id?: string | number; text?: string }>;
+  };
+  [k: string]: any;
+};
+
+export type BlogPageProps = {
+  blogsData: Blog[];
+  blogsList: BlogsList;
+  industries: {
+    id: number;
+    slug: string;
+    name: string;
+  }[];
+  locale: string;
+};

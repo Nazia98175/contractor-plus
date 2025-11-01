@@ -4,7 +4,7 @@ import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHer
 import { getCommonData } from "@/services/common/commonData";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getAllEvents, getEventList } from "@/services/events/getEventData";
-import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({
@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   if (!page) notFound();
 
-  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: resolvedParams.slug });
 }
 
 const EventsDirectoryPage = async ({

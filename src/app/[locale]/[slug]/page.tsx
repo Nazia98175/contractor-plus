@@ -31,7 +31,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense, lazy } from "react";
 
-// Lazy load only the bottom section components
 const CrmService = lazy(
   () => import("@/components/crmbussiness/IndustryService"),
 );
@@ -41,7 +40,6 @@ const AssistantContractor = lazy(
 const Faq = lazy(() => import("@/components/crmbussiness/Faq"));
 const BlogPosts = lazy(() => import("@/components/crmbussiness/BlogPosts"));
 
-// Loading fallback component
 const LoadingFallback = () => (
   <div className="flex min-h-[200px] items-center justify-center">
     <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5c171a]" />

@@ -1,4 +1,5 @@
 "use client";
+import { Blog, BlogPageProps } from "@/types";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -17,31 +18,6 @@ const BlogHero = dynamic(() => import("./BlogHero"), {
     </div>
   ),
 });
-type Blog = {
-  id?: string | number;
-  documentId?: string;
-  blogUrl: string;
-  blogTitle?: string;
-  title?: string;
-  shortDescription?: string;
-  category?: string | Array<{ text?: string; name?: string } | string>;
-  tags?: Array<{ text?: string } | string>;
-  categoryListForFilter?: {
-    list?: Array<{ id?: string | number; text?: string }>;
-  };
-  [k: string]: any;
-};
-
-type BlogPageProps = {
-  blogsData: Blog[];
-  blogsList: any;
-  industries: {
-    id: number;
-    slug: string;
-    name: string;
-  }[];
-  locale: string;
-};
 
 const normalize = (s?: string) =>
   (s ?? "").toString().trim().toLowerCase().replace(/\s+/g, "-");

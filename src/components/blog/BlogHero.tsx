@@ -1,5 +1,6 @@
 "use client";
 import { searchBlogs } from "@/services/blog/getBlogData";
+import { BlogsList, SearchBlogsResponse } from "@/types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ConstructionIcon } from "lucide-react";
@@ -13,7 +14,7 @@ import CustomSelect from "./CustomSelect";
 gsap.registerPlugin(ScrollTrigger);
 
 type BlogHeroProps = {
-  blogsList: any;
+  blogsList: BlogsList;
   onSearchChange?: (value: string) => void;
   onTypeChange?: (value: string) => void;
   industries: {
@@ -23,6 +24,7 @@ type BlogHeroProps = {
   }[];
   locale: string;
 };
+
 
 const BlogHero = ({
   blogsList,
@@ -34,7 +36,7 @@ const BlogHero = ({
   const router = useRouter();
   const [selectedValue, setSelectedValue] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredBlogs, setFilteredBlogs] = useState<any[]>([]);
+  const [filteredBlogs, setFilteredBlogs] = useState<SearchBlogsResponse[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -173,7 +175,6 @@ const BlogHero = ({
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
       ) {
-        // Only clear results, keep the search term
         setFilteredBlogs([]);
         setHasSearched(false);
       }
@@ -242,31 +243,29 @@ const BlogHero = ({
                 </div>
               ) : filteredBlogs.length > 0 ? (
                 <>
-                  {filteredBlogs.map((blog: any) => (
+                  {filteredBlogs.map((blog) => (
                     <div
                       key={blog.id ?? blog.documentId ?? blog.blogUrl}
-                      className="flex cursor-pointer items-start px-3 py-2 hover:bg-gray-100"
-                      onClick={() => handleBlogClick(blog.blogUrl || blog.id)}
+                      className="flex cursor-pointer items-start px-3 py-3 hover:bg-gray-100"
+                      onClick={() => handleBlogClick(blog.blogUrl)}
                     >
-                      <div className="relative aspect-square w-[60px]">
+                      <div className="relative aspect-square w-[70px]">
                         <Image
                           src={
-                            blog?.blogImg?.[0]?.formats?.small?.url ??
-                            "/images/placeholder.png"
+                            blog?.blogImg?.[0]?.url ?? "/images/placeholder.png"
                           }
                           fill
                           alt="blog image"
+                          className="rounded-lg object-cover"
                           priority
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          fetchPriority="high"
                         />
                       </div>
                       <div className="ml-2 w-full">
-                        <h5 className="text-sm font-medium capitalize">
-                          {blog?.blogTitle ?? blog?.title ?? ""}
+                        <h5 className="line-clamp-1 text-sm font-medium capitalize">
+                          {blog?.blogTitle ?? ""}
                         </h5>
-                        <p className="mt-0.5 text-xs text-gray-500 capitalize">
-                          {blog?.blogShortDescription ?? ""}
+                        <p className="mt-0.5 line-clamp-2 text-xs text-gray-500 capitalize">
+                          {blog?.shortDescription ?? ""}
                         </p>
                       </div>
                     </div>

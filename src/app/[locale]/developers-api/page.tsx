@@ -17,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
-    `developer-api?locale=${resolvedParams.locale}&populate[seoData]populate]=*`,
+    `developer-api?locale=${resolvedParams.locale}&populate[seoData][populate]=*`,
   );
 
   if (!page) notFound();

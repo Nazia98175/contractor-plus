@@ -1,13 +1,9 @@
 "use client";
 import { formatDateWithOrdinal } from "@/lib/date";
-import { tagColors } from "@/utils/getVariants";
 import gsap from "gsap";
-import { useEffect, useState } from "react";
-const defaultColor = { bg: "bg-gray-500", text: "text-white" };
+import { useEffect } from "react";
 
 const BlogDetailHero = ({ blogData }: { blogData: any }) => {
-  const [showAllTags, setShowAllTags] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
@@ -25,6 +21,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
       });
     }, 700);
   }, []);
+
   return (
     <section className="relative h-full bg-[url('/images/webp/blog-hero-detail-bg.webp')] bg-cover bg-center pt-24 lg:pt-[119px] 2xl:pt-[150px]">
       <div className="absolute bottom-[-1%] z-0 h-[200px] w-full bg-white blur-[30px]"></div>
@@ -33,6 +30,7 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
           style={{
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            backgroundPosition: "center",
             backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${
               blogData?.blogImg
                 ? blogData?.blogImg[0]?.url
@@ -60,30 +58,6 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
                 : new Date(blogData?.publishedAt),
             )}
           </div>
-          {blogData?.tags && (
-            <div className="flex flex-wrap gap-2">
-              {blogData?.tags?.length > 0 &&
-                ((showAllTags ? blogData.tags : blogData.tags.slice(0, 5)) as { id: number; list: string }[]).map((tag) => {
-                  const colorSet = tagColors[tag.list] || defaultColor;
-                  return (
-                    <span
-                      key={tag.id}
-                      className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
-                    >
-                      {tag.list}
-                    </span>
-                  );
-                })}
-              {!showAllTags && blogData.tags.length > 5 && (
-                <button
-                  onClick={() => setShowAllTags(true)}
-                  className="rounded-2xl bg-gray-200 px-2 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-300 transition-colors"
-                >
-                  +{blogData.tags.length - 5} more
-                </button>
-              )}
-            </div>
-          )}
         </article>
       </div>
     </section>

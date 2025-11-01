@@ -1,4 +1,5 @@
 import axiosInstance from "@/lib/axios";
+import { Blog } from "@/types";
 
 export const getBlogsDetails = async (locale: string) => {
   try {
@@ -31,17 +32,44 @@ export const getBlogsList = async (locale: string) => {
   }
 };
 
-export const getAllBlogs = async (locale: string) => {
+export const getAllBlogs = async (
+  locale: string,
+  getAll: boolean = false,
+): Promise<Blog[] | []> => {
   try {
-    const response = await axiosInstance.get(
-      `blogs?locale=${locale}&sort=postedOn:desc&populate[blogImg][populate]=*&populate[tags][populate]=*`,
-    );
-    const { data } = response.data;
-    if (!data) {
-      return null;
+    if (!getAll) {
+      const response = await axiosInstance.get(
+        `blogs?locale=${locale}&sort=postedOn:desc&fields[0]=blogTitle&fields[1]=blogUrl&fields[2]=shortDescription&populate[blogImg][fields][0]=url&populate[tags]=*`,
+      );
+      return response.data.data || [];
     }
 
-    return data;
+    const firstPage = await axiosInstance.get(
+      `blogs?locale=${locale}&fields[0]=blogTitle&fields[1]=blogUrl&pagination[page]=1&pagination[pageSize]=100`,
+    );
+
+    const totalPages = firstPage.data.meta.pagination.pageCount;
+    let allBlogs = firstPage.data.data || [];
+
+    if (totalPages > 1) {
+      const pagePromises = [];
+      for (let page = 2; page <= totalPages; page++) {
+        pagePromises.push(
+          axiosInstance.get(
+            `blogs?locale=${locale}&fields[0]=blogTitle&fields[1]=blogUrl&pagination[page]=${page}&pagination[pageSize]=100`,
+          ),
+        );
+      }
+
+      const responses = await Promise.all(pagePromises);
+      responses.forEach((response) => {
+        if (response.data.data) {
+          allBlogs = [...allBlogs, ...response.data.data];
+        }
+      });
+    }
+
+    return allBlogs;
   } catch (error: any) {
     console.error("Error fetching common data:", error);
     throw new Error(error);
@@ -51,7 +79,7 @@ export const getAllBlogs = async (locale: string) => {
 export const getBlogDataBySlug = async (locale: string, blogUrl: string) => {
   try {
     const response = await axiosInstance.get(
-      `blogs?locale=${locale}&populate=*&filters[blogUrl][$eq]=${blogUrl}`,
+      `blogs?locale=${locale}&filters[blogUrl][$eq]=${blogUrl}&populate=*`,
     );
     const { data } = response.data;
     if (!data) {
@@ -67,7 +95,7 @@ export const getBlogDataBySlug = async (locale: string, blogUrl: string) => {
 export const searchBlogs = async (locale: string, query: string) => {
   try {
     const response = await axiosInstance.get(
-      `blogs?filters[blogTitle][$containsi]=${query}&locale=${locale}&populate=*`,
+      `blogs?filters[blogTitle][$containsi]=${query}&locale=${locale}&fields[0]=blogTitle&fields[1]=blogUrl&fields[2]=shortDescription&populate[blogImg][fields][0]=url`,
     );
     const { data } = response.data;
     if (!data) {

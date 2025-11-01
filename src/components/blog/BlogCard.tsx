@@ -1,26 +1,11 @@
+import { Blog } from "@/types";
 import { tagColors, variantsBlogCard } from "@/utils/getVariants";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CardArrowIcon } from "../common/MainIcon";
 
-type Tag = { list: string; id: number };
-
-interface Article {
-  id?: number | string;
-  title?: string;
-  blogTitle?: string;
-  shortDescription?: string;
-  publishedAt?: string;
-  date?: string;
-  postedOn?: string;
-  blogUrl?: string;
-  category?: string;
-  tags?: Tag[];
-  blogImg?: { url: string }[];
-}
-
 interface BlogCardProps {
-  article: Article;
+  article: Blog;
   variant?: "large" | "small";
   onClick?: () => void;
 }

@@ -103,19 +103,21 @@ export const getIndustryPageData = async (
 export const getAllIndustries = async (locale: string) => {
   try {
     const response = await axiosInstance.get(
-      `industries-pages?locale=${locale}&pagination[page]=1&pagination[pageSize]=100`,
+      `industries-pages?locale=${locale}&pagination[page]=1&pagination[pageSize]=100&fields[0]=slug&fields[1]=pageName`,
     );
     if (
       Array.isArray(response?.data?.data) &&
       response?.data?.data?.length > 0
     ) {
-      return response?.data?.data.map((item: any) => {
-        return {
-          id: item?.id,
-          slug: item?.slug,
-          name: item?.pageName,
-        };
-      });
+      return response?.data?.data.map(
+        (item: { id: number; slug: string; pageName: string }) => {
+          return {
+            id: item?.id,
+            slug: item?.slug,
+            name: item?.pageName,
+          };
+        },
+      );
     }
   } catch (error) {
     console.log(error);

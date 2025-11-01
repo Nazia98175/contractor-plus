@@ -6,13 +6,14 @@ import SwiperNavWithPagination from "../blog/SwiperNavWithPagination";
 import { CardArrowIcon } from "../common/MainIcon";
 import CloudsAnimation from "../common/CloudsAnimation";
 import Link from "next/link";
+import { Blog, BlogsList } from "@/types";
 
 const ContractorArticles = ({
   blogList,
   blogData,
 }: {
-  blogList: any;
-  blogData: any[];
+  blogList?: BlogsList;
+  blogData?: Blog[];
 }) => {
   return (
     <div className="relative bg-white">
@@ -81,7 +82,8 @@ const ContractorArticles = ({
             },
           }}
         >
-          {blogData.length > 0 &&
+          {blogData &&
+            blogData.length > 0 &&
             blogData.map((article) => (
               <SwiperSlide key={article.id}>
                 <BlogCard article={article} />

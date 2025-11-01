@@ -44,7 +44,7 @@ const nextConfig: import("next").NextConfig = {
     optimizePackageImports: ["lottie-react", "swiper"],
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV !== "development",
   },
   eslint: {
     ignoreDuringBuilds: true,

@@ -12,7 +12,7 @@ import {
 } from "@/services/blog/getBlogData";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getIntegrationDetails } from "@/services/integation/getIntegrationData";
-import { generateSeoMetadataEvent } from "@/utils/getSeoMeta";
+import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -24,22 +24,32 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
-  const resolvedParams = await params;
+  const { locale, slug } = await params;
   const page = await getSeoDataCommon(
-    `blogs?locale=${resolvedParams.locale}&filters[blogUrl][$eq]=${resolvedParams.slug}&populate[seoMetaData][populate]=*`,
+    `blogs?locale=${locale}&filters[blogUrl][$eq]=${slug}&populate[seoMetaData][populate]=*`,
   );
 
   if (!page) notFound();
 
-  return generateSeoMetadataEvent({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: `/blog/${slug}` });
 }
 
 export const generateStaticParams = async () => {
-  const blogs = await getAllBlogs("en");
-  return blogs.map((blog: { id: number; blogUrl: string }) => ({
-    locale: "en",
-    slug: blog.blogUrl.toString(),
-  }));
+  try {
+    const blogs = await getAllBlogs("en", true);
+
+    if (Array.isArray(blogs) && blogs.length > 0) {
+      return blogs.map((blog) => ({
+        locale: "en",
+        slug: blog.blogUrl.toString(),
+      }));
+    }
+
+    return [];
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
 };
 
 const BlogDetails = async ({
@@ -48,7 +58,7 @@ const BlogDetails = async ({
   params: Promise<{ locale: string; slug: string }>;
 }) => {
   const { locale, slug } = await params;
-  const [blogData, blogsList, allBlogs,appfeatures] = await Promise.all([
+  const [blogData, blogsList, allBlogs, appfeatures] = await Promise.all([
     getBlogDataBySlug(locale, slug),
     getBlogsDetails(locale),
     getAllBlogs(locale),
@@ -63,7 +73,11 @@ const BlogDetails = async ({
     <main>
       <div className="bg-white">
         <BlogDetailHero blogData={blogData} />
-        <BlogsContent blogData={blogData} appfeatures={appfeatures} blogsList={blogsList} />
+        <BlogsContent
+          blogData={blogData}
+          appfeatures={appfeatures}
+          blogsList={blogsList}
+        />
       </div>
       <div className="relative overflow-hidden">
         <IndustryService

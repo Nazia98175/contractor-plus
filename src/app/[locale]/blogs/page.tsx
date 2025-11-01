@@ -30,10 +30,7 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
     getBlogsList(locale),
     getAllIndustries(locale),
   ]);
-
-  console.log(blogsData, "blogsData");
-  console.log(blogsList, "blogsList");
-
+  
   return (
     <BlogPage
       blogsData={blogsData}

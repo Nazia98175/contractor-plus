@@ -7,7 +7,12 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title>Sitemap Index</title>
+        <title>
+          <xsl:choose>
+            <xsl:when test="sitemap:sitemapindex">Sitemap Index</xsl:when>
+            <xsl:otherwise>XML Sitemap</xsl:otherwise>
+          </xsl:choose>
+        </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
           body {
@@ -19,7 +24,7 @@
             background: #f5f7fa;
           }
           .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc1112 0%, #76090a 100%);
             color: white;
             padding: 30px 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -56,7 +61,7 @@
             font-size: 24px;
           }
           .stats-text {
-            color: #667eea;
+            color: #dc1112;
             font-weight: 600;
             font-size: 16px;
           }
@@ -68,6 +73,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             max-width: 1400px;
           }
+          
+          /* For Sitemap Index (Cards) */
           .sitemap-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -83,11 +90,11 @@
           }
           .sitemap-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
-            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(220, 17, 18, 0.15);
+            border-color: #dc1112;
           }
           .sitemap-card a {
-            color: #667eea;
+            color: #dc1112;
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
@@ -96,7 +103,7 @@
             word-break: break-all;
           }
           .sitemap-card a:hover {
-            color: #764ba2;
+            color: #76090a;
           }
           .sitemap-meta {
             color: #6b7280;
@@ -105,6 +112,63 @@
             align-items: center;
             gap: 5px;
           }
+          
+          /* For URL List (Table) */
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+          th {
+            background: #dc1112;
+            color: white;
+            text-align: left;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+          tr {
+            border-bottom: 1px solid #e5e7eb;
+          }
+          tbody tr:hover {
+            background: #f9fafb;
+          }
+          td {
+            padding: 14px;
+            vertical-align: middle;
+          }
+          table a {
+            color: #dc1112;
+            text-decoration: none;
+            word-break: break-word;
+          }
+          table a:hover {
+            text-decoration: underline;
+            color: #76090a;
+          }
+          .url-cell {
+            max-width: 600px;
+            font-size: 13px;
+          }
+          .priority {
+            text-align: center;
+            font-weight: 600;
+            color: #059669;
+          }
+          .changefreq {
+            text-align: center;
+            text-transform: capitalize;
+            color: #7c3aed;
+            font-weight: 500;
+          }
+          .lastmod {
+            white-space: nowrap;
+            color: #6b7280;
+            font-size: 12px;
+            text-align: center;
+          }
+          
           .footer {
             text-align: center;
             padding: 20px;
@@ -116,9 +180,21 @@
       <body>
         <div class="header">
           <div class="container">
-            <h1>📑 Sitemap Index</h1>
+            <h1>
+              <xsl:choose>
+                <xsl:when test="sitemap:sitemapindex">📑 Sitemap Index</xsl:when>
+                <xsl:otherwise>🗺️ XML Sitemap</xsl:otherwise>
+              </xsl:choose>
+            </h1>
             <p class="intro">
-              This is the main sitemap index containing links to all sub-sitemaps for this website.
+              <xsl:choose>
+                <xsl:when test="sitemap:sitemapindex">
+                  This is the main sitemap index containing links to all sub-sitemaps for this website.
+                </xsl:when>
+                <xsl:otherwise>
+                  This sitemap contains all URLs for this website and is optimized for search engines.
+                </xsl:otherwise>
+              </xsl:choose>
             </p>
           </div>
         </div>
@@ -128,30 +204,82 @@
             <div class="stats-inner">
               <span class="stats-icon">📊</span>
               <span class="stats-text">
-                Total Sitemaps: <xsl:value-of select="count(sitemap:sitemapindex/sitemap:sitemap)"/>
+                <xsl:choose>
+                  <xsl:when test="sitemap:sitemapindex">
+                    Total Sitemaps: <xsl:value-of select="count(sitemap:sitemapindex/sitemap:sitemap)"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    Total URLs: <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/>
+                  </xsl:otherwise>
+                </xsl:choose>
               </span>
             </div>
           </div>
           
           <div class="content">
-            <div class="sitemap-list">
-              <xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap">
-                <div class="sitemap-card">
-                  <a href="{sitemap:loc}">
-                    <xsl:value-of select="sitemap:loc"/>
-                  </a>
-                  <div class="sitemap-meta">
-                    <span>📅</span>
-                    <span>Last updated: <xsl:value-of select="substring(sitemap:lastmod, 1, 10)"/></span>
+            <!-- Sitemap Index Layout (Cards) -->
+            <xsl:if test="sitemap:sitemapindex">
+              <div class="sitemap-list">
+                <xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap">
+                  <div class="sitemap-card">
+                    <a href="{sitemap:loc}">
+                      <xsl:value-of select="sitemap:loc"/>
+                    </a>
+                    <div class="sitemap-meta">
+                      <span>📅</span>
+                      <span>Last updated: <xsl:value-of select="substring(sitemap:lastmod, 1, 10)"/></span>
+                    </div>
                   </div>
-                </div>
-              </xsl:for-each>
-            </div>
+                </xsl:for-each>
+              </div>
+            </xsl:if>
+            
+            <!-- URL Set Layout (Table) -->
+            <xsl:if test="sitemap:urlset">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 60%;">URL</th>
+                    <th style="width: 10%;">Priority</th>
+                    <th style="width: 15%;">Change Frequency</th>
+                    <th style="width: 15%;">Last Modified</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:for-each select="sitemap:urlset/sitemap:url">
+                    <tr>
+                      <td class="url-cell">
+                        <a href="{sitemap:loc}">
+                          <xsl:value-of select="sitemap:loc"/>
+                        </a>
+                      </td>
+                      <td class="priority">
+                        <xsl:value-of select="sitemap:priority"/>
+                      </td>
+                      <td class="changefreq">
+                        <xsl:value-of select="sitemap:changefreq"/>
+                      </td>
+                      <td class="lastmod">
+                        <xsl:value-of select="substring(sitemap:lastmod, 1, 10)"/>
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </tbody>
+              </table>
+            </xsl:if>
           </div>
         </div>
         
         <div class="footer">
-          Generated by Contractor+ | Last updated: <xsl:value-of select="substring(sitemap:sitemapindex/sitemap:sitemap[1]/sitemap:lastmod, 1, 10)"/>
+          Generated by Contractor+ | Last updated: 
+          <xsl:choose>
+            <xsl:when test="sitemap:sitemapindex">
+              <xsl:value-of select="substring(sitemap:sitemapindex/sitemap:sitemap[1]/sitemap:lastmod, 1, 10)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring(sitemap:urlset/sitemap:url[1]/sitemap:lastmod, 1, 10)"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </div>
       </body>
     </html>

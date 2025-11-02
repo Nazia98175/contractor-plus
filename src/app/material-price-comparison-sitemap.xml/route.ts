@@ -19,7 +19,8 @@ const getMaterialPriceComparisons = async () => {
 export async function GET() {
   console.log("========== MATERIAL PRICE COMPARISON SITEMAP ==========");
 
-  const baseUrl = "https://v2site.contractorplus.app";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';

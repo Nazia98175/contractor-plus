@@ -6,12 +6,13 @@ import { NextResponse } from "next/server";
 export async function GET() {
   console.log("========== CONTRACT TEMPLATES SITEMAP ==========");
 
-  const baseUrl = "https://v2site.contractorplus.app";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
   const now = new Date().toISOString();
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Contract template pages
   const contractTemplates = [
@@ -26,7 +27,7 @@ export async function GET() {
   ];
 
   contractTemplates.forEach((template) => {
-    xml += "  <url>\n";
+    xml += "  <url>\n"; // ✅ Now matches urlset
     xml += `    <loc>${baseUrl}/resources/contract-templates/${template}</loc>\n`;
     xml += `    <lastmod>${now}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
@@ -38,7 +39,7 @@ export async function GET() {
     `✅ Contract templates sitemap generated with ${contractTemplates.length} URLs`,
   );
 
-  xml += "</urlset>";
+  xml += "</urlset>"; // ✅ Now matches opening tag
 
   return new NextResponse(xml, {
     headers: {

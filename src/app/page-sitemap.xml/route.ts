@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
   console.log("========== MAIN SITEMAP INDEX ==========");
 
-  const baseUrl = "https://v2site.contractorplus.app";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
   const now = new Date().toISOString();
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';

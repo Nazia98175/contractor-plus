@@ -10,7 +10,8 @@ export async function GET() {
   const now = new Date().toISOString();
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
+  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Main resource category pages
   const resourcePages = [

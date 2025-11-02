@@ -10,53 +10,33 @@ export async function GET() {
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
   xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  // Contract Templates Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/contract-templates-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+  // Define sitemaps with titles (optional, for better display)
+  const sitemaps = [
+    { url: "/contract-templates-sitemap.xml", name: "Contract Templates" },
+    { url: "/cost-calculator-sitemap.xml", name: "Cost Calculators" },
+    {
+      url: "/project-planning-tools-sitemap.xml",
+      name: "Project Planning Tools",
+    },
+    { url: "/construction-costs-sitemap.xml", name: "Construction Costs" },
+    {
+      url: "/free-estimate-templates-sitemap.xml",
+      name: "Free Estimate Templates",
+    },
+    {
+      url: "/material-price-comparison-sitemap.xml",
+      name: "Material Price Comparison",
+    },
+    { url: "/usa-labour-rate-sitemap.xml", name: "USA Labour Rates" },
+    { url: "/resources-misc-sitemap.xml", name: "Resource Pages" },
+  ];
 
-  // Cost Calculator Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/cost-calculator-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // Project Planning Tools Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/project-planning-tools-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // Construction Costs Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/construction-costs-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // Free Estimate Templates Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/free-estimate-templates-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // Material Price Comparison Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/material-price-comparison-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // USA Labour Rate Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/usa-labour-rate-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // Resources Miscellaneous Pages
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/resources-misc-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+  sitemaps.forEach(({ url }) => {
+    xml += "  <sitemap>\n";
+    xml += `    <loc>${baseUrl}${url}</loc>\n`;
+    xml += `    <lastmod>${now}</lastmod>\n`;
+    xml += "  </sitemap>\n";
+  });
 
   xml += "</sitemapindex>";
 

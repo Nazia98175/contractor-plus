@@ -2,19 +2,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 import { NextResponse } from "next/server";
-import axiosInstance from "@/lib/axios";
-
-const getAllFeatures = async (locale: string) => {
-  try {
-    const response = await axiosInstance.get(
-      `features-pages?locale=${locale}&pagination[page]=1&pagination[pageSize]=100`,
-    );
-    return response?.data?.data || [];
-  } catch (error) {
-    console.error("Error fetching features:", error);
-    return [];
-  }
-};
+import { getAllFeaturesPages } from "@/services/all-features/allFeatures";
 
 export async function GET() {
   console.log("========== FEATURE SITEMAP ==========");
@@ -24,26 +12,33 @@ export async function GET() {
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   try {
-    const features = await getAllFeatures(locale);
-    console.log(`Found ${features.length} features`);
+    // ✅ Reuse the same function from your page
+    const features = await getAllFeaturesPages(
+      locale,
+      "&fields[0]=pageName&fields[1]=slug&pagination[pageSize]=100",
+    );
 
-    features.forEach((feature: any) => {
-      if (feature?.slug) {
-        xml += "  <url>\n";
-        xml += `    <loc>${baseUrl}/all-features/${feature.slug}</loc>\n`;
-        xml += `    <lastmod>${feature.updatedAt || new Date().toISOString()}</lastmod>\n`;
-        xml += `    <changefreq>weekly</changefreq>\n`;
-        xml += `    <priority>0.7</priority>\n`;
-        xml += "  </url>\n";
-      }
-    });
+    console.log(`📦 Found ${features?.length || 0} features`);
 
-    console.log(`✅ Feature sitemap generated with ${features.length} URLs`);
+    if (features && Array.isArray(features)) {
+      features.forEach((feature: any) => {
+        if (feature?.slug) {
+          xml += "  <url>\n";
+          xml += `    <loc>${baseUrl}/all-features/${feature.slug}</loc>\n`;
+          xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
+          xml += `    <changefreq>weekly</changefreq>\n`;
+          xml += `    <priority>0.7</priority>\n`;
+          xml += "  </url>\n";
+        }
+      });
+
+      console.log(`✅ Feature sitemap generated with ${features.length} URLs`);
+    }
   } catch (error) {
-    console.error("Error generating feature sitemap:", error);
+    console.error("❌ Error generating feature sitemap:", error);
   }
 
   xml += "</urlset>";

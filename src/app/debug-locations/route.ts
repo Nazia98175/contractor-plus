@@ -1,5 +1,4 @@
 export const dynamic = "force-dynamic";
-// Remove the revalidate line completely for dynamic routes
 
 import { NextResponse } from "next/server";
 import { LOCATIONS } from "@/data/locationsData";
@@ -15,77 +14,61 @@ export async function GET(
   request: Request,
   context: { params: Promise<{ location: string }> },
 ) {
-  console.log("🔍 ========== CONSTRUCTION COSTS SITEMAP ==========");
+  console.log("\n\n🔍 ========== STEP 1: ROUTE CALLED ==========");
 
   try {
+    // Step 1: Check params
     const { location: locationParam } = await context.params;
-    console.log("📍 Requested location:", locationParam);
+    console.log("✅ STEP 1 PASSED - Location param:", locationParam);
 
-    const baseUrl =
-      process.env.NEXT_PUBLIC_SITE_URL || "https://v2site.contractorplus.app";
-
-    console.log(baseUrl, "baseUrl");
-
-    // Find the location from LOCATIONS array
+    // Step 2: Check if location exists in LOCATIONS array
+    console.log("\n🔍 ========== STEP 2: CHECKING LOCATIONS ==========");
     const location = LOCATIONS.find((loc) => loc.value === locationParam);
 
-    console.log(location, "location");
-
     if (!location) {
-      console.log("❌ Location not found:", locationParam);
-      return new NextResponse(`Location '${locationParam}' not found`, {
-        status: 404,
-      });
+      console.log("❌ STEP 2 FAILED - Location not found");
+      console.log(
+        "Available locations:",
+        LOCATIONS.slice(0, 5).map((l) => l.value),
+      );
+      return NextResponse.json(
+        { error: "Location not found" },
+        { status: 404 },
+      );
     }
 
-    console.log("✅ Location found:", location.label);
+    console.log("✅ STEP 2 PASSED - Location found:", location.label);
 
-    let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-
-    // Fetch projects from API
-    console.log("📦 Fetching projects from API...");
+    // Step 3: Test API
+    console.log("\n🔍 ========== STEP 3: TESTING API ==========");
     const response = await axios.get<Project[]>(
       "https://reshubapi.contractorplus.app/labor-index/projects",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        timeout: 10000, // 10 second timeout
-      },
+      { timeout: 10000 },
     );
 
-    const projects = response.data;
-    console.log(`✅ Fetched ${projects.length} projects`);
+    console.log("✅ STEP 3 PASSED - API Response:");
+    console.log("  - Status:", response.status);
+    console.log("  - Total projects:", response.data.length);
+    console.log("  - First 3 projects:", response.data.slice(0, 3));
 
-    let urlCount = 0;
-    projects.forEach((project) => {
-      if (project.slug) {
-        xml += "  <url>\n";
-        xml += `    <loc>${baseUrl}/resources/construction-costs/${project.slug}/${location.value}</loc>\n`;
-        xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
-        xml += `    <changefreq>monthly</changefreq>\n`;
-        xml += `    <priority>0.7</priority>\n`;
-        xml += "  </url>\n";
-        urlCount++;
-      }
-    });
-
-    xml += "</urlset>";
-
-    console.log(`✅ Generated sitemap for ${location.label}: ${urlCount} URLs`);
-
-    return new NextResponse(xml, {
-      headers: {
-        "Content-Type": "application/xml; charset=utf-8",
-        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate",
-      },
+    // Step 4: Return success JSON (not XML yet)
+    return NextResponse.json({
+      success: true,
+      location: location.label,
+      locationValue: location.value,
+      projectCount: response.data.length,
+      sampleProjects: response.data.slice(0, 5),
+      message: "All steps passed! Ready to generate XML.",
     });
   } catch (error) {
-    console.error("❌ Error generating sitemap:", error);
-    return new NextResponse(
-      `Error generating sitemap: ${error instanceof Error ? error.message : String(error)}`,
+    console.error("\n❌ ERROR OCCURRED:");
+    console.error(error);
+
+    return NextResponse.json(
+      {
+        error: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+      },
       { status: 500 },
     );
   }

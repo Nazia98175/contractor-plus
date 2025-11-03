@@ -1,14 +1,12 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import HeaderLiItems from "./HeaderLiItems";
 import { HamburgerIcon, LogoIcon } from "./Icons";
 import SideBar from "./SideBar";
-import { usePathname } from "next/navigation";
-import LanguageSelector from "./LanguageSelector";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export interface HeaderProps {
   header?: any;
@@ -115,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
             </div>
             <div className="3xl:gap-3 flex w-fit items-center gap-4">
               <div className="flex items-center gap-1 xl:gap-3">
-                <LanguageSelector />
+                {/* <LanguageSelector /> */}
                 <Link
                   className="font-inter text-doctor2 hover:text-romanRed text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300"
                   href={"tel:(855) 392-8803"}

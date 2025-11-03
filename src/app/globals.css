@@ -2214,3 +2214,48 @@ body.menu-open .back-to-top {
   filter: invert(80%);
   transition: filter 0.3s;
 }
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.custom-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e60000; /* red border */
+  border-radius: 8px; /* rounded square corners */
+  background-color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Checked state */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #e60000; /* red background */
+  border-color: #e60000;
+}
+
+/* Checkmark icon using pseudo-element */
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}

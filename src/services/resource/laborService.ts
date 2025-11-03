@@ -1,6 +1,6 @@
 // src/services/laborService.ts
 
-const LABOR_API_BASE_URL = "https://reshubapi.contractorplus.app/labor-index";
+const LABOR_API_BASE_URL = `${(process.env.RES_HUB_API_BASE_URL as string) ?? process.env.NEXT_PUBLIC_RES_HUB_API_BASE_URL}/labor-index`;
 
 interface LaborSearchParams {
   industry: string;

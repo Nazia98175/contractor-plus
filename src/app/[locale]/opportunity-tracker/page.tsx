@@ -30,7 +30,7 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "opportunity-tracker&populate[seoMetaData][populate]=*",
+    "opportunity-tracker",
   );
 
   if (!page) notFound();

@@ -35,7 +35,7 @@ export const getSeoData = async (
   locale: string,
   slug?: string,
 ): Promise<SeoDataItem | null> => {
-  const queryString = "&populate[seoMetaData][populate]=*&populate[hero]=true";
+  const queryString = "&populate[seoMetaData][populate]=*";
   const url =
     collectionType === "homepage"
       ? `${collectionType}?locale=${locale}${queryString}`

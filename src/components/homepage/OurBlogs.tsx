@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
+import { Mousewheel, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../common/Button";
+import Copy from "../common/Copy";
 import { BlogBtnIcon } from "../common/Icons";
 import OurBlogCard from "./OurBlogCard";
-import Copy from "../common/Copy";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination } from "swiper/modules";
 
 interface Blogs {
   blogTitle: string;
@@ -24,7 +24,7 @@ interface TheBlogProps {
   blogHeading: BlogHeading;
 }
 
-const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
+const OurBlogs: React.FC<TheBlogProps> = ({ blogHeading }) => {
   const blogListMobile = [
     {
       id: 1,
@@ -63,7 +63,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogs, blogHeading }) => {
       imageSrc: "/images/webp/blog-image-1.webp",
       imageWidth: "305px",
       backgroundImage: "/images/svg/blog-1.svg",
-      blogUrl: "/contractor-hq",
+      blogUrl: "/blogs",
     },
   ];
 

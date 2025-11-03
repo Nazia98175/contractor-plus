@@ -1,9 +1,10 @@
 import React from "react";
 import FreeTrialButton from "../common/FreeTrialButton";
 import Link from "next/link";
-import { SlackIcon } from "../common/Icons";
+import { SideIcon, SlackIcon } from "../common/Icons";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import FreeAccountButton from "../common/FreeAccountButton";
+import PrimaryLink from "../common/PrimaryLInk";
 
 interface PublicEndPointsProps {
   title?: string;
@@ -13,6 +14,7 @@ interface PublicEndPointsProps {
   slackLinkText?: string;
   slackLinkHref?: string;
   slack?: boolean;
+  buttonLink?: string;
 }
 
 const PublicEndPoints: React.FC<PublicEndPointsProps> = ({
@@ -23,6 +25,7 @@ const PublicEndPoints: React.FC<PublicEndPointsProps> = ({
   slackLinkText,
   slackLinkHref,
   slack = true,
+  buttonLink,
 }) => {
   return (
     <section className="mx-auto mt-[95px] mb-[59px] w-full max-w-[898px] px-2 lg:px-0">
@@ -43,12 +46,16 @@ const PublicEndPoints: React.FC<PublicEndPointsProps> = ({
 
       <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
         {freeTrialButtonText && (
-          <FreeAccountButton
-            showIcon={true}
-            text={freeTrialButtonText}
-            className="flex"
-            ariaLabel="View API Reference"
-          />
+          <PrimaryLink href={buttonLink ?? "#"} className="flex max-w-[250px]">
+            {freeTrialButtonText}
+            <SideIcon />
+          </PrimaryLink>
+          // <FreeAccountButton
+          //   showIcon={true}
+          //   text={freeTrialButtonText}
+          //   className="flex"
+          //   ariaLabel="View API Reference"
+          // />
         )}
 
         {slack && (slackButtonText || slackLinkText) && (

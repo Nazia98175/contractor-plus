@@ -76,7 +76,6 @@ const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
     };
   }, [scrolled]);
 
-  const { loading, handleRedirect } = useOneLinkRedirect();
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     router.push("/");
@@ -154,19 +153,23 @@ const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
                 </div>
               ) : (
                 <>
-                  <button
+                  <Link
+                    href={"https://my.contractorplus.app"}
+                    target="_blank"
                     aria-label="contractorplus login button"
                     className="font-myriad hover:text-romanRed hidden cursor-pointer px-2 py-[6px] text-xs leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 lg:flex xl:text-sm"
                   >
                     {header?.loginText}
-                  </button>
-                  <button
-                    onClick={() => handleRedirect({ pathname })}
-                    disabled={loading}
+                  </Link>
+                  <Link
+                    href={
+                      "https://calendly.com/contractor-plus-onboarding/live-demo"
+                    }
+                    target="_blank"
                     className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
                   >
                     {header?.btnText?.btnText}
-                  </button>
+                  </Link>
                 </>
               )}
               <button
@@ -193,13 +196,13 @@ const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
             >
               <LogoIcon />
             </button>
-            <button
-              onClick={() => handleRedirect({ pathname })}
-              disabled={loading}
+            <Link
+              href={"https://calendly.com/contractor-plus-onboarding/live-demo"}
+              target="_blank"
               className="font-myriad bg-romanRed hidden cursor-pointer rounded px-3 py-[6px] text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap text-white duration-300 hover:scale-95 lg:flex"
             >
               Get started FREE
-            </button>
+            </Link>
           </div>
         )}
       </div>

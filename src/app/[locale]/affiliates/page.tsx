@@ -123,6 +123,7 @@ export default async function AffiliatesPage({ params }: AffiliatesPageProps) {
             freeTrialButtonText={applyJoin?.btnText || "Apply to join"}
             slackLinkHref={applyJoin?.btnUrl || applyJoin?.btnUrl}
             slack={false}
+            buttonLink="https://contractorplus.pushlapgrowth.com/register"
           />
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>

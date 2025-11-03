@@ -119,7 +119,7 @@ const page = () => {
       metaTitle: "Estimatic AI Estimating Software | Contractor+",
       metaDescription:
         "Create accurate estimates in minutes with Estimatic AI. Generate proposals that win jobs with powerful automation.",
-      canonicalUrl: "https://v2site.contractorplus.app/ai-estimating-software",
+      canonicalUrl: `${process.env.NEXT_PUBLIC_DOMAIN}/ai-estimating-software`,
       keywords: "ai estimating software",
     },
   };

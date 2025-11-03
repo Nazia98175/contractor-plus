@@ -20,7 +20,7 @@ export async function generateMetadata({
       const description =
         metaDescription ?? "Calculate construction costs for your projects";
 
-      const url = `https://v2site.contractorplus.app/resources/${projectSlug}/${location}`;
+      const url = `${process.env.NEXT_PUBLIC_DOMAIN}/resources/${projectSlug}/${location}`;
 
       return {
         title,

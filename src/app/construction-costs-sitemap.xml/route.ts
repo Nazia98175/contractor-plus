@@ -1,8 +1,36 @@
+// src/app/construction-costs-sitemap.xml/route.ts
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 import { NextResponse } from "next/server";
-import { LOCATIONS } from "@/data/locationsData";
+
+// Categories from your UI
+const CATEGORIES = [
+  { id: "appliances", name: "Appliances" },
+  { id: "audio_video", name: "Audio / Video" },
+  { id: "bathroom_remodeling", name: "Bathroom Remodeling" },
+  { id: "concrete_masonry", name: "Concrete / Masonry" },
+  { id: "decks", name: "Decks" },
+  { id: "doors", name: "Doors" },
+  { id: "drywall", name: "Drywall" },
+  { id: "electrical", name: "Electrical" },
+  { id: "fences", name: "Fences" },
+  { id: "flooring", name: "Flooring" },
+  { id: "framing_carpentry", name: "Framing/Carpentry" },
+  { id: "general_contractor", name: "General Contractor" },
+  { id: "hvac", name: "HVAC" },
+  { id: "handyman", name: "Handyman" },
+  { id: "kitchen_remodeling", name: "Kitchen Remodeling" },
+  { id: "landscaping_lawn_care", name: "Landscaping / Lawn Care" },
+  { id: "mold_remediation", name: "Mold Remediation" },
+  { id: "painting", name: "Painting" },
+  { id: "plumbing", name: "Plumbing" },
+  { id: "restoration", name: "Restoration" },
+  { id: "roofing", name: "Roofing" },
+  { id: "siding", name: "Siding" },
+  { id: "smart_home", name: "Smart Home" },
+  { id: "windows", name: "Windows" },
+];
 
 export async function GET() {
   const baseUrl =
@@ -18,10 +46,10 @@ export async function GET() {
   xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
   xml += "  </sitemap>\n";
 
-  // One sitemap per location (181 sitemaps)
-  LOCATIONS.forEach((location) => {
+  // One sitemap per category
+  CATEGORIES.forEach((category) => {
     xml += "  <sitemap>\n";
-    xml += `    <loc>${baseUrl}/construction-costs-${location.value}-sitemap.xml</loc>\n`;
+    xml += `    <loc>${baseUrl}/construction-costs-${category.id}-sitemap.xml</loc>\n`;
     xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
     xml += "  </sitemap>\n";
   });
@@ -29,7 +57,7 @@ export async function GET() {
   xml += "</sitemapindex>";
 
   console.log(
-    `✅ Construction costs sitemap index generated with ${LOCATIONS.length + 1} sitemaps`,
+    `✅ Construction costs sitemap index generated with ${CATEGORIES.length + 1} category sitemaps`,
   );
 
   return new NextResponse(xml, {

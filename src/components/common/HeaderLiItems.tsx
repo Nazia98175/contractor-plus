@@ -24,7 +24,7 @@ const HeaderLiItems: React.FC<Props> = ({ headerList, setIsShow }) => {
       {
         id: "whycontractordesktop",
         label: "whycontractordesktop",
-        link: "/why-contractor",
+        link: "/why-contractor-plus",
       },
       { id: "features", label: "features" },
       { id: "industries", label: "industries" },

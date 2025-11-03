@@ -1,3 +1,4 @@
+import { redirectsRoutes } from "@/lib/routes";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
@@ -57,6 +58,9 @@ const nextConfig: import("next").NextConfig = {
       config.optimization.minimize = true;
     }
     return config;
+  },
+  async redirects() {
+    return redirectsRoutes;
   },
 };
 

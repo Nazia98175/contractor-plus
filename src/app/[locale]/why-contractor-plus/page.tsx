@@ -1,30 +1,26 @@
 import WhyContractorMain from "@/components/whycontractor/WhyContractorMain";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
 import { getWhyContractorData } from "@/services/whyContractor/getWhyContractorData";
+import { PagePromise } from "@/types";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-interface WhyContractorPageProps {
-  params: Promise<{ locale: string; slug?: string }>;
-}
 
 export async function generateMetadata({
   params,
-}: WhyContractorPageProps): Promise<Metadata | undefined> {
-  const resolvedParams = await params;
+}: PagePromise): Promise<Metadata | undefined> {
+  const { locale } = await params;
 
   const page = await getSeoDataCommon(
-    `why-contractor?locale=${resolvedParams.locale}&populate[seoMetaData][populate]=*`,
+    `why-contractor?locale=${locale}&populate[seoMetaData][populate]=*`,
   );
 
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: "affiliates" });
+  return generateSeoMetaData({ page, slug: "/why-contractor-plus" });
 }
-export default async function WhyContractorPage({
-  params,
-}: WhyContractorPageProps) {
-  const useParams = await params;
+export default async function WhyContractorPage({ params }: PagePromise) {
+  const { locale } = await params;
 
   const {
     commonData,
@@ -35,7 +31,7 @@ export default async function WhyContractorPage({
     connectedSystem,
     featuresPlatform,
     emailSign,
-  } = await getWhyContractorData(useParams?.locale);
+  } = await getWhyContractorData(locale);
 
   const data = {
     commonData,

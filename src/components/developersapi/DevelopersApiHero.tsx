@@ -61,17 +61,19 @@ const DevelopersApiHero: React.FC<DevelopersApiHeroProps> = ({ mainItems }) => {
         <CardReveal distance={50} delay={0.5}>
           <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
             <FreeTrialButton showIcon={true} text={"View API Reference"} />
-            <div>
+            <Link
+              href={
+                "https://contractorapisupport.slack.com/join/shared_invite/zt-3hc04uiiq-w4KYFmUX1NMm9CTgyb1XYg#/shared-invite/email"
+              }
+              target="_blank"
+            >
               <button className="font-montserrat flex items-center gap-1.5 px-6 py-2.5 text-base font-bold tracking-[0.1px] text-white">
                 <SlackIcon /> Join us on Slack
               </button>
-              <Link
-                className="font-myriad text-gray pl-10 text-base font-semibold"
-                href={"/"}
-              >
+              <span className="font-myriad text-gray pl-10 text-base font-semibold">
                 Need help integrating?
-              </Link>
-            </div>
+              </span>
+            </Link>
           </div>
         </CardReveal>
       </div>

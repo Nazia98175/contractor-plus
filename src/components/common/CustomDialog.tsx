@@ -69,7 +69,7 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
         {/* Close Button */}
         <button
           onClick={() => onOpenChange(false)}
-          className="absolute top-[10px] right-[10px] w-fit cursor-pointer rounded-full p-2"
+          className="absolute top-[2px] right-[2px] w-fit cursor-pointer rounded-full p-2 sm:top-[10px] sm:right-[10px]"
         >
           <ModalCrossIcon />
         </button>

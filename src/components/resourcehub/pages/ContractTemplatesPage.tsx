@@ -22,7 +22,7 @@ import { Input } from "../components/ui/input";
 
 const contractTemplates = [
   {
-    id: "general-construction-contract",
+    id: "general-construction-contract-template",
     title: "General Construction Contract",
     description:
       "Comprehensive contract for general construction projects including new builds, remodels, and additions with detailed scope, payment terms, and timeline provisions.",
@@ -38,7 +38,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "standard-construction-agreement",
+    id: "standard-construction-agreement-template",
     title: "Standard Construction Agreement (Fixed Price / Lump Sum)",
     description:
       "A comprehensive fixed-price contract for construction projects with clear scope, payment terms, and completion timelines.",
@@ -52,7 +52,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "time-and-materials-contract",
+    id: "time-and-materials-contract-template",
     title: "Time and Materials Contract",
     description:
       "Flexible contract structure for projects where scope may vary, billing based on actual time and materials used.",
@@ -66,7 +66,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "cost-plus-contract",
+    id: "cost-plus-contract-template",
     title: "Cost Plus Contract",
     description:
       "Contract where client pays actual costs plus a predetermined fee or percentage for contractor services with complete transparency.",
@@ -81,7 +81,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "subcontractor-agreement",
+    id: "subcontractor-agreement-template",
     title: "Subcontractor Agreement",
     description:
       "Specialized contract for hiring subcontractors, defining scope, payment, and compliance requirements.",
@@ -95,7 +95,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "maintenance-service-contract",
+    id: "maintenance-service-contract-template",
     title: "Maintenance & Service Contract",
     description:
       "Ongoing service agreement for regular maintenance, repairs, and emergency response services.",
@@ -109,7 +109,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "punch-list-completion-agreement",
+    id: "punch-list-completion-agreement-template",
     title: "Punch List Completion Agreement",
     description:
       "Project closeout contract for completing remaining punch list items, final inspections, and retainage release.",
@@ -125,7 +125,7 @@ const contractTemplates = [
     ],
   },
   {
-    id: "warranty-agreement",
+    id: "warranty-agreement-template",
     title: "Warranty Agreement",
     description:
       "Comprehensive warranty contract covering workmanship and materials with customizable warranty periods, exclusions, and maintenance requirements.",

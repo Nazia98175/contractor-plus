@@ -65,7 +65,7 @@ const planningTools = [
     ],
   },
   {
-    id: "construction-cash-flow-forecaster",
+    id: "construction-cash-flow-forecaster-calculator",
     title: "Construction Cash Flow Forecaster",
     description:
       "Plan and visualize construction project cash flow. Track payments versus expenses by phase, identify cash gaps, and create professional payment schedules.",

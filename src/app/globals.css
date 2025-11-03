@@ -1153,7 +1153,7 @@ line {
 }
 
 .card-shine-2 {
-  @apply bg-charcoalBlue relative overflow-hidden;
+  @apply relative overflow-hidden bg-[#1A1C25];
 }
 .card-shine-2::before {
   content: "";
@@ -1961,6 +1961,7 @@ button {
 .video-section-wrapper svg path {
   fill: #cdcdcd;
   stroke: #cdcdcd;
+
   transition: all 0.3s ease-in-out;
 }
 .video-section-wrapper.scroll-active svg path {

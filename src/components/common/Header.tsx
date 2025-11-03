@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({ header, profileData }) => {
             </div>
             <div className="3xl:gap-3 flex w-fit items-center gap-4">
               <div className="flex items-center gap-1 xl:gap-3">
-                <LanguageSelector />
+                {/* <LanguageSelector /> */}
                 <Link
                   className="font-inter text-doctor2 hover:text-romanRed text-sm leading-[142.857%] font-semibold tracking-[0.1px] whitespace-nowrap duration-300"
                   href={"tel:(855) 392-8803"}

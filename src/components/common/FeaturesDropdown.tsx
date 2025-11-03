@@ -113,8 +113,10 @@ const FeaturesDropdown: React.FC<Props> = ({
                             sizes="(max-width: 640px) 150px, (max-width: 1024px) 180px, 209px"
                           />
                         </span>
-                        <div className="header-li-dropdown group-hover:bg-lightBlack flex items-center gap-2.5 group-hover:!text-white">
-                          {featureId?.linkTxt}
+                        <div className="header-li-dropdown flex items-center gap-2.5 group-hover:!text-white">
+                          <span className="group-hover:bg-lightBlack px-1">
+                            {featureId?.linkTxt}
+                          </span>
                           {featureId?.newText && (
                             <div className="header-li-dropdown flex items-center gap-2.5 group-hover:!text-white">
                               <div className="border-dancingJewel bg-softMint font-myriad text-dancingJewel flex h-5 items-center justify-center rounded-full border px-2 text-xs font-semibold tracking-[0.4px]">

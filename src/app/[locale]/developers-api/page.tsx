@@ -67,7 +67,7 @@ export default async function DevelopersApiPage({
             freeTrialButtonText="View API Reference"
             slackButtonText="Join us on Slack"
             slackLinkText="Need help integrating?"
-            slackLinkHref="/"
+            slackLinkHref="https://join.slack.com/t/contractorapisupport/shared_invite/zt-3hc04uiiq-w4KYFmUX1NMm9CTgyb1XYg"
           />
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>

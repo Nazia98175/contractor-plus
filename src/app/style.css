@@ -89,10 +89,10 @@
 }
 .video-section-wrapper .icon-span {
   transition: transform 0.3s ease-in-out;
-  transform: rotate(45deg);
+  transform: rotate(90deg);
 }
 .video-section-wrapper.scroll-active-2 .icon-span {
-  transform: rotate(90deg);
+  transform: rotate(45deg);
 }
 .proof-working {
   background: radial-gradient(

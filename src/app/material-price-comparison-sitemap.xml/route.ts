@@ -24,7 +24,7 @@ export async function GET() {
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'; // ✅ Changed from sitemapindex
 
   // Add main page
   const now = new Date().toISOString();
@@ -49,11 +49,15 @@ export async function GET() {
         xml += "  </url>\n";
       }
     });
+
+    console.log(
+      `✅ Material price comparison sitemap generated with ${materials.length + 1} URLs`,
+    );
   } catch (error) {
     console.error("Error generating material price comparison sitemap:", error);
   }
 
-  xml += "</urlset>";
+  xml += "</urlset>"; // ✅ Now matches opening tag
 
   return new NextResponse(xml, {
     headers: {

@@ -23,6 +23,7 @@ export async function GET() {
     process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n'; // ✅ Added stylesheet
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Add main page
@@ -48,6 +49,10 @@ export async function GET() {
         xml += "  </url>\n";
       }
     });
+
+    console.log(
+      `✅ USA labour rate sitemap generated with ${rates.length + 1} URLs`,
+    );
   } catch (error) {
     console.error("Error generating USA labour rate sitemap:", error);
   }

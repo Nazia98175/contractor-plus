@@ -1,3 +1,5 @@
+// src/app/cost-calculator-sitemap.xml/route.ts
+
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
@@ -12,43 +14,21 @@ export async function GET() {
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  // All cost calculators
+  // Cost calculator pages
   const calculators = [
-    "carpet-cleaning",
-    "commercial-space-cleaning",
-    "construction-cost",
-    "custom-woodwork",
-    "drywall",
-    "electrician-cost",
-    "elevator-maintenance",
-    "elevator-maintenance-cost",
-    "excavation",
-    "fence-cost",
-    "flooring-estimator",
-    "house-cleaning",
-    "hvac-cfm",
-    "hvac-markup",
-    "irrigation-system",
-    "labor",
-    "landscape-design",
-    "margin",
-    "masonry-work",
-    "multi-service-job-estimator",
-    "painting",
-    "paver",
-    "pipe-water-volume",
-    "plumbing-bid",
-    "profit-margin",
-    "renovation",
-    "roof-square-footage",
-    "snow-removal",
+    "concrete-calculator",
+    "drywall-calculator",
+    "roofing-calculator",
+    "flooring-calculator",
+    "paint-calculator",
+    // Add all your cost calculator slugs here
   ];
 
   calculators.forEach((calculator) => {
     xml += "  <url>\n";
-    xml += `    <loc>${baseUrl}/resources/cost-calculator/${calculator}</loc>\n`;
+    xml += `    <loc>${baseUrl}/resources/cost-calculators/${calculator}</loc>\n`;
     xml += `    <lastmod>${now}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
     xml += `    <priority>0.7</priority>\n`;

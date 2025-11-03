@@ -25,7 +25,7 @@ export async function GET() {
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'; // ✅ Changed from sitemapindex
 
   // Add main page
   xml += "  <url>\n";
@@ -57,7 +57,7 @@ export async function GET() {
     console.error("Error generating free estimate templates sitemap:", error);
   }
 
-  xml += "</urlset>";
+  xml += "</urlset>"; // ✅ Changed from </sitemapindex>
 
   return new NextResponse(xml, {
     headers: {

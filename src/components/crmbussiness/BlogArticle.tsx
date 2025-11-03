@@ -47,7 +47,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
     <Link
       href={`/blog/${blog?.blogUrl}`}
       key={blog?.id}
-      className={`${bgClass} card-shine relative z-20 flex w-full flex-col items-start gap-4 rounded-xl p-2 md:flex-row`}
+      className={`${bgClass} card-shine relative z-20 flex min-h-[284px] w-full flex-col items-start gap-4 rounded-xl p-2 sm:min-h-auto md:flex-row`}
     >
       {!!imgUrl && (
         <Image

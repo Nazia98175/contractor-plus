@@ -57,7 +57,7 @@ const CommonModalLayout: React.FC<CommonModalLayoutProps> = ({
   return createPortal(
     <>
       <div
-        className={`fixed inset-0 bg-black/30 transition-opacity duration-300 ease-in-out z-[998] ${
+        className={`fixed inset-0 z-[998] bg-black/30 transition-opacity duration-300 ease-in-out ${
           animationState ? "opacity-100" : "opacity-0"
         } ${overlayClassName}`}
       />
@@ -71,21 +71,25 @@ const CommonModalLayout: React.FC<CommonModalLayoutProps> = ({
           } ${className}`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className={`relative flex max-h-full w-full flex-col rounded-2xl ${contentWrapperClassName}`}>
+          <div
+            className={`relative flex max-h-full w-full flex-col rounded-2xl ${contentWrapperClassName}`}
+          >
             <button
               onClick={onClose}
               className={`absolute -top-8 right-0 ml-auto w-fit cursor-pointer rounded-full bg-white p-1 sm:-right-8 ${closeButtonClassName}`}
             >
               <ModalCrossIcon />
             </button>
-            <div className={`h-full max-h-full w-full overflow-auto rounded-lg bg-white sm:rounded-xl md:rounded-2xl ${contentClassName}`}>
+            <div
+              className={`h-full max-h-full w-full overflow-auto rounded-lg bg-white sm:rounded-xl md:rounded-2xl ${contentClassName}`}
+            >
               {children}
             </div>
           </div>
         </div>
       </div>
     </>,
-    document.body
+    document.body,
   );
 };
 

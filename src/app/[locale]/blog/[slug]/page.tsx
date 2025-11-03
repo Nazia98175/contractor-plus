@@ -39,7 +39,8 @@ export const generateStaticParams = async () => {
   try {
     const blogs = await getAllBlogs("en", true);
 
-    const locales = ["en", "fr", "es"];
+    // const locales = ["en", "fr", "es"];
+    const locales = ["en"];
     const params = [];
 
     if (Array.isArray(blogs) && blogs.length > 0) {

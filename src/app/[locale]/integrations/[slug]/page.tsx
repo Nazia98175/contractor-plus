@@ -22,7 +22,8 @@ export const revalidate = 300;
 export const generateStaticParams = async () => {
   const integrations = await getAllIntegration("en", true);
 
-  const locales = ["en", "fr", "es"];
+  // const locales = ["en", "fr", "es"];
+  const locales = ["en"];
   const params = [];
 
   if (Array.isArray(integrations) && integrations.length > 0) {

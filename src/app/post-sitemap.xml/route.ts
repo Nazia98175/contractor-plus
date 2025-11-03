@@ -27,7 +27,7 @@ export async function GET() {
 
         if (slug) {
           xml += "  <url>\n";
-          xml += `    <loc>${baseUrl}/blogs/${slug}</loc>\n`;
+          xml += `    <loc>${baseUrl}/blog/${slug}</loc>\n`;
           xml += `    <lastmod>${publishedAt || new Date().toISOString()}</lastmod>\n`;
           xml += `    <changefreq>monthly</changefreq>\n`;
           xml += `    <priority>0.7</priority>\n`;

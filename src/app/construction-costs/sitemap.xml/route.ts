@@ -1,10 +1,5 @@
-// src/app/construction-costs-sitemap.xml/route.ts
-export const dynamic = "force-dynamic";
-export const revalidate = 3600;
-
 import { NextResponse } from "next/server";
 
-// Categories from your UI
 const CATEGORIES = [
   { id: "appliances", name: "Appliances" },
   { id: "audio_video", name: "Audio / Video" },
@@ -36,20 +31,22 @@ export async function GET() {
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
 
+  console.log("🏗️ Generating construction costs sitemap index...");
+
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
   xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Main construction costs page
   xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/construction-costs-main-sitemap.xml</loc>\n`;
+  xml += `    <loc>${baseUrl}/construction-costs/main-sitemap.xml</loc>\n`;
   xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
   xml += "  </sitemap>\n";
 
-  // One sitemap per category
+  // One sitemap per category (using the dynamic [slug] route)
   CATEGORIES.forEach((category) => {
     xml += "  <sitemap>\n";
-    xml += `    <loc>${baseUrl}/construction-costs-${category.id}-sitemap.xml</loc>\n`;
+    xml += `    <loc>${baseUrl}/construction-costs/${category.id}-sitemap.xml</loc>\n`;
     xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
     xml += "  </sitemap>\n";
   });
@@ -57,7 +54,7 @@ export async function GET() {
   xml += "</sitemapindex>";
 
   console.log(
-    `✅ Construction costs sitemap index generated with ${CATEGORIES.length + 1} category sitemaps`,
+    `✅ Construction costs sitemap index generated with ${CATEGORIES.length + 1} sitemaps`,
   );
 
   return new NextResponse(xml, {

@@ -70,8 +70,8 @@ export default function NotFound() {
     </section>
   );
 }
-export const dynamic = 'force-dynamic';
-export const revalidate = 3600;
+// export const dynamic = 'force-dynamic';
+// export const revalidate = 3600;
 
 import { NextResponse } from "next/server";
 import axiosInstance from "@/lib/axios";

@@ -1,11 +1,8 @@
-// src/app/construction-costs-[category]-sitemap.xml/route.ts
+// src/app/construction-costs/[slug]-sitemap.xml/route.ts
+
 import { NextResponse } from "next/server";
 import { LOCATIONS } from "@/data/locationsData";
 import { fetchFilteredProjects } from "@/services/resource/costCalculatorService";
-
-// Remove these lines - they're causing the conflict
-// export const dynamic = "force-dynamic";
-// export const revalidate = 3600;
 
 // Map URL slugs to API category names
 const CATEGORY_MAP: Record<string, string> = {
@@ -37,25 +34,48 @@ const CATEGORY_MAP: Record<string, string> = {
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ category: string }> },
+  { params }: { params: Promise<{ slug: string }> },
 ) {
-  const { category } = await params;
-
-  console.log("🔍 Generating sitemap for category:", category);
-
-  // Get the proper category name for the API
-  const categoryName = CATEGORY_MAP[category];
-
-  if (!categoryName) {
-    console.error(`❌ Category not found: ${category}`);
-    return new NextResponse("Category not found", { status: 404 });
-  }
-
-  const baseUrl =
-    process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
-
   try {
-    console.log(`📡 Fetching projects for category: ${categoryName}`);
+    const { slug } = await params;
+
+    console.log("🔍 Dynamic route hit! Full slug received:", slug);
+
+    // Extract category from slug
+    // URL: /plumbing-sitemap.xml -> slug: "plumbing-sitemap.xml"
+    // Remove ".xml" first, then remove "-sitemap"
+    let categorySlug = slug.replace(/\.xml$/i, ""); // Remove .xml -> "plumbing-sitemap"
+    categorySlug = categorySlug.replace(/-sitemap$/i, ""); // Remove -sitemap -> "plumbing"
+
+    console.log("📝 Extracted category slug:", categorySlug);
+
+    // Get the proper category name for the API
+    const categoryName = CATEGORY_MAP[categorySlug];
+
+    if (!categoryName) {
+      console.error(`❌ Category not found for slug: ${categorySlug}`);
+      console.log("Available slugs:", Object.keys(CATEGORY_MAP));
+
+      const emptyXml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- No URLs found for category: ${categorySlug} -->
+</urlset>`;
+
+      return new NextResponse(emptyXml, {
+        headers: {
+          "Content-Type": "application/xml; charset=utf-8",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate",
+        },
+      });
+    }
+
+    const baseUrl =
+      process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
+
+    console.log(
+      `📡 Fetching projects for category: ${categoryName} (slug: ${categorySlug})`,
+    );
     const projects = await fetchFilteredProjects(categoryName);
     console.log(`✅ Found ${projects.length} projects for ${categoryName}`);
 
@@ -66,6 +86,7 @@ export async function GET(
     let urlCount = 0;
     const maxUrls = 45000;
 
+    // Generate URLs for each project-location combination
     for (const project of projects) {
       for (const location of LOCATIONS) {
         if (urlCount >= maxUrls) break;
@@ -84,7 +105,9 @@ export async function GET(
 
     xml += "</urlset>";
 
-    console.log(`✅ Generated ${urlCount} URLs for ${categoryName}`);
+    console.log(
+      `✅ Sitemap generated successfully for ${categoryName} with ${urlCount} URLs`,
+    );
 
     return new NextResponse(xml, {
       headers: {
@@ -93,10 +116,19 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error(`❌ Error generating sitemap for ${categoryName}:`, error);
-    return new NextResponse(
-      `Error generating sitemap: ${error instanceof Error ? error.message : "Unknown error"}`,
-      { status: 500 },
-    );
+    console.error(`❌ Error in dynamic sitemap route:`, error);
+
+    const errorXml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Error generating sitemap -->
+</urlset>`;
+
+    return new NextResponse(errorXml, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/xml; charset=utf-8",
+      },
+    });
   }
 }

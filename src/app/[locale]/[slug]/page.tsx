@@ -1,9 +1,6 @@
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeTrialButton from "@/components/common/FreeTrialButton";
-import {
-  constructionBookkeepingServices,
-  platforms,
-} from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
@@ -121,6 +118,7 @@ const FeaturesMainPage = async ({
     weManageContract,
     comparisonList,
     commonData,
+    serviceReview,
   } = await getFeaturesPageData(slug, locale);
 
   const theme = slug === "estimate" ? "estimateTheme" : "dark";
@@ -168,13 +166,7 @@ const FeaturesMainPage = async ({
           />
 
           {slug === "construction-bookkeeping-services" ? (
-            <>
-              <ConstructionBookkeepingCard
-                constructionBookkeepingServices={
-                  constructionBookkeepingServices
-                }
-              />
-            </>
+            <ConstructionBookkeepingCard serviceReview={serviceReview} />
           ) : (
             <TrustedService reviews={reviews} slug={slug} />
           )}

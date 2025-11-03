@@ -18,7 +18,8 @@ export const generateStaticParams = async () => {
   try {
     const events = await getAllEvents("en", true);
 
-    const locales = ["en", "fr", "es"];
+    // const locales = ["en", "fr", "es"];
+    const locales = ["en"];
     const params = [];
 
     if (Array.isArray(events) && events.length > 0) {

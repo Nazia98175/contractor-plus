@@ -56,7 +56,8 @@ export const generateStaticParams = async () => {
       "&fields[0]=pageName&fields[1]=slug&pagination[pageSize]=100",
     );
 
-    const locales = ["en", "fr", "es"];
+    // const locales = ["en", "fr", "es"];
+    const locales = ["en"];
     const params = [];
 
     if (Array.isArray(pages) && pages.length > 0) {

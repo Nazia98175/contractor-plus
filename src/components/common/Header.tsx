@@ -1,14 +1,12 @@
 "use client";
+import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import HeaderLiItems from "./HeaderLiItems";
 import { HamburgerIcon, LogoIcon } from "./Icons";
 import SideBar from "./SideBar";
-import { usePathname } from "next/navigation";
-import LanguageSelector from "./LanguageSelector";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export interface HeaderProps {
   header?: any;

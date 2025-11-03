@@ -1,10 +1,48 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { useToast } from "@/hooks";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 import CalculateImpactSelect from "../crmbussiness/CalculateImpactSelect";
 import CustomDialog from "./CustomDialog";
+import { calculatePricing, PricingResult } from "@/utils/pricing";
+
+export interface FormData {
+  // Company Snapshot
+  businessName: string;
+  website: string;
+  contactName: string;
+  contactTitle: string;
+  contactEmail: string;
+  contactPhone: string;
+  businessStructure: string;
+  hqLocation: string;
+  industry: string;
+  currentAccountingSystem: string;
+  openToQuickBooks: boolean;
+
+  // Scale & Complexity
+  trailingRevenue: string;
+  projectedRevenue: string;
+  monthlyTransactions: string;
+  bankAccounts: number;
+  creditCardAccounts: number;
+  employees: string;
+  inventoryManaged: boolean;
+  multipleEntities: boolean;
+  entitiesCount: number;
+  multipleCurrencies: boolean;
+  catchUpMonths: string;
+
+  // Services Needed
+  services: string[];
+
+  // Goals & Timing
+  painPoint: string;
+  goLiveDate: string;
+  referralProgram: boolean;
+  hearAboutUs: string;
+}
 
 const formSchema = z.object({
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
@@ -80,6 +118,26 @@ export const MultiStepQuoteForm = ({
   const totalSteps = 5;
   const progress = (step / totalSteps) * 100;
 
+  // Load Calendly script when reaching step 5
+  useEffect(() => {
+    if (step === 5 && open) {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        // Cleanup script on unmount
+        const existingScript = document.querySelector(
+          'script[src="https://assets.calendly.com/assets/external/widget.js"]',
+        );
+        if (existingScript) {
+          document.body.removeChild(existingScript);
+        }
+      };
+    }
+  }, [step, open]);
+
   const validateStep = async () => {
     let fieldsToValidate: (keyof QuoteFormData)[] = [];
 
@@ -116,29 +174,166 @@ export const MultiStepQuoteForm = ({
     return isValid;
   };
 
+  // Map QuoteFormData to FormData for pricing calculation
+  const mapQuoteFormToFormData = (
+    quoteData: QuoteFormData,
+  ): Partial<FormData> => {
+    return {
+      businessName: quoteData.companyName,
+      contactName: quoteData.contactName,
+      contactEmail: quoteData.email,
+      contactPhone: quoteData.phone,
+      trailingRevenue: quoteData.annualRevenue,
+      employees: quoteData.numberOfEmployees,
+      monthlyTransactions: quoteData.monthlyTransactions,
+      services: quoteData.services,
+      painPoint: quoteData.challenges || "",
+      // Add default values for required FormData fields
+      website: "",
+      contactTitle: "",
+      businessStructure: "",
+      hqLocation: "",
+      industry: "",
+      currentAccountingSystem: "",
+      openToQuickBooks: false,
+      projectedRevenue: "",
+      bankAccounts: 0,
+      creditCardAccounts: 0,
+      inventoryManaged: false,
+      multipleEntities: false,
+      entitiesCount: 0,
+      multipleCurrencies: false,
+      catchUpMonths: "",
+      goLiveDate: "",
+      referralProgram: false,
+      hearAboutUs: "",
+    };
+  };
+
+  const sendToSlack = async (
+    formData: Partial<FormData>,
+    result: PricingResult,
+  ) => {
+    const slackWebhookUrl =
+      "https://hooks.slack.com/services/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";
+
+    console.log("Attempting to send to Slack...", { formData, result });
+
+    try {
+      const message = {
+        text: "🎯 New Bookkeeping Quote Request",
+        blocks: [
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: "📊 New Bookkeeping Quote Request",
+            },
+          },
+          {
+            type: "section",
+            fields: [
+              {
+                type: "mrkdwn",
+                text: `*Company:* ${formData.businessName || "N/A"}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Contact:* ${formData.contactName || "N/A"}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Email:* ${formData.contactEmail || "N/A"}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Phone:* ${formData.contactPhone || "Not provided"}`,
+              },
+            ],
+          },
+          {
+            type: "section",
+            fields: [
+              {
+                type: "mrkdwn",
+                text: `*Annual Revenue:* ${formData.trailingRevenue || "N/A"}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Monthly Transactions:* ${formData.monthlyTransactions || "N/A"}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Employees:* ${formData.employees || "N/A"}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Entities:* ${formData.multipleEntities ? `Yes (${formData.entitiesCount})` : "No"}`,
+              },
+            ],
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: `*🎯 Recommended Plan:* ${result.tier}\n*💰 Monthly Price:* $${result.totalMonthly}\n*📊 Complexity Score:* ${result.score}`,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: `*📝 Services Requested:*\n${formData.services && formData.services.length > 0 ? "• " + formData.services.join("\n• ") : "None specified"}`,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: `*💭 Challenges:*\n${formData.painPoint || "Not specified"}`,
+            },
+          },
+        ],
+      };
+
+      const response = await fetch(slackWebhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(message),
+      });
+
+      console.log("Slack response status:", response.status);
+      console.log("Slack response ok:", response.ok);
+
+      if (!response.ok) {
+        throw new Error(`Slack webhook failed with status ${response.status}`);
+      }
+
+      console.log("Form data sent to Slack successfully");
+    } catch (error) {
+      console.error("Failed to send to Slack:", error);
+      toast({
+        title: "Note",
+        description:
+          "Quote generated successfully. Slack notification may have failed.",
+        variant: "default",
+      });
+    }
+  };
+
   const submitLead = async () => {
     try {
       setIsSubmitting(true);
-      const formData = form.getValues();
+      const quoteFormData = form.getValues();
+      const mappedFormData = mapQuoteFormToFormData(quoteFormData);
+      const result = calculatePricing(mappedFormData as FormData);
 
-      const leadData = {
-        businessName: formData.companyName,
-        contactName: formData.contactName,
-        email: formData.email,
-        phone: formData.phone,
-        businessType: formData.annualRevenue,
-        selectedServices: formData.services,
-        monthlyRevenue: formData.annualRevenue,
-        monthlyExpenses: formData.monthlyTransactions,
-        employees: formData.numberOfEmployees,
-        contractors: "N/A",
-        currentBookkeeping: formData.challenges || "Not specified",
-        needsPayroll: formData.services?.includes("Payroll Processing")
-          ? "Yes"
-          : "No",
-      };
-
-      console.log("Lead Data Submitted:", leadData);
+      await sendToSlack(mappedFormData, result);
 
       toast({
         title: "Lead submitted",
@@ -202,6 +397,7 @@ export const MultiStepQuoteForm = ({
     { label: "51-100", value: "51-100" },
     { label: "100+", value: "100+" },
   ];
+
   const transactionVolumes = [
     { value: "0-50", label: "0–50" },
     { value: "51-100", label: "51–100" },
@@ -209,6 +405,7 @@ export const MultiStepQuoteForm = ({
     { value: "251-500", label: "251–500" },
     { value: "500+", label: "500+" },
   ];
+
   const mainGoals = [
     {
       value: "accurate-financials",
@@ -224,6 +421,7 @@ export const MultiStepQuoteForm = ({
     { value: "cleanup", label: "Clean up existing books" },
     { value: "growth", label: "Support business growth" },
   ];
+
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -240,7 +438,6 @@ export const MultiStepQuoteForm = ({
                   placeholder="Enter your company name"
                 />
               </div>
-
               {form.formState.errors.companyName && (
                 <p className="text-sm text-red-600">
                   {form.formState.errors.companyName.message}
@@ -320,7 +517,6 @@ export const MultiStepQuoteForm = ({
                   })
                 }
               />
-
               {form.formState.errors.annualRevenue && (
                 <p className="text-sm text-red-600">
                   {form.formState.errors.annualRevenue.message}
@@ -343,7 +539,6 @@ export const MultiStepQuoteForm = ({
                   )
                 }
               />
-
               {form.formState.errors.numberOfEmployees && (
                 <p className="text-sm text-red-600">
                   {form.formState.errors.numberOfEmployees.message}
@@ -351,8 +546,9 @@ export const MultiStepQuoteForm = ({
               )}
             </div>
             <div className="space-y-2">
-              <label htmlFor="monthlyTransactions">Monthly Transactions*</label>
-
+              <label htmlFor="monthlyTransactions">
+                Monthly Transactions *
+              </label>
               <CalculateImpactSelect
                 className="!mt-2"
                 options={transactionVolumes}
@@ -367,7 +563,6 @@ export const MultiStepQuoteForm = ({
                   )
                 }
               />
-
               {form.formState.errors.monthlyTransactions && (
                 <p className="text-sm text-red-600">
                   {form.formState.errors.monthlyTransactions.message}
@@ -420,7 +615,6 @@ export const MultiStepQuoteForm = ({
             </h3>
             <div className="space-y-2">
               <label htmlFor="primaryGoal">Primary Goal *</label>
-
               <CalculateImpactSelect
                 className="!mt-2"
                 options={mainGoals}
@@ -431,7 +625,6 @@ export const MultiStepQuoteForm = ({
                   })
                 }
               />
-
               {form.formState.errors.primaryGoal && (
                 <p className="text-sm text-red-600">
                   {form.formState.errors.primaryGoal.message}
@@ -468,7 +661,7 @@ export const MultiStepQuoteForm = ({
             <div
               className="calendly-inline-widget"
               data-url="https://calendly.com/justinonsuccess/15min"
-              style={{ minWidth: "320px", height: "auto" }}
+              style={{ minWidth: "320px", height: "700px" }}
             />
           </div>
         );
@@ -478,21 +671,17 @@ export const MultiStepQuoteForm = ({
     }
   };
 
-  function setOpen(open: boolean): void {
-    onOpenChange(open);
-  }
-
   return (
     <CustomDialog
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={onOpenChange}
       progress={progress}
       step={step}
       totalSteps={totalSteps}
       renderStep={renderStep}
       prevStep={prevStep}
       nextStep={nextStep}
-      isSubmitting={false}
+      isSubmitting={isSubmitting}
     />
   );
 };

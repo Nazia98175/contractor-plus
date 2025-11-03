@@ -1,9 +1,6 @@
 import CardRequiredButton from "@/components/common/CardRequiredButton";
 import FreeTrialButton from "@/components/common/FreeTrialButton";
-import {
-  constructionBookkeepingServices,
-  platforms,
-} from "@/components/common/Helper";
+import { platforms } from "@/components/common/Helper";
 import {
   FooterRedLineIcon,
   FooterRedLineMobileIcon,
@@ -59,7 +56,8 @@ export const generateStaticParams = async () => {
       "&fields[0]=pageName&fields[1]=slug&pagination[pageSize]=100",
     );
 
-    const locales = ["en", "fr", "es"];
+    // const locales = ["en", "fr", "es"];
+    const locales = ["en"];
     const params = [];
 
     if (Array.isArray(pages) && pages.length > 0) {
@@ -121,6 +119,7 @@ const FeaturesMainPage = async ({
     weManageContract,
     comparisonList,
     commonData,
+    serviceReview,
   } = await getFeaturesPageData(slug, locale);
 
   const theme = slug === "estimate" ? "estimateTheme" : "dark";
@@ -168,13 +167,7 @@ const FeaturesMainPage = async ({
           />
 
           {slug === "construction-bookkeeping-services" ? (
-            <>
-              <ConstructionBookkeepingCard
-                constructionBookkeepingServices={
-                  constructionBookkeepingServices
-                }
-              />
-            </>
+            <ConstructionBookkeepingCard serviceReview={serviceReview} />
           ) : (
             <TrustedService reviews={reviews} slug={slug} />
           )}

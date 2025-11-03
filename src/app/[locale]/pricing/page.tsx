@@ -39,7 +39,6 @@ export default async function PricingPage({ params }: PricongParams) {
     faqs,
     emailSign,
   } = await getPricingData(locale);
-  console.log(pricingPlans, "prcignjdfnd");
 
   return (
     <main className="font-myriad overflow-hidden">

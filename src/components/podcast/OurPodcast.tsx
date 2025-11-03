@@ -13,6 +13,8 @@ const OurPodcast: FC<{
   data: PodcastData;
   transistorData: PodcastDataResponse.apiResponse | null;
 }> = ({ data, transistorData }) => {
+
+  console.log(data,"dataaa")
   const asTime = (s?: string) => (s ? new Date(s).getTime() : 0);
   const detectShow = (item: PodcastDataResponse.show) => {
     const t = (item?.title || "").toLowerCase();

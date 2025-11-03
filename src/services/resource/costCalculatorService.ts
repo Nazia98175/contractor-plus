@@ -1,5 +1,3 @@
-// services/projectService.ts
-
 import axios from "axios";
 
 // Define the response type
@@ -72,14 +70,14 @@ export const fetchProjects = async (): Promise<Project[]> => {
       headers: {
         "Content-Type": "application/json",
       },
-    }
+    },
   );
   return response.data;
 };
 
 export const fetchFilteredProjects = async (
   estimateCategory: string,
-  projectName?: string
+  projectName?: string,
 ): Promise<Project[]> => {
   const response = await axios.get<Project[]>(
     `https://reshubapi.contractorplus.app/labor-index/projects/filter`,
@@ -88,7 +86,7 @@ export const fetchFilteredProjects = async (
         estimateCategory,
         projectName: projectName || "", // Only send if provided
       },
-    }
+    },
   );
   return response.data;
 };
@@ -96,7 +94,7 @@ export const fetchFilteredProjects = async (
 const BASE_URL = "https://reshubapi.contractorplus.app/labor-index/project";
 
 export const fetchProjectDetail = async (
-  slug: string
+  slug: string,
 ): Promise<ProjectDetail> => {
   const response = await axios.get<ProjectDetail>(`${BASE_URL}/${slug}`);
   return response.data;

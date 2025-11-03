@@ -1,5 +1,5 @@
 import React from "react";
-import { ActivationIcon, LineIcon, ListIcon } from "../common/Icons";
+import { LineIcon, ListIcon } from "../common/Icons";
 import PlanButton from "./PlanButton";
 
 interface PlanData {
@@ -37,15 +37,6 @@ interface PlanCardProps {
 }
 
 const PlanCard2: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
-  console.log(plan, "plan details in plan card 2");
-
-  const priceValue =
-    isAnnual && plan.annualPrice !== undefined
-      ? Number(plan.annualPrice)
-      : Number(plan.monthlyPrice);
-  const formattedPrice = `$${priceValue.toFixed(0)}`;
-  console.log(plan, "plan details");
-
   let priceValue2 = 0;
 
   if (activeTab === "annual") {
@@ -76,7 +67,7 @@ const PlanCard2: React.FC<PlanCardProps> = ({ plan, isAnnual, activeTab }) => {
             </p>
           </div>
           <span className="rounded-[0 8px] font-myriad bg-[#252525] px-2 py-1 text-lg font-semibold text-[#CD3E3F]">
-            Only 500 licenses available!
+            Most Popular!
           </span>
         </div>
 

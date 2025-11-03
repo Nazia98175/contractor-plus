@@ -52,21 +52,18 @@ const PublicEndPoints: React.FC<PublicEndPointsProps> = ({
         )}
 
         {slack && (slackButtonText || slackLinkText) && (
-          <div>
+          <Link href={slackLinkHref ?? "#"} target="_blank">
             {slackButtonText && (
               <button className="font-montserrat flex items-center gap-1.5 px-6 py-2.5 text-base font-bold tracking-[0.1px] text-white">
                 <SlackIcon /> {slackButtonText}
               </button>
             )}
             {slackLinkText && (
-              <Link
-                className="font-myriad text-gray pl-10 text-base font-semibold"
-                href={slackLinkHref ?? "#"}
-              >
+              <span className="font-myriad text-gray pl-10 text-base font-semibold">
                 {slackLinkText}
-              </Link>
+              </span>
             )}
-          </div>
+          </Link>
         )}
       </div>
     </section>

@@ -7,6 +7,8 @@ import FreeTrialButton from "../common/FreeTrialButton";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import { useEffect, useRef } from "react";
 import useGsapFadeIn from "@/hooks/useGsapFadeIn";
+import { SideIcon } from "../common/Icons";
+import PrimaryLink from "../common/PrimaryLInk";
 export interface AffiliatesHeroProps {
   heroTitle?: string;
   heroDescription?: string;
@@ -59,12 +61,20 @@ const AffiliatesHero = ({
             </p>
           </Copy>
           <Copy delay={0.4} animateOnScroll={false}>
-            <FreeTrialButton
+            <PrimaryLink
+              href="https://contractorplus.pushlapgrowth.com/register"
+              className="max-w-[200px]"
+            >
+              Apply to join
+              <SideIcon />
+            </PrimaryLink>
+
+            {/* <FreeTrialButton
               ariaLabel="affilate free trial"
               showIcon={true}
               text={"Apply to join"}
               className="flex"
-            />
+            /> */}
           </Copy>
           <CardReveal distance={50} delay={0.5}>
             <div className="relative pb-10">

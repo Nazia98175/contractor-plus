@@ -51,7 +51,8 @@ const Footer: React.FC<TheFooterProps> = ({ footer }) => {
   const safePath = pathname?.toLowerCase() || "";
 
   // ✅ Hide footer on specific path
-  const hideFooter = safePath.includes("lp");
+  const hideFooter =
+    safePath.includes("lp") || safePath.includes("ai-estimating-ads");
 
   const variant =
     pathname.toLowerCase().includes("industries") ||

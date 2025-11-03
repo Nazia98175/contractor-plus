@@ -39,7 +39,6 @@ export default async function DevelopersApiPage({
   // Use locale directly
   const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(locale);
 
-  console.log(hero, whatYouCanBuild, goBeyond);
   return (
     <>
       <div id="home-page-view-port-screen" className="opacity-0">

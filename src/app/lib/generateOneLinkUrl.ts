@@ -19,6 +19,9 @@ export function generateOneLinkUrl(
   pathname: string,
   options: OneLinkOptions = {},
 ): string {
+  if (pathname === "/developers-api") {
+    return " https://developer.contractorplus.app/";
+  }
   const baseUrl = "https://contractorplus.onelink.me/ekwH/homebuttons";
 
   // Extract language from pathname
